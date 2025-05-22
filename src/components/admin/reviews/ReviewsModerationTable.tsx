@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { Check, X, User, Star, MoreHorizontal } from "lucide-react";
@@ -71,7 +70,7 @@ export function ReviewsModerationTable({
       onRefresh();
       setViewDetailsOpen(false);
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       toast({
         title: "Error",
         description: `Failed to update review: ${error.message}`,

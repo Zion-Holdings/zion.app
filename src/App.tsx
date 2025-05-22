@@ -19,7 +19,7 @@ import {
 } from './routes';
 import Home from './pages/Home';
 
-function App() {
+const App: React.FC = () => {
   return (
     <ThemeProvider defaultTheme="dark">
       <Routes>
@@ -40,6 +40,6 @@ function App() {
       <SonnerToaster position="top-right" />
     </ThemeProvider>
   );
-}
+};
 
 export default App;

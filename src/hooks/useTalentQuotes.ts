@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { quoteRequestService } from '@/services/quoteRequestService';
@@ -86,10 +85,10 @@ export const useTalentQuotes = () => {
       });
       queryClient.invalidateQueries({ queryKey: ['quotes', 'talent', talentId] });
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       toast({
         title: "Error",
-        description: "Failed to update quote: " + (error as Error).message,
+        description: "Failed to update quote: " + error.message,
         variant: "destructive"
       });
     }

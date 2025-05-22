@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -48,6 +47,25 @@ export function PartnerRegistrationForm() {
     },
   });
 
+  const checkExistingPartner = async () => {
+    const { data: existingPartner } = await supabase
+      .from('partner_profiles')
+      .select('id')
+      .eq('user_id', user.id)
+      .single();
+
+    if (existingPartner) {
+      toast({
+        title: "Already registered",
+        description: "You have already registered as a partner.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return true;
+    }
+    return false;
+  };
+
   async function onSubmit(data: PartnerFormValues) {
     if (!user) {
       toast({
@@ -61,21 +79,8 @@ export function PartnerRegistrationForm() {
     setIsSubmitting(true);
     try {
       // Check if they already have a partner profile
-      const { data: existingPartner, error: checkError } = await supabase
-        .from('partner_profiles')
-        .select('id')
-        .eq('user_id', user.id)
-        .single();
-
-      if (existingPartner) {
-        toast({
-          title: "Already registered",
-          description: "You have already registered as a partner.",
-          variant: "destructive",
-        });
-        setIsSubmitting(false);
-        return;
-      }
+      const hasExistingPartner = await checkExistingPartner();
+      if (hasExistingPartner) return;
 
       // Insert new partner profile
       const { data: newPartner, error } = await supabase
