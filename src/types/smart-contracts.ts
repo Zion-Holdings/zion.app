@@ -1,6 +1,4 @@
 
-import { TalentProfile } from './talent';
-import { ContractFormValues } from "@/components/contracts/components/ContractForm";
 
 export type BlockchainNetwork = 'ethereum' | 'polygon' | 'none';
 

@@ -22,7 +22,9 @@ export async function createNotification({
       _title: title,
       _message: message,
       _type: type,
-      _related_id: relatedId
+      _related_id: relatedId,
+      _action_url: actionUrl,
+      _action_text: actionText
     });
     
     if (error) throw error;
