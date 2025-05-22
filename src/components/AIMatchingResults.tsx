@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { MatchResultItem } from "@/lib/ai-matchmaking";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BarChart3, BriefcaseIcon, DivideIcon as LucideIcon, Monitor, User } from "lucide-react";
+import { BarChart3, BriefcaseIcon, Monitor, User } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 
@@ -35,7 +34,7 @@ export function AIMatchingResults({
   };
   
   // Get the icon for a category
-  const getCategoryIcon = (category: string): LucideIcon => {
+  const getCategoryIcon = (category: string) => {
     const lowerCategory = category.toLowerCase();
     if (lowerCategory.includes("talent")) return User;
     if (lowerCategory.includes("equipment")) return Monitor;

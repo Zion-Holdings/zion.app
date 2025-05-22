@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { quoteRequestService } from '@/services/quoteRequestService';
@@ -80,10 +79,10 @@ export const useAdminQuotes = () => {
       });
       queryClient.invalidateQueries({ queryKey: ['quotes', 'admin'] });
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       toast({
         title: "Error",
-        description: "Failed to update status: " + (error as Error).message,
+        description: "Failed to update status: " + error.message,
         variant: "destructive"
       });
     }
@@ -102,10 +101,10 @@ export const useAdminQuotes = () => {
       });
       queryClient.invalidateQueries({ queryKey: ['quotes', 'admin'] });
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       toast({
         title: "Error",
-        description: "Failed to update quote: " + (error as Error).message,
+        description: "Failed to update quote: " + error.message,
         variant: "destructive"
       });
     }
@@ -121,10 +120,10 @@ export const useAdminQuotes = () => {
       });
       queryClient.invalidateQueries({ queryKey: ['quotes', 'admin'] });
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       toast({
         title: "Error",
-        description: "Failed to delete quote: " + (error as Error).message,
+        description: "Failed to delete quote: " + error.message,
         variant: "destructive"
       });
     }
