@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -90,7 +89,7 @@ export function useContractTemplates() {
         description: "Contract template has been successfully saved.",
       });
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       console.error("Error saving template:", error);
       toast({
         title: "Failed to save template",
@@ -155,7 +154,7 @@ export function useContractTemplates() {
         description: "Contract template has been successfully updated.",
       });
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       console.error("Error updating template:", error);
       toast({
         title: "Failed to update template",
@@ -191,7 +190,7 @@ export function useContractTemplates() {
         description: "Contract template has been successfully deleted.",
       });
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       console.error("Error deleting template:", error);
       toast({
         title: "Failed to delete template",
@@ -235,7 +234,7 @@ export function useContractTemplates() {
         description: "Default contract template has been updated.",
       });
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       console.error("Error setting default template:", error);
       toast({
         title: "Failed to set default template",
