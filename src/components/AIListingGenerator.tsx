@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
@@ -38,6 +37,23 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
   const [targetAudience, setTargetAudience] = useState(initialValues.targetAudience || "");
   const [isLoading, setIsLoading] = useState(false);
   const [generatedContent, setGeneratedContent] = useState<GeneratedContent | null>(null);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, field: string) => {
+    switch(field) {
+      case 'title':
+        setTitle(e.target.value);
+        break;
+      case 'category':
+        setCategory(e.target.value);
+        break;
+      case 'keyFeatures':
+        setKeyFeatures(e.target.value);
+        break;
+      case 'targetAudience':
+        setTargetAudience(e.target.value);
+        break;
+    }
+  };
 
   const handleGenerate = async () => {
     if (!title || !category) {
@@ -109,7 +125,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
             <Input
               id="title"
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => handleInputChange(e, 'title')}
               placeholder="Enter your product or service title"
               className="bg-zion-blue border border-zion-blue-light text-white"
               disabled={isLoading}
@@ -120,7 +136,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
             <Input
               id="category"
               value={category}
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => handleInputChange(e, 'category')}
               placeholder="e.g. AI Tool, Digital Product, Service"
               className="bg-zion-blue border border-zion-blue-light text-white"
               disabled={isLoading}
@@ -131,7 +147,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
             <Textarea
               id="keyFeatures"
               value={keyFeatures}
-              onChange={(e) => setKeyFeatures(e.target.value)}
+              onChange={(e) => handleInputChange(e, 'keyFeatures')}
               placeholder="Briefly describe the main features or benefits"
               className="bg-zion-blue border border-zion-blue-light text-white min-h-20"
               disabled={isLoading}
@@ -142,7 +158,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
             <Input
               id="targetAudience"
               value={targetAudience}
-              onChange={(e) => setTargetAudience(e.target.value)}
+              onChange={(e) => handleInputChange(e, 'targetAudience')}
               placeholder="e.g. Developers, Marketers, Startups"
               className="bg-zion-blue border border-zion-blue-light text-white"
               disabled={isLoading}
