@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -10,8 +9,8 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from '@/components/ui/alert-dialog';
-import { useLanguage, SupportedLanguage } from '@/context/LanguageContext';
+} from '../components/ui/alert-dialog';
+import { useLanguage, SupportedLanguage } from '../context/LanguageContext';
 
 export function LanguageDetectionPopup() {
   const [open, setOpen] = useState(false);
