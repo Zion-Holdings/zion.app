@@ -11,7 +11,6 @@ import { cn } from "@/lib/utils";
 interface AIMatchingResultsProps {
   matches: MatchResultItem[];
   onSelectMatch?: (match: MatchResultItem) => void;
-  serviceType?: string;
   isLoading?: boolean;
   projectDescription?: string;
 }
@@ -19,7 +18,6 @@ interface AIMatchingResultsProps {
 export function AIMatchingResults({ 
   matches, 
   onSelectMatch, 
-  serviceType = "",
   isLoading = false,
   projectDescription = "" 
 }: AIMatchingResultsProps) {
@@ -142,7 +140,7 @@ export function AIMatchingResults({
                               <Badge variant="outline" className="text-xs bg-zion-blue text-zion-cyan border-zion-cyan/30">
                                 {match.category}
                               </Badge>
-                              {match.skills && match.skills.slice(0, 3).map((skill, i) => (
+                              {match.skills && match.skills.slice(0, 3).map((skill: string, i: number) => (
                                 <Badge key={i} variant="outline" className="text-xs bg-zion-blue-dark text-white border-zion-blue-light">
                                   {skill}
                                 </Badge>
