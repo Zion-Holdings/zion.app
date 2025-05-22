@@ -31,7 +31,12 @@ export async function createNotification({
     if (sendEmail && data) {
       const notificationId = data;
       await supabase.functions.invoke('send-notification-email', {
-        body: { user_id: userId, notification_id: notificationId }
+        body: {
+          user_id: userId,
+          notification_id: notificationId,
+          action_url: actionUrl,
+          action_text: actionText
+        }
       });
     }
     

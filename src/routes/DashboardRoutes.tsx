@@ -1,5 +1,4 @@
 
-import { Fragment } from "react";
 import { Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import Dashboard from "@/pages/Dashboard";

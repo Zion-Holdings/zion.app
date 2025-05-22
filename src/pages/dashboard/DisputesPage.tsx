@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { SEO } from '@/components/SEO';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { Footer } from '@/components/Footer';

@@ -46,11 +46,11 @@ export default function QuoteManager() {
 
   // Count quotes by status
   const statusCounts = {
-    new: quotes.filter(q => q.status === 'new').length,
-    in_review: quotes.filter(q => q.status === 'in_review').length,
-    accepted: quotes.filter(q => q.status === 'accepted').length,
-    responded: quotes.filter(q => q.status === 'responded').length,
-    closed: quotes.filter(q => q.status === 'closed').length
+    new: quotes.filter((q: QuoteRequest) => q.status === 'new').length,
+    in_review: quotes.filter((q: QuoteRequest) => q.status === 'in_review').length,
+    accepted: quotes.filter((q: QuoteRequest) => q.status === 'accepted').length,
+    responded: quotes.filter((q: QuoteRequest) => q.status === 'responded').length,
+    closed: quotes.filter((q: QuoteRequest) => q.status === 'closed').length
   };
 
   const handleViewDetails = (quote: QuoteRequest) => {
@@ -110,7 +110,7 @@ export default function QuoteManager() {
                 {/* Quotes Table */}
                 <Card className="bg-zion-blue-dark border border-zion-blue-light overflow-hidden">
                   <QuotesTable
-                    quotes={quotes.filter(quote => !quote.is_archived)}
+                    quotes={quotes.filter((quote: QuoteRequest) => !quote.is_archived)}
                     isLoading={isLoading}
                     updateStatus={updateStatus}
                     toggleArchive={toggleArchive}
@@ -123,7 +123,7 @@ export default function QuoteManager() {
               <TabsContent value="archived">
                 <Card className="bg-zion-blue-dark border border-zion-blue-light overflow-hidden">
                   <QuotesTable
-                    quotes={quotes.filter(quote => quote.is_archived)}
+                    quotes={quotes.filter((quote: QuoteRequest) => quote.is_archived)}
                     isArchived={true}
                     isLoading={isLoading}
                     updateStatus={updateStatus}

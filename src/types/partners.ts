@@ -1,5 +1,4 @@
 
-import { UserProfile } from "@/types/auth";
 
 export interface PartnerProfile {
   id: string;

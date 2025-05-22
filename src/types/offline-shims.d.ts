@@ -9,7 +9,10 @@ declare module 'react' {
   export type SyntheticEvent<T = Element> = any;
   export type CSSProperties = any;
   export type RefObject<T = any> = any;
+  export type LegacyRef<T = any> = any;
+  export type Ref<T = any> = any;
   export const createElement: any;
+  export const Fragment: any;
   
   // Export React hooks
   export function useState<T>(initialState: T | (() => T)): [T, (newState: T | ((prevState: T) => T)) => void];
@@ -114,11 +117,31 @@ declare module 'react-dom/client' {
   };
 }
 
+// JSX runtime module for React 17+
+declare module 'react/jsx-runtime' {
+  export function jsx(type: any, props: any, key?: any): any;
+  export function jsxs(type: any, props: any, key?: any): any;
+  export const Fragment: any;
+}
+
+// Minimal Node.js declarations used by scripts
+declare module 'child_process' {
+  export function exec(cmd: string, callback: (error: any, stdout: any, stderr: any) => void): void;
+}
+
+declare module 'path' {
+  export function join(...paths: string[]): string;
+  export function resolve(...paths: string[]): string;
+  export const sep: string;
+  export const dirname: (path: string) => string;
+}
+
 // React Router DOM declarations
 declare module 'react-router-dom' {
   export const BrowserRouter: any;
   export const Route: any;
   export const Routes: any;
+  export const Navigate: any;
   export const Link: any;
   export const useNavigate: () => any;
   export const useParams: () => any;
@@ -194,6 +217,7 @@ declare module 'lucide-react' {
   export const LogIn: LucideIcon;
   export const EyeOff: LucideIcon;
   export const Eye: LucideIcon;
+  export const XCircle: LucideIcon;
   export const Wallet: LucideIcon;
   export const Code: LucideIcon;
   export const Megaphone: LucideIcon;
