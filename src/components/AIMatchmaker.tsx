@@ -1,13 +1,11 @@
-
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { AIMatchingResults } from "@/components/AIMatchingResults";
 import { findMatches, MatchResult } from "@/lib/ai-matchmaking";
 import { Textarea } from "@/components/ui/textarea";
-import { Sparkles, Send, Search } from "lucide-react";
+import { Sparkles, Search } from "lucide-react";
 
 interface AIMatchmakerProps {
   serviceType?: string;
@@ -95,7 +93,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
             <Textarea
               placeholder="Describe what you need... (e.g., 'I need a senior machine learning engineer with expertise in computer vision for a 3-month project')"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setQuery(e.target.value)}
               className="min-h-24 bg-zion-blue border border-zion-blue-light focus:border-zion-purple text-white"
             />
             <Button 
