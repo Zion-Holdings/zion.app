@@ -464,6 +464,7 @@ declare module '@/hooks/useProjects' {
     isLoading: boolean;
     error: any;
     getProjectById: (id: string) => Promise<any>;
+    updateProjectStatus: (id: string, status: string) => Promise<boolean>;
   };
 }
 
