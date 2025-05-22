@@ -1,4 +1,3 @@
-
 import { Navigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Header } from "@/components/Header";
@@ -26,3 +25,5 @@ export default function Login() {
     </>
   );
 }
+
+export default Login
