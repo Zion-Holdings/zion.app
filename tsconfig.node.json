@@ -1,26 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2023"],
-    "module": "NodeNext",
+    "composite": true,
     "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "nodenext",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "vite.config.ts",
-    "src/integrations/slack/**/*",
-    "src/types/**/*.d.ts"
-  ]
+  "include": ["vite.config.ts"]
 }
