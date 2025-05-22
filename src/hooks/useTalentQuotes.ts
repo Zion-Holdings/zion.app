@@ -63,10 +63,10 @@ export const useTalentQuotes = () => {
       });
       queryClient.invalidateQueries({ queryKey: ['quotes', 'talent', talentId] });
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       toast({
         title: "Error",
-        description: "Failed to update status: " + (error as Error).message,
+        description: "Failed to update status: " + error.message,
         variant: "destructive"
       });
     }
