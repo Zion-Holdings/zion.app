@@ -3,49 +3,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Public Pages -->
   <url>
-    <loc>https://ziontechgroup.com/</loc>
+    <loc>https://app.ziontechgroup.com/</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/about</loc>
+    <loc>https://app.ziontechgroup.com/about</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/contact</loc>
+    <loc>https://app.ziontechgroup.com/contact</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/browse/talent</loc>
+    <loc>https://app.ziontechgroup.com/browse/talent</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/browse/jobs</loc>
+    <loc>https://app.ziontechgroup.com/browse/jobs</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/faq</loc>
+    <loc>https://app.ziontechgroup.com/faq</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/terms</loc>
+    <loc>https://app.ziontechgroup.com/terms</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/privacy</loc>
+    <loc>https://app.ziontechgroup.com/privacy</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -53,25 +53,25 @@
   
   <!-- Marketplace Pages -->
   <url>
-    <loc>https://ziontechgroup.com/marketplace</loc>
+    <loc>https://app.ziontechgroup.com/marketplace</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/services</loc>
+    <loc>https://app.ziontechgroup.com/services</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/categories</loc>
+    <loc>https://app.ziontechgroup.com/categories</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/equipment</loc>
+    <loc>https://app.ziontechgroup.com/equipment</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -79,25 +79,25 @@
   
   <!-- Authentication Pages -->
   <url>
-    <loc>https://ziontechgroup.com/login</loc>
+    <loc>https://app.ziontechgroup.com/login</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/signup</loc>
+    <loc>https://app.ziontechgroup.com/signup</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/signup/talent</loc>
+    <loc>https://app.ziontechgroup.com/signup/talent</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/signup/client</loc>
+    <loc>https://app.ziontechgroup.com/signup/client</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -105,37 +105,37 @@
   
   <!-- Blog Pages -->
   <url>
-    <loc>https://ziontechgroup.com/blog</loc>
+    <loc>https://app.ziontechgroup.com/blog</loc>
     <lastmod>2025-05-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/blog/ai-trends-2025</loc>
+    <loc>https://app.ziontechgroup.com/blog/ai-trends-2025</loc>
     <lastmod>2025-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/blog/optimize-ai-listings</loc>
+    <loc>https://app.ziontechgroup.com/blog/optimize-ai-listings</loc>
     <lastmod>2025-04-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/blog/green-it</loc>
+    <loc>https://app.ziontechgroup.com/blog/green-it</loc>
     <lastmod>2025-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/blog/ai-ethics-frameworks</loc>
+    <loc>https://app.ziontechgroup.com/blog/ai-ethics-frameworks</loc>
     <lastmod>2025-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/blog/ai-talent-acquisition</loc>
+    <loc>https://app.ziontechgroup.com/blog/ai-talent-acquisition</loc>
     <lastmod>2025-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
