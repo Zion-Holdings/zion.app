@@ -13,7 +13,7 @@ export const SitemapPage: React.FC = () => {
         title="Sitemap | Zion AI Marketplace"
         description="Complete sitemap of the Zion AI Marketplace"
         keywords="sitemap, zion, ai marketplace, navigation"
-        canonical="https://zion.com/sitemap-page"
+        canonical="https://ziontechgroup.com/sitemap-page"
       />
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-3xl font-bold mb-8">Sitemap</h1>

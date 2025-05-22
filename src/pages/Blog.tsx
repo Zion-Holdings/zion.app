@@ -245,7 +245,7 @@ export default function Blog() {
         title="Blog - AI & Tech Insights" 
         description="Stay updated with the latest trends in AI technology, marketplace strategies, and IT services. Expert articles on innovation, sustainability, and digital transformation." 
         keywords="AI blog, tech trends, IT services blog, artificial intelligence news, technology innovation, digital transformation, sustainable IT"
-        canonical="https://zion.com/blog"
+        canonical="https://ziontechgroup.com/blog"
       />
       <Header />
       <div className="min-h-screen bg-zion-blue pt-12 pb-20 px-4">

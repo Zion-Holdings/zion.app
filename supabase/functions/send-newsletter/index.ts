@@ -32,7 +32,7 @@ serve(async (req) => {
     // If test mode, send to test email only
     if (testMode && testEmail) {
       const emailResponse = await resend.emails.send({
-        from: "Zion Marketplace <newsletter@zion.com>",
+        from: "Zion Marketplace <newsletter@ziontechgroup.com>",
         to: [testEmail],
         subject: `[TEST] ${subject}`,
         html: body,

@@ -80,7 +80,7 @@ export default function Index() {
         title={t("home.seo_title")} 
         description={t("home.seo_description")} 
         keywords={t("home.seo_keywords")}
-        canonical="https://zion.com/"
+        canonical="https://ziontechgroup.com/"
       />
       <Header />
       <HeroSection />
