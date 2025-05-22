@@ -125,3 +125,13 @@ export {
   ToastClose,
   ToastAction,
 }
+
+// Add useToast hook export
+export function useToast() {
+  return {
+    toast: (props: ToastProps) => {
+      // Implementation of toast functionality
+      console.log('Toast:', props)
+    }
+  }
+}
