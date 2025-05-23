@@ -31,6 +31,7 @@ import Categories from './pages/Categories';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/talent" element={<TalentDirectory />} />
           <Route path="/talents" element={<TalentsPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/equipment" element={<EquipmentPage />} />
           <Route path="/analytics" element={<Analytics />} />
