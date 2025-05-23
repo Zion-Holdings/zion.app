@@ -101,7 +101,7 @@ export const safeFetch: typeof fetch = async (input, init) => {
   // If all retries failed, throw a user-friendly error
   throw new Error(
     lastError?.message === 'Failed to fetch'
-      ? 'Unable to connect to Supabase. Please check your internet connection.'
+      ? 'Failed to connect to Supabase'
       : lastError?.message || 'An unexpected error occurred'
   );
 };
