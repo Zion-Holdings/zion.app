@@ -9,14 +9,14 @@ import PostCard from "@/components/community/PostCard";
 import { ForumPost, ForumCategoryInfo } from "@/types/community";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/hooks/useAuth";
-import { 
-  MessageSquare, 
-  Briefcase, 
-  Code, 
-  FileText, 
-  Megaphone, 
-  Search 
-} from "lucide-react";
+import {
+  MessageSquare,
+  Briefcase,
+  Code,
+  FileText,
+  Megaphone,
+  Search
+} from "@/components/icons";
 
 // Mock category data
 const categoriesInfo: Record<string, ForumCategoryInfo> = {
