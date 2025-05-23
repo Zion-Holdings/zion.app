@@ -1,11 +1,19 @@
 
 import type { UserProfile } from "@/types/auth";
-import type { User } from "@supabase/supabase-js";
+
+// We cannot rely on the Supabase SDK types here because the project
+// declares `@supabase/supabase-js` as an untyped external module. Define
+// a minimal user shape that includes only the properties we actually use
+// in this file.
+export interface SupabaseUser {
+  id: string;
+  email?: string | null;
+}
 
 /**
  * Maps Supabase profile data to our app's user model
  */
-export function mapProfileToUser(user: User, profile: any): UserProfile {
+export function mapProfileToUser(user: SupabaseUser, profile: any): UserProfile {
   return {
     id: user.id,
     email: user.email || "",
