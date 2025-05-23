@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -30,7 +29,6 @@ interface Listing {
 interface CategoryListingPageProps {
   title: string;
   description: string;
-  categorySlug: string;
   listings: Listing[];
   sortOptions?: { label: string; value: string }[];
   filterOptions?: { label: string; value: string }[];
@@ -38,8 +36,7 @@ interface CategoryListingPageProps {
 
 export function CategoryListingPage({ 
   title, 
-  description, 
-  categorySlug,
+  description,
   listings: initialListings,
   sortOptions = [
     { label: 'Newest First', value: 'newest' },
@@ -118,7 +115,7 @@ export function CategoryListingPage({
                   type="text"
                   placeholder="Search listings..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
                   className="pl-10 bg-zion-blue border border-zion-blue-light text-white"
                 />
               </div>

@@ -1,11 +1,9 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { ChatMessage } from './ChatMessage';
 import { ChatInput } from './ChatInput';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export interface Message {
   id: string;
@@ -40,7 +38,7 @@ export function ChatAssistant({
   contextHeader
 }: ChatAssistantProps) {
   const [messages, setMessages] = useState<Message[]>(initialMessages);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
   
   useEffect(() => {
     if (initialMessages.length > 0) {
