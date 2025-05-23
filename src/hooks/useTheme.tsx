@@ -1,10 +1,6 @@
 
-import React from 'react';
-
-// This is a simplified version of the theme hook for offline development
-export const useTheme = () => {
-  return {
-    theme: "dark",
-    setTheme: (theme: string) => console.log(`Theme would change to: ${theme}`)
-  };
-};
+// Re-export the theme hook from the shared ThemeProvider so that any component
+// importing `@/hooks/useTheme` receives the real implementation.  This allows
+// the ModeToggle and support components to correctly toggle between light and
+// dark modes.
+export { useTheme } from "@/components/ThemeProvider";
