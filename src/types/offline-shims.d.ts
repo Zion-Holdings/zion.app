@@ -4,7 +4,7 @@ declare module 'react' {
   export function useRef<T>(initialValue: T | null): { current: T | null };
   export const useEffect: any;
   export function useState<T>(
-    initialState: T | (() => T)
+    initialState: T | (() => T),
   ): [T, (value: T | ((prev: T) => T)) => void];
   export function createContext<T>(defaultValue: T): any;
   export function useContext<T>(context: any): T;
