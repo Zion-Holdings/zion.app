@@ -13,7 +13,7 @@ export const useNotifications = (): NotificationContextType => {
   if (!context) {
     throw new Error('useNotifications must be used within a NotificationProvider');
   }
-  return context;
+  return context!;
 };
 
 export const NotificationProvider = ({ children }: { children: ReactNode }): JSX.Element => {
