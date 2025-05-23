@@ -36,12 +36,18 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
       try {
         // Get the current hostname, fallback to localhost if not available
         const hostname = window.location.hostname || 'localhost';
+        // Some dev hosts (e.g. webcontainer.io) generate long ephemeral
+        // subdomains that our edge function does not recognise. In those cases
+        // fall back to localhost so the function returns the default tenant.
+        const sanitizedHostname = /webcontainer-api\.io$/.test(hostname)
+          ? 'localhost'
+          : hostname;
         const functionName = 'tenant-detector';
         
         // Build the query parameters
-        const params = externalSubdomain 
+        const params = externalSubdomain
           ? `?subdomain=${encodeURIComponent(externalSubdomain)}`
-          : `?host=${encodeURIComponent(hostname)}`;
+          : `?host=${encodeURIComponent(sanitizedHostname)}`;
 
         const { data, error: functionError } = await supabase.functions.invoke(
           `${functionName}${params}`,
