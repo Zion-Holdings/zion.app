@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { AppLayout } from "@/components/layout/AppLayout";
+import { AppLayout } from "@/layout/AppLayout";
 import { ITServicePricingTable } from "@/components/services/ITServicePricingTable";
 import { GlobalServiceSection } from "@/components/GlobalServiceSection";
 import { QuoteFormSection } from "@/components/QuoteFormSection";

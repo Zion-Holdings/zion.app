@@ -7,7 +7,7 @@ import { HelpCategoryList } from "./HelpCategoryList";
 import { HelpArticleList } from "./HelpArticleList";
 import { HelpArticleView } from "./HelpArticleView";
 import { HELP_CATEGORIES } from "./help-content";
-import { AppLayout } from "@/components/layout/AppLayout";
+import { AppLayout } from "@/layout/AppLayout";
 import { Search } from "lucide-react";
 
 export default function HelpCenter() {

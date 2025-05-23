@@ -11,7 +11,7 @@ import { toast } from "@/components/ui/use-toast";
 import z from "zod";
 import { ChatAssistant } from "@/components/ChatAssistant";
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
-import { AppLayout } from "@/components/layout/AppLayout";
+import { AppLayout } from "@/layout/AppLayout";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
