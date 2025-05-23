@@ -19,6 +19,14 @@ import {
   DeveloperRoutes
 } from './routes';
 import Home from './pages/Home';
+import AIMatcherPage from './pages/AIMatcher';
+import TalentDirectory from './pages/TalentDirectory';
+import TalentsPage from './pages/TalentsPage';
+import ServicesPage from './pages/ServicesPage';
+import EquipmentPage from './pages/EquipmentPage';
+import Analytics from './pages/Analytics';
+import MobileLaunchPage from './pages/MobileLaunchPage';
+import CommunityPage from './pages/CommunityPage';
 
 const App = () => {
   return (
@@ -26,6 +34,14 @@ const App = () => {
       <ThemeProvider defaultTheme="dark">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/match" element={<AIMatcherPage />} />
+          <Route path="/talent" element={<TalentDirectory />} />
+          <Route path="/talents" element={<TalentsPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/equipment" element={<EquipmentPage />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/mobile-launch" element={<MobileLaunchPage />} />
+          <Route path="/community" element={<CommunityPage />} />
           <Route path="/auth/*" element={<AuthRoutes />} />
           <Route path="/dashboard/*" element={<DashboardRoutes />} />
           <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
