@@ -1,4 +1,5 @@
 import * as React from "react"
+import type { CSSProperties } from "react"
 import * as RechartsPrimitive from "recharts"
 import { useReactId } from "@/hooks/useReactId"
 
@@ -216,12 +217,12 @@ const ChartTooltipContent = React.forwardRef<
                               "my-0.5": nestLabel && indicator === "dashed",
                             }
                           )}
-                          style={
-                            {
-                              "--color-bg": indicatorColor,
-                              "--color-border": indicatorColor,
-                            } as React.CSSProperties
-                          }
+                            style={
+                              {
+                                "--color-bg": indicatorColor,
+                                "--color-border": indicatorColor,
+                              } as CSSProperties
+                            }
                         />
                       )
                     )}

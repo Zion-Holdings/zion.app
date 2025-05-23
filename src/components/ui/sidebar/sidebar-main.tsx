@@ -1,5 +1,6 @@
 
 import * as React from "react"
+import type { CSSProperties } from "react"
 import { Sheet, SheetContent } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
 import { useSidebar } from "./sidebar-context"
@@ -39,7 +40,7 @@ export const Sidebar = React.forwardRef<HTMLDivElement, SidebarProps>((props, re
           style={
             {
               "--sidebar-width": "18rem",
-            } as React.CSSProperties
+            } as CSSProperties
           }
           side={props.side}
         >
