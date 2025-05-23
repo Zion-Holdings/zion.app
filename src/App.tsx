@@ -27,6 +27,7 @@ import EquipmentPage from './pages/EquipmentPage';
 import Analytics from './pages/Analytics';
 import MobileLaunchPage from './pages/MobileLaunchPage';
 import CommunityPage from './pages/CommunityPage';
+import Categories from './pages/Categories';
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/talent" element={<TalentDirectory />} />
           <Route path="/talents" element={<TalentsPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/categories" element={<Categories />} />
           <Route path="/equipment" element={<EquipmentPage />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/mobile-launch" element={<MobileLaunchPage />} />
