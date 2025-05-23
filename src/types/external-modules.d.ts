@@ -47,6 +47,7 @@ declare module 'lucide-react' {
   export const Badge: LucideIcon;
   export const BadgeCheck: LucideIcon;
   export const BadgeDollarSign: LucideIcon;
+  export const BadgePlus: LucideIcon;
   export const Ban: LucideIcon;
   export const BarChart: LucideIcon;
   export const BarChart2: LucideIcon;
