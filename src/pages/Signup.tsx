@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { useForm, type UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { User, Mail, Lock, Eye, EyeOff, Facebook, Twitter } from "lucide-react";
@@ -50,7 +50,7 @@ export default function Signup() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Initialize react-hook-form
-  const form = useForm<SignupFormValues>({
+  const form = useForm({
     resolver: zodResolver(signupSchema),
     defaultValues: {
       displayName: "",
@@ -59,7 +59,7 @@ export default function Signup() {
       confirmPassword: "",
       termsAccepted: false,
     },
-  });
+  }) as UseFormReturn<SignupFormValues>;
 
   // Form submission handler
   const onSubmit = async (data: SignupFormValues) => {
