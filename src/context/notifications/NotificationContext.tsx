@@ -21,7 +21,7 @@ const NotificationContext = createContext<NotificationContextType>(
   defaultContext
 );
 
-export const useNotifications = () => {
+export const useNotifications = (): NotificationContextType => {
   const context = useContext(NotificationContext);
   if (!context) {
     throw new Error('useNotifications must be used within a NotificationProvider');
@@ -29,7 +29,7 @@ export const useNotifications = () => {
   return context;
 };
 
-export const NotificationProvider = ({ children }: { children: ReactNode }) => {
+export const NotificationProvider = ({ children }: { children: ReactNode }): JSX.Element => {
   const { user } = useAuth();
   const notificationOps = useNotificationOperations(user?.id);
   
