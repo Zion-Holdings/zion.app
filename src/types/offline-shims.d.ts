@@ -6,9 +6,11 @@ declare module 'react' {
   export function useRef<T>(initialValue: T | null): { current: T | null };
   export function useRef<T = undefined>(initialValue?: T): { current: T | undefined };
   export const useEffect: any;
-  export function useState<T>(
-    initialState: T | (() => T),
-  ): [T, (value: T | ((prev: T) => T)) => void];
+  export type Dispatch<A> = (value: A) => void;
+  export type SetStateAction<S> = S | ((prevState: S) => S);
+  export function useState<S>(
+    initialState: S | (() => S)
+  ): [S, Dispatch<SetStateAction<S>>];
   export function createContext<T>(defaultValue: T): any;
   export function useContext<T>(context: any): T;
   export const useMemo: any;
