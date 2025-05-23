@@ -30,7 +30,6 @@ import CommunityPage from './pages/CommunityPage';
 import Categories from './pages/Categories';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Signup from './pages/Signup';
 
 const App = () => {
   return (
