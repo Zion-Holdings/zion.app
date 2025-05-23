@@ -1,6 +1,8 @@
 import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { AppLayout } from "@/layout/AppLayout";
+import { useEffect, useState } from "react";
+import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
 
 // Sample datacenter equipment listings
 const EQUIPMENT_LISTINGS: ProductListing[] = [
@@ -233,8 +235,7 @@ const EQUIPMENT_LISTINGS: ProductListing[] = [
   {
     id: "tape-backup-library",
     title: "Automated Tape Backup Library",
-    description:
-      "Scalable tape library for reliable long‑term data archiving.",
+    description: "Scalable tape library for reliable long‑term data archiving.",
     category: "Storage",
     price: 7600,
     currency: "$",
@@ -341,18 +342,31 @@ const EQUIPMENT_FILTERS = [
   { label: "Security", value: "Security" },
   { label: "Management", value: "Management" },
   { label: "Infrastructure", value: "Infrastructure" },
+  { label: "AI", value: "AI" },
+  { label: "Robotics", value: "Robotics" },
 ];
 
 export default function EquipmentPage() {
+  const [listings, setListings] = useState<ProductListing[]>([
+    ...EQUIPMENT_LISTINGS,
+  ]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setListings((prev) => [...prev, generateRandomEquipment()]);
+    }, 120000); // add new equipment every 2 minutes
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <AppLayout>
       <DynamicListingPage
         title="Datacenter Equipment"
         description="Browse professional hardware for modern datacenter and network deployments."
         categorySlug="equipment"
-        listings={EQUIPMENT_LISTINGS}
+        listings={listings}
         categoryFilters={EQUIPMENT_FILTERS}
-        initialPrice={{ min: 400, max: 9000 }}
+        initialPrice={{ min: 400, max: 50000 }}
       />
     </AppLayout>
   );
