@@ -331,11 +331,13 @@ export const generateSearchSuggestions = (): SearchSuggestion[] => {
 };
 
 // Generate filter options for sidebar
-export const generateFilterOptions = (): FilterOptions => {
-  // Extract unique categories, locations, and availability options from listings
-  const productTypes = [...new Set(MARKETPLACE_LISTINGS.map(listing => listing.category))].sort();
-  const locations = [...new Set(MARKETPLACE_LISTINGS.map(listing => listing.location).filter(Boolean))].sort();
-  const availability = [...new Set(MARKETPLACE_LISTINGS.map(listing => listing.availability).filter(Boolean))].sort();
+export const generateFilterOptions = (
+  listings: ProductListing[] = MARKETPLACE_LISTINGS
+): FilterOptions => {
+  // Extract unique categories, locations, and availability options from the provided listings
+  const productTypes = [...new Set(listings.map(listing => listing.category))].sort();
+  const locations = [...new Set(listings.map(listing => listing.location).filter(Boolean))].sort();
+  const availability = [...new Set(listings.map(listing => listing.availability).filter(Boolean))].sort();
   
   return {
     productTypes: productTypes.map(type => ({
