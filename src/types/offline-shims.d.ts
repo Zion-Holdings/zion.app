@@ -22,6 +22,7 @@ declare module 'react' {
   ): any;
   export const Fragment: any;
   export const StrictMode: any;
+  export const Suspense: any;
   export const cloneElement: any;
   export type ReactNode = any;
   export type ReactElement = any;
