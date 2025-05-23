@@ -32,37 +32,55 @@ serve(async (req) => {
 
   try {
     const url = new URL(req.url);
-    const hostname = url.hostname;
+    const hostnameParam = url.searchParams.get('host');
+    const subdomainParam = url.searchParams.get('subdomain');
+    const forwardedHost = req.headers.get('x-forwarded-host');
+    const hostname =
+      hostnameParam ||
+      (forwardedHost ? forwardedHost.split(',')[0].split(':')[0] : undefined) ||
+      url.hostname;
     
     // Extract tenant info
     let tenantInfo: TenantInfo | null = null;
-    
-    // First try matching custom domain
-    let { data, error } = await supabase
-      .from('whitelabel_tenants')
-      .select('id, brand_name, subdomain, custom_domain, primary_color, logo_url, theme_preset')
-      .eq('custom_domain', hostname)
-      .eq('is_active', true)
-      .single();
-    
-    // If no match on custom domain, try subdomain
-    if (error || !data) {
-      // Extract subdomain part (first part of the domain)
-      const subdomain = hostname.split('.')[0];
-      if (subdomain && !['www', 'app', 'local', 'localhost'].includes(subdomain)) {
-        const subdomainResult = await supabase
-          .from('whitelabel_tenants')
-          .select('id, brand_name, subdomain, custom_domain, primary_color, logo_url, theme_preset')
-          .eq('subdomain', subdomain)
-          .eq('is_active', true)
-          .single();
-          
-        if (!subdomainResult.error) {
-          tenantInfo = subdomainResult.data as TenantInfo;
-        }
+
+    if (subdomainParam) {
+      const { data, error } = await supabase
+        .from('whitelabel_tenants')
+        .select('id, brand_name, subdomain, custom_domain, primary_color, logo_url, theme_preset')
+        .eq('subdomain', subdomainParam)
+        .eq('is_active', true)
+        .single();
+
+      if (!error) {
+        tenantInfo = data as TenantInfo;
       }
     } else {
-      tenantInfo = data as TenantInfo;
+      // First try matching custom domain
+      let { data, error } = await supabase
+        .from('whitelabel_tenants')
+        .select('id, brand_name, subdomain, custom_domain, primary_color, logo_url, theme_preset')
+        .eq('custom_domain', hostname)
+        .eq('is_active', true)
+        .single();
+
+      // If no match on custom domain, try subdomain
+      if (error || !data) {
+        const subdomain = hostname.split('.')[0];
+        if (subdomain && !['www', 'app', 'local', 'localhost'].includes(subdomain)) {
+          const subdomainResult = await supabase
+            .from('whitelabel_tenants')
+            .select('id, brand_name, subdomain, custom_domain, primary_color, logo_url, theme_preset')
+            .eq('subdomain', subdomain)
+            .eq('is_active', true)
+            .single();
+
+          if (!subdomainResult.error) {
+            tenantInfo = subdomainResult.data as TenantInfo;
+          }
+        }
+      } else {
+        tenantInfo = data as TenantInfo;
+      }
     }
 
     return new Response(
