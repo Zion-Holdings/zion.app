@@ -163,6 +163,7 @@ declare module 'lucide-react' {
   export const Quote: LucideIcon;
   export const RefreshCcw: LucideIcon;
   export const RefreshCw: LucideIcon;
+  export const Recycle: LucideIcon;
   export const RotateCcw: LucideIcon;
   export const Save: LucideIcon;
   export const Search: LucideIcon;
