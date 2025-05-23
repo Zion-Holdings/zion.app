@@ -3,7 +3,7 @@ import * as React from "react"
 import { Sheet, SheetContent } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
 import { useSidebar } from "./sidebar-context"
-import { SafeRef } from "../sidebar.types"
+import type { SafeRef } from "../sidebar.types"
 
 export interface SidebarProps extends React.ComponentProps<"div"> {
   side?: "left" | "right"
