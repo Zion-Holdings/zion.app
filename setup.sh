@@ -16,7 +16,8 @@ PM=${1:-npm}
 echo "Setting up the project with package manager: $PM"
 
 # Check if the package manager exists
-if ! command -v $PM &>/dev/null; then
+# Use POSIX compatible redirection to ensure portability
+if ! command -v "$PM" >/dev/null 2>&1; then
   echo "Error: $PM is not installed. Please install it first."
   exit 1
 fi
