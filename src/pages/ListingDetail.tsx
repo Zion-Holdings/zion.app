@@ -14,7 +14,9 @@ import { ProfileContact } from "@/components/profile/ProfileContact";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 export default function ListingDetail() {
-  const { id } = useParams<{ id: string }>();
+  // useParams may be untyped in this environment, so avoid passing a
+  // type argument and cast the result instead to prevent TS2347 errors.
+  const { id } = useParams() as { id?: string };
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
