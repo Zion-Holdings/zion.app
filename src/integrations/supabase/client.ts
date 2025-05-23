@@ -10,8 +10,8 @@ if (!supabaseUrl || !supabaseAnonKey) {
 // Utility to detect network connectivity. navigator.onLine is not reliable in
 // all environments, so we also try a small request with a short timeout.
 export const checkOnline = async (): Promise<boolean> => {
-  if (typeof navigator !== 'undefined' && !navigator.onLine) {
-    return false;
+  if (typeof navigator !== 'undefined' && 'onLine' in navigator) {
+    return navigator.onLine;
   }
   try {
     const controller = new AbortController();
