@@ -34,9 +34,12 @@ export const safeFetch: typeof fetch = async (input, init) => {
   }
   try {
     return await fetch(input, init);
-  } catch (err) {
+  } catch (err: any) {
     // Log the original error for debugging
     console.error('Supabase fetch failed:', err);
+    if (err instanceof TypeError && err.message === 'Failed to fetch') {
+      throw new Error('Failed to connect to Supabase. Please check your network connection or CORS settings.');
+    }
     throw new Error('Failed to connect to Supabase');
   }
 };
