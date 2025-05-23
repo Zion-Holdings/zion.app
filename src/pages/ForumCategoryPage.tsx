@@ -269,10 +269,11 @@ export default function ForumCategoryPage() {
   
   return (
     <AppLayout>
-      <SEO 
+      <SEO
         title={`${category.name} | Community Forum | Zion AI Marketplace`}
         description={category.description}
         keywords={`community, forum, ${category.id}, discussion, AI marketplace, questions, answers`}
+        canonical={`https://app.ziontechgroup.com/community/category/${categoryId}`}
       />
       
       <div className="container py-8">
