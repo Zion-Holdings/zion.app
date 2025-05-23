@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { AppHeader } from "@/components/layout/AppHeader"; 
+import { AppHeader } from "@/layout/AppHeader"; 
 import { Footer } from "@/components/Footer";
 import { JobsList } from "@/components/jobs/JobsList";
 import { Button } from "@/components/ui/button";

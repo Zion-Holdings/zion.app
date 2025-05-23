@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
 import { toast } from "@/hooks/use-toast";
 import { PaymentButton } from "@/components/transactions/PaymentButton";
-import { AppLayout } from "@/components/layout/AppLayout";
+import { AppLayout } from "@/layout/AppLayout";
 import { ProfileContact } from "@/components/profile/ProfileContact";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 

@@ -13,7 +13,7 @@ import { MARKETPLACE_LISTINGS, generateSearchSuggestions, generateFilterOptions 
 import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { SearchSuggestion } from "@/types/search";
-import { AppLayout } from "@/components/layout/AppLayout";
+import { AppLayout } from "@/layout/AppLayout";
 
 export default function Marketplace() {
   const navigate = useNavigate();

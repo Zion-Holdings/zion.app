@@ -1,6 +1,6 @@
 
 import React from "react";
-import { AppLayout } from "@/components/layout/AppLayout";
+import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 import { MobileAppHero } from "@/components/mobile-app/MobileAppHero";
 import { AppFeatures } from "@/components/mobile-app/AppFeatures";

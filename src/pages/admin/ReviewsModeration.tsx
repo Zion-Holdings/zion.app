@@ -1,5 +1,5 @@
 
-import { AppHeader } from "@/components/layout/AppHeader";
+import { AppHeader } from "@/layout/AppHeader";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ReviewsModerationTable } from "@/components/admin/reviews/ReviewsModerationTable";

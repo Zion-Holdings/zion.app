@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 import { UserMenu } from './UserMenu';
 import { LanguageSelector } from './LanguageSelector';
-import { MainNavigation } from '../layout/MainNavigation';
+import { MainNavigation } from '@/layout/MainNavigation';
 import { useAuth } from '@/hooks/useAuth';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";

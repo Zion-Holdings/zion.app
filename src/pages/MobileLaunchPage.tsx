@@ -1,7 +1,7 @@
 
 import React from "react";
 import { SEO } from "@/components/SEO";
-import { AppLayout } from "@/components/layout/AppLayout";
+import { AppLayout } from "@/layout/AppLayout";
 import { MobileLaunchHero } from "@/components/mobile-app/MobileLaunchHero";
 import { MobileFeatureShowcase } from "@/components/mobile-app/MobileFeatureShowcase";
 import { AppTestimonials } from "@/components/mobile-app/AppTestimonials";

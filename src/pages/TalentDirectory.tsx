@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppLayout } from "@/components/layout/AppLayout";
+import { AppLayout } from "@/layout/AppLayout";
 import { TalentGrid } from "@/components/talent/TalentGrid";
 import { FilterSidebar } from "@/components/talent/FilterSidebar";
 import { TalentResults } from "@/components/talent/TalentResults";

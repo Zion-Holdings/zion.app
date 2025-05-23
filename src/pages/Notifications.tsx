@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { AppHeader } from "@/components/layout/AppHeader";
+import { AppHeader } from "@/layout/AppHeader";
 import { Footer } from "@/components/Footer";
 import { useNotifications } from "@/context/notifications/NotificationContext";
 import {
