@@ -4,7 +4,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useNotificationOperations } from './useNotificationOperations';
 import { NotificationContextType } from './types';
 
-const NotificationContext = createContext<NotificationContextType>({
+const defaultContext: NotificationContextType = {
   notifications: [],
   filteredNotifications: [],
   unreadCount: 0,
@@ -15,7 +15,11 @@ const NotificationContext = createContext<NotificationContextType>({
   dismissNotification: async () => {},
   setFilter: () => {},
   fetchNotifications: async () => {},
-});
+};
+
+const NotificationContext = createContext<NotificationContextType>(
+  defaultContext
+);
 
 export const useNotifications = () => {
   const context = useContext(NotificationContext);
