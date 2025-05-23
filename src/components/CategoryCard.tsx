@@ -1,13 +1,12 @@
-
+import React from "react";
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
 import { slugify } from "@/lib/slugify";
 import { Link } from "react-router-dom";
 
 interface CategoryCardProps {
   title: string;
   description: string;
-  icon: ReactNode | string;
+  icon: React.ReactNode | string;
   /**
    * Optional color to use for the icon. If not provided the default cyan
    * accent colour is used. Previously this prop was ignored which meant

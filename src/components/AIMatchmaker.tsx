@@ -16,7 +16,7 @@ interface AIMatchmakerProps {
 export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIMatchmakerProps) {
   const [query, setQuery] = useState("");
   const [isMatchmaking, setIsMatchmaking] = useState(false);
-  const [matches, setMatches] = useState<MatchResult[]>([]);
+  const [matches, setMatches] = useState([] as MatchResult[]);
   const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearch = async () => {
