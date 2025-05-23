@@ -39,9 +39,10 @@ export function BlogSection() {
                   alt={post.title}
                   className="object-cover w-full h-full opacity-60 hover:opacity-80 transition-opacity duration-300"
                   loading="lazy"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "https://images.unsplash.com/photo-1581089778245-3ce67677f718?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3";
+                  onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                    const target = e.currentTarget as HTMLImageElement;
+                    target.src =
+                      "https://images.unsplash.com/photo-1581089778245-3ce67677f718?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3";
                   }}
                 />
                 <div className="absolute bottom-4 left-4 text-zion-purple/70 text-4xl font-bold">{index + 1}</div>
