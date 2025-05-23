@@ -9,8 +9,8 @@ if (!supabaseUrl || !supabaseAnonKey) {
 
 // Enhanced network connectivity check with multiple strategies
 export const checkOnline = async (): Promise<boolean> => {
-  // First check navigator.onLine
-  if (typeof navigator !== 'undefined' && !navigator.onLine) {
+  // If navigator is missing or reports offline, assume no connectivity
+  if (typeof navigator === 'undefined' || typeof navigator.onLine === 'undefined' || !navigator.onLine) {
     return false;
   }
 
@@ -76,6 +76,11 @@ export const safeFetch: typeof fetch = async (input, init) => {
       lastError = err;
       console.error(`Attempt ${attempt + 1} failed:`, err);
 
+      // If there's clearly no network connection, don't keep retrying
+      if (err.message === 'No internet connection') {
+        break;
+      }
+
       // Don't retry if it's a CORS error
       if (err.message.includes('CORS')) {
         throw new Error('CORS error: Unable to access Supabase. Please check your CORS configuration.');
@@ -100,8 +105,8 @@ export const safeFetch: typeof fetch = async (input, init) => {
 
   // If all retries failed, throw a user-friendly error
   throw new Error(
-    lastError?.message === 'Failed to fetch'
-      ? 'Failed to connect to Supabase'
+    lastError?.message === 'Failed to fetch' || lastError?.message === 'No internet connection'
+      ? 'Failed to connect to Supabase. This environment might be offline.'
       : lastError?.message || 'An unexpected error occurred'
   );
 };
