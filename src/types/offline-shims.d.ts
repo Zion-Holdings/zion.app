@@ -6,7 +6,11 @@ declare namespace JSX {
 }
 
 declare module 'react' {
-  // Basic placeholders to satisfy TypeScript when node modules are not installed
+  const React: any;
+  export default React;
+  export as namespace React;
+
+  // Basic placeholders for common React types
   export type ReactNode = any;
   export type ReactElement = any;
   export interface FC<P = {}> {
@@ -20,16 +24,23 @@ declare module 'react' {
   }
   export interface MouseEvent<T = Element> extends SyntheticEvent<T> {}
   export interface FormEvent<T = Element> extends SyntheticEvent<T> {}
+
+  // Hooks and utilities
+  export function useState<S>(initialState: S | (() => S)): [S, (value: S | ((prev: S) => S)) => void];
+  export function useEffect(effect: () => void | (() => void), deps?: any[]): void;
+  export function useRef<T>(initialValue: T | null): { current: T | null };
+  export function createContext<T>(defaultValue: T): any;
+  export function useContext<T>(context: any): T;
+  export function useCallback<F extends (...args: any[]) => any>(fn: F, deps: any[]): F;
+  export function useMemo<T>(factory: () => T, deps: any[]): T;
+  export function forwardRef<T, P = {}>(render: (props: P, ref: any) => any): any;
+
   export type LegacyRef<T> = any;
   export type Ref<T> = any;
   export type ElementRef<T> = any;
   export type ComponentPropsWithoutRef<T> = any;
-  export function useState<S>(initialState: S | (() => S)): [
-    S,
-    (value: S | ((prev: S) => S)) => void
-  ];
-  export function useEffect(effect: () => void | (() => void), deps?: any[]): void;
-  // JSX runtime fragments
+
+  // JSX runtime fragments and helpers
   export const Fragment: any;
   export const StrictMode: any;
   export function cloneElement(element: ReactElement, props?: any, ...children: ReactNode[]): ReactElement;
@@ -50,15 +61,7 @@ declare module 'react-hook-form' {
 }
 
 declare module 'zod' {
-  export namespace z {
-    function object(schema: any): any;
-    function string(): any;
-    function boolean(): any;
-    function number(): any;
-    function array(item: any): any;
-    type infer<T> = any;
-  }
-  export = z;
+  export const z: any;
 }
 
 declare module 'class-variance-authority' {
@@ -66,6 +69,9 @@ declare module 'class-variance-authority' {
 }
 
 declare module 'jspdf' {
-  export class jsPDF {}
+  export class jsPDF {
+    constructor(...args: any[]);
+    [key: string]: any;
+  }
   export default jsPDF;
 }
