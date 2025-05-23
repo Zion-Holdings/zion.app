@@ -8,7 +8,7 @@ import {
 export type ToastOptions = React.ComponentPropsWithoutRef<typeof Toast> & {
   description?: string;
   title?: string;
-  variant?: "default" | "destructive";
+  variant?: "default" | "destructive" | "success";
 };
 
 export const useToast = useToastHook;
@@ -33,7 +33,7 @@ baseToast.error = (error: string) => {
 };
 
 baseToast.success = (message: string) => {
-  baseToast({ title: "Success", description: message });
+  baseToast({ variant: "success", title: "Success", description: message });
 };
 
 // Export the callable toast function.
