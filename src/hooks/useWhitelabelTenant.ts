@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -35,41 +34,30 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
 
       try {
         const functionName = 'tenant-detector';
+        const params = externalSubdomain 
+          ? `?subdomain=${encodeURIComponent(externalSubdomain)}`
+          : `?host=${encodeURIComponent(window.location.hostname)}`;
 
-        if (externalSubdomain) {
-          const { data, error } = await supabase.functions.invoke(
-            `${functionName}?subdomain=${externalSubdomain}`,
-          );
-          if (!error) {
-            setTenant((data as any)?.tenant as WhitelabelTenant);
-          } else if (error.status === 404) {
-            setTenant(null);
-          } else {
-            console.error('Error loading tenant:', error);
-            setTenant(null);
-            setError(error.message || 'Failed to load tenant');
-          }
+        const { data, error } = await supabase.functions.invoke<{ tenant: WhitelabelTenant | null }>(
+          `${functionName}${params}`
+        );
+
+        if (error) {
+          console.error('Error loading tenant:', error);
+          setTenant(null);
+          setError(error.message || 'Failed to load tenant');
           return;
         }
 
-        const hostname = window.location.hostname;
-        const { data, error } = await supabase.functions.invoke(
-          `${functionName}?host=${hostname}`,
-        );
-
-        if (!error) {
-          setTenant((data as any)?.tenant as WhitelabelTenant);
-        } else if (error.status === 404) {
-          // Gracefully handle tenant not found without throwing an error
-          setTenant(null);
+        if (data?.tenant) {
+          setTenant(data.tenant);
         } else {
-          console.error('Error loading tenant:', error);
           setTenant(null);
-          setError(error.message || 'Tenant not found');
         }
       } catch (err: any) {
         console.error('Error loading tenant:', err);
-        setError(err.message);
+        setError(err.message || 'An unexpected error occurred');
+        setTenant(null);
       } finally {
         setIsLoading(false);
       }

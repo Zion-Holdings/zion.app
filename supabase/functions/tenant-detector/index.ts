@@ -1,4 +1,3 @@
-
 import { serve } from 'https://deno.land/std@0.208.0/http/server.ts';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.39.7';
 
@@ -12,21 +11,24 @@ interface TenantInfo {
   theme_preset: string;
 }
 
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  'Access-Control-Max-Age': '86400',
+};
+
 // Initialize Supabase client
 const supabaseUrl = Deno.env.get('SUPABASE_URL') || '';
 const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || '';
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
 serve(async (req) => {
-  // Handle CORS for preflight requests
+  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, {
       status: 204,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      },
+      headers: corsHeaders,
     });
   }
 
@@ -51,7 +53,11 @@ serve(async (req) => {
         .eq('is_active', true)
         .single();
 
-      if (!error) {
+      if (error) {
+        throw new Error(`Database error: ${error.message}`);
+      }
+
+      if (data) {
         tenantInfo = data as TenantInfo;
       }
     } else {
@@ -85,23 +91,28 @@ serve(async (req) => {
 
     return new Response(
       JSON.stringify({
-        tenant: tenantInfo
+        tenant: tenantInfo,
+        status: 'success'
       }),
       {
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
+          ...corsHeaders,
         },
       },
     );
   } catch (error) {
+    console.error('Tenant detector error:', error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ 
+        error: error.message,
+        status: 'error'
+      }),
       {
         status: 500,
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
+          ...corsHeaders,
         },
       },
     );
