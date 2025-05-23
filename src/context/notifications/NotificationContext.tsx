@@ -17,9 +17,7 @@ const defaultContext: NotificationContextType = {
   fetchNotifications: async () => {},
 };
 
-const NotificationContext = createContext<NotificationContextType>(
-  defaultContext
-);
+const NotificationContext = createContext<NotificationContextType>(defaultContext);
 
 export const useNotifications = (): NotificationContextType => {
   const context = useContext(NotificationContext);
