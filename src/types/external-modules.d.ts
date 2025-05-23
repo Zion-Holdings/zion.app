@@ -225,7 +225,10 @@ declare module '@radix-ui/react-tabs';
 declare module '@radix-ui/react-toast';
 declare module '@radix-ui/react-tooltip';
 declare module '@supabase/supabase-js';
-declare module 'class-variance-authority';
+declare module 'class-variance-authority' {
+  export function cva(...inputs: any[]): any
+  export type VariantProps<T extends (...args: any) => any> = any
+}
 declare module 'clsx' {
   export type ClassValue = any;
   export default function clsx(...classes: ClassValue[]): string;
