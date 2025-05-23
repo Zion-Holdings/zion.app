@@ -61,13 +61,10 @@ export default function ZionHireAI() {
               </div>
               <div className="relative hidden md:block">
                 <div className="absolute -top-8 -left-8 w-72 h-72 bg-zion-purple/20 rounded-full filter blur-3xl"></div>
-                <img 
-                  src="/images/zion-hire-ai-dashboard.png" 
-                  alt="Zion Hire AI Dashboard" 
+                <img
+                  src="https://placehold.co/600x400/192134/9b87f5?text=Zion+Hire+AI"
+                  alt="Zion Hire AI Dashboard"
                   className="relative z-10 rounded-lg shadow-xl"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://placehold.co/600x400/192134/9b87f5?text=Zion+Hire+AI";
-                  }}
                 />
               </div>
             </div>

@@ -19,12 +19,15 @@ export function ChatMessage({ message, isUser, timestamp }: ChatMessageProps) {
       <Avatar className="h-8 w-8">
         {isUser ? (
           <>
-            <AvatarImage src="/assets/default-avatar.png" alt="User" />
+            <AvatarImage src="https://i.pravatar.cc/40?img=1" alt="User" />
             <AvatarFallback>U</AvatarFallback>
           </>
         ) : (
           <>
-            <AvatarImage src="/assets/ai-assistant-avatar.png" alt="Zion Support" />
+            <AvatarImage
+              src="https://placehold.co/40x40?text=AI"
+              alt="Zion Support"
+            />
             <AvatarFallback className="bg-zion-purple text-white">Z</AvatarFallback>
           </>
         )}

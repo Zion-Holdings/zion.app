@@ -23,7 +23,7 @@ const mockPost: ForumPost = {
   content: "I've been working on fine-tuning models for specific tasks and wanted to share some approaches that have worked well for me...",
   authorId: "user1",
   authorName: "Alex Johnson",
-  authorAvatar: "/images/avatars/alex.jpg",
+  authorAvatar: "https://i.pravatar.cc/150?img=3",
   authorRole: "Verified Talent",
   categoryId: "ai-tools",
   tags: ["machine-learning", "fine-tuning", "gpt"],
