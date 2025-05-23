@@ -21,6 +21,7 @@ import Referrals from "@/pages/Referrals";
 import DeveloperPortal from "@/pages/DeveloperPortal";
 import WalletPage from "@/pages/Wallet";
 import ContractBuilder from "@/pages/ContractBuilder";
+import Projects from "@/pages/Projects";
 
 const DashboardRoutes = () => {
   return (
@@ -138,16 +139,24 @@ const DashboardRoutes = () => {
           </ProtectedRoute>
         } 
       />
-      <Route 
-        path="/hiring-tracker" 
+      <Route
+        path="/hiring-tracker"
         element={
           <ProtectedRoute>
             <HiringTracker />
           </ProtectedRoute>
-        } 
+        }
       />
-      <Route 
-        path="/portfolio-builder" 
+      <Route
+        path="/projects"
+        element={
+          <ProtectedRoute>
+            <Projects />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/portfolio-builder"
         element={
           <ProtectedRoute>
             <PortfolioBuilder />
