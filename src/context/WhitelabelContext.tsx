@@ -32,7 +32,8 @@ const defaultContext: WhitelabelContextType = {
 
 const WhitelabelContext = createContext<WhitelabelContextType>(defaultContext);
 
-export const useWhitelabel = () => useContext(WhitelabelContext);
+export const useWhitelabel = () =>
+  useContext<WhitelabelContextType>(WhitelabelContext);
 
 interface WhitelabelProviderProps {
   children: ReactNode;

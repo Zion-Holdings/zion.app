@@ -16,7 +16,6 @@ declare module 'sonner';
 declare module 'lucide-react';
 declare module 'child_process';
 declare module 'date-fns';
-declare module 'jspdf';
 declare module '@hookform/resolvers/zod';
 declare module '@radix-ui/react-accordion';
 declare module '@radix-ui/react-alert-dialog';
