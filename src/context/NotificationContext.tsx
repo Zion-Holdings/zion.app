@@ -37,7 +37,7 @@ interface NotificationContextType {
 }
 
 const NotificationContext = React.createContext<NotificationContextType | undefined>(
-  undefined as NotificationContextType | undefined
+  undefined
 );
 
 export const useNotifications = () => {
