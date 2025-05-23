@@ -152,6 +152,8 @@ declare module 'lucide-react' {
   export const Save: LucideIcon;
   export const Search: LucideIcon;
   export const SearchIcon: LucideIcon;
+  export const ScreenShare: LucideIcon;
+  export const ScreenShareOff: LucideIcon;
   export const Send: LucideIcon;
   export const SendIcon: LucideIcon;
   export const Server: LucideIcon;
