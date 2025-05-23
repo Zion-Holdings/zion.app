@@ -1,6 +1,6 @@
 
 // Types used across fraud detection modules
-import { FraudFlag, FraudSeverity } from '@/types/fraud';
+import { FraudSeverity } from '@/types/fraud';
 
 export interface AnalysisResult {
   isSuspicious: boolean;

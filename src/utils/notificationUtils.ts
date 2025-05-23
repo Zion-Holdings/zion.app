@@ -25,6 +25,8 @@ export async function createNotification({
   actionUrl?: string | null;
   actionText?: string | null;
 }) {
+  void actionUrl;
+  void actionText;
   try {
     // Call the create_notification database function
     const { data, error } = await supabase.rpc('create_notification', {

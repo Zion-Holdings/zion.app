@@ -1,5 +1,4 @@
 
-import { supabase } from "@/integrations/supabase/client";
 
 // Define types for the pricing recommendation
 export interface PricingSuggestion {

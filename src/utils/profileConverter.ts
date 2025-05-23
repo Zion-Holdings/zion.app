@@ -20,7 +20,7 @@ export function convertProfileToTalentProfile(profile: ProfileData | any): Talen
     summary: profile.bio?.substring(0, 150),
     profile_picture_url: profile.avatarUrl,
     years_experience: 3, // Default value
-    skills: profile.skills?.map((skill) => skill.name) || [],
+    skills: profile.skills?.map((skill: { name: string }) => skill.name) || [],
     availability_type: profile.availability?.status === 'available' ? 'full_time' :
                       profile.availability?.status === 'limited' ? 'part_time' : 'unavailable',
     timezone: 'UTC',
