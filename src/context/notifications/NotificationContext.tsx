@@ -4,16 +4,33 @@ import { useAuth } from '@/hooks/useAuth';
 import { useNotificationOperations } from './useNotificationOperations';
 import { NotificationContextType } from './types';
 
-const NotificationContext = createContext<NotificationContextType | undefined>(
-  undefined
+// Default context used when React type definitions are missing. Providing a
+// fully-typed object here avoids TypeScript errors that occur when an untyped
+// `createContext` call returns `{}` instead of the expected shape.
+const defaultContext: NotificationContextType = {
+  notifications: [],
+  filteredNotifications: [],
+  unreadCount: 0,
+  loading: false,
+  filter: 'all',
+  markAsRead: async () => {},
+  markAllAsRead: async () => {},
+  dismissNotification: async () => {},
+  setFilter: () => {},
+  fetchNotifications: async () => {},
+};
+
+// Cast the default context value to avoid issues when React types are missing.
+const NotificationContext = createContext(
+  defaultContext as NotificationContextType
 );
 
 export const useNotifications = (): NotificationContextType => {
-  const context = useContext(NotificationContext);
+  const context = useContext(NotificationContext) as NotificationContextType;
   if (!context) {
     throw new Error('useNotifications must be used within a NotificationProvider');
   }
-  return context!;
+  return context;
 };
 
 export const NotificationProvider = ({ children }: { children: ReactNode }): JSX.Element => {
