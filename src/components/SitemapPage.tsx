@@ -6,6 +6,28 @@ import { ChevronRight } from 'lucide-react';
 import { SEO } from './SEO';
 import { AppLayout } from '@/layout/AppLayout';
 
+// Map sitemap paths to their actual routes in the application
+const pathMap: Record<string, string> = {
+  '/about': '/content/about',
+  '/blog': '/content/blog',
+  '/careers': '/content/careers',
+  '/green-it': '/content/green-it',
+  '/sitemap-page': '/content/sitemap-page',
+  '/talent-onboarding': '/auth/talent-onboarding',
+  '/forgot-password': '/auth/forgot-password',
+  '/signup/talent': '/auth/signup/talent',
+  '/signup/client': '/auth/signup/client',
+  '/talent-dashboard': '/dashboard/talent-dashboard',
+  '/client-dashboard': '/dashboard/client-dashboard',
+  '/hiring-tracker': '/dashboard/hiring-tracker',
+  '/messages': '/dashboard/messages',
+  '/notifications': '/dashboard/notifications',
+  '/project/:projectId/room': '/dashboard/project/:projectId/room',
+  '/post-job': '/marketplace/post-job',
+};
+
+const resolvePath = (path: string): string => pathMap[path] ?? path;
+
 export const SitemapPage: React.FC = () => {
   return (
     <AppLayout>
@@ -27,8 +49,8 @@ export const SitemapPage: React.FC = () => {
                 .filter(route => !route.requiredAuth)
                 .map(route => (
                   <li key={route.path}>
-                    <Link 
-                      to={route.path} 
+                    <Link
+                      to={resolvePath(route.path)}
                       className="flex items-center hover:text-zion-purple"
                     >
                       <ChevronRight className="h-4 w-4 mr-2" />
@@ -52,8 +74,8 @@ export const SitemapPage: React.FC = () => {
                 )
                 .map(route => (
                   <li key={route.path}>
-                    <Link 
-                      to={route.path} 
+                    <Link
+                      to={resolvePath(route.path)}
                       className="flex items-center hover:text-zion-purple"
                     >
                       <ChevronRight className="h-4 w-4 mr-2" />
@@ -77,8 +99,8 @@ export const SitemapPage: React.FC = () => {
                 )
                 .map(route => (
                   <li key={route.path}>
-                    <Link 
-                      to={route.path} 
+                    <Link
+                      to={resolvePath(route.path)}
                       className="flex items-center hover:text-zion-purple"
                     >
                       <ChevronRight className="h-4 w-4 mr-2" />
@@ -102,8 +124,8 @@ export const SitemapPage: React.FC = () => {
                 )
                 .map(route => (
                   <li key={route.path}>
-                    <Link 
-                      to={route.path} 
+                    <Link
+                      to={resolvePath(route.path)}
                       className="flex items-center hover:text-zion-purple"
                     >
                       <ChevronRight className="h-4 w-4 mr-2" />
@@ -126,8 +148,8 @@ export const SitemapPage: React.FC = () => {
                 )
                 .map(route => (
                   <li key={route.path}>
-                    <Link 
-                      to={route.path} 
+                    <Link
+                      to={resolvePath(route.path)}
                       className="flex items-center hover:text-zion-purple"
                     >
                       <ChevronRight className="h-4 w-4 mr-2" />
