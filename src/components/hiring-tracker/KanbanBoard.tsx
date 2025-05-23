@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import type { DropResult } from "react-beautiful-dnd";
 import { useJobApplications } from "@/hooks/useJobApplications";
 import { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,6 +9,17 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { toast } from "@/hooks/use-toast";
 import { KanbanColumn } from "./KanbanColumn";
 import { useIsMobile } from "@/hooks/use-mobile";
+
+interface DnDLocation {
+  droppableId: string;
+  index: number;
+}
+
+interface DropResult {
+  draggableId: string;
+  source: DnDLocation;
+  destination?: DnDLocation | null;
+}
 
 // Define the kanban board columns based on application statuses
 const COLUMNS = [
