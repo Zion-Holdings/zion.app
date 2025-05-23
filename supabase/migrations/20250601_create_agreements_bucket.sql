@@ -1,7 +1,8 @@
 
 -- Create a storage bucket for agreement files
 INSERT INTO storage.buckets (id, name, public)
-VALUES ('agreements', 'Agreements', false);
+VALUES ('agreements', 'Agreements', false)
+ON CONFLICT (id) DO NOTHING;
 
 -- Set up RLS policy for the agreements bucket to ensure only authenticated users can upload
 CREATE POLICY "Allow authenticated users to upload agreements" ON storage.objects
