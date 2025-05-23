@@ -33,7 +33,7 @@ const FormField = ({ ...props }: any) => {
 
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext) as FormFieldContextValue
-  const itemContext = React.useContext(FormItemContext)
+  const itemContext = React.useContext(FormItemContext) as FormItemContextValue | null
   const { getFieldState, formState } = useFormContext()
 
   const fieldState = getFieldState(fieldContext.name, formState)
@@ -46,7 +46,7 @@ const useFormField = () => {
     throw new Error("useFormField should be used within <FormItem>")
   }
 
-  const { id } = itemContext
+  const { id } = itemContext as FormItemContextValue
 
   return {
     id,
