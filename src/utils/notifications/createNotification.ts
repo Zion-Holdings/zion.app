@@ -15,6 +15,8 @@ export async function createNotification({
   actionUrl = null,
   actionText = null
 }: CreateNotificationParams): Promise<CreateNotificationResult> {
+  void actionUrl;
+  void actionText;
   try {
     // Call the create_notification database function
     const { data, error } = await supabase.rpc('create_notification', {

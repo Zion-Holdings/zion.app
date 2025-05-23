@@ -36,9 +36,9 @@ export function addSkillsSection(
   doc.setTextColor(colors.text);
   
   for (const [category, categorySkills] of Object.entries(skillsByCategory)) {
-    doc.setFont(undefined, 'bold');
+    doc.setFont('helvetica', 'bold');
     doc.text(category, 20, yPos);
-    doc.setFont(undefined, 'normal');
+    doc.setFont('helvetica', 'normal');
     
     const skillsText = categorySkills.map(skill => skill.name).join(', ');
     const skillLines = doc.splitTextToSize(skillsText, 160);
