@@ -54,7 +54,9 @@ import {
 } from "lucide-react";
 
 function ProjectDetailsContent() {
-  const { projectId } = useParams<{ projectId: string }>();
+  // useParams may be untyped in this environment, so avoid passing a
+  // type argument and cast the result instead to prevent TS2347 errors.
+  const { projectId } = useParams() as { projectId?: string };
   const { user } = useAuth();
   const navigate = useNavigate();
   const { getProjectById, updateProjectStatus } = useProjects();
