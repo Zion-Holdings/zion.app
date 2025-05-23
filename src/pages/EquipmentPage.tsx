@@ -20,7 +20,7 @@ const EQUIPMENT_LISTINGS: ProductListing[] = [
         "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=100&h=100",
     },
     images: [
-      "https://images.unsplash.com/photo-1554475901-4538ddfbccc8?auto=format&fit=crop&w=800&h=500",
+      "/images/equipment-placeholder.svg",
     ],
     createdAt: "2024-03-01T10:00:00.000Z",
     rating: 4.8,
@@ -40,7 +40,7 @@ const EQUIPMENT_LISTINGS: ProductListing[] = [
       id: "netwave",
     },
     images: [
-      "https://images.unsplash.com/photo-1587202372775-98926efae6e0?auto=format&fit=crop&w=800&h=500",
+      "/images/equipment-placeholder.svg",
     ],
     createdAt: "2024-03-05T12:30:00.000Z",
     rating: 4.7,
@@ -60,7 +60,7 @@ const EQUIPMENT_LISTINGS: ProductListing[] = [
       id: "powerhub",
     },
     images: [
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&h=500",
+      "/images/equipment-placeholder.svg",
     ],
     createdAt: "2024-02-18T09:15:00.000Z",
     rating: 4.9,
@@ -82,7 +82,7 @@ const EQUIPMENT_LISTINGS: ProductListing[] = [
         "https://images.unsplash.com/photo-1615938073495-85f5e52db08e?auto=format&fit=crop&w=100&h=100",
     },
     images: [
-      "https://images.unsplash.com/photo-1581091228900-2f56c3c2272b?auto=format&fit=crop&w=800&h=500",
+      "/images/equipment-placeholder.svg",
     ],
     createdAt: "2024-01-22T11:45:00.000Z",
     rating: 4.6,
@@ -102,7 +102,7 @@ const EQUIPMENT_LISTINGS: ProductListing[] = [
       id: "fiberlink",
     },
     images: [
-      "https://images.unsplash.com/photo-1587202372850-9dc0cbd9d0c9?auto=format&fit=crop&w=800&h=500",
+      "/images/equipment-placeholder.svg",
     ],
     createdAt: "2024-02-02T14:20:00.000Z",
     rating: 4.5,
@@ -124,7 +124,7 @@ const EQUIPMENT_LISTINGS: ProductListing[] = [
         "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&h=100",
     },
     images: [
-      "https://images.unsplash.com/photo-1534751516642-a1af1ef02604?auto=format&fit=crop&w=800&h=500",
+      "/images/equipment-placeholder.svg",
     ],
     createdAt: "2024-03-10T08:10:00.000Z",
     rating: 4.7,
