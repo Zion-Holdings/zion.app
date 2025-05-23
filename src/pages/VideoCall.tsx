@@ -9,7 +9,9 @@ import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
 export default function VideoCall() {
-  const { roomId } = useParams<{ roomId: string }>();
+  // useParams is typed as `any` in this environment due to missing type
+  // definitions, so avoid passing a type argument to prevent TS2347.
+  const { roomId } = useParams();
   const navigate = useNavigate();
   const [isJoining, setIsJoining] = useState(false);
   const [hasJoined, setHasJoined] = useState(false);
