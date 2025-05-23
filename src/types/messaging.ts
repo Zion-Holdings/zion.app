@@ -1,3 +1,4 @@
+import type { Dispatch, SetStateAction } from 'react';
 
 // Define the shape of a message
 export interface Message {
@@ -60,7 +61,11 @@ export interface MessagingContextType {
     contextData?: ConversationContextData
   ) => Promise<void>;
   markAsRead: (conversationId: string) => Promise<void>;
-  setActiveConversation: (conversation: Conversation) => void;
+  /**
+   * Set the currently active conversation. Passing `null` will clear the
+   * selection.
+   */
+  setActiveConversation: React.Dispatch<React.SetStateAction<Conversation | null>>;
   fetchConversations: () => Promise<void>;
   loadMessages: (conversationId: string) => Promise<void>;
 }
