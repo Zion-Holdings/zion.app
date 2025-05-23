@@ -235,7 +235,13 @@ declare module 'framer-motion';
 declare module 'i18next';
 declare module 'i18next-browser-languagedetector';
 declare module 'react-helmet-async';
-declare module 'react-hook-form';
+declare module 'react-hook-form' {
+  // Minimal generic typings to satisfy local usage without full type defs
+  export type UseFormReturn<TFieldValues extends Record<string, any> = Record<string, any>> = any;
+  export function useForm<TFieldValues extends Record<string, any> = Record<string, any>>(options?: any): UseFormReturn<TFieldValues>;
+  export function useFieldArray<TFieldValues extends Record<string, any> = Record<string, any>>(options: any): any;
+  export const Controller: any;
+}
 declare module 'react-i18next';
 declare module 'react-dom/client';
 declare module 'react-dom';
