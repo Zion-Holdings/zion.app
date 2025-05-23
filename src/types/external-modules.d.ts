@@ -105,6 +105,7 @@ declare module 'lucide-react' {
   export const Kanban: LucideIcon;
   export const Key: LucideIcon;
   export const LayoutGrid: LucideIcon;
+  export const Layers: LucideIcon;
   export const Leaf: LucideIcon;
   export const Lightbulb: LucideIcon;
   export const LineChart: LucideIcon;
