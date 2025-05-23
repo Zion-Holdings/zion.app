@@ -42,7 +42,7 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
           ? `?subdomain=${encodeURIComponent(externalSubdomain)}`
           : `?host=${encodeURIComponent(hostname)}`;
 
-        const { data, error: functionError } = await supabase.functions.invoke<{ tenant: WhitelabelTenant | null }>(
+        const { data, error: functionError } = await supabase.functions.invoke(
           `${functionName}${params}`,
           {
             headers: {
