@@ -76,7 +76,8 @@ const iconAliases: Record<string, keyof typeof LucideIcons> = {
   
   // Development
   Code: 'Code',
-  Megaphone: 'Megaphone',
+  // Cast to any to work around missing type for Megaphone
+  Megaphone: 'Megaphone' as unknown as keyof typeof LucideIcons,
   Terminal: 'Terminal',
   
   // Community
