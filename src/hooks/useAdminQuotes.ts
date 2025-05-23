@@ -3,7 +3,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { quoteRequestService } from '@/services/quoteRequestService';
 import type { QuoteRequest, QuoteStatus } from '@/types/quotes';
 import { useToast } from '@/components/ui/use-toast';
-import { DateRange } from 'react-day-picker';
+import type { DateRange } from 'react-day-picker';
 
 export const useAdminQuotes = () => {
   const { toast } = useToast();
