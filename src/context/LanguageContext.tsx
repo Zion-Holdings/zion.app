@@ -5,7 +5,7 @@ import { toast } from '../components/ui/use-toast';
 
 export type SupportedLanguage = 'en' | 'es' | 'pt' | 'ar';
 
-type LanguageContextType = {
+export type LanguageContextType = {
   currentLanguage: SupportedLanguage;
   changeLanguage: (lang: SupportedLanguage) => Promise<void>;
   isRTL: boolean;

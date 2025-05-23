@@ -10,12 +10,12 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '../components/ui/alert-dialog';
-import { useLanguage, SupportedLanguage } from '../context/LanguageContext';
+import { useLanguage, SupportedLanguage, LanguageContextType } from '../context/LanguageContext';
 
 export function LanguageDetectionPopup() {
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
-  const { changeLanguage, currentLanguage, supportedLanguages } = useLanguage();
+  const { changeLanguage, currentLanguage, supportedLanguages } = useLanguage() as LanguageContextType;
   const [detectedLanguage, setDetectedLanguage] = useState<SupportedLanguage | null>(null);
 
   useEffect(() => {
