@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Control, UseFormSetValue } from "react-hook-form";
+import { Control } from "react-hook-form";
 import { 
   FormField, 
   FormItem, 
@@ -15,7 +15,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 interface RateOptimizationSectionProps {
   control: Control<any>;
-  setValue: UseFormSetValue<any>;
+  setValue: (name: string, value: any) => void;
   skills: string[];
   yearsExperience: number;
   location?: string;
