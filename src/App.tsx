@@ -28,6 +28,7 @@ const Analytics = React.lazy(() => import('./pages/Analytics'));
 const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
 const CommunityPage = React.lazy(() => import('./pages/CommunityPage'));
 const Categories = React.lazy(() => import('./pages/Categories'));
+const PartnersPage = React.lazy(() => import('./pages/Partners'));
 const Login = React.lazy(() => import('./pages/Login'));
 const Signup = React.lazy(() => import('./pages/Signup'));
 const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
@@ -48,6 +49,7 @@ const baseRoutes = [
   { path: '/mobile-launch', element: <MobileLaunchPage /> },
   { path: '/open-app', element: <OpenAppRedirect /> },
   { path: '/community', element: <CommunityPage /> },
+  { path: '/partners', element: <PartnersPage /> },
 ];
 
 const App = () => {
