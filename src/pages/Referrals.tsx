@@ -8,7 +8,6 @@ import { ReferralTable } from '@/components/referrals/ReferralTable';
 import { RewardsCard } from '@/components/referrals/RewardsCard';
 import { ReferralGuide } from '@/components/referrals/ReferralGuide';
 import { ReferralLeaderboard } from '@/components/referrals/ReferralLeaderboard';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from '@/components/ui/button';
 import { toast } from '@/hooks/use-toast';
@@ -20,7 +19,6 @@ export default function ReferralsPage() {
   const { isAuthenticated } = useAuth();
   const {
     isLoading,
-    referralCode,
     referrals,
     rewards,
     stats,
