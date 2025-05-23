@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Loader2, Sparkles, Plus, Minus, Calendar } from 'lucide-react';
+import { Loader2, Sparkles, Plus, Calendar } from 'lucide-react';
 import { format, parseISO } from 'date-fns';
 import { MilestoneInput, GeneratedMilestone, useMilestoneGenerator } from '@/hooks/useMilestoneGenerator';
 import { Badge } from '@/components/ui/badge';
