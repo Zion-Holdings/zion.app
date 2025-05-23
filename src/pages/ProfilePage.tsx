@@ -22,7 +22,9 @@ import {
 } from "lucide-react";
 
 export default function ProfilePage() {
-  const { profileId } = useParams<{ profileId: string }>();
+  // useParams may be untyped in this environment, so avoid passing a
+  // type argument and cast the result instead to prevent TS2347 errors.
+  const { profileId } = useParams() as { profileId?: string };
   const [profileData, setProfileData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
