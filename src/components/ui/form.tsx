@@ -1,5 +1,6 @@
 import * as React from "react"
 import * as LabelPrimitive from "@radix-ui/react-label"
+import { useReactId } from "@/hooks/useReactId"
 import { Slot } from "@radix-ui/react-slot"
 import {
   Controller,
@@ -74,7 +75,7 @@ const FormItem = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
-  const id = React.useId()
+  const id = useReactId()
 
   return (
     <FormItemContext.Provider value={{ id }}>
