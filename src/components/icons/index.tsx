@@ -99,6 +99,7 @@ const iconAliases: Record<string, keyof typeof LucideIcons> = {
   BarChart: 'BarChart3',
   BookOpen: 'BookOpen',
   Key: 'Key',
+  Tag: 'Tag',
 };
 
 type IconProps = LucideIcons.LucideProps;
