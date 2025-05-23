@@ -36,18 +36,18 @@ const updatePasswordSchema = z
     path: ["confirmPassword"],
   });
 
-type UpdatePasswordFormValues = z.infer<typeof updatePasswordSchema>;
+type UpdatePasswordFormValues = any;
 
 export default function UpdatePassword() {
   const [isLoading, setIsLoading] = useState(false);
-  const [accessToken, setAccessToken] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [accessToken, setAccessToken] = useState(null as string | null);
+  const [error, setError] = useState(null as string | null);
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   // Initialize react-hook-form
-  const form = useForm<UpdatePasswordFormValues>({
+  const form = useForm({
     resolver: zodResolver(updatePasswordSchema),
     defaultValues: {
       password: "",

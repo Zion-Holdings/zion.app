@@ -6,22 +6,62 @@ declare namespace JSX {
 }
 
 declare module 'react' {
-  export type ReactNode = any;
-  export interface ReactElement {}
-  export interface FC<P = {}> {
-    (props: P & { children?: ReactNode }): ReactElement | null;
+  export as namespace React;
+
+  namespace React {
+    type ReactNode = any;
+    interface ReactElement {}
+
+    interface FC<P = {}> {
+      (props: P & { children?: ReactNode }): ReactElement | null;
+    }
+
+    interface SyntheticEvent<T = Element> { target: T; preventDefault(): void; }
+    interface ChangeEvent<T = Element> extends SyntheticEvent<T> {}
+    interface KeyboardEvent<T = Element> extends SyntheticEvent<T> {}
+    interface MouseEvent<T = Element> extends SyntheticEvent<T> {}
+    interface FormEvent<T = Element> extends SyntheticEvent<T> {}
+
+    type LegacyRef<T> = any;
+    type Ref<T> = any;
+    type ElementRef<T> = any;
+    type ComponentPropsWithoutRef<T> = any;
+    type Dispatch<A> = (value: A) => void;
+    type SetStateAction<S> = S | ((prev: S) => S);
+    type MutableRefObject<T> = { current: T };
+
+    function useState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>];
+    function useEffect(effect: () => void | (() => void), deps?: any[]): void;
+    function useRef<T>(initialValue: T | null): MutableRefObject<T | null>;
+    function createContext<T>(defaultValue: T): any;
+    function useContext<T>(context: any): T;
+
+    const Fragment: any;
   }
-  export interface SyntheticEvent<T = Element> { target: T; preventDefault(): void; }
-  export interface ChangeEvent<T = Element> extends SyntheticEvent<T> {}
-  export interface KeyboardEvent<T = Element> extends SyntheticEvent<T> {}
-  export interface MouseEvent<T = Element> extends SyntheticEvent<T> {}
-  export interface FormEvent<T = Element> extends SyntheticEvent<T> {}
-  export type LegacyRef<T> = any;
-  export type Ref<T> = any;
-  export type ElementRef<T> = any;
-  export type ComponentPropsWithoutRef<T> = any;
-  export function useState<S>(initialState: S | (() => S)): [S, (value: S) => void];
-  export function useEffect(effect: () => void | (() => void), deps?: any[]): void;
+
+  export import ReactNode = React.ReactNode;
+  export import ReactElement = React.ReactElement;
+  export import FC = React.FC;
+  export import SyntheticEvent = React.SyntheticEvent;
+  export import ChangeEvent = React.ChangeEvent;
+  export import KeyboardEvent = React.KeyboardEvent;
+  export import MouseEvent = React.MouseEvent;
+  export import FormEvent = React.FormEvent;
+  export import LegacyRef = React.LegacyRef;
+  export import Ref = React.Ref;
+  export import ElementRef = React.ElementRef;
+  export import ComponentPropsWithoutRef = React.ComponentPropsWithoutRef;
+  export import Dispatch = React.Dispatch;
+  export import SetStateAction = React.SetStateAction;
+  export import MutableRefObject = React.MutableRefObject;
+  export import useState = React.useState;
+  export import useEffect = React.useEffect;
+  export import useRef = React.useRef;
+  export import createContext = React.createContext;
+  export import useContext = React.useContext;
+  export import Fragment = React.Fragment;
+
+  export = React;
 }
 
 declare module 'react/jsx-runtime' {
@@ -39,9 +79,8 @@ declare module 'react-hook-form' {
 }
 
 declare module 'zod' {
-  export namespace z {
-    type infer<T> = any;
-  }
+  export type infer<T> = any;
+  const z: any;
   export = z;
 }
 
@@ -50,5 +89,6 @@ declare module 'class-variance-authority' {
 }
 
 declare module 'jspdf' {
-  export default class jsPDF {}
+  export class jsPDF {}
+  export default jsPDF;
 }
