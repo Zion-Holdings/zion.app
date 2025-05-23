@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
@@ -18,6 +18,9 @@ import {
   CommunityRoutes,
   DeveloperRoutes
 } from './routes';
+
+const lazy = React.lazy;
+const Suspense = React.Suspense;
 const Home = lazy(() => import('./pages/Home'));
 const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
