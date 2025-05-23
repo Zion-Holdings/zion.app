@@ -22,16 +22,12 @@ type ChartContextProps = {
   config: ChartConfig
 }
 
-const ChartContext = React.createContext<ChartContextProps | null>(null)
+const ChartContext = React.createContext<ChartContextProps>({
+  config: {},
+})
 
 function useChart(): ChartContextProps {
-  const context = React.useContext(ChartContext)
-
-  if (!context) {
-    throw new Error("useChart must be used within a <ChartContainer />")
-  }
-
-  return context
+  return React.useContext(ChartContext)
 }
 
 const ChartContainer = React.forwardRef<
