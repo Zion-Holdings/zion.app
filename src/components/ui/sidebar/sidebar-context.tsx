@@ -10,7 +10,7 @@ const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 
 const SidebarContext = React.createContext<SidebarContextType | null>(null)
 
-export function useSidebar() {
+export function useSidebar(): SidebarContextType {
   const context = React.useContext(SidebarContext)
   if (!context) {
     throw new Error("useSidebar must be used within a SidebarProvider.")
