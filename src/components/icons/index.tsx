@@ -195,6 +195,7 @@ export const {
   BarChart,
   BookOpen,
   Key,
+  Tag,
 } = iconExports;
 
 // Also export all original icons from lucide-react
