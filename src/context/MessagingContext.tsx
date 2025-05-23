@@ -20,8 +20,12 @@ const defaultContext: MessagingContextType = {
   loadMessages: async () => {}
 };
 
-// Create the context with a fully typed default value
-const MessagingContext = createContext<MessagingContextType>(defaultContext);
+// "createContext" may be untyped if React type definitions are missing.
+// To avoid TS2347 when the definitions are unavailable, we cast the default
+// value instead of passing a generic type parameter directly.
+const MessagingContext = createContext(
+  defaultContext as MessagingContextType
+);
 
 // Hook for using the messaging context
 export function useMessaging(): MessagingContextType {
