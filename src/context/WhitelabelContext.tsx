@@ -30,10 +30,10 @@ const defaultContext: WhitelabelContextType = {
   tenant: null,
 };
 
-// Using the default context value avoids returning `{}` when the React type
-// definitions are missing. This ensures `useContext` always provides a fully
-// typed object and prevents compile errors about missing properties.
-const WhitelabelContext = createContext<WhitelabelContextType>(defaultContext);
+// The context may be undefined if the provider is not mounted.  By declaring
+// the generic as `WhitelabelContextType | null` we get proper type checking
+// without falling back to an empty object which triggers TS2740 errors.
+const WhitelabelContext = createContext<WhitelabelContextType | null>(null);
 
 export const useWhitelabel = (): WhitelabelContextType => {
   const context = useContext(WhitelabelContext);
