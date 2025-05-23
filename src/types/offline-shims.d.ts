@@ -24,11 +24,30 @@ declare module 'react' {
   export type Ref<T> = any;
   export type ElementRef<T> = any;
   export type ComponentPropsWithoutRef<T> = any;
+  export type ComponentProps<T> = any;
+  export type ComponentPropsWithRef<T> = any;
+  export type HTMLAttributes<T> = any;
+  export type ButtonHTMLAttributes<T> = any;
+  export type TextareaHTMLAttributes<T> = any;
+  export type ThHTMLAttributes<T> = any;
+  export type TdHTMLAttributes<T> = any;
   export function useState<S>(initialState: S | (() => S)): [
     S,
     (value: S | ((prev: S) => S)) => void
   ];
   export function useEffect(effect: () => void | (() => void), deps?: any[]): void;
+  export function useRef<T>(initialValue?: T): { current: T };
+  export function useMemo<T>(factory: () => T, deps: any[]): T;
+  export function useCallback<T extends (...args: any[]) => any>(fn: T, deps: any[]): T;
+  export function createContext<T>(defaultValue?: T): any;
+  export function useContext<T>(context: any): T;
+  export function forwardRef<T, P = {}>(render: (props: P, ref: any) => ReactElement | null):
+    (props: P & { ref?: any }) => ReactElement | null;
+  export const Children: {
+    toArray(children: ReactNode): ReactNode[];
+    map(children: ReactNode, fn: (child: ReactNode, index: number) => ReactNode): ReactNode[];
+  };
+  export function isValidElement(object: any): object is ReactElement;
   // JSX runtime fragments
   export const Fragment: any;
   export const StrictMode: any;
@@ -68,4 +87,18 @@ declare module 'class-variance-authority' {
 declare module 'jspdf' {
   export class jsPDF {}
   export default jsPDF;
+}
+
+declare module 'clsx' {
+  const clsx: (...classes: any[]) => string;
+  export default clsx;
+}
+
+declare module 'lucide-react' {
+  export type LucideIcon = any;
+}
+
+declare module '@supabase/supabase-js' {
+  export type User = any;
+  export interface SupabaseClient {}
 }
