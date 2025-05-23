@@ -16,12 +16,9 @@ declare module 'hoist-non-react-statics';
 declare module 'phoenix';
 declare module 'prop-types';
 declare module 'raf';
-declare module 'react';
 declare module 'react-beautiful-dnd';
-declare module 'react-dom';
 declare module 'react-redux';
 declare module 'semver';
 declare module 'ws';
 
 declare module 'vite/client';
-declare module 'react-router-dom';
