@@ -10,6 +10,7 @@ declare module 'react' {
   export function useContext<T>(context: any): T;
   export const useMemo: any;
   export const useCallback: any;
+  export function useId(): string;
   // Generic definition to allow usage like forwardRef<HTMLDivElement, Props>()
   export function forwardRef<T, P = {}>(
     render: (props: P, ref: Ref<T>) => ReactElement | null
