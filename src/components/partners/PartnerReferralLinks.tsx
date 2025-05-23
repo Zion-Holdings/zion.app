@@ -1,4 +1,3 @@
-
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -25,7 +24,7 @@ export function PartnerReferralLinks() {
     toast({
       title: "Link copied!",
       description: "The referral link has been copied to your clipboard",
-      variant: "success",
+      variant: "default"
     });
   };
   
