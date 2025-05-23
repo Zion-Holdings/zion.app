@@ -15,13 +15,13 @@ export function Footer() {
               The world's first free marketplace dedicated to high-tech and artificial intelligence.
             </p>
             <div className="flex space-x-4">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
+              <a href="https://twitter.com/lovable_dev" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
+              <a href="https://www.linkedin.com/company/zion-marketplace" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
+              <a href="https://www.facebook.com/zionmarketplace" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
@@ -72,9 +72,8 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Zion Tech Group. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link to="/privacy-policy" className="text-zion-slate hover:text-zion-cyan text-sm transition-colors">Privacy Policy</Link>
-              <Link to="/terms-of-service" className="text-zion-slate hover:text-zion-cyan text-sm transition-colors">Terms of Service</Link>
-              <Link to="/cookie-policy" className="text-zion-slate hover:text-zion-cyan text-sm transition-colors">Cookie Policy</Link>
+              <Link to="/privacy" className="text-zion-slate hover:text-zion-cyan text-sm transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="text-zion-slate hover:text-zion-cyan text-sm transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>
