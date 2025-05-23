@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import { supabase, supabaseUrl } from '@/integrations/supabase/client';
 
 export interface WhitelabelTenant {
   id: string;
@@ -34,55 +34,24 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
       setError(null);
 
       try {
-        // If subdomain is provided, fetch that specific tenant
+        const functionUrl = `${supabaseUrl}/functions/v1/tenant-detector`;
+
         if (externalSubdomain) {
-          const { data, error } = await supabase
-            .from('whitelabel_tenants')
-            .select('*')
-            .eq('subdomain', externalSubdomain)
-            .eq('is_active', true)
-            .single();
-
-          if (error) throw error;
-          setTenant(data as WhitelabelTenant);
+          const res = await fetch(`${functionUrl}?subdomain=${externalSubdomain}`);
+          const json = await res.json();
+          if (!res.ok) throw new Error(json.error || 'Failed to load tenant');
+          setTenant(json.tenant as WhitelabelTenant);
           return;
         }
 
-        // Otherwise try to detect tenant from hostname
         const hostname = window.location.hostname;
-        
-        // Check if it's a custom domain
-        const { data: customDomainData, error: customDomainError } = await supabase
-          .from('whitelabel_tenants')
-          .select('*')
-          .eq('custom_domain', hostname)
-          .eq('is_active', true)
-          .single();
-
-        if (!customDomainError && customDomainData) {
-          setTenant(customDomainData as WhitelabelTenant);
-          return;
+        const res = await fetch(`${functionUrl}?host=${hostname}`);
+        const json = await res.json();
+        if (res.ok) {
+          setTenant(json.tenant as WhitelabelTenant);
+        } else {
+          throw new Error(json.error || 'Tenant not found');
         }
-
-        // Check if it's a subdomain
-        const detectedSubdomain = hostname.split('.')[0];
-        
-        if (detectedSubdomain && !['www', 'app', 'local', 'localhost'].includes(detectedSubdomain)) {
-          const { data: subdomainData, error: subdomainError } = await supabase
-            .from('whitelabel_tenants')
-            .select('*')
-            .eq('subdomain', detectedSubdomain)
-            .eq('is_active', true)
-            .single();
-
-          if (!subdomainError && subdomainData) {
-            setTenant(subdomainData as WhitelabelTenant);
-            return;
-          }
-        }
-
-        // No tenant found
-        setTenant(null);
       } catch (err: any) {
         console.error('Error loading tenant:', err);
         setError(err.message);
