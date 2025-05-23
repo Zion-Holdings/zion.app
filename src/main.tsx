@@ -9,6 +9,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './i18n';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
+import { WhitelabelProvider } from '@/context/WhitelabelContext';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
@@ -21,18 +22,20 @@ import { AnalyticsProvider } from './context/AnalyticsContext';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
-      <Router>
-        <AuthProvider>
-          <NotificationProvider>
-            <AnalyticsProvider>
-              <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                <App />
-                <LanguageDetectionPopup />
-              </LanguageProvider>
-            </AnalyticsProvider>
-          </NotificationProvider>
-        </AuthProvider>
-      </Router>
+      <WhitelabelProvider>
+        <Router>
+          <AuthProvider>
+            <NotificationProvider>
+              <AnalyticsProvider>
+                <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
+                  <App />
+                  <LanguageDetectionPopup />
+                </LanguageProvider>
+              </AnalyticsProvider>
+            </NotificationProvider>
+          </AuthProvider>
+        </Router>
+      </WhitelabelProvider>
     </HelmetProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
