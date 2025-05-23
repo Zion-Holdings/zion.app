@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import * as z from "zod";
+import { z } from "zod";
 import { LockKeyhole } from "lucide-react";
 
 import { supabase } from "@/integrations/supabase/client";
