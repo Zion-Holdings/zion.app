@@ -4,7 +4,11 @@
 set -e
 
 # Normalize proxy environment variables to avoid npm warnings
-if [ -n "$npm_config_http_proxy" ]; then
+# Some restricted environments have limited support for the built-in '['
+# alias. Use a strictly POSIX compatible check and avoid '; then' on the
+# same line to maximise portability.
+if [ -n "${npm_config_http_proxy:-}" ]
+then
   export npm_config_proxy="$npm_config_http_proxy"
   unset npm_config_http_proxy
 fi
