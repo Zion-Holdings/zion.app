@@ -12,7 +12,8 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuCheckboxItem,
 } from '@/components/ui/dropdown-menu';
-import { File, ChevronDown, Loader2, Download } from 'lucide-react';
+// Use the centralized icon wrapper to avoid missing icon issues
+import { FileText, ChevronDown, Loader2, Download } from '@/components/icons';
 import { Resume } from '@/types/resume';
 import { exportResumeToPDF, ExportOptions } from '@/utils/pdfExport';
 import { toast } from '@/hooks/use-toast';
@@ -82,7 +83,7 @@ export function PdfExportButton({ resume }: PdfExportButtonProps) {
           {isExporting ? (
             <Loader2 className="h-4 w-4 animate-spin" />
           ) : (
-            <File className="h-4 w-4" />
+            <FileText className="h-4 w-4" />
           )}
           Export PDF
           <ChevronDown className="h-4 w-4" />
