@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,7 +22,7 @@ const initialPosts: DiscussionPost[] = [
     author: "Anna Zhou",
     time: "2h ago",
     title: "What AI trends are you most excited for in 2025?",
-    body: "Let’s spark some ideas! I’m excited to see multi-modal models and open-source AI tools grow. What are you watching?",
+    body: "Let's spark some ideas! I'm excited to see multi-modal models and open-source AI tools grow. What are you watching?",
   },
   {
     id: 2,
@@ -85,14 +84,14 @@ export const CommunityDiscussion: React.FC = () => {
               placeholder="Title (e.g., Share an AI tool, Ask for help...)"
               className="mb-3 bg-zion-blue-light text-white placeholder:text-zion-slate"
               value={newTitle}
-              onChange={(e) => setNewTitle(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewTitle(e.target.value)}
               maxLength={80}
             />
             <Textarea
               placeholder="What's on your mind?"
               className="mb-4 bg-zion-blue-light text-white placeholder:text-zion-slate min-h-[70px]"
               value={newBody}
-              onChange={(e) => setNewBody(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setNewBody(e.target.value)}
               maxLength={400}
               rows={3}
             />

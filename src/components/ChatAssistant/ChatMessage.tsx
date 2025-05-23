@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -7,7 +5,7 @@ interface ChatMessageProps {
   role: 'user' | 'assistant';
   message: string;
   timestamp?: Date;
-  key?: string | number; // Added key prop
+  key?: string | number;
 }
 
 export function ChatMessage({ role, message, timestamp }: ChatMessageProps) {

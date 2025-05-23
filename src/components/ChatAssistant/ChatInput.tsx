@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
@@ -10,7 +9,7 @@ interface ChatInputProps {
 
 export function ChatInput({ onSend, disabled = false }: ChatInputProps) {
   const [message, setMessage] = useState('');
-  const inputRef = useRef<HTMLTextAreaElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
     // Focus input when component mounts
@@ -39,7 +38,7 @@ export function ChatInput({ onSend, disabled = false }: ChatInputProps) {
         className="flex-1 min-h-[40px] max-h-[120px] px-3 py-2 bg-zion-blue-dark border border-zion-blue-light rounded-md focus:outline-none focus:ring-2 focus:ring-zion-purple focus:border-transparent resize-none text-white placeholder:text-zion-slate-light"
         placeholder="Type your message..."
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)}
         onKeyDown={handleKeyPress}
         rows={1}
         disabled={disabled}
