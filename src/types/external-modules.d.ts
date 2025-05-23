@@ -259,8 +259,3 @@ declare module 'ws';
 declare module 'recharts';
 declare module 'next-themes';
 declare module 'tailwind-merge';
-declare module 'zod' {
-  export type infer<T> = any;
-  const z: any;
-  export default z;
-}
