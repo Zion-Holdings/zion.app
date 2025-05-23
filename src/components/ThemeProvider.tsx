@@ -1,14 +1,14 @@
 
 import { createContext, useContext, useEffect, useState } from "react"
 
-type Theme = "dark" | "light" | "system"
+export type Theme = "dark" | "light" | "system"
 
 type ThemeProviderProps = {
   children: React.ReactNode
   defaultTheme?: Theme
 }
 
-type ThemeProviderState = {
+export type ThemeProviderState = {
   theme: Theme
   setTheme: (theme: Theme) => void
 }
@@ -18,7 +18,7 @@ const initialState: ThemeProviderState = {
   setTheme: () => null,
 }
 
-const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
+export const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 
 export function ThemeProvider({
   children,
@@ -60,7 +60,7 @@ export function ThemeProvider({
   )
 }
 
-export const useTheme = () => {
+export const useTheme = (): ThemeProviderState => {
   const context = useContext(ThemeProviderContext)
 
   if (context === undefined)
