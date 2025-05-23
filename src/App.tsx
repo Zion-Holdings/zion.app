@@ -32,6 +32,7 @@ const Login = React.lazy(() => import('./pages/Login'));
 const Signup = React.lazy(() => import('./pages/Signup'));
 const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
 const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
+const ContactPage = React.lazy(() => import('./pages/Contact'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -48,6 +49,7 @@ const baseRoutes = [
   { path: '/mobile-launch', element: <MobileLaunchPage /> },
   { path: '/open-app', element: <OpenAppRedirect /> },
   { path: '/community', element: <CommunityPage /> },
+  { path: '/contact', element: <ContactPage /> },
 ];
 
 const App = () => {
