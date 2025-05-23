@@ -31,7 +31,7 @@ export interface AnalyticsEvent {
   metadata?: Record<string, any>;
 }
 
-interface AnalyticsContextType {
+export interface AnalyticsContextType {
   trackEvent: (type: AnalyticsEventType, metadata?: Record<string, any>) => void;
   trackConversion: (conversionType: string, value?: number, metadata?: Record<string, any>) => void;
   pageViews: number;
@@ -40,12 +40,16 @@ interface AnalyticsContextType {
   clearEvents: () => void;
 }
 
-// "createContext" may be untyped if React type definitions are missing.
-// To avoid TS2347 when the definitions are unavailable, we cast the default
-// value instead of passing a generic type parameter directly.
-const AnalyticsContext = createContext(
-  undefined as AnalyticsContextType | undefined
-);
+const defaultContext: AnalyticsContextType = {
+  trackEvent: () => {},
+  trackConversion: () => {},
+  pageViews: 0,
+  lastEvent: null,
+  events: [],
+  clearEvents: () => {}
+};
+
+const AnalyticsContext = createContext<AnalyticsContextType>(defaultContext);
 
 export function AnalyticsProvider({ children }: { children: ReactNode }) {
   const [pageViews, setPageViews] = useState(0);
