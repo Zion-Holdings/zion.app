@@ -33,7 +33,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   // use the tenant's primary color
   const effectiveTheme = customTheme || (isWhitelabel ? {
     primaryColor,
-    backgroundColor: '#0f172a', // Default dark background
+    backgroundColor: '#000000', // Default dark background
     textColor: '#ffffff', // Default light text
   } : undefined);
   
