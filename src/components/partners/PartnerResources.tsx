@@ -70,7 +70,6 @@ export function PartnerResources() {
     toast({
       title: "Download started",
       description: `Downloading ${resource.title}`,
-      variant: "success",
     });
   };
 
