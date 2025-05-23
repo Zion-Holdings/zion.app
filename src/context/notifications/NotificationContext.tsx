@@ -4,20 +4,9 @@ import { useAuth } from '@/hooks/useAuth';
 import { useNotificationOperations } from './useNotificationOperations';
 import { NotificationContextType } from './types';
 
-const defaultContext: NotificationContextType = {
-  notifications: [],
-  filteredNotifications: [],
-  unreadCount: 0,
-  loading: false,
-  filter: 'all',
-  markAsRead: async () => {},
-  markAllAsRead: async () => {},
-  dismissNotification: async () => {},
-  setFilter: () => {},
-  fetchNotifications: async () => {},
-};
-
-const NotificationContext = createContext<NotificationContextType>(defaultContext);
+const NotificationContext = createContext<NotificationContextType | undefined>(
+  undefined
+);
 
 export const useNotifications = (): NotificationContextType => {
   const context = useContext(NotificationContext);
