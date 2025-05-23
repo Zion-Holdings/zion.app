@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
-  <meta name="theme-color" content="#0a0f1f" />
+  <meta name="theme-color" content="#000000" />
   <style>
     body {
       font-family: 'Orbitron', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -20,7 +20,7 @@
       padding: 2rem;
     }
     h1 {
-      background: linear-gradient(90deg, #7c3aed, #06b6d4);
+      background: linear-gradient(90deg, #f97316, #facc15);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -32,13 +32,13 @@
       border-radius: 8px;
       padding: 1.5rem;
       margin-bottom: 1.5rem;
-      border-left: 4px solid #7c3aed;
+      border-left: 4px solid #f97316;
     }
     .warning {
-      border-left: 4px solid #f59e0b;
+      border-left: 4px solid #facc15;
     }
     .steps {
-      background-color: #0f172a;
+      background-color: #000000;
       padding: 1.5rem;
       border-radius: 8px;
       margin-top: 2rem;
@@ -82,8 +82,8 @@
       border-bottom: 2px solid transparent;
     }
     .tab.active {
-      border-bottom: 2px solid #7c3aed;
-      color: #7c3aed;
+      border-bottom: 2px solid #f97316;
+      color: #f97316;
     }
     .tab-content {
       display: none;
@@ -100,7 +100,7 @@
       text-align: center;
     }
     .status-box.offline {
-      background-color: #F59E0B;
+      background-color: #facc15;
     }
     .network-indicator {
       display: inline-block;
@@ -108,7 +108,7 @@
       height: 12px;
       border-radius: 50%;
       margin-right: 6px;
-      background-color: #F59E0B;
+      background-color: #facc15;
     }
   </style>
 </head>
@@ -163,7 +163,7 @@
       <h2>🔌 Offline Development Options</h2>
       <ol>
         <li><strong>Use a pre-downloaded node_modules:</strong> Copy a node_modules directory from another machine with the same dependencies</li>
-        <li><strong>Create a local npm mirror:</strong> On a machine with internet, use <a href="https://verdaccio.org/" style="color: #7c3aed;">Verdaccio</a> to create a local registry</li>
+        <li><strong>Create a local npm mirror:</strong> On a machine with internet, use <a href="https://verdaccio.org/" style="color: #f97316;">Verdaccio</a> to create a local registry</li>
         <li><strong>Use offline editing:</strong> Edit code files without building until internet is available</li>
       </ol>
     </div>

@@ -57,24 +57,24 @@ const config: Config = {
         },
         // Custom Zion colors
         "zion-blue": {
-          DEFAULT: "#0a0f1f",
-          light: "#1e263b",
-          dark: "#090c1a",
+          DEFAULT: "#000000",
+          light: "#333333",
+          dark: "#000000",
         },
         "zion-purple": {
-          DEFAULT: "#a855f7",
-          light: "#d8b4fe",
-          dark: "#9333ea",
+          DEFAULT: "#f97316",
+          light: "#fb923c",
+          dark: "#ea580c",
         },
         "zion-cyan": {
-          DEFAULT: "#00e5ff",
-          light: "#7df9ff",
-          dark: "#00c4cc",
+          DEFAULT: "#facc15",
+          light: "#fde047",
+          dark: "#ca8a04",
         },
         "zion-slate": {
-          DEFAULT: "#94A3B8",
-          light: "#CBD5E1",
-          dark: "#64748B",
+          DEFAULT: "#ffffff",
+          light: "#f8fafc",
+          dark: "#d1d5db",
         },
       },
       borderRadius: {
