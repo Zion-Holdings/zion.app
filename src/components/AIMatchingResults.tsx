@@ -13,13 +13,15 @@ interface AIMatchingResultsProps {
   onSelectMatch?: (match: MatchResultItem) => void;
   isLoading?: boolean;
   projectDescription?: string;
+  serviceType?: string;
 }
 
-export function AIMatchingResults({ 
-  matches, 
-  onSelectMatch, 
+export function AIMatchingResults({
+  matches,
+  onSelectMatch,
   isLoading = false,
-  projectDescription = "" 
+  projectDescription = "",
+  serviceType: _serviceType = ""
 }: AIMatchingResultsProps) {
   const [activeTab, setActiveTab] = useState<string>("all");
   
