@@ -1,4 +1,3 @@
-import type { Dispatch, SetStateAction } from 'react';
 
 // Define the shape of a message
 export interface Message {
