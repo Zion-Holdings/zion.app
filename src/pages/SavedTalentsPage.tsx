@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function SavedTalentsPage() {
   const { user } = useAuth();
-  const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
+  const [savedTalents, setSavedTalents] = useState([] as TalentProfile[]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 

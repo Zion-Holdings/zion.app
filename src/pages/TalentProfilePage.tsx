@@ -17,7 +17,7 @@ import { UserProfile } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
 
 export default function TalentProfilePage() {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams();
   const navigate = useNavigate();
   const { profile, isLoading, error } = useTalentProfile(id);
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
