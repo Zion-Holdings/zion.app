@@ -92,3 +92,11 @@ If you see errors related to missing modules like 'react', 'react-dom', or 'luci
 If you encounter errors running `bun install` (for example, integrity check failures), delete any `bun.lockb` file and run `npm install` instead. This project relies on npm and is not guaranteed to work with Bun. Adding `bun.lockb` to `.gitignore` ensures Bun isn't accidentally used.
 
 For pnpm errors showing "This project is configured to use npm", use `./setup.sh npm` instead as the project may have npm-specific configurations.
+
+If you see a warning about `rimraf@3.0.2` being deprecated, run:
+
+```sh
+npm install rimraf@latest --save-dev
+```
+
+This updates the dependency to a supported version.
