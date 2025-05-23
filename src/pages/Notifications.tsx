@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { AppHeader } from "@/components/layout/AppHeader";
 import { Footer } from "@/components/Footer";
 import { useNotifications } from "@/context/notifications/NotificationContext";
-import { NotificationType } from "@/context/notifications/types";
+import { NotificationType } from "@/context/notifications";
 import { formatDistanceToNow } from "date-fns";
 import { 
   Bell, Check, Trash2, ChevronRight, CheckCircle, 
