@@ -1,6 +1,6 @@
 
 import type { UserProfile } from "@/types/auth";
-import { User } from "@supabase/supabase-js";
+import type { User } from "@supabase/supabase-js";
 
 /**
  * Maps Supabase profile data to our app's user model
