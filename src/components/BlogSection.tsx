@@ -41,8 +41,7 @@ export function BlogSection() {
                   loading="lazy"
                   onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                     const target = e.currentTarget as HTMLImageElement;
-                    target.src =
-                      "https://images.unsplash.com/photo-1581089778245-3ce67677f718?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3";
+                    target.src = "/images/blog-placeholder.svg";
                   }}
                 />
                 <div className="absolute bottom-4 left-4 text-zion-purple/70 text-4xl font-bold">{index + 1}</div>
