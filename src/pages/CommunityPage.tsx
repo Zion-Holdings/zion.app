@@ -102,10 +102,11 @@ export default function CommunityPage() {
   
   return (
     <AppLayout>
-      <SEO 
+      <SEO
         title="Community Forum | Zion AI Marketplace"
         description="Join the Zion AI Marketplace community forum. Ask questions, share knowledge, and connect with other AI professionals."
         keywords="community, forum, discussion, AI marketplace, questions, answers"
+        canonical="https://app.ziontechgroup.com/community"
       />
       
       <div className="container py-8">
