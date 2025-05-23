@@ -20,11 +20,14 @@ export const checkOnline = async (): Promise<boolean> => {
     const timeoutId = setTimeout(() => controller.abort(), 5000);
 
     try {
-      await fetch('https://clients3.google.com/generate_204', {
-        mode: 'no-cors',
+      const response = await fetch(`${supabaseUrl}/rest/v1/`, {
+        method: 'HEAD',
         signal: controller.signal,
+        headers: {
+          'apikey': supabaseAnonKey,
+        },
       });
-      return true;
+      return response.ok;
     } finally {
       clearTimeout(timeoutId);
     }
@@ -33,11 +36,12 @@ export const checkOnline = async (): Promise<boolean> => {
   }
 };
 
-// Retry configuration
+// Enhanced retry configuration
 const RETRY_COUNT = 3;
 const INITIAL_RETRY_DELAY = 1000;
+const MAX_RETRY_DELAY = 10000;
 
-// Enhanced fetch with retry mechanism
+// Enhanced fetch with improved retry mechanism
 export const safeFetch: typeof fetch = async (input, init) => {
   let lastError: Error | null = null;
   let delay = INITIAL_RETRY_DELAY;
@@ -55,6 +59,10 @@ export const safeFetch: typeof fetch = async (input, init) => {
       const response = await fetch(input, {
         ...init,
         signal: controller.signal,
+        headers: {
+          ...init?.headers,
+          'x-retry-attempt': attempt.toString(),
+        },
       });
 
       clearTimeout(timeoutId);
@@ -83,8 +91,9 @@ export const safeFetch: typeof fetch = async (input, init) => {
         break;
       }
 
-      // Wait before retrying with exponential backoff
-      await new Promise(resolve => setTimeout(resolve, delay));
+      // Wait before retrying with exponential backoff and jitter
+      const jitter = Math.random() * 200;
+      await new Promise(resolve => setTimeout(resolve, Math.min(delay + jitter, MAX_RETRY_DELAY)));
       delay *= 2;
     }
   }
@@ -109,6 +118,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
     persistSession: true,
     detectSessionInUrl: true,
     autoRefreshToken: true,
+    storage: window.localStorage,
   }
 });
 

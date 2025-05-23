@@ -48,28 +48,34 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
           {
             headers: {
               'Content-Type': 'application/json',
+              'x-client-info': 'supabase-js-web',
             },
           }
         );
 
         if (functionError) {
-          // Log the error for debugging
-          console.error('Edge Function error details:', functionError);
+          // Enhanced error logging
+          console.error('Edge Function error details:', {
+            error: functionError,
+            params,
+            hostname,
+            retryCount,
+          });
 
-          // Handle specific error cases
+          // Handle specific error cases with user-friendly messages
           if (functionError.message?.includes('Failed to fetch')) {
-            throw new Error('Unable to connect to tenant service. Please check your internet connection.');
+            throw new Error('Unable to connect to tenant service. Please check your internet connection and try again.');
           }
           
           if (functionError.message?.includes('CORS')) {
-            throw new Error('CORS error: Unable to access tenant service. Please contact support.');
+            throw new Error('Access to tenant service is restricted. Please contact support.');
           }
 
           throw new Error(functionError.message || 'Failed to load tenant configuration');
         }
 
         if (!data) {
-          console.warn('No tenant data received');
+          console.warn('No tenant data received', { params, hostname });
           setTenant(null);
           return;
         }
@@ -82,7 +88,11 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
           setTenant(null);
         }
       } catch (err: any) {
-        console.error('Error loading tenant:', err);
+        console.error('Error loading tenant:', {
+          error: err,
+          retryCount,
+          timestamp: new Date().toISOString(),
+        });
 
         // Format user-friendly error message
         let message = 'An unexpected error occurred while loading tenant configuration';
@@ -98,11 +108,11 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
         setError(message);
         setTenant(null);
 
-        // Implement retry logic for recoverable errors
+        // Implement retry logic with exponential backoff for recoverable errors
         if (retryCount < 3 && 
             (err.message.includes('Failed to fetch') || 
              err.message.includes('Unable to connect'))) {
-          const retryDelay = Math.pow(2, retryCount) * 1000; // Exponential backoff
+          const retryDelay = Math.min(Math.pow(2, retryCount) * 1000, 10000); // Cap at 10 seconds
           setTimeout(() => {
             setRetryCount(prev => prev + 1);
           }, retryDelay);
