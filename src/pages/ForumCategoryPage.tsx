@@ -232,7 +232,9 @@ const iconMap = {
 };
 
 export default function ForumCategoryPage() {
-  const { categoryId } = useParams<{ categoryId: string }>();
+  // useParams is typed as `any` in this environment due to missing type
+  // definitions, so avoid passing a type argument to prevent TS2347.
+  const { categoryId } = useParams();
   const { user } = useAuth();
   const [searchQuery, setSearchQuery] = useState("");
   
