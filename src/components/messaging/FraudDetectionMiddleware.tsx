@@ -22,8 +22,12 @@ interface FraudDetectionContextType {
   }>;
 }
 
-// Create the context
-export const FraudDetectionContext = React.createContext<FraudDetectionContextType | undefined>(undefined);
+// Create the context. "createContext" can be untyped if React type definitions
+// aren't available. Passing a generic argument to an untyped function causes
+// TS2347, so we cast the default value instead of using a type parameter.
+export const FraudDetectionContext = React.createContext(
+  undefined as FraudDetectionContextType | undefined
+);
 
 export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> = ({ children }) => {
   // Function to scan message content for fraud
