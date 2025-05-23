@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import { FilterSidebar } from "@/components/search/FilterSidebar";
 import { ActiveFiltersBar } from "@/components/search/ActiveFiltersBar";
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { MARKETPLACE_LISTINGS, generateSearchSuggestions, generateFilterOptions } from "@/data/marketplaceData";
+import { generateRandomListing } from "@/utils/generateRandomListing";
 import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { SearchSuggestion } from "@/types/search";
@@ -22,12 +23,21 @@ export default function Marketplace() {
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [selectedAvailability, setSelectedAvailability] = useState<string[]>([]);
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
+  const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
+
+  // Automatically append a new listing every 2 minutes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setListings(prev => [...prev, generateRandomListing()]);
+    }, 120000); // 2 minutes
+    return () => clearInterval(interval);
+  }, []);
   
   const searchSuggestions: SearchSuggestion[] = generateSearchSuggestions();
-  const filterOptions = generateFilterOptions();
+  const filterOptions = useMemo(() => generateFilterOptions(listings), [listings]);
   
   // Filter listings based on selected filters
-  const filteredListings = MARKETPLACE_LISTINGS.filter(listing => {
+  const filteredListings = listings.filter(listing => {
     // Search filter
     if (searchQuery && !listing.title.toLowerCase().includes(searchQuery.toLowerCase()) && 
         !listing.description.toLowerCase().includes(searchQuery.toLowerCase()) &&
@@ -89,7 +99,7 @@ export default function Marketplace() {
   
   // Handle requesting a quote
   const handleRequestQuote = (listingId: string) => {
-    const listing = MARKETPLACE_LISTINGS.find(item => item.id === listingId);
+    const listing = listings.find(item => item.id === listingId);
     
     if (listing) {
       toast({
