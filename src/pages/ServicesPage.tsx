@@ -6,6 +6,7 @@ import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";
+import { useEffect, useState } from "react";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
@@ -122,6 +123,95 @@ const SERVICE_LISTINGS: ProductListing[] = [
   },
 ];
 
+function getRandomItem<T>(arr: T[]): T {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function generateRandomService(idNum: number): ProductListing {
+  const templates = [
+    {
+      title: "AI Automation Consulting",
+      category: "Consulting",
+      min: 4000,
+      max: 12000,
+      tags: ["Automation", "AI Strategy", "Optimization"],
+    },
+    {
+      title: "Cloud Migration & Support",
+      category: "Management",
+      min: 3000,
+      max: 9000,
+      tags: ["Cloud", "Migration", "DevOps"],
+    },
+    {
+      title: "Advanced Cybersecurity Suite",
+      category: "Security",
+      min: 5000,
+      max: 15000,
+      tags: ["Cybersecurity", "PenTesting", "Compliance"],
+    },
+    {
+      title: "Big Data Engineering",
+      category: "Analytics",
+      min: 3500,
+      max: 11000,
+      tags: ["Data Engineering", "Analytics", "ETL"],
+    },
+    {
+      title: "AI Model Training Service",
+      category: "Development",
+      min: 4500,
+      max: 13000,
+      tags: ["Machine Learning", "Model Training", "AI"],
+    },
+    {
+      title: "Digital Transformation Strategy",
+      category: "Strategy",
+      min: 6000,
+      max: 14000,
+      tags: ["Transformation", "Strategy", "Business"],
+    },
+  ];
+
+  const authors = [
+    "Global AI Experts",
+    "InnovateTech",
+    "SecureFuture",
+    "CloudOps Partners",
+    "DataVisor",
+    "NexGen Solutions",
+  ];
+
+  const images = [
+    "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&h=500",
+    "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&h=500",
+    "https://images.unsplash.com/photo-1523475496153-3a12d3e9ad12?auto=format&fit=crop&w=800&h=500",
+    "https://images.unsplash.com/photo-1545997331-9d517f5ab3b4?auto=format&fit=crop&w=800&h=500",
+  ];
+
+  const template = getRandomItem(templates);
+  const author = getRandomItem(authors);
+  const price = Math.round(
+    Math.random() * (template.max - template.min) + template.min
+  );
+
+  return {
+    id: `auto-service-${idNum}`,
+    title: template.title,
+    description: `Professional ${template.title.toLowerCase()} with industry-standard practices and tailored solutions for your business.`,
+    category: template.category,
+    price,
+    currency: "$",
+    tags: template.tags,
+    author: { name: author, id: author.toLowerCase().replace(/\s+/g, "-") },
+    images: [getRandomItem(images)],
+    createdAt: new Date().toISOString(),
+    aiScore: Math.floor(90 + Math.random() * 10),
+    rating: parseFloat((4 + Math.random()).toFixed(1)),
+    reviewCount: Math.floor(50 + Math.random() * 150),
+  };
+}
+
 // Filter options specific to services
 const SERVICE_FILTERS = [
   { label: 'Development', value: 'development' },
@@ -133,6 +223,16 @@ const SERVICE_FILTERS = [
 ];
 
 export default function ServicesPage() {
+  const [listings, setListings] = useState<ProductListing[]>(SERVICE_LISTINGS);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setListings(prev => [...prev, generateRandomService(prev.length + 1)]);
+    }, 120000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <AppLayout>
       <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
@@ -157,7 +257,7 @@ export default function ServicesPage() {
         title="IT & AI Services"
         description="Find expert technology service providers for your business needs, from AI development to infrastructure management."
         categorySlug="services"
-        listings={SERVICE_LISTINGS}
+        listings={listings}
         categoryFilters={SERVICE_FILTERS}
         initialPrice={{ min: 3000, max: 10000 }}
       />
