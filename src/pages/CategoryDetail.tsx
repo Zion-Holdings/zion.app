@@ -11,7 +11,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 
 export default function CategoryDetail() {
-  const { slug } = useParams<{ slug: string }>();
+  // Cast to specify the expected route param type since useParams may be untyped
+  const { slug } = useParams() as { slug?: string };
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
