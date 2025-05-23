@@ -14,7 +14,14 @@ export interface Notification extends BaseNotification {
   action_text?: string;
 }
 
-export type FilterType = 'all' | 'unread' | 'read';
+// Available filters for the notification center. These match the tabs rendered
+// in the UI and are consumed by the notification hook.
+export type FilterType =
+  | 'all'
+  | 'unread'
+  | 'messages'
+  | 'onboarding'
+  | 'system';
 
 export interface NotificationContextType {
   notifications: Notification[];

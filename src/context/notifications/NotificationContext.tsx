@@ -1,7 +1,9 @@
 import React, { createContext, useContext, useEffect, ReactNode } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
-import { useNotificationOperations } from './useNotificationOperations';
+// Explicitly import the React hook implementation to avoid picking up the
+// older TypeScript-only version which lacks several filter options.
+import { useNotificationOperations } from './useNotificationOperations.tsx';
 import { NotificationContextType } from './types';
 
 const defaultContext: NotificationContextType = {

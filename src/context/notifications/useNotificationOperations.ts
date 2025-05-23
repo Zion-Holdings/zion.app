@@ -79,9 +79,18 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
   }, [userId, fetchNotifications]);
 
   const filteredNotifications = notifications.filter(notification => {
-    if (filter === 'unread') return !notification.read;
-    if (filter === 'read') return notification.read;
-    return true;
+    switch (filter) {
+      case 'unread':
+        return !notification.read;
+      case 'messages':
+        return notification.type === 'message';
+      case 'onboarding':
+        return notification.type === 'onboarding';
+      case 'system':
+        return notification.type === 'system';
+      default:
+        return true;
+    }
   });
 
   const unreadCount = notifications.filter(n => !n.read).length;

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { supabase } from '../../integrations/supabase/client';
-import { FilterType } from '../../components/notifications/NotificationFilter';
-import { Notification, NotificationType } from './types';
+// Use the shared types from the notifications context so the hook isn't tied to
+// component implementations.
+import { FilterType, Notification, NotificationType } from './types';
 
 export const useNotificationOperations = (userId?: string) => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
