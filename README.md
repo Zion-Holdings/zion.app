@@ -92,3 +92,15 @@ If you see errors related to missing modules like 'react', 'react-dom', or 'luci
 If you encounter errors running `bun install` (for example, integrity check failures), delete any `bun.lockb` file and run `npm install` instead. This project relies on npm and is not guaranteed to work with Bun. Adding `bun.lockb` to `.gitignore` ensures Bun isn't accidentally used.
 
 For pnpm errors showing "This project is configured to use npm", use `./setup.sh npm` instead as the project may have npm-specific configurations.
+
+## Running Tests
+
+This project uses [Vitest](https://vitest.dev/) for unit tests. After installing
+dependencies via `./setup.sh npm`, run:
+
+```sh
+npm run test
+```
+
+The tests are located in the `tests/` directory and use JSDOM to simulate the
+browser environment.
