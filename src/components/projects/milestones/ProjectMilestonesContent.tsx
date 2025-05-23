@@ -17,7 +17,7 @@ import {
 } from './components';
 
 export function ProjectMilestonesContent() {
-  const { projectId } = useParams<{ projectId: string }>();
+  const { projectId } = useParams() as { projectId?: string };
   const { user } = useAuth();
   const { getProjectById } = useProjects();
   const { 

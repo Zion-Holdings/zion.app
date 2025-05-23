@@ -54,7 +54,7 @@ import {
 } from "lucide-react";
 
 function ProjectDetailsContent() {
-  const { projectId } = useParams<{ projectId: string }>();
+  const { projectId } = useParams() as { projectId?: string };
   const { user } = useAuth();
   const navigate = useNavigate();
   const { getProjectById, updateProjectStatus } = useProjects();
