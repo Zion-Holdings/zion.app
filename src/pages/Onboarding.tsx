@@ -14,7 +14,7 @@ import { toast } from "@/hooks/use-toast";
 export default function Onboarding() {
   const { user, updateProfile, isLoading } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
-  const [userType, setUserType] = useState<"serviceProvider" | "talent" | "client" | null>(null);
+  const [userType, setUserType] = useState(null as ("serviceProvider" | "talent" | "client" | null));
   const navigate = useNavigate();
 
   // Convert our user types to match what's expected in the database

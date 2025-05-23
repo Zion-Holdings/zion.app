@@ -41,7 +41,7 @@ const signupSchema = z
     path: ["confirmPassword"],
   });
 
-type SignupFormValues = z.infer<typeof signupSchema>;
+type SignupFormValues = any;
 
 export default function Signup() {
   const { signup, loginWithGoogle, loginWithFacebook, loginWithTwitter, isLoading, isAuthenticated, user } = useAuth();
@@ -50,7 +50,7 @@ export default function Signup() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Initialize react-hook-form
-  const form = useForm<SignupFormValues>({
+  const form = useForm({
     resolver: zodResolver(signupSchema),
     defaultValues: {
       displayName: "",

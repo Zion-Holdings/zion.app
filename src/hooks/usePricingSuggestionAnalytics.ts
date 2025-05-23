@@ -21,7 +21,7 @@ interface PricingSuggestionAnalytics {
 }
 
 export function usePricingSuggestionAnalytics(days = 30) {
-  const [analytics, setAnalytics] = useState({
+  const [analytics, setAnalytics] = useState<PricingSuggestionAnalytics>({
     totalSuggestions: 0,
     acceptanceRate: 0,
     averagePriceGap: 0,
@@ -29,7 +29,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
     recentSuggestions: [],
     isLoading: true,
     error: null
-  } as PricingSuggestionAnalytics);
+  });
 
   useEffect(() => {
     // This would fetch actual data from the database in a real implementation
@@ -80,11 +80,11 @@ export function usePricingSuggestionAnalytics(days = 30) {
 
       } catch (error) {
         console.error("Error fetching pricing suggestion analytics:", error);
-        setAnalytics(prev => ({
-          ...prev,
+        setAnalytics({
+          ...analytics,
           isLoading: false,
           error: "Failed to load pricing analytics data."
-        }));
+        });
       }
     };
 

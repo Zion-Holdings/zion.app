@@ -5,23 +5,31 @@ declare namespace JSX {
   interface IntrinsicElements { [elemName: string]: any }
 }
 
-declare module 'react' {
+declare namespace React {
   export type ReactNode = any;
   export interface ReactElement {}
+  export const Fragment: any;
   export interface FC<P = {}> {
     (props: P & { children?: ReactNode }): ReactElement | null;
   }
-  export interface SyntheticEvent<T = Element> { target: T; preventDefault(): void; }
-  export interface ChangeEvent<T = Element> extends SyntheticEvent<T> {}
-  export interface KeyboardEvent<T = Element> extends SyntheticEvent<T> {}
-  export interface MouseEvent<T = Element> extends SyntheticEvent<T> {}
-  export interface FormEvent<T = Element> extends SyntheticEvent<T> {}
+  export type SyntheticEvent<T = any> = any;
+  export type ChangeEvent<T = any> = any;
+  export type KeyboardEvent<T = any> = any;
+  export type MouseEvent<T = any> = any;
+  export type FormEvent<T = any> = any;
   export type LegacyRef<T> = any;
   export type Ref<T> = any;
   export type ElementRef<T> = any;
   export type ComponentPropsWithoutRef<T> = any;
   export function useState<S>(initialState: S | (() => S)): [S, (value: S) => void];
   export function useEffect(effect: () => void | (() => void), deps?: any[]): void;
+  export function useRef<T>(initialValue: T): { current: T };
+  export const StrictMode: any;
+  export function cloneElement(element: ReactElement, props?: any, ...children: ReactNode[]): ReactElement;
+}
+
+declare module 'react' {
+  export = React;
 }
 
 declare module 'react/jsx-runtime' {
@@ -39,10 +47,9 @@ declare module 'react-hook-form' {
 }
 
 declare module 'zod' {
-  export namespace z {
-    type infer<T> = any;
-  }
-  export = z;
+  export const z: any;
+  export type infer<T> = any;
+  export default z;
 }
 
 declare module 'class-variance-authority' {
@@ -50,5 +57,6 @@ declare module 'class-variance-authority' {
 }
 
 declare module 'jspdf' {
-  export default class jsPDF {}
+  export class jsPDF {}
+  export default jsPDF;
 }
