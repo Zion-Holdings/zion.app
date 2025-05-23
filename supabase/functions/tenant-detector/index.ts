@@ -14,13 +14,18 @@ interface TenantInfo {
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization, x-client-info',
   'Access-Control-Max-Age': '86400',
 };
 
 // Initialize Supabase client
-const supabaseUrl = Deno.env.get('SUPABASE_URL') || '';
-const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || '';
+const supabaseUrl = Deno.env.get('SUPABASE_URL');
+const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+
+if (!supabaseUrl || !supabaseServiceKey) {
+  throw new Error('Required environment variables are not set');
+}
+
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
 serve(async (req) => {
@@ -36,16 +41,22 @@ serve(async (req) => {
     const url = new URL(req.url);
     const hostnameParam = url.searchParams.get('host');
     const subdomainParam = url.searchParams.get('subdomain');
-    const forwardedHost = req.headers.get('x-forwarded-host');
-    const hostname =
-      hostnameParam ||
-      (forwardedHost ? forwardedHost.split(',')[0].split(':')[0] : undefined) ||
-      url.hostname;
     
+    // Get hostname from parameters or headers
+    const forwardedHost = req.headers.get('x-forwarded-host');
+    const hostname = hostnameParam || 
+      (forwardedHost ? forwardedHost.split(',')[0].trim().split(':')[0] : null) ||
+      url.hostname;
+
+    if (!hostname && !subdomainParam) {
+      throw new Error('No hostname or subdomain provided');
+    }
+
     // Extract tenant info
     let tenantInfo: TenantInfo | null = null;
 
     if (subdomainParam) {
+      // Direct subdomain lookup
       const { data, error } = await supabase
         .from('whitelabel_tenants')
         .select('id, brand_name, subdomain, custom_domain, primary_color, logo_url, theme_preset')
@@ -54,14 +65,13 @@ serve(async (req) => {
         .single();
 
       if (error) {
+        console.error('Database error:', error);
         throw new Error(`Database error: ${error.message}`);
       }
 
-      if (data) {
-        tenantInfo = data as TenantInfo;
-      }
+      tenantInfo = data as TenantInfo;
     } else {
-      // First try matching custom domain
+      // Try matching custom domain first
       let { data, error } = await supabase
         .from('whitelabel_tenants')
         .select('id, brand_name, subdomain, custom_domain, primary_color, logo_url, theme_preset')
@@ -70,7 +80,7 @@ serve(async (req) => {
         .single();
 
       // If no match on custom domain, try subdomain
-      if (error || !data) {
+      if (!data && !error) {
         const subdomain = hostname.split('.')[0];
         if (subdomain && !['www', 'app', 'local', 'localhost'].includes(subdomain)) {
           const subdomainResult = await supabase
@@ -84,7 +94,7 @@ serve(async (req) => {
             tenantInfo = subdomainResult.data as TenantInfo;
           }
         }
-      } else {
+      } else if (data) {
         tenantInfo = data as TenantInfo;
       }
     }
@@ -105,7 +115,7 @@ serve(async (req) => {
     console.error('Tenant detector error:', error);
     return new Response(
       JSON.stringify({ 
-        error: error.message,
+        error: error.message || 'Internal server error',
         status: 'error'
       }),
       {

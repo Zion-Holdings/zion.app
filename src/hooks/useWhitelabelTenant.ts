@@ -33,30 +33,45 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
       setError(null);
 
       try {
+        // Get the current hostname, fallback to localhost if not available
+        const hostname = window.location.hostname || 'localhost';
         const functionName = 'tenant-detector';
+        
+        // Build the query parameters
         const params = externalSubdomain 
           ? `?subdomain=${encodeURIComponent(externalSubdomain)}`
-          : `?host=${encodeURIComponent(window.location.hostname)}`;
+          : `?host=${encodeURIComponent(hostname)}`;
 
-        const { data, error } = await supabase.functions.invoke<{ tenant: WhitelabelTenant | null }>(
-          `${functionName}${params}`
+        const { data, error: functionError } = await supabase.functions.invoke<{ tenant: WhitelabelTenant | null }>(
+          `${functionName}${params}`,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
         );
 
-        if (error) {
-          console.error('Error loading tenant:', error);
+        if (functionError) {
+          console.error('Edge Function error:', functionError);
+          setError('Failed to load tenant configuration. Please try again later.');
           setTenant(null);
-          setError(error.message || 'Failed to load tenant');
           return;
         }
 
-        if (data?.tenant) {
+        if (!data) {
+          console.warn('No tenant data received');
+          setTenant(null);
+          return;
+        }
+
+        if (data.tenant) {
           setTenant(data.tenant);
         } else {
           setTenant(null);
         }
       } catch (err: any) {
         console.error('Error loading tenant:', err);
-        setError(err.message || 'An unexpected error occurred');
+        setError(err.message || 'An unexpected error occurred while loading tenant configuration');
         setTenant(null);
       } finally {
         setIsLoading(false);
