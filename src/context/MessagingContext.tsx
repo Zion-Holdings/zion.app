@@ -8,7 +8,7 @@ import { useMessagingOperations, useMessagingRealtime } from '@/hooks/messaging'
 const MessagingContext = createContext<MessagingContextType | undefined>(undefined);
 
 // Hook for using the messaging context
-export function useMessaging() {
+export function useMessaging(): MessagingContextType {
   const context = useContext(MessagingContext);
   if (context === undefined) {
     throw new Error('useMessaging must be used within a MessagingProvider');
