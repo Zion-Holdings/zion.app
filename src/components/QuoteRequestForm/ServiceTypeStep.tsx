@@ -1,8 +1,6 @@
-
 import { useState } from "react";
 import { QuoteFormData, ListingItem, ServiceType } from "@/types/quotes";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Search } from "lucide-react";
 import { ListingScoreCard } from "@/components/ListingScoreCard";
@@ -122,7 +120,7 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
                     aiScore={Math.floor(Math.random() * 30) + 70}
                     rating={Math.floor(Math.random() * 2) + 3}
                     reviewCount={Math.floor(Math.random() * 50) + 10}
-                    image={item.image} // Fixed: Changed from imageSrc to image to match prop interface
+                    image={item.image}
                     description="Sample listing description"
                   />
                 </div>
