@@ -24,7 +24,8 @@ type CarouselContextProps = {
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
-} & CarouselProps
+  orientation: "horizontal" | "vertical"
+} & Omit<CarouselProps, "orientation">
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
 
