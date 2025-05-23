@@ -1,5 +1,3 @@
 
-import { LegacyRef, Ref } from "react";
-
-// A type that safely handles all possible reference types
-export type SafeRef<T> = LegacyRef<T> | Ref<T>;
+// A type that safely handles all possible reference types without relying on React types
+export type SafeRef<T> = { current: T } | ((value: T) => void) | null;
