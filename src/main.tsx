@@ -11,7 +11,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 
 // Import auth and notification providers
-import { AuthProvider } from './context/auth/AuthProvider';
+import { AuthProvider } from '@/context/auth/AuthProvider';
 import { NotificationProvider } from './context';
 
 // Import analytics provider
