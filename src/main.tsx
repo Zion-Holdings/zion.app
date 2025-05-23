@@ -12,7 +12,7 @@ import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 
 // Import auth and notification providers
 import { AuthProvider } from './context/auth/AuthProvider';
-import { NotificationProvider } from './context';
+import { NotificationProvider } from './context/notifications/NotificationContext';
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
