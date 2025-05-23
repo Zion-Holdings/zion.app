@@ -1,24 +1,35 @@
 declare module 'react' {
-  export * from 'react/index';
-  export const useRef: <T>(initialValue: T) => { current: T };
-  export const useEffect: (effect: () => void | (() => void), deps?: readonly any[]) => void;
-  export const useState: <T>(initialState: T | (() => T)) => [T, (newState: T | ((prevState: T) => T)) => void];
-  export const createContext: <T>(defaultValue: T) => any;
-  export const useContext: <T>(ctx: any) => T;
-  export const useMemo: <T>(factory: () => T, deps: readonly any[]) => T;
-  export const useCallback: <T extends (...args: any[]) => any>(callback: T, deps: readonly any[]) => T;
+  const React: any;
+  export default React;
+  export const useRef: any;
+  export const useEffect: any;
+  export const useState: any;
+  export const createContext: any;
+  export const useContext: any;
+  export const useMemo: any;
+  export const useCallback: any;
+  export const forwardRef: any;
   export const Fragment: any;
   export const StrictMode: any;
-  export const cloneElement: (element: any, props?: any, ...children: any[]) => any;
+  export const cloneElement: any;
   export type ReactNode = any;
   export type ReactElement = any;
   export type FC<P = {}> = (props: P) => any;
-  export interface ComponentPropsWithoutRef<T> {}
+  export type ComponentProps<T = any> = any;
+  export type ComponentPropsWithoutRef<T = any> = any;
+  export type ComponentPropsWithRef<T = any> = any;
+  export type HTMLAttributes<T = any> = any;
+  export type ButtonHTMLAttributes<T = any> = any;
+  export type SVGProps<T = any> = any;
   export type ChangeEvent<T = any> = any;
+  export type MouseEvent<T = any> = any;
+  export type DragEvent<T = any> = any;
   export type FormEvent<T = any> = any;
   export type KeyboardEvent<T = any> = any;
-  export interface LegacyRef<T> {}
-  export type Ref<T> = any;
+  export type SyntheticEvent<T = any> = any;
+  export type Ref<T = any> = any;
+  export type LegacyRef<T = any> = any;
+  export type ElementRef<T = any> = any;
 }
 
 declare module 'react-dom' {
