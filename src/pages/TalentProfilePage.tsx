@@ -17,7 +17,8 @@ import { UserProfile } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
 
 export default function TalentProfilePage() {
-  const { id } = useParams<{ id: string }>();
+  // Cast to specify the expected route param type since useParams may be untyped
+  const { id } = useParams() as { id?: string };
   const navigate = useNavigate();
   const { profile, isLoading, error } = useTalentProfile(id);
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
