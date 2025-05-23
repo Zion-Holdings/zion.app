@@ -13,10 +13,19 @@ declare module "@radix-ui/react-toggle";
 declare module '@tanstack/react-query';
 declare module 'react-day-picker';
 declare module 'sonner';
-declare module 'lucide-react';
+declare module 'lucide-react' {
+  export interface LucideProps {
+    [key: string]: any;
+  }
+  const icons: { [key: string]: (props: any) => any };
+  export = icons;
+}
 declare module 'child_process';
 declare module 'date-fns';
-declare module 'jspdf';
+declare module 'jspdf' {
+  export const jsPDF: any;
+  export default jsPDF;
+}
 declare module '@hookform/resolvers/zod';
 declare module '@radix-ui/react-accordion';
 declare module '@radix-ui/react-alert-dialog';
@@ -53,7 +62,16 @@ declare module 'react-helmet-async';
 declare module 'react-hook-form';
 declare module 'react-i18next';
 declare module 'react-dom/client';
+declare module 'react-dom';
+declare module 'react-beautiful-dnd';
+declare module 'react-redux';
+declare module 'semver';
+declare module 'ws';
 declare module 'recharts';
 declare module 'next-themes';
 declare module 'tailwind-merge';
-declare module 'zod';
+declare module 'zod' {
+  export type infer<T> = any;
+  const z: any;
+  export default z;
+}

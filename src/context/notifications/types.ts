@@ -1,22 +1,6 @@
-import { FilterType } from "@/components/notifications/NotificationFilter";
+import { Notification } from '@/types/notifications';
 
-// Define notification types
-export type NotificationType = 'message' | 'quote_request' | 'booking_confirmation' | 'hire_request' | 'onboarding' | 'system';
-
-// Define the shape of a notification
-export interface Notification {
-  id: string;
-  user_id: string;
-  title: string;
-  message: string;
-  type: NotificationType;
-  read: boolean;
-  created_at: string;
-  updated_at: string;
-  related_id?: string;
-  action_url?: string;
-  action_text?: string;
-}
+export type FilterType = 'all' | 'unread' | 'read';
 
 export interface NotificationContextType {
   notifications: Notification[];

@@ -1,8 +1,13 @@
-
 #!/bin/bash
 
 # Make sure the script fails if any command fails
 set -e
+
+# Normalize proxy environment variables to avoid npm warnings
+if [ -n "$npm_config_http_proxy" ]; then
+  export npm_config_proxy="$npm_config_http_proxy"
+  unset npm_config_http_proxy
+fi
 
 # Package manager
 PM=${1:-npm}
@@ -10,7 +15,8 @@ PM=${1:-npm}
 echo "Setting up the project with package manager: $PM"
 
 # Check if the package manager exists
-if ! command -v $PM &>/dev/null; then
+# Use POSIX compatible redirection to ensure portability
+if ! command -v "$PM" >/dev/null 2>&1; then
   echo "Error: $PM is not installed. Please install it first."
   exit 1
 fi

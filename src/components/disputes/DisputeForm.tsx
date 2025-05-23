@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,14 +26,10 @@ import { toast } from "sonner";
 import { FileText } from "lucide-react";
 
 const formSchema = z.object({
-  reason_code: z.string({
-    required_error: "Please select a reason for the dispute",
-  }),
-  description: z.string({
-    required_error: "Please provide a description of the issue",
-  }).min(20, {
-    message: "Description must be at least 20 characters",
-  }),
+  reason_code: z.string()
+    .min(1, { message: "Please select a reason for the dispute" }),
+  description: z.string()
+    .min(20, { message: "Description must be at least 20 characters" }),
   attachments: z.array(z.any()).optional(),
 });
 

@@ -9,7 +9,7 @@ export function slugify(title: string, separator = "-"): string {
     .replace(/[\u0300-\u036F]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, "")
-    .replace(/\s+/g, sep)
+    .replace(/[\s-]+/g, sep)
     .replace(new RegExp(`${escaped}{2,}`, "g"), sep)
     .replace(new RegExp(`^${escaped}+|${escaped}+$`, "g"), "");
 }
