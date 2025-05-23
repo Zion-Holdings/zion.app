@@ -64,7 +64,7 @@ export interface MessagingContextType {
    * Set the currently active conversation. Passing `null` will clear the
    * selection.
    */
-  setActiveConversation: React.Dispatch<React.SetStateAction<Conversation | null>>;
+  setActiveConversation: (value: Conversation | null) => void;
   fetchConversations: () => Promise<void>;
   loadMessages: (conversationId: string) => Promise<void>;
 }
