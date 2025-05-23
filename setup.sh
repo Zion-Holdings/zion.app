@@ -5,7 +5,7 @@
 set -e
 
 # Normalize proxy environment variables to avoid npm warnings
-if [ -n "${npm_config_http_proxy-}" ]; then
+if [ -n "$npm_config_http_proxy" ]; then
   export npm_config_proxy="$npm_config_http_proxy"
   unset npm_config_http_proxy
 fi
