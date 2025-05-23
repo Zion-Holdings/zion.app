@@ -1,11 +1,11 @@
 declare module 'react' {
   const React: any;
   export default React;
-  export const useRef: any;
+  export function useRef<T>(initialValue: T | null): { current: T | null };
   export const useEffect: any;
   export function useState<T>(
     initialState: T | (() => T)
-  ): [T, (value: T) => void];
+  ): [T, (value: T | ((prev: T) => T)) => void];
   export const createContext: any;
   export const useContext: any;
   export const useMemo: any;
