@@ -46,7 +46,7 @@ import {
   CheckCircle2,
   Clock,
   FileText,
-  LayersIcon,
+  Layers,
   MessageSquare,
   Video,
   User,
@@ -316,7 +316,7 @@ function ProjectDetailsContent() {
               {isActiveProject && (
                 <Button variant="default" asChild>
                   <Link to={`/project/${project.id}/milestones`}>
-                    <LayersIcon className="mr-2 h-4 w-4" /> Milestones
+                    <Layers className="mr-2 h-4 w-4" /> Milestones
                   </Link>
                 </Button>
               )}
