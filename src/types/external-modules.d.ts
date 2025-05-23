@@ -11,7 +11,16 @@ declare module "@radix-ui/react-toggle-group";
 declare module "@radix-ui/react-toggle";
 
 declare module '@tanstack/react-query';
-declare module 'react-day-picker';
+declare module 'react-day-picker' {
+  import { FC } from 'react';
+
+  export interface DateRange {
+    from?: Date;
+    to?: Date;
+  }
+
+  export const DayPicker: FC<any>;
+}
 declare module 'sonner';
 declare module 'lucide-react' {
   import { FC, SVGProps } from 'react';
