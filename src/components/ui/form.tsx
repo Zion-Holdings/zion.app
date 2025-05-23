@@ -32,7 +32,7 @@ const FormField = ({ ...props }: any) => {
 }
 
 const useFormField = () => {
-  const fieldContext = React.useContext(FormFieldContext)
+  const fieldContext = React.useContext(FormFieldContext) as FormFieldContextValue
   const itemContext = React.useContext(FormItemContext)
   const { getFieldState, formState } = useFormContext()
 
