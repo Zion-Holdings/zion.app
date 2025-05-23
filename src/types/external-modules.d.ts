@@ -127,6 +127,7 @@ declare module 'lucide-react' {
   export const MessageCircle: LucideIcon;
   export const MessageSquare: LucideIcon;
   export const Mic: LucideIcon;
+  export const MicOff: LucideIcon;
   export const Monitor: LucideIcon;
   export const Moon: LucideIcon;
   export const MoreHorizontal: LucideIcon;
@@ -190,7 +191,9 @@ declare module 'lucide-react' {
   export const UserRound: LucideIcon;
   export const Users: LucideIcon;
   export const Video: LucideIcon;
+  export const VideoOff: LucideIcon;
   export const Volume: LucideIcon;
+  export const Volume2: LucideIcon;
   export const VolumeX: LucideIcon;
   export const Wallet: LucideIcon;
   export const Webhook: LucideIcon;
