@@ -30,10 +30,17 @@ const defaultContext: WhitelabelContextType = {
   tenant: null,
 };
 
-const WhitelabelContext = createContext<WhitelabelContextType>(defaultContext);
+const WhitelabelContext = createContext<WhitelabelContextType | undefined>(
+  undefined,
+);
 
-export const useWhitelabel = (): WhitelabelContextType =>
-  useContext(WhitelabelContext);
+export const useWhitelabel = (): WhitelabelContextType => {
+  const context = useContext(WhitelabelContext);
+  if (!context) {
+    throw new Error('useWhitelabel must be used within a WhitelabelProvider');
+  }
+  return context;
+};
 
 interface WhitelabelProviderProps {
   children: ReactNode;
