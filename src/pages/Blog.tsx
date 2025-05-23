@@ -263,10 +263,14 @@ export default function Blog() {
               <h2 className="text-2xl font-bold text-white mb-6">Featured Article</h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="aspect-video overflow-hidden rounded-lg">
-                  <img 
-                    src={featuredPosts[0].featuredImage} 
+                  <img
+                    src={featuredPosts[0].featuredImage}
                     alt={featuredPosts[0].title}
                     className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      const target = e.currentTarget as HTMLImageElement;
+                      target.src = "/images/blog-placeholder.svg";
+                    }}
                   />
                 </div>
                 <div className="flex flex-col justify-center">
@@ -280,10 +284,14 @@ export default function Blog() {
                     {featuredPosts[0].excerpt}
                   </p>
                   <div className="flex items-center mb-6">
-                    <img 
-                      src={featuredPosts[0].author.avatarUrl} 
+                    <img
+                      src={featuredPosts[0].author.avatarUrl}
                       alt={featuredPosts[0].author.name}
                       className="w-10 h-10 rounded-full mr-3"
+                      onError={(e) => {
+                        const target = e.currentTarget as HTMLImageElement;
+                        target.src = "/images/blog-placeholder.svg";
+                      }}
                     />
                     <div>
                       <p className="text-white font-medium">{featuredPosts[0].author.name}</p>
@@ -343,10 +351,14 @@ export default function Blog() {
                   className="bg-zion-blue-dark border border-zion-blue-light hover:border-zion-purple transition-all duration-300"
                 >
                   <div className="aspect-[16/9] relative overflow-hidden">
-                    <img 
-                      src={post.featuredImage} 
-                      alt={post.title} 
+                    <img
+                      src={post.featuredImage}
+                      alt={post.title}
                       className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        const target = e.currentTarget as HTMLImageElement;
+                        target.src = "/images/blog-placeholder.svg";
+                      }}
                     />
                   </div>
                   <CardContent className="p-6">
@@ -365,10 +377,14 @@ export default function Blog() {
                       {post.excerpt}
                     </p>
                     <div className="flex items-center">
-                      <img 
-                        src={post.author.avatarUrl} 
-                        alt={post.author.name} 
+                      <img
+                        src={post.author.avatarUrl}
+                        alt={post.author.name}
                         className="w-8 h-8 rounded-full mr-2"
+                        onError={(e) => {
+                          const target = e.currentTarget as HTMLImageElement;
+                          target.src = "/images/blog-placeholder.svg";
+                        }}
                       />
                       <span className="text-sm text-white">{post.author.name}</span>
                     </div>
