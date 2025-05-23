@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
 import { BlogPost } from "@/types/blog";
+import { generateRandomBlogPost } from "@/utils/generateRandomBlogPost";
 import { Search } from "lucide-react";
 
 // Sample blog data - in a real app this would come from an API or CMS
@@ -223,9 +224,17 @@ const CATEGORIES = [
 export default function Blog() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
-  
+  const [posts, setPosts] = useState<BlogPost[]>([...BLOG_POSTS]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPosts(prev => [...prev, generateRandomBlogPost()]);
+    }, 120000); // every 2 minutes
+    return () => clearInterval(interval);
+  }, []);
+
   // Filter blog posts based on search and category
-  const filteredPosts = BLOG_POSTS.filter(post => {
+  const filteredPosts = posts.filter(post => {
     const matchesSearch = 
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -237,7 +246,7 @@ export default function Blog() {
   });
   
   // Get featured posts
-  const featuredPosts = BLOG_POSTS.filter(post => post.isFeatured);
+  const featuredPosts = posts.filter(post => post.isFeatured);
   
   return (
     <>
