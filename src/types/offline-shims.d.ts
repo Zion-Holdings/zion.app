@@ -19,6 +19,7 @@ declare module 'react' {
   export const cloneElement: any;
   export type ReactNode = any;
   export type ReactElement = any;
+  export type ComponentType<P = {}> = (props: P) => any;
   export type FC<P = {}> = (props: P) => any;
   export type ComponentProps<T = any> = any;
   export type ComponentPropsWithoutRef<T = any> = any;
