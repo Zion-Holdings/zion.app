@@ -17,7 +17,7 @@ export function useSidebar(): SidebarContextType {
     throw new Error("useSidebar must be used within a SidebarProvider.")
   }
 
-  return context
+  return context as SidebarContextType
 }
 
 export interface SidebarProviderProps extends React.ComponentProps<"div"> {
