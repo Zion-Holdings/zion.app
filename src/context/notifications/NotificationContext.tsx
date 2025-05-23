@@ -29,7 +29,7 @@ export const useNotifications = (): NotificationContextType => {
   return context;
 };
 
-export const NotificationProvider = ({ children }: { children: ReactNode }) => {
+export const NotificationProvider = ({ children }: { children: ReactNode }): JSX.Element => {
   const { user } = useAuth();
   const notificationOps = useNotificationOperations(user?.id);
   
