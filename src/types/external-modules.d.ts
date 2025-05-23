@@ -188,6 +188,8 @@ declare module 'lucide-react' {
   export const UserRound: LucideIcon;
   export const Users: LucideIcon;
   export const Video: LucideIcon;
+  export const Volume: LucideIcon;
+  export const VolumeX: LucideIcon;
   export const Wallet: LucideIcon;
   export const Webhook: LucideIcon;
   export const X: LucideIcon;
