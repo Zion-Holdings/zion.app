@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useWhitelabelTenant, WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
 
-interface WhitelabelContextType {
+export interface WhitelabelContextType {
   isWhitelabel: boolean;
   primaryColor: string;
   logoUrl: string | null;
@@ -32,7 +32,8 @@ const defaultContext: WhitelabelContextType = {
 
 const WhitelabelContext = createContext<WhitelabelContextType>(defaultContext);
 
-export const useWhitelabel = () => useContext(WhitelabelContext);
+export const useWhitelabel = (): WhitelabelContextType =>
+  useContext(WhitelabelContext);
 
 interface WhitelabelProviderProps {
   children: ReactNode;
