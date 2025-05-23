@@ -1,5 +1,6 @@
 import * as React from "react"
 import * as RechartsPrimitive from "recharts"
+import { useReactId } from "@/hooks/useReactId"
 
 import { cn } from "@/lib/utils"
 
@@ -41,7 +42,7 @@ const ChartContainer = React.forwardRef<
     >["children"]
   }
 >(({ id, className, children, config, ...props }, ref) => {
-  const uniqueId = React.useId()
+  const uniqueId = useReactId()
   const chartId = `chart-${id || uniqueId.replace(/:/g, "")}`
 
   return (
