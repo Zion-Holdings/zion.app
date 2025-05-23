@@ -55,17 +55,17 @@ export function useMarketplaceSearch() {
   const handleFilterChange = (filterType: string, value: string) => {
     switch (filterType) {
       case 'productTypes':
-        setSelectedProductTypes(prev => 
+        setSelectedProductTypes((prev: string[]) =>
           prev.includes(value) ? prev.filter(t => t !== value) : [...prev, value]
         );
         break;
       case 'locations':
-        setSelectedLocations(prev => 
+        setSelectedLocations((prev: string[]) =>
           prev.includes(value) ? prev.filter(l => l !== value) : [...prev, value]
         );
         break;
       case 'availability':
-        setSelectedAvailability(prev => 
+        setSelectedAvailability((prev: string[]) =>
           prev.includes(value) ? prev.filter(a => a !== value) : [...prev, value]
         );
         break;
