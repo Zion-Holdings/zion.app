@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Video, VideoOff, Mic, MicOff, Phone, ScreenShare, ScreenShareOff, Volume, VolumeX } from 'lucide-react';
+import { Video, VideoOff, Mic, MicOff, Phone, ScreenShare, ScreenShareOff, Volume2, VolumeX } from 'lucide-react';
 import './video-call.css';
 
 interface Participant {
@@ -201,7 +201,7 @@ export const VideoCallRoom: React.FC<VideoCallRoomProps> = ({
             className="video-button rounded-full h-10 w-10"
             onClick={handleToggleAudioOnly}
           >
-            {isAudioOnly ? <VolumeX /> : <Volume />}
+            {isAudioOnly ? <VolumeX /> : <Volume2 />}
           </Button>
           
           <Button 
