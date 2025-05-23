@@ -8,7 +8,7 @@ import {
 export type ToastOptions = React.ComponentPropsWithoutRef<typeof Toast> & {
   description?: string;
   title?: string;
-  variant?: "default" | "destructive";
+  variant?: "default" | "destructive" | "success";
 };
 
 export const useToast = useToastHook;
