@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { supabase, supabaseUrl } from '@/integrations/supabase/client';
+import { supabase } from '@/integrations/supabase/client';
 
 export interface WhitelabelTenant {
   id: string;
@@ -34,41 +34,38 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
       setError(null);
 
       try {
-        const functionUrl = `${supabaseUrl}/functions/v1/tenant-detector`;
+        const functionName = 'tenant-detector';
 
         if (externalSubdomain) {
-          const res = await fetch(`${functionUrl}?subdomain=${externalSubdomain}`);
-          const json = await res.json().catch(() => null);
-          if (res.ok) {
-            setTenant(json?.tenant as WhitelabelTenant);
-          } else if (res.status === 404) {
+          const { data, error } = await supabase.functions.invoke(
+            `${functionName}?subdomain=${externalSubdomain}`,
+          );
+          if (!error) {
+            setTenant((data as any)?.tenant as WhitelabelTenant);
+          } else if (error.status === 404) {
             setTenant(null);
           } else {
-            console.error('Error loading tenant:', json);
+            console.error('Error loading tenant:', error);
             setTenant(null);
-            setError((json && json.error) || 'Failed to load tenant');
+            setError(error.message || 'Failed to load tenant');
           }
           return;
         }
 
         const hostname = window.location.hostname;
-        const res = await fetch(`${functionUrl}?host=${hostname}`);
-        let json: any = null;
-        try {
-          json = await res.json();
-        } catch {
-          json = null;
-        }
+        const { data, error } = await supabase.functions.invoke(
+          `${functionName}?host=${hostname}`,
+        );
 
-        if (res.ok) {
-          setTenant((json && json.tenant) as WhitelabelTenant);
-        } else if (res.status === 404) {
+        if (!error) {
+          setTenant((data as any)?.tenant as WhitelabelTenant);
+        } else if (error.status === 404) {
           // Gracefully handle tenant not found without throwing an error
           setTenant(null);
         } else {
-          console.error('Error loading tenant:', json);
+          console.error('Error loading tenant:', error);
           setTenant(null);
-          setError((json && json.error) || 'Tenant not found');
+          setError(error.message || 'Tenant not found');
         }
       } catch (err: any) {
         console.error('Error loading tenant:', err);
