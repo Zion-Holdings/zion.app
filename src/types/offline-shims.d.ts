@@ -6,8 +6,8 @@ declare module 'react' {
   export function useState<T>(
     initialState: T | (() => T)
   ): [T, (value: T | ((prev: T) => T)) => void];
-  export const createContext: any;
-  export const useContext: any;
+  export function createContext<T>(defaultValue: T): any;
+  export function useContext<T>(context: any): T;
   export const useMemo: any;
   export const useCallback: any;
   export const forwardRef: any;
