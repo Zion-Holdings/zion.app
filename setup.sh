@@ -4,6 +4,12 @@
 # Make sure the script fails if any command fails
 set -e
 
+# Normalize proxy environment variables to avoid npm warnings
+if [ -n "${npm_config_http_proxy-}" ]; then
+  export npm_config_proxy="$npm_config_http_proxy"
+  unset npm_config_http_proxy
+fi
+
 # Package manager
 PM=${1:-npm}
 
