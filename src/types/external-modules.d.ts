@@ -61,6 +61,7 @@ declare module 'lucide-react' {
   export const ChevronUp: LucideIcon;
   export const Circle: LucideIcon;
   export const CircleDot: LucideIcon;
+  export const ClipboardCopy: LucideIcon;
   export const Clock: LucideIcon;
   export const Cloud: LucideIcon;
   export const Code: LucideIcon;
