@@ -10,10 +10,11 @@ import { supabase } from '@/integrations/supabase/client';
 import { TokenTransaction } from '@/types/tokens';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { toast } from '@/hooks/use-toast';
+import { useToast } from '@/hooks/use-toast';
 
 export default function TokenManager() {
   const { user } = useAuth();
+  const { toast } = useToast();
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);
   const [userId, setUserId] = useState('');
   const [amount, setAmount] = useState(0);
