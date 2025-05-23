@@ -1,5 +1,5 @@
 import React from "react";
-import { Search, Calendar, X, RefreshCw } from "@/components/icons";
+import { Calendar, RefreshCw } from "@/components/icons";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -19,7 +19,7 @@ interface QuotesFilterProps {
   setArchiveFilter: (value: 'active' | 'archived' | 'all') => void;
   dateRange: DateRange | undefined;
   setDateRange: (range: DateRange | undefined) => void;
-  onReset: () => void; // Added required prop
+  onReset: () => void;
 }
 
 export const QuotesFilter: React.FC<QuotesFilterProps> = ({
@@ -38,7 +38,6 @@ export const QuotesFilter: React.FC<QuotesFilterProps> = ({
       <CardContent className="p-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-zion-slate-light" />
             <Input
               placeholder="Search quotes..."
               className="pl-10 bg-zion-blue border-zion-blue-light text-white"

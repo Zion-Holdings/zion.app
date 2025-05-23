@@ -42,7 +42,6 @@ export function DynamicListingPage({
 
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
 
-  // Calculate the overall price range from all listings that have prices
   useEffect(() => {
     const listingsWithPrice = allListings.filter(l => l.price !== null);
     if (listingsWithPrice.length > 0) {
@@ -52,35 +51,28 @@ export function DynamicListingPage({
     }
   }, [allListings]);
 
-  // Current price filter values
   const [currentPriceFilter, setCurrentPriceFilter] = useState<[number, number]>([
     initialPrice.min,
     initialPrice.max
   ]);
 
-  // Handler for the slider change to ensure type compatibility
   const handleSliderChange = (values: number[]) => {
     setCurrentPriceFilter([values[0], values[1]]);
   };
 
-  // Filter listings based on search, category, price range, and rating
   const filteredListings = allListings.filter(listing => {
-    // Search filter
     const matchesSearch = !searchQuery || 
       listing.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
       listing.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       (listing.tags && listing.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase())));
     
-    // Category filter
     const matchesCategory = selectedCategory === "all" || listing.category === selectedCategory;
     
-    // Price filter - handle null prices as "custom pricing"
     const matchesPrice = listing.price === null || (
       listing.price >= currentPriceFilter[0] && 
       listing.price <= currentPriceFilter[1]
     );
     
-    // Rating filter
     const matchesRating = 
       selectedRating === null || 
       (listing.rating !== undefined && listing.rating >= selectedRating);
@@ -88,14 +80,11 @@ export function DynamicListingPage({
     return matchesSearch && matchesCategory && matchesPrice && matchesRating;
   });
 
-  // Handle requesting a quote
   const handleRequestQuote = (listingId: string) => {
     setIsLoading(true);
     
-    // Find the selected listing
     const listing = allListings.find(item => item.id === listingId);
     
-    // Simulate API delay
     setTimeout(() => {
       setIsLoading(false);
       if (listing) {
@@ -104,7 +93,6 @@ export function DynamicListingPage({
           description: `Your quote request for ${listing.title} has been sent.`
         });
         
-        // Navigate to the quote request page with the listing information
         navigate("/request-quote", {
           state: { 
             serviceType: categorySlug, 
@@ -131,21 +119,19 @@ export function DynamicListingPage({
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Sidebar Filters */}
           <div className="lg:col-span-1">
             <div className="bg-zion-blue-dark rounded-lg border border-zion-blue-light p-4 sticky top-6">
               <h3 className="text-lg font-medium text-white mb-4 flex items-center">
                 <Filter className="mr-2 h-5 w-5" /> Filters
               </h3>
               
-              {/* Category Filter */}
               <div className="mb-6">
                 <label className="text-sm font-medium text-zion-slate-light block mb-2">
                   Category
                 </label>
                 <Select 
                   value={selectedCategory} 
-                  onValueChange={(value) => {
+                  onValueChange={(value: string) => {
                     console.log("Category selected:", value);
                     setSelectedCategory(value);
                   }}
@@ -164,7 +150,6 @@ export function DynamicListingPage({
                 </Select>
               </div>
               
-              {/* Price Range Filter */}
               <div className="mb-6">
                 <label className="text-sm font-medium text-zion-slate-light block mb-2">
                   Price Range
@@ -186,7 +171,6 @@ export function DynamicListingPage({
                 </div>
               </div>
               
-              {/* Rating Filter */}
               <div className="mb-6">
                 <label className="text-sm font-medium text-zion-slate-light block mb-2">
                   Minimum Rating
@@ -222,7 +206,6 @@ export function DynamicListingPage({
                 </div>
               </div>
               
-              {/* Reset Filters */}
               <Button 
                 variant="outline" 
                 className="w-full border-zion-purple text-zion-purple hover:bg-zion-purple/10"
@@ -239,9 +222,7 @@ export function DynamicListingPage({
             </div>
           </div>
           
-          {/* Main Content */}
           <div className="lg:col-span-3">
-            {/* Search and View Controls */}
             <div className="bg-zion-blue-dark rounded-lg p-4 mb-6 border border-zion-blue-light">
               <div className="flex flex-col md:flex-row gap-4">
                 <div className="relative flex-grow">
@@ -250,7 +231,7 @@ export function DynamicListingPage({
                     type="text"
                     placeholder="Search listings..."
                     value={searchQuery}
-                    onChange={(e) => {
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       console.log("Search query:", e.target.value);
                       setSearchQuery(e.target.value);
                     }}
@@ -279,7 +260,6 @@ export function DynamicListingPage({
               </div>
             </div>
 
-            {/* Results Count */}
             <div className="mb-6">
               <p className="text-zion-slate-light">
                 Showing {filteredListings.length} results
@@ -288,9 +268,7 @@ export function DynamicListingPage({
               </p>
             </div>
 
-            {/* Listings Grid/List */}
             {isLoading ? (
-              // Loading state
               <div className={`grid gap-6 ${view === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}>
                 {[1, 2, 3, 4].map((i) => (
                   <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
