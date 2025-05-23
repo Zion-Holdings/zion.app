@@ -9,7 +9,7 @@ const MessagingContext = createContext<MessagingContextType | undefined>(undefin
 
 // Hook for using the messaging context
 export function useMessaging() {
-  const context = useContext(MessagingContext);
+  const context = useContext<MessagingContextType | undefined>(MessagingContext);
   if (context === undefined) {
     throw new Error('useMessaging must be used within a MessagingProvider');
   }

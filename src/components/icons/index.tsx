@@ -42,6 +42,7 @@ const iconAliases: Record<string, keyof typeof LucideIcons> = {
   
   // Calendar
   CalendarIcon: 'Calendar',
+  Calendar: 'Calendar',
   
   // Navigation
   ChevronRight: 'ChevronRight',
@@ -99,15 +100,21 @@ const iconAliases: Record<string, keyof typeof LucideIcons> = {
   BarChart: 'BarChart3',
   BookOpen: 'BookOpen',
   Key: 'Key',
+  Sparkles: 'Sparkles',
+  Loader2: 'Loader2',
+  X: 'X',
+  CheckCircle: 'CheckCircle',
 };
 
-type IconProps = LucideIcons.LucideProps;
+type IconProps = any;
 
 // Create a type safe export for each icon
-const createIconComponent = (aliasName: string, iconName: keyof typeof LucideIcons) => {
+const createIconComponent = (
+  aliasName: string,
+  iconName: keyof typeof LucideIcons
+) => {
   const IconComponent = (props: IconProps) => {
-    // Fix: Use proper type casting to access the icon component
-    const LucideIcon = LucideIcons[iconName] as React.FC<IconProps>;
+    const LucideIcon = (LucideIcons as any)[iconName] as React.FC<IconProps>;
     return <LucideIcon {...props} />;
   };
   IconComponent.displayName = aliasName;
@@ -119,7 +126,7 @@ const iconExports: Record<string, React.FC<IconProps>> = {};
 
 // Generate icon exports
 Object.entries(iconAliases).forEach(([alias, lucideName]) => {
-  if (LucideIcons[lucideName]) {
+  if ((LucideIcons as any)[lucideName]) {
     iconExports[alias] = createIconComponent(alias, lucideName);
   } else {
     console.warn(`Icon '${lucideName}' not found in lucide-react`);
@@ -153,6 +160,7 @@ export const {
   Sun,
   Bell,
   CalendarIcon,
+  Calendar,
   ChevronRight,
   MoreHorizontal,
   MoreVertical,
@@ -183,6 +191,10 @@ export const {
   Trophy,
   Award,
   BadgeCheck,
+  Sparkles,
+  Loader2,
+  X,
+  CheckCircle,
   MessageSquare,
   Link,
   Briefcase,
