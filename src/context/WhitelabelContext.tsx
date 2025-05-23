@@ -40,7 +40,9 @@ export const useWhitelabel = (): WhitelabelContextType => {
   if (!context) {
     throw new Error('useWhitelabel must be used within a WhitelabelProvider');
   }
-  return context;
+  // Cast is used here because the context default is `null` until provided by
+  // `WhitelabelProvider`. The runtime check above guarantees it's defined.
+  return context as WhitelabelContextType;
 };
 
 interface WhitelabelProviderProps {
