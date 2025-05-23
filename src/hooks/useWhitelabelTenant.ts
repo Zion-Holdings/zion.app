@@ -32,6 +32,14 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
       setIsLoading(true);
       setError(null);
 
+      // If running in the browser, bail out early when offline
+      if (typeof navigator !== 'undefined' && !navigator.onLine) {
+        setError('No internet connection');
+        setTenant(null);
+        setIsLoading(false);
+        return;
+      }
+
       try {
         // Get the current hostname, fallback to localhost if not available
         const hostname = window.location.hostname || 'localhost';
@@ -71,7 +79,15 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
         }
       } catch (err: any) {
         console.error('Error loading tenant:', err);
-        setError(err.message || 'An unexpected error occurred while loading tenant configuration');
+        let message = err.message || 'An unexpected error occurred while loading tenant configuration';
+        if (
+          message.includes('Failed to send a request to the Edge Function') ||
+          message.includes('Failed to connect to Supabase') ||
+          message.includes('No internet connection')
+        ) {
+          message = 'Unable to reach the server. Please check your internet connection and try again.';
+        }
+        setError(message);
         setTenant(null);
       } finally {
         setIsLoading(false);
