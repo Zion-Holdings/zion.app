@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -10,10 +9,11 @@ import { supabase } from '@/integrations/supabase/client';
 import { TokenTransaction } from '@/types/tokens';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { toast } from '@/hooks/use-toast';
+import { useToast } from '@/hooks/use-toast';
 
 export default function TokenManager() {
   const { user } = useAuth();
+  const { toast } = useToast();
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);
   const [userId, setUserId] = useState('');
   const [amount, setAmount] = useState(0);
@@ -41,17 +41,23 @@ export default function TokenManager() {
       body: JSON.stringify({ userId, amount }),
     });
     if (res.ok) {
-      toast({ title: 'Success', description: 'Transaction processed' });
+      toast({
+        title: 'Success',
+        description: 'Transaction processed'
+      });
       fetchTransactions();
     } else {
       const err = await res.json();
-      toast({ title: 'Error', description: err.error || 'Failed', variant: 'destructive' });
+      toast({
+        title: 'Error',
+        description: err.error || 'Failed',
+        variant: 'destructive'
+      });
     }
   };
 
   return (
     <ProtectedRoute adminOnly>
-      {/* Adding children prop to fix the TypeScript error */}
       <div>
         <Header />
         <div className="min-h-screen bg-zion-blue px-4 py-8">
