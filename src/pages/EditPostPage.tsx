@@ -37,7 +37,7 @@ const mockPost: ForumPost = {
 };
 
 export default function EditPostPage() {
-  const { postId } = useParams<{ postId: string }>();
+  const { postId } = useParams() as { postId?: string };
   const navigate = useNavigate();
   const { toast } = useToast();
   const { user } = useAuth();
