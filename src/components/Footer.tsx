@@ -41,7 +41,7 @@ export function Footer() {
               <li><Link to="/talent" className="text-zion-slate hover:text-zion-cyan transition-colors">Talent</Link></li>
               <li><Link to="/equipment" className="text-zion-slate hover:text-zion-cyan transition-colors">Equipment</Link></li>
               <li><Link to="/categories" className="text-zion-slate hover:text-zion-cyan transition-colors">Categories</Link></li>
-              <li><Link to="/green-it" className="text-zion-slate hover:text-zion-cyan transition-colors">Green IT</Link></li>
+              <li><Link to="/content/green-it" className="text-zion-slate hover:text-zion-cyan transition-colors">Green IT</Link></li>
             </ul>
           </div>
 
