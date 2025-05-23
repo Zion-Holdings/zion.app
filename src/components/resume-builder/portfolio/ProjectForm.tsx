@@ -25,8 +25,12 @@ const projectSchema = z.object({
   description: z.string().optional(),
   technologies: z.string().optional(),
   image_url: z.string().optional(),
-  github_url: z.string().url('Please enter a valid URL').optional().or(z.literal('')),
-  demo_url: z.string().url('Please enter a valid URL').optional().or(z.literal('')),
+  github_url: z
+    .union([z.string().url('Please enter a valid URL'), z.literal('')])
+    .optional(),
+  demo_url: z
+    .union([z.string().url('Please enter a valid URL'), z.literal('')])
+    .optional(),
   pdf_url: z.string().optional(),
 });
 
