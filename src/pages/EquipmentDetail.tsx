@@ -45,9 +45,9 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
     category: "Equipment",
     subcategory: "Cameras",
     images: [
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&h=800",
-      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1200&h=800",
-      "https://images.unsplash.com/photo-1581591524425-c7e0978865fc?auto=format&fit=crop&w=1200&h=800"
+      "/images/equipment-placeholder.svg",
+      "/images/equipment-placeholder.svg",
+      "/images/equipment-placeholder.svg"
     ],
     price: 6999,
     currency: "$",
@@ -90,8 +90,8 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
     category: "Equipment",
     subcategory: "Audio",
     images: [
-      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&h=800",
-      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1200&h=800"
+      "/images/equipment-placeholder.svg",
+      "/images/equipment-placeholder.svg"
     ],
     price: 3499,
     currency: "$",
