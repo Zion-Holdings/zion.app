@@ -1,33 +1,37 @@
-import { useToast as useToastHook } from "@/components/ui/toast";
+import {
+  useToast as useToastHook,
+  type ToastProps,
+} from "@/components/ui/toast";
 
 export const useToast = useToastHook;
 
-export const toast = {
-  title: (title: string) => {
-    const { toast } = useToast();
-    toast({
-      title,
-    });
-  },
-  description: (description: string) => {
-    const { toast } = useToast();
-    toast({
-      description,
-    });
-  },
-  error: (error: string) => {
-    const { toast } = useToast();
-    toast({
-      variant: "destructive",
-      title: "Error",
-      description: error,
-    });
-  },
-  success: (message: string) => {
-    const { toast } = useToast();
-    toast({
-      title: "Success",
-      description: message,
-    });
-  },
+// Base toast function that delegates to the implementation from `useToastHook`.
+function baseToast(props: ToastProps) {
+  const { toast } = useToastHook();
+  toast(props);
+}
+
+// Convenience helpers mirroring common toast variants.
+baseToast.title = (title: string) => {
+  baseToast({ title });
+};
+
+baseToast.description = (description: string) => {
+  baseToast({ description });
+};
+
+baseToast.error = (error: string) => {
+  baseToast({ variant: "destructive", title: "Error", description: error });
+};
+
+baseToast.success = (message: string) => {
+  baseToast({ title: "Success", description: message });
+};
+
+// Export the callable toast function.
+export const toast = baseToast as typeof baseToast & {
+  title: (title: string) => void;
+  description: (description: string) => void;
+  error: (error: string) => void;
+  success: (message: string) => void;
 };
