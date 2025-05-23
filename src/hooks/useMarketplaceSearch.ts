@@ -15,8 +15,14 @@ export function useMarketplaceSearch() {
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
   
   // Generate search suggestions and filter options
-  const searchSuggestions = useMemo<SearchSuggestion[]>(() => generateSearchSuggestions(), []);
-  const filterOptions = useMemo<FilterOptions>(() => generateFilterOptions(), []);
+  const searchSuggestions: SearchSuggestion[] = useMemo(
+    () => generateSearchSuggestions(),
+    [],
+  );
+  const filterOptions: FilterOptions = useMemo(
+    () => generateFilterOptions(),
+    [],
+  );
   
   // Filter listings based on current search query and filters
   const filteredListings = useMemo(() => {
