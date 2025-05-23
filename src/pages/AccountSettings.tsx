@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
@@ -20,16 +20,38 @@ export default function AccountSettings() {
   const [enableBackup, setEnableBackup] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('account_settings');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        setDisplayWeb3(!!parsed.displayWeb3);
+        setDidHandle(parsed.didHandle || '');
+        setEnableBackup(!!parsed.enableBackup);
+      }
+    } catch (e) {
+      console.error('Error loading account settings', e);
+    }
+  }, []);
+
   const handleSave = () => {
     setIsSubmitting(true);
-    
+
     // Simulate API call
     setTimeout(() => {
-      // TODO: Persist settings to backend
-      console.log('Save settings', { displayWeb3, didHandle, enableBackup });
-      
-      toast.success('Account settings updated successfully');
-      setIsSubmitting(false);
+      try {
+        localStorage.setItem(
+          'account_settings',
+          JSON.stringify({ displayWeb3, didHandle, enableBackup })
+        );
+        console.log('Saved settings', { displayWeb3, didHandle, enableBackup });
+        toast.success('Account settings updated successfully');
+      } catch (e) {
+        console.error('Failed to save settings', e);
+        toast.error('Failed to save settings');
+      } finally {
+        setIsSubmitting(false);
+      }
     }, 1000);
   };
   

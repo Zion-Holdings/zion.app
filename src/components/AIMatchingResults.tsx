@@ -23,7 +23,7 @@ export function AIMatchingResults({
   projectDescription = "",
   serviceType: _serviceType = ""
 }: AIMatchingResultsProps) {
-  const [activeTab, setActiveTab] = useState<string>("all");
+  const [activeTab, setActiveTab] = useState("all");
   
   // Group matches by category
   const categories = {

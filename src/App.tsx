@@ -19,7 +19,7 @@ import {
 } from './routes';
 import Home from './pages/Home';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <ThemeProvider defaultTheme="dark">
       <Routes>
