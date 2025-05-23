@@ -12,7 +12,7 @@ import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
-import { NotificationProvider } from './context';
+import { NotificationProvider, WhitelabelProvider } from './context';
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
@@ -25,10 +25,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <AuthProvider>
           <NotificationProvider>
             <AnalyticsProvider>
-              <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                <App />
-                <LanguageDetectionPopup />
-              </LanguageProvider>
+              <WhitelabelProvider>
+                <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
+                  <App />
+                  <LanguageDetectionPopup />
+                </LanguageProvider>
+              </WhitelabelProvider>
             </AnalyticsProvider>
           </NotificationProvider>
         </AuthProvider>
