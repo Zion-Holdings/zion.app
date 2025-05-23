@@ -19,12 +19,14 @@ const supportedLanguages = [
   { code: 'ar' as SupportedLanguage, name: 'العربية', flag: '🇸🇦' }
 ];
 
-const LanguageContext = createContext<LanguageContextType>({
+const defaultLanguageContext: LanguageContextType = {
   currentLanguage: 'en',
   changeLanguage: async () => {},
   isRTL: false,
   supportedLanguages
-});
+};
+
+const LanguageContext = createContext(defaultLanguageContext);
 
 export const useLanguage = () => useContext(LanguageContext);
 
