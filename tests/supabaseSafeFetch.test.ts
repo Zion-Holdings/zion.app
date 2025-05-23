@@ -30,3 +30,20 @@ it('safeFetch throws when fetch rejects', async () => {
   vi.spyOn(global, 'fetch').mockRejectedValue(new Error('Network error'));
   await expect(client.safeFetch('https://example.com')).rejects.toThrow('Failed to connect to Supabase');
 });
+
+// Test that safeFetch preserves headers passed as a Headers object
+it('safeFetch preserves Headers object values', async () => {
+  Object.defineProperty(window, 'navigator', {
+    value: { onLine: true },
+    writable: true,
+  });
+  const headers = new Headers({ apikey: 'test-key' });
+  const fetchSpy = vi.fn().mockResolvedValue({ ok: true, status: 200 } as Response);
+  vi.spyOn(client, 'checkOnline').mockResolvedValue(true);
+  vi.stubGlobal('fetch', fetchSpy);
+
+  await client.safeFetch('https://example.com', { headers });
+
+  const calledHeaders = fetchSpy.mock.calls[0][1]?.headers as Headers;
+  expect(calledHeaders.get('apikey')).toBe('test-key');
+});
