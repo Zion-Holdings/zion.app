@@ -62,9 +62,9 @@ export const useEmailAuth = (
         email,
         password,
         options: {
-          // Create a proper data object with displayName property
+          // Only store a simple display name in the profile data
           data: {
-            display_name: userData
+            display_name: userData?.displayName ?? userData?.name ?? ""
           },
         },
       });

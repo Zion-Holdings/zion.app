@@ -11,3 +11,7 @@ it('treats underscores as spaces', () => {
 it('removes special characters', () => {
   expect(slugify('R&D Tools!')).toBe('rd-tools');
 });
+
+it('allows custom separators', () => {
+  expect(slugify('Multi Word Title', '_')).toBe('multi_word_title');
+});

@@ -1,8 +1,5 @@
 
-/// <reference types="vite/client" />
-/// <reference types="react" />
-/// <reference types="react-dom" />
-/// <reference types="react-router-dom" />
+
 
 interface ImportMetaEnv {
   readonly VITE_APP_TITLE: string;
@@ -136,3 +133,16 @@ declare module '@livekit/components-react' {
 declare module '@livekit/components-styles' {
   // Empty stub for the styles
 }
+
+// Stubs for optional UI libraries used by the project
+declare module 'cmdk'
+declare module '@radix-ui/react-context-menu'
+declare module 'vaul'
+declare module '@radix-ui/react-hover-card'
+declare module 'input-otp'
+declare module 'react-markdown'
+declare module '@radix-ui/react-menubar'
+declare module '@radix-ui/react-navigation-menu'
+declare module 'react-resizable-panels'
+declare module '@radix-ui/react-toggle-group'
+declare module '@radix-ui/react-toggle'
