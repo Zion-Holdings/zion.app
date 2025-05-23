@@ -14,7 +14,12 @@ export interface Notification extends BaseNotification {
   action_text?: string;
 }
 
-export type FilterType = 'all' | 'unread' | 'read';
+export type FilterType =
+  | 'all'
+  | 'unread'
+  | 'messages'
+  | 'onboarding'
+  | 'system';
 
 export interface NotificationContextType {
   notifications: Notification[];
