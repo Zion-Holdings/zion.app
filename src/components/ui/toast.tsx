@@ -113,7 +113,10 @@ ToastDescription.displayName = ToastPrimitives.Description.displayName
 
 type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>
 
-type ToastActionElement = React.ReactElement<typeof ToastAction>
+// Older React type definitions may not support generics on `ReactElement`.
+// Using the base `ReactElement` type here avoids compilation errors while
+// still representing a valid React element returned by `ToastAction`.
+type ToastActionElement = React.ReactElement
 
 export {
   type ToastProps,
