@@ -10,6 +10,7 @@ import GreenIT from "@/pages/GreenIT";
 import Careers from "@/pages/Careers";
 import SearchPage from "@/pages/SearchPage";
 import { SitemapPage } from "@/components/SitemapPage";
+import Terms from "@/pages/Terms";
 import HelpCenterPage from "@/pages/HelpCenterPage";
 import AccountSettings from "@/pages/AccountSettings";
 import ProjectRoom from "@/pages/ProjectRoom";
@@ -34,9 +35,12 @@ const ContentRoutes = () => {
       
       {/* Green IT Route */}
       <Route path="/green-it" element={<GreenIT />} />
-      
+
       {/* Careers Route */}
       <Route path="/careers" element={<Careers />} />
+
+      {/* Legal Pages */}
+      <Route path="/terms" element={<Terms />} />
 
       {/* Account Settings */}
       <Route path="/settings/account" element={<AccountSettings />} />
