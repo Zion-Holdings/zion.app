@@ -9,7 +9,7 @@ interface ChatInputProps {
 
 export function ChatInput({ onSend, disabled = false }: ChatInputProps) {
   const [message, setMessage] = useState('');
-  const inputRef = useRef<HTMLTextAreaElement | null>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     // Focus input when component mounts
