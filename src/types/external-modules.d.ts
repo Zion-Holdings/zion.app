@@ -41,7 +41,10 @@ declare module '@radix-ui/react-toast';
 declare module '@radix-ui/react-tooltip';
 declare module '@supabase/supabase-js';
 declare module 'class-variance-authority';
-declare module 'clsx';
+declare module 'clsx' {
+  export type ClassValue = any;
+  export default function clsx(...classes: ClassValue[]): string;
+}
 declare module 'embla-carousel-react';
 declare module 'framer-motion';
 declare module 'i18next';

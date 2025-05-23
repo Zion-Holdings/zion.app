@@ -14,17 +14,25 @@ declare module 'react' {
   }
   export interface SyntheticEvent<T = Element> { target: T; preventDefault(): void; }
   export interface ChangeEvent<T = Element> extends SyntheticEvent<T> {}
-  export interface KeyboardEvent<T = Element> extends SyntheticEvent<T> {}
+  export interface KeyboardEvent<T = Element> extends SyntheticEvent<T> {
+    key?: string;
+    shiftKey?: boolean;
+  }
   export interface MouseEvent<T = Element> extends SyntheticEvent<T> {}
   export interface FormEvent<T = Element> extends SyntheticEvent<T> {}
   export type LegacyRef<T> = any;
   export type Ref<T> = any;
   export type ElementRef<T> = any;
   export type ComponentPropsWithoutRef<T> = any;
-  export function useState<S>(initialState: S | (() => S)): [S, (value: S) => void];
+  export function useState<S>(initialState: S | (() => S)): [
+    S,
+    (value: S | ((prev: S) => S)) => void
+  ];
   export function useEffect(effect: () => void | (() => void), deps?: any[]): void;
   // JSX runtime fragments
   export const Fragment: any;
+  export const StrictMode: any;
+  export function cloneElement(element: ReactElement, props?: any, ...children: ReactNode[]): ReactElement;
 }
 
 declare module 'react/jsx-runtime' {
@@ -43,6 +51,11 @@ declare module 'react-hook-form' {
 
 declare module 'zod' {
   export namespace z {
+    function object(schema: any): any;
+    function string(): any;
+    function boolean(): any;
+    function number(): any;
+    function array(item: any): any;
     type infer<T> = any;
   }
   export = z;
@@ -53,5 +66,6 @@ declare module 'class-variance-authority' {
 }
 
 declare module 'jspdf' {
-  export default class jsPDF {}
+  export class jsPDF {}
+  export default jsPDF;
 }
