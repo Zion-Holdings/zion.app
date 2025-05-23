@@ -24,6 +24,7 @@ declare module 'react' {
   export type FC<P = {}> = (props: P) => any;
   export type ComponentProps<T = any> = any;
   export type ComponentPropsWithoutRef<T = any> = any;
+  export type PropsWithoutRef<T = any> = any;
   export type ComponentPropsWithRef<T = any> = any;
   export type HTMLAttributes<T = any> = any;
   export type ButtonHTMLAttributes<T = any> = any;
