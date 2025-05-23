@@ -56,11 +56,15 @@ export const safeFetch: typeof fetch = async (input, init) => {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 30000);
 
+      const normalizedHeaders = init?.headers instanceof Headers
+        ? Object.fromEntries(init.headers.entries())
+        : init?.headers ?? {};
+
       const response = await fetch(input, {
         ...init,
         signal: controller.signal,
         headers: {
-          ...init?.headers,
+          ...normalizedHeaders,
           'x-retry-attempt': attempt.toString(),
         },
       });
