@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useForm, type UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { z } from "zod";
 import { User, Mail, Lock, Eye, EyeOff, Facebook, Twitter } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
