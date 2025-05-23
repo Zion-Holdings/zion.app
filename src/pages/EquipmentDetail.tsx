@@ -127,7 +127,8 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
 };
 
 export default function EquipmentDetail() {
-  const { equipmentId } = useParams<{ equipmentId: string }>();
+  // Cast to specify the expected route param type since useParams may be untyped
+  const { equipmentId } = useParams() as { equipmentId?: string };
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);

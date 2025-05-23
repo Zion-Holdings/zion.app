@@ -12,7 +12,8 @@ import { AppLayout } from "@/components/layout/AppLayout";
 import { BLOG_POSTS } from "@/data/blog-posts";
 
 export default function BlogPost() {
-  const { slug } = useParams<{slug: string}>();
+  // Cast to specify the expected route param type since useParams may be untyped
+  const { slug } = useParams() as { slug?: string };
   const navigate = useNavigate();
   const [post, setPost] = useState<BlogPostType | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);

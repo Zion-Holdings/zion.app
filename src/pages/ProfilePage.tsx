@@ -22,7 +22,8 @@ import {
 } from "lucide-react";
 
 export default function ProfilePage() {
-  const { profileId } = useParams<{ profileId: string }>();
+  // Cast to specify the expected route param type since useParams may be untyped
+  const { profileId } = useParams() as { profileId?: string };
   const [profileData, setProfileData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);

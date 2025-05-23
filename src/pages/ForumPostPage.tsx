@@ -90,7 +90,8 @@ const mockReplies: ForumReply[] = [
 ];
 
 export default function ForumPostPage() {
-  const { postId } = useParams<{ postId: string }>();
+  // Cast to specify the expected route param type since useParams may be untyped
+  const { postId } = useParams() as { postId?: string };
   const { user } = useAuth();
   const { toast } = useToast();
   const [post, setPost] = useState(mockPost);

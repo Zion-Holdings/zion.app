@@ -232,7 +232,8 @@ const iconMap = {
 };
 
 export default function ForumCategoryPage() {
-  const { categoryId } = useParams<{ categoryId: string }>();
+  // Cast to specify the expected route param type since useParams may be untyped
+  const { categoryId } = useParams() as { categoryId?: string };
   const { user } = useAuth();
   const [searchQuery, setSearchQuery] = useState("");
   

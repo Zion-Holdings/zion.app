@@ -105,7 +105,8 @@ const userPosts: ForumPost[] = [
 ];
 
 export default function CommunityProfilePage() {
-  const { userId } = useParams<{ userId: string }>();
+  // Cast to specify the expected route param type since useParams may be untyped
+  const { userId } = useParams() as { userId?: string };
   const [user, setUser] = useState<CommunityUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [posts, setPosts] = useState<ForumPost[]>([]);

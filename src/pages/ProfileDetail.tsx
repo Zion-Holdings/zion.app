@@ -24,7 +24,8 @@ import {
 import { HireNowCTA } from "@/components/profile/HireNowCTA";
 
 export default function ProfileDetail() {
-  const { profileId } = useParams<{ profileId: string }>();
+  // Cast to specify the expected route param type since useParams may be untyped
+  const { profileId } = useParams() as { profileId?: string };
   const [profileData, setProfileData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
