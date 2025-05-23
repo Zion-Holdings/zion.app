@@ -8,7 +8,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // Import i18n configuration
 import './i18n';
 import { LanguageProvider } from './context/LanguageContext';
-import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
+import { LanguageDetectionPopup } from './components/LanguageDetectionPopup.tsx';
 
 // Import auth and notification providers
 import { AuthProvider } from './context/auth/AuthProvider';
