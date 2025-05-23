@@ -1,5 +1,10 @@
-
-import React, { useContext, useState, useEffect, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  type ReactNode
+} from 'react'
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 
@@ -36,9 +41,9 @@ interface NotificationContextType {
   fetchNotifications: () => Promise<void>;
 }
 
-const NotificationContext = React.createContext<NotificationContextType | undefined>(
-  undefined as NotificationContextType | undefined
-);
+const NotificationContext = createContext<NotificationContextType | undefined>(
+  undefined
+)
 
 export const useNotifications = () => {
   const context = useContext(NotificationContext);
