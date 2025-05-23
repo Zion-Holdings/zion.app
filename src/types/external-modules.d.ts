@@ -61,6 +61,7 @@ declare module 'lucide-react' {
   export const ChevronUp: LucideIcon;
   export const Circle: LucideIcon;
   export const CircleDot: LucideIcon;
+  export const ClipboardCopy: LucideIcon;
   export const Clock: LucideIcon;
   export const Cloud: LucideIcon;
   export const Code: LucideIcon;
@@ -105,6 +106,7 @@ declare module 'lucide-react' {
   export const Kanban: LucideIcon;
   export const Key: LucideIcon;
   export const LayoutGrid: LucideIcon;
+  export const LayoutDashboard: LucideIcon;
   export const Layers: LucideIcon;
   export const Leaf: LucideIcon;
   export const Lightbulb: LucideIcon;
@@ -130,6 +132,7 @@ declare module 'lucide-react' {
   export const Mic: LucideIcon;
   export const MicOff: LucideIcon;
   export const Monitor: LucideIcon;
+  export const Network: LucideIcon;
   export const Moon: LucideIcon;
   export const MoreHorizontal: LucideIcon;
   export const MoreVertical: LucideIcon;
@@ -145,9 +148,12 @@ declare module 'lucide-react' {
   export const PlayCircle: LucideIcon;
   export const Plus: LucideIcon;
   export const PlusCircle: LucideIcon;
+  export const Power: LucideIcon;
+  export const PowerOff: LucideIcon;
   export const QrCode: LucideIcon;
   export const QrCodeIcon: LucideIcon;
   export const Quote: LucideIcon;
+  export const Recycle: LucideIcon;
   export const RefreshCcw: LucideIcon;
   export const RefreshCw: LucideIcon;
   export const RotateCcw: LucideIcon;
