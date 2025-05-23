@@ -38,9 +38,16 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
 
         if (externalSubdomain) {
           const res = await fetch(`${functionUrl}?subdomain=${externalSubdomain}`);
-          const json = await res.json();
-          if (!res.ok) throw new Error(json.error || 'Failed to load tenant');
-          setTenant(json.tenant as WhitelabelTenant);
+          const json = await res.json().catch(() => null);
+          if (res.ok) {
+            setTenant(json?.tenant as WhitelabelTenant);
+          } else if (res.status === 404) {
+            setTenant(null);
+          } else {
+            console.error('Error loading tenant:', json);
+            setTenant(null);
+            setError((json && json.error) || 'Failed to load tenant');
+          }
           return;
         }
 
@@ -59,7 +66,9 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
           // Gracefully handle tenant not found without throwing an error
           setTenant(null);
         } else {
-          throw new Error((json && json.error) || 'Tenant not found');
+          console.error('Error loading tenant:', json);
+          setTenant(null);
+          setError((json && json.error) || 'Tenant not found');
         }
       } catch (err: any) {
         console.error('Error loading tenant:', err);
