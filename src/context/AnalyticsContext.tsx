@@ -122,5 +122,7 @@ export const useAnalytics = (): AnalyticsContextType => {
   if (!context) {
     throw new Error('useAnalytics must be used within an AnalyticsProvider');
   }
-  return context;
+  // Cast is used here because the context default is undefined until provided
+  // by `AnalyticsProvider`. The runtime check above ensures it's defined.
+  return context as AnalyticsContextType;
 };
