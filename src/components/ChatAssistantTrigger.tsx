@@ -50,7 +50,7 @@ export function ChatAssistantTrigger() {
           recipient={{
             id: 'ai-assistant',
             name: 'AI Assistant',
-            avatarUrl: '/assets/ai-assistant-avatar.png',
+            avatarUrl: 'https://placehold.co/64x64?text=AI',
             role: 'Virtual Assistant'
           }}
           onSendMessage={handleSendMessage}

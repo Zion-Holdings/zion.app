@@ -23,7 +23,10 @@ export function ChatMessage({ role, message, timestamp }: ChatMessageProps) {
         {isUser ? (
           <AvatarFallback className="bg-zion-purple/20 text-white">U</AvatarFallback>
         ) : (
-          <AvatarImage src="/assets/ai-assistant-avatar.png" alt="AI Assistant" />
+          <AvatarImage
+            src="https://placehold.co/32x32?text=AI"
+            alt="AI Assistant"
+          />
         )}
         {!isUser && <AvatarFallback className="bg-zion-cyan/20 text-white">AI</AvatarFallback>}
       </Avatar>

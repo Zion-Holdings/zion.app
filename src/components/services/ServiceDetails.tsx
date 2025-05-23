@@ -29,14 +29,14 @@ export function ServiceDetails({ country }: ServiceDetailsProps) {
   const getRegionalImage = (country: string): string => {
     // In a real app, you'd have specific images for each region
     const regions: Record<string, string> = {
-      "United States": "/images/datacenter-usa.jpg",
-      "United Kingdom": "/images/datacenter-uk.jpg",
-      "Germany": "/images/datacenter-germany.jpg",
-      "Japan": "/images/datacenter-japan.jpg",
-      "Australia": "/images/datacenter-australia.jpg",
-      "Singapore": "/images/datacenter-singapore.jpg",
+      "United States": "https://source.unsplash.com/featured/900x700/?datacenter,usa",
+      "United Kingdom": "https://source.unsplash.com/featured/900x700/?datacenter,uk",
+      "Germany": "https://source.unsplash.com/featured/900x700/?datacenter,germany",
+      "Japan": "https://source.unsplash.com/featured/900x700/?datacenter,japan",
+      "Australia": "https://source.unsplash.com/featured/900x700/?datacenter,australia",
+      "Singapore": "https://source.unsplash.com/featured/900x700/?datacenter,singapore",
       // Default placeholder
-      "default": "https://source.unsplash.com/random/900×700/?datacenter"
+      "default": "https://source.unsplash.com/featured/900x700/?datacenter"
     };
     
     return regions[country] || regions["default"];
