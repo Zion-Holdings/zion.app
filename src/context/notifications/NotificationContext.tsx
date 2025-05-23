@@ -1,11 +1,21 @@
-
 import React, { createContext, useContext, useEffect, ReactNode } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { useNotificationOperations } from './useNotificationOperations';
 import { NotificationContextType } from './types';
 
-const NotificationContext = createContext<NotificationContextType | undefined>(undefined);
+const NotificationContext = createContext<NotificationContextType>({
+  notifications: [],
+  filteredNotifications: [],
+  unreadCount: 0,
+  loading: false,
+  filter: 'all',
+  markAsRead: async () => {},
+  markAllAsRead: async () => {},
+  dismissNotification: async () => {},
+  setFilter: () => {},
+  fetchNotifications: async () => {},
+});
 
 export const useNotifications = () => {
   const context = useContext(NotificationContext);

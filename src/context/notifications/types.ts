@@ -1,4 +1,3 @@
-
 import { FilterType } from "@/components/notifications/NotificationFilter";
 
 // Define notification types
