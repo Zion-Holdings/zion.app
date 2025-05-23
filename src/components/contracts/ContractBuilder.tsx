@@ -27,7 +27,7 @@ export function ContractBuilder({
 }: ContractBuilderProps) {
   const [activeTab, setActiveTab] = useState<string>("form");
   const [generatedContract, setGeneratedContract] = useState<string | null>(null);
-  const [formValues, setFormValues] = useState<ContractFormValues | undefined>();
+  const [formValues, setFormValues] = useState<ContractFormValues | undefined>(undefined);
   const [templateManagerOpen, setTemplateManagerOpen] = useState(false);
   const [showSmartContractBuilder, setShowSmartContractBuilder] = useState(false);
 

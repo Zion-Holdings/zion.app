@@ -31,7 +31,7 @@ export function SmartContractBuilder({
 }: SmartContractBuilderProps) {
   const [activeTab, setActiveTab] = useState<string>("form");
   const [generatedContract, setGeneratedContract] = useState<string | null>(null);
-  const [formValues, setFormValues] = useState<ContractFormValues | undefined>();
+  const [formValues, setFormValues] = useState<ContractFormValues | undefined>(undefined);
   const [templateManagerOpen, setTemplateManagerOpen] = useState(false);
   const [deployOptions, setDeployOptions] = useState<DeploymentOptions>({
     network: 'ethereum',
