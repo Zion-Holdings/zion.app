@@ -40,16 +40,9 @@ export interface AnalyticsContextType {
   clearEvents: () => void;
 }
 
-const defaultContext: AnalyticsContextType = {
-  trackEvent: () => {},
-  trackConversion: () => {},
-  pageViews: 0,
-  lastEvent: null,
-  events: [],
-  clearEvents: () => {}
-};
-
-const AnalyticsContext = createContext<AnalyticsContextType>(defaultContext);
+const AnalyticsContext = createContext<AnalyticsContextType | undefined>(
+  undefined
+);
 
 export function AnalyticsProvider({ children }: { children: ReactNode }) {
   const [pageViews, setPageViews] = useState(0);
@@ -126,7 +119,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
 
 export const useAnalytics = (): AnalyticsContextType => {
   const context = useContext(AnalyticsContext);
-  if (context === undefined) {
+  if (!context) {
     throw new Error('useAnalytics must be used within an AnalyticsProvider');
   }
   return context;
