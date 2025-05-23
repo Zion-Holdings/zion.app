@@ -22,15 +22,17 @@ interface PricingSuggestionAnalytics {
 }
 
 export function usePricingSuggestionAnalytics(days = 30) {
-  const [analytics, setAnalytics] = useState<PricingSuggestionAnalytics>({
+  const initialState: PricingSuggestionAnalytics = {
     totalSuggestions: 0,
     acceptanceRate: 0,
     averagePriceGap: 0,
     suggestionsByCategory: [],
     recentSuggestions: [],
     isLoading: true,
-    error: null
-  });
+    error: null,
+  };
+
+  const [analytics, setAnalytics] = useState(initialState);
 
   useEffect(() => {
     // This would fetch actual data from the database in a real implementation
