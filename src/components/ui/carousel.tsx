@@ -30,13 +30,13 @@ type CarouselContextProps = {
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
 
 function useCarousel(): CarouselContextProps {
-  const context = React.useContext(CarouselContext)
+  const context = React.useContext(CarouselContext) as CarouselContextProps | null
 
   if (!context) {
     throw new Error("useCarousel must be used within a <Carousel />")
   }
 
-  return context
+  return context as CarouselContextProps
 }
 
 const Carousel = React.forwardRef<
