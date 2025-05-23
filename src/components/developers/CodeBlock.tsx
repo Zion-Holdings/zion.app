@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Check, ClipboardCopy } from 'lucide-react';
+import { Check, Copy } from 'lucide-react';
 import { cn } from "@/lib/utils";
 
 interface CodeBlockProps {
@@ -51,7 +51,7 @@ export function CodeBlock({
         onClick={handleCopyClick}
         aria-label="Copy code"
       >
-        {copied ? <Check size={16} /> : <ClipboardCopy size={16} />}
+        {copied ? <Check size={16} /> : <Copy size={16} />}
       </button>
       {language && (
         <div className="absolute top-2 left-2 px-2 py-1 text-xs rounded-md bg-zinc-800 text-zinc-400">
