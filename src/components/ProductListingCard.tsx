@@ -36,7 +36,7 @@ export function ProductListingCard({
   
   // Handle navigating to listing detail
   const handleViewListing = () => {
-    navigate(`/listing/${listing.id}`);
+    navigate(`/marketplace/listing/${listing.id}`);
   };
   
   // Handle request quote button click
@@ -135,7 +135,7 @@ export function ProductListingCard({
               size="sm" 
               onClick={(e) => {
                 e.stopPropagation();
-                navigate(`/listing/${listing.id}`);
+                navigate(`/marketplace/listing/${listing.id}`);
               }}
               className="bg-zion-purple hover:bg-zion-purple-dark text-white"
             >
