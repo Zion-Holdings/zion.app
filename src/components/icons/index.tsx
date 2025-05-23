@@ -22,7 +22,9 @@ const iconAliases: Record<string, keyof typeof LucideIcons> = {
   
   // Services
   Server: 'Server',
-  Network: 'Network',
+  // There is no 'Network' icon in lucide-react.
+  // Map to a similar existing icon.
+  Network: 'Share2',
   Recycle: 'Recycle',
   Truck: 'Truck',
   HardDrive: 'HardDrive',
