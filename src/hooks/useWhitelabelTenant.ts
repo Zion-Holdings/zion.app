@@ -46,11 +46,20 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
 
         const hostname = window.location.hostname;
         const res = await fetch(`${functionUrl}?host=${hostname}`);
-        const json = await res.json();
+        let json: any = null;
+        try {
+          json = await res.json();
+        } catch {
+          json = null;
+        }
+
         if (res.ok) {
-          setTenant(json.tenant as WhitelabelTenant);
+          setTenant((json && json.tenant) as WhitelabelTenant);
+        } else if (res.status === 404) {
+          // Gracefully handle tenant not found without throwing an error
+          setTenant(null);
         } else {
-          throw new Error(json.error || 'Tenant not found');
+          throw new Error((json && json.error) || 'Tenant not found');
         }
       } catch (err: any) {
         console.error('Error loading tenant:', err);
