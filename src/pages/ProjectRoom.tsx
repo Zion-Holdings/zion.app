@@ -12,7 +12,7 @@ import { VideoCallRoom } from '@/components/video/VideoCallRoom';
 import { toast } from 'sonner';
 
 export default function ProjectRoom() {
-  const { projectId } = useParams<{ projectId: string }>();
+  const { projectId } = useParams() as { projectId: string };
   const [activeTab, setActiveTab] = useState('chat');
   const [isInCall, setIsInCall] = useState(false);
   const [callParticipants, setCallParticipants] = useState<Array<{
