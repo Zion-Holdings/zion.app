@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   AlertDialog,
@@ -14,7 +14,7 @@ import { useLanguage, SupportedLanguage } from '../context/LanguageContext';
 
 export function LanguageDetectionPopup() {
   const [open, setOpen] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { changeLanguage, currentLanguage, supportedLanguages } = useLanguage();
   const [detectedLanguage, setDetectedLanguage] = useState<SupportedLanguage | null>(null);
 

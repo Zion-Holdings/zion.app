@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { GradientHeading } from "./GradientHeading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -7,7 +6,6 @@ import {
   Users, 
   Zap, 
   Settings, 
-  Search, 
   MessageSquare, 
   Sparkles,
   ArrowRight,
