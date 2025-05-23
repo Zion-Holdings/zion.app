@@ -30,9 +30,10 @@ const defaultContext: WhitelabelContextType = {
   tenant: null,
 };
 
-const WhitelabelContext = createContext<WhitelabelContextType | undefined>(
-  undefined,
-);
+// Using the default context value avoids returning `{}` when the React type
+// definitions are missing. This ensures `useContext` always provides a fully
+// typed object and prevents compile errors about missing properties.
+const WhitelabelContext = createContext<WhitelabelContextType>(defaultContext);
 
 export const useWhitelabel = (): WhitelabelContextType => {
   const context = useContext(WhitelabelContext);
