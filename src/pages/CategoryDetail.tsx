@@ -4,11 +4,51 @@ import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from "lucide-react";
 import { MARKETPLACE_LISTINGS } from "@/data/listingData";
+import { ProductListing } from "@/types/listings";
 import { useNavigate } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
+
+const AUTO_SERVICE_TITLES = [
+  "AI-Powered Customer Support",
+  "Cloud Infrastructure Management",
+  "Predictive Analytics Consulting",
+  "Cybersecurity Automation Suite",
+  "Robotic Process Automation",
+  "Machine Learning Model Tuning",
+  "IoT Device Integration Service",
+  "Blockchain Data Solutions"
+];
+
+function generateInnovationListing(index: number): ProductListing {
+  const title = AUTO_SERVICE_TITLES[index % AUTO_SERVICE_TITLES.length];
+  const price = Math.floor(Math.random() * 9500) + 500; // $500 - $10,000
+  const rating = Math.floor(Math.random() * 2) + 4; // 4-5 stars
+  const reviewCount = Math.floor(Math.random() * 50) + 10;
+
+  return {
+    id: `innovation-auto-${index}`,
+    title,
+    description: `Professional ${title} package with expert support and global delivery. Ideal for businesses seeking modern IT and AI solutions at competitive market rates.`,
+    category: "Innovation",
+    price,
+    currency: "$",
+    tags: ["innovation", "ai", "service"],
+    author: {
+      name: "AutoGen Solutions",
+      id: "autogen"
+    },
+    images: ["https://source.unsplash.com/random/800x500?technology"],
+    createdAt: new Date().toISOString(),
+    rating,
+    reviewCount,
+    location: "Global",
+    availability: "Immediate",
+    aiScore: Math.floor(Math.random() * 20) + 80
+  };
+}
 
 export default function CategoryDetail() {
   // Cast to specify the expected route param type since useParams may be untyped
@@ -21,6 +61,7 @@ export default function CategoryDetail() {
     description: "",
     icon: <Bot className="w-6 h-6" />
   });
+  const innovationCounterRef = useRef(0);
 
   // Map of category slugs to their display data
   const categoryData = {
@@ -97,6 +138,7 @@ export default function CategoryDetail() {
     };
     
     setCategory(currentCategory);
+    innovationCounterRef.current = 0;
 
     // Filter listings by category
     const categoryTitle = currentCategory.title;
@@ -127,6 +169,20 @@ export default function CategoryDetail() {
 
     setListings(listingsToShow);
     setIsLoading(false);
+  }, [slug]);
+
+  useEffect(() => {
+    if (slug !== 'innovation') return;
+
+    const interval = setInterval(() => {
+      innovationCounterRef.current += 1;
+      setListings((prev) => [
+        generateInnovationListing(innovationCounterRef.current),
+        ...prev,
+      ]);
+    }, 120000); // every 2 minutes
+
+    return () => clearInterval(interval);
   }, [slug]);
 
   // Handle requesting a quote
