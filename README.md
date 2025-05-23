@@ -100,3 +100,11 @@ npm install rimraf@latest --save-dev
 ```
 
 This updates the dependency to a supported version.
+
+### Whitelabel Tenant Errors
+
+If the app logs **"Error loading tenant"** during startup, the request to the
+Supabase edge function that provides whitelabel settings failed. Confirm that
+`VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are set in your environment and
+that you have network connectivity. The tenant hook will retry a few times
+before giving up.
