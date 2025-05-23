@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
@@ -18,6 +18,8 @@ import {
   CommunityRoutes,
   DeveloperRoutes
 } from './routes';
+
+const { lazy } = React;
 const Home = lazy(() => import('./pages/Home'));
 const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
@@ -52,7 +54,7 @@ const App = () => {
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
-        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+        <React.Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
@@ -69,7 +71,7 @@ const App = () => {
             <Route path="/developers/*" element={<DeveloperRoutes />} />
             <Route path="*" element={<ErrorRoutes />} />
           </Routes>
-        </Suspense>
+        </React.Suspense>
         <Toaster />
         <SonnerToaster position="top-right" />
       </ThemeProvider>
