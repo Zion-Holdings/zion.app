@@ -6,8 +6,9 @@ declare namespace JSX {
 }
 
 declare module 'react' {
+  // Basic placeholders to satisfy TypeScript when node modules are not installed
   export type ReactNode = any;
-  export interface ReactElement {}
+  export type ReactElement = any;
   export interface FC<P = {}> {
     (props: P & { children?: ReactNode }): ReactElement | null;
   }
@@ -22,6 +23,8 @@ declare module 'react' {
   export type ComponentPropsWithoutRef<T> = any;
   export function useState<S>(initialState: S | (() => S)): [S, (value: S) => void];
   export function useEffect(effect: () => void | (() => void), deps?: any[]): void;
+  // JSX runtime fragments
+  export const Fragment: any;
 }
 
 declare module 'react/jsx-runtime' {
