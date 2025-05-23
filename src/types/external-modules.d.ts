@@ -262,5 +262,6 @@ declare module 'tailwind-merge';
 declare module 'zod' {
   export type infer<T> = any;
   const z: any;
+  export { z };
   export default z;
 }
