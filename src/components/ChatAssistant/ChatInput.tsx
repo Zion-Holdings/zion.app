@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, FormEvent, KeyboardEvent } from 'react';
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
 
@@ -16,7 +16,7 @@ export function ChatInput({ onSend, disabled = false }: ChatInputProps) {
     inputRef.current?.focus();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (message.trim() && !disabled) {
       onSend(message);
@@ -24,7 +24,7 @@ export function ChatInput({ onSend, disabled = false }: ChatInputProps) {
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  const handleKeyPress = (e: KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       if (message.trim() && !disabled) {

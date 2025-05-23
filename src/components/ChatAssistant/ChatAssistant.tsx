@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, ReactNode } from 'react';
 import { ChatMessage } from './ChatMessage';
 import { ChatInput } from './ChatInput';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -25,7 +25,7 @@ export interface ChatAssistantProps {
   conversationId?: string;
   initialMessages?: Message[];
   onSendMessage: (message: string, conversationId?: string) => Promise<void>;
-  contextHeader?: React.ReactNode;
+  contextHeader?: ReactNode;
 }
 
 export function ChatAssistant({
