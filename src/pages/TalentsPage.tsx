@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
+import { generateRandomTalentListing } from "@/utils/generateRandomTalentListing";
 
 // Sample talent listings
 const TALENT_LISTINGS: ProductListing[] = [
@@ -128,12 +130,22 @@ const TALENT_FILTERS = [
 ];
 
 export default function TalentsPage() {
+  const [listings, setListings] = useState<ProductListing[]>([...TALENT_LISTINGS]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setListings(prev => [...prev, generateRandomTalentListing()]);
+    }, 120000); // add new talent every 2 minutes
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <DynamicListingPage 
+    <DynamicListingPage
       title="AI & Tech Talent"
       description="Connect with highly skilled professionals in AI, software development, data science, and more."
       categorySlug="talents"
-      listings={TALENT_LISTINGS}
+      listings={listings}
       categoryFilters={TALENT_FILTERS}
       initialPrice={{ min: 100, max: 200 }}
     />
