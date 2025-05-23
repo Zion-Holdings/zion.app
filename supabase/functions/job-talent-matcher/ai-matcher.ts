@@ -20,7 +20,7 @@ export async function normalizeSkillsWithAI(skills: string[]): Promise<string[]>
         "Authorization": `Bearer ${openAiApiKey}`
       },
       body: JSON.stringify({
-        model: "gpt-4o-mini",
+        model: "gpt-4o",
         messages: [
           {
             role: "system",
@@ -92,7 +92,7 @@ export async function findBestMatches(jobDetails: any, talents: TalentProfile[])
         "Authorization": `Bearer ${openAiApiKey}`
       },
       body: JSON.stringify({
-        model: "gpt-4o-mini",
+        model: "gpt-4o",
         messages: [
           {
             role: "system",
