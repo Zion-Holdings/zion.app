@@ -41,8 +41,11 @@ interface AnalyticsContextType {
 }
 
 // "createContext" may be untyped if React type definitions are missing.
-// Avoid passing generic type arguments directly to prevent TS2347.
-const AnalyticsContext = createContext<AnalyticsContextType | undefined>(undefined);
+// To avoid TS2347 when the definitions are unavailable, we cast the default
+// value instead of passing a generic type parameter directly.
+const AnalyticsContext = createContext(
+  undefined as AnalyticsContextType | undefined
+);
 
 export function AnalyticsProvider({ children }: { children: ReactNode }) {
   const [pageViews, setPageViews] = useState(0);
