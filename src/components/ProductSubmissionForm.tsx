@@ -1,8 +1,7 @@
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import z from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
@@ -45,8 +44,8 @@ export function ProductSubmissionForm() {
   const { toast } = useToast();
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const [imagePreview, setImagePreview] = React.useState<string | null>(null);
-  const [activeTab, setActiveTab] = React.useState<string>("manual");
+  const [imagePreview, setImagePreview] = React.useState(null as string | null);
+  const [activeTab, setActiveTab] = React.useState("manual");
   
   // Initialize the form
   const form = useForm<ProductFormValues>({
