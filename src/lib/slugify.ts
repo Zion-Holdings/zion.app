@@ -14,3 +14,16 @@ export function slugify(title: string, separator = "-"): string {
     .replace(new RegExp(`^${escaped}+|${escaped}+$`, "g"), "");
 }
 
+/**
+ * Convert a slug back into a human readable title.
+ * This simply splits the slug on the separator and
+ * capitalizes each word.
+ */
+export function unslugify(slug: string, separator = "-"): string {
+  return slug
+    .split(separator)
+    .filter(Boolean)
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
