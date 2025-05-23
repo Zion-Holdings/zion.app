@@ -12,7 +12,7 @@ import { UserProfile } from "@/types/auth";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import * as z from "zod";
+import { z } from "zod";
 import { format, addDays } from "date-fns";
 import { CalendarIcon, Check, Clock } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
