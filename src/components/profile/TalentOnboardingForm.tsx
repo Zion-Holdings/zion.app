@@ -157,4 +157,5 @@ export function TalentOnboardingForm() {
 
   // Rest of the file remains unchanged...
   // [Previous implementation continues...]
+  return <div>Talent onboarding form coming soon.</div>
 }
