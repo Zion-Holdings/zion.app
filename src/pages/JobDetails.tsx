@@ -16,7 +16,8 @@ import { SEO } from '@/components/SEO';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 
 export default function JobDetails() {
-  const { jobId } = useParams<{ jobId: string }>();
+  // Cast to specify the expected route param type since useParams may be untyped
+  const { jobId } = useParams() as { jobId?: string };
   const { job, isLoading, error } = useJobDetails(jobId);
   const { user, isAuthenticated } = useAuth();
   const navigate = useNavigate();
