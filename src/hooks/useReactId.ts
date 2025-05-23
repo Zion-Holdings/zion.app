@@ -10,8 +10,8 @@ export function useReactId(): string {
     return (React as any).useId()
   }
 
-  const idRef = React.useRef<string>()
-  if (!idRef.current) {
+  const idRef = React.useRef<string | null>(null)
+  if (idRef.current === null) {
     idRef.current = Math.random().toString(36).slice(2)
   }
   return idRef.current
