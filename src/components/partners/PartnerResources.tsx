@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Download, FileImage, FileText, FileType, FileVideo, Link } from "lucide-react";
@@ -70,7 +69,7 @@ export function PartnerResources() {
     toast({
       title: "Download started",
       description: `Downloading ${resource.title}`,
-      variant: "success",
+      variant: "default",
     });
   };
 
