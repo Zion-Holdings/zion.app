@@ -15,7 +15,7 @@ const SidebarContext = createContext<SidebarContextType>({
   close: () => {},
 });
 
-export const useSidebar = () => useContext(SidebarContext);
+export const useSidebar = (): SidebarContextType => useContext(SidebarContext);
 
 interface SidebarProviderProps {
   children: React.ReactNode;
