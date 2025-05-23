@@ -4,8 +4,24 @@ import { useAuth } from '@/hooks/useAuth';
 import { MessagingContextType } from '@/types/messaging';
 import { useMessagingOperations, useMessagingRealtime } from '@/hooks/messaging';
 
-// Create the context with undefined as initial value
-const MessagingContext = createContext<MessagingContextType | undefined>(undefined);
+// Default context used when React type definitions are missing
+const defaultContext: MessagingContextType = {
+  messages: [],
+  conversations: [],
+  unreadCount: 0,
+  activeConversation: null,
+  activeMessages: [],
+  isLoading: false,
+  sendMessage: async () => {},
+  createConversation: async () => {},
+  markAsRead: async () => {},
+  setActiveConversation: () => {},
+  fetchConversations: async () => {},
+  loadMessages: async () => {}
+};
+
+// Create the context with a fully typed default value
+const MessagingContext = createContext<MessagingContextType>(defaultContext);
 
 // Hook for using the messaging context
 export function useMessaging(): MessagingContextType {
