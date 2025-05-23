@@ -3,7 +3,9 @@ declare module 'react' {
   export default React;
   export const useRef: any;
   export const useEffect: any;
-  export const useState: any;
+  export function useState<T>(
+    initialState: T | (() => T)
+  ): [T, (value: T) => void];
   export const createContext: any;
   export const useContext: any;
   export const useMemo: any;
