@@ -16,7 +16,7 @@ declare module 'hoist-non-react-statics';
 declare module 'phoenix';
 declare module 'prop-types';
 declare module 'raf';
-declare module 'react-beautiful-dnd';
+declare module '@hello-pangea/dnd';
 declare module 'react-redux';
 declare module 'semver';
 declare module 'ws';
