@@ -4,8 +4,12 @@ import { useAuth } from '@/hooks/useAuth';
 import { MessagingContextType } from '@/types/messaging';
 import { useMessagingOperations, useMessagingRealtime } from '@/hooks/messaging';
 
-// Create the context with undefined as initial value
-const MessagingContext = createContext<MessagingContextType | undefined>(undefined);
+// "createContext" may be untyped if React type definitions are missing.
+// To avoid TS2347 when the definitions are unavailable, we cast the default
+// value instead of passing a generic type parameter directly.
+const MessagingContext = createContext(
+  undefined as MessagingContextType | undefined
+);
 
 // Hook for using the messaging context
 export function useMessaging() {
