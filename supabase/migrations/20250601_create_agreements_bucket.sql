@@ -39,7 +39,7 @@ BEGIN
           EXISTS (
             SELECT 1 FROM projects p
             WHERE (p.talent_id = auth.uid() OR p.client_id = auth.uid())
-            AND object_path LIKE CONCAT(p.job_id, '-', p.talent_id, '-%')
+            AND name LIKE CONCAT(p.job_id, '-', p.talent_id, '-%')
           )
         )
       );
