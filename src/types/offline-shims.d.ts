@@ -8,6 +8,9 @@ declare namespace JSX {
 declare module 'react' {
   export type ReactNode = any;
   export interface ReactElement {}
+  export const Fragment: any;
+  const React: any;
+  export default React;
   export interface FC<P = {}> {
     (props: P & { children?: ReactNode }): ReactElement | null;
   }
@@ -39,9 +42,7 @@ declare module 'react-hook-form' {
 }
 
 declare module 'zod' {
-  export namespace z {
-    type infer<T> = any;
-  }
+  const z: any;
   export = z;
 }
 
@@ -50,5 +51,6 @@ declare module 'class-variance-authority' {
 }
 
 declare module 'jspdf' {
-  export default class jsPDF {}
+  export class jsPDF {}
+  export default jsPDF;
 }
