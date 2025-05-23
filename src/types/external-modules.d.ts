@@ -322,7 +322,7 @@ declare module 'react-hook-form' {
 declare module 'react-i18next';
 declare module 'react-dom/client';
 declare module 'react-dom';
-declare module 'react-beautiful-dnd';
+declare module '@hello-pangea/dnd';
 declare module 'react-redux';
 declare module 'semver';
 declare module 'ws';

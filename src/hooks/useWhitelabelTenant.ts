@@ -26,19 +26,12 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
   const [tenant, setTenant] = useState<WhitelabelTenant | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
     const loadTenant = async () => {
       setIsLoading(true);
       setError(null);
-
-      // If running in the browser, bail out early when offline
-      if (typeof navigator !== 'undefined' && !navigator.onLine) {
-        setError('No internet connection');
-        setTenant(null);
-        setIsLoading(false);
-        return;
-      }
 
       try {
         // Get the current hostname, fallback to localhost if not available
@@ -55,47 +48,82 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
           {
             headers: {
               'Content-Type': 'application/json',
+              'x-client-info': 'supabase-js-web',
             },
           }
         );
 
         if (functionError) {
-          console.error('Edge Function error:', functionError);
-          setError('Failed to load tenant configuration. Please try again later.');
-          setTenant(null);
-          return;
+          // Enhanced error logging
+          console.error('Edge Function error details:', {
+            error: functionError,
+            params,
+            hostname,
+            retryCount,
+          });
+
+          // Handle specific error cases with user-friendly messages
+          if (functionError.message?.includes('Failed to fetch')) {
+            throw new Error('Unable to connect to tenant service. Please check your internet connection and try again.');
+          }
+          
+          if (functionError.message?.includes('CORS')) {
+            throw new Error('Access to tenant service is restricted. Please contact support.');
+          }
+
+          throw new Error(functionError.message || 'Failed to load tenant configuration');
         }
 
         if (!data) {
-          console.warn('No tenant data received');
+          console.warn('No tenant data received', { params, hostname });
           setTenant(null);
           return;
         }
 
         if (data.tenant) {
           setTenant(data.tenant);
+          // Reset retry count on success
+          setRetryCount(0);
         } else {
           setTenant(null);
         }
       } catch (err: any) {
-        console.error('Error loading tenant:', err);
-        let message = err.message || 'An unexpected error occurred while loading tenant configuration';
-        if (
-          message.includes('Failed to send a request to the Edge Function') ||
-          message.includes('Failed to connect to Supabase') ||
-          message.includes('No internet connection')
-        ) {
+        console.error('Error loading tenant:', {
+          error: err,
+          retryCount,
+          timestamp: new Date().toISOString(),
+        });
+
+        // Format user-friendly error message
+        let message = 'An unexpected error occurred while loading tenant configuration';
+        
+        if (err.message.includes('No internet connection') || 
+            err.message.includes('Failed to fetch') || 
+            err.message.includes('Unable to connect')) {
           message = 'Unable to reach the server. Please check your internet connection and try again.';
+        } else if (err.message.includes('CORS')) {
+          message = 'Access to tenant service is restricted. Please contact support.';
         }
+
         setError(message);
         setTenant(null);
+
+        // Implement retry logic with exponential backoff for recoverable errors
+        if (retryCount < 3 && 
+            (err.message.includes('Failed to fetch') || 
+             err.message.includes('Unable to connect'))) {
+          const retryDelay = Math.min(Math.pow(2, retryCount) * 1000, 10000); // Cap at 10 seconds
+          setTimeout(() => {
+            setRetryCount(prev => prev + 1);
+          }, retryDelay);
+        }
       } finally {
         setIsLoading(false);
       }
     };
 
     loadTenant();
-  }, [externalSubdomain]);
+  }, [externalSubdomain, retryCount]);
 
   return { tenant, isLoading, error };
 }
@@ -115,7 +143,13 @@ export function useTenantAdminStatus(tenantId?: string) {
 
       try {
         const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
-        if (sessionError || !sessionData.session) {
+        if (sessionError) {
+          console.error('Session error:', sessionError);
+          setIsAdmin(false);
+          return;
+        }
+
+        if (!sessionData.session) {
           setIsAdmin(false);
           return;
         }
@@ -127,6 +161,10 @@ export function useTenantAdminStatus(tenantId?: string) {
           .eq('tenant_id', tenantId)
           .eq('user_id', userId)
           .single();
+
+        if (error) {
+          console.error('Error checking admin status:', error);
+        }
 
         setIsAdmin(!!data && !error);
       } catch (err) {
