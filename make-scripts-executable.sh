@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Make all script files executable
