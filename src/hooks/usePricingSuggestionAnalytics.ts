@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { supabase } from "@/integrations/supabase/client";
 
@@ -22,7 +21,7 @@ interface PricingSuggestionAnalytics {
 }
 
 export function usePricingSuggestionAnalytics(days = 30) {
-  const [analytics, setAnalytics] = useState<PricingSuggestionAnalytics>({
+  const [analytics, setAnalytics] = useState({
     totalSuggestions: 0,
     acceptanceRate: 0,
     averagePriceGap: 0,
@@ -30,7 +29,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
     recentSuggestions: [],
     isLoading: true,
     error: null
-  });
+  } as PricingSuggestionAnalytics);
 
   useEffect(() => {
     // This would fetch actual data from the database in a real implementation
