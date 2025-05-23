@@ -24,10 +24,13 @@ export const checkOnline = async (): Promise<boolean> => {
         method: 'HEAD',
         signal: controller.signal,
         headers: {
-          'apikey': supabaseAnonKey,
+          apikey: supabaseAnonKey,
         },
       });
-      return response.ok;
+      // Consider any response under 500 as evidence of connectivity.
+      // Some environments return 401/404 for this endpoint even when
+      // the network is available.
+      return response.status < 500;
     } finally {
       clearTimeout(timeoutId);
     }
