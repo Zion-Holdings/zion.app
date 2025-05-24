@@ -1,8 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -256,7 +254,6 @@ export default function Blog() {
         keywords="AI blog, tech trends, IT services blog, artificial intelligence news, technology innovation, digital transformation, sustainable IT"
         canonical="https://app.ziontechgroup.com/blog"
       />
-      <Header />
       <div className="min-h-screen bg-zion-blue pt-12 pb-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -430,7 +427,6 @@ export default function Blog() {
           )}
         </div>
       </div>
-      <Footer />
     </>
   );
 }
