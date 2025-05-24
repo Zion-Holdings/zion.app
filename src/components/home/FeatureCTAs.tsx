@@ -84,7 +84,7 @@ export function FeatureCTAs() {
       title: "Learning Resources",
       description: "Access tutorials, courses, and documentation to enhance your skills in AI and tech.",
       icon: <BookOpen className="h-10 w-10 p-2 rounded-md bg-teal-100 text-teal-700" />,
-      link: "/content/blog",
+      link: "/blog",
       details: "From beginner guides to advanced technical content, our learning resources help you stay at the cutting edge of technology."
     },
     {
