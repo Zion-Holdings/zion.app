@@ -53,6 +53,14 @@ export function QuoteRequestForm() {
   const handleNext = () => {
     switch (currentStep) {
       case "service":
+        if (!formData.serviceType) {
+          toast({
+            title: "Service Required",
+            description: "Please select a service type before continuing.",
+            variant: "destructive",
+          });
+          return;
+        }
         setCurrentStep("details");
         break;
       case "details":
