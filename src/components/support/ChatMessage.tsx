@@ -3,7 +3,9 @@ import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
-import { useTheme } from "@/hooks/useTheme";
+// Import useTheme directly from the ThemeProvider to ensure TypeScript
+// picks up the correct return type for the hook
+import { useTheme } from "@/components/ThemeProvider";
 
 interface ChatMessageProps {
   message: string;
