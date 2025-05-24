@@ -15,19 +15,54 @@ export function Footer() {
               The world's first free marketplace dedicated to high-tech and artificial intelligence.
             </p>
             <div className="flex space-x-4">
-              <a href="https://twitter.com/lovable_dev" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
+              <a
+                href="https://twitter.com/lovable_dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zion-slate hover:text-zion-cyan transition-colors"
+                aria-label="Twitter"
+                title="Twitter"
+              >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="https://www.linkedin.com/company/zion-marketplace" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
+              <a
+                href="https://www.linkedin.com/company/zion-marketplace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zion-slate hover:text-zion-cyan transition-colors"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://www.facebook.com/zionmarketplace" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
+              <a
+                href="https://www.facebook.com/zionmarketplace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zion-slate hover:text-zion-cyan transition-colors"
+                aria-label="Facebook"
+                title="Facebook"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zion-slate hover:text-zion-cyan transition-colors"
+                aria-label="Instagram"
+                title="Instagram"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-zion-slate hover:text-zion-cyan transition-colors">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zion-slate hover:text-zion-cyan transition-colors"
+                aria-label="GitHub"
+                title="GitHub"
+              >
                 <Github className="h-5 w-5" />
               </a>
             </div>
