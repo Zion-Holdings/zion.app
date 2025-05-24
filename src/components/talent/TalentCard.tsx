@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Star, MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 import { TalentProfile } from "@/types/talent";
 
 export interface TalentCardProps {
@@ -23,6 +24,7 @@ export function TalentCard({
   isAuthenticated
 }: TalentCardProps) {
   const navigate = useNavigate();
+  const { toast } = useToast();
   
   const handleViewProfile = () => {
     // Navigate directly to the talent profile
@@ -45,6 +47,16 @@ export function TalentCard({
   const handleToggleSave = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (!isAuthenticated) {
+      toast({
+        title: "Authentication required",
+        description: "Please log in to save talents to your favorites",
+        variant: "destructive"
+      });
+      navigate('/login');
+      return;
+    }
+
     if (onToggleSave) {
       onToggleSave(talent.id, !isSaved);
     }
