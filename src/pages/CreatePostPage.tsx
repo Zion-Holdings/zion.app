@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
@@ -52,7 +51,7 @@ export default function CreatePostPage() {
   };
 
   return (
-    <AppLayout>
+    
       <SEO 
         title="Create New Post | Community Forum | Zion AI Marketplace"
         description="Create a new discussion post in the Zion AI Marketplace community forum."
@@ -72,6 +71,6 @@ export default function CreatePostPage() {
         
         <PostForm initialValues={initialValues} onSubmit={handleSubmit} />
       </div>
-    </AppLayout>
+    
   );
 }

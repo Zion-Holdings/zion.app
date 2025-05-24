@@ -1,8 +1,6 @@
 
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -138,7 +136,7 @@ export default function EquipmentDetail() {
   if (!equipment) {
     return (
       <>
-        <Header />
+        
         <div className="min-h-screen bg-zion-blue py-12 px-4">
           <div className="container mx-auto">
             <div className="text-center py-20">
@@ -147,7 +145,7 @@ export default function EquipmentDetail() {
             </div>
           </div>
         </div>
-        <Footer />
+        
       </>
     );
   }
@@ -180,7 +178,7 @@ export default function EquipmentDetail() {
 
   return (
     <>
-      <Header />
+      
       <div className="min-h-screen bg-zion-blue py-12 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -423,7 +421,7 @@ export default function EquipmentDetail() {
           </div>
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }

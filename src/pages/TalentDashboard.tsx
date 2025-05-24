@@ -1,7 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { AppHeader } from "@/layout/AppHeader"; 
-import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
@@ -28,7 +26,7 @@ function TalentDashboardContent() {
         title="Talent Dashboard | Zion AI Marketplace" 
         description="Your personalized talent dashboard with job matches and professional opportunities." 
       />
-      <AppHeader />
+      
       <main className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>
@@ -179,7 +177,7 @@ function TalentDashboardContent() {
           </div>
         </div>
       </main>
-      <Footer />
+      
     </>
   );
 }

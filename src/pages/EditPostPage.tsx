@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
@@ -52,26 +51,26 @@ export default function EditPostPage() {
   
   if (isLoading) {
     return (
-      <AppLayout>
+      
         <div className="container py-8">
           <div className="flex justify-center items-center h-64">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zion-purple"></div>
           </div>
         </div>
-      </AppLayout>
+      
     );
   }
   
   if (!post) {
     return (
-      <AppLayout>
+      
         <div className="container py-8">
           <h1>Post not found</h1>
           <Button asChild className="mt-4">
             <Link to="/community">Back to Community</Link>
           </Button>
         </div>
-      </AppLayout>
+      
     );
   }
   
@@ -81,7 +80,7 @@ export default function EditPostPage() {
   
   if (!isAuthor && !isAdmin) {
     return (
-      <AppLayout>
+      
         <div className="container py-8">
           <h1 className="text-2xl font-bold mb-4">Permission Denied</h1>
           <p className="mb-4">You don't have permission to edit this post.</p>
@@ -89,7 +88,7 @@ export default function EditPostPage() {
             <Link to={`/community/post/${postId}`}>Back to Post</Link>
           </Button>
         </div>
-      </AppLayout>
+      
     );
   }
   
@@ -122,7 +121,7 @@ export default function EditPostPage() {
   };
 
   return (
-    <AppLayout>
+    
       <SEO 
         title="Edit Post | Community Forum | Zion AI Marketplace"
         description="Edit your discussion post in the Zion AI Marketplace community forum."
@@ -150,6 +149,6 @@ export default function EditPostPage() {
           isEditing={true} 
         />
       </div>
-    </AppLayout>
+    
   );
 }

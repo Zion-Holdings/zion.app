@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppLayout } from "@/layout/AppLayout";
 import { TalentGrid } from "@/components/talent/TalentGrid";
 import { FilterSidebar } from "@/components/talent/FilterSidebar";
 import { TalentResults } from "@/components/talent/TalentResults";
@@ -57,7 +56,7 @@ export default function TalentDirectory() {
   };
   
   return (
-    <AppLayout>
+    
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col space-y-8">
           <div>
@@ -169,6 +168,6 @@ export default function TalentDirectory() {
           </div>
         </div>
       </div>
-    </AppLayout>
+    
   );
 }

@@ -1,7 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -220,7 +218,7 @@ export default function TranslationManager() {
         title={t('translation.manager_title')} 
         description={t('translation.manager_description')}
       />
-      <Header />
+      
       <main className={`container mx-auto px-${isMobile ? '4' : '6'} py-8`}>
         <Card>
           <CardHeader>
@@ -380,7 +378,7 @@ export default function TranslationManager() {
           </CardContent>
         </Card>
       </main>
-      <Footer />
+      
     </>
   );
 }

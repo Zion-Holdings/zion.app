@@ -1,7 +1,5 @@
 
 import React, { useState } from 'react';
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { WhitelabelRequestForm } from "@/components/admin/whitelabel/WhitelabelRequestForm";
 import { TenantsList } from "@/components/admin/whitelabel/TenantsList";
@@ -26,7 +24,7 @@ export default function WhitelabelManager() {
         title="White-Label Management - Zion AI Marketplace"
         description="Create and manage white-label instances of the Zion AI Marketplace platform."
       />
-      <Header />
+      
       <main className="flex-1 container max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col space-y-6">
           <div>
@@ -101,7 +99,7 @@ export default function WhitelabelManager() {
           </Tabs>
         </div>
       </main>
-      <Footer />
+      
     </>
   );
 }

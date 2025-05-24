@@ -1,13 +1,11 @@
 
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { GradientHeading } from "@/components/GradientHeading";
 
 export default function Categories() {
   return (
     <>
-      <Header />
+      
       <div className="min-h-screen bg-zion-blue">
         <div className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
@@ -24,7 +22,7 @@ export default function Categories() {
           <CategoriesSection showTitle={false} />
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }

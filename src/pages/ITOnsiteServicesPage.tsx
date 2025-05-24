@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { AppLayout } from "@/layout/AppLayout";
 import { ITServicePricingTable } from "@/components/services/ITServicePricingTable";
 import { GlobalServiceSection } from "@/components/GlobalServiceSection";
 import { QuoteFormSection } from "@/components/QuoteFormSection";
@@ -63,7 +62,7 @@ export default function ITOnsiteServicesPage() {
   };
   
   return (
-    <AppLayout>
+    
       <section className="py-16 bg-zion-blue">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section with Features */}
@@ -112,6 +111,6 @@ export default function ITOnsiteServicesPage() {
       <GlobalServiceSection />
       <TrustedBySection />
       <QuoteFormSection />
-    </AppLayout>
+    
   );
 }

@@ -1,7 +1,5 @@
 
 import React, { useState, useEffect, useMemo } from "react";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Grid3X3, ListFilter } from "lucide-react";
@@ -14,7 +12,6 @@ import { generateRandomListing } from "@/utils/generateRandomListing";
 import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { SearchSuggestion } from "@/types/search";
-import { AppLayout } from "@/layout/AppLayout";
 
 export default function Marketplace() {
   const navigate = useNavigate();
@@ -123,7 +120,7 @@ export default function Marketplace() {
   };
 
   return (
-    <AppLayout>
+    
       <main className="flex-grow container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">AI & Tech Marketplace</h1>
@@ -223,6 +220,6 @@ export default function Marketplace() {
           </div>
         </div>
       </main>
-    </AppLayout>
+    
   );
 }

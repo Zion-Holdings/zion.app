@@ -1,6 +1,4 @@
 
-import { AppHeader } from "@/layout/AppHeader";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ReviewsModerationTable } from "@/components/admin/reviews/ReviewsModerationTable";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
@@ -48,7 +46,7 @@ function ReviewsModerationContent() {
         title="Review Moderation | Zion AI Marketplace"
         description="Moderate and manage reviews in the Zion AI Marketplace"
       />
-      <AppHeader />
+      
       <main className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <div>
@@ -95,7 +93,7 @@ function ReviewsModerationContent() {
           </CardContent>
         </Card>
       </main>
-      <Footer />
+      
     </>
   );
 }

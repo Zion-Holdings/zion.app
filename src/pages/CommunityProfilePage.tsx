@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -120,31 +119,31 @@ export default function CommunityProfilePage() {
   
   if (isLoading) {
     return (
-      <AppLayout>
+      
         <div className="container py-8">
           <div className="flex justify-center items-center h-64">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zion-purple"></div>
           </div>
         </div>
-      </AppLayout>
+      
     );
   }
   
   if (!user) {
     return (
-      <AppLayout>
+      
         <div className="container py-8">
           <h1>User not found</h1>
           <Button asChild className="mt-4">
             <Link to="/community">Back to Community</Link>
           </Button>
         </div>
-      </AppLayout>
+      
     );
   }
 
   return (
-    <AppLayout>
+    
       <SEO 
         title={`${user.name}'s Profile | Community Forum | Zion AI Marketplace`}
         description={`View ${user.name}'s profile, posts, and contributions in the Zion AI Marketplace community.`}
@@ -304,6 +303,6 @@ export default function CommunityProfilePage() {
           </div>
         </div>
       </div>
-    </AppLayout>
+    
   );
 }

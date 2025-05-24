@@ -1,7 +1,5 @@
 
 import React, { useState } from 'react';
-import { AppHeader } from "@/layout/AppHeader";
-import { Footer } from "@/components/Footer";
 import { useNotifications } from "@/context/notifications/NotificationContext";
 import {
   NotificationType,
@@ -169,7 +167,7 @@ export default function NotificationsPage() {
         title="Notifications | Zion AI Marketplace" 
         description="View and manage your notifications on the Zion AI Marketplace." 
       />
-      <AppHeader />
+      
       <main className="container mx-auto px-4 py-8 min-h-screen">
         <div className="flex justify-between items-center mb-6">
           <div>
@@ -233,7 +231,7 @@ export default function NotificationsPage() {
           </Tabs>
         </div>
       </main>
-      <Footer />
+      
     </>
   );
 }

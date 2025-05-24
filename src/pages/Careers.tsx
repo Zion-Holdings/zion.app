@@ -3,7 +3,6 @@ import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { AppLayout } from "@/layout/AppLayout";
 
 export default function Careers() {
   // Sample job listings
@@ -122,7 +121,7 @@ export default function Careers() {
   ];
 
   return (
-    <AppLayout>
+    
       <SEO 
         title="Careers at Zion - Join Our Team" 
         description="Join the team building the future of AI and technology. Explore career opportunities at Zion's innovative marketplace platform." 
@@ -229,6 +228,6 @@ export default function Careers() {
           </div>
         </div>
       </main>
-    </AppLayout>
+    
   );
 }

@@ -1,6 +1,4 @@
 
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 
@@ -13,7 +11,7 @@ export default function About() {
         keywords="about Zion, AI marketplace, tech platform, mission, vision, team"
         canonical="https://app.ziontechgroup.com/about"
       />
-      <Header />
+      
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -116,7 +114,7 @@ export default function About() {
           </div>
         </div>
       </main>
-      <Footer />
+      
     </>
   );
 }

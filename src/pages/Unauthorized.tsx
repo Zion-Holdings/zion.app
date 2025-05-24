@@ -1,14 +1,12 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { ShieldAlert } from "lucide-react";
 
 export default function Unauthorized() {
   return (
     <>
-      <Header />
+      
       <div className="min-h-screen bg-zion-blue flex flex-col items-center justify-center px-4 py-12">
         <div className="bg-zion-blue-dark rounded-xl p-8 max-w-md w-full text-center shadow-lg border border-zion-blue-light">
           <div className="flex justify-center mb-6">
@@ -36,7 +34,7 @@ export default function Unauthorized() {
           </div>
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }

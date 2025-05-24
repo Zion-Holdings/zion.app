@@ -4,8 +4,6 @@ import { useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/components/ui/use-toast";
 import { SEO } from "@/components/SEO";
-import { AppHeader } from "@/layout/AppHeader";
-import { Footer } from "@/components/Footer";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -85,7 +83,7 @@ export default function ProfilePage() {
         title={`${profileData.full_name} | Talent Profile`}
         description={profileData.bio || "View the profile of this talented individual."}
       />
-      <AppHeader />
+      
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-12 gap-6">
           {/* Main Content Area */}
@@ -237,7 +235,7 @@ export default function ProfilePage() {
           </div>
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }
