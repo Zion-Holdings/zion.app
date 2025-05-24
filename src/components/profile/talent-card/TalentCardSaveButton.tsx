@@ -3,6 +3,7 @@ import React from "react";
 import { Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 interface TalentCardSaveButtonProps {
   profileId: string;
@@ -12,26 +13,28 @@ interface TalentCardSaveButtonProps {
   isAuthenticated: boolean;
 }
 
-export function TalentCardSaveButton({ 
-  profileId, 
+export function TalentCardSaveButton({
+  profileId,
   profileName,
-  isSaved, 
+  isSaved,
   onToggleSave,
-  isAuthenticated 
+  isAuthenticated
 }: TalentCardSaveButtonProps) {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [localIsSaved, setLocalIsSaved] = React.useState(isSaved);
   
   // Handle save toggle
   const handleSaveToggle = (e: React.MouseEvent) => {
     e.stopPropagation();
-    
+
     if (!isAuthenticated) {
       toast({
         title: "Authentication required",
         description: "Please log in to save talents to your favorites",
         variant: "destructive"
       });
+      navigate('/login');
       return;
     }
     
