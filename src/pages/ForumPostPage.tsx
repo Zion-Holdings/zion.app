@@ -1,7 +1,6 @@
 
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -108,14 +107,12 @@ export default function ForumPostPage() {
   // For this demo, we'll assume the post is found
   if (!post) {
     return (
-      <AppLayout>
-        <div className="container py-8">
-          <h1>Post not found</h1>
-          <Button asChild className="mt-4">
-            <Link to="/community">Back to Community</Link>
-          </Button>
-        </div>
-      </AppLayout>
+      <div className="container py-8">
+        <h1>Post not found</h1>
+        <Button asChild className="mt-4">
+          <Link to="/community">Back to Community</Link>
+        </Button>
+      </div>
     );
   }
 
@@ -250,7 +247,7 @@ export default function ForumPostPage() {
   const formattedDate = format(new Date(post.createdAt), "MMMM d, yyyy 'at' h:mm a");
   
   return (
-    <AppLayout>
+    <>
       <SEO
         title={`${post.title} | Community Forum | Zion AI Marketplace`}
         description={post.content.substring(0, 160)}
@@ -432,6 +429,6 @@ export default function ForumPostPage() {
           </div>
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

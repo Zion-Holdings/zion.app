@@ -31,6 +31,8 @@ const Analytics = React.lazy(() => import('./pages/Analytics'));
 const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
 const CommunityPage = React.lazy(() => import('./pages/CommunityPage'));
 const Categories = React.lazy(() => import('./pages/Categories'));
+const Blog = React.lazy(() => import('./pages/Blog'));
+const BlogPost = React.lazy(() => import('./pages/BlogPost'));
 const PartnersPage = React.lazy(() => import('./pages/Partners'));
 const Login = React.lazy(() => import('./pages/Login'));
 const Signup = React.lazy(() => import('./pages/Signup'));
@@ -60,6 +62,8 @@ const baseRoutes = [
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
+  { path: '/blog', element: <Blog /> },
+  { path: '/blog/:slug', element: <BlogPost /> },
 ];
 
 const App = () => {
