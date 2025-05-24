@@ -83,7 +83,13 @@ export default function Signup() {
         });
       }
     } catch (err: any) {
-      form.setError("root", { message: err.message });
+      const message = err.message ?? "Registration failed";
+      form.setError("root", { message });
+      toast({
+        variant: "destructive",
+        title: "Registration failed",
+        description: message,
+      });
     } finally {
       setIsSubmitting(false);
     }
