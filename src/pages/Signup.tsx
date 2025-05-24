@@ -11,6 +11,7 @@ import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import {
   Form,
   FormControl,
@@ -74,12 +75,7 @@ export default function Signup() {
         data.displayName
       );
       if (error) {
-        toast({
-          title: "Signup failed",
-          description: error,
-          variant: "destructive",
-        });
-        console.error("Signup error:", error);
+        form.setError("root", { message: error });
       } else {
         toast({
           title: "Account created",
@@ -87,12 +83,7 @@ export default function Signup() {
         });
       }
     } catch (err: any) {
-      console.error("Network error during signup:", err);
-      toast({
-        title: "Network error",
-        description: err.message || "Unable to create account.",
-        variant: "destructive",
-      });
+      form.setError("root", { message: err.message });
     } finally {
       setIsSubmitting(false);
     }
@@ -127,6 +118,11 @@ export default function Signup() {
 
             <div className="bg-zion-blue-dark rounded-lg p-6">
               <Form {...form}>
+                {form.formState.errors.root && (
+                  <Alert variant="destructive" className="mb-4">
+                    <AlertDescription>{form.formState.errors.root.message}</AlertDescription>
+                  </Alert>
+                )}
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate>
                   <FormField
                     control={form.control}

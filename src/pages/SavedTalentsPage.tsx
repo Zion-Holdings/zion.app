@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { AppHeader } from "@/layout/AppHeader";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { TalentCard } from "@/components/talent/TalentCard";
@@ -163,7 +162,6 @@ export default function SavedTalentsPage() {
         title="Saved Talents | Zion AI Marketplace"
         description="View and manage your saved talents in the Zion AI Marketplace"
       />
-      <AppHeader />
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-4">Saved Talents</h1>
         <p className="text-muted-foreground">

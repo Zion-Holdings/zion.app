@@ -1,6 +1,5 @@
 
 import { useState } from 'react';
-import { AppHeader } from '@/layout/AppHeader';
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
@@ -17,7 +16,6 @@ function PortfolioBuilderContent() {
         title="Portfolio Builder | Zion AI Marketplace" 
         description="Create and customize your resume and portfolio to showcase your skills and experience." 
       />
-      <AppHeader />
       <main className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-8">Resume & Portfolio Builder</h1>
         
