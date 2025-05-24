@@ -31,6 +31,9 @@ cd <YOUR_PROJECT_NAME>
 # Step 3: Run the setup script with your preferred package manager (npm, pnpm, yarn, or bun)
 ./setup.sh npm  # Default and most compatible option
 
+# If you're using OpenAI Codex environments, a convenience script is available:
+./.codex/setup.sh  # Installs dependencies using npm
+
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev  # Use the same package manager you specified in setup.sh
 ```
