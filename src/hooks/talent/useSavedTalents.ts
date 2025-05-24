@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { TalentProfile } from "@/types/talent";
 import { toast } from "@/hooks/use-toast";
+import { showApiError } from "@/utils/apiErrorHandler";
 import { useAuthStatus } from "@/hooks/talent";
 
 export function useSavedTalents() {
@@ -50,11 +51,7 @@ export function useSavedTalents() {
         }
       } catch (error) {
         console.error('Error fetching saved talents:', error);
-        toast({
-          title: "Error loading favorites",
-          description: "There was a problem loading your saved talents.",
-          variant: "destructive"
-        });
+        showApiError(error, 'There was a problem loading your saved talents.');
       } finally {
         setIsLoading(false);
       }
@@ -115,11 +112,7 @@ export function useSavedTalents() {
       }
     } catch (error) {
       console.error('Error toggling saved talent:', error);
-      toast({
-        title: "Error",
-        description: "There was a problem updating your favorites. Please try again.",
-        variant: "destructive"
-      });
+      showApiError(error, 'There was a problem updating your favorites. Please try again.');
     }
   };
 

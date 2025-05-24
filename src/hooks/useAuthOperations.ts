@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { UserProfile } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
+import { showApiError } from "@/utils/apiErrorHandler";
 import { trackReferral, checkUrlForReferralCode } from "@/utils/referralUtils";
 import { cleanupAuthState } from "@/utils/authUtils";
 
@@ -67,11 +68,7 @@ export function useAuthOperations(
       });
 
       if (error) {
-        toast({
-          variant: "destructive",
-          title: "Error during signup",
-          description: error.message,
-        });
+        showApiError(error, "Error during signup");
         return { data: null, error: error.message };
       }
 
@@ -88,11 +85,7 @@ export function useAuthOperations(
 
       return { data, error: null };
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Oh no! Something went wrong.",
-        description: "Failed to sign up. Please try again.",
-      });
+      showApiError(error, "Failed to sign up. Please try again.");
       return { data: null, error: "Failed to sign up." };
     } finally {
       setIsLoading(false);
