@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, ChevronLeft, ChevronRight, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import type { BlogPost as BlogPostType } from "@/types/blog";
 import { Separator } from "@/components/ui/separator";
-import { AppLayout } from "@/layout/AppLayout";
 
 // Importing the sample blog posts - in a real app, you would fetch this from an API
 import { BLOG_POSTS } from "@/data/blog-posts";
@@ -44,11 +43,9 @@ export default function BlogPost() {
   
   if (!post) {
     return (
-      <AppLayout>
-        <div className="min-h-screen bg-zion-blue text-white p-8 flex justify-center items-center">
-          <div className="animate-pulse">Loading article...</div>
-        </div>
-      </AppLayout>
+      <div className="min-h-screen bg-zion-blue text-white p-8 flex justify-center items-center">
+        <div className="animate-pulse">Loading article...</div>
+      </div>
     );
   }
   
@@ -70,10 +67,10 @@ export default function BlogPost() {
   };
   
   return (
-    <AppLayout>
-      <SEO 
-        title={post.title} 
-        description={post.excerpt} 
+    <>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
         keywords={post.tags.join(", ")}
         ogImage={post.featuredImage}
         canonical={`https://app.ziontechgroup.com/blog/${post.slug}`}
@@ -264,6 +261,6 @@ export default function BlogPost() {
           </div>
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }
