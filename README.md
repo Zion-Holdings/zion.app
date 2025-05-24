@@ -93,13 +93,14 @@ If you encounter errors running `bun install` (for example, integrity check fail
 
 For pnpm errors showing "This project is configured to use npm", use `./setup.sh npm` instead as the project may have npm-specific configurations.
 
-If you see a warning about `rimraf@3.0.2` being deprecated, run:
+If you see a warning about `rimraf@3.0.2` being deprecated, install the latest
+version of `rimraf`:
 
 ```sh
-npm install rimraf@latest --save-dev
+npm install rimraf@^5 --save-dev
 ```
 
-This updates the dependency to a supported version.
+This updates the dependency to a supported v5 release.
 
 ### Whitelabel Tenant Errors
 
