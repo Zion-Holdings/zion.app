@@ -37,7 +37,7 @@ function TalentDashboardContent() {
           </div>
           <div className="flex gap-4">
             <Button variant="outline" asChild>
-              <Link to="/profile/settings">
+              <Link to="/settings/account">
                 <UserIcon className="h-4 w-4 mr-2" />
                 Profile Settings
               </Link>

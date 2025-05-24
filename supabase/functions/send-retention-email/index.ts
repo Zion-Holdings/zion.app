@@ -207,7 +207,7 @@ async function generateEmail(emailData: EmailData, userData: any): Promise<{ sub
           ctaText = "Add Your Skills";
         } else if (!onboarding.availability_set) {
           nextAction = "set your availability to help clients find you";
-          ctaLink = "/profile/settings";
+          ctaLink = "/settings/account";
           ctaText = "Set Your Availability";
         }
       } else {

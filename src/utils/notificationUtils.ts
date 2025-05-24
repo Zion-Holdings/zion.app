@@ -154,7 +154,7 @@ export async function createOnboardingNotification({
       case 'availability_set':
         title = 'Set your availability';
         message = 'Set your availability to help clients know when you can work';
-        actionUrl = '/profile/settings';
+        actionUrl = '/settings/account';
         actionText = 'Set Availability';
         break;
     }
