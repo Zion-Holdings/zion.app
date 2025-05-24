@@ -18,10 +18,10 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
           <FormItem>
             <FormLabel className="text-white">Your Name</FormLabel>
             <FormControl>
-              <Input 
-                placeholder="Enter your full name" 
+              <Input
+                placeholder="Enter your full name"
                 {...field}
-                className="bg-zion-blue-light/20 border-zion-blue-light text-white"
+                className="bg-zion-blue-light/20 border-zion-blue-light text-black"
               />
             </FormControl>
             <FormMessage />
@@ -36,11 +36,11 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
           <FormItem>
             <FormLabel className="text-white">Your Email</FormLabel>
             <FormControl>
-              <Input 
-                placeholder="Enter your email address" 
+              <Input
+                placeholder="Enter your email address"
                 type="email"
                 {...field}
-                className="bg-zion-blue-light/20 border-zion-blue-light text-white"
+                className="bg-zion-blue-light/20 border-zion-blue-light text-black"
               />
             </FormControl>
             <FormMessage />

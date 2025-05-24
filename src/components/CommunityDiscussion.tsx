@@ -82,14 +82,14 @@ export const CommunityDiscussion: React.FC = () => {
           <CardContent className="py-5">
             <Input
               placeholder="Title (e.g., Share an AI tool, Ask for help...)"
-              className="mb-3 bg-zion-blue-light text-white placeholder:text-zion-slate"
+              className="mb-3 bg-zion-blue-light text-black placeholder:text-zion-slate"
               value={newTitle}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewTitle(e.target.value)}
               maxLength={80}
             />
             <Textarea
               placeholder="What's on your mind?"
-              className="mb-4 bg-zion-blue-light text-white placeholder:text-zion-slate min-h-[70px]"
+              className="mb-4 bg-zion-blue-light text-black placeholder:text-zion-slate min-h-[70px]"
               value={newBody}
               onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setNewBody(e.target.value)}
               maxLength={400}
