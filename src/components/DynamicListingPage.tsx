@@ -185,11 +185,12 @@ export function DynamicListingPage({
                         console.log("Rating selected:", rating);
                         setSelectedRating(rating);
                       }}
+                      aria-pressed={selectedRating === rating}
                       className={`${
-                        selectedRating === rating 
-                          ? "bg-zion-purple/20 border-zion-purple text-zion-purple" 
+                        selectedRating === rating
+                          ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
                           : "border-zion-blue-light text-zion-slate-light"
-                      }`}
+                      } focus-visible:ring-zion-purple`}
                     >
                       {rating === null ? (
                         "Any"
@@ -244,7 +245,12 @@ export function DynamicListingPage({
                     variant="outline"
                     size="icon"
                     onClick={() => setView("grid")}
-                    className={`${view === "grid" ? "bg-zion-purple/20 border-zion-purple text-zion-purple" : "border-zion-blue-light text-zion-slate"}`}
+                    aria-pressed={view === "grid"}
+                    className={`${
+                      view === "grid"
+                        ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
+                        : "border-zion-blue-light text-zion-slate-light"
+                    } focus-visible:ring-zion-purple`}
                   >
                     <LayoutGrid className="h-4 w-4" />
                   </Button>
@@ -252,7 +258,12 @@ export function DynamicListingPage({
                     variant="outline"
                     size="icon"
                     onClick={() => setView("list")}
-                    className={`${view === "list" ? "bg-zion-purple/20 border-zion-purple text-zion-purple" : "border-zion-blue-light text-zion-slate"}`}
+                    aria-pressed={view === "list"}
+                    className={`${
+                      view === "list"
+                        ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
+                        : "border-zion-blue-light text-zion-slate-light"
+                    } focus-visible:ring-zion-purple`}
                   >
                     <List className="h-4 w-4" />
                   </Button>

@@ -11,6 +11,8 @@ export function ModeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      aria-pressed={theme === "dark"}
+      className="focus-visible:ring-zion-purple"
     >
       {theme === "dark" ? (
         <Sun className="h-5 w-5 text-yellow-300" />
