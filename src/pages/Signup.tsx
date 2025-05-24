@@ -7,6 +7,7 @@ import { z } from "zod";
 import { User, Mail, Lock, Eye, EyeOff, Facebook, Twitter } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
+import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -64,10 +65,34 @@ export default function Signup() {
   // Form submission handler
   const onSubmit = async (data: SignupFormValues) => {
     if (isSubmitting) return; // Prevent multiple submissions
-    
+
     setIsSubmitting(true);
     try {
-      await signup(data.email, data.password, data.displayName);
+      const { error } = await signup(
+        data.email,
+        data.password,
+        data.displayName
+      );
+      if (error) {
+        toast({
+          title: "Signup failed",
+          description: error,
+          variant: "destructive",
+        });
+        console.error("Signup error:", error);
+      } else {
+        toast({
+          title: "Account created",
+          description: "Check your email to verify your account.",
+        });
+      }
+    } catch (err: any) {
+      console.error("Network error during signup:", err);
+      toast({
+        title: "Network error",
+        description: err.message || "Unable to create account.",
+        variant: "destructive",
+      });
     } finally {
       setIsSubmitting(false);
     }
