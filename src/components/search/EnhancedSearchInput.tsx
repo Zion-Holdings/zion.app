@@ -8,15 +8,21 @@ import { SearchSuggestion } from "@/types/search";
 interface EnhancedSearchInputProps {
   value: string;
   onChange: (value: string) => void;
+  /**
+   * Optional callback when a suggestion is selected. This allows parent
+   * components to perform actions such as navigation.
+   */
+  onSelectSuggestion?: (value: string) => void;
   placeholder?: string;
   searchSuggestions: SearchSuggestion[];
 }
 
-export function EnhancedSearchInput({ 
-  value, 
-  onChange, 
-  placeholder = "Search...", 
-  searchSuggestions 
+export function EnhancedSearchInput({
+  value,
+  onChange,
+  onSelectSuggestion,
+  placeholder = "Search...",
+  searchSuggestions
 }: EnhancedSearchInputProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState<SearchSuggestion[]>([]);
@@ -59,6 +65,9 @@ export function EnhancedSearchInput({
 
   const handleSelectSuggestion = (suggestion: string) => {
     onChange(suggestion);
+    if (onSelectSuggestion) {
+      onSelectSuggestion(suggestion);
+    }
     setIsFocused(false);
     inputRef.current?.blur();
   };
