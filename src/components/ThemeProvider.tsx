@@ -8,7 +8,7 @@ type ThemeProviderProps = {
   defaultTheme?: Theme
 }
 
-type ThemeProviderState = {
+export type ThemeProviderState = {
   theme: Theme
   setTheme: (theme: Theme) => void
 }
