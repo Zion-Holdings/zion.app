@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
@@ -6,7 +6,7 @@ import { ListingScoreCard } from "@/components/ListingScoreCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
-import { Search, Filter, ArrowDownAZ, ArrowUpZA } from "lucide-react";
+import { Search, Filter, ArrowDownAZ, ArrowUpZA, Loader2 } from "lucide-react";
 
 // Example listing type
 interface Listing {
@@ -55,6 +55,13 @@ export function CategoryListingPage({
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSort, setSelectedSort] = useState(sortOptions[0].value);
   const [selectedFilter, setSelectedFilter] = useState(filterOptions[0].value);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const timeout = setTimeout(() => setIsLoading(false), 300);
+    return () => clearTimeout(timeout);
+  }, [searchQuery, selectedSort, selectedFilter]);
   
   // Process listings based on filters and search
   const processedListings = initialListings
@@ -171,7 +178,11 @@ export function CategoryListingPage({
           </div>
 
           {/* Listings Grid */}
-          {processedListings.length > 0 ? (
+          {isLoading ? (
+            <div className="flex justify-center py-20">
+              <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
+            </div>
+          ) : processedListings.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {processedListings.map((listing) => (
                 <ListingScoreCard 

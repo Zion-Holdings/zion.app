@@ -43,11 +43,16 @@ export function AutocompleteSuggestions({
       <ul className="py-2 max-h-60 overflow-y-auto">
         {suggestions.map((suggestion, index) => {
           const highlight = highlightMatch(suggestion.text, searchTerm);
-          
+
           return (
-            <li key={`${suggestion.type}-${index}`} 
-                className="px-4 py-2 hover:bg-zion-blue-light/20 cursor-pointer"
-                onClick={() => onSelectSuggestion(suggestion.text)}>
+            <li
+              key={`${suggestion.type}-${index}`}
+              className="px-4 py-2 hover:bg-zion-blue-light/20 cursor-pointer"
+              onMouseDown={(e) => {
+                e.preventDefault();
+                onSelectSuggestion(suggestion.text);
+              }}
+            >
               <div className="flex items-center justify-between">
                 <div>
                   <span>{highlight.before}</span>

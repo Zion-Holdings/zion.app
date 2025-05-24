@@ -6,6 +6,7 @@ import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { SearchSuggestion } from "@/types/search";
 import { useAISearch } from "@/hooks/useAISearch";
 import { AppLayout } from "@/layout/AppLayout";
+import { Loader2 } from "lucide-react";
 
 export default function SearchPage() {
   const [params] = useSearchParams();
@@ -44,7 +45,11 @@ export default function SearchPage() {
           />
         </form>
 
-        {loading && <p className="text-zion-slate-light">Searching...</p>}
+        {loading && (
+          <div className="flex justify-center py-8">
+            <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
+          </div>
+        )}
         {!loading && results.length === 0 && (
           <p className="text-zion-slate-light">No results found.</p>
         )}

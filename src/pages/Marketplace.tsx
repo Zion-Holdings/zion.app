@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Grid3X3, ListFilter } from "lucide-react";
+import { Grid3X3, ListFilter, Loader2 } from "lucide-react";
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { FilterSidebar } from "@/components/search/FilterSidebar";
 import { ActiveFiltersBar } from "@/components/search/ActiveFiltersBar";
@@ -24,6 +24,7 @@ export default function Marketplace() {
   const [selectedAvailability, setSelectedAvailability] = useState<string[]>([]);
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Automatically append a new listing every 2 minutes
   useEffect(() => {
@@ -35,6 +36,12 @@ export default function Marketplace() {
   
   const searchSuggestions: SearchSuggestion[] = generateSearchSuggestions();
   const filterOptions = useMemo(() => generateFilterOptions(listings), [listings]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const timeout = setTimeout(() => setIsLoading(false), 300);
+    return () => clearTimeout(timeout);
+  }, [searchQuery, selectedProductTypes, selectedLocations, selectedAvailability, selectedRating]);
   
   // Filter listings based on selected filters
   const filteredListings = listings.filter(listing => {
@@ -197,16 +204,21 @@ export default function Marketplace() {
             </div>
             
             {/* Display actual marketplace listings */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {filteredListings.length > 0 ? (
-                filteredListings.map((listing) => (
-                  <ProductListingCard 
-                    key={listing.id} 
-                    listing={listing}
-                    onRequestQuote={handleRequestQuote}
-                  />
-                ))
-              ) : (
+            {isLoading ? (
+              <div className="flex justify-center py-20">
+                <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {filteredListings.length > 0 ? (
+                  filteredListings.map((listing) => (
+                    <ProductListingCard
+                      key={listing.id}
+                      listing={listing}
+                      onRequestQuote={handleRequestQuote}
+                    />
+                  ))
+                ) : (
                 <div className="col-span-2 text-center py-16 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
                   <h2 className="text-2xl font-bold text-white mb-4">No Results Found</h2>
                   <p className="text-zion-slate-light max-w-md mx-auto mb-8">
@@ -219,8 +231,9 @@ export default function Marketplace() {
                     Clear Filters
                   </Button>
                 </div>
-              )}
-            </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </main>
