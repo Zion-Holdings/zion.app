@@ -140,6 +140,7 @@ export default function Marketplace() {
               <EnhancedSearchInput
                 value={searchQuery}
                 onChange={setSearchQuery}
+                onSelectSuggestion={setSearchQuery}
                 placeholder="Search the marketplace..."
                 searchSuggestions={searchSuggestions}
               />

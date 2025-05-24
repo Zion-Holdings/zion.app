@@ -66,6 +66,10 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           <EnhancedSearchInput
             value={query}
             onChange={setQuery}
+            onSelectSuggestion={(text) => {
+              navigate(`/search?q=${encodeURIComponent(text)}`);
+              setQuery("");
+            }}
             searchSuggestions={searchSuggestions}
           />
         </form>
