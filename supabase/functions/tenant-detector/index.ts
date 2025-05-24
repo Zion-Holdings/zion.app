@@ -11,7 +11,7 @@ interface TenantInfo {
   theme_preset: string;
 }
 
-// Enhanced CORS headers with specific allowed origins and methods
+// Enhanced CORS headers
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
@@ -59,7 +59,6 @@ serve(async (req) => {
     let tenantInfo: TenantInfo | null = null;
 
     if (subdomainParam) {
-      // Direct subdomain lookup with error handling
       const { data, error } = await supabase
         .from('whitelabel_tenants')
         .select('id, brand_name, subdomain, custom_domain, primary_color, logo_url, theme_preset')
@@ -102,7 +101,6 @@ serve(async (req) => {
       }
     }
 
-    // Return response with enhanced headers
     return new Response(
       JSON.stringify({
         tenant: tenantInfo,
@@ -118,13 +116,11 @@ serve(async (req) => {
   } catch (error) {
     console.error('Tenant detector error:', error);
     
-    // Enhanced error response
     return new Response(
       JSON.stringify({ 
         error: error.message || 'Internal server error',
         status: 'error',
         timestamp: new Date().toISOString(),
-        details: error.stack
       }),
       {
         status: error.message.includes('No hostname') ? 400 : 500,

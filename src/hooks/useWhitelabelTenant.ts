@@ -27,6 +27,7 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
+  const MAX_RETRIES = 5;
 
   useEffect(() => {
     const loadTenant = async () => {
@@ -36,12 +37,13 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
       try {
         // Get the current hostname, fallback to localhost if not available
         const hostname = window.location.hostname || 'localhost';
-        // Some dev hosts (e.g. webcontainer.io) generate long ephemeral
-        // subdomains that our edge function does not recognise. In those cases
-        // fall back to localhost so the function returns the default tenant.
+        
+        // Some dev hosts generate long ephemeral subdomains that our edge function
+        // does not recognise. In those cases fall back to localhost.
         const sanitizedHostname = /webcontainer-api\.io$/.test(hostname)
           ? 'localhost'
           : hostname;
+        
         const functionName = 'tenant-detector';
         
         // Build the query parameters
@@ -60,22 +62,12 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
         );
 
         if (functionError) {
-          // Enhanced error logging
-          console.error('Edge Function error details:', {
+          console.warn('Edge Function error:', {
             error: functionError,
             params,
             hostname,
             retryCount,
           });
-
-          // Handle specific error cases with user-friendly messages
-          if (functionError.message?.includes('Failed to fetch')) {
-            throw new Error('Unable to connect to tenant service. Please check your internet connection and try again.');
-          }
-          
-          if (functionError.message?.includes('CORS')) {
-            throw new Error('Access to tenant service is restricted. Please contact support.');
-          }
 
           throw new Error(functionError.message || 'Failed to load tenant configuration');
         }
@@ -88,40 +80,28 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
 
         if (data.tenant) {
           setTenant(data.tenant);
-          // Reset retry count on success
-          setRetryCount(0);
+          setRetryCount(0); // Reset retry count on success
         } else {
           setTenant(null);
         }
       } catch (err: any) {
-        console.error('Error loading tenant:', {
+        console.warn('Error loading tenant:', {
           error: err,
           retryCount,
           timestamp: new Date().toISOString(),
         });
 
-        // Format user-friendly error message
-        let message = 'An unexpected error occurred while loading tenant configuration';
-        
-        if (err.message.includes('No internet connection') || 
-            err.message.includes('Failed to fetch') || 
-            err.message.includes('Unable to connect')) {
-          message = 'Unable to reach the server. Please check your internet connection and try again.';
-        } else if (err.message.includes('CORS')) {
-          message = 'Access to tenant service is restricted. Please contact support.';
-        }
-
-        setError(message);
+        setError('Unable to load tenant configuration. Retrying...');
         setTenant(null);
 
-        // Implement retry logic with exponential backoff for recoverable errors
-        if (retryCount < 3 && 
-            (err.message.includes('Failed to fetch') || 
-             err.message.includes('Unable to connect'))) {
-          const retryDelay = Math.min(Math.pow(2, retryCount) * 1000, 10000); // Cap at 10 seconds
+        // Implement retry with exponential backoff
+        if (retryCount < MAX_RETRIES) {
+          const retryDelay = Math.min(Math.pow(2, retryCount) * 1000, 8000);
           setTimeout(() => {
             setRetryCount(prev => prev + 1);
           }, retryDelay);
+        } else {
+          setError('Unable to load tenant configuration after multiple attempts. Please check your connection.');
         }
       } finally {
         setIsLoading(false);
@@ -150,7 +130,7 @@ export function useTenantAdminStatus(tenantId?: string) {
       try {
         const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
         if (sessionError) {
-          console.error('Session error:', sessionError);
+          console.warn('Session error:', sessionError);
           setIsAdmin(false);
           return;
         }
@@ -169,12 +149,12 @@ export function useTenantAdminStatus(tenantId?: string) {
           .single();
 
         if (error) {
-          console.error('Error checking admin status:', error);
+          console.warn('Error checking admin status:', error);
         }
 
         setIsAdmin(!!data && !error);
       } catch (err) {
-        console.error('Error checking tenant admin status:', err);
+        console.warn('Error checking tenant admin status:', err);
         setIsAdmin(false);
       } finally {
         setIsLoading(false);

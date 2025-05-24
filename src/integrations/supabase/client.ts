@@ -4,20 +4,20 @@ export const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 export const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
+  throw new Error('Missing Supabase environment variables. Please check your .env file.');
 }
 
 // Enhanced network connectivity check with multiple strategies
 export const checkOnline = async (): Promise<boolean> => {
-  // If navigator is missing or reports offline, assume no connectivity
-  if (typeof navigator === 'undefined' || typeof navigator.onLine === 'undefined' || !navigator.onLine) {
+  // First check navigator.onLine
+  if (typeof navigator === 'undefined' || !navigator.onLine) {
     return false;
   }
 
   try {
-    // Try a lightweight request with timeout
+    // Try a lightweight request to Supabase with timeout
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    const timeoutId = setTimeout(() => controller.abort(), 3000);
 
     try {
       const response = await fetch(`${supabaseUrl}/rest/v1/`, {
@@ -27,12 +27,11 @@ export const checkOnline = async (): Promise<boolean> => {
           apikey: supabaseAnonKey,
         },
       });
-      // Consider any response under 500 as evidence of connectivity.
-      // Some environments return 401/404 for this endpoint even when
-      // the network is available.
-      return response.status < 500;
-    } finally {
       clearTimeout(timeoutId);
+      return response.status < 500;
+    } catch (err) {
+      clearTimeout(timeoutId);
+      return false;
     }
   } catch {
     return false;
@@ -40,9 +39,9 @@ export const checkOnline = async (): Promise<boolean> => {
 };
 
 // Enhanced retry configuration
-const RETRY_COUNT = 3;
+const RETRY_COUNT = 5; // Increased from 3
 const INITIAL_RETRY_DELAY = 1000;
-const MAX_RETRY_DELAY = 10000;
+const MAX_RETRY_DELAY = 8000;
 
 // Enhanced fetch with improved retry mechanism
 export const safeFetch: typeof fetch = async (input, init) => {
@@ -51,23 +50,21 @@ export const safeFetch: typeof fetch = async (input, init) => {
 
   for (let attempt = 0; attempt < RETRY_COUNT; attempt++) {
     try {
+      // Check online status before attempting
       if (!(await checkOnline())) {
-        throw new Error('No internet connection');
+        console.warn('Network appears to be offline, waiting before retry...');
+        await new Promise(resolve => setTimeout(resolve, delay));
+        continue;
       }
 
-      // Add timeout to prevent hanging requests
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000);
-
-      const normalizedHeaders = init?.headers instanceof Headers
-        ? Object.fromEntries(init.headers.entries())
-        : init?.headers ?? {};
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
 
       const response = await fetch(input, {
         ...init,
         signal: controller.signal,
         headers: {
-          ...normalizedHeaders,
+          ...(init?.headers || {}),
           'x-retry-attempt': attempt.toString(),
         },
       });
@@ -81,21 +78,10 @@ export const safeFetch: typeof fetch = async (input, init) => {
       return response;
     } catch (err: any) {
       lastError = err;
-      console.error(`Attempt ${attempt + 1} failed:`, err);
+      console.warn(`Attempt ${attempt + 1} failed:`, err.message);
 
-      // If there's clearly no network connection, don't keep retrying
-      if (err.message === 'No internet connection') {
-        break;
-      }
-
-      // Don't retry if it's a CORS error
-      if (err.message.includes('CORS')) {
-        throw new Error('CORS error: Unable to access Supabase. Please check your CORS configuration.');
-      }
-
-      // Don't retry if it's an abort error
       if (err.name === 'AbortError') {
-        throw new Error('Request timeout. Please try again.');
+        console.warn('Request timed out, retrying...');
       }
 
       // Don't retry on the last attempt
@@ -103,24 +89,23 @@ export const safeFetch: typeof fetch = async (input, init) => {
         break;
       }
 
-      // Wait before retrying with exponential backoff and jitter
+      // Exponential backoff with jitter
       const jitter = Math.random() * 200;
       await new Promise(resolve => setTimeout(resolve, Math.min(delay + jitter, MAX_RETRY_DELAY)));
-      delay *= 2;
+      delay *= 1.5;
     }
   }
 
-  // If all retries failed, throw a user-friendly error
   throw new Error(
-    lastError?.message === 'Failed to fetch' || lastError?.message === 'No internet connection'
-      ? 'Failed to connect to Supabase. This environment might be offline.'
+    lastError?.message === 'Failed to fetch'
+      ? 'Unable to connect to Supabase. Please check your internet connection and try again.'
       : lastError?.message || 'An unexpected error occurred'
   );
 };
 
 // Create Supabase client with enhanced fetch
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  global: { 
+  global: {
     fetch: safeFetch,
     headers: {
       'X-Client-Info': 'supabase-js-web',
