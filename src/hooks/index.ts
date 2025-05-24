@@ -6,3 +6,4 @@ export * from './useAuth';
 export * from './useOnboardingStatus';
 export * from './usePageViewTracking';
 export * from './useReactId';
+export * from './useScrollToTop';

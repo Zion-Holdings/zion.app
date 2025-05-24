@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
+import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
@@ -62,6 +63,8 @@ const baseRoutes = [
 ];
 
 const App = () => {
+  // Ensure each navigation starts at the top of the page
+  useScrollToTop();
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
