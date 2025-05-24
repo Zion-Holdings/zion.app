@@ -1,7 +1,5 @@
 
 import React from 'react';
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
@@ -23,7 +21,6 @@ export default function Home() {
         keywords="AI, technology, marketplace, services, talent"
         canonical="https://app.ziontechgroup.com/"
       />
-      <Header />
 
       <ITServiceRequestHero />
 
@@ -40,7 +37,6 @@ export default function Home() {
       <HowItWorksSection />
       <FeaturedListingsSection />
       <NewsletterSection />
-      <Footer />
     </div>
   );
 }
