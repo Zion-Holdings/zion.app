@@ -4,6 +4,7 @@ import { quoteRequestService } from '@/services/quoteRequestService';
 import { useAuth } from '@/hooks/useAuth';
 import type { QuoteRequest, QuoteStatus } from '@/types/quotes';
 import { useToast } from '@/hooks/use-toast';
+import { showApiError } from '@/utils/apiErrorHandler';
 
 export const useTalentQuotes = () => {
   const { user } = useAuth();
@@ -64,11 +65,7 @@ export const useTalentQuotes = () => {
       queryClient.invalidateQueries({ queryKey: ['quotes', 'talent', talentId] });
     },
     onError: (error: Error) => {
-      toast({
-        title: "Error",
-        description: "Failed to update status: " + error.message,
-        variant: "destructive"
-      });
+      showApiError(error, 'Failed to update status');
     }
   });
 
@@ -86,11 +83,7 @@ export const useTalentQuotes = () => {
       queryClient.invalidateQueries({ queryKey: ['quotes', 'talent', talentId] });
     },
     onError: (error: Error) => {
-      toast({
-        title: "Error",
-        description: "Failed to update quote: " + error.message,
-        variant: "destructive"
-      });
+      showApiError(error, 'Failed to update quote');
     }
   });
 
