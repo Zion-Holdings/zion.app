@@ -1,6 +1,5 @@
 import React from "react";
 import { useProjects } from "@/hooks/useProjects";
-import { AppHeader } from "@/layout/AppHeader";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,7 +14,6 @@ function ProjectsContent() {
   return (
     <>
       <SEO title="My Projects | Zion AI Marketplace" description="View and manage your projects." />
-      <AppHeader />
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold">My Projects</h1>
