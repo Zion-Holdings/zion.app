@@ -76,19 +76,19 @@ export function Footer() {
               <li><Link to="/talent" className="text-zion-slate hover:text-zion-cyan transition-colors">Talent</Link></li>
               <li><Link to="/equipment" className="text-zion-slate hover:text-zion-cyan transition-colors">Equipment</Link></li>
               <li><Link to="/categories" className="text-zion-slate hover:text-zion-cyan transition-colors">Categories</Link></li>
-              <li><Link to="/content/green-it" className="text-zion-slate hover:text-zion-cyan transition-colors">Green IT</Link></li>
+              <li><Link to="/green-it" className="text-zion-slate hover:text-zion-cyan transition-colors">Green IT</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-white font-semibold mb-4 text-lg">Company</h3>
             <ul className="space-y-2">
-              <li><Link to="/content/about" className="text-zion-slate hover:text-zion-cyan transition-colors">About Us</Link></li>
-              <li><Link to="/content/blog" className="text-zion-slate hover:text-zion-cyan transition-colors">Blog</Link></li>
+              <li><Link to="/about" className="text-zion-slate hover:text-zion-cyan transition-colors">About Us</Link></li>
+              <li><Link to="/blog" className="text-zion-slate hover:text-zion-cyan transition-colors">Blog</Link></li>
               <li><Link to="/partners" className="text-zion-slate hover:text-zion-cyan transition-colors">Partners</Link></li>
-              <li><Link to="/content/careers" className="text-zion-slate hover:text-zion-cyan transition-colors">Careers</Link></li>
+              <li><Link to="/careers" className="text-zion-slate hover:text-zion-cyan transition-colors">Careers</Link></li>
               <li><Link to="/contact" className="text-zion-slate hover:text-zion-cyan transition-colors">Contact</Link></li>
-              <li><Link to="/content/sitemap-page" className="text-zion-slate hover:text-zion-cyan transition-colors">Sitemap</Link></li>
+              <li><Link to="/sitemap-page" className="text-zion-slate hover:text-zion-cyan transition-colors">Sitemap</Link></li>
             </ul>
           </div>
 

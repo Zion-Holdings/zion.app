@@ -34,6 +34,9 @@ const ContentRoutes = () => {
       {/* Blog Routes */}
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
+      {/* Legacy paths for older links */}
+      <Route path="/content/blog" element={<Blog />} />
+      <Route path="/content/blog/:slug" element={<BlogPost />} />
       
       {/* Green IT Route */}
       <Route path="/green-it" element={<GreenIT />} />

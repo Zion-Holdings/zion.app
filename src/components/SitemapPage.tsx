@@ -9,7 +9,7 @@ import { AppLayout } from '@/layout/AppLayout';
 // Map sitemap paths to their actual routes in the application
 const pathMap: Record<string, string> = {
   '/about': '/content/about',
-  '/blog': '/content/blog',
+  '/blog': '/blog',
   '/careers': '/content/careers',
   '/green-it': '/content/green-it',
   '/sitemap-page': '/content/sitemap-page',
