@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import CreatePostButton from "@/components/community/CreatePostButton";
 import { Input } from "@/components/ui/input";
 import { SEO } from "@/components/SEO";
 import { AppLayout } from "@/layout/AppLayout";
@@ -296,13 +297,7 @@ export default function ForumCategoryPage() {
             </div>
           </div>
           
-          {canCreatePost && (
-            <Button asChild>
-              <Link to={user ? `/community/create?category=${categoryId}` : `/login?next=/community/create?category=${categoryId}`}>
-                Create New Post
-              </Link>
-            </Button>
-          )}
+          {canCreatePost && <CreatePostButton categoryId={categoryId} />}
         </div>
         
         <div className="mb-6">
@@ -328,13 +323,7 @@ export default function ForumCategoryPage() {
             <h2 className="text-xl font-medium mb-2">No posts yet</h2>
             <p className="text-muted-foreground mb-6">Be the first to start a discussion in this category!</p>
             
-            {canCreatePost && (
-              <Button asChild>
-                <Link to={user ? `/community/create?category=${categoryId}` : `/login?next=/community/create?category=${categoryId}`}>
-                  Create New Post
-                </Link>
-              </Button>
-            )}
+            {canCreatePost && <CreatePostButton categoryId={categoryId} />}
           </div>
         )}
       </div>
