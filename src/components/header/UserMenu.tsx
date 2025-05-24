@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -14,7 +14,16 @@ import {
 
 export function UserMenu() {
   const { user, logout } = useAuth();
+  const navigate = useNavigate();
   const { toast } = useToast();
+
+  const handleIconClick = () => {
+    if (user) {
+      navigate("/profile");
+    } else {
+      navigate("/login");
+    }
+  };
 
   const handleSignOut = async () => {
     try {
@@ -45,7 +54,7 @@ export function UserMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="h-8 w-8 rounded-full">
+        <Button variant="ghost" className="h-8 w-8 rounded-full" onClick={handleIconClick}>
           <Avatar className="h-8 w-8">
             <AvatarImage src={user.avatarUrl || ""} alt={user.displayName || "User Avatar"} />
             <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || "U"}</AvatarFallback>
