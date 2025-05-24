@@ -47,6 +47,8 @@ export default function Signup() {
   const { signup, loginWithGoogle, loginWithFacebook, loginWithTwitter, isLoading, isAuthenticated, user } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  // Track confirm password locally to prevent it from clearing on blur
+  const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Initialize react-hook-form
@@ -202,7 +204,15 @@ export default function Signup() {
                               type={showConfirmPassword ? "text" : "password"}
                               placeholder="••••••••"
                               className="bg-zion-blue pl-10 text-white border-zion-blue-light focus:border-zion-purple"
-                              {...field}
+                              value={confirmPasswordValue}
+                              onChange={(e) => {
+                                field.onChange(e)
+                                setConfirmPasswordValue(e.target.value)
+                              }}
+                              onBlur={(e) => {
+                                field.onBlur()
+                                setConfirmPasswordValue(e.target.value)
+                              }}
                               autoComplete="new-password"
                             />
                             <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
