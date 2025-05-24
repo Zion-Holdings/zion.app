@@ -238,6 +238,7 @@ export function WebhooksManager() {
                   <div className="flex items-center space-x-2">
                     <div className="flex items-center mr-2">
                       <Switch
+                        aria-label="Toggle webhook"
                         checked={webhook.is_active}
                         onCheckedChange={() => handleToggleStatus(webhook.id, webhook.is_active)}
                       />

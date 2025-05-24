@@ -266,6 +266,7 @@ export function ReviewForm({
                     <FormControl>
                       <div className="flex items-center space-x-2">
                         <Switch
+                          aria-label="Would work again"
                           checked={field.value}
                           onCheckedChange={field.onChange}
                         />
@@ -291,6 +292,7 @@ export function ReviewForm({
               <div className="flex items-center gap-2">
                 <FormControl>
                   <Switch
+                    aria-label="Submit anonymously"
                     checked={field.value}
                     onCheckedChange={field.onChange}
                   />

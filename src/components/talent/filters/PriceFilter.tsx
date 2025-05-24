@@ -28,7 +28,8 @@ export function PriceFilter({ priceRange, setPriceRange, expanded, toggleSection
             <span>${priceRange[0]}/hr</span>
             <span>${priceRange[1]}/hr</span>
           </div>
-          <Slider 
+          <Slider
+            aria-label="Hourly rate range"
             value={[priceRange[0], priceRange[1]]}
             min={50}
             max={200}

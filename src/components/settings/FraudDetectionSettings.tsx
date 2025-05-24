@@ -72,6 +72,7 @@ export function FraudDetectionSettings() {
               </div>
               <Switch
                 id="message-scanning"
+                aria-label="Message scanning"
                 checked={messageScanningEnabled}
                 onCheckedChange={setMessageScanningEnabled}
               />
@@ -88,6 +89,7 @@ export function FraudDetectionSettings() {
               </div>
               <Switch
                 id="activity-monitoring"
+                aria-label="Activity monitoring"
                 checked={activityMonitoringEnabled}
                 onCheckedChange={setActivityMonitoringEnabled}
               />
@@ -104,6 +106,7 @@ export function FraudDetectionSettings() {
               </div>
               <Switch
                 id="ai-analysis"
+                aria-label="AI analysis"
                 checked={aiAnalysisEnabled}
                 onCheckedChange={setAiAnalysisEnabled}
               />

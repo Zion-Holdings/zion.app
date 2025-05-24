@@ -142,6 +142,7 @@ export function WorkExperienceItemForm({
                   <FormLabel>Current Position</FormLabel>
                   <div className="flex items-center gap-2 h-10">
                     <Switch
+                      aria-label="Current position"
                       checked={field.value}
                       onCheckedChange={field.onChange}
                       id="current-position"
