@@ -1,6 +1,5 @@
 import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
-import { AppLayout } from "@/layout/AppLayout";
 import { useEffect, useState } from "react";
 import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
 
@@ -359,7 +358,6 @@ export default function EquipmentPage() {
   }, []);
 
   return (
-    <AppLayout>
       <DynamicListingPage
         title="Datacenter Equipment"
         description="Browse professional hardware for modern datacenter and network deployments."
@@ -368,6 +366,5 @@ export default function EquipmentPage() {
         categoryFilters={EQUIPMENT_FILTERS}
         initialPrice={{ min: 400, max: 50000 }}
       />
-    </AppLayout>
   );
 }
