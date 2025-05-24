@@ -20,6 +20,9 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   }
 });
 
+// Helper function to access profiles table
+export const getFromProfiles = () => supabase.from('profiles');
+
 // Helper function for safe fetching with retries
 export async function safeFetch(url: string, options: RequestInit = {}) {
   const maxRetries = 3;
