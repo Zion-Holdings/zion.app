@@ -62,7 +62,7 @@ export function ContactSection() {
                   <input
                     type="text"
                     id="subject"
-                    className="w-full rounded-md bg-zion-blue-dark border border-zion-blue-light focus:border-zion-purple focus:ring-1 focus:ring-zion-purple text-white"
+                    className="w-full rounded-md bg-zion-blue-dark border border-zion-blue-light focus:border-zion-purple focus:ring-1 focus:ring-zion-purple text-black"
                   />
                 </div>
                 <div>
@@ -72,7 +72,7 @@ export function ContactSection() {
                   <textarea
                     id="message"
                     rows={4}
-                    className="w-full rounded-md bg-zion-blue-dark border border-zion-blue-light focus:border-zion-purple focus:ring-1 focus:ring-zion-purple text-white"
+                    className="w-full rounded-md bg-zion-blue-dark border border-zion-blue-light focus:border-zion-purple focus:ring-1 focus:ring-zion-purple text-black"
                   ></textarea>
                 </div>
                 <div>
