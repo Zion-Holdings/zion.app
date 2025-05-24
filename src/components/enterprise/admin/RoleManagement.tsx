@@ -215,41 +215,46 @@ export function RoleManagement() {
                   </select>
                 </TableCell>
                 <TableCell className="text-center">
-                  <Switch 
-                    checked={member.permissions.viewCandidates} 
-                    onCheckedChange={(checked) => 
+                  <Switch
+                    aria-label="View candidates"
+                    checked={member.permissions.viewCandidates}
+                    onCheckedChange={(checked) =>
                       handlePermissionChange(member.id, "viewCandidates", checked)
                     }
                   />
                 </TableCell>
                 <TableCell className="text-center">
-                  <Switch 
-                    checked={member.permissions.editCandidates} 
-                    onCheckedChange={(checked) => 
+                  <Switch
+                    aria-label="Edit candidates"
+                    checked={member.permissions.editCandidates}
+                    onCheckedChange={(checked) =>
                       handlePermissionChange(member.id, "editCandidates", checked)
                     }
                   />
                 </TableCell>
                 <TableCell className="text-center">
-                  <Switch 
-                    checked={member.permissions.createJobs} 
-                    onCheckedChange={(checked) => 
+                  <Switch
+                    aria-label="Create jobs"
+                    checked={member.permissions.createJobs}
+                    onCheckedChange={(checked) =>
                       handlePermissionChange(member.id, "createJobs", checked)
                     }
                   />
                 </TableCell>
                 <TableCell className="text-center">
-                  <Switch 
-                    checked={member.permissions.manageTeam} 
-                    onCheckedChange={(checked) => 
+                  <Switch
+                    aria-label="Manage team"
+                    checked={member.permissions.manageTeam}
+                    onCheckedChange={(checked) =>
                       handlePermissionChange(member.id, "manageTeam", checked)
                     }
                   />
                 </TableCell>
                 <TableCell className="text-center">
-                  <Switch 
-                    checked={member.permissions.viewBilling} 
-                    onCheckedChange={(checked) => 
+                  <Switch
+                    aria-label="View billing"
+                    checked={member.permissions.viewBilling}
+                    onCheckedChange={(checked) =>
                       handlePermissionChange(member.id, "viewBilling", checked)
                     }
                   />

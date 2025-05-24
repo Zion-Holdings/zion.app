@@ -85,6 +85,7 @@ export function BudgetStep({ formData, updateFormData }: BudgetStepProps) {
                 Fixed Budget: {formatCurrency(formData.budget.amount)}
               </Label>
               <Slider
+                aria-label="Fixed budget"
                 defaultValue={[formData.budget.amount]}
                 max={50000}
                 step={500}
@@ -106,6 +107,7 @@ export function BudgetStep({ formData, updateFormData }: BudgetStepProps) {
                 Hourly Rate: {formatCurrency(formData.budget.amount)}/hour
               </Label>
               <Slider
+                aria-label="Hourly rate"
                 defaultValue={[formData.budget.amount]}
                 max={500}
                 step={5}
@@ -128,6 +130,7 @@ export function BudgetStep({ formData, updateFormData }: BudgetStepProps) {
                   Minimum Budget: {formatCurrency(formData.budget.amount)}
                 </Label>
                 <Slider
+                  aria-label="Minimum budget"
                   defaultValue={[formData.budget.amount]}
                   max={50000}
                   step={500}
@@ -156,6 +159,7 @@ export function BudgetStep({ formData, updateFormData }: BudgetStepProps) {
                   Maximum Budget: {formatCurrency(formData.budget.maxAmount || 0)}
                 </Label>
                 <Slider
+                  aria-label="Maximum budget"
                   defaultValue={[formData.budget.maxAmount || formData.budget.amount + 5000]}
                   min={formData.budget.amount}
                   max={100000}

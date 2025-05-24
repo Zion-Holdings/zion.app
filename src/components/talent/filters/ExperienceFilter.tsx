@@ -28,7 +28,8 @@ export function ExperienceFilter({ experienceRange, setExperienceRange, expanded
             <span>{experienceRange[0]} years</span>
             <span>{experienceRange[1]} years</span>
           </div>
-          <Slider 
+          <Slider
+            aria-label="Experience range"
             value={[experienceRange[0], experienceRange[1]]}
             min={0}
             max={15}

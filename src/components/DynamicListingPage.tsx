@@ -156,6 +156,7 @@ export function DynamicListingPage({
                 </label>
                 <div className="mt-6 px-2">
                   <Slider
+                    aria-label="Price range"
                     defaultValue={[priceRange.min, priceRange.max]}
                     min={priceRange.min}
                     max={priceRange.max}

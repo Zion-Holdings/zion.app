@@ -533,6 +533,7 @@ export function TalentRegistrationForm() {
                       </div>
                       <FormControl>
                         <Switch
+                          aria-label="AI profile enhancement"
                           checked={field.value}
                           onCheckedChange={field.onChange}
                           className="data-[state=checked]:bg-zion-purple"
