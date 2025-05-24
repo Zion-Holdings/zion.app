@@ -101,6 +101,10 @@ npm install rimraf@latest --save-dev
 
 This updates the dependency to a supported version.
 
+To prevent memory leaks from the deprecated `inflight` package, the project pins
+`glob` to version `10.4.5` via the `resolutions` field in `package.json`. Run
+`npm install` to ensure this version is installed.
+
 ### Whitelabel Tenant Errors
 
 If the app logs **"Error loading tenant"** during startup, the request to the
