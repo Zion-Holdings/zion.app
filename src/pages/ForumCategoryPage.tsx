@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import CreatePostButton from "@/components/community/CreatePostButton";
 import { Input } from "@/components/ui/input";
 import { SEO } from "@/components/SEO";
-import { AppLayout } from "@/layout/AppLayout";
 import PostCard from "@/components/community/PostCard";
 import { ForumPost, ForumCategoryInfo } from "@/types/community";
 import { Badge } from "@/components/ui/badge";
@@ -241,14 +240,12 @@ export default function ForumCategoryPage() {
   
   if (!categoryId || !categoriesInfo[categoryId]) {
     return (
-      <AppLayout>
-        <div className="container py-8">
-          <h1>Category not found</h1>
-          <Button asChild className="mt-4">
-            <Link to="/community">Back to Community</Link>
-          </Button>
-        </div>
-      </AppLayout>
+      <div className="container py-8">
+        <h1>Category not found</h1>
+        <Button asChild className="mt-4">
+          <Link to="/community">Back to Community</Link>
+        </Button>
+      </div>
     );
   }
   
@@ -269,7 +266,7 @@ export default function ForumCategoryPage() {
   const canCreatePost = categoryId !== "announcements" || (user?.userType === 'admin' || user?.role === 'admin');
   
   return (
-    <AppLayout>
+    <>
       <SEO
         title={`${category.name} | Community Forum | Zion AI Marketplace`}
         description={category.description}
@@ -327,6 +324,6 @@ export default function ForumCategoryPage() {
           </div>
         )}
       </div>
-    </AppLayout>
+    </>
   );
 }
