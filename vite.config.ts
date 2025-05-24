@@ -9,5 +9,11 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
+  },
+  build: {
+    rollupOptions: {
+      // Keep peer dependencies external to avoid missing module errors
+      external: ['react', 'react-dom', 'react-router-dom']
+    }
   }
 })
