@@ -23,19 +23,41 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 // Helper function to access profiles table
 export const getFromProfiles = () => supabase.from('profiles');
 
-// Helper function for safe fetching with retries
+// Check if the browser is online. Gracefully handle environments where
+// `navigator` is undefined such as server side rendering or tests.
+export async function checkOnline(): Promise<boolean> {
+  try {
+    return typeof navigator !== 'undefined' && navigator.onLine;
+  } catch {
+    return false;
+  }
+}
+
+// Helper function for safe fetching with retries. Adds the Supabase API key
+// header while preserving any existing Headers instance passed in `options`.
+// Throws a consistent error message when the request ultimately fails.
 export async function safeFetch(url: string, options: RequestInit = {}) {
+  if (!(await checkOnline())) {
+    throw new Error('Failed to connect to Supabase');
+  }
+
+  const headers =
+    options.headers instanceof Headers
+      ? options.headers
+      : new Headers(options.headers);
+
+  if (!headers.has('apikey')) {
+    headers.set('apikey', supabaseAnonKey);
+  }
+
   const maxRetries = 3;
-  let lastError;
+  let lastError: any;
 
   for (let i = 0; i < maxRetries; i++) {
     try {
       const response = await fetch(url, {
         ...options,
-        headers: {
-          ...options.headers,
-          'apikey': supabaseAnonKey,
-        }
+        headers,
       });
       
       if (!response.ok) {
@@ -50,5 +72,5 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
     }
   }
 
-  throw lastError;
+  throw new Error('Failed to connect to Supabase');
 }
