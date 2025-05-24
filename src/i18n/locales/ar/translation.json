@@ -19,9 +19,11 @@
     "categories": "الفئات",
     "talent": "المواهب",
     "equipment": "المعدات",
+    "community": "المجتمع",
     "dashboard": "لوحة التحكم",
     "messages": "الرسائل",
-    "post_job": "نشر وظيفة"
+    "post_job": "نشر وظيفة",
+    "analytics": "تحليلات"
   },
   "auth": {
     "login": "تسجيل الدخول",

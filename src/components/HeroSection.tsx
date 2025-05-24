@@ -2,8 +2,10 @@
 import { Button } from "@/components/ui/button";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export function HeroSection() {
+  const { t } = useTranslation();
   return (
     <section className="relative overflow-hidden py-20 md:py-32">
       {/* Background gradient effect */}
@@ -19,12 +21,11 @@ export function HeroSection() {
       
       <div className="container relative z-10 px-4 mx-auto text-center">
         <GradientHeading className="mb-6 text-5xl md:text-7xl font-bold">
-          The Future of Tech & AI Marketplace
+          {t('home.hero_title')}
         </GradientHeading>
 
         <p className="text-xl md:text-2xl text-zion-slate-light mb-10 max-w-3xl mx-auto">
-          The world's first free marketplace dedicated to high-tech and artificial intelligence. 
-          Publish, connect, and thrive — all in one place.
+          {t('home.hero_subtitle')}
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -33,7 +34,7 @@ export function HeroSection() {
             size="lg"
             asChild
           >
-            <Link to="/signup">Join Zion Now</Link>
+            <Link to="/signup">{t('auth.signup')}</Link>
           </Button>
           <Button
             variant="outline"
@@ -41,7 +42,7 @@ export function HeroSection() {
             size="lg"
             asChild
           >
-            <Link to="/marketplace">Explore Marketplace</Link>
+            <Link to="/marketplace">{t('home.browse_marketplace')}</Link>
           </Button>
         </div>
       </div>

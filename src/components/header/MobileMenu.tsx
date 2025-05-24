@@ -5,6 +5,7 @@ import { Home, Search, BriefcaseIcon, MessageSquare, User, X, MessageCircle } fr
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 export interface MobileMenuProps {
   unreadCount?: number;
@@ -15,49 +16,58 @@ export function MobileMenu({ unreadCount = 0, onClose }: MobileMenuProps) {
   const location = useLocation();
   const { user } = useAuth();
   const isAuthenticated = !!user;
-  
-  const navItems = [
+  const { t } = useTranslation();
+
+  const baseItems = [
     {
-      name: "Home",
-      href: "/",
+      key: 'home',
+      href: '/',
       icon: Home,
-      matches: (path: string) => path === "/"
+      matches: (path: string) => path === '/'
     },
     {
-      name: "Browse",
-      href: "/talent",
+      key: 'explore',
+      href: '/talent',
       icon: Search,
-      matches: (path: string) => path.startsWith("/talent") || path.startsWith("/categories") || path.startsWith("/marketplace")
+      matches: (path: string) => path.startsWith('/talent') || path.startsWith('/categories') || path.startsWith('/marketplace')
     },
     {
-      name: "Community",
-      href: "/community",
+      key: 'community',
+      href: '/community',
       icon: MessageCircle,
-      matches: (path: string) => path.startsWith("/community") || path.startsWith("/forum")
+      matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
     },
     {
-      name: "Post Job",
-      href: "/post-job",
+      key: 'post_job',
+      href: '/post-job',
       icon: BriefcaseIcon,
-      matches: (path: string) => path.startsWith("/post-job"),
+      matches: (path: string) => path.startsWith('/post-job'),
       authRequired: true
     },
     {
-      name: "Messages",
-      href: "/messages",
+      key: 'messages',
+      href: '/messages',
       icon: MessageSquare,
-      matches: (path: string) => path.startsWith("/messages") || path.startsWith("/inbox"),
+      matches: (path: string) => path.startsWith('/messages') || path.startsWith('/inbox'),
       badge: unreadCount,
       authRequired: true
     },
     {
-      name: "Dashboard",
-      href: "/dashboard",
+      key: 'dashboard',
+      href: '/dashboard',
       icon: User,
-      matches: (path: string) => path.startsWith("/dashboard"),
+      matches: (path: string) => path.startsWith('/dashboard'),
       authRequired: true
     }
   ];
+
+  const navItems = baseItems.map(item => ({
+    ...item,
+    name:
+      item.key === 'explore'
+        ? t('general.explore')
+        : t(`nav.${item.key}`)
+  }));
 
   // Filter items based on auth status
   const visibleItems = navItems.filter(item => 
