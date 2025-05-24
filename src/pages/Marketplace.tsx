@@ -71,18 +71,18 @@ export default function Marketplace() {
   const handleFilterChange = (filterType: string, value: string) => {
     console.log(`Filter changed: ${filterType} = ${value}`);
     switch (filterType) {
-      case 'productType':
-        setSelectedProductTypes(prev => 
+      case 'productTypes':
+        setSelectedProductTypes(prev =>
           prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value]
         );
         break;
-      case 'location':
-        setSelectedLocations(prev => 
+      case 'locations':
+        setSelectedLocations(prev =>
           prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value]
         );
         break;
       case 'availability':
-        setSelectedAvailability(prev => 
+        setSelectedAvailability(prev =>
           prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value]
         );
         break;
