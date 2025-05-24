@@ -53,12 +53,15 @@ export function ProductListingCard({
   };
   
   return (
-    <div className={`bg-zion-blue-dark border border-zion-blue-light rounded-lg overflow-hidden flex ${isGrid ? 'flex-col' : 'flex-row'} cursor-pointer`} onClick={handleViewListing}>
+    <div
+      className={`bg-zion-blue-dark border border-zion-blue-light rounded-lg overflow-hidden flex ${isGrid ? 'flex-col' : 'flex-row'} cursor-pointer`}
+      onClick={handleViewListing}
+    >
       {/* Image */}
-      <div className={isGrid ? 'block w-full' : 'block w-1/3'} onClick={handleViewListing}>
-        <div className={`relative ${isGrid ? 'h-48' : 'h-full'}`}>
-          <img 
-            src={imageUrl} 
+      <div className={isGrid ? 'block w-full' : 'block w-48 flex-shrink-0'} onClick={handleViewListing}>
+        <div className={`relative ${isGrid ? 'h-48' : 'h-32 w-48'}`}>
+          <img
+            src={imageUrl}
             alt={listing.title}
             className="w-full h-full object-cover"
             onError={handleImageError}

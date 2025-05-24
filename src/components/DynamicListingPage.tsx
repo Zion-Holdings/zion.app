@@ -269,9 +269,18 @@ export function DynamicListingPage({
             </div>
 
             {isLoading ? (
-              <div className={`grid gap-6 ${view === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}>
+              <div
+                className={
+                  view === "grid"
+                    ? "grid grid-cols-1 md:grid-cols-2 gap-6"
+                    : "flex flex-col gap-6"
+                }
+              >
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
+                  <div
+                    key={i}
+                    className="rounded-lg overflow-hidden border border-zion-blue-light"
+                  >
                     <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
                     <div className="p-4">
                       <Skeleton className="h-6 w-1/3 mb-2 bg-zion-blue-light/20" />
@@ -287,9 +296,15 @@ export function DynamicListingPage({
                 ))}
               </div>
             ) : filteredListings.length > 0 ? (
-              <div className={`grid gap-6 ${view === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}>
+              <div
+                className={
+                  view === "grid"
+                    ? "grid grid-cols-1 md:grid-cols-2 gap-6"
+                    : "flex flex-col gap-6"
+                }
+              >
                 {filteredListings.map((listing) => (
-                  <ProductListingCard 
+                  <ProductListingCard
                     key={listing.id}
                     listing={listing}
                     view={view}
