@@ -36,7 +36,7 @@ const mockUser: CommunityUser = {
       name: "Top Contributor",
       description: "Among the top 5% of contributors",
       icon: "Trophy",
-      color: "#2171ec"
+      color: "#3b82f6"
     },
     {
       id: "badge3",

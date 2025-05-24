@@ -45,7 +45,7 @@ export function getThemeColors(preset: ThemePreset, primaryColor: string): Theme
         primaryColor,
         backgroundColor: '#000000',
         textColor: '#ffffff',
-        accentColor: '#2171ec',
+        accentColor: '#3b82f6',
         buttonColor: primaryColor,
         cardBackground: '#0a0a0a',
       };
