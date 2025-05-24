@@ -191,8 +191,8 @@ export default function HelpCenter() {
                       />
                     </div>
                     <div>
-                      <textarea 
-                        className="w-full min-h-[120px] px-3 py-2 rounded-md border border-zion-blue-light bg-zion-blue/20 text-white"
+                      <textarea
+                        className="w-full min-h-[120px] px-3 py-2 rounded-md border border-zion-blue-light bg-zion-blue/20 text-black"
                         placeholder="Your feedback or suggestion"
                       />
                     </div>
