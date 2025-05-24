@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { 
   ArrowRight, 
   Search, 
@@ -12,34 +13,35 @@ import {
 } from "lucide-react";
 
 export function QuickAccess() {
+  const { t } = useTranslation();
   const quickLinks = [
     {
-      title: "AI Matcher",
-      description: "Find the perfect match for your project needs",
+      title: t('home.tool_ai_matcher'),
+      description: t('home.tool_ai_matcher_desc'),
       icon: <Search className="h-6 w-6 text-zion-cyan" />,
       link: "/match"
     },
     {
-      title: "Talent Directory",
-      description: "Browse verified tech specialists",
+      title: t('home.tool_talent'),
+      description: t('home.tool_talent_desc'),
       icon: <Users className="h-6 w-6 text-zion-purple" />,
       link: "/talent"
     },
     {
-      title: "Service Marketplace",
-      description: "Discover professional services",
+      title: t('home.tool_services'),
+      description: t('home.tool_services_desc'),
       icon: <Briefcase className="h-6 w-6 text-zion-cyan" />,
       link: "/services"
     },
     {
-      title: "Equipment Catalog",
-      description: "Find specialized hardware",
+      title: t('home.tool_equipment'),
+      description: t('home.tool_equipment_desc'),
       icon: <Settings className="h-6 w-6 text-zion-purple" />,
       link: "/equipment"
     },
     {
-      title: "Community",
-      description: "Connect with tech professionals",
+      title: t('nav.community'),
+      description: t('home.tool_chat_desc'),
       icon: <MessageSquare className="h-6 w-6 text-zion-cyan" />,
       link: "/community"
     },
@@ -76,7 +78,7 @@ export function QuickAccess() {
               <h3 className="text-white font-medium mb-1">{link.title}</h3>
               <p className="text-zion-slate-light text-xs mb-2">{link.description}</p>
               <div className="flex items-center text-zion-cyan text-xs mt-auto">
-                <span>Access</span>
+                <span>{t('general.explore')}</span>
                 <ArrowRight className="ml-1 h-3 w-3" />
               </div>
             </Link>

@@ -22,9 +22,11 @@
     "categories": "Categories",
     "talent": "Talent",
     "equipment": "Equipment",
+    "community": "Community",
     "dashboard": "Dashboard",
     "messages": "Messages",
-    "post_job": "Post Job"
+    "post_job": "Post Job",
+    "analytics": "Analytics"
   },
   "auth": {
     "login": "Login",

@@ -19,9 +19,11 @@
     "categories": "Categorías",
     "talent": "Talento",
     "equipment": "Equipamiento",
+    "community": "Comunidad",
     "dashboard": "Panel",
     "messages": "Mensajes",
-    "post_job": "Publicar Trabajo"
+    "post_job": "Publicar Trabajo",
+    "analytics": "Analíticas"
   },
   "auth": {
     "login": "Iniciar Sesión",
