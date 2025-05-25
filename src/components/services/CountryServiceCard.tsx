@@ -91,16 +91,30 @@ export function CountryServiceCard({ country, onSelect, isPopular }: CountryServ
           </div>
         </div>
       </CardContent>
-      <CardFooter>
-        <Button 
-          onClick={() => onSelect(country)} 
+      <CardFooter className="flex flex-col space-y-2">
+        <Button
+          onClick={() => onSelect(country)}
           className={`w-full ${
-            isPopular 
-              ? "bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple" 
+            isPopular
+              ? "bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple"
               : "bg-zion-blue hover:bg-zion-blue-light border border-zion-blue-light"
           }`}
         >
           Select Service
+        </Button>
+        <Button
+          asChild
+          variant="outline"
+          className="w-full border-zion-purple text-zion-purple hover:bg-zion-purple/10"
+        >
+          <a href="#quote-form">Get Quote</a>
+        </Button>
+        <Button
+          asChild
+          variant="ghost"
+          className="w-full text-zion-cyan hover:text-zion-purple"
+        >
+          <a href="/contact">Contact Sales</a>
         </Button>
       </CardFooter>
     </Card>
