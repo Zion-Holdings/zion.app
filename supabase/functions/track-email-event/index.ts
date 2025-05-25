@@ -17,7 +17,10 @@ serve(async (req) => {
 
   // Validate required parameters
   if (!type || !campaignId || !userId) {
-    return new Response("Missing required parameters", { status: 400 });
+    return new Response(
+      JSON.stringify({ error: "Missing required parameters" }),
+      { status: 400, headers: { "Content-Type": "application/json" } }
+    );
   }
 
   try {
@@ -63,7 +66,10 @@ serve(async (req) => {
       });
     }
 
-    return new Response("Invalid event type", { status: 400 });
+    return new Response(
+      JSON.stringify({ error: "Invalid event type" }),
+      { status: 400, headers: { "Content-Type": "application/json" } }
+    );
   } catch (error) {
     console.error("Error tracking email event:", error);
     
@@ -77,6 +83,9 @@ serve(async (req) => {
       });
     }
     
-    return new Response("Error processing event", { status: 500 });
+    return new Response(
+      JSON.stringify({ error: "Error processing event" }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
   }
 });
