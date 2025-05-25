@@ -7,7 +7,6 @@ import { HelpCategoryList } from "./HelpCategoryList";
 import { HelpArticleList } from "./HelpArticleList";
 import { HelpArticleView } from "./HelpArticleView";
 import { HELP_CATEGORIES } from "./help-content";
-import { AppLayout } from "@/layout/AppLayout";
 import { Search } from "lucide-react";
 
 export default function HelpCenter() {
@@ -34,7 +33,7 @@ export default function HelpCenter() {
   };
   
   return (
-    <AppLayout>
+    <>
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
@@ -207,6 +206,6 @@ export default function HelpCenter() {
           </Tabs>
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

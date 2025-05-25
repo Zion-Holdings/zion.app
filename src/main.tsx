@@ -13,6 +13,7 @@ import './i18n';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
+import { AppLayout } from '@/layout/AppLayout';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
@@ -44,7 +45,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
               <NotificationProvider>
                 <AnalyticsProvider>
                   <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                    <App />
+                    <AppLayout>
+                      <App />
+                    </AppLayout>
                     <LanguageDetectionPopup />
                   </LanguageProvider>
                 </AnalyticsProvider>

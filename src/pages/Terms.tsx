@@ -1,10 +1,9 @@
-import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 
 export default function Terms() {
   return (
-    <AppLayout>
+    <>
       <SEO
         title="Terms of Service"
         description="The terms and conditions for using the Zion platform."
@@ -26,6 +25,6 @@ export default function Terms() {
           </p>
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

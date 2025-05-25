@@ -4,7 +4,6 @@ import { completeSitemap, dynamicPaths } from '@/config/sitemap';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { SEO } from './SEO';
-import { AppLayout } from '@/layout/AppLayout';
 
 // Map sitemap paths to their actual routes in the application
 const pathMap: Record<string, string> = {
@@ -30,7 +29,7 @@ const resolvePath = (path: string): string => pathMap[path] ?? path;
 
 export const SitemapPage: React.FC = () => {
   return (
-    <AppLayout>
+    <>
       <SEO
         title="Sitemap | Zion AI Marketplace"
         description="Complete sitemap of the Zion AI Marketplace"
@@ -178,6 +177,6 @@ export const SitemapPage: React.FC = () => {
           </div>
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 };

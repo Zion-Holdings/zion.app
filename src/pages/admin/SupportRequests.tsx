@@ -8,7 +8,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Search, Filter } from "lucide-react";
-import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 
 // Mock data for support requests
@@ -140,7 +139,7 @@ export default function SupportRequests() {
   };
   
   return (
-    <AppLayout>
+    <>
       <SEO 
         title="Support Requests | Admin Dashboard"
         description="Manage and track user support requests and issues"
@@ -347,6 +346,6 @@ export default function SupportRequests() {
           </TabsContent>
         </Tabs>
       </div>
-    </AppLayout>
+    </>
   );
 }
