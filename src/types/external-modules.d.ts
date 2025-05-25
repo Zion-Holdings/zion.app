@@ -327,5 +327,9 @@ declare module 'react-redux';
 declare module 'semver';
 declare module 'ws';
 declare module 'recharts';
+declare module 'next' {
+  export type GetStaticPaths = any;
+  export type GetStaticProps<P = any, Q = any> = any;
+}
 declare module 'next-themes';
 declare module 'tailwind-merge';
