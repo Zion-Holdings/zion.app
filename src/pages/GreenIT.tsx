@@ -4,7 +4,6 @@ import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Leaf, Server, Cloud } from "lucide-react";
 import { Link } from "react-router-dom";
-import { AppLayout } from "@/layout/AppLayout";
 
 export default function GreenIT() {
   const greenITSolutions = [
@@ -26,9 +25,9 @@ export default function GreenIT() {
   ];
 
   return (
-    <AppLayout>
-      <SEO 
-        title="Green IT Solutions - Sustainable Technology" 
+    <>
+      <SEO
+        title="Green IT Solutions - Sustainable Technology"
         description="Explore eco-friendly IT solutions and sustainable technology practices that reduce environmental impact while maintaining performance." 
         keywords="green IT, sustainable technology, eco-friendly computing, energy efficient hardware"
         canonical="https://app.ziontechgroup.com/marketplace/category/green-it"
@@ -126,6 +125,6 @@ export default function GreenIT() {
           </div>
         </div>
       </main>
-    </AppLayout>
+    </>
   );
 }
