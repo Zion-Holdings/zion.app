@@ -41,26 +41,22 @@ export function checkUrlForReferralCode(): string | null {
 /**
  * Track referral when a user signs up
  */
+import api from '@/lib/api';
+
 export async function trackReferral(userId: string, email: string) {
   try {
     const refCode = localStorage.getItem('referral_code');
     if (!refCode) return;
     
     // Call API to record the referral
-    const response = await fetch('/api/track-referral', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        refCode,
-        userId,
-        email,
-        ipAddress: '', // This will be captured by the server
-      }),
+    const response = await api.post('/api/track-referral', {
+      refCode,
+      userId,
+      email,
+      ipAddress: '', // This will be captured by the server
     });
-    
-    if (response.ok) {
+
+    if (response.status >= 200 && response.status < 300) {
       // Clear the stored referral code
       localStorage.removeItem('referral_code');
     }

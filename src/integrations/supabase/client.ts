@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import api from '@/lib/api';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -55,15 +56,17 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
 
   for (let i = 0; i < maxRetries; i++) {
     try {
-      const response = await fetch(url, {
-        ...options,
-        headers,
+      const response = await api({
+        url,
+        method: options.method as any,
+        data: (options as any).body,
+        headers: Object.fromEntries(headers.entries()),
       });
-      
-      if (!response.ok) {
+
+      if (response.status < 200 || response.status >= 300) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       return response;
     } catch (error) {
       lastError = error;
