@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ForumCategoryPage from '@/pages/ForumCategoryPage';
 import * as forumService from '@/services/forumPostService';
 import { vi } from 'vitest';
@@ -22,11 +23,13 @@ it('loads posts for category', async () => {
     },
   ]);
   render(
-    <MemoryRouter initialEntries={['/community/category/getting-hired']}>
-      <Routes>
-        <Route path='/community/category/:categoryId' element={<ForumCategoryPage />} />
-      </Routes>
-    </MemoryRouter>
+    <QueryClientProvider client={new QueryClient()}>
+      <MemoryRouter initialEntries={['/community/category/getting-hired']}>
+        <Routes>
+          <Route path='/community/category/:categoryId' element={<ForumCategoryPage />} />
+        </Routes>
+      </MemoryRouter>
+    </QueryClientProvider>
   );
   expect(await screen.findByText(/getting hired/i)).toBeInTheDocument();
 });
@@ -34,11 +37,13 @@ it('loads posts for category', async () => {
 it('shows message when no posts', async () => {
   vi.spyOn(forumService, 'fetchPostsByCategory').mockResolvedValue([]);
   render(
-    <MemoryRouter initialEntries={['/community/category/project-help']}>
-      <Routes>
-        <Route path='/community/category/:categoryId' element={<ForumCategoryPage />} />
-      </Routes>
-    </MemoryRouter>
+    <QueryClientProvider client={new QueryClient()}>
+      <MemoryRouter initialEntries={['/community/category/project-help']}>
+        <Routes>
+          <Route path='/community/category/:categoryId' element={<ForumCategoryPage />} />
+        </Routes>
+      </MemoryRouter>
+    </QueryClientProvider>
   );
   expect(await screen.findByText(/no posts yet/i)).toBeInTheDocument();
 });
