@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Star, MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { TalentProfile } from "@/types/talent";
 
@@ -24,6 +24,7 @@ export function TalentCard({
   isAuthenticated
 }: TalentCardProps) {
   const navigate = useNavigate();
+  const location = useLocation();
   const { toast } = useToast();
   
   const handleViewProfile = () => {
@@ -53,7 +54,8 @@ export function TalentCard({
         description: "Please log in to save talents to your favorites",
         variant: "destructive"
       });
-      navigate('/login');
+      const next = encodeURIComponent(location.pathname + location.search);
+      navigate(`/login?next=${next}`);
       return;
     }
 

@@ -11,7 +11,7 @@ interface CreatePostButtonProps {
 /**
  * Renders a button that navigates to the create post page.
  * If the user is not authenticated, they are redirected to the
- * login page with a return path so they can come back after logging in.
+ * login page with a "next" parameter so they can come back after logging in.
  */
 export function CreatePostButton({ categoryId, className }: CreatePostButtonProps) {
   const { user } = useAuth();
@@ -25,7 +25,7 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
     if (user) {
       navigate(target);
     } else {
-      navigate("/login", { state: { returnTo: target } });
+      navigate(`/login?next=${encodeURIComponent(target)}`);
     }
   };
 

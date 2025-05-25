@@ -5,12 +5,15 @@ import { TalentProfile } from "@/types/talent";
 import { toast } from "@/hooks/use-toast";
 import { showApiError } from "@/utils/apiErrorHandler";
 import { useAuthStatus } from "@/hooks/talent";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export function useSavedTalents() {
   const { isAuthenticated, userDetails } = useAuthStatus();
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [savedTalentIds, setSavedTalentIds] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Fetch saved talents
   useEffect(() => {
@@ -68,6 +71,8 @@ export function useSavedTalents() {
         description: "Please log in to save talents to your favorites",
         variant: "destructive"
       });
+      const next = encodeURIComponent(location.pathname + location.search);
+      navigate(`/login?next=${next}`);
       return;
     }
     
