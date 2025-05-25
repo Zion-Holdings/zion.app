@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import CreatePostButton from "@/components/community/CreatePostButton";
@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { SEO } from "@/components/SEO";
 import PostCard from "@/components/community/PostCard";
 import { ForumPost, ForumCategoryInfo } from "@/types/community";
-import { Badge } from "@/components/ui/badge";
+import { fetchPostsByCategory } from "@/services/forumPostService";
 import { useAuth } from "@/hooks/useAuth";
 import {
   MessageSquare,
@@ -237,6 +237,35 @@ export default function ForumCategoryPage() {
   const { categoryId } = useParams();
   const { user } = useAuth();
   const [searchQuery, setSearchQuery] = useState("");
+  const [posts, setPosts] = useState<ForumPost[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    if (!categoryId) return;
+    setLoading(true);
+    fetchPostsByCategory(categoryId)
+      .then((data) => {
+        if (isMounted) {
+          const fallback = postsByCategory[categoryId] || [];
+          setPosts(data && data.length > 0 ? data : fallback);
+          setError(null);
+        }
+      })
+      .catch((err) => {
+        if (isMounted) {
+          setError(err.message);
+          setPosts(postsByCategory[categoryId] || []);
+        }
+      })
+      .finally(() => {
+        if (isMounted) setLoading(false);
+      });
+    return () => {
+      isMounted = false;
+    };
+  }, [categoryId]);
   
   if (!categoryId || !categoriesInfo[categoryId]) {
     return (
@@ -251,7 +280,6 @@ export default function ForumCategoryPage() {
   
   const category = categoriesInfo[categoryId];
   const IconComponent = iconMap[category.icon as keyof typeof iconMap] || MessageSquare;
-  const posts = postsByCategory[categoryId] || [];
   
   // Filter posts based on search query
   const filteredPosts = searchQuery
@@ -309,7 +337,11 @@ export default function ForumCategoryPage() {
           </div>
         </div>
         
-        {posts.length > 0 ? (
+        {loading ? (
+          <div className="text-center py-16">Loading...</div>
+        ) : error ? (
+          <div className="text-center py-16 text-destructive">{error}</div>
+        ) : posts.length > 0 ? (
           <div className="space-y-4">
             {filteredPosts.map((post) => (
               <PostCard key={post.id} post={post} />
