@@ -140,7 +140,7 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               placeholder="John Doe"
-                              className="bg-zion-blue pl-10 text-gray-900 dark:text-gray-100 placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
+                              className="bg-zion-blue pl-10 text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               aria-autocomplete="none"
                               autoComplete="off"
@@ -163,7 +163,7 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               placeholder="you@example.com"
-                              className="bg-zion-blue pl-10 text-gray-900 dark:text-gray-100 placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
+                              className="bg-zion-blue pl-10 text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               autoComplete="off"
                               aria-autocomplete="none"
@@ -188,7 +188,7 @@ export default function Signup() {
                             <Input
                               type={showPassword ? "text" : "password"}
                               placeholder="••••••••"
-                              className="bg-zion-blue pl-10 text-gray-900 dark:text-gray-100 border-zion-blue-light focus:border-zion-purple"
+                              className="bg-zion-blue pl-10 text-white border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               autoComplete="new-password"
                             />
@@ -227,7 +227,7 @@ export default function Signup() {
                             <Input
                               type={showConfirmPassword ? "text" : "password"}
                               placeholder="••••••••"
-                              className="bg-zion-blue pl-10 text-gray-900 dark:text-gray-100 border-zion-blue-light focus:border-zion-purple"
+                              className="bg-zion-blue pl-10 text-white border-zion-blue-light focus:border-zion-purple"
                               value={confirmPasswordValue}
                               onChange={(e) => {
                                 field.onChange(e)
