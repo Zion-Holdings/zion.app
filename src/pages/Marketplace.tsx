@@ -12,6 +12,7 @@ import { generateRandomListing } from "@/utils/generateRandomListing";
 import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { SearchSuggestion } from "@/types/search";
+import { ListingView } from "@/types/listings";
 
 export default function Marketplace() {
   const navigate = useNavigate();
@@ -22,6 +23,9 @@ export default function Marketplace() {
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
   const [isLoading, setIsLoading] = useState(false);
+  const [view, setView] = useState<ListingView>(() =>
+    (localStorage.getItem('marketplaceView') as ListingView) || 'grid'
+  );
 
   // Automatically append a new listing every 2 minutes
   useEffect(() => {
@@ -39,6 +43,10 @@ export default function Marketplace() {
     const timeout = setTimeout(() => setIsLoading(false), 300);
     return () => clearTimeout(timeout);
   }, [searchQuery, selectedProductTypes, selectedLocations, selectedAvailability, selectedRating]);
+
+  useEffect(() => {
+    localStorage.setItem('marketplaceView', view);
+  }, [view]);
   
   // Filter listings based on selected filters
   const filteredListings = listings.filter(listing => {
@@ -73,7 +81,6 @@ export default function Marketplace() {
   });
   
   const handleFilterChange = (filterType: string, value: string) => {
-    console.log(`Filter changed: ${filterType} = ${value}`);
     switch (filterType) {
       case 'productTypes':
         setSelectedProductTypes(prev =>
@@ -149,10 +156,24 @@ export default function Marketplace() {
               />
             </div>
             <div className="flex gap-2">
-              <Button variant="ghost" size="icon" className="text-zion-slate-light">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setView('grid')}
+                aria-pressed={view === 'grid'}
+                aria-label="Grid view"
+                className={view === 'grid' ? 'text-zion-purple' : 'text-zion-slate-light'}
+              >
                 <Grid3X3 className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-zion-slate-light">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setView('list')}
+                aria-pressed={view === 'list'}
+                aria-label="List view"
+                className={view === 'list' ? 'text-zion-purple' : 'text-zion-slate-light'}
+              >
                 <ListFilter className="h-4 w-4" />
               </Button>
             </div>
@@ -205,12 +226,13 @@ export default function Marketplace() {
                 <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className={view === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 gap-6' : 'flex flex-col gap-6'}>
                 {filteredListings.length > 0 ? (
                   filteredListings.map((listing) => (
                     <ProductListingCard
                       key={listing.id}
                       listing={listing}
+                      view={view}
                       onRequestQuote={handleRequestQuote}
                     />
                   ))
