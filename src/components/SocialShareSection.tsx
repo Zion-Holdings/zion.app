@@ -80,6 +80,8 @@ export function SocialShareSection() {
                 className={`${link.color} text-white`}
                 size="sm"
                 onClick={link.onClick}
+                aria-label={link.name}
+                title={link.name}
               >
                 {link.icon}
                 <span>{link.name}</span>
