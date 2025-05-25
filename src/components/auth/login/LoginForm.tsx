@@ -6,6 +6,8 @@ import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
+import { toast } from "@/hooks/use-toast";
+import { loginUser } from "@/services/authService";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -28,7 +30,7 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
-  const { login, isLoading } = useAuth();
+  const { isLoading } = useAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -46,12 +48,15 @@ export function LoginForm() {
 
     try {
       setIsSubmitting(true);
-      const { error } = await login(data.email, data.password);
-      if (error) {
-        form.setError("root", { message: error });
-      } else {
-        navigate("/");
+      const { res, data: resData } = await loginUser(data.email, data.password);
+      if (res.status !== 200) {
+        toast.error(resData?.error || "Invalid credentials");
+        return;
       }
+      if (resData?.token) {
+        document.cookie = `token=${resData.token}; path=/`;
+      }
+      navigate("/");
     } finally {
       setIsSubmitting(false);
     }
