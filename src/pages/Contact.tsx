@@ -11,7 +11,6 @@ import { toast } from "@/components/ui/use-toast";
 import z from "zod";
 import { ChatAssistant } from "@/components/ChatAssistant";
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
-import { AppLayout } from "@/layout/AppLayout";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -129,10 +128,10 @@ export default function Contact() {
   ];
 
   return (
-    <AppLayout>
-      <SEO 
-        title="Contact Zion - Get in Touch" 
-        description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform." 
+    <>
+      <SEO
+        title="Contact Zion - Get in Touch"
+        description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform."
         keywords="contact Zion, AI marketplace support, tech platform contact"
         canonical="https://app.ziontechgroup.com/contact"
       />
@@ -333,6 +332,6 @@ export default function Contact() {
           onSendMessage={handleSendMessage}
         />
       )}
-    </AppLayout>
+    </>
   );
 }
