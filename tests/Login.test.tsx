@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { vi } from 'vitest';
 import { LoginForm } from '@/components/auth/login';
 import * as authService from '@/services/authService';
-import * as toastMod from '@/hooks/use-toast';
+import { Toaster } from '@/components/ui/toaster';
 import * as authHook from '@/hooks/useAuth';
 
 vi.spyOn(authHook, 'useAuth').mockReturnValue({ isLoading: false } as any);
@@ -11,13 +11,13 @@ vi.spyOn(authHook, 'useAuth').mockReturnValue({ isLoading: false } as any);
 describe('LoginForm', () => {
   it('shows error toast on 401 response', async () => {
     vi.spyOn(authService, 'loginUser').mockResolvedValue({
-      res: { status: 401 } as Response,
+      res: { status: 401, ok: false } as Response,
       data: { error: 'Invalid credentials' },
     });
-    const toastSpy = vi.spyOn(toastMod.toast, 'error').mockImplementation(() => {});
 
     render(
       <MemoryRouter>
+        <Toaster />
         <LoginForm />
       </MemoryRouter>
     );
@@ -26,9 +26,7 @@ describe('LoginForm', () => {
     fireEvent.input(screen.getByLabelText(/password/i), { target: { value: 'secret' } });
     fireEvent.submit(screen.getByRole('button', { name: /login/i }));
 
-    // wait for toast call
-    await screen.findByRole('button', { name: /login/i });
-
-    expect(toastSpy).toHaveBeenCalledWith('Invalid credentials');
+    // wait for toast to appear in DOM
+    expect(await screen.findByText('Invalid credentials')).toBeInTheDocument();
   });
 });
