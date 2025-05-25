@@ -20,8 +20,9 @@ export function slugify(title: string, separator = "-"): string {
  * capitalizes each word.
  */
 export function unslugify(slug: string, separator = "-"): string {
+  const escaped = separator.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   return slug
-    .split(separator)
+    .split(new RegExp(escaped, "g"))
     .filter(Boolean)
     .map(w => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
