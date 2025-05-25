@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { captureException } from '@/lib/sentry';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -72,5 +73,6 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
     }
   }
 
+  captureException(lastError);
   throw new Error('Failed to connect to Supabase');
 }
