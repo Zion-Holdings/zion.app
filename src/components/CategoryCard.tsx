@@ -22,10 +22,11 @@ export function CategoryCard({ title, description, icon, color, count, className
   const slug = slugify(title);
 
   return (
-    <Link 
-      to={`/category/${slug}`} 
+    <Link
+      to={`/category/${slug}`}
+      tabIndex={0}
       className={cn(
-        "flex flex-col items-center p-6 bg-zion-blue-light rounded-lg border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 hover:shadow-lg hover:shadow-zion-purple/20 group",
+        "flex flex-col items-center p-6 bg-zion-blue-light rounded-lg border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 hover:shadow-lg hover:shadow-zion-purple/20 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple",
         className
       )}
     >

@@ -12,6 +12,8 @@ export function ModeToggle() {
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-pressed={theme === "dark"}
+      aria-label="Toggle theme"
+      title="Toggle theme"
       className="focus-visible:ring-zion-purple"
     >
       {theme === "dark" ? (

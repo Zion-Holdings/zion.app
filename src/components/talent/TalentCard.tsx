@@ -68,7 +68,11 @@ export function TalentCard({
   const skills = talent.skills?.slice(0, 5) || [];
 
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-lg border-zion-blue-light bg-zion-blue cursor-pointer" onClick={handleViewProfile}>
+    <Card
+      className="overflow-hidden transition-all hover:shadow-lg border-zion-blue-light bg-zion-blue cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple"
+      onClick={handleViewProfile}
+      tabIndex={0}
+    >
       <div className="p-6">
         <div className="flex items-start">
           {/* Avatar */}
@@ -107,7 +111,7 @@ export function TalentCard({
                 <span className="sr-only">{isSaved ? "Saved" : "Save"}</span>
               </Button>
             </div>
-            <p className="text-zion-cyan font-medium">{talent.professional_title}</p>
+            <p className="text-white font-medium">{talent.professional_title}</p>
             
             {/* Location & Availability */}
             <div className="mt-2 flex flex-wrap gap-3 text-sm">

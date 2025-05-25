@@ -247,6 +247,8 @@ export function DynamicListingPage({
                     size="icon"
                     onClick={() => setView("grid")}
                     aria-pressed={view === "grid"}
+                    aria-label="Grid view"
+                    title="Grid view"
                     className={`${
                       view === "grid"
                         ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
@@ -254,12 +256,15 @@ export function DynamicListingPage({
                     } focus-visible:ring-zion-purple`}
                   >
                     <LayoutGrid className="h-4 w-4" />
+                    <span className="sr-only">Grid view</span>
                   </Button>
                   <Button
                     variant="outline"
                     size="icon"
                     onClick={() => setView("list")}
                     aria-pressed={view === "list"}
+                    aria-label="List view"
+                    title="List view"
                     className={`${
                       view === "list"
                         ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
@@ -267,6 +272,7 @@ export function DynamicListingPage({
                     } focus-visible:ring-zion-purple`}
                   >
                     <List className="h-4 w-4" />
+                    <span className="sr-only">List view</span>
                   </Button>
                 </div>
               </div>
