@@ -23,6 +23,10 @@ interface DynamicListingPageProps {
   listings: ProductListing[];
   categoryFilters: { label: string; value: string }[];
   initialPrice?: PriceRange;
+  /**
+   * Base path for listing detail pages. Defaults to `/marketplace/listing`.
+   */
+  detailBasePath?: string;
 }
 
 export function DynamicListingPage({
@@ -31,7 +35,8 @@ export function DynamicListingPage({
   categorySlug,
   listings: allListings,
   categoryFilters,
-  initialPrice = { min: 0, max: 10000 }
+  initialPrice = { min: 0, max: 10000 },
+  detailBasePath = '/marketplace/listing'
 }: DynamicListingPageProps) {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
@@ -327,6 +332,7 @@ export function DynamicListingPage({
                     listing={listing}
                     view={view}
                     onRequestQuote={handleRequestQuote}
+                    detailBasePath={detailBasePath}
                   />
                 ))}
               </div>

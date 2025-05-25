@@ -28,3 +28,7 @@ it('handles custom separator when unslugifying', () => {
 it('handles separators that include regex characters', () => {
   expect(unslugify('multi.word.title', '.')).toBe('Multi Word Title');
 });
+
+it('collapses multiple spaces and trims separators', () => {
+  expect(slugify('  Multiple   Words  ')).toBe('multiple-words');
+});

@@ -47,5 +47,6 @@ declare module '@/components/ProductListingCard' {
     view: any;
     onRequestQuote: (listingId: string) => void;
     key?: string | number;
+    detailBasePath?: string;
   }
 }

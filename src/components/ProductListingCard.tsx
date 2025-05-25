@@ -8,12 +8,18 @@ interface ProductListingCardProps {
   listing: ProductListing;
   view?: 'grid' | 'list';
   onRequestQuote?: (id: string) => void;
+  /**
+   * Base path for linking to the detail page. Defaults to
+   * `/marketplace/listing` to preserve existing behaviour.
+   */
+  detailBasePath?: string;
 }
 
-export function ProductListingCard({ 
-  listing, 
+export function ProductListingCard({
+  listing,
   view = 'grid',
-  onRequestQuote
+  onRequestQuote,
+  detailBasePath = '/marketplace/listing'
 }: ProductListingCardProps) {
   const isGrid = view === 'grid';
   const navigate = useNavigate();
@@ -36,7 +42,7 @@ export function ProductListingCard({
   
   // Handle navigating to listing detail
   const handleViewListing = () => {
-    navigate(`/marketplace/listing/${listing.id}`);
+    navigate(`${detailBasePath}/${listing.id}`);
   };
   
   // Handle request quote button click
@@ -139,7 +145,7 @@ export function ProductListingCard({
               size="sm" 
               onClick={(e) => {
                 e.stopPropagation();
-                navigate(`/marketplace/listing/${listing.id}`);
+                navigate(`${detailBasePath}/${listing.id}`);
               }}
               className="bg-zion-purple hover:bg-zion-purple-dark text-white"
             >

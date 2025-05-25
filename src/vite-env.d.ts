@@ -110,6 +110,7 @@ declare module '@/components/ProductListingCard' {
     view?: any;  // Made optional to fix the errors
     onRequestQuote: (listingId: string) => void;
     key?: string | number;
+    detailBasePath?: string;
   }
 
   export const ProductListingCard: React.FC<ProductListingCardProps>;
