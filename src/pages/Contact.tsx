@@ -12,6 +12,7 @@ import z from "zod";
 import { ChatAssistant } from "@/components/ChatAssistant";
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
 import { AppLayout } from "@/layout/AppLayout";
+import api from '@/lib/api';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -87,17 +88,14 @@ export default function Contact() {
   // Handle sending messages to the AI chat assistant
   const handleSendMessage = async (message: string): Promise<void> => {
     try {
-      const response = await fetch("https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ 
-          messages: [{ role: "user", content: message }] 
-        }),
-      });
-      
-      if (!response.ok) {
+      const response = await api.post(
+        "https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat",
+        {
+          messages: [{ role: "user", content: message }]
+        }
+      );
+
+      if (response.status < 200 || response.status >= 300) {
         throw new Error("Failed to get response from AI assistant");
       }
       
