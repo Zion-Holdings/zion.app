@@ -7,13 +7,20 @@ import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { TalentProfile } from "@/types/talent";
 import { toast } from "@/components/ui/use-toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function SavedTalentsPage() {
   const { user } = useAuth();
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!user) {
+      navigate(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+    }
+  }, [user, navigate, location]);
 
   useEffect(() => {
     const fetchSavedTalents = async () => {

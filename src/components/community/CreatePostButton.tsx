@@ -25,7 +25,7 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
     if (user) {
       navigate(target);
     } else {
-      navigate("/login", { state: { returnTo: target } });
+      navigate(`/login?next=${encodeURIComponent(target)}`);
     }
   };
 

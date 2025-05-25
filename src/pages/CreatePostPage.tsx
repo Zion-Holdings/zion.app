@@ -1,10 +1,11 @@
 
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams, useLocation } from "react-router-dom";
 import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
+import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { ForumCategory } from "@/types/community";
 
@@ -17,8 +18,16 @@ interface PostFormValues {
 
 export default function CreatePostPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { user } = useAuth();
   const { toast } = useToast();
   const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (!user) {
+      navigate(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+    }
+  }, [user, navigate, location]);
   
   // Get category from URL query params if available
   const initialCategory = searchParams.get("category") as ForumCategory | null;
