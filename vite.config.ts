@@ -12,10 +12,13 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use('/api/services', (req, res) => {
           const url = new URL(req.originalUrl || req.url, 'http://localhost')
-          const categoryId = url.searchParams.get('categoryId')
-          const data = SAMPLE_SERVICES.filter(
-            (item) => !categoryId || item.category === categoryId
-          )
+          const category = url.searchParams.get('category')
+          const q = (url.searchParams.get('q') || '').toLowerCase()
+          const data = SAMPLE_SERVICES.filter((item) => {
+            if (category && item.category !== category) return false
+            if (q && !item.title.toLowerCase().includes(q)) return false
+            return true
+          })
           res.setHeader('Content-Type', 'application/json')
           res.end(JSON.stringify(data))
         })
