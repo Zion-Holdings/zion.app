@@ -1,7 +1,7 @@
 
 import { Fragment } from "react";
 import { Route, Routes } from "react-router-dom";
-import Login from "@/pages/Login";
+import Login from "@/pages/auth/Login";
 import Signup from "@/pages/Signup";
 import ForgotPassword from "@/pages/ForgotPassword";
 import UpdatePassword from "@/pages/UpdatePassword";

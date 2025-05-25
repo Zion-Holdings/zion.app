@@ -1,34 +1,28 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { vi } from 'vitest';
-import { LoginForm } from '@/components/auth/login';
-import * as authService from '@/services/authService';
-import * as toastMod from '@/hooks/use-toast';
-import * as authHook from '@/hooks/useAuth';
+import Login from '@/pages/auth/Login';
+import * as authApi from '@/services/auth';
 
-vi.spyOn(authHook, 'useAuth').mockReturnValue({ isLoading: false } as any);
+vi.mock('@/services/auth');
 
-describe('LoginForm', () => {
-  it('shows error toast on 401 response', async () => {
-    vi.spyOn(authService, 'loginUser').mockResolvedValue({
-      res: { status: 401 } as Response,
-      data: { error: 'Invalid credentials' },
-    });
-    const toastSpy = vi.spyOn(toastMod.toast, 'error').mockImplementation(() => {});
+describe('Login page', () => {
+  it('redirects to /dashboard on successful login', async () => {
+    vi.spyOn(authApi, 'login').mockResolvedValue({ status: 200, data: { token: 'x' } } as any);
 
     render(
-      <MemoryRouter>
-        <LoginForm />
+      <MemoryRouter initialEntries={['/login']}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<div>Dashboard</div>} />
+        </Routes>
       </MemoryRouter>
     );
 
-    fireEvent.input(screen.getByLabelText(/email address/i), { target: { value: 'a@b.com' } });
+    fireEvent.input(screen.getByLabelText(/email/i), { target: { value: 'a@b.com' } });
     fireEvent.input(screen.getByLabelText(/password/i), { target: { value: 'secret' } });
-    fireEvent.submit(screen.getByRole('button', { name: /login/i }));
+    fireEvent.click(screen.getByRole('button', { name: /login/i }));
 
-    // wait for toast call
-    await screen.findByRole('button', { name: /login/i });
-
-    expect(toastSpy).toHaveBeenCalledWith('Invalid credentials');
+    await waitFor(() => expect(screen.getByText('Dashboard')).toBeInTheDocument());
   });
 });
