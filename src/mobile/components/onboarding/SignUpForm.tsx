@@ -173,14 +173,10 @@ export function SignUpForm() {
           : "Don't have an account? "
         }
         <Link
-          to="#"
-          onClick={e => {
-            e.preventDefault();
-            setSignupMode(!signupMode);
-          }}
-          className="p-0 h-auto text-zion-cyan hover:text-zion-cyan-light"
+          to="/login"
+          className="p-0 h-auto text-zion-cyan hover:text-zion-cyan-light cursor-pointer"
         >
-          {signupMode ? "Sign In" : "Sign Up"}
+          Sign In
         </Link>
       </p>
     </div>
