@@ -45,14 +45,14 @@ export function DynamicListingPage({
   useEffect(() => {
     const listingsWithPrice = allListings.filter(l => l.price !== null);
     if (listingsWithPrice.length > 0) {
-      const min = Math.min(...listingsWithPrice.map(l => l.price || 0));
       const max = Math.max(...listingsWithPrice.map(l => l.price || 0));
-      setPriceRange({ min, max });
+      setPriceRange({ min: 0, max });
+      setCurrentPriceFilter([0, max]);
     }
   }, [allListings]);
 
   const [currentPriceFilter, setCurrentPriceFilter] = useState<[number, number]>([
-    initialPrice.min,
+    0,
     initialPrice.max
   ]);
 
@@ -157,10 +157,10 @@ export function DynamicListingPage({
                 <div className="mt-6 px-2">
                   <Slider
                     aria-label="Price range"
-                    defaultValue={[priceRange.min, priceRange.max]}
-                    min={priceRange.min}
+                    defaultValue={[0, priceRange.max]}
+                    min={0}
                     max={priceRange.max}
-                    step={(priceRange.max - priceRange.min) / 100}
+                    step={priceRange.max / 100}
                     value={currentPriceFilter}
                     onValueChange={handleSliderChange}
                     className="mb-4"
@@ -215,7 +215,7 @@ export function DynamicListingPage({
                   console.log("Resetting filters");
                   setSearchQuery("");
                   setSelectedCategory("all");
-                  setCurrentPriceFilter([priceRange.min, priceRange.max]);
+                  setCurrentPriceFilter([0, priceRange.max]);
                   setSelectedRating(null);
                 }}
               >
@@ -333,7 +333,7 @@ export function DynamicListingPage({
                   onClick={() => {
                     setSearchQuery("");
                     setSelectedCategory("all");
-                    setCurrentPriceFilter([priceRange.min, priceRange.max]);
+                    setCurrentPriceFilter([0, priceRange.max]);
                     setSelectedRating(null);
                   }}
                   className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"
