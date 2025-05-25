@@ -4,26 +4,19 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Search } from "lucide-react";
 import { ListingScoreCard } from "@/components/ListingScoreCard";
+import { SAMPLE_SERVICES } from "@/data/sampleServices";
 
 interface ServiceTypeStepProps {
   formData: QuoteFormData;
   updateFormData: (data: Partial<QuoteFormData>) => void;
 }
 
-// Fallback sample data - used if API call fails
-const SAMPLE_LISTINGS: ListingItem[] = [
-  { id: "service-1", title: "AI Development", category: "Services", image: "https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?w=800&auto=format" },
-  { id: "service-2", title: "Cloud Migration", category: "Services", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format" },
-  { id: "talent-1", title: "AI Engineer", category: "Talents", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format" },
-  { id: "talent-2", title: "Data Scientist", category: "Talents", image: "https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=800&auto=format" },
-  { id: "equipment-1", title: "Workstation", category: "Equipment", image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&auto=format" },
-  { id: "equipment-2", title: "Server Rack", category: "Equipment", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format" },
-];
 
 export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [listings, setListings] = useState<ListingItem[]>([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Fetch services when the service type changes
   useEffect(() => {
@@ -34,14 +27,15 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
 
     const fetchServices = async () => {
       setLoading(true);
+      setError(null);
       try {
         const response = await fetch(`/api/services?categoryId=${encodeURIComponent(formData.serviceType)}`);
         if (!response.ok) throw new Error('Failed to fetch');
         const data = await response.json();
         setListings(data as ListingItem[]);
       } catch (err) {
-        // Fallback to sample data on error
-        setListings(SAMPLE_LISTINGS.filter(item => item.category.toLowerCase() === formData.serviceType.toLowerCase()));
+        setError('Failed to load services');
+        setListings(SAMPLE_SERVICES.filter(item => item.category === formData.serviceType));
       } finally {
         setLoading(false);
       }
@@ -62,7 +56,7 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
     });
   };
   
-  const sourceListings = listings.length > 0 ? listings : SAMPLE_LISTINGS;
+  const sourceListings = listings.length > 0 ? listings : SAMPLE_SERVICES;
 
   const filteredListings = sourceListings.filter(item => {
     // Filter by category only when a service type has been selected
@@ -132,6 +126,10 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
               className="pl-10 bg-zion-blue border border-zion-blue-light focus:border-zion-purple"
             />
           </div>
+
+          {error && (
+            <div className="text-center text-red-400 text-sm">{error}. Showing sample data.</div>
+          )}
           
           <div className="grid grid-cols-1 gap-4 mt-4">
             {loading ? (

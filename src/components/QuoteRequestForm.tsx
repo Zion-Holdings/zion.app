@@ -13,8 +13,14 @@ import { BudgetStep } from "@/components/QuoteRequestForm/BudgetStep";
 import { SummaryStep } from "@/components/QuoteRequestForm/SummaryStep";
 import { QuoteFormData } from "@/types/quotes";
 import { Sparkles } from "lucide-react";
+import { z } from "zod";
 
 export type QuoteRequestSteps = "service" | "details" | "timeline" | "budget" | "summary";
+
+const serviceStepSchema = z.object({
+  serviceType: z.string().min(1),
+  specificItem: z.object({ id: z.string() }),
+});
 
 export function QuoteRequestForm() {
   const navigate = useNavigate();
@@ -52,8 +58,12 @@ export function QuoteRequestForm() {
   
   const handleNext = () => {
     switch (currentStep) {
-      case "service":
-        if (!formData.serviceType || !formData.specificItem) {
+      case "service": {
+        const result = serviceStepSchema.safeParse({
+          serviceType: formData.serviceType,
+          specificItem: formData.specificItem,
+        });
+        if (!result.success) {
           toast({
             title: "Service Required",
             description: "Please select a service before continuing.",
@@ -63,6 +73,7 @@ export function QuoteRequestForm() {
         }
         setCurrentStep("details");
         break;
+      }
       case "details":
         setCurrentStep("timeline");
         break;
