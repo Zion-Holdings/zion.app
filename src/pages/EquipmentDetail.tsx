@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
@@ -9,6 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { useAuth } from "@/hooks/useAuth";
+import { getStripe } from "@/utils/getStripe";
 
 interface EquipmentSpecification {
   name: string;
@@ -128,6 +130,8 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
 
 export default function EquipmentDetail() {
   const { equipmentId } = useParams() as { equipmentId?: string };
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
@@ -165,17 +169,29 @@ export default function EquipmentDetail() {
     }, 800);
   };
 
-  const handleBuyNow = () => {
+  const handleBuyNow = async () => {
+    if (!isAuthenticated) {
+      navigate(`/login?next=/equipment/${equipmentId}`);
+      return;
+    }
+
     setIsAdding(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsAdding(false);
-      toast({
-        title: "Proceeding to checkout",
-        description: `Preparing your order for ${equipment.name}.`,
+    try {
+      const response = await fetch('/api/checkout_sessions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId: equipmentId }),
       });
-    }, 800);
+      const { sessionId } = await response.json();
+      const stripe = await getStripe();
+      if (stripe && sessionId) {
+        await stripe.redirectToCheckout({ sessionId });
+      }
+    } catch (err) {
+      toast({ title: 'Payment error', description: 'Could not start checkout.' });
+    } finally {
+      setIsAdding(false);
+    }
   };
 
   return (
