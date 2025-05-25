@@ -7,7 +7,7 @@ import { LogIn, User, Eye, EyeOff } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "@/hooks/use-toast";
-import { loginUser } from "@/services/authService";
+import { auth } from "@/services/authService";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -43,20 +43,17 @@ export function LoginForm() {
     },
   });
 
-  const onSubmit = async (data: LoginFormValues) => {
+  const handleLogin = async (data: LoginFormValues) => {
     if (isSubmitting) return;
 
     try {
       setIsSubmitting(true);
-      const { res, data: resData } = await loginUser(data.email, data.password);
-      if (res.status !== 200) {
-        toast.error(resData?.error || "Invalid credentials");
-        return;
+      const res = await auth.login(data.email, data.password);
+      if (res.status === 200) {
+        navigate('/dashboard');
+      } else if (res.status >= 400 && res.status < 500) {
+        toast.error(res.data?.error || 'Invalid credentials');
       }
-      if (resData?.token) {
-        document.cookie = `token=${resData.token}; path=/`;
-      }
-      navigate("/");
     } finally {
       setIsSubmitting(false);
     }
@@ -70,7 +67,7 @@ export function LoginForm() {
         </Alert>
       )}
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={form.handleSubmit(handleLogin)}
         className="space-y-6"
         autoComplete="off" // Disable browser autofill
       >
