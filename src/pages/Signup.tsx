@@ -76,27 +76,15 @@ export default function Signup() {
         data.displayName
       );
       if (error) {
-        form.setError("root", { message: error });
-        toast({
-          variant: "destructive",
-          title: "Registration failed",
-          description: error,
-        });
-      } else {
-        toast({
-          title: "Account created",
-          description: "Check your email to verify your account.",
-        });
-        navigate("/login");
+        throw new Error(error);
       }
+
+      toast.success("Account created");
+      navigate("/login");
     } catch (err: any) {
       const message = err.message ?? "Registration failed";
       form.setError("root", { message });
-      toast({
-        variant: "destructive",
-        title: "Registration failed",
-        description: message,
-      });
+      toast.error(message);
     } finally {
       setIsSubmitting(false);
     }

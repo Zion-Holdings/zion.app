@@ -3,16 +3,19 @@ import { MemoryRouter } from 'react-router-dom';
 import Signup from '@/pages/Signup';
 import { vi } from 'vitest';
 import * as auth from '@/hooks/useAuth';
+import * as toastHook from '@/hooks/use-toast';
 
-function setup() {
-  const signupMock = vi.fn().mockResolvedValue({ error: null });
+function setup(returnError?: string) {
+  const signupMock = vi.fn().mockResolvedValue({ error: returnError ?? null });
   vi.spyOn(auth, 'useAuth').mockReturnValue({ signup: signupMock, isAuthenticated: false, user: null, isLoading: false } as any);
+  const successSpy = vi.spyOn(toastHook.toast, 'success').mockImplementation(() => {});
+  const errorSpy = vi.spyOn(toastHook.toast, 'error').mockImplementation(() => {});
   render(
     <MemoryRouter>
       <Signup />
     </MemoryRouter>
   );
-  return { signupMock };
+  return { signupMock, successSpy, errorSpy };
 }
 
 describe('Signup form', () => {
@@ -23,7 +26,7 @@ describe('Signup form', () => {
   });
 
   it('submits valid form', async () => {
-    const { signupMock } = setup();
+    const { signupMock, successSpy } = setup();
     fireEvent.input(screen.getByLabelText(/full name/i), { target: { value: 'John Doe' } });
     fireEvent.input(screen.getByLabelText(/email address/i), { target: { value: 'john@example.com' } });
     fireEvent.input(screen.getByLabelText(/^password$/i), { target: { value: 'Password123' } });
@@ -31,5 +34,18 @@ describe('Signup form', () => {
     fireEvent.click(screen.getByLabelText(/i agree/i));
     fireEvent.submit(screen.getByRole('button', { name: /create account/i }));
     expect(signupMock).toHaveBeenCalled();
+    expect(successSpy).toHaveBeenCalledWith('Account created');
+  });
+
+  it('shows error toast on failure', async () => {
+    const { signupMock, errorSpy } = setup('Bad');
+    fireEvent.input(screen.getByLabelText(/full name/i), { target: { value: 'John Doe' } });
+    fireEvent.input(screen.getByLabelText(/email address/i), { target: { value: 'john@example.com' } });
+    fireEvent.input(screen.getByLabelText(/^password$/i), { target: { value: 'Password123' } });
+    fireEvent.input(screen.getByLabelText(/confirm password/i), { target: { value: 'Password123' } });
+    fireEvent.click(screen.getByLabelText(/i agree/i));
+    fireEvent.submit(screen.getByRole('button', { name: /create account/i }));
+    expect(signupMock).toHaveBeenCalled();
+    expect(errorSpy).toHaveBeenCalledWith('Bad');
   });
 });
