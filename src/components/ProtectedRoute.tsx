@@ -21,8 +21,8 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   const { user, isLoading } = useAuth();
   const location = useLocation();
   const { tenant } = useWhitelabel();
-  const { isAdmin: isTenantAdmin, isLoading: isCheckingTenantAdmin } = useTenantAdminStatus(tenant?.id);
-  const location = useLocation();
+  const { isAdmin: isTenantAdmin, isLoading: isCheckingTenantAdmin } =
+    useTenantAdminStatus(tenant?.id);
   
   const isCheckingPermissions = isLoading || isCheckingTenantAdmin;
 
