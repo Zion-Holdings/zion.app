@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card";
 import { Search } from "lucide-react";
 import { ListingScoreCard } from "@/components/ListingScoreCard";
 import { SAMPLE_SERVICES } from "@/data/sampleServices";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useDebounce } from "@/hooks/useDebounce";
 
 interface ServiceTypeStepProps {
   formData: QuoteFormData;
@@ -14,11 +16,12 @@ interface ServiceTypeStepProps {
 
 export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepProps) {
   const [searchQuery, setSearchQuery] = useState("");
+  const debouncedQuery = useDebounce(searchQuery, 300);
   const [listings, setListings] = useState<ListingItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch services when the service type changes
+  // Fetch services when the service type or query changes
   useEffect(() => {
     if (!formData.serviceType) {
       setListings([]);
@@ -29,20 +32,23 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch(`/api/services?categoryId=${encodeURIComponent(formData.serviceType)}`);
+        const response = await fetch(`/api/services?category=${encodeURIComponent(formData.serviceType)}&q=${encodeURIComponent(debouncedQuery)}`);
         if (!response.ok) throw new Error('Failed to fetch');
         const data = await response.json();
         setListings(data as ListingItem[]);
       } catch (err) {
         setError('Failed to load services');
-        setListings(SAMPLE_SERVICES.filter(item => item.category === formData.serviceType));
+        setListings(
+          SAMPLE_SERVICES.filter(item => item.category === formData.serviceType &&
+            item.title.toLowerCase().includes(debouncedQuery.toLowerCase()))
+        );
       } finally {
         setLoading(false);
       }
     };
 
     fetchServices();
-  }, [formData.serviceType]);
+  }, [formData.serviceType, debouncedQuery]);
   
   const handleTypeSelect = (type: ServiceType) => {
     updateFormData({ serviceType: type });
@@ -133,7 +139,11 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
           
           <div className="grid grid-cols-1 gap-4 mt-4">
             {loading ? (
-              <div className="text-center py-8 text-zion-slate-light">Loading services...</div>
+              <>
+                <Skeleton className="h-[120px] w-full" />
+                <Skeleton className="h-[120px] w-full" />
+                <Skeleton className="h-[120px] w-full" />
+              </>
             ) : filteredListings.length > 0 ? (
               filteredListings.map((item) => (
                 <div
