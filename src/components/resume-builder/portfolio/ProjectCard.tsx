@@ -62,7 +62,13 @@ export function ProjectCard({ project, onEdit, onDelete }: ProjectCardProps) {
       <CardFooter className="flex justify-between border-t bg-muted/40 p-4">
         <div className="flex gap-2">
           {project.github_url && (
-            <a href={project.github_url} target="_blank" rel="noopener noreferrer">
+            <a
+              href={project.github_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
+            >
               <Button variant="ghost" size="icon">
                 <Github className="h-4 w-4" />
               </Button>
@@ -70,7 +76,13 @@ export function ProjectCard({ project, onEdit, onDelete }: ProjectCardProps) {
           )}
           
           {project.demo_url && (
-            <a href={project.demo_url} target="_blank" rel="noopener noreferrer">
+            <a
+              href={project.demo_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Live demo"
+              title="Live demo"
+            >
               <Button variant="ghost" size="icon">
                 <Link className="h-4 w-4" />
               </Button>

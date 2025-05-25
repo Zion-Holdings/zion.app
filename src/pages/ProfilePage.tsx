@@ -193,6 +193,8 @@ export default function ProfilePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-zion-cyan hover:text-white transition-colors"
+                    aria-label="GitHub"
+                    title="GitHub"
                   >
                     <Github className="h-6 w-6" />
                   </a>
@@ -203,6 +205,8 @@ export default function ProfilePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-zion-cyan hover:text-white transition-colors"
+                    aria-label="Twitter"
+                    title="Twitter"
                   >
                     <Twitter className="h-6 w-6" />
                   </a>
@@ -213,6 +217,8 @@ export default function ProfilePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-zion-cyan hover:text-white transition-colors"
+                    aria-label="LinkedIn"
+                    title="LinkedIn"
                   >
                     <Linkedin className="h-6 w-6" />
                   </a>

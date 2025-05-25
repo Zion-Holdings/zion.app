@@ -143,29 +143,35 @@ export default function BlogPost() {
                   
                   {showShareMenu && (
                     <div className="absolute right-0 top-full mt-2 bg-zion-blue-dark border border-zion-blue-light rounded-md p-2 z-10">
-                      <a 
-                        href={getShareUrl('facebook')} 
-                        target="_blank" 
+                      <a
+                        href={getShareUrl('facebook')}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center p-2 hover:bg-zion-blue rounded transition-colors text-zion-slate-light hover:text-white"
+                        aria-label="Share on Facebook"
+                        title="Share on Facebook"
                       >
                         <Facebook className="h-4 w-4 mr-2" />
                         <span>Facebook</span>
                       </a>
-                      <a 
-                        href={getShareUrl('twitter')} 
-                        target="_blank" 
+                      <a
+                        href={getShareUrl('twitter')}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center p-2 hover:bg-zion-blue rounded transition-colors text-zion-slate-light hover:text-white"
+                        aria-label="Share on Twitter"
+                        title="Share on Twitter"
                       >
                         <Twitter className="h-4 w-4 mr-2" />
                         <span>Twitter</span>
                       </a>
-                      <a 
-                        href={getShareUrl('linkedin')} 
-                        target="_blank" 
+                      <a
+                        href={getShareUrl('linkedin')}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center p-2 hover:bg-zion-blue rounded transition-colors text-zion-slate-light hover:text-white"
+                        aria-label="Share on LinkedIn"
+                        title="Share on LinkedIn"
                       >
                         <Linkedin className="h-4 w-4 mr-2" />
                         <span>LinkedIn</span>
