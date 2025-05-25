@@ -3,6 +3,7 @@ import { useState, useCallback } from 'react';
 import { checkSignupPatterns } from '@/services/fraud/signupCheck';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
+import api from '@/lib/api';
 
 export function useFraudPreventionSignup() {
   const [isCheckingFraud, setIsCheckingFraud] = useState(false);
@@ -10,9 +11,8 @@ export function useFraudPreventionSignup() {
   // Get the user's IP address (in a real app, you'd do this server-side)
   const getIP = async (): Promise<string | undefined> => {
     try {
-      const response = await fetch('https://api.ipify.org?format=json');
-      const data = await response.json();
-      return data.ip;
+      const response = await api.get('https://api.ipify.org?format=json');
+      return response.data.ip;
     } catch (error) {
       console.error('Error getting IP:', error);
       return undefined;
