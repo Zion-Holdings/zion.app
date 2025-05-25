@@ -5,7 +5,6 @@ import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { SearchSuggestion } from "@/types/search";
 import { useAISearch } from "@/hooks/useAISearch";
-import { AppLayout } from "@/layout/AppLayout";
 import { Loader2 } from "lucide-react";
 
 export default function SearchPage() {
@@ -29,7 +28,7 @@ export default function SearchPage() {
   };
 
   return (
-    <AppLayout>
+    <>
       <main className="container mx-auto px-4 py-8">
         <form onSubmit={handleSubmit} className="mb-6">
           <EnhancedSearchInput
@@ -70,6 +69,6 @@ export default function SearchPage() {
           </div>
         )}
       </main>
-    </AppLayout>
+    </>
   );
 }

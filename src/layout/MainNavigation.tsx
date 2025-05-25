@@ -73,7 +73,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   }
   
   return (
-    <nav className={cn("ml-6 hidden md:flex", className)}>
+    <nav className={cn("navbar ml-6 hidden md:flex", className)}>
       <ul className="flex items-center gap-1">
         {links.map((link) => (
           <li key={link.name}>

@@ -1,7 +1,6 @@
 
 import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
-import { AppLayout } from "@/layout/AppLayout";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -234,7 +233,7 @@ export default function ServicesPage() {
   }, []);
 
   return (
-    <AppLayout>
+    <>
       <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <h2 className="text-white text-lg font-medium">Featured Services</h2>
@@ -262,6 +261,6 @@ export default function ServicesPage() {
         initialPrice={{ min: 3000, max: 10000 }}
       />
       <TrustedBySection />
-    </AppLayout>
+    </>
   );
 }
