@@ -53,10 +53,10 @@ export function QuoteRequestForm() {
   const handleNext = () => {
     switch (currentStep) {
       case "service":
-        if (!formData.serviceType) {
+        if (!formData.serviceType || !formData.specificItem) {
           toast({
             title: "Service Required",
-            description: "Please select a service type before continuing.",
+            description: "Please select a service before continuing.",
             variant: "destructive",
           });
           return;
