@@ -20,6 +20,9 @@ import { NotificationProvider } from './context';
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
+import { initGA } from './lib/gtag';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { AppLayout } from '@/layout/AppLayout';
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
@@ -33,6 +36,7 @@ const queryClient = new QueryClient({
   },
 });
 
+initGA();
 // Render the app with proper provider structure
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -44,8 +48,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
               <NotificationProvider>
                 <AnalyticsProvider>
                   <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                    <App />
-                    <LanguageDetectionPopup />
+                    <ErrorBoundary>
+                      <AppLayout>
+                        <App />
+                      </AppLayout>
+                      <LanguageDetectionPopup />
+                    </ErrorBoundary>
                   </LanguageProvider>
                 </AnalyticsProvider>
               </NotificationProvider>
