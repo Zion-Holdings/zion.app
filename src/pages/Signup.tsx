@@ -4,9 +4,10 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useForm, type UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { User, Mail, Lock, Eye, EyeOff, Facebook, Twitter } from "lucide-react";
+import { User, Mail, Lock, Eye, EyeOff, Facebook, Twitter, Loader2 } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
+import { register } from "@/services/auth";
 import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -44,7 +45,7 @@ const signupSchema = z
 type SignupFormValues = z.infer<typeof signupSchema>;
 
 export default function Signup() {
-  const { signup, loginWithGoogle, loginWithFacebook, loginWithTwitter, isLoading, isAuthenticated, user } = useAuth();
+  const { loginWithGoogle, loginWithFacebook, loginWithTwitter, isAuthenticated, user } = useAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -70,17 +71,21 @@ export default function Signup() {
 
     setIsSubmitting(true);
     try {
-      const { error } = await signup(
+      const { res, data: resData } = await register(
+        data.displayName,
         data.email,
-        data.password,
-        data.displayName
+        data.password
       );
-      if (error) {
-        throw new Error(error);
+      if (res.status !== 201) {
+        throw new Error(resData?.error || "Registration failed");
+      }
+
+      if (resData?.token) {
+        localStorage.setItem("token", resData.token);
       }
 
       toast.success("Account created");
-      navigate("/login");
+      navigate("/dashboard");
     } catch (err: any) {
       const message = err.message ?? "Registration failed";
       form.setError("root", { message });
@@ -290,9 +295,16 @@ export default function Signup() {
                   <Button
                     type="submit"
                     className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
-                    disabled={isLoading || isSubmitting}
+                    disabled={isSubmitting}
                   >
-                    {isLoading ? "Creating Account..." : "Create Account"}
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Creating Account...
+                      </>
+                    ) : (
+                      "Create Account"
+                    )}
                   </Button>
                 </form>
               </Form>
@@ -313,7 +325,7 @@ export default function Signup() {
                     variant="outline"
                     className="w-full border border-zion-blue-light bg-zion-blue-dark text-white hover:bg-zion-blue hover:text-zion-cyan"
                     onClick={() => loginWithGoogle()}
-                    disabled={isLoading || isSubmitting}
+                    disabled={isSubmitting}
                   >
                     <span className="sr-only">Sign in with Google</span>
                     <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
@@ -328,7 +340,7 @@ export default function Signup() {
                     variant="outline"
                     className="w-full border border-zion-blue-light bg-zion-blue-dark text-white hover:bg-zion-blue hover:text-zion-cyan"
                     onClick={() => loginWithFacebook()}
-                    disabled={isLoading || isSubmitting}
+                    disabled={isSubmitting}
                   >
                     <span className="sr-only">Sign in with Facebook</span>
                     <Facebook className="h-5 w-5" />
@@ -338,7 +350,7 @@ export default function Signup() {
                     variant="outline"
                     className="w-full border border-zion-blue-light bg-zion-blue-dark text-white hover:bg-zion-blue hover:text-zion-cyan"
                     onClick={() => loginWithTwitter()}
-                    disabled={isLoading || isSubmitting}
+                    disabled={isSubmitting}
                   >
                     <span className="sr-only">Sign in with Twitter</span>
                     <Twitter className="h-5 w-5" />
