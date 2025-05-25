@@ -6,7 +6,12 @@ import { useAuth } from "@/hooks/useAuth";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
+import { loadStripe } from "@stripe/stripe-js";
 import { useNavigate } from "react-router-dom";
+
+const stripePromise = loadStripe(
+  import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || ""
+);
 
 interface PaymentButtonProps {
   amount: number;
@@ -51,27 +56,31 @@ export function PaymentButton({
         onPaymentInitiated();
       }
       
-      // Call the create-checkout edge function
-      const { data, error } = await supabase.functions.invoke("create-checkout", {
-        body: {
-          amount,
-          serviceId,
-          providerId,
-          userId: user?.id,
-          successUrl: redirectUrl || window.location.href,
-          cancelUrl: window.location.href,
-        },
-      });
-      
+      // Create a Stripe checkout session via edge function
+      const { data, error } = await supabase.functions.invoke(
+        "checkout-sessions",
+        {
+          body: {
+            amount,
+            serviceId,
+            providerId,
+            userId: user?.id,
+            successUrl: redirectUrl || window.location.href,
+            cancelUrl: window.location.href,
+          },
+        }
+      );
+
       if (error) {
         throw error;
       }
-      
-      if (data?.url) {
-        // Open Stripe checkout in a new tab
-        window.open(data.url, '_blank');
+
+      const sessionId = data?.sessionId as string | undefined;
+      if (sessionId) {
+        const stripe = await stripePromise;
+        await stripe?.redirectToCheckout({ sessionId });
       } else {
-        throw new Error("No checkout URL returned");
+        throw new Error("No session ID returned");
       }
       
     } catch (error) {
