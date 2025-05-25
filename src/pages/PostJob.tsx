@@ -1,5 +1,4 @@
 
-import { Header } from "@/components/header";
 import { Footer } from "@/components/Footer";
 import { JobPostingForm } from "@/components/jobs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -26,7 +25,6 @@ export default function PostJob() {
         title="Post a Job | Zion AI Marketplace" 
         description="Post a job to find the perfect AI talent for your project." 
       />
-      <Header />
       <main className={`container mx-auto px-${isMobile ? '2' : '4'} py-${isMobile ? '6' : '12'} max-w-4xl`}>
         <Card className="border shadow-md">
           <CardHeader>

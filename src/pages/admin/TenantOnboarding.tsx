@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/hooks/useAuth";
@@ -120,7 +119,6 @@ export default function TenantOnboarding() {
         title="Tenant Onboarding - Zion AI Marketplace"
         description="Onboard a new white-label tenant to the Zion AI Marketplace platform."
       />
-      <Header />
       <main className="flex-1 container max-w-4xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col space-y-6">
           <div>

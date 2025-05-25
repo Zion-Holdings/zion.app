@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Header } from '@/components/Header';
+
 import { Footer } from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -59,7 +59,6 @@ export default function TokenManager() {
   return (
     <ProtectedRoute adminOnly>
       <div>
-        <Header />
         <div className="min-h-screen bg-zion-blue px-4 py-8">
           <div className="container mx-auto">
             <h1 className="text-3xl font-bold text-white mb-6">Token Manager</h1>

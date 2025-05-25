@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useAdminQuotes } from "@/hooks/useAdminQuotes";
 import { useAuth } from "@/hooks/useAuth";
@@ -72,7 +71,6 @@ export default function QuoteManager() {
   return (
     <ProtectedRoute adminOnly>
       <div>
-        <Header />
         <div className="min-h-screen bg-zion-blue px-4 py-8">
           <div className="container mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">

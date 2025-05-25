@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { BillingDashboard } from "@/components/enterprise/billing/BillingDashboard";
 import { useAuth } from "@/hooks/useAuth";
@@ -25,7 +24,6 @@ export default function EnterpriseBilling() {
         title="Enterprise Billing - Zion AI Marketplace"
         description="Manage your subscription, view invoice history, and download billing statements."
       />
-      <Header />
       <main className="min-h-screen bg-background">
         <BillingDashboard />
       </main>

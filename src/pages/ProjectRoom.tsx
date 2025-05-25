@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Header } from '@/components/Header';
+
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
@@ -70,7 +70,6 @@ export default function ProjectRoom() {
   return (
     <>
       <SEO title={`Project Room - ${projectId}`} description="Collaborate on your project" />
-      <Header />
       <main className="container mx-auto py-8">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-3xl font-bold">Project Room: {projectId}</h1>

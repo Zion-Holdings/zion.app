@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Header } from '@/components/Header';
+
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -36,7 +36,6 @@ export default function JobDetails() {
   if (error || !job) {
     return (
       <>
-        <Header />
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-2xl font-bold mb-4">Job Not Found</h1>
           <p className="mb-8">The job you're looking for doesn't exist or has been removed.</p>
@@ -80,7 +79,6 @@ export default function JobDetails() {
         title={`${job.title} - ${isWhitelabel ? brandName : 'Zion AI Marketplace'}`}
         description={job.description.substring(0, 160)}
       />
-      <Header />
       <main className="container mx-auto px-4 py-8">
         <div className="mb-6">
           <Button 

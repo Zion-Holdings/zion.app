@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useWhitelabel } from "@/context/WhitelabelContext";
@@ -20,7 +19,6 @@ export default function ZionHireAI() {
         title="Zion Hire AI - White-labeled AI Recruiting Assistant" 
         description="Empower your company with AI-powered recruiting tools. Streamline hiring, improve matches, and enhance candidate experience."
       />
-      <Header />
       <main className="flex-1">
         {/* Hero Section */}
         <section 

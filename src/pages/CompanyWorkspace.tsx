@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CompanyDashboard } from "@/components/enterprise/workspace/CompanyDashboard";
 import { useAuth } from "@/hooks/useAuth";
@@ -48,7 +47,6 @@ export default function CompanyWorkspace() {
         title={`${company.name} Workspace - ${isWhitelabel ? brandName : 'Zion AI Marketplace'}`}
         description={`${company.name}'s dedicated workspace ${isWhitelabel ? `on ${brandName}` : 'on Zion AI Marketplace'}. Collaborate with your team to find top talent.`}
       />
-      <Header 
         customLogo={isWhitelabel ? tenant?.logo_url : company.logoUrl}
         customTheme={effectiveTheme}
       />

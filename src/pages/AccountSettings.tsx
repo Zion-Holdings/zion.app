@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Header } from '@/components/Header';
+
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { useAuth } from '@/hooks/useAuth';
@@ -95,7 +95,6 @@ export default function AccountSettings() {
   return (
     <>
       <SEO title="Account Settings" description="Manage your account" />
-      <Header />
       <main className="container mx-auto py-8 px-4">
         <h1 className="text-3xl font-bold mb-6 text-white">Account Settings</h1>
         

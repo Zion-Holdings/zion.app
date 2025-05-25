@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ServiceDescriptionForm } from "@/components/services/ServiceDescriptionForm";
 import { GeneratedDescriptionDisplay } from "@/components/services/GeneratedDescriptionDisplay";
@@ -40,7 +39,6 @@ export default function ServiceDescriptionGenerator() {
         description="Generate professional service descriptions using AI"
         keywords="service description, AI content, professional description generator"
       />
-      <Header />
       <main className="flex-1 p-6 md:p-10">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold text-white mb-2">Service Description Generator</h1>

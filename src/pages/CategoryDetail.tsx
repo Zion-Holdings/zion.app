@@ -1,6 +1,5 @@
 
 import { useParams, Link } from "react-router-dom";
-import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
@@ -212,7 +211,6 @@ export default function CategoryDetail() {
 
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-zion-blue">
         <div className="container mx-auto px-4 py-12">
           <div className="mb-4">

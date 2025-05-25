@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -99,7 +98,6 @@ export default function ContentGenerator() {
   if (isLoading) {
     return (
       <>
-        <Header />
         <div className="min-h-screen bg-zion-blue flex items-center justify-center">
           <div className="animate-pulse text-white">Loading...</div>
         </div>
@@ -110,7 +108,6 @@ export default function ContentGenerator() {
 
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-zion-blue py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold text-white mb-8">Content Generator</h1>

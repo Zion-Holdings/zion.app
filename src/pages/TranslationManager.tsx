@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -220,7 +219,6 @@ export default function TranslationManager() {
         title={t('translation.manager_title')} 
         description={t('translation.manager_description')}
       />
-      <Header />
       <main className={`container mx-auto px-${isMobile ? '4' : '6'} py-8`}>
         <Card>
           <CardHeader>
