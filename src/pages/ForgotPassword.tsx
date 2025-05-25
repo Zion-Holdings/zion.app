@@ -17,8 +17,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 
 // Form validation schema
 const forgotPasswordSchema = z.object({
@@ -47,7 +45,6 @@ export default function ForgotPassword() {
 
   return (
     <>
-      <Header />
       <div className="flex min-h-screen bg-zion-blue">
         <div className="flex-1 flex flex-col justify-center px-4 py-12 sm:px-6 lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-sm lg:w-96">
@@ -138,7 +135,6 @@ export default function ForgotPassword() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
