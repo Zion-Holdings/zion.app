@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { QuoteFormData, ListingItem, ServiceType } from "@/types/quotes";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -10,7 +10,7 @@ interface ServiceTypeStepProps {
   updateFormData: (data: Partial<QuoteFormData>) => void;
 }
 
-// Sample data - would come from an API in a real application
+// Fallback sample data - used if API call fails
 const SAMPLE_LISTINGS: ListingItem[] = [
   { id: "service-1", title: "AI Development", category: "Services", image: "https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?w=800&auto=format" },
   { id: "service-2", title: "Cloud Migration", category: "Services", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format" },
@@ -22,6 +22,33 @@ const SAMPLE_LISTINGS: ListingItem[] = [
 
 export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepProps) {
   const [searchQuery, setSearchQuery] = useState("");
+  const [listings, setListings] = useState<ListingItem[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  // Fetch services when the service type changes
+  useEffect(() => {
+    if (!formData.serviceType) {
+      setListings([]);
+      return;
+    }
+
+    const fetchServices = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(`/api/services?categoryId=${encodeURIComponent(formData.serviceType)}`);
+        if (!response.ok) throw new Error('Failed to fetch');
+        const data = await response.json();
+        setListings(data as ListingItem[]);
+      } catch (err) {
+        // Fallback to sample data on error
+        setListings(SAMPLE_LISTINGS.filter(item => item.category.toLowerCase() === formData.serviceType.toLowerCase()));
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchServices();
+  }, [formData.serviceType]);
   
   const handleTypeSelect = (type: ServiceType) => {
     updateFormData({ serviceType: type });
@@ -35,7 +62,9 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
     });
   };
   
-  const filteredListings = SAMPLE_LISTINGS.filter(item => {
+  const sourceListings = listings.length > 0 ? listings : SAMPLE_LISTINGS;
+
+  const filteredListings = sourceListings.filter(item => {
     // Filter by category only when a service type has been selected
     if (formData.serviceType !== "") {
       const categoryMatch = item.category.toLowerCase() === formData.serviceType.toLowerCase();
@@ -105,9 +134,11 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
           </div>
           
           <div className="grid grid-cols-1 gap-4 mt-4">
-            {filteredListings.length > 0 ? (
+            {loading ? (
+              <div className="text-center py-8 text-zion-slate-light">Loading services...</div>
+            ) : filteredListings.length > 0 ? (
               filteredListings.map((item) => (
-                <div 
+                <div
                   key={item.id}
                   onClick={() => handleItemSelect(item)}
                   className={`cursor-pointer transition-all ${
