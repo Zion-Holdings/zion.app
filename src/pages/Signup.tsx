@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useForm, type UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -45,6 +45,7 @@ type SignupFormValues = z.infer<typeof signupSchema>;
 
 export default function Signup() {
   const { signup, loginWithGoogle, loginWithFacebook, loginWithTwitter, isLoading, isAuthenticated, user } = useAuth();
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   // Track confirm password locally to prevent it from clearing on blur
@@ -76,11 +77,17 @@ export default function Signup() {
       );
       if (error) {
         form.setError("root", { message: error });
+        toast({
+          variant: "destructive",
+          title: "Registration failed",
+          description: error,
+        });
       } else {
         toast({
           title: "Account created",
           description: "Check your email to verify your account.",
         });
+        navigate("/login");
       }
     } catch (err: any) {
       const message = err.message ?? "Registration failed";
@@ -140,7 +147,7 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               placeholder="John Doe"
-                              className="bg-zion-blue pl-10 text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
+                              className="bg-zion-blue pl-10 text-gray-900 dark:text-gray-100 placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               aria-autocomplete="none"
                               autoComplete="off"
@@ -163,7 +170,7 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               placeholder="you@example.com"
-                              className="bg-zion-blue pl-10 text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
+                              className="bg-zion-blue pl-10 text-gray-900 dark:text-gray-100 placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               autoComplete="off"
                               aria-autocomplete="none"
@@ -188,7 +195,7 @@ export default function Signup() {
                             <Input
                               type={showPassword ? "text" : "password"}
                               placeholder="••••••••"
-                              className="bg-zion-blue pl-10 text-white border-zion-blue-light focus:border-zion-purple"
+                              className="bg-zion-blue pl-10 text-gray-900 dark:text-gray-100 border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               autoComplete="new-password"
                             />
@@ -227,7 +234,7 @@ export default function Signup() {
                             <Input
                               type={showConfirmPassword ? "text" : "password"}
                               placeholder="••••••••"
-                              className="bg-zion-blue pl-10 text-white border-zion-blue-light focus:border-zion-purple"
+                              className="bg-zion-blue pl-10 text-gray-900 dark:text-gray-100 border-zion-blue-light focus:border-zion-purple"
                               value={confirmPasswordValue}
                               onChange={(e) => {
                                 field.onChange(e)
