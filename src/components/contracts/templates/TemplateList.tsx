@@ -5,6 +5,9 @@ import { Loader2, Edit, Trash, Star, StarOff } from "lucide-react";
 import { useContractTemplates } from "@/hooks/useContractTemplates";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useAuth } from "@/hooks/useAuth";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -32,6 +35,9 @@ export function TemplateList({
 }: TemplateListProps) {
   const [templateToDelete, setTemplateToDelete] = useState<string | null>(null);
   const { deleteTemplate, setDefaultTemplate } = useContractTemplates();
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleDeleteClick = (templateId: string) => {
     setTemplateToDelete(templateId);
@@ -45,6 +51,10 @@ export function TemplateList({
   };
 
   const handleSetDefault = async (templateId: string) => {
+    if (!user) {
+      navigate(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+      return;
+    }
     await setDefaultTemplate.mutateAsync(templateId);
   };
 
@@ -88,9 +98,20 @@ export function TemplateList({
                   <Edit className="h-4 w-4" />
                 </Button>
                 {!template.is_default ? (
-                  <Button variant="ghost" size="icon" onClick={() => handleSetDefault(template.id)}>
-                    <Star className="h-4 w-4" />
-                  </Button>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button variant="ghost" size="icon" onClick={() => handleSetDefault(template.id)}>
+                          <Star className="h-4 w-4" />
+                        </Button>
+                      </TooltipTrigger>
+                      {!user && (
+                        <TooltipContent>
+                          Please log in to use this feature
+                        </TooltipContent>
+                      )}
+                    </Tooltip>
+                  </TooltipProvider>
                 ) : (
                   <Button variant="ghost" size="icon" disabled>
                     <StarOff className="h-4 w-4" />

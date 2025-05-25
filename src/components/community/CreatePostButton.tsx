@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface CreatePostButtonProps {
   /** Optional category to preselect when creating a post */
@@ -30,9 +31,18 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
   };
 
   return (
-    <Button className={className} onClick={handleClick}>
-      Create New Post
-    </Button>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button className={className} onClick={handleClick}>
+            Create New Post
+          </Button>
+        </TooltipTrigger>
+        {!user && (
+          <TooltipContent>Please log in to use this feature</TooltipContent>
+        )}
+      </Tooltip>
+    </TooltipProvider>
   );
 }
 
