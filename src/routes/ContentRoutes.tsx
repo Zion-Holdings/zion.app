@@ -11,6 +11,7 @@ import GreenIT from "@/pages/GreenIT";
 import Careers from "@/pages/Careers";
 import SearchPage from "@/pages/SearchPage";
 import { SitemapPage } from "@/components/SitemapPage";
+import Sitemap from "@/pages/Sitemap";
 import Terms from "@/pages/Terms";
 import HelpCenterPage from "@/pages/HelpCenterPage";
 import AccountSettings from "@/pages/AccountSettings";
@@ -59,7 +60,8 @@ const ContentRoutes = () => {
       {/* Global Search Route */}
       <Route path="/search" element={<SearchPage />} />
       
-      {/* Sitemap Page */}
+      {/* Sitemap Pages */}
+      <Route path="/sitemap" element={<Sitemap />} />
       <Route path="/sitemap-page" element={<SitemapPage />} />
     </Routes>
   );
