@@ -3,18 +3,16 @@ import { MemoryRouter } from 'react-router-dom';
 import { vi } from 'vitest';
 import { LoginForm } from '@/components/auth/login';
 import * as authService from '@/services/authService';
-import * as toastMod from '@/hooks/use-toast';
 import * as authHook from '@/hooks/useAuth';
 
-vi.spyOn(authHook, 'useAuth').mockReturnValue({ isLoading: false } as any);
+vi.spyOn(authHook, 'useAuth').mockReturnValue({ isLoading: false, login: vi.fn() } as any);
 
 describe('LoginForm', () => {
-  it('shows error toast on 401 response', async () => {
+  it('shows server error on 401 response', async () => {
     vi.spyOn(authService, 'loginUser').mockResolvedValue({
       res: { status: 401 } as Response,
       data: { error: 'Invalid credentials' },
     });
-    const toastSpy = vi.spyOn(toastMod.toast, 'error').mockImplementation(() => {});
 
     render(
       <MemoryRouter>
@@ -26,9 +24,7 @@ describe('LoginForm', () => {
     fireEvent.input(screen.getByLabelText(/password/i), { target: { value: 'secret' } });
     fireEvent.submit(screen.getByRole('button', { name: /login/i }));
 
-    // wait for toast call
-    await screen.findByRole('button', { name: /login/i });
-
-    expect(toastSpy).toHaveBeenCalledWith('Invalid credentials');
+    // wait for error message to appear
+    await screen.findByText('Invalid credentials');
   });
 });
