@@ -6,7 +6,7 @@ import * as authHook from '@/hooks/useAuth';
 import * as toastHook from '@/hooks/use-toast';
 import * as router from 'react-router-dom';
 
-function setup(success = true, errorMsg?: string) {
+function setup(success = true, errorMsg?: string, status = success ? 201 : 400) {
   const navigateMock = vi.fn();
   vi.spyOn(router, 'useNavigate').mockReturnValue(navigateMock);
   vi.spyOn(authHook, 'useAuth').mockReturnValue({
@@ -17,7 +17,7 @@ function setup(success = true, errorMsg?: string) {
     user: null,
   } as any);
   const fetchSpy = vi.fn().mockResolvedValue({
-    status: success ? 201 : 400,
+    status,
     json: () => Promise.resolve(success ? { token: 'jwt' } : { error: errorMsg }),
   } as Response);
   vi.stubGlobal('fetch', fetchSpy);
@@ -63,5 +63,17 @@ describe('Signup form', () => {
     fireEvent.submit(screen.getByRole('button', { name: /create account/i }));
     expect(fetchSpy).toHaveBeenCalled();
     expect(errorSpy).toHaveBeenCalledWith('Bad');
+  });
+
+  it('handles duplicate email error', async () => {
+    const { fetchSpy, errorSpy } = setup(false, 'Email already exists', 409);
+    fireEvent.input(screen.getByLabelText(/full name/i), { target: { value: 'John Doe' } });
+    fireEvent.input(screen.getByLabelText(/email address/i), { target: { value: 'john@example.com' } });
+    fireEvent.input(screen.getByLabelText(/^password$/i), { target: { value: 'Password123' } });
+    fireEvent.input(screen.getByLabelText(/confirm password/i), { target: { value: 'Password123' } });
+    fireEvent.click(screen.getByLabelText(/i agree/i));
+    fireEvent.submit(screen.getByRole('button', { name: /create account/i }));
+    expect(fetchSpy).toHaveBeenCalled();
+    expect(errorSpy).toHaveBeenCalledWith('Email already exists');
   });
 });
