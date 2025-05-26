@@ -21,6 +21,7 @@ import { NotificationProvider } from './context';
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
+import { ViewModeProvider } from './context/ViewModeContext';
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
@@ -45,9 +46,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
               <NotificationProvider>
                 <AnalyticsProvider>
                   <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                    <AppLayout>
-                      <App />
-                    </AppLayout>
+                    <ViewModeProvider>
+                      <AppLayout>
+                        <App />
+                      </AppLayout>
+                    </ViewModeProvider>
                     <LanguageDetectionPopup />
                   </LanguageProvider>
                 </AnalyticsProvider>

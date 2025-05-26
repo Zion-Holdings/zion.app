@@ -6,3 +6,4 @@ export {
   RequestQuoteWizardProvider,
   useRequestQuoteWizard
 } from './RequestQuoteWizard';
+export { ViewModeProvider, useViewMode } from './ViewModeContext';
