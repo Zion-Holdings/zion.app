@@ -1,6 +1,7 @@
 import React from 'react';
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
@@ -75,6 +76,7 @@ const App = () => {
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
         <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+          <ErrorBoundary>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
@@ -91,6 +93,7 @@ const App = () => {
             <Route path="/developers/*" element={<DeveloperRoutes />} />
             <Route path="*" element={<ErrorRoutes />} />
           </Routes>
+          </ErrorBoundary>
         </Suspense>
         <Toaster />
         <SonnerToaster position="top-right" />

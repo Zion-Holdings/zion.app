@@ -337,3 +337,13 @@ declare module 'next' {
 }
 declare module 'next-themes';
 declare module 'tailwind-merge';
+declare module 'axios';
+declare module 'react' {
+  export type ReactNode = any;
+  export interface ErrorInfo { componentStack: string }
+  export class Component<P = any, S = any> {
+    props: P;
+    state: S;
+  }
+  export default Component;
+}
