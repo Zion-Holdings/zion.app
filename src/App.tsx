@@ -70,7 +70,7 @@ const App = () => {
   useScrollToTop();
   return (
     <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider>
         <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
           <Routes>
             {baseRoutes.map(({ path, element }) => (

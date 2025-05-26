@@ -6,7 +6,7 @@
   :root {
     --font-sans: 'Orbitron', system-ui, sans-serif;
 
-    --background: 0 0% 7%;
+    --background: 0 0% 10%;
     --foreground: 0 0% 100%;
 
     --card: 0 0% 7%;
@@ -15,7 +15,7 @@
     --popover: 0 0% 7%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 216 84% 50%;
+    --primary: 146 70% 40%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 68%;
@@ -32,15 +32,15 @@
 
     --border: 0 0% 68%;
     --input: 0 0% 68%;
-    --ring: 216 84% 53%;
+    --ring: 146 70% 40%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 228 12% 92%;
+    --sidebar-background: 0 0% 10%;
 
-    --sidebar-foreground: 0 0% 7%;
+    --sidebar-foreground: 0 0% 100%;
 
-    --sidebar-primary: 216 84% 53%;
+    --sidebar-primary: 146 70% 40%;
 
     --sidebar-primary-foreground: 0 0% 100%;
 
@@ -50,11 +50,11 @@
 
     --sidebar-border: 0 0% 68%;
 
-    --sidebar-ring: 216 84% 53%;
+    --sidebar-ring: 146 70% 40%;
   }
 
   .dark {
-    --background: 0 0% 7%;
+    --background: 0 0% 10%;
     --foreground: 0 0% 100%;
 
     --card: 0 0% 7%;
@@ -63,7 +63,7 @@
     --popover: 0 0% 7%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 216 84% 50%;
+    --primary: 146 70% 40%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 68%;
@@ -80,15 +80,15 @@
 
     --border: 0 0% 68%;
     --input: 0 0% 68%;
-    --ring: 216 84% 53%;
-    --sidebar-background: 228 12% 92%;
-    --sidebar-foreground: 0 0% 7%;
-    --sidebar-primary: 216 84% 53%;
+    --ring: 146 70% 40%;
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 146 70% 40%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 68%;
     --sidebar-accent-foreground: 0 0% 7%;
     --sidebar-border: 0 0% 68%;
-    --sidebar-ring: 216 84% 53%;
+    --sidebar-ring: 146 70% 40%;
   }
 
   .light {
@@ -161,16 +161,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: theme('colors["zion-blue"].DEFAULT');
+    background: theme('colors.gray.800');
   }
 
   ::-webkit-scrollbar-thumb {
-    background: theme('colors["zion-purple"].dark');
+    background: theme('colors.green.700');
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: theme('colors["zion-purple"].DEFAULT');
+    background: theme('colors.green.500');
   }
 
   /* Smooth scrolling */
