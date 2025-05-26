@@ -31,19 +31,35 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
     const fetchServices = async () => {
       setLoading(true);
       setError(null);
-      try {
-        const response = await fetch(`/api/services?category=${encodeURIComponent(formData.serviceType)}&q=${encodeURIComponent(debouncedQuery)}`);
-        if (!response.ok) throw new Error('Failed to fetch');
-        const data = await response.json();
-        setListings(data as ListingItem[]);
-      } catch (err) {
-        setError('Failed to load services');
-        setListings(
-          SAMPLE_SERVICES.filter(item => item.category === formData.serviceType &&
-            item.title.toLowerCase().includes(debouncedQuery.toLowerCase()))
-        );
-      } finally {
-        setLoading(false);
+      const url = `/api/services?category=${encodeURIComponent(formData.serviceType)}&q=${encodeURIComponent(debouncedQuery)}`;
+      const maxRetries = 3;
+
+      for (let attempt = 0; attempt < maxRetries; attempt++) {
+        try {
+          const response = await fetch(url);
+          if (!response.ok) throw new Error('Failed to fetch');
+          const data = await response.json();
+          setListings(data as ListingItem[]);
+          setError(null);
+          setLoading(false);
+          return;
+        } catch (err) {
+          if (attempt === maxRetries - 1) {
+            setError('Failed to load services');
+            setListings(
+              SAMPLE_SERVICES.filter(
+                item =>
+                  item.category === formData.serviceType &&
+                  item.title.toLowerCase().includes(debouncedQuery.toLowerCase())
+              )
+            );
+            setLoading(false);
+          } else {
+            await new Promise(res =>
+              setTimeout(res, Math.pow(2, attempt) * 500)
+            );
+          }
+        }
       }
     };
 
