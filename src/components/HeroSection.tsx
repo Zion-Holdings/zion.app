@@ -44,14 +44,13 @@ export function HeroSection() {
               {t('auth.signup')}
             </Link>
           </Button>
-          <Button
-            variant="outline"
-            className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark text-lg py-6"
-            size="lg"
-            asChild
+          <Link
+            id="browse-marketplace"
+            to="/marketplace"
+            className="border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-4 rounded-md inline-flex items-center justify-center"
           >
-            <Link to="/marketplace">{t('home.browse_marketplace')}</Link>
-          </Button>
+            {t('home.browse_marketplace')}
+          </Link>
         </div>
       </div>
     </section>
