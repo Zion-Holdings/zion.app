@@ -25,6 +25,11 @@ export default defineConfig({
       },
     },
   ],
+  build: {
+    rollupOptions: {
+      external: ['react-markdown'],
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
