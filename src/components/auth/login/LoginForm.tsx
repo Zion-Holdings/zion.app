@@ -58,7 +58,17 @@ export function LoginForm() {
       await login(data.email, data.password);
 
       const next = searchParams.get('next') || '/';
-      navigate(next);
+      if (next === '/checkout') {
+        const intended = sessionStorage.getItem('intendedProduct');
+        sessionStorage.removeItem('intendedProduct');
+        if (intended) {
+          navigate(`/checkout?product=${intended}`);
+        } else {
+          navigate('/checkout');
+        }
+      } else {
+        navigate(next);
+      }
     } finally {
       setIsSubmitting(false);
     }

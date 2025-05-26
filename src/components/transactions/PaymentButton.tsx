@@ -37,10 +37,12 @@ export function PaymentButton({
         title: "Authentication required",
         description: "Please sign in to make a purchase.",
       });
-      
-      navigate("/login", { 
-        state: { from: window.location.pathname } 
-      });
+
+      if (serviceId) {
+        sessionStorage.setItem('intendedProduct', serviceId);
+      }
+
+      navigate('/login?next=/checkout');
       return;
     }
     
