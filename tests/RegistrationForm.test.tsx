@@ -67,7 +67,7 @@ describe('RegistrationForm', () => {
 
   it('shows error toast on server 400', async () => {
     (toastHook.toast.error as jest.Mock).mockImplementation(() => {});
-    mockFetch({ error: 'Bad' }, 400);
+    mockFetch({ message: 'Bad' }, 400);
 
     render(
       <MemoryRouter>

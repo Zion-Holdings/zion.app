@@ -18,7 +18,7 @@ function setup(success = true, errorMsg?: string, status = success ? 201 : 400) 
   } as any);
   const fetchSpy = vi.fn().mockResolvedValue({
     status,
-    json: () => Promise.resolve(success ? { token: 'jwt' } : { error: errorMsg }),
+    json: () => Promise.resolve(success ? { token: 'jwt' } : { message: errorMsg }),
   } as Response);
   vi.stubGlobal('fetch', fetchSpy);
 

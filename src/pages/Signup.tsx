@@ -72,6 +72,13 @@ export default function Signup() {
   const onSubmit = async (data: SignupFormValues) => {
     if (isSubmitting) return; // Prevent multiple submissions
 
+    if (data.password !== data.confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+
+    console.log("register form data", data);
+
     setIsSubmitting(true);
     try {
       const { res, data: resData } = await register(
@@ -80,7 +87,7 @@ export default function Signup() {
         data.password
       );
       if (res.status !== 201) {
-        throw new Error(resData?.error || "Registration failed");
+        throw new Error(resData?.message || "Registration failed");
       }
 
       if (resData?.token) {
@@ -90,7 +97,7 @@ export default function Signup() {
       toast.success("Account created");
       navigate("/dashboard");
     } catch (err: any) {
-      const message = err.message ?? "Registration failed";
+      const message = err?.message ?? "Registration failed";
       form.setError("root", { message });
       toast.error(message);
     } finally {

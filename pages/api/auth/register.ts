@@ -30,7 +30,7 @@ export default async function handler(req: Req, res: JsonRes) {
   const result = schema.safeParse(req.body);
   if (!result.success) {
     const message = result.error.issues[0]?.message || 'Invalid input';
-    res.status(400).json({ error: message });
+    res.status(400).json({ message });
     return;
   }
 
@@ -44,7 +44,7 @@ export default async function handler(req: Req, res: JsonRes) {
 
     if (error || !data.user) {
       const status = error?.status || (error?.message?.includes('already registered') ? 409 : 400);
-      res.status(status).json({ error: error?.message || 'Registration failed' });
+      res.status(status).json({ message: error?.message || 'Registration failed' });
       return;
     }
 
@@ -54,6 +54,7 @@ export default async function handler(req: Req, res: JsonRes) {
     }
     res.status(201).json({ user: data.user, token });
   } catch (err: any) {
-    res.status(500).json({ error: err.message || 'Registration failed' });
+    console.error(err);
+    res.status(500).json({ message: err.message || 'Registration failed' });
   }
 }
