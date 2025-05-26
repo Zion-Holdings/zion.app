@@ -12,6 +12,7 @@ import { ProfileAvailability } from "./ProfileAvailability";
 import { ProfileContact } from "./ProfileContact";
 import { ProfileRatings } from "./ProfileRatings";
 import { TalentProfile as TalentProfileType } from "@/types/talent";
+import { Markdown } from "@/components/ui/markdown";
 import { useAuth } from "@/hooks/useAuth";
 import { Availability } from "@/types/profile";
 
@@ -79,9 +80,7 @@ export function TalentProfile({
           {/* Bio Section */}
           <div className="bg-zion-purple/10 border border-zion-purple/30 rounded-lg p-6">
             <h2 className="text-xl font-bold text-white mb-4">About {profile.full_name}</h2>
-            <div className="prose prose-invert max-w-none">
-              <p className="text-zion-slate whitespace-pre-wrap">{profile.bio}</p>
-            </div>
+            <Markdown content={profile.bio || ''} className="text-zion-slate" />
           </div>
           
           {/* Projects Section */}
