@@ -18,6 +18,8 @@ import { AppLayout } from '@/layout/AppLayout';
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
 import { NotificationProvider } from './context';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
@@ -45,9 +47,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
               <NotificationProvider>
                 <AnalyticsProvider>
                   <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                    <AppLayout>
-                      <App />
-                    </AppLayout>
+                    <Provider store={store}>
+                      <AppLayout>
+                        <App />
+                      </AppLayout>
+                    </Provider>
                     <LanguageDetectionPopup />
                   </LanguageProvider>
                 </AnalyticsProvider>
