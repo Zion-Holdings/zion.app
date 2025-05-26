@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
 import {
   Form,
   FormControl,
@@ -51,6 +52,7 @@ export default function Signup() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   // Track confirm password locally to prevent it from clearing on blur
   const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
+  const passwordValue = form.watch("password");
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Initialize react-hook-form
@@ -95,6 +97,13 @@ export default function Signup() {
     }
   };
 
+  const onInvalid = (errors: any) => {
+    const firstError = Object.keys(errors)[0] as keyof SignupFormValues;
+    if (firstError) {
+      form.setFocus(firstError);
+    }
+  };
+
   // Redirect if user is already logged in and has completed profile
   if (isAuthenticated && user?.profileComplete) {
     return <Navigate to="/" />;
@@ -129,7 +138,7 @@ export default function Signup() {
                     <AlertDescription>{form.formState.errors.root.message}</AlertDescription>
                   </Alert>
                 )}
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate>
+                <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6" noValidate>
                   <FormField
                     control={form.control}
                     name="displayName"
@@ -140,6 +149,8 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               placeholder="John Doe"
+                              aria-label="Full name"
+                              aria-invalid={!!form.formState.errors.displayName}
                               className="bg-zion-blue pl-10 text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               aria-autocomplete="none"
@@ -163,6 +174,8 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               placeholder="you@example.com"
+                              aria-label="Email address"
+                              aria-invalid={!!form.formState.errors.email}
                               className="bg-zion-blue pl-10 text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               autoComplete="off"
@@ -187,7 +200,9 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               type={showPassword ? "text" : "password"}
-                              placeholder="••••••••"
+                              placeholder="Enter password"
+                              aria-label="Password"
+                              aria-invalid={!!form.formState.errors.password}
                               className="bg-zion-blue pl-10 text-white border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               autoComplete="new-password"
@@ -226,7 +241,9 @@ export default function Signup() {
                           <div className="relative">
                             <Input
                               type={showConfirmPassword ? "text" : "password"}
-                              placeholder="••••••••"
+                              placeholder="Enter password"
+                              aria-label="Confirm password"
+                              aria-invalid={!!form.formState.errors.confirmPassword}
                               className="bg-zion-blue pl-10 text-white border-zion-blue-light focus:border-zion-purple"
                               value={confirmPasswordValue}
                               onChange={(e) => {
@@ -262,6 +279,8 @@ export default function Signup() {
                       </FormItem>
                     )}
                   />
+
+                  <PasswordStrengthMeter password={passwordValue} />
 
                   <FormField
                     control={form.control}

@@ -163,7 +163,8 @@ export function WebhooksManager() {
                     type="password"
                     value={webhookSecret}
                     onChange={(e) => setWebhookSecret(e.target.value)}
-                    placeholder="••••••••••••••••"
+                    placeholder="Enter secret key"
+                    aria-label="Secret key"
                     className="bg-zinc-800 border-zinc-700"
                   />
                   <p className="text-xs text-zinc-500">
