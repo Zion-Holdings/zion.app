@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { apiClient } from "@/utils/apiClient";
 
 export type WebhookEventType = 'new_application' | 'quote_received' | 'milestone_approved' | 'talent_hired';
 
@@ -53,7 +54,7 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await fetch(`${getWebhookUrl()}/webhooks`, {
+      const response = await apiClient(`${getWebhookUrl()}/webhooks`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${session.access_token}`,
@@ -95,7 +96,7 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await fetch(`${getWebhookUrl()}/create`, {
+      const response = await apiClient(`${getWebhookUrl()}/create`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${session.access_token}`,
@@ -151,7 +152,7 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await fetch(`${getWebhookUrl()}/toggle`, {
+      const response = await apiClient(`${getWebhookUrl()}/toggle`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${session.access_token}`,
@@ -204,7 +205,7 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await fetch(`${getWebhookUrl()}/delete`, {
+      const response = await apiClient(`${getWebhookUrl()}/delete`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${session.access_token}`,
@@ -256,7 +257,7 @@ export function useWebhooks() {
         return;
       }
 
-      const response = await fetch(`${getWebhookUrl()}/test`, {
+      const response = await apiClient(`${getWebhookUrl()}/test`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${session.access_token}`,
