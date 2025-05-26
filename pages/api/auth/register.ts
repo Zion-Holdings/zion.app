@@ -36,15 +36,31 @@ export default async function handler(req: Req, res: JsonRes) {
 
   const { name, email, password } = result.data;
   try {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: { data: { display_name: name } },
-    });
+    let data;
+    let error;
+    try {
+      ({ data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { data: { display_name: name } },
+      }));
+    } catch (networkErr: any) {
+      console.error('signUp network error', networkErr);
+      res.status(503).json({ message: 'Network error. Please try again.' });
+      return;
+    }
 
     if (error || !data.user) {
-      const status = error?.status || (error?.message?.includes('already registered') ? 409 : 400);
-      res.status(status).json({ message: error?.message || 'Registration failed' });
+      let message = error?.message || 'Registration failed';
+      let status = error?.status || 400;
+      if (/already\s*registered|exists/i.test(message)) {
+        status = 409;
+        message = 'Email already registered';
+      } else if (/weak|strength/i.test(message)) {
+        status = 400;
+        message = 'Password is too weak';
+      }
+      res.status(status).json({ message });
       return;
     }
 
