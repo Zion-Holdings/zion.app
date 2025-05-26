@@ -7,6 +7,7 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import InstallPrompt from "./components/InstallPrompt";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -94,6 +95,7 @@ const App = () => {
         </Suspense>
         <Toaster />
         <SonnerToaster position="top-right" />
+        <InstallPrompt />
       </ThemeProvider>
     </WhitelabelProvider>
   );
