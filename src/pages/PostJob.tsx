@@ -3,7 +3,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/Footer";
 import { JobPostingForm } from "@/components/jobs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { useAuth } from "@/hooks/useAuth";
 import { Navigate } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -22,7 +22,7 @@ export default function PostJob() {
   
   return (
     <>
-      <SEO 
+      <NextSeo 
         title="Post a Job | Zion AI Marketplace" 
         description="Post a job to find the perfect AI talent for your project." 
       />

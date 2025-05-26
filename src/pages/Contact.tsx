@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -129,11 +129,17 @@ export default function Contact() {
 
   return (
     <>
-      <SEO
+      <NextSeo
         title="Contact Zion - Get in Touch"
         description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform."
         keywords="contact Zion, AI marketplace support, tech platform contact"
         canonical="https://app.ziontechgroup.com/contact"
+        openGraph={{
+          title: "Contact Zion - Get in Touch",
+          description:
+            "Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform.",
+          url: "https://app.ziontechgroup.com/contact",
+        }}
       />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

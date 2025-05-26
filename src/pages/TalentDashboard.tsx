@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { BriefcaseIcon, UserIcon, MessageSquare, Star, PlusCircle, FileText, Inbox, Video } from "lucide-react";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { SuggestedJobs } from "@/components/jobs/SuggestedJobs";
@@ -23,7 +23,7 @@ function TalentDashboardContent() {
 
   return (
     <>
-      <SEO 
+      <NextSeo 
         title="Talent Dashboard | Zion AI Marketplace" 
         description="Your personalized talent dashboard with job matches and professional opportunities." 
       />

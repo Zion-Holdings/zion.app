@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { KanbanBoard } from "@/components/hiring-tracker/KanbanBoard";
 import { HiringAnalytics } from "@/components/hiring-tracker/HiringAnalytics";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Briefcase } from "lucide-react";
 
@@ -15,7 +15,7 @@ function HiringTrackerContent() {
 
   return (
     <>
-      <SEO 
+      <NextSeo 
         title="Hiring Tracker | Zion AI Marketplace" 
         description="Manage your candidate pipeline in the Zion AI Marketplace." 
       />

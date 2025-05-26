@@ -12,7 +12,7 @@ import { toast } from 'sonner';
 import { useAuth } from '@/hooks/useAuth';
 import useJobDetails from '@/hooks/useJobDetails';
 import { ApplyToJobModal } from '@/components/messaging/job-application';
-import { SEO } from '@/components/SEO';
+import { NextSeo } from '@/components/NextSeo';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 
 export default function JobDetails() {
@@ -76,7 +76,7 @@ export default function JobDetails() {
 
   return (
     <>
-      <SEO 
+      <NextSeo 
         title={`${job.title} - ${isWhitelabel ? brandName : 'Zion AI Marketplace'}`}
         description={job.description.substring(0, 160)}
       />

@@ -1,13 +1,13 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { completeSitemap } from "@/config/sitemap";
 import { Link } from "react-router-dom";
 
 export default function Sitemap() {
   return (
     <>
-      <SEO
+      <NextSeo
         title="Sitemap | Zion AI Marketplace"
         description="Human readable sitemap for all public routes"
         keywords="sitemap, navigation"

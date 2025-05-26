@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Search, Filter } from "lucide-react";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 
 // Mock data for support requests
 const MOCK_SUPPORT_REQUESTS = [
@@ -140,7 +140,7 @@ export default function SupportRequests() {
   
   return (
     <>
-      <SEO 
+      <NextSeo 
         title="Support Requests | Admin Dashboard"
         description="Manage and track user support requests and issues"
       />

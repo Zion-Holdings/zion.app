@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -58,7 +58,7 @@ const OpenAppRedirect: React.FC = () => {
   
   return (
     <div className="min-h-screen flex items-center justify-center bg-zion-blue">
-      <SEO 
+      <NextSeo 
         title="Opening Zion App" 
         description="Redirecting to the Zion AI Marketplace mobile app"
         noindex={true}

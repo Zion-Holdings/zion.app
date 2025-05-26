@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
 import { useToast } from "@/hooks/use-toast";
@@ -116,7 +116,7 @@ export default function EditPostPage() {
 
   return (
     <>
-      <SEO
+      <NextSeo
         title="Edit Post | Community Forum | Zion AI Marketplace"
         description="Edit your discussion post in the Zion AI Marketplace community forum."
         keywords="community, forum, discussion, edit post"

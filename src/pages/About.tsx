@@ -1,13 +1,13 @@
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { GradientHeading } from "@/components/GradientHeading";
 
 export default function About() {
   return (
     <>
-      <SEO 
+      <NextSeo 
         title="About Zion - The Future of AI & Tech Marketplace" 
         description="Learn about Zion's mission to create the first free marketplace dedicated to high-tech and artificial intelligence." 
         keywords="about Zion, AI marketplace, tech platform, mission, vision, team"

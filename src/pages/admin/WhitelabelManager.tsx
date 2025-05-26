@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { WhitelabelRequestForm } from "@/components/admin/whitelabel/WhitelabelRequestForm";
 import { TenantsList } from "@/components/admin/whitelabel/TenantsList";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -22,7 +22,7 @@ export default function WhitelabelManager() {
 
   return (
     <>
-      <SEO 
+      <NextSeo 
         title="White-Label Management - Zion AI Marketplace"
         description="Create and manage white-label instances of the Zion AI Marketplace platform."
       />

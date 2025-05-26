@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, ChevronLeft, ChevronRight, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import type { BlogPost as BlogPostType } from "@/types/blog";
@@ -68,7 +68,7 @@ export default function BlogPost() {
   
   return (
     <>
-      <SEO
+      <NextSeo
         title={post.title}
         description={post.excerpt}
         keywords={post.tags.join(", ")}

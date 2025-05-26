@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -248,7 +248,7 @@ export default function ForumPostPage() {
   
   return (
     <>
-      <SEO
+      <NextSeo
         title={`${post.title} | Community Forum | Zion AI Marketplace`}
         description={post.content.substring(0, 160)}
         keywords={`community, forum, discussion, ${post.tags.join(', ')}`}

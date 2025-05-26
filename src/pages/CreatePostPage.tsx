@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useSearchParams, useLocation } from "react-router-dom";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
 import { useAuth } from "@/hooks/useAuth";
@@ -61,7 +61,7 @@ export default function CreatePostPage() {
 
   return (
     <>
-      <SEO
+      <NextSeo
         title="Create New Post | Community Forum | Zion AI Marketplace"
         description="Create a new discussion post in the Zion AI Marketplace community forum."
         keywords="community, forum, discussion, create post, new thread"

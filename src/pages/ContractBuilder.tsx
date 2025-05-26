@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SEO } from '@/components/SEO';
+import { NextSeo } from '@/components/NextSeo';
 import { Footer } from '@/components/Footer';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { ContractBuilderContent } from '@/components/contracts/page/ContractBuilderContent';
@@ -9,7 +9,7 @@ function ContractBuilderPage() {
   return (
     <ProtectedRoute>
       <>
-        <SEO 
+        <NextSeo 
           title="Smart Contract Builder | Zion AI Marketplace" 
           description="Create and deploy blockchain-backed smart contracts for your projects"
         />

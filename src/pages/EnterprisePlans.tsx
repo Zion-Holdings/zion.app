@@ -8,12 +8,12 @@ import { EnterpriseFeatures } from "@/components/enterprise/EnterpriseFeatures";
 import { EnterpriseCTA } from "@/components/enterprise/EnterpriseCTA";
 import { EnterpriseTrustBadges } from "@/components/enterprise/EnterpriseTrustBadges";
 import { EnterpriseTestimonials } from "@/components/enterprise/EnterpriseTestimonials";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 
 export default function EnterprisePlans() {
   return (
     <>
-      <SEO 
+      <NextSeo 
         title="Enterprise Plans - Zion AI Marketplace"
         description="Scale your talent acquisition with Zion's enterprise solutions. Custom branded portals, dedicated talent pools, and powerful admin tools."
       />

@@ -1,7 +1,7 @@
 import React from "react";
 import { useProjects } from "@/hooks/useProjects";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +13,7 @@ function ProjectsContent() {
 
   return (
     <>
-      <SEO title="My Projects | Zion AI Marketplace" description="View and manage your projects." />
+      <NextSeo title="My Projects | Zion AI Marketplace" description="View and manage your projects." />
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold">My Projects</h1>

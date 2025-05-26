@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
@@ -164,7 +164,7 @@ export default function NotificationsPage() {
   
   return (
     <>
-      <SEO 
+      <NextSeo 
         title="Notifications | Zion AI Marketplace" 
         description="View and manage your notifications on the Zion AI Marketplace." 
       />

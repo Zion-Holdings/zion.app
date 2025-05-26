@@ -1,5 +1,5 @@
 
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { ApplicationsTracker } from "@/components/jobs/applications";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Briefcase, Inbox } from "lucide-react";
@@ -11,7 +11,7 @@ function ApplicationStatusTrackerContent() {
   
   return (
     <>
-      <SEO 
+      <NextSeo 
         title="Application Status Tracker | Zion AI Marketplace" 
         description="Track the status of your job applications in the Zion AI marketplace." 
       />

@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import { useAuth } from "@/hooks/useAuth";
 import { useProjects } from "@/hooks/useProjects";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Project, ProjectStatus } from "@/types/projects";
 import { Button } from "@/components/ui/button";
@@ -238,7 +238,7 @@ function ProjectDetailsContent() {
   
   return (
     <>
-      <SEO 
+      <NextSeo 
         title={`Project: ${project.job?.title || 'Project Details'} | Zion AI Marketplace`} 
         description="View and manage your project details and collaboration."
       />

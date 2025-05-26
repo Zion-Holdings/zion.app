@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -98,7 +98,7 @@ export default function ProfileDetail() {
 
   return (
     <>
-      <SEO
+      <NextSeo
         title={`${profileData.full_name} | Zion AI Marketplace`}
         description={profileData.bio || "Check out this talent's profile on Zion!"}
       />

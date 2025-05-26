@@ -2,7 +2,7 @@
 import React from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { useWhitelabel } from "@/context/WhitelabelContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -16,7 +16,7 @@ export default function ZionHireAI() {
   
   return (
     <>
-      <SEO 
+      <NextSeo 
         title="Zion Hire AI - White-labeled AI Recruiting Assistant" 
         description="Empower your company with AI-powered recruiting tools. Streamline hiring, improve matches, and enhance candidate experience."
       />

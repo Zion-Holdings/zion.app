@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SEO } from '@/components/SEO';
+import { NextSeo } from '@/components/NextSeo';
 import { Footer } from '@/components/Footer';
 import { DisputeDashboard } from '@/components/disputes';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
@@ -9,7 +9,7 @@ function DisputesPage() {
   return (
     <ProtectedRoute>
       <>
-        <SEO 
+        <NextSeo 
           title="Dispute Resolution Center | Zion AI Marketplace" 
           description="View and manage disputes between clients and talents"
         />

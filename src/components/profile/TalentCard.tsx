@@ -55,10 +55,10 @@ export function TalentCard({
           <div className="relative mr-4">
             <div className="w-16 h-16 rounded-full overflow-hidden bg-zion-blue-dark border border-zion-blue-light">
               {talent.profile_picture_url ? (
-                <img 
-                  src={talent.profile_picture_url} 
-                  alt={talent.full_name} 
-                  className="w-full h-full object-cover" 
+                <img
+                  src={talent.profile_picture_url}
+                  alt={`Avatar of ${talent.full_name}`}
+                  className="w-full h-full object-cover"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-zion-slate-light text-xl font-bold">

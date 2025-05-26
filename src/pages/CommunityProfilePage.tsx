@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -140,7 +140,7 @@ export default function CommunityProfilePage() {
 
   return (
     <>
-    <SEO
+    <NextSeo
       title={`${user.name}'s Profile | Community Forum | Zion AI Marketplace`}
       description={`View ${user.name}'s profile, posts, and contributions in the Zion AI Marketplace community.`}
       keywords={`community, forum, profile, user profile, ${user.name}`}

@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import CreatePostButton from "@/components/community/CreatePostButton";
 import { Input } from "@/components/ui/input";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import PostCard from "@/components/community/PostCard";
 import { ForumCategoryInfo } from "@/types/community";
 import { usePostsByCategory } from "@/hooks/usePostsByCategory";
@@ -169,7 +169,7 @@ export default function ForumCategoryPage() {
 
   return (
     <>
-      <SEO
+      <NextSeo
         title={`${category.name} | Community Forum | Zion AI Marketplace`}
         description={category.description}
         keywords={`community, forum, ${category.id}, discussion, AI marketplace, questions, answers`}

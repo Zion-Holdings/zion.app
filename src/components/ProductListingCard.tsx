@@ -69,7 +69,7 @@ export function ProductListingCard({
         <div className={`relative ${isGrid ? 'h-48' : 'h-32 w-48'}`}>
           <img
             src={imageUrl}
-            alt={listing.title}
+            alt={`Image of ${listing.title}`}
             className="w-full h-full object-cover"
             onError={handleImageError}
           />
