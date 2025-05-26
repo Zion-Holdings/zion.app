@@ -28,12 +28,7 @@ export const getStaticProps: GetStaticProps<ListingProps> = async ({ params }) =
   const slug = params?.slug as string;
   const listing = MARKETPLACE_LISTINGS.find(l => l.id === slug) || null;
   if (!listing) {
-    return {
-      redirect: {
-        destination: '/marketplace',
-        permanent: false,
-      },
-    };
+    return { notFound: true };
   }
   return { props: { listing } };
 };
