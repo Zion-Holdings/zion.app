@@ -34,7 +34,15 @@ export function HeroSection() {
             size="lg"
             asChild
           >
-            <Link to="/signup">{t('auth.signup')}</Link>
+            <Link
+              to="/signup"
+              role="button"
+              aria-label={t('auth.signup')}
+              tabIndex={0}
+              data-testid="hero-signup-btn"
+            >
+              {t('auth.signup')}
+            </Link>
           </Button>
           <Button
             variant="outline"
