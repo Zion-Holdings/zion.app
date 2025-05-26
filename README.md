@@ -149,3 +149,7 @@ npm run cypress:run
 
 After running `npm run test`, open `coverage/lcov-report/index.html` in your
 browser to view detailed coverage information.
+
+When tests run on GitHub Actions, the workflow uploads the `coverage` directory
+using `actions/upload-artifact@v3`. Visit a workflow run and download the
+`coverage-report` artifact to retrieve the generated HTML coverage report.
