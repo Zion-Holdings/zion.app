@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { getStripe } from '@/utils/getStripe';
 
 interface CartItem {
@@ -12,9 +12,12 @@ interface CartItem {
 
 export default function Checkout() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [items, setItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const productParam = params.get('product');
     const stored = localStorage.getItem('cart');
     if (stored) {
       try {
@@ -27,21 +30,27 @@ export default function Checkout() {
         // ignore parsing errors
       }
     }
-    // Provide mock data if cart empty
-    setItems([
-      {
-        id: 'prod_mock',
-        name: 'Test Item',
-        price: 25,
-        quantity: 1,
-      },
-    ]);
-  }, []);
+    if (productParam) {
+      setItems([
+        { id: productParam, name: 'Test Item', price: 25, quantity: 1 },
+      ]);
+    } else {
+      // Provide mock data if cart empty
+      setItems([
+        {
+          id: 'prod_mock',
+          name: 'Test Item',
+          price: 25,
+          quantity: 1,
+        },
+      ]);
+    }
+  }, [location.search]);
 
   const handleCheckout = async () => {
     const product = items[0];
     try {
-      const response = await fetch('/api/checkout_sessions', {
+      const response = await fetch('/api/stripe/create-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId: product.id }),
