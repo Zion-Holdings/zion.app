@@ -8,4 +8,10 @@ describe('register flow', () => {
     cy.get('input[type="checkbox"]').check();
     cy.contains('Create Account').click();
   });
+
+  it('sign-in link navigates to login page', () => {
+    cy.visit('/register');
+    cy.get('a[href="/login"]').click();
+    cy.url().should('include', '/login');
+  });
 });

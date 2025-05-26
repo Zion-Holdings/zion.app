@@ -46,6 +46,7 @@ const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
+  { path: '/register', element: <Signup /> },
   { path: '/signup', element: <Signup /> },
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
