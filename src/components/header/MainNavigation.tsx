@@ -37,6 +37,9 @@ export function MainNavigation({ className }: MainNavigationProps) {
       <Link to="/categories" className="text-zion-slate-light hover:text-white transition-colors">
         Categories
       </Link>
+      <Link to="/about" className="text-zion-slate-light hover:text-white transition-colors">
+        About Us
+      </Link>
       <NavLink
         to="/partners"
         className={({ isActive }) =>
