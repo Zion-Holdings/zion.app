@@ -1,45 +1,27 @@
-import React from "react";
-import {
-  useToast as useToastHook,
-  Toast,
-} from "@/components/ui/toast";
+import { toast as hotToast, type ToastOptions as HotToastOptions } from 'react-hot-toast';
 
-// Extend the Toast component props with common toast options
-export type ToastOptions = React.ComponentPropsWithoutRef<typeof Toast> & {
-  description?: string;
+export type ToastOptions = HotToastOptions & {
   title?: string;
-  variant?: "default" | "destructive" | "success";
+  description?: string;
+  variant?: 'default' | 'destructive' | 'success';
 };
 
-export const useToast = useToastHook;
+export const useToast = () => ({ toast });
 
-// Base toast function that delegates to the implementation from `useToastHook`.
-function baseToast(props: ToastOptions) {
-  const { toast } = useToastHook();
-  toast(props);
+function toast(options: ToastOptions) {
+  const message = options.description || options.title || '';
+  if (options.variant === 'destructive') {
+    hotToast.error(message, options);
+  } else if (options.variant === 'success') {
+    hotToast.success(message, options);
+  } else {
+    hotToast(message, options);
+  }
 }
 
-// Convenience helpers mirroring common toast variants.
-baseToast.title = (title: string) => {
-  baseToast({ title });
-};
+toast.title = (title: string) => hotToast(title);
+toast.description = (description: string) => hotToast(description);
+toast.error = (error: string) => hotToast.error(error);
+toast.success = (message: string) => hotToast.success(message);
 
-baseToast.description = (description: string) => {
-  baseToast({ description });
-};
-
-baseToast.error = (error: string) => {
-  baseToast({ variant: "destructive", title: "Error", description: error });
-};
-
-baseToast.success = (message: string) => {
-  baseToast({ variant: "success", title: "Success", description: message });
-};
-
-// Export the callable toast function.
-export const toast = baseToast as typeof baseToast & {
-  title: (title: string) => void;
-  description: (description: string) => void;
-  error: (error: string) => void;
-  success: (message: string) => void;
-};
+export { toast };
