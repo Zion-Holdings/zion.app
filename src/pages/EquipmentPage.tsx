@@ -6,7 +6,7 @@ import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
 // Sample datacenter equipment listings
 const EQUIPMENT_LISTINGS: ProductListing[] = [
   {
-    id: "rack-server-2u",
+    id: "2u-rack-mount-server",
     title: "2U Rack Mount Server",
     description:
       "High‑density server optimized for virtualization and private cloud deployments.",

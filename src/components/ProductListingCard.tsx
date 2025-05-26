@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProductListing } from "@/types/listings";
@@ -141,16 +141,17 @@ export function ProductListingCard({
           </div>
           
           <div className="flex gap-2">
-            <Button 
-              size="sm" 
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate(`${detailBasePath}/${listing.id}`);
-              }}
-              className="bg-zion-purple hover:bg-zion-purple-dark text-white"
+            <Link
+              to={`${detailBasePath}/${listing.id}`}
+              onClick={(e) => e.stopPropagation()}
             >
-              Buy Now
-            </Button>
+              <Button
+                size="sm"
+                className="bg-zion-purple hover:bg-zion-purple-dark text-white"
+              >
+                Buy Now
+              </Button>
+            </Link>
             
             {onRequestQuote && (
               <Button 

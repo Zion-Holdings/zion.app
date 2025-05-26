@@ -10,7 +10,7 @@ jest.mock('react-router-dom', () => ({
 
 describe('EquipmentDetail page', () => {
   it('displays equipment info', () => {
-    (router.useParams as jest.Mock).mockReturnValue({ equipmentId: 'pro-camera-x1000' });
+    (router.useParams as jest.Mock).mockReturnValue({ id: 'pro-camera-x1000' });
 
     const { asFragment, getByText } = render(<EquipmentDetail />);
     expect(getByText(/Pro Camera X1000/i)).toBeInTheDocument();
