@@ -9,7 +9,7 @@ import { SEO } from './SEO';
 const pathMap: Record<string, string> = {
   '/about': '/content/about',
   '/blog': '/blog',
-  '/careers': '/content/careers',
+  '/careers': '/careers',
   '/green-it': '/content/green-it',
   '/sitemap-page': '/content/sitemap-page',
   '/talent-onboarding': '/auth/talent-onboarding',

@@ -21,6 +21,7 @@ export interface Job {
   client_id: string;
   title: string;
   description: string;
+  location?: string;
   category: JobCategory;
   skills: string[];
   budget: JobBudget;
