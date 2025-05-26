@@ -39,6 +39,28 @@ interface EquipmentDetails {
 
 // Sample data - in a real app this would come from an API
 const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
+  "2u-rack-mount-server": {
+    id: "2u-rack-mount-server",
+    name: "2U Rack Mount Server",
+    description: "High‑density server optimized for virtualization and private cloud deployments.",
+    brand: "DataCore",
+    category: "Servers",
+    images: ["/images/equipment-placeholder.svg"],
+    price: 4200,
+    currency: "$",
+    rating: 4.8,
+    reviewCount: 23,
+    inStock: true,
+    expectedShipping: "3-5 business days",
+    specifications: [
+      { name: "CPU", value: "Dual Xeon" },
+      { name: "Memory", value: "64GB RAM" },
+      { name: "Power", value: "Dual PSU" },
+    ],
+    features: ["Hot-swappable drives", "Remote management"],
+    warranty: "1 year manufacturer warranty",
+    returnPolicy: "30-day return policy",
+  },
   "pro-camera-x1000": {
     id: "pro-camera-x1000",
     name: "Pro Camera X1000",
@@ -129,7 +151,7 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
 };
 
 export default function EquipmentDetail() {
-  const { equipmentId } = useParams() as { equipmentId?: string };
+  const { id } = useParams() as { id?: string };
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -137,7 +159,7 @@ export default function EquipmentDetail() {
   const [isAdding, setIsAdding] = useState(false);
   
   // In a real app, this would fetch from an API
-  const equipment = equipmentId ? SAMPLE_EQUIPMENT[equipmentId] : undefined;
+  const equipment = id ? SAMPLE_EQUIPMENT[id] : undefined;
   
   if (!equipment) {
     return (
@@ -171,7 +193,7 @@ export default function EquipmentDetail() {
 
   const handleBuyNow = async () => {
     if (!isAuthenticated) {
-      navigate(`/login?next=/equipment/${equipmentId}`);
+      navigate(`/login?next=/equipment/${id}`);
       return;
     }
 
@@ -180,7 +202,7 @@ export default function EquipmentDetail() {
       const response = await fetch('/api/checkout_sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId: equipmentId }),
+        body: JSON.stringify({ productId: id }),
       });
       const { sessionId } = await response.json();
       const stripe = await getStripe();
