@@ -8,6 +8,7 @@ import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
+import { CartIcon } from '@/components/CartIcon';
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,7 +31,7 @@ export function AppHeader() {
           <div className="ml-6 flex-1 hidden md:block">
             <MainNavigation unreadCount={unreadCount} />
           </div>
-          
+
           {/* Mobile menu button */}
           <div className="md:hidden ml-auto mr-4">
             <button
@@ -47,7 +48,7 @@ export function AppHeader() {
               )}
             </button>
           </div>
-          
+          <CartIcon className="mx-4" />
           <ModeToggle />
         </div>
       </header>
