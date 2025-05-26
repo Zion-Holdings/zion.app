@@ -7,7 +7,7 @@ import { z } from "zod";
 import { User, Mail, Lock, Eye, EyeOff, Facebook, Twitter, Loader2 } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
-import { register } from "@/services/auth";
+import { registerUser } from "@/services/authService";
 import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -81,7 +81,7 @@ export default function Signup() {
 
     setIsSubmitting(true);
     try {
-      const { res, data: resData } = await register(
+      const { res, data: resData } = await registerUser(
         data.displayName,
         data.email,
         data.password
@@ -107,7 +107,8 @@ export default function Signup() {
       toast.success("Welcome to ZionAI 🎉");
       navigate("/dashboard");
     } catch (err: any) {
-      const message = err?.message ?? "Registration failed";
+      const message =
+        err?.response?.data?.message ?? err?.message ?? "Unexpected error";
       form.setError("root", { message });
       toast.error(message);
     } finally {
