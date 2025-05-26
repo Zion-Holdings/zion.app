@@ -47,6 +47,6 @@ describe('register API', () => {
     const res = mockRes();
     await handler(req, res);
     expect(res.status).toHaveBeenCalledWith(409);
-    expect(res.json).toHaveBeenCalledWith({ error: 'User already registered' });
+    expect(res.json).toHaveBeenCalledWith({ message: 'User already registered' });
   });
 });
