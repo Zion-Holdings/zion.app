@@ -123,6 +123,13 @@ export default function UpdatePassword() {
     }
   };
 
+  const onInvalid = (errors: any) => {
+    const firstError = Object.keys(errors)[0] as keyof UpdatePasswordFormValues;
+    if (firstError) {
+      form.setFocus(firstError);
+    }
+  };
+
   return (
     <>
       <div className="flex min-h-screen bg-zion-blue">
@@ -166,7 +173,7 @@ export default function UpdatePassword() {
                 </div>
               ) : (
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6">
                     <FormField
                       control={form.control}
                       name="password"
@@ -176,8 +183,10 @@ export default function UpdatePassword() {
                           <FormControl>
                             <Input
                               type="password"
+                              placeholder="Enter password"
+                              aria-label="New password"
+                              aria-invalid={!!form.formState.errors.password}
                               className="bg-zion-blue text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
-                              placeholder="••••••••"
                               disabled={isLoading}
                               {...field}
                             />
@@ -196,8 +205,10 @@ export default function UpdatePassword() {
                           <FormControl>
                             <Input
                               type="password"
+                              placeholder="Enter password"
+                              aria-label="Confirm password"
+                              aria-invalid={!!form.formState.errors.confirmPassword}
                               className="bg-zion-blue text-white placeholder:text-zion-slate border-zion-blue-light focus:border-zion-purple"
-                              placeholder="••••••••"
                               disabled={isLoading}
                               {...field}
                             />

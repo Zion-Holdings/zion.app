@@ -70,7 +70,12 @@ export function LoginForm() {
         </Alert>
       )}
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
+        onSubmit={form.handleSubmit(onSubmit, (errors) => {
+          const firstError = Object.keys(errors)[0] as keyof LoginFormValues;
+          if (firstError) {
+            form.setFocus(firstError);
+          }
+        })}
         className="space-y-6"
         autoComplete="off" // Disable browser autofill
       >
@@ -84,6 +89,8 @@ export function LoginForm() {
                 <div className="relative">
                   <Input
                     placeholder="you@example.com"
+                    aria-label="Email address"
+                    aria-invalid={!!form.formState.errors.email}
                     className="bg-zion-blue pl-10 text-white placeholder:text-zion-blue-light border-zion-blue-light focus:border-zion-purple"
                     {...field}
                     autoComplete="off" // Disable browser autofill
@@ -106,7 +113,9 @@ export function LoginForm() {
                 <div className="relative">
                   <Input
                     type={showPassword ? "text" : "password"}
-                    placeholder="••••••••"
+                    placeholder="Enter password"
+                    aria-label="Password"
+                    aria-invalid={!!form.formState.errors.password}
                     className="bg-zion-blue pl-10 text-white placeholder:text-zion-blue-light border-zion-blue-light focus:border-zion-purple"
                     {...field}
                     autoComplete="off" // Disable browser autofill
