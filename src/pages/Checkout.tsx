@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { getStripe } from '@/utils/getStripe';
+import { apiClient } from '@/utils/apiClient';
 
 interface CartItem {
   id: string;
@@ -41,7 +42,7 @@ export default function Checkout() {
   const handleCheckout = async () => {
     const product = items[0];
     try {
-      const response = await fetch('/api/checkout_sessions', {
+      const response = await apiClient('/api/checkout_sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId: product.id }),

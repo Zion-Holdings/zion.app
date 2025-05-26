@@ -11,6 +11,7 @@ import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-reac
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { getStripe } from "@/utils/getStripe";
+import { apiClient } from "@/utils/apiClient";
 
 interface EquipmentSpecification {
   name: string;
@@ -199,7 +200,7 @@ export default function EquipmentDetail() {
 
     setIsAdding(true);
     try {
-      const response = await fetch('/api/checkout_sessions', {
+      const response = await apiClient('/api/checkout_sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId: id }),
