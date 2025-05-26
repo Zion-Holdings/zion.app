@@ -13,6 +13,8 @@ import { generateRandomListing } from "@/utils/generateRandomListing";
 import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { SearchSuggestion } from "@/types/search";
+import styles from './Marketplace.module.css';
+import { useViewMode } from '@/context/ViewModeContext';
 
 interface ProductContainerProps {
   listings: ProductListing[];
@@ -21,7 +23,7 @@ interface ProductContainerProps {
 
 function ProductGrid({ listings, onRequestQuote }: ProductContainerProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 product-grid">
+    <div className={`${styles.grid} gap-6 product-grid`}>
       {listings.map(listing => (
         <ProductListingCard
           key={listing.id}
@@ -36,7 +38,7 @@ function ProductGrid({ listings, onRequestQuote }: ProductContainerProps) {
 
 function ProductList({ listings, onRequestQuote }: ProductContainerProps) {
   return (
-    <div className="flex flex-col gap-4 product-list">
+    <div className={`${styles.list} gap-4 product-list`}>
       {listings.map(listing => (
         <ProductListingCard
           key={listing.id}
@@ -58,7 +60,7 @@ export default function Marketplace() {
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
   const [isLoading, setIsLoading] = useState(false);
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const { viewMode, setViewMode } = useViewMode();
 
   // Automatically append a new listing every 2 minutes
   useEffect(() => {
