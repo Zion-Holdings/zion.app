@@ -19,6 +19,7 @@ import ITOnsiteServicesPage from "@/pages/ITOnsiteServicesPage";
 import SearchPage from "@/pages/SearchPage";
 import ProjectRoom from "@/pages/ProjectRoom";
 import VideoCall from "@/pages/VideoCall";
+import Checkout from "@/pages/Checkout";
 
 const MarketplaceRoutes = () => {
   return (
@@ -68,6 +69,16 @@ const MarketplaceRoutes = () => {
       
       {/* Search Route */}
       <Route path="/search" element={<SearchPage />} />
+
+      {/* Checkout Route - accessible even in staging */}
+      <Route
+        path="/checkout"
+        element={
+          <ProtectedRoute>
+            <Checkout />
+          </ProtectedRoute>
+        }
+      />
       
       {/* Project Room Routes */}
       <Route 
