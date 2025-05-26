@@ -20,6 +20,7 @@ import PortfolioBuilder from "@/pages/PortfolioBuilder";
 import Referrals from "@/pages/Referrals";
 import DeveloperPortal from "@/pages/DeveloperPortal";
 import WalletPage from "@/pages/Wallet";
+import OrdersPage from "@/pages/Orders";
 import ContractBuilder from "@/pages/ContractBuilder";
 import Projects from "@/pages/Projects";
 
@@ -184,6 +185,14 @@ const DashboardRoutes = () => {
         element={
           <ProtectedRoute>
             <WalletPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/orders"
+        element={
+          <ProtectedRoute>
+            <OrdersPage />
           </ProtectedRoute>
         }
       />
