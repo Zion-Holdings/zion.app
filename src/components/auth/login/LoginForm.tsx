@@ -58,7 +58,7 @@ export function LoginForm() {
       await login(data.email, data.password);
 
       const next = searchParams.get('next') || '/';
-      navigate(next);
+      navigate(next, { replace: true });
     } finally {
       setIsSubmitting(false);
     }
