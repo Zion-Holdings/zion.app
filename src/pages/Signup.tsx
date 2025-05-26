@@ -86,15 +86,25 @@ export default function Signup() {
         data.email,
         data.password
       );
+
       if (res.status !== 201) {
-        throw new Error(resData?.message || "Registration failed");
+        const message = resData?.message || "Registration failed";
+        if (res.status === 409) {
+          form.setError("email", { message });
+        } else if (res.status === 400 && message.toLowerCase().includes("password")) {
+          form.setError("password", { message });
+        } else {
+          form.setError("root", { message });
+        }
+        toast.error(message);
+        return;
       }
 
       if (resData?.token) {
         localStorage.setItem("token", resData.token);
       }
 
-      toast.success("Account created");
+      toast.success("Welcome to ZionAI 🎉");
       navigate("/dashboard");
     } catch (err: any) {
       const message = err?.message ?? "Registration failed";
