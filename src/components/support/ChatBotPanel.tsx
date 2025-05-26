@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "@/components/ui/use-toast";
+import { apiClient } from "@/utils/apiClient";
 import { cn } from "@/lib/utils";
 import { ChatMessage } from "./ChatMessage";
 import { QuickReplyButton } from "./QuickReplyButton";
@@ -113,13 +114,13 @@ export function ChatBotPanel() {
 
   const sendToAIAssistant = async (message: string) => {
     try {
-      const response = await fetch("https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat", {
+      const response = await apiClient("https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ 
-          messages: [{ role: "user", content: message }] 
+        body: JSON.stringify({
+          messages: [{ role: "user", content: message }]
         }),
       });
       
