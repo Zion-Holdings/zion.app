@@ -12,7 +12,8 @@
     "test:watch": "jest --watch",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chrome",
-    "test:accessibility": "vitest run tests/Accessibility.test.tsx"
+    "test:accessibility": "vitest run tests/Accessibility.test.tsx",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",
@@ -93,7 +94,8 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
-    "vitest": "^1.4.0"
+    "vitest": "^1.4.0",
+    "@playwright/test": "^1.41.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
