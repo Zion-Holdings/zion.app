@@ -80,6 +80,9 @@ export function UserMenu() {
         <DropdownMenuItem asChild>
           <Link to="/wallet">Wallet</Link>
         </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link to="/orders">Order History</Link>
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleSignOut}>Sign Out</DropdownMenuItem>
       </DropdownMenuContent>
