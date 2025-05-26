@@ -7,11 +7,47 @@ import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { FilterSidebar } from "@/components/search/FilterSidebar";
 import { ActiveFiltersBar } from "@/components/search/ActiveFiltersBar";
 import { ProductListingCard } from "@/components/ProductListingCard";
+import { ProductListing } from "@/types/listings";
 import { MARKETPLACE_LISTINGS, generateSearchSuggestions, generateFilterOptions } from "@/data/marketplaceData";
 import { generateRandomListing } from "@/utils/generateRandomListing";
 import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { SearchSuggestion } from "@/types/search";
+
+interface ProductContainerProps {
+  listings: ProductListing[];
+  onRequestQuote: (id: string) => void;
+}
+
+function ProductGrid({ listings, onRequestQuote }: ProductContainerProps) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 product-grid">
+      {listings.map(listing => (
+        <ProductListingCard
+          key={listing.id}
+          listing={listing}
+          onRequestQuote={onRequestQuote}
+          view="grid"
+        />
+      ))}
+    </div>
+  );
+}
+
+function ProductList({ listings, onRequestQuote }: ProductContainerProps) {
+  return (
+    <div className="flex flex-col gap-4 product-list">
+      {listings.map(listing => (
+        <ProductListingCard
+          key={listing.id}
+          listing={listing}
+          onRequestQuote={onRequestQuote}
+          view="list"
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function Marketplace() {
   const navigate = useNavigate();
@@ -22,6 +58,7 @@ export default function Marketplace() {
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
   const [isLoading, setIsLoading] = useState(false);
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   // Automatically append a new listing every 2 minutes
   useEffect(() => {
@@ -149,10 +186,24 @@ export default function Marketplace() {
               />
             </div>
             <div className="flex gap-2">
-              <Button variant="ghost" size="icon" className="text-zion-slate-light">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setViewMode('grid')}
+                aria-label="Grid view"
+                aria-pressed={viewMode === 'grid'}
+                className="text-zion-slate-light"
+              >
                 <Grid3X3 className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-zion-slate-light">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setViewMode('list')}
+                aria-label="List view"
+                aria-pressed={viewMode === 'list'}
+                className="text-zion-slate-light"
+              >
                 <ListFilter className="h-4 w-4" />
               </Button>
             </div>
@@ -204,30 +255,24 @@ export default function Marketplace() {
               <div className="flex justify-center py-20">
                 <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
               </div>
+            ) : filteredListings.length > 0 ? (
+              viewMode === 'grid' ? (
+                <ProductGrid listings={filteredListings} onRequestQuote={handleRequestQuote} />
+              ) : (
+                <ProductList listings={filteredListings} onRequestQuote={handleRequestQuote} />
+              )
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {filteredListings.length > 0 ? (
-                  filteredListings.map((listing) => (
-                    <ProductListingCard
-                      key={listing.id}
-                      listing={listing}
-                      onRequestQuote={handleRequestQuote}
-                    />
-                  ))
-                ) : (
-                <div className="col-span-2 text-center py-16 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
-                  <h2 className="text-2xl font-bold text-white mb-4">No Results Found</h2>
-                  <p className="text-zion-slate-light max-w-md mx-auto mb-8">
-                    We couldn't find any listings matching your filters. Try adjusting your search criteria.
-                  </p>
-                  <Button 
-                    onClick={clearAllFilters}
-                    className="bg-zion-purple hover:bg-zion-purple-dark"
-                  >
-                    Clear Filters
-                  </Button>
-                </div>
-                )}
+              <div className="col-span-2 text-center py-16 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
+                <h2 className="text-2xl font-bold text-white mb-4">No Results Found</h2>
+                <p className="text-zion-slate-light max-w-md mx-auto mb-8">
+                  We couldn't find any listings matching your filters. Try adjusting your search criteria.
+                </p>
+                <Button
+                  onClick={clearAllFilters}
+                  className="bg-zion-purple hover:bg-zion-purple-dark"
+                >
+                  Clear Filters
+                </Button>
               </div>
             )}
           </div>
