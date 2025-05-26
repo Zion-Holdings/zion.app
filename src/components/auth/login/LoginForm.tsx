@@ -6,7 +6,6 @@ import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
-import { toast } from "@/hooks/use-toast";
 import { loginUser } from "@/services/authService";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,7 +18,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 // Form validation schema
 const loginSchema = z.object({
@@ -30,8 +29,9 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
-  const { isLoading } = useAuth();
+  const { isLoading, login } = useAuth();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -50,13 +50,15 @@ export function LoginForm() {
       setIsSubmitting(true);
       const { res, data: resData } = await loginUser(data.email, data.password);
       if (res.status !== 200) {
-        toast.error(resData?.error || "Invalid credentials");
+        const message = resData?.error || "Invalid credentials";
+        form.setError("root", { message });
         return;
       }
-      if (resData?.token) {
-        document.cookie = `token=${resData.token}; path=/`;
-      }
-      navigate("/");
+
+      await login(data.email, data.password);
+
+      const next = searchParams.get('next') || '/';
+      navigate(next);
     } finally {
       setIsSubmitting(false);
     }
