@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
-import { ModeToggle } from '@/components/ModeToggle';
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -24,7 +23,7 @@ export function AppHeader() {
   
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full border-b border-green-700/20 bg-gray-900/90 backdrop-blur-md">
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
           <div className="ml-6 flex-1 hidden md:block">
@@ -48,7 +47,6 @@ export function AppHeader() {
             </button>
           </div>
           
-          <ModeToggle />
         </div>
       </header>
       
@@ -60,7 +58,7 @@ export function AppHeader() {
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="relative bg-zion-blue-dark border-t border-zion-purple/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="relative bg-gray-900 border-t border-green-700/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
             <MobileMenu 
               unreadCount={unreadCount} 
               onClose={() => setMobileMenuOpen(false)} 
