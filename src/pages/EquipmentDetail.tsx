@@ -171,7 +171,10 @@ export default function EquipmentDetail() {
 
   const handleBuyNow = async () => {
     if (!isAuthenticated) {
-      navigate(`/login?next=/equipment/${equipmentId}`);
+      if (equipmentId) {
+        sessionStorage.setItem('intendedProduct', equipmentId);
+      }
+      navigate('/login?next=/checkout');
       return;
     }
 
