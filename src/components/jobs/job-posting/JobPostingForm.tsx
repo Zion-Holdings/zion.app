@@ -45,7 +45,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
       getJobById(jobId)
         .then((job) => {
           if (job) {
-            // Set form values
+            const currentValues = form.getValues();
             Object.entries(job).forEach(([key, value]) => {
               if (key === 'published_date' && value) {
                 setStartDate(new Date(value as string));
@@ -58,13 +58,8 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
               } else if (key === 'description') {
                 setEditorContent(value as string);
                 setValue('description', value as string);
-              } else {
-                try {
-                  // @ts-ignore - We know these fields exist in our form
-                  setValue(key, value as any);
-                } catch (e) {
-                  // Skip fields that don't exist in our form
-                }
+              } else if (key in currentValues) {
+                setValue(key as keyof JobSchemaType, value as JobSchemaType[keyof JobSchemaType]);
               }
             });
           }
