@@ -15,7 +15,14 @@ jobs:
         with:
           node-version: 18
       - run: npm ci
-      - run: npm run build # Add this line to catch build errors
+      - name: Build project
+        run: npm run build
+      - name: Verify build output
+        run: |
+          if [ ! -d dist ]; then
+            echo "Build failed: dist folder not found"
+            exit 1
+          fi
       - run: npm run test -- --coverage
       - run: npm run cypress:run
       - uses: actions/upload-artifact@v4
