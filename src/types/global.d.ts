@@ -42,11 +42,23 @@ declare module '@/components/ChatAssistant/ChatMessage' {
 
 // Extend ProductListingCardProps to include key for mapping
 declare module '@/components/ProductListingCard' {
-  export interface ProductListingCardProps {
+export interface ProductListingCardProps {
     listing: any;
     view: any;
     onRequestQuote: (listingId: string) => void;
     key?: string | number;
     detailBasePath?: string;
+  }
+}
+
+// Global event for the PWA install prompt
+declare global {
+  interface BeforeInstallPromptEvent extends Event {
+    readonly platforms: string[];
+    readonly userChoice: Promise<{
+      outcome: 'accepted' | 'dismissed';
+      platform: string;
+    }>;
+    prompt(): Promise<void>;
   }
 }
