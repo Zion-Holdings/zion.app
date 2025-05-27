@@ -1,5 +1,4 @@
-import React from 'react';
-import { Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './App.css';
@@ -22,27 +21,27 @@ import {
   CommunityRoutes,
   DeveloperRoutes
 } from './routes';
-const Home = React.lazy(() => import('./pages/Home'));
-const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
-const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
-const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
-const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
-const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
-const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
-const Analytics = React.lazy(() => import('./pages/Analytics'));
-const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
-const CommunityPage = React.lazy(() => import('./pages/CommunityPage'));
-const Categories = React.lazy(() => import('./pages/Categories'));
-const Blog = React.lazy(() => import('./pages/Blog'));
-const BlogPost = React.lazy(() => import('./pages/BlogPost'));
-const PartnersPage = React.lazy(() => import('./pages/Partners'));
-const Login = React.lazy(() => import('./pages/Login'));
-const Signup = React.lazy(() => import('./pages/Signup'));
-const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
-const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
-const ContactPage = React.lazy(() => import('./pages/Contact'));
-const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
-const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+import Home from './pages/Home';
+import AIMatcherPage from './pages/AIMatcher';
+import TalentDirectory from './pages/TalentDirectory';
+import TalentsPage from './pages/TalentsPage';
+import ServicesPage from './pages/ServicesPage';
+import EquipmentPage from './pages/EquipmentPage';
+import EquipmentDetail from './pages/EquipmentDetail';
+import Analytics from './pages/Analytics';
+import MobileLaunchPage from './pages/MobileLaunchPage';
+import CommunityPage from './pages/CommunityPage';
+import Categories from './pages/Categories';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import PartnersPage from './pages/Partners';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
+import OpenAppRedirect from './pages/OpenAppRedirect';
+import ContactPage from './pages/Contact';
+import ZionHireAI from './pages/ZionHireAI';
+import RequestQuotePage from './pages/RequestQuote';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
