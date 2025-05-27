@@ -25,16 +25,15 @@ export function useAISearch() {
 
   const search = async (query: string) => {
     setLoading(true);
-    try {
-      const response = await fetch(
-        "https://ziontechgroup.functions.supabase.co/functions/v1/ai-search",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ query }),
-        }
-      );
-      const data = await response.json();
+    const response = await fetch(
+      "https://ziontechgroup.functions.supabase.co/functions/v1/ai-search",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query }),
+      }
+    );
+    const data = await response.json();
       const filters: SearchFilters = data.filters || {};
 
       const items: SearchResult[] = [];
@@ -66,13 +65,8 @@ export function useAISearch() {
         });
       }
 
-      setResults(items);
-    } catch (err) {
-      console.error("search error", err);
-      setResults([]);
-    } finally {
-      setLoading(false);
-    }
+    setResults(items);
+    setLoading(false);
   };
 
   return { results, loading, search };
