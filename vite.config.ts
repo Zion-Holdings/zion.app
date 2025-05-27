@@ -27,7 +27,7 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      external: ['react-markdown'],
+      external: ['react-markdown', 'vue'],
     },
   },
   resolve: {
