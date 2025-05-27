@@ -6,7 +6,7 @@ export default {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^vitest$': '<rootDir>/tests/vitest-mock.ts',
   },
-  roots: ['<rootDir>/__tests__'],
+  roots: ['<rootDir>/tests', '<rootDir>/__tests__'],
   coverageThreshold: {
     global: {
       lines: 80,
