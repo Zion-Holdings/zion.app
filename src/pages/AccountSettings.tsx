@@ -1,5 +1,6 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useLocalStorage } from '@/hooks';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
@@ -15,24 +16,10 @@ import { toast } from 'sonner';
 
 export default function AccountSettings() {
   const { user } = useAuth();
-  const [displayWeb3, setDisplayWeb3] = useState(false);
-  const [didHandle, setDidHandle] = useState('');
-  const [enableBackup, setEnableBackup] = useState(false);
+  const [displayWeb3, setDisplayWeb3] = useLocalStorage('display_web3', false);
+  const [didHandle, setDidHandle] = useLocalStorage('did_handle', '');
+  const [enableBackup, setEnableBackup] = useLocalStorage('enable_backup', false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem('account_settings');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        setDisplayWeb3(!!parsed.displayWeb3);
-        setDidHandle(parsed.didHandle || '');
-        setEnableBackup(!!parsed.enableBackup);
-      }
-    } catch (e) {
-      console.error('Error loading account settings', e);
-    }
-  }, []);
 
   const handleSave = () => {
     setIsSubmitting(true);
@@ -40,10 +27,9 @@ export default function AccountSettings() {
     // Simulate API call
     setTimeout(() => {
       try {
-        localStorage.setItem(
-          'account_settings',
-          JSON.stringify({ displayWeb3, didHandle, enableBackup })
-        );
+        setDisplayWeb3(displayWeb3);
+        setDidHandle(didHandle);
+        setEnableBackup(enableBackup);
         console.log('Saved settings', { displayWeb3, didHandle, enableBackup });
         toast.success('Account settings updated successfully');
       } catch (e) {
