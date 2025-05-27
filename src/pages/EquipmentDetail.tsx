@@ -153,7 +153,7 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
 export default function EquipmentDetail() {
   const { id } = useParams() as { id?: string };
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, user } = useAuth();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
@@ -202,7 +202,10 @@ export default function EquipmentDetail() {
       const response = await fetch('/api/checkout_sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId: id }),
+        body: JSON.stringify({
+          productId: id,
+          customerEmail: user?.email,
+        }),
       });
       const { sessionId } = await response.json();
       const stripe = await getStripe();

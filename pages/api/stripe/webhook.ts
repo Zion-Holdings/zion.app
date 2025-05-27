@@ -8,6 +8,13 @@ export default async function handler(req: any, res: any) {
 
   try {
     const event = req.body;
+    if (event.type === 'checkout.session.completed') {
+      const session = event.data.object;
+      const orderId = session.metadata?.orderId;
+      if (orderId) {
+        console.log(`Order ${orderId} marked as paid`);
+      }
+    }
     // Log test events for QA
     console.log('Stripe webhook event:', event);
     res.statusCode = 200;

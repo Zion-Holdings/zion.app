@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { getStripe } from '@/utils/getStripe';
+import { useAuth } from '@/hooks';
 
 interface CartItem {
   id: string;
@@ -12,6 +13,7 @@ interface CartItem {
 
 export default function Checkout() {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [items, setItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
@@ -44,7 +46,10 @@ export default function Checkout() {
       const response = await fetch('/api/checkout_sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId: product.id }),
+        body: JSON.stringify({
+          productId: product.id,
+          customerEmail: user?.email,
+        }),
       });
       const { sessionId } = await response.json();
       const stripe = await getStripe();
