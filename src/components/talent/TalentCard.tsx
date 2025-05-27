@@ -1,10 +1,12 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Star, MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Heart, MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { TalentProfile } from "@/types/talent";
+import { useAppDispatch } from "@/store/hooks";
+import { addToWishlist, getApiUrl } from "@/store/wishlistSlice";
 
 export interface TalentCardProps {
   talent: TalentProfile;
@@ -26,6 +28,7 @@ export function TalentCard({
   const navigate = useNavigate();
   const location = useLocation();
   const { toast } = useToast();
+  const dispatch = useAppDispatch();
   
   const handleViewProfile = () => {
     // Navigate directly to the talent profile
@@ -62,6 +65,13 @@ export function TalentCard({
     if (onToggleSave) {
       onToggleSave(talent.id, !isSaved);
     }
+
+    dispatch(addToWishlist({ id: talent.id, type: 'talent', data: talent }));
+    fetch(`${getApiUrl()}/wishlist`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: talent.id, type: 'talent' })
+    }).catch(() => {});
   };
 
   // Extract skills - limit to 5 for display
@@ -104,10 +114,11 @@ export function TalentCard({
               <Button
                 variant="ghost"
                 size="sm"
+                aria-label="save-to-wishlist"
                 className="p-1 h-auto text-zion-slate-light hover:text-zion-cyan"
                 onClick={handleToggleSave}
               >
-                <Star className={`h-5 w-5 ${isSaved ? "fill-yellow-400 text-yellow-400" : ""}`} />
+                <Heart className={`h-5 w-5 ${isSaved ? 'fill-red-500 text-red-500' : ''}`} />
                 <span className="sr-only">{isSaved ? "Saved" : "Save"}</span>
               </Button>
             </div>
