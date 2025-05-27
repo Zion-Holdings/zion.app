@@ -11,7 +11,7 @@ export async function loginUser(email: string, password: string) {
   return { res, data };
 }
 
-export async function registerUser(fullName: string, email: string, password: string) {
+export async function registerUser(name: string, email: string, password: string) {
   const url = `${process.env.NEXT_PUBLIC_API_URL}/auth/register`;
   const res = await fetch(url, {
     method: 'POST',
@@ -19,7 +19,7 @@ export async function registerUser(fullName: string, email: string, password: st
       'Content-Type': 'application/json',
     },
     credentials: 'include',
-    body: JSON.stringify({ fullName, email, password }),
+    body: JSON.stringify({ name, email, password }),
   });
   const data = await res.json().catch(() => ({}));
   return { res, data };
