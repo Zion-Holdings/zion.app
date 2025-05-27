@@ -8,6 +8,12 @@ export default {
     },
   },
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
+  },
   moduleNameMapper: {
     '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@/(.*)$': '<rootDir>/src/$1',
