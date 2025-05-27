@@ -109,6 +109,10 @@ To prevent memory leaks from the deprecated `inflight` package, the project pins
 `glob` to version `10.4.5` via the `resolutions` field in `package.json`. Run
 `npm install` to ensure this version is installed.
 
+To suppress npm warnings about `@humanwhocodes/config-array`, the `resolutions`
+block maps it to `@eslint/config-array`. Run `npm install` to apply this
+override.
+
 ### Whitelabel Tenant Errors
 
 If the app logs **"Error loading tenant"** during startup, the request to the
