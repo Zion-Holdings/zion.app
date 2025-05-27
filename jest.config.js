@@ -5,7 +5,7 @@ export default {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
-  roots: ['<rootDir>/tests'],
+  roots: ['<rootDir>/__tests__'],
   coverageThreshold: {
     global: {
       lines: 80,
