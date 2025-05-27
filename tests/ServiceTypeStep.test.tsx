@@ -1,5 +1,4 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { vi } from 'vitest';
 import { ServiceTypeStep } from '@/components/QuoteRequestForm/ServiceTypeStep';
 import { QuoteFormData } from '@/types/quotes';
 
@@ -20,7 +19,7 @@ it('shows results when searching services', async () => {
   const data = { ...baseData };
   const updateFormData = (d: Partial<QuoteFormData>) => Object.assign(data, d);
 
-  global.fetch = vi.fn().mockResolvedValue({
+  global.fetch = jest.fn().mockResolvedValue({
     ok: true,
     json: async () => [
       { id: 'service-3', title: 'IT Consulting', category: 'service' },
