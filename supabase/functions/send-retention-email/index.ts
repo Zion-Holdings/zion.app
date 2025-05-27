@@ -70,7 +70,7 @@ serve(async (req) => {
 
     // Send email via Resend
     const emailResponse = await resend.emails.send({
-      from: "Zion AI Marketplace <notifications@zion.ai>",
+      from: "Zion AI Marketplace <notifications@ziontechgroup.com>",
       to: userEmail,
       subject: subject,
       html: html,

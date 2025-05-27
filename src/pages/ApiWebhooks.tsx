@@ -15,7 +15,7 @@ export function ApiWebhooks() {
     "talent_id": "talent-456",
     "status": "new",
     "cover_letter": "I'm excited to apply for this position...",
-    "resume_url": "https://storage.zionai.com/resumes/resume-123.pdf",
+    "resume_url": "https://storage.ziontechgroup.com/resumes/resume-123.pdf",
     "created_at": "2023-06-10T15:42:31Z"
   }
 }`;
