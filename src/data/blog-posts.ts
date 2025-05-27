@@ -195,5 +195,35 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Infrastructure",
     tags: ["AI Infrastructure", "Cost Optimization", "Machine Learning", "Computing"],
     featuredImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&h=630"
+  },
+  {
+    id: "edge-ai-iot-analytics",
+    title: "Edge AI for Real-Time IoT Analytics",
+    slug: "edge-ai-iot-analytics",
+    excerpt:
+      "Discover how deploying machine learning at the edge transforms IoT data into actionable insights instantly.",
+    content: `<p>Edge AI brings computation closer to the data source, enabling real-time analytics for connected devices. In this article we explore how organizations are using edge computing to unlock new IoT capabilities.</p>
+
+<h2>Reducing Latency for Critical Applications</h2>
+<p>When decisions need to happen in milliseconds, sending data to the cloud and back is too slow. By performing inference locally, edge AI systems can respond immediately to safety hazards or equipment anomalies.</p>
+
+<h2>Minimizing Bandwidth Costs</h2>
+<p>Constantly streaming raw sensor data is expensive. Edge devices that filter and summarize information before transmission drastically cut bandwidth usage.</p>
+
+<h2>Ensuring Data Privacy and Security</h2>
+<p>Some environments have strict policies on where sensitive data can reside. Processing on-device avoids exposing raw information to external networks, reducing risk.</p>
+
+<h2>Orchestrating Hybrid Deployments</h2>
+<p>Successful IoT platforms combine edge processing with centralized management and model updates. Choosing which tasks run locally versus in the cloud is crucial for scalability.</p>`,
+    author: {
+      name: "Priya Natarajan",
+      title: "Edge Computing Specialist",
+      avatarUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=200&h=200"
+    },
+    publishedDate: "Apr 25, 2025",
+    readTime: "5 min read",
+    category: "Edge Computing",
+    tags: ["Edge AI", "IoT", "Real-Time Analytics", "Machine Learning"],
+    featuredImage: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&h=630"
   }
 ];
