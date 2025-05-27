@@ -60,7 +60,20 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <noscript>
+        <style>
+          body {
+            background: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            padding: 1rem;
+          }
+        </style>
+        This application requires JavaScript. Please enable JavaScript and run
+        the development server.
+      </noscript>
+    </div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
