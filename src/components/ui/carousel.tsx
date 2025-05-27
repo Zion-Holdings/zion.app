@@ -6,9 +6,11 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
 type CarouselApi = ReturnType<typeof useEmblaCarousel>[1]
-type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
-type CarouselOptions = UseCarouselParameters[0]
-type CarouselPlugin = UseCarouselParameters[1]
+type CarouselOptions = {
+  axis?: 'x' | 'y'
+  [key: string]: any
+}
+type CarouselPlugin = any
 
 type CarouselProps = {
   opts?: CarouselOptions
@@ -57,7 +59,7 @@ const Carousel = React.forwardRef<
   ) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
-        ...opts,
+        ...(opts || {}),
         axis: orientation === "horizontal" ? "x" : "y",
       },
       plugins
@@ -124,7 +126,7 @@ const Carousel = React.forwardRef<
           api: api,
           opts,
           orientation:
-            orientation || (opts?.axis === "y" ? "vertical" : "horizontal"),
+            orientation || (opts && opts.axis === "y" ? "vertical" : "horizontal"),
           scrollPrev,
           scrollNext,
           canScrollPrev,
