@@ -17,7 +17,7 @@ jobs:
       - run: npm ci
       - run: npm run test -- --coverage
       - run: npm run cypress:run
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: coverage
