@@ -3,39 +3,40 @@ import { MemoryRouter } from 'react-router-dom';
 import Signup from '@/pages/Signup';
 import * as toastHook from '@/hooks/use-toast';
 import * as router from 'react-router-dom';
-import { vi, expect, test } from 'vitest';
+import { jest } from '@jest/globals';
 
-vi.mock('@/hooks/useAuth', () => ({
+
+jest.mock('@/hooks/useAuth', () => ({
   useAuth: () => ({
-    loginWithGoogle: vi.fn(),
-    loginWithFacebook: vi.fn(),
-    loginWithTwitter: vi.fn(),
+    loginWithGoogle: jest.fn(),
+    loginWithFacebook: jest.fn(),
+    loginWithTwitter: jest.fn(),
     isAuthenticated: false,
     user: null,
   }),
 }));
 
-vi.mock('@/hooks/use-toast');
+jest.mock('@/hooks/use-toast');
 
-vi.mock('react-router-dom', async () => {
-  const actual = await vi.importActual<typeof import('react-router-dom')>(
+jest.mock('react-router-dom', () => {
+  const actual = jest.requireActual<typeof import('react-router-dom')>(
     'react-router-dom'
   );
   return {
     ...actual,
-    useNavigate: vi.fn(),
+    useNavigate: jest.fn(),
   };
 });
 
 function mockFetch(response: any, status = 200) {
-  global.fetch = vi.fn().mockResolvedValue({
+  global.fetch = jest.fn().mockResolvedValue({
     status,
     json: () => Promise.resolve(response),
   }) as any;
 }
 
 test('successful registration redirects to dashboard', async () => {
-  const navigateMock = vi.fn();
+  const navigateMock = jest.fn();
   (router.useNavigate as any).mockReturnValue(navigateMock);
   (toastHook.toast.success as any).mockImplementation(() => {});
   mockFetch({ token: 'jwt' }, 201);
