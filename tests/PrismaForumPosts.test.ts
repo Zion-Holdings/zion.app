@@ -9,7 +9,7 @@ jest.mock('@prisma/client', () => {
     }
   };
   return { PrismaClient: jest.fn(() => mPrisma) };
-});
+}, { virtual: true });
 
 describe('forum post queries', () => {
   it('returns posts for getting-hired category', async () => {
