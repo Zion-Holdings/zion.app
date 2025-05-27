@@ -109,6 +109,11 @@ To prevent memory leaks from the deprecated `inflight` package, the project pins
 `glob` to version `10.4.5` via the `resolutions` field in `package.json`. Run
 `npm install` to ensure this version is installed.
 
+If you see `npm WARN deprecated @humanwhocodes/object-schema@2.0.3`, the project
+uses an override to replace this package with `@eslint/object-schema`. Pull the
+latest code and run `npm install` to update your lock file and remove the
+warning.
+
 ### Whitelabel Tenant Errors
 
 If the app logs **"Error loading tenant"** during startup, the request to the
