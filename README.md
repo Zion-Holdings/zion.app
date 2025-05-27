@@ -113,9 +113,10 @@ To prevent memory leaks from the deprecated `inflight` package, the project pins
 
 If the app logs **"Error loading tenant"** during startup, the request to the
 Supabase edge function that provides whitelabel settings failed. Confirm that
-`VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are set in your environment and
-that you have network connectivity. The tenant hook will retry a few times
-before giving up.
+`VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY` (or the Next.js style
+`NEXT_PUBLIC_SUPABASE_URL`/`NEXT_PUBLIC_SUPABASE_ANON_KEY`) are set in your
+environment and that you have network connectivity. The tenant hook will retry
+a few times before giving up.
 
 ## Testing
 
