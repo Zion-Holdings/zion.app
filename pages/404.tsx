@@ -1,17 +1,16 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
+import { useNavigate, Link } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 export default function Custom404() {
-  const router = useRouter();
+  const navigate = useNavigate();
   const [query, setQuery] = useState('');
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      router.push(`/marketplace/search?q=${encodeURIComponent(query)}`);
+      navigate(`/marketplace/search?q=${encodeURIComponent(query)}`);
     }
   };
 
@@ -28,7 +27,7 @@ export default function Custom404() {
         <Button type="submit" className="w-full">Search</Button>
       </form>
       <Button asChild variant="outline">
-        <Link href="/marketplace">Back to Marketplace</Link>
+        <Link to="/marketplace">Back to Marketplace</Link>
       </Button>
     </main>
   );
