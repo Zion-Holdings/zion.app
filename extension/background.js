@@ -1,7 +1,7 @@
 
 const OPENAI_API_KEY = '';
 // Base URL for opening Zion pages in a new tab
-const BASE_URL = 'https://zionai.com';
+const BASE_URL = 'https://app.ziontechgroup.com';
 
 async function askZionGPT(prompt) {
   if (!OPENAI_API_KEY) return { answer: 'Model key missing' };
