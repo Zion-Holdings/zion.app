@@ -13,7 +13,8 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chrome",
     "test:accessibility": "vitest run tests/Accessibility.test.tsx",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",
@@ -99,7 +100,8 @@
     "vite": "^5.0.8",
     "vitest": "^1.4.0",
     "@vitest/coverage-v8": "^1.6.1",
-    "@playwright/test": "^1.41.2"
+    "@playwright/test": "^1.41.2",
+    "husky": "^8.0.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
