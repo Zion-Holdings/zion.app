@@ -9,3 +9,5 @@ export * from './useReactId';
 export * from './useScrollToTop';
 export * from './usePostsByCategory';
 export * from './useAutocomplete';
+
+export * from "./useLocalStorage";

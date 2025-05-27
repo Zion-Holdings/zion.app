@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
+import { createContext, useContext, useEffect, ReactNode } from 'react'
+import { useLocalStorage } from '@/hooks'
 
 export type Theme = 'light' | 'dark'
 
@@ -15,7 +16,7 @@ const initialState: ThemeContextState = {
 const ThemeContext = createContext<ThemeContextState>(initialState)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light')
+  const [theme, setTheme] = useLocalStorage<Theme>('theme', 'light')
 
   const applyTheme = (nextTheme: Theme) => {
     const root = document.documentElement
@@ -27,18 +28,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }
 
   useEffect(() => {
-    const stored = localStorage.getItem('theme') as Theme | null
-    if (stored) {
-      setTheme(stored)
-      applyTheme(stored)
-    }
-  }, [])
+    applyTheme(theme)
+  }, [theme])
 
   const toggleTheme = () => {
-    const next: Theme = theme === 'light' ? 'dark' : 'light'
-    setTheme(next)
-    localStorage.setItem('theme', next)
-    applyTheme(next)
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
   }
 
   return (
