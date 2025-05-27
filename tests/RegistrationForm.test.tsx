@@ -64,7 +64,7 @@ describe('RegistrationForm', () => {
       expect.stringContaining('/auth/register'),
       expect.objectContaining({ method: 'POST' })
     );
-    expect(toastHook.toast.success).toHaveBeenCalledWith('Account created');
+    expect(toastHook.toast.success).toHaveBeenCalledWith('Welcome to ZionAI 🎉');
     expect(navigateMock).toHaveBeenCalledWith('/dashboard');
   });
 

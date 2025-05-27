@@ -49,7 +49,7 @@ describe('Signup form', () => {
     fireEvent.click(screen.getByLabelText(/i agree/i));
     fireEvent.submit(screen.getByRole('button', { name: /create account/i }));
     expect(fetchSpy).toHaveBeenCalledWith('/api/auth/register', expect.objectContaining({ method: 'POST' }));
-    expect(successSpy).toHaveBeenCalledWith('Account created');
+    expect(successSpy).toHaveBeenCalledWith('Welcome to ZionAI 🎉');
     expect(navigateMock).toHaveBeenCalledWith('/dashboard');
   });
 
