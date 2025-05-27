@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
@@ -26,8 +26,12 @@ export default function Custom404() {
         />
         <Button type="submit" className="w-full">Search</Button>
       </form>
-      <Button asChild variant="outline">
-        <Link href="/marketplace">Back to Marketplace</Link>
+      <Button
+        variant="outline"
+        onClick={() => navigate('/marketplace')}
+        type="button"
+      >
+        Back to Marketplace
       </Button>
     </main>
   );
