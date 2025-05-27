@@ -3,10 +3,10 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ForumCategoryPage from '@/pages/ForumCategoryPage';
 import * as forumService from '@/services/forumPostService';
-import { vi } from 'vitest';
+
 
 it('loads posts for category', async () => {
-  vi.spyOn(forumService, 'fetchPostsByCategory').mockResolvedValue([
+  jest.spyOn(forumService, 'fetchPostsByCategory').mockResolvedValue([
     {
       id: '1',
       title: 'Sample post',
@@ -35,7 +35,7 @@ it('loads posts for category', async () => {
 });
 
 it('shows message when no posts', async () => {
-  vi.spyOn(forumService, 'fetchPostsByCategory').mockResolvedValue([]);
+  jest.spyOn(forumService, 'fetchPostsByCategory').mockResolvedValue([]);
   render(
     <QueryClientProvider client={new QueryClient()}>
       <MemoryRouter initialEntries={['/community/category/project-help']}>
