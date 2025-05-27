@@ -3,10 +3,11 @@ export default {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
   moduleNameMapper: {
+    '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@/(.*)$': '<rootDir>/src/$1',
     '^vitest$': '<rootDir>/tests/vitest-mock.ts',
   },
-  roots: ['<rootDir>/__tests__'],
+  roots: ['<rootDir>/__tests__', '<rootDir>/tests'],
   coverageThreshold: {
     global: {
       lines: 80,
