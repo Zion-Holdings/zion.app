@@ -18,13 +18,13 @@ jobs:
       - run: npm run build # Add this line to catch build errors
       - run: npm run test -- --coverage
       - run: npm run cypress:run
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: coverage
       - name: Upload build (optional)
         if: success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: |
