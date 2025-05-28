@@ -1,6 +1,7 @@
 
 import { supabase } from "@/integrations/supabase/client";
 import type { UserDetails } from "@/types/auth";
+import { safeStorage, safeSessionStorage } from './safeStorage';
 
 /**
  * Utility function to clean up authentication state
@@ -8,21 +9,29 @@ import type { UserDetails } from "@/types/auth";
  */
 export const cleanupAuthState = () => {
   // Remove standard auth tokens
-  localStorage.removeItem('supabase.auth.token');
+  safeStorage.removeItem('supabase.auth.token');
   
   // Remove all Supabase auth keys from localStorage
-  Object.keys(localStorage).forEach((key) => {
-    if (key.startsWith('supabase.auth.') || key.includes('sb-')) {
-      localStorage.removeItem(key);
-    }
-  });
+  try {
+    Object.keys(localStorage).forEach((key) => {
+      if (key.startsWith('supabase.auth.') || key.includes('sb-')) {
+        safeStorage.removeItem(key);
+      }
+    });
+  } catch (e) {
+    console.warn('Storage access error:', e);
+  }
   
   // Remove from sessionStorage if in use
-  Object.keys(sessionStorage || {}).forEach((key) => {
-    if (key.startsWith('supabase.auth.') || key.includes('sb-')) {
-      sessionStorage.removeItem(key);
-    }
-  });
+  try {
+    Object.keys(sessionStorage || {}).forEach((key) => {
+      if (key.startsWith('supabase.auth.') || key.includes('sb-')) {
+        safeSessionStorage.removeItem(key);
+      }
+    });
+  } catch (e) {
+    console.warn('Storage access error:', e);
+  }
 };
 
 /**

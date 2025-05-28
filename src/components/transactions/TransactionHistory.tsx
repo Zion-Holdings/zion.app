@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowLeft, ArrowRight, RefreshCcw, CheckCircle2, XCircle, Clock, AlertCircle } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
+import { safeStorage } from "@/utils/safeStorage";
 
 interface Transaction {
   id: string;
@@ -36,11 +37,11 @@ export function TransactionHistory() {
   const { user } = useAuth();
   const { toast } = useToast();
   const [filter, setFilter] = useState<'all' | 'pending' | 'completed' | 'escrow'>(
-    () => (localStorage.getItem('transaction_filter') as any) || 'all'
+    () => (safeStorage.getItem('transaction_filter') as any) || 'all'
   );
 
   useEffect(() => {
-    localStorage.setItem('transaction_filter', filter);
+    safeStorage.setItem('transaction_filter', filter);
   }, [filter]);
   
   const { data: transactions, isLoading, error, refetch } = useQuery({

@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
+import { safeStorage } from '@/utils/safeStorage';
 import { supabase } from '@/integrations/supabase/client';
 import { Notification, FilterType, NotificationContextType } from './types';
 
@@ -6,11 +7,11 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [loading, setLoading] = useState(false);
   const [filter, setFilter] = useState<FilterType>(
-    () => (localStorage.getItem('notification_filter') as FilterType) || 'all'
+    () => (safeStorage.getItem('notification_filter') as FilterType) || 'all'
   );
 
   useEffect(() => {
-    localStorage.setItem('notification_filter', filter);
+    safeStorage.setItem('notification_filter', filter);
   }, [filter]);
 
   const fetchNotifications = useCallback(async () => {
