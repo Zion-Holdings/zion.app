@@ -2,6 +2,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import { safeStorage } from '../utils/safeStorage';
 
 import enTranslation from './locales/en/translation.json';
 import esTranslation from './locales/es/translation.json';
@@ -45,9 +46,9 @@ document.documentElement.dir = i18n.dir();
 // Listen for language changes to update RTL/LTR direction
 i18n.on('languageChanged', (lng) => {
   document.documentElement.dir = i18n.dir();
-  
+
   // Save language preference to localStorage
-  localStorage.setItem('zion_language', lng);
+  safeStorage.setItem('zion_language', lng);
   
   // If user is authenticated, save language preference to profile
   // This will be implemented in the LanguageContext

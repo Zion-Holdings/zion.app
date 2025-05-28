@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from "react";
+import { safeStorage } from "@/utils/safeStorage";
 import { X, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -24,7 +25,7 @@ export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
   
   useEffect(() => {
     // Only show banner on mobile devices and if it hasn't been dismissed
-    if (isMobile && !localStorage.getItem("smartBannerDismissed")) {
+    if (isMobile && !safeStorage.getItem("smartBannerDismissed")) {
       const timer = setTimeout(() => {
         setIsVisible(true);
       }, delay);
@@ -35,11 +36,11 @@ export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
   
   const dismissBanner = () => {
     setIsVisible(false);
-    localStorage.setItem("smartBannerDismissed", "true");
+    safeStorage.setItem("smartBannerDismissed", "true");
   };
 
   const resetBanner = () => {
-    localStorage.removeItem("smartBannerDismissed");
+    safeStorage.removeItem("smartBannerDismissed");
     setIsVisible(true);
   };
   

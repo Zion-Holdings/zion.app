@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
+import { safeStorage } from "@/utils/safeStorage";
 import {
   Form,
   FormControl,
@@ -101,7 +102,7 @@ export default function Signup() {
       }
 
       if (resData?.token) {
-        localStorage.setItem("token", resData.token);
+        safeStorage.setItem("token", resData.token);
       }
 
       toast.success("Welcome to ZionAI 🎉");

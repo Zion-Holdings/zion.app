@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from "react";
+import { safeStorage } from "@/utils/safeStorage";
 import { X } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -9,7 +10,7 @@ export const AppStoreBanner: React.FC = () => {
   
   useEffect(() => {
     // Only show banner on mobile devices and if it hasn't been dismissed before
-    if (isMobile && !localStorage.getItem("appBannerDismissed")) {
+    if (isMobile && !safeStorage.getItem("appBannerDismissed")) {
       // Delay showing the banner by 2 seconds
       const timer = setTimeout(() => {
         setIsVisible(true);
@@ -21,7 +22,7 @@ export const AppStoreBanner: React.FC = () => {
   
   const dismissBanner = () => {
     setIsVisible(false);
-    localStorage.setItem("appBannerDismissed", "true");
+    safeStorage.setItem("appBannerDismissed", "true");
   };
   
   // Only render on mobile devices

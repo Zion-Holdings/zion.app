@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { safeStorage } from '@/utils/safeStorage';
 import { useTranslation } from 'react-i18next';
 import {
   AlertDialog,
@@ -20,11 +21,11 @@ export function LanguageDetectionPopup() {
 
   useEffect(() => {
     // Check if this is first visit
-    const hasVisited = localStorage.getItem('zion_has_visited');
+    const hasVisited = safeStorage.getItem('zion_has_visited');
     if (hasVisited) return;
 
     // Mark as visited
-    localStorage.setItem('zion_has_visited', 'true');
+    safeStorage.setItem('zion_has_visited', 'true');
     
     // Get browser language
     const browserLang = navigator.language.substring(0, 2) as SupportedLanguage;

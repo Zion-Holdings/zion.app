@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
+import { safeStorage } from '@/utils/safeStorage';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../integrations/supabase/client';
 import { toast } from '../components/ui/use-toast';
@@ -51,7 +52,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   
   useEffect(() => {
     // Set initial language from localStorage or browser
-    const savedLang = localStorage.getItem('zion_language') as SupportedLanguage;
+    const savedLang = safeStorage.getItem('zion_language') as SupportedLanguage;
     if (savedLang && supportedLanguages.some(lang => lang.code === savedLang)) {
       i18n.changeLanguage(savedLang);
       setCurrentLanguage(savedLang);
@@ -100,7 +101,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     try {
       await i18n.changeLanguage(lang);
       setCurrentLanguage(lang);
-      localStorage.setItem('zion_language', lang);
+      safeStorage.setItem('zion_language', lang);
       
       // Get language name for toast
       const langName = supportedLanguages.find(l => l.code === lang)?.name || lang;

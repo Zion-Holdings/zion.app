@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { getStripe } from '@/utils/getStripe';
@@ -15,7 +16,7 @@ export default function Checkout() {
   const [items, setItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem('cart');
+    const stored = safeStorage.getItem('cart');
     if (stored) {
       try {
         const parsed = JSON.parse(stored) as CartItem[];
