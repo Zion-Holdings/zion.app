@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Signup from '@/pages/Signup';
-import * as toastHook from '@/hooks/use-toast';
+import * as toastHook from '../src/hooks/use-toast';
 import * as router from 'react-router-dom';
 import { vi, expect, test } from 'vitest';
 
@@ -15,7 +15,7 @@ vi.mock('@/hooks/useAuth', () => ({
   }),
 }));
 
-vi.mock('@/hooks/use-toast');
+vi.mock('../src/hooks/use-toast');
 
 vi.mock('react-router-dom', async () => {
   const actual = await vi.importActual<typeof import('react-router-dom')>(
