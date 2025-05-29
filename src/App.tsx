@@ -86,8 +86,10 @@ const baseRoutes = [
 ];
 
 const App = () => {
+  console.log("App.tsx: Start");
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
+  console.log("App.tsx: Rendering Tree");
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">

@@ -102,6 +102,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       if (!session) {
         setIsLoading(false);
       }
+    }).catch(error => {
+      console.error("Error during initial Supabase getSession:", error);
+      setUser(null); // Explicitly set user to null on error
+      setIsLoading(false);
     });
 
     return () => {
