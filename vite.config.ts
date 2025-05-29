@@ -32,12 +32,17 @@ export default defineConfig({
       output: {
         inlineDynamicImports: false,
       },
-      external: ['react-markdown'],
+      external: [], 
     },
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
+    }
+  },
+  server: {
+    hmr: {
+      clientPort: 443
     }
   }
 })
