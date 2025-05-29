@@ -1,5 +1,7 @@
 
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
+import { ChatWidget } from "@/components/ChatWidget";
 import { useParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -19,6 +21,8 @@ export default function ListingDetail() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const { user } = useAuth();
 
   // Find the listing from our shared data source - now also checking equipment listings
   const listing = MARKETPLACE_LISTINGS.find(item => item.id === id);
@@ -40,7 +44,11 @@ export default function ListingDetail() {
   }
 
   const handleContact = () => {
-    setIsContactDialogOpen(true);
+    if (user) {
+      setIsChatOpen(true);
+    } else {
+      setIsContactDialogOpen(true);
+    }
   };
 
   return (
@@ -266,6 +274,13 @@ export default function ListingDetail() {
           </div>
         </div>
       </div>
+
+      <ChatWidget
+        roomId={listing.id}
+        recipientId={listing.author.id}
+        isOpen={isChatOpen}
+        onClose={() => setIsChatOpen(false)}
+      />
 
       {/* Contact Dialog */}
       <Dialog open={isContactDialogOpen} onOpenChange={setIsContactDialogOpen}>
