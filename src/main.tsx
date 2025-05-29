@@ -1,3 +1,4 @@
+console.log("main.tsx: Start");
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
@@ -38,6 +39,7 @@ const queryClient = new QueryClient({
 });
 
 try {
+  console.log("main.tsx: Before ReactDOM.createRoot");
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
@@ -67,8 +69,10 @@ try {
       </HelmetProvider>
     </React.StrictMode>,
   );
+  console.log("main.tsx: After ReactDOM.createRoot");
 } catch (error) {
   console.error("Global error caught in main.tsx:", error);
+  console.log("main.tsx: Global error caught");
   const rootElement = document.getElementById('root');
   if (rootElement) {
     rootElement.innerHTML = `
