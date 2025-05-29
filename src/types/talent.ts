@@ -7,6 +7,10 @@ export interface TalentProfile {
   profile_picture_url?: string;
   bio?: string;
   summary?: string;
+  /** Optional name field for SEO metadata */
+  name?: string;
+  /** Optional title field for SEO metadata */
+  title?: string;
   location?: string;
   skills?: string[];
   hourly_rate?: number;

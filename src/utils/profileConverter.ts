@@ -5,9 +5,13 @@ import { TalentProfile } from "@/types/talent";
 export function convertProfileToTalentProfile(profile: ProfileData | any): TalentProfile {
   // Handle both ProfileData and existing TalentProfile inputs
   
-  // If this is already a TalentProfile, just return it
+  // If this is already a TalentProfile, ensure optional SEO fields exist
   if (profile.professional_title !== undefined) {
-    return profile;
+    return {
+      ...profile,
+      name: profile.name || profile.full_name,
+      title: profile.title || profile.professional_title
+    };
   }
   
   // Convert ProfileData to TalentProfile
@@ -16,6 +20,8 @@ export function convertProfileToTalentProfile(profile: ProfileData | any): Talen
     user_id: profile.id,
     full_name: profile.name,
     professional_title: profile.title,
+    name: profile.name,
+    title: profile.title,
     bio: profile.bio || '',
     summary: profile.bio?.substring(0, 150),
     profile_picture_url: profile.avatarUrl,
