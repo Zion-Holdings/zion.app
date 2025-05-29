@@ -88,9 +88,10 @@ export function EnhancedSearchInput({
           className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate"
         />
         {value && (
-          <button 
+          <button
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-zion-slate hover:text-white"
             onClick={() => onChange('')}
+            aria-label="Clear search"
           >
             <X className="h-4 w-4" />
           </button>

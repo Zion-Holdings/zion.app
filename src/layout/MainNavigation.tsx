@@ -96,6 +96,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
           <li>
             <Link
               to="/messages"
+              aria-label={t('nav.messages')}
               className={cn(
                 "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
                 location.pathname === "/messages" || location.pathname === "/inbox"
