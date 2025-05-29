@@ -10,6 +10,14 @@ import { Slider } from "@/components/ui/slider";
 import { ProductListing, ListingView } from "@/types/listings";
 import { Search, Filter, LayoutGrid, List, Star } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
 interface PriceRange {
   min: number;
@@ -27,6 +35,8 @@ interface DynamicListingPageProps {
    * Base path for listing detail pages. Defaults to `/marketplace/listing`.
    */
   detailBasePath?: string;
+  /** Number of items to display per page. Default is all listings. */
+  itemsPerPage?: number;
 }
 
 export function DynamicListingPage({
@@ -36,7 +46,8 @@ export function DynamicListingPage({
   listings: allListings,
   categoryFilters,
   initialPrice = { min: 0, max: 10000 },
-  detailBasePath = '/marketplace/listing'
+  detailBasePath = '/marketplace/listing',
+  itemsPerPage,
 }: DynamicListingPageProps) {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
@@ -44,6 +55,8 @@ export function DynamicListingPage({
   const [view, setView] = useState<ListingView>("grid");
   const [isLoading, setIsLoading] = useState(false);
   const [priceRange, setPriceRange] = useState<PriceRange>(initialPrice);
+
+  const [currentPage, setCurrentPage] = useState(1);
 
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
 
@@ -84,6 +97,20 @@ export function DynamicListingPage({
     
     return matchesSearch && matchesCategory && matchesPrice && matchesRating;
   });
+
+  const totalPages = itemsPerPage
+    ? Math.ceil(filteredListings.length / itemsPerPage)
+    : 1;
+  const paginatedListings = itemsPerPage
+    ? filteredListings.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+      )
+    : filteredListings;
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedCategory, currentPriceFilter, selectedRating]);
 
   const handleRequestQuote = (listingId: string) => {
     setIsLoading(true);
@@ -285,7 +312,7 @@ export function DynamicListingPage({
 
             <div className="mb-6">
               <p className="text-zion-slate-light">
-                Showing {filteredListings.length} results
+                Showing {paginatedListings.length} of {filteredListings.length} results
                 {selectedCategory !== "all" && ` in ${selectedCategory}`}
                 {searchQuery && ` for "${searchQuery}"`}
               </p>
@@ -326,7 +353,7 @@ export function DynamicListingPage({
                     : "flex flex-col gap-6"
                 }
               >
-                {filteredListings.map((listing) => (
+                {paginatedListings.map((listing) => (
                   <ProductListingCard
                     key={listing.id}
                     listing={listing}
@@ -336,6 +363,46 @@ export function DynamicListingPage({
                   />
                 ))}
               </div>
+              {totalPages > 1 && (
+                <div className="mt-8">
+                  <Pagination className="justify-center">
+                    <PaginationContent>
+                      <PaginationItem>
+                        <PaginationPrevious
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setCurrentPage(Math.max(1, currentPage - 1));
+                          }}
+                        />
+                      </PaginationItem>
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                        <PaginationItem key={page}>
+                          <PaginationLink
+                            href="#"
+                            isActive={page === currentPage}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setCurrentPage(page);
+                            }}
+                          >
+                            {page}
+                          </PaginationLink>
+                        </PaginationItem>
+                      ))}
+                      <PaginationItem>
+                        <PaginationNext
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setCurrentPage(Math.min(totalPages, currentPage + 1));
+                          }}
+                        />
+                      </PaginationItem>
+                    </PaginationContent>
+                  </Pagination>
+                </div>
+              )}
             ) : (
               <div className="text-center py-20">
                 <h3 className="text-xl font-bold text-white mb-2">No listings found</h3>
