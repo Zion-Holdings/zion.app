@@ -1,14 +1,15 @@
 import { PrismaClient } from '@prisma/client';
+import { vi, describe, it, expect } from 'vitest';
 
 type Post = { id: number; categoryId: string; title: string };
 
-jest.mock('@prisma/client', () => {
+vi.mock('@prisma/client', () => {
   const mPrisma = {
     forumPost: {
-      findMany: jest.fn()
+      findMany: vi.fn()
     }
   };
-  return { PrismaClient: jest.fn(() => mPrisma) };
+  return { PrismaClient: vi.fn(() => mPrisma) };
 }, { virtual: true });
 
 describe('forum post queries', () => {
