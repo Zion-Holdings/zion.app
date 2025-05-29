@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProductListing } from "@/types/listings";
 import { Star, DollarSign } from "lucide-react";
+import { FavoriteButton } from "@/components/FavoriteButton";
 
 interface ProductListingCardProps {
   listing: ProductListing;
@@ -78,6 +79,7 @@ export function ProductListingCard({
               Featured
             </Badge>
           )}
+          <FavoriteButton itemId={listing.id} itemType="product" />
         </div>
       </div>
       
