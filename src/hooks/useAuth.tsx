@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 import { supabase } from "@/integrations/supabase/client";
 import { AuthContext } from "@/context/auth/AuthContext";
 import type { UserDetails as AuthUserDetails } from "@/types/auth";
+import { subscribeToPush } from "@/utils/pushSubscription";
 
 // Define types for our context
 export interface UserDetails {
@@ -50,7 +51,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // This would be replaced with actual Supabase auth
     console.log("Sign in attempted with:", email);
     // Mock successful sign-in
-    setUser({ 
+    setUser({
       id: "mock-user-id", 
       email, 
       displayName: "Mock User", 
@@ -61,6 +62,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       permissions: ["billing_access", "admin_access", "team_management"],
       companyId: "company-123"
     });
+    // Subscribe user to push notifications after login
+    try {
+      await subscribeToPush();
+    } catch (err) {
+      console.error('Push subscription error', err);
+    }
     return { error: null };
   };
 
