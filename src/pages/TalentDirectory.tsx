@@ -1,7 +1,6 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { TalentGrid } from "@/components/talent/TalentGrid";
 import { FilterSidebar } from "@/components/talent/FilterSidebar";
 import { TalentResults } from "@/components/talent/TalentResults";
 import { useTalentDirectory } from "@/hooks/useTalentDirectory";
@@ -9,6 +8,14 @@ import { SORT_OPTIONS } from "@/data/sortOptions";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TalentProfile } from "@/types/talent";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
 export default function TalentDirectory() {
   const navigate = useNavigate();
@@ -36,14 +43,25 @@ export default function TalentDirectory() {
     setSelectedTalent,
     expandedSections,
     isAuthenticated,
-    savedTalents,
     toggleSkill,
     toggleAvailability,
     toggleRegion,
     clearFilters,
     toggleSection,
-    handleToggleSave,
   } = useTalentDirectory();
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filteredTalents]);
+
+  const totalPages = Math.ceil(filteredTalents.length / itemsPerPage);
+  const paginatedTalents = filteredTalents.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
   
   const handleRequestHire = (talent: TalentProfile) => {
     setSelectedTalent(talent);
@@ -103,12 +121,11 @@ export default function TalentDirectory() {
             
             {/* Results */}
             <TalentResults
-              filteredTalents={filteredTalents}
+              talents={paginatedTalents}
+              totalCount={filteredTalents.length}
               isLoading={isLoading}
               viewProfile={viewProfile}
               handleRequestHire={handleRequestHire}
-              savedTalents={savedTalents}
-              handleToggleSave={handleToggleSave}
               isAuthenticated={isAuthenticated}
               activeFiltersProps={{
                 selectedSkills,
@@ -124,6 +141,47 @@ export default function TalentDirectory() {
                 clearFilters,
               }}
             />
+
+            {totalPages > 1 && (
+              <div className="mt-6">
+                <Pagination className="justify-center">
+                  <PaginationContent>
+                    <PaginationItem>
+                      <PaginationPrevious
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setCurrentPage(Math.max(1, currentPage - 1));
+                        }}
+                      />
+                    </PaginationItem>
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                      <PaginationItem key={page}>
+                        <PaginationLink
+                          href="#"
+                          isActive={page === currentPage}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setCurrentPage(page);
+                          }}
+                        >
+                          {page}
+                        </PaginationLink>
+                      </PaginationItem>
+                    ))}
+                    <PaginationItem>
+                      <PaginationNext
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setCurrentPage(Math.min(totalPages, currentPage + 1));
+                        }}
+                      />
+                    </PaginationItem>
+                  </PaginationContent>
+                </Pagination>
+              </div>
+            )}
             
             {/* Mobile filter sidebar */}
             {isMobileFilterOpen && (

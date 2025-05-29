@@ -1,88 +1,157 @@
+import { useEffect, useState } from 'react';
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from '@/components/ui/tabs';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+} from '@/components/ui/avatar';
 
-import React, { useEffect } from 'react';
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { useAuth } from "@/hooks/useAuth";
-import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
-import { toast } from "sonner";
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  avatarUrl: string;
+  notifications: { email: boolean; push: boolean };
+  softDeleted?: boolean;
+}
 
 export default function Profile() {
-  const { user, isLoading, logout } = useAuth();
-  const navigate = useNavigate();
+  const [user, setUser] = useState<User | null>(null);
+  const [avatarPreview, setAvatarPreview] = useState<string>('');
 
   useEffect(() => {
-    if (!isLoading && !user) {
-      toast.error("Please log in to view your profile");
-      navigate("/login?redirect=/profile");
-    }
-  }, [user, isLoading, navigate]);
+    fetch('/api/users/me')
+      .then(res => res.json())
+      .then(setUser)
+      .catch(() => {});
+  }, []);
 
-  if (isLoading) {
-    return (
-      <>
-        <Header />
-        <div className="min-h-screen bg-zion-blue flex items-center justify-center">
-          <div className="animate-pulse text-white">Loading profile...</div>
-        </div>
-        <Footer />
-      </>
-    );
-  }
+  const handleSave = async () => {
+    if (!user) return;
+    const res = await fetch('/api/users/me', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(user),
+    });
+    const data = await res.json();
+    setUser(data);
+  };
+
+  const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setAvatarPreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleDelete = async () => {
+    const confirm = window.prompt('Enter password to confirm');
+    if (!confirm) return;
+    await fetch('/api/users/me', { method: 'DELETE' });
+    setUser(prev => (prev ? { ...prev, softDeleted: true } : prev));
+  };
 
   if (!user) {
     return (
-      <>
-        <Header />
-        <div className="min-h-screen bg-zion-blue flex items-center justify-center">
-          <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6 max-w-md">
-            <h1 className="text-xl font-bold text-white mb-4">Please log in</h1>
-            <p className="text-zion-slate mb-4">You need to be logged in to view your profile.</p>
-            <Button 
-              onClick={() => navigate("/login?redirect=/profile")}
-              className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
-            >
-              Go to Login
-            </Button>
-          </div>
-        </div>
-        <Footer />
-      </>
+      <div className="p-4">Loading...</div>
     );
   }
 
   return (
-    <>
-      <Header />
-      <div className="min-h-screen bg-zion-blue">
-        <div className="container mx-auto px-4 py-8">
-          <h1 className="text-2xl font-bold text-white mb-8">My Profile</h1>
-          <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="md:w-1/3">
-                <div className="w-32 h-32 rounded-full bg-zion-purple flex items-center justify-center text-3xl font-bold text-white mb-4 mx-auto md:mx-0">
-                  {user.displayName ? user.displayName.split(' ').map(name => name[0]).join('') : user.email?.charAt(0)}
-                </div>
-              </div>
-              <div className="md:w-2/3">
-                <h2 className="text-xl font-bold text-white">{user.displayName || "User"}</h2>
-                <p className="text-zion-slate-light mb-4">{user.email}</p>
-                <Button
-                  onClick={() => {
-                    logout();
-                    navigate("/");
-                  }}
-                  variant="outline"
-                  className="border-zion-blue-light text-zion-slate-light hover:bg-zion-blue-light hover:text-white"
-                >
-                  Logout
-                </Button>
-              </div>
+    <div className="container mx-auto p-4">
+      <Tabs defaultValue="info" className="w-full">
+        <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-4">
+          <TabsTrigger value="info">Personal Info</TabsTrigger>
+          <TabsTrigger value="security">Security</TabsTrigger>
+          <TabsTrigger value="notifications">Notifications</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="info">
+          <div className="space-y-4">
+            <div>
+              <Avatar className="w-24 h-24 mb-2">
+                {avatarPreview || user.avatarUrl ? (
+                  <AvatarImage src={avatarPreview || user.avatarUrl} alt="avatar" />
+                ) : (
+                  <AvatarFallback>{user.name?.charAt(0)}</AvatarFallback>
+                )}
+              </Avatar>
+              <Input type="file" aria-label="avatar" onChange={handleAvatarChange} />
+            </div>
+            <div>
+              <Label htmlFor="name">Name</Label>
+              <Input
+                id="name"
+                value={user.name}
+                onChange={e => setUser({ ...user, name: e.target.value })}
+              />
+            </div>
+            <div>
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                value={user.email}
+                onChange={e => setUser({ ...user, email: e.target.value })}
+              />
+            </div>
+            <Button onClick={handleSave}>Save</Button>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="security">
+          <Button variant="destructive" onClick={handleDelete}>
+            Delete account
+          </Button>
+        </TabsContent>
+
+        <TabsContent value="notifications">
+          <div className="space-y-2">
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="nemail"
+                checked={user.notifications.email}
+                onCheckedChange={v =>
+                  setUser({
+                    ...user,
+                    notifications: { ...user.notifications, email: !!v },
+                  })
+                }
+              />
+              <label htmlFor="nemail" className="text-sm text-white">
+                Email notifications
+              </label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="npush"
+                checked={user.notifications.push}
+                onCheckedChange={v =>
+                  setUser({
+                    ...user,
+                    notifications: { ...user.notifications, push: !!v },
+                  })
+                }
+              />
+              <label htmlFor="npush" className="text-sm text-white">
+                Push notifications
+              </label>
             </div>
           </div>
-        </div>
-      </div>
-      <Footer />
-    </>
+        </TabsContent>
+      </Tabs>
+    </div>
   );
 }
