@@ -45,6 +45,8 @@ import OpenAppRedirect from './pages/OpenAppRedirect';
 import ContactPage from './pages/Contact';
 import ZionHireAI from './pages/ZionHireAI';
 import RequestQuotePage from './pages/RequestQuote';
+import CartPage from './pages/Cart';
+import CheckoutPage from './pages/Checkout';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -73,6 +75,8 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/cart', element: <CartPage /> },
+  { path: '/checkout', element: <CheckoutPage /> },
 ];
 
 const App = () => {

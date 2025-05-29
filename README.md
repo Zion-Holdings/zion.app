@@ -79,6 +79,7 @@ Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-trick
 ## Integrations
 
 See [docs/Integrations.md](docs/Integrations.md) for information on the Zion Assistant browser extension and Slack bot.
+Payment environment variables are documented in [docs/Payments.md](docs/Payments.md).
 
 ## Troubleshooting
 
