@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Helper scripts for the project",
   "private": true,
+  "type": "module",
   "dependencies": {
     "glob": "^7.2.0"
   }
