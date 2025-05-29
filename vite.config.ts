@@ -32,7 +32,7 @@ export default defineConfig({
       output: {
         inlineDynamicImports: false,
       },
-      external: ['react-markdown'],
+      external: [], 
     },
   },
   resolve: {
