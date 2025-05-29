@@ -8,13 +8,25 @@ export default defineConfig({
       '@/pages': path.resolve(__dirname, './src/pages'),
     },
   },
+  define: {
+    'import.meta.env.VITE_SUPABASE_URL': JSON.stringify('http://localhost:54321'),
+    'import.meta.env.VITE_SUPABASE_ANON_KEY': JSON.stringify('test-anon-key-placeholder')
+  },
   test: {
     environment: 'jsdom',
     setupFiles: './tests/setup.ts',
     globals: true,
     coverage: {
-      provider: 'c8',
+      provider: 'v8',
       reporter: ['text', 'html'],
     },
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/cypress/**',
+      '**/.{idea,git,cache,output,temp}/**',
+      '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*',
+      'tests/e2e/**'
+    ]
   },
 });

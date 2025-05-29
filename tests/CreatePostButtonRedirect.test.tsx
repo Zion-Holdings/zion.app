@@ -5,9 +5,9 @@ import * as router from 'react-router-dom';
 import CreatePostButton from '@/components/community/CreatePostButton';
 
 test('redirects to login when user is not authenticated', () => {
-  const navigateMock = jest.fn();
-  jest.spyOn(router, 'useNavigate').mockReturnValue(navigateMock);
-  jest.spyOn(auth, 'useAuth').mockReturnValue({ user: null } as any);
+  const navigateMock = vi.fn();
+  vi.spyOn(router, 'useNavigate').mockReturnValue(navigateMock);
+  vi.spyOn(auth, 'useAuth').mockReturnValue({ user: null } as any);
 
   render(
     <MemoryRouter>
