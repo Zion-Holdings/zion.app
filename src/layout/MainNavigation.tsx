@@ -5,7 +5,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { useFavorites } from "@/hooks/useFavorites";
 import { useCart } from "@/context/CartContext";
-import { Heart, MessageSquare, ShoppingCart } from "@/components/icons";
+import { Heart, MessageSquare, ShoppingCart } from "lucide-react";
 
 interface MainNavigationProps {
   isAdmin?: boolean;

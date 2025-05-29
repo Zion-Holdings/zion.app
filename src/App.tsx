@@ -49,7 +49,7 @@ import ZionHireAI from './pages/ZionHireAI';
 import RequestQuotePage from './pages/RequestQuote';
 import WishlistPage from './pages/Wishlist';
 import CartPage from './pages/Cart';
-import CheckoutPage from './pages/Checkout';
+import Checkout from './pages/Checkout';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -81,7 +81,7 @@ const baseRoutes = [
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/wishlist', element: <WishlistPage /> },
   { path: '/cart', element: <CartPage /> },
-  { path: '/checkout', element: <CheckoutPage /> },
+  { path: '/checkout', element: <Checkout /> },
 ];
 
 const App = () => {

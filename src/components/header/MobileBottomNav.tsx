@@ -13,7 +13,7 @@ import {
   MessageSquare,
   ShoppingCart,
   User
-} from "@/components/icons";
+} from "lucide-react";
 
 interface MobileBottomNavProps {
   unreadCount?: number;

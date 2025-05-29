@@ -29,7 +29,7 @@ interface CheckoutForm {
   country: string;
 }
 
-export default function CheckoutPage() {
+export default function Checkout() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [items, setItems] = useState<CartItem[]>([]);
