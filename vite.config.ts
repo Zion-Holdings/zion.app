@@ -28,12 +28,12 @@ export default defineConfig({
   build: {
     sourcemap: false,
     minify: 'esbuild',
-    rollupOptions: {
-      output: {
-        inlineDynamicImports: false,
+      rollupOptions: {
+        output: {
+          inlineDynamicImports: false,
+        },
+        external: ['axios'],
       },
-      external: [], 
-    },
   },
   resolve: {
     alias: {
