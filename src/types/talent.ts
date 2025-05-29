@@ -4,6 +4,12 @@ export interface TalentProfile {
   user_id: string;
   full_name: string;
   professional_title: string;
+  /**
+   * Optional convenience fields used by some components.
+   * These mirror `full_name` and `professional_title`.
+   */
+  name?: string;
+  title?: string;
   profile_picture_url?: string;
   bio?: string;
   summary?: string;
