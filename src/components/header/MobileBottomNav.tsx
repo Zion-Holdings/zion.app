@@ -63,10 +63,11 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
             key={item.name}
             to={item.href}
             className={cn(
-              "flex flex-col items-center justify-center w-full h-full px-1 py-1",
+              "flex flex-col items-center justify-center w-full h-full px-1 py-1 transition-colors", // Base classes with transition
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background", // Focus state (assuming parent bg sets --background context for offset)
               item.matches(location.pathname)
-                ? "text-zion-cyan"
-                : "text-white/70 hover:text-white"
+                ? "text-zion-cyan border-t-2 border-zion-cyan" // Active state with top border
+                : "text-white/70 hover:text-white" // Default and Hover states
             )}
           >
             <div className="relative">

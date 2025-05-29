@@ -14,7 +14,10 @@ import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    // The container class will provide max-width and horizontal padding.
+    // Specific padding for sections (e.g., py-8, py-12) should be handled
+    // within each section or by adding them to this container div if appropriate.
+    <div className="container py-6 md:py-10"> {/* Added container and some vertical padding */}
       <SEO 
         title="Zion - The Tech & AI Marketplace" 
         description="Discover top AI and tech talent, services, and equipment in one place."
@@ -22,6 +25,7 @@ export default function Home() {
         canonical="https://app.ziontechgroup.com/"
       />
 
+      {/* Sections remain the same */}
       <ITServiceRequestHero />
 
       <HeroSection />

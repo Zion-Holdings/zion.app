@@ -89,10 +89,11 @@ export function MobileMenu({ unreadCount = 0, onClose }: MobileMenuProps) {
             key={item.name}
             to={item.href}
             className={cn(
-              "flex items-center px-6 py-3 text-base font-medium",
+              "flex items-center px-6 py-3 text-base font-medium transition-colors", // Added transition-colors
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background", // Added focus state, assuming mobile menu background is --background
               item.matches(location.pathname)
-                ? "bg-zion-purple/20 text-zion-cyan border-l-4 border-zion-cyan"
-                : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                ? "bg-zion-purple/20 text-zion-cyan border-l-4 border-zion-cyan" // Active state - already good
+                : "text-slate-200 hover:bg-zion-purple/30 hover:text-white" // Default and Hover states
             )}
             onClick={onClose}
           >

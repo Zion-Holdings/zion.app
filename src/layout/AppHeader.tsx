@@ -4,7 +4,8 @@ import { useMessaging } from '@/context/MessagingContext';
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
 import { ModeToggle } from '@/components/ModeToggle';
-import { Menu, X } from 'lucide-react';
+import { Input } from "@/components/ui/input"; // Added
+import { Menu, X, Search } from 'lucide-react'; // Added Search
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
@@ -27,8 +28,20 @@ export function AppHeader() {
       <header className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md">
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
-          <div className="ml-6 flex-1 hidden md:block">
+          <div className="ml-6 hidden md:flex items-center"> {/* Changed: removed flex-1, added items-center */}
             <MainNavigation unreadCount={unreadCount} />
+          </div>
+
+          {/* New Search Bar Area */}
+          <div className="hidden md:flex flex-1 items-center justify-center px-4 lg:px-8">
+            <div className="relative w-full max-w-lg"> {/* Increased max-width slightly */}
+              <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400 pointer-events-none" /> {/* Added pointer-events-none */}
+              <Input
+                type="search"
+                placeholder="Search marketplace, talent, AI models..."
+                className="w-full pl-10 pr-4 py-2 h-9 bg-background border-border text-foreground focus:ring-accent rounded-full" // Added h-9 for height consistency, rounded-full
+              />
+            </div>
           </div>
           
           {/* Mobile menu button */}

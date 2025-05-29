@@ -14,7 +14,7 @@ export default function MarketplaceSidebar({ children }) {
     <div className="relative flex">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden p-2 text-white"
+        className="md:hidden p-2 text-slate-200 hover:text-white hover:bg-zion-purple/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-md" // Added rounded-md for better ring appearance
         aria-expanded={isOpen}
         aria-label="Toggle marketplace sidebar"
       >

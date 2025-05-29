@@ -4,132 +4,131 @@
 
 @layer base {
   :root {
-    --font-sans: 'Orbitron', system-ui, sans-serif;
+    --font-sans: 'Orbitron', system-ui, sans-serif; /* Keep existing font */
 
-    --background: 0 0% 7%;
-    --foreground: 142 71% 45%;
+    /* Dark Theme Base (zion-slate) */
+    --background: 260 70% 10%; /* zion-slate */
+    --foreground: 0 0% 85%;    /* Light Gray Text */
 
-    --card: 0 0% 7%;
-    --card-foreground: 142 71% 45%;
+    --card: 260 70% 12%;       /* Slightly lighter zion-slate */
+    --card-foreground: 0 0% 85%; /* Light Gray Text */
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 142 71% 45%;
+    --popover: 260 70% 12%;    /* Slightly lighter zion-slate */
+    --popover-foreground: 0 0% 85%; /* Light Gray Text */
 
-    --primary: 216 84% 50%;
-    --primary-foreground: 142 71% 45%;
+    --primary: 217 82% 55%;    /* zion-blue */
+    --primary-foreground: 0 0% 100%; /* white */
 
-    --secondary: 0 0% 68%;
-    --secondary-foreground: 0 0% 7%;
+    --secondary: 273 82% 50%;  /* zion-purple */
+    --secondary-foreground: 0 0% 100%; /* white */
 
-    --muted: 0 0% 68%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 260 70% 20%;      /* Darker muted zion-slate */
+    --muted-foreground: 0 0% 60%; /* Muted gray text */
 
-    --accent: 228 12% 92%;
-    --accent-foreground: 0 0% 7%;
+    --accent: 177 70% 50%;     /* zion-cyan */
+    --accent-foreground: 260 70% 10%; /* zion-slate (for contrast on cyan) */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 142 71% 45%;
+    --destructive: 0 70% 55%;   /* Adjusted Red for dark theme */
+    --destructive-foreground: 0 0% 100%; /* white */
 
-    --border: 0 0% 68%;
-    --input: 0 0% 68%;
-    --ring: 216 84% 53%;
+    --border: 260 70% 20%;     /* Muted zion-slate for borders */
+    --input: 260 70% 15%;      /* Slightly different from border for input bg */
+    --ring: 217 82% 55%;       /* zion-blue for focus rings */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* Keep existing radius */
 
-    --sidebar-background: 228 12% 92%;
-
-    --sidebar-foreground: 0 0% 7%;
-
-    --sidebar-primary: 216 84% 53%;
-
-    --sidebar-primary-foreground: 142 71% 45%;
-
-    --sidebar-accent: 0 0% 68%;
-
-    --sidebar-accent-foreground: 0 0% 7%;
-
-    --sidebar-border: 0 0% 68%;
-
-    --sidebar-ring: 216 84% 53%;
+    /* Dark Theme Sidebar */
+    --sidebar-background: 260 70% 8%;  /* Even darker zion-slate */
+    --sidebar-foreground: 0 0% 85%;    /* Light Gray Text */
+    --sidebar-primary: 217 82% 55%;    /* zion-blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* white */
+    --sidebar-accent: 177 70% 50%;     /* zion-cyan */
+    --sidebar-accent-foreground: 260 70% 10%; /* zion-slate */
+    --sidebar-border: 260 70% 15%;     /* Muted zion-slate for sidebar borders */
+    --sidebar-ring: 217 82% 55%;       /* zion-blue */
   }
 
-  .dark {
-    --background: 0 0% 7%;
-    --foreground: 142 71% 45%;
+  .dark { /* Ensure .dark mirrors :root for dark theme consistency */
+    --background: 260 70% 10%; /* zion-slate */
+    --foreground: 0 0% 85%;    /* Light Gray Text */
 
-    --card: 0 0% 7%;
-    --card-foreground: 142 71% 45%;
+    --card: 260 70% 12%;       /* Slightly lighter zion-slate */
+    --card-foreground: 0 0% 85%; /* Light Gray Text */
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 142 71% 45%;
+    --popover: 260 70% 12%;    /* Slightly lighter zion-slate */
+    --popover-foreground: 0 0% 85%; /* Light Gray Text */
 
-    --primary: 216 84% 50%;
-    --primary-foreground: 142 71% 45%;
+    --primary: 217 82% 55%;    /* zion-blue */
+    --primary-foreground: 0 0% 100%; /* white */
 
-    --secondary: 0 0% 68%;
-    --secondary-foreground: 0 0% 7%;
+    --secondary: 273 82% 50%;  /* zion-purple */
+    --secondary-foreground: 0 0% 100%; /* white */
 
-    --muted: 0 0% 68%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 260 70% 20%;      /* Darker muted zion-slate */
+    --muted-foreground: 0 0% 60%; /* Muted gray text */
 
-    --accent: 228 12% 92%;
-    --accent-foreground: 0 0% 7%;
+    --accent: 177 70% 50%;     /* zion-cyan */
+    --accent-foreground: 260 70% 10%; /* zion-slate (for contrast on cyan) */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 142 71% 45%;
+    --destructive: 0 70% 55%;   /* Adjusted Red for dark theme */
+    --destructive-foreground: 0 0% 100%; /* white */
 
-    --border: 0 0% 68%;
-    --input: 0 0% 68%;
-    --ring: 216 84% 53%;
-    --sidebar-background: 228 12% 92%;
-    --sidebar-foreground: 0 0% 7%;
-    --sidebar-primary: 216 84% 53%;
-    --sidebar-primary-foreground: 142 71% 45%;
-    --sidebar-accent: 0 0% 68%;
-    --sidebar-accent-foreground: 0 0% 7%;
-    --sidebar-border: 0 0% 68%;
-    --sidebar-ring: 216 84% 53%;
+    --border: 260 70% 20%;     /* Muted zion-slate for borders */
+    --input: 260 70% 15%;      /* Slightly different from border for input bg */
+    --ring: 217 82% 55%;       /* zion-blue for focus rings */
+
+    /* Dark Theme Sidebar */
+    --sidebar-background: 260 70% 8%;  /* Even darker zion-slate */
+    --sidebar-foreground: 0 0% 85%;    /* Light Gray Text */
+    --sidebar-primary: 217 82% 55%;    /* zion-blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* white */
+    --sidebar-accent: 177 70% 50%;     /* zion-cyan */
+    --sidebar-accent-foreground: 260 70% 10%; /* zion-slate */
+    --sidebar-border: 260 70% 15%;     /* Muted zion-slate for sidebar borders */
+    --sidebar-ring: 217 82% 55%;       /* zion-blue */
   }
 
   .light {
-    --background: 0 0% 100%;
-    --foreground: 224 71% 4%;
+    /* Light Theme Base */
+    --background: 0 0% 100%;    /* white */
+    --foreground: 260 70% 15%;  /* Dark Gray Text (derived from zion-slate) */
 
-    --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
+    --card: 0 0% 98%;         /* Very light gray for cards */
+    --card-foreground: 260 70% 15%; /* Dark Gray Text */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
+    --popover: 0 0% 98%;      /* Very light gray for popovers */
+    --popover-foreground: 260 70% 15%; /* Dark Gray Text */
 
-    --primary: 262 83% 58%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217 82% 55%;    /* zion-blue */
+    --primary-foreground: 0 0% 100%; /* white */
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 273 82% 50%;  /* zion-purple */
+    --secondary-foreground: 0 0% 100%; /* white */
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 90%;         /* Light muted gray */
+    --muted-foreground: 0 0% 40%; /* Darker muted gray text */
 
-    --accent: 210 40% 96%;
-    --accent-foreground: 224 71% 4%;
+    --accent: 177 70% 50%;     /* zion-cyan */
+    --accent-foreground: 260 70% 10%; /* zion-slate (for contrast on cyan) */
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;   /* Adjusted Red for light theme */
+    --destructive-foreground: 0 0% 100%; /* white */
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 262 83% 58%;
+    --border: 0 0% 85%;       /* Light gray border */
+    --input: 0 0% 90%;        /* Slightly different from border for input bg */
+    --ring: 217 82% 55%;       /* zion-blue for focus rings */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* Keep existing radius */
 
-    --sidebar-background: 210 40% 96%;
-    --sidebar-foreground: 224 71% 4%;
-    --sidebar-primary: 262 83% 58%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 210 40% 96%;
-    --sidebar-accent-foreground: 224 71% 4%;
-    --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 262 83% 58%;
+    /* Light Theme Sidebar */
+    --sidebar-background: 0 0% 96%;  /* Light gray for sidebar */
+    --sidebar-foreground: 260 70% 15%;  /* Dark Gray Text */
+    --sidebar-primary: 217 82% 55%;    /* zion-blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* white */
+    --sidebar-accent: 177 70% 50%;     /* zion-cyan */
+    --sidebar-accent-foreground: 260 70% 10%; /* zion-slate */
+    --sidebar-border: 0 0% 80%;       /* Slightly darker gray for sidebar borders */
+    --sidebar-ring: 217 82% 55%;       /* zion-blue */
   }
 }
 
@@ -140,6 +139,18 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+  }
+
+  a {
+    @apply text-primary hover:text-accent focus-visible:outline-accent transition-colors duration-150;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground font-semibold;
+  }
+
+  p {
+    @apply text-foreground/90; /* Using 90% opacity for foreground */
   }
 
   @keyframes pulse {
