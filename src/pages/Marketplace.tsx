@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, useMemo } from "react";
+import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Grid3X3, ListFilter, Loader2 } from "lucide-react";
@@ -61,6 +62,7 @@ function ProductList({ listings, onRequestQuote }: ProductContainerProps) {
 
 export default function Marketplace() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedProductTypes, setSelectedProductTypes] = useState<string[]>([]);
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
@@ -185,10 +187,9 @@ export default function Marketplace() {
   return (
     <main className="flex-grow container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto mb-8">
-          <h1 className="text-3xl font-bold text-white mb-4">AI & Tech Marketplace</h1>
+          <h1 className="text-3xl font-bold text-white mb-4">{t('marketplace.title')}</h1>
           <p className="text-zion-slate-light">
-            Discover professional services and products for your AI and tech projects.
-            Browse our curated collection of solutions from verified providers.
+            {t('marketplace.description')}
           </p>
         </div>
         
@@ -200,7 +201,7 @@ export default function Marketplace() {
                 value={searchQuery}
                 onChange={setSearchQuery}
                 onSelectSuggestion={setSearchQuery}
-                placeholder="Search the marketplace..."
+                placeholder={t('marketplace.search_placeholder')}
                 searchSuggestions={searchSuggestions}
               />
             </div>
