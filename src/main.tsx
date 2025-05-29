@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import { HelmetProvider } from 'react-helmet-async';
@@ -36,9 +36,10 @@ const queryClient = new QueryClient({
   },
 });
 
-try {
-  // Render the app with proper provider structure
-  ReactDOM.createRoot(document.getElementById('root')!).render(
+const rootElement = document.getElementById('root');
+
+function renderApp() {
+  const app = (
     <React.StrictMode>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
@@ -62,22 +63,42 @@ try {
           </WhitelabelProvider>
         </QueryClientProvider>
       </HelmetProvider>
-    </React.StrictMode>,
+    </React.StrictMode>
   );
-} catch (error) {
-  console.error("Global error caught in main.tsx:", error);
-  const rootElement = document.getElementById('root');
-  if (rootElement) {
-    rootElement.innerHTML = `
-      <div style="padding: 20px; text-align: center; font-family: sans-serif;">
-        <h1>Application Error</h1>
-        <p>A critical error occurred while loading the application.</p>
-        <p>Error: ${(error as Error).message}</p>
-        <pre>${(error as Error).stack}</pre>
-        <p>Please check the console for more details.</p>
-      </div>
-    `;
+
+  if (rootElement?.hasChildNodes()) {
+    hydrateRoot(rootElement, app);
+  } else if (rootElement) {
+    createRoot(rootElement).render(app);
   }
 }
+
+function displayFatalError(message: string) {
+  if (rootElement) {
+    rootElement.innerHTML = `
+      <div style="padding:20px;text-align:center;font-family:sans-serif;">
+        <h1>Application Error</h1>
+        <p>${message}</p>
+      </div>`;
+  }
+}
+
+try {
+  renderApp();
+} catch (error) {
+  console.error('Global error caught in main.tsx:', error);
+  displayFatalError((error as Error).message);
+}
+
+window.addEventListener('error', (e) => {
+  console.error('Unhandled error:', e.error || e.message);
+  displayFatalError(e.message);
+});
+
+window.addEventListener('unhandledrejection', (e) => {
+  const message = (e.reason && e.reason.message) || 'Unhandled promise rejection';
+  console.error('Unhandled rejection:', e.reason);
+  displayFatalError(message);
+});
 
 registerServiceWorker();
