@@ -39,5 +39,10 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
+  },
+  server: {
+    hmr: {
+      clientPort: 443
+    }
   }
 })
