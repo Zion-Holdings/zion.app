@@ -43,13 +43,11 @@ export default function TalentDirectory() {
     setSelectedTalent,
     expandedSections,
     isAuthenticated,
-    savedTalents,
     toggleSkill,
     toggleAvailability,
     toggleRegion,
     clearFilters,
     toggleSection,
-    handleToggleSave,
   } = useTalentDirectory();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -128,8 +126,6 @@ export default function TalentDirectory() {
               isLoading={isLoading}
               viewProfile={viewProfile}
               handleRequestHire={handleRequestHire}
-              savedTalents={savedTalents}
-              handleToggleSave={handleToggleSave}
               isAuthenticated={isAuthenticated}
               activeFiltersProps={{
                 selectedSkills,
