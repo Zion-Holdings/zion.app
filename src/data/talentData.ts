@@ -314,5 +314,213 @@ export const TALENT_PROFILES: TalentProfile[] = [
         description: "Created ML models that predict patient response to specific cancer treatments based on medical imaging data, improving treatment selection and patient outcomes."
       }
     ]
+  },
+  {
+    id: "t-013",
+    user_id: "user-013",
+    full_name: "Isabella Garcia",
+    professional_title: "Data Engineer & ETL Specialist",
+    profile_picture_url: "https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&w=200&h=200",
+    bio: "Data engineer with over 6 years of experience building scalable ETL pipelines and data warehouses across cloud platforms.",
+    location: "Denver, CO",
+    skills: ["ETL", "Python", "SQL", "Airflow", "AWS", "Data Warehousing", "BigQuery", "Spark"],
+    hourly_rate: 130,
+    years_experience: 6,
+    average_rating: 4.7,
+    rating_count: 18,
+    availability_type: "full_time",
+    is_verified: true,
+    key_projects: [
+      {
+        title: "Cloud Data Warehouse Migration",
+        description: "Led migration of on-premise data systems to a modern AWS Redshift warehouse reducing query times by 40%."
+      },
+      {
+        title: "Streaming Analytics Pipeline",
+        description: "Implemented real-time data ingestion with Kafka and Spark Streaming for ad analytics processing millions of events daily."
+      }
+    ]
+  },
+  {
+    id: "t-014",
+    user_id: "user-014",
+    full_name: "Liam Turner",
+    professional_title: "UI/UX Designer & Frontend Developer",
+    profile_picture_url: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=200&h=200",
+    bio: "Creative designer focused on crafting intuitive user experiences and responsive interfaces for web and mobile apps.",
+    location: "Portland, OR",
+    skills: ["Figma", "React", "CSS", "User Research", "Prototyping", "Accessibility", "Design Systems", "Tailwind"],
+    hourly_rate: 120,
+    years_experience: 5,
+    average_rating: 4.8,
+    rating_count: 25,
+    availability_type: "part_time",
+    is_verified: false,
+    key_projects: [
+      {
+        title: "E-learning Platform Redesign",
+        description: "Redesigned UI for an online education startup leading to a 22% increase in user engagement."
+      },
+      {
+        title: "Mobile Banking App",
+        description: "Collaborated with developers to implement a clean and accessible interface for a fintech mobile app."
+      }
+    ]
+  },
+  {
+    id: "t-015",
+    user_id: "user-015",
+    full_name: "Ethan Patel",
+    professional_title: "Blockchain Developer",
+    profile_picture_url: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=200&h=200",
+    bio: "Developer specializing in smart contract development and decentralized applications on Ethereum and Solana.",
+    location: "Austin, TX",
+    skills: ["Solidity", "Rust", "Ethereum", "Web3.js", "Smart Contracts", "Solana", "Truffle", "IPFS"],
+    hourly_rate: 150,
+    years_experience: 4,
+    average_rating: 4.6,
+    rating_count: 12,
+    availability_type: "project",
+    is_verified: true,
+    key_projects: [
+      {
+        title: "NFT Marketplace",
+        description: "Built and deployed a full-stack NFT marketplace with custom smart contracts and IPFS storage."
+      },
+      {
+        title: "DeFi Staking Platform",
+        description: "Developed staking smart contracts audited for security and handling over $10M in locked value."
+      }
+    ]
+  },
+  {
+    id: "t-016",
+    user_id: "user-016",
+    full_name: "Chloe Nguyen",
+    professional_title: "Cloud Security Specialist",
+    profile_picture_url: "https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=200&h=200",
+    bio: "Certified security professional securing cloud-native infrastructures on AWS and GCP.",
+    location: "Seattle, WA",
+    skills: ["AWS", "GCP", "Security Auditing", "Terraform", "Kubernetes", "Compliance", "Incident Response", "DevSecOps"],
+    hourly_rate: 160,
+    years_experience: 7,
+    average_rating: 4.9,
+    rating_count: 31,
+    availability_type: "full_time",
+    is_verified: true,
+    key_projects: [
+      {
+        title: "Container Security Initiative",
+        description: "Implemented container scanning and runtime security across a fleet of Kubernetes clusters."
+      },
+      {
+        title: "Multi-Cloud Compliance Automation",
+        description: "Automated compliance checks for SOC2 and HIPAA across multiple cloud accounts using Terraform and policy-as-code."
+      }
+    ]
+  },
+  {
+    id: "t-017",
+    user_id: "user-017",
+    full_name: "Noah Smith",
+    professional_title: "Mobile App Developer",
+    profile_picture_url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200",
+    bio: "Full-stack mobile developer with expertise in React Native and native iOS/Android development.",
+    location: "New York, NY",
+    skills: ["React Native", "iOS", "Android", "TypeScript", "Firebase", "GraphQL", "Redux", "App Store Deployment"],
+    hourly_rate: 140,
+    years_experience: 6,
+    average_rating: 4.7,
+    rating_count: 22,
+    availability_type: "part_time",
+    is_verified: false,
+    key_projects: [
+      {
+        title: "Food Delivery App",
+        description: "Developed cross-platform mobile app reaching over 100k downloads and maintaining 4.8 star store rating."
+      },
+      {
+        title: "Fitness Tracking Platform",
+        description: "Built Bluetooth-enabled workout tracking with real-time analytics and social features."
+      }
+    ]
+  },
+  {
+    id: "t-018",
+    user_id: "user-018",
+    full_name: "Ava Williams",
+    professional_title: "Data Analyst & Visualization Expert",
+    profile_picture_url: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=200&h=200",
+    bio: "Data analyst turning complex datasets into actionable insights with interactive dashboards.",
+    location: "Chicago, IL",
+    skills: ["Tableau", "SQL", "Python", "Data Visualization", "PowerBI", "Data Cleaning", "Statistics", "Excel"],
+    hourly_rate: 125,
+    years_experience: 5,
+    average_rating: 4.8,
+    rating_count: 19,
+    availability_type: "project",
+    is_verified: true,
+    key_projects: [
+      {
+        title: "Sales KPI Dashboard",
+        description: "Created executive dashboards for tracking sales KPIs leading to 15% revenue growth."
+      },
+      {
+        title: "Customer Churn Analysis",
+        description: "Performed churn modeling and segmentation to help reduce customer attrition by 10%."
+      }
+    ]
+  },
+  {
+    id: "t-019",
+    user_id: "user-019",
+    full_name: "William Chen",
+    professional_title: "AI Research Scientist",
+    profile_picture_url: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=200&h=200",
+    bio: "Researcher exploring cutting-edge machine learning algorithms and publishing in top conferences.",
+    location: "Boston, MA",
+    skills: ["Deep Learning", "PyTorch", "Research", "Computer Vision", "NLP", "GANs", "Experimentation", "Python"],
+    hourly_rate: 155,
+    years_experience: 8,
+    average_rating: 4.9,
+    rating_count: 28,
+    availability_type: "full_time",
+    is_verified: true,
+    key_projects: [
+      {
+        title: "Generative Adversarial Networks",
+        description: "Developed novel GAN architectures for high-resolution image synthesis published at CVPR."
+      },
+      {
+        title: "Multimodal Representation Learning",
+        description: "Conducted research on combining vision and language models resulting in state-of-the-art benchmarks."
+      }
+    ]
+  },
+  {
+    id: "t-020",
+    user_id: "user-020",
+    full_name: "Grace Lee",
+    professional_title: "Technical Writer & Documentation Specialist",
+    profile_picture_url: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&h=200",
+    bio: "Technical writer creating clear and concise documentation for developer tools and APIs.",
+    location: "Remote",
+    skills: ["Technical Writing", "API Docs", "Markdown", "Content Strategy", "Editing", "Developer Experience", "Git", "Docs-as-code"],
+    hourly_rate: 110,
+    years_experience: 7,
+    average_rating: 4.8,
+    rating_count: 16,
+    availability_type: "project",
+    is_verified: false,
+    key_projects: [
+      {
+        title: "Open Source Library Docs",
+        description: "Authored comprehensive documentation and tutorials for a popular open source framework."
+      },
+      {
+        title: "API Reference Overhaul",
+        description: "Redesigned developer portal and API reference improving onboarding satisfaction scores by 30%."
+      }
+    ]
   }
 ];

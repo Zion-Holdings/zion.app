@@ -6,7 +6,8 @@ import { ResultsHeader } from "@/components/talent/ResultsHeader";
 import { TalentGrid } from "@/components/talent/TalentGrid";
 
 interface TalentResultsProps {
-  filteredTalents: TalentProfile[];
+  talents: TalentProfile[];
+  totalCount: number;
   isLoading: boolean;
   viewProfile: (id: string) => void;
   handleRequestHire: (talent: TalentProfile) => void;
@@ -29,7 +30,8 @@ interface TalentResultsProps {
 }
 
 export function TalentResults({
-  filteredTalents,
+  talents,
+  totalCount,
   isLoading,
   viewProfile,
   handleRequestHire,
@@ -45,13 +47,13 @@ export function TalentResults({
       
       {/* Results count */}
       <ResultsHeader 
-        isLoading={isLoading} 
-        resultCount={filteredTalents.length} 
+        isLoading={isLoading}
+        resultCount={totalCount}
       />
       
       {/* Talents grid */}
       <TalentGrid 
-        talents={filteredTalents}
+        talents={talents}
         isLoading={isLoading}
         onTalentClick={viewProfile}
         viewProfile={viewProfile}
