@@ -57,3 +57,14 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
+// Display notifications from push events
+self.addEventListener('push', event => {
+  const data = event.data ? event.data.json() : {};
+  const title = data.title || 'Zion Notification';
+  const options = {
+    body: data.body,
+    icon: '/vite.svg'
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
