@@ -31,9 +31,10 @@ export function ApplicationRow({
         <div className="flex items-center gap-3">
           <Avatar className="h-9 w-9">
             {application.talent_profile?.profile_picture_url ? (
-              <img 
-                src={application.talent_profile.profile_picture_url} 
-                alt={application.talent_profile.full_name} 
+              <img
+                src={application.talent_profile.profile_picture_url}
+                alt={application.talent_profile.full_name}
+                loading="lazy"
               />
             ) : (
               <User className="h-5 w-5 text-gray-400" />

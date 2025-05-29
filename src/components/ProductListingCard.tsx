@@ -72,6 +72,7 @@ export function ProductListingCard({
             alt={listing.title}
             className="w-full h-full object-cover"
             onError={handleImageError}
+            loading="lazy"
           />
           {listing.featured && (
             <Badge className="absolute top-2 right-2 bg-zion-purple text-white border-none">

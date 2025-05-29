@@ -116,9 +116,10 @@ export function UpcomingInterviewsCard() {
               <div key={interview.id} className="flex items-center gap-3">
                 <Avatar className="h-10 w-10 bg-zion-purple/10">
                   {interview.client_avatar || interview.talent_avatar ? (
-                    <img 
-                      src={interview.client_avatar || interview.talent_avatar} 
+                    <img
+                      src={interview.client_avatar || interview.talent_avatar}
                       alt={interview.client_name || interview.talent_name}
+                      loading="lazy"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center bg-zion-purple/20 text-zion-purple font-medium">

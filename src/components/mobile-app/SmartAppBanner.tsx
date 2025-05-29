@@ -62,7 +62,12 @@ export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
       <div className="flex items-center">
         <div className="w-12 h-12 bg-zion-cyan/20 rounded-lg mr-3 flex-shrink-0 flex items-center justify-center">
           {appIconSrc ? (
-            <img src={appIconSrc} alt={appName} className="w-10 h-10 rounded-md" />
+            <img
+              src={appIconSrc}
+              alt={appName}
+              className="w-10 h-10 rounded-md"
+              loading="lazy"
+            />
           ) : (
             <div className="text-zion-cyan font-bold text-lg">Z</div>
           )}

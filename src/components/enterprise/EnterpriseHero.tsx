@@ -26,19 +26,20 @@ export function EnterpriseHero() {
             <div className="mt-10 flex items-center gap-4">
               <p className="text-sm text-muted-foreground">Trusted by leading enterprises:</p>
               <div className="flex gap-6 opacity-70">
-                <img src="/logos/placeholder-logo.svg" alt="Enterprise 1" className="h-8" />
-                <img src="/logos/placeholder-logo.svg" alt="Enterprise 2" className="h-8" />
-                <img src="/logos/placeholder-logo.svg" alt="Enterprise 3" className="h-8" />
+                <img src="/logos/placeholder-logo.svg" alt="Enterprise 1" className="h-8" loading="lazy" />
+                <img src="/logos/placeholder-logo.svg" alt="Enterprise 2" className="h-8" loading="lazy" />
+                <img src="/logos/placeholder-logo.svg" alt="Enterprise 3" className="h-8" loading="lazy" />
               </div>
             </div>
           </div>
           <div className="relative">
             <div className="aspect-video rounded-lg bg-gradient-to-br from-zion-cyan/20 to-zion-purple/20 p-1">
               <div className="w-full h-full bg-card rounded-md flex items-center justify-center">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Enterprise Dashboard" 
+                <img
+                  src="/placeholder.svg"
+                  alt="Enterprise Dashboard"
                   className="rounded max-w-full max-h-full object-cover"
+                  loading="eager"
                 />
               </div>
             </div>

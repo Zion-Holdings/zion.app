@@ -137,10 +137,11 @@ export function TrustedBySection() {
                   {company.name}
                 </div>
               ) : (
-                <img 
-                  src={company.logo} 
-                  alt={company.alt} 
+                <img
+                  src={company.logo}
+                  alt={company.alt}
                   className="max-h-10 max-w-full opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter invert"
+                  loading="lazy"
                   onError={() => handleImageError(company.name)}
                 />
               )}

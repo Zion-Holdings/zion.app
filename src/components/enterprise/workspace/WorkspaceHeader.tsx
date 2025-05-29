@@ -14,10 +14,11 @@ export function WorkspaceHeader({ company }: WorkspaceHeaderProps) {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="h-12 w-12 rounded-lg bg-card flex items-center justify-center border border-border">
-            <img 
-              src={company.logoUrl || "/placeholder.svg"} 
-              alt={company.name} 
+            <img
+              src={company.logoUrl || "/placeholder.svg"}
+              alt={company.name}
               className="max-h-10 max-w-10"
+              loading="lazy"
             />
           </div>
           <div>

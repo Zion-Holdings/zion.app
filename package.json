@@ -101,6 +101,7 @@
     "vitest": "^1.4.0",
     "@vitest/coverage-v8": "^1.6.1",
     "@playwright/test": "^1.41.2"
+    ,"netlify-plugin-compress": "^7.1.1"
   },
   "peerDependencies": {
     "react": "^18.2.0",

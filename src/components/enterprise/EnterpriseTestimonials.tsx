@@ -61,6 +61,7 @@ export function EnterpriseTestimonials() {
                         src={testimonial.image}
                         alt={testimonial.author}
                         className="h-full w-full object-cover"
+                        loading="lazy"
                       />
                     </div>
                     <div>
