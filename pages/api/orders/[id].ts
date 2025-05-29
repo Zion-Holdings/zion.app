@@ -1,8 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
-import { serializeOrders } from './orders/serializer';
+import { serializeOrder } from './serializer';
 
-// Generic request/response types so the handler works in Node or Next.js
-type Req = { method?: string; query?: { userId?: string; user_id?: string } };
+type Req = { method?: string; query?: { id?: string } };
 interface JsonRes {
   status: (code: number) => JsonRes;
   json: (data: any) => void;
@@ -28,23 +27,22 @@ export default async function handler(req: Req, res: JsonRes) {
     return;
   }
 
-  const idParam = req.query?.userId || req.query?.user_id;
-  const userId = idParam === 'me' ? (req.headers['x-user-id'] as string | undefined) : idParam;
-  if (!userId) {
-    res.status(400).json({ error: 'Missing userId' });
+  const id = req.query?.id;
+  if (!id) {
+    res.status(400).json({ error: 'Missing id' });
     return;
   }
 
   const { data, error } = await supabase
     .from('orders')
-    .select('id, created_at, total, status, invoice_url')
-    .eq('user_id', userId)
-    .order('created_at', { ascending: false });
+    .select('id, created_at, total, status, invoice_url, items, shipping_address')
+    .eq('id', id)
+    .single();
 
-  if (error) {
-    res.status(500).json({ error: error.message });
+  if (error || !data) {
+    res.status(404).json({ error: error?.message || 'Order not found' });
     return;
   }
 
-  res.status(200).json(serializeOrders(data || []));
+  res.status(200).json(serializeOrder(data));
 }
