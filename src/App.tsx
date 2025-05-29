@@ -26,6 +26,7 @@ import AIMatcherPage from './pages/AIMatcher';
 import TalentDirectory from './pages/TalentDirectory';
 import TalentsPage from './pages/TalentsPage';
 import MoreTalentsPage from './pages/MoreTalentsPage';
+import AdditionalTalentsPage from './pages/AdditionalTalentsPage';
 import ServicesPage from './pages/ServicesPage';
 import EquipmentPage from './pages/EquipmentPage';
 import EquipmentDetail from './pages/EquipmentDetail';
@@ -55,6 +56,7 @@ const baseRoutes = [
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/more-talents', element: <MoreTalentsPage /> },
+  { path: '/additional-talents', element: <AdditionalTalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
