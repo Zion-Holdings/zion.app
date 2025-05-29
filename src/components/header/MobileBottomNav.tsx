@@ -1,7 +1,8 @@
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Search, BriefcaseIcon, MessageSquare, User, MessageCircle } from "lucide-react";
+import { Home, Search, BriefcaseIcon, MessageSquare, User, MessageCircle, ShoppingCart } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -13,6 +14,8 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
   const location = useLocation();
   const { user } = useAuth();
   const isAuthenticated = !!user;
+  const { items } = useCart();
+  const cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
 
   const navItems = [
     {
@@ -40,6 +43,13 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
       matches: (path: string) => path.startsWith("/messages") || path.startsWith("/inbox"),
       badge: unreadCount,
       authRequired: true
+    },
+    {
+      name: "Cart",
+      href: "/cart",
+      icon: ShoppingCart,
+      matches: (path: string) => path.startsWith("/cart"),
+      badge: cartCount
     },
     {
       name: "Dashboard",

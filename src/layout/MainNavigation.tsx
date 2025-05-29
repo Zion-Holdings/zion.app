@@ -2,7 +2,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, ShoppingCart } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 import { useTranslation } from "react-i18next";
 
 interface MainNavigationProps {
@@ -16,6 +17,8 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   const isAuthenticated = !!user;
   const location = useLocation();
   const { t } = useTranslation();
+  const { items } = useCart();
+  const cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
 
   const baseLinks = [
     {
@@ -113,6 +116,27 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             </Link>
           </li>
         )}
+
+        {/* Cart icon with badge */}
+        <li>
+          <Link
+            to="/cart"
+            className={cn(
+              "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
+              location.pathname.startsWith('/cart')
+                ? 'bg-zion-purple/20 text-zion-cyan'
+                : 'text-white hover:bg-zion-purple/10 hover:text-zion-cyan'
+            )}
+          >
+            <ShoppingCart className="w-4 h-4 mr-1" />
+            Cart
+            {cartCount > 0 && (
+              <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                {cartCount}
+              </span>
+            )}
+          </Link>
+        </li>
       </ul>
     </nav>
   );
