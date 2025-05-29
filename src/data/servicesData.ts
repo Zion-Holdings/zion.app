@@ -133,4 +133,88 @@ export const SERVICES: ProductListing[] = [
     rating: 4.8,
     reviewCount: 85,
   },
+  {
+    id: "service-7",
+    title: "DevOps Automation Setup",
+    description:
+      "Implement CI/CD pipelines and infrastructure automation to streamline deployments and reduce downtime.",
+    category: "Management",
+    price: 5500,
+    currency: "$",
+    tags: ["DevOps", "Automation", "CI/CD"],
+    author: {
+      name: "Pipeline Pros",
+      id: "pipeline-pros",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-02-20T09:00:00.000Z",
+    aiScore: 90,
+    rating: 4.7,
+    reviewCount: 58,
+  },
+  {
+    id: "service-8",
+    title: "Enterprise SaaS Deployment",
+    description:
+      "End-to-end deployment of scalable SaaS applications with ongoing maintenance and support.",
+    category: "Development",
+    price: 6500,
+    currency: "$",
+    tags: ["SaaS", "Cloud", "Scaling"],
+    author: {
+      name: "SaaSify Corp",
+      id: "saasify",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1556485687-b8553ddfbc05?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-03-01T12:00:00.000Z",
+    aiScore: 91,
+    rating: 4.6,
+    reviewCount: 42,
+  },
+  {
+    id: "service-9",
+    title: "Machine Learning Model Optimization",
+    description:
+      "Improve existing ML models for better accuracy and performance using best-practice tuning techniques.",
+    category: "Analytics",
+    price: 4800,
+    currency: "$",
+    tags: ["Machine Learning", "Optimization", "Tuning"],
+    author: {
+      name: "ModelTune Labs",
+      id: "modeltune",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-02-10T08:00:00.000Z",
+    aiScore: 93,
+    rating: 4.8,
+    reviewCount: 69,
+  },
+  {
+    id: "service-10",
+    title: "Blockchain Integration Consulting",
+    description:
+      "Consulting services to integrate blockchain technology into existing business processes and applications.",
+    category: "Consulting",
+    price: 7000,
+    currency: "$",
+    tags: ["Blockchain", "Integration", "Consulting"],
+    author: {
+      name: "BlockAdvisors",
+      id: "block-advisors",
+    },
+    images: [
+      "https://images.unsplash.com/photo-1518544881698-88d0d5b4b04b?auto=format&fit=crop&w=800&h=500",
+    ],
+    createdAt: "2024-01-25T15:30:00.000Z",
+    aiScore: 89,
+    rating: 4.5,
+    reviewCount: 36,
+  },
 ];
