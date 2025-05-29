@@ -67,7 +67,11 @@ export function TestimonialCarousel() {
                     <CardContent className="p-8 flex flex-col md:flex-row gap-6">
                       <div className="flex-shrink-0 flex flex-col items-center">
                         <Avatar className="h-20 w-20 border-2 border-zion-cyan mb-3">
-                          <img src={testimonial.avatar} alt={testimonial.author} />
+                          <img
+                            src={testimonial.avatar}
+                            alt={testimonial.author}
+                            loading="lazy"
+                          />
                         </Avatar>
                         <div className="text-center md:text-left">
                           <p className="font-bold text-zion-cyan">{testimonial.author}</p>

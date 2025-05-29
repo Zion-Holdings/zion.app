@@ -55,10 +55,11 @@ export const AppScreenshots: React.FC = () => {
                 key={screenshot.id} 
                 className="flex-shrink-0 w-60 h-[500px] snap-center rounded-xl overflow-hidden border-2 border-zion-purple/30"
               >
-                <img 
-                  src={screenshot.src} 
+                <img
+                  src={screenshot.src}
                   alt={screenshot.alt}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             ))}

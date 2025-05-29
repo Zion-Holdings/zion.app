@@ -62,10 +62,11 @@ export function IntegrationConnectionModal({ isOpen, onClose, integration }: Int
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader className="flex flex-row items-center gap-4">
-          <img 
-            src={integration.logoUrl} 
-            alt={`${integration.name} logo`} 
-            className="h-12 w-12 rounded" 
+          <img
+            src={integration.logoUrl}
+            alt={`${integration.name} logo`}
+            className="h-12 w-12 rounded"
+            loading="lazy"
             onError={(e) => {
               (e.target as HTMLImageElement).src = "/placeholder.svg";
             }}

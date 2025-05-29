@@ -78,10 +78,11 @@ export function ServiceDetails({ country }: ServiceDetailsProps) {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="overflow-hidden rounded-lg mb-4">
-          <img 
+          <img
             src={getRegionalImage(country)}
             alt={`Datacenter in ${country}`}
             className="w-full object-cover h-48 transform transition-transform duration-500 hover:scale-110"
+            loading="lazy"
           />
         </div>
         

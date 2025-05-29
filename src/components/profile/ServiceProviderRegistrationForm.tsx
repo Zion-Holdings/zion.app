@@ -427,6 +427,7 @@ export function ServiceProviderRegistrationForm() {
                             src={uploadedAvatar}
                             alt="Avatar preview"
                             className="w-full h-full object-cover"
+                            loading="lazy"
                           />
                         </AspectRatio>
                       ) : (
