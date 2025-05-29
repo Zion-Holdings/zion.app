@@ -3,6 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { useTranslation } from "react-i18next";
+import { useFavorites } from "@/hooks/useFavorites";
+import { useCart } from "@/context";
+import { Heart, MessageSquare, ShoppingCart } from "lucide-react";
 
 interface MainNavigationProps {
   isAdmin?: boolean;

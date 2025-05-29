@@ -47,6 +47,9 @@ import OpenAppRedirect from './pages/OpenAppRedirect';
 import ContactPage from './pages/Contact';
 import ZionHireAI from './pages/ZionHireAI';
 import RequestQuotePage from './pages/RequestQuote';
+import CartPage from './pages/Cart';
+import WishlistPage from './pages/Wishlist';
+import CheckoutPage from './pages/Checkout';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -74,11 +77,10 @@ const baseRoutes = [
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
-  { path: '/cart', element: <Checkout /> },
+  { path: '/cart', element: <CartPage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/wishlist', element: <WishlistPage /> },
-  { path: '/cart', element: <CartPage /> },
   { path: '/checkout', element: <CheckoutPage /> },
 ];
 
