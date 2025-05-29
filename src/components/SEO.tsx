@@ -1,5 +1,5 @@
 
-import { Helmet } from "react-helmet-async";
+import { NextSeo } from 'next-seo';
 
 interface SEOProps {
   title: string;
@@ -25,30 +25,36 @@ export function SEO({
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   
   return (
-    <Helmet>
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
-      
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
-      {ogUrl && <meta property="og:url" content={ogUrl} />}
-      
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@lovable_dev" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
-      
-      {/* Canonical URL */}
-      {canonical && <link rel="canonical" href={canonical} />}
-      
-      {/* No index directive for search engines if needed */}
-      {noindex && <meta name="robots" content="noindex" />}
-    </Helmet>
+    <NextSeo
+      title={fullTitle}
+      description={description}
+      canonical={canonical}
+      noindex={noindex}
+      openGraph={{
+        url: ogUrl || canonical,
+        title: fullTitle,
+        description,
+        images: [
+          {
+            url: ogImage,
+          },
+        ],
+      }}
+      twitter={{
+        handle: '@lovable_dev',
+        site: '@lovable_dev',
+        cardType: 'summary_large_image',
+      }}
+      additionalMetaTags={
+        keywords
+          ? [
+              {
+                name: 'keywords',
+                content: keywords,
+              },
+            ]
+          : undefined
+      }
+    />
   );
 }
