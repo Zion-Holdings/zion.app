@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { getStripe } from '@/utils/getStripe';
 
 interface CartItem {
@@ -13,9 +13,16 @@ interface CartItem {
 
 export default function Checkout() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [items, setItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
+    const sku = searchParams.get('sku');
+    if (sku) {
+      setItems([{ id: sku, name: sku, price: 25, quantity: 1 }]);
+      return;
+    }
+
     const stored = safeStorage.getItem('cart');
     if (stored) {
       try {
@@ -37,7 +44,7 @@ export default function Checkout() {
         quantity: 1,
       },
     ]);
-  }, []);
+  }, [searchParams]);
 
   const handleCheckout = async () => {
     const product = items[0];
