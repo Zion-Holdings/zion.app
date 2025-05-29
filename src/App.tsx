@@ -34,6 +34,7 @@ import CommunityPage from './pages/CommunityPage';
 import Categories from './pages/Categories';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Sitemap from './pages/Sitemap';
 import PartnersPage from './pages/Partners';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -62,6 +63,7 @@ const baseRoutes = [
   { path: '/community', element: <CommunityPage /> },
   { path: '/contact', element: <ContactPage /> },
   { path: '/partners', element: <PartnersPage /> },
+  { path: '/sitemap', element: <Sitemap /> },
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
