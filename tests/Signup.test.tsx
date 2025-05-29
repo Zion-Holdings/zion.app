@@ -6,23 +6,23 @@ import * as toastHook from '@/hooks/use-toast';
 import * as router from 'react-router-dom';
 
 function setup(success = true, errorMsg?: string, status = success ? 201 : 400) {
-  const navigateMock = jest.fn();
-  jest.spyOn(router, 'useNavigate').mockReturnValue(navigateMock);
-  jest.spyOn(authHook, 'useAuth').mockReturnValue({
-    loginWithGoogle: jest.fn(),
-    loginWithFacebook: jest.fn(),
-    loginWithTwitter: jest.fn(),
+  const navigateMock = vi.fn();
+  vi.spyOn(router, 'useNavigate').mockReturnValue(navigateMock);
+  vi.spyOn(authHook, 'useAuth').mockReturnValue({
+    loginWithGoogle: vi.fn(),
+    loginWithFacebook: vi.fn(),
+    loginWithTwitter: vi.fn(),
     isAuthenticated: false,
     user: null,
   } as any);
-  const fetchSpy = jest.fn().mockResolvedValue({
+  const fetchSpy = vi.fn().mockResolvedValue({
     status,
     json: () => Promise.resolve(success ? { token: 'jwt' } : { message: errorMsg }),
   } as Response);
   global.fetch = fetchSpy as any;
 
-  const successSpy = jest.spyOn(toastHook.toast, 'success').mockImplementation(() => {});
-  const errorSpy = jest.spyOn(toastHook.toast, 'error').mockImplementation(() => {});
+  const successSpy = vi.spyOn(toastHook.toast, 'success').mockImplementation(() => {});
+  const errorSpy = vi.spyOn(toastHook.toast, 'error').mockImplementation(() => {});
 
   render(
     <MemoryRouter>

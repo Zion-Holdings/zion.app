@@ -19,7 +19,7 @@ it('shows results when searching services', async () => {
   const data = { ...baseData };
   const updateFormData = (d: Partial<QuoteFormData>) => Object.assign(data, d);
 
-  global.fetch = jest.fn().mockResolvedValue({
+  global.fetch = vi.fn().mockResolvedValue({
     ok: true,
     json: async () => [
       { id: 'service-3', title: 'IT Consulting', category: 'service' },
