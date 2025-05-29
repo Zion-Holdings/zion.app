@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
@@ -13,11 +14,12 @@ import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
-      <SEO 
-        title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place."
+      <SEO
+        title={t('home.seo_title')}
+        description={t('home.seo_description')}
         keywords="AI, technology, marketplace, services, talent"
         canonical="https://app.ziontechgroup.com/"
       />

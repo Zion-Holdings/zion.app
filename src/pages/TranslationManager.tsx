@@ -138,7 +138,7 @@ export default function TranslationManager() {
   
   const handleTranslateKey = async (key: string) => {
     // Find first non-empty translation to use as source
-    let sourceLanguage: SupportedLanguage = 'en';
+    let sourceLanguage: SupportedLanguage = 'en-US';
     let sourceText = '';
     
     for (const lang of supportedLanguages.map(l => l.code)) {

@@ -34,7 +34,7 @@ export function LanguageSelector() {
           >
             <div className="flex items-center gap-2">
               <span className="text-lg">{lang.flag}</span>
-              <span>{t(`language.${lang.code}`)}</span>
+              <span>{t(`language.${lang.code.split('-')[0]}`)}</span>
             </div>
           </DropdownMenuItem>
         ))}

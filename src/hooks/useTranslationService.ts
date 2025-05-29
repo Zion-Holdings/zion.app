@@ -22,8 +22,8 @@ export function useTranslationService() {
   const translateContent = async (
     content: string,
     contentType: ContentType = 'general',
-    sourceLanguage: SupportedLanguage = 'en',
-    targetLanguages: SupportedLanguage[] = ['en', 'es', 'pt', 'ar']
+    sourceLanguage: SupportedLanguage = 'en-US',
+    targetLanguages: SupportedLanguage[] = ['en-US', 'es-ES']
   ): Promise<TranslationResponse> => {
     setIsTranslating(true);
 
