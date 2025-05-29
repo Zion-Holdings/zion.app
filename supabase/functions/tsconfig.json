@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node"], // Supabase functions are Node.js environment
+    // Add other Supabase specific options if necessary, e.g., "lib": ["es2020"]
+    "lib": ["es2020", "dom"] // DOM might be needed for things like fetch, Headers, Request, Response
+  },
+  "include": ["./**/*.ts"]
+}

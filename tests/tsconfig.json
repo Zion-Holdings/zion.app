@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "jsx": "react-jsx",
+    "esModuleInterop": true, // Often useful in test environments
+    "allowSyntheticDefaultImports": true // For modules that don't have default export
+  },
+  "include": ["./**/*.ts", "./**/*.tsx", "./**/*.js", "./**/*.jsx"], // Include JS/JSX for mixed test suites
+  "exclude": ["node_modules"]
+}

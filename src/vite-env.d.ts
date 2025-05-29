@@ -13,7 +13,7 @@ interface ImportMeta {
 // Global type declarations
 declare namespace React {
   type ReactNode = React.ReactNode;
-  type FC<P = {}> = React.FC<P>;
+  type FC<P = Record<string, unknown>> = React.FC<P>;
   type FormEvent<T = Element> = React.FormEvent<T>;
   type KeyboardEvent<T = Element> = React.KeyboardEvent<T>;
   type ChangeEvent<T = Element> = React.ChangeEvent<T>;
@@ -41,8 +41,8 @@ declare module 'lovable-tagger' {
 }
 
 // Add Node.js globals
-declare var __dirname: string;
-declare var process: {
+declare const __dirname: string;
+declare const process: {
   env: {
     [key: string]: string | undefined;
     NODE_ENV: 'development' | 'production' | 'test';

@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node", "jest"], 
+    "jsx": "react-jsx" 
+  },
+  "include": [
+    "./*.ts",
+    "./*.tsx",
+    "../src/**/*.stories.tsx",
+    "../src/**/*.stories.ts",
+    "../stories/**/*.stories.tsx",
+    "../stories/**/*.stories.ts"
+  ],
+  "exclude": ["node_modules"]
+}

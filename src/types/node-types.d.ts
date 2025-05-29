@@ -11,6 +11,6 @@ interface Process {
   };
 }
 
-declare var process: Process;
-declare var console: Console;
-declare var __dirname: string;
+declare const process: Process;
+declare const console: Console;
+declare const __dirname: string;
