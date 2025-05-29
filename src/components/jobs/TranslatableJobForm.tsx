@@ -86,7 +86,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
   
   // Auto translate function
   const autoTranslate = async (field: 'title' | 'description' | 'requirements') => {
-    let sourceLanguage: SupportedLanguage = 'en';
+    let sourceLanguage: SupportedLanguage = 'en-US';
     let content = '';
     
     // Find first non-empty content to translate
