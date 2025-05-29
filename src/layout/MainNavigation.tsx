@@ -2,7 +2,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, Heart } from "lucide-react";
+import { useFavorites } from "@/hooks/useFavorites";
 import { useTranslation } from "react-i18next";
 
 interface MainNavigationProps {
@@ -14,6 +15,7 @@ interface MainNavigationProps {
 export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: MainNavigationProps) {
   const { user } = useAuth();
   const isAuthenticated = !!user;
+  const { count } = useFavorites();
   const location = useLocation();
   const { t } = useTranslation();
 
@@ -90,6 +92,29 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             </Link>
           </li>
         ))}
+
+        {/* Wishlist link */}
+        {isAuthenticated && (
+          <li>
+            <Link
+              to="/wishlist"
+              aria-label="Wishlist"
+              className={cn(
+                "relative inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors",
+                location.pathname === "/wishlist"
+                  ? "bg-zion-purple/20 text-zion-cyan"
+                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+              )}
+            >
+              <Heart className="w-4 h-4" />
+              {count > 0 && (
+                <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                  {count}
+                </span>
+              )}
+            </Link>
+          </li>
+        )}
         
         {/* Messages link with unread counter */}
         {isAuthenticated && (
