@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Input } from '@/components/ui/input';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
 import { getStripe } from '@/utils/getStripe';
@@ -48,6 +50,7 @@ export default function CheckoutPage() {
         setItems([]);
       }
     }
+  }, [searchParams]);
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
