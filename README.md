@@ -122,6 +122,12 @@ Supabase edge function that provides whitelabel settings failed. Confirm that
 environment and that you have network connectivity. The tenant hook will retry
 a few times before giving up.
 
+### Translation Service
+
+Automatic translations rely on OpenAI. Set `VITE_OPENAI_API_KEY` (or
+`NEXT_PUBLIC_OPENAI_API_KEY`) to allow the client to contact the API directly
+when the Supabase function is unavailable.
+
 ## Testing
 
 Run unit tests with:
