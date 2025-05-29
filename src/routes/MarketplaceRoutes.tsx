@@ -20,6 +20,7 @@ import SearchPage from "@/pages/SearchPage";
 import ProjectRoom from "@/pages/ProjectRoom";
 import VideoCall from "@/pages/VideoCall";
 import Checkout from "@/pages/Checkout";
+import NewProductsPage from "@/pages/NewProductsPage";
 
 const MarketplaceRoutes = () => {
   return (
@@ -35,6 +36,7 @@ const MarketplaceRoutes = () => {
       {/* Equipment Routes */}
       <Route path="/equipment" element={<EquipmentPage />} />
       <Route path="/equipment/:id" element={<EquipmentDetail />} />
+      <Route path="/new-products" element={<NewProductsPage />} />
       
       {/* Job Routes */}
       <Route
