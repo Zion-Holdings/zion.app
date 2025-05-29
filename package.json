@@ -106,11 +106,9 @@
     "react-dom": "^18.2.0"
   },
   "overrides": {
-    "glob": "^10.3.10",
     "rimraf": "^5.0.5"
   },
   "resolutions": {
-    "glob": "^10.4.5",
     "rimraf": "^5.0.5"
   }
 }
