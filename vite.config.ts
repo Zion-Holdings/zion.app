@@ -32,13 +32,13 @@ export default defineConfig({
       output: {
         inlineDynamicImports: false,
       },
-      // Avoid bundling axios so it can be provided via CDN
-      external: ['axios'],
+      // Bundle axios with the app to avoid missing module errors
     },
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@': path.resolve(__dirname, './src'),
+      'axios': path.resolve(__dirname, './src/lib/axios.ts')
     }
   },
   server: {

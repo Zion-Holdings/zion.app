@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { supabaseStorageAdapter } from './safeStorageAdapter';
 
 const supabaseUrl =
   import.meta.env.VITE_SUPABASE_URL ||
@@ -18,6 +19,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     persistSession: true,
     autoRefreshToken: true,
+    storage: supabaseStorageAdapter,
   },
   global: {
     headers: {
