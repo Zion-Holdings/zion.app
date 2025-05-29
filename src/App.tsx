@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context'; // Added CartProvider
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
@@ -49,9 +50,11 @@ import ZionHireAI from './pages/ZionHireAI';
 import RequestQuotePage from './pages/RequestQuote';
 import CartPage from './pages/Cart';
 import CheckoutPage from './pages/Checkout';
+import ProductPage from './pages/ProductPage'; // Added ProductPage
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/product/:id', element: <ProductPage /> }, // Added ProductPage route
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/register', element: <Signup /> },
@@ -89,9 +92,10 @@ const App = () => {
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
-        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-          <ErrorBoundary>
-          <Routes>
+        <CartProvider> {/* Added CartProvider Wrapper */}
+          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+            <ErrorBoundary>
+            <Routes>
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
             ))}
@@ -106,12 +110,13 @@ const App = () => {
             <Route path="/community/*" element={<CommunityRoutes />} />
             <Route path="/developers/*" element={<DeveloperRoutes />} />
             <Route path="*" element={<ErrorRoutes />} />
-          </Routes>
-          </ErrorBoundary>
-        </Suspense>
-        <Toaster />
-        <SonnerToaster position="top-right" />
-        <PwaInstallButton />
+            </Routes>
+            </ErrorBoundary>
+          </Suspense>
+          <Toaster />
+          <SonnerToaster position="top-right" />
+          <PwaInstallButton />
+        </CartProvider> {/* Added CartProvider Wrapper */}
       </ThemeProvider>
     </WhitelabelProvider>
   );

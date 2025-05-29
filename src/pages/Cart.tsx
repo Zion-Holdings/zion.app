@@ -1,44 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { safeStorage } from '@/utils/safeStorage';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
-
-interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-}
+import { useCart } from '../../context'; // Import useCart
+import { CartItem } from '../../types/cart'; // Import CartItem type
 
 export default function CartPage() {
   const navigate = useNavigate();
-  const [items, setItems] = useState<CartItem[]>([]);
+  const { cartState, dispatch } = useCart(); // Use CartContext
+  const { items } = cartState; // Get items from cartState
 
-  useEffect(() => {
-    const stored = safeStorage.getItem('cart');
-    if (stored) {
-      try {
-        setItems(JSON.parse(stored) as CartItem[]);
-      } catch {
-        setItems([]);
-      }
-    }
-  }, []);
-
-  const updateQuantity = (id: string, qty: number) => {
-    setItems(prev => {
-      const updated = prev.map(i => i.id === id ? { ...i, quantity: qty } : i);
-      safeStorage.setItem('cart', JSON.stringify(updated));
-      return updated;
-    });
+  const updateQuantity = (id: string | number, qty: number) => {
+    // Ensure quantity is at least 1, reducer also handles this but good for immediate UI feedback if needed
+    const newQuantity = Math.max(1, qty); 
+    dispatch({ type: 'UPDATE_QUANTITY', payload: { id, quantity: newQuantity } });
   };
 
-  const removeItem = (id: string) => {
-    setItems(prev => {
-      const updated = prev.filter(i => i.id !== id);
-      safeStorage.setItem('cart', JSON.stringify(updated));
-      return updated;
-    });
+  const removeItem = (id: string | number) => {
+    dispatch({ type: 'REMOVE_ITEM', payload: { id } });
   };
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
