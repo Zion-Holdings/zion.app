@@ -23,7 +23,6 @@ import { NotificationProvider } from './context';
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
 import { ViewModeProvider } from './context/ViewModeContext';
-import { CartProvider } from './context/CartContext';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 
 // Initialize a React Query client with global error handling
@@ -52,11 +51,9 @@ try {
                   <AnalyticsProvider>
                     <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
                       <ViewModeProvider>
-                        <CartProvider>
-                          <AppLayout>
-                            <App />
-                          </AppLayout>
-                        </CartProvider>
+                        <AppLayout>
+                          <App />
+                        </AppLayout>
                       </ViewModeProvider>
                       <LanguageDetectionPopup />
                     </LanguageProvider>
