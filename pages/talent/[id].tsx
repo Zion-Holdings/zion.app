@@ -15,11 +15,16 @@ const TalentPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!router.isReady) {
+      return;
+    }
+
     const fetchTalentProfile = async () => {
-      const { id } = router.query;
+      const idFromQuery = router.query?.id;
+      const id = Array.isArray(idFromQuery) ? idFromQuery[0] : idFromQuery;
 
       if (!id) {
-        setError("Talent ID not found in URL.");
+        setError("Talent ID not found in URL or is invalid.");
         setLoading(false);
         return;
       }
@@ -40,10 +45,8 @@ const TalentPage: React.FC = () => {
       }
     };
 
-    if (router.isReady) {
-      fetchTalentProfile();
-    }
-  }, [router.isReady, router.query]);
+    fetchTalentProfile();
+  }, [router.isReady, router.query]); // router.query is included to refetch if id changes.
 
   if (loading) {
     return (
