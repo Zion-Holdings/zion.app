@@ -6,6 +6,7 @@ import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
 import { getStripe } from '@/utils/getStripe';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
+import { useAuth } from '@/hooks/useAuth';
 import {
   Form,
   FormField,
@@ -35,6 +36,7 @@ export default function Checkout() {
   const [searchParams] = useSearchParams();
   const [items, setItems] = useState<CartItem[]>([]);
   const form = useForm<CheckoutForm>({ defaultValues: { name: '', email: '', address: '', city: '', country: '' } });
+  const { user } = useAuth();
 
   useEffect(() => {
     const sku = searchParams.get('sku');
@@ -73,6 +75,17 @@ export default function Checkout() {
           },
         });
         if (payment.error) throw payment.error;
+        if (user?.id) {
+          try {
+            await fetch('/api/points/add', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ userId: user.id, amount: subtotal, orderId: result.id }),
+            });
+          } catch (e) {
+            console.error('Failed to add points', e);
+          }
+        }
         safeStorage.removeItem('cart');
         navigate(`/orders/${result.id}`);
       }
