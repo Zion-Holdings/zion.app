@@ -13,9 +13,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'drf_yasg',
     'authentication',
+vu1sbl-codex/implement-cart-recovery-logic
     'backend.cart',
     'backend.notifications',
+    'public_api',
+main
 ]
 
 MIDDLEWARE = [
@@ -66,6 +71,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379/1'),
+    }
+}
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
@@ -82,3 +94,22 @@ CELERY_BEAT_SCHEDULE = {
 }
 
 PASSWORD_RESET_TIMEOUT = 900  # 15 minutes
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'public_api.authentication.ApiKeyAuthentication',
+    ],
+    'DEFAULT_THROTTLE_CLASSES': [
+        'public_api.throttling.RedisDailyThrottle',
+    ],
+}
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'ApiKeyAuth': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'X-API-KEY'
+        }
+    }
+}

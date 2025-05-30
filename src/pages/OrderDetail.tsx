@@ -6,6 +6,7 @@ import { generateInvoicePdf } from '@/utils/generateInvoicePdf';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
+import { OrderTimeline } from '@/components/orders/OrderTimeline';
 
 export default function OrderDetailPage() {
   // useParams may be untyped in this environment, so cast to the expected shape
@@ -71,6 +72,11 @@ export default function OrderDetailPage() {
         <p>{order.shippingAddress.name}</p>
         <p>{order.shippingAddress.street}</p>
         <p>{order.shippingAddress.city}, {order.shippingAddress.state} {order.shippingAddress.zip}</p>
+      </div>
+
+      <div>
+        <h2 className="font-semibold mb-2">Tracking</h2>
+        <OrderTimeline events={order.trackingEvents} />
       </div>
 
       <div className="flex gap-3">

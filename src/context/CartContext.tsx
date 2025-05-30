@@ -1,8 +1,11 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import { CartContextType, CartItem, CartAction } from '@/types/cart';
+vu1sbl-codex/implement-cart-recovery-logic
 import { safeStorage } from '@/utils/safeStorage';
 import { useAuth } from '@/hooks/useAuth';
-import { useAnalytics } from './AnalyticsContext';
+import { useAnalytics } from './AnalyticsContext'
+import { saveCart, getCart } from '@/lib/db';
+main
 
 interface CartState { items: CartItem[]; }
 
@@ -44,18 +47,15 @@ export function useCart(): CartContextType {
 }
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  const [state, dispatch] = useReducer(
-    cartReducer,
-    initialState,
-    () => {
-      try {
-        const stored = safeStorage.getItem('cart');
-        return stored ? { items: JSON.parse(stored) as CartItem[] } : initialState;
-      } catch {
-        return initialState;
+  const [state, dispatch] = useReducer(cartReducer, initialState);
+
+  useEffect(() => {
+    getCart().then(items => {
+      if (items.length) {
+        dispatch({ type: 'SET_ITEMS', payload: items as CartItem[] });
       }
-    }
-  );
+    });
+  }, []);
 
   const { user } = useAuth();
   const { trackConversion } = useAnalytics();
@@ -76,6 +76,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
+vu1sbl-codex/implement-cart-recovery-logic
     safeStorage.setItem('cart', JSON.stringify(state.items));
     fetch('/cart/snapshot', {
       method: 'POST',
@@ -86,6 +87,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         email: user?.email,
       }),
     }).catch(() => {});
+    saveCart(state.items);
+main
   }, [state.items]);
 
   const value: CartContextType = {
