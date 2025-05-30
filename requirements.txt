@@ -1,0 +1,5 @@
+Django>=4.2
+sendgrid>=6.10
+python-json-logger>=2.0
+prometheus-client>=0.20
+celery>=5.3
