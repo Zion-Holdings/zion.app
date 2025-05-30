@@ -25,7 +25,7 @@ export function FeatureCTAs() {
       title: "AI Talent Matching",
       description: "Our AI-powered matching algorithm connects you with the perfect talent or job based on skills, experience, and preferences.",
       icon: <Search className="h-10 w-10 p-2 rounded-md bg-blue-100 text-blue-700" />,
-      link: "/marketplace",
+      link: "/match",
       badge: "Popular",
       details: "Leveraging advanced machine learning, our matching system analyzes over 100+ data points to create perfect connections between talents and opportunities."
     },
@@ -134,7 +134,11 @@ export function FeatureCTAs() {
               </CardContent>
               <CardFooter>
                 <Button asChild className="w-full gap-1">
-                  <Link to={feature.link}>
+                  <Link
+                    to={feature.link}
+                    aria-label={`Explore ${feature.title}`}
+                    className="cursor-pointer"
+                  >
                     <span>Explore {feature.title}</span>
                     <ArrowRight className="h-4 w-4" />
                   </Link>
