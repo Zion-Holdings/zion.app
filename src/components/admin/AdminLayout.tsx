@@ -10,6 +10,7 @@ const navItems = [
   { title: 'Services', href: '/admin/services' },
   { title: 'Users', href: '/admin/users' },
   { title: 'Reports', href: '/admin/reports' },
+  { title: 'Feature Flags', href: '/admin/feature-flags' },
 ];
 
 export function AdminLayout({ children }: AdminLayoutProps) {

@@ -11,6 +11,8 @@ import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import FeatureFlag from "@/components/FeatureFlag";
+import ElasticSearchSearch from "@/components/search/ElasticSearchSearch";
 
 export default function Home() {
   return (
@@ -37,6 +39,11 @@ export default function Home() {
       <HowItWorksSection />
       <FeaturedListingsSection />
       <NewsletterSection />
+      <FeatureFlag name="elasticsearch-search">
+        <div className="max-w-xl mx-auto py-8">
+          <ElasticSearchSearch />
+        </div>
+      </FeatureFlag>
     </div>
   );
 }
