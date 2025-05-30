@@ -10,6 +10,7 @@ vi.mock('@/hooks/useAuth', () => ({
     loginWithGoogle: vi.fn(),
     loginWithFacebook: vi.fn(),
     loginWithTwitter: vi.fn(),
+    login: vi.fn().mockResolvedValue({ error: null }),
     isAuthenticated: false,
     user: null,
   }),
@@ -27,18 +28,24 @@ vi.mock('react-router-dom', async () => {
   };
 });
 
-function mockFetch(response: any, status = 200) {
-  global.fetch = vi.fn().mockResolvedValue({
-    status,
-    json: () => Promise.resolve(response),
-  }) as any;
+function mockFetch(responses: { status: number; body: any }[]) {
+  global.fetch = vi.fn();
+  responses.forEach(({ status, body }) => {
+    (global.fetch as any).mockResolvedValueOnce({
+      status,
+      json: () => Promise.resolve(body),
+    });
+  });
 }
 
 test('successful registration redirects to dashboard', async () => {
   const navigateMock = vi.fn();
   (router.useNavigate as any).mockReturnValue(navigateMock);
   (toastHook.toast.success as any).mockImplementation(() => {});
-  mockFetch({ token: 'jwt' }, 201);
+  mockFetch([
+    { status: 201, body: { token: 'jwt' } },
+    { status: 200, body: { accessToken: 'jwt', refreshToken: 'ref' } }
+  ]);
 
   render(
     <MemoryRouter>
@@ -63,6 +70,7 @@ test('successful registration redirects to dashboard', async () => {
 
   await screen.findByRole('button', { name: /create account/i });
   expect(toastHook.toast.success).toHaveBeenCalledWith('Welcome to ZionAI 🎉');
+  expect(localStorage.getItem('token')).toBe('jwt');
   expect(navigateMock).toHaveBeenCalledWith('/dashboard');
 });
 
