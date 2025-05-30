@@ -8,8 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";
 import { useEffect, useState } from "react";
+import useSWR from "swr";
 import apiClient from "@/services/apiClient";
-import retry from "@/utils/retry";
+import { captureException } from "@/utils/sentry";
+import { Skeleton } from "@/components/ui/skeleton";
 
 
 function getRandomItem<T>(arr: T[]): T {
@@ -111,19 +113,24 @@ const SERVICE_FILTERS = [
   { label: 'Strategy', value: 'strategy' },
 ];
 
+async function fetchServices() {
+  try {
+    const res = await apiClient.get('/services');
+    return res.data as ProductListing[];
+  } catch (err) {
+    captureException(err);
+    throw err;
+  }
+}
+
 export default function ServicesPage() {
   const [listings, setListings] = useState<ProductListing[]>(SERVICES);
 
+  const { data, error, isLoading, mutate } = useSWR<ProductListing[]>('/services', fetchServices);
+
   useEffect(() => {
-    async function load() {
-      const res = await retry(() => apiClient.get('/services'), {
-        retries: 3,
-        minTimeout: 500,
-      });
-      setListings(res.data as ProductListing[]);
-    }
-    load();
-  }, []);
+    if (data) setListings(data);
+  }, [data]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -132,6 +139,28 @@ export default function ServicesPage() {
 
     return () => clearInterval(interval);
   }, []);
+
+  if (isLoading) {
+    return (
+      <div data-testid="loading-state" className="p-4 space-y-4">
+        <Skeleton className="h-6 w-1/3" />
+        <Skeleton className="h-[120px] w-full" />
+        <Skeleton className="h-[120px] w-full" />
+        <Skeleton className="h-[120px] w-full" />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div data-testid="error-state" className="py-12 text-center space-y-4">
+        <p className="text-red-400">Failed to load services.</p>
+        <Button data-testid="retry-button" onClick={() => mutate()}>
+          Retry
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <ErrorBoundary>
