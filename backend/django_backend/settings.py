@@ -14,6 +14,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'authentication',
+    'backend.cart',
+    'backend.notifications',
 ]
 
 MIDDLEWARE = [
@@ -30,7 +32,10 @@ ROOT_URLCONF = 'django_backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'authentication' / 'templates'],
+        'DIRS': [
+            BASE_DIR / 'backend' / 'authentication' / 'templates',
+            BASE_DIR / 'backend' / 'cart' / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,5 +70,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+SITE_URL = os.environ.get('SITE_URL', 'http://localhost:5173')
+
+CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL', 'redis://localhost:6379/0')
+CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+CELERY_BEAT_SCHEDULE = {
+    'send-abandoned-cart': {
+        'task': 'backend.cart.tasks.send_abandoned_cart_emails',
+        'schedule': 60 * 30,  # every 30 minutes
+    },
+}
 
 PASSWORD_RESET_TIMEOUT = 900  # 15 minutes
