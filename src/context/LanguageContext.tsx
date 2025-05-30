@@ -1,10 +1,11 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
+import Cookies from 'js-cookie';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../integrations/supabase/client';
 import { toast } from '../components/ui/use-toast';
 
-export type SupportedLanguage = 'en' | 'es' | 'pt' | 'ar';
+export type SupportedLanguage = 'en' | 'es';
 
 export type LanguageContextType = {
   currentLanguage: SupportedLanguage;
@@ -15,9 +16,7 @@ export type LanguageContextType = {
 
 const supportedLanguages = [
   { code: 'en' as SupportedLanguage, name: 'English', flag: '🇺🇸' },
-  { code: 'es' as SupportedLanguage, name: 'Español', flag: '🇪🇸' },
-  { code: 'pt' as SupportedLanguage, name: 'Português', flag: '🇧🇷' },
-  { code: 'ar' as SupportedLanguage, name: 'العربية', flag: '🇸🇦' }
+  { code: 'es' as SupportedLanguage, name: 'Español', flag: '🇪🇸' }
 ];
 
 const defaultLanguageContext: LanguageContextType = {
@@ -51,11 +50,22 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   const [isRTL, setIsRTL] = useState(i18n.dir() === 'rtl');
   
   useEffect(() => {
-    // Set initial language from localStorage or browser
-    const savedLang = safeStorage.getItem('zion_language') as SupportedLanguage;
+    // Set initial language from cookie or localStorage
+    const savedLang = (Cookies.get('zion_language') as SupportedLanguage) ||
+      (safeStorage.getItem('zion_language') as SupportedLanguage);
     if (savedLang && supportedLanguages.some(lang => lang.code === savedLang)) {
       i18n.changeLanguage(savedLang);
       setCurrentLanguage(savedLang);
+    } else {
+      fetch('/api/detect-language')
+        .then(res => res.json())
+        .then(data => {
+          if (data.lang && supportedLanguages.some(l => l === data.lang.substring(0,2))) {
+            i18n.changeLanguage(data.lang.substring(0,2));
+            setCurrentLanguage(data.lang.substring(0,2) as SupportedLanguage);
+          }
+        })
+        .catch(() => {});
     }
   }, []);
   
@@ -101,6 +111,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     try {
       await i18n.changeLanguage(lang);
       setCurrentLanguage(lang);
+      Cookies.set('zion_language', lang, { expires: 365 });
       safeStorage.setItem('zion_language', lang);
       
       // Get language name for toast

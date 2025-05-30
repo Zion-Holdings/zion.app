@@ -44,6 +44,25 @@
     "explore_tools": "Explorar Nuestras Herramientas",
     "tools_description": "Todo lo que necesitas para conectarte con el ecosistema de IA y tecnología"
   },
+  "marketplace": {
+    "title": "Mercado de IA y Tecnología",
+    "description": "Descubra servicios profesionales y productos para sus proyectos de IA y tecnología. Explore nuestra colección de soluciones verificadas.",
+    "search_placeholder": "Buscar en el mercado...",
+    "results_count": "Mostrando {{count}} resultados",
+    "no_results_title": "No se encontraron resultados",
+    "no_results_description": "No pudimos encontrar listados que coincidan con tus filtros. Intenta ajustar tu búsqueda.",
+    "clear_filters": "Borrar filtros"
+  },
+  "checkout": {
+    "title": "Pagar",
+    "name": "Nombre",
+    "email": "Correo",
+    "address": "Dirección",
+    "city": "Ciudad",
+    "country": "País",
+    "subtotal": "Subtotal",
+    "pay": "Pagar con Stripe (prueba)"
+  },
   "jobs": {
     "post_job_title": "Publicar un Trabajo",
     "post_job_description": "Complete el formulario a continuación para publicar su trabajo y encontrar el talento perfecto",

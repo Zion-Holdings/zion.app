@@ -62,6 +62,25 @@
     "tool_chat": "Chat Support",
     "tool_chat_desc": "Get instant assistance from our AI-powered chat"
   },
+  "marketplace": {
+    "title": "AI & Tech Marketplace",
+    "description": "Discover professional services and products for your AI and tech projects. Browse our curated collection of solutions from verified providers.",
+    "search_placeholder": "Search the marketplace...",
+    "results_count": "Showing {{count}} results",
+    "no_results_title": "No Results Found",
+    "no_results_description": "We couldn't find any listings matching your filters. Try adjusting your search criteria.",
+    "clear_filters": "Clear Filters"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "name": "Name",
+    "email": "Email",
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "subtotal": "Subtotal",
+    "pay": "Pay with Stripe (test)"
+  },
   "jobs": {
     "post_job_title": "Post a Job",
     "post_job_description": "Fill out the form below to post your job and find the perfect talent",

@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, useMemo } from "react";
+import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Grid3X3, ListFilter, Loader2 } from "lucide-react";
@@ -61,6 +62,7 @@ function ProductList({ listings, onRequestQuote }: ProductContainerProps) {
 
 export default function Marketplace() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedProductTypes, setSelectedProductTypes] = useState<string[]>([]);
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
@@ -185,10 +187,9 @@ export default function Marketplace() {
   return (
     <main className="flex-grow container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto mb-8">
-          <h1 className="text-3xl font-bold text-white mb-4">AI & Tech Marketplace</h1>
+          <h1 className="text-3xl font-bold text-white mb-4">{t('marketplace.title')}</h1>
           <p className="text-zion-slate-light">
-            Discover professional services and products for your AI and tech projects.
-            Browse our curated collection of solutions from verified providers.
+            {t('marketplace.description')}
           </p>
         </div>
         
@@ -200,7 +201,7 @@ export default function Marketplace() {
                 value={searchQuery}
                 onChange={setSearchQuery}
                 onSelectSuggestion={setSearchQuery}
-                placeholder="Search the marketplace..."
+                placeholder={t('marketplace.search_placeholder')}
                 searchSuggestions={searchSuggestions}
               />
             </div>
@@ -264,7 +265,7 @@ export default function Marketplace() {
             {/* Results count */}
             <div className="mb-6">
               <p className="text-zion-slate-light">
-                Showing {filteredListings.length} results
+                {t('marketplace.results_count', { count: filteredListings.length })}
                 {searchQuery && ` for "${searchQuery}"`}
               </p>
             </div>
@@ -282,15 +283,15 @@ export default function Marketplace() {
               )
             ) : (
               <div className="col-span-2 text-center py-16 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
-                <h2 className="text-2xl font-bold text-white mb-4">No Results Found</h2>
+                <h2 className="text-2xl font-bold text-white mb-4">{t('marketplace.no_results_title')}</h2>
                 <p className="text-zion-slate-light max-w-md mx-auto mb-8">
-                  We couldn't find any listings matching your filters. Try adjusting your search criteria.
+                  {t('marketplace.no_results_description')}
                 </p>
                 <Button
                   onClick={clearAllFilters}
                   className="bg-zion-purple hover:bg-zion-purple-dark"
                 >
-                  Clear Filters
+                  {t('marketplace.clear_filters')}
                 </Button>
               </div>
             )}
