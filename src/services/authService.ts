@@ -10,6 +10,8 @@ export async function loginUser(email: string, password: string) {
     body: JSON.stringify({ email, password }),
   });
   const data = await res.json().catch(() => ({}));
+  console.log('Login API Response Status:', res.status);
+  console.log('Login API Response Body:', data);
   return { res, data };
 }
 
@@ -23,5 +25,7 @@ export async function registerUser(name: string, email: string, password: string
     body: JSON.stringify({ name, email, password }),
   });
   const data = await res.json().catch(() => ({}));
+  console.log('Register API Response Status:', res.status);
+  console.log('Register API Response Body:', data);
   return { res, data };
 }
