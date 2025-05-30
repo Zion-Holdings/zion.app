@@ -10,6 +10,7 @@ import { Slider } from "@/components/ui/slider";
 import { ProductListing, ListingView } from "@/types/listings";
 import { Search, Filter, LayoutGrid, List, Star } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { captureException } from "@/utils/sentry";
 import {
   Pagination,
   PaginationContent,
@@ -61,7 +62,7 @@ export function DynamicListingPage({
     <LayoutGrid className="h-4 w-4" />
   );
   const [isLoading, setIsLoading] = useState(false);
-  const [priceRange, setPriceRange] = useState<PriceRange>(initialPrice);
+  const [priceRange, setPriceRange] = useState<PriceRange>({ min: 0, max: 10000 });
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -82,28 +83,36 @@ export function DynamicListingPage({
   ]);
 
   const handleSliderChange = (values: number[]) => {
-    setCurrentPriceFilter([values[0], values[1]]);
+    const [min, max] = values.map(Number);
+    if (isNaN(min) || isNaN(max)) return;
+    setCurrentPriceFilter([min, max]);
   };
 
-  const filteredListings = allListings.filter(listing => {
-    const matchesSearch = !searchQuery || 
-      listing.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-      listing.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (listing.tags && listing.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase())));
-    
-    const matchesCategory = selectedCategory === "all" || listing.category === selectedCategory;
-    
-    const matchesPrice = listing.price === null || (
-      listing.price >= currentPriceFilter[0] && 
-      listing.price <= currentPriceFilter[1]
-    );
-    
-    const matchesRating = 
-      selectedRating === null || 
-      (listing.rating !== undefined && listing.rating >= selectedRating);
-    
-    return matchesSearch && matchesCategory && matchesPrice && matchesRating;
-  });
+  let filteredListings: ProductListing[] = [];
+  try {
+    filteredListings = allListings.filter(listing => {
+      const matchesSearch = !searchQuery ||
+        listing.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        listing.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (listing.tags && listing.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase())));
+
+      const matchesCategory = selectedCategory === "all" || listing.category === selectedCategory;
+
+      const matchesPrice = listing.price === null || (
+        listing.price >= currentPriceFilter[0] &&
+        listing.price <= currentPriceFilter[1]
+      );
+
+      const matchesRating =
+        selectedRating === null ||
+        (listing.rating !== undefined && listing.rating >= selectedRating);
+
+      return matchesSearch && matchesCategory && matchesPrice && matchesRating;
+    });
+  } catch (error) {
+    captureException(error);
+    console.error('Listing filter error:', error);
+  }
 
   const totalPages = itemsPerPage
     ? Math.ceil(filteredListings.length / itemsPerPage)
