@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Grid3X3, ListFilter, Loader2 } from "lucide-react";
+import { LayoutGrid, List, Loader2 } from "lucide-react";
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { FilterSidebar } from "@/components/search/FilterSidebar";
 import { ActiveFiltersBar } from "@/components/search/ActiveFiltersBar";
@@ -14,7 +14,8 @@ import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { SearchSuggestion } from "@/types/search";
 import styles from './Marketplace.module.css';
-import { useViewMode } from '@/context/ViewModeContext';
+import { useViewMode, ViewMode } from '@/context/ViewModeContext';
+import { cn } from '@/lib/utils';
 import {
   Pagination,
   PaginationContent,
@@ -69,6 +70,7 @@ export default function Marketplace() {
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
   const [isLoading, setIsLoading] = useState(false);
   const { viewMode, setViewMode } = useViewMode();
+  const createViewModeHandler = (mode: ViewMode) => () => setViewMode(mode);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
@@ -208,22 +210,22 @@ export default function Marketplace() {
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={() => setViewMode('grid')}
+                onClick={createViewModeHandler('grid')}
                 aria-label="Grid view"
                 aria-pressed={viewMode === 'grid'}
                 className="text-zion-slate-light"
               >
-                <Grid3X3 className="h-4 w-4" />
+                <LayoutGrid className={cn('h-4 w-4', viewMode === 'grid' && 'text-green-400')} />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={() => setViewMode('list')}
+                onClick={createViewModeHandler('list')}
                 aria-label="List view"
                 aria-pressed={viewMode === 'list'}
                 className="text-zion-slate-light"
               >
-                <ListFilter className="h-4 w-4" />
+                <List className={cn('h-4 w-4', viewMode === 'list' && 'text-green-400')} />
               </Button>
             </div>
           </div>
