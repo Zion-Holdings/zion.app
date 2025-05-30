@@ -4,8 +4,9 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
-import { getStripe } from '@/utils/getStripe';
+import { getStripe, isProdDomain } from '@/utils/getStripe';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
+import { Badge } from '@/components/ui/badge';
 import { useAuth } from '@/hooks/useAuth';
 import {
   Form,
@@ -37,6 +38,7 @@ export default function Checkout() {
   const [items, setItems] = useState<CartItem[]>([]);
   const form = useForm<CheckoutForm>({ defaultValues: { name: '', email: '', address: '', city: '', country: '' } });
   const { user } = useAuth();
+  const testMode = !isProdDomain();
 
   useEffect(() => {
     const sku = searchParams.get('sku');
@@ -96,6 +98,12 @@ export default function Checkout() {
 
   return (
     <div className="container max-w-2xl py-10">
+      {testMode && (
+        <div className="mb-4 flex items-center gap-2">
+          <Badge variant="warning">Test Mode</Badge>
+          <span className="text-sm">Use test card <code className="font-mono">4242 4242 4242 4242</code></span>
+        </div>
+      )}
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold">Checkout</h1>
         <PointsBadge />
@@ -154,7 +162,7 @@ export default function Checkout() {
                 <span>${subtotal.toFixed(2)}</span>
               </div>
               <Button className="w-full" type="submit">
-                Pay with Stripe (test)
+                Pay with Stripe{testMode ? ' (test)' : ''}
               </Button>
             </div>
           </form>
