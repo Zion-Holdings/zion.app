@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -7,6 +7,7 @@ import { TALENT_PROFILES } from '@/data/talentData';
 import type { TalentProfile } from '@/types/talent';
 import TalentDetails from '@/components/talent/TalentDetails';
 import NotFound from '@/components/NotFound';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 
 interface TalentPageProps {
   talent: (TalentProfile & { social?: Record<string, string> }) | null;
@@ -14,8 +15,14 @@ interface TalentPageProps {
 
 const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
   const router = useRouter();
+  useEffect(() => {
+    if (!talent) {
+      console.log('TalentPage: talent prop is undefined');
+    }
+  }, [talent]);
 
-  if (router.isFallback) {
+  const isFallback = (router as any).isFallback;
+  if (isFallback) {
     return (
       <div className="flex justify-center py-20">
         <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
@@ -24,7 +31,7 @@ const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
   }
 
   if (!talent) {
-    return <NotFound />;
+    return <div className="p-4 text-center">Talent not found or unavailable</div>;
   }
 
   return (
@@ -32,7 +39,9 @@ const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
       <Head>
         <title>{talent.full_name}</title>
       </Head>
-      <TalentDetails talent={talent} />
+      <ErrorBoundary>
+        <TalentDetails talent={talent} />
+      </ErrorBoundary>
     </>
   );
 };
