@@ -151,3 +151,28 @@ browser to view detailed coverage information.
 When tests run on GitHub Actions, the workflow uploads the `coverage` directory
 using `actions/upload-artifact@v4`. Visit a workflow run and download the
 `coverage-report` artifact to retrieve the generated HTML coverage report.
+
+## Feature Flags
+
+This project uses [Unleash](https://www.getunleash.io/) to roll out new features.
+Set the `UNLEASH_URL` environment variable in your `.env` file and wrap
+components with the `FeatureFlag` component:
+
+```tsx
+import FeatureFlag from '@/components/FeatureFlag';
+import ElasticSearchSearch from '@/components/search/ElasticSearchSearch';
+
+export default function Example() {
+  return (
+    <FeatureFlag name="elasticsearch-search">
+      <ElasticSearchSearch />
+    </FeatureFlag>
+  );
+}
+```
+
+The admin UI is available at `/admin/feature-flags` for authorized users.
+
+The `new-checkout-v2` flag powers an A/B experiment. Fifty percent of
+users are served the new checkout page and conversions are tracked with
+`track('new-checkout-v2:conversion')` in the feature flag context.

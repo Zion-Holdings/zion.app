@@ -25,6 +25,7 @@ import { AnalyticsProvider } from './context/AnalyticsContext';
 import { ViewModeProvider } from './context/ViewModeContext';
 import { CartProvider } from './context/CartContext';
 import { registerServiceWorker } from './serviceWorkerRegistration';
+import { FeatureFlagProvider } from './context/FeatureFlagContext';
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
@@ -49,7 +50,8 @@ try {
             <Router>
               <AuthProvider>
                 <NotificationProvider>
-                  <AnalyticsProvider>
+                  <FeatureFlagProvider>
+                    <AnalyticsProvider>
                     <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
                       <ViewModeProvider>
                         <CartProvider>
@@ -61,6 +63,7 @@ try {
                       <LanguageDetectionPopup />
                     </LanguageProvider>
                   </AnalyticsProvider>
+                  </FeatureFlagProvider>
                 </NotificationProvider>
               </AuthProvider>
             </Router>
