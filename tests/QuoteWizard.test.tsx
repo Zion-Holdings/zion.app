@@ -38,6 +38,19 @@ function setup() {
   );
 }
 
+test('shows step indicator for each step', async () => {
+  setup();
+
+  expect(screen.getByTestId('step-indicator')).toHaveTextContent('Step 1 of 3');
+
+  const card = await screen.findByTestId('service-card-1');
+  fireEvent.click(card);
+  fireEvent.click(screen.getByRole('button', { name: /continue/i }));
+
+  await screen.findByTestId('details-step');
+  expect(screen.getByTestId('step-indicator')).toHaveTextContent('Step 2 of 3');
+});
+
 test('advances to step 2 after selecting a service', async () => {
   setup();
 

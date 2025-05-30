@@ -124,6 +124,8 @@ export function ProductSubmissionForm() {
         throw new Error(productError.message);
       }
 
+      let imagePublicUrl: string | undefined;
+
       // If we have an image, upload it
       if (values.image) {
         const imagePath = `product_images/${productRecord.id}/${values.image.name}`;
@@ -139,18 +141,34 @@ export function ProductSubmissionForm() {
         const { data: publicUrlData } = supabase.storage
           .from('products')
           .getPublicUrl(imagePath);
+        imagePublicUrl = publicUrlData.publicUrl;
           
         // Update the product with the image URL
         const { error: updateError } = await supabase
           .from('product_listings')
-          .update({ 
-            images: [publicUrlData.publicUrl]
+          .update({
+            images: [imagePublicUrl]
           })
           .eq('id', productRecord.id);
           
         if (updateError) {
           throw new Error(updateError.message);
         }
+      }
+
+      // Send listing to moderation service
+      try {
+        await supabase.functions.invoke('moderate-listing', {
+          body: {
+            listingId: productRecord.id,
+            listingType: 'product',
+            description: values.description,
+            images: imagePublicUrl ? [imagePublicUrl] : [],
+            sellerId: user.id,
+          }
+        });
+      } catch (err) {
+        console.error('Error invoking moderation:', err);
       }
       
       // Show success message

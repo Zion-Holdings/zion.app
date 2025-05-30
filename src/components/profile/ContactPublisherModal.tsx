@@ -17,8 +17,8 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 import { Send, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
@@ -34,15 +34,15 @@ type FormValues = {
   message: string;
 };
 
-const schema = yup.object({
-  subject: yup
+const schema = z.object({
+  subject: z
     .string()
     .min(5, 'Subject must be at least 5 characters')
-    .required('Subject is required'),
-  message: yup
+    .nonempty('Subject is required'),
+  message: z
     .string()
     .min(20, 'Message must be at least 20 characters')
-    .required('Message is required'),
+    .nonempty('Message is required'),
 });
 
 export function ContactPublisherModal({
@@ -54,7 +54,7 @@ export function ContactPublisherModal({
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const form = useForm<FormValues>({
-    resolver: yupResolver(schema),
+    resolver: zodResolver(schema),
     mode: 'onChange',
     defaultValues: { subject: '', message: '' },
   });
