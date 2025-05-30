@@ -49,7 +49,7 @@ const signupSchema = z
 type SignupFormValues = z.infer<typeof signupSchema>;
 
 export default function Signup() {
-  const { loginWithGoogle, loginWithFacebook, loginWithTwitter, isAuthenticated, user } = useAuth();
+  const { loginWithGoogle, loginWithFacebook, loginWithTwitter, isAuthenticated, user, login } = useAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -106,6 +106,12 @@ export default function Signup() {
 
       if (resData?.token) {
         safeStorage.setItem("token", resData.token);
+        // Sign the user in to update auth context
+        const loginResult = await login(data.email, data.password);
+        if (loginResult.error) {
+          toast.error(loginResult.error);
+          return;
+        }
       }
 
       // Subscribe user to Mailchimp if opted in
