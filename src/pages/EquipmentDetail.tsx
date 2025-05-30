@@ -179,14 +179,14 @@ export default function EquipmentDetail() {
     setIsAdding(true);
 
     setTimeout(() => {
-      const stored = safeStorage.getItem('cart');
+      const stored = safeStorage.getItem('guestCart');
       let cart: { id: string; name: string; price: number; quantity: number }[] = [];
       if (stored) {
         try { cart = JSON.parse(stored); } catch { /* ignore */ }
       }
       const existing = cart.find(i => i.id === equipment.id);
       if (existing) existing.quantity += quantity; else cart.push({ id: equipment.id, name: equipment.name, price: equipment.price, quantity });
-      safeStorage.setItem('cart', JSON.stringify(cart));
+      safeStorage.setItem('guestCart', JSON.stringify(cart));
       setIsAdding(false);
       toast({
         title: "Added to cart",

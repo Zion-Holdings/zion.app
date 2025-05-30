@@ -47,7 +47,7 @@ export default function Checkout() {
       return;
     }
 
-    const stored = safeStorage.getItem('cart');
+    const stored = safeStorage.getItem('guestCart');
     if (stored) {
       try {
         setItems(JSON.parse(stored) as CartItem[]);
@@ -88,7 +88,7 @@ export default function Checkout() {
             console.error('Failed to add points', e);
           }
         }
-        safeStorage.removeItem('cart');
+        safeStorage.removeItem('guestCart');
         navigate(`/orders/${result.id}`);
       }
     } catch (err) {
