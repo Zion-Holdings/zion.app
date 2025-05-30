@@ -33,6 +33,7 @@ export default defineConfig({
         inlineDynamicImports: false,
       },
       // Bundle axios with the app to avoid missing module errors
+      external: ['@sentry/react']
     },
   },
   resolve: {

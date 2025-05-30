@@ -148,6 +148,10 @@ npm run cypress:run
 After running `npm run test`, open `coverage/lcov-report/index.html` in your
 browser to view detailed coverage information.
 
+## Observability
+
+For instructions on structured logging, Prometheus metrics, and Sentry error reporting, see [docs/observability.md](docs/observability.md).
+
 When tests run on GitHub Actions, the workflow uploads the `coverage` directory
 using `actions/upload-artifact@v4`. Visit a workflow run and download the
 `coverage-report` artifact to retrieve the generated HTML coverage report.
