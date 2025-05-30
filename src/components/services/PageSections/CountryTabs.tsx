@@ -19,6 +19,7 @@ interface CountryTabsProps {
   popularCountries: string[];
   filteredCountries: CountryPricing[];
   handleCountrySelect: (country: CountryPricing) => void;
+  onQuote?: (country: CountryPricing) => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
 }
@@ -27,6 +28,7 @@ export function CountryTabs({
   popularCountries,
   filteredCountries,
   handleCountrySelect,
+  onQuote,
   searchQuery,
   setSearchQuery
 }: CountryTabsProps) {
@@ -65,10 +67,11 @@ export function CountryTabs({
           {filteredCountries
             .filter(country => popularCountries.includes(country.country))
             .map(country => (
-              <CountryServiceCard 
-                key={country.country} 
-                country={country} 
+              <CountryServiceCard
+                key={country.country}
+                country={country}
                 onSelect={handleCountrySelect}
+                onQuote={onQuote}
                 isPopular={true}
               />
             ))
@@ -96,6 +99,7 @@ export function CountryTabs({
               key={country.country}
               country={country}
               onSelect={handleCountrySelect}
+              onQuote={onQuote}
               isPopular={popularCountries.includes(country.country)}
             />
           ))}

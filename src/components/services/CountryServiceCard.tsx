@@ -8,10 +8,11 @@ import { CountryPricing } from "@/data/onsiteServicePricing";
 interface CountryServiceCardProps {
   country: CountryPricing;
   onSelect: (country: CountryPricing) => void;
+  onQuote?: (country: CountryPricing) => void;
   isPopular?: boolean;
 }
 
-export function CountryServiceCard({ country, onSelect, isPopular }: CountryServiceCardProps) {
+export function CountryServiceCard({ country, onSelect, onQuote, isPopular }: CountryServiceCardProps) {
   // Get region flag based on country name (for demo purposes)
   const getRegionEmoji = (countryName: string): string => {
     const emojiMap: Record<string, string> = {
@@ -103,11 +104,11 @@ export function CountryServiceCard({ country, onSelect, isPopular }: CountryServ
           Select Service
         </Button>
         <Button
-          asChild
           variant="outline"
           className="w-full border-zion-purple text-zion-purple hover:bg-zion-purple/10"
+          onClick={() => onQuote?.(country)}
         >
-          <a href="#quote-form">Get Quote</a>
+          Get Quote
         </Button>
         <Button
           asChild

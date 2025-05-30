@@ -68,6 +68,7 @@ const MarketplaceRoutes = () => {
       {/* Service Routes */}
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
+      <Route path="/it-onsite-services/:country" element={<ITOnsiteServicesPage />} />
       <Route path="/request-quote" element={<RequestQuote />} />
       <Route path="/service-description-generator" element={<ServiceDescriptionGenerator />} />
       
