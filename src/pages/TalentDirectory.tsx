@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FilterSidebar } from "@/components/talent/FilterSidebar";
 import { TalentResults } from "@/components/talent/TalentResults";
+import { TalentSkeleton } from "@/components/talent/TalentSkeleton";
+import { ErrorBanner } from "@/components/talent/ErrorBanner";
 import { useTalentDirectory } from "@/hooks/useTalentDirectory";
 import { SORT_OPTIONS } from "@/data/sortOptions";
 import { X } from "lucide-react";
@@ -42,14 +44,13 @@ export default function TalentDirectory() {
     selectedTalent,
     setSelectedTalent,
     expandedSections,
+    error,
     isAuthenticated,
-    savedTalents,
     toggleSkill,
     toggleAvailability,
     toggleRegion,
     clearFilters,
     toggleSection,
-    handleToggleSave,
   } = useTalentDirectory();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -74,7 +75,23 @@ export default function TalentDirectory() {
     // Navigate to the talent profile page
     navigate(`/talent/${id}`);
   };
-  
+
+  if (isLoading) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <TalentSkeleton />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <ErrorBanner msg="Unable to load talent profiles." />
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col space-y-8">
@@ -128,8 +145,6 @@ export default function TalentDirectory() {
               isLoading={isLoading}
               viewProfile={viewProfile}
               handleRequestHire={handleRequestHire}
-              savedTalents={savedTalents}
-              handleToggleSave={handleToggleSave}
               isAuthenticated={isAuthenticated}
               activeFiltersProps={{
                 selectedSkills,

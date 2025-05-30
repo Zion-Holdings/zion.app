@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Input } from '@/components/ui/input';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { useNavigate } from 'react-router-dom';
 import { getStripe } from '@/utils/getStripe';
+import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import {
   Form,
   FormField,
@@ -29,12 +31,20 @@ interface CheckoutForm {
   country: string;
 }
 
-export default function CheckoutPage() {
+export default function Checkout() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
   const [items, setItems] = useState<CartItem[]>([]);
   const form = useForm<CheckoutForm>({ defaultValues: { name: '', email: '', address: '', city: '', country: '' } });
 
   useEffect(() => {
+    const sku = searchParams.get('sku');
+    if (sku) {
+      setItems([{ id: sku, name: sku, price: 25, quantity: 1 }]);
+      return;
+    }
+
     const stored = safeStorage.getItem('cart');
     if (stored) {
       try {
@@ -43,7 +53,7 @@ export default function CheckoutPage() {
         setItems([]);
       }
     }
-  }, []);
+  }, [searchParams]);
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
@@ -75,13 +85,16 @@ export default function CheckoutPage() {
 
   return (
     <div className="container max-w-2xl py-10">
-      <h1 className="text-3xl font-bold mb-6">Checkout</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-3xl font-bold">{t('checkout.title')}</h1>
+        <PointsBadge />
+      </div>
       <div className="grid gap-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField name="name" control={form.control} render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>{t('checkout.name')}</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -90,7 +103,7 @@ export default function CheckoutPage() {
             )} />
             <FormField name="email" control={form.control} render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>{t('checkout.email')}</FormLabel>
                 <FormControl>
                   <Input type="email" {...field} />
                 </FormControl>
@@ -99,7 +112,7 @@ export default function CheckoutPage() {
             )} />
             <FormField name="address" control={form.control} render={({ field }) => (
               <FormItem>
-                <FormLabel>Address</FormLabel>
+                <FormLabel>{t('checkout.address')}</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -108,7 +121,7 @@ export default function CheckoutPage() {
             )} />
             <FormField name="city" control={form.control} render={({ field }) => (
               <FormItem>
-                <FormLabel>City</FormLabel>
+                <FormLabel>{t('checkout.city')}</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -117,7 +130,7 @@ export default function CheckoutPage() {
             )} />
             <FormField name="country" control={form.control} render={({ field }) => (
               <FormItem>
-                <FormLabel>Country</FormLabel>
+                <FormLabel>{t('checkout.country')}</FormLabel>
                 <FormControl>
                   <Input {...field} />
                 </FormControl>
@@ -126,11 +139,11 @@ export default function CheckoutPage() {
             )} />
             <div className="border-t pt-4">
               <div className="flex justify-between font-semibold mb-4">
-                <span>Subtotal</span>
+                <span>{t('checkout.subtotal')}</span>
                 <span>${subtotal.toFixed(2)}</span>
               </div>
               <Button className="w-full" type="submit">
-                Pay with Stripe (test)
+                {t('checkout.pay')}
               </Button>
             </div>
           </form>

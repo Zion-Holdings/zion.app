@@ -1,8 +1,7 @@
 
 import { useState, useMemo } from 'react';
 import { TalentProfile } from '@/types/talent';
-
-export function useFilterTalents(talents: TalentProfile[]) {
+export function useFilterTalents(talents: TalentProfile[] = []) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [selectedAvailability, setSelectedAvailability] = useState<string[]>([]);

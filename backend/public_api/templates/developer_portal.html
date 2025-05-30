@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Developer Portal</title>
+</head>
+<body>
+<h1>Developer Portal</h1>
+{% if new_key %}
+<p>Your new API key: <strong>{{ new_key }}</strong></p>
+{% endif %}
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" name="generate">Generate Key</button>
+</form>
+<h2>Your Keys</h2>
+<ul>
+{% for key in keys %}
+  <li>{{ key.prefix }}
+      <form method="post" style="display:inline;">
+        {% csrf_token %}
+        <input type="hidden" name="prefix" value="{{ key.prefix }}" />
+        <button type="submit" name="revoke">Revoke</button>
+      </form>
+  </li>
+{% empty %}
+  <li>No keys</li>
+{% endfor %}
+</ul>
+</body>
+</html>

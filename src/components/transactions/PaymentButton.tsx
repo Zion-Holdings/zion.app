@@ -37,10 +37,9 @@ export function PaymentButton({
         title: "Authentication required",
         description: "Please sign in to make a purchase.",
       });
-      
-      navigate("/login", { 
-        state: { from: window.location.pathname } 
-      });
+
+      const next = encodeURIComponent(`/checkout?sku=${serviceId}`);
+      navigate(`/login?next=${next}`);
       return;
     }
     

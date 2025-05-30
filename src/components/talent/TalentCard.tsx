@@ -1,17 +1,15 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Star, MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useToast } from "@/hooks/use-toast";
+import { MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
+import { FavoriteButton } from "@/components/FavoriteButton";
+import { useNavigate } from "react-router-dom";
 import { TalentProfile } from "@/types/talent";
 
 export interface TalentCardProps {
   talent: TalentProfile;
   onViewProfile: (id: string) => void;
   onRequestHire: (talent: TalentProfile) => void;
-  isSaved: boolean;
-  onToggleSave: (id: string, isSaved: boolean) => void;
   isAuthenticated: boolean;
 }
 
@@ -19,13 +17,9 @@ export function TalentCard({
   talent,
   onViewProfile,
   onRequestHire,
-  isSaved,
-  onToggleSave,
   isAuthenticated
 }: TalentCardProps) {
   const navigate = useNavigate();
-  const location = useLocation();
-  const { toast } = useToast();
   
   const handleViewProfile = () => {
     // Navigate directly to the talent profile
@@ -45,24 +39,6 @@ export function TalentCard({
     }
   };
 
-  const handleToggleSave = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (!isAuthenticated) {
-      toast({
-        title: "Authentication required",
-        description: "Please log in to save talents to your favorites",
-        variant: "destructive"
-      });
-      const next = encodeURIComponent(location.pathname + location.search);
-      navigate(`/login?next=${next}`);
-      return;
-    }
-
-    if (onToggleSave) {
-      onToggleSave(talent.id, !isSaved);
-    }
-  };
 
   // Extract skills - limit to 5 for display
   const skills = talent.skills?.slice(0, 5) || [];
@@ -101,15 +77,7 @@ export function TalentCard({
           <div className="flex-1">
             <div className="flex justify-between items-start">
               <h3 className="text-lg font-bold text-white">{talent.full_name}</h3>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="p-1 h-auto text-zion-slate-light hover:text-zion-cyan"
-                onClick={handleToggleSave}
-              >
-                <Star className={`h-5 w-5 ${isSaved ? "fill-yellow-400 text-yellow-400" : ""}`} />
-                <span className="sr-only">{isSaved ? "Saved" : "Save"}</span>
-              </Button>
+              <FavoriteButton itemId={talent.id} itemType="talent" className="-mt-1" />
             </div>
             <p className="text-white font-medium">{talent.professional_title}</p>
             
