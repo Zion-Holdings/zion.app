@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import handler from '@/pages/api/users/me';
+import handler from '../../pages/api/users/me';
 
 function mockReq(method: string, body?: any) {
   return { method, body } as any;
