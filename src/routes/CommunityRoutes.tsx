@@ -8,6 +8,7 @@ import ForumPostPage from "../pages/ForumPostPage";
 import CreatePostPage from "../pages/CreatePostPage";
 import EditPostPage from "../pages/EditPostPage";
 import CommunityProfilePage from "../pages/CommunityProfilePage";
+import NewPost from "../pages/NewPost";
 
 const CommunityRoutes = () => {
   return (
@@ -32,8 +33,16 @@ const CommunityRoutes = () => {
       <Route path="/community/category/:categoryId" element={<ForumCategoryPage />} />
       <Route path="/community/post/:postId" element={<ForumPostPage />} />
       <Route path="/community/profile/:userId" element={<CommunityProfilePage />} />
-      
+
       {/* Protected routes */}
+      <Route
+        path="/community/new"
+        element={
+          <ProtectedRoute>
+            <NewPost />
+          </ProtectedRoute>
+        }
+      />
       <Route
         path="/community/create"
         element={
