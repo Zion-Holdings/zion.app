@@ -40,6 +40,7 @@ import NewProductsPage from './pages/NewProductsPage';
 import NewServicesPage from './pages/NewServicesPage';
 import Sitemap from './pages/Sitemap';
 import PartnersPage from './pages/Partners';
+import Help from './pages/Help';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
@@ -50,6 +51,7 @@ import RequestQuotePage from './pages/RequestQuote';
 import WishlistPage from './pages/Wishlist';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
+import { SupportChatbot } from './components/SupportChatbot';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -74,6 +76,7 @@ const baseRoutes = [
   { path: '/contact', element: <ContactPage /> },
   { path: '/partners', element: <PartnersPage /> },
   { path: '/sitemap', element: <Sitemap /> },
+  { path: '/help', element: <Help /> },
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
@@ -114,6 +117,7 @@ const App = () => {
         </Suspense>
         <Toaster />
         <SonnerToaster position="top-right" />
+        <SupportChatbot />
         <PwaInstallButton />
       </ThemeProvider>
     </WhitelabelProvider>
