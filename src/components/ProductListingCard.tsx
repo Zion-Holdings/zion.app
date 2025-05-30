@@ -2,7 +2,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProductListing } from "@/types/listings";
-import { Star, DollarSign } from "lucide-react";
+import { DollarSign } from "lucide-react";
+import { RatingStars } from "@/components/RatingStars";
 import { FavoriteButton } from "@/components/FavoriteButton";
 
 interface ProductListingCardProps {
@@ -92,13 +93,7 @@ export function ProductListingCard({
               {listing.category}
             </Badge>
             {listing.rating && (
-              <div className="flex items-center text-zion-slate-light">
-                <Star className="h-4 w-4 fill-zion-cyan text-zion-cyan mr-1" />
-                <span>{listing.rating}</span>
-                {listing.reviewCount && (
-                  <span className="text-xs ml-1">({listing.reviewCount})</span>
-                )}
-              </div>
+              <RatingStars value={listing.rating} count={listing.reviewCount} />
             )}
           </div>
           
