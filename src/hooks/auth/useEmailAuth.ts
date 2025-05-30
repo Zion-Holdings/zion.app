@@ -19,6 +19,7 @@ export const useEmailAuth = (
         email,
         password,
       });
+      console.log('login signInWithPassword', { status: !error ? 200 : error?.status, data });
 
       if (error) {
         toast({
@@ -68,6 +69,7 @@ export const useEmailAuth = (
           },
         },
       });
+      console.log('signup signUp', { status: !error ? 201 : error?.status, data });
 
       if (error) {
         toast({
