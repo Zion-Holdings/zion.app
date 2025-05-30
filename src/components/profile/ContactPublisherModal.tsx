@@ -1,4 +1,5 @@
 import React from 'react';
+import FocusLock from 'react-focus-lock';
 import {
   Dialog,
   DialogContent,
@@ -55,6 +56,7 @@ export function ContactPublisherModal({
   productId,
 }: ContactPublisherModalProps) {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
 
   const form = useForm<FormValues>({
     resolver: yupResolver(schema),
@@ -65,6 +67,7 @@ export function ContactPublisherModal({
   const handleSend = async () => {
     const values = form.getValues();
     setIsSubmitting(true);
+    setError(null);
     try {
       await api.post('/messages', {
         productId,
@@ -75,23 +78,39 @@ export function ContactPublisherModal({
       form.reset();
       onClose();
     } catch (err: any) {
-      toast.error(err?.message || 'Failed to send message');
+      const msg = err?.message || 'Failed to send message';
+      toast.error(msg);
+      setError(msg);
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      e.stopPropagation();
+      onClose();
+    }
+  };
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-zion-blue-dark border border-zion-blue-light text-white sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="text-xl font-bold text-white flex items-center gap-2">
-            <Mail className="h-5 w-5 text-zion-cyan" />
-            Contact Publisher
-          </DialogTitle>
-        </DialogHeader>
-        {publisherEmail && (
-          <div className="mb-4 text-zion-slate-light">
+      <FocusLock disabled={!isOpen} returnFocus>
+        <DialogContent
+          className="bg-zion-blue-dark border border-zion-blue-light text-white sm:max-w-md"
+          onKeyDown={handleKeyDown}
+          aria-modal="true"
+          aria-labelledby="contact-publisher-title"
+        >
+          <DialogHeader>
+            <DialogTitle id="contact-publisher-title" className="text-xl font-bold text-white flex items-center gap-2">
+              <Mail className="h-5 w-5 text-zion-cyan" />
+              Contact Publisher
+            </DialogTitle>
+          </DialogHeader>
+          {error && <p className="text-red-500 mb-2">{error}</p>}
+          {publisherEmail && (
+            <div className="mb-4 text-zion-slate-light">
             <span className="block">Email:</span>
             <a href={`mailto:${publisherEmail}`} className="text-zion-cyan hover:underline truncate block">
               {publisherEmail}
@@ -144,7 +163,8 @@ export function ContactPublisherModal({
             </Button>
           </form>
         </Form>
-      </DialogContent>
+        </DialogContent>
+      </FocusLock>
     </Dialog>
   );
 }
