@@ -12,7 +12,11 @@
     "test:watch": "vitest --watch",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chrome",
-    "test:e2e": "playwright test"
+    bplr8i-codex/fix-npm-ci-errors-and-missing-dependencies
+    "test:accessibility": "vitest run tests/Accessibility.test.tsx",
+    "test:e2e": "playwright test",
+    "es:index": "node scripts/index-elasticsearch.js"
+    main
   },
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",
@@ -66,9 +70,18 @@
     "lodash.debounce": "^4.0.8",
     "sonner": "^1.4.0",
     "swr": "^2.2.0",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2",
     "tailwind-merge": "^2.2.1",
     "vaul": "^0.9.0",
-    "zod": "^3.22.4"
+    bplr8i-codex/fix-npm-ci-errors-and-missing-dependencies
+    "zod": "^3.22.4",
+    "yup": "^1.2.0",
+    "firebase": "^9.23.0"
+  },
+  "optionalDependencies": {
+    "@elastic/elasticsearch": "^8.12.0"
+    main
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.2",

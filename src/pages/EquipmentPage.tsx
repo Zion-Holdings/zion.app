@@ -3,6 +3,8 @@ import { ProductListing } from "@/types/listings";
 import { useEffect, useState } from "react";
 import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
 
+const API_BASE = '/api';
+
 // Sample datacenter equipment listings
 const EQUIPMENT_LISTINGS: ProductListing[] = [
   {
@@ -349,6 +351,21 @@ export default function EquipmentPage() {
   const [listings, setListings] = useState<ProductListing[]>([
     ...EQUIPMENT_LISTINGS,
   ]);
+
+  useEffect(() => {
+    async function fetchEquipment() {
+      try {
+        const res = await fetch(`${API_BASE}/equipment`);
+        if (!res.ok) throw new Error('Equipment fetch failed');
+        const data = await res.json();
+        setListings(data);
+      } catch (err) {
+        console.error(err);
+        setListings(EQUIPMENT_LISTINGS);
+      }
+    }
+    fetchEquipment();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
