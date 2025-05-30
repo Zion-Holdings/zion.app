@@ -33,6 +33,7 @@ import EquipmentDetail from './pages/EquipmentDetail';
 import Analytics from './pages/Analytics';
 import MobileLaunchPage from './pages/MobileLaunchPage';
 import CommunityPage from './pages/CommunityPage';
+import { CommunityProvider } from './context';
 import Categories from './pages/Categories';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
@@ -70,7 +71,14 @@ const baseRoutes = [
   { path: '/analytics', element: <Analytics /> },
   { path: '/mobile-launch', element: <MobileLaunchPage /> },
   { path: '/open-app', element: <OpenAppRedirect /> },
-  { path: '/community', element: <CommunityPage /> },
+  {
+    path: '/community',
+    element: (
+      <CommunityProvider>
+        <CommunityPage />
+      </CommunityProvider>
+    ),
+  },
   { path: '/contact', element: <ContactPage /> },
   { path: '/partners', element: <PartnersPage /> },
   { path: '/sitemap', element: <Sitemap /> },
