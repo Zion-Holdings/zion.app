@@ -349,6 +349,13 @@ declare module 'next/link' {
 declare module 'next/router' {
   interface NextRouter {
     pathname: string
+    /**
+     * When using `getStaticPaths` with `fallback: true` or `'blocking'`, Next.js
+     * exposes an `isFallback` boolean on the router during the build-time
+     * rendering phase. We include it here so TypeScript is aware of the
+     * property without pulling in the real Next.js type definitions.
+     */
+    isFallback?: boolean
   }
   export function useRouter(): NextRouter
 }
