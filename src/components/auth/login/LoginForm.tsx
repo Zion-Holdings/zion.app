@@ -6,7 +6,6 @@ import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
-import { loginUser } from "@/services/authService";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -18,7 +17,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Form validation schema
 const loginSchema = z.object({
@@ -30,8 +29,6 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
   const { isLoading, login } = useAuth();
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -48,17 +45,10 @@ export function LoginForm() {
 
     try {
       setIsSubmitting(true);
-      const { res, data: resData } = await loginUser(data.email, data.password);
-      if (res.status !== 200) {
-        const message = resData?.error || "Invalid credentials";
-        form.setError("root", { message });
-        return;
+      const result = await login(data.email, data.password);
+      if (result.error) {
+        form.setError("root", { message: result.error });
       }
-
-      await login(data.email, data.password);
-
-      const next = searchParams.get('next') || '/';
-      navigate(next, { replace: true });
     } finally {
       setIsSubmitting(false);
     }

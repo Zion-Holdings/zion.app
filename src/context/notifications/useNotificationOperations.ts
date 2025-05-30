@@ -1,6 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
-import { supabase } from '@/integrations/supabase/client';
 import { Notification, FilterType, NotificationContextType } from './types';
 
 export const useNotificationOperations = (userId?: string): NotificationContextType => {
@@ -19,13 +18,9 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
 
     setLoading(true);
     try {
-      const { data, error } = await supabase
-        .from('notifications')
-        .select('*')
-        .eq('user_id', userId)
-        .order('created_at', { ascending: false });
-
-      if (error) throw error;
+      const res = await fetch(`/api/notifications?userId=${userId}`);
+      if (!res.ok) throw new Error('Failed');
+      const data = await res.json();
       setNotifications(data || []);
     } catch (err) {
       console.error('Error fetching notifications:', err);
@@ -38,13 +33,11 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
     if (!userId) return;
 
     try {
-      const { error } = await supabase
-        .from('notifications')
-        .update({ read: true })
-        .eq('id', id)
-        .eq('user_id', userId);
-
-      if (error) throw error;
+      await fetch(`/api/notifications/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ read: true })
+      });
       await fetchNotifications();
     } catch (err) {
       console.error('Error marking notification as read:', err);
@@ -55,30 +48,28 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
     if (!userId) return;
 
     try {
-      const { error } = await supabase
-        .from('notifications')
-        .update({ read: true })
-        .eq('user_id', userId)
-        .eq('read', false);
-
-      if (error) throw error;
+      await Promise.all(
+        notifications
+          .filter(n => !n.read)
+          .map(n =>
+            fetch(`/api/notifications/${n.id}`, {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ read: true })
+            })
+          )
+      );
       await fetchNotifications();
     } catch (err) {
       console.error('Error marking all notifications as read:', err);
     }
-  }, [userId, fetchNotifications]);
+  }, [userId, fetchNotifications, notifications]);
 
   const dismissNotification = useCallback(async (id: string) => {
     if (!userId) return;
 
     try {
-      const { error } = await supabase
-        .from('notifications')
-        .delete()
-        .eq('id', id)
-        .eq('user_id', userId);
-
-      if (error) throw error;
+      await fetch(`/api/notifications/${id}`, { method: 'DELETE' });
       await fetchNotifications();
     } catch (err) {
       console.error('Error dismissing notification:', err);

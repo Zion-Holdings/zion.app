@@ -7,12 +7,14 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuthState } from "./useAuthState";
 import { useAuthEventHandlers } from "./useAuthEventHandlers";
 import { mapProfileToUser } from "./profileMapper";
+import { loginUser } from "@/services/authService";
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const { 
-    user, setUser, 
-    isLoading, setIsLoading, 
-    onboardingStep, setOnboardingStep 
+  const {
+    user, setUser,
+    isLoading, setIsLoading,
+    onboardingStep, setOnboardingStep,
+    tokens, setTokens
   } = useAuthState();
   
   const navigate = useNavigate();
@@ -33,7 +35,20 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   // Wrapper for login to match the AuthContextType interface
   const login = async (email: string, password: string) => {
-    return loginImpl({ email, password });
+    const { res, data } = await loginUser(email, password);
+    if (res.status !== 200) {
+      return { error: data?.error || 'Login failed' };
+    }
+
+    setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
+
+    // Also sign in client-side so Supabase auth state is in sync
+    await loginImpl({ email, password });
+
+    const next = new URLSearchParams(location.search).get('next') || '/';
+    navigate(next, { replace: true });
+
+    return { error: null };
   };
 
   // Wrapper for signup to match the AuthContextType interface
@@ -92,6 +107,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       if (!session) {
         setIsLoading(false);
       }
+    }).catch(error => {
+      console.error("Error during initial Supabase getSession:", error);
+      setUser(null); // Explicitly set user to null on error
+      setIsLoading(false);
     });
 
     return () => {
@@ -112,7 +131,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     loginWithFacebook,
     loginWithTwitter,
     loginWithWeb3,
-    onboardingStep
+    onboardingStep,
+    tokens
   };
 
   return (

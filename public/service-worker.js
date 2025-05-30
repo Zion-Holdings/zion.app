@@ -1,59 +1,74 @@
-const CACHE_NAME = 'static-cache-v1';
-const DATA_CACHE_NAME = 'data-cache-v1';
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
 
-const FILES_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/offline.html',
-  '/manifest.json',
-  '/vite.svg'
-];
+self.skipWaiting();
+workbox.core.clientsClaim();
 
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
-  );
-  self.skipWaiting();
-});
+workbox.precaching.precacheAndRoute(self.__WB_MANIFEST || []);
 
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(keyList =>
-      Promise.all(
-        keyList.map(key => {
-          if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
-      )
-    )
-  );
-  self.clients.claim();
-});
+workbox.routing.registerRoute(
+  ({request}) => request.method === 'GET' && request.url.includes('/api/'),
+  new workbox.strategies.StaleWhileRevalidate({ cacheName: 'api-get' })
+);
 
-self.addEventListener('fetch', event => {
-  if (event.request.method !== 'GET') return;
-  if (event.request.url.includes('/api/')) {
-    event.respondWith(
-      caches.open(DATA_CACHE_NAME).then(cache =>
-        fetch(event.request)
-          .then(response => {
-            if (response.status === 200) {
-              cache.put(event.request, response.clone());
-            }
-            return response;
-          })
-          .catch(() => cache.match(event.request))
-      )
-    );
-    return;
+workbox.routing.registerRoute(
+  ({request}) => ['image','font'].includes(request.destination),
+  new workbox.strategies.CacheFirst({
+    cacheName: 'assets',
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({ maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 })
+    ]
+  })
+);
+
+const bgSyncPlugin = new workbox.backgroundSync.BackgroundSyncPlugin('apiQueue', {
+  maxRetentionTime: 24 * 60,
+  callbacks: {
+    queueDidReplay: async () => {
+      const clients = await self.clients.matchAll();
+      for (const client of clients) {
+        client.postMessage({ type: 'QUEUE_SYNCED' });
+      }
+    }
   }
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return (
-        response ||
-        fetch(event.request).catch(() => caches.match('/offline.html'))
-      );
-    })
-  );
+});
+
+workbox.routing.registerRoute(
+  ({url, request}) => url.pathname.startsWith('/api/') && request.method !== 'GET',
+  new workbox.strategies.NetworkOnly({ plugins: [bgSyncPlugin] })
+);
+
+workbox.routing.setCatchHandler(async ({ event }) => {
+  if (event.request.destination === 'document') {
+    return caches.match('/offline.html');
+  }
+  return Response.error();
+});
+
+self.addEventListener('push', event => {
+  const data = event.data ? event.data.json() : {};
+  const title = data.title || 'Zion Notification';
+  const options = {
+    body: data.body,
+    icon: '/vite.svg'
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+// Handle Web Push notifications
+self.addEventListener('push', event => {
+  const data = event.data ? event.data.json() : {};
+  const title = data.title || 'New message';
+  const options = {
+    body: data.body,
+    icon: '/vite.svg',
+    data: data.url
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  if (event.notification.data) {
+    event.waitUntil(clients.openWindow(event.notification.data));
+  }
 });
