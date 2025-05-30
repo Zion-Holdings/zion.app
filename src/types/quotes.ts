@@ -9,6 +9,7 @@ export interface ListingItem {
   title: string;
   category: string;
   image?: string;
+  description?: string;
 }
 
 export interface ContactInfo {

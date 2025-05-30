@@ -38,3 +38,25 @@ it('shows results when searching services', async () => {
   });
 });
 
+it('renders services from api response', async () => {
+  const data = { ...baseData };
+  const updateFormData = (d: Partial<QuoteFormData>) => Object.assign(data, d);
+
+  global.fetch = vi.fn().mockResolvedValue({
+    ok: true,
+    json: async () => [
+      { id: '1', title: 'First', category: 'service' },
+      { id: '2', title: 'Second', category: 'service' },
+      { id: '3', title: 'Third', category: 'service' },
+    ],
+  }) as any;
+
+  render(<ServiceTypeStep formData={data} updateFormData={updateFormData} />);
+
+  fireEvent.click(screen.getByText('Services'));
+
+  await waitFor(() => {
+    expect(screen.getAllByRole('button', { name: /request quote/i })).toHaveLength(3);
+  });
+});
+

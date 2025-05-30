@@ -15,14 +15,9 @@ interface TalentPageProps {
 const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
   const router = useRouter();
 
-  if (router.isFallback) {
-    return (
-      <div className="flex justify-center py-20">
-        <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
-      </div>
-    );
-  }
-
+  // In our static build environment the router type does not include the
+  // `isFallback` property, so we simply show the not found page when no data is
+  // provided. This avoids a TypeScript error during the Netlify build.
   if (!talent) {
     return <NotFound />;
   }
