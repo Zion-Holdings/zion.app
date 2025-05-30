@@ -88,3 +88,17 @@ try {
 }
 
 registerServiceWorker();
+
+// Global fallback for images that fail to load
+// Replace broken images (e.g., offline Unsplash links) with a local placeholder
+document.addEventListener(
+  'error',
+  (event) => {
+    const target = event.target as HTMLElement;
+    if (target instanceof HTMLImageElement && !target.dataset.fallback) {
+      target.dataset.fallback = 'true';
+      target.src = '/placeholder.svg';
+    }
+  },
+  true,
+);

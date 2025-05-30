@@ -7,6 +7,7 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import OfflineToast from "./components/OfflineToast";
 import PwaInstallButton from "./components/PwaInstallButton";
 import {
   AuthRoutes,
@@ -33,6 +34,7 @@ import EquipmentDetail from './pages/EquipmentDetail';
 import Analytics from './pages/Analytics';
 import MobileLaunchPage from './pages/MobileLaunchPage';
 import CommunityPage from './pages/CommunityPage';
+import { CommunityProvider } from './context';
 import Categories from './pages/Categories';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
@@ -40,8 +42,10 @@ import NewProductsPage from './pages/NewProductsPage';
 import NewServicesPage from './pages/NewServicesPage';
 import Sitemap from './pages/Sitemap';
 import PartnersPage from './pages/Partners';
+import Help from './pages/Help';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import SimpleSignup from './pages/SimpleSignup';
 import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
 import OpenAppRedirect from './pages/OpenAppRedirect';
 import ContactPage from './pages/Contact';
@@ -50,13 +54,14 @@ import RequestQuotePage from './pages/RequestQuote';
 import WishlistPage from './pages/Wishlist';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
+import { SupportChatbot } from './components/SupportChatbot';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/register', element: <Signup /> },
-  { path: '/signup', element: <Signup /> },
+  { path: '/signup', element: <SimpleSignup /> },
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/more-talents', element: <MoreTalentsPage /> },
@@ -70,10 +75,18 @@ const baseRoutes = [
   { path: '/analytics', element: <Analytics /> },
   { path: '/mobile-launch', element: <MobileLaunchPage /> },
   { path: '/open-app', element: <OpenAppRedirect /> },
-  { path: '/community', element: <CommunityPage /> },
+  {
+    path: '/community',
+    element: (
+      <CommunityProvider>
+        <CommunityPage />
+      </CommunityProvider>
+    ),
+  },
   { path: '/contact', element: <ContactPage /> },
   { path: '/partners', element: <PartnersPage /> },
   { path: '/sitemap', element: <Sitemap /> },
+  { path: '/help', element: <Help /> },
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
@@ -112,8 +125,10 @@ const App = () => {
           </Routes>
           </ErrorBoundary>
         </Suspense>
+        <OfflineToast />
         <Toaster />
         <SonnerToaster position="top-right" />
+        <SupportChatbot />
         <PwaInstallButton />
       </ThemeProvider>
     </WhitelabelProvider>
