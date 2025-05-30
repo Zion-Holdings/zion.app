@@ -55,6 +55,7 @@ import WishlistPage from './pages/Wishlist';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
 import { SupportChatbot } from './components/SupportChatbot';
+import PrivateRoute from './components/PrivateRoute';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -93,7 +94,7 @@ const baseRoutes = [
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/wishlist', element: <WishlistPage /> },
-  { path: '/cart', element: <CartPage /> },
+  { path: '/cart', element: <PrivateRoute><CartPage /></PrivateRoute> },
   { path: '/checkout', element: <Checkout /> },
 ];
 

@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '@/hooks/useAuth';
-import { toast } from '@/hooks/use-toast';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '@/context/CartContext';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
 
 export default function CartPage() {
   const navigate = useNavigate();
-  const { user } = useAuth();
   const { items, dispatch } = useCart();
   const [hydrated, setHydrated] = useState(false);
 
@@ -17,15 +14,6 @@ export default function CartPage() {
   }, []);
 
   if (!hydrated) return null;
-
-  if (!user) {
-    toast({
-      title: 'Authentication required',
-      description: 'Please sign in to view your cart.',
-    });
-    navigate('/login');
-    return null;
-  }
 
   const updateQuantity = (id: string, qty: number) => {
     const updated = items.map(i => (i.id === id ? { ...i, quantity: qty } : i));
@@ -43,6 +31,9 @@ export default function CartPage() {
       <div className="container py-10 text-center">
         <img src="/placeholder.svg" alt="Empty cart" className="mx-auto mb-4" />
         <p>Your cart is empty</p>
+        <Button asChild className="mt-4">
+          <Link to="/marketplace">Browse Marketplace</Link>
+        </Button>
       </div>
     );
   }
