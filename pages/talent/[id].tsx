@@ -1,67 +1,75 @@
-import React from 'react';
-import type { GetStaticPaths, GetStaticProps } from 'next';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { Loader2 } from 'lucide-react';
-import { TALENT_PROFILES } from '@/data/talentData';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 import type { TalentProfile } from '@/types/talent';
 import TalentDetails from '@/components/talent/TalentDetails';
 import NotFound from '@/components/NotFound';
 
-interface TalentPageProps {
-  talent: (TalentProfile & { social?: Record<string, string> }) | null;
-}
-
-const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
+const TalentPage: React.FC = () => {
   const router = useRouter();
+  const { id } = router.query;
+  const [profile, setProfile] = useState<(TalentProfile & { social?: Record<string, string> }) | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  if (router.isFallback) {
+  useEffect(() => {
+    if (!id) return;
+    const fetchProfile = async () => {
+      try {
+        setLoading(true);
+        const res = await fetch(`/api/talent/${id}`);
+        if (!res.ok) throw new Error('Failed to load profile');
+        const data = await res.json();
+        setProfile(data.profile);
+        setError(null);
+      } catch (err) {
+        setError((err as Error).message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProfile();
+  }, [id]);
+
+  if (loading) {
     return (
-      <div className="flex justify-center py-20">
-        <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
+      <div className="p-4 space-y-2" data-testid="talent-loading">
+        <Skeleton className="h-8 w-1/3" />
+        <Skeleton className="h-4 w-full" />
+        <Skeleton className="h-4 w-2/3" />
       </div>
     );
   }
 
-  if (!talent) {
+  if (error) {
+    return (
+      <div className="p-4">
+        <Alert variant="destructive">
+          <AlertTitle>Error</AlertTitle>
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      </div>
+    );
+  }
+
+  if (!profile) {
     return <NotFound />;
   }
 
   return (
     <>
       <Head>
-        <title>{talent.full_name}</title>
+        <title>{profile.full_name}</title>
+        <meta property="og:title" content={profile.full_name} />
+        {profile.profile_picture_url && (
+          <meta property="og:image" content={profile.profile_picture_url} />
+        )}
       </Head>
-      <TalentDetails talent={talent} />
+      <TalentDetails talent={profile} />
     </>
   );
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = TALENT_PROFILES.map(t => ({ params: { id: t.id } }));
-  return { paths, fallback: 'blocking' };
-};
-
-export const getStaticProps: GetStaticProps<TalentPageProps> = async ({ params }) => {
-  const id = params?.id as string | undefined;
-
-  if (!id) {
-    return { notFound: true };
-  }
-
-  const profile = TALENT_PROFILES.find((t) => t.id === id) || null;
-
-  if (!profile) {
-    return { notFound: true };
-  }
-
-  const first = profile.full_name.split(' ')[0].toLowerCase();
-  const social = {
-    twitter: `https://twitter.com/${first}`,
-    linkedin: `https://linkedin.com/in/${first}`,
-  };
-
-  return { props: { talent: { ...profile, social } } };
 };
 
 export default TalentPage;

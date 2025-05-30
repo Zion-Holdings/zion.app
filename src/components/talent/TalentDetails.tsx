@@ -8,6 +8,13 @@ export interface TalentDetailsProps {
 const TalentDetails: React.FC<TalentDetailsProps> = ({ talent }) => (
   <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">
     <div className="container mx-auto px-4 space-y-6">
+      {talent.profile_picture_url && (
+        <img
+          src={talent.profile_picture_url}
+          alt={talent.full_name}
+          className="h-32 w-32 rounded-full object-cover"
+        />
+      )}
       <h1 className="text-3xl font-bold">{talent.full_name}</h1>
       {talent.professional_title && <p className="text-zion-slate-light">{talent.professional_title}</p>}
 

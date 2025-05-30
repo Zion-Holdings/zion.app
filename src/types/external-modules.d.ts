@@ -349,6 +349,12 @@ declare module 'next/link' {
 declare module 'next/router' {
   interface NextRouter {
     pathname: string
+    /**
+     * Query string parameters from the current route. These are typed as
+     * `any` because the real `NextRouter` type from Next.js is not available
+     * in this project.
+     */
+    query: any
   }
   export function useRouter(): NextRouter
 }
