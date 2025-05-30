@@ -5,6 +5,8 @@ import { Input } from '@/components/ui/input';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
 import { getStripe } from '@/utils/getStripe';
+import { CheckoutShippingOptions } from '@/components/CheckoutShippingOptions';
+import type { ShippingRate } from '@/components/CheckoutShippingOptions';
 import {
   Form,
   FormField,
@@ -34,6 +36,7 @@ export default function Checkout() {
   const [searchParams] = useSearchParams();
   const [items, setItems] = useState<CartItem[]>([]);
   const form = useForm<CheckoutForm>({ defaultValues: { name: '', email: '', address: '', city: '', country: '' } });
+  const watchAddr = form.watch(['name', 'address', 'city', 'country']);
 
   useEffect(() => {
     const sku = searchParams.get('sku');
@@ -53,13 +56,15 @@ export default function Checkout() {
   }, [searchParams]);
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  const [shippingRate, setShippingRate] = useState<ShippingRate | null>(null);
+  const total = subtotal + (shippingRate ? parseFloat(shippingRate.rate) : 0) + (shippingRate?.tax ? parseFloat(shippingRate.tax) : 0);
 
   const onSubmit = async (data: CheckoutForm) => {
     try {
       const res = await fetch('/api/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: subtotal }),
+        body: JSON.stringify({ amount: total }),
       });
       const result = await res.json();
       if (!res.ok) throw new Error(result.error || 'Failed');
@@ -131,10 +136,35 @@ export default function Checkout() {
                 <FormMessage />
               </FormItem>
             )} />
+            <CheckoutShippingOptions
+              toAddress={{
+                name: watchAddr[0],
+                address: watchAddr[1],
+                city: watchAddr[2],
+                country: watchAddr[3],
+              }}
+              onSelect={setShippingRate}
+            />
             <div className="border-t pt-4">
               <div className="flex justify-between font-semibold mb-4">
                 <span>Subtotal</span>
                 <span>${subtotal.toFixed(2)}</span>
+              </div>
+              {shippingRate && (
+                <div className="flex justify-between font-semibold mb-4">
+                  <span>Shipping</span>
+                  <span>{parseFloat(shippingRate.rate).toFixed(2)} {shippingRate.currency}</span>
+                </div>
+              )}
+              {shippingRate?.tax && (
+                <div className="flex justify-between font-semibold mb-4">
+                  <span>Duties &amp; Taxes</span>
+                  <span>{parseFloat(shippingRate.tax).toFixed(2)} {shippingRate.currency}</span>
+                </div>
+              )}
+              <div className="flex justify-between font-semibold mb-4">
+                <span>Total</span>
+                <span>{total.toFixed(2)}</span>
               </div>
               <Button className="w-full" type="submit">
                 Pay with Stripe (test)
