@@ -8,6 +8,7 @@ import { useAuthState } from "./useAuthState";
 import { useAuthEventHandlers } from "./useAuthEventHandlers";
 import { mapProfileToUser } from "./profileMapper";
 import { loginUser } from "@/services/authService";
+import { safeStorage } from "@/utils/safeStorage";
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const {
@@ -36,11 +37,22 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   // Wrapper for login to match the AuthContextType interface
   const login = async (email: string, password: string) => {
     const { res, data } = await loginUser(email, password);
+
+    if (res.status === 400) {
+      return { error: data?.error || 'Missing email or password' };
+    }
+    if (res.status === 401) {
+      return { error: data?.error || 'Invalid credentials' };
+    }
     if (res.status !== 200) {
       return { error: data?.error || 'Login failed' };
     }
 
     setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
+
+    if (data.accessToken) {
+      safeStorage.setItem('token', data.accessToken);
+    }
 
     // Also sign in client-side so Supabase auth state is in sync
     await loginImpl({ email, password });
