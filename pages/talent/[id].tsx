@@ -1,6 +1,8 @@
 import React from 'react';
-import type { GetServerSideProps } from 'next';
+import type { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { Loader2 } from 'lucide-react';
 import { TALENT_PROFILES } from '@/data/talentData';
 import type { TalentProfile } from '@/types/talent';
 import TalentDetails from '@/components/talent/TalentDetails';
@@ -11,6 +13,16 @@ interface TalentPageProps {
 }
 
 const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return (
+      <div className="flex justify-center py-20">
+        <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
+      </div>
+    );
+  }
+
   if (!talent) {
     return <NotFound />;
   }
@@ -25,7 +37,12 @@ const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<TalentPageProps> = async ({ params }) => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = TALENT_PROFILES.map(t => ({ params: { id: t.id } }));
+  return { paths, fallback: 'blocking' };
+};
+
+export const getStaticProps: GetStaticProps<TalentPageProps> = async ({ params }) => {
   const id = params?.id as string | undefined;
 
   if (!id) {
