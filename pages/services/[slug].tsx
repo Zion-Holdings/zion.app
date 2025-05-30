@@ -1,6 +1,8 @@
 import React from 'react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { SERVICES } from '@/data/servicesData';
+import { slugify } from '@/lib/slugify';
+import Custom404 from '../404';
 import type { ProductListing } from '@/types/listings';
 
 interface ServiceProps {
@@ -9,7 +11,7 @@ interface ServiceProps {
 
 const ServicePage: React.FC<ServiceProps> = ({ service }) => {
   if (!service) {
-    return <div>Service not found</div>;
+    return <Custom404 />;
   }
   return (
     <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
@@ -22,9 +24,7 @@ const ServicePage: React.FC<ServiceProps> = ({ service }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = SERVICES.map((service) => ({
     params: {
-      slug: encodeURIComponent(
-        service.title.toLowerCase().replace(/ /g, '-')
-      ),
+      slug: slugify(service.title),
     },
   }));
   return { paths, fallback: 'blocking' };
@@ -32,15 +32,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<ServiceProps> = async ({ params }) => {
   const slug = params?.slug as string;
-  const service =
-    SERVICES.find(
-      (s) =>
-        encodeURIComponent(s.title.toLowerCase().replace(/ /g, '-')) === slug
-    ) || null;
-
-  if (!service) {
-    return { notFound: true };
-  }
+  const service = SERVICES.find((s) => slugify(s.title) === slug) || null;
 
   return { props: { service } };
 };
