@@ -15,19 +15,9 @@ export interface ShippingAddress {
   zip: string;
 }
 
-export interface TrackingEvent {
-  status: string;
-  location?: string;
-  status_details?: string;
-  timestamp: string;
-}
-
 export interface OrderDetail extends Order {
   items: OrderItem[];
   shippingAddress: ShippingAddress;
-  trackingNumber?: string;
-  trackingStatus?: string;
-  trackingEvents?: TrackingEvent[];
 }
 
 export function useGetOrderQuery(orderId?: string) {

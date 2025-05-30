@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -11,43 +10,29 @@ import arTranslation from './locales/ar/translation.json';
 
 // Initialize i18next
 i18n
-  .use(LanguageDetector) // Detect user language
-  .use(initReactI18next) // Initialize react-i18next
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     resources: {
-      en: {
-        translation: enTranslation
-      },
-      es: {
-        translation: esTranslation
-      },
-      pt: {
-        translation: ptTranslation
-      },
-      ar: {
-        translation: arTranslation
-      }
+      en: { translation: enTranslation },
+      es: { translation: esTranslation },
+      pt: { translation: ptTranslation },
+      ar: { translation: arTranslation }
     },
-    fallbackLng: 'en', // Default language
-    debug: process.env.NODE_ENV === 'development',
+    fallbackLng: 'en',
+    debug: process.env.NODE_ENV === 'development', // Assuming process.env.NODE_ENV is available
     interpolation: {
-      escapeValue: false, // React already escapes by default
+      escapeValue: false // React already escapes by default
     },
     detection: {
-      fix/multi-faceted-loading-errors
       order: ['localStorage', 'navigator'],
       lookupLocalStorage: 'zion_language',
-      caches: [] // Updated
-      // Avoid using localStorage directly to prevent cross-context errors
-      order: ['navigator'],
-      caches: []
-main
-    },
-  })
+      caches: [] // Ensure this is the last property in 'detection' and has no trailing comma
+    } // Ensure this 'detection' object is the last in 'init' options and has no trailing comma
+  }) // Closing parenthesis for init()
   .catch(error => {
     console.error("Error initializing i18next or its detector:", error);
-    // This helps prevent an unhandled promise rejection if init fails.
-  });
+  }); // Semicolon to end the statement
 
 // For RTL language support
 document.documentElement.dir = i18n.dir();

@@ -15,7 +15,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
 import { safeStorage } from "@/utils/safeStorage";
-import { mailchimpService } from "@/integrations/mailchimp";
 import {
   Form,
   FormControl,
@@ -39,7 +38,6 @@ const signupSchema = z
     termsAccepted: z.boolean().refine(val => val === true, {
       message: "You must accept the terms and conditions",
     }),
-    newsletterOptIn: z.boolean().optional(),
   })
   .refine(data => data.password === data.confirmPassword, {
     message: "Passwords do not match",
@@ -66,7 +64,6 @@ export default function Signup() {
       password: "",
       confirmPassword: "",
       termsAccepted: false,
-      newsletterOptIn: false,
     },
   }) as UseFormReturn<SignupFormValues>;
 
@@ -106,19 +103,6 @@ export default function Signup() {
 
       if (resData?.token) {
         safeStorage.setItem("token", resData.token);
-      }
-
-      // Subscribe user to Mailchimp if opted in
-      if (data.newsletterOptIn && mailchimpService) {
-        try {
-          await mailchimpService.addSubscriber({
-            email: data.email,
-            mergeFields: { FNAME: data.displayName }
-          });
-          await mailchimpService.sendWelcomeEmail(data.email, 'NEW10');
-        } catch (err) {
-          console.error('Mailchimp subscription failed', err);
-        }
       }
 
       toast.success("Welcome to ZionAI 🎉");
@@ -317,27 +301,6 @@ export default function Signup() {
                   />
 
                   <PasswordStrengthMeter password={passwordValue} />
-
-                  <FormField
-                    control={form.control}
-                    name="newsletterOptIn"
-                    render={({ field }) => (
-                      <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                        <FormControl>
-                          <Checkbox
-                            checked={field.value}
-                            onCheckedChange={field.onChange}
-                            className="data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple"
-                          />
-                        </FormControl>
-                        <div className="space-y-1 leading-none">
-                          <FormLabel className="text-sm text-zion-slate-light">
-                            Subscribe to our newsletter
-                          </FormLabel>
-                        </div>
-                      </FormItem>
-                    )}
-                  />
 
                   <FormField
                     control={form.control}

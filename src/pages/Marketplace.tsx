@@ -13,7 +13,8 @@ import { generateRandomListing } from "@/utils/generateRandomListing";
 import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { SearchSuggestion } from "@/types/search";
-
+import styles from './Marketplace.module.css';
+import { useViewMode } from '@/context/ViewModeContext';
 import {
   Pagination,
   PaginationContent,
@@ -23,7 +24,40 @@ import {
   PaginationPrevious,
 } from '@/components/ui/pagination';
 
+interface ProductContainerProps {
+  listings: ProductListing[];
+  onRequestQuote: (id: string) => void;
+}
 
+function ProductGrid({ listings, onRequestQuote }: ProductContainerProps) {
+  return (
+    <div className={`${styles.grid} gap-6 product-grid`}>
+      {listings.map(listing => (
+        <ProductListingCard
+          key={listing.id}
+          listing={listing}
+          onRequestQuote={onRequestQuote}
+          view="grid"
+        />
+      ))}
+    </div>
+  );
+}
+
+function ProductList({ listings, onRequestQuote }: ProductContainerProps) {
+  return (
+    <div className={`${styles.list} gap-4 product-list`}>
+      {listings.map(listing => (
+        <ProductListingCard
+          key={listing.id}
+          listing={listing}
+          onRequestQuote={onRequestQuote}
+          view="list"
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function Marketplace() {
   const navigate = useNavigate();
@@ -34,7 +68,7 @@ export default function Marketplace() {
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
   const [isLoading, setIsLoading] = useState(false);
-  const [view, setView] = useState<'grid' | 'list'>('grid');
+  const { viewMode, setViewMode } = useViewMode();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
@@ -171,18 +205,26 @@ export default function Marketplace() {
               />
             </div>
             <div className="flex gap-2">
-              <Grid3X3
-                onClick={() => setView('grid')}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setViewMode('grid')}
                 aria-label="Grid view"
-                className={`h-4 w-4 cursor-pointer text-zion-slate-light ${view === 'grid' ? 'text-green-400' : ''}`}
-                data-testid="grid-icon"
-              />
-              <ListFilter
-                onClick={() => setView('list')}
+                aria-pressed={viewMode === 'grid'}
+                className="text-zion-slate-light"
+              >
+                <Grid3X3 className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setViewMode('list')}
                 aria-label="List view"
-                className={`h-4 w-4 cursor-pointer text-zion-slate-light ${view === 'list' ? 'text-green-400' : ''}`}
-                data-testid="list-icon"
-              />
+                aria-pressed={viewMode === 'list'}
+                className="text-zion-slate-light"
+              >
+                <ListFilter className="h-4 w-4" />
+              </Button>
             </div>
           </div>
         </div>
@@ -233,19 +275,11 @@ export default function Marketplace() {
                 <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
               </div>
             ) : filteredListings.length > 0 ? (
-              <div
-                className={view === 'grid' ? 'grid grid-cols-3 gap-6' : 'flex flex-col gap-4'}
-                data-testid="product-container"
-              >
-                {paginatedListings.map(listing => (
-                  <ProductListingCard
-                    key={listing.id}
-                    listing={listing}
-                    onRequestQuote={handleRequestQuote}
-                    view={view}
-                  />
-                ))}
-              </div>
+              viewMode === 'grid' ? (
+                <ProductGrid listings={paginatedListings} onRequestQuote={handleRequestQuote} />
+              ) : (
+                <ProductList listings={paginatedListings} onRequestQuote={handleRequestQuote} />
+              )
             ) : (
               <div className="col-span-2 text-center py-16 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
                 <h2 className="text-2xl font-bold text-white mb-4">No Results Found</h2>

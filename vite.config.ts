@@ -32,13 +32,12 @@ export default defineConfig({
       output: {
         inlineDynamicImports: false,
       },
-      // Bundle axios with the app to avoid missing module errors
+      external: [], 
     },
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      'axios': path.resolve(__dirname, './src/lib/axios.ts')
+      '@': path.resolve(__dirname, './src')
     }
   },
   server: {

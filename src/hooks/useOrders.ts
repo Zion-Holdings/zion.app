@@ -6,7 +6,6 @@ export interface Order {
   total: number;
   status: string;
   invoiceUrl: string;
-  trackingStatus?: string;
 }
 
 export function useGetOrdersQuery(userId?: string) {

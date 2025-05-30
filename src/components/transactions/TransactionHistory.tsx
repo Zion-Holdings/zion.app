@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ArrowLeft, ArrowRight, RefreshCcw, CheckCircle2, XCircle, Clock, AlertCircle, ShieldAlert } from "lucide-react";
+import { ArrowLeft, ArrowRight, RefreshCcw, CheckCircle2, XCircle, Clock, AlertCircle } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { safeStorage } from "@/utils/safeStorage";
 
@@ -19,7 +19,7 @@ interface Transaction {
   service_id: string;
   amount: number;
   currency: string;
-  status: 'pending' | 'in_escrow' | 'released' | 'disputed' | 'refunded' | 'cancelled';
+  status: 'pending' | 'completed' | 'refunded' | 'cancelled';
   in_escrow: boolean;
   created_at: string;
   completed_at?: string;
@@ -62,7 +62,7 @@ export function TransactionHistory() {
       if (filter === 'pending') {
         query = query.eq('status', 'pending');
       } else if (filter === 'completed') {
-        query = query.in('status', ['completed', 'released']);
+        query = query.eq('status', 'completed');
       } else if (filter === 'escrow') {
         query = query.eq('in_escrow', true);
       }
@@ -103,12 +103,6 @@ export function TransactionHistory() {
   
   const getStatusBadge = (status: string, inEscrow: boolean) => {
     switch(status) {
-      case 'in_escrow':
-        return (
-          <Badge variant="outline" className="bg-yellow-500/20 text-yellow-500 border-yellow-500">
-            <Clock className="w-3 h-3 mr-1" /> In Escrow
-          </Badge>
-        );
       case 'pending':
         return inEscrow ? (
           <Badge variant="outline" className="bg-yellow-500/20 text-yellow-500 border-yellow-500">
@@ -119,22 +113,10 @@ export function TransactionHistory() {
             <Clock className="w-3 h-3 mr-1" /> Pending
           </Badge>
         );
-      case 'released':
-        return (
-          <Badge variant="outline" className="bg-green-500/20 text-green-500 border-green-500">
-            <CheckCircle2 className="w-3 h-3 mr-1" /> Released
-          </Badge>
-        );
       case 'completed':
         return (
           <Badge variant="outline" className="bg-green-500/20 text-green-500 border-green-500">
             <CheckCircle2 className="w-3 h-3 mr-1" /> Completed
-          </Badge>
-        );
-      case 'disputed':
-        return (
-          <Badge variant="outline" className="bg-red-500/20 text-red-500 border-red-500">
-            <ShieldAlert className="w-3 h-3 mr-1" /> Disputed
           </Badge>
         );
       case 'refunded':
@@ -248,14 +230,11 @@ export function TransactionHistory() {
           <div className="space-y-4">
             {transactions.map((transaction) => {
               const isClient = user?.id === transaction.user_id;
-              const isPending =
-                transaction.status === 'pending' || transaction.status === 'in_escrow';
+              const isPending = transaction.status === 'pending';
               const isInEscrow = transaction.in_escrow;
               const canRelease = !isClient && isPending && isInEscrow;
               const canCancel = isClient && isPending;
-              const canRefund =
-                isClient &&
-                (transaction.status === 'completed' || transaction.status === 'released');
+              const canRefund = isClient && transaction.status === 'completed';
               
               const counterpartyName = isClient 
                 ? transaction.provider?.display_name || 'Service Provider' 

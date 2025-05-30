@@ -9,7 +9,6 @@ import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
-import { PointsBadge } from '@/components/loyalty/PointsBadge';
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,7 +50,6 @@ export function AppHeader() {
             </button>
           </div>
 
-          <PointsBadge />
           <LanguageSelector />
         </div>
       </header>

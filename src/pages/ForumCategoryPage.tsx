@@ -7,7 +7,6 @@ import CreatePostButton from "@/components/community/CreatePostButton";
 import { Input } from "@/components/ui/input";
 import { SEO } from "@/components/SEO";
 import PostCard from "@/components/community/PostCard";
-import { PostListSkeleton } from "@/components/community/PostCardSkeleton";
 import { ForumCategoryInfo } from "@/types/community";
 import { usePostsByCategory } from "@/hooks/usePostsByCategory";
 import NotFound from "./NotFound";
@@ -85,7 +84,7 @@ function CategoryContent({
     data: posts = [],
     isPending: loading,
     error,
-  } = usePostsByCategory(categoryId, 1);
+  } = usePostsByCategory(categoryId);
   const errorMessage = error instanceof Error ? error.message : null;
 
   const filteredPosts = searchQuery
@@ -136,7 +135,7 @@ function CategoryContent({
       </div>
 
       {loading ? (
-        <PostListSkeleton />
+        <div className="text-center py-16">Loading...</div>
       ) : errorMessage ? (
         <div className="text-center py-16 text-destructive">{errorMessage}</div>
       ) : posts.length > 0 ? (
@@ -177,7 +176,7 @@ export default function ForumCategoryPage() {
         canonical={`https://app.ziontechgroup.com/community/category/${categoryId}`}
       />
 
-      <Suspense fallback={<PostListSkeleton />}> 
+      <Suspense fallback={<div className="text-center py-16">Loading...</div>}>
         <CategoryContent
           categoryId={categoryId}
           category={category}

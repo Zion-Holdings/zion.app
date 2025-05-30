@@ -152,7 +152,7 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
 export default function EquipmentDetail() {
   const { id } = useParams() as { id?: string };
   const navigate = useNavigate();
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated } = useAuth();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
@@ -197,23 +197,21 @@ export default function EquipmentDetail() {
 
   const handleBuyNow = async () => {
     if (!isAuthenticated) {
-      const next = encodeURIComponent(`/checkout?sku=${id}`);
-      navigate(`/login?next=${next}`);
+      navigate(`/login?next=/equipment/${id}`);
       return;
     }
 
     setIsAdding(true);
     try {
-      const response = await fetch('/api/create-checkout-session', {
+      const response = await fetch('/api/checkout_sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId: id, userId: user?.id }),
+        body: JSON.stringify({ productId: id }),
       });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || 'Failed to create checkout session');
+      const { sessionId } = await response.json();
       const stripe = await getStripe();
-      if (stripe && data.sessionId) {
-        await stripe.redirectToCheckout({ sessionId: data.sessionId });
+      if (stripe && sessionId) {
+        await stripe.redirectToCheckout({ sessionId });
       }
     } catch (err) {
       toast({ title: 'Payment error', description: 'Could not start checkout.' });

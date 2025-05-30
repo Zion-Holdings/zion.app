@@ -24,7 +24,6 @@ import OrdersPage from "@/pages/Orders";
 import OrderDetailPage from "@/pages/OrderDetail";
 import ContractBuilder from "@/pages/ContractBuilder";
 import Projects from "@/pages/Projects";
-import RewardsPage from "@/pages/Rewards";
 
 const DashboardRoutes = () => {
   return (
@@ -187,14 +186,6 @@ const DashboardRoutes = () => {
         element={
           <ProtectedRoute>
             <WalletPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/rewards"
-        element={
-          <ProtectedRoute>
-            <RewardsPage />
           </ProtectedRoute>
         }
       />

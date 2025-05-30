@@ -8,10 +8,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@/pages/*": ["./src/pages/*"],
-      "axios": ["./src/lib/axios.ts"]
+      "@/pages/*": ["./src/pages/*"]
     },
-    "types": ["vite/client", "react", "react-router-dom", "socket.io", "socket.io-client"],
+    "types": ["vite/client", "react", "react-router-dom"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",

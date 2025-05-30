@@ -1,25 +1,16 @@
 import axios from 'axios';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { captureException } from '@/utils/sentry';
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: '/api',
   withCredentials: true,
 });
 
 apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
-    const status = error.response?.status;
-
-    if (status && status >= 400) {
-      captureException(error);
-      const message = error.response?.data?.message || 'Unexpected error';
-      toast.error(message);
-    }
-
-    if (status === 401) {
+    if (error.response?.status === 401) {
       try {
         await supabase.auth.signOut({ scope: 'global' });
       } catch (e) {
@@ -28,8 +19,10 @@ apiClient.interceptors.response.use(
       if (typeof window !== 'undefined') {
         window.location.assign('/login');
       }
+    } else {
+      const message = error.response?.data?.message || 'Something went wrong';
+      toast.error(message);
     }
-
     return Promise.reject(error);
   }
 );
