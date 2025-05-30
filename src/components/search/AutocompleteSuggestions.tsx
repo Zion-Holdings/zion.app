@@ -39,8 +39,8 @@ export function AutocompleteSuggestions({
   if (!visible || suggestions.length === 0) return null;
   
   return (
-    <div className="absolute z-50 top-full left-0 right-0 mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg overflow-hidden">
-      <ul className="py-2 max-h-60 overflow-y-auto">
+    <div className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg overflow-hidden">
+      <ul className="py-2 max-h-64 overflow-y-auto">
         {suggestions.map((suggestion, index) => {
           const highlight = highlightMatch(suggestion.text, searchTerm);
 
