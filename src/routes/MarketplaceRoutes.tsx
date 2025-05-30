@@ -21,7 +21,9 @@ import ProjectRoom from "@/pages/ProjectRoom";
 import VideoCall from "@/pages/VideoCall";
 import Checkout from "@/pages/Checkout";
 import NewProductsPage from "@/pages/NewProductsPage";
-import MoreProductsPage from "@/pages/MoreProductsPage";
+erpabg-codex/add-new-products-page-with-10-items
+import NewServicesPage from "@/pages/NewServicesPage";
+main
 
 const MarketplaceRoutes = () => {
   return (
@@ -38,7 +40,9 @@ const MarketplaceRoutes = () => {
       <Route path="/equipment" element={<EquipmentPage />} />
       <Route path="/equipment/:id" element={<EquipmentDetail />} />
       <Route path="/new-products" element={<NewProductsPage />} />
-      <Route path="/more-products" element={<MoreProductsPage />} />
+      erpabg-codex/add-new-products-page-with-10-items
+      <Route path="/new-services" element={<NewServicesPage />} />
+      main
       
       {/* Job Routes */}
       <Route

@@ -34,10 +34,14 @@ i18n
       escapeValue: false, // React already escapes by default
     },
     detection: {
-      order: ['localStorage', 'navigator'],
-      lookupLocalStorage: 'zion_language',
-      caches: ['localStorage']
+      // Avoid using localStorage directly to prevent cross-context errors
+      order: ['navigator'],
+      caches: []
     },
+  })
+  .catch(error => {
+    console.error("Error initializing i18next or its detector:", error);
+    // This helps prevent an unhandled promise rejection if init fails.
   });
 
 // For RTL language support

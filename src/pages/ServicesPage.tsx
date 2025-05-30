@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";
 import { useEffect, useState } from "react";
+import apiClient from "@/services/apiClient";
+import retry from "@/utils/retry";
 
 
 function getRandomItem<T>(arr: T[]): T {
@@ -110,6 +112,17 @@ const SERVICE_FILTERS = [
 
 export default function ServicesPage() {
   const [listings, setListings] = useState<ProductListing[]>(SERVICES);
+
+  useEffect(() => {
+    async function load() {
+      const res = await retry(() => apiClient.get('/services'), {
+        retries: 3,
+        minTimeout: 500,
+      });
+      setListings(res.data as ProductListing[]);
+    }
+    load();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {

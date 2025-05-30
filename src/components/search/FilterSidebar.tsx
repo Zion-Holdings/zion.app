@@ -16,6 +16,10 @@ interface FilterSidebarProps {
   onFilterChange: (filterType: string, value: string) => void;
   onRatingChange: (rating: number | null) => void;
   onClearFilters: () => void;
+  /**
+   * When false, show an empty state instead of the filter list
+   */
+  hasResults?: boolean;
 }
 
 export function FilterSidebar({
@@ -23,8 +27,20 @@ export function FilterSidebar({
   filterOptions,
   onFilterChange,
   onRatingChange,
-  onClearFilters
+  onClearFilters,
+  hasResults = true
 }: FilterSidebarProps) {
+  if (!hasResults) {
+    return (
+      <div className="bg-zion-blue-dark rounded-lg border border-zion-blue-light p-6 text-center">
+        <img src="/placeholder.svg" alt="No results" className="mx-auto mb-4 w-40 h-40" />
+        <p className="text-zion-slate-light mb-4">No listings match your filters.</p>
+        <Button onClick={onClearFilters} className="bg-zion-purple hover:bg-zion-purple-dark">
+          Clear Filters
+        </Button>
+      </div>
+    );
+  }
   return (
     <div className="bg-zion-blue-dark rounded-lg border border-zion-blue-light p-4">
       <div className="flex items-center justify-between mb-4">

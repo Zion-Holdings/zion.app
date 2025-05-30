@@ -37,8 +37,11 @@ export default async function handler(req: Req, res: JsonRes) {
 
   const { email, password } = req.body as { email: string; password: string };
 
+  // Normalize email before attempting lookup/login
+  const normalizedEmail = email.toLowerCase();
+
   const { data, error } = await supabase.auth.signInWithPassword({
-    email,
+    email: normalizedEmail,
     password,
   });
 
@@ -47,7 +50,11 @@ export default async function handler(req: Req, res: JsonRes) {
     return;
   }
 
-  const token = data.session.access_token;
-  res.setHeader('Set-Cookie', `token=${token}; HttpOnly; Path=/`);
-  res.status(200).json({ user: data.user, token });
+  const accessToken = data.session.access_token;
+  const refreshToken = data.session.refresh_token;
+
+  // Set HttpOnly cookie for the access token
+  res.setHeader('Set-Cookie', `access=${accessToken}; HttpOnly; Path=/`);
+
+  res.status(200).json({ user: data.user, accessToken, refreshToken });
 }

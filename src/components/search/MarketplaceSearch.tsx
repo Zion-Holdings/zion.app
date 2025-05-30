@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { useAutocomplete } from '@/hooks/useAutocomplete';
 import { ProductListing } from '@/types/listings';
+import { safeStorage } from '@/utils/safeStorage';
+import debounce from 'lodash.debounce';
 
 interface MarketplaceSearchProps {
   products: ProductListing[];
@@ -9,14 +11,30 @@ interface MarketplaceSearchProps {
 }
 
 export function MarketplaceSearch({ products, onSelect }: MarketplaceSearchProps) {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(() => safeStorage.getItem('marketplace_search_query') || '');
   const { suggestions, getSuggestions, clearSuggestions } = useAutocomplete(products);
   const [highlight, setHighlight] = useState(-1);
+
+  useEffect(() => {
+    safeStorage.setItem('marketplace_search_query', query);
+  }, [query]);
+
+  // Debounce fetching suggestions to reduce expensive computations/API calls
+  const debouncedSuggest = React.useMemo(
+    () => debounce((value: string) => getSuggestions(value), 300),
+    [getSuggestions]
+  );
+
+  useEffect(() => {
+    debouncedSuggest(query);
+    return () => {
+      debouncedSuggest.cancel();
+    };
+  }, [query, debouncedSuggest]);
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
-    getSuggestions(value);
     setHighlight(-1);
   };
 

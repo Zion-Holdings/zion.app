@@ -44,8 +44,8 @@ declare module '@/components/ChatAssistant/ChatMessage' {
 declare module '@/components/ProductListingCard' {
 export interface ProductListingCardProps {
     listing: any;
-    view: any;
-    onRequestQuote: (listingId: string) => void;
+    view?: any;
+    onRequestQuote?: (listingId: string) => void;
     key?: string | number;
     detailBasePath?: string;
   }
