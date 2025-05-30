@@ -2,6 +2,7 @@ import { Component, ReactNode, ErrorInfo } from 'react';
 
 interface Props {
   children: ReactNode;
+  fallback?: ReactNode;
 }
 
 interface State {
@@ -35,6 +36,7 @@ export class ErrorBoundary extends Component<Props, State> {
   render() {
     console.log("ErrorBoundary.tsx: Render");
     if (this.state.hasError) {
+      if (this.props.fallback) return <>{this.props.fallback}</>;
       return <div className="p-4 text-center">Something went wrong.</div>;
     }
     return this.props.children;
