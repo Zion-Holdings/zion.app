@@ -107,5 +107,9 @@
     "edit": "Edit",
     "saved": "Saved",
     "changes_saved": "Translation changes have been saved"
+  },
+  "error_boundary": {
+    "message": "Something went wrong.",
+    "retry": "Retry"
   }
 }

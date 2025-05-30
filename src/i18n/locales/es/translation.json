@@ -63,5 +63,9 @@
     "ar": "العربية",
     "language_changed": "Idioma cambiado a {{language}}",
     "switch_to_detected": "¿Cambiar a {{language}}?"
+  },
+  "error_boundary": {
+    "message": "Algo salió mal.",
+    "retry": "Reintentar"
   }
 }

@@ -8,6 +8,11 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { showApiError } from '@/utils/apiErrorHandler';
 import './utils/globalFetchInterceptor';
+import { ErrorBoundary } from 'react-error-boundary';
+import { SnackbarProvider } from 'notistack';
+import { captureException } from '@/utils/sentry';
+import { useTranslation } from 'react-i18next';
+import { ToastInitializer } from '@/hooks/use-toast';
 
 // Import i18n configuration
 import './i18n';
@@ -39,6 +44,21 @@ const queryClient = new QueryClient({
   },
 });
 
+function GlobalErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
+  const { t } = useTranslation();
+  React.useEffect(() => {
+    captureException(error);
+  }, [error]);
+  return (
+    <div role="alert" className="p-4 text-center">
+      <p className="mb-2">{t('error_boundary.message', 'Something went wrong.')}</p>
+      <button className="rounded bg-blue-600 px-4 py-2 text-white" onClick={resetErrorBoundary}>
+        {t('error_boundary.retry', 'Retry')}
+      </button>
+    </div>
+  );
+}
+
 try {
   console.log("main.tsx: Before ReactDOM.createRoot");
   // Render the app with proper provider structure
@@ -46,28 +66,33 @@ try {
     <React.StrictMode>
       <HelmetProvider>
         <QueryClientProvider client={queryClient}>
+          <SnackbarProvider maxSnack={3}>
+            <ToastInitializer />
           <WhitelabelProvider>
             <Router>
               <AuthProvider>
                 <NotificationProvider>
                   <AnalyticsProvider>
                     <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                      <ViewModeProvider>
-                        <CartProvider>
-                          <ReferralMiddleware>
-                            <AppLayout>
-                              <App />
-                            </AppLayout>
-                          </ReferralMiddleware>
-                        </CartProvider>
-                      </ViewModeProvider>
-                      <LanguageDetectionPopup />
+                      <ErrorBoundary FallbackComponent={GlobalErrorFallback}>
+                        <ViewModeProvider>
+                          <CartProvider>
+                            <ReferralMiddleware>
+                              <AppLayout>
+                                <App />
+                              </AppLayout>
+                            </ReferralMiddleware>
+                          </CartProvider>
+                        </ViewModeProvider>
+                        <LanguageDetectionPopup />
+                      </ErrorBoundary>
                     </LanguageProvider>
                   </AnalyticsProvider>
                 </NotificationProvider>
               </AuthProvider>
             </Router>
           </WhitelabelProvider>
+          </SnackbarProvider>
         </QueryClientProvider>
       </HelmetProvider>
     </React.StrictMode>,
