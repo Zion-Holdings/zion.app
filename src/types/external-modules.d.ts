@@ -349,7 +349,9 @@ declare module 'next/link' {
 declare module 'next/router' {
   interface NextRouter {
     pathname: string
+    amourx-codex/populate-forum-category-with-posts
     query: Record<string, string | string[] | undefined>
+      main
     isFallback?: boolean
   }
   export function useRouter(): NextRouter
