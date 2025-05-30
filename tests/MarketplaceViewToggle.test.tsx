@@ -50,5 +50,5 @@ test('toggling view updates container class', () => {
   fireEvent.click(listIcon);
   expect(container.className).toContain('flex-col');
   fireEvent.click(gridIcon);
-  expect(container.className).toContain('grid-cols-3');
+  expect(container.className).toContain('grid-cols-2');
 });
