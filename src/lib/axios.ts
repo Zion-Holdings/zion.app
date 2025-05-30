@@ -13,6 +13,7 @@ class InterceptorManager {
 }
 
 export interface AxiosInstance {
+  defaults: { headers: { common: Record<string, string> } };
   interceptors: { response: InterceptorManager };
   get(url: string, config?: { params?: Record<string, any> } & RequestInit): Promise<any>;
   post(url: string, data?: any, config?: RequestInit): Promise<any>;
@@ -23,18 +24,24 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
   const withCreds = !!config.withCredentials;
 
   const instance: AxiosInstance = {
+    defaults: { headers: { common: {} } },
     interceptors: { response: new InterceptorManager() },
     async get(url, init = {}) {
       const params = (init as any).params
         ? '?' + new URLSearchParams((init as any).params).toString()
         : '';
-      const opts = { ...init } as RequestInit;
+      const headers = {
+        ...instance.defaults.headers.common,
+        ...(init as any).headers,
+      };
+      const opts = { ...init, headers } as RequestInit;
       delete (opts as any).params;
       return request(baseURL + url + params, 'GET', opts);
     },
     async post(url, data = {}, init = {}) {
       const headers = {
         'Content-Type': 'application/json',
+        ...instance.defaults.headers.common,
         ...(init as any).headers,
       };
       const opts = { ...init, body: JSON.stringify(data), headers } as RequestInit;

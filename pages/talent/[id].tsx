@@ -15,7 +15,9 @@ interface TalentPageProps {
 const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
   const router = useRouter();
 
-  if (router.isFallback) {
+  // Next.js router typing in this project doesn't include `isFallback`.
+  // Cast to any to access the property during static builds.
+  if ((router as any).isFallback) {
     return (
       <div className="flex justify-center py-20">
         <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
