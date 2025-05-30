@@ -9,6 +9,8 @@ declare module "@radix-ui/react-navigation-menu";
 declare module "react-resizable-panels";
 declare module "@radix-ui/react-toggle-group";
 declare module "@radix-ui/react-toggle";
+declare module 'react-player';
+declare module '@google/model-viewer';
 declare module '*.module.css' {
   const classes: { [key: string]: string };
   export default classes;

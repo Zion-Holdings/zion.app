@@ -22,6 +22,8 @@ export interface ProductListing {
     email?: string; // Added optional email property
   };
   images: string[];
+  videoUrl?: string;
+  modelUrl?: string;
   createdAt: string;
   rating?: number;
   reviewCount?: number;
