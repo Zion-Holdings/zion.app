@@ -15,6 +15,8 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { UserProfile } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
+import { SEO } from "@/components/SEO";
+import { StructuredData } from "@/components/StructuredData";
 
 export default function TalentProfilePage() {
   // Cast to specify the expected route param type since useParams may be untyped
@@ -46,6 +48,21 @@ export default function TalentProfilePage() {
     updatedAt: new Date().toISOString(), // Default value since userDetails doesn't have this property
     role: '' // Default empty string since userDetails doesn't have this property
   };
+
+  const pageUrl = id ? `https://app.ziontechgroup.com/talent/${id}` : undefined;
+  const structuredData = profile
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        serviceType: profile.professional_title,
+        provider: {
+          '@type': 'Person',
+          name: profile.full_name
+        },
+        description: profile.bio,
+        url: pageUrl
+      }
+    : null;
 
   // Handle loading error gracefully
   useEffect(() => {
@@ -93,9 +110,20 @@ export default function TalentProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-zion-blue pb-12">
-      <TalentProfile 
-        profile={profile} 
+    <>
+      <SEO
+        title={
+          profile
+            ? `${profile.full_name} - ${profile.professional_title}`
+            : 'Talent Profile'
+        }
+        description={profile?.bio || 'Talent profile on Zion'}
+        canonical={pageUrl}
+      />
+      {structuredData && <StructuredData data={structuredData} />}
+      <div className="min-h-screen bg-zion-blue pb-12">
+      <TalentProfile
+        profile={profile}
         onRequestHire={handleRequestHire}
         onMessageTalent={handleMessageTalent}
       />
@@ -139,5 +167,6 @@ export default function TalentProfilePage() {
         onClose={() => setIsMessageModalOpen(false)}
       />
     </div>
+    </>
   );
 }
