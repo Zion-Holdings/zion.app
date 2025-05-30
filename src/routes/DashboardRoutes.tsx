@@ -21,7 +21,6 @@ import Referrals from "@/pages/Referrals";
 import DeveloperPortal from "@/pages/DeveloperPortal";
 import WalletPage from "@/pages/Wallet";
 import OrdersPage from "@/pages/Orders";
-import OrderDetailPage from "@/pages/OrderDetail";
 import ContractBuilder from "@/pages/ContractBuilder";
 import Projects from "@/pages/Projects";
 
@@ -194,14 +193,6 @@ const DashboardRoutes = () => {
         element={
           <ProtectedRoute>
             <OrdersPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/orders/:orderId"
-        element={
-          <ProtectedRoute>
-            <OrderDetailPage />
           </ProtectedRoute>
         }
       />

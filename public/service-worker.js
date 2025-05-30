@@ -39,18 +39,7 @@ self.addEventListener('fetch', event => {
         fetch(event.request)
           .then(response => {
             if (response.status === 200) {
-              try {
-                const requestUrl = new URL(event.request.url); // Use new URL to parse the request's URL
-                if (requestUrl.protocol === 'http:' || requestUrl.protocol === 'https:') {
-                  cache.put(event.request, response.clone());
-                } else {
-                  // Optionally log that a non-cacheable scheme was skipped
-                  console.log(`Service Worker: Skipped caching request with non-HTTP/S protocol: ${event.request.url}`);
-                }
-              } catch (e) {
-                // Handle cases where event.request.url might not be a valid URL (though unlikely for a fetch event)
-                console.error(`Service Worker: Could not parse request URL for caching: ${event.request.url}`, e);
-              }
+              cache.put(event.request, response.clone());
             }
             return response;
           })
@@ -67,15 +56,4 @@ self.addEventListener('fetch', event => {
       );
     })
   );
-});
-
-// Display notifications from push events
-self.addEventListener('push', event => {
-  const data = event.data ? event.data.json() : {};
-  const title = data.title || 'Zion Notification';
-  const options = {
-    body: data.body,
-    icon: '/vite.svg'
-  };
-  event.waitUntil(self.registration.showNotification(title, options));
 });

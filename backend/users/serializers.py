@@ -31,7 +31,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         # Check that the two password entries match
         if attrs['password'] != attrs['password2']:
             raise serializers.ValidationError({"password2": "Password fields didn't match."})
-        
+
         # Password strength validation (using Django's built-in validators)
         # The `validators=[validate_password]` on the password field already handles this.
         # If validate_password throws a DjangoValidationError, DRF will convert it.
@@ -44,7 +44,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         # Remove password2 from validated_data as it's not part of the User model
         validated_data.pop('password2')
-        
+
         # Use the custom user manager's create_user method
         # This ensures password hashing and other manager logic is applied.
         # The email is already normalized and checked for uniqueness in validate_email.

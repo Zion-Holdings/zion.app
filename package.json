@@ -71,8 +71,7 @@
     "swr": "^2.2.0",
     "tailwind-merge": "^2.2.1",
     "vaul": "^0.9.0",
-    "zod": "^3.22.4",
-    "yup": "^1.2.0"
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@storybook/test-runner": "0.18.0",

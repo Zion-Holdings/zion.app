@@ -187,6 +187,8 @@ export default function SavedTalentsPage() {
                 talent={talent}
                 onViewProfile={handleViewProfile}
                 onRequestHire={handleRequestHire}
+                isSaved={true}
+                onToggleSave={handleToggleSave}
                 isAuthenticated={!!user}
               />
             ))}

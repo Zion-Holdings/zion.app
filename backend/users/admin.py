@@ -8,7 +8,7 @@ class CustomUserAdmin(UserAdmin):
     list_display = ['email', 'full_name', 'is_staff', 'is_active', 'date_joined']
     search_fields = ['email', 'full_name']
     ordering = ['email']
-    
+
     # If using the default UserAdmin forms, these fieldsets might need adjustment
     # especially if 'username' is not a field in CustomUser.
     # For CustomUser with email as USERNAME_FIELD:

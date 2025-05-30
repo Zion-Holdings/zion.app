@@ -6,7 +6,7 @@ import { CommunityDiscussion } from "@/components/CommunityDiscussion";
 import { Badge } from "@/components/ui/badge";
 import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings } from "lucide-react";
 import { createTestNotification, createOnboardingNotification, createSystemNotification } from "@/utils/notifications";
-import { NotificationBell } from "@/components/NotificationBell";
+import { NotificationCenter } from "@/components/NotificationCenter";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 
@@ -169,7 +169,7 @@ export default function Dashboard() {
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-2xl font-bold text-white">Dashboard</h2>
                   <div className="flex items-center gap-2">
-                    <NotificationBell />
+                    <NotificationCenter />
                     <Button 
                       variant="outline" 
                       className="text-zion-slate-light border-zion-blue-light hover:bg-zion-blue hover:text-white"

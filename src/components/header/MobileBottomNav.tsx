@@ -1,9 +1,9 @@
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Home, Search, BriefcaseIcon, MessageSquare, User, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { useFavorites } from "@/hooks/useFavorites";
 
 interface MobileBottomNavProps {
   unreadCount?: number;
@@ -34,27 +34,12 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
       matches: (path: string) => path.startsWith("/community") || path.startsWith("/forum")
     },
     {
-      name: "Wishlist",
-      href: "/wishlist",
-      icon: Heart,
-      matches: (path: string) => path.startsWith("/wishlist"),
-      badge: favoritesCount,
-      authRequired: true
-    },
-    {
       name: "Messages",
       href: "/messages",
       icon: MessageSquare,
       matches: (path: string) => path.startsWith("/messages") || path.startsWith("/inbox"),
       badge: unreadCount,
       authRequired: true
-    },
-    {
-      name: "Cart",
-      href: "/cart",
-      icon: ShoppingCart,
-      matches: (path: string) => path.startsWith("/cart"),
-      badge: cartCount
     },
     {
       name: "Dashboard",

@@ -1,4 +1,3 @@
-console.log("main.tsx: Start");
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
@@ -23,7 +22,6 @@ import { NotificationProvider } from './context';
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
 import { ViewModeProvider } from './context/ViewModeContext';
-import { CartProvider } from './context/CartContext';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 
 // Initialize a React Query client with global error handling
@@ -39,7 +37,6 @@ const queryClient = new QueryClient({
 });
 
 try {
-  console.log("main.tsx: Before ReactDOM.createRoot");
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
@@ -52,11 +49,9 @@ try {
                   <AnalyticsProvider>
                     <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
                       <ViewModeProvider>
-                        <CartProvider>
-                          <AppLayout>
-                            <App />
-                          </AppLayout>
-                        </CartProvider>
+                        <AppLayout>
+                          <App />
+                        </AppLayout>
                       </ViewModeProvider>
                       <LanguageDetectionPopup />
                     </LanguageProvider>
@@ -69,10 +64,8 @@ try {
       </HelmetProvider>
     </React.StrictMode>,
   );
-  console.log("main.tsx: After ReactDOM.createRoot");
 } catch (error) {
   console.error("Global error caught in main.tsx:", error);
-  console.log("main.tsx: Global error caught");
   const rootElement = document.getElementById('root');
   if (rootElement) {
     rootElement.innerHTML = `

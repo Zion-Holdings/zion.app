@@ -9,7 +9,6 @@ import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-reac
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { getStripe } from "@/utils/getStripe";
-import { safeStorage } from '@/utils/safeStorage';
 
 interface EquipmentSpecification {
   name: string;
@@ -178,15 +177,8 @@ export default function EquipmentDetail() {
   const handleAddToCart = () => {
     setIsAdding(true);
 
+    // Simulate API call
     setTimeout(() => {
-      const stored = safeStorage.getItem('cart');
-      let cart: { id: string; name: string; price: number; quantity: number }[] = [];
-      if (stored) {
-        try { cart = JSON.parse(stored); } catch { /* ignore */ }
-      }
-      const existing = cart.find(i => i.id === equipment.id);
-      if (existing) existing.quantity += quantity; else cart.push({ id: equipment.id, name: equipment.name, price: equipment.price, quantity });
-      safeStorage.setItem('cart', JSON.stringify(cart));
       setIsAdding(false);
       toast({
         title: "Added to cart",
@@ -197,8 +189,7 @@ export default function EquipmentDetail() {
 
   const handleBuyNow = async () => {
     if (!isAuthenticated) {
-      const next = encodeURIComponent(`/checkout?sku=${id}`);
-      navigate(`/login?next=${next}`);
+      navigate(`/login?next=/equipment/${id}`);
       return;
     }
 

@@ -11,9 +11,7 @@
     "yes": "Sí",
     "no": "No",
     "success": "Éxito",
-    "error": "Error",
-    "open_main_menu": "Abrir menú principal",
-    "toggle_mobile_menu": "Alternar menú móvil"
+    "error": "Error"
   },
   "nav": {
     "home": "Inicio",

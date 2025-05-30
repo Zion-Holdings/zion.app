@@ -91,7 +91,6 @@ export function EnhancedSearchInput({
           <button
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-zion-slate hover:text-white"
             onClick={() => onChange('')}
-            aria-label="Clear search"
           >
             <X className="h-4 w-4" />
           </button>

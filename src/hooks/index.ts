@@ -11,4 +11,3 @@ export * from './usePostsByCategory';
 export * from './useAutocomplete';
 
 export * from "./useLocalStorage";
-export * from "./useFavorites";

@@ -6,7 +6,3 @@
 .list {
   display: block;
 }
-
-.clamp-text {
-  font-size: clamp(1rem, 2.5vw, 1.125rem);
-}

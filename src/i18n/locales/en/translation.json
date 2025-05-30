@@ -14,9 +14,7 @@
     "error": "Error",
     "explore": "Explore",
     "menu": "Menu",
-    "saving": "Saving...",
-    "open_main_menu": "Open main menu",
-    "toggle_mobile_menu": "Toggle mobile menu"
+    "saving": "Saving..."
   },
   "nav": {
     "home": "Home",

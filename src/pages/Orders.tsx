@@ -1,5 +1,4 @@
 import { FileText } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { useGetOrdersQuery } from '@/hooks/useOrders';
 import {
@@ -30,7 +29,7 @@ export default function OrdersPage() {
               <TableHead>Date</TableHead>
               <TableHead>Total</TableHead>
               <TableHead>Status</TableHead>
-              <TableHead>View</TableHead>
+              <TableHead>Invoice</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -59,7 +58,7 @@ export default function OrdersPage() {
               <TableHead>Date</TableHead>
               <TableHead>Total</TableHead>
               <TableHead>Status</TableHead>
-              <TableHead>View</TableHead>
+              <TableHead>Invoice</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -70,12 +69,9 @@ export default function OrdersPage() {
                 <TableCell>{order.total}</TableCell>
                 <TableCell>{order.status}</TableCell>
                 <TableCell>
-                  <Link
-                    to={`/orders/${order.orderId}`}
-                    className="text-zion-purple underline"
-                  >
-                    View
-                  </Link>
+                  <a href={order.invoiceUrl} download className="text-zion-purple underline">
+                    Download PDF
+                  </a>
                 </TableCell>
               </TableRow>
             ))}

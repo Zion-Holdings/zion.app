@@ -35,7 +35,7 @@ describe('MarketplaceCard Buy Now', () => {
     );
 
     fireEvent.click(screen.getByRole('button'));
-    expect(navigateMock).toHaveBeenCalledWith('/login?next=%2Fcheckout%3Fsku%3D1');
+    expect(navigateMock).toHaveBeenCalledWith('/login', { state: { from: '/' } });
   });
 });
 

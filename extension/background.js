@@ -34,13 +34,7 @@ async function askZionGPT(prompt) {
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'ask') {
-    askZionGPT(message.prompt).then(response => {
-      try {
-        sendResponse(response);
-      } catch (e) {
-        console.warn("Failed to send response to sender for 'ask' message. Channel likely closed.", e.message);
-      }
-    });
+    askZionGPT(message.prompt).then(sendResponse);
     return true;
   }
   if (message.type === 'post-job') {

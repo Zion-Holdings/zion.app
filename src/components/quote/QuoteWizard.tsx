@@ -3,7 +3,6 @@ import useSWR from 'swr';
 import { Loader2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
 import { useRequestQuoteWizard } from '@/context';
 
 interface ServiceItem {
@@ -17,9 +16,8 @@ const fetcher = (url: string) => fetch(url).then(res => {
 });
 
 export function QuoteWizard() {
-  const { step, selectService, submitQuote } = useRequestQuoteWizard();
+  const { step, selectService } = useRequestQuoteWizard();
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
-  const [message, setMessage] = useState('');
   const { data, error } = useSWR<ServiceItem[]>('/api/services', fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
       if (retryCount >= 5) return;
@@ -69,21 +67,7 @@ export function QuoteWizard() {
   }
 
   if (step === 'Details') {
-    return (
-      <div data-testid="details-step" className="space-y-4">
-        <Textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          data-testid="message-input"
-          placeholder="Your message"
-        />
-        <Button onClick={() => submitQuote(message)}>Submit</Button>
-      </div>
-    );
-  }
-
-  if (step === 'Success') {
-    return <div data-testid="success-step">Quote Submitted</div>;
+    return <div data-testid="details-step">Step 2 Form</div>;
   }
 
   return null;
