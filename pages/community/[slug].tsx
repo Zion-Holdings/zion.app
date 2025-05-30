@@ -1,88 +1,96 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { MessageSquare } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { createClient } from '@supabase/supabase-js';
 import PostCard from '@/components/community/PostCard';
+import { EmptyState } from '@/components/ui/empty-state';
 import type { ForumPost } from '@/types/community';
 
-interface CategoryPageProps {
-  posts: ForumPost[];
-  hasSession: boolean;
-  category: string;
-}
+const POSTS_QUERY = `
+  query Posts($slug: String!, $cursor: String) {
+    Posts(where: { category: $slug }, after: $cursor) {
+      edges {
+        node {
+          id
+          title
+          excerpt
+        }
+        cursor
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+`;
 
-const CategoryPage: React.FC<CategoryPageProps> = ({ posts, hasSession, category }) => {
+export default function CategoryPage() {
+  const router = useRouter();
+  const { slug } = router.query as { slug?: string };
+  const [posts, setPosts] = useState<ForumPost[]>([]);
+  const [cursor, setCursor] = useState<string | null>(null);
+  const [hasMore, setHasMore] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const loadPosts = async (after: string | null = null) => {
+    if (!slug) return;
+    setLoading(true);
+    const res = await fetch('/api/graphql', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: POSTS_QUERY, variables: { slug, cursor: after } }),
+    });
+    const json = await res.json();
+    const result = json.data?.Posts;
+    if (result) {
+      const newPosts = result.edges.map((e: any) => e.node) as ForumPost[];
+      setPosts((prev) => (after ? [...prev, ...newPosts] : newPosts));
+      setCursor(result.pageInfo.endCursor);
+      setHasMore(result.pageInfo.hasNextPage);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    setPosts([]);
+    setCursor(null);
+    if (slug) {
+      loadPosts(null);
+    }
+  }, [slug]);
+
   return (
     <>
       <Head>
-        <title>{`${category} Forum – ZionAI`}</title>
+        <title>{`${slug} Forum – ZionAI`}</title>
       </Head>
       <main className="container py-8">
-        {posts && posts.length > 0 ? (
+        {posts.length > 0 ? (
           <div className="space-y-4">
             {posts.map((post) => (
               <PostCard key={post.id} post={post} />
             ))}
-          </div>
-        ) : (
-          <div className="text-center py-16">
-            <div className="bg-zion-blue/30 p-6 rounded-full mb-6 inline-flex">
-              <MessageSquare className="h-10 w-10 text-zion-purple" />
-            </div>
-            <h2 className="text-xl font-medium mb-2">No posts yet</h2>
-            <p className="text-muted-foreground mb-6">Be the first to post</p>
-            {hasSession ? (
-              <Button asChild>
-                <Link href={`/community/create?category=${category}`}>Create New Post</Link>
-              </Button>
-            ) : (
-              <Button disabled>Create New Post</Button>
+            {hasMore && (
+              <div className="text-center mt-6">
+                <button
+                  className="text-zion-purple underline"
+                  onClick={() => loadPosts(cursor)}
+                  disabled={loading}
+                >
+                  {loading ? 'Loading...' : 'Load More'}
+                </button>
+              </div>
             )}
           </div>
-        )}
+        ) : !loading ? (
+          <EmptyState
+            icon={<MessageSquare className="h-10 w-10 text-zion-purple" />}
+            title="No posts yet"
+            description="Be the first to post"
+          />
+        ) : null}
       </main>
     </>
   );
-};
-
-export const getServerSideProps = async ({ req, params }: { req: any; params?: { slug?: string } }) => {
-  const category = params?.slug as string;
-  const supabaseUrl =
-    process.env.SUPABASE_URL ||
-    process.env.VITE_SUPABASE_URL ||
-    process.env.NEXT_PUBLIC_SUPABASE_URL ||
-    '';
-  const anonKey =
-    process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    process.env.VITE_SUPABASE_ANON_KEY ||
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-    '';
-  const token = req.cookies?.['sb-access-token'] || null;
-
-  if (!supabaseUrl || !anonKey) {
-    return { props: { posts: [], hasSession: Boolean(token), category } };
-  }
-
-  const supabase = createClient(supabaseUrl, anonKey);
-  const { data, error } = await supabase
-    .from('forum_posts')
-    .select('*')
-    .eq('category_id', category)
-    .order('created_at', { ascending: false });
-
-  if (error) {
-    console.error('Post fetch error:', error.message);
-  }
-
-  return {
-    props: {
-      posts: (data as ForumPost[]) || [],
-      hasSession: Boolean(token),
-      category
-    }
-  };
-};
-
-export default CategoryPage;
+}

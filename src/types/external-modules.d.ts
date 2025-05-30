@@ -349,6 +349,8 @@ declare module 'next/link' {
 declare module 'next/router' {
   interface NextRouter {
     pathname: string
+    query: Record<string, string | string[] | undefined>
+    isFallback?: boolean
   }
   export function useRouter(): NextRouter
 }
