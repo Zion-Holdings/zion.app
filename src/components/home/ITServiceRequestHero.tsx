@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,9 +17,11 @@ export function ITServiceRequestHero() {
   };
 
   return (
-    <section className="bg-zion-blue-dark py-16 md:py-24 border-b border-zion-purple/20">
+    <section
+      className="py-16 md:py-24 border-b border-zion-purple/20 bg-[radial-gradient(#0f172a,_#020617)]"
+    >
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
+        <div className="md:flex md:flex-col md:items-center md:justify-center">
           <GradientHeading className="mb-6 text-4xl md:text-5xl">
             24x7 Global IT Onsite Services
           </GradientHeading>
@@ -27,17 +30,30 @@ export function ITServiceRequestHero() {
           </p>
         </div>
         <div className="bg-zion-blue-light p-6 rounded-lg shadow-lg">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <Input
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              placeholder="Enter service location"
-              className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <Image
+              src="/vite.svg"
+              alt="Technician"
+              width={200}
+              height={200}
+              className="w-full h-auto md:w-40"
+              priority
             />
-            <Button type="submit" className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6">
+            <form onSubmit={handleSubmit} className="space-y-4 flex-1">
+              <Input
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="Enter service location"
+                className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
+              />
+            <Button
+              type="submit"
+              className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-3 px-6 transition-transform hover:scale-105"
+            >
               Request Service
             </Button>
-          </form>
+            </form>
+          </div>
           <p className="text-xs text-center text-zion-slate-light mt-3">
             Available worldwide, 24 hours a day
           </p>
