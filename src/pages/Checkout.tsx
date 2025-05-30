@@ -5,7 +5,10 @@ import { Input } from '@/components/ui/input';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
 import { getStripe } from '@/utils/getStripe';
+1tg4fy-codex/support-metric--imperial-units
 import { CheckoutShippingOptions, ShippingRate } from '@/components/CheckoutShippingOptions';
+import { PointsBadge } from '@/components/loyalty/PointsBadge';
+main
 import {
   Form,
   FormField,
@@ -86,7 +89,10 @@ export default function Checkout() {
 
   return (
     <div className="container max-w-2xl py-10">
-      <h1 className="text-3xl font-bold mb-6">Checkout</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-3xl font-bold">Checkout</h1>
+        <PointsBadge />
+      </div>
       <div className="grid gap-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

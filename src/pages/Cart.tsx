@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@/hooks/useAuth';
+import { toast } from '@/hooks/use-toast';
 
 interface CartItem {
   id: string;
@@ -12,7 +14,17 @@ interface CartItem {
 
 export default function CartPage() {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [items, setItems] = useState<CartItem[]>([]);
+
+  if (!user) {
+    toast({
+      title: 'Authentication required',
+      description: 'Please sign in to view your cart.',
+    });
+    navigate('/login');
+    return null;
+  }
 
   useEffect(() => {
     const stored = safeStorage.getItem('cart');
