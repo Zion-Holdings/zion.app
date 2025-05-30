@@ -66,6 +66,7 @@ Deployment instructions to be updated.
 
 See [docs/Integrations.md](docs/Integrations.md) for information on the Zion Assistant browser extension and Slack bot.
 Payment environment variables are documented in [docs/Payments.md](docs/Payments.md).
+The Quote Wizard fetches services from the backend defined by the `VITE_API_URL` environment variable. Refer to `.env.example` for a sample value.
 
 ## Troubleshooting
 
