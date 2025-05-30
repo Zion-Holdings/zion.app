@@ -34,9 +34,14 @@ i18n
       escapeValue: false, // React already escapes by default
     },
     detection: {
+      fix/multi-faceted-loading-errors
       order: ['localStorage', 'navigator'],
       lookupLocalStorage: 'zion_language',
       caches: [] // Updated
+      // Avoid using localStorage directly to prevent cross-context errors
+      order: ['navigator'],
+      caches: []
+main
     },
   })
   .catch(error => {

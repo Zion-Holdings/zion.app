@@ -26,6 +26,7 @@ export function mapProfileToUser(user: SupabaseUser, profile: any): UserProfile 
     headline: profile.headline || undefined,
     avatar_url: profile.avatar_url || undefined,
     avatarUrl: profile.avatar_url || undefined, // Add for compatibility
-    role: profile.user_type // Map user_type to role for backward compatibility
+    role: profile.user_type, // Map user_type to role for backward compatibility
+    points: profile.points ?? 0
   };
 }

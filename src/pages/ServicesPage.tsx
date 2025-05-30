@@ -3,10 +3,13 @@ import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { SERVICES } from "@/data/servicesData";
 import { TrustedBySection } from "@/components/TrustedBySection";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";
 import { useEffect, useState } from "react";
+import apiClient from "@/services/apiClient";
+import retry from "@/utils/retry";
 
 
 function getRandomItem<T>(arr: T[]): T {
@@ -112,6 +115,17 @@ export default function ServicesPage() {
   const [listings, setListings] = useState<ProductListing[]>(SERVICES);
 
   useEffect(() => {
+    async function load() {
+      const res = await retry(() => apiClient.get('/services'), {
+        retries: 3,
+        minTimeout: 500,
+      });
+      setListings(res.data as ProductListing[]);
+    }
+    load();
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setListings(prev => [...prev, generateRandomService(prev.length + 1)]);
     }, 120000);
@@ -120,6 +134,7 @@ export default function ServicesPage() {
   }, []);
 
   return (
+    <ErrorBoundary>
     <>
       <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
@@ -150,5 +165,6 @@ export default function ServicesPage() {
       />
       <TrustedBySection />
     </>
+    </ErrorBoundary>
   );
 }

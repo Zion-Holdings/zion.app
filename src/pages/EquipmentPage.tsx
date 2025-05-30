@@ -2,6 +2,12 @@ import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { useEffect, useState } from "react";
 import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
+import { Button } from "@/components/ui/button";
+import { Loader2, Sparkles } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
+import { useRecommendations } from "@/hooks/useRecommendations";
+
+const API_BASE = '/api';
 
 // Sample datacenter equipment listings
 const EQUIPMENT_LISTINGS: ProductListing[] = [
@@ -349,6 +355,31 @@ export default function EquipmentPage() {
   const [listings, setListings] = useState<ProductListing[]>([
     ...EQUIPMENT_LISTINGS,
   ]);
+  const [fetchAI, setFetchAI] = useState(false);
+  const { recommendations, isLoading: recLoading } = useRecommendations('equipment', fetchAI);
+
+  useEffect(() => {
+    if (recommendations) {
+      setListings(recommendations as ProductListing[]);
+      toast({ title: 'Showing AI‑matched results' });
+      setFetchAI(false);
+    }
+  }, [recommendations]);
+
+  useEffect(() => {
+    async function fetchEquipment() {
+      try {
+        const res = await fetch(`${API_BASE}/equipment`);
+        if (!res.ok) throw new Error('Equipment fetch failed');
+        const data = await res.json();
+        setListings(data);
+      } catch (err) {
+        console.error(err);
+        setListings(EQUIPMENT_LISTINGS);
+      }
+    }
+    fetchEquipment();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -357,7 +388,22 @@ export default function EquipmentPage() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleAIRecommendations = () => setFetchAI(true);
+
   return (
+    <>
+      <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
+        <div className="container mx-auto flex justify-end">
+          <Button onClick={handleAIRecommendations} disabled={recLoading} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
+            {recLoading ? (
+              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+            ) : (
+              <Sparkles className="h-4 w-4 mr-2" />
+            )}
+            AI Recommendations
+          </Button>
+        </div>
+      </div>
       <DynamicListingPage
         title="Datacenter Equipment"
         description="Browse professional hardware for modern datacenter and network deployments."
@@ -367,5 +413,6 @@ export default function EquipmentPage() {
         initialPrice={{ min: 400, max: 50000 }}
         detailBasePath="/equipment"
       />
+    </>
   );
 }

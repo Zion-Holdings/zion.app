@@ -41,7 +41,7 @@ export default async function handler(req: Req, res: JsonRes) {
 
   const { data, error } = await supabase
     .from('orders')
-    .select('id, created_at, total, status, invoice_url')
+    .select('id, created_at, total, status, invoice_url, tracking_status')
     .eq('user_id', userId)
     .order('created_at', { ascending: false });
 

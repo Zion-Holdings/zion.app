@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Input } from '@/components/ui/input';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { useNavigate } from 'react-router-dom';
 import { getStripe } from '@/utils/getStripe';
+import { PointsBadge } from '@/components/loyalty/PointsBadge';
+import { useAuth } from '@/hooks/useAuth';
 import {
   Form,
   FormField,
@@ -29,12 +31,20 @@ interface CheckoutForm {
   country: string;
 }
 
-export default function CheckoutPage() {
+export default function Checkout() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [items, setItems] = useState<CartItem[]>([]);
   const form = useForm<CheckoutForm>({ defaultValues: { name: '', email: '', address: '', city: '', country: '' } });
+  const { user } = useAuth();
 
   useEffect(() => {
+    const sku = searchParams.get('sku');
+    if (sku) {
+      setItems([{ id: sku, name: sku, price: 25, quantity: 1 }]);
+      return;
+    }
+
     const stored = safeStorage.getItem('cart');
     if (stored) {
       try {
@@ -43,7 +53,7 @@ export default function CheckoutPage() {
         setItems([]);
       }
     }
-  }, []);
+  }, [searchParams]);
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
@@ -65,6 +75,17 @@ export default function CheckoutPage() {
           },
         });
         if (payment.error) throw payment.error;
+        if (user?.id) {
+          try {
+            await fetch('/api/points/add', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ userId: user.id, amount: subtotal, orderId: result.id }),
+            });
+          } catch (e) {
+            console.error('Failed to add points', e);
+          }
+        }
         safeStorage.removeItem('cart');
         navigate(`/orders/${result.id}`);
       }
@@ -75,7 +96,10 @@ export default function CheckoutPage() {
 
   return (
     <div className="container max-w-2xl py-10">
-      <h1 className="text-3xl font-bold mb-6">Checkout</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-3xl font-bold">Checkout</h1>
+        <PointsBadge />
+      </div>
       <div className="grid gap-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

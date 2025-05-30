@@ -10,6 +10,7 @@ import { Slider } from "@/components/ui/slider";
 import { ProductListing, ListingView } from "@/types/listings";
 import { Search, Filter, LayoutGrid, List, Star } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { captureException } from "@/utils/sentry";
 import {
   Pagination,
   PaginationContent,
@@ -53,8 +54,15 @@ export function DynamicListingPage({
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [view, setView] = useState<ListingView>("grid");
+  const isGrid = view === "grid";
+  // Swap icons to match action
+  const ToggleViewIcon = isGrid ? (
+    <List className="h-4 w-4" />
+  ) : (
+    <LayoutGrid className="h-4 w-4" />
+  );
   const [isLoading, setIsLoading] = useState(false);
-  const [priceRange, setPriceRange] = useState<PriceRange>(initialPrice);
+  const [priceRange, setPriceRange] = useState<PriceRange>({ min: 0, max: 10000 });
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -75,28 +83,36 @@ export function DynamicListingPage({
   ]);
 
   const handleSliderChange = (values: number[]) => {
-    setCurrentPriceFilter([values[0], values[1]]);
+    const [min, max] = values.map(Number);
+    if (isNaN(min) || isNaN(max)) return;
+    setCurrentPriceFilter([min, max]);
   };
 
-  const filteredListings = allListings.filter(listing => {
-    const matchesSearch = !searchQuery || 
-      listing.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-      listing.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (listing.tags && listing.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase())));
-    
-    const matchesCategory = selectedCategory === "all" || listing.category === selectedCategory;
-    
-    const matchesPrice = listing.price === null || (
-      listing.price >= currentPriceFilter[0] && 
-      listing.price <= currentPriceFilter[1]
-    );
-    
-    const matchesRating = 
-      selectedRating === null || 
-      (listing.rating !== undefined && listing.rating >= selectedRating);
-    
-    return matchesSearch && matchesCategory && matchesPrice && matchesRating;
-  });
+  let filteredListings: ProductListing[] = [];
+  try {
+    filteredListings = allListings.filter(listing => {
+      const matchesSearch = !searchQuery ||
+        listing.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        listing.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (listing.tags && listing.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase())));
+
+      const matchesCategory = selectedCategory === "all" || listing.category === selectedCategory;
+
+      const matchesPrice = listing.price === null || (
+        listing.price >= currentPriceFilter[0] &&
+        listing.price <= currentPriceFilter[1]
+      );
+
+      const matchesRating =
+        selectedRating === null ||
+        (listing.rating !== undefined && listing.rating >= selectedRating);
+
+      return matchesSearch && matchesCategory && matchesPrice && matchesRating;
+    });
+  } catch (error) {
+    captureException(error);
+    console.error('Listing filter error:', error);
+  }
 
   const totalPages = itemsPerPage
     ? Math.ceil(filteredListings.length / itemsPerPage)
@@ -277,34 +293,13 @@ export function DynamicListingPage({
                   <Button
                     variant="outline"
                     size="icon"
-                    onClick={() => setView("grid")}
-                    aria-pressed={view === "grid"}
-                    aria-label="Grid view"
-                    title="Grid view"
-                    className={`${
-                      view === "grid"
-                        ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
-                        : "border-zion-blue-light text-zion-slate-light"
-                    } focus-visible:ring-zion-purple`}
+                    onClick={() => setView(isGrid ? "list" : "grid")}
+                    aria-label={isGrid ? "List view" : "Grid view"}
+                    title={isGrid ? "List view" : "Grid view"}
+                    className="border-zion-blue-light text-zion-slate-light focus-visible:ring-zion-purple"
                   >
-                    <LayoutGrid className="h-4 w-4" />
-                    <span className="sr-only">Grid view</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={() => setView("list")}
-                    aria-pressed={view === "list"}
-                    aria-label="List view"
-                    title="List view"
-                    className={`${
-                      view === "list"
-                        ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
-                        : "border-zion-blue-light text-zion-slate-light"
-                    } focus-visible:ring-zion-purple`}
-                  >
-                    <List className="h-4 w-4" />
-                    <span className="sr-only">List view</span>
+                    {ToggleViewIcon}
+                    <span className="sr-only">{isGrid ? "List view" : "Grid view"}</span>
                   </Button>
                 </div>
               </div>
