@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import { CartContextType, CartItem, CartAction } from '@/types/cart';
 import { safeStorage } from '@/utils/safeStorage';
+import { useAuth } from '@/hooks/useAuth';
+import { useAnalytics } from './AnalyticsContext';
 
 interface CartState { items: CartItem[]; }
 
@@ -26,6 +28,8 @@ function cartReducer(state: CartState, action: CartAction): CartState {
       return { items: state.items.filter(i => i.id !== action.payload) };
     case 'CLEAR_CART':
       return { items: [] };
+    case 'SET_ITEMS':
+      return { items: action.payload };
     default:
       return state;
   }
@@ -53,8 +57,35 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
   );
 
+  const { user } = useAuth();
+  const { trackConversion } = useAnalytics();
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+    if (token) {
+      fetch(`/cart/restore/${token}`)
+        .then(res => res.ok ? res.json() : Promise.reject())
+        .then(data => {
+          dispatch({ type: 'SET_ITEMS', payload: data.items as CartItem[] });
+          safeStorage.setItem('cart', JSON.stringify(data.items));
+          trackConversion('cart_restored');
+        })
+        .catch(() => {});
+    }
+  }, []);
+
   useEffect(() => {
     safeStorage.setItem('cart', JSON.stringify(state.items));
+    fetch('/cart/snapshot', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        items: state.items,
+        user: user?.id,
+        email: user?.email,
+      }),
+    }).catch(() => {});
   }, [state.items]);
 
   const value: CartContextType = {
