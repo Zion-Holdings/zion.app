@@ -54,7 +54,14 @@ declare var process: {
 declare module '@/components/ui/badge' {
   export interface BadgeProps {
     className?: string;
-    variant?: "default" | "secondary" | "destructive" | "outline";
+    variant?:
+      | "default"
+      | "secondary"
+      | "destructive"
+      | "outline"
+      | "success"
+      | "warning"
+      | "info";
     children?: React.ReactNode;
     key?: string | number;
   }
