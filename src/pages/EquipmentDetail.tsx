@@ -6,10 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-react";
+import { Switch } from '@/components/ui/switch';
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { getStripe } from "@/utils/getStripe";
 import { safeStorage } from '@/utils/safeStorage';
+import { useUnitSystem } from '@/context';
+import { formatDimensions, formatWeight } from '@/utils/unitConversion';
 
 interface EquipmentSpecification {
   name: string;
@@ -34,6 +37,10 @@ interface EquipmentDetails {
   features: string[];
   warranty?: string;
   returnPolicy?: string;
+  weightKg?: number;
+  widthCm?: number;
+  heightCm?: number;
+  depthCm?: number;
 }
 
 // Sample data - in a real app this would come from an API
@@ -51,6 +58,10 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
     reviewCount: 23,
     inStock: true,
     expectedShipping: "3-5 business days",
+    weightKg: 18,
+    widthCm: 44.5,
+    heightCm: 8.9,
+    depthCm: 65,
     specifications: [
       { name: "CPU", value: "Dual Xeon" },
       { name: "Memory", value: "64GB RAM" },
@@ -78,6 +89,10 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
     reviewCount: 87,
     inStock: true,
     expectedShipping: "3-5 business days",
+    weightKg: 2.1,
+    widthCm: 15,
+    heightCm: 12,
+    depthCm: 10,
     specifications: [
       { name: "Sensor", value: "Full-frame CMOS (36 x 24 mm)" },
       { name: "Resolution", value: "8K (8192 x 4320)" },
@@ -87,7 +102,6 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
       { name: "Frame Rates", value: "Up to 120fps at 4K, 60fps at 8K" },
       { name: "Storage", value: "Dual CFexpress Type B" },
       { name: "Battery Life", value: "~3 hours continuous recording" },
-      { name: "Weight", value: "4.5 lbs (body only)" },
       { name: "Connectivity", value: "HDMI 2.1, USB-C, Wi-Fi, Bluetooth" }
     ],
     features: [
@@ -122,6 +136,10 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
     reviewCount: 42,
     inStock: true,
     expectedShipping: "5-7 business days",
+    weightKg: 14.5,
+    widthCm: 55,
+    heightCm: 20,
+    depthCm: 45,
     specifications: [
       { name: "Channels", value: "32 input channels" },
       { name: "Faders", value: "16 motorized faders" },
@@ -130,8 +148,7 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
       { name: "EQ", value: "4-band parametric per channel" },
       { name: "Dynamics", value: "Compressor/Gate on all channels" },
       { name: "Effects", value: "8 stereo effects processors" },
-      { name: "Recording", value: "64-channel USB interface" },
-      { name: "Weight", value: "32 lbs" }
+      { name: "Recording", value: "64-channel USB interface" }
     ],
     features: [
       "32-channel digital mixer with 24 premium mic preamps",
@@ -156,9 +173,32 @@ export default function EquipmentDetail() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
+  const { unit, setUnit } = useUnitSystem();
   
   // In a real app, this would fetch from an API
   const equipment = id ? SAMPLE_EQUIPMENT[id] : undefined;
+
+  const specsToDisplay = equipment
+    ? [
+        ...equipment.specifications,
+        ...(equipment.widthCm && equipment.heightCm && equipment.depthCm
+          ? [
+              {
+                name: 'Dimensions',
+                value: formatDimensions(
+                  equipment.widthCm,
+                  equipment.heightCm,
+                  equipment.depthCm,
+                  unit
+                ),
+              },
+            ]
+          : []),
+        ...(equipment.weightKg
+          ? [{ name: 'Weight', value: formatWeight(equipment.weightKg, unit) }]
+          : []),
+      ]
+    : [];
   
   if (!equipment) {
     return (
@@ -284,9 +324,17 @@ export default function EquipmentDetail() {
                   </TabsContent>
                   
                   <TabsContent value="specifications" className="mt-4">
+                    <div className="flex items-center justify-end mb-2 gap-2">
+                      <span className="text-xs">Metric</span>
+                      <Switch
+                        checked={unit === 'imperial'}
+                        onCheckedChange={(c) => setUnit(c ? 'imperial' : 'metric')}
+                      />
+                      <span className="text-xs">Imperial</span>
+                    </div>
                     <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {equipment.specifications.map((spec, index) => (
+                        {specsToDisplay.map((spec, index) => (
                           <div key={index} className="border-b border-zion-blue-light pb-2 mb-2 last:border-0 last:mb-0 last:pb-0">
                             <div className="flex justify-between">
                               <span className="text-zion-slate-light">{spec.name}</span>
