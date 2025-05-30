@@ -19,7 +19,8 @@ import {
   ErrorRoutes,
   EnterpriseRoutes,
   CommunityRoutes,
-  DeveloperRoutes
+  DeveloperRoutes,
+  SellerRoutes
 } from './routes';
 import Home from './pages/Home';
 import AIMatcherPage from './pages/AIMatcher';
@@ -108,6 +109,7 @@ const App = () => {
             <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
             <Route path="/community/*" element={<CommunityRoutes />} />
             <Route path="/developers/*" element={<DeveloperRoutes />} />
+            <Route path="/seller/*" element={<SellerRoutes />} />
             <Route path="*" element={<ErrorRoutes />} />
           </Routes>
           </ErrorBoundary>

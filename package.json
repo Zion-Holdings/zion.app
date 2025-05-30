@@ -68,6 +68,7 @@
     "sonner": "^1.4.0",
     "swr": "^2.2.0",
     "tailwind-merge": "^2.2.1",
+    "react-dropzone": "^14.2.3",
     "vaul": "^0.9.0",
     "zod": "^3.22.4",
     "yup": "^1.2.0"

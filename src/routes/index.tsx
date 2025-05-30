@@ -10,6 +10,7 @@ import ErrorRoutes from "./ErrorRoutes";
 import EnterpriseRoutes from "./EnterpriseRoutes";
 import CommunityRoutes from "./CommunityRoutes";
 import DeveloperRoutes from "./DeveloperRoutes";
+import SellerRoutes from "./SellerRoutes";
 
 export {
   AuthRoutes,
@@ -22,5 +23,6 @@ export {
   ErrorRoutes,
   EnterpriseRoutes,
   CommunityRoutes,
-  DeveloperRoutes
+  DeveloperRoutes,
+  SellerRoutes
 };
