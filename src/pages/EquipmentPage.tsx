@@ -5,7 +5,10 @@ import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
 import { Button } from "@/components/ui/button";
 import { Loader2, Sparkles } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import { useRecommendations } from "@/hooks/useRecommendations";
+import { useAuth } from "@/hooks/useAuth";
+import { useNavigate, useLocation } from "react-router-dom";
+import useSWRMutation from "swr/mutation";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const API_BASE = '/api';
 
@@ -355,16 +358,19 @@ export default function EquipmentPage() {
   const [listings, setListings] = useState<ProductListing[]>([
     ...EQUIPMENT_LISTINGS,
   ]);
-  const [fetchAI, setFetchAI] = useState(false);
-  const { recommendations, isLoading: recLoading } = useRecommendations('equipment', fetchAI);
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  useEffect(() => {
-    if (recommendations) {
-      setListings(recommendations as ProductListing[]);
-      toast({ title: 'Showing AI‑matched results' });
-      setFetchAI(false);
-    }
-  }, [recommendations]);
+  const { trigger, isMutating } = useSWRMutation(
+    `${API_BASE}/equipment/recommendations`,
+    (url: string, { arg }: { arg: string }) =>
+      fetch(`${url}?userId=${arg}`).then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch recommendations');
+        return res.json();
+      })
+  );
+
 
   useEffect(() => {
     async function fetchEquipment() {
@@ -388,14 +394,34 @@ export default function EquipmentPage() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleAIRecommendations = () => setFetchAI(true);
+  const handleRecommendations = async () => {
+    if (!user) {
+      navigate('/login?next=/equipment&reco=1');
+      return;
+    }
+    try {
+      const data = await trigger(user.id);
+      setListings(data as ProductListing[]);
+      toast({ title: 'Showing AI‑matched results' });
+    } catch (err) {
+      console.error(err);
+      toast({ title: 'Failed to load recommendations', variant: 'destructive' });
+    }
+  };
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get('reco') === '1' && user) {
+      handleRecommendations();
+    }
+  }, [user, location.search]);
 
   return (
     <>
       <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
         <div className="container mx-auto flex justify-end">
-          <Button onClick={handleAIRecommendations} disabled={recLoading} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
-            {recLoading ? (
+          <Button onClick={handleRecommendations} disabled={isMutating} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
+            {isMutating ? (
               <Loader2 className="h-4 w-4 mr-2 animate-spin" />
             ) : (
               <Sparkles className="h-4 w-4 mr-2" />
@@ -404,15 +430,35 @@ export default function EquipmentPage() {
           </Button>
         </div>
       </div>
-      <DynamicListingPage
-        title="Datacenter Equipment"
-        description="Browse professional hardware for modern datacenter and network deployments."
-        categorySlug="equipment"
-        listings={listings}
-        categoryFilters={EQUIPMENT_FILTERS}
-        initialPrice={{ min: 400, max: 50000 }}
-        detailBasePath="/equipment"
-      />
+      {isMutating ? (
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
+              <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
+              <div className="p-4">
+                <Skeleton className="h-6 w-1/3 mb-2 bg-zion-blue-light/20" />
+                <Skeleton className="h-8 w-5/6 mb-4 bg-zion-blue-light/20" />
+                <Skeleton className="h-4 w-full mb-2 bg-zion-blue-light/20" />
+                <Skeleton className="h-4 w-4/5 mb-4 bg-zion-blue-light/20" />
+                <div className="flex justify-between items-center pt-4">
+                  <Skeleton className="h-6 w-1/4 bg-zion-blue-light/20" />
+                  <Skeleton className="h-8 w-1/4 bg-zion-blue-light/20" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <DynamicListingPage
+          title="Datacenter Equipment"
+          description="Browse professional hardware for modern datacenter and network deployments."
+          categorySlug="equipment"
+          listings={listings}
+          categoryFilters={EQUIPMENT_FILTERS}
+          initialPrice={{ min: 400, max: 50000 }}
+          detailBasePath="/equipment"
+        />
+      )}
     </>
   );
 }
