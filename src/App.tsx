@@ -8,7 +8,7 @@ import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import OfflineToast from "./components/OfflineToast";
-import PwaInstallButton from "./components/PwaInstallButton";
+import InstallPrompt from "./components/InstallPrompt";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -130,7 +130,7 @@ const App = () => {
         <Toaster />
         <SonnerToaster position="top-right" />
         <SupportChatbot />
-        <PwaInstallButton />
+        <InstallPrompt />
       </ThemeProvider>
     </WhitelabelProvider>
   );
