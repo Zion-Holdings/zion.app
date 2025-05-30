@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "NODE_ENV=production tsc && NODE_ENV=production vite build",
+    "postbuild": "next-sitemap",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "NODE_ENV=production vite preview",
     "test": "vitest",
@@ -70,7 +71,9 @@
     "tailwind-merge": "^2.2.1",
     "vaul": "^0.9.0",
     "zod": "^3.22.4",
-    "yup": "^1.2.0"
+    "yup": "^1.2.0",
+    "next-seo": "^6.0.0",
+    "next-sitemap": "^5.0.7"
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.2",
