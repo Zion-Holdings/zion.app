@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import { CartContextType, CartItem, CartAction } from '@/types/cart';
-import { saveCart, getCart } from '@/lib/db';
+import { safeStorage } from '@/utils/safeStorage';
 
 interface CartState { items: CartItem[]; }
 
@@ -45,15 +45,21 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
   useEffect(() => {
-    getCart().then(items => {
-      if (items.length) {
-        dispatch({ type: 'SET_ITEMS', payload: items as CartItem[] });
+    const stored = safeStorage.getItem('cart');
+    if (stored) {
+      try {
+        const items = JSON.parse(stored) as CartItem[];
+        if (items.length) {
+          dispatch({ type: 'SET_ITEMS', payload: items });
+        }
+      } catch {
+        /* ignore */
       }
-    });
+    }
   }, []);
 
   useEffect(() => {
-    saveCart(state.items);
+    safeStorage.setItem('cart', JSON.stringify(state.items));
   }, [state.items]);
 
   const value: CartContextType = {
