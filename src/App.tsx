@@ -50,6 +50,7 @@ import RequestQuotePage from './pages/RequestQuote';
 import WishlistPage from './pages/Wishlist';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
+import PrivacyPage from './pages/PrivacyPage';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -82,6 +83,7 @@ const baseRoutes = [
   { path: '/wishlist', element: <WishlistPage /> },
   { path: '/cart', element: <CartPage /> },
   { path: '/checkout', element: <Checkout /> },
+  { path: '/profile/privacy', element: <PrivacyPage /> },
 ];
 
 const App = () => {
