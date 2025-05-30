@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from './useAuth';
 import { safeFetch } from '@/integrations/supabase/client';
+import { getWishlist, saveWishlist } from '@/lib/db';
 
 export interface Favorite {
   item_type: string;
@@ -23,8 +24,11 @@ export function useFavorites() {
       const res = await safeFetch(`/api/favorites?userId=${user.id}`);
       const data = await res.json();
       setFavorites(data || []);
+      await saveWishlist(data || []);
     } catch (err) {
       console.error('Failed to fetch favorites', err);
+      const local = await getWishlist();
+      setFavorites(local as Favorite[]);
     } finally {
       setLoading(false);
     }
@@ -42,7 +46,7 @@ export function useFavorites() {
     );
     try {
       if (exists) {
-        await safeFetch('/api/favorites', {
+        await fetch('/api/favorites', {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ user_id: user.id, item_type, item_id })
@@ -51,13 +55,18 @@ export function useFavorites() {
           prev.filter(f => !(f.item_type === item_type && f.item_id === item_id))
         );
       } else {
-        await safeFetch('/api/favorites', {
+        await fetch('/api/favorites', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ user_id: user.id, item_type, item_id })
         });
         setFavorites(prev => [...prev, { item_type, item_id }]);
       }
+      await saveWishlist(
+        exists
+          ? favorites.filter(f => !(f.item_type === item_type && f.item_id === item_id))
+          : [...favorites, { item_type, item_id }]
+      );
     } catch (err) {
       console.error('Failed to toggle favorite', err);
     }

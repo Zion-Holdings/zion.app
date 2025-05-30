@@ -10,7 +10,9 @@ const navItems = [
   { title: 'Services', href: '/admin/services' },
   { title: 'Users', href: '/admin/users' },
   { title: 'Reports', href: '/admin/reports' },
-  { title: 'Feature Flags', href: '/admin/feature-flags' },
+  2enrzx-codex/implement-feature-flags-and-a/b-testing
+  { title: 'Moderation', href: '/admin/moderation' },
+        main
 ];
 
 export function AdminLayout({ children }: AdminLayoutProps) {
