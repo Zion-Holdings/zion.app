@@ -19,7 +19,7 @@ export const PostCard = ({ post, compact = false }: PostCardProps) => {
   const timeAgo = formatDistanceToNow(new Date(post.createdAt), { addSuffix: true });
 
   return (
-    <Card className={cn(
+    <Card data-testid="post-card" className={cn(
       "transition-shadow hover:shadow-md",
       post.isPinned && "border-zion-purple/50",
       post.isFeatured && "bg-zion-purple/5"
