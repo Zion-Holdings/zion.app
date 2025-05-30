@@ -197,22 +197,20 @@ export default function EquipmentDetail() {
 
   const handleBuyNow = async () => {
     if (!isAuthenticated) {
-      const next = encodeURIComponent(`/checkout?sku=${id}`);
-      navigate(`/login?next=${next}`);
+      navigate(`/login?next=/product/${id}`);
       return;
     }
 
     setIsAdding(true);
     try {
-      const response = await fetch('/api/checkout_sessions', {
+      const response = await fetch('/checkout/create-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId: id }),
       });
-      const { sessionId } = await response.json();
-      const stripe = await getStripe();
-      if (stripe && sessionId) {
-        await stripe.redirectToCheckout({ sessionId });
+      const { url } = await response.json();
+      if (url) {
+        window.location.href = url as string;
       }
     } catch (err) {
       toast({ title: 'Payment error', description: 'Could not start checkout.' });
