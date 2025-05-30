@@ -5,9 +5,11 @@ import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
+import { ConsentProvider } from "./context/ConsentContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import PwaInstallButton from "./components/PwaInstallButton";
+import { CookieBanner } from "./components/CookieBanner";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -50,6 +52,7 @@ import RequestQuotePage from './pages/RequestQuote';
 import WishlistPage from './pages/Wishlist';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
+import PrivacySettings from './pages/PrivacySettings';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -82,6 +85,7 @@ const baseRoutes = [
   { path: '/wishlist', element: <WishlistPage /> },
   { path: '/cart', element: <CartPage /> },
   { path: '/checkout', element: <Checkout /> },
+  { path: '/privacy-settings', element: <PrivacySettings /> },
 ];
 
 const App = () => {
@@ -91,8 +95,9 @@ const App = () => {
   console.log("App.tsx: Rendering Tree");
   return (
     <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
-        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+      <ConsentProvider>
+        <ThemeProvider defaultTheme="dark">
+          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
           <ErrorBoundary>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
@@ -114,8 +119,10 @@ const App = () => {
         </Suspense>
         <Toaster />
         <SonnerToaster position="top-right" />
-        <PwaInstallButton />
-      </ThemeProvider>
+          <CookieBanner />
+          <PwaInstallButton />
+        </ThemeProvider>
+      </ConsentProvider>
     </WhitelabelProvider>
   );
 };
