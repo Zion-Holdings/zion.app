@@ -35,7 +35,7 @@ export default async function handler(req: Req, res: JsonRes) {
 
   const { data, error } = await supabase
     .from('orders')
-    .select('id, created_at, total, status, invoice_url, items, shipping_address')
+    .select('id, created_at, total, status, invoice_url, tracking_number, tracking_status, tracking_events, items, shipping_address')
     .eq('id', id)
     .single();
 
