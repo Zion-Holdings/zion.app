@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions';
 import { SearchSuggestion } from '@/types/search';
 import { useDebounce } from '@/hooks/useDebounce';
+import { useOnClickOutside } from '@/hooks/useOnClickOutside';
 
 interface SearchBarProps {
   value: string;
@@ -32,15 +33,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
     return () => controller.abort();
   }, [debounced]);
 
-  useEffect(() => {
-    function outside(e: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        setFocused(false);
-      }
-    }
-    document.addEventListener('mousedown', outside);
-    return () => document.removeEventListener('mousedown', outside);
-  }, []);
+  useOnClickOutside(containerRef, () => setFocused(false));
 
   const handleSelect = (text: string) => {
     onChange(text);
