@@ -151,3 +151,8 @@ browser to view detailed coverage information.
 When tests run on GitHub Actions, the workflow uploads the `coverage` directory
 using `actions/upload-artifact@v4`. Visit a workflow run and download the
 `coverage-report` artifact to retrieve the generated HTML coverage report.
+
+## Currency Rates
+
+Exchange rates are stored in the `currencies` table. Run `python backend/currencies/update_currencies.py`
+daily (e.g. via cron) to refresh rates from openexchangerates.org.
