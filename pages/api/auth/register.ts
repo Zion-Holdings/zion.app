@@ -74,7 +74,7 @@ export default async function handler(req: Req, res: JsonRes) {
 
     const token = data.session?.access_token;
     if (token) {
-      res.setHeader('Set-Cookie', `token=${token}; HttpOnly; Path=/`);
+      res.setHeader('Set-Cookie', `authToken=${token}; HttpOnly; Path=/; Secure; SameSite=Strict`);
     }
     res.status(201).json({ user: data.user, token });
   } catch (err: any) {
