@@ -13,6 +13,8 @@ import {
   FormControl,
   FormMessage,
 } from '@/components/ui/form';
+import { useFeatureFlags } from '@/context/FeatureFlagContext';
+import CheckoutV2 from './CheckoutV2';
 
 interface CartItem {
   id: string;
@@ -34,6 +36,8 @@ export default function Checkout() {
   const [searchParams] = useSearchParams();
   const [items, setItems] = useState<CartItem[]>([]);
   const form = useForm<CheckoutForm>({ defaultValues: { name: '', email: '', address: '', city: '', country: '' } });
+  const { getVariant, track } = useFeatureFlags();
+  const variant = getVariant('new-checkout-v2');
 
   useEffect(() => {
     const sku = searchParams.get('sku');
@@ -74,11 +78,16 @@ export default function Checkout() {
         if (payment.error) throw payment.error;
         safeStorage.removeItem('cart');
         navigate(`/orders/${result.id}`);
+        track('new-checkout-v2:conversion');
       }
     } catch (err) {
       console.error('Payment failed', err);
     }
   };
+
+  if (variant.name === 'v2') {
+    return <CheckoutV2 />;
+  }
 
   return (
     <div className="container max-w-2xl py-10">
