@@ -340,5 +340,15 @@ declare module 'next' {
   export type GetStaticProps<P = any, Q = any> = any;
   export type GetServerSideProps<P = any, Q = any> = any;
 }
+declare module 'next/link' {
+  const Link: React.ComponentType<any>
+  export default Link
+}
+declare module 'next/router' {
+  interface NextRouter {
+    pathname: string
+  }
+  export function useRouter(): NextRouter
+}
 declare module 'next-themes';
 declare module 'tailwind-merge';
