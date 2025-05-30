@@ -342,3 +342,32 @@ declare module 'next' {
 }
 declare module 'next-themes';
 declare module 'tailwind-merge';
+declare module 'js-cookie' {
+  const Cookies: {
+    get: (name: string) => string | undefined;
+    set: (name: string, value: string, options?: any) => void;
+    remove: (name: string) => void;
+  };
+  export default Cookies;
+}
+
+declare module 'react-cookie-consent' {
+  import { ComponentType } from 'react';
+
+  export interface CookieConsentProps {
+    location?: 'top' | 'bottom' | 'none';
+    cookieName?: string;
+    buttonText?: string;
+    declineButtonText?: string;
+    enableDeclineButton?: boolean;
+    disableStyles?: boolean;
+    containerClasses?: string;
+    buttonClasses?: string;
+    declineButtonClasses?: string;
+    onAccept?: () => void;
+    onDecline?: () => void;
+  }
+
+  const CookieConsent: ComponentType<CookieConsentProps>;
+  export default CookieConsent;
+}
