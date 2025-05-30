@@ -3,6 +3,7 @@ import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { SERVICES } from "@/data/servicesData";
 import { TrustedBySection } from "@/components/TrustedBySection";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";
@@ -133,6 +134,7 @@ export default function ServicesPage() {
   }, []);
 
   return (
+    <ErrorBoundary>
     <>
       <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
@@ -163,5 +165,6 @@ export default function ServicesPage() {
       />
       <TrustedBySection />
     </>
+    </ErrorBoundary>
   );
 }
