@@ -4,7 +4,7 @@ import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from "lucide-react";
 import { MARKETPLACE_LISTINGS } from "@/data/listingData";
 import { ProductListing } from "@/types/listings";
@@ -54,6 +54,12 @@ export default function CategoryDetail() {
   // Cast to specify the expected route param type since useParams may be untyped
   const { slug } = useParams() as { slug?: string };
   const navigate = useNavigate();
+
+  // Redirect to categories list if slug is missing
+  if (!slug) {
+    navigate('/categories');
+    return null;
+  }
   const [isLoading, setIsLoading] = useState(true);
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
   const [category, setCategory] = useState<{title: string, description: string, icon: JSX.Element}>({
@@ -128,47 +134,63 @@ export default function CategoryDetail() {
   };
 
   useEffect(() => {
-    setIsLoading(true);
-    
-    // Find the category data based on slug
-    const currentCategory = categoryData[slug as keyof typeof categoryData] || {
-      title: slug?.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || "Category",
-      description: "Explore our collection in this category",
-      icon: <Bot className="w-6 h-6" />
-    };
-    
-    setCategory(currentCategory);
-    innovationCounterRef.current = 0;
+    async function load() {
+      setIsLoading(true);
+      try {
+        // Find the category data based on slug
+        const currentCategory = categoryData[slug as keyof typeof categoryData] || {
+          title: slug
+            ?.split('-')
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ') || 'Category',
+          description: 'Explore our collection in this category',
+          icon: <Bot className="w-6 h-6" />,
+        };
 
-    // Filter listings by category
-    const categoryTitle = currentCategory.title;
-    const filteredListings = MARKETPLACE_LISTINGS.filter(listing => 
-      listing.category.toLowerCase() === categoryTitle.toLowerCase()
-    );
-    
-    // If we don't have real listings for this category, generate placeholder listings
-    const listingsToShow = filteredListings.length > 0 ? filteredListings : 
-      Array(4).fill(null).map((_, index) => ({
-        id: `${slug}-${index}`,
-        title: `${currentCategory.title} Product ${index + 1}`,
-        description: `A great ${currentCategory.title.toLowerCase()} solution for your needs.`,
-        category: currentCategory.title,
-        price: Math.floor(Math.random() * 500) + 50,
-        currency: "$",
-        tags: [`${slug}`, "ai", "tool"],
-        author: {
-          name: `Provider ${index + 1}`,
-          id: `author-${index + 1}`,
-          avatarUrl: undefined
-        },
-        images: [`/placeholder.svg`],
-        createdAt: new Date().toISOString(),
-        rating: Math.floor(Math.random() * 5) + 1,
-        reviewCount: Math.floor(Math.random() * 100)
-      }));
+        setCategory(currentCategory);
+        innovationCounterRef.current = 0;
 
-    setListings(listingsToShow);
-    setIsLoading(false);
+        // Filter listings by category
+        const categoryTitle = currentCategory.title;
+        const filteredListings = MARKETPLACE_LISTINGS.filter(
+          (listing) => listing.category.toLowerCase() === categoryTitle.toLowerCase()
+        );
+
+        // If we don't have real listings for this category, generate placeholder listings
+        const listingsToShow =
+          filteredListings.length > 0
+            ? filteredListings
+            : Array(4)
+                .fill(null)
+                .map((_, index) => ({
+                  id: `${slug}-${index}`,
+                  title: `${currentCategory.title} Product ${index + 1}`,
+                  description: `A great ${currentCategory.title.toLowerCase()} solution for your needs.`,
+                  category: currentCategory.title,
+                  price: Math.floor(Math.random() * 500) + 50,
+                  currency: '$',
+                  tags: [`${slug}`, 'ai', 'tool'],
+                  author: {
+                    name: `Provider ${index + 1}`,
+                    id: `author-${index + 1}`,
+                    avatarUrl: undefined,
+                  },
+                  images: [`/placeholder.svg`],
+                  createdAt: new Date().toISOString(),
+                  rating: Math.floor(Math.random() * 5) + 1,
+                  reviewCount: Math.floor(Math.random() * 100),
+                }));
+
+        setListings(listingsToShow);
+      } catch (err) {
+        console.error('Category load error:', err);
+        toast({ title: 'Error', description: 'Failed to load category' });
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    load();
   }, [slug]);
 
   useEffect(() => {
@@ -213,8 +235,9 @@ export default function CategoryDetail() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-zion-blue">
-        <div className="container mx-auto px-4 py-12">
+      <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+        <div className="min-h-screen bg-zion-blue">
+          <div className="container mx-auto px-4 py-12">
           <div className="mb-4">
             <Link to="/categories" className="text-zion-cyan hover:text-zion-cyan-light transition-colors inline-flex items-center">
               ← Back to Categories
@@ -250,8 +273,9 @@ export default function CategoryDetail() {
               ))}
             </div>
           )}
+          </div>
         </div>
-      </div>
+      </Suspense>
       <Footer />
     </>
   );
