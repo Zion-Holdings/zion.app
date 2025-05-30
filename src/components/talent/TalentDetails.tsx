@@ -7,13 +7,30 @@ export interface TalentDetailsProps {
 }
 const TalentDetails: React.FC<TalentDetailsProps> = ({ talent }) => (
   <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">
-    <div className="container mx-auto px-4 space-y-6">
-      <h1 className="text-3xl font-bold">{talent.full_name}</h1>
-      {talent.professional_title && <p className="text-zion-slate-light">{talent.professional_title}</p>}
+    <div className="container mx-auto px-4">
+      <div className="md:flex md:space-x-8">
+        {talent.profile_picture_url && (
+          <div className="md:w-1/3 mb-6 md:mb-0">
+            <img
+              src={talent.profile_picture_url}
+              alt={`${talent.full_name}'s profile picture`}
+              className="rounded-lg shadow-lg w-full max-w-xs mx-auto md:max-w-none"
+              style={{ maxWidth: '250px', height: 'auto' }}
+            />
+          </div>
+        )}
+        <div className="md:w-2/3 space-y-6">
+          <h1 className="text-3xl font-bold">{talent.full_name}</h1>
+          {talent.professional_title && <p className="text-zion-slate-light">{talent.professional_title}</p>}
 
-      {talent.bio && <p>{talent.bio}</p>}
+          {talent.bio && <p>{talent.bio}</p>}
+        </div>
+      </div>
 
-      {talent.skills && talent.skills.length > 0 && (
+      {/* Rest of the details */}
+
+      <div className="mt-8 space-y-6"> {/* Added a wrapper div with margin-top */}
+        {talent.skills && talent.skills.length > 0 && (
         <section>
           <h2 className="text-xl font-semibold mb-2">Skills</h2>
           <ul className="flex flex-wrap gap-2">
@@ -58,6 +75,7 @@ const TalentDetails: React.FC<TalentDetailsProps> = ({ talent }) => (
       )}
 
       <Button className="bg-zion-purple text-white">Hire</Button>
+      </div> {/* Closing the wrapper div */}
     </div>
   </main>
 );
