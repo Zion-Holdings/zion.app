@@ -7,6 +7,7 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import OfflineToast from "./components/OfflineToast";
 import PwaInstallButton from "./components/PwaInstallButton";
 import {
   AuthRoutes,
@@ -112,6 +113,7 @@ const App = () => {
           </Routes>
           </ErrorBoundary>
         </Suspense>
+        <OfflineToast />
         <Toaster />
         <SonnerToaster position="top-right" />
         <PwaInstallButton />
