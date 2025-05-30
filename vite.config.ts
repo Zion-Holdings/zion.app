@@ -10,7 +10,7 @@ export default defineConfig({
     {
       name: 'mock-api',
       configureServer(server) {
-        server.middlewares.use('/api/services', (req, res) => {
+        server.middlewares.use('/api/public/services', (req, res) => {
           const url = new URL(req.originalUrl || req.url, 'http://localhost')
           const category = url.searchParams.get('category')
           const q = (url.searchParams.get('q') || '').toLowerCase()

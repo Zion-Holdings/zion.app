@@ -4,6 +4,7 @@ import { Loader2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
+import { captureException } from '@/utils/sentry';
 
 interface ServiceItem {
   id: string;
@@ -12,10 +13,19 @@ interface ServiceItem {
 
 const WIZARD_STEPS = [1, 2, 3];
 
-const fetcher = (url: string) => fetch(url).then(res => {
-  if (!res.ok) throw new Error('Failed');
+const fetcher = async (url: string) => {
+  const res = await fetch(url);
+  if (!res.ok) {
+    const err = new Error('Failed');
+    if (process.env.NODE_ENV === 'development') {
+      console.error(err);
+    } else {
+      captureException(err);
+    }
+    throw err;
+  }
   return res.json();
-});
+};
 
 function StepIndicator({ step }: { step: number }) {
   const progress = (step / WIZARD_STEPS.length) * 100;
@@ -35,9 +45,9 @@ export function QuoteWizard() {
   const [step, setStep] = useState(1);
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const [message, setMessage] = useState('');
-  const { data, error } = useSWR<ServiceItem[]>('/api/services', fetcher, {
+  const { data, error } = useSWR<ServiceItem[]>('/api/public/services', fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
-      if (retryCount >= 5) return;
+      if (retryCount >= 3) return;
       const timeout = Math.min(1000 * 2 ** retryCount, 30000);
       setTimeout(() => revalidate({ retryCount: retryCount + 1 }), timeout);
     },
