@@ -66,6 +66,7 @@ Deployment instructions to be updated.
 
 See [docs/Integrations.md](docs/Integrations.md) for information on the Zion Assistant browser extension and Slack bot.
 Payment environment variables are documented in [docs/Payments.md](docs/Payments.md).
+Observability features like logging and metrics are covered in [docs/observability.md](docs/observability.md).
 
 ## Troubleshooting
 

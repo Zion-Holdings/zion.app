@@ -29,6 +29,7 @@ export default defineConfig({
     sourcemap: false,
     minify: 'esbuild',
     rollupOptions: {
+      external: ['@sentry/react'],
       output: {
         inlineDynamicImports: false,
       },

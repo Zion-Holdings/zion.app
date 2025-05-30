@@ -1,5 +1,8 @@
 from pathlib import Path
 import os
+import logging.config
+
+from backend.logging_config import LOGGING as LOGGING_CONFIG
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-placeholder'
@@ -23,6 +26,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'backend.middleware.PrometheusMiddleware',
 ]
 
 ROOT_URLCONF = 'django_backend.urls'
@@ -67,3 +71,9 @@ EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 
 PASSWORD_RESET_TIMEOUT = 900  # 15 minutes
+
+# Structured logging configuration
+LOGGING = LOGGING_CONFIG
+
+# Initialize metrics and DB instrumentation
+import backend.observability  # noqa: E402

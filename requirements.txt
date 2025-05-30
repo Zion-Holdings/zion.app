@@ -1,0 +1,4 @@
+django>=4.2
+sendgrid-django>=1.2
+python-json-logger>=2.0
+prometheus-client>=0.20
