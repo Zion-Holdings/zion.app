@@ -14,9 +14,10 @@ export function useTalentDirectory() {
   } = useAuthStatus();
 
   // Fetch talent data
-  const { 
-    talents, 
-    isLoading 
+  const {
+    talents,
+    isLoading,
+    error,
   } = useTalentData();
 
   // Apply filters and sorting
@@ -56,6 +57,7 @@ export function useTalentDirectory() {
     talents,
     filteredTalents,
     isLoading,
+    error,
     
     // Search and filter state
     searchTerm,
