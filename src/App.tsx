@@ -56,10 +56,15 @@ import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
 import { SupportChatbot } from './components/SupportChatbot';
 import PrivateRoute from './components/PrivateRoute';
+import RecommendationsPage from './pages/Recommendations';
+import withAuth from './components/withAuth';
+
+const RecommendationsProtected = withAuth(RecommendationsPage);
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/match', element: <AIMatcherPage /> },
+  { path: '/recommendations', element: <RecommendationsProtected /> },
   { path: '/login', element: <Login /> },
   { path: '/register', element: <Signup /> },
   { path: '/signup', element: <SimpleSignup /> },
