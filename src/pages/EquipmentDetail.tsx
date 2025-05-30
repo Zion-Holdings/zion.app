@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { ProductGallery } from "@/components/gallery/ProductGallery";
 import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
@@ -153,7 +154,6 @@ export default function EquipmentDetail() {
   const { id } = useParams() as { id?: string };
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
   
@@ -228,37 +228,7 @@ export default function EquipmentDetail() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Column - Images */}
             <div className="lg:col-span-2">
-              <div className="bg-zion-blue-dark rounded-lg overflow-hidden border border-zion-blue-light">
-                {/* Main Image */}
-                <div className="aspect-video w-full relative">
-                  <img 
-                    src={equipment.images[selectedImageIndex]} 
-                    alt={equipment.name} 
-                    className="w-full h-full object-contain bg-zion-blue-light/10 p-4"
-                  />
-                </div>
-                
-                {/* Thumbnail Gallery */}
-                {equipment.images.length > 1 && (
-                  <div className="flex p-4 gap-2 overflow-x-auto">
-                    {equipment.images.map((image, index) => (
-                      <div 
-                        key={index}
-                        onClick={() => setSelectedImageIndex(index)}
-                        className={`w-20 h-20 flex-shrink-0 cursor-pointer rounded overflow-hidden border-2 ${
-                          index === selectedImageIndex ? "border-zion-purple" : "border-transparent"
-                        }`}
-                      >
-                        <img 
-                          src={image} 
-                          alt={`${equipment.name} - image ${index + 1}`} 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <ProductGallery images={equipment.images} />
 
               {/* Product Details Tabs */}
               <div className="mt-8">
