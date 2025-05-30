@@ -11,10 +11,10 @@ global.ResizeObserver = class ResizeObserver {
 // Mock window.scrollTo
 // Assuming 'vi' is globally available due to 'globals: true' in vitest.config.ts
 if (typeof vi !== 'undefined') {
-  global.window.scrollTo = vi.fn(); 
+  global.window.scrollTo = vi.fn();
 } else {
   // Fallback if vi is not available for some reason in this context
-  global.window.scrollTo = () => { /* do nothing */ }; 
+  global.window.scrollTo = () => { /* do nothing */ };
   console.warn('vi not available in tests/setup.ts for scrollTo mock');
 }
 
