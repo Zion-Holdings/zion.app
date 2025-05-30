@@ -9,7 +9,8 @@ import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-reac
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { getStripe } from "@/utils/getStripe";
-import { safeStorage } from '@/utils/safeStorage';
+import { useCart } from '@/context/CartContext';
+import type { CartItem } from '@/types/cart';
 
 interface EquipmentSpecification {
   name: string;
@@ -153,6 +154,7 @@ export default function EquipmentDetail() {
   const { id } = useParams() as { id?: string };
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
+  const { dispatch } = useCart();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
@@ -175,24 +177,30 @@ export default function EquipmentDetail() {
     );
   }
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     setIsAdding(true);
-
-    setTimeout(() => {
-      const stored = safeStorage.getItem('cart');
-      let cart: { id: string; name: string; price: number; quantity: number }[] = [];
-      if (stored) {
-        try { cart = JSON.parse(stored); } catch { /* ignore */ }
-      }
-      const existing = cart.find(i => i.id === equipment.id);
-      if (existing) existing.quantity += quantity; else cart.push({ id: equipment.id, name: equipment.name, price: equipment.price, quantity });
-      safeStorage.setItem('cart', JSON.stringify(cart));
-      setIsAdding(false);
+    try {
+      const res = await fetch('/api/cart/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id: equipment.id,
+          name: equipment.name,
+          price: equipment.price,
+          quantity,
+        }),
+      });
+      const items: CartItem[] = await res.json();
+      dispatch({ type: 'SET_ITEMS', payload: items });
       toast({
-        title: "Added to cart",
+        title: 'Added to cart',
         description: `${quantity}x ${equipment.name} added to your cart.`,
       });
-    }, 800);
+    } catch {
+      toast({ title: 'Error', description: 'Could not add to cart.' });
+    } finally {
+      setIsAdding(false);
+    }
   };
 
   const handleBuyNow = async () => {

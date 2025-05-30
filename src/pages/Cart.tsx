@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
+import { useCart } from '@/context/CartContext';
 
 interface CartItem {
   id: string;
@@ -15,7 +15,8 @@ interface CartItem {
 export default function CartPage() {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const [items, setItems] = useState<CartItem[]>([]);
+  const { items, dispatch } = useCart();
+  const [loading, setLoading] = useState(false);
 
   if (!user) {
     toast({
@@ -27,30 +28,24 @@ export default function CartPage() {
   }
 
   useEffect(() => {
-    const stored = safeStorage.getItem('cart');
-    if (stored) {
-      try {
-        setItems(JSON.parse(stored) as CartItem[]);
-      } catch {
-        setItems([]);
-      }
+    if (!items.length) {
+      setLoading(true);
+      fetch('/api/cart')
+        .then(r => r.json())
+        .then(data => dispatch({ type: 'SET_ITEMS', payload: data }))
+        .finally(() => setLoading(false));
     }
-  }, []);
+  }, [items.length, dispatch]);
 
   const updateQuantity = (id: string, qty: number) => {
-    setItems(prev => {
-      const updated = prev.map(i => i.id === id ? { ...i, quantity: qty } : i);
-      safeStorage.setItem('cart', JSON.stringify(updated));
-      return updated;
-    });
+    const updated = items.map(i =>
+      i.id === id ? { ...i, quantity: qty } : i
+    );
+    dispatch({ type: 'SET_ITEMS', payload: updated });
   };
 
   const removeItem = (id: string) => {
-    setItems(prev => {
-      const updated = prev.filter(i => i.id !== id);
-      safeStorage.setItem('cart', JSON.stringify(updated));
-      return updated;
-    });
+    dispatch({ type: 'SET_ITEMS', payload: items.filter(i => i.id !== id) });
   };
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
