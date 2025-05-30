@@ -24,7 +24,7 @@ const CATEGORIES = [
 ];
 
 export default function Blog() {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [posts, setPosts] = useState<BlogPost[]>([...BLOG_POSTS]);
 
@@ -37,10 +37,9 @@ export default function Blog() {
 
   // Filter blog posts based on search and category
   const filteredPosts = posts.filter(post => {
-    const matchesSearch = 
-      post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+    const matchesSearch =
+      post.title.toLowerCase().includes(query.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(query.toLowerCase());
       
     const matchesCategory = selectedCategory === "All Categories" || post.category === selectedCategory;
     
@@ -131,8 +130,8 @@ export default function Blog() {
                 <Input
                   type="text"
                   placeholder="Search articles..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
                   className="pl-10 bg-zion-blue border border-zion-blue-light text-white"
                 />
               </div>
@@ -220,7 +219,7 @@ export default function Blog() {
               <Button 
                 variant="outline" 
                 onClick={() => {
-                  setSearchQuery("");
+                  setQuery("");
                   setSelectedCategory("All Categories");
                 }}
                 className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"
