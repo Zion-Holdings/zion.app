@@ -13,6 +13,7 @@ export interface UserDetails {
   bio?: string;
   createdAt?: string;
   updatedAt?: string;
+  points?: number;
 }
 
 export interface UserProfile {
@@ -30,6 +31,7 @@ export interface UserProfile {
   role?: string;
   permissions?: string[];
   companyId?: string;
+  points?: number;
 }
 
 // Update AuthContextType definition to match implementation

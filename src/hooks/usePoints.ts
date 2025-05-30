@@ -35,6 +35,8 @@ export function usePoints() {
 
   useEffect(() => {
     fetchLedger();
+    const interval = setInterval(fetchLedger, 30000);
+    return () => clearInterval(interval);
   }, [user?.id]);
 
   return { ledger, balance, loading, fetchLedger };
