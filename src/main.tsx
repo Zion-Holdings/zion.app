@@ -12,6 +12,7 @@ import './utils/globalFetchInterceptor';
 // Import i18n configuration
 import './i18n';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { CurrencyProvider } from '@/context/CurrencyContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
@@ -50,16 +51,18 @@ try {
               <AuthProvider>
                 <NotificationProvider>
                   <AnalyticsProvider>
-                    <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                      <ViewModeProvider>
-                        <CartProvider>
-                          <AppLayout>
-                            <App />
-                          </AppLayout>
-                        </CartProvider>
-                      </ViewModeProvider>
-                      <LanguageDetectionPopup />
-                    </LanguageProvider>
+                    <CurrencyProvider>
+                      <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
+                        <ViewModeProvider>
+                          <CartProvider>
+                            <AppLayout>
+                              <App />
+                            </AppLayout>
+                          </CartProvider>
+                        </ViewModeProvider>
+                        <LanguageDetectionPopup />
+                      </LanguageProvider>
+                    </CurrencyProvider>
                   </AnalyticsProvider>
                 </NotificationProvider>
               </AuthProvider>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useCurrency } from '@/context/CurrencyContext';
 
 interface CartItem {
   id: string;
@@ -12,6 +13,7 @@ interface CartItem {
 
 export default function CartPage() {
   const navigate = useNavigate();
+  const { currency } = useCurrency();
   const [items, setItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
@@ -42,6 +44,7 @@ export default function CartPage() {
   };
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  const displaySubtotal = (subtotal * currency.fx_rate).toFixed(2);
 
   if (items.length === 0) {
     return (
@@ -59,7 +62,10 @@ export default function CartPage() {
           <li key={item.id} className="flex justify-between items-center">
             <div>
               <p className="font-medium">{item.name}</p>
-              <p className="text-sm text-muted-foreground">${item.price.toFixed(2)}</p>
+              <p className="text-sm text-muted-foreground">
+                {currency.symbol}
+                {(item.price * currency.fx_rate).toFixed(2)}
+              </p>
             </div>
             <div className="flex items-center gap-2">
               <input
@@ -78,7 +84,7 @@ export default function CartPage() {
       </ul>
       <div className="flex justify-between mt-6 font-semibold">
         <span>Subtotal</span>
-        <span>${subtotal.toFixed(2)}</span>
+        <span>{currency.symbol}{displaySubtotal}</span>
       </div>
       <Button className="mt-4 w-full" onClick={() => navigate('/checkout')}>
         Checkout

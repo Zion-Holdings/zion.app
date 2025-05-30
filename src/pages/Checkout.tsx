@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
 import { getStripe } from '@/utils/getStripe';
+import { useCurrency } from '@/context/CurrencyContext';
 import {
   Form,
   FormField,
@@ -32,6 +33,7 @@ interface CheckoutForm {
 export default function Checkout() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const { currency } = useCurrency();
   const [items, setItems] = useState<CartItem[]>([]);
   const form = useForm<CheckoutForm>({ defaultValues: { name: '', email: '', address: '', city: '', country: '' } });
 
@@ -53,13 +55,14 @@ export default function Checkout() {
   }, [searchParams]);
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  const displaySubtotal = (subtotal * currency.fx_rate).toFixed(2);
 
   const onSubmit = async (data: CheckoutForm) => {
     try {
       const res = await fetch('/api/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: subtotal }),
+        body: JSON.stringify({ amount: subtotal, currency: currency.code }),
       });
       const result = await res.json();
       if (!res.ok) throw new Error(result.error || 'Failed');
@@ -134,7 +137,7 @@ export default function Checkout() {
             <div className="border-t pt-4">
               <div className="flex justify-between font-semibold mb-4">
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>{currency.symbol}{displaySubtotal}</span>
               </div>
               <Button className="w-full" type="submit">
                 Pay with Stripe (test)
