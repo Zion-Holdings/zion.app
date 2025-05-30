@@ -4,15 +4,25 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Search } from "lucide-react";
 import { ListingScoreCard } from "@/components/ListingScoreCard";
-import { SAMPLE_SERVICES } from "@/data/sampleServices";
 import { captureException } from "@/utils/sentry";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useDebounce } from "@/hooks/useDebounce";
+import { z } from "zod";
 
 interface ServiceTypeStepProps {
   formData: QuoteFormData;
   updateFormData: (data: Partial<QuoteFormData>) => void;
 }
+
+const serviceListSchema = z.array(
+  z.object({
+    id: z.string(),
+    title: z.string(),
+    category: z.string(),
+    image: z.string().optional(),
+    description: z.string().optional(),
+  })
+);
 
 
 export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepProps) {
@@ -42,7 +52,11 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
           const response = await fetch(url);
           if (!response.ok) throw new Error('Failed to fetch');
           const data = await response.json();
-          setListings(data as ListingItem[]);
+          const parsed = serviceListSchema.safeParse(data);
+          if (!parsed.success) {
+            throw new Error('Invalid service schema');
+          }
+          setListings(parsed.data);
           setError(null);
           setLoading(false);
           return;
@@ -50,19 +64,10 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
           if (attempt === maxRetries - 1) {
             if (process.env.NODE_ENV === 'development') {
               console.error('Failed to load services:', err);
-              setListings(
-                SAMPLE_SERVICES.filter(
-                  (item) =>
-                    item.category === formData.serviceType &&
-                    item.title
-                      .toLowerCase()
-                      .includes(debouncedQuery.toLowerCase())
-                )
-              );
             } else {
               captureException(err);
-              setListings([]);
             }
+            setListings([]);
             setError('Failed to load services');
             setLoading(false);
           } else {
@@ -87,14 +92,7 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
     });
   };
   
-  const sourceListings =
-    listings.length > 0
-      ? listings
-      : process.env.NODE_ENV === 'development'
-      ? SAMPLE_SERVICES
-      : [];
-
-  const filteredListings = sourceListings.filter(item => {
+  const filteredListings = listings.filter(item => {
     // Filter by category only when a service type has been selected
     if (formData.serviceType !== "") {
       const categoryMatch = item.category.toLowerCase() === formData.serviceType.toLowerCase();
@@ -164,10 +162,7 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
           </div>
 
           {error && (
-            <div className="text-center text-red-400 text-sm">
-              {error}
-              {process.env.NODE_ENV === 'development' && ' Showing sample data.'}
-            </div>
+            <div className="text-center text-red-400 text-sm">{error}</div>
           )}
           
           <div className="grid grid-cols-1 gap-4 mt-4">
