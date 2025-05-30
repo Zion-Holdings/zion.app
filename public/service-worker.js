@@ -53,3 +53,22 @@ self.addEventListener('push', event => {
   };
   event.waitUntil(self.registration.showNotification(title, options));
 });
+
+// Handle Web Push notifications
+self.addEventListener('push', event => {
+  const data = event.data ? event.data.json() : {};
+  const title = data.title || 'New message';
+  const options = {
+    body: data.body,
+    icon: '/vite.svg',
+    data: data.url
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  if (event.notification.data) {
+    event.waitUntil(clients.openWindow(event.notification.data));
+  }
+});
