@@ -70,7 +70,8 @@
     "tailwind-merge": "^2.2.1",
     "vaul": "^0.9.0",
     "zod": "^3.22.4",
-    "yup": "^1.2.0"
+    "yup": "^1.2.0",
+    "firebase": "^9.23.0"
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.2",
