@@ -15,6 +15,7 @@ class InterceptorManager {
 export interface AxiosInstance {
   interceptors: { response: InterceptorManager };
   get(url: string, config?: { params?: Record<string, any> } & RequestInit): Promise<any>;
+  post(url: string, data?: any, config?: RequestInit): Promise<any>;
 }
 
 export function create(config: { baseURL?: string; withCredentials?: boolean } = {}): AxiosInstance {
@@ -30,6 +31,14 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       const opts = { ...init } as RequestInit;
       delete (opts as any).params;
       return request(baseURL + url + params, 'GET', opts);
+    },
+    async post(url, data = {}, init = {}) {
+      const headers = {
+        'Content-Type': 'application/json',
+        ...(init as any).headers,
+      };
+      const opts = { ...init, body: JSON.stringify(data), headers } as RequestInit;
+      return request(baseURL + url, 'POST', opts);
     },
   };
 
