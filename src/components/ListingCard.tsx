@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import TrustScoreBadge from "@/components/TrustScoreBadge"; // Assuming TrustScoreBadge is in @/components
 
 interface ListingCardProps {
   id?: string;
@@ -14,6 +15,8 @@ interface ListingCardProps {
   authorImage?: string;
   className?: string;
   profileType?: 'service' | 'talent';
+  trustScore?: number | null;
+  trustScoreAnalysis?: string | null;
 }
 
 export function ListingCard({ 
@@ -26,7 +29,9 @@ export function ListingCard({
   author, 
   authorImage, 
   className,
-  profileType = 'service'
+  profileType = 'service',
+  trustScore,
+  trustScoreAnalysis
 }: ListingCardProps) {
   // Generate a profile ID based on the listing data
   // In a real app, this would be a proper ID from the database
@@ -58,6 +63,12 @@ export function ListingCard({
         </div>
         <h3 className="text-xl font-bold mb-2 text-white group-hover:text-zion-purple transition-colors">{title}</h3>
         <p className="text-zion-slate mb-4 flex-grow">{description}</p>
+
+        {trustScore !== undefined && trustScore !== null && (
+          <div className="my-3">
+            <TrustScoreBadge score={trustScore} tooltipText={trustScoreAnalysis || undefined} />
+          </div>
+        )}
         
         {tags && tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">

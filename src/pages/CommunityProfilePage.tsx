@@ -1,21 +1,24 @@
 
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom"; // Added useNavigate
 import { SEO } from "@/components/SEO";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Textarea } from "@/components/ui/textarea"; // For comment input
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/dialog"; // Basic modal for review
 import { formatDistanceToNow } from "date-fns";
 import { CommunityUser, ForumPost, Badge as BadgeType } from "@/types/community";
 import PostCard from "@/components/community/PostCard";
 import UserBadges from "@/components/community/UserBadges";
 import ReputationDisplay from "@/components/community/ReputationDisplay";
+import CommunityVerifiedBadge from "@/components/CommunityVerifiedBadge"; // Import the new badge
 
 // Mock user data
 const mockUser: CommunityUser = {
-  id: "user1",
+  id: "user1", // This will be the revieweeId
   name: "Alex Johnson",
   avatar: "https://i.pravatar.cc/150?img=3",
   role: "Verified Talent",
@@ -104,18 +107,89 @@ const userPosts: ForumPost[] = [
 ];
 
 export default function CommunityProfilePage() {
-  const { userId } = useParams();
+  const { userId } = useParams<{ userId: string }>(); // revieweeId from URL
+  const navigate = useNavigate(); // For potential redirects or navigation after actions
+
   const [user, setUser] = useState<CommunityUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [posts, setPosts] = useState<ForumPost[]>([]);
+
+  // State for Peer Review Modal
+  const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
+  const [reviewType, setReviewType] = useState<'endorsement' | 'flag' | null>(null);
+  const [reviewComment, setReviewComment] = useState('');
+  const [reviewSubmitting, setReviewSubmitting] = useState(false);
+  const [reviewMessage, setReviewMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   
+  // Mock logged-in user ID (reviewerId)
+  // In a real app, this would come from an auth context or similar
+  const MOCK_LOGGED_IN_USER_ID = "loggedUser123";
+  // Mock endorsement count for the profile user for CommunityVerifiedBadge
+  const [mockEndorsementCount, setMockEndorsementCount] = useState(5); // Initial mock count
+
   useEffect(() => {
-    // In a real app, we would fetch the user data here
-    // For now, we'll just use the mock data
-    setUser(mockUser);
-    setPosts(userPosts);
+    // In a real app, we would fetch the user data here based on `userId`
+    // and potentially their endorsement count.
+    const profileUser = { ...mockUser, id: userId || mockUser.id }; // Use userId from URL if available
+    setUser(profileUser);
+    setPosts(userPosts.filter(p => p.authorId === profileUser.id)); // Filter posts for current profile
+    // In a real app, fetch actual endorsement count here
+    // For now, we use MOCK_USER_ENDORSEMENT_COUNT which could be updated by successful endorsement
     setIsLoading(false);
   }, [userId]);
+
+  const openReviewModal = (type: 'endorsement' | 'flag') => {
+    if (MOCK_LOGGED_IN_USER_ID === userId) {
+      setReviewMessage({ type: 'error', text: "You cannot review your own profile." });
+      setTimeout(() => setReviewMessage(null), 3000);
+      return;
+    }
+    setReviewType(type);
+    setIsReviewModalOpen(true);
+    setReviewComment('');
+    setReviewMessage(null);
+  };
+
+  const handleSubmitReview = async () => {
+    if (!reviewType || !userId) return;
+    if (MOCK_LOGGED_IN_USER_ID === userId) {
+      setReviewMessage({ type: 'error', text: "You cannot review your own profile." });
+      return;
+    }
+
+    setReviewSubmitting(true);
+    setReviewMessage(null);
+
+    try {
+      const response = await fetch('/api/trust/peer-review', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          reviewerId: MOCK_LOGGED_IN_USER_ID, // Mocked logged-in user
+          revieweeId: userId, // User being viewed
+          reviewType: reviewType,
+          comment: reviewComment,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || `Failed to submit ${reviewType}.`);
+      }
+      setReviewMessage({ type: 'success', text: `${reviewType.charAt(0).toUpperCase() + reviewType.slice(1)} submitted successfully!` });
+      if (reviewType === 'endorsement') {
+        setMockEndorsementCount(prev => prev + 1); // Optimistically update mock count
+      }
+      setIsReviewModalOpen(false);
+    } catch (error: any) {
+      setReviewMessage({ type: 'error', text: error.message || `An error occurred during ${reviewType}.` });
+    } finally {
+      setReviewSubmitting(false);
+      // Optionally clear message after a few seconds
+      setTimeout(() => setReviewMessage(null), 5000);
+    }
+  };
   
   if (isLoading) {
     return (
@@ -170,15 +244,18 @@ export default function CommunityProfilePage() {
                 <CardTitle className="text-2xl flex items-center justify-center gap-2">
                   {user.name}
                   {user.isVerified && (
-                    <span className="text-blue-500">
+                    <span className="text-blue-500" title="Verified User">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                         <path fillRule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
                       </svg>
                     </span>
                   )}
                 </CardTitle>
+                 <div className="mt-1">
+                    <CommunityVerifiedBadge endorsementCount={mockEndorsementCount} />
+                </div>
                 {user.role && (
-                  <Badge variant="outline" className="mt-1">
+                  <Badge variant="outline" className="mt-2">
                     {user.role}
                   </Badge>
                 )}
@@ -188,6 +265,23 @@ export default function CommunityProfilePage() {
               </CardHeader>
               
               <CardContent className="space-y-6">
+                 {/* Peer Review Buttons */}
+                 {MOCK_LOGGED_IN_USER_ID !== userId && ( // Don't show buttons on own profile
+                  <div className="flex flex-col space-y-2 mt-4 border-t pt-4">
+                    <Button onClick={() => openReviewModal('endorsement')} variant="outline" size="sm" className="bg-green-50 hover:bg-green-100 text-green-700 border-green-300">
+                      Endorse User
+                    </Button>
+                    <Button onClick={() => openReviewModal('flag')} variant="outline" size="sm" className="bg-red-50 hover:bg-red-100 text-red-700 border-red-300">
+                      Flag User
+                    </Button>
+                  </div>
+                )}
+                {reviewMessage && !isReviewModalOpen && ( // Show global messages if modal is closed
+                  <div className={`p-2 rounded text-sm mt-2 ${reviewMessage.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                    {reviewMessage.text}
+                  </div>
+                )}
+
                 <div>
                   <h3 className="text-sm font-medium text-muted-foreground mb-2">Reputation</h3>
                   <ReputationDisplay reputation={user.reputation} size="lg" />

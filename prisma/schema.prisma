@@ -8,11 +8,15 @@ generator client {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
+  id                 Int                 @id @default(autoincrement())
+  name               String
+  email              String              @unique
+  password           String
+  createdAt          DateTime            @default(now())
+  trustScore         TrustScore?
+  trustScoreHistory  TrustScoreHistory[]
+  reviewsGiven       PeerReview[]        @relation("Reviewer")
+  reviewsReceived    PeerReview[]        @relation("Reviewee")
 }
 
 model ChatMessage {
@@ -21,4 +25,52 @@ model ChatMessage {
   senderId  Int
   content   String
   createdAt DateTime @default(now())
+}
+
+model TrustScore {
+  id                  Int                   @id @default(autoincrement())
+  score               Int
+  userId              Int                   @unique // Assuming one TrustScore per User
+  user                User                  @relation(fields: [userId], references: [id])
+  operatorGptAnalysis String?
+  components          TrustScoreComponent[]
+  history             TrustScoreHistory[]
+  createdAt           DateTime              @default(now())
+  updatedAt           DateTime              @updatedAt
+}
+
+model TrustScoreComponent {
+  id            Int        @id @default(autoincrement())
+  trustScoreId  Int
+  trustScore    TrustScore @relation(fields: [trustScoreId], references: [id])
+  componentType String
+  value         Float
+  weight        Float
+  details       Json?
+  createdAt     DateTime   @default(now())
+}
+
+model TrustScoreHistory {
+  id                  Int         @id @default(autoincrement())
+  userId              Int
+  user                User        @relation(fields: [userId], references: [id])
+  trustScoreId        Int?
+  trustScore          TrustScore? @relation(fields: [trustScoreId], references: [id])
+  score               Int
+  operatorGptAnalysis String?
+  changedAt           DateTime    @default(now())
+  reasonForChange     String?
+  componentValues     Json?
+}
+
+model PeerReview {
+  id          Int      @id @default(autoincrement())
+  reviewerId  Int
+  reviewer    User     @relation("Reviewer", fields: [reviewerId], references: [id])
+  revieweeId  Int
+  reviewee    User     @relation("Reviewee", fields: [revieweeId], references: [id])
+  reviewType  String // "endorsement" or "flag"
+  comment     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
