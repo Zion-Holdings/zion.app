@@ -1,8 +1,12 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
 import { CartContextType, CartItem, CartAction } from '@/types/cart';
 import { safeStorage } from '@/utils/safeStorage';
+import { useAuth } from '@/hooks/useAuth';
+import { mergeGuestCart } from '@/services/cartService';
 
 interface CartState { items: CartItem[]; }
+
+const GUEST_CART_KEY = 'guestCart';
 
 const initialState: CartState = { items: [] };
 
@@ -43,24 +47,42 @@ export function useCart(): CartContextType {
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
+  const { user } = useAuth();
 
   useEffect(() => {
-    const stored = safeStorage.getItem('cart');
-    if (stored) {
-      try {
-        const items = JSON.parse(stored) as CartItem[];
-        if (items.length) {
-          dispatch({ type: 'SET_ITEMS', payload: items });
+    if (!user) {
+      const stored = safeStorage.getItem(GUEST_CART_KEY);
+      if (stored) {
+        try {
+          const items = JSON.parse(stored) as CartItem[];
+          if (items.length) {
+            dispatch({ type: 'SET_ITEMS', payload: items });
+          }
+        } catch {
+          /* ignore */
         }
+      }
+      return;
+    }
+
+    const storedGuest = safeStorage.getItem(GUEST_CART_KEY);
+    if (storedGuest) {
+      try {
+        const items = JSON.parse(storedGuest) as CartItem[];
+        mergeGuestCart(items).catch(err => console.error('Cart merge failed', err));
+        dispatch({ type: 'SET_ITEMS', payload: items });
+        safeStorage.removeItem(GUEST_CART_KEY);
       } catch {
         /* ignore */
       }
     }
-  }, []);
+  }, [user]);
 
   useEffect(() => {
-    safeStorage.setItem('cart', JSON.stringify(state.items));
-  }, [state.items]);
+    if (!user) {
+      safeStorage.setItem(GUEST_CART_KEY, JSON.stringify(state.items));
+    }
+  }, [state.items, user]);
 
   const value: CartContextType = {
     items: state.items,

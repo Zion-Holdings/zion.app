@@ -3,10 +3,14 @@ import { Button } from '@/components/ui/button';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '@/context/CartContext';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
+import { useAuth } from '@/hooks/useAuth';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 export default function CartPage() {
   const navigate = useNavigate();
   const { items, dispatch } = useCart();
+  const { user } = useAuth();
+  const isAuthenticated = !!user;
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -55,9 +59,20 @@ export default function CartPage() {
         <span>Subtotal</span>
         <span>${subtotal.toFixed(2)}</span>
       </div>
-      <Button className="mt-4 w-full" onClick={() => navigate('/checkout')}>
-        Checkout
-      </Button>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              className="mt-4 w-full"
+              onClick={() => isAuthenticated && navigate('/checkout')}
+              disabled={!isAuthenticated}
+            >
+              Checkout
+            </Button>
+          </TooltipTrigger>
+          {!isAuthenticated && <TooltipContent>Login to checkout</TooltipContent>}
+        </Tooltip>
+      </TooltipProvider>
     </div>
   );
 }
