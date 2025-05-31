@@ -115,7 +115,7 @@ const SERVICE_FILTERS = [
 
 async function fetchServices() {
   try {
-    const res = await apiClient.get('/services');
+    const res = await apiClient.get('/api/services');
     return res.data as ProductListing[];
   } catch (err) {
     captureException(err);
@@ -126,7 +126,7 @@ async function fetchServices() {
 export default function ServicesPage() {
   const [listings, setListings] = useState<ProductListing[]>(SERVICES);
 
-  const { data, error, isLoading, mutate } = useSWR<ProductListing[]>('/services', fetchServices);
+  const { data, error, isLoading, mutate } = useSWR<ProductListing[]>('/api/services', fetchServices);
 
   useEffect(() => {
     if (data) setListings(data);

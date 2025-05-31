@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { captureException } from '@/utils/sentry';
+import { SAMPLE_SERVICES } from '@/data/sampleServices';
 
 interface ServiceItem {
   id: string;
@@ -54,10 +55,11 @@ export function QuoteWizard() {
   });
 
   const loading = !data && !error;
+  const services = data && data.length > 0 ? data : error ? SAMPLE_SERVICES : [];
 
   const handleSelect = (id: string) => {
     setSelectedItem(id);
-    setStep(2);
+    setStep((prev) => prev + 1);
   };
 
   const handleSubmit = async () => {
@@ -85,9 +87,9 @@ export function QuoteWizard() {
           <div className="text-center text-red-500">Service temporarily unavailable</div>
         )}
 
-        {data && (
+        {services.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {data.map((item) => (
+            {services.map((item) => (
               <Card
                 data-testid={`service-card-${item.id}`}
                 key={item.id}

@@ -7,15 +7,15 @@ import TalentDetail from '@/pages/TalentDetail';
 
 const server = setupServer(
   rest.get('/api/talent/t-001', (_req, res, ctx) =>
-    res(ctx.json({
-      profile: {
+    res(
+      ctx.json({
         id: 't-001',
         full_name: 'Test Talent',
         bio: 'Bio',
         skills: ['React'],
         average_rating: 4.5,
-      },
-    }))
+      })
+    )
   )
 );
 
