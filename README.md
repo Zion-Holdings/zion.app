@@ -115,6 +115,12 @@ Automatic translations rely on OpenAI. Set `VITE_OPENAI_API_KEY` (or
 `NEXT_PUBLIC_OPENAI_API_KEY`) to allow the client to contact the API directly
 when the Supabase function is unavailable.
 
+### Backend API
+
+Configure `VITE_API_URL` to point to your backend service. The frontend uses this
+value when fetching data such as available services. On Netlify, the
+`netlify.toml` file proxies `/api/*` to this backend.
+
 ## Testing
 
 Run unit tests with:
