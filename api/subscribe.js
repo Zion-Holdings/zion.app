@@ -1,4 +1,6 @@
-export default async function handler(req, res) {
+const { withErrorLogging } = require('./withErrorLogging.cjs');
+
+async function handler(req, res) {
   if (req.method !== 'POST') {
     res.statusCode = 405;
     res.setHeader('Allow', 'POST');
@@ -25,3 +27,5 @@ export default async function handler(req, res) {
     res.json({ error: err.message || 'Subscription failed' });
   }
 }
+
+module.exports = withErrorLogging(handler);
