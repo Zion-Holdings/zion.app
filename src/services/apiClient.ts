@@ -2,10 +2,21 @@ import axios from 'axios';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { captureException } from '@/utils/sentry';
+import axiosRetry from 'axios-retry';
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: '/api/v1/services',
   withCredentials: true,
+});
+
+axiosRetry(apiClient, {
+  retries: 3,
+  retryCondition: (error) => {
+    return (
+      axiosRetry.isNetworkError(error) ||
+      axiosRetry.isIdempotentRequestError(error)
+    );
+  },
 });
 
 apiClient.interceptors.response.use(
