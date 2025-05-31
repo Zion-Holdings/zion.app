@@ -9,6 +9,7 @@ import { User, Mail, Lock, Eye, EyeOff, Facebook, Twitter, Loader2 } from "lucid
 import { useAuth } from "@/hooks/useAuth";
 import { registerUser } from "@/services/authService";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -104,14 +105,23 @@ export default function Signup() {
         return;
       }
 
-      if (resData?.token) {
-        safeStorage.setItem("token", resData.token);
-        // Sign the user in to update auth context
-        const loginResult = await login(data.email, data.password);
-        if (loginResult.error) {
-          toast.error(loginResult.error);
+      if (resData?.session) {
+        // Set the session directly
+        const { error: sessionError } = await supabase.auth.setSession(resData.session);
+        if (sessionError) {
+          console.error("Error setting session:", sessionError);
+          toast.error(sessionError.message || "Failed to set session. Please try logging in.");
+          // Potentially navigate to login or show a more specific error
           return;
         }
+        // The onAuthStateChange listener in AuthProvider should now handle
+        // updating user state and navigating if necessary.
+      } else {
+        // This case should ideally not be reached if the API behaves as expected
+        console.error("Registration successful but no session data received.");
+        toast.error("Registration complete, but auto-login failed. Please try logging in manually.");
+        navigate("/login"); // or handle as appropriate
+        return;
       }
 
       // Subscribe user to Mailchimp if opted in
@@ -197,6 +207,7 @@ export default function Signup() {
                               {...field}
                               aria-autocomplete="none"
                               autoComplete="off"
+                              data-testid="display-name-input"
                             />
                             <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
                           </div>
@@ -223,6 +234,7 @@ export default function Signup() {
                               autoComplete="off"
                               aria-autocomplete="none"
                               type="email"
+                              data-testid="email-input"
                             />
                             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
                           </div>
@@ -248,6 +260,7 @@ export default function Signup() {
                               className="bg-zion-blue pl-10 text-white border-zion-blue-light focus:border-zion-purple"
                               {...field}
                               autoComplete="new-password"
+                              data-testid="password-input"
                             />
                             <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
                             <Button
@@ -297,6 +310,7 @@ export default function Signup() {
                                 setConfirmPasswordValue(e.target.value)
                               }}
                               autoComplete="new-password"
+                              data-testid="confirm-password-input"
                             />
                             <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
                             <Button
@@ -334,6 +348,7 @@ export default function Signup() {
                             checked={field.value}
                             onCheckedChange={field.onChange}
                             className="data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple"
+                            data-testid="terms-checkbox"
                           />
                         </FormControl>
                         <div className="space-y-1 leading-none">
@@ -378,6 +393,7 @@ export default function Signup() {
                     type="submit"
                     className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
                     disabled={isSubmitting}
+                    data-testid="create-account-button"
                   >
                     {isSubmitting ? (
                       <>
