@@ -2,6 +2,7 @@ import React from 'react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import type { NextRouter } from 'next/router';
 import { Loader2 } from 'lucide-react';
 import { TALENT_PROFILES } from '@/data/talentData';
 import type { TalentProfile } from '@/types/talent';
@@ -13,7 +14,7 @@ interface TalentPageProps {
 }
 
 const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
-  const router = useRouter();
+  const router = useRouter() as NextRouter & { isFallback?: boolean };
 
   if (router.isFallback) {
     return (
