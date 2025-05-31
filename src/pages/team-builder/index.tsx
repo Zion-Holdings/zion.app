@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import { AppLayout } from '@/layout/AppLayout'; // Assuming a general AppLayout exists
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -191,7 +191,7 @@ const TeamBuilderPage: NextPage = () => {
         {!isLoading && !teamRecommendation && ( // Show form if no recommendation yet and not loading
           <Card>
             <CardHeader>
-               <Steps currentStep={currentStep} setCurrentStep={setCurrentStep} className="mb-6">
+               <Steps currentStep={currentStep} className="mb-6">
                 {steps.map((step, index) => (
                   <Step key={index} label={step.name} />
                 ))}

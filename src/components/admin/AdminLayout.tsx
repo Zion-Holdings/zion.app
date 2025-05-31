@@ -11,6 +11,7 @@ const navItems = [
   { title: 'Users', href: '/admin/users' },
   { title: 'Reports', href: '/admin/reports' },
   { title: 'Moderation', href: '/admin/moderation' },
+  { title: 'Team Builder Insights', href: '/admin/team-builder-insights' }, // New link added
 ];
 
 export function AdminLayout({ children }: AdminLayoutProps) {
