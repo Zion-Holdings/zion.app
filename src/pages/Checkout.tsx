@@ -61,38 +61,54 @@ export default function Checkout() {
 
   const onSubmit = async (data: CheckoutForm) => {
     try {
-      const res = await fetch('/api/create-payment-intent', {
+      if (!user || !user.id) {
+        console.error('User not authenticated');
+        // TODO: Handle UI: show error message to user
+        return;
+      }
+
+      // Use a placeholder productId (Stripe Price ID)
+      // This should ideally come from your product/cart data
+      const placeholderProductId = "price_1Hh1Zv2eZvKYlo2Cl0T9s7hF"; // Replace with an actual test Price ID
+
+      const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: subtotal }),
+        body: JSON.stringify({
+          productId: placeholderProductId, // This is the Stripe Price ID
+          userId: user.id,
+          // Include other necessary details like customer email for prefill if desired
+          // email: data.email,
+        }),
       });
-      const result = await res.json();
-      if (!res.ok) throw new Error(result.error || 'Failed');
-      const stripe = await getStripe();
-      if (stripe && result.clientSecret) {
-        const payment = await stripe.confirmCardPayment(result.clientSecret, {
-          payment_method: {
-            card: { token: 'tok_visa' },
-            billing_details: { name: data.name, email: data.email },
-          },
-        });
-        if (payment.error) throw payment.error;
-        if (user?.id) {
-          try {
-            await fetch('/api/points/add', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ userId: user.id, amount: subtotal, orderId: result.id }),
-            });
-          } catch (e) {
-            console.error('Failed to add points', e);
+
+      const sessionData = await response.json();
+
+      if (!response.ok) {
+        throw new Error(sessionData.error || 'Failed to create checkout session');
+      }
+
+      if (sessionData.sessionId) {
+        const stripe = await getStripe();
+        if (stripe) {
+          const { error } = await stripe.redirectToCheckout({ sessionId: sessionData.sessionId });
+          if (error) {
+            console.error('Stripe redirect error:', error);
+            // TODO: Handle UI: show error message to user
           }
+          // No need to manually add points or clear cart here,
+          // Stripe webhooks should handle post-payment actions.
+        } else {
+          console.error('Stripe.js not loaded');
+          // TODO: Handle UI: show error message to user
         }
-        safeStorage.removeItem('cart');
-        navigate(`/orders/${result.id}`);
+      } else {
+        console.error('No sessionId received');
+        // TODO: Handle UI: show error message to user
       }
     } catch (err) {
-      console.error('Payment failed', err);
+      console.error('Checkout failed:', err);
+      // TODO: Handle UI: show error message to user, e.g., using a toast notification
     }
   };
 
