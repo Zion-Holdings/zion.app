@@ -1,11 +1,12 @@
-import { NextPage } from 'next';
+// import { NextPage } from 'next'; // Removed
+import React from 'react'; // Ensure React is imported if not already for FC type
 import { AppLayout } from '@/layout/AppLayout'; // Assuming a general AppLayout exists
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch'; // Added for new fields
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
+import { useForm, Controller, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Steps, Step } from '@/components/ui/steps'; // Assuming this is how steps are imported
@@ -33,7 +34,8 @@ const projectBriefSchema = z.object({
 
 type ProjectBriefFormData = z.infer<typeof projectBriefSchema>;
 
-const TeamBuilderPage: NextPage = () => {
+// const TeamBuilderPage: NextPage = () => { // Old
+const TeamBuilderPage: React.FC = () => { // New, or remove type for inference
   const [currentStep, setCurrentStep] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [teamRecommendation, setTeamRecommendation] = useState<TeamRecommendation | null>(null);
@@ -191,7 +193,7 @@ const TeamBuilderPage: NextPage = () => {
         {!isLoading && !teamRecommendation && ( // Show form if no recommendation yet and not loading
           <Card>
             <CardHeader>
-               <Steps currentStep={currentStep} setCurrentStep={setCurrentStep} className="mb-6">
+               <Steps currentStep={currentStep} className="mb-6">
                 {steps.map((step, index) => (
                   <Step key={index} label={step.name} />
                 ))}

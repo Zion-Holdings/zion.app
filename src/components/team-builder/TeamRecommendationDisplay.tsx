@@ -2,7 +2,7 @@ import { TeamRecommendation, ProjectBrief } from '@/types';
 import { RoleCard } from './RoleCard';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { CheckCircle, Info, TrendingUp, Users, Target, Calendar, CreditCard, Briefcase } from 'lucide-react'; // Added Briefcase
+import { CheckCircle, Info, TrendingUp, Users, Bullseye, Calendar, CreditCard, Briefcase } from 'lucide-react'; // Target changed to Bullseye
 import { BudgetStatusDisplay } from './BudgetStatusDisplay'; // New import
 
 interface TeamRecommendationDisplayProps {
@@ -38,7 +38,7 @@ export const TeamRecommendationDisplay = ({ recommendation, projectBrief, onInvi
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-4"> {/* Added mb-4 */}
-            <InfoCard title="Project Goal" icon={<Target className="h-5 w-5" />} value={projectBrief.goals} />
+            <InfoCard title="Project Goal" icon={<Bullseye className="h-5 w-5" />} value={projectBrief.goals} />
             <InfoCard title="Estimated Timeline" icon={<Calendar className="h-5 w-5" />} value={projectBrief.timeline} />
             <InfoCard title="Your Budget" icon={<CreditCard className="h-5 w-5" />} value={projectBrief.budget} />
             <InfoCard

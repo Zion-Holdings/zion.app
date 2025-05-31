@@ -1,7 +1,8 @@
 import { Progress } from "@/components/ui/progress";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"; // AlertTitle not used, but kept for consistency
+import { Badge } from "@/components/ui/badge"; // Badge not used, but kept for consistency
 import { TrendingDown, TrendingUp, AlertTriangle, CheckCircle, Info } from "lucide-react";
+import { Card } from "@/components/ui/card"; // Added missing import
 
 interface BudgetStatusDisplayProps {
   projectBriefBudget: string; // e.g., "$10,000 - $15,000", "< $20000", "Approx $30k"
