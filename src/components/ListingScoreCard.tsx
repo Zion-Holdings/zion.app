@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { StarIcon } from "lucide-react";
+import { RatingStars } from "./RatingStars";
 
 interface ListingScoreCardProps {
   title: string;
@@ -63,19 +63,7 @@ export function ListingScoreCard({
         {/* Rating */}
         {rating > 0 && (
           <div className="flex items-center gap-1 mb-4">
-            <div className="flex">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <StarIcon 
-                  key={star}
-                  className={cn(
-                    "h-4 w-4", 
-                    star <= Math.round(rating) 
-                      ? "text-zion-cyan fill-zion-cyan" 
-                      : "text-zion-slate-light"
-                  )}
-                />
-              ))}
-            </div>
+            <RatingStars value={rating} />
             <span className="text-sm text-zion-slate-light ml-1">
               ({reviewCount})
             </span>
