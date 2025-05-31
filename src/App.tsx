@@ -36,6 +36,7 @@ import MobileLaunchPage from './pages/MobileLaunchPage';
 import CommunityPage from './pages/CommunityPage';
 import { CommunityProvider } from './context';
 import Categories from './pages/Categories';
+import AllCategoriesPage from './pages/AllCategoriesPage';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import NewProductsPage from './pages/NewProductsPage';
@@ -59,6 +60,7 @@ import PrivateRoute from './components/PrivateRoute';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/categories/all', element: <AllCategoriesPage /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/register', element: <Signup /> },
