@@ -1,8 +1,6 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { AIMatchmaker } from "@/components/AIMatchmaker";
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
@@ -41,7 +39,6 @@ export default function AIMatcherPage() {
   
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-zion-blue py-12 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -76,7 +73,6 @@ export default function AIMatcherPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
