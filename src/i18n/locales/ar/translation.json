@@ -63,5 +63,9 @@
     "ar": "العربية",
     "language_changed": "تم تغيير اللغة إلى {{language}}",
     "switch_to_detected": "التبديل إلى {{language}}؟"
+  },
+  "error_boundary": {
+    "message": "حدث خطأ ما.",
+    "retry": "إعادة المحاولة"
   }
 }

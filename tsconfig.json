@@ -9,7 +9,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/pages/*": ["./src/pages/*"],
-      "axios": ["./src/lib/axios.ts"]
+      "axios": ["./src/lib/axios.ts"],
+      "notistack": ["./src/stubs/notistack.tsx"],
+      "@sentry/browser": ["./src/stubs/sentry.ts"]
     },
     "types": ["vite/client", "react", "react-router-dom", "socket.io", "socket.io-client"],
 

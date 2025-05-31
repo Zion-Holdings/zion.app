@@ -332,6 +332,8 @@ declare module 'react-dom/client';
 declare module 'react-dom';
 declare module '@hello-pangea/dnd';
 declare module 'react-redux';
+declare module 'notistack';
+declare module '@sentry/browser';
 declare module 'semver';
 declare module 'ws';
 declare module 'recharts';
