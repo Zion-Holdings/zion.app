@@ -1,63 +1,113 @@
 import React from 'react';
 import { TalentProfile } from '@/types/talent';
 import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card'; // Adjusted path
+import { Badge } from '@/components/ui/badge'; // Adjusted path
 
 export interface TalentDetailsProps {
   talent: TalentProfile & { social?: Record<string, string> };
 }
 const TalentDetails: React.FC<TalentDetailsProps> = ({ talent }) => (
-  <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">
-    <div className="container mx-auto px-4 space-y-6">
-      <h1 className="text-3xl font-bold">{talent.full_name}</h1>
-      {talent.professional_title && <p className="text-zion-slate-light">{talent.professional_title}</p>}
+  <main className="min-h-screen bg-background text-foreground py-8" data-testid="talent-details"> {/* Adjusted background/text for better Card visibility */}
+    <div className="container mx-auto px-4 space-y-8"> {/* Increased spacing */}
+      {/* Basic Info Section - Could also be a Card */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-3xl font-bold">{talent.full_name}</CardTitle>
+          {talent.professional_title && <CardDescription className="text-xl">{talent.professional_title}</CardDescription>}
+        </CardHeader>
+        {talent.bio && (
+          <CardContent>
+            <p>{talent.bio}</p>
+          </CardContent>
+        )}
+      </Card>
 
-      {talent.bio && <p>{talent.bio}</p>}
-
-      {talent.skills && talent.skills.length > 0 && (
-        <section>
-          <h2 className="text-xl font-semibold mb-2">Skills</h2>
-          <ul className="flex flex-wrap gap-2">
-            {talent.skills.map((skill) => (
-              <li key={skill} className="bg-zion-blue-light rounded px-2 py-1 text-sm">
-                {skill}
-              </li>
-            ))}
-          </ul>
-        </section>
+      {/* Skills Card */}
+      {(talent.skills && talent.skills.length > 0) ? (
+        <Card>
+          <CardHeader>
+            <CardTitle>Skills</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-2">
+              {talent.skills.map((skill) => (
+                <Badge key={skill} variant="secondary">{skill}</Badge>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      ) : (
+        <Card>
+          <CardHeader><CardTitle>Skills</CardTitle></CardHeader>
+          <CardContent><p>No skills specified.</p></CardContent>
+        </Card>
       )}
 
-      {talent.hourly_rate && <p>Hourly Rate: ${talent.hourly_rate}/hr</p>}
+      {/* Hourly Rate Card */}
+      {talent.hourly_rate !== undefined ? ( // Check for undefined specifically if 0 is a valid rate
+        <Card>
+          <CardHeader>
+            <CardTitle>Hourly Rate</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-2xl font-semibold">${talent.hourly_rate}/hr</p>
+          </CardContent>
+        </Card>
+      ) : (
+        <Card>
+          <CardHeader><CardTitle>Hourly Rate</CardTitle></CardHeader>
+          <CardContent><p>Not specified.</p></CardContent>
+        </Card>
+      )}
 
+      {/* Contact Section - Assuming this remains as is, or could be a card too */}
       {talent.social && (
-        <section>
-          <h2 className="text-xl font-semibold mb-2">Contact</h2>
-          <ul className="space-y-1">
-            {Object.entries(talent.social).map(([platform, url]) => (
-              <li key={platform}>
-                <a href={url} className="text-zion-cyan underline" target="_blank" rel="noopener noreferrer">
-                  {platform}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <Card>
+          <CardHeader>
+            <CardTitle>Contact</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-1">
+              {Object.entries(talent.social).map(([platform, url]) => (
+                <li key={platform}>
+                  <a href={url} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
+                    {platform.charAt(0).toUpperCase() + platform.slice(1)} {/* Capitalize platform name */}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
       )}
 
-      {talent.key_projects && talent.key_projects.length > 0 && (
-        <section>
-          <h2 className="text-xl font-semibold mb-2">Portfolio</h2>
-          <ul className="space-y-2">
+      {/* Portfolio (Key Projects) Card */}
+      {(talent.key_projects && talent.key_projects.length > 0) ? (
+        <Card>
+          <CardHeader>
+            <CardTitle>Portfolio</CardTitle>
+            <CardDescription>Key projects and contributions.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
             {talent.key_projects.map((proj, i) => (
-              <li key={i} className="border-b border-zion-purple/20 pb-2">
-                <h3 className="font-medium">{proj.title}</h3>
-                <p className="text-sm text-zion-slate">{proj.description}</p>
-              </li>
+              <div key={i} className="border-b pb-2 last:border-b-0 last:pb-0">
+                <h3 className="font-semibold text-lg">{proj.title}</h3>
+                <p className="text-sm text-muted-foreground">{proj.description}</p>
+              </div>
             ))}
-          </ul>
-        </section>
+          </CardContent>
+        </Card>
+      ) : (
+        <Card>
+          <CardHeader><CardTitle>Portfolio</CardTitle></CardHeader>
+          <CardContent><p>No projects listed.</p></CardContent>
+        </Card>
       )}
 
-      <Button className="bg-zion-purple text-white">Hire</Button>
+      {/* Hire Button - Can be part of a general actions card or standalone */}
+      <div className="mt-8 flex justify-center"> {/* Added margin top and centering */}
+        <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">Hire {talent.full_name.split(' ')[0]}</Button>
+      </div>
     </div>
   </main>
 );
