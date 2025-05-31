@@ -1,4 +1,5 @@
 import Stripe from 'stripe';
+import { withErrorLogging } from './withErrorLogging.cjs';
 
 const PROD_DOMAIN = 'app.ziontechgroup.com';
 
@@ -11,7 +12,7 @@ function isProdDomain() {
   }
 }
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   if (req.method !== 'POST') {
     res.statusCode = 405;
     res.setHeader('Allow', 'POST');
@@ -54,3 +55,5 @@ export default async function handler(req, res) {
     res.json({ error: err.message });
   }
 }
+
+export default withErrorLogging(handler);
