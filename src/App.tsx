@@ -5,6 +5,10 @@ import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
+import { UIProvider } from './context/UIContext';
+import { useGlobalEventListeners } from './hooks/useGlobalEventListeners';
+import { ErrorModal } from './components/common/ErrorModal';
+import { GlobalSpinner } from './components/common/GlobalSpinner';
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import OfflineToast from "./components/OfflineToast";
@@ -104,31 +108,42 @@ const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
   console.log("App.tsx: Rendering Tree");
+
+  // Component to bridge hooks and context
+  const EventBridge = () => {
+    useGlobalEventListeners();
+    return null;
+  };
+
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
-        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-          <ErrorBoundary>
-          <Routes>
-            {baseRoutes.map(({ path, element }) => (
-              <Route key={path} path={path} element={element} />
-            ))}
-            <Route path="/auth/*" element={<AuthRoutes />} />
-            <Route path="/dashboard/*" element={<DashboardRoutes />} />
-            <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
-            <Route path="/talent/*" element={<TalentRoutes />} />
-            <Route path="/admin/*" element={<AdminRoutes />} />
-            <Route path="/mobile/*" element={<MobileAppRoutes />} />
-            <Route path="/content/*" element={<ContentRoutes />} />
-            <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
-            <Route path="/community/*" element={<CommunityRoutes />} />
-            <Route path="/developers/*" element={<DeveloperRoutes />} />
-            <Route path="*" element={<ErrorRoutes />} />
-          </Routes>
-          </ErrorBoundary>
-        </Suspense>
-        <OfflineToast />
-        <Toaster />
+        <UIProvider>
+          <EventBridge />
+          <GlobalSpinner />
+          <ErrorModal />
+          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+            <ErrorBoundary>
+            <Routes>
+              {baseRoutes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
+              <Route path="/auth/*" element={<AuthRoutes />} />
+              <Route path="/dashboard/*" element={<DashboardRoutes />} />
+              <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
+              <Route path="/talent/*" element={<TalentRoutes />} />
+              <Route path="/admin/*" element={<AdminRoutes />} />
+              <Route path="/mobile/*" element={<MobileAppRoutes />} />
+              <Route path="/content/*" element={<ContentRoutes />} />
+              <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
+              <Route path="/community/*" element={<CommunityRoutes />} />
+              <Route path="/developers/*" element={<DeveloperRoutes />} />
+              <Route path="*" element={<ErrorRoutes />} />
+            </Routes>
+            </ErrorBoundary>
+          </Suspense>
+          <OfflineToast />
+          <Toaster />
         <SonnerToaster position="top-right" />
         <SupportChatbot />
         <InstallPrompt />
