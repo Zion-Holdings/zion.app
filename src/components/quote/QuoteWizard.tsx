@@ -4,7 +4,6 @@ import { Loader2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
 import { captureException } from '@/utils/sentry';
 
 interface ServiceItem {
@@ -46,14 +45,12 @@ export function QuoteWizard() {
   const [step, setStep] = useState(1);
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const [message, setMessage] = useState('');
-  const { data, error } = useSWR<ServiceItem[]>('/api/services?type=quote', fetcher, {
+  const { data, error } = useSWR<ServiceItem[]>('/api/public/services', fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
-      // retryCount starts at 0, so retryCount >= 2 means it will retry for 0 and 1 (2 retries)
-      if (retryCount >= 2) return;
-      const timeout = 1000; // Fixed 1 second delay
+      if (retryCount >= 3) return;
+      const timeout = Math.min(1000 * 2 ** retryCount, 30000);
       setTimeout(() => revalidate({ retryCount: retryCount + 1 }), timeout);
     },
-    dedupingInterval: 600000, // 10 minutes
   });
 
   const loading = !data && !error;
@@ -85,12 +82,7 @@ export function QuoteWizard() {
         )}
 
         {error && (
-          <Alert variant="destructive" data-testid="service-fetch-error-alert">
-            <AlertTitle>Network Error</AlertTitle>
-            <AlertDescription>
-              There was a problem fetching the services. Please check your internet connection and try again.
-            </AlertDescription>
-          </Alert>
+          <div className="text-center text-red-500">Service temporarily unavailable</div>
         )}
 
         {data && (

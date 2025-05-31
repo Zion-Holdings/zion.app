@@ -33,12 +33,6 @@ export default async function handler(req: Req, res: JsonRes) {
     return;
   }
 
-  const { type } = req.query; // Access the type parameter
-
-  if (type) {
-    console.log(`Fetching services with type: ${type}`); // Log the type
-  }
-
   try {
     const { data, error } = await supabase
       .from('services')
