@@ -95,7 +95,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
         
         <div className="mt-12 flex justify-center">
           <Link 
-            to="/categories" 
+            to="/categories/all"
             className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
           >
             View All Categories →
