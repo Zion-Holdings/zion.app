@@ -12,6 +12,7 @@ import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
+import { WalletIcon } from '@/components/icons/WalletIcon'; // Assuming a WalletIcon component exists
 
 export interface HeaderProps {
   hideLogin?: boolean;
@@ -79,6 +80,9 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
 
         <div className="flex items-center gap-2">
           <PointsBadge />
+          <Link to="/wallet" title="Wallet">
+            <WalletIcon className="h-6 w-6 text-white" /> {/* Adjust styling as needed */}
+          </Link>
           <LanguageSelector />
           {user && (
             <span
