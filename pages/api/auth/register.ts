@@ -48,10 +48,14 @@ async function handler(req: Req, res: JsonRes) {
     let data;
     let error;
     try {
+      const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
       ({ data, error } = await supabase.auth.signUp({
         email,
         password,
-        options: { data: { display_name: name } },
+        options: {
+          data: { display_name: name },
+          emailRedirectTo: `${siteURL}/auth/verify-email`,
+        },
       }));
     } catch (networkErr: any) {
       console.error('signUp network error', networkErr);
@@ -73,6 +77,17 @@ async function handler(req: Req, res: JsonRes) {
       return;
     }
 
+    // If user exists but session is null, email verification is pending
+    if (data.user && !data.session) {
+      res.status(201).json({
+        message: 'Registration successful. Please check your email for a verification link.',
+        user: data.user,
+        session: null, // Explicitly null
+      });
+      return;
+    }
+
+    // If session exists, proceed as before (auto-verified or verification not required by Supabase project settings)
     const token = data.session?.access_token;
     if (token) {
       res.setHeader('Set-Cookie', `authToken=${token}; HttpOnly; Path=/; Secure; SameSite=Strict`);
