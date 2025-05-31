@@ -15,7 +15,8 @@ interface TalentPageProps {
 const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
   const router = useRouter();
 
-  if (router.isFallback) {
+  const isFallback = (router as any).isFallback;
+  if (isFallback) {
     return (
       <div className="flex justify-center py-20">
         <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
