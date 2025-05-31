@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '@/context/CartContext';
+import { useAuth } from '@/hooks/useAuth';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
 
 export default function CartPage() {
   const navigate = useNavigate();
   const { items, dispatch } = useCart();
+  const { user } = useAuth();
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -55,8 +57,13 @@ export default function CartPage() {
         <span>Subtotal</span>
         <span>${subtotal.toFixed(2)}</span>
       </div>
-      <Button className="mt-4 w-full" onClick={() => navigate('/checkout')}>
-        Checkout
+      <Button
+        className="mt-4 w-full"
+        onClick={() =>
+          user ? navigate('/checkout') : navigate('/login?next=/checkout')
+        }
+      >
+        {user ? 'Checkout' : 'Login to Checkout'}
       </Button>
     </div>
   );

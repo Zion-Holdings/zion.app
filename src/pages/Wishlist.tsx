@@ -6,11 +6,14 @@ import { TalentCard } from '@/components/talent/TalentCard';
 import { Button } from '@/components/ui/button';
 import { safeStorage } from '@/utils/safeStorage';
 import { useAuth } from '@/hooks/useAuth';
+import { useCart } from '@/context/CartContext';
+import { getCartKey } from '@/utils/cartUtils';
 import { useNavigate } from 'react-router-dom';
 
 export default function WishlistPage() {
   const { favorites, loading } = useFavorites();
   const { user } = useAuth();
+  const { dispatch } = useCart();
   const navigate = useNavigate();
 
   if (!user) {
@@ -19,10 +22,11 @@ export default function WishlistPage() {
   }
 
   const addToCart = (item: { id: string; title?: string; price?: number }) => {
-    const stored = safeStorage.getItem('cart');
+    const stored = safeStorage.getItem(getCartKey(user?.id));
     const cart = stored ? JSON.parse(stored) : [];
     cart.push({ id: item.id, name: item.title || 'Item', price: item.price || 0, quantity: 1 });
-    safeStorage.setItem('cart', JSON.stringify(cart));
+    safeStorage.setItem(getCartKey(user?.id), JSON.stringify(cart));
+    dispatch({ type: 'SET_ITEMS', payload: cart });
   };
 
   const productMap = MARKETPLACE_LISTINGS.reduce<Record<string, any>>((acc, p) => {

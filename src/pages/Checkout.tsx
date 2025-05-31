@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { safeStorage } from '@/utils/safeStorage';
+import { getCartKey } from '@/utils/cartUtils';
 import { Button } from '@/components/ui/button';
 import { getStripe, isProdDomain } from '@/utils/getStripe';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
@@ -47,7 +48,7 @@ export default function Checkout() {
       return;
     }
 
-    const stored = safeStorage.getItem('cart');
+    const stored = safeStorage.getItem(getCartKey(user?.id));
     if (stored) {
       try {
         setItems(JSON.parse(stored) as CartItem[]);
@@ -88,7 +89,7 @@ export default function Checkout() {
             console.error('Failed to add points', e);
           }
         }
-        safeStorage.removeItem('cart');
+        safeStorage.removeItem(getCartKey(user?.id));
         navigate(`/orders/${result.id}`);
       }
     } catch (err) {
