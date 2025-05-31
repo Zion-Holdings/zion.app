@@ -26,12 +26,40 @@ export function ProjectDetailsFields({ form }: ProjectDetailsFieldsProps) {
     <>
       <FormField
         control={form.control}
-        name="projectName"
+        name="projectTitle" // Renamed
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Project Name</FormLabel>
+            <FormLabel>Project Title</FormLabel> {/* Renamed */}
             <FormControl>
-              <Input placeholder="AI Website Development" {...field} />
+              <Input placeholder="Enter the project title" {...field} /> {/* Updated placeholder */}
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+
+      <FormField
+        control={form.control}
+        name="clientName" // Added
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>Client Name</FormLabel>
+            <FormControl>
+              <Input placeholder="Enter client's full name or company name" {...field} />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+
+      <FormField
+        control={form.control}
+        name="talentName" // Added
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>Talent Name</FormLabel>
+            <FormControl>
+              <Input placeholder="Enter talent's full name" {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -40,19 +68,53 @@ export function ProjectDetailsFields({ form }: ProjectDetailsFieldsProps) {
       
       <FormField
         control={form.control}
-        name="scopeSummary"
+        name="deliverables"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Scope Summary</FormLabel>
+            <FormLabel>Deliverables</FormLabel>
             <FormControl>
               <Textarea
-                placeholder="Describe the project scope, deliverables, and expectations..."
+                placeholder="Describe the project deliverables in detail, including specific outcomes, reports, software features, etc."
                 className="min-h-[120px]"
                 {...field}
               />
             </FormControl>
             <FormDescription>
-              Be specific about what is included and any limitations
+              Be very specific about what will be delivered.
+            </FormDescription>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+
+      <FormField
+        control={form.control}
+        name="jurisdiction"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>Jurisdiction</FormLabel>
+            <FormControl>
+              <Input placeholder="e.g., State of California, USA" {...field} />
+            </FormControl>
+            <FormDescription>
+              The governing law for the contract.
+            </FormDescription>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+
+      <FormField
+        control={form.control}
+        name="deliverables"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>Jurisdiction</FormLabel>
+            <FormControl>
+              <Input placeholder="e.g., State of California, USA" {...field} />
+            </FormControl>
+            <FormDescription>
+              The governing law for the contract.
             </FormDescription>
             <FormMessage />
           </FormItem>

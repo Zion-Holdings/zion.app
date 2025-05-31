@@ -11,7 +11,7 @@ interface Milestone {
   title: string;
   description: string;
   dueDate: string;
-  estimatedHours: number;
+  estimatedHours: number; // Keep this as it's useful detail
 }
 
 serve(async (req) => {
@@ -29,75 +29,69 @@ serve(async (req) => {
 
     // Parse request body
     const {
-      talentName,
+      projectTitle,
       clientName,
-      projectName,
-      scopeSummary,
-      startDate,
-      endDate,
-      paymentTerms,
-      paymentAmount,
-      additionalClauses,
-      milestones
+      talentName,
+      deliverables,
+      milestones, // Array: { title, description, dueDate, estimatedHours }
+      paymentStructure,
+      jurisdiction, // Added for new prompt
+      additionalClauses, // Optional: ['nda', 'ip', 'termination', 'revisions']
     } = await req.json();
 
     // Create the contract prompt for OpenAI
-    let prompt = `
-    Please generate a professional contractual agreement between ${clientName} (Client) and ${talentName} (Talent) for the following project:
+    // --- NEW PROMPT CONSTRUCTION AS PER SUBTASK ---
+    let prompt = `Please generate a professional contractual agreement between ${clientName} (Client) and ${talentName} (Talent) for the following project:
 
-    Project Name: ${projectName}
-    Project Scope: ${scopeSummary}
-    Start Date: ${new Date(startDate).toLocaleDateString()}
-    ${endDate ? `End Date: ${new Date(endDate).toLocaleDateString()}` : 'End Date: To be determined based on project completion'}
-    
-    Payment Terms: ${paymentTerms}
-    Payment Amount: ${paymentAmount}
-    
-    The contract should include standard sections like:
-    - Parties involved
-    - Project scope
-    - Timeline
-    - Payment terms
-    - Deliverables
-    `;
+Project Title: ${projectTitle}
+Deliverables: ${deliverables}
+Payment Structure: ${paymentStructure}
 
-    if (additionalClauses && additionalClauses.length > 0) {
-      prompt += `
-      
-      Please also include the following additional clauses:
-      ${additionalClauses.includes('nda') ? '- Confidentiality/Non-disclosure agreement' : ''}
-      ${additionalClauses.includes('ip') ? '- Intellectual Property rights transfer to the client' : ''}
-      ${additionalClauses.includes('termination') ? '- Termination conditions and process' : ''}
-      ${additionalClauses.includes('revisions') ? '- Revision and amendment procedures' : ''}
-      `;
-    }
+The contract must include (but is not limited to) the following sections:
+- Clear identification of Client and Talent
+- Detailed description of Deliverables
+- Project Milestones (if provided)
+- Payment Structure and Schedule (linked to milestones if applicable)
+- Intellectual Property (IP) rights transfer to the client upon full payment
+- Clear Termination Clause outlining conditions and process for ending the contract by either party
+- Governing Law and Jurisdiction (e.g., "This agreement shall be governed by and construed in accordance with the laws of ${jurisdiction}.")
+`; // Note: Jurisdiction is directly embedded here.
 
-    // Add milestone information if available
     if (milestones && milestones.length > 0) {
-      prompt += `
-      
-      The project will be divided into the following milestones:
-      `;
-      
+      prompt += `\nProject Milestones:\n`;
       milestones.forEach((milestone: Milestone, index: number) => {
         prompt += `
-        Milestone ${index + 1}: ${milestone.title}
-        - Description: ${milestone.description}
-        - Due Date: ${new Date(milestone.dueDate).toLocaleDateString()}
-        - Estimated Work: ${milestone.estimatedHours} hours
-        `;
+  Milestone ${index + 1}: ${milestone.title}
+  - Description: ${milestone.description}
+  - Due Date: ${new Date(milestone.dueDate).toLocaleDateString()}
+  - Estimated Hours: ${milestone.estimatedHours}\n`; // Added estimatedHours
       });
-      
-      prompt += `
-      
-      Please structure the contract to include these milestones in the payment schedule, with payments tied to the completion and approval of each milestone.
-      `;
+    } else {
+      prompt += `\nNo specific project milestones defined.\n`;
+    }
+
+    if (additionalClauses && additionalClauses.length > 0) {
+      prompt += `\nPlease also incorporate the following specific clauses if not already covered or if they provide more detail:\n`;
+      if (additionalClauses.includes('nda')) {
+        prompt += `- Non-Disclosure Agreement (NDA)\n`;
+      }
+      // IP and Termination are already requested in the main prompt,
+      // but can be listed here if more specific versions are expected from 'additionalClauses'
+      if (additionalClauses.includes('ip')) {
+        prompt += `- Detailed Intellectual Property rights (if more specific than standard client transfer)\n`;
+      }
+      if (additionalClauses.includes('termination')) {
+        prompt += `- Specific Termination conditions (if more detailed than standard clause)\n`;
+      }
+      if (additionalClauses.includes('revisions')) {
+        prompt += `- Revision and amendment procedures\n`;
+      }
     }
 
     prompt += `
-    
-    Format the contract professionally with proper sections, numbering, and formatting. Use markdown formatting.
-    `;
+Ensure the contract is well-structured, comprehensive, uses clear language, and is formatted in markdown.
+`;
+    // --- END OF NEW PROMPT CONSTRUCTION ---
 
     // Call OpenAI API
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -111,7 +105,7 @@ serve(async (req) => {
         messages: [
           {
             role: 'system',
-            content: 'You are a legal expert specializing in drafting professional freelance contracts. Generate a clear, comprehensive contract based on the provided details.',
+            content: 'Generate a professional, legally safe service contract for a freelance project between a client and a developer. Include deliverables, payment terms, IP transfer, termination clause, and jurisdiction.',
           },
           {
             role: 'user',

@@ -1,6 +1,7 @@
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import "https://deno.land/x/xhr@0.1.0/mod.ts";
+import { join } from "https://deno.land/std@0.168.0/path/mod.ts"; // Added for path joining
+// No longer needed: import "https://deno.land/x/xhr@0.1.0/mod.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -14,106 +15,69 @@ serve(async (req) => {
   }
 
   try {
-    // Get the OpenAI API key from environment variables
-    const apiKey = Deno.env.get('OPENAI_API_KEY');
-    if (!apiKey) {
-      throw new Error('OPENAI_API_KEY is not set');
-    }
-
     // Parse request body
     const {
-      talentName,
-      clientName,
-      projectName,
-      scopeSummary,
-      startDate,
-      endDate,
-      paymentTerms,
-      paymentAmount,
-      additionalClauses,
+      contractType, // 'simple' | 'escrow'
+      clientAddress,
+      talentAddress,
+      projectDetailsIPFSHash,
+      // paymentAmount is not directly used in template replacement but good to have for future logic
     } = await req.json();
 
-    // Create the smart contract prompt for OpenAI
-    let prompt = `
-    Please generate a Solidity smart contract for a freelance project between ${clientName} (Client) and ${talentName} (Talent) with the following details:
-
-    Project Name: ${projectName}
-    Project Scope: ${scopeSummary}
-    Start Date: ${new Date(startDate).toLocaleDateString()}
-    ${endDate ? `End Date: ${new Date(endDate).toLocaleDateString()}` : 'End Date: To be determined based on project completion'}
-    
-    Payment Terms: ${paymentTerms}
-    Payment Amount: ${paymentAmount}
-    
-    The contract should implement a standard escrow pattern where:
-    1. The client deposits funds into the contract
-    2. Funds are released to the talent when deliverables are accepted
-    3. Include a dispute resolution mechanism
-    4. Allow for milestone-based payments if applicable
-    
-    Use OpenZeppelin libraries for security best practices. The contract should be compatible with Ethereum and Polygon networks.
-    Make the contract as gas-efficient as possible.
-    `;
-
-    if (additionalClauses && additionalClauses.length > 0) {
-      prompt += `
-      
-      Please also include the following additional clauses as on-chain functionality where possible:
-      ${additionalClauses.includes('nda') ? '- Confidentiality flag that can be verified on-chain' : ''}
-      ${additionalClauses.includes('ip') ? '- Intellectual Property transfer receipts' : ''}
-      ${additionalClauses.includes('termination') ? '- Termination conditions with automatic refund features' : ''}
-      ${additionalClauses.includes('revisions') ? '- Revision tracking mechanism' : ''}
-      `;
-    }
-    
-    prompt += `
-    
-    Format the code properly with comments explaining each section. Include a simple deployment script.
-    `;
-
-    // Call OpenAI API
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: 'gpt-4o',
-        messages: [
-          {
-            role: 'system',
-            content: 'You are a blockchain expert who specializes in writing secure and efficient Solidity smart contracts. Provide well-commented, production-ready Solidity code.',
-          },
-          {
-            role: 'user',
-            content: prompt,
-          },
-        ],
-        temperature: 0.7,
-      }),
-    });
-
-    const data = await response.json();
-    
-    if (!response.ok) {
-      throw new Error(data.error?.message || 'Failed to generate smart contract');
+    if (!contractType || !clientAddress || !talentAddress || !projectDetailsIPFSHash) {
+      throw new Error('Missing required parameters: contractType, clientAddress, talentAddress, projectDetailsIPFSHash');
     }
 
-    const solidityCode = data.choices[0].message.content.trim();
+    let templateFileName = '';
+    if (contractType === 'simple') {
+      templateFileName = 'SimpleAgreement.sol';
+    } else if (contractType === 'escrow') {
+      templateFileName = 'EscrowAgreement.sol';
+    } else {
+      throw new Error(`Invalid contractType: ${contractType}. Must be 'simple' or 'escrow'.`);
+    }
+
+    // Construct the path to the template file
+    // Deno.mainModule provides the path to the main script.
+    // We go up one level for 'functions', then into 'smart-contract-templates'
+    const templatePath = join(new URL('.', Deno.mainModule).pathname, `../smart-contract-templates/${templateFileName}`);
+    
+    let solidityTemplate = '';
+    try {
+      solidityTemplate = await Deno.readTextFile(templatePath.substring(1)); // Remove leading '/' for Windows compatibility if needed, Deno handles paths well.
+    } catch (e) {
+        console.error(`Error reading template file: ${templatePath}`, e);
+        throw new Error(`Could not read template file: ${templateFileName}`);
+    }
+
+    let modifiedTemplateString = solidityTemplate;
+
+    // Perform replacements based on the new placeholder strategy
+    if (contractType === 'simple') {
+      modifiedTemplateString = modifiedTemplateString.replace(/{{clientAddress}}/g, clientAddress);
+      modifiedTemplateString = modifiedTemplateString.replace(/{{talentAddress}}/g, talentAddress);
+      modifiedTemplateString = modifiedTemplateString.replace(/{{projectDetailsIPFSHash}}/g, `"${projectDetailsIPFSHash}"`);
+    } else if (contractType === 'escrow') {
+      modifiedTemplateString = modifiedTemplateString.replace(/{{initialOwner}}/g, clientAddress);
+      // For talentAddress, ensure it's replaced in multiple contexts correctly.
+      // Using a more specific placeholder in the template for assignment vs. function calls might be safer,
+      // but {{talentAddress}} should work if it's consistently the same address.
+      modifiedTemplateString = modifiedTemplateString.replace(/{{talentAddress}}/g, talentAddress);
+      modifiedTemplateString = modifiedTemplateString.replace(/{{projectDetailsIPFSHash}}/g, `"${projectDetailsIPFSHash}"`);
+    }
     
     return new Response(JSON.stringify({ 
       success: true, 
-      solidityCode 
+      solidityCode: modifiedTemplateString
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (error) {
-    console.error('Error generating smart contract:', error);
+    console.error('Error processing smart contract request:', error);
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: error.message || 'Failed to generate smart contract' 
+        error: error.message || 'Failed to process smart contract request'
       }),
       { 
         status: 500, 

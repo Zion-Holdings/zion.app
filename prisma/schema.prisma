@@ -11,14 +11,54 @@ model User {
   id        Int      @id @default(autoincrement())
   name      String
   email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
+  password           String
+  createdAt          DateTime           @default(now())
+  agreementsAsClient ProjectAgreement[] @relation("ClientAgreements")
+  agreementsAsTalent ProjectAgreement[] @relation("TalentAgreements")
+  chatMessages       ChatMessage[]      @relation("UserMessages")
 }
 
 model ChatMessage {
   id        Int      @id @default(autoincrement())
   roomId    String
   senderId  Int
+  sender    User     @relation("UserMessages", fields: [senderId], references: [id])
   content   String
   createdAt DateTime @default(now())
+}
+
+enum AgreementStatus {
+  DRAFT
+  ACTIVE
+  TERMINATED
+  COMPLETED
+}
+
+enum BlockchainNetwork {
+  ETH
+  POLYGON
+}
+
+model ProjectAgreement {
+  id                  Int                @id @default(autoincrement())
+  projectTitle        String
+  clientId            Int
+  client              User               @relation("ClientAgreements", fields: [clientId], references: [id])
+  talentId            Int
+  talent              User               @relation("TalentAgreements", fields: [talentId], references: [id])
+  deliverables        String // For markdown or detailed text
+  milestonesJson      String // Storing as JSON string
+  paymentStructure    String
+  legalDraftMarkdown  String
+  ipfsHash            String?
+  blockchain          BlockchainNetwork?
+  contractAddress     String?
+  transactionHash     String?
+  version             Int                @default(1)
+  previousAgreementId Int?               @unique // A new version can only point to one previous version uniquely
+  previousAgreement   ProjectAgreement?  @relation("NextVersion", fields: [previousAgreementId], references: [id])
+  nextVersion         ProjectAgreement?  @relation("NextVersion") // The other side of the one-to-one for previous/next version
+  status              AgreementStatus    @default(DRAFT)
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
 }
