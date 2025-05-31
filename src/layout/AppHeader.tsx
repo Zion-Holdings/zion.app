@@ -11,6 +11,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useAuth } from '@/hooks/useAuth';
+import { UserProfileDropdown } from '@/components/header/UserProfileDropdown'; // Import UserProfileDropdown
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -57,13 +58,11 @@ export function AppHeader() {
 
           <PointsBadge />
           <LanguageSelector />
+          {/* Replace the greeting span with UserProfileDropdown */}
           {user && (
-            <span
-              className="hidden sm:block ml-4 text-sm text-white"
-              data-testid="header-greeting"
-            >
-              {`Hello, ${firstName}!`}
-            </span>
+            <div className="ml-4"> {/* Added a div for potential spacing adjustments if needed */}
+              <UserProfileDropdown />
+            </div>
           )}
         </div>
       </header>

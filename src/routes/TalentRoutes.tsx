@@ -7,7 +7,7 @@ import AdditionalTalentsPage from "../pages/AdditionalTalentsPage";
 import TalentDetail from "../pages/TalentDetail";
 import SavedTalentsPage from "../pages/SavedTalentsPage";
 import CreateTalentProfile from "../pages/CreateTalentProfile";
-import ProfilePage from "../pages/ProfilePage";
+import PublicTalentProfilePage from "../pages/PublicTalentProfilePage"; // Updated import
 
 const TalentRoutes = () => {
   return (
@@ -34,7 +34,7 @@ const TalentRoutes = () => {
           </ProtectedRoute>
         } 
       />
-      <Route path="/profile/:id" element={<ProfilePage />} />
+      <Route path="/profile/:id" element={<PublicTalentProfilePage />} /> {/* Updated component */}
     </Routes>
   );
 };
