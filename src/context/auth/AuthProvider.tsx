@@ -86,9 +86,17 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 handleSignedIn(mappedUser);
                 const params = new URLSearchParams(location.search);
                 const next = params.get('next');
-                if (next) {
+                // --- BEGIN MODIFICATION ---
+                if (location.state?.pendingAction === 'buyNow' && location.state?.pendingActionArgs?.sku) {
+                  const sku = location.state.pendingActionArgs.sku;
+                  // Clear pending action from state first
+                  navigate(location.pathname, { state: {}, replace: true });
+                  // Navigate to checkout with SKU
+                  navigate(`/checkout?sku=${sku}`, { replace: true });
+                } else if (next) {
                   navigate(decodeURIComponent(next), { replace: true });
                 }
+                // --- END MODIFICATION ---
               }
             } else if (error) {
               console.error("Error fetching user profile:", error);
