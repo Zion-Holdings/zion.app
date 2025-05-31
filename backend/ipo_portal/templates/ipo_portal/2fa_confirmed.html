@@ -1,0 +1,13 @@
+{% extends "admin/base_site.html" %} {% comment %} Or your app's base template {% endcomment %}
+{% load i18n %}
+
+{% block title %}{% trans "2-Factor Authentication Confirmed" %}{% endblock %}
+
+{% block content %}
+<div>
+    <h1>{% trans "2-Factor Authentication Enabled!" %}</h1>
+    <p>{% trans "You have successfully enabled 2-Factor Authentication for your account." %}</p>
+    <p>{% trans "From now on, after entering your password, you will be prompted to enter an OTP from your authenticator app." %}</p>
+    <p><a href="{% url 'admin:index' %}">{% trans "Continue to Admin Dashboard" %}</a></p> {# Adjust if not admin context #}
+</div>
+{% endblock %}
