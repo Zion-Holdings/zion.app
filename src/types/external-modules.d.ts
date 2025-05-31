@@ -349,12 +349,14 @@ declare module 'next/link' {
 declare module 'next/router' {
   interface NextRouter {
     pathname: string
+    908rx5-codex/centralize-error-logging
     /**
      * Indicates whether the current page is being statically generated
      * and the fallback version should be shown. This mirrors the property
      * from Next.js so that code referencing `router.isFallback` type-checks
      * correctly in this project.
      */
+  main
     isFallback?: boolean
   }
   export function useRouter(): NextRouter

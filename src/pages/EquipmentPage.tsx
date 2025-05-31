@@ -355,17 +355,17 @@ const EQUIPMENT_FILTERS = [
 ];
 
 export default function EquipmentPage() {
-  const [listings, setListings] = useState<ProductListing[]>([
+  const [equipment, setEquipment] = useState<ProductListing[]>([
     ...EQUIPMENT_LISTINGS,
   ]);
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { trigger, isMutating } = useSWRMutation(
+  const { trigger: fetchRecommendations, isMutating } = useSWRMutation(
     `${API_BASE}/equipment/recommendations`,
-    (url: string, { arg }: { arg: string }) =>
-      fetch(`${url}?userId=${arg}`).then((res) => {
+    (url: string) =>
+      fetch(url).then((res) => {
         if (!res.ok) throw new Error('Failed to fetch recommendations');
         return res.json();
       })
@@ -378,10 +378,10 @@ export default function EquipmentPage() {
         const res = await fetch(`${API_BASE}/equipment`);
         if (!res.ok) throw new Error('Equipment fetch failed');
         const data = await res.json();
-        setListings(data);
+        setEquipment(data);
       } catch (err) {
         console.error(err);
-        setListings(EQUIPMENT_LISTINGS);
+        setEquipment(EQUIPMENT_LISTINGS);
       }
     }
     fetchEquipment();
@@ -389,7 +389,7 @@ export default function EquipmentPage() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setListings((prev) => [...prev, generateRandomEquipment()]);
+      setEquipment((prev) => [...prev, generateRandomEquipment()]);
     }, 120000); // add new equipment every 2 minutes
     return () => clearInterval(interval);
   }, []);
@@ -400,9 +400,9 @@ export default function EquipmentPage() {
       return;
     }
     try {
-      const data = await trigger(user.id);
-      setListings(data as ProductListing[]);
-      toast({ title: 'Showing AI‑matched results' });
+      const data = await fetchRecommendations();
+      setEquipment(data as ProductListing[]);
+      toast({ title: 'Showing personalized recommendations' });
     } catch (err) {
       console.error(err);
       toast({ title: 'Failed to load recommendations', variant: 'destructive' });
@@ -453,7 +453,7 @@ export default function EquipmentPage() {
           title="Datacenter Equipment"
           description="Browse professional hardware for modern datacenter and network deployments."
           categorySlug="equipment"
-          listings={listings}
+          listings={equipment}
           categoryFilters={EQUIPMENT_FILTERS}
           initialPrice={{ min: 400, max: 50000 }}
           detailBasePath="/equipment"
