@@ -1,0 +1,8 @@
+.match-textarea {
+  color: var(--text-primary, #e5e5e5);
+  background: var(--bg-primary, #111);
+}
+
+.match-textarea::placeholder {
+  opacity: 0.6;
+}
