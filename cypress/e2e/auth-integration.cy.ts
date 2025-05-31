@@ -21,52 +21,37 @@ describe('register and login flow', () => {
     }
   });
 
-  it('registers then logs in and accesses community', () => {
-    cy.intercept('POST', '/api/auth/register', {
-      statusCode: 201,
-      fixture: 'auth/register-success.json', // Use fixture for success response
-      headers: { 'set-cookie': 'access=jwt_mock_token_for_registration; HttpOnly; Path=/' },
-    }).as('register');
+  it('registers, gets auto-logged in, and user data is available', () => {
+    const uniqueEmail = `testuser-${Date.now()}@example.com`;
+    const testPassword = Cypress.env('TEST_USER_PASSWORD');
+    const testDisplayName = Cypress.env('TEST_USER_DISPLAY_NAME');
 
-    cy.intercept('POST', '/api/auth/login', {
-      statusCode: 200,
-      fixture: 'auth/login-success.json', // Use fixture for success response
-      headers: { 'set-cookie': 'access=jwt_mock_access_token_for_login; HttpOnly; Path=/' },
-    }).as('login');
-
-    // Register
+    // Register - API call will be live
     cy.visit('/signup');
-    // TODO: Add data-testid="display-name-input" to the display name input in the app
-    cy.get('input[name="displayName"]').type(Cypress.env('TEST_USER_DISPLAY_NAME'));
-    // TODO: Add data-testid="email-input" to the email input in the app
-    cy.get('input[name="email"]').type(Cypress.env('TEST_USER_EMAIL'));
-    // TODO: Add data-testid="password-input" to the password input in the app
-    cy.get('input[name="password"]').type(Cypress.env('TEST_USER_PASSWORD'));
-    // TODO: Add data-testid="confirm-password-input" to the confirm password input in the app
-    cy.get('input[name="confirmPassword"]').type(Cypress.env('TEST_USER_PASSWORD'));
-    // TODO: Add data-testid="terms-checkbox" to the terms checkbox in the app
-    cy.get('input[type="checkbox"]').check(); // Assuming this is the terms checkbox, needs specific selector
+    cy.get('[data-testid="display-name-input"]').type(testDisplayName);
+    cy.get('[data-testid="email-input"]').type(uniqueEmail);
+    cy.get('[data-testid="password-input"]').type(testPassword);
+    cy.get('[data-testid="confirm-password-input"]').type(testPassword);
+    cy.get('[data-testid="terms-checkbox"]').check();
+    cy.get('[data-testid="create-account-button"]').click();
 
-    // TODO: Add data-testid="create-account-button" to the Create Account button in the app
-    // cy.get('[data-testid="create-account-button"]').click();
-    cy.contains('Create Account').click(); // Kept for now, to be replaced
-    cy.wait('@register');
+    // After registration, user should be redirected to dashboard
+    // Adding a timeout because the page load and session setting might take a moment.
+    cy.url().should('include', '/dashboard', { timeout: 10000 });
 
-    // Login
-    cy.visit('/login?next=/community');
-    // TODO: Add data-testid="email-input" to the email input in the app (reused)
-    cy.get('input[name="email"]').type(Cypress.env('TEST_USER_EMAIL'));
-    // TODO: Add data-testid="password-input" to the password input in the app (reused)
-    cy.get('input[name="password"]').type(Cypress.env('TEST_USER_PASSWORD'));
+    // Verify user session by calling /api/users/me
+    // This request will use the session cookie set by Supabase during setSession
+    cy.request('/api/users/me').then((response) => {
+      expect(response.status).to.eq(200);
+      expect(response.body).to.have.property('id');
+      expect(response.body.email).to.eq(uniqueEmail);
+      // Optionally, check for display_name if it's consistently set by your backend
+      // expect(response.body.user_metadata?.display_name).to.eq(testDisplayName);
+    });
 
-    // TODO: Add data-testid="login-button" to the Login button in the app
-    // cy.get('[data-testid="login-button"]').click();
-    cy.contains('Login').click(); // Kept for now, to be replaced
-    cy.wait('@login');
-
-    cy.url().should('include', '/community');
-    // TODO: Add data-testid="community-forum-header" for the text "Community Forum"
-    // cy.get('[data-testid="community-forum-header"]').should('be.visible');
-    cy.contains('Community Forum'); // Kept for now, to be replaced
+    // Example: Check for a known element on the dashboard page
+    // cy.contains('Welcome to your Dashboard!').should('be.visible');
+    // This line is commented out as we don't know the exact content of the dashboard.
+    // The cy.url() and /api/users/me checks are the primary assertions for now.
   });
 });

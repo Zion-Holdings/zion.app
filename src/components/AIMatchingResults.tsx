@@ -114,7 +114,7 @@ export function AIMatchingResults({
                         <div className="flex items-start gap-4">
                           <Avatar className="h-12 w-12 border border-zion-blue-light">
                             {match.image ? (
-                              <AvatarImage src={match.image} />
+                              <AvatarImage src={match.image} alt={match.title} />
                             ) : (
                               <AvatarFallback className="bg-zion-purple/20">
                                 <CategoryIcon className="h-6 w-6 text-zion-purple" />

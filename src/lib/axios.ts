@@ -43,7 +43,20 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
   };
 
   async function request(url: string, method: string, init: RequestInit) {
-    const response = await fetch(url, { ...init, method, credentials: withCreds ? 'include' : init.credentials });
+    // Read authToken from cookies
+    const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+      const [name, value] = cookie.split('=');
+      acc[name] = value;
+      return acc;
+    }, {} as Record<string, string>);
+    const authToken = cookies['authToken'];
+
+    const headers = { ...init.headers };
+    if (authToken) {
+      headers['Authorization'] = `Bearer ${authToken}`;
+    }
+
+    const response = await fetch(url, { ...init, method, headers, credentials: withCreds ? 'include' : init.credentials });
     let data: any = null;
     try {
       data = await response.clone().json();

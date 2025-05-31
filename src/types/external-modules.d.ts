@@ -350,11 +350,19 @@ declare module 'next/router' {
   interface NextRouter {
     pathname: string
     /**
+l3xoyh-codex/load-talent-profile-data
      * Query string parameters from the current route. These are typed as
      * `any` because the real `NextRouter` type from Next.js is not available
      * in this project.
      */
     query: any
+     * Indicates whether the current page is being statically generated
+     * and the fallback version should be shown. This mirrors the property
+     * from Next.js so that code referencing `router.isFallback` type-checks
+     * correctly in this project.
+     */
+    isFallback?: boolean
+main
   }
   export function useRouter(): NextRouter
 }

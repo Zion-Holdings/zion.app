@@ -66,7 +66,7 @@ export function MobileProjectView({ project, milestones }: ProjectViewProps) {
                 <h2 className="text-lg font-medium">{project.title}</h2>
                 <div className="flex items-center gap-2 mt-1">
                   <Avatar className="h-6 w-6">
-                    <AvatarImage src={project.client.avatar} />
+                    <AvatarImage src={project.client.avatar} alt={project.client.name} />
                     <AvatarFallback>{project.client.name[0]}</AvatarFallback>
                   </Avatar>
                   <span className="text-sm">{project.client.name}</span>

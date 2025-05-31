@@ -1,4 +1,7 @@
-import React, { useState, useEffect, useRef, ReactNode } from 'react';
+import React, { useState, useEffect, useRef, ReactNode, useContext } from 'react';
+import { AuthContext } from '../../context/auth/AuthContext';
+import { useDebounce } from '../../hooks/useDebounce';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { ChatMessage } from './ChatMessage';
 import { ChatInput } from './ChatInput';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -37,38 +40,107 @@ export function ChatAssistant({
   onSendMessage,
   contextHeader
 }: ChatAssistantProps) {
-  const [messages, setMessages] = useState<Message[]>(initialMessages);
+  const auth = useContext(AuthContext);
+  const isGuest = !auth?.isAuthenticated;
+  const localStorageKey = isGuest ? `chatHistory-${recipient.id}` : null;
+
+  // Define messages and setMessages based on user type
+  let currentMessages: Message[];
+  let setCurrentMessages: (value: Message[] | ((val: Message[]) => Message[])) => void;
+
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const [pendingApiCallParams, setPendingApiCallParams] = useState<{ message: string, conversationId?: string } | null>(null);
+  const [showGuestModal, setShowGuestModal] = useState(false);
+  const [guestMessage, setGuestMessage] = useState<string | null>(null);
+
+  if (isGuest && localStorageKey) {
+    // Guest user logic with useLocalStorage
+    const [storedGuestMessages, setStoredGuestMessages] = useLocalStorage<Message[]>(localStorageKey, []);
+    const [displayGuestMessages, setDisplayGuestMessages] = useState<Message[]>([]);
+
+    useEffect(() => {
+      // Priority: initialMessages prop > localStorage > empty array
+      if (initialMessages && initialMessages.length > 0) {
+        setDisplayGuestMessages(initialMessages);
+        setStoredGuestMessages(initialMessages); // Persist if initialMessages are provided
+      } else {
+        // No initialMessages prop, so use what's in localStorage (or the default [] from useLocalStorage)
+        setDisplayGuestMessages(storedGuestMessages);
+      }
+    }, [initialMessages, storedGuestMessages, setStoredGuestMessages, recipient.id]); // recipient.id ensures re-evaluation if key changes
+
+    currentMessages = displayGuestMessages;
+    setCurrentMessages = (valueOrFn) => {
+      const newMessages = valueOrFn instanceof Function ? valueOrFn(displayGuestMessages) : valueOrFn;
+      setDisplayGuestMessages(newMessages);
+      setStoredGuestMessages(newMessages); // Always update localStorage for guests
+    };
+  } else {
+    // Logged-in user logic with useState
+    const [loggedInMessages, setLoggedInMessages] = useState<Message[]>(initialMessages);
+    useEffect(() => {
+      // Update state if initialMessages prop changes (e.g. new conversation loaded)
+      setLoggedInMessages(initialMessages);
+    }, [initialMessages, recipient.id]); // recipient.id to reset if recipient changes
+
+    currentMessages = loggedInMessages;
+    setCurrentMessages = setLoggedInMessages;
+  }
   
+  // Common effects and logic using currentMessages and setCurrentMessages
+  const debouncedApiCallParams = useDebounce(pendingApiCallParams, 3000);
+
   useEffect(() => {
-    if (initialMessages.length > 0) {
-      setMessages(initialMessages);
+    if (debouncedApiCallParams) {
+      onSendMessage(debouncedApiCallParams.message, debouncedApiCallParams.conversationId);
     }
-  }, [initialMessages]);
+  }, [debouncedApiCallParams, onSendMessage]);
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [currentMessages]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   
-  const handleSendMessage = async (message: string) => {
-    if (!message.trim()) return;
-    
-    // Add user message to the chat
+  const handleSendMessage = async (messageContent: string) => {
+    if (!messageContent.trim()) return;
+
+    if (!isGuest) { // Logged-in user
+      const newMessage: Message = {
+        id: Date.now().toString(),
+        role: 'user',
+        message: messageContent,
+        timestamp: new Date()
+      };
+      setCurrentMessages((prev: Message[]) => [...prev, newMessage]);
+      setPendingApiCallParams({ message: messageContent, conversationId });
+    } else { // Guest user
+      setGuestMessage(messageContent);
+      setShowGuestModal(true);
+    }
+  };
+
+  const handleModalSendConfirm = () => {
+    if (!guestMessage) return;
+
     const newMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
-      message,
+      message: guestMessage,
       timestamp: new Date()
     };
+    setCurrentMessages((prev: Message[]) => [...prev, newMessage]); // This will now use the guest-aware setCurrentMessages
+    setPendingApiCallParams({ message: guestMessage, conversationId });
     
-    setMessages((prev: Message[]) => [...prev, newMessage]);
-    
-    // Send message to recipient via the provided handler
-    await onSendMessage(message, conversationId);
+    setShowGuestModal(false);
+    setGuestMessage(null);
+  };
+
+  const handleModalCancel = () => {
+    setShowGuestModal(false);
+    setGuestMessage(null);
   };
 
   if (!isOpen) return null;
@@ -111,12 +183,12 @@ export function ChatAssistant({
         
         {/* Messages */}
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
-          {messages.length === 0 ? (
+          {currentMessages.length === 0 ? (
             <div className="text-center text-zion-slate py-8">
               <p>Start a conversation with {recipient.name}</p>
             </div>
           ) : (
-            messages.map((msg) => (
+            currentMessages.map((msg) => (
               <ChatMessage
                 key={msg.id} 
                 role={msg.role}
@@ -132,6 +204,25 @@ export function ChatAssistant({
           <ChatInput onSend={handleSendMessage} />
         </div>
       </div>
+
+      {showGuestModal && guestMessage && (
+        <div className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4">
+          <div className="bg-zion-blue-darker p-6 rounded-lg shadow-xl w-full max-w-md">
+            <h3 className="text-lg font-semibold text-white mb-4">Confirm Message</h3>
+            <p className="text-zion-slate mb-6 whitespace-pre-wrap break-words">
+              {guestMessage}
+            </p>
+            <div className="flex justify-end space-x-3">
+              <Button variant="outline" onClick={handleModalCancel} className="text-white border-zion-purple hover:bg-zion-purple/10">
+                Cancel
+              </Button>
+              <Button onClick={handleModalSendConfirm} className="bg-zion-purple hover:bg-zion-purple-dark text-white">
+                Send
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

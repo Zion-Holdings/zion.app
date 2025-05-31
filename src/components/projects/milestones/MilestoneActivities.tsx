@@ -118,7 +118,7 @@ export function MilestoneActivities({ projectId }: MilestoneActivitiesProps) {
             {activities.map((activity) => (
               <div key={activity.id} className="flex items-start space-x-4">
                 <Avatar className="h-10 w-10">
-                  <AvatarImage src={activity.created_by_profile?.avatar_url || ''} alt="User" />
+                  <AvatarImage src={activity.created_by_profile?.avatar_url || ''} alt={activity.created_by_profile?.display_name || "User avatar"} />
                   <AvatarFallback>
                     {activity.created_by_profile?.display_name?.charAt(0) || '?'}
                   </AvatarFallback>

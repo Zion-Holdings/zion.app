@@ -50,10 +50,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
 
-    if (data.accessToken) {
-      safeStorage.setItem('token', data.accessToken);
-    }
-
     // Also sign in client-side so Supabase auth state is in sync
     await loginImpl({ email, password });
 

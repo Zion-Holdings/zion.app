@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+l3xoyh-codex/load-talent-profile-data
 import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
+import type { NextRouter } from 'next/router';
+import { Loader2 } from 'lucide-react';
+import { TALENT_PROFILES } from '@/data/talentData';
+main
 import type { TalentProfile } from '@/types/talent';
 import TalentDetails from '@/components/talent/TalentDetails';
 import NotFound from '@/components/NotFound';
 
+l3xoyh-codex/load-talent-profile-data
 const TalentPage: React.FC = () => {
   const router = useRouter();
   const { id } = router.query;
@@ -44,6 +50,15 @@ const TalentPage: React.FC = () => {
   }
 
   if (error) {
+interface TalentPageProps {
+  talent: (TalentProfile & { social?: Record<string, string> }) | null;
+}
+
+const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
+  const router = useRouter() as NextRouter & { isFallback?: boolean };
+
+  if ('isFallback' in router && router.isFallback) {
+main
     return (
       <div className="p-4">
         <Alert variant="destructive">
