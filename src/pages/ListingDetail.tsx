@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Star, MessageSquare, Brain, Shield } from "lucide-react";
+import StarRating from "@/components/StarRating";
 import { cn } from "@/lib/utils";
 import { MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
 import { toast } from "@/hooks/use-toast";
@@ -164,19 +165,9 @@ export default function ListingDetail() {
                 <h1 className="text-2xl font-bold text-white mb-4">{listing.title}</h1>
                 
                 {listing.rating && (
-                  <div className="flex items-center gap-2 mb-6">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={cn(
-                            "h-5 w-5",
-                            i < Math.floor(listing.rating!) ? "text-zion-cyan fill-zion-cyan" : "text-zion-slate-light"
-                          )}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm text-zion-slate-light">
+                  <div className="flex items-center gap-2 mb-6 text-zion-slate-light">
+                    <StarRating value={listing.rating} />
+                    <span className="text-sm">
                       {listing.rating.toFixed(1)} ({listing.reviewCount} reviews)
                     </span>
                   </div>

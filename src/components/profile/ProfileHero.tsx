@@ -2,7 +2,7 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
-import { Star } from "lucide-react";
+import StarRating from "@/components/StarRating";
 import { cn } from "@/lib/utils";
 
 interface ProfileHeroProps {
@@ -77,11 +77,11 @@ export function ProfileHero({
                 )}
                 
                 {rating && (
-                  <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-zion-cyan text-zion-cyan" />
-                    <span className="text-white font-medium">{rating.toFixed(1)}</span>
+                  <div className="flex items-center gap-1 text-zion-slate-light">
+                    <StarRating value={rating} />
+                    <span className="text-white font-medium ml-1">{rating.toFixed(1)}</span>
                     {reviewCount && (
-                      <span className="text-zion-slate-light text-sm">({reviewCount})</span>
+                      <span className="text-sm ml-1">({reviewCount})</span>
                     )}
                   </div>
                 )}

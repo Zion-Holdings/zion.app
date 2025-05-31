@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-react";
+import StarRating from "@/components/StarRating";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { getStripe } from "@/utils/getStripe";
@@ -336,20 +337,9 @@ export default function EquipmentDetail() {
                 
                 {/* Rating */}
                 {equipment.rating && (
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`h-5 w-5 ${
-                            i < Math.floor(equipment.rating!) 
-                              ? "text-zion-cyan fill-zion-cyan" 
-                              : "text-zion-slate-light"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm text-zion-slate-light">
+                  <div className="flex items-center gap-2 mb-4 text-zion-slate-light">
+                    <StarRating value={equipment.rating} />
+                    <span className="text-sm">
                       {equipment.rating.toFixed(1)} ({equipment.reviewCount} reviews)
                     </span>
                   </div>
