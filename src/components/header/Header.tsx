@@ -25,6 +25,8 @@ export interface HeaderProps {
 
 export function Header({ hideLogin = false, customLogo, customTheme }: HeaderProps) {
   const { user } = useAuth();
+  const firstName =
+    user?.displayName?.split(' ')[0] || user?.name?.split(' ')[0];
   const { isWhitelabel, primaryColor } = useWhitelabel();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
@@ -78,6 +80,14 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
         <div className="flex items-center gap-2">
           <PointsBadge />
           <LanguageSelector />
+          {user && (
+            <span
+              className="hidden sm:block text-sm text-white mr-2"
+              data-testid="header-greeting"
+            >
+              {`Hello, ${firstName}!`}
+            </span>
+          )}
           {!hideLogin && <UserMenu />}
         </div>
       </div>

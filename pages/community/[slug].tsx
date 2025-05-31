@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import EmptyState from '@/components/community/EmptyState';
 import { createClient } from '@supabase/supabase-js';
 import PostCard from '@/components/community/PostCard';
 import type { ForumPost } from '@/types/community';
@@ -27,20 +28,13 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ posts, hasSession, category
             ))}
           </div>
         ) : (
-          <div className="text-center py-16">
-            <div className="bg-zion-blue/30 p-6 rounded-full mb-6 inline-flex">
-              <MessageSquare className="h-10 w-10 text-zion-purple" />
-            </div>
-            <h2 className="text-xl font-medium mb-2">No posts yet</h2>
-            <p className="text-muted-foreground mb-6">Be the first to post</p>
-            {hasSession ? (
-              <Button asChild>
-                <Link href={`/community/create?category=${category}`}>Create New Post</Link>
-              </Button>
-            ) : (
-              <Button disabled>Create New Post</Button>
-            )}
-          </div>
+          <EmptyState
+            title="No discussions yet"
+            subtitle="Be the first to start a conversation."
+            cta="Create Post"
+            href={`/community/create?category=${category}`}
+            hasSession={hasSession}
+          />
         )}
       </main>
     </>

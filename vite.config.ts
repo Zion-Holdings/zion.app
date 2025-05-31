@@ -44,6 +44,7 @@ export default defineConfig({
   server: {
     hmr: {
       clientPort: 443
-    }
+    },
+    allowedHosts: ['devserver-preview--ziontechgroup.netlify.app']
   }
 })

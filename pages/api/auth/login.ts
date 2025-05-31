@@ -54,7 +54,7 @@ export default async function handler(req: Req, res: JsonRes) {
   const refreshToken = data.session.refresh_token;
 
   // Set HttpOnly cookie for the access token
-  res.setHeader('Set-Cookie', `access=${accessToken}; HttpOnly; Path=/`);
+  res.setHeader('Set-Cookie', `authToken=${accessToken}; HttpOnly; Path=/; Secure; SameSite=Strict`);
 
   res.status(200).json({ user: data.user, accessToken, refreshToken });
 }
