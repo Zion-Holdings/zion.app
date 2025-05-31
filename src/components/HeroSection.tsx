@@ -24,7 +24,7 @@ export function HeroSection() {
           {t('home.hero_title')}
         </GradientHeading>
 
-        <p className="text-xl md:text-2xl text-zion-slate-light mb-10 max-w-3xl mx-auto">
+        <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
           {t('home.hero_subtitle')}
         </p>
 

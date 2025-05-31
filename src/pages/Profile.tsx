@@ -84,7 +84,7 @@ export default function Profile() {
             <div>
               <Avatar className="w-24 h-24 mb-2">
                 {avatarPreview || user.avatarUrl ? (
-                  <AvatarImage src={avatarPreview || user.avatarUrl} alt="avatar" />
+                  <AvatarImage src={avatarPreview || user.avatarUrl} alt={user.name || "User avatar"} />
                 ) : (
                   <AvatarFallback>{user.name?.charAt(0)}</AvatarFallback>
                 )}

@@ -67,7 +67,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     <div className="fixed bottom-4 right-4 w-80 bg-zion-blue-dark rounded-lg shadow-xl border border-zion-purple/20 flex flex-col animate-slide-up">
       <div className="p-2 bg-zion-blue flex justify-between items-center">
         <span className="text-white font-medium">Chat</span>
-        <Button size="icon" variant="ghost" onClick={onClose}>
+        <Button size="icon" variant="ghost" onClick={onClose} aria-label="Close chat widget">
           ✕
         </Button>
       </div>

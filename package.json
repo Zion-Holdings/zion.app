@@ -12,7 +12,7 @@
     "test:watch": "vitest --watch",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chrome",
-    "test:accessibility": "vitest run tests/Accessibility.test.tsx",
+    "lint:a11y": "vitest run tests/Accessibility.test.tsx",
     "test:e2e": "playwright test",
     "es:index": "node scripts/index-elasticsearch.js"
   },
