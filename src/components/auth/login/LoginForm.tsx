@@ -6,6 +6,7 @@ import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
+import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -47,7 +48,8 @@ export function LoginForm() {
       setIsSubmitting(true);
       const result = await login(data.email, data.password);
       if (result.error) {
-        form.setError("root", { message: result.error });
+        form.setError("root", { message: result.error }); // Keep this for form-level error display
+        toast.error(result.error); // Add this line to show a toast notification
       }
     } finally {
       setIsSubmitting(false);
@@ -86,6 +88,7 @@ export function LoginForm() {
                     className="bg-zion-blue pl-10 text-white placeholder:text-zion-blue-light border-zion-blue-light focus:border-zion-purple"
                     {...field}
                     autoComplete="off" // Disable browser autofill
+                    data-testid="login-email-input"
                   />
                   <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
                 </div>
@@ -111,6 +114,7 @@ export function LoginForm() {
                     className="bg-zion-blue pl-10 text-white placeholder:text-zion-blue-light border-zion-blue-light focus:border-zion-purple"
                     {...field}
                     autoComplete="off" // Disable browser autofill
+                    data-testid="login-password-input"
                   />
                   <LogIn className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
                   <Button
@@ -148,6 +152,7 @@ export function LoginForm() {
           type="submit"
           className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
           disabled={isLoading || isSubmitting}
+          data-testid="login-submit-button"
         >
           {isLoading || isSubmitting ? "Logging in..." : "Login"}
         </Button>
