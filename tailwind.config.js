@@ -43,6 +43,16 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Zion custom colors
+        'zion-blue-dark': '#0A1024',
+        'zion-blue': '#141A3C',
+        'zion-blue-light': '#2D4A8A',
+        'zion-purple': '#7000FF',
+        'zion-purple-light': '#A450FF',
+        'zion-purple-dark': '#5300B8',
+        'zion-cyan': '#00FFFF',
+        'zion-cyan-light': '#7FFFD4',
+        'zion-slate-light': '#94A3B8',
       },
       borderRadius: {
         lg: "var(--radius)",

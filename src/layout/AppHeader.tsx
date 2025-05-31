@@ -4,6 +4,7 @@ import { useMessaging } from '@/context/MessagingContext';
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
 import { LanguageSelector } from '@/components/header/LanguageSelector';
+import { ModeToggle } from "@/components/ModeToggle";
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
@@ -50,7 +51,10 @@ export function AppHeader() {
             </button>
           </div>
 
-          <LanguageSelector />
+          <div className="flex items-center gap-2">
+            <LanguageSelector />
+            <ModeToggle />
+          </div>
         </div>
       </header>
       

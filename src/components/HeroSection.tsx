@@ -20,7 +20,7 @@ export function HeroSection() {
       </div>
       
       <div className="container relative z-10 px-4 mx-auto text-center">
-        <GradientHeading className="mb-6 text-5xl md:text-7xl font-bold">
+        <GradientHeading className="mb-6 text-5xl md:text-7xl font-bold drop-shadow-md">
           {t('home.hero_title')}
         </GradientHeading>
 
@@ -30,7 +30,7 @@ export function HeroSection() {
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button
-            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6"
+            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 transition-all duration-300 hover:shadow-[0_0_15px_2px_rgba(164,80,255,0.7)] focus:shadow-[0_0_15px_2px_rgba(164,80,255,0.7)]"
             size="lg"
             asChild
           >
@@ -47,7 +47,7 @@ export function HeroSection() {
           <Link
             id="browse-marketplace"
             to="/marketplace"
-            className="border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-4 rounded-md inline-flex items-center justify-center"
+            className="border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-4 rounded-md inline-flex items-center justify-center transition-all duration-300 hover:shadow-[0_0_15px_2px_rgba(0,255,255,0.6)] focus:shadow-[0_0_15px_2px_rgba(0,255,255,0.6)]"
           >
             {t('home.browse_marketplace')}
           </Link>

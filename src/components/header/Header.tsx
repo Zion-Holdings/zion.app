@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 import { UserMenu } from './UserMenu';
 import { LanguageSelector } from './LanguageSelector';
+import { ModeToggle } from "@/components/ModeToggle";
 import { MainNavigation } from '@/layout/MainNavigation';
 import { useAuth } from '@/hooks/useAuth';
 import { useWhitelabel } from '@/context/WhitelabelContext';
@@ -76,6 +77,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
 
         <div className="flex items-center gap-2">
           <LanguageSelector />
+          <ModeToggle />
           {!hideLogin && <UserMenu />}
         </div>
       </div>
