@@ -19,10 +19,13 @@ import {
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Link } from "react-router-dom";
 
+import { Checkbox } from "@/components/ui/checkbox";
+
 // Form validation schema
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email").min(1, "Email is required"),
   password: z.string().min(6, "Password must be at least 6 characters"),
+  rememberMe: z.boolean().default(false),
 });
 
 type LoginFormValues = z.infer<typeof loginSchema>;
@@ -37,6 +40,7 @@ export function LoginForm() {
     defaultValues: {
       email: "",
       password: "",
+      rememberMe: false,
     },
   });
 
@@ -45,7 +49,8 @@ export function LoginForm() {
 
     try {
       setIsSubmitting(true);
-      const result = await login(data.email, data.password);
+      // Pass email, password, and rememberMe to the login function
+      const result = await login(data.email, data.password, data.rememberMe);
       if (result.error) {
         form.setError("root", { message: result.error });
       }
@@ -136,7 +141,31 @@ export function LoginForm() {
           )}
         />
 
+        <FormField
+          control={form.control}
+          name="rememberMe"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+              <FormControl>
+                <Checkbox
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                  className="border-zion-blue-light data-[state=checked]:bg-zion-purple data-[state=checked]:text-white"
+                  aria-label="Remember me"
+                />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel className="text-zion-slate-light">Remember me</FormLabel>
+              </div>
+            </FormItem>
+          )}
+        />
+
         <div className="flex items-center justify-between">
+          <div className="text-sm">
+            {/* "Remember me" checkbox is now above, this div can be used for "Forgot Password" if it's still needed */}
+            {/* If "Remember me" was previously here, it's moved. */}
+          </div>
           <div className="text-sm">
             <Link to="/forgot-password" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
               Forgot your password?
