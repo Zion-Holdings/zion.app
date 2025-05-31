@@ -157,3 +157,9 @@ browser to view detailed coverage information.
 When tests run on GitHub Actions, the workflow uploads the `coverage` directory
 using `actions/upload-artifact@v4`. Visit a workflow run and download the
 `coverage-report` artifact to retrieve the generated HTML coverage report.
+
+## DevTools
+
+For security reasons, React DevTools are disabled in production environments.
+
+To enable DevTools in Netlify preview deploys (or other non-production environments that might set `NODE_ENV` to `production`), you can set the `REACT_APP_DEVTOOLS=true` environment variable.
