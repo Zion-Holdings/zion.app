@@ -8,7 +8,6 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { getStripe } from "@/utils/getStripe";
 import { safeStorage } from '@/utils/safeStorage';
 
 interface EquipmentSpecification {
@@ -197,22 +196,20 @@ export default function EquipmentDetail() {
 
   const handleBuyNow = async () => {
     if (!isAuthenticated) {
-      const next = encodeURIComponent(`/checkout?sku=${id}`);
-      navigate(`/login?next=${next}`);
+      navigate(`/login?next=/product/${id}`);
       return;
     }
 
     setIsAdding(true);
     try {
-      const response = await fetch('/api/checkout_sessions', {
+      const response = await fetch('/checkout/create-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId: id }),
       });
-      const { sessionId } = await response.json();
-      const stripe = await getStripe();
-      if (stripe && sessionId) {
-        await stripe.redirectToCheckout({ sessionId });
+      const { url } = await response.json();
+      if (url) {
+        window.location.assign(url as string);
       }
     } catch (err) {
       toast({ title: 'Payment error', description: 'Could not start checkout.' });
