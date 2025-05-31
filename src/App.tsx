@@ -54,6 +54,7 @@ import RequestQuotePage from './pages/RequestQuote';
 import WishlistPage from './pages/Wishlist';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
+import Rewards from './pages/Rewards';
 import { SupportChatbot } from './components/SupportChatbot';
 import PrivateRoute from './components/PrivateRoute';
 
@@ -96,6 +97,7 @@ const baseRoutes = [
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/wishlist', element: <WishlistPage /> },
   { path: '/cart', element: <PrivateRoute><CartPage /></PrivateRoute> },
+  { path: '/rewards', element: <PrivateRoute><Rewards /></PrivateRoute> },
   { path: '/checkout', element: <Checkout /> },
 ];
 
