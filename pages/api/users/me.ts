@@ -1,3 +1,5 @@
+import { withErrorLogging } from '@/utils/withErrorLogging';
+
 let mockUser = {
   id: '1',
   name: 'Jane Doe',
@@ -23,7 +25,7 @@ interface JsonRes {
   json: (data: any) => void;
 }
 
-export default function handler(req: Req, res: JsonRes) {
+function handler(req: Req, res: JsonRes) {
   if (req.method === 'GET') {
     res.status(200).json(mockUser);
     return;
@@ -43,3 +45,5 @@ export default function handler(req: Req, res: JsonRes) {
 
   res.status(405).end();
 }
+
+export default withErrorLogging(handler);

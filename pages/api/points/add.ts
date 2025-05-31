@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
 type Req = { method?: string; body?: any };
 interface JsonRes {
@@ -20,7 +21,7 @@ const serviceKey =
   '';
 const supabase = createClient(supabaseUrl, serviceKey);
 
-export default async function handler(req: Req, res: JsonRes) {
+async function handler(req: Req, res: JsonRes) {
   if (req.method !== 'POST') {
     res.status(405).end();
     return;
@@ -60,3 +61,5 @@ export default async function handler(req: Req, res: JsonRes) {
 
   res.status(200).json({ success: true });
 }
+
+export default withErrorLogging(handler);
