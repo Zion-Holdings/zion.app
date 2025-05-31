@@ -9,7 +9,7 @@ import { User, Mail, Lock, Eye, EyeOff, Facebook, Twitter, Loader2 } from "lucid
 import { useAuth } from "@/hooks/useAuth";
 import { registerUser } from "@/services/authService";
 import { toast } from "@/hooks/use-toast";
-import { supabase } from "../../integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
