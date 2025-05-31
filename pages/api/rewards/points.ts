@@ -28,8 +28,20 @@ const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
 // Helper function to get user from token (example, actual implementation might vary)
 async function getUserIdFromRequest(req: Req, supabase: SupabaseClient): Promise<string | null> {
   const authHeader = req.headers?.authorization;
-  if (authHeader && authHeader.startsWith('Bearer ')) {
-    const token = authHeader.split(' ')[1];
+
+  let token: string | null = null;
+
+  if (authHeader && typeof authHeader === 'string' && authHeader.startsWith('Bearer ')) {
+    token = authHeader.split(' ')[1];
+  } else if (Array.isArray(authHeader) && authHeader.length > 0) {
+    // Handle case where authHeader is an array, e.g., pick the first one
+    const firstAuthHeader = authHeader[0];
+    if (firstAuthHeader && firstAuthHeader.startsWith('Bearer ')) {
+      token = firstAuthHeader.split(' ')[1];
+    }
+  }
+
+  if (token) {
     const { data: { user }, error } = await supabase.auth.getUser(token);
     if (error || !user) {
       console.warn('Failed to get user from token:', error?.message);
@@ -37,18 +49,19 @@ async function getUserIdFromRequest(req: Req, supabase: SupabaseClient): Promise
     }
     return user.id;
   }
+
   // Fallback or other session mechanisms might be needed here
   // For example, if using Supabase SSR with cookies:
   // const { data: { session }, error: sessionError } = await supabase.auth.getSession();
   // if (session?.user) return session.user.id;
-  console.warn('No Authorization header found or session not available for points API.');
+  console.warn('No valid string Authorization header found or session not available for points API.');
   return null;
 }
 
 
 export default async function handler(req: Req, res: Res) {
   if (req.method !== 'GET') {
-    res.setHeader('Allow', ['GET']);
+    res.setHeader('Allow', 'GET');
     res.status(405).end(`Method ${req.method} Not Allowed`);
     return;
   }

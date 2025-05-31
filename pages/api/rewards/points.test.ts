@@ -1,3 +1,4 @@
+/// <reference types="vitest/globals" />
 import { createMocks, RequestMethod } from 'node-mocks-http';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import pointsHandler from './points'; // Adjust path if your handler is default exported
