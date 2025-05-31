@@ -51,6 +51,7 @@
     "firebase": "^9.23.0",
     "framer-motion": "^11.0.3",
     "fuse.js": "^7.0.0",
+    "html2canvas": "^1.4.1",
     "i18next": "^23.7.16",
     "i18next-browser-languagedetector": "^7.2.0",
     "input-otp": "^1.1.0",
@@ -77,8 +78,7 @@
     "tailwind-merge": "^2.2.1",
     "vaul": "^0.9.0",
     "yup": "^1.2.0",
-    "zod": "^3.22.4",
-    "html2canvas": "^1.4.1"
+    "zod": "^3.22.4"
   },
   "optionalDependencies": {
     "@elastic/elasticsearch": "^8.12.0"
