@@ -1,20 +1,68 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import { MessageSquare } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+// Link and Button are not used directly in the modified logic, but might be used by PostCard or EmptyState
+// import Link from 'next/link';
+// import { Button } from '@/components/ui/button';
+// MessageSquare is not used
+// import { MessageSquare } from 'lucide-react';
 import EmptyState from '@/components/community/EmptyState';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js'; // For getServerSideProps
 import PostCard from '@/components/community/PostCard';
 import type { ForumPost } from '@/types/community';
+import { fetchPostsByCategory } from '@/services/forumPostService';
+
+const POSTS_PER_PAGE = 20; // Or any other limit you prefer
 
 interface CategoryPageProps {
-  posts: ForumPost[];
+  initialPosts: ForumPost[];
   hasSession: boolean;
   category: string;
 }
 
-const CategoryPage: React.FC<CategoryPageProps> = ({ posts, hasSession, category }) => {
+const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, hasSession, category }) => {
+  const [posts, setPosts] = useState<ForumPost[]>(initialPosts);
+  const [page, setPage] = useState(2); // Start fetching from page 2
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(initialPosts.length === POSTS_PER_PAGE);
+
+  const loadMorePosts = useCallback(async () => {
+    if (isLoading || !hasMore) return;
+
+    setIsLoading(true);
+    try {
+      const newPosts = await fetchPostsByCategory(category, page, POSTS_PER_PAGE);
+      if (newPosts.length > 0) {
+        setPosts((prevPosts) => [...prevPosts, ...newPosts]);
+        setPage((prevPage) => prevPage + 1);
+        setHasMore(newPosts.length === POSTS_PER_PAGE);
+      } else {
+        setHasMore(false);
+      }
+    } catch (error) {
+      console.error("Failed to fetch more posts:", error);
+      // Optionally, handle error state in UI
+    } finally {
+      setIsLoading(false);
+    }
+  }, [category, page, isLoading, hasMore]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if scrolled to the bottom
+      if (
+        window.innerHeight + document.documentElement.scrollTop >=
+          document.documentElement.offsetHeight - 100 && // 100px threshold
+        !isLoading &&
+        hasMore
+      ) {
+        loadMorePosts();
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [loadMorePosts, isLoading, hasMore]);
+
   return (
     <>
       <Head>
@@ -26,11 +74,13 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ posts, hasSession, category
             {posts.map((post) => (
               <PostCard key={post.id} post={post} />
             ))}
+            {isLoading && <div className="text-center py-4">Loading...</div>}
+            {!hasMore && posts.length > 0 && <div className="text-center py-4 text-gray-500">No more posts.</div>}
           </div>
         ) : (
           <EmptyState
-            title="No discussions yet"
-            subtitle="Be the first to start a conversation."
+            title="No posts yet"
+            subtitle="Be first to contribute!"
             cta="Create Post"
             href={`/community/create?category=${category}`}
             hasSession={hasSession}
@@ -43,6 +93,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ posts, hasSession, category
 
 export const getServerSideProps = async ({ req, params }: { req: any; params?: { slug?: string } }) => {
   const category = params?.slug as string;
+  // Supabase client setup for SSR remains largely the same
   const supabaseUrl =
     process.env.SUPABASE_URL ||
     process.env.VITE_SUPABASE_URL ||
@@ -56,23 +107,34 @@ export const getServerSideProps = async ({ req, params }: { req: any; params?: {
   const token = req.cookies?.['sb-access-token'] || null;
 
   if (!supabaseUrl || !anonKey) {
-    return { props: { posts: [], hasSession: Boolean(token), category } };
+    // Return empty initialPosts if Supabase is not configured
+    return { props: { initialPosts: [], hasSession: Boolean(token), category } };
   }
 
   const supabase = createClient(supabaseUrl, anonKey);
-  const { data, error } = await supabase
-    .from('forum_posts')
-    .select('*')
-    .eq('category_id', category)
-    .order('created_at', { ascending: false });
 
-  if (error) {
-    console.error('Post fetch error:', error.message);
+  // Fetch initial posts (page 1)
+  // Using fetchPostsByCategory for consistency, though direct Supabase client call is also fine here
+  let initialPostsData: ForumPost[] = [];
+  try {
+    const { data, error } = await supabase
+      .from('forum_posts')
+      .select('*')
+      .eq('category_id', category)
+      .order('created_at', { ascending: false })
+      .limit(POSTS_PER_PAGE); // Use POSTS_PER_PAGE for the initial load
+
+    if (error) {
+      throw error;
+    }
+    initialPostsData = (data as ForumPost[]) || [];
+  } catch (error: any) {
+    console.error('Initial post fetch error:', error.message);
   }
 
   return {
     props: {
-      posts: (data as ForumPost[]) || [],
+      initialPosts: initialPostsData,
       hasSession: Boolean(token),
       category
     }
