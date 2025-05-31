@@ -31,7 +31,7 @@ export const ReplyCard = ({
     )}>
       <CardHeader className="flex flex-row items-start gap-4 space-y-0">
         <Avatar className="h-8 w-8">
-          <AvatarImage src={reply.authorAvatar} />
+          <AvatarImage src={reply.authorAvatar} alt={reply.authorName} />
           <AvatarFallback>{reply.authorName.charAt(0)}</AvatarFallback>
         </Avatar>
         <div className="flex-1">

@@ -61,7 +61,7 @@ export function MobileConversationList({
           >
             <div className="flex items-center gap-3 py-3 cursor-pointer">
               <Avatar>
-                <AvatarImage src={conversation.avatar} />
+                <AvatarImage src={conversation.avatar} alt={conversation.name} />
                 <AvatarFallback>
                   {conversation.name.charAt(0).toUpperCase()}
                 </AvatarFallback>

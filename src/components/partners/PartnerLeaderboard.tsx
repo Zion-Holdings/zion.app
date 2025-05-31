@@ -104,7 +104,7 @@ export function PartnerLeaderboard() {
                       {renderRankBadge(entry.rank)}
                     </div>
                     <Avatar className="h-10 w-10 border border-zion-blue-light">
-                      <AvatarImage src={entry.avatar} />
+                      <AvatarImage src={entry.avatar} alt={entry.name} />
                       <AvatarFallback className="bg-zion-blue text-zion-cyan">
                         {entry.name.substring(0, 2).toUpperCase()}
                       </AvatarFallback>

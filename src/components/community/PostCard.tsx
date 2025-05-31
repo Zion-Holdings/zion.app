@@ -26,7 +26,7 @@ export const PostCard = ({ post, compact = false }: PostCardProps) => {
     )}>
       <CardHeader className="flex flex-row items-start gap-4 space-y-0">
         <Avatar className="h-10 w-10">
-          <AvatarImage src={post.authorAvatar} />
+          <AvatarImage src={post.authorAvatar} alt={post.authorName} />
           <AvatarFallback>{post.authorName.charAt(0)}</AvatarFallback>
         </Avatar>
         <div className="flex-1">
