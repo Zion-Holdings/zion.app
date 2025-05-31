@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";
 import { useEffect, useState } from "react";
-import useSWR from "swr";
+import { useQuery } from "@tanstack/react-query";
 import apiClient from "@/services/apiClient";
 import { captureException } from "@/utils/sentry";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -126,7 +126,10 @@ async function fetchServices() {
 export default function ServicesPage() {
   const [listings, setListings] = useState<ProductListing[]>(SERVICES);
 
-  const { data, error, isLoading, mutate } = useSWR<ProductListing[]>('/services', fetchServices);
+  const { data, error, isLoading, refetch } = useQuery<ProductListing[], Error>({
+    queryKey: ['services'],
+    queryFn: fetchServices,
+  });
 
   useEffect(() => {
     if (data) setListings(data);
@@ -154,8 +157,8 @@ export default function ServicesPage() {
   if (error) {
     return (
       <div data-testid="error-state" className="py-12 text-center space-y-4">
-        <p className="text-red-400">Failed to load services.</p>
-        <Button data-testid="retry-button" onClick={() => mutate()}>
+        <p className="text-red-400">Failed to load services. {error.message}</p>
+        <Button data-testid="retry-button" onClick={() => refetch()}>
           Retry
         </Button>
       </div>
