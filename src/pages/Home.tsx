@@ -28,7 +28,7 @@ export default function Home() {
 
       {user && (
         <div
-          className="bg-zion-blue-light text-white text-center p-2"
+          className="bg-zion-blue-light text-zion-slate-dark text-center p-2"
           data-testid="home-greeting"
         >
           {`Hello, ${firstName}!`}

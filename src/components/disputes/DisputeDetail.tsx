@@ -300,7 +300,7 @@ export function DisputeDetail() {
                               >
                                 <div className="flex items-center gap-2 mb-2">
                                   <Avatar className="h-6 w-6">
-                                    <AvatarImage src={msg.user_profile?.avatar_url} />
+                                    <AvatarImage src={msg.user_profile?.avatar_url} alt={msg.user_profile?.display_name || "User avatar"} />
                                     <AvatarFallback>
                                       {msg.user_profile?.display_name?.[0] || '?'}
                                     </AvatarFallback>
@@ -431,7 +431,7 @@ export function DisputeDetail() {
                             <div className="flex items-center justify-between mb-2">
                               <div className="flex items-center gap-2">
                                 <Avatar className="h-6 w-6">
-                                  <AvatarImage src={msg.user_profile?.avatar_url} />
+                                  <AvatarImage src={msg.user_profile?.avatar_url} alt={msg.user_profile?.display_name || "Admin avatar"} />
                                   <AvatarFallback>
                                     {msg.user_profile?.display_name?.[0] || 'A'}
                                   </AvatarFallback>
@@ -489,7 +489,7 @@ export function DisputeDetail() {
             <CardContent className="space-y-6">
               <div className="flex items-start gap-4">
                 <Avatar className="h-10 w-10">
-                  <AvatarImage src={dispute.client_profile?.avatar_url} />
+                  <AvatarImage src={dispute.client_profile?.avatar_url} alt={dispute.client_profile?.display_name || "Client avatar"} />
                   <AvatarFallback>C</AvatarFallback>
                 </Avatar>
                 <div>
@@ -506,7 +506,7 @@ export function DisputeDetail() {
               
               <div className="flex items-start gap-4">
                 <Avatar className="h-10 w-10">
-                  <AvatarImage src={dispute.talent_profile?.avatar_url} />
+                  <AvatarImage src={dispute.talent_profile?.avatar_url} alt={dispute.talent_profile?.display_name || "Talent avatar"} />
                   <AvatarFallback>T</AvatarFallback>
                 </Avatar>
                 <div>

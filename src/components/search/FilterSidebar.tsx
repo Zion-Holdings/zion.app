@@ -44,9 +44,9 @@ export function FilterSidebar({
   return (
     <div className="bg-zion-blue-dark rounded-lg border border-zion-blue-light p-4">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-medium text-white flex items-center">
+        <h2 className="text-lg font-medium text-white flex items-center">
           <Filter className="mr-2 h-5 w-5" /> Filters
-        </h3>
+        </h2>
         <Button 
           variant="outline" 
           size="sm"
@@ -70,6 +70,7 @@ export function FilterSidebar({
                 checked={filters.selectedProductTypes.includes(type.value)}
                 onCheckedChange={() => onFilterChange('productTypes', type.value)}
                 className="text-zion-purple data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple"
+                aria-label={type.label}
               />
               <label 
                 htmlFor={`type-${type.value}`}
@@ -95,6 +96,7 @@ export function FilterSidebar({
                 checked={filters.selectedLocations.includes(location.value)}
                 onCheckedChange={() => onFilterChange('locations', location.value)}
                 className="text-zion-purple data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple"
+                aria-label={location.label}
               />
               <label 
                 htmlFor={`location-${location.value}`}
@@ -120,6 +122,7 @@ export function FilterSidebar({
                 checked={filters.selectedAvailability.includes(availability.value)}
                 onCheckedChange={() => onFilterChange('availability', availability.value)}
                 className="text-zion-purple data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple"
+                aria-label={availability.label}
               />
               <label 
                 htmlFor={`availability-${availability.value}`}

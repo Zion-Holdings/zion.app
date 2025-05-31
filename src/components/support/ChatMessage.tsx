@@ -21,7 +21,7 @@ export function ChatMessage({ message, isUser, timestamp }: ChatMessageProps) {
       <Avatar className="h-8 w-8">
         {isUser ? (
           <>
-            <AvatarImage src="https://i.pravatar.cc/40?img=1" alt="User" />
+            <AvatarImage src="https://i.pravatar.cc/40?img=1" alt="User avatar" />
             <AvatarFallback>U</AvatarFallback>
           </>
         ) : (
