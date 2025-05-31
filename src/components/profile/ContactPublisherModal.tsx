@@ -20,7 +20,7 @@ import {
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { SendIcon, Mail } from 'lucide-react';
+import { Mail, PaperPlane } from 'lucide-react';
 import api from '@/services/apiClient';
 import { toast } from '@/hooks/use-toast';
 
@@ -154,11 +154,12 @@ export function ContactPublisherModal({
               )}
             />
             <Button
+              variant="primary"
               onClick={handleSend}
               className="w-full"
               disabled={!form.formState.isValid || isSubmitting}
             >
-              <SendIcon className="mr-2" />
+              <PaperPlane className="mr-1" />
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </Button>
           </form>
