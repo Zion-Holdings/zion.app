@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useParams } from 'react-router-dom'; // Changed import
 import Link from 'next/link';
 
 // Define interfaces based on your data structure
@@ -36,8 +36,7 @@ interface TrustScoreHistoryEntry {
 }
 
 const AdminUserTrustHistoryPage: React.FC = () => {
-  const router = useRouter();
-  const { userId } = router.query;
+  const { userId } = useParams<{ userId: string }>(); // Changed to useParams
 
   const [user, setUser] = useState<UserDetails | null>(null);
   const [currentScore, setCurrentScore] = useState<CurrentTrustScore | null>(null);
@@ -46,7 +45,7 @@ const AdminUserTrustHistoryPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!userId || typeof userId !== 'string') {
+    if (!userId) { // userId from useParams is already a string or undefined
       setLoading(false);
       setError("User ID not found in URL.");
       return;

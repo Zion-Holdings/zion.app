@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { Request, Response } from 'express';
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -11,18 +11,19 @@ if (!supabaseUrl || !supabaseServiceKey) {
 const supabase = createClient(supabaseUrl!, supabaseServiceKey!)
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: Request,
+  res: Response
 ) {
   if (req.method !== 'GET') {
-    res.setHeader('Allow', ['GET'])
-    return res.status(405).end(`Method ${req.method} Not Allowed`)
+    res.setHeader('Allow', 'GET');
+    return res.status(405).send(`Method ${req.method} Not Allowed`);
   }
 
-  const { userId } = req.query
+  const { userId } = req.params; // In Express, route parameters are often in req.params
 
   if (!userId || typeof userId !== 'string') {
-    return res.status(400).json({ error: 'User ID is required and must be a string.' })
+    // This check might be redundant if the route matching ensures userId is a string
+    return res.status(400).json({ error: 'User ID is required in the URL path and must be a string.' });
   }
 
   try {
@@ -30,21 +31,21 @@ export default async function handler(
       .from('TrustScoreHistory')
       .select('*')
       .eq('userId', parseInt(userId, 10))
-      .order('changedAt', { ascending: false })
+      .order('changedAt', { ascending: false });
 
     if (error) {
-      console.error('Error fetching trust score history:', error)
-      return res.status(500).json({ error: 'Internal server error while fetching trust score history.' })
+      console.error('Error fetching trust score history:', error);
+      return res.status(500).json({ error: 'Internal server error while fetching trust score history.' });
     }
 
     if (!trustScoreHistory || trustScoreHistory.length === 0) {
-      return res.status(404).json({ message: 'No trust score history found for this user.' })
+      return res.status(404).json({ message: 'No trust score history found for this user.' });
     }
 
-    return res.status(200).json(trustScoreHistory)
+    return res.status(200).json(trustScoreHistory);
 
-  } catch (err) {
-    console.error('Unexpected error in /api/trust/history/[userId]:', err)
-    return res.status(500).json({ error: 'An unexpected error occurred.' })
+  } catch (err: any) {
+    console.error('Unexpected error in /api/trust/history/[userId]:', err);
+    return res.status(500).json({ error: 'An unexpected error occurred.' });
   }
 }

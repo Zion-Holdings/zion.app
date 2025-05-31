@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { Request, Response } from 'express';
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -12,7 +12,7 @@ const supabase = createClient(supabaseUrl!, supabaseServiceKey!)
 
 // Placeholder for user authentication - e.g., get current user ID
 // In a real app, you'd get this from a session or JWT.
-const getAuthenticatedUserId = (req: NextApiRequest): number | null => {
+const getAuthenticatedUserId = (req: Request): number | null => {
   // For now, let's assume it's passed in the request or a fixed value for testing.
   // IMPORTANT: Replace with actual authentication.
   const { MOCK_LOGGED_IN_USER_ID } = process.env;
@@ -27,12 +27,12 @@ const getAuthenticatedUserId = (req: NextApiRequest): number | null => {
 
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: Request,
+  res: Response
 ) {
   if (req.method !== 'POST') {
-    res.setHeader('Allow', ['POST'])
-    return res.status(405).end(`Method ${req.method} Not Allowed`)
+    res.setHeader('Allow', 'POST');
+    return res.status(405).send(`Method ${req.method} Not Allowed`);
   }
 
   // --- Authentication Placeholder ---
@@ -48,12 +48,12 @@ export default async function handler(
     revieweeId,
     reviewType,
     comment,
-  } = req.body
+  } = req.body;
 
   const finalReviewerId = authenticatedUserId || bodyReviewerId; // Prefer authenticated user
 
   if (!finalReviewerId || !revieweeId || !reviewType) {
-    return res.status(400).json({ error: 'Missing required fields: reviewerId, revieweeId, reviewType.' })
+    return res.status(400).json({ error: 'Missing required fields: reviewerId, revieweeId, reviewType.' });
   }
 
   if (isNaN(Number(finalReviewerId)) || isNaN(Number(revieweeId))) {
@@ -61,11 +61,11 @@ export default async function handler(
   }
 
   if (Number(finalReviewerId) === Number(revieweeId)) {
-    return res.status(400).json({ error: 'Reviewer and reviewee cannot be the same user.' })
+    return res.status(400).json({ error: 'Reviewer and reviewee cannot be the same user.' });
   }
 
   if (!['endorsement', 'flag'].includes(reviewType)) {
-    return res.status(400).json({ error: 'Invalid reviewType. Must be "endorsement" or "flag".' })
+    return res.status(400).json({ error: 'Invalid reviewType. Must be "endorsement" or "flag".' });
   }
 
   if (comment && typeof comment !== 'string') {
@@ -117,26 +117,26 @@ export default async function handler(
         comment: comment || null, // Ensure null if empty string or undefined
       })
       .select() // Return the created record
-      .single()
+      .single();
 
     if (error) {
-      console.error('Error saving peer review:', error)
+      console.error('Error saving peer review:', error);
       // Consider more specific error codes based on Prisma/DB errors
       if (error.code === '23503') { // Foreign key violation
           if (error.message.includes('PeerReview_reviewerId_fkey')) {
-            return res.status(400).json({ error: 'Reviewer user does not exist.'})
+            return res.status(400).json({ error: 'Reviewer user does not exist.'});
           }
            if (error.message.includes('PeerReview_revieweeId_fkey')) {
-            return res.status(400).json({ error: 'Reviewee user does not exist.'})
+            return res.status(400).json({ error: 'Reviewee user does not exist.'});
           }
       }
-      return res.status(500).json({ error: 'Failed to save peer review.', details: error.message })
+      return res.status(500).json({ error: 'Failed to save peer review.', details: error.message });
     }
 
-    return res.status(201).json({ message: 'Peer review submitted successfully.', review: newReview })
+    return res.status(201).json({ message: 'Peer review submitted successfully.', review: newReview });
 
   } catch (err: any) {
-    console.error('Unexpected error in /api/trust/peer-review:', err)
-    return res.status(500).json({ error: 'An unexpected server error occurred.' })
+    console.error('Unexpected error in /api/trust/peer-review:', err);
+    return res.status(500).json({ error: 'An unexpected server error occurred.' });
   }
 }

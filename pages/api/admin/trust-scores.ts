@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { Request, Response } from 'express';
 import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
@@ -11,11 +11,11 @@ if (!supabaseUrl || !supabaseServiceKey) {
 const supabaseAdmin = createClient(supabaseUrl!, supabaseServiceKey!)
 
 // Placeholder for admin authentication
-const isAdminAuthenticated = (req: NextApiRequest): boolean => {
+const isAdminAuthenticated = (req: Request): boolean => {
   // In a real app, verify a JWT, session, or use a proper auth system.
   // For this example, we'll use a simple header check.
   // IMPORTANT: This is NOT secure for production.
-  const adminSecret = req.headers['x-admin-secret'];
+  const adminSecret = req.headers['x-admin-secret'] as string; // Express headers are string | string[] | undefined
   if (process.env.NODE_ENV === 'development' && !process.env.ADMIN_SECRET_KEY) {
     console.warn("ADMIN_SECRET_KEY not set in development, allowing access. THIS IS INSECURE.")
     return true;
@@ -34,16 +34,16 @@ interface UserWithTrustScore {
 }
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: Request,
+  res: Response
 ) {
   if (req.method !== 'GET') {
-    res.setHeader('Allow', ['GET'])
-    return res.status(405).end(`Method ${req.method} Not Allowed`)
+    res.setHeader('Allow', 'GET'); // Express uses string value for setHeader
+    return res.status(405).send(`Method ${req.method} Not Allowed`); // Use .send for text/plain
   }
 
   if (!isAdminAuthenticated(req)) {
-    return res.status(403).json({ error: 'Forbidden: Admin privileges required.' })
+    return res.status(403).json({ error: 'Forbidden: Admin privileges required.' });
   }
 
   try {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link'; // Import Link
+import { useParams } from 'react-router-dom'; // Changed import
+import Link from 'next/link';
 import TrustScoreBadge from '../../../components/TrustScoreBadge'; // Adjust path as needed
 
 // Define interfaces for the data structures based on your API and Prisma schema
@@ -35,8 +35,7 @@ interface TrustScoreHistoryEntry {
 }
 
 const UserProfileTrustPage: React.FC = () => {
-  const router = useRouter();
-  const { id: userId } = router.query;
+  const { id: userId } = useParams<{ id: string }>(); // Changed to useParams, assuming route is /profile/:id/trust
 
   const [trustScoreData, setTrustScoreData] = useState<TrustScoreData | null>(null);
   const [history, setHistory] = useState<TrustScoreHistoryEntry[]>([]);
@@ -45,7 +44,7 @@ const UserProfileTrustPage: React.FC = () => {
   const [showCalculationDetails, setShowCalculationDetails] = useState<boolean>(false);
 
   useEffect(() => {
-    if (!userId || typeof userId !== 'string') {
+    if (!userId) { // userId from useParams is already a string or undefined
       setLoading(false);
       setError("User ID not found in URL.");
       return;

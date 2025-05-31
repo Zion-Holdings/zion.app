@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router'; // To potentially get userId from query or auth state
+import { useSearchParams } from 'react-router-dom'; // Changed import
 import Link from 'next/link';
 
 // Assume a way to get logged-in user's ID and current score.
@@ -8,7 +8,7 @@ const MOCK_LOGGED_IN_USER_ID = 'user123'; // Replace with actual logic
 const MOCK_USER_CURRENT_SCORE = 65; // Replace with actual logic, perhaps fetched
 
 const TrustAppealPage: React.FC = () => {
-  const router = useRouter();
+  const [searchParams] = useSearchParams(); // Changed to useSearchParams
   // In a real app, userId might come from auth context or be a prop
   const [userId, setUserId] = useState<string>(MOCK_LOGGED_IN_USER_ID);
   // Score could be fetched based on userId or passed via query params
@@ -21,8 +21,8 @@ const TrustAppealPage: React.FC = () => {
 
   useEffect(() => {
     // Simulate fetching current score or getting it from router query
-    const scoreFromQuery = router.query.score;
-    if (typeof scoreFromQuery === 'string' && !isNaN(parseInt(scoreFromQuery))) {
+    const scoreFromQuery = searchParams.get('score');
+    if (scoreFromQuery && !isNaN(parseInt(scoreFromQuery))) {
       setCurrentScore(parseInt(scoreFromQuery));
     } else {
       // Fallback to mock or fetch if needed
@@ -32,12 +32,12 @@ const TrustAppealPage: React.FC = () => {
     }
 
     // If userId is also in query (e.g. admin initiated appeal for user)
-    const userIdFromQuery = router.query.userId;
-    if (typeof userIdFromQuery === 'string') {
+    const userIdFromQuery = searchParams.get('userId');
+    if (userIdFromQuery) {
         setUserId(userIdFromQuery);
     }
 
-  }, [router.query]);
+  }, [searchParams]);
 
   const validateForm = (): boolean => {
     const errors: { reasonForAppeal?: string } = {};

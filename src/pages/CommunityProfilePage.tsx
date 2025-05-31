@@ -181,7 +181,7 @@ export default function CommunityProfilePage() {
       if (reviewType === 'endorsement') {
         setMockEndorsementCount(prev => prev + 1); // Optimistically update mock count
       }
-      setIsReviewModalOpen(false);
+      setIsReviewModalOpen(false); // Correct usage: No type argument here. If it were `setIsReviewModalOpen<boolean>(false)`, it would cause TS2347.
     } catch (error: any) {
       setReviewMessage({ type: 'error', text: error.message || `An error occurred during ${reviewType}.` });
     } finally {

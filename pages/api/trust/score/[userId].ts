@@ -1,31 +1,32 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { Request, Response } from 'express';
 import { createClient } from '@supabase/supabase-js'
 
 // Initialize Supabase client
-// Ensure these environment variables are set in your Next.js environment
+// Ensure these environment variables are set
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
 if (!supabaseUrl || !supabaseServiceKey) {
-  console.error("Supabase URL or Service Role Key is not defined.")
-  // Optionally throw an error or handle it gracefully
+  console.error("Supabase URL or Service Role Key is not defined for /api/trust/score/[userId] endpoint.")
+  // Optionally throw an error or handle it gracefully in a real app
 }
 
 const supabase = createClient(supabaseUrl!, supabaseServiceKey!)
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+  req: Request,
+  res: Response
 ) {
   if (req.method !== 'GET') {
-    res.setHeader('Allow', ['GET'])
-    return res.status(405).end(`Method ${req.method} Not Allowed`)
+    res.setHeader('Allow', 'GET');
+    return res.status(405).send(`Method ${req.method} Not Allowed`);
   }
 
-  const { userId } = req.query
+  const { userId } = req.params; // Express uses req.params for route parameters
 
   if (!userId || typeof userId !== 'string') {
-    return res.status(400).json({ error: 'User ID is required and must be a string.' })
+    // This check might be redundant if the route matching ensures userId is a string
+    return res.status(400).json({ error: 'User ID is required in the URL path and must be a string.' });
   }
 
   try {
@@ -36,26 +37,27 @@ export default async function handler(
         components:TrustScoreComponent(*)
       `)
       .eq('userId', parseInt(userId, 10))
-      .order('createdAt', { ascending: false }) // Get the latest score if multiple (though schema has userId as unique)
+      .order('createdAt', { ascending: false }) // Get the latest score if multiple (though schema has userId as unique on TrustScore)
       .limit(1)
-      .single() // Expecting one record due to unique constraint on userId
+      .single(); // Expecting one record due to unique constraint on userId in TrustScore table
 
     if (error) {
       if (error.code === 'PGRST116') { // PostgREST error code for "single row not found"
-        return res.status(404).json({ error: 'Trust score not found for this user.' })
+        return res.status(404).json({ error: 'Trust score not found for this user.' });
       }
-      console.error('Error fetching trust score:', error)
-      return res.status(500).json({ error: 'Internal server error while fetching trust score.' })
+      console.error('Error fetching trust score:', error);
+      return res.status(500).json({ error: 'Internal server error while fetching trust score.' });
     }
 
+    // .single() will return error PGRST116 if no rows, but as a fallback:
     if (!trustScore) {
-      return res.status(404).json({ error: 'Trust score not found for this user.' })
+      return res.status(404).json({ error: 'Trust score not found for this user.' });
     }
 
-    return res.status(200).json(trustScore)
+    return res.status(200).json(trustScore);
 
-  } catch (err) {
-    console.error('Unexpected error in /api/trust/score/[userId]:', err)
-    return res.status(500).json({ error: 'An unexpected error occurred.' })
+  } catch (err: any) {
+    console.error('Unexpected error in /api/trust/score/[userId]:', err);
+    return res.status(500).json({ error: 'An unexpected error occurred.' });
   }
 }
