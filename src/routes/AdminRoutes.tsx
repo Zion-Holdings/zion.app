@@ -14,6 +14,7 @@ import FraudDetection from "@/pages/admin/FraudDetection";
 import ListingModeration from "@/pages/admin/ListingModeration";
 import TokenManager from "@/pages/admin/TokenManager";
 import IntegrationsPage from "@/pages/admin/IntegrationsPage";
+import WhitepaperGeneratorPage from "@/pages/WhitepaperGeneratorPage";
 
 const AdminRoutes = () => {
   return (
@@ -104,6 +105,15 @@ const AdminRoutes = () => {
         element={
           <ProtectedRoute adminOnly={true}>
             <IntegrationsPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/whitepaper-generator"
+        element={
+          <ProtectedRoute adminOnly={true}>
+            <WhitepaperGeneratorPage />
           </ProtectedRoute>
         }
       />
