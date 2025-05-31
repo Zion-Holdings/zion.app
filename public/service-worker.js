@@ -49,7 +49,7 @@ self.addEventListener('push', event => {
   const title = data.title || 'Zion Notification';
   const options = {
     body: data.body,
-    icon: '/vite.svg'
+    icon: '/logos/placeholder-logo.svg'
   };
   event.waitUntil(self.registration.showNotification(title, options));
 });
@@ -60,7 +60,7 @@ self.addEventListener('push', event => {
   const title = data.title || 'New message';
   const options = {
     body: data.body,
-    icon: '/vite.svg',
+    icon: '/logos/placeholder-logo.svg',
     data: data.url
   };
   event.waitUntil(self.registration.showNotification(title, options));
