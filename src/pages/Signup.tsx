@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate, useLocation } from "react-router-dom";
 import { useForm, type UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -50,8 +50,9 @@ const signupSchema = z
 type SignupFormValues = z.infer<typeof signupSchema>;
 
 export default function Signup() {
-  const { loginWithGoogle, loginWithFacebook, loginWithTwitter, isAuthenticated, user, login } = useAuth();
+  const { loginWithGoogle, loginWithFacebook, loginWithTwitter, isAuthenticated, user, login, setUser, setTokens } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   // Track confirm password locally to prevent it from clearing on blur
@@ -92,36 +93,58 @@ export default function Signup() {
         data.password
       );
 
-      if (res.status !== 201) {
-        const message = resData?.message || "Registration failed";
-        if (res.status === 409) {
-          form.setError("email", { message });
-        } else if (res.status === 400 && message.toLowerCase().includes("password")) {
-          form.setError("password", { message });
-        } else {
-          form.setError("root", { message });
-        }
-        toast.error(message);
-        return;
-      }
+      // Check for successful response
+      if (res.ok && resData.token && resData.user) {
+        // Successful registration
+        safeStorage.setItem('authToken', resData.token);
+        setUser(resData.user);
+        setTokens({ accessToken: resData.token, refreshToken: resData.refreshToken || null });
 
-      if (resData?.session) {
-        // Set the session directly
-        const { error: sessionError } = await supabase.auth.setSession(resData.session);
-        if (sessionError) {
-          console.error("Error setting session:", sessionError);
-          toast.error(sessionError.message || "Failed to set session. Please try logging in.");
-          // Potentially navigate to login or show a more specific error
-          return;
-        }
-        // The onAuthStateChange listener in AuthProvider should now handle
-        // updating user state and navigating if necessary.
+        const params = new URLSearchParams(location.search);
+        const nextPath = params.get('next') || '/';
+        navigate(nextPath, { replace: true });
+        toast.success("Registration successful! Welcome!");
+
+        // Comment out or remove existing Supabase setSession logic
+        // if (resData?.session) {
+        //   // Set the session directly
+        //   const { error: sessionError } = await supabase.auth.setSession(resData.session);
+        //   if (sessionError) {
+        //     console.error("Error setting session:", sessionError);
+        //     toast.error(sessionError.message || "Failed to set session. Please try logging in.");
+        //     // Potentially navigate to login or show a more specific error
+        //     return;
+        //   }
+        //   // The onAuthStateChange listener in AuthProvider should now handle
+        //   // updating user state and navigating if necessary.
+        // } else {
+        //   // This case should ideally not be reached if the API behaves as expected
+        //   console.error("Registration successful but no session data received.");
+        //   toast.error("Registration complete, but auto-login failed. Please try logging in manually.");
+        //   navigate("/login"); // or handle as appropriate
+        //   return;
+        // }
       } else {
-        // This case should ideally not be reached if the API behaves as expected
-        console.error("Registration successful but no session data received.");
-        toast.error("Registration complete, but auto-login failed. Please try logging in manually.");
-        navigate("/login"); // or handle as appropriate
-        return;
+        // Handle errors (this part should align with existing or planned error handling)
+        const message = resData?.message || "Registration failed. Please try again."; // Default message
+
+        if (res.status === 409) { // Specifically for duplicate email
+          form.setError("email", { message: resData?.message || "This email is already registered." }); // Set field error
+          toast.error("Email already in use"); // Specific toast message as per requirements
+        } else if (res.status === 400) { // Bad request (e.g. password issues)
+          if (message.toLowerCase().includes("password")) {
+            form.setError("password", { message });
+          } else {
+            // If not password-related, it could be email format or other things.
+            // The API should ideally provide field-specific errors.
+            form.setError("email", { message }); // Or root, depending on API error structure
+          }
+          toast.error(message); // General toast for bad requests
+        } else { // Other non-2xx errors
+          form.setError("root", { message });
+          toast.error(message);
+        }
+        return; // Important to return here to stop further execution in onSubmit
       }
 
       // Subscribe user to Mailchimp if opted in
@@ -137,8 +160,8 @@ export default function Signup() {
         }
       }
 
-      toast.success("Welcome to ZionAI 🎉");
-      navigate("/dashboard");
+      // toast.success("Welcome to ZionAI 🎉"); // Replaced by new success toast
+      // navigate("/dashboard"); // Replaced by new navigation logic
     } catch (err: any) {
       const message =
         err?.response?.data?.message ?? err?.message ?? "Unexpected error";
