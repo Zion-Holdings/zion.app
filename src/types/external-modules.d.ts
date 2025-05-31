@@ -349,6 +349,7 @@ declare module 'next/link' {
 declare module 'next/router' {
   interface NextRouter {
     pathname: string
+    isFallback?: boolean
   }
   export function useRouter(): NextRouter
 }
