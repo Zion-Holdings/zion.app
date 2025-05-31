@@ -1,5 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react"; // Import useState
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { useTranslation } from "react-i18next";
@@ -14,6 +15,7 @@ interface MainNavigationProps {
 }
 
 export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: MainNavigationProps) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Add state
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const { count } = useFavorites();
@@ -78,92 +80,120 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   }
   
   return (
-    <nav className={cn("navbar ml-6 hidden md:flex", className)}>
-      <ul className="flex items-center gap-1">
-        {links.map((link) => (
-          <li key={link.name}>
-            <Link
-              to={link.href}
-              className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
-                link.matches(location.pathname)
-                  ? "bg-zion-purple/20 text-zion-cyan"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-              )}
-            >
-              {link.name}
-            </Link>
-          </li>
-        ))}
+    <>
+      <button
+        className="navbar-toggler md:hidden ml-auto mr-4" // Added ml-auto and mr-4 for positioning
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        aria-expanded={isMobileMenuOpen}
+        aria-controls="main-navbar-collapse"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <nav className={cn("navbar", className)}> {/* Removed ml-6 hidden md:flex */}
+        <div
+          id="main-navbar-collapse"
+          className={cn(
+            "navbar-collapse",
+            { "open": isMobileMenuOpen },
+            "w-full md:flex md:w-auto", // Handles visibility and desktop layout
+            !isMobileMenuOpen && "hidden" // Explicitly hide when not open and on mobile
+          )}
+        >
+          <ul className="navbar-nav flex flex-col md:flex-row md:items-center md:gap-1"> {/* Added navbar-nav and flex direction classes */}
+            {links.map((link) => (
+              <li key={link.name} className="nav-item"> {/* Added nav-item */}
+                <Link
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)} // Close menu on link click
+                  className={cn(
+                    "nav-link", // Added nav-link
+                    "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors", // Kept existing styling
+                    link.matches(location.pathname)
+                      ? "bg-zion-purple/20 text-zion-cyan"
+                      : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
 
-        {/* Wishlist link */}
-        {isAuthenticated && (
-          <li>
-            <Link
-              to="/wishlist"
-              aria-label="Wishlist"
-              className={cn(
-                "relative inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors",
-                location.pathname === "/wishlist"
-                  ? "bg-zion-purple/20 text-zion-cyan"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-              )}
-            >
-              <Heart className="w-4 h-4" />
-              {count > 0 && (
-                <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                  {count}
-                </span>
-              )}
-            </Link>
-          </li>
-        )}
-        
-        {/* Messages link with unread counter */}
-        {isAuthenticated && (
-          <li>
-            <Link
-              to="/messages"
-              aria-label={t('nav.messages')}
-              className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
-                location.pathname === "/messages" || location.pathname === "/inbox"
-                  ? "bg-zion-purple/20 text-zion-cyan"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-              )}
-            >
-              <MessageSquare className="w-4 h-4 mr-1" />
-              {t('nav.messages')}
-              {unreadCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {unreadCount}
-                </span>
-              )}
-            </Link>
-          </li>
-        )}
+            {/* Wishlist link */}
+            {isAuthenticated && (
+              <li className="nav-item"> {/* Added nav-item */}
+                <Link
+                  to="/wishlist"
+                  aria-label="Wishlist"
+                  onClick={() => setIsMobileMenuOpen(false)} // Close menu on link click
+                  className={cn(
+                    "nav-link", // Added nav-link
+                    "relative inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors", // Kept existing styling
+                    location.pathname === "/wishlist"
+                      ? "bg-zion-purple/20 text-zion-cyan"
+                      : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  )}
+                >
+                  <Heart className="w-4 h-4" />
+                  {count > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                      {count}
+                    </span>
+                  )}
+                </Link>
+              </li>
+            )}
 
-        {/* Cart icon with badge */}
-        <li>
-          <Link
-            to="/cart"
-            className={cn(
-              "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
-              location.pathname.startsWith('/cart')
-                ? 'bg-zion-purple/20 text-zion-cyan'
-                : 'text-white hover:bg-zion-purple/10 hover:text-zion-cyan'
+            {/* Messages link with unread counter */}
+            {isAuthenticated && (
+              <li className="nav-item"> {/* Added nav-item */}
+                <Link
+                  to="/messages"
+                  aria-label={t('nav.messages')}
+                  onClick={() => setIsMobileMenuOpen(false)} // Close menu on link click
+                  className={cn(
+                    "nav-link", // Added nav-link
+                    "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative", // Kept existing styling
+                    location.pathname === "/messages" || location.pathname === "/inbox"
+                      ? "bg-zion-purple/20 text-zion-cyan"
+                      : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  )}
+                >
+                  <MessageSquare className="w-4 h-4 mr-1" />
+                  {t('nav.messages')}
+                  {unreadCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                      {unreadCount}
+                    </span>
+                  )}
+                </Link>
+              </li>
             )}
-          >
-            <ShoppingCart className="w-4 h-4 mr-1" />
-            Cart
-            {cartCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                {cartCount}
-              </span>
-            )}
-          </Link>
-        </li>
-      </ul>
-    </nav>
+
+            {/* Cart icon with badge */}
+            <li className="nav-item"> {/* Added nav-item */}
+              <Link
+                to="/cart"
+                onClick={() => setIsMobileMenuOpen(false)} // Close menu on link click
+                className={cn(
+                  "nav-link", // Added nav-link
+                  "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative", // Kept existing styling
+                  location.pathname.startsWith('/cart')
+                    ? 'bg-zion-purple/20 text-zion-cyan'
+                    : 'text-white hover:bg-zion-purple/10 hover:text-zion-cyan'
+                )}
+              >
+                <ShoppingCart className="w-4 h-4 mr-1" />
+                Cart
+                {cartCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    {cartCount}
+                  </span>
+                )}
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </>
   );
 }
