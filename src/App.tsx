@@ -7,6 +7,8 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import OfflineToast from "./components/OfflineToast";
 import PwaInstallButton from "./components/PwaInstallButton";
 import {
@@ -129,6 +131,7 @@ const App = () => {
         <OfflineToast />
         <Toaster />
         <SonnerToaster position="top-right" />
+        <ToastContainer position="top-right" />
         <SupportChatbot />
         <PwaInstallButton />
       </ThemeProvider>
