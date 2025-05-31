@@ -1,85 +1,46 @@
+// src/utils/authUtils.ts
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
-import { supabase } from "@/integrations/supabase/client";
-import type { UserDetails } from "@/types/auth";
-import { safeStorage, safeSessionStorage } from './safeStorage';
-
-/**
- * Utility function to clean up authentication state
- * This helps prevent auth state inconsistencies and "limbo" states
- */
-export const cleanupAuthState = () => {
-  // Remove standard auth tokens
-  safeStorage.removeItem('supabase.auth.token');
-  
-  // Remove all Supabase auth keys from localStorage
-  try {
-    Object.keys(localStorage).forEach((key) => {
-      if (key.startsWith('supabase.auth.') || key.includes('sb-')) {
-        safeStorage.removeItem(key);
-      }
-    });
-  } catch (e) {
-    console.warn('Storage access error:', e);
-  }
-  
-  // Remove from sessionStorage if in use
-  try {
-    Object.keys(sessionStorage || {}).forEach((key) => {
-      if (key.startsWith('supabase.auth.') || key.includes('sb-')) {
-        safeSessionStorage.removeItem(key);
-      }
-    });
-  } catch (e) {
-    console.warn('Storage access error:', e);
-  }
+// Simple debounce function
+const debounce = (func: (...args: any[]) => void, delay: number) => {
+  let timeoutId: NodeJS.Timeout;
+  return (...args: any[]) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func(...args);
+    }, delay);
+  };
 };
 
-/**
- * Utility function to check new user registration and schedule welcome emails
- */
-export const checkNewRegistration = async (user: UserDetails) => {
+const redirectToLogin = debounce(() => {
+  if (typeof window !== 'undefined') {
+    window.location.assign('/login?next=/cart');
+  }
+}, 3000);
+
+export const authFetch = async (url: string, config: AxiosRequestConfig = {}) => {
+  const token = localStorage.getItem('jwt_token');
+  
+  const headers = { ...config.headers };
+
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
   try {
-    // Check if user has received welcome email already
-    const { data: existingCampaign } = await supabase
-      .from("email_campaigns")
-      .select("id")
-      .eq("user_id", user.id)
-      .eq("campaign_type", "welcome_series")
-      .maybeSingle();
-      
-    // If no welcome email sent yet, schedule one
-    if (!existingCampaign) {
-      // Create a scheduled job for the welcome email
-      await supabase
-        .from("scheduled_jobs")
-        .insert({
-          job_type: "send_retention_email",
-          scheduled_for: new Date().toISOString(),
-          status: "pending",
-          payload: {
-            user_id: user.id,
-            email_type: "welcome_series",
-            user_type: user.userType || "unknown",
-            display_name: user.displayName || user.email?.split("@")[0] || "User"
-          }
-        });
-        
-      // Create entry in email_campaigns table
-      await supabase
-        .from("email_campaigns")
-        .insert({
-          user_id: user.id,
-          campaign_type: "welcome_series",
-          template_name: "welcome_email",
-          template_data: {
-            user_id: user.id,
-            email_type: "welcome_series",
-            user_type: user.userType || "unknown",
-            display_name: user.displayName || user.email?.split("@")[0] || "User"
-          }
-        });
-    }
+    const response = await axios(url, {
+      ...config,
+      headers,
+    });
+    return response;
   } catch (error) {
-    console.error("Error checking or scheduling welcome email:", error);
+    if (axios.isAxiosError(error) && error.response?.status === 401) {
+      redirectToLogin();
+      // Throw an error or return a specific response to indicate unauthorized access
+      // This allows the caller to handle the error appropriately.
+      throw new Error('Unauthorized');
+    }
+    // Re-throw other errors
+    throw error;
   }
 };
