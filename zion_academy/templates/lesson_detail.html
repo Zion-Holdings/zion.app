@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('course_list') }}">Courses</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('course_detail', course_id=course.id) }}">{{ course.title }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ lesson.title }}</li>
+        </ol>
+    </nav>
+
+    <article class="lesson-content">
+        <h2>{{ lesson.title }}</h2>
+        <p><small>Part of: <a href="{{ url_for('course_detail', course_id=course.id) }}">{{ course.title }}</a></small></p>
+        <hr>
+
+        {% if lesson.content_type == 'video' %}
+            <div class="video-container">
+                <p><strong>Video Lesson:</strong></p>
+                {# In a real application, you'd use a video player here #}
+                <p>Video URL: <a href="{{ lesson.content_data }}" target="_blank">{{ lesson.content_data }}</a></p>
+                <p><em>(Video player placeholder)</em></p>
+                {# Example for embedding, though this specific iframe won't work with all URLs #}
+                {# <iframe width="560" height="315" src="{{ lesson.content_data }}" frameborder="0" allowfullscreen></iframe> #}
+            </div>
+        {% elif lesson.content_type == 'text' %}
+            <div class="text-content">
+                <p><strong>Text Lesson:</strong></p>
+                {# Assuming content_data for text is Markdown or plain text.
+                   If Markdown, you'd need a Markdown filter. For now, display as is. #}
+                <pre style="white-space: pre-wrap; background-color: #f8f9fa; padding: 15px; border-radius: 5px;">{{ lesson.content_data }}</pre>
+            </div>
+        {% elif lesson.content_type == 'exercise' %}
+            <div class="exercise-content">
+                <p><strong>AI-Guided Exercise:</strong></p>
+                {# Placeholder for exercise UI #}
+                <p>Exercise details: {{ lesson.content_data }}</p>
+                <p><em>(Interactive exercise placeholder)</em></p>
+                <button id="ai-summarize-button">Summarize with AI</button> {# For later AI feature #}
+            </div>
+        {% else %}
+            <p>Unsupported lesson content type.</p>
+        {% endif %}
+    </article>
+
+    {# Placeholder for AI chat and discussion tab #}
+    <div class="lesson-interactions" style="margin-top: 30px;">
+        <h4>Interactions</h4>
+        <p><em>(AI Chat & Discussion Tab Placeholder)</em></p>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <a href="{{ url_for('course_detail', course_id=course.id) }}" class="btn btn-secondary">Back to Course Outline</a>
+        {# Add navigation for Next/Previous lesson if desired #}
+    </div>
+
+{% endblock %}

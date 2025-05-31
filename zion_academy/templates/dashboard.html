@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Welcome to your Dashboard, {{ current_user.username }}!</h2>
+
+    <section class="dashboard-summary">
+        <h3>Your Progress Summary</h3>
+        {% if progress_data %}
+            <ul>
+                <li>Courses Enrolled: {{ progress_data.enrolled_courses }}</li>
+                <li>Lessons Completed: {{ progress_data.lessons_completed }} (placeholder)</li>
+                <li>Certificates Earned: {{ progress_data.certificates_earned }}</li>
+            </ul>
+        {% else %}
+            <p>No progress data available yet.</p>
+        {% endif %}
+    </section>
+
+    <section class="enrolled-courses-tracker">
+        <h3>My Enrolled Courses</h3>
+        {% if progress_data and progress_data.courses_details %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course Title</th>
+                        <th>Progress</th> {# This 'progress' is from Enrollment.progress #}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course_title, course_progress in progress_data.courses_details %}
+                    <tr>
+                        <td>{{ course_title }}</td>
+                        <td>{{ course_progress }}%</td> {# Assuming progress is stored as percentage #}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% elif progress_data and progress_data.enrolled_courses > 0 %}
+             <p>You are enrolled in {{ progress_data.enrolled_courses }} course(s). Detailed progress tracking coming soon!</p>
+        {% else %}
+            <p>You are not yet enrolled in any courses. <a href="{{ url_for('course_list') }}">Browse courses now!</a></p>
+        {% endif %}
+    </section>
+
+    {# Placeholder for other dashboard widgets like "Recommended Courses", "Activity Feed" etc. #}
+    <section class="more-dashboard-features" style="margin-top: 30px;">
+        <h4>More Features Coming Soon</h4>
+        <p><em>(Recommended Courses, Recent Activity, etc.)</em></p>
+    </section>
+
+{% endblock %}
