@@ -53,6 +53,7 @@ describe('register and login flow', () => {
     // cy.contains('Welcome to your Dashboard!').should('be.visible');
     // This line is commented out as we don't know the exact content of the dashboard.
     // The cy.url() and /api/users/me checks are the primary assertions for now.
+    fix/signup-persistence-auto-login
   });
 });
 
@@ -107,5 +108,6 @@ describe('Login Flow Tests', () => {
       expect(response.body).to.have.property('id');
       expect(response.body.email.toLowerCase()).to.eq(Cypress.env('TEST_USER_EMAIL').toLowerCase());
     });
+    main
   });
 });
