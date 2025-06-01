@@ -74,7 +74,7 @@ export function ContactPublisherModal({
         subject: values.subject,
         body: values.message,
       });
-      toast.success('Message sent!');
+      toast.success('Message sent');
       form.reset();
       onClose();
     } catch (err: any) {
