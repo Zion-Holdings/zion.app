@@ -63,42 +63,64 @@ async function handler(req: Req, res: JsonRes) {
       return;
     }
 
-    if (error || !data.user) {
-      let message = error?.message || 'Registration failed';
-      let status = error?.status || 400;
-      if (/already\s*registered|exists/i.test(message)) {
-        status = 409;
-        message = 'Email already registered';
-      } else if (/weak|strength/i.test(message)) {
-        status = 400;
-        message = 'Password is too weak';
+    // Handle errors from supabase.auth.signUp
+    if (error) {
+      let message = error.message;
+      let status = error.status || 400; // Default to 400 if status is not available
+
+      if (status === 400 && /user already registered/i.test(message)) {
+        status = 409; // Conflict
+        message = 'Email already registered.';
+      } else if (status === 400 && /weak password/i.test(message)) {
+        // Status is already 400, but we provide a more specific message
+        message = 'Password is too weak. Please choose a stronger password.';
+      } else if (!error.status) {
+        // Handle cases where error.status is undefined (e.g. network errors not caught by the previous block)
+        console.error('Supabase signUp error without status:', error);
+        status = 500; // Internal Server Error for unexpected errors
+        message = 'An unexpected error occurred during registration.';
       }
+      // It's good practice to log the original error for debugging
+      if (status !== 409 && status !== 400) console.error('Registration error:', error);
+
       res.status(status).json({ message });
       return;
     }
-fix/auth-flow-email-verification
-    // Check if email verification is required
-    const emailVerificationRequired = !data.session && data.user && (!data.user.identities || data.user.identities.length === 0);
 
-    if (emailVerificationRequired) {
-      // Email verification is required
-      res.status(201).json({
-        message: "Registration successful. Please check your email to verify your account.",
-        emailVerificationRequired: true,
-        user: { email: data.user.email, id: data.user.id, display_name: data.user.user_metadata?.display_name },
-      });
-    } else {
-      // Email is already verified or auto-confirmation is enabled
-      const token = data.session?.access_token;
-      if (token) {
-        res.setHeader('Set-Cookie', `authToken=${token}; HttpOnly; Path=/; Secure; SameSite=Strict`);
+    // If there's no error and data.user exists
+    if (data.user) {
+      // Determine if email verification is required
+      // This is typically true if data.session is null and data.user.identities is empty or indicates no verified identity.
+      const emailVerificationRequired = !data.session && data.user && (!data.user.identities || data.user.identities.length === 0 || !data.user.identities.some(identity => identity.identity_data?.email_verified || identity.identity_data?.email));
+
+      if (emailVerificationRequired) {
+        // Respond with status 201 and JSON for email verification
+        res.status(201).json({
+          message: "Registration successful. Please check your email to verify your account.",
+          emailVerificationRequired: true,
+          user: {
+            email: data.user.email,
+            id: data.user.id,
+            display_name: data.user.user_metadata?.display_name
+          }
+        });
+      } else {
+        // Email is auto-verified or verification is not strictly needed
+        // Set the authToken HttpOnly cookie using data.session.access_token
+        if (data.session?.access_token) {
+          res.setHeader('Set-Cookie', `authToken=${data.session.access_token}; HttpOnly; Path=/; Secure; SameSite=Strict; Max-Age=${data.session.expires_in}`);
+        }
+        // Respond with status 201 and JSON
+        res.status(201).json({ user: data.user, session: data.session });
       }
-      res.status(201).json({ user: data.user, session: data.session });
-main
+    } else {
+      // Handle any other unexpected errors with a 500 status
+      console.error('Unexpected state: No error but no user data after signUp.');
+      res.status(500).json({ message: 'An unexpected error occurred during registration.' });
     }
   } catch (err: any) {
-    console.error(err);
-    res.status(500).json({ message: err.message || 'Registration failed' });
+    console.error('Outer catch block error:', err);
+    res.status(500).json({ message: err.message || 'An internal server error occurred.' });
   }
 }
 
