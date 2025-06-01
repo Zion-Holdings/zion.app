@@ -45,8 +45,10 @@ const recommended = [
   }
 ];
 
+let receivedUserId = '';
 const server = setupServer(
   rest.get('/api/equipment/recommendations', (req, res, ctx) => {
+    receivedUserId = req.url.searchParams.get('userId') || '';
     return res(ctx.json(recommended));
   })
 );
@@ -71,6 +73,7 @@ test('loads AI recommendations', async () => {
   expect(await screen.findByText('Recommended 1')).toBeInTheDocument();
   expect(screen.getByText('Recommended 2')).toBeInTheDocument();
   expect(screen.getByText('Recommended 3')).toBeInTheDocument();
+  expect(receivedUserId).toBe('u1');
 });
 
 

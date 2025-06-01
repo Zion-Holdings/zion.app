@@ -381,11 +381,17 @@ export default function EquipmentPage() {
     }
   }, [fetchedEquipment]);
 
-  const { trigger: fetchRecommendations, isMutating: isFetchingRecommendations } = useSWRMutation(
-    `/api/equipment/recommendations`, // Ensure this uses the correct base if apiClient is configured globally
-    (url: string) =>
-      fetch(url).then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch recommendations');
+  const {
+    trigger: fetchRecommendations,
+    isMutating: isFetchingRecommendations,
+  } = useSWRMutation(
+    "/api/equipment/recommendations",
+    (
+      url: string,
+      { arg }: { arg: { userId: string } }
+    ) =>
+      fetch(`${url}?userId=${arg.userId}`).then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch recommendations");
         return res.json();
       })
   );
@@ -405,7 +411,7 @@ export default function EquipmentPage() {
       return;
     }
     try {
-      const data = await fetchRecommendations();
+      const data = await fetchRecommendations({ userId: user.id });
       setEquipment(data as ProductListing[]);
       toast({ title: 'Showing personalized recommendations' });
     } catch (err) {
