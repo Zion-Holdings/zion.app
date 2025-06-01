@@ -349,6 +349,12 @@ declare module 'next/link' {
 declare module 'next/router' {
   interface NextRouter {
     pathname: string
+    /**
+     * Indicates whether the current page is being statically generated
+     * and a fallback page should be shown. This mirrors the property from
+     * Next.js so that `router.isFallback` type-checks correctly.
+     */
+    isFallback?: boolean
   }
   export function useRouter(): NextRouter
 }

@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { z } from 'zod';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
 // Generic request/response types so this file can run in Node or Next.js
 type Req = { method?: string; body?: any };
@@ -29,7 +30,7 @@ const schema = z.object({
   password: z.string().min(8, 'Password must be at least 8 characters'),
 });
 
-export default async function handler(req: Req, res: JsonRes) {
+async function handler(req: Req, res: JsonRes) {
   if (req.method !== 'POST') {
     res.status(405).end();
     return;
@@ -82,3 +83,5 @@ export default async function handler(req: Req, res: JsonRes) {
     res.status(500).json({ message: err.message || 'Registration failed' });
   }
 }
+
+export default withErrorLogging(handler);
