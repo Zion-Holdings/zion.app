@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { UserProfile } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
+import { SEO } from "@/components/SEO";
 
 export default function TalentProfilePage() {
   // Cast to specify the expected route param type since useParams may be untyped
@@ -93,9 +94,15 @@ export default function TalentProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-zion-blue pb-12">
-      <TalentProfile 
-        profile={profile} 
+    <>
+      <SEO
+        title={profile.full_name}
+        description={profile.bio || 'Talent profile'}
+        ogImage={profile.profile_picture_url}
+      />
+      <div className="min-h-screen bg-zion-blue pb-12">
+      <TalentProfile
+        profile={profile}
         onRequestHire={handleRequestHire}
         onMessageTalent={handleMessageTalent}
       />
@@ -139,5 +146,6 @@ export default function TalentProfilePage() {
         onClose={() => setIsMessageModalOpen(false)}
       />
     </div>
+    </>
   );
 }

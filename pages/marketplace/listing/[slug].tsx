@@ -1,5 +1,6 @@
 import React from 'react';
 import type { GetServerSideProps } from 'next';
+import NextHead from '@/components/NextHead';
 import ProductReviews from '@/components/ProductReviews';
 import { Product } from '@prisma/client'; // Base product type
 
@@ -55,8 +56,18 @@ const MarketplaceListingPage: React.FC<ListingPageProps> = ({ product, error }) 
   const productId = product.id;
 
   return (
-    <main className="prose dark:prose-invert max-w-3xl mx-auto py-8 px-4">
-      <h1>{product.name}</h1> {/* Using product.name from Prisma Product model */}
+    <>
+      <NextHead
+        title={product.name}
+        description={product.description ?? undefined}
+        openGraph={{
+          title: product.name,
+          description: product.description ?? undefined,
+          image: (product as any).imageUrl ?? product.images?.[0]?.url ?? undefined,
+        }}
+      />
+      <main className="prose dark:prose-invert max-w-3xl mx-auto py-8 px-4">
+        <h1>{product.name}</h1> {/* Using product.name from Prisma Product model */}
 
       {/* Display average rating and review count */}
       <div className="my-4">
@@ -82,6 +93,7 @@ const MarketplaceListingPage: React.FC<ListingPageProps> = ({ product, error }) 
       {/* Integrate ProductReviews component */}
       <ProductReviews productId={productId} />
     </main>
+    </>
   );
 };
 
