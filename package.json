@@ -46,12 +46,14 @@
     "@tanstack/react-query": "^5.17.19",
     "@types/lodash.debounce": "^4.0.9",
     "axios-retry": "^4.5.0",
+    "bcryptjs": "^3.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^0.2.1",
     "date-fns": "^3.3.1",
     "embla-carousel-react": "^8.0.0-rc19",
     "firebase": "^9.23.0",
+    "form-data": "*",
     "framer-motion": "^11.0.3",
     "fuse.js": "^7.0.0",
     "html2canvas": "^1.4.1",
@@ -65,6 +67,7 @@
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.323.0",
     "next-themes": "^0.2.1",
+    "node-fetch": "*",
     "react": "^18.2.0",
     "react-day-picker": "^8.10.0",
     "react-dom": "^18.2.0",
@@ -84,11 +87,7 @@
     "tailwind-merge": "^2.2.1",
     "vaul": "^0.9.0",
     "yup": "^1.2.0",
-    "zod": "^3.22.4",
-feat/seo-content-generation
-    "form-data": "*",
-    "node-fetch": "*"
-    main
+    "zod": "^3.22.4"
   },
   "optionalDependencies": {
     "@elastic/elasticsearch": "^8.12.0"
