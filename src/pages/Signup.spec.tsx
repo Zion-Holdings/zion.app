@@ -54,6 +54,7 @@ describe('Signup Page', () => {
       setUser: mockSetUser,
       setTokens: mockSetTokens,
       login: jest.fn(),
+      register: jest.fn(),
       signup: jest.fn(),
       logout: jest.fn(),
       resetPassword: jest.fn(),

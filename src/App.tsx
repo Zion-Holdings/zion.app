@@ -104,7 +104,7 @@ const baseRoutes = [
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/favorites', element: <FavoritesPage /> },
   { path: '/wishlist', element: <WishlistPage /> },
-  { path: '/cart', element: <CartPage /> },
+  { path: '/cart', element: <PrivateRoute><CartPage /></PrivateRoute> },
   { path: '/wallet', element: <PrivateRoute><Wallet /></PrivateRoute> },
   { path: '/profile', element: <PrivateRoute><Profile /></PrivateRoute> },
   { path: '/recommendations', element: <PrivateRoute><RecommendationsPage /></PrivateRoute> },
