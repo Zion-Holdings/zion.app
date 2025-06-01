@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import crypto from 'crypto';
-import { sendEmailWithSendGrid } from '../../../src/lib/email';
+import { sendResetEmail } from '../../../src/lib/email';
 import prisma from '../../../src/lib/db'; // Import Prisma client
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -10,9 +10,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
   if (!process.env.SENDGRID_FROM_EMAIL) {
     console.error('Missing SENDGRID_FROM_EMAIL environment variable. Password reset emails may not be sent.');
-  }
-  if (!process.env.SENDGRID_RESET_TEMPLATE_ID) {
-    console.error('Missing SENDGRID_RESET_TEMPLATE_ID environment variable. Password reset emails may not be configured correctly.');
   }
   if (!process.env.NEXT_PUBLIC_APP_URL) {
     console.warn('Missing NEXT_PUBLIC_APP_URL environment variable. Defaulting to http://localhost:3000 for reset URLs.');
@@ -54,14 +51,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
 
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-    const resetUrl = `${appUrl}/reset-password/${resetToken}`;
-
-    await sendEmailWithSendGrid({
-      to: user.email,
-      templateId: process.env.SENDGRID_RESET_TEMPLATE_ID || '', // sendEmailWithSendGrid already handles missing templateId by logging
-      dynamicTemplateData: { resetUrl },
-    });
+    await sendResetEmail(user.email, resetToken);
 
     return res.status(200).json({ message: 'If your email address exists in our system, you will receive a password reset link.' });
 
