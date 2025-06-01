@@ -3,6 +3,15 @@ import { loadStripe, Stripe } from '@stripe/stripe-js';
 export const PROD_DOMAIN = 'app.ziontechgroup.com';
 
 export function isProdDomain(host?: string) {
+  const context =
+    typeof window === 'undefined'
+      ? process.env.CONTEXT
+      : import.meta.env.VITE_NETLIFY_CONTEXT;
+
+  if (context && context !== 'production') {
+    return false;
+  }
+
   if (typeof window === 'undefined') {
     const url = host || process.env.URL;
     if (!url) return false;
@@ -21,29 +30,22 @@ export function getStripe() {
   if (!stripePromise) {
     const testPublishableKey = import.meta.env.VITE_STRIPE_TEST_PUBLISHABLE_KEY as string | undefined;
     const livePublishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string | undefined;
+    const context = import.meta.env.VITE_NETLIFY_CONTEXT;
 
     let selectedKey: string | undefined;
 
-    if (isProdDomain()) {
+    const preview = context && context !== 'production';
+
+    if (isProdDomain() && !preview) {
       if (livePublishableKey) {
         selectedKey = livePublishableKey;
       } else {
         console.error('Production domain detected, but VITE_STRIPE_PUBLISHABLE_KEY is not set.');
-        // Potentially fall back to test key if that's desired, or error out.
-        // For now, if live key is missing on prod, it will fail at loadStripe.
       }
+    } else if (testPublishableKey) {
+      selectedKey = testPublishableKey;
     } else {
-      // Non-production domain
-      if (testPublishableKey) {
-        selectedKey = testPublishableKey;
-      } else {
-        console.warn('Non-production domain, but VITE_STRIPE_TEST_PUBLISHABLE_KEY is not set. Stripe may not load.');
-        // If you want to allow using live key in dev with a warning (not recommended for publishable keys usually)
-        // if (livePublishableKey) {
-        //   console.warn('Using VITE_STRIPE_PUBLISHABLE_KEY in non-production environment.');
-        //   selectedKey = livePublishableKey;
-        // }
-      }
+      console.warn('Non-production domain, but VITE_STRIPE_TEST_PUBLISHABLE_KEY is not set. Stripe may not load.');
     }
 
     if (!selectedKey) {

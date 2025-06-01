@@ -2,11 +2,11 @@ describe('test checkout purchase', () => {
   it('completes a $0.50 test purchase', () => {
     cy.loginByApi('existing@test.com', 'password123');
 
-    const intentId = 'pi_test_123';
-    cy.intercept('POST', '/api/create-payment-intent', {
+    const sessionId = 'cs_test_123';
+    cy.intercept('POST', '/api/create-checkout-session', {
       statusCode: 200,
-      body: { clientSecret: 'cs_test_secret', id: intentId },
-    }).as('createIntent');
+      body: { sessionId },
+    }).as('createSession');
     cy.intercept('POST', '/api/points/add', { statusCode: 200 }).as('addPoints');
     cy.intercept('GET', /\/api\/orders\/.*/, (req) => {
       const id = req.url.split('/').pop();
@@ -32,14 +32,23 @@ describe('test checkout purchase', () => {
     cy.get('input[name="city"]').type('Testville');
     cy.get('input[name="country"]').type('Testland');
 
+    cy.window().then((win) => {
+      win.Stripe = () => ({
+        redirectToCheckout: ({ sessionId: id }) => {
+          win.location.href = `/success?session_id=${id}`;
+          return Promise.resolve({});
+        },
+      });
+    });
+
     cy.contains('Pay with Stripe').click();
 
-    cy.wait('@createIntent');
+    cy.wait('@createSession');
     cy.wait('@addPoints');
     cy.wait('@getOrder');
 
-    cy.url().should('include', '/orders/');
-    cy.contains('Order #').should('be.visible');
+    cy.url().should('include', '/success');
+
   });
 });
 
