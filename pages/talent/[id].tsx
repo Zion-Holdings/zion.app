@@ -6,6 +6,7 @@ import type { NextRouter } from 'next/router';
 import { Loader2 } from 'lucide-react';
 import { TALENT_PROFILES } from '@/data/talentData';
 import type { TalentProfile } from '@/types/talent';
+// Importing directly rather than using React.lazy to rule out dynamic import issues
 import TalentDetails from '@/components/talent/TalentDetails';
 
 interface TalentPageProps {
