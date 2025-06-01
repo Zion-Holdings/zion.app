@@ -38,6 +38,7 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
       return;
     }
 
+    let isMounted = true;
     const fetchServices = async () => {
       setLoading(true);
       setError(null);
@@ -53,9 +54,10 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
           const data = await response.json();
           const parsed = listingsSchema.safeParse(data);
           if (!parsed.success) throw new Error('Invalid response');
-          setListings(parsed.data as ListingItem[]);
-          setError(null);
-          setLoading(false);
+          if (isMounted) {
+            setListings(parsed.data as ListingItem[]);
+            setError(null);
+          }
           return;
         } catch (err) {
           if (attempt === maxRetries - 1) {
@@ -64,17 +66,23 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
             } else {
               captureException(err);
             }
-            setListings([]);
-            setError('Failed to load services');
-            setLoading(false);
+            if (isMounted) {
+              setListings([]);
+              setError('Failed to load services');
+            }
           } else {
             await new Promise((res) => setTimeout(res, Math.pow(2, attempt) * 500));
           }
+        } finally {
+          if (isMounted) setLoading(false);
         }
       }
     };
 
     fetchServices();
+    return () => {
+      isMounted = false;
+    };
   }, [formData.serviceType, debouncedQuery]);
   
   const handleTypeSelect = (type: ServiceType) => {
@@ -164,7 +172,7 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
             <div className="text-center text-red-400 text-sm">{error}</div>
           )}
           
-          <div className="grid grid-cols-1 gap-4 mt-4">
+          <div className="grid grid-cols-1 gap-4 mt-4" aria-busy={loading}>
             {loading ? (
               <>
                 <Skeleton className="h-[120px] w-full" />
