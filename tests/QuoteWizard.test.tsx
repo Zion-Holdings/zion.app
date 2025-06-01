@@ -92,3 +92,20 @@ it('recovers after a transient error', async () => {
   expect(await screen.findByText('Service A', {}, { timeout: 8000 })).toBeInTheDocument();
   expect(callCount).toBeGreaterThan(1);
 });
+
+it('stays on step 1 if no service selected', async () => {
+  server.use(
+    rest.get('/api/items', (_req, res, ctx) => res(ctx.json(sample)))
+  );
+
+  renderWizard();
+
+  await screen.findByText('Service A');
+
+  fireEvent.click(screen.getByRole('button', { name: /continue/i }));
+
+  expect(screen.getByTestId('step-indicator')).toHaveTextContent('1/3');
+  expect(
+    screen.getByTestId('service-selection-error')
+  ).toBeInTheDocument();
+});

@@ -26,6 +26,7 @@ export function QuoteWizard() {
   const [step, setStep] = useState(1);
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const [message, setMessage] = useState('');
+  const [selectionError, setSelectionError] = useState('');
   const { data, error, mutate } = useQuoteWizard('services');
 
   const loading = !data && !error;
@@ -33,6 +34,15 @@ export function QuoteWizard() {
   const handleSelect = (id: string) => {
     setSelectedItem(id);
     setStep(2);
+  };
+
+  const handleContinue = () => {
+    if (!selectedItem) {
+      setSelectionError('Please choose at least one service');
+      return;
+    }
+    setSelectionError('');
+    handleSelect(selectedItem);
   };
 
   const handleSubmit = async () => {
@@ -100,10 +110,12 @@ export function QuoteWizard() {
           </div>
         )}
 
-        <Button
-          onClick={() => selectedItem && handleSelect(selectedItem)}
-          disabled={!selectedItem || loading || !!error}
-        >
+        {selectionError && (
+          <p className="text-red-500 text-sm" data-testid="service-selection-error">
+            {selectionError}
+          </p>
+        )}
+        <Button onClick={handleContinue} disabled={loading || !!error}>
           Continue
         </Button>
       </div>
