@@ -7,6 +7,9 @@ import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // A
 import { AppHeader } from "./AppHeader";
 import { Footer } from "@/components/Footer";
 import { SkipLink } from "@/components/SkipLink";
+import { useGlobalLoader } from '@/context/GlobalLoaderContext';
+import LoaderOverlay from '@/components/LoaderOverlay';
+import ErrorOverlay from '@/components/ErrorOverlay';
 
 interface AppLayoutProps {
   children?: React.ReactNode; // Kept ReactNode for consistency
@@ -21,6 +24,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
   const { user, isAuthenticated } = useAuth() || {}; // Added fallback to empty object for safety if useAuth is not ready
   const [isResendingEmail, setIsResendingEmail] = useState(false);
   const [resendStatusMessage, setResendStatusMessage] = useState('');
+  const { loading, error, setError } = useGlobalLoader();
 
   const handleResendVerificationEmail = async () => {
     if (!user || !user.email) {
@@ -79,6 +83,8 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
         </>
       )}
       <AppHeader />
+      {loading && <LoaderOverlay />}
+      {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}
       <main id="main-content" className="flex-grow">
         {children ?? <Outlet />}
       </main>

@@ -22,6 +22,7 @@ import { showApiError } from '@/utils/apiErrorHandler';
 import './utils/globalFetchInterceptor';
 import './utils/consoleErrorToast';
 import ToastProvider from './components/ToastProvider';
+import { GlobalLoaderProvider } from '@/context/GlobalLoaderContext';
 
 import { LanguageProvider } from '@/context/LanguageContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
@@ -62,7 +63,7 @@ try {
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
       <Provider store={store}>
-feat/i18n-implementation
+        <GlobalLoaderProvider>
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
@@ -95,6 +96,7 @@ feat/i18n-implementation
           </QueryClientProvider>
         </HelmetProvider>
         </I18nextProvider>
+        </GlobalLoaderProvider>
       </Provider>
 main
     </React.StrictMode>,
