@@ -18,6 +18,18 @@ export interface AxiosInstance {
   post(url: string, data?: any, config?: RequestInit): Promise<any>;
 }
 
+interface AxiosDefaults {
+  headers: { common: Record<string, string> };
+}
+
+const globalDefaults: AxiosDefaults = {
+  headers: { common: {} },
+};
+
+const globalInterceptors = {
+  response: new InterceptorManager(),
+};
+
 export function create(config: { baseURL?: string; withCredentials?: boolean } = {}): AxiosInstance {
   const baseURL = config.baseURL || '';
   const withCreds = !!config.withCredentials;
@@ -42,6 +54,9 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     },
   };
 
+  // Include global interceptors on the instance
+  instance.interceptors.response.handlers.push(...globalInterceptors.response.handlers);
+
   async function request(url: string, method: string, init: RequestInit) {
     // Read authToken from cookies
     const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
@@ -49,9 +64,9 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       acc[name] = value;
       return acc;
     }, {} as Record<string, string>);
-    const authToken = cookies['authToken'];
+    const authToken = cookies['authToken'] || localStorage.getItem('token');
 
-    const headers = { ...init.headers };
+    const headers = { ...globalDefaults.headers.common, ...init.headers };
     if (authToken) {
       headers['Authorization'] = `Bearer ${authToken}`;
     }
@@ -84,4 +99,10 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
   return instance;
 }
 
-export default { create };
+const axios = {
+  create,
+  defaults: globalDefaults,
+  interceptors: globalInterceptors,
+};
+
+export default axios;

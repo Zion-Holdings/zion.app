@@ -17,6 +17,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
 import { safeStorage } from "@/utils/safeStorage";
 import { mailchimpService } from "@/integrations/mailchimp";
+import axios from 'axios';
 import { fireEvent } from '@/lib/analytics';
 import {
   Form,
@@ -108,6 +109,9 @@ export default function Signup() {
       if (res.ok && resData.token && resData.user) {
         // Successful registration
         safeStorage.setItem('authToken', resData.token);
+        localStorage.setItem('token', resData.token);
+        axios.defaults.headers = axios.defaults.headers || { common: {} } as any;
+        (axios.defaults.headers.common as any)['Authorization'] = `Bearer ${resData.token}`;
         setUser(resData.user);
         setTokens({ accessToken: resData.token, refreshToken: resData.refreshToken || null });
 
