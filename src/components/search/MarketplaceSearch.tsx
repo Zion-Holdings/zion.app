@@ -3,6 +3,7 @@ import { Input } from '@/components/ui/input';
 import { useAutocomplete } from '@/hooks/useAutocomplete';
 import { ProductListing } from '@/types/listings';
 import { safeStorage } from '@/utils/safeStorage';
+import { fireEvent } from '@/lib/analytics';
 import debounce from 'lodash.debounce';
 
 interface MarketplaceSearchProps {
@@ -42,6 +43,7 @@ export function MarketplaceSearch({ products, onSelect }: MarketplaceSearchProps
     setQuery(item.title);
     clearSuggestions();
     if (onSelect) onSelect(item);
+    fireEvent('search', { search_term: item.title });
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {

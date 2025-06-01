@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from "@/hooks/useAuth";
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
@@ -14,6 +15,7 @@ import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 
 export default function Home() {
+  const { t } = useTranslation();
   const { user } = useAuth();
   const firstName =
     user?.displayName?.split(' ')[0] || user?.name?.split(' ')[0];
@@ -31,7 +33,7 @@ export default function Home() {
           className="bg-zion-blue-light text-zion-slate-dark text-center p-2"
           data-testid="home-greeting"
         >
-          {`Hello, ${firstName}!`}
+          {t('greeting', { name: firstName })}
         </div>
       )}
 

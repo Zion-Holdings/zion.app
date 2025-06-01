@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
+import { WalletProvider } from './context/WalletContext'; // Added WalletProvider
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
@@ -36,6 +37,7 @@ import MobileLaunchPage from './pages/MobileLaunchPage';
 import CommunityPage from './pages/CommunityPage';
 import { CommunityProvider } from './context';
 import Categories from './pages/Categories';
+import AllCategoriesPage from './pages/AllCategoriesPage';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import NewProductsPage from './pages/NewProductsPage';
@@ -54,11 +56,13 @@ import RequestQuotePage from './pages/RequestQuote';
 import WishlistPage from './pages/Wishlist';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
+import ProfilePage from './pages/ProfilePage'; // Import ProfilePage
 import { SupportChatbot } from './components/SupportChatbot';
 import PrivateRoute from './components/PrivateRoute';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/categories/all', element: <AllCategoriesPage /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/register', element: <Signup /> },
@@ -96,6 +100,7 @@ const baseRoutes = [
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/wishlist', element: <WishlistPage /> },
   { path: '/cart', element: <PrivateRoute><CartPage /></PrivateRoute> },
+  { path: '/profile', element: <PrivateRoute><ProfilePage /></PrivateRoute> }, // Add new protected profile route
   { path: '/checkout', element: <Checkout /> },
 ];
 
@@ -106,9 +111,10 @@ const App = () => {
   console.log("App.tsx: Rendering Tree");
   return (
     <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
-        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-          <ErrorBoundary>
+      <WalletProvider> {/* Added WalletProvider */}
+        <ThemeProvider defaultTheme="dark">
+          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+            <ErrorBoundary>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />

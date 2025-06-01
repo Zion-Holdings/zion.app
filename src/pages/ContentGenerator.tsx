@@ -20,9 +20,10 @@ import { useNavigate } from "react-router-dom";
 export default function ContentGenerator() {
   const { user, isLoading } = useAuth();
   const navigate = useNavigate();
-  const [contentType, setContentType] = useState<'blog' | 'newsletter'>('blog');
+  const [contentType, setContentType] = useState<'blog' | 'newsletter' | 'serviceDescription' | 'faq'>('blog');
   const [customPrompt, setCustomPrompt] = useState('');
   const [topic, setTopic] = useState('');
+  const [keywords, setKeywords] = useState('');
   const [autoPublish, setAutoPublish] = useState(false);
   const [includeImage, setIncludeImage] = useState(true);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -42,11 +43,14 @@ export default function ContentGenerator() {
     setPreviewContent(null);
     
     try {
-      const { data, error } = await supabase.functions.invoke('generate-content', {
+      const keywordsArray = keywords.split(',').map(k => k.trim()).filter(k => k.length > 0);
+      const { data, error } = await supabase.functions.invoke('generate-seo-content', {
         body: {
           contentType,
-          prompt: customPrompt || undefined,
-          topic: topic || undefined,
+          userPrompt: customPrompt || topic, // Use customPrompt if available, else topic
+          keywords: keywordsArray,
+          // autoPublish and includeImage are not explicitly used by 'generate-seo-content'
+          // but we can leave them here; the backend will ignore them if not needed.
           autoPublish,
           includeImage: contentType === 'blog' ? includeImage : false
         }
@@ -54,8 +58,8 @@ export default function ContentGenerator() {
       
       if (error) throw error;
       
-      setPreviewContent(data);
-      toast.success(`${contentType === 'blog' ? 'Blog post' : 'Newsletter'} generated successfully!`);
+      setPreviewContent(data); // Expecting { generatedContent: "..." }
+      toast.success(`Content for "${contentType}" generated successfully!`);
     } catch (error) {
       console.error("Error generating content:", error);
       toast.error("Failed to generate content. Please try again.");
@@ -127,33 +131,51 @@ export default function ContentGenerator() {
                 <CardContent className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="contentType" className="text-white">Content Type</Label>
-                    <Select value={contentType} onValueChange={(value) => setContentType(value as 'blog' | 'newsletter')}>
+                    <Select value={contentType} onValueChange={(value) => setContentType(value as 'blog' | 'newsletter' | 'serviceDescription' | 'faq')}>
                       <SelectTrigger id="contentType" className="bg-zion-blue border border-zion-blue-light text-white">
                         <SelectValue placeholder="Select content type" />
                       </SelectTrigger>
                       <SelectContent className="bg-zion-blue-dark border border-zion-blue-light">
                         <SelectItem value="blog" className="text-white">Blog Post</SelectItem>
                         <SelectItem value="newsletter" className="text-white">Email Newsletter</SelectItem>
+                        <SelectItem value="serviceDescription" className="text-white">Service Description</SelectItem>
+                        <SelectItem value="faq" className="text-white">FAQ</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
-                  
+
                   <div className="space-y-2">
-                    <Label htmlFor="topic" className="text-white">Topic (Optional)</Label>
+                    <Label htmlFor="topic" className="text-white">Main Topic / User Prompt</Label>
                     <Input
                       id="topic"
-                      placeholder={contentType === 'blog' ? "e.g., Hiring AI Freelancers" : "e.g., May Platform Updates"}
+                      placeholder={
+                        contentType === 'blog' ? "e.g., Benefits of AI in Marketing" :
+                        contentType === 'serviceDescription' ? "e.g., AI-Powered Chatbot Solutions" :
+                        contentType === 'faq' ? "e.g., How does AI improve customer service?" :
+                        "e.g., May Platform Updates" // Newsletter or default
+                      }
                       className="bg-zion-blue border border-zion-blue-light text-white"
                       value={topic}
                       onChange={(e) => setTopic(e.target.value)}
                     />
                   </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="keywords" className="text-white">Keywords (Optional, comma-separated)</Label>
+                    <Input
+                      id="keywords"
+                      placeholder="e.g., AI, machine learning, SEO"
+                      className="bg-zion-blue border border-zion-blue-light text-white"
+                      value={keywords}
+                      onChange={(e) => setKeywords(e.target.value)}
+                    />
+                  </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="customPrompt" className="text-white">Custom Prompt (Optional)</Label>
+                    <Label htmlFor="customPrompt" className="text-white">Detailed Instructions / Custom Prompt (Optional)</Label>
                     <Textarea
                       id="customPrompt"
-                      placeholder="Enter a custom prompt for the AI..."
+                      placeholder="Optionally provide more detailed instructions or a full custom prompt for the AI..."
                       className="bg-zion-blue border border-zion-blue-light text-white min-h-[100px]"
                       value={customPrompt}
                       onChange={(e) => setCustomPrompt(e.target.value)}
@@ -208,7 +230,7 @@ export default function ContentGenerator() {
                         Generating...
                       </>
                     ) : (
-                      <>Generate {contentType === 'blog' ? 'Blog Post' : 'Newsletter'}</>
+                      <>Generate Content</> // Simplified button text
                     )}
                   </Button>
                 </CardFooter>
@@ -229,132 +251,26 @@ export default function ContentGenerator() {
                       <Loader2 className="h-8 w-8 animate-spin text-zion-purple mb-4" />
                       <p className="text-zion-slate-light">Generating content...</p>
                     </div>
-                  ) : previewContent ? (
-                    contentType === 'blog' ? (
-                      <div className="space-y-4">
-                        <Tabs defaultValue="preview" className="w-full">
-                          <TabsList className="bg-zion-blue-light/30 w-full">
-                            <TabsTrigger value="preview">Preview</TabsTrigger>
-                            <TabsTrigger value="markdown">Markdown</TabsTrigger>
-                            <TabsTrigger value="metadata">Metadata</TabsTrigger>
-                          </TabsList>
-                          
-                          <TabsContent value="preview" className="pt-4">
-                            <ScrollArea className="h-[500px] pr-4">
-                              <div className="space-y-4">
-                                <h2 className="text-2xl font-bold text-white">{previewContent.title}</h2>
-                                <p className="text-zion-slate-light">{previewContent.metaDescription}</p>
-                                <div 
-                                  className="prose prose-invert max-w-none"
-                                  dangerouslySetInnerHTML={{ 
-                                    __html: previewContent.body
-                                      .replace(/^#{1,6}\s+(.+)$/gm, "<h$1>$2</h$1>")
-                                      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-                                      .replace(/\*(.+?)\*/g, "<em>$1</em>")
-                                      .replace(/^-\s+(.+)$/gm, "<li>$1</li>")
-                                      .replace(/\n\n/g, "<br><br>")
-                                  }}
-                                />
-                              </div>
-                            </ScrollArea>
-                          </TabsContent>
-                          
-                          <TabsContent value="markdown" className="pt-4">
-                            <ScrollArea className="h-[500px]">
-                              <pre className="bg-zion-blue whitespace-pre-wrap p-4 rounded-md text-zion-slate-light overflow-auto">
-                                {previewContent.body}
-                              </pre>
-                            </ScrollArea>
-                          </TabsContent>
-                          
-                          <TabsContent value="metadata" className="pt-4">
-                            <div className="space-y-4">
-                              <div>
-                                <h3 className="text-white font-semibold mb-1">Title</h3>
-                                <p className="text-zion-slate-light">{previewContent.title}</p>
-                              </div>
-                              
-                              <div>
-                                <h3 className="text-white font-semibold mb-1">Meta Description</h3>
-                                <p className="text-zion-slate-light">{previewContent.metaDescription}</p>
-                              </div>
-                              
-                              <div>
-                                <h3 className="text-white font-semibold mb-1">Tags</h3>
-                                <div className="flex flex-wrap gap-2">
-                                  {previewContent.tags.map((tag: string, index: number) => (
-                                    <span 
-                                      key={index}
-                                      className="bg-zion-blue-light px-2 py-1 rounded-md text-xs text-zion-cyan"
-                                    >
-                                      {tag}
-                                    </span>
-                                  ))}
-                                </div>
-                              </div>
-                              
-                              {previewContent.tweetSummary && (
-                                <div>
-                                  <h3 className="text-white font-semibold mb-1">Tweet Summary</h3>
-                                  <p className="text-zion-slate-light">{previewContent.tweetSummary}</p>
-                                </div>
-                              )}
-                              
-                              {previewContent.imagePrompt && (
-                                <div>
-                                  <h3 className="text-white font-semibold mb-1">Image Prompt</h3>
-                                  <p className="text-zion-slate-light">{previewContent.imagePrompt}</p>
-                                </div>
-                              )}
-                            </div>
-                          </TabsContent>
-                        </Tabs>
-                      </div>
-                    ) : (
-                      <div className="space-y-4">
-                        <Tabs defaultValue="preview" className="w-full">
-                          <TabsList className="bg-zion-blue-light/30 w-full">
-                            <TabsTrigger value="preview">Preview</TabsTrigger>
-                            <TabsTrigger value="html">HTML</TabsTrigger>
-                          </TabsList>
-                          
-                          <TabsContent value="preview" className="pt-4">
-                            <div className="bg-white rounded-lg p-6 text-black">
-                              <h2 className="text-xl font-bold">{previewContent.subject}</h2>
-                              <p className="text-gray-500 text-sm mt-2">{previewContent.previewText}</p>
-                              <div className="border-t border-gray-200 my-4"></div>
-                              <div 
-                                className="prose max-w-none"
-                                dangerouslySetInnerHTML={{ __html: previewContent.body }}
-                              />
-                              <div className="mt-6">
-                                <Button className="bg-zion-purple hover:bg-zion-purple-dark text-white">
-                                  {previewContent.cta || "Visit Zion Marketplace"}
-                                </Button>
-                              </div>
-                            </div>
-                            
-                            <div className="mt-4 flex justify-end">
-                              <Button
-                                onClick={sendTestNewsletter}
-                                disabled={!testEmail}
-                                className="bg-zion-blue-light hover:bg-zion-blue text-white"
-                              >
-                                Send Test to {testEmail || "your email"}
-                              </Button>
-                            </div>
-                          </TabsContent>
-                          
-                          <TabsContent value="html" className="pt-4">
-                            <ScrollArea className="h-[500px]">
-                              <pre className="bg-zion-blue whitespace-pre-wrap p-4 rounded-md text-zion-slate-light overflow-auto">
-                                {previewContent.body}
-                              </pre>
-                            </ScrollArea>
-                          </TabsContent>
-                        </Tabs>
-                      </div>
-                    )
+                  ) : previewContent && previewContent.generatedContent ? (
+                    // Simplified preview for all content types for this subtask
+                    <ScrollArea className="h-[500px] pr-4">
+                      <h2 className="text-2xl font-bold text-white mb-4">Generated Content ({contentType})</h2>
+                      <pre className="bg-zion-blue whitespace-pre-wrap p-4 rounded-md text-zion-slate-light overflow-auto">
+                        {previewContent.generatedContent}
+                      </pre>
+                      {/* Specific handling for newsletter test send can be re-added if needed */}
+                      {contentType === 'newsletter' && previewContent.subject && ( // Assuming generatedContent might be the body for newsletter
+                        <div className="mt-4 flex justify-end">
+                          <Button
+                            onClick={sendTestNewsletter} // sendTestNewsletter would need to be adapted if previewContent structure changed significantly
+                            disabled={!testEmail}
+                            className="bg-zion-blue-light hover:bg-zion-blue text-white"
+                          >
+                            Send Test to {testEmail || "your email"}
+                          </Button>
+                        </div>
+                      )}
+                    </ScrollArea>
                   ) : (
                     <div className="flex flex-col items-center justify-center py-12 text-center">
                       <div className="bg-zion-blue-light/20 p-6 rounded-full mb-4">

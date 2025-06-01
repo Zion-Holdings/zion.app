@@ -3,14 +3,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+feat/i18n-implementation
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n'; // Adjust the path if your i18n.js is elsewhere
+main
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { showApiError } from '@/utils/apiErrorHandler';
 import './utils/globalFetchInterceptor';
 
-// Import i18n configuration
-import './i18n';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
@@ -20,6 +22,7 @@ import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
 import { NotificationProvider } from './context';
+import { ThemeProvider } from '@/context/ThemeContext'; // Import ThemeProvider
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
@@ -41,35 +44,40 @@ const queryClient = new QueryClient({
 
 try {
   console.log("main.tsx: Before ReactDOM.createRoot");
+  initGA();
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-      <HelmetProvider>
-        <QueryClientProvider client={queryClient}>
-          <WhitelabelProvider>
-            <Router>
-              <AuthProvider>
-                <NotificationProvider>
-                  <AnalyticsProvider>
-                    <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                      <ViewModeProvider>
-                        <CartProvider>
-                          <ReferralMiddleware>
-                            <AppLayout>
-                              <App />
-                            </AppLayout>
-                          </ReferralMiddleware>
-                        </CartProvider>
-                      </ViewModeProvider>
-                      <LanguageDetectionPopup />
-                    </LanguageProvider>
-                  </AnalyticsProvider>
-                </NotificationProvider>
-              </AuthProvider>
-            </Router>
-          </WhitelabelProvider>
-        </QueryClientProvider>
-      </HelmetProvider>
+feat/i18n-implementation
+      <I18nextProvider i18n={i18n}>
+        <HelmetProvider>
+          <QueryClientProvider client={queryClient}>
+            <WhitelabelProvider>
+              <Router>
+                <AuthProvider>
+                  <NotificationProvider>
+                    <AnalyticsProvider>
+                      <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
+                        <ViewModeProvider>
+                          <CartProvider>
+                            <ReferralMiddleware>
+                              <AppLayout>
+                                <App />
+                              </AppLayout>
+                            </ReferralMiddleware>
+                          </CartProvider>
+                        </ViewModeProvider>
+                        <LanguageDetectionPopup />
+                      </LanguageProvider>
+                    </AnalyticsProvider>
+                  </NotificationProvider>
+                </AuthProvider>
+              </Router>
+            </WhitelabelProvider>
+          </QueryClientProvider>
+        </HelmetProvider>
+      </I18nextProvider>
+main
     </React.StrictMode>,
   );
   console.log("main.tsx: After ReactDOM.createRoot");

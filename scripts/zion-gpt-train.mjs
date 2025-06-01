@@ -23,11 +23,44 @@ async function fetchData() {
   const resumes = await supabase.from('resumes').select('summary, skills');
   const supportLogs = await supabase.from('support_logs').select('question, answer');
 
+  const blogData = await loadBlogData();
+  const serviceData = await loadServiceData();
+
   return {
     jobs: jobPosts.data || [],
     resumes: resumes.data || [],
-    logs: supportLogs.data || []
+    logs: supportLogs.data || [],
+    blogs: blogData,
+    services: serviceData
   };
+}
+
+// Simulates loading blog posts
+async function loadBlogData() {
+  return [
+    {
+      id: "ai-trends-2025",
+      title: "10 Emerging AI Trends to Watch in 2025",
+      slug: "ai-trends-2025",
+      excerpt: "From multimodal AI to neuromorphic computing, discover the technologies that will shape the artificial intelligence landscape in 2025.",
+      content: "<p>As we move further into 2025...</p><h2>1. Multimodal AI Systems</h2><p>Unlike traditional AI models...</p>",
+      category: "Trends",
+      tags: ["AI", "Technology Trends", "Machine Learning"],
+    }
+  ];
+}
+
+// Simulates loading service data
+async function loadServiceData() {
+  return [
+    {
+      id: "service-1",
+      title: "AI Development & Integration",
+      description: "Full-stack AI development services...",
+      category: "Development",
+      tags: ["AI Integration", "Machine Learning"],
+    }
+  ];
 }
 
 function stripPii(text) {
@@ -49,6 +82,21 @@ function buildTrainingPairs(records) {
     pairs.push({
       prompt: `Create a job description titled "${stripPii(job.title)}"`,
       completion: stripPii(job.description)
+    });
+  }
+
+  for (const blog of records.blogs) {
+    const plainTextContent = stripPii(blog.content.replace(/<[^>]*>/g, ''));
+    pairs.push({
+      prompt: `Create a blog post titled "${stripPii(blog.title)}" focusing on ${stripPii(blog.category)}. Keywords: ${stripPii(blog.tags.join(', '))}. Start with: "${stripPii(blog.excerpt)}"`,
+      completion: plainTextContent
+    });
+  }
+
+  for (const service of records.services) {
+    pairs.push({
+      prompt: `Write an SEO-optimized description for a service called "${stripPii(service.title)}" in the category "${stripPii(service.category)}". Associated tags: ${stripPii(service.tags.join(', '))}.`,
+      completion: stripPii(service.description)
     });
   }
 
@@ -108,8 +156,8 @@ async function createFineTune(filePath) {
 async function main() {
   const records = await fetchData();
   const pairs = buildTrainingPairs(records);
-  await saveJsonl(pairs, 'training-data.jsonl');
-  await createFineTune('training-data.jsonl');
+  await saveJsonl(pairs, 'seo-training-data.jsonl');
+  await createFineTune('seo-training-data.jsonl');
 }
 
 main().catch((err) => {

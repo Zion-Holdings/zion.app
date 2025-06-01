@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
-import { LanguageSelector } from '@/components/header/LanguageSelector';
+feat/i18n-implementation
+import LanguageSwitcher from '@/components/LanguageSwitcher'; // Import the new LanguageSwitcher
+main
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
@@ -11,6 +13,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useAuth } from '@/hooks/useAuth';
+import { UserProfileDropdown } from '@/components/header/UserProfileDropdown'; // Import UserProfileDropdown
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -56,14 +59,14 @@ export function AppHeader() {
           </div>
 
           <PointsBadge />
-          <LanguageSelector />
+feat/i18n-implementation
+          <LanguageSwitcher /> {/* Replace LanguageSelector with LanguageSwitcher */}
+main
+          {/* Replace the greeting span with UserProfileDropdown */}
           {user && (
-            <span
-              className="hidden sm:block ml-4 text-sm text-white"
-              data-testid="header-greeting"
-            >
-              {`Hello, ${firstName}!`}
-            </span>
+            <div className="ml-4"> {/* Added a div for potential spacing adjustments if needed */}
+              <UserProfileDropdown />
+            </div>
           )}
         </div>
       </header>
