@@ -72,7 +72,7 @@ export default function Checkout() {
       // This should ideally come from your product/cart data
       const placeholderProductId = "price_1Hh1Zv2eZvKYlo2Cl0T9s7hF"; // Replace with an actual test Price ID
 
-      const response = await fetch('/api/create-checkout-session', {
+      const response = await fetch('/api/checkout_sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
