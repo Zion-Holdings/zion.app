@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
+import { WalletProvider } from './context/WalletContext'; // Added WalletProvider
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
@@ -110,9 +111,10 @@ const App = () => {
   console.log("App.tsx: Rendering Tree");
   return (
     <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
-        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-          <ErrorBoundary>
+      <WalletProvider> {/* Added WalletProvider */}
+        <ThemeProvider defaultTheme="dark">
+          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+            <ErrorBoundary>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
