@@ -11,13 +11,11 @@ export default function ErrorPage({ statusCode = 500, err }: ErrorPageProps) {
   const location = useLocation();
 
   useEffect(() => {
-    if (err) {
-      captureException({
-        path: location.pathname,
-        message: err.message,
-        statusCode,
-      });
-    }
+    captureException({
+      path: location.pathname,
+      message: err?.message ?? `Error page rendered with status ${statusCode}`,
+      statusCode,
+    });
   }, [err, location.pathname, statusCode]);
 
   return (
