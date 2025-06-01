@@ -86,10 +86,6 @@ export function ContactPublisherModal({
       toast.success('Message sent');
       form.reset();
       onClose();
-    } catch (err: any) {
-      const msg = err?.message || 'Failed to send message';
-      toast.error(msg);
-      setError(msg);
     } finally {
       setIsSubmitting(false);
     }
