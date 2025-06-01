@@ -85,8 +85,10 @@
     "vaul": "^0.9.0",
     "yup": "^1.2.0",
     "zod": "^3.22.4",
-    "ethers": "^5.7.2",
-    "web3modal": "^1.9.12"
+feat/seo-content-generation
+    "form-data": "*",
+    "node-fetch": "*"
+    main
   },
   "optionalDependencies": {
     "@elastic/elasticsearch": "^8.12.0"
