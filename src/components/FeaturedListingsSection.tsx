@@ -82,14 +82,14 @@ export function FeaturedListingsSection({ showTitle = true }: FeaturedListingsSe
   ];
 
   return (
-    <section id="featured" className="py-12 px-4 bg-zion-blue-dark">
+    <section id="featured" className="py-12 px-4 bg-background">
       <div className="container mx-auto">
         {showTitle && (
           <div className="text-center mb-12">
             <GradientHeading className="text-3xl md:text-4xl font-bold mb-4">
               Featured Listings
             </GradientHeading>
-            <p className="text-zion-slate-light max-w-3xl mx-auto">
+            <p className="text-foreground/80 max-w-3xl mx-auto">
               Discover our handpicked selection of top AI products and services
             </p>
           </div>
@@ -108,7 +108,7 @@ export function FeaturedListingsSection({ showTitle = true }: FeaturedListingsSe
         
         <div className="mt-10 text-center">
           <Button 
-            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-6"
+            className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-primary-foreground px-8 py-6"
             asChild
           >
             <Link to="/marketplace">View All Listings</Link>

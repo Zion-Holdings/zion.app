@@ -10,9 +10,11 @@ export async function register(name: string, email: string, password: string) {
   return { res, data };
 }
 
+feat/wallet-page
 export async function resetPassword(token: string, newPassword: string) {
   const API_URL = import.meta.env.VITE_API_URL || ''; // Ensure API_URL is defined
   const res = await fetch(`${API_URL}/auth/reset-password`, {
+main
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

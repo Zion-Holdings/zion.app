@@ -141,6 +141,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                   )}
                 </Link>
               </li>
+feat/wallet-page
             )}
 
             {/* Wallet link */}
@@ -162,6 +163,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                   {t('nav.wallet', 'Wallet')} {/* Fallback to 'Wallet' if translation is missing */}
                 </Link>
               </li>
+main
             )}
 
             {/* Messages link with unread counter */}
@@ -170,17 +172,21 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                 <Link
                   to="/messages"
                   aria-label={t('nav.messages')}
+feat/wallet-page
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
                     "nav-link",
                     "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
+main
                     location.pathname === "/messages" || location.pathname === "/inbox"
                       ? "bg-zion-purple/20 text-zion-cyan"
                       : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
                   )}
                 >
                   <MessageSquare className="w-4 h-4 mr-1" />
+feat/wallet-page
                   {t('nav.messages')} {/* Assuming 'messages' key exists */}
+main
                   {unreadCount > 0 && (
                     <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                       {unreadCount}
@@ -191,6 +197,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             )}
 
             {/* Cart icon with badge */}
+feat/wallet-page
             <li className="nav-item">
               <Link
                 to="/cart"
@@ -198,13 +205,16 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                 className={cn(
                   "nav-link",
                   "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
+main
                   location.pathname.startsWith('/cart')
                     ? 'bg-zion-purple/20 text-zion-cyan'
                     : 'text-white hover:bg-zion-purple/10 hover:text-zion-cyan'
                 )}
               >
                 <ShoppingCart className="w-4 h-4 mr-1" />
+feat/wallet-page
                 {t('nav.cart', 'Cart')} {/* Added translation for Cart with fallback */}
+main
                 {cartCount > 0 && (
                   <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                     {cartCount}

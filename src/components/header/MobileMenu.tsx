@@ -77,7 +77,7 @@ export function MobileMenu({ unreadCount = 0, onClose }: MobileMenuProps) {
   return (
     <div className="py-6">
       <div className="flex justify-between items-center px-6 mb-6">
-        <h2 className="text-xl font-bold">Menu</h2>
+        <h2 className="text-xl font-bold text-foreground">Menu</h2>
         <Button variant="ghost" size="icon" onClick={onClose} aria-label="Close menu" title="Close menu">
           <X className="h-5 w-5" />
         </Button>
@@ -91,15 +91,15 @@ export function MobileMenu({ unreadCount = 0, onClose }: MobileMenuProps) {
             className={cn(
               "flex items-center px-6 py-3 text-base font-medium",
               item.matches(location.pathname)
-                ? "bg-zion-purple/20 text-zion-cyan border-l-4 border-zion-cyan"
-                : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                ? "bg-primary/20 text-primary border-l-4 border-primary"
+                : "text-foreground hover:bg-primary/10 hover:text-primary"
             )}
             onClick={onClose}
           >
             <div className="relative mr-4">
               <item.icon className="h-5 w-5" />
               {item.badge && item.badge > 0 && (
-                <span className="absolute -top-2 -right-2 bg-zion-purple text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs rounded-full h-4 w-4 flex items-center justify-center">
                   {item.badge > 9 ? '9+' : item.badge}
                 </span>
               )}
