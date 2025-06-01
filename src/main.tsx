@@ -28,6 +28,7 @@ import { ThemeProvider } from '@/context/ThemeContext'; // Import ThemeProvider
 import { AnalyticsProvider } from './context/AnalyticsContext';
 import { ViewModeProvider } from './context/ViewModeContext';
 import { CartProvider } from './context/CartContext';
+import { FavoritesProvider } from './context/FavoritesContext';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 
 // Initialize a React Query client with global error handling
@@ -60,11 +61,13 @@ feat/i18n-implementation
                       <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
                         <ViewModeProvider>
                           <CartProvider>
-                            <ReferralMiddleware>
-                              <AppLayout>
-                                <App />
-                              </AppLayout>
-                            </ReferralMiddleware>
+                            <FavoritesProvider>
+                              <ReferralMiddleware>
+                                <AppLayout>
+                                  <App />
+                                </AppLayout>
+                              </ReferralMiddleware>
+                            </FavoritesProvider>
                           </CartProvider>
                         </ViewModeProvider>
                         <LanguageDetectionPopup />
