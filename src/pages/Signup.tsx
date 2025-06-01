@@ -97,6 +97,13 @@ export default function Signup() {
         data.password
       );
 
+      // Handle duplicate email error from API
+      if (res.status === 409 && resData?.code === 'EMAIL_EXISTS') {
+        form.setError('email', { message: resData.message });
+        toast.error('Email already registered – please login.');
+        return;
+      }
+
       // Check for successful response
       if (res.ok && resData.token && resData.user) {
         // Successful registration

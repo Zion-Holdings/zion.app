@@ -138,10 +138,10 @@ describe('Signup Page', () => {
     expect(mailchimpService.sendWelcomeEmail).toHaveBeenCalledWith('test@example.com', 'NEW10');
   });
 
-  it('should show "Email already in use" toast for duplicate email error', async () => {
+  it('should show "Email already registered – please login." toast for duplicate email error', async () => {
     mockRegisterUser.mockResolvedValue({
       res: { ok: false, status: 409 },
-      data: { message: 'Email is already registered' },
+      data: { message: 'Email is already registered', code: 'EMAIL_EXISTS' },
     });
 
     renderSignup();
@@ -149,7 +149,7 @@ describe('Signup Page', () => {
     fireEvent.click(screen.getByTestId('create-account-button'));
 
     await waitFor(() => {
-      expect(toast.error).toHaveBeenCalledWith('Email already in use');
+      expect(toast.error).toHaveBeenCalledWith('Email already registered – please login.');
     });
     expect(screen.getByText('Email is already registered')).toBeInTheDocument(); // Check form field error
     expect(safeStorage.setItem).not.toHaveBeenCalled();
