@@ -1,11 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { useSelector, useDispatch } from 'react-redux';
-import type { RootState, AppDispatch } from '@/store';
-import { clear } from '@/store/cartSlice';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/store';
 import { useNavigate } from 'react-router-dom';
-import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { getStripe } from '@/utils/getStripe';
-import { Button } from '@/components/ui/button';
+import CheckoutButton from '@/components/checkout/CheckoutButton';
 import { Input } from '@/components/ui/input';
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
 import { useAuth } from '@/hooks/useAuth';
@@ -19,56 +16,15 @@ interface CheckoutFormData {
 }
 
 function CheckoutInner() {
-  const dispatch = useDispatch<AppDispatch>();
   const items = useSelector((s: RootState) => s.cart.items);
   const form = useForm<CheckoutFormData>({ defaultValues: { name: '', email: '', address: '', city: '', country: '' } });
-  const stripe = useStripe();
-  const elements = useElements();
   const navigate = useNavigate();
   const { user } = useAuth();
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
-  const onSubmit = async (data: CheckoutFormData) => {
-    if (!stripe || !elements) return;
-
-    let userId = user?.id;
-    if (!userId) {
-      const guestRes = await fetch('/api/auth/guest', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: data.email, name: data.name }),
-      });
-      const guestData = await guestRes.json();
-      if (!guestRes.ok) return;
-      userId = guestData.userId as string;
-    }
-
-    const res = await fetch('/api/create-payment-intent', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ amount: subtotal, userId }),
-    });
-    const result = await res.json();
-    if (!res.ok) return;
-    const card = elements.getElement(CardElement);
-    if (!card) return;
-    const { error, paymentIntent } = await stripe.confirmCardPayment(result.clientSecret, {
-      payment_method: { card, billing_details: { name: data.name, email: data.email } },
-      receipt_email: data.email,
-    });
-    if (error || !paymentIntent) return;
-
-    const orderRes = await fetch('/api/orders', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId, email: data.email, items, total: subtotal }),
-    });
-    const orderData = await orderRes.json();
-    if (!orderRes.ok) return;
-
-    dispatch(clear());
-    navigate(`/order-confirmation/${orderData.orderId}`);
+  const onSubmit = () => {
+    // No-op, checkout handled via Stripe Checkout button
   };
 
   return (
@@ -126,10 +82,13 @@ function CheckoutInner() {
               <FormMessage />
             </FormItem>
           )} />
-          <div className="p-4 border rounded">
-            <CardElement options={{ hidePostalCode: true }} />
-          </div>
-          <Button className="w-full" type="submit">Pay</Button>
+          <CheckoutButton
+            priceId={items[0]?.id}
+            quantity={items[0]?.quantity || 1}
+          />
+          <p className="text-xs text-zion-slate-light">
+            Use test card 4242 4242 4242 4242 with any future date and CVC.
+          </p>
         </form>
       </Form>
     </div>
@@ -137,10 +96,5 @@ function CheckoutInner() {
 }
 
 export default function Checkout() {
-  const stripePromise = getStripe();
-  return (
-    <Elements stripe={stripePromise}>
-      <CheckoutInner />
-    </Elements>
-  );
+  return <CheckoutInner />;
 }

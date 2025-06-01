@@ -24,10 +24,16 @@ async function handler(req, res) {
     return;
   }
 
-  const { productId, userId } = req.body || {};
-  if (!productId || !userId) {
+  const {
+    priceId,
+    quantity = 1,
+    customer_email,
+    successUrl,
+    cancelUrl,
+  } = req.body || {};
+  if (!priceId) {
     res.statusCode = 400;
-    res.json({ error: 'Missing productId or userId' });
+    res.json({ error: 'Missing priceId' });
     return;
   }
 
@@ -44,11 +50,12 @@ async function handler(req, res) {
     });
 
     const session = await stripe.checkout.sessions.create({
-      line_items: [{ price: productId, quantity: 1 }],
+      line_items: [{ price: priceId, quantity }],
       mode: 'payment',
-      success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.headers.origin}/cancel`,
-      metadata: { userId, productId },
+      customer_email,
+      success_url:
+        successUrl || `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: cancelUrl || `${req.headers.origin}/cancel`,
     });
 
     res.statusCode = 200;
