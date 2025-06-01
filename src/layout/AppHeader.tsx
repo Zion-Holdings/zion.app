@@ -34,7 +34,7 @@ export function AppHeader() {
   
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md">
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
           <div className="ml-6 flex-1 hidden md:block">
@@ -45,7 +45,7 @@ export function AppHeader() {
           <div className="md:hidden ml-auto mr-4">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-white/70 hover:text-white hover:bg-zion-purple/10 focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-foreground/70 hover:text-foreground hover:bg-primary/10 focus:outline-none"
               aria-expanded={mobileMenuOpen}
               aria-label={t('general.toggle_mobile_menu')}
             >
@@ -79,7 +79,7 @@ main
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="relative bg-zion-blue-dark border-t border-zion-purple/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="relative bg-card border-t border-primary/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
             <MobileMenu 
               unreadCount={unreadCount} 
               onClose={() => setMobileMenuOpen(false)} 

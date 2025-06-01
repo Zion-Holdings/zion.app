@@ -62,7 +62,7 @@ export function ProductListingCard({
   
   return (
     <div
-      className={`bg-zion-blue-dark border border-zion-blue-light rounded-lg overflow-hidden flex ${isGrid ? 'flex-col' : 'flex-row'} cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple`}
+      className={`bg-card/70 backdrop-blur-md border border-primary/10 sm:border-primary/20 rounded-lg overflow-hidden flex ${isGrid ? 'flex-col' : 'flex-row'} cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary hover:animate-glowing-border transition-all duration-300`}
       onClick={handleViewListing}
       tabIndex={0}
     >
@@ -76,7 +76,7 @@ export function ProductListingCard({
             onError={handleImageError}
           />
           {listing.featured && (
-            <Badge className="absolute top-2 right-2 bg-zion-purple text-white border-none">
+            <Badge className="absolute top-2 right-2 bg-primary text-primary-foreground border-none">
               Featured
             </Badge>
           )}
@@ -89,7 +89,7 @@ export function ProductListingCard({
         <div>
           {/* Category & Rating */}
           <div className="flex justify-between items-center mb-2">
-            <Badge variant="outline" className="bg-zion-blue-light/20 text-zion-slate-light border-zion-blue-light">
+            <Badge variant="outline" className="bg-background text-foreground/80 border-primary/10">
               {listing.category}
             </Badge>
             {listing.rating && (
@@ -99,11 +99,11 @@ export function ProductListingCard({
           
           {/* Title & Description */}
           <div onClick={handleViewListing} className="block">
-            <h3 className="font-semibold text-white mb-2 hover:text-zion-cyan transition-colors text-[clamp(1rem,2.5vw,1.125rem)]">
+            <h3 className="font-semibold text-foreground mb-2 hover:text-primary transition-colors text-[clamp(1rem,2.5vw,1.125rem)]">
               {listing.title}
             </h3>
           </div>
-          <p className="text-zion-slate line-clamp-2 mb-4 text-[clamp(0.875rem,2vw,1rem)]">
+          <p className="text-foreground/80 line-clamp-2 mb-4 text-[clamp(0.875rem,2vw,1rem)]">
             {listing.description}
           </p>
           
@@ -113,7 +113,7 @@ export function ProductListingCard({
               {listing.tags.map((tag, idx) => (
                 <span 
                   key={idx} 
-                  className="text-xs text-zion-slate bg-zion-blue-light/20 px-2 py-1 rounded-full"
+                  className="text-xs text-foreground/70 bg-background/50 px-2 py-1 rounded-full"
                 >
                   {tag}
                 </span>
@@ -123,15 +123,15 @@ export function ProductListingCard({
         </div>
         
         {/* Footer with price and button */}
-        <div className="flex items-center justify-between mt-auto pt-3 border-t border-zion-blue-light">
+        <div className="flex items-center justify-between mt-auto pt-3 border-t border-primary/10 sm:border-primary/20">
           <div className="text-sm font-medium">
             {listing.price !== null ? (
-              <div className="flex items-center text-zion-purple">
+              <div className="flex items-center text-primary">
                 <DollarSign className="h-4 w-4 mr-1" />
                 {formatPrice()}
               </div>
             ) : (
-              <span className="text-zion-slate-light">
+              <span className="text-foreground/80">
                 {formatPrice()}
               </span>
             )}
@@ -144,7 +144,7 @@ export function ProductListingCard({
             >
               <Button
                 size="sm"
-                className="bg-zion-purple hover:bg-zion-purple-dark text-white"
+                className="bg-primary hover:bg-primary/80 text-primary-foreground"
               >
                 Buy Now
               </Button>
@@ -155,7 +155,7 @@ export function ProductListingCard({
                 size="sm"
                 variant="outline" 
                 onClick={handleRequestQuote}
-                className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"
+                className="border-primary text-primary hover:bg-primary/10 hover:text-primary-foreground"
               >
                 Request Quote
               </Button>
