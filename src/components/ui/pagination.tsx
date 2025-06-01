@@ -69,6 +69,7 @@ const PaginationButton = React.forwardRef<HTMLButtonElement, PaginationButtonPro
   ({ page, isActive, className, ...props }, ref) => (
     <button
       ref={ref}
+      type="button"
       aria-label={`Page ${page}`}
       aria-current={isActive ? 'page' : undefined}
       className={cn(
