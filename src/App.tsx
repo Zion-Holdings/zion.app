@@ -47,6 +47,7 @@ import Help from './pages/Help';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import SimpleSignup from './pages/SimpleSignup';
+import OAuthCallback from './pages/OAuthCallback';
 import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
 import OpenAppRedirect from './pages/OpenAppRedirect';
 import ContactPage from './pages/Contact';
@@ -67,6 +68,7 @@ const baseRoutes = [
   { path: '/login', element: <Login /> },
   { path: '/register', element: <Signup /> },
   { path: '/signup', element: <SimpleSignup /> },
+  { path: '/oauth', element: <OAuthCallback /> },
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/more-talents', element: <MoreTalentsPage /> },
