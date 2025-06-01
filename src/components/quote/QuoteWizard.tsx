@@ -15,9 +15,13 @@ interface ServiceItem {
 const WIZARD_STEPS = [1, 2, 3];
 
 const fetcher = async (url: string) => {
-  const res = await fetch(url);
-  if (!res.ok) {
-    const err = new Error('Failed');
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      throw new Error('Failed');
+    }
+    return res.json();
+  } catch (err) {
     if (process.env.NODE_ENV === 'development') {
       console.error(err);
     } else {
@@ -25,7 +29,6 @@ const fetcher = async (url: string) => {
     }
     throw err;
   }
-  return res.json();
 };
 
 function StepIndicator({ step }: { step: number }) {
@@ -46,7 +49,7 @@ export function QuoteWizard() {
   const [step, setStep] = useState(1);
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const [message, setMessage] = useState('');
-  const { data, error } = useSWR<ServiceItem[]>('/api/services?type=quote', fetcher, {
+  const { data, error, mutate } = useSWR<ServiceItem[]>('/api/items?category=services', fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
       // retryCount starts at 0, so retryCount >= 2 means it will retry for 0 and 1 (2 retries)
       if (retryCount >= 2) return;
@@ -85,12 +88,17 @@ export function QuoteWizard() {
         )}
 
         {error && (
-          <Alert variant="destructive" data-testid="service-fetch-error-alert">
-            <AlertTitle>Network Error</AlertTitle>
-            <AlertDescription>
-              There was a problem fetching the services. Please check your internet connection and try again.
-            </AlertDescription>
-          </Alert>
+          <div className="space-y-2" data-testid="service-fetch-error-alert">
+            <Alert variant="destructive">
+              <AlertTitle>Network Error</AlertTitle>
+              <AlertDescription>
+                There was a problem fetching the services. Please check your internet connection and try again.
+              </AlertDescription>
+            </Alert>
+            <Button size="sm" onClick={() => mutate()} data-testid="retry-button">
+              Retry
+            </Button>
+          </div>
         )}
 
         {data && (
