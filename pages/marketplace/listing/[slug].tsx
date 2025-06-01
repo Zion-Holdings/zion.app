@@ -1,36 +1,123 @@
 import React from 'react';
-import type { GetStaticPaths, GetStaticProps } from 'next';
-import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
-import type { ProductListing } from '@/types/listings';
+import type { GetServerSideProps } from 'next';
+import ProductReviews from '@/components/ProductReviews';
+import { Product } from '@prisma/client'; // Base product type
 
-interface ListingProps {
-  listing: ProductListing | null;
+// Define ProductWithReviewStats here or import from a shared types file
+// This should match the type returned by `/api/products/[productId]/details`
+export type ProductWithReviewStats = Product & {
+  averageRating: number | null;
+  reviewCount: number;
+  // Ensure other fields expected by the component are here if not in base Product
+  // title?: string; // 'name' from Product model will be used
+  // description?: string; // 'description' from Product model will be used
+};
+
+interface RatingStarsProps {
+  value: number;
+  count?: number;
 }
 
-const MarketplaceListing: React.FC<ListingProps> = ({ listing }) => {
-  if (!listing) {
-    return <div>Listing removed</div>;
-  }
+// Using a more robust placeholder that handles null/undefined values for rating
+const RatingStarsDisplay: React.FC<RatingStarsProps> = ({ value, count }) => {
+  const ratingValue = value ?? 0; // Default to 0 if value is null
+  const roundedRating = Math.round(ratingValue);
   return (
-    <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
-      <h1>{listing.title}</h1>
-      <p>{listing.description}</p>
+    <div className="flex items-center">
+      {Array.from({ length: 5 }, (_, i) => (
+        <span key={i} className={i < roundedRating ? 'text-yellow-400' : 'text-gray-300'}>★</span>
+      ))}
+      <span className="ml-1 text-sm text-gray-600 dark:text-gray-400">
+        {ratingValue > 0 ? `${ratingValue.toFixed(1)}/5` : 'Not rated'}
+      </span>
+      {typeof count !== 'undefined' && (
+        <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">({count} reviews)</span>
+      )}
+    </div>
+  );
+};
+
+interface ListingPageProps {
+  product: ProductWithReviewStats | null;
+  error?: string;
+}
+
+const MarketplaceListingPage: React.FC<ListingPageProps> = ({ product, error }) => {
+  if (error) {
+    return <div className="text-red-500 max-w-3xl mx-auto py-8 px-4">Error: {error}</div>;
+  }
+  if (!product) {
+    // This case should ideally be handled by notFound: true in getServerSideProps
+    return <div className="max-w-3xl mx-auto py-8 px-4">Product not found.</div>;
+  }
+
+  // The slug from URL is product.id because our API uses product.id for fetching
+  const productId = product.id;
+
+  return (
+    <main className="prose dark:prose-invert max-w-3xl mx-auto py-8 px-4">
+      <h1>{product.name}</h1> {/* Using product.name from Prisma Product model */}
+
+      {/* Display average rating and review count */}
+      <div className="my-4">
+        <h2 className="text-lg font-semibold mb-2">Overall Rating</h2>
+        {product.reviewCount > 0 && product.averageRating !== null ? (
+          <RatingStarsDisplay value={product.averageRating} count={product.reviewCount} />
+        ) : (
+          <p className="text-sm text-gray-500 dark:text-gray-400">No ratings yet for this product.</p>
+        )}
+      </div>
+
+      {product.description && (
+        <div className="mt-4 mb-6">
+          <h2 className="text-lg font-semibold mb-2">Description</h2>
+          <p>{product.description}</p>
+        </div>
+      )}
+
+      {/* Other product details can go here */}
+
+      <hr className="my-8" />
+
+      {/* Integrate ProductReviews component */}
+      <ProductReviews productId={productId} />
     </main>
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = MARKETPLACE_LISTINGS.map(l => ({ params: { slug: l.id } }));
-  return { paths, fallback: 'blocking' };
-};
-
-export const getStaticProps: GetStaticProps<ListingProps> = async ({ params }) => {
-  const slug = params?.slug as string;
-  const listing = MARKETPLACE_LISTINGS.find(l => l.id === slug) || null;
-  if (!listing) {
+export const getServerSideProps: GetServerSideProps<ListingPageProps> = async (context) => {
+  const slug = context.params?.slug as string;
+  if (!slug) {
     return { notFound: true };
   }
-  return { props: { listing } };
+
+  try {
+    // Fetch product details including review stats
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const res = await fetch(`${appUrl}/api/products/${slug}/details`);
+
+    if (!res.ok) {
+      if (res.status === 404) {
+        return { notFound: true };
+      }
+      let errorMsg = `Failed to fetch product: ${res.status}`;
+      try {
+        const errorData = await res.json();
+        errorMsg = errorData.error || errorMsg;
+      } catch (jsonError) {
+        // If response is not JSON, use the status text or default message
+        errorMsg = res.statusText || errorMsg;
+      }
+      return { props: { product: null, error: errorMsg } };
+    }
+
+    const product: ProductWithReviewStats = await res.json();
+    return { props: { product, error: undefined } }; // Ensure error is undefined on success
+  } catch (e: any) {
+    console.error('Error in getServerSideProps for [slug]:', e);
+    // More generic error for the client
+    return { props: { product: null, error: 'An unexpected error occurred while trying to load product details.' } };
+  }
 };
 
-export default MarketplaceListing;
+export default MarketplaceListingPage;
