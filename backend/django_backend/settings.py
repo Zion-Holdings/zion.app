@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'ipo_portal',
     'django_otp',
     'django_otp.plugins.otp_totp',
+    'governance.apps.GovernanceConfig',
 ]
 
 MIDDLEWARE = [

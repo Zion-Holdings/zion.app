@@ -21,6 +21,7 @@ urlpatterns = [
     # App-specific URLs
     path('auth/', include('authentication.urls')), # Assuming this is for other auth parts like password reset
     path('api/', include('public_api.urls')),
+    path('api/governance/', include('governance.urls')),
     path('admin/ipo-portal/', include('ipo_portal.urls')), # App's own features like 2FA setup
 
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='swagger-ui'),
