@@ -176,6 +176,7 @@ main
     loginWithFacebook,
     loginWithTwitter,
     loginWithWeb3,
+    setUser,
     onboardingStep,
     tokens
   };

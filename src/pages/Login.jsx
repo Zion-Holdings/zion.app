@@ -9,15 +9,12 @@ export default function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const handleMessage = (e) => {
-      if (e.data && e.data.token) {
-        safeStorage.setItem('auth.token', e.data.token);
-        window.removeEventListener('message', handleMessage);
-        navigate('/');
-      }
-    };
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+    if (token) {
+      safeStorage.setItem('auth.token', token);
+      navigate('/');
+    }
   }, [navigate]);
 
   if (isAuthenticated && user?.profileComplete) {

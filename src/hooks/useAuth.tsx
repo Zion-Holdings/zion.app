@@ -39,6 +39,7 @@ export interface AuthContextType {
   loginWithFacebook: () => Promise<void>;
   loginWithTwitter: () => Promise<void>;
   loginWithWeb3: () => Promise<void>;
+  setUser?: (user: UserDetails | null) => void;
 }
 
 // Create a provider component
@@ -193,7 +194,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     loginWithGoogle,
     loginWithFacebook,
     loginWithTwitter,
-    loginWithWeb3
+    loginWithWeb3,
+    setUser
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

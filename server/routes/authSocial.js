@@ -73,7 +73,11 @@ function sendToken(req, res) {
 }
 
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
-router.get('/auth/google/callback', passport.authenticate('google', { session: false }), sendToken);
+router.get('/auth/google/callback', passport.authenticate('google', { session: false }), (req, res) => {
+  const token = jwt.sign({ id: req.user.id, provider: req.user.provider }, JWT_SECRET, { expiresIn: '1h' });
+  const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+  res.redirect(`${clientUrl}/oauth?token=${token}`);
+});
 
 router.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email'] }));
 router.get('/auth/facebook/callback', passport.authenticate('facebook', { session: false }), sendToken);
