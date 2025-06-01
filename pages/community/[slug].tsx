@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Head from 'next/head';
+import NextHead from '@/components/NextHead';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -63,9 +63,11 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, hasSession, c
 
   return (
     <>
-      <Head>
-        <title>{`${category} Forum – ZionAI`}</title>
-      </Head>
+      <NextHead
+        title={`${category} Forum – ZionAI`}
+        description={`Discussion posts in the ${category} category`}
+        openGraph={{ title: `${category} Forum – ZionAI`, description: `Discussion posts in the ${category} category` }}
+      />
       <main className="container py-8">
         <div className="flex justify-end mb-6">
           <TooltipProvider>

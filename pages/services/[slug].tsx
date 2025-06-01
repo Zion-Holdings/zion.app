@@ -1,5 +1,6 @@
 import React from 'react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
+import NextHead from '@/components/NextHead';
 import { SERVICES } from '@/data/servicesData';
 import { slugify } from '@/lib/slugify';
 import Custom404 from '../404';
@@ -14,10 +15,17 @@ const ServicePage: React.FC<ServiceProps> = ({ service }) => {
     return <Custom404 />;
   }
   return (
-    <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
-      <h1>{service.title}</h1>
-      <p>{service.description}</p>
-    </main>
+    <>
+      <NextHead
+        title={service.title}
+        description={service.description}
+        openGraph={{ title: service.title, description: service.description }}
+      />
+      <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
+        <h1>{service.title}</h1>
+        <p>{service.description}</p>
+      </main>
+    </>
   );
 };
 

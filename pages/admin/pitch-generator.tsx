@@ -4,7 +4,7 @@ import DataSync from '@/components/admin/pitch-generator/DataSync';
 import SlideEditor from '@/components/admin/pitch-generator/SlideEditor';
 import { useAuth } from '@/hooks/useAuth';
 import { NextPage } from 'next';
-import Head from 'next/head';
+import NextHead from '@/components/NextHead';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
@@ -324,9 +324,11 @@ const PitchGeneratorPage: NextPage = () => {
 
   return (
     <AdminLayout>
-      <Head>
-        <title>Pitch Deck Generator</title>
-      </Head>
+      <NextHead
+        title="Pitch Deck Generator"
+        description="AI-powered tool to create data-driven pitch decks"
+        openGraph={{ title: 'Pitch Deck Generator', description: 'AI-powered tool to create data-driven pitch decks' }}
+      />
       <div className="container mx-auto p-4 md:p-8">
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-gray-800">AI-Powered Pitch Deck Generator</h1>

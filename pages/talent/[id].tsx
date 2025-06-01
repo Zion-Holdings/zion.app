@@ -1,6 +1,6 @@
 import React from 'react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import Head from 'next/head';
+import NextHead from '@/components/NextHead';
 import { useRouter } from 'next/router';
 import type { NextRouter } from 'next/router';
 import { Loader2 } from 'lucide-react';
@@ -25,9 +25,11 @@ const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
 
   return (
     <>
-      <Head>
-        <title>{talent.full_name}</title>
-      </Head>
+      <NextHead
+        title={talent.full_name}
+        description={talent.bio}
+        openGraph={{ image: talent.profile_picture_url, title: talent.full_name, description: talent.bio }}
+      />
       <TalentDetails talent={talent} />
     </>
   );
