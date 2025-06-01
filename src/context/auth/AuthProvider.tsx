@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     // Also sign in client-side so Supabase auth state is in sync
     await loginImpl({ email, password });
 
-    const next = new URLSearchParams(location.search).get('next') || '/';
+    const next = new URLSearchParams(location.search).get('next') || '/equipment/recommendations';
     navigate(next, { replace: true });
 
     return { error: null };

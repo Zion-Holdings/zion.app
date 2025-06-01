@@ -8,6 +8,7 @@ import Featured from "@/pages/Featured";
 import ListingDetail from "@/pages/ListingDetail";
 import EquipmentPage from "@/pages/EquipmentPage";
 import EquipmentDetail from "@/pages/EquipmentDetail";
+import EquipmentRecommendations from "@/pages/EquipmentRecommendations";
 import PostJob from "@/pages/PostJob";
 import JobDetails from "@/pages/JobDetails";
 import PublishProduct from "@/pages/PublishProduct";
@@ -36,6 +37,7 @@ const MarketplaceRoutes = () => {
       
       {/* Equipment Routes */}
       <Route path="/equipment" element={<EquipmentPage />} />
+      <Route path="/equipment/recommendations" element={<EquipmentRecommendations />} />
       <Route path="/equipment/:id" element={<EquipmentDetail />} />
       <Route path="/new-products" element={<NewProductsPage />} />
       <Route path="/new-services" element={<NewServicesPage />} />
