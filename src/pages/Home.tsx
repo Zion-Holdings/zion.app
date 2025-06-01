@@ -7,7 +7,7 @@ import { BenefitsSection } from "@/components/BenefitsSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { NewsletterSection } from "@/components/NewsletterSection";
 import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
-import { SEO } from "@/components/SEO";
+import { NextSeo } from "@/components/NextSeo";
 import { HeroSection } from "@/components/HeroSection";
 import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
@@ -21,11 +21,10 @@ export default function Home() {
     user?.displayName?.split(' ')[0] || user?.name?.split(' ')[0];
   return (
     <div className="min-h-screen bg-background">
-      <SEO
+      <NextSeo
         title="Zion - The Tech & AI Marketplace"
         description="Discover top AI and tech talent, services, and equipment in one place."
-        keywords="AI, technology, marketplace, services, talent"
-        canonical="https://app.ziontechgroup.com/"
+        openGraph={{ images: [{ url: 'https://app.ziontechgroup.com/og.png' }] }}
       />
 
       {user && (
