@@ -20,6 +20,8 @@ describe('NavLink', () => {
     const link = screen.getByRole('link', { name: /dash/i })
     expect(link.className).toMatch('border-b-2')
     expect(link.className).toMatch('border-green-500')
+    expect(link.className).toMatch('focus-visible:ring-2')
+    expect(link.className).toMatch('focus-visible:ring-zion-purple')
   })
 
   it('does not add active classes when pathname differs', () => {
