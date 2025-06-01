@@ -9,7 +9,8 @@ import { cleanupAuthState } from "@/utils/authUtils";
 
 export function useAuthOperations(
   setUser: React.Dispatch<React.SetStateAction<UserProfile | null>>,
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  setAvatarUrl: React.Dispatch<React.SetStateAction<string | null>>
 ) {
   // Check for referral code in URL when the hook is first used
   useEffect(() => {
@@ -105,6 +106,7 @@ export function useAuthOperations(
         });
       } else {
         setUser(null); // Clear the user state upon successful logout
+        setAvatarUrl(null);
         toast({
           title: "Logout successful!",
           description: "You have been successfully logged out.",

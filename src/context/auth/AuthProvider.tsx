@@ -19,7 +19,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     user, setUser,
     isLoading, setIsLoading,
     onboardingStep, setOnboardingStep,
-    tokens, setTokens
+    tokens, setTokens,
+    avatarUrl, setAvatarUrl
   } = useAuthState();
   
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     loginWithFacebook,
     loginWithTwitter,
     loginWithWeb3
-  } = useAuthOperations(setUser, setIsLoading);
+  } = useAuthOperations(setUser, setIsLoading, setAvatarUrl);
 
   // Wrapper for login to match the AuthContextType interface
   const login = async (email: string, password: string) => {
@@ -200,6 +201,7 @@ main
             if (profile) {
               const mappedUser = mapProfileToUser(session.user, profile);
               setUser(mappedUser);
+              setAvatarUrl(mappedUser.avatarUrl || null);
               
               // Show welcome toast when user logs in
               if (event === 'SIGNED_IN') {
@@ -230,9 +232,11 @@ main
           } catch (error) {
             console.error("Error fetching user profile:", error);
             setUser(null);
+            setAvatarUrl(null);
           }
         } else {
           setUser(false);
+          setAvatarUrl(null);
           
           // Show logout toast when user logs out
           if (event === 'SIGNED_OUT') {
@@ -264,7 +268,9 @@ main
     loginWithWeb3,
     setUser,
     onboardingStep,
-    tokens
+    tokens,
+    avatarUrl,
+    setAvatarUrl
   };
 
   return (

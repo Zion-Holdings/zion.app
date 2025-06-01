@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
-import { UserProfileDropdown } from './UserProfileDropdown'; // Updated import
+import { AvatarMenu } from './AvatarMenu';
 import { LanguageSelector } from './LanguageSelector';
 import { MainNavigation } from '@/layout/MainNavigation';
 import { useAuth } from '@/hooks/useAuth';
@@ -88,8 +88,8 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
               {`Hello, ${firstName}!`}
             </span>
           )}
-          {/* Replace UserMenu with UserProfileDropdown, ensure it's only shown when a user exists and login is not hidden */}
-          {!hideLogin && user && <UserProfileDropdown />}
+          {/* User avatar menu */}
+          {!hideLogin && user && <AvatarMenu />}
         </div>
       </div>
     </header>

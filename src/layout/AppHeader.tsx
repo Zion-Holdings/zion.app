@@ -11,7 +11,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useAuth } from '@/hooks/useAuth';
-import { UserProfileDropdown } from '@/components/header/UserProfileDropdown'; // Import UserProfileDropdown
+import { AvatarMenu } from '@/components/header/AvatarMenu';
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -55,10 +55,10 @@ export function AppHeader() {
           </div>
 
           <PointsBadge />
-          {/* Replace the greeting span with UserProfileDropdown */}
+          {/* User avatar menu */}
           {user && (
-            <div className="ml-4"> {/* Added a div for potential spacing adjustments if needed */}
-              <UserProfileDropdown />
+            <div className="ml-4">
+              <AvatarMenu />
             </div>
           )}
         </div>

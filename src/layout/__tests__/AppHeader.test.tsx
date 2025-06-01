@@ -40,9 +40,9 @@ jest.mock('@/components/loyalty/PointsBadge', () => ({
   PointsBadge: () => <div data-testid="points-badge">Points Badge</div>,
 }));
 
-// Mock UserProfileDropdown to check for its presence by a data-testid
-jest.mock('@/components/header/UserProfileDropdown', () => ({
-  UserProfileDropdown: () => <div data-testid="user-profile-dropdown">UserProfileDropdown</div>,
+// Mock AvatarMenu to check for its presence by a data-testid
+jest.mock('@/components/header/AvatarMenu', () => ({
+  AvatarMenu: () => <div data-testid="avatar-menu">AvatarMenu</div>,
 }));
 
 // Mock MobileMenu and MobileBottomNav as they are complex and not central to these tests
@@ -84,15 +84,15 @@ describe('AppHeader', () => {
       expect(screen.getByTestId('language-selector')).toBeInTheDocument();
     });
 
-    it('renders UserProfileDropdown', () => {
+    it('renders AvatarMenu', () => {
       render(<MemoryRouter><AppHeader /></MemoryRouter>);
-      expect(screen.getByTestId('user-profile-dropdown')).toBeInTheDocument();
+      expect(screen.getByTestId('avatar-menu')).toBeInTheDocument();
     });
 
     it('does NOT render the old "Hello, {firstName}!" greeting', () => {
       render(<MemoryRouter><AppHeader /></MemoryRouter>);
       // The greeting span had data-testid="header-greeting"
-      // If UserProfileDropdown is rendered, the greeting span should not be.
+      // If AvatarMenu is rendered, the greeting span should not be.
       expect(screen.queryByTestId('header-greeting')).not.toBeInTheDocument();
       expect(screen.queryByText(/Hello, Test!/i)).not.toBeInTheDocument();
     });
@@ -107,9 +107,9 @@ describe('AppHeader', () => {
       });
     });
 
-    it('does NOT render UserProfileDropdown', () => {
+    it('does NOT render AvatarMenu', () => {
       render(<MemoryRouter><AppHeader /></MemoryRouter>);
-      expect(screen.queryByTestId('user-profile-dropdown')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('avatar-menu')).not.toBeInTheDocument();
     });
 
     it('renders LanguageSelector (assuming it is shown for logged-out users too)', () => {
