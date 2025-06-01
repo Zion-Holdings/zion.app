@@ -12,7 +12,7 @@ export async function register(name: string, email: string, password: string) {
 
 export async function forgotPassword(email: string) {
   const API_URL = import.meta.env.VITE_API_URL || '';
-  const res = await fetch(`${API_URL}/auth/forgot`, {
+  const res = await fetch(`${API_URL}/auth/forgot-password`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -27,9 +27,9 @@ export async function forgotPassword(email: string) {
 }
 
 export async function resetPassword(token: string, newPassword: string) {
-  const API_URL = import.meta.env.VITE_API_URL || ''; // Ensure API_URL is defined
-  const res = await fetch(`${API_URL}/auth/reset-password`, {
-    method: 'POST',
+  const API_URL = import.meta.env.VITE_API_URL || '';
+  const res = await fetch(`${API_URL}/auth/reset/${token}`, {
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
