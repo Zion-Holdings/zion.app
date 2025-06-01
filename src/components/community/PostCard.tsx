@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { formatDistanceToNow } from "date-fns";
 import { Link } from "react-router-dom";
 import { ThumbsUp, ThumbsDown, MessageSquare, Pin, Lock, CheckCircle } from "lucide-react";
@@ -15,7 +16,7 @@ interface PostCardProps {
   compact?: boolean;
 }
 
-export const PostCard = ({ post, compact = false }: PostCardProps) => {
+const PostCardComponent = ({ post, compact = false }: PostCardProps) => {
   const timeAgo = formatDistanceToNow(new Date(post.createdAt), { addSuffix: true });
 
   return (
@@ -91,5 +92,8 @@ export const PostCard = ({ post, compact = false }: PostCardProps) => {
     </Card>
   );
 };
+
+export const PostCard = React.memo(PostCardComponent);
+PostCard.displayName = 'PostCard';
 
 export default PostCard;

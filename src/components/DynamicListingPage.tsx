@@ -5,7 +5,8 @@ import { ProductListingCard } from "@/components/ProductListingCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
-import { Skeleton } from "@/components/ui/skeleton";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import { Slider } from "@/components/ui/slider";
 import { ProductListing, ListingView } from "@/types/listings";
 import { Search, Filter, LayoutGrid, List, Star } from "lucide-react";
@@ -309,15 +310,15 @@ export function DynamicListingPage({
                     key={i}
                     className="rounded-lg overflow-hidden border border-zion-blue-light"
                   >
-                    <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
+                    <Skeleton height={192} width="100%" />
                     <div className="p-4">
-                      <Skeleton className="h-6 w-1/3 mb-2 bg-zion-blue-light/20" />
-                      <Skeleton className="h-8 w-5/6 mb-4 bg-zion-blue-light/20" />
-                      <Skeleton className="h-4 w-full mb-2 bg-zion-blue-light/20" />
-                      <Skeleton className="h-4 w-4/5 mb-4 bg-zion-blue-light/20" />
+                      <Skeleton height={24} width="33%" className="mb-2" />
+                      <Skeleton height={32} width="83%" className="mb-4" />
+                      <Skeleton height={16} width="100%" className="mb-2" />
+                      <Skeleton height={16} width="80%" className="mb-4" />
                       <div className="flex justify-between items-center pt-4">
-                        <Skeleton className="h-6 w-1/4 bg-zion-blue-light/20" />
-                        <Skeleton className="h-8 w-1/4 bg-zion-blue-light/20" />
+                        <Skeleton height={24} width="25%" />
+                        <Skeleton height={32} width="25%" />
                       </div>
                     </div>
                   </div>

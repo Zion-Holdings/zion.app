@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
@@ -13,12 +14,12 @@ export interface TalentCardProps {
   isAuthenticated: boolean;
 }
 
-export function TalentCard({
+const TalentCardComponent = ({
   talent,
   onViewProfile,
   onRequestHire,
   isAuthenticated
-}: TalentCardProps) {
+}: TalentCardProps) => {
   const navigate = useNavigate();
   
   const handleViewProfile = () => {
@@ -160,4 +161,7 @@ export function TalentCard({
       </div>
     </Card>
   );
-}
+};
+
+export const TalentCard = React.memo(TalentCardComponent);
+TalentCard.displayName = 'TalentCard';
