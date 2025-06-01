@@ -19,8 +19,14 @@ export default function handler(req: Req, res: JsonRes) {
     return;
   }
 
-  const id = req.query?.id;
-  const profile = TALENT_PROFILES.find(t => t.id === id);
+  const rawId = req.query?.id;
+  let searchId = typeof rawId === 'string' ? rawId : '';
+
+  if (searchId && !searchId.startsWith('t-')) {
+    searchId = `t-${searchId}`;
+  }
+
+  const profile = TALENT_PROFILES.find(t => t.id === searchId);
 
   if (!profile) {
     res.status(404).json({ error: 'Talent not found' });

@@ -24,6 +24,11 @@ jobs:
             exit 1
           fi
       - run: npm run test -- --coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: coverage/lcov.info
+          fail_ci_if_error: true
       - run: npm run cypress:run
       - uses: actions/upload-artifact@v4
         with:

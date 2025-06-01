@@ -3,7 +3,14 @@ const dotenv = require('dotenv');
 // Load environment variables from .env if present
 dotenv.config();
 
+const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/zion';
+const jwtSecret = process.env.JWT_SECRET;
+
+if (!jwtSecret) {
+  throw new Error('JWT_SECRET not defined in environment');
+}
+
 module.exports = {
-  mongoUri: process.env.MONGO_URI || 'mongodb://localhost:27017/zion',
-  jwtSecret: process.env.JWT_SECRET || 'changeme',
+  mongoUri,
+  jwtSecret,
 };

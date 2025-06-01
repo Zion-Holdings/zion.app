@@ -78,15 +78,8 @@ const MarketplaceRoutes = () => {
       {/* Search Route */}
       <Route path="/search" element={<SearchPage />} />
 
-      {/* Checkout Route - accessible even in staging */}
-      <Route
-        path="/checkout"
-        element={
-          <ProtectedRoute>
-            <Checkout />
-          </ProtectedRoute>
-        }
-      />
+      {/* Checkout Route - accessible to guests */}
+      <Route path="/checkout" element={<Checkout />} />
       <Route path="/success" element={<PaymentSuccess />} />
       
       {/* Project Room Routes */}

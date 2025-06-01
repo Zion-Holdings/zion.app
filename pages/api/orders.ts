@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { serializeOrders } from './orders/serializer';
+import { sendEmailWithSendGrid } from '../../src/lib/email';
 
 // Generic request/response types so the handler works in Node or Next.js
 type Req = {
@@ -27,6 +28,66 @@ const serviceKey =
 const supabase = createClient(supabaseUrl, serviceKey);
 
 export default async function handler(req: Req, res: JsonRes) {
+  if (req.method === 'POST') {
+    const { userId, email, items = [], total = 0 } = req.body || {};
+    if (!email) {
+      res.status(400).json({ error: 'Missing email' });
+      return;
+    }
+
+    const { data, error } = await supabase
+      .from('orders')
+      .insert({
+        user_id: userId || null,
+        email,
+        items,
+        total,
+        status: 'paid',
+      })
+      .select('id')
+      .single();
+
+    if (error || !data) {
+      res.status(500).json({ error: error?.message || 'Failed to create order' });
+      return;
+    }
+
+    if (userId) {
+      const points = Math.floor(total / 100) * 10;
+      if (points > 0) {
+        await supabase.from('points_ledger').insert({
+          user_id: userId,
+          delta: points,
+          reason: 'purchase',
+          order_id: data.id,
+        });
+
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('points')
+          .eq('id', userId)
+          .single();
+
+        const current = profile?.points ?? 0;
+        await supabase
+          .from('profiles')
+          .update({ points: current + points })
+          .eq('id', userId);
+      }
+    }
+
+    if (process.env.SENDGRID_ORDER_CONFIRMATION_TEMPLATE_ID) {
+      await sendEmailWithSendGrid({
+        to: email,
+        templateId: process.env.SENDGRID_ORDER_CONFIRMATION_TEMPLATE_ID,
+        dynamicTemplateData: { orderId: data.id },
+      });
+    }
+
+    res.status(200).json({ orderId: data.id });
+    return;
+  }
+
   if (req.method !== 'GET') {
     res.status(405).end();
     return;

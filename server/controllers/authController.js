@@ -3,6 +3,10 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const { jwtSecret } = require('../config');
 
+if (!jwtSecret) {
+  throw new Error('JWT_SECRET not defined');
+}
+
 exports.loginUser = async function (req, res) {
   console.info('[LOGIN]', req.body.email);
   console.info('[ENV] JWT_SECRET:', jwtSecret);
@@ -31,6 +35,7 @@ exports.login = exports.loginUser;
 
 exports.registerUser = async function (req, res) {
   try {
+codex/handle-duplicate-email-error
     const name = req.body.name;
     const email = req.body.email.toLowerCase().trim();
     const password = req.body.password;
@@ -44,10 +49,12 @@ exports.registerUser = async function (req, res) {
 
     const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: '7d' });
     return res.status(201).json({
+main
       token,
       user: { id: user._id, email: user.email, name: user.name },
     });
   } catch (err) {
+codex/handle-duplicate-email-error
     if (err && err.code === 11000) {
       return res.status(409).json({ code: 'EMAIL_EXISTS', message: 'Email already registered' });
     }
@@ -58,3 +65,4 @@ exports.registerUser = async function (req, res) {
 
 // Maintain backwards compatibility if other modules still call `register`
 exports.register = exports.registerUser;
+main

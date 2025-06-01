@@ -24,7 +24,7 @@ async function handler(req, res) {
     return;
   }
 
-  const { amount } = req.body || {};
+  const { amount, userId } = req.body || {};
   if (typeof amount !== 'number') {
     res.statusCode = 400;
     res.json({ error: 'Invalid amount' });
@@ -45,6 +45,7 @@ async function handler(req, res) {
     const intent = await stripe.paymentIntents.create({
       amount: Math.round(amount * 100),
       currency: 'usd',
+      metadata: userId ? { userId } : undefined,
       automatic_payment_methods: { enabled: true },
     });
     res.statusCode = 200;

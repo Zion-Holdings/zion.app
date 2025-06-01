@@ -1,35 +1,12 @@
 import { useState } from 'react';
-import useSWR from 'swr';
+import { useQuoteWizard } from '@/hooks/useQuoteWizard';
 import { Loader2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
-import { captureException } from '@/utils/sentry';
-
-interface ServiceItem {
-  id: string;
-  title: string;
-}
 
 const WIZARD_STEPS = [1, 2, 3];
-
-const fetcher = async (url: string) => {
-  try {
-    const res = await fetch(url);
-    if (!res.ok) {
-      throw new Error('Failed');
-    }
-    return res.json();
-  } catch (err) {
-    if (process.env.NODE_ENV === 'development') {
-      console.error(err);
-    } else {
-      captureException(err);
-    }
-    throw err;
-  }
-};
 
 function StepIndicator({ step }: { step: number }) {
   const progress = (step / WIZARD_STEPS.length) * 100;
@@ -49,15 +26,7 @@ export function QuoteWizard() {
   const [step, setStep] = useState(1);
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const [message, setMessage] = useState('');
-  const { data, error, mutate } = useSWR<ServiceItem[]>('/api/items?category=services', fetcher, {
-    onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
-      // retryCount starts at 0, so retryCount >= 2 means it will retry for 0 and 1 (2 retries)
-      if (retryCount >= 2) return;
-      const timeout = 1000; // Fixed 1 second delay
-      setTimeout(() => revalidate({ retryCount: retryCount + 1 }), timeout);
-    },
-    dedupingInterval: 600000, // 10 minutes
-  });
+  const { data, error, mutate } = useQuoteWizard('services');
 
   const loading = !data && !error;
 
@@ -107,8 +76,15 @@ export function QuoteWizard() {
               <Card
                 data-testid={`service-card-${item.id}`}
                 key={item.id}
-                className={`p-4 space-y-2 cursor-pointer border-2 transition-colors ${selectedItem === item.id ? 'border-zion-purple' : 'hover:border-zion-purple/50'}`}
+                className={`p-4 space-y-2 cursor-pointer border-2 transition-colors ${selectedItem === item.id ? 'border-zion-purple' : 'hover:border-zion-purple/50'} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple`}
                 onClick={() => setSelectedItem(item.id)}
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedItem(item.id);
+                  }
+                }}
               >
                 <div>{item.title}</div>
                 <Button

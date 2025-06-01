@@ -1,10 +1,14 @@
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { QuoteWizard } from "@/components/quote/QuoteWizard";
+import React, { lazy, Suspense } from "react";
+
+const QuoteWizard = lazy(() => import("@/components/quote/QuoteWizard"));
 
 export default function RequestQuotePage() {
   return (
     <ErrorBoundary fallback={<div>Quote wizard failed to load</div>}>
-      <QuoteWizard />
+      <Suspense fallback={<div>Loading quote wizard...</div>}>
+        <QuoteWizard />
+      </Suspense>
     </ErrorBoundary>
   );
 }

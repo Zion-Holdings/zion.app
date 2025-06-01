@@ -74,3 +74,21 @@ it('submits quote', async () => {
   await screen.findByTestId('success-step');
   expect(submitted).toBe(true);
 });
+
+it('recovers after a transient error', async () => {
+  let callCount = 0;
+  server.use(
+    rest.get('/api/items', (_req, res, ctx) => {
+      callCount++;
+      if (callCount === 1) {
+        return res(ctx.status(500));
+      }
+      return res(ctx.json(sample));
+    })
+  );
+
+  renderWizard();
+
+  expect(await screen.findByText('Service A', {}, { timeout: 8000 })).toBeInTheDocument();
+  expect(callCount).toBeGreaterThan(1);
+});
