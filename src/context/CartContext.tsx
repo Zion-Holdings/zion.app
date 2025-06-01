@@ -48,36 +48,31 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (user && user.id) {
-      const stored = safeStorage.getItem(`cart_${user.id}`);
+      // Try user-specific cart first
+      const storedUser = safeStorage.getItem(`cart_${user.id}`);
+      const storedGuest = safeStorage.getItem('cart');
+      let items: CartItem[] = [];
+      if (storedUser) {
+        try { items = JSON.parse(storedUser) as CartItem[]; } catch { /* ignore */ }
+      } else if (storedGuest) {
+        try { items = JSON.parse(storedGuest) as CartItem[]; } catch { /* ignore */ }
+        safeStorage.removeItem('cart');
+      }
+      dispatch({ type: 'SET_ITEMS', payload: items });
+    } else {
+      const stored = safeStorage.getItem('cart');
       if (stored) {
         try {
           const items = JSON.parse(stored) as CartItem[];
-          // Ensure we only dispatch if there are actually items to set,
-          // otherwise, it might overwrite an empty cart that was cleared due to logout/login.
-          if (items.length > 0) {
-            dispatch({ type: 'SET_ITEMS', payload: items });
-          } else {
-            // If stored cart is empty, ensure current state is also empty.
-            // This handles cases where a user had items, cleared them, and logs back in.
-            dispatch({ type: 'CLEAR_CART' });
-          }
+          dispatch({ type: 'SET_ITEMS', payload: items });
         } catch {
-          // If parsing fails, perhaps clear the cart or log an error
           dispatch({ type: 'CLEAR_CART' });
-          console.error('Failed to parse cart items from storage.');
-          /* ignore for now */
         }
       } else {
-        // No cart in storage for this user, ensure state is cleared.
-        // This is important if a user logs out (which clears state) and then logs
-        // into an account that has never had a cart.
         dispatch({ type: 'CLEAR_CART' });
       }
-    } else {
-      // No user logged in, clear items from state
-      dispatch({ type: 'CLEAR_CART' });
     }
-  }, [user]); // Effect runs when user object changes
+  }, [user]);
 
   useEffect(() => {
     // Only save to localStorage if there's a user and items are not empty,
@@ -87,8 +82,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     // Let's save even if items are empty, so that if a user clears their cart, it remains cleared on next login.
     if (user && user.id) {
       safeStorage.setItem(`cart_${user.id}`, JSON.stringify(state.items));
+    } else {
+      safeStorage.setItem('cart', JSON.stringify(state.items));
     }
-    // Do not save if there's no user.
   }, [state.items, user]); // Effect runs when items or user change
 
   const value: CartContextType = {

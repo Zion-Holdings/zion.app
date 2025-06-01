@@ -101,7 +101,7 @@ const baseRoutes = [
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/favorites', element: <FavoritesPage /> },
   { path: '/wishlist', element: <WishlistPage /> },
-  { path: '/cart', element: <PrivateRoute><CartPage /></PrivateRoute> },
+  { path: '/cart', element: <CartPage /> },
   { path: '/profile', element: <PrivateRoute><Profile /></PrivateRoute> },
   { path: '/checkout', element: <Checkout /> },
 ];
