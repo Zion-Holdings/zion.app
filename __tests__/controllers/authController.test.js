@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { loginUser } = require('../../server/controllers/authController');
+const { loginUser, registerUser } = require('../../server/controllers/authController');
 const User = require('../../server/models/User');
 
 jest.mock('../../server/models/User');
@@ -47,5 +47,28 @@ describe('authController.loginUser', () => {
 
     expect(res.status).toHaveBeenCalledWith(401);
     expect(res.json).toHaveBeenCalledWith({ message: 'Invalid credentials' });
+  });
+});
+
+describe('authController.registerUser', () => {
+  const req = { body: { name: 'Test', email: 'test@example.com', password: 'Password123' } };
+  const res = { status: jest.fn().mockReturnThis(), json: jest.fn() };
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('creates a new user and returns token', async () => {
+    User.create.mockResolvedValue({ _id: '1', email: 'test@example.com', name: 'Test' });
+    jwt.sign.mockReturnValue('signed-jwt');
+
+    await registerUser(req, res);
+
+    expect(User.create).toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(201);
+    expect(res.json).toHaveBeenCalledWith({
+      token: 'signed-jwt',
+      user: { id: '1', email: 'test@example.com', name: 'Test' },
+    });
   });
 });
