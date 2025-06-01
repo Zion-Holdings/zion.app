@@ -4,6 +4,15 @@ import { supabase } from '@/integrations/supabase/client';
 import { captureException } from '@/utils/sentry';
 import axiosRetry from 'axios-retry';
 
+// Global interceptor for all axios instances
+axios.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    toast.error(error.response?.data?.message || 'Network error');
+    return Promise.reject(error);
+  }
+);
+
 const apiClient = axios.create({
   baseURL: '/api/v1/services',
   withCredentials: true,

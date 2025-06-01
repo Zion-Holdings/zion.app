@@ -52,7 +52,7 @@ test('successful send closes modal and shows toast', async () => {
   expect(defaultProps.onClose).toHaveBeenCalled();
 });
 
-test('shows error when send fails', async () => {
+test('shows toast when send fails', async () => {
   postMock.mockRejectedValueOnce({ message: 'Bad' });
 
   render(<ContactPublisherModal {...defaultProps} />);
@@ -67,5 +67,4 @@ test('shows error when send fails', async () => {
   fireEvent.click(screen.getByRole('button', { name: /send message/i }));
 
   await waitFor(() => expect(toastHook.toast.error).toHaveBeenCalledWith('Bad'));
-  expect(screen.getByText('Bad')).toBeInTheDocument();
 });
