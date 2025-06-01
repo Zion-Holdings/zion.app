@@ -41,7 +41,7 @@ test('successful send closes modal and shows toast', async () => {
   fireEvent.click(screen.getByRole('button', { name: /send message/i }));
 
   await waitFor(() => expect(postMock).toHaveBeenCalledTimes(1));
-  expect(toastHook.toast.success).toHaveBeenCalledWith('Message sent!');
+  expect(toastHook.toast.success).toHaveBeenCalledWith('Message sent');
   expect(defaultProps.onClose).toHaveBeenCalled();
 });
 
