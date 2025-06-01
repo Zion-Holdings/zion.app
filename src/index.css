@@ -38,6 +38,10 @@
     --input: 222 39% 17%;
     --ring: 188 85% 53%;
 
+    /* Accessible primary text/background pair */
+    --bg-primary: 222 47% 8%;
+    --text-primary: 0 0% 100%;
+
     --radius: 0.5rem;
 
     --sidebar-background: 210 40% 96%;

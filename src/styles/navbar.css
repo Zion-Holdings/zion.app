@@ -4,7 +4,7 @@
   z-index: 999;
   /* Assuming a default border, e.g., a light bottom border */
   border-bottom: 1px solid var(--border);
-  background-color: var(--background); /* Added for better visibility with sticky */
+  background-color: var(--bg-primary); /* Uses accessible token */
   padding: 1rem 0; /* Example padding */
 }
 
@@ -79,7 +79,7 @@
 
 .nav-link {
   text-decoration: none;
-  color: var(--foreground); /* Use theme variable */
+  color: var(--text-primary); /* Use accessible token */
   padding: 0.5rem;
   display: block;
 }
@@ -131,6 +131,7 @@
   .nav-link {
     padding: 0.75rem 1rem; /* Adjust padding for touch targets */
     border-bottom: 1px solid var(--border); /* Separator for links */
+    color: var(--text-primary);
   }
 
   .nav-item:last-child .nav-link {
