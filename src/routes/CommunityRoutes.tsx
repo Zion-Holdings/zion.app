@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { ProtectedRoute } from "../components/ProtectedRoute";
 import CommunityPage from "../pages/CommunityPage";
 import { CommunityProvider } from "../context";
@@ -8,7 +8,6 @@ import ForumPostPage from "../pages/ForumPostPage";
 import CreatePostPage from "../pages/CreatePostPage";
 import EditPostPage from "../pages/EditPostPage";
 import CommunityProfilePage from "../pages/CommunityProfilePage";
-import NewPost from "../pages/NewPost";
 
 const CommunityRoutes = () => {
   return (
@@ -39,7 +38,7 @@ const CommunityRoutes = () => {
         path="/community/new"
         element={
           <ProtectedRoute>
-            <NewPost />
+            <Navigate to="/community?new=1" replace />
           </ProtectedRoute>
         }
       />

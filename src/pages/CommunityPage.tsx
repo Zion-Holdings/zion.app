@@ -1,18 +1,44 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import CreatePostButton from "@/components/community/CreatePostButton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
 import ForumCategories from "@/components/community/ForumCategories";
 import PostCard from "@/components/community/PostCard";
+import NewPostDialog from "@/components/community/NewPostDialog";
 import { useAuth } from "@/hooks/useAuth";
 import { useCommunity } from "@/context";
+import type { ForumCategory } from "@/types/community";
 
 
 export default function CommunityPage() {
   const { user } = useAuth();
   const { featuredPosts, recentPosts } = useCommunity();
   const [activeTab, setActiveTab] = useState("categories");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const [showNewPost, setShowNewPost] = useState(false);
+
+  const initialCategory = searchParams.get("category") as ForumCategory | null;
+
+  useEffect(() => {
+    const wantsNew = searchParams.get("new") === "1";
+    if (wantsNew && !user) {
+      const next = encodeURIComponent(`/community?new=1${initialCategory ? `&category=${initialCategory}` : ""}`);
+      navigate(`/login?next=${next}`, { replace: true });
+      return;
+    }
+    setShowNewPost(wantsNew && !!user);
+  }, [searchParams, user, navigate, initialCategory]);
+
+  const handleDialogChange = (open: boolean) => {
+    setShowNewPost(open);
+    if (!open) {
+      searchParams.delete("new");
+      setSearchParams(searchParams, { replace: true });
+    }
+  };
   
   return (
     <>
@@ -63,6 +89,12 @@ export default function CommunityPage() {
           </TabsContent>
         </Tabs>
       </div>
+
+      <NewPostDialog
+        open={showNewPost}
+        onOpenChange={handleDialogChange}
+        initialCategory={initialCategory}
+      />
     </>
   );
 }

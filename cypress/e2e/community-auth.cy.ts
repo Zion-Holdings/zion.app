@@ -14,6 +14,6 @@ describe('community create post auth redirect', () => {
     cy.get('input[name="password"]').type('Password123');
     cy.contains('Login').click();
     cy.wait('@login');
-    cy.url().should('include', '/community/create');
+    cy.url().should('include', '/community?new=1');
   });
 });
