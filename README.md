@@ -1,5 +1,6 @@
 
 # Welcome to the project
+[![codecov](https://codecov.io/gh/<org>/<repo>/branch/main/graph/badge.svg)](https://codecov.io/gh/<org>/<repo>)
 
 ## Project info
 
