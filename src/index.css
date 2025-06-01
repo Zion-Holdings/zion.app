@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@400;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,35 +8,35 @@
 
 @layer base {
   :root {
-    --font-sans: 'Orbitron', system-ui, sans-serif;
+    --font-sans: 'Inter', system-ui, sans-serif; /* Updated to Inter as base sans */
 
-    --background: 0 0% 100%;
-    --foreground: 224 71% 4%;
+    --background: 222 47% 8%;
+    --foreground: 0 0% 88%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
+    --card: 220 30% 11%;
+    --card-foreground: 0 0% 88%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
+    --popover: 0 0% 100%; /* Kept existing */
+    --popover-foreground: 224 71% 4%; /* Kept existing */
 
-    --primary: 262 83% 58%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 188 85% 53%;
+    --primary-foreground: 222 47% 8%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 271 76% 53%;
+    --secondary-foreground: 0 0% 88%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 20% 45%;
+    --muted: 210 40% 96%; /* Kept existing */
+    --muted-foreground: 215 20% 45%; /* Kept existing */
 
-    --accent: 210 40% 96%;
-    --accent-foreground: 224 71% 4%;
+    --accent: 288 85% 60%;
+    --accent-foreground: 0 0% 88%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%; /* Kept existing */
+    --destructive-foreground: 210 40% 98%; /* Kept existing */
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 262 83% 58%;
+    --border: 222 39% 17%;
+    --input: 222 39% 17%;
+    --ring: 188 85% 53%;
 
     --radius: 0.5rem;
 
@@ -81,7 +83,12 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: theme('fontFamily.sans');
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.heading');
   }
 
   @keyframes pulse {
@@ -103,16 +110,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: theme('colors["zion-blue"].DEFAULT');
+    background: theme('colors.card');
   }
 
   ::-webkit-scrollbar-thumb {
-    background: theme('colors["zion-purple"].dark');
+    background: theme('colors.secondary');
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: theme('colors["zion-purple"].DEFAULT');
+    background: theme('colors.accent');
   }
 
   /* Smooth scrolling */
