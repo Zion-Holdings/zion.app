@@ -1,8 +1,13 @@
 import React from 'react';
+import { NextSeo } from '@/components/NextSeo';
 
 const AboutPage = () => (
-  <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
-    <h1>About Us</h1>
+  <>
+    <NextSeo
+      title="About Us"
+      description="Learn about Zion Tech Group's mission and team." />
+    <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
+      <h1>About Us</h1>
     <section>
       <h2>Our Mission</h2>
       <p>
@@ -32,6 +37,7 @@ const AboutPage = () => (
       </ol>
     </section>
   </main>
+  </>
 );
 
 export default AboutPage;
