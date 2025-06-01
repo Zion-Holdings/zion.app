@@ -52,14 +52,15 @@ import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
 import OpenAppRedirect from './pages/OpenAppRedirect';
 import ContactPage from './pages/Contact';
 import ZionHireAI from './pages/ZionHireAI';
-import RequestQuotePage from './pages/RequestQuote';
+import { lazy } from 'react';
 import WishlistPage from './pages/Wishlist';
 import FavoritesPage from './pages/Favorites';
 import CartPage from './pages/Cart';
-import Checkout from './pages/Checkout';
+const Checkout = lazy(() => import('./pages/Checkout'));
+const RequestQuotePage = lazy(() => import('./pages/RequestQuote'));
+const RecommendationsPage = lazy(() => import('./pages/RecommendationsPage'));
 import Profile from './pages/Profile';
 import Wallet from './pages/Wallet';
-import RecommendationsPage from './pages/RecommendationsPage';
 import { SupportChatbot } from './components/SupportChatbot';
 import PrivateRoute from './components/PrivateRoute';
 
