@@ -10,6 +10,9 @@ import { mapProfileToUser } from "./profileMapper";
 import { loginUser } from "@/services/authService";
 import { safeStorage } from "@/utils/safeStorage";
 import { toast } from "@/hooks/use-toast"; // Import toast
+import { useDispatch } from 'react-redux';
+import type { AppDispatch } from '@/store';
+import { addItem } from '@/store/cartSlice';
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const {
@@ -21,6 +24,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch<AppDispatch>();
   const { handleSignedIn, handleSignedOut } = useAuthEventHandlers(setUser, setOnboardingStep);
 
   const {
@@ -128,12 +132,13 @@ main
                 const params = new URLSearchParams(location.search);
                 const next = params.get('next');
                 // --- BEGIN MODIFICATION ---
-                if (location.state?.pendingAction === 'buyNow' && location.state?.pendingActionArgs?.sku) {
-                  const sku = location.state.pendingActionArgs.sku;
+                if (location.state?.pendingAction === 'buyNow' && location.state?.pendingActionArgs) {
+                  const { id, title, price } = location.state.pendingActionArgs;
+                  dispatch(addItem({ id, title, price }));
                   // Clear pending action from state first
                   navigate(location.pathname, { state: {}, replace: true });
-                  // Navigate to checkout with SKU
-                  navigate(`/checkout?sku=${sku}`, { replace: true });
+                  // Navigate to checkout
+                  navigate('/checkout', { replace: true });
                 } else if (next) {
                   navigate(decodeURIComponent(next), { replace: true });
                 }
