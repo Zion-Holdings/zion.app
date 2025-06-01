@@ -5,11 +5,12 @@ import { useQuery } from "@tanstack/react-query";
 import apiClient from "@/services/apiClient";
 import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
 import { Button } from "@/components/ui/button";
+import { ProductListingCard } from "@/components/ProductListingCard";
 import { Loader2, Sparkles } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { useNavigate, useLocation } from "react-router-dom";
-import useSWRMutation from "swr/mutation";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { AuthGuard } from "@/components/AuthGuard";
 import { Skeleton } from "@/components/ui/skeleton";
 
 // Sample datacenter equipment listings
@@ -361,9 +362,10 @@ async function fetchEquipment(): Promise<ProductListing[]> {
 
 export default function EquipmentPage() {
   const [equipment, setEquipment] = useState<ProductListing[]>([]); // Initial empty or fallback
+  const [recommendations, setRecommendations] = useState<ProductListing[]>([]);
+  const [recoOpen, setRecoOpen] = useState(false);
+  const [loadingReco, setLoadingReco] = useState(false);
   const { user } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
 
   const {
     data: fetchedEquipment,
@@ -381,14 +383,7 @@ export default function EquipmentPage() {
     }
   }, [fetchedEquipment]);
 
-  const { trigger: fetchRecommendations, isMutating: isFetchingRecommendations } = useSWRMutation(
-    `/api/equipment/recommendations`, // Ensure this uses the correct base if apiClient is configured globally
-    (url: string) =>
-      fetch(url).then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch recommendations');
-        return res.json();
-      })
-  );
+  const isFetchingRecommendations = loadingReco;
 
   // Interval for adding random equipment - might need adjustment
   // This will add to the local 'equipment' state, which is initially populated by useQuery
@@ -400,26 +395,21 @@ export default function EquipmentPage() {
   }, []);
 
   const handleRecommendations = async () => {
-    if (!user) {
-      navigate('/login?next=/equipment&reco=1');
-      return;
-    }
+    if (!user) return;
+    setRecoOpen(true);
+    setLoadingReco(true);
     try {
-      const data = await fetchRecommendations();
-      setEquipment(data as ProductListing[]);
-      toast({ title: 'Showing personalized recommendations' });
+      const res = await fetch(`/api/recommendations?userId=${user.id}`);
+      if (!res.ok) throw new Error('Failed to fetch recommendations');
+      const data = await res.json();
+      setRecommendations(data as ProductListing[]);
     } catch (err) {
       console.error(err);
       toast({ title: 'Failed to load recommendations', variant: 'destructive' });
+    } finally {
+      setLoadingReco(false);
     }
   };
-
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    if (params.get('reco') === '1' && user) {
-      handleRecommendations();
-    }
-  }, [user, location.search]);
 
   if (isLoadingEquipment) {
     return (
@@ -463,45 +453,48 @@ export default function EquipmentPage() {
     <>
       <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
         <div className="container mx-auto flex justify-end">
-          <Button onClick={handleRecommendations} disabled={isFetchingRecommendations} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
-            {isFetchingRecommendations ? (
-              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-            ) : (
-              <Sparkles className="h-4 w-4 mr-2" />
-            )}
-            AI Recommendations
-          </Button>
+          <AuthGuard onAuthenticated={handleRecommendations} message="Please login to see AI recommendations.">
+            <Button disabled={isFetchingRecommendations} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
+              {isFetchingRecommendations ? (
+                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+              ) : (
+                <Sparkles className="h-4 w-4 mr-2" />
+              )}
+              AI Recommendations
+            </Button>
+          </AuthGuard>
         </div>
       </div>
-      {isFetchingRecommendations ? ( // This is the skeleton for AI recommendations, keep as is
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
-              <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
-              <div className="p-4">
-                <Skeleton className="h-6 w-1/3 mb-2 bg-zion-blue-light/20" />
-                <Skeleton className="h-8 w-5/6 mb-4 bg-zion-blue-light/20" />
-                <Skeleton className="h-4 w-full mb-2 bg-zion-blue-light/20" />
-                <Skeleton className="h-4 w-4/5 mb-4 bg-zion-blue-light/20" />
-                <div className="flex justify-between items-center pt-4">
-                  <Skeleton className="h-6 w-1/4 bg-zion-blue-light/20" />
-                  <Skeleton className="h-8 w-1/4 bg-zion-blue-light/20" />
-                </div>
+      <DynamicListingPage
+        title="Datacenter Equipment"
+        description="Browse professional hardware for modern datacenter and network deployments."
+        categorySlug="equipment"
+        listings={equipment}
+        categoryFilters={EQUIPMENT_FILTERS}
+        initialPrice={{ min: 400, max: 50000 }}
+        detailBasePath="/equipment"
+      />
+
+      <Sheet open={recoOpen} onOpenChange={setRecoOpen}>
+        <SheetContent side="right" className="w-full sm:max-w-md bg-zion-blue-dark text-white border-l border-zion-blue-light">
+          <SheetHeader>
+            <SheetTitle>AI Recommendations</SheetTitle>
+          </SheetHeader>
+          <div className="p-4 space-y-4 overflow-y-auto max-h-[80vh]">
+            {isFetchingRecommendations ? (
+              <div className="flex justify-center py-10">
+                <Loader2 className="h-8 w-8 animate-spin" />
               </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <DynamicListingPage
-          title="Datacenter Equipment"
-          description="Browse professional hardware for modern datacenter and network deployments."
-          categorySlug="equipment"
-          listings={equipment} // This 'equipment' state is updated by useQuery and the interval
-          categoryFilters={EQUIPMENT_FILTERS}
-          initialPrice={{ min: 400, max: 50000 }}
-          detailBasePath="/equipment"
-        />
-      )}
+            ) : (
+              recommendations.map((rec) => (
+                <div key={rec.id}>
+                  <ProductListingCard listing={rec} detailBasePath="/equipment" />
+                </div>
+              ))
+            )}
+          </div>
+        </SheetContent>
+      </Sheet>
     </>
   );
 }

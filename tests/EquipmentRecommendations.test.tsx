@@ -46,7 +46,7 @@ const recommended = [
 ];
 
 const server = setupServer(
-  rest.get('/api/equipment/recommendations', (req, res, ctx) => {
+  rest.get('/api/recommendations', (req, res, ctx) => {
     return res(ctx.json(recommended));
   })
 );
@@ -75,10 +75,7 @@ test('loads AI recommendations', async () => {
 
 
 vi.spyOn(auth, 'useAuth').mockReturnValueOnce({ user: null, isLoading: false } as any);
-test('redirects to login when not authenticated', () => {
-  const navigateMock = vi.fn();
-  vi.spyOn(require('react-router-dom'), 'useNavigate').mockReturnValue(navigateMock);
-
+test('shows login modal when not authenticated', () => {
   render(
     <MemoryRouter initialEntries={['/equipment']}>
       <AppLayout>
@@ -88,5 +85,5 @@ test('redirects to login when not authenticated', () => {
   );
 
   fireEvent.click(screen.getByText(/AI Recommendations/i));
-  expect(navigateMock).toHaveBeenCalledWith('/login?next=/equipment&reco=1');
+  expect(screen.getByText(/please login to see ai recommendations/i)).toBeInTheDocument();
 });
