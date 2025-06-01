@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ErrorBoundary as LocalErrorBoundary } from './components/ErrorBoundary';
 import { ErrorBoundary } from 'react-error-boundary';
@@ -14,14 +14,11 @@ import InstallPrompt from "./components/InstallPrompt";
 import {
   AuthRoutes,
   DashboardRoutes,
-  MarketplaceRoutes,
-  TalentRoutes,
   AdminRoutes,
   MobileAppRoutes,
   ContentRoutes,
   ErrorRoutes,
   EnterpriseRoutes,
-  CommunityRoutes,
   DeveloperRoutes
 } from './routes';
 import Home from './pages/Home';
@@ -54,13 +51,15 @@ import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
 import OpenAppRedirect from './pages/OpenAppRedirect';
 import ContactPage from './pages/Contact';
 import ZionHireAI from './pages/ZionHireAI';
-import { lazy } from 'react';
 import WishlistPage from './pages/Wishlist';
 import FavoritesPage from './pages/Favorites';
 import CartPage from './pages/Cart';
 const Checkout = lazy(() => import('./pages/Checkout'));
 const RequestQuotePage = lazy(() => import('./pages/RequestQuote'));
 const RecommendationsPage = lazy(() => import('./pages/RecommendationsPage'));
+const MarketplaceRoutes = lazy(() => import(/* webpackChunkName: "MarketplaceRoutes" */ './routes/MarketplaceRoutes'));
+const TalentRoutes = lazy(() => import(/* webpackChunkName: "TalentRoutes" */ './routes/TalentRoutes'));
+const CommunityRoutes = lazy(() => import(/* webpackChunkName: "CommunityRoutes" */ './routes/CommunityRoutes'));
 import Profile from './pages/Profile';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
