@@ -3,9 +3,7 @@ import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
-feat/i18n-implementation
-import LanguageSwitcher from '@/components/LanguageSwitcher'; // Import the new LanguageSwitcher
-main
+import { useTranslation } from 'react-i18next';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
@@ -20,8 +18,6 @@ export function AppHeader() {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   const { user } = useAuth();
-  const firstName =
-    user?.displayName?.split(' ')[0] || user?.name?.split(' ')[0];
   
   // Try to access the messaging context, but provide a fallback value if it's not available
   let unreadCount = 0;
@@ -59,9 +55,6 @@ export function AppHeader() {
           </div>
 
           <PointsBadge />
-feat/i18n-implementation
-          <LanguageSwitcher /> {/* Replace LanguageSelector with LanguageSwitcher */}
-main
           {/* Replace the greeting span with UserProfileDropdown */}
           {user && (
             <div className="ml-4"> {/* Added a div for potential spacing adjustments if needed */}

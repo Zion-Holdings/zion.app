@@ -8,6 +8,7 @@ import { useFavorites } from "@/hooks/useFavorites";
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { Heart, MessageSquare, ShoppingCart, CreditCard } from "lucide-react";
+import { LanguageSelector } from '@/components/header/LanguageSelector';
 
 interface MainNavigationProps {
   isAdmin?: boolean;
@@ -143,7 +144,6 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                   )}
                 </Link>
               </li>
-feat/wallet-page
             )}
 
             {/* Wallet link */}
@@ -165,7 +165,6 @@ feat/wallet-page
                   {t('nav.wallet', 'Wallet')} {/* Fallback to 'Wallet' if translation is missing */}
                 </Link>
               </li>
-main
             )}
 
             {/* Messages link with unread counter */}
@@ -174,21 +173,17 @@ main
                 <Link
                   to="/messages"
                   aria-label={t('nav.messages')}
-feat/wallet-page
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
                     "nav-link",
                     "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
-main
                     location.pathname === "/messages" || location.pathname === "/inbox"
                       ? "bg-zion-purple/20 text-zion-cyan"
                       : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
                   )}
                 >
                   <MessageSquare className="w-4 h-4 mr-1" />
-feat/wallet-page
                   {t('nav.messages')} {/* Assuming 'messages' key exists */}
-main
                   {unreadCount > 0 && (
                     <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                       {unreadCount}
@@ -199,24 +194,21 @@ main
             )}
 
             {/* Cart icon with badge */}
-feat/wallet-page
             <li className="nav-item">
               <Link
                 to="/cart"
+                aria-label={t('nav.cart')}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={cn(
                   "nav-link",
                   "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
-main
                   location.pathname.startsWith('/cart')
                     ? 'bg-zion-purple/20 text-zion-cyan'
                     : 'text-white hover:bg-zion-purple/10 hover:text-zion-cyan'
                 )}
               >
                 <ShoppingCart className="w-4 h-4 mr-1" />
-feat/wallet-page
                 {t('nav.cart', 'Cart')} {/* Added translation for Cart with fallback */}
-main
                 {cartCount > 0 && (
                   <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                     {cartCount}
@@ -225,6 +217,9 @@ main
               </Link>
             </li>
           </ul>
+          <div className="flex items-center gap-2 mt-4 md:mt-0 md:ml-auto">
+            <LanguageSelector />
+          </div>
         </div>
       </nav>
     </>
