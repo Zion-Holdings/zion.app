@@ -20,6 +20,7 @@ import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
 import { NotificationProvider } from './context';
+import { ThemeProvider } from '@/context/ThemeContext'; // Import ThemeProvider
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
@@ -55,9 +56,11 @@ try {
                       <ViewModeProvider>
                         <CartProvider>
                           <ReferralMiddleware>
-                            <AppLayout>
-                              <App />
-                            </AppLayout>
+                            <ThemeProvider> {/* Add ThemeProvider here */}
+                              <AppLayout>
+                                <App />
+                              </AppLayout>
+                            </ThemeProvider> {/* Close ThemeProvider here */}
                           </ReferralMiddleware>
                         </CartProvider>
                       </ViewModeProvider>
