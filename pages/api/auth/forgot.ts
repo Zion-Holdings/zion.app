@@ -1,27 +1,23 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import crypto from 'crypto';
 import { sendEmailWithSendGrid } from '../../../src/lib/email';
-
-// Placeholder for database interaction (replace with your actual DB client)
-const db = {
-  user: {
-    findUnique: async (options: { where: { email: string } }) => {
-      // Mock finding a user
-      if (options.where.email === 'exists@example.com') {
-        return { id: 'user-id-123', email: options.where.email, passwordHash: 'hashedpassword' };
-      }
-      return null;
-    },
-    update: async (options: { where: { id: string }, data: { resetToken?: string | null, resetTokenExpiry?: Date | null } }) => {
-      // Mock updating user with token
-      console.log('Mock DB: User updated with token', options.data);
-      return { ...options.data };
-    }
-  }
-};
-
+import prisma from '../../../src/lib/db'; // Import Prisma client
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  // Environment variable checks
+  if (!process.env.SENDGRID_API_KEY) {
+    console.error('Missing SENDGRID_API_KEY environment variable. Password reset emails may not be sent.');
+  }
+  if (!process.env.SENDGRID_FROM_EMAIL) {
+    console.error('Missing SENDGRID_FROM_EMAIL environment variable. Password reset emails may not be sent.');
+  }
+  if (!process.env.SENDGRID_RESET_TEMPLATE_ID) {
+    console.error('Missing SENDGRID_RESET_TEMPLATE_ID environment variable. Password reset emails may not be configured correctly.');
+  }
+  if (!process.env.NEXT_PUBLIC_APP_URL) {
+    console.warn('Missing NEXT_PUBLIC_APP_URL environment variable. Defaulting to http://localhost:3000 for reset URLs.');
+  }
+
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
     return res.status(405).end(`Method ${req.method} Not Allowed`);
@@ -34,13 +30,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const user = await db.user.findUnique({ where: { email } });
+    const user = await prisma.user.findUnique({ where: { email } });
 
     if (!user) {
-      // It's good practice not to reveal if an email exists or not for security reasons.
-      // However, for debugging or specific requirements, you might change this.
       console.log(`Forgot password attempt for non-existent email: ${email}`);
-      // Send a generic success response to prevent email enumeration
       return res.status(200).json({ message: 'If your email address exists in our system, you will receive a password reset link.' });
     }
 
@@ -52,29 +45,31 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const passwordResetExpires = new Date(Date.now() + 3600000); // 1 hour from now
 
-    await db.user.update({
+    // Ensure these field names (resetToken, resetTokenExpiry) match your Prisma User schema.
+    await prisma.user.update({
       where: { id: user.id },
       data: {
-        resetToken: passwordResetToken,
-        resetTokenExpiry: passwordResetExpires,
+        resetToken: passwordResetToken,      // Or the equivalent field in your schema
+        resetTokenExpiry: passwordResetExpires, // Or the equivalent field in your schema
       },
     });
 
-    // Construct reset URL - ensure your frontend URL is correctly configured
-    const resetUrl = `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/reset-password/${resetToken}`;
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const resetUrl = `${appUrl}/reset-password/${resetToken}`;
 
-    // Send the email via SendGrid
     await sendEmailWithSendGrid({
       to: user.email,
-      templateId: process.env.SENDGRID_RESET_TEMPLATE_ID || '',
+      templateId: process.env.SENDGRID_RESET_TEMPLATE_ID || '', // sendEmailWithSendGrid already handles missing templateId by logging
       dynamicTemplateData: { resetUrl },
     });
 
     return res.status(200).json({ message: 'If your email address exists in our system, you will receive a password reset link.' });
 
-  } catch (error) {
-    console.error('Forgot Password Error:', error);
-    // Generic error for the client
-    return res.status(500).json({ message: 'An error occurred. Please try again later.' });
+  } catch (error: any) { // Catch any error
+    console.error('Forgot Password Processing Error:', error);
+    // Log the detailed error for server-side inspection
+    // For Prisma errors, error.message or error.code might be useful,
+    // but avoid sending detailed Prisma error messages to the client.
+    return res.status(500).json({ message: 'An internal server error occurred. Please try again later.' });
   }
 }
