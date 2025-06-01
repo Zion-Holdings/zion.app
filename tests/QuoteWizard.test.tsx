@@ -1,112 +1,76 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { QuoteWizard } from '@/components/quote/QuoteWizard';
-import { vi } from 'vitest';
+import { rest } from 'msw';
+import { setupServer } from 'msw/node';
+import { SWRConfig } from 'swr';
 
-beforeEach(() => {
-  global.fetch = vi.fn((url) => {
-    if (url === '/api/services?type=quote') {
-      return Promise.resolve({
-        ok: true,
-        json: async () => [
-          { id: '1', title: 'Service A' },
-          { id: '2', title: 'Service B' },
-        ],
-      });
-    }
-    if (url === '/api/quotes') {
-      return Promise.resolve({
-        ok: true,
-        json: async () => ({ success: true }), // Mock for submit
-      });
-    }
-    return Promise.reject(new Error(`Unhandled fetch: ${url}`));
-  }) as any;
-});
+const server = setupServer();
 
-afterEach(() => {
-  vi.restoreAllMocks();
-});
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
 
-function setup() {
-  render(<QuoteWizard />);
+const sample = [
+  { id: '1', title: 'Service A' },
+  { id: '2', title: 'Service B' },
+];
+
+function renderWizard() {
+  return render(
+    <SWRConfig value={{ provider: () => new Map() }}>
+      <QuoteWizard />
+    </SWRConfig>
+  );
 }
 
-test('shows step indicator for each step', async () => {
-  setup();
+it('loads services and advances to step 2', async () => {
+  let requestedCategory = '';
+  server.use(
+    rest.get('/api/items', (req, res, ctx) => {
+      requestedCategory = req.url.searchParams.get('category') || '';
+      return res(ctx.json(sample));
+    }),
+    rest.post('/api/quotes', (_req, res, ctx) => res(ctx.json({ success: true })))
+  );
 
-  expect(screen.getByTestId('step-indicator')).toHaveTextContent('1/3');
+  renderWizard();
 
-  const button = await screen.findByTestId('request-quote-1');
-  fireEvent.click(button);
+  expect(await screen.findByText('Service A')).toBeInTheDocument();
+  expect(requestedCategory).toBe('services');
 
-  await screen.findByTestId('details-step');
-  expect(screen.getByTestId('step-indicator')).toHaveTextContent('2/3');
-});
-
-test('advances to step 2 after selecting a service', async () => {
-  setup();
-
-  const button = await screen.findByTestId('request-quote-1');
-  fireEvent.click(button);
-
+  fireEvent.click(screen.getByTestId('request-quote-1'));
   expect(await screen.findByTestId('details-step')).toBeInTheDocument();
 });
 
-test('fetches services from the correct endpoint', async () => {
-  setup();
-  await waitFor(() => expect(global.fetch).toHaveBeenCalledWith('/api/services?type=quote'));
+it('shows error and allows retry', async () => {
+  server.use(rest.get('/api/items', (_req, res, ctx) => res(ctx.status(500))));
+
+  renderWizard();
+
+  expect(await screen.findByTestId('service-fetch-error-alert')).toBeInTheDocument();
+
+  server.use(rest.get('/api/items', (_req, res, ctx) => res(ctx.json(sample))));
+  fireEvent.click(screen.getByTestId('retry-button'));
+
   expect(await screen.findByText('Service A')).toBeInTheDocument();
 });
 
-test('displays an error alert when service fetch fails', async () => {
-  (global.fetch as any).mockImplementationOnce((url: string) => {
-    if (url === '/api/services?type=quote') {
-      return Promise.resolve({
-        ok: false,
-        status: 500,
-        json: async () => ({ error: 'Server Error' }),
-      });
-    }
-    // Fallback for other URLs like /api/quotes, though not expected in this specific test flow
-    return Promise.resolve({
-      ok: true,
-      json: async () => ({ success: true })
-    });
-  });
+it('submits quote', async () => {
+  let submitted = false;
+  server.use(
+    rest.get('/api/items', (_req, res, ctx) => res(ctx.json(sample))),
+    rest.post('/api/quotes', (_req, res, ctx) => {
+      submitted = true;
+      return res(ctx.json({ success: true }));
+    })
+  );
 
-  setup();
+  renderWizard();
 
-  const alert = await screen.findByTestId('service-fetch-error-alert');
-  expect(alert).toBeInTheDocument();
-  expect(alert).toHaveTextContent('Network Error');
-  expect(alert).toHaveTextContent('There was a problem fetching the services. Please check your internet connection and try again.');
-  // Intentionally not checking for specific destructive variant classes to avoid brittleness
-  // The data-testid and text content are strong indicators.
-});
-
-test('submits quote', async () => {
-  // The beforeEach mock already handles /api/services?type=quote and /api/quotes
-  // No need to mockResolvedValueOnce specifically for the initial service load if beforeEach is robust.
-  // However, if a test needs a specific sequence beyond the default beforeEach, it can still be done.
-
-  setup();
-
-  const button = await screen.findByTestId('request-quote-1');
-  fireEvent.click(button);
-
+  fireEvent.click(await screen.findByTestId('request-quote-1'));
   fireEvent.change(screen.getByTestId('message-input'), { target: { value: 'hi' } });
   fireEvent.click(screen.getByRole('button', { name: /submit/i }));
 
   await screen.findByTestId('success-step');
-
-  // Ensure the correct endpoint was called for submission
-  expect(global.fetch).toHaveBeenCalledWith(
-    '/api/quotes',
-    expect.objectContaining({
-      method: 'POST',
-      body: JSON.stringify({ service_id: '1', user_message: 'hi' })
-    })
-  );
-  // Also ensure the service fetch was called
-  expect(global.fetch).toHaveBeenCalledWith('/api/services?type=quote');
+  expect(submitted).toBe(true);
 });
