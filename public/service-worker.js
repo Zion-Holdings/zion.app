@@ -20,6 +20,19 @@ workbox.routing.registerRoute(
   })
 );
 
+workbox.routing.registerRoute(
+  ({ url }) => url.href.includes('/product_images/'),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'product-images',
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 100,
+        maxAgeSeconds: 7 * 24 * 60 * 60,
+      })
+    ]
+  })
+);
+
 const bgSyncPlugin = new workbox.backgroundSync.BackgroundSyncPlugin('apiQueue', {
   maxRetentionTime: 24 * 60,
   callbacks: {
