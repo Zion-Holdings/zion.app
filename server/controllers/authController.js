@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const { jwtSecret } = require('../config');
 
-exports.login = async function(req, res) {
+exports.loginUser = async function (req, res) {
   console.info('[LOGIN]', req.body.email);
   console.info('[ENV] JWT_SECRET:', jwtSecret);
   try {
@@ -12,7 +12,7 @@ exports.login = async function(req, res) {
     if (!user) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
-    const isMatch = await bcrypt.compare(req.body.password, user.passwordHash);
+    const isMatch = bcrypt.compareSync(req.body.password, user.passwordHash);
     if (!isMatch) return res.status(401).json({ message: 'Invalid credentials' });
 
     const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: '7d' });
@@ -25,3 +25,6 @@ exports.login = async function(req, res) {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+// Maintain backwards compatibility if other modules still call `login`
+exports.login = exports.loginUser;

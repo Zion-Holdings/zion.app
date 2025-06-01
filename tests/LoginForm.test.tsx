@@ -68,7 +68,7 @@ describe('LoginForm', () => {
     fireEvent.submit(screen.getByRole('button', { name: /login/i }));
 
     await screen.findByRole('button', { name: /login/i });
-    expect(toastMod.toast.error).toHaveBeenCalledWith('Invalid credentials');
+    expect(toastMod.toast.error).toHaveBeenCalledWith('Incorrect email or password');
   });
 });
 
