@@ -82,10 +82,17 @@
   color: var(--foreground); /* Use theme variable */
   padding: 0.5rem;
   display: block;
+  outline: none;
 }
 
 .nav-link:hover {
   color: var(--primary); /* Use theme variable */
+}
+
+.nav-link:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
 }
 
 /* Mobile Styles - using 768px as a breakpoint */

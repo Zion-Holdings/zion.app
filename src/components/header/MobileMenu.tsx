@@ -88,8 +88,9 @@ export function MobileMenu({ unreadCount = 0, onClose }: MobileMenuProps) {
           <Link
             key={item.name}
             to={item.href}
+            aria-label={item.name}
             className={cn(
-              "flex items-center px-6 py-3 text-base font-medium",
+              "flex items-center px-6 py-3 text-base font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
               item.matches(location.pathname)
                 ? "bg-primary/20 text-primary border-l-4 border-primary"
                 : "text-foreground hover:bg-primary/10 hover:text-primary"

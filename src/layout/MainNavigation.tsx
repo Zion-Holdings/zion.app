@@ -83,10 +83,11 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   return (
     <>
       <button
-        className="navbar-toggler md:hidden ml-auto mr-4" // Added ml-auto and mr-4 for positioning
+        className="navbar-toggler md:hidden ml-auto mr-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" // Added ml-auto and mr-4 for positioning
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         aria-expanded={isMobileMenuOpen}
         aria-controls="main-navbar-collapse"
+        aria-label="Toggle navigation"
       >
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -105,10 +106,11 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
               <li key={link.name} className="nav-item"> {/* Added nav-item */}
                 <Link
                   to={link.href}
+                  aria-label={link.name}
                   onClick={() => setIsMobileMenuOpen(false)} // Close menu on link click
                   className={cn(
                     "nav-link", // Added nav-link
-                    "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors", // Kept existing styling
+                    "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary", // Kept existing styling
                     link.matches(location.pathname)
                       ? "bg-zion-purple/20 text-zion-cyan"
                       : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
@@ -128,7 +130,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                   onClick={() => setIsMobileMenuOpen(false)} // Close menu on link click
                   className={cn(
                     "nav-link", // Added nav-link
-                    "relative inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors", // Kept existing styling
+                    "relative inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
                     location.pathname === "/wishlist"
                       ? "bg-zion-purple/20 text-zion-cyan"
                       : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
@@ -153,7 +155,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
                     "nav-link",
-                    "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
+                    "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
                     location.pathname === "/wallet"
                       ? "bg-zion-purple/20 text-zion-cyan"
                       : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
@@ -174,7 +176,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
                     "nav-link",
-                    "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
+                    "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
                     location.pathname === "/messages" || location.pathname === "/inbox"
                       ? "bg-zion-purple/20 text-zion-cyan"
                       : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
@@ -199,7 +201,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={cn(
                   "nav-link",
-                  "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
+                  "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
                   location.pathname.startsWith('/cart')
                     ? 'bg-zion-purple/20 text-zion-cyan'
                     : 'text-white hover:bg-zion-purple/10 hover:text-zion-cyan'
