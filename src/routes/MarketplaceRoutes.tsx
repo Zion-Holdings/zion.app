@@ -80,6 +80,7 @@ const MarketplaceRoutes = () => {
 
       {/* Checkout Route - accessible to guests */}
       <Route path="/checkout" element={<Checkout />} />
+      <Route path="/checkout/:productId" element={<Checkout />} />
       <Route path="/success" element={<PaymentSuccess />} />
       
       {/* Project Room Routes */}

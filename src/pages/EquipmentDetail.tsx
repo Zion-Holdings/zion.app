@@ -202,18 +202,12 @@ export default function EquipmentDetail() {
 
   const handleBuyNow = async () => {
     if (!isAuthenticated) {
-      const next = encodeURIComponent(location.pathname + location.search); // Capture full current path
-      navigate(`/login?next=${next}`, {
-        state: {
-          pendingAction: 'buyNow',
-          pendingActionArgs: { id, title: equipment.name, price: equipment.price },
-        },
-      });
+      navigate(`/login?next=/checkout/${id}`);
       return;
     }
 
     dispatch(addItem({ id, title: equipment.name, price: equipment.price }));
-    navigate('/checkout');
+    navigate(`/checkout/${id}`);
   };
 
   return (

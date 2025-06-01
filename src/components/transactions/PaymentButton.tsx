@@ -38,7 +38,7 @@ export function PaymentButton({
         description: "Please sign in to make a purchase.",
       });
 
-      const next = encodeURIComponent(`/checkout?sku=${serviceId}`);
+      const next = `/checkout/${serviceId}`;
       navigate(`/login?next=${next}`);
       return;
     }
