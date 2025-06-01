@@ -52,7 +52,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   
   useEffect(() => {
     // Set initial language from localStorage or browser
-    const savedLang = safeStorage.getItem('zion_language') as SupportedLanguage;
+    const savedLang = safeStorage.getItem('i18n_lang') as SupportedLanguage;
     if (savedLang && supportedLanguages.some(lang => lang.code === savedLang)) {
       i18n.changeLanguage(savedLang);
       setCurrentLanguage(savedLang);
@@ -101,7 +101,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     try {
       await i18n.changeLanguage(lang);
       setCurrentLanguage(lang);
-      safeStorage.setItem('zion_language', lang);
+      safeStorage.setItem('i18n_lang', lang);
       
       // Get language name for toast
       const langName = supportedLanguages.find(l => l.code === lang)?.name || lang;

@@ -52,7 +52,7 @@ i18n.on('languageChanged', (lng) => {
   document.documentElement.dir = i18n.dir();
 
   // Save language preference to localStorage
-  safeStorage.setItem('zion_language', lng);
+  safeStorage.setItem('i18n_lang', lng);
   
   // If user is authenticated, save language preference to profile
   // This will be implemented in the LanguageContext
