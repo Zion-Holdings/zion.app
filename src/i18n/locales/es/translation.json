@@ -36,7 +36,13 @@
     "forgot_password": "¿Olvidó su contraseña?",
     "remember_me": "Recordarme",
     "login_success": "Sesión iniciada correctamente",
-    "logout_success": "Sesión cerrada correctamente"
+    "logout_success": "Sesión cerrada correctamente",
+    "errors": {
+      "user_not_found": "No se encontró una cuenta con ese correo.",
+      "wrong_password": "Contraseña incorrecta. Inténtalo de nuevo.",
+      "account_locked": "Tu cuenta está bloqueada. Contacta al soporte.",
+      "generic": "Error de inicio de sesión. Inténtalo de nuevo."
+    }
   },
   "home": {
     "hero_title": "El Futuro del Mercado de Tecnología e IA",

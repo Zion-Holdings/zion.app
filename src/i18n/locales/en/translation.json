@@ -39,7 +39,13 @@
     "forgot_password": "Forgot Password?",
     "remember_me": "Remember Me",
     "login_success": "Logged in successfully",
-    "logout_success": "Logged out successfully"
+    "logout_success": "Logged out successfully",
+    "errors": {
+      "user_not_found": "No account found with that email.",
+      "wrong_password": "Incorrect password. Please try again.",
+      "account_locked": "Your account is locked. Please contact support.",
+      "generic": "Login failed. Please try again."
+    }
   },
   "home": {
     "hero_title": "The Future of Tech & AI Marketplace",
