@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { supabase, getFromProfiles } from "../../integrations/supabase/client";
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '@/integrations/firebase/client';
 import { useAuthOperations } from "../../hooks/useAuthOperations";
 import { AuthContext } from "./AuthContext";
 import { cleanupAuthState } from "../../utils/authUtils";
@@ -180,6 +182,12 @@ main
       }
     );
 
+    // Firebase auth state listener
+    const unsubscribeFirebase = onAuthStateChanged(auth, (fbUser) => {
+      setUser(fbUser ? (fbUser as any) : null);
+      setIsLoading(false);
+    });
+
     // Initial session check
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (!session) {
@@ -193,6 +201,7 @@ main
 
     return () => {
       subscription.unsubscribe();
+      unsubscribeFirebase();
     };
   }, [navigate]);
 
