@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { ListingScoreCard } from '@/components/ListingScoreCard';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useDelayedError } from '@/hooks/useDelayedError';
 
 export default function RecommendationsPage() {
   const { user } = useAuth();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const delayedError = useDelayedError(error);
 
   useEffect(() => {
     if (!user) return;
@@ -24,7 +26,7 @@ export default function RecommendationsPage() {
       .finally(() => setLoading(false));
   }, [user]);
 
-  if (loading) {
+  if (loading || (error && !delayedError)) {
     return (
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {Array.from({ length: 5 }).map((_, i) => (
@@ -43,7 +45,7 @@ export default function RecommendationsPage() {
     );
   }
 
-  if (error) {
+  if (delayedError) {
     return (
       <div className="py-12 text-center text-red-400">Failed to load recommendations.</div>
     );

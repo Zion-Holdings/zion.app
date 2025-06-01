@@ -11,6 +11,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useNavigate, useLocation } from "react-router-dom";
 import useSWRMutation from "swr/mutation";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useDelayedError } from '@/hooks/useDelayedError';
 
 // Sample datacenter equipment listings
 // const EQUIPMENT_LISTINGS: ProductListing[] = [ // Keep for fallback or remove if not needed after API is stable
@@ -374,6 +375,7 @@ export default function EquipmentPage() {
     queryKey: ['equipment'],
     queryFn: fetchEquipment,
   });
+  const delayedError = useDelayedError(equipmentError);
 
   useEffect(() => {
     if (fetchedEquipment) {
@@ -427,7 +429,7 @@ export default function EquipmentPage() {
     }
   }, [user, location.search]);
 
-  if (isLoadingEquipment) {
+  if (isLoadingEquipment || (equipmentError && !delayedError)) {
     return (
       <div data-testid="loading-state-equipment" className="container mx-auto p-4 space-y-4">
         <div className="flex justify-end mb-6">
@@ -454,10 +456,10 @@ export default function EquipmentPage() {
     );
   }
 
-  if (equipmentError) {
+  if (delayedError) {
     return (
       <div data-testid="error-state-equipment" className="py-12 text-center space-y-4">
-        <p className="text-red-400">Failed to load equipment: {equipmentError.message}</p>
+        <p className="text-red-400">Failed to load equipment: {delayedError.message}</p>
         <Button data-testid="retry-button-equipment" onClick={() => refetchEquipment()}>
           Retry
         </Button>

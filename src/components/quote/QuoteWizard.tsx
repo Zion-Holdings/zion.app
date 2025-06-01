@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useQuoteWizard } from '@/hooks/useQuoteWizard';
+import { useDelayedError } from '@/hooks/useDelayedError';
 import { Loader2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -28,8 +29,9 @@ export function QuoteWizard() {
   const [message, setMessage] = useState('');
   const [selectionError, setSelectionError] = useState('');
   const { data, error, mutate } = useQuoteWizard('services');
+  const delayedError = useDelayedError(error);
 
-  const loading = !data && !error;
+  const loading = !data && !delayedError;
 
   const handleSelect = (id: string) => {
     setSelectedItem(id);
@@ -66,7 +68,7 @@ export function QuoteWizard() {
           </div>
         )}
 
-        {error && (
+        {delayedError && (
           <div className="space-y-2" data-testid="service-fetch-error-alert">
             <Alert variant="destructive">
               <AlertTitle>Network Error</AlertTitle>
