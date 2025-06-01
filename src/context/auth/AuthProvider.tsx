@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuthState } from "./useAuthState";
 import { useAuthEventHandlers } from "./useAuthEventHandlers";
 import { mapProfileToUser } from "./profileMapper";
-import { loginUser } from "@/services/authService";
+import { loginUser, registerUser } from "@/services/authService";
 import { safeStorage } from "@/utils/safeStorage";
 import { toast } from "@/hooks/use-toast"; // Import toast
 import { useDispatch } from 'react-redux';
@@ -90,6 +90,22 @@ codex/implement-ai-recommendations-endpoint
 main
 
     return { error: null }; // Successful login
+  };
+
+  // Register via backend and persist auth info
+  const register = async (name: string, email: string, password: string) => {
+    try {
+      const { res, data } = await registerUser(name, email, password);
+      if (!res.ok || !data?.token || !data?.user) {
+        return { error: data?.message || 'Registration failed' };
+      }
+      safeStorage.setItem('auth', JSON.stringify({ token: data.token, user: data.user }));
+      setTokens({ accessToken: data.token, refreshToken: data.refreshToken || null });
+      setUser(data.user);
+      return { error: null };
+    } catch (err: any) {
+      return { error: err?.message || 'Registration failed' };
+    }
   };
 
   // Wrapper for signup to match the AuthContextType interface
@@ -185,6 +201,7 @@ main
     isLoading,
     isAuthenticated: !!user,
     login,
+    register,
     signup,
     logout,
     resetPassword,
