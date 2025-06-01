@@ -1,6 +1,8 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { ErrorBoundary } from './components/ErrorBoundary';
+import { ErrorBoundary as LocalErrorBoundary } from './components/ErrorBoundary';
+import { ErrorBoundary } from 'react-error-boundary';
+import { captureException } from './utils/sentry';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { WalletProvider } from './context/WalletContext'; // Added WalletProvider
@@ -63,6 +65,17 @@ import RecommendationsPage from './pages/RecommendationsPage';
 import { SupportChatbot } from './components/SupportChatbot';
 import PrivateRoute from './components/PrivateRoute';
 
+function RootErrorFallback() {
+  return (
+    <div role="alert" className="p-4 text-center space-y-2">
+      <p>Something went wrong</p>
+      <button onClick={() => window.location.reload()} className="underline">
+        Reload
+      </button>
+    </div>
+  );
+}
+
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/categories/all', element: <AllCategoriesPage /> },
@@ -117,12 +130,19 @@ const App = () => {
   useScrollToTop();
   console.log("App.tsx: Rendering Tree");
   return (
-    <WhitelabelProvider>
-      <WalletProvider> {/* Added WalletProvider */}
-        <ThemeProvider defaultTheme="dark">
-          <ToastProvider>
-          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-            <ErrorBoundary>
+    <ErrorBoundary
+      FallbackComponent={RootErrorFallback}
+      onError={(error, info) => {
+        captureException(error);
+        if (info?.componentStack) captureException(info.componentStack);
+      }}
+    >
+      <WhitelabelProvider>
+        <WalletProvider> {/* Added WalletProvider */}
+          <ThemeProvider defaultTheme="dark">
+            <ToastProvider>
+            <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+              <LocalErrorBoundary>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
@@ -139,7 +159,7 @@ const App = () => {
             <Route path="/developers/*" element={<DeveloperRoutes />} />
             <Route path="*" element={<ErrorRoutes />} />
           </Routes>
-          </ErrorBoundary>
+              </LocalErrorBoundary>
         </Suspense>
         <OfflineToast />
         <SupportChatbot />
@@ -147,6 +167,7 @@ const App = () => {
           </ToastProvider>
       </ThemeProvider>
     </WhitelabelProvider>
+    </ErrorBoundary>
   );
 };
 
