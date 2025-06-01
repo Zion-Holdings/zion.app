@@ -9,6 +9,7 @@ import { useAuthEventHandlers } from "./useAuthEventHandlers";
 import { mapProfileToUser } from "./profileMapper";
 import { loginUser } from "@/services/authService";
 import { safeStorage } from "@/utils/safeStorage";
+import { toast } from "@/hooks/use-toast"; // Import toast
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const {
@@ -36,27 +37,60 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   // Wrapper for login to match the AuthContextType interface
   const login = async (email: string, password: string) => {
-    const { res, data } = await loginUser(email, password);
+    const { res, data } = await loginUser(email, password); // Calls /api/auth/login
 
-    if (res.status === 400) {
+    // Check for specific "Email not confirmed" error first
+    if (res.status === 403 && data?.code === "EMAIL_NOT_CONFIRMED") {
+      toast({
+        title: "Login Failed",
+        description: data.error || "Email not confirmed. Please check your inbox to verify your email.",
+        variant: "destructive",
+      });
+      return { error: data.error || "Email not confirmed. Please check your inbox to verify your email." };
+    }
+
+    // Handle other errors from the API call
+    if (res.status === 400) { // Bad request (e.g. missing fields)
+      toast({ title: "Login Failed", description: data?.error || 'Missing email or password', variant: "destructive" });
       return { error: data?.error || 'Missing email or password' };
     }
-    if (res.status === 401) {
+    if (res.status === 401) { // Unauthorized (invalid credentials)
+      toast({ title: "Login Failed", description: data?.error || 'Invalid credentials', variant: "destructive" });
       return { error: data?.error || 'Invalid credentials' };
     }
+    // Catch-all for other non-200 statuses from loginUser
     if (res.status !== 200) {
+      toast({ title: "Login Failed", description: data?.error || 'An unexpected error occurred during login.', variant: "destructive" });
       return { error: data?.error || 'Login failed' };
     }
 
+    // At this point, loginUser call was successful (200 OK)
     setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
 
-    // Also sign in client-side so Supabase auth state is in sync
-    await loginImpl({ email, password });
+    // Now, attempt client-side Supabase sign-in to synchronize auth state
+    // loginImpl is useEmailAuth.login which calls supabase.auth.signInWithPassword
+    const clientLoginResult = await loginImpl({ email, password });
 
-    const next = new URLSearchParams(location.search).get('next') || '/';
-    navigate(next, { replace: true });
+    if (clientLoginResult?.error) {
+      // useEmailAuth.login already shows a toast on error.
+      // We just need to return the error to the caller of AuthProvider.login
+      console.error("Client-side login after server confirmation failed:", clientLoginResult.error);
+      // It's possible the server token is valid but client Supabase has an issue.
+      // For now, treat as a login failure and let user retry.
+      // Potentially clear tokens if this state is problematic: await logout();
+      return { error: (clientLoginResult.error as any)?.message || "Client-side login failed." };
+    }
 
-    return { error: null };
+    // If clientLoginResult is successful, onAuthStateChange will handle setUser and navigation.
+    // The navigation part that was here previously is now primarily handled by onAuthStateChange
+    // upon the 'SIGNED_IN' event triggered by loginImpl's success.
+    // However, we can still keep a fallback navigation here if needed,
+    // but ensure it doesn't conflict if onAuthStateChange is quick.
+    // For now, let onAuthStateChange handle it.
+    // const next = new URLSearchParams(location.search).get('next') || '/';
+    // navigate(next, { replace: true });
+
+    return { error: null }; // Successful login
   };
 
   // Wrapper for signup to match the AuthContextType interface
