@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
-// Link and Button are not used directly in the modified logic, but might be used by PostCard or EmptyState
-// import Link from 'next/link';
-// import { Button } from '@/components/ui/button';
-// MessageSquare is not used
-// import { MessageSquare } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import EmptyState from '@/components/community/EmptyState';
 import { createClient } from '@supabase/supabase-js'; // For getServerSideProps
 import PostCard from '@/components/community/PostCard';
@@ -69,6 +67,22 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, hasSession, c
         <title>{`${category} Forum – ZionAI`}</title>
       </Head>
       <main className="container py-8">
+        <div className="flex justify-end mb-6">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                {hasSession ? (
+                  <Button asChild>
+                    <Link href={`/community/create?category=${category}`}>Create New Post</Link>
+                  </Button>
+                ) : (
+                  <Button disabled>Create New Post</Button>
+                )}
+              </TooltipTrigger>
+              {!hasSession && <TooltipContent>Login required</TooltipContent>}
+            </Tooltip>
+          </TooltipProvider>
+        </div>
         {posts && posts.length > 0 ? (
           <div className="space-y-4">
             {posts.map((post) => (
@@ -80,8 +94,8 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, hasSession, c
         ) : (
           <EmptyState
             title="No posts yet"
-            subtitle="Be first to contribute!"
-            cta="Create Post"
+            subtitle="Be the first to post"
+            cta="Create New Post"
             href={`/community/create?category=${category}`}
             hasSession={hasSession}
           />
