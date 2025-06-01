@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuthState } from "./useAuthState";
 import { useAuthEventHandlers } from "./useAuthEventHandlers";
 import { mapProfileToUser } from "./profileMapper";
-import { loginUser } from "@/services/authService";
+import { loginUser, registerUser } from "@/services/authService";
 import { safeStorage } from "@/utils/safeStorage";
 import { toast } from "@/hooks/use-toast"; // Import toast
 
@@ -89,8 +89,15 @@ main
   };
 
   // Wrapper for signup to match the AuthContextType interface
-  const signup = async (email: string, password: string, userData?: any) => {
-    return signupImpl({ email, password, display_name: userData });
+  const signup = async (name: string, email: string, password: string) => {
+    const { res, data } = await registerUser(name, email, password);
+    if (res.ok && data.token && data.user) {
+      safeStorage.setItem('authToken', data.token);
+      setUser(data.user);
+      setTokens({ accessToken: data.token });
+      return { error: null };
+    }
+    return { error: data?.message || 'Signup failed' };
   };
 
   useEffect(() => {

@@ -78,16 +78,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null);
   };
 
-  const signUp = async (email: string, password: string, userData?: Partial<UserDetails>) => {
-    // This would be replaced with actual Supabase auth
-    console.log("Sign up attempted with:", email, userData);
+  const signUp = async (name: string, email: string, password: string) => {
+    console.log("Sign up attempted with:", email, name);
     // Mock successful sign-up
-    setUser({ 
-      id: "mock-user-id", 
-      email, 
-      displayName: userData?.name || "New User",
-      name: userData?.name || "New User",
-      userType: userData?.userType,
+    setUser({
+      id: "mock-user-id",
+      email,
+      displayName: name || "New User",
+      name: name || "New User",
       profileComplete: false
     });
     return { error: null };

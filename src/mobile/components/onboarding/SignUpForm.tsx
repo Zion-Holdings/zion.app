@@ -36,9 +36,7 @@ export function SignUpForm() {
     try {
       setShowVerificationMessage(false); // Reset verification message
       if (signupMode) {
-        const result = await signup(formData.email, formData.password, {
-          name: formData.name,
-        });
+        const result = await signup(formData.name, formData.email, formData.password);
         
         if (result?.error) {
           throw new Error(result.error as any); // Cast to any if type is AuthError

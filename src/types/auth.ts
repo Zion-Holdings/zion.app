@@ -40,7 +40,7 @@ export interface AuthContextType {
   isLoading: boolean;
   isAuthenticated: boolean;
   login: (email: string, password: string) => Promise<{ data?: any; error?: any }>;
-  signup: (email: string, password: string, userData?: any) => Promise<{ error?: any }>;
+  signup: (name: string, email: string, password: string) => Promise<{ error?: any }>;
   logout: () => Promise<void>;
   resetPassword: (email: string) => Promise<{ error?: any }>;
   updateProfile: (data: Partial<UserDetails>) => Promise<{ error?: any }>;
@@ -50,7 +50,7 @@ export interface AuthContextType {
   loginWithWeb3: () => Promise<void>;
   signIn?: (email: string, password: string) => Promise<{ error: any }>;
   signOut?: () => Promise<void>;
-  signUp?: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any }>;
+  signUp?: (name: string, email: string, password: string) => Promise<{ error: any }>;
   setUser?: (user: UserDetails | null) => void;
   tokens?: { accessToken: string; refreshToken?: string } | null;
 }

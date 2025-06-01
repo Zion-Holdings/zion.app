@@ -25,3 +25,31 @@ exports.login = async function(req, res) {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+// Register a new user and return a JWT token
+exports.registerUser = async function(req, res) {
+  try {
+    const { name, email, password } = req.body;
+    const normalizedEmail = email.toLowerCase().trim();
+
+    // Prevent duplicate registrations
+    const existing = await User.findOne({ email: normalizedEmail });
+    if (existing) {
+      return res.status(409).json({ message: 'Email already registered' });
+    }
+
+    const user = new User({ name, email: normalizedEmail });
+    await user.setPassword(password);
+    const savedUser = await user.save();
+
+    const token = jwt.sign({ id: savedUser._id }, jwtSecret, { expiresIn: '7d' });
+
+    res.status(201).json({
+      token,
+      user: { id: savedUser._id, email: savedUser.email, name: savedUser.name },
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
