@@ -45,8 +45,21 @@ export default async function handler(req: Req, res: JsonRes) {
     password,
   });
 
-  if (error || !data?.session) {
-    res.status(401).json({ error: 'Invalid credentials' });
+  if (error) {
+    if (/Email not confirmed/i.test(error.message)) {
+      res.status(403).json({
+        error: "Email not confirmed. Please check your inbox to verify your email.",
+        code: "EMAIL_NOT_CONFIRMED"
+      });
+    } else {
+      res.status(401).json({ error: 'Invalid credentials' });
+    }
+    return;
+  }
+
+  if (!data?.session) {
+    // This case should ideally be caught by the 'error' above, but as a fallback:
+    res.status(401).json({ error: 'Invalid credentials - no session data' });
     return;
   }
 

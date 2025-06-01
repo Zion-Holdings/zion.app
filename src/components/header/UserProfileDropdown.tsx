@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { User } from 'lucide-react'; // Import User icon from lucide-react
-import { useAuth } from '@/hooks/useAuth'; // Import actual useAuth hook
+import { useAuth } from '@/hooks/useAuth';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const UserProfileDropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,10 +33,16 @@ const UserProfileDropdown: React.FC = () => {
     <div style={{ position: 'relative' }} ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'white' }} // Added color for visibility on dark header
+        style={{ background: 'none', border: 'none', cursor: 'pointer' }}
         aria-label="User profile"
       >
-        <User size={24} /> {/* Use Lucide icon */}
+        <Avatar className="h-8 w-8">
+          {user?.avatarUrl ? (
+            <AvatarImage src={user.avatarUrl} alt={user.displayName || user.name || 'User'} />
+          ) : (
+            <AvatarFallback>{(user?.displayName || user?.name || 'U').charAt(0)}</AvatarFallback>
+          )}
+        </Avatar>
       </button>
       {isOpen && (
         <div
@@ -61,6 +67,11 @@ const UserProfileDropdown: React.FC = () => {
             <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }}>
               <Link to="/orders" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>
                 Orders
+              </Link>
+            </li>
+            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }}>
+              <Link to="/wallet" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>
+                Wallet
               </Link>
             </li>
             <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }}>

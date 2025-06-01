@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import UserProfileDropdown from '../UserProfileDropdown'; // Adjust path as necessary
-import { useAuth } from '@/hooks/useAuth'; // Actual path to the hook
+import UserProfileDropdown from '../UserProfileDropdown';
+import { useAuth } from '@/hooks/useAuth';
 
 // Mock react-router-dom
 jest.mock('react-router-dom', () => ({
@@ -11,11 +11,6 @@ jest.mock('react-router-dom', () => ({
   useNavigate: jest.fn(), // Mock useNavigate if logout uses it
 }));
 
-// Mock lucide-react User icon
-jest.mock('lucide-react', () => ({
-  ...jest.requireActual('lucide-react'),
-  User: (props) => <svg data-testid="user-icon" {...props}><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>,
-}));
 
 // Mock useAuth hook
 jest.mock('@/hooks/useAuth');
@@ -38,7 +33,6 @@ describe('UserProfileDropdown', () => {
     });
     render(<UserProfileDropdown />);
     expect(screen.getByLabelText('User profile')).toBeInTheDocument();
-    expect(screen.getByTestId('user-icon')).toBeInTheDocument();
   });
 
   it('does not render when user is not logged in (component itself handles this via Header.tsx logic, so this test might be redundant here, but good for direct testing if component had its own user check)', () => {
@@ -78,6 +72,7 @@ describe('UserProfileDropdown', () => {
     fireEvent.click(avatarButton);
     expect(screen.getByText('Profile')).toBeInTheDocument();
     expect(screen.getByText('Orders')).toBeInTheDocument();
+    expect(screen.getByText('Wallet')).toBeInTheDocument();
     expect(screen.getByText('Logout')).toBeInTheDocument();
 
     // Click to close
@@ -85,7 +80,7 @@ describe('UserProfileDropdown', () => {
     expect(screen.queryByText('Profile')).not.toBeInTheDocument();
   });
 
-  it('dropdown contains Profile, Orders, and Logout items when open', () => {
+  it('dropdown contains Profile, Orders, Wallet, and Logout items when open', () => {
     mockedUseAuth.mockReturnValue({
       user: { id: '1', displayName: 'Test User' },
       logout: mockLogout,
@@ -102,6 +97,10 @@ describe('UserProfileDropdown', () => {
     const ordersLink = screen.getByText('Orders');
     expect(ordersLink).toBeInTheDocument();
     expect(ordersLink.closest('a')).toHaveAttribute('href', '/orders');
+
+    const walletLink = screen.getByText('Wallet');
+    expect(walletLink).toBeInTheDocument();
+    expect(walletLink.closest('a')).toHaveAttribute('href', '/wallet');
 
     expect(screen.getByText('Logout')).toBeInTheDocument();
   });

@@ -20,6 +20,7 @@ export function SignUpForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [signupMode, setSignupMode] = useState(true);
   const [error, setError] = useState("");
+  const [showVerificationMessage, setShowVerificationMessage] = useState(false);
   
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -33,16 +34,22 @@ export function SignUpForm() {
     setIsLoading(true);
     
     try {
+      setShowVerificationMessage(false); // Reset verification message
       if (signupMode) {
-        const { error } = await signup(formData.email, formData.password, {
+        const result = await signup(formData.email, formData.password, {
           name: formData.name,
         });
         
-        if (error) {
-          throw new Error(error);
+        if (result?.error) {
+          throw new Error(result.error as any); // Cast to any if type is AuthError
         }
-        
-        navigate("/mobile");
+
+        if (result?.emailVerificationRequired) {
+          setShowVerificationMessage(true);
+        } else {
+          // Only navigate if email verification is not required
+          navigate("/mobile");
+        }
       } else {
         const { error } = await login(formData.email, formData.password);
         
@@ -105,10 +112,19 @@ export function SignUpForm() {
         <div className="flex-grow border-t border-border"></div>
       </div>
       
-      {error && (
+      {error && !showVerificationMessage && ( // Only show error if not showing verification message
         <Alert variant="destructive">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
+
+      {showVerificationMessage && (
+        <Alert variant="default" className="bg-blue-50 border-blue-200 text-blue-700">
+          <AlertCircle className="h-4 w-4 !text-blue-700" />
+          <AlertDescription>
+            Registration successful. Please check your email to verify your account.
+          </AlertDescription>
         </Alert>
       )}
       

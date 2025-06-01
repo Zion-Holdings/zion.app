@@ -76,23 +76,26 @@ async function handler(req: Req, res: JsonRes) {
       res.status(status).json({ message });
       return;
     }
+fix/auth-flow-email-verification
+    // Check if email verification is required
+    const emailVerificationRequired = !data.session && data.user && (!data.user.identities || data.user.identities.length === 0);
 
-    // If user exists but session is null, email verification is pending
-    if (data.user && !data.session) {
+    if (emailVerificationRequired) {
+      // Email verification is required
       res.status(201).json({
-        message: 'Registration successful. Please check your email for a verification link.',
-        user: data.user,
-        session: null, // Explicitly null
+        message: "Registration successful. Please check your email to verify your account.",
+        emailVerificationRequired: true,
+        user: { email: data.user.email, id: data.user.id, display_name: data.user.user_metadata?.display_name },
       });
-      return;
+    } else {
+      // Email is already verified or auto-confirmation is enabled
+      const token = data.session?.access_token;
+      if (token) {
+        res.setHeader('Set-Cookie', `authToken=${token}; HttpOnly; Path=/; Secure; SameSite=Strict`);
+      }
+      res.status(201).json({ user: data.user, session: data.session });
+main
     }
-
-    // If session exists, proceed as before (auto-verified or verification not required by Supabase project settings)
-    const token = data.session?.access_token;
-    if (token) {
-      res.setHeader('Set-Cookie', `authToken=${token}; HttpOnly; Path=/; Secure; SameSite=Strict`);
-    }
-    res.status(201).json({ user: data.user, session: data.session });
   } catch (err: any) {
     console.error(err);
     res.status(500).json({ message: err.message || 'Registration failed' });
