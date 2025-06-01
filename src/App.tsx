@@ -124,7 +124,7 @@ const baseRoutes = [
   { path: '/wallet', element: <PrivateRoute><Wallet /></PrivateRoute> },
   { path: '/profile', element: <PrivateRoute><Profile /></PrivateRoute> },
   { path: '/recommendations', element: <PrivateRoute><RecommendationsPage /></PrivateRoute> },
-  { path: '/checkout', element: <Checkout /> },
+  { path: '/checkout', element: <PrivateRoute><Checkout /></PrivateRoute> },
   { path: '/forgot-password', element: <ForgotPassword /> },
   { path: '/reset-password/:token', element: <ResetPassword /> },
 ];
