@@ -13,7 +13,7 @@ const pathMap: Record<string, string> = {
   '/green-it': '/content/green-it',
   '/sitemap-page': '/content/sitemap-page',
   '/talent-onboarding': '/auth/talent-onboarding',
-  '/forgot-password': '/auth/forgot-password',
+  '/forgot-password': '/forgot-password',
   '/signup/talent': '/auth/signup/talent',
   '/signup/client': '/auth/signup/client',
   '/talent-dashboard': '/dashboard/talent-dashboard',
