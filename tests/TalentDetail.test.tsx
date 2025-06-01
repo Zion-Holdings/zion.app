@@ -38,4 +38,5 @@ function renderPage() {
 test('renders profile data from API', async () => {
   renderPage();
   expect(await screen.findByTestId('talent-name')).toHaveTextContent('Test Talent');
+  expect(await screen.findByTestId('talent-skills')).toHaveTextContent('React');
 });
