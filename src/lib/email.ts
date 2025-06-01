@@ -46,3 +46,35 @@ export async function sendEmailWithSendGrid({
     // Consider logging this to a more persistent error tracking service in production
   }
 }
+
+export async function sendResetEmail(email: string, token: string): Promise<void> {
+  const apiKey = process.env.SENDGRID_API_KEY;
+  if (!apiKey) {
+    console.error('SENDGRID_API_KEY is not set. Reset email not sent.');
+    return;
+  }
+
+  sgMail.setApiKey(apiKey);
+
+  const from = process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com';
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  const resetUrl = `${appUrl}/reset-password/${token}`;
+
+  const msg = {
+    to: email,
+    from,
+    subject: 'Password Reset',
+    text: `Reset your password using this link: ${resetUrl}`,
+    html: `<p>Reset your password by clicking the link below:</p><p><a href="${resetUrl}">${resetUrl}</a></p>`,
+  };
+
+  try {
+    await sgMail.send(msg);
+    console.log(`Password reset email sent to ${email}`);
+  } catch (error: any) {
+    console.error('Error sending password reset email:', error.toString());
+    if (error.response) {
+      console.error('SendGrid error response:', error.response.body);
+    }
+  }
+}
