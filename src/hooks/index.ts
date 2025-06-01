@@ -13,3 +13,4 @@ export * from './useAutocomplete';
 export * from "./useLocalStorage";
 export * from "./useFavorites";
 export * from './useQuoteWizard';
+export * from './useDelayedError';

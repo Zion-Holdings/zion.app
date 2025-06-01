@@ -10,6 +10,7 @@ import { Globe } from "lucide-react";
 import useSWR from 'swr';
 import { captureException } from "@/utils/sentry";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useDelayedError } from '@/hooks/useDelayedError';
 
 // Filter options specific to services
 const SERVICE_FILTERS = [
@@ -43,10 +44,11 @@ export default function ServicesPage() {
       revalidateOnFocus: false,
     }
   );
+  const delayedError = useDelayedError(error);
 
   const listings = data || SERVICES;
 
-  if (isLoading) {
+  if (isLoading || (error && !delayedError)) {
     return (
       <div data-testid="loading-state" className="p-4 space-y-4">
         <Skeleton className="h-6 w-1/3" />
@@ -57,10 +59,10 @@ export default function ServicesPage() {
     );
   }
 
-  if (error) {
+  if (delayedError) {
     return (
       <div data-testid="error-state" className="py-12 text-center space-y-4">
-        <p className="text-red-400">Failed to load services. {error?.message}</p>
+        <p className="text-red-400">Failed to load services. {delayedError?.message}</p>
         <Button data-testid="retry-button" onClick={() => mutate()}>
           Retry
         </Button>
