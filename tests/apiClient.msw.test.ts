@@ -38,7 +38,7 @@ describe('apiClient with msw', () => {
       rest.get('/api/v1/services/test', (_req, res, ctx) => res(ctx.status(404)))
     );
     await expect(apiClient.get('/test')).rejects.toBeTruthy();
-    expect(toastMod.toast.error).toHaveBeenCalledWith('Network error');
+    expect(toastMod.toast.error).toHaveBeenCalledWith('Error 404');
   });
 
   it('handles 500 error', async () => {

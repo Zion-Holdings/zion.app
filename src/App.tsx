@@ -66,13 +66,14 @@ import ResetPassword from './pages/ResetPassword';
 import Wallet from './pages/Wallet';
 import { SupportChatbot } from './components/SupportChatbot';
 import PrivateRoute from './components/PrivateRoute';
+import type { FallbackProps } from 'react-error-boundary';
 
-function RootErrorFallback() {
+function RootErrorFallback({ resetErrorBoundary }: FallbackProps) {
   return (
     <div role="alert" className="p-4 text-center space-y-2">
       <p>Something went wrong</p>
-      <button onClick={() => window.location.reload()} className="underline">
-        Reload
+      <button onClick={resetErrorBoundary} className="underline">
+        Retry
       </button>
     </div>
   );

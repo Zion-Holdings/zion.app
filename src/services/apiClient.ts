@@ -8,7 +8,13 @@ import axiosRetry from 'axios-retry';
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
-    toast.error(error.response?.data?.message || 'Network error');
+    const status = error.response?.status;
+    if (status && status >= 400) {
+      const message = error.response?.data?.message || `Error ${status}`;
+      toast.error(message);
+    } else {
+      toast.error('Network error');
+    }
     return Promise.reject(error);
   }
 );
