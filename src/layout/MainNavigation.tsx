@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { useFavorites } from "@/hooks/useFavorites";
-import { useCart } from "@/context/CartContext";
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/store';
 import { Heart, MessageSquare, ShoppingCart, CreditCard } from "lucide-react";
 
 interface MainNavigationProps {
@@ -21,8 +22,9 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   const { count } = useFavorites();
   const location = useLocation();
   const { t } = useTranslation();
-  const { items } = useCart();
-  const cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
+  const cartCount = useSelector((state: RootState) =>
+    state.cart.items.reduce((sum, i) => sum + i.quantity, 0)
+  );
 
   const baseLinks = [
     {

@@ -20,6 +20,8 @@ import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
 import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
@@ -51,12 +53,13 @@ try {
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
+      <Provider store={store}>
 feat/i18n-implementation
-      <I18nextProvider i18n={i18n}>
-        <HelmetProvider>
-          <QueryClientProvider client={queryClient}>
-            <WhitelabelProvider>
-              <Router>
+        <I18nextProvider i18n={i18n}>
+          <HelmetProvider>
+            <QueryClientProvider client={queryClient}>
+              <WhitelabelProvider>
+                <Router>
                 <AuthProvider>
                   <NotificationProvider>
                     <AnalyticsProvider>
@@ -83,7 +86,8 @@ feat/i18n-implementation
             </WhitelabelProvider>
           </QueryClientProvider>
         </HelmetProvider>
-      </I18nextProvider>
+        </I18nextProvider>
+      </Provider>
 main
     </React.StrictMode>,
   );
