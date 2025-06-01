@@ -35,7 +35,6 @@ exports.login = exports.loginUser;
 
 exports.registerUser = async function (req, res) {
   try {
-codex/handle-duplicate-email-error
     const name = req.body.name;
     const email = req.body.email.toLowerCase().trim();
     const password = req.body.password;
@@ -43,18 +42,19 @@ codex/handle-duplicate-email-error
       return res.status(400).json({ message: 'Missing required fields' });
     }
 
-    const user = new User({ name, email });
-    await user.setPassword(password);
-    await user.save();
+    const newUser = new User({ name, email });
+    await newUser.setPassword(password);
 
-    const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: '7d' });
+    const saved = await User.create(newUser);
+    const exists = await User.findOne({ email: newUser.email });
+    console.log('User persisted?', !!exists);
+
+    const token = jwt.sign({ id: saved._id }, jwtSecret, { expiresIn: '7d' });
     return res.status(201).json({
-main
       token,
-      user: { id: user._id, email: user.email, name: user.name },
+      user: { id: saved._id, email: saved.email, name: saved.name },
     });
   } catch (err) {
-codex/handle-duplicate-email-error
     if (err && err.code === 11000) {
       return res.status(409).json({ code: 'EMAIL_EXISTS', message: 'Email already registered' });
     }
@@ -65,4 +65,3 @@ codex/handle-duplicate-email-error
 
 // Maintain backwards compatibility if other modules still call `register`
 exports.register = exports.registerUser;
-main
