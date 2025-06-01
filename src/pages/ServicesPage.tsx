@@ -1,4 +1,3 @@
-
 import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { SERVICES } from "@/data/servicesData";
@@ -7,9 +6,8 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";
-import { useEffect, useState } from "react";
-import { useInfiniteQuery } from "@tanstack/react-query";
-import apiClient from "@/services/apiClient";
+
+import useSWR from 'swr';
 import { captureException } from "@/utils/sentry";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -23,12 +21,13 @@ const SERVICE_FILTERS = [
   { label: 'Strategy', value: 'strategy' },
 ];
 
-async function fetchServices(pageParam?: number) {
+async function fetchServices(): Promise<ProductListing[]> {
   try {
-    const url = pageParam ? `/services?page=${pageParam}` : "/services";
-    const res = await apiClient.get(url);
-    // Assuming API returns { data: ProductListing[], nextPage: number | null }
-    return res.data as { data: ProductListing[]; nextPage: number | null };
+    const res = await fetch('/api/services');
+    if (!res.ok) {
+      throw new Error(`Failed to fetch services: ${res.status} ${res.statusText}`);
+    }
+    return (await res.json()) as ProductListing[];
   } catch (err) {
     captureException(err);
     throw err;
@@ -36,43 +35,16 @@ async function fetchServices(pageParam?: number) {
 }
 
 export default function ServicesPage() {
-  const [listings, setListings] = useState<ProductListing[]>(SERVICES);
-
-  const {
-    data,
-    error,
-    isLoading,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-    refetch
-  } = useInfiniteQuery<{ data: ProductListing[]; nextPage: number | null }, Error>({
-    queryKey: ['services'],
-    queryFn: ({ pageParam = 1 }) => fetchServices(pageParam),
-    initialPageParam: 1,
-    getNextPageParam: (lastPage) => lastPage.nextPage ?? undefined,
-  });
-
-  useEffect(() => {
-    if (data) {
-      const allListings = data.pages.flatMap(page => page.data);
-      setListings(allListings);
+  const { data, error, isLoading, mutate } = useSWR<ProductListing[]>(
+    '/api/services',
+    fetchServices,
+    {
+      shouldRetryOnError: false,
+      revalidateOnFocus: false,
     }
-  }, [data]);
+  );
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const buffer = 150; // Pixels before bottom
-      const isAtBottom = window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - buffer;
-
-      if (isAtBottom && hasNextPage && !isFetchingNextPage) {
-        fetchNextPage();
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
+  const listings = data || SERVICES;
 
   if (isLoading) {
     return (
@@ -89,7 +61,7 @@ export default function ServicesPage() {
     return (
       <div data-testid="error-state" className="py-12 text-center space-y-4">
         <p className="text-red-400">Failed to load services. {error?.message}</p>
-        <Button data-testid="retry-button" onClick={() => refetch()}>
+        <Button data-testid="retry-button" onClick={() => mutate()}>
           Retry
         </Button>
       </div>
@@ -124,16 +96,7 @@ export default function ServicesPage() {
         listings={listings}
         categoryFilters={SERVICE_FILTERS}
         initialPrice={{ min: 3000, max: 10000 }}
-        // Pass down fetchNextPage and hasNextPage if DynamicListingPage handles infinite scroll
-        // fetchNextPage={fetchNextPage}
-        // hasNextPage={hasNextPage}
-        // isFetchingNextPage={isFetchingNextPage}
       />
-      {isFetchingNextPage && (
-        <div className="text-center py-4">
-          <Skeleton className="h-8 w-32 mx-auto" />
-        </div>
-      )}
       <TrustedBySection />
     </>
     </ErrorBoundary>
