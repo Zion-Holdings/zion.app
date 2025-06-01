@@ -5,7 +5,7 @@ export async function fetchPostsByCategory(
   categoryId: string,
   page = 1,
   limit = 20
-): Promise<ForumPost[]> {
+): Promise<{ posts: ForumPost[] }> {
   const from = (page - 1) * limit;
   const to = from + limit - 1;
   const { data, error } = await supabase
@@ -19,5 +19,5 @@ export async function fetchPostsByCategory(
     throw new Error(error.message);
   }
 
-  return (data as ForumPost[]) || [];
+  return { posts: (data as ForumPost[]) || [] };
 }
