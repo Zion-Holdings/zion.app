@@ -24,12 +24,12 @@ export function ListingScoreCard({
   image, 
   category, 
   tags,
-  author, 
+  author,
   authorImage,
-  aiScore = 0,
+  aiScore,
   rating = 0,
   reviewCount = 0,
-  className 
+  className
 }: ListingScoreCardProps) {
   return (
     <div className={cn(
@@ -50,11 +50,15 @@ export function ListingScoreCard({
           <Badge variant="secondary" className="bg-zion-purple/20 text-zion-cyan hover:bg-zion-purple/30">
             {category}
           </Badge>
-          {aiScore > 0 && (
-            <div className="flex items-center px-2 py-1 bg-zion-cyan/10 rounded text-zion-cyan text-xs">
-              <span className="font-medium mr-1">AI Match:</span>
-              <span>{aiScore}%</span>
-            </div>
+          {aiScore === undefined || aiScore === null ? (
+            <div className="text-xs italic text-zion-slate-light">Beta – simulated results</div>
+          ) : (
+            aiScore > 0 && (
+              <div className="flex items-center px-2 py-1 bg-zion-cyan/10 rounded text-zion-cyan text-xs">
+                <span className="font-medium mr-1">AI Match:</span>
+                <span>{aiScore}%</span>
+              </div>
+            )
           )}
         </div>
         <h3 className="text-xl font-bold mb-2 text-white group-hover:text-zion-purple transition-colors">{title}</h3>

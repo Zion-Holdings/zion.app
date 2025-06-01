@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const mongooseMorgan = require('mongoose-morgan');
 const { mongoUri } = require('./config');
 const authRoutes = require('./routes/auth');
+const recommendationsRoutes = require('./routes/recommendations');
 
 const app = express();
 app.use(morgan('dev'));
@@ -19,6 +20,7 @@ app.use('/auth', (req, res, next) => {
 });
 
 app.use('/auth', authRoutes);
+app.use('/recommendations', recommendationsRoutes);
 
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
