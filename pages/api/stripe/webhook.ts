@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import { Buffer } from 'buffer';
+import { sendEmailWithSendGrid } from '../../../../src/lib/email';
 
 // Initialize Stripe. It's good practice to use a different key for testing if available.
 // Ensure STRIPE_SECRET_KEY (or STRIPE_TEST_SECRET_KEY for testing) is set in your .env.local or environment variables.
@@ -77,16 +78,39 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // Example: await db.orders.update({ where: { id: session.metadata.orderId }, data: { status: 'paid', paidAt: new Date() } });
         console.log(`[Stripe Webhook] Order for session ${session.id} (User: ${session.metadata?.userId}) to be marked as paid.`);
 
-        // Placeholder: Send email receipt (e.g., using SendGrid)
-        // This is where you would trigger an email to the customer.
-        // Example: await sendReceiptEmail(session.customer_details?.email, session.metadata?.orderId);
-        if (session.customer_details?.email) {
-          console.log(`[Stripe Webhook] Placeholder: Sending email receipt to ${session.customer_details.email} for order related to session ${session.id}.`);
+        // Send order confirmation email
+        const customerEmail = session.customer_details?.email;
+        const orderId = session.metadata?.orderId; // Assuming orderId is in metadata
+
+        if (customerEmail && orderId) {
+          // TODO: Replace with actual download links and support contact
+          const downloadLinks = ['https://example.com/download/item1', 'https://example.com/download/item2'];
+          const supportContact = 'support@example.com';
+          const sendGridTemplateId = process.env.SENDGRID_ORDER_CONFIRMATION_TEMPLATE_ID || 'order_confirmation';
+
+
+          await sendEmailWithSendGrid({
+            to: customerEmail,
+            templateId: sendGridTemplateId, // Use the template ID from env or the one specified in the issue
+            dynamicTemplateData: {
+              orderId: orderId,
+              downloadLinks: downloadLinks,
+              supportContact: supportContact,
+              // You can add other relevant data from the session or your database here
+              customerName: session.customer_details?.name || '',
+              totalAmount: session.amount_total ? (session.amount_total / 100).toFixed(2) : 'N/A', // Stripe amounts are in cents
+              currency: session.currency?.toUpperCase() || '',
+            },
+          });
+          console.log(`[Stripe Webhook] Order confirmation email initiated for ${customerEmail} for order ${orderId}.`);
         } else {
-          console.log(`[Stripe Webhook] Placeholder: Email receipt not sent for session ${session.id} as customer email is missing in session details.`);
+          let missingInfo = [];
+          if (!customerEmail) missingInfo.push("customer email");
+          if (!orderId) missingInfo.push("orderId in session metadata");
+          console.log(`[Stripe Webhook] Order confirmation email not sent for session ${session.id} due to missing: ${missingInfo.join(', ')}.`);
         }
       } else {
-        console.log(`[Stripe Webhook] Checkout session ${session.id} completed but payment status is ${session.payment_status}. No action taken.`);
+        console.log(`[Stripe Webhook] Checkout session ${session.id} completed but payment status is ${session.payment_status}. No email action taken.`);
       }
       break;
     // Add other event types you want to handle

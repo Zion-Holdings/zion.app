@@ -8,8 +8,8 @@ import { FilterSidebar } from "@/components/search/FilterSidebar";
 import { ActiveFiltersBar } from "@/components/search/ActiveFiltersBar";
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { ProductListing } from "@/types/listings";
-import { MARKETPLACE_LISTINGS, generateSearchSuggestions, generateFilterOptions } from "@/data/marketplaceData";
-import { generateRandomListing } from "@/utils/generateRandomListing";
+// MARKETPLACE_LISTINGS and generateRandomListing removed
+import { generateSearchSuggestions, generateFilterOptions } from "@/data/marketplaceData";
 import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { SearchSuggestion } from "@/types/search";
@@ -32,20 +32,52 @@ export default function Marketplace() {
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [selectedAvailability, setSelectedAvailability] = useState<string[]>([]);
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
-  const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
-  const [isLoading, setIsLoading] = useState(false);
+  const [listings, setListings] = useState<ProductListing[]>([]); // Initialize with empty array
+  const [isLoading, setIsLoading] = useState(false); // isLoading already exists
   const [view, setView] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  // Automatically append a new listing every 2 minutes
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setListings(prev => [...prev, generateRandomListing()]);
-    }, 120000); // 2 minutes
-    return () => clearInterval(interval);
-  }, []);
+  // Removed useEffect that appends a random listing
   
+  // Add useEffect to fetch products from /api/products on component mount
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch('/api/products');
+        if (!response.ok) {
+          throw new Error(`Failed to fetch products: ${response.statusText}`);
+        }
+        // Assuming API returns data compatible with ProductWithReviewStats structure
+        // And ProductWithReviewStats is designed to be compatible with ProductListing
+        let data = await response.json();
+
+        // Adjust images: API provides { url: string; alt?: string }[], ProductListing expects string[]
+        // Also map averageRating to rating
+        const formattedData: ProductListing[] = data.map((product: any) => ({
+          ...product,
+          images: product.images?.map((img: { url: string }) => img.url) || [], // Ensure images is string[]
+          rating: product.averageRating, // Map averageRating to rating
+        }));
+
+        setListings(formattedData);
+      } catch (error: any) {
+        console.error("Error fetching products:", error);
+        toast({
+          title: "Error",
+          description: `Could not fetch products: ${error.message}`,
+          variant: "destructive",
+        });
+        setListings([]); // Set to empty on error
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []); // Empty dependency array means it runs once on mount
+
   const searchSuggestions: SearchSuggestion[] = generateSearchSuggestions();
   const filterOptions = useMemo(() => generateFilterOptions(listings), [listings]);
 

@@ -65,14 +65,30 @@ export function getThemeColors(preset: ThemePreset, primaryColor: string): Theme
 // Apply theme colors to document CSS variables
 export function applyThemeColors(colors: ThemeColors) {
   const root = document.documentElement;
+
+  // Map ThemeColors to the CSS variables expected by tailwind.config.js
+  root.style.setProperty('--background', colors.backgroundColor); // Maps to tailwind 'background'
+  root.style.setProperty('--foreground', colors.textColor);       // Maps to tailwind 'foreground'
+  root.style.setProperty('--primary', colors.primaryColor);       // Maps to tailwind 'primary.DEFAULT'
+  root.style.setProperty('--accent', colors.accentColor);         // Maps to tailwind 'accent.DEFAULT'
+  root.style.setProperty('--card', colors.cardBackground);         // Maps to tailwind 'card.DEFAULT'
+
+  // We are not setting --primary-foreground, --accent-foreground, --card-foreground etc. yet.
+  // These would require more detailed color definitions in ThemeColors.
+  // For now, they will fall back to what's in index.css or their default behavior.
+
+  // --button-color is not directly used by tailwind config, but can be used by custom components
+  root.style.setProperty('--button-color', colors.buttonColor);
+
+  // Also, retain the specific variable names if other custom CSS relies on them directly
   root.style.setProperty('--primary-color', colors.primaryColor);
   root.style.setProperty('--background-color', colors.backgroundColor);
   root.style.setProperty('--text-color', colors.textColor);
   root.style.setProperty('--accent-color', colors.accentColor);
-  root.style.setProperty('--button-color', colors.buttonColor);
   root.style.setProperty('--card-background', colors.cardBackground);
   
-  // Set background and text colors on body
-  document.body.style.backgroundColor = colors.backgroundColor;
-  document.body.style.color = colors.textColor;
+  // Set background and text colors on body (optional, as Tailwind utilities should handle this via CSS vars)
+  // However, keeping this ensures direct body styling if needed outside of Tailwind context.
+  document.body.style.backgroundColor = colors.backgroundColor; // Or use `var(--background)`
+  document.body.style.color = colors.textColor; // Or use `var(--foreground)`
 }

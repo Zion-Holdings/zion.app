@@ -8,100 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import apiClient from "@/services/apiClient";
 import { captureException } from "@/utils/sentry";
 import { Skeleton } from "@/components/ui/skeleton";
-
-
-function getRandomItem<T>(arr: T[]): T {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
-
-function generateRandomService(idNum: number): ProductListing {
-  const templates = [
-    {
-      title: "AI Automation Consulting",
-      category: "Consulting",
-      min: 4000,
-      max: 12000,
-      tags: ["Automation", "AI Strategy", "Optimization"],
-    },
-    {
-      title: "Cloud Migration & Support",
-      category: "Management",
-      min: 3000,
-      max: 9000,
-      tags: ["Cloud", "Migration", "DevOps"],
-    },
-    {
-      title: "Advanced Cybersecurity Suite",
-      category: "Security",
-      min: 5000,
-      max: 15000,
-      tags: ["Cybersecurity", "PenTesting", "Compliance"],
-    },
-    {
-      title: "Big Data Engineering",
-      category: "Analytics",
-      min: 3500,
-      max: 11000,
-      tags: ["Data Engineering", "Analytics", "ETL"],
-    },
-    {
-      title: "AI Model Training Service",
-      category: "Development",
-      min: 4500,
-      max: 13000,
-      tags: ["Machine Learning", "Model Training", "AI"],
-    },
-    {
-      title: "Digital Transformation Strategy",
-      category: "Strategy",
-      min: 6000,
-      max: 14000,
-      tags: ["Transformation", "Strategy", "Business"],
-    },
-  ];
-
-  const authors = [
-    "Global AI Experts",
-    "InnovateTech",
-    "SecureFuture",
-    "CloudOps Partners",
-    "DataVisor",
-    "NexGen Solutions",
-  ];
-
-  const images = [
-    "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&h=500",
-    "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&h=500",
-    "https://images.unsplash.com/photo-1523475496153-3a12d3e9ad12?auto=format&fit=crop&w=800&h=500",
-    "https://images.unsplash.com/photo-1545997331-9d517f5ab3b4?auto=format&fit=crop&w=800&h=500",
-  ];
-
-  const template = getRandomItem(templates);
-  const author = getRandomItem(authors);
-  const price = Math.round(
-    Math.random() * (template.max - template.min) + template.min
-  );
-
-  return {
-    id: `auto-service-${idNum}`,
-    title: template.title,
-    description: `Professional ${template.title.toLowerCase()} with industry-standard practices and tailored solutions for your business.`,
-    category: template.category,
-    price,
-    currency: "$",
-    tags: template.tags,
-    author: { name: author, id: author.toLowerCase().replace(/\s+/g, "-") },
-    images: [getRandomItem(images)],
-    createdAt: new Date().toISOString(),
-    aiScore: Math.floor(90 + Math.random() * 10),
-    rating: parseFloat((4 + Math.random()).toFixed(1)),
-    reviewCount: Math.floor(50 + Math.random() * 150),
-  };
-}
 
 // Filter options specific to services
 const SERVICE_FILTERS = [
@@ -113,10 +23,12 @@ const SERVICE_FILTERS = [
   { label: 'Strategy', value: 'strategy' },
 ];
 
-async function fetchServices() {
+async function fetchServices(pageParam?: number) {
   try {
-    const res = await apiClient.get('/services');
-    return res.data as ProductListing[];
+    const url = pageParam ? `/services?page=${pageParam}` : "/services";
+    const res = await apiClient.get(url);
+    // Assuming API returns { data: ProductListing[], nextPage: number | null }
+    return res.data as { data: ProductListing[]; nextPage: number | null };
   } catch (err) {
     captureException(err);
     throw err;
@@ -126,22 +38,41 @@ async function fetchServices() {
 export default function ServicesPage() {
   const [listings, setListings] = useState<ProductListing[]>(SERVICES);
 
-  const { data, error, isLoading, refetch } = useQuery<ProductListing[], Error>({
+  const {
+    data,
+    error,
+    isLoading,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    refetch
+  } = useInfiniteQuery<{ data: ProductListing[]; nextPage: number | null }, Error>({
     queryKey: ['services'],
-    queryFn: fetchServices,
+    queryFn: ({ pageParam = 1 }) => fetchServices(pageParam),
+    initialPageParam: 1,
+    getNextPageParam: (lastPage) => lastPage.nextPage ?? undefined,
   });
 
   useEffect(() => {
-    if (data) setListings(data);
+    if (data) {
+      const allListings = data.pages.flatMap(page => page.data);
+      setListings(allListings);
+    }
   }, [data]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setListings(prev => [...prev, generateRandomService(prev.length + 1)]);
-    }, 120000);
+    const handleScroll = () => {
+      const buffer = 150; // Pixels before bottom
+      const isAtBottom = window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight - buffer;
 
-    return () => clearInterval(interval);
-  }, []);
+      if (isAtBottom && hasNextPage && !isFetchingNextPage) {
+        fetchNextPage();
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
 
   if (isLoading) {
     return (
@@ -157,7 +88,7 @@ export default function ServicesPage() {
   if (error) {
     return (
       <div data-testid="error-state" className="py-12 text-center space-y-4">
-        <p className="text-red-400">Failed to load services. {error.message}</p>
+        <p className="text-red-400">Failed to load services. {error?.message}</p>
         <Button data-testid="retry-button" onClick={() => refetch()}>
           Retry
         </Button>
@@ -193,8 +124,16 @@ export default function ServicesPage() {
         listings={listings}
         categoryFilters={SERVICE_FILTERS}
         initialPrice={{ min: 3000, max: 10000 }}
-        itemsPerPage={10}
+        // Pass down fetchNextPage and hasNextPage if DynamicListingPage handles infinite scroll
+        // fetchNextPage={fetchNextPage}
+        // hasNextPage={hasNextPage}
+        // isFetchingNextPage={isFetchingNextPage}
       />
+      {isFetchingNextPage && (
+        <div className="text-center py-4">
+          <Skeleton className="h-8 w-32 mx-auto" />
+        </div>
+      )}
       <TrustedBySection />
     </>
     </ErrorBoundary>
