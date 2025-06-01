@@ -76,7 +76,6 @@ async function handler(req: Req, res: JsonRes) {
       res.status(status).json({ message });
       return;
     }
-fix/auth-flow-email-verification
     // Check if email verification is required
     const emailVerificationRequired = !data.session && data.user && (!data.user.identities || data.user.identities.length === 0);
 
@@ -94,7 +93,6 @@ fix/auth-flow-email-verification
         res.setHeader('Set-Cookie', `authToken=${token}; HttpOnly; Path=/; Secure; SameSite=Strict`);
       }
       res.status(201).json({ user: data.user, session: data.session });
-main
     }
   } catch (err: any) {
     console.error(err);

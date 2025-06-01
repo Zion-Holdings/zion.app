@@ -111,7 +111,6 @@ export default function Signup() {
         setUser(resData.user);
         setTokens({ accessToken: resData.token, refreshToken: resData.refreshToken || null });
 
-fix/auth-flow-email-verification
       // Handle email verification required case
       if (resData?.emailVerificationRequired) {
         setShowVerificationMessage(true);
@@ -137,7 +136,6 @@ fix/auth-flow-email-verification
         toast.error("Registration complete, but an unexpected issue occurred. Please try logging in manually.");
         // Potentially navigate to login or show a more specific error
         return;
-            main
       }
 
       // Subscribe user to Mailchimp if opted in (only if registration is fully complete, not pending verification)
@@ -153,10 +151,8 @@ fix/auth-flow-email-verification
           // Non-critical error, don't block user flow
         }
       }
-fix/auth-flow-email-verification
       // Toast and navigation are handled above if session is present
       // If emailVerificationRequired, no toast/navigation here, message is shown
-main
     } catch (err: any) {
       const message =
         err?.response?.data?.message ?? err?.message ?? "Unexpected error";

@@ -35,7 +35,6 @@ exports.login = exports.loginUser;
 
 exports.registerUser = async function (req, res) {
   try {
-codex/handle-duplicate-email-error
     const name = req.body.name;
     const email = req.body.email.toLowerCase().trim();
     const password = req.body.password;
@@ -49,14 +48,14 @@ codex/handle-duplicate-email-error
 
     const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: '7d' });
     return res.status(201).json({
-main
       token,
       user: { id: user._id, email: user.email, name: user.name },
     });
   } catch (err) {
-codex/handle-duplicate-email-error
     if (err && err.code === 11000) {
-      return res.status(409).json({ code: 'EMAIL_EXISTS', message: 'Email already registered' });
+      return res
+        .status(409)
+        .json({ code: 'EMAIL_EXISTS', message: 'Email already registered' });
     }
     console.error(err);
     return res.status(500).json({ message: 'Server error' });
@@ -65,4 +64,3 @@ codex/handle-duplicate-email-error
 
 // Maintain backwards compatibility if other modules still call `register`
 exports.register = exports.registerUser;
-main

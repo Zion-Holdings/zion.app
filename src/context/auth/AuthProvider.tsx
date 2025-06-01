@@ -84,11 +84,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       // Potentially clear tokens if this state is problematic: await logout();
       return { error: (clientLoginResult.error as any)?.message || "Client-side login failed." };
     }
-codex/implement-ai-recommendations-endpoint
     const params = new URLSearchParams(location.search);
     const next = params.get('redirectTo') || params.get('next') || '/equipment/recommendations';
     navigate(next, { replace: true });
-main
 
     return { error: null }; // Successful login
   };
