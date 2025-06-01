@@ -18,26 +18,41 @@ export default function BlogPost() {
   const [showShareMenu, setShowShareMenu] = useState(false);
   
   useEffect(() => {
-    // Find the current post by slug
-    const currentPost = BLOG_POSTS.find(p => p.slug === slug);
-    
-    if (currentPost) {
-      setPost(currentPost);
-      
-      // Find related posts (same category, excluding current post)
-      const related = BLOG_POSTS.filter(p => 
-        p.id !== currentPost.id && 
-        (p.category === currentPost.category || 
-         p.tags.some(tag => currentPost.tags.includes(tag)))
-      ).slice(0, 3);
-      
-      setRelatedPosts(related);
-    } else {
-      // Post not found
-      navigate("/blog", { replace: true });
-    }
-    
-    // Scroll to top when post changes
+    const fetchPost = async () => {
+      try {
+        const res = await fetch(`/api/blog/${slug}`);
+        if (res.ok) {
+          const data = await res.json();
+          setPost(data);
+          const related = BLOG_POSTS.filter(
+            (p) =>
+              p.id !== data.id &&
+              (p.category === data.category ||
+                p.tags.some((tag) => data.tags.includes(tag)))
+          ).slice(0, 3);
+          setRelatedPosts(related);
+          return;
+        }
+      } catch (err) {
+        console.error('Failed to fetch blog post', err);
+      }
+
+      const currentPost = BLOG_POSTS.find((p) => p.slug === slug);
+      if (currentPost) {
+        setPost(currentPost);
+        const related = BLOG_POSTS.filter(
+          (p) =>
+            p.id !== currentPost.id &&
+            (p.category === currentPost.category ||
+              p.tags.some((tag) => currentPost.tags.includes(tag)))
+        ).slice(0, 3);
+        setRelatedPosts(related);
+      } else {
+        navigate('/blog', { replace: true });
+      }
+    };
+
+    fetchPost();
     window.scrollTo(0, 0);
   }, [slug, navigate]);
   

@@ -35,6 +35,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<BlogProps> = async ({ params }) => {
   const slug = params?.slug as string;
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+
+  try {
+    const res = await fetch(`${appUrl}/api/blog/${slug}`);
+    if (res.ok) {
+      const post: BlogPost = await res.json();
+      return { props: { post }, revalidate: 60 };
+    }
+  } catch (e) {
+    console.error('Failed to fetch blog post', e);
+  }
+
   const post = BLOG_POSTS.find((p) => p.slug === slug) || null;
 
   if (!post) {

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getTalentBySlug } from '@/api/talent';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
+import { SEO } from '@/components/SEO';
 
 export default function TalentDetail() {
   const { slug } = useParams();
@@ -45,20 +46,27 @@ export default function TalentDetail() {
   }
 
   return (
-    <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">
-      <div className="container mx-auto px-4 space-y-4">
-        <h1 className="text-3xl font-bold" data-testid="talent-name">{talent.full_name}</h1>
-        {talent.bio && <p>{talent.bio}</p>}
-        {talent.skills && talent.skills.length > 0 && (
-          <ul className="list-disc ml-4" data-testid="talent-skills">
-            {talent.skills.map(skill => (
-              <li key={skill}>{skill}</li>
-            ))}
-          </ul>
-        )}
-        {talent.average_rating && <p>Rating: {talent.average_rating}</p>}
-        <Button className="bg-zion-purple text-white">Contact</Button>
-      </div>
-    </main>
+    <>
+      <SEO
+        title={talent.full_name}
+        description={talent.bio || 'Talent profile'}
+        ogImage={talent.profile_picture_url}
+      />
+      <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">
+        <div className="container mx-auto px-4 space-y-4">
+          <h1 className="text-3xl font-bold" data-testid="talent-name">{talent.full_name}</h1>
+          {talent.bio && <p>{talent.bio}</p>}
+          {talent.skills && talent.skills.length > 0 && (
+            <ul className="list-disc ml-4" data-testid="talent-skills">
+              {talent.skills.map(skill => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          )}
+          {talent.average_rating && <p>Rating: {talent.average_rating}</p>}
+          <Button className="bg-zion-purple text-white">Contact</Button>
+        </div>
+      </main>
+    </>
   );
 }
