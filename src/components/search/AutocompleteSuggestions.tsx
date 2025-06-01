@@ -53,12 +53,12 @@ export function AutocompleteSuggestions({
   }, [highlightedIndex]);
 
   return (
-    <div className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg overflow-hidden">
+    <div className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto">
       <ul
         ref={listRef}
         id={listId}
         role="listbox"
-        className="py-2 max-h-64 overflow-y-auto"
+        className="py-2"
       >
         {suggestions.map((suggestion, index) => {
           const highlight = highlightMatch(suggestion.text, searchTerm);
