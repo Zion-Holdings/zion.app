@@ -18,7 +18,7 @@ const TalentRoutes = () => {
       <Route path="/talents" element={<TalentsPage />} />
       <Route path="/more-talents" element={<MoreTalentsPage />} />
       <Route path="/additional-talents" element={<AdditionalTalentsPage />} />
-      <Route path="/talent/:id" element={<ErrorBoundary><TalentDetail /></ErrorBoundary>} />
+      <Route path="/talent/:slug" element={<ErrorBoundary><TalentDetail /></ErrorBoundary>} />
       <Route 
         path="/saved-talents" 
         element={

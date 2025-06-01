@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import NotFound from '@/components/NotFound';
+import { getTalentBySlug } from '@/api/talent';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 
 export default function TalentDetail() {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [talent, setTalent] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchTalent = async () => {
-      if (!id) return;
+      if (!slug) return;
       setLoading(true);
       try {
-        const res = await fetch(`/api/talent/${id}`);
-        if (!res.ok) throw new Error('Talent not found');
-        const data = await res.json();
-        setTalent(data.profile);
+        const profile = await getTalentBySlug(slug);
+        setTalent(profile);
       } catch (err) {
         setTalent(null);
       } finally {
@@ -26,7 +24,7 @@ export default function TalentDetail() {
     };
 
     fetchTalent();
-  }, [id]);
+  }, [slug]);
 
   if (loading) {
     return (
@@ -40,8 +38,8 @@ export default function TalentDetail() {
 
   if (!talent) {
     return (
-      <div data-testid="talent-not-found">
-        <NotFound />
+      <div className="p-4" data-testid="talent-not-found">
+        <p>Talent not found</p>
       </div>
     );
   }
