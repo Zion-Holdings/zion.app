@@ -31,7 +31,8 @@ export class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, info: ErrorInfo) {
     console.log("ErrorBoundary.tsx: ComponentDidCatch triggered");
-    console.error('Uncaught error:', error, info);
+    // Surface full error details in the console for easier debugging
+    console.error('ErrorBoundary caught', error, info);
     toast.error(error.message);
   }
 

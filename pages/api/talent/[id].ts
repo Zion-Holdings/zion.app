@@ -1,5 +1,9 @@
 import { TALENT_PROFILES } from '@/data/talentData';
 
+// Basic ObjectId validation helper mirroring mongoose.Types.ObjectId.isValid.
+// This avoids adding mongoose as a dependency in this environment.
+const isValidObjectId = (id: string) => /^[0-9a-fA-F]{24}$/.test(id);
+
 // Generic request/response types so this file can run without Next.js
 interface Req {
   method?: string;
@@ -20,7 +24,15 @@ export default function handler(req: Req, res: JsonRes) {
   }
 
   const rawId = req.query?.id;
-  let searchId = typeof rawId === 'string' ? rawId : '';
+  const id = typeof rawId === 'string' ? rawId : '';
+
+  // Validate the id similar to `mongoose.Types.ObjectId.isValid`.
+  if (!isValidObjectId(id)) {
+    res.status(400).json({ error: 'Invalid id' });
+    return;
+  }
+
+  let searchId = id;
 
   if (searchId && !searchId.startsWith('t-')) {
     searchId = `t-${searchId}`;
