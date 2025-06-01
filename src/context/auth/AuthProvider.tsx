@@ -90,7 +90,19 @@ main
 
   // Wrapper for signup to match the AuthContextType interface
   const signup = async (email: string, password: string, userData?: any) => {
-    return signupImpl({ email, password, display_name: userData });
+    const result = await signupImpl({ email, password, display_name: userData });
+
+    if (!result?.error) {
+      const loginResult = await login(email, password);
+      if (!loginResult.error) {
+        const firstName = (userData?.name || userData || '').split(' ')[0];
+        toast({ title: `Welcome, ${firstName}!` });
+        const next = new URLSearchParams(location.search).get('next') || '/dashboard';
+        navigate(next, { replace: true });
+      }
+    }
+
+    return result;
   };
 
   useEffect(() => {
