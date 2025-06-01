@@ -1,9 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import crypto from 'crypto';
-// Assuming you have a way to interact with your database, e.g., Prisma
-// import prisma from '../../../../prisma/client'; // Adjust path as necessary
-// Assuming you have an email sending service configured, e.g., SendGrid
-// import sendEmail from '../../../../lib/email'; // Adjust path as necessary
+import { sendEmailWithSendGrid } from '../../../src/lib/email';
 
 // Placeholder for database interaction (replace with your actual DB client)
 const db = {
@@ -23,12 +20,6 @@ const db = {
   }
 };
 
-// Placeholder for email sending (replace with your actual email client)
-const sendEmail = async (options: { to: string, subject: string, html: string }) => {
-  console.log(`Mock Email Sent: To ${options.to}, Subject: ${options.subject}`);
-  // console.log(`Body: ${options.html}`); // Uncomment to see email body in logs
-  return { success: true };
-};
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -72,25 +63,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Construct reset URL - ensure your frontend URL is correctly configured
     const resetUrl = `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/reset-password/${resetToken}`;
 
-    const emailBody = `
-      <p>You requested a password reset.</p>
-      <p>Click this <a href="${resetUrl}">link</a> to reset your password.</p>
-      <p>This link will expire in 1 hour.</p>
-      <p>If you did not request this, please ignore this email.</p>
-    `;
-
-    // Send the email
-    const emailSent = await sendEmail({
+    // Send the email via SendGrid
+    await sendEmailWithSendGrid({
       to: user.email,
-      subject: 'Your Password Reset Link',
-      html: emailBody,
+      templateId: process.env.SENDGRID_RESET_TEMPLATE_ID || '',
+      dynamicTemplateData: { resetUrl },
     });
-
-    if (!emailSent.success) {
-        console.error("Failed to send password reset email to: ", user.email);
-        // Even if email fails, we might not want to inform the user to prevent info leaks.
-        // But for internal logging, this is important.
-    }
 
     return res.status(200).json({ message: 'If your email address exists in our system, you will receive a password reset link.' });
 

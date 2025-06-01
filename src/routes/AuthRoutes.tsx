@@ -19,7 +19,7 @@ const AuthRoutes = () => {
       <Route path="/signup" element={<Signup />} />
       <Route path="/register" element={<Navigate to="/signup" replace />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/reset-password/:uid/:token" element={<ResetPassword />} />
+      <Route path="/reset-password/:token" element={<ResetPassword />} />
       <Route path="/update-password" element={<UpdatePassword />} />
       
       {/* Onboarding Routes */}

@@ -10,11 +10,25 @@ export async function register(name: string, email: string, password: string) {
   return { res, data };
 }
 
-feat/wallet-page
+export async function forgotPassword(email: string) {
+  const API_URL = import.meta.env.VITE_API_URL || '';
+  const res = await fetch(`${API_URL}/auth/forgot`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email }),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(data?.message || `Error ${res.status}: Failed to send reset link`);
+  }
+  return { res, data };
+}
+
 export async function resetPassword(token: string, newPassword: string) {
   const API_URL = import.meta.env.VITE_API_URL || ''; // Ensure API_URL is defined
   const res = await fetch(`${API_URL}/auth/reset-password`, {
-main
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
