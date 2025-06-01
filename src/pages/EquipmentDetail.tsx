@@ -10,6 +10,9 @@ import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { getStripe } from "@/utils/getStripe";
 import { safeStorage } from '@/utils/safeStorage';
+import { useDispatch } from 'react-redux';
+import type { AppDispatch } from '@/store';
+import { addItem } from '@/store/cartSlice';
 
 interface EquipmentSpecification {
   name: string;
@@ -154,6 +157,7 @@ export default function EquipmentDetail() {
   const navigate = useNavigate();
   const location = useLocation();
   const { isAuthenticated, user } = useAuth();
+  const dispatch = useDispatch<AppDispatch>();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
@@ -199,28 +203,17 @@ export default function EquipmentDetail() {
   const handleBuyNow = async () => {
     if (!isAuthenticated) {
       const next = encodeURIComponent(location.pathname + location.search); // Capture full current path
-      navigate(`/login?next=${next}`, { state: { pendingAction: 'buyNow', pendingActionArgs: { sku: id } } });
+      navigate(`/login?next=${next}`, {
+        state: {
+          pendingAction: 'buyNow',
+          pendingActionArgs: { id, title: equipment.name, price: equipment.price },
+        },
+      });
       return;
     }
 
-    setIsAdding(true);
-    try {
-      const response = await fetch('/api/checkout_sessions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId: id, userId: user?.id }),
-      });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error || 'Failed to create checkout session');
-      const stripe = await getStripe();
-      if (stripe && data.sessionId) {
-        await stripe.redirectToCheckout({ sessionId: data.sessionId });
-      }
-    } catch (err) {
-      toast({ title: 'Payment error', description: 'Could not start checkout.' });
-    } finally {
-      setIsAdding(false);
-    }
+    dispatch(addItem({ id, title: equipment.name, price: equipment.price }));
+    navigate('/checkout');
   };
 
   return (
