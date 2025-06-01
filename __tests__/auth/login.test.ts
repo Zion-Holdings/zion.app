@@ -174,4 +174,27 @@ describe('Login API and Service', () => {
     // expect(mockSignUp).toHaveBeenCalled();
 
   });
+
+  it('should return 401 on login failure', async () => {
+    const testEmail = 'fail@example.com';
+    const testPassword = 'wrongpassword';
+
+    // Reset the mock before use
+    if (mockSignInWithPassword) mockSignInWithPassword.mockReset();
+
+    // Configure the mock for supabase.auth.signInWithPassword to return an error
+    mockSignInWithPassword.mockResolvedValueOnce({
+      data: { session: null, user: null },
+      error: { message: 'Invalid login credentials', name: 'AuthApiError', status: 400 },
+    });
+
+    const loginApiReq = { method: 'POST', body: { email: testEmail, password: testPassword } } as NextApiRequest;
+    const loginApiRes = mockRes();
+
+    await loginHandler(loginApiReq, loginApiRes);
+
+    expect(mockSignInWithPassword).toHaveBeenCalledWith({email: testEmail.toLowerCase(), password: testPassword});
+    expect(loginApiRes.status).toHaveBeenCalledWith(401);
+    expect(loginApiRes.json).toHaveBeenCalledWith({ error: 'Invalid credentials' });
+  });
 });
