@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -18,11 +18,11 @@ export default function Custom404() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 text-center">
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-900 p-6 text-center text-gray-100">
       <div style={{ width: '300px', marginBottom: '20px' }}> {/* Basic styling for Lottie animation */}
         <Lottie animationData={animationData} loop={true} />
       </div>
-      <h1 className="text-4xl font-bold mb-4 text-gray-800">404 - Page Not Found</h1>
+        <h1 className="text-4xl font-bold mb-4 text-gray-100">404 - Page Not Found</h1>
       <form onSubmit={handleSearch} className="w-full max-w-xs mb-6 space-y-3">
         <Input
           type="text"
@@ -32,13 +32,12 @@ export default function Custom404() {
         />
         <Button type="submit" className="w-full">Search</Button>
       </form>
-      <Button
-        variant="outline"
-        onClick={() => navigate('/')} // Changed navigation to home
-        type="button"
-      >
-        Go Home {/* Changed button text */}
-      </Button>
+        <Link
+          to="/"
+          className="mt-4 text-blue-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+        >
+          Go Home
+        </Link>
     </main>
   );
 }
