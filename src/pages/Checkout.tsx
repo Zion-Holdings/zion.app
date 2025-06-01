@@ -126,9 +126,19 @@ export default function Checkout() {
   return (
     <div className="container max-w-2xl py-10">
       {testMode && (
-        <div className="mb-4 flex items-center gap-2">
-          <Badge variant="warning">Test Mode</Badge>
-          <span className="text-sm">Use test card <code className="font-mono">4242 4242 4242 4242</code></span>
+        <div className="mb-4">
+          <div className="flex items-center gap-2 mb-1">
+            <Badge variant="warning">Test Mode</Badge>
+            <span className="text-sm">Use a Stripe test card:</span>
+          </div>
+          <ul className="text-sm list-disc list-inside ml-6 space-y-1">
+            <li>
+              <code className="font-mono">4242 4242 4242 4242</code>
+            </li>
+            <li>
+              <code className="font-mono">4000 0025 0000 3155</code> (3D Secure)
+            </li>
+          </ul>
         </div>
       )}
       <div className="flex items-center justify-between mb-6">

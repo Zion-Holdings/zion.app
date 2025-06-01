@@ -4,6 +4,10 @@ import { withErrorLogging } from './withErrorLogging.cjs';
 const PROD_DOMAIN = 'app.ziontechgroup.com';
 
 function isProdDomain() {
+  const context = process.env.CONTEXT;
+  if (context && context !== 'production') {
+    return false;
+  }
   const url = process.env.URL || '';
   try {
     return new URL(url).hostname === PROD_DOMAIN;

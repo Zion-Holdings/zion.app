@@ -21,6 +21,7 @@ import SearchPage from "@/pages/SearchPage";
 import ProjectRoom from "@/pages/ProjectRoom";
 import VideoCall from "@/pages/VideoCall";
 import Checkout from "@/pages/Checkout";
+import PaymentSuccess from "@/pages/payment-success";
 import NewProductsPage from "@/pages/NewProductsPage";
 import NewServicesPage from "@/pages/NewServicesPage";
 
@@ -86,6 +87,7 @@ const MarketplaceRoutes = () => {
           </ProtectedRoute>
         }
       />
+      <Route path="/success" element={<PaymentSuccess />} />
       
       {/* Project Room Routes */}
       <Route 
