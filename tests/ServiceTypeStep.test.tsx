@@ -60,3 +60,34 @@ it('renders results from api', async () => {
   });
 });
 
+it('hides skeleton once services load', async () => {
+  const data = { ...baseData };
+  const updateFormData = (d: Partial<QuoteFormData>) => Object.assign(data, d);
+
+  let resolveFetch: () => void;
+  global.fetch = vi.fn().mockImplementation(
+    () =>
+      new Promise((res) => {
+        resolveFetch = () =>
+          res({
+            ok: true,
+            json: async () => [
+              { id: 's1', title: 'A', category: 'service' },
+            ],
+          });
+      })
+  ) as any;
+
+  render(<ServiceTypeStep formData={data} updateFormData={updateFormData} />);
+
+  fireEvent.click(screen.getByText('Services'));
+
+  expect(document.querySelectorAll('.animate-pulse').length).toBeGreaterThan(0);
+
+  resolveFetch();
+
+  await waitFor(() => {
+    expect(document.querySelectorAll('.animate-pulse').length).toBe(0);
+  });
+});
+
