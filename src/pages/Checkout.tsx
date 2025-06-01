@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
-import { safeStorage } from '@/utils/safeStorage';
+import { safeStorage, safeSessionStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
 import { getStripe, isProdDomain } from '@/utils/getStripe';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
@@ -39,6 +39,7 @@ export default function Checkout() {
   const [items, setItems] = useState<CartItem[]>([]);
   const form = useForm<CheckoutForm>({ defaultValues: { name: '', email: '', address: '', city: '', country: '' } });
   const { user } = useAuth();
+  const [guestMode, setGuestMode] = useState(false);
   const testMode = !isProdDomain();
 
   useEffect(() => {
@@ -63,8 +64,15 @@ export default function Checkout() {
   const onSubmit = async (data: CheckoutForm) => {
     try {
       if (!user || !user.id) {
-        console.error('User not authenticated');
-        // TODO: Handle UI: show error message to user
+        const res = await fetch('/api/orders/guest', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: data.email, items }),
+        });
+        const result = await res.json();
+        if (!res.ok) throw new Error(result.error || 'Failed to create order');
+        safeSessionStorage.setItem('guest_token', result.token);
+        navigate('/cart');
         return;
       }
 
@@ -123,6 +131,20 @@ export default function Checkout() {
     }
   };
 
+  if (!user && !guestMode) {
+    return (
+      <div className="container max-w-md py-10">
+        <h1 className="text-3xl font-bold mb-6">Checkout</h1>
+        <Button className="w-full mb-4" onClick={() => navigate(`/login?next=/checkout`)}>
+          Login / Sign Up
+        </Button>
+        <Button variant="outline" className="w-full" onClick={() => setGuestMode(true)}>
+          Continue as Guest
+        </Button>
+      </div>
+    );
+  }
+
   return (
     <div className="container max-w-2xl py-10">
       {testMode && (
@@ -143,20 +165,22 @@ export default function Checkout() {
       )}
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-3xl font-bold">Checkout</h1>
-        <PointsBadge />
+        {user && <PointsBadge />}
       </div>
       <div className="grid gap-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <FormField name="name" control={form.control} render={({ field }) => (
-              <FormItem>
-                <FormLabel>Name</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )} />
+            {user && (
+              <FormField name="name" control={form.control} render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )} />
+            )}
             <FormField name="email" control={form.control} render={({ field }) => (
               <FormItem>
                 <FormLabel>Email</FormLabel>
@@ -166,33 +190,37 @@ export default function Checkout() {
                 <FormMessage />
               </FormItem>
             )} />
-            <FormField name="address" control={form.control} render={({ field }) => (
-              <FormItem>
-                <FormLabel>Address</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )} />
-            <FormField name="city" control={form.control} render={({ field }) => (
-              <FormItem>
-                <FormLabel>City</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )} />
-            <FormField name="country" control={form.control} render={({ field }) => (
-              <FormItem>
-                <FormLabel>Country</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )} />
+            {user && (
+              <>
+                <FormField name="address" control={form.control} render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Address</FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
+                <FormField name="city" control={form.control} render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>City</FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
+                <FormField name="country" control={form.control} render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Country</FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )} />
+              </>
+            )}
             <div className="border-t pt-4">
               <div className="flex justify-between font-semibold mb-4">
                 <span>Subtotal</span>
