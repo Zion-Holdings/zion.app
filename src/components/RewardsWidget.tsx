@@ -9,6 +9,16 @@ export function RewardsWidget() {
   const [open, setOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
 
+  const points = user?.points ?? 0;
+
+  const getTier = (pts: number) => {
+    if (pts >= 500) return "Gold";
+    if (pts >= 100) return "Silver";
+    return "Bronze";
+  };
+
+  const tasks = ["Complete your profile", "Invite a friend", "Buy any service"];
+
   const handleClick = () => {
     if (user) {
       setOpen(true);
@@ -26,14 +36,14 @@ export function RewardsWidget() {
             <DialogTitle>Your Rewards</DialogTitle>
           </DialogHeader>
           <div className="space-y-2 mt-4">
-            <p className="font-semibold">Points: 120</p>
-            <p>Tier: Silver</p>
+            <p className="font-semibold">{`Points: ${points}`}</p>
+            <p>{`Tier: ${getTier(points)}`}</p>
             <div className="mt-2">
               <p className="font-medium">Earn more:</p>
               <ul className="list-disc list-inside text-sm space-y-1">
-                <li>Complete your profile</li>
-                <li>Invite a friend</li>
-                <li>Buy any service</li>
+                {tasks.map(task => (
+                  <li key={task}>{task}</li>
+                ))}
               </ul>
             </div>
           </div>
