@@ -5,6 +5,7 @@ let mockUser = {
   name: 'Jane Doe',
   email: 'jane@example.com',
   avatarUrl: '',
+  points: 0,
   notifications: {
     email: true,
     push: false,

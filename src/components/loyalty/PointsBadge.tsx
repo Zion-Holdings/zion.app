@@ -6,13 +6,38 @@ import { Link } from 'react-router-dom';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 export function PointsBadge() {
-  const { user } = useAuth();
-  const { ledger, balance } = usePoints();
-  const [points, setPoints] = useState(balance);
+  const { user, setUser } = useAuth();
+  const { ledger } = usePoints();
+  const [points, setPoints] = useState(user?.points ?? 0);
 
   useEffect(() => {
-    setPoints(balance);
-  }, [balance]);
+    setPoints(user?.points ?? 0);
+  }, [user?.points]);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function fetchPoints() {
+      try {
+        const res = await fetch('/api/users/me');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (cancelled) return;
+        if (typeof data.points === 'number') {
+          setPoints(data.points);
+          if (setUser && user) setUser({ ...user, points: data.points });
+        }
+      } catch {
+        // ignore
+      }
+    }
+
+    fetchPoints();
+    const id = setInterval(fetchPoints, 60000);
+    return () => {
+      cancelled = true;
+      clearInterval(id);
+    };
+  }, [setUser, user]);
 
   const breakdown = ledger.reduce(
     (acc, e) => {

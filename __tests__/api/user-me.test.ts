@@ -18,7 +18,9 @@ test('GET returns profile', () => {
   const res = mockRes();
   handler(req, res);
   expect(res.status).toHaveBeenCalledWith(200);
-  expect(res.json).toHaveBeenCalledWith(expect.objectContaining({ email: 'jane@example.com' }));
+  expect(res.json).toHaveBeenCalledWith(
+    expect.objectContaining({ email: 'jane@example.com', points: expect.any(Number) })
+  );
 });
 
 test('PUT updates profile', () => {
