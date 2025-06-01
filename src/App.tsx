@@ -56,7 +56,7 @@ import RequestQuotePage from './pages/RequestQuote';
 import WishlistPage from './pages/Wishlist';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
-import ProfilePage from './pages/ProfilePage'; // Import ProfilePage
+import Profile from './pages/Profile';
 import { SupportChatbot } from './components/SupportChatbot';
 import PrivateRoute from './components/PrivateRoute';
 
@@ -100,7 +100,7 @@ const baseRoutes = [
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/wishlist', element: <WishlistPage /> },
   { path: '/cart', element: <PrivateRoute><CartPage /></PrivateRoute> },
-  { path: '/profile', element: <PrivateRoute><ProfilePage /></PrivateRoute> }, // Add new protected profile route
+  { path: '/profile', element: <PrivateRoute><Profile /></PrivateRoute> },
   { path: '/checkout', element: <Checkout /> },
 ];
 
