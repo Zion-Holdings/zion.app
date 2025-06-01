@@ -59,8 +59,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       return { error: data?.error || 'Missing email or password' };
     }
     if (res.status === 401) { // Unauthorized (invalid credentials)
-      toast({ title: "Login Failed", description: 'Incorrect email or password', variant: "destructive" });
-      return { error: 'Incorrect email or password' };
+      let message = data?.message || 'Incorrect email or password';
+      if (data?.code === 'EMAIL_NOT_FOUND') message = 'Email not registered';
+      else if (data?.code === 'WRONG_PASSWORD') message = 'Incorrect password';
+      else if (data?.code === 'TOKEN_EXPIRED') message = 'Session expired, please log in again';
+      toast({ title: "Login Failed", description: message, variant: "destructive" });
+      return { error: message };
     }
     // Catch-all for other non-200 statuses from loginUser
     if (res.status !== 200) {
