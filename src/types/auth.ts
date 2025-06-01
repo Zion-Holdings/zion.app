@@ -36,7 +36,7 @@ export interface UserProfile {
 
 // Update AuthContextType definition to match implementation
 export interface AuthContextType {
-  user: UserDetails | null;
+  user: UserDetails | null | false;
   isLoading: boolean;
   isAuthenticated: boolean;
   login: (email: string, password: string) => Promise<{ data?: any; error?: any }>; 
