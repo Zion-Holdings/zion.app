@@ -4,4 +4,5 @@ export { Logo } from './Logo';
 export { MobileMenu, type MobileMenuProps } from './MobileMenu';
 export { UserMenu } from './UserMenu';
 export { UserProfileDropdown } from './UserProfileDropdown';
+export { AvatarMenu } from './AvatarMenu';
 export { MainNavigation } from './MainNavigation';

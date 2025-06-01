@@ -95,7 +95,7 @@ import {
 // Core/Layout Components
 import { Header } from '@/components/header/Header';
 import { MainNavigation } from '@/components/header/MainNavigation';
-import { UserMenu } from '@/components/header/UserMenu';
+import { AvatarMenu } from '@/components/header/AvatarMenu';
 import { Logo } from '@/components/header/Logo';
 import { Footer } from '@/components/Footer';
 
@@ -307,8 +307,8 @@ test('MainNavigation has no accessibility violations', async () => {
   expect(results).toHaveNoViolations();
 });
 
-test('UserMenu has no accessibility violations', async () => {
-  const { container } = render(<UserMenu />, { wrapper: AllCoreProviders });
+test('AvatarMenu has no accessibility violations', async () => {
+  const { container } = render(<AvatarMenu />, { wrapper: AllCoreProviders });
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 });

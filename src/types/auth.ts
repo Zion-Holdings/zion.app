@@ -54,4 +54,6 @@ export interface AuthContextType {
   signUp?: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any }>;
   setUser?: (user: UserDetails | null) => void;
   tokens?: { accessToken: string; refreshToken?: string } | null;
+  avatarUrl?: string | null;
+  setAvatarUrl?: (url: string | null) => void;
 }
