@@ -137,10 +137,11 @@ function ExperienceStep() {
             <div className="flex justify-between items-center">
               <h3 className="font-medium">Work Experience {index + 1}</h3>
               {experiences.length > 1 && (
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   size="icon"
                   onClick={() => removeExperience(exp.id)}
+                  aria-label="Remove experience"
                 >
                   <Trash2 className="h-5 w-5 text-destructive" />
                 </Button>
@@ -208,10 +209,11 @@ function EducationStep() {
             <div className="flex justify-between items-center">
               <h3 className="font-medium">Education {index + 1}</h3>
               {educations.length > 1 && (
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   size="icon"
                   onClick={() => removeEducation(edu.id)}
+                  aria-label="Remove education"
                 >
                   <Trash2 className="h-5 w-5 text-destructive" />
                 </Button>
@@ -307,6 +309,7 @@ function SkillsStep() {
                     variant="ghost"
                     size="icon"
                     onClick={() => removeSkill(skill.id)}
+                    aria-label="Remove skill"
                   >
                     <Trash2 className="h-4 w-4 text-destructive" />
                   </Button>

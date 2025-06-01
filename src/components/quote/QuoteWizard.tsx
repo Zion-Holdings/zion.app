@@ -76,8 +76,15 @@ export function QuoteWizard() {
               <Card
                 data-testid={`service-card-${item.id}`}
                 key={item.id}
-                className={`p-4 space-y-2 cursor-pointer border-2 transition-colors ${selectedItem === item.id ? 'border-zion-purple' : 'hover:border-zion-purple/50'}`}
+                className={`p-4 space-y-2 cursor-pointer border-2 transition-colors ${selectedItem === item.id ? 'border-zion-purple' : 'hover:border-zion-purple/50'} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple`}
                 onClick={() => setSelectedItem(item.id)}
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedItem(item.id);
+                  }
+                }}
               >
                 <div>{item.title}</div>
                 <Button

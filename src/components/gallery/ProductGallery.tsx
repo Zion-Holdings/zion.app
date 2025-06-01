@@ -33,7 +33,11 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
 
       <TabsContent value="images" className="pt-4">
         <div className="aspect-video w-full relative">
-          <img src={images[selected]} alt="product" className="w-full h-full object-contain bg-zion-blue-light/10 p-4" />
+          <img
+            src={images[selected]}
+            alt={`Product image ${selected + 1}`}
+            className="w-full h-full object-contain bg-zion-blue-light/10 p-4"
+          />
         </div>
         {images.length > 1 && (
           <div className="flex p-4 gap-2 overflow-x-auto">
@@ -43,7 +47,11 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
                 onClick={() => setSelected(idx)}
                 className={`w-20 h-20 flex-shrink-0 cursor-pointer rounded overflow-hidden border-2 ${idx === selected ? 'border-zion-purple' : 'border-transparent'}`}
               >
-                <img src={img} alt="thumb" className="w-full h-full object-cover" />
+                <img
+                  src={img}
+                  alt={`Thumbnail image ${idx + 1}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
             ))}
           </div>
