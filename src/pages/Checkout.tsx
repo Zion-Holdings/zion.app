@@ -8,6 +8,7 @@ import { getStripe } from '@/utils/getStripe';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
+import { useAuth } from '@/hooks/useAuth';
 
 interface CheckoutFormData {
   name: string;
@@ -24,15 +25,29 @@ function CheckoutInner() {
   const stripe = useStripe();
   const elements = useElements();
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
   const onSubmit = async (data: CheckoutFormData) => {
     if (!stripe || !elements) return;
+
+    let userId = user?.id;
+    if (!userId) {
+      const guestRes = await fetch('/api/auth/guest', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: data.email, name: data.name }),
+      });
+      const guestData = await guestRes.json();
+      if (!guestRes.ok) return;
+      userId = guestData.userId as string;
+    }
+
     const res = await fetch('/api/create-payment-intent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ amount: subtotal }),
+      body: JSON.stringify({ amount: subtotal, userId }),
     });
     const result = await res.json();
     if (!res.ok) return;
@@ -43,8 +58,17 @@ function CheckoutInner() {
       receipt_email: data.email,
     });
     if (error || !paymentIntent) return;
+
+    const orderRes = await fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, email: data.email, items, total: subtotal }),
+    });
+    const orderData = await orderRes.json();
+    if (!orderRes.ok) return;
+
     dispatch(clear());
-    navigate(`/order-confirmation/${paymentIntent.id}`);
+    navigate(`/order-confirmation/${orderData.orderId}`);
   };
 
   return (
