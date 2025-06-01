@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { toast } from '@/hooks/use-toast'
+import { resetPassword } from '@/services/auth'
 
-const API_URL = import.meta.env.VITE_API_URL || ''
 
 function strength(pw: string) {
   if (pw.length < 8) return 0
@@ -14,11 +14,20 @@ function strength(pw: string) {
 }
 
 export default function ResetPassword() {
-  const { token = '', uid = '' } = useParams()
+  const { token = '' } = useParams()
+  const navigate = useNavigate()
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState('')
   const [loading, setLoading] = useState(false)
   const s = strength(password)
+
+  if (!token) {
+    return (
+      <div className="flex min-h-screen items-center justify-center p-4 text-red-500">
+        <p>Invalid or missing reset token.</p>
+      </div>
+    )
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -28,16 +37,11 @@ export default function ResetPassword() {
     }
     setLoading(true)
     try {
-      const res = await fetch(`${API_URL}/auth/reset-password/${uid}/${token}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password })
-      })
-      if (res.status === 200) {
-        toast.success('Password updated')
-      } else {
-        toast.error('Reset failed')
-      }
+      await resetPassword(token, password)
+      toast.success('Password has been reset successfully!')
+      navigate('/login')
+    } catch (err: any) {
+      toast.error(err.message || 'Reset failed')
     } finally {
       setLoading(false)
     }
