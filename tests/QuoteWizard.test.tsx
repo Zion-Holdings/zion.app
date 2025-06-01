@@ -24,11 +24,9 @@ function renderWizard() {
 }
 
 it('loads services and advances to step 2', async () => {
-  let requestedCategory = '';
   server.use(
-    rest.get('/api/items', (req, res, ctx) => {
-      requestedCategory = req.url.searchParams.get('category') || '';
-      return res(ctx.json(sample));
+    rest.get('/api/services', (req, res, ctx) => {
+      return res(ctx.json({ items: sample }));
     }),
     rest.post('/api/quotes', (_req, res, ctx) => res(ctx.json({ success: true })))
   );
@@ -36,20 +34,19 @@ it('loads services and advances to step 2', async () => {
   renderWizard();
 
   expect(await screen.findByText('Service A')).toBeInTheDocument();
-  expect(requestedCategory).toBe('services');
 
   fireEvent.click(screen.getByTestId('request-quote-1'));
   expect(await screen.findByTestId('details-step')).toBeInTheDocument();
 });
 
 it('shows error and allows retry', async () => {
-  server.use(rest.get('/api/items', (_req, res, ctx) => res(ctx.status(500))));
+  server.use(rest.get('/api/services', (_req, res, ctx) => res(ctx.status(500))));
 
   renderWizard();
 
   expect(await screen.findByTestId('service-fetch-error-alert')).toBeInTheDocument();
 
-  server.use(rest.get('/api/items', (_req, res, ctx) => res(ctx.json(sample))));
+  server.use(rest.get('/api/services', (_req, res, ctx) => res(ctx.json({ items: sample }))));
   fireEvent.click(screen.getByTestId('retry-button'));
 
   expect(await screen.findByText('Service A')).toBeInTheDocument();
@@ -58,7 +55,7 @@ it('shows error and allows retry', async () => {
 it('submits quote', async () => {
   let submitted = false;
   server.use(
-    rest.get('/api/items', (_req, res, ctx) => res(ctx.json(sample))),
+    rest.get('/api/services', (_req, res, ctx) => res(ctx.json({ items: sample }))),
     rest.post('/api/quotes', (_req, res, ctx) => {
       submitted = true;
       return res(ctx.json({ success: true }));
@@ -78,12 +75,12 @@ it('submits quote', async () => {
 it('recovers after a transient error', async () => {
   let callCount = 0;
   server.use(
-    rest.get('/api/items', (_req, res, ctx) => {
+    rest.get('/api/services', (_req, res, ctx) => {
       callCount++;
       if (callCount === 1) {
         return res(ctx.status(500));
       }
-      return res(ctx.json(sample));
+      return res(ctx.json({ items: sample }));
     })
   );
 
@@ -95,7 +92,7 @@ it('recovers after a transient error', async () => {
 
 it('stays on step 1 if no service selected', async () => {
   server.use(
-    rest.get('/api/items', (_req, res, ctx) => res(ctx.json(sample)))
+    rest.get('/api/services', (_req, res, ctx) => res(ctx.json({ items: sample })))
   );
 
   renderWizard();
