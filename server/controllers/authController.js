@@ -7,17 +7,25 @@ if (!jwtSecret) {
   throw new Error('JWT_SECRET not defined');
 }
 
-exports.loginUser = async function (req, res) {
+exports.loginUser = async function (req, res, next) {
   console.info('[LOGIN]', req.body.email);
   console.info('[ENV] JWT_SECRET:', jwtSecret);
   try {
     const email = req.body.email.toLowerCase().trim();
     const user = await User.findOne({ email }).select('+passwordHash');
     if (!user) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      const error = new Error('Email not registered');
+      error.status = 401;
+      error.code = 'EMAIL_NOT_FOUND';
+      return next(error);
     }
     const isMatch = bcrypt.compareSync(req.body.password, user.passwordHash);
-    if (!isMatch) return res.status(401).json({ message: 'Invalid credentials' });
+    if (!isMatch) {
+      const error = new Error('Incorrect password');
+      error.status = 401;
+      error.code = 'WRONG_PASSWORD';
+      return next(error);
+    }
 
     const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: '7d' });
     res.json({
@@ -26,21 +34,23 @@ exports.loginUser = async function (req, res) {
     });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Server error' });
+    next(err);
   }
 };
 
 // Maintain backwards compatibility if other modules still call `login`
 exports.login = exports.loginUser;
 
-exports.registerUser = async function (req, res) {
+exports.registerUser = async function (req, res, next) {
   try {
 codex/handle-duplicate-email-error
     const name = req.body.name;
     const email = req.body.email.toLowerCase().trim();
     const password = req.body.password;
     if (!name || !email || !password) {
-      return res.status(400).json({ message: 'Missing required fields' });
+      const error = new Error('Missing required fields');
+      error.status = 400;
+      return next(error);
     }
 
     const user = new User({ name, email });
@@ -56,10 +66,13 @@ main
   } catch (err) {
 codex/handle-duplicate-email-error
     if (err && err.code === 11000) {
-      return res.status(409).json({ code: 'EMAIL_EXISTS', message: 'Email already registered' });
+      err.status = 409;
+      err.code = 'EMAIL_EXISTS';
+      err.message = 'Email already registered';
+      return next(err);
     }
     console.error(err);
-    return res.status(500).json({ message: 'Server error' });
+    next(err);
   }
 };
 
