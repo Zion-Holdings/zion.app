@@ -15,7 +15,6 @@ axios.interceptors.response.use(
 
 const apiClient = axios.create({
   baseURL: '/api/v1/services',
-  withCredentials: true,
 });
 
 axiosRetry(apiClient, {
