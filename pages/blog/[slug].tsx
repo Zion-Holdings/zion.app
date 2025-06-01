@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import NextHead from '@/components/NextHead';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import type { BlogPost } from '@/types/blog';
@@ -13,10 +14,17 @@ const BlogPostPage: React.FC<BlogProps> = ({ post }) => {
     return <div>Article not found</div>;
   }
   return (
-    <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
-      <h1>{post.title}</h1>
-      <ReactMarkdown>{post.content}</ReactMarkdown>
-    </main>
+    <>
+      <NextHead
+        title={post.title}
+        description={post.excerpt}
+        openGraph={{ title: post.title, description: post.excerpt, image: post.featuredImage }}
+      />
+      <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
+        <h1>{post.title}</h1>
+        <ReactMarkdown>{post.content}</ReactMarkdown>
+      </main>
+    </>
   );
 };
 
