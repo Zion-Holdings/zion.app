@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -17,12 +18,12 @@ interface ProductListingCardProps {
   detailBasePath?: string;
 }
 
-export function ProductListingCard({
+const ProductListingCardComponent = ({
   listing,
   view = 'grid',
   onRequestQuote,
   detailBasePath = '/marketplace/listing'
-}: ProductListingCardProps) {
+}: ProductListingCardProps) => {
   const isGrid = view === 'grid';
   const navigate = useNavigate();
   
@@ -165,4 +166,7 @@ export function ProductListingCard({
       </div>
     </div>
   );
-}
+};
+
+export const ProductListingCard = React.memo(ProductListingCardComponent);
+ProductListingCard.displayName = 'ProductListingCard';

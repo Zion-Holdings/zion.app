@@ -2,7 +2,9 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Grid3X3, ListFilter, Loader2 } from "lucide-react";
+import { Grid3X3, ListFilter } from "lucide-react";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { FilterSidebar } from "@/components/search/FilterSidebar";
 import { ActiveFiltersBar } from "@/components/search/ActiveFiltersBar";
@@ -261,8 +263,31 @@ export default function Marketplace() {
             
             {/* Display actual marketplace listings */}
             {isLoading ? (
-              <div className="flex justify-center py-20">
-                <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
+              <div
+                className={
+                  view === 'grid'
+                    ? 'grid grid-cols-1 sm:grid-cols-2 gap-6'
+                    : 'flex flex-col gap-4'
+                }
+              >
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="rounded-lg overflow-hidden border border-zion-blue-light"
+                  >
+                    <Skeleton height={192} width="100%" />
+                    <div className="p-4">
+                      <Skeleton height={24} width="33%" className="mb-2" />
+                      <Skeleton height={32} width="83%" className="mb-4" />
+                      <Skeleton height={16} width="100%" className="mb-2" />
+                      <Skeleton height={16} width="80%" className="mb-4" />
+                      <div className="flex justify-between items-center pt-4">
+                        <Skeleton height={24} width="25%" />
+                        <Skeleton height={32} width="25%" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             ) : filteredListings.length > 0 ? (
               <div

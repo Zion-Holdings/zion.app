@@ -1,23 +1,24 @@
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 export const PostCardSkeleton = () => (
   <Card data-testid="post-card-skeleton">
     <CardHeader className="flex flex-row items-start gap-4 space-y-0">
-      <Skeleton className="h-10 w-10 rounded-full" />
+      <Skeleton height={40} width={40} circle />
       <div className="flex-1 space-y-2">
-        <Skeleton className="h-4 w-3/4" />
-        <Skeleton className="h-3 w-1/4" />
+        <Skeleton height={16} width="75%" />
+        <Skeleton height={12} width="25%" />
       </div>
     </CardHeader>
     <CardContent>
       <div className="space-y-2">
-        <Skeleton className="h-4 w-full" />
-        <Skeleton className="h-4 w-5/6" />
+        <Skeleton height={16} width="100%" />
+        <Skeleton height={16} width="83%" />
       </div>
     </CardContent>
     <CardFooter>
-      <Skeleton className="h-4 w-24" />
+      <Skeleton height={16} width={96} />
     </CardFooter>
   </Card>
 );
