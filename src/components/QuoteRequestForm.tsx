@@ -11,6 +11,7 @@ import { ProjectDetailsStep } from "@/components/QuoteRequestForm/ProjectDetails
 import { TimelineStep } from "@/components/QuoteRequestForm/TimelineStep";
 import { BudgetStep } from "@/components/QuoteRequestForm/BudgetStep";
 import { SummaryStep } from "@/components/QuoteRequestForm/SummaryStep";
+import { AutoFillModal } from "@/components/QuoteRequestForm/AutoFillModal";
 import { QuoteFormData } from "@/types/quotes";
 import { Sparkles, Loader2 } from "lucide-react";
 import { z } from "zod";
@@ -28,6 +29,7 @@ export function QuoteRequestForm() {
   const [currentStep, setCurrentStep] = useState<QuoteRequestSteps>("service");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [autoFillLoading, setAutoFillLoading] = useState(false);
+  const [autoFillOpen, setAutoFillOpen] = useState(false);
   
   const [formData, setFormData] = useState<QuoteFormData>({
     serviceType: "",
@@ -136,27 +138,18 @@ export function QuoteRequestForm() {
     }
   };
 
-  const handleAutoFill = async () => {
-    if (!formData.projectDescription.trim()) {
-      toast({
-        title: "Description Required",
-        description: "Please provide a project description first.",
-        variant: "destructive",
-      });
-      setCurrentStep("details");
-      return;
-    }
-
+  const handleAutoFill = async (description: string) => {
     setAutoFillLoading(true);
     try {
       const res = await fetch("/api/openai/match", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ projectDescription: formData.projectDescription }),
+        body: JSON.stringify({ projectDescription: description }),
       });
       if (!res.ok) throw new Error("Request failed");
       const { category, itemId, timeline, budget } = await res.json();
       updateFormData({
+        projectDescription: description,
         serviceType: category,
         serviceCategory: category,
         specificItem: itemId
@@ -166,6 +159,7 @@ export function QuoteRequestForm() {
         budget: { ...formData.budget, ...(budget || {}) },
       });
       setCurrentStep("summary");
+      setAutoFillOpen(false);
     } catch (err) {
       console.error("auto fill error", err);
       toast({
@@ -209,7 +203,7 @@ export function QuoteRequestForm() {
           </div>
           <Button
             size="sm"
-            onClick={handleAutoFill}
+            onClick={() => setAutoFillOpen(true)}
             disabled={autoFillLoading}
             className="mt-2"
           >
@@ -259,6 +253,12 @@ export function QuoteRequestForm() {
           </CardContent>
         </Card>
       </div>
+      <AutoFillModal
+        open={autoFillOpen}
+        onOpenChange={setAutoFillOpen}
+        onSubmit={handleAutoFill}
+        loading={autoFillLoading}
+      />
     </div>
   );
 }
