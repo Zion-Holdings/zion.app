@@ -1,6 +1,14 @@
 console.log("main.tsx: Start");
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+// Integrate axe-core accessibility auditing in development
+if (process.env.NODE_ENV !== 'production') {
+  // Dynamically require to avoid bundling in production
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const axe = require('@axe-core/react');
+  axe(React, ReactDOM, 1000);
+}
 import App from './App.tsx';
 import './index.css';
 feat/i18n-implementation
