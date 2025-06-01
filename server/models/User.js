@@ -7,8 +7,10 @@ const userSchema = new mongoose.Schema({
   passwordHash: { type: String, required: true, select: false },
 });
 
+const SALT_ROUNDS = 10;
+
 userSchema.methods.setPassword = async function(password) {
-  this.passwordHash = await bcrypt.hash(password, 10);
+  this.passwordHash = await bcrypt.hash(password, SALT_ROUNDS);
 };
 
 module.exports = mongoose.model('User', userSchema);

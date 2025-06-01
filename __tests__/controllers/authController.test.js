@@ -22,7 +22,7 @@ describe('authController.loginUser', () => {
       name: 'Test',
       passwordHash: 'hashed'
     });
-    bcrypt.compareSync.mockReturnValue(true);
+    bcrypt.compare.mockResolvedValue(true);
     jwt.sign.mockReturnValue('signed-jwt');
 
     await loginUser(req, res);
@@ -41,11 +41,11 @@ describe('authController.loginUser', () => {
       name: 'Test',
       passwordHash: 'hashed'
     });
-    bcrypt.compareSync.mockReturnValue(false);
+    bcrypt.compare.mockResolvedValue(false);
 
     await loginUser(req, res);
 
     expect(res.status).toHaveBeenCalledWith(401);
-    expect(res.json).toHaveBeenCalledWith({ message: 'Invalid credentials' });
+    expect(res.json).toHaveBeenCalledWith({ message: 'Invalid credentials', code: 'WRONG_PASSWORD' });
   });
 });
