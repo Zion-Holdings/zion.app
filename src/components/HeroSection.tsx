@@ -30,7 +30,7 @@ export function HeroSection() {
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button
-            className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-primary-foreground text-base py-4 sm:text-lg sm:py-6"
+            className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-primary-foreground text-base py-3 px-6 sm:text-lg transition-transform hover:scale-105"
             size="lg" // size="lg" might control some default padding, check if override is enough
             asChild
           >
