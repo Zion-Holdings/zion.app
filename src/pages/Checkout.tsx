@@ -1,8 +1,11 @@
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { useNavigate } from 'react-router-dom';
-import CheckoutButton from '@/components/checkout/CheckoutButton';
+import CardForm from '@/components/checkout/CardForm';
+import { Elements } from '@stripe/react-stripe-js';
+import { getStripe } from '@/utils/getStripe';
 import { Input } from '@/components/ui/input';
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
 import { useAuth } from '@/hooks/useAuth';
@@ -23,9 +26,9 @@ function CheckoutInner() {
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
-  const onSubmit = () => {
-    // No-op, checkout handled via Stripe Checkout button
-  };
+  const [intent, setIntent] = useState<any | null>(null);
+
+  const onSubmit = () => {};
 
   return (
     <div className="container max-w-2xl py-10">
@@ -82,13 +85,21 @@ function CheckoutInner() {
               <FormMessage />
             </FormItem>
           )} />
-          <CheckoutButton
-            priceId={items[0]?.id}
-            quantity={items[0]?.quantity || 1}
-          />
-          <p className="text-xs text-zion-slate-light">
-            Use test card 4242 4242 4242 4242 with any future date and CVC.
-          </p>
+          {intent ? (
+            <div className="space-y-2 text-center">
+              <p className="font-semibold">Payment Successful!</p>
+              <p>Confirmation ID: {intent.id}</p>
+            </div>
+          ) : (
+            <Elements stripe={getStripe()}>
+              <CardForm amount={subtotal} onSuccess={setIntent} />
+            </Elements>
+          )}
+          {!intent && (
+            <p className="text-xs text-zion-slate-light">
+              Use test card 4242 4242 4242 4242 with any future date and CVC.
+            </p>
+          )}
         </form>
       </Form>
     </div>
