@@ -23,6 +23,8 @@ import * as yup from 'yup';
 import { SendIcon, Mail } from 'lucide-react';
 import api from '@/services/apiClient';
 import { toast } from '@/hooks/use-toast';
+import { useAuth } from '@/hooks/useAuth';
+import { LoginModal } from '@/components/auth/LoginModal';
 
 interface ContactPublisherModalProps {
   isOpen: boolean;
@@ -55,8 +57,10 @@ export function ContactPublisherModal({
   publisherEmail,
   productId,
 }: ContactPublisherModalProps) {
+  const { user } = useAuth();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+  const [loginOpen, setLoginOpen] = React.useState(false);
 
   const form = useForm<FormValues>({
     resolver: yupResolver(schema),
@@ -65,14 +69,19 @@ export function ContactPublisherModal({
   });
 
   const handleSend = async () => {
+    if (!user) {
+      setLoginOpen(true);
+      return;
+    }
     const values = form.getValues();
     setIsSubmitting(true);
     setError(null);
     try {
-      await api.post('/messages', {
+      await api.post('/api/messages', {
         productId,
         subject: values.subject,
         body: values.message,
+        fromUser: user.id,
       });
       toast.success('Message sent');
       form.reset();
@@ -94,6 +103,7 @@ export function ContactPublisherModal({
   };
 
   return (
+    <>
     <Dialog open={isOpen} onOpenChange={onClose}>
       <FocusLock disabled={!isOpen} returnFocus>
         <DialogContent
@@ -166,5 +176,7 @@ export function ContactPublisherModal({
         </DialogContent>
       </FocusLock>
     </Dialog>
+    <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />
+    </>
   );
 }
