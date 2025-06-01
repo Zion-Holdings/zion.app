@@ -39,7 +39,11 @@ export default function TalentDetail() {
   }
 
   if (!talent) {
-    return <NotFound />;
+    return (
+      <div data-testid="talent-not-found">
+        <NotFound />
+      </div>
+    );
   }
 
   return (
@@ -48,7 +52,7 @@ export default function TalentDetail() {
         <h1 className="text-3xl font-bold" data-testid="talent-name">{talent.full_name}</h1>
         {talent.bio && <p>{talent.bio}</p>}
         {talent.skills && talent.skills.length > 0 && (
-          <ul className="list-disc ml-4">
+          <ul className="list-disc ml-4" data-testid="talent-skills">
             {talent.skills.map(skill => (
               <li key={skill}>{skill}</li>
             ))}
