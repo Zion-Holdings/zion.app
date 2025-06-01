@@ -12,7 +12,7 @@ import { TimelineStep } from "@/components/QuoteRequestForm/TimelineStep";
 import { BudgetStep } from "@/components/QuoteRequestForm/BudgetStep";
 import { SummaryStep } from "@/components/QuoteRequestForm/SummaryStep";
 import { QuoteFormData } from "@/types/quotes";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Loader2 } from "lucide-react";
 import { z } from "zod";
 
 export type QuoteRequestSteps = "service" | "details" | "timeline" | "budget" | "summary";
@@ -27,6 +27,7 @@ export function QuoteRequestForm() {
   const { toast } = useToast();
   const [currentStep, setCurrentStep] = useState<QuoteRequestSteps>("service");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [autoFillLoading, setAutoFillLoading] = useState(false);
   
   const [formData, setFormData] = useState<QuoteFormData>({
     serviceType: "",
@@ -134,6 +135,48 @@ export function QuoteRequestForm() {
       setIsSubmitting(false);
     }
   };
+
+  const handleAutoFill = async () => {
+    if (!formData.projectDescription.trim()) {
+      toast({
+        title: "Description Required",
+        description: "Please provide a project description first.",
+        variant: "destructive",
+      });
+      setCurrentStep("details");
+      return;
+    }
+
+    setAutoFillLoading(true);
+    try {
+      const res = await fetch("/api/openai/match", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ projectDescription: formData.projectDescription }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      const { category, itemId, timeline, budget } = await res.json();
+      updateFormData({
+        serviceType: category,
+        serviceCategory: category,
+        specificItem: itemId
+          ? { id: itemId, title: "AI Selected Item", category }
+          : formData.specificItem,
+        timeline: timeline || formData.timeline,
+        budget: { ...formData.budget, ...(budget || {}) },
+      });
+      setCurrentStep("summary");
+    } catch (err) {
+      console.error("auto fill error", err);
+      toast({
+        title: "Auto-fill Failed",
+        description: "We couldn't process your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setAutoFillLoading(false);
+    }
+  };
   
   const renderStepContent = () => {
     switch (currentStep) {
@@ -155,7 +198,7 @@ export function QuoteRequestForm() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 space-y-3">
           <GradientHeading>Request a Quote</GradientHeading>
           <p className="text-zion-slate-light mt-4">
             Tell us about your project and we'll create a customized quote for you
@@ -164,6 +207,17 @@ export function QuoteRequestForm() {
             <Sparkles className="h-4 w-4 text-zion-cyan mr-1" />
             <span className="text-sm text-white">AI-powered matching</span>
           </div>
+          <Button
+            size="sm"
+            onClick={handleAutoFill}
+            disabled={autoFillLoading}
+            className="mt-2"
+          >
+            {autoFillLoading && (
+              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+            )}
+            Auto Fill with AI
+          </Button>
         </div>
         
         <Card className="bg-zion-blue-dark border border-zion-blue-light mb-8">
