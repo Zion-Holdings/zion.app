@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
-import { LanguageSelector } from '@/components/header/LanguageSelector';
+import LanguageSwitcher from '@/components/LanguageSwitcher'; // Import the new LanguageSwitcher
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
@@ -57,7 +57,7 @@ export function AppHeader() {
           </div>
 
           <PointsBadge />
-          <LanguageSelector />
+          <LanguageSwitcher /> {/* Replace LanguageSelector with LanguageSwitcher */}
           {/* Replace the greeting span with UserProfileDropdown */}
           {user && (
             <div className="ml-4"> {/* Added a div for potential spacing adjustments if needed */}
