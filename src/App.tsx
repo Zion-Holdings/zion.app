@@ -59,6 +59,7 @@ import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Profile from './pages/Profile';
 import Wallet from './pages/Wallet';
+import RecommendationsPage from './pages/RecommendationsPage';
 import { SupportChatbot } from './components/SupportChatbot';
 import PrivateRoute from './components/PrivateRoute';
 
@@ -106,6 +107,7 @@ const baseRoutes = [
   { path: '/cart', element: <CartPage /> },
   { path: '/wallet', element: <PrivateRoute><Wallet /></PrivateRoute> },
   { path: '/profile', element: <PrivateRoute><Profile /></PrivateRoute> },
+  { path: '/recommendations', element: <PrivateRoute><RecommendationsPage /></PrivateRoute> },
   { path: '/checkout', element: <Checkout /> },
 ];
 
