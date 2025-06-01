@@ -85,7 +85,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       return { error: (clientLoginResult.error as any)?.message || "Client-side login failed." };
     }
 codex/implement-ai-recommendations-endpoint
-    const next = new URLSearchParams(location.search).get('next') || '/equipment/recommendations';
+    const params = new URLSearchParams(location.search);
+    const next = params.get('redirectTo') || params.get('next') || '/equipment/recommendations';
     navigate(next, { replace: true });
 main
 
@@ -117,7 +118,8 @@ main
       if (!loginResult.error) {
         const firstName = (userData?.name || userData || '').split(' ')[0];
         toast({ title: `Welcome, ${firstName}!` });
-        const next = new URLSearchParams(location.search).get('next') || '/dashboard';
+        const params = new URLSearchParams(location.search);
+        const next = params.get('redirectTo') || params.get('next') || '/dashboard';
         navigate(next, { replace: true });
       }
     }
@@ -146,7 +148,7 @@ main
               if (event === 'SIGNED_IN') {
                 handleSignedIn(mappedUser);
                 const params = new URLSearchParams(location.search);
-                const next = params.get('next');
+                const next = params.get('redirectTo') || params.get('next');
                 // --- BEGIN MODIFICATION ---
                 if (location.state?.pendingAction === 'buyNow' && location.state?.pendingActionArgs) {
                   const { id, title, price } = location.state.pendingActionArgs;
@@ -169,7 +171,7 @@ main
             setUser(null);
           }
         } else {
-          setUser(null);
+          setUser(false);
           
           // Show logout toast when user logs out
           if (event === 'SIGNED_OUT') {
@@ -179,17 +181,6 @@ main
         setIsLoading(false);
       }
     );
-
-    // Initial session check
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session) {
-        setIsLoading(false);
-      }
-    }).catch(error => {
-      console.error("Error during initial Supabase getSession:", error);
-      setUser(null); // Explicitly set user to null on error
-      setIsLoading(false);
-    });
 
     return () => {
       subscription.unsubscribe();
