@@ -4,7 +4,8 @@ import { TALENT_PROFILES } from '@/data/talentData';
 import { ProductListingCard } from '@/components/ProductListingCard';
 import { TalentCard } from '@/components/talent/TalentCard';
 import { Button } from '@/components/ui/button';
-import { safeStorage } from '@/utils/safeStorage';
+import { useCart } from '@/context/CartContext';
+import { toast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,11 +19,20 @@ export default function WishlistPage() {
     return null;
   }
 
+  const { items, dispatch } = useCart();
+
   const addToCart = (item: { id: string; title?: string; price?: number }) => {
-    const stored = safeStorage.getItem('cart');
-    const cart = stored ? JSON.parse(stored) : [];
-    cart.push({ id: item.id, name: item.title || 'Item', price: item.price || 0, quantity: 1 });
-    safeStorage.setItem('cart', JSON.stringify(cart));
+    if (items.some(i => i.id === item.id)) return;
+    dispatch({
+      type: 'ADD_ITEM',
+      payload: {
+        id: item.id,
+        name: item.title || 'Item',
+        price: item.price || 0,
+        quantity: 1
+      }
+    });
+    toast.success(`1× ${item.title || 'Item'} added`);
   };
 
   const productMap = MARKETPLACE_LISTINGS.reduce<Record<string, any>>((acc, p) => {
@@ -60,8 +70,13 @@ export default function WishlistPage() {
             return item ? (
               <div key={fav.item_id} className="relative">
                 <ProductListingCard listing={item} />
-                <Button size="sm" className="absolute bottom-2 right-2" onClick={() => addToCart(item)}>
-                  Add to Cart
+                <Button
+                  size="sm"
+                  className="absolute bottom-2 right-2"
+                  onClick={() => addToCart(item)}
+                  disabled={items.some(i => i.id === item.id)}
+                >
+                  {items.some(i => i.id === item.id) ? 'In Cart' : 'Add to Cart'}
                 </Button>
               </div>
             ) : null;

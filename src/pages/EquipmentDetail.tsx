@@ -9,10 +9,7 @@ import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-reac
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { getStripe } from "@/utils/getStripe";
-import { safeStorage } from '@/utils/safeStorage';
-import { useDispatch } from 'react-redux';
-import type { AppDispatch } from '@/store';
-import { addItem } from '@/store/cartSlice';
+import { useCart } from '@/context/CartContext';
 
 interface EquipmentSpecification {
   name: string;
@@ -157,7 +154,7 @@ export default function EquipmentDetail() {
   const navigate = useNavigate();
   const location = useLocation();
   const { isAuthenticated, user } = useAuth();
-  const dispatch = useDispatch<AppDispatch>();
+  const { items, dispatch } = useCart();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
@@ -180,24 +177,17 @@ export default function EquipmentDetail() {
     );
   }
 
-  const handleAddToCart = () => {
-    setIsAdding(true);
+  const inCart = items.some(i => i.id === equipment.id);
 
-    setTimeout(() => {
-      const stored = safeStorage.getItem('cart');
-      let cart: { id: string; name: string; price: number; quantity: number }[] = [];
-      if (stored) {
-        try { cart = JSON.parse(stored); } catch { /* ignore */ }
-      }
-      const existing = cart.find(i => i.id === equipment.id);
-      if (existing) existing.quantity += quantity; else cart.push({ id: equipment.id, name: equipment.name, price: equipment.price, quantity });
-      safeStorage.setItem('cart', JSON.stringify(cart));
-      setIsAdding(false);
-      toast({
-        title: "Added to cart",
-        description: `${quantity}x ${equipment.name} added to your cart.`,
-      });
-    }, 800);
+  const handleAddToCart = () => {
+    if (inCart) return;
+    setIsAdding(true);
+    dispatch({
+      type: 'ADD_ITEM',
+      payload: { id: equipment.id, name: equipment.name, price: equipment.price, quantity }
+    });
+    toast.success(`${quantity}× ${equipment.name} added`);
+    setTimeout(() => setIsAdding(false), 800);
   };
 
   const handleBuyNow = async () => {
@@ -212,7 +202,10 @@ export default function EquipmentDetail() {
       return;
     }
 
-    dispatch(addItem({ id, title: equipment.name, price: equipment.price }));
+    dispatch({
+      type: 'ADD_ITEM',
+      payload: { id, name: equipment.name, price: equipment.price, quantity }
+    });
     navigate('/checkout');
   };
 
@@ -411,14 +404,14 @@ export default function EquipmentDetail() {
                     {isAdding ? "Processing..." : "Buy Now"}
                   </Button>
                   
-                  <Button 
+                  <Button
                     onClick={handleAddToCart}
-                    disabled={isAdding || !equipment.inStock}
+                    disabled={isAdding || !equipment.inStock || inCart}
                     variant="outline"
                     className="w-full border-zion-purple text-zion-cyan hover:bg-zion-purple/10"
                   >
                     <ShoppingCart className="h-4 w-4 mr-2" />
-                    Add to Cart
+                    {inCart ? 'In Cart' : 'Add to Cart'}
                   </Button>
                 </div>
                 
