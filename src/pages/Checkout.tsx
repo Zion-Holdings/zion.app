@@ -8,6 +8,7 @@ import { getStripe, isProdDomain } from '@/utils/getStripe';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { Badge } from '@/components/ui/badge';
 import { useAuth } from '@/hooks/useAuth';
+import { fireEvent } from '@/lib/analytics';
 import {
   Form,
   FormField,
@@ -92,6 +93,16 @@ export default function Checkout() {
         const stripe = await getStripe();
         if (stripe) {
           const { error } = await stripe.redirectToCheckout({ sessionId: sessionData.sessionId });
+          fireEvent('purchase', {
+            currency: 'USD', // Replace with actual currency
+            value: subtotal, // Replace with actual value
+            items: items.map(item => ({
+              item_id: item.id,
+              item_name: item.name,
+              price: item.price,
+              quantity: item.quantity
+            }))
+          });
           if (error) {
             console.error('Stripe redirect error:', error);
             // TODO: Handle UI: show error message to user

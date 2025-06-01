@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
-
+import { fireEvent } from '@/lib/analytics';
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -53,6 +53,8 @@ export function LoginForm() {
       const result = await login(data.email, data.password, data.rememberMe);
       if (result.error) {
         form.setError("root", { message: result.error });
+      } else {
+        fireEvent('login', { method: 'email' }); // Assuming email login
       }
     } finally {
       setIsSubmitting(false);
