@@ -24,9 +24,9 @@ const fetcher = async (url: string): Promise<ServiceItem[]> => {
 };
 
 export function useQuoteWizard(category: string) {
-  return useSWR<ServiceItem[]>(`/api/items?category=${category}`, fetcher, {
+  return useSWR<ServiceItem[]>(`/api/services?type=${category}`, fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
-      if (retryCount >= 3) return;
+      if (retryCount >= 1) return;
       const timeout = Math.pow(2, retryCount) * 1000; // 1s, 2s, 4s
       setTimeout(() => revalidate({ retryCount: retryCount + 1 }), timeout);
     },
