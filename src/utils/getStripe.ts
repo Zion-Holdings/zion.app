@@ -28,7 +28,9 @@ let stripePromise: Promise<Stripe | null>;
 
 export function getStripe() {
   if (!stripePromise) {
-    const testPublishableKey = import.meta.env.VITE_STRIPE_TEST_PUBLISHABLE_KEY as string | undefined;
+    const testPublishableKey =
+      import.meta.env.VITE_STRIPE_TEST_KEY as string | undefined ||
+      import.meta.env.VITE_STRIPE_TEST_PUBLISHABLE_KEY as string | undefined;
     const livePublishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string | undefined;
     const context = import.meta.env.VITE_NETLIFY_CONTEXT;
 
