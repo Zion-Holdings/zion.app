@@ -27,7 +27,7 @@ export function EnhancedNewsletterForm() {
           <Mail className="h-6 w-6" />
         </div>
         <div>
-          <h4 className="text-lg font-bold text-white">Stay Updated</h4>
+          <h3 className="text-lg font-bold text-white">Stay Updated</h3>
           <p className="text-zion-slate-light text-sm">Get exclusive offers, trending AI news, and early access to best deals</p>
         </div>
       </div>

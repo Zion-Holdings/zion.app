@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate, useLocation } from "react-router-dom";
 import { useForm, type UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -17,6 +17,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
 import { safeStorage } from "@/utils/safeStorage";
 import { mailchimpService } from "@/integrations/mailchimp";
+import { fireEvent } from '@/lib/analytics';
 import {
   Form,
   FormControl,
@@ -50,8 +51,9 @@ const signupSchema = z
 type SignupFormValues = z.infer<typeof signupSchema>;
 
 export default function Signup() {
-  const { loginWithGoogle, loginWithFacebook, loginWithTwitter, isAuthenticated, user, login } = useAuth();
+  const { loginWithGoogle, loginWithFacebook, loginWithTwitter, isAuthenticated, user, login, setUser, setTokens } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   // Track confirm password locally to prevent it from clearing on blur
@@ -95,19 +97,14 @@ export default function Signup() {
         data.password
       );
 
-      if (res.status !== 201) {
-        const message = resData?.message || "Registration failed";
-        if (res.status === 409) {
-          form.setError("email", { message });
-        } else if (res.status === 400 && message.toLowerCase().includes("password")) {
-          form.setError("password", { message });
-        } else {
-          form.setError("root", { message });
-        }
-        toast.error(message);
-        return;
-      }
+      // Check for successful response
+      if (res.ok && resData.token && resData.user) {
+        // Successful registration
+        safeStorage.setItem('authToken', resData.token);
+        setUser(resData.user);
+        setTokens({ accessToken: resData.token, refreshToken: resData.refreshToken || null });
 
+fix/auth-flow-email-verification
       // Handle email verification required case
       if (resData?.emailVerificationRequired) {
         setShowVerificationMessage(true);
@@ -133,6 +130,7 @@ export default function Signup() {
         toast.error("Registration complete, but an unexpected issue occurred. Please try logging in manually.");
         // Potentially navigate to login or show a more specific error
         return;
+            main
       }
 
       // Subscribe user to Mailchimp if opted in (only if registration is fully complete, not pending verification)
@@ -148,9 +146,10 @@ export default function Signup() {
           // Non-critical error, don't block user flow
         }
       }
-
+fix/auth-flow-email-verification
       // Toast and navigation are handled above if session is present
       // If emailVerificationRequired, no toast/navigation here, message is shown
+main
     } catch (err: any) {
       const message =
         err?.response?.data?.message ?? err?.message ?? "Unexpected error";

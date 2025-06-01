@@ -40,6 +40,16 @@
     
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" href="/logos/zion-logo.png" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA_ID%"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '%VITE_GA_ID%');
+    </script>
     
     <!-- Structured data (JSON-LD) for SEO -->
     <meta

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions';
+import { fireEvent } from '@/lib/analytics';
 import { SearchSuggestion } from '@/types/search';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
@@ -38,6 +39,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
   const handleSelect = (text: string) => {
     onChange(text);
     if (onSelectSuggestion) onSelectSuggestion(text);
+    fireEvent('search', { search_term: text });
     setFocused(false);
     inputRef.current?.blur();
   };
@@ -54,6 +56,13 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
           onFocus={() => setFocused(true)}
           placeholder={placeholder}
           className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && value) {
+              fireEvent('search', { search_term: value });
+              setFocused(false);
+              inputRef.current?.blur();
+            }
+          }}
         />
         {value && (
           <button

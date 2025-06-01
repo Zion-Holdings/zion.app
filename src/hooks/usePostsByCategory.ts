@@ -6,10 +6,13 @@ export function usePostsByCategory(slug?: string, page = 1) {
   return useQuery({
     queryKey: ['posts', 'category', slug, page],
     queryFn: () =>
-      slug ? fetchPostsByCategory(slug, page) : Promise.resolve([] as ForumPost[]),
+      slug
+        ? fetchPostsByCategory(slug, page)
+        : Promise.resolve({ posts: [] as ForumPost[] }),
     enabled: !!slug,
     suspense: true,
-    initialData: [] as ForumPost[],
+    initialData: { posts: [] as ForumPost[] },
+    select: (data) => data.posts,
   }) as {
     data: ForumPost[] | undefined;
     isPending: boolean;

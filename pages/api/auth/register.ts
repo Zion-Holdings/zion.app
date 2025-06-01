@@ -48,10 +48,14 @@ async function handler(req: Req, res: JsonRes) {
     let data;
     let error;
     try {
+      const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
       ({ data, error } = await supabase.auth.signUp({
         email,
         password,
-        options: { data: { display_name: name } },
+        options: {
+          data: { display_name: name },
+          emailRedirectTo: `${siteURL}/auth/verify-email`,
+        },
       }));
     } catch (networkErr: any) {
       console.error('signUp network error', networkErr);
@@ -72,7 +76,7 @@ async function handler(req: Req, res: JsonRes) {
       res.status(status).json({ message });
       return;
     }
-
+fix/auth-flow-email-verification
     // Check if email verification is required
     const emailVerificationRequired = !data.session && data.user && (!data.user.identities || data.user.identities.length === 0);
 
@@ -90,6 +94,7 @@ async function handler(req: Req, res: JsonRes) {
         res.setHeader('Set-Cookie', `authToken=${token}; HttpOnly; Path=/; Secure; SameSite=Strict`);
       }
       res.status(201).json({ user: data.user, session: data.session });
+main
     }
   } catch (err: any) {
     console.error(err);

@@ -8,8 +8,15 @@ import { safeStorage, safeSessionStorage } from './safeStorage';
  * This helps prevent auth state inconsistencies and "limbo" states
  */
 export const cleanupAuthState = () => {
-  // Remove standard auth tokens
+  const authTokenKey = "auth.token";
+  // Remove our custom auth token
+  safeStorage.removeItem(authTokenKey);
+  safeSessionStorage.removeItem(authTokenKey);
+
+  // Remove standard Supabase auth tokens (if any were previously used or set by other parts of the app)
   safeStorage.removeItem('supabase.auth.token');
+  // Also clear from session storage if it was ever used there by Supabase or other logic
+  safeSessionStorage.removeItem('supabase.auth.token');
   
   // Remove all Supabase auth keys from localStorage
   try {

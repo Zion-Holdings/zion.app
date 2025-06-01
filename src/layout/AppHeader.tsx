@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
-import { LanguageSelector } from '@/components/header/LanguageSelector';
+feat/i18n-implementation
+import LanguageSwitcher from '@/components/LanguageSwitcher'; // Import the new LanguageSwitcher
+main
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
@@ -11,6 +13,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useAuth } from '@/hooks/useAuth';
+import { UserProfileDropdown } from '@/components/header/UserProfileDropdown'; // Import UserProfileDropdown
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,7 +34,7 @@ export function AppHeader() {
   
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md">
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
           <div className="ml-6 flex-1 hidden md:block">
@@ -42,7 +45,7 @@ export function AppHeader() {
           <div className="md:hidden ml-auto mr-4">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-white/70 hover:text-white hover:bg-zion-purple/10 focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-foreground/70 hover:text-foreground hover:bg-primary/10 focus:outline-none"
               aria-expanded={mobileMenuOpen}
               aria-label={t('general.toggle_mobile_menu')}
             >
@@ -56,14 +59,14 @@ export function AppHeader() {
           </div>
 
           <PointsBadge />
-          <LanguageSelector />
+feat/i18n-implementation
+          <LanguageSwitcher /> {/* Replace LanguageSelector with LanguageSwitcher */}
+main
+          {/* Replace the greeting span with UserProfileDropdown */}
           {user && (
-            <span
-              className="hidden sm:block ml-4 text-sm text-white"
-              data-testid="header-greeting"
-            >
-              {`Hello, ${firstName}!`}
-            </span>
+            <div className="ml-4"> {/* Added a div for potential spacing adjustments if needed */}
+              <UserProfileDropdown />
+            </div>
           )}
         </div>
       </header>
@@ -76,7 +79,7 @@ export function AppHeader() {
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="relative bg-zion-blue-dark border-t border-zion-purple/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="relative bg-card border-t border-primary/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
             <MobileMenu 
               unreadCount={unreadCount} 
               onClose={() => setMobileMenuOpen(false)} 

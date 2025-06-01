@@ -1,136 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@400;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import './styles/navbar.css';
+
 @layer base {
   :root {
-    --font-sans: 'Orbitron', system-ui, sans-serif;
+    --font-sans: 'Inter', system-ui, sans-serif; /* Updated to Inter as base sans */
 
-    --background: 0 0% 7%;
-    --foreground: 142 71% 45%;
+    --background: 222 47% 8%;
+    --foreground: 0 0% 88%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 142 71% 45%;
+    --card: 220 30% 11%;
+    --card-foreground: 0 0% 88%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 142 71% 45%;
+    --popover: 0 0% 100%; /* Kept existing */
+    --popover-foreground: 224 71% 4%; /* Kept existing */
 
-    --primary: 216 84% 50%;
-    --primary-foreground: 0 0% 93%;
+    --primary: 188 85% 53%;
+    --primary-foreground: 222 47% 8%;
 
-    --secondary: 0 0% 68%;
-    --secondary-foreground: 0 0% 7%;
+    --secondary: 271 76% 53%;
+    --secondary-foreground: 0 0% 88%;
 
-    --muted: 0 0% 68%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 40% 96%; /* Kept existing */
+    --muted-foreground: 215 20% 45%; /* Kept existing */
 
-    --accent: 228 12% 92%;
-    --accent-foreground: 0 0% 7%;
+    --accent: 288 85% 60%;
+    --accent-foreground: 0 0% 88%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 142 71% 45%;
+    --destructive: 0 84% 60%; /* Kept existing */
+    --destructive-foreground: 210 40% 98%; /* Kept existing */
 
-    --border: 0 0% 68%;
-    --input: 0 0% 68%;
-    --ring: 216 84% 53%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 228 12% 92%;
-
-    --sidebar-foreground: 0 0% 7%;
-
-    --sidebar-primary: 216 84% 53%;
-
-    --sidebar-primary-foreground: 142 71% 45%;
-
-    --sidebar-accent: 0 0% 68%;
-
-    --sidebar-accent-foreground: 0 0% 7%;
-
-    --sidebar-border: 0 0% 68%;
-
-    --sidebar-ring: 216 84% 53%;
-  }
-
-  .dark {
-    --background: 0 0% 7%;
-    --foreground: 142 71% 45%;
-
-    --card: 0 0% 7%;
-    --card-foreground: 142 71% 45%;
-
-    --popover: 0 0% 7%;
-    --popover-foreground: 142 71% 45%;
-
-    --primary: 216 84% 50%;
-    --primary-foreground: 142 71% 45%;
-
-    --secondary: 0 0% 68%;
-    --secondary-foreground: 0 0% 7%;
-
-    --muted: 0 0% 68%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 228 12% 92%;
-    --accent-foreground: 0 0% 7%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 93%;
-
-    --border: 0 0% 68%;
-    --input: 0 0% 68%;
-    --ring: 216 84% 53%;
-    --sidebar-background: 228 12% 92%;
-    --sidebar-foreground: 0 0% 7%;
-    --sidebar-primary: 216 84% 53%;
-    --sidebar-primary-foreground: 142 71% 45%;
-    --sidebar-accent: 0 0% 68%;
-    --sidebar-accent-foreground: 0 0% 7%;
-    --sidebar-border: 0 0% 68%;
-    --sidebar-ring: 216 84% 53%;
-  }
-
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 224 71% 4%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
-
-    --primary: 262 83% 58%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
-
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 20% 45%;
-
-    --accent: 210 40% 96%;
-    --accent-foreground: 224 71% 4%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 262 83% 58%;
+    --border: 222 39% 17%;
+    --input: 222 39% 17%;
+    --ring: 188 85% 53%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 210 40% 96%;
+
     --sidebar-foreground: 224 71% 4%;
+
     --sidebar-primary: 262 83% 58%;
+
     --sidebar-primary-foreground: 210 40% 98%;
+
     --sidebar-accent: 210 40% 96%;
+
     --sidebar-accent-foreground: 224 71% 4%;
+
     --sidebar-border: 214 32% 91%;
+
     --sidebar-ring: 262 83% 58%;
+
+    /* Variables to be set by themeUtils.ts
+    --primary-color: #3b82f6; (example)
+    --background-color: #ffffff; (example)
+    --text-color: #000000; (example)
+    --accent-color: #3b82f6; (example)
+    --button-color: #3b82f6; (example)
+    --card-background: #f8fafc; (example)
+    */
   }
+
+  /*
+    The .dark and .light classes in :root are no longer needed here
+    as theme colors are applied dynamically via JavaScript using CSS custom properties
+    set on the :root element (document.documentElement).
+    The ThemeProvider component now handles applying these styles.
+    The `document.documentElement.classList.add('dark')` or `document.documentElement.classList.add('light')`
+    is still managed by ThemeProvider for any CSS that might directly depend on these classes,
+    but the color variable definitions themselves are dynamic.
+  */
 }
 
 @layer base {
@@ -139,7 +83,12 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: theme('fontFamily.sans');
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.heading');
   }
 
   @keyframes pulse {
@@ -161,16 +110,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: theme('colors["zion-blue"].DEFAULT');
+    background: theme('colors.card');
   }
 
   ::-webkit-scrollbar-thumb {
-    background: theme('colors["zion-purple"].dark');
+    background: theme('colors.secondary');
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: theme('colors["zion-purple"].DEFAULT');
+    background: theme('colors.accent');
   }
 
   /* Smooth scrolling */

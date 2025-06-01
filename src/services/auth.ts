@@ -9,3 +9,24 @@ export async function register(name: string, email: string, password: string) {
   const data = await res.json().catch(() => ({}));
   return { res, data };
 }
+
+feat/wallet-page
+export async function resetPassword(token: string, newPassword: string) {
+  const API_URL = import.meta.env.VITE_API_URL || ''; // Ensure API_URL is defined
+  const res = await fetch(`${API_URL}/auth/reset-password`, {
+main
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ token, newPassword }),
+  });
+  const data = await res.json().catch(() => ({})); // Gracefully handle non-JSON responses
+
+  if (!res.ok) {
+    // Throw an error with the message from the backend if available, or a generic one
+    throw new Error(data?.message || `Error ${res.status}: Failed to reset password`);
+  }
+
+  return { res, data };
+}
