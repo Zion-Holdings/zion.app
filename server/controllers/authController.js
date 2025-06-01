@@ -35,26 +35,34 @@ exports.login = exports.loginUser;
 
 exports.registerUser = async function (req, res) {
   try {
-    const { name, email, password } = req.body;
-    const passwordHash = await bcrypt.hash(password, 10);
-    let user;
-    try {
-      user = await User.create({ name, email: email.toLowerCase().trim(), passwordHash });
-    } catch (err) {
-      console.error('User.create error code:', err.code);
-      if (err.code === 11000) {
-        return res.status(409).json({ message: 'Email already registered' });
-      }
-      return res.status(400).json({ message: err.message });
+codex/handle-duplicate-email-error
+    const name = req.body.name;
+    const email = req.body.email.toLowerCase().trim();
+    const password = req.body.password;
+    if (!name || !email || !password) {
+      return res.status(400).json({ message: 'Missing required fields' });
     }
 
+    const user = new User({ name, email });
+    await user.setPassword(password);
+    await user.save();
+
     const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: '7d' });
-    res.status(201).json({
+    return res.status(201).json({
+main
       token,
       user: { id: user._id, email: user.email, name: user.name },
     });
   } catch (err) {
+codex/handle-duplicate-email-error
+    if (err && err.code === 11000) {
+      return res.status(409).json({ code: 'EMAIL_EXISTS', message: 'Email already registered' });
+    }
     console.error(err);
-    res.status(500).json({ message: 'Server error' });
+    return res.status(500).json({ message: 'Server error' });
   }
 };
+
+// Maintain backwards compatibility if other modules still call `register`
+exports.register = exports.registerUser;
+main
