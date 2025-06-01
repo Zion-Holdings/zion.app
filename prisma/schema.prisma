@@ -49,3 +49,30 @@ model ProductReview {
 
   @@unique([productId, userId])
 }
+
+model TalentProfile {
+  id                  String    @id @default(cuid())
+  user_id             String    // Corresponds to user_id in static data. User model has Int id, so direct relation is tricky without User id type change.
+  full_name           String
+  professional_title  String
+  profile_picture_url String?
+  bio                 String?
+  summary             String?
+  location            String?
+  skills              String[]  @default([])
+  hourly_rate         Float?
+  years_experience    Int?
+  availability_type   String?    // e.g., "full_time", "part_time", "project"
+  timezone            String?
+  average_rating      Float?
+  rating_count        Int?
+  is_verified         Boolean?  @default(false)
+  key_projects        Json?     // Store as JSON: { title: string, description: string }[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // If User model's ID was String, we could do:
+  // user User @relation(fields: [user_id], references: [id])
+  // For now, user_id is kept as String.
+}
