@@ -97,38 +97,91 @@ main
     return { error: null }; // Successful login
   };
 
-  // Register via backend and persist auth info
-  const register = async (name: string, email: string, password: string) => {
+  // Refactored signup method
+  const signup = async (name: string, email: string, password: string) => {
+    setIsLoading(true);
     try {
       const { res, data } = await registerUser(name, email, password);
-      if (!res.ok || !data?.token || !data?.user) {
-        return { error: data?.message || 'Registration failed' };
+
+      if (!res.ok) {
+        // Handle API errors (e.g., 400, 409, 500) from /api/auth/register
+        toast({
+          title: "Signup Failed",
+          description: data?.message || 'An unexpected error occurred.',
+          variant: "destructive"
+        });
+        setIsLoading(false);
+        return { error: data?.message || 'Signup failed', emailVerificationRequired: false };
       }
-      safeStorage.setItem('auth', JSON.stringify({ token: data.token, user: data.user }));
-      setTokens({ accessToken: data.token, refreshToken: data.refreshToken || null });
-      setUser(data.user);
-      return { error: null };
-    } catch (err: any) {
-      return { error: err?.message || 'Registration failed' };
-    }
-  };
 
-  // Wrapper for signup to match the AuthContextType interface
-  const signup = async (email: string, password: string, userData?: any) => {
-    const result = await signupImpl({ email, password, display_name: userData });
+      if (data?.emailVerificationRequired) {
+        toast({
+          title: "Signup Successful",
+          description: "Please check your email to verify your account."
+        });
+        // Optionally set minimal user info if available and desired, but no active session
+        // For example: setUser({ email: data.user?.email, id: data.user?.id, name: data.user?.display_name, email_verified_pending: true });
+        // For now, we don't set any user state to prevent confusion with an active session.
+        setIsLoading(false);
+        return { error: null, emailVerificationRequired: true };
+      } else if (data?.session && data?.user) {
+        // Auto-confirmed: API has set the cookie, now set client-side state
+        // The API (/api/auth/register) should have set the HttpOnly cookie.
+        // Here, we update the client-side state (React context, Supabase client session)
 
-    if (!result?.error) {
-      const loginResult = await login(email, password);
-      if (!loginResult.error) {
-        const firstName = (userData?.name || userData || '').split(' ')[0];
+        // Set Supabase client session - this will trigger onAuthStateChange
+        // which should then fetch the profile and update the user state.
+        const { error: sessionError } = await supabase.auth.setSession({
+          access_token: data.session.access_token,
+          refresh_token: data.session.refresh_token,
+        });
+
+        if (sessionError) {
+          console.error("Error setting Supabase session:", sessionError);
+          toast({
+            title: "Signup Error",
+            description: "Failed to initialize session. Please try logging in.",
+            variant: "destructive"
+          });
+          setIsLoading(false);
+          return { error: "Failed to initialize session.", emailVerificationRequired: false };
+        }
+
+        // setTokens is handled by onAuthStateChange or if direct setting is preferred:
+        setTokens({ accessToken: data.session.access_token, refreshToken: data.session.refresh_token });
+
+        // The user object from /api/auth/register might need mapping.
+        // For now, we assume data.user is compatible or onAuthStateChange will handle it.
+        // setUser(data.user); // This will be handled by onAuthStateChange after setSession
+
+        const firstName = (data.user.user_metadata?.display_name || name).split(' ')[0];
         toast({ title: `Welcome, ${firstName}!` });
+
         const params = new URLSearchParams(location.search);
         const next = params.get('redirectTo') || params.get('next') || '/dashboard';
         navigate(next, { replace: true });
+        setIsLoading(false);
+        return { error: null, emailVerificationRequired: false };
+      } else {
+        // Fallback for unexpected successful response structure
+        toast({
+          title: "Signup Error",
+          description: "Unexpected response from server.",
+          variant: "destructive"
+        });
+        setIsLoading(false);
+        return { error: "Unexpected response from server.", emailVerificationRequired: false };
       }
+    } catch (err: any) {
+      console.error("Signup exception:", err);
+      toast({
+        title: "Signup Failed",
+        description: err.message || "An unexpected error occurred during signup.",
+        variant: "destructive",
+      });
+      setIsLoading(false);
+      return { error: err.message || "Signup failed", emailVerificationRequired: false };
     }
-
-    return result;
   };
 
   useEffect(() => {
@@ -196,7 +249,7 @@ main
     isLoading,
     isAuthenticated: !!user,
     login,
-    register,
+    // register, // Removed as signup now covers its functionality
     signup,
     logout,
     resetPassword,
