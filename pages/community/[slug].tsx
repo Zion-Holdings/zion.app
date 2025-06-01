@@ -75,7 +75,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, hasSession, c
               <TooltipTrigger asChild>
                 {hasSession ? (
                   <Button asChild>
-                    <Link href={`/community/create?category=${category}`}>Create New Post</Link>
+                    <Link href={`/community?new=1&category=${category}`}>Create New Post</Link>
                   </Button>
                 ) : (
                   <Button disabled>Create New Post</Button>
@@ -98,7 +98,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, hasSession, c
             title="No posts yet"
             subtitle="Be the first to post"
             cta="Create New Post"
-            href={`/community/create?category=${category}`}
+            href={`/community?new=1&category=${category}`}
             hasSession={hasSession}
           />
         )}

@@ -21,8 +21,8 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
 
   const handleClick = () => {
     const target = categoryId
-      ? `/community/create?category=${categoryId}`
-      : "/community/create";
+      ? `/community?new=1&category=${categoryId}`
+      : "/community?new=1";
 
     if (user) {
       navigate(target);
