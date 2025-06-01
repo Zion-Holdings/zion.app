@@ -1,4 +1,5 @@
 import { Component, ReactNode, ErrorInfo } from 'react';
+import { toast } from '@/hooks/use-toast';
 
 interface Props {
   children: ReactNode;
@@ -31,6 +32,7 @@ export class ErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, info: ErrorInfo) {
     console.log("ErrorBoundary.tsx: ComponentDidCatch triggered");
     console.error('Uncaught error:', error, info);
+    toast.error(error.message);
   }
 
   render() {
