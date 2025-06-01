@@ -1,70 +1,48 @@
-import { loginUser, registerUser } from '@/services/authService';
+import { loginUser } from '@/services/authService'; // registerUser removed as it's not the focus
 import { NextApiRequest, NextApiResponse } from 'next';
-import { vi, Mock } from 'vitest';
+import { vi, Mock, describe, it, expect, beforeEach, afterEach } from 'vitest';
 
-// Declare variables that will hold the mock functions.
-// These will be assigned after the mock setup.
+// Mock Supabase client
 let mockSignInWithPassword: Mock;
-let mockSignUp: Mock;
 
 vi.mock('@supabase/supabase-js', async (importOriginal) => {
   const actual = await importOriginal() as any;
-
-  // Define the mock functions inside the factory.
   const _mockSignInWithPassword = vi.fn();
+  // Keep other mocks if they are used by other parts of the handler or related code
   const _mockSignUp = vi.fn();
   const _mockOnAuthStateChange = vi.fn(() => ({ data: { subscription: { unsubscribe: vi.fn() } } }));
   const _mockGetSession = vi.fn().mockResolvedValue({ data: { session: null }, error: null });
-  const _mockFrom = vi.fn(() => ({
-    select: vi.fn().mockReturnThis(),
-    insert: vi.fn().mockReturnThis(),
-    update: vi.fn().mockReturnThis(),
-    delete: vi.fn().mockReturnThis(),
-    eq: vi.fn().mockReturnThis(),
-    neq: vi.fn().mockReturnThis(),
-    in: vi.fn().mockReturnThis(),
-    single: vi.fn().mockResolvedValue({ data: {}, error: null }),
-  }));
-
-  // Assign to the outer scope variables for use in tests *after* import.
-  // This is done by importing these exported mocks below.
-  // For now, these are just the functions used by createClient's return.
 
   return {
     ...actual,
     createClient: vi.fn(() => ({
       auth: {
         signInWithPassword: _mockSignInWithPassword,
-        signUp: _mockSignUp,
+        signUp: _mockSignUp, // Keep if registerHandler is also tested here or needed by setup
         onAuthStateChange: _mockOnAuthStateChange,
         getSession: _mockGetSession,
       },
-      from: _mockFrom,
+      from: vi.fn().mockReturnThis(), // Generic from mock
     })),
-    // Export the internal mocks so they can be imported and used in the test file.
     __internalMockSignInWithPassword: _mockSignInWithPassword,
-    __internalMockSignUp: _mockSignUp,
-    __internalMockGetSession: _mockGetSession, // if needed for direct manipulation
-    // ... any other internal mocks you need to control
   };
 });
 
-// Import the handlers first
-import registerHandler from '../../pages/api/auth/register';
+// Import the handler
 import loginHandler from '../../pages/api/auth/login';
 
-// Now import the mock functions from the mocked module
-// This ensures that mockSignInWithPassword and mockSignUp are the actual mock functions
-// used by the Supabase client in the handlers.
-const supabaseMock = await import('@supabase/supabase-js');
-mockSignInWithPassword = (supabaseMock as any).__internalMockSignInWithPassword;
-mockSignUp = (supabaseMock as any).__internalMockSignUp;
-// Example if you needed to control getSession:
-// const mockGetSession = (supabaseMock as any).__internalMockGetSession;
+// Import the mock functions from the mocked module
+const supabaseMockModule = await import('@supabase/supabase-js');
+mockSignInWithPassword = (supabaseMockModule as any).__internalMockSignInWithPassword;
 
+// Helper to create mock NextApiRequest
+const mockApiReq = (body: any, method: string = 'POST') => ({
+  method,
+  body,
+} as NextApiRequest);
 
-// Mock NextApiResponse
-const mockRes = () => {
+// Helper to create mock NextApiResponse
+const mockApiRes = () => {
   const res: Partial<NextApiResponse> = {
     status: vi.fn().mockReturnThis(),
     json: vi.fn().mockReturnThis(),
@@ -74,7 +52,111 @@ const mockRes = () => {
   return res as NextApiResponse;
 };
 
-describe('Login API and Service', () => {
+describe('/api/auth/login API Handler', () => {
+  beforeEach(() => {
+    mockSignInWithPassword.mockReset();
+  });
+
+  it('should return 405 if method is not POST', async () => {
+    const req = mockApiReq({}, 'GET');
+    const res = mockApiRes();
+    await loginHandler(req, res);
+    expect(res.status).toHaveBeenCalledWith(405);
+    expect(res.end).toHaveBeenCalled();
+  });
+
+  it('should successfully log in a verified user and set authToken cookie', async () => {
+    const testEmail = 'verified@example.com';
+    const testPassword = 'password123';
+    const mockAuthToken = 'mock-access-token';
+    const mockSessionData = {
+      access_token: mockAuthToken,
+      refresh_token: 'mock-refresh-token',
+      // ... other session properties
+    };
+    const mockUserData = { id: 'user-123', email: testEmail /* ... other user properties */ };
+
+    mockSignInWithPassword.mockResolvedValueOnce({
+      data: { session: mockSessionData, user: mockUserData },
+      error: null,
+    });
+
+    const req = mockApiReq({ email: testEmail, password: testPassword });
+    const res = mockApiRes();
+    await loginHandler(req, res);
+
+    expect(mockSignInWithPassword).toHaveBeenCalledWith({ email: testEmail.toLowerCase(), password: testPassword });
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith({ user: mockUserData, accessToken: mockAuthToken, refreshToken: mockSessionData.refresh_token });
+    expect(res.setHeader).toHaveBeenCalledWith(
+      'Set-Cookie',
+      `authToken=${mockAuthToken}; HttpOnly; Path=/; Secure; SameSite=Strict`
+    );
+  });
+
+  it('should return 403 for login with unconfirmed email', async () => {
+    const testEmail = 'unconfirmed@example.com';
+    const testPassword = 'password123';
+
+    mockSignInWithPassword.mockResolvedValueOnce({
+      data: { session: null, user: null }, // Or Supabase might return user object here too
+      error: { message: 'Email not confirmed' },
+    });
+
+    const req = mockApiReq({ email: testEmail, password: testPassword });
+    const res = mockApiRes();
+    await loginHandler(req, res);
+
+    expect(mockSignInWithPassword).toHaveBeenCalledWith({ email: testEmail.toLowerCase(), password: testPassword });
+    expect(res.status).toHaveBeenCalledWith(403);
+    expect(res.json).toHaveBeenCalledWith({
+      error: 'Email not confirmed. Please check your inbox to verify your email.',
+      code: 'EMAIL_NOT_CONFIRMED',
+    });
+    expect(res.setHeader).not.toHaveBeenCalledWith('Set-Cookie', expect.any(String));
+  });
+
+  it('should return 401 for invalid credentials', async () => {
+    const testEmail = 'wrong@example.com';
+    const testPassword = 'wrongpassword';
+
+    mockSignInWithPassword.mockResolvedValueOnce({
+      data: { session: null, user: null },
+      error: { message: 'Invalid login credentials' },
+    });
+
+    const req = mockApiReq({ email: testEmail, password: testPassword });
+    const res = mockApiRes();
+    await loginHandler(req, res);
+
+    expect(mockSignInWithPassword).toHaveBeenCalledWith({ email: testEmail.toLowerCase(), password: testPassword });
+    expect(res.status).toHaveBeenCalledWith(401);
+    expect(res.json).toHaveBeenCalledWith({ error: 'Invalid credentials' });
+    expect(res.setHeader).not.toHaveBeenCalledWith('Set-Cookie', expect.any(String));
+  });
+
+  it('should also return 401 if Supabase returns no error but no session (fallback)', async () => {
+    const testEmail = 'noerrornosession@example.com';
+    const testPassword = 'password123';
+
+    mockSignInWithPassword.mockResolvedValueOnce({
+      data: { session: null, user: { id: '123', email: testEmail } }, // User might be present, but no session
+      error: null,
+    });
+
+    const req = mockApiReq({ email: testEmail, password: testPassword });
+    const res = mockApiRes();
+    await loginHandler(req, res);
+
+    expect(mockSignInWithPassword).toHaveBeenCalledWith({ email: testEmail.toLowerCase(), password: testPassword });
+    expect(res.status).toHaveBeenCalledWith(401);
+    expect(res.json).toHaveBeenCalledWith({ error: 'Invalid credentials - no session data' });
+    expect(res.setHeader).not.toHaveBeenCalledWith('Set-Cookie', expect.any(String));
+  });
+});
+
+
+describe('loginUser Service', () => {
   let originalFetch: typeof global.fetch;
 
   beforeEach(() => {
@@ -83,95 +165,87 @@ describe('Login API and Service', () => {
 
   afterEach(() => {
     global.fetch = originalFetch;
-    vi.restoreAllMocks();
+    vi.restoreAllMocks(); // Restore all mocks, including fetch
   });
 
-  it('should register a user and then log them in, setting authToken cookie', async () => {
-    const testEmail = 'testlogin@example.com';
-    const testPassword = 'password123';
-    const testName = 'Test User';
-    const mockAuthToken = 'mockAuthTokenString';
-
-    // Ensure mocks are defined before use, then reset them.
-    if (mockSignInWithPassword) mockSignInWithPassword.mockReset();
-    if (mockSignUp) mockSignUp.mockReset();
-    // if (mockGetSession) mockGetSession.mockReset(); // if used
-
-    // Mock fetch for the service functions (registerUser, loginUser)
-    // These call /api/auth/register and /api/auth/login which are NOT the handlers being tested with Supabase mock here.
-    // This global.fetch mock is for client-side services, not the server-side API handler's Supabase client.
-    const serviceFetchMock = vi.fn((url, options) => {
-      const urlStr = url.toString();
-      if (urlStr.endsWith('/auth/register')) { // Mock for registerUser service call
-        return Promise.resolve({
-          ok: true, status: 201,
-          json: () => Promise.resolve({ user: { id: '123', email: testEmail }, token: mockAuthToken }),
-          headers: new Headers({'Set-Cookie': `authToken=${mockAuthToken}; HttpOnly; Path=/; Secure; SameSite=Strict`})
-        } as Response);
-      }
-      if (urlStr.endsWith('/auth/login')) { // Mock for loginUser service call
-        return Promise.resolve({
-          ok: true, status: 200,
-          json: () => Promise.resolve({ user: { id: '123', email: testEmail }, accessToken: mockAuthToken }),
-          headers: new Headers({'Set-Cookie': `authToken=${mockAuthToken}; HttpOnly; Path=/; Secure; SameSite=Strict`})
-        } as Response);
-      }
-      return Promise.reject(new Error(`Unexpected service fetch call to ${url}`));
-    });
-    global.fetch = serviceFetchMock;
-
-    // 1. Simulate user registration (calling the service)
-    await registerUser(testName, testEmail, testPassword);
-
-    // 2. Simulate user login (calling the service)
-    const { res: loginServiceRes, data: loginServiceData } = await loginUser(testEmail, testPassword);
-
-    // 3. Assert login service call response status
-    expect(loginServiceRes.status).toBe(200);
-    expect(loginServiceData.accessToken).toBe(mockAuthToken);
-
-    // 4. Assert that the authToken cookie was set by the login *service* (via its mocked fetch)
-    const loginServiceFetchCall = serviceFetchMock.mock.calls.find(call => call[0].toString().endsWith('/auth/login'));
-    expect(loginServiceFetchCall).toBeDefined();
-    // Check actual header from the Response object returned by the mock
-    const loginServiceHeaders = (loginServiceFetchCall![1] as Response).headers; // Actually, this is not how to get response headers from fetch mock.
-                                                                            // The mock returns a Response, loginRes is that Response.
-    expect(loginServiceRes.headers.get('Set-Cookie')).toBe(`authToken=${mockAuthToken}; HttpOnly; Path=/; Secure; SameSite=Strict`);
-
-    // 5. Now, test the login API handler (/pages/api/auth/login.ts) directly
-    //    This handler uses the Supabase client, which is mocked via vi.mock('@supabase/supabase-js')
-    const loginApiReq = { method: 'POST', body: { email: testEmail, password: testPassword } } as NextApiRequest;
-    const loginApiRes = mockRes();
-
-    // Configure the mock for supabase.auth.signInWithPassword for this specific API handler test
-    mockSignInWithPassword.mockResolvedValueOnce({
-      data: { session: { access_token: mockAuthToken, refresh_token: 'mockRefresh' }, user: { id: '123', email: testEmail } },
-      error: null,
+  it('should handle successful login', async () => {
+    const mockSuccessResponse = {
+      user: { id: 'user-123', email: 'test@example.com' },
+      accessToken: 'mock-access-token',
+      refreshToken: 'mock-refresh-token'
+    };
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: async () => mockSuccessResponse,
+      headers: new Headers({ 'Set-Cookie': `authToken=${mockSuccessResponse.accessToken}; HttpOnly; Path=/; Secure; SameSite=Strict` })
     });
 
-    await loginHandler(loginApiReq, loginApiRes);
+    const { res, data } = await loginUser('test@example.com', 'password123');
+    expect(res.status).toBe(200);
+    expect(data).toEqual(mockSuccessResponse);
+    expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('/api/auth/login'), expect.any(Object));
+  });
 
-    expect(loginApiRes.status).toHaveBeenCalledWith(200);
-    expect(loginApiRes.json).toHaveBeenCalledWith(expect.objectContaining({ accessToken: mockAuthToken }));
-    expect(loginApiRes.setHeader).toHaveBeenCalledWith(
-      'Set-Cookie',
-      `authToken=${mockAuthToken}; HttpOnly; Path=/; Secure; SameSite=Strict`
-    );
-    expect(mockSignInWithPassword).toHaveBeenCalledWith({email: testEmail.toLowerCase(), password: testPassword});
+  it('should handle "Email not confirmed" (403) from API', async () => {
+    const mockErrorResponse = {
+      error: 'Email not confirmed. Please check your inbox to verify your email.',
+      code: 'EMAIL_NOT_CONFIRMED',
+    };
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: false, // ok is false for 4xx/5xx responses
+      status: 403,
+      json: async () => mockErrorResponse,
+      headers: new Headers()
+    });
 
-    // Optionally, you might want to test the registration handler similarly if it's complex,
-    // but the subtask is focused on login. For now, the service call to registerUser is enough
-    // to set up the premise for login. If registerHandler had complex logic involving Supabase
-    // that wasn't covered by the service call's mock, you'd test it directly too.
-    // For example, to ensure `mockSignUp` was called by `registerHandler`:
-    // const registerApiReq = { method: 'POST', body: { name: testName, email: "registertest@example.com", password: testPassword } } as NextApiRequest;
-    // const registerApiRes = mockRes();
-    // mockSignUp.mockResolvedValueOnce({
-    //   data: { session: { access_token: 'regToken' }, user: { id: '456' } },
-    //   error: null
-    // });
-    // await registerHandler(registerApiReq, registerApiRes);
-    // expect(mockSignUp).toHaveBeenCalled();
+    const { res, data } = await loginUser('unconfirmed@example.com', 'password123');
+    expect(res.status).toBe(403);
+    expect(data).toEqual(mockErrorResponse);
+  });
 
+  it('should handle "Invalid credentials" (401) from API', async () => {
+    const mockErrorResponse = { error: 'Invalid credentials' };
+    global.fetch = vi.fn().mockResolvedValue({
+      ok: false,
+      status: 401,
+      json: async () => mockErrorResponse,
+      headers: new Headers()
+    });
+
+    const { res, data } = await loginUser('wrong@example.com', 'password123');
+    expect(res.status).toBe(401);
+    expect(data).toEqual(mockErrorResponse);
+  });
+
+  it('should handle other errors (e.g., 500) from API', async () => {
+    const mockErrorResponse = { error: 'Server error' };
+     global.fetch = vi.fn().mockResolvedValue({
+      ok: false,
+      status: 500,
+      json: async () => mockErrorResponse,
+      headers: new Headers()
+    });
+    const { res, data } = await loginUser('test@example.com', 'password');
+    expect(res.status).toBe(500);
+    expect(data).toEqual(mockErrorResponse);
+  });
+
+  it('should handle network errors during fetch', async () => {
+    global.fetch = vi.fn().mockRejectedValue(new Error('Network failed'));
+
+    // Expect loginUser to throw or return a specific error structure for network issues
+    // This depends on how loginUser is implemented. Assuming it might re-throw or return a custom error.
+    // For this example, let's assume it might return a result that indicates failure.
+    // If loginUser re-throws, use expect(...).rejects.toThrow(...)
+    try {
+      await loginUser('test@example.com', 'password');
+    } catch (e: any) {
+      expect(e.message).toBe('Network failed'); // Or however your service formats this
+    }
+    // Or if it returns a specific structure:
+    // const { res, data } = await loginUser('test@example.com', 'password');
+    // expect(res.ok).toBe(false); // Or similar check
+    // expect(data.error).toContain('Network failed');
   });
 });

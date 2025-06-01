@@ -82,7 +82,9 @@ export const useEmailAuth = (
         title: "Signup successful",
         description: "Check your email for verification instructions.",
       });
-      return { data };
+      // Determine if email verification is required based on the presence of user and absence of session
+      const emailVerificationRequired = !!(data?.user && !data?.session);
+      return { data, emailVerificationRequired };
     } catch (error: any) {
       console.error("Signup error:", error);
       toast({
