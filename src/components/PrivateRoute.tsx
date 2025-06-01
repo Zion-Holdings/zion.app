@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '@/context/auth/AuthContext';
+import { safeStorage } from '@/utils/safeStorage';
 
 interface PrivateRouteProps {
   children: React.ReactNode;
@@ -20,6 +21,7 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
 
   if (user === false) {
     const next = encodeURIComponent(location.pathname + location.search);
+    safeStorage.setItem('nextPath', location.pathname + location.search);
     return <Navigate to={`/login?redirectTo=${next}`} />;
   }
 

@@ -205,19 +205,23 @@ main
               if (event === 'SIGNED_IN') {
                 handleSignedIn(mappedUser);
                 const params = new URLSearchParams(location.search);
-                const next = params.get('redirectTo') || params.get('next');
-                // --- BEGIN MODIFICATION ---
-                if (location.state?.pendingAction === 'buyNow' && location.state?.pendingActionArgs) {
+                const nextFromUrl = params.get('redirectTo') || params.get('next'); // Renamed to avoid conflict
+
+                const nextPathFromStorage = safeStorage.getItem('nextPath');
+
+                if (nextPathFromStorage) {
+                  safeStorage.removeItem('nextPath');
+                  navigate(decodeURIComponent(nextPathFromStorage), { replace: true });
+                } else if (location.state?.pendingAction === 'buyNow' && location.state?.pendingActionArgs) {
                   const { id, title, price } = location.state.pendingActionArgs;
                   dispatch(addItem({ id, title, price }));
                   // Clear pending action from state first
                   navigate(location.pathname, { state: {}, replace: true });
                   // Navigate to checkout
                   navigate('/checkout', { replace: true });
-                } else if (next) {
-                  navigate(decodeURIComponent(next), { replace: true });
+                } else if (nextFromUrl) {
+                  navigate(decodeURIComponent(nextFromUrl), { replace: true });
                 }
-                // --- END MODIFICATION ---
               }
             } else if (error) {
               console.error("Error fetching user profile:", error);
