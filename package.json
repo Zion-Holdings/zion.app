@@ -85,10 +85,8 @@
     "vaul": "^0.9.0",
     "yup": "^1.2.0",
     "zod": "^3.22.4",
-feat/seo-content-generation
     "form-data": "*",
     "node-fetch": "*"
-    main
   },
   "optionalDependencies": {
     "@elastic/elasticsearch": "^8.12.0"
