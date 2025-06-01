@@ -6,8 +6,7 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import { WalletProvider } from './context/WalletContext'; // Added WalletProvider
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
-import { Toaster } from "./components/ui/toaster";
-import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import ToastProvider from "./components/ToastProvider";
 import OfflineToast from "./components/OfflineToast";
 import InstallPrompt from "./components/InstallPrompt";
 import {
@@ -115,6 +114,7 @@ const App = () => {
     <WhitelabelProvider>
       <WalletProvider> {/* Added WalletProvider */}
         <ThemeProvider defaultTheme="dark">
+          <ToastProvider>
           <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
             <ErrorBoundary>
           <Routes>
@@ -136,10 +136,9 @@ const App = () => {
           </ErrorBoundary>
         </Suspense>
         <OfflineToast />
-        <Toaster />
-        <SonnerToaster position="top-right" />
         <SupportChatbot />
         <InstallPrompt />
+          </ToastProvider>
       </ThemeProvider>
     </WhitelabelProvider>
   );
