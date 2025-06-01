@@ -80,15 +80,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       // Potentially clear tokens if this state is problematic: await logout();
       return { error: (clientLoginResult.error as any)?.message || "Client-side login failed." };
     }
-
-    // If clientLoginResult is successful, onAuthStateChange will handle setUser and navigation.
-    // The navigation part that was here previously is now primarily handled by onAuthStateChange
-    // upon the 'SIGNED_IN' event triggered by loginImpl's success.
-    // However, we can still keep a fallback navigation here if needed,
-    // but ensure it doesn't conflict if onAuthStateChange is quick.
-    // For now, let onAuthStateChange handle it.
-    // const next = new URLSearchParams(location.search).get('next') || '/';
-    // navigate(next, { replace: true });
+codex/implement-ai-recommendations-endpoint
+    const next = new URLSearchParams(location.search).get('next') || '/equipment/recommendations';
+    navigate(next, { replace: true });
+main
 
     return { error: null }; // Successful login
   };
