@@ -58,6 +58,8 @@ import FavoritesPage from './pages/Favorites';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Profile from './pages/Profile';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 import Wallet from './pages/Wallet';
 import RecommendationsPage from './pages/RecommendationsPage';
 import { SupportChatbot } from './components/SupportChatbot';
@@ -109,6 +111,8 @@ const baseRoutes = [
   { path: '/profile', element: <PrivateRoute><Profile /></PrivateRoute> },
   { path: '/recommendations', element: <PrivateRoute><RecommendationsPage /></PrivateRoute> },
   { path: '/checkout', element: <Checkout /> },
+  { path: '/forgot-password', element: <ForgotPassword /> },
+  { path: '/reset-password/:token', element: <ResetPassword /> },
 ];
 
 const App = () => {
