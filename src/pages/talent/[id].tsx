@@ -38,7 +38,7 @@ export default function TalentProfilePage() {
     fetchProfile();
   }, [id]);
 
-  if (loading) return <ProfileLoadingState />;
+  if (loading || (!profile && !error)) return <ProfileLoadingState />;
   if (error || !profile) return <ProfileErrorState error={error} />;
 
   return (

@@ -7,7 +7,6 @@ import { Loader2 } from 'lucide-react';
 import { TALENT_PROFILES } from '@/data/talentData';
 import type { TalentProfile } from '@/types/talent';
 import TalentDetails from '@/components/talent/TalentDetails';
-import NotFound from '@/components/NotFound';
 
 interface TalentPageProps {
   talent: (TalentProfile & { social?: Record<string, string> }) | null;
@@ -16,16 +15,12 @@ interface TalentPageProps {
 const TalentPage: React.FC<TalentPageProps> = ({ talent }) => {
   const router = useRouter() as NextRouter & { isFallback?: boolean };
 
-  if ('isFallback' in router && router.isFallback) {
+  if (router.isFallback || !talent) {
     return (
       <div className="flex justify-center py-20">
         <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
       </div>
     );
-  }
-
-  if (!talent) {
-    return <NotFound />;
   }
 
   return (
