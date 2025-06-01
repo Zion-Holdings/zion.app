@@ -9,3 +9,4 @@ export {
 export { ViewModeProvider, useViewMode } from './ViewModeContext';
 export { CartProvider, useCart } from './CartContext';
 export { CommunityProvider, useCommunity } from './CommunityContext';
+export { FavoritesProvider, useFavorites } from './FavoritesContext';

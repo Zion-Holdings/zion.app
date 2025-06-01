@@ -54,6 +54,7 @@ import ContactPage from './pages/Contact';
 import ZionHireAI from './pages/ZionHireAI';
 import RequestQuotePage from './pages/RequestQuote';
 import WishlistPage from './pages/Wishlist';
+import FavoritesPage from './pages/Favorites';
 import CartPage from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Profile from './pages/Profile';
@@ -98,6 +99,7 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/favorites', element: <FavoritesPage /> },
   { path: '/wishlist', element: <WishlistPage /> },
   { path: '/cart', element: <PrivateRoute><CartPage /></PrivateRoute> },
   { path: '/profile', element: <PrivateRoute><Profile /></PrivateRoute> },
