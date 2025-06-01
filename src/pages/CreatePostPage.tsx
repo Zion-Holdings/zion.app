@@ -47,6 +47,14 @@ export default function CreatePostPage() {
         title: "Post created",
         description: "Your post has been published successfully"
       });
+
+      if (user?.id) {
+        await fetch('/api/points/add', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId: user.id, amount: 2, reason: 'post' })
+        });
+      }
       
       // Redirect to the forum category
       navigate(`/community/category/${values.categoryId}`);

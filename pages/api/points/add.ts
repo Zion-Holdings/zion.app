@@ -27,7 +27,7 @@ async function handler(req: Req, res: JsonRes) {
     return;
   }
 
-  const { userId, amount, orderId } = req.body || {};
+  const { userId, amount, orderId, reason = 'order' } = req.body || {};
   if (!userId || typeof amount !== 'number') {
     res.status(400).json({ error: 'Missing userId or amount' });
     return;
@@ -37,7 +37,7 @@ async function handler(req: Req, res: JsonRes) {
   const { error } = await supabase.from('points_ledger').insert({
     user_id: userId,
     delta,
-    reason: 'order',
+    reason,
     order_id: orderId || null,
   });
 

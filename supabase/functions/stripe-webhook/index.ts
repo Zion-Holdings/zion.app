@@ -69,12 +69,29 @@ serve(async (req) => {
         await supabase.from("orders").update({ status: "paid" }).eq("id", orderId);
       }
       if (userId) {
-        await supabase.from("points_ledger").insert({
-          user_id: userId,
-          delta: 10,
-          reason: "purchase",
-          order_id: orderId ?? null,
-        });
+        const amount = intent.amount_received || 0;
+        const points = Math.floor(amount / 10000) * 10; // 10 pts per $100
+
+        if (points > 0) {
+          await supabase.from("points_ledger").insert({
+            user_id: userId,
+            delta: points,
+            reason: "purchase",
+            order_id: orderId ?? null,
+          });
+
+          const { data: profile } = await supabase
+            .from("profiles")
+            .select("points")
+            .eq("id", userId)
+            .single();
+
+          const current = profile?.points ?? 0;
+          await supabase
+            .from("profiles")
+            .update({ points: current + points })
+            .eq("id", userId);
+        }
       }
     }
 
