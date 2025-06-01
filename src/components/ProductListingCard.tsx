@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -26,6 +26,7 @@ const ProductListingCardComponent = ({
 }: ProductListingCardProps) => {
   const isGrid = view === 'grid';
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   
   // Get the first image or use a placeholder
   const imageUrl = listing.images && listing.images.length > 0 
@@ -46,6 +47,20 @@ const ProductListingCardComponent = ({
   // Handle navigating to listing detail
   const handleViewListing = () => {
     navigate(`${detailBasePath}/${listing.id}`);
+  };
+
+  const addToCart = async () => {
+    setLoading(true);
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      navigate(`${detailBasePath}/${listing.id}`);
+    } catch (error) {
+      console.error("Failed to add to cart:", error);
+      // Handle error (e.g., show a notification to the user)
+    } finally {
+      setLoading(false);
+    }
   };
   
   // Handle request quote button click
@@ -139,18 +154,28 @@ const ProductListingCardComponent = ({
           </div>
           
           <div className="flex gap-2">
-            <Link
-              to={`${detailBasePath}/${listing.id}`}
-              onClick={(e) => e.stopPropagation()}
+            <Button
+              size="sm"
+              className="bg-primary hover:bg-primary/80 text-primary-foreground"
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent card click event
+                addToCart();
+              }}
+              disabled={loading}
             >
-              <Button
-                size="sm"
-                className="bg-primary hover:bg-primary/80 text-primary-foreground"
-              >
-                Buy Now
-              </Button>
-            </Link>
-            
+              {loading ? (
+                <>
+                  {/* You can replace this with a spinner icon component if you have one */}
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Loading...
+                </>
+              ) : (
+                "Add to Cart"
+              )}
+            </Button>
             {onRequestQuote && (
               <Button 
                 size="sm"
