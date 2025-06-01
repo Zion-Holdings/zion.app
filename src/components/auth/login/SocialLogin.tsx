@@ -1,11 +1,11 @@
 
 import { Facebook, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useAuth } from "@/hooks/useAuth";
+import { openAuthPopup } from "@/api/authSocial";
 import { Web3Login } from "./Web3Login";
 
 export function SocialLogin() {
-  const { loginWithGoogle, loginWithFacebook, loginWithTwitter, isLoading } = useAuth();
+  const isLoading = false;
 
   return (
     <div className="mt-6">
@@ -23,7 +23,7 @@ export function SocialLogin() {
           type="button"
           variant="outline"
           className="w-full border border-zion-blue-light bg-zion-blue-dark text-white hover:bg-zion-blue hover:text-zion-cyan"
-          onClick={() => loginWithGoogle()}
+          onClick={() => openAuthPopup('google')}
           disabled={isLoading}
         >
           <span className="sr-only">Sign in with Google</span>
@@ -38,7 +38,7 @@ export function SocialLogin() {
           type="button"
           variant="outline"
           className="w-full border border-zion-blue-light bg-zion-blue-dark text-white hover:bg-zion-blue hover:text-zion-cyan"
-          onClick={() => loginWithFacebook()}
+          onClick={() => openAuthPopup('facebook')}
           disabled={isLoading}
         >
           <span className="sr-only">Sign in with Facebook</span>
@@ -48,7 +48,7 @@ export function SocialLogin() {
           type="button"
           variant="outline"
           className="w-full border border-zion-blue-light bg-zion-blue-dark text-white hover:bg-zion-blue hover:text-zion-cyan"
-          onClick={() => loginWithTwitter()}
+          onClick={() => openAuthPopup('twitter')}
           disabled={isLoading}
         >
           <span className="sr-only">Sign in with Twitter</span>
