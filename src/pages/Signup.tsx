@@ -17,6 +17,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
 import { safeStorage } from "@/utils/safeStorage";
 import { mailchimpService } from "@/integrations/mailchimp";
+import { fireEvent } from '@/lib/analytics';
 import {
   Form,
   FormControl,
@@ -104,6 +105,7 @@ export default function Signup() {
         const nextPath = params.get('next') || '/';
         navigate(nextPath, { replace: true });
         toast.success("Registration successful! Welcome!");
+        fireEvent('signup', { method: 'email' }); // Assuming email signup
 
         // Comment out or remove existing Supabase setSession logic
         // if (resData?.session) {
