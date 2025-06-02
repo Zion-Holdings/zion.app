@@ -37,7 +37,7 @@ interface EquipmentDetails {
 }
 
 // Sample data - in a real app this would come from an API
-const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
+export const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
   "2u-rack-mount-server": {
     id: "2u-rack-mount-server",
     name: "2U Rack Mount Server",
@@ -180,6 +180,13 @@ export default function EquipmentDetail() {
   const inCart = items.some(i => i.id === equipment.id);
 
   const handleAddToCart = () => {
+    if (!isAuthenticated) {
+      const nextUrl = encodeURIComponent(location.pathname + location.search);
+      navigate(`/login?next=${nextUrl}&msg=login_required`);
+      toast.info("Please log in to add items to your cart.");
+      return;
+    }
+
     if (inCart) return;
     setIsAdding(true);
     dispatch({

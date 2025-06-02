@@ -131,7 +131,6 @@
     "vite": "^5.0.8",
     "vitest": "^1.4.0",
     "rollup-plugin-visualizer": "^5.10.1",
-    "pact": "^11.1.0",
     "@storybook/addon-a11y": "^7.6.0"
   },
   "peerDependencies": {
