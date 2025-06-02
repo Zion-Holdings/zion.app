@@ -64,13 +64,6 @@ describe('Signup Page', () => {
       onboardingStep: 0,
       setOnboardingStep: jest.fn(),
       tokens: null,
-      isProfileComplete: false,
-      resendVerificationEmail: jest.fn(),
-      verifyEmail: jest.fn(),
-      completeOnboarding: jest.fn(),
-      setLoginRedirect: jest.fn(),
-      getLoginRedirect: jest.fn().mockReturnValue(null),
-      clearLoginRedirect: jest.fn(),
     };
   });
 
