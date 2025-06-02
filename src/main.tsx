@@ -16,7 +16,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n'; // Adjust the path if your i18n.js is elsewhere
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@tanstack/react-query';
 import { showApiError } from '@/utils/apiErrorHandler';
 import './utils/globalFetchInterceptor';
 import './utils/consoleErrorToast';
@@ -50,14 +50,12 @@ enableDevToolsInStaging();
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      onError: (error) => showApiError(error),
-    },
-    mutations: {
-      onError: (error) => showApiError(error),
-    },
-  },
+  queryCache: new QueryCache({
+    onError: (error) => showApiError(error),
+  }),
+  mutationCache: new MutationCache({
+    onError: (error) => showApiError(error),
+  }),
 });
 
 try {
