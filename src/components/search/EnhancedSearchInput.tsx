@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react"; // Added useMemo
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { AutocompleteSuggestions } from "@/components/search/AutocompleteSuggestions"; 
@@ -9,10 +8,6 @@ import debounce from 'lodash.debounce';
 interface EnhancedSearchInputProps {
   value: string;
   onChange: (value: string) => void;
-  /**
-   * Optional callback when a suggestion is selected. This allows parent
-   * components to perform actions such as navigation.
-   */
   onSelectSuggestion?: (value: string) => void;
   placeholder?: string;
   searchSuggestions: SearchSuggestion[];
@@ -27,14 +22,13 @@ export function EnhancedSearchInput({
 }: EnhancedSearchInputProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState<SearchSuggestion[]>([]);
-  const [highlightedIndex, setHighlightedIndex] = useState<number>(-1); // Added state for highlighted index
+  const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const debouncedFilterSuggestions = useCallback(
-    debounce((currentValue: string, suggestions: SearchSuggestion[]) => {
+  const debouncedFilterSuggestions = useMemo( // Changed from useCallback to useMemo
+    () => debounce((currentValue: string, suggestions: SearchSuggestion[]) => {
       if (!currentValue) {
-        // Show recent searches when input is empty
         setFilteredSuggestions(suggestions.filter(s => s.type === 'recent'));
         return;
       }
@@ -43,28 +37,25 @@ export function EnhancedSearchInput({
         suggestion.text.toLowerCase().includes(currentValue.toLowerCase())
       );
 
-      // Sort suggestions to prioritize those that start with the search term
       filtered.sort((a, b) => {
         const aStartsWith = a.text.toLowerCase().startsWith(currentValue.toLowerCase()) ? -1 : 0;
         const bStartsWith = b.text.toLowerCase().startsWith(currentValue.toLowerCase()) ? -1 : 0;
         return aStartsWith - bStartsWith;
       });
 
-      setFilteredSuggestions(filtered.slice(0, 8)); // Limit to 8 suggestions
+      setFilteredSuggestions(filtered.slice(0, 8));
     }, 300),
-    [] // setFilteredSuggestions is stable
+    [setFilteredSuggestions] // setFilteredSuggestions from useState is stable
   );
 
-  // Filter suggestions based on input value
   useEffect(() => {
     debouncedFilterSuggestions(value, searchSuggestions);
-    setHighlightedIndex(-1); // Reset highlighted index when value changes
+    setHighlightedIndex(-1);
     return () => {
       debouncedFilterSuggestions.cancel();
     };
   }, [value, searchSuggestions, debouncedFilterSuggestions]);
 
-  // Handle clicks outside the component to close suggestions
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
@@ -76,26 +67,24 @@ export function EnhancedSearchInput({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleSelectSuggestion = (suggestion: string) => {
-    onChange(suggestion);
+  const handleSelectSuggestion = (suggestionText: string) => { // Renamed suggestion to suggestionText
+    onChange(suggestionText);
     if (onSelectSuggestion) {
-      onSelectSuggestion(suggestion);
+      onSelectSuggestion(suggestionText);
     }
     setIsFocused(false);
     inputRef.current?.blur();
-    setHighlightedIndex(-1); // Reset highlighted index on selection
+    setHighlightedIndex(-1);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    // Suggestions are not visible or no suggestions available
     if (!isFocused || filteredSuggestions.length === 0) {
-      if (e.key === 'Escape') { // Still allow escape to blur if no suggestions but focused
+      if (e.key === 'Escape') {
         e.preventDefault();
         setIsFocused(false);
         setHighlightedIndex(-1);
         inputRef.current?.blur();
       }
-      // For Enter, let default form submission happen if suggestions are not visible/available
       return;
     }
 
@@ -113,7 +102,6 @@ export function EnhancedSearchInput({
           e.preventDefault();
           handleSelectSuggestion(filteredSuggestions[highlightedIndex].text);
         }
-        // If highlightedIndex is -1, default form submission is allowed (no e.preventDefault())
         break;
       case 'Escape':
         e.preventDefault();
@@ -133,7 +121,7 @@ export function EnhancedSearchInput({
       role="combobox"
       aria-expanded={isFocused && filteredSuggestions.length > 0}
       aria-haspopup="listbox"
-      aria-controls="autocomplete-suggestions-list" // Added aria-controls
+      aria-controls="autocomplete-suggestions-list"
     >
       <div className="relative">
         <Search 
@@ -145,11 +133,9 @@ export function EnhancedSearchInput({
           value={value}
           onChange={(e) => {
             onChange(e.target.value);
-            // Potentially show suggestions again if user types after clearing or selecting
-            // However, debouncedFilterSuggestions already handles showing suggestions based on value
           }}
           onFocus={() => setIsFocused(true)}
-          onKeyDown={handleKeyDown} // Attached keydown handler
+          onKeyDown={handleKeyDown}
           placeholder={placeholder}
           className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate"
           aria-autocomplete="list"
@@ -171,8 +157,8 @@ export function EnhancedSearchInput({
         searchTerm={value}
         onSelectSuggestion={handleSelectSuggestion}
         visible={isFocused}
-        highlightedIndex={highlightedIndex} // Pass highlightedIndex
-        listId="autocomplete-suggestions-list" // Pass ID for aria-controls
+        highlightedIndex={highlightedIndex}
+        listId="autocomplete-suggestions-list"
       />
     </div>
   );

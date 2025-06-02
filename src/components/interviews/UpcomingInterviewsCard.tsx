@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -7,7 +6,7 @@ import { Interview } from "@/types/interview";
 import { format, isPast, parseISO } from "date-fns";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, Video } from "lucide-react";
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar } from "@/components/ui/avatar"; // Assuming AvatarImage and AvatarFallback are part of this or separate
 
 export function UpcomingInterviewsCard() {
   const { fetchInterviews } = useInterviews();
@@ -19,9 +18,8 @@ export function UpcomingInterviewsCard() {
       setIsLoading(true);
       try {
         const interviews = await fetchInterviews();
-        const now = new Date();
+        // const now = new Date(); // Not used here, can be removed if only for filtering future
         
-        // Filter for confirmed interviews in the future
         const upcoming = interviews
           .filter(interview => 
             interview.status === 'confirmed' && 
@@ -30,7 +28,7 @@ export function UpcomingInterviewsCard() {
           .sort((a, b) => 
             parseISO(a.scheduled_date).getTime() - parseISO(b.scheduled_date).getTime()
           )
-          .slice(0, 3); // Take only the next 3 interviews
+          .slice(0, 3);
         
         setUpcomingInterviews(upcoming);
       } catch (error) {
@@ -41,7 +39,7 @@ export function UpcomingInterviewsCard() {
     };
 
     loadInterviews();
-  }, []);
+  }, [fetchInterviews]); // Added fetchInterviews
 
   if (isLoading) {
     return (
@@ -106,7 +104,6 @@ export function UpcomingInterviewsCard() {
             const formattedDate = format(interviewDate, 'EEE, MMM d');
             const formattedTime = format(interviewDate, 'h:mm a');
             
-            // Determine if interview is happening soon (within 30 minutes)
             const now = new Date();
             const isStartingSoon = 
               interviewDate.getTime() - now.getTime() < 30 * 60 * 1000 &&
@@ -115,10 +112,12 @@ export function UpcomingInterviewsCard() {
             return (
               <div key={interview.id} className="flex items-center gap-3">
                 <Avatar className="h-10 w-10 bg-zion-purple/10">
+                  {/* Assuming AvatarImage and AvatarFallback are part of Avatar or imported separately */}
+                  {/* For now, conditional rendering based on available image */}
                   {interview.client_avatar || interview.talent_avatar ? (
                     <img 
-                      src={interview.client_avatar || interview.talent_avatar} 
-                      alt={interview.client_name || interview.talent_name}
+                      src={interview.client_avatar || interview.talent_avatar || undefined} // Ensure src is string | undefined
+                      alt={interview.client_name || interview.talent_name || "User"} // Ensure alt is string
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center bg-zion-purple/20 text-zion-purple font-medium">

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { List, RefreshCw } from "lucide-react";
@@ -14,21 +13,18 @@ export function ApiLogs() {
   const [pageSize, setPageSize] = useState(25);
   const [currentPage, setCurrentPage] = useState(0);
   
-  // Load logs on mount and when pagination changes
   useEffect(() => {
     fetchApiLogs(pageSize, currentPage * pageSize);
-  }, [pageSize, currentPage]);
+  }, [pageSize, currentPage, fetchApiLogs]); // Added fetchApiLogs
   
   const handleRefresh = () => {
     fetchApiLogs(pageSize, currentPage * pageSize);
   };
   
-  // Helper to format the timestamp
   const formatTimestamp = (timestamp: string) => {
     return format(new Date(timestamp), 'yyyy-MM-dd HH:mm:ss');
   };
   
-  // Helper to get badge color based on status code
   const getStatusBadge = (statusCode: number) => {
     if (statusCode >= 200 && statusCode < 300) {
       return <Badge className="bg-green-700">Success</Badge>;
@@ -41,7 +37,6 @@ export function ApiLogs() {
     }
   };
   
-  // Calculate pagination info
   const totalPages = Math.ceil(totalLogs / pageSize);
   const hasNextPage = currentPage < totalPages - 1;
   const hasPrevPage = currentPage > 0;
@@ -65,7 +60,7 @@ export function ApiLogs() {
               value={pageSize.toString()}
               onValueChange={(value) => {
                 setPageSize(Number(value));
-                setCurrentPage(0); // Reset to first page when changing page size
+                setCurrentPage(0);
               }}
             >
               <SelectTrigger className="w-20 bg-zinc-800 border-zinc-700">

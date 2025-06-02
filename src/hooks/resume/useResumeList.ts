@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react'; // Added useCallback
 import { supabase } from '@/integrations/supabase/client';
 import { Resume } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
@@ -10,9 +9,10 @@ export function useResumeList() {
   const [error, setError] = useState<string | null>(null);
   const [resumes, setResumes] = useState<Resume[]>([]);
   
-  const fetchResumes = async () => {
+  const fetchResumes = useCallback(async () => { // Wrapped in useCallback
     if (!user) {
       setError('You must be logged in to access resumes');
+      setResumes([]); // Clear resumes if no user
       return [];
     }
     
@@ -20,7 +20,6 @@ export function useResumeList() {
     setError(null);
     
     try {
-      // Fetch resume list with basic info for the current user
       const { data: resumeData, error: resumeError } = await supabase
         .from('talent_resumes')
         .select('*')
@@ -35,7 +34,6 @@ export function useResumeList() {
         return [];
       }
       
-      // Transform data to match Resume type
       const transformedResumes: Resume[] = resumeData.map(resume => ({
         id: resume.id,
         user_id: resume.user_id,
@@ -57,18 +55,22 @@ export function useResumeList() {
     } catch (e: any) {
       console.error('Error fetching resumes:', e);
       setError(e.message);
+      setResumes([]); // Clear resumes on error
       return [];
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [user]); // user is a dependency of fetchResumes
   
-  // Fetch resumes when the component mounts
   useEffect(() => {
     if (user) {
       fetchResumes();
+    } else {
+      // Clear resumes if user logs out or is not available initially
+      setResumes([]);
+      setError(null); // Clear any previous errors
     }
-  }, [user]);
+  }, [user, fetchResumes]); // Added fetchResumes
   
   return {
     isLoading,

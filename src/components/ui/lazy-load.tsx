@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -23,6 +22,7 @@ export function LazyLoad({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentRef = containerRef.current; // Store current ref value
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -31,25 +31,24 @@ export function LazyLoad({
         }
       },
       {
-        rootMargin: "200px", // Start loading when element is within 200px of viewport
+        rootMargin: "200px",
         threshold: 0.1,
       }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (currentRef) { // Use the stored ref value in cleanup
+        observer.unobserve(currentRef);
       }
     };
-  }, []);
+  }, []); // Empty array is correct here for mount/unmount behavior
 
   useEffect(() => {
     if (isVisible) {
-      // Simulate loading delay (remove in production)
       const timer = setTimeout(() => {
         setIsLoaded(true);
       }, 500);

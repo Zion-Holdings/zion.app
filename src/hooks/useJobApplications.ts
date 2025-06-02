@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react"; // Added useCallback
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { JobApplication, ApplicationStatus } from "@/types/jobs";
@@ -11,9 +10,10 @@ export const useJobApplications = (jobId?: string) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchApplications = async () => {
+  const fetchApplications = useCallback(async () => { // Wrapped in useCallback
     if (!user) {
       setIsLoading(false);
+      setApplications([]); // Clear applications if no user
       return;
     }
 
@@ -29,27 +29,30 @@ export const useJobApplications = (jobId?: string) => {
         `)
         .order("created_at", { ascending: false });
       
-      // Filter by job if jobId is provided
       if (jobId) {
         query = query.eq("job_id", jobId);
       }
       
-      // For talent users, only fetch their own applications
       if (user.userType === "jobSeeker" || user.userType === "creator") {
         query = query.eq("talent_id", user.id);
       } 
-      // For client users, fetch applications for their jobs
       else if (user.userType === "employer" || user.userType === "buyer") {
         if (!jobId) {
-          // Fix: Convert the subquery to a proper array or string
-          const { data: jobIds } = await supabase
+          const { data: jobIdsData, error: jobIdsError } = await supabase // Renamed to avoid conflict
             .from("jobs")
             .select("id")
             .eq("client_id", user.id);
           
-          if (jobIds && jobIds.length > 0) {
-            const jobIdArray = jobIds.map(job => job.id);
+          if (jobIdsError) throw jobIdsError;
+
+          if (jobIdsData && jobIdsData.length > 0) {
+            const jobIdArray = jobIdsData.map(job => job.id);
             query = query.in("job_id", jobIdArray);
+          } else {
+            // If employer has no jobs, they have no applications to see (unless jobId is specified)
+            setApplications([]);
+            setIsLoading(false);
+            return;
           }
         }
       }
@@ -58,7 +61,6 @@ export const useJobApplications = (jobId?: string) => {
       
       if (fetchError) throw fetchError;
       
-      // Transform the data to match our application types
       const transformedData = data.map((app: any) => ({
         ...app,
         talent_profile: app.talent_profile ? {
@@ -75,11 +77,12 @@ export const useJobApplications = (jobId?: string) => {
       console.error("Error fetching applications:", err);
       setError("Failed to fetch applications: " + err.message);
       toast.error("Failed to fetch applications");
+      setApplications([]); // Clear applications on error
     } finally {
       setIsLoading(false);
     }
-  };
-  
+  }, [user, jobId]); // Dependencies for fetchApplications
+
   const applyToJob = async (jobId: string, coverLetter: string, resumeId?: string) => {
     if (!user) {
       toast.error("You must be logged in to apply for jobs");
@@ -100,7 +103,7 @@ export const useJobApplications = (jobId?: string) => {
         .single();
       
       if (error) {
-        if (error.code === '23505') { // Unique violation
+        if (error.code === '23505') {
           toast.error("You have already applied to this job");
         } else {
           throw error;
@@ -108,9 +111,10 @@ export const useJobApplications = (jobId?: string) => {
         return false;
       }
       
-      // Add the new application to the local state
       const newApplication = data as JobApplication;
-      setApplications(prev => [newApplication, ...prev]);
+      // Optimistically update or refetch
+      // For simplicity, refetching; could also add to state directly if data matches full type
+      fetchApplications();
       
       toast.success("Application submitted successfully");
       return true;
@@ -130,7 +134,6 @@ export const useJobApplications = (jobId?: string) => {
       
       if (error) throw error;
       
-      // Update the local state
       setApplications(prev => 
         prev.map(app => app.id === applicationId ? { ...app, status } : app)
       );
@@ -153,11 +156,10 @@ export const useJobApplications = (jobId?: string) => {
           viewed_at: new Date().toISOString() 
         })
         .eq("id", applicationId)
-        .is("viewed_at", null); // Only update if not already viewed
+        .is("viewed_at", null);
       
       if (error) throw error;
       
-      // Update the local state
       setApplications(prev => 
         prev.map(app => app.id === applicationId ? 
           { ...app, status: "viewed", viewed_at: new Date().toISOString() } : app
@@ -171,12 +173,14 @@ export const useJobApplications = (jobId?: string) => {
     }
   };
   
-  // Fetch applications when component mounts or dependencies change
   useEffect(() => {
     if (user) {
       fetchApplications();
+    } else {
+      setApplications([]); // Clear applications if user logs out
+      setError(null);
     }
-  }, [user, jobId]);
+  }, [user, fetchApplications]); // Added fetchApplications (jobId is already a dep of fetchApplications)
   
   return {
     applications,

@@ -1,10 +1,9 @@
-
-import { useState } from 'react';
-import { useMessaging } from '@/context/MessagingContext';
+import { useState, useContext } from 'react'; // useContext might be needed if useMessaging is refactored
+import { MessagingContext, useMessaging } from '@/context/MessagingContext'; // Ensure useMessaging is correctly imported
 import { MainNavigation } from './MainNavigation';
 import { Logo } from '@/components/header/Logo';
 import { useTranslation } from 'react-i18next';
-import { useTranslation } from 'react-i18next';
+// Removed duplicate import of useTranslation
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -19,14 +18,10 @@ export function AppHeader() {
   const { t } = useTranslation();
   const { user } = useAuth();
   
-  // Try to access the messaging context, but provide a fallback value if it's not available
-  let unreadCount = 0;
-  try {
-    const { unreadCount: count } = useMessaging();
-    unreadCount = count;
-  } catch (error) {
-    console.warn('Messaging context not available');
-  }
+  // Call useMessaging unconditionally at the top level
+  const messagingData = useMessaging();
+  // Safely access unreadCount, defaulting to 0 if messagingData is null or unreadCount is not available
+  const unreadCount = messagingData?.unreadCount || 0;
   
   return (
     <>

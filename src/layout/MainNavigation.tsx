@@ -58,7 +58,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
     }
   ];
 
-  let links = baseLinks.map(link => ({ ...link, name: t(`nav.${link.key}`) }));
+  const links = baseLinks.map(link => ({ ...link, name: t(`nav.${link.key}`) }));
   
   // Add authenticated-only links
   if (isAuthenticated) {

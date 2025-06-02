@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Star } from "lucide-react";
 import { ReviewStats } from "@/components/reviews/ReviewStats";
@@ -32,10 +31,10 @@ export function ProfileRatings({ userId, averageRating = 0, ratingCount = 0 }: P
     }
   }, [reviews]);
   
-  // Fetch reviews when component mounts
+  // Fetch reviews when component mounts or userId/fetchUserReviews changes
   useEffect(() => {
     fetchUserReviews(userId);
-  }, [userId]);
+  }, [userId, fetchUserReviews]); // Added fetchUserReviews
   
   return (
     <div className="space-y-6">

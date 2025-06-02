@@ -146,32 +146,33 @@ const App = () => {
         <WalletProvider> {/* Added WalletProvider */}
           <ThemeProvider defaultTheme="dark">
             <ToastProvider>
-            <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-              <LocalErrorBoundary>
-          <Routes>
-            {baseRoutes.map(({ path, element }) => (
-              <Route key={path} path={path} element={element} />
-            ))}
-            <Route path="/auth/*" element={<AuthRoutes />} />
-            <Route path="/dashboard/*" element={<DashboardRoutes />} />
-            <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
-            <Route path="/talent/*" element={<TalentRoutes />} />
-            <Route path="/admin/*" element={<AdminRoutes />} />
-            <Route path="/mobile/*" element={<MobileAppRoutes />} />
-            <Route path="/content/*" element={<ContentRoutes />} />
-            <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
-            <Route path="/community/*" element={<CommunityRoutes />} />
-            <Route path="/developers/*" element={<DeveloperRoutes />} />
-            <Route path="*" element={<ErrorRoutes />} />
-          </Routes>
-              </LocalErrorBoundary>
-        </Suspense>
-        <OfflineToast />
-        <SupportChatbot />
-        <InstallPrompt />
-          </ToastProvider>
-      </ThemeProvider>
-    </WhitelabelProvider>
+              <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+                <LocalErrorBoundary>
+                  <Routes>
+                    {baseRoutes.map(({ path, element }) => (
+                      <Route key={path} path={path} element={element} />
+                    ))}
+                    <Route path="/auth/*" element={<AuthRoutes />} />
+                    <Route path="/dashboard/*" element={<DashboardRoutes />} />
+                    <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
+                    <Route path="/talent/*" element={<TalentRoutes />} />
+                    <Route path="/admin/*" element={<AdminRoutes />} />
+                    <Route path="/mobile/*" element={<MobileAppRoutes />} />
+                    <Route path="/content/*" element={<ContentRoutes />} />
+                    <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
+                    <Route path="/community/*" element={<CommunityRoutes />} />
+                    <Route path="/developers/*" element={<DeveloperRoutes />} />
+                    <Route path="*" element={<ErrorRoutes />} />
+                  </Routes>
+                </LocalErrorBoundary>
+              </Suspense>
+              <OfflineToast />
+              <SupportChatbot />
+              <InstallPrompt />
+            </ToastProvider>
+          </ThemeProvider>
+        </WalletProvider>
+      </WhitelabelProvider>
     </ErrorBoundary>
   );
 };

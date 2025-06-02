@@ -4,9 +4,6 @@ import { useAuth } from '@/hooks/useAuth';
 import { useNotificationOperations } from './useNotificationOperations';
 import { NotificationContextType } from './types';
 
-// Default context used when React type definitions are missing. Providing a
-// fully-typed object here avoids TypeScript errors that occur when an untyped
-// `createContext` call returns `{}` instead of the expected shape.
 const defaultContext: NotificationContextType = {
   notifications: [],
   filteredNotifications: [],
@@ -20,7 +17,6 @@ const defaultContext: NotificationContextType = {
   fetchNotifications: async () => {},
 };
 
-// Cast the default context value to avoid issues when React types are missing.
 const NotificationContext = createContext(
   defaultContext as NotificationContextType
 );
@@ -37,13 +33,15 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): JSX
   const { user } = useAuth();
   const notificationOps = useNotificationOperations(user?.id);
   
-  // Load notifications when user changes
   useEffect(() => {
-    notificationOps.fetchNotifications();
+    // Ensure fetchNotifications is called only if notificationOps is available
+    if (notificationOps) {
+      notificationOps.fetchNotifications();
+    }
     
-    // Set up real-time subscription for new notifications
-    if (user) {
-      const channel = supabase
+    let channel: ReturnType<typeof supabase.channel> | undefined;
+    if (user && notificationOps) { // Ensure notificationOps is available for fetch on change
+      channel = supabase
         .channel('notifications-changes')
         .on('postgres_changes', 
           {
@@ -54,16 +52,18 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): JSX
           },
           (payload) => {
             console.log('Notification change received:', payload);
-            notificationOps.fetchNotifications();
+            notificationOps.fetchNotifications(); // Call fetchNotifications from the stable notificationOps
           }
         )
         .subscribe();
         
       return () => {
-        supabase.removeChannel(channel);
+        if (channel) {
+          supabase.removeChannel(channel);
+        }
       };
     }
-  }, [user]);
+  }, [user, notificationOps]); // Added notificationOps
   
   return (
     <NotificationContext.Provider value={notificationOps}>

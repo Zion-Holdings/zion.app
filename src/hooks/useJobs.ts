@@ -1,10 +1,9 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react"; // Added useCallback
 import { supabase } from "@/integrations/supabase/client";
 import { Job, JobStatus } from "@/types/jobs";
 import { toast } from "sonner";
 import { useAuth } from "./useAuth";
-import { createJob, updateJob, getJobById } from "@/services/jobService";
+import { createJob as createJobService, updateJob as updateJobService, getJobById } from "@/services/jobService"; // Aliased service functions
 
 export const useJobs = (userId?: string, status?: JobStatus) => {
   const { user } = useAuth();
@@ -14,9 +13,10 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
   
   const clientId = userId || user?.id;
 
-  const fetchJobs = async () => {
+  const fetchJobs = useCallback(async () => { // Wrapped in useCallback
     if (!clientId) {
       setIsLoading(false);
+      setJobs([]); // Clear jobs if no clientId
       return;
     }
 
@@ -37,29 +37,30 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
       
       if (fetchError) throw fetchError;
       
-      setJobs(data as Job[]);
+      setJobs(data as Job[] || []); // Ensure data is not null
       setError(null);
     } catch (err: any) {
       console.error("Error fetching jobs:", err);
       setError("Failed to fetch jobs. Please try again.");
       toast.error("Failed to fetch jobs");
+      setJobs([]); // Clear jobs on error
     } finally {
       setIsLoading(false);
     }
-  };
-  
+  }, [clientId, status]); // Dependencies for fetchJobs
+
   const updateJobStatus = async (jobId: string, newStatus: JobStatus) => {
+    if (!clientId) return false;
     try {
       const { error: updateError } = await supabase
         .from("jobs")
         .update({ status: newStatus })
         .eq("id", jobId)
-        .eq("client_id", clientId); // Ensure user can only update their own jobs
+        .eq("client_id", clientId);
       
       if (updateError) throw updateError;
       
-      // Update local state
-      setJobs(jobs.map(job => job.id === jobId ? {...job, status: newStatus} : job));
+      setJobs(prevJobs => prevJobs.map(job => job.id === jobId ? {...job, status: newStatus} : job));
       toast.success("Job status updated successfully");
       return true;
     } catch (err: any) {
@@ -70,17 +71,17 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
   };
   
   const deleteJob = async (jobId: string) => {
+    if (!clientId) return false;
     try {
       const { error: deleteError } = await supabase
         .from("jobs")
         .delete()
         .eq("id", jobId)
-        .eq("client_id", clientId); // Ensure user can only delete their own jobs
+        .eq("client_id", clientId);
         
       if (deleteError) throw deleteError;
       
-      // Update local state
-      setJobs(jobs.filter(job => job.id !== jobId));
+      setJobs(prevJobs => prevJobs.filter(job => job.id !== jobId));
       toast.success("Job deleted successfully");
       return true;
     } catch (err: any) {
@@ -90,10 +91,9 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
     }
   };
   
-  // Fetch jobs when component mounts or dependencies change
   useEffect(() => {
     fetchJobs();
-  }, [clientId, status]);
+  }, [fetchJobs]); // Changed dependencies to just fetchJobs
   
   return {
     jobs,
@@ -102,8 +102,8 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
     refetch: fetchJobs,
     updateJobStatus,
     deleteJob,
-    createJob,
-    updateJob,
+    createJob: createJobService, // Use aliased service functions
+    updateJob: updateJobService, // Use aliased service functions
     getJobById
   };
 };

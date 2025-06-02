@@ -1,9 +1,7 @@
-// src/context/WalletContext.tsx
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
 import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
 
-// Define the shape of the wallet state and context
 interface WalletState {
   provider: ethers.providers.Web3Provider | null;
   signer: ethers.Signer | null;
@@ -15,7 +13,7 @@ interface WalletState {
 interface WalletContextType extends WalletState {
   connectWallet: () => Promise<void>;
   disconnectWallet: () => void;
-  displayAddress: string | null; // Shortened address for display
+  displayAddress: string | null;
 }
 
 const initialWalletState: WalletState = {
@@ -33,26 +31,23 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const [web3ModalInstance, setWeb3ModalInstance] = useState<Web3Modal | null>(null);
 
   useEffect(() => {
-    // Initialize Web3Modal instance on client-side
     if (typeof window !== 'undefined') {
-        const providerOptions = {
-            // Example: Add options for WalletConnect, Coinbase Wallet, etc.
-            // walletconnect: {
-            //   package: WalletConnectProvider, // import WalletConnectProvider from "@walletconnect/web3-provider";
-            //   options: {
-            //     infuraId: "YOUR_INFURA_ID" // Or other RPC provider URL
-            //   }
-            // }
-        };
-
+        const providerOptions = {};
         const modal = new Web3Modal({
-            network: 'mainnet', // TODO: Make this configurable based on ZION_TOKEN_NETWORK_ID
-            cacheProvider: true, // Optional
+            network: 'mainnet',
+            cacheProvider: true,
             providerOptions,
         });
         setWeb3ModalInstance(modal);
     }
   }, []);
+
+  const disconnectWallet = useCallback(async () => {
+    if (web3ModalInstance?.cachedProvider) {
+        web3ModalInstance.clearCachedProvider();
+    }
+    setWallet(initialWalletState);
+  }, [web3ModalInstance]); // Removed wallet.provider, setWallet is stable
 
   const connectWallet = useCallback(async () => {
     if (!web3ModalInstance) {
@@ -74,23 +69,41 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         isConnected: true,
       });
 
-      // Listen for account changes
       instance.on('accountsChanged', (accounts: string[]) => {
         if (accounts.length > 0) {
-          setWallet(prev => ({ ...prev, address: accounts[0] }));
+          // Re-fetch signer and network info as account change might imply network change in some wallets
+          const newProvider = new ethers.providers.Web3Provider(instance);
+          const newSigner = newProvider.getSigner();
+          newProvider.getNetwork().then(newNetwork => {
+            setWallet(prev => ({
+              ...prev,
+              address: accounts[0],
+              signer: newSigner, // Update signer
+              provider: newProvider, // Update provider
+              chainId: newNetwork.chainId // Update chainId
+            }));
+          });
         } else {
           disconnectWallet();
         }
       });
 
-      // Listen for chain changes
-      instance.on('chainChanged', (chainId: number) => {
-        // May need to re-initialize provider and signer
-        console.log('Network changed to:', chainId);
-        connectWallet(); // Reconnect to update provider and signer for the new chain
+      instance.on('chainChanged', async () => { // Added async
+        // Re-initialize provider, signer, address, and chainId
+        const newProvider = new ethers.providers.Web3Provider(instance);
+        const newSigner = newProvider.getSigner();
+        const newAddress = await newSigner.getAddress();
+        const newNetwork = await newProvider.getNetwork();
+        setWallet({
+          provider: newProvider,
+          signer: newSigner,
+          address: newAddress,
+          chainId: newNetwork.chainId,
+          isConnected: true,
+        });
+        console.log('Network changed to:', newNetwork.chainId);
       });
 
-      // Listen for disconnect
       instance.on('disconnect', (error: any) => {
         console.log('Disconnected', error);
         disconnectWallet();
@@ -98,23 +111,10 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
     } catch (error) {
       console.error('Error connecting wallet:', error);
+      // If user closes modal, it might throw an error, so we ensure state is reset
+      disconnectWallet();
     }
-  }, [web3ModalInstance]);
-
-  const disconnectWallet = useCallback(async () => {
-    if (web3ModalInstance?.cachedProvider) {
-        web3ModalInstance.clearCachedProvider();
-    }
-    // Reset Metamask specific state if it was the provider
-    if (wallet.provider?.provider?.isMetaMask && wallet.provider?.provider?.request) {
-        // This is a bit of a hack, official way to "disconnect" Metamask isn't really there
-        // await wallet.provider.provider.request({
-        // method: "wallet_requestPermissions",
-        // params: [{ eth_accounts: {} }]
-        // });
-    }
-    setWallet(initialWalletState);
-  }, [web3ModalInstance, wallet.provider]);
+  }, [web3ModalInstance, disconnectWallet]); // Added disconnectWallet
 
   const displayAddress = wallet.address
     ? `${wallet.address.substring(0, 6)}...${wallet.address.substring(wallet.address.length - 4)}`

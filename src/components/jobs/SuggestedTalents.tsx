@@ -1,5 +1,4 @@
-
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react"; // Added useCallback
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,11 +11,11 @@ interface SuggestedTalentsProps {
 }
 
 export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
-  const [talents, setTalents] = useState([]);
+  const [talents, setTalents] = useState<any[]>([]); // Added type for talents
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  const fetchSuggestedTalents = async () => {
+  const fetchSuggestedTalents = useCallback(async () => { // Wrapped in useCallback
     setIsLoading(true);
     try {
       const { data, error } = await supabase
@@ -53,10 +52,9 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [jobId]); // jobId is a dependency of fetchSuggestedTalents
 
   const handleViewProfile = (talentId: string) => {
-    // Implement logic to view talent profile
     console.log("View talent profile:", talentId);
     toast({
       title: "View Profile",
@@ -65,7 +63,6 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
   };
 
   const handleInvite = (talentId: string) => {
-    // Implement logic to invite talent
     console.log("Invite talent:", talentId);
     toast({
       title: "Invite Talent",
@@ -84,7 +81,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
     if (jobId) {
       fetchSuggestedTalents();
     }
-  }, [jobId]);
+  }, [jobId, fetchSuggestedTalents]); // Added fetchSuggestedTalents
 
   // Transform data to match JobMatchCard component props
   const transformedTalents = talents.map(talent => {

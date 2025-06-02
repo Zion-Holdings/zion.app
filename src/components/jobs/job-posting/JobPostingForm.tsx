@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from "sonner";
@@ -36,7 +35,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
     submitJob
   } = useJobForm({ jobId, onSuccess });
 
-  const { handleSubmit, setValue, formState } = form;
+  const { handleSubmit, setValue, getValues, formState } = form; // Destructured getValues
   const { isSubmitting } = formState;
 
   useEffect(() => {
@@ -45,7 +44,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
       getJobById(jobId)
         .then((job) => {
           if (job) {
-            const currentValues = form.getValues();
+            const currentValues = getValues(); // Use destructured getValues
             Object.entries(job).forEach(([key, value]) => {
               if (key === 'published_date' && value) {
                 setStartDate(new Date(value as string));
@@ -72,7 +71,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
           setIsFormLoading(false);
         });
     }
-  }, [jobId, getJobById, setValue, setStartDate, setEndDate, setIsRemote]);
+  }, [jobId, getJobById, setValue, getValues, setStartDate, setEndDate, setIsRemote]); // Added getValues
 
   const handleEditorChange = useCallback((value: string) => {
     setEditorContent(value);

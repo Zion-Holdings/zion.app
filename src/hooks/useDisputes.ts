@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react"; // Added useCallback
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { Dispute, DisputeMessage, DisputeAttachment, DisputeStatus } from "@/types/disputes";
@@ -11,9 +10,10 @@ export function useDisputes() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchDisputes = async () => {
+  const fetchDisputes = useCallback(async () => { // Wrapped in useCallback
     if (!user) {
       setIsLoading(false);
+      setDisputes([]); // Clear disputes if no user
       return;
     }
 
@@ -38,7 +38,6 @@ export function useDisputes() {
       
       if (fetchError) throw fetchError;
       
-      // Transform data if needed
       const transformedData = data.map((dispute: any) => ({
         ...dispute,
         client_profile: dispute.client_profile?.client_profile,
@@ -55,10 +54,11 @@ export function useDisputes() {
       console.error("Error fetching disputes:", err);
       setError("Failed to fetch disputes: " + err.message);
       toast.error("Failed to fetch disputes");
+      setDisputes([]); // Clear disputes on error
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [user]); // user is a dependency of fetchDisputes
 
   const getDisputeById = async (disputeId: string): Promise<Dispute | null> => {
     try {
@@ -121,7 +121,7 @@ export function useDisputes() {
       if (error) throw error;
       
       toast.success("Dispute submitted successfully");
-      fetchDisputes(); // Refresh the list
+      fetchDisputes();
       
       return data as Dispute;
     } catch (err: any) {
@@ -140,7 +140,6 @@ export function useDisputes() {
       
       if (error) throw error;
       
-      // Update local state
       setDisputes(prevDisputes => 
         prevDisputes.map(dispute => 
           dispute.id === disputeId ? { ...dispute, status } : dispute
@@ -173,7 +172,6 @@ export function useDisputes() {
       
       if (error) throw error;
       
-      // Update local state
       setDisputes(prevDisputes => 
         prevDisputes.map(dispute => 
           dispute.id === disputeId 
@@ -245,12 +243,14 @@ export function useDisputes() {
     }
   };
 
-  // Fetch disputes when component mounts or user changes
   useEffect(() => {
     if (user) {
       fetchDisputes();
+    } else {
+      setDisputes([]); // Clear disputes if user logs out
+      setError(null);
     }
-  }, [user]);
+  }, [user, fetchDisputes]); // Added fetchDisputes
 
   return {
     disputes,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FormEvent } from 'react';
+import React, { useEffect, useState, FormEvent, useCallback } from 'react'; // Added useCallback
 // import { Review } from '@/types/reviews'; // Assuming this path is correct from earlier exploration
 // For the purpose of this subtask, let's define a local Review type if the import path is uncertain or to ensure self-containment
 // In a real scenario, this would be imported from the shared types.
@@ -89,7 +89,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState<string | null>(null);
 
-  const fetchReviews = async () => {
+  const fetchReviews = useCallback(async () => { // Wrapped in useCallback
     setIsLoading(true);
     setError(null);
     try {
@@ -105,13 +105,13 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [productId]); // productId is a dependency of fetchReviews
 
   useEffect(() => {
     if (productId) {
       fetchReviews();
     }
-  }, [productId]);
+  }, [productId, fetchReviews]); // Added fetchReviews to dependency array
 
   const handleSubmitReview = async (e: FormEvent) => {
     e.preventDefault();
@@ -163,7 +163,6 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
             <div key={review.id} className="border p-4 rounded-md bg-gray-50 dark:bg-gray-800">
               <div className="flex items-center mb-1">
                 <strong className="mr-2">{review.reviewer_profile?.display_name || review.user?.name || 'Anonymous'}</strong>
-                {/* Assuming review.rating is a number from the backend */}
                 <RatingStarsDisplay value={review.rating} />
               </div>
               <p className="text-gray-700 dark:text-gray-300">{review.review_text || review.comment}</p>

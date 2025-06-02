@@ -6,7 +6,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { NextPage } from 'next';
 import NextHead from '@/components/NextHead';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react'; // Added useCallback
 import { supabase } from '@/integrations/supabase/client';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -111,46 +111,34 @@ const PitchGeneratorPage: NextPage = () => {
     }
   };
 
-  const fetchVersionHistory = async () => {
-    if (versionHistory.length > 0 && deckVersion > 1) return; // Avoid refetching if already populated unless it's initial load
+  const fetchVersionHistory = useCallback(async () => {
+    if (versionHistory.length > 0 && deckVersion > 1) return;
 
     setError(null);
     try {
-        // Simulate API Call
-        // const session = await supabase.auth.getSession();
-        // const token = session?.data?.session?.access_token;
-        // if (!token) throw new Error("Authentication token not found.");
-        // const response = await fetch('/api/admin/pitch-decks/history', {
-        //   headers: { 'Authorization': `Bearer ${token}` },
-        // });
-        // if (!response.ok) throw new Error('Failed to fetch version history');
-        // const historyData = await response.json();
-        // setVersionHistory(historyData);
-
         await new Promise(resolve => setTimeout(resolve, 500));
         const mockHistory = [
             { version: 1, savedAt: new Date(Date.now() - 100000000).toISOString(), slideCount: 10, notes: "Initial AI draft" },
         ];
-        // Sort history descending by version
         const sortedHistory = mockHistory.sort((a,b) => b.version - a.version);
         setVersionHistory(sortedHistory);
 
         if (sortedHistory.length > 0) {
             setDeckVersion(sortedHistory[0].version + 1);
         } else {
-            setDeckVersion(1); // Start with v1 if no history
+            setDeckVersion(1);
         }
     } catch (e:any) {
         console.error('Failed to fetch version history:', e);
         setError(e.message || 'Failed to fetch version history.');
     }
-  };
+  }, [versionHistory.length, deckVersion]);
 
   useEffect(() => {
     if (user) {
         fetchVersionHistory();
     }
-  }, [user]);
+  }, [user, fetchVersionHistory]);
 
 
   const handleInputSubmit = (data: any) => {
@@ -204,9 +192,6 @@ const PitchGeneratorPage: NextPage = () => {
 
       const data = await response.json();
       setGeneratedSlides(data.slides || []);
-       // When a new deck is generated, it's based on the current deckVersion being edited.
-      // alert(`New deck generated for Version ${deckVersion}. Save if you want to keep it.`);
-
     } catch (e: any) {
       console.error('Failed to generate pitch deck:', e);
       setError(e.message || 'Failed to generate pitch deck. Check console for details.');
@@ -285,7 +270,7 @@ const PitchGeneratorPage: NextPage = () => {
         if (i > 0) pdf.addPage();
         pdf.addImage(imgData, 'PNG', xOffset, yOffset, newImgWidth, newImgHeight);
       }
-      pdf.save(`pitch-deck-v${deckVersion -1}.pdf`); // Save with the version number that was just saved
+      pdf.save(`pitch-deck-v${deckVersion -1}.pdf`);
     } catch (e: any) {
       console.error('Failed to export PDF:', e);
       setError(e.message || 'Failed to export PDF.');
@@ -431,7 +416,7 @@ const PitchGeneratorPage: NextPage = () => {
             {versionHistory.length > 0 && (
               <div className="mt-10 pt-6 border-t border-gray-200">
                 <h3 className="text-xl font-semibold text-gray-700 mb-3">Version History</h3>
-                <ul className="space-y-3 max-h-60 overflow-y-auto"> {/* Added max-h and overflow for scroll */}
+                <ul className="space-y-3 max-h-60 overflow-y-auto">
                   {versionHistory.map((versionItem, index) => (
                     <li key={index} className="p-3 bg-gray-50 rounded-md shadow-sm flex justify-between items-center">
                       <div>

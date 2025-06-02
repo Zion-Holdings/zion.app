@@ -23,7 +23,7 @@ it('returns posts for slug', async () => {
 
   const queryClient = new QueryClient();
   const wrapper = ({ children }: { children: React.ReactNode }) => (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <div />
   );
 
   const { result } = renderHook(() => usePostsByCategory('getting-hired', 1), { wrapper });

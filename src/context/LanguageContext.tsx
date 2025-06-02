@@ -51,32 +51,30 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   const [isRTL, setIsRTL] = useState(i18n.dir() === 'rtl');
   
   useEffect(() => {
-    // Set initial language from localStorage or browser
     const savedLang = safeStorage.getItem('i18n_lang') as SupportedLanguage;
     if (savedLang && supportedLanguages.some(lang => lang.code === savedLang)) {
-      i18n.changeLanguage(savedLang);
+      if (i18n.language !== savedLang) { // Only change if different
+        i18n.changeLanguage(savedLang);
+      }
       setCurrentLanguage(savedLang);
     }
-  }, []);
+  }, [i18n]); // i18n is a dependency here
   
-  // Update RTL status when language changes
   useEffect(() => {
     setIsRTL(i18n.dir() === 'rtl');
     document.documentElement.dir = i18n.dir();
     document.documentElement.lang = currentLanguage;
     
-    // Add RTL class for Tailwind
     if (i18n.dir() === 'rtl') {
       document.documentElement.classList.add('rtl');
     } else {
       document.documentElement.classList.remove('rtl');
     }
-  }, [currentLanguage, i18n]);
+  }, [currentLanguage, i18n]); // Correct: i18n and currentLanguage
   
-  // Sync language preference with user profile when authenticated
   useEffect(() => {
     const syncLanguageWithProfile = async () => {
-      if (isAuthenticated && user?.id) {
+      if (isAuthenticated && user?.id && currentLanguage) { // ensure currentLanguage is also checked
         try {
           const { error } = await supabase
             .from('profiles')
@@ -93,33 +91,23 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     };
     
     syncLanguageWithProfile();
-  }, [currentLanguage, isAuthenticated, user]);
+  }, [currentLanguage, isAuthenticated, user]); // Correct dependencies
   
   const changeLanguage = async (lang: SupportedLanguage) => {
     if (lang === currentLanguage) return;
     
     try {
       await i18n.changeLanguage(lang);
-      setCurrentLanguage(lang);
+      setCurrentLanguage(lang); // This will trigger the RTL effect
       safeStorage.setItem('i18n_lang', lang);
       
-      // Get language name for toast
       const langName = supportedLanguages.find(l => l.code === lang)?.name || lang;
       toast({
         description: t('language.language_changed', { language: langName })
       });
       
-      // If user is authenticated, update their profile
-      if (isAuthenticated && user?.id) {
-        const { error } = await supabase
-          .from('profiles')
-          .update({ preferred_language: lang })
-          .eq('id', user.id);
-          
-        if (error) {
-          console.error('Error updating language preference:', error);
-        }
-      }
+      // The language preference sync will be handled by the useEffect above
+      // that depends on currentLanguage, isAuthenticated, and user.
     } catch (err) {
       console.error('Error changing language:', err);
     }

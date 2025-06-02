@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react"; // Added useCallback
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { JobMatch } from "@/types/jobs";
@@ -9,7 +8,7 @@ export function useJobMatches(jobId: string) {
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  const fetchMatches = async () => {
+  const fetchMatches = useCallback(async () => { // Wrapped in useCallback
     setIsLoading(true);
     try {
       const { data, error } = await supabase
@@ -41,10 +40,11 @@ export function useJobMatches(jobId: string) {
         description: "Failed to load matched talents. Please try again later.",
         variant: "destructive",
       });
+      setMatches([]); // Clear matches on error
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [jobId]); // jobId is a dependency of fetchMatches
 
   const triggerAIMatching = async () => {
     setIsProcessing(true);
@@ -60,7 +60,6 @@ export function useJobMatches(jobId: string) {
         description: `Found ${response.data.matches || 0} potential talent matches for this job.`,
       });
       
-      // Refresh the matches list
       await fetchMatches();
     } catch (error) {
       console.error("Error triggering AI matching:", error);
@@ -75,13 +74,16 @@ export function useJobMatches(jobId: string) {
   };
 
   useEffect(() => {
-    fetchMatches();
-  }, [jobId]);
+    if (jobId) { // Ensure jobId is present before fetching
+      fetchMatches();
+    }
+  }, [jobId, fetchMatches]); // Added fetchMatches
 
   return {
     matches,
     isLoading,
     isProcessing,
-    triggerAIMatching
+    triggerAIMatching,
+    refetch: fetchMatches // Added refetch
   };
 }

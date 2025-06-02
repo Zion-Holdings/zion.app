@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { Globe, MoreVertical, PlayCircle, Plus, RefreshCw, Webhook, X } from "lucide-react";
@@ -42,10 +41,9 @@ export function WebhooksManager() {
   const [selectedEvents, setSelectedEvents] = useState<WebhookEventType[]>([]);
   const [testEventType, setTestEventType] = useState<WebhookEventType>('new_application');
 
-  // Load webhooks on mount
   useEffect(() => {
     fetchWebhooks();
-  }, []);
+  }, [fetchWebhooks]); // Added fetchWebhooks
 
   const handleCreateWebhook = async () => {
     if (webhookName.trim() === "" || webhookUrl.trim() === "" || selectedEvents.length === 0) return;
@@ -82,7 +80,6 @@ export function WebhooksManager() {
     setSelectedEvents([]);
   };
 
-  // Event type options
   const eventOptions: { value: WebhookEventType; label: string; description: string }[] = [
     { value: 'new_application', label: 'New Application', description: 'When a talent applies to a job' },
     { value: 'quote_received', label: 'Quote Received', description: 'When a quote is received from talent' },
@@ -90,7 +87,6 @@ export function WebhooksManager() {
     { value: 'talent_hired', label: 'Talent Hired', description: 'When talent is hired for a project' },
   ];
 
-  // Toggle an event selection
   const toggleEvent = (event: WebhookEventType) => {
     setSelectedEvents(prev => 
       prev.includes(event) 

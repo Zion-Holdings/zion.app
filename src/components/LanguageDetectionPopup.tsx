@@ -20,30 +20,28 @@ export function LanguageDetectionPopup() {
   const [detectedLanguage, setDetectedLanguage] = useState<SupportedLanguage | null>(null);
 
   useEffect(() => {
-    // Check if this is first visit
     const hasVisited = safeStorage.getItem('zion_has_visited');
     if (hasVisited) return;
 
-    // Mark as visited
     safeStorage.setItem('zion_has_visited', 'true');
     
-    // Get browser language
     const browserLang = navigator.language.substring(0, 2) as SupportedLanguage;
     
-    // Check if browser language is supported and different from current language
     const isSupported = supportedLanguages.some(lang => lang.code === browserLang);
     if (isSupported && browserLang !== currentLanguage) {
       setDetectedLanguage(browserLang);
       setOpen(true);
     }
-  }, []);
+  }, [currentLanguage, supportedLanguages]); // Added dependencies
 
   if (!detectedLanguage) return null;
 
   const languageName = supportedLanguages.find(lang => lang.code === detectedLanguage)?.name || detectedLanguage;
 
   const handleAccept = async () => {
-    await changeLanguage(detectedLanguage);
+    if (detectedLanguage) { // Ensure detectedLanguage is not null
+      await changeLanguage(detectedLanguage);
+    }
     setOpen(false);
   };
 

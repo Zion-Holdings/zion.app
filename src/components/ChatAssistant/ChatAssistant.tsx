@@ -42,9 +42,17 @@ export function ChatAssistant({
 }: ChatAssistantProps) {
   const auth = useContext(AuthContext);
   const isGuest = !auth?.isAuthenticated;
-  const localStorageKey = isGuest ? `chatHistory-${recipient.id}` : null;
 
-  // Define messages and setMessages based on user type
+  // Always call useLocalStorage at the top level.
+  // The key will change based on isGuest and recipient.id, but the hook call itself is unconditional.
+  // We'll manage which data to *use* further down.
+  const guestStorageKey = `chatHistory-${recipient.id}`;
+  const [storedGuestMessages, setStoredGuestMessages] = useLocalStorage<Message[]>(guestStorageKey, []);
+  const [displayGuestMessages, setDisplayGuestMessages] = useState<Message[]>(initialMessages.length > 0 ? initialMessages : storedGuestMessages);
+
+  // State for logged-in users
+  const [loggedInMessages, setLoggedInMessages] = useState<Message[]>(initialMessages);
+
   let currentMessages: Message[];
   let setCurrentMessages: (value: Message[] | ((val: Message[]) => Message[])) => void;
 
@@ -53,41 +61,38 @@ export function ChatAssistant({
   const [showGuestModal, setShowGuestModal] = useState(false);
   const [guestMessage, setGuestMessage] = useState<string | null>(null);
 
-  if (isGuest && localStorageKey) {
-    // Guest user logic with useLocalStorage
-    const [storedGuestMessages, setStoredGuestMessages] = useLocalStorage<Message[]>(localStorageKey, []);
-    const [displayGuestMessages, setDisplayGuestMessages] = useState<Message[]>([]);
-
-    useEffect(() => {
-      // Priority: initialMessages prop > localStorage > empty array
+  useEffect(() => {
+    // Effect for guest users to handle initial messages and localStorage synchronization
+    if (isGuest) {
       if (initialMessages && initialMessages.length > 0) {
         setDisplayGuestMessages(initialMessages);
-        setStoredGuestMessages(initialMessages); // Persist if initialMessages are provided
+        setStoredGuestMessages(initialMessages); // Persist if initialMessages are provided for guest
       } else {
-        // No initialMessages prop, so use what's in localStorage (or the default [] from useLocalStorage)
         setDisplayGuestMessages(storedGuestMessages);
       }
-    }, [initialMessages, storedGuestMessages, setStoredGuestMessages, recipient.id]); // recipient.id ensures re-evaluation if key changes
+    }
+  }, [isGuest, initialMessages, storedGuestMessages, setStoredGuestMessages]);
 
+  useEffect(() => {
+    // Effect for logged-in users to handle initial messages
+    if (!isGuest) {
+      setLoggedInMessages(initialMessages);
+    }
+  }, [isGuest, initialMessages]);
+
+
+  if (isGuest) {
     currentMessages = displayGuestMessages;
     setCurrentMessages = (valueOrFn) => {
       const newMessages = valueOrFn instanceof Function ? valueOrFn(displayGuestMessages) : valueOrFn;
       setDisplayGuestMessages(newMessages);
-      setStoredGuestMessages(newMessages); // Always update localStorage for guests
+      setStoredGuestMessages(newMessages);
     };
   } else {
-    // Logged-in user logic with useState
-    const [loggedInMessages, setLoggedInMessages] = useState<Message[]>(initialMessages);
-    useEffect(() => {
-      // Update state if initialMessages prop changes (e.g. new conversation loaded)
-      setLoggedInMessages(initialMessages);
-    }, [initialMessages, recipient.id]); // recipient.id to reset if recipient changes
-
     currentMessages = loggedInMessages;
     setCurrentMessages = setLoggedInMessages;
   }
   
-  // Common effects and logic using currentMessages and setCurrentMessages
   const debouncedApiCallParams = useDebounce(pendingApiCallParams, 3000);
 
   useEffect(() => {
@@ -131,7 +136,7 @@ export function ChatAssistant({
       message: guestMessage,
       timestamp: new Date()
     };
-    setCurrentMessages((prev: Message[]) => [...prev, newMessage]); // This will now use the guest-aware setCurrentMessages
+    setCurrentMessages((prev: Message[]) => [...prev, newMessage]);
     setPendingApiCallParams({ message: guestMessage, conversationId });
     
     setShowGuestModal(false);

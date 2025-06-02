@@ -13,13 +13,17 @@ export default function WishlistPage() {
   const { favorites, loading } = useFavorites();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const { items, dispatch } = useCart(); // Moved useCart call to the top
+
+  useEffect(() => { // useEffect to handle navigation after initial render
+    if (!user) {
+      navigate('/login');
+    }
+  }, [user, navigate]);
 
   if (!user) {
-    navigate('/login');
-    return null;
+    return null; // Render nothing while redirecting
   }
-
-  const { items, dispatch } = useCart();
 
   const addToCart = (item: { id: string; title?: string; price?: number }) => {
     if (items.some(i => i.id === item.id)) return;

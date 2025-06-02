@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -50,8 +49,6 @@ export function FilterSidebar({
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
-  };
-
   };
 
   // Initialize internal states for sliders to overall min/max if current selections are null

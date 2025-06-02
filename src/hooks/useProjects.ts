@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react"; // Added useCallback
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { Project, ProjectStatus } from "@/types/projects";
@@ -10,18 +10,16 @@ export function useProjects() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchProjects = async () => {
+  const fetchProjects = useCallback(async () => { // Wrapped in useCallback
     if (!user) {
       setIsLoading(false);
+      setProjects([]); // Clear projects if no user
       return;
     }
 
     try {
       setIsLoading(true);
       
-      // Build the query based on user type
-      // For clients, get projects they created
-      // For talents, get projects they're hired for
       let query = supabase
         .from("projects")
         .select(`
@@ -37,18 +35,19 @@ export function useProjects() {
       } else if (user.userType === "employer" || user.userType === "buyer") {
         query = query.eq("client_id", user.id);
       }
+      // Consider if a case where userType is none of these should fetch all or none
       
       const { data, error: fetchError } = await query;
       
       if (fetchError) throw fetchError;
       
-      // Transform the data to match our project types
       const transformedData = data.map((project: any) => ({
         ...project,
         talent_profile: project.talent_profile ? {
           ...project.talent_profile,
           full_name: project.talent_profile.display_name
-        } : undefined
+        } : undefined,
+        // client_profile is already in the correct shape from select
       }));
       
       setProjects(transformedData as Project[]);
@@ -57,10 +56,11 @@ export function useProjects() {
       console.error("Error fetching projects:", err);
       setError("Failed to fetch projects: " + err.message);
       toast.error("Failed to fetch projects");
+      setProjects([]); // Clear projects on error
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [user]); // user is a dependency of fetchProjects
 
   const getProjectById = async (projectId: string): Promise<Project | null> => {
     try {
@@ -77,7 +77,6 @@ export function useProjects() {
       
       if (error) throw error;
       
-      // Transform the data to match our project types
       const transformedProject = {
         ...data,
         talent_profile: data.talent_profile ? {
@@ -103,7 +102,6 @@ export function useProjects() {
       
       if (error) throw error;
       
-      // Update the local state
       setProjects(prev => 
         prev.map(project => project.id === projectId ? { ...project, status } : project)
       );
@@ -117,12 +115,14 @@ export function useProjects() {
     }
   };
 
-  // Fetch projects when component mounts or user changes
   useEffect(() => {
     if (user) {
       fetchProjects();
+    } else {
+      setProjects([]); // Clear projects if user logs out
+      setError(null);
     }
-  }, [user]);
+  }, [user, fetchProjects]); // Added fetchProjects
 
   return {
     projects,

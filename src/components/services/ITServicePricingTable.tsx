@@ -1,4 +1,3 @@
-
 import { useState, useMemo } from "react";
 import { onsiteServicePricing, CountryPricing } from "@/data/onsiteServicePricing";
 import { Input } from "@/components/ui/input";
@@ -38,7 +37,7 @@ export function ITServicePricingTable() {
     });
     
     return filteredData;
-  }, [onsiteServicePricing, searchQuery, sortConfig]);
+  }, [searchQuery, sortConfig]); // Removed onsiteServicePricing
 
   const handleSort = (key: keyof CountryPricing) => {
     setSortConfig({
