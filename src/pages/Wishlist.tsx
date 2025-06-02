@@ -52,7 +52,7 @@ export default function WishlistPage() {
       ) : favorites.length === 0 ? (
         <p>No items saved.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="responsive-grid">
           {favorites.map(fav => {
             if (fav.item_type === 'talent') {
               const talent = talentMap[fav.item_id];

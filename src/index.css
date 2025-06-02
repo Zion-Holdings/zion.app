@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 @import './styles/navbar.css';
+@import './styles/responsive.css';
 
 @layer base {
   :root {
