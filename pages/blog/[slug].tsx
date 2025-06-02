@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import Head from 'next/head';
 import NextHead from '@/components/NextHead';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { BLOG_POSTS } from '@/data/blog-posts';
@@ -13,6 +14,18 @@ const BlogPostPage: React.FC<BlogProps> = ({ post }) => {
   if (!post) {
     return <div>Article not found</div>;
   }
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: post.featuredImage,
+    datePublished: post.publishedDate,
+    author: {
+      "@type": "Person",
+      name: post.author.name,
+    },
+  };
   return (
     <>
       <NextHead
@@ -20,6 +33,12 @@ const BlogPostPage: React.FC<BlogProps> = ({ post }) => {
         description={post.excerpt}
         openGraph={{ title: post.title, description: post.excerpt, image: post.featuredImage }}
       />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+        />
+      </Head>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
         <h1>{post.title}</h1>
         <ReactMarkdown>{post.content}</ReactMarkdown>

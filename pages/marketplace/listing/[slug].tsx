@@ -1,5 +1,6 @@
 import React from 'react';
 import type { GetServerSideProps } from 'next';
+import Head from 'next/head';
 import NextHead from '@/components/NextHead';
 import ProductReviews from '@/components/ProductReviews';
 import { Product } from '@prisma/client'; // Base product type
@@ -59,6 +60,27 @@ const MarketplaceListingPage: React.FC<ListingPageProps> = ({ product, error }) 
   // The slug from URL is product.id because our API uses product.id for fetching
   const productId = product.id;
 
+  const productLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: (product as any).imageUrl ?? product.images?.[0]?.url,
+    offers: {
+      "@type": "Offer",
+      price: product.price,
+      priceCurrency: product.currency,
+    },
+    aggregateRating:
+      product.reviewCount > 0 && product.averageRating !== null
+        ? {
+            "@type": "AggregateRating",
+            ratingValue: product.averageRating,
+            reviewCount: product.reviewCount,
+          }
+        : undefined,
+  };
+
   return (
     <>
       <NextHead
@@ -70,6 +92,12 @@ const MarketplaceListingPage: React.FC<ListingPageProps> = ({ product, error }) 
           image: (product as any).imageUrl ?? product.images?.[0]?.url ?? undefined,
         }}
       />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
+        />
+      </Head>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8 px-4">
         <h1>{product.name}</h1> {/* Using product.name from Prisma Product model */}
 

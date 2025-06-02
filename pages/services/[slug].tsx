@@ -1,5 +1,6 @@
 import React from 'react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import NextHead from '@/components/NextHead';
 import { SERVICES } from '@/data/servicesData';
 import { slugify } from '@/lib/slugify';
@@ -14,6 +15,17 @@ const ServicePage: React.FC<ServiceProps> = ({ service }) => {
   if (!service) {
     return <Custom404 />;
   }
+  const serviceLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.description,
+    offers: {
+      "@type": "Offer",
+      price: service.price,
+      priceCurrency: service.currency,
+    },
+  };
   return (
     <>
       <NextHead
@@ -21,6 +33,12 @@ const ServicePage: React.FC<ServiceProps> = ({ service }) => {
         description={service.description}
         openGraph={{ title: service.title, description: service.description }}
       />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
+        />
+      </Head>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
         <h1>{service.title}</h1>
         <p>{service.description}</p>
