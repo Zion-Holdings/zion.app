@@ -20,12 +20,9 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-interface FeatureCTAsProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
+interface FeatureCTAsProps extends React.HTMLAttributes<HTMLElement> {}
 
-export function FeatureCTAs({ className, style }: FeatureCTAsProps) {
+export function FeatureCTAs({ className, style, ...props }: FeatureCTAsProps) {
   const features = [
     {
       title: "AI Talent Matching",
@@ -117,6 +114,7 @@ export function FeatureCTAs({ className, style }: FeatureCTAsProps) {
         className
       )}
       style={style}
+      {...props}
     >
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">

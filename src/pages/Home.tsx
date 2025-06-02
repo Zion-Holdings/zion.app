@@ -45,9 +45,10 @@ export default function Home() {
         <QuickAccess />
       </div>
 
-      <div className="animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-        <FeatureCTAs />
-      </div>
+      <FeatureCTAs
+        className="animate-fadeIn"
+        style={{ animationDelay: '0.2s' }}
+      />
 
       <div className="animate-fadeIn" style={{ animationDelay: '0.25s' }}>
         <InteractiveFeatures />
