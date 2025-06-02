@@ -5,7 +5,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Filter, Star } from "lucide-react"; // Removed X as it's handled by ActiveFiltersBar
 import { FilterOptions } from "@/types/search";
 import { ActiveFiltersBar } from "./ActiveFiltersBar"; // Import ActiveFiltersBar
-import Slider from '@mui/material/Slider';
+import { Slider } from "@/components/ui/slider";
 
 interface FilterSidebarProps {
   filters: {
@@ -65,14 +65,14 @@ export function FilterSidebar({
     setActualMax(selectedMaxPrice ?? overallMaxPrice);
   }, [selectedMinPrice, selectedMaxPrice, overallMinPrice, overallMaxPrice]);
 
-  const handleSliderChange = (_event: Event, newValue: number | number[]) => {
-    const [newMin, newMax] = newValue as number[];
+  const handleSliderChange = (values: number[]) => {
+    const [newMin, newMax] = values;
     setActualMin(newMin);
     setActualMax(newMax);
   };
 
-  const handleSliderChangeCommitted = (_event: React.SyntheticEvent | Event, newValue: number | number[]) => {
-    const [newMin, newMax] = newValue as number[];
+  const handleSliderChangeCommitted = (values: number[]) => {
+    const [newMin, newMax] = values;
     handlePriceChange(newMin, newMax);
   };
 
@@ -245,31 +245,13 @@ export function FilterSidebar({
         </label>
         <div className="space-y-3 px-2"> {/* Added some padding for the slider */}
           <Slider
-            getAriaLabel={() => 'Price range'}
+            aria-label="Price range"
             value={[actualMin, actualMax]}
-            onChange={handleSliderChange}
-            onChangeCommitted={handleSliderChangeCommitted}
+            onValueChange={handleSliderChange}
+            onValueCommit={handleSliderChangeCommitted}
             min={overallMinPrice}
             max={overallMaxPrice}
-            valueLabelDisplay="on"
-            valueLabelFormat={formatCurrencyLabel}
-            getAriaValueText={formatCurrencyLabel}
-            sx={{ // Basic styling to match the theme, can be further customized
-              color: 'var(--zion-purple)',
-              '& .MuiSlider-thumb': {
-                backgroundColor: 'var(--zion-purple)',
-              },
-              '& .MuiSlider-valueLabel': {
-                backgroundColor: 'var(--zion-purple-dark)',
-                color: 'white',
-              },
-              '& .MuiSlider-rail': {
-                backgroundColor: 'var(--zion-blue-light)',
-              },
-              '& .MuiSlider-track': {
-                backgroundColor: 'var(--zion-purple)',
-              }
-            }}
+            className="text-zion-purple"
           />
           <div className="flex justify-between text-xs text-zion-slate-light mt-1">
             <span>{formatCurrencyLabel(actualMin)}</span>
