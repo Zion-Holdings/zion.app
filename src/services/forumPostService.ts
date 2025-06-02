@@ -26,9 +26,12 @@ export async function fetchPostsByCategory(
   }
 
   const posts = (data as ForumPost[]) || [];
-  // The next cursor will be the 'created_at' of the last post in the current batch
+  // The next cursor will be the `createdAt` of the last post in the current batch.
   // If posts array is empty or shorter than limit, it means no more posts.
-  const nextCursor = posts.length === limit && posts.length > 0 ? posts[posts.length - 1].created_at : null;
+  const nextCursor =
+    posts.length === limit && posts.length > 0
+      ? posts[posts.length - 1].createdAt
+      : null;
 
   return { posts, nextCursor };
 }
