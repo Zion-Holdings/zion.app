@@ -1,5 +1,10 @@
-import { PrismaClient, Product } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
+import type { Prisma } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
+
+// Alias the Prisma generated Product type to avoid relying on a top-level
+// export that may not exist depending on the generated client version.
+type Product = Prisma.Product;
 
 const prisma = new PrismaClient();
 
