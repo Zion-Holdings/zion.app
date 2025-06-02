@@ -75,7 +75,7 @@
       }
     </script>
     <script>
-      if (process.env.NODE_ENV === 'production' && process.env.REACT_APP_DEVTOOLS !== 'true') {
+      if (process.env.NODE_ENV === 'production') {
         const noop = () => {};
         const DEV_TOOLS = window.__REACT_DEVTOOLS_GLOBAL_HOOK__;
         if (typeof DEV_TOOLS === 'object') {
