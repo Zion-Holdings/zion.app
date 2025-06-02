@@ -12,6 +12,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
+import { InteractiveFeatures } from "@/components/home/InteractiveFeatures";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 
 export default function Home() {
@@ -43,7 +44,9 @@ export default function Home() {
       <QuickAccess className="animate-fadeIn" style={{ animationDelay: '0.1s' }} />
       
       <FeatureCTAs className="animate-fadeIn" style={{ animationDelay: '0.2s' }} />
-      
+
+      <InteractiveFeatures className="animate-fadeIn" style={{ animationDelay: '0.25s' }} />
+
       <FeatureHighlights className="animate-fadeIn" style={{ animationDelay: '0.3s' }} />
       
       <CategoriesSection className="animate-fadeIn" style={{ animationDelay: '0.4s' }} />
