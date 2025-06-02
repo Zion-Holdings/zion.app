@@ -76,7 +76,7 @@ describe('AppHeader', () => {
         user: { id: '1', displayName: 'Test User', name: 'Test User', email: 'test@example.com' },
         isLoading: false,
         // ... other properties returned by useAuth
-      });
+      } as unknown as AuthContextType);
     });
 
     it('renders LanguageSelector', () => {
@@ -109,7 +109,7 @@ describe('AppHeader', () => {
         user: null,
         isLoading: false,
         // ... other properties
-      });
+      } as unknown as AuthContextType);
     });
 
     it('does NOT render AvatarMenu', () => {
