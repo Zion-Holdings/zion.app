@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import type { Product } from '@prisma/client';
+import type { Product } from '@/types/product';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 // Alias the Prisma generated Product type.
