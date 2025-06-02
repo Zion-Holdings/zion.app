@@ -2,6 +2,12 @@ import { PrismaClient } from '@prisma/client';
 import type { Prisma } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+// Alias the Prisma generated Product type. Some versions of the Prisma client
+// only expose model types via the `Prisma` namespace instead of top-level
+// exports. Using an alias keeps the rest of the code unchanged regardless of
+// how the client is generated.
+type Product = Prisma.Product;
+
 const prisma = new PrismaClient();
 
 // Define the extended product type, same as in details.ts
