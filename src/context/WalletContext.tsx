@@ -2,7 +2,14 @@
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
 import { ethers } from 'ethers';
 import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
-import { createAppKit, useAppKit } from '@reown/appkit/react';
+import {
+  createAppKit,
+  useAppKit,
+  useAppKitAccount,
+  useAppKitNetwork,
+  useAppKitProvider,
+  useAppKitEvents,
+} from '@reown/appkit/react';
 import { EthersAdapter } from '@reown/appkit-adapter-ethers';
 import { mainnet, polygon, goerli, optimism, arbitrum, base } from '@reown/appkit/networks'; // Import necessary chain objects
 
@@ -75,21 +82,25 @@ const appKitInstance = typeof window !== 'undefined' ? createAppKit({
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [wallet, setWallet] = useState<WalletState>(initialWalletState);
   const appKit = useAppKit(); // Hook to interact with AppKit
+  const { address } = useAppKitAccount();
+  const { chainId } = useAppKitNetwork();
+  const { walletProvider } = useAppKitProvider("eip155");
 
   const updateWalletState = useCallback(async () => {
-    if (appKit?.getState().isConnected && appKit?.getAddress()) {
-      const currentAddress = appKit.getAddress();
-      const currentChainId = appKit.getChainId();
-      const currentProvider = appKit.getWalletProvider();
+    // Use address, chainId, walletProvider from hooks
+    if (appKit?.getState().isConnected && address) {
+      // const currentAddress = appKit.getAddress(); // Replaced by hook
+      // const currentChainId = appKit.getChainId(); // Replaced by hook
+      // const currentProvider = appKit.getWalletProvider(); // Replaced by hook
 
-      if (currentAddress && currentChainId && currentProvider) {
-        const ethersProvider = new ethers.BrowserProvider(currentProvider);
+      if (address && chainId && walletProvider) {
+        const ethersProvider = new ethers.BrowserProvider(walletProvider);
         const ethersSigner = await ethersProvider.getSigner();
         setWallet({
           provider: ethersProvider,
           signer: ethersSigner,
-          address: currentAddress,
-          chainId: Number(currentChainId), // Ensure chainId is a number
+          address: address, // from hook
+          chainId: Number(chainId), // from hook, ensure chainId is a number
           isConnected: true,
         });
       } else {
@@ -98,19 +109,31 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     } else {
       setWallet(initialWalletState);
     }
-  }, [appKit]);
+  }, [appKit, address, chainId, walletProvider]); // Add hook values to dependency array
 
+  // Subscribe to AppKit events
+  useAppKitEvents({
+    onChainChanged: updateWalletState,
+    onAccountChanged: updateWalletState,
+    onProviderChanged: updateWalletState, // Or a more specific handler if needed
+    onDisconnect: () => { // Handle disconnect event specifically
+      setWallet(initialWalletState);
+    },
+    // onConnect: updateWalletState, // Could also trigger updateWalletState on connect
+  });
 
   useEffect(() => {
-    if (appKit) {
-      // Initial state update
+    // Initial state update on component mount if already connected
+    // The useAppKitEvents will handle subsequent changes.
+    if (appKit?.getState().isConnected) {
       updateWalletState();
-
-      // Subscribe to AppKit state changes
-      const unsubscribe = appKit.subscribeProvider(updateWalletState);
-      return () => unsubscribe(); // Cleanup subscription
     }
-  }, [appKit, updateWalletState]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [appKit]); // updateWalletState is not needed here due to useAppKitEvents handling changes
+
+  // connectWallet, disconnectWallet, displayAddress, and return statement remain the same
+  // Ensure appKit from useAppKit() is used for open() and disconnect()
+  // The appKitInstance in context is for modal etc.
 
 
   const connectWallet = useCallback(async () => {
