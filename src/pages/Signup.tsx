@@ -105,16 +105,6 @@ export default function Signup() {
         return;
       }
 
-      // Check for successful response
-      if (res.ok && resData.token && resData.user) {
-        // Successful registration
-        safeStorage.setItem('authToken', resData.token);
-        localStorage.setItem('token', resData.token);
-        axios.defaults.headers = axios.defaults.headers || { common: {} } as any;
-        (axios.defaults.headers.common as any)['Authorization'] = `Bearer ${resData.token}`;
-        setUser(resData.user);
-        setTokens({ accessToken: resData.token, refreshToken: resData.refreshToken || null });
-
 fix/auth-flow-email-verification
       // Handle email verification required case
       if (resData?.emailVerificationRequired) {
@@ -132,8 +122,13 @@ fix/auth-flow-email-verification
         // The onAuthStateChange listener in AuthProvider should now handle
         // updating user state and navigating if necessary for other cases.
         // For direct signup with session, we can navigate.
-        toast.success("Welcome to ZionAI 🎉");
-        navigate("/dashboard");
+        setUser(resData.user);
+        setTokens({ accessToken: resData.session.access_token, refreshToken: resData.session.refresh_token });
+        safeStorage.setItem('authToken', resData.session.access_token);
+        localStorage.setItem('token', resData.session.access_token);
+        axios.defaults.headers.common['Authorization'] = `Bearer ${resData.session.access_token}`;
+        toast.success("Account created & logged in");
+        navigate("/marketplace");
       } else {
         // This case might indicate an unexpected response from the API
         console.error("Registration response did not include session or emailVerificationRequired flag.", resData);
