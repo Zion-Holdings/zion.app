@@ -72,21 +72,21 @@ const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
 
 const appKitInstance: ReownAppKit | null = typeof window !== 'undefined'
   ? (createAppKit({
-  adapters: [new EthersAdapter({
-    ethers, // pass the ethers library instance
-    // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
-  })],
-const appKitInstance = typeof window !== 'undefined' ? createAppKit({
-  adapters: [new EthersAdapter()],
-  networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
-  defaultNetwork: targetNetwork,
-  projectId,
-  metadata,
-  features: {
-    analytics: true, // Optional: enable analytics
-    // ... other features like swaps, onramp if needed
-  },
-}) as unknown as ReownAppKit)
+      adapters: [
+        new EthersAdapter({
+          ethers, // pass the ethers library instance
+          // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
+        }),
+      ],
+      networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
+      defaultNetwork: targetNetwork,
+      projectId,
+      metadata,
+      features: {
+        analytics: true, // Optional: enable analytics
+        // ... other features like swaps, onramp if needed
+      },
+    }) as unknown as ReownAppKit)
   : null;
 // --- End Reown AppKit Configuration ---
 
