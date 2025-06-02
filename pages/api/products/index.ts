@@ -12,7 +12,7 @@ const prisma = new PrismaClient();
 
 // Define the extended product type, same as in details.ts
 // Consider moving this to a shared type file, e.g., src/types/listings.ts or src/types/products.ts later
-export type ProductWithReviewStats = Product & {
+export type ProductWithReviewStats = Prisma.Product & {
   averageRating: number | null;
   reviewCount: number;
   // Additional fields to align with potential frontend expectations (e.g., ProductListingCard)

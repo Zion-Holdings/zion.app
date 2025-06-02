@@ -9,7 +9,7 @@ type Product = Prisma.Product;
 const prisma = new PrismaClient();
 
 // Extend the Product type to include our aggregated review data
-export type ProductWithReviewStats = Product & {
+export type ProductWithReviewStats = Prisma.Product & {
   averageRating: number | null;
   reviewCount: number;
 };
