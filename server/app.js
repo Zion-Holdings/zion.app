@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const mongooseMorgan = require('mongoose-morgan');
 const { mongoUri } = require('./config');
 const authRoutes = require('./routes/auth');
+const authSocialRoutes = require('./routes/authSocial');
 const recommendationsRoutes = require('./routes/recommendations');
 
 const app = express();
@@ -20,6 +21,7 @@ app.use('/auth', (req, res, next) => {
 });
 
 app.use('/auth', authRoutes);
+app.use('/', authSocialRoutes);
 app.use('/recommendations', recommendationsRoutes);
 
 mongoose.connect(mongoUri, {
