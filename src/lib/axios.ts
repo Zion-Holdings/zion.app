@@ -104,10 +104,19 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
   return instance;
 }
 
-const axios = {
+// Create a default axios instance so callers can use axios.get/axios.post
+const defaultInstance = create();
+// Use the shared global interceptors for the default instance
+(defaultInstance as any).interceptors = globalInterceptors;
+
+const axios = Object.assign(defaultInstance, {
   create,
   defaults: globalDefaults,
   interceptors: globalInterceptors,
+}) as AxiosInstance & {
+  create: typeof create;
+  defaults: AxiosDefaults;
+  interceptors: typeof globalInterceptors;
 };
 
 export default axios;
