@@ -6,15 +6,64 @@
 
 **Maintained by**: Jules, Codex, and Kleber Alcatrao
 
-## How can I edit this code?
+## Project Overview
 
-There are several ways of editing your application.
+This project is a multifaceted web platform designed to integrate e-commerce capabilities, a talent marketplace, AI-driven features, content management, and community engagement. It aims to provide a comprehensive solution for connecting professionals and businesses. Key functionalities include user authentication, product and service listings, an AI-powered matching system, a blog, document generation, and real-time user interactions.
 
-**Use your preferred IDE**
+## Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+*   **User Authentication:** Secure registration, login, and profile management.
+*   **E-commerce Platform:** Browse products, add to cart, checkout with Stripe integration.
+*   **Talent Marketplace:** Profiles for talents, search and filter capabilities, and matching services.
+*   **AI-Powered Capabilities:** Includes AI-driven content generation (ZionGPT), talent matching, and potentially other smart features.
+*   **Content Management:** Integrated blog, whitepaper generation, and SEO content tools.
+*   **Real-time Interactions:** Support for instant messaging and notifications (via Socket.io).
+*   **Internationalization (i18n):** Multi-language support for a global audience.
+*   **Rich Media Product Listings:** Support for video and 3D models in product displays.
+*   **Search Functionality:** Advanced search potentially powered by Elasticsearch.
+*   **Admin Dashboard:** Tools for administration and management of the platform.
+*   **API & Integrations:** Supports various integrations (e.g., Slack) and provides an API (details to be confirmed).
+*   **Responsive Design:** User interface adapts to different screen sizes (implied by modern frontend stack).
+*   **Service Integrations:** Connects with external services like Slack (see `docs/Integrations.md`) and handles payments via Stripe (see `docs/Payments.md` for environment variable details).
+*   **Rich Product Media:** Supports MP4 videos and GLB 3D models for product listings (`video_url`, `model_url` fields in database).
 
-Follow these steps:
+## Architecture Overview
+
+This project utilizes a modern, multi-component architecture:
+
+*   **Frontend:** Built with [React](https://react.dev/) using [Vite](https://vitejs.dev/) for a fast development experience. It's written in [TypeScript](https://www.typescriptlang.org/) and styled with [Tailwind CSS](https://tailwindcss.com/) and the [shadcn/ui](https://ui.shadcn.com/) component library. It handles the user interface and client-side interactions.
+*   **Backend:**
+    *   A [Django](https://www.djangoproject.com/) (Python) backend likely serves as the primary application server, handling core business logic, database interactions via Prisma ORM, and potentially some API endpoints. (Located in the `/backend` directory).
+    *   [Node.js](https://nodejs.org/) with [Express](https://expressjs.com/) might be used for specific API services or serverless functions, particularly those interacting with Firebase or other Node-centric tools. (Evidence in `/server` and API route handlers in `/pages/api`).
+*   **Database:**
+    *   A primary relational database (e.g., PostgreSQL, MySQL) managed with [Prisma ORM](https://www.prisma.io/).
+    *   [Supabase](https://supabase.io/) is integrated, likely for Backend-as-a-Service (BaaS) features such as real-time databases, authentication helpers, and serverless functions (Edge Functions).
+*   **Key External Services & Tools:**
+    *   **[Stripe](https://stripe.com/):** For payment processing.
+    *   **[SendGrid](https://sendgrid.com/):** For transactional email delivery.
+    *   **[Elasticsearch](https://www.elastic.co/elasticsearch/):** (Optional) For advanced search capabilities.
+    *   **[Socket.io](https://socket.io/):** For real-time communication features like chat and notifications.
+    *   **[Firebase](https://firebase.google.com/):** Used for some backend functionalities and possibly hosting or real-time features.
+*   **Testing:** The project employs a comprehensive testing strategy with [Jest](https://jestjs.io/) and [Vitest](https://vitest.dev/) for unit/integration tests, and [Cypress](https://www.cypress.io/) & [Playwright](https://playwright.dev/) for end-to-end testing.
+*   **Deployment:** (Details TBD - current README mentions this will be updated. Likely involves CI/CD pipelines using GitHub Actions for deployments to platforms like Netlify, Vercel, or custom infrastructure).
+
+## Setup and Local Development
+
+### Prerequisites
+*   Node.js (latest LTS version recommended)
+*   Python (version 3.10) & pip
+*   Git
+*   Access to a PostgreSQL server (for the Django backend)
+
+### Environment Variables
+1.  Copy the example environment file `.env.example` to a new file named `.env` in the project root:
+    ```sh
+    cp .env.example .env
+    ```
+2.  Update the `.env` file with your actual credentials and configuration values for services like Stripe, SendGrid, and database connections.
+    *   **Note:** Configure your database connection in the root `.env` file. The Django settings (likely in `backend/django_backend/settings.py`) typically use `dj_database_url` to parse a `DATABASE_URL` (e.g., `postgresql://user:password@host:port/dbname`), or may use individual variables like `DB_HOST`, `DB_NAME`, etc.
+
+### Frontend (React + Vite)
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
@@ -35,44 +84,96 @@ npm run dev  # Use the same package manager you specified in setup.sh
 
 > **IMPORTANT**: This project requires internet access to install dependencies. Without network connectivity, the build process will fail with errors about missing modules like 'react', 'react-router-dom', and 'lucide-react'.
 
-**Edit a file directly in GitHub**
+### Backend (Django)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The primary backend is a Django application located in the `/backend` directory.
 
-**Use GitHub Codespaces**
+1.  Navigate to the backend directory:
+    ```sh
+    cd backend
+    ```
+2.  Create a Python virtual environment and activate it:
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+3.  Install Python dependencies:
+    ```sh
+    pip install -r requirements.txt
+    ```
+4.  Set up the database:
+    *   Ensure your PostgreSQL server is running and accessible.
+    *   Configure your database connection in the root `.env` file (as mentioned in Environment Variables). The Django settings (likely in `backend/django_backend/settings.py`) typically use `dj_database_url` to parse a `DATABASE_URL` (e.g., `postgresql://user:password@host:port/dbname`), or may use individual variables like `DB_HOST`, `DB_NAME`, etc.
+    *   Run database migrations:
+        ```sh
+        python manage.py migrate
+        ```
+5.  Start the Django development server:
+    ```sh
+    python manage.py runserver
+    ```
+    The backend will typically be available at `http://127.0.0.1:8000`.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Node.js Services (for specific APIs like `/pages/api`)
+The Next.js framework (implied by the `/pages/api` directory structure) handles these API routes as part of its development server, which is started with `npm run dev` from the project root. If there are standalone Node.js services in the `/server` directory (which seems to be the case here), they would typically be started by navigating into that directory, running `npm install` (if they have their own `package.json`), and then using a command like `node index.js` or a script from their `package.json`. Refer to specific READMEs in those directories if they exist.
 
-## What technologies are used for this project?
+## API Documentation
 
-This project is built with:
+The project exposes several APIs for programmatic access and integration.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+*   **Django Backend API (RESTful):**
+    *   The primary backend API is built with Django REST Framework.
+    *   Live, auto-generated API documentation (Swagger UI) is available when the Django backend server is running. You can access it at:
+        *   `http://127.0.0.1:8000/swagger/`
+    *   This documentation provides details on available endpoints, request/response schemas, and allows for interactive API exploration.
+    *   The public API endpoints are primarily managed under the `public_api` app (see `backend/public_api/urls.py`).
 
-## How can I deploy this project?
+*   **Next.js API Routes (Frontend/BFF):**
+    *   The Next.js frontend also includes API routes located in the `pages/api/` directory. These often serve as a Backend-for-Frontend (BFF), handling tasks like form submissions, specific queries to Supabase, or interactions with serverless functions.
+    *   Documentation for these endpoints is typically found within the code itself or in related frontend component documentation.
 
-Deployment instructions to be updated.
+*   **Supabase Edge Functions:**
+    *   The project leverages Supabase for various Backend-as-a-Service functionalities, including Edge Functions (serverless functions).
+    *   Details and invocation methods for these functions can be found in the `supabase/functions/` directory and within the Supabase project dashboard.
 
-## Integrations
+When developing or integrating, refer to these resources for accurate API information.
 
-See [docs/Integrations.md](docs/Integrations.md) for information on the Zion Assistant browser extension and Slack bot.
-Payment environment variables are documented in [docs/Payments.md](docs/Payments.md).
+## Testing
 
-## Product Media
+Run unit tests with:
 
-Product listings now support rich media. The `product_listings` table includes new
-`video_url` and `model_url` fields for MP4 videos and GLB 3D models. Upload media
-through the product submission form and view it in the gallery tabs (Images, Video, 3D).
+```sh
+npm run test
+```
+
+To watch tests during development:
+
+```sh
+npm run test:watch
+```
+
+### End-to-End Tests
+
+Open Cypress for interactive debugging:
+
+```sh
+npm run cypress:open
+```
+
+Run the Cypress suite headlessly:
+
+```sh
+npm run cypress:run
+```
+
+### Coverage Report
+
+After running `npm run test`, open `coverage/lcov-report/index.html` in your
+browser to view detailed coverage information.
+
+When tests run on GitHub Actions, the workflow uploads the `coverage` directory
+using `actions/upload-artifact@v4`. Visit a workflow run and download the
+`coverage-report` artifact to retrieve the generated HTML coverage report.
 
 ## Troubleshooting
 
@@ -122,45 +223,36 @@ Automatic translations rely on OpenAI. Set `VITE_OPENAI_API_KEY` (or
 `NEXT_PUBLIC_OPENAI_API_KEY`) to allow the client to contact the API directly
 when the Supabase function is unavailable.
 
-## Testing
+## Contributing Guidelines
 
-Run unit tests with:
+We welcome contributions to improve and expand this project! If you'd like to contribute, please follow these general guidelines:
 
-```sh
-npm run test
-```
+1.  **Fork the Repository:** Start by forking the main repository to your own GitHub account.
+2.  **Create a New Branch:** For each new feature or bug fix, create a new branch from the `main` (or `develop` if it exists) branch in your fork.
+    *   Example: `git checkout -b feature/your-feature-name` or `bugfix/issue-description`.
+3.  **Make Your Changes:** Implement your changes, ensuring you adhere to the project's coding style and conventions.
+    *   Run linters and formatters if configured (e.g., ESLint, Prettier for frontend; Black, Flake8 for Python). The project uses ESLint (see `eslint.config.js`).
+4.  **Test Your Changes:**
+    *   Add unit tests for any new functionality.
+    *   Ensure all existing and new tests pass (`npm run test` for frontend, `python manage.py test` for Django backend if applicable).
+5.  **Commit Your Changes:** Write clear, concise commit messages.
+6.  **Push to Your Fork:** Push your changes to your forked repository.
+7.  **Submit a Pull Request (PR):** Open a PR from your branch to the `main` (or `develop`) branch of the original repository.
+    *   Provide a clear description of the changes in your PR.
+    *   Link to any relevant issues.
+8.  **Code Review:** Your PR will be reviewed by maintainers. Be prepared to address any feedback.
 
-To watch tests during development:
-
-```sh
-npm run test:watch
-```
-
-### End-to-End Tests
-
-Open Cypress for interactive debugging:
-
-```sh
-npm run cypress:open
-```
-
-Run the Cypress suite headlessly:
-
-```sh
-npm run cypress:run
-```
-
-### Coverage Report
-
-After running `npm run test`, open `coverage/lcov-report/index.html` in your
-browser to view detailed coverage information.
-
-When tests run on GitHub Actions, the workflow uploads the `coverage` directory
-using `actions/upload-artifact@v4`. Visit a workflow run and download the
-`coverage-report` artifact to retrieve the generated HTML coverage report.
+**Issue Tracker:** Please report any bugs or suggest features by opening an issue on the [GitHub Issues page](https://github.com/<org>/<repo>/issues) for this repository.
 
 ## DevTools
 
 For security reasons, React DevTools are disabled in production environments.
 
 To enable DevTools in Netlify preview deploys (or other non-production environments that might set `NODE_ENV` to `production`), you can set the `REACT_APP_DEVTOOLS=true` environment variable.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+---
+*This README was generated/updated by an AI assistant.*
