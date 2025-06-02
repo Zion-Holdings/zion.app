@@ -6,6 +6,7 @@ import { AppHeader } from '../AppHeader'; // Adjust path as necessary
 import { useAuth } from '@/hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
+import { AuthContextType } from '../../types/auth';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useMessaging } from '@/context/MessagingContext';
 
@@ -56,7 +57,7 @@ jest.mock('@/components/header/MobileBottomNav', () => ({
 
 
 describe('AppHeader', () => {
-  const mockT = jest.fn((key: string) => key) as unknown as TFunction; // Simple translation mock
+  const mockT = jest.fn((key: string) => key) as jest.MockedFunction<TFunction>; // Simple translation mock
 
   beforeEach(() => {
     mockedUseAuth.mockClear();
@@ -68,7 +69,20 @@ describe('AppHeader', () => {
     // Default mocks
     mockedUseTranslation.mockReturnValue({ t: mockT as any, i18n: {} as any } as any);
     mockedUseIsMobile.mockReturnValue(false); // Default to not mobile
-    mockedUseMessaging.mockReturnValue({ unreadCount: 0 }); // Default no unread messages
+    mockedUseMessaging.mockReturnValue({
+      messages: [],
+      conversations: [],
+      unreadCount: 0,
+      activeConversation: null,
+      activeMessages: [],
+      isLoading: false,
+      sendMessage: jest.fn(),
+      createConversation: jest.fn(),
+      markAsRead: jest.fn(),
+      setActiveConversation: jest.fn(),
+      fetchConversations: jest.fn(),
+      loadMessages: jest.fn(),
+    }); // Default no unread messages
   });
 
   describe('when user is logged in', () => {
