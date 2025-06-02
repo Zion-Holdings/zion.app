@@ -1,0 +1,13 @@
+export interface CaseStudy {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  company: string;
+  companyLogo: string;
+  avatar: string;
+  quote: string;
+  author: string;
+  role: string;
+}

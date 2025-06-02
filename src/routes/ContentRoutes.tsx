@@ -6,6 +6,8 @@ import Contact from "@/pages/Contact";
 import PrivacyPolicy from "@/legal/PrivacyPolicy";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
+import CaseStudies from "@/pages/CaseStudies";
+import CaseStudy from "@/pages/CaseStudy";
 import GreenIT from "@/pages/GreenIT";
 import Careers from "@/pages/Careers";
 import SearchPage from "@/pages/SearchPage";
@@ -37,6 +39,10 @@ const ContentRoutes = () => {
       {/* Legacy paths for older links */}
       <Route path="/content/blog" element={<Blog />} />
       <Route path="/content/blog/:slug" element={<BlogPost />} />
+
+      {/* Case Study Routes */}
+      <Route path="/case-studies" element={<CaseStudies />} />
+      <Route path="/case-studies/:slug" element={<CaseStudy />} />
       
       {/* Green IT Route */}
       <Route path="/green-it" element={<GreenIT />} />
