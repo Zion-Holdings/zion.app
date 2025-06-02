@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
@@ -19,7 +18,7 @@ export default function SearchPage() {
     if (initial) {
       search(initial);
     }
-  }, [initial]);
+  }, [initial, search]); // Added search
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,8 +48,11 @@ export default function SearchPage() {
             <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
           </div>
         )}
-        {!loading && results.length === 0 && (
-          <p className="text-zion-slate-light">No results found.</p>
+        {!loading && results.length === 0 && query && ( // Also check if query exists to show "no results"
+          <p className="text-zion-slate-light text-center">No results found for "{query}".</p>
+        )}
+         {!loading && results.length === 0 && !query && ( // Initial state before any search
+          <p className="text-zion-slate-light text-center">Enter a search term to begin.</p>
         )}
         {!loading && results.length > 0 && (
           <div className="space-y-4">

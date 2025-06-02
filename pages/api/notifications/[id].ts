@@ -1,15 +1,18 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, PostgrestError } from '@supabase/supabase-js';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-interface Req {
-  method?: string;
-  query?: { id?: string };
-  body?: any;
+interface NotificationPatchBody {
+  read?: boolean;
 }
-interface JsonRes {
-  status: (code: number) => JsonRes;
-  json: (data: any) => void;
-  end: (data?: any) => void;
-  setHeader: (name: string, value: string) => void;
+
+interface MutationSuccessResponse {
+  success: boolean;
+  message?: string;
+}
+
+interface ErrorResponse {
+  error: string;
+  details?: string;
 }
 
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -22,26 +25,34 @@ if (!supabaseUrl || !serviceKey) {
 }
 const supabase = createClient(supabaseUrl, serviceKey);
 
-export default async function handler(req: Req, res: JsonRes) {
-  const id = req.query?.id;
-  if (!id) {
-    res.status(400).json({ error: 'Missing id' });
-    return;
+export default async function handler(
+  req: NextApiRequest, 
+  res: NextApiResponse<MutationSuccessResponse | ErrorResponse>
+) {
+  const { id } = req.query;
+
+  if (!id || typeof id !== 'string') { // Validate id is a single string
+    return res.status(400).json({ error: 'Missing or invalid notification id' });
   }
 
   if (req.method === 'PATCH') {
-    const { read } = req.body || {};
+    const { read } = req.body as NotificationPatchBody;
+    
+    // Validate 'read' input if necessary, e.g., ensure it's a boolean if provided
+    if (read !== undefined && typeof read !== 'boolean') {
+        return res.status(400).json({ error: "'read' field must be a boolean." });
+    }
+
     const { error } = await supabase
       .from('notifications')
-      .update({ read: read !== false })
+      .update({ read: read === undefined ? true : read }) // Default to true if 'read' is not in body
       .eq('id', id);
 
     if (error) {
-      res.status(500).json({ error: error.message });
-      return;
+      console.error('PATCH Notification Error:', error);
+      return res.status(500).json({ error: error.message });
     }
-    res.status(200).json({ success: true });
-    return;
+    return res.status(200).json({ success: true, message: 'Notification updated.' });
   }
 
   if (req.method === 'DELETE') {
@@ -51,12 +62,12 @@ export default async function handler(req: Req, res: JsonRes) {
       .eq('id', id);
 
     if (error) {
-      res.status(500).json({ error: error.message });
-      return;
+      console.error('DELETE Notification Error:', error);
+      return res.status(500).json({ error: error.message });
     }
-    res.status(200).json({ success: true });
-    return;
+    return res.status(200).json({ success: true, message: 'Notification deleted.' });
   }
 
-  res.status(405).end();
+  res.setHeader('Allow', ['PATCH', 'DELETE']);
+  return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
 }

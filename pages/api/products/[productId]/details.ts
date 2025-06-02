@@ -1,4 +1,4 @@
-import { PrismaClient, Product } from '@prisma/client';
+import { PrismaClient, Product, Prisma } from '@prisma/client'; // Import Prisma for error types
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const prisma = new PrismaClient();
@@ -9,13 +9,18 @@ export type ProductWithReviewStats = Product & {
   reviewCount: number;
 };
 
+interface ErrorResponse {
+  error: string;
+  details?: string;
+}
+
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ProductWithReviewStats | { error: string }>
+  res: NextApiResponse<ProductWithReviewStats | ErrorResponse>
 ) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', ['GET']);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
   const { productId } = req.query;
@@ -47,20 +52,32 @@ export default async function handler(
       },
     });
 
-    const averageRating = reviewStats._avg.rating;
+    const averageRating = reviewStats._avg.rating; // This can be null if no reviews
     const reviewCount = reviewStats._count.id;
 
     const productWithStats: ProductWithReviewStats = {
       ...product,
-      averageRating: averageRating,
+      averageRating: averageRating, // Prisma aggregate returns null if no records, which is fine
       reviewCount: reviewCount,
     };
 
     return res.status(200).json(productWithStats);
-  } catch (e: any) {
-    console.error(e);
-    // Consider more specific error handling if needed
-    return res.status(500).json({ error: 'Internal server error.' });
+  } catch (e: unknown) {
+    console.error('Error fetching product details:', e);
+    let errorMessage = 'Internal server error.';
+    let errorDetails: string | undefined;
+
+    if (e instanceof Prisma.PrismaClientKnownRequestError) {
+      // Handle known Prisma errors (e.g., connection issues, unique constraint violations)
+      errorMessage = `Database error: ${e.code}`;
+      errorDetails = e.message;
+    } else if (e instanceof Error) {
+      errorMessage = e.message;
+    } else if (typeof e === 'string') {
+      errorMessage = e;
+    }
+    
+    return res.status(500).json({ error: errorMessage, details: errorDetails });
   } finally {
     await prisma.$disconnect();
   }

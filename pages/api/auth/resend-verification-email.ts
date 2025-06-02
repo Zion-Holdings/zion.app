@@ -1,5 +1,16 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, AuthError } from '@supabase/supabase-js'; // Import AuthError
 import type { NextApiRequest, NextApiResponse } from 'next';
+
+// Define a type for the expected successful response
+interface SuccessResponse {
+  message: string;
+}
+
+// Define a type for error responses
+interface ErrorResponse {
+  message: string;
+  error?: string; // Optional error details
+}
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -7,20 +18,17 @@ const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 if (!supabaseUrl || !serviceKey) {
   const errorMessage = 'CRITICAL: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing for backend auth API. Service cannot start.';
   console.error(errorMessage);
-  // This error will prevent the API route from being available if not configured.
   throw new Error(errorMessage);
 }
 const supabase = createClient(supabaseUrl, serviceKey);
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<SuccessResponse | ErrorResponse>) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).json({ message: `Method ${req.method} Not Allowed` });
   }
 
   try {
-    // 1. Get user from Supabase session (JWT from cookie)
-    // Consistent with confirm-email-verification.ts: check for 'supabase-auth-token' then common patterns.
     let jwt = req.cookies['supabase-auth-token'];
     if (!jwt) {
       const commonSupabaseCookieKey = Object.keys(req.cookies).find(key => key.startsWith('sb-') && key.endsWith('-access-token'));
@@ -28,6 +36,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         jwt = req.cookies[commonSupabaseCookieKey];
       }
     }
+    // Also check Authorization header as a fallback
+    if(!jwt && req.headers.authorization?.startsWith('Bearer ')) {
+        jwt = req.headers.authorization.split('Bearer ')[1];
+    }
+
 
     if (!jwt) {
       console.log('No Supabase auth token cookie found in resend-verification-email.');
@@ -46,13 +59,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ message: 'Bad Request: User email not found in token.' });
     }
 
-    // 2. Resend confirmation email using Supabase
-    const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'; // Fallback for local dev
+    const siteURL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
     const emailRedirectTo = `${siteURL}/auth/verify-email`;
 
-    // Using supabase.auth.resend method
     const { error: resendError } = await supabase.auth.resend({
-        type: 'signup', // This type is for resending the confirmation email for a new signup
+        type: 'signup', 
         email: user.email,
         options: {
             emailRedirectTo: emailRedirectTo,
@@ -61,20 +72,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (resendError) {
       console.error('Supabase resend error:', resendError.message);
-      // Handle specific known errors
       if (resendError.message.toLowerCase().includes('already confirmed')) {
         return res.status(400).json({ message: 'Email is already verified.' });
       }
-      if (resendError.message.toLowerCase().includes('rate limit')) { // Example: "For security purposes, you can only request this once every X minutes"
+      if (resendError.message.toLowerCase().includes('rate limit')) { 
         return res.status(429).json({ message: 'Rate limit exceeded. Please try again later.' });
       }
-      return res.status(500).json({ message: resendError.message || 'Failed to resend verification email.' });
+      return res.status(resendError instanceof AuthError ? resendError.status || 500 : 500).json({ message: resendError.message || 'Failed to resend verification email.' });
     }
 
     return res.status(200).json({ message: 'Verification email successfully resent to ' + user.email + '.' });
 
-  } catch (error: any) {
-    console.error('Unexpected error in resend-verification-email:', error.message);
-    return res.status(500).json({ message: 'Internal server error', error: error.message });
+  } catch (error: unknown) {
+    let message = 'Internal server error';
+    let errorDetails: string | undefined;
+
+    if (error instanceof Error) {
+      message = error.message;
+      errorDetails = error.stack; // Or some other detail
+    } else if (typeof error === 'string') {
+      message = error;
+    }
+    console.error('Unexpected error in resend-verification-email:', error);
+    return res.status(500).json({ message, error: errorDetails });
   }
 }

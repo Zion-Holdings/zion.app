@@ -36,8 +36,8 @@ export function AutocompleteSuggestions({
   searchTerm, 
   onSelectSuggestion,
   visible,
-  highlightedIndex,
-  listId
+  highlightedIndex, 
+  listId 
 }: AutocompleteSuggestionsProps) {
   const listRef = useRef<HTMLUListElement>(null);
   const highlightedItemRef = useRef<HTMLLIElement>(null);
@@ -56,7 +56,7 @@ export function AutocompleteSuggestions({
   }, [visible, suggestions]); // Removed highlightedIndex as per lint warning
 
   if (!visible || suggestions.length === 0) return null;
-
+  
   return (
     <div className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto">
       <ul
@@ -77,7 +77,7 @@ export function AutocompleteSuggestions({
               role="option"
               aria-selected={isHighlighted}
               className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light' : 'hover:bg-zion-blue-light/20'}`}
-              onMouseDown={(e) => {
+              onMouseDown={(e) => { 
                 e.preventDefault();
                 onSelectSuggestion(suggestion.text);
               }}

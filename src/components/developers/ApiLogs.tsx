@@ -60,7 +60,7 @@ export function ApiLogs() {
               value={pageSize.toString()}
               onValueChange={(value) => {
                 setPageSize(Number(value));
-                setCurrentPage(0);
+                setCurrentPage(0); 
               }}
             >
               <SelectTrigger className="w-20 bg-zinc-800 border-zinc-700">

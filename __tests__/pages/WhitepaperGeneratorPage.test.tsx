@@ -24,7 +24,7 @@ jest.mock('sonner', () => ({
 
 jest.mock('react-markdown', () => (props: { children: React.ReactNode }) => <div data-testid="mock-markdown">{props.children}</div>);
 
-jest.mock('@/components/WhitepaperSectionEditor', () => jest.fn(({ title, content, onContentChange }) => (
+jest.mock('@/components/WhitepaperSectionEditor', () => jest.fn(({ title, content, onContentChange }: { title: string; content: string; onContentChange: (newContent: string) => void }) => (
   <div data-testid={`mock-section-editor-${title.toLowerCase().replace(/\s+/g, '-')}`}>
     <h3>{title}</h3>
     <textarea value={content} onChange={(e) => onContentChange(e.target.value)} />
@@ -34,21 +34,46 @@ jest.mock('@/components/WhitepaperSectionEditor', () => jest.fn(({ title, conten
 jest.mock('@/components/WhitepaperPreviewPanel', () => jest.fn(() => <div data-testid="mock-preview-panel" />));
 
 // Mock Recharts ResponsiveContainer as it can cause issues in JSDOM
-jest.spyOn(recharts, 'ResponsiveContainer').mockImplementation(({ children }) => <div data-testid="mock-responsive-container">{children}</div>);
+jest.spyOn(recharts, 'ResponsiveContainer').mockImplementation(({ children }: { children: React.ReactNode}) => <div data-testid="mock-responsive-container">{children}</div>);
 
+// Define a type for the mocked html2canvas result
+interface MockCanvas {
+  toDataURL: (type?: string, quality?: unknown) => string;
+  // Add other canvas properties/methods if needed by jsPDF mock
+  width?: number;
+  height?: number;
+}
 
 // Mock html2canvas and jsPDF
-jest.mock('html2canvas', () => jest.fn(() => Promise.resolve({ toDataURL: () => 'mockImageDataUri' } as any)));
+jest.mock('html2canvas', () => jest.fn(() => Promise.resolve({ 
+  toDataURL: () => 'mockImageDataUri',
+  width: 200, // Example width
+  height: 100, // Example height
+} as MockCanvas)));
+
+interface MockJsPDF {
+  addImage: jest.Mock;
+  save: jest.Mock;
+  addPage: jest.Mock;
+  internal: {
+    pageSize: {
+      getWidth: () => number;
+      getHeight: () => number;
+    };
+  };
+  getImageProperties: (imageData: string | HTMLImageElement | HTMLCanvasElement | Uint8Array) => { width: number; height: number; };
+}
+
 jest.mock('jspdf', () => {
     const mockAddImage = jest.fn();
     const mockSave = jest.fn();
     const mockAddPage = jest.fn();
-    return jest.fn(() => ({
+    return jest.fn((): MockJsPDF => ({ // Return type for the constructor
         addImage: mockAddImage,
         save: mockSave,
         addPage: mockAddPage,
         internal: { pageSize: { getWidth: () => 210, getHeight: () => 297 } },
-        getImageProperties: () => ({ width: 200, height: 100}), // Mock properties
+        getImageProperties: () => ({ width: 200, height: 100}), 
     }));
 });
 
@@ -66,9 +91,8 @@ const mockSupabaseInvoke = supabase.functions.invoke as jest.Mock;
 describe('WhitepaperGeneratorPage', () => {
   beforeEach(() => {
     mockSupabaseInvoke.mockReset();
-    jest.clearAllMocks(); // Clear all mocks including toast, html2canvas, etc.
+    jest.clearAllMocks(); 
 
-    // Reset createObjectURL for each test if needed, or ensure it's clean
     mockCreateObjectURL.mockReset();
     mockRevokeObjectURL.mockReset();
   });
@@ -78,15 +102,12 @@ describe('WhitepaperGeneratorPage', () => {
     expect(screen.getByLabelText(/Token Name:/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Token Supply:/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Use Cases:/i)).toBeInTheDocument();
-    // ... (add checks for all other initial input fields)
     expect(screen.getByLabelText(/Legal Disclaimers:/i)).toBeInTheDocument();
 
-    // Initial Buttons
     expect(screen.getByRole('button', { name: /Generate Whitepaper Draft/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /MD/i })).toBeInTheDocument(); // Download MD
-    expect(screen.getByRole('button', { name: /PDF/i })).toBeInTheDocument(); // Download PDF
-    expect(screen.getByRole('button', { name: /Share/i })).toBeInTheDocument(); // Generate Shareable Link
-    // Submit to Counsel button should initially not be visible or disabled until sections exist
+    expect(screen.getByRole('button', { name: /MD/i })).toBeInTheDocument(); 
+    expect(screen.getByRole('button', { name: /PDF/i })).toBeInTheDocument(); 
+    expect(screen.getByRole('button', { name: /Share/i })).toBeInTheDocument(); 
     expect(screen.queryByRole('button', { name: /Submit to Counsel/i })).not.toBeInTheDocument();
   });
 
@@ -96,7 +117,6 @@ describe('WhitepaperGeneratorPage', () => {
     fireEvent.change(tokenNameInput, { target: { value: 'New Token Name' } });
     expect(tokenNameInput).toHaveValue('New Token Name');
   });
-  // ... (similar tests for other basic input fields like supply, useCases, etc.)
 
   describe('"Generate Draft" button', () => {
     test('calls generate-whitepaper, renders sections on success', async () => {
@@ -110,14 +130,16 @@ describe('WhitepaperGeneratorPage', () => {
       fireEvent.click(generateButton);
 
       expect(generateButton).toBeDisabled();
-      await waitFor(() => expect(mockSupabaseInvoke).toHaveBeenCalledWith('generate-whitepaper', expect.any(Object)));
+      // Assuming generate-whitepaper function expects an object with specific properties
+      await waitFor(() => expect(mockSupabaseInvoke).toHaveBeenCalledWith('generate-whitepaper', 
+        { body: expect.objectContaining({ /* include expected properties based on actual usage */ }) }
+      ));
 
-      // Check for section editors based on mock component
       await waitFor(() => {
         expect(screen.getByTestId('mock-section-editor-section-1')).toBeInTheDocument();
         expect(screen.getByTestId('mock-section-editor-section-2')).toBeInTheDocument();
       });
-      expect(screen.getByRole('button', { name: /Submit to Counsel/i })).toBeInTheDocument(); // Now visible
+      expect(screen.getByRole('button', { name: /Submit to Counsel/i })).toBeInTheDocument(); 
       expect(generateButton).not.toBeDisabled();
     });
 
@@ -133,35 +155,17 @@ describe('WhitepaperGeneratorPage', () => {
   });
 
   describe('Download Buttons', () => {
-    // Simulate that sections have been generated
-    const setupPageWithSections = () => {
-        render(<WhitepaperGeneratorPage />);
-        // Simulate generation and section rendering
-        act(() => {
-            // Directly set sections state for testing purposes
-            // This is a bit of a hack, ideally we'd trigger generation
-            // but that makes the test more complex. For isolated download tests, this is fine.
-            const setSections = jest.requireActual('react').useState()[1]; // Get the setState function
-            // This part is tricky as we don't have direct access to page's internal setState.
-            // A better way would be to have a helper function or refactor the component for testability.
-            // For now, we'll assume sections are present by testing after a simulated generation.
-        });
-        // For the purpose of this test, we'll assume sections are populated by a prior action
-        // and buttons are enabled. If not, these tests will fail, indicating a setup issue.
-    };
-
-
-    test('"Download MD" button triggers download', async () => {
-        // First, simulate generating content so the button is active and there's content
+    beforeEach(async () => { // Ensure content is "generated" before each download test
         mockSupabaseInvoke.mockResolvedValueOnce({ data: { whitepaperDraft: "## Test\nContent" }, error: null });
         render(<WhitepaperGeneratorPage />);
         fireEvent.click(screen.getByRole('button', { name: /Generate Whitepaper Draft/i }));
         await waitFor(() => expect(screen.getByTestId('mock-section-editor-test')).toBeInTheDocument());
+    });
 
+    test('"Download MD" button triggers download', async () => {
         const downloadMdButton = screen.getByRole('button', { name: /MD/i });
         expect(downloadMdButton).not.toBeDisabled();
 
-        // Spy on appendChild to check if the link is created
         const appendChildSpy = jest.spyOn(document.body, 'appendChild');
         const removeChildSpy = jest.spyOn(document.body, 'removeChild');
 
@@ -169,28 +173,24 @@ describe('WhitepaperGeneratorPage', () => {
 
         await waitFor(() => expect(appendChildSpy).toHaveBeenCalled());
         expect(mockCreateObjectURL).toHaveBeenCalled();
-        // Check if the link has download attribute (filename)
         const link = appendChildSpy.mock.calls[0][0] as HTMLAnchorElement;
         expect(link.download).toContain('_whitepaper.md');
 
-        expect(removeChildSpy).toHaveBeenCalledWith(link); // Verify cleanup
+        expect(removeChildSpy).toHaveBeenCalledWith(link); 
         appendChildSpy.mockRestore();
         removeChildSpy.mockRestore();
     });
 
 
     test('"Download PDF" button triggers PDF generation', async () => {
-        mockSupabaseInvoke.mockResolvedValueOnce({ data: { whitepaperDraft: "## Test PDF\nContent PDF" }, error: null });
-        render(<WhitepaperGeneratorPage />);
-        fireEvent.click(screen.getByRole('button', { name: /Generate Whitepaper Draft/i }));
-        await waitFor(() => expect(screen.getByTestId('mock-section-editor-test-pdf')).toBeInTheDocument());
-
         const downloadPdfButton = screen.getByRole('button', { name: /PDF/i });
         expect(downloadPdfButton).not.toBeDisabled();
 
         fireEvent.click(downloadPdfButton);
 
-        const jsPDFMockInstance = (require('jspdf') as jest.Mock).mock.instances[0];
+        const jsPDFMockStatic = require('jspdf') as jest.Mock; // Get the static mock constructor
+        const jsPDFMockInstance = jsPDFMockStatic.mock.instances[0] as MockJsPDF; // Access the instance
+
 
         await waitFor(() => expect(html2canvas).toHaveBeenCalled());
         await waitFor(() => expect(jsPDFMockInstance.addImage).toHaveBeenCalledWith('mockImageDataUri', 'PNG', 0, 0, expect.any(Number), expect.any(Number)));
@@ -200,7 +200,6 @@ describe('WhitepaperGeneratorPage', () => {
 
   describe('Shareable Link Functionality', () => {
     beforeEach(async () => {
-        // Ensure sections are generated before each share test
         mockSupabaseInvoke.mockResolvedValueOnce({ data: { whitepaperDraft: "## Share\nContent" }, error: null });
         render(<WhitepaperGeneratorPage />);
         fireEvent.click(screen.getByRole('button', { name: /Generate Whitepaper Draft/i }));
@@ -210,13 +209,16 @@ describe('WhitepaperGeneratorPage', () => {
     test('"Generate Shareable Link" button calls create-shared-whitepaper and displays link', async () => {
       const shareId = 'test-share-id';
       const initialPublicStatus = false;
+      // Mock for create-shared-whitepaper
       mockSupabaseInvoke.mockResolvedValueOnce({ data: { id: shareId, is_public: initialPublicStatus }, error: null });
 
       const shareButton = screen.getByRole('button', { name: /Share/i });
       fireEvent.click(shareButton);
 
       expect(shareButton).toBeDisabled();
-      await waitFor(() => expect(mockSupabaseInvoke).toHaveBeenCalledWith('create-shared-whitepaper', expect.any(Object)));
+      await waitFor(() => expect(mockSupabaseInvoke).toHaveBeenCalledWith('create-shared-whitepaper', 
+        { body: expect.objectContaining({ /* sections, tokenName, etc. */ }) }
+      ));
 
       const expectedLink = `${window.location.origin}/whitepaper/view/${shareId}`;
       await waitFor(() => expect(screen.getByDisplayValue(expectedLink)).toBeInTheDocument());
@@ -226,14 +228,12 @@ describe('WhitepaperGeneratorPage', () => {
     });
 
     test('"Make Public/Private" toggle calls set-shared-whitepaper-public-status and updates UI', async () => {
-      // 1. Generate initial link
       const shareId = 'toggle-id';
-      mockSupabaseInvoke.mockResolvedValueOnce({ data: { id: shareId, is_public: false }, error: null });
+      mockSupabaseInvoke.mockResolvedValueOnce({ data: { id: shareId, is_public: false }, error: null }); // Initial create
       fireEvent.click(screen.getByRole('button', { name: /Share/i }));
       await waitFor(() => expect(screen.getByRole('button', { name: /Make Public/i })).toBeInTheDocument());
 
-      // 2. Mock the update call and click "Make Public"
-      mockSupabaseInvoke.mockResolvedValueOnce({ data: { id: shareId, is_public: true }, error: null });
+      mockSupabaseInvoke.mockResolvedValueOnce({ data: { id: shareId, is_public: true }, error: null }); // For set to public
       const toggleButton = screen.getByRole('button', { name: /Make Public/i });
       fireEvent.click(toggleButton);
 
@@ -243,8 +243,7 @@ describe('WhitepaperGeneratorPage', () => {
       await waitFor(() => expect(screen.getByRole('button', { name: /Make Private/i })).toBeInTheDocument());
       expect(screen.getByText(/Currently: Public/i)).toBeInTheDocument();
 
-      // 3. Mock the update call again and click "Make Private"
-      mockSupabaseInvoke.mockResolvedValueOnce({ data: { id: shareId, is_public: false }, error: null });
+      mockSupabaseInvoke.mockResolvedValueOnce({ data: { id: shareId, is_public: false }, error: null }); // For set to private
       const newToggleButton = screen.getByRole('button', { name: /Make Private/i });
       fireEvent.click(newToggleButton);
 
@@ -258,56 +257,53 @@ describe('WhitepaperGeneratorPage', () => {
 
   describe('"Submit to Counsel" Button', () => {
      beforeEach(async () => {
-        // Ensure sections are generated
         mockSupabaseInvoke.mockResolvedValueOnce({ data: { whitepaperDraft: "## Counsel\nContent" }, error: null });
         render(<WhitepaperGeneratorPage />);
         fireEvent.click(screen.getByRole('button', { name: /Generate Whitepaper Draft/i }));
+        // Fill in token name for the notify-legal-team call
+        fireEvent.change(screen.getByLabelText(/Token Name:/i), { target: { value: 'My Test Token' } });
         await waitFor(() => expect(screen.getByTestId('mock-section-editor-counsel')).toBeInTheDocument());
     });
 
     test('calls notify-legal-team (and creates link if needed)', async () => {
       const counselButton = screen.getByRole('button', { name: /Submit to Counsel/i });
-
-      // Scenario 1: No shareable link exists yet
       const newShareId = 'counsel-share-id';
+      
       mockSupabaseInvoke
-        .mockResolvedValueOnce({ data: { id: newShareId, is_public: false }, error: null }) // For create-shared-whitepaper
-        .mockResolvedValueOnce({ data: { id: newShareId, is_public: true }, error: null })  // For set-shared-whitepaper-public-status (making it public)
-        .mockResolvedValueOnce({ data: { message: "Notification sent" }, error: null }); // For notify-legal-team
+        .mockResolvedValueOnce({ data: { id: newShareId, is_public: false }, error: null }) 
+        .mockResolvedValueOnce({ data: { id: newShareId, is_public: true }, error: null })  
+        .mockResolvedValueOnce({ data: { message: "Notification sent" }, error: null }); 
 
       fireEvent.click(counselButton);
 
       expect(counselButton).toBeDisabled();
-      // Verify create-shared-whitepaper was called
       await waitFor(() => expect(mockSupabaseInvoke).toHaveBeenCalledWith('create-shared-whitepaper', expect.any(Object)));
-      // Verify set-shared-whitepaper-public-status was called to make it public
       await waitFor(() => expect(mockSupabaseInvoke).toHaveBeenCalledWith('set-shared-whitepaper-public-status', {
           body: { whitepaperId: newShareId, isPublic: true }
       }));
-      // Verify notify-legal-team was called
       await waitFor(() => expect(mockSupabaseInvoke).toHaveBeenCalledWith('notify-legal-team', {
-        body: expect.objectContaining({ whitepaperId: newShareId, tokenName: 'My Awesome Token' })
+        body: expect.objectContaining({ whitepaperId: newShareId, tokenName: 'My Test Token' }) 
       }));
       expect(counselButton).not.toBeDisabled();
     });
 
     test('calls notify-legal-team (if link already exists and is public)', async () => {
-        // 1. First, generate a link and make it public
         const existingShareId = 'existing-link-id';
-        mockSupabaseInvoke.mockResolvedValueOnce({ data: { id: existingShareId, is_public: true }, error: null }); // create-shared-whitepaper returns public
+        // Simulate link already exists and is public
+        mockSupabaseInvoke.mockResolvedValueOnce({ data: { id: existingShareId, is_public: true }, error: null }); 
         fireEvent.click(screen.getByRole('button', { name: /Share/i }));
-        await waitFor(() => expect(screen.getByRole('button', { name: /Make Private/i })).toBeInTheDocument()); // Link is public
+        await waitFor(() => expect(screen.getByRole('button', { name: /Make Private/i })).toBeInTheDocument());
 
-        // 2. Now click "Submit to Counsel"
-        mockSupabaseInvoke.mockResolvedValueOnce({ data: { message: "Notification sent" }, error: null }); // For notify-legal-team
+        mockSupabaseInvoke.mockResolvedValueOnce({ data: { message: "Notification sent" }, error: null }); 
         const counselButton = screen.getByRole('button', { name: /Submit to Counsel/i });
         fireEvent.click(counselButton);
 
         await waitFor(() => expect(mockSupabaseInvoke).toHaveBeenCalledWith('notify-legal-team', {
-            body: expect.objectContaining({ whitepaperId: existingShareId })
+            body: expect.objectContaining({ whitepaperId: existingShareId, tokenName: 'My Test Token' })
         }));
-        // Ensure create-shared-whitepaper and set-status were not called again for this specific submit action
-        expect(mockSupabaseInvoke).toHaveBeenCalledTimes(2); // 1 for share, 1 for notify
+        // create-shared-whitepaper was called once, then notify-legal-team
+        expect(mockSupabaseInvoke.mock.calls.filter(call => call[0] === 'create-shared-whitepaper').length).toBe(1);
+        expect(mockSupabaseInvoke.mock.calls.filter(call => call[0] === 'set-shared-whitepaper-public-status').length).toBe(0); // Not called again for this specific submit
     });
   });
 });

@@ -6,11 +6,18 @@ import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel';
 // Mock react-markdown
 jest.mock('react-markdown', () => (props: { children: React.ReactNode }) => <div data-testid="mock-markdown">{props.children}</div>);
 
+// Define a type for Pie props for better type safety
+interface MockPieProps {
+  data: Array<{ name: string; value: number }>;
+  children?: React.ReactNode;
+  // Add other props if used by the actual Pie component and needed for the mock
+}
+
 // Mock recharts
 jest.mock('recharts', () => {
   const MockResponsiveContainer = ({ children }: { children: React.ReactNode }) => <div data-testid="mock-responsive-container">{children}</div>;
   const MockPieChart = ({ children }: { children: React.ReactNode }) => <div data-testid="mock-pie-chart">{children}</div>;
-  const MockPie = (props: any) => <div data-testid="mock-pie" data-data={JSON.stringify(props.data)}>{props.children}</div>; // Capture data prop
+  const MockPie = (props: MockPieProps) => <div data-testid="mock-pie" data-data={JSON.stringify(props.data)}>{props.children}</div>; // Use MockPieProps
   const MockCell = () => <div data-testid="mock-cell" />;
   const MockTooltip = () => <div data-testid="mock-tooltip" />;
   const MockLegend = () => <div data-testid="mock-legend" />;

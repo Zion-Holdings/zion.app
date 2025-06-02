@@ -2,7 +2,8 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { vi } from 'vitest';
 import TalentPage from '@/pages/talent/[id]';
-import { TALENT_PROFILES } from '@/data/talentData'; // Adjust path if necessary
+import { TALENT_PROFILES, TalentProfileData } from '@/data/talentData'; // Adjust path if necessary
+import { useRouter } from 'next/router'; // Correct import for useRouter
 
 // Mock next/router
 vi.mock('next/router', () => ({
@@ -10,7 +11,7 @@ vi.mock('next/router', () => ({
 }));
 
 // Helper to mock fetch
-const mockFetch = (data: any, ok = true, status = 200) => {
+const mockFetch = <T,>(data: T, ok = true, status = 200) => { // Used generic T for data
   global.fetch = vi.fn().mockResolvedValue({
     ok,
     status,
@@ -21,7 +22,8 @@ const mockFetch = (data: any, ok = true, status = 200) => {
 
 // Mock TalentDetails and NextHead to simplify testing TalentPage focus
 vi.mock('@/components/talent/TalentDetails', () => ({
-  default: ({ talent }: { talent: any }) => (
+  // Use TalentProfileData for the talent prop
+  default: ({ talent }: { talent: TalentProfileData }) => ( 
     <div data-testid="talent-details">
       <h1>{talent.full_name}</h1>
       {talent.skills.map((skill: string) => <span key={skill}>{skill}</span>)}
@@ -45,7 +47,7 @@ vi.mock('@/components/NotFound', () => ({
 
 describe('TalentPage', () => {
   it('should render skeleton loader when router is not ready', () => {
-    (useRouter as vi.Mock).mockReturnValue({
+    (useRouter as jest.Mock).mockReturnValue({ // Use jest.Mock for type safety on mockReturnValue
       query: { id: 't-001' },
       isReady: false,
     });
@@ -55,12 +57,11 @@ describe('TalentPage', () => {
   });
 
   it('should render skeleton loader when initially loading data even if router is ready', () => {
-    (useRouter as vi.Mock).mockReturnValue({
+    (useRouter as jest.Mock).mockReturnValue({
       query: { id: 't-001' },
-      isReady: true, // Router is ready
+      isReady: true, 
     });
-    // fetch will be pending, so isLoading is true initially
-    global.fetch = vi.fn(() => new Promise(() => {})); // unresolved promise
+    global.fetch = vi.fn(() => new Promise(() => {})); 
 
     render(<TalentPage />);
     expect(screen.getByTestId('talent-profile-skeleton')).toBeInTheDocument();
@@ -68,15 +69,14 @@ describe('TalentPage', () => {
 
   it('should fetch and display talent profile successfully', async () => {
     const mockProfile = TALENT_PROFILES[0];
-    (useRouter as vi.Mock).mockReturnValue({
+    (useRouter as jest.Mock).mockReturnValue({
       query: { id: mockProfile.id },
       isReady: true,
     });
-    mockFetch({ profile: mockProfile });
+    mockFetch<{ profile: TalentProfileData }>({ profile: mockProfile }); // Specify type for mockFetch
 
     render(<TalentPage />);
 
-    // Wait for loading to complete and talent details to be rendered
     await waitFor(() => {
       expect(screen.getByTestId('talent-details')).toBeInTheDocument();
     });
@@ -90,11 +90,11 @@ describe('TalentPage', () => {
   });
 
   it('should render NotFound component when API returns 404', async () => {
-    (useRouter as vi.Mock).mockReturnValue({
+    (useRouter as jest.Mock).mockReturnValue({
       query: { id: 'non-existent-id' },
       isReady: true,
     });
-    mockFetch({ error: 'Talent not found' }, false, 404);
+    mockFetch<{ error: string }>({ error: 'Talent not found' }, false, 404);
 
     render(<TalentPage />);
 
@@ -107,11 +107,11 @@ describe('TalentPage', () => {
   });
 
   it('should render generic error message when API returns a non-404 error', async () => {
-    (useRouter as vi.Mock).mockReturnValue({
+    (useRouter as jest.Mock).mockReturnValue({
       query: { id: 't-001' },
       isReady: true,
     });
-    mockFetch({ error: 'Server error' }, false, 500);
+    mockFetch<{ error: string }>({ error: 'Server error' }, false, 500);
 
     render(<TalentPage />);
 
@@ -120,7 +120,6 @@ describe('TalentPage', () => {
     });
 
     expect(screen.getByText(/Status: 500/i)).toBeInTheDocument();
-    // Check for part of the error message from the mock
     expect(screen.getByText(/Message: Server error/i)).toBeInTheDocument();
     expect(screen.queryByTestId('talent-details')).not.toBeInTheDocument();
     expect(screen.queryByTestId('talent-profile-skeleton')).not.toBeInTheDocument();
@@ -128,7 +127,6 @@ describe('TalentPage', () => {
   });
 });
 
-// Basic cleanup
 afterEach(() => {
   vi.restoreAllMocks();
 });

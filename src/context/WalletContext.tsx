@@ -13,7 +13,7 @@ interface WalletState {
 interface WalletContextType extends WalletState {
   connectWallet: () => Promise<void>;
   disconnectWallet: () => void;
-  displayAddress: string | null;
+  displayAddress: string | null; 
 }
 
 const initialWalletState: WalletState = {
@@ -34,8 +34,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     if (typeof window !== 'undefined') {
         const providerOptions = {};
         const modal = new Web3Modal({
-            network: 'mainnet',
-            cacheProvider: true,
+            network: 'mainnet', 
+            cacheProvider: true, 
             providerOptions,
         });
         setWeb3ModalInstance(modal);
@@ -75,8 +75,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           const newProvider = new ethers.providers.Web3Provider(instance);
           const newSigner = newProvider.getSigner();
           newProvider.getNetwork().then(newNetwork => {
-            setWallet(prev => ({
-              ...prev,
+            setWallet(prev => ({ 
+              ...prev, 
               address: accounts[0],
               signer: newSigner, // Update signer
               provider: newProvider, // Update provider

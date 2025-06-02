@@ -1,14 +1,17 @@
-import { useParams, Link, useNavigate } from "react-router-dom"; // Added useNavigate to imports
+import { useParams, Link, useNavigate } from "react-router-dom"; 
 import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
-import { useState, useEffect, useRef, Suspense } from "react";
+import { useState, useEffect, useRef, Suspense, useCallback } from "react"; // Added useCallback
 import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from "lucide-react";
-import { MARKETPLACE_LISTINGS } from "@/data/listingData"; // Assuming this is a static list for now
+import { MARKETPLACE_LISTINGS } from "@/data/listingData"; 
 import { ProductListing } from "@/types/listings";
-// import { useNavigate } from "react-router-dom"; // Already imported
 import { toast } from "@/hooks/use-toast";
+
+// This component seems to be misnamed or repurposed, as it's dealing with
+// marketplace listings based on a category slug, not "Project Details".
+// The types and logic below reflect a category listing page.
 
 const AUTO_SERVICE_TITLES = [
   "AI-Powered Customer Support",
@@ -23,8 +26,8 @@ const AUTO_SERVICE_TITLES = [
 
 function generateInnovationListing(index: number): ProductListing {
   const title = AUTO_SERVICE_TITLES[index % AUTO_SERVICE_TITLES.length];
-  const price = Math.floor(Math.random() * 9500) + 500; // $500 - $10,000
-  const rating = Math.floor(Math.random() * 2) + 4; // 4-5 stars
+  const price = Math.floor(Math.random() * 9500) + 500; 
+  const rating = Math.floor(Math.random() * 2) + 4; 
   const reviewCount = Math.floor(Math.random() * 50) + 10;
 
   return {
@@ -49,7 +52,6 @@ function generateInnovationListing(index: number): ProductListing {
   };
 }
 
-// Moved categoryData outside the component as it doesn't depend on props or state
 const categoryDataMap = {
   'services': {
     title: "Services",
@@ -118,7 +120,7 @@ export default function CategoryDetail() {
   const { slug } = useParams() as { slug?: string };
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
-  const [listings, setListings] = useState<ProductListing[]>([]); // Initialize with empty array
+  const [listings, setListings] = useState<ProductListing[]>([]); 
   const [category, setCategory] = useState<{title: string, description: string, icon: JSX.Element}>({
     title: "",
     description: "",
@@ -126,66 +128,65 @@ export default function CategoryDetail() {
   });
   const innovationCounterRef = useRef(0);
 
-  useEffect(() => {
+  const loadCategoryData = useCallback(() => { // Renamed from load to avoid confusion, wrapped in useCallback
     if (!slug) {
       navigate('/categories');
-      return; // Early return if slug is not present
+      return; 
     }
+    setIsLoading(true);
+    try {
+      const currentCategoryData = categoryDataMap[slug as keyof typeof categoryDataMap] || {
+        title: slug
+          ?.split('-')
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ') || 'Category',
+        description: 'Explore our collection in this category',
+        icon: <Bot className="w-6 h-6" />,
+      };
 
-    async function load() {
-      setIsLoading(true);
-      try {
-        const currentCategoryData = categoryDataMap[slug as keyof typeof categoryDataMap] || {
-          title: slug
-            ?.split('-')
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ') || 'Category',
-          description: 'Explore our collection in this category',
-          icon: <Bot className="w-6 h-6" />,
-        };
+      setCategory(currentCategoryData);
+      innovationCounterRef.current = 0;
 
-        setCategory(currentCategoryData);
-        innovationCounterRef.current = 0;
+      const categoryTitle = currentCategoryData.title;
+      const filteredListings = MARKETPLACE_LISTINGS.filter(
+        (listing) => listing.category.toLowerCase() === categoryTitle.toLowerCase()
+      );
 
-        const categoryTitle = currentCategoryData.title;
-        const filteredListings = MARKETPLACE_LISTINGS.filter(
-          (listing) => listing.category.toLowerCase() === categoryTitle.toLowerCase()
-        );
-
-        const listingsToShow =
-          filteredListings.length > 0
-            ? filteredListings
-            : Array(4)
-                .fill(null)
-                .map((_, index) => ({
-                  id: `${slug}-${index}`,
-                  title: `${currentCategoryData.title} Product ${index + 1}`,
-                  description: `A great ${currentCategoryData.title.toLowerCase()} solution for your needs.`,
-                  category: currentCategoryData.title,
-                  price: Math.floor(Math.random() * 500) + 50,
-                  currency: '$',
-                  tags: [`${slug}`, 'ai', 'tool'],
-                  author: {
-                    name: `Provider ${index + 1}`,
-                    id: `author-${index + 1}`,
-                    avatarUrl: undefined,
-                  },
-                  images: [`/placeholder.svg`],
-                  createdAt: new Date().toISOString(),
-                  rating: Math.floor(Math.random() * 5) + 1,
-                  reviewCount: Math.floor(Math.random() * 100),
-                }));
-        setListings(listingsToShow);
-      } catch (err) {
-        console.error('Category load error:', err);
-        toast({ title: 'Error', description: 'Failed to load category' });
-      } finally {
-        setIsLoading(false);
-      }
+      const listingsToShow =
+        filteredListings.length > 0
+          ? filteredListings
+          : Array(4)
+              .fill(null)
+              .map((_, index) => ({
+                id: `${slug}-${index}`,
+                title: `${currentCategoryData.title} Product ${index + 1}`,
+                description: `A great ${currentCategoryData.title.toLowerCase()} solution for your needs.`,
+                category: currentCategoryData.title,
+                price: Math.floor(Math.random() * 500) + 50,
+                currency: '$',
+                tags: [`${slug}`, 'ai', 'tool'],
+                author: {
+                  name: `Provider ${index + 1}`,
+                  id: `author-${index + 1}`,
+                  avatarUrl: undefined,
+                },
+                images: [`/placeholder.svg`],
+                createdAt: new Date().toISOString(),
+                rating: Math.floor(Math.random() * 5) + 1,
+                reviewCount: Math.floor(Math.random() * 100),
+              }));
+      setListings(listingsToShow);
+    } catch (err) {
+      console.error('Category load error:', err);
+      toast({ title: 'Error', description: 'Failed to load category' });
+    } finally {
+      setIsLoading(false);
     }
+  }, [slug, navigate]); // Dependencies for loadCategoryData
 
-    load();
-  }, [slug, navigate]); // Added navigate to dependency array
+  useEffect(() => {
+    loadCategoryData();
+  }, [loadCategoryData]); // Depends on stable loadCategoryData
 
   useEffect(() => {
     if (slug !== 'innovation') return;
@@ -196,7 +197,7 @@ export default function CategoryDetail() {
         generateInnovationListing(innovationCounterRef.current),
         ...prev,
       ]);
-    }, 120000); // every 2 minutes
+    }, 120000); 
 
     return () => clearInterval(interval);
   }, [slug]);
@@ -223,10 +224,9 @@ export default function CategoryDetail() {
       });
     }
   };
-
-  // If slug is not yet available or navigation is about to happen, render minimal UI or null
-  if (!slug) {
-      return null;
+  
+  if (!slug && !isLoading) { // Ensure we don't return null if it's initial load before slug is processed by useEffect
+      return null; 
   }
 
   return (

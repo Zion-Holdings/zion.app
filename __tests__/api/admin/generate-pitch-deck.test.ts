@@ -39,7 +39,7 @@ describe('/api/admin/generate-pitch-deck API Endpoint', () => {
       method: 'GET' as RequestMethod,
     });
 
-    await handler(req as NextApiRequest, res as NextApiResponse<any>);
+    await handler(req as NextApiRequest, res as NextApiResponse);
 
     expect(res._getStatusCode()).toBe(405);
     expect(res._getHeaders().allow).toContain('POST');
@@ -52,7 +52,7 @@ describe('/api/admin/generate-pitch-deck API Endpoint', () => {
         headers: { /* No Authorization header */ },
         body: { prompt: mockPrompt, inputData: mockInputData, syncedData: mockSyncedData },
     });
-    await handler(req as NextApiRequest, res as NextApiResponse<any>);
+    await handler(req as NextApiRequest, res as NextApiResponse);
     expect(res._getStatusCode()).toBe(401);
     expect(res._getJSONData().message).toBe('Unauthorized: Missing or invalid token.');
   });
@@ -67,7 +67,7 @@ describe('/api/admin/generate-pitch-deck API Endpoint', () => {
       body: { prompt: mockPrompt, inputData: mockInputData, syncedData: mockSyncedData },
     });
 
-    await handler(req as NextApiRequest, res as NextApiResponse<any>);
+    await handler(req as NextApiRequest, res as NextApiResponse);
     expect(res._getStatusCode()).toBe(401);
     expect(res._getJSONData().message).toBe('Unauthorized: Invalid token or user not found.');
   });
@@ -90,7 +90,7 @@ describe('/api/admin/generate-pitch-deck API Endpoint', () => {
       body: { prompt: mockPrompt, inputData: mockInputData, syncedData: mockSyncedData },
     });
 
-    await handler(req as NextApiRequest, res as NextApiResponse<any>);
+    await handler(req as NextApiRequest, res as NextApiResponse);
     expect(res._getStatusCode()).toBe(403);
     expect(res._getJSONData().message).toBe('Forbidden: Access denied. Insufficient privileges.');
   });
@@ -108,7 +108,7 @@ describe('/api/admin/generate-pitch-deck API Endpoint', () => {
       body: { /* prompt: mockPrompt, */ inputData: mockInputData, syncedData: mockSyncedData }, // Missing prompt
     });
 
-    await handler(req as NextApiRequest, res as NextApiResponse<any>);
+    await handler(req as NextApiRequest, res as NextApiResponse);
     expect(res._getStatusCode()).toBe(400);
     expect(res._getJSONData().message).toContain('Missing required parameters');
   });
@@ -125,7 +125,7 @@ describe('/api/admin/generate-pitch-deck API Endpoint', () => {
       body: { prompt: mockPrompt, inputData: mockInputData, syncedData: mockSyncedData },
     });
 
-    await handler(req as NextApiRequest, res as NextApiResponse<any>);
+    await handler(req as NextApiRequest, res as NextApiResponse);
     expect(res._getStatusCode()).toBe(200);
     const responseData = res._getJSONData();
     expect(responseData.slides).toBeInstanceOf(Array);
@@ -152,7 +152,7 @@ describe('/api/admin/generate-pitch-deck API Endpoint', () => {
         body: { prompt: mockPrompt, inputData: mockInputData, syncedData: mockSyncedData },
     });
 
-    await handler(req as NextApiRequest, res as NextApiResponse<any>);
+    await handler(req as NextApiRequest, res as NextApiResponse);
 
     expect(res._getStatusCode()).toBe(500);
     expect(res._getJSONData().message).toBe('Error fetching user profile.');
@@ -176,7 +176,7 @@ describe('/api/admin/generate-pitch-deck API Endpoint', () => {
         body: { prompt: mockPrompt, inputData: mockInputData, syncedData: mockSyncedData },
     });
 
-    await handler(req as NextApiRequest, res as NextApiResponse<any>);
+    await handler(req as NextApiRequest, res as NextApiResponse);
 
     expect(res._getStatusCode()).toBe(500);
     // The error message comes from the catch block: error.message || 'Internal Server Error...'

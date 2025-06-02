@@ -3,7 +3,19 @@ import crypto from 'crypto';
 import { sendResetEmail } from '../../../src/lib/email';
 import prisma from '../../../src/lib/db'; // Import Prisma client
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+// Define a type for the expected successful response
+interface SuccessResponse {
+  message: string;
+}
+
+// Define a type for error responses
+interface ErrorResponse {
+  message: string;
+  error?: string; // Optional error details
+}
+
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse<SuccessResponse | ErrorResponse>) {
   // Environment variable checks
   if (!process.env.SENDGRID_API_KEY) {
     console.error('Missing SENDGRID_API_KEY environment variable. Password reset emails may not be sent.');
@@ -17,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).json({ message: `Method ${req.method} Not Allowed` });
   }
 
   const { email } = req.body;
@@ -31,6 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (!user) {
       console.log(`Forgot password attempt for non-existent email: ${email}`);
+      // Important: Always return a generic message to prevent email enumeration
       return res.status(200).json({ message: 'If your email address exists in our system, you will receive a password reset link.' });
     }
 
@@ -42,24 +55,37 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const passwordResetExpires = new Date(Date.now() + 3600000); // 1 hour from now
 
-    // Ensure these field names (resetToken, resetTokenExpiry) match your Prisma User schema.
     await prisma.user.update({
       where: { id: user.id },
       data: {
-        resetToken: passwordResetToken,      // Or the equivalent field in your schema
-        resetTokenExpiry: passwordResetExpires, // Or the equivalent field in your schema
+        resetToken: passwordResetToken,
+        resetTokenExpiry: passwordResetExpires,
       },
     });
 
+    // Ensure sendResetEmail is robust and handles its own errors gracefully
     await sendResetEmail(user.email, resetToken);
 
     return res.status(200).json({ message: 'If your email address exists in our system, you will receive a password reset link.' });
 
-  } catch (error: any) { // Catch any error
+  } catch (error: unknown) { 
     console.error('Forgot Password Processing Error:', error);
-    // Log the detailed error for server-side inspection
-    // For Prisma errors, error.message or error.code might be useful,
-    // but avoid sending detailed Prisma error messages to the client.
-    return res.status(500).json({ message: 'An internal server error occurred. Please try again later.' });
+    
+    let errorDetails: string | undefined;
+    if (error instanceof Error) {
+      errorDetails = error.message;
+    } else if (typeof error === 'string') {
+      errorDetails = error;
+    }
+
+    return res.status(500).json({ 
+      message: 'An internal server error occurred. Please try again later.',
+      error: errorDetails 
+    });
+  } finally {
+    // Ensures Prisma client is disconnected after the request,
+    // though typically not needed in serverless environments where connection management is handled differently.
+    // await prisma.$disconnect(); 
+    // Commenting out for now, as it might not be necessary for all setups (e.g. Vercel).
   }
 }

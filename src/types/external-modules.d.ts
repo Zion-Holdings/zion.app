@@ -23,12 +23,7 @@ declare module 'react-day-picker' {
     to?: Date;
   }
 
-  // Minimal placeholder for the DayPicker component used in the app
-  // The actual library provides full typings but we stub them here so the
-  // TypeScript compiler can understand the imports without requiring the real
-  // type definitions.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  export const DayPicker: any;
+  export const DayPicker: React.ComponentType<{ [key: string]: unknown }>;
 }
 declare module 'sonner';
 declare module 'lucide-react' {
@@ -179,7 +174,6 @@ declare module 'lucide-react' {
   export const Recycle: LucideIcon;
   export const RefreshCcw: LucideIcon;
   export const RefreshCw: LucideIcon;
-  export const Recycle: LucideIcon;
   export const RotateCcw: LucideIcon;
   export const Save: LucideIcon;
   export const Search: LucideIcon;
@@ -237,7 +231,7 @@ declare module 'lucide-react' {
 declare module 'child_process';
 declare module 'date-fns';
 declare module 'jspdf' {
-  export const jsPDF: any;
+  const jsPDF: new (...args: unknown[]) => Record<string, unknown>;
   export default jsPDF;
 }
 declare module '@hookform/resolvers/zod';
@@ -263,71 +257,164 @@ declare module '@radix-ui/react-tabs';
 declare module '@radix-ui/react-toast';
 declare module '@radix-ui/react-tooltip';
 declare module '@supabase/supabase-js';
+
 declare module 'class-variance-authority' {
-  export function cva(...inputs: any[]): any
-  export type VariantProps<T extends (...args: any) => any> = any
+  export function cva(...inputs: unknown[]): (...args: unknown[]) => string;
+  export type VariantProps<T extends (...args: unknown[]) => unknown> = Record<string, unknown>;
 }
+
 declare module 'clsx' {
-  export type ClassValue = any;
+  export type ClassValue = string | number | boolean | Record<string, boolean | undefined | null> | null | undefined | ClassValue[];
   export default function clsx(...classes: ClassValue[]): string;
 }
+
 declare module 'embla-carousel-react';
 declare module 'framer-motion';
 declare module 'i18next';
 declare module 'i18next-browser-languagedetector';
 declare module 'react-helmet-async';
+
 declare module 'react-hook-form' {
-  import type { ComponentType, ReactElement, ReactNode } from 'react'
+  import type { ComponentType, ReactElement, ReactNode, Ref, BaseSyntheticEvent } from 'react';
 
-  // Minimal generic typings to satisfy local usage without full type defs
-  export type FieldValues = Record<string, any>
-  export type FieldPath<TFieldValues extends FieldValues> =
-    keyof TFieldValues & string
+  export type FieldValues = Record<string, unknown>;
+  export type FieldPath<TFieldValues extends FieldValues> = keyof TFieldValues & string;
+  
+  // A more specific Error type for field errors
+  export type FieldError = {
+    type: string;
+    message?: string;
+    ref?: Ref<unknown>;
+    types?: Record<string, string | string[]>; // For multiple error types
+  };
+  export type FieldErrors<TFieldValues extends FieldValues = FieldValues> = Record<FieldPath<TFieldValues>, FieldError>;
 
-  export type Control<TFieldValues extends FieldValues = FieldValues> = any
 
-  export interface UseFormReturn<
-    TFieldValues extends FieldValues = FieldValues,
-  > {
-    control: Control<TFieldValues>
-    handleSubmit: any
-    register: any
-    formState: any
-    [key: string]: any
+  export type Control<TFieldValues extends FieldValues = FieldValues> = {
+    // Add known properties of Control if available, otherwise keep as somewhat opaque
+    [key: string]: unknown; 
+  };
+
+  export type FormState<TFieldValues extends FieldValues> = {
+    errors: FieldErrors<TFieldValues>;
+    isDirty: boolean;
+    isValid: boolean;
+    isLoading: boolean;
+    isSubmitting: boolean;
+    isSubmitSuccessful: boolean;
+    dirtyFields: Partial<Readonly<Record<FieldPath<TFieldValues>, boolean>>>;
+    touchedFields: Partial<Readonly<Record<FieldPath<TFieldValues>, boolean>>>;
+    submitCount: number;
+    [key: string]: unknown;
+  };
+  
+  // RegisterOptions can be quite complex, using unknown for now
+  export type RegisterOptions<TFieldValues extends FieldValues = FieldValues, TFieldName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>> = unknown;
+
+  export interface UseFormReturn<TFieldValues extends FieldValues = FieldValues> {
+    control: Control<TFieldValues>;
+    handleSubmit: (
+      onValid: (data: TFieldValues, event?: BaseSyntheticEvent) => unknown | Promise<unknown>,
+      onInvalid?: (errors: FieldErrors<TFieldValues>, event?: BaseSyntheticEvent) => unknown | Promise<unknown>
+    ) => (e?: BaseSyntheticEvent) => Promise<void>;
+    register: (name: FieldPath<TFieldValues>, options?: RegisterOptions<TFieldValues>) => {
+      onChange: (event: BaseSyntheticEvent) => void; 
+      onBlur: (event: BaseSyntheticEvent) => void; 
+      name: string;
+      ref: Ref<unknown>;
+    };
+    formState: FormState<TFieldValues>;
+    watch: (name?: FieldPath<TFieldValues> | FieldPath<TFieldValues>[] | ((values: TFieldValues) => unknown), defaultValue?: unknown) => unknown;
+    setValue: (name: FieldPath<TFieldValues>, value: unknown, options?: unknown) => void;
+    reset: (values?: TFieldValues, options?: unknown) => void;
+    getValues: (name?: FieldPath<TFieldValues> | FieldPath<TFieldValues>[]) => unknown;
+    trigger: (name?: FieldPath<TFieldValues> | FieldPath<TFieldValues>[], options?: unknown) => Promise<boolean>;
+    clearErrors: (name?: FieldPath<TFieldValues> | FieldPath<TFieldValues>[]) => void;
+    setError: (name: FieldPath<TFieldValues>, error: FieldError, options?: unknown) => void;
+    [key: string]: unknown; 
   }
+  
+  export type UseFormProps<TFieldValues extends FieldValues = FieldValues> = {
+    mode?: 'onChange' | 'onBlur' | 'onSubmit' | 'onTouched' | 'all';
+    reValidateMode?: 'onChange' | 'onBlur' | 'onSubmit';
+    defaultValues?: Partial<TFieldValues> | TFieldValues;
+    resolver?: (values: TFieldValues, context: unknown, options: { criteriaMode?: 'firstError' | 'all', fields: Record<string, unknown>, names: string[] }) => Promise<{ values: TFieldValues, errors: FieldErrors<TFieldValues> } | { values: TFieldValues, errors: {} }>;
+    context?: unknown;
+    shouldFocusError?: boolean;
+    shouldUnregister?: boolean;
+    shouldUseNativeValidation?: boolean;
+    progressive?: boolean;
+    criteriaMode?: 'firstError' | 'all';
+    delayError?: number;
+  };
 
-  export function useForm<
+
+  export function useForm<TFieldValues extends FieldValues = FieldValues>(
+    options?: UseFormProps<TFieldValues>
+  ): UseFormReturn<TFieldValues>;
+  
+  export type UseFieldArrayProps<TFieldValues extends FieldValues = FieldValues, TFieldArrayName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>> = {
+    name: TFieldArrayName;
+    control?: Control<TFieldValues>;
+    rules?: unknown; // Specific rules for field array
+    keyName?: string; // default to "id"
+  };
+  
+  // This is a simplified version. Actual useFieldArray returns more.
+  export function useFieldArray<TFieldValues extends FieldValues = FieldValues, TFieldArrayName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>>(
+    props: UseFieldArrayProps<TFieldValues, TFieldArrayName>
+  ): {
+    fields: Array<Record<string, unknown> & { id: string }>; // Assuming array item is an object
+    append: (value: Partial<unknown> | Array<Partial<unknown>>, options?: unknown) => void;
+    prepend: (value: Partial<unknown> | Array<Partial<unknown>>, options?: unknown) => void;
+    remove: (index?: number | number[]) => void;
+    swap: (indexA: number, indexB: number) => void;
+    move: (from: number, to: number) => void;
+    insert: (index: number, value: Partial<unknown> | Array<Partial<unknown>>, options?: unknown) => void;
+    update: (index: number, value: Partial<unknown>) => void;
+    replace: (values: Array<Partial<unknown>>) => void;
+  };
+
+  export interface ControllerRenderProps<
     TFieldValues extends FieldValues = FieldValues,
-  >(options?: any): UseFormReturn<TFieldValues>
-
-  export function useFieldArray<
-    TFieldValues extends FieldValues = FieldValues,
-  >(options: any): any
-
+    TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+  > {
+    field: {
+      value: TFieldValues[TName];
+      onChange: (...event: unknown[]) => void;
+      onBlur: () => void;
+      name: TName;
+      ref: Ref<unknown>;
+    };
+    fieldState: {
+      invalid: boolean;
+      isTouched: boolean;
+      isDirty: boolean;
+      error?: FieldError;
+    };
+    formState: FormState<TFieldValues>;
+  }
+  
   export interface ControllerProps<
     TFieldValues extends FieldValues = FieldValues,
     TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
   > {
-    name: TName
-    control?: Control<TFieldValues>
-    rules?: any
-    defaultValue?: any
-    render: (props: any) => ReactElement
+    name: TName;
+    control?: Control<TFieldValues>;
+    rules?: unknown; 
+    defaultValue?: TFieldValues[TName];
+    render: (props: ControllerRenderProps<TFieldValues, TName>) => ReactElement;
   }
+  
+  export const Controller: ComponentType<ControllerProps<FieldValues, FieldPath<FieldValues>>>;
 
-  export const Controller: ComponentType<ControllerProps<any, any>>
-
-  export interface FormProviderProps<
-    TFieldValues extends FieldValues = FieldValues,
-  > {
-    children?: ReactNode
-    [key: string]: any
+  export interface FormProviderProps<TFieldValues extends FieldValues = FieldValues> 
+    extends Omit<UseFormReturn<TFieldValues>, 'handleSubmit'> { // handleSubmit is not part of FormProvider context
+    children?: ReactNode | ReactNode[];
   }
-
-  export const FormProvider: ComponentType<FormProviderProps<any>>
-  export function useFormContext<
-    TFieldValues extends FieldValues = FieldValues,
-  >(): UseFormReturn<TFieldValues>
+  
+  export const FormProvider: ComponentType<FormProviderProps<FieldValues>>;
+  export function useFormContext<TFieldValues extends FieldValues = FieldValues>(): UseFormReturn<TFieldValues>;
 }
 declare module 'react-i18next';
 declare module 'react-dom/client';
@@ -337,27 +424,102 @@ declare module 'react-redux';
 declare module 'semver';
 declare module 'ws';
 declare module 'recharts';
+
 declare module 'next' {
-  export type GetStaticPaths = any;
-  export type GetStaticProps<P = any, Q = any> = any;
-  export type GetServerSideProps<P = any, Q = any> = any;
+  import { ParsedUrlQuery } from 'querystring';
+
+  export type GetStaticPathsContext = {
+    locales?: string[];
+    defaultLocale?: string;
+    params?: ParsedUrlQuery; // If you expect params
+  };
+  export type GetStaticPathsResult<P extends ParsedUrlQuery = ParsedUrlQuery> = {
+    paths: Array<string | { params: P; locale?: string }>;
+    fallback: boolean | 'blocking';
+  };
+  export type GetStaticPaths<P extends ParsedUrlQuery = ParsedUrlQuery> = () => Promise<GetStaticPathsResult<P>> | GetStaticPathsResult<P>;
+
+  export type GetStaticPropsContext<Q extends ParsedUrlQuery = ParsedUrlQuery> = {
+    params?: Q;
+    preview?: boolean;
+    previewData?: unknown;
+    locale?: string;
+    locales?: string[];
+    defaultLocale?: string;
+  };
+  export type GetStaticPropsResult<P> = { props: P; revalidate?: number | boolean; notFound?: boolean; redirect?: { destination: string; permanent: boolean; basePath?: false; locale?: string }; };
+  export type GetStaticProps<P = Record<string, unknown>, Q extends ParsedUrlQuery = ParsedUrlQuery> = (context: GetStaticPropsContext<Q>) => Promise<GetStaticPropsResult<P>> | GetStaticPropsResult<P>;
+
+  export type GetServerSidePropsContext<Q extends ParsedUrlQuery = ParsedUrlQuery> = {
+    params?: Q;
+    req: IncomingMessage; // from http
+    res: ServerResponse; // from http
+    query: ParsedUrlQuery;
+    resolvedUrl: string;
+    locale?: string;
+    locales?: string[];
+    defaultLocale?: string;
+  };
+  // For IncomingMessage and ServerResponse, you might need to import 'http' or define minimal stubs.
+  // For simplicity here, using 'unknown'.
+  interface IncomingMessage { [key:string]: unknown }
+  interface ServerResponse { [key:string]: unknown }
+
+  export type GetServerSidePropsResult<P> = { props: P | Promise<P>; notFound?: boolean; redirect?: { destination: string; permanent: boolean; basePath?: false; locale?: string }; };
+  export type GetServerSideProps<P = Record<string, unknown>, Q extends ParsedUrlQuery = ParsedUrlQuery> = (context: GetServerSidePropsContext<Q>) => Promise<GetServerSidePropsResult<P>> | GetServerSidePropsResult<P>;
 }
+
 declare module 'next/link' {
-  const Link: React.ComponentType<any>
-  export default Link
-}
-declare module 'next/router' {
-  interface NextRouter {
-    pathname: string
-    /**
-     * Indicates whether the current page is being statically generated
-     * and the fallback version should be shown. This mirrors the property
-     * from Next.js so that code referencing `router.isFallback` type-checks
-     * correctly in this project.
-     */
-    isFallback?: boolean
+  import { UrlObject } from 'url'; 
+  import React from 'react';
+
+  type Url = string | UrlObject;
+  export interface LinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
+    href: Url;
+    as?: Url;
+    replace?: boolean;
+    scroll?: boolean;
+    shallow?: boolean;
+    passHref?: boolean;
+    prefetch?: boolean;
+    locale?: string | false;
+    legacyBehavior?: boolean;
+    children?: React.ReactNode;
   }
-  export function useRouter(): NextRouter
+  const Link: React.ForwardRefExoticComponent<LinkProps & React.RefAttributes<HTMLAnchorElement>>;
+  export default Link;
+}
+
+declare module 'next/router' {
+  import { UrlObject } from 'url';
+  import React from 'react';
+
+  export interface NextRouter {
+    pathname: string;
+    route: string;
+    query: Record<string, string | string[] | undefined>;
+    asPath: string;
+    isFallback: boolean;
+    basePath: string;
+    locale?: string;
+    locales?: string[];
+    defaultLocale?: string;
+    isReady: boolean;
+    isPreview: boolean; // Added based on common Next.js router properties
+    push: (url: UrlObject | string, as?: UrlObject | string, options?: { shallow?: boolean; locale?: string | false; scroll?: boolean }) => Promise<boolean>;
+    replace: (url: UrlObject | string, as?: UrlObject | string, options?: { shallow?: boolean; locale?: string | false; scroll?: boolean }) => Promise<boolean>;
+    reload: () => void;
+    back: () => void;
+    prefetch: (url: string, asPath?: string, options?: { locale?: string | false }) => Promise<void>;
+    beforePopState: (cb: (state: { url: string; as: string; options: unknown }) => boolean) => void;
+    events: {
+      on: (event: string, handler: (...args: unknown[]) => void) => void;
+      off: (event: string, handler: (...args: unknown[]) => void) => void;
+      emit: (event: string, ...args: unknown[]) => void;
+    };
+    isLocaleDomain: boolean;
+  }
+  export function useRouter(): NextRouter;
 }
 declare module 'next-themes';
 declare module 'tailwind-merge';

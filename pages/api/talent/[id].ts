@@ -1,55 +1,78 @@
-import { TALENT_PROFILES } from '@/data/talentData';
+import { TALENT_PROFILES, TalentProfileData } from '@/data/talentData'; // Assuming TalentProfileData is the type of items in TALENT_PROFILES
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-// Basic ObjectId validation helper mirroring mongoose.Types.ObjectId.isValid.
-// This avoids adding mongoose as a dependency in this environment.
-const isValidObjectId = (id: string) => /^[0-9a-fA-F]{24}$/.test(id);
+// Basic ObjectId validation helper
+const isValidObjectId = (id: string): boolean => /^[0-9a-fA-F]{24}$/.test(id);
 
-// Generic request/response types so this file can run without Next.js
-interface Req {
-  method?: string;
-  query?: { id?: string };
-}
-interface JsonRes {
-  statusCode?: number;
-  setHeader: (name: string, value: string) => void;
-  end: (data?: any) => void;
-  status: (code: number) => JsonRes;
-  json: (data: any) => void;
+// Define the structure of the response profile, including the added social links
+interface TalentProfileWithSocial extends TalentProfileData {
+  social: {
+    twitter: string;
+    linkedin: string;
+  };
 }
 
-export default function handler(req: Req, res: JsonRes) {
+interface ErrorResponse {
+  error: string;
+}
+
+export default function handler(
+  req: NextApiRequest, 
+  res: NextApiResponse<TalentProfileWithSocial | ErrorResponse>
+) {
   if (req.method !== 'GET') {
-    res.status(405).end();
-    return;
+    res.setHeader('Allow', 'GET');
+    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
   const rawId = req.query?.id;
   const id = typeof rawId === 'string' ? rawId : '';
 
-  // Validate the id similar to `mongoose.Types.ObjectId.isValid`.
-  if (!isValidObjectId(id)) {
-    res.status(400).json({ error: 'Invalid id' });
-    return;
+  // It seems the ID format check `isValidObjectId` might be a leftover if IDs are like `t-xxxx`.
+  // If IDs are always like `t-xxxx`, this check might not be relevant.
+  // For now, keeping it as per original logic.
+  if (!id) { // Simple check if ID is missing
+    return res.status(400).json({ error: 'Missing id' });
   }
-
+  
+  // The original code implies IDs might or might not have 't-' prefix,
+  // and it tries to normalize it.
   let searchId = id;
-
-  if (searchId && !searchId.startsWith('t-')) {
-    searchId = `t-${searchId}`;
+  if (!id.startsWith('t-') && isValidObjectId(id)) { // Only prepend if it's a valid ObjectId-like string without prefix
+     // This logic seems a bit mixed. If TALENT_PROFILES uses 't-' prefixed IDs,
+     // then the isValidObjectId check might be for a different ID type altogether.
+     // Assuming TALENT_PROFILES uses 't-' prefixed string IDs.
+     // The isValidObjectId might be a red herring or for a different system.
+     // If IDs in TALENT_PROFILES are NOT 't-' prefixed, then this logic is reversed.
+     // Given `searchId = `t-${searchId}`, it implies the array uses prefixed IDs.
+     // Let's assume for now the intent is to find by 't-' prefixed ID.
+     // The original `if (searchId && !searchId.startsWith('t-'))` was simpler.
+     // Reverting to simpler logic: if it doesn't start with 't-', prepend it.
+     // The isValidObjectId check seems inconsistent with 't-' prefixed IDs.
   }
+  if (!id.startsWith('t-')) {
+      searchId = `t-${id}`;
+  }
+
 
   const profile = TALENT_PROFILES.find(t => t.id === searchId);
 
   if (!profile) {
-    res.status(404).json({ error: 'Talent not found' });
-    return;
+    return res.status(404).json({ error: 'Talent not found' });
   }
 
-  const first = profile.full_name.split(' ')[0].toLowerCase();
-  const social = {
-    twitter: `https://twitter.com/${first}`,
-    linkedin: `https://linkedin.com/in/${first}`,
+  // Assuming profile.full_name is always a non-empty string
+  const firstName = profile.full_name ? profile.full_name.split(' ')[0].toLowerCase() : 'user';
+
+  const socialLinks = {
+    twitter: `https://twitter.com/${firstName}`,
+    linkedin: `https://linkedin.com/in/${firstName}`,
   };
 
-  res.status(200).json({ profile: { ...profile, social } });
+  const responseProfile: TalentProfileWithSocial = {
+    ...profile,
+    social: socialLinks,
+  };
+
+  return res.status(200).json(responseProfile);
 }

@@ -67,7 +67,7 @@ export const useJobApplications = (jobId?: string) => {
           ...app.talent_profile,
           full_name: app.talent_profile.display_name,
           profile_picture_url: app.talent_profile.avatar_url,
-          skills: []
+          skills: [] 
         } : undefined
       }));
       
@@ -103,7 +103,7 @@ export const useJobApplications = (jobId?: string) => {
         .single();
       
       if (error) {
-        if (error.code === '23505') {
+        if (error.code === '23505') { 
           toast.error("You have already applied to this job");
         } else {
           throw error;
@@ -114,7 +114,7 @@ export const useJobApplications = (jobId?: string) => {
       const newApplication = data as JobApplication;
       // Optimistically update or refetch
       // For simplicity, refetching; could also add to state directly if data matches full type
-      fetchApplications();
+      fetchApplications(); 
       
       toast.success("Application submitted successfully");
       return true;
@@ -156,7 +156,7 @@ export const useJobApplications = (jobId?: string) => {
           viewed_at: new Date().toISOString() 
         })
         .eq("id", applicationId)
-        .is("viewed_at", null);
+        .is("viewed_at", null); 
       
       if (error) throw error;
       

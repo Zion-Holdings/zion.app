@@ -1,6 +1,23 @@
 import { createClient } from '@supabase/supabase-js';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client'; // Import Prisma for error types
 import type { NextApiRequest, NextApiResponse } from 'next';
+
+// Define a type for the expected successful response
+interface SuccessResponse {
+  message: string;
+  user: { // Define a minimal user type based on what's returned
+    id: string;
+    email: string | null; // Prisma user email can be null
+    emailVerified: boolean | null;
+    // Add other fields if returned and needed by client
+  };
+}
+
+// Define a type for error responses
+interface ErrorResponse {
+  message: string;
+  error?: string; // Optional error details
+}
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -14,90 +31,65 @@ if (!supabaseUrl || !serviceKey) {
 const supabase = createClient(supabaseUrl, serviceKey);
 const prisma = new PrismaClient();
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<SuccessResponse | ErrorResponse>) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).json({ message: `Method ${req.method} Not Allowed` });
   }
 
   try {
-    // 1. Get user from Supabase session (JWT from cookie)
-    // The prompt specifies `req.cookies['supabase-auth-token']`.
-    // Note: Supabase client libraries often manage cookies automatically.
-    // If `req.cookies` is not populated as expected or if there's a more direct way
-    // for Supabase to get the user in an API route (e.g., just `await supabase.auth.getUser()`),
-    // this might need adjustment in a real environment. For this task, following prompt.
-    const jwt = req.cookies['supabase-auth-token'];
+    const jwt = req.cookies['supabase-auth-token'] || 
+                Object.keys(req.cookies).find(key => key.startsWith('sb-') && key.endsWith('-access-token')) ||
+                req.headers.authorization?.split('Bearer ')[1];
+
+
     if (!jwt) {
-      // If NEXT_PUBLIC_SUPABASE_ANON_KEY is used, direct cookie access might be less reliable
-      // than Supabase client's own session handling. Often, the token is `sb-access-token`
-      // or prefixed like `sb-<project-id>-access-token`.
-      // Let's try the more common Supabase cookie name as a fallback if the specified one isn't found.
-      // This is a heuristic based on common Supabase usage.
-      const commonSupabaseCookie = Object.keys(req.cookies).find(key => key.startsWith('sb-') && key.endsWith('-access-token'));
-      const supabaseToken = jwt || (commonSupabaseCookie ? req.cookies[commonSupabaseCookie] : undefined);
+      console.log('No Supabase auth token found in cookies or Authorization header.');
+      return res.status(401).json({ message: 'Unauthorized: Auth token not found.' });
+    }
+    
+    const { data: { user }, error: authError } = await supabase.auth.getUser(jwt);
 
-      if (!supabaseToken) {
-        console.log('No Supabase auth token cookie found. Checked for "supabase-auth-token" and common patterns like "sb-*-access-token".');
-        return res.status(401).json({ message: 'Unauthorized: Auth token not found.' });
-      }
-      // Pass the found token to getUser
-      const { data: { user }, error: authError } = await supabase.auth.getUser(supabaseToken);
-
-      if (authError || !user) {
-        console.error('Auth error with token:', authError);
-        return res.status(401).json({ message: 'Unauthorized: No active session or auth error.' });
-      }
-
-      // User is authenticated, proceed to update Prisma
-      if (!user.email) {
-        // Should not happen for a verified user
-        console.error('User object from Supabase does not contain an email.');
-        return res.status(400).json({ message: 'Bad Request: User email not found in token.' });
-      }
-
-      const updatedUser = await prisma.user.update({
-        where: { email: user.email },
-        data: { emailVerified: true },
-      });
-
-      if (!updatedUser) {
-        return res.status(404).json({ message: 'User not found in our database.' });
-      }
-      return res.status(200).json({ message: 'Email successfully verified.', user: updatedUser });
-
-    } else {
-      // Original path if 'supabase-auth-token' was found
-      const { data: { user }, error: authError } = await supabase.auth.getUser(jwt);
-
-      if (authError || !user) {
-        console.error('Auth error with "supabase-auth-token":', authError);
-        return res.status(401).json({ message: 'Unauthorized: No active session or auth error.' });
-      }
-
-      if (!user.email) {
-        console.error('User object from Supabase (using "supabase-auth-token") does not contain an email.');
-        return res.status(400).json({ message: 'Bad Request: User email not found in token.' });
-      }
-
-      const updatedUser = await prisma.user.update({
-        where: { email: user.email },
-        data: { emailVerified: true },
-      });
-
-      if (!updatedUser) {
-        return res.status(404).json({ message: 'User not found in our database.' });
-      }
-      return res.status(200).json({ message: 'Email successfully verified.', user: updatedUser });
+    if (authError || !user) {
+      console.error('Auth error with token:', authError);
+      return res.status(401).json({ message: 'Unauthorized: No active session or auth error.', error: authError?.message });
     }
 
-  } catch (error: any) {
+    if (!user.email) {
+      console.error('User object from Supabase does not contain an email.');
+      return res.status(400).json({ message: 'Bad Request: User email not found in token.' });
+    }
+
+    const updatedUser = await prisma.user.update({
+      where: { email: user.email },
+      data: { emailVerified: true },
+      select: { id: true, email: true, emailVerified: true } // Select specific fields
+    });
+
+    // No need to check !updatedUser here as Prisma update throws if record not found (unless using upsert or findUnique first)
+    // The catch block will handle P2025 for "record not found"
+    return res.status(200).json({ message: 'Email successfully verified.', user: updatedUser });
+
+  } catch (error: unknown) {
     console.error('Error confirming email verification:', error);
-    // Check for specific Prisma errors, e.g., record not found
-    if (error.code === 'P2025') { // Prisma error code for "Record to update not found."
+    
+    let errorMessage = 'Internal server error';
+    let errorDetails: string | undefined = undefined;
+
+    if (error instanceof Prisma.PrismaClientKnownRequestError) {
+      // Prisma specific errors
+      if (error.code === 'P2025') { // "Record to update not found."
         return res.status(404).json({ message: 'User not found in our database.' });
+      }
+      errorMessage = 'Database error during email verification.';
+      errorDetails = error.message;
+    } else if (error instanceof Error) {
+      errorMessage = error.message;
+    } else if (typeof error === 'string') {
+      errorMessage = error;
     }
-    return res.status(500).json({ message: 'Internal server error', error: error.message });
+    
+    return res.status(500).json({ message: errorMessage, error: errorDetails });
   } finally {
     await prisma.$disconnect();
   }

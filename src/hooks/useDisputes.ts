@@ -121,7 +121,7 @@ export function useDisputes() {
       if (error) throw error;
       
       toast.success("Dispute submitted successfully");
-      fetchDisputes();
+      fetchDisputes(); 
       
       return data as Dispute;
     } catch (err: any) {

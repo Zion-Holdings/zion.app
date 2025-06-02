@@ -45,7 +45,7 @@ export function useProjects() {
         ...project,
         talent_profile: project.talent_profile ? {
           ...project.talent_profile,
-          full_name: project.talent_profile.display_name
+          full_name: project.talent_profile.display_name 
         } : undefined,
         // client_profile is already in the correct shape from select
       }));

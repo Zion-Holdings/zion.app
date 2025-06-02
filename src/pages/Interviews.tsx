@@ -1,5 +1,4 @@
-
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react"; // Added useCallback
 import { useInterviews } from "@/hooks/useInterviews";
 import { Interview } from "@/types/interview";
 import { Footer } from "@/components/Footer";
@@ -10,30 +9,24 @@ import { InterviewCard } from "@/components/interviews/InterviewCard";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, Video } from "lucide-react";
 import { format, isAfter, parseISO, startOfDay } from "date-fns";
+import { Link } from "react-router-dom"; // Added Link import
 
 function InterviewsContent() {
-  const { interviews, isLoading, fetchInterviews } = useInterviews();
+  const { interviews, isLoading, fetchInterviews } = useInterviews(); // fetchInterviews is stable from the hook
   const [activeTab, setActiveTab] = useState("upcoming");
   
   useEffect(() => {
-    // Modified to handle Promise<Interview[]> return type
-    const loadInterviews = async () => {
-      await fetchInterviews();
-    };
-    
-    loadInterviews();
-  }, []);
+    // fetchInterviews is memoized by useInterviews hook, so it's safe to include.
+    fetchInterviews();
+  }, [fetchInterviews]); // Added fetchInterviews
 
-  // Filter interviews based on status and date
   const now = new Date();
-  const today = startOfDay(now);
   
   const upcomingInterviews = interviews
-    .filter((interview) => {
-      const interviewDate = parseISO(interview.scheduled_date);
-      return isAfter(interviewDate, now) && 
-        ['confirmed', 'requested'].includes(interview.status);
-    })
+    .filter(interview => 
+      interview.status === 'confirmed' && 
+      !isPast(parseISO(interview.scheduled_date))
+    )
     .sort((a, b) => 
       parseISO(a.scheduled_date).getTime() - parseISO(b.scheduled_date).getTime()
     );
@@ -48,11 +41,10 @@ function InterviewsContent() {
       ['completed', 'declined', 'cancelled'].includes(interview.status);
   });
 
-  // Group interviews by date
-  const groupInterviewsByDate = (interviews: Interview[]) => {
+  const groupInterviewsByDate = (interviewsToGroup: Interview[]) => { // Renamed parameter
     const grouped: Record<string, Interview[]> = {};
     
-    interviews.forEach((interview) => {
+    interviewsToGroup.forEach((interview) => {
       const dateKey = format(parseISO(interview.scheduled_date), 'yyyy-MM-dd');
       if (!grouped[dateKey]) {
         grouped[dateKey] = [];
@@ -72,20 +64,18 @@ function InterviewsContent() {
       .sort(([dateA], [dateB]) => 
         parseISO(dateA).getTime() - parseISO(dateB).getTime()
       )
-      .map(([date, interviews]) => (
+      .map(([date, dateInterviews]) => ( // Renamed inner variable
         <div key={date} className="mb-8">
           <h3 className="text-lg font-medium text-white mb-4 flex items-center">
             <Calendar className="h-5 w-5 mr-2" />
             {format(parseISO(date), 'EEEE, MMMM d, yyyy')}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {interviews.map((interview) => (
+            {dateInterviews.map((interview) => (
               <InterviewCard 
                 key={interview.id} 
                 interview={interview}
-                onRefresh={async () => {
-                  await fetchInterviews();
-                }}
+                onRefresh={fetchInterviews} // Pass stable fetchInterviews
               />
             ))}
           </div>

@@ -86,7 +86,7 @@ export function ChatAssistant({
     setCurrentMessages = (valueOrFn) => {
       const newMessages = valueOrFn instanceof Function ? valueOrFn(displayGuestMessages) : valueOrFn;
       setDisplayGuestMessages(newMessages);
-      setStoredGuestMessages(newMessages);
+      setStoredGuestMessages(newMessages); 
     };
   } else {
     currentMessages = loggedInMessages;

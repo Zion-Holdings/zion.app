@@ -30,8 +30,8 @@ jest.mock('@/context/CartContext', () => ({
 // Revised mock for use-toast to avoid ReferenceError
 jest.mock('@/hooks/use-toast', () => ({
   toast: {
-    info: (...args: any[]) => mockInfoFnForToast(...args),
-    success: (...args: any[]) => mockSuccessFnForToast(...args),
+    info: (...args: unknown[]) => mockInfoFnForToast(...args), // Changed any[] to unknown[]
+    success: (...args: unknown[]) => mockSuccessFnForToast(...args), // Changed any[] to unknown[]
   },
 }));
 

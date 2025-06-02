@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react"; // Added useCallback
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { format } from "date-fns";
 import { useAuth } from "@/hooks/useAuth";
@@ -53,8 +53,6 @@ import {
 } from "lucide-react";
 
 function ProjectDetailsContent() {
-  // useParams may be untyped in this environment, so avoid passing a
-  // type argument and cast the result instead to prevent TS2347 errors.
   const { projectId } = useParams() as { projectId?: string };
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -66,19 +64,38 @@ function ProjectDetailsContent() {
   const [newNote, setNewNote] = useState("");
   const [isSubmittingNote, setIsSubmittingNote] = useState(false);
   const [activeTab, setActiveTab] = useState("details");
-  
-  // Load project data
+
+  const fetchProjectNotes = useCallback(async (currentProjectId: string) => { // Renamed projectId to currentProjectId
+    if (!currentProjectId) return; // Ensure projectId is available
+    try {
+      const { data, error } = await supabase
+        .from("project_notes")
+        .select(`
+          *,
+          created_by_profile:profiles!user_id(display_name, avatar_url)
+        `)
+        .eq("project_id", currentProjectId)
+        .order("created_at", { ascending: false });
+      
+      if (error) throw error;
+      setNotes(data || []);
+    } catch (err) {
+      console.error("Error fetching project notes:", err);
+    }
+  }, []); // No dependencies needed if supabase client is stable and it only uses projectId argument
+
   useEffect(() => {
     async function loadProject() {
-      if (!projectId) return;
+      if (!projectId) {
+        navigate("/dashboard"); // Navigate if projectId is falsy early
+        return;
+      }
       
       setIsLoading(true);
       const projectData = await getProjectById(projectId);
       
       if (projectData) {
         setProject(projectData);
-        
-        // Now fetch notes
         fetchProjectNotes(projectId);
       } else {
         toast({
@@ -88,31 +105,11 @@ function ProjectDetailsContent() {
         });
         navigate("/dashboard");
       }
-      
       setIsLoading(false);
     }
     
     loadProject();
-  }, [projectId]);
-  
-  const fetchProjectNotes = async (projectId: string) => {
-    try {
-      const { data, error } = await supabase
-        .from("project_notes")
-        .select(`
-          *,
-          created_by_profile:profiles!user_id(display_name, avatar_url)
-        `)
-        .eq("project_id", projectId)
-        .order("created_at", { ascending: false });
-      
-      if (error) throw error;
-      
-      setNotes(data || []);
-    } catch (err) {
-      console.error("Error fetching project notes:", err);
-    }
-  };
+  }, [projectId, getProjectById, navigate, fetchProjectNotes]); // Added dependencies
   
   const handleSubmitNote = async () => {
     if (!newNote.trim() || !project || !user) return;
@@ -131,8 +128,9 @@ function ProjectDetailsContent() {
       
       if (error) throw error;
       
-      // Refresh notes
-      fetchProjectNotes(project.id);
+      if (project.id) { // Ensure project.id is valid before fetching notes
+          fetchProjectNotes(project.id);
+      }
       setNewNote("");
       
       toast({
@@ -157,12 +155,8 @@ function ProjectDetailsContent() {
     const success = await updateProjectStatus(project.id, newStatus);
     
     if (success) {
-      setProject({
-        ...project,
-        status: newStatus,
-      });
+      setProject(prevProject => prevProject ? { ...prevProject, status: newStatus } : null);
       
-      // If offer was accepted, show a special toast
       if (newStatus === "offer_accepted") {
         toast({
           title: "Offer Accepted! 🎉",
@@ -205,6 +199,8 @@ function ProjectDetailsContent() {
   }
   
   if (!project) {
+    // This case should ideally be handled by the useEffect redirecting if projectId is invalid
+    // or if getProjectById returns null initially.
     return (
       <div className="container mx-auto py-8">
         <Card>
@@ -212,7 +208,7 @@ function ProjectDetailsContent() {
             <AlertCircle className="h-10 w-10 text-muted-foreground mb-4" />
             <h2 className="text-xl font-bold mb-2">Project Not Found</h2>
             <p className="text-muted-foreground mb-4">
-              The project you're looking for doesn't exist or you don't have access to it.
+              The project details could not be loaded. It might not exist or you might not have access.
             </p>
             <Button onClick={() => navigate("/dashboard")}>
               Return to Dashboard
@@ -223,11 +219,13 @@ function ProjectDetailsContent() {
     );
   }
   
-  // Check if user is either the client or the talent
   const isClient = user?.id === project.client_id;
   const isTalent = user?.id === project.talent_id;
   
-  if (!isClient && !isTalent) {
+  // This check should ideally happen after ensuring project is loaded and user is available.
+  // If user is also loading, this might redirect prematurely.
+  // However, ProtectedRoute should handle cases where user is not authenticated.
+  if (!isLoading && !isClient && !isTalent) { 
     navigate("/unauthorized");
     return null;
   }
@@ -255,7 +253,6 @@ function ProjectDetailsContent() {
               </div>
             </div>
             
-            {/* Action Buttons Based on Role and Status */}
             <div className="space-x-2">
               {isTalent && isOfferPending && (
                 <>
@@ -602,7 +599,6 @@ function ProjectDetailsContent() {
               </CardContent>
             </Card>
             
-            {/* Project Status Card */}
             <Card className="mt-6">
               <CardHeader>
                 <CardTitle>Project Status</CardTitle>
@@ -630,7 +626,6 @@ function ProjectDetailsContent() {
                 </div>
               </CardContent>
               
-              {/* Conditional Footer Based on Status */}
               {project.status === "changes_requested" && isClient && (
                 <CardFooter className="flex-col items-start gap-2 border-t pt-6">
                   <p className="text-sm text-amber-600 flex items-center gap-1">

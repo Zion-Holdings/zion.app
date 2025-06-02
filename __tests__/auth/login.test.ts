@@ -3,12 +3,14 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { vi, Mock, describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 // Mock Supabase client
-let mockSignInWithPassword: Mock;
+// Changed from let to const as mockSignInWithPassword is not reassigned, only its properties (mock state) are changed.
+const mockSignInWithPassword: Mock = vi.fn();
 
 vi.mock('@supabase/supabase-js', async (importOriginal) => {
-  const actual = await importOriginal() as any;
-  const _mockSignInWithPassword = vi.fn();
-  // Keep other mocks if they are used by other parts of the handler or related code
+  // Using Record<string, unknown> for a general module structure.
+  const actual = await importOriginal() as Record<string, unknown>; 
+  // _mockSignInWithPassword is assigned to the global mockSignInWithPassword later
+  // const _mockSignInWithPassword = vi.fn(); 
   const _mockSignUp = vi.fn();
   const _mockOnAuthStateChange = vi.fn(() => ({ data: { subscription: { unsubscribe: vi.fn() } } }));
   const _mockGetSession = vi.fn().mockResolvedValue({ data: { session: null }, error: null });
@@ -17,14 +19,15 @@ vi.mock('@supabase/supabase-js', async (importOriginal) => {
     ...actual,
     createClient: vi.fn(() => ({
       auth: {
-        signInWithPassword: _mockSignInWithPassword,
-        signUp: _mockSignUp, // Keep if registerHandler is also tested here or needed by setup
+        signInWithPassword: mockSignInWithPassword, // Use the global mock
+        signUp: _mockSignUp, 
         onAuthStateChange: _mockOnAuthStateChange,
         getSession: _mockGetSession,
       },
-      from: vi.fn().mockReturnThis(), // Generic from mock
+      from: vi.fn().mockReturnThis(), 
     })),
-    __internalMockSignInWithPassword: _mockSignInWithPassword,
+    // This allows us to grab the instance of the mock used by the module
+    __internalMockSignInWithPassword: mockSignInWithPassword, 
   };
 });
 
@@ -32,11 +35,16 @@ vi.mock('@supabase/supabase-js', async (importOriginal) => {
 import loginHandler from '../../pages/api/auth/login';
 
 // Import the mock functions from the mocked module
-const supabaseMockModule = await import('@supabase/supabase-js');
-mockSignInWithPassword = (supabaseMockModule as any).__internalMockSignInWithPassword;
+// More specific type for the imported module if its structure is known.
+const supabaseMockModule = await import('@supabase/supabase-js') as { __internalMockSignInWithPassword: Mock };
+// Assign the mock from the module to the global one. This was the previous behavior.
+// However, since mockSignInWithPassword is now passed directly in createClient, this line might be redundant
+// but kept for safety to ensure the global mock is the one used.
+// mockSignInWithPassword = supabaseMockModule.__internalMockSignInWithPassword; // This line is problematic if mockSignInWithPassword is const.
+// The key is that the vi.mock setup ensures the mockSignInWithPassword inside createClient is *our* mockSignInWithPassword.
 
 // Helper to create mock NextApiRequest
-const mockApiReq = (body: any, method: string = 'POST') => ({
+const mockApiReq = (body: unknown, method: string = 'POST') => ({
   method,
   body,
 } as NextApiRequest);
@@ -54,7 +62,8 @@ const mockApiRes = () => {
 
 describe('/api/auth/login API Handler', () => {
   beforeEach(() => {
-    mockSignInWithPassword.mockReset();
+    // Reset the state of the mock, not reassign the variable
+    mockSignInWithPassword.mockReset(); 
   });
 
   it('should return 405 if method is not POST', async () => {
@@ -261,7 +270,6 @@ describe('loginUser Service', () => {
   });
 
   it('should handle "Invalid credentials" (401) from API', async () => {
-    // Updated to expect the new error structure with 'code'
     const mockErrorResponse = { error: 'Invalid credentials', code: 'INVALID_CREDENTIALS' };
     global.fetch = vi.fn().mockResolvedValue({
       ok: false,
@@ -272,11 +280,10 @@ describe('loginUser Service', () => {
 
     const { res, data } = await loginUser('wrong@example.com', 'password123');
     expect(res.status).toBe(401);
-    expect(data).toEqual(mockErrorResponse); // Verify the data includes the code
+    expect(data).toEqual(mockErrorResponse); 
   });
 
   it('should handle other errors (e.g., 500) from API', async () => {
-    // Updated to expect the new error structure with 'code'
     const mockErrorResponse = { error: 'Server error', code: 'LOGIN_FAILED' };
      global.fetch = vi.fn().mockResolvedValue({
       ok: false,
@@ -286,17 +293,20 @@ describe('loginUser Service', () => {
     });
     const { res, data } = await loginUser('test@example.com', 'password');
     expect(res.status).toBe(500);
-    expect(data).toEqual(mockErrorResponse); // Verify the data includes the code
+    expect(data).toEqual(mockErrorResponse); 
   });
 
   it('should handle network errors during fetch', async () => {
     global.fetch = vi.fn().mockRejectedValue(new Error('Network failed'));
     try {
       await loginUser('test@example.com', 'password');
-    } catch (e: any) {
-      expect(e.message).toBe('Network failed');
+    } catch (e: unknown) { // Changed from any to unknown
+      if (e instanceof Error) { // Type check
+        expect(e.message).toBe('Network failed');
+      } else {
+        // If it's not an Error instance, rethrow or handle differently
+        throw e; 
+      }
     }
   });
-  // Removed the duplicate test for "should return 401 on login failure" as it was part of the API handler tests
-  // and the new tests cover various error scenarios more comprehensively.
 });

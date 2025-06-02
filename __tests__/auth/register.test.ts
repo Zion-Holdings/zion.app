@@ -1,6 +1,7 @@
 import { describe, expect, test, vi, beforeEach } from 'vitest';
 import handler from '@/pages/api/auth/register'; // Assuming this is the Next.js API handler
 import { z } from 'zod'; // Used by the handler
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 // Mock the Supabase client
 const signUpMock = vi.fn();
@@ -12,19 +13,27 @@ vi.mock('@supabase/supabase-js', () => ({
   }),
 }));
 
+// Define a more specific type for the mocked response
+interface MockApiResponse extends NextApiResponse {
+  status: vi.Mock<[number], MockApiResponse>;
+  json: vi.Mock<[unknown], MockApiResponse>; // Parameter of json can be unknown
+  setHeader: vi.Mock<[string, string | string[]], void>;
+  end: vi.Mock<[((cb?: () => void) => void)?], void>; // end can be called with no args
+}
+
 // Helper to create mock request object
-function mockReq(body: any) {
-  return { method: 'POST', body } as any;
+function mockReq(body: unknown, method: string = 'POST'): NextApiRequest {
+  return { method, body, headers: {}, query: {}, cookies: {} } as NextApiRequest;
 }
 
 // Helper to create mock response object
-function mockRes() {
-  const res: any = {};
-  res.status = vi.fn().mockReturnValue(res);
-  res.json = vi.fn().mockReturnValue(res);
+function mockRes(): MockApiResponse {
+  const res: Partial<MockApiResponse> = {};
+  res.status = vi.fn().mockReturnValue(res as MockApiResponse);
+  res.json = vi.fn().mockReturnValue(res as MockApiResponse);
   res.setHeader = vi.fn();
-  res.end = vi.fn(); // For 405 method not allowed
-  return res;
+  res.end = vi.fn();
+  return res as MockApiResponse;
 }
 
 describe('/api/auth/register', () => {
@@ -33,7 +42,8 @@ describe('/api/auth/register', () => {
   });
 
   test('should return 405 if method is not POST', async () => {
-    const req = { method: 'GET' } as any;
+    // Explicitly type req, ensure it has minimal properties handler might expect for a 405
+    const req = { method: 'GET', body: undefined, headers: {}, query: {}, cookies: {} } as NextApiRequest;
     const res = mockRes();
     await handler(req, res);
     expect(res.status).toHaveBeenCalledWith(405);
@@ -57,10 +67,10 @@ describe('/api/auth/register', () => {
           user: {
             id: 'user-id-123',
             email: 'test@example.com',
-            identities: [], // Important for the "identities empty" check
+            identities: [], 
             user_metadata: { display_name: 'Test User' }
           },
-          session: null, // No session means email verification is likely pending
+          session: null, 
         },
         error: null,
       });
@@ -107,15 +117,14 @@ describe('/api/auth/register', () => {
   describe('Registration Failure Scenarios', () => {
     test('handles registration failure when email already exists', async () => {
       signUpMock.mockResolvedValue({
-        data: { user: null, session: null }, // Or sometimes Supabase returns user object even on error
-        error: { message: 'User already registered', status: 400 }, // Supabase might use 400 or 422
+        data: { user: null, session: null }, 
+        error: { message: 'User already registered', status: 400 }, 
       });
 
       const req = mockReq({ name: 'Test User', email: 'exists@example.com', password: 'Password123!' });
       const res = mockRes();
       await handler(req, res);
 
-      // The API handler converts "already registered" to 409
       expect(res.status).toHaveBeenCalledWith(409);
       expect(res.json).toHaveBeenCalledWith({ message: 'Email already registered' });
     });
@@ -123,7 +132,7 @@ describe('/api/auth/register', () => {
     test('handles registration failure due to weak password', async () => {
       signUpMock.mockResolvedValue({
         data: { user: null, session: null },
-        error: { message: 'Password should be stronger', status: 400 }, // Or similar message
+        error: { message: 'Password should be stronger', status: 400 }, 
       });
 
       const req = mockReq({ name: 'Test User', email: 'test@example.com', password: 'weak' });
@@ -144,7 +153,7 @@ describe('/api/auth/register', () => {
       const res = mockRes();
       await handler(req, res);
 
-      expect(res.status).toHaveBeenCalledWith(500); // Or whatever status the handler maps it to
+      expect(res.status).toHaveBeenCalledWith(500); 
       expect(res.json).toHaveBeenCalledWith({ message: 'Some generic Supabase error' });
     });
 

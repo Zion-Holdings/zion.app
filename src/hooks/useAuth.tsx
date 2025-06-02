@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { AuthContext } from "@/context/auth/AuthContext";
-import type { UserDetails as AuthUserDetails } from "@/types/auth";
+import type { UserDetails as AuthUserDetails } from "@/types/auth"; // This type might be more specific than the local UserDetails
 import { subscribeToPush } from "@/utils/pushSubscription";
+import type { AuthError } from "@supabase/supabase-js"; // Import Supabase error type
 
 // Define types for our context
 export interface UserDetails {
@@ -22,25 +23,46 @@ export interface UserDetails {
   updatedAt?: string;
 }
 
+// For functions returning an error object
+type AuthResponse = { error: AuthError | Error | null };
+// For updateProfile which might also return data on success (though not explicitly typed here)
+type ProfileUpdateResponse = { error: AuthError | Error | null; data?: UserDetails | null };
+
+
 export interface AuthContextType {
   user: UserDetails | null;
   isAuthenticated: boolean;
   isLoading: boolean;
-  signIn: (email: string, password: string) => Promise<{ error: any }>;
-  signOut: () => Promise<void>;
-  signUp: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any }>;
-  // Aliases for compatibility with other components
-  login: (email: string, password: string) => Promise<{ error: any }>;
+  signIn: (email: string, password: string) => Promise<AuthResponse>;
+  signOut: () => Promise<void>; // signOut in Supabase doesn't typically return an error in the same way
+  signUp: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<AuthResponse>;
+  // Aliases for compatibility
+  login: (email: string, password: string) => Promise<AuthResponse>;
   logout: () => Promise<void>;
-  signup: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any }>;
-  resetPassword: (email: string) => Promise<{ error: any }>;
-  updateProfile: (data: Partial<UserDetails>) => Promise<{ error: any }>;
-  loginWithGoogle: () => Promise<void>;
+  signup: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<AuthResponse>;
+  resetPassword: (email: string) => Promise<AuthResponse>;
+  updateProfile: (data: Partial<UserDetails>) => Promise<ProfileUpdateResponse>;
+  loginWithGoogle: () => Promise<void>; // signInWithOAuth doesn't return error in promise, handles via redirect
   loginWithFacebook: () => Promise<void>;
   loginWithTwitter: () => Promise<void>;
   loginWithWeb3: () => Promise<void>;
   setUser?: (user: UserDetails | null) => void;
 }
+
+// For window.ethereum
+interface EthereumProvider {
+  request: (args: { method: string; params?: unknown[] | object }) => Promise<unknown>;
+  isMetaMask?: boolean;
+  // Add other common methods/properties if needed: on, removeListener, etc.
+}
+
+// Augment the global Window interface
+declare global {
+  interface Window {
+    ethereum?: EthereumProvider;
+  }
+}
+
 
 // Create a provider component
 export function AuthProvider({ children }: { children: ReactNode }) {
@@ -53,31 +75,26 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       async (event, session) => {
         const currentUser = session?.user;
         if (currentUser) {
-          // Fetch profile from your backend
           try {
-            const response = await fetch("/api/users/me"); // Adjust API endpoint as needed
+            const response = await fetch("/api/users/me"); 
             if (!response.ok) {
-              // If the /api/users/me endpoint returns 401, it means the user is not authenticated
-              // or the session is invalid on the backend. In this case, we should clear the local user state.
               if (response.status === 401) {
                 console.warn("User profile fetch returned 401, signing out locally.");
-                await supabase.auth.signOut(); // Clear supabase session too if backend says unauth
+                await supabase.auth.signOut(); 
                 setUser(null);
                 setIsLoading(false);
                 return;
               }
               throw new Error(`Failed to fetch user profile: ${response.statusText}`);
             }
-            const profile = await response.json();
+            const profile: AuthUserDetails = await response.json(); // Use imported UserDetails if more specific
 
-            // Merge Supabase user data with Prisma profile
             const mergedUser: UserDetails = {
               id: currentUser.id,
               email: currentUser.email,
-              // Prefer backend profile data for common fields if they exist
               displayName: profile.displayName || currentUser.user_metadata?.full_name,
               avatarUrl: profile.avatarUrl || currentUser.user_metadata?.avatar_url,
-              ...profile, // Data from your Prisma backend (takes precedence for overlapping fields not specified above)
+              ...profile, 
             };
             setUser(mergedUser);
 
@@ -87,8 +104,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
           } catch (error) {
             console.error("Error fetching user profile:", error);
-            // If fetching profile fails, sign out the user to ensure consistent state
-            // This prevents a situation where Supabase has a session but the app can't get user details
             await supabase.auth.signOut();
             setUser(null);
           }
@@ -99,7 +114,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     );
 
-    // Check initial session state on mount
     const checkSession = async () => {
       const { data: { session }, error: sessionError } = await supabase.auth.getSession();
 
@@ -116,15 +130,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           const response = await fetch("/api/users/me");
           if (!response.ok) {
             if (response.status === 401) {
-              // Backend considers user unauthenticated, so clear local session
-              // This can happen if the JWT is valid but the user doesn't exist in DB or other reasons
               await supabase.auth.signOut();
               setUser(null);
             } else {
               throw new Error(`Failed to fetch user profile on initial load: ${response.statusText}`);
             }
           } else {
-            const profile = await response.json();
+            const profile: AuthUserDetails = await response.json();
             const mergedUser: UserDetails = {
               id: currentUser.id,
               email: currentUser.email,
@@ -139,7 +151,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           }
         } catch (error) {
           console.error("Error fetching user profile on initial load:", error);
-          // Fallback: sign out if profile can't be fetched to avoid inconsistent state
           await supabase.auth.signOut();
           setUser(null);
         }
@@ -158,165 +169,119 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  const signIn = async (email: string, password: string) => {
+  const signIn = async (email: string, password: string): Promise<AuthResponse> => {
     setIsLoading(true);
     try {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
-      // User state and profile fetching will be handled by onAuthStateChange listener
-      // No need to call setIsLoading(false) here as onAuthStateChange will do it
       return { error: null };
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Sign in error:", error);
-      setIsLoading(false); // Set loading to false on error
-      return { error };
+      setIsLoading(false); 
+      return { error: error instanceof Error ? error : new Error(String(error)) };
     }
   };
 
-  const signOut = async () => {
+  const signOut = async (): Promise<void> => {
     setIsLoading(true);
     try {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
-      setUser(null); // Explicitly set user to null
-    } catch (error: any) {
+      setUser(null); 
+    } catch (error: unknown) {
       console.error("Sign out error:", error);
-      // Even if signout fails, try to clear local state
       setUser(null);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const signUp = async (email: string, password: string, userData?: Partial<UserDetails>) => {
+  const signUp = async (email: string, password: string, userData?: Partial<UserDetails>): Promise<AuthResponse> => {
     setIsLoading(true);
     try {
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
-          data: { // This data is stored in Supabase's auth.users.raw_user_meta_data
-            name: userData?.name, // Make sure 'name' is what you intend for raw_user_meta_data
-            user_type: userData?.userType, // Changed to snake_case as is common for metadata
-            // Any other initial data for Supabase user_metadata
+          data: { 
+            name: userData?.name, 
+            user_type: userData?.userType,
           },
-          // emailRedirectTo: `${window.location.origin}/auth/welcome`, // Optional: for email confirmation
         },
       });
       if (error) throw error;
-
-      // After successful Supabase signUp, you might want to create a profile in your own DB.
-      // This is often done via a Supabase Function triggered by a new user event,
-      // or by an API call from the client after signUp if email confirmation is not immediate.
-      // If using Supabase Functions (recommended), this client-side call might not be needed.
-      if (data.user && userData) {
-        // Example: Call your API to create a user profile if not handled by triggers/functions
-        // Consider what should happen if this API call fails.
-        // try {
-        //   await fetch('/api/users/create-profile', { // Ensure this endpoint exists
-        //     method: 'POST',
-        //     headers: {
-        //       'Content-Type': 'application/json',
-        //       // You might need to pass the new user's JWT if your endpoint is protected
-        //       // 'Authorization': `Bearer ${data.session?.access_token}`
-        //     },
-        //     body: JSON.stringify({ userId: data.user.id, ...userData })
-        //   });
-        // } catch (profileError) {
-        //   console.error("Error creating user profile post-signup:", profileError);
-        //   // Decide on error handling: sign out user? display message?
-        // }
-      }
-      // onAuthStateChange will handle setting the user if session starts, or after email confirmation.
-      // For immediate UI update for unconfirmed user, you might set parts of user data here,
-      // but it's generally better to rely on onAuthStateChange for consistency.
+      // Profile creation would typically be handled by onAuthStateChange or a trigger
       setIsLoading(false);
       return { error: null };
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Sign up error:", error);
       setIsLoading(false);
-      return { error };
+      return { error: error instanceof Error ? error : new Error(String(error)) };
     }
   };
 
-  const resetPassword = async (email: string) => {
+  const resetPassword = async (email: string): Promise<AuthResponse> => {
     setIsLoading(true);
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/auth/update-password`, // Make sure this route exists
+        redirectTo: `${window.location.origin}/auth/update-password`,
       });
       if (error) throw error;
       setIsLoading(false);
       return { error: null };
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Reset password error:", error);
       setIsLoading(false);
-      return { error };
+      return { error: error instanceof Error ? error : new Error(String(error)) };
     }
   };
 
-  const updateProfile = async (data: Partial<UserDetails>) => {
+  const updateProfile = async (data: Partial<UserDetails>): Promise<ProfileUpdateResponse> => {
     setIsLoading(true);
     if (!user || !user.id) {
       setIsLoading(false);
-      return { error: { message: "User not authenticated" } };
+      return { error: new Error("User not authenticated") };
     }
     try {
-      // Optional: Update Supabase auth user metadata if needed
-      // This is for data you want directly on the Supabase auth.user object (user_metadata)
-      // const { data: updatedSupabaseUser, error: supabaseError } = await supabase.auth.updateUser({
-      //   data: {
-      //     full_name: data.displayName, // Example: mapping UserDetails.displayName to Supabase's full_name
-      //     // other user_metadata fields
-      //   }
-      // });
-      // if (supabaseError) throw supabaseError;
-
-      // Update your backend Prisma profile via API
       const response = await fetch('/api/users/profile', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data), // Send only the fields to be updated
+        body: JSON.stringify(data),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || "Failed to update profile on backend");
       }
-      const updatedProfileFromBackend = await response.json();
+      const updatedProfileFromBackend: UserDetails = await response.json();
 
-      // Update local user state with merged data (prefer backend's source of truth)
       setUser(prevUser => ({
         ...prevUser,
-        ...updatedProfileFromBackend // Backend data takes precedence
+        ...updatedProfileFromBackend 
       }));
       setIsLoading(false);
-      return { error: null };
-    } catch (error: any) {
+      return { error: null, data: updatedProfileFromBackend };
+    } catch (error: unknown) {
       console.error("Update profile error:", error);
       setIsLoading(false);
-      return { error };
+      return { error: error instanceof Error ? error : new Error(String(error)) };
     }
   };
 
-  const loginWithProvider = async (provider: 'google' | 'facebook' | 'twitter') => {
+  const loginWithProvider = async (provider: 'google' | 'facebook' | 'twitter'): Promise<void> => {
     setIsLoading(true);
     try {
       const { error } = await supabase.auth.signInWithOAuth({
         provider,
         options: {
-          redirectTo: `${window.location.origin}/auth/callback`, // Ensure this callback route handles the session
+          redirectTo: `${window.location.origin}/auth/callback`,
         },
       });
       if (error) throw error;
-      // Supabase handles redirection. onAuthStateChange will pick up the session after redirect.
-      // setIsLoading(false) might not be reached if redirect happens fast.
-      // It will be set to false by onAuthStateChange eventually.
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(`${provider} login error:`, error);
-      setIsLoading(false); // Set loading to false on error
+      setIsLoading(false); 
     }
-    // No finally block for setIsLoading(false) here due to redirection.
   };
 
   const loginWithGoogle = () => loginWithProvider('google');
@@ -324,40 +289,51 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const loginWithTwitter = () => loginWithProvider('twitter');
 
 
-  const loginWithWeb3 = async () => {
+  const loginWithWeb3 = async (): Promise<void> => {
     setIsLoading(true);
-    // This is a placeholder. Real Web3 login needs backend verification.
     console.log("Web3 login requested - Placeholder Implementation");
-    const ethereum = (window as any).ethereum;
+    const ethereum = window.ethereum; // Uses augmented Window interface
     if (!ethereum) {
       console.warn("No wallet detected");
+      setIsLoading(false);
       return;
     }
     try {
-      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' }) as string[];
+      if (!accounts || accounts.length === 0) {
+        throw new Error("No accounts returned from wallet.");
+      }
       const address = accounts[0];
+      // Placeholder for actual sign-in logic which would involve backend verification
       await ethereum.request({
         method: 'personal_sign',
-        params: [address, address]
+        params: [address, `Logging in to Zion AI Marketplace: ${Date.now()}`] // Example message
       });
-      setUser({
+      // SIMULATED: In a real app, you'd call your backend with the signed message,
+      // backend verifies, creates/returns a session & user profile.
+      // Then onAuthStateChange or a manual setUser would update context.
+      setUser({ // This is a placeholder for actual user data post-Web3 auth
         id: address,
-        displayName: address,
-        profileComplete: true
+        displayName: `${address.substring(0, 6)}...${address.substring(address.length - 4)}`,
+        email: `${address}@example.web3`, // Placeholder email
+        profileComplete: false, // Assume profile needs completion
+        userType: "web3_user",
       });
-    } catch (err) {
+    } catch (err: unknown) {
       console.error('Web3 login failed', err);
+      // Consider showing a toast to the user
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const value = {
+  const value: AuthContextType = { // Ensure this matches AuthContextType
     user,
     isAuthenticated: !!user,
     isLoading,
     signIn,
     signOut,
     signUp,
-    // Add aliases for compatibility
     login: signIn,
     logout: signOut,
     signup: signUp,
@@ -367,13 +343,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     loginWithFacebook,
     loginWithTwitter,
     loginWithWeb3,
-    setUser
+    setUser // Expose setUser if needed by other parts of the app, otherwise can be internal
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
-// Custom hook to use the auth context
 export function useAuth(): AuthContextType {
   const context = useContext(AuthContext);
   if (context === undefined) {

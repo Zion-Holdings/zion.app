@@ -43,14 +43,14 @@ export function EnhancedSearchInput({
         return aStartsWith - bStartsWith;
       });
 
-      setFilteredSuggestions(filtered.slice(0, 8));
+      setFilteredSuggestions(filtered.slice(0, 8)); 
     }, 300),
     [setFilteredSuggestions] // setFilteredSuggestions from useState is stable
   );
 
   useEffect(() => {
     debouncedFilterSuggestions(value, searchSuggestions);
-    setHighlightedIndex(-1);
+    setHighlightedIndex(-1); 
     return () => {
       debouncedFilterSuggestions.cancel();
     };
@@ -74,12 +74,12 @@ export function EnhancedSearchInput({
     }
     setIsFocused(false);
     inputRef.current?.blur();
-    setHighlightedIndex(-1);
+    setHighlightedIndex(-1); 
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (!isFocused || filteredSuggestions.length === 0) {
-      if (e.key === 'Escape') {
+      if (e.key === 'Escape') { 
         e.preventDefault();
         setIsFocused(false);
         setHighlightedIndex(-1);
@@ -121,7 +121,7 @@ export function EnhancedSearchInput({
       role="combobox"
       aria-expanded={isFocused && filteredSuggestions.length > 0}
       aria-haspopup="listbox"
-      aria-controls="autocomplete-suggestions-list"
+      aria-controls="autocomplete-suggestions-list" 
     >
       <div className="relative">
         <Search 
@@ -135,7 +135,7 @@ export function EnhancedSearchInput({
             onChange(e.target.value);
           }}
           onFocus={() => setIsFocused(true)}
-          onKeyDown={handleKeyDown}
+          onKeyDown={handleKeyDown} 
           placeholder={placeholder}
           className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate"
           aria-autocomplete="list"
@@ -157,8 +157,8 @@ export function EnhancedSearchInput({
         searchTerm={value}
         onSelectSuggestion={handleSelectSuggestion}
         visible={isFocused}
-        highlightedIndex={highlightedIndex}
-        listId="autocomplete-suggestions-list"
+        highlightedIndex={highlightedIndex} 
+        listId="autocomplete-suggestions-list" 
       />
     </div>
   );

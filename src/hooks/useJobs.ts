@@ -56,7 +56,7 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
         .from("jobs")
         .update({ status: newStatus })
         .eq("id", jobId)
-        .eq("client_id", clientId);
+        .eq("client_id", clientId); 
       
       if (updateError) throw updateError;
       
@@ -77,7 +77,7 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
         .from("jobs")
         .delete()
         .eq("id", jobId)
-        .eq("client_id", clientId);
+        .eq("client_id", clientId); 
         
       if (deleteError) throw deleteError;
       

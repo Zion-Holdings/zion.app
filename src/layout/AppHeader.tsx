@@ -19,7 +19,7 @@ export function AppHeader() {
   const { user } = useAuth();
   
   // Call useMessaging unconditionally at the top level
-  const messagingData = useMessaging();
+  const messagingData = useMessaging(); 
   // Safely access unreadCount, defaulting to 0 if messagingData is null or unreadCount is not available
   const unreadCount = messagingData?.unreadCount || 0;
   

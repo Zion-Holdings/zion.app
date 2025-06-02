@@ -31,7 +31,7 @@ export function LazyLoad({
         }
       },
       {
-        rootMargin: "200px",
+        rootMargin: "200px", 
         threshold: 0.1,
       }
     );

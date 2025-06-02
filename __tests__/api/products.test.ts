@@ -21,6 +21,16 @@ jest.mock('@prisma/client', () => {
 
 let prisma: PrismaClient;
 
+interface ProductLike {
+  id: string;
+  name: string;
+  description?: string; // Optional as it's not used in all assertions directly on responseData items
+  images?: unknown[];   // Changed from any[] to unknown[]
+  price?: number | null; // Optional
+  currency?: string;    // Optional
+  tags?: string[];      // Optional
+}
+
 describe('/api/products API Endpoint', () => {
   let req: ReturnType<typeof createRequest>;
   let res: ReturnType<typeof createResponse>;
@@ -47,7 +57,7 @@ describe('/api/products API Endpoint', () => {
       // Note: The API sorts by GREATEST(name_similarity, description_similarity) DESC
       // So, product-gpt-high-score (0.9) should come first, then product-gpt-medium-score (0.85)
 
-      const mockProductsData = [
+      const mockProductsData: ProductLike[] = [
         { id: 'product-gpt-high-score', name: 'Super GPT Model', description: 'Latest generation AI', images: [], price: null, currency: 'USD', tags: [] },
         { id: 'product-gpt-medium-score', name: 'Advanced GPT Assistant', description: 'Your personal AI helper powered by GPT', images: [], price: null, currency: 'USD', tags: [] },
         // Not expecting 'product-other' to be fetched by findMany if threshold is 0.3 and it's filtered out by raw query logic
@@ -69,7 +79,7 @@ describe('/api/products API Endpoint', () => {
 
       // findMany will be called with IDs from filteredMockRawResults
       const expectedProductIds = filteredMockRawResults.map(p => p.id);
-      (prisma.product.findMany as jest.Mock).mockImplementation(async ({ where }) => {
+      (prisma.product.findMany as jest.Mock).mockImplementation(async ({ where }: { where: { id: { in: string[] } } }) => {
         return mockProductsData.filter(p => where.id.in.includes(p.id));
       });
 
@@ -87,7 +97,7 @@ describe('/api/products API Endpoint', () => {
 
       // 4. Assertions
       expect(res._getStatusCode()).toBe(200);
-      const responseData = JSON.parse(res._getData());
+      const responseData: ProductLike[] = JSON.parse(res._getData());
 
       expect(responseData.length).toBeGreaterThanOrEqual(1);
       expect(responseData.length).toBe(filteredMockRawResults.length); // Should match the count from raw query after 0.3 filter
@@ -104,7 +114,7 @@ describe('/api/products API Endpoint', () => {
       // `filteredMockRawResults` contains products that passed the >=0.3 threshold.
       // We know `product-gpt-high-score` had 0.9 and `product-gpt-medium-score` had 0.85. Both are >= 0.8.
       // The test ensures these are present and correctly ordered.
-      const idsFromResponse = responseData.map((p:any) => p.id);
+      const idsFromResponse = responseData.map((p: ProductLike) => p.id);
       expect(idsFromResponse).toContain('product-gpt-high-score');
       expect(idsFromResponse).toContain('product-gpt-medium-score');
 

@@ -44,7 +44,7 @@ export const useLoadMilestones = (projectId?: string) => {
             `)
             .eq('milestone_id', milestone.id)
             .order('created_at', { ascending: false });
-
+            
           if (activitiesError) throw activitiesError;
           
           activitiesMap[milestone.id] = activitiesData || [];

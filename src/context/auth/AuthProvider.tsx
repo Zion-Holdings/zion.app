@@ -243,16 +243,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       subscription.unsubscribe();
     };
   }, [
-    navigate,
-    dispatch,
-    handleSignedIn,
-    handleSignedOut,
-    location.pathname,
-    location.search,
-    location.state?.pendingAction,
-    location.state?.pendingActionArgs,
-    setAvatarUrl,
-    setIsLoading,
+    navigate, 
+    dispatch, 
+    handleSignedIn, 
+    handleSignedOut, 
+    location.pathname, 
+    location.search, 
+    location.state?.pendingAction, 
+    location.state?.pendingActionArgs, 
+    setAvatarUrl, 
+    setIsLoading, 
     setUser,
     setTokens // setTokens was also used indirectly via handleSignedIn if session is new
   ]);

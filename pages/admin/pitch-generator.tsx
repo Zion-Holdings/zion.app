@@ -111,8 +111,8 @@ const PitchGeneratorPage: NextPage = () => {
     }
   };
 
-  const fetchVersionHistory = useCallback(async () => {
-    if (versionHistory.length > 0 && deckVersion > 1) return;
+  const fetchVersionHistory = useCallback(async () => { 
+    if (versionHistory.length > 0 && deckVersion > 1) return; 
 
     setError(null);
     try {
@@ -126,19 +126,19 @@ const PitchGeneratorPage: NextPage = () => {
         if (sortedHistory.length > 0) {
             setDeckVersion(sortedHistory[0].version + 1);
         } else {
-            setDeckVersion(1);
+            setDeckVersion(1); 
         }
     } catch (e:any) {
         console.error('Failed to fetch version history:', e);
         setError(e.message || 'Failed to fetch version history.');
     }
-  }, [versionHistory.length, deckVersion]);
+  }, [versionHistory.length, deckVersion]); 
 
   useEffect(() => {
     if (user) {
         fetchVersionHistory();
     }
-  }, [user, fetchVersionHistory]);
+  }, [user, fetchVersionHistory]); 
 
 
   const handleInputSubmit = (data: any) => {
@@ -270,7 +270,7 @@ const PitchGeneratorPage: NextPage = () => {
         if (i > 0) pdf.addPage();
         pdf.addImage(imgData, 'PNG', xOffset, yOffset, newImgWidth, newImgHeight);
       }
-      pdf.save(`pitch-deck-v${deckVersion -1}.pdf`);
+      pdf.save(`pitch-deck-v${deckVersion -1}.pdf`); 
     } catch (e: any) {
       console.error('Failed to export PDF:', e);
       setError(e.message || 'Failed to export PDF.');
@@ -416,7 +416,7 @@ const PitchGeneratorPage: NextPage = () => {
             {versionHistory.length > 0 && (
               <div className="mt-10 pt-6 border-t border-gray-200">
                 <h3 className="text-xl font-semibold text-gray-700 mb-3">Version History</h3>
-                <ul className="space-y-3 max-h-60 overflow-y-auto">
+                <ul className="space-y-3 max-h-60 overflow-y-auto"> 
                   {versionHistory.map((versionItem, index) => (
                     <li key={index} className="p-3 bg-gray-50 rounded-md shadow-sm flex justify-between items-center">
                       <div>

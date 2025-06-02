@@ -1,6 +1,6 @@
 import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react"; // Added useCallback
 import { useQuery } from "@tanstack/react-query";
 import apiClient from "@/services/apiClient";
 import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
@@ -32,7 +32,7 @@ async function fetchEquipment(): Promise<ProductListing[]> {
 }
 
 export default function EquipmentPage() {
-  const [equipment, setEquipment] = useState<ProductListing[]>([]); // Initial empty or fallback
+  const [equipment, setEquipment] = useState<ProductListing[]>([]);
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -69,16 +69,14 @@ export default function EquipmentPage() {
       })
   );
 
-  // Interval for adding random equipment - might need adjustment
-  // This will add to the local 'equipment' state, which is initially populated by useQuery
   useEffect(() => {
     const interval = setInterval(() => {
       setEquipment((prev) => [...prev, generateRandomEquipment()]);
-    }, 120000); // add new equipment every 2 minutes
+    }, 120000); 
     return () => clearInterval(interval);
   }, []);
 
-  const handleRecommendations = async () => {
+  const handleRecommendations = useCallback(async () => { // Wrapped in useCallback
     if (!user) {
       navigate('/login?next=/equipment&reco=1');
       return;
@@ -91,14 +89,14 @@ export default function EquipmentPage() {
       console.error(err);
       toast({ title: 'Failed to load recommendations', variant: 'destructive' });
     }
-  };
+  }, [user, navigate, fetchRecommendations, toast]); // Added dependencies
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get('reco') === '1' && user) {
       handleRecommendations();
     }
-  }, [user, location.search]);
+  }, [user, location.search, handleRecommendations]); // Added handleRecommendations
 
   if (isLoadingEquipment || (equipmentError && !delayedError)) {
     return (
@@ -152,7 +150,7 @@ export default function EquipmentPage() {
           </Button>
         </div>
       </div>
-      {isFetchingRecommendations ? ( // This is the skeleton for AI recommendations, keep as is
+      {isFetchingRecommendations ? ( 
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
@@ -175,7 +173,7 @@ export default function EquipmentPage() {
           title="Datacenter Equipment"
           description="Browse professional hardware for modern datacenter and network deployments."
           categorySlug="equipment"
-          listings={equipment} // This 'equipment' state is updated by useQuery and the interval
+          listings={equipment} 
           categoryFilters={EQUIPMENT_FILTERS}
           initialPrice={{ min: 400, max: 50000 }}
           detailBasePath="/equipment"

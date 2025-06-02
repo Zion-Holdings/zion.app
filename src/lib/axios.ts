@@ -1,21 +1,34 @@
-export interface AxiosError extends Error {
-  response?: { status: number; data?: any };
+export interface AxiosErrorData {
+  message?: string;
+  // Add other common error properties if known
+  [key: string]: unknown;
 }
 
-type FulfilledFn = (value: any) => any | Promise<any>;
-type RejectedFn = (error: any) => any | Promise<any>;
+export interface AxiosError extends Error {
+  response?: { status: number; data?: AxiosErrorData | unknown }; // data changed from any
+}
 
-class InterceptorManager {
-  handlers: { fulfilled?: FulfilledFn; rejected?: RejectedFn }[] = [];
-  use(fulfilled?: FulfilledFn, rejected?: RejectedFn) {
+// V for value/response type of fulfilled, R for return type of fulfilled
+// E for error type of rejected
+type FulfilledFn<V = unknown, R = unknown> = (value: V) => R | Promise<R>;
+type RejectedFn<E = unknown> = (error: E) => unknown | Promise<unknown>; // Return of rejected can be anything or throw
+
+class InterceptorManager<V_FULFILL = unknown, R_FULFILL = unknown, E_REJECT = unknown> {
+  handlers: { fulfilled?: FulfilledFn<V_FULFILL, R_FULFILL>; rejected?: RejectedFn<E_REJECT> }[] = [];
+
+  use(fulfilled?: FulfilledFn<V_FULFILL, R_FULFILL>, rejected?: RejectedFn<E_REJECT>) {
     this.handlers.push({ fulfilled, rejected });
   }
 }
 
+// T for response data type, D for request data type (for POST)
 export interface AxiosInstance {
-  interceptors: { response: InterceptorManager };
-  get(url: string, config?: { params?: Record<string, any> } & RequestInit): Promise<any>;
-  post(url: string, data?: any, config?: RequestInit): Promise<any>;
+  interceptors: { 
+    response: InterceptorManager<{ data: unknown; status: number }, { data: unknown; status: number }, AxiosError> 
+  };
+  get<T = unknown>(url: string, config?: { params?: Record<string, string | number | boolean | undefined> } & Omit<RequestInit, 'body' | 'method'>): Promise<T>;
+  post<T = unknown, D = unknown>(url: string, data?: D, config?: Omit<RequestInit, 'body' | 'method'>): Promise<T>;
+  // Add other methods like delete, put, patch as needed with generics
 }
 
 interface AxiosDefaults {
@@ -27,7 +40,7 @@ const globalDefaults: AxiosDefaults = {
 };
 
 const globalInterceptors = {
-  response: new InterceptorManager(),
+  response: new InterceptorManager<{ data: unknown; status: number }, { data: unknown; status: number }, AxiosError>(),
 };
 
 export function create(config: { baseURL?: string; withCredentials?: boolean } = {}): AxiosInstance {
@@ -35,30 +48,36 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
   const withCreds = !!config.withCredentials;
 
   const instance: AxiosInstance = {
-    interceptors: { response: new InterceptorManager() },
-    async get(url, init = {}) {
-      const params = (init as any).params
-        ? '?' + new URLSearchParams((init as any).params).toString()
+    interceptors: { 
+      response: new InterceptorManager<{ data: unknown; status: number }, { data: unknown; status: number }, AxiosError>() 
+    },
+    async get<T = unknown>(url: string, init: { params?: Record<string, string | number | boolean | undefined> } & Omit<RequestInit, 'body' | 'method'> = {}) {
+      const params = init.params
+        ? '?' + new URLSearchParams(init.params as Record<string, string>).toString() // URLSearchParams expects string values
         : '';
       const opts = { ...init } as RequestInit;
-      delete (opts as any).params;
-      return request(baseURL + url + params, 'GET', opts);
+      delete (opts as { params?: unknown }).params; // Still need to delete the custom 'params'
+      // Assuming request function is adapted to return T
+      return request<T>(baseURL + url + params, 'GET', opts);
     },
-    async post(url, data = {}, init = {}) {
-      const headers = {
+    async post<T = unknown, D = unknown>(url: string, data?: D, init: Omit<RequestInit, 'body' | 'method'> = {}) {
+      const headers: HeadersInit = {
         'Content-Type': 'application/json',
-        ...(init as any).headers,
+        ...(init as { headers?: HeadersInit }).headers,
       };
-      const opts = { ...init, body: JSON.stringify(data), headers } as RequestInit;
-      return request(baseURL + url, 'POST', opts);
+      const opts: RequestInit = { 
+        ...init, 
+        body: data !== undefined ? JSON.stringify(data) : undefined, 
+        headers 
+      };
+      // Assuming request function is adapted to return T
+      return request<T>(baseURL + url, 'POST', opts);
     },
   };
 
-  // Include global interceptors on the instance
   instance.interceptors.response.handlers.push(...globalInterceptors.response.handlers);
 
-  async function request(url: string, method: string, init: RequestInit) {
-    // Read authToken from cookies
+  async function request<T = unknown>(url: string, method: string, init: RequestInit): Promise<T> {
     const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
       const [name, value] = cookie.split('=');
       acc[name] = value;
@@ -66,33 +85,51 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     }, {} as Record<string, string>);
     const authToken = cookies['authToken'] || localStorage.getItem('token');
 
-    const headers = { ...globalDefaults.headers.common, ...init.headers };
+    const headers: HeadersInit = { ...globalDefaults.headers.common, ...init.headers };
     if (authToken) {
-      headers['Authorization'] = `Bearer ${authToken}`;
+      (headers as Record<string, string>)['Authorization'] = `Bearer ${authToken}`;
     }
 
     const response = await fetch(url, { ...init, method, headers, credentials: withCreds ? 'include' : init.credentials });
-    let data: any = null;
+    
+    let responseData: unknown = null;
     try {
-      data = await response.clone().json();
-    } catch {}
-    const result = { data, status: response.status };
+      // Try to parse JSON, but don't fail if it's not JSON or empty
+      const text = await response.text();
+      if (text) {
+          responseData = JSON.parse(text);
+      }
+    } catch (e) {
+        // console.warn("Failed to parse response JSON or response was empty", e);
+    }
+
+    // This is the object passed to interceptors
+    let resultForInterceptor: { data: unknown; status: number } = { data: responseData, status: response.status };
+
     if (response.ok) {
-      let res: any = result;
       for (const h of instance.interceptors.response.handlers) {
         if (h.fulfilled) {
-          res = await h.fulfilled(res);
+          // The fulfilled interceptor can transform the result
+          resultForInterceptor = await h.fulfilled(resultForInterceptor);
         }
       }
-      return res;
+      return resultForInterceptor.data as T; // Assume data is now of type T after interceptors
     } else {
-      const err: AxiosError = Object.assign(new Error('Request failed'), { response: result });
+      const error: AxiosError = Object.assign(
+        new Error(response.statusText || 'Request failed'), 
+        { response: { data: responseData, status: response.status } }
+      );
+      
+      // Allow interceptors to handle/transform the error
       for (const h of instance.interceptors.response.handlers) {
         if (h.rejected) {
-          await h.rejected(err);
+          // If h.rejected throws, it will propagate and skip subsequent handlers.
+          // If it returns a value, that value is ignored, and the original error is thrown.
+          // If it transforms the error and wishes to propagate a new error, it must throw it.
+          await h.rejected(error); 
         }
       }
-      throw err;
+      throw error; // Original error (or one modified by an interceptor if it re-assigned properties on 'error')
     }
   }
 

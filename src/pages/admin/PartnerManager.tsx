@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react"; // Added useCallback
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -43,20 +42,26 @@ export default function PartnerManager() {
   const { user, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!isAuthenticated) {
-      navigate("/login");
-      return;
+  const filterPartners = useCallback((partnersToFilter: PartnerProfile[], status: string, query: string) => {
+    let filtered = partnersToFilter;
+    if (status !== "all") {
+      filtered = filtered.filter(p => p.status === status);
     }
+    if (query) {
+      const lowerQuery = query.toLowerCase();
+      filtered = filtered.filter(p => 
+        p.name.toLowerCase().includes(lowerQuery) ||
+        p.niche.toLowerCase().includes(lowerQuery) ||
+        p.bio?.toLowerCase().includes(lowerQuery) ||
+        p.website?.toLowerCase().includes(lowerQuery)
+      );
+    }
+    setFilteredPartners(filtered);
+  }, [setFilteredPartners]); // setFilteredPartners is stable
 
-    fetchPartners();
-  }, [isAuthenticated, navigate]);
-
-  const fetchPartners = async () => {
+  const fetchPartners = useCallback(async () => {
     try {
       setIsLoading(true);
-      // In a real application, check admin permissions here
-      
       const { data, error } = await supabase
         .from('partner_profiles')
         .select('*')
@@ -64,92 +69,9 @@ export default function PartnerManager() {
         
       if (error) throw error;
       
-      // If no data is returned, use mock data
-      if (!data || data.length === 0) {
-        const mockData: PartnerProfile[] = [
-          {
-            id: '1',
-            user_id: 'user1',
-            name: 'AI Bytes',
-            status: 'pending',
-            created_at: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
-            niche: 'AI Tutorials',
-            audience_size: '10k-50k',
-            social_media: { twitter: '@aibytes', youtube: 'AI Bytes' },
-            website: 'aibytes.com',
-            bio: 'We create AI tutorials and insights for developers.',
-            payout_method: 'paypal',
-            fraud_flags: 0,
-            commission_rate: 25
-          },
-          {
-            id: '2',
-            user_id: 'user2',
-            name: 'ML Academy',
-            status: 'approved',
-            created_at: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString(),
-            niche: 'Machine Learning Education',
-            audience_size: 'over100k',
-            social_media: { twitter: '@mlacademy', youtube: 'ML Academy' },
-            website: 'mlacademy.edu',
-            bio: 'Premiere online academy for machine learning enthusiasts.',
-            payout_method: 'bank',
-            fraud_flags: 0,
-            commission_rate: 30
-          },
-          {
-            id: '3',
-            user_id: 'user3',
-            name: 'Tech Insights',
-            status: 'rejected',
-            created_at: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
-            niche: 'Technology News',
-            audience_size: '1k-10k',
-            social_media: { twitter: '@techinsights' },
-            website: 'techinsights.io',
-            bio: 'We share insights about the latest in tech.',
-            payout_method: 'crypto',
-            fraud_flags: 2,
-            commission_rate: 20
-          },
-          {
-            id: '4',
-            user_id: 'user4',
-            name: 'CodeMaster',
-            status: 'approved',
-            created_at: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
-            niche: 'Coding Tutorials',
-            audience_size: '50k-100k',
-            social_media: { youtube: 'CodeMaster', linkedin: 'codemaster' },
-            website: 'codemaster.dev',
-            bio: 'Learn to code with our expert tutorials.',
-            payout_method: 'paypal',
-            fraud_flags: 0,
-            commission_rate: 25
-          },
-          {
-            id: '5',
-            user_id: 'user5',
-            name: 'AI Daily',
-            status: 'pending',
-            created_at: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
-            niche: 'AI News',
-            audience_size: '10k-50k',
-            social_media: { twitter: '@aidaily', instagram: '@aidailynews' },
-            website: 'aidaily.news',
-            bio: 'Daily updates on the world of artificial intelligence.',
-            payout_method: 'platform_credit',
-            fraud_flags: 1,
-            commission_rate: 20
-          }
-        ];
-        
-        setPartners(mockData);
-        filterPartners(mockData, activeTab, searchQuery);
-      } else {
-        setPartners(data as PartnerProfile[]);
-        filterPartners(data as PartnerProfile[], activeTab, searchQuery);
-      }
+      const fetchedPartners = (data || []) as PartnerProfile[];
+      setPartners(fetchedPartners);
+      filterPartners(fetchedPartners, activeTab, searchQuery); // Initial filter after fetch
     } catch (error) {
       console.error("Error fetching partners:", error);
       toast({
@@ -160,33 +82,20 @@ export default function PartnerManager() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [activeTab, searchQuery, filterPartners]); // Dependencies for fetchPartners
 
-  const filterPartners = (partners: PartnerProfile[], status: string, query: string) => {
-    let filtered = partners;
-    
-    // Filter by status
-    if (status !== "all") {
-      filtered = filtered.filter(p => p.status === status);
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate("/login");
+      return;
     }
-    
-    // Filter by search query
-    if (query) {
-      const lowerQuery = query.toLowerCase();
-      filtered = filtered.filter(p => 
-        p.name.toLowerCase().includes(lowerQuery) ||
-        p.niche.toLowerCase().includes(lowerQuery) ||
-        p.bio?.toLowerCase().includes(lowerQuery) ||
-        p.website?.toLowerCase().includes(lowerQuery)
-      );
-    }
-    
-    setFilteredPartners(filtered);
-  };
+    fetchPartners();
+  }, [isAuthenticated, navigate, fetchPartners]); // Added fetchPartners
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
-    filterPartners(partners, activeTab, e.target.value);
+    const query = e.target.value;
+    setSearchQuery(query);
+    filterPartners(partners, activeTab, query);
   };
 
   const handleTabChange = (value: string) => {
@@ -207,16 +116,12 @@ export default function PartnerManager() {
 
   const handleUpdateStatus = async (partnerId: string, status: 'approved' | 'rejected') => {
     try {
-      // In a real app, this would update the database
-      setPartners(partners.map(p => 
+      // Simulate DB update
+      const updatedPartners = partners.map(p => 
         p.id === partnerId ? { ...p, status } : p
-      ));
-      
-      filterPartners(
-        partners.map(p => p.id === partnerId ? { ...p, status } : p),
-        activeTab,
-        searchQuery
       );
+      setPartners(updatedPartners);
+      filterPartners(updatedPartners, activeTab, searchQuery);
       
       toast({
         title: status === 'approved' ? "Partner Approved" : "Partner Rejected",
@@ -224,7 +129,6 @@ export default function PartnerManager() {
         variant: status === 'approved' ? "default" : "destructive",
       });
       
-      // Close the dialog if open
       if (isDetailsOpen && selectedPartner?.id === partnerId) {
         setIsDetailsOpen(false);
       }
@@ -242,16 +146,11 @@ export default function PartnerManager() {
     if (!selectedPartner) return;
     
     try {
-      // Update commission rate
-      setPartners(partners.map(p => 
+      const updatedPartners = partners.map(p => 
         p.id === selectedPartner.id ? { ...p, commission_rate: commissionRate } : p
-      ));
-      
-      filterPartners(
-        partners.map(p => p.id === selectedPartner.id ? { ...p, commission_rate: commissionRate } : p),
-        activeTab,
-        searchQuery
       );
+      setPartners(updatedPartners);
+      filterPartners(updatedPartners, activeTab, searchQuery);
       
       toast({
         title: "Settings Updated",
@@ -449,7 +348,6 @@ export default function PartnerManager() {
         </CardContent>
       </Card>
       
-      {/* Partner Details Dialog */}
       <Dialog open={isDetailsOpen} onOpenChange={setIsDetailsOpen}>
         <DialogContent className="sm:max-w-lg bg-zion-blue border-zion-blue-light">
           <DialogHeader>
@@ -555,7 +453,6 @@ export default function PartnerManager() {
         </DialogContent>
       </Dialog>
       
-      {/* Partner Settings Dialog */}
       <Dialog open={isSettingsOpen} onOpenChange={setIsSettingsOpen}>
         <DialogContent className="bg-zion-blue border-zion-blue-light">
           <DialogHeader>

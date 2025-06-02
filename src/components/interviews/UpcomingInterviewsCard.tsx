@@ -28,7 +28,7 @@ export function UpcomingInterviewsCard() {
           .sort((a, b) => 
             parseISO(a.scheduled_date).getTime() - parseISO(b.scheduled_date).getTime()
           )
-          .slice(0, 3);
+          .slice(0, 3); 
         
         setUpcomingInterviews(upcoming);
       } catch (error) {
