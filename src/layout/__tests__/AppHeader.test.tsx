@@ -4,6 +4,7 @@ import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom'; // Needed because AppHeader contains NavLink/Link components via MainNavigation
 import { AppHeader } from '../AppHeader'; // Adjust path as necessary
 import { useAuth } from '@/hooks/useAuth';
+import type { AuthContextType } from '@/types/auth';
 import { useTranslation } from 'react-i18next';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useMessaging } from '@/context/MessagingContext';
@@ -76,7 +77,7 @@ describe('AppHeader', () => {
         user: { id: '1', displayName: 'Test User', name: 'Test User', email: 'test@example.com' },
         isLoading: false,
         // ... other properties returned by useAuth
-      });
+      } as unknown as AuthContextType);
     });
 
     it('renders LanguageSelector', () => {
@@ -109,7 +110,7 @@ describe('AppHeader', () => {
         user: null,
         isLoading: false,
         // ... other properties
-      });
+      } as unknown as AuthContextType);
     });
 
     it('does NOT render AvatarMenu', () => {
