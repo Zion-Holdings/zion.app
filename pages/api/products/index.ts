@@ -1,9 +1,14 @@
-import { PrismaClient, Prisma } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// Alias the Prisma generated Product type. Using Prisma namespace ensures
-// compatibility even if the Product type isn't exported at the top level.
-type ProductModel = Prisma.Product;
+// Minimal Product interface used for responses. We don't rely on the generated
+// Prisma types here to avoid build issues when the client hasn't been
+// generated.
+interface ProductModel {
+  id: string;
+  name: string;
+  description: string | null;
+}
 
 const prisma = new PrismaClient();
 
