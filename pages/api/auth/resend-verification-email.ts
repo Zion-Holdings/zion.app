@@ -1,15 +1,16 @@
 import { createClient } from '@supabase/supabase-js';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-// As per prompt: try with anon key first for supabase.auth.resend for user-initiated flow.
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.SUPABASE_URL;
+const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('Supabase URL or Anon Key is missing for resend-verification-email. Check .env variables.');
-  // This would ideally prevent the handler from being exported or used.
+if (!supabaseUrl || !serviceKey) {
+  const errorMessage = 'CRITICAL: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing for backend auth API. Service cannot start.';
+  console.error(errorMessage);
+  // This error will prevent the API route from being available if not configured.
+  throw new Error(errorMessage);
 }
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const supabase = createClient(supabaseUrl, serviceKey);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {

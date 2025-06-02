@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useQuoteWizard } from '@/hooks/useQuoteWizard';
+import { useState, useMemo } from 'react';
+import { useQuoteWizard, ServiceItem } from '@/hooks/useQuoteWizard';
 import { useDelayedError } from '@/hooks/useDelayedError';
 import { Loader2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -23,36 +23,50 @@ function StepIndicator({ step }: { step: number }) {
   );
 }
 
-export function QuoteWizard() {
+interface QuoteWizardProps {
+  category: 'services' | 'talent' | 'equipment';
+}
+
+export function QuoteWizard({ category }: QuoteWizardProps) {
   const [step, setStep] = useState(1);
-  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
   const [message, setMessage] = useState('');
   const [selectionError, setSelectionError] = useState('');
-  const { data, error, mutate } = useQuoteWizard('services');
+  const { data, error, mutate, isLoading } = useQuoteWizard(category);
   const delayedError = useDelayedError(error);
 
-  const loading = !data && !delayedError;
+  // Use isLoading from SWR for a more direct loading state
+  const loading = isLoading;
+
+  const selectedItem = useMemo(() => {
+    if (!data || !selectedItemId) return null;
+    return data.find(item => item.id === selectedItemId);
+  }, [data, selectedItemId]);
 
   const handleSelect = (id: string) => {
-    setSelectedItem(id);
+    setSelectedItemId(id);
     setStep(2);
   };
 
   const handleContinue = () => {
-    if (!selectedItem) {
-      setSelectionError('Please choose at least one service');
+    if (!selectedItemId) {
+      setSelectionError(`Please choose at least one ${category === 'services' ? 'service' : category === 'talent' ? 'talent' : 'item'}`);
       return;
     }
     setSelectionError('');
-    handleSelect(selectedItem);
+    // Step transition is handled by handleSelect if needed, or directly if item already selected
+    if (selectedItemId) {
+       setStep(2);
+    }
   };
 
   const handleSubmit = async () => {
-    if (!selectedItem) return;
+    if (!selectedItemId) return;
+    // TODO: Adapt API endpoint and payload based on category if necessary
     await fetch('/api/quotes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ service_id: selectedItem, user_message: message })
+      body: JSON.stringify({ item_id: selectedItemId, category: category, user_message: message })
     });
     setStep(3);
   };
@@ -62,18 +76,19 @@ export function QuoteWizard() {
     return (
       <div className="space-y-6">
         <StepIndicator step={step} />
-        {loading && (
-          <div className="flex justify-center py-12">
-            <Loader2 className="h-6 w-6 animate-spin" />
+        {loading && !delayedError && (
+          <div className="flex justify-center py-12" data-testid="loading-indicator">
+            <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
+            <p className="ml-2 text-muted-foreground">Loading {category}...</p>
           </div>
         )}
 
         {delayedError && (
-          <div className="space-y-2" data-testid="service-fetch-error-alert">
+          <div className="space-y-2" data-testid="fetch-error-alert">
             <Alert variant="destructive">
-              <AlertTitle>Network Error</AlertTitle>
+              <AlertTitle>Error Fetching {category}</AlertTitle>
               <AlertDescription>
-                There was a problem fetching the services. Please check your internet connection and try again.
+                There was a problem fetching the {category}. Please check your internet connection and try again.
               </AlertDescription>
             </Alert>
             <Button size="sm" onClick={() => mutate()} data-testid="retry-button">
@@ -82,30 +97,44 @@ export function QuoteWizard() {
           </div>
         )}
 
-        {data && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {data.map((item) => (
+        {!loading && !delayedError && data && data.length === 0 && (
+          <div className="text-center text-muted-foreground py-12">
+            No {category} found.
+          </div>
+        )}
+
+        {!loading && !delayedError && data && data.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {data.map((item: ServiceItem) => (
               <Card
-                data-testid={`service-card-${item.id}`}
+                data-testid={`item-card-${item.id}`}
                 key={item.id}
-                className={`p-4 space-y-2 cursor-pointer border-2 transition-colors ${selectedItem === item.id ? 'border-zion-purple' : 'hover:border-zion-purple/50'} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple`}
-                onClick={() => setSelectedItem(item.id)}
+                className={`p-4 space-y-2 cursor-pointer border-2 transition-colors rounded-lg shadow-sm ${selectedItemId === item.id ? 'border-zion-purple ring-2 ring-zion-purple' : 'hover:border-zion-purple/70'} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple`}
+                onClick={() => setSelectedItemId(item.id)}
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    setSelectedItem(item.id);
+                    setSelectedItemId(item.id);
                   }
                 }}
               >
-                <div>{item.title}</div>
+                <div className="font-semibold text-lg">{item.name}</div>
+                {/* Display other relevant info like price if available */}
+                {item.price !== undefined && (
+                  <div className="text-sm text-muted-foreground">
+                    Price: ${item.price.toFixed(2)}
+                  </div>
+                )}
+                {/* item.slug might not be directly displayable but useful for links if needed later */}
                 <Button
                   size="sm"
-                  data-testid={`request-quote-${item.id}`}
+                  variant="outline"
+                  data-testid={`select-item-${item.id}`}
                   onClick={(e) => { e.stopPropagation(); handleSelect(item.id); }}
-                  className="w-full"
+                  className="w-full mt-2"
                 >
-                  Request Quote
+                  Select this {category === 'services' ? 'Service' : category === 'talent' ? 'Talent' : 'Item'}
                 </Button>
               </Card>
             ))}
@@ -113,11 +142,11 @@ export function QuoteWizard() {
         )}
 
         {selectionError && (
-          <p className="text-red-500 text-sm" data-testid="service-selection-error">
+          <p className="text-red-500 text-sm mt-2" data-testid="selection-error">
             {selectionError}
           </p>
         )}
-        <Button onClick={handleContinue} disabled={loading || !!error}>
+        <Button onClick={handleContinue} disabled={loading || !!delayedError || !selectedItemId} className="mt-6">
           Continue
         </Button>
       </div>
@@ -129,26 +158,45 @@ export function QuoteWizard() {
       <div data-testid="details-step" className="space-y-4">
         <StepIndicator step={step} />
         {selectedItem && (
-          <div data-testid="selected-item" className="text-sm text-zion-slate-light">
-            Selected: {selectedItem}
+          <div data-testid="selected-item-name" className="text-lg font-semibold text-zion-slate-dark">
+            Selected {category === 'services' ? 'Service' : category === 'talent' ? 'Talent' : 'Item'}: {selectedItem.name}
           </div>
+        )}
+        {selectedItem && selectedItem.price !== undefined && (
+           <div className="text-md text-muted-foreground">
+             Price: ${selectedItem.price.toFixed(2)}
+           </div>
         )}
         <Textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           data-testid="message-input"
-          placeholder="Your message"
+          placeholder={`Any specific details about your request for ${selectedItem?.name || 'the selected item'}?`}
+          rows={4}
         />
-        <Button onClick={handleSubmit}>Submit</Button>
+        <div className="flex justify-between items-center">
+          <Button variant="outline" onClick={() => setStep(1)}>Back</Button>
+          <Button onClick={handleSubmit} disabled={!selectedItemId}>Submit Quote</Button>
+        </div>
       </div>
     );
   }
 
   if (step === 3) {
     return (
-      <div data-testid="success-step" className="space-y-4">
+      <div data-testid="success-step" className="space-y-4 text-center py-12">
         <StepIndicator step={step} />
-        <div>Quote Submitted</div>
+        <div className="text-2xl font-semibold text-green-600">Quote Submitted Successfully!</div>
+        <p className="text-muted-foreground">
+          Thank you for your request regarding {selectedItem?.name || 'the selected item'}. We will get back to you shortly.
+        </p>
+        <Button onClick={() => {
+          setStep(1);
+          setSelectedItemId(null);
+          setMessage('');
+        }}>
+          Request Another Quote
+        </Button>
       </div>
     );
   }

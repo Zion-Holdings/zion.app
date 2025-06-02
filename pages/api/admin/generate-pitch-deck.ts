@@ -28,8 +28,15 @@ async function generateDeckWithGPT(prompt: string, inputData: any, syncedData: a
 }
 
 // Initialize Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!supabaseUrl || !supabaseServiceRoleKey) {
+  const errorMessage = 'CRITICAL: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing for admin API. Service cannot start.';
+  console.error(errorMessage);
+  throw new Error(errorMessage);
+}
+
 const supabase: SupabaseClient = createClient(supabaseUrl, supabaseServiceRoleKey);
 
 const AuthenticatedRoles = ['founder', 'admin', 'finance'];
