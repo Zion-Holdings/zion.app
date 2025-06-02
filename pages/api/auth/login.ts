@@ -46,20 +46,32 @@ export default async function handler(req: Req, res: JsonRes) {
   });
 
   if (error) {
-    if (/Email not confirmed/i.test(error.message)) {
+    // Log the full error for debugging purposes on the server
+    console.error('Supabase signInWithPassword error:', error);
+
+    if (error.message && /Email not confirmed/i.test(error.message)) {
+      // This check seems to be good, keep it.
       res.status(403).json({
         error: "Email not confirmed. Please check your inbox to verify your email.",
         code: "EMAIL_NOT_CONFIRMED"
       });
+    } else if (error.message && /Invalid login credentials/i.test(error.message)) {
+      // This is a common Supabase error for wrong password or user not found
+      res.status(401).json({ error: 'Invalid credentials', code: 'INVALID_CREDENTIALS' });
+    } else if (error.name === 'AuthApiError' && error.status === 400) {
+      // Catchall for other Bad Request errors from Supabase Auth, often due to invalid input client-side but sometimes for other auth issues
+      // Treat as invalid credentials if not more specific.
+      res.status(401).json({ error: 'Invalid credentials', code: 'INVALID_CREDENTIALS' });
     } else {
-      res.status(401).json({ error: 'Invalid credentials' });
+      // Generic fallback for other errors
+      res.status(error.status || 500).json({ error: error.message || 'An unexpected error occurred during login.', code: 'LOGIN_FAILED' });
     }
     return;
   }
 
   if (!data?.session) {
     // This case should ideally be caught by the 'error' above, but as a fallback:
-    res.status(401).json({ error: 'Invalid credentials - no session data' });
+    res.status(401).json({ error: 'Invalid credentials - no session data', code: 'NO_SESSION_DATA' });
     return;
   }
 
