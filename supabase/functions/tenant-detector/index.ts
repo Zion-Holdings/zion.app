@@ -74,7 +74,7 @@ serve(async (req) => {
       tenantInfo = data as TenantInfo;
     } else {
       // Try matching custom domain first
-      let { data, error } = await supabase
+      const { data, error } = await supabase
         .from('whitelabel_tenants')
         .select('id, brand_name, subdomain, custom_domain, primary_color, logo_url, theme_preset')
         .eq('custom_domain', hostname)
