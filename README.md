@@ -27,6 +27,19 @@ This project is a multifaceted web platform designed to integrate e-commerce cap
 *   **Service Integrations:** Connects with external services like Slack (see `docs/Integrations.md`) and handles payments via Stripe (see `docs/Payments.md` for environment variable details).
 *   **Rich Product Media:** Supports MP4 videos and GLB 3D models for product listings (`video_url`, `model_url` fields in database).
 
+### Visual Feature Summary
+
+| Feature | Icon |
+| ------- | ---- |
+| User Authentication | ![Auth Icon](docs/images/icon-auth.svg) |
+| E-commerce Platform | ![E-commerce Icon](docs/images/icon-ecommerce.svg) |
+| Talent Marketplace | ![Talent Icon](docs/images/icon-talent.svg) |
+| AI-Powered Capabilities | ![AI Icon](docs/images/icon-ai.svg) |
+| Content Management | ![Content Icon](docs/images/icon-content.svg) |
+| Real-time Interactions | ![Realtime Icon](docs/images/icon-realtime.svg) |
+
+![Features Infographic](docs/images/features-infographic.svg)
+
 ## Architecture Overview
 
 This project utilizes a modern, multi-component architecture:
