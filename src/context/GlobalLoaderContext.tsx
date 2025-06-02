@@ -45,14 +45,14 @@ export function GlobalLoaderProvider({ children }: { children: ReactNode }) {
     ): ReturnType<typeof originalGet> => {
       setLoading(true);
       return originalGet(...args);
-    };
+    }) as typeof axios.get;
 
     axios.post = async (
       ...args: Parameters<typeof originalPost>
     ): ReturnType<typeof originalPost> => {
       setLoading(true);
       return originalPost(...args);
-    };
+    }) as typeof axios.post;
 
     return () => {
       axios.get = originalGet;
