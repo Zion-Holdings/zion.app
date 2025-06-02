@@ -52,8 +52,6 @@ export function FilterSidebar({
     }).format(value);
   };
 
-  };
-
   // Initialize internal states for sliders to overall min/max if current selections are null
   // const currentMin = selectedMinPrice ?? overallMinPrice; // Will be replaced by actualMin
   // const currentMax = selectedMaxPrice ?? overallMaxPrice; // Will be replaced by actualMax
