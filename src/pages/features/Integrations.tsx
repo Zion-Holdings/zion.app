@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
+import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
 
 export default function IntegrationsFeature() {
   const schema = {
@@ -13,6 +14,12 @@ export default function IntegrationsFeature() {
     "description": "Connect Zion with Slack, your website and other tools via our API and widgets.",
     "url": "https://app.ziontechgroup.com/features/integrations"
   };
+
+  const { markSlackConnected } = useAdvancedOnboardingStatus();
+
+  useEffect(() => {
+    markSlackConnected();
+  }, [markSlackConnected]);
 
   return (
     <>

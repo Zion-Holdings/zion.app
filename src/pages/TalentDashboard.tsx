@@ -13,6 +13,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { TalentOnboardingSteps } from "@/components/onboarding/TalentOnboardingSteps";
+import { AdvancedOnboardingSteps } from "@/components/onboarding/AdvancedOnboardingSteps";
+import { useOnboardingStatus } from "@/hooks/useOnboardingStatus";
 import { MyApplications } from "@/components/jobs/MyApplications";
 import { ProjectOfferBanner } from "@/components/projects/ProjectOfferBanner";
 import { UpcomingInterviewsCard } from "@/components/interviews/UpcomingInterviewsCard";
@@ -20,6 +22,12 @@ import { UpcomingInterviewsCard } from "@/components/interviews/UpcomingIntervie
 function TalentDashboardContent() {
   const { user } = useAuth();
   const [activeTab, setActiveTab] = useState("job-matches");
+  const onboardingStatus = useOnboardingStatus();
+  const showAdvanced =
+    onboardingStatus.profileCompleted &&
+    onboardingStatus.skillsAdded &&
+    onboardingStatus.availabilitySet &&
+    onboardingStatus.matchReceived;
 
   return (
     <>
@@ -102,6 +110,11 @@ function TalentDashboardContent() {
             
             {/* New Onboarding Progress Tracker */}
             <TalentOnboardingSteps />
+            {showAdvanced && (
+              <div className="mt-6">
+                <AdvancedOnboardingSteps />
+              </div>
+            )}
             
             {/* Upcoming Interviews Card */}
             <div className="mt-8">

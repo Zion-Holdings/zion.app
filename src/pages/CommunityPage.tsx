@@ -8,6 +8,7 @@ import ForumCategories from "@/components/community/ForumCategories";
 import PostCard from "@/components/community/PostCard";
 import NewPostDialog from "@/components/community/NewPostDialog";
 import { useAuth } from "@/hooks/useAuth";
+import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
 import { useCommunity } from "@/context";
 import type { ForumCategory } from "@/types/community";
 
@@ -19,6 +20,7 @@ export default function CommunityPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const [showNewPost, setShowNewPost] = useState(false);
+  const { markCommunityVisited } = useAdvancedOnboardingStatus();
 
   const initialCategory = searchParams.get("category") as ForumCategory | null;
 
@@ -30,7 +32,8 @@ export default function CommunityPage() {
       return;
     }
     setShowNewPost(wantsNew && !!user);
-  }, [searchParams, user, navigate, initialCategory]);
+    markCommunityVisited();
+  }, [searchParams, user, navigate, initialCategory, markCommunityVisited]);
 
   const handleDialogChange = (open: boolean) => {
     setShowNewPost(open);

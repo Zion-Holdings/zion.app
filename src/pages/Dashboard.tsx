@@ -7,12 +7,15 @@ import { Badge } from "@/components/ui/badge";
 import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings } from "lucide-react";
 import { createTestNotification, createOnboardingNotification, createSystemNotification } from "@/utils/notifications";
 import { NotificationBell } from "@/components/NotificationBell";
+import { GuidedTour } from "@/components/onboarding/GuidedTour";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
   const { toast } = useToast();
+  const roleForTour =
+    user.userType === 'employer' || user.userType === 'buyer' ? 'client' : 'talent';
 
   if (!user) return null;
 
@@ -54,7 +57,8 @@ export default function Dashboard() {
                     {user.userType ? user.userType.charAt(0).toUpperCase() + user.userType.slice(1) : "New User"}
                   </Badge>
                   
-                  <Button 
+                  <Button
+                    id="profile-link"
                     className="w-full flex items-center gap-2 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
                     onClick={() => window.location.href = "/profile"}
                   >
@@ -153,7 +157,7 @@ export default function Dashboard() {
                   Recent Notifications
                 </h3>
                 <div className="space-y-4">
-                  <Link to="/notifications" className="block">
+                  <Link to="/notifications" className="block" id="notifications-link">
                     <Button variant="outline" className="w-full">
                       <Bell className="mr-2 h-4 w-4" />
                       View All Notifications
@@ -224,7 +228,7 @@ export default function Dashboard() {
                 </div>
                 
                 {/* Community Section */}
-                <div>
+                <div id="community-section">
                   <h3 className="text-lg font-bold text-white mb-4">Community</h3>
                   <CommunityDiscussion />
                 </div>
@@ -233,6 +237,7 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+      <GuidedTour role={roleForTour} />
       <Footer />
     </>
   );

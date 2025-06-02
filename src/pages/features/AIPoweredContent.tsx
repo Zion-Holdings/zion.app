@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { useFeatureUsage } from "@/hooks/useFeatureUsage";
+import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
 
 export default function AIPoweredContent() {
   useFeatureUsage('ZionGPT');
@@ -15,6 +16,12 @@ export default function AIPoweredContent() {
     "description": "Generate SEO-optimized content using ZionGPT to boost your online visibility.",
     "url": "https://app.ziontechgroup.com/features/ai-content-generation"
   };
+
+  const { markAiExplored } = useAdvancedOnboardingStatus();
+
+  useEffect(() => {
+    markAiExplored();
+  }, [markAiExplored]);
 
   return (
     <>
