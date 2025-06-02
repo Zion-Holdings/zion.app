@@ -7,6 +7,7 @@ import * as z from 'zod';
 
 // Assuming shadcn/ui components are available and auto-imported or aliased via @/components/ui
 import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/useToast';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -39,6 +40,7 @@ type ProposalFormData = z.infer<typeof proposalSchema>;
 
 const CreateProposalPage: React.FC = () => {
   const router = useRouter();
+  const { errorToast } = useToast();
   // const { user, token } = useAuth(); // Example
   // const { address: walletAddress } = useWallet(); // Example
 
@@ -102,7 +104,7 @@ const CreateProposalPage: React.FC = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        console.error("Submission error:", errorData);
+        errorToast("Proposal submission failed. Please check the details and try again.");
         throw new Error(errorData.detail || Object.values(errorData).join(', ') || `Error: ${response.status}`);
       }
 
@@ -110,7 +112,7 @@ const CreateProposalPage: React.FC = () => {
       router.push(`/governance/${newProposal.id}`);
     } catch (err: any) {
       setApiError(err.message || 'Failed to create proposal.');
-      console.error(err);
+      errorToast("An unexpected error occurred during submission. Please try again.");
     } finally {
       setIsLoading(false);
     }

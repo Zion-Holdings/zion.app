@@ -6,6 +6,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import EmptyState from '@/components/community/EmptyState';
 import { createClient } from '@supabase/supabase-js'; // For getServerSideProps
 import PostCard from '@/components/community/PostCard';
+import { useToast } from '@/hooks/useToast';
 import type { ForumPost } from '@/types/community';
 import { fetchPostsByCategory } from '@/services/forumPostService';
 
@@ -18,6 +19,7 @@ interface CategoryPageProps {
 }
 
 const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, hasSession, category }) => {
+  const { errorToast } = useToast();
   const [posts, setPosts] = useState<ForumPost[]>(initialPosts);
   const [page, setPage] = useState(2); // Start fetching from page 2
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +39,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, hasSession, c
         setHasMore(false);
       }
     } catch (error) {
-      console.error("Failed to fetch more posts:", error);
+      errorToast("Failed to fetch more posts. Please try again.");
       // Optionally, handle error state in UI
     } finally {
       setIsLoading(false);

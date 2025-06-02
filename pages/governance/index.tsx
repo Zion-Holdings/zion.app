@@ -4,6 +4,7 @@ import Link from 'next/link';
 import ProposalCard, { Proposal } from '@/components/governance/ProposalCard'; // Adjust path if needed
 // import MainLayout from '@/components/layout/MainLayout'; // If exists
 import { Button } from '@/components/ui/button'; // Adjust path
+import { useToast } from '@/hooks/useToast';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'; // Adjust path
 import { Input } from '@/components/ui/input'; // For potential text search filter
 import { ConnectWalletButton } from '@/components/ConnectWalletButton'; // Assuming this is the correct path
@@ -12,6 +13,7 @@ import { ConnectWalletButton } from '@/components/ConnectWalletButton'; // Assum
 const GovernancePage: React.FC = () => {
   const [proposals, setProposals] = useState<Proposal[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { errorToast } = useToast();
   const [error, setError] = useState<string | null>(null);
 
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
@@ -39,7 +41,7 @@ const GovernancePage: React.FC = () => {
         setProposals(Array.isArray(data) ? data : (data.results || []));
       } catch (err: any) {
         setError(err.message);
-        console.error("Fetch error:", err);
+        errorToast("Failed to fetch proposals. Please try again.");
       } finally {
         setIsLoading(false);
       }

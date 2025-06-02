@@ -5,6 +5,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { captureException } from './utils/sentry';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
+import { Toaster } from 'react-hot-toast';
 import { WalletProvider } from './context/WalletContext'; // Added WalletProvider
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
@@ -145,6 +146,7 @@ const App = () => {
       <WhitelabelProvider>
         <WalletProvider> {/* Added WalletProvider */}
           <ThemeProvider defaultTheme="dark">
+            <Toaster position="top-right" />
             <ToastProvider>
             <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
               <LocalErrorBoundary>

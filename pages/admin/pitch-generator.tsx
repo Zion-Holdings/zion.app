@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { useToast } from '@/hooks/useToast';
 
 interface Slide {
   id: string;
@@ -22,6 +23,7 @@ interface Slide {
 const PitchGeneratorPage: NextPage = () => {
   const { user, isLoading: loading } = useAuth();
   const router = useRouter();
+  const { errorToast } = useToast();
 
   const [currentStep, setCurrentStep] = useState<'inputs' | 'data' | 'editor'>('inputs');
   const [inputData, setInputData] = useState<any>(null);
@@ -104,7 +106,7 @@ const PitchGeneratorPage: NextPage = () => {
       alert(`Version ${newVersionNumber} saved successfully (mocked). Now working on v${newVersionNumber + 1}.`);
 
     } catch (e: any) {
-      console.error('Failed to save version:', e);
+      errorToast('Failed to save version. Please try again.');
       setError(e.message || 'Failed to save version.');
     } finally {
       setIsSavingVersion(false);
@@ -141,7 +143,7 @@ const PitchGeneratorPage: NextPage = () => {
             setDeckVersion(1); // Start with v1 if no history
         }
     } catch (e:any) {
-        console.error('Failed to fetch version history:', e);
+        errorToast('Failed to fetch version history. Please try again.');
         setError(e.message || 'Failed to fetch version history.');
     }
   };
@@ -208,7 +210,7 @@ const PitchGeneratorPage: NextPage = () => {
       // alert(`New deck generated for Version ${deckVersion}. Save if you want to keep it.`);
 
     } catch (e: any) {
-      console.error('Failed to generate pitch deck:', e);
+      errorToast('Failed to generate pitch deck. Please try again.');
       setError(e.message || 'Failed to generate pitch deck. Check console for details.');
       setGeneratedSlides([]);
     } finally {
@@ -287,7 +289,7 @@ const PitchGeneratorPage: NextPage = () => {
       }
       pdf.save(`pitch-deck-v${deckVersion -1}.pdf`); // Save with the version number that was just saved
     } catch (e: any) {
-      console.error('Failed to export PDF:', e);
+      errorToast('Failed to export PDF. Please try again.');
       setError(e.message || 'Failed to export PDF.');
     } finally {
       setIsExporting(false);
