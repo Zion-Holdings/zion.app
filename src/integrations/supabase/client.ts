@@ -50,15 +50,11 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
     throw new Error('Failed to connect to Supabase');
   }
 
-  const HeadersCtor = typeof Headers === 'undefined' ? NodeHeaders : Headers;
+  // Ensure 'fetchHeaders' is compatible with the global fetch
+  const fetchHeaders = new Headers(options.headers as HeadersInit);
 
-  const headers =
-    options.headers instanceof HeadersCtor
-      ? options.headers
-      : new HeadersCtor(options.headers);
-
-  if (!headers.has('apikey')) {
-    headers.set('apikey', supabaseAnonKey);
+  if (!fetchHeaders.has('apikey')) {
+    fetchHeaders.set('apikey', supabaseAnonKey);
   }
 
   const maxRetries = 3;
@@ -68,7 +64,7 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
     try {
       const response = await fetch(url, {
         ...options,
-        headers,
+        headers: fetchHeaders, // Use the new 'fetchHeaders' variable
       });
       
       if (!response.ok) {
