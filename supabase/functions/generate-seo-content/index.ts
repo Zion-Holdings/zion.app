@@ -16,7 +16,7 @@ console.log(JSON.stringify({
 
 serve(async (req) => {
   const requestTimestamp = new Date().toISOString();
-  let errorLoggerPayload: any = { // For logging errors before returning response
+  const errorLoggerPayload: any = { // For logging errors before returning response
     timestamp: requestTimestamp,
     serviceName: 'generate-seo-content',
     method: req.method,
@@ -58,7 +58,7 @@ serve(async (req) => {
 
     const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
-    let systemMessage = "You are an expert SEO content writer and copywriter.";
+    const systemMessage = "You are an expert SEO content writer and copywriter.";
     let finalUserPrompt = "";
 
     switch (contentType) {

@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 // Integrate axe-core accessibility auditing in development
 if (process.env.NODE_ENV !== 'production') {
   // Dynamically require to avoid bundling in production
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
+   
   const axe = require('@axe-core/react');
   axe(React, ReactDOM, 1000);
 }
