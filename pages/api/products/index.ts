@@ -40,7 +40,7 @@ export default async function handler(
       // Step 1: Use $queryRawUnsafe to get IDs and similarity scores
       // We need to ensure pg_trgm is enabled in the DB for similarity() to work.
       // The previous subtask should have created a migration for this.
-      const rawResults = await prisma.$queryRawUnsafe<Array<{ id: string; name_similarity: number; description_similarity: number }>>(
+      const rawResults = await prisma.$queryRawUnsafe(
         `SELECT
            id,
            similarity(name, $1) AS name_similarity,
@@ -49,7 +49,7 @@ export default async function handler(
          WHERE similarity(name, $1) >= 0.3 OR similarity(description, $1) >= 0.3
          ORDER BY GREATEST(similarity(name, $1), similarity(description, $1)) DESC`,
         searchQuery
-      );
+      ) as Array<{ id: string; name_similarity: number; description_similarity: number }>;
 
       const productIds = rawResults.map(p => p.id);
 
