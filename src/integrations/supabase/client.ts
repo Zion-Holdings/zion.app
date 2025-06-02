@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { Headers as NodeHeaders } from 'node-fetch';
 import { supabaseStorageAdapter } from './safeStorageAdapter';
 
 const supabaseUrl =
@@ -49,10 +50,12 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
     throw new Error('Failed to connect to Supabase');
   }
 
+  const HeadersCtor = typeof Headers === 'undefined' ? NodeHeaders : Headers;
+
   const headers =
-    options.headers instanceof Headers
+    options.headers instanceof HeadersCtor
       ? options.headers
-      : new Headers(options.headers);
+      : new HeadersCtor(options.headers);
 
   if (!headers.has('apikey')) {
     headers.set('apikey', supabaseAnonKey);
