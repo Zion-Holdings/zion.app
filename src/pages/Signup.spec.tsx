@@ -36,13 +36,11 @@ const mockRegisterUser = registerUser as jest.Mock;
 
 describe('Signup Page', () => {
   let mockSetUser: jest.Mock;
-  let mockSetTokens: jest.Mock;
   let mockAuthContextValue: AuthContextType;
 
   beforeEach(() => {
     jest.clearAllMocks();
     mockSetUser = jest.fn();
-    mockSetTokens = jest.fn();
 
     // Reset useLocation mock to default before each test
     mockUseLocation.mockReturnValue({ search: '', pathname: '/signup' });
@@ -52,7 +50,6 @@ describe('Signup Page', () => {
       isAuthenticated: false,
       isLoading: false,
       setUser: mockSetUser,
-      setTokens: mockSetTokens,
       login: jest.fn(),
       register: jest.fn(),
       signup: jest.fn(),
@@ -126,7 +123,6 @@ describe('Signup Page', () => {
       expect(safeStorage.setItem).toHaveBeenCalledWith('authToken', mockToken);
     });
     expect(mockSetUser).toHaveBeenCalledWith(mockUser);
-    expect(mockSetTokens).toHaveBeenCalledWith({ accessToken: mockToken, refreshToken: null });
     expect(mockNavigate).toHaveBeenCalledWith('/', { replace: true });
     expect(toast.success).toHaveBeenCalledWith('Registration successful! Welcome!');
 
@@ -155,7 +151,6 @@ describe('Signup Page', () => {
     expect(screen.getByText('Email is already registered')).toBeInTheDocument(); // Check form field error
     expect(safeStorage.setItem).not.toHaveBeenCalled();
     expect(mockSetUser).not.toHaveBeenCalled();
-    expect(mockSetTokens).not.toHaveBeenCalled();
     expect(mockNavigate).not.toHaveBeenCalled();
   });
 
@@ -227,7 +222,6 @@ describe('Signup Page', () => {
     expect(screen.getByText('Internal Server Error')).toBeInTheDocument();
     expect(safeStorage.setItem).not.toHaveBeenCalled();
     expect(mockSetUser).not.toHaveBeenCalled();
-    expect(mockSetTokens).not.toHaveBeenCalled();
   });
 
   it('should not call mailchimpService if newsletter is not opted in', async () => {
