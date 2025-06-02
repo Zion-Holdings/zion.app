@@ -30,9 +30,9 @@ These components work in tandem to connect professionals and businesses.
 *   **Rich Media Product Listings:** Support for video and 3D models in product displays.
 *   **Search Functionality:** Advanced search potentially powered by Elasticsearch.
 *   **Admin Dashboard:** Tools for administration and management of the platform.
-*   **API & Integrations:** Supports various integrations (e.g., Slack) and provides an API (details to be confirmed).
+*   **API & Integrations:** Supports integrations with Slack, Salesforce and Microsoft Teams, and provides an API (details to be confirmed).
 *   **Responsive Design:** User interface adapts to different screen sizes (implied by modern frontend stack).
-*   **Service Integrations:** Connects with external services like Slack (see `docs/Integrations.md`) and handles payments via Stripe (see `docs/Payments.md` for environment variable details).
+*   **Service Integrations:** Connects with external services like Slack, Salesforce and Microsoft Teams (see `docs/Integrations.md`) and handles payments via Stripe (see `docs/Payments.md` for environment variable details).
 *   **Rich Product Media:** Supports MP4 videos and GLB 3D models for product listings (`video_url`, `model_url` fields in database).
 
 ### Visual Feature Summary
