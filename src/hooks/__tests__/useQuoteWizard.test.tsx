@@ -10,7 +10,7 @@ jest.mock('@/utils/sentry', () => ({
 const mockFetcher = jest.fn();
 
 // Helper to wrap hook with SWRConfig and a clear cache
-const renderUseQuoteWizard = (category: string)_ => {
+const renderUseQuoteWizard = (category: string) => {
   return renderHook(() => useQuoteWizard(category), {
     wrapper: ({ children }) => (
       <SWRConfig value={{ provider: () => new Map(), fetcher: mockFetcher }}>

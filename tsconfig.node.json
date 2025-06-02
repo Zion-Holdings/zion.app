@@ -6,10 +6,9 @@
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
-  "exclude": ["./dist", "./node_modules"],
+  "exclude": ["./dist", "./node_modules", "./src"], // Explicitly exclude src
   "include": [
-    "vite.config.ts",
-    "src/**/*.ts",
-    "src/data/sampleServices.ts"
+    "vite.config.ts"
+    // Add any other Node-specific .ts files here if necessary, e.g., scripts at the root
   ]
 }

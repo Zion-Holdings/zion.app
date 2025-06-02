@@ -13,334 +13,9 @@ import useSWRMutation from "swr/mutation";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useDelayedError } from '@/hooks/useDelayedError';
 
-// Sample datacenter equipment listings
-// const EQUIPMENT_LISTINGS: ProductListing[] = [ // Keep for fallback or remove if not needed after API is stable
-  {
-    id: "2u-rack-mount-server",
-    title: "2U Rack Mount Server",
-    description:
-      "High‑density server optimized for virtualization and private cloud deployments.",
-    category: "Servers",
-    price: 4200,
-    currency: "$",
-    tags: ["Xeon", "64GB RAM", "Dual PSU"],
-    author: {
-      name: "DataCore",
-      id: "datacore",
-      avatarUrl:
-        "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=100&h=100",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1585079548264-ef0c62f1db1f?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-03-01T10:00:00.000Z",
-    rating: 4.8,
-    reviewCount: 23,
-  },
-  {
-    id: "10gbe-switch",
-    title: "48‑Port 10GbE Switch",
-    description:
-      "Enterprise switch delivering ultra‑low latency for mission critical applications.",
-    category: "Networking",
-    price: 6800,
-    currency: "$",
-    tags: ["Layer 3", "SFP+", "Managed"],
-    author: {
-      name: "NetWave",
-      id: "netwave",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1587202372775-67d85b1cce31?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-03-05T12:30:00.000Z",
-    rating: 4.7,
-    reviewCount: 15,
-  },
-  {
-    id: "intelligent-pdu",
-    title: "Intelligent Rack PDU",
-    description:
-      "Remotely monitor power consumption with per‑outlet switching and metering.",
-    category: "Power",
-    price: 950,
-    currency: "$",
-    tags: ["Remote", "Metered", "24 Outlets"],
-    author: {
-      name: "PowerHub",
-      id: "powerhub",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-02-18T09:15:00.000Z",
-    rating: 4.9,
-    reviewCount: 32,
-  },
-  {
-    id: "modular-ups",
-    title: "Modular Online UPS",
-    description:
-      "Scalable uninterrupted power supply with hot‑swappable battery modules.",
-    category: "Power",
-    price: 8200,
-    currency: "$",
-    tags: ["Hot Swap", "Scalable", "LCD"],
-    author: {
-      name: "VoltSecure",
-      id: "voltsecure",
-      avatarUrl:
-        "https://images.unsplash.com/photo-1615938073495-85f5e52db08e?auto=format&fit=crop&w=100&h=100",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1615938073495-85f5e52db08e?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-01-22T11:45:00.000Z",
-    rating: 4.6,
-    reviewCount: 12,
-  },
-  {
-    id: "fiber-patch-panel",
-    title: "24‑Port Fiber Patch Panel",
-    description:
-      "Rack mount patch panel with LC connectors for organized fiber management.",
-    category: "Networking",
-    price: 480,
-    currency: "$",
-    tags: ["LC", "1U", "Cable Management"],
-    author: {
-      name: "FiberLink",
-      id: "fiberlink",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1552508744-1696a1be6c54?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-02-02T14:20:00.000Z",
-    rating: 4.5,
-    reviewCount: 9,
-  },
-  {
-    id: "precision-cooling",
-    title: "Precision Airflow Cooling Unit",
-    description:
-      "Efficient cooling system designed to maintain optimal rack temperature.",
-    category: "Cooling",
-    price: 5400,
-    currency: "$",
-    tags: ["Rack Mount", "Variable Speed", "Energy Efficient"],
-    author: {
-      name: "CoolWorks",
-      id: "coolworks",
-      avatarUrl:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&h=100",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1581093588401-1cfe5f157568?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-03-10T08:10:00.000Z",
-    rating: 4.7,
-    reviewCount: 18,
-  },
-  {
-    id: "blade-server-chassis",
-    title: "Blade Server Chassis",
-    description:
-      "High‑density chassis supporting up to 8 hot-swappable blades for scalable compute.",
-    category: "Servers",
-    price: 9200,
-    currency: "$",
-    tags: ["8 Blades", "Hot Swap", "Redundant PSU"],
-    author: {
-      name: "ComputeMax",
-      id: "computemax",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-03-12T10:00:00.000Z",
-    rating: 4.7,
-    reviewCount: 11,
-  },
-  {
-    id: "40gbe-core-switch",
-    title: "40GbE Core Switch",
-    description:
-      "High-performance core switch for enterprise datacenters with advanced routing features.",
-    category: "Networking",
-    price: 12800,
-    currency: "$",
-    tags: ["Layer 3", "QSFP+", "Redundant Fans"],
-    author: {
-      name: "NetWave",
-      id: "netwave",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1581091870625-55858aad7cf0?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-03-07T09:20:00.000Z",
-    rating: 4.8,
-    reviewCount: 16,
-  },
-  {
-    id: "firewall-appliance",
-    title: "Enterprise Firewall Appliance",
-    description:
-      "Next‑generation firewall providing deep packet inspection and intrusion prevention.",
-    category: "Security",
-    price: 6200,
-    currency: "$",
-    tags: ["NGFW", "VPN", "Gigabit"],
-    author: {
-      name: "SecureSys",
-      id: "securesys",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1585861291871-e6c46a28d5c7?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-02-27T15:30:00.000Z",
-    rating: 4.6,
-    reviewCount: 14,
-  },
-  {
-    id: "kvm-ip-switch",
-    title: "KVM over IP Switch",
-    description:
-      "Remote management of multiple servers with virtual media support.",
-    category: "Management",
-    price: 3100,
-    currency: "$",
-    tags: ["8 Ports", "Virtual Media", "Remote Access"],
-    author: {
-      name: "ManageIT",
-      id: "manageit",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1603791440384-9465026a9b69?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-02-12T08:55:00.000Z",
-    rating: 4.4,
-    reviewCount: 10,
-  },
-  {
-    id: "flash-storage-array",
-    title: "All‑Flash Storage Array",
-    description:
-      "Ultra‑fast storage platform delivering millions of IOPS for database workloads.",
-    category: "Storage",
-    price: 15000,
-    currency: "$",
-    tags: ["NVMe", "SSD", "Redundant Controller"],
-    author: {
-      name: "DataCore",
-      id: "datacore",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1581091870625-4c31b89f9518?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-03-04T11:10:00.000Z",
-    rating: 4.9,
-    reviewCount: 20,
-  },
-  {
-    id: "tape-backup-library",
-    title: "Automated Tape Backup Library",
-    description: "Scalable tape library for reliable long‑term data archiving.",
-    category: "Storage",
-    price: 7600,
-    currency: "$",
-    tags: ["LTO-9", "Redundant Power", "24 Slots"],
-    author: {
-      name: "ArchiveTech",
-      id: "archivetech",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-01-30T16:40:00.000Z",
-    rating: 4.5,
-    reviewCount: 7,
-  },
-  {
-    id: "server-rack-42u",
-    title: "42U Server Rack Cabinet",
-    description:
-      "Standard rack cabinet with adjustable rails and locking doors.",
-    category: "Infrastructure",
-    price: 1200,
-    currency: "$",
-    tags: ["Adjustable Rails", "Lockable", "Ventilated"],
-    author: {
-      name: "RackMaster",
-      id: "rackmaster",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1581091012184-e5857b5b3a4b?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-02-20T13:05:00.000Z",
-    rating: 4.8,
-    reviewCount: 25,
-  },
-  {
-    id: "dc-monitoring",
-    title: "Data Center Monitoring System",
-    description:
-      "Comprehensive environment and power monitoring with alerting.",
-    category: "Management",
-    price: 4700,
-    currency: "$",
-    tags: ["Sensors", "Alerts", "Analytics"],
-    author: {
-      name: "DCVision",
-      id: "dcvision",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-03-08T18:00:00.000Z",
-    rating: 4.7,
-    reviewCount: 13,
-  },
-  {
-    id: "high-capacity-router",
-    title: "High‑Capacity Edge Router",
-    description:
-      "Carrier-grade router providing advanced QoS and BGP routing capabilities.",
-    category: "Networking",
-    price: 13400,
-    currency: "$",
-    tags: ["BGP", "10GbE", "Redundant PSU"],
-    author: {
-      name: "NetWave",
-      id: "netwave",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1604079625023-792d09e87a4d?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-03-09T08:45:00.000Z",
-    rating: 4.6,
-    reviewCount: 17,
-  },
-  {
-    id: "cable-management-arm",
-    title: "Cable Management Arm",
-    description:
-      "Keeps server rack cabling organized and reduces strain on connections.",
-    category: "Infrastructure",
-    price: 160,
-    currency: "$",
-    tags: ["Adjustable", "Tool-Less", "1U"],
-    author: {
-      name: "RackMaster",
-      id: "rackmaster",
-    },
-    images: [
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&h=500",
-    ],
-    createdAt: "2024-03-03T06:25:00.000Z",
-    rating: 4.4,
-    reviewCount: 5,
-  },
-];
+// The EQUIPMENT_LISTINGS constant has been removed as it was commented out
+// and the page primarily relies on API calls and dynamic data generation.
+// This helps simplify the file and eliminate potential parsing issues.
 
 const EQUIPMENT_FILTERS = [
   { label: "Servers", value: "Servers" },
@@ -356,12 +31,20 @@ const EQUIPMENT_FILTERS = [
 ];
 
 async function fetchEquipment(): Promise<ProductListing[]> {
-  const { data } = await apiClient.get('/equipment');
-  return data;
+  // Added a try-catch block for better error handling during API call
+  try {
+    const { data } = await apiClient.get('/equipment');
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch equipment:", error);
+    // Propagate the error or return an empty array/handle as per application's error strategy
+    throw error;
+  }
 }
 
 export default function EquipmentPage() {
-  const [equipment, setEquipment] = useState<ProductListing[]>([]); // Initial empty or fallback
+  // Initialize with undefined or null to better distinguish between empty data and loading states
+  const [equipment, setEquipment] = useState<ProductListing[] | undefined>(undefined);
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -381,31 +64,40 @@ export default function EquipmentPage() {
     if (fetchedEquipment) {
       setEquipment(fetchedEquipment);
     }
-  }, [fetchedEquipment]);
+    // Added equipmentError to dependency array for useEffect,
+    // so if an error occurs, we can potentially clear existing equipment or handle error state.
+  }, [fetchedEquipment, equipmentError]);
 
   const {
     trigger: fetchRecommendations,
     isMutating: isFetchingRecommendations,
   } = useSWRMutation(
     "/api/equipment/recommendations",
-    (
+    async ( // Added async here
       url: string,
       { arg }: { arg: { userId: string } }
-    ) =>
-      fetch(`${url}?userId=${arg.userId}`).then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch recommendations");
-        return res.json();
-      })
+    ): Promise<ProductListing[]> => { // Added return type
+      const res = await fetch(`${url}?userId=${arg.userId}`); // Added await
+      if (!res.ok) {
+        // Enhanced error handling for failed recommendations fetch
+        const errorData = await res.json().catch(() => ({ message: "Failed to fetch recommendations, and error response is not JSON."}));
+        console.error("Recommendation fetch error:", errorData);
+        throw new Error(errorData.message || "Failed to fetch recommendations");
+      }
+      return res.json();
+    }
   );
 
-  // Interval for adding random equipment - might need adjustment
-  // This will add to the local 'equipment' state, which is initially populated by useQuery
+  // Interval for adding random equipment
   useEffect(() => {
-    const interval = setInterval(() => {
-      setEquipment((prev) => [...prev, generateRandomEquipment()]);
-    }, 120000); // add new equipment every 2 minutes
-    return () => clearInterval(interval);
-  }, []);
+    // Only set interval if equipment is already loaded/exists to prevent adding to undefined
+    if (equipment && equipment.length > 0) {
+      const interval = setInterval(() => {
+        setEquipment((prev = []) => [...prev, generateRandomEquipment()]); // Ensure prev is an array
+      }, 120000);
+      return () => clearInterval(interval);
+    }
+  }, [equipment]); // Added equipment to dependency array
 
   const handleRecommendations = async () => {
     if (!user) {
@@ -413,23 +105,28 @@ export default function EquipmentPage() {
       return;
     }
     try {
-      const data = await fetchRecommendations({ userId: user.id });
-      setEquipment(data as ProductListing[]);
+      // Ensure data is correctly typed or cast if necessary
+      const data: ProductListing[] = await fetchRecommendations({ userId: user.id });
+      setEquipment(data); // data should be ProductListing[]
       toast({ title: 'Showing personalized recommendations' });
-    } catch (err) {
-      console.error(err);
-      toast({ title: 'Failed to load recommendations', variant: 'destructive' });
+    } catch (err: any) { // Typed error
+      console.error("Error in handleRecommendations:", err);
+      toast({ title: err.message || 'Failed to load recommendations', variant: 'destructive' });
     }
   };
 
+  // Make sure handleRecommendations is memoized or stable if it's a dependency elsewhere, though not strictly required here.
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get('reco') === '1' && user) {
       handleRecommendations();
     }
-  }, [user, location.search]);
+    // Added handleRecommendations to dependency array, ensure it's stable (e.g. via useCallback if it were passed down)
+    // For now, this is okay as it's defined in the same scope.
+  }, [user, location.search, handleRecommendations]);
 
-  if (isLoadingEquipment || (equipmentError && !delayedError)) {
+  // Updated loading condition to specifically check for equipment being undefined
+  if (isLoadingEquipment && equipment === undefined) {
     return (
       <div data-testid="loading-state-equipment" className="container mx-auto p-4 space-y-4">
         <div className="flex justify-end mb-6">
@@ -456,7 +153,8 @@ export default function EquipmentPage() {
     );
   }
 
-  if (delayedError) {
+  // If there's an error and we don't have any equipment to show (even stale), show error.
+  if (delayedError && (!equipment || equipment.length === 0)) {
     return (
       <div data-testid="error-state-equipment" className="py-12 text-center space-y-4">
         <p className="text-red-400">Failed to load equipment: {delayedError.message}</p>
@@ -504,7 +202,7 @@ export default function EquipmentPage() {
           title="Datacenter Equipment"
           description="Browse professional hardware for modern datacenter and network deployments."
           categorySlug="equipment"
-          listings={equipment} // This 'equipment' state is updated by useQuery and the interval
+          listings={equipment || []} // Pass empty array if equipment is undefined to prevent errors in DynamicListingPage
           categoryFilters={EQUIPMENT_FILTERS}
           initialPrice={{ min: 400, max: 50000 }}
           detailBasePath="/equipment"

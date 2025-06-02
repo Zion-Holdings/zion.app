@@ -92,7 +92,7 @@ export default function Signup() {
 
     setIsSubmitting(true);
     try {
-      const { res, data: resData } = await registerUser(
+      const { data: resData } = await registerUser( // `res` variable removed as it wasn't used
         data.displayName,
         data.email,
         data.password
@@ -102,7 +102,6 @@ export default function Signup() {
       // If the API indicates an email already exists, `registerUser` should throw an error
       // which will be caught by the catch block below.
 
-fix/signup-flow
       if (resData?.emailVerificationRequired) {
         setShowVerificationMessage(true);
         // No navigation or session setting here. User needs to verify their email.
@@ -135,7 +134,6 @@ fix/signup-flow
             // This is a non-critical error, so we don't block the user flow
             // or show a user-facing error message for this.
           }
-main
         }
       }
     } catch (err: any) {
@@ -173,7 +171,7 @@ main
   // even if they somehow have an existing session (e.g., from a previous tab).
   if (isAuthenticated && !showVerificationMessage) {
     // If profile is complete, go to home/dashboard. Otherwise, to onboarding.
-    if (user?.profileComplete) {
+    if (user && typeof user !== 'boolean' && user.profileComplete) {
       return <Navigate to="/" />;
     } else {
       // User is authenticated but profile is not complete
@@ -214,87 +212,7 @@ main
                   </Alert>
                 )}
                 <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6" noValidate>
-                  <FormField
-                    control={form.control}
-      if (data.newsletterOptIn && mailchimpService) {
-        try {
-          await mailchimpService.addSubscriber({
-            email: data.email,
-            mergeFields: { FNAME: data.displayName }
-          });
-          await mailchimpService.sendWelcomeEmail(data.email, 'NEW10');
-        } catch (err) {
-          console.error('Mailchimp subscription failed', err);
-        }
-      }
-
-fix/signup-flow
-      // Mailchimp subscription and navigation for non-verification case handled above
-    } catch (err: any) {
-      // Error handling logic has been updated in the section above.
-      // This specific part of the original catch block is now covered by the more detailed error handling.
-      const message =
-        err?.response?.data?.message ?? err?.message ?? "Unexpected error";
-main
-      form.setError("root", { message });
-      toast.error(message);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const onInvalid = (errors: any) => {
-    const firstError = Object.keys(errors)[0] as keyof SignupFormValues;
-    if (firstError) {
-      form.setFocus(firstError);
-    }
-  };
-
-  // Redirect if user is already logged in and has completed profile
-  // Allow staying on signup page if email verification is pending (showVerificationMessage is true)
-  if (isAuthenticated && user?.profileComplete && !showVerificationMessage) {
-    return <Navigate to="/" />;
-  }
-
-  // Redirect to onboarding if user is authenticated but hasn't completed profile
-  // Allow staying on signup page if email verification is pending
-  if (isAuthenticated && !user?.profileComplete && !showVerificationMessage) {
-    return <Navigate to="/onboarding" />;
-  }
-
-  return (
-    <>
-      <div className="flex min-h-screen bg-zion-blue">
-        <div className="flex-1 flex flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-          <div className="mx-auto w-full max-w-sm lg:w-96">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold tracking-tight text-white">
-                Create your account
-              </h2>
-              <p className="mt-2 text-sm text-zion-slate-light">
-                Already have an account?{" "}
-                <Link to="/login" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
-                  Sign in
-                </Link>
-              </p>
-            </div>
-
-            <div className="bg-zion-blue-dark rounded-lg p-6">
-              <Form {...form}>
-                {form.formState.errors.root && !showVerificationMessage && (
-                  <Alert variant="destructive" className="mb-4">
-                    <AlertDescription>{form.formState.errors.root.message}</AlertDescription>
-                  </Alert>
-                )}
-                {showVerificationMessage && (
-                  <Alert variant="default" className="mb-4 bg-blue-50 border-blue-200 text-blue-700">
-                    <Mail className="h-5 w-5 mr-2 !text-blue-700" />
-                    <AlertDescription>
-                      Registration successful! Please check your email to verify your account and complete the process.
-                    </AlertDescription>
-                  </Alert>
-                )}
-                <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6" noValidate>
+                  {/* Removed duplicated/malformed FormField and logic from here, it's handled in the onSubmit above */}
                   <FormField
                     control={form.control}
                     name="displayName"
