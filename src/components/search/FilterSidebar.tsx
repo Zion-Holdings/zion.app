@@ -1,10 +1,11 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Filter, Star } from "lucide-react"; // Removed X as it's handled by ActiveFiltersBar
 import { FilterOptions } from "@/types/search";
 import { ActiveFiltersBar } from "./ActiveFiltersBar"; // Import ActiveFiltersBar
+import Slider from '@mui/material/Slider';
 
 interface FilterSidebarProps {
   filters: {
@@ -42,9 +43,40 @@ export function FilterSidebar({
   hasResults = true
 }: FilterSidebarProps) {
 
+  const formatCurrencyLabel = (value: number) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
+  };
+
+  };
+
   // Initialize internal states for sliders to overall min/max if current selections are null
-  const currentMin = selectedMinPrice ?? overallMinPrice;
-  const currentMax = selectedMaxPrice ?? overallMaxPrice;
+  // const currentMin = selectedMinPrice ?? overallMinPrice; // Will be replaced by actualMin
+  // const currentMax = selectedMaxPrice ?? overallMaxPrice; // Will be replaced by actualMax
+
+  const [actualMin, setActualMin] = useState(selectedMinPrice ?? overallMinPrice);
+  const [actualMax, setActualMax] = useState(selectedMaxPrice ?? overallMaxPrice);
+
+  // Effect to update local slider state if props change from parent (e.g. clearing filters)
+  useEffect(() => {
+    setActualMin(selectedMinPrice ?? overallMinPrice);
+    setActualMax(selectedMaxPrice ?? overallMaxPrice);
+  }, [selectedMinPrice, selectedMaxPrice, overallMinPrice, overallMaxPrice]);
+
+  const handleSliderChange = (_event: Event, newValue: number | number[]) => {
+    const [newMin, newMax] = newValue as number[];
+    setActualMin(newMin);
+    setActualMax(newMax);
+  };
+
+  const handleSliderChangeCommitted = (_event: React.SyntheticEvent | Event, newValue: number | number[]) => {
+    const [newMin, newMax] = newValue as number[];
+    handlePriceChange(newMin, newMax);
+  };
 
   const isAnyFilterActive =
     filters.selectedProductTypes.length > 0 ||
@@ -213,55 +245,38 @@ export function FilterSidebar({
         <label className="text-sm font-medium text-zion-slate-light block mb-2">
           Price Range
         </label>
-        <div className="space-y-3">
-          <div className="flex justify-between text-xs text-zion-slate-light">
-            <span>${currentMin}</span>
-            <span>${currentMax}</span>
+        <div className="space-y-3 px-2"> {/* Added some padding for the slider */}
+          <Slider
+            getAriaLabel={() => 'Price range'}
+            value={[actualMin, actualMax]}
+            onChange={handleSliderChange}
+            onChangeCommitted={handleSliderChangeCommitted}
+            min={overallMinPrice}
+            max={overallMaxPrice}
+            valueLabelDisplay="on"
+            valueLabelFormat={formatCurrencyLabel}
+            getAriaValueText={formatCurrencyLabel}
+            sx={{ // Basic styling to match the theme, can be further customized
+              color: 'var(--zion-purple)',
+              '& .MuiSlider-thumb': {
+                backgroundColor: 'var(--zion-purple)',
+              },
+              '& .MuiSlider-valueLabel': {
+                backgroundColor: 'var(--zion-purple-dark)',
+                color: 'white',
+              },
+              '& .MuiSlider-rail': {
+                backgroundColor: 'var(--zion-blue-light)',
+              },
+              '& .MuiSlider-track': {
+                backgroundColor: 'var(--zion-purple)',
+              }
+            }}
+          />
+          <div className="flex justify-between text-xs text-zion-slate-light mt-1">
+            <span>{formatCurrencyLabel(actualMin)}</span>
+            <span>{formatCurrencyLabel(actualMax)}</span>
           </div>
-          {/* Min Price Slider */}
-          <input
-            type="range"
-            min={overallMinPrice}
-            max={overallMaxPrice}
-            value={currentMin}
-            onChange={(e) => {
-              const newMin = parseInt(e.target.value, 10);
-              // Ensure min value does not exceed max value
-              if (newMin <= currentMax) {
-                handlePriceChange(newMin, currentMax);
-              } else {
-                handlePriceChange(currentMax, newMin); // or handlePriceChange(newMin, newMin)
-              }
-            }}
-            className="w-full h-2 bg-zion-blue-light rounded-lg appearance-none cursor-pointer accent-zion-purple"
-            aria-label="Minimum price"
-            aria-valuemin={overallMinPrice}
-            aria-valuemax={overallMaxPrice}
-            aria-valuenow={currentMin}
-            aria-valuetext={`$${currentMin}`}
-          />
-          {/* Max Price Slider */}
-          <input
-            type="range"
-            min={overallMinPrice}
-            max={overallMaxPrice}
-            value={currentMax}
-            onChange={(e) => {
-              const newMax = parseInt(e.target.value, 10);
-              // Ensure max value is not less than min value
-              if (newMax >= currentMin) {
-                handlePriceChange(currentMin, newMax);
-              } else {
-                handlePriceChange(newMax, currentMin); // or handlePriceChange(newMax, newMax)
-              }
-            }}
-            className="w-full h-2 bg-zion-blue-light rounded-lg appearance-none cursor-pointer accent-zion-purple"
-            aria-label="Maximum price"
-            aria-valuemin={overallMinPrice}
-            aria-valuemax={overallMaxPrice}
-            aria-valuenow={currentMax}
-            aria-valuetext={`$${currentMax}`}
-          />
         </div>
       </div>
     </div>

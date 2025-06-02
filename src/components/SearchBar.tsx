@@ -29,7 +29,13 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
     const controller = new AbortController();
     fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, { signal: controller.signal })
       .then(res => res.json())
-      .then(data => setSuggestions(data || []))
+      .then(data => {
+        if (Array.isArray(data)) {
+          setSuggestions(data.slice(0, 5)); // Take only the top 5 suggestions
+        } else {
+          setSuggestions([]);
+        }
+      })
       .catch(() => setSuggestions([]));
     return () => controller.abort();
   }, [debounced]);

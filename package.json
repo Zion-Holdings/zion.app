@@ -17,6 +17,8 @@
     "es:index": "node scripts/index-elasticsearch.js"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@google/model-viewer": "^3.0.1",
     "@hello-pangea/dnd": "^18.0.1",
     "@hookform/resolvers": "^3.3.4",
