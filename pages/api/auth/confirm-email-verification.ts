@@ -2,15 +2,16 @@ import { createClient } from '@supabase/supabase-js';
 import { PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-// It's generally recommended to use the service_role key for server-side operations
-// that modify the database or need to bypass RLS, like updating user status.
-// However, the prompt specifies NEXT_PUBLIC_SUPABASE_ANON_KEY for client-accessible routes.
-// For an API route that *verifies* a user based on a session, using anon key and relying on RLS
-// or the user's own authenticated context is okay. If this route were to, say, grant admin rights,
-// service_role would be essential. Here, we are updating a field for the *authenticated* user.
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const supabaseUrl = process.env.SUPABASE_URL;
+const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!supabaseUrl || !serviceKey) {
+  const errorMessage = 'CRITICAL: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing for backend auth API. Service cannot start.';
+  console.error(errorMessage);
+  throw new Error(errorMessage);
+}
+
+const supabase = createClient(supabaseUrl, serviceKey);
 const prisma = new PrismaClient();
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
