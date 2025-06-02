@@ -2,8 +2,9 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Filter, X, Star } from "lucide-react";
+import { Filter, Star } from "lucide-react"; // Removed X as it's handled by ActiveFiltersBar
 import { FilterOptions } from "@/types/search";
+import { ActiveFiltersBar } from "./ActiveFiltersBar"; // Import ActiveFiltersBar
 
 interface FilterSidebarProps {
   filters: {
@@ -16,6 +17,11 @@ interface FilterSidebarProps {
   onFilterChange: (filterType: string, value: string) => void;
   onRatingChange: (rating: number | null) => void;
   onClearFilters: () => void;
+  selectedMinPrice: number | null;
+  selectedMaxPrice: number | null;
+  handlePriceChange: (minPrice: number, maxPrice: number) => void;
+  overallMinPrice: number;
+  overallMaxPrice: number;
   /**
    * When false, show an empty state instead of the filter list
    */
@@ -28,8 +34,26 @@ export function FilterSidebar({
   onFilterChange,
   onRatingChange,
   onClearFilters,
+  selectedMinPrice,
+  selectedMaxPrice,
+  handlePriceChange,
+  overallMinPrice,
+  overallMaxPrice,
   hasResults = true
 }: FilterSidebarProps) {
+
+  // Initialize internal states for sliders to overall min/max if current selections are null
+  const currentMin = selectedMinPrice ?? overallMinPrice;
+  const currentMax = selectedMaxPrice ?? overallMaxPrice;
+
+  const isAnyFilterActive =
+    filters.selectedProductTypes.length > 0 ||
+    filters.selectedLocations.length > 0 ||
+    filters.selectedAvailability.length > 0 ||
+    filters.selectedRating !== null ||
+    selectedMinPrice !== overallMinPrice ||
+    selectedMaxPrice !== overallMaxPrice;
+
   if (!hasResults) {
     return (
       <div className="bg-zion-blue-dark rounded-lg border border-zion-blue-light p-6 text-center">
@@ -50,12 +74,27 @@ export function FilterSidebar({
         <Button 
           variant="outline" 
           size="sm"
-          className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"
+          className={`border-zion-purple text-zion-purple hover:bg-zion-purple/10 ${!isAnyFilterActive ? 'opacity-50 cursor-not-allowed' : ''}`}
           onClick={onClearFilters}
+          disabled={!isAnyFilterActive}
         >
           Clear All
         </Button>
       </div>
+
+      <ActiveFiltersBar
+        selectedProductTypes={filters.selectedProductTypes}
+        selectedLocations={filters.selectedLocations}
+        selectedAvailability={filters.selectedAvailability}
+        selectedRating={filters.selectedRating}
+        searchQuery="" // Not available in FilterSidebar
+        onRemoveFilter={onFilterChange}
+        onRemoveRating={() => onRatingChange(null)}
+        onClearSearch={() => {}} // No-op, not available in FilterSidebar
+        selectedMinPrice={selectedMinPrice}
+        selectedMaxPrice={selectedMaxPrice}
+        onRemovePriceFilter={() => handlePriceChange(overallMinPrice, overallMaxPrice)}
+      />
       
       {/* Product Type Filter */}
       <div className="mb-6">
@@ -152,6 +191,7 @@ export function FilterSidebar({
                   ? "bg-zion-purple/20 border-zion-purple text-zion-purple" 
                   : "border-zion-blue-light text-zion-slate-light"
               }`}
+              aria-label={rating === null ? "Filter by any rating" : `Filter by ${rating} stars and up`}
             >
               {rating === null ? (
                 "Any"
@@ -165,6 +205,63 @@ export function FilterSidebar({
               )}
             </Button>
           ))}
+        </div>
+      </div>
+
+      {/* Price Range Filter */}
+      <div className="mb-6">
+        <label className="text-sm font-medium text-zion-slate-light block mb-2">
+          Price Range
+        </label>
+        <div className="space-y-3">
+          <div className="flex justify-between text-xs text-zion-slate-light">
+            <span>${currentMin}</span>
+            <span>${currentMax}</span>
+          </div>
+          {/* Min Price Slider */}
+          <input
+            type="range"
+            min={overallMinPrice}
+            max={overallMaxPrice}
+            value={currentMin}
+            onChange={(e) => {
+              const newMin = parseInt(e.target.value, 10);
+              // Ensure min value does not exceed max value
+              if (newMin <= currentMax) {
+                handlePriceChange(newMin, currentMax);
+              } else {
+                handlePriceChange(currentMax, newMin); // or handlePriceChange(newMin, newMin)
+              }
+            }}
+            className="w-full h-2 bg-zion-blue-light rounded-lg appearance-none cursor-pointer accent-zion-purple"
+            aria-label="Minimum price"
+            aria-valuemin={overallMinPrice}
+            aria-valuemax={overallMaxPrice}
+            aria-valuenow={currentMin}
+            aria-valuetext={`$${currentMin}`}
+          />
+          {/* Max Price Slider */}
+          <input
+            type="range"
+            min={overallMinPrice}
+            max={overallMaxPrice}
+            value={currentMax}
+            onChange={(e) => {
+              const newMax = parseInt(e.target.value, 10);
+              // Ensure max value is not less than min value
+              if (newMax >= currentMin) {
+                handlePriceChange(currentMin, newMax);
+              } else {
+                handlePriceChange(newMax, currentMin); // or handlePriceChange(newMax, newMax)
+              }
+            }}
+            className="w-full h-2 bg-zion-blue-light rounded-lg appearance-none cursor-pointer accent-zion-purple"
+            aria-label="Maximum price"
+            aria-valuemin={overallMinPrice}
+            aria-valuemax={overallMaxPrice}
+            aria-valuenow={currentMax}
+            aria-valuetext={`$${currentMax}`}
+          />
         </div>
       </div>
     </div>

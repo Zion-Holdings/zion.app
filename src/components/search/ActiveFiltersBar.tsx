@@ -12,6 +12,9 @@ interface ActiveFiltersBarProps {
   onRemoveFilter: (filterType: string, value: string) => void;
   onRemoveRating: () => void;
   onClearSearch: () => void;
+  selectedMinPrice?: number | null; // Optional for now to avoid breaking existing usage immediately
+  selectedMaxPrice?: number | null; // Optional for now
+  onRemovePriceFilter?: () => void; // Optional for now
 }
 
 export function ActiveFiltersBar({
@@ -22,14 +25,20 @@ export function ActiveFiltersBar({
   searchQuery,
   onRemoveFilter,
   onRemoveRating,
-  onClearSearch
+  onClearSearch,
+  selectedMinPrice,
+  selectedMaxPrice,
+  onRemovePriceFilter
 }: ActiveFiltersBarProps) {
+  const isPriceFilterActive = selectedMinPrice !== null && selectedMaxPrice !== null && onRemovePriceFilter;
+
   const hasActiveFilters = 
     selectedProductTypes.length > 0 || 
     selectedLocations.length > 0 || 
     selectedAvailability.length > 0 || 
     selectedRating !== null ||
-    !!searchQuery;
+    !!searchQuery ||
+    isPriceFilterActive;
     
   if (!hasActiveFilters) return null;
   
@@ -86,6 +95,16 @@ export function ActiveFiltersBar({
           onClick={onRemoveRating}
         >
           {selectedRating}+ Stars
+          <X className="h-3 w-3" />
+        </ClickableBadge>
+      )}
+
+      {isPriceFilterActive && (
+        <ClickableBadge
+          className="bg-zion-purple/20 hover:bg-zion-purple/30 text-zion-purple border-none flex items-center gap-1 pl-2"
+          onClick={onRemovePriceFilter}
+        >
+          Price: ${selectedMinPrice} - ${selectedMaxPrice}
           <X className="h-3 w-3" />
         </ClickableBadge>
       )}
