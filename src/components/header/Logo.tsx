@@ -26,9 +26,7 @@ export function Logo({ customLogo, customColor }: LogoProps) {
   
   return (
     <Link to="/" className="flex items-center">
-      <div className="text-2xl font-bold" style={colorToUse ? { color: colorToUse } : {}}>
-        {isWhitelabel ? brandName : 'Zion'}<span className="text-zion-cyan">AI</span>
-      </div>
+      <img src="/logos/zion-logo.png" alt="Zion Logo" className="h-8" />
     </Link>
   );
 }
