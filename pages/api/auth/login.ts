@@ -3,18 +3,18 @@ import { createClient } from '@supabase/supabase-js';
 // Generic request/response types to avoid requiring Next.js
 type Req = {
   method?: string;
-  body?: any;
+  body?: unknown;
 };
 
 type Res = {
   statusCode?: number;
   setHeader: (name: string, value: string) => void;
-  end: (data?: any) => void;
+  end: (data?: unknown) => void;
 };
 
 interface JsonRes extends Res {
   status: (code: number) => JsonRes;
-  json: (data: any) => void;
+  json: (data: unknown) => void;
 }
 
 const supabaseUrl = process.env.SUPABASE_URL;

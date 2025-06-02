@@ -7,7 +7,6 @@ const ModelViewer = React.lazy(async () => {
   await import('@google/model-viewer');
   return {
     default: (props: React.ComponentProps<'model-viewer'>) => (
-      // eslint-disable-next-line react/react-in-jsx-scope
       <model-viewer {...props} />
     ),
   };
