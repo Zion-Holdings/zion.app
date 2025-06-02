@@ -10,47 +10,59 @@ interface JsonRes {
   json: (data: any) => void;
 }
 
-const supabaseUrl =
-  process.env.SUPABASE_URL ||
-  process.env.VITE_SUPABASE_URL ||
-  process.env.NEXT_PUBLIC_SUPABASE_URL ||
-  '';
-const serviceKey =
-  process.env.SUPABASE_SERVICE_ROLE_KEY ||
-  process.env.VITE_SUPABASE_ANON_KEY ||
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  '';
+const supabaseUrl = process.env.SUPABASE_URL;
+const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 if (!supabaseUrl || !serviceKey) {
-  console.error('Missing database connection string');
+  const errorMessage = 'CRITICAL: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing for backend API. Service cannot start.';
+  console.error(errorMessage);
+  // This error will be thrown when the module is loaded, preventing the API route from being available
+  // if essential configuration is missing.
+  throw new Error(errorMessage);
 }
 
 const supabase = createClient(supabaseUrl, serviceKey);
 
 export default async function handler(req: Req, res: JsonRes) {
-  if (req.method !== 'GET') {
-    res.status(405).end();
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
     return;
   }
 
-  const { type } = req.query; // Access the type parameter
-
-  if (type) {
-    console.log(`Fetching services with type: ${type}`); // Log the type
+  if (req.method !== 'GET') {
+    res.status(405).json({ error: 'Method Not Allowed' });
+    return;
   }
 
+  const { category } = req.query; // Access the category parameter
+
   try {
-    const { data, error } = await supabase
+    let query = supabase
       .from('services')
-      .select('id, title, price, rating, category');
+      .select('id, title AS name, slug, price');
+
+    if (category) {
+      console.log(`Fetching services with category: ${category}`); // Log the category
+      query = query.eq('category', category);
+    }
+
+    const { data, error } = await query;
 
     if (error) {
+      console.error('Error fetching services from Supabase:', error.message);
       throw error;
     }
 
     res.status(200).json(data || []);
   } catch (err: any) {
-    console.error('Service fetch error:', err);
-    res.status(500).json({ error: 'Failed to fetch services' });
+    // Log the actual error received from Supabase or the caught error
+    console.error('Service fetch error:', err.message ? err.message : JSON.stringify(err));
+    res.status(500).json({ error: "Database error while fetching services", details: err.message });
   }
 }

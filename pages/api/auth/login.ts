@@ -17,16 +17,27 @@ interface JsonRes extends Res {
   json: (data: any) => void;
 }
 
-const supabaseUrl =
-  process.env.SUPABASE_URL ||
-  process.env.VITE_SUPABASE_URL ||
-  process.env.NEXT_PUBLIC_SUPABASE_URL ||
-  '';
-const serviceKey =
-  process.env.SUPABASE_SERVICE_ROLE_KEY ||
-  process.env.VITE_SUPABASE_ANON_KEY ||
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  '';
+const supabaseUrl = process.env.SUPABASE_URL;
+// For auth operations like signInWithPassword, Supabase typically uses the anon key.
+// However, if this client instance were to be used for other admin operations
+// within the same file (which it isn't currently), a service_role_key might be intended.
+// Given the task is to standardize backend API routes to service_role_key for data access,
+// but auth operations are special, this is a point of attention.
+// For strictness and consistency with the subtask, we'll use SERVICE_ROLE_KEY here,
+// but acknowledge that for `signInWithPassword`, the key used by `createClient`
+// doesn't alter the auth behavior itself (it's governed by Supabase internal policies).
+// The more significant aspect is that this client *could* be used for privileged operations
+// if it were initialized with a service key.
+// If this file *only* ever does auth and never data access, an anon key client would be fine too.
+// Sticking to SERVICE_ROLE_KEY as per broader instruction for backend routes.
+const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!supabaseUrl || !serviceKey) {
+  const errorMessage = 'CRITICAL: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing for backend auth API. Service cannot start.';
+  console.error(errorMessage);
+  throw new Error(errorMessage);
+}
+
 const supabase = createClient(supabaseUrl, serviceKey);
 
 export default async function handler(req: Req, res: JsonRes) {

@@ -3,7 +3,9 @@ import { captureException } from '@/utils/sentry';
 
 export interface ServiceItem {
   id: string;
-  title: string;
+  name: string;
+  slug: string;
+  price: number;
 }
 
 const fetcher = async (url: string): Promise<ServiceItem[]> => {
@@ -24,11 +26,13 @@ const fetcher = async (url: string): Promise<ServiceItem[]> => {
 };
 
 export function useQuoteWizard(category: string) {
-  return useSWR<ServiceItem[]>(`/api/services?type=${category}`, fetcher, {
+  return useSWR<ServiceItem[]>(`/api/services?category=${category}`, fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
-      if (retryCount >= 1) return;
-      const timeout = Math.pow(2, retryCount) * 1000; // 1s, 2s, 4s
-      setTimeout(() => revalidate({ retryCount: retryCount + 1 }), timeout);
+      // Retry up to 3 times
+      if (retryCount >= 3) return;
+      // Exponential backoff: 1s, 2s, 4s
+      const timeout = Math.pow(2, retryCount) * 1000;
+      setTimeout(() => revalidate({ retryCount }), timeout); // Pass retryCount directly to revalidate options
     },
     dedupingInterval: 600000,
   });
