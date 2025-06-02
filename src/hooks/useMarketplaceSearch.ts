@@ -1,13 +1,31 @@
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { ProductListing } from "@/types/listings";
 import { SearchSuggestion, FilterOptions } from "@/types/search";
 import { generateSearchSuggestions, generateFilterOptions, MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
+import { useDebounce } from "./useDebounce"; // Import the debounce hook
 
 export function useMarketplaceSearch() {
-  // Search state
-  const [searchQuery, setSearchQuery] = useState("");
+  // Immediate search query from input
+  const [immediateSearchQuery, setImmediateSearchQuery] = useState("");
   
+  // Debounced search query
+  const debouncedSearchQuery = useDebounce(immediateSearchQuery, 300);
+
+  // This state will now hold the debounced search query for filtering
+  // and will be what's exposed as `searchQuery` to the consuming component.
+  // We need to effectively replace the old `searchQuery`'s role with `debouncedSearchQuery`
+  // for filtering, but components might still expect a `searchQuery` prop that reflects the input value.
+  // Let's rename the exposed `searchQuery` to `currentSearchInput` and use `debouncedSearchQuery` for filtering.
+  // Or, more simply, keep `searchQuery` as the debounced value and `setSearchQuery` updates the immediate one.
+
+  const [searchQuery, setSearchQueryInternal] = useState(""); // This will store the debounced value
+
+  useEffect(() => {
+    setSearchQueryInternal(debouncedSearchQuery);
+  }, [debouncedSearchQuery]);
+
+
   // Filter states
   const [selectedProductTypes, setSelectedProductTypes] = useState<string[]>([]);
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
@@ -82,7 +100,8 @@ export function useMarketplaceSearch() {
   
   // Clear all filters
   const clearAllFilters = () => {
-    setSearchQuery("");
+    setImmediateSearchQuery(""); // Clear immediate input
+    // setSearchQueryInternal(""); // Debounced version will update via useEffect
     setSelectedProductTypes([]);
     setSelectedLocations([]);
     setSelectedAvailability([]);
@@ -90,8 +109,9 @@ export function useMarketplaceSearch() {
   };
   
   return {
-    searchQuery,
-    setSearchQuery,
+    searchQuery: immediateSearchQuery, // Expose the immediate value for the input field
+    setSearchQuery: setImmediateSearchQuery, // Setter updates the immediate value
+    // The actual filtering logic will use `searchQuery` (which is `debouncedSearchQuery` via useEffect)
     searchSuggestions,
     selectedProductTypes,
     selectedLocations,
