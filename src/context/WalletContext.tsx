@@ -103,7 +103,9 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       const currentProvider = appKit.getWalletProvider();
 
       if (currentAddress && currentChainId && currentProvider) {
-        const ethersProvider = new ethers.BrowserProvider(currentProvider);
+        const ethersProvider = new ethers.BrowserProvider(
+          currentProvider as ethers.Eip1193Provider
+        );
         const ethersSigner = await ethersProvider.getSigner();
         setWallet({
           provider: ethersProvider,
