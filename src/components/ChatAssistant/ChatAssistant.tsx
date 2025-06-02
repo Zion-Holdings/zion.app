@@ -164,11 +164,12 @@ export function ChatAssistant({
               )}
             </div>
           </div>
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             size="icon"
             className="text-white hover:bg-zion-purple/10 rounded-full"
             onClick={onClose}
+            aria-label="Close chat"
           >
             <X className="h-5 w-5" />
           </Button>

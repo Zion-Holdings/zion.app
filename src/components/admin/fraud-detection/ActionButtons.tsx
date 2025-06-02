@@ -16,6 +16,7 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({ flagId, status, on
         variant="ghost"
         size="icon"
         title="View Details"
+        aria-label="View details"
         onClick={() => alert("View details (would open a detailed view)")}
       >
         <Eye className="h-4 w-4" />
@@ -24,6 +25,7 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({ flagId, status, on
         variant="ghost"
         size="icon"
         title="Send Warning"
+        aria-label="Send warning"
         onClick={() => onAction(flagId, 'warning')}
         disabled={status === 'actioned' || status === 'ignored'}
       >
@@ -33,6 +35,7 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({ flagId, status, on
         variant="ghost"
         size="icon"
         title="Suspend User"
+        aria-label="Suspend user"
         onClick={() => onAction(flagId, 'suspension')}
         disabled={status === 'actioned' || status === 'ignored'}
       >
@@ -42,6 +45,7 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({ flagId, status, on
         variant="ghost"
         size="icon"
         title="Ban User"
+        aria-label="Ban user"
         onClick={() => onAction(flagId, 'ban')}
         disabled={status === 'actioned' || status === 'ignored'}
       >
