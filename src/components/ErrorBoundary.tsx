@@ -1,5 +1,5 @@
 import { Component, ReactNode, ErrorInfo } from 'react';
-import { toast } from '@/hooks/use-toast';
+import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 
 interface Props {
   children: ReactNode;
@@ -33,7 +33,8 @@ export class ErrorBoundary extends Component<Props, State> {
     console.log("ErrorBoundary.tsx: ComponentDidCatch triggered");
     // Surface full error details in the console for easier debugging
     console.error('ErrorBoundary caught', error, info);
-    toast.error(error.message);
+    const enqueueSnackbar = getEnqueueSnackbar();
+    enqueueSnackbar(error.message, { variant: 'error' });
   }
 
   render() {

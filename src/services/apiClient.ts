@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { toast } from '@/hooks/use-toast';
+import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 import { supabase } from '@/integrations/supabase/client';
 import { captureException } from '@/utils/sentry';
 import axiosRetry from 'axios-retry';
@@ -11,9 +11,11 @@ axios.interceptors.response.use(
     const status = error.response?.status;
     if (status && status >= 400) {
       const message = error.response?.data?.message || `Error ${status}`;
-      toast.error(message);
+      const enqueueSnackbar = getEnqueueSnackbar();
+      enqueueSnackbar(message, { variant: 'error' });
     } else {
-      toast.error('Network error');
+      const enqueueSnackbar = getEnqueueSnackbar();
+      enqueueSnackbar('Network error', { variant: 'error' });
     }
     return Promise.reject(error);
   }
@@ -41,7 +43,8 @@ apiClient.interceptors.response.use(
     if (status && status >= 400) {
       captureException(error);
       const message = error.response?.data?.message || 'Unexpected error';
-      toast.error(message);
+      const enqueueSnackbar = getEnqueueSnackbar();
+      enqueueSnackbar(message, { variant: 'error' });
     }
 
     if (status === 401) {
