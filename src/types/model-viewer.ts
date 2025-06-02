@@ -8,6 +8,7 @@ declare global {
         alt?: string;
         'camera-controls'?: boolean;
         style?: React.CSSProperties;
+        [key: string]: any;
       };
     }
   }
