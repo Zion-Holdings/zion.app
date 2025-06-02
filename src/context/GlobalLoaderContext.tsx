@@ -40,14 +40,14 @@ export function GlobalLoaderProvider({ children }: { children: ReactNode }) {
     const originalGet = axios.get;
     const originalPost = axios.post;
 
-    axios.get = async (
+    axios.get = (async (
       ...args: Parameters<typeof originalGet>
     ): ReturnType<typeof originalGet> => {
       setLoading(true);
       return originalGet(...args);
     }) as typeof axios.get;
 
-    axios.post = async (
+    axios.post = (async (
       ...args: Parameters<typeof originalPost>
     ): ReturnType<typeof originalPost> => {
       setLoading(true);
