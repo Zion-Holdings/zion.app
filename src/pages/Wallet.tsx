@@ -2,9 +2,15 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getWallet } from '@/api/wallet';
 import { Skeleton } from '@/components/ui/skeleton';
+import type { TokenTransaction } from '@/types/tokens';
+
+interface WalletResponse {
+  points: number;
+  history: TokenTransaction[];
+}
 
 const Wallet = () => {
-  const { data, isLoading } = useQuery({
+  const { data, isLoading } = useQuery<WalletResponse>({
     queryKey: ['wallet'],
     queryFn: getWallet,
   });
