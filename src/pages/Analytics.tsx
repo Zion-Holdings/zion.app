@@ -8,6 +8,7 @@ import { PageViewsTable } from "@/components/analytics/PageViewsTable";
 import { UserBehaviorStats } from "@/components/analytics/UserBehaviorStats";
 import { PageViewsChart } from "@/components/analytics/PageViewsChart";
 import { ConversionAnalysisChart } from "@/components/analytics/ConversionAnalysisChart";
+import { FeatureUsageChart } from "@/components/analytics/FeatureUsageChart";
 import { ExportPanel } from "@/components/analytics/ExportPanel";
 
 export default function Analytics() {
@@ -109,6 +110,46 @@ export default function Analytics() {
     }
   });
 
+  const { data: featureUsageData } = useQuery({
+    queryKey: ['feature-usage-data', timeRange],
+    queryFn: async () => {
+      const days = parseInt(timeRange.replace('d', ''));
+      const { data, error } = await supabase.rpc('get_feature_usage_stats', {
+        days_back: days,
+      });
+
+      if (error) {
+        console.error('Error fetching feature usage:', error);
+        // fallback query
+        const startDate = new Date();
+        startDate.setDate(startDate.getDate() - days);
+        const { data: manual, error: manualError } = await supabase
+          .from('analytics_events')
+          .select('created_at, metadata')
+          .eq('event_type', 'feature_usage')
+          .gte('created_at', startDate.toISOString());
+
+        if (manualError) throw manualError;
+
+        const usageByDate: Record<string, Record<string, number>> = {};
+        manual?.forEach(ev => {
+          const date = new Date(ev.created_at).toISOString().split('T')[0];
+          const feature = ev.metadata?.feature || 'unknown';
+          if (!usageByDate[date]) usageByDate[date] = {};
+          if (!usageByDate[date][feature]) usageByDate[date][feature] = 0;
+          usageByDate[date][feature]++;
+        });
+
+        return Object.entries(usageByDate).map(([date, feats]) => ({
+          date,
+          ...feats,
+        }));
+      }
+
+      return data || [];
+    },
+  });
+
   return (
     <AnalyticsContainer>
       <AnalyticsSummary />
@@ -127,11 +168,19 @@ export default function Analytics() {
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <ConversionAnalysisChart 
-          data={conversionData || []} 
+        <ConversionAnalysisChart
+          data={conversionData || []}
           timeRange={timeRange}
           onTimeRangeChange={setTimeRange}
         />
+        <FeatureUsageChart
+          data={featureUsageData || []}
+          timeRange={timeRange}
+          onTimeRangeChange={setTimeRange}
+        />
+      </div>
+
+      <div className="mb-6">
         <ExportPanel />
       </div>
     </AnalyticsContainer>
