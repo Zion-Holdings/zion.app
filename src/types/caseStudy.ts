@@ -10,4 +10,5 @@ export interface CaseStudy {
   quote: string;
   author: string;
   role: string;
+  featuredImage: string;
 }
