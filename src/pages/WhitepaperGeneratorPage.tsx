@@ -502,7 +502,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
                 <Button
                     onClick={handleTogglePublicStatus}
                     variant="outline"
-                    size="xs" // smaller button
+                    size="sm" // smaller button
                     disabled={isSharing} // Disable while another share operation is in progress
                     className={currentSharedWhitepaperIsPublic ? "bg-red-100 hover:bg-red-200" : "bg-green-100 hover:bg-green-200"}
                 >
