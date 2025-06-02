@@ -1,15 +1,11 @@
 import { PrismaClient } from '@prisma/client';
-import type { Prisma } from '@prisma/client';
+import type { Product } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
-
-// Alias the Prisma generated Product type to avoid relying on a top-level
-// export that may not exist depending on the generated client version.
-type Product = Prisma.Product;
 
 const prisma = new PrismaClient();
 
 // Extend the Product type to include our aggregated review data
-export type ProductWithReviewStats = Prisma.Product & {
+export type ProductWithReviewStats = Product & {
   averageRating: number | null;
   reviewCount: number;
 };

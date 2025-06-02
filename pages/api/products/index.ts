@@ -1,18 +1,15 @@
 import { PrismaClient } from '@prisma/client';
-import type { Prisma } from '@prisma/client';
+import type { Product } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// Alias the Prisma generated Product type. Some versions of the Prisma client
-// only expose model types via the `Prisma` namespace instead of top-level
-// exports. Using an alias keeps the rest of the code unchanged regardless of
-// how the client is generated.
-type Product = Prisma.Product;
+// Alias the Prisma generated Product type.
+type ProductModel = Product;
 
 const prisma = new PrismaClient();
 
 // Define the extended product type, same as in details.ts
 // Consider moving this to a shared type file, e.g., src/types/listings.ts or src/types/products.ts later
-export type ProductWithReviewStats = Prisma.Product & {
+export type ProductWithReviewStats = ProductModel & {
   averageRating: number | null;
   reviewCount: number;
   // Additional fields to align with potential frontend expectations (e.g., ProductListingCard)
@@ -36,7 +33,7 @@ export default async function handler(
   const { q: searchQuery } = req.query;
 
   try {
-    let products: Product[] = [];
+    let products: ProductModel[] = [];
 
     if (typeof searchQuery === 'string' && searchQuery.trim() !== '') {
       // Sanitize search query for safety if it were used directly in a template string,
