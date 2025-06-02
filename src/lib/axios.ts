@@ -19,8 +19,23 @@ class InterceptorManager {
 
 export interface AxiosInstance {
   interceptors: { response: InterceptorManager };
-  get<T = any>(url: string, config?: { params?: Record<string, any> } & RequestInit): Promise<AxiosResponse<T>>;
-  post<T = any>(url: string, data?: any, config?: RequestInit): Promise<AxiosResponse<T>>;
+  get<T = any>(
+    url: string,
+    config?: { params?: Record<string, any> } & RequestInit
+  ): Promise<AxiosResponse<T>>;
+  post<T = any>(
+    url: string,
+    data?: any,
+    config?: RequestInit
+  ): Promise<AxiosResponse<T>>;
+}
+
+export interface AxiosStatic {
+  create: typeof create;
+  defaults: AxiosDefaults;
+  interceptors: { response: InterceptorManager };
+  get: AxiosInstance['get'];
+  post: AxiosInstance['post'];
 }
 
 interface AxiosDefaults {
@@ -104,10 +119,14 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
   return instance;
 }
 
-const axios = {
+const defaultInstance = create();
+
+const axios: AxiosStatic = {
   create,
   defaults: globalDefaults,
   interceptors: globalInterceptors,
+  get: defaultInstance.get,
+  post: defaultInstance.post,
 };
 
 export default axios;
