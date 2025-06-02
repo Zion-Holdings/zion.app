@@ -6,11 +6,10 @@ interface ProductActionsProps {
   productId: string;
   addToCart: (id: string) => Promise<unknown>;
   isDisabled?: boolean;
-  // Potentially, if sellerId was available:
-  // sellerId: string;
+  sellerId?: string;
 }
 
-export function ProductActions({ productId, addToCart, isDisabled /*, sellerId */ }: ProductActionsProps) {
+export function ProductActions({ productId, addToCart, isDisabled, sellerId }: ProductActionsProps) {
   const [status, setStatus] = useState('Add to Cart');
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false); // New state for modal
@@ -52,8 +51,7 @@ export function ProductActions({ productId, addToCart, isDisabled /*, sellerId *
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         productId={productId}
-        // TODO: Replace "SELLER_ID_PLACEHOLDER" with actual sellerId from product data or props
-        sellerId="SELLER_ID_PLACEHOLDER"
+        sellerId={sellerId}
       />
     </>
   );
