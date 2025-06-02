@@ -4,6 +4,7 @@ import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom'; // Needed because AppHeader contains NavLink/Link components via MainNavigation
 import { AppHeader } from '../AppHeader'; // Adjust path as necessary
 import { useAuth } from '@/hooks/useAuth';
+import type { AuthContextType } from '@/types/auth';
 import { useTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
 import { useIsMobile } from '@/hooks/use-mobile';

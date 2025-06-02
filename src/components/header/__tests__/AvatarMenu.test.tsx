@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import UserProfileDropdown from '../UserProfileDropdown';
 import { useAuth } from '@/hooks/useAuth';
+import type { AuthContextType } from '@/types/auth';
 
 // Mock react-router-dom
 jest.mock('react-router-dom', () => ({
