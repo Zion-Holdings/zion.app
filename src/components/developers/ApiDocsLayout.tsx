@@ -1,9 +1,13 @@
 
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { cn } from "@/lib/utils";
+import {
+  docsSearchSuggestions,
+  getDocsSearchPath,
+} from "@/data/docsSearchData";
 
 interface ApiDocsLayoutProps {
   children: React.ReactNode;
@@ -11,7 +15,9 @@ interface ApiDocsLayoutProps {
 
 export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
   const location = useLocation();
+  const navigate = useNavigate();
   const currentPath = location.pathname;
+  const [searchValue, setSearchValue] = useState("");
   
   const navigationItems = [
     { title: "Getting Started", path: "/developers/docs/getting-started" },
@@ -20,6 +26,23 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
     { title: "Sample Code", path: "/developers/docs/samples" },
     { title: "Error Codes & Rate Limits", path: "/developers/docs/errors" },
   ];
+
+  const handleSelectSuggestion = (text: string) => {
+    const path = getDocsSearchPath(text);
+    if (path) {
+      navigate(path);
+      setSearchValue("");
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const path = getDocsSearchPath(searchValue);
+    if (path) {
+      navigate(path);
+      setSearchValue("");
+    }
+  };
 
   return (
     <div className="flex min-h-screen bg-zinc-950">
@@ -33,13 +56,16 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
         </Link>
 
         <div className="mb-6">
-          <div className="relative">
+          <form onSubmit={handleSubmit} className="relative">
             <Search className="absolute left-2 top-2.5 h-4 w-4 text-zinc-500" />
-            <Input 
-              placeholder="Search documentation" 
-              className="pl-8 bg-zinc-900 border-zinc-800 focus:border-zion-purple"
+            <EnhancedSearchInput
+              value={searchValue}
+              onChange={setSearchValue}
+              onSelectSuggestion={handleSelectSuggestion}
+              searchSuggestions={docsSearchSuggestions}
+              placeholder="Search documentation"
             />
-          </div>
+          </form>
         </div>
 
         <nav>
