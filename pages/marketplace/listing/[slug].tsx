@@ -3,7 +3,7 @@ import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import NextHead from '@/components/NextHead';
 import ProductReviews from '@/components/ProductReviews';
-import type { Product } from '@prisma/client'; // Prisma Product type
+import type { Product } from '@/types/product';
 
 // Alias the Prisma generated Product model type.
 type ProductModel = Product;

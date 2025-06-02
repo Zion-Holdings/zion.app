@@ -73,10 +73,7 @@ const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
 const appKitInstance: ReownAppKit | null = typeof window !== 'undefined'
   ? (createAppKit({
       adapters: [
-        new EthersAdapter({
-          ethers, // pass the ethers library instance
-          // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
-        }),
+        new EthersAdapter(),
       ],
       networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
       defaultNetwork: targetNetwork,
@@ -103,7 +100,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       const currentProvider = appKit.getWalletProvider();
 
       if (currentAddress && currentChainId && currentProvider) {
-        const ethersProvider = new ethers.BrowserProvider(currentProvider);
+        const ethersProvider = new ethers.BrowserProvider(currentProvider as any);
         const ethersSigner = await ethersProvider.getSigner();
         setWallet({
           provider: ethersProvider,

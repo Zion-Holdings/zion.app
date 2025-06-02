@@ -11,4 +11,5 @@ export interface CaseStudy {
   author: string;
   role: string;
   featuredImage: string;
+  publishedDate?: string;
 }

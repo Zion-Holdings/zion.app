@@ -104,10 +104,12 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
   return instance;
 }
 
-const axios = {
+const defaultAxios = create();
+
+const axios = Object.assign(defaultAxios, {
   create,
   defaults: globalDefaults,
   interceptors: globalInterceptors,
-};
+});
 
 export default axios;

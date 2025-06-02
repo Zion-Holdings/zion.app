@@ -1,3 +1,9 @@
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 export const initGA = () => {
   const measurementId = import.meta.env.VITE_GA_ID;
   if (!measurementId) {

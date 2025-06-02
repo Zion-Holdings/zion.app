@@ -71,7 +71,7 @@ describe('Signup Page', () => {
       setLoginRedirect: jest.fn(),
       getLoginRedirect: jest.fn().mockReturnValue(null),
       clearLoginRedirect: jest.fn(),
-    };
+    } as unknown as AuthContextType;
   });
 
   const renderSignup = (initialEntries = ['/signup']) => {
