@@ -48,21 +48,26 @@ export default async function handler(req: Req, res: JsonRes) {
       .select('id, title AS name, slug, price');
 
     if (category) {
-      console.log(`Fetching services with category: ${category}`); // Log the category
+      console.log(`Fetching services with category: ${category}`);
       query = query.eq('category', category);
     }
 
     const { data, error } = await query;
 
     if (error) {
+      const msg = error.message?.toLowerCase() || '';
+      if (msg.includes('no rows') || msg.includes('0 rows')) {
+        // Treat "no rows" as an empty result, not an error
+        res.status(200).json([]);
+        return;
+      }
       console.error('Error fetching services from Supabase:', error.message);
       throw error;
     }
 
-    res.status(200).json(data || []);
+    res.status(200).json(data ?? []);
   } catch (err: any) {
-    // Log the actual error received from Supabase or the caught error
     console.error('Service fetch error:', err.message ? err.message : JSON.stringify(err));
-    res.status(500).json({ error: "Database error while fetching services", details: err.message });
+    res.status(500).json({ error: 'Database error while fetching services', details: err.message });
   }
 }
