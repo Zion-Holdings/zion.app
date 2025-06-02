@@ -1,5 +1,10 @@
-export interface AxiosError extends Error {
-  response?: { status: number; data?: any };
+export interface AxiosResponse<T = any> {
+  data: T;
+  status: number;
+}
+
+export interface AxiosError<T = any> extends Error {
+  response?: AxiosResponse<T>;
 }
 
 type FulfilledFn = (value: any) => any | Promise<any>;
@@ -14,8 +19,8 @@ class InterceptorManager {
 
 export interface AxiosInstance {
   interceptors: { response: InterceptorManager };
-  get(url: string, config?: { params?: Record<string, any> } & RequestInit): Promise<any>;
-  post(url: string, data?: any, config?: RequestInit): Promise<any>;
+  get<T = any>(url: string, config?: { params?: Record<string, any> } & RequestInit): Promise<AxiosResponse<T>>;
+  post<T = any>(url: string, data?: any, config?: RequestInit): Promise<AxiosResponse<T>>;
 }
 
 interface AxiosDefaults {
@@ -36,28 +41,28 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
 
   const instance: AxiosInstance = {
     interceptors: { response: new InterceptorManager() },
-    async get(url, init = {}) {
+    async get<T = any>(url, init: { params?: Record<string, any> } & RequestInit = {} as any) {
       const params = (init as any).params
         ? '?' + new URLSearchParams((init as any).params).toString()
         : '';
       const opts = { ...init } as RequestInit;
       delete (opts as any).params;
-      return request(baseURL + url + params, 'GET', opts);
+      return request<T>(baseURL + url + params, 'GET', opts);
     },
-    async post(url, data = {}, init = {}) {
+    async post<T = any>(url, data: any = {}, init: RequestInit = {}) {
       const headers = {
         'Content-Type': 'application/json',
         ...(init as any).headers,
       };
       const opts = { ...init, body: JSON.stringify(data), headers } as RequestInit;
-      return request(baseURL + url, 'POST', opts);
+      return request<T>(baseURL + url, 'POST', opts);
     },
   };
 
   // Include global interceptors on the instance
   instance.interceptors.response.handlers.push(...globalInterceptors.response.handlers);
 
-  async function request(url: string, method: string, init: RequestInit) {
+  async function request<T>(url: string, method: string, init: RequestInit): Promise<AxiosResponse<T>> {
     // Read authToken from cookies
     const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
       const [name, value] = cookie.split('=');
@@ -76,7 +81,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     try {
       data = await response.clone().json();
     } catch {}
-    const result = { data, status: response.status };
+    const result: AxiosResponse<T> = { data, status: response.status };
     if (response.ok) {
       let res: any = result;
       for (const h of instance.interceptors.response.handlers) {
