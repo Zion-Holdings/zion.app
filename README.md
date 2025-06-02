@@ -30,9 +30,9 @@ These components work in tandem to connect professionals and businesses.
 *   **Rich Media Product Listings:** Support for video and 3D models in product displays.
 *   **Search Functionality:** Advanced search potentially powered by Elasticsearch.
 *   **Admin Dashboard:** Tools for administration and management of the platform.
-*   **API & Integrations:** Supports various integrations (e.g., Slack) and provides an API (details to be confirmed).
+*   **API & Integrations:** Supports integrations with Slack, Salesforce and Microsoft Teams, and provides an API (details to be confirmed).
 *   **Responsive Design:** User interface adapts to different screen sizes (implied by modern frontend stack).
-*   **Service Integrations:** Connects with external services like Slack (see `docs/Integrations.md`) and handles payments via Stripe (see `docs/Payments.md` for environment variable details).
+*   **Service Integrations:** Connects with external services like Slack, Salesforce and Microsoft Teams (see `docs/Integrations.md`) and handles payments via Stripe (see `docs/Payments.md` for environment variable details).
 *   **Rich Product Media:** Supports MP4 videos and GLB 3D models for product listings (`video_url`, `model_url` fields in database).
 
 ### Visual Feature Summary
@@ -287,3 +287,29 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ---
 *This README was generated/updated by an AI assistant.*
+
+## Local Content Management
+
+A simple file-based CMS allows you to publish blog posts, case studies, and tutorials without a separate service. Content files live in the `content` directory and are written in Markdown with a JSON front matter block. Run `npm run build:content` to convert these files into TypeScript data used by the application.
+
+Example post format:
+
+```markdown
+---
+{
+  "title": "AI in Customer Support",
+  "excerpt": "How AI improves support workflows.",
+  "tags": ["AI", "Support"],
+  "publishedDate": "Jul 1, 2024"
+}
+---
+Markdown body here.
+```
+
+After adding or editing files, regenerate the data arrays:
+
+```bash
+npm run build:content
+```
+
+This keeps the site content up to date and search‑engine optimized using the existing `<SEO>` component on each page.
