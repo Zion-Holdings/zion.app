@@ -44,7 +44,11 @@ export interface AuthContextType {
     password: string,
     rememberMe?: boolean
   ) => Promise<{ data?: any; error?: any }>;
-  signup: (email: string, password: string, userData?: any) => Promise<{ error?: any }>; 
+  signup: (
+    email: string,
+    password: string,
+    userData?: any
+  ) => Promise<{ error?: any; emailVerificationRequired?: boolean }>;
   register?: (name: string, email: string, password: string) => Promise<{ error?: any }>; 
   logout: () => Promise<void>;
   resetPassword: (email: string) => Promise<{ error?: any }>;
@@ -55,7 +59,11 @@ export interface AuthContextType {
   loginWithWeb3: () => Promise<void>;
   signIn?: (email: string, password: string) => Promise<{ error: any }>;
   signOut?: () => Promise<void>;
-  signUp?: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any }>;
+  signUp?: (
+    email: string,
+    password: string,
+    userData?: Partial<UserDetails>
+  ) => Promise<{ error: any; emailVerificationRequired?: boolean }>;
   setUser?: React.Dispatch<React.SetStateAction<UserDetails | null>>;
   tokens?: { accessToken: string; refreshToken?: string } | null;
   avatarUrl?: string | null;
