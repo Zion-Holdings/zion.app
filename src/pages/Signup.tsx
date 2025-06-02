@@ -105,7 +105,6 @@ export default function Signup() {
         return;
       }
 
-fix/auth-flow-email-verification
       // Handle email verification required case
       if (resData?.emailVerificationRequired) {
         setShowVerificationMessage(true);
@@ -136,7 +135,6 @@ fix/auth-flow-email-verification
         toast.error("Registration complete, but an unexpected issue occurred. Please try logging in manually.");
         // Potentially navigate to login or show a more specific error
         return;
-            main
       }
 
       // Subscribe user to Mailchimp if opted in (only if registration is fully complete, not pending verification)
@@ -152,10 +150,8 @@ fix/auth-flow-email-verification
           // Non-critical error, don't block user flow
         }
       }
-fix/auth-flow-email-verification
       // Toast and navigation are handled above if session is present
       // If emailVerificationRequired, no toast/navigation here, message is shown
-main
     } catch (err: any) {
       const message =
         err?.response?.data?.message ?? err?.message ?? "Unexpected error";
@@ -180,83 +176,6 @@ main
   
   // Redirect to onboarding if user is authenticated but hasn't completed profile
   if (isAuthenticated && !user?.profileComplete) {
-    return <Navigate to="/onboarding" />;
-  }
-
-  return (
-    <>
-      <div className="flex min-h-screen bg-zion-blue">
-        <div className="flex-1 flex flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-          <div className="mx-auto w-full max-w-sm lg:w-96">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold tracking-tight text-white">
-                Create your account
-              </h2>
-              <p className="mt-2 text-sm text-zion-slate-light">
-                Already have an account?{" "}
-                <Link to="/login" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
-                  Sign in
-                </Link>
-              </p>
-            </div>
-
-            <div className="bg-zion-blue-dark rounded-lg p-6">
-              <Form {...form}>
-                {form.formState.errors.root && !showVerificationMessage && (
-                  <Alert variant="destructive" className="mb-4">
-                    <AlertDescription>{form.formState.errors.root.message}</AlertDescription>
-                  </Alert>
-                )}
-                {showVerificationMessage && (
-                  <Alert variant="default" className="mb-4 bg-blue-50 border-blue-200 text-blue-700">
-                    <Mail className="h-5 w-5 mr-2 !text-blue-700" />
-                    <AlertDescription>
-                      Registration successful! Please check your email to verify your account and complete the process.
-                    </AlertDescription>
-                  </Alert>
-                )}
-                <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-6" noValidate>
-                  <FormField
-                    control={form.control}
-      if (data.newsletterOptIn && mailchimpService) {
-        try {
-          await mailchimpService.addSubscriber({
-            email: data.email,
-            mergeFields: { FNAME: data.displayName }
-          });
-          await mailchimpService.sendWelcomeEmail(data.email, 'NEW10');
-        } catch (err) {
-          console.error('Mailchimp subscription failed', err);
-        }
-      }
-
-      // Mailchimp subscription and navigation for non-verification case handled above
-    } catch (err: any) {
-      const message =
-        err?.response?.data?.message ?? err?.message ?? "Unexpected error";
-      form.setError("root", { message });
-      toast.error(message);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const onInvalid = (errors: any) => {
-    const firstError = Object.keys(errors)[0] as keyof SignupFormValues;
-    if (firstError) {
-      form.setFocus(firstError);
-    }
-  };
-
-  // Redirect if user is already logged in and has completed profile
-  // Allow staying on signup page if email verification is pending
-  if (isAuthenticated && user?.profileComplete && !showVerificationMessage) {
-    return <Navigate to="/" />;
-  }
-
-  // Redirect to onboarding if user is authenticated but hasn't completed profile
-  // Allow staying on signup page if email verification is pending
-  if (isAuthenticated && !user?.profileComplete && !showVerificationMessage) {
     return <Navigate to="/onboarding" />;
   }
 

@@ -169,9 +169,10 @@ const App = () => {
         <OfflineToast />
         <SupportChatbot />
         <InstallPrompt />
-          </ToastProvider>
-      </ThemeProvider>
-    </WhitelabelProvider>
+            </ToastProvider>
+          </ThemeProvider>
+        </WalletProvider>
+      </WhitelabelProvider>
     </ErrorBoundary>
   );
 };
