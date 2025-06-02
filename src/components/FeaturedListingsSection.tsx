@@ -3,12 +3,13 @@ import { ProductListingCard } from "@/components/ProductListingCard";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
-interface FeaturedListingsSectionProps {
+interface FeaturedListingsSectionProps extends React.HTMLAttributes<HTMLElement> {
   showTitle?: boolean;
 }
 
-export function FeaturedListingsSection({ showTitle = true }: FeaturedListingsSectionProps) {
+export function FeaturedListingsSection({ showTitle = true, className, style, ...props }: FeaturedListingsSectionProps) {
   const featuredListings = [
     {
       id: "advanced-nlp-model",
@@ -82,7 +83,12 @@ export function FeaturedListingsSection({ showTitle = true }: FeaturedListingsSe
   ];
 
   return (
-    <section id="featured" className="py-12 px-4 bg-background">
+    <section
+      id="featured"
+      className={cn("py-12 px-4 bg-background", className)}
+      style={style}
+      {...props}
+    >
       <div className="container mx-auto">
         {showTitle && (
           <div className="text-center mb-12">

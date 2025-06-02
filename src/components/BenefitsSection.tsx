@@ -2,6 +2,7 @@
 import { GradientHeading } from "./GradientHeading";
 import { FeatureCard } from "./FeatureCard";
 import { Bot, Clock, Globe, TrendingDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const benefits = [
   {
@@ -26,9 +27,15 @@ const benefits = [
   },
 ];
 
-export function BenefitsSection() {
+export interface BenefitsSectionProps extends React.HTMLAttributes<HTMLElement> {}
+
+export function BenefitsSection({ className, style, ...props }: BenefitsSectionProps) {
   return (
-    <section className="py-20 bg-zion-blue-light">
+    <section
+      className={cn("py-20 bg-zion-blue-light", className)}
+      style={style}
+      {...props}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <GradientHeading>Why Zion?</GradientHeading>

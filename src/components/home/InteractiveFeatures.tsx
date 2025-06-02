@@ -5,7 +5,9 @@ import { ArrowRight, Search, Users, Zap, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
-export function InteractiveFeatures() {
+export interface InteractiveFeaturesProps extends React.HTMLAttributes<HTMLElement> {}
+
+export function InteractiveFeatures({ className, style, ...props }: InteractiveFeaturesProps) {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
 
   const features = [
@@ -48,7 +50,11 @@ export function InteractiveFeatures() {
   };
 
   return (
-    <section className="py-16 bg-zion-blue-dark">
+    <section
+      className={cn("py-16 bg-zion-blue-dark", className)}
+      style={style}
+      {...props}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent mb-2">
