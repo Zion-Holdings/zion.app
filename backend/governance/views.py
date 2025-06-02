@@ -47,7 +47,10 @@ class ProposalViewSet(viewsets.ModelViewSet):
         if Vote.objects.filter(proposal=proposal, voter=user).exists():
              return Response({'error': 'You have already voted on this proposal.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        serializer = VoteSerializer(data=request.data)
+        serializer = VoteSerializer(
+            data=request.data,
+            context={"proposal": proposal, "request": request}
+        )
         if serializer.is_valid():
             # TODO: Determine voting_power_at_snapshot based on ZION$ holdings
             # This is a placeholder value.
