@@ -8,7 +8,15 @@
 
 ## Project Overview
 
-This project is a multifaceted web platform designed to integrate e-commerce capabilities, a talent marketplace, AI-driven features, content management, and community engagement. It aims to provide a comprehensive solution for connecting professionals and businesses. Key functionalities include user authentication, product and service listings, an AI-powered matching system, a blog, document generation, and real-time user interactions.
+This platform brings together several key modules:
+
+- **E-commerce:** Product and service listings with Stripe-based checkout.
+- **Talent Marketplace:** Searchable profiles and AI-driven matching.
+- **AI Tools:** Content generation (ZionGPT) and other smart features.
+- **Content Management:** Integrated blog and document generation.
+- **Community:** Real-time messaging and notifications.
+
+These components work in tandem to connect professionals and businesses.
 
 ## Features
 
