@@ -2,11 +2,11 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import WhitepaperGeneratorPage from '@/pages/WhitepaperGeneratorPage';
-import { supabase } from '@/lib/supabaseClient';
+import { supabase } from '@/integrations/supabase/client';
 import * as recharts from 'recharts'; // For mocking ResponsiveContainer
 
 // --- Mocks ---
-jest.mock('@/lib/supabaseClient', () => ({
+jest.mock('@/integrations/supabase/client', () => ({
   supabase: {
     functions: {
       invoke: jest.fn(),
