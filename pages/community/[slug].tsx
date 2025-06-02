@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react'; // Removed useEffect
 import NextHead from '@/components/NextHead';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -13,60 +13,45 @@ const POSTS_PER_PAGE = 20; // Or any other limit you prefer
 
 interface CategoryPageProps {
   initialPosts: ForumPost[];
+  initialNextCursor: string | null; // Added for cursor pagination
   hasSession: boolean;
   category: string;
 }
 
-const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, hasSession, category }) => {
+const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCursor, hasSession, category }) => {
   const [posts, setPosts] = useState<ForumPost[]>(initialPosts);
-  const [page, setPage] = useState(2); // Start fetching from page 2
+  const [nextCursor, setNextCursor] = useState<string | null>(initialNextCursor);
   const [isLoading, setIsLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(initialPosts.length === POSTS_PER_PAGE);
+  // hasMore is now derived from nextCursor
+  const hasMore = nextCursor !== null;
 
   const loadMorePosts = useCallback(async () => {
-    if (isLoading || !hasMore) return;
+    if (isLoading || !nextCursor) return; // Check nextCursor directly
 
     setIsLoading(true);
     try {
-      const newPosts = await fetchPostsByCategory(category, page, POSTS_PER_PAGE);
+      // Pass the current nextCursor to the fetch function
+      const { posts: newPosts, nextCursor: newNextCursorFromFetch } = await fetchPostsByCategory(category, nextCursor, POSTS_PER_PAGE);
       if (newPosts.length > 0) {
         setPosts((prevPosts) => [...prevPosts, ...newPosts]);
-        setPage((prevPage) => prevPage + 1);
-        setHasMore(newPosts.length === POSTS_PER_PAGE);
-      } else {
-        setHasMore(false);
       }
+      setNextCursor(newNextCursorFromFetch); // Update cursor for the next fetch
     } catch (error) {
       console.error("Failed to fetch more posts:", error);
       // Optionally, handle error state in UI
     } finally {
       setIsLoading(false);
     }
-  }, [category, page, isLoading, hasMore]);
+  }, [category, nextCursor, isLoading]); // Dependency array updated
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Check if scrolled to the bottom
-      if (
-        window.innerHeight + document.documentElement.scrollTop >=
-          document.documentElement.offsetHeight - 100 && // 100px threshold
-        !isLoading &&
-        hasMore
-      ) {
-        loadMorePosts();
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [loadMorePosts, isLoading, hasMore]);
+  // useEffect for scroll-based loading is REMOVED.
 
   return (
     <>
       <NextHead
-        title={`${category} Forum – ZionAI`}
+        title={`${category} – Zion Community`}
         description={`Discussion posts in the ${category} category`}
-        openGraph={{ title: `${category} Forum – ZionAI`, description: `Discussion posts in the ${category} category` }}
+        openGraph={{ title: `${category} – Zion Community`, description: `Discussion posts in the ${category} category` }}
       />
       <main className="container py-8">
         <div className="flex justify-end mb-6">
@@ -90,11 +75,20 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, hasSession, c
             {posts.map((post) => (
               <PostCard key={post.id} post={post} />
             ))}
+            {/* "Load More" Button and messages */}
             {isLoading && <div className="text-center py-4">Loading...</div>}
-            {!hasMore && posts.length > 0 && <div className="text-center py-4 text-gray-500">No more posts.</div>}
+            {!isLoading && hasMore && (
+              <div className="text-center py-4">
+                <Button onClick={loadMorePosts}>Load More</Button>
+              </div>
+            )}
+            {!isLoading && !hasMore && posts.length > 0 && (
+              <div className="text-center py-4 text-gray-500">No more posts.</div>
+            )}
           </div>
         ) : (
-          <EmptyState
+          // Show EmptyState only if not loading and no posts initially (and no posts after filtering if any)
+          !isLoading && <EmptyState
             title="No posts yet"
             subtitle="Be the first to post"
             cta="Create New Post"
@@ -122,35 +116,31 @@ export const getServerSideProps = async ({ req, params }: { req: any; params?: {
     '';
   const token = req.cookies?.['sb-access-token'] || null;
 
+  let initialPostsData: ForumPost[] = [];
+  let initialNextCursor: string | null = null;
+
   if (!supabaseUrl || !anonKey) {
     // Return empty initialPosts if Supabase is not configured
-    return { props: { initialPosts: [], hasSession: Boolean(token), category } };
+    return { props: { initialPosts: [], initialNextCursor: null, hasSession: Boolean(token), category } };
   }
 
-  const supabase = createClient(supabaseUrl, anonKey);
+  // const supabase = createClient(supabaseUrl, anonKey); // Not needed if calling service function
 
-  // Fetch initial posts (page 1)
-  // Using fetchPostsByCategory for consistency, though direct Supabase client call is also fine here
-  let initialPostsData: ForumPost[] = [];
   try {
-    const { data, error } = await supabase
-      .from('forum_posts')
-      .select('*')
-      .eq('category_id', category)
-      .order('created_at', { ascending: false })
-      .limit(POSTS_PER_PAGE); // Use POSTS_PER_PAGE for the initial load
-
-    if (error) {
-      throw error;
-    }
-    initialPostsData = (data as ForumPost[]) || [];
+    // Fetch initial posts using the modified service function
+    // No cursor is passed for the initial fetch (it will be undefined)
+    const { posts, nextCursor } = await fetchPostsByCategory(category, undefined, POSTS_PER_PAGE);
+    initialPostsData = posts;
+    initialNextCursor = nextCursor;
   } catch (error: any) {
     console.error('Initial post fetch error:', error.message);
+    // Handle error appropriately, maybe return empty or an error prop
   }
 
   return {
     props: {
       initialPosts: initialPostsData,
+      initialNextCursor, // Pass the cursor to the page component
       hasSession: Boolean(token),
       category
     }
