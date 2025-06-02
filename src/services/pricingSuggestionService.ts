@@ -168,6 +168,8 @@ export async function getTalentRateSuggestion(params: TalentRateParams): Promise
 }
 
 // Function to save pricing analytics data
+import { supabase } from '@/integrations/supabase/client';
+
 export async function trackPricingSuggestion(data: {
   userId: string;
   suggestionType: 'client' | 'talent';
@@ -177,18 +179,23 @@ export async function trackPricingSuggestion(data: {
   accepted: boolean;
 }) {
   try {
-    // In a real implementation, this would save to the database
-    // For now, we'll just log it
-    console.log("Tracking pricing suggestion:", data);
-    
-    // In a real implementation with Supabase:
-    // await supabase
-    //  .from('pricing_suggestions')
-    //  .insert([data]);
-    
+    const { error } = await supabase
+      .from('pricing_suggestions')
+      .insert({
+        user_id: data.userId,
+        suggestion_type: data.suggestionType,
+        suggested_min: data.suggestedMin,
+        suggested_max: data.suggestedMax,
+        actual_value: data.actualValue,
+        accepted: data.accepted,
+        created_at: new Date().toISOString()
+      });
+
+    if (error) throw error;
+
     return true;
   } catch (error) {
-    console.error("Error tracking pricing suggestion:", error);
+    console.error('Error tracking pricing suggestion:', error);
     return false;
   }
 }
