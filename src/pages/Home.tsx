@@ -53,9 +53,7 @@ export default function Home() {
         <InteractiveFeatures />
       </div>
 
-      <div className="animate-fadeIn" style={{ animationDelay: '0.3s' }}>
-        <FeatureHighlights />
-      </div>
+      <FeatureHighlights className="animate-fadeIn" style={{ animationDelay: '0.3s' }} />
 
       <div className="animate-fadeIn" style={{ animationDelay: '0.4s' }}>
         <CategoriesSection />
