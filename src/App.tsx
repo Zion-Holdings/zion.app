@@ -56,6 +56,14 @@ import ITSupportPage from './pages/ITSupportPage';
 import WishlistPage from './pages/Wishlist';
 import FavoritesPage from './pages/Favorites';
 import CartPage from './pages/Cart';
+import AIPoweredContent from './pages/features/AIPoweredContent';
+import TalentMarketplace from './pages/features/TalentMarketplace';
+import Ecommerce from './pages/features/Ecommerce';
+import InstantMessaging from './pages/features/InstantMessaging';
+import AdminDashboard from './pages/features/AdminDashboard';
+import SearchFeature from './pages/features/Search';
+import IntegrationsFeature from './pages/features/Integrations';
+import Internationalization from './pages/features/Internationalization';
 const Checkout = lazy(() => import('./pages/Checkout'));
 const RequestQuotePage = lazy(() => import('./pages/RequestQuote'));
 const RecommendationsPage = lazy(() => import('./pages/RecommendationsPage'));
@@ -131,6 +139,14 @@ const baseRoutes = [
   { path: '/checkout', element: <PrivateRoute><Checkout /></PrivateRoute> },
   { path: '/forgot-password', element: <ForgotPassword /> },
   { path: '/reset-password/:token', element: <ResetPassword /> },
+  { path: '/features/ai-content-generation', element: <AIPoweredContent /> },
+  { path: '/features/talent-marketplace', element: <TalentMarketplace /> },
+  { path: '/features/e-commerce', element: <Ecommerce /> },
+  { path: '/features/instant-messaging', element: <InstantMessaging /> },
+  { path: '/features/admin-dashboard', element: <AdminDashboard /> },
+  { path: '/features/search', element: <SearchFeature /> },
+  { path: '/features/integrations', element: <IntegrationsFeature /> },
+  { path: '/features/internationalization', element: <Internationalization /> },
 ];
 
 const App = () => {
