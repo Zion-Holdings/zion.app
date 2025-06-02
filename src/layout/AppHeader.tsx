@@ -1,9 +1,8 @@
 
 import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
-import { MainNavigation } from './MainNavigation';
+import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { Logo } from '@/components/header/Logo';
-import { useTranslation } from 'react-i18next';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import { MobileMenu } from '@/components/header/MobileMenu';
@@ -34,7 +33,7 @@ export function AppHeader() {
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
           <div className="ml-6 flex-1 hidden md:block">
-            <MainNavigation unreadCount={unreadCount} />
+            <ResponsiveNavigation />
           </div>
           
           {/* Mobile menu button */}
