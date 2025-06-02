@@ -45,11 +45,13 @@ export default function handler(req: Req, res: JsonRes) {
     return;
   }
 
-  const first = profile.full_name.split(' ')[0].toLowerCase();
-  const social = {
-    twitter: `https://twitter.com/${first}`,
-    linkedin: `https://linkedin.com/in/${first}`,
-  };
+  const portfolio = profile.key_projects?.map(p => p.title) || [];
 
-  res.status(200).json({ profile: { ...profile, social } });
+  res.status(200).json({
+    id: profile.id,
+    name: profile.full_name,
+    bio: profile.bio,
+    skills: profile.skills,
+    portfolio,
+  });
 }
