@@ -11,6 +11,8 @@ import { toast } from "@/components/ui/use-toast";
 import z from "zod";
 import { ChatAssistant } from "@/components/ChatAssistant";
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -27,6 +29,7 @@ export default function Contact() {
     message?: string;
   }>({});
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -72,6 +75,9 @@ export default function Contact() {
         title: "Message Sent",
         description: "We've received your message and will get back to you soon.",
       });
+
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 2000);
 
       // Reset form
       setFormData({
@@ -219,13 +225,25 @@ export default function Contact() {
                   )}
                 </div>
                 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
+                <AnimatePresence>
+                  {submitted && (
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="text-green-500 text-center mt-2"
+                    >
+                      Thank you! We'll be in touch.
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </form>
             </div>
             
@@ -314,6 +332,15 @@ export default function Contact() {
                 </a>
               </Button>
             </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-zion-slate-light text-lg">
+              Looking for more details about our platform? Visit our{' '}
+              <Link to="/services" className="text-zion-cyan underline">services page</Link>{' '}
+              or explore the{' '}
+              <Link to="/blog" className="text-zion-cyan underline">Zion blog</Link> for additional insights.
+            </p>
           </div>
         </div>
       </main>

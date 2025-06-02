@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Proposal, Vote
 from django.contrib.auth import get_user_model
+from django.utils import timezone
 
 User = get_user_model()
 
@@ -24,13 +25,36 @@ class VoteSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'voted_at', 'voter']
 
     def validate(self, data):
+        """Additional validation for votes."""
         # Ensure either voter_id (for platform users) or voter_wallet_address is provided
-        if not data.get('voter') and not data.get('voter_wallet_address'):
-            raise serializers.ValidationError("Either platform user (voter_id) or voter_wallet_address must be provided.")
-        # TODO: Add validation:
-        # 1. Check if proposal is active for voting.
-        # 2. Check if user has already voted. (unique_together in model helps, but good to have here too)
-        # 3. Check if voting_power_at_snapshot is provided and valid.
+        if not data.get("voter") and not data.get("voter_wallet_address"):
+            raise serializers.ValidationError(
+                "Either platform user (voter_id) or voter_wallet_address must be provided."
+            )
+
+        proposal = self.context.get("proposal") or data.get("proposal")
+        request = self.context.get("request")
+
+        if proposal:
+            # 1. Check if proposal is active for voting
+            if proposal.status != "ACTIVE":
+                raise serializers.ValidationError("Voting is not active for this proposal.")
+
+            if proposal.voting_starts_at and proposal.voting_starts_at > timezone.now():
+                raise serializers.ValidationError("Voting has not started yet.")
+
+            if proposal.voting_ends_at and proposal.voting_ends_at < timezone.now():
+                raise serializers.ValidationError("Voting period has ended.")
+
+            # 2. Check if user has already voted
+            user = getattr(request, "user", None)
+            if user and Vote.objects.filter(proposal=proposal, voter=user).exists():
+                raise serializers.ValidationError("You have already voted on this proposal.")
+
+        # 3. Check if voting_power_at_snapshot is provided and valid
+        if data.get("voting_power_at_snapshot") is None:
+            raise serializers.ValidationError("voting_power_at_snapshot is required.")
+
         return data
 
 class ProposalSerializer(serializers.ModelSerializer):

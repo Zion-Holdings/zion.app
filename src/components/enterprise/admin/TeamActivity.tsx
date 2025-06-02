@@ -109,7 +109,7 @@ export function TeamActivity() {
               className="w-[200px] md:w-[300px] pl-9"
             />
           </div>
-          <Button variant="outline" size="icon" className="h-10 w-10">
+          <Button variant="outline" size="icon" className="h-10 w-10" aria-label="Filter by date">
             <CalendarIcon className="h-4 w-4" />
           </Button>
         </div>

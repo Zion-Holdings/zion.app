@@ -8,7 +8,15 @@
 
 ## Project Overview
 
-This project is a multifaceted web platform designed to integrate e-commerce capabilities, a talent marketplace, AI-driven features, content management, and community engagement. It aims to provide a comprehensive solution for connecting professionals and businesses. Key functionalities include user authentication, product and service listings, an AI-powered matching system, a blog, document generation, and real-time user interactions.
+This platform brings together several key modules:
+
+- **E-commerce:** Product and service listings with Stripe-based checkout.
+- **Talent Marketplace:** Searchable profiles and AI-driven matching.
+- **AI Tools:** Content generation (ZionGPT) and other smart features.
+- **Content Management:** Integrated blog and document generation.
+- **Community:** Real-time messaging and notifications.
+
+These components work in tandem to connect professionals and businesses.
 
 ## Features
 
@@ -22,10 +30,23 @@ This project is a multifaceted web platform designed to integrate e-commerce cap
 *   **Rich Media Product Listings:** Support for video and 3D models in product displays.
 *   **Search Functionality:** Advanced search potentially powered by Elasticsearch.
 *   **Admin Dashboard:** Tools for administration and management of the platform.
-*   **API & Integrations:** Supports various integrations (e.g., Slack) and provides an API (details to be confirmed).
+*   **API & Integrations:** Supports integrations with Slack, Salesforce and Microsoft Teams, and provides an API (details to be confirmed).
 *   **Responsive Design:** User interface adapts to different screen sizes (implied by modern frontend stack).
-*   **Service Integrations:** Connects with external services like Slack (see `docs/Integrations.md`) and handles payments via Stripe (see `docs/Payments.md` for environment variable details).
+*   **Service Integrations:** Connects with external services like Slack, Salesforce and Microsoft Teams (see `docs/Integrations.md`) and handles payments via Stripe (see `docs/Payments.md` for environment variable details).
 *   **Rich Product Media:** Supports MP4 videos and GLB 3D models for product listings (`video_url`, `model_url` fields in database).
+
+### Visual Feature Summary
+
+| Feature | Icon |
+| ------- | ---- |
+| User Authentication | ![Auth Icon](docs/images/icon-auth.svg) |
+| E-commerce Platform | ![E-commerce Icon](docs/images/icon-ecommerce.svg) |
+| Talent Marketplace | ![Talent Icon](docs/images/icon-talent.svg) |
+| AI-Powered Capabilities | ![AI Icon](docs/images/icon-ai.svg) |
+| Content Management | ![Content Icon](docs/images/icon-content.svg) |
+| Real-time Interactions | ![Realtime Icon](docs/images/icon-realtime.svg) |
+
+![Features Infographic](docs/images/features-infographic.svg)
 
 ## Architecture Overview
 
@@ -175,6 +196,16 @@ When tests run on GitHub Actions, the workflow uploads the `coverage` directory
 using `actions/upload-artifact@v4`. Visit a workflow run and download the
 `coverage-report` artifact to retrieve the generated HTML coverage report.
 
+### Accessibility Audit
+
+Run automated accessibility checks with:
+
+```sh
+npm run lint:a11y
+```
+
+This command uses `jest-axe` to verify common WCAG issues across key pages and components.
+
 ## Troubleshooting
 
 ### Network Issues
@@ -256,3 +287,29 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ---
 *This README was generated/updated by an AI assistant.*
+
+## Local Content Management
+
+A simple file-based CMS allows you to publish blog posts, case studies, and tutorials without a separate service. Content files live in the `content` directory and are written in Markdown with a JSON front matter block. Run `npm run build:content` to convert these files into TypeScript data used by the application.
+
+Example post format:
+
+```markdown
+---
+{
+  "title": "AI in Customer Support",
+  "excerpt": "How AI improves support workflows.",
+  "tags": ["AI", "Support"],
+  "publishedDate": "Jul 1, 2024"
+}
+---
+Markdown body here.
+```
+
+After adding or editing files, regenerate the data arrays:
+
+```bash
+npm run build:content
+```
+
+This keeps the site content up to date and search‑engine optimized using the existing `<SEO>` component on each page.

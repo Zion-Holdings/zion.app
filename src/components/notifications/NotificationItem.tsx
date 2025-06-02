@@ -94,14 +94,15 @@ export const NotificationItem: React.FC<NotificationItemProps> = ({
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button 
-                variant="ghost" 
-                size="icon" 
+              <Button
+                variant="ghost"
+                size="icon"
                 className="h-6 w-6"
                 onClick={(e) => {
                   e.stopPropagation();
                   onMarkAsRead(notification.id);
                 }}
+                aria-label="Mark as read"
               >
                 <Check className="h-3.5 w-3.5 text-green-400" />
               </Button>
@@ -115,14 +116,15 @@ export const NotificationItem: React.FC<NotificationItemProps> = ({
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button 
-                variant="ghost" 
-                size="icon" 
+              <Button
+                variant="ghost"
+                size="icon"
                 className="h-6 w-6"
                 onClick={(e) => {
                   e.stopPropagation();
                   onDismiss(notification.id);
                 }}
+                aria-label="Dismiss notification"
               >
                 <Trash2 className="h-3.5 w-3.5 text-red-400" />
               </Button>

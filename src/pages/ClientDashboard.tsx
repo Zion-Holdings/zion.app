@@ -12,6 +12,8 @@ import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { SuggestedTalents } from "@/components/jobs/SuggestedTalents";
 import { useJobs } from "@/hooks/useJobs";
 import { ClientOnboardingSteps } from "@/components/onboarding/ClientOnboardingSteps";
+import { AdvancedOnboardingSteps } from "@/components/onboarding/AdvancedOnboardingSteps";
+import { useOnboardingStatus } from "@/hooks/useOnboardingStatus";
 import { ActiveProjectsCard } from "@/components/projects/ActiveProjectsCard";
 import { UpcomingInterviewsCard } from "@/components/interviews/UpcomingInterviewsCard";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -22,6 +24,11 @@ function ClientDashboardContent() {
   const [selectedJobId, setSelectedJobId] = useState<string | null>(null);
   const [selectedJobTitle, setSelectedJobTitle] = useState<string>("");
   const isMobile = useIsMobile();
+  const onboardingStatus = useOnboardingStatus();
+  const showAdvanced =
+    onboardingStatus.jobPosted &&
+    onboardingStatus.inviteSent &&
+    onboardingStatus.responseReceived;
 
   // Set the first job as selected when jobs are loaded (if any)
   useEffect(() => {
@@ -65,6 +72,11 @@ function ClientDashboardContent() {
         {/* New Onboarding Steps */}
         <div className="mb-8">
           <ClientOnboardingSteps />
+          {showAdvanced && (
+            <div className="mt-6">
+              <AdvancedOnboardingSteps />
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

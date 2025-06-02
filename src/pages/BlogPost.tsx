@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { SEO } from "@/components/SEO";
+import JsonLd from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, ChevronLeft, ChevronRight, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import type { BlogPost as BlogPostType } from "@/types/blog";
@@ -63,7 +64,7 @@ export default function BlogPost() {
       </div>
     );
   }
-  
+
   // Helper function to get share URL
   const getShareUrl = (platform: string) => {
     const url = encodeURIComponent(window.location.href);
@@ -80,6 +81,19 @@ export default function BlogPost() {
         return '#';
     }
   };
+
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: post.featuredImage,
+    datePublished: post.publishedDate,
+    author: {
+      "@type": "Person",
+      name: post.author.name,
+    },
+  };
   
   return (
     <>
@@ -90,6 +104,7 @@ export default function BlogPost() {
         ogImage={post.featuredImage}
         canonical={`https://app.ziontechgroup.com/blog/${post.slug}`}
       />
+      <JsonLd data={articleLd} />
       <div className="min-h-screen bg-zion-blue pt-12 pb-20 px-4">
         <div className="container mx-auto">
           {/* Back to blog button */}
@@ -265,7 +280,16 @@ export default function BlogPost() {
                 </div>
               </div>
             )}
-            
+
+            <div className="mt-12 text-center">
+              <p className="text-zion-slate-light">
+                Ready to put these ideas into action? Explore our{' '}
+                <Link to="/services" className="text-zion-cyan underline">AI services</Link>{' '}
+                or browse expert{' '}
+                <Link to="/talent" className="text-zion-cyan underline">talent</Link> to accelerate your projects.
+              </p>
+            </div>
+
             {/* Navigation */}
             <div className="flex justify-between items-center mt-12">
               <Button

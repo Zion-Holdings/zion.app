@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { sendMessage } from '../../services/messages';
 import { toast } from '@/hooks/use-toast';
 
@@ -30,6 +30,22 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }) 
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false); // New loading state
+  const firstInputRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    function handleKeyDown(e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose();
+      }
+    }
+
+    firstInputRef.current?.focus();
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) {
     return null;
@@ -61,9 +77,15 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }) 
   };
 
   return (
-    <div style={modalOverlayStyle} onClick={onClose}>
+    <div
+      style={modalOverlayStyle}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-publisher-title"
+      onClick={onClose}
+    >
       <div style={modalContentStyle} onClick={(e) => e.stopPropagation()}>
-        <h2>Contact Publisher</h2>
+        <h2 id="contact-publisher-title">Contact Publisher</h2>
         <form onSubmit={handleSubmit}>
           {error && <p style={{ color: 'red' }}>{error}</p>}
           <div>
@@ -73,6 +95,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }) 
               type="text"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
+              ref={firstInputRef}
               style={{ width: '100%', padding: '8px', marginBottom: '10px', border: '1px solid #ccc', borderRadius: '4px' }}
             />
           </div>
@@ -89,7 +112,20 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }) 
           <button type="submit" style={{ padding: '10px 15px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }} disabled={isLoading}>
             {isLoading ? 'Sending...' : 'Send Message'}
           </button>
-          <button type="button" onClick={onClose} style={{ marginLeft: '10px', padding: '10px 15px', backgroundColor: '#6c757d', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }} disabled={isLoading}>
+          <button
+            type="button"
+            onClick={onClose}
+            style={{
+              marginLeft: '10px',
+              padding: '10px 15px',
+              backgroundColor: '#555',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+            }}
+            disabled={isLoading}
+          >
             Cancel
           </button>
         </form>

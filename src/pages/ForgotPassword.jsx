@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Assuming react-router-dom is used
+import { forgotPassword } from '@/services/auth';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -8,9 +9,14 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage('');
-    // TODO: Call API service src/services/auth.ts forgotPassword(email)
-    // Handle response and set message
-    setMessage('Password reset instructions sent to your email if it exists in our system.');
+    try {
+      await forgotPassword(email);
+      setMessage(
+        'Password reset instructions sent to your email if it exists in our system.'
+      );
+    } catch (err) {
+      setMessage(err.message || 'Failed to send reset instructions.');
+    }
   };
 
   return (

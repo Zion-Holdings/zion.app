@@ -32,52 +32,61 @@ export function usePricingSuggestionAnalytics(days = 30) {
   });
 
   useEffect(() => {
-    // This would fetch actual data from the database in a real implementation
-    // For now, let's simulate the data
     const fetchAnalytics = async () => {
       try {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+        const { data, error } = await supabase
+          .from('pricing_suggestions')
+          .select('*')
+          .gte('created_at', since);
 
-        // Mock data for demonstration
-        const mockData = {
-          totalSuggestions: 256,
-          acceptanceRate: 0.72,
-          averagePriceGap: 12.5,
-          suggestionsByCategory: [
-            { category: 'development', count: 120, acceptanceRate: 0.75 },
-            { category: 'design', count: 65, acceptanceRate: 0.82 },
-            { category: 'marketing', count: 42, acceptanceRate: 0.64 },
-            { category: 'content', count: 18, acceptanceRate: 0.56 },
-            { category: 'data', count: 11, acceptanceRate: 0.78 },
-          ],
-          recentSuggestions: Array(10).fill(null).map((_, i) => ({
-            id: `suggestion-${i}`,
-            userId: `user-${Math.floor(Math.random() * 100)}`,
-            suggestedMin: 30 + Math.floor(Math.random() * 30),
-            suggestedMax: 60 + Math.floor(Math.random() * 40),
-            actualValue: Math.random() > 0.3 ? 45 + Math.floor(Math.random() * 30) : undefined,
-            accepted: Math.random() > 0.25,
-            createdAt: new Date(Date.now() - Math.floor(Math.random() * 1000000000)).toISOString(),
-            type: Math.random() > 0.5 ? 'client' : 'talent' as 'client' | 'talent',
-          }))
-        };
+        if (error) throw error;
+
+        const totalSuggestions = data.length;
+        const accepted = data.filter(d => d.accepted).length;
+        const acceptanceRate = totalSuggestions ? accepted / totalSuggestions : 0;
+
+        const gaps = data
+          .filter(d => d.actual_value !== null && d.actual_value !== undefined)
+          .map(d => Math.abs((d.actual_value as number) - ((d.suggested_min + d.suggested_max) / 2)));
+        const averagePriceGap = gaps.length ? gaps.reduce((a, b) => a + b, 0) / gaps.length : 0;
+
+        const categoryMap: Record<string, { count: number; accepted: number }> = {};
+        data.forEach(d => {
+          const cat = (d as any).category || 'other';
+          if (!categoryMap[cat]) categoryMap[cat] = { count: 0, accepted: 0 };
+          categoryMap[cat].count += 1;
+          if (d.accepted) categoryMap[cat].accepted += 1;
+        });
+        const suggestionsByCategory = Object.entries(categoryMap).map(([category, val]) => ({
+          category,
+          count: val.count,
+          acceptanceRate: val.count ? val.accepted / val.count : 0
+        }));
+
+        const recentSuggestions = data
+          .sort((a, b) => (b.created_at as string).localeCompare(a.created_at as string))
+          .slice(0, 10)
+          .map(d => ({
+            id: d.id as string,
+            userId: d.user_id as string,
+            suggestedMin: d.suggested_min as number,
+            suggestedMax: d.suggested_max as number,
+            actualValue: d.actual_value as number | undefined,
+            accepted: d.accepted as boolean,
+            createdAt: d.created_at as string,
+            type: d.suggestion_type as 'client' | 'talent'
+          }));
 
         setAnalytics({
-          ...mockData,
+          totalSuggestions,
+          acceptanceRate,
+          averagePriceGap,
+          suggestionsByCategory,
+          recentSuggestions,
           isLoading: false,
           error: null
         });
-
-        // In a real implementation with Supabase, you might do:
-        // const { data, error } = await supabase
-        //   .from('pricing_suggestions')
-        //   .select(...)
-        //   .gte('created_at', `now() - interval '${days} days'`);
-        
-        // if (error) throw error;
-        // Process data and setAnalytics({...})
-
       } catch (error) {
         console.error("Error fetching pricing suggestion analytics:", error);
         setAnalytics({

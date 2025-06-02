@@ -33,7 +33,7 @@ import { store } from './store';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
-import { NotificationProvider } from './context';
+import { NotificationProvider, MessagingProvider } from './context';
 import { ThemeProvider } from '@/context/ThemeContext'; // Import ThemeProvider
 
 // Import analytics provider
@@ -69,6 +69,7 @@ try {
               <WhitelabelProvider>
                 <Router>
                 <AuthProvider>
+                  <MessagingProvider>
                   <NotificationProvider>
                     <AnalyticsProvider>
                       <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
@@ -89,6 +90,7 @@ try {
                       </LanguageProvider>
                     </AnalyticsProvider>
                   </NotificationProvider>
+                  </MessagingProvider>
                 </AuthProvider>
               </Router>
             </WhitelabelProvider>

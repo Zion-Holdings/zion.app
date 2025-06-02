@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
+import { Link } from "react-router-dom";
 
 export default function About() {
   return (
@@ -15,15 +16,15 @@ export default function About() {
       />
       <Header />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+          <div className="text-center content-section">
             <GradientHeading>About Zion</GradientHeading>
             <p className="mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto">
               The world's first free marketplace dedicated to high-tech and artificial intelligence
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center content-section">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">Our Mission</h2>
               <p className="text-zion-slate-light text-lg mb-6">
@@ -48,7 +49,7 @@ export default function About() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 lg:flex-row-reverse">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center lg:flex-row-reverse content-section">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">Our Vision</h2>
               <p className="text-zion-slate-light text-lg mb-6">
@@ -74,7 +75,7 @@ export default function About() {
             </div>
           </div>
           
-          <div className="text-center mb-16">
+          <div className="text-center content-section">
             <h2 className="text-3xl font-bold text-white mb-8">Our Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
@@ -114,6 +115,15 @@ export default function About() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="content-section text-center">
+          <p className="text-zion-slate-light text-lg">
+            Ready to work with us? Explore our{' '}
+            <Link to="/services" className="text-zion-cyan underline">AI & IT services</Link>{' '}
+            or <Link to="/contact" className="text-zion-cyan underline">get in touch</Link>. For the latest updates, visit our{' '}
+            <Link to="/blog" className="text-zion-cyan underline">blog</Link>.
+          </p>
         </div>
       </main>
       <Footer />

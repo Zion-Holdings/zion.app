@@ -42,7 +42,13 @@ export function SupportChatbot() {
     <div className="fixed bottom-4 right-4 bg-zion-blue w-80 max-w-full rounded-lg shadow-xl flex flex-col z-50">
       <div className="bg-zion-blue-dark p-2 flex justify-between items-center">
         <span className="text-white font-medium">Help Bot</span>
-        <Button variant="ghost" size="icon" className="text-white" onClick={() => setOpen(false)}>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="text-white"
+          onClick={() => setOpen(false)}
+          aria-label="Close help bot"
+        >
           <X className="h-5 w-5" />
         </Button>
       </div>

@@ -7,6 +7,7 @@ import { ListingScoreCard } from "@/components/ListingScoreCard";
 import { captureException } from "@/utils/sentry";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useDebounce } from "@/hooks/useDebounce";
+import { useIsMounted } from "@/hooks/useIsMounted";
 import { z } from "zod";
 
 const listingSchema = z.object({
@@ -30,6 +31,7 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
   const [listings, setListings] = useState<ListingItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const isMounted = useIsMounted();
 
   // Fetch services when the service type or query changes
   useEffect(() => {
@@ -38,7 +40,6 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
       return;
     }
 
-    let isMounted = true;
     const fetchServices = async () => {
       setLoading(true);
       setError(null);
@@ -54,7 +55,7 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
           const data = await response.json();
           const parsed = listingsSchema.safeParse(data);
           if (!parsed.success) throw new Error('Invalid response');
-          if (isMounted) {
+          if (isMounted.current) {
             setListings(parsed.data as ListingItem[]);
             setError(null);
           }
@@ -66,7 +67,7 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
             } else {
               captureException(err);
             }
-            if (isMounted) {
+            if (isMounted.current) {
               setListings([]);
               setError('Failed to load services');
             }
@@ -74,16 +75,13 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
             await new Promise((res) => setTimeout(res, Math.pow(2, attempt) * 500));
           }
         } finally {
-          if (isMounted) setLoading(false);
+          if (isMounted.current) setLoading(false);
         }
       }
     };
 
     fetchServices();
-    return () => {
-      isMounted = false;
-    };
-  }, [formData.serviceType, debouncedQuery]);
+  }, [formData.serviceType, debouncedQuery, isMounted]);
   
   const handleTypeSelect = (type: ServiceType) => {
     updateFormData({ serviceType: type });

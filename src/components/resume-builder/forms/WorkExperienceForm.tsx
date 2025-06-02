@@ -159,6 +159,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
                       variant="ghost"
                       size="icon"
                       onClick={() => handleEdit(work)}
+                      aria-label="Edit experience"
                     >
                       <Edit className="h-4 w-4" />
                     </Button>
@@ -166,6 +167,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
                       variant="ghost"
                       size="icon"
                       onClick={() => handleDelete(work.id!)}
+                      aria-label="Delete experience"
                     >
                       <Trash2 className="h-4 w-4" />
                     </Button>

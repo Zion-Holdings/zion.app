@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import { ErrorBoundary as LocalErrorBoundary } from './components/ErrorBoundary';
 import { ErrorBoundary } from 'react-error-boundary';
 import { captureException } from './utils/sentry';
@@ -11,6 +12,7 @@ import { WhitelabelProvider } from "./context/WhitelabelContext";
 import ToastProvider from "./components/ToastProvider";
 import OfflineToast from "./components/OfflineToast";
 import InstallPrompt from "./components/InstallPrompt";
+import { FeedbackWidget } from "./components/feedback/FeedbackWidget";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -21,6 +23,7 @@ import {
   EnterpriseRoutes,
   DeveloperRoutes
 } from './routes';
+import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
 import AIMatcherPage from './pages/AIMatcher';
 import TalentDirectory from './pages/TalentDirectory';
@@ -51,9 +54,20 @@ import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
 import OpenAppRedirect from './pages/OpenAppRedirect';
 import ContactPage from './pages/Contact';
 import ZionHireAI from './pages/ZionHireAI';
+import AITalentMatchingPage from './pages/AITalentMatchingPage';
+import ITSupportPage from './pages/ITSupportPage';
 import WishlistPage from './pages/Wishlist';
 import FavoritesPage from './pages/Favorites';
 import CartPage from './pages/Cart';
+import FeedbackAnalytics from './pages/FeedbackAnalytics';
+import AIPoweredContent from './pages/features/AIPoweredContent';
+import TalentMarketplace from './pages/features/TalentMarketplace';
+import Ecommerce from './pages/features/Ecommerce';
+import InstantMessaging from './pages/features/InstantMessaging';
+import AdminDashboard from './pages/features/AdminDashboard';
+import SearchFeature from './pages/features/Search';
+import IntegrationsFeature from './pages/features/Integrations';
+import Internationalization from './pages/features/Internationalization';
 const Checkout = lazy(() => import('./pages/Checkout'));
 const RequestQuotePage = lazy(() => import('./pages/RequestQuote'));
 const RecommendationsPage = lazy(() => import('./pages/RecommendationsPage'));
@@ -99,6 +113,7 @@ const baseRoutes = [
   { path: '/equipment/:id', element: <EquipmentDetail /> },
   { path: '/new-products', element: <NewProductsPage /> },
   { path: '/analytics', element: <Analytics /> },
+  { path: '/feedback-analytics', element: <FeedbackAnalytics /> },
   { path: '/mobile-launch', element: <MobileLaunchPage /> },
   { path: '/open-app', element: <OpenAppRedirect /> },
   {
@@ -115,6 +130,8 @@ const baseRoutes = [
   { path: '/help', element: <Help /> },
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
+  { path: '/ai-talent-matching', element: <AITalentMatchingPage /> },
+  { path: '/it-support', element: <ITSupportPage /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
@@ -127,12 +144,21 @@ const baseRoutes = [
   { path: '/checkout', element: <PrivateRoute><Checkout /></PrivateRoute> },
   { path: '/forgot-password', element: <ForgotPassword /> },
   { path: '/reset-password/:token', element: <ResetPassword /> },
+  { path: '/features/ai-content-generation', element: <AIPoweredContent /> },
+  { path: '/features/talent-marketplace', element: <TalentMarketplace /> },
+  { path: '/features/e-commerce', element: <Ecommerce /> },
+  { path: '/features/instant-messaging', element: <InstantMessaging /> },
+  { path: '/features/admin-dashboard', element: <AdminDashboard /> },
+  { path: '/features/search', element: <SearchFeature /> },
+  { path: '/features/integrations', element: <IntegrationsFeature /> },
+  { path: '/features/internationalization', element: <Internationalization /> },
 ];
 
 const App = () => {
   console.log("App.tsx: Start");
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
+  const location = useLocation();
   console.log("App.tsx: Rendering Tree");
   return (
     <ErrorBoundary
@@ -148,26 +174,29 @@ const App = () => {
             <ToastProvider>
             <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
               <LocalErrorBoundary>
-          <Routes>
+          <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
             {baseRoutes.map(({ path, element }) => (
-              <Route key={path} path={path} element={element} />
+              <Route key={path} path={path} element={<PageTransition>{element}</PageTransition>} />
             ))}
-            <Route path="/auth/*" element={<AuthRoutes />} />
-            <Route path="/dashboard/*" element={<DashboardRoutes />} />
-            <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
-            <Route path="/talent/*" element={<TalentRoutes />} />
-            <Route path="/admin/*" element={<AdminRoutes />} />
-            <Route path="/mobile/*" element={<MobileAppRoutes />} />
-            <Route path="/content/*" element={<ContentRoutes />} />
-            <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
-            <Route path="/community/*" element={<CommunityRoutes />} />
-            <Route path="/developers/*" element={<DeveloperRoutes />} />
-            <Route path="*" element={<ErrorRoutes />} />
+            <Route path="/auth/*" element={<PageTransition><AuthRoutes /></PageTransition>} />
+            <Route path="/dashboard/*" element={<PageTransition><DashboardRoutes /></PageTransition>} />
+            <Route path="/marketplace/*" element={<PageTransition><MarketplaceRoutes /></PageTransition>} />
+            <Route path="/talent/*" element={<PageTransition><TalentRoutes /></PageTransition>} />
+            <Route path="/admin/*" element={<PageTransition><AdminRoutes /></PageTransition>} />
+            <Route path="/mobile/*" element={<PageTransition><MobileAppRoutes /></PageTransition>} />
+            <Route path="/content/*" element={<PageTransition><ContentRoutes /></PageTransition>} />
+            <Route path="/enterprise/*" element={<PageTransition><EnterpriseRoutes /></PageTransition>} />
+            <Route path="/community/*" element={<PageTransition><CommunityRoutes /></PageTransition>} />
+            <Route path="/developers/*" element={<PageTransition><DeveloperRoutes /></PageTransition>} />
+            <Route path="*" element={<PageTransition><ErrorRoutes /></PageTransition>} />
           </Routes>
+          </AnimatePresence>
               </LocalErrorBoundary>
         </Suspense>
         <OfflineToast />
         <SupportChatbot />
+        <FeedbackWidget />
         <InstallPrompt />
           </ToastProvider>
       </ThemeProvider>
