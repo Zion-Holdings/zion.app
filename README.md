@@ -287,3 +287,29 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ---
 *This README was generated/updated by an AI assistant.*
+
+## Local Content Management
+
+A simple file-based CMS allows you to publish blog posts, case studies, and tutorials without a separate service. Content files live in the `content` directory and are written in Markdown with a JSON front matter block. Run `npm run build:content` to convert these files into TypeScript data used by the application.
+
+Example post format:
+
+```markdown
+---
+{
+  "title": "AI in Customer Support",
+  "excerpt": "How AI improves support workflows.",
+  "tags": ["AI", "Support"],
+  "publishedDate": "Jul 1, 2024"
+}
+---
+Markdown body here.
+```
+
+After adding or editing files, regenerate the data arrays:
+
+```bash
+npm run build:content
+```
+
+This keeps the site content up to date and search‑engine optimized using the existing `<SEO>` component on each page.
