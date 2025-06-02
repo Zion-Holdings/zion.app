@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "NODE_ENV=production tsc && NODE_ENV=production vite build && node scripts/generate-sitemap.js",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "NODE_ENV=production vite preview",
     "test": "jest --coverage",
     "test:watch": "vitest --watch",
