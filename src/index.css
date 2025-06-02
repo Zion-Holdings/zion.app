@@ -168,6 +168,12 @@
     opacity: 1;
   }
 }
+
+@layer components {
+  a {
+    @apply transition-colors duration-200 hover:text-primary;
+  }
+}
   @keyframes slide-up {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }

@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import { ErrorBoundary as LocalErrorBoundary } from './components/ErrorBoundary';
 import { ErrorBoundary } from 'react-error-boundary';
 import { captureException } from './utils/sentry';
@@ -21,6 +22,7 @@ import {
   EnterpriseRoutes,
   DeveloperRoutes
 } from './routes';
+import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
 import AIMatcherPage from './pages/AIMatcher';
 import TalentDirectory from './pages/TalentDirectory';
@@ -153,6 +155,7 @@ const App = () => {
   console.log("App.tsx: Start");
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
+  const location = useLocation();
   console.log("App.tsx: Rendering Tree");
   return (
     <ErrorBoundary
@@ -168,22 +171,24 @@ const App = () => {
             <ToastProvider>
             <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
               <LocalErrorBoundary>
-          <Routes>
+          <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
             {baseRoutes.map(({ path, element }) => (
-              <Route key={path} path={path} element={element} />
+              <Route key={path} path={path} element={<PageTransition>{element}</PageTransition>} />
             ))}
-            <Route path="/auth/*" element={<AuthRoutes />} />
-            <Route path="/dashboard/*" element={<DashboardRoutes />} />
-            <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
-            <Route path="/talent/*" element={<TalentRoutes />} />
-            <Route path="/admin/*" element={<AdminRoutes />} />
-            <Route path="/mobile/*" element={<MobileAppRoutes />} />
-            <Route path="/content/*" element={<ContentRoutes />} />
-            <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
-            <Route path="/community/*" element={<CommunityRoutes />} />
-            <Route path="/developers/*" element={<DeveloperRoutes />} />
-            <Route path="*" element={<ErrorRoutes />} />
+            <Route path="/auth/*" element={<PageTransition><AuthRoutes /></PageTransition>} />
+            <Route path="/dashboard/*" element={<PageTransition><DashboardRoutes /></PageTransition>} />
+            <Route path="/marketplace/*" element={<PageTransition><MarketplaceRoutes /></PageTransition>} />
+            <Route path="/talent/*" element={<PageTransition><TalentRoutes /></PageTransition>} />
+            <Route path="/admin/*" element={<PageTransition><AdminRoutes /></PageTransition>} />
+            <Route path="/mobile/*" element={<PageTransition><MobileAppRoutes /></PageTransition>} />
+            <Route path="/content/*" element={<PageTransition><ContentRoutes /></PageTransition>} />
+            <Route path="/enterprise/*" element={<PageTransition><EnterpriseRoutes /></PageTransition>} />
+            <Route path="/community/*" element={<PageTransition><CommunityRoutes /></PageTransition>} />
+            <Route path="/developers/*" element={<PageTransition><DeveloperRoutes /></PageTransition>} />
+            <Route path="*" element={<PageTransition><ErrorRoutes /></PageTransition>} />
           </Routes>
+          </AnimatePresence>
               </LocalErrorBoundary>
         </Suspense>
         <OfflineToast />
