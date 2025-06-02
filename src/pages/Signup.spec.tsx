@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import Signup from './Signup';
-import { AuthContext } from '@/context/auth';
+import { AuthContext } from '@/context/auth/AuthContext';
 import type { AuthContextType } from '@/types/auth';
 import { registerUser } from '@/services/authService';
 import { toast } from '@/hooks/use-toast';
