@@ -39,16 +39,18 @@ type FormValues = {
   message: string;
 };
 
-const schema = yup.object({
-  subject: yup
-    .string()
-    .min(5, 'Subject must be at least 5 characters')
-    .required('Subject is required'),
-  message: yup
-    .string()
-    .min(20, 'Message must be at least 20 characters')
-    .required('Message is required'),
-});
+const schema: yup.ObjectSchema<FormValues> = yup
+  .object({
+    subject: yup
+      .string()
+      .min(5, 'Subject must be at least 5 characters')
+      .required('Subject is required'),
+    message: yup
+      .string()
+      .min(20, 'Message must be at least 20 characters')
+      .required('Message is required'),
+  })
+  .required();
 
 export function ContactPublisherModal({
   isOpen,
@@ -62,8 +64,8 @@ export function ContactPublisherModal({
   const [error, setError] = React.useState<string | null>(null);
   const [loginOpen, setLoginOpen] = React.useState(false);
 
-  const form = useForm<FormValues>({
-    resolver: yupResolver<FormValues>(schema),
+  const form = useForm<FormValues, any, FormValues>({
+    resolver: yupResolver(schema),
     mode: 'onChange',
     defaultValues: { subject: '', message: '' },
   });
