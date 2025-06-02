@@ -67,9 +67,7 @@ export default function Home() {
       <div className="animate-fadeIn" style={{ animationDelay: '0.7s' }}>
         <FeaturedListingsSection />
       </div>
-      <div className="animate-fadeIn" style={{ animationDelay: '0.8s' }}>
-        <NewsletterSection />
-      </div>
+      <NewsletterSection className="animate-fadeIn" style={{ animationDelay: '0.8s' }} />
     </div>
   );
 }
