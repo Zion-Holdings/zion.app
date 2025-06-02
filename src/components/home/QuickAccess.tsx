@@ -94,3 +94,5 @@ export function QuickAccess({ className, style }: QuickAccessProps) {
     </section>
   );
 }
+
+export default QuickAccess;
