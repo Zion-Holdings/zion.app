@@ -65,7 +65,7 @@ describe('AppHeader', () => {
     mockT.mockClear();
 
     // Default mocks
-    mockedUseTranslation.mockReturnValue({ t: mockT, i18n: {} as any });
+    mockedUseTranslation.mockReturnValue({ t: mockT as any, i18n: {} as any } as any);
     mockedUseIsMobile.mockReturnValue(false); // Default to not mobile
     mockedUseMessaging.mockReturnValue({ unreadCount: 0 }); // Default no unread messages
   });
