@@ -5,8 +5,14 @@ import { randomUUID } from 'crypto';
 interface Req { method?: string; body?: any }
 interface JsonRes { status:(c:number)=>JsonRes; json:(d:any)=>void; end:(d?:any)=>void; setHeader:(n:string,v:string)=>void }
 
-const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabaseUrl = process.env.SUPABASE_URL;
+const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!supabaseUrl || !serviceKey) {
+  const errorMessage = 'CRITICAL: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing for backend API (orders/guest). Service cannot start.';
+  console.error(errorMessage);
+  throw new Error(errorMessage);
+}
 const supabase = createClient(supabaseUrl, serviceKey);
 
 async function handler(req: Req, res: JsonRes) {

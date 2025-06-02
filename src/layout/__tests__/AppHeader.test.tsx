@@ -96,6 +96,11 @@ describe('AppHeader', () => {
       expect(screen.queryByTestId('header-greeting')).not.toBeInTheDocument();
       expect(screen.queryByText(/Hello, Test!/i)).not.toBeInTheDocument();
     });
+
+    it('does NOT render the Login link', () => {
+      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      expect(screen.queryByTestId('login-link')).not.toBeInTheDocument();
+    });
   });
 
   describe('when user is logged out', () => {
@@ -110,6 +115,13 @@ describe('AppHeader', () => {
     it('does NOT render AvatarMenu', () => {
       render(<MemoryRouter><AppHeader /></MemoryRouter>);
       expect(screen.queryByTestId('avatar-menu')).not.toBeInTheDocument();
+    });
+
+    it('renders the Login link', () => {
+      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      const loginLink = screen.getByTestId('login-link');
+      expect(loginLink).toBeInTheDocument();
+      expect(loginLink).toHaveAttribute('href', '/login');
     });
 
     it('renders LanguageSelector (assuming it is shown for logged-out users too)', () => {

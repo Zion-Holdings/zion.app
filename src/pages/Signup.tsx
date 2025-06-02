@@ -102,6 +102,7 @@ export default function Signup() {
       // If the API indicates an email already exists, `registerUser` should throw an error
       // which will be caught by the catch block below.
 
+fix/signup-flow
       if (resData?.emailVerificationRequired) {
         setShowVerificationMessage(true);
         // No navigation or session setting here. User needs to verify their email.
@@ -134,6 +135,7 @@ export default function Signup() {
             // This is a non-critical error, so we don't block the user flow
             // or show a user-facing error message for this.
           }
+main
         }
       }
     } catch (err: any) {
@@ -226,12 +228,14 @@ export default function Signup() {
         }
       }
 
+fix/signup-flow
       // Mailchimp subscription and navigation for non-verification case handled above
     } catch (err: any) {
       // Error handling logic has been updated in the section above.
       // This specific part of the original catch block is now covered by the more detailed error handling.
       const message =
         err?.response?.data?.message ?? err?.message ?? "Unexpected error";
+main
       form.setError("root", { message });
       toast.error(message);
     } finally {
@@ -247,7 +251,7 @@ export default function Signup() {
   };
 
   // Redirect if user is already logged in and has completed profile
-  // Allow staying on signup page if email verification is pending
+  // Allow staying on signup page if email verification is pending (showVerificationMessage is true)
   if (isAuthenticated && user?.profileComplete && !showVerificationMessage) {
     return <Navigate to="/" />;
   }

@@ -12,16 +12,16 @@ interface JsonRes {
   json: (data: any) => void;
 }
 
-const supabaseUrl =
-  process.env.SUPABASE_URL ||
-  process.env.VITE_SUPABASE_URL ||
-  process.env.NEXT_PUBLIC_SUPABASE_URL ||
-  '';
-const serviceKey =
-  process.env.SUPABASE_SERVICE_ROLE_KEY ||
-  process.env.VITE_SUPABASE_ANON_KEY ||
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  '';
+const supabaseUrl = process.env.SUPABASE_URL;
+// Similar to login, signUp typically uses anon key context.
+// Sticking to SERVICE_ROLE_KEY for consistency with backend route refactoring.
+const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!supabaseUrl || !serviceKey) {
+  const errorMessage = 'CRITICAL: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing for backend auth API. Service cannot start.';
+  console.error(errorMessage);
+  throw new Error(errorMessage);
+}
 const supabase = createClient(supabaseUrl, serviceKey);
 
 const schema = z.object({
@@ -89,32 +89,53 @@ async function handler(req: Req, res: JsonRes) {
 
     // If there's no error and data.user exists
     if (data.user) {
-      // Determine if email verification is required
-      // This is typically true if data.session is null and data.user.identities is empty or indicates no verified identity.
       const emailVerificationRequired = !data.session && data.user && (!data.user.identities || data.user.identities.length === 0 || !data.user.identities.some(identity => identity.identity_data?.email_verified || identity.identity_data?.email));
 
-      if (emailVerificationRequired) {
-        // Respond with status 201 and JSON for email verification
-        res.status(201).json({
-          message: "Registration successful. Please check your email to verify your account.",
-          emailVerificationRequired: true,
-          user: {
-            email: data.user.email,
-            id: data.user.id,
-            display_name: data.user.user_metadata?.display_name
-          }
-        });
-      } else {
-        // Email is auto-verified or verification is not strictly needed
-        // Set the authToken HttpOnly cookie using data.session.access_token
-        if (data.session?.access_token) {
-          res.setHeader('Set-Cookie', `authToken=${data.session.access_token}; HttpOnly; Path=/; Secure; SameSite=Strict; Max-Age=${data.session.expires_in}`);
-        }
-        // Respond with status 201 and JSON
-        res.status(201).json({ user: data.user, session: data.session });
+      // Prepare base response object
+      const responseJson: {
+        message?: string;
+        emailVerificationRequired?: boolean;
+        user: any;
+        session?: any;
+        token?: string;
+      } = {
+        user: {
+          id: data.user.id,
+          email: data.user.email,
+          display_name: data.user.user_metadata?.display_name,
+          // You can add other relevant user fields from data.user here
+          // For example: created_at: data.user.created_at
+        },
+      };
+
+      if (data.session?.access_token) {
+        responseJson.session = data.session;
+        responseJson.token = data.session.access_token;
+        // Set HttpOnly cookie (as in the original code)
+        res.setHeader('Set-Cookie', `authToken=${data.session.access_token}; HttpOnly; Path=/; Secure; SameSite=Strict; Max-Age=${data.session.expires_in}`);
       }
+
+      if (emailVerificationRequired) {
+        responseJson.message = "Registration successful. Please check your email to verify your account.";
+        responseJson.emailVerificationRequired = true;
+        // If data.session was null, responseJson.token will be undefined here.
+        // This is consistent with a token not being available if verification is required AND no session was created by Supabase.
+      } else {
+        // Email is auto-verified or verification is not strictly needed.
+        // A session and token should ideally exist here.
+        if (!data.session?.access_token) {
+             // This state (no email verification required but no session/token) is unexpected.
+             console.error('User session not found during registration when email verification is not required.');
+             // Depending on strictness, you might want to return an error or handle this.
+             // For now, the response will proceed without session/token if they are missing.
+        }
+        // If a general success message is desired when no verification is needed:
+        // responseJson.message = "Registration successful.";
+      }
+      res.status(201).json(responseJson);
+
     } else {
-      // Handle any other unexpected errors with a 500 status
+      // Handle unexpected errors (as in existing code)
       console.error('Unexpected state: No error but no user data after signUp.');
       res.status(500).json({ message: 'An unexpected error occurred during registration.' });
     }

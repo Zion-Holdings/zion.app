@@ -55,6 +55,13 @@ export function AppHeader() {
           </div>
 
           <PointsBadge />
+          {!user && (
+            <div className="ml-4">
+              <a href="/login" className="text-sm font-medium text-foreground/70 hover:text-foreground" aria-label="Login" data-testid="login-link">
+                Login
+              </a>
+            </div>
+          )}
           {/* User avatar menu */}
           {user && (
             <div className="ml-4">
