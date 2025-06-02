@@ -51,6 +51,8 @@ import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
 import OpenAppRedirect from './pages/OpenAppRedirect';
 import ContactPage from './pages/Contact';
 import ZionHireAI from './pages/ZionHireAI';
+import AITalentMatchingPage from './pages/AITalentMatchingPage';
+import ITSupportPage from './pages/ITSupportPage';
 import WishlistPage from './pages/Wishlist';
 import FavoritesPage from './pages/Favorites';
 import CartPage from './pages/Cart';
@@ -115,6 +117,8 @@ const baseRoutes = [
   { path: '/help', element: <Help /> },
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
+  { path: '/ai-talent-matching', element: <AITalentMatchingPage /> },
+  { path: '/it-support', element: <ITSupportPage /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
