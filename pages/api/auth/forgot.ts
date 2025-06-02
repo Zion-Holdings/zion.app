@@ -48,8 +48,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     await prisma.user.update({
       where: { id: user.id },
       data: {
-        resetToken: passwordResetToken,      // Or the equivalent field in your schema
-        resetTokenExpiry: passwordResetExpires, // Or the equivalent field in your schema
+        passwordResetToken: passwordResetToken,
+        passwordResetExpires: passwordResetExpires,
       },
     });
 

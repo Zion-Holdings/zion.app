@@ -7,6 +7,7 @@ type Req = {
   method?: string;
   query?: { userId?: string; user_id?: string };
   headers?: Record<string, string | undefined>;
+  body?: any; // Add body property
 };
 interface JsonRes {
   status: (code: number) => JsonRes;
