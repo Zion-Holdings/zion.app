@@ -5,3 +5,4 @@
 *.js
 # Allow PWA event type declarations
 !types/pwa.d.ts
+!types/react-devtools.d.ts
