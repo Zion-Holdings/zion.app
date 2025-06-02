@@ -11,6 +11,7 @@ import { toast } from "@/components/ui/use-toast";
 import z from "zod";
 import { ChatAssistant } from "@/components/ChatAssistant";
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -314,6 +315,15 @@ export default function Contact() {
                 </a>
               </Button>
             </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-zion-slate-light text-lg">
+              Looking for more details about our platform? Visit our{' '}
+              <Link to="/services" className="text-zion-cyan underline">services page</Link>{' '}
+              or explore the{' '}
+              <Link to="/blog" className="text-zion-cyan underline">Zion blog</Link> for additional insights.
+            </p>
           </div>
         </div>
       </main>
