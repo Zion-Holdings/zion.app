@@ -1,4 +1,4 @@
-import { toast } from "@/hooks/use-toast";
+import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 
 /**
  * Display a toast for API errors using a consistent style.
@@ -12,9 +12,10 @@ export function showApiError(error: unknown, fallback = "Something went wrong") 
       ? error.message
       : fallback;
 
-  toast({
-    title: "Error",
-    description: message,
-    variant: "destructive",
-  });
+  try {
+    const enqueueSnackbar = getEnqueueSnackbar();
+    enqueueSnackbar(message, { variant: 'error' });
+  } catch {
+    // ignore if snackbar not ready
+  }
 }
