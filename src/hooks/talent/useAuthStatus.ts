@@ -10,7 +10,9 @@ export function useAuthStatus() {
     id: 'user-123',
     name: 'Demo User',
     email: 'demo@example.com',
-    avatar: ''
+    avatar: '',
+    // include a default userType so consuming components can rely on it
+    userType: 'creator'
   });
   
   // Mock saved talents
