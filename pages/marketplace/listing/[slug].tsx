@@ -3,14 +3,11 @@ import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import NextHead from '@/components/NextHead';
 import ProductReviews from '@/components/ProductReviews';
-// Minimal product interface used in the marketplace listing page.
-// We avoid importing from `@prisma/client` because the generated types may not
-// be available in some environments (e.g. CI without database setup).
-interface ProductModel {
-  id: string;
-  name: string;
-  description: string | null;
-}
+import type { Product } from '@prisma/client';
+
+// Alias the Prisma generated Product model type. Importing the Product type
+// directly keeps the definition independent of how Prisma exports model types.
+type ProductModel = Product;
 // Define ProductWithReviewStats here or import from a shared types file
 // This should match the type returned by `/api/products/[productId]/details`
 export type ProductWithReviewStats = ProductModel & {
@@ -105,7 +102,8 @@ const MarketplaceListingPage: React.FC<ListingPageProps> = ({ product, error }) 
         />
       </Head>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8 px-4">
-        <h1>{product.name}</h1> {/* product.name comes from our ProductModel type */}
+
+        <h1>{product.name}</h1> {/* Using product.name from the Product model */}
 
       {/* Display average rating and review count */}
       <div className="my-4">
