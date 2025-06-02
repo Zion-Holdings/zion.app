@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { cn } from "@/lib/utils";
 import { 
   ArrowRight, 
   Search, 
@@ -12,7 +13,12 @@ import {
   Smartphone 
 } from "lucide-react";
 
-export function QuickAccess() {
+interface QuickAccessProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export function QuickAccess({ className, style }: QuickAccessProps) {
   const { t } = useTranslation();
   const quickLinks = [
     {
@@ -54,7 +60,7 @@ export function QuickAccess() {
   ];
 
   return (
-    <section className="py-12 bg-zion-blue-dark">
+    <section className={cn("py-12 bg-zion-blue-dark", className)} style={style}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent mb-2">

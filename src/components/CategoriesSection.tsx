@@ -2,6 +2,7 @@
 import { GradientHeading } from "./GradientHeading";
 import { Link } from "react-router-dom";
 import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const categories = [
   {
@@ -43,11 +44,17 @@ const specialServices = [
 
 interface CategoriesSectionProps {
   showTitle?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) {
+export function CategoriesSection({
+  showTitle = true,
+  className,
+  style,
+}: CategoriesSectionProps) {
   return (
-    <section className="py-20 bg-zion-blue">
+    <section className={cn("py-20 bg-zion-blue", className)} style={style}>
       <div className="container mx-auto px-4">
         {showTitle && (
           <div className="text-center mb-16">

@@ -2,8 +2,14 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-export function FeatureHighlights() {
+interface FeatureHighlightsProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export function FeatureHighlights({ className, style }: FeatureHighlightsProps) {
   const highlightsData = [
     {
       title: "For Talent Seekers",
@@ -41,7 +47,7 @@ export function FeatureHighlights() {
   ];
 
   return (
-    <section className="py-16 bg-zion-blue">
+    <section className={cn("py-16 bg-zion-blue", className)} style={style}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white mb-3">Tailored Solutions for Everyone</h2>

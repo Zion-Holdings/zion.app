@@ -1,6 +1,12 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Check, Handshake, Search, Send } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+interface HowItWorksSectionProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
 
 const steps = [
   {
@@ -25,9 +31,9 @@ const steps = [
   },
 ];
 
-export function HowItWorksSection() {
+export function HowItWorksSection({ className, style }: HowItWorksSectionProps) {
   return (
-    <section className="py-20 bg-zion-blue">
+    <section className={cn("py-20 bg-zion-blue", className)} style={style}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <GradientHeading>How It Works</GradientHeading>

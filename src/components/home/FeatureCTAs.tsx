@@ -18,8 +18,14 @@ import {
   Building,
   Clock
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-export function FeatureCTAs() {
+interface FeatureCTAsProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export function FeatureCTAs({ className, style }: FeatureCTAsProps) {
   const features = [
     {
       title: "AI Talent Matching",
@@ -105,7 +111,13 @@ export function FeatureCTAs() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-background/90">
+    <section
+      className={cn(
+        "py-16 bg-gradient-to-b from-background to-background/90",
+        className
+      )}
+      style={style}
+    >
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight mb-3">Discover Zion's Powerful Features</h2>

@@ -1,10 +1,20 @@
 
 import { GradientHeading } from "@/components/GradientHeading";
 import { EnhancedNewsletterForm } from "@/components/EnhancedNewsletterForm";
+import { cn } from "@/lib/utils";
 
-export function NewsletterSection() {
+interface NewsletterSectionProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export function NewsletterSection({ className, style }: NewsletterSectionProps) {
   return (
-    <section className="py-20 bg-zion-blue-dark" id="newsletter">
+    <section
+      className={cn("py-20 bg-zion-blue-dark", className)}
+      style={style}
+      id="newsletter"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <GradientHeading>Stay Informed</GradientHeading>
