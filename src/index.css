@@ -97,6 +97,32 @@
     font-family: theme('fontFamily.heading');
   }
 
+  h1 {
+    @apply text-4xl md:text-5xl font-extrabold text-zion-purple mb-6;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold text-primary mb-4;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold text-secondary mb-3;
+  }
+
+  h4,
+  h5,
+  h6 {
+    @apply font-medium text-foreground mb-2;
+  }
+
+  p {
+    @apply text-base text-foreground leading-relaxed mb-4;
+  }
+
+  .content-section {
+    @apply my-12 md:my-16;
+  }
+
   @keyframes pulse {
     0%, 100% {
       opacity: 1;
