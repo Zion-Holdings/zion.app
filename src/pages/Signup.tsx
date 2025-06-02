@@ -105,57 +105,69 @@ export default function Signup() {
         return;
       }
 
-fix/auth-flow-email-verification
-      // Handle email verification required case
+      const token = resData?.token || resData?.session?.access_token;
+
       if (resData?.emailVerificationRequired) {
-        setShowVerificationMessage(true);
-        // Do not proceed to set session or navigate
-      } else if (resData?.session) {
-        // Set the session directly if verification is not required
-        const { error: sessionError } = await supabase.auth.setSession(resData.session);
-        if (sessionError) {
-          console.error("Error setting session:", sessionError);
-          form.setError("root", { message: sessionError.message || "Failed to set session. Please try logging in." });
-          toast.error(sessionError.message || "Failed to set session. Please try logging in.");
-          return;
-        }
-        // The onAuthStateChange listener in AuthProvider should now handle
-        // updating user state and navigating if necessary for other cases.
-        // For direct signup with session, we can navigate.
-        setUser(resData.user);
-        setTokens({ accessToken: resData.session.access_token, refreshToken: resData.session.refresh_token });
-        safeStorage.setItem('authToken', resData.session.access_token);
-        localStorage.setItem('token', resData.session.access_token);
-        axios.defaults.headers.common['Authorization'] = `Bearer ${resData.session.access_token}`;
-        toast.success("Account created & logged in");
-        navigate("/marketplace");
-      } else {
-        // This case might indicate an unexpected response from the API
-        console.error("Registration response did not include session or emailVerificationRequired flag.", resData);
-        form.setError("root", { message: "Registration complete, but an unexpected issue occurred. Please try logging in." });
-        toast.error("Registration complete, but an unexpected issue occurred. Please try logging in manually.");
-        // Potentially navigate to login or show a more specific error
-        return;
-            main
+          setShowVerificationMessage(true);
+          // Continue to login if token is available, message will still be shown
       }
 
-      // Subscribe user to Mailchimp if opted in (only if registration is fully complete, not pending verification)
-      if (data.newsletterOptIn && mailchimpService && !resData?.emailVerificationRequired) {
+      if (token) {
+          // Attempt to set the session with Supabase if session object is available
+          if (resData.session) {
+              const { error: sessionError } = await supabase.auth.setSession(resData.session);
+              if (sessionError) {
+                  console.error("Error setting session with Supabase:", sessionError);
+                  // Non-critical for token storage, but inform user
+                  toast.error(sessionError.message || "Failed to initialize session with provider. Login may be required later.");
+                  // form.setError("root", { message: sessionError.message || "Failed to initialize session. Please try logging in." });
+              }
+          } else {
+               console.warn("Full session object not available from registration response, only a token. Supabase client session might not be fully initialized on client-side immediately.");
+          }
+
+          if (resData.user) {
+            setUser(resData.user);
+          } else {
+            console.warn("User data not found in registration response. Auth state might rely on onAuthStateChange or subsequent fetches.");
+          }
+
+          setTokens({ accessToken: token, refreshToken: resData.session?.refresh_token || null });
+          safeStorage.setItem('authToken', token);
+          localStorage.setItem('token', token);
+          axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+          if (!showVerificationMessage) {
+              toast.success("Account created & logged in");
+          }
+          navigate("/marketplace");
+
+      } else if (!resData?.emailVerificationRequired) {
+          // This case: no token AND email verification is NOT required. This is an unexpected error.
+          console.error("Registration response did not include a token or session, and email verification was not indicated as required.", resData);
+          form.setError("root", { message: "Registration complete, but failed to retrieve session. Please try logging in." });
+          toast.error("Registration complete, but failed to retrieve session. Please try logging in manually.");
+      }
+      // If emailVerificationRequired is true AND no token was provided,
+      // the user sees the verification message (set above) and is not logged in or navigated, which is correct.
+
+      // Mailchimp subscription logic
+      // Subscribe if newsletter opted in AND (token was processed OR email verification is not required for signup to be "complete" enough for subscription)
+      // This ensures subscription happens if user is logged in, or if it's a type of signup not needing immediate token (e.g. only email verification)
+      if (data.newsletterOptIn && mailchimpService && (token || resData?.emailVerificationRequired === false)) {
         try {
           await mailchimpService.addSubscriber({
             email: data.email,
             mergeFields: { FNAME: data.displayName }
           });
           await mailchimpService.sendWelcomeEmail(data.email, 'NEW10');
+          toast.info("Subscribed to newsletter!");
         } catch (err) {
           console.error('Mailchimp subscription failed', err);
+          toast.warn("Could not subscribe to newsletter at this time.");
           // Non-critical error, don't block user flow
         }
       }
-fix/auth-flow-email-verification
-      // Toast and navigation are handled above if session is present
-      // If emailVerificationRequired, no toast/navigation here, message is shown
-main
     } catch (err: any) {
       const message =
         err?.response?.data?.message ?? err?.message ?? "Unexpected error";
@@ -230,10 +242,6 @@ main
         }
       }
 
-      // Mailchimp subscription and navigation for non-verification case handled above
-    } catch (err: any) {
-      const message =
-        err?.response?.data?.message ?? err?.message ?? "Unexpected error";
       form.setError("root", { message });
       toast.error(message);
     } finally {
@@ -249,7 +257,7 @@ main
   };
 
   // Redirect if user is already logged in and has completed profile
-  // Allow staying on signup page if email verification is pending
+  // Allow staying on signup page if email verification is pending (showVerificationMessage is true)
   if (isAuthenticated && user?.profileComplete && !showVerificationMessage) {
     return <Navigate to="/" />;
   }
