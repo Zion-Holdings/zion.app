@@ -110,11 +110,14 @@ export default async function handler(
           // Placeholder/default values for other fields potentially expected by UI components
           // These would ideally come from an expanded Product model or other data sources
           category: 'Uncategorized', // Default placeholder
-          images: product.images || [], // Assuming 'images' might be added to Product model later e.g. as Json: { url: string; alt?: string }[]
-                                        // Or fetched from a related table. For now, default to empty or what product might have.
-          price: product.price === undefined ? null : product.price, // Assuming 'price' might be added
-          currency: product.currency === undefined ? 'USD' : product.currency, // Assuming 'currency' might be added
-          tags: product.tags === undefined ? [] : product.tags, // Assuming 'tags' might be added (e.g. as string[])
+          // Removed direct access to product.images, product.price, product.currency, product.tags
+          // as they are not in the Prisma Product model.
+          // These fields are optional in ProductWithReviewStats or will use defaults if not set.
+          // If these need to be populated, it should be from other data sources or model extensions.
+          images: [], // Default to empty array or define based on other logic if available
+          price: null,  // Default to null or define based on other logic
+          currency: 'USD', // Default currency or define based on other logic
+          tags: [], // Default to empty array or define based on other logic
         };
       })
     );

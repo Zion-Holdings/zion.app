@@ -9,9 +9,13 @@ import { Product } from '@prisma/client'; // Base product type
 export type ProductWithReviewStats = Product & {
   averageRating: number | null;
   reviewCount: number;
-  // Ensure other fields expected by the component are here if not in base Product
-  // title?: string; // 'name' from Product model will be used
-  // description?: string; // 'description' from Product model will be used
+  // Adding fields to match the enriched type from the API / product card expectations
+  title?: string; // Usually mapped from product.name
+  category?: string;
+  images?: { url: string; alt?: string }[];
+  price?: number | null;
+  currency?: string;
+  tags?: string[];
 };
 
 interface RatingStarsProps {

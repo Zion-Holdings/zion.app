@@ -37,10 +37,10 @@ const UserProfileDropdown: React.FC = () => {
         aria-label="User profile"
       >
         <Avatar className="h-8 w-8">
-          {user?.avatarUrl ? (
-            <AvatarImage src={user.avatarUrl} alt={user.displayName || user.name || 'User'} />
+          {(user && typeof user !== 'boolean' && user.avatarUrl) ? (
+            <AvatarImage src={user.avatarUrl} alt={(user && typeof user !== 'boolean' ? (user.displayName || user.name) : '') || 'User'} />
           ) : (
-            <AvatarFallback>{(user?.displayName || user?.name || 'U').charAt(0)}</AvatarFallback>
+            <AvatarFallback>{((user && typeof user !== 'boolean' ? (user.displayName || user.name) : '') || 'U').charAt(0)}</AvatarFallback>
           )}
         </Avatar>
       </button>

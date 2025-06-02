@@ -9,7 +9,7 @@ export function RewardsWidget() {
   const [open, setOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
 
-  const points = user?.points ?? 0;
+  const points = (user && typeof user !== 'boolean') ? user.points ?? 0 : 0;
 
   const getTier = (pts: number) => {
     if (pts >= 500) return "Gold";

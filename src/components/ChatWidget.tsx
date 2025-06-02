@@ -47,10 +47,10 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   };
 
   const handleSend = () => {
-    if (!socketRef.current || !text.trim() || !user) return;
+    if (!socketRef.current || !text.trim() || !user || typeof user === 'boolean') return; // Ensure user is not boolean false
     const msg: Message = {
       id: Date.now().toString(),
-      sender_id: String(user.id),
+      sender_id: String(user.id), // user is now guaranteed to be UserDetails
       recipient_id: recipientId,
       content: text,
       created_at: new Date().toISOString(),
@@ -73,7 +73,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       </div>
       <div className="flex-1 overflow-y-auto p-2 space-y-2">
         {messages.map(m => (
-          <MessageBubble key={m.id} message={m} isUserMessage={m.sender_id === String(user?.id)} />
+          <MessageBubble key={m.id} message={m} isUserMessage={!!user && typeof user !== 'boolean' && m.sender_id === String(user.id)} />
         ))}
       </div>
       <div className="p-2 border-t border-zion-purple/20">
