@@ -57,10 +57,7 @@ const ZION_CHAIN_MAP: Record<number, any> = {
 const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
 
 const appKitInstance = typeof window !== 'undefined' ? createAppKit({
-  adapters: [new EthersAdapter({
-    ethers, // pass the ethers library instance
-    // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
-  })],
+  adapters: [new EthersAdapter()],
   networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
   defaultNetwork: targetNetwork,
   projectId,

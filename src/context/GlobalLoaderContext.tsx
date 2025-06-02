@@ -24,12 +24,7 @@ export function GlobalLoaderProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<any>(null);
 
   useEffect(() => {
-    const req = axios.interceptors.request.use((config) => {
-      setLoading(true);
-      setError(null);
-      return config;
-    });
-    const res = axios.interceptors.response.use(
+    axios.interceptors.response.use(
       (response) => {
         setLoading(false);
         return response;
@@ -40,9 +35,24 @@ export function GlobalLoaderProvider({ children }: { children: ReactNode }) {
         return Promise.reject(err);
       }
     );
+
+    // Start the loader when a request is initiated by overriding the HTTP helpers
+    const originalGet = axios.get;
+    const originalPost = axios.post;
+
+    axios.get = async (...args: any[]) => {
+      setLoading(true);
+      return originalGet(...args);
+    };
+
+    axios.post = async (...args: any[]) => {
+      setLoading(true);
+      return originalPost(...args);
+    };
+
     return () => {
-      axios.interceptors.request.eject(req);
-      axios.interceptors.response.eject(res);
+      axios.get = originalGet;
+      axios.post = originalPost;
     };
   }, []);
 
