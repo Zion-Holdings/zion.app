@@ -34,7 +34,11 @@ export default function CardForm({ amount, onSuccess }: Props) {
           card: elements.getElement(CardElement)!,
           billing_details: {
             email: (user && typeof user !== 'boolean' ? user.email : undefined),
-            name: (user && typeof user !== 'boolean' && user.user_metadata ? user.user_metadata.full_name : undefined),
+            // Prefer the displayName from our user profile, falling back to the generic name field
+            name:
+              user && typeof user !== 'boolean'
+                ? user.displayName || user.name || undefined
+                : undefined,
           },
         },
       });
