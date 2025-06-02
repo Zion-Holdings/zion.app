@@ -1,7 +1,11 @@
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import React, { lazy, Suspense } from "react";
 
-const QuoteWizard = lazy(() => import("@/components/quote/QuoteWizard"));
+const QuoteWizard = lazy(() =>
+  import("@/components/quote/QuoteWizard").then((module) => ({
+    default: module.QuoteWizard,
+  }))
+);
 
 export default function RequestQuotePage() {
   return (

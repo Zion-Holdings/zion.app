@@ -51,7 +51,7 @@ export function SignUpForm() {
           navigate("/mobile");
         }
       } else {
-        const { error } = await login(formData.email, formData.password);
+        const { error } = await login(formData.email, formData.password, false);
         
         if (error) {
           throw new Error(error);
