@@ -25,4 +25,6 @@ export interface FilterOptions {
     value: string;
   }[];
   ratingOptions: number[];
+  minPrice: number;
+  maxPrice: number;
 }

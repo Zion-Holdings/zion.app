@@ -459,6 +459,10 @@ export const generateFilterOptions = (
   const locations = [...new Set(listings.map(listing => listing.location).filter(Boolean))].sort();
   const availability = [...new Set(listings.map(listing => listing.availability).filter(Boolean))].sort();
   
+  const prices = listings.map(listing => listing.price || 0);
+  const minPrice = Math.min(...prices);
+  const maxPrice = Math.max(...prices);
+
   return {
     productTypes: productTypes.map(type => ({
       label: type,
@@ -472,9 +476,12 @@ export const generateFilterOptions = (
       label: item,
       value: item
     })),
-    ratingOptions: [1, 2, 3, 4, 5] // Add rating options
+    ratingOptions: [1, 2, 3, 4, 5], // Add rating options
+    minPrice,
+    maxPrice
   };
 };
 
+// These constants are still useful if needed elsewhere, but filterOptions now also provides them.
 export const MAX_PRICE = Math.max(...MARKETPLACE_LISTINGS.map(listing => listing.price || 0));
 export const MIN_PRICE = Math.min(...MARKETPLACE_LISTINGS.map(listing => listing.price || 0));

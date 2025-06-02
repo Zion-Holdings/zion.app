@@ -34,6 +34,8 @@ export default function Marketplace() {
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [selectedAvailability, setSelectedAvailability] = useState<string[]>([]);
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
+  const [selectedMinPrice, setSelectedMinPrice] = useState<number | null>(null);
+  const [selectedMaxPrice, setSelectedMaxPrice] = useState<number | null>(null);
   const [listings, setListings] = useState<ProductListing[]>([]); // Initialize with empty array
   const [isLoading, setIsLoading] = useState(false); // isLoading already exists
   const [view, setView] = useState<'grid' | 'list'>('grid');
@@ -88,7 +90,7 @@ export default function Marketplace() {
     setCurrentPage(1);
     const timeout = setTimeout(() => setIsLoading(false), 300);
     return () => clearTimeout(timeout);
-  }, [searchQuery, selectedProductTypes, selectedLocations, selectedAvailability, selectedRating]);
+  }, [searchQuery, selectedProductTypes, selectedLocations, selectedAvailability, selectedRating, selectedMinPrice, selectedMaxPrice]);
   
   // Filter listings based on selected filters
   const filteredListings = listings.filter(listing => {
@@ -116,6 +118,14 @@ export default function Marketplace() {
     
     // Rating filter
     if (selectedRating && (!listing.rating || listing.rating < selectedRating)) {
+      return false;
+    }
+
+    // Price filter
+    if (selectedMinPrice !== null && listing.price < selectedMinPrice) {
+      return false;
+    }
+    if (selectedMaxPrice !== null && listing.price > selectedMaxPrice) {
       return false;
     }
     
@@ -155,6 +165,18 @@ export default function Marketplace() {
     setSelectedLocations([]);
     setSelectedAvailability([]);
     setSelectedRating(null);
+    setSelectedMinPrice(filterOptions.minPrice); // Reset to overall min
+    setSelectedMaxPrice(filterOptions.maxPrice); // Reset to overall max
+  };
+
+  const handlePriceChange = (newMinPrice: number, newMaxPrice: number) => {
+    setSelectedMinPrice(newMinPrice);
+    setSelectedMaxPrice(newMaxPrice);
+  };
+
+  const handleRemovePriceFilter = () => {
+    setSelectedMinPrice(filterOptions.minPrice);
+    setSelectedMaxPrice(filterOptions.maxPrice);
   };
   
   // Handle requesting a quote
@@ -230,12 +252,18 @@ export default function Marketplace() {
                 selectedProductTypes,
                 selectedLocations,
                 selectedAvailability,
-                selectedRating
+                selectedRating,
               }}
-              filterOptions={filterOptions}
+              filterOptions={filterOptions} // This now includes minPrice and maxPrice
               onFilterChange={handleFilterChange}
               onRatingChange={setSelectedRating}
               onClearFilters={clearAllFilters}
+              selectedMinPrice={selectedMinPrice}
+              selectedMaxPrice={selectedMaxPrice}
+              handlePriceChange={handlePriceChange}
+              // Pass overall min/max from filterOptions for the slider component
+              overallMinPrice={filterOptions.minPrice}
+              overallMaxPrice={filterOptions.maxPrice}
             />
           </div>
           
@@ -251,6 +279,9 @@ export default function Marketplace() {
               onRemoveFilter={handleFilterChange}
               onRemoveRating={() => setSelectedRating(null)}
               onClearSearch={() => setSearchQuery("")}
+              selectedMinPrice={selectedMinPrice}
+              selectedMaxPrice={selectedMaxPrice}
+              onRemovePriceFilter={handleRemovePriceFilter}
             />
 
             {/* Results count */}
