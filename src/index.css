@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
 
+@import './styles/navbar.css';
+@import './styles/responsive.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import './styles/navbar.css';
-@import './styles/responsive.css';
 
 @layer base {
   :root {
@@ -98,7 +98,7 @@
   }
 
   h1 {
-    @apply text-4xl md:text-5xl font-extrabold text-zion-purple mb-6;
+    @apply text-4xl md:text-5xl font-extrabold text-secondary mb-6;
   }
 
   h2 {
