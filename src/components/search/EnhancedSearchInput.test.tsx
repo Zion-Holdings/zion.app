@@ -30,7 +30,7 @@ jest.mock('lodash.debounce', () => (fn: (...args: any[]) => any, delay: number) 
 const mockSearchSuggestions: SearchSuggestion[] = [
   { text: 'Apple iPhone', type: 'product' },
   { text: 'Apple MacBook', type: 'product' },
-  { text: 'Banana Phone', type: 'fruit' },
+  { text: 'Banana Phone', type: 'skill' },
   { text: 'Recent Search 1', type: 'recent' },
 ];
 

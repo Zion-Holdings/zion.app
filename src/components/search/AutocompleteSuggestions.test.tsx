@@ -9,7 +9,7 @@ const mockOnSelectSuggestion = jest.fn();
 const mockSuggestions: SearchSuggestion[] = [
   { text: 'Apple iPhone', type: 'product' },
   { text: 'Apple MacBook', type: 'product' },
-  { text: 'A very long suggestion text for testing overflow and stuff', type: 'article' },
+  { text: 'A very long suggestion text for testing overflow and stuff', type: 'category' },
 ];
 
 const mockSearchTerm = "Apple";
@@ -130,16 +130,15 @@ describe('AutocompleteSuggestions', () => {
   test('displays suggestion type', () => {
     renderComponent();
     expect(screen.getByText((content, element) => element?.textContent === 'product' && element.tagName.toLowerCase() === 'span')).toBeInTheDocument();
-    expect(screen.getByText((content, element) => element?.textContent === 'fruit' && element.tagName.toLowerCase() === 'span')).toBeInTheDocument(); // Assuming Banana Phone is in mockSuggestions
-    // Need to make sure Banana Phone is part of default mockSuggestions for this test or pass custom ones.
-    // Let's add it to the default mock for this test case
-    const suggestionsWithFruit = [
+    expect(screen.getByText((content, element) => element?.textContent === 'category' && element.tagName.toLowerCase() === 'span')).toBeInTheDocument();
+    // Add an extra suggestion with a different type to ensure the label renders correctly
+    const suggestionsWithSkill = [
         ...mockSuggestions,
-        { text: 'Banana Phone', type: 'fruit' }
+        { text: 'Banana Phone', type: 'skill' }
     ];
-    render( // re-render with new suggestions
+    render(
         <AutocompleteSuggestions
-          suggestions={suggestionsWithFruit}
+          suggestions={suggestionsWithSkill}
           searchTerm={mockSearchTerm}
           onSelectSuggestion={mockOnSelectSuggestion}
           visible={true}
@@ -147,6 +146,6 @@ describe('AutocompleteSuggestions', () => {
           listId="test-autocomplete-list"
         />
       );
-    expect(screen.getByText('fruit')).toBeInTheDocument();
+    expect(screen.getByText('skill')).toBeInTheDocument();
   });
 });
