@@ -52,6 +52,13 @@ export function MainNavigation({ className }: MainNavigationProps) {
         Blog
       </Link>
       <Link
+        to="/case-studies"
+        aria-label="Case Studies"
+        className="text-zion-slate-light hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+      >
+        Case Studies
+      </Link>
+      <Link
         to="/categories"
         aria-label="Categories"
         className="text-zion-slate-light hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
