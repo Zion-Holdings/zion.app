@@ -65,13 +65,21 @@ export const InstallPrompt: React.FC = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-zion-blue-dark text-white border-t border-zion-purple/30 p-3 flex items-center">
-      <span className="flex-1">Install Zion Marketplace for quick access.</span>
-      <Button onClick={install} className="mr-2">Install</Button>
-      <button onClick={close} aria-label="Dismiss" className="text-gray-400">
-        <X className="h-5 w-5" />
-      </button>
-    </div>
+    <>
+      <style>
+        {`
+          @media(max-width:600px){
+            .pwa-install-button {
+              transform: scale(0.8);
+              transform-origin: bottom right;
+            }
+          }
+        `}
+      </style>
+      <div className="fixed bottom-4 right-4 z-[1000] bg-zion-blue-dark text-white flex items-center pwa-install-button">
+        <Button onClick={install} aria-label="Install PWA">Install</Button>
+      </div>
+    </>
   );
 };
 
