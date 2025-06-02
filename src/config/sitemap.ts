@@ -113,6 +113,22 @@ export const publicPages: SitemapItem[] = [
     changeFreq: 'monthly',
     lastmod: currentDate,
   },
+  {
+    path: '/careers',
+    label: 'Careers',
+    description: 'Join our team',
+    priority: 0.6,
+    changeFreq: 'monthly',
+    lastmod: currentDate,
+  },
+  {
+    path: '/innovation',
+    label: 'Innovation',
+    description: 'Latest innovations at Zion',
+    priority: 0.8,
+    changeFreq: 'monthly',
+    lastmod: currentDate,
+  },
 ];
 
 // Authentication Pages
