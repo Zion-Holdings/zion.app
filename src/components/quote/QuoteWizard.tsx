@@ -1,11 +1,12 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useQuoteWizard, ServiceItem } from '@/hooks/useQuoteWizard';
 import { useDelayedError } from '@/hooks/useDelayedError';
-import { Loader2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
+import { Skeleton } from '@/components/ui/skeleton';
+import { useToast } from '@/hooks/use-toast';
 
 const WIZARD_STEPS = [1, 2, 3];
 
@@ -34,6 +35,16 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
   const [selectionError, setSelectionError] = useState('');
   const { data, error, mutate, isLoading } = useQuoteWizard(category);
   const delayedError = useDelayedError(error);
+  const { toast } = useToast();
+
+  useEffect(() => {
+    if (delayedError) {
+      toast({
+        title: 'Unable to load services',
+        variant: 'destructive'
+      });
+    }
+  }, [delayedError, toast]);
 
   // Use isLoading from SWR for a more direct loading state
   const loading = isLoading;
@@ -77,9 +88,13 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
       <div className="space-y-6">
         <StepIndicator step={step} />
         {loading && !delayedError && (
-          <div className="flex justify-center py-12" data-testid="loading-indicator">
-            <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
-            <p className="ml-2 text-muted-foreground">Loading {category}...</p>
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            data-testid="loading-indicator"
+          >
+            {Array.from({ length: 6 }).map((_, i) => (
+              <Skeleton key={i} className="h-[120px] w-full" />
+            ))}
           </div>
         )}
 
