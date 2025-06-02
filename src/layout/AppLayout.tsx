@@ -2,7 +2,7 @@
 import React, { ReactNode, useState } from "react"; // Added useState
 import { Outlet } from "react-router-dom";
 // Assume useAuth hook exists and provides user object with emailVerified status and email
-import { useAuth } from '@/context/auth/AuthContext'; // Assuming path to AuthContext
+import { useAuth } from '@/hooks/useAuth';
 import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // Assuming path
 import { AppHeader } from "./AppHeader";
 import { Footer } from "@/components/Footer";

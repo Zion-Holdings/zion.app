@@ -227,7 +227,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             setAvatarUrl(null);
           }
         } else {
-          setUser(false);
+          setUser(null);
           setAvatarUrl(null);
           
           // Show logout toast when user logs out
