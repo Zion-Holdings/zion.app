@@ -6,6 +6,20 @@ import { createAppKit, useAppKit } from '@reown/appkit/react';
 import { EthersAdapter } from '@reown/appkit-adapter-ethers';
 import { mainnet, polygon, goerli, optimism, arbitrum, base } from '@reown/appkit/networks'; // Import necessary chain objects
 
+// Minimal interface describing the AppKit object used in this context.  The
+// real package types are unavailable in the repository, so we declare only the
+// members that WalletContext interacts with.
+interface ReownAppKit {
+  open: () => Promise<void>;
+  close: () => Promise<void>;
+  disconnect: () => Promise<void>;
+  getState: () => { isConnected?: boolean };
+  getAddress: () => string | null | undefined;
+  getChainId: () => string | number | null | undefined;
+  getWalletProvider: () => unknown;
+  subscribeProvider: (cb: () => void) => () => void;
+}
+
 // Define the shape of the wallet state and context
 interface WalletState {
   provider: ethers.BrowserProvider | null; // Updated to BrowserProvider for ethers v6
@@ -19,7 +33,7 @@ interface WalletContextType extends WalletState {
   connectWallet: () => Promise<void>;
   disconnectWallet: () => Promise<void>; // disconnect can be async
   displayAddress: string | null; // Shortened address for display
-  appKit: ReturnType<typeof createAppKit> | null; // To access modal.open, etc.
+  appKit: ReownAppKit | null; // To access modal.open, etc.
 }
 
 const initialWalletState: WalletState = {
@@ -56,7 +70,8 @@ const ZION_CHAIN_MAP: Record<number, any> = {
 
 const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
 
-const appKitInstance = typeof window !== 'undefined' ? createAppKit({
+const appKitInstance: ReownAppKit | null = typeof window !== 'undefined'
+  ? (createAppKit({
   adapters: [new EthersAdapter({
     ethers, // pass the ethers library instance
     // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
@@ -69,12 +84,15 @@ const appKitInstance = typeof window !== 'undefined' ? createAppKit({
     analytics: true, // Optional: enable analytics
     // ... other features like swaps, onramp if needed
   },
-}) : null;
+}) as unknown as ReownAppKit)
+  : null;
 // --- End Reown AppKit Configuration ---
 
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [wallet, setWallet] = useState<WalletState>(initialWalletState);
-  const appKit = useAppKit(); // Hook to interact with AppKit
+  // `useAppKit` returns an object controlling the wallet modal.  Its full type
+  // definitions are not available offline, so cast to our minimal interface.
+  const appKit = useAppKit() as unknown as ReownAppKit | null; // Hook to interact with AppKit
 
   const updateWalletState = useCallback(async () => {
     if (appKit?.getState().isConnected && appKit?.getAddress()) {
