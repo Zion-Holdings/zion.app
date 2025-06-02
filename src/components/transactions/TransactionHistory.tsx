@@ -62,7 +62,7 @@ export function TransactionHistory() {
       if (filter === 'pending') {
         query = query.eq('status', 'pending');
       } else if (filter === 'completed') {
-        query = query.in('status', ['completed', 'released']);
+        query = query.eq('status', 'released');
       } else if (filter === 'escrow') {
         query = query.eq('in_escrow', true);
       }
@@ -253,9 +253,7 @@ export function TransactionHistory() {
               const isInEscrow = transaction.in_escrow;
               const canRelease = !isClient && isPending && isInEscrow;
               const canCancel = isClient && isPending;
-              const canRefund =
-                isClient &&
-                (transaction.status === 'completed' || transaction.status === 'released');
+              const canRefund = isClient && transaction.status === 'released';
               
               const counterpartyName = isClient 
                 ? transaction.provider?.display_name || 'Service Provider' 
