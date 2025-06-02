@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { createClient } from '@supabase/supabase-js';
-import { recommendEquipment, recommendFeatures } from '@/utils/recommendationEngine';
+import { recommendEquipment } from '@/utils/recommendationEngine';
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -18,13 +18,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(400).json({ error: 'Missing userId' });
   }
 
-  const type = typeof req.query.type === 'string' ? req.query.type : 'equipment';
-
-  if (type === 'feature') {
-    const features = await recommendFeatures(userId, supabase);
-    return res.status(200).json(features);
-  }
-
-  const listings = await recommendEquipment(userId, supabase);
-  res.status(200).json(listings);
+  const recommendations = await recommendEquipment(userId, supabase);
+  res.status(200).json(recommendations);
 }
