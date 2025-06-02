@@ -102,7 +102,8 @@ const MarketplaceListingPage: React.FC<ListingPageProps> = ({ product, error }) 
         />
       </Head>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8 px-4">
-        <h1>{product.name}</h1> {/* Using product.name from Prisma Product model */}
+
+        <h1>{product.name}</h1> {/* Using product.name from the Product model */}
 
       {/* Display average rating and review count */}
       <div className="my-4">
