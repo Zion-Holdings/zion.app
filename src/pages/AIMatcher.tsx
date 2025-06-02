@@ -6,11 +6,13 @@ import { GradientHeading } from "@/components/GradientHeading";
 import { AIMatchmaker } from "@/components/AIMatchmaker";
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
+import { useFeatureUsage } from "@/hooks/useFeatureUsage";
 import { MatchResult } from "@/lib/ai-matchmaking";
 
 export default function AIMatcherPage() {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  useFeatureUsage('AI Matchmaker');
   
   const handleMatchSelect = (match: MatchResult) => {
     // Get the item type from the category

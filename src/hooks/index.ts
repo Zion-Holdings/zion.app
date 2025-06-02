@@ -15,5 +15,5 @@ export * from "./useFavorites";
 export * from './useQuoteWizard';
 export * from './useDelayedError';
 export * from './useIsMounted';
-
+export * from './useFeatureUsage';
 export * from "./useAdvancedOnboardingStatus";

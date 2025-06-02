@@ -4,9 +4,11 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
+import { useFeatureUsage } from "@/hooks/useFeatureUsage";
 import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
 
 export default function AIPoweredContent() {
+  useFeatureUsage('ZionGPT');
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
