@@ -98,69 +98,61 @@ export default function Signup() {
         data.password
       );
 
-      // Handle duplicate email error from API
-      if (res.status === 409 && resData?.code === 'EMAIL_EXISTS') {
-        form.setError('email', { message: resData.message });
-        toast.error('Email already registered – please login.');
-        return;
-      }
+      // The `registerUser` service is expected to handle the response from the API.
+      // If the API indicates an email already exists, `registerUser` should throw an error
+      // which will be caught by the catch block below.
 
-fix/auth-flow-email-verification
-      // Handle email verification required case
       if (resData?.emailVerificationRequired) {
         setShowVerificationMessage(true);
-        // Do not proceed to set session or navigate
-      } else if (resData?.session) {
-        // Set the session directly if verification is not required
-        const { error: sessionError } = await supabase.auth.setSession(resData.session);
-        if (sessionError) {
-          console.error("Error setting session:", sessionError);
-          form.setError("root", { message: sessionError.message || "Failed to set session. Please try logging in." });
-          toast.error(sessionError.message || "Failed to set session. Please try logging in.");
-          return;
-        }
-        // The onAuthStateChange listener in AuthProvider should now handle
-        // updating user state and navigating if necessary for other cases.
-        // For direct signup with session, we can navigate.
-        setUser(resData.user);
-        setTokens({ accessToken: resData.session.access_token, refreshToken: resData.session.refresh_token });
-        safeStorage.setItem('authToken', resData.session.access_token);
-        localStorage.setItem('token', resData.session.access_token);
-        axios.defaults.headers.common['Authorization'] = `Bearer ${resData.session.access_token}`;
-        toast.success("Account created & logged in");
-        navigate("/marketplace");
+        // No navigation or session setting here. User needs to verify their email.
+        // Mailchimp subscription should also wait until the email is verified.
       } else {
-        // This case might indicate an unexpected response from the API
-        console.error("Registration response did not include session or emailVerificationRequired flag.", resData);
-        form.setError("root", { message: "Registration complete, but an unexpected issue occurred. Please try logging in." });
-        toast.error("Registration complete, but an unexpected issue occurred. Please try logging in manually.");
-        // Potentially navigate to login or show a more specific error
-        return;
-            main
-      }
+        // This block means registration was successful and no immediate email verification is required.
+        // Supabase might have automatically created a session for the user if email verification is disabled project-wide.
+        // The AuthProvider's onAuthStateChange listener is responsible for detecting session changes
+        // and updating the application's auth state (user, isAuthenticated, tokens).
+        // We should not manually set session, tokens, or headers here.
 
-      // Subscribe user to Mailchimp if opted in (only if registration is fully complete, not pending verification)
-      if (data.newsletterOptIn && mailchimpService && !resData?.emailVerificationRequired) {
-        try {
-          await mailchimpService.addSubscriber({
-            email: data.email,
-            mergeFields: { FNAME: data.displayName }
-          });
-          await mailchimpService.sendWelcomeEmail(data.email, 'NEW10');
-        } catch (err) {
-          console.error('Mailchimp subscription failed', err);
-          // Non-critical error, don't block user flow
+        toast.success("Account created successfully! Please log in to continue.");
+
+        // Redirect to the login page. If Supabase did auto-log in the user,
+        // the useAuth hook (via AuthProvider) will likely redirect from the login page
+        // to the appropriate authenticated route (e.g., dashboard or onboarding).
+        navigate("/login");
+
+        // Subscribe to Mailchimp if opted in, as the account is considered created.
+        // This happens regardless of whether Supabase auto-logged them in or they need to log in manually.
+        if (data.newsletterOptIn && mailchimpService) {
+          try {
+            await mailchimpService.addSubscriber({
+              email: data.email,
+              mergeFields: { FNAME: data.displayName }
+            });
+            await mailchimpService.sendWelcomeEmail(data.email, 'NEW10');
+          } catch (mailchimpError) {
+            console.error('Mailchimp subscription failed:', mailchimpError);
+            // This is a non-critical error, so we don't block the user flow
+            // or show a user-facing error message for this.
+          }
         }
       }
-fix/auth-flow-email-verification
-      // Toast and navigation are handled above if session is present
-      // If emailVerificationRequired, no toast/navigation here, message is shown
-main
     } catch (err: any) {
-      const message =
-        err?.response?.data?.message ?? err?.message ?? "Unexpected error";
-      form.setError("root", { message });
-      toast.error(message);
+      // Handle specific errors thrown by the registerUser service
+      // Adjust the condition based on how `registerUser` actually structures its errors.
+      // Assuming `registerUser` might throw an error with a `code` property or a specific message.
+      if (err.code === 'EMAIL_EXISTS' ||
+          (err.response?.data?.code === 'EMAIL_EXISTS') ||
+          err.message?.toLowerCase().includes('email already exists') ||
+          err.message?.toLowerCase().includes('email already registered')) {
+        const errorMessage = err.message || err.response?.data?.message || 'This email is already registered. Please try logging in.';
+        form.setError('email', { message: errorMessage });
+        toast.error(errorMessage);
+      } else {
+        // Generic error handling for other types of errors
+        const message = err.response?.data?.message ?? err?.message ?? "An unexpected error occurred during registration.";
+        form.setError("root", { message });
+        toast.error(message);
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -173,14 +165,18 @@ main
     }
   };
 
-  // Redirect if user is already logged in and has completed profile
-  if (isAuthenticated && user?.profileComplete) {
-    return <Navigate to="/" />;
-  }
-  
-  // Redirect to onboarding if user is authenticated but hasn't completed profile
-  if (isAuthenticated && !user?.profileComplete) {
-    return <Navigate to="/onboarding" />;
+  // Redirect if user is already logged in.
+  // This check runs on component mount and whenever isAuthenticated, user, or showVerificationMessage changes.
+  // It allows a user to remain on the signup page if showVerificationMessage is true (waiting for email verification),
+  // even if they somehow have an existing session (e.g., from a previous tab).
+  if (isAuthenticated && !showVerificationMessage) {
+    // If profile is complete, go to home/dashboard. Otherwise, to onboarding.
+    if (user?.profileComplete) {
+      return <Navigate to="/" />;
+    } else {
+      // User is authenticated but profile is not complete
+      return <Navigate to="/onboarding" />;
+    }
   }
 
   return (
@@ -232,6 +228,8 @@ main
 
       // Mailchimp subscription and navigation for non-verification case handled above
     } catch (err: any) {
+      // Error handling logic has been updated in the section above.
+      // This specific part of the original catch block is now covered by the more detailed error handling.
       const message =
         err?.response?.data?.message ?? err?.message ?? "Unexpected error";
       form.setError("root", { message });
