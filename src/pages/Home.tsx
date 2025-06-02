@@ -41,35 +41,19 @@ export default function Home() {
 
       <HeroSection />
       
-      <div className="animate-fadeIn" style={{ animationDelay: '0.1s' }}>
-        <QuickAccess />
-      </div>
+      <QuickAccess className="animate-fadeIn" style={{ animationDelay: '0.1s' }} />
 
-      <div className="animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-        <FeatureCTAs />
-      </div>
+      <FeatureCTAs className="animate-fadeIn" style={{ animationDelay: '0.2s' }} />
 
-      <div className="animate-fadeIn" style={{ animationDelay: '0.25s' }}>
-        <InteractiveFeatures />
-      </div>
+      <InteractiveFeatures className="animate-fadeIn" style={{ animationDelay: '0.25s' }} />
 
       <FeatureHighlights className="animate-fadeIn" style={{ animationDelay: '0.3s' }} />
 
-      <div className="animate-fadeIn" style={{ animationDelay: '0.4s' }}>
-        <CategoriesSection />
-      </div>
-      <div className="animate-fadeIn" style={{ animationDelay: '0.5s' }}>
-        <BenefitsSection />
-      </div>
-      <div className="animate-fadeIn" style={{ animationDelay: '0.6s' }}>
-        <HowItWorksSection />
-      </div>
-      <div className="animate-fadeIn" style={{ animationDelay: '0.7s' }}>
-        <FeaturedListingsSection />
-      </div>
-      <div className="animate-fadeIn" style={{ animationDelay: '0.8s' }}>
-        <NewsletterSection />
-      </div>
+      <CategoriesSection className="animate-fadeIn" style={{ animationDelay: '0.4s' }} />
+      <BenefitsSection className="animate-fadeIn" style={{ animationDelay: '0.5s' }} />
+      <HowItWorksSection className="animate-fadeIn" style={{ animationDelay: '0.6s' }} />
+      <FeaturedListingsSection className="animate-fadeIn" style={{ animationDelay: '0.7s' }} />
+      <NewsletterSection className="animate-fadeIn" style={{ animationDelay: '0.8s' }} />
     </div>
   );
 }
