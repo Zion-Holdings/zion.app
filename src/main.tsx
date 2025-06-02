@@ -42,6 +42,9 @@ import { ViewModeProvider } from './context/ViewModeContext';
 import { CartProvider } from './context/CartContext';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { registerServiceWorker } from './serviceWorkerRegistration';
+import { enableDevToolsInStaging } from './utils/devtools';
+
+enableDevToolsInStaging();
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
