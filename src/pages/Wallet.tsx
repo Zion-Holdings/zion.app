@@ -36,7 +36,19 @@ const Wallet = () => {
         ) : (
           <ul className="space-y-2">
             {history.map((item, idx) => (
-              <li key={idx}>{/* TODO: render history item */}</li>
+              <li
+                key={item.id ?? idx}
+                className="flex justify-between border-b pb-1"
+              >
+                <span>
+                  {new Date(item.created_at).toLocaleDateString()} -{' '}
+                  {item.reason || item.transaction_type}
+                </span>
+                <span>
+                  {item.transaction_type === 'earn' ? '+' : '-'}
+                  {item.amount}
+                </span>
+              </li>
             ))}
           </ul>
         )}

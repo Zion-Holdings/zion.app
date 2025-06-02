@@ -2,6 +2,7 @@
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
 import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
+import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
 
 // Define the shape of the wallet state and context
 interface WalletState {
@@ -45,8 +46,15 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             // }
         };
 
+        const NETWORK_MAP: Record<number, string> = {
+            1: 'mainnet',
+            4: 'rinkeby',
+            5: 'goerli',
+            137: 'matic',
+        };
+
         const modal = new Web3Modal({
-            network: 'mainnet', // TODO: Make this configurable based on ZION_TOKEN_NETWORK_ID
+            network: NETWORK_MAP[ZION_TOKEN_NETWORK_ID] || 'mainnet',
             cacheProvider: true, // Optional
             providerOptions,
         });
