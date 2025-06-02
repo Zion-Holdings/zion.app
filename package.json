@@ -124,8 +124,6 @@
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.2.17",
     "@types/react-router-dom": "^5.3.3",
-    "@types/socket.io": "^3.0.2",
-    "@types/socket.io-client": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^8.33.0",
     "@typescript-eslint/parser": "^8.33.0",
     "@vitejs/plugin-react": "^4.2.1",
