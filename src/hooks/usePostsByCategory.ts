@@ -2,17 +2,17 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchPostsByCategory } from '@/services/forumPostService';
 import type { ForumPost } from '@/types/community';
 
-export function usePostsByCategory(slug?: string, page = 1) {
+export function usePostsByCategory(categoryId?: string, cursor?: string) {
   return useQuery({
-    queryKey: ['posts', 'category', slug, page],
+    queryKey: ['posts', 'category', categoryId, cursor],
     queryFn: () =>
-      slug
-        ? fetchPostsByCategory(slug, page)
+      categoryId
+        ? fetchPostsByCategory(categoryId, cursor)
         : Promise.resolve({ posts: [] as ForumPost[] }),
-    enabled: !!slug,
+    enabled: !!categoryId,
     suspense: true,
     initialData: { posts: [] as ForumPost[] },
-    select: (data) => data.posts,
+    select: data => data.posts,
   }) as {
     data: ForumPost[] | undefined;
     isPending: boolean;

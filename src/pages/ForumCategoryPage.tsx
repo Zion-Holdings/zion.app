@@ -85,7 +85,7 @@ function CategoryContent({
     data: posts = [],
     isPending: loading,
     error,
-  } = usePostsByCategory(categoryId, 1);
+  } = usePostsByCategory(categoryId);
   const errorMessage = error instanceof Error ? error.message : null;
 
   const filteredPosts = searchQuery
