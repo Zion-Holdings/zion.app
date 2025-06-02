@@ -11,7 +11,8 @@ export default function RequestQuotePage() {
   return (
     <ErrorBoundary fallback={<div>Quote wizard failed to load</div>}>
       <Suspense fallback={<div>Loading quote wizard...</div>}>
-        <QuoteWizard />
+        {/* Default to services category until additional categories are supported */}
+        <QuoteWizard category="services" />
       </Suspense>
     </ErrorBoundary>
   );
