@@ -17,7 +17,7 @@ import {
   FormControl,
   FormMessage,
 } from '@/components/ui/form';
-import { useForm } from 'react-hook-form';
+import { useForm, type Resolver } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { SendIcon, Mail } from 'lucide-react';
@@ -65,7 +65,7 @@ export function ContactPublisherModal({
   const [loginOpen, setLoginOpen] = React.useState(false);
 
   const form = useForm<FormValues>({
-    resolver: yupResolver<FormValues>(schema),
+    resolver: yupResolver(schema) as Resolver<FormValues>,
     mode: 'onChange',
     defaultValues: { subject: '', message: '' },
   });
