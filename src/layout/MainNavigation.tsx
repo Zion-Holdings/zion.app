@@ -91,7 +91,11 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <nav className={cn("navbar", className)}> {/* Removed ml-6 hidden md:flex */}
+      <nav
+        className={cn("navbar", className)}
+        role="navigation"
+        aria-label="Main navigation"
+      >
         <div
           id="main-navbar-collapse"
           className={cn(

@@ -143,10 +143,27 @@ export function ChatAssistant({
     setGuestMessage(null);
   };
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+    <div
+      className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="chat-assistant-title"
+    >
       <div className="w-full max-w-xl bg-zion-blue rounded-lg shadow-xl overflow-hidden flex flex-col max-h-[80vh]">
         {/* Header */}
         <div className="bg-zion-blue-dark p-3 flex items-center justify-between border-b border-zion-purple/20">
@@ -158,7 +175,9 @@ export function ChatAssistant({
               </AvatarFallback>
             </Avatar>
             <div>
-              <div className="font-medium text-white">{recipient.name}</div>
+              <h2 id="chat-assistant-title" className="font-medium text-white">
+                {recipient.name}
+              </h2>
               {recipient.role && (
                 <div className="text-xs text-zion-slate">{recipient.role}</div>
               )}
@@ -183,7 +202,7 @@ export function ChatAssistant({
         )}
         
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4" aria-live="polite">
           {currentMessages.length === 0 ? (
             <div className="text-center text-zion-slate py-8">
               <p>Start a conversation with {recipient.name}</p>
@@ -207,9 +226,14 @@ export function ChatAssistant({
       </div>
 
       {showGuestModal && guestMessage && (
-        <div className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4">
+        <div
+          className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="confirm-message-title"
+        >
           <div className="bg-zion-blue-darker p-6 rounded-lg shadow-xl w-full max-w-md">
-            <h3 className="text-lg font-semibold text-white mb-4">Confirm Message</h3>
+            <h3 id="confirm-message-title" className="text-lg font-semibold text-white mb-4">Confirm Message</h3>
             <p className="text-zion-slate mb-6 whitespace-pre-wrap break-words">
               {guestMessage}
             </p>
