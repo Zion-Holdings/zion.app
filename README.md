@@ -175,6 +175,16 @@ When tests run on GitHub Actions, the workflow uploads the `coverage` directory
 using `actions/upload-artifact@v4`. Visit a workflow run and download the
 `coverage-report` artifact to retrieve the generated HTML coverage report.
 
+### Accessibility Audit
+
+Run automated accessibility checks with:
+
+```sh
+npm run lint:a11y
+```
+
+This command uses `jest-axe` to verify common WCAG issues across key pages and components.
+
 ## Troubleshooting
 
 ### Network Issues

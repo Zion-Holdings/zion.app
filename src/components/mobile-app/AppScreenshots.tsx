@@ -36,11 +36,12 @@ export const AppScreenshots: React.FC = () => {
         </div>
         
         <div className="relative">
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-zion-blue-dark/70 text-white" 
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-zion-blue-dark/70 text-white"
             onClick={() => scroll("left")}
+            aria-label="Scroll left"
           >
             <ChevronLeft className="h-6 w-6" />
           </Button>
@@ -64,11 +65,12 @@ export const AppScreenshots: React.FC = () => {
             ))}
           </div>
           
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-zion-blue-dark/70 text-white" 
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-zion-blue-dark/70 text-white"
             onClick={() => scroll("right")}
+            aria-label="Scroll right"
           >
             <ChevronRight className="h-6 w-6" />
           </Button>
