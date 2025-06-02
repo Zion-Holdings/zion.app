@@ -12,6 +12,7 @@ import { WhitelabelProvider } from "./context/WhitelabelContext";
 import ToastProvider from "./components/ToastProvider";
 import OfflineToast from "./components/OfflineToast";
 import InstallPrompt from "./components/InstallPrompt";
+import { FeedbackWidget } from "./components/feedback/FeedbackWidget";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -58,6 +59,7 @@ import ITSupportPage from './pages/ITSupportPage';
 import WishlistPage from './pages/Wishlist';
 import FavoritesPage from './pages/Favorites';
 import CartPage from './pages/Cart';
+import FeedbackAnalytics from './pages/FeedbackAnalytics';
 import AIPoweredContent from './pages/features/AIPoweredContent';
 import TalentMarketplace from './pages/features/TalentMarketplace';
 import Ecommerce from './pages/features/Ecommerce';
@@ -111,6 +113,7 @@ const baseRoutes = [
   { path: '/equipment/:id', element: <EquipmentDetail /> },
   { path: '/new-products', element: <NewProductsPage /> },
   { path: '/analytics', element: <Analytics /> },
+  { path: '/feedback-analytics', element: <FeedbackAnalytics /> },
   { path: '/mobile-launch', element: <MobileLaunchPage /> },
   { path: '/open-app', element: <OpenAppRedirect /> },
   {
@@ -193,6 +196,7 @@ const App = () => {
         </Suspense>
         <OfflineToast />
         <SupportChatbot />
+        <FeedbackWidget />
         <InstallPrompt />
           </ToastProvider>
       </ThemeProvider>
