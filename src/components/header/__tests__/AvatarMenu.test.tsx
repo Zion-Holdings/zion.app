@@ -30,7 +30,7 @@ describe('UserProfileDropdown', () => {
       logout: mockLogout,
       isLoading: false,
       // Add other properties returned by your useAuth hook if needed
-    });
+    } as any);
     render(<UserProfileDropdown />);
     expect(screen.getByLabelText('User profile')).toBeInTheDocument();
   });
@@ -50,7 +50,7 @@ describe('UserProfileDropdown', () => {
       user: { id: '1', displayName: 'Test User' }, // Keep it rendered for dropdown tests
       logout: mockLogout,
       isLoading: false,
-    });
+    } as any);
     render(<UserProfileDropdown />);
     expect(screen.getByLabelText('User profile')).toBeInTheDocument(); // It will render its button
   });
@@ -61,7 +61,7 @@ describe('UserProfileDropdown', () => {
       user: { id: '1', displayName: 'Test User' },
       logout: mockLogout,
       isLoading: false,
-    });
+    } as any);
     render(<UserProfileDropdown />);
     const avatarButton = screen.getByLabelText('User profile');
 
@@ -85,7 +85,7 @@ describe('UserProfileDropdown', () => {
       user: { id: '1', displayName: 'Test User' },
       logout: mockLogout,
       isLoading: false,
-    });
+    } as any);
     render(<UserProfileDropdown />);
     const avatarButton = screen.getByLabelText('User profile');
     fireEvent.click(avatarButton); // Open dropdown
@@ -110,7 +110,7 @@ describe('UserProfileDropdown', () => {
       user: { id: '1', displayName: 'Test User' },
       logout: mockLogout,
       isLoading: false,
-    });
+    } as any);
     render(<UserProfileDropdown />);
     const avatarButton = screen.getByLabelText('User profile');
     fireEvent.click(avatarButton); // Open dropdown
@@ -126,7 +126,7 @@ describe('UserProfileDropdown', () => {
       user: { id: '1', displayName: 'Test User' },
       logout: mockLogout,
       isLoading: false,
-    });
+    } as any);
     render(
       <div>
         <div data-testid="outside-element">Outside</div>
