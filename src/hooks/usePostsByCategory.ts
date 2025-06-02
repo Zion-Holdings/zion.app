@@ -7,9 +7,8 @@ export function usePostsByCategory(slug?: string, page = 1) {
     queryKey: ['posts', 'category', slug, page],
     queryFn: () =>
       slug
-        ? fetchPostsByCategory(slug, page)
+        ? fetchPostsByCategory(slug, page.toString())
         : Promise.resolve({ posts: [] as ForumPost[] }),
-    enabled: !!slug,
     initialData: { posts: [] as ForumPost[] },
     select: (data) => data.posts,
   }) as {

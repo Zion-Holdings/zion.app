@@ -97,7 +97,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const appKit = useAppKit() as unknown as ReownAppKit | null; // Hook to interact with AppKit
 
   const updateWalletState = useCallback(async () => {
-    if (appKit?.getState().isConnected && appKit?.getAddress()) {
+    if (appKitInstance?.getState().isConnected && appKit?.getAddress()) {
       const currentAddress = appKit.getAddress();
       const currentChainId = appKit.getChainId();
       const currentProvider = appKit.getWalletProvider();
@@ -147,9 +147,9 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   }, [appKit]);
 
   const disconnectWallet = useCallback(async () => {
-    if (appKit?.getState().isConnected) {
+    if (appKitInstance?.getState().isConnected) {
       try {
-        await appKit.disconnect();
+        await appKitInstance.disconnect();
         // State update will be handled by the subscription
       } catch (error) {
         console.error('Error disconnecting wallet:', error);
