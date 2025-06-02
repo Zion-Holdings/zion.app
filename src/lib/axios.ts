@@ -19,8 +19,23 @@ class InterceptorManager {
 
 export interface AxiosInstance {
   interceptors: { response: InterceptorManager };
-  get<T = any>(url: string, config?: { params?: Record<string, any> } & RequestInit): Promise<AxiosResponse<T>>;
-  post<T = any>(url: string, data?: any, config?: RequestInit): Promise<AxiosResponse<T>>;
+  get<T = any>(
+    url: string,
+    config?: { params?: Record<string, any> } & RequestInit
+  ): Promise<AxiosResponse<T>>;
+  post<T = any>(
+    url: string,
+    data?: any,
+    config?: RequestInit
+  ): Promise<AxiosResponse<T>>;
+}
+
+export interface AxiosStatic {
+  create: typeof create;
+  defaults: AxiosDefaults;
+  interceptors: { response: InterceptorManager };
+  get: AxiosInstance['get'];
+  post: AxiosInstance['post'];
 }
 
 interface AxiosDefaults {
@@ -104,19 +119,14 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
   return instance;
 }
 
-// Create a default axios instance so callers can use axios.get/axios.post
 const defaultInstance = create();
-// Use the shared global interceptors for the default instance
-(defaultInstance as any).interceptors = globalInterceptors;
 
-const axios = Object.assign(defaultInstance, {
+const axios: AxiosStatic = {
   create,
   defaults: globalDefaults,
   interceptors: globalInterceptors,
-}) as AxiosInstance & {
-  create: typeof create;
-  defaults: AxiosDefaults;
-  interceptors: typeof globalInterceptors;
+  get: defaultInstance.get,
+  post: defaultInstance.post,
 };
 
 export default axios;
