@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,10 +9,11 @@
 
 @layer base {
   :root {
-    --font-sans: 'Inter', system-ui, sans-serif; /* Updated to Inter as base sans */
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-heading: 'Montserrat', 'Inter', sans-serif;
 
     --background: 222 47% 8%;
-    --foreground: 0 0% 88%;
+    --foreground: 0 0% 95%;
 
     --card: 220 30% 11%;
     --card-foreground: 0 0% 88%;
@@ -20,17 +21,17 @@
     --popover: 0 0% 100%; /* Kept existing */
     --popover-foreground: 224 71% 4%; /* Kept existing */
 
-    --primary: 188 85% 53%;
-    --primary-foreground: 222 47% 8%;
+    --primary: 220 80% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 271 76% 53%;
-    --secondary-foreground: 0 0% 88%;
+    --secondary: 280 70% 50%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96%; /* Kept existing */
     --muted-foreground: 215 20% 45%; /* Kept existing */
 
-    --accent: 288 85% 60%;
-    --accent-foreground: 0 0% 88%;
+    --accent: 186 65% 55%;
+    --accent-foreground: 222 47% 8%;
 
     --destructive: 0 84% 60%; /* Kept existing */
     --destructive-foreground: 210 40% 98%; /* Kept existing */
