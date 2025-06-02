@@ -72,9 +72,8 @@ describe('/api/auth/login API Handler', () => {
     const mockSessionData = {
       access_token: mockAuthToken,
       refresh_token: 'mock-refresh-token',
-      // ... other session properties
     };
-    const mockUserData = { id: 'user-123', email: testEmail /* ... other user properties */ };
+    const mockUserData = { id: 'user-123', email: testEmail };
 
     mockSignInWithPassword.mockResolvedValueOnce({
       data: { session: mockSessionData, user: mockUserData },
@@ -99,7 +98,7 @@ describe('/api/auth/login API Handler', () => {
     const testPassword = 'password123';
 
     mockSignInWithPassword.mockResolvedValueOnce({
-      data: { session: null, user: null }, // Or Supabase might return user object here too
+      data: { session: null, user: null },
       error: { message: 'Email not confirmed' },
     });
 
@@ -131,7 +130,64 @@ describe('/api/auth/login API Handler', () => {
 
     expect(mockSignInWithPassword).toHaveBeenCalledWith({ email: testEmail.toLowerCase(), password: testPassword });
     expect(res.status).toHaveBeenCalledWith(401);
-    expect(res.json).toHaveBeenCalledWith({ error: 'Invalid credentials' });
+    expect(res.json).toHaveBeenCalledWith({ error: 'Invalid credentials', code: 'INVALID_CREDENTIALS' });
+    expect(res.setHeader).not.toHaveBeenCalledWith('Set-Cookie', expect.any(String));
+  });
+
+  it('should return 401 for AuthApiError with status 400', async () => {
+    const testEmail = 'authapierror@example.com';
+    const testPassword = 'password123';
+
+    mockSignInWithPassword.mockResolvedValueOnce({
+      data: null,
+      error: { name: 'AuthApiError', status: 400, message: 'Bad request by client' },
+    });
+
+    const req = mockApiReq({ email: testEmail, password: testPassword });
+    const res = mockApiRes();
+    await loginHandler(req, res);
+
+    expect(mockSignInWithPassword).toHaveBeenCalledWith({ email: testEmail.toLowerCase(), password: testPassword });
+    expect(res.status).toHaveBeenCalledWith(401);
+    expect(res.json).toHaveBeenCalledWith({ error: 'Invalid credentials', code: 'INVALID_CREDENTIALS' });
+    expect(res.setHeader).not.toHaveBeenCalledWith('Set-Cookie', expect.any(String));
+  });
+
+  it('should return 500 for generic error with status', async () => {
+    const testEmail = 'servererror@example.com';
+    const testPassword = 'password123';
+
+    mockSignInWithPassword.mockResolvedValueOnce({
+      data: null,
+      error: { message: 'Some other error', status: 500 },
+    });
+
+    const req = mockApiReq({ email: testEmail, password: testPassword });
+    const res = mockApiRes();
+    await loginHandler(req, res);
+
+    expect(mockSignInWithPassword).toHaveBeenCalledWith({ email: testEmail.toLowerCase(), password: testPassword });
+    expect(res.status).toHaveBeenCalledWith(500);
+    expect(res.json).toHaveBeenCalledWith({ error: 'Some other error', code: 'LOGIN_FAILED' });
+    expect(res.setHeader).not.toHaveBeenCalledWith('Set-Cookie', expect.any(String));
+  });
+
+  it('should return 500 for generic error without status (defaults to 500)', async () => {
+    const testEmail = 'genericerror@example.com';
+    const testPassword = 'password123';
+
+    mockSignInWithPassword.mockResolvedValueOnce({
+      data: null,
+      error: { message: 'Another error without status' }, // No status property
+    });
+
+    const req = mockApiReq({ email: testEmail, password: testPassword });
+    const res = mockApiRes();
+    await loginHandler(req, res);
+
+    expect(mockSignInWithPassword).toHaveBeenCalledWith({ email: testEmail.toLowerCase(), password: testPassword });
+    expect(res.status).toHaveBeenCalledWith(500); // Default status
+    expect(res.json).toHaveBeenCalledWith({ error: 'Another error without status', code: 'LOGIN_FAILED' });
     expect(res.setHeader).not.toHaveBeenCalledWith('Set-Cookie', expect.any(String));
   });
 
@@ -140,7 +196,7 @@ describe('/api/auth/login API Handler', () => {
     const testPassword = 'password123';
 
     mockSignInWithPassword.mockResolvedValueOnce({
-      data: { session: null, user: { id: '123', email: testEmail } }, // User might be present, but no session
+      data: { session: null, user: { id: '123', email: testEmail } },
       error: null,
     });
 
@@ -150,7 +206,7 @@ describe('/api/auth/login API Handler', () => {
 
     expect(mockSignInWithPassword).toHaveBeenCalledWith({ email: testEmail.toLowerCase(), password: testPassword });
     expect(res.status).toHaveBeenCalledWith(401);
-    expect(res.json).toHaveBeenCalledWith({ error: 'Invalid credentials - no session data' });
+    expect(res.json).toHaveBeenCalledWith({ error: 'Invalid credentials - no session data', code: 'NO_SESSION_DATA' });
     expect(res.setHeader).not.toHaveBeenCalledWith('Set-Cookie', expect.any(String));
   });
 });
@@ -165,7 +221,7 @@ describe('loginUser Service', () => {
 
   afterEach(() => {
     global.fetch = originalFetch;
-    vi.restoreAllMocks(); // Restore all mocks, including fetch
+    vi.restoreAllMocks();
   });
 
   it('should handle successful login', async () => {
@@ -193,7 +249,7 @@ describe('loginUser Service', () => {
       code: 'EMAIL_NOT_CONFIRMED',
     };
     global.fetch = vi.fn().mockResolvedValue({
-      ok: false, // ok is false for 4xx/5xx responses
+      ok: false,
       status: 403,
       json: async () => mockErrorResponse,
       headers: new Headers()
@@ -205,7 +261,8 @@ describe('loginUser Service', () => {
   });
 
   it('should handle "Invalid credentials" (401) from API', async () => {
-    const mockErrorResponse = { error: 'Invalid credentials' };
+    // Updated to expect the new error structure with 'code'
+    const mockErrorResponse = { error: 'Invalid credentials', code: 'INVALID_CREDENTIALS' };
     global.fetch = vi.fn().mockResolvedValue({
       ok: false,
       status: 401,
@@ -215,11 +272,12 @@ describe('loginUser Service', () => {
 
     const { res, data } = await loginUser('wrong@example.com', 'password123');
     expect(res.status).toBe(401);
-    expect(data).toEqual(mockErrorResponse);
+    expect(data).toEqual(mockErrorResponse); // Verify the data includes the code
   });
 
   it('should handle other errors (e.g., 500) from API', async () => {
-    const mockErrorResponse = { error: 'Server error' };
+    // Updated to expect the new error structure with 'code'
+    const mockErrorResponse = { error: 'Server error', code: 'LOGIN_FAILED' };
      global.fetch = vi.fn().mockResolvedValue({
       ok: false,
       status: 500,
@@ -228,47 +286,17 @@ describe('loginUser Service', () => {
     });
     const { res, data } = await loginUser('test@example.com', 'password');
     expect(res.status).toBe(500);
-    expect(data).toEqual(mockErrorResponse);
+    expect(data).toEqual(mockErrorResponse); // Verify the data includes the code
   });
 
   it('should handle network errors during fetch', async () => {
     global.fetch = vi.fn().mockRejectedValue(new Error('Network failed'));
-
-    // Expect loginUser to throw or return a specific error structure for network issues
-    // This depends on how loginUser is implemented. Assuming it might re-throw or return a custom error.
-    // For this example, let's assume it might return a result that indicates failure.
-    // If loginUser re-throws, use expect(...).rejects.toThrow(...)
     try {
       await loginUser('test@example.com', 'password');
     } catch (e: any) {
-      expect(e.message).toBe('Network failed'); // Or however your service formats this
+      expect(e.message).toBe('Network failed');
     }
-    // Or if it returns a specific structure:
-    // const { res, data } = await loginUser('test@example.com', 'password');
-    // expect(res.ok).toBe(false); // Or similar check
-    // expect(data.error).toContain('Network failed');
   });
-
-  it('should return 401 on login failure', async () => {
-    const testEmail = 'fail@example.com';
-    const testPassword = 'wrongpassword';
-
-    // Reset the mock before use
-    if (mockSignInWithPassword) mockSignInWithPassword.mockReset();
-
-    // Configure the mock for supabase.auth.signInWithPassword to return an error
-    mockSignInWithPassword.mockResolvedValueOnce({
-      data: { session: null, user: null },
-      error: { message: 'Invalid login credentials', name: 'AuthApiError', status: 400 },
-    });
-
-    const loginApiReq = { method: 'POST', body: { email: testEmail, password: testPassword } } as NextApiRequest;
-    const loginApiRes = mockRes();
-
-    await loginHandler(loginApiReq, loginApiRes);
-
-    expect(mockSignInWithPassword).toHaveBeenCalledWith({email: testEmail.toLowerCase(), password: testPassword});
-    expect(loginApiRes.status).toHaveBeenCalledWith(401);
-    expect(loginApiRes.json).toHaveBeenCalledWith({ error: 'Invalid credentials' });
-  });
+  // Removed the duplicate test for "should return 401 on login failure" as it was part of the API handler tests
+  // and the new tests cover various error scenarios more comprehensively.
 });

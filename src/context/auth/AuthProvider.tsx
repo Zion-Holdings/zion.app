@@ -44,58 +44,50 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const login = async (email: string, password: string) => {
     const { res, data } = await loginUser(email, password); // Calls /api/auth/login
 
-    // Check for specific "Email not confirmed" error first
-    if (res.status === 403 && data?.code === "EMAIL_NOT_CONFIRMED") {
-      toast({
-        title: "Login Failed",
-        description: data.error || "Email not confirmed. Please check your inbox to verify your email.",
-        variant: "destructive",
-      });
-      return { error: data.error || "Email not confirmed. Please check your inbox to verify your email." };
+    // data will have { error: "message", code: "ERROR_CODE" } from the API if status !== 200
+    // data will have { user, accessToken, refreshToken } from the API if status === 200
+
+    if (res.status === 200) {
+      // Successful API call
+      setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
+      const clientLoginResult = await loginImpl({ email, password }); // This is supabase.auth.signInWithPassword client-side
+
+      if (clientLoginResult?.error) {
+        // loginImpl (useEmailAuth.login) already shows a toast.
+        console.error("Client-side login after server confirmation failed:", clientLoginResult.error);
+        return { error: (clientLoginResult.error as any)?.message || "Client-side login failed." };
+      }
+
+      // Navigation logic (already present)
+      const params = new URLSearchParams(location.search);
+      const next = params.get('redirectTo') || params.get('next') || '/equipment/recommendations';
+      navigate(next, { replace: true });
+
+      return { error: null }; // Successful login
     }
 
-    // Handle other errors from the API call
-    if (res.status === 400) { // Bad request (e.g. missing fields)
-      toast({ title: "Login Failed", description: data?.error || 'Missing email or password', variant: "destructive" });
-      return { error: data?.error || 'Missing email or password' };
-    }
-    if (res.status === 401) { // Unauthorized (invalid credentials)
-      let message = data?.message || 'Incorrect email or password';
-      if (data?.code === 'EMAIL_NOT_FOUND') message = 'Email not registered';
-      else if (data?.code === 'WRONG_PASSWORD') message = 'Incorrect password';
-      else if (data?.code === 'TOKEN_EXPIRED') message = 'Session expired, please log in again';
-      toast({ title: "Login Failed", description: message, variant: "destructive" });
-      return { error: message };
-    }
-    // Catch-all for other non-200 statuses from loginUser
-    if (res.status !== 200) {
-      toast({ title: "Login Failed", description: data?.error || 'An unexpected error occurred during login.', variant: "destructive" });
-      return { error: data?.error || 'Login failed' };
-    }
+    // Handle errors from the API call (res.status !== 200)
+    // data is expected to be { error: "message", code: "ERROR_CODE" }
+    let toastMessage = data?.error || "An unknown error occurred.";
+    const errorCode = data?.code;
 
-    // At this point, loginUser call was successful (200 OK)
-    setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
-
-    // Now, attempt client-side Supabase sign-in to synchronize auth state
-    // loginImpl is useEmailAuth.login which calls supabase.auth.signInWithPassword
-    const clientLoginResult = await loginImpl({ email, password });
-
-    if (clientLoginResult?.error) {
-      // useEmailAuth.login already shows a toast on error.
-      // We just need to return the error to the caller of AuthProvider.login
-      console.error("Client-side login after server confirmation failed:", clientLoginResult.error);
-      // It's possible the server token is valid but client Supabase has an issue.
-      // For now, treat as a login failure and let user retry.
-      // Potentially clear tokens if this state is problematic: await logout();
-      return { error: (clientLoginResult.error as any)?.message || "Client-side login failed." };
+    if (errorCode === "EMAIL_NOT_CONFIRMED") { // Expected for 403
+      toastMessage = data?.error || "Email not confirmed. Please check your inbox to verify your email.";
+    } else if (errorCode === "INVALID_CREDENTIALS") { // Expected for 401
+      toastMessage = data?.error || "Invalid email or password.";
+    } else if (errorCode === "LOGIN_FAILED" || res.status === 500) { // Expected for 500 or other
+      toastMessage = data?.error || "Login failed due to a server error. Please try again later.";
+    } else if (res.status === 400) { // Bad request (e.g. missing fields, though schema validation is in API)
+        toastMessage = data?.error || "Invalid request. Please check your input.";
     }
-codex/implement-ai-recommendations-endpoint
-    const params = new URLSearchParams(location.search);
-    const next = params.get('redirectTo') || params.get('next') || '/equipment/recommendations';
-    navigate(next, { replace: true });
-main
+    // Add any other specific error code handling here if needed
 
-    return { error: null }; // Successful login
+    toast({
+      title: "Login Failed",
+      description: toastMessage,
+      variant: "destructive",
+    });
+    return { error: toastMessage };
   };
 
   // Refactored signup method
