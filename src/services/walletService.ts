@@ -7,5 +7,5 @@ interface WalletData {
 }
 
 export const getWalletData = async (): Promise<{ data: WalletData | null; error: string | null }> => {
-  return apiHelper(() => apiClient.get<WalletData>('/api/v1/wallet'));
+  return apiHelper(() => apiClient.get('/api/v1/wallet'));
 };
