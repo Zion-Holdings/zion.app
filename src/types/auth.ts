@@ -2,6 +2,11 @@ export interface UserDetails {
   id?: string;
   name?: string;
   email?: string;
+  /**
+   * Indicates whether the user's email address has been verified.
+   * This field mirrors the `emailVerified` column in the Prisma `User` model.
+   */
+  emailVerified?: boolean;
   userType?: string;
   displayName?: string;
   avatarUrl?: string;

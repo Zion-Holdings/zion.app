@@ -9,6 +9,10 @@ export interface UserDetails {
   id?: string;
   name?: string;
   email?: string;
+  /**
+   * Indicates whether the user's email address has been verified.
+   */
+  emailVerified?: boolean;
   userType?: string;
   displayName?: string;
   avatarUrl?: string;
