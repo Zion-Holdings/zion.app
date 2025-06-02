@@ -133,7 +133,7 @@ describe('AutocompleteSuggestions', () => {
     expect(screen.getByText((content, element) => element?.textContent === 'category' && element.tagName.toLowerCase() === 'span')).toBeInTheDocument(); // Assuming Banana Phone is in mockSuggestions
     // Need to make sure Banana Phone is part of default mockSuggestions for this test or pass custom ones.
     // Let's add it to the default mock for this test case
-    const suggestionsWithFruit = [
+    const suggestionsWithFruit: SearchSuggestion[] = [
         ...mockSuggestions,
         { text: 'Banana Phone', type: 'category' }
     ];

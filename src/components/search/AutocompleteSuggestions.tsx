@@ -32,11 +32,13 @@ const highlightMatch = (text: string, searchTerm: string): SearchHighlight => {
   };
 };
 
-export function AutocompleteSuggestions({ 
-  suggestions, 
-  searchTerm, 
+export function AutocompleteSuggestions({
+  suggestions,
+  searchTerm,
   onSelectSuggestion,
-  visible 
+  visible,
+  highlightedIndex,
+  listId
 }: AutocompleteSuggestionsProps) {
   if (!visible || suggestions.length === 0) return null;
   
