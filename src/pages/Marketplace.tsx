@@ -55,7 +55,7 @@ export default function Marketplace() {
         }
         // Assuming API returns data compatible with ProductWithReviewStats structure
         // And ProductWithReviewStats is designed to be compatible with ProductListing
-        let data = await response.json();
+        const data = await response.json();
 
         // Adjust images: API provides { url: string; alt?: string }[], ProductListing expects string[]
         // Also map averageRating to rating

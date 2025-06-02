@@ -104,7 +104,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           });
           console.log(`[Stripe Webhook] Order confirmation email initiated for ${customerEmail} for order ${orderId}.`);
         } else {
-          let missingInfo = [];
+          const missingInfo = [];
           if (!customerEmail) missingInfo.push("customer email");
           if (!orderId) missingInfo.push("orderId in session metadata");
           console.log(`[Stripe Webhook] Order confirmation email not sent for session ${session.id} due to missing: ${missingInfo.join(', ')}.`);

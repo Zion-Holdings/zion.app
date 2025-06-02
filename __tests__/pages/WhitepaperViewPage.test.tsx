@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { useParams, Link } from 'react-router-dom';
 import WhitepaperViewPage from '@/pages/WhitepaperViewPage';
-import { supabase } from '@/lib/supabaseClient';
+import { supabase } from '@/integrations/supabase/client';
 import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel';
 
 // Mock dependencies
@@ -13,7 +13,7 @@ jest.mock('react-router-dom', () => ({
   Link: jest.fn(({ children, to }) => <a href={to}>{children}</a>), // Simple Link mock
 }));
 
-jest.mock('@/lib/supabaseClient', () => ({
+jest.mock('@/integrations/supabase/client', () => ({
   supabase: {
     functions: {
       invoke: jest.fn(),

@@ -8,7 +8,7 @@ import { useAuthState } from "./useAuthState";
 import { useAuthEventHandlers } from "./useAuthEventHandlers";
 import { mapProfileToUser } from "./profileMapper";
 import { loginUser, registerUser } from "@/services/authService";
-import { safeStorage } from "@/utils/safeStorage";
+import { safeStorage, safeSessionStorage } from "@/utils/safeStorage";
 import { toast } from "@/hooks/use-toast"; // Import toast
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
@@ -41,7 +41,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   } = useAuthOperations(setUser, setIsLoading, setAvatarUrl);
 
   // Wrapper for login to match the AuthContextType interface
-  const login = async (email: string, password: string) => {
+  const login = async (
+    email: string,
+    password: string,
+    rememberMe = false
+  ) => {
     const { res, data } = await loginUser(email, password); // Calls /api/auth/login
 
     // data will have { error: "message", code: "ERROR_CODE" } from the API if status !== 200
@@ -50,6 +54,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (res.status === 200) {
       // Successful API call
       setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
+      const authTokenKey = "auth.token";
+      if (rememberMe) {
+        safeStorage.setItem(authTokenKey, data.accessToken);
+      } else {
+        safeSessionStorage.setItem(authTokenKey, data.accessToken);
+      }
       const clientLoginResult = await loginImpl({ email, password }); // This is supabase.auth.signInWithPassword client-side
 
       if (clientLoginResult?.error) {

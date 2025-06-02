@@ -39,7 +39,11 @@ export interface AuthContextType {
   user: UserDetails | null;
   isLoading: boolean;
   isAuthenticated: boolean;
-  login: (email: string, password: string) => Promise<{ data?: any; error?: any }>; 
+  login: (
+    email: string,
+    password: string,
+    rememberMe?: boolean
+  ) => Promise<{ data?: any; error?: any }>;
   signup: (email: string, password: string, userData?: any) => Promise<{ error?: any }>; 
   register?: (name: string, email: string, password: string) => Promise<{ error?: any }>; 
   logout: () => Promise<void>;
@@ -52,7 +56,7 @@ export interface AuthContextType {
   signIn?: (email: string, password: string) => Promise<{ error: any }>;
   signOut?: () => Promise<void>;
   signUp?: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any }>;
-  setUser?: (user: UserDetails | null) => void;
+  setUser?: React.Dispatch<React.SetStateAction<UserDetails | null>>;
   tokens?: { accessToken: string; refreshToken?: string } | null;
   avatarUrl?: string | null;
   setAvatarUrl?: (url: string | null) => void;

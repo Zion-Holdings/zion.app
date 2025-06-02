@@ -63,7 +63,7 @@ export function ContactPublisherModal({
   const [loginOpen, setLoginOpen] = React.useState(false);
 
   const form = useForm<FormValues>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver<FormValues>(schema),
     mode: 'onChange',
     defaultValues: { subject: '', message: '' },
   });

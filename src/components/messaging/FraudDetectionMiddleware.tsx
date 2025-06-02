@@ -57,8 +57,7 @@ export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> =
           toast({
             title: "Message Flagged",
             description: "Your message contains content that may violate our terms of service.",
-            variant: "destructive",
-            duration: 5000
+            variant: "destructive"
           });
           
           return { 

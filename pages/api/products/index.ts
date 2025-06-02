@@ -1,11 +1,18 @@
-import { PrismaClient, Product } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
+import type { Prisma } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
+
+// Alias the Prisma generated Product type. Some versions of the Prisma client
+// only expose model types via the `Prisma` namespace instead of top-level
+// exports. Using an alias keeps the rest of the code unchanged regardless of
+// how the client is generated.
+type Product = Prisma.Product;
 
 const prisma = new PrismaClient();
 
 // Define the extended product type, same as in details.ts
 // Consider moving this to a shared type file, e.g., src/types/listings.ts or src/types/products.ts later
-export type ProductWithReviewStats = Product & {
+export type ProductWithReviewStats = Prisma.Product & {
   averageRating: number | null;
   reviewCount: number;
   // Additional fields to align with potential frontend expectations (e.g., ProductListingCard)
@@ -40,7 +47,7 @@ export default async function handler(
       // Step 1: Use $queryRawUnsafe to get IDs and similarity scores
       // We need to ensure pg_trgm is enabled in the DB for similarity() to work.
       // The previous subtask should have created a migration for this.
-      const rawResults = await prisma.$queryRawUnsafe<Array<{ id: string; name_similarity: number; description_similarity: number }>>(
+      const rawResults = await prisma.$queryRawUnsafe(
         `SELECT
            id,
            similarity(name, $1) AS name_similarity,
@@ -49,7 +56,7 @@ export default async function handler(
          WHERE similarity(name, $1) >= 0.3 OR similarity(description, $1) >= 0.3
          ORDER BY GREATEST(similarity(name, $1), similarity(description, $1)) DESC`,
         searchQuery
-      );
+      ) as Array<{ id: string; name_similarity: number; description_similarity: number }>;
 
       const productIds = rawResults.map(p => p.id);
 

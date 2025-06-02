@@ -29,7 +29,7 @@ serve(async (req) => {
     }
     
     // Create a prompt based on the email type and user data
-    let systemPrompt = "You are an AI assistant that creates personalized email content for a marketplace platform called Zion AI that connects AI professionals with clients. Create content that is friendly, professional, and encouraging.";
+    const systemPrompt = "You are an AI assistant that creates personalized email content for a marketplace platform called Zion AI that connects AI professionals with clients. Create content that is friendly, professional, and encouraging.";
     let userPrompt = "";
     
     // Subject line context

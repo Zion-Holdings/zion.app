@@ -2,10 +2,10 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import WhitepaperSectionEditor from '@/components/WhitepaperSectionEditor';
-import { supabase } from '@/lib/supabaseClient'; // To mock its functions
+import { supabase } from '@/integrations/supabase/client'; // To mock its functions
 
 // Mock Supabase client
-jest.mock('@/lib/supabaseClient', () => ({
+jest.mock('@/integrations/supabase/client', () => ({
   supabase: {
     functions: {
       invoke: jest.fn(),
