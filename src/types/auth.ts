@@ -49,6 +49,15 @@ export interface AuthContextType {
     password: string,
     rememberMe?: boolean
   ) => Promise<{ data?: any; error?: any }>;
+  /**
+   * Current onboarding step for the authenticated user. `string | number | null`
+   * is used to support both index-based and named steps.
+   */
+  onboardingStep?: string | number | null;
+  /**
+   * Setter for `onboardingStep` to allow consumers to update the step.
+   */
+  setOnboardingStep?: React.Dispatch<React.SetStateAction<string | number | null>>;
   signup: (
     email: string,
     password: string,
