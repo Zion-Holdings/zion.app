@@ -76,6 +76,8 @@ const appKitInstance: ReownAppKit | null = typeof window !== 'undefined'
     ethers, // pass the ethers library instance
     // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
   })],
+const appKitInstance = typeof window !== 'undefined' ? createAppKit({
+  adapters: [new EthersAdapter()],
   networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
   defaultNetwork: targetNetwork,
   projectId,
