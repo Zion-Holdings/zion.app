@@ -99,6 +99,13 @@ export default function ServicesPage() {
         categoryFilters={SERVICE_FILTERS}
         initialPrice={{ min: 3000, max: 10000 }}
       />
+      <div className="bg-zion-blue-dark py-8 text-center">
+        <p className="text-white">
+          New to Zion? Learn more{' '}
+          <Link to="/about" className="text-zion-cyan underline">about our mission</Link>{' '}
+          or <Link to="/contact" className="text-zion-cyan underline">contact our team</Link> for custom solutions.
+        </p>
+      </div>
       <TrustedBySection />
     </>
     </ErrorBoundary>

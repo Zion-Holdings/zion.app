@@ -265,7 +265,16 @@ export default function BlogPost() {
                 </div>
               </div>
             )}
-            
+
+            <div className="mt-12 text-center">
+              <p className="text-zion-slate-light">
+                Ready to put these ideas into action? Explore our{' '}
+                <Link to="/services" className="text-zion-cyan underline">AI services</Link>{' '}
+                or browse expert{' '}
+                <Link to="/talent" className="text-zion-cyan underline">talent</Link> to accelerate your projects.
+              </p>
+            </div>
+
             {/* Navigation */}
             <div className="flex justify-between items-center mt-12">
               <Button
