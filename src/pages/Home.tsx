@@ -53,7 +53,7 @@ export default function Home() {
       <BenefitsSection className="animate-fadeIn" style={{ animationDelay: '0.5s' }} />
       <HowItWorksSection className="animate-fadeIn" style={{ animationDelay: '0.6s' }} />
       <FeaturedListingsSection className="animate-fadeIn" style={{ animationDelay: '0.7s' }} />
-      <NewsletterSection className="animate-fadeIn" style={{ animationDelay: '0.8s' }} />
+      <NewsletterSection {...{ className: "animate-fadeIn", style: { animationDelay: '0.8s' } } as { className?: string; style?: React.CSSProperties }} />
     </div>
   );
 }
