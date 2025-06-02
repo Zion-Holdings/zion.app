@@ -9,7 +9,7 @@ const mockOnSelectSuggestion = jest.fn();
 const mockSuggestions: SearchSuggestion[] = [
   { text: 'Apple iPhone', type: 'product' },
   { text: 'Apple MacBook', type: 'product' },
-  { text: 'A very long suggestion text for testing overflow and stuff', type: 'article' },
+  { text: 'A very long suggestion text for testing overflow and stuff', type: 'category' },
 ];
 
 const mockSearchTerm = "Apple";
@@ -56,7 +56,7 @@ describe('AutocompleteSuggestions', () => {
   });
 
   test('highlights search term in suggestions', () => {
-    renderComponent(true, [{ text: "Test Apple Case", type: "accessory"}], -1, "Apple");
+    renderComponent(true, [{ text: "Test Apple Case", type: "product"}], -1, "Apple");
     // The component uses spans for highlighting: before, match, after
     // Check for the 'match' part
     const matchSpans = screen.getAllByText("Apple"); // This might be too generic if "Apple" appears elsewhere
@@ -130,16 +130,14 @@ describe('AutocompleteSuggestions', () => {
   test('displays suggestion type', () => {
     renderComponent();
     expect(screen.getByText((content, element) => element?.textContent === 'product' && element.tagName.toLowerCase() === 'span')).toBeInTheDocument();
-    expect(screen.getByText((content, element) => element?.textContent === 'fruit' && element.tagName.toLowerCase() === 'span')).toBeInTheDocument(); // Assuming Banana Phone is in mockSuggestions
-    // Need to make sure Banana Phone is part of default mockSuggestions for this test or pass custom ones.
-    // Let's add it to the default mock for this test case
-    const suggestionsWithFruit = [
+    expect(screen.getByText((content, element) => element?.textContent === 'category' && element.tagName.toLowerCase() === 'span')).toBeInTheDocument(); // Ensure secondary type renders
+    const suggestionsWithCategory = [
         ...mockSuggestions,
-        { text: 'Banana Phone', type: 'fruit' }
+        { text: 'Banana Phone', type: 'category' }
     ];
     render( // re-render with new suggestions
         <AutocompleteSuggestions
-          suggestions={suggestionsWithFruit}
+          suggestions={suggestionsWithCategory}
           searchTerm={mockSearchTerm}
           onSelectSuggestion={mockOnSelectSuggestion}
           visible={true}
@@ -147,6 +145,6 @@ describe('AutocompleteSuggestions', () => {
           listId="test-autocomplete-list"
         />
       );
-    expect(screen.getByText('fruit')).toBeInTheDocument();
+    expect(screen.getByText('category')).toBeInTheDocument();
   });
 });
