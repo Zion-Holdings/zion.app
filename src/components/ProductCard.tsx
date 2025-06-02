@@ -1,5 +1,5 @@
 import { Heart } from 'lucide-react';
-import { useFavorites } from '@/context/FavoritesContext';
+import { useFavorites } from '@/context/FavoritesContext.jsx';
 
 export default function ProductCard({ product }) {
   const { isFavorite, toggleFavorite } = useFavorites();

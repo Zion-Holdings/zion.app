@@ -3,11 +3,11 @@ import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import NextHead from '@/components/NextHead';
 import ProductReviews from '@/components/ProductReviews';
-import type { Prisma } from '@prisma/client'; // Use Prisma namespace for types
+import type { Prisma, Product } from '@prisma/client'; // Use Prisma namespace for types, and Product directly
 
-// Alias the Prisma generated Product model type. Using Prisma.Product keeps the
-// type definition independent of how Prisma exports model types.
-type ProductModel = Prisma.Product;
+// Alias the Prisma generated Product model type.
+// Changed from Prisma.Product to Product based on successful compilation in other files.
+type ProductModel = Product;
 // Define ProductWithReviewStats here or import from a shared types file
 // This should match the type returned by `/api/products/[productId]/details`
 export type ProductWithReviewStats = ProductModel & {

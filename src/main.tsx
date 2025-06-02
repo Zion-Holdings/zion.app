@@ -42,7 +42,7 @@ import { ThemeProvider } from '@/context/ThemeContext'; // Import ThemeProvider
 import { AnalyticsProvider } from './context/AnalyticsContext';
 import { ViewModeProvider } from './context/ViewModeContext';
 import { CartProvider } from './context/CartContext';
-import { FavoritesProvider } from './context/FavoritesContext';
+import { FavoritesProvider } from './context/FavoritesContext.jsx';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 import { enableDevToolsInStaging } from './utils/devtools';
 
