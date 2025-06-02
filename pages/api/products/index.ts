@@ -26,14 +26,63 @@ export default async function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
+  const { q: searchQuery } = req.query;
+
   try {
-    // Fetch all products
-    const products = await prisma.product.findMany();
+    let products: Product[] = [];
+
+    if (typeof searchQuery === 'string' && searchQuery.trim() !== '') {
+      // Sanitize search query for safety if it were used directly in a template string,
+      // though Prisma's $queryRawUnsafe parameterization handles SQL injection.
+      // For $queryRaw, parameters are typically safer.
+      // Here, we are constructing column names and using the query as a parameter.
+
+      // Step 1: Use $queryRawUnsafe to get IDs and similarity scores
+      // We need to ensure pg_trgm is enabled in the DB for similarity() to work.
+      // The previous subtask should have created a migration for this.
+      const rawResults = await prisma.$queryRawUnsafe<Array<{ id: string; name_similarity: number; description_similarity: number }>>(
+        `SELECT
+           id,
+           similarity(name, $1) AS name_similarity,
+           similarity(description, $1) AS description_similarity
+         FROM "Product"
+         WHERE similarity(name, $1) >= 0.3 OR similarity(description, $1) >= 0.3
+         ORDER BY GREATEST(similarity(name, $1), similarity(description, $1)) DESC`,
+        searchQuery
+      );
+
+      const productIds = rawResults.map(p => p.id);
+
+      if (productIds.length > 0) {
+        products = await prisma.product.findMany({
+          where: {
+            id: {
+              in: productIds,
+            },
+          },
+          // We might want to preserve the order from rawResults.
+          // This requires a bit more work, fetching then re-ordering in code.
+          // For now, findMany will return them in its default order (e.g., by ID).
+          // To maintain order: fetch then sort `products` array based on `productIds` order.
+        });
+
+        // Re-order products based on the similarity scores from rawResults
+        products.sort((a, b) => productIds.indexOf(a.id) - productIds.indexOf(b.id));
+
+      } else {
+        // No products match the search query and similarity threshold
+        products = [];
+      }
+
+    } else {
+      // No search query provided, fetch all products (original behavior)
+      products = await prisma.product.findMany();
+    }
 
     // findMany returns an empty array if no products are found, so no special check for !products is needed.
     // If products array is empty, the map will result in an empty array, which is correct.
 
-    // For each product, fetch its review stats
+    // For each product (either all or filtered by search), fetch its review stats
     const productsWithStats: ProductWithReviewStats[] = await Promise.all(
       products.map(async (product) => {
         const reviewStats = await prisma.productReview.aggregate({

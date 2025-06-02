@@ -28,8 +28,8 @@ model ChatMessage {
 
 model Product {
   id          String @id @default(cuid())
-  name        String
-  description String?
+  name        String // @@index([name], type: Gin, opclass: gin_trgm_ops)
+  description String? // @@index([description], type: Gin, opclass: gin_trgm_ops)
   // Add other relevant product fields if identifiable from context, otherwise keep simple
   reviews     ProductReview[]
 }
@@ -56,10 +56,10 @@ model TalentProfile {
   full_name           String
   professional_title  String
   profile_picture_url String?
-  bio                 String?
-  summary             String?
+  bio                 String? // @@index([bio], type: Gin, opclass: gin_trgm_ops)
+  summary             String? // @@index([summary], type: Gin, opclass: gin_trgm_ops)
   location            String?
-  skills              String[]  @default([])
+  skills              String[]  @default([]) // @@index([skills], type: Gin, opclass: gin_trgm_ops) - Note: Special handling might be needed for array types
   hourly_rate         Float?
   years_experience    Int?
   availability_type   String?    // e.g., "full_time", "part_time", "project"
