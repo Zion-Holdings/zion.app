@@ -47,10 +47,12 @@ const initialWalletState: WalletState = {
 const WalletContext = createContext<WalletContextType | undefined>(undefined);
 
 // --- Reown AppKit Configuration ---
+
 // The project ID is provided via Vite environment variables. Set
 // VITE_REOWN_PROJECT_ID in your `.env` file with the value from
 // cloud.reown.com. If the ID is missing, the SDK will throw an error
 // like "Origin <your-domain> not found on Allowlist".
+
 const projectId = import.meta.env.VITE_REOWN_PROJECT_ID || 'YOUR_PROJECT_ID';
 
 const metadata = {
@@ -139,15 +141,24 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
 
   const connectWallet = useCallback(async () => {
-    if (appKit) {
-      try {
-        await appKit.open(); // Opens the modal
-        // State update will be handled by the subscription
-      } catch (error) {
-        console.error('Error connecting wallet:', error);
+    if (!appKit) {
+      console.error('AppKit not initialized');
+      return;
+    }
+
+    try {
+      await appKit.open(); // Opens the modal
+      // State update will be handled by the subscription
+    } catch (error: any) {
+      console.error('Error connecting wallet:', error);
+      if (
+        error instanceof Error &&
+        /Coinbase Wallet SDK/i.test(error.message)
+      ) {
+        console.warn(
+          'Failed to load Coinbase Wallet. Please ensure the SDK is available or try a different wallet provider.'
+        );
       }
-    } else {
-        console.error('AppKit not initialized');
     }
   }, [appKit]);
 

@@ -83,6 +83,7 @@ This project utilizes a modern, multi-component architecture:
     ```
 2.  Update the `.env` file with your actual credentials and configuration values for services like Stripe, SendGrid, and database connections.
     *   **Note:** Configure your database connection in the root `.env` file. The Django settings (likely in `backend/django_backend/settings.py`) typically use `dj_database_url` to parse a `DATABASE_URL` (e.g., `postgresql://user:password@host:port/dbname`), or may use individual variables like `DB_HOST`, `DB_NAME`, etc.
+
 3.  Create a project on [cloud.reown.com](https://cloud.reown.com) for Reown AppKit.
     Add your site domain (e.g., `https://app.ziontechgroup.com`) to the project's allowlist and copy the generated project ID.
     Set `VITE_REOWN_PROJECT_ID` in your `.env` file with this value. If the domain is not on the allowlist you'll see an error like:
