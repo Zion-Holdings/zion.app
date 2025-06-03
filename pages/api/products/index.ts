@@ -1,11 +1,13 @@
 
-import { PrismaClient, Prisma, Product } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
+
+// Alias the Product model type from the Prisma namespace so we can use it like a
+// regular import even though it isn't exported at the top level by Prisma.
+type Product = Prisma.Product;
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// Alias the Prisma generated Product type. Using Prisma namespace ensures
-// compatibility even if the Product type isn't exported at the top level.
-// Let's try using the direct import:
-
+// Use a separate alias so that future changes to where the Product type comes
+// from only need to be updated in one place.
 type ProductModel = Product;
 
 const prisma = new PrismaClient();
