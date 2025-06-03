@@ -37,7 +37,6 @@ import { store } from './store';
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
 import { NotificationProvider, MessagingProvider } from './context';
-import { ThemeProvider } from '@/context/ThemeContext'; // Import ThemeProvider
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';

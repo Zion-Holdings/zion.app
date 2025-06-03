@@ -1,18 +1,18 @@
 
 import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useTheme } from "@/context/ThemeContext" // Updated import path
+import { useTheme } from "@/hooks/useTheme"
 
 export function ModeToggle() {
   // Use themePreset and setThemePreset from the updated useTheme hook
-  const { themePreset, setThemePreset, theme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   // Determine if the current preset is considered "dark"
   const isDarkMode = theme === "dark";
 
   const handleToggle = () => {
-    // Toggle between 'light' and 'dark' presets
-    setThemePreset(isDarkMode ? "light" : "dark");
+    // Toggle between 'light' and 'dark' themes
+    setTheme(isDarkMode ? "light" : "dark");
   };
 
   return (
