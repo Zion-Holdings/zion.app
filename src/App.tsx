@@ -155,11 +155,9 @@ const baseRoutes = [
 ];
 
 const App = () => {
-  console.log("App.tsx: Start");
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
   const location = useLocation();
-  console.log("App.tsx: Rendering Tree");
   return (
     <ErrorBoundary
       FallbackComponent={RootErrorFallback}

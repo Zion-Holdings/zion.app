@@ -1,4 +1,3 @@
-console.log("main.tsx: Start");
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
@@ -59,7 +58,6 @@ const queryClient = new QueryClient({
 });
 
 try {
-  console.log("main.tsx: Before ReactDOM.createRoot");
   // Removed initGA() call as it's undefined and likely superseded by AnalyticsProvider
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -109,14 +107,12 @@ try {
       {/* Removed duplicate main marker */}
     </React.StrictMode>,
   );
-  console.log("main.tsx: After ReactDOM.createRoot");
 } catch (error) {
   console.error("Global error caught in main.tsx:", error);
-  console.log("main.tsx: Global error caught");
   const rootElement = document.getElementById('root');
   if (rootElement) {
     rootElement.innerHTML = `
-      <div style="padding: 20px; text-align: center; font-family: sans-serif;">
+      <div style="background-color: white; color: black; padding: 20px; text-align: center; font-family: sans-serif; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;">
         <h1>Application Error</h1>
         <p>A critical error occurred while loading the application.</p>
         <p>Error: ${(error as Error).message}</p>
