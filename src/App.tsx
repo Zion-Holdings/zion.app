@@ -204,7 +204,6 @@ const App = () => {
       </ThemeProvider>
         </WalletProvider> {/* Added WalletProvider closing tag */}
     </WhitelabelProvider>
-    {console.log("App.tsx: App component successfully rendered virtual DOM")}
     </ErrorBoundary>
   );
 };
