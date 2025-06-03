@@ -40,7 +40,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     } else {
       document.documentElement.classList.add('light');
     }
-    // Also update the 'theme' state for compatibility if other components rely on it directly
+    // Synchronize 'theme' state with 'themePreset'
+    // This ensures 'theme' is 'dark' for specific presets, 'light' otherwise.
     if (themePreset === 'dark' || themePreset === 'neon' || themePreset === 'startup') {
       setTheme('dark');
     } else {
