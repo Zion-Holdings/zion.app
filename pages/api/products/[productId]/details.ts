@@ -1,15 +1,10 @@
-import { PrismaClient, Prisma } from '@prisma/client';
-
-// The Prisma client doesn't expose model types at the top level.
-// Alias the Product model type from the Prisma namespace.
-type Product = Prisma.Product;
-
+import { PrismaClient } from '@prisma/client';
+import type { Product } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const prisma = new PrismaClient();
 
 // Extend the Product type to include our aggregated review data.
-// We alias the Product model type from the Prisma namespace above.
 export type ProductWithReviewStats = Product & {
   averageRating: number | null;
   reviewCount: number;
