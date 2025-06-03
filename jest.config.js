@@ -4,9 +4,10 @@ export default {
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
-      useESM: true
-      // isolatedModules: true // Removed as per deprecation warning and lack of effect
+      useESM: true,
+      babelConfig: './babel.config.cjs'
     }],
+    '^.+\\.m?js$': 'babel-jest', // Ensure JS files are also processed by Babel
   },
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
   moduleNameMapper: {

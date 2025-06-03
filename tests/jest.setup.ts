@@ -14,3 +14,31 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: jest.fn(),
   })),
 });
+
+// Mock import.meta.env for Jest - This was ineffective for the SyntaxError
+// @ts-ignore
+// global.import = {
+//   // @ts-ignore
+//   meta: {
+//     env: {
+//       VITE_SUPABASE_URL: 'mock_supabase_url',
+//       VITE_SUPABASE_ANON_KEY: 'mock_supabase_anon_key',
+//       MODE: 'test',
+//     },
+//   },
+// };
+
+// Mock the supabase client module to prevent import.meta.env parsing errors
+jest.mock('@/integrations/supabase/client', () => ({
+  supabase: {
+    auth: {
+      onAuthStateChange: jest.fn(() => ({
+        data: { subscription: { unsubscribe: jest.fn() } },
+      })),
+      // Add any other specific methods from supabase.auth if they get called
+    },
+    // Add other top-level Supabase client methods if they get called
+    // e.g., from: jest.fn(), rpc: jest.fn(), etc.
+    // For now, keeping it minimal.
+  },
+}));
