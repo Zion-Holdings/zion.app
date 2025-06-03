@@ -24,7 +24,7 @@ export default function CardForm({ amount, onSuccess }: Props) {
       const res = await fetch('/api/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount, userId: user?.id }),
+        body: JSON.stringify({ amount, userId: (user && typeof user !== 'boolean' ? user.id : undefined) }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to create payment');
@@ -33,19 +33,19 @@ export default function CardForm({ amount, onSuccess }: Props) {
         payment_method: {
           card: elements.getElement(CardElement)!,
           billing_details: {
-            email: user?.email || undefined,
-            name: user?.user_metadata?.full_name || undefined,
+            email: (user && typeof user !== 'boolean' ? user.email : undefined),
+            name: (user && typeof user !== 'boolean' && user.user_metadata ? user.user_metadata.full_name : undefined),
           },
         },
       });
 
       if (result.error) throw new Error(result.error.message);
       if (result.paymentIntent?.status === 'succeeded') {
-        if (user?.id) {
+        if (user && typeof user !== 'boolean' && user.id) { // Applied safer check here
           await fetch('/api/points/add', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userId: user.id, amount: -amount }),
+            body: JSON.stringify({ userId: user.id, amount: -amount }), // user.id is safe here
           });
         }
         onSuccess(result.paymentIntent);

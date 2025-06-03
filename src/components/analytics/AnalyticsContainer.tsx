@@ -12,7 +12,7 @@ export function AnalyticsContainer({ children }: AnalyticsContainerProps) {
   const { isAuthenticated, isLoading, user } = useAuth();
   
   // Check if user is admin (using either role or userType)
-  const isAdmin = user?.role === 'admin' || user?.userType === 'admin';
+  const isAdmin = (user && typeof user !== 'boolean') ? (user.role === 'admin' || user.userType === 'admin') : false;
   
   // If still loading auth status, show loading
   if (isLoading) {

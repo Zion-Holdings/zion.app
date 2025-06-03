@@ -171,6 +171,7 @@ const App = () => {
         <InstallPrompt />
           </ToastProvider>
       </ThemeProvider>
+        </WalletProvider> {/* Added WalletProvider closing tag */}
     </WhitelabelProvider>
     </ErrorBoundary>
   );

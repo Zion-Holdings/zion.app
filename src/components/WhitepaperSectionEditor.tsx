@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { supabase } from '@/lib/supabaseClient'; // Assuming supabase client is exported
+import { supabase } from '@/integrations/supabase/client'; // Corrected path
 
 interface WhitepaperSectionEditorProps {
   title: string;

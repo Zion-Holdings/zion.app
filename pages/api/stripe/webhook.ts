@@ -1,12 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import { Buffer } from 'buffer';
-import { sendEmailWithSendGrid } from '../../../../src/lib/email';
+import { sendEmailWithSendGrid } from '@/lib/email';
 
 // Initialize Stripe. It's good practice to use a different key for testing if available.
 // Ensure STRIPE_SECRET_KEY (or STRIPE_TEST_SECRET_KEY for testing) is set in your .env.local or environment variables.
 const stripe = new Stripe(process.env.STRIPE_TEST_SECRET_KEY || process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2023-10-16', // Use your desired API version or the latest
+  apiVersion: '2025-05-28.basil', // Updated to the expected version
   typescript: true, // Enable TypeScript if you are using it, for better type checking
 });
 

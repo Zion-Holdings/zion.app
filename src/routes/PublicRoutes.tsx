@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import WhitepaperViewPage from "@/pages/WhitepaperViewPage";
-import NotFoundPage from "@/pages/NotFoundPage"; // Assuming a generic 404 page exists
+import NotFoundPage from "../pages/404"; // Corrected path using relative path
 
 const PublicRoutes = () => {
   return (
