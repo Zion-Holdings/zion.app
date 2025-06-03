@@ -1,3 +1,4 @@
+console.log("main.tsx: Script start");
 console.log("main.tsx: Start");
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -116,7 +117,7 @@ try {
   const rootElement = document.getElementById('root');
   if (rootElement) {
     rootElement.innerHTML = `
-      <div style="padding: 20px; text-align: center; font-family: sans-serif;">
+      <div style="background-color: white; color: black; padding: 20px; text-align: center; font-family: sans-serif; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;">
         <h1>Application Error</h1>
         <p>A critical error occurred while loading the application.</p>
         <p>Error: ${(error as Error).message}</p>
@@ -142,3 +143,4 @@ document.addEventListener(
   },
   true,
 );
+console.log("main.tsx: Script end");
