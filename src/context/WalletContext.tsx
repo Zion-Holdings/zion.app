@@ -47,8 +47,12 @@ const initialWalletState: WalletState = {
 const WalletContext = createContext<WalletContextType | undefined>(undefined);
 
 // --- Reown AppKit Configuration ---
-// Project ID for WalletConnect Cloud. Set `VITE_REOWN_PROJECT_ID` in your environment
-// or the example `.env` file. Falls back to 'YOUR_PROJECT_ID' for local/offline use.
+
+// The project ID is provided via Vite environment variables. Set
+// VITE_REOWN_PROJECT_ID in your `.env` file with the value from
+// cloud.reown.com. If the ID is missing, the SDK will throw an error
+// like "Origin <your-domain> not found on Allowlist".
+
 const projectId = import.meta.env.VITE_REOWN_PROJECT_ID || 'YOUR_PROJECT_ID';
 
 const metadata = {
