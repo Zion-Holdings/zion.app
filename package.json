@@ -112,7 +112,7 @@
     "zod": "^3.22.4"
   },
   "optionalDependencies": {
-    "@elastic/elasticsearch": "^8.12.0"
+    "@elastic/elasticsearch": "^9.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",
