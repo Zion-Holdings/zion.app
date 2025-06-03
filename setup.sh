@@ -34,6 +34,14 @@ rm -f src/types/offline-shims.d.ts
 echo "Installing dependencies..."
 $PM install
 
+# Generate Prisma client after dependencies are installed
+if command -v npx >/dev/null 2>&1; then
+  echo "Generating Prisma client..."
+  npx prisma generate
+else
+  echo "Warning: npx not found. Skipping Prisma client generation."
+fi
+
 # Development message
 echo ""
 echo "✅ Setup complete!"

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "NODE_ENV=production npx tsc && NODE_ENV=production vite build",
+    "generate": "prisma generate",
+    "build": "npm run generate && NODE_ENV=production npx tsc && NODE_ENV=production vite build",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "NODE_ENV=production vite preview",
     "test": "jest --coverage",
