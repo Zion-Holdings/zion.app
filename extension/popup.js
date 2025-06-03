@@ -5,8 +5,14 @@ async function ask() {
     document.getElementById('output').textContent = 'Please enter a prompt.';
     return;
   }
-  const res = await chrome.runtime.sendMessage({ type: 'ask', prompt });
-  document.getElementById('output').textContent = res.answer;
+  try {
+    const res = await chrome.runtime.sendMessage({ type: 'ask', prompt });
+    document.getElementById('output').textContent = res.answer;
+  } catch (err) {
+    console.error('Failed to contact background script', err);
+    document.getElementById('output').textContent =
+      'Error contacting background script.';
+  }
 }
 
 // Attach handlers once the DOM is fully loaded to avoid null element errors

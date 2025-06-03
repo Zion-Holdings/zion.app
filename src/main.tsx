@@ -5,10 +5,17 @@ import ReactDOM from 'react-dom/client';
 
 // Integrate axe-core accessibility auditing in development
 if (process.env.NODE_ENV !== 'production') {
-  // Dynamically require to avoid bundling in production
-   
-  const axe = require('@axe-core/react');
-  axe(React, ReactDOM, 1000);
+  // Dynamically import to avoid bundling in production and use ESM standard
+  import('@axe-core/react').then((axeModule) => {
+    // Ensure React and ReactDOM are available and valid
+    if (React && ReactDOM && axeModule && typeof axeModule.default === 'function') {
+      axeModule.default(React, ReactDOM, 1000);
+    } else {
+      console.warn('Axe-core dynamic import failed or React/ReactDOM not available.');
+    }
+  }).catch(error => {
+    console.error('Failed to load @axe-core/react:', error);
+  });
 }
 import App from './App.tsx';
 import './index.css';
@@ -59,7 +66,6 @@ const queryClient = new QueryClient({
 });
 
 try {
-  console.log("main.tsx: Before ReactDOM.createRoot");
   // Removed initGA() call as it's undefined and likely superseded by AnalyticsProvider
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -109,10 +115,8 @@ try {
       {/* Removed duplicate main marker */}
     </React.StrictMode>,
   );
-  console.log("main.tsx: After ReactDOM.createRoot");
 } catch (error) {
   console.error("Global error caught in main.tsx:", error);
-  console.log("main.tsx: Global error caught");
   const rootElement = document.getElementById('root');
   if (rootElement) {
     rootElement.innerHTML = `

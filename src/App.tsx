@@ -161,7 +161,6 @@ const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
   const location = useLocation();
-  console.log("App.tsx: Rendering Tree");
   return (
     <ErrorBoundary
       FallbackComponent={RootErrorFallback}
@@ -189,7 +188,7 @@ const App = () => {
             <Route path="/mobile/*" element={<PageTransition><MobileAppRoutes /></PageTransition>} />
             <Route path="/content/*" element={<PageTransition><ContentRoutes /></PageTransition>} />
             <Route path="/enterprise/*" element={<PageTransition><EnterpriseRoutes /></PageTransition>} />
-            <Route path="/community/*" element={<PageTransition><CommunityRoutes /></PageTransition>} />
+            <Route path="/community/*" element={<PageTransition><CommunityProvider><CommunityRoutes /></CommunityProvider></PageTransition>} />
             <Route path="/developers/*" element={<PageTransition><DeveloperRoutes /></PageTransition>} />
             <Route path="*" element={<PageTransition><ErrorRoutes /></PageTransition>} />
           </Routes>
