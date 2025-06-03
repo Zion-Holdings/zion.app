@@ -112,8 +112,7 @@
     "zod": "^3.22.4"
   },
   "optionalDependencies": {
-    "@elastic/elasticsearch": "^8.12.0",
-    "@sentry/node": "^8.0.0"
+    "@elastic/elasticsearch": "^9.0.2"
   },
   "devDependencies": {
     "@axe-core/react": "^4.8.2",
