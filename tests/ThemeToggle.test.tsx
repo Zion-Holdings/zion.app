@@ -1,15 +1,18 @@
-import { render, fireEvent } from '@testing-library/react';
-import ThemeToggle from '@/components/ThemeToggle';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import { render, fireEvent, waitFor } from '@testing-library/react'; // Added waitFor
+import { ModeToggle } from '@/components/ModeToggle';
+import { ThemeProvider } from '@/context/ThemeContext'; // Changed import path for ThemeProvider
 
-it('applies dark class when toggled', () => {
+it('applies dark class when toggled', async () => { // Made test async
   render(
-    <ThemeProvider>
-      <ThemeToggle />
+    <ThemeProvider> {/* This ThemeProvider is now from @/context/ThemeContext */}
+      <ModeToggle />
     </ThemeProvider>
   );
 
   const button = document.querySelector('button');
   fireEvent.click(button!);
-  expect(document.documentElement.classList.contains('dark')).toBe(true);
+
+  await waitFor(() => { // Added waitFor for the assertion
+    expect(document.documentElement.classList.contains('dark')).toBe(true);
+  });
 });

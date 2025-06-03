@@ -2,8 +2,12 @@ export default {
   preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'jsdom',
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
-  globals: {
-    'ts-jest': { useESM: true },
+  transform: {
+    '^.+\\.tsx?$': ['ts-jest', {
+      useESM: true,
+      babelConfig: './babel.config.cjs'
+    }],
+    '^.+\\.m?js$': 'babel-jest', // Ensure JS files are also processed by Babel
   },
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
   moduleNameMapper: {
