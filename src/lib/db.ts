@@ -3,9 +3,25 @@ const DB_VERSION = 1;
 const CART_STORE = 'cart';
 const WISHLIST_STORE = 'wishlist';
 
-function openDB(): Promise<IDBDatabase> {
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, DB_VERSION);
+let indexedDBAvailable = true;
+const memoryStore: Record<string, any[]> = {
+  [CART_STORE]: [],
+  [WISHLIST_STORE]: []
+};
+
+function openDB(): Promise<IDBDatabase | null> {
+  if (!indexedDBAvailable) {
+    return Promise.resolve(null);
+  }
+  return new Promise((resolve) => {
+    let request: IDBOpenDBRequest;
+    try {
+      request = indexedDB.open(DB_NAME, DB_VERSION);
+    } catch (err) {
+      console.warn('IndexedDB not available. Falling back to in-memory store.', err);
+      indexedDBAvailable = false;
+      return resolve(null);
+    }
     request.onupgradeneeded = () => {
       const db = request.result;
       if (!db.objectStoreNames.contains(CART_STORE)) {
@@ -16,12 +32,19 @@ function openDB(): Promise<IDBDatabase> {
       }
     };
     request.onsuccess = () => resolve(request.result);
-    request.onerror = () => reject(request.error);
+    request.onerror = () => {
+      console.warn('IndexedDB open error. Falling back to in-memory store.', request.error);
+      indexedDBAvailable = false;
+      resolve(null);
+    };
   });
 }
 
 async function getList(storeName: string): Promise<any[]> {
   const db = await openDB();
+  if (!db) {
+    return memoryStore[storeName] || [];
+  }
   return new Promise(resolve => {
     const tx = db.transaction(storeName, 'readonly');
     const store = tx.objectStore(storeName);
@@ -33,6 +56,10 @@ async function getList(storeName: string): Promise<any[]> {
 
 async function setList(storeName: string, items: any[]): Promise<void> {
   const db = await openDB();
+  if (!db) {
+    memoryStore[storeName] = items;
+    return;
+  }
   return new Promise((resolve, reject) => {
     const tx = db.transaction(storeName, 'readwrite');
     tx.objectStore(storeName).put(items, 'items');
