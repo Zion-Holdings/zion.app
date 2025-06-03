@@ -1,4 +1,5 @@
 from hashlib import sha256
+import secrets
 from django.utils.translation import gettext_lazy as _
 from rest_framework.authentication import BaseAuthentication
 from rest_framework import exceptions
@@ -19,6 +20,6 @@ class ApiKeyAuthentication(BaseAuthentication):
         except ApiKey.DoesNotExist:
             raise exceptions.AuthenticationFailed(_('Invalid API key'))
         digest = sha256(key.encode()).hexdigest()
-        if digest != api_key.hashed_key:
+        if not secrets.compare_digest(digest, api_key.hashed_key):
             raise exceptions.AuthenticationFailed(_('Invalid API key'))
         return (api_key.user, None)

@@ -237,8 +237,8 @@ export default function EquipmentDetail() {
                 {equipment.images.length > 1 && (
                   <div className="flex p-4 gap-2 overflow-x-auto">
                     {equipment.images.map((image, index) => (
-                      <div 
-                        key={index}
+                      <div
+                        key={image + index}
                         onClick={() => setSelectedImageIndex(index)}
                         className={`w-20 h-20 flex-shrink-0 cursor-pointer rounded overflow-hidden border-2 ${
                           index === selectedImageIndex ? "border-zion-purple" : "border-transparent"
@@ -282,7 +282,7 @@ export default function EquipmentDetail() {
                     <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {equipment.specifications.map((spec, index) => (
-                          <div key={index} className="border-b border-zion-blue-light pb-2 mb-2 last:border-0 last:mb-0 last:pb-0">
+                          <div key={spec.name + index} className="border-b border-zion-blue-light pb-2 mb-2 last:border-0 last:mb-0 last:pb-0">
                             <div className="flex justify-between">
                               <span className="text-zion-slate-light">{spec.name}</span>
                               <span className="text-white font-medium">{spec.value}</span>
@@ -297,7 +297,7 @@ export default function EquipmentDetail() {
                     <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
                       <ul className="space-y-2">
                         {equipment.features.map((feature, index) => (
-                          <li key={index} className="flex items-start gap-2">
+                          <li key={feature + index} className="flex items-start gap-2">
                             <div className="text-zion-cyan mt-1 flex-shrink-0">•</div>
                             <span className="text-zion-slate-light">{feature}</span>
                           </li>
