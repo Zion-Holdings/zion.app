@@ -74,8 +74,8 @@
         ]
       }
     </script>
-    <script>
-      if (process.env.NODE_ENV === 'production') {
+    <script type="module">
+      if (import.meta.env.MODE === 'production') {
         const noop = () => {};
         const DEV_TOOLS = window.__REACT_DEVTOOLS_GLOBAL_HOOK__;
         if (typeof DEV_TOOLS === 'object') {
