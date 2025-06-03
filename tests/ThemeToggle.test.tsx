@@ -1,11 +1,11 @@
 import { render, fireEvent } from '@testing-library/react';
-import ThemeToggle from '@/components/ThemeToggle';
+import { ModeToggle } from '@/components/ModeToggle'; // Corrected import
 import { ThemeProvider } from '@/components/ThemeProvider';
 
 it('applies dark class when toggled', () => {
   render(
     <ThemeProvider>
-      <ThemeToggle />
+      <ModeToggle /> {/* Corrected component name */}
     </ThemeProvider>
   );
 

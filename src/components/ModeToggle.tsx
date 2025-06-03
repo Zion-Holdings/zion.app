@@ -1,18 +1,17 @@
-
 import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTheme } from "@/hooks/useTheme"
 
 export function ModeToggle() {
-  // Use themePreset and setThemePreset from the updated useTheme hook
-  const { theme, setTheme } = useTheme();
+  // Use theme and toggleTheme from the updated useTheme hook
+  const { theme, toggleTheme } = useTheme();
 
   // Determine if the current preset is considered "dark"
   const isDarkMode = theme === "dark";
 
   const handleToggle = () => {
-    // Toggle between 'light' and 'dark' themes
-    setTheme(isDarkMode ? "light" : "dark");
+    // Toggle theme using the toggleTheme function from context
+    toggleTheme();
   };
 
   return (
@@ -20,7 +19,7 @@ export function ModeToggle() {
       variant="ghost"
       size="icon"
       onClick={handleToggle}
-      aria-pressed={isDarkMode} // Reflects the current mode based on themePreset
+      aria-pressed={isDarkMode} // Reflects the current mode based on theme
       aria-label="Toggle theme"
       title="Toggle theme"
       className="focus-visible:ring-zion-purple"

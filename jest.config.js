@@ -2,8 +2,11 @@ export default {
   preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'jsdom',
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
-  globals: {
-    'ts-jest': { useESM: true },
+  transform: {
+    '^.+\\.tsx?$': ['ts-jest', {
+      useESM: true
+      // isolatedModules: true // Removed as per deprecation warning and lack of effect
+    }],
   },
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
   moduleNameMapper: {

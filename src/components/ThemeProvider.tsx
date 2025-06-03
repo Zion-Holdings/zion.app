@@ -12,11 +12,13 @@ type ThemeProviderProps = {
 type ThemeProviderState = {
   theme: Theme
   setTheme: (theme: Theme) => void
+  toggleTheme: () => void
 }
 
 const initialState: ThemeProviderState = {
   theme: "system",
   setTheme: () => null,
+  toggleTheme: () => null,
 }
 
 export const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
@@ -46,12 +48,26 @@ export function ThemeProvider({
     root.classList.add(theme)
   }, [theme])
 
+  const setCurrentTheme = (newTheme: Theme) => {
+    safeStorage.setItem("theme", newTheme);
+    setTheme(newTheme);
+  };
+
+  const toggleTheme = () => {
+    let currentResolvedTheme = theme;
+    if (currentResolvedTheme === "system") {
+      currentResolvedTheme = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+    }
+    setCurrentTheme(currentResolvedTheme === "dark" ? "light" : "dark");
+  };
+
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      safeStorage.setItem("theme", theme)
-      setTheme(theme)
-    },
+    setTheme: setCurrentTheme,
+    toggleTheme,
   }
 
   return (
