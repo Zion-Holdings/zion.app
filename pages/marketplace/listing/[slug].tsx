@@ -3,10 +3,7 @@ import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import NextHead from '@/components/NextHead';
 import ProductReviews from '@/components/ProductReviews';
-import type { Prisma } from '@prisma/client';
-
-// The Prisma client doesn't export model types directly, so create an alias.
-type Product = Prisma.Product;
+import type { Product } from '@prisma/client';
 
 // Alias the Prisma generated Product model type.
 // Using an alias keeps this file independent of how Prisma exports its model types.

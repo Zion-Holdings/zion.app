@@ -1,9 +1,6 @@
 
-import { PrismaClient, Prisma } from '@prisma/client';
-
-// Alias the Product model type from the Prisma namespace so we can use it like a
-// regular import even though it isn't exported at the top level by Prisma.
-type Product = Prisma.Product;
+import { PrismaClient } from '@prisma/client';
+import type { Product } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 // Use a separate alias so that future changes to where the Product type comes
