@@ -137,15 +137,24 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
 
   const connectWallet = useCallback(async () => {
-    if (appKit) {
-      try {
-        await appKit.open(); // Opens the modal
-        // State update will be handled by the subscription
-      } catch (error) {
-        console.error('Error connecting wallet:', error);
+    if (!appKit) {
+      console.error('AppKit not initialized');
+      return;
+    }
+
+    try {
+      await appKit.open(); // Opens the modal
+      // State update will be handled by the subscription
+    } catch (error: any) {
+      console.error('Error connecting wallet:', error);
+      if (
+        error instanceof Error &&
+        /Coinbase Wallet SDK/i.test(error.message)
+      ) {
+        console.warn(
+          'Failed to load Coinbase Wallet. Please ensure the SDK is available or try a different wallet provider.'
+        );
       }
-    } else {
-        console.error('AppKit not initialized');
     }
   }, [appKit]);
 
