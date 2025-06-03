@@ -33,6 +33,8 @@ export default defineConfig({
     assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 500,
     rollupOptions: {
+      // Exclude Prisma client namespace to avoid TypeScript errors
+      external: ['.prisma/client/default'],
       output: {
         inlineDynamicImports: false,
       },
