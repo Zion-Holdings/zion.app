@@ -1,3 +1,5 @@
+import { safeStorage } from '../utils/safeStorage';
+
 export interface AxiosResponse<T = any> {
   data: T;
   status: number;
@@ -84,7 +86,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       acc[name] = value;
       return acc;
     }, {} as Record<string, string>);
-    const authToken = cookies['authToken'] || localStorage.getItem('token');
+    const authToken = cookies['authToken'] || safeStorage.getItem('token');
 
     const headers = { ...globalDefaults.headers.common, ...init.headers };
     if (authToken) {
