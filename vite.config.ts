@@ -11,6 +11,8 @@ export default defineConfig({
     {
       name: 'mock-api',
       configureServer(server) {
+        // server.middlewares may be undefined in some preview environments
+        if (!server?.middlewares?.use) return;
         server.middlewares.use('/api/public/services', (req, res) => {
           const url = new URL(req.originalUrl || req.url, 'http://localhost');
           const category = url.searchParams.get('category');
