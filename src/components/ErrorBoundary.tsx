@@ -1,3 +1,4 @@
+console.log("ErrorBoundary.tsx: Script start");
 import { Component, ReactNode, ErrorInfo } from 'react';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 
@@ -15,6 +16,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
+    console.log("ErrorBoundary.tsx: Constructor called");
     // Note: While the instructions said to log near state initialization if no constructor,
     // adding a constructor to log is a common practice and cleaner.
     // If a constructor is explicitly forbidden, the alternative is:
@@ -24,10 +26,12 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   static getDerivedStateFromError() {
+    console.log("ErrorBoundary.tsx: getDerivedStateFromError called");
     return { hasError: true };
   }
 
   componentDidCatch(error: Error, info: ErrorInfo) {
+    console.log("ErrorBoundary.tsx: componentDidCatch called", error, info);
     // Surface full error details in the console for easier debugging
     console.error('ErrorBoundary caught', error, info);
     const enqueueSnackbar = getEnqueueSnackbar();
@@ -35,6 +39,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   render() {
+    console.log("ErrorBoundary.tsx: Render method called. hasError:", this.state.hasError);
     if (this.state.hasError) {
       if (this.props.fallback) return <>{this.props.fallback}</>;
       return <div className="p-4 text-center">Something went wrong.</div>;
