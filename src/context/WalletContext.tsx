@@ -47,8 +47,9 @@ const initialWalletState: WalletState = {
 const WalletContext = createContext<WalletContextType | undefined>(undefined);
 
 // --- Reown AppKit Configuration ---
-// IMPORTANT: Replace 'YOUR_PROJECT_ID' with your actual WalletConnect Cloud project ID
-const projectId = 'YOUR_PROJECT_ID';
+// Project ID for WalletConnect Cloud. Set `VITE_REOWN_PROJECT_ID` in your environment
+// or the example `.env` file. Falls back to 'YOUR_PROJECT_ID' for local/offline use.
+const projectId = import.meta.env.VITE_REOWN_PROJECT_ID || 'YOUR_PROJECT_ID';
 
 const metadata = {
   name: 'Zion', // Replace with your project's name

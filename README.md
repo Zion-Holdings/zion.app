@@ -83,6 +83,7 @@ This project utilizes a modern, multi-component architecture:
     ```
 2.  Update the `.env` file with your actual credentials and configuration values for services like Stripe, SendGrid, and database connections.
     *   **Note:** Configure your database connection in the root `.env` file. The Django settings (likely in `backend/django_backend/settings.py`) typically use `dj_database_url` to parse a `DATABASE_URL` (e.g., `postgresql://user:password@host:port/dbname`), or may use individual variables like `DB_HOST`, `DB_NAME`, etc.
+    *   **WalletConnect:** Set `VITE_REOWN_PROJECT_ID` with your WalletConnect Cloud project ID used by the Reown AppKit wallet integration.
 
 ### Frontend (React + Vite)
 
