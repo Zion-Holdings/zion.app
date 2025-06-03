@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { toggleFavorite as toggleFavoriteRequest } from '@/api/favorites';
+import { safeStorage } from '@/utils/safeStorage';
 
 const FavoritesContext = createContext(null);
 
@@ -7,7 +8,7 @@ export function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem('favorites');
+    const stored = safeStorage.getItem('favorites');
     if (stored) {
       try {
         setFavorites(JSON.parse(stored));
@@ -18,7 +19,7 @@ export function FavoritesProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+    safeStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
   const toggleFavorite = async productId => {

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
+import { safeStorage } from '@/utils/safeStorage';
 
 function decodeToken(token) {
   try {
@@ -22,7 +23,7 @@ export default function OAuthCallback() {
     const token = params.get('token');
     const next = params.get('next');
     if (token) {
-      localStorage.setItem('token', token);
+      safeStorage.setItem('token', token);
       if (setUser) {
         const user = decodeToken(token);
         if (user) setUser(user);
