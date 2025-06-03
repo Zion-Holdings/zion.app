@@ -48,9 +48,11 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({
               <ReactMarkdown components={{ h2: ({node, ...props}) => <h2 className="text-2xl font-semibold mt-6 mb-3" {...props} /> }}>
                 {`## ${section.title}`}
               </ReactMarkdown>
-              <ReactMarkdown className="mb-4">
-                {section.content}
-              </ReactMarkdown>
+              <div className="mb-4">
+                <ReactMarkdown>
+                  {section.content}
+                </ReactMarkdown>
+              </div>
               {distributionChartData && distributionChartData.length > 0 && (
                 <div className="my-6">
                   <h3 className="text-xl font-semibold text-center mb-3">Distribution Chart</h3>
@@ -86,9 +88,12 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({
             <ReactMarkdown components={{ h2: ({node, ...props}) => <h2 className="text-2xl font-semibold mt-6 mb-3" {...props} /> }}>
               {`## ${section.title}`}
             </ReactMarkdown>
-            <ReactMarkdown>
-              {section.content}
-            </ReactMarkdown>
+            {/* Assuming mb-4 was for the content block, not specific markdown elements */}
+            <div className="mb-4">
+              <ReactMarkdown>
+                {section.content}
+              </ReactMarkdown>
+            </div>
           </div>
         );
       })}
