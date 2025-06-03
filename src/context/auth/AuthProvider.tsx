@@ -193,59 +193,69 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
-        if (session?.user) {
-          try {
-            const { data: profile, error } = await getFromProfiles()
-              .select('*')
-              .eq('id', session.user.id)
-              .single();
+        try {
+          if (session?.user) {
+            try {
+              const { data: profile, error: profileError } = await getFromProfiles()
+                .select('*')
+                .eq('id', session.user.id)
+                .single();
 
-            if (profile) {
-              const mappedUser = mapProfileToUser(session.user, profile);
-              setUser(mappedUser);
-              setAvatarUrl(mappedUser.avatarUrl || null);
-              
-              // Show welcome toast when user logs in
-              if (event === 'SIGNED_IN') {
-                handleSignedIn(mappedUser);
-                const params = new URLSearchParams(location.search);
-                const nextFromUrl = params.get('redirectTo') || params.get('next'); // Renamed to avoid conflict
+              if (profileError) {
+                console.error("Error fetching user profile:", profileError);
+                // Consider how to handle user state: setUser(null) or keep existing if any?
+                // For now, if profile fetch fails, treat as if user data is incomplete/unavailable for app use
+                setUser(null);
+                setAvatarUrl(null);
+              } else if (profile) {
+                const mappedUser = mapProfileToUser(session.user, profile);
+                setUser(mappedUser);
+                setAvatarUrl(mappedUser.avatarUrl || null);
 
-                const nextPathFromStorage = safeStorage.getItem('nextPath');
+                if (event === 'SIGNED_IN') {
+                  handleSignedIn(mappedUser);
+                  const params = new URLSearchParams(location.search);
+                  const nextFromUrl = params.get('redirectTo') || params.get('next');
+                  const nextPathFromStorage = safeStorage.getItem('nextPath');
 
-                if (nextPathFromStorage) {
-                  safeStorage.removeItem('nextPath');
-                  navigate(decodeURIComponent(nextPathFromStorage), { replace: true });
-                } else if (location.state?.pendingAction === 'buyNow' && location.state?.pendingActionArgs) {
-                  const { id, title, price } = location.state.pendingActionArgs;
-                  dispatch(addItem({ id, title, price }));
-                  // Clear pending action from state first
-                  navigate(location.pathname, { state: {}, replace: true });
-                  // Navigate to checkout
-                  navigate('/checkout', { replace: true });
-                } else if (nextFromUrl) {
-                  navigate(decodeURIComponent(nextFromUrl), { replace: true });
+                  if (nextPathFromStorage) {
+                    safeStorage.removeItem('nextPath');
+                    navigate(decodeURIComponent(nextPathFromStorage), { replace: true });
+                  } else if (location.state?.pendingAction === 'buyNow' && location.state?.pendingActionArgs) {
+                    const { id, title, price } = location.state.pendingActionArgs;
+                    dispatch(addItem({ id, title, price }));
+                    navigate(location.pathname, { state: {}, replace: true });
+                    navigate('/checkout', { replace: true });
+                  } else if (nextFromUrl) {
+                    navigate(decodeURIComponent(nextFromUrl), { replace: true });
+                  }
                 }
+              } else {
+                // Profile not found, but no error from Supabase (should be rare with .single() if no RLS issue)
+                console.warn("User profile not found for user:", session.user.id);
+                setUser(null);
+                setAvatarUrl(null);
               }
-            } else if (error) {
-              console.error("Error fetching user profile:", error);
+            } catch (innerError) {
+              console.error("Inner error during profile processing:", innerError);
               setUser(null);
+              setAvatarUrl(null);
             }
-          } catch (error) {
-            console.error("Error fetching user profile:", error);
+          } else { // No session or session.user is null
             setUser(null);
             setAvatarUrl(null);
+            if (event === 'SIGNED_OUT') {
+              handleSignedOut();
+            }
           }
-        } else {
+        } catch (outerError) {
+          console.error("Outer error in onAuthStateChange callback:", outerError);
+          // Ensure user state is cleared in case of unexpected errors
           setUser(null);
           setAvatarUrl(null);
-          
-          // Show logout toast when user logs out
-          if (event === 'SIGNED_OUT') {
-            handleSignedOut();
-          }
+        } finally {
+          setIsLoading(false);
         }
-        setIsLoading(false);
       }
     );
 
