@@ -33,7 +33,13 @@ model Product {
   id          String @id @default(cuid())
   name        String
   description String?
-  // Add other relevant product fields if identifiable from context, otherwise keep simple
+  price       Decimal? // For monetary values
+  currency    String?  // e.g., "USD", "EUR"
+  category    String?
+  tags        String[] @default([]) // Array of strings, defaults to empty
+  images      Json?    // Store as JSON, e.g., [{ url: "...", alt: "..." }, ...]
+
+  // Keep existing relations like reviews
   reviews     ProductReview[]
 }
 

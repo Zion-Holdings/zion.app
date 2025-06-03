@@ -13,21 +13,26 @@ interface JsonRes {
 }
 
 const supabaseUrl = process.env.SUPABASE_URL;
-// Similar to login, signUp typically uses anon key context.
-// Sticking to SERVICE_ROLE_KEY for consistency with backend route refactoring.
-const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+// For user sign-up, the ANONYMOUS key is appropriate and recommended
+// as it operates within the user's permission scope, adhering to RLS.
+const anonKey = process.env.SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !serviceKey) {
-  const errorMessage = 'CRITICAL: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing for backend auth API. Service cannot start.';
+if (!supabaseUrl || !anonKey) {
+  const errorMessage = 'CRITICAL: SUPABASE_URL or SUPABASE_ANON_KEY is missing for backend auth API. Service cannot start.';
   console.error(errorMessage);
   throw new Error(errorMessage);
 }
-const supabase = createClient(supabaseUrl, serviceKey);
+const supabase = createClient(supabaseUrl, anonKey);
 
 const schema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
-  password: z.string().min(8, 'Password must be at least 8 characters'),
+  name: z.string().min(2, { message: 'Name must be at least 2 characters' }),
+  email: z.string().email({ message: 'Invalid email address' }),
+  password: z.string()
+    .min(8, { message: 'Password must be at least 8 characters' })
+    .regex(/.*[A-Z].*/, { message: "Password must contain at least one uppercase letter" })
+    .regex(/.*[a-z].*/, { message: "Password must contain at least one lowercase letter" })
+    .regex(/.*\d.*/, { message: "Password must contain at least one number" })
+    .regex(/.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~].*/, { message: "Password must contain at least one special character" }),
 });
 
 async function handler(req: Req, res: JsonRes) {

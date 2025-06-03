@@ -1,51 +1,55 @@
 
-import { PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 import type { Product } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// Use a separate alias so that future changes to where the Product type comes
-// from only need to be updated in one place.
 type ProductModel = Product;
-
 const prisma = new PrismaClient();
 
-// Define the extended product type, same as in details.ts
-// Consider moving this to a shared type file, e.g., src/types/listings.ts or src/types/products.ts later
-export type ProductWithReviewStats = ProductModel & {
+export type ProductWithReviewStats = ProductModel & { // ProductModel now includes price, currency, category, tags, images
   averageRating: number | null;
   reviewCount: number;
-  // Additional fields to align with potential frontend expectations (e.g., ProductListingCard)
   title: string; // Mapped from product.name
-  category?: string;
-  images?: { url: string; alt?: string }[]; // Assuming images might have a URL and alt text
-  price?: number | null;
-  currency?: string;
-  tags?: string[];
+  // category, images, price, currency, tags are now part of ProductModel.
+  // Their optionality is defined in schema.prisma and reflected in ProductModel.
+};
+
+export type PaginatedProductsResponse = {
+  data: ProductWithReviewStats[];
+  pagination: {
+    totalItems: number;
+    currentPage: number;
+    pageSize: number;
+    totalPages: number;
+  };
 };
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ProductWithReviewStats[] | { error: string }>
+  res: NextApiResponse<PaginatedProductsResponse | { error: string }>
 ) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', ['GET']);
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const { q: searchQuery } = req.query;
+  const { q: searchQuery, page: pageQuery, pageSize: pageSizeQuery } = req.query;
+
+  const currentPage = parseInt(pageQuery as string, 10) || 1;
+  const pageSize = parseInt(pageSizeQuery as string, 10) || 10;
+  const skip = (currentPage - 1) * pageSize;
+  const take = pageSize;
 
   try {
     let products: ProductModel[] = [];
+    let totalItems = 0;
+    let productIdsOrder: string[] = []; // To maintain search order
+
+    const productWhereClause: Prisma.ProductWhereInput = {};
 
     if (typeof searchQuery === 'string' && searchQuery.trim() !== '') {
-      // Sanitize search query for safety if it were used directly in a template string,
-      // though Prisma's $queryRawUnsafe parameterization handles SQL injection.
-      // For $queryRaw, parameters are typically safer.
-      // Here, we are constructing column names and using the query as a parameter.
-
-      // Step 1: Use $queryRawUnsafe to get IDs and similarity scores
-      // We need to ensure pg_trgm is enabled in the DB for similarity() to work.
-      // The previous subtask should have created a migration for this.
+      const trimmedSearchQuery = searchQuery.trim();
+      // Step 1: Use $queryRawUnsafe to get ALL matching IDs and similarity scores
       const rawResults = await prisma.$queryRawUnsafe(
         `SELECT
            id,
@@ -54,83 +58,111 @@ export default async function handler(
          FROM "Product"
          WHERE similarity(name, $1) >= 0.3 OR similarity(description, $1) >= 0.3
          ORDER BY GREATEST(similarity(name, $1), similarity(description, $1)) DESC`,
-        searchQuery
+        trimmedSearchQuery
       ) as Array<{ id: string; name_similarity: number; description_similarity: number }>;
 
-      const productIds = rawResults.map(p => p.id);
+      const allMatchingProductIds = rawResults.map(p => p.id);
+      totalItems = allMatchingProductIds.length;
 
-      if (productIds.length > 0) {
-        products = await prisma.product.findMany({
-          where: {
-            id: {
-              in: productIds,
-            },
-          },
-          // We might want to preserve the order from rawResults.
-          // This requires a bit more work, fetching then re-ordering in code.
-          // For now, findMany will return them in its default order (e.g., by ID).
-          // To maintain order: fetch then sort `products` array based on `productIds` order.
-        });
-
-        // Re-order products based on the similarity scores from rawResults
-        products.sort((a, b) => productIds.indexOf(a.id) - productIds.indexOf(b.id));
-
+      if (totalItems > 0) {
+        // Apply pagination to the IDs
+        productIdsOrder = allMatchingProductIds.slice(skip, skip + take);
+        if (productIdsOrder.length > 0) {
+          productWhereClause.id = { in: productIdsOrder };
+          products = await prisma.product.findMany({
+            where: productWhereClause,
+          });
+          // Re-order products based on the similarity scores from productIdsOrder
+          products.sort((a, b) => productIdsOrder.indexOf(a.id) - productIdsOrder.indexOf(b.id));
+        } else {
+          // Requested page is out of bounds for search results
+          products = [];
+        }
       } else {
-        // No products match the search query and similarity threshold
+        products = []; // No products match the search query
+      }
+    } else {
+      // No search query provided
+      totalItems = await prisma.product.count({ where: productWhereClause });
+      if (totalItems > 0) {
+        products = await prisma.product.findMany({
+          skip,
+          take,
+          where: productWhereClause, // Empty if no other filters, but good for consistency
+          orderBy: { createdAt: 'desc' }, // Example default order, adjust as needed
+        });
+      } else {
         products = [];
       }
-
-    } else {
-      // No search query provided, fetch all products (original behavior)
-      products = await prisma.product.findMany();
     }
 
-    // findMany returns an empty array if no products are found, so no special check for !products is needed.
-    // If products array is empty, the map will result in an empty array, which is correct.
+    let productsWithStats: ProductWithReviewStats[] = [];
 
-    // For each product (either all or filtered by search), fetch its review stats
-    const productsWithStats: ProductWithReviewStats[] = await Promise.all(
-      products.map(async (product) => {
-        const reviewStats = await prisma.productReview.aggregate({
-          _avg: {
-            rating: true,
+    if (products.length > 0) {
+      const productIdsFromResults = products.map(p => p.id);
+
+      const reviewStatsRaw = await prisma.productReview.groupBy({
+        by: ['productId'],
+        where: {
+          productId: {
+            in: productIdsFromResults,
           },
-          _count: {
-            // Assuming 'id' is a valid field to count for reviews.
-            // Could also use _count: { _all: true } or specific field like userId.
-            id: true,
-          },
-          where: {
-            productId: product.id,
-          },
+        },
+        _avg: {
+          rating: true,
+        },
+        _count: {
+          id: true, // Count reviews by their ID
+        },
+      });
+
+      const statsMap = new Map<string, { averageRating: number | null; reviewCount: number }>();
+      reviewStatsRaw.forEach(stat => {
+        statsMap.set(stat.productId, {
+          averageRating: stat._avg.rating,
+          reviewCount: stat._count.id,
         });
+      });
 
-        // The Product model currently has: id, name, description, reviews[] (relation)
-        // The ProductWithReviewStats type aims to bridge this with frontend needs.
+      productsWithStats = products.map(product => {
+        const stats = statsMap.get(product.id);
         return {
-          ...product, // Spreads id, name, description from the Product model
-          title: product.name, // Explicitly map name to title
-          averageRating: reviewStats._avg.rating, // This can be null if no ratings
-          reviewCount: reviewStats._count.id,   // This will be 0 if no ratings
-
-          // Placeholder/default values for other fields potentially expected by UI components
-          // These would ideally come from an expanded Product model or other data sources
-          category: 'Uncategorized', // Default placeholder
-          // Removed direct access to product.images, product.price, product.currency, product.tags
-          // as they are not in the Prisma Product model.
-          // These fields are optional in ProductWithReviewStats or will use defaults if not set.
-          // If these need to be populated, it should be from other data sources or model extensions.
-          images: [], // Default to empty array or define based on other logic if available
-          price: null,  // Default to null or define based on other logic
-          currency: 'USD', // Default currency or define based on other logic
-          tags: [], // Default to empty array or define based on other logic
+          ...product,
+          title: product.name, // Ensure title is explicitly mapped
+          averageRating: stats?.averageRating ?? null,
+          reviewCount: stats?.reviewCount ?? 0,
+          // The following fields are now directly from the product model
+          // and will be included if they exist on the product object.
+          // Prisma handles Decimal to number/string conversion for JSON responses,
+          // and Json fields are passed as is.
+          // No more placeholders needed here for:
+          // category: product.category,
+          // images: product.images,
+          // price: product.price,
+          // currency: product.currency,
+          // tags: product.tags,
         };
-      })
-    );
+      });
+    }
 
-    return res.status(200).json(productsWithStats);
+    const totalPages = Math.ceil(totalItems / pageSize);
+
+    return res.status(200).json({
+      data: productsWithStats,
+      pagination: {
+        totalItems,
+        currentPage,
+        pageSize,
+        totalPages,
+      },
+    });
+
   } catch (e: any) {
-    console.error('Error fetching products with stats:', e);
+    console.error('Error fetching products:', e);
+    // Consider more specific error messages if e.g. pg_trgm is not enabled
+    if (e.message?.includes('function similarity(text, unknown) does not exist')) {
+        return res.status(500).json({ error: 'Internal server error: Search functionality is not correctly configured (pg_trgm extension missing or not enabled). Please contact support.' });
+    }
     return res.status(500).json({ error: 'Internal server error while fetching products.' });
   } finally {
     await prisma.$disconnect();
