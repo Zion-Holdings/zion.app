@@ -33,6 +33,19 @@ async function askZionGPT(prompt) {
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (sender.id !== chrome.runtime.id) {
+    const errorMessage = `Receiving message from unauthorized sender. Sender ID: ${sender.id || 'N/A (sender.id is undefined, possibly a webpage)'}, Extension ID: ${chrome.runtime.id}`;
+    console.error(errorMessage);
+    // If a response is expected for this message type, send an error response.
+    // For example, if message.type === 'ask' or any other type that uses sendResponse.
+    // This example assumes 'ask' is the primary one needing a response back on auth failure.
+    if (message.type === 'ask') {
+      sendResponse({ error: "Unauthorized sender" });
+    }
+    return true; // Return true if sendResponse might be called, otherwise just return.
+                 // Or simply `return;` if no response path is guaranteed for unauthorized messages.
+                 // Given the original structure, returning true is safer if any path might call sendResponse.
+  }
   if (message.type === 'ask') {
     askZionGPT(message.prompt).then(response => {
       try {

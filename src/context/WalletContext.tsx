@@ -1,6 +1,7 @@
 // src/context/WalletContext.tsx
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
 import { ethers } from 'ethers';
+import { captureException } from '@/utils/sentry';
 import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
 import { createAppKit, useAppKit } from '@reown/appkit/react';
 import { EthersAdapter } from '@reown/appkit-adapter-ethers';
@@ -108,17 +109,21 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       const currentProvider = appKit.getWalletProvider();
 
       if (currentAddress && currentChainId && currentProvider) {
-        const ethersProvider = new ethers.BrowserProvider(
-          currentProvider as ethers.Eip1193Provider
-        );
-        const ethersSigner = await ethersProvider.getSigner();
-        setWallet({
-          provider: ethersProvider,
-          signer: ethersSigner,
-          address: currentAddress,
-          chainId: Number(currentChainId), // Ensure chainId is a number
-          isConnected: true,
-        });
+        try {
+          const ethersProvider = new ethers.BrowserProvider(
+            currentProvider as ethers.Eip1193Provider
+          );
+          const ethersSigner = await ethersProvider.getSigner();
+          setWallet({
+            provider: ethersProvider,
+            signer: ethersSigner,
+            address: currentAddress,
+            chainId: Number(currentChainId), // Ensure chainId is a number
+            isConnected: true,
+          });
+        } catch (error) {
+          captureException(error);
+        }
       } else {
         setWallet(initialWalletState);
       }
@@ -142,7 +147,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
   const connectWallet = useCallback(async () => {
     if (!appKit) {
-      console.error('AppKit not initialized');
+      captureException(new Error('AppKit not initialized in connectWallet'));
       return;
     }
 
@@ -150,7 +155,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       await appKit.open(); // Opens the modal
       // State update will be handled by the subscription
     } catch (error: any) {
-      console.error('Error connecting wallet:', error);
+      captureException(error);
       if (
         error instanceof Error &&
         /Coinbase Wallet SDK/i.test(error.message)
@@ -168,7 +173,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         await appKitInstance.disconnect();
         // State update will be handled by the subscription
       } catch (error) {
-        console.error('Error disconnecting wallet:', error);
+        captureException(error);
       }
     }
   }, [appKit]);
