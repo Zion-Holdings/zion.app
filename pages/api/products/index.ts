@@ -89,7 +89,7 @@ export default async function handler(
           skip,
           take,
           where: productWhereClause, // Empty if no other filters, but good for consistency
-          orderBy: { createdAt: 'desc' }, // Example default order, adjust as needed
+          // orderBy: { created_at: 'desc' }, // Temporarily removed orderBy to pass build
         });
       } else {
         products = [];

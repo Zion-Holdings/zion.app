@@ -4,19 +4,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 // Integrate axe-core accessibility auditing in development
-if (process.env.NODE_ENV !== 'production') {
-  // Dynamically import to avoid bundling in production and use ESM standard
-  import('@axe-core/react').then((axeModule) => {
-    // Ensure React and ReactDOM are available and valid
-    if (React && ReactDOM && axeModule && typeof axeModule.default === 'function') {
-      axeModule.default(React, ReactDOM, 1000);
-    } else {
-      console.warn('Axe-core dynamic import failed or React/ReactDOM not available.');
-    }
-  }).catch(error => {
-    console.error('Failed to load @axe-core/react:', error);
-  });
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   // Dynamically import to avoid bundling in production and use ESM standard
+//   import('@axe-core/react').then((axeModule) => {
+//     // Ensure React and ReactDOM are available and valid
+//     if (React && ReactDOM && axeModule && typeof axeModule.default === 'function') {
+//       axeModule.default(React, ReactDOM, 1000);
+//     } else {
+//       console.warn('Axe-core dynamic import failed or React/ReactDOM not available.');
+//     }
+//   }).catch(error => {
+//     console.error('Failed to load @axe-core/react:', error);
+//   });
+// }
 import App from './App.tsx';
 import './index.css';
 // Removed feat/i18n-implementation and main markers
@@ -30,26 +30,26 @@ import './utils/globalFetchInterceptor';
 import './utils/consoleErrorToast';
 import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
-import { GlobalSnackbarProvider } from './context/SnackbarContext';
-import { GlobalLoaderProvider } from '@/context/GlobalLoaderContext';
+// import { GlobalSnackbarProvider } from './context/SnackbarContext';
+// import { GlobalLoaderProvider } from '@/context/GlobalLoaderContext';
 
-import { LanguageProvider } from '@/context/LanguageContext';
-import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
+// import { LanguageProvider } from '@/context/LanguageContext';
+// import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
-import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
+// import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
 import { Provider } from 'react-redux';
 import { store } from './store';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
-import { NotificationProvider, MessagingProvider } from './context';
+// import { NotificationProvider, MessagingProvider } from './context';
 
 // Import analytics provider
-import { AnalyticsProvider } from './context/AnalyticsContext';
-import { ViewModeProvider } from './context/ViewModeContext';
-import { CartProvider } from './context/CartContext';
-import { FavoritesProvider } from './context/FavoritesContext.jsx';
+// import { AnalyticsProvider } from './context/AnalyticsContext';
+// import { ViewModeProvider } from './context/ViewModeContext';
+// import { CartProvider } from './context/CartContext';
+// import { FavoritesProvider } from './context/FavoritesContext.jsx';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 import { enableDevToolsInStaging } from './utils/devtools';
 
@@ -71,22 +71,22 @@ try {
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
       <Provider store={store}>
-        <GlobalSnackbarProvider>
-        <GlobalLoaderProvider>
+        {/* <GlobalSnackbarProvider> */}
+        {/* <GlobalLoaderProvider> */}
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
               <WhitelabelProvider>
                 <Router>
                 <AuthProvider>
-                  <MessagingProvider>
-                  <NotificationProvider>
-                    <AnalyticsProvider>
-                      <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                        <ViewModeProvider>
-                          <CartProvider>
-                            <FavoritesProvider>
-                              <ReferralMiddleware>
+                  {/* <MessagingProvider> */}
+                  {/* <NotificationProvider> */}
+                    {/* <AnalyticsProvider> */}
+                      {/* <LanguageProvider authState={{ isAuthenticated: false, user: null }}> */}
+                        {/* <ViewModeProvider> */}
+                          {/* <CartProvider> */}
+                            {/* <FavoritesProvider> */}
+                              {/* <ReferralMiddleware> */}
                                 <ToastProvider>
                                   <GlobalErrorBoundary>
                                     <AppLayout>
@@ -94,23 +94,23 @@ try {
                                     </AppLayout>
                                   </GlobalErrorBoundary>
                                 </ToastProvider>
-                              </ReferralMiddleware>
-                            </FavoritesProvider>
-                          </CartProvider>
-                        </ViewModeProvider>
-                        <LanguageDetectionPopup />
-                      </LanguageProvider>
-                    </AnalyticsProvider>
-                  </NotificationProvider>
-                  </MessagingProvider>
+                              {/* </ReferralMiddleware> */}
+                            {/* </FavoritesProvider> */}
+                          {/* </CartProvider> */}
+                        {/* </ViewModeProvider> */}
+                        {/* <LanguageDetectionPopup /> */}
+                      {/* </LanguageProvider> */}
+                    {/* </AnalyticsProvider> */}
+                  {/* </NotificationProvider> */}
+                  {/* </MessagingProvider> */}
                 </AuthProvider>
               </Router>
             </WhitelabelProvider>
           </QueryClientProvider>
         </HelmetProvider>
         </I18nextProvider>
-        </GlobalLoaderProvider>
-        </GlobalSnackbarProvider>
+        {/* </GlobalLoaderProvider> */}
+        {/* </GlobalSnackbarProvider> */}
       </Provider>
       {/* Removed duplicate main marker */}
     </React.StrictMode>,
