@@ -7,17 +7,6 @@ import { createAppKit, useAppKit } from '@reown/appkit/react';
 import { EthersAdapter } from '@reown/appkit-adapter-ethers';
 import { mainnet, polygon, goerli, optimism, arbitrum, base } from '@reown/appkit/networks'; // Import necessary chain objects
 
-// Some wallet providers implement event listeners even though the minimal
-// `Eip1193Provider` type from ethers does not declare them.  Define a helper
-// interface that includes the optional event methods so we can safely access
-// them without TypeScript errors.
-type Eip1193ProviderWithEvents = ethers.Eip1193Provider & {
-  on?: (eventName: string | symbol, listener: (...args: any[]) => void) => void;
-  removeListener?: (
-    eventName: string | symbol,
-    listener: (...args: any[]) => void
-  ) => void;
-};
 
 // Minimal interface describing the AppKit object used in this context.  The
 // real package types are unavailable in the repository, so we declare only the
