@@ -49,10 +49,6 @@
     "./src/**/*.tsx", // This should cover the problematic .tsx files too
     "./src/**/*.js",
     "./src/**/*.jsx",
-    "./pages/**/*.ts",
-    "./pages/**/*.tsx",
-    "./pages/**/*.js",
-    "./pages/**/*.jsx",
 
     // Other specific directories/patterns
     "./eslint.config.js",
