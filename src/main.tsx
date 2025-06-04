@@ -28,8 +28,7 @@ import './utils/globalFetchInterceptor';
 import './utils/consoleErrorToast';
 import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
-// import { GlobalSnackbarProvider } from './context/SnackbarContext';
-// import { GlobalLoaderProvider } from '@/context/GlobalLoaderContext';
+import { GlobalSnackbarProvider, GlobalLoaderProvider, NotificationProvider, MessagingProvider } from './context';
 
 // import { LanguageProvider } from '@/context/LanguageContext';
 // import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
@@ -41,7 +40,6 @@ import { store } from './store';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
-// import { NotificationProvider, MessagingProvider } from './context';
 
 // Import analytics provider
 // import { AnalyticsProvider } from './context/AnalyticsContext';
@@ -69,16 +67,16 @@ try {
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
       <Provider store={store}>
-        {/* <GlobalSnackbarProvider> */}
-        {/* <GlobalLoaderProvider> */}
+        <GlobalSnackbarProvider>
+        <GlobalLoaderProvider>
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
               <WhitelabelProvider>
                 <Router>
                 <AuthProvider>
-                  {/* <MessagingProvider> */}
-                  {/* <NotificationProvider> */}
+                  <MessagingProvider>
+                  <NotificationProvider>
                     {/* <AnalyticsProvider> */}
                       {/* <LanguageProvider authState={{ isAuthenticated: false, user: null }}> */}
                         {/* <ViewModeProvider> */}
@@ -99,16 +97,16 @@ try {
                         {/* <LanguageDetectionPopup /> */}
                       {/* </LanguageProvider> */}
                     {/* </AnalyticsProvider> */}
-                  {/* </NotificationProvider> */}
-                  {/* </MessagingProvider> */}
+                  </NotificationProvider>
+                  </MessagingProvider>
                 </AuthProvider>
               </Router>
             </WhitelabelProvider>
           </QueryClientProvider>
         </HelmetProvider>
         </I18nextProvider>
-        {/* </GlobalLoaderProvider> */}
-        {/* </GlobalSnackbarProvider> */}
+        </GlobalLoaderProvider>
+        </GlobalSnackbarProvider>
       </Provider>
       {/* Removed duplicate main marker */}
     </React.StrictMode>,
