@@ -5,6 +5,7 @@ import { FilterSidebar } from "@/components/talent/FilterSidebar";
 import { TalentResults } from "@/components/talent/TalentResults";
 import { TalentSkeleton } from "@/components/talent/TalentSkeleton";
 import { ErrorBanner } from "@/components/talent/ErrorBanner";
+import { ErrorBoundary } from "@/components/ErrorBoundary"; // Import ErrorBoundary
 import { useTalentDirectory } from "@/hooks/useTalentDirectory";
 import { SORT_OPTIONS } from "@/data/sortOptions";
 import { X } from "lucide-react";
@@ -138,67 +139,71 @@ export default function TalentDirectory() {
               </Button>
             </div>
             
-            {/* Results */}
-            <TalentResults
-              talents={paginatedTalents}
-              totalCount={filteredTalents.length}
-              isLoading={isLoading}
-              viewProfile={viewProfile}
-              handleRequestHire={handleRequestHire}
-              isAuthenticated={isAuthenticated}
-              activeFiltersProps={{
-                selectedSkills,
-                toggleSkill,
-                selectedAvailability,
-                toggleAvailability,
-                selectedRegions,
-                toggleRegion,
-                priceRange,
-                setPriceRange,
-                experienceRange,
-                setExperienceRange,
-                clearFilters,
-              }}
-            />
+            {/* Results and Pagination Wrapper for ErrorBoundary */}
+            <div className="flex-1"> {/* Added a wrapper div to contain Results and Pagination */}
+              <ErrorBoundary fallback={<p className="text-red-500 text-center">Could not load talent content. Please try again later.</p>}>
+                <TalentResults
+                  talents={paginatedTalents}
+                  totalCount={filteredTalents.length}
+                  isLoading={isLoading}
+                  viewProfile={viewProfile}
+                  handleRequestHire={handleRequestHire}
+                  isAuthenticated={isAuthenticated}
+                  activeFiltersProps={{
+                    selectedSkills,
+                    toggleSkill,
+                    selectedAvailability,
+                    toggleAvailability,
+                    selectedRegions,
+                    toggleRegion,
+                    priceRange,
+                    setPriceRange,
+                    experienceRange,
+                    setExperienceRange,
+                    clearFilters,
+                  }}
+                />
 
-            {totalPages > 1 && (
-              <div className="mt-6">
-                <Pagination className="justify-center">
-                  <PaginationContent>
-                    <PaginationItem>
-                      <PaginationPrevious
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setCurrentPage(Math.max(1, currentPage - 1));
-                        }}
-                      />
-                    </PaginationItem>
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                      <PaginationItem key={page}>
-                        <PaginationButton
-                          page={page}
-                          isActive={page === currentPage}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setCurrentPage(page);
-                          }}
-                        />
-                      </PaginationItem>
-                    ))}
-                    <PaginationItem>
-                      <PaginationNext
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setCurrentPage(Math.min(totalPages, currentPage + 1));
-                        }}
-                      />
-                    </PaginationItem>
-                  </PaginationContent>
-                </Pagination>
-              </div>
-            )}
+                {totalPages > 1 && (
+                  <div className="mt-6">
+                    <Pagination className="justify-center">
+                      <PaginationContent>
+                        <PaginationItem>
+                          <PaginationPrevious
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setCurrentPage(Math.max(1, currentPage - 1));
+                            }}
+                          />
+                        </PaginationItem>
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                          <PaginationItem key={page}>
+                            <PaginationButton
+                              page={page}
+                              isActive={page === currentPage}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setCurrentPage(page);
+                              }}
+                            />
+                          </PaginationItem>
+                        ))}
+                        <PaginationItem>
+                          <PaginationNext
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setCurrentPage(Math.min(totalPages, currentPage + 1));
+                            }}
+                          />
+                        </PaginationItem>
+                      </PaginationContent>
+                    </Pagination>
+                  </div>
+                )}
+              </ErrorBoundary>
+            </div>
             
             {/* Mobile filter sidebar */}
             {isMobileFilterOpen && (
