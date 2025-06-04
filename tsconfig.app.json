@@ -25,9 +25,11 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/pages/*": ["./src/pages/*"],
-      "axios": ["./src/lib/axios.ts"]
+      "axios": ["./src/lib/axios.ts"],
+      "next": ["../types/next"],
+      "next/*": ["../types/next/*"]
     },
     "typeRoots": ["./src/types"]
   },
-  "include": ["src", "pages"]
+  "include": ["src", "pages", "types"]
 }

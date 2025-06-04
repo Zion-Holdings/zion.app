@@ -9,7 +9,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/pages/*": ["./src/pages/*"],
-      "axios": ["./src/lib/axios.ts"]
+      "axios": ["./src/lib/axios.ts"],
+      "next": ["./types/next"],
+      "next/*": ["./types/next/*"]
     },
     "typeRoots": ["./src/types"],
 
@@ -28,6 +30,6 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "pages"],
+  "include": ["src", "pages", "types"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
