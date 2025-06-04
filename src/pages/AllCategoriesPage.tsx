@@ -1,6 +1,6 @@
 import { CategoryCard } from "@/components/CategoryCard";
 import { GradientHeading } from "@/components/GradientHeading";
-import { ErrorBoundary } from "@/components/ErrorBoundary"; // Import ErrorBoundary
+import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
 import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
 
 // Reusing the categories array from CategoriesSection.tsx
@@ -50,7 +50,7 @@ export default function AllCategoriesPage() {
           </p>
         </div>
 
-        <ErrorBoundary fallback={<p className="text-red-500 text-center">Could not load content. Please try again later.</p>}>
+        <ErrorBoundary>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((category) => (
               <CategoryCard

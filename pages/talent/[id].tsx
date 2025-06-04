@@ -76,7 +76,7 @@ const TalentPage: React.FC = () => {
         title={data.name}
         description={data.bio ?? undefined} // Ensure description is string or undefined
         openGraph={{
-          image: undefined,
+          images: undefined,
           title: data.name,
           description: data.bio ?? undefined // Ensure description is string or undefined
         }}

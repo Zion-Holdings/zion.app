@@ -12,7 +12,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import useSWRMutation from "swr/mutation";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useDelayedError } from '@/hooks/useDelayedError';
-import { ErrorBoundary } from "@/components/ErrorBoundary"; // Import ErrorBoundary
+import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
 
 // The EQUIPMENT_LISTINGS constant has been removed as it was commented out
 // and the page primarily relies on API calls and dynamic data generation.
@@ -181,7 +181,7 @@ export default function EquipmentPage() {
           </Button>
         </div>
       </div>
-      <ErrorBoundary fallback={<p className="text-red-500 text-center">Could not load equipment content. Please try again later.</p>}>
+      <ErrorBoundary>
         {isFetchingRecommendations ? ( // This is the skeleton for AI recommendations, keep as is
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
             {[1, 2, 3, 4].map((i) => (
