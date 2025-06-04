@@ -1,7 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { ErrorBoundary as LocalErrorBoundary } from './components/ErrorBoundary';
 import { ErrorBoundary } from 'react-error-boundary';
 import { captureException } from './utils/sentry';
 import './App.css';
@@ -81,14 +80,31 @@ import Wallet from './pages/Wallet';
 import { SupportChatbot } from './components/SupportChatbot';
 import PrivateRoute from './components/PrivateRoute';
 import type { FallbackProps } from 'react-error-boundary';
+import { Button } from '@/components/ui/button'; // Import the Button component
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card'; // Import Card components
 
 function RootErrorFallback({ resetErrorBoundary }: FallbackProps) {
   return (
-    <div role="alert" className="p-4 text-center space-y-2">
-      <p>Something went wrong</p>
-      <button onClick={resetErrorBoundary} className="underline">
-        Retry
-      </button>
+    <div role="alert" className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+      <Card className="w-full max-w-md bg-destructive text-destructive-foreground shadow-xl">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-center">
+            {/* Consider adding an icon here later if available, e.g., <AlertTriangle className="inline-block mr-2 h-6 w-6" /> */}
+            Oops! An Error Occurred
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="text-center">
+          <p className="text-md">
+            Something went wrong on our end. We&apos;re sorry for the inconvenience.
+            Please try refreshing the page. If the issue persists, you can contact our support team.
+          </p>
+        </CardContent>
+        <CardFooter className="flex justify-center">
+          <Button onClick={resetErrorBoundary} variant="secondary" className="w-1/2">
+            Retry
+          </Button>
+        </CardFooter>
+      </Card>
     </div>
   );
 }
@@ -171,7 +187,6 @@ const App = () => {
           <ThemeProvider defaultTheme="dark">
             <ToastProvider>
             <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-              <LocalErrorBoundary>
           <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             {baseRoutes.map(({ path, element }) => (
@@ -190,7 +205,6 @@ const App = () => {
             {/* <Route path="*" element={<PageTransition><ErrorRoutes /></PageTransition>} /> */}
           </Routes>
           </AnimatePresence>
-              </LocalErrorBoundary>
         </Suspense>
         <OfflineToast />
         <SupportChatbot />
