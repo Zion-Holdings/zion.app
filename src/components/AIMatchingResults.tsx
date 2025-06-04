@@ -139,11 +139,11 @@ export function AIMatchingResults({
                             </div>
                             
                             <div className="mt-2 flex flex-wrap gap-1">
-                              <Badge variant="outline" className="text-xs bg-zion-blue text-zion-cyan border-zion-cyan/30">
+                              <Badge variant="outline">
                                 {match.category}
                               </Badge>
                               {match.skills && match.skills.slice(0, 3).map((skill: string, i: number) => (
-                                <Badge key={i} variant="outline" className="text-xs bg-zion-blue-dark text-white border-zion-blue-light">
+                                <Badge key={i} variant="outline">
                                   {skill}
                                 </Badge>
                               ))}

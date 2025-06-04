@@ -179,7 +179,7 @@ const ProposalDetailPage: React.FC = () => {
         <CardHeader>
           <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
             <CardTitle className="text-2xl md:text-3xl">{proposal.title}</CardTitle>
-            <Badge variant={getStatusVariant(proposal.status)} className="whitespace-nowrap shrink-0 self-start sm:self-center">
+            <Badge variant={getStatusVariant(proposal.status)}>
               {proposal.status.replace(/_/g, ' ')}
             </Badge>
           </div>
@@ -251,7 +251,7 @@ const ProposalDetailPage: React.FC = () => {
                 </div>
               </>
             ) : userVote ? (
-              <p>You voted: <Badge variant="outline" className="text-base">{userVote.choice}</Badge> (Voting Power: {userVote.voting_power_at_snapshot} ZION$)</p>
+              <p>You voted: <Badge variant="outline">{userVote.choice}</Badge> (Voting Power: {userVote.voting_power_at_snapshot} ZION$)</p>
             ) : (
               <p className="text-muted-foreground">
                 {proposal.status !== 'ACTIVE' ? "Voting is not active for this proposal." :

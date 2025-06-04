@@ -173,7 +173,6 @@ export function TenantsList() {
                           </a>
                           <Badge 
                             variant={tenant.dns_verified ? "default" : "outline"} 
-                            className="ml-2"
                           >
                             {tenant.dns_verified ? "Verified" : "Pending"}
                           </Badge>
