@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
+import { NavLink } from '@/components/NavLink';
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { Logo } from '@/components/header/Logo';
 import { useTranslation } from 'react-i18next';
@@ -56,9 +57,9 @@ export function AppHeader() {
           <PointsBadge />
           {!user && (
             <div className="ml-4">
-              <a href="/login" className="text-sm font-medium text-foreground/70 hover:text-foreground" aria-label="Login" data-testid="login-link">
+              <NavLink href="/login" className="text-sm font-medium text-foreground/70 hover:text-foreground" aria-label="Login" data-testid="login-link">
                 Login
-              </a>
+              </NavLink>
             </div>
           )}
           {/* User avatar menu */}
