@@ -118,9 +118,7 @@ const MarketplaceListingPage: React.FC = () => {
         openGraph={{
           title: product.name,
           description: product.description ?? undefined,
-          images: [
-            { url: (product as any).imageUrl ?? product.images?.[0]?.url ?? '' },
-          ],
+          images: ((product as any).imageUrl ?? product.images?.[0]?.url) ? [{ url: ((product as any).imageUrl ?? product.images?.[0]?.url) }] : undefined,
         }}
       />
       <Helmet>

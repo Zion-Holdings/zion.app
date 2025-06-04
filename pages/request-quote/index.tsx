@@ -1,4 +1,4 @@
-import GlobalErrorBoundary from "@/components/GlobalErrorBoundary";
+import ErrorBoundary from "@/components/GlobalErrorBoundary";
 import React, { lazy, Suspense } from "react";
 
 const QuoteWizard = lazy(() =>
@@ -9,7 +9,7 @@ const QuoteWizard = lazy(() =>
 
 export default function RequestQuotePage() {
   return (
-    <GlobalErrorBoundary fallback={<div>Quote wizard failed to load</div>}>
+    <ErrorBoundary>
       <Suspense fallback={<div>Loading quote wizard...</div>}>
         {/* Default to services category until additional categories are supported */}
         <QuoteWizard category="services" />

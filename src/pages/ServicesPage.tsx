@@ -2,7 +2,7 @@ import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { SERVICES } from "@/data/servicesData";
 import { TrustedBySection } from "@/components/TrustedBySection";
-import { ErrorBoundary } from "@/components/GlobalErrorBoundary";
+import ErrorBoundary from "@/components/GlobalErrorBoundary";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";

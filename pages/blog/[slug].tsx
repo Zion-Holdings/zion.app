@@ -58,11 +58,7 @@ const BlogPostPage: React.FC = () => {
       <NextSeo
         title={post.title}
         description={post.excerpt}
-        openGraph={{
-          title: post.title,
-          description: post.excerpt,
-          images: [{ url: post.featuredImage }],
-        }}
+        openGraph={{ title: post.title, description: post.excerpt, images: post.featuredImage ? [{ url: post.featuredImage }] : undefined }}
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(articleLd)}</script>

@@ -7,36 +7,37 @@ import { useDebounce } from "./useDebounce"; // Import the debounce hook
 
 // TODO: These could be fetched from the API or generated from listings in the future
 const staticSearchSuggestions: SearchSuggestion[] = [
-  { id: "1", type: "recent", text: "Modern web app" },
-  { id: "2", type: "recent", text: "Data analysis script" },
-  { id: "3", type: "saved", text: "E-commerce site" },
-  { id: "4", type: "saved", text: "Mobile game" },
+  { type: "recent", text: "Modern web app" },
+  { type: "recent", text: "Data analysis script" },
+  { type: "recent", text: "E-commerce site" }, // Changed "saved" to "recent"
+  { type: "recent", text: "Mobile game" }, // Changed "saved" to "recent"
 ];
 
 const staticFilterOptions: FilterOptions = {
   productTypes: [
-    { id: "app", label: "Web App" },
-    { id: "script", label: "Script" },
-    { id: "site", label: "Website" },
-    { id: "game", label: "Game" },
-    { id: "bot", label: "Bot" },
+    { value: "app", label: "Web App" },
+    { value: "script", label: "Script" },
+    { value: "site", label: "Website" },
+    { value: "game", label: "Game" },
+    { value: "bot", label: "Bot" },
   ],
   locations: [
-    { id: "us", label: "United States" },
-    { id: "eu", label: "Europe" },
-    { id: "asia", label: "Asia" },
-    { id: "online", label: "Online" },
+    { value: "us", label: "United States" },
+    { value: "eu", label: "Europe" },
+    { value: "asia", label: "Asia" },
+    { value: "online", label: "Online" },
   ],
-  availability: [
-    { id: "immediate", label: "Immediate" },
-    { id: "1-week", label: "Within 1 Week" },
-    { id: "1-month", label: "Within 1 Month" },
+  availabilityOptions: [ // Renamed from availability
+    { value: "immediate", label: "Immediate" },
+    { value: "1-week", label: "Within 1 Week" },
+    { value: "1-month", label: "Within 1 Month" },
   ],
-  ratings: [
-    { id: "5-stars", label: "5 Stars", value: 5 },
-    { id: "4-stars", label: "4 Stars & Up", value: 4 },
-    { id: "3-stars", label: "3 Stars & Up", value: 3 },
-  ],
+  ratingOptions: [5, 4, 3], // Changed to array of numbers
+  // Assuming minPrice and maxPrice should be part of actual filter options,
+  // but they are not in the original staticFilterOptions.
+  // Adding them with default values based on FilterOptions type.
+  minPrice: 0, // Default value
+  maxPrice: 10000, // Default value
 };
 
 

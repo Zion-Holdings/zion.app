@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { GradientHeading } from "@/components/GradientHeading";
 import LoaderOverlay from "@/components/LoaderOverlay"; // Assuming a loading spinner component exists
-import { ErrorBoundary } from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
+import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
 
 // Define a basic type for Category - adjust as per actual API response
 interface CategoryType {
@@ -56,7 +56,7 @@ export default function Categories() {
             </p>
           </div>
 
-          <ErrorBoundary fallback={<p className="text-red-500 text-center">Could not load content. Please try again later.</p>}>
+          <ErrorBoundary>
             {isLoading && (
               <div className="flex justify-center items-center h-64">
                 <LoaderOverlay />

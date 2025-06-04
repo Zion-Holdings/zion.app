@@ -9,10 +9,10 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/pages/*": ["./src/pages/*"],
+      "@/components/*": ["./src/components/*"],
       "axios": ["./src/lib/axios.ts"]
     },
-    "typeRoots": ["./node_modules/@types", "./src/types"],
-    "types": ["vite/client", "jest", "vitest/globals", "react", "react-dom"],
+    "types": ["vite/client", "react", "react-router-dom", "socket.io", "socket.io-client", "vitest/globals", "next", "next/types/global"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
