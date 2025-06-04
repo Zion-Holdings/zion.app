@@ -1,6 +1,6 @@
 // pages/governance/[proposalId].tsx
 import React, { useEffect, useState, useCallback } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useWallet } from '@/context/WalletContext'; // Adjust path
 // Import shadcn/ui components: Button, Card, Badge, Progress, Input, etc.
 import { Button } from '@/components/ui/button';
@@ -48,8 +48,7 @@ interface VoteResults {
 }
 
 const ProposalDetailPage: React.FC = () => {
-  const navigate = useNavigate();
-  const { proposalId } = useParams<{ proposalId?: string }>();
+  const { proposalId } = useParams<{ proposalId: string }>();
   const { address: connectedWalletAddress, isConnected, provider } = useWallet();
 
   const [proposal, setProposal] = useState<ProposalFull | null>(null);
@@ -174,7 +173,7 @@ const ProposalDetailPage: React.FC = () => {
   return (
     // <MainLayout>
     <div className="container mx-auto p-4 space-y-6">
-      <Link href="/governance" passHref><Button variant="outline">&larr; Back to Proposals</Button></Link>
+      <Link to="/governance"><Button variant="outline">&larr; Back to Proposals</Button></Link>
 
       <Card>
         <CardHeader>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import { useNavigate } from 'react-router-dom'; // For redirection
+import { useNavigate } from 'react-router-dom';
 
 // Ensure these are set in your environment variables
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -89,7 +89,7 @@ const VerifyEmailPage = () => {
         return () => clearTimeout(timer); // Cleanup timer on unmount
     }
 
-  }, [navigate]); // navigate is a dependency for redirection
+  }, [navigate]);
 
   return (
     <div style={{ padding: '20px', textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>

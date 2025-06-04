@@ -1,6 +1,6 @@
 import React from 'react';
 import { NextSeo } from '@/components/NextSeo';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 // Loader2 removed as TalentProfileSkeleton will be used
 import TalentProfileSkeleton from '@/components/talent/TalentProfileSkeleton';
 import NotFound from '@/components/NotFound';
@@ -33,8 +33,7 @@ const handleApiResponse = async (res: Response) => {
 };
 
 const TalentPage: React.FC = () => {
-  const navigate = useNavigate();
-  const { id } = useParams<{ id?: string }>();
+  const { id } = useParams<{ id: string }>();
 
   const { data, error, isLoading } = useSWR<TalentProfileBasic>(
     id ? `/api/talent/${id}` : null,

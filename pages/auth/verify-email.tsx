@@ -29,7 +29,7 @@ const VerifyEmailPage = () => {
       // We need to check if the user object is available, indicating Supabase processed the link.
       // Supabase might also specific 'type' in URL like 'signup' or 'email_change'
       const params = new URLSearchParams(location.search);
-      const type = params.get('type'); // Or parse from hash fragment if that's where Supabase puts it
+      const type = params.get('type');
 
       // If there's a user session, it means Supabase has processed the verification link successfully.
       if (user && user.id) {
@@ -64,7 +64,7 @@ const VerifyEmailPage = () => {
 
           // Redirect to login or dashboard after a short delay
           setTimeout(() => {
-            navigate('/auth/login'); // Or '/dashboard' or user.profileComplete ? '/dashboard' : '/profile-setup'
+            navigate('/auth/login');
           }, 3000);
 
         } catch (err: any) {
@@ -107,7 +107,7 @@ const VerifyEmailPage = () => {
         window.removeEventListener('hashchange', handleHashChange);
     };
 
-  }, [user, authLoading, navigate, location, setUser]);
+  }, [user, authLoading, location.search, navigate, setUser]);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '20px' }}>

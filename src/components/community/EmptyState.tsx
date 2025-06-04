@@ -25,7 +25,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({ title, subtitle, cta, href, has
           <TooltipTrigger asChild>
             {hasSession ? (
               <Button asChild>
-                <Link href={href}>{cta}</Link>
+                <Link to={href}>{cta}</Link>
               </Button>
             ) : (
               <Button disabled>{cta}</Button>

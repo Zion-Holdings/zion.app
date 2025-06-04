@@ -60,7 +60,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCu
               <TooltipTrigger asChild>
                 {hasSession ? (
                   <Button asChild>
-                    <Link href={`/community?new=1&category=${category}`}>Create New Post</Link>
+                    <Link to={`/community?new=1&category=${category}`}>Create New Post</Link>
                   </Button>
                 ) : (
                   <Button disabled>Create New Post</Button>

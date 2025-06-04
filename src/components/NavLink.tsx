@@ -13,7 +13,7 @@ export function NavLink({ href, className, children }: NavLinkProps) {
   const isActive = pathname === href
   return (
     <Link
-      href={href}
+      to={href}
       className={cn(
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zion-purple',
         isActive && 'border-b-2 border-green-500',

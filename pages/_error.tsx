@@ -12,11 +12,11 @@ export default function ErrorPage({ statusCode = 500, err }: ErrorPageProps) {
 
   useEffect(() => {
     captureException({
-      path: location.pathname,
+      path: location.pathname + location.search,
       message: err?.message ?? `Error page rendered with status ${statusCode}`,
       statusCode,
     });
-  }, [err, location.pathname, statusCode]);
+  }, [err, location.pathname, location.search, statusCode]);
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6 text-center">

@@ -69,7 +69,7 @@ const ProposalCard: React.FC<ProposalCardProps> = ({ proposal }) => {
         )}
       </CardContent>
       <CardFooter>
-        <Link href={`/governance/${proposal.id}`} passHref>
+        <Link to={`/governance/${proposal.id}`}>
           <Button variant="outline">View Details & Vote</Button>
         </Link>
       </CardFooter>
