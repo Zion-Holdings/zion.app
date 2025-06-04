@@ -1,4 +1,14 @@
+// Polyfill fetch and enable fetch mocks
+import 'whatwg-fetch';
+import fetchMock from 'jest-fetch-mock';
+fetchMock.enableMocks();
+
+// Jest-DOM matchers
 import '@testing-library/jest-dom';
+
+// Jest-axe matchers for accessibility
+import { toHaveNoViolations } from 'jest-axe';
+expect.extend(toHaveNoViolations);
 
 // Mock window.matchMedia for Jest
 Object.defineProperty(window, 'matchMedia', {
