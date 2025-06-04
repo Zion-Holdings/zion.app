@@ -1,16 +1,43 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import Head from 'next/head';
+import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { NextSeo } from '@/components/NextSeo';
-import type { GetStaticPaths, GetStaticProps } from 'next';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import type { BlogPost } from '@/types/blog';
 
-interface BlogProps {
-  post: BlogPost | null;
-}
+const BlogPostPage: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const [post, setPost] = React.useState<BlogPost | null>(null);
+  const [error, setError] = React.useState<string | null>(null);
 
-const BlogPostPage: React.FC<BlogProps> = ({ post }) => {
+  React.useEffect(() => {
+    if (!slug) return;
+    const fetchPost = async () => {
+      try {
+        const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+        const res = await fetch(`${appUrl}/api/blog/${slug}`);
+        if (res.ok) {
+          const data: BlogPost = await res.json();
+          setPost(data);
+          return;
+        }
+      } catch (e) {
+        console.error('Failed to fetch blog post', e);
+      }
+      const fallback = BLOG_POSTS.find((p) => p.slug === slug) || null;
+      if (!fallback) {
+        setError('Article not found');
+      } else {
+        setPost(fallback);
+      }
+    };
+    fetchPost();
+  }, [slug]);
+
+  if (error) {
+    return <div>{error}</div>;
+  }
   if (!post) {
     return <div>Article not found</div>;
   }
@@ -37,12 +64,9 @@ const BlogPostPage: React.FC<BlogProps> = ({ post }) => {
           images: [{ url: post.featuredImage }],
         }}
       />
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
-        />
-      </Head>
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(articleLd)}</script>
+      </Helmet>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
         <h1>{post.title}</h1>
         <ReactMarkdown>{post.content}</ReactMarkdown>
@@ -51,33 +75,6 @@ const BlogPostPage: React.FC<BlogProps> = ({ post }) => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = BLOG_POSTS.map((p) => ({ params: { slug: p.slug } }));
-  return { paths, fallback: 'blocking' };
-};
-
-export const getStaticProps: GetStaticProps<BlogProps> = async ({ params }) => {
-  const slug = params?.slug as string;
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-
-  try {
-    const res = await fetch(`${appUrl}/api/blog/${slug}`);
-    if (res.ok) {
-      const post: BlogPost = await res.json();
-      return { props: { post }, revalidate: 60 };
-    }
-  } catch (e) {
-    console.error('Failed to fetch blog post', e);
-  }
-
-  const post = BLOG_POSTS.find((p) => p.slug === slug) || null;
-
-  if (!post) {
-    return { notFound: true };
-  }
-
-  return { props: { post } };
-};
 
 export default BlogPostPage;
 

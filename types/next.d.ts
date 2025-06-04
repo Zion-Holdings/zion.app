@@ -1,22 +1,17 @@
-declare module 'next' {
-  import { IncomingMessage, ServerResponse } from 'http';
-
-  export interface NextApiRequest extends IncomingMessage {
-    query: { [key: string]: string | string[] };
-    body: any;
-    cookies: { [key: string]: string };
-    method?: string;
-  }
-
-  export interface NextApiResponse<T = any> extends ServerResponse {
-    status(code: number): this;
-    json(data: T): this;
-    send(data: any): this;
-    redirect(url: string): void;
-  }
-
-  export type NextApiHandler<T = any> = (
-    req: NextApiRequest,
-    res: NextApiResponse<T>
-  ) => void | Promise<void>;
+export interface NextApiRequest {
+  method?: string;
+  query: Record<string, any>;
+  body?: any;
+  cookies?: Record<string, any>;
 }
+
+export interface NextApiResponse<T = any> {
+  status(code: number): NextApiResponse<T>;
+  json(body: T): NextApiResponse<T>;
+  setHeader(name: string, value: string | readonly string[]): void;
+  end(data?: any): void;
+}
+
+export type GetStaticProps<T = any> = any;
+export type GetStaticPaths<T = any> = any;
+export type GetServerSideProps<T = any> = any;

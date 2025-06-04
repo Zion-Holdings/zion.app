@@ -1,6 +1,6 @@
 import React from 'react';
-import type { GetServerSideProps } from 'next';
-import Head from 'next/head';
+import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { NextSeo } from '@/components/NextSeo';
 import ProductReviews from '@/components/ProductReviews';
 import type { Product as ProductModel } from '@prisma/client';
@@ -43,17 +43,46 @@ const RatingStarsDisplay: React.FC<RatingStarsProps> = ({ value, count }) => {
   );
 };
 
-interface ListingPageProps {
-  product: ProductWithReviewStats | null;
-  error?: string;
-}
+const MarketplaceListingPage: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const [product, setProduct] = React.useState<ProductWithReviewStats | null>(null);
+  const [error, setError] = React.useState<string | null>(null);
 
-const MarketplaceListingPage: React.FC<ListingPageProps> = ({ product, error }) => {
+  React.useEffect(() => {
+    if (!slug) return;
+    const fetchProduct = async () => {
+      try {
+        const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+        const res = await fetch(`${appUrl}/api/products/${slug}/details`);
+        if (!res.ok) {
+          if (res.status === 404) {
+            setError('Product not found.');
+            return;
+          }
+          let msg = `Failed to fetch product: ${res.status}`;
+          try {
+            const data = await res.json();
+            msg = data.error || msg;
+          } catch {
+            msg = res.statusText || msg;
+          }
+          setError(msg);
+          return;
+        }
+        const data: ProductWithReviewStats = await res.json();
+        setProduct(data);
+      } catch (e: any) {
+        console.error('Error loading product:', e);
+        setError('An unexpected error occurred while trying to load product details.');
+      }
+    };
+    fetchProduct();
+  }, [slug]);
+
   if (error) {
     return <div className="text-red-500 max-w-3xl mx-auto py-8 px-4">Error: {error}</div>;
   }
   if (!product) {
-    // This case should ideally be handled by notFound: true in getServerSideProps
     return <div className="max-w-3xl mx-auto py-8 px-4">Product not found.</div>;
   }
 
@@ -94,12 +123,11 @@ const MarketplaceListingPage: React.FC<ListingPageProps> = ({ product, error }) 
           ],
         }}
       />
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
-        />
-      </Head>
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(productLd)}
+        </script>
+      </Helmet>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8 px-4">
 
         <h1>{product.name}</h1> {/* Using product.name from the Product model */}
@@ -132,39 +160,5 @@ const MarketplaceListingPage: React.FC<ListingPageProps> = ({ product, error }) 
   );
 };
 
-export const getServerSideProps: GetServerSideProps<ListingPageProps> = async (context) => {
-  const slug = context.params?.slug as string;
-  if (!slug) {
-    return { notFound: true };
-  }
-
-  try {
-    // Fetch product details including review stats
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-    const res = await fetch(`${appUrl}/api/products/${slug}/details`);
-
-    if (!res.ok) {
-      if (res.status === 404) {
-        return { notFound: true };
-      }
-      let errorMsg = `Failed to fetch product: ${res.status}`;
-      try {
-        const errorData = await res.json();
-        errorMsg = errorData.error || errorMsg;
-      } catch (jsonError) {
-        // If response is not JSON, use the status text or default message
-        errorMsg = res.statusText || errorMsg;
-      }
-      return { props: { product: null, error: errorMsg } };
-    }
-
-    const product: ProductWithReviewStats = await res.json();
-    return { props: { product, error: undefined } }; // Ensure error is undefined on success
-  } catch (e: any) {
-    console.error('Error in getServerSideProps for [slug]:', e);
-    // More generic error for the client
-    return { props: { product: null, error: 'An unexpected error occurred while trying to load product details.' } };
-  }
-};
 
 export default MarketplaceListingPage;
