@@ -9,7 +9,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/pages/*": ["./src/pages/*"],
-      "axios": ["./src/lib/axios.ts"]
+      "axios": ["./src/lib/axios.ts"],
+      "next": ["./types/next"],
+      "next/*": ["./types/next/*"]
     },
     "types": ["vite/client", "react", "react-router-dom", "socket.io", "socket.io-client", "vitest/globals"],
     "moduleResolution": "bundler",
@@ -34,6 +36,7 @@
     "./*.config.ts", // Catches cypress.config.ts, playwright.config.ts, tailwind.config.ts, vitest.config.ts
     "./stackbit.config.ts", // Explicitly add stackbit.config.ts if not covered by above
     "./**/*.d.ts",   // Broadly include all d.ts files
+    "./types/**/*.d.ts",
 
     // Explicitly list the four persistently problematic files
     "./vite.config.d.ts",
