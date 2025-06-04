@@ -39,4 +39,35 @@ jobs:
         with:
           files: coverage/lcov.info
           fail_ci_if_error: true
+
+      - name: Validate Production Domain in Allowlist
+        run: |
+          import json
+          import sys
+
+          allowlist_file = 'infra/allowlist.json'
+          production_domain = 'https://app.ziontechgroup.com'
+          found = False
+
+          try:
+            with open(allowlist_file, 'r') as f:
+              data = json.load(f)
+              allowed_origins = data.get('allowed_origins', [])
+              if production_domain in allowed_origins:
+                found = True
+          except FileNotFoundError:
+            print(f"Error: {allowlist_file} not found.")
+            sys.exit(1)
+          except json.JSONDecodeError:
+            print(f"Error: Could not decode JSON from {allowlist_file}.")
+            sys.exit(1)
+
+          if found:
+            print(f"Success: Production domain '{production_domain}' is present in {allowlist_file}.")
+            sys.exit(0)
+          else:
+            print(f"Error: Production domain '{production_domain}' is NOT present in {allowlist_file}.")
+            print("Please add it to ensure no disruption of service.")
+            sys.exit(1)
+
       - run: npm run cypress:run

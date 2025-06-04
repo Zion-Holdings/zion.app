@@ -210,6 +210,45 @@ npm run lint:a11y
 
 This command uses `jest-axe` to verify common WCAG issues across key pages and components.
 
+## Managing Cloud Reown Allowlist
+
+The list of allowed origins (domains) for the Cloud Reown service integrated with this project is managed via a JSON file in this repository. This allows for version-controlled changes and automated synchronization.
+
+**File Location:** `infra/allowlist.json`
+
+This file contains a list of domains that are permitted to interact with the Cloud Reown project.
+
+### How to Add or Remove a Domain
+
+1.  **Edit the File:**
+    *   Open the `infra/allowlist.json` file.
+    *   To add a new domain, append it to the `allowed_origins` array.
+    *   To remove a domain, delete it from the `allowed_origins` array.
+    *   Ensure the JSON syntax remains valid. For example:
+        ```json
+        {
+          "allowed_origins": [
+            "https://app.ziontechgroup.com",
+            "https://new-staging-app.ziontechgroup.com"
+          ]
+        }
+        ```
+
+2.  **Create a Pull Request:**
+    *   Commit your changes to `infra/allowlist.json`.
+    *   Push the changes to a new branch in your fork.
+    *   Open a Pull Request (PR) from your branch to the `main` branch of the main repository.
+    *   Clearly describe the reason for the change in your PR (e.g., "Adding staging domain to Cloud Reown allowlist").
+
+3.  **Automatic Sync:**
+    *   Upon merging your PR into the `main` branch, a GitHub Action (`.github/workflows/sync_reown_allowlist.yml`) will automatically run.
+    *   This action reads the updated `infra/allowlist.json` and syncs the full list of domains to the Cloud Reown project via their API.
+    *   You can monitor the status of this action in the "Actions" tab of the GitHub repository.
+
+**Important:**
+*   The CI process includes a validation step (`.github/workflows/ci.yml`) that checks if the primary production domain (`https://app.ziontechgroup.com`) is always present in `infra/allowlist.json`. Removing this domain will cause the CI build to fail, preventing accidental removal of the production environment's access.
+*   Ensure that the `CLOUD_REOWN_TOKEN` and `CLOUD_REOWN_PROJECT_ID` secrets are correctly configured in the GitHub repository settings for the sync action to work.
+
 ## Troubleshooting
 
 ### Network Issues
