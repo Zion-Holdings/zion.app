@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useLocation } from 'react-router-dom';
 import { captureException } from '@/utils/sentry';
 
 interface ErrorPageProps {
@@ -8,15 +8,15 @@ interface ErrorPageProps {
 }
 
 export default function ErrorPage({ statusCode = 500, err }: ErrorPageProps) {
-  const router = useRouter();
+  const location = useLocation();
 
   useEffect(() => {
     captureException({
-      path: router.asPath,
+      path: location.pathname,
       message: err?.message ?? `Error page rendered with status ${statusCode}`,
       statusCode,
     });
-  }, [err, router.asPath, statusCode]);
+  }, [err, location.pathname, statusCode]);
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
