@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Skeleton } from '@/components/ui/skeleton';
+import Skeleton from '@/components/ui/skeleton';
 import { useGetOrderQuery } from '@/hooks/useOrder';
 import { generateInvoicePdf } from '@/utils/generateInvoicePdf';
 import { useAuth } from '@/hooks/useAuth';

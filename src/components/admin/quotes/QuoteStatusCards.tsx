@@ -20,7 +20,7 @@ export const QuoteStatusCards: React.FC<QuoteStatusCardsProps> = ({ statusCounts
         <CardHeader className="pb-2">
           <CardTitle className="text-lg font-medium text-white flex justify-between items-center">
             New Requests
-            <Badge className="bg-blue-500">{statusCounts.new}</Badge>
+            <Badge>{statusCounts.new}</Badge>
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -32,7 +32,7 @@ export const QuoteStatusCards: React.FC<QuoteStatusCardsProps> = ({ statusCounts
         <CardHeader className="pb-2">
           <CardTitle className="text-lg font-medium text-white flex justify-between items-center">
             In Review
-            <Badge className="bg-yellow-500">{statusCounts.in_review}</Badge>
+            <Badge>{statusCounts.in_review}</Badge>
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -44,7 +44,7 @@ export const QuoteStatusCards: React.FC<QuoteStatusCardsProps> = ({ statusCounts
         <CardHeader className="pb-2">
           <CardTitle className="text-lg font-medium text-white flex justify-between items-center">
             Responded
-            <Badge className="bg-purple-500">{statusCounts.responded}</Badge>
+            <Badge>{statusCounts.responded}</Badge>
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -56,7 +56,7 @@ export const QuoteStatusCards: React.FC<QuoteStatusCardsProps> = ({ statusCounts
         <CardHeader className="pb-2">
           <CardTitle className="text-lg font-medium text-white flex justify-between items-center">
             Accepted
-            <Badge className="bg-green-500">{statusCounts.accepted}</Badge>
+            <Badge>{statusCounts.accepted}</Badge>
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -68,7 +68,7 @@ export const QuoteStatusCards: React.FC<QuoteStatusCardsProps> = ({ statusCounts
         <CardHeader className="pb-2">
           <CardTitle className="text-lg font-medium text-white flex justify-between items-center">
             Closed
-            <Badge className="bg-gray-500">{statusCounts.closed}</Badge>
+            <Badge>{statusCounts.closed}</Badge>
           </CardTitle>
         </CardHeader>
         <CardContent>

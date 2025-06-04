@@ -1,7 +1,6 @@
 // pages/governance/[proposalId].tsx
 import React, { useEffect, useState, useCallback } from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
+import { useParams, Link } from 'react-router-dom';
 import { useWallet } from '@/context/WalletContext'; // Adjust path
 // Import shadcn/ui components: Button, Card, Badge, Progress, Input, etc.
 import { Button } from '@/components/ui/button';
@@ -49,8 +48,7 @@ interface VoteResults {
 }
 
 const ProposalDetailPage: React.FC = () => {
-  const router = useRouter();
-  const { proposalId } = router.query;
+  const { proposalId } = useParams<{ proposalId: string }>();
   const { address: connectedWalletAddress, isConnected, provider } = useWallet();
 
   const [proposal, setProposal] = useState<ProposalFull | null>(null);
@@ -175,13 +173,13 @@ const ProposalDetailPage: React.FC = () => {
   return (
     // <MainLayout>
     <div className="container mx-auto p-4 space-y-6">
-      <Link href="/governance" passHref><Button variant="outline">&larr; Back to Proposals</Button></Link>
+      <Link to="/governance"><Button variant="outline">&larr; Back to Proposals</Button></Link>
 
       <Card>
         <CardHeader>
           <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
             <CardTitle className="text-2xl md:text-3xl">{proposal.title}</CardTitle>
-            <Badge variant={getStatusVariant(proposal.status)} className="whitespace-nowrap shrink-0 self-start sm:self-center">
+            <Badge variant={getStatusVariant(proposal.status)}>
               {proposal.status.replace(/_/g, ' ')}
             </Badge>
           </div>
@@ -253,7 +251,7 @@ const ProposalDetailPage: React.FC = () => {
                 </div>
               </>
             ) : userVote ? (
-              <p>You voted: <Badge variant="outline" className="text-base">{userVote.choice}</Badge> (Voting Power: {userVote.voting_power_at_snapshot} ZION$)</p>
+              <p>You voted: <Badge variant="outline">{userVote.choice}</Badge> (Voting Power: {userVote.voting_power_at_snapshot} ZION$)</p>
             ) : (
               <p className="text-muted-foreground">
                 {proposal.status !== 'ACTIVE' ? "Voting is not active for this proposal." :

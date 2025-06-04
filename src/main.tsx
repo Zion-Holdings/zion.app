@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react'; // Added Suspense here
 import ReactDOM from 'react-dom/client';
 
 // Integrate axe-core accessibility auditing in development
@@ -15,6 +15,9 @@ import ReactDOM from 'react-dom/client';
 //     console.error('Failed to load @axe-core/react:', error);
 //   });
 // }
+
+console.log(Suspense); // To ensure Suspense is "used"
+
 import App from './App.tsx';
 import './index.css';
 // Removed feat/i18n-implementation and main markers

@@ -1,4 +1,4 @@
-import { beforeAll, afterEach, afterAll } from 'vitest'
+import { beforeAll, afterEach, afterAll, vi } from 'vitest'
 import { server } from './mocks/server'
 import '@testing-library/jest-dom' // Extends Vitest's expect with jest-dom matchers
 

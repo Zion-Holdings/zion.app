@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client'; // Assuming supabase client is here
 import { useAuth } from '@/hooks/useAuth'; // To access user state
 
 const VerifyEmailPage = () => {
-  const router = useRouter();
+  const navigate = useNavigate();
+  const location = useLocation();
   const { user, isLoading: authLoading, setUser } = useAuth();
   const [message, setMessage] = useState('Verifying your email...');
   const [error, setError] = useState<string | null>(null);
@@ -27,7 +28,8 @@ const VerifyEmailPage = () => {
 
       // We need to check if the user object is available, indicating Supabase processed the link.
       // Supabase might also specific 'type' in URL like 'signup' or 'email_change'
-      const { type } = router.query; // Or parse from hash fragment if that's where Supabase puts it
+      const params = new URLSearchParams(location.search);
+      const type = params.get('type');
 
       // If there's a user session, it means Supabase has processed the verification link successfully.
       if (user && user.id) {
@@ -62,7 +64,7 @@ const VerifyEmailPage = () => {
 
           // Redirect to login or dashboard after a short delay
           setTimeout(() => {
-            router.push('/auth/login'); // Or '/dashboard' or user.profileComplete ? '/dashboard' : '/profile-setup'
+            navigate('/auth/login');
           }, 3000);
 
         } catch (err: any) {
@@ -81,7 +83,7 @@ const VerifyEmailPage = () => {
         setIsLoading(false);
          // Optional: Redirect to login or a page to request new verification
          setTimeout(() => {
-            router.push('/auth/login');
+            navigate('/auth/login');
         }, 5000);
       }
     };
@@ -105,7 +107,7 @@ const VerifyEmailPage = () => {
         window.removeEventListener('hashchange', handleHashChange);
     };
 
-  }, [user, authLoading, router, setUser]); // router added as it's used for query params
+  }, [user, authLoading, location.search, navigate, setUser]);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '20px' }}>
@@ -114,7 +116,7 @@ const VerifyEmailPage = () => {
       {!isLoading && error && <p style={{ color: 'red' }}>Error: {error}</p>}
       {!isLoading && !error && message && <p style={{ color: 'green' }}>{message}</p>}
       {!isLoading && (
-        <button onClick={() => router.push('/auth/login')}>
+        <button onClick={() => navigate('/auth/login')}>
           Go to Login
         </button>
       )}

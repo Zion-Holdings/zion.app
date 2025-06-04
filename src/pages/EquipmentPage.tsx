@@ -10,7 +10,7 @@ import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate, useLocation } from "react-router-dom";
 import useSWRMutation from "swr/mutation";
-import { Skeleton } from "@/components/ui/skeleton";
+import Skeleton from "@/components/ui/skeleton";
 import { useDelayedError } from '@/hooks/useDelayedError';
 import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
 

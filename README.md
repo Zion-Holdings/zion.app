@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_NETLIFY_SITE_ID_PLACEHOLDER/deploy-status)](https://app.netlify.com/sites/YOUR_NETLIFY_SITE_NAME_PLACEHOLDER/deploys)
+<!-- IMPORTANT: Please replace YOUR_NETLIFY_SITE_ID_PLACEHOLDER and YOUR_NETLIFY_SITE_NAME_PLACEHOLDER with your actual Netlify site ID and name. -->
+
 # Welcome to the project
 [![codecov](https://codecov.io/gh/<org>/<repo>/branch/main/graph/badge.svg)](https://codecov.io/gh/<org>/<repo>)
 
@@ -120,7 +123,7 @@ The primary backend is a Django application located in the `/backend` directory.
 2.  Create a Python virtual environment and activate it:
     ```sh
     python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    source venv/bin/activate  # On Windows use `venv\Scriptsctivate`
     ```
 3.  Install Python dependencies:
     ```sh
@@ -209,6 +212,45 @@ npm run lint:a11y
 ```
 
 This command uses `jest-axe` to verify common WCAG issues across key pages and components.
+
+## Managing Cloud Reown Allowlist
+
+The list of allowed origins (domains) for the Cloud Reown service integrated with this project is managed via a JSON file in this repository. This allows for version-controlled changes and automated synchronization.
+
+**File Location:** `infra/allowlist.json`
+
+This file contains a list of domains that are permitted to interact with the Cloud Reown project.
+
+### How to Add or Remove a Domain
+
+1.  **Edit the File:**
+    *   Open the `infra/allowlist.json` file.
+    *   To add a new domain, append it to the `allowed_origins` array.
+    *   To remove a domain, delete it from the `allowed_origins` array.
+    *   Ensure the JSON syntax remains valid. For example:
+        ```json
+        {
+          "allowed_origins": [
+            "https://app.ziontechgroup.com",
+            "https://new-staging-app.ziontechgroup.com"
+          ]
+        }
+        ```
+
+2.  **Create a Pull Request:**
+    *   Commit your changes to `infra/allowlist.json`.
+    *   Push the changes to a new branch in your fork.
+    *   Open a Pull Request (PR) from your branch to the `main` branch of the main repository.
+    *   Clearly describe the reason for the change in your PR (e.g., "Adding staging domain to Cloud Reown allowlist").
+
+3.  **Automatic Sync:**
+    *   Upon merging your PR into the `main` branch, a GitHub Action (`.github/workflows/sync_reown_allowlist.yml`) will automatically run.
+    *   This action reads the updated `infra/allowlist.json` and syncs the full list of domains to the Cloud Reown project via their API.
+    *   You can monitor the status of this action in the "Actions" tab of the GitHub repository.
+
+**Important:**
+*   The CI process includes a validation step (`.github/workflows/ci.yml`) that checks if the primary production domain (`https://app.ziontechgroup.com`) is always present in `infra/allowlist.json`. Removing this domain will cause the CI build to fail, preventing accidental removal of the production environment's access.
+*   Ensure that the `CLOUD_REOWN_TOKEN` and `CLOUD_REOWN_PROJECT_ID` secrets are correctly configured in the GitHub repository settings for the sync action to work.
 
 ## Troubleshooting
 
@@ -334,3 +376,31 @@ npm run build:content
 ```
 
 This keeps the site content up to date and search‑engine optimized using the existing `<SEO>` component on each page.
+
+## Troubleshooting GitHub Codespaces Terminal Issues
+
+If you experience issues with the integrated terminal in GitHub Codespaces (e.g., typed commands not appearing or executing), try the following steps:
+
+1.  **Check `~/.bashrc` (or your shell's equivalent configuration file):**
+    *   Open your user-specific shell configuration file (e.g., `~/.bashrc`, `~/.zshrc`).
+    *   Look for any lines that might include `stty -echo` or similar commands that could suppress terminal output.
+    *   If you find such a line, try commenting it out (by adding a `#` at the beginning of the line) or removing it.
+    *   Save the file and restart your terminal or Codespace.
+
+2.  **Ensure Locales are Correctly Configured:**
+    *   Proper locale settings are important for terminal behavior.
+    *   If you have a `devcontainer.json` file in your repository (usually in a `.devcontainer` directory), consider adding or ensuring the following `onCreateCommand` is present:
+        ```json
+        "onCreateCommand": "sudo apt-get update && sudo apt-get install -y locales && sudo locale-gen en_US.UTF-8"
+        ```
+    *   If you do not have a `devcontainer.json` file, you might need to create one or use the GitHub Codespaces UI to rebuild your Codespace. When rebuilding, look for options to customize setup commands and add the line above.
+    *   After adding this command, you'll need to rebuild your Codespace for the changes to take effect.
+
+3.  **Use the "Terminal (Web)" Extension as a Fallback:**
+    *   If the integrated terminal remains unresponsive after trying the above steps, you can install the "Terminal (Web)" VS Code extension. This extension provides an alternative terminal interface that runs in a web view and can sometimes bypass issues affecting the standard integrated terminal.
+    *   Search for "Terminal (Web)" in the VS Code Extensions view (Ctrl+Shift+X or Cmd+Shift+X) and install it.
+
+4.  **Ensure Shell Integration is Enabled:**
+    *   The project includes a workspace setting to enable shell integration: `.vscode/settings.json` contains `"terminal.integrated.shellIntegration.enabled": true`. This should be applied automatically. If you've overridden this in your user settings, consider reverting to the workspace setting.
+
+Remember to **rebuild your Codespace** after making changes to configurations like `devcontainer.json` for them to apply.

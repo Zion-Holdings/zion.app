@@ -1,4 +1,28 @@
+// Polyfill fetch and enable fetch mocks
+import 'whatwg-fetch';
+import fetchMock from 'jest-fetch-mock';
+fetchMock.enableMocks();
+
+// Jest-DOM matchers
 import '@testing-library/jest-dom';
+import { TextEncoder, TextDecoder } from 'util';
+
+// Polyfill TextEncoder and TextDecoder for JSDOM environment
+global.TextEncoder = TextEncoder;
+// @ts-ignore // Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
+global.TextDecoder = TextDecoder;
+
+
+// Set up a mock for Vite environment variables accessed via import.meta.env
+// This assumes that Babel (via babel-plugin-transform-import-meta or similar)
+// will transform import.meta.env.VITE_SOME_VAR to something like process.env.VITE_SOME_VAR
+// or that import.meta itself is transformed into an object where 'env' can be populated.
+process.env.VITE_REOWN_PROJECT_ID = 'test_project_id_from_jest_setup';
+
+
+// Jest-axe matchers for accessibility
+import { toHaveNoViolations } from 'jest-axe';
+expect.extend(toHaveNoViolations);
 
 // Mock window.matchMedia for Jest
 Object.defineProperty(window, 'matchMedia', {
