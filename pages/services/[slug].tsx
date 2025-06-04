@@ -1,17 +1,18 @@
 import React from 'react';
-import type { GetStaticPaths, GetStaticProps } from 'next';
-import Head from 'next/head';
+import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { NextSeo } from '@/components/NextSeo';
 import { SERVICES } from '@/data/servicesData';
 import { slugify } from '@/lib/slugify';
 import Custom404 from '../404';
 import type { ProductListing } from '@/types/listings';
 
-interface ServiceProps {
-  service: ProductListing | null;
-}
-
-const ServicePage: React.FC<ServiceProps> = ({ service }) => {
+const ServicePage: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const service = React.useMemo(
+    () => SERVICES.find((s) => slugify(s.title) === slug) || null,
+    [slug]
+  );
   if (!service) {
     return <Custom404 />;
   }
@@ -33,12 +34,9 @@ const ServicePage: React.FC<ServiceProps> = ({ service }) => {
         description={service.description}
         openGraph={{ title: service.title, description: service.description }}
       />
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
-        />
-      </Head>
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(serviceLd)}</script>
+      </Helmet>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
         <h1>{service.title}</h1>
         <p>{service.description}</p>
@@ -47,20 +45,5 @@ const ServicePage: React.FC<ServiceProps> = ({ service }) => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = SERVICES.map((service) => ({
-    params: {
-      slug: slugify(service.title),
-    },
-  }));
-  return { paths, fallback: 'blocking' };
-};
-
-export const getStaticProps: GetStaticProps<ServiceProps> = async ({ params }) => {
-  const slug = params?.slug as string;
-  const service = SERVICES.find((s) => slugify(s.title) === slug) || null;
-
-  return { props: { service } };
-};
 
 export default ServicePage;

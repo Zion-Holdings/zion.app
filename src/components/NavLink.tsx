@@ -1,6 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { Link, useLocation } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 
 export interface NavLinkProps {
@@ -10,7 +9,7 @@ export interface NavLinkProps {
 }
 
 export function NavLink({ href, className, children }: NavLinkProps) {
-  const { pathname } = useRouter()
+  const { pathname } = useLocation()
   const isActive = pathname === href
   return (
     <Link
