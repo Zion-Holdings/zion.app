@@ -3,7 +3,7 @@ import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext'; // Assuming this path is correct
 
 function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
-  let specificMessage = "Something went wrong. Please try refreshing the page.";
+  let specificMessage = "Something went wrong. Reloading the page may resolve the issue.";
   const errorMessage = error?.message?.toLowerCase() || "";
 
   // Check for keywords related to common routing or context issues
@@ -12,7 +12,7 @@ function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
     errorMessage.includes("router context") ||
     errorMessage.includes("could not find router") // Add other relevant keywords if known
   ) {
-    specificMessage = "It looks like there's an issue with loading this page's content or navigation setup. Please try refreshing. If the problem continues, please contact support.";
+    specificMessage = "It looks like there's an issue with loading this page's content or navigation setup. Please try reloading the page. If the problem continues, please contact support.";
   }
 
   return (
@@ -28,10 +28,10 @@ function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
         </details>
       )}
       <button
-        onClick={resetErrorBoundary}
+        onClick={() => window.location.reload()}
         className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
       >
-        Try Again
+        Reload Page
       </button>
     </div>
   );
