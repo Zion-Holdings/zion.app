@@ -1,7 +1,7 @@
 import React from 'react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
-import NextHead from '@/components/NextHead';
+import { NextSeo } from '@/components/NextSeo';
 import { SERVICES } from '@/data/servicesData';
 import { slugify } from '@/lib/slugify';
 import Custom404 from '../404';
@@ -28,7 +28,7 @@ const ServicePage: React.FC<ServiceProps> = ({ service }) => {
   };
   return (
     <>
-      <NextHead
+      <NextSeo
         title={service.title}
         description={service.description}
         openGraph={{ title: service.title, description: service.description }}

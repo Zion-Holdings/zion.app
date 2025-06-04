@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'; // Removed useEffect
-import NextHead from '@/components/NextHead';
+import { NextSeo } from '@/components/NextSeo';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -48,7 +48,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCu
 
   return (
     <>
-      <NextHead
+      <NextSeo
         title={`${category} – Zion Community`}
         description={`Discussion posts in the ${category} category`}
         openGraph={{ title: `${category} – Zion Community`, description: `Discussion posts in the ${category} category` }}

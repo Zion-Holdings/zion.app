@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
-import NextHead from '@/components/NextHead';
+import { NextSeo } from '@/components/NextSeo';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import type { BlogPost } from '@/types/blog';
@@ -28,7 +28,7 @@ const BlogPostPage: React.FC<BlogProps> = ({ post }) => {
   };
   return (
     <>
-      <NextHead
+      <NextSeo
         title={post.title}
         description={post.excerpt}
         openGraph={{ title: post.title, description: post.excerpt, image: post.featuredImage }}

@@ -29,10 +29,6 @@ vi.mock('@/components/talent/TalentDetails', () => ({
   ),
 }));
 
-vi.mock('@/components/NextHead', () => ({
-  default: ({ title }: { title: string }) => <title>{title}</title>,
-}));
-
 // Mock TalentProfileSkeleton
 vi.mock('@/components/talent/TalentProfileSkeleton', () => ({
   default: () => <div data-testid="talent-profile-skeleton">Loading...</div>,
