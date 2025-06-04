@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_NETLIFY_SITE_ID_PLACEHOLDER/deploy-status)](https://app.netlify.com/sites/YOUR_NETLIFY_SITE_NAME_PLACEHOLDER/deploys)
+<!-- IMPORTANT: Please replace YOUR_NETLIFY_SITE_ID_PLACEHOLDER and YOUR_NETLIFY_SITE_NAME_PLACEHOLDER with your actual Netlify site ID and name. -->
 
 # Welcome to the project
 [![codecov](https://codecov.io/gh/<org>/<repo>/branch/main/graph/badge.svg)](https://codecov.io/gh/<org>/<repo>)
@@ -121,7 +123,7 @@ The primary backend is a Django application located in the `/backend` directory.
 2.  Create a Python virtual environment and activate it:
     ```sh
     python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    source venv/bin/activate  # On Windows use `venv\Scriptsctivate`
     ```
 3.  Install Python dependencies:
     ```sh
@@ -258,6 +260,23 @@ a few times before giving up.
 Automatic translations rely on OpenAI. Set `VITE_OPENAI_API_KEY` (or
 `NEXT_PUBLIC_OPENAI_API_KEY`) to allow the client to contact the API directly
 when the Supabase function is unavailable.
+
+### "NextRouter not mounted" Error
+
+You might encounter a console error message stating "NextRouter was not mounted. https://nextjs.org/docs/messages/next-router-not-mounted".
+
+**Cause:** This project uses Vite and `react-router-dom` for client-side routing, not Next.js. However, some third-party libraries (e.g., `@reown/appkit` for wallet connections) might internally attempt to detect or use Next.js routing features. If such a library is not configured to operate in a non-Next.js environment, it can produce this error.
+
+**Impact:**
+*   In most cases, this error should be caught by the application's global error boundaries, and you should see a fallback UI prompting to "Reload Page".
+*   The application's core routing will continue to function using `react-router-dom`.
+
+**What to do:**
+1.  **Check the Console:** The browser's developer console might provide more specifics about which component or library triggered the error.
+2.  **Reload the Page:** The error boundary provides a "Reload Page" button. Clicking this performs a hard refresh (`window.location.reload()`) which can resolve temporary issues.
+3.  **Wallet Component Configuration:** For the `@reown/appkit` library, an attempt has been made to mitigate this by disabling the `analytics` feature during its initialization (`features: { analytics: false }` in `src/context/WalletContext.tsx`). If the error persists and is problematic, further investigation into the specific library's configuration options for non-Next.js environments might be needed.
+
+If you are developing a new component that relies on routing, ensure you use hooks and components from `react-router-dom` (e.g., `useNavigate`, `Link`) and not from `next/router`.
 
 ## Contributing Guidelines
 

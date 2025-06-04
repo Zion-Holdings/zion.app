@@ -67,6 +67,7 @@ import AdminDashboard from './pages/features/AdminDashboard';
 import SearchFeature from './pages/features/Search';
 import IntegrationsFeature from './pages/features/Integrations';
 import Internationalization from './pages/features/Internationalization';
+import ErrorTriggerComponent from './components/testing/ErrorTriggerComponent'; // Added for error testing
 const Checkout = lazy(() => import('./pages/Checkout'));
 const RequestQuotePage = lazy(() => import('./pages/RequestQuote'));
 const RecommendationsPage = lazy(() => import('./pages/RecommendationsPage'));
@@ -96,12 +97,12 @@ function RootErrorFallback({ resetErrorBoundary }: FallbackProps) {
         <CardContent className="text-center">
           <p className="text-md">
             Something went wrong on our end. We&apos;re sorry for the inconvenience.
-            Please try refreshing the page. If the issue persists, you can contact our support team.
+            Reloading the page may resolve the issue. If the problem continues, please contact our support team.
           </p>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <Button onClick={resetErrorBoundary} variant="secondary" className="w-1/2">
-            Retry
+          <Button onClick={() => window.location.reload()} variant="secondary" className="w-1/2">
+            Reload Page
           </Button>
         </CardFooter>
       </Card>
@@ -192,6 +193,10 @@ const App = () => {
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={<PageTransition>{element}</PageTransition>} />
             ))}
+            {/* Test routes for error boundaries - START */}
+            <Route path="/test-error-render" element={<PageTransition><ErrorTriggerComponent /></PageTransition>} />
+            <Route path="/test-error-mount" element={<PageTransition><ErrorTriggerComponent onMount={true} /></PageTransition>} />
+            {/* Test routes for error boundaries - END */}
             {/* <Route path="/auth/*" element={<PageTransition><AuthRoutes /></PageTransition>} /> */}
             {/* <Route path="/dashboard/*" element={<PageTransition><DashboardRoutes /></PageTransition>} /> */}
             {/* <Route path="/marketplace/*" element={<PageTransition><MarketplaceRoutes /></PageTransition>} /> */}

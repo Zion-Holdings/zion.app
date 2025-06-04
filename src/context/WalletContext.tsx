@@ -86,7 +86,7 @@ const appKitInstance: AppKitInstanceInterface | null = typeof window !== 'undefi
       projectId,
       metadata,
       features: {
-        analytics: true, // Optional: enable analytics
+        analytics: false, // Optional: enable analytics
         // ... other features like swaps, onramp if needed
       },
     })
@@ -100,6 +100,7 @@ if (appKitInstance && typeof appKitInstance.subscribeProvider !== 'function') {
 // --- End Reown AppKit Configuration ---
 
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  console.log('WalletProvider: Initializing...');
   const [wallet, setWallet] = useState<WalletState>(initialWalletState);
   // `useAppKit` now returns AppKitInstanceInterface | null due to updated .d.ts
   const appKit = useAppKit(); // Hook to interact with AppKit
