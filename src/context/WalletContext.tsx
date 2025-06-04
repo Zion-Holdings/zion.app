@@ -101,7 +101,7 @@ const appKitInstance: ReownAppKit | null = typeof window !== 'undefined'
       projectId,
       metadata,
       features: {
-        analytics: true, // Optional: enable analytics
+        analytics: false, // Optional: enable analytics
         // ... other features like swaps, onramp if needed
       },
     }) as unknown as ReownAppKit)
@@ -115,6 +115,7 @@ if (appKitInstance && typeof appKitInstance.subscribeProvider !== 'function') {
 // --- End Reown AppKit Configuration ---
 
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  console.log('WalletProvider: Initializing...');
   const [wallet, setWallet] = useState<WalletState>(initialWalletState);
   // `useAppKit` returns an object controlling the wallet modal.  Its full type
   // definitions are not available offline, so cast to our minimal interface.
@@ -178,6 +179,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         'WalletContext: Unable to subscribe to provider changes. Neither subscribeProvider nor on/off methods are available or appKit is invalid. appKit keys:',
         appKit ? Object.keys(appKit) : 'appKit is null'
       );
+      console.warn('WalletProvider: Real-time wallet event subscription will not be active for this session.');
       // Optionally, attempt to update state once if appKitInstance is available and seems okay
       // This might be relevant if useAppKit() is the issue but appKitInstance was fine.
       if (appKitInstance && typeof appKitInstance.subscribeProvider === 'function' && !appKitInstance.getState().isConnected) {
