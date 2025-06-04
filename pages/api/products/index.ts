@@ -1,8 +1,8 @@
 
-import { Prisma, PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient, type Product } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-type ProductModel = Prisma.Product;
+type ProductModel = Product;
 const prisma = new PrismaClient();
 
 export type ProductWithReviewStats = ProductModel & { // ProductModel now includes price, currency, category, tags, images
