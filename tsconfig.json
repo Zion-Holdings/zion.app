@@ -11,7 +11,7 @@
       "@/pages/*": ["./src/pages/*"],
       "axios": ["./src/lib/axios.ts"]
     },
-    // "typeRoots": ["./src/types"], // Keeping this commented for now
+    "typeRoots": ["./node_modules/@types", "./src/types"],
     "types": ["vite/client", "jest", "vitest/globals", "react", "react-dom"],
 
     /* Bundler mode */
