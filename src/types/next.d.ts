@@ -1,46 +1,63 @@
-import * as React from 'react';
+// Minimal Next.js type stubs for non-Next environments
+import React from 'react';
 
-declare module 'next' {
-  export interface NextApiRequest {
-    [key: string]: any;
-  }
-
-  export interface NextApiResponse<T = any> {
-    status(code: number): NextApiResponse<T>;
-    json(data: T): NextApiResponse<T>;
-    send(data: any): NextApiResponse<T>;
-    end(data?: any): void;
-    setHeader(name: string, value: string | string[]): void;
-  }
-
-  export type GetStaticPaths = () => Promise<{ paths: any[]; fallback: boolean | 'blocking' }>;
-  export type GetStaticProps<P = any, Q = any> = (
-    ctx: { params?: Q }
-  ) => Promise<{ props: P; revalidate?: number | boolean } | { redirect: any } | { notFound: true }>;
-}
-
-declare module 'next/head' {
-  const Head: React.ComponentType<any>;
-  export default Head;
-}
-
+// --- next/link --------------------------------------------------------------
 declare module 'next/link' {
-  const Link: React.ComponentType<any>;
+  export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+    href: string;
+  }
+  const Link: React.FC<LinkProps>;
   export default Link;
 }
 
-declare module 'next/router' {
-  export function useRouter(): any;
+// --- next/head --------------------------------------------------------------
+declare module 'next/head' {
+  const Head: React.FC<{ children?: React.ReactNode }>;
+  export default Head;
 }
 
+// --- next/router ------------------------------------------------------------
+declare module 'next/router' {
+  interface Router {
+    pathname: string;
+    push(url: string): void;
+  }
+  export function useRouter(): Router;
+}
+
+// --- next/image -------------------------------------------------------------
 declare module 'next/image' {
-  const Image: React.ComponentType<any>;
+  export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+    src: string;
+    width?: number;
+    height?: number;
+    priority?: boolean;
+  }
+  const Image: React.FC<ImageProps>;
   export default Image;
 }
 
-declare module 'next/document' {
-  export const Html: React.ComponentType<any>;
-  export const Head: React.ComponentType<any>;
-  export const Main: React.ComponentType<any>;
-  export const NextScript: React.ComponentType<any>;
+// --- next static/ssr helpers ------------------------------------------------
+declare module 'next' {
+  export type GetStaticPaths = () => Promise<{
+    paths: { params: Record<string, string> }[];
+    fallback: boolean | 'blocking';
+  }>;
+
+  export type GetStaticProps<P> = (context: {
+    params?: Record<string, any>;
+  }) => Promise<{
+    props?: P;
+    notFound?: boolean;
+    redirect?: any;
+    revalidate?: number | boolean;
+  }>;
+
+  export type GetServerSideProps<P> = (context: {
+    params?: Record<string, any>;
+  }) => Promise<{
+    props?: P;
+    notFound?: boolean;
+    redirect?: any;
+  }>;
 }
