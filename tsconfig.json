@@ -9,9 +9,11 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/pages/*": ["./src/pages/*"],
-      "axios": ["./src/lib/axios.ts"]
+      "axios": ["./src/lib/axios.ts"],
+      "next": ["./types/next"],
+      "next/*": ["./types/next/*"]
     },
-    "types": ["vite/client", "react", "react-router-dom", "socket.io", "socket.io-client", "vitest/globals"],
+    "typeRoots": ["./src/types"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -28,6 +30,6 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "pages"],
+  "include": ["src", "pages", "src/types"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
