@@ -25,6 +25,7 @@ export function CategoryCard({ title, description, icon, color, count, className
     <Link
       to={`/category/${slug}`}
       tabIndex={0}
+      data-testid="category-card" // Added data-testid
       className={cn(
         "flex flex-col items-center p-6 bg-card/60 backdrop-blur-md rounded-lg border border-primary/10 sm:border-primary/20 transition-all duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary hover:animate-glowing-border",
         className

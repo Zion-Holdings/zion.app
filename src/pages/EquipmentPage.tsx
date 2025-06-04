@@ -12,6 +12,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import useSWRMutation from "swr/mutation";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useDelayedError } from '@/hooks/useDelayedError';
+import { ErrorBoundary } from "@/components/ErrorBoundary"; // Import ErrorBoundary
 
 // The EQUIPMENT_LISTINGS constant has been removed as it was commented out
 // and the page primarily relies on API calls and dynamic data generation.
@@ -89,15 +90,16 @@ export default function EquipmentPage() {
   );
 
   // Interval for adding random equipment
-  useEffect(() => {
-    // Only set interval if equipment is already loaded/exists to prevent adding to undefined
-    if (equipment && equipment.length > 0) {
-      const interval = setInterval(() => {
-        setEquipment((prev = []) => [...prev, generateRandomEquipment()]); // Ensure prev is an array
-      }, 120000);
-      return () => clearInterval(interval);
-    }
-  }, [equipment]); // Added equipment to dependency array
+  // useEffect(() => {
+  //   // Only set interval if equipment is already loaded/exists to prevent adding to undefined
+  //   if (equipment && equipment.length > 0) {
+  //     const interval = setInterval(() => {
+  //       setEquipment((prev = []) => [...prev, generateRandomEquipment()]); // Ensure prev is an array
+  //     }, 120000);
+  //     return () => clearInterval(interval);
+  //   }
+  // }, [equipment]); // Added equipment to dependency array
+  // Removed the random equipment generation interval to rely on API data.
 
   const handleRecommendations = async () => {
     if (!user) {
@@ -179,35 +181,37 @@ export default function EquipmentPage() {
           </Button>
         </div>
       </div>
-      {isFetchingRecommendations ? ( // This is the skeleton for AI recommendations, keep as is
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
-              <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
-              <div className="p-4">
-                <Skeleton className="h-6 w-1/3 mb-2 bg-zion-blue-light/20" />
-                <Skeleton className="h-8 w-5/6 mb-4 bg-zion-blue-light/20" />
-                <Skeleton className="h-4 w-full mb-2 bg-zion-blue-light/20" />
-                <Skeleton className="h-4 w-4/5 mb-4 bg-zion-blue-light/20" />
-                <div className="flex justify-between items-center pt-4">
-                  <Skeleton className="h-6 w-1/4 bg-zion-blue-light/20" />
-                  <Skeleton className="h-8 w-1/4 bg-zion-blue-light/20" />
+      <ErrorBoundary fallback={<p className="text-red-500 text-center">Could not load equipment content. Please try again later.</p>}>
+        {isFetchingRecommendations ? ( // This is the skeleton for AI recommendations, keep as is
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
+                <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
+                <div className="p-4">
+                  <Skeleton className="h-6 w-1/3 mb-2 bg-zion-blue-light/20" />
+                  <Skeleton className="h-8 w-5/6 mb-4 bg-zion-blue-light/20" />
+                  <Skeleton className="h-4 w-full mb-2 bg-zion-blue-light/20" />
+                  <Skeleton className="h-4 w-4/5 mb-4 bg-zion-blue-light/20" />
+                  <div className="flex justify-between items-center pt-4">
+                    <Skeleton className="h-6 w-1/4 bg-zion-blue-light/20" />
+                    <Skeleton className="h-8 w-1/4 bg-zion-blue-light/20" />
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <DynamicListingPage
-          title="Datacenter Equipment"
-          description="Browse professional hardware for modern datacenter and network deployments."
-          categorySlug="equipment"
-          listings={equipment || []} // Pass empty array if equipment is undefined to prevent errors in DynamicListingPage
-          categoryFilters={EQUIPMENT_FILTERS}
-          initialPrice={{ min: 400, max: 50000 }}
-          detailBasePath="/equipment"
-        />
-      )}
+            ))}
+          </div>
+        ) : (
+          <DynamicListingPage
+            title="Datacenter Equipment"
+            description="Browse professional hardware for modern datacenter and network deployments."
+            categorySlug="equipment"
+            listings={equipment || []} // Pass empty array if equipment is undefined to prevent errors in DynamicListingPage
+            categoryFilters={EQUIPMENT_FILTERS}
+            initialPrice={{ min: 400, max: 50000 }}
+            detailBasePath="/equipment"
+          />
+        )}
+      </ErrorBoundary>
     </>
   );
 }
