@@ -1,6 +1,6 @@
 // pages/governance/index.tsx
 import React, { useEffect, useState, useMemo } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import ProposalCard, { Proposal } from '@/components/governance/ProposalCard'; // Adjust path if needed
 // import MainLayout from '@/components/layout/MainLayout'; // If exists
 import { Button } from '@/components/ui/button'; // Adjust path
@@ -89,10 +89,10 @@ const GovernancePage: React.FC = () => {
         <h1 className="text-3xl font-bold">Zion Governance</h1>
         <div className="flex flex-col sm:flex-row items-center gap-2">
           <ConnectWalletButton />
-          <Link href="/governance/my-votes" passHref>
+          <Link to="/governance/my-votes">
             <Button variant="outline" className="w-full sm:w-auto">My Votes</Button>
           </Link>
-          <Link href="/governance/create" passHref>
+          <Link to="/governance/create">
             <Button className="w-full sm:w-auto">Create Proposal</Button>
           </Link>
         </div>
