@@ -5,7 +5,7 @@ import { ChatWidget } from "@/components/ChatWidget";
 import { useParams } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
+import Skeleton from "@/components/ui/skeleton";
 import { Star, MessageSquare, Brain, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MARKETPLACE_LISTINGS } from "@/data/marketplaceData";

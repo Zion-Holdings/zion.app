@@ -2,14 +2,14 @@ import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { SERVICES } from "@/data/servicesData";
 import { TrustedBySection } from "@/components/TrustedBySection";
-import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { ErrorBoundary } from "@/components/GlobalErrorBoundary";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Globe } from "lucide-react";
 
 import useSWR from 'swr';
 import { captureException } from "@/utils/sentry";
-import { Skeleton } from "@/components/ui/skeleton";
+import { SkeletonCard } from '@/components/ui';
 import { useDelayedError } from '@/hooks/useDelayedError';
 
 // Filter options specific to services
@@ -50,11 +50,14 @@ export default function ServicesPage() {
 
   if (isLoading || (error && !delayedError)) {
     return (
-      <div data-testid="loading-state" className="p-4 space-y-4">
-        <Skeleton className="h-6 w-1/3" />
-        <Skeleton className="h-[120px] w-full" />
-        <Skeleton className="h-[120px] w-full" />
-        <Skeleton className="h-[120px] w-full" />
+      <div data-testid="loading-state" className="container mx-auto px-4 py-12">
+        {/* Optional: you can add a skeleton for the title if needed */}
+        {/* <Skeleton className="h-8 w-1/3 mb-8" /> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {Array.from({ length: 8 }).map((_, index) => (
+            <SkeletonCard key={index} />
+          ))}
+        </div>
       </div>
     );
   }

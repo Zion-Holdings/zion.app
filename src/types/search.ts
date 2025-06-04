@@ -1,7 +1,8 @@
 
 export interface SearchSuggestion {
+  id?: string;
   text: string;
-  type: 'product' | 'category' | 'tag' | 'skill' | 'person' | 'recent' | 'doc';
+  type: 'product' | 'category' | 'tag' | 'skill' | 'person' | 'recent' | 'doc' | 'saved';
   iconUrl?: string;
 }
 

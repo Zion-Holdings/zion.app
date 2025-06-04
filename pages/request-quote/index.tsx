@@ -1,4 +1,4 @@
-import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { ErrorBoundary } from "@/components/GlobalErrorBoundary";
 import React, { lazy, Suspense } from "react";
 
 const QuoteWizard = lazy(() =>
