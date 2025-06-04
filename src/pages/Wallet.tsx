@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getWallet } from '@/api/wallet';
-import { Skeleton } from '@/components/ui/skeleton';
+import Skeleton from '@/components/ui/skeleton';
 import type { TokenTransaction } from '@/types/tokens';
 
 interface WalletResponse {

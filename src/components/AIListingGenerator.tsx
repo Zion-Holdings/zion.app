@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
+import Skeleton from "@/components/ui/skeleton";
 import { Sparkles, ArrowRight } from "@/components/icons";
 import { supabase } from "@/integrations/supabase/client";
 import { Badge } from "@/components/ui/badge";

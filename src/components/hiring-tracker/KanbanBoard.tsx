@@ -7,7 +7,7 @@ import { useJobApplications } from "@/hooks/useJobApplications";
 import { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
+import Skeleton from "@/components/ui/skeleton";
 import { toast } from "@/hooks/use-toast";
 import { KanbanColumn } from "./KanbanColumn";
 import { useIsMobile } from "@/hooks/use-mobile";

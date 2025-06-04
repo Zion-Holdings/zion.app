@@ -1,4 +1,4 @@
-import { Server as IOServer } from 'socket.io';
+import { Server as SocketIOServer } from 'socket.io';
 import type { Server as HTTPServer } from 'http';
 import type { NextApiRequest } from 'next'; // Import NextApiRequest for better typing
 
@@ -6,7 +6,7 @@ import type { NextApiRequest } from 'next'; // Import NextApiRequest for better 
 interface NextApiResponseWithSocket {
   socket: {
     server: HTTPServer & {
-      io?: IOServer;
+      io?: SocketIOServer;
     };
   };
   end: (data?: any) => void; // Ensure res.end is properly typed
@@ -19,7 +19,7 @@ export const config = {
 };
 
 // Module-scoped variable to store the IO server instance
-let ioInstance: IOServer | undefined;
+let ioInstance: SocketIOServer | undefined;
 // Flag to ensure 'connection' and other core IO event listeners are attached only once
 let ioListenersAttached = false;
 
@@ -33,8 +33,8 @@ export default function handler(_req: NextApiRequest, res: NextApiResponseWithSo
       console.log('Socket.IO: Reusing existing io instance from httpServer.io.');
       ioInstance = httpServer.io;
     } else {
-      console.log('Socket.IO: Initializing new IOServer...');
-      ioInstance = new IOServer(httpServer, {
+      console.log('Socket.IO: Initializing new SocketIOServer...');
+      ioInstance = new SocketIOServer(httpServer, {
         path: '/api/socket',
         // Example: Add CORS configuration if your client is on a different origin
         // cors: {

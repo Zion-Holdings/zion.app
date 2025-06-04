@@ -19,19 +19,55 @@ interface Slide {
   chartType?: 'bar' | 'funnel' | 'timeline';
 }
 
+// Define InputData interface
+interface InputData {
+  companyMission: string;
+  currentFundingStage: string;
+  visionGoals: string;
+  roundType: string;
+  targetRaiseAmount: string;
+  logos: File | null;
+  photos: File | null;
+}
+
+// Define SyncedData interface
+interface SyncedData {
+  activeUsers30d: string;
+  gmv: string;
+  mrr: string;
+  yoyGrowth: string;
+  totalCompletedProjects: string;
+  globalReach: string;
+  marketplaceConversionFunnel: {
+    visitors: number;
+    signups: number;
+    activeListings: number;
+    completedTransactions: number;
+  };
+  notableClients: { name: string; caseStudyUrl: string }[];
+}
+
+// Define VersionHistoryItem interface
+interface VersionHistoryItem {
+  version: number;
+  savedAt: string; // ISO date string
+  slideCount: number;
+  notes: string;
+}
+
 const PitchGeneratorPage: NextPage = () => {
   const { user, isLoading: loading } = useAuth();
   const router = useRouter();
 
   const [currentStep, setCurrentStep] = useState<'inputs' | 'data' | 'editor'>('inputs');
-  const [inputData, setInputData] = useState<any>(null);
-  const [syncedData, setSyncedData] = useState<any>(null);
+  const [inputData, setInputData] = useState<InputData | null>(null);
+  const [syncedData, setSyncedData] = useState<SyncedData | null>(null);
   const [generatedSlides, setGeneratedSlides] = useState<Slide[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isExporting, setIsExporting] = useState(false);
   const [deckVersion, setDeckVersion] = useState<number>(1);
-  const [versionHistory, setVersionHistory] = useState<any[]>([]);
+  const [versionHistory, setVersionHistory] = useState<VersionHistoryItem[]>([]);
   const [isSavingVersion, setIsSavingVersion] = useState(false);
 
   useEffect(() => {
@@ -44,7 +80,7 @@ const PitchGeneratorPage: NextPage = () => {
 
   useEffect(() => {
     if (user && !syncedData) {
-      const placeholderSyncedData = {
+      const placeholderSyncedData: SyncedData = {
         activeUsers30d: '12,000+',
         gmv: '$1.5M',
         mrr: '$120K',
@@ -128,7 +164,7 @@ const PitchGeneratorPage: NextPage = () => {
         // setVersionHistory(historyData);
 
         await new Promise(resolve => setTimeout(resolve, 500));
-        const mockHistory = [
+        const mockHistory: VersionHistoryItem[] = [
             { version: 1, savedAt: new Date(Date.now() - 100000000).toISOString(), slideCount: 10, notes: "Initial AI draft" },
         ];
         // Sort history descending by version
@@ -153,7 +189,7 @@ const PitchGeneratorPage: NextPage = () => {
   }, [user]);
 
 
-  const handleInputSubmit = (data: any) => {
+  const handleInputSubmit = (data: InputData) => {
     setInputData(data);
     setCurrentStep('data');
   };

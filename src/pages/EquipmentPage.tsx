@@ -10,9 +10,9 @@ import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate, useLocation } from "react-router-dom";
 import useSWRMutation from "swr/mutation";
-import { Skeleton } from "@/components/ui/skeleton";
+import Skeleton from "@/components/ui/skeleton";
 import { useDelayedError } from '@/hooks/useDelayedError';
-import { ErrorBoundary } from "@/components/ErrorBoundary"; // Import ErrorBoundary
+import { ErrorBoundary } from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
 
 // The EQUIPMENT_LISTINGS constant has been removed as it was commented out
 // and the page primarily relies on API calls and dynamic data generation.
