@@ -1,2 +1,2 @@
 // src/components/ui/index.ts
-export { SkeletonCard, Skeleton } from './skeleton'
+export { default as Skeleton, SkeletonCard } from './skeleton';
