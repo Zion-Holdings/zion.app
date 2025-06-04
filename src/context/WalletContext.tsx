@@ -55,6 +55,7 @@ const WalletContext = createContext<WalletContextType | undefined>(undefined);
 // like "Origin <your-domain> not found on Allowlist".
 
 const projectId = import.meta.env.VITE_REOWN_PROJECT_ID || 'YOUR_PROJECT_ID';
+console.log('WalletContext: VITE_REOWN_PROJECT_ID:', import.meta.env.VITE_REOWN_PROJECT_ID, 'Resolved projectId:', projectId);
 
 const metadata = {
   name: 'Zion', // Replace with your project's name
@@ -94,6 +95,12 @@ const appKitInstance: ReownAppKit | null = typeof window !== 'undefined'
       },
     }) as unknown as ReownAppKit)
   : null;
+console.log('WalletContext: appKitInstance created:', appKitInstance);
+if (appKitInstance && typeof appKitInstance.subscribeProvider !== 'function') {
+  console.error('WalletContext: appKitInstance does NOT have a subscribeProvider method!', appKitInstance);
+} else if (!appKitInstance) {
+  console.error('WalletContext: appKitInstance is null after creation attempt.');
+}
 // --- End Reown AppKit Configuration ---
 
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -101,6 +108,12 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   // `useAppKit` returns an object controlling the wallet modal.  Its full type
   // definitions are not available offline, so cast to our minimal interface.
   const appKit = useAppKit() as unknown as ReownAppKit | null; // Hook to interact with AppKit
+  console.log('WalletContext: appKit from useAppKit():', appKit);
+  if (appKit && typeof appKit.subscribeProvider !== 'function') {
+    console.error('WalletContext: appKit from useAppKit() does NOT have a subscribeProvider method!', appKit);
+  } else if (!appKit) {
+    console.error('WalletContext: appKit from useAppKit() is null.');
+  }
 
   const updateWalletState = useCallback(async () => {
     if (appKitInstance?.getState().isConnected && appKit?.getAddress()) {
@@ -134,13 +147,22 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
 
   useEffect(() => {
-    if (appKit) {
+    if (appKit && typeof appKit.subscribeProvider === 'function') {
+      console.log('WalletContext: Subscribing to provider changes.');
       // Initial state update
       updateWalletState();
 
       // Subscribe to AppKit state changes
       const unsubscribe = appKit.subscribeProvider(updateWalletState);
       return () => unsubscribe(); // Cleanup subscription
+    } else {
+      console.error('WalletContext: Skipping appKit.subscribeProvider call because appKit is invalid or subscribeProvider is missing.', appKit);
+      // Optionally, attempt to update state once if appKitInstance is available and seems okay
+      // This might be relevant if useAppKit() is the issue but appKitInstance was fine.
+      if (appKitInstance && typeof appKitInstance.subscribeProvider === 'function' && !appKitInstance.getState().isConnected) {
+        console.log('WalletContext: Attempting initial state update with appKitInstance as fallback.');
+        // This is a speculative fallback, main issue is likely appKit from useAppKit()
+      }
     }
   }, [appKit, updateWalletState]);
 
