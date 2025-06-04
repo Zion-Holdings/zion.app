@@ -337,3 +337,31 @@ npm run build:content
 ```
 
 This keeps the site content up to date and search‑engine optimized using the existing `<SEO>` component on each page.
+
+## Troubleshooting GitHub Codespaces Terminal Issues
+
+If you experience issues with the integrated terminal in GitHub Codespaces (e.g., typed commands not appearing or executing), try the following steps:
+
+1.  **Check `~/.bashrc` (or your shell's equivalent configuration file):**
+    *   Open your user-specific shell configuration file (e.g., `~/.bashrc`, `~/.zshrc`).
+    *   Look for any lines that might include `stty -echo` or similar commands that could suppress terminal output.
+    *   If you find such a line, try commenting it out (by adding a `#` at the beginning of the line) or removing it.
+    *   Save the file and restart your terminal or Codespace.
+
+2.  **Ensure Locales are Correctly Configured:**
+    *   Proper locale settings are important for terminal behavior.
+    *   If you have a `devcontainer.json` file in your repository (usually in a `.devcontainer` directory), consider adding or ensuring the following `onCreateCommand` is present:
+        ```json
+        "onCreateCommand": "sudo apt-get update && sudo apt-get install -y locales && sudo locale-gen en_US.UTF-8"
+        ```
+    *   If you do not have a `devcontainer.json` file, you might need to create one or use the GitHub Codespaces UI to rebuild your Codespace. When rebuilding, look for options to customize setup commands and add the line above.
+    *   After adding this command, you'll need to rebuild your Codespace for the changes to take effect.
+
+3.  **Use the "Terminal (Web)" Extension as a Fallback:**
+    *   If the integrated terminal remains unresponsive after trying the above steps, you can install the "Terminal (Web)" VS Code extension. This extension provides an alternative terminal interface that runs in a web view and can sometimes bypass issues affecting the standard integrated terminal.
+    *   Search for "Terminal (Web)" in the VS Code Extensions view (Ctrl+Shift+X or Cmd+Shift+X) and install it.
+
+4.  **Ensure Shell Integration is Enabled:**
+    *   The project includes a workspace setting to enable shell integration: `.vscode/settings.json` contains `"terminal.integrated.shellIntegration.enabled": true`. This should be applied automatically. If you've overridden this in your user settings, consider reverting to the workspace setting.
+
+Remember to **rebuild your Codespace** after making changes to configurations like `devcontainer.json` for them to apply.
