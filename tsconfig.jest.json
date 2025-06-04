@@ -9,7 +9,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/pages/*": ["./src/pages/*"],
-      "axios": ["./src/lib/axios.ts"]
+      "axios": ["./src/lib/axios.ts"],
+      "next": ["./types/next"],
+      "next/*": ["./types/next/*"]
     },
     // Modified for Jest: removed vite/client, vitest/globals; added jest, @testing-library/jest-dom
     "types": ["jest", "@testing-library/jest-dom", "react", "react-router-dom", "socket.io", "socket.io-client"],
@@ -47,7 +49,8 @@
     "__tests__/**/*.ts",
     "__tests__/**/*.tsx",
     "__tests__/**/*.js",
-    "__tests__/**/*.jsx"
+    "__tests__/**/*.jsx",
+    "types/**/*.d.ts"
   ],
   // "references": [] // Removed references to tsconfig.node.json
   "exclude": [
