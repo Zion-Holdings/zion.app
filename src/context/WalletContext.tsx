@@ -7,7 +7,6 @@ import { createAppKit, useAppKit } from '@reown/appkit/react';
 import { EthersAdapter } from '@reown/appkit-adapter-ethers';
 import { mainnet, polygon, goerli, optimism, arbitrum, base } from '@reown/appkit/networks'; // Import necessary chain objects
 
-
 // Minimal interface describing the AppKit object used in this context.  The
 // real package types are unavailable in the repository, so we declare only the
 // members that WalletContext interacts with.
@@ -24,7 +23,7 @@ interface ReownAppKit {
 
 // Some injected wallet providers implement the EIP-1193 interface but also
 // expose event methods like `on` and `removeListener`. The `ethers` type for
-// `Eip1193Provider` does not include these, so extend the interface locally with
+// `Eip1193Provider` does not include these, so we define a helper interface with
 // optional definitions so we can safely check for them.
 interface Eip1193ProviderWithEvents extends ethers.Eip1193Provider {
   on?: (event: string, listener: (...args: any[]) => void) => void;
