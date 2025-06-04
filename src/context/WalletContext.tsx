@@ -138,9 +138,36 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       // Initial state update
       updateWalletState();
 
-      // Subscribe to AppKit state changes
-      const unsubscribe = appKit.subscribeProvider(updateWalletState);
-      return () => unsubscribe(); // Cleanup subscription
+      // Subscribe to AppKit state changes if the method exists. Older
+      // versions of the SDK exposed `subscribeProvider`, but in some
+      // environments this function is missing. Guard against calling a
+      // non-existent method to prevent runtime errors.
+      const maybeSubscribe = (appKit as Partial<ReownAppKit>).subscribeProvider;
+      let unsubscribe: (() => void) | undefined;
+
+      if (typeof maybeSubscribe === 'function') {
+        unsubscribe = maybeSubscribe(updateWalletState);
+      } else {
+        // Fallback: if the provider supports event listeners, listen for
+        // `accountsChanged` and `chainChanged` events.
+        try {
+          const provider = appKit.getWalletProvider?.() as
+            | ethers.Eip1193Provider
+            | undefined;
+          provider?.on?.('accountsChanged', updateWalletState);
+          provider?.on?.('chainChanged', updateWalletState);
+          unsubscribe = () => {
+            provider?.removeListener?.('accountsChanged', updateWalletState);
+            provider?.removeListener?.('chainChanged', updateWalletState);
+          };
+        } catch {
+          // noop - if provider is unavailable just skip subscription
+        }
+      }
+
+      return () => {
+        if (typeof unsubscribe === 'function') unsubscribe();
+      }; // Cleanup subscription
     }
   }, [appKit, updateWalletState]);
 
