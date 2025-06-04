@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image from "next/image";
+import { OptimizedImage as Image } from "@/components/ui/OptimizedImage";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
