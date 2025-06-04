@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Skeleton } from '@/components/ui/skeleton';
+import Skeleton from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { NotificationItem } from './NotificationItem';
 import { Notification } from '@/context/notifications';

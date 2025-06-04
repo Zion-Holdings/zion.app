@@ -1,6 +1,6 @@
 import { CategoryCard } from "@/components/CategoryCard";
 import { GradientHeading } from "@/components/GradientHeading";
-import { ErrorBoundary } from "@/components/ErrorBoundary"; // Import ErrorBoundary
+import { ErrorBoundary } from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
 import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
 
 // Reusing the categories array from CategoriesSection.tsx

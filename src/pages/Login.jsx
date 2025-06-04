@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { safeStorage } from '@/utils/safeStorage';
 import { LoginContent } from '@/components/auth/login';
-import ErrorBoundary from '@/components/ErrorBoundary';
+import ErrorBoundary from '@/components/GlobalErrorBoundary';
 import { useCart } from '@/context/CartContext';
 import { SAMPLE_EQUIPMENT } from './EquipmentDetail';
 import { toast } from '@/hooks/use-toast';
