@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { ListingScoreCard } from '@/components/ListingScoreCard';
-import { Skeleton } from '@/components/ui/skeleton';
+import Skeleton from '@/components/ui/skeleton';
 import { useDelayedError } from '@/hooks/useDelayedError';
 
 export default function RecommendationsPage() {
