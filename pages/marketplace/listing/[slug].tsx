@@ -1,7 +1,7 @@
 import React from 'react';
 import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import NextHead from '@/components/NextHead';
+import { NextSeo } from '@/components/NextSeo';
 import ProductReviews from '@/components/ProductReviews';
 import type { Product as ProductModel } from '@prisma/client';
 
@@ -83,7 +83,7 @@ const MarketplaceListingPage: React.FC<ListingPageProps> = ({ product, error }) 
 
   return (
     <>
-      <NextHead
+      <NextSeo
         title={product.name}
         description={product.description ?? undefined}
         openGraph={{

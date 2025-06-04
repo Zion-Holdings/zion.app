@@ -3,7 +3,7 @@ import path from 'path';
 import React from 'react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import ReactMarkdown from 'react-markdown';
-import NextHead from '@/components/NextHead';
+import { NextSeo } from '@/components/NextSeo';
 
 interface PageMeta {
   title?: string;
@@ -30,7 +30,7 @@ const StaticPage: React.FC<PageProps> = ({ content, meta }) => {
   }
   return (
     <>
-      <NextHead title={meta?.title} description={meta?.description} />
+      <NextSeo title={meta?.title} description={meta?.description} />
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
         <ReactMarkdown>{content}</ReactMarkdown>
       </main>

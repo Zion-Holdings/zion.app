@@ -1,5 +1,5 @@
 import React from 'react';
-import NextHead from '@/components/NextHead';
+import { NextSeo } from '@/components/NextSeo';
 import { useRouter } from 'next/router';
 // Loader2 removed as TalentProfileSkeleton will be used
 import TalentProfileSkeleton from '@/components/talent/TalentProfileSkeleton';
@@ -72,7 +72,7 @@ const TalentPage: React.FC = () => {
   // If we reach here, talent data is available
   return (
     <>
-      <NextHead
+      <NextSeo
         title={data.name}
         description={data.bio ?? undefined} // Ensure description is string or undefined
         openGraph={{

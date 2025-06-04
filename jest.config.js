@@ -1,11 +1,14 @@
 export default {
-  preset: 'ts-jest/presets/default-esm',
+  preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
-      useESM: true,
-      babelConfig: './babel.config.cjs'
+      babelConfig: true,
+      tsconfig: {
+        isolatedModules: false,
+        jsx: 'react-jsx',
+        sourceMap: true // Changed from inlineSourceMap
+      }
     }],
     '^.+\\.m?js$': 'babel-jest', // Ensure JS files are also processed by Babel
   },
@@ -14,6 +17,7 @@ export default {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
     '^vitest$': '<rootDir>/tests/vitest-mock.ts',
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
   roots: ['<rootDir>/__tests__', '<rootDir>/tests'],
   coverageThreshold: {
