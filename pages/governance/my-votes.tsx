@@ -1,6 +1,6 @@
 // pages/governance/my-votes.tsx
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { useWallet } from '@/context/WalletContext'; // Adjust path
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'; // Adjust path
