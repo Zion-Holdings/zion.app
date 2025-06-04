@@ -13,7 +13,7 @@
       "next": ["./types/next"],
       "next/*": ["./types/next/*"]
     },
-    "types": ["vite/client", "react", "react-router-dom", "socket.io", "socket.io-client", "vitest/globals"],
+    "typeRoots": ["./src/types"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",

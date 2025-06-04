@@ -29,7 +29,7 @@
       "next": ["../types/next"],
       "next/*": ["../types/next/*"]
     },
-    "types": ["vite/client", "react", "react-router-dom"]
+    "typeRoots": ["./src/types"]
   },
   "include": ["src", "pages", "types"]
 }
