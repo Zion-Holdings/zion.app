@@ -19,6 +19,8 @@ interface ReownAppKit {
   getChainId: () => string | number | null | undefined;
   getWalletProvider: () => unknown;
   subscribeProvider: (cb: () => void) => () => void;
+  on?: (event: string, cb: () => void) => void; // Added for alternative event handling
+  off?: (event: string, cb: () => void) => void; // Added for alternative event handling
 }
 
 // Some injected wallet providers implement the EIP-1193 interface but also
@@ -156,21 +158,34 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
 
   useEffect(() => {
-    if (appKit && typeof appKit.subscribeProvider === 'function') {
-      console.log('WalletContext: Subscribing to provider changes.');
-      // Initial state update
-      updateWalletState();
+    console.log('WalletContext: appKit:', appKit);
+    console.log('WalletContext: typeof appKit.subscribeProvider:', typeof appKit?.subscribeProvider);
+    console.log('WalletContext: typeof appKit.on:', typeof appKit?.on);
+    console.log('WalletContext: typeof appKit.off:', typeof appKit?.off);
 
-      // Subscribe to AppKit state changes
+    if (appKit && typeof appKit.subscribeProvider === 'function') {
+      console.log('WalletContext: Using appKit.subscribeProvider for provider changes.');
+      updateWalletState(); // Initial state update
       const unsubscribe = appKit.subscribeProvider(updateWalletState);
-      return () => unsubscribe(); // Cleanup subscription
+      return () => unsubscribe();
+    } else if (appKit && typeof appKit.on === 'function' && typeof appKit.off === 'function') {
+      console.log('WalletContext: Using appKit.on/off for provider changes (event: "providerChanged").');
+      updateWalletState(); // Initial state update
+      appKit.on('providerChanged', updateWalletState);
+      return () => appKit.off?.('providerChanged', updateWalletState); // Use optional chaining for off in case appKit becomes null
     } else {
-      console.error('WalletContext: Skipping appKit.subscribeProvider call because appKit is invalid or subscribeProvider is missing.', appKit);
+      console.error(
+        'WalletContext: Unable to subscribe to provider changes. Neither subscribeProvider nor on/off methods are available or appKit is invalid. appKit keys:',
+        appKit ? Object.keys(appKit) : 'appKit is null'
+      );
       // Optionally, attempt to update state once if appKitInstance is available and seems okay
       // This might be relevant if useAppKit() is the issue but appKitInstance was fine.
       if (appKitInstance && typeof appKitInstance.subscribeProvider === 'function' && !appKitInstance.getState().isConnected) {
-        console.log('WalletContext: Attempting initial state update with appKitInstance as fallback.');
-        // This is a speculative fallback, main issue is likely appKit from useAppKit()
+        console.log('WalletContext: Attempting initial state update with appKitInstance as fallback (subscribeProvider).');
+        // This is a speculative fallback
+      } else if (appKitInstance && typeof appKitInstance.on === 'function' && !appKitInstance.getState().isConnected) {
+        console.log('WalletContext: Attempting initial state update with appKitInstance as fallback (on method).');
+        // This is another speculative fallback
       }
     }
   }, [appKit, updateWalletState]);
