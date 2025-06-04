@@ -3,12 +3,9 @@ export default {
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
-      babelConfig: true,
-      tsconfig: {
-        isolatedModules: false,
-        jsx: 'react-jsx',
-        sourceMap: true // Changed from inlineSourceMap
-      }
+      babelConfig: true, // Re-added: let Babel handle import.meta via its plugin
+      tsconfig: 'tsconfig.json'
+      // AST transformer removed
     }],
     '^.+\\.m?js$': 'babel-jest', // Ensure JS files are also processed by Babel
   },
@@ -19,6 +16,10 @@ export default {
     '^vitest$': '<rootDir>/tests/vitest-mock.ts',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
+  transformIgnorePatterns: [
+    '/node_modules/(?!(@reown/appkit-adapter-ethers|@reown/appkit|@reown/appkit-polyfills|@reown/appkit-controllers|@reown/appkit-common|@reown/appkit-wallet|@reown/appkit-utils|@reown/appkit-scaffold-ui|@reown/appkit-ui|uint8arrays|multiformats|lit|@lit/reactive-element|lit-html|lit-element)/)',
+    "\\.pnp\\.[^\\/]+$"
+  ],
   roots: ['<rootDir>/__tests__', '<rootDir>/tests'],
   coverageThreshold: {
     global: {
