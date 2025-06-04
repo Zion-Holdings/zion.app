@@ -9,7 +9,6 @@ if (!jwtSecret) {
 
 exports.loginUser = async function (req, res, next) {
   console.info('[LOGIN]', req.body.email);
-  console.info('[ENV] JWT_SECRET:', jwtSecret);
   try {
     const email = req.body.email.toLowerCase().trim();
     const user = await User.findOne({ email }).select('+passwordHash');
@@ -19,7 +18,7 @@ exports.loginUser = async function (req, res, next) {
       error.code = 'EMAIL_NOT_FOUND';
       return next(error);
     }
-    const isMatch = bcrypt.compareSync(req.body.password, user.passwordHash);
+    const isMatch = await bcrypt.compare(req.body.password, user.passwordHash);
     if (!isMatch) {
       const error = new Error('Incorrect password');
       error.status = 401;
