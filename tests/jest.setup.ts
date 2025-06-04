@@ -1,3 +1,9 @@
+// Polyfill fetch and enable fetch mocks
+import 'whatwg-fetch';
+import fetchMock from 'jest-fetch-mock';
+fetchMock.enableMocks();
+
+// Jest-DOM matchers
 import '@testing-library/jest-dom';
 import { TextEncoder, TextDecoder } from 'util';
 
@@ -13,6 +19,10 @@ global.TextDecoder = TextDecoder;
 // or that import.meta itself is transformed into an object where 'env' can be populated.
 process.env.VITE_REOWN_PROJECT_ID = 'test_project_id_from_jest_setup';
 
+
+// Jest-axe matchers for accessibility
+import { toHaveNoViolations } from 'jest-axe';
+expect.extend(toHaveNoViolations);
 
 // Mock window.matchMedia for Jest
 Object.defineProperty(window, 'matchMedia', {
