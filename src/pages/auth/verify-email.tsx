@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import { useRouter } from 'next/router'; // For redirection
+import { useNavigate } from 'react-router-dom';
 
 // Ensure these are set in your environment variables
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -17,7 +17,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 const VerifyEmailPage = () => {
   const [status, setStatus] = useState<'verifying' | 'success' | 'error'>('verifying');
   const [message, setMessage] = useState('Verifying your email...');
-  const router = useRouter();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const confirmVerification = async () => {
@@ -61,7 +61,7 @@ const VerifyEmailPage = () => {
         if (response.ok) {
           setStatus('success');
           setMessage(responseData.message || 'Email successfully verified! Redirecting to login...');
-          setTimeout(() => router.push('/login'), 3000);
+          setTimeout(() => navigate('/login'), 3000);
         } else {
           setStatus('error');
           setMessage(responseData.message || 'Failed to finalize email verification in our system. Please try again or contact support.');
@@ -89,7 +89,7 @@ const VerifyEmailPage = () => {
         return () => clearTimeout(timer); // Cleanup timer on unmount
     }
 
-  }, [router]); // router is a dependency for redirection
+  }, [navigate]);
 
   return (
     <div style={{ padding: '20px', textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
@@ -110,7 +110,7 @@ const VerifyEmailPage = () => {
           <div style={{ marginTop: '20px' }}>
             <p style={{ color: 'red', fontWeight: 'bold' }}>❌ Verification Failed</p>
             <button
-              onClick={() => router.push('/login')}
+              onClick={() => navigate('/login')}
               style={{ marginTop: '10px', padding: '10px 15px', cursor: 'pointer', backgroundColor: '#0070f3', color: 'white', border: 'none', borderRadius: '5px' }}
             >
               Go to Login

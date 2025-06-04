@@ -1,6 +1,6 @@
 // pages/governance/create.tsx
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -38,7 +38,7 @@ const proposalSchema = z.object({
 type ProposalFormData = z.infer<typeof proposalSchema>;
 
 const CreateProposalPage: React.FC = () => {
-  const router = useRouter();
+  const navigate = useNavigate();
   // const { user, token } = useAuth(); // Example
   // const { address: walletAddress } = useWallet(); // Example
 
@@ -107,7 +107,7 @@ const CreateProposalPage: React.FC = () => {
       }
 
       const newProposal = await response.json();
-      router.push(`/governance/${newProposal.id}`);
+      navigate(`/governance/${newProposal.id}`);
     } catch (err: any) {
       setApiError(err.message || 'Failed to create proposal.');
       console.error(err);

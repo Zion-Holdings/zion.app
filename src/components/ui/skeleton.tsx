@@ -28,7 +28,7 @@ export const SkeletonCard: React.FC = () => {
         <div className="bg-gray-300 dark:bg-gray-600 h-4 w-1/2 rounded-md" />
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default Skeleton;

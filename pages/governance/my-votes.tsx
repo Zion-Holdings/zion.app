@@ -1,6 +1,6 @@
 // pages/governance/my-votes.tsx
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { useWallet } from '@/context/WalletContext'; // Adjust path
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'; // Adjust path
@@ -87,7 +87,7 @@ const MyVotesPage: React.FC = () => {
         <p>Please connect your wallet to see your voting history.</p>
         <ConnectWalletButton />
         <div className="mt-6">
-            <Link href="/governance" passHref>
+            <Link to="/governance">
               <Button variant="outline">Back to Proposals</Button>
             </Link>
         </div>
@@ -101,7 +101,7 @@ const MyVotesPage: React.FC = () => {
     <div className="container mx-auto p-4 space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
         <h1 className="text-3xl font-bold">My Voting History</h1>
-        <Link href="/governance" passHref>
+        <Link to="/governance">
           <Button variant="outline">Back to Proposals</Button>
         </Link>
       </div>
@@ -128,7 +128,7 @@ const MyVotesPage: React.FC = () => {
             {votes.map((vote) => (
               <TableRow key={vote.id}>
                 <TableCell className="font-medium">
-                  <Link href={`/governance/${vote.proposal.id}`} className="text-blue-600 hover:underline">
+                  <Link to={`/governance/${vote.proposal.id}`} className="text-blue-600 hover:underline">
                     {vote.proposal.title}
                   </Link>
                 </TableCell>
