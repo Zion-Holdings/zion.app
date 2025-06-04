@@ -11,7 +11,7 @@
       "@/pages/*": ["./src/pages/*"],
       "axios": ["./src/lib/axios.ts"]
     },
-    "types": ["vite/client", "react", "react-router-dom", "socket.io", "socket.io-client", "vitest/globals"],
+    "typeRoots": ["./src/types"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",

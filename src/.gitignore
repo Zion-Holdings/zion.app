@@ -3,8 +3,16 @@
 
 # Ignore compiled JavaScript files
 *.js
+
 # Allow PWA event type declarations
 !types/pwa.d.ts
 !types/react-devtools.d.ts
 !types/shoplocket.d.ts
 !types/reown-appkit.d.ts
+!types/next-stubs.d.ts
+!types/react-stubs.d.ts
+!types/react-router-dom.d.ts
+!types/socket.io.d.ts
+!types/vite.d.ts
+!types/lucide-react.d.ts
+!types/stripe.d.ts
