@@ -16,78 +16,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       async (event, session) => {
         const currentUser = session?.user;
         if (currentUser) {
-          // Fetch profile from your backend
           try {
-            const response = await fetch("/api/users/me"); // Adjust API endpoint as needed
+            const response = await fetch("/api/users/me");
             if (!response.ok) {
-              // If the /api/users/me endpoint returns 401, it means the user is not authenticated
-              // or the session is invalid on the backend. In this case, we should clear the local user state.
               if (response.status === 401) {
-                console.warn("User profile fetch returned 401, signing out locally.");
-                await supabase.auth.signOut(); // Clear supabase session too if backend says unauth
+                console.warn("AuthProvider: User profile fetch returned 401 during onAuthStateChange, signing out locally.");
+                await supabase.auth.signOut();
                 setUser(null);
-                setIsLoading(false);
+                // setIsLoading(false); // Moved to finally
                 return;
               }
               throw new Error(`Failed to fetch user profile: ${response.statusText}`);
             }
             const profile = await response.json();
 
-            // Merge Supabase user data with Prisma profile
-            const mergedUser: UserDetails = {
-              id: currentUser.id,
-              email: currentUser.email,
-              // Prefer backend profile data for common fields if they exist
-              displayName: profile.displayName || currentUser.user_metadata?.full_name,
-              avatarUrl: profile.avatarUrl || currentUser.user_metadata?.avatar_url,
-              ...profile, // Data from your Prisma backend (takes precedence for overlapping fields not specified above)
-            };
-            setUser(mergedUser);
-
-            if (mergedUser.profileComplete) {
-              await subscribeToPush();
-            }
-
-          } catch (error) {
-            console.error("Error fetching user profile:", error);
-            // If fetching profile fails, sign out the user to ensure consistent state
-            // This prevents a situation where Supabase has a session but the app can't get user details
-            await supabase.auth.signOut();
-            setUser(null);
-          }
-        } else {
-          setUser(null);
-        }
-        setIsLoading(false);
-      }
-    );
-
-    // Check initial session state on mount
-    const checkSession = async () => {
-      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
-
-      if (sessionError) {
-        console.error("Error getting session:", sessionError);
-        setUser(null);
-        setIsLoading(false);
-        return;
-      }
-
-      if (session) {
-        const currentUser = session.user;
-         try {
-          const response = await fetch("/api/users/me");
-          if (!response.ok) {
-            if (response.status === 401) {
-              // Backend considers user unauthenticated, so clear local session
-              // This can happen if the JWT is valid but the user doesn't exist in DB or other reasons
-              await supabase.auth.signOut();
-              setUser(null);
-            } else {
-              throw new Error(`Failed to fetch user profile on initial load: ${response.statusText}`);
-            }
-          } else {
-            const profile = await response.json();
             const mergedUser: UserDetails = {
               id: currentUser.id,
               email: currentUser.email,
@@ -96,20 +38,99 @@ export function AuthProvider({ children }: { children: ReactNode }) {
               ...profile,
             };
             setUser(mergedUser);
+
             if (mergedUser.profileComplete) {
-              await subscribeToPush();
+              try {
+                await subscribeToPush();
+              } catch (pushError) {
+                console.error("AuthProvider: Failed to subscribe to push notifications during onAuthStateChange:", pushError);
+              }
             }
+
+          } catch (error) {
+            console.error("AuthProvider: Error fetching user profile during onAuthStateChange:", error);
+            // Ensure isLoading is false before potential early return due to signOut failure
+            // It will be set again in finally, but this handles the immediate catch block
+            setIsLoading(false);
+            try {
+              await supabase.auth.signOut();
+            } catch (signOutError) {
+              console.error("AuthProvider: Error during signOut in onAuthStateChange error handler:", signOutError);
+            }
+            setUser(null);
+          } finally {
+            setIsLoading(false);
           }
-        } catch (error) {
-          console.error("Error fetching user profile on initial load:", error);
-          // Fallback: sign out if profile can't be fetched to avoid inconsistent state
-          await supabase.auth.signOut();
+        } else {
+          setUser(null);
+          setIsLoading(false); // Also set loading to false if no current user
+        }
+      }
+    );
+
+    // Check initial session state on mount
+    const checkSession = async () => {
+      setIsLoading(true); // Ensure loading is true at the start of checkSession
+      try {
+        const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+
+        if (sessionError) {
+          console.error("AuthProvider: Error getting session during checkSession:", sessionError);
+          setUser(null);
+          // setIsLoading(false); // Moved to finally
+          return; // Return here as session is critical
+        }
+
+        if (session) {
+          const currentUser = session.user;
+          try {
+            const response = await fetch("/api/users/me");
+            if (!response.ok) {
+              if (response.status === 401) {
+                console.warn("AuthProvider: User profile fetch returned 401 during checkSession, signing out locally.");
+                await supabase.auth.signOut();
+                setUser(null);
+              } else {
+                throw new Error(`Failed to fetch user profile on initial load: ${response.statusText}`);
+              }
+            } else {
+              const profile = await response.json();
+              const mergedUser: UserDetails = {
+                id: currentUser.id,
+                email: currentUser.email,
+                displayName: profile.displayName || currentUser.user_metadata?.full_name,
+                avatarUrl: profile.avatarUrl || currentUser.user_metadata?.avatar_url,
+                ...profile,
+              };
+              setUser(mergedUser);
+              if (mergedUser.profileComplete) {
+                try {
+                  await subscribeToPush();
+                } catch (pushError) {
+                  console.error("AuthProvider: Failed to subscribe to push notifications during checkSession:", pushError);
+                }
+              }
+            }
+          } catch (error) {
+            console.error("AuthProvider: Error fetching user profile on initial load during checkSession:", error);
+            // Ensure isLoading is false before potential early return due to signOut failure
+            setIsLoading(false);
+            try {
+              await supabase.auth.signOut();
+            } catch (signOutError) {
+              console.error("AuthProvider: Error during signOut in checkSession error handler:", signOutError);
+            }
+            setUser(null);
+          }
+        } else {
           setUser(null);
         }
-      } else {
+      } catch (error) { // Catch errors from getSession itself
+        console.error("AuthProvider: Critical error in checkSession (e.g. getSession failed):", error);
         setUser(null);
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
     };
 
     checkSession();
@@ -127,11 +148,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
       // User state and profile fetching will be handled by onAuthStateChange listener
-      // No need to call setIsLoading(false) here as onAuthStateChange will do it
+      // setIsLoading(false) will be handled by onAuthStateChange or its error handlers.
       return { error: null };
     } catch (error: any) {
-      console.error("Sign in error:", error);
-      setIsLoading(false); // Set loading to false on error
+      console.error("AuthProvider: Sign in error:", error);
+      setIsLoading(false); // Ensure loading is false on direct error here
       return { error };
     }
   };
@@ -143,9 +164,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (error) throw error;
       setUser(null); // Explicitly set user to null
     } catch (error: any) {
-      console.error("Sign out error:", error);
+      console.error("AuthProvider: Sign out error:", error);
       // Even if signout fails, try to clear local state
-      setUser(null);
+      setUser(null); // Still attempt to clear local state
     } finally {
       setIsLoading(false);
     }
@@ -193,11 +214,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       // onAuthStateChange will handle setting the user if session starts, or after email confirmation.
       // For immediate UI update for unconfirmed user, you might set parts of user data here,
       // but it's generally better to rely on onAuthStateChange for consistency.
-      setIsLoading(false);
+      // setIsLoading(false) will be handled by onAuthStateChange or its error handlers.
       return { error: null };
     } catch (error: any) {
-      console.error("Sign up error:", error);
-      setIsLoading(false);
+      console.error("AuthProvider: Sign up error:", error);
+      setIsLoading(false); // Ensure loading is false on direct error here
       return { error };
     }
   };
@@ -209,12 +230,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         redirectTo: `${window.location.origin}/auth/update-password`, // Make sure this route exists
       });
       if (error) throw error;
-      setIsLoading(false);
       return { error: null };
     } catch (error: any) {
-      console.error("Reset password error:", error);
-      setIsLoading(false);
+      console.error("AuthProvider: Reset password error:", error);
       return { error };
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -222,6 +243,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(true);
     if (!user || !user.id) {
       setIsLoading(false);
+      console.warn("AuthProvider: updateProfile called without authenticated user.");
       return { error: { message: "User not authenticated" } };
     }
     try {
@@ -253,12 +275,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         ...prevUser,
         ...updatedProfileFromBackend // Backend data takes precedence
       }));
-      setIsLoading(false);
       return { error: null };
     } catch (error: any) {
-      console.error("Update profile error:", error);
-      setIsLoading(false);
+      console.error("AuthProvider: Update profile error:", error);
       return { error };
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -276,8 +298,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       // setIsLoading(false) might not be reached if redirect happens fast.
       // It will be set to false by onAuthStateChange eventually.
     } catch (error: any) {
-      console.error(`${provider} login error:`, error);
-      setIsLoading(false); // Set loading to false on error
+      console.error(`AuthProvider: ${provider} login error:`, error);
+      setIsLoading(false); // Crucial: if signInWithOAuth fails before redirecting
     }
     // No finally block for setIsLoading(false) here due to redirection.
   };
@@ -290,10 +312,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const loginWithWeb3 = async () => {
     setIsLoading(true);
     // This is a placeholder. Real Web3 login needs backend verification.
-    console.log("Web3 login requested - Placeholder Implementation");
+    console.log("AuthProvider: Web3 login requested - Placeholder Implementation");
     const ethereum = (window as any).ethereum;
     if (!ethereum) {
-      console.warn("No wallet detected");
+      console.warn("AuthProvider: No wallet detected for Web3 login");
+      setIsLoading(false);
       return;
     }
     try {
@@ -303,13 +326,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         method: 'personal_sign',
         params: [address, address]
       });
+      // This is a placeholder and insecure. Real Web3 login requires backend verification.
       setUser({
         id: address,
         displayName: address,
-        profileComplete: true
+        profileComplete: true // Assuming basic profile from address
       });
     } catch (err) {
-      console.error('Web3 login failed', err);
+      console.error('AuthProvider: Web3 login failed', err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
