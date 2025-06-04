@@ -1,63 +1,23 @@
-// Minimal Next.js type stubs for non-Next environments
-import React from 'react';
-
-// --- next/link --------------------------------------------------------------
-declare module 'next/link' {
-  export interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-    href: string;
-  }
-  const Link: React.FC<LinkProps>;
-  export default Link;
+declare module 'next/router' {
+  export function useRouter(): any;
 }
 
-// --- next/head --------------------------------------------------------------
 declare module 'next/head' {
-  const Head: React.FC<{ children?: React.ReactNode }>;
+  import * as React from 'react';
+  const Head: React.FC<React.PropsWithChildren<Record<string, any>>>;
   export default Head;
 }
 
-// --- next/router ------------------------------------------------------------
-declare module 'next/router' {
-  interface Router {
-    pathname: string;
-    push(url: string): void;
-  }
-  export function useRouter(): Router;
-}
-
-// --- next/image -------------------------------------------------------------
-declare module 'next/image' {
-  export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-    src: string;
-    width?: number;
-    height?: number;
-    priority?: boolean;
-  }
-  const Image: React.FC<ImageProps>;
-  export default Image;
-}
-
-// --- next static/ssr helpers ------------------------------------------------
 declare module 'next' {
-  export type GetStaticPaths = () => Promise<{
-    paths: { params: Record<string, string> }[];
-    fallback: boolean | 'blocking';
-  }>;
-
-  export type GetStaticProps<P> = (context: {
-    params?: Record<string, any>;
-  }) => Promise<{
-    props?: P;
-    notFound?: boolean;
-    redirect?: any;
-    revalidate?: number | boolean;
-  }>;
-
-  export type GetServerSideProps<P> = (context: {
-    params?: Record<string, any>;
-  }) => Promise<{
-    props?: P;
-    notFound?: boolean;
-    redirect?: any;
-  }>;
+  import * as React from 'react';
+  export interface NextApiRequest { [key: string]: any }
+  export interface NextApiResponse<T = any> {
+    status: (statusCode: number) => NextApiResponse<T>;
+    json: (body: any) => NextApiResponse<T>;
+    end: () => void;
+  }
+  export type NextPage<P = {}, IP = P> = React.FC<P>;
+  export type GetStaticProps<P = any, Params = any> = (context: any) => Promise<{ props: P }>;
+  export type GetStaticPaths = (context: any) => Promise<{ paths: any[]; fallback: boolean | 'blocking' }>;
+  export type GetServerSideProps<P = any, Params = any> = (context: any) => Promise<{ props: P }>;
 }
