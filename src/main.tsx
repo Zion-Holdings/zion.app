@@ -1,5 +1,3 @@
-console.log("main.tsx: Script start");
-console.log("main.tsx: Start");
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
@@ -146,4 +144,3 @@ document.addEventListener(
   },
   true,
 );
-console.log("main.tsx: Script end");

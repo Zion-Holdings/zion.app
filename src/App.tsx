@@ -1,4 +1,3 @@
-console.log("App.tsx: Script start");
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
@@ -156,8 +155,6 @@ const baseRoutes = [
 ];
 
 const App = () => {
-  console.log("App.tsx: App component rendering");
-  console.log("App.tsx: Start");
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
   const location = useLocation();
