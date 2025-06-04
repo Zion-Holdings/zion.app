@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_NETLIFY_SITE_ID_PLACEHOLDER/deploy-status)](https://app.netlify.com/sites/YOUR_NETLIFY_SITE_NAME_PLACEHOLDER/deploys)
+<!-- IMPORTANT: Please replace YOUR_NETLIFY_SITE_ID_PLACEHOLDER and YOUR_NETLIFY_SITE_NAME_PLACEHOLDER with your actual Netlify site ID and name. -->
+
 # Welcome to the project
 [![codecov](https://codecov.io/gh/<org>/<repo>/branch/main/graph/badge.svg)](https://codecov.io/gh/<org>/<repo>)
 
@@ -120,7 +123,7 @@ The primary backend is a Django application located in the `/backend` directory.
 2.  Create a Python virtual environment and activate it:
     ```sh
     python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    source venv/bin/activate  # On Windows use `venv\Scriptsctivate`
     ```
 3.  Install Python dependencies:
     ```sh
