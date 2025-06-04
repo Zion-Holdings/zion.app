@@ -21,6 +21,15 @@ interface ReownAppKit {
   subscribeProvider: (cb: () => void) => () => void;
 }
 
+// Some injected wallet providers implement the EIP-1193 interface but also
+// expose event methods like `on` and `removeListener`. The `ethers` type for
+// `Eip1193Provider` does not include these, so extend the interface locally with
+// optional definitions so we can safely check for them.
+interface Eip1193ProviderWithEvents extends ethers.Eip1193Provider {
+  on?: (event: string, listener: (...args: any[]) => void) => void;
+  removeListener?: (event: string, listener: (...args: any[]) => void) => void;
+}
+
 // Define the shape of the wallet state and context
 interface WalletState {
   provider: ethers.BrowserProvider | null; // Updated to BrowserProvider for ethers v6
@@ -105,13 +114,13 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const updateWalletState = useCallback(async () => {
     if (appKitInstance?.getState().isConnected && appKit?.getAddress()) {
       const currentAddress = appKit.getAddress();
-      const currentChainId = appKit.getChainId();
-      const currentProvider = appKit.getWalletProvider();
+        const currentChainId = appKit.getChainId();
+        const currentProvider = appKit.getWalletProvider();
 
       if (currentAddress && currentChainId && currentProvider) {
         try {
           const ethersProvider = new ethers.BrowserProvider(
-            currentProvider as ethers.Eip1193Provider
+            currentProvider as Eip1193ProviderWithEvents
           );
           const ethersSigner = await ethersProvider.getSigner();
           setWallet({
@@ -152,7 +161,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         // `accountsChanged` and `chainChanged` events.
         try {
           const provider = appKit.getWalletProvider?.() as
-            | ethers.Eip1193Provider
+            | Eip1193ProviderWithEvents
             | undefined;
           provider?.on?.('accountsChanged', updateWalletState);
           provider?.on?.('chainChanged', updateWalletState);
