@@ -9,16 +9,16 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/pages/*": ["./src/pages/*"],
-      "axios": ["./src/lib/axios.ts"],
-      "next": ["./types/next"],
-      "next/*": ["./types/next/*"]
+      "axios": ["./src/lib/axios.ts"]
     },
-    "typeRoots": ["./src/types"],
+    // "typeRoots": ["./src/types"], // Keeping this commented for now
+    "types": ["vite/client", "jest", "vitest/globals", "react", "react-dom"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true, // Added this
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -30,6 +30,6 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "pages", "src/types"],
+  "include": ["src", "src/types"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

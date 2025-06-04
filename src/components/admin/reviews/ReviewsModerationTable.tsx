@@ -196,7 +196,6 @@ export function ReviewsModerationTable({
               <TableCell>
                 <Badge
                   variant="outline"
-                  className={`${getStatusColor(review.status as ReviewStatus)}`}
                 >
                   {review.status.charAt(0).toUpperCase() + review.status.slice(1)}
                 </Badge>
@@ -299,7 +298,7 @@ export function ReviewsModerationTable({
                         ? "Anonymous"
                         : selectedReview.reviewer_profile?.display_name || "User"}
                     </div>
-                    <Badge variant="outline" className={getStatusColor(selectedReview.status as ReviewStatus)}>
+                    <Badge variant="outline">
                       {selectedReview.status}
                     </Badge>
                   </div>
@@ -332,7 +331,6 @@ export function ReviewsModerationTable({
                   {selectedReview.would_work_again !== undefined && (
                     <Badge
                       variant={selectedReview.would_work_again ? "default" : "secondary"}
-                      className={selectedReview.would_work_again ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"}
                     >
                       {selectedReview.would_work_again ? "Would work again" : "Would not work again"}
                     </Badge>
