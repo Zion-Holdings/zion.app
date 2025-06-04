@@ -11,3 +11,8 @@
 !types/reown-appkit.d.ts
 !types/next.d.ts
 !types/import-meta-env.d.ts
+!types/react.d.ts
+!types/react-dom.d.ts
+!types/jest.d.ts
+!types/vite/client.d.ts
+!types/vitest/globals.d.ts
