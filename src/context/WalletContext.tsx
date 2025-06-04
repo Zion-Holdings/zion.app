@@ -152,7 +152,13 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         // `accountsChanged` and `chainChanged` events.
         try {
           const provider = appKit.getWalletProvider?.() as
-            | ethers.Eip1193Provider
+            | (ethers.Eip1193Provider & {
+                on?: (event: string, listener: (...args: any[]) => void) => void;
+                removeListener?: (
+                  event: string,
+                  listener: (...args: any[]) => void,
+                ) => void;
+              })
             | undefined;
           provider?.on?.('accountsChanged', updateWalletState);
           provider?.on?.('chainChanged', updateWalletState);
