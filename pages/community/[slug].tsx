@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'; // Removed useEffect
 import { NextSeo } from '@/components/NextSeo';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import EmptyState from '@/components/community/EmptyState';
