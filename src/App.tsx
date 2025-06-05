@@ -34,6 +34,7 @@ import EquipmentPage from './pages/EquipmentPage';
 import EquipmentDetail from './pages/EquipmentDetail';
 import Analytics from './pages/Analytics';
 import MobileLaunchPage from './pages/MobileLaunchPage';
+import AboutPage from './pages/About';
 import CommunityPage from './pages/CommunityPage';
 import { CommunityProvider } from './context';
 import Categories from './pages/Categories';
@@ -86,6 +87,7 @@ import PrivateRoute from './components/PrivateRoute';
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/about', element: <AboutPage /> },
   // { path: '/categories/all', element: <AllCategoriesPage /> },
   // { path: '/match', element: <AIMatcherPage /> },
   // { path: '/login', element: <Login /> },
@@ -167,13 +169,13 @@ const App = () => {
                   {/* Test routes for error boundaries - END */}
                   <Route path="/auth/*" element={<PageTransition><AuthRoutes /></PageTransition>} />
                   {/* <Route path="/dashboard/*" element={<PageTransition><DashboardRoutes /></PageTransition>} /> */}
-                  {/* <Route path="/marketplace/*" element={<PageTransition><MarketplaceRoutes /></PageTransition>} /> */}
+                  <Route path="/marketplace/*" element={<PageTransition><MarketplaceRoutes /></PageTransition>} />
                   {/* <Route path="/talent/*" element={<PageTransition><TalentRoutes /></PageTransition>} /> */}
                   {/* <Route path="/admin/*" element={<PageTransition><AdminRoutes /></PageTransition>} /> */}
                   {/* <Route path="/mobile/*" element={<PageTransition><MobileAppRoutes /></PageTransition>} /> */}
                   {/* <Route path="/content/*" element={<PageTransition><ContentRoutes /></PageTransition>} /> */}
                   {/* <Route path="/enterprise/*" element={<PageTransition><EnterpriseRoutes /></PageTransition>} /> */}
-                  {/* <Route path="/community/*" element={<PageTransition><CommunityProvider><CommunityRoutes /></CommunityProvider></PageTransition>} /> */}
+                  <Route path="/community/*" element={<PageTransition><CommunityProvider><CommunityRoutes /></CommunityProvider></PageTransition>} />
                   {/* <Route path="/developers/*" element={<PageTransition><DeveloperRoutes /></PageTransition>} /> */}
                   {/* <Route path="*" element={<PageTransition><ErrorRoutes /></PageTransition>} /> */}
                 </Routes>
