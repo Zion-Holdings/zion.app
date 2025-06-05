@@ -1,13 +1,12 @@
 let isLocalStorageAvailable = true;
 const isDevelopment = process.env.NODE_ENV !== 'production';
 const localStorageMemoryStore: { [key: string]: string } = {};
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 export const safeStorage = {
   getItem: (key: string): string | null => {
     if (isDevelopment) {
-      console.log(
-        `safeStorage.getItem: Attempting to get item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`
-      );
+      console.log(`safeStorage.getItem: Attempting to get item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
     }
     if (!isLocalStorageAvailable) {
       if (isDevelopment) {
@@ -28,9 +27,7 @@ export const safeStorage = {
   },
   setItem: (key: string, value: string) => {
     if (isDevelopment) {
-      console.log(
-        `safeStorage.setItem: Attempting to set item "${key}" with value "${value}". isLocalStorageAvailable: ${isLocalStorageAvailable}`
-      );
+      console.log(`safeStorage.setItem: Attempting to set item "${key}" with value "${value}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
     }
     if (!isLocalStorageAvailable) {
       if (isDevelopment) {
@@ -52,9 +49,7 @@ export const safeStorage = {
   },
   removeItem: (key: string) => {
     if (isDevelopment) {
-      console.log(
-        `safeStorage.removeItem: Attempting to remove item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`
-      );
+      console.log(`safeStorage.removeItem: Attempting to remove item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
     }
     if (!isLocalStorageAvailable) {
       if (isDevelopment) {
@@ -85,6 +80,7 @@ const sessionStorageMemoryStore: { [key: string]: string } = {};
 export const safeSessionStorage = {
   getItem: (key: string): string | null => {
     if (isDevelopment) {
+      console.log(`safeSessionStorage.getItem: Attempting to get item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
       console.log(
         `safeSessionStorage.getItem: Attempting to get item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`
       );
@@ -108,9 +104,7 @@ export const safeSessionStorage = {
   },
   setItem: (key: string, value: string) => {
     if (isDevelopment) {
-      console.log(
-        `safeSessionStorage.setItem: Attempting to set item "${key}" with value "${value}". isSessionStorageAvailable: ${isSessionStorageAvailable}`
-      );
+      console.log(`safeSessionStorage.setItem: Attempting to set item "${key}" with value "${value}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
     }
     if (!isSessionStorageAvailable) {
       if (isDevelopment) {
@@ -132,9 +126,7 @@ export const safeSessionStorage = {
   },
   removeItem: (key: string) => {
     if (isDevelopment) {
-      console.log(
-        `safeSessionStorage.removeItem: Attempting to remove item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`
-      );
+      console.log(`safeSessionStorage.removeItem: Attempting to remove item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
     }
     if (!isSessionStorageAvailable) {
       if (isDevelopment) {
