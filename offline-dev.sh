@@ -149,7 +149,7 @@ EOF
 echo "Type declarations have been set up."
 
 # Create a simple server for offline development
-cat > offline-dev.js << 'EOF'
+cat > offline-dev.cjs << 'EOF'
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -273,7 +273,7 @@ This will install all required dependencies and start the normal development ser
 
 - `src/types/offline-shims.d.ts` - TypeScript declarations for libraries
 - `offline.html` - Simple HTML page for the offline server
-- `offline-dev.js` - Node.js server script for offline mode
+- `offline-dev.cjs` - Node.js server script for offline mode
 - `tsconfig.offline.json` - Modified TypeScript config for offline development
 - `OFFLINE-DEV-README.md` - This documentation file
 
@@ -281,4 +281,4 @@ These files will be automatically cleaned up when you run `./setup.sh npm` to re
 EOF
 
 echo "Starting offline development server..."
-node offline-dev.js
+node offline-dev.cjs
