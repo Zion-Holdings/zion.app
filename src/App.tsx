@@ -172,7 +172,7 @@ const App = () => {
                   <Route path="/marketplace/*" element={<PageTransition><MarketplaceRoutes /></PageTransition>} />
                   {/* <Route path="/talent/*" element={<PageTransition><TalentRoutes /></PageTransition>} /> */}
                   {/* <Route path="/admin/*" element={<PageTransition><AdminRoutes /></PageTransition>} /> */}
-                  {/* <Route path="/mobile/*" element={<PageTransition><MobileAppRoutes /></PageTransition>} /> */}
+                  <Route path="/mobile/*" element={<PageTransition><MobileAppRoutes /></PageTransition>} />
                   {/* <Route path="/content/*" element={<PageTransition><ContentRoutes /></PageTransition>} /> */}
                   {/* <Route path="/enterprise/*" element={<PageTransition><EnterpriseRoutes /></PageTransition>} /> */}
                   <Route path="/community/*" element={<PageTransition><CommunityProvider><CommunityRoutes /></CommunityProvider></PageTransition>} />

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
-import { useWallet as useAppWallet } from "@/context/WalletContext"; // Renamed to avoid conflict if useWallet hook is defined locally
+import { useWallet as useAppWallet } from "../../../context/WalletContext.tsx"; // Renamed to avoid conflict if useWallet hook is defined locally
 import { Wallet } from "lucide-react";
 import { toast } from "sonner";
 
