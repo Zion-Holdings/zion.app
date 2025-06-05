@@ -9,11 +9,14 @@ import esTranslation from './locales/es/translation.json';
 import ptTranslation from './locales/pt/translation.json';
 import arTranslation from './locales/ar/translation.json';
 
-// Initialize i18next
-i18n
-  .use(LanguageDetector) // Detect user language
-  .use(initReactI18next) // Initialize react-i18next
-  .init({
+if (!i18n) {
+  console.error("CRITICAL: i18next failed to import. Internationalization will not work.");
+} else {
+  // Initialize i18next
+  i18n
+    .use(LanguageDetector) // Detect user language
+    .use(initReactI18next) // Initialize react-i18next
+    .init({
     resources: {
       en: {
         translation: enTranslation
@@ -44,18 +47,19 @@ i18n
     // This helps prevent an unhandled promise rejection if init fails.
   });
 
-// For RTL language support
-document.documentElement.dir = i18n.dir();
-
-// Listen for language changes to update RTL/LTR direction
-i18n.on('languageChanged', (lng) => {
+  // For RTL language support
   document.documentElement.dir = i18n.dir();
 
-  // Save language preference to localStorage
-  safeStorage.setItem('i18n_lang', lng);
-  
-  // If user is authenticated, save language preference to profile
-  // This will be implemented in the LanguageContext
-});
+  // Listen for language changes to update RTL/LTR direction
+  i18n.on('languageChanged', (lng) => {
+    document.documentElement.dir = i18n.dir();
+
+    // Save language preference to localStorage
+    safeStorage.setItem('i18n_lang', lng);
+
+    // If user is authenticated, save language preference to profile
+    // This will be implemented in the LanguageContext
+  });
+}
 
 export default i18n;
