@@ -8,7 +8,9 @@ interface PrivateRouteProps {
 }
 
 export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
-  const { user, isLoading, isAuthenticated } = useContext(AuthContext) ?? { user: null, isLoading: false, isAuthenticated: false } as any;
+  const auth = useContext(AuthContext);
+  const { user, isLoading, isAuthenticated } =
+    auth ?? { user: null, isLoading: false, isAuthenticated: false };
   const location = useLocation();
 
   if (isLoading) {

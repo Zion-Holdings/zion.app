@@ -5,6 +5,9 @@ declare module 'react-router-dom' {
   export const Routes: any;
   export const Route: any;
   export const Link: any;
+  export const NavLink: any;
+  export const Navigate: any;
+  export const Outlet: any;
   export function useNavigate(): any;
   export function useLocation(): any;
   export function useParams(): any;
