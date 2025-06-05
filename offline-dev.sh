@@ -121,7 +121,7 @@ cat > offline.html << 'EOF'
     </div>
     
     <p>
-      <a href="#" class="button" onclick="checkOnlineStatus()">Check Online Status</a>
+      <a href="javascript:void(0)" class="button" onclick="checkOnlineStatus()">Check Online Status</a>
     </p>
     
     <div class="info">
