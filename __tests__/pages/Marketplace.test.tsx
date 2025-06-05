@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Marketplace from '@/pages/Marketplace';
+import { WalletProvider } from '../../src/context/WalletContext';
 
 // Mock child components
 jest.mock('@/components/search/EnhancedSearchInput', () => {
@@ -175,5 +176,60 @@ describe('Marketplace Page', () => {
       // As a fallback, check if the empty state message is shown because listings will be empty
       expect(screen.getByText(/Marketplace Currently Empty/i)).toBeInTheDocument();
     });
+  });
+
+  it('renders product listings correctly when wrapped with WalletProvider and API returns data', async () => {
+    const mockProducts = [
+      { id: '1', title: 'Test Product 1', description: 'Desc 1', category: 'Service', price: 100, images: ['img1.jpg'], rating: 4.5, tags: ['tag1'], averageRating: 4.5, merchant: { id: 'merchant1', name: 'Merchant 1' } },
+      { id: '2', title: 'Test Product 2', description: 'Desc 2', category: 'Software', price: 200, images: ['img2.jpg'], rating: 4.0, tags: ['tag2'], averageRating: 4.0, merchant: { id: 'merchant2', name: 'Merchant 2' } },
+    ];
+
+    (global.fetch as jest.Mock).mockImplementationOnce(() =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockProducts),
+      })
+    );
+
+    render(
+      <MemoryRouter>
+        <WalletProvider> {/* Wrap Marketplace with WalletProvider */}
+          <Marketplace />
+        </WalletProvider>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByText(/AI & Tech Marketplace/i)).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.getByText(/Test Product 1/i)).toBeInTheDocument();
+      expect(screen.getByText(/Test Product 2/i)).toBeInTheDocument();
+      expect(screen.getAllByTestId('product-listing-card')).toHaveLength(2);
+    });
+    expect(global.fetch).toHaveBeenCalledWith('/api/products');
+  });
+
+  it('renders empty state correctly when wrapped with WalletProvider and API returns no products', async () => {
+    (global.fetch as jest.Mock).mockImplementationOnce(() =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve([]),
+      })
+    );
+
+    render(
+      <MemoryRouter>
+        <WalletProvider> {/* Wrap Marketplace with WalletProvider */}
+          <Marketplace />
+        </WalletProvider>
+      </MemoryRouter>
+    );
+
+    expect(screen.getByText(/AI & Tech Marketplace/i)).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.getByText(/Marketplace Currently Empty/i)).toBeInTheDocument();
+    });
+    expect(global.fetch).toHaveBeenCalledWith('/api/products');
   });
 });
