@@ -39,12 +39,18 @@ jobs:
           SERVE_PID=$!
           sleep 5
           kill $SERVE_PID
-      - run: npm run test -- --coverage
+      - name: Run Vitest with Coverage
+        run: npx vitest run --coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          files: coverage/lcov.info
-          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/coverage-final.json
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage
 
       - name: Validate Production Domain in Allowlist
         run: |
