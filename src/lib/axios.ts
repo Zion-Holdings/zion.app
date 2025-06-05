@@ -15,8 +15,8 @@ type FulfilledFn = (value: any) => any | Promise<any>;
 type RejectedFn = (error: any) => any | Promise<any>;
 
 class InterceptorManager {
-  handlers: { fulfilled?: FulfilledFn; rejected?: RejectedFn }[] = [];
-  use(fulfilled?: FulfilledFn, rejected?: RejectedFn) {
+  handlers: ({ fulfilled?: FulfilledFn; rejected?: RejectedFn } | null)[] = [];
+  use(fulfilled?: FulfilledFn, rejected?: RejectedFn): number {
     this.handlers.push({ fulfilled, rejected });
     return this.handlers.length - 1;
   }
