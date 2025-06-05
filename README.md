@@ -215,6 +215,12 @@ When tests run on GitHub Actions, the workflow uploads the `coverage` directory
 using `actions/upload-artifact@v4`. Visit a workflow run and download the
 `coverage-report` artifact to retrieve the generated HTML coverage report.
 
+### Playwright HTML Report
+
+When Playwright tests run in CI, the report is published to GitHub Pages via the
+`Deploy Playwright Report` workflow. Enable GitHub Pages for the `gh-pages`
+branch (root folder `/`) to view the latest results.
+
 ### Accessibility Audit
 
 Run automated accessibility checks with:
