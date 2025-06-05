@@ -54,6 +54,7 @@
     "@reown/appkit": "latest",
     "@reown/appkit-adapter-ethers": "latest",
     "@sendgrid/mail": "^8.1.5",
+    "@sentry/react": "^9.26.0",
     "@stripe/react-stripe-js": "^3.7.0",
     "@stripe/stripe-js": "^7.3.1",
     "@supabase/supabase-js": "^2.39.3",
