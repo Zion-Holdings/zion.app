@@ -40,8 +40,11 @@ jobs:
         env:
           TEST_USER_EMAIL: ${{ secrets.CYPRESS_TEST_USER_EMAIL }}
           TEST_USER_PASSWORD: ${{ secrets.CYPRESS_TEST_USER_PASSWORD }}
-          TEST_USER_DISPLAY_NAME: ${{ secrets.CYPRESS_TEST_USER_DISPLAY_NAME }}
-      - uses: actions/upload-artifact@v3
+          TEST_USER_DISPLAY_NAME: ${{ secrets.CYPRESS_TEST_USER_DISPLAY_NA
+          VITE_REOWN_PROJECT_ID: ${{ secrets.VITE_REOWN_PROJECT_ID_CI }}
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL_CI }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY_CI }}
+      - uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: coverage

@@ -84,6 +84,16 @@ This project utilizes a modern, multi-component architecture:
     cp .env.example .env
     ```
 2.  Update the `.env` file with your actual credentials and configuration values for services like Stripe, SendGrid, and database connections.
+
+    **Critically, the following environment variables MUST be set correctly for the application to start:**
+
+    *   `VITE_REOWN_PROJECT_ID`: Your project ID from cloud.reown.com.
+    *   `VITE_SUPABASE_URL`: Your Supabase project URL.
+    *   `VITE_SUPABASE_ANON_KEY`: Your Supabase project anonymous (public) key.
+
+    **If these variables are not defined, are left empty, or retain their placeholder values from `.env.example`, the application will display an error and will not load.** This is to prevent runtime issues and blank pages due to missing critical configurations.
+
+    Follow the specific instructions below for `VITE_REOWN_PROJECT_ID`:
     *   **Note:** Configure your database connection in the root `.env` file. The Django settings (likely in `backend/django_backend/settings.py`) typically use `dj_database_url` to parse a `DATABASE_URL` (e.g., `postgresql://user:password@host:port/dbname`), or may use individual variables like `DB_HOST`, `DB_NAME`, etc.
 
 3.  Create a project on [cloud.reown.com](https://cloud.reown.com) for Reown AppKit.
