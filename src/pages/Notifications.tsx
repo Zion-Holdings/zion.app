@@ -33,6 +33,10 @@ const getNotificationIcon = (type: NotificationType, className: string = "h-5 w-
       return <Settings className={cn(className, "text-zion-cyan")} />;
     case 'system':
       return <AlertCircle className={cn(className, "text-yellow-500")} />;
+    case 'project_update':
+      return <Briefcase className={cn(className, "text-indigo-400")} />;
+    case 'milestone_complete':
+      return <CheckCircle className={cn(className, "text-green-500")} />;
     default:
       return <Bell className={cn(className, "text-gray-500")} />;
   }
@@ -52,6 +56,10 @@ const getNotificationTypeBadge = (type: NotificationType) => {
       return <Badge className="bg-zion-cyan">Onboarding</Badge>;
     case 'system':
       return <Badge className="bg-yellow-500">System</Badge>;
+    case 'project_update':
+      return <Badge className="bg-indigo-500">Project</Badge>;
+    case 'milestone_complete':
+      return <Badge className="bg-green-500">Milestone</Badge>;
     default:
       return <Badge variant="outline">Notification</Badge>;
   }

@@ -166,13 +166,13 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     if (!currentAppKit) {
       // If appKit is not available (e.g., invalid project ID), ensure state reflects this
       setWallet(prev => ({
-        ...initialWalletState, // Reset to initial
-        isWalletSystemAvailable: false, // Explicitly false
+        ...initialWalletState,
+        isWalletSystemAvailable: false,
       }));
       return;
     }
 
-    if (currentAppKit?.getState().isConnected && currentAppKit?.getAddress()) {
+    if (currentAppKit.getState().isConnected && currentAppKit.getAddress()) {
       const currentAddress = currentAppKit.getAddress();
       const currentChainId = currentAppKit.getChainId();
       const currentProvider = currentAppKit.getWalletProvider();

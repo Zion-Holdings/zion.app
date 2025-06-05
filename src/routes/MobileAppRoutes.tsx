@@ -15,9 +15,9 @@ const MobileAppRoutes = () => {
     <Routes>
       {/* Mobile App Routes */}
       <Route path="/mobile" element={<MobileHome />} />
-      <Route path="/mobile/browse" element={<MobileBrowse />} />
+      <Route path="/mobile/marketplace" element={<MobileBrowse />} />
+      <Route path="/mobile/community" element={<MobileMessages />} />
       <Route path="/mobile/projects" element={<MobileProjects />} />
-      <Route path="/mobile/inbox" element={<MobileMessages />} />
       <Route path="/mobile/job-post" element={<MobileJobPost />} />
       <Route path="/mobile/resume-builder" element={<MobileResumeBuilder />} />
       <Route path="/mobile/onboarding" element={<MobileOnboarding />} />
