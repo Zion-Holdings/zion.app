@@ -50,7 +50,7 @@ const initialWalletState: WalletState = {
   isWalletSystemAvailable: false, // Initialize as false
 };
 
-const WalletContext = createContext<WalletContextType | undefined>(undefined);
+export const WalletContext = createContext<WalletContextType | undefined>(undefined);
 
 
 // Known default/fallback project IDs that indicate the wallet system should be considered unavailable
