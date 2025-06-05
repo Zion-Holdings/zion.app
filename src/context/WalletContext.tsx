@@ -42,35 +42,61 @@ const initialWalletState: WalletState = {
 
 const WalletContext = createContext<WalletContextType | undefined>(undefined);
 
-// --- Reown AppKit Configuration ---
+// --- End Reown AppKit Configuration ---
 
-// The project ID is provided via Vite environment variables. Set
-// VITE_REOWN_PROJECT_ID in your `.env` file with the value from
-// cloud.reown.com. If the ID is missing, the SDK will throw an error
-// like "Origin <your-domain> not found on Allowlist".
-import { getAppKitProjectId } from '@/config/env';
+export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  console.log('WalletProvider: Initializing...');
+  const [wallet, setWallet] = useState<WalletState>(initialWalletState);
+  const [appKitInstance, setAppKitInstance] = useState<AppKitInstanceInterface | null>(null);
 
 const projectId = getAppKitProjectId();
 
-const metadata = {
-  name: 'Zion', // Replace with your project's name
-  description: 'Zion Finance Platform', // Replace with your project's description
-  url: typeof window !== 'undefined' ? window.location.origin : 'https://example.com', // Dynamic URL or placeholder
-  icons: ['https://avatars.githubusercontent.com/u/37784886'], // Replace with your project's icon URLs
-};
+      const metadata = {
+        name: 'Zion', // Replace with your project's name
+        description: 'Zion Finance Platform', // Replace with your project's description
+        url: window.location.origin, // Dynamic URL
+        icons: ['https://avatars.githubusercontent.com/u/37784886'], // Replace with your project's icon URLs
+      };
 
-const ZION_CHAIN_MAP: Record<number, any> = {
-    1: mainnet,
-    5: goerli, // Common testnet, assuming ZION_TOKEN_NETWORK_ID might be this
-    137: polygon,
-    // Add other chains supported by your ZION_TOKEN_NETWORK_ID or dApp
-    // Example:
-    // 10: optimism,
-    // 42161: arbitrum,
-    // 8453: base,
-};
+      const ZION_CHAIN_MAP: Record<number, any> = {
+        1: mainnet,
+        5: goerli, // Common testnet, assuming ZION_TOKEN_NETWORK_ID might be this
+        137: polygon,
+        // Add other chains supported by your ZION_TOKEN_NETWORK_ID or dApp
+        // Example:
+        // 10: optimism,
+        // 42161: arbitrum,
+        // 8453: base,
+      };
 
-const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
+      const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
+
+      const instance = createAppKit({
+        adapters: [
+          new EthersAdapter({
+            ethers, // pass the ethers library instance
+            // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
+          }),
+        ],
+        networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
+        defaultNetwork: targetNetwork,
+        projectId,
+        metadata,
+        features: {
+          analytics: false, // Optional: enable analytics
+          // ... other features like swaps, onramp if needed
+        },
+      });
+      console.log('WalletContext: appKitInstance created:', instance);
+      if (instance && typeof instance.subscribeProvider !== 'function') {
+        console.error('WalletContext: instance does NOT have a subscribeProvider method!', instance);
+      } else if (!instance) {
+        console.error('WalletContext: instance is null after creation attempt.');
+      }
+      setAppKitInstance(instance);
+      // --- End Reown AppKit Configuration ---
+    }
+  }, []); // Empty dependency array ensures this runs once on mount (client-side)
 
 let appKitInstance: AppKitInstanceInterface | null = null;
 
@@ -111,7 +137,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const updateWalletState = useCallback(async () => {
     const currentAppKit = appKitInstance;
 
-    if (currentAppKit?.getState().isConnected && currentAppKit?.getAddress()) {
+    if (appKitInstance?.getState().isConnected && appKitInstance?.getAddress()) {
       const currentAddress = currentAppKit.getAddress();
       const currentChainId = currentAppKit.getChainId();
       const currentProvider = currentAppKit.getWalletProvider();
@@ -188,10 +214,12 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         );
       }
     }
+
   }, []); // appKitInstance is module-level
 
   const disconnectWallet = useCallback(async () => {
     const actionKit = appKitInstance;
+
     if (actionKit?.getState().isConnected) {
       try {
         await actionKit.disconnect();
@@ -201,7 +229,9 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         captureException(error);
       }
     }
+
   }, []); // appKitInstance is module-level
+
 
   const displayAddress = wallet.address
     ? `${wallet.address.substring(0, 6)}...${wallet.address.substring(wallet.address.length - 4)}`

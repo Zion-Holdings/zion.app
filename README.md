@@ -415,3 +415,26 @@ If you experience issues with the integrated terminal in GitHub Codespaces (e.g.
     *   The project includes a workspace setting to enable shell integration: `.vscode/settings.json` contains `"terminal.integrated.shellIntegration.enabled": true`. This should be applied automatically. If you've overridden this in your user settings, consider reverting to the workspace setting.
 
 Remember to **rebuild your Codespace** after making changes to configurations like `devcontainer.json` for them to apply.
+
+## Testing Stripe Payments
+
+To test the Stripe checkout flow without using real credit cards, you can use Stripe's test card numbers.
+
+### Common Test Card Numbers:
+
+*   **Visa (Successful Payment):** `4242 4242 4242 4242` (Any future date, any 3-digit CVC)
+*   **Mastercard (Successful Payment):** `5555 5555 5555 5555` (Any future date, any 3-digit CVC)
+*   **American Express (Successful Payment):** `3782 8282 8282 8282` (Any future date, any 4-digit CVC)
+*   **Card Declined:** Use a card number that typically results in a decline, e.g., one ending in `0000` as per Stripe docs for specific decline reasons if needed. For a generic decline, `4000 0000 0000 0000` might work depending on Stripe's test environment setup.
+
+### Important Notes:
+
+*   **Expiration Date:** Use any valid future expiration date (e.g., 12/30).
+*   **CVC/CVV:** Use any random 3-digit number (or 4-digit for Amex).
+*   **Name on Card:** Any name can be used.
+
+For a comprehensive list of test cards, including cards for specific scenarios (e.g., insufficient funds, fraud warnings), please refer to the official Stripe documentation:
+[Stripe Testing Documentation](https://stripe.com/docs/testing)
+
+**Reminder for `/checkout-test` route:**
+Ensure that a dummy product with a $1 price has been created in your Stripe account's **test mode**. The `priceId` for this product must be updated in the `pages/checkout-test/index.tsx` file.
