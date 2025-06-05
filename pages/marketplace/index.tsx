@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/AllCategoriesPage';
+export { default } from '../../src/pages/Marketplace';
