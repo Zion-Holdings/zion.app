@@ -12,6 +12,8 @@
       "@/components/*": ["./src/components/*"],
       "axios": ["./src/lib/axios.ts"]
     },
+      
+    "types": ["vite/client", "react", "socket.io", "socket.io-client", "vitest/globals", "next", "next/types/global"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
