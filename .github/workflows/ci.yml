@@ -33,6 +33,12 @@ jobs:
             echo "Build failed: dist folder not found"
             exit 1
           fi
+      - name: Verify asset paths
+        run: |
+          npx serve out/ --cors --single -l 5000 &
+          SERVE_PID=$!
+          sleep 5
+          kill $SERVE_PID
       - run: npm run test -- --coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
