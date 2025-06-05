@@ -166,48 +166,53 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     if (!currentAppKit) {
       // If appKit is not available (e.g., invalid project ID), ensure state reflects this
       setWallet(prev => ({
-        ...initialWalletState, // Reset to initial
-        isWalletSystemAvailable: false, // Explicitly false
+        ...initialWalletState,
+        isWalletSystemAvailable: false,
       }));
       return;
     }
 
-    if (currentAppKit?.getState().isConnected && currentAppKit?.getAddress()) {
+    if (currentAppKit.getState().isConnected && currentAppKit.getAddress()) {
       const currentAddress = currentAppKit.getAddress();
       const currentChainId = currentAppKit.getChainId();
       const currentProvider = currentAppKit.getWalletProvider();
 
-    if (state.isConnected && state.address && state.provider && state.chainId) {
-      try {
-        const ethersProvider = new ethers.BrowserProvider(
-          state.provider as Eip1193ProviderWithEvents // state.provider should be the EIP-1193 provider
-        );
-        const ethersSigner = await ethersProvider.getSigner();
-        setWallet(prev => ({
-          ...prev,
-          provider: ethersProvider,
-          signer: ethersSigner,
-          address: state.address,
-          chainId: Number(state.chainId),
-          isConnected: true,
-          isWalletSystemAvailable: true, // System is available and connected
-        }));
-      } catch (error) {
-        captureException(error);
-        console.error('WalletContext: Error getting signer or updating wallet state:', error);
-        // AppKit exists, but failed to get signer or other error
+      if (currentAddress && currentChainId && currentProvider) {
+        try {
+          const ethersProvider = new ethers.BrowserProvider(
+            currentProvider as Eip1193ProviderWithEvents
+          );
+          const ethersSigner = await ethersProvider.getSigner();
+          setWallet(prev => ({
+            ...prev,
+            provider: ethersProvider,
+            signer: ethersSigner,
+            address: currentAddress,
+            chainId: Number(currentChainId),
+            isConnected: true,
+            isWalletSystemAvailable: true,
+          }));
+        } catch (error) {
+          captureException(error);
+          console.error('WalletContext: Error getting signer or updating wallet state:', error);
+          setWallet(prev => ({
+            ...initialWalletState,
+            isConnected: false,
+            isWalletSystemAvailable: true,
+          }));
+        }
+      } else {
         setWallet(prev => ({
           ...initialWalletState,
-          isConnected: false, // Not connected due to error
-          isWalletSystemAvailable: true, // AppKit itself is still available
+          isConnected: false,
+          isWalletSystemAvailable: true,
         }));
       }
     } else {
-      // Not connected or essential info missing
       setWallet(prev => ({
         ...initialWalletState,
-        isConnected: false, // Explicitly not connected
-        isWalletSystemAvailable: true, // AppKit is available, just not connected
+        isConnected: false,
+        isWalletSystemAvailable: true,
       }));
     }
   }, []); // appKitRef.current is stable, updateWalletState is memoized.
