@@ -1,8 +1,7 @@
-
-import React from "react";
-import ApiDocsLayout from "@/components/developers/ApiDocsLayout";
-import { CodeBlock } from "@/components/developers/CodeBlock";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import React from 'react';
+import ApiDocsLayout from '@/components/developers/ApiDocsLayout';
+import { CodeBlock } from '@/components/developers/CodeBlock';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export function ApiSampleCode() {
   // JavaScript example with Axios
@@ -245,22 +244,27 @@ main();`;
     <ApiDocsLayout>
       <div className="max-w-3xl prose prose-invert">
         <h1>Sample Code</h1>
-        
+
         <p>
-          The following code examples demonstrate how to integrate with the Zion AI Marketplace API
-          using different programming languages and libraries.
+          The following code examples demonstrate how to integrate with the Zion
+          AI Marketplace API using different programming languages and
+          libraries.
         </p>
 
         <h2>Authentication</h2>
         <p>
-          All API requests require authentication using API keys. Make sure to include your API key
-          in the Authorization header as shown in the examples below.
+          All API requests require authentication using API keys. Make sure to
+          include your API key in the Authorization header as shown in the
+          examples below.
         </p>
-        
+
         <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-md p-4 my-6">
-          <h3 className="text-yellow-500 text-sm font-medium mt-0">Security Warning</h3>
+          <h3 className="text-yellow-500 text-sm font-medium mt-0">
+            Security Warning
+          </h3>
           <p className="text-sm text-yellow-300/90 mb-0">
-            Never include your API key directly in client-side code. These examples are intended for server-side usage only.
+            Never include your API key directly in client-side code. These
+            examples are intended for server-side usage only.
           </p>
         </div>
 
@@ -273,29 +277,66 @@ main();`;
           </TabsList>
           <TabsContent value="javascript">
             <p>Using Axios with JavaScript:</p>
-            <CodeBlock code={jsAxiosExample} language="javascript" showLineNumbers={true} />
+            <CodeBlock
+              code={jsAxiosExample}
+              language="javascript"
+              showLineNumbers={true}
+            />
           </TabsContent>
           <TabsContent value="python">
             <p>Using requests with Python:</p>
-            <CodeBlock code={pythonExample} language="python" showLineNumbers={true} />
+            <CodeBlock
+              code={pythonExample}
+              language="python"
+              showLineNumbers={true}
+            />
           </TabsContent>
           <TabsContent value="node">
             <p>Using fetch with Node.js:</p>
-            <CodeBlock code={nodeFetchExample} language="javascript" showLineNumbers={true} />
+            <CodeBlock
+              code={nodeFetchExample}
+              language="javascript"
+              showLineNumbers={true}
+            />
           </TabsContent>
         </Tabs>
 
         <h2>Using the Examples</h2>
         <p>
-          To use these examples, you'll need to replace 'YOUR_API_KEY' with your actual API key,
-          which you can generate in the <a href="/developers/portal" className="text-zion-cyan">Developer Portal</a>.
+          To use these examples, you'll need to replace 'YOUR_API_KEY' with your
+          actual API key, which you can generate in the{' '}
+          <a href="/developers/portal" className="text-zion-cyan">
+            Developer Portal
+          </a>
+          .
         </p>
-        
+
         <h2>Additional Resources</h2>
         <ul>
-          <li>Download our <a href="#" className="text-zion-cyan">Postman Collection</a> for easy API testing</li>
-          <li>Check out our <a href="#" className="text-zion-cyan">GitHub repository</a> for more code examples</li>
-          <li>Join our <a href="#" className="text-zion-cyan">Developer Discord</a> for community support</li>
+          <li>
+            Download our{' '}
+            <a href="/postman-collection.json" className="text-zion-cyan">
+              Postman Collection
+            </a>{' '}
+            for easy API testing
+          </li>
+          <li>
+            Check out our{' '}
+            <a
+              href="https://github.com/zion-marketplace"
+              className="text-zion-cyan"
+            >
+              GitHub repository
+            </a>{' '}
+            for more code examples
+          </li>
+          <li>
+            Join our{' '}
+            <a href="https://discord.gg/ziontech" className="text-zion-cyan">
+              Developer Discord
+            </a>{' '}
+            for community support
+          </li>
         </ul>
       </div>
     </ApiDocsLayout>
