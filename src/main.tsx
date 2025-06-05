@@ -1,5 +1,7 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
+import 'normalize.css';
+import { Global, css } from '@emotion/react';
 
 // Integrate axe-core accessibility auditing in development
 // if (process.env.NODE_ENV !== 'production') {
@@ -74,6 +76,18 @@ try {
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
+      <Global
+        styles={css`
+          * {
+            box-sizing: border-box;
+          }
+          body {
+            font-family: 'Inter', sans-serif;
+            color: var(--foreground);
+            background-color: var(--background);
+          }
+        `}
+      />
       <RootErrorBoundary>
         <Provider store={store}>
           <GlobalSnackbarProvider>
