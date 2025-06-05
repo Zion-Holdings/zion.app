@@ -8,11 +8,23 @@ export function FooterNewsletter() {
   const [email, setEmail] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [emailError, setEmailError] = useState('');
   const { toast } = useToast();
+
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (honeypot) return; // ignore bots
+
+    const trimmedEmail = email.trim();
+    if (!EMAIL_REGEX.test(trimmedEmail)) {
+      setEmailError("Please enter a valid email address.");
+      return;
+    } else {
+      setEmailError("");
+    }
+
     setIsSubmitting(true);
     try {
       const res = await fetch('/api/subscribe', {
@@ -24,6 +36,7 @@ export function FooterNewsletter() {
       if (res.ok) {
         toast.success('Subscribed!');
         setEmail('');
+        setEmailError('');
       } else {
         const data = await res.json().catch(() => ({}));
         toast.error(data.error || 'Subscription failed');
@@ -43,11 +56,12 @@ export function FooterNewsletter() {
       <Input
         type="email"
         placeholder="Enter your email"
-        className="flex-grow bg-zion-blue-light text-black border-zion-purple/20 focus:border-zion-purple focus:ring-zion-purple"
+        className="flex-grow bg-zion-blue-light text-black border-zion-purple/20 focus:border-zion-purple focus:ring-zion-purple placeholder-opacity-50 placeholder:text-center"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
       />
+      {emailError && <p className="text-red-500 text-sm mt-1">{emailError}</p>}
       {/* Honeypot field */}
       <input
         type="text"
