@@ -439,3 +439,22 @@ For a comprehensive list of test cards, including cards for specific scenarios (
 
 **Reminder for `/checkout-test` route:**
 Ensure that a dummy product with a $1 price has been created in your Stripe account's **test mode**. The `priceId` for this product must be updated in the `pages/checkout-test/index.tsx` file.
+
+## Running Smoke Tests
+
+To run the pre-deploy smoke tests locally, first ensure the application is built and served:
+
+1.  Build the application:
+    ```bash
+    npm run build
+    ```
+2.  Serve the application from the `out` directory on port 5000:
+    ```bash
+    npx serve out/ -s -l 5000
+    ```
+3.  In a new terminal window, run the smoke tests:
+    ```bash
+    npm run smoke:test
+    ```
+
+Make sure your `cypress.config.ts` has `baseUrl: 'http://localhost:5000'` for local execution against the served build.
