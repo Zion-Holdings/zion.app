@@ -1,7 +1,7 @@
 import { FooterNewsletter } from "@/components/FooterNewsletter";
 import { Twitter, Linkedin, Facebook, Instagram, Github } from "lucide-react";
 import { Link } from "react-router-dom";
-import config from "../../../config/default.json";
+import config from "../config/default.json";
 
 export function Footer() {
   return (
