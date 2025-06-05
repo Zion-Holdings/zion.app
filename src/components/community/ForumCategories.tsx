@@ -8,7 +8,7 @@ import {
   Code,
   FileText,
   Megaphone
-} from "@/components/icons";
+} from "lucide-react";
 import { ForumCategory, ForumCategoryInfo } from "@/types/community";
 
 const categories: ForumCategoryInfo[] = [

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 // Use the shared icon wrapper
-import { Bell } from '@/components/icons';
+import { Bell } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { useNotifications } from '@/context/notifications/NotificationContext';

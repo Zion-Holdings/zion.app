@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
-import { Wallet } from "@/components/icons";
+import { Wallet } from "lucide-react";
 import { toast } from "sonner";
 
 export function Web3Login() {
