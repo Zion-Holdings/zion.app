@@ -3,6 +3,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
+import eslintConfigPrettier from "eslint-config-prettier";
 
 const projectRoot = import.meta.dirname;
 const tsPluginDef = { "@typescript-eslint": tseslint.plugin };
@@ -240,5 +241,6 @@ export default tseslint.config(
   {
       files: ["src/pages/auth/verify-email.tsx"],
       rules: { "no-undef": "off" }
-  }
+  },
+  eslintConfigPrettier
 );
