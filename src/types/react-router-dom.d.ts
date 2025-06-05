@@ -7,6 +7,7 @@ declare module 'react-router-dom' {
   export const Link: any;
   export const NavLink: any;
   export const Navigate: any;
+  export const MemoryRouter: any;
   export const Outlet: any;
   export function useNavigate(): any;
   export function useLocation(): any;
