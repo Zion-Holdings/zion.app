@@ -30,6 +30,10 @@ jobs:
           files: coverage/lcov.info
           fail_ci_if_error: true
       - run: npm run cypress:run
+        env:
+          TEST_USER_EMAIL: ${{ secrets.CYPRESS_TEST_USER_EMAIL }}
+          TEST_USER_PASSWORD: ${{ secrets.CYPRESS_TEST_USER_PASSWORD }}
+          TEST_USER_DISPLAY_NAME: ${{ secrets.CYPRESS_TEST_USER_DISPLAY_NAME }}
       - uses: actions/upload-artifact@v4
         with:
           name: coverage-report
