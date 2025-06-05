@@ -103,18 +103,30 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   console.log('WalletProvider: Initializing...');
   const [wallet, setWallet] = useState<WalletState>(initialWalletState);
   // `useAppKit` now returns AppKitInstanceInterface | null due to updated .d.ts
-  const appKit = useAppKit(); // Hook to interact with AppKit
-  console.log('WalletContext: appKit from useAppKit():', appKit);
-  if (appKit && typeof appKit.subscribeProvider !== 'function') {
-    // This error should ideally not appear if AppKitInstanceInterface is correctly implemented by useAppKit's return value
-    console.error('WalletContext: appKit from useAppKit() does NOT have a subscribeProvider method (post-type update)!', appKit);
-  } else if (!appKit) {
-    console.warn('WalletContext: appKit from useAppKit() is null.'); // Changed to warn as it can be null initially
-  }
+  // const appKit = useAppKit(); // Hook to interact with AppKit
+  // console.log('WalletContext [Investigation]: appKit from useAppKit() raw value:', appKit);
+  // if (appKit) {
+  //   console.log('WalletContext [Investigation]: typeof appKit:', typeof appKit);
+  //   console.log('WalletContext [Investigation]: appKit properties:', Object.keys(appKit).join(', '));
+  //   console.log('WalletContext [Investigation]: appKit.subscribeProvider type:', typeof appKit.subscribeProvider);
+  //   console.log('WalletContext [Investigation]: appKit.on type:', typeof appKit.on);
+  //   console.log('WalletContext [Investigation]: appKit.off type:', typeof appKit.off);
+  //   console.log('WalletContext [Investigation]: appKit.open type:', typeof appKit.open);
+  //   console.log('WalletContext [Investigation]: appKit.getState type:', typeof appKit.getState);
+  // } else {
+  //   console.log('WalletContext [Investigation]: appKit from useAppKit() is null or undefined.');
+  // }
+  // console.log('WalletContext: appKit from useAppKit():', appKit);
+  // if (appKit && typeof appKit.subscribeProvider !== 'function') {
+  //   // This error should ideally not appear if AppKitInstanceInterface is correctly implemented by useAppKit's return value
+  //   console.error('WalletContext: appKit from useAppKit() does NOT have a subscribeProvider method (post-type update)!', appKit);
+  // } else if (!appKit) {
+  //   console.warn('WalletContext: appKit from useAppKit() is null.'); // Changed to warn as it can be null initially
+  // }
 
   const updateWalletState = useCallback(async () => {
     // Prefer using appKit from useAppKit() if available and connected
-    const currentAppKit = appKit || appKitInstance; // Fallback to appKitInstance if appKit from hook is null
+    const currentAppKit = appKitInstance; // Fallback to appKitInstance if appKit from hook is null
 
     if (currentAppKit?.getState().isConnected && currentAppKit?.getAddress()) {
       const currentAddress = currentAppKit.getAddress();
@@ -146,12 +158,12 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       // Not connected, reset
       setWallet(initialWalletState);
     }
-  }, [appKit, appKitInstance]); // Added appKitInstance due to its usage as fallback
+  }, [appKitInstance]); // Added appKitInstance due to its usage as fallback
 
 
   useEffect(() => {
     // Prioritize appKit from useAppKit() for subscriptions
-    const targetAppKit = appKit || appKitInstance; // Use appKit from hook if available, else appKitInstance
+    const targetAppKit = appKitInstance; // Use appKit from hook if available, else appKitInstance
     console.log('WalletContext: useEffect using targetAppKit:', targetAppKit ? 'instance available' : 'no instance');
 
     if (targetAppKit && typeof targetAppKit.subscribeProvider === 'function') {
@@ -180,7 +192,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         'WalletContext: Unable to subscribe to provider changes. appKit (from useAppKit) and appKitInstance are null or invalid.'
       );
     }
-  }, [appKit, appKitInstance, updateWalletState]); // appKitInstance added to dependency array
+  }, [appKitInstance, updateWalletState]); // appKitInstance added to dependency array
 
 
   const connectWallet = useCallback(async () => {
@@ -189,7 +201,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     // appKitInstance is created with createAppKit and is passed to the context.
     // Let's assume appKit (from useAppKit) is also capable of 'open', or prefer appKitInstance if it's distinct.
     // The current code uses 'appKit' from useAppKit() for 'open'.
-    const modalController = appKit || appKitInstance; // Prefer appKit from hook, fallback to instance
+    const modalController = appKitInstance; // Prefer appKit from hook, fallback to instance
     if (!modalController) {
       captureException(new Error('AppKit not initialized in connectWallet (modalController is null)'));
       return;
@@ -209,12 +221,12 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         );
       }
     }
-  }, [appKit]);
+  }, [appKitInstance]);
 
   const disconnectWallet = useCallback(async () => {
     // Similar to connectWallet, decide which appKit instance is for actions.
     // appKitInstance is currently used.
-    const actionKit = appKitInstance || appKit; // Prefer appKitInstance for direct actions if it's the configured one.
+    const actionKit = appKitInstance; // Prefer appKitInstance for direct actions if it's the configured one.
     if (actionKit?.getState().isConnected) {
       try {
         await actionKit.disconnect();
@@ -223,7 +235,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         captureException(error);
       }
     }
-  }, [appKit, appKitInstance]); // appKit and appKitInstance added
+  }, [appKitInstance]); // appKit and appKitInstance added
 
   const displayAddress = wallet.address
     ? `${wallet.address.substring(0, 6)}...${wallet.address.substring(wallet.address.length - 4)}`
