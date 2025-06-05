@@ -153,10 +153,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }
   }, [isProjectIdValid, rawProjectId]); // Dependencies as per subtask
 
-  // const [wallet, setWallet] = useState<WalletState>({
-  // ...initialWalletState,
-  // isWalletSystemAvailable will be updated by the useEffect above
-  // });
+  const [wallet, setWallet] = useState<WalletState>(initialWalletState);
 
   // Removed commented out useAppKit related code and console logs.
 
@@ -164,53 +161,63 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const currentAppKit = appKitRef.current;
 
     if (!currentAppKit) {
-      // If appKit is not available (e.g., invalid project ID), ensure state reflects this
       setWallet(prev => ({
-        ...initialWalletState, // Reset to initial
-        isWalletSystemAvailable: false, // Explicitly false
+        ...initialWalletState,
+        isWalletSystemAvailable: false,
       }));
       return;
     }
 
-    if (currentAppKit?.getState().isConnected && currentAppKit?.getAddress()) {
+    if (currentAppKit.getState().isConnected && currentAppKit.getAddress()) {
       const currentAddress = currentAppKit.getAddress();
       const currentChainId = currentAppKit.getChainId();
       const currentProvider = currentAppKit.getWalletProvider();
 
-    if (state.isConnected && state.address && state.provider && state.chainId) {
-      try {
-        const ethersProvider = new ethers.BrowserProvider(
-          state.provider as Eip1193ProviderWithEvents // state.provider should be the EIP-1193 provider
-        );
-        const ethersSigner = await ethersProvider.getSigner();
-        setWallet(prev => ({
-          ...prev,
-          provider: ethersProvider,
-          signer: ethersSigner,
-          address: state.address,
-          chainId: Number(state.chainId),
-          isConnected: true,
-          isWalletSystemAvailable: true, // System is available and connected
-        }));
-      } catch (error) {
-        captureException(error);
-        console.error('WalletContext: Error getting signer or updating wallet state:', error);
-        // AppKit exists, but failed to get signer or other error
+      // New logic block starts
+      // Ensure all necessary details are present from AppKit
+      if (currentProvider && currentAddress && currentChainId !== undefined) {
+        try {
+          const ethersProvider = new ethers.BrowserProvider(
+            currentProvider as Eip1193ProviderWithEvents // Use currentProvider from AppKit
+          );
+          const ethersSigner = await ethersProvider.getSigner();
+          setWallet(prev => ({
+            ...prev,
+            provider: ethersProvider,
+            signer: ethersSigner,
+            address: currentAddress, // Use currentAddress from AppKit
+            chainId: Number(currentChainId), // Use currentChainId from AppKit
+            isConnected: true,
+            isWalletSystemAvailable: true,
+          }));
+        } catch (error) {
+          captureException(error);
+          console.error('WalletContext: Error getting signer or updating wallet state:', error);
+          setWallet(prev => ({
+            ...initialWalletState,
+            isConnected: false,
+            isWalletSystemAvailable: true, // AppKit exists, connection failed
+          }));
+        }
+      } else {
+        // AppKit is connected (or getState().isConnected was true) but didn't provide all necessary details
+        console.warn('WalletContext: AppKit reported connected, but essential details (provider, address, or chainId) are missing.');
         setWallet(prev => ({
           ...initialWalletState,
-          isConnected: false, // Not connected due to error
-          isWalletSystemAvailable: true, // AppKit itself is still available
+          isConnected: false,
+          isWalletSystemAvailable: true, // AppKit is available
         }));
       }
+      // New logic block ends
     } else {
-      // Not connected or essential info missing
+      // This is the outer else, for when currentAppKit.getState().isConnected is false
       setWallet(prev => ({
         ...initialWalletState,
-        isConnected: false, // Explicitly not connected
+        isConnected: false,
         isWalletSystemAvailable: true, // AppKit is available, just not connected
       }));
     }
-  }, []); // appKitRef.current is stable, updateWalletState is memoized.
+  }, []);
 
   useEffect(() => {
     const targetAppKit = appKitRef.current;
