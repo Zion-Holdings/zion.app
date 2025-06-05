@@ -24,8 +24,14 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const { count: favoritesCount } = useFavorites();
-  const { items } = useCart();
-  const cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
+  let cartCount = 0;
+  try {
+    const { items } = useCart(); // Attempt to use the cart
+    cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
+  } catch (error) {
+    console.warn("MobileBottomNav: useCart() failed, defaulting cartCount to 0. Error:", error);
+    // cartCount remains 0
+  }
 
   const navItems = [
     {
