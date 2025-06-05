@@ -1,5 +1,5 @@
 // src/context/WalletContext.tsx
-import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect, useRef } from 'react';
 import { ethers } from 'ethers';
 import { captureException } from '@/utils/sentry';
 import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
@@ -23,6 +23,7 @@ export interface WalletState { // Added export
   address: string | null;
   chainId: number | null;
   isConnected: boolean;
+  isWalletSystemAvailable: boolean; // New state for wallet system availability
 }
 
 export interface WalletContextType extends WalletState { // Added export
@@ -38,18 +39,47 @@ const initialWalletState: WalletState = {
   address: null,
   chainId: null,
   isConnected: false,
+  isWalletSystemAvailable: false, // Initialize as false
 };
 
 const WalletContext = createContext<WalletContextType | undefined>(undefined);
 
-// --- End Reown AppKit Configuration ---
+
+// Known default/fallback project IDs that indicate the wallet system should be considered unavailable
+const KNOWN_INVALID_PROJECT_IDS = [
+  'YOUR_PROJECT_ID', // Common placeholder
+  'dummy',
+  'fallback',
+  // Add any other known default/placeholder IDs
+];
+
+// --- Reown AppKit Configuration ---
 
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   console.log('WalletProvider: Initializing...');
   const [wallet, setWallet] = useState<WalletState>(initialWalletState);
   const [appKitInstance, setAppKitInstance] = useState<AppKitInstanceInterface | null>(null);
 
-const projectId = getAppKitProjectId();
+
+const rawProjectId = getAppKitProjectId();
+console.log('WalletContext: Resolved rawProjectId from getAppKitProjectId():', rawProjectId);
+
+// Check if the project ID is valid
+const isProjectIdValid = rawProjectId && !KNOWN_INVALID_PROJECT_IDS.includes(rawProjectId);
+
+if (!isProjectIdValid) {
+  console.warn(
+    `WalletContext: Invalid or placeholder project ID detected: "${rawProjectId}". Wallet system will be unavailable.`
+  );
+}
+
+const metadata = {
+  name: 'Zion', // Replace with your project's name
+  description: 'Zion Finance Platform', // Replace with your project's description
+  url: typeof window !== 'undefined' ? window.location.origin : 'https://example.com', // Dynamic URL or placeholder
+  icons: ['https://avatars.githubusercontent.com/u/37784886'], // Replace with your project's icon URLs
+};
+
 
       const metadata = {
         name: 'Zion', // Replace with your project's name
@@ -120,22 +150,83 @@ if (projectId) {
       })
     : null;
 
-  if (appKitInstance && typeof appKitInstance.subscribeProvider !== 'function') {
-    console.error('WalletContext: Critical - appKitInstance created but lacks subscribeProvider method.', appKitInstance);
-  } else if (!appKitInstance && typeof window !== 'undefined') {
-    console.error('WalletContext: Critical - appKitInstance is null after creation attempt, even though window is defined and projectId is present.');
-  }
-} else {
-  console.error('WalletContext: Critical - projectId is missing. AppKit initialization skipped.');
-}
+
+const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
+
 
 // --- End Reown AppKit Configuration ---
 
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [wallet, setWallet] = useState<WalletState>(initialWalletState);
+
+  console.log('WalletProvider: Initializing...');
+  const appKitRef = useRef<AppKitInstanceInterface | null>(null);
+
+  // Initialize appKitInstance only once and if projectId is valid
+  useEffect(() => {
+    if (typeof window !== 'undefined' && isProjectIdValid && !appKitRef.current) {
+      try {
+        appKitRef.current = createAppKit({
+          adapters: [
+            new EthersAdapter({
+              ethers, // pass the ethers library instance
+            }),
+          ],
+          networks: [targetNetwork],
+          defaultNetwork: targetNetwork,
+          projectId: rawProjectId, // Use the validated projectId
+          metadata,
+          features: {
+            analytics: false,
+          },
+        });
+        console.log('WalletContext: appKitInstance created successfully:', appKitRef.current);
+        // Update wallet state to reflect that the system is available
+        setWallet(prev => ({ ...prev, isWalletSystemAvailable: !!appKitRef.current }));
+      } catch (error) {
+        console.error('WalletContext: Error creating appKitInstance:', error);
+        captureException(error);
+        appKitRef.current = null; // Ensure it's null on failure
+        setWallet(prev => ({ ...prev, isWalletSystemAvailable: false }));
+      }
+    } else if (typeof window === 'undefined') {
+      console.log('WalletContext: SSR environment, AppKit not initialized.');
+      setWallet(prev => ({ ...prev, isWalletSystemAvailable: false }));
+    } else if (!isProjectIdValid) {
+      console.warn('WalletContext: AppKit not initialized due to invalid project ID.');
+      setWallet(prev => ({ ...prev, isWalletSystemAvailable: false }));
+    }
+  }, []); // Run once on mount
+
+  const [wallet, setWallet] = useState<WalletState>({
+    ...initialWalletState,
+    // isWalletSystemAvailable will be updated by the useEffect above
+  });
+
+  // `useAppKit` now returns AppKitInstanceInterface | null due to updated .d.ts
+  // const appKit = useAppKit(); // Hook to interact with AppKit
+  // console.log('WalletContext [Investigation]: appKit from useAppKit() raw value:', appKit);
+  // if (appKit) {
+  //   console.log('WalletContext [Investigation]: typeof appKit:', typeof appKit);
+  //   console.log('WalletContext [Investigation]: appKit properties:', Object.keys(appKit).join(', '));
+  //   console.log('WalletContext [Investigation]: appKit.subscribeProvider type:', typeof appKit.subscribeProvider);
+  //   console.log('WalletContext [Investigation]: appKit.on type:', typeof appKit.on);
+  //   console.log('WalletContext [Investigation]: appKit.off type:', typeof appKit.off);
+  //   console.log('WalletContext [Investigation]: appKit.open type:', typeof appKit.open);
+  //   console.log('WalletContext [Investigation]: appKit.getState type:', typeof appKit.getState);
+  // } else {
+  //   console.log('WalletContext [Investigation]: appKit from useAppKit() is null or undefined.');
+  // }
+  // console.log('WalletContext: appKit from useAppKit():', appKit);
+  // if (appKit && typeof appKit.subscribeProvider !== 'function') {
+  //   // This error should ideally not appear if AppKitInstanceInterface is correctly implemented by useAppKit's return value
+  //   console.error('WalletContext: appKit from useAppKit() does NOT have a subscribeProvider method (post-type update)!', appKit);
+  // } else if (!appKit) {
+  //   console.warn('WalletContext: appKit from useAppKit() is null.'); // Changed to warn as it can be null initially
+  // }
 
   const updateWalletState = useCallback(async () => {
-    const currentAppKit = appKitInstance;
+    const currentAppKit = appKitRef.current;
+
 
     if (appKitInstance?.getState().isConnected && appKitInstance?.getAddress()) {
       const currentAddress = currentAppKit.getAddress();
@@ -148,97 +239,133 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
             currentProvider as Eip1193ProviderWithEvents
           );
           const ethersSigner = await ethersProvider.getSigner();
-          setWallet({
+          setWallet(prev => ({
+            ...prev,
             provider: ethersProvider,
             signer: ethersSigner,
             address: currentAddress,
-            chainId: Number(currentChainId), // Ensure chainId is a number
+            chainId: Number(currentChainId),
             isConnected: true,
-          });
+            isWalletSystemAvailable: !!currentAppKit, // System is available if appKit is there
+          }));
         } catch (error) {
           captureException(error);
-          setWallet(initialWalletState); // Ensure state is reset on error
+          console.error('WalletContext: Error getting signer or updating wallet state:', error);
+          setWallet(prev => ({
+            ...initialWalletState,
+            isWalletSystemAvailable: !!currentAppKit, // Preserve availability status
+          }));
         }
       } else {
-        // Not fully connected or missing details, reset
-        setWallet(initialWalletState);
+        setWallet(prev => ({
+          ...initialWalletState,
+          isWalletSystemAvailable: !!currentAppKit,
+        }));
       }
     } else {
-      // Not connected, reset
-      setWallet(initialWalletState);
+      setWallet(prev => ({
+        ...initialWalletState,
+        isWalletSystemAvailable: !!currentAppKit,
+      }));
     }
-  }, []); // appKitInstance is now a module-level const/let, not a prop/state
 
+  }, []); // appKitRef is stable, no need to add as dependency if logic inside doesn't change based on its identity
 
   useEffect(() => {
-    if (!appKitInstance) {
-      console.warn('WalletContext: useEffect - appKitInstance is null, skipping subscription setup.');
+    const targetAppKit = appKitRef.current;
+    console.log('WalletContext: useEffect for subscriptions using targetAppKit:', targetAppKit ? 'instance available' : 'no instance');
+
+    if (targetAppKit && typeof targetAppKit.subscribeProvider === 'function') {
+      console.log('WalletContext: Using subscribeProvider for provider changes.');
+      updateWalletState(); // Initial state update
+      const unsubscribe = targetAppKit.subscribeProvider(() => updateWalletState());
+      return () => unsubscribe();
+    } else if (targetAppKit) {
+      console.error(
+        'WalletContext: subscribeProvider is not available on targetAppKit. Attempting to use on/off as fallback.',
+        targetAppKit
+      );
+      // Fallback logic (optional, based on AppKit version)
+      if (typeof targetAppKit.on === 'function' && typeof targetAppKit.off === 'function') {
+        updateWalletState();
+        targetAppKit.on('providerChanged', updateWalletState);
+        return () => targetAppKit.off?.('providerChanged', updateWalletState);
+      } else {
+         console.error('WalletContext: on/off methods also not available on targetAppKit for fallback.');
+      }
+      // Ensure state reflects unavailability if subscription setup fails in a critical way
+      setWallet(prev => ({ ...prev, isWalletSystemAvailable: false, isConnected: false }));
+    } else {
+      console.warn(
+        'WalletContext: AppKit instance (appKitRef.current) is null. Unable to subscribe to provider changes. Wallet system likely unavailable.'
+      );
+      // Ensure wallet state reflects that the system is not available and not connected
+      setWallet(prev => ({ ...initialWalletState, isWalletSystemAvailable: false }));
+    }
+  }, [updateWalletState]); // updateWalletState is memoized. appKitRef.current is accessed but its change doesn't trigger this.
+
+  const connectWallet = useCallback(async () => {
+    if (!wallet.isWalletSystemAvailable || !appKitRef.current) {
+      console.warn('WalletContext: connectWallet called but wallet system is not available.');
+      // Optionally, inform the user via toast or other UI element
       return;
     }
 
-    updateWalletState(); // Initial state update attempt
+    const modalController = appKitRef.current;
+    if (!modalController) { // Should be redundant due to isWalletSystemAvailable check
+      captureException(new Error('AppKit not initialized in connectWallet (modalController is null after availability check)'));
 
-    if (typeof appKitInstance.subscribeProvider === 'function') {
-      // console.log('WalletContext: Using subscribeProvider for provider changes.'); // Debug log removed
-      const unsubscribe = appKitInstance.subscribeProvider(() => updateWalletState());
-      return () => unsubscribe();
-    } else if (typeof appKitInstance.on === 'function' && typeof appKitInstance.off === 'function') {
-      console.warn('WalletContext: subscribeProvider is not available. Attempting to use on/off as fallback.');
-      appKitInstance.on('providerChanged', updateWalletState);
-      return () => appKitInstance.off?.('providerChanged', updateWalletState);
-    } else {
-      console.error('WalletContext: Critical - Unable to subscribe to provider changes. Neither subscribeProvider nor on/off methods are available on appKitInstance. AppKit may not be functioning correctly.');
-    }
-  }, [updateWalletState]); // Removed appKitInstance from deps
-
-
-  const connectWallet = useCallback(async () => {
-    const modalController = appKitInstance;
-    if (!modalController) {
-      console.error('WalletContext: AppKit not initialized (modalController is null). Cannot open wallet connect modal.');
-      captureException(new Error('WalletContext: AppKit not initialized in connectWallet (modalController is null)'));
       return;
     }
 
     try {
-      await modalController.open(); // Opens the modal
-      // State update will be handled by the subscription if modalController.open() triggers provider events.
+      await modalController.open();
     } catch (error: any) {
       captureException(error);
-      if (
-        error instanceof Error &&
-        /Coinbase Wallet SDK/i.test(error.message)
-      ) {
+      console.error('WalletContext: Error opening wallet modal:', error);
+      if (error instanceof Error && /Coinbase Wallet SDK/i.test(error.message)) {
         console.warn(
           'Failed to load Coinbase Wallet. Please ensure the SDK is available or try a different wallet provider.'
         );
       }
+      // Potentially update state to reflect connection attempt failure if needed, though subscriptions should handle it.
     }
 
-  }, []); // appKitInstance is module-level
+  }, [wallet.isWalletSystemAvailable]); // appKitRef is stable
 
   const disconnectWallet = useCallback(async () => {
-    const actionKit = appKitInstance;
+    if (!wallet.isWalletSystemAvailable || !appKitRef.current) {
+      console.warn('WalletContext: disconnectWallet called but wallet system is not available.');
+      return;
+    }
+
+    const actionKit = appKitRef.current;
 
     if (actionKit?.getState().isConnected) {
       try {
         await actionKit.disconnect();
-        // State update will be handled by the subscription
+        // State update is typically handled by the subscription to provider changes
       } catch (error) {
         console.error('WalletContext: Error during disconnect.', error);
         captureException(error);
+        console.error('WalletContext: Error disconnecting wallet:', error);
       }
+    } else {
+      // If not connected but called, ensure state is clean.
+      // updateWalletState(); // This might be redundant if subscriptions are robust
+      console.log('WalletContext: disconnectWallet called but already disconnected or appKit not ready.');
     }
 
-  }, []); // appKitInstance is module-level
+  }, [wallet.isWalletSystemAvailable]); // appKitRef is stable
 
 
   const displayAddress = wallet.address
     ? `${wallet.address.substring(0, 6)}...${wallet.address.substring(wallet.address.length - 4)}`
     : null;
 
+  // The context value now includes isWalletSystemAvailable via the wallet state object
   return (
-    <WalletContext.Provider value={{ ...wallet, connectWallet, disconnectWallet, displayAddress, appKit: appKitInstance }}>
+    <WalletContext.Provider value={{ ...wallet, connectWallet, disconnectWallet, displayAddress, appKit: appKitRef.current }}>
       {children}
     </WalletContext.Provider>
   );
