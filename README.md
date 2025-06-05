@@ -165,6 +165,7 @@ The project exposes several APIs for programmatic access and integration.
     *   Details and invocation methods for these functions can be found in the `supabase/functions/` directory and within the Supabase project dashboard.
 
 When developing or integrating, refer to these resources for accurate API information.
+For detailed examples, common use cases, and troubleshooting tips, see [docs/API_Guide.md](docs/API_Guide.md).
 
 ## Testing
 

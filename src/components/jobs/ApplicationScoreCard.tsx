@@ -175,6 +175,18 @@ export function ApplicationScoreCard({ application, onScoreUpdated }: Applicatio
                         <p>{application.match_breakdown.experience_match.analysis}</p>
                       </div>
                     )}
+
+                    {application.match_breakdown.certifications_match && (
+                      <div>
+                        <p className="font-medium">Certifications Match: {application.match_breakdown.certifications_match.score}/100</p>
+                        {application.match_breakdown.certifications_match.matching && (
+                          <p>Matching certs: {application.match_breakdown.certifications_match.matching.join(", ")}</p>
+                        )}
+                        {application.match_breakdown.certifications_match.missing && (
+                          <p>Missing certs: {application.match_breakdown.certifications_match.missing.join(", ")}</p>
+                        )}
+                      </div>
+                    )}
                     
                     {application.match_breakdown.education_match && (
                       <div>

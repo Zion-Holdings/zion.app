@@ -228,9 +228,9 @@ export default tseslint.config(
     }
   },
 
-  // src/i18n.js
+  // src/i18n/index.ts
   {
-    files: ["src/i18n.js"],
+    files: ["src/i18n/index.ts"],
     languageOptions: {
       globals: { ...globals.browser, "process": "readonly" }
     }
