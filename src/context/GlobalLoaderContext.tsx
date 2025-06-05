@@ -38,20 +38,20 @@ export function GlobalLoaderProvider({ children }: { children: ReactNode }) {
       return Promise.reject(err);
     };
 
-    const reqInterceptor = axios.interceptors.request.use(onRequest, onError);
+    const reqInterceptor = (axios.interceptors as any).request.use(onRequest, onError);
     const resInterceptor = axios.interceptors.response.use(onResponse, onError);
 
     const originalCreate = axios.create;
     axios.create = (...args: Parameters<typeof originalCreate>) => {
       const instance = originalCreate(...args);
-      instance.interceptors.request.use(onRequest, onError);
+      (instance.interceptors as any).request.use(onRequest, onError);
       instance.interceptors.response.use(onResponse, onError);
       return instance;
     };
 
     return () => {
-      axios.interceptors.request.eject(reqInterceptor);
-      axios.interceptors.response.eject(resInterceptor);
+      ((axios.interceptors as any).request as any).eject(reqInterceptor);
+      (axios.interceptors.response as any).eject(resInterceptor);
       axios.create = originalCreate;
     };
   }, []);
