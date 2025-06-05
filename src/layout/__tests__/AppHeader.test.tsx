@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { MemoryRouter } from 'react-router-dom'; // Needed because AppHeader contains NavLink/Link components via MainNavigation
+import MemoryRouter from 'react-router-dom'; // Needed because AppHeader contains NavLink/Link components via MainNavigation
 import { AppHeader } from '../AppHeader'; // Adjust path as necessary
 import { useAuth } from '@/hooks/useAuth';
 import type { AuthContextType } from '@/types/auth';

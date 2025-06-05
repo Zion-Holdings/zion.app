@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { io } from 'socket.io-client';
+import io from 'socket.io-client';
 import { useAuth } from '@/hooks/useAuth';
 import { MessageBubble } from '@/components/messaging/MessageBubble';
 import { Button } from '@/components/ui/button';
@@ -23,12 +23,14 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   useEffect(() => {
     if (!isOpen) return;
 
-    socketRef.current = io({ path: '/api/socket', transports: ['websocket'] });
-    socketRef.current.emit('join-room', roomId);
-    socketRef.current.on('receive-message', (msg: Message) => {
-      setMessages(prev => [...prev, msg]);
-      triggerNotification('New message', msg.content);
-    });
+    async function setup() {
+      socketRef.current = io({ path: '/api/socket', transports: ['websocket'] });
+      socketRef.current.emit('join-room', roomId);
+      socketRef.current.on('receive-message', (msg: Message) => {
+        setMessages(prev => [...prev, msg]);
+        triggerNotification('New message', msg.content);
+      });
+    }
 
     return () => {
       socketRef.current?.disconnect();
