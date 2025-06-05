@@ -24,6 +24,10 @@ export const getTypeIcon = (type: NotificationType) => {
       return <span className="text-zion-cyan">🚀</span>;
     case 'system':
       return <span className="text-yellow-500">⚠️</span>;
+    case 'project_update':
+      return <span className="text-indigo-400">📌</span>;
+    case 'milestone_complete':
+      return <span className="text-green-500">🏁</span>;
     default:
       return <span className="text-gray-500">📣</span>;
   }
