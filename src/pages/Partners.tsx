@@ -13,14 +13,17 @@ import { useAuth } from "@/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 
 export default function Partners() {
+  console.log('PartnersPage rendering');
   const [activeTab, setActiveTab] = useState("overview");
   const { user, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   // If not authenticated, display partner program info and signup CTA
   if (!isAuthenticated) {
+    console.log('PartnersPage rendering Unauthenticated View');
     return (
       <div className="container max-w-6xl py-10">
+        <h1>DEBUG: Partners Page - Unauthenticated View</h1>
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold tracking-tight text-white mb-2">Zion AI Partner Program</h1>
           <p className="text-xl text-zion-slate-light">Earn rewards by referring AI talent and clients to our marketplace</p>
@@ -151,8 +154,10 @@ export default function Partners() {
   }
 
   // Authenticated user view - Partner Dashboard
+  console.log('PartnersPage rendering Authenticated View. User:', user);
   return (
     <div className="container max-w-7xl py-10">
+      <h1>DEBUG: Partners Page - Authenticated View</h1>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-white">Partner Dashboard</h1>
