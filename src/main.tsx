@@ -58,6 +58,7 @@ import { CartProvider } from './context/CartContext';
 // import { FavoritesProvider } from './context/FavoritesContext.jsx';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 import { enableDevToolsInStaging } from './utils/devtools';
+import './utils/checkDuplicateClassNames';
 
 enableDevToolsInStaging();
 
