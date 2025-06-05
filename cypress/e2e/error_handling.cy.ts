@@ -1,67 +1,57 @@
 // cypress/e2e/error_handling.cy.ts
 
 describe('Error Handling', () => {
-  let reloadStub: Cypress.Agent<sinon.SinonStub>;
+  // No longer need reloadStub for the GlobalErrorBoundary tests,
+  // as it uses navigate(0) which doesn't call window.location.reload().
+  // If other tests in this file were for different error boundaries that DO use reload,
+  // we might need to conditionally apply the beforeEach for those.
+  // For now, assuming all tests here will target the GlobalErrorBoundary behavior.
 
   beforeEach(() => {
-    // Stub window.location.reload. Important: use `cy.window()` to ensure it's the app's window.
-    cy.window().then((win) => {
-      reloadStub = cy.stub(win.location, 'reload').as('reload');
-    });
-
-    // It's good practice to intercept and wait for common initial calls if any,
-    // for example, an initial data fetch for the marketplace.
+    // Optional: Intercept common initial calls if needed for other tests
     // cy.intercept('GET', '/api/marketplace/items').as('getMarketplaceItems');
   });
 
-  // afterEach(() => {
-    // Cypress automatically restores stubs created with cy.stub() on the window object
-    // when the test finishes. However, if we were stubbing something on `Cypress.env` or
-    // a non-window object, manual restoration might be needed.
-    // For window.location.reload, direct restoration via reloadStub.restore() can
-    // sometimes cause issues if Cypress is also trying to manage it.
-    // Let's rely on Cypress's automatic cleanup for window stubs.
-  // });
+  it('should load the main page (e.g., Home) without the global error boundary being visible', () => {
+    cy.visit('/'); // Visit a known working page
+    // cy.wait('@getMarketplaceItems'); // Example: Wait for initial data
 
-  it('should load the main page (Marketplace) without fatal errors and no error boundary visible', () => {
-    cy.visit('/'); // Assuming '/' is a valid page like Marketplace or Home
-    // cy.wait('@getMarketplaceItems'); // Wait for initial data if you intercepted
-    cy.contains('Marketplace', { timeout: 20000 }).should('be.visible'); // Increased timeout for initial load
+    // Check that the global error fallback is not visible
+    cy.contains("Oops! Something went wrong.").should('not.exist');
+    cy.contains('button', 'Retry').should('not.exist');
 
-    // Check that our error fallbacks are not visible
-    cy.contains("Oops! An Error Occurred").should('not.exist'); // From RootErrorFallback in App.tsx
-    cy.contains("Oops! Page Load Error").should('not.exist'); // From GlobalErrorFallback in GlobalErrorBoundary.tsx
-    cy.get('body').should('not.contain.text', 'Test error triggered on render');
-    cy.get('body').should('not.contain.text', 'Test error triggered on mount');
-
-    // Check console for the "NextRouter not mounted" error.
-    // This is tricky because Cypress doesn't fail tests on console.error by default.
-    // We are primarily testing that the UI is usable.
-    // For now, we'll rely on the UI check. If we could fail on console.error, that would be stronger.
+    // Ensure some main content is visible to confirm the page loaded correctly
+    // This assertion depends on what's on your homepage.
+    // For example, if you have a <main> element or a specific heading:
+    cy.get('main').should('be.visible'); // Or another selector for main page content
   });
 
-  it('should display the error boundary for a render error and allow page reload', () => {
-    cy.visit('/test-error-render');
+  it('should display global error fallback for a render error and allow retry', () => {
+    cy.visit('/test-error-render'); // This page is designed to throw an error
 
-    // Check for text from one of the error fallbacks
-    // It could be GlobalErrorFallback or RootErrorFallback depending on where the error is caught.
-    cy.contains(/Oops! (An Error Occurred|Page Load Error)/, { timeout: 10000 }).should('be.visible');
-    // Check for the specific error message passed by the error boundary
+    // Assert that the global error fallback UI is visible
+    cy.contains("Oops! Something went wrong.", { timeout: 10000 }).should('be.visible');
+    cy.contains('Test error triggered on render', { timeout: 10000 }).should('be.visible'); // Message from ErrorTriggerComponent
+    cy.contains('button', 'Retry').should('be.visible').click();
+
+    // After clicking "Retry" (which uses navigate(0)), the page reloads,
+    // and ErrorTriggerComponent throws again. So, the fallback should still be visible.
+    cy.contains("Oops! Something went wrong.", { timeout: 10000 }).should('be.visible');
     cy.contains('Test error triggered on render', { timeout: 10000 }).should('be.visible');
-    cy.contains('button', 'Reload Page').should('be.visible').click();
-    cy.get('@reload').should('have.been.calledOnce');
+    cy.contains('button', 'Retry').should('be.visible');
   });
 
-  it('should display the error boundary for an error thrown on mount and allow page reload', () => {
-    cy.visit('/test-error-mount');
-    cy.contains(/Oops! (An Error Occurred|Page Load Error)/, { timeout: 10000 }).should('be.visible');
-    // Check for the specific error message passed by the error boundary
+  it('should display global error fallback for an error thrown on mount and allow retry', () => {
+    cy.visit('/test-error-mount'); // This page is designed to throw an error on mount
+
+    // Assert that the global error fallback UI is visible
+    cy.contains("Oops! Something went wrong.", { timeout: 10000 }).should('be.visible');
+    cy.contains('Test error triggered on mount', { timeout: 10000 }).should('be.visible'); // Message from ErrorTriggerComponent
+    cy.contains('button', 'Retry').should('be.visible').click();
+
+    // Similar to the render error, retrying will cause the component to error again on mount.
+    cy.contains("Oops! Something went wrong.", { timeout: 10000 }).should('be.visible');
     cy.contains('Test error triggered on mount', { timeout: 10000 }).should('be.visible');
-    cy.contains('button', 'Reload Page').should('be.visible').click();
-    cy.get('@reload').should('have.been.calledOnce');
+    cy.contains('button', 'Retry').should('be.visible');
   });
-
-  // Optional: Test for the specific "NextRouter not mounted" scenario if reproducible
-  // This would require knowing which component/action triggers it from AppKit.
-  // For now, the above tests cover the generic error boundary functionality.
 });

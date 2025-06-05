@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { ErrorBoundary } from 'react-error-boundary';
-import { captureException } from './utils/sentry';
+// ErrorBoundary removed
+import { captureException } from './utils/sentry'; // This might be redundant if GlobalErrorBoundary handles all Sentry logging
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { WalletProvider } from './context/WalletContext'; // Added WalletProvider
@@ -80,35 +80,9 @@ import ResetPassword from './pages/ResetPassword';
 import Wallet from './pages/Wallet';
 import { SupportChatbot } from './components/SupportChatbot';
 import PrivateRoute from './components/PrivateRoute';
-import type { FallbackProps } from 'react-error-boundary';
-import { Button } from '@/components/ui/button'; // Import the Button component
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card'; // Import Card components
+// FallbackProps, Button, Card components imports removed as RootErrorFallback is removed.
 
-function RootErrorFallback({ resetErrorBoundary }: FallbackProps) {
-  return (
-    <div role="alert" className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <Card className="w-full max-w-md bg-destructive text-destructive-foreground shadow-xl">
-        <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">
-            {/* Consider adding an icon here later if available, e.g., <AlertTriangle className="inline-block mr-2 h-6 w-6" /> */}
-            Oops! An Error Occurred
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="text-center">
-          <p className="text-md">
-            Something went wrong on our end. We&apos;re sorry for the inconvenience.
-            Reloading the page may resolve the issue. If the problem continues, please contact our support team.
-          </p>
-        </CardContent>
-        <CardFooter className="flex justify-center">
-          <Button onClick={() => window.location.reload()} variant="secondary" className="w-1/2">
-            Reload Page
-          </Button>
-        </CardFooter>
-      </Card>
-    </div>
-  );
-}
+// RootErrorFallback function removed.
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -176,50 +150,44 @@ const App = () => {
   useScrollToTop();
   const location = useLocation();
   return (
-    <ErrorBoundary
-      FallbackComponent={RootErrorFallback}
-      onError={(error, info) => {
-        captureException(error);
-        if (info?.componentStack) captureException(info.componentStack);
-      }}
-    >
-      <WhitelabelProvider>
-        <WalletProvider> {/* Added WalletProvider */}
-          <ThemeProvider defaultTheme="dark">
-            <ToastProvider>
+    // ErrorBoundary wrapper removed
+    <WhitelabelProvider>
+      <WalletProvider> {/* Added WalletProvider */}
+        <ThemeProvider defaultTheme="dark">
+          <ToastProvider>
             <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-          <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            {baseRoutes.map(({ path, element }) => (
-              <Route key={path} path={path} element={<PageTransition>{element}</PageTransition>} />
-            ))}
-            {/* Test routes for error boundaries - START */}
-            <Route path="/test-error-render" element={<PageTransition><ErrorTriggerComponent /></PageTransition>} />
-            <Route path="/test-error-mount" element={<PageTransition><ErrorTriggerComponent onMount={true} /></PageTransition>} />
-            {/* Test routes for error boundaries - END */}
-            {/* <Route path="/auth/*" element={<PageTransition><AuthRoutes /></PageTransition>} /> */}
-            {/* <Route path="/dashboard/*" element={<PageTransition><DashboardRoutes /></PageTransition>} /> */}
-            {/* <Route path="/marketplace/*" element={<PageTransition><MarketplaceRoutes /></PageTransition>} /> */}
-            {/* <Route path="/talent/*" element={<PageTransition><TalentRoutes /></PageTransition>} /> */}
-            {/* <Route path="/admin/*" element={<PageTransition><AdminRoutes /></PageTransition>} /> */}
-            {/* <Route path="/mobile/*" element={<PageTransition><MobileAppRoutes /></PageTransition>} /> */}
-            {/* <Route path="/content/*" element={<PageTransition><ContentRoutes /></PageTransition>} /> */}
-            {/* <Route path="/enterprise/*" element={<PageTransition><EnterpriseRoutes /></PageTransition>} /> */}
-            {/* <Route path="/community/*" element={<PageTransition><CommunityProvider><CommunityRoutes /></CommunityProvider></PageTransition>} /> */}
-            {/* <Route path="/developers/*" element={<PageTransition><DeveloperRoutes /></PageTransition>} /> */}
-            {/* <Route path="*" element={<PageTransition><ErrorRoutes /></PageTransition>} /> */}
-          </Routes>
-          </AnimatePresence>
-        </Suspense>
-        <OfflineToast />
-        <SupportChatbot />
-        <FeedbackWidget />
-        <InstallPrompt />
+              <AnimatePresence mode="wait">
+                <Routes location={location} key={location.pathname}>
+                  {baseRoutes.map(({ path, element }) => (
+                    <Route key={path} path={path} element={<PageTransition>{element}</PageTransition>} />
+                  ))}
+                  {/* Test routes for error boundaries - START */}
+                  <Route path="/test-error-render" element={<PageTransition><ErrorTriggerComponent /></PageTransition>} />
+                  <Route path="/test-error-mount" element={<PageTransition><ErrorTriggerComponent onMount={true} /></PageTransition>} />
+                  {/* Test routes for error boundaries - END */}
+                  {/* <Route path="/auth/*" element={<PageTransition><AuthRoutes /></PageTransition>} /> */}
+                  {/* <Route path="/dashboard/*" element={<PageTransition><DashboardRoutes /></PageTransition>} /> */}
+                  {/* <Route path="/marketplace/*" element={<PageTransition><MarketplaceRoutes /></PageTransition>} /> */}
+                  {/* <Route path="/talent/*" element={<PageTransition><TalentRoutes /></PageTransition>} /> */}
+                  {/* <Route path="/admin/*" element={<PageTransition><AdminRoutes /></PageTransition>} /> */}
+                  {/* <Route path="/mobile/*" element={<PageTransition><MobileAppRoutes /></PageTransition>} /> */}
+                  {/* <Route path="/content/*" element={<PageTransition><ContentRoutes /></PageTransition>} /> */}
+                  {/* <Route path="/enterprise/*" element={<PageTransition><EnterpriseRoutes /></PageTransition>} /> */}
+                  {/* <Route path="/community/*" element={<PageTransition><CommunityProvider><CommunityRoutes /></CommunityProvider></PageTransition>} /> */}
+                  {/* <Route path="/developers/*" element={<PageTransition><DeveloperRoutes /></PageTransition>} /> */}
+                  {/* <Route path="*" element={<PageTransition><ErrorRoutes /></PageTransition>} /> */}
+                </Routes>
+              </AnimatePresence>
+            </Suspense>
+            <OfflineToast />
+            <SupportChatbot />
+            <FeedbackWidget />
+            <InstallPrompt />
           </ToastProvider>
-      </ThemeProvider>
-        </WalletProvider> {/* Added WalletProvider closing tag */}
+        </ThemeProvider>
+      </WalletProvider> {/* Added WalletProvider closing tag */}
     </WhitelabelProvider>
-    </ErrorBoundary>
+    // ErrorBoundary wrapper removed
   );
 };
 
