@@ -4,6 +4,7 @@ declare module 'socket.io' {
 }
 
 declare module 'socket.io-client' {
-  const anySocketClient: any;
-  export default anySocketClient;
+  export function io(...args: any[]): any;
+  const defaultExport: any;
+  export default defaultExport;
 }
