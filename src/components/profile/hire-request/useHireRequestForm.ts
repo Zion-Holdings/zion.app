@@ -55,7 +55,7 @@ export function useHireRequestForm({ talent, onClose, initialJobTitle, userDetai
   });
 
   // Handle form submission
-  const onSubmit = async (values: FormValues) => {
+  const onSubmit = async (values: FormValues): Promise<void> => {
     setIsSubmitting(true);
     try {
       const requestData = {
