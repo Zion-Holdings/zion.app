@@ -115,6 +115,11 @@ export interface JobApplication {
       score: number;
       analysis: string;
     };
+    certifications_match?: {
+      score: number;
+      matching: string[];
+      missing: string[];
+    };
     education_match?: {
       score: number;
       analysis: string;
