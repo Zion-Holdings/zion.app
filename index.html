@@ -4,6 +4,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Force a cache reset to load latest assets
+      if ('caches' in window) {
+        caches.keys().then((names) => {
+          for (const name of names) caches.delete(name);
+        });
+      }
+    </script>
     <title>Zion - The Future of Tech & AI Marketplace</title>
     <meta name="description" content="The world's first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place." />
     <meta name="author" content="Zion Tech Group" />
