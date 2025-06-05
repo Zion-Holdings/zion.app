@@ -47,7 +47,7 @@ import { AuthProvider } from '@/context/auth/AuthProvider';
 // Import analytics provider
 // import { AnalyticsProvider } from './context/AnalyticsContext';
 // import { ViewModeProvider } from './context/ViewModeContext';
-// import { CartProvider } from './context/CartContext';
+import { CartProvider } from './context/CartContext';
 // import { FavoritesProvider } from './context/FavoritesContext.jsx';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 import { enableDevToolsInStaging } from './utils/devtools';
@@ -83,7 +83,7 @@ try {
                     {/* <AnalyticsProvider> */}
                       {/* <LanguageProvider authState={{ isAuthenticated: false, user: null }}> */}
                         {/* <ViewModeProvider> */}
-                          {/* <CartProvider> */}
+                          <CartProvider>
                             {/* <FavoritesProvider> */}
                               {/* <ReferralMiddleware> */}
                                 <ToastProvider>
@@ -95,7 +95,7 @@ try {
                                 </ToastProvider>
                               {/* </ReferralMiddleware> */}
                             {/* </FavoritesProvider> */}
-                          {/* </CartProvider> */}
+                          </CartProvider>
                         {/* </ViewModeProvider> */}
                         {/* <LanguageDetectionPopup /> */}
                       {/* </LanguageProvider> */}
