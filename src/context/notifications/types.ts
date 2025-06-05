@@ -6,7 +6,9 @@ export type NotificationType =
   | 'booking_confirmation'
   | 'hire_request'
   | 'onboarding'
-  | 'system';
+  | 'system'
+  | 'project_update'
+  | 'milestone_complete';
 
 export interface Notification extends BaseNotification {
   type: NotificationType;
