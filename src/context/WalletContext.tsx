@@ -153,10 +153,10 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }
   }, [isProjectIdValid, rawProjectId]); // Dependencies as per subtask
 
-  // const [wallet, setWallet] = useState<WalletState>({
-  // ...initialWalletState,
-  // isWalletSystemAvailable will be updated by the useEffect above
-  // });
+  const [wallet, setWallet] = useState<WalletState>({
+    ...initialWalletState,
+    // isWalletSystemAvailable will be updated by the useEffect above
+  });
 
   // Removed commented out useAppKit related code and console logs.
 
@@ -177,40 +177,51 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       const currentChainId = currentAppKit.getChainId();
       const currentProvider = currentAppKit.getWalletProvider();
 
-    if (state.isConnected && state.address && state.provider && state.chainId) {
-      try {
-        const ethersProvider = new ethers.BrowserProvider(
-          state.provider as Eip1193ProviderWithEvents // state.provider should be the EIP-1193 provider
-        );
-        const ethersSigner = await ethersProvider.getSigner();
-        setWallet(prev => ({
-          ...prev,
-          provider: ethersProvider,
-          signer: ethersSigner,
-          address: state.address,
-          chainId: Number(state.chainId),
-          isConnected: true,
-          isWalletSystemAvailable: true, // System is available and connected
-        }));
-      } catch (error) {
-        captureException(error);
-        console.error('WalletContext: Error getting signer or updating wallet state:', error);
-        // AppKit exists, but failed to get signer or other error
+      // Ensure currentProvider, currentAddress, and currentChainId are valid before proceeding
+      if (currentAppKit.getState().isConnected && currentAddress && currentProvider && currentChainId) {
+        try {
+          // currentProvider is already the EIP-1193 provider from AppKit
+          const ethersProvider = new ethers.BrowserProvider(
+            currentProvider as Eip1193ProviderWithEvents
+          );
+          const ethersSigner = await ethersProvider.getSigner();
+          setWallet(prev => ({
+            ...prev,
+            provider: ethersProvider,
+            signer: ethersSigner,
+            address: currentAddress, // Use currentAddress from AppKit
+            chainId: Number(currentChainId), // Use currentChainId from AppKit
+            isConnected: true,
+            isWalletSystemAvailable: true, // System is available and connected
+          }));
+        } catch (error) {
+          captureException(error);
+          console.error('WalletContext: Error getting signer or updating wallet state:', error);
+          // AppKit exists, but failed to get signer or other error
+          setWallet(prev => ({
+            ...initialWalletState,
+            isConnected: false, // Not connected due to error
+            isWalletSystemAvailable: true, // AppKit itself is still available
+          }));
+        }
+      } else {
+        // Not connected or essential info missing
         setWallet(prev => ({
           ...initialWalletState,
-          isConnected: false, // Not connected due to error
-          isWalletSystemAvailable: true, // AppKit itself is still available
-        }));
-      }
-    } else {
-      // Not connected or essential info missing
-      setWallet(prev => ({
-        ...initialWalletState,
         isConnected: false, // Explicitly not connected
         isWalletSystemAvailable: true, // AppKit is available, just not connected
       }));
     }
-  }, []); // appKitRef.current is stable, updateWalletState is memoized.
+  } // This closes the outer if (currentAppKit?.getState().isConnected && currentAppKit?.getAddress())
+  else {
+    // Not connected or essential info missing (outer else)
+    setWallet(prev => ({
+      ...initialWalletState,
+      isConnected: false, // Explicitly not connected
+      isWalletSystemAvailable: true, // AppKit is available, just not connected
+    }));
+  }
+}, []); // appKitRef.current is stable, updateWalletState is memoized.
 
   useEffect(() => {
     const targetAppKit = appKitRef.current;
