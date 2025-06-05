@@ -77,7 +77,7 @@ export function ITServiceRequestHero() {
           <div className="flex flex-col md:flex-row items-center gap-4">
             <Image
               src="/logos/placeholder-logo.svg"
-              alt="Technician"
+              alt="Company logo"
               width={200}
               height={200}
               className="w-full h-auto md:w-40"
