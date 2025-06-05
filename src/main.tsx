@@ -21,7 +21,7 @@ import App from './App.tsx';
 import './index.css';
 // Removed feat/i18n-implementation and main markers
 import { I18nextProvider } from 'react-i18next';
-import i18n from './i18n'; // Adjust the path if your i18n.js is elsewhere
+import i18n from './i18n/index';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@tanstack/react-query';
@@ -30,10 +30,10 @@ import './utils/globalFetchInterceptor';
 import './utils/consoleErrorToast';
 import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
+import RootErrorBoundary from './components/RootErrorBoundary';
 import { GlobalSnackbarProvider, GlobalLoaderProvider, NotificationProvider, MessagingProvider } from './context';
-
-// import { LanguageProvider } from '@/context/LanguageContext';
-// import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
+import { LanguageProvider } from '@/context/LanguageContext';
+import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
 // import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
@@ -68,14 +68,15 @@ try {
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-      <Provider store={store}>
-        <GlobalSnackbarProvider>
-        <GlobalLoaderProvider>
+      <RootErrorBoundary>
+        <Provider store={store}>
+          <GlobalSnackbarProvider>
+          <GlobalLoaderProvider>
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
               <WhitelabelProvider>
-                <Router>
+                <Router basename={process.env.PUBLIC_URL || '/'}>
                 <AuthProvider>
                   <MessagingProvider>
                   <NotificationProvider>
@@ -112,6 +113,7 @@ try {
         </GlobalLoaderProvider>
         </GlobalSnackbarProvider>
       </Provider>
+      </RootErrorBoundary>
       {/* Removed duplicate main marker */}
     </React.StrictMode>,
   );

@@ -16,7 +16,8 @@
     "menu": "Menu",
     "saving": "Saving...",
     "open_main_menu": "Open main menu",
-    "toggle_mobile_menu": "Toggle mobile menu"
+    "toggle_mobile_menu": "Toggle mobile menu",
+    "greeting_user": "Hello, {{name}}!"
   },
   "nav": {
     "home": "Home",

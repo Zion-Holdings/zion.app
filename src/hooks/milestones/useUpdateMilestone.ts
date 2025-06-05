@@ -5,6 +5,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
 import { Milestone, MilestoneStatus } from './types';
 import { useRecordActivity } from './useRecordActivity';
+import { createNotification } from '@/utils/notifications';
 
 export const useUpdateMilestone = () => {
   const { user } = useAuth();
@@ -20,7 +21,7 @@ export const useUpdateMilestone = () => {
       // Get the current status
       const { data: milestoneData, error: fetchError } = await supabase
         .from('project_milestones')
-        .select('status')
+        .select('status, project_id, title')
         .eq('id', milestoneId)
         .single();
       
@@ -38,7 +39,44 @@ export const useUpdateMilestone = () => {
       if (error) throw error;
       
       // Create activity record
-      await recordMilestoneActivity(milestoneId, 'status_changed', previousStatus, newStatus, comment);
+      await recordMilestoneActivity(
+        milestoneId,
+        'status_changed',
+        previousStatus,
+        newStatus,
+        comment
+      );
+
+      if (milestoneData?.project_id) {
+        const { data: project } = await supabase
+          .from('projects')
+          .select('client_id, talent_id')
+          .eq('id', milestoneData.project_id)
+          .single();
+
+        if (project) {
+          if (newStatus === 'completed') {
+            await createNotification({
+              userId: project.client_id,
+              title: 'Milestone Completed',
+              message: `Milestone "${milestoneData.title}" was marked as completed`,
+              type: 'milestone_complete',
+              relatedId: milestoneId,
+              sendEmail: true
+            });
+          }
+          if (newStatus === 'approved') {
+            await createNotification({
+              userId: project.talent_id,
+              title: 'Milestone Approved',
+              message: `Milestone "${milestoneData.title}" was approved`,
+              type: 'project_update',
+              relatedId: milestoneId,
+              sendEmail: true
+            });
+          }
+        }
+      }
       
       toast.success(`Milestone status changed to ${newStatus}`);
       

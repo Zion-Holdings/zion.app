@@ -16,6 +16,12 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: npm run build
+      - name: Verify asset paths
+        run: |
+          npx serve out/ --cors --single -l 5000 &
+          SERVE_PID=$!
+          sleep 5
+          kill $SERVE_PID
       - name: Run smoke tests
         run: npm run cypress:run -- --spec cypress/e2e/criticalPaths.cy.ts
       - name: Switch Netlify DNS

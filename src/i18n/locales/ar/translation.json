@@ -13,7 +13,8 @@
     "success": "نجاح",
     "error": "خطأ",
     "open_main_menu": "افتح القائمة الرئيسية",
-    "toggle_mobile_menu": "تبديل قائمة الجوال"
+    "toggle_mobile_menu": "تبديل قائمة الجوال",
+    "greeting_user": "مرحباً، {{name}}!"
   },
   "nav": {
     "home": "الرئيسية",

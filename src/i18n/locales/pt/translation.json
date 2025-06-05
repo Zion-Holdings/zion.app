@@ -13,7 +13,8 @@
     "success": "Sucesso",
     "error": "Erro",
     "open_main_menu": "Abrir menu principal",
-    "toggle_mobile_menu": "Alternar menu móvel"
+    "toggle_mobile_menu": "Alternar menu móvel",
+    "greeting_user": "Olá, {{name}}!"
   },
   "nav": {
     "home": "Início",

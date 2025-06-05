@@ -1,4 +1,3 @@
-
 export interface ListingCategory {
   id: string;
   name: string;
@@ -31,6 +30,8 @@ export interface ProductListing {
   aiScore?: number; // Added aiScore as optional property
   location?: string; // Adding location property to fix TypeScript errors
   availability?: string; // Adding availability property to fix TypeScript errors
+  brand?: string; // Brand of the equipment
+  specifications?: string[]; // Key specifications for filtering
 }
 
 export interface ListingItem {
@@ -41,4 +42,4 @@ export interface ListingItem {
   description?: string;
 }
 
-export type ListingView = 'grid' | 'list';
+export type ListingView = "grid" | "list";
