@@ -1,7 +1,7 @@
 
 import React from "react";
 import { SEO } from "@/components/SEO";
-import { Navigate } from "react-router-dom";
+import Navigate from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 
 interface AnalyticsContainerProps {

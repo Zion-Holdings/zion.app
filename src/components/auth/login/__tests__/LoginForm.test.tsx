@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { vi } from 'vitest';
-import { MemoryRouter } from 'react-router-dom';
+import MemoryRouter from 'react-router-dom';
 
 import { LoginForm } from '../LoginForm';
 import { AuthProvider } from '@/context/auth/AuthProvider'; // Assuming AuthProvider wraps useAuth
