@@ -135,7 +135,7 @@ export function EnhancedSearchInput({
       aria-haspopup="listbox"
       aria-controls="autocomplete-suggestions-list" // Added aria-controls
     >
-      <div className="relative">
+      <div className="relative flex items-center w-full">
         <Search 
           className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-zion-slate" 
         />
@@ -151,7 +151,7 @@ export function EnhancedSearchInput({
           onFocus={() => setIsFocused(true)}
           onKeyDown={handleKeyDown} // Attached keydown handler
           placeholder={placeholder}
-          className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate"
+          className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate h-auto py-0 min-w-0"
           aria-autocomplete="list"
           aria-activedescendant={highlightedIndex !== -1 ? `suggestion-item-${highlightedIndex}` : undefined}
         />
