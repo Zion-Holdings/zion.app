@@ -1,6 +1,7 @@
 import { FooterNewsletter } from "@/components/FooterNewsletter";
 import { Twitter, Linkedin, Facebook, Instagram, Github } from "lucide-react";
 import { Link } from "react-router-dom";
+import config from "../../../config/default.json";
 
 export function Footer() {
   return (
@@ -16,7 +17,7 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://twitter.com/lovable_dev"
+                href={config.socialMediaLinks.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/80 hover:text-primary transition-colors"
@@ -26,7 +27,7 @@ export function Footer() {
                 <Twitter className="h-5 w-5" aria-label="Twitter" />
               </a>
               <a
-                href="https://www.linkedin.com/company/zion-marketplace"
+                href={config.socialMediaLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/80 hover:text-primary transition-colors"
@@ -36,7 +37,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" aria-label="LinkedIn" />
               </a>
               <a
-                href="https://www.facebook.com/zionmarketplace"
+                href={config.socialMediaLinks.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/80 hover:text-primary transition-colors"
@@ -46,7 +47,7 @@ export function Footer() {
                 <Facebook className="h-5 w-5" aria-label="Facebook" />
               </a>
               <a
-                href="https://instagram.com"
+                href={config.socialMediaLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/80 hover:text-primary transition-colors"
@@ -56,7 +57,7 @@ export function Footer() {
                 <Instagram className="h-5 w-5" aria-label="Instagram" />
               </a>
               <a
-                href="https://github.com"
+                href={config.socialMediaLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/80 hover:text-primary transition-colors"
