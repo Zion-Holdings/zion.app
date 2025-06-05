@@ -59,6 +59,7 @@ import { CartProvider } from './context/CartContext';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 import { enableDevToolsInStaging } from './utils/devtools';
 import './utils/checkDuplicateClassNames';
+import { checkEssentialEnvVars } from './utils/validateEnv';
 
 enableDevToolsInStaging();
 
@@ -73,6 +74,8 @@ const queryClient = new QueryClient({
 });
 
 try {
+  checkEssentialEnvVars(); // Added call
+
   // Removed initGA() call as it's undefined and likely superseded by AnalyticsProvider
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(

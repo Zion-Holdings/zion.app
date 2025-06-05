@@ -1,10 +1,11 @@
 import { render, fireEvent, waitFor } from '@testing-library/react'; // Added waitFor
 import { ModeToggle } from '@/components/ModeToggle';
-import { ThemeProvider } from '@/context/ThemeContext'; // Changed import path for ThemeProvider
+// Use the ThemeProvider from src/components to match the hook used by ModeToggle
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 it('applies dark class when toggled', async () => { // Made test async
   render(
-    <ThemeProvider> {/* This ThemeProvider is now from @/context/ThemeContext */}
+    <ThemeProvider>
       <ModeToggle />
     </ThemeProvider>
   );

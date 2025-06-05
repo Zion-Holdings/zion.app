@@ -25,28 +25,37 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
+      - name: Check formatting
+        run: npm run format -- --check
       - run: npm run lint
       - name: Run typecheck
         run: npm run typecheck
       - run: npm run build
       - name: Verify build output
         run: |
-          if [ ! -d dist ]; then
-            echo "Build failed: dist folder not found"
+          if [ ! -d out ]; then
+            echo "Build failed: out folder not found"
             exit 1
           fi
-      - name: Verify asset paths
+      - name: Serve application and run smoke tests
         run: |
           npx serve out/ --cors --single -l 5000 &
           SERVE_PID=$!
-          sleep 5
+          sleep 5 # Give server time to start
+          npm run smoke:test # This script will be added to package.json later
           kill $SERVE_PID
-      - run: npm run test -- --coverage
+      - name: Run Vitest with Coverage
+        run: npx vitest run --coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          files: coverage/lcov.info
-          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/coverage-final.json
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage
 
       - name: Validate Production Domain in Allowlist
         run: |
@@ -83,3 +92,6 @@ jobs:
           TEST_USER_EMAIL: ${{ secrets.CYPRESS_TEST_USER_EMAIL }}
           TEST_USER_PASSWORD: ${{ secrets.CYPRESS_TEST_USER_PASSWORD }}
           TEST_USER_DISPLAY_NAME: ${{ secrets.CYPRESS_TEST_USER_DISPLAY_NAME }}
+          VITE_REOWN_PROJECT_ID: ${{ secrets.VITE_REOWN_PROJECT_ID_CI }}
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL_CI }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY_CI }}

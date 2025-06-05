@@ -7,6 +7,7 @@ const { mongoUri } = require('./config');
 const authRoutes = require('./routes/auth');
 const authSocialRoutes = require('./routes/authSocial');
 const recommendationsRoutes = require('./routes/recommendations');
+const { logAndAlert } = require('./utils/alertLogger');
 
 const app = express();
 app.use(morgan('dev'));
@@ -26,6 +27,7 @@ mongoose.connect(mongoUri, {
 // Central error handler to return structured errors
 app.use((err, req, res, next) => {
   console.error(err);
+  logAndAlert(err.stack || err.message);
   res
     .status(err.status || 500)
     .json({ code: err.code, message: err.message });

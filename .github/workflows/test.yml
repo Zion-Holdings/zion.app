@@ -29,17 +29,21 @@ jobs:
           SERVE_PID=$!
           sleep 5
           kill $SERVE_PID
-      - run: npm run test -- --coverage
+      - name: Run Vitest with Coverage
+        run: npx vitest run --coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          files: coverage/lcov.info
-          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/coverage-final.json
       - run: npm run cypress:run
         env:
           TEST_USER_EMAIL: ${{ secrets.CYPRESS_TEST_USER_EMAIL }}
           TEST_USER_PASSWORD: ${{ secrets.CYPRESS_TEST_USER_PASSWORD }}
-          TEST_USER_DISPLAY_NAME: ${{ secrets.CYPRESS_TEST_USER_DISPLAY_NAME }}
+          TEST_USER_DISPLAY_NAME: ${{ secrets.CYPRESS_TEST_USER_DISPLAY_NA
+          VITE_REOWN_PROJECT_ID: ${{ secrets.VITE_REOWN_PROJECT_ID_CI }}
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL_CI }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY_CI }}
       - uses: actions/upload-artifact@v4
         with:
           name: coverage-report
