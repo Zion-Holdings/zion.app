@@ -74,6 +74,21 @@
   color: var(--foreground);
 }
 
+/* Global layout fixes */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
 
