@@ -3,7 +3,14 @@ export default {
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
-      babelConfig: true, // Keep if you have a babel.config.js that's needed
+      // babelConfig: true, // Remove this line
+      babelConfig: { // Add Babel options directly
+        presets: [
+          '@babel/preset-env',
+          '@babel/preset-react',
+          '@babel/preset-typescript',
+        ],
+      },
       tsconfig: './tsconfig.jest.json' // Point to the new Jest-specific tsconfig
     }],
     '^.+\\.m?js$': 'babel-jest',
