@@ -5,4 +5,5 @@ export default defineConfig({
   use: {
     baseURL: 'http://localhost:3000',
   },
+  reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
 });
