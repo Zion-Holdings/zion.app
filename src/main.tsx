@@ -33,6 +33,7 @@ import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@ta
 import { showApiError } from '@/utils/apiErrorHandler';
 import './utils/globalFetchInterceptor';
 import './utils/consoleErrorToast';
+import './utils/globalErrorHandler';
 import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
 import RootErrorBoundary from './components/RootErrorBoundary';
