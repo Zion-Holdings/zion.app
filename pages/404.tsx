@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import Lottie from 'lottie-react';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
