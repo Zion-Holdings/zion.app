@@ -1,8 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import GlobalErrorBoundary from '../src/components/GlobalErrorBoundary'; // Import GlobalErrorBoundary
-// ErrorBoundary removed
+import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import GlobalErrorBoundary
 import { captureException } from './utils/sentry'; // This might be redundant if GlobalErrorBoundary handles all Sentry logging
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
@@ -151,7 +150,7 @@ const App = () => {
   useScrollToTop();
   const location = useLocation();
   return (
-    <GlobalErrorBoundary> {/* Add GlobalErrorBoundary wrapper */}
+    <GlobalErrorBoundary>
       <WhitelabelProvider>
         <WalletProvider> {/* Added WalletProvider */}
           <ThemeProvider defaultTheme="dark">
