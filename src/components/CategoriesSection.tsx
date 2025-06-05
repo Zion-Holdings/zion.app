@@ -1,6 +1,6 @@
 
 import { GradientHeading } from "./GradientHeading";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Briefcase, HardDrive, Lightbulb, Users, HelpCircle } from "lucide-react"; // Added HelpCircle for default icon
 import { cn } from "@/lib/utils";
 
@@ -103,14 +103,15 @@ export function CategoriesSection({
   // If fetchedCategories is an empty array, and we want to show nothing:
   if (fetchedCategories && fetchedCategories.length === 0) {
     return (
-      <section className={cn("py-20 bg-zion-blue", className)} style={style}>
-        <div className="container mx-auto px-4 text-center">
-          {showTitle && (
-            <div className="mb-16">
-              <GradientHeading>Explore Categories</GradientHeading>
-            </div>
-          )}
-          <p className="text-zion-slate-light text-lg">No categories available at the moment.</p>
+      <section className={cn("py-20 bg-zion-blue text-center", className)} style={style}>
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-white mb-4">No Categories Found</h2>
+          <p className="text-zion-slate-light text-lg mb-2">
+            We couldn't find any categories to display at this time.
+          </p>
+          <p className="text-zion-slate-light text-md">
+            Please check back later, or if you believe this is an error, contact support.
+          </p>
         </div>
       </section>
     );
@@ -132,7 +133,7 @@ export function CategoriesSection({
           {displayCategories.map((category) => (
             <Link 
               key={category.id} // Use id for key
-              to={category.link || '#'} // Fallback link
+              href={category.link || '#'} // Fallback link
               className="group block"
             >
               <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
@@ -155,7 +156,7 @@ export function CategoriesSection({
             {specialServices.map((service) => (
               <Link 
                 key={service.title}
-                to={service.link}
+                href={service.link}
                 className="px-6 py-3 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300"
               >
                 {service.title}
@@ -166,7 +167,7 @@ export function CategoriesSection({
         
         <div className="mt-12 flex justify-center">
           <Link 
-            to="/categories/all" // This link might need to be dynamic or removed if CategoriesPage is the "all categories" view
+            href="/categories/all" // This link might need to be dynamic or removed if CategoriesPage is the "all categories" view
             className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
           >
             View All Categories →
