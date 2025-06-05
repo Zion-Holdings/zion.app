@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDebounce } from "@/hooks/useDebounce";
 import { GradientHeading } from "@/components/GradientHeading";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -25,9 +26,11 @@ const CATEGORIES = [
 ];
 
 export default function Blog() {
-  const [query, setQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [posts, setPosts] = useState<BlogPost[]>([...BLOG_POSTS]);
+  const query = useDebounce(searchQuery, 300);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,11 +39,21 @@ export default function Blog() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (searchQuery !== query) {
+      setIsLoading(true);
+    } else {
+      setIsLoading(false);
+    }
+  }, [searchQuery, query]);
+
   // Filter blog posts based on search and category
   const filteredPosts = posts.filter(post => {
+    const lowercasedQuery = query.toLowerCase();
     const matchesSearch =
-      post.title.toLowerCase().includes(query.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(query.toLowerCase());
+      post.title.toLowerCase().includes(lowercasedQuery) ||
+      post.excerpt.toLowerCase().includes(lowercasedQuery) ||
+      post.tags.some(tag => tag.toLowerCase().includes(lowercasedQuery));
       
     const matchesCategory = selectedCategory === "All Categories" || post.category === selectedCategory;
     
@@ -131,8 +144,8 @@ export default function Blog() {
                 <Input
                   type="text"
                   placeholder="Search articles..."
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10 bg-zion-blue border border-zion-blue-light text-white"
                 />
               </div>
@@ -150,14 +163,19 @@ export default function Blog() {
                 </SelectContent>
               </Select>
             </div>
+            {isLoading && (
+              <div className="text-center py-4 text-white">
+                Loading articles...
+              </div>
+            )}
           </div>
 
           {/* Blog Posts Grid */}
-          {filteredPosts.length > 0 ? (
+          {!isLoading && filteredPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
-                <Card 
-                  key={post.id} 
+                <Card
+                  key={post.id}
                   className="bg-zion-blue-dark border border-zion-blue-light hover:border-zion-purple transition-all duration-300"
                 >
                   <div className="aspect-[16/9] relative overflow-hidden">
@@ -213,14 +231,17 @@ export default function Blog() {
                 </Card>
               ))}
             </div>
-          ) : (
+          ) : null}
+
+          {/* No Results Message - Show only if not loading and no posts */}
+          {!isLoading && filteredPosts.length === 0 && (
             <div className="text-center py-16">
               <h3 className="text-xl font-bold text-white mb-2">No articles found</h3>
               <p className="text-zion-slate-light mb-6">Try adjusting your search or filter criteria</p>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 onClick={() => {
-                  setQuery("");
+                  setSearchQuery("");
                   setSelectedCategory("All Categories");
                 }}
                 className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"
