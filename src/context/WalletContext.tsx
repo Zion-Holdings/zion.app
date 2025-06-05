@@ -44,6 +44,7 @@ const initialWalletState: WalletState = {
 
 const WalletContext = createContext<WalletContextType | undefined>(undefined);
 
+
 // Known default/fallback project IDs that indicate the wallet system should be considered unavailable
 const KNOWN_INVALID_PROJECT_IDS = [
   'YOUR_PROJECT_ID', // Common placeholder
@@ -54,11 +55,11 @@ const KNOWN_INVALID_PROJECT_IDS = [
 
 // --- Reown AppKit Configuration ---
 
-// The project ID is provided via Vite environment variables. Set
-// VITE_REOWN_PROJECT_ID in your `.env` file with the value from
-// cloud.reown.com. If the ID is missing, the SDK will throw an error
-// like "Origin <your-domain> not found on Allowlist".
-import { getAppKitProjectId } from '@/config/env';
+export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  console.log('WalletProvider: Initializing...');
+  const [wallet, setWallet] = useState<WalletState>(initialWalletState);
+  const [appKitInstance, setAppKitInstance] = useState<AppKitInstanceInterface | null>(null);
+
 
 const rawProjectId = getAppKitProjectId();
 console.log('WalletContext: Resolved rawProjectId from getAppKitProjectId():', rawProjectId);
@@ -79,22 +80,84 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/37784886'], // Replace with your project's icon URLs
 };
 
-const ZION_CHAIN_MAP: Record<number, any> = {
-    1: mainnet,
-    5: goerli, // Common testnet, assuming ZION_TOKEN_NETWORK_ID might be this
-    137: polygon,
-    // Add other chains supported by your ZION_TOKEN_NETWORK_ID or dApp
-    // Example:
-    // 10: optimism,
-    // 42161: arbitrum,
-    // 8453: base,
-};
+
+      const metadata = {
+        name: 'Zion', // Replace with your project's name
+        description: 'Zion Finance Platform', // Replace with your project's description
+        url: window.location.origin, // Dynamic URL
+        icons: ['https://avatars.githubusercontent.com/u/37784886'], // Replace with your project's icon URLs
+      };
+
+      const ZION_CHAIN_MAP: Record<number, any> = {
+        1: mainnet,
+        5: goerli, // Common testnet, assuming ZION_TOKEN_NETWORK_ID might be this
+        137: polygon,
+        // Add other chains supported by your ZION_TOKEN_NETWORK_ID or dApp
+        // Example:
+        // 10: optimism,
+        // 42161: arbitrum,
+        // 8453: base,
+      };
+
+      const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
+
+      const instance = createAppKit({
+        adapters: [
+          new EthersAdapter({
+            ethers, // pass the ethers library instance
+            // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
+          }),
+        ],
+        networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
+        defaultNetwork: targetNetwork,
+        projectId,
+        metadata,
+        features: {
+          analytics: false, // Optional: enable analytics
+          // ... other features like swaps, onramp if needed
+        },
+      });
+      console.log('WalletContext: appKitInstance created:', instance);
+      if (instance && typeof instance.subscribeProvider !== 'function') {
+        console.error('WalletContext: instance does NOT have a subscribeProvider method!', instance);
+      } else if (!instance) {
+        console.error('WalletContext: instance is null after creation attempt.');
+      }
+      setAppKitInstance(instance);
+      // --- End Reown AppKit Configuration ---
+    }
+  }, []); // Empty dependency array ensures this runs once on mount (client-side)
+
+let appKitInstance: AppKitInstanceInterface | null = null;
+
+if (projectId) {
+  appKitInstance = typeof window !== 'undefined'
+    ? createAppKit({
+        adapters: [
+          new EthersAdapter({
+            ethers, // pass the ethers library instance
+            // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
+          }),
+        ],
+        networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
+        defaultNetwork: targetNetwork,
+        projectId,
+        metadata,
+        features: {
+          analytics: false, // Optional: enable analytics
+          // ... other features like swaps, onramp if needed
+        },
+      })
+    : null;
+
 
 const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
+
 
 // --- End Reown AppKit Configuration ---
 
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+
   console.log('WalletProvider: Initializing...');
   const appKitRef = useRef<AppKitInstanceInterface | null>(null);
 
@@ -164,7 +227,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const updateWalletState = useCallback(async () => {
     const currentAppKit = appKitRef.current;
 
-    if (currentAppKit?.getState().isConnected && currentAppKit?.getAddress()) {
+
+    if (appKitInstance?.getState().isConnected && appKitInstance?.getAddress()) {
       const currentAddress = currentAppKit.getAddress();
       const currentChainId = currentAppKit.getChainId();
       const currentProvider = currentAppKit.getWalletProvider();
@@ -204,6 +268,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         isWalletSystemAvailable: !!currentAppKit,
       }));
     }
+
   }, []); // appKitRef is stable, no need to add as dependency if logic inside doesn't change based on its identity
 
   useEffect(() => {
@@ -249,6 +314,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const modalController = appKitRef.current;
     if (!modalController) { // Should be redundant due to isWalletSystemAvailable check
       captureException(new Error('AppKit not initialized in connectWallet (modalController is null after availability check)'));
+
       return;
     }
 
@@ -264,6 +330,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       }
       // Potentially update state to reflect connection attempt failure if needed, though subscriptions should handle it.
     }
+
   }, [wallet.isWalletSystemAvailable]); // appKitRef is stable
 
   const disconnectWallet = useCallback(async () => {
@@ -273,11 +340,13 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }
 
     const actionKit = appKitRef.current;
+
     if (actionKit?.getState().isConnected) {
       try {
         await actionKit.disconnect();
         // State update is typically handled by the subscription to provider changes
       } catch (error) {
+        console.error('WalletContext: Error during disconnect.', error);
         captureException(error);
         console.error('WalletContext: Error disconnecting wallet:', error);
       }
@@ -286,7 +355,9 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       // updateWalletState(); // This might be redundant if subscriptions are robust
       console.log('WalletContext: disconnectWallet called but already disconnected or appKit not ready.');
     }
+
   }, [wallet.isWalletSystemAvailable]); // appKitRef is stable
+
 
   const displayAddress = wallet.address
     ? `${wallet.address.substring(0, 6)}...${wallet.address.substring(wallet.address.length - 4)}`

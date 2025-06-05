@@ -2,7 +2,8 @@
 import { Fragment } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Login from "@/pages/Login";
-import Signup from "@/pages/Signup";
+// import Signup from "@/pages/Signup"; // Replaced with SimpleSignup
+import SimpleSignup from '@/pages/SimpleSignup';
 import ForgotPassword from "@/pages/ForgotPassword";
 import UpdatePassword from "@/pages/UpdatePassword";
 import ResetPassword from "@/pages/ResetPassword";
@@ -16,7 +17,7 @@ const AuthRoutes = () => {
     <Routes>
       {/* Auth Routes */}
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/signup" element={<SimpleSignup />} />
       <Route path="/register" element={<Navigate to="/signup" replace />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password/:token" element={<ResetPassword />} />
