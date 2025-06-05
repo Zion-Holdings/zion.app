@@ -67,6 +67,10 @@ export default function Marketplace() {
 
         setListings(formattedData);
       } catch (error: any) {
+        console.error("Raw error object:", error);
+        if (error.response) {
+          console.error("Error response data:", await error.response.text());
+        }
         console.error("Error fetching products:", error);
         toast({
           title: "Error",
@@ -319,6 +323,13 @@ export default function Marketplace() {
                     </div>
                   </div>
                 ))}
+              </div>
+            ) : !isLoading && !listings.length && !searchQuery && !selectedProductTypes.length && !selectedLocations.length && !selectedAvailability.length && !selectedRating && selectedMinPrice === null && selectedMaxPrice === null ? (
+              <div className="col-span-2 text-center py-16 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
+                <h2 className="text-2xl font-bold text-white mb-4">Marketplace Currently Empty</h2>
+                <p className="text-zion-slate-light max-w-md mx-auto mb-8">
+                  No listings are currently available. Please check back later.
+                </p>
               </div>
             ) : filteredListings.length > 0 ? (
               <div

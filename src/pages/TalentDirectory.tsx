@@ -85,6 +85,19 @@ export default function TalentDirectory() {
     );
   }
 
+  if (!isLoading && !error && filteredTalents.length === 0 && !searchTerm && selectedSkills.length === 0 && selectedAvailability.length === 0 && selectedRegions.length === 0 && priceRange[0] === 50 && priceRange[1] === 200 && experienceRange[0] === 0 && experienceRange[1] === 15) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center py-16">
+          <h2 className="text-2xl font-bold text-white mb-4">Talent Directory Currently Empty</h2>
+          <p className="text-zion-slate-light max-w-md mx-auto">
+            No talent profiles are currently available. Please check back later.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   if (error) {
     return (
       <div className="container mx-auto px-4 py-8">
