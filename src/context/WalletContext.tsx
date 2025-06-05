@@ -152,27 +152,28 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   useEffect(() => {
     // Prioritize appKit from useAppKit() for subscriptions
     const targetAppKit = appKit || appKitInstance; // Use appKit from hook if available, else appKitInstance
-
     console.log('WalletContext: useEffect using targetAppKit:', targetAppKit ? 'instance available' : 'no instance');
-    const { onProviderChange } = targetAppKit ?? {};
-    if (onProviderChange) {
-      console.log('WalletContext: Using onProviderChange for provider changes.');
+
+    if (targetAppKit && typeof targetAppKit.subscribeProvider === 'function') {
+      console.log('WalletContext: Using subscribeProvider for provider changes.');
       updateWalletState(); // Initial state update
-      const unsubscribe = onProviderChange(updateWalletState);
+      // The callback for subscribeProvider receives the provider, which updateWalletState doesn't strictly need
+      // as it re-evaluates from appKit.getState() etc. So, we can just call updateWalletState.
+      const unsubscribe = targetAppKit.subscribeProvider(() => updateWalletState());
       return () => unsubscribe();
     } else if (targetAppKit) {
-      // Fallback or error if onProviderChange is not available but instance exists
+      // Fallback for older versions or if subscribeProvider is somehow not there but 'on' is.
       console.error(
-        'WalletContext: targetAppKit instance is available but onProviderChange is NOT a function. Attempting to use on/off as fallback.',
+        'WalletContext: subscribeProvider is not available. Attempting to use on/off as fallback.',
         targetAppKit
       );
       if (typeof targetAppKit.on === 'function' && typeof targetAppKit.off === 'function') {
         console.log('WalletContext: Fallback to using on/off for provider changes (event: "providerChanged").');
-        updateWalletState(); // Initial state update
+        updateWalletState();
         targetAppKit.on('providerChanged', updateWalletState);
         return () => targetAppKit.off?.('providerChanged', updateWalletState);
       } else {
-        console.error('WalletContext: on/off methods also not available on targetAppKit.');
+        console.error('WalletContext: on/off methods also not available on targetAppKit for fallback.');
       }
     } else {
       console.warn(
