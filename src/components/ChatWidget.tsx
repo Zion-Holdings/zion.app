@@ -32,7 +32,6 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       });
     }
 
-    setup();
     return () => {
       socketRef.current?.disconnect();
     };
