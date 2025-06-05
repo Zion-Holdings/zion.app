@@ -341,6 +341,7 @@ We welcome contributions to improve and expand this project! If you'd like to co
 4.  **Test Your Changes:**
     *   Add unit tests for any new functionality.
     *   Ensure all existing and new tests pass (`npm run test` for frontend, `python manage.py test` for Django backend if applicable).
+    *   Ensure your changes pass type checking by running `npm run typecheck`.
 5.  **Commit Your Changes:** Write clear, concise commit messages.
 6.  **Push to Your Fork:** Push your changes to your forked repository.
 7.  **Submit a Pull Request (PR):** Open a PR from your branch to the `main` (or `develop`) branch of the original repository.
