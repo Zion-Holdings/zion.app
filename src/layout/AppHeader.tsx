@@ -12,6 +12,7 @@ import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useAuth } from '@/hooks/useAuth';
 import { AvatarMenu } from '@/components/header/AvatarMenu';
+import { cn } from '@/lib/utils'; // Import cn utility
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,7 +31,7 @@ export function AppHeader() {
   
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md">
+      <header className={cn("sticky top-0 z-50 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md", { "bg-red-500": mobileMenuOpen })}>
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
           <div className="ml-6 flex-1 hidden md:block">
@@ -73,7 +74,7 @@ export function AppHeader() {
       
       {/* Mobile menu - positioned outside of header to prevent overlap issues */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 pt-16">
+        <div className="md:hidden fixed inset-0 z-60 pt-16">
           <div 
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(false)}
