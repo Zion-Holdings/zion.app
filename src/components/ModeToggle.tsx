@@ -23,6 +23,7 @@ export function ModeToggle() {
       aria-label="Toggle theme"
       title="Toggle theme"
       className="focus-visible:ring-zion-purple"
+      data-testid="theme-toggle"
     >
       {isDarkMode ? (
         <Sun className="h-5 w-5 text-yellow-300" />
