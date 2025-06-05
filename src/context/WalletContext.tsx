@@ -154,18 +154,18 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const targetAppKit = appKit || appKitInstance; // Use appKit from hook if available, else appKitInstance
 
     console.log('WalletContext: useEffect using targetAppKit:', targetAppKit ? 'instance available' : 'no instance');
-    if (targetAppKit && typeof targetAppKit.subscribeProvider === 'function') {
-      console.log('WalletContext: Using subscribeProvider for provider changes.');
+    const { onProviderChange } = targetAppKit ?? {};
+    if (onProviderChange) {
+      console.log('WalletContext: Using onProviderChange for provider changes.');
       updateWalletState(); // Initial state update
-      const unsubscribe = targetAppKit.subscribeProvider(updateWalletState);
+      const unsubscribe = onProviderChange(updateWalletState);
       return () => unsubscribe();
     } else if (targetAppKit) {
-      // Fallback or error if subscribeProvider is not available but instance exists
+      // Fallback or error if onProviderChange is not available but instance exists
       console.error(
-        'WalletContext: targetAppKit instance is available but subscribeProvider is NOT a function. Attempting to use on/off as fallback.',
+        'WalletContext: targetAppKit instance is available but onProviderChange is NOT a function. Attempting to use on/off as fallback.',
         targetAppKit
       );
-      // Optional: attempt appKit.on/off as a fallback if defined, though the goal is to make subscribeProvider primary
       if (typeof targetAppKit.on === 'function' && typeof targetAppKit.off === 'function') {
         console.log('WalletContext: Fallback to using on/off for provider changes (event: "providerChanged").');
         updateWalletState(); // Initial state update
@@ -175,7 +175,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         console.error('WalletContext: on/off methods also not available on targetAppKit.');
       }
     } else {
-      console.warn( // Changed to warn as appKit can be null initially
+      console.warn(
         'WalletContext: Unable to subscribe to provider changes. appKit (from useAppKit) and appKitInstance are null or invalid.'
       );
     }
