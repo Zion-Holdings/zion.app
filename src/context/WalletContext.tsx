@@ -1,5 +1,13 @@
 // src/context/WalletContext.tsx
-import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect, useRef } from 'react';
+
+
+// Definition of getAppKitProjectId
+const getAppKitProjectId = (): string | undefined => {
+  return import.meta.env.VITE_REOWN_PROJECT_ID;
+};
+
+import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
+
 import { ethers } from 'ethers';
 import { captureException } from '@/utils/sentry';
 import { ZION_TOKEN_NETWORK_ID } from '@/config/governanceConfig';
@@ -229,9 +237,9 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
 
     if (appKitInstance?.getState().isConnected && appKitInstance?.getAddress()) {
-      const currentAddress = currentAppKit.getAddress();
-      const currentChainId = currentAppKit.getChainId();
-      const currentProvider = currentAppKit.getWalletProvider();
+      const currentAddress = appKitInstance.getAddress();
+      const currentChainId = appKitInstance.getChainId();
+      const currentProvider = appKitInstance.getWalletProvider();
 
       if (currentAddress && currentChainId && currentProvider) {
         try {
