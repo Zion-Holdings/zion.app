@@ -22,7 +22,7 @@ class InterceptorManager {
   }
   eject(id: number) {
     if (this.handlers[id]) {
-      this.handlers[id] = null;
+      this.handlers[id] = {};
     }
   }
 }
@@ -94,20 +94,21 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
   );
 
   async function request<T>(url: string, method: string, init: RequestInit): Promise<AxiosResponse<T>> {
+    let reqInit = { ...init };
     // Run request interceptors
     for (const h of instance.interceptors.request.handlers) {
-      if (!h) continue;
-      if (h.fulfilled) {
-        try {
-          init = (await h.fulfilled(init)) || init;
-        } catch (err) {
-          if (h.rejected) {
-            await h.rejected(err);
-          }
-          throw err;
+      try {
+        if (h.fulfilled) {
+          const res = await h.fulfilled(reqInit);
+          if (res) reqInit = res;
+        }
+      } catch (err) {
+        if (h.rejected) {
+          await h.rejected(err);
         }
       }
     }
+
     // Read authToken from cookies
     const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
       const [name, value] = cookie.split('=');
@@ -116,12 +117,12 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     }, {} as Record<string, string>);
     const authToken = cookies['authToken'] || safeStorage.getItem('token');
 
-    const headers = { ...globalDefaults.headers.common, ...init.headers };
+    const headers = { ...globalDefaults.headers.common, ...reqInit.headers };
     if (authToken) {
       headers['Authorization'] = `Bearer ${authToken}`;
     }
 
-    const response = await fetch(url, { ...init, method, headers, credentials: withCreds ? 'include' : init.credentials });
+    const response = await fetch(url, { ...reqInit, method, headers, credentials: withCreds ? 'include' : reqInit.credentials });
     let data: any = null;
     try {
       data = await response.clone().json();
