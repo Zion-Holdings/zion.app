@@ -48,9 +48,9 @@ export function MobileApp() {
             isAuthenticated ? <MobileHome /> : <Navigate to="/onboarding" />
           } 
         />
-        <Route path="/browse" element={<MobileBrowse />} />
+        <Route path="/marketplace" element={<MobileBrowse />} />
+        <Route path="/community" element={<MobileMessages />} />
         <Route path="/projects" element={<MobileProjects />} />
-        <Route path="/inbox" element={<MobileMessages />} />
         <Route path="/resume" element={<MobileResumeBuilder />} />
         <Route path="/post-job" element={<MobileJobPost />} />
         <Route path="/profile" element={<div>Profile page</div>} />
