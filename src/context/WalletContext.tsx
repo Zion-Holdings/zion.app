@@ -6,7 +6,7 @@ const getAppKitProjectId = (): string | undefined => {
   return import.meta.env.VITE_REOWN_PROJECT_ID;
 };
 
-import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect, useRef } from 'react';
 
 import { ethers } from 'ethers';
 import { captureException } from '@/utils/sentry';
@@ -64,33 +64,53 @@ const KNOWN_INVALID_PROJECT_IDS = [
 
 // --- Reown AppKit Configuration ---
 
-// Metadata for AppKit - defined at top level as it's constant
-const metadata = {
-  name: 'Zion',
-  description: 'Zion Finance Platform',
-  url: typeof window !== 'undefined' ? window.location.origin : 'https://example.com',
-  icons: ['https://avatars.githubusercontent.com/u/37784886'],
-};
-
-// Network configuration for AppKit - defined at top level
-const ZION_CHAIN_MAP: Record<number, any> = {
-  1: mainnet,
-  5: goerli,
-  137: polygon,
-  10: optimism,
-  42161: arbitrum,
-  8453: base,
-};
-const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
+// The entire first WalletProvider component (original lines 55-145) and
+// the subsequent problematic block (original lines 147-180) have been removed.
+// This is to ensure only one well-structured WalletProvider (the one using useRef,
+// originally starting at line 181) remains.
 
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  console.log('WalletProvider: Initializing...');
-  const appKitRef = React.useRef<AppKitInstanceInterface | null>(null);
-  const [wallet, setWallet] = useState<WalletState>(initialWalletState);
 
-  // Get project ID and validate it
+  console.log('WalletProvider: Initializing...');
+
   const rawProjectId = getAppKitProjectId();
-  const isProjectIdValid = rawProjectId && rawProjectId.trim() !== '' && !KNOWN_INVALID_PROJECT_IDS.includes(rawProjectId);
+  console.log('WalletContext: Resolved rawProjectId from getAppKitProjectId():', rawProjectId);
+
+  // Check if the project ID is valid
+  const isProjectIdValid = rawProjectId && !KNOWN_INVALID_PROJECT_IDS.includes(rawProjectId);
+  const projectId = rawProjectId; // The createAppKit call expects 'projectId'
+
+  if (!isProjectIdValid) {
+    console.warn(
+      `WalletContext: Invalid or placeholder project ID detected: "${rawProjectId}". Wallet system will be unavailable.`
+    );
+  }
+
+  const PLACEHOLDER_PROJECT_IDS = ['YOUR_DEFAULT_PROJECT_ID_ENV_MISSING', 'YOUR_DEFAULT_PROJECT_ID_FALLBACK'];
+  if (projectId && PLACEHOLDER_PROJECT_IDS.includes(projectId)) {
+      const errorMessage = 'WalletContext: Critical Error - Reown AppKit Project ID is not set or is a placeholder. Please set VITE_REOWN_PROJECT_ID environment variable.';
+      console.error(errorMessage, 'Resolved Project ID:', projectId);
+  }
+
+  const metadata = {
+    name: 'Zion',
+    description: 'Zion Finance Platform',
+    url: typeof window !== 'undefined' ? window.location.origin : 'https://example.com',
+    icons: ['https://avatars.githubusercontent.com/u/37784886'],
+  };
+
+  const ZION_CHAIN_MAP: Record<number, any> = {
+    1: mainnet,
+    5: goerli,
+    137: polygon,
+    10: optimism,
+    42161: arbitrum,
+    8453: base,
+  };
+
+  const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
+
+  const appKitRef = useRef<AppKitInstanceInterface | null>(null);
 
   // Initialize AppKit (this is the useEffect previously around line 180)
   useEffect(() => {
@@ -152,7 +172,10 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       return;
     }
 
-    const state = currentAppKit.getState(); // Get current state from AppKit
+    if (currentAppKit?.getState().isConnected && currentAppKit?.getAddress()) {
+      const currentAddress = currentAppKit.getAddress();
+      const currentChainId = currentAppKit.getChainId();
+      const currentProvider = currentAppKit.getWalletProvider();
 
     if (state.isConnected && state.address && state.provider && state.chainId) {
       try {
