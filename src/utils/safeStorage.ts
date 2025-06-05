@@ -1,4 +1,5 @@
 let isLocalStorageAvailable = true;
+const isDevelopment = process.env.NODE_ENV !== 'production';
 const localStorageMemoryStore: { [key: string]: string } = {};
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -80,6 +81,9 @@ export const safeSessionStorage = {
   getItem: (key: string): string | null => {
     if (isDevelopment) {
       console.log(`safeSessionStorage.getItem: Attempting to get item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
+      console.log(
+        `safeSessionStorage.getItem: Attempting to get item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`
+      );
     }
     if (!isSessionStorageAvailable) {
       if (isDevelopment) {
