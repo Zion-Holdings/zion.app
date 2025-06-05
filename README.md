@@ -145,6 +145,19 @@ The primary backend is a Django application located in the `/backend` directory.
 ### Node.js Services (for specific APIs like `/pages/api`)
 The Next.js framework (implied by the `/pages/api` directory structure) handles these API routes as part of its development server, which is started with `npm run dev` from the project root. If there are standalone Node.js services in the `/server` directory (which seems to be the case here), they would typically be started by navigating into that directory, running `npm install` (if they have their own `package.json`), and then using a command like `node index.js` or a script from their `package.json`. Refer to specific READMEs in those directories if they exist.
 
+## Code Style and Linting
+
+This project uses ESLint for code linting and Prettier for code formatting to maintain a consistent codebase.
+
+*   **`npm run lint`**:
+    *   This command checks all JavaScript/TypeScript files in the project for ESLint issues.
+    *   It will attempt to automatically fix any fixable problems.
+    *   This check is also run as part of the Continuous Integration (CI) pipeline to ensure code quality before merging.
+*   **`npm run format`**:
+    *   This command uses Prettier to automatically format all JavaScript, JSX, TypeScript, and TSX files within the `src/` directory.
+    *   It ensures that the code adheres to the defined style guidelines (see `.prettierrc.json`).
+    *   Run this command before committing your changes to ensure consistent formatting. In CI, `npm run format -- --check` is used to verify formatting without making changes.
+
 ## API Documentation
 
 The project exposes several APIs for programmatic access and integration.
