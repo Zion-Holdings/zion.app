@@ -14,6 +14,7 @@ import type { ForumCategory } from "@/types/community";
 
 
 export default function CommunityPage() {
+  console.log('CommunityPage rendering');
   const { user } = useAuth();
   const { featuredPosts, recentPosts } = useCommunity();
   const [activeTab, setActiveTab] = useState("categories");
@@ -42,6 +43,12 @@ export default function CommunityPage() {
       setSearchParams(searchParams, { replace: true });
     }
   };
+
+  console.log('CommunityPage featuredPosts:', featuredPosts);
+  console.log('CommunityPage recentPosts:', recentPosts);
+  if (!featuredPosts || !recentPosts) {
+    console.error('CommunityPage: Posts data is missing from context!');
+  }
   
   return (
     <>
@@ -64,6 +71,15 @@ export default function CommunityPage() {
           <CreatePostButton />
         </div>
         
+        {/* {featuredPosts && featuredPosts.length > 0 ? (
+          <>
+            <p>Attempting to render a PostCard directly.</p>
+            <PostCard post={featuredPosts[0]} />
+          </>
+        ) : (
+          <p>No featured posts available to render a PostCard directly.</p>
+        )} */}
+
         <Tabs defaultValue="categories" value={activeTab} onValueChange={setActiveTab} className="mb-8">
           <TabsList className="mb-6">
             <TabsTrigger value="categories">Categories</TabsTrigger>
@@ -73,6 +89,7 @@ export default function CommunityPage() {
           
           <TabsContent value="categories">
             <ForumCategories />
+            {/* <p>Categories Tab Content</p> */}
           </TabsContent>
           
           <TabsContent value="featured">
@@ -81,6 +98,7 @@ export default function CommunityPage() {
                 <PostCard key={post.id} post={post} />
               ))}
             </div>
+            {/* <p>Featured Tab Content</p> */}
           </TabsContent>
           
           <TabsContent value="recent">
@@ -89,8 +107,11 @@ export default function CommunityPage() {
                 <PostCard key={post.id} post={post} />
               ))}
             </div>
+            {/* <p>Recent Tab Content</p> */}
           </TabsContent>
         </Tabs>
+        {/* <p>Attempting to render ForumCategories directly.</p>
+        <ForumCategories /> */}
       </div>
 
       <NewPostDialog
