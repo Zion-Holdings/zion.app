@@ -81,6 +81,17 @@ if (!isProjectIdValid) {
   );
 }
 
+const PLACEHOLDER_PROJECT_IDS = ['YOUR_DEFAULT_PROJECT_ID_ENV_MISSING', 'YOUR_DEFAULT_PROJECT_ID_FALLBACK'];
+if (PLACEHOLDER_PROJECT_IDS.includes(projectId)) {
+  const errorMessage = 'WalletContext: Critical Error - Reown AppKit Project ID is not set or is a placeholder. Please set VITE_REOWN_PROJECT_ID environment variable.';
+  console.error(errorMessage, 'Resolved Project ID:', projectId);
+  // Optionally, throw an error to halt initialization if this is considered fatal
+  // throw new Error(errorMessage);
+  // For now, we'll log an error and let appKitInstance be potentially null or misconfigured,
+  // which existing downstream checks should ideally handle by not attempting to use it.
+  // The new logging from Step 1 will show if appKitInstance is null or malformed.
+}
+
 const metadata = {
   name: 'Zion', // Replace with your project's name
   description: 'Zion Finance Platform', // Replace with your project's description
@@ -161,6 +172,44 @@ if (projectId) {
 
 const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
 
+const appKitInstance: AppKitInstanceInterface | null = typeof window !== 'undefined'
+  ? createAppKit({
+      adapters: [
+        new EthersAdapter({
+          ethers, // pass the ethers library instance
+          // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
+        }),
+      ],
+      networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
+      defaultNetwork: targetNetwork,
+      projectId,
+      metadata,
+      features: {
+        analytics: false, // Optional: enable analytics
+        // ... other features like swaps, onramp if needed
+      },
+    })
+  : null;
+console.log('WalletContext: appKitInstance created:', appKitInstance);
+if (appKitInstance) {
+  console.log('WalletContext: Inspecting appKitInstance properties:');
+  for (const key in appKitInstance) {
+    if (Object.prototype.hasOwnProperty.call(appKitInstance, key)) {
+      console.log(`WalletContext: appKitInstance.${key} - type: ${typeof (appKitInstance as any)[key]}`);
+    }
+  }
+  // Explicitly check types of critical methods
+  console.log('WalletContext: typeof appKitInstance.subscribeProvider:', typeof appKitInstance.subscribeProvider);
+  console.log('WalletContext: typeof appKitInstance.on:', typeof appKitInstance.on);
+  console.log('WalletContext: typeof appKitInstance.off:', typeof appKitInstance.off);
+} else {
+  console.error('WalletContext: appKitInstance is null, cannot inspect properties.');
+}
+if (appKitInstance && typeof appKitInstance.subscribeProvider !== 'function') {
+  console.error('WalletContext: appKitInstance does NOT have a subscribeProvider method!', appKitInstance);
+} else if (!appKitInstance) {
+  console.error('WalletContext: appKitInstance is null after creation attempt.');
+}
 
 // --- End Reown AppKit Configuration ---
 
