@@ -1,5 +1,7 @@
 let isLocalStorageAvailable = true;
+const isDevelopment = process.env.NODE_ENV !== 'production';
 const localStorageMemoryStore: { [key: string]: string } = {};
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
