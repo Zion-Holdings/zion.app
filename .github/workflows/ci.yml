@@ -29,15 +29,16 @@ jobs:
       - run: npm run build
       - name: Verify build output
         run: |
-          if [ ! -d dist ]; then
-            echo "Build failed: dist folder not found"
+          if [ ! -d out ]; then
+            echo "Build failed: out folder not found"
             exit 1
           fi
-      - name: Verify asset paths
+      - name: Serve application and run smoke tests
         run: |
           npx serve out/ --cors --single -l 5000 &
           SERVE_PID=$!
-          sleep 5
+          sleep 5 # Give server time to start
+          npm run smoke:test # This script will be added to package.json later
           kill $SERVE_PID
       - name: Run Vitest with Coverage
         run: npx vitest run --coverage
