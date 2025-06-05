@@ -10,7 +10,8 @@ import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate, useLocation } from "react-router-dom";
 import useSWRMutation from "swr/mutation";
-import Skeleton from "@/components/ui/skeleton";
+import Skeleton, { SkeletonCard } from "@/components/ui/skeleton"; // Import SkeletonCard
+import { FilterSidebarSkeleton } from "@/components/skeletons/FilterSidebarSkeleton"; // Import FilterSidebarSkeleton
 import { useDelayedError } from '@/hooks/useDelayedError';
 import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
 
@@ -130,26 +131,23 @@ export default function EquipmentPage() {
   // Updated loading condition to specifically check for equipment being undefined
   if (isLoadingEquipment && equipment === undefined) {
     return (
-      <div data-testid="loading-state-equipment" className="container mx-auto p-4 space-y-4">
+      <div data-testid="loading-state-equipment" className="container mx-auto p-4 space-y-4" aria-busy="true">
+        {/* Skeleton for the top button (e.g., AI Recommendations) */}
         <div className="flex justify-end mb-6">
-            <Skeleton className="h-10 w-48 bg-zion-blue-light/20" />
+            <Skeleton className="h-10 w-48" /> {/* Removed specific bg color, base Skeleton handles it */}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
-              <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
-              <div className="p-4">
-                <Skeleton className="h-6 w-2/3 mb-2 bg-zion-blue-light/20" />
-                <Skeleton className="h-4 w-full mb-1 bg-zion-blue-light/20" />
-                <Skeleton className="h-4 w-5/6 mb-3 bg-zion-blue-light/20" />
-                <Skeleton className="h-4 w-1/2 mb-4 bg-zion-blue-light/20" />
-                <div className="flex justify-between items-center pt-4">
-                  <Skeleton className="h-6 w-1/4 bg-zion-blue-light/20" />
-                  <Skeleton className="h-8 w-1/3 bg-zion-blue-light/20" />
-                </div>
-              </div>
+        {/* Main layout for sidebar and cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div className="lg:col-span-1">
+            <FilterSidebarSkeleton />
+          </div>
+          <div className="lg:col-span-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {Array.from({ length: 6 }).map((_, index) => (
+                <SkeletonCard key={index} />
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     );
