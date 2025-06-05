@@ -31,6 +31,7 @@ import './utils/globalFetchInterceptor';
 import './utils/consoleErrorToast';
 import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
+import RootErrorBoundary from './components/RootErrorBoundary';
 import { GlobalSnackbarProvider, GlobalLoaderProvider, NotificationProvider, MessagingProvider } from './context';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
@@ -68,9 +69,10 @@ try {
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-      <Provider store={store}>
-        <GlobalSnackbarProvider>
-        <GlobalLoaderProvider>
+      <RootErrorBoundary>
+        <Provider store={store}>
+          <GlobalSnackbarProvider>
+          <GlobalLoaderProvider>
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
@@ -102,6 +104,7 @@ try {
         </GlobalLoaderProvider>
         </GlobalSnackbarProvider>
       </Provider>
+      </RootErrorBoundary>
       {/* Removed duplicate main marker */}
     </React.StrictMode>,
   );
