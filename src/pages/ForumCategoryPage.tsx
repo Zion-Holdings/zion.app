@@ -19,7 +19,7 @@ import {
   FileText,
   Megaphone,
   Search
-} from "@/components/icons";
+} from "lucide-react";
 
 // Mock category data
 const categoriesInfo: Record<string, ForumCategoryInfo> = {
