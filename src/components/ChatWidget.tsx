@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import io from 'socket.io-client';
 import { useAuth } from '@/hooks/useAuth';
 import { MessageBubble } from '@/components/messaging/MessageBubble';
 import { Button } from '@/components/ui/button';
@@ -22,17 +23,14 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   useEffect(() => {
     if (!isOpen) return;
 
-    async function setup() {
-      const { io } = await import('socket.io-client');
-      socketRef.current = io({ path: '/api/socket', transports: ['websocket'] });
-      socketRef.current.emit('join-room', roomId);
-      socketRef.current.on('receive-message', (msg: Message) => {
+    // No longer async, io is imported statically
+    socketRef.current = io({ path: '/api/socket', transports: ['websocket'] });
+    socketRef.current.emit('join-room', roomId);
+    socketRef.current.on('receive-message', (msg: Message) => {
         setMessages(prev => [...prev, msg]);
         triggerNotification('New message', msg.content);
       });
-    }
-
-    setup();
+    // setup(); // No longer needed as it's not async
     return () => {
       socketRef.current?.disconnect();
     };
