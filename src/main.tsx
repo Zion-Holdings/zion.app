@@ -22,7 +22,7 @@ import App from './App.tsx';
 import './index.css';
 // Removed feat/i18n-implementation and main markers
 import { I18nextProvider } from 'react-i18next';
-import i18n from './i18n'; // Adjust the path if your i18n.js is elsewhere
+import i18n from './i18n/index';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@tanstack/react-query';
@@ -32,9 +32,8 @@ import './utils/consoleErrorToast';
 import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
 import { GlobalSnackbarProvider, GlobalLoaderProvider, NotificationProvider, MessagingProvider } from './context';
-
-// import { LanguageProvider } from '@/context/LanguageContext';
-// import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
+import { LanguageProvider } from '@/context/LanguageContext';
+import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
 // import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
@@ -80,26 +79,18 @@ try {
                 <AuthProvider>
                   <MessagingProvider>
                   <NotificationProvider>
-                    {/* <AnalyticsProvider> */}
-                      {/* <LanguageProvider authState={{ isAuthenticated: false, user: null }}> */}
-                        {/* <ViewModeProvider> */}
-                          <CartProvider>
-                            {/* <FavoritesProvider> */}
-                              {/* <ReferralMiddleware> */}
-                                <ToastProvider>
-                                  <GlobalErrorBoundary>
-                                    <AppLayout>
-                                      <App />
-                                    </AppLayout>
-                                  </GlobalErrorBoundary>
-                                </ToastProvider>
-                              {/* </ReferralMiddleware> */}
-                            {/* </FavoritesProvider> */}
-                          </CartProvider>
-                        {/* </ViewModeProvider> */}
-                        {/* <LanguageDetectionPopup /> */}
-                      {/* </LanguageProvider> */}
-                    {/* </AnalyticsProvider> */}
+                    <LanguageProvider>
+                      <CartProvider>
+                        <ToastProvider>
+                          <GlobalErrorBoundary>
+                            <AppLayout>
+                              <App />
+                            </AppLayout>
+                          </GlobalErrorBoundary>
+                        </ToastProvider>
+                      </CartProvider>
+                      <LanguageDetectionPopup />
+                    </LanguageProvider>
                   </NotificationProvider>
                   </MessagingProvider>
                 </AuthProvider>
