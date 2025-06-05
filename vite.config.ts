@@ -28,6 +28,9 @@ export default defineConfig({
       },
     },
   ],
+  // Update the base path if the application will be hosted under a
+  // subdirectory. By default we use '/' to work for most setups.
+  base: '/',
   build: {
     sourcemap: false,
     minify: 'esbuild',
