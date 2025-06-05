@@ -15,14 +15,20 @@ type FulfilledFn = (value: any) => any | Promise<any>;
 type RejectedFn = (error: any) => any | Promise<any>;
 
 class InterceptorManager {
-  handlers: { fulfilled?: FulfilledFn; rejected?: RejectedFn }[] = [];
-  use(fulfilled?: FulfilledFn, rejected?: RejectedFn) {
+  handlers: ({ fulfilled?: FulfilledFn; rejected?: RejectedFn } | null)[] = [];
+  use(fulfilled?: FulfilledFn, rejected?: RejectedFn): number {
     this.handlers.push({ fulfilled, rejected });
+    return this.handlers.length - 1;
+  }
+  eject(id: number) {
+    if (this.handlers[id]) {
+      this.handlers[id] = null;
+    }
   }
 }
 
 export interface AxiosInstance {
-  interceptors: { response: InterceptorManager };
+  interceptors: { request: InterceptorManager; response: InterceptorManager };
   get<T = any>(
     url: string,
     config?: { params?: Record<string, any> } & RequestInit
@@ -37,7 +43,7 @@ export interface AxiosInstance {
 export interface AxiosStatic {
   create: typeof create;
   defaults: AxiosDefaults;
-  interceptors: { response: InterceptorManager };
+  interceptors: { request: InterceptorManager; response: InterceptorManager };
   get: AxiosInstance['get'];
   post: AxiosInstance['post'];
 }
@@ -51,6 +57,7 @@ const globalDefaults: AxiosDefaults = {
 };
 
 const globalInterceptors = {
+  request: new InterceptorManager(),
   response: new InterceptorManager(),
 };
 
@@ -59,7 +66,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
   const withCreds = !!config.withCredentials;
 
   const instance: AxiosInstance = {
-    interceptors: { response: new InterceptorManager() },
+    interceptors: { request: new InterceptorManager(), response: new InterceptorManager() },
     async get<T = any>(url, init: { params?: Record<string, any> } & RequestInit = {} as any) {
       const params = (init as any).params
         ? '?' + new URLSearchParams((init as any).params).toString()
@@ -79,9 +86,28 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
   };
 
   // Include global interceptors on the instance
-  instance.interceptors.response.handlers.push(...globalInterceptors.response.handlers);
+  instance.interceptors.request.handlers.push(
+    ...globalInterceptors.request.handlers
+  );
+  instance.interceptors.response.handlers.push(
+    ...globalInterceptors.response.handlers
+  );
 
   async function request<T>(url: string, method: string, init: RequestInit): Promise<AxiosResponse<T>> {
+    // Run request interceptors
+    for (const h of instance.interceptors.request.handlers) {
+      if (!h) continue;
+      if (h.fulfilled) {
+        try {
+          init = (await h.fulfilled(init)) || init;
+        } catch (err) {
+          if (h.rejected) {
+            await h.rejected(err);
+          }
+          throw err;
+        }
+      }
+    }
     // Read authToken from cookies
     const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
       const [name, value] = cookie.split('=');
