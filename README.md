@@ -194,6 +194,17 @@ Run the Cypress suite headlessly:
 npm run cypress:run
 ```
 
+For local development and running Cypress tests, you may need to provide test user credentials. Create a `cypress.env.json` file in the project root with the following structure:
+
+```json
+{
+  "TEST_USER_EMAIL": "your_test_email@example.com",
+  "TEST_USER_PASSWORD": "your_secure_password",
+  "TEST_USER_DISPLAY_NAME": "Your Test User"
+}
+```
+Replace the placeholder values with your actual test credentials. These environment variables are used by Cypress tests such as `login.cy.ts`, `register.cy.ts`, and `auth-integration.cy.ts` to simulate user interactions.
+
 ### Coverage Report
 
 After running `npm run test`, open `coverage/lcov-report/index.html` in your
