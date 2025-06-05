@@ -17,31 +17,28 @@ interface UseHireRequestFormProps {
   };
 }
 
-export interface FormValues {
-  requesterName: string;
-  requesterEmail: string;
-  projectOverview: string;
-  timeline: string;
-  budgetMin: number;
-  budgetMax: number;
-}
+// Define the base schema first
+const baseFormSchema = z.object({
+  requesterName: z.string().min(2, "Name is required"),
+  requesterEmail: z.string().email("Valid email is required"),
+  projectOverview: z.string().min(10, "Please provide more details about your project"),
+  timeline: z.string().min(5, "Please specify your timeline"),
+  budgetMin: z.number().min(1, "Budget minimum is required"),
+  budgetMax: z.number().min(1, "Budget maximum is required")
+});
+
+// Infer FormValues from the base schema
+export type FormValues = z.infer<typeof baseFormSchema>;
+
+// Apply refinement to the base schema
+const formSchema = baseFormSchema.refine(data => data.budgetMax >= data.budgetMin, {
+  message: "Maximum budget must be greater than or equal to minimum budget",
+  path: ["budgetMax"]
+});
 
 export function useHireRequestForm({ talent, onClose, initialJobTitle, userDetails }: UseHireRequestFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { submitHireRequest } = useHireRequest();
-
-  // Define the form schema with validation rules
-  const formSchema = z.object({
-    requesterName: z.string().min(2, "Name is required"),
-    requesterEmail: z.string().email("Valid email is required"),
-    projectOverview: z.string().min(10, "Please provide more details about your project"),
-    timeline: z.string().min(5, "Please specify your timeline"),
-    budgetMin: z.number().min(1, "Budget minimum is required"),
-    budgetMax: z.number().min(1, "Budget maximum is required")
-  }).refine(data => data.budgetMax >= data.budgetMin, {
-    message: "Maximum budget must be greater than or equal to minimum budget",
-    path: ["budgetMax"]
-  });
 
   // Initialize the form
   const form = useForm<FormValues>({
@@ -53,11 +50,12 @@ export function useHireRequestForm({ talent, onClose, initialJobTitle, userDetai
       timeline: "",
       budgetMin: talent.hourly_rate || 25,
       budgetMax: talent.hourly_rate ? talent.hourly_rate * 1.5 : 50
+      // projectOverview and timeline were already correctly initialized above
     }
   });
 
   // Handle form submission
-  const onSubmit = async (values: FormValues) => {
+  const onSubmit = async (values: FormValues): Promise<void> => {
     setIsSubmitting(true);
     try {
       const requestData = {
