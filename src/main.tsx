@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'; // Added Suspense here
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 
 // Integrate axe-core accessibility auditing in development
@@ -16,7 +16,6 @@ import ReactDOM from 'react-dom/client';
 //   });
 // }
 
-console.log(Suspense); // To ensure Suspense is "used"
 
 import App from './App.tsx';
 import './index.css';
@@ -88,9 +87,11 @@ try {
                               {/* <ReferralMiddleware> */}
                                 <ToastProvider>
                                   <GlobalErrorBoundary>
-                                    <AppLayout>
-                                      <App />
-                                    </AppLayout>
+                                    <Suspense fallback={<div>Loading App...</div>}>
+                                      <AppLayout>
+                                        <App />
+                                      </AppLayout>
+                                    </Suspense>
                                   </GlobalErrorBoundary>
                                 </ToastProvider>
                               {/* </ReferralMiddleware> */}
