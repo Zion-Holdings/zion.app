@@ -17,6 +17,11 @@ import ReactDOM from 'react-dom/client';
 // }
 
 
+// Add console logs to verify critical ENV vars (use carefully in prod)
+if (process.env.NODE_ENV !== 'production') {
+  console.log('API_URL:', process.env.REACT_APP_API_URL);
+}
+
 import App from './App.tsx';
 import './index.css';
 // Removed feat/i18n-implementation and main markers
