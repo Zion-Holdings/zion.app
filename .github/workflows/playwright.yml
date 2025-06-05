@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
-          path: playwright-report/
+          path: playwright-logs/html-report
       - name: Send Slack alert on failure
         if: failure()
         uses: rtCamp/action-slack-notify@v2
