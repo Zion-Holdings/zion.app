@@ -37,7 +37,11 @@ async function fetchEquipment(): Promise<ProductListing[]> {
   try {
     const { data } = await apiClient.get('/equipment');
     return data;
-  } catch (error) {
+  } catch (error: any) {
+    console.error("Raw error object in fetchEquipment:", error);
+    if (error.response) {
+      console.error("Error response data in fetchEquipment:", await error.response.text());
+    }
     console.error("Failed to fetch equipment:", error);
     // Propagate the error or return an empty array/handle as per application's error strategy
     throw error;
@@ -83,6 +87,8 @@ export default function EquipmentPage() {
       if (!res.ok) {
         // Enhanced error handling for failed recommendations fetch
         const errorData = await res.json().catch(() => ({ message: "Failed to fetch recommendations, and error response is not JSON."}));
+        console.error("Raw error object in fetchRecommendations:", errorData);
+        // The errorData is already logged, but this is to ensure it's captured before throwing.
         console.error("Recommendation fetch error:", errorData);
         throw new Error(errorData.message || "Failed to fetch recommendations");
       }
@@ -154,13 +160,24 @@ export default function EquipmentPage() {
   }
 
   // If there's an error and we don't have any equipment to show (even stale), show error.
-  if (delayedError && (!equipment || equipment.length === 0)) {
+  if (delayedError && (!fetchedEquipment || fetchedEquipment.length === 0)) {
     return (
       <div data-testid="error-state-equipment" className="py-12 text-center space-y-4">
         <p className="text-red-400">Failed to load equipment: {delayedError.message}</p>
         <Button data-testid="retry-button-equipment" onClick={() => refetchEquipment()}>
           Retry
         </Button>
+      </div>
+    );
+  }
+
+  if (!isLoadingEquipment && !equipmentError && (!equipment || equipment.length === 0) && !isFetchingRecommendations) {
+    return (
+      <div className="text-center py-16">
+        <h2 className="text-2xl font-bold text-white mb-4">Equipment Catalog Currently Empty</h2>
+        <p className="text-zion-slate-light max-w-md mx-auto">
+          No equipment listings are currently available. Please check back later.
+        </p>
       </div>
     );
   }

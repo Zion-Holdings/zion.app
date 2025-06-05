@@ -31,7 +31,11 @@ export default function Categories() {
         }
         const data: CategoryType[] = await response.json();
         setCategories(data);
-      } catch (e) {
+      } catch (e: any) {
+        console.error("Raw error object:", e);
+        if (e.response) {
+          console.error("Error response data:", await e.response.text());
+        }
         setError(e as Error);
         console.error("Failed to fetch categories:", e);
       } finally {
@@ -68,7 +72,12 @@ export default function Categories() {
                 <p>Please try again later.</p>
               </div>
             )}
-            {!isLoading && !error && (
+            {!isLoading && !error && categories.length === 0 && (
+              <div className="text-center text-zion-slate-light py-8">
+                <p>No categories are currently available. Please check back later.</p>
+              </div>
+            )}
+            {!isLoading && !error && categories.length > 0 && (
               // Pass fetched categories to CategoriesSection
               // This assumes CategoriesSection can accept a 'categories' prop
               // and will render them. If CategoriesSection fetches its own data,

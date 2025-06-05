@@ -71,8 +71,8 @@ describe('Marketplace Page', () => {
 
   it('displays product listings when API returns data', async () => {
     const mockProducts = [
-      { id: '1', title: 'Test Product 1', description: 'Desc 1', category: 'Service', price: 100, images: ['img1.jpg'], rating: 4.5, tags: ['tag1'], merchant: { id: 'merchant1', name: 'Merchant 1' } },
-      { id: '2', title: 'Test Product 2', description: 'Desc 2', category: 'Software', price: 200, images: ['img2.jpg'], rating: 4.0, tags: ['tag2'], merchant: { id: 'merchant2', name: 'Merchant 2' } },
+      { id: '1', title: 'Test Product 1', description: 'Desc 1', category: 'Service', price: 100, images: ['img1.jpg'], rating: 4.5, tags: ['tag1'], averageRating: 4.5, merchant: { id: 'merchant1', name: 'Merchant 1' } },
+      { id: '2', title: 'Test Product 2', description: 'Desc 2', category: 'Software', price: 200, images: ['img2.jpg'], rating: 4.0, tags: ['tag2'], averageRating: 4.0, merchant: { id: 'merchant2', name: 'Merchant 2' } },
     ];
 
     (global.fetch as jest.Mock).mockImplementationOnce(() =>
@@ -97,7 +97,59 @@ describe('Marketplace Page', () => {
     });
   });
 
-  it('handles API error when fetching products', async () => {
+  it('renders empty state when API returns no products', async () => {
+    (global.fetch as jest.Mock).mockImplementationOnce(() =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve([]),
+      })
+    );
+
+    render(
+      <MemoryRouter>
+        <Marketplace />
+      </MemoryRouter>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText(/Marketplace Currently Empty/i)).toBeInTheDocument();
+    });
+  });
+
+  it('renders no results for filters when products exist but filters do not match', async () => {
+    const mockProducts = [
+      { id: '1', title: 'Test Product 1', description: 'Desc 1', category: 'Service', price: 100, images: ['img1.jpg'], rating: 4.5, tags: ['tag1'], averageRating: 4.5, merchant: { id: 'merchant1', name: 'Merchant 1' } },
+    ];
+
+    (global.fetch as jest.Mock).mockImplementationOnce(() =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockProducts),
+      })
+    );
+
+    render(
+      <MemoryRouter>
+        <Marketplace />
+      </MemoryRouter>
+    );
+
+    // Wait for initial data to load
+    await waitFor(() => {
+      expect(screen.getByText(/Test Product 1/i)).toBeInTheDocument();
+    });
+
+    // Simulate a search that yields no results
+    const searchInput = screen.getByTestId('enhanced-search-input');
+    const { fireEvent } = require('@testing-library/react');
+    fireEvent.change(searchInput, { target: { value: 'nonexistentproduct' } });
+
+    await waitFor(() => {
+      expect(screen.getByText(/No Results Found/i)).toBeInTheDocument();
+    });
+  });
+
+  it('handles API error when fetching products and shows toast', async () => {
     (global.fetch as jest.Mock).mockImplementationOnce(() =>
       Promise.resolve({
         ok: false,
@@ -120,6 +172,8 @@ describe('Marketplace Page', () => {
         description: "Could not fetch products: Failed to fetch products: Server Error",
         variant: "destructive",
       }));
+      // As a fallback, check if the empty state message is shown because listings will be empty
+      expect(screen.getByText(/Marketplace Currently Empty/i)).toBeInTheDocument();
     });
   });
 });
