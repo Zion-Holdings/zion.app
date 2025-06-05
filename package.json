@@ -7,7 +7,8 @@
     "dev": "vite",
     "generate": "prisma generate",
     "build": "NODE_ENV=production npx tsc -p tsconfig.json && NODE_ENV=production vite build --outDir out",
-    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --fix --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "preview": "NODE_ENV=production vite preview",
     "test": "jest --coverage",
     "test:watch": "vitest --watch",
@@ -15,7 +16,8 @@
     "cypress:run": "cypress run --browser chrome",
     "lint:a11y": "vitest run tests/Accessibility.test.tsx",
     "test:e2e": "playwright test",
-    "es:index": "node scripts/index-elasticsearch.js"
+    "es:index": "node scripts/index-elasticsearch.js",
+    "smoke:test": "cypress run --spec cypress/e2e/smoke.cy.ts"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^9.0.2",
@@ -142,6 +144,7 @@
     "cypress": "^14.4.0",
     "cypress-real-events": "^1.12.0",
     "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -156,6 +159,7 @@
     "msw": "^2.8.7",
     "node-mocks-http": "^1.17.2",
     "postcss": "^8.4.35",
+    "prettier": "^3.5.3",
     "prisma": "^6.9.0",
     "puppeteer": "^24.10.0",
     "react-devtools": "^6.1.2",
@@ -167,7 +171,8 @@
     "typescript-eslint": "^8.33.0",
     "vite": "^6.3.5",
     "vitest": "^3.2.1",
-    "whatwg-fetch": "^3.6.20"
+    "whatwg-fetch": "^3.6.20",
+    "serve": "^14.2.3"
   },
   "peerDependencies": {
     "react": "^18.2.0",

@@ -24,39 +24,35 @@ export function GlobalLoaderProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<any>(null);
 
   useEffect(() => {
-    axios.interceptors.response.use(
-      (response) => {
-        setLoading(false);
-        return response;
-      },
-      (err) => {
-        setLoading(false);
-        setError(err);
-        return Promise.reject(err);
-      }
-    );
-
-    // Start the loader when a request is initiated by overriding the HTTP helpers
-    const originalGet = axios.get;
-    const originalPost = axios.post;
-
-    axios.get = (async (
-      ...args: Parameters<typeof originalGet>
-    ): ReturnType<typeof originalGet> => {
+    const onRequest = (config: any) => {
       setLoading(true);
-      return originalGet(...args);
-    }) as typeof axios.get;
+      return config;
+    };
+    const onResponse = (response: any) => {
+      setLoading(false);
+      return response;
+    };
+    const onError = (err: any) => {
+      setLoading(false);
+      setError(err);
+      return Promise.reject(err);
+    };
 
-    axios.post = (async (
-      ...args: Parameters<typeof originalPost>
-    ): ReturnType<typeof originalPost> => {
-      setLoading(true);
-      return originalPost(...args);
-    }) as typeof axios.post;
+    const reqInterceptor = axios.interceptors.request.use(onRequest, onError);
+    const resInterceptor = axios.interceptors.response.use(onResponse, onError);
+
+    const originalCreate = axios.create;
+    axios.create = (...args: Parameters<typeof originalCreate>) => {
+      const instance = originalCreate(...args);
+      instance.interceptors.request.use(onRequest, onError);
+      instance.interceptors.response.use(onResponse, onError);
+      return instance;
+    };
 
     return () => {
-      axios.get = originalGet;
-      axios.post = originalPost;
+      axios.interceptors.request.eject(reqInterceptor);
+      axios.interceptors.response.eject(resInterceptor);
+      axios.create = originalCreate;
     };
   }, []);
 

@@ -155,6 +155,19 @@ The primary backend is a Django application located in the `/backend` directory.
 ### Node.js Services (for specific APIs like `/pages/api`)
 The Next.js framework (implied by the `/pages/api` directory structure) handles these API routes as part of its development server, which is started with `npm run dev` from the project root. If there are standalone Node.js services in the `/server` directory (which seems to be the case here), they would typically be started by navigating into that directory, running `npm install` (if they have their own `package.json`), and then using a command like `node index.js` or a script from their `package.json`. Refer to specific READMEs in those directories if they exist.
 
+## Code Style and Linting
+
+This project uses ESLint for code linting and Prettier for code formatting to maintain a consistent codebase.
+
+*   **`npm run lint`**:
+    *   This command checks all JavaScript/TypeScript files in the project for ESLint issues.
+    *   It will attempt to automatically fix any fixable problems.
+    *   This check is also run as part of the Continuous Integration (CI) pipeline to ensure code quality before merging.
+*   **`npm run format`**:
+    *   This command uses Prettier to automatically format all JavaScript, JSX, TypeScript, and TSX files within the `src/` directory.
+    *   It ensures that the code adheres to the defined style guidelines (see `.prettierrc.json`).
+    *   Run this command before committing your changes to ensure consistent formatting. In CI, `npm run format -- --check` is used to verify formatting without making changes.
+
 ## API Documentation
 
 The project exposes several APIs for programmatic access and integration.
@@ -224,6 +237,12 @@ browser to view detailed coverage information.
 When tests run on GitHub Actions, the workflow uploads the `coverage` directory
 using `actions/upload-artifact@v4`. Visit a workflow run and download the
 `coverage-report` artifact to retrieve the generated HTML coverage report.
+
+### Playwright HTML Report
+
+When Playwright tests run in CI, the report is published to GitHub Pages via the
+`Deploy Playwright Report` workflow. Enable GitHub Pages for the `gh-pages`
+branch (root folder `/`) to view the latest results.
 
 ### Accessibility Audit
 
@@ -449,3 +468,22 @@ For a comprehensive list of test cards, including cards for specific scenarios (
 
 **Reminder for `/checkout-test` route:**
 Ensure that a dummy product with a $1 price has been created in your Stripe account's **test mode**. The `priceId` for this product must be updated in the `pages/checkout-test/index.tsx` file.
+
+## Running Smoke Tests
+
+To run the pre-deploy smoke tests locally, first ensure the application is built and served:
+
+1.  Build the application:
+    ```bash
+    npm run build
+    ```
+2.  Serve the application from the `out` directory on port 5000:
+    ```bash
+    npx serve out/ -s -l 5000
+    ```
+3.  In a new terminal window, run the smoke tests:
+    ```bash
+    npm run smoke:test
+    ```
+
+Make sure your `cypress.config.ts` has `baseUrl: 'http://localhost:5000'` for local execution against the served build.
