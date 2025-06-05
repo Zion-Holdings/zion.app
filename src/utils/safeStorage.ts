@@ -3,13 +3,17 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 const localStorageMemoryStore: { [key: string]: string } = {};
 const isDevelopment = process.env.NODE_ENV === 'development';
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 export const safeStorage = {
   getItem: (key: string): string | null => {
-    if (isDevelopment) {
-      console.log(`safeStorage.getItem: Attempting to get item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
+    if (isDev) {
+      console.log(
+        `safeStorage.getItem: Attempting to get item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`
+      );
     }
     if (!isLocalStorageAvailable) {
-      if (isDevelopment) {
+      if (isDev) {
         console.log(`safeStorage.getItem: Using in-memory store for key "${key}".`);
       }
       return localStorageMemoryStore[key] || null;
@@ -17,7 +21,10 @@ export const safeStorage = {
     try {
       return localStorage.getItem(key);
     } catch (e) {
-      console.error(`safeStorage.getItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`, e);
+      console.error(
+        `safeStorage.getItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`,
+        e
+      );
       if (isLocalStorageAvailable) { // Only log once
         console.warn('localStorage is not available. Falling back to in-memory storage for this session.', e);
         isLocalStorageAvailable = false;
@@ -26,11 +33,13 @@ export const safeStorage = {
     }
   },
   setItem: (key: string, value: string) => {
-    if (isDevelopment) {
-      console.log(`safeStorage.setItem: Attempting to set item "${key}" with value "${value}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
+    if (isDev) {
+      console.log(
+        `safeStorage.setItem: Attempting to set item "${key}" with value "${value}". isLocalStorageAvailable: ${isLocalStorageAvailable}`
+      );
     }
     if (!isLocalStorageAvailable) {
-      if (isDevelopment) {
+      if (isDev) {
         console.log(`safeStorage.setItem: Using in-memory store for key "${key}".`);
       }
       localStorageMemoryStore[key] = value;
@@ -39,7 +48,10 @@ export const safeStorage = {
     try {
       localStorage.setItem(key, value);
     } catch (e) {
-      console.error(`safeStorage.setItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`, e);
+      console.error(
+        `safeStorage.setItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`,
+        e
+      );
       if (isLocalStorageAvailable) { // Only log once
         console.warn('localStorage is not available. Falling back to in-memory storage for this session.', e);
         isLocalStorageAvailable = false;
@@ -48,11 +60,13 @@ export const safeStorage = {
     }
   },
   removeItem: (key: string) => {
-    if (isDevelopment) {
-      console.log(`safeStorage.removeItem: Attempting to remove item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
+    if (isDev) {
+      console.log(
+        `safeStorage.removeItem: Attempting to remove item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`
+      );
     }
     if (!isLocalStorageAvailable) {
-      if (isDevelopment) {
+      if (isDev) {
         console.log(`safeStorage.removeItem: Using in-memory store for key "${key}".`);
       }
       delete localStorageMemoryStore[key];
@@ -61,7 +75,10 @@ export const safeStorage = {
     try {
       localStorage.removeItem(key);
     } catch (e) {
-      console.error(`safeStorage.removeItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`, e);
+      console.error(
+        `safeStorage.removeItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`,
+        e
+      );
       if (isLocalStorageAvailable) { // Only log once
         console.warn('localStorage is not available. Falling back to in-memory storage for this session.', e);
         isLocalStorageAvailable = false;
@@ -79,14 +96,13 @@ const sessionStorageMemoryStore: { [key: string]: string } = {};
 
 export const safeSessionStorage = {
   getItem: (key: string): string | null => {
-    if (isDevelopment) {
-      console.log(`safeSessionStorage.getItem: Attempting to get item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
+    if (isDev) {
       console.log(
         `safeSessionStorage.getItem: Attempting to get item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`
       );
     }
     if (!isSessionStorageAvailable) {
-      if (isDevelopment) {
+      if (isDev) {
         console.log(`safeSessionStorage.getItem: Using in-memory store for key "${key}".`);
       }
       return sessionStorageMemoryStore[key] || null;
@@ -94,7 +110,10 @@ export const safeSessionStorage = {
     try {
       return sessionStorage.getItem(key);
     } catch (e) {
-      console.error(`safeSessionStorage.getItem: Error accessing sessionStorage for key "${key}". Falling back to in-memory. Error:`, e);
+      console.error(
+        `safeSessionStorage.getItem: Error accessing sessionStorage for key "${key}". Falling back to in-memory. Error:`,
+        e
+      );
       if (isSessionStorageAvailable) { // Only log once
         console.warn('sessionStorage is not available. Falling back to in-memory storage for this session.', e);
         isSessionStorageAvailable = false;
@@ -103,11 +122,13 @@ export const safeSessionStorage = {
     }
   },
   setItem: (key: string, value: string) => {
-    if (isDevelopment) {
-      console.log(`safeSessionStorage.setItem: Attempting to set item "${key}" with value "${value}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
+    if (isDev) {
+      console.log(
+        `safeSessionStorage.setItem: Attempting to set item "${key}" with value "${value}". isSessionStorageAvailable: ${isSessionStorageAvailable}`
+      );
     }
     if (!isSessionStorageAvailable) {
-      if (isDevelopment) {
+      if (isDev) {
         console.log(`safeSessionStorage.setItem: Using in-memory store for key "${key}".`);
       }
       sessionStorageMemoryStore[key] = value;
@@ -116,7 +137,10 @@ export const safeSessionStorage = {
     try {
       sessionStorage.setItem(key, value);
     } catch (e) {
-      console.error(`safeSessionStorage.setItem: Error accessing sessionStorage for key "${key}". Falling back to in-memory. Error:`, e);
+      console.error(
+        `safeSessionStorage.setItem: Error accessing sessionStorage for key "${key}". Falling back to in-memory. Error:`,
+        e
+      );
       if (isSessionStorageAvailable) { // Only log once
         console.warn('sessionStorage is not available. Falling back to in-memory storage for this session.', e);
         isSessionStorageAvailable = false;
@@ -125,11 +149,13 @@ export const safeSessionStorage = {
     }
   },
   removeItem: (key: string) => {
-    if (isDevelopment) {
-      console.log(`safeSessionStorage.removeItem: Attempting to remove item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
+    if (isDev) {
+      console.log(
+        `safeSessionStorage.removeItem: Attempting to remove item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`
+      );
     }
     if (!isSessionStorageAvailable) {
-      if (isDevelopment) {
+      if (isDev) {
         console.log(`safeSessionStorage.removeItem: Using in-memory store for key "${key}".`);
       }
       delete sessionStorageMemoryStore[key];
@@ -138,7 +164,10 @@ export const safeSessionStorage = {
     try {
       sessionStorage.removeItem(key);
     } catch (e) {
-      console.error(`safeSessionStorage.removeItem: Error accessing sessionStorage for key "${key}". Falling back to in-memory. Error:`, e);
+      console.error(
+        `safeSessionStorage.removeItem: Error accessing sessionStorage for key "${key}". Falling back to in-memory. Error:`,
+        e
+      );
       if (isSessionStorageAvailable) { // Only log once
         console.warn('sessionStorage is not available. Falling back to in-memory storage for this session.', e);
         isSessionStorageAvailable = false;
