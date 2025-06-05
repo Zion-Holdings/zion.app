@@ -7,6 +7,7 @@ import { SEO } from "@/components/SEO";
 import ForumCategories from "@/components/community/ForumCategories";
 import PostCard from "@/components/community/PostCard";
 import NewPostDialog from "@/components/community/NewPostDialog";
+import { ChatAssistantTrigger } from "@/components/ChatAssistantTrigger";
 import { useAuth } from "@/hooks/useAuth";
 import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
 import { useCommunity } from "@/context";
@@ -22,6 +23,13 @@ export default function CommunityPage() {
   const navigate = useNavigate();
   const [showNewPost, setShowNewPost] = useState(false);
   const { markCommunityVisited } = useAdvancedOnboardingStatus();
+
+  // Combine posts for Q&A section, removing duplicates by id
+  const qaPosts = Array.from(
+    new Map(
+      [...featuredPosts, ...recentPosts].map((post) => [post.id, post])
+    ).values()
+  );
 
   const initialCategory = searchParams.get("category") as ForumCategory | null;
 
@@ -85,6 +93,7 @@ export default function CommunityPage() {
             <TabsTrigger value="categories">Categories</TabsTrigger>
             <TabsTrigger value="featured">Featured</TabsTrigger>
             <TabsTrigger value="recent">Recent</TabsTrigger>
+            <TabsTrigger value="qa">Q&A</TabsTrigger>
           </TabsList>
           
           <TabsContent value="categories">
@@ -109,6 +118,14 @@ export default function CommunityPage() {
             </div>
             {/* <p>Recent Tab Content</p> */}
           </TabsContent>
+
+          <TabsContent value="qa">
+            <div className="space-y-4">
+              {qaPosts.map((post) => (
+                <PostCard key={post.id} post={post} />
+              ))}
+            </div>
+          </TabsContent>
         </Tabs>
         {/* <p>Attempting to render ForumCategories directly.</p>
         <ForumCategories /> */}
@@ -119,6 +136,7 @@ export default function CommunityPage() {
         onOpenChange={handleDialogChange}
         initialCategory={initialCategory}
       />
+      <ChatAssistantTrigger />
     </>
   );
 }
