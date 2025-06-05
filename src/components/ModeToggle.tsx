@@ -2,7 +2,7 @@ import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 // Use the ThemeProvider hook which is backed by src/components/ThemeProvider
 // to ensure we read and modify the same theme state used across the app.
-import { useTheme } from "@/hooks/useTheme"
+import { useTheme } from "@/context/ThemeContext"
 
 export function ModeToggle() {
   // Use theme and toggleTheme from the updated useTheme hook
