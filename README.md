@@ -380,8 +380,9 @@ We welcome contributions to improve and expand this project! If you'd like to co
 3.  **Make Your Changes:** Implement your changes, ensuring you adhere to the project's coding style and conventions.
     - Run linters and formatters if configured (e.g., ESLint, Prettier for frontend; Black, Flake8 for Python). The project uses ESLint (see `eslint.config.js`).
 4.  **Test Your Changes:**
-    - Add unit tests for any new functionality.
-    - Ensure all existing and new tests pass (`npm run test` for frontend, `python manage.py test` for Django backend if applicable).
+    *   Add unit tests for any new functionality.
+    *   Ensure all existing and new tests pass (`npm run test` for frontend, `python manage.py test` for Django backend if applicable).
+    *   Ensure your changes pass type checking by running `npm run typecheck`.
 5.  **Commit Your Changes:** Write clear, concise commit messages.
 6.  **Push to Your Fork:** Push your changes to your forked repository.
 7.  **Submit a Pull Request (PR):** Open a PR from your branch to the `main` (or `develop`) branch of the original repository.
