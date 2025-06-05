@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 // Use the ThemeProvider hook which is backed by src/components/ThemeProvider
 // to ensure we read and modify the same theme state used across the app.
 import { useTheme } from "@/context/ThemeContext"
+import { logIssue } from "@/utils/logIssue"
 
 export function ModeToggle() {
   // Use theme and toggleTheme from the updated useTheme hook
@@ -12,8 +13,12 @@ export function ModeToggle() {
   const isDarkMode = theme === "dark";
 
   const handleToggle = () => {
-    // Toggle theme using the toggleTheme function from context
-    toggleTheme();
+    try {
+      // Toggle theme using the toggleTheme function from context
+      toggleTheme();
+    } catch (error) {
+      logIssue('Theme switch failed', { error });
+    }
   };
 
   return (
