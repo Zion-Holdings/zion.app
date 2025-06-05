@@ -77,7 +77,7 @@ try {
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
               <WhitelabelProvider>
-                <Router>
+                <Router basename={process.env.PUBLIC_URL || '/'}>
                 <AuthProvider>
                   <MessagingProvider>
                   <NotificationProvider>
