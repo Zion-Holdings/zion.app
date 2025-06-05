@@ -6,7 +6,7 @@ const getAppKitProjectId = (): string | undefined => {
   return import.meta.env.VITE_REOWN_PROJECT_ID;
 };
 
-import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect, useRef } from 'react';
 
 import { ethers } from 'ethers';
 import { captureException } from '@/utils/sentry';
@@ -63,159 +63,52 @@ const KNOWN_INVALID_PROJECT_IDS = [
 
 // --- Reown AppKit Configuration ---
 
+// The entire first WalletProvider component (original lines 55-145) and
+// the subsequent problematic block (original lines 147-180) have been removed.
+// This is to ensure only one well-structured WalletProvider (the one using useRef,
+// originally starting at line 181) remains.
+
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+
   console.log('WalletProvider: Initializing...');
-  const [wallet, setWallet] = useState<WalletState>(initialWalletState);
-  const [appKitInstance, setAppKitInstance] = useState<AppKitInstanceInterface | null>(null);
 
+  const rawProjectId = getAppKitProjectId();
+  console.log('WalletContext: Resolved rawProjectId from getAppKitProjectId():', rawProjectId);
 
-const rawProjectId = getAppKitProjectId();
-console.log('WalletContext: Resolved rawProjectId from getAppKitProjectId():', rawProjectId);
+  // Check if the project ID is valid
+  const isProjectIdValid = rawProjectId && !KNOWN_INVALID_PROJECT_IDS.includes(rawProjectId);
+  const projectId = rawProjectId; // The createAppKit call expects 'projectId'
 
-// Check if the project ID is valid
-const isProjectIdValid = rawProjectId && !KNOWN_INVALID_PROJECT_IDS.includes(rawProjectId);
-
-if (!isProjectIdValid) {
-  console.warn(
-    `WalletContext: Invalid or placeholder project ID detected: "${rawProjectId}". Wallet system will be unavailable.`
-  );
-}
-
-const PLACEHOLDER_PROJECT_IDS = ['YOUR_DEFAULT_PROJECT_ID_ENV_MISSING', 'YOUR_DEFAULT_PROJECT_ID_FALLBACK'];
-if (PLACEHOLDER_PROJECT_IDS.includes(projectId)) {
-  const errorMessage = 'WalletContext: Critical Error - Reown AppKit Project ID is not set or is a placeholder. Please set VITE_REOWN_PROJECT_ID environment variable.';
-  console.error(errorMessage, 'Resolved Project ID:', projectId);
-  // Optionally, throw an error to halt initialization if this is considered fatal
-  // throw new Error(errorMessage);
-  // For now, we'll log an error and let appKitInstance be potentially null or misconfigured,
-  // which existing downstream checks should ideally handle by not attempting to use it.
-  // The new logging from Step 1 will show if appKitInstance is null or malformed.
-}
-
-const metadata = {
-  name: 'Zion', // Replace with your project's name
-  description: 'Zion Finance Platform', // Replace with your project's description
-  url: typeof window !== 'undefined' ? window.location.origin : 'https://example.com', // Dynamic URL or placeholder
-  icons: ['https://avatars.githubusercontent.com/u/37784886'], // Replace with your project's icon URLs
-};
-
-
-      const metadata = {
-        name: 'Zion', // Replace with your project's name
-        description: 'Zion Finance Platform', // Replace with your project's description
-        url: window.location.origin, // Dynamic URL
-        icons: ['https://avatars.githubusercontent.com/u/37784886'], // Replace with your project's icon URLs
-      };
-
-      const ZION_CHAIN_MAP: Record<number, any> = {
-        1: mainnet,
-        5: goerli, // Common testnet, assuming ZION_TOKEN_NETWORK_ID might be this
-        137: polygon,
-        // Add other chains supported by your ZION_TOKEN_NETWORK_ID or dApp
-        // Example:
-        // 10: optimism,
-        // 42161: arbitrum,
-        // 8453: base,
-      };
-
-      const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
-
-      const instance = createAppKit({
-        adapters: [
-          new EthersAdapter({
-            ethers, // pass the ethers library instance
-            // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
-          }),
-        ],
-        networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
-        defaultNetwork: targetNetwork,
-        projectId,
-        metadata,
-        features: {
-          analytics: false, // Optional: enable analytics
-          // ... other features like swaps, onramp if needed
-        },
-      });
-      console.log('WalletContext: appKitInstance created:', instance);
-      if (instance && typeof instance.subscribeProvider !== 'function') {
-        console.error('WalletContext: instance does NOT have a subscribeProvider method!', instance);
-      } else if (!instance) {
-        console.error('WalletContext: instance is null after creation attempt.');
-      }
-      setAppKitInstance(instance);
-      // --- End Reown AppKit Configuration ---
-    }
-  }, []); // Empty dependency array ensures this runs once on mount (client-side)
-
-let appKitInstance: AppKitInstanceInterface | null = null;
-
-if (projectId) {
-  appKitInstance = typeof window !== 'undefined'
-    ? createAppKit({
-        adapters: [
-          new EthersAdapter({
-            ethers, // pass the ethers library instance
-            // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
-          }),
-        ],
-        networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
-        defaultNetwork: targetNetwork,
-        projectId,
-        metadata,
-        features: {
-          analytics: false, // Optional: enable analytics
-          // ... other features like swaps, onramp if needed
-        },
-      })
-    : null;
-
-
-const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
-
-const appKitInstance: AppKitInstanceInterface | null = typeof window !== 'undefined'
-  ? createAppKit({
-      adapters: [
-        new EthersAdapter({
-          ethers, // pass the ethers library instance
-          // provider: undefined, // Optional: if you have a specific EIP-1193 provider to pre-configure
-        }),
-      ],
-      networks: [targetNetwork], // Configure with the network ZION_TOKEN_NETWORK_ID maps to
-      defaultNetwork: targetNetwork,
-      projectId,
-      metadata,
-      features: {
-        analytics: false, // Optional: enable analytics
-        // ... other features like swaps, onramp if needed
-      },
-    })
-  : null;
-console.log('WalletContext: appKitInstance created:', appKitInstance);
-if (appKitInstance) {
-  console.log('WalletContext: Inspecting appKitInstance properties:');
-  for (const key in appKitInstance) {
-    if (Object.prototype.hasOwnProperty.call(appKitInstance, key)) {
-      console.log(`WalletContext: appKitInstance.${key} - type: ${typeof (appKitInstance as any)[key]}`);
-    }
+  if (!isProjectIdValid) {
+    console.warn(
+      `WalletContext: Invalid or placeholder project ID detected: "${rawProjectId}". Wallet system will be unavailable.`
+    );
   }
-  // Explicitly check types of critical methods
-  console.log('WalletContext: typeof appKitInstance.subscribeProvider:', typeof appKitInstance.subscribeProvider);
-  console.log('WalletContext: typeof appKitInstance.on:', typeof appKitInstance.on);
-  console.log('WalletContext: typeof appKitInstance.off:', typeof appKitInstance.off);
-} else {
-  console.error('WalletContext: appKitInstance is null, cannot inspect properties.');
-}
-if (appKitInstance && typeof appKitInstance.subscribeProvider !== 'function') {
-  console.error('WalletContext: appKitInstance does NOT have a subscribeProvider method!', appKitInstance);
-} else if (!appKitInstance) {
-  console.error('WalletContext: appKitInstance is null after creation attempt.');
-}
 
-// --- End Reown AppKit Configuration ---
+  const PLACEHOLDER_PROJECT_IDS = ['YOUR_DEFAULT_PROJECT_ID_ENV_MISSING', 'YOUR_DEFAULT_PROJECT_ID_FALLBACK'];
+  if (projectId && PLACEHOLDER_PROJECT_IDS.includes(projectId)) {
+      const errorMessage = 'WalletContext: Critical Error - Reown AppKit Project ID is not set or is a placeholder. Please set VITE_REOWN_PROJECT_ID environment variable.';
+      console.error(errorMessage, 'Resolved Project ID:', projectId);
+  }
 
-export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const metadata = {
+    name: 'Zion',
+    description: 'Zion Finance Platform',
+    url: typeof window !== 'undefined' ? window.location.origin : 'https://example.com',
+    icons: ['https://avatars.githubusercontent.com/u/37784886'],
+  };
 
-  console.log('WalletProvider: Initializing...');
+  const ZION_CHAIN_MAP: Record<number, any> = {
+    1: mainnet,
+    5: goerli,
+    137: polygon,
+    10: optimism,
+    42161: arbitrum,
+    8453: base,
+  };
+
+  const targetNetwork = ZION_CHAIN_MAP[ZION_TOKEN_NETWORK_ID] || mainnet;
+
   const appKitRef = useRef<AppKitInstanceInterface | null>(null);
 
   // Initialize appKitInstance only once and if projectId is valid
@@ -285,10 +178,10 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const currentAppKit = appKitRef.current;
 
 
-    if (appKitInstance?.getState().isConnected && appKitInstance?.getAddress()) {
-      const currentAddress = appKitInstance.getAddress();
-      const currentChainId = appKitInstance.getChainId();
-      const currentProvider = appKitInstance.getWalletProvider();
+    if (currentAppKit?.getState().isConnected && currentAppKit?.getAddress()) {
+      const currentAddress = currentAppKit.getAddress();
+      const currentChainId = currentAppKit.getChainId();
+      const currentProvider = currentAppKit.getWalletProvider();
 
       if (currentAddress && currentChainId && currentProvider) {
         try {
