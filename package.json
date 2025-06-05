@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "generate": "prisma generate",
-    "build": "NODE_ENV=production npx tsc && NODE_ENV=production vite build --outDir out",
+    "build": "NODE_ENV=production npx tsc -p tsconfig.json && NODE_ENV=production vite build --outDir out",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "NODE_ENV=production vite preview",
     "test": "jest --coverage",
