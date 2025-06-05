@@ -1,11 +1,16 @@
 let isLocalStorageAvailable = true;
 const localStorageMemoryStore: { [key: string]: string } = {};
+const isDevelopment = process.env.NODE_ENV === 'development';
 
 export const safeStorage = {
   getItem: (key: string): string | null => {
-    console.log(`safeStorage.getItem: Attempting to get item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
+    if (isDevelopment) {
+      console.log(`safeStorage.getItem: Attempting to get item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
+    }
     if (!isLocalStorageAvailable) {
-      console.log(`safeStorage.getItem: Using in-memory store for key "${key}".`);
+      if (isDevelopment) {
+        console.log(`safeStorage.getItem: Using in-memory store for key "${key}".`);
+      }
       return localStorageMemoryStore[key] || null;
     }
     try {
@@ -20,9 +25,13 @@ export const safeStorage = {
     }
   },
   setItem: (key: string, value: string) => {
-    console.log(`safeStorage.setItem: Attempting to set item "${key}" with value "${value}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
+    if (isDevelopment) {
+      console.log(`safeStorage.setItem: Attempting to set item "${key}" with value "${value}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
+    }
     if (!isLocalStorageAvailable) {
-      console.log(`safeStorage.setItem: Using in-memory store for key "${key}".`);
+      if (isDevelopment) {
+        console.log(`safeStorage.setItem: Using in-memory store for key "${key}".`);
+      }
       localStorageMemoryStore[key] = value;
       return;
     }
@@ -38,9 +47,13 @@ export const safeStorage = {
     }
   },
   removeItem: (key: string) => {
-    console.log(`safeStorage.removeItem: Attempting to remove item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
+    if (isDevelopment) {
+      console.log(`safeStorage.removeItem: Attempting to remove item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`);
+    }
     if (!isLocalStorageAvailable) {
-      console.log(`safeStorage.removeItem: Using in-memory store for key "${key}".`);
+      if (isDevelopment) {
+        console.log(`safeStorage.removeItem: Using in-memory store for key "${key}".`);
+      }
       delete localStorageMemoryStore[key];
       return;
     }
@@ -65,9 +78,13 @@ const sessionStorageMemoryStore: { [key: string]: string } = {};
 
 export const safeSessionStorage = {
   getItem: (key: string): string | null => {
-    console.log(`safeSessionStorage.getItem: Attempting to get item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
+    if (isDevelopment) {
+      console.log(`safeSessionStorage.getItem: Attempting to get item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
+    }
     if (!isSessionStorageAvailable) {
-      console.log(`safeSessionStorage.getItem: Using in-memory store for key "${key}".`);
+      if (isDevelopment) {
+        console.log(`safeSessionStorage.getItem: Using in-memory store for key "${key}".`);
+      }
       return sessionStorageMemoryStore[key] || null;
     }
     try {
@@ -82,9 +99,13 @@ export const safeSessionStorage = {
     }
   },
   setItem: (key: string, value: string) => {
-    console.log(`safeSessionStorage.setItem: Attempting to set item "${key}" with value "${value}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
+    if (isDevelopment) {
+      console.log(`safeSessionStorage.setItem: Attempting to set item "${key}" with value "${value}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
+    }
     if (!isSessionStorageAvailable) {
-      console.log(`safeSessionStorage.setItem: Using in-memory store for key "${key}".`);
+      if (isDevelopment) {
+        console.log(`safeSessionStorage.setItem: Using in-memory store for key "${key}".`);
+      }
       sessionStorageMemoryStore[key] = value;
       return;
     }
@@ -100,9 +121,13 @@ export const safeSessionStorage = {
     }
   },
   removeItem: (key: string) => {
-    console.log(`safeSessionStorage.removeItem: Attempting to remove item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
+    if (isDevelopment) {
+      console.log(`safeSessionStorage.removeItem: Attempting to remove item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`);
+    }
     if (!isSessionStorageAvailable) {
-      console.log(`safeSessionStorage.removeItem: Using in-memory store for key "${key}".`);
+      if (isDevelopment) {
+        console.log(`safeSessionStorage.removeItem: Using in-memory store for key "${key}".`);
+      }
       delete sessionStorageMemoryStore[key];
       return;
     }
