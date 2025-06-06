@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { RouteObject } from 'react-router';
 import Home from '@/pages/Home';
 import Marketplace from '@/pages/Marketplace'; // Assuming Marketplace component exists
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
-import Login from '@/pages/Login';
-import Signup from '@/pages/SimpleSignup';
+const Login = lazy(() => import('@/pages/Login'));
+import { LoginForm } from '@/components/auth/login';
+import RegisterForm from '@/components/auth/RegisterForm';
 import OAuthCallback from '@/pages/OAuthCallback';
 import Dashboard from '@/pages/Dashboard';
 import Profile from '@/pages/Profile';
@@ -37,13 +38,13 @@ export const primaryRoutes: RouteObject[] = [
   { path: '/marketplace', element: <Marketplace /> }, // Define Marketplace route
   { path: '/categories', element: <Categories /> },
   { path: '/blog', element: <Blog /> },
-  { path: '/login', element: <Login /> },
+  { path: '/login', element: <LoginForm /> },
 ];
 
 export const allRoutes: RouteObject[] = [
   ...primaryRoutes,
   { path: '/about', element: <AboutPage /> },
-  { path: '/register', element: <Signup /> },
+  { path: '/register', element: <RegisterForm /> },
   {
     path: '/dashboard',
     element: (
