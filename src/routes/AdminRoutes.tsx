@@ -18,6 +18,7 @@ import WhitepaperGeneratorPage from "@/pages/WhitepaperGeneratorPage";
 import KycDashboard from "@/pages/admin/KycDashboard";
 import ZionBrain from "@/pages/admin/ZionBrain";
 import MetricsDashboard from "@/pages/dashboard/MetricsDashboard";
+import FounderBackupVault from "@/pages/FounderBackupVault";
 
 const AdminRoutes = () => {
   return (
@@ -135,6 +136,15 @@ const AdminRoutes = () => {
         element={
           <ProtectedRoute adminOnly={true}>
             <ZionBrain />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/vault"
+        element={
+          <ProtectedRoute adminOnly={true}>
+            <FounderBackupVault />
           </ProtectedRoute>
         }
       />

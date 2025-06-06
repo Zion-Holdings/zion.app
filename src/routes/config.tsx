@@ -37,6 +37,7 @@ import GlobalMapPage from '@/pages/GlobalMap';
 import SummitPage from '@/pages/SummitPage';
 import OrgChartPage from '@/pages/OrgChart';
 import MobilePwa from '@/pages/MobilePwa';
+import FounderBackupVault from '@/pages/FounderBackupVault';
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
@@ -129,6 +130,12 @@ export const allRoutes: AppRouteObject[] = [
     path: '/founder-dashboard',
     element: <StartupOSPage />, // Reuses the same page component
     metaTitle: 'Founder Dashboard - Zion',
+    requiresAuth: true,
+  },
+  {
+    path: '/founder/backup',
+    element: <FounderBackupVault />,
+    metaTitle: 'Founder Backup Vault - Zion',
     requiresAuth: true,
   },
   {
