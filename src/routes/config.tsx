@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { RouteObject } from 'react-router';
+
+export interface AppRouteObject extends RouteObject {
+  metaTitle?: string;
+}
 import Home from '@/pages/Home';
 import Marketplace from '@/pages/Marketplace'; // Assuming Marketplace component exists
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
-import Login from '@/pages/Login';
-import Signup from '@/pages/SimpleSignup';
+const Login = lazy(() => import('@/pages/Login'));
+import { LoginForm } from '@/components/auth/login';
+import RegisterForm from '@/components/auth/RegisterForm';
 import OAuthCallback from '@/pages/OAuthCallback';
 import Dashboard from '@/pages/Dashboard';
 import Profile from '@/pages/Profile';
@@ -33,25 +38,26 @@ import {
   CommunityRoutes,   // Assuming CommunityRoutes is a group of routes
 } from '.'; // Importing from the same directory (src/routes)
 
-export const primaryRoutes: RouteObject[] = [
-  { path: '/', element: <Home /> },
-  { path: '/marketplace', element: <Marketplace /> }, // Define Marketplace route
-  { path: '/categories', element: <Categories /> },
-  { path: '/blog', element: <Blog /> },
-  { path: '/login', element: <Login /> },
+export const primaryRoutes: AppRouteObject[] = [
+  { path: '/', element: <Home />, metaTitle: 'Home - Zion' },
+  { path: '/marketplace', element: <Marketplace />, metaTitle: 'Marketplace - Zion' },
+  { path: '/categories', element: <Categories />, metaTitle: 'Categories - Zion' },
+  { path: '/blog', element: <Blog />, metaTitle: 'Blog - Zion' },
+  { path: '/login', element: <Login />, metaTitle: 'Login - Zion' },
 ];
 
-export const allRoutes: RouteObject[] = [
+export const allRoutes: AppRouteObject[] = [
   ...primaryRoutes,
-  { path: '/about', element: <AboutPage /> },
-  { path: '/register', element: <Signup /> },
+  { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
+  { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },
   {
     path: '/dashboard',
     element: (
       <PrivateRoute>
         <Dashboard />
       </PrivateRoute>
-    )
+    ),
+    metaTitle: 'Dashboard - Zion'
   },
   { path: '/partners', element: <PartnersPage /> },
   { path: '/blog/:slug', element: <BlogPost /> },
@@ -70,12 +76,13 @@ export const allRoutes: RouteObject[] = [
       <CommunityProvider>
         <CommunityRoutes />
       </CommunityProvider>
-    )
+    ),
+    metaTitle: 'Community - Zion'
   },
-  { path: '/developers/*', element: <DeveloperRoutes /> },
+  { path: '/developers/*', element: <DeveloperRoutes />, metaTitle: 'Developers - Zion' },
   // Test routes
-  { path: '/test-error-render', element: <ErrorTriggerComponent /> },
-  { path: '/test-error-mount', element: <ErrorTriggerComponent onMount={true} /> },
+  { path: '/test-error-render', element: <ErrorTriggerComponent />, metaTitle: 'Test Error Render - Zion' },
+  { path: '/test-error-mount', element: <ErrorTriggerComponent onMount={true} />, metaTitle: 'Test Error Mount - Zion' },
   // Wildcard for error handling - ensure this is last
-  { path: '*', element: <ErrorRoutes /> },
+  { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },
 ];
