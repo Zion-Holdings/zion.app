@@ -15,6 +15,7 @@ import ListingModeration from "@/pages/admin/ListingModeration";
 import TokenManager from "@/pages/admin/TokenManager";
 import IntegrationsPage from "@/pages/admin/IntegrationsPage";
 import WhitepaperGeneratorPage from "@/pages/WhitepaperGeneratorPage";
+import KycDashboard from "@/pages/admin/KycDashboard";
 
 const AdminRoutes = () => {
   return (
@@ -105,6 +106,15 @@ const AdminRoutes = () => {
         element={
           <ProtectedRoute adminOnly={true}>
             <IntegrationsPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/kyc"
+        element={
+          <ProtectedRoute adminOnly={true}>
+            <KycDashboard />
           </ProtectedRoute>
         }
       />
