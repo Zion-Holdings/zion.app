@@ -50,13 +50,22 @@ export default function SignupForm() {
     if (isSubmitting) return;
     setIsSubmitting(true);
     try {
-      await axios.post('/api/auth/signup', {
-        firstName: values.firstName,
-        lastName: values.lastName,
+      await axios.post('/api/auth/register', {
+        name: `${values.firstName} ${values.lastName}`,
         email: values.email,
         password: values.password,
       });
-      toast.success('Account created');
+      try {
+        // Auto login using NextAuth credentials provider
+        // ignore error handling to mimic smooth flow
+        const { signIn } = await import('next-auth/react');
+        await signIn('credentials', {
+          redirect: false,
+          email: values.email,
+          password: values.password,
+        });
+      } catch (_) {}
+      toast.success('Welcome to Zion Tech Marketplace 🎉');
       navigate('/dashboard');
     } catch (err: any) {
       const message = err.response?.data?.message || err.message || 'Signup failed';
