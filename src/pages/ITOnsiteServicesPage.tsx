@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { useSearchParams, useParams, useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { ITServicePricingTable } from "@/components/services/ITServicePricingTable";
 import { GlobalServiceSection } from "@/components/GlobalServiceSection";
 import { QuoteFormSection } from "@/components/QuoteFormSection";
@@ -17,16 +17,12 @@ import { ServiceIncludes } from "@/components/services/PageSections/ServiceInclu
 import { EnterpriseCallToAction } from "@/components/services/PageSections/EnterpriseCallToAction";
 
 export default function ITOnsiteServicesPage() {
-  const navigate = useNavigate();
-  const { country: countrySlug } = useParams();
-  const [searchParams] = useSearchParams();
+  const router = useRouter();
+  const { country: countrySlug, success } = router.query as { country?: string; success?: string };
   const [selectedCountry, setSelectedCountry] = useState<CountryPricing | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [quoteCountry, setQuoteCountry] = useState<CountryPricing | null>(null);
-  
-  // Check for success parameter in URL
-  const success = searchParams.get("success");
 
   // Show success toast if redirected from successful payment
   useEffect(() => {
@@ -74,7 +70,7 @@ export default function ITOnsiteServicesPage() {
     });
   
   const handleCountrySelect = (country: CountryPricing) => {
-    navigate(`/it-onsite-services/${slugify(country.country)}?service=standard`);
+    router.push(`/it-onsite-services/${slugify(country.country)}?service=standard`);
   };
 
   const handleQuote = (country: CountryPricing) => {

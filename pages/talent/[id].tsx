@@ -35,13 +35,16 @@ const handleApiResponse = async (res: Response) => {
 const TalentPage: React.FC = () => {
   const router = useRouter();
   const { id } = router.query as { id?: string };
+  if (!id) {
+    return <TalentProfileSkeleton />;
+  }
 
   const { data, error, isLoading } = useSWR<TalentProfileBasic>(
     id ? `/api/talent/${id}` : null,
     (url: string) => fetch(url).then(handleApiResponse)
   );
 
-  if (isLoading || !id) {
+  if (isLoading) {
     return <TalentProfileSkeleton />;
   }
 

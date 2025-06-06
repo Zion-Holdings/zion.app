@@ -10,6 +10,9 @@ import type { ProductListing } from '@/types/listings';
 const ServicePage: React.FC = () => {
   const router = useRouter();
   const { slug } = router.query as { slug?: string };
+  if (!slug) {
+    return <Custom404 />;
+  }
   const service = React.useMemo(
     () => SERVICES.find((s) => slugify(s.title) === slug) || null,
     [slug]
