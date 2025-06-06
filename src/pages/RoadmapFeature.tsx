@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { NextSeo } from '@/components/NextSeo';
@@ -11,7 +12,9 @@ import { toast } from '@/hooks/use-toast';
 import { ROADMAP_ITEMS, RoadmapItem } from '@/data/roadmap';
 
 export default function RoadmapFeaturePage() {
-  const { id } = useParams();
+  const router = useRouter();
+  const { id } = router.query as { id?: string };
+  if (!id) return null;
   const { user } = useAuth();
   const [items, setItems] = useState<RoadmapItem[]>(ROADMAP_ITEMS);
   const feature = items.find((f) => f.id === id);
@@ -61,7 +64,7 @@ export default function RoadmapFeaturePage() {
                   {followed ? 'Following' : `Follow (${feature.followers})`}
                 </Button>
                 <Button variant="outline" asChild>
-                  <Link to="/roadmap">Back to Roadmap</Link>
+                  <Link href="/roadmap">Back to Roadmap</Link>
                 </Button>
               </div>
             </CardContent>
