@@ -26,6 +26,7 @@ import ContractBuilder from "@/pages/ContractBuilder";
 import Projects from "@/pages/Projects";
 import RewardsPage from "@/pages/Rewards";
 import AchievementsPage from "@/pages/Achievements";
+import MetricsDashboard from "@/pages/dashboard/MetricsDashboard";
 
 const DashboardRoutes = () => {
   return (
@@ -204,6 +205,14 @@ const DashboardRoutes = () => {
         element={
           <ProtectedRoute>
             <AchievementsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard/metrics"
+        element={
+          <ProtectedRoute>
+            <MetricsDashboard />
           </ProtectedRoute>
         }
       />
