@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import * as React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import GlobalErrorBoundary
@@ -69,12 +69,12 @@ import SearchFeature from './pages/features/Search';
 import IntegrationsFeature from './pages/features/Integrations';
 import Internationalization from './pages/features/Internationalization';
 import ErrorTriggerComponent from './components/testing/ErrorTriggerComponent'; // Added for error testing
-const Checkout = lazy(() => import('./pages/Checkout'));
-const RequestQuotePage = lazy(() => import('./pages/RequestQuote'));
-const RecommendationsPage = lazy(() => import('./pages/RecommendationsPage'));
-const MarketplaceRoutes = lazy(() => import(/* webpackChunkName: "MarketplaceRoutes" */ './routes/MarketplaceRoutes'));
-const TalentRoutes = lazy(() => import(/* webpackChunkName: "TalentRoutes" */ './routes/TalentRoutes'));
-const CommunityRoutes = lazy(() => import(/* webpackChunkName: "CommunityRoutes" */ './routes/CommunityRoutes'));
+const Checkout = React.lazy(() => import('./pages/Checkout'));
+const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
+const RecommendationsPage = React.lazy(() => import('./pages/RecommendationsPage'));
+const MarketplaceRoutes = React.lazy(() => import(/* webpackChunkName: "MarketplaceRoutes" */ './routes/MarketplaceRoutes'));
+const TalentRoutes = React.lazy(() => import(/* webpackChunkName: "TalentRoutes" */ './routes/TalentRoutes'));
+const CommunityRoutes = React.lazy(() => import(/* webpackChunkName: "CommunityRoutes" */ './routes/CommunityRoutes'));
 import Profile from './pages/Profile';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
@@ -157,7 +157,7 @@ const App = () => {
         <WalletProvider> {/* Added WalletProvider */}
           <ThemeProvider defaultTheme="dark">
           <ToastProvider>
-            <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+            <React.Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
               <AnimatePresence mode="wait">
                 <Routes location={location} key={location.pathname}>
                   {baseRoutes.map(({ path, element }) => (
@@ -180,7 +180,7 @@ const App = () => {
                   {/* <Route path="*" element={<PageTransition><ErrorRoutes /></PageTransition>} /> */}
                 </Routes>
               </AnimatePresence>
-            </Suspense>
+            </React.Suspense>
             <OfflineToast />
             <SupportChatbot />
             <FeedbackWidget />
