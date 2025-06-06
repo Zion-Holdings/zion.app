@@ -22,10 +22,17 @@ import Wallet from '@/pages/Wallet';
 import CheckoutPage from '@/pages/CheckoutPage';
 import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
+import PartnerIntegration from '@/pages/PartnerIntegration';
 import InvestorMatchPage from '@/pages/InvestorMatch';
 import BlogPost from '@/pages/BlogPost';
+import GrantsPage from '@/pages/Grants';
+import RoadmapPage from '@/pages/Roadmap';
+import RoadmapFeaturePage from '@/pages/RoadmapFeature';
+import RoadmapSuggestPage from '@/pages/RoadmapSuggest';
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
 import { CommunityProvider } from '@/context';
+import VerifyIdentity from '@/pages/VerifyIdentity';
+import StartupOSPage from '@/pages/StartupOS'; // Import the new page
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
@@ -68,7 +75,14 @@ export const allRoutes: AppRouteObject[] = [
   },
   { path: '/partners', element: <PartnersPage /> },
   { path: '/investor-match', element: <InvestorMatchPage />, metaTitle: 'Investor Match - Zion' },
+  { path: '/integrate', element: <PartnerIntegration />, metaTitle: 'Partner API - Zion' },
+  { path: '/investor-match', element: <InvestorMatchPage />, metaTitle: 'Investor Match - Zion' },
+  { path: '/grants', element: <GrantsPage />, metaTitle: 'Grants - Zion' },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/roadmap', element: <RoadmapPage />, metaTitle: 'Roadmap - Zion' },
+  { path: '/roadmap/suggest', element: <RoadmapSuggestPage />, metaTitle: 'Suggest Feature - Zion' },
+  { path: '/roadmap/:id', element: <RoadmapFeaturePage />, metaTitle: 'Feature - Zion' },
+  { path: '/verify', element: <VerifyIdentity />, metaTitle: 'Verify Identity', requiresAuth: true },
   { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: true },
   { path: '/oauth', element: <OAuthCallback /> },
   { path: '/auth/*', element: <AuthRoutes /> },
@@ -91,6 +105,19 @@ export const allRoutes: AppRouteObject[] = [
   // Test routes
   { path: '/test-error-render', element: <ErrorTriggerComponent />, metaTitle: 'Test Error Render - Zion' },
   { path: '/test-error-mount', element: <ErrorTriggerComponent onMount={true} />, metaTitle: 'Test Error Mount - Zion' },
+  // Add the new route for Startup OS
+  {
+    path: '/startup-os',
+    element: <StartupOSPage />,
+    metaTitle: 'Startup OS - Zion',
+    requiresAuth: true, // Assuming it requires authentication
+  },
+  {
+    path: '/founder-dashboard',
+    element: <StartupOSPage />, // Reuses the same page component
+    metaTitle: 'Founder Dashboard - Zion',
+    requiresAuth: true,
+  },
   // Wildcard for error handling - ensure this is last
   { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },
 ];

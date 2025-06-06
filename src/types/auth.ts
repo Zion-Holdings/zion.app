@@ -19,6 +19,10 @@ export interface UserDetails {
   createdAt?: string;
   updatedAt?: string;
   points?: number;
+  /**
+   * Status of the user's identity verification
+   */
+  kycStatus?: 'unverified' | 'pending' | 'verified';
 }
 
 export interface UserProfile {

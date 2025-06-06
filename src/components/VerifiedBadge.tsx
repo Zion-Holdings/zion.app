@@ -6,9 +6,11 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 interface VerifiedBadgeProps {
   verified: boolean;
   size?: 'sm' | 'md' | 'lg';
+  /** Optional tooltip label to display */
+  label?: string;
 }
 
-export function VerifiedBadge({ verified, size = 'sm' }: VerifiedBadgeProps) {
+export function VerifiedBadge({ verified, size = 'sm', label = 'Verified talent' }: VerifiedBadgeProps) {
   if (!verified) return null;
   
   const sizeClasses = {
@@ -26,7 +28,7 @@ export function VerifiedBadge({ verified, size = 'sm' }: VerifiedBadgeProps) {
           </span>
         </TooltipTrigger>
         <TooltipContent>
-          <p>Verified talent</p>
+          <p>{label}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
