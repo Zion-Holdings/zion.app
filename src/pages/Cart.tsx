@@ -1,27 +1,24 @@
-import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCart } from '@/context/CartContext';
+import { useSelector, useDispatch } from 'react-redux';
+import type { RootState, AppDispatch } from '@/store';
+import {
+  removeItem as removeItemAction,
+  updateQuantity as updateQuantityAction,
+} from '@/store/cartSlice';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
 
 export default function CartPage() {
   const navigate = useNavigate();
-  const { items, dispatch } = useCart();
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
-
-  if (!hydrated) return null;
+  const items = useSelector((s: RootState) => s.cart.items);
+  const dispatch = useDispatch<AppDispatch>();
 
   const updateQuantity = (id: string, qty: number) => {
-    const updated = items.map(i => (i.id === id ? { ...i, quantity: qty } : i));
-    dispatch({ type: 'SET_ITEMS', payload: updated });
+    dispatch(updateQuantityAction({ id, quantity: qty }));
   };
 
   const removeItem = (id: string) => {
-    dispatch({ type: 'REMOVE_ITEM', payload: id });
+    dispatch(removeItemAction(id));
   };
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);

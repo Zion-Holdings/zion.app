@@ -4,7 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { useFavorites } from "@/hooks/useFavorites";
-import { useCart } from '@/context/CartContext';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/store';
 import {
   Home,
   Search,
@@ -24,14 +25,9 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const { count: favoritesCount } = useFavorites();
-  let cartCount = 0;
-  try {
-    const { items } = useCart(); // Attempt to use the cart
-    cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
-  } catch (error) {
-    console.warn("MobileBottomNav: useCart() failed, defaulting cartCount to 0. Error:", error);
-    // cartCount remains 0
-  }
+  const cartCount = useSelector((s: RootState) =>
+    s.cart.items.reduce((sum, i) => sum + i.quantity, 0)
+  );
 
   const navItems = [
     {
