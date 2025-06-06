@@ -47,10 +47,10 @@ describe('register flow', () => {
     cy.get('[data-testid="error-message"]').should('be.visible').and('contain', 'Email already exists');
   });
 
-  it('visiting /register redirects to /signup and sign-in link works', () => {
+  it('visiting /register shows register form and sign-in link works', () => {
     cy.visit('/register');
-    cy.url().should('include', '/signup');
-    cy.get('h2').should('contain.text', 'Create your account');
+    cy.url().should('include', '/register');
+    cy.get('h2').should('contain.text', 'Create account');
     cy.get('a[href="/login"]').click();
     cy.url().should('include', '/login');
   });
