@@ -2,12 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import WhitepaperSectionEditor from '@/components/WhitepaperSectionEditor';
 import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel'; // Import the new preview panel
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Trash2, Download, Share2, Send } from 'lucide-react'; // Added Send icon
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 import { toast } from "sonner";
 
 
@@ -241,6 +238,10 @@ const WhitepaperGeneratorPage: React.FC = () => {
       // This might involve temporarily changing styles, which is complex and error-prone.
       // A better approach for very long content is to paginate in jsPDF directly.
       // For now, we capture what's visible or rely on html2canvas's capabilities with scroll.
+
+      const html2canvasModule = await import('html2canvas');
+      const html2canvas = html2canvasModule.default;
+      const { default: jsPDF } = await import('jspdf');
 
       const canvas = await html2canvas(previewPanelRef.current, {
         scale: 2, // Increase scale for better resolution

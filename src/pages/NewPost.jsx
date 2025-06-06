@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
+const ReactMarkdown = React.lazy(() => import('react-markdown'));
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
@@ -39,7 +39,9 @@ export default function NewPost() {
       {content && (
         <div className="mt-8">
           <h2 className="text-xl font-semibold mb-2">Preview</h2>
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <Suspense fallback={<div>Loading...</div>}>
+            <ReactMarkdown>{content}</ReactMarkdown>
+          </Suspense>
         </div>
       )}
     </div>
