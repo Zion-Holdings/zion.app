@@ -12,28 +12,56 @@ export interface ProductCardProps {
 
 export default function ProductCard({ product, onBuy }: ProductCardProps) {
   const { isWishlisted, toggle } = useWishlist();
-  const active = isWishlisted(product.id);
+  // Validate the product prop:
+  // - Ensure product itself is not null or undefined.
+  // - Ensure product.id is a string.
+  // If validation fails, render a fallback UI.
+  if (!product || typeof product.id !== 'string') {
+    return (
+      <div className="relative border rounded-lg bg-card p-4 text-center" data-testid="product-card-error">
+        <p className="text-red-500">Invalid product data.</p>
+      </div>
+    );
+  }
+
+  const active = isWishlisted(product.id); // product.id is confirmed valid by the check above
   const dispatch = useDispatch<AppDispatch>();
 
+  // Validate product.title:
+  // - Ensure product.title is a string.
+  // - If not, use "Untitled Product" as a fallback.
+  const productTitle = typeof product.title === 'string' ? product.title : 'Untitled Product';
+
   const addToCart = () => {
-    dispatch(addItem({ id: product.id, title: product.title, price: product.price ?? 0 }));
+    // Ensure product.id and product.title are valid before adding to cart
+    dispatch(addItem({ id: product.id, title: productTitle, price: product.price ?? 0 }));
   };
 
-  const image = product.images && product.images[0];
+  // Validate product.images:
+  // - Ensure product.images is an array and has at least one element.
+  // - If not, set image to null to render a placeholder.
+  const image = Array.isArray(product.images) && product.images.length > 0 ? product.images[0] : null;
+  const imageAltText = productTitle; // Use validated title for alt text
 
   return (
     <div className="relative border rounded-lg bg-card p-4" data-testid="product-card">
       <button
         className="absolute top-2 right-2 p-1 rounded-full bg-background/70"
-        onClick={() => toggle(product.id)}
+        onClick={() => toggle(product.id)} // product.id is validated
         aria-label={active ? 'Remove from favorites' : 'Add to favorites'}
       >
         <Heart className={active ? 'text-red-500 fill-red-500' : 'text-gray-500'} />
       </button>
-      {image && (
-        <img src={image} alt={product.title} className="w-full h-40 object-cover mb-2" />
+      {image ? (
+        <img src={image} alt={imageAltText} className="w-full h-40 object-cover mb-2" />
+      ) : (
+        // Fallback UI for missing image
+        <div className="w-full h-40 bg-gray-200 flex items-center justify-center mb-2">
+          <span className="text-gray-500">No Image</span>
+        </div>
       )}
-      <h3 className="font-semibold mb-1">{product.title}</h3>
+      {/* Display validated product title */}
+      <h3 className="font-semibold mb-1">{productTitle}</h3>
       {product.price != null && (
         <p className="text-sm text-muted-foreground">
           {product.currency}
