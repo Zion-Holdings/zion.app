@@ -23,7 +23,7 @@ describe('LoginForm fetch', () => {
     vi.restoreAllMocks();
   });
 
-  it('submits valid credentials and calls /api/auth/login', async () => {
+  it('submits valid credentials and calls /auth/login', async () => {
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
       status: 200,
@@ -42,6 +42,6 @@ describe('LoginForm fetch', () => {
 
     await screen.findByRole('button', { name: /login/i });
 
-    expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('/api/auth/login'), expect.any(Object));
+    expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('/auth/login'), expect.any(Object));
   });
 });
