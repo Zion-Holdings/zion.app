@@ -6,14 +6,14 @@ const API_URL = import.meta.env.VITE_API_URL || '';
 export async function loginUser(email: string, password: string) {
   try {
     const endpoint = `${API_URL}/api/auth/login`;
-    const res = await axios.post(endpoint, { email, password });
+    const res = await axios.post(endpoint, { email, password }, { withCredentials: true });
     console.log('Login API Response Status:', res.status);
     console.log('Login API Response Body:', res.data);
     return { res, data: res.data };
   } catch (err: any) {
     const status = err.response?.status;
-    if (status === 401 || status === 404) {
-      toast.error('Invalid credentials');
+    if (status === 401) {
+      toast.error('Invalid email or password');
     }
     throw err;
   }
