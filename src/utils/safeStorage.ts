@@ -1,4 +1,17 @@
-let isLocalStorageAvailable = true;
+function checkStorageAvailable(type: 'localStorage' | 'sessionStorage'): boolean {
+  if (typeof window === 'undefined') return false;
+  try {
+    const storage = window[type];
+    const testKey = '__storage_test__';
+    storage.setItem(testKey, '1');
+    storage.removeItem(testKey);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+let isLocalStorageAvailable = checkStorageAvailable('localStorage');
 const localStorageMemoryStore: { [key: string]: string } = {};
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -88,7 +101,7 @@ export const safeStorage = {
   }
 };
 
-let isSessionStorageAvailable = true;
+let isSessionStorageAvailable = checkStorageAvailable('sessionStorage');
 const sessionStorageMemoryStore: { [key: string]: string } = {};
 
 export const safeSessionStorage = {
