@@ -4,7 +4,7 @@ import DataSync from '@/components/admin/pitch-generator/DataSync';
 import SlideEditor from '@/components/admin/pitch-generator/SlideEditor';
 import { useAuth } from '@/hooks/useAuth';
 import { NextSeo } from '@/components/NextSeo';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import jsPDF from 'jspdf';
@@ -20,7 +20,7 @@ interface Slide {
 
 const PitchGeneratorPage: React.FC = () => {
   const { user, isLoading: loading } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const [currentStep, setCurrentStep] = useState<'inputs' | 'data' | 'editor'>('inputs');
   const [inputData, setInputData] = useState<any>(null);
@@ -35,11 +35,11 @@ const PitchGeneratorPage: React.FC = () => {
 
   useEffect(() => {
     if (!loading && !user) {
-      navigate('/login');
+      router.push('/login');
     } else if (!loading && user && !['founder', 'admin', 'finance'].includes(user.role as string)) {
-      navigate('/admin');
+      router.push('/admin');
     }
-  }, [user, loading, navigate]);
+  }, [user, loading, router]);
 
   useEffect(() => {
     if (user && !syncedData) {
@@ -179,7 +179,7 @@ const PitchGeneratorPage: React.FC = () => {
       if (!token) {
         setError('Authentication token not found. Please log in again.');
         setIsGenerating(false);
-        navigate('/login');
+        router.push('/login');
         return;
       }
 
@@ -313,7 +313,7 @@ const PitchGeneratorPage: React.FC = () => {
         <div className="flex flex-col justify-center items-center h-screen text-center">
           <h1 className="text-2xl font-bold text-red-600 mb-4">Access Denied</h1>
           <p className="text-lg">You do not have permission to view this page.</p>
-          <button onClick={() => navigate('/admin')} className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">
+          <button onClick={() => router.push('/admin')} className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">
             Go to Admin Dashboard
           </button>
         </div>
