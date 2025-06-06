@@ -12,6 +12,7 @@ import Profile from '@/pages/Profile';
 import ForgotPassword from '@/pages/ForgotPassword';
 import ResetPassword from '@/pages/ResetPassword';
 import Wallet from '@/pages/Wallet';
+import CheckoutPage from '@/pages/CheckoutPage';
 import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
 import BlogPost from '@/pages/BlogPost';
@@ -54,6 +55,7 @@ export const allRoutes: RouteObject[] = [
   },
   { path: '/partners', element: <PartnersPage /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/checkout/:id', element: <CheckoutPage /> },
   { path: '/oauth', element: <OAuthCallback /> },
   { path: '/auth/*', element: <AuthRoutes /> },
   { path: '/marketplace/*', element: <MarketplaceRoutes /> },
