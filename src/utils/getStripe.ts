@@ -59,7 +59,8 @@ export function getStripe() {
       // This causes "Access to storage is not allowed" errors when the app runs
       // in third-party contexts like iframes or browsers with strict privacy settings.
       // Disabling it avoids those errors while still allowing basic Stripe usage.
-      stripePromise = loadStripe(selectedKey, { advancedFraudSignals: false });
+      // Cast to any to ignore missing type for advancedFraudSignals
+      stripePromise = loadStripe(selectedKey, { advancedFraudSignals: false } as any);
     }
   }
   return stripePromise;
