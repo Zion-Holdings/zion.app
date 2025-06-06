@@ -77,7 +77,7 @@ describe('Integration Test: Signup and Authenticated Call', () => {
         expires_in: 3600,
         user: { id: 'user-123', email: 'test@example.com' } // Supabase session often includes user
       },
-      token: 'test-jwt-token', // Explicit token in response as per new API design
+      accessToken: 'test-jwt-token',
       emailVerificationRequired: false,
     };
     fetchMock.mockResponseOnce(JSON.stringify(mockRegisterResponse), { status: 201 });
@@ -91,7 +91,7 @@ describe('Integration Test: Signup and Authenticated Call', () => {
 
     // 3. Simulate what Signup.tsx does with the response data
     // (setSession, setUser, setTokens, localStorage, axios defaults)
-    const tokenToStore = registrationApiResult?.token || registrationApiResult?.session?.access_token;
+    const tokenToStore = registrationApiResult?.accessToken || registrationApiResult?.session?.access_token;
     let sessionSetBySupabase = null;
 
     if (tokenToStore) {

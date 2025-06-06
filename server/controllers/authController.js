@@ -28,7 +28,7 @@ exports.loginUser = async function (req, res, next) {
 
     const token = jwt.sign({ id: user._id }, jwtSecret, { expiresIn: '7d' });
     res.json({
-      token,
+      accessToken: token,
       user: { id: user._id, email: user.email, name: user.name },
     });
   } catch (err) {
@@ -60,7 +60,7 @@ exports.registerUser = async function (req, res, next) {
 
     const token = jwt.sign({ id: saved._id }, jwtSecret, { expiresIn: '7d' });
     return res.status(201).json({
-      token,
+      accessToken: token,
       user: { id: saved._id, email: saved.email, name: saved.name },
     });
   } catch (err) {
