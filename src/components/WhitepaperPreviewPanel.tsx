@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React, { Suspense } from 'react';
+const ReactMarkdown = React.lazy(() => import('react-markdown'));
+const Recharts = React.lazy(() => import('recharts'));
 
 interface Section {
   id: string;
@@ -56,26 +56,28 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({
               {distributionChartData && distributionChartData.length > 0 && (
                 <div className="my-6">
                   <h3 className="text-xl font-semibold text-center mb-3">Distribution Chart</h3>
-                  <ResponsiveContainer width="100%" height={300}>
-                    <PieChart>
-                      <Pie
-                        data={distributionChartData}
-                        cx="50%"
-                        cy="50%"
-                        labelLine={false}
-                        label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                        outerRadius={100}
-                        fill="#8884d8"
-                        dataKey="value"
-                      >
-                        {distributionChartData.map((entry, index) => (
-                          <Cell key={`cell-preview-${index}`} fill={COLORS[index % COLORS.length]} />
-                        ))}
-                      </Pie>
-                      <Tooltip formatter={(value: number, name: string) => [`${value}%`, name]} />
-                      <Legend />
-                    </PieChart>
-                  </ResponsiveContainer>
+                  <Suspense fallback={<div>Loading chart...</div>}>
+                    <Recharts.ResponsiveContainer width="100%" height={300}>
+                      <Recharts.PieChart>
+                        <Recharts.Pie
+                          data={distributionChartData}
+                          cx="50%"
+                          cy="50%"
+                          labelLine={false}
+                          label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                          outerRadius={100}
+                          fill="#8884d8"
+                          dataKey="value"
+                        >
+                          {distributionChartData.map((entry, index) => (
+                            <Recharts.Cell key={`cell-preview-${index}`} fill={COLORS[index % COLORS.length]} />
+                          ))}
+                        </Recharts.Pie>
+                        <Recharts.Tooltip formatter={(value: number, name: string) => [`${value}%`, name]} />
+                        <Recharts.Legend />
+                      </Recharts.PieChart>
+                    </Recharts.ResponsiveContainer>
+                  </Suspense>
                 </div>
               )}
             </div>

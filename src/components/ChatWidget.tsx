@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import io from 'socket.io-client';
 import { useAuth } from '@/hooks/useAuth';
 import { MessageBubble } from '@/components/messaging/MessageBubble';
 import { Button } from '@/components/ui/button';
@@ -23,17 +22,27 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   useEffect(() => {
     if (!isOpen) return;
 
+    let isMounted = true;
+    let socket: any;
+
     async function setup() {
-      socketRef.current = io({ path: '/api/socket', transports: ['websocket'] });
-      socketRef.current.emit('join-room', roomId);
-      socketRef.current.on('receive-message', (msg: Message) => {
+      const { default: io } = await import('socket.io-client');
+      if (!isMounted) return;
+      socket = io({ path: '/api/socket', transports: ['websocket'] });
+      socketRef.current = socket;
+      socket.emit('join-room', roomId);
+      socket.on('receive-message', (msg: Message) => {
         setMessages(prev => [...prev, msg]);
         triggerNotification('New message', msg.content);
       });
     }
 
+    setup();
+
     return () => {
-      socketRef.current?.disconnect();
+      isMounted = false;
+      socket?.disconnect();
+      socketRef.current = null;
     };
   }, [isOpen, roomId]);
 
