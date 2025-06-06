@@ -22,6 +22,7 @@ import Wallet from '@/pages/Wallet';
 import CheckoutPage from '@/pages/CheckoutPage';
 import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
+import PartnerIntegration from '@/pages/PartnerIntegration';
 import InvestorMatchPage from '@/pages/InvestorMatch';
 import BlogPost from '@/pages/BlogPost';
 import GrantsPage from '@/pages/Grants';
@@ -68,6 +69,7 @@ export const allRoutes: AppRouteObject[] = [
     requiresAuth: true,
   },
   { path: '/partners', element: <PartnersPage /> },
+  { path: '/integrate', element: <PartnerIntegration />, metaTitle: 'Partner API - Zion' },
   { path: '/investor-match', element: <InvestorMatchPage />, metaTitle: 'Investor Match - Zion' },
   { path: '/grants', element: <GrantsPage />, metaTitle: 'Grants - Zion' },
   { path: '/blog/:slug', element: <BlogPost /> },
