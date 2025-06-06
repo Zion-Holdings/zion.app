@@ -49,7 +49,7 @@ export const primaryRoutes: AppRouteObject[] = [
 export const allRoutes: AppRouteObject[] = [
   ...primaryRoutes,
   { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
-  { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },
+  { path: '/register', element: <RegisterForm />, metaTitle: 'Register - Zion' },
   {
     path: '/dashboard',
     element: (
