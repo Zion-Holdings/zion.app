@@ -33,6 +33,7 @@ import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
 import { CommunityProvider } from '@/context';
 import VerifyIdentity from '@/pages/VerifyIdentity';
 import StartupOSPage from '@/pages/StartupOS'; // Import the new page
+import SummitPage from '@/pages/SummitPage';
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
@@ -68,6 +69,8 @@ export const allRoutes: AppRouteObject[] = [
   { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
   { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },
   { path: '/signup', element: <Signup />, metaTitle: 'Sign Up - Zion' },
+  { path: '/summit', element: <SummitPage />, metaTitle: 'Zion Global Summit' },
+  { path: '/zion-global-2025', element: <SummitPage />, metaTitle: 'Zion Global Summit 2025' },
   {
     path: '/dashboard',
     element: <Dashboard />,
