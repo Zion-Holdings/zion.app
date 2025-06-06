@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { forgotPassword } from '../src/services/auth';
 
 const ForgotPassword = () => {
@@ -46,7 +46,7 @@ const ForgotPassword = () => {
       {message && <p style={{ color: 'green' }}>{message}</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <p>
-        Remember your password? <Link to="/login">Login</Link>
+        Remember your password? <Link href="/login">Login</Link>
       </p>
     </div>
   );

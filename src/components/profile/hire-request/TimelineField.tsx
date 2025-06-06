@@ -32,7 +32,7 @@ export function TimelineField({ form }: TimelineFieldProps) {
               value={field.value}
               defaultValue={field.value}
             >
-              <SelectTrigger className="bg-zion-blue-light/20 border-zion-blue-light text-black">
+              <SelectTrigger className="bg-zion-blue-light/20 dark:bg-zion-blue-dark/30 border-zion-blue-light text-black dark:text-white">
                 <SelectValue placeholder="Select estimated timeline" />
               </SelectTrigger>
               <SelectContent>

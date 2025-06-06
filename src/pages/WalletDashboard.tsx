@@ -16,7 +16,6 @@ const WalletDashboard = () => {
     queryKey: ['wallet'],
     queryFn: getWallet as () => Promise<WalletResponse>,
     retry: false,
-    // onError callback removed
   });
 
   // Navigate to login on unauthorized error
