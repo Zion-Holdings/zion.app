@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import { useNavigate } from 'react-router-dom';
+import { logError } from '@/utils/logError';
 
 // Ensure these are set in your environment variables
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -8,7 +9,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 // Check if Supabase URL and Anon Key are provided
 if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('Supabase URL or Anon Key is missing. Please check your environment variables.');
+  logError('Supabase URL or Anon Key is missing. Please check your environment variables.', 'verify-email init');
   // You could throw an error here or handle it gracefully depending on your application's needs
 }
 
@@ -27,7 +28,7 @@ const VerifyEmailPage = () => {
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
 
         if (sessionError) {
-          console.error('Supabase getSession error:', sessionError);
+          logError(sessionError, 'Supabase getSession error');
           setStatus('error');
           setMessage(sessionError.message || 'Verification failed: Could not retrieve session.');
           return;
@@ -67,7 +68,7 @@ const VerifyEmailPage = () => {
           setMessage(responseData.message || 'Failed to finalize email verification in our system. Please try again or contact support.');
         }
       } catch (error: any) {
-        console.error('Verification page error:', error);
+        logError(error, 'Verification page error');
         setStatus('error');
         setMessage(error.message || 'An unexpected error occurred during verification.');
       }
@@ -77,7 +78,7 @@ const VerifyEmailPage = () => {
     if (typeof window !== 'undefined' && window.location.hash.includes('error_description')) {
         const params = new URLSearchParams(window.location.hash.substring(1)); // remove #
         const errorDescription = params.get('error_description');
-        console.error('Error from Supabase redirect:', errorDescription);
+        logError(errorDescription, 'Error from Supabase redirect');
         setMessage(`Verification failed: ${errorDescription}`);
         setStatus('error');
     } else {

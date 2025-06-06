@@ -1,6 +1,6 @@
 // pages/governance/create.tsx
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -39,7 +39,7 @@ const proposalSchema = z.object({
 type ProposalFormData = z.infer<typeof proposalSchema>;
 
 const CreateProposalPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   // const { user, token } = useAuth(); // Example
   // const { address: walletAddress } = useWallet(); // Example
 
@@ -61,11 +61,8 @@ const CreateProposalPage: React.FC = () => {
     },
   });
 
-  const location = useLocation();
-
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const templateId = params.get('template');
+    const templateId = router.query.template as string | undefined;
     if (templateId) {
       const template = PROPOSAL_TEMPLATES.find((t) => t.id === templateId);
       if (template) {
@@ -82,7 +79,7 @@ const CreateProposalPage: React.FC = () => {
         });
       }
     }
-  }, [location.search]);
+  }, [router.query.template]);
 
   const onSubmit = async (data: ProposalFormData) => {
     setIsLoading(true);
@@ -131,7 +128,7 @@ const CreateProposalPage: React.FC = () => {
       }
 
       const newProposal = await response.json();
-      navigate(`/governance/${newProposal.id}`);
+      router.push(`/governance/${newProposal.id}`);
     } catch (err: any) {
       setApiError(err.message || 'Failed to create proposal.');
       console.error(err);

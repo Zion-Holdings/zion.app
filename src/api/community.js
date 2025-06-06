@@ -1,8 +1,13 @@
 import axios from 'axios';
 
-export const fetchPostsByCategory = (slug, limit = 10, offset = 0) =>
-  axios
-    .get('/api/community', {
+export const fetchPostsByCategory = async (slug, limit = 10, offset = 0) => {
+  try {
+    const res = await axios.get('/api/community', {
       params: { category: slug, limit, offset },
-    })
-    .then(r => r.data.posts);
+    });
+    return res.data.posts;
+  } catch (err) {
+    console.error('Failed to fetch community posts', err);
+    throw err;
+  }
+};

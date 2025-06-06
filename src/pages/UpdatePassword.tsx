@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/form";
 import { toast } from "@/hooks/use-toast";
 import { cleanupAuthState } from "@/utils/authUtils";
+import { logError } from "@/utils/logError";
 
 // Form validation schema
 const updatePasswordSchema = z
@@ -111,7 +112,7 @@ export default function UpdatePassword() {
         navigate("/login");
       }, 3000);
     } catch (error: any) {
-      console.error("Password update error:", error);
+      logError(error, 'Password update error');
       toast({
         title: "Password update failed",
         description: error.message || "An unexpected error occurred",

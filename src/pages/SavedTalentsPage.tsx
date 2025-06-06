@@ -8,6 +8,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { TalentProfile } from "@/types/talent";
 import { toast } from "@/components/ui/use-toast";
 import { useNavigate, useLocation } from "react-router-dom";
+import { logError } from "@/utils/logError";
 
 export default function SavedTalentsPage() {
   const { user } = useAuth();
@@ -66,7 +67,7 @@ export default function SavedTalentsPage() {
           setSavedTalents(talentProfiles);
         }
       } catch (error) {
-        console.error("Error fetching saved talents:", error);
+        logError(error, 'Error fetching saved talents');
         toast({
           title: "Error",
           description: "Failed to load saved talents. Please try again later.",
@@ -136,7 +137,7 @@ export default function SavedTalentsPage() {
           .single();
   
         if (talentError) {
-          console.error("Error fetching talent profile:", talentError);
+          logError(talentError, 'Error fetching talent profile');
           toast({
             title: "Error",
             description: "Failed to update saved talents. Please try again later.",
@@ -154,7 +155,7 @@ export default function SavedTalentsPage() {
         }
       }
     } catch (error) {
-      console.error("Error toggling saved talent:", error);
+      logError(error, 'Error toggling saved talent');
       toast({
         title: "Error",
         description: "Failed to update saved talents. Please try again later.",

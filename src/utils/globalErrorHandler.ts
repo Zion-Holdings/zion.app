@@ -1,5 +1,5 @@
 // Log unhandled errors globally
-import { captureException } from './sentry';
+import { logError } from './logError';
 
 if (typeof window !== 'undefined') {
   window.onerror = function (
@@ -9,16 +9,7 @@ if (typeof window !== 'undefined') {
     colno,
     error
   ) {
-    console.error('Global Error:', { message, source, lineno, colno, error });
-    try {
-      if (error instanceof Error) {
-        captureException(error);
-      } else {
-        captureException(new Error(String(message)));
-      }
-    } catch (reportErr) {
-      console.error('Failed to report global error:', reportErr);
-    }
+    logError(error instanceof Error ? error : new Error(String(message)), 'Global Error');
   };
 
   // Also send errors to the server for logging
@@ -36,7 +27,7 @@ if (typeof window !== 'undefined') {
         }),
       });
     } catch (fetchErr) {
-      console.error('Failed to send error log:', fetchErr);
+      logError(fetchErr, 'Failed to send error log');
     }
   });
 }
