@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { toast } from '@/hooks/use-toast';
+import { showError } from '@/utils/showToast';
 import { supabase } from '@/integrations/supabase/client';
 import { captureException } from '@/utils/sentry';
 import axiosRetry from 'axios-retry';
@@ -8,9 +8,9 @@ import axiosRetry from 'axios-retry';
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
-    const msg =
-      error.response?.data?.message || error.message || 'Unexpected error';
-    toast.error(msg, { id: 'api-error' });
+    const code = error.response?.status;
+    const msg = error.response?.data?.message || `Error ${code}`;
+    showError(`api-${code}`, msg);
     return Promise.reject(error);
   }
 );
@@ -36,8 +36,6 @@ apiClient.interceptors.response.use(
 
     if (status && status >= 400) {
       captureException(error);
-      const msg = error.response?.data?.message || 'Unexpected error';
-      toast.error(msg, { id: 'api-error' });
     }
 
     if (status === 401) {

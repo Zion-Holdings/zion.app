@@ -240,7 +240,7 @@ describe('loginUser Service', () => {
     const { res, data } = await loginUser('test@example.com', 'password123');
     expect(res.status).toBe(200);
     expect(data).toEqual(mockSuccessResponse);
-    expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('/api/auth/login'), expect.any(Object));
+    expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('/auth/login'), expect.any(Object));
   });
 
   it('should handle "Email not confirmed" (403) from API', async () => {

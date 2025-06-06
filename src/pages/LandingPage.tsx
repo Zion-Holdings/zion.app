@@ -30,7 +30,7 @@ import {
   Smartphone
 } from "lucide-react";
 
-export default function Index() {
+export default function LandingPage() {
   const { t } = useTranslation();
   const { isRTL } = useLanguage();
   

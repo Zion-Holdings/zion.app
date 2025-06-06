@@ -1,6 +1,6 @@
 describe('community create post auth redirect', () => {
   it('redirects to login and back to create post', () => {
-    cy.intercept('POST', '/api/auth/login', {
+    cy.intercept('POST', '/auth/login', {
       statusCode: 200,
       body: { token: 'jwt', user: { id: '1', email: 'test@example.com' } },
       headers: { 'set-cookie': 'token=jwt; HttpOnly; Path=/' },

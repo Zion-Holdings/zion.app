@@ -1,7 +1,13 @@
 import { Heart } from 'lucide-react';
 import { useWishlist } from '@/hooks/useWishlist';
+import { Button } from '@/components/ui/button';
 
-export default function ProductCard({ product }) {
+export interface ProductCardProps {
+  product: any;
+  onBuy?: () => void;
+}
+
+export default function ProductCard({ product, onBuy }: ProductCardProps) {
   const { isWishlisted, toggle } = useWishlist();
   const active = isWishlisted(product.id);
 
@@ -25,6 +31,18 @@ export default function ProductCard({ product }) {
           {product.currency}
           {product.price}
         </p>
+      )}
+      {onBuy && (
+        <Button
+          onClick={(e) => {
+            e.stopPropagation();
+            onBuy();
+          }}
+          size="sm"
+          className="mt-2 w-full"
+        >
+          Buy
+        </Button>
       )}
     </div>
   );
