@@ -4,10 +4,15 @@ import { supabase } from '@/integrations/supabase/client';
 import { captureException } from '@/utils/sentry';
 import axiosRetry from 'axios-retry';
 
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';
+
 // Global interceptor for all axios instances
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
+    if (error.response?.headers['content-type']?.includes('text/html')) {
+      showError('html-error', 'Server returned HTML instead of JSON');
+    }
     const code = error.response?.status;
     const msg = error.response?.data?.message || `Error ${code}`;
     showError(`api-${code}`, msg);
@@ -15,8 +20,9 @@ axios.interceptors.response.use(
   }
 );
 
+const API_BASE = axios.defaults.baseURL;
 const apiClient = axios.create({
-  baseURL: '/api/v1/services',
+  baseURL: `${API_BASE}/api/v1/services`,
 });
 
 axiosRetry(apiClient, {
