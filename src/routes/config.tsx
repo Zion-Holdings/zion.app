@@ -43,6 +43,7 @@ import {
   ErrorRoutes,
   EnterpriseRoutes,
   DeveloperRoutes,
+  GovernanceRoutes,
   MarketplaceRoutes, // Assuming MarketplaceRoutes is a group of routes
   TalentRoutes,      // Assuming TalentRoutes is a group of routes
   CommunityRoutes,   // Assuming CommunityRoutes is a group of routes
@@ -102,6 +103,8 @@ export const allRoutes: AppRouteObject[] = [
     metaTitle: 'Community - Zion'
   },
   { path: '/developers/*', element: <DeveloperRoutes />, metaTitle: 'Developers - Zion' },
+  { path: '/governance/*', element: <GovernanceRoutes />, metaTitle: 'Governance - Zion' },
+  { path: '/dao/*', element: <GovernanceRoutes />, metaTitle: 'DAO - Zion' },
   // Test routes
   { path: '/test-error-render', element: <ErrorTriggerComponent />, metaTitle: 'Test Error Render - Zion' },
   { path: '/test-error-mount', element: <ErrorTriggerComponent onMount={true} />, metaTitle: 'Test Error Mount - Zion' },
