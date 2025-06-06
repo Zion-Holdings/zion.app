@@ -408,4 +408,17 @@ describe('WalletProvider', () => {
     unmount();
     expect(localActiveUseAppKitMock.off).toHaveBeenCalledWith('providerChanged', expect.any(Function));
   });
+
+  test('renders without AppKit instance and does not throw', () => {
+    mockUseAppKit.mockReturnValue(undefined as any);
+    mockCreateAppKit.mockReturnValue(undefined as any);
+
+    expect(() => {
+      render(
+        <WalletProvider>
+          <WalletConsumer onUpdate={onUpdateMock} />
+        </WalletProvider>
+      );
+    }).not.toThrow();
+  });
 });
