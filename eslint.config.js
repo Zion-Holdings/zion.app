@@ -4,6 +4,7 @@ import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import eslintConfigPrettier from "eslint-config-prettier";
+import eslintConfigNext from 'eslint-config-next';
 
 const projectRoot = import.meta.dirname;
 const tsPluginDef = { "@typescript-eslint": tseslint.plugin };
@@ -13,6 +14,8 @@ export default tseslint.config(
   {
     ignores: ["node_modules/**", "dist/**", "out/**", "coverage/**", "build/**", ".next/**", "public/build/**"],
   },
+
+  eslintConfigNext,
 
   // Fallback for problematic files (non-type-aware TS linting)
   {
@@ -50,6 +53,11 @@ export default tseslint.config(
       "react/display-name": "warn",
       // React Hooks specific rules for useAuth.tsx
       ...pluginReactHooks.configs.recommended.rules,
+    },
+    settings: {
+      react: {
+        version: "detect"
+      }
     }
   },
 

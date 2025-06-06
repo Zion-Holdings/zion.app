@@ -23,15 +23,15 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
   const location = useLocation();
   const { user } = useAuth();
   const isAuthenticated = !!user;
-  const { items } = useWishlist();
-  const favoritesCount = items.length;
+  const { items: wishlistItems } = useWishlist(); // Renamed to avoid conflict
+  const favoritesCount = wishlistItems.length;
+
+  const cartContextValue = useCart(); // Call hook at top level
   let cartCount = 0;
-  try {
-    const { items } = useCart(); // Attempt to use the cart
-    cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
-  } catch (error) {
-    console.warn("MobileBottomNav: useCart() failed, defaulting cartCount to 0. Error:", error);
-    // cartCount remains 0
+  if (cartContextValue && cartContextValue.items) {
+    cartCount = cartContextValue.items.reduce((sum, i) => sum + i.quantity, 0);
+  } else {
+    // console.warn("MobileBottomNav: Cart data or items not available, defaulting cartCount to 0.");
   }
 
   const navItems = [

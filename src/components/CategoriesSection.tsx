@@ -107,7 +107,7 @@ export function CategoriesSection({
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-white mb-4">No Categories Found</h2>
           <p className="text-zion-slate-light text-lg mb-2">
-            We couldn't find any categories to display at this time.
+            We couldn&apos;t find any categories to display at this time.
           </p>
           <p className="text-zion-slate-light text-md">
             Please check back later, or if you believe this is an error, contact support.
