@@ -540,3 +540,19 @@ The command uploads the `dist` directory to your configured IPFS gateway and pri
 ## Multichain Governance
 
 The `token/multichain` directory provides Solidity contracts for deploying ZION$ across multiple chains. The LayerZero-based bridge wrapper allows deploying on zkSync while mirroring DAO votes to Starknet. Run the Hardhat script in `token/multichain/deploy` to deploy and record addresses.
+
+## Codex Automation
+
+This repository includes an optional workflow for automatically fixing lint errors using OpenAI Codex.
+
+- **codex-pipeline.yaml** – Defines an `openai-operator` pipeline that lints the `app/` directory, extracts failing code, sends it to Codex for a patch and then runs tests.
+- **scripts/codexApiFixer.js** – Simple script that sends a single file to Codex and writes the fixed version.
+- **scripts/codexWebhookServer.js** – Express server exposing `/webhook/trigger-fix` to launch the pipeline from external error reports.
+
+Start the webhook server with:
+
+```bash
+node scripts/codexWebhookServer.js
+```
+
+Then POST to `http://localhost:3001/webhook/trigger-fix` to trigger the automated fix pipeline.
