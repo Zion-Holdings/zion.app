@@ -175,6 +175,7 @@ const App = () => {
                   <Route path="/test-error-render" element={<PageTransition><ErrorTriggerComponent /></PageTransition>} />
                   <Route path="/test-error-mount" element={<PageTransition><ErrorTriggerComponent onMount={true} /></PageTransition>} />
                   {/* Test routes for error boundaries - END */}
+                  <Route path="/oauth" element={<PageTransition><OAuthCallback /></PageTransition>} />
                   <Route path="/auth/*" element={<PageTransition><AuthRoutes /></PageTransition>} />
                   {/* <Route path="/dashboard/*" element={<PageTransition><DashboardRoutes /></PageTransition>} /> */}
                   <Route path="/marketplace/*" element={<PageTransition><MarketplaceRoutes /></PageTransition>} />
