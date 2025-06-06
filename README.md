@@ -79,7 +79,7 @@ This project utilizes a modern, multi-component architecture:
 
 ### Prerequisites
 
-- Node.js (latest LTS version recommended)
+ - Node.js 18 (LTS) or later
 - Python (version 3.10) & pip
 - Git
 - Access to a PostgreSQL server (for the Django backend)
