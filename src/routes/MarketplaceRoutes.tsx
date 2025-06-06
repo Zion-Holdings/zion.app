@@ -25,6 +25,7 @@ import Checkout from "@/pages/Checkout";
 import PaymentSuccess from "@/pages/payment-success";
 import NewProductsPage from "@/pages/NewProductsPage";
 import NewServicesPage from "@/pages/NewServicesPage";
+import InnovationPage from "@/pages/InnovationPage";
 
 const MarketplaceRoutes = () => {
   return (
@@ -71,6 +72,7 @@ const MarketplaceRoutes = () => {
       
       {/* Service Routes */}
       <Route path="/services" element={<ServicesPage />} />
+      <Route path="/innovation" element={<InnovationPage />} />
       <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
       <Route path="/it-onsite-services/:country" element={<ITOnsiteServicesPage />} />
       <Route path="/request-quote" element={<RequestQuote />} />
