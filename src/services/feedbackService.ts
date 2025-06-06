@@ -3,9 +3,9 @@ import { safeStorage } from '@/utils/safeStorage';
 export interface FeedbackEntry {
   id: string;
   rating: number;
-  comments?: string;
-  pageUrl: string;
-  userId?: string;
+  comment?: string;
+  url: string;
+  userAgent?: string;
   createdAt: string;
 }
 
@@ -43,7 +43,7 @@ export async function postFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'
       body: JSON.stringify(entry),
     });
     const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
+    if (res.status !== 201) {
       throw new Error(data?.error || `Error ${res.status}: Failed to submit feedback`);
     }
     return data;
