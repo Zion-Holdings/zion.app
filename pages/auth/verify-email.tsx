@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { supabase } from '@/integrations/supabase/client'; // Assuming supabase client is here
 import { useAuth } from '@/hooks/useAuth'; // To access user state
 
 const VerifyEmailPage = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
   const { user, isLoading: authLoading, setUser } = useAuth();
   const [message, setMessage] = useState('Verifying your email...');
   const [error, setError] = useState<string | null>(null);
@@ -28,7 +27,7 @@ const VerifyEmailPage = () => {
 
       // We need to check if the user object is available, indicating Supabase processed the link.
       // Supabase might also specific 'type' in URL like 'signup' or 'email_change'
-      const params = new URLSearchParams(location.search);
+      const params = new URLSearchParams(window.location.search);
       const type = params.get('type');
 
       // If there's a user session, it means Supabase has processed the verification link successfully.
@@ -64,7 +63,7 @@ const VerifyEmailPage = () => {
 
           // Redirect to login or dashboard after a short delay
           setTimeout(() => {
-            navigate('/auth/login');
+            router.push('/auth/login');
           }, 3000);
 
         } catch (err: any) {
@@ -83,7 +82,7 @@ const VerifyEmailPage = () => {
         setIsLoading(false);
          // Optional: Redirect to login or a page to request new verification
          setTimeout(() => {
-            navigate('/auth/login');
+            router.push('/auth/login');
         }, 5000);
       }
     };
@@ -107,7 +106,7 @@ const VerifyEmailPage = () => {
         window.removeEventListener('hashchange', handleHashChange);
     };
 
-  }, [user, authLoading, location.search, navigate, setUser]);
+  }, [user, authLoading, router, setUser]);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '20px' }}>
@@ -116,7 +115,7 @@ const VerifyEmailPage = () => {
       {!isLoading && error && <p style={{ color: 'red' }}>Error: {error}</p>}
       {!isLoading && !error && message && <p style={{ color: 'green' }}>{message}</p>}
       {!isLoading && (
-        <button onClick={() => navigate('/auth/login')}>
+        <button onClick={() => router.push('/auth/login')}>
           Go to Login
         </button>
       )}

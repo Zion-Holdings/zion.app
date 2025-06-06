@@ -1,6 +1,6 @@
 // pages/governance/index.tsx
 import React, { useEffect, useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import ProposalCard, { Proposal } from '@/components/governance/ProposalCard'; // Adjust path if needed
 // import MainLayout from '@/components/layout/MainLayout'; // If exists
 import { Button } from '@/components/ui/button'; // Adjust path
