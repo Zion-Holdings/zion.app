@@ -25,7 +25,7 @@ export function QuickAccess({ className, style }: QuickAccessProps) {
       title: t('home.tool_ai_matcher'),
       description: t('home.tool_ai_matcher_desc'),
       icon: <Search className="h-6 w-6 text-zion-cyan" />,
-      link: "/match"
+      link: "/marketplace"
     },
     {
       title: t('home.tool_talent'),
