@@ -35,6 +35,7 @@ import VerifyIdentity from '@/pages/VerifyIdentity';
 import StartupOSPage from '@/pages/StartupOS'; // Import the new page
 import GlobalMapPage from '@/pages/GlobalMap';
 import SummitPage from '@/pages/SummitPage';
+import OrgChartPage from '@/pages/OrgChart';
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
@@ -83,6 +84,8 @@ export const allRoutes: AppRouteObject[] = [
   { path: '/integrate', element: <PartnerIntegration />, metaTitle: 'Partner API - Zion' },
   { path: '/investor-match', element: <InvestorMatchPage />, metaTitle: 'Investor Match - Zion' },
   { path: '/grants', element: <GrantsPage />, metaTitle: 'Grants - Zion' },
+  { path: '/team', element: <OrgChartPage />, metaTitle: 'Team - Zion' },
+  { path: '/governance/org-chart', element: <OrgChartPage />, metaTitle: 'Org Chart - Zion' },
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/roadmap', element: <RoadmapPage />, metaTitle: 'Roadmap - Zion' },
   { path: '/roadmap/suggest', element: <RoadmapSuggestPage />, metaTitle: 'Suggest Feature - Zion' },
