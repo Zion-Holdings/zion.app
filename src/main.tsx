@@ -40,7 +40,6 @@ import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
 import RootErrorBoundary from './components/RootErrorBoundary';
 import {
-  GlobalSnackbarProvider,
   AppLoaderProvider,
   NotificationProvider,
   MessagingProvider,
@@ -101,7 +100,6 @@ try {
       />
       <RootErrorBoundary>
         <Provider store={store}>
-          <GlobalSnackbarProvider>
           <AppLoaderProvider>
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
@@ -145,7 +143,6 @@ try {
         </HelmetProvider>
         </I18nextProvider>
         </AppLoaderProvider>
-        </GlobalSnackbarProvider>
       </Provider>
       </RootErrorBoundary>
       {/* Removed duplicate main marker */}
