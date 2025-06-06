@@ -13,6 +13,7 @@ import ToastProvider from "./components/ToastProvider";
 import OfflineToast from "./components/OfflineToast";
 import InstallPrompt from "./components/InstallPrompt";
 import { allRoutes } from './routes/config'; // Import the consolidated route configuration
+import AuthGuard from './components/AuthGuard';
 import PageTransition from './components/PageTransition';
 // import Home from './pages/Home'; // Removed - Handled by allRoutes
 // import AIMatcherPage from './pages/AIMatcher'; // Removed - Assuming handled by other route groups or specific pages
@@ -101,8 +102,16 @@ const App = () => {
             <React.Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
               <AnimatePresence mode="wait">
                 <Routes location={location} key={location.pathname}>
-                  {allRoutes.map(({ path, element }) => (
-                    <Route key={path} path={path} element={<PageTransition>{element}</PageTransition>} />
+                  {allRoutes.map((route) => (
+                    <Route
+                      key={route.path}
+                      path={route.path}
+                      element={
+                        <AuthGuard route={route}>
+                          <PageTransition>{route.element}</PageTransition>
+                        </AuthGuard>
+                      }
+                    />
                   ))}
                 </Routes>
               </AnimatePresence>
