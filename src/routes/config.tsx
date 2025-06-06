@@ -39,6 +39,7 @@ import OrgChartPage from '@/pages/OrgChart';
 import PrivacyVotePage from '@/pages/governance/privacy';
 import MobilePwa from '@/pages/MobilePwa';
 import FounderBackupVault from '@/pages/FounderBackupVault';
+import CongressPage from '@/pages/Congress';
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
@@ -145,6 +146,18 @@ export const allRoutes: AppRouteObject[] = [
     path: '/global',
     element: <GlobalMapPage />,
     metaTitle: 'Global Map - Zion',
+    requiresAuth: false,
+  },
+  {
+    path: '/convene',
+    element: <CongressPage />,
+    metaTitle: 'Planetary Congress - Zion',
+    requiresAuth: false,
+  },
+  {
+    path: '/protocol/congress',
+    element: <CongressPage />,
+    metaTitle: 'Planetary Congress - Zion',
     requiresAuth: false,
   },
   // Wildcard for error handling - ensure this is last
