@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card";
 import { toast } from "@/components/ui/use-toast";
 import z from "zod";
 import { ChatAssistant } from "@/components/ChatAssistant";
+import { logError } from "@/utils/logError";
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -113,7 +114,7 @@ export default function Contact() {
       
       return Promise.resolve();
     } catch (error) {
-      console.error("Error in AI chat:", error);
+      logError(error, 'Error in AI chat');
       toast({
         title: "Chat Error",
         description: "There was an error communicating with our AI assistant. Please try again.",

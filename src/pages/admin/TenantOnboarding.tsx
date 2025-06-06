@@ -14,6 +14,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Switch } from "@/components/ui/switch";
+import { logError } from "@/utils/logError";
 
 export default function TenantOnboarding() {
   const { user } = useAuth();
@@ -105,9 +106,9 @@ export default function TenantOnboarding() {
       });
       
     } catch (error: any) {
-      console.error("Error creating tenant:", error);
-      toast.error("Failed to create tenant", { 
-        description: error.message 
+      logError(error, 'Error creating tenant');
+      toast.error("Failed to create tenant", {
+        description: error.message
       });
     } finally {
       setIsSubmitting(false);

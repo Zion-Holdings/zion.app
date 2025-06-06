@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Trash2, Download, Share2, Send } from 'lucide-react'; // Added Send icon
 import { toast } from "sonner";
+import { logError } from "@/utils/logError";
 
 
 interface WhitepaperSection {
@@ -165,7 +166,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
       setRawDraft(data.whitepaperDraft);
       setSections(parseWhitepaperDraft(data.whitepaperDraft));
     } catch (e: any) {
-      console.error("Error generating whitepaper:", e);
+      logError(e, 'Error generating whitepaper');
       setError(e.message || 'An unexpected error occurred.');
       setSections([]);
     } finally {
@@ -217,7 +218,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
       URL.revokeObjectURL(url);
       setError(null);
     } catch (e: any) {
-        console.error("Error downloading Markdown:", e);
+        logError(e, 'Error downloading Markdown');
         setError("Failed to download Markdown file. " + e.message);
     } finally {
         setIsDownloading(false);
@@ -277,7 +278,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
       pdf.save(`${slugify(tokenName || 'whitepaper')}_whitepaper.pdf`);
 
     } catch (e: any) {
-      console.error("Error downloading PDF:", e);
+      logError(e, 'Error downloading PDF');
       setError("Failed to download PDF file. " + e.message);
     } finally {
       setIsDownloading(false);
@@ -316,7 +317,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
       setCurrentSharedWhitepaperIsPublic(response.is_public); // is_public is returned by create-shared-whitepaper
       toast.success("Shareable link generated!");
     } catch (e: any) {
-      console.error("Error generating shareable link:", e);
+      logError(e, 'Error generating shareable link');
       setError("Failed to generate shareable link: " + e.message);
       toast.error("Failed to generate shareable link.");
     } finally {
@@ -346,7 +347,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         toast.success(`Whitepaper is now ${response.is_public ? 'public' : 'private'}.`);
 
     } catch (e: any) {
-        console.error("Error toggling public status:", e);
+        logError(e, 'Error toggling public status');
         setError("Failed to update public status: " + e.message);
         toast.error("Failed to update public status.");
         // Revert optimistic update if it failed:
@@ -407,7 +408,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         toast.success("Whitepaper submitted to counsel successfully!");
 
     } catch (e: any) {
-        console.error("Error submitting to counsel:", e);
+        logError(e, 'Error submitting to counsel');
         setError("Failed to submit to counsel: " + e.message);
         toast.error("Failed to submit to counsel: " + e.message);
     } finally {
