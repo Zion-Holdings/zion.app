@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, matchPath } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import GlobalErrorBoundary
 import { captureException } from './utils/sentry'; // This might be redundant if GlobalErrorBoundary handles all Sentry logging
@@ -81,11 +81,16 @@ const App = () => {
   const location = useLocation();
   useEffect(() => {
     try {
-      // critical render logic could go here
+      const matched = allRoutes.find(
+        (r) => r.path && matchPath({ path: r.path, end: false }, location.pathname)
+      );
+      if (matched && matched.metaTitle) {
+        document.title = matched.metaTitle;
+      }
     } catch (err) {
       logIssue('Render failed in main view', { error: err });
     }
-  }, []);
+  }, [location.pathname]);
   return (
     <GlobalErrorBoundary>
       <WhitelabelProvider>
