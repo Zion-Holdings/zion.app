@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django_otp',
     'django_otp.plugins.otp_totp',
     'governance.apps.GovernanceConfig',
+    'deployment', # Added new deployment app - corrected path
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'BACKEND': 'django_redis.cache.RedisCache', # Corrected for django-redis 5.x
         'LOCATION': os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379/1'),
     }
 }
