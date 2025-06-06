@@ -7,6 +7,7 @@ const { mongoUri } = require('./config');
 const authRoutes = require('./routes/auth');
 const authSocialRoutes = require('./routes/authSocial');
 const recommendationsRoutes = require('./routes/recommendations');
+const syncRoutes = require('./routes/sync');
 const { logAndAlert } = require('./utils/alertLogger');
 
 const app = express();
@@ -20,6 +21,7 @@ app.use('/auth', authRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/', authSocialRoutes);
 app.use('/recommendations', recommendationsRoutes);
+app.use('/sync', syncRoutes);
 
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
