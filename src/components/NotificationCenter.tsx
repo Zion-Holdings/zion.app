@@ -29,11 +29,12 @@ export const NotificationCenter: React.FC = () => {
   
   const [open, setOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [loadedOnce, setLoadedOnce] = useState(false);
   const enqueueSnackbar = useEnqueueSnackbar();
 
-  // Refresh notifications when popover opens
+  // Refresh notifications when popover opens, but avoid duplicate
   useEffect(() => {
-    if (open) {
+    if (open && !loadedOnce) {
       const loadNotifications = async () => {
         try {
           await fetchNotifications();
@@ -42,12 +43,14 @@ export const NotificationCenter: React.FC = () => {
           console.error("Failed to fetch notifications:", err);
           setError("Couldn't load notifications");
           enqueueSnackbar(err?.response?.data?.message || err.message, { variant: 'error' });
+        } finally {
+          setLoadedOnce(true);
         }
       };
-      
+
       loadNotifications();
     }
-  }, [open, fetchNotifications]);
+  }, [open, loadedOnce, fetchNotifications]);
 
   const handleMarkAllAsRead = async () => {
     try {
@@ -64,7 +67,7 @@ export const NotificationCenter: React.FC = () => {
   };
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover open={open} onOpenChange={(v) => setOpen(v ?? false)}>
       <PopoverTrigger asChild>
         <Button variant="ghost" size="icon" className="relative" aria-label="Open notifications">
           <Bell className="h-5 w-5 text-zion-slate-light" />
