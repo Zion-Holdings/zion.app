@@ -1,4 +1,4 @@
-import { toast } from 'sonner';
+import { toast } from '@/hooks/use-toast';
 
 // Utility to prevent duplicate toasts. Similar to react-hot-toast's isActive check.
 

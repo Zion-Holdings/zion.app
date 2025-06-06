@@ -1,11 +1,12 @@
 
 import { Fragment } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { ErrorBoundary } from 'react-error-boundary';
 import { LoginForm } from '@/components/auth/login';
 import LoginErrorFallback from '@/components/auth/login/LoginErrorFallback';
 // import Signup from "@/pages/Signup"; // Replaced with SimpleSignup
 import SimpleSignup from '@/pages/SimpleSignup';
+import RegisterForm from '@/components/auth/RegisterForm';
 import ForgotPassword from "@/pages/ForgotPassword";
 import UpdatePassword from "@/pages/UpdatePassword";
 import ResetPassword from "@/pages/ResetPassword";
@@ -20,7 +21,7 @@ const AuthRoutes = () => {
       {/* Auth Routes */}
       <Route path="/login" element={<ErrorBoundary FallbackComponent={LoginErrorFallback}><LoginForm /></ErrorBoundary>} />
       <Route path="/signup" element={<SimpleSignup />} />
-      <Route path="/register" element={<Navigate to="/signup" replace />} />
+      <Route path="/register" element={<RegisterForm />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password/:token" element={<ResetPassword />} />
       <Route path="/update-password" element={<UpdatePassword />} />
