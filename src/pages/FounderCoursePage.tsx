@@ -48,31 +48,80 @@ const modules = [
   },
 ];
 
+async function fetchWithRetry(
+  url: string,
+  options: RequestInit,
+  retries = 3,
+  backoff = 500
+) {
+  try {
+    const res = await fetch(url, options);
+    if (!res.ok) {
+      const text = await res.text().catch(() => '');
+      throw new Error(text || `Request failed with status ${res.status}`);
+    }
+    return res.json();
+  } catch (err) {
+    if (retries > 0) {
+      await new Promise((r) => setTimeout(r, backoff));
+      return fetchWithRetry(url, options, retries - 1, backoff * 2);
+    }
+    throw err;
+  }
+}
+
 export default function FounderCoursePage() {
   const [progress, setProgress] = useState(0);
   const [summary, setSummary] = useState('');
   const [quiz, setQuiz] = useState<any[]>([]);
+  const [loadingSummary, setLoadingSummary] = useState(false);
+  const [loadingQuiz, setLoadingQuiz] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const completeModule = () => setProgress((p) => p + 1);
 
   const callSummary = async (text: string) => {
-    const res = await fetch('/api/summarize', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text }),
-    });
-    const data = await res.json();
-    setSummary(data.summary);
+    setError(null);
+    setLoadingSummary(true);
+    try {
+      const data = await fetchWithRetry(
+        '/api/summarize',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text }),
+        },
+        3,
+        500
+      );
+      setSummary(data.summary);
+    } catch (err: any) {
+      setError(err.message || 'Failed to fetch summary');
+    } finally {
+      setLoadingSummary(false);
+    }
   };
 
   const callQuiz = async (topic: string) => {
-    const res = await fetch('/api/generate-quiz', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ topic }),
-    });
-    const data = await res.json();
-    setQuiz(data.quiz);
+    setError(null);
+    setLoadingQuiz(true);
+    try {
+      const data = await fetchWithRetry(
+        '/api/generate-quiz',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ topic }),
+        },
+        3,
+        500
+      );
+      setQuiz(data.quiz);
+    } catch (err: any) {
+      setError(err.message || 'Failed to fetch quiz');
+    } finally {
+      setLoadingQuiz(false);
+    }
   };
 
   return (
@@ -80,6 +129,7 @@ export default function FounderCoursePage() {
       <NextSeo title="Zion Founder Course" description="Learn how to launch your own Zion instance." />
       <h1 className="text-3xl font-bold">Zion Founder Course</h1>
       <p>Progress: {progress}/{modules.length}</p>
+      {error && <p className="text-red-500">{error}</p>}
       {modules.map((m, idx) => (
         <div key={idx} className="border p-4 rounded space-y-2">
           <h2 className="text-xl font-semibold">{m.title}</h2>
@@ -95,6 +145,9 @@ export default function FounderCoursePage() {
         </div>
       ))}
 
+      {loadingSummary && (
+        <p className="text-sm text-zion-slate-light">Generating summary...</p>
+      )}
       {summary && (
         <div className="border p-4 rounded bg-gray-50">
           <h3 className="font-semibold mb-2">Module Summary</h3>
@@ -102,6 +155,9 @@ export default function FounderCoursePage() {
         </div>
       )}
 
+      {loadingQuiz && (
+        <p className="text-sm text-zion-slate-light">Loading quiz...</p>
+      )}
       {quiz.length > 0 && (
         <div className="border p-4 rounded bg-gray-50 space-y-2">
           <h3 className="font-semibold">Quiz</h3>
