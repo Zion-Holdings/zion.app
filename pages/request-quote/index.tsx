@@ -14,6 +14,6 @@ export default function RequestQuotePage() {
         {/* Default to services category until additional categories are supported */}
         <QuoteWizard category="services" />
       </Suspense>
-    </GlobalErrorBoundary>
+    </ErrorBoundary>
   );
 }

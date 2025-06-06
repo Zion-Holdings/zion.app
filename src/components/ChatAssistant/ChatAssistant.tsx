@@ -42,52 +42,55 @@ export function ChatAssistant({
 }: ChatAssistantProps) {
   const auth = useContext(AuthContext);
   const isGuest = !auth?.isAuthenticated;
-  const localStorageKey = isGuest ? `chatHistory-${recipient.id}` : null;
 
-  // Define messages and setMessages based on user type
-  let currentMessages: Message[];
-  let setCurrentMessages: (value: Message[] | ((val: Message[]) => Message[])) => void;
+  // Hooks called unconditionally at the top
+  const localStorageKey = `chatHistory-${recipient.id}`; // Key is always generated
+  const [storedGuestMessages, setStoredGuestMessages] = useLocalStorage<Message[]>(
+    isGuest ? localStorageKey : 'dummy-guest-key', // Use a dummy key if not guest to prevent LS write for logged-in users
+    []
+  );
+  const [displayGuestMessages, setDisplayGuestMessages] = useState<Message[]>([]);
+  const [loggedInMessages, setLoggedInMessages] = useState<Message[]>(initialMessages);
 
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const [pendingApiCallParams, setPendingApiCallParams] = useState<{ message: string, conversationId?: string } | null>(null);
   const [showGuestModal, setShowGuestModal] = useState(false);
   const [guestMessage, setGuestMessage] = useState<string | null>(null);
 
-  if (isGuest && localStorageKey) {
-    // Guest user logic with useLocalStorage
-    const [storedGuestMessages, setStoredGuestMessages] = useLocalStorage<Message[]>(localStorageKey, []);
-    const [displayGuestMessages, setDisplayGuestMessages] = useState<Message[]>([]);
-
-    useEffect(() => {
+  // Effect for guest user messages
+  useEffect(() => {
+    if (isGuest) {
       // Priority: initialMessages prop > localStorage > empty array
       if (initialMessages && initialMessages.length > 0) {
         setDisplayGuestMessages(initialMessages);
         setStoredGuestMessages(initialMessages); // Persist if initialMessages are provided
       } else {
-        // No initialMessages prop, so use what's in localStorage (or the default [] from useLocalStorage)
         setDisplayGuestMessages(storedGuestMessages);
       }
-    }, [initialMessages, storedGuestMessages, setStoredGuestMessages, recipient.id]); // recipient.id ensures re-evaluation if key changes
+    }
+  }, [isGuest, initialMessages, storedGuestMessages, setStoredGuestMessages, recipient.id]);
 
-    currentMessages = displayGuestMessages;
-    setCurrentMessages = (valueOrFn) => {
+  // Effect for logged-in user messages
+  useEffect(() => {
+    if (!isGuest) {
+      // Update state if initialMessages prop changes (e.g. new conversation loaded)
+      setLoggedInMessages(initialMessages);
+    }
+  }, [isGuest, initialMessages, recipient.id]);
+
+  // Determine currentMessages and setCurrentMessages based on isGuest
+  const currentMessages = isGuest ? displayGuestMessages : loggedInMessages;
+  const setCurrentMessages = (valueOrFn: Message[] | ((val: Message[]) => Message[])) => {
+    if (isGuest) {
       const newMessages = valueOrFn instanceof Function ? valueOrFn(displayGuestMessages) : valueOrFn;
       setDisplayGuestMessages(newMessages);
       setStoredGuestMessages(newMessages); // Always update localStorage for guests
-    };
-  } else {
-    // Logged-in user logic with useState
-    const [loggedInMessages, setLoggedInMessages] = useState<Message[]>(initialMessages);
-    useEffect(() => {
-      // Update state if initialMessages prop changes (e.g. new conversation loaded)
-      setLoggedInMessages(initialMessages);
-    }, [initialMessages, recipient.id]); // recipient.id to reset if recipient changes
-
-    currentMessages = loggedInMessages;
-    setCurrentMessages = setLoggedInMessages;
-  }
+    } else {
+      const newMessages = valueOrFn instanceof Function ? valueOrFn(loggedInMessages) : valueOrFn;
+      setLoggedInMessages(newMessages);
+    }
+  };
   
-  // Common effects and logic using currentMessages and setCurrentMessages
   const debouncedApiCallParams = useDebounce(pendingApiCallParams, 3000);
 
   useEffect(() => {
@@ -98,7 +101,7 @@ export function ChatAssistant({
 
   useEffect(() => {
     scrollToBottom();
-  }, [currentMessages]);
+  }, [currentMessages]); // currentMessages will correctly refer to either guest or logged-in state
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });

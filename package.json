@@ -73,6 +73,7 @@
     "cmdk": "^1.1.1",
     "date-fns": "^3.3.1",
     "embla-carousel-react": "^8.0.0-rc19",
+    "enhanced-resolve": "^5.18.1",
     "ethers": "^6.14.3",
     "firebase": "^11.8.1",
     "form-data": "^4.0.0",
@@ -117,10 +118,10 @@
     "stripe": "^18.2.0",
     "swr": "^2.2.0",
     "tailwind-merge": "^3.3.0",
+    "validator": "^13.9.0",
     "vaul": "^1.1.2",
     "yup": "^1.2.0",
-    "zod": "^3.22.4",
-    "validator": "^13.9.0"
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@axe-core/react": "^4.8.2",
@@ -151,6 +152,7 @@
     "cypress": "^14.4.0",
     "cypress-real-events": "^1.12.0",
     "eslint": "^9.28.0",
+    "eslint-config-next": "^15.3.3",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
