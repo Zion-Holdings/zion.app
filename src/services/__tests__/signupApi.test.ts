@@ -30,4 +30,3 @@ describe('signup service', () => {
     await expect(signup({ email: 'a@b.c', password: 'pass' })).rejects.toThrow('server down');
   });
 });
-

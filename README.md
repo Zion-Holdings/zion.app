@@ -509,4 +509,3 @@ Make sure your `cypress.config.ts` has `baseUrl: 'http://localhost:5000'` for lo
 ### Blank Render Checks
 
 The Cypress test `cypress/e2e/blank_render.cy.ts` verifies that key routes render content inside the `<main>` element. To include additional pages in this check, add the desired path to the `routesToCheck` array at the top of that file.
-
