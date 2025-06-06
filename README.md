@@ -39,6 +39,7 @@ These components work in tandem to connect professionals and businesses.
 - **Rich Product Media:** Supports MP4 videos and GLB 3D models for product listings (`video_url`, `model_url` fields in database).
 - **Unified Deployment Protocol:** See `docs/UnifiedDeploymentProtocol.md` for guidelines on launching new market instances.
 - **On-chain Governance:** Solidity contracts in `dao/codebase` implement a stake-based DAO with 5-day voting periods and a 20% quorum requirement.
+- **Private ZK Voting:** Experimental module under `dao/zkvote` uses Semaphore proofs for anonymous, token-weighted voting.
 
 ### Visual Feature Summary
 
