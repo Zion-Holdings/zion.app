@@ -55,7 +55,11 @@ export function getStripe() {
       // Return a promise that resolves to null, or handle error appropriately
       stripePromise = Promise.resolve(null);
     } else {
-      stripePromise = loadStripe(selectedKey);
+      // `advancedFraudSignals` can trigger attempts to access localStorage.
+      // This causes "Access to storage is not allowed" errors when the app runs
+      // in third-party contexts like iframes or browsers with strict privacy settings.
+      // Disabling it avoids those errors while still allowing basic Stripe usage.
+      stripePromise = loadStripe(selectedKey, { advancedFraudSignals: false });
     }
   }
   return stripePromise;
