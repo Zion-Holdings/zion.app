@@ -5,6 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { postFeedback } from '@/services/feedbackService';
 import { useFeedback } from '@/context/FeedbackContext';
 import { useEnqueueSnackbar } from '@/context';
+import { useAuth } from '@/hooks/useAuth';
 
 const StarRatingInput: React.FC<{ value: number; onRate: (r:number) => void }> = ({ value, onRate }) => (
   <div className="flex mb-2" aria-label="Star rating">
@@ -27,14 +28,20 @@ export function FeedbackWidget() {
   const { rating, comment, setRating, setComment, reset } = useFeedback();
   const [submitted, setSubmitted] = useState(false);
   const enqueueSnackbar = useEnqueueSnackbar();
+  const { user } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await postFeedback({ rating, comment, page: window.location.pathname });
-      enqueueSnackbar('Thank you!', { variant: 'success' });
+      await postFeedback({
+        rating,
+        comments: comment,
+        pageUrl: window.location.pathname,
+        userId: user?.id,
+      });
+      enqueueSnackbar('Thank you for your feedback!', { variant: 'success' });
     } catch (err: any) {
-      enqueueSnackbar(err?.response?.data?.message || err.message, { variant: 'error' });
+      enqueueSnackbar(err.message, { variant: 'error' });
     }
     setSubmitted(true);
     reset();

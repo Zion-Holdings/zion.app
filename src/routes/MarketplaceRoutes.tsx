@@ -32,42 +32,42 @@ const MarketplaceRoutes = () => {
     <Routes>
       {/* Marketplace Routes */}
       <Route index element={<Marketplace />} />
-      <Route path="/categories" element={<Categories />} />
-      <Route path="/category/:slug" element={<CategoryDetail />} />
-      <Route path="/featured" element={<Featured />} />
-      <Route path="/marketplace/listing/:id" element={<ListingDetail />} />
+      <Route path="categories" element={<Categories />} />
+      <Route path="category/:slug" element={<CategoryDetail />} />
+      <Route path="featured" element={<Featured />} />
+      <Route path="listing/:id" element={<ListingDetail />} />
       <Route path="/listing/:id" element={<ListingDetail />} />
       
       {/* Equipment Routes */}
-      <Route path="/equipment" element={<EquipmentPage />} />
-      <Route path="/equipment/recommendations" element={<EquipmentRecommendations />} />
-      <Route path="/equipment/:id" element={<EquipmentDetail />} />
-      <Route path="/new-products" element={<NewProductsPage />} />
-      <Route path="/new-services" element={<NewServicesPage />} />
+      <Route path="equipment" element={<EquipmentPage />} />
+      <Route path="equipment/recommendations" element={<EquipmentRecommendations />} />
+      <Route path="equipment/:id" element={<EquipmentDetail />} />
+      <Route path="new-products" element={<NewProductsPage />} />
+      <Route path="new-services" element={<NewServicesPage />} />
       
       {/* Job Routes */}
       <Route
-        path="/post-job" 
+        path="post-job"
         element={
           <ProtectedRoute>
             <PostJob />
           </ProtectedRoute>
-        } 
+        }
       />
-      <Route path="/jobs/:id" element={<JobDetails />} />
+      <Route path="jobs/:id" element={<JobDetails />} />
       
       {/* AI Matcher Routes */}
-      <Route path="/ai-matcher" element={<AIMatcher />} />
-      <Route path="/match" element={<AIMatcher />} />
+      <Route path="ai-matcher" element={<AIMatcher />} />
+      <Route path="match" element={<AIMatcher />} />
       
       {/* Creator Routes */}
-      <Route 
-        path="/publish" 
+      <Route
+        path="publish"
         element={
           <ProtectedRoute>
             <PublishProduct />
           </ProtectedRoute>
-        } 
+        }
       />
       
       {/* Service Routes */}
@@ -80,30 +80,33 @@ const MarketplaceRoutes = () => {
       <Route path="/service-description-generator" element={<ServiceDescriptionGenerator />} />
       
       {/* Search Route */}
-      <Route path="/search" element={<SearchPage />} />
+      <Route path="search" element={<SearchPage />} />
+
+      {/* Cart Route */}
+      <Route path="/cart" element={<CartPage />} />
 
       {/* Checkout Route - accessible to guests */}
-      <Route path="/checkout" element={<Checkout />} />
-      <Route path="/success" element={<PaymentSuccess />} />
+      <Route path="checkout" element={<Checkout />} />
+      <Route path="success" element={<PaymentSuccess />} />
       
       {/* Project Room Routes */}
-      <Route 
-        path="/project/:projectId" 
+      <Route
+        path="project/:projectId"
         element={
           <ProtectedRoute>
             <ProjectRoom />
           </ProtectedRoute>
-        } 
+        }
       />
       
       {/* Video Call Routes */}
-      <Route 
-        path="/call/:roomId" 
+      <Route
+        path="call/:roomId"
         element={
           <ProtectedRoute>
             <VideoCall />
           </ProtectedRoute>
-        } 
+        }
       />
     </Routes>
   );

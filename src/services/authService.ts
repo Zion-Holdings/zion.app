@@ -20,15 +20,9 @@ export async function loginUser(email: string, password: string) {
 }
 
 export async function registerUser(name: string, email: string, password: string) {
-  const res = await fetch(`${API_URL}/auth/register`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ name, email, password }),
-  });
-  const data = await res.json().catch(() => ({}));
+  const endpoint = `${API_URL}/auth/register`;
+  const res = await axios.post(endpoint, { name, email, password });
   console.log('Register API Response Status:', res.status);
-  console.log('Register API Response Body:', data);
-  return { res, data };
+  console.log('Register API Response Body:', res.data);
+  return { res, data: res.data };
 }

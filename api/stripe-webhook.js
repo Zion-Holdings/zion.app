@@ -2,6 +2,7 @@ import Stripe from 'stripe';
 import { buffer } from 'micro';
 import fs from 'fs';
 import path from 'path';
+import { sendEmailWithSendGrid } from '../src/lib/email';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
   apiVersion: '2023-10-16',
@@ -40,6 +41,17 @@ export default async function handler(req, res) {
         }
       } catch (err) {
         console.error('Failed to update order', err);
+      }
+      if (session.customer_details?.email && process.env.SENDGRID_ORDER_CONFIRMATION_TEMPLATE_ID) {
+        try {
+          await sendEmailWithSendGrid({
+            to: session.customer_details.email,
+            templateId: process.env.SENDGRID_ORDER_CONFIRMATION_TEMPLATE_ID,
+            dynamicTemplateData: { orderId },
+          });
+        } catch (err) {
+          console.error('Failed to send receipt email', err);
+        }
       }
     }
   }

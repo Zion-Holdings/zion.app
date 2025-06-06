@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -13,9 +13,14 @@ export function FooterNewsletter() {
 
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  const lastSubmit = useRef(0);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (honeypot) return; // ignore bots
+    const now = Date.now();
+    if (now - lastSubmit.current < 1000) return;
+    lastSubmit.current = now;
 
     const trimmedEmail = email.trim();
     if (!EMAIL_REGEX.test(trimmedEmail)) {
@@ -27,7 +32,7 @@ export function FooterNewsletter() {
 
     setIsSubmitting(true);
     try {
-      const res = await fetch('/api/subscribe', {
+      const res = await fetch('/api/newsletter/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
