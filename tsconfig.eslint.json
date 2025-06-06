@@ -82,7 +82,11 @@
     "./stories/**/*.js",
     "./stories/**/*.jsx",
     "./stories/**/*.ts",
-    "./stories/**/*.tsx"
+    "./stories/**/*.tsx",
+    "./pages/**/*.ts",
+    "./pages/**/*.tsx",
+    "./pages/**/*.js",
+    "./pages/**/*.jsx"
   ],
   "exclude": [
     "node_modules",
