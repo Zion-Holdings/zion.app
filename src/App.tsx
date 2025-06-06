@@ -11,7 +11,6 @@ import { WhitelabelProvider } from "./context/WhitelabelContext";
 import ToastProvider from "./components/ToastProvider";
 import OfflineToast from "./components/OfflineToast";
 import InstallPrompt from "./components/InstallPrompt";
-import { FeedbackWidget } from "./components/feedback/FeedbackWidget";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -140,7 +139,6 @@ const App = () => {
             </React.Suspense>
             <OfflineToast />
             <SupportChatbot />
-            <FeedbackWidget />
             <InstallPrompt />
           </ToastProvider>
         </ThemeProvider>
