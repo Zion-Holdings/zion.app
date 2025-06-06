@@ -244,7 +244,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       // This is expected if isProjectIdValid was false or AppKit failed to initialize
       setWallet(prev => ({ ...initialWalletState, isWalletSystemAvailable: false, isConnected: false }));
     }
-  }, [updateWalletState]); // updateWalletState is memoized.
+  }, [updateWalletState, wallet.isWalletSystemAvailable]); // updateWalletState is memoized.
 
   const connectWallet = useCallback(async () => {
     if (!wallet.isWalletSystemAvailable || !appKitRef.current) {
