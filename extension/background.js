@@ -32,20 +32,21 @@ async function askZionGPT(prompt) {
   }
 }
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((message, sender) => {
   if (sender.id !== chrome.runtime.id) {
-    const errorMessage = `Receiving message from unauthorized sender. Sender ID: ${sender.id || 'N/A (sender.id is undefined, possibly a webpage)'}, Extension ID: ${chrome.runtime.id}`;
+    const errorMessage =
+      `Receiving message from unauthorized sender. ` +
+      `Sender ID: ${sender.id || 'N/A (sender.id is undefined, possibly a webpage)'}, ` +
+      `Extension ID: ${chrome.runtime.id}`;
     console.error(errorMessage);
     if (message.type === 'ask') {
-      sendResponse({ error: "Unauthorized sender" });
-      return true;
+      return Promise.resolve({ error: 'Unauthorized sender' });
     }
-    return; // No response expected for other message types when unauthorized
+    return false; // No response expected for other message types when unauthorized
   }
 
   if (message.type === 'ask') {
-    askZionGPT(message.prompt).then(sendResponse);
-    return true;
+    return askZionGPT(message.prompt);
   }
 
   if (message.type === 'post-job') {
@@ -57,4 +58,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'view-notifications') {
     chrome.tabs.create({ url: `${BASE_URL}/notifications` });
   }
+
+  return false;
 });

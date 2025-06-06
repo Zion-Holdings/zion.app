@@ -6,8 +6,19 @@ async function ask() {
     return;
   }
   try {
-    const res = await chrome.runtime.sendMessage({ type: 'ask', prompt });
-    document.getElementById('output').textContent = res.answer;
+    const res = await chrome.runtime
+      .sendMessage({ type: 'ask', prompt })
+      .catch((err) => {
+        throw err;
+      });
+    if (res && res.answer) {
+      document.getElementById('output').textContent = res.answer;
+    } else if (res && res.error) {
+      document.getElementById('output').textContent = res.error;
+    } else {
+      document.getElementById('output').textContent =
+        'No response from background script.';
+    }
   } catch (err) {
     console.error('Failed to contact background script', err);
     document.getElementById('output').textContent =
