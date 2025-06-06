@@ -75,7 +75,7 @@ export default function Blog() {
         canonical="https://app.ziontechgroup.com/blog"
       />
       <div className="min-h-screen bg-zion-blue pt-12 pb-20 px-4">
-        <h1>DEBUG: Blog Page Loaded</h1>
+        <h1>Blog</h1>
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <GradientHeading>AI & Tech Insights</GradientHeading>
