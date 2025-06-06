@@ -11,6 +11,7 @@ const navItems = [
   { title: 'Users', href: '/admin/users' },
   { title: 'Reports', href: '/admin/reports' },
   { title: 'Moderation', href: '/admin/moderation' },
+  { title: 'Zion Brain', href: '/admin/zion-brain' },
 ];
 
 export function AdminLayout({ children }: AdminLayoutProps) {

@@ -16,6 +16,7 @@ import TokenManager from "@/pages/admin/TokenManager";
 import IntegrationsPage from "@/pages/admin/IntegrationsPage";
 import WhitepaperGeneratorPage from "@/pages/WhitepaperGeneratorPage";
 import KycDashboard from "@/pages/admin/KycDashboard";
+import ZionBrain from "@/pages/admin/ZionBrain";
 
 const AdminRoutes = () => {
   return (
@@ -124,6 +125,15 @@ const AdminRoutes = () => {
         element={
           <ProtectedRoute adminOnly={true}>
             <WhitepaperGeneratorPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/zion-brain"
+        element={
+          <ProtectedRoute adminOnly={true}>
+            <ZionBrain />
           </ProtectedRoute>
         }
       />
