@@ -69,6 +69,7 @@ export const allRoutes: AppRouteObject[] = [
     requiresAuth: true,
   },
   { path: '/partners', element: <PartnersPage /> },
+  { path: '/investor-match', element: <InvestorMatchPage />, metaTitle: 'Investor Match - Zion' },
   { path: '/integrate', element: <PartnerIntegration />, metaTitle: 'Partner API - Zion' },
   { path: '/investor-match', element: <InvestorMatchPage />, metaTitle: 'Investor Match - Zion' },
   { path: '/grants', element: <GrantsPage />, metaTitle: 'Grants - Zion' },
