@@ -33,6 +33,7 @@ import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
 import { CommunityProvider } from '@/context';
 import VerifyIdentity from '@/pages/VerifyIdentity';
 import StartupOSPage from '@/pages/StartupOS'; // Import the new page
+import GlobalMapPage from '@/pages/GlobalMap';
 import SummitPage from '@/pages/SummitPage';
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
@@ -123,6 +124,12 @@ export const allRoutes: AppRouteObject[] = [
     element: <StartupOSPage />, // Reuses the same page component
     metaTitle: 'Founder Dashboard - Zion',
     requiresAuth: true,
+  },
+  {
+    path: '/global',
+    element: <GlobalMapPage />,
+    metaTitle: 'Global Map - Zion',
+    requiresAuth: false,
   },
   // Wildcard for error handling - ensure this is last
   { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },

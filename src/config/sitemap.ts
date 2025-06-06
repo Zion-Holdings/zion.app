@@ -129,6 +129,14 @@ export const publicPages: SitemapItem[] = [
     changeFreq: 'monthly',
     lastmod: currentDate,
   },
+  {
+    path: '/global',
+    label: 'Global Map',
+    description: 'Visualize Zion deployments around the world',
+    priority: 0.8,
+    changeFreq: 'weekly',
+    lastmod: currentDate,
+  },
 ];
 
 // Authentication Pages
