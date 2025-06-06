@@ -36,9 +36,9 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({
   };
 
   return (
-    <div className="p-6 bg-white shadow-lg rounded-lg h-full overflow-y-auto prose lg:prose-xl">
+    <div className="p-6 bg-white dark:bg-gray-950 shadow-lg rounded-lg h-full overflow-y-auto prose lg:prose-xl">
       {tokenName && <h1 className="text-3xl font-bold mb-2 text-center">{tokenName} - Whitepaper Draft</h1>}
-      {tokenSupply && <p className="text-center text-gray-600 mb-6">Total Supply: {tokenSupply}</p>}
+      {tokenSupply && <p className="text-center text-gray-600 dark:text-gray-300 mb-6">Total Supply: {tokenSupply}</p>}
 
       {sections.map(section => {
         // Special handling for Token Distribution to inject the chart
@@ -98,7 +98,7 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({
         );
       })}
       {!sections || sections.length === 0 && (
-        <p className="text-gray-500">Whitepaper preview will appear here once content is generated and sections are available.</p>
+        <p className="text-gray-500 dark:text-gray-400">Whitepaper preview will appear here once content is generated and sections are available.</p>
       )}
     </div>
   );
