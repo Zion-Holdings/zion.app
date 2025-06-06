@@ -37,6 +37,7 @@ These components work in tandem to connect professionals and businesses.
 - **Responsive Design:** User interface adapts to different screen sizes (implied by modern frontend stack).
 - **Service Integrations:** Connects with external services like Slack, Salesforce and Microsoft Teams (see `docs/Integrations.md`) and handles payments via Stripe (see `docs/Payments.md` for environment variable details).
 - **Rich Product Media:** Supports MP4 videos and GLB 3D models for product listings (`video_url`, `model_url` fields in database).
+- **Unified Deployment Protocol:** See `docs/UnifiedDeploymentProtocol.md` for guidelines on launching new market instances.
 
 ### Visual Feature Summary
 
