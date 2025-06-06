@@ -3,11 +3,13 @@ import { RouteObject } from 'react-router';
 
 export interface AppRouteObject extends RouteObject {
   metaTitle?: string;
+  requiresAuth?: boolean;
 }
 import Home from '@/pages/Home';
 import Marketplace from '@/pages/Marketplace'; // Assuming Marketplace component exists
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
+import Signup from '@/pages/Signup';
 const Login = lazy(() => import('@/pages/Login'));
 import { LoginForm } from '@/components/auth/login';
 import RegisterForm from '@/components/auth/RegisterForm';
@@ -22,7 +24,6 @@ import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
 import BlogPost from '@/pages/BlogPost';
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
-import PrivateRoute from '@/components/PrivateRoute';
 import { CommunityProvider } from '@/context';
 import {
   AuthRoutes,
@@ -39,25 +40,22 @@ import {
 } from '.'; // Importing from the same directory (src/routes)
 
 export const primaryRoutes: AppRouteObject[] = [
-  { path: '/', element: <Home />, metaTitle: 'Home - Zion' },
+  { path: '/', element: <Home />, metaTitle: 'Home - Zion', requiresAuth: false },
   { path: '/marketplace', element: <Marketplace />, metaTitle: 'Marketplace - Zion' },
   { path: '/categories', element: <Categories />, metaTitle: 'Categories - Zion' },
-  { path: '/blog', element: <Blog />, metaTitle: 'Blog - Zion' },
-  { path: '/login', element: <Login />, metaTitle: 'Login - Zion' },
+  { path: '/blog', element: <Blog />, metaTitle: 'Blog - Zion', requiresAuth: false },
+  { path: '/login', element: <Login />, metaTitle: 'Login - Zion', requiresAuth: false },
 ];
 
 export const allRoutes: AppRouteObject[] = [
   ...primaryRoutes,
-  { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
-  { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },
+  { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion', requiresAuth: false },
+  { path: '/register', element: <Signup />, metaTitle: 'Register - Zion', requiresAuth: false },
   {
     path: '/dashboard',
-    element: (
-      <PrivateRoute>
-        <Dashboard />
-      </PrivateRoute>
-    ),
-    metaTitle: 'Dashboard - Zion'
+    element: <Dashboard />,
+    metaTitle: 'Dashboard - Zion',
+    requiresAuth: true,
   },
   { path: '/partners', element: <PartnersPage /> },
   { path: '/blog/:slug', element: <BlogPost /> },
