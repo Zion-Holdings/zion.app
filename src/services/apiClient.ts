@@ -2,7 +2,6 @@ import axios from 'axios';
 import { showError } from '@/utils/showToast';
 import { showApiError } from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
-import { captureException } from '@/utils/sentry';
 import axiosRetry from 'axios-retry';
 
 axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';

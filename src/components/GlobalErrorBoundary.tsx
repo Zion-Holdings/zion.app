@@ -2,7 +2,7 @@ import React from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { useNavigate, useLocation } from 'react-router-dom'; // Added for retry functionality and location
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
-import { captureException } from '@/utils/sentry'; // Added for Sentry integration
+import { logError } from '@/utils/logError';
 
 function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   const navigate = useNavigate(); // Added for retry functionality
@@ -44,11 +44,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
 
   const handleError = (error: Error, info: React.ErrorInfo) => {
     console.error("GlobalErrorBoundary caught an error:", error, info);
-
-    // Report to Sentry if DSN is configured
-    if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
-      captureException(error, { extra: { route: location.pathname, componentStack: info.componentStack } }); // Added Sentry call with route and componentStack
-    }
+    logError(error, { route: location.pathname, componentStack: info.componentStack });
 
     try {
       const enqueueSnackbar = getEnqueueSnackbar();

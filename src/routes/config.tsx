@@ -11,7 +11,15 @@ import MarketplaceLanding from '@/pages/MarketplaceLanding';
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
 import ServicesPage from '@/pages/ServicesPage';
+import ErrorGuard from '@/components/ErrorGuard';
 
+function guardRoutes(routes: AppRouteObject[]): AppRouteObject[] {
+  return routes.map((r) => ({
+    ...r,
+    element: r.element ? <ErrorGuard>{r.element}</ErrorGuard> : r.element,
+    children: r.children ? guardRoutes(r.children) : undefined,
+  }));
+}
 import { LoginForm } from '@/components/auth/login';
 import OAuthCallback from '@/pages/OAuthCallback';
 import Dashboard from '@/pages/Dashboard';
@@ -58,7 +66,7 @@ import {
   CommunityRoutes,   // Assuming CommunityRoutes is a group of routes
 } from '.'; // Importing from the same directory (src/routes)
 
-export const primaryRoutes: AppRouteObject[] = [
+export const primaryRoutes: AppRouteObject[] = guardRoutes([
   { path: '/', element: <RootPage /> },
   {
     path: '/marketplace',
@@ -70,9 +78,9 @@ export const primaryRoutes: AppRouteObject[] = [
   { path: '/blog', element: <Blog />, metaTitle: 'Blog - Zion', requiresAuth: false },
   { path: '/services', element: <ServicesPage />, metaTitle: 'Services - Zion', requiresAuth: false },
   { path: '/login', element: <LoginForm />, metaTitle: 'Login - Zion', requiresAuth: false },
-];
+]);
 
-export const allRoutes: AppRouteObject[] = [
+export const allRoutes: AppRouteObject[] = guardRoutes([
   ...primaryRoutes,
   { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
   { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },
@@ -176,4 +184,4 @@ export const allRoutes: AppRouteObject[] = [
   },
   // Wildcard for error handling - ensure this is last
   { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },
-];
+]);

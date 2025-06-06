@@ -2,15 +2,14 @@
 import { logError } from './logError';
 
 if (typeof window !== 'undefined') {
-  window.onerror = function (
-    message,
-    source,
-    lineno,
-    colno,
-    error
-  ) {
-    logError(error instanceof Error ? error : new Error(String(message)), 'Global Error');
+  window.onerror = function (message, source, lineno, colno, error) {
+    console.error('Global Error:', { message, source, lineno, colno, error });
+    logError(error ?? message);
   };
+
+  window.addEventListener('unhandledrejection', (event) => {
+    logError(event.reason);
+  });
 
   // Also send errors to the server for logging
   window.addEventListener('error', (event) => {

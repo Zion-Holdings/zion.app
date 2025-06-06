@@ -26,7 +26,7 @@ if (typeof window !== "undefined" && window.fetch) {
       const message = err?.response?.data?.error ?? "Network error";
       const enqueueSnackbar = getEnqueueSnackbar();
       enqueueSnackbar(message, { variant: 'error' });
-      logError(err, 'Fetch error');
+      logError(err);
       throw err;
     }
   };

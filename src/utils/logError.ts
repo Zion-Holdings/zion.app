@@ -1,14 +1,26 @@
 import { captureException } from './sentry';
 
-export function logError(error: unknown, context?: string) {
+/**
+ * Centralized error logger for frontend issues. Reports to Sentry when
+ * available and falls back to console.error.
+ */
+export function logError(error: unknown, context?: Record<string, unknown>) {
   try {
-    console.error(context ? `${context}:` : 'Error:', error);
     if (error instanceof Error) {
-      captureException(error, context ? { extra: { context } } : undefined);
+      if (context) {
+        captureException(error, { extra: context });
+      } else {
+        captureException(error);
+      }
     } else {
-      captureException(new Error(String(error)), context ? { extra: { context } } : undefined);
+      const wrapped = new Error(typeof error === 'string' ? error : 'Unknown error');
+      if (context) {
+        captureException(wrapped, { extra: context });
+      } else {
+        captureException(wrapped);
+      }
     }
-  } catch (reportErr) {
-    console.error('Failed to capture error:', reportErr);
+  } catch (err) {
+    console.error('Failed to log error:', err);
   }
 }
