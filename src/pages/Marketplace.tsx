@@ -8,11 +8,18 @@ interface Product {
 }
 
 async function fetchProducts() {
-  const res = await fetch('/api/marketplace/products?limit=20');
-  if (!res.ok) {
-    throw new Error('Failed to fetch products');
+  // Network errors are caught and logged here.
+  // The error is re-thrown to be handled by react-query.
+  try {
+    const res = await fetch('/api/marketplace/products?limit=20');
+    if (!res.ok) {
+      throw new Error('Failed to fetch products');
+    }
+    return res.json() as Promise<Product[]>;
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    throw error;
   }
-  return res.json() as Promise<Product[]>;
 }
 
 export interface MarketplaceProps {
@@ -43,13 +50,17 @@ export default function Marketplace({ products: initialProducts = [] }: Marketpl
     <div className="container py-8">
       <h1 className="text-3xl font-bold mb-6">Marketplace</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((p) => (
-          <ProductCard
-            key={p.id}
-            product={p}
-            onBuy={() => navigate(`/checkout/${p.id}`)}
-          />
-        ))}
+        {products
+          // Filter out products that are null/undefined or lack an 'id' property
+          // to prevent rendering errors and ensure data integrity for ProductCard.
+          .filter(p => p && p.id)
+          .map((p) => (
+            <ProductCard
+              key={p.id}
+              product={p}
+              onBuy={() => navigate(`/checkout/${p.id}`)}
+            />
+          ))}
       </div>
     </div>
   );
