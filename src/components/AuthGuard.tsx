@@ -18,7 +18,7 @@ const AuthGuard: React.FC<AuthGuardProps> = ({ route, children }) => {
     return <Navigate to={`/login?next=${next}`} replace />;
   }
 
-  if (user && ['/login', '/register'].includes(path)) {
+  if (user && ['/login', '/register', '/signup'].includes(path)) {
     return <Navigate to="/marketplace" replace />;
   }
 

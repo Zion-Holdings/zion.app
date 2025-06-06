@@ -25,6 +25,7 @@ import PartnersPage from '@/pages/Partners';
 import BlogPost from '@/pages/BlogPost';
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
 import { CommunityProvider } from '@/context';
+import Signup from '@/pages/Signup';
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -56,6 +57,7 @@ export const allRoutes: AppRouteObject[] = [
   ...primaryRoutes,
   { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
   { path: '/register', element: <RegisterForm />, metaTitle: 'Register - Zion' },
+  { path: '/signup', element: <Signup />, metaTitle: 'Sign Up - Zion' },
   {
     path: '/dashboard',
     element: <Dashboard />,
