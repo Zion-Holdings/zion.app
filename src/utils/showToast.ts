@@ -1,4 +1,4 @@
-import { toast } from 'sonner';
+import { toast } from '@/hooks/use-toast';
 
 // Utility to prevent duplicate toasts. Similar to react-hot-toast's isActive check.
 
@@ -18,6 +18,11 @@ export function showToast(id: string | number, msg: string, type: ToastType = 'e
   method(msg, { id });
 
   setTimeout(() => activeToasts.delete(id), 5000);
+}
+
+// Convenience wrapper specifically for error messages
+export function showError(id: string | number, msg: string): void {
+  showToast(id, msg, 'error');
 }
 
 // Example: showToast('api-error', 'Network error');
