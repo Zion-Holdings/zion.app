@@ -24,6 +24,9 @@ import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
 import BlogPost from '@/pages/BlogPost';
 import GrantsPage from '@/pages/Grants';
+import RoadmapPage from '@/pages/Roadmap';
+import RoadmapFeaturePage from '@/pages/RoadmapFeature';
+import RoadmapSuggestPage from '@/pages/RoadmapSuggest';
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
 import { CommunityProvider } from '@/context';
 const Signup = React.lazy(() => import('@/pages/Signup'));
@@ -69,6 +72,9 @@ export const allRoutes: AppRouteObject[] = [
   { path: '/partners', element: <PartnersPage /> },
   { path: '/grants', element: <GrantsPage />, metaTitle: 'Grants - Zion' },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/roadmap', element: <RoadmapPage />, metaTitle: 'Roadmap - Zion' },
+  { path: '/roadmap/suggest', element: <RoadmapSuggestPage />, metaTitle: 'Suggest Feature - Zion' },
+  { path: '/roadmap/:id', element: <RoadmapFeaturePage />, metaTitle: 'Feature - Zion' },
   { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: true },
   { path: '/oauth', element: <OAuthCallback /> },
   { path: '/auth/*', element: <AuthRoutes /> },
