@@ -1,1 +1,15 @@
-export { default } from '../src/pages/Categories';
+import Categories, { CategoriesProps } from '../src/pages/Categories';
+import type { GetServerSideProps } from 'next';
+
+export const getServerSideProps: GetServerSideProps<CategoriesProps> = async () => {
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  try {
+    const res = await fetch(`${appUrl}/api/services`);
+    const categories = res.ok ? await res.json() : [];
+    return { props: { categories } };
+  } catch {
+    return { props: { categories: [] } };
+  }
+};
+
+export default Categories;

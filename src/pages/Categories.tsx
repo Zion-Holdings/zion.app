@@ -26,12 +26,17 @@ const fetchCategories = async (): Promise<CategoryType[]> => {
   return response.json();
 };
 
-export default function Categories() {
-  const [categories, setCategories] = useState<CategoryType[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+export interface CategoriesProps {
+  categories?: CategoryType[];
+}
+
+export default function Categories({ categories: initialCategories = [] }: CategoriesProps) {
+  const [categories, setCategories] = useState<CategoryType[]>(initialCategories);
+  const [isLoading, setIsLoading] = useState<boolean>(initialCategories.length === 0);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
+    if (initialCategories.length > 0) return;
     setIsLoading(true);
     setError(null);
 
@@ -42,7 +47,7 @@ export default function Categories() {
         setError(err as Error);
       })
       .finally(() => setIsLoading(false));
-  }, []);
+  }, [initialCategories.length]);
 
   return (
     <QueryClientProvider client={queryClient}>

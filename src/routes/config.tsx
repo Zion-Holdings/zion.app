@@ -67,7 +67,7 @@ export const allRoutes: AppRouteObject[] = [
   },
   { path: '/partners', element: <PartnersPage /> },
   { path: '/blog/:slug', element: <BlogPost /> },
-  { path: '/checkout/:id', element: <CheckoutPage /> },
+  { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: true },
   { path: '/oauth', element: <OAuthCallback /> },
   { path: '/auth/*', element: <AuthRoutes /> },
   { path: '/marketplace/*', element: <MarketplaceRoutes /> },
