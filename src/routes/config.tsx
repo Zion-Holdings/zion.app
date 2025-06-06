@@ -36,6 +36,7 @@ import StartupOSPage from '@/pages/StartupOS'; // Import the new page
 import GlobalMapPage from '@/pages/GlobalMap';
 import SummitPage from '@/pages/SummitPage';
 import OrgChartPage from '@/pages/OrgChart';
+import MobilePwa from '@/pages/MobilePwa';
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
@@ -98,6 +99,8 @@ export const allRoutes: AppRouteObject[] = [
   { path: '/talent/*', element: <TalentRoutes /> },
   { path: '/admin/*', element: <AdminRoutes /> },
   { path: '/mobile/*', element: <MobileAppRoutes /> },
+  { path: '/mobile/pwa/*', element: <MobilePwa />, metaTitle: 'Zion Mobile PWA' },
+  { path: '/m/*', element: <Navigate to="/mobile/pwa" replace /> },
   { path: '/content/*', element: <ContentRoutes /> },
   { path: '/enterprise/*', element: <EnterpriseRoutes /> },
   {
