@@ -39,6 +39,7 @@ These components work in tandem to connect professionals and businesses.
 - **Rich Product Media:** Supports MP4 videos and GLB 3D models for product listings (`video_url`, `model_url` fields in database).
 - **Unified Deployment Protocol:** See `docs/UnifiedDeploymentProtocol.md` for guidelines on launching new market instances.
 - **On-chain Governance:** Solidity contracts in `dao/codebase` implement a stake-based DAO with 5-day voting periods and a 20% quorum requirement.
+- **Private ZK Voting:** Experimental module under `dao/zkvote` uses Semaphore proofs for anonymous, token-weighted voting.
 
 ### Visual Feature Summary
 
@@ -517,9 +518,23 @@ The Cypress test `cypress/e2e/blank_render.cy.ts` verifies that key routes rende
 
 Use the `/book-builder` route to preview the Zion OS book. From there you can download a PDF edition or print a hard copy.
 
+
 ## DevNet Sandbox
 
 Run `npm run devnet` to launch a local DevNet simulator. This command starts a
 Hardhat network alongside the development server. Once running, visit `/devnet`
 to access tools like the token faucet, proposal sandbox and GPT playground
 without impacting production data.
+
+## Offworld Deployment
+
+A minimal script is available to push a built Zion instance to IPFS for offline or mesh network distribution. After running `npm run build`, execute:
+
+```bash
+npx deploy-zion-ipfs
+```
+
+The command uploads the `dist` directory to your configured IPFS gateway and prints the resulting CID. Jobs, profiles, proposals and docs can be stored on IPFS, while messages and DAO vote logs sync through OrbitDB. See `src/offworld/` for helper modules.
+## Multichain Governance
+
+The `token/multichain` directory provides Solidity contracts for deploying ZION$ across multiple chains. The LayerZero-based bridge wrapper allows deploying on zkSync while mirroring DAO votes to Starknet. Run the Hardhat script in `token/multichain/deploy` to deploy and record addresses.

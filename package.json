@@ -3,10 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "bin": {
+    "deploy-zion-ipfs": "scripts/deploy-zion-ipfs.js"
+  },
   "scripts": {
     "dev": "vite",
     "generate": "prisma generate",
     "build": "NODE_ENV=production npx next build",
+    "deploy:ipfs": "node scripts/deploy-zion-ipfs.js",
     "lint": "eslint . --fix --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "preview": "NODE_ENV=production vite preview",
@@ -125,7 +129,10 @@
     "validator": "^13.9.0",
     "vaul": "^1.1.2",
     "yup": "^1.2.0",
-    "zod": "^3.22.4"
+    "zod": "^3.23.8"
+    "zod": "^3.22.4",
+    "ipfs-http-client": "^63.0.0",
+    "orbit-db": "^0.29.0"
   },
   "devDependencies": {
     "@axe-core/react": "^4.8.2",

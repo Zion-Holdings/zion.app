@@ -1,6 +1,7 @@
 // pages/governance/[proposalId].tsx
 import React, { useEffect, useState, useCallback } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { useWallet } from '@/context/WalletContext'; // Adjust path
 // Import shadcn/ui components: Button, Card, Badge, Progress, Input, etc.
 import { Button } from '@/components/ui/button';
@@ -48,7 +49,8 @@ interface VoteResults {
 }
 
 const ProposalDetailPage: React.FC = () => {
-  const { proposalId } = useParams<{ proposalId: string }>();
+  const router = useRouter();
+  const proposalId = router.query.proposalId as string;
   const { address: connectedWalletAddress, isConnected, provider } = useWallet();
 
   const [proposal, setProposal] = useState<ProposalFull | null>(null);
@@ -62,7 +64,7 @@ const ProposalDetailPage: React.FC = () => {
   const [tempVotingPower, setTempVotingPower] = useState<string>("1.0"); // Temporary state for voting power input
 
   const fetchProposalData = useCallback(async () => {
-    if (!proposalId) return;
+    if (!proposalId || !router.isReady) return; // Ensure router is ready and proposalId is available
     setIsLoading(true);
     setError(null);
     setVoteError(null); // Clear vote errors on refetch
@@ -97,10 +99,10 @@ const ProposalDetailPage: React.FC = () => {
   }, [proposalId]);
 
   useEffect(() => {
-    if (proposalId) { // Ensure proposalId is available before fetching
+    if (router.isReady && proposalId) { // Ensure router is ready and proposalId is available
         fetchProposalData();
     }
-  }, [proposalId, fetchProposalData]); // Depend on proposalId as well
+  }, [router.isReady, proposalId, fetchProposalData]); // Depend on router.isReady and proposalId
 
   useEffect(() => {
     if (proposal && connectedWalletAddress) {
@@ -173,7 +175,7 @@ const ProposalDetailPage: React.FC = () => {
   return (
     // <MainLayout>
     <div className="container mx-auto p-4 space-y-6">
-      <Link to="/governance"><Button variant="outline">&larr; Back to Proposals</Button></Link>
+      <Link href="/governance"><Button variant="outline">&larr; Back to Proposals</Button></Link>
 
       <Card>
         <CardHeader>
