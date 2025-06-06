@@ -51,8 +51,7 @@ export const primaryRoutes: AppRouteObject[] = [
 export const allRoutes: AppRouteObject[] = [
   ...primaryRoutes,
   { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
-  { path: '/signup', element: <Signup />, metaTitle: 'Sign Up - Zion' },
-  { path: '/register', element: <Navigate to="/signup" replace />, metaTitle: 'Sign Up - Zion' },
+  { path: '/register', element: <RegisterForm />, metaTitle: 'Register - Zion' },
   {
     path: '/dashboard',
     element: (
