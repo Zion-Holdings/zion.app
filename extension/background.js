@@ -32,18 +32,20 @@ async function askZionGPT(prompt) {
   }
 }
 
-chrome.runtime.onMessage.addListener((message, sender) => {
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (sender.id !== chrome.runtime.id) {
     const errorMessage = `Receiving message from unauthorized sender. Sender ID: ${sender.id || 'N/A (sender.id is undefined, possibly a webpage)'}, Extension ID: ${chrome.runtime.id}`;
     console.error(errorMessage);
     if (message.type === 'ask') {
-      return Promise.resolve({ error: "Unauthorized sender" });
+      sendResponse({ error: "Unauthorized sender" });
+      return true;
     }
     return; // No response expected for other message types when unauthorized
   }
 
   if (message.type === 'ask') {
-    return askZionGPT(message.prompt);
+    askZionGPT(message.prompt).then(sendResponse);
+    return true;
   }
 
   if (message.type === 'post-job') {
