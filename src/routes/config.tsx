@@ -42,7 +42,12 @@ import {
 
 export const primaryRoutes: AppRouteObject[] = [
   { path: '/', element: <RootPage /> },
-  { path: '/marketplace', element: <Marketplace />, metaTitle: 'Marketplace - Zion' },
+  {
+    path: '/marketplace',
+    element: <Marketplace />,
+    metaTitle: 'Marketplace - Zion',
+    requiresAuth: false,
+  },
   { path: '/categories', element: <Categories />, metaTitle: 'Categories - Zion' },
   { path: '/blog', element: <Blog />, metaTitle: 'Blog - Zion', requiresAuth: false },
   { path: '/login', element: <Login />, metaTitle: 'Login - Zion', requiresAuth: false },
