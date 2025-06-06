@@ -22,6 +22,7 @@
     "test:e2e": "playwright test",
     "seed": "prisma db seed",
     "es:index": "node scripts/index-elasticsearch.js",
+    "devnet": "node scripts/start-devnet.js",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test:node": "node -v"
   },
