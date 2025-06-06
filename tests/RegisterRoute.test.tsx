@@ -1,14 +1,22 @@
+import React, { Suspense } from 'react';
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
-import RegisterForm from '@/components/auth/RegisterForm';
+import { MemoryRouter } from 'react-router-dom';
+import AuthRoutes from '@/routes/AuthRoutes';
 
-test('register route shows confirm password field', () => {
+jest.mock('@/pages/Signup', () => () => (
+  <form>
+    <label htmlFor="first">First name</label>
+    <input id="first" />
+  </form>
+));
+
+test('register route shows signup form', async () => {
   render(
     <MemoryRouter initialEntries={['/register']}>
-      <Routes>
-        <Route path="/register" element={<RegisterForm />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <AuthRoutes />
+      </Suspense>
     </MemoryRouter>
   );
-  expect(screen.getByLabelText(/confirm password/i)).toBeInTheDocument();
+  expect(await screen.findByLabelText(/first name/i)).toBeInTheDocument();
 });

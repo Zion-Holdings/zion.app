@@ -13,7 +13,6 @@ import Blog from '@/pages/Blog';
 import ServicesPage from '@/pages/ServicesPage';
 
 import { LoginForm } from '@/components/auth/login';
-import RegisterForm from '@/components/auth/RegisterForm';
 import OAuthCallback from '@/pages/OAuthCallback';
 import Dashboard from '@/pages/Dashboard';
 import Profile from '@/pages/Profile';
@@ -26,7 +25,7 @@ import PartnersPage from '@/pages/Partners';
 import BlogPost from '@/pages/BlogPost';
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
 import { CommunityProvider } from '@/context';
-import Signup from '@/pages/Signup';
+const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -58,7 +57,7 @@ export const primaryRoutes: AppRouteObject[] = [
 export const allRoutes: AppRouteObject[] = [
   ...primaryRoutes,
   { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
-  { path: '/register', element: <RegisterForm />, metaTitle: 'Register - Zion' },
+  { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },
   { path: '/signup', element: <Signup />, metaTitle: 'Sign Up - Zion' },
   {
     path: '/dashboard',
