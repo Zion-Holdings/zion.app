@@ -32,16 +32,11 @@ export function saveFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'>): Fe
   return newEntry;
 }
 
+import axios from 'axios';
+
 export async function postFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'>) {
-  const res = await fetch('/api/feedback', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(entry),
-  });
-  if (!res.ok) {
-    throw new Error('Failed to submit feedback');
-  }
-  return res.json();
+  const res = await axios.post('/api/feedback', entry);
+  return res.data;
 }
 
 export function getFeedbackStats() {

@@ -30,7 +30,10 @@ describe('apiClient with msw', () => {
     );
     await expect(apiClient.get('/test')).rejects.toBeTruthy();
     expect(supabase.auth.signOut).toHaveBeenCalled();
-    expect(toastUtils.showError).toHaveBeenCalledWith('api-401', 'Unauthorized');
+    expect(toastUtils.showError).toHaveBeenCalledWith(
+      'api-401',
+      'Authentication required'
+    );
   });
 
   it('handles 404 error', async () => {
@@ -38,7 +41,7 @@ describe('apiClient with msw', () => {
       rest.get('/api/v1/services/test', (_req, res, ctx) => res(ctx.status(404)))
     );
     await expect(apiClient.get('/test')).rejects.toBeTruthy();
-    expect(toastUtils.showError).toHaveBeenCalledWith('api-404', 'Error 404');
+    expect(toastUtils.showError).toHaveBeenCalledWith('api-404', 'Not found');
   });
 
   it('handles 500 error', async () => {
