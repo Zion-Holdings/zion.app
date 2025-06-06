@@ -8,7 +8,7 @@ interface Product {
 }
 
 async function fetchProducts() {
-  const res = await fetch('/api/products?limit=20');
+  const res = await fetch('/api/marketplace/products?limit=20');
   if (!res.ok) {
     throw new Error('Failed to fetch products');
   }
@@ -21,7 +21,11 @@ export interface MarketplaceProps {
 
 export default function Marketplace({ products: initialProducts = [] }: MarketplaceProps) {
   const navigate = useNavigate();
-  const { data: products = [], isLoading, error } = useQuery({
+  const {
+    data: products = [],
+    isLoading,
+    error,
+  } = useQuery({
     queryKey: ['products'],
     queryFn: fetchProducts,
     initialData: initialProducts,
@@ -38,7 +42,7 @@ export default function Marketplace({ products: initialProducts = [] }: Marketpl
   return (
     <div className="container py-8">
       <h1 className="text-3xl font-bold mb-6">Marketplace</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((p) => (
           <ProductCard
             key={p.id}

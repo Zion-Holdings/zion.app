@@ -16,9 +16,13 @@
     "cypress:run": "cypress run --browser chrome",
     "lint:a11y": "vitest run tests/Accessibility.test.tsx",
     "test:e2e": "playwright test",
+    "seed": "prisma db seed",
     "es:index": "node scripts/index-elasticsearch.js",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test:node": "node -v"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^9.0.2",

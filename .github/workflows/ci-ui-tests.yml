@@ -26,6 +26,9 @@ jobs:
       - name: 📦 Install Dependencies
         run: npm install
 
+      - name: 🌱 Seed Database
+        run: npx prisma db seed
+
       # --- CYPRESS TESTS (Optional) ---
       - name: 🔎 Run Cypress Tests
         uses: cypress-io/github-action@v6

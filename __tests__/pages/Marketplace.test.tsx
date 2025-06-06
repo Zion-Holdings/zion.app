@@ -6,7 +6,11 @@ import Marketplace from '@/pages/Marketplace';
 
 jest.mock('@/components/ProductCard', () => {
   const React = require('react');
-  return { default: (props: any) => <div data-testid="product-card">{props.product.title}</div> };
+  return {
+    default: (props: any) => (
+      <div data-testid="product-card">{props.product.title}</div>
+    ),
+  };
 });
 
 const navigateMock = jest.fn();
@@ -44,7 +48,9 @@ describe('Marketplace Page', () => {
       </MemoryRouter>
     );
 
-    expect(global.fetch).toHaveBeenCalledWith('/api/products?limit=20');
+    expect(global.fetch).toHaveBeenCalledWith(
+      '/api/marketplace/products?limit=20'
+    );
 
     await waitFor(() => {
       expect(screen.getAllByTestId('product-card')).toHaveLength(2);
