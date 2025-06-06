@@ -22,8 +22,10 @@ import Wallet from '@/pages/Wallet';
 import CheckoutPage from '@/pages/CheckoutPage';
 import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
+import PartnerIntegration from '@/pages/PartnerIntegration';
 import InvestorMatchPage from '@/pages/InvestorMatch';
 import BlogPost from '@/pages/BlogPost';
+import GrantsPage from '@/pages/Grants';
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
 import { CommunityProvider } from '@/context';
 const Signup = React.lazy(() => import('@/pages/Signup'));
@@ -68,6 +70,9 @@ export const allRoutes: AppRouteObject[] = [
   },
   { path: '/partners', element: <PartnersPage /> },
   { path: '/investor-match', element: <InvestorMatchPage />, metaTitle: 'Investor Match - Zion' },
+  { path: '/integrate', element: <PartnerIntegration />, metaTitle: 'Partner API - Zion' },
+  { path: '/investor-match', element: <InvestorMatchPage />, metaTitle: 'Investor Match - Zion' },
+  { path: '/grants', element: <GrantsPage />, metaTitle: 'Grants - Zion' },
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: true },
   { path: '/oauth', element: <OAuthCallback /> },
