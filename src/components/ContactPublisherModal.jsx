@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { sendMessage } from '../../services/messages';
+import { sendMessage } from '../services/messages';
 import { toast } from '@/hooks/use-toast';
 
 // Basic styling (assuming Tailwind or similar utility classes might be available)
