@@ -516,3 +516,10 @@ The Cypress test `cypress/e2e/blank_render.cy.ts` verifies that key routes rende
 ## Book Builder
 
 Use the `/book-builder` route to preview the Zion OS book. From there you can download a PDF edition or print a hard copy.
+
+## DevNet Sandbox
+
+Run `npm run devnet` to launch a local DevNet simulator. This command starts a
+Hardhat network alongside the development server. Once running, visit `/devnet`
+to access tools like the token faucet, proposal sandbox and GPT playground
+without impacting production data.
