@@ -39,7 +39,7 @@ export default defineConfig({
     chunkSizeWarningLimit: 500,
     rollupOptions: {
       // Exclude Prisma client namespace to avoid TypeScript errors
-      external: ['.prisma/client/default'],
+      external: ['.prisma/client/default', 'react-devtools'],
       output: {
         inlineDynamicImports: false,
       },
