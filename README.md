@@ -512,3 +512,6 @@ Make sure your `cypress.config.ts` has `baseUrl: 'http://localhost:5000'` for lo
 ### Blank Render Checks
 
 The Cypress test `cypress/e2e/blank_render.cy.ts` verifies that key routes render content inside the `<main>` element. To include additional pages in this check, add the desired path to the `routesToCheck` array at the top of that file.
+## Book Builder
+
+Use the `/book-builder` route to preview the Zion OS book. From there you can download a PDF edition or print a hard copy.

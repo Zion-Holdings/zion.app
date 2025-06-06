@@ -7,7 +7,7 @@ export async function generateBookPdf(): Promise<Blob> {
 
   doc.setFont('Times', 'bold');
   doc.setFontSize(24);
-  doc.text('Zion OS Book', margin, y);
+  doc.text('Zion OS: Building the Civilization Protocol', margin, y);
 
   y += 30;
   doc.setFont('Times', 'italic');
@@ -15,12 +15,17 @@ export async function generateBookPdf(): Promise<Blob> {
   doc.text('“We didn\'t build a startup. We built a civilization protocol.”', margin, y, { maxWidth: 170 });
 
   const sections = [
-    { title: 'Chapter 1 – The Why', content: 'Origin story\nVision: AI + Talent + Trust' },
-    { title: 'Chapter 2 – The Blueprint', content: 'Zion OS architecture\nMarketplace, DAO, AI, Token, Academy' },
-    { title: 'Chapter 3 – Manifesto & Constitution', content: 'Published values\nFounding principles' },
-    { title: 'Chapter 4 – Design Evolution', content: 'Figma timeline\nScreenshots per module' },
-    { title: 'Chapter 5 – Global Footprint', content: 'Multiverse map\nTalent reach + ecosystem metrics' },
-    { title: 'Chapter 6 – Road to v10', content: 'Roadmap\nDAO votes\nZion\'s future as protocol, not platform' }
+    { title: 'Intro – Founder\'s Story', content: 'Early vision and motivations\nCommunity roots' },
+    { title: 'Chapter 1 – Marketplace as OS', content: 'Decentralized commerce layers\nTrustless onboarding' },
+    {
+      title: 'Chapter 2 – ZionGPT + The AI State',
+      content: 'Decentralized intelligence replaces central authority\nAutonomous agents coordinate the network'
+    },
+    { title: 'Chapter 3 – The Tokenized Workforce', content: 'On-chain credentials\nWork marketplace incentives' },
+    { title: 'Chapter 4 – The Multiverse & Digital Nations', content: 'Cross-chain identity\nImmersive virtual economies' },
+    { title: 'Chapter 5 – ZionDAO + The Constitution', content: 'Community law and governance\nOn-chain proposals' },
+    { title: 'Chapter 6 – Building a Post-Platform World', content: 'Protocol over platform philosophy\nRoadmap to v10' },
+    { title: 'Appendix – Protocol Maps & Timelines', content: 'Architecture diagrams\nKey governance votes' }
   ];
 
   sections.forEach((section) => {
