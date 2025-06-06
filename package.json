@@ -80,7 +80,7 @@
     "formik": "^2.4.2",
     "framer-motion": "^11.0.3",
     "fuse.js": "^7.0.0",
-    "i18next": "^23.16.8",
+    "i18next": "^25.2.1",
     "i18next-browser-languagedetector": "^7.2.2",
     "i18next-localstorage-cache": "^1.1.1",
     "input-otp": "^1.1.0",
