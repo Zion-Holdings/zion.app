@@ -40,6 +40,8 @@ import PrivacyVotePage from '@/pages/governance/privacy';
 import MobilePwa from '@/pages/MobilePwa';
 import FounderBackupVault from '@/pages/FounderBackupVault';
 import CongressPage from '@/pages/Congress';
+import UNBridgePage from '@/pages/UNBridge';
+import InternationalProposalsPage from '@/pages/InternationalProposals';
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
@@ -158,6 +160,18 @@ export const allRoutes: AppRouteObject[] = [
     path: '/protocol/congress',
     element: <CongressPage />,
     metaTitle: 'Planetary Congress - Zion',
+    requiresAuth: false,
+  },
+  {
+    path: '/protocol/un-bridge',
+    element: <UNBridgePage />,
+    metaTitle: 'UN Bridge - Zion',
+    requiresAuth: false,
+  },
+  {
+    path: '/proposals/international',
+    element: <InternationalProposalsPage />,
+    metaTitle: 'International Proposals - Zion',
     requiresAuth: false,
   },
   // Wildcard for error handling - ensure this is last
