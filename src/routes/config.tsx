@@ -4,7 +4,7 @@ import { RouteObject } from 'react-router';
 export interface AppRouteObject extends RouteObject {
   metaTitle?: string;
 }
-import Home from '@/pages/Home';
+import RootPage from '@/pages/RootPage';
 import Marketplace from '@/pages/Marketplace'; // Assuming Marketplace component exists
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
@@ -39,7 +39,7 @@ import {
 } from '.'; // Importing from the same directory (src/routes)
 
 export const primaryRoutes: AppRouteObject[] = [
-  { path: '/', element: <Home />, metaTitle: 'Home - Zion' },
+  { path: '/', element: <RootPage /> },
   { path: '/marketplace', element: <Marketplace />, metaTitle: 'Marketplace - Zion' },
   { path: '/categories', element: <Categories />, metaTitle: 'Categories - Zion' },
   { path: '/blog', element: <Blog />, metaTitle: 'Blog - Zion' },
