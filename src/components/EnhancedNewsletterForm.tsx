@@ -27,7 +27,7 @@ export function EnhancedNewsletterForm() {
 
     setIsSubmitting(true);
     try {
-      const res = await fetch("/api/newsletter/subscribe", {
+      const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: trimmed }),
