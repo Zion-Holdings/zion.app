@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { LoginForm } from "./LoginForm";
-import { SocialLogin } from "./SocialLogin";
+import { AuthButtons } from "@/components/AuthButtons";
 
 export function LoginCard() {
   return (
@@ -24,7 +24,7 @@ export function LoginCard() {
 
       <div className="bg-zion-blue-dark rounded-lg p-6">
         <LoginForm />
-        <SocialLogin />
+        <AuthButtons />
       </div>
     </div>
   );
