@@ -38,6 +38,7 @@ import './utils/consoleErrorToast';
 import './utils/globalErrorHandler';
 import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
+import { logError } from './utils/logError';
 import RootErrorBoundary from './components/RootErrorBoundary';
 import {
   AppLoaderProvider,
@@ -150,7 +151,7 @@ try {
     </React.StrictMode>,
   );
 } catch (error) {
-  console.error("Global error caught in main.tsx:", error);
+  logError(error, 'Global error caught in main.tsx');
   const rootElement = document.getElementById('root');
   if (rootElement) {
     rootElement.innerHTML = `

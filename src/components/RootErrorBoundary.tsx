@@ -1,5 +1,6 @@
 import React from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
+import { logError } from '@/utils/logError';
 
 function RootFallback({ error, resetErrorBoundary }: FallbackProps) {
   return (
@@ -13,7 +14,7 @@ function RootFallback({ error, resetErrorBoundary }: FallbackProps) {
 
 export default function RootErrorBoundary({ children }: { children: React.ReactNode }) {
   return (
-    <ErrorBoundary FallbackComponent={RootFallback}>
+    <ErrorBoundary FallbackComponent={RootFallback} onError={(error) => logError(error, 'UI Error')}>
       <React.Suspense fallback={<div>Loading...</div>}>
         {children}
       </React.Suspense>

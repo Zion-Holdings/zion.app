@@ -12,6 +12,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
 import { useCommunity } from "@/context";
 import type { ForumCategory } from "@/types/community";
+import { logError } from "@/utils/logError";
 
 
 export default function CommunityPage() {
@@ -55,7 +56,7 @@ export default function CommunityPage() {
   console.log('CommunityPage featuredPosts:', featuredPosts);
   console.log('CommunityPage recentPosts:', recentPosts);
   if (!featuredPosts || !recentPosts) {
-    console.error('CommunityPage: Posts data is missing from context!');
+    logError('CommunityPage: Posts data is missing from context!');
   }
   
   return (

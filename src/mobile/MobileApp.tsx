@@ -8,6 +8,7 @@ import { MobileBrowse } from "./pages/MobileBrowse";
 import { MobileProjects } from "./pages/MobileProjects";
 import { MobileMessages } from "./pages/MobileMessages";
 import { MobileResumeBuilder } from "./pages/MobileResumeBuilder";
+import { logError } from '@/utils/logError';
 import { MobileJobPost } from "./pages/MobileJobPost";
 import { useAuth } from "@/hooks/useAuth";
 import { useCart } from '@/context/CartContext'; // Make sure this import is present
@@ -24,7 +25,7 @@ const CartContextTester = () => {
       </div>
     );
   } catch (error) {
-    console.error('CartContextTester: useCart() FAILED!', error);
+    logError(error, 'CartContextTester: useCart() FAILED!');
     // Render an error message if it fails
     return (
       <div style={{ position: 'fixed', top: '10px', left: '10px', backgroundColor: 'red', color: 'white', padding: '5px', zIndex: 9999 }}>

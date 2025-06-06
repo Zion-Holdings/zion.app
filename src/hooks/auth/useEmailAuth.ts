@@ -56,7 +56,7 @@ export const useEmailAuth = (
       // Re-evaluating: authUtils.ts already exports safeStorage and safeSessionStorage.
       // It's better to import them from there.
 
-      // Correction: I should import safeStorage and safeSessionStorage from '../utils/safeStorage'
+      // Correction: I should import safeStorage and safeSessionStorage directly from the utils folder
       // or expect them to be passed or available in a way that doesn't require direct import here if not already.
       // The original plan was to use them from authUtils.ts, let's stick to that.
       // The actual setItem calls will be done using `safeStorage` and `safeSessionStorage`
