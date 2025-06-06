@@ -173,6 +173,7 @@ cat > debug-logs.html << 'EOF'
 <body>
   <h1>Zion App Offline Debug Logs</h1>
   <button class="btn" onclick="downloadLogs()">⬇️ Download Logs as JSON</button>
+  <button class="btn" onclick="clearLogs()">🗑️ Clear Logs</button>
   <div id="log-output"></div>
 
   <script>
@@ -194,15 +195,22 @@ cat > debug-logs.html << 'EOF'
       container.appendChild(div);
     });
 
-    function downloadLogs() {
-      const blob = new Blob([JSON.stringify(logs, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `zion-logs-${new Date().toISOString().split('T')[0]}.json`;
-      a.click();
-      URL.revokeObjectURL(url);
+  function downloadLogs() {
+    const blob = new Blob([JSON.stringify(logs, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `zion-logs-${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function clearLogs() {
+    if (confirm('Are you sure you want to delete all debug logs?')) {
+      localStorage.removeItem('zion-logs');
+      location.reload();
     }
+  }
   </script>
 </body>
 </html>
