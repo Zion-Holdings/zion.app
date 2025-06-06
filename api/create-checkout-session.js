@@ -43,10 +43,19 @@ async function handler(req, res) {
       apiVersion: '2023-10-16',
     });
 
-    const line_items = cartItems.map((item) => ({
-      price: item.priceId,
-      quantity: item.quantity || 1,
-    }));
+    const line_items = cartItems.map((item) => {
+      if (item.priceId) {
+        return { price: item.priceId, quantity: item.quantity || 1 };
+      }
+      return {
+        price_data: {
+          currency: 'usd',
+          unit_amount: Math.round((item.price || 0) * 100),
+          product_data: { name: item.title || item.name },
+        },
+        quantity: item.quantity || 1,
+      };
+    });
     const orderId = `ord_${Date.now()}`;
     const session = await stripe.checkout.sessions.create({
       line_items,

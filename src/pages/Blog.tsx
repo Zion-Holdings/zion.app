@@ -25,11 +25,15 @@ const CATEGORIES = [
   "Infrastructure"
 ];
 
-export default function Blog() {
-  console.log('BlogPage rendering. Initial BLOG_POSTS:', BLOG_POSTS);
+export interface BlogProps {
+  posts?: BlogPost[];
+}
+
+export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
+  console.log('BlogPage rendering. Initial BLOG_POSTS:', initialPosts);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
-  const [posts, setPosts] = useState<BlogPost[]>([...BLOG_POSTS]);
+  const [posts, setPosts] = useState<BlogPost[]>([...initialPosts]);
   const query = useDebounce(searchQuery, 300);
   const [isLoading, setIsLoading] = useState(false);
 

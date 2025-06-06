@@ -1,8 +1,20 @@
 import { toast } from 'react-hot-toast';
 
-export const showError = (id: string | number, msg: string): void => {
-  if (!toast.isActive(id)) {
-    toast.error(msg, { id });
-  }
+export interface ToastError {
+  code?: string | number;
+  message: string;
+}
+
+export const showError = (
+  id: string | number,
+  error: string | ToastError
+): void => {
+  if (toast.isActive(id)) return;
+  const text = typeof error === 'string'
+    ? error
+    : error.code
+    ? `${error.code}: ${error.message}`
+    : error.message;
+  toast.error(text, { id });
 };
 

@@ -10,9 +10,9 @@ import RootPage from '@/pages/RootPage';
 import MarketplaceLanding from '@/pages/MarketplaceLanding';
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
+import ServicesPage from '@/pages/ServicesPage';
 
 import { LoginForm } from '@/components/auth/login';
-import RegisterForm from '@/components/auth/RegisterForm';
 import OAuthCallback from '@/pages/OAuthCallback';
 import Dashboard from '@/pages/Dashboard';
 import Profile from '@/pages/Profile';
@@ -25,6 +25,7 @@ import PartnersPage from '@/pages/Partners';
 import BlogPost from '@/pages/BlogPost';
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
 import { CommunityProvider } from '@/context';
+const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -49,13 +50,15 @@ export const primaryRoutes: AppRouteObject[] = [
   },
   { path: '/categories', element: <Categories />, metaTitle: 'Categories - Zion' },
   { path: '/blog', element: <Blog />, metaTitle: 'Blog - Zion', requiresAuth: false },
+  { path: '/services', element: <ServicesPage />, metaTitle: 'Services - Zion', requiresAuth: false },
   { path: '/login', element: <LoginForm />, metaTitle: 'Login - Zion', requiresAuth: false },
 ];
 
 export const allRoutes: AppRouteObject[] = [
   ...primaryRoutes,
   { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
-  { path: '/register', element: <RegisterForm />, metaTitle: 'Register - Zion' },
+  { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },
+  { path: '/signup', element: <Signup />, metaTitle: 'Sign Up - Zion' },
   {
     path: '/dashboard',
     element: <Dashboard />,
@@ -64,7 +67,7 @@ export const allRoutes: AppRouteObject[] = [
   },
   { path: '/partners', element: <PartnersPage /> },
   { path: '/blog/:slug', element: <BlogPost /> },
-  { path: '/checkout/:id', element: <CheckoutPage /> },
+  { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: true },
   { path: '/oauth', element: <OAuthCallback /> },
   { path: '/auth/*', element: <AuthRoutes /> },
   { path: '/marketplace/*', element: <MarketplaceRoutes /> },

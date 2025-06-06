@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Logo } from './Logo';
 import { AvatarMenu } from './AvatarMenu';
 import { LanguageSelector } from './LanguageSelector';
@@ -81,6 +81,15 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
 
         <div className="flex items-center gap-2">
           <PointsBadge />
+          {!user && !hideLogin && (
+            <Link
+              href="/login"
+              className="text-sm text-white hover:text-zion-cyan"
+              aria-label="Login"
+            >
+              Login
+            </Link>
+          )}
           <LanguageSelector />
           {user && (
             <span

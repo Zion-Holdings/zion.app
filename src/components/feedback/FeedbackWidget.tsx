@@ -31,10 +31,15 @@ export function FeedbackWidget() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await postFeedback({ rating, comment, page: window.location.pathname });
-      enqueueSnackbar('Thank you!', { variant: 'success' });
+      await postFeedback({
+        rating,
+        comment,
+        url: window.location.pathname,
+        userAgent: navigator.userAgent,
+      });
+      enqueueSnackbar('Thank you for your feedback!', { variant: 'success' });
     } catch (err: any) {
-      enqueueSnackbar(err?.response?.data?.message || err.message, { variant: 'error' });
+      enqueueSnackbar(err.message, { variant: 'error' });
     }
     setSubmitted(true);
     reset();
