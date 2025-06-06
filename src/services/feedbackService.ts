@@ -3,8 +3,9 @@ import { safeStorage } from '@/utils/safeStorage';
 export interface FeedbackEntry {
   id: string;
   rating: number;
-  comment?: string;
-  page: string;
+  comments?: string;
+  pageUrl: string;
+  userId?: string;
   createdAt: string;
 }
 
@@ -35,8 +36,20 @@ export function saveFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'>): Fe
 import axios from 'axios';
 
 export async function postFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'>) {
-  const res = await axios.post('/api/feedback', entry);
-  return res.data;
+  try {
+    const res = await fetch('/api/feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(entry),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data?.error || `Error ${res.status}: Failed to submit feedback`);
+    }
+    return data;
+  } catch (err: any) {
+    throw new Error(err.message || 'Failed to submit feedback');
+  }
 }
 
 export function getFeedbackStats() {
