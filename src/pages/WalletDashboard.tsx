@@ -19,30 +19,16 @@ const WalletDashboard = () => {
     // onError callback removed
   });
 
-  // Handle error state
-  if (isError) {
-    // Assuming the error structure might have a response object (e.g., from Axios)
-    // You might need to adjust error handling based on your actual error structure
-    // For example, if using fetch, error handling would be different.
-    // Also, consider using a more specific error type if available e.g. AxiosError
-    const status = (error as any)?.response?.status;
-    if (status === 401) {
-      // Navigate to login and prevent further rendering of this component
-      // by returning null or a redirect component.
-      // Using useEffect to navigate is safer as this part of the code can be
-      // called multiple times during render.
-      React.useEffect(() => {
-        navigate('/login');
-      }, [navigate]);
-      return null; // Or a loading/error indicator, or redirect component
+  // Navigate to login on unauthorized error
+  useEffect(() => {
+    if (isError && (error as any)?.response?.status === 401) {
+      navigate('/login');
     }
-    // Handle other errors or display a generic error message
-    // For now, let's re-throw or display a simple message
-    // console.error("Error fetching wallet:", error);
-    // return <p>Error loading wallet data.</p>;
-    // For the purpose of this fix, let's allow the component to try rendering
-    // and let the data handling (data?.points) manage undefined data.
-    // A more robust solution would show a user-friendly error message.
+  }, [isError, error, navigate]);
+
+  if (isError) {
+    // For other errors, let the component render with fallback values
+    // to avoid breaking the UI entirely.
   }
 
   if (isLoading) {
