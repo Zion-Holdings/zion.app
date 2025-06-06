@@ -44,16 +44,18 @@ export default function Marketplace() {
   const [isLoading, setIsLoading] = useState(false); // isLoading already exists
   const [view, setView] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 20;
 
   // Removed useEffect that appends a random listing
 
-  // Add useEffect to fetch products from /api/products on component mount
+  // Fetch products from the marketplace API on component mount
   useEffect(() => {
     const fetchProducts = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('/api/products');
+        const response = await fetch(
+          `/api/marketplace/products?page=${currentPage}&limit=${itemsPerPage}`
+        );
         if (!response.ok) {
           throw new Error(`Failed to fetch products: ${response.statusText}`);
         }
@@ -88,7 +90,7 @@ export default function Marketplace() {
     };
 
     fetchProducts();
-  }, []); // Empty dependency array means it runs once on mount
+  }, [currentPage]); // Fetch new page when the user navigates
 
   const searchSuggestions: SearchSuggestion[] = generateSearchSuggestions();
   const filterOptions = useMemo(
