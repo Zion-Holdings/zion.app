@@ -10,6 +10,7 @@ import RootPage from '@/pages/RootPage';
 import MarketplaceLanding from '@/pages/MarketplaceLanding';
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
+import ServicesPage from '@/pages/ServicesPage';
 
 import { LoginForm } from '@/components/auth/login';
 import RegisterForm from '@/components/auth/RegisterForm';
@@ -49,6 +50,7 @@ export const primaryRoutes: AppRouteObject[] = [
   },
   { path: '/categories', element: <Categories />, metaTitle: 'Categories - Zion' },
   { path: '/blog', element: <Blog />, metaTitle: 'Blog - Zion', requiresAuth: false },
+  { path: '/services', element: <ServicesPage />, metaTitle: 'Services - Zion', requiresAuth: false },
   { path: '/login', element: <LoginForm />, metaTitle: 'Login - Zion', requiresAuth: false },
 ];
 
