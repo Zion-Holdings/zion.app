@@ -25,6 +25,7 @@ import Checkout from "@/pages/Checkout";
 import PaymentSuccess from "@/pages/payment-success";
 import NewProductsPage from "@/pages/NewProductsPage";
 import NewServicesPage from "@/pages/NewServicesPage";
+import CartPage from "@/pages/Cart";
 
 const MarketplaceRoutes = () => {
   return (
@@ -79,6 +80,9 @@ const MarketplaceRoutes = () => {
       
       {/* Search Route */}
       <Route path="/search" element={<SearchPage />} />
+
+      {/* Cart Route */}
+      <Route path="/cart" element={<CartPage />} />
 
       {/* Checkout Route - accessible to guests */}
       <Route path="/checkout" element={<Checkout />} />
