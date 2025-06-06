@@ -16,11 +16,14 @@ export async function signup(payload: SignupPayload): Promise<SignupResponse> {
   }
 
   try {
-    const res = await axios.post('/api/auth/signup', payload);
-    if (res.status !== 201) {
-      throw new Error(res.data?.message || `Unexpected status ${res.status}`);
+    const res = await axios.post('/api/auth/register', payload);
+    if (res.status === 201) {
+      return res.data;
     }
-    return res.data;
+    if (res.status === 409) {
+      throw new Error('Email already exists');
+    }
+    throw new Error(res.data?.message || `Unexpected status ${res.status}`);
   } catch (err: any) {
     console.error('Signup error:', err.message);
     throw new Error(err.message);

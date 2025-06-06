@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -39,16 +41,21 @@ export default function RegisterForm() {
     if (isSubmitting) return;
     setIsSubmitting(true);
     try {
-      const res = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: data.email, password: data.password }),
+      const res = await axios.post('/api/auth/register', {
+        email: data.email,
+        password: data.password,
       });
-      if (res.ok) {
+      if (res.status === 201) {
         navigate('/login');
+      }
+    } catch (err: any) {
+      const status = err.response?.status;
+      if (status === 409) {
+        toast.error('Email already exists');
+        form.setError('root', { message: 'Email already exists' });
       } else {
-        const result = await res.json().catch(() => ({}));
-        form.setError('root', { message: result?.message || 'Registration failed' });
+        const message = err.response?.data?.message || err.message || 'Registration failed';
+        form.setError('root', { message });
       }
     } finally {
       setIsSubmitting(false);
@@ -121,6 +128,6 @@ export default function RegisterForm() {
           Already have an account? Sign in
         </Link>
       </p>
-    </form>
+    </div>
   );
 }
