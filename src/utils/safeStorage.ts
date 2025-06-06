@@ -1,9 +1,6 @@
 let isLocalStorageAvailable = true;
-// const isDevelopment = process.env.NODE_ENV !== 'production'; // Removed
 const localStorageMemoryStore: { [key: string]: string } = {};
-// const isDevelopment = process.env.NODE_ENV === 'development'; // Removed
-
-const isDev = process.env.NODE_ENV !== 'production'; // This one is used by the functions
+const isDev = process.env.NODE_ENV !== 'production';
 
 export const safeStorage = {
   getItem: (key: string): string | null => {
