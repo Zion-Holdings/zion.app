@@ -33,7 +33,8 @@ const handleApiResponse = async (res: Response) => {
 };
 
 const TalentPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const params = useParams();
+  const id = params.id as string;
 
   const { data, error, isLoading } = useSWR<TalentProfileBasic>(
     id ? `/api/talent/${id}` : null,
