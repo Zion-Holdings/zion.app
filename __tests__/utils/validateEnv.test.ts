@@ -16,34 +16,50 @@ const mockImportMetaEnv = (envValues: Record<string, string | boolean | undefine
   for (const key of Object.keys(otherEnvValues)) {
     const value = otherEnvValues[key];
     if (value !== undefined) {
-      vi.stubEnv(key, String(value));
+      process.env[key] = String(value);
     } else {
-      // If undefined in input, stub as empty string to override vitest.config.ts defaults
+      // If undefined in input, set as empty string to override defaults
       // and ensure it's treated as "missing" by the validator.
-      vi.stubEnv(key, '');
+      process.env[key] = '';
     }
   }
 
-  // Apply DEV last, merging with whatever import.meta.env looks like after stubEnv calls.
-  // This attempts to ensure DEV is correctly set even if stubEnv is aggressive.
-  const currentEnv = globalThis.import?.meta?.env || {};
-  vi.stubGlobal('import', { meta: { env: { ...currentEnv, DEV: devToSet } } });
+  // Apply DEV last. For Jest, this usually means setting NODE_ENV or a specific mock
+  // if the code directly uses import.meta.env.DEV.
+  // Assuming babel-plugin-transform-import-meta or ts-jest handles import.meta.env.DEV
+  // to read from process.env.DEV or process.env.NODE_ENV.
+  if (devToSet) {
+    process.env.NODE_ENV = 'development';
+    process.env.DEV = 'true';
+  } else {
+    process.env.NODE_ENV = 'production';
+    process.env.DEV = 'false';
+  }
+  // If direct import.meta manipulation is needed, it's more complex and might require
+  // jest.mock for the module using it, or specific babel/ts-jest transformers.
 };
 
 describe('checkEssentialEnvVars', () => {
+  const originalEnv = { ...process.env };
+
   beforeEach(() => {
-    vi.resetModules();
-    vi.unstubAllGlobals();
-    vi.unstubAllEnvs();
+    jest.resetModules();
+    process.env = { ...originalEnv }; // Restore original process.env
+    // Ensure a clean state for process.env related to DEV if needed
+    delete process.env.NODE_ENV;
+    delete process.env.DEV;
     // Aggressively ensure import.meta.env is reset if it exists from a previous state
+    // This part is tricky with Jest as import.meta is ESM specific.
+    // Relies on ts-jest or babel correctly handling/transforming import.meta.env
+    // and jest.resetModules() clearing any cached transformed values.
     if (globalThis.import && globalThis.import.meta) {
-      globalThis.import.meta.env = {};
+      globalThis.import.meta.env = {}; // This might not be effective in Jest depending on transform
     }
   });
 
   afterEach(() => {
-    vi.unstubAllGlobals();
-    vi.unstubAllEnvs();
+    process.env = { ...originalEnv }; // Restore original process.env
+    jest.restoreAllMocks(); // Restores all spies and original implementations
   });
 
   it('should not throw an error when all essential environment variables are set correctly', () => {
@@ -129,11 +145,11 @@ describe('checkEssentialEnvVars', () => {
       VITE_SUPABASE_ANON_KEY: 'valid_supabase_key',
       DEV: true, // Explicitly set DEV true
     });
-    const consoleLogSpy = vi.spyOn(console, 'log');
+    const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {}); // Mock to prevent actual logging
     return import('@/utils/validateEnv').then(module => {
       module.checkEssentialEnvVars();
       expect(consoleLogSpy).toHaveBeenCalledWith('Essential environment variables validated successfully.');
-      consoleLogSpy.mockRestore();
+      // consoleLogSpy.mockRestore(); // Done in afterEach
     });
   });
 
@@ -145,16 +161,16 @@ describe('checkEssentialEnvVars', () => {
       DEV: false, // Explicitly set DEV false
     });
 
-    const consoleLogSpy = vi.spyOn(console, 'log');
+    const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
     // Ensure spy is clean before the specific call we want to monitor
-    consoleLogSpy.mockClear();
+    // consoleLogSpy.mockClear(); // jest.restoreAllMocks in afterEach handles this
 
     return import('@/utils/validateEnv').then(module => {
       try {
         module.checkEssentialEnvVars();
         expect(consoleLogSpy).not.toHaveBeenCalledWith('Essential environment variables validated successfully.');
       } finally {
-        consoleLogSpy.mockRestore();
+        // consoleLogSpy.mockRestore(); // Done in afterEach
       }
     });
   });

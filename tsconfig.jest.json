@@ -3,7 +3,7 @@
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "commonjs", // Changed for Jest
+    "module": "esnext", // For import.meta and top-level await
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
@@ -16,10 +16,10 @@
     // Modified for Jest: removed vite/client, vitest/globals; added jest, @testing-library/jest-dom
     "types": ["jest", "@testing-library/jest-dom", "react"],
 
-    /* Bundler mode related - some might be less relevant for Jest's CJS context but keep for consistency */
-    "moduleResolution": "node", // Changed from bundler to node for CommonJS context
-    "allowImportingTsExtensions": true, // May or may not be needed with CJS, but harmless
-    "esModuleInterop": true, // Important for CJS interop
+    /* Bundler mode related */
+    "moduleResolution": "bundler", // Preferred for ES modules
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": true, // Important for interop
     "resolveJsonModule": true,
     "isolatedModules": false, // Changed for better type checking with ts-jest
     "allowJs": true, // Allow JS files to be processed
