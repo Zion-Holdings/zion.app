@@ -86,7 +86,7 @@ import PrivateRoute from './components/PrivateRoute';
 // RootErrorFallback function removed.
 
 const baseRoutes = [
-  { path: '/', element: <PrivateRoute><Home /></PrivateRoute> },
+  { path: '/', element: <Home /> },
   { path: '/about', element: <AboutPage /> },
   { path: '/login', element: <Login /> },
   { path: '/register', element: <SimpleSignup /> },
