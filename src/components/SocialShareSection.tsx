@@ -4,8 +4,10 @@ import { Twitter, Facebook, Linkedin, Link } from "lucide-react";
 import { toast } from "./ui/use-toast";
 
 export function SocialShareSection() {
-  // Current URL and text to share
-  const shareUrl = encodeURIComponent(window.location.href);
+  // Current URL is not available during SSR, guard with typeof check
+  const shareUrl = typeof window !== 'undefined'
+    ? encodeURIComponent(window.location.href)
+    : '';
   const shareText = encodeURIComponent("Check out Zion - The Future of AI & Tech Marketplace");
   
   // Social sharing functions
