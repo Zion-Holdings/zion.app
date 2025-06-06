@@ -23,7 +23,7 @@ describe('apiClient interceptor', () => {
     await expect(handler(error)).rejects.toBe(error);
     expect(supabase.auth.signOut).toHaveBeenCalled();
     expect(redirect).toHaveBeenCalledWith('/login');
-    expect(toastMod.toast.error).toHaveBeenCalledWith('Bad');
+    expect(toastMod.toast.error).toHaveBeenCalledWith('Bad', { id: 'api-error' });
     expect(sentry.captureException).toHaveBeenCalledWith(error);
     redirect.mockRestore();
   });
@@ -33,7 +33,7 @@ describe('apiClient interceptor', () => {
     // @ts-ignore access internal handler
     const handler = apiClient.interceptors.response.handlers[0].rejected;
     await expect(handler(error)).rejects.toBe(error);
-    expect(toastMod.toast.error).toHaveBeenCalledWith('Unexpected error');
+    expect(toastMod.toast.error).toHaveBeenCalledWith('Unexpected error', { id: 'api-error' });
     expect(sentry.captureException).toHaveBeenCalledWith(error);
   });
 });
