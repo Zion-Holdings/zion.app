@@ -60,6 +60,8 @@ import { registerServiceWorker } from './serviceWorkerRegistration';
 import { enableDevToolsInStaging } from './utils/devtools';
 import './utils/checkDuplicateClassNames';
 import { checkEssentialEnvVars } from './utils/validateEnv';
+import { FeedbackProvider } from './context/FeedbackContext';
+import { FeedbackWidget } from './components/feedback/FeedbackWidget';
 
 enableDevToolsInStaging();
 
@@ -100,6 +102,7 @@ try {
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
               <WhitelabelProvider>
+                <FeedbackProvider>
                 <Router basename={process.env.PUBLIC_URL || '/'}>
                 <AuthProvider>
                   <MessagingProvider>
@@ -129,7 +132,9 @@ try {
                   </NotificationProvider>
                   </MessagingProvider>
                 </AuthProvider>
-              </Router>
+                </Router>
+                <FeedbackWidget />
+              </FeedbackProvider>
             </WhitelabelProvider>
           </QueryClientProvider>
         </HelmetProvider>
