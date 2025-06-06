@@ -14,6 +14,10 @@ export async function loginUser(email: string, password: string) {
     const status = err.response?.status;
     if (status === 401) {
       toast.error('Invalid email or password');
+    } else if (status === 500) {
+      toast.error('Server error. Please try again later.');
+    } else {
+      toast.error('Login failed');
     }
     throw err;
   }

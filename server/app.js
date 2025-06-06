@@ -16,6 +16,8 @@ app.use(express.json());
 app.use(passport.initialize());
 
 app.use('/auth', authRoutes);
+// Provide /api/auth routes for frontend API consistency
+app.use('/api/auth', authRoutes);
 app.use('/', authSocialRoutes);
 app.use('/recommendations', recommendationsRoutes);
 
