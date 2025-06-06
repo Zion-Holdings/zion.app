@@ -197,6 +197,7 @@ The project exposes several APIs for programmatic access and integration.
 
 When developing or integrating, refer to these resources for accurate API information.
 For detailed examples, common use cases, and troubleshooting tips, see [docs/API_Guide.md](docs/API_Guide.md).
+An overview of the Zion OS stack APIs, including marketplace and talent modules, is available in [docs/ZionOS_Stack_API.md](docs/ZionOS_Stack_API.md).
 
 ## Testing
 
