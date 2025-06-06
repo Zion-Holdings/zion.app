@@ -1,3 +1,8 @@
-const withTM = require('next-plugin-transpile-modules')([]);
+import transpileModules from 'next-plugin-transpile-modules';
 
-module.exports = withTM({});
+const withTM = transpileModules([]);
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default withTM(nextConfig);
