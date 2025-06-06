@@ -7,7 +7,6 @@ import { logIssue } from './utils/logIssue';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { WalletProvider } from './context/WalletContext'; // Added WalletProvider
-import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import ToastProvider from "./components/ToastProvider";
 import OfflineToast from "./components/OfflineToast";
@@ -149,8 +148,7 @@ const baseRoutes = [
 ];
 
 const App = () => {
-  // Ensure each navigation starts at the top of the page
-  useScrollToTop();
+  // Scroll to top when navigating between routes (handled in AppLayout)
   const location = useLocation();
   useEffect(() => {
     try {
