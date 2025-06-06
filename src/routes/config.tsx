@@ -17,6 +17,7 @@ import Profile from '@/pages/Profile';
 import ForgotPassword from '@/pages/ForgotPassword';
 import ResetPassword from '@/pages/ResetPassword';
 import Wallet from '@/pages/Wallet';
+import CheckoutPage from '@/pages/CheckoutPage';
 import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
 import BlogPost from '@/pages/BlogPost';
@@ -58,16 +59,17 @@ export const allRoutes: AppRouteObject[] = [
     ),
     metaTitle: 'Dashboard - Zion'
   },
-  { path: '/partners', element: <PartnersPage />, metaTitle: 'Partners - Zion' },
-  { path: '/blog/:slug', element: <BlogPost />, metaTitle: 'Blog Post - Zion' },
-  { path: '/oauth', element: <OAuthCallback />, metaTitle: 'OAuth Redirect - Zion' },
-  { path: '/auth/*', element: <AuthRoutes />, metaTitle: 'Auth - Zion' },
-  { path: '/marketplace/*', element: <MarketplaceRoutes />, metaTitle: 'Marketplace - Zion' },
-  { path: '/talent/*', element: <TalentRoutes />, metaTitle: 'Talent - Zion' },
-  { path: '/admin/*', element: <AdminRoutes />, metaTitle: 'Admin - Zion' },
-  { path: '/mobile/*', element: <MobileAppRoutes />, metaTitle: 'Mobile - Zion' },
-  { path: '/content/*', element: <ContentRoutes />, metaTitle: 'Content - Zion' },
-  { path: '/enterprise/*', element: <EnterpriseRoutes />, metaTitle: 'Enterprise - Zion' },
+  { path: '/partners', element: <PartnersPage /> },
+  { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/checkout/:id', element: <CheckoutPage /> },
+  { path: '/oauth', element: <OAuthCallback /> },
+  { path: '/auth/*', element: <AuthRoutes /> },
+  { path: '/marketplace/*', element: <MarketplaceRoutes /> },
+  { path: '/talent/*', element: <TalentRoutes /> },
+  { path: '/admin/*', element: <AdminRoutes /> },
+  { path: '/mobile/*', element: <MobileAppRoutes /> },
+  { path: '/content/*', element: <ContentRoutes /> },
+  { path: '/enterprise/*', element: <EnterpriseRoutes /> },
   {
     path: '/community/*',
     element: (
