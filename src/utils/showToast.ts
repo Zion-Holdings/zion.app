@@ -17,4 +17,3 @@ export const showError = (
     : error.message;
   toast.error(text, { id });
 };
-

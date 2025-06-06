@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps && npm run build"
+  command = "npm cache clean --force && npm install -g npm@latest && npm install --legacy-peer-deps && npm run build"
   publish = "out"
 
 [build.environment]

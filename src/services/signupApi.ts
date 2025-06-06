@@ -29,4 +29,3 @@ export async function signup(payload: SignupPayload): Promise<SignupResponse> {
     throw new Error(err.message);
   }
 }
-
