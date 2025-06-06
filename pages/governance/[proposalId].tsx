@@ -48,7 +48,8 @@ interface VoteResults {
 }
 
 const ProposalDetailPage: React.FC = () => {
-  const { proposalId } = useParams<{ proposalId: string }>();
+  const params = useParams();
+  const proposalId = params.proposalId as string;
   const { address: connectedWalletAddress, isConnected, provider } = useWallet();
 
   const [proposal, setProposal] = useState<ProposalFull | null>(null);

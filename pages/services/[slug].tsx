@@ -8,7 +8,8 @@ import Custom404 from '../404';
 import type { ProductListing } from '@/types/listings';
 
 const ServicePage: React.FC = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const params = useParams();
+  const slug = params.slug as string;
   const service = React.useMemo(
     () => SERVICES.find((s) => slugify(s.title) === slug) || null,
     [slug]
