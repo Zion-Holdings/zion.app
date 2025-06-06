@@ -188,5 +188,8 @@
   "overrides": {
     "jsdom": "^24.0.0",
     "glob": "^10.3.10"
+  },
+  "engines": {
+    "node": "20"
   }
 }
