@@ -12,7 +12,7 @@ interface WalletResponse {
 const WalletDashboard = () => {
   const navigate = useNavigate();
 
-  const { data, isLoading } = useQuery<WalletResponse, Error>({
+  const { data, isLoading } = useQuery<WalletResponse, Error, WalletResponse>({
     queryKey: ['wallet'],
     queryFn: getWallet as () => Promise<WalletResponse>,
     retry: false,
