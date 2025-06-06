@@ -32,6 +32,7 @@ import RoadmapSuggestPage from '@/pages/RoadmapSuggest';
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
 import { CommunityProvider } from '@/context';
 import VerifyIdentity from '@/pages/VerifyIdentity';
+import StartupOSPage from '@/pages/StartupOS'; // Import the new page
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
@@ -104,6 +105,19 @@ export const allRoutes: AppRouteObject[] = [
   // Test routes
   { path: '/test-error-render', element: <ErrorTriggerComponent />, metaTitle: 'Test Error Render - Zion' },
   { path: '/test-error-mount', element: <ErrorTriggerComponent onMount={true} />, metaTitle: 'Test Error Mount - Zion' },
+  // Add the new route for Startup OS
+  {
+    path: '/startup-os',
+    element: <StartupOSPage />,
+    metaTitle: 'Startup OS - Zion',
+    requiresAuth: true, // Assuming it requires authentication
+  },
+  {
+    path: '/founder-dashboard',
+    element: <StartupOSPage />, // Reuses the same page component
+    metaTitle: 'Founder Dashboard - Zion',
+    requiresAuth: true,
+  },
   // Wildcard for error handling - ensure this is last
   { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },
 ];
