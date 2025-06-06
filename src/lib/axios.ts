@@ -122,7 +122,12 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       headers['Authorization'] = `Bearer ${authToken}`;
     }
 
-    const response = await fetch(url, { ...reqInit, method, headers, credentials: withCreds ? 'include' : reqInit.credentials });
+    const response = await fetch(url, {
+      ...reqInit,
+      method,
+      headers,
+      credentials: withCreds ? 'include' : reqInit.credentials,
+    });
     let data: any = null;
     try {
       data = await response.clone().json();
@@ -137,7 +142,10 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       }
       return res;
     } else {
-      const err: AxiosError = Object.assign(new Error('Request failed'), { response: result });
+      const err: AxiosError = Object.assign(new Error('Request failed'), {
+        response: result,
+        config: { url, method },
+      });
       for (const h of instance.interceptors.response.handlers) {
         if (h.rejected) {
           await h.rejected(err);
