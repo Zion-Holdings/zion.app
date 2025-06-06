@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { GradientHeading } from "@/components/GradientHeading";
 import LoaderOverlay from "@/components/LoaderOverlay"; // Assuming a loading spinner component exists
@@ -15,38 +16,36 @@ interface CategoryType {
   itemCount?: number; // Example field for number of items in a category
 }
 
+const queryClient = new QueryClient();
+
+const fetchCategories = async (): Promise<CategoryType[]> => {
+  const response = await fetch("/api/services");
+  if (!response.ok) {
+    throw new Error(`API error: ${response.statusText}`);
+  }
+  return response.json();
+};
+
 export default function Categories() {
   const [categories, setCategories] = useState<CategoryType[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    const fetchCategories = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        const response = await fetch("/api/services"); // Endpoint for categories/services
-        if (!response.ok) {
-          throw new Error(`API error: ${response.statusText}`);
-        }
-        const data: CategoryType[] = await response.json();
-        setCategories(data);
-      } catch (e: any) {
-        console.error("Raw error object:", e);
-        if (e.response) {
-          console.error("Error response data:", await e.response.text());
-        }
-        setError(e as Error);
-        console.error("Failed to fetch categories:", e);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+    setIsLoading(true);
+    setError(null);
 
-    fetchCategories();
+    fetchCategories()
+      .then(data => setCategories(data))
+      .catch(err => {
+        console.error("Failed to fetch categories:", err);
+        setError(err as Error);
+      })
+      .finally(() => setIsLoading(false));
   }, []);
 
   return (
+    <QueryClientProvider client={queryClient}>
     <>
       <div className="min-h-screen bg-zion-blue">
         <div className="container mx-auto px-4 py-12">
@@ -88,5 +87,6 @@ export default function Categories() {
         </div>
       </div>
     </>
+    </QueryClientProvider>
   );
 }
