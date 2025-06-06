@@ -17,6 +17,7 @@ import IntegrationsPage from "@/pages/admin/IntegrationsPage";
 import WhitepaperGeneratorPage from "@/pages/WhitepaperGeneratorPage";
 import KycDashboard from "@/pages/admin/KycDashboard";
 import ZionBrain from "@/pages/admin/ZionBrain";
+import MetricsDashboard from "@/pages/dashboard/MetricsDashboard";
 
 const AdminRoutes = () => {
   return (
@@ -134,6 +135,15 @@ const AdminRoutes = () => {
         element={
           <ProtectedRoute adminOnly={true}>
             <ZionBrain />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/kpi"
+        element={
+          <ProtectedRoute adminOnly={true}>
+            <MetricsDashboard adminView />
           </ProtectedRoute>
         }
       />
