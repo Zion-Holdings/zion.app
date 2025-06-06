@@ -8,7 +8,7 @@ import { User, Mail, Lock, Eye, EyeOff, Facebook, Twitter, Loader2 } from "lucid
 
 import { useAuth } from "@/hooks/useAuth";
 import { registerUser } from "@/services/authService";
-import { toast } from "@/hooks/use-toast";
+import { useEnqueueSnackbar } from '@/context';
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -61,6 +61,7 @@ export default function Signup() {
   const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showVerificationMessage, setShowVerificationMessage] = useState(false);
+  const enqueueSnackbar = useEnqueueSnackbar();
 
   // Initialize react-hook-form
   const form = useForm({
@@ -84,7 +85,7 @@ export default function Signup() {
     form.clearErrors("root"); // Clear previous root errors
 
     if (data.password !== data.confirmPassword) {
-      toast.error("Passwords do not match");
+      enqueueSnackbar("Passwords do not match", { variant: 'error' });
       return;
     }
 
@@ -113,7 +114,7 @@ export default function Signup() {
         // and updating the application's auth state (user, isAuthenticated, tokens).
         // We should not manually set session, tokens, or headers here.
 
-        toast.success("Account created successfully! Please log in to continue.");
+        enqueueSnackbar("Account created successfully! Please log in to continue.", { variant: 'success' });
 
         // Redirect to the login page. If Supabase did auto-log in the user,
         // the useAuth hook (via AuthProvider) will likely redirect from the login page
@@ -146,12 +147,12 @@ export default function Signup() {
           err.message?.toLowerCase().includes('email already registered')) {
         const errorMessage = err.message || err.response?.data?.message || 'This email is already registered. Please try logging in.';
         form.setError('email', { message: errorMessage });
-        toast.error(errorMessage);
+        enqueueSnackbar(errorMessage, { variant: 'error' });
       } else {
         // Generic error handling for other types of errors
         const message = err.response?.data?.message ?? err?.message ?? "An unexpected error occurred during registration.";
         form.setError("root", { message });
-        toast.error(message);
+        enqueueSnackbar(message, { variant: 'error' });
       }
     } finally {
       setIsSubmitting(false);

@@ -14,7 +14,7 @@ import {
   generateSearchSuggestions,
   generateFilterOptions,
 } from '@/data/marketplaceData';
-import { toast } from '@/hooks/use-toast';
+import { useEnqueueSnackbar } from '@/context';
 import { useNavigate } from 'react-router-dom';
 import { SearchSuggestion } from '@/types/search';
 
@@ -29,6 +29,7 @@ import {
 
 export default function Marketplace() {
   const navigate = useNavigate();
+  const enqueueSnackbar = useEnqueueSnackbar();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProductTypes, setSelectedProductTypes] = useState<string[]>(
     []
@@ -44,16 +45,18 @@ export default function Marketplace() {
   const [isLoading, setIsLoading] = useState(false); // isLoading already exists
   const [view, setView] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 20;
 
   // Removed useEffect that appends a random listing
 
-  // Add useEffect to fetch products from /api/products on component mount
+  // Fetch products from the marketplace API on component mount
   useEffect(() => {
     const fetchProducts = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch('/api/products');
+        const response = await fetch(
+          `/api/marketplace/products?page=${currentPage}&limit=${itemsPerPage}`
+        );
         if (!response.ok) {
           throw new Error(`Failed to fetch products: ${response.statusText}`);
         }
@@ -76,11 +79,7 @@ export default function Marketplace() {
           console.error('Error response data:', await error.response.text());
         }
         console.error('Error fetching products:', error);
-        toast({
-          title: 'Error',
-          description: `Could not fetch products: ${error.message}`,
-          variant: 'destructive',
-        });
+        enqueueSnackbar(error?.response?.data?.message || error.message, { variant: 'error' });
         setListings([]); // Set to empty on error
       } finally {
         setIsLoading(false);
@@ -88,7 +87,7 @@ export default function Marketplace() {
     };
 
     fetchProducts();
-  }, []); // Empty dependency array means it runs once on mount
+  }, [currentPage]); // Fetch new page when the user navigates
 
   const searchSuggestions: SearchSuggestion[] = generateSearchSuggestions();
   const filterOptions = useMemo(
@@ -228,10 +227,7 @@ export default function Marketplace() {
     const listing = listings.find((item) => item.id === listingId);
 
     if (listing) {
-      toast({
-        title: 'Quote Requested',
-        description: `Your quote request for ${listing.title} has been sent.`,
-      });
+      enqueueSnackbar(`Your quote request for ${listing.title} has been sent.`, { variant: 'success' });
 
       // Navigate to the quote request page with the listing information
       navigate('/request-quote', {

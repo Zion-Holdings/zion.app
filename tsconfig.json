@@ -12,7 +12,6 @@
       "@/components/*": ["./src/components/*"],
       "axios": ["./src/lib/axios.ts"]
     },
-    "types": ["vite/client", "react-router-dom", "socket.io-client", "vitest/globals"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
