@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Logo } from './Logo';
 import { AvatarMenu } from './AvatarMenu';
 import { LanguageSelector } from './LanguageSelector';
@@ -83,7 +83,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           <PointsBadge />
           {!user && !hideLogin && (
             <Link
-              to="/login"
+              href="/login"
               className="text-sm text-white hover:text-zion-cyan"
               aria-label="Login"
             >

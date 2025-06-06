@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
-import { NavLink } from '@/components/NavLink';
+import Link from 'next/link';
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { Logo } from '@/components/header/Logo';
 import { useTranslation } from 'react-i18next';
@@ -58,14 +58,14 @@ export function AppHeader() {
           <PointsBadge />
           {!user && (
             <div className="ml-4 relative z-10">
-              <NavLink
+              <Link
                 href="/login"
                 className="relative z-10 text-sm font-medium text-foreground/70 hover:text-foreground"
                 aria-label="Login"
                 data-testid="login-link"
               >
                 Login
-              </NavLink>
+              </Link>
             </div>
           )}
           {/* User avatar menu */}
