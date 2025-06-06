@@ -2,9 +2,9 @@ import React, { lazy } from 'react';
 import { RouteObject } from 'react-router';
 import { Navigate } from 'react-router-dom';
 
-export interface AppRouteObject extends RouteObject {
+export type AppRouteObject = RouteObject & {
   metaTitle?: string;
-}
+};
 import Home from '@/pages/Home';
 import Marketplace from '@/pages/Marketplace'; // Assuming Marketplace component exists
 import Categories from '@/pages/Categories';
