@@ -92,6 +92,9 @@ const GovernancePage: React.FC = () => {
           <Link to="/governance/my-votes">
             <Button variant="outline" className="w-full sm:w-auto">My Votes</Button>
           </Link>
+          <Link to="/governance/zgp-library">
+            <Button variant="secondary" className="w-full sm:w-auto">ZGP Library</Button>
+          </Link>
           <Link to="/governance/create">
             <Button className="w-full sm:w-auto">Create Proposal</Button>
           </Link>

@@ -11,6 +11,7 @@ import EnterpriseRoutes from "./EnterpriseRoutes";
 import CommunityRoutes from "./CommunityRoutes";
 import DeveloperRoutes from "./DeveloperRoutes";
 import PublicRoutes from "./PublicRoutes";
+import GovernanceRoutes from "./GovernanceRoutes";
 // Export the new consolidated route configurations
 export { allRoutes, primaryRoutes } from "./config";
 
@@ -26,5 +27,6 @@ export {
   EnterpriseRoutes,
   CommunityRoutes,
   DeveloperRoutes,
+  GovernanceRoutes,
   PublicRoutes,
 };

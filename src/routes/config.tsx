@@ -34,6 +34,7 @@ import { CommunityProvider } from '@/context';
 import VerifyIdentity from '@/pages/VerifyIdentity';
 import StartupOSPage from '@/pages/StartupOS'; // Import the new page
 import GlobalMapPage from '@/pages/GlobalMap';
+import SummitPage from '@/pages/SummitPage';
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
@@ -44,6 +45,7 @@ import {
   ErrorRoutes,
   EnterpriseRoutes,
   DeveloperRoutes,
+  GovernanceRoutes,
   MarketplaceRoutes, // Assuming MarketplaceRoutes is a group of routes
   TalentRoutes,      // Assuming TalentRoutes is a group of routes
   CommunityRoutes,   // Assuming CommunityRoutes is a group of routes
@@ -68,6 +70,8 @@ export const allRoutes: AppRouteObject[] = [
   { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
   { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },
   { path: '/signup', element: <Signup />, metaTitle: 'Sign Up - Zion' },
+  { path: '/summit', element: <SummitPage />, metaTitle: 'Zion Global Summit' },
+  { path: '/zion-global-2025', element: <SummitPage />, metaTitle: 'Zion Global Summit 2025' },
   {
     path: '/dashboard',
     element: <Dashboard />,
@@ -103,6 +107,8 @@ export const allRoutes: AppRouteObject[] = [
     metaTitle: 'Community - Zion'
   },
   { path: '/developers/*', element: <DeveloperRoutes />, metaTitle: 'Developers - Zion' },
+  { path: '/governance/*', element: <GovernanceRoutes />, metaTitle: 'Governance - Zion' },
+  { path: '/dao/*', element: <GovernanceRoutes />, metaTitle: 'DAO - Zion' },
   // Test routes
   { path: '/test-error-render', element: <ErrorTriggerComponent />, metaTitle: 'Test Error Render - Zion' },
   { path: '/test-error-mount', element: <ErrorTriggerComponent onMount={true} />, metaTitle: 'Test Error Mount - Zion' },
