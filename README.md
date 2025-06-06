@@ -526,3 +526,6 @@ npx deploy-zion-ipfs
 ```
 
 The command uploads the `dist` directory to your configured IPFS gateway and prints the resulting CID. Jobs, profiles, proposals and docs can be stored on IPFS, while messages and DAO vote logs sync through OrbitDB. See `src/offworld/` for helper modules.
+## Multichain Governance
+
+The `token/multichain` directory provides Solidity contracts for deploying ZION$ across multiple chains. The LayerZero-based bridge wrapper allows deploying on zkSync while mirroring DAO votes to Starknet. Run the Hardhat script in `token/multichain/deploy` to deploy and record addresses.
