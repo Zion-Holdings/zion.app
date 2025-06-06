@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { useToast } from '@/hooks/use-toast';
+import { useEnqueueSnackbar } from '@/context';
 
 interface OnsiteQuoteModalProps {
   open: boolean;
@@ -12,7 +12,7 @@ interface OnsiteQuoteModalProps {
 }
 
 export function OnsiteQuoteModal({ open, onOpenChange, country }: OnsiteQuoteModalProps) {
-  const { toast } = useToast();
+  const enqueueSnackbar = useEnqueueSnackbar();
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', details: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -24,11 +24,7 @@ export function OnsiteQuoteModal({ open, onOpenChange, country }: OnsiteQuoteMod
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.phone || !formData.details) {
-      toast({
-        variant: 'destructive',
-        title: 'Missing information',
-        description: 'Please fill in all required fields.',
-      });
+      enqueueSnackbar('Please fill in all required fields.', { variant: 'error' });
       return;
     }
 
@@ -40,11 +36,11 @@ export function OnsiteQuoteModal({ open, onOpenChange, country }: OnsiteQuoteMod
         body: JSON.stringify({ ...formData, country, service: 'standard' }),
       });
       if (!res.ok) throw new Error('Request failed');
-      toast({ title: 'Quote Requested', description: 'We\'ve sent a confirmation email.' });
+      enqueueSnackbar('Quote Requested', { variant: 'success' });
       onOpenChange(false);
       setFormData({ name: '', email: '', phone: '', details: '' });
-    } catch (err) {
-      toast({ variant: 'destructive', title: 'Submission Failed', description: 'Please try again later.' });
+    } catch (err: any) {
+      enqueueSnackbar(err?.response?.data?.message || err.message, { variant: 'error' });
     } finally {
       setIsSubmitting(false);
     }

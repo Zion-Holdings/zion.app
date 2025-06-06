@@ -5,7 +5,7 @@ import { Bell } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { useNotifications } from '@/context/notifications/NotificationContext';
-import { toast } from 'sonner';
+import { useEnqueueSnackbar } from '@/context';
 import { 
   NotificationFilter, 
   NotificationHeader, 
@@ -29,6 +29,7 @@ export const NotificationCenter: React.FC = () => {
   
   const [open, setOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const enqueueSnackbar = useEnqueueSnackbar();
 
   // Refresh notifications when popover opens
   useEffect(() => {
@@ -40,7 +41,7 @@ export const NotificationCenter: React.FC = () => {
         } catch (err) {
           console.error("Failed to fetch notifications:", err);
           setError("Couldn't load notifications");
-          toast.error("Failed to load notifications");
+          enqueueSnackbar(err?.response?.data?.message || err.message, { variant: 'error' });
         }
       };
       
@@ -51,10 +52,10 @@ export const NotificationCenter: React.FC = () => {
   const handleMarkAllAsRead = async () => {
     try {
       await markAllAsRead();
-      toast.success("All notifications marked as read");
+      enqueueSnackbar("All notifications marked as read", { variant: 'success' });
     } catch (err) {
       console.error("Failed to mark notifications as read:", err);
-      toast.error("Failed to update notifications");
+      enqueueSnackbar(err?.response?.data?.message || err.message, { variant: 'error' });
     }
   };
 

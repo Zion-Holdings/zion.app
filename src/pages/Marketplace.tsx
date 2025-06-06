@@ -14,7 +14,7 @@ import {
   generateSearchSuggestions,
   generateFilterOptions,
 } from '@/data/marketplaceData';
-import { toast } from '@/hooks/use-toast';
+import { useEnqueueSnackbar } from '@/context';
 import { useNavigate } from 'react-router-dom';
 import { SearchSuggestion } from '@/types/search';
 
@@ -29,6 +29,7 @@ import {
 
 export default function Marketplace() {
   const navigate = useNavigate();
+  const enqueueSnackbar = useEnqueueSnackbar();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProductTypes, setSelectedProductTypes] = useState<string[]>(
     []
@@ -76,11 +77,7 @@ export default function Marketplace() {
           console.error('Error response data:', await error.response.text());
         }
         console.error('Error fetching products:', error);
-        toast({
-          title: 'Error',
-          description: `Could not fetch products: ${error.message}`,
-          variant: 'destructive',
-        });
+        enqueueSnackbar(error?.response?.data?.message || error.message, { variant: 'error' });
         setListings([]); // Set to empty on error
       } finally {
         setIsLoading(false);
@@ -228,10 +225,7 @@ export default function Marketplace() {
     const listing = listings.find((item) => item.id === listingId);
 
     if (listing) {
-      toast({
-        title: 'Quote Requested',
-        description: `Your quote request for ${listing.title} has been sent.`,
-      });
+      enqueueSnackbar(`Your quote request for ${listing.title} has been sent.`, { variant: 'success' });
 
       // Navigate to the quote request page with the listing information
       navigate('/request-quote', {
