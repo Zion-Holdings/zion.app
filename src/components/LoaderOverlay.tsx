@@ -2,7 +2,10 @@ import { Loader2 } from "lucide-react";
 
 export default function LoaderOverlay() {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+    <div
+      data-testid="loader-overlay"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+    >
       {/*
         Use a simple CSS spinner so the overlay still works even if lucide-react
         icons fail to load. This prevents a blank black screen when dependencies

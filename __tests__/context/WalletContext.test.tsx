@@ -294,6 +294,73 @@ describe('WalletProvider', () => {
     expect(screen.getByTestId('address').textContent).toBe('');
   });
 
+  test('connects and updates wallet state when appKit is available and subscribeProvider is present', async () => {
+    // mockCreateAppKit is activeCreateAppKitMock via beforeEach
+    // makeMockAppKit by default includes a jest.fn() for subscribeProvider
+
+    render(
+      <WalletProvider>
+        <WalletConsumer onUpdate={onUpdateMock} />
+      </WalletProvider>
+    );
+
+    // Allow initial effects to run (AppKit initialization, isWalletSystemAvailable set)
+    await act(async () => {
+      // No specific action needed here, just waiting for effects
+      // console.log('Initial currentWalletState:', currentWalletState?.isWalletSystemAvailable);
+    });
+
+    // Verify wallet system is available after initial setup
+    expect(currentWalletState.isWalletSystemAvailable).toBe(true);
+    // Also check AppKit instance on WalletContext (via currentWalletState.appKit)
+    expect(currentWalletState.appKit).toBe(activeCreateAppKitMock);
+
+
+    // Simulate user clicking connect
+    await act(async () => {
+      fireEvent.click(screen.getByText('Connect'));
+    });
+
+    // Assert that appKit.open was called (connectWallet uses appKitRef.current which is activeCreateAppKitMock)
+    expect(activeCreateAppKitMock.open).toHaveBeenCalledTimes(1);
+
+    // Update mock AppKit instance to reflect successful connection
+    await act(async () => {
+      (activeCreateAppKitMock.getState as jest.Mock).mockReturnValue({ isConnected: true });
+      (activeCreateAppKitMock.getAddress as jest.Mock).mockReturnValue(MOCK_ADDRESS_1);
+      (activeCreateAppKitMock.getChainId as jest.Mock).mockReturnValue(1);
+      // The getWalletProvider should return the mock EIP-1193 provider associated with the AppKit mock
+      (activeCreateAppKitMock.getWalletProvider as jest.Mock).mockReturnValue(activeCreateAppKitMock._associatedMockEip1193Provider);
+    });
+
+    // Trigger the subscription callback to simulate wallet connection event
+    await act(async () => {
+      await activeCreateAppKitMock._triggerSubscriptionCallback();
+    });
+
+    // Assertions
+    expect(screen.getByTestId('isConnected').textContent).toBe('true');
+    expect(screen.getByTestId('address').textContent).toBe(MOCK_ADDRESS_1);
+    expect(screen.getByTestId('chainId').textContent).toBe('1');
+    expect(activeCreateAppKitMock.subscribeProvider).toHaveBeenCalled();
+
+    // Check that provider and signer are set in the context's state
+    expect(currentWalletState.provider).not.toBeNull();
+    expect(currentWalletState.signer).not.toBeNull();
+
+    // Additional check: Ensure the provider in context has a functioning getNetwork (ethers v6)
+    // or equivalent check for signer resolution.
+    // This implicitly tests that the BrowserProvider was created correctly.
+    if (currentWalletState.provider) {
+      const network = await currentWalletState.provider.getNetwork();
+      expect(network.chainId).toBe(BigInt(1)); // Chain ID is 1
+    }
+    if (currentWalletState.signer) {
+        const signerAddress = await currentWalletState.signer.getAddress();
+        expect(signerAddress).toBe(MOCK_ADDRESS_1);
+    }
+  });
+
   test('uses on/off for event handling if subscribeProvider is not available', async () => {
     const localActiveUseAppKitMock = makeMockAppKit({
         subscribeProvider: undefined as any,
@@ -340,5 +407,18 @@ describe('WalletProvider', () => {
     );
     unmount();
     expect(localActiveUseAppKitMock.off).toHaveBeenCalledWith('providerChanged', expect.any(Function));
+  });
+
+  test('renders without AppKit instance and does not throw', () => {
+    mockUseAppKit.mockReturnValue(undefined as any);
+    mockCreateAppKit.mockReturnValue(undefined as any);
+
+    expect(() => {
+      render(
+        <WalletProvider>
+          <WalletConsumer onUpdate={onUpdateMock} />
+        </WalletProvider>
+      );
+    }).not.toThrow();
   });
 });

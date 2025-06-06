@@ -1,15 +1,11 @@
-describe('Unauthenticated Root Redirect', () => {
-  it('should redirect unauthenticated users from root to /login', () => {
-    // Cypress starts with a clean session, so no explicit logout is needed.
+describe('Unauthenticated Root Access', () => {
+  it('should allow unauthenticated users to view the home page', () => {
     cy.visit('/');
 
-    // Check if the URL eventually contains /login
-    // We use `should('include', '/login')` to handle potential query parameters like ?redirectTo=/
-    cy.url().should('include', '/login');
+    // Ensure we remain on the home page
+    cy.url().should('eq', Cypress.config().baseUrl + '/');
 
-    // Verify that a known element from the login page is visible
-    // For example, the "Sign in with Google" button which is inside SocialLogin component
-    // The SocialLogin component has a button with "Sign in with Google" as screen reader text
-    cy.contains('button', /sign in with google/i).should('be.visible');
+    // Check that a key element from the home page is visible
+    cy.get('main').should('be.visible');
   });
 });

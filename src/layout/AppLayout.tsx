@@ -5,6 +5,9 @@ import { Outlet } from "react-router-dom";
 import { useAuth } from '@/hooks/useAuth';
 import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // Assuming path
 import { AppHeader } from "./AppHeader";
+import { SecondaryNavbar } from "./SecondaryNavbar";
+import { useLocation } from "react-router-dom";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { Footer } from "@/components/Footer";
 import { SkipLink } from "@/components/SkipLink";
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
@@ -25,6 +28,8 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
   const [isResendingEmail, setIsResendingEmail] = useState(false);
   const [resendStatusMessage, setResendStatusMessage] = useState('');
   const { loading, error, setError } = useGlobalLoader();
+  const location = useLocation();
+  const isAuthPage = /^\/auth|\/login|\/register|\/signup|\/forgot-password|\/reset-password|\/update-password/.test(location.pathname);
 
   const handleResendVerificationEmail = async () => {
     if (!user || !user.email) {
@@ -82,7 +87,13 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
           )}
         </>
       )}
-      <AppHeader />
+      {!isAuthPage && (
+        <>
+          <AppHeader />
+          <SecondaryNavbar />
+        </>
+      )}
+      <ScrollToTop />
       {loading && <LoaderOverlay />}
       {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}
       <main id="main-content" className="flex-grow">

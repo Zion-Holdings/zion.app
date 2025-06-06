@@ -47,7 +47,7 @@ describe('Signup form', () => {
     fireEvent.input(screen.getByLabelText(/confirm password/i), { target: { value: 'Password123' } });
     fireEvent.click(screen.getByLabelText(/i agree/i));
     fireEvent.submit(screen.getByRole('button', { name: /create account/i }));
-    expect(fetchSpy).toHaveBeenCalledWith('/api/auth/register', expect.objectContaining({ method: 'POST' }));
+    expect(fetchSpy).toHaveBeenCalledWith('/api/auth/signup', expect.objectContaining({ method: 'POST' }));
     expect(successSpy).toHaveBeenCalledWith('Account created');
     expect(navigateMock).toHaveBeenCalledWith('/dashboard');
   });

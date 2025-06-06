@@ -1,27 +1,50 @@
-import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Link, useNavigate } from 'react-router-dom';
-import { useCart } from '@/context/CartContext';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { getStripe } from '@/utils/getStripe';
+import { useAuth } from '@/hooks/useAuth';
+import type { RootState, AppDispatch } from '@/store';
+import {
+  removeItem as removeItemAction,
+  updateQuantity as updateQuantityAction,
+} from '@/store/cartSlice';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
 
 export default function CartPage() {
-  const navigate = useNavigate();
-  const { items, dispatch } = useCart();
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
-
-  if (!hydrated) return null;
+  const items = useSelector((s: RootState) => s.cart.items);
+  const dispatch = useDispatch<AppDispatch>();
+  const { user } = useAuth();
+  const [loading, setLoading] = useState(false);
 
   const updateQuantity = (id: string, qty: number) => {
-    const updated = items.map(i => (i.id === id ? { ...i, quantity: qty } : i));
-    dispatch({ type: 'SET_ITEMS', payload: updated });
+    dispatch(updateQuantityAction({ id, quantity: qty }));
   };
 
   const removeItem = (id: string) => {
-    dispatch({ type: 'REMOVE_ITEM', payload: id });
+    dispatch(removeItemAction(id));
+  };
+
+  const handleCheckout = async () => {
+    setLoading(true);
+    try {
+      const stripe = await getStripe();
+      if (!stripe) throw new Error('Stripe not loaded');
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cartItems: items, customer_email: user?.email }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to create session');
+      const { error } = await stripe.redirectToCheckout({ sessionId: data.sessionId });
+      if (error) throw error;
+    } catch (err: any) {
+      console.error('Checkout error:', err);
+      alert(err.message || 'Checkout failed');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
@@ -55,8 +78,8 @@ export default function CartPage() {
         <span>Subtotal</span>
         <span>${subtotal.toFixed(2)}</span>
       </div>
-      <Button className="mt-4 w-full" onClick={() => navigate('/checkout')}>
-        Checkout
+      <Button className="mt-4 w-full" onClick={handleCheckout} disabled={loading}>
+        {loading ? 'Processing...' : 'Checkout'}
       </Button>
     </div>
   );

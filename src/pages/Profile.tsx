@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 import {
   Tabs,
   TabsList,
@@ -29,21 +30,16 @@ export default function Profile() {
   const [avatarPreview, setAvatarPreview] = useState<string>('');
 
   useEffect(() => {
-    fetch('/api/users/me')
-      .then(res => res.json())
+    axios.get('/api/users/me')
+      .then(res => res.data)
       .then(setUser)
       .catch(() => {});
   }, []);
 
   const handleSave = async () => {
     if (!user) return;
-    const res = await fetch('/api/users/me', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user),
-    });
-    const data = await res.json();
-    setUser(data);
+    const res = await axios.put('/api/users/me', user);
+    setUser(res.data);
   };
 
   const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -60,7 +56,7 @@ export default function Profile() {
   const handleDelete = async () => {
     const confirm = window.prompt('Enter password to confirm');
     if (!confirm) return;
-    await fetch('/api/users/me', { method: 'DELETE' });
+    await axios.delete('/api/users/me');
     setUser(prev => (prev ? { ...prev, softDeleted: true } : prev));
   };
 

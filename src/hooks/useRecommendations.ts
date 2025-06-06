@@ -12,7 +12,7 @@ export function useRecommendations(category: string | undefined, enabled = true)
   });
 
   return {
-    recommendations: data,
+    recommendations: data ?? [],
     error,
     isLoading: enabled && isValidating && !data,
   };

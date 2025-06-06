@@ -225,26 +225,40 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
   useEffect(() => {
     const targetAppKit = appKitRef.current;
-    // console.log('WalletContext: Subscription useEffect. TargetAppKit:', targetAppKit ? 'available' : 'null'); // Debug log
 
-    if (targetAppKit) {
-      if (typeof targetAppKit.subscribeProvider === 'function') {
-        // console.log('WalletContext: Subscribing to provider changes.'); // Debug log
-        updateWalletState(); // Initial state update
-        const unsubscribe = targetAppKit.subscribeProvider(updateWalletState);
-        return () => unsubscribe();
-      } else {
-        // This case implies a problem with AppKitInstanceInterface or the instance itself
-        console.error('WalletContext: CRITICAL - subscribeProvider is not available on targetAppKit. Wallet state might be inconsistent.');
-        // Attempt to set a safe state, though this indicates a deeper issue.
-        setWallet(prev => ({ ...initialWalletState, isWalletSystemAvailable: false, isConnected: false }));
-      }
-    } else {
-      // console.warn('WalletContext: AppKit instance is null. Unable to subscribe. Setting wallet to unavailable/disconnected.'); // Debug log
-      // This is expected if isProjectIdValid was false or AppKit failed to initialize
+    if (!targetAppKit) {
       setWallet(prev => ({ ...initialWalletState, isWalletSystemAvailable: false, isConnected: false }));
+      return;
     }
-  }, [updateWalletState]); // updateWalletState is memoized.
+
+    const subscribeProviderSafe =
+      typeof targetAppKit.subscribeProvider === 'function'
+        ? targetAppKit.subscribeProvider.bind(targetAppKit)
+        : (callback: (provider?: any) => void) => {
+            const provider = targetAppKit.getWalletProvider?.();
+            callback(provider);
+
+            if (typeof window !== 'undefined') {
+              const eth: any = (window as any).ethereum;
+              if (eth?.on) {
+                const handler = () => callback(targetAppKit.getWalletProvider?.());
+                eth.on('accountsChanged', handler);
+                return () => eth.removeListener?.('accountsChanged', handler);
+              }
+            }
+            return () => {};
+          };
+
+    updateWalletState();
+    const unsubscribe = subscribeProviderSafe(updateWalletState);
+    return () => {
+      try {
+        if (typeof unsubscribe === 'function') unsubscribe();
+      } catch {
+        /* noop */
+      }
+    };
+  }, [updateWalletState, wallet.isWalletSystemAvailable]);
 
   const connectWallet = useCallback(async () => {
     if (!wallet.isWalletSystemAvailable || !appKitRef.current) {

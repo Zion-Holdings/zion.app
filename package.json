@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "generate": "prisma generate",
-    "build": "NODE_ENV=production npx tsc -p tsconfig.json && NODE_ENV=production vite build --outDir out",
+    "build": "NODE_ENV=production npx next build",
     "lint": "eslint . --fix --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "preview": "NODE_ENV=production vite preview",
@@ -16,8 +16,13 @@
     "cypress:run": "cypress run --browser chrome",
     "lint:a11y": "vitest run tests/Accessibility.test.tsx",
     "test:e2e": "playwright test",
+    "seed": "prisma db seed",
     "es:index": "node scripts/index-elasticsearch.js",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test:node": "node -v"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^9.0.2",
@@ -87,6 +92,7 @@
     "mongoose": "^8.15.1",
     "morgan": "^1.10.0",
     "next": "^15.3.3",
+    "next-transpile-modules": "^10.0.0",
     "node-fetch": "*",
     "normalize.css": "^8.0.1",
     "notistack": "^3.0.0",
@@ -113,7 +119,8 @@
     "tailwind-merge": "^3.3.0",
     "vaul": "^1.1.2",
     "yup": "^1.2.0",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "validator": "^13.9.0"
   },
   "devDependencies": {
     "@axe-core/react": "^4.8.2",
@@ -162,7 +169,7 @@
     "prettier": "^3.5.3",
     "prisma": "^6.9.0",
     "puppeteer": "^24.10.0",
-    "react-devtools": "^6.1.2",
+    "react-devtools": "^1.0.5",
     "rimraf": "^6.0.1",
     "rollup-plugin-visualizer": "^5.10.1",
     "serve": "^14.2.3",

@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { LoginForm } from "./LoginForm";
-import { SocialLogin } from "./SocialLogin";
+import { AuthButtons } from "@/components/AuthButtons";
 
 export function LoginCard() {
   return (
@@ -17,14 +17,14 @@ export function LoginCard() {
             className="font-medium text-zion-cyan hover:text-zion-cyan-light"
             style={{ color: "#0af" }}
           >
-            Sign up
+            Create account
           </Link>
         </div>
       </div>
 
       <div className="bg-zion-blue-dark rounded-lg p-6">
         <LoginForm />
-        <SocialLogin />
+        <AuthButtons />
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ const categories = [
     title: "Innovation",
     description: "Discover cutting-edge solutions and tech breakthroughs",
     icon: <Lightbulb className="w-10 h-10" />,
-    link: "/category/innovation", // Link for the card itself
+    link: "/innovation",
     color: undefined, // Let CategoryCard use default color
   },
 ];

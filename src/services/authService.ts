@@ -1,29 +1,32 @@
+import axios from 'axios';
+import { toast } from '@/hooks/use-toast';
+
 const API_URL = import.meta.env.VITE_API_URL || '';
 
 export async function loginUser(email: string, password: string) {
-  const res = await fetch(`${API_URL}/auth/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, password }),
-  });
-  const data = await res.json().catch(() => ({}));
-  console.log('Login API Response Status:', res.status);
-  console.log('Login API Response Body:', data);
-  return { res, data };
+  try {
+    const endpoint = `${API_URL}/api/auth/login`;
+    const res = await axios.post(endpoint, { email, password }, { withCredentials: true });
+    console.log('Login API Response Status:', res.status);
+    console.log('Login API Response Body:', res.data);
+    return { res, data: res.data };
+  } catch (err: any) {
+    const status = err.response?.status;
+    if (status === 401) {
+      toast.error('Invalid email or password');
+    } else if (status === 500) {
+      toast.error('Server error. Please try again later.');
+    } else {
+      toast.error('Login failed');
+    }
+    throw err;
+  }
 }
 
 export async function registerUser(name: string, email: string, password: string) {
-  const res = await fetch(`${API_URL}/auth/register`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ name, email, password }),
-  });
-  const data = await res.json().catch(() => ({}));
+  const endpoint = `${API_URL}/auth/register`;
+  const res = await axios.post(endpoint, { name, email, password });
   console.log('Register API Response Status:', res.status);
-  console.log('Register API Response Body:', data);
-  return { res, data };
+  console.log('Register API Response Body:', res.data);
+  return { res, data: res.data };
 }

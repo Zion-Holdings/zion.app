@@ -25,11 +25,15 @@ const CATEGORIES = [
   "Infrastructure"
 ];
 
-export default function Blog() {
-  console.log('BlogPage rendering. Initial BLOG_POSTS:', BLOG_POSTS);
+export interface BlogProps {
+  posts?: BlogPost[];
+}
+
+export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
+  console.log('BlogPage rendering. Initial BLOG_POSTS:', initialPosts);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
-  const [posts, setPosts] = useState<BlogPost[]>([...BLOG_POSTS]);
+  const [posts, setPosts] = useState<BlogPost[]>([...initialPosts]);
   const query = useDebounce(searchQuery, 300);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -75,7 +79,7 @@ export default function Blog() {
         canonical="https://app.ziontechgroup.com/blog"
       />
       <div className="min-h-screen bg-zion-blue pt-12 pb-20 px-4">
-        <h1>DEBUG: Blog Page Loaded</h1>
+        <h1>Blog</h1>
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <GradientHeading>AI & Tech Insights</GradientHeading>

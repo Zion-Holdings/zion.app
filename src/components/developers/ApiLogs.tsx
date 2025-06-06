@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
+import { ApiLogsChart } from "./ApiLogsChart";
 
 export function ApiLogs() {
   const { logs, totalLogs, loading, fetchApiLogs } = useApiKeys();
@@ -85,7 +86,14 @@ export function ApiLogs() {
             <RefreshCw size={14} className="mr-1" /> Refresh
           </Button>
         </div>
-        
+
+        {/* Visualization of logs per day */}
+        {logs.length > 0 && (
+          <div className="mb-6">
+            <ApiLogsChart logs={logs} />
+          </div>
+        )}
+
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
             <thead>
