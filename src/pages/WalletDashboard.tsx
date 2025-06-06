@@ -4,8 +4,6 @@ import { getWallet } from '@/api/wallet';
 import Spinner from '@/components/ui/spinner';
 import type { TokenTransaction } from '@/types/tokens';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-
 interface WalletResponse {
   points: number;
   history: TokenTransaction[];
@@ -14,12 +12,13 @@ interface WalletResponse {
 const WalletDashboard = () => {
   const navigate = useNavigate();
 
-  const { data, isLoading } = useQuery<WalletResponse>({
+  const { data, isLoading } = useQuery<WalletResponse, Error>({
     queryKey: ['wallet'],
-    queryFn: getWallet,
+    queryFn: getWallet as () => Promise<WalletResponse>,
     retry: false,
     onError: err => {
-      if (axios.isAxiosError(err) && err.response?.status === 401) {
+      const status = (err as any)?.response?.status;
+      if (status === 401) {
         navigate('/login');
       }
     },
