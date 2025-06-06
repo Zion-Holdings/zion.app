@@ -17,7 +17,8 @@
     "lint:a11y": "vitest run tests/Accessibility.test.tsx",
     "test:e2e": "playwright test",
     "es:index": "node scripts/index-elasticsearch.js",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test:node": "node -v"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^9.0.2",
