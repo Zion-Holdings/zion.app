@@ -63,7 +63,7 @@ describe('Login Page Rendering and Basic Auth Attempt', () => {
     // A more practical approach is to use cy.intercept if the login function makes a network request
     // that we can control. Since it's a direct Supabase call, we'd ideally mock Supabase.
 
-    // For now, we'll test the scenario from the existing login.cy.ts which intercepts /api/auth/login
+    // For now, we'll test the scenario from the existing login.cy.ts which intercepts /auth/login
     // This won't test our Supabase flow directly but tests the form's error display capability.
     // If the `LoginForm` directly calls `supabase.auth.signInWithPassword`, this intercept will NOT work.
     // We will rely on the manual test for now and the error boundary.

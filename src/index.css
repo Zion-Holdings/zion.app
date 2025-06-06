@@ -2,6 +2,7 @@
 @import './styles/navbar.css';
 @import './styles/responsive.css';
 
+@import './styles/OnsiteForm.css';
 /* CSS Custom Properties for Theming */
 :root {
   --background: hsl(0 0% 100%);

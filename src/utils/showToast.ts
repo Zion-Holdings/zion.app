@@ -10,7 +10,11 @@ export function isToastActive(id: string | number): boolean {
   return activeToasts.has(id);
 }
 
-export function showToast(id: string | number, msg: string, type: ToastType = 'error'): void {
+export function showToast(
+  id: string | number,
+  msg: string,
+  type: ToastType = 'error'
+): void {
   if (activeToasts.has(id)) return;
   activeToasts.add(id);
 
@@ -20,7 +24,6 @@ export function showToast(id: string | number, msg: string, type: ToastType = 'e
   setTimeout(() => activeToasts.delete(id), 5000);
 }
 
-// Convenience wrapper specifically for error messages
 export function showError(id: string | number, msg: string): void {
   showToast(id, msg, 'error');
 }

@@ -35,13 +35,11 @@ export default function Marketplace() {
       <h1 className="text-3xl font-bold mb-6">Marketplace</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((p) => (
-          <div
+          <ProductCard
             key={p.id}
-            role="button"
-            onClick={() => navigate(`/checkout/${p.id}`)}
-          >
-            <ProductCard product={p} />
-          </div>
+            product={p}
+            onBuy={() => navigate(`/checkout/${p.id}`)}
+          />
         ))}
       </div>
     </div>
