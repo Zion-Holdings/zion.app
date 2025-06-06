@@ -48,6 +48,19 @@ def seed_data():
                 "lessons": [
                     {"title": "Choosing Your Niche", "content_type": "text", "content_data": "Find your profitable niche...", "lesson_order": 1},
                 ]
+            },
+            {
+                "title": "Zion Founder Launch Course",
+                "description": "Interactive onboarding for launching your own Zion instance.",
+                "category": "Marketplace Mastery",
+                "is_premium_tier": False,
+                "lessons": [
+                    {"title": "Module 1 — Introduction to Zion", "content_type": "text", "content_data": "Overview of Zion OS, mission and multiverse vision.", "lesson_order": 1},
+                    {"title": "Module 2 — Core Systems", "content_type": "text", "content_data": "Marketplace, ZionGPT, DAO governance, token economy, multiverse config.", "lesson_order": 2},
+                    {"title": "Module 3 — Deployment", "content_type": "text", "content_data": "Genesis Deploy Kit and module enablement.", "lesson_order": 3},
+                    {"title": "Module 4 — Community & Scaling", "content_type": "text", "content_data": "Nations, proposals, hiring and franchise strategy.", "lesson_order": 4},
+                    {"title": "Module 5 — Legal & Launch", "content_type": "text", "content_data": "KYC/AML, token legal stack, whitepaper.", "lesson_order": 5},
+                ]
             }
         ]
 
