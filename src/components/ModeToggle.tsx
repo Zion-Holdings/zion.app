@@ -12,8 +12,12 @@ export function ModeToggle() {
   const isDarkMode = theme === "dark";
 
   const handleToggle = () => {
-    // Toggle theme using the toggleTheme function from context
-    toggleTheme();
+    try {
+      // Toggle theme using the toggleTheme function from context
+      toggleTheme();
+    } catch (error) {
+      logIssue('Theme switch failed', { error });
+    }
   };
 
   return (
