@@ -2,22 +2,45 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Mail } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export function EnhancedNewsletterForm() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const trimmed = email.trim();
+    if (!EMAIL_REGEX.test(trimmed)) {
+      toast.error("Invalid email");
+      return;
+    }
+
     setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: trimmed }),
+      });
+
+      if (res.ok) {
+        toast.success("Thanks for subscribing!");
+        setIsSubmitted(true);
+        setEmail("");
+      } else {
+        const data = await res.json().catch(() => ({}));
+        toast.error(data.error || "Already subscribed");
+      }
+    } catch (err: any) {
+      toast.error(err?.message || "Already subscribed");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      setEmail("");
-    }, 1000);
+    }
   };
 
   return (
