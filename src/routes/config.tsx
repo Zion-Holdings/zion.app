@@ -22,6 +22,7 @@ import Wallet from '@/pages/Wallet';
 import CheckoutPage from '@/pages/CheckoutPage';
 import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
+import InvestorMatchPage from '@/pages/InvestorMatch';
 import BlogPost from '@/pages/BlogPost';
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
 import { CommunityProvider } from '@/context';
@@ -66,6 +67,7 @@ export const allRoutes: AppRouteObject[] = [
     requiresAuth: true,
   },
   { path: '/partners', element: <PartnersPage /> },
+  { path: '/investor-match', element: <InvestorMatchPage />, metaTitle: 'Investor Match - Zion' },
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: true },
   { path: '/oauth', element: <OAuthCallback /> },
