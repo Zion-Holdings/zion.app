@@ -516,3 +516,7 @@ The Cypress test `cypress/e2e/blank_render.cy.ts` verifies that key routes rende
 ## Book Builder
 
 Use the `/book-builder` route to preview the Zion OS book. From there you can download a PDF edition or print a hard copy.
+
+## Multichain Governance
+
+The `token/multichain` directory provides Solidity contracts for deploying ZION$ across multiple chains. The LayerZero-based bridge wrapper allows deploying on zkSync while mirroring DAO votes to Starknet. Run the Hardhat script in `token/multichain/deploy` to deploy and record addresses.
