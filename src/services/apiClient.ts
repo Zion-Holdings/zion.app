@@ -8,9 +8,9 @@ import axiosRetry from 'axios-retry';
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
-    const msg =
-      error.response?.data?.message || error.message || 'Unexpected error';
-    showError('api-error', msg);
+    const code = error.response?.status;
+    const msg = error.response?.data?.message || `Error ${code}`;
+    showError(`api-${code}`, msg);
     return Promise.reject(error);
   }
 );
@@ -36,8 +36,6 @@ apiClient.interceptors.response.use(
 
     if (status && status >= 400) {
       captureException(error);
-      const msg = error.response?.data?.message || 'Unexpected error';
-      showError('api-error', msg);
     }
 
     if (status === 401) {
