@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getWallet } from '@/api/wallet';
 import Spinner from '@/components/ui/spinner';
@@ -12,17 +12,18 @@ interface WalletResponse {
 const WalletDashboard = () => {
   const navigate = useNavigate();
 
-  const { data, isLoading } = useQuery<WalletResponse, Error, WalletResponse>({
+  const { data, isLoading, error } = useQuery<WalletResponse, Error>({
     queryKey: ['wallet'],
     queryFn: getWallet as () => Promise<WalletResponse>,
     retry: false,
-    onError: err => {
-      const status = (err as any)?.response?.status;
-      if (status === 401) {
-        navigate('/login');
-      }
-    },
   });
+
+  useEffect(() => {
+    const status = (error as any)?.response?.status;
+    if (status === 401) {
+      navigate('/login');
+    }
+  }, [error, navigate]);
 
   if (isLoading) {
     return (
