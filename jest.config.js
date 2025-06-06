@@ -3,10 +3,9 @@ export default {
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
-      babelConfig: true, // Keep if you have a babel.config.js that's needed
       tsconfig: './tsconfig.jest.json' // Point to the new Jest-specific tsconfig
     }],
-    '^.+\\.m?js$': 'babel-jest',
+    '^.+\\.m?(js|jsx)$': ['babel-jest', { presets: [['@babel/preset-env', { targets: { node: 'current' }, modules: 'commonjs' }], ['@babel/preset-react', { runtime: 'automatic' }]], babelrc: false, configFile: false }],
   },
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
   testMatch: [ // More specific test match patterns

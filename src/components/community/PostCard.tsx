@@ -17,6 +17,7 @@ interface PostCardProps {
 }
 
 const PostCardComponent = ({ post, compact = false }: PostCardProps) => {
+  console.log('PostCardComponent rendering with post:', post ? post.id : 'NO POST');
   const timeAgo = formatDistanceToNow(new Date(post.createdAt), { addSuffix: true });
 
   return (
@@ -25,6 +26,7 @@ const PostCardComponent = ({ post, compact = false }: PostCardProps) => {
       post.isPinned && "border-zion-purple/50",
       post.isFeatured && "bg-zion-purple/5"
     )}>
+      <p>DEBUG: PostCard ID: {post?.id}</p>
       <CardHeader className="flex flex-row items-start gap-4 space-y-0">
         <Avatar className="h-10 w-10">
           <AvatarImage src={post.authorAvatar} alt={post.authorName} />

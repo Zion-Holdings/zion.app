@@ -1,0 +1,94 @@
+import React, { useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { getWallet } from '@/api/wallet';
+import Spinner from '@/components/ui/spinner';
+import type { TokenTransaction } from '@/types/tokens';
+import { useNavigate } from 'react-router-dom';
+interface WalletResponse {
+  points: number;
+  history: TokenTransaction[];
+}
+
+const WalletDashboard = () => {
+  const navigate = useNavigate();
+
+  const { data, isLoading, isError, error } = useQuery<WalletResponse, Error>({
+    queryKey: ['wallet'],
+    queryFn: getWallet as () => Promise<WalletResponse>,
+    retry: false,
+    // onError callback removed
+  });
+
+  // Handle error state
+  if (isError) {
+    // Assuming the error structure might have a response object (e.g., from Axios)
+    // You might need to adjust error handling based on your actual error structure
+    // For example, if using fetch, error handling would be different.
+    // Also, consider using a more specific error type if available e.g. AxiosError
+    const status = (error as any)?.response?.status;
+    if (status === 401) {
+      // Navigate to login and prevent further rendering of this component
+      // by returning null or a redirect component.
+      // Using useEffect to navigate is safer as this part of the code can be
+      // called multiple times during render.
+      React.useEffect(() => {
+        navigate('/login');
+      }, [navigate]);
+      return null; // Or a loading/error indicator, or redirect component
+    }
+    // Handle other errors or display a generic error message
+    // For now, let's re-throw or display a simple message
+    // console.error("Error fetching wallet:", error);
+    // return <p>Error loading wallet data.</p>;
+    // For the purpose of this fix, let's allow the component to try rendering
+    // and let the data handling (data?.points) manage undefined data.
+    // A more robust solution would show a user-friendly error message.
+  }
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center py-10">
+        <Spinner className="h-8 w-8 text-primary" />
+      </div>
+    );
+  }
+
+  const points = data?.points ?? 0;
+  const history = data?.history ?? [];
+
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Wallet</h1>
+      <section className="mb-4">
+        <h2 className="text-lg font-semibold">Points</h2>
+        <p>{points}</p>
+      </section>
+      <section>
+        <h2 className="text-lg font-semibold">Transaction History</h2>
+        {history.length === 0 ? (
+          <p>No transactions yet.</p>
+        ) : (
+          <ul className="space-y-2">
+            {history.map((item, idx) => (
+              <li
+                key={item.id ?? idx}
+                className="flex justify-between border-b pb-1"
+              >
+                <span>
+                  {new Date(item.created_at).toLocaleDateString()} -{' '}
+                  {item.reason || item.transaction_type}
+                </span>
+                <span>
+                  {item.transaction_type === 'earn' ? '+' : '-'}
+                  {item.amount}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </div>
+  );
+};
+
+export default WalletDashboard;

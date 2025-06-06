@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -6,6 +7,8 @@ import { Alert } from '@/components/ui/alert';
 import PostCard from '@/components/community/PostCard';
 import Empty from '@/components/community/Empty';
 import { Button } from '@/components/ui/button';
+
+const queryClient = new QueryClient();
 
 export default function Category() {
   const { slug } = useParams();
@@ -16,35 +19,40 @@ export default function Category() {
   const [hasMore, setHasMore] = useState(true);
   const LIMIT = 10;
 
+  const fetchPosts = async () => {
+    const res = await fetch(
+      `/api/community?category=${slug}&limit=${LIMIT}&offset=${offset}`
+    );
+    if (!res.ok) throw new Error('Request failed');
+    return res.json();
+  };
+
   useEffect(() => {
     if (!slug) return;
 
-    async function fetchPosts() {
-      setLoading(true);
-      setError(false);
-      try {
-        const res = await fetch(
-          `/api/community?category=${slug}&limit=${LIMIT}&offset=${offset}`
-        );
-        if (!res.ok) throw new Error('Request failed');
-        const data = await res.json();
-        setPosts(prev => (offset === 0 ? data.posts : [...prev, ...data.posts]));
-        setHasMore(data.posts.length === LIMIT);
-      } catch (e) {
-        console.error(e);
-        setError(true);
-      } finally {
-        setLoading(false);
-      }
-    }
+    setLoading(true);
+    setError(false);
 
-    fetchPosts();
+    fetchPosts()
+      .then(data => {
+        setPosts(prev =>
+          offset === 0 ? data.posts : [...prev, ...data.posts]
+        );
+        setHasMore(data.posts.length === LIMIT);
+      })
+      .catch(err => {
+        console.error(err);
+        setError(true);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, [slug, offset]);
 
   if (loading && offset === 0) return <Skeleton count={5} />;
   if (error) return <Alert variant="destructive">Failed to load posts</Alert>;
 
-  return posts.length ? (
+  const content = posts.length ? (
     <div className="space-y-4">
       {posts.map(p => (
         <PostCard key={p.id} post={p} />
@@ -60,4 +68,6 @@ export default function Category() {
   ) : (
     <Empty message="No posts yet" />
   );
+
+  return <QueryClientProvider client={queryClient}>{content}</QueryClientProvider>;
 }

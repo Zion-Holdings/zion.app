@@ -2,11 +2,12 @@ import { describe, it, expect, vi, beforeAll, afterEach, afterAll } from 'vitest
 import apiClient from '@/services/apiClient';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import * as toastMod from '@/hooks/use-toast';
+import * as apiError from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
 
-vi.mock('@/hooks/use-toast', () => ({
-  toast: { error: vi.fn() }
+vi.mock('@/utils/apiErrorHandler', () => ({
+  showApiError: vi.fn(),
+  parseApiError: vi.fn((e) => ({ status: e?.response?.status, code: e?.response?.data?.code ?? e?.response?.status, message: e?.response?.data?.message || 'Unexpected error – please try again later.' }))
 }));
 vi.mock('@/integrations/supabase/client', () => ({
   supabase: { auth: { signOut: vi.fn().mockResolvedValue({}) } }
@@ -30,7 +31,7 @@ describe('apiClient with msw', () => {
     );
     await expect(apiClient.get('/test')).rejects.toBeTruthy();
     expect(supabase.auth.signOut).toHaveBeenCalled();
-    expect(toastMod.toast.error).toHaveBeenCalledWith('Unauthorized');
+    expect(apiError.showApiError).toHaveBeenCalledWith(expect.objectContaining({ response: { status: 401, data: { message: 'Unauthorized' } } }));
   });
 
   it('handles 404 error', async () => {
@@ -38,7 +39,7 @@ describe('apiClient with msw', () => {
       rest.get('/api/v1/services/test', (_req, res, ctx) => res(ctx.status(404)))
     );
     await expect(apiClient.get('/test')).rejects.toBeTruthy();
-    expect(toastMod.toast.error).toHaveBeenCalledWith('Error 404');
+    expect(apiError.showApiError).toHaveBeenCalledWith(expect.objectContaining({ response: { status: 404 } }));
   });
 
   it('handles 500 error', async () => {
@@ -48,6 +49,31 @@ describe('apiClient with msw', () => {
       )
     );
     await expect(apiClient.get('/test')).rejects.toBeTruthy();
-    expect(toastMod.toast.error).toHaveBeenCalledWith('Server err');
+    expect(apiError.showApiError).toHaveBeenCalledWith(expect.objectContaining({ response: { status: 500, data: { message: 'Server err' } } }));
+  });
+
+  it('handles network failure', async () => {
+    server.use(
+      rest.get('/api/v1/services/test', (_req, res) => res.networkError('fail'))
+    );
+    await expect(apiClient.get('/test')).rejects.toBeTruthy();
+    expect(apiError.showApiError).toHaveBeenCalled();
+  });
+
+  it('handles validation error', async () => {
+    server.use(
+      rest.get('/api/v1/services/test', (_req, res, ctx) =>
+        res(
+          ctx.status(400),
+          ctx.json({ code: 'VALID', message: 'Invalid data' })
+        )
+      )
+    );
+    await expect(apiClient.get('/test')).rejects.toBeTruthy();
+    expect(apiError.showApiError).toHaveBeenCalledWith(
+      expect.objectContaining({
+        response: { status: 400, data: { code: 'VALID', message: 'Invalid data' } }
+      })
+    );
   });
 });

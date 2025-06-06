@@ -33,21 +33,27 @@ workbox.routing.registerRoute(
   })
 );
 
-const bgSyncPlugin = new workbox.backgroundSync.BackgroundSyncPlugin('apiQueue', {
-  maxRetentionTime: 24 * 60,
-  callbacks: {
-    queueDidReplay: async () => {
-      const clients = await self.clients.matchAll();
-      for (const client of clients) {
-        client.postMessage({ type: 'QUEUE_SYNCED' });
+let bgSyncPlugin = null;
+try {
+  bgSyncPlugin = new workbox.backgroundSync.BackgroundSyncPlugin('apiQueue', {
+    maxRetentionTime: 24 * 60,
+    callbacks: {
+      queueDidReplay: async () => {
+        const clients = await self.clients.matchAll();
+        for (const client of clients) {
+          client.postMessage({ type: 'QUEUE_SYNCED' });
+        }
       }
     }
-  }
-});
+  });
+} catch (e) {
+  console.warn('BackgroundSync disabled: storage unavailable', e);
+}
 
+const networkOnlyOptions = bgSyncPlugin ? { plugins: [bgSyncPlugin] } : {};
 workbox.routing.registerRoute(
   ({url, request}) => url.pathname.startsWith('/api/') && request.method !== 'GET',
-  new workbox.strategies.NetworkOnly({ plugins: [bgSyncPlugin] })
+  new workbox.strategies.NetworkOnly(networkOnlyOptions)
 );
 
 workbox.routing.setCatchHandler(async ({ event }) => {

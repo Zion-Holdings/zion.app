@@ -14,7 +14,7 @@
       "next/*": ["./types/next/*"]
     },
     // Modified for Jest: removed vite/client, vitest/globals; added jest, @testing-library/jest-dom
-    "types": ["jest", "@testing-library/jest-dom", "react", "react-router-dom", "socket.io", "socket.io-client"],
+    "types": ["jest", "@testing-library/jest-dom", "react"],
 
     /* Bundler mode related - some might be less relevant for Jest's CJS context but keep for consistency */
     "moduleResolution": "node", // Changed from bundler to node for CommonJS context
@@ -46,6 +46,8 @@
     "__tests__/**/*.tsx",
     "__tests__/**/*.js",
     "__tests__/**/*.jsx",
+    "pages/**/*.ts",
+    "pages/**/*.tsx",
     "types/**/*.d.ts"
   ],
   // "references": [] // Removed references to tsconfig.node.json

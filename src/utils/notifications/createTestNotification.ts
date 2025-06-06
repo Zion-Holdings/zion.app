@@ -6,7 +6,16 @@ import { createNotification } from './createNotification';
  * Demo function to create test notifications for the current user
  */
 export async function createTestNotification(userId: string) {
-  const types: NotificationType[] = ['message', 'quote_request', 'booking_confirmation', 'hire_request', 'onboarding', 'system'];
+  const types: NotificationType[] = [
+    'message',
+    'quote_request',
+    'booking_confirmation',
+    'hire_request',
+    'onboarding',
+    'system',
+    'project_update',
+    'milestone_complete'
+  ];
   const randomType = types[Math.floor(Math.random() * types.length)];
   
   const titles = {
@@ -15,7 +24,9 @@ export async function createTestNotification(userId: string) {
     'booking_confirmation': 'Booking Confirmed',
     'hire_request': 'New Hire Request',
     'onboarding': 'Complete Your Profile',
-    'system': 'System Update'
+    'system': 'System Update',
+    'project_update': 'Project Update',
+    'milestone_complete': 'Milestone Completed'
   };
   
   const messages = {
@@ -24,7 +35,9 @@ export async function createTestNotification(userId: string) {
     'booking_confirmation': 'Your booking has been confirmed and scheduled.',
     'hire_request': 'A client wants to hire you for a project. Check your dashboard for details.',
     'onboarding': 'Complete your profile to get more visibility and job matches.',
-    'system': 'Our platform has been updated with new features. Check them out!'
+    'system': 'Our platform has been updated with new features. Check them out!',
+    'project_update': 'There is a new update on your project.',
+    'milestone_complete': 'A milestone has been marked as complete.'
   };
   
   const actions = {
@@ -33,7 +46,9 @@ export async function createTestNotification(userId: string) {
     'booking_confirmation': { url: '/bookings', text: 'View Booking' },
     'hire_request': { url: '/dashboard', text: 'View Request' },
     'onboarding': { url: '/profile', text: 'Complete Profile' },
-    'system': { url: '/dashboard', text: 'Learn More' }
+    'system': { url: '/dashboard', text: 'Learn More' },
+    'project_update': { url: '/projects', text: 'View Project' },
+    'milestone_complete': { url: '/projects', text: 'View Milestone' }
   };
   
   return createNotification({

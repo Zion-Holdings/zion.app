@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
-import { NavLink } from '@/components/NavLink';
+import Link from 'next/link';
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { Logo } from '@/components/header/Logo';
 import { useTranslation } from 'react-i18next';
@@ -12,6 +12,7 @@ import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useAuth } from '@/hooks/useAuth';
 import { AvatarMenu } from '@/components/header/AvatarMenu';
+import { cn } from '@/lib/utils'; // Import cn utility
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,7 +31,7 @@ export function AppHeader() {
   
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md">
+      <header className={cn("sticky top-0 z-50 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md", { "bg-red-500": mobileMenuOpen })}>
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
           <div className="ml-6 flex-1 hidden md:block">
@@ -56,10 +57,15 @@ export function AppHeader() {
 
           <PointsBadge />
           {!user && (
-            <div className="ml-4">
-              <NavLink href="/login" className="text-sm font-medium text-foreground/70 hover:text-foreground" aria-label="Login" data-testid="login-link">
+            <div className="ml-4 relative z-10">
+              <Link
+                href="/login"
+                className="relative z-10 text-sm font-medium text-foreground/70 hover:text-foreground"
+                aria-label="Login"
+                data-testid="login-link"
+              >
                 Login
-              </NavLink>
+              </Link>
             </div>
           )}
           {/* User avatar menu */}
@@ -73,7 +79,7 @@ export function AppHeader() {
       
       {/* Mobile menu - positioned outside of header to prevent overlap issues */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 pt-16">
+        <div className="md:hidden fixed inset-0 z-60 pt-16">
           <div 
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(false)}

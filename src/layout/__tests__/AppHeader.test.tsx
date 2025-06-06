@@ -142,5 +142,20 @@ describe('AppHeader', () => {
       render(<MemoryRouter><AppHeader /></MemoryRouter>);
       expect(screen.getByTestId('language-selector')).toBeInTheDocument();
     });
+
+    it('Login and language selector allow pointer events', () => {
+      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      const loginLink = screen.getByTestId('login-link');
+      const langSelector = screen.getByTestId('language-selector');
+      expect(window.getComputedStyle(loginLink).pointerEvents).not.toBe('none');
+      expect(window.getComputedStyle(langSelector).pointerEvents).not.toBe('none');
+    });
+
+    it('Login link is focusable via keyboard', async () => {
+      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      const loginLink = screen.getByTestId('login-link');
+      loginLink.focus();
+      expect(loginLink).toHaveFocus();
+    });
   });
 });

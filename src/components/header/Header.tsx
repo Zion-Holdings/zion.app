@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Logo } from './Logo';
 import { AvatarMenu } from './AvatarMenu';
 import { LanguageSelector } from './LanguageSelector';
@@ -12,6 +12,7 @@ import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
+import { useTranslation } from 'react-i18next';
 
 export interface HeaderProps {
   hideLogin?: boolean;
@@ -28,6 +29,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const firstName =
     (user && typeof user !== 'boolean' ? (user.displayName?.split(' ')[0] || user.name?.split(' ')[0]) : undefined) || '';
   const { isWhitelabel, primaryColor } = useWhitelabel();
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const searchSuggestions = generateSearchSuggestions();
@@ -79,13 +81,22 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
 
         <div className="flex items-center gap-2">
           <PointsBadge />
+          {!user && !hideLogin && (
+            <Link
+              href="/login"
+              className="text-sm text-white hover:text-zion-cyan"
+              aria-label="Login"
+            >
+              Login
+            </Link>
+          )}
           <LanguageSelector />
           {user && (
             <span
               className="hidden sm:block text-sm text-white mr-2"
               data-testid="header-greeting"
             >
-              {`Hello, ${firstName}!`}
+              {t('general.greeting_user', { name: firstName })}
             </span>
           )}
           {/* User avatar menu */}

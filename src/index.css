@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+@import './styles/navbar.css';
+@import './styles/responsive.css';
+
+@import './styles/OnsiteForm.css';
 /* CSS Custom Properties for Theming */
 :root {
   --background: hsl(0 0% 100%);
@@ -31,11 +36,65 @@
   --accent-foreground: hsl(0, 0%, 88%);
 }
 
+/*Scoped Theme Variables for Mobile App */
+.mobile-app {
+  min-height: 100vh; /* Ensure it takes full height */
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+.mobile-app[data-theme='light'] {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(0 0% 3.9%);
+  --primary: hsl(240 5.9% 10%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(240 4.8% 95.9%);
+  --secondary-foreground: hsl(240 5.9% 10%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 3.9%);
+  --border: hsl(0 0% 89.8%);
+  --input: hsl(0 0% 89.8%);
+  --ring: hsl(240 5.9% 10%);
+  --accent: hsl(240 3.7% 15.9%);
+  --accent-foreground: hsl(0 0% 98%);
 
-@import './styles/navbar.css';
-@import './styles/responsive.css';
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.mobile-app[data-theme='dark'] {
+  --background: hsl(222, 47%, 8%);
+  --foreground: hsl(0, 0%, 88%);
+  --primary: hsl(188, 85%, 53%);
+  --primary-foreground: hsl(222, 47%, 8%);
+  --secondary: hsl(271, 76%, 53%);
+  --secondary-foreground: hsl(0, 0%, 88%);
+  --card: hsl(220, 30%, 11%);
+  --card-foreground: hsl(0, 0%, 88%);
+  --border: hsl(222, 39%, 17%);
+  --input: hsl(222, 39%, 17%);
+  --ring: hsl(188, 85%, 53%);
+  --accent: hsl(288, 85%, 60%);
+  --accent-foreground: hsl(0, 0%, 88%);
+
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Global layout fixes */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+
 
 @tailwind base;
 @tailwind components;
@@ -176,16 +235,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: theme('colors.card');
+    background: theme('colors.card.DEFAULT');
   }
 
   ::-webkit-scrollbar-thumb {
-    background: theme('colors.secondary');
+    background: theme('colors.secondary.DEFAULT');
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: theme('colors.accent');
+    background: theme('colors.accent.DEFAULT');
   }
 
   /* Smooth scrolling */
@@ -235,7 +294,7 @@
   a {
     @apply transition-colors duration-200 hover:text-primary;
   }
-}
+
   @keyframes slide-up {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }
@@ -265,3 +324,8 @@
       padding-right: 1rem;
     }
   }
+}
+
+.request-btn { background:#00bcd4;color:#fff; }
+.request-textarea { color:#000; }
+.request-textarea::placeholder { color:#777; }

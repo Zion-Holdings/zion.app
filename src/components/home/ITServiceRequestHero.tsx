@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import axios from "axios";
+import { Loader2 } from "lucide-react";
 
 export function ITServiceRequestHero() {
   const [name, setName] = useState("");
@@ -14,6 +15,7 @@ export function ITServiceRequestHero() {
   const [company, setCompany] = useState("");
   const [location, setLocation] = useState("");
   const [details, setDetails] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -28,28 +30,29 @@ export function ITServiceRequestHero() {
       return;
     }
 
+    setIsSubmitting(true);
     try {
-      const { error } = await supabase.functions.invoke(
-        "onsite-service-request",
-        {
-          body: { name, email, phone, company, location, details },
-        }
-      );
-
-      if (error) throw error;
-
-      toast({
-        title: "Request Submitted",
-        description:
-          "We've received your request. Our team will reach out shortly.",
+      const res = await axios.post("/api/onsite-request", {
+        name,
+        email,
+        phone,
+        company,
+        location,
+        details,
       });
 
-      setName("");
-      setEmail("");
-      setPhone("");
-      setCompany("");
-      setLocation("");
-      setDetails("");
+      if (res.status === 200) {
+        toast({
+          title: "Request received",
+          description: "We've received your request. Our team will reach out shortly.",
+        });
+        setName("");
+        setEmail("");
+        setPhone("");
+        setCompany("");
+        setLocation("");
+        setDetails("");
+      }
     } catch (err: any) {
       console.error(err);
       toast({
@@ -57,6 +60,8 @@ export function ITServiceRequestHero() {
         description: "There was an error submitting your request.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -77,7 +82,7 @@ export function ITServiceRequestHero() {
           <div className="flex flex-col md:flex-row items-center gap-4">
             <Image
               src="/logos/placeholder-logo.svg"
-              alt="Technician"
+              alt="Company logo"
               width={200}
               height={200}
               className="w-full h-auto md:w-40"
@@ -126,8 +131,12 @@ export function ITServiceRequestHero() {
               />
               <Button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-3 px-6 transition-transform hover:scale-105"
               >
+                {isSubmitting && (
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                )}
                 Request Service
               </Button>
             </form>

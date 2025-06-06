@@ -10,6 +10,7 @@ import { Globe } from "lucide-react";
 import useSWR from 'swr';
 import { captureException } from "@/utils/sentry";
 import { SkeletonCard } from '@/components/ui';
+import { FilterSidebarSkeleton } from "@/components/skeletons/FilterSidebarSkeleton";
 import { useDelayedError } from '@/hooks/useDelayedError';
 
 // Filter options specific to services
@@ -50,13 +51,20 @@ export default function ServicesPage() {
 
   if (isLoading || (error && !delayedError)) {
     return (
-      <div data-testid="loading-state" className="container mx-auto px-4 py-12">
-        {/* Optional: you can add a skeleton for the title if needed */}
+      <div data-testid="loading-state" className="container mx-auto px-4 py-12" aria-busy="true">
+        {/* Optional: you can add a skeleton for the page title if needed */}
         {/* <Skeleton className="h-8 w-1/3 mb-8" /> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {Array.from({ length: 8 }).map((_, index) => (
-            <SkeletonCard key={index} />
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div className="lg:col-span-1">
+            <FilterSidebarSkeleton />
+          </div>
+          <div className="lg:col-span-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {Array.from({ length: 6 }).map((_, index) => (
+                <SkeletonCard key={index} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     );

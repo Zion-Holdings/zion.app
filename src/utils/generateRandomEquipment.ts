@@ -10,6 +10,8 @@ const EQUIPMENT_POOL: ProductListing[] = [
     subcategory: "Servers",
     price: 48000,
     currency: "$",
+    brand: "DeepCompute",
+    specifications: ["8x A100", "2TB RAM"],
     tags: ["8x A100", "2TB RAM", "NVLink", "Liquid Cooling"],
     author: {
       name: "DeepCompute",
@@ -35,6 +37,8 @@ const EQUIPMENT_POOL: ProductListing[] = [
     subcategory: "Imaging",
     price: 890,
     currency: "$",
+    brand: "VisionEdge",
+    specifications: ["4K", "Jetson"],
     tags: ["4K", "Jetson", "PoE"],
     author: {
       name: "VisionEdge",
@@ -57,6 +61,8 @@ const EQUIPMENT_POOL: ProductListing[] = [
     category: "Robotics",
     price: 22000,
     currency: "$",
+    brand: "RoboWorks",
+    specifications: ["6-Axis", "Teach Pendant"],
     tags: ["6-Axis", "10kg Payload", "Teach Pendant"],
     author: {
       name: "RoboWorks",
@@ -79,6 +85,8 @@ const EQUIPMENT_POOL: ProductListing[] = [
     category: "AI",
     price: 6200,
     currency: "$",
+    brand: "InferEdge",
+    specifications: ["A30 GPU", "NVMe"],
     tags: ["A30 GPU", "NVMe", "Quiet"],
     author: {
       name: "InferEdge",
@@ -101,6 +109,8 @@ const EQUIPMENT_POOL: ProductListing[] = [
     category: "Robotics",
     price: 4500,
     currency: "$",
+    brand: "SkyLogic",
+    specifications: ["AI Pilot", "HD Camera"],
     tags: ["Quadcopter", "AI Pilot", "HD Camera"],
     author: {
       name: "SkyLogic",
@@ -123,6 +133,8 @@ const EQUIPMENT_POOL: ProductListing[] = [
     category: "Servers",
     price: 13500,
     currency: "$",
+    brand: "HPC Solutions",
+    specifications: ["EPYC", "InfiniBand"],
     tags: ["EPYC", "256GB RAM", "InfiniBand"],
     author: {
       name: "HPC Solutions",

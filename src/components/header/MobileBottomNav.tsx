@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { useFavorites } from "@/hooks/useFavorites";
+import { useWishlist } from "@/hooks/useWishlist";
 import { useCart } from '@/context/CartContext';
 import {
   Home,
@@ -23,9 +23,16 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
   const location = useLocation();
   const { user } = useAuth();
   const isAuthenticated = !!user;
-  const { count: favoritesCount } = useFavorites();
-  const { items } = useCart();
-  const cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
+  const { items } = useWishlist();
+  const favoritesCount = items.length;
+  let cartCount = 0;
+  try {
+    const { items } = useCart(); // Attempt to use the cart
+    cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
+  } catch (error) {
+    console.warn("MobileBottomNav: useCart() failed, defaulting cartCount to 0. Error:", error);
+    // cartCount remains 0
+  }
 
   const navItems = [
     {

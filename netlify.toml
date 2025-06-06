@@ -1,7 +1,8 @@
 [build]
-  command = "npm run build"
+  command = "npm cache clean --force && npm install -g npm@latest && npm install --legacy-peer-deps && npm run build"
   publish = "out"
 
 [build.environment]
   NODE_OPTIONS = "--max_old_space_size=4096"
   NPM_FLAGS = "--prefer-offline"
+  NODE_VERSION = "20"

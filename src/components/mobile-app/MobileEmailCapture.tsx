@@ -2,11 +2,13 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useEnqueueSnackbar } from '@/context';
 
 export const MobileEmailCapture: React.FC = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const enqueueSnackbar = useEnqueueSnackbar();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,8 +26,9 @@ export const MobileEmailCapture: React.FC = () => {
       setTimeout(() => {
         setIsSuccess(false);
       }, 5000);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error subscribing:", error);
+      enqueueSnackbar(error?.response?.data?.message || error.message, { variant: 'error' });
     } finally {
       setIsSubmitting(false);
     }
@@ -45,6 +48,7 @@ export const MobileEmailCapture: React.FC = () => {
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <Input
               type="email"
+              name="email"
               placeholder="Enter your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

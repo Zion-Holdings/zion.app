@@ -28,6 +28,9 @@ export default defineConfig({
       },
     },
   ],
+  // Update the base path if the application will be hosted under a
+  // subdirectory. By default we use '/' to work for most setups.
+  base: '/',
   build: {
     sourcemap: false,
     minify: 'esbuild',
@@ -36,7 +39,7 @@ export default defineConfig({
     chunkSizeWarningLimit: 500,
     rollupOptions: {
       // Exclude Prisma client namespace to avoid TypeScript errors
-      external: ['.prisma/client/default'],
+      external: ['.prisma/client/default', 'react-devtools'],
       output: {
         inlineDynamicImports: false,
       },
@@ -48,16 +51,17 @@ export default defineConfig({
       axios: path.resolve(__dirname, './src/lib/axios.ts'),
     },
   },
-  server: {
-    hmr: {
-      clientPort: 443,
-    },
-    allowedHosts: ['devserver-preview--ziontechgroup.netlify.app'],
-  },
+  // server: {
+  //   allowedHosts: ['devserver-preview--ziontechgroup.netlify.app'],
+  // },
   test: {
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./src/setupTests.ts'],
     css: true,
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+      reportsDirectory: 'coverage',
+    },
   },
 });

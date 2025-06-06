@@ -1,5 +1,7 @@
-import React, { Suspense } from 'react'; // Added Suspense here
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
+import 'normalize.css';
+import { Global, css } from '@emotion/react';
 
 // Integrate axe-core accessibility auditing in development
 // if (process.env.NODE_ENV !== 'production') {
@@ -16,25 +18,34 @@ import ReactDOM from 'react-dom/client';
 //   });
 // }
 
-console.log(Suspense); // To ensure Suspense is "used"
+
+// Add console logs to verify critical ENV vars (use carefully in prod)
+if (process.env.NODE_ENV !== 'production') {
+  console.log('API_URL:', process.env.REACT_APP_API_URL);
+}
 
 import App from './App.tsx';
 import './index.css';
 // Removed feat/i18n-implementation and main markers
 import { I18nextProvider } from 'react-i18next';
-import i18n from './i18n'; // Adjust the path if your i18n.js is elsewhere
+import i18n from './i18n/index';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@tanstack/react-query';
 import { showApiError } from '@/utils/apiErrorHandler';
 import './utils/globalFetchInterceptor';
 import './utils/consoleErrorToast';
+import './utils/globalErrorHandler';
 import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
-import { GlobalSnackbarProvider, GlobalLoaderProvider, NotificationProvider, MessagingProvider } from './context';
-
-// import { LanguageProvider } from '@/context/LanguageContext';
-// import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
+import RootErrorBoundary from './components/RootErrorBoundary';
+import {
+  AppLoaderProvider,
+  NotificationProvider,
+  MessagingProvider,
+} from './context';
+import { LanguageProvider } from '@/context/LanguageContext';
+import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
 // import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
@@ -47,10 +58,14 @@ import { AuthProvider } from '@/context/auth/AuthProvider';
 // Import analytics provider
 // import { AnalyticsProvider } from './context/AnalyticsContext';
 // import { ViewModeProvider } from './context/ViewModeContext';
-// import { CartProvider } from './context/CartContext';
+import { CartProvider } from './context/CartContext';
 // import { FavoritesProvider } from './context/FavoritesContext.jsx';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 import { enableDevToolsInStaging } from './utils/devtools';
+import './utils/checkDuplicateClassNames';
+import { checkEssentialEnvVars } from './utils/validateEnv';
+import { FeedbackProvider } from './context/FeedbackContext';
+import { FeedbackWidget } from './components/feedback/FeedbackWidget';
 
 enableDevToolsInStaging();
 
@@ -65,37 +80,54 @@ const queryClient = new QueryClient({
 });
 
 try {
+  checkEssentialEnvVars(); // Added call
+
   // Removed initGA() call as it's undefined and likely superseded by AnalyticsProvider
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-      <Provider store={store}>
-        <GlobalSnackbarProvider>
-        <GlobalLoaderProvider>
+      <Global
+        styles={css`
+          * {
+            box-sizing: border-box;
+          }
+          body {
+            font-family: 'Inter', sans-serif;
+            color: var(--foreground);
+            background-color: var(--background);
+          }
+        `}
+      />
+      <RootErrorBoundary>
+        <Provider store={store}>
+        <Router basename={process.env.PUBLIC_URL || '/'}>
+          <AppLoaderProvider>
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
               <WhitelabelProvider>
-                <Router>
+                <FeedbackProvider>
                 <AuthProvider>
                   <MessagingProvider>
                   <NotificationProvider>
                     {/* <AnalyticsProvider> */}
                       {/* <LanguageProvider authState={{ isAuthenticated: false, user: null }}> */}
                         {/* <ViewModeProvider> */}
-                          {/* <CartProvider> */}
+                          <CartProvider>
                             {/* <FavoritesProvider> */}
                               {/* <ReferralMiddleware> */}
                                 <ToastProvider>
                                   <GlobalErrorBoundary>
-                                    <AppLayout>
-                                      <App />
-                                    </AppLayout>
+                                    <Suspense fallback={<div>Loading App...</div>}>
+                                      <AppLayout>
+                                        <App />
+                                      </AppLayout>
+                                    </Suspense>
                                   </GlobalErrorBoundary>
                                 </ToastProvider>
                               {/* </ReferralMiddleware> */}
                             {/* </FavoritesProvider> */}
-                          {/* </CartProvider> */}
+                          </CartProvider>
                         {/* </ViewModeProvider> */}
                         {/* <LanguageDetectionPopup /> */}
                       {/* </LanguageProvider> */}
@@ -103,14 +135,16 @@ try {
                   </NotificationProvider>
                   </MessagingProvider>
                 </AuthProvider>
-              </Router>
+                <FeedbackWidget />
+              </FeedbackProvider>
             </WhitelabelProvider>
           </QueryClientProvider>
         </HelmetProvider>
         </I18nextProvider>
-        </GlobalLoaderProvider>
-        </GlobalSnackbarProvider>
+        </AppLoaderProvider>
+        </Router>
       </Provider>
+      </RootErrorBoundary>
       {/* Removed duplicate main marker */}
     </React.StrictMode>,
   );

@@ -92,3 +92,6 @@ export function applyThemeColors(colors: ThemeColors) {
   document.body.style.backgroundColor = colors.backgroundColor; // Or use `var(--background)`
   document.body.style.color = colors.textColor; // Or use `var(--foreground)`
 }
+
+export const getPreferredTheme = () =>
+  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';

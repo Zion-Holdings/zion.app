@@ -10,7 +10,8 @@ import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate, useLocation } from "react-router-dom";
 import useSWRMutation from "swr/mutation";
-import Skeleton from "@/components/ui/skeleton";
+import Skeleton, { SkeletonCard } from "@/components/ui/skeleton"; // Import SkeletonCard
+import { FilterSidebarSkeleton } from "@/components/skeletons/FilterSidebarSkeleton"; // Import FilterSidebarSkeleton
 import { useDelayedError } from '@/hooks/useDelayedError';
 import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
 
@@ -36,7 +37,11 @@ async function fetchEquipment(): Promise<ProductListing[]> {
   try {
     const { data } = await apiClient.get('/equipment');
     return data;
-  } catch (error) {
+  } catch (error: any) {
+    console.error("Raw error object in fetchEquipment:", error);
+    if (error.response) {
+      console.error("Error response data in fetchEquipment:", await error.response.text());
+    }
     console.error("Failed to fetch equipment:", error);
     // Propagate the error or return an empty array/handle as per application's error strategy
     throw error;
@@ -82,6 +87,8 @@ export default function EquipmentPage() {
       if (!res.ok) {
         // Enhanced error handling for failed recommendations fetch
         const errorData = await res.json().catch(() => ({ message: "Failed to fetch recommendations, and error response is not JSON."}));
+        console.error("Raw error object in fetchRecommendations:", errorData);
+        // The errorData is already logged, but this is to ensure it's captured before throwing.
         console.error("Recommendation fetch error:", errorData);
         throw new Error(errorData.message || "Failed to fetch recommendations");
       }
@@ -130,39 +137,47 @@ export default function EquipmentPage() {
   // Updated loading condition to specifically check for equipment being undefined
   if (isLoadingEquipment && equipment === undefined) {
     return (
-      <div data-testid="loading-state-equipment" className="container mx-auto p-4 space-y-4">
+      <div data-testid="loading-state-equipment" className="container mx-auto p-4 space-y-4" aria-busy="true">
+        {/* Skeleton for the top button (e.g., AI Recommendations) */}
         <div className="flex justify-end mb-6">
-            <Skeleton className="h-10 w-48 bg-zion-blue-light/20" />
+            <Skeleton className="h-10 w-48" /> {/* Removed specific bg color, base Skeleton handles it */}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
-              <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
-              <div className="p-4">
-                <Skeleton className="h-6 w-2/3 mb-2 bg-zion-blue-light/20" />
-                <Skeleton className="h-4 w-full mb-1 bg-zion-blue-light/20" />
-                <Skeleton className="h-4 w-5/6 mb-3 bg-zion-blue-light/20" />
-                <Skeleton className="h-4 w-1/2 mb-4 bg-zion-blue-light/20" />
-                <div className="flex justify-between items-center pt-4">
-                  <Skeleton className="h-6 w-1/4 bg-zion-blue-light/20" />
-                  <Skeleton className="h-8 w-1/3 bg-zion-blue-light/20" />
-                </div>
-              </div>
+        {/* Main layout for sidebar and cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div className="lg:col-span-1">
+            <FilterSidebarSkeleton />
+          </div>
+          <div className="lg:col-span-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {Array.from({ length: 6 }).map((_, index) => (
+                <SkeletonCard key={index} />
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     );
   }
 
   // If there's an error and we don't have any equipment to show (even stale), show error.
-  if (delayedError && (!equipment || equipment.length === 0)) {
+  if (delayedError && (!fetchedEquipment || fetchedEquipment.length === 0)) {
     return (
       <div data-testid="error-state-equipment" className="py-12 text-center space-y-4">
         <p className="text-red-400">Failed to load equipment: {delayedError.message}</p>
         <Button data-testid="retry-button-equipment" onClick={() => refetchEquipment()}>
           Retry
         </Button>
+      </div>
+    );
+  }
+
+  if (!isLoadingEquipment && !equipmentError && (!equipment || equipment.length === 0) && !isFetchingRecommendations) {
+    return (
+      <div className="text-center py-16">
+        <h2 className="text-2xl font-bold text-white mb-4">Equipment Catalog Currently Empty</h2>
+        <p className="text-zion-slate-light max-w-md mx-auto">
+          No equipment listings are currently available. Please check back later.
+        </p>
       </div>
     );
   }
