@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { RouteObject } from 'react-router';
 
 export interface AppRouteObject extends RouteObject {
@@ -8,8 +8,9 @@ import Home from '@/pages/Home';
 import Marketplace from '@/pages/Marketplace'; // Assuming Marketplace component exists
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
-import Login from '@/pages/Login';
-import Signup from '@/pages/SimpleSignup';
+const Login = lazy(() => import('@/pages/Login'));
+import { LoginForm } from '@/components/auth/login';
+import RegisterForm from '@/components/auth/RegisterForm';
 import OAuthCallback from '@/pages/OAuthCallback';
 import Dashboard from '@/pages/Dashboard';
 import Profile from '@/pages/Profile';
