@@ -7,7 +7,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   plugins: [
     react(),
-    visualizer({ open: false, filename: 'bundle-stats.html' }),
+    visualizer({ open: true, filename: 'bundle-stats.html' }),
     {
       name: 'mock-api',
       configureServer(server) {

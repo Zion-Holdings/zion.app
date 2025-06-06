@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+@import './styles/navbar.css';
+@import './styles/responsive.css';
+
 /* CSS Custom Properties for Theming */
 :root {
   --background: hsl(0 0% 100%);
@@ -88,12 +92,6 @@ body {
   padding: 1rem;
   box-sizing: border-box;
 }
-
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
-
-@import './styles/navbar.css';
-@import './styles/responsive.css';
 
 @tailwind base;
 @tailwind components;
