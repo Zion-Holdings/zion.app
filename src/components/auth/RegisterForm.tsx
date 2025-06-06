@@ -121,6 +121,6 @@ export default function RegisterForm() {
           Already have an account? Sign in
         </Link>
       </p>
-    </form>
+    </div>
   );
 }
