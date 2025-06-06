@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -26,6 +26,7 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const { t } = useTranslation();
+  const location = useLocation();
 
   const items: NavItem[] = [
     { label: t('nav.home', 'Home'), href: '/' },
@@ -68,7 +69,10 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
                         <NavigationMenuLink asChild>
                           <Link
                             to={sub.href}
-                            className="block rounded-sm px-3 py-2 text-sm hover:bg-accent focus:bg-accent focus:outline-none"
+                            className={cn(
+                              "block rounded-sm px-3 py-2 text-sm hover:bg-accent focus:bg-accent focus:outline-none",
+                              location.pathname === sub.href && "bg-accent text-accent-foreground"
+                            )}
                           >
                             {sub.label}
                           </Link>
@@ -82,7 +86,10 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
               <NavigationMenuLink asChild>
                 <Link
                   to={item.href || '#'}
-                  className="inline-block px-4 py-2 text-sm font-medium"
+                  className={cn(
+                    "inline-block px-4 py-2 text-sm font-medium",
+                    item.href && location.pathname === item.href && "text-primary"
+                  )}
                 >
                   {item.label}
                 </Link>
