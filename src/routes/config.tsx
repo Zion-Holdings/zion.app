@@ -5,6 +5,9 @@ import Marketplace from '@/pages/Marketplace'; // Assuming Marketplace component
 import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
 import Login from '@/pages/Login';
+const AiMatcherPage = React.lazy(() => import('@/pages/AIMatcher'));
+const TalentDirectoryPage = React.lazy(() => import('@/pages/TalentDirectory'));
+const ServicesMarketplacePage = React.lazy(() => import('@/pages/ServicesPage'));
 import Signup from '@/pages/SimpleSignup';
 import OAuthCallback from '@/pages/OAuthCallback';
 import Dashboard from '@/pages/Dashboard';
@@ -38,6 +41,9 @@ export const primaryRoutes: RouteObject[] = [
   { path: '/categories', element: <Categories /> },
   { path: '/blog', element: <Blog /> },
   { path: '/login', element: <Login /> },
+  { path: '/match', element: <AiMatcherPage /> },
+  { path: '/talent', element: <TalentDirectoryPage /> },
+  { path: '/services', element: <ServicesMarketplacePage /> },
 ];
 
 export const allRoutes: RouteObject[] = [
