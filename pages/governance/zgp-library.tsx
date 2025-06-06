@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { PROPOSAL_TEMPLATES } from '@/data/proposalTemplates';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -26,7 +26,7 @@ const ZgpLibraryPage: React.FC = () => {
                   <p className="text-sm text-muted-foreground whitespace-pre-wrap">{t.summary}</p>
                 </CardContent>
                 <CardFooter>
-                  <Link to={`/governance/create?template=${t.id}`} className="ml-auto">
+                  <Link href={`/governance/create?template=${t.id}`} className="ml-auto">
                     <Button size="sm">Use Template</Button>
                   </Link>
                 </CardFooter>

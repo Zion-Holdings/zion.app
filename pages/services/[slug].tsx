@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { Helmet } from 'react-helmet-async';
 import { NextSeo } from '@/components/NextSeo';
 import { SERVICES } from '@/data/servicesData';
@@ -8,7 +8,8 @@ import Custom404 from '../404';
 import type { ProductListing } from '@/types/listings';
 
 const ServicePage: React.FC = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const router = useRouter();
+  const { slug } = router.query as { slug?: string };
   const service = React.useMemo(
     () => SERVICES.find((s) => slugify(s.title) === slug) || null,
     [slug]
