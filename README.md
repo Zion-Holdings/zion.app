@@ -516,3 +516,13 @@ The Cypress test `cypress/e2e/blank_render.cy.ts` verifies that key routes rende
 ## Book Builder
 
 Use the `/book-builder` route to preview the Zion OS book. From there you can download a PDF edition or print a hard copy.
+
+## Offworld Deployment
+
+A minimal script is available to push a built Zion instance to IPFS for offline or mesh network distribution. After running `npm run build`, execute:
+
+```bash
+npx deploy-zion-ipfs
+```
+
+The command uploads the `dist` directory to your configured IPFS gateway and prints the resulting CID. Jobs, profiles, proposals and docs can be stored on IPFS, while messages and DAO vote logs sync through OrbitDB. See `src/offworld/` for helper modules.
