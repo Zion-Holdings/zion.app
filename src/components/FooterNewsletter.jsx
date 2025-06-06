@@ -55,6 +55,7 @@ export function FooterNewsletter() {
     >
       <Input
         type="email"
+        name="email"
         placeholder="Enter your email"
         className="flex-grow bg-zion-blue-light text-black border-zion-purple/20 focus:border-zion-purple focus:ring-zion-purple placeholder-opacity-50 placeholder:text-center"
         value={email}
