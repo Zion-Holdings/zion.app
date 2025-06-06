@@ -1,0 +1,33 @@
+version: 1.0
+tasks:
+  - name: detect_errors
+    run: |
+      eslint ./app --ext .js,.jsx,.ts,.tsx -f json > eslint-report.json
+
+  - name: extract_code
+    run: |
+      node extractFailingCode.js eslint-report.json > failing-snippet.js
+
+  - name: fix_code
+    uses: openai:codex
+    with:
+      prompt: |
+        You are an expert React/Next.js developer. Fix the following code. Comment on each change made.
+
+        ```jsx
+        ${{ steps.extract_code.output }}
+        ```
+      temperature: 0.3
+      max_tokens: 800
+
+  - name: apply_patch
+    run: |
+      echo "${{ steps.fix_code.output }}" > ./app/fixed-snippet.js
+
+  - name: test_patch
+    run: |
+      npm test
+
+  - name: deploy_if_passed
+    run: |
+      [ $? -eq 0 ] && npm run deploy
