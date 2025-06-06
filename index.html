@@ -53,15 +53,34 @@
     <link rel="apple-touch-icon" href="%BASE_URL%logos/zion-logo.png" />
 
     <!-- Google Analytics -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA_ID%"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-
-      window.addEventListener('load', () => {
-        gtag('js', new Date());
-        gtag('config', '%VITE_GA_ID%');
-      });
+      (function() {
+        function storageAvailable(type) {
+          try {
+            var storage = window[type];
+            var test = '__storage_test__';
+            storage.setItem(test, test);
+            storage.removeItem(test);
+            return true;
+          } catch {
+            return false;
+          }
+        }
+        if (storageAvailable('localStorage')) {
+          var gaScript = document.createElement('script');
+          gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=%VITE_GA_ID%';
+          gaScript.defer = true;
+          document.head.appendChild(gaScript);
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.addEventListener('load', function() {
+            gtag('js', new Date());
+            gtag('config', '%VITE_GA_ID%');
+          });
+        } else {
+          console.warn('Google Analytics disabled: storage is not available.');
+        }
+      })();
     </script>
     
     <!-- Structured data (JSON-LD) for SEO -->
