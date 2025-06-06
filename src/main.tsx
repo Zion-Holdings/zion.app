@@ -61,13 +61,14 @@ import { AuthProvider } from '@/context/auth/AuthProvider';
 import { CartProvider } from './context/CartContext';
 // import { FavoritesProvider } from './context/FavoritesContext.jsx';
 import { registerServiceWorker } from './serviceWorkerRegistration';
-import { enableDevToolsInStaging } from './utils/devtools';
+import { enableDevToolsInStaging, highlightZeroHeightElements } from './utils/devtools';
 import './utils/checkDuplicateClassNames';
 import { checkEssentialEnvVars } from './utils/validateEnv';
 import { FeedbackProvider } from './context/FeedbackContext';
 import { FeedbackWidget } from './components/feedback/FeedbackWidget';
 
 enableDevToolsInStaging();
+highlightZeroHeightElements();
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
