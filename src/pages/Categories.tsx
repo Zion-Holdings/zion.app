@@ -21,6 +21,13 @@ export default function Categories() {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
+    let isMounted = true;
+    const timeoutId = setTimeout(() => {
+      if (isMounted) {
+        setIsLoading(false);
+      }
+    }, 10000); // Hide overlay after 10s if fetch hasn't completed
+
     const fetchCategories = async () => {
       setIsLoading(true);
       setError(null);
@@ -30,20 +37,31 @@ export default function Categories() {
           throw new Error(`API error: ${response.statusText}`);
         }
         const data: CategoryType[] = await response.json();
-        setCategories(data);
+        if (isMounted) {
+          setCategories(data);
+        }
       } catch (e: any) {
         console.error("Raw error object:", e);
         if (e.response) {
           console.error("Error response data:", await e.response.text());
         }
-        setError(e as Error);
+        if (isMounted) {
+          setError(e as Error);
+        }
         console.error("Failed to fetch categories:", e);
       } finally {
-        setIsLoading(false);
+        if (isMounted) {
+          setIsLoading(false);
+        }
       }
     };
 
     fetchCategories();
+
+    return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
