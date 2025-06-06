@@ -14,6 +14,7 @@ import JobDetails from "@/pages/JobDetails";
 import PublishProduct from "@/pages/PublishProduct";
 import ServicesPage from "@/pages/ServicesPage";
 import RequestQuote from "@/pages/RequestQuote";
+import RequestService from "@/pages/RequestService";
 import AIMatcher from "@/pages/AIMatcher";
 import ServiceDescriptionGenerator from "@/pages/ServiceDescriptionGenerator";
 import ITOnsiteServicesPage from "@/pages/ITOnsiteServicesPage";
@@ -73,6 +74,7 @@ const MarketplaceRoutes = () => {
       <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
       <Route path="/it-onsite-services/:country" element={<ITOnsiteServicesPage />} />
       <Route path="/request-quote" element={<RequestQuote />} />
+      <Route path="/request-service" element={<RequestService />} />
       <Route path="/service-description-generator" element={<ServiceDescriptionGenerator />} />
       
       {/* Search Route */}

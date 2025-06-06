@@ -156,6 +156,7 @@ export default tseslint.config(
         "scripts/**/*.mjs",
         "api/create-checkout-session.js",
         "api/create-payment-intent.js",
+        "api/stripe-webhook.js",
         "scripts/generate-ai-blog-post.js",
         "scripts/index-elasticsearch.js",
         "scripts/monitor-backlinks.js",

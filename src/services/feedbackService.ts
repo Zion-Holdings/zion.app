@@ -32,6 +32,18 @@ export function saveFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'>): Fe
   return newEntry;
 }
 
+export async function postFeedback(entry: Omit<FeedbackEntry, 'id' | 'createdAt'>) {
+  const res = await fetch('/api/feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(entry),
+  });
+  if (!res.ok) {
+    throw new Error('Failed to submit feedback');
+  }
+  return res.json();
+}
+
 export function getFeedbackStats() {
   const all = getFeedback();
   if (all.length === 0) {

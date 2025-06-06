@@ -39,7 +39,12 @@ import './utils/globalErrorHandler';
 import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
 import RootErrorBoundary from './components/RootErrorBoundary';
-import { GlobalSnackbarProvider, GlobalLoaderProvider, NotificationProvider, MessagingProvider } from './context';
+import {
+  GlobalSnackbarProvider,
+  AppLoaderProvider,
+  NotificationProvider,
+  MessagingProvider,
+} from './context';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
@@ -60,6 +65,8 @@ import { registerServiceWorker } from './serviceWorkerRegistration';
 import { enableDevToolsInStaging } from './utils/devtools';
 import './utils/checkDuplicateClassNames';
 import { checkEssentialEnvVars } from './utils/validateEnv';
+import { FeedbackProvider } from './context/FeedbackContext';
+import { FeedbackWidget } from './components/feedback/FeedbackWidget';
 
 enableDevToolsInStaging();
 
@@ -95,11 +102,12 @@ try {
       <RootErrorBoundary>
         <Provider store={store}>
           <GlobalSnackbarProvider>
-          <GlobalLoaderProvider>
+          <AppLoaderProvider>
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
               <WhitelabelProvider>
+                <FeedbackProvider>
                 <Router basename={process.env.PUBLIC_URL || '/'}>
                 <AuthProvider>
                   <MessagingProvider>
@@ -129,12 +137,14 @@ try {
                   </NotificationProvider>
                   </MessagingProvider>
                 </AuthProvider>
-              </Router>
+                </Router>
+                <FeedbackWidget />
+              </FeedbackProvider>
             </WhitelabelProvider>
           </QueryClientProvider>
         </HelmetProvider>
         </I18nextProvider>
-        </GlobalLoaderProvider>
+        </AppLoaderProvider>
         </GlobalSnackbarProvider>
       </Provider>
       </RootErrorBoundary>

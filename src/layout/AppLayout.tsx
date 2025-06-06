@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import { useAuth } from '@/hooks/useAuth';
 import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // Assuming path
 import { AppHeader } from "./AppHeader";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { Footer } from "@/components/Footer";
 import { SkipLink } from "@/components/SkipLink";
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
@@ -83,6 +84,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
         </>
       )}
       <AppHeader />
+      <ScrollToTop />
       {loading && <LoaderOverlay />}
       {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}
       <main id="main-content" className="flex-grow">

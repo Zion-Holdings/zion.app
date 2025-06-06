@@ -1,4 +1,8 @@
 describe('blog navigation', () => {
+  it('shows blog page header', () => {
+    cy.visit('/blog');
+    cy.get('h1').should('have.text', 'Blog');
+  });
   it('opens article from list', () => {
     cy.visit('/blog');
     cy.get('a').contains('Read more').first().click();
