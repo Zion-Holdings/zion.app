@@ -57,8 +57,13 @@ export function AppHeader() {
 
           <PointsBadge />
           {!user && (
-            <div className="ml-4">
-              <NavLink href="/login" className="text-sm font-medium text-foreground/70 hover:text-foreground" aria-label="Login" data-testid="login-link">
+            <div className="ml-4 relative z-10">
+              <NavLink
+                href="/login"
+                className="relative z-10 text-sm font-medium text-foreground/70 hover:text-foreground"
+                aria-label="Login"
+                data-testid="login-link"
+              >
                 Login
               </NavLink>
             </div>
