@@ -107,9 +107,13 @@ const App = () => {
                       key={route.path}
                       path={route.path}
                       element={
-                        <AuthGuard route={route}>
+                        route.requiresAuth ? (
+                          <AuthGuard route={route}>
+                            <PageTransition>{route.element}</PageTransition>
+                          </AuthGuard>
+                        ) : (
                           <PageTransition>{route.element}</PageTransition>
-                        </AuthGuard>
+                        )
                       }
                     />
                   ))}

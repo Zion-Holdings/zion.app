@@ -15,11 +15,16 @@ async function fetchProducts() {
   return res.json() as Promise<Product[]>;
 }
 
-export default function Marketplace() {
+export interface MarketplaceProps {
+  products?: Product[];
+}
+
+export default function Marketplace({ products: initialProducts = [] }: MarketplaceProps) {
   const navigate = useNavigate();
   const { data: products = [], isLoading, error } = useQuery({
     queryKey: ['products'],
     queryFn: fetchProducts,
+    initialData: initialProducts,
   });
 
   if (isLoading) {
