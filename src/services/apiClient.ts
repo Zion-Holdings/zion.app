@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { showError } from '@/utils/showToast';
+import { showApiError } from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
 import { captureException } from '@/utils/sentry';
 import axiosRetry from 'axios-retry';
@@ -13,9 +14,7 @@ axios.interceptors.response.use(
     if (error.response?.headers['content-type']?.includes('text/html')) {
       showError('html-error', 'Server returned HTML instead of JSON');
     }
-    const code = error.response?.status;
-    const msg = error.response?.data?.message || `Error ${code}`;
-    showError(`api-${code}`, msg);
+    showApiError(error);
     return Promise.reject(error);
   }
 );
