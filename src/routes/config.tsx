@@ -36,6 +36,9 @@ import StartupOSPage from '@/pages/StartupOS'; // Import the new page
 import GlobalMapPage from '@/pages/GlobalMap';
 import SummitPage from '@/pages/SummitPage';
 import OrgChartPage from '@/pages/OrgChart';
+import PrivacyVotePage from '@/pages/governance/privacy';
+import MobilePwa from '@/pages/MobilePwa';
+import FounderBackupVault from '@/pages/FounderBackupVault';
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
@@ -98,6 +101,8 @@ export const allRoutes: AppRouteObject[] = [
   { path: '/talent/*', element: <TalentRoutes /> },
   { path: '/admin/*', element: <AdminRoutes /> },
   { path: '/mobile/*', element: <MobileAppRoutes /> },
+  { path: '/mobile/pwa/*', element: <MobilePwa />, metaTitle: 'Zion Mobile PWA' },
+  { path: '/m/*', element: <Navigate to="/mobile/pwa" replace /> },
   { path: '/content/*', element: <ContentRoutes /> },
   { path: '/enterprise/*', element: <EnterpriseRoutes /> },
   {
@@ -112,6 +117,8 @@ export const allRoutes: AppRouteObject[] = [
   { path: '/developers/*', element: <DeveloperRoutes />, metaTitle: 'Developers - Zion' },
   { path: '/governance/*', element: <GovernanceRoutes />, metaTitle: 'Governance - Zion' },
   { path: '/dao/*', element: <GovernanceRoutes />, metaTitle: 'DAO - Zion' },
+  { path: '/governance/privacy', element: <PrivacyVotePage />, metaTitle: 'ZK Vote - Zion' },
+  { path: '/dao/zkvote', element: <PrivacyVotePage />, metaTitle: 'ZK Vote - Zion' },
   // Test routes
   { path: '/test-error-render', element: <ErrorTriggerComponent />, metaTitle: 'Test Error Render - Zion' },
   { path: '/test-error-mount', element: <ErrorTriggerComponent onMount={true} />, metaTitle: 'Test Error Mount - Zion' },
@@ -126,6 +133,12 @@ export const allRoutes: AppRouteObject[] = [
     path: '/founder-dashboard',
     element: <StartupOSPage />, // Reuses the same page component
     metaTitle: 'Founder Dashboard - Zion',
+    requiresAuth: true,
+  },
+  {
+    path: '/founder/backup',
+    element: <FounderBackupVault />,
+    metaTitle: 'Founder Backup Vault - Zion',
     requiresAuth: true,
   },
   {
