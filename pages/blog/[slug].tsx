@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { Helmet } from 'react-helmet-async';
 import { NextSeo } from '@/components/NextSeo';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import type { BlogPost } from '@/types/blog';
 
 const BlogPostPage: React.FC = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const router = useRouter();
+  const { slug } = router.query;
   const [post, setPost] = React.useState<BlogPost | null>(null);
   const [error, setError] = React.useState<string | null>(null);
 
