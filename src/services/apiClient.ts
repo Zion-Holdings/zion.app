@@ -8,6 +8,21 @@ import axiosRetry from 'axios-retry';
 axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';
 
 // Global interceptor for all axios instances
+function mapStatusMessage(status?: number, fallback = ''): string {
+  switch (status) {
+    case 400:
+      return 'Validation error';
+    case 401:
+      return 'Authentication required';
+    case 404:
+      return 'Not found';
+    case 500:
+      return 'Server error';
+    default:
+      return fallback;
+  }
+}
+
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -24,6 +39,13 @@ const apiClient = axios.create({
   baseURL: `${API_BASE}/api/v1/services`,
 });
 
+apiClient.interceptors.request.use((config) => {
+  return {
+    ...config,
+    headers: { ...(config.headers || {}), Accept: 'application/json' },
+  };
+});
+
 axiosRetry(apiClient, {
   retries: 3,
   retryCondition: (error) => {
@@ -38,10 +60,6 @@ apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
     const status = error.response?.status;
-
-    if (status && status >= 400) {
-      captureException(error);
-    }
 
     if (status === 401) {
       try {

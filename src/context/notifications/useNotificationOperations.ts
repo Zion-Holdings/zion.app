@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { Notification, FilterType, NotificationContextType } from './types';
+import axios from 'axios';
 
 export const useNotificationOperations = (userId?: string): NotificationContextType => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
@@ -18,10 +19,8 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
 
     setLoading(true);
     try {
-      const res = await fetch(`/api/notifications?userId=${userId}`);
-      if (!res.ok) throw new Error('Failed');
-      const data = await res.json();
-      setNotifications(data || []);
+      const res = await axios.get(`/api/notifications`, { params: { userId } });
+      setNotifications(res.data || []);
     } catch (err) {
       console.error('Error fetching notifications:', err);
     } finally {
@@ -33,11 +32,7 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
     if (!userId) return;
 
     try {
-      await fetch(`/api/notifications/${id}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ read: true })
-      });
+      await axios.patch(`/api/notifications/${id}`, { read: true });
       await fetchNotifications();
     } catch (err) {
       console.error('Error marking notification as read:', err);
@@ -52,11 +47,7 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
         notifications
           .filter(n => !n.read)
           .map(n =>
-            fetch(`/api/notifications/${n.id}`, {
-              method: 'PATCH',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ read: true })
-            })
+            axios.patch(`/api/notifications/${n.id}`, { read: true })
           )
       );
       await fetchNotifications();
@@ -69,7 +60,7 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
     if (!userId) return;
 
     try {
-      await fetch(`/api/notifications/${id}`, { method: 'DELETE' });
+      await axios.delete(`/api/notifications/${id}`);
       await fetchNotifications();
     } catch (err) {
       console.error('Error dismissing notification:', err);

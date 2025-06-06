@@ -71,7 +71,7 @@ describe('RegistrationForm', () => {
     // Wait for async operations to complete
     await vi.waitFor(() => {
       expect(global.fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/auth/register'),
+        expect.stringContaining('/auth/signup'),
         expect.objectContaining({ method: 'POST' })
       );
     });

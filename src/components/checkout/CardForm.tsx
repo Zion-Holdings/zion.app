@@ -29,21 +29,33 @@ export default function CardForm({ amount, onSuccess }: Props) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to create payment');
 
-      const result = await stripe.confirmCardPayment(data.clientSecret, {
-        payment_method: {
-          card: elements.getElement(CardElement)!,
-          billing_details: {
-            email: (user && typeof user !== 'boolean' ? user.email : undefined),
-            name:
-              user && typeof user !== 'boolean'
-                ? user.displayName || user.name
-                : undefined,
+      const result = await stripe.confirmCardPayment(
+        data.clientSecret,
+        {
+          payment_method: {
+            card: elements.getElement(CardElement)!,
+            billing_details: {
+              email: (user && typeof user !== 'boolean' ? user.email : undefined),
+              name:
+                user && typeof user !== 'boolean'
+                  ? user.displayName || user.name
+                  : undefined,
+            },
           },
         },
-      });
+        { handleActions: false }
+      );
 
       if (result.error) throw new Error(result.error.message);
-      if (result.paymentIntent?.status === 'succeeded') {
+
+      let intent = result.paymentIntent;
+      if (intent && intent.status === 'requires_action') {
+        const confirmRes = await stripe.confirmCardPayment(data.clientSecret);
+        if (confirmRes.error) throw new Error(confirmRes.error.message);
+        intent = confirmRes.paymentIntent;
+      }
+
+      if (intent?.status === 'succeeded') {
         if (user && typeof user !== 'boolean' && user.id) { // Applied safer check here
           await fetch('/api/points/add', {
             method: 'POST',

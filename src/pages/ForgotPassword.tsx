@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { toast } from '@/hooks/use-toast'
+import axios from 'axios'
 
 const API_URL = import.meta.env.VITE_API_URL || ''
 
@@ -13,11 +14,7 @@ export default function ForgotPassword() {
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await fetch(`${API_URL}/auth/forgot`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
-      })
+      const res = await axios.post(`${API_URL}/auth/forgot`, { email })
       if (res.status === 200) {
         toast.success('Email sent')
       }

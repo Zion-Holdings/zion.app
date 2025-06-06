@@ -81,6 +81,15 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
 
         <div className="flex items-center gap-2">
           <PointsBadge />
+          {!user && !hideLogin && (
+            <Link
+              to="/login"
+              className="text-sm text-white hover:text-zion-cyan"
+              aria-label="Login"
+            >
+              Login
+            </Link>
+          )}
           <LanguageSelector />
           {user && (
             <span

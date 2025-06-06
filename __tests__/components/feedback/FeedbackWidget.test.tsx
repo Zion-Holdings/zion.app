@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import { FeedbackProvider } from '@/context/FeedbackContext';
 import { FeedbackWidget } from '@/components/feedback/FeedbackWidget';
+jest.mock('@/hooks/useAuth', () => ({ useAuth: () => ({ user: null }) }));
 
 function TestRoutes() {
   const navigate = useNavigate();
