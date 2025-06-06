@@ -80,7 +80,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
           value={text}
           onChange={e => setText(e.target.value)}
           rows={2}
-          className="w-full p-2 text-black rounded mb-2 bg-zion-blue-light"
+          className="w-full p-2 text-black dark:text-white rounded mb-2 bg-zion-blue-light dark:bg-zion-blue-dark"
         />
         <Button className="w-full" onClick={handleSend} disabled={!text.trim()}>
           Send
