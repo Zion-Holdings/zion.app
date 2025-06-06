@@ -3,7 +3,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { safeStorage } from '@/utils/safeStorage';
 import { LoginContent } from '@/components/auth/login';
-import ErrorBoundary from '@/components/GlobalErrorBoundary';
+import { ErrorBoundary } from 'react-error-boundary';
+import LoginErrorFallback from '@/components/auth/login/LoginErrorFallback';
 import { useCart } from '@/context/CartContext';
 import { SAMPLE_EQUIPMENT } from './EquipmentDetail';
 import { toast } from '@/hooks/use-toast';
@@ -37,15 +38,7 @@ export default function Login() {
   // Render LoginContent if not authenticated and auth is not loading
   if (!isAuthenticated && !isLoading) {
     return (
-      <ErrorBoundary fallbackRender={(error) => (
-        <div style={{ padding: '20px', textAlign: 'center', color: 'red' }}>
-          <h1>Login Error</h1>
-          <p>Sorry, the login form could not be displayed due to an error.</p>
-          {process.env.NODE_ENV === 'development' && (
-            <pre>{error.stack}</pre>
-          )}
-        </div>
-      )}>
+      <ErrorBoundary FallbackComponent={LoginErrorFallback}>
         <LoginContent />
       </ErrorBoundary>
     );

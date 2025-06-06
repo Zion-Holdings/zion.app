@@ -45,7 +45,9 @@ import NewServicesPage from './pages/NewServicesPage';
 import Sitemap from './pages/Sitemap';
 import PartnersPage from './pages/Partners';
 import Help from './pages/Help';
-import Login from './pages/Login';
+import { ErrorBoundary } from 'react-error-boundary';
+import { LoginForm } from './components/auth/login';
+import LoginErrorFallback from './components/auth/login/LoginErrorFallback';
 import Signup from './pages/Signup';
 import SimpleSignup from './pages/SimpleSignup';
 import Dashboard from './pages/Dashboard';
@@ -88,7 +90,7 @@ import PrivateRoute from './components/PrivateRoute';
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/about', element: <AboutPage /> },
-  { path: '/login', element: <Login /> },
+  { path: '/login', element: <ErrorBoundary FallbackComponent={LoginErrorFallback}><LoginForm /></ErrorBoundary> },
   { path: '/register', element: <SimpleSignup /> },
   { path: '/dashboard', element: <PrivateRoute><Dashboard /></PrivateRoute> },
   { path: '/partners', element: <PartnersPage /> },
