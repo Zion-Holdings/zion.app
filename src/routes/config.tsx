@@ -1,7 +1,8 @@
 import React, { lazy } from 'react';
 import { RouteObject } from 'react-router';
+import { Navigate } from 'react-router-dom';
 
-export interface AppRouteObject extends RouteObject {
+export type AppRouteObject = RouteObject & {
   metaTitle?: string;
   requiresAuth?: boolean;
 }

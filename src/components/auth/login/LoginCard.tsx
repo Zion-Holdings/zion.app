@@ -13,7 +13,7 @@ export function LoginCard() {
         <div className="mt-2 text-sm text-zion-slate-light flex justify-center space-x-1">
           <span>Don't have an account?</span>
           <Link
-            to="/register"
+            to="/signup"
             className="font-medium text-zion-cyan hover:text-zion-cyan-light"
             style={{ color: "#0af" }}
           >

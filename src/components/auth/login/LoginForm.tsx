@@ -178,6 +178,11 @@ export function LoginForm() {
         >
           {isLoading || isSubmitting ? "Logging in..." : "Login"}
         </Button>
+        <p className="text-sm text-center mt-4">
+          <Link to="/register" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
+            Create account
+          </Link>
+        </p>
       </form>
     </Form>
   );

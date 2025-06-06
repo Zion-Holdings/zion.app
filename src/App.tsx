@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useLocation, matchPath } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { matchPath } from 'react-router';
 import { AnimatePresence } from 'framer-motion';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import GlobalErrorBoundary
 import { captureException } from './utils/sentry'; // This might be redundant if GlobalErrorBoundary handles all Sentry logging
