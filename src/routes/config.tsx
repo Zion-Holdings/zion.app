@@ -1,5 +1,6 @@
 import React, { lazy } from 'react';
-import type { RouteObject } from 'react-router';
+import { RouteObject } from 'react-router';
+import { Navigate } from 'react-router-dom';
 
 export type AppRouteObject = RouteObject & {
   metaTitle?: string;
@@ -50,7 +51,8 @@ export const primaryRoutes: AppRouteObject[] = [
 export const allRoutes: AppRouteObject[] = [
   ...primaryRoutes,
   { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
-  { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },
+  { path: '/signup', element: <Signup />, metaTitle: 'Sign Up - Zion' },
+  { path: '/register', element: <Navigate to="/signup" replace />, metaTitle: 'Sign Up - Zion' },
   {
     path: '/dashboard',
     element: (
