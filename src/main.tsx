@@ -100,13 +100,13 @@ try {
       />
       <RootErrorBoundary>
         <Provider store={store}>
+        <Router basename={process.env.PUBLIC_URL || '/'}>
           <AppLoaderProvider>
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
               <WhitelabelProvider>
                 <FeedbackProvider>
-                <Router basename={process.env.PUBLIC_URL || '/'}>
                 <AuthProvider>
                   <MessagingProvider>
                   <NotificationProvider>
@@ -135,7 +135,6 @@ try {
                   </NotificationProvider>
                   </MessagingProvider>
                 </AuthProvider>
-                </Router>
                 <FeedbackWidget />
               </FeedbackProvider>
             </WhitelabelProvider>
@@ -143,6 +142,7 @@ try {
         </HelmetProvider>
         </I18nextProvider>
         </AppLoaderProvider>
+        </Router>
       </Provider>
       </RootErrorBoundary>
       {/* Removed duplicate main marker */}
