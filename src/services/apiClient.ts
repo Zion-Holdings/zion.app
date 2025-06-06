@@ -7,6 +7,21 @@ import axiosRetry from 'axios-retry';
 axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';
 
 // Global interceptor for all axios instances
+function mapStatusMessage(status?: number, fallback = ''): string {
+  switch (status) {
+    case 400:
+      return 'Validation error';
+    case 401:
+      return 'Authentication required';
+    case 404:
+      return 'Not found';
+    case 500:
+      return 'Server error';
+    default:
+      return fallback;
+  }
+}
+
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -14,7 +29,11 @@ axios.interceptors.response.use(
       showError('html-error', 'Server returned HTML instead of JSON');
     }
     const code = error.response?.status;
-    const msg = error.response?.data?.message || `Error ${code}`;
+    const custom = error.response?.data?.message;
+    const msg = custom || mapStatusMessage(code, `Error ${code}`);
+    if (code && code >= 400) {
+      captureException(error, { extra: { endpoint: error.config?.url } });
+    }
     showError(`api-${code}`, msg);
     return Promise.reject(error);
   }
@@ -23,6 +42,13 @@ axios.interceptors.response.use(
 const API_BASE = axios.defaults.baseURL;
 const apiClient = axios.create({
   baseURL: `${API_BASE}/api/v1/services`,
+});
+
+apiClient.interceptors.request.use((config) => {
+  return {
+    ...config,
+    headers: { ...(config.headers || {}), Accept: 'application/json' },
+  };
 });
 
 axiosRetry(apiClient, {
@@ -39,10 +65,6 @@ apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
     const status = error.response?.status;
-
-    if (status && status >= 400) {
-      captureException(error);
-    }
 
     if (status === 401) {
       try {

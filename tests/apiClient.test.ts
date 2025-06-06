@@ -26,8 +26,14 @@ describe('apiClient interceptor', () => {
     await expect(globalHandler(error)).rejects.toBe(error);
     expect(supabase.auth.signOut).toHaveBeenCalled();
     expect(redirect).toHaveBeenCalledWith('/login');
-    expect(toastUtils.showError).toHaveBeenCalledWith('api-401', 'Bad');
-    expect(sentry.captureException).toHaveBeenCalledWith(error);
+    expect(toastUtils.showError).toHaveBeenCalledWith(
+      'api-401',
+      'Authentication required'
+    );
+    expect(sentry.captureException).toHaveBeenCalledWith(
+      error,
+      expect.anything()
+    );
     redirect.mockRestore();
   });
 
@@ -38,8 +44,11 @@ describe('apiClient interceptor', () => {
     const globalHandler = axios.interceptors.response.handlers[0].rejected;
     await expect(instanceHandler(error)).rejects.toBe(error);
     await expect(globalHandler(error)).rejects.toBe(error);
-    expect(toastUtils.showError).toHaveBeenCalledWith('api-500', 'Error 500');
-    expect(sentry.captureException).toHaveBeenCalledWith(error);
+    expect(toastUtils.showError).toHaveBeenCalledWith('api-500', 'Server error');
+    expect(sentry.captureException).toHaveBeenCalledWith(
+      error,
+      expect.anything()
+    );
   });
 });
 
