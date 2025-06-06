@@ -255,8 +255,8 @@ export function DynamicListingPage({
                         All Brands
                       </SelectItem>
                       {brandOptions.map((b) => (
-                        <SelectItem key={b} value={b} className="text-white">
-                          {b}
+                        <SelectItem key={b || 'unknown-brand'} value={b || ''} className="text-white">
+                          {b || 'N/A'}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -298,8 +298,8 @@ export function DynamicListingPage({
                         All
                       </SelectItem>
                       {availabilityOptions.map((a) => (
-                        <SelectItem key={a} value={a} className="text-white">
-                          {a}
+                        <SelectItem key={a || 'unknown-availability'} value={a || ''} className="text-white">
+                          {a || 'N/A'}
                         </SelectItem>
                       ))}
                     </SelectContent>

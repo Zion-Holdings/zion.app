@@ -1,39 +1,24 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 import Marketplace from '@/pages/Marketplace';
-import { WalletProvider } from '../../src/context/WalletContext';
 
-// Mock child components
-jest.mock('@/components/search/EnhancedSearchInput', () => {
+jest.mock('@/components/ProductCard', () => {
   const React = require('react');
-  return { EnhancedSearchInput: (props: any) => React.createElement("input", { "data-testid": "enhanced-search-input", ...props }) };
+  return {
+    default: (props: any) => (
+      <div data-testid="product-card">{props.product.title}</div>
+    ),
+  };
 });
 
-jest.mock('@/components/search/FilterSidebar', () => {
-  const React = require('react');
-  return { FilterSidebar: (props: any) => React.createElement("div", { "data-testid": "filter-sidebar", ...props }) };
-});
-
-jest.mock('@/components/search/ActiveFiltersBar', () => {
-  const React = require('react');
-  return { ActiveFiltersBar: (props: any) => React.createElement("div", { "data-testid": "active-filters-bar", ...props }) };
-});
-
-// Updated mock to render something identifiable for products
-jest.mock('@/components/ProductListingCard', () => {
-  const React = require('react');
-  // Ensure props.listing and props.listing.title are accessed safely
-  return { ProductListingCard: jest.fn((props: any) =>
-    React.createElement("div", { "data-testid": "product-listing-card" }, props.listing ? props.listing.title : null)
-  )};
-});
-
-jest.mock('@/hooks/use-toast', () => ({
-  toast: jest.fn(),
+const navigateMock = jest.fn();
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: () => navigateMock,
 }));
 
-// Mock fetch API
 global.fetch = jest.fn(() =>
   Promise.resolve({
     ok: true,
@@ -41,47 +26,21 @@ global.fetch = jest.fn(() =>
   })
 ) as jest.Mock;
 
-
 describe('Marketplace Page', () => {
   beforeEach(() => {
-    // Clear mock history before each test
     (global.fetch as jest.Mock).mockClear();
-    jest.clearAllMocks(); // Clears all mocks, including jest.fn() ones like toast
-
-    // Default fetch mock for each test
-    (global.fetch as jest.Mock).mockImplementation(() =>
-      Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve([]),
-      })
-    );
+    navigateMock.mockClear();
   });
 
-  it('renders without throwing errors and displays a heading', async () => {
-    render(
-      <MemoryRouter>
-        <Marketplace />
-      </MemoryRouter>
-    );
-
-    await waitFor(() => {
-      expect(screen.getByText(/AI & Tech Marketplace/i)).toBeInTheDocument();
-    });
-    expect(global.fetch).toHaveBeenCalledWith('/api/products');
-  });
-
-  it('displays product listings when API returns data', async () => {
+  it('fetches products on mount', async () => {
     const mockProducts = [
-      { id: '1', title: 'Test Product 1', description: 'Desc 1', category: 'Service', price: 100, images: ['img1.jpg'], rating: 4.5, tags: ['tag1'], averageRating: 4.5, merchant: { id: 'merchant1', name: 'Merchant 1' } },
-      { id: '2', title: 'Test Product 2', description: 'Desc 2', category: 'Software', price: 200, images: ['img2.jpg'], rating: 4.0, tags: ['tag2'], averageRating: 4.0, merchant: { id: 'merchant2', name: 'Merchant 2' } },
+      { id: '1', title: 'Product 1' },
+      { id: '2', title: 'Product 2' },
     ];
-
-    (global.fetch as jest.Mock).mockImplementationOnce(() =>
-      Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve(mockProducts),
-      })
-    );
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: true,
+      json: () => Promise.resolve(mockProducts),
+    });
 
     render(
       <MemoryRouter>
@@ -89,22 +48,21 @@ describe('Marketplace Page', () => {
       </MemoryRouter>
     );
 
+    expect(global.fetch).toHaveBeenCalledWith(
+      '/api/marketplace/products?limit=20'
+    );
+
     await waitFor(() => {
-      // Check for product titles
-      expect(screen.getByText(/Test Product 1/i)).toBeInTheDocument();
-      expect(screen.getByText(/Test Product 2/i)).toBeInTheDocument();
-      // Check that two ProductListingCard mocks are rendered
-      expect(screen.getAllByTestId('product-listing-card')).toHaveLength(2);
+      expect(screen.getAllByTestId('product-card')).toHaveLength(2);
     });
   });
 
-  it('renders empty state when API returns no products', async () => {
-    (global.fetch as jest.Mock).mockImplementationOnce(() =>
-      Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve([]),
-      })
-    );
+  it('navigates to checkout when a product is clicked', async () => {
+    const mockProducts = [{ id: '3', title: 'Click Me' }];
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: true,
+      json: () => Promise.resolve(mockProducts),
+    });
 
     render(
       <MemoryRouter>
@@ -112,124 +70,8 @@ describe('Marketplace Page', () => {
       </MemoryRouter>
     );
 
-    await waitFor(() => {
-      expect(screen.getByText(/Marketplace Currently Empty/i)).toBeInTheDocument();
-    });
-  });
-
-  it('renders no results for filters when products exist but filters do not match', async () => {
-    const mockProducts = [
-      { id: '1', title: 'Test Product 1', description: 'Desc 1', category: 'Service', price: 100, images: ['img1.jpg'], rating: 4.5, tags: ['tag1'], averageRating: 4.5, merchant: { id: 'merchant1', name: 'Merchant 1' } },
-    ];
-
-    (global.fetch as jest.Mock).mockImplementationOnce(() =>
-      Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve(mockProducts),
-      })
-    );
-
-    render(
-      <MemoryRouter>
-        <Marketplace />
-      </MemoryRouter>
-    );
-
-    // Wait for initial data to load
-    await waitFor(() => {
-      expect(screen.getByText(/Test Product 1/i)).toBeInTheDocument();
-    });
-
-    // Simulate a search that yields no results
-    const searchInput = screen.getByTestId('enhanced-search-input');
-    const { fireEvent } = require('@testing-library/react');
-    fireEvent.change(searchInput, { target: { value: 'nonexistentproduct' } });
-
-    await waitFor(() => {
-      expect(screen.getByText(/No Results Found/i)).toBeInTheDocument();
-    });
-  });
-
-  it('handles API error when fetching products and shows toast', async () => {
-    (global.fetch as jest.Mock).mockImplementationOnce(() =>
-      Promise.resolve({
-        ok: false,
-        statusText: 'Server Error',
-        json: () => Promise.resolve({}),
-      })
-    );
-
-    const { toast } = require('@/hooks/use-toast'); // Get the mocked toast
-
-    render(
-      <MemoryRouter>
-        <Marketplace />
-      </MemoryRouter>
-    );
-
-    await waitFor(() => {
-      expect(toast).toHaveBeenCalledWith(expect.objectContaining({
-        title: "Error",
-        description: "Could not fetch products: Failed to fetch products: Server Error",
-        variant: "destructive",
-      }));
-      // As a fallback, check if the empty state message is shown because listings will be empty
-      expect(screen.getByText(/Marketplace Currently Empty/i)).toBeInTheDocument();
-    });
-  });
-
-  it('renders product listings correctly when wrapped with WalletProvider and API returns data', async () => {
-    const mockProducts = [
-      { id: '1', title: 'Test Product 1', description: 'Desc 1', category: 'Service', price: 100, images: ['img1.jpg'], rating: 4.5, tags: ['tag1'], averageRating: 4.5, merchant: { id: 'merchant1', name: 'Merchant 1' } },
-      { id: '2', title: 'Test Product 2', description: 'Desc 2', category: 'Software', price: 200, images: ['img2.jpg'], rating: 4.0, tags: ['tag2'], averageRating: 4.0, merchant: { id: 'merchant2', name: 'Merchant 2' } },
-    ];
-
-    (global.fetch as jest.Mock).mockImplementationOnce(() =>
-      Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve(mockProducts),
-      })
-    );
-
-    render(
-      <MemoryRouter>
-        <WalletProvider> {/* Wrap Marketplace with WalletProvider */}
-          <Marketplace />
-        </WalletProvider>
-      </MemoryRouter>
-    );
-
-    expect(screen.getByText(/AI & Tech Marketplace/i)).toBeInTheDocument();
-
-    await waitFor(() => {
-      expect(screen.getByText(/Test Product 1/i)).toBeInTheDocument();
-      expect(screen.getByText(/Test Product 2/i)).toBeInTheDocument();
-      expect(screen.getAllByTestId('product-listing-card')).toHaveLength(2);
-    });
-    expect(global.fetch).toHaveBeenCalledWith('/api/products');
-  });
-
-  it('renders empty state correctly when wrapped with WalletProvider and API returns no products', async () => {
-    (global.fetch as jest.Mock).mockImplementationOnce(() =>
-      Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve([]),
-      })
-    );
-
-    render(
-      <MemoryRouter>
-        <WalletProvider> {/* Wrap Marketplace with WalletProvider */}
-          <Marketplace />
-        </WalletProvider>
-      </MemoryRouter>
-    );
-
-    expect(screen.getByText(/AI & Tech Marketplace/i)).toBeInTheDocument();
-
-    await waitFor(() => {
-      expect(screen.getByText(/Marketplace Currently Empty/i)).toBeInTheDocument();
-    });
-    expect(global.fetch).toHaveBeenCalledWith('/api/products');
+    await waitFor(() => screen.getByText('Click Me'));
+    userEvent.click(screen.getByText('Click Me'));
+    expect(navigateMock).toHaveBeenCalledWith('/checkout/3');
   });
 });

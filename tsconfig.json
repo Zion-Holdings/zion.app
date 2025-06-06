@@ -12,7 +12,6 @@
       "@/components/*": ["./src/components/*"],
       "axios": ["./src/lib/axios.ts"]
     },
-    "types": ["vite/client", "react", "react-router-dom", "socket.io-client", "vitest/globals"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -30,6 +29,10 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/types"],
+  "include": [
+    "src",
+    "src/types",
+    "pages"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

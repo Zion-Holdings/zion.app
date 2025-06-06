@@ -19,15 +19,15 @@ describe('feedbackService', () => {
   });
 
   it('saves feedback to storage', () => {
-    saveFeedback({ rating: 5, comment: 'Great', page: '/' });
+    saveFeedback({ rating: 5, comments: 'Great', pageUrl: '/' });
     const data = JSON.parse(mockStorage.setItem.mock.calls[0][1]) as any[];
     expect(data.length).toBe(1);
     expect(data[0].rating).toBe(5);
   });
 
   it('calculates stats correctly', () => {
-    saveFeedback({ rating: 4, comment: 'Good', page: '/foo' });
-    saveFeedback({ rating: 2, comment: 'Bad', page: '/bar' });
+    saveFeedback({ rating: 4, comments: 'Good', pageUrl: '/foo' });
+    saveFeedback({ rating: 2, comments: 'Bad', pageUrl: '/bar' });
     const stats = getFeedbackStats();
     expect(stats.count).toBe(2);
     expect(stats.averageRating).toBeCloseTo(3);

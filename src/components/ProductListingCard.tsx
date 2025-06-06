@@ -6,6 +6,9 @@ import { ProductListing } from "@/types/listings";
 import { DollarSign } from "lucide-react";
 import { RatingStars } from "@/components/RatingStars";
 import { FavoriteButton } from "@/components/FavoriteButton";
+import { useDispatch } from 'react-redux';
+import type { AppDispatch } from '@/store';
+import { addItem } from '@/store/cartSlice';
 
 interface ProductListingCardProps {
   listing: ProductListing;
@@ -49,18 +52,15 @@ const ProductListingCardComponent = ({
     navigate(`${detailBasePath}/${listing.id}`);
   };
 
-  const addToCart = async () => {
+  const dispatch = useDispatch<AppDispatch>();
+
+  const addToCart = () => {
     setLoading(true);
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      navigate(`${detailBasePath}/${listing.id}`);
-    } catch (error) {
-      console.error("Failed to add to cart:", error);
-      // Handle error (e.g., show a notification to the user)
-    } finally {
-      setLoading(false);
-    }
+    dispatch(
+      addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 })
+    );
+    setLoading(false);
+    navigate('/cart');
   };
   
   // Handle request quote button click

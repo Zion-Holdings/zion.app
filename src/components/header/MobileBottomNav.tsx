@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { useFavorites } from "@/hooks/useFavorites";
+import { useWishlist } from "@/hooks/useWishlist";
 import { useCart } from '@/context/CartContext';
 import {
   Home,
@@ -23,7 +23,8 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
   const location = useLocation();
   const { user } = useAuth();
   const isAuthenticated = !!user;
-  const { count: favoritesCount } = useFavorites();
+  const { items } = useWishlist();
+  const favoritesCount = items.length;
   let cartCount = 0;
   try {
     const { items } = useCart(); // Attempt to use the cart

@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+@import './styles/navbar.css';
+@import './styles/responsive.css';
+
+@import './styles/OnsiteForm.css';
 /* CSS Custom Properties for Theming */
 :root {
   --background: hsl(0 0% 100%);
@@ -74,11 +79,22 @@
   color: var(--foreground);
 }
 
+/* Global layout fixes */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
 
-@import './styles/navbar.css';
-@import './styles/responsive.css';
+
 
 @tailwind base;
 @tailwind components;
@@ -219,16 +235,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: theme('colors.card');
+    background: theme('colors.card.DEFAULT');
   }
 
   ::-webkit-scrollbar-thumb {
-    background: theme('colors.secondary');
+    background: theme('colors.secondary.DEFAULT');
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: theme('colors.accent');
+    background: theme('colors.accent.DEFAULT');
   }
 
   /* Smooth scrolling */
@@ -309,3 +325,7 @@
     }
   }
 }
+
+.request-btn { background:#00bcd4;color:#fff; }
+.request-textarea { color:#000; }
+.request-textarea::placeholder { color:#777; }

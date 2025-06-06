@@ -1,4 +1,12 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+  useRef,
+} from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 export interface GlobalLoaderContextType {
@@ -6,6 +14,8 @@ export interface GlobalLoaderContextType {
   setLoading: (value: boolean) => void;
   error: any;
   setError: (error: any) => void;
+  showLoader: () => void;
+  hideLoader: () => void;
 }
 
 const defaultState: GlobalLoaderContextType = {
@@ -13,56 +23,79 @@ const defaultState: GlobalLoaderContextType = {
   setLoading: () => {},
   error: null,
   setError: () => {},
+  showLoader: () => {},
+  hideLoader: () => {},
 };
 
 const GlobalLoaderContext = createContext<GlobalLoaderContextType>(defaultState);
 
 export const useGlobalLoader = () => useContext(GlobalLoaderContext);
 
-export function GlobalLoaderProvider({ children }: { children: ReactNode }) {
+export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<any>(null);
+  const location = useLocation();
+  const timeoutRef = useRef<NodeJS.Timeout>();
+
+  const showLoader = () => setLoading(true);
+  const hideLoader = () => setLoading(false);
 
   useEffect(() => {
-    axios.interceptors.response.use(
-      (response) => {
-        setLoading(false);
-        return response;
-      },
-      (err) => {
-        setLoading(false);
-        setError(err);
-        return Promise.reject(err);
-      }
-    );
+    const onRequest = (config: any) => {
+      showLoader();
+      return config;
+    };
+    const onResponse = (response: any) => {
+      hideLoader();
+      return response;
+    };
+    const onError = (err: any) => {
+      hideLoader();
+      setError(err);
+      return Promise.reject(err);
+    };
 
-    // Start the loader when a request is initiated by overriding the HTTP helpers
-    const originalGet = axios.get;
-    const originalPost = axios.post;
+    const reqInterceptor = (axios.interceptors as any).request.use(onRequest, onError);
+    const resInterceptor = axios.interceptors.response.use(onResponse, onError);
 
-    axios.get = (async (
-      ...args: Parameters<typeof originalGet>
-    ): ReturnType<typeof originalGet> => {
-      setLoading(true);
-      return originalGet(...args);
-    }) as typeof axios.get;
-
-    axios.post = (async (
-      ...args: Parameters<typeof originalPost>
-    ): ReturnType<typeof originalPost> => {
-      setLoading(true);
-      return originalPost(...args);
-    }) as typeof axios.post;
+    const originalCreate = axios.create;
+    axios.create = (...args: Parameters<typeof originalCreate>) => {
+      const instance = originalCreate(...args);
+      (instance.interceptors as any).request.use(onRequest, onError);
+      instance.interceptors.response.use(onResponse, onError);
+      return instance;
+    };
 
     return () => {
-      axios.get = originalGet;
-      axios.post = originalPost;
+      ((axios.interceptors as any).request as any).eject(reqInterceptor);
+      (axios.interceptors.response as any).eject(resInterceptor);
+      axios.create = originalCreate;
     };
   }, []);
 
+  // Hide loader when the route changes (routeChangeComplete analogue)
+  useEffect(() => {
+    hideLoader();
+  }, [location.pathname]);
+
+  // Auto-dismiss loader after 15 seconds
+  useEffect(() => {
+    if (loading) {
+      timeoutRef.current = setTimeout(hideLoader, 15000);
+    }
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [loading]);
+
   return (
-    <GlobalLoaderContext.Provider value={{ loading, setLoading, error, setError }}>
+    <GlobalLoaderContext.Provider
+      value={{ loading, setLoading, error, setError, showLoader, hideLoader }}
+    >
       {children}
     </GlobalLoaderContext.Provider>
   );
 }
+
+// Backwards compatibility
+export { AppLoaderProvider as GlobalLoaderProvider };

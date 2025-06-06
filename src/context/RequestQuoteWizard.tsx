@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
+import axios from 'axios';
 
 export type WizardStep = "Services" | "Details" | "Success";
 
@@ -53,10 +54,9 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
 
   const submitQuote = async (message: string) => {
     if (!selectedService) return;
-    await fetch("/api/quotes", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ service_id: selectedService, user_message: message }),
+    await axios.post('/api/quotes', {
+      service_id: selectedService,
+      user_message: message,
     });
     toast.success("Quote request submitted");
     navigate("/dashboard/quotes");

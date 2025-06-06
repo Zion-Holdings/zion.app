@@ -24,16 +24,10 @@ async function handler(req, res) {
     return;
   }
 
-  const {
-    priceId,
-    quantity = 1,
-    customer_email,
-    successUrl,
-    cancelUrl,
-  } = req.body || {};
-  if (!priceId) {
+  const { cartItems = [], customer_email } = req.body || {};
+  if (!Array.isArray(cartItems) || cartItems.length === 0) {
     res.statusCode = 400;
-    res.json({ error: 'Missing priceId' });
+    res.json({ error: 'Missing cartItems' });
     return;
   }
 
@@ -49,17 +43,42 @@ async function handler(req, res) {
       apiVersion: '2023-10-16',
     });
 
+    const line_items = cartItems.map((item) => {
+      if (item.priceId) {
+        return { price: item.priceId, quantity: item.quantity || 1 };
+      }
+      return {
+        price_data: {
+          currency: 'usd',
+          unit_amount: Math.round((item.price || 0) * 100),
+          product_data: { name: item.title || item.name },
+        },
+        quantity: item.quantity || 1,
+      };
+    });
+    const orderId = `ord_${Date.now()}`;
     const session = await stripe.checkout.sessions.create({
-      line_items: [{ price: priceId, quantity }],
+      line_items,
       mode: 'payment',
       customer_email,
-      success_url:
-        successUrl || `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: cancelUrl || `${req.headers.origin}/cancel`,
+      success_url: `${req.headers.origin}/orders/${orderId}`,
+      cancel_url: `${req.headers.origin}/cancel`,
+      metadata: { orderId },
     });
 
+    // Save order with pending status
+    const fs = await import('fs');
+    const path = await import('path');
+    const file = path.join(process.cwd(), 'data', 'orders.json');
+    let orders = [];
+    try {
+      orders = JSON.parse(fs.readFileSync(file, 'utf8'));
+    } catch {}
+    orders.push({ id: orderId, items: cartItems, status: 'pending' });
+    fs.writeFileSync(file, JSON.stringify(orders, null, 2));
+
     res.statusCode = 200;
-    res.json({ sessionId: session.id });
+    res.json({ sessionId: session.id, orderId });
   } catch (err) {
     console.error('Create checkout session error:', err);
     res.statusCode = 500;

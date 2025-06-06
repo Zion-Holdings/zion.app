@@ -121,7 +121,7 @@ cat > offline.html << 'EOF'
     </div>
     
     <p>
-      <a href="#" class="button" onclick="checkOnlineStatus()">Check Online Status</a>
+      <a href="javascript:void(0)" class="button" onclick="checkOnlineStatus()">Check Online Status</a>
     </p>
     
     <div class="info">
@@ -146,10 +146,103 @@ cat > offline.html << 'EOF'
 </html>
 EOF
 
+cat > debug-logs.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zion Debug Log Viewer</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
+    h1 { margin-bottom: 10px; }
+    pre { background: #eee; padding: 1rem; overflow-x: auto; }
+    .log-item { margin-bottom: 2rem; border-left: 4px solid #444; padding-left: 1rem; }
+    .timestamp { font-size: 0.9em; color: #666; }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: #2d7dff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Zion App Offline Debug Logs</h1>
+  <button class="btn" onclick="downloadLogs()">⬇️ Download Logs as JSON</button>
+  <button class="btn" onclick="clearLogs()">🗑️ Clear Logs</button>
+  <input type="text" id="filter-input" placeholder="Filter logs by keyword..." style="padding: 0.5rem; margin-bottom: 1rem; width: 100%;" oninput="renderLogs(this.value.toLowerCase())">
+  <div id="log-output"></div>
+
+  <script>
+    const logs = JSON.parse(localStorage.getItem('zion-logs') || '[]');
+    const container = document.getElementById('log-output');
+
+    function renderLogs(filter = '') {
+      container.innerHTML = '';
+      logs
+        .filter(({ message }) => message.toLowerCase().includes(filter))
+        .forEach(({ timestamp, message, data }, i) => {
+          const div = document.createElement('div');
+          div.className = 'log-item';
+          div.innerHTML = `
+            <div class="timestamp">#${i + 1} — ${new Date(timestamp).toLocaleString()}</div>
+            <h3>${message}</h3>
+            <pre>${JSON.stringify(data, null, 2)}</pre>
+          `;
+          container.appendChild(div);
+        });
+
+      if (!container.innerHTML) {
+        container.innerHTML = '<p>No logs match this filter.</p>';
+      }
+    }
+
+    if (!logs.length) {
+      container.innerHTML = '<p>No logs found in localStorage.</p>';
+    } else {
+      renderLogs();
+    }
+
+    logs.forEach(({ timestamp, message, data }, i) => {
+      const div = document.createElement('div');
+      div.className = 'log-item';
+      div.innerHTML = `
+        <div class="timestamp">#${i + 1} — ${new Date(timestamp).toLocaleString()}</div>
+        <h3>${message}</h3>
+        <pre>${JSON.stringify(data, null, 2)}</pre>
+      `;
+      container.appendChild(div);
+    });
+
+  function downloadLogs() {
+    const blob = new Blob([JSON.stringify(logs, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `zion-logs-${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function clearLogs() {
+    if (confirm('Are you sure you want to delete all debug logs?')) {
+      localStorage.removeItem('zion-logs');
+      location.reload();
+    }
+  }
+  </script>
+</body>
+</html>
+EOF
+
 echo "Type declarations have been set up."
 
 # Create a simple server for offline development
-cat > offline-dev.js << 'EOF'
+cat > offline-dev.cjs << 'EOF'
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -273,7 +366,7 @@ This will install all required dependencies and start the normal development ser
 
 - `src/types/offline-shims.d.ts` - TypeScript declarations for libraries
 - `offline.html` - Simple HTML page for the offline server
-- `offline-dev.js` - Node.js server script for offline mode
+- `offline-dev.cjs` - Node.js server script for offline mode
 - `tsconfig.offline.json` - Modified TypeScript config for offline development
 - `OFFLINE-DEV-README.md` - This documentation file
 
@@ -281,4 +374,4 @@ These files will be automatically cleaned up when you run `./setup.sh npm` to re
 EOF
 
 echo "Starting offline development server..."
-node offline-dev.js
+node offline-dev.cjs

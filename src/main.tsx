@@ -1,5 +1,7 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
+import 'normalize.css';
+import { Global, css } from '@emotion/react';
 
 // Integrate axe-core accessibility auditing in development
 // if (process.env.NODE_ENV !== 'production') {
@@ -37,7 +39,11 @@ import './utils/globalErrorHandler';
 import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
 import RootErrorBoundary from './components/RootErrorBoundary';
-import { GlobalSnackbarProvider, GlobalLoaderProvider, NotificationProvider, MessagingProvider } from './context';
+import {
+  AppLoaderProvider,
+  NotificationProvider,
+  MessagingProvider,
+} from './context';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
@@ -56,6 +62,10 @@ import { CartProvider } from './context/CartContext';
 // import { FavoritesProvider } from './context/FavoritesContext.jsx';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 import { enableDevToolsInStaging, highlightZeroHeightElements } from './utils/devtools';
+import './utils/checkDuplicateClassNames';
+import { checkEssentialEnvVars } from './utils/validateEnv';
+import { FeedbackProvider } from './context/FeedbackContext';
+import { FeedbackWidget } from './components/feedback/FeedbackWidget';
 
 enableDevToolsInStaging();
 highlightZeroHeightElements();
@@ -71,19 +81,33 @@ const queryClient = new QueryClient({
 });
 
 try {
+  checkEssentialEnvVars(); // Added call
+
   // Removed initGA() call as it's undefined and likely superseded by AnalyticsProvider
   // Render the app with proper provider structure
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
+      <Global
+        styles={css`
+          * {
+            box-sizing: border-box;
+          }
+          body {
+            font-family: 'Inter', sans-serif;
+            color: var(--foreground);
+            background-color: var(--background);
+          }
+        `}
+      />
       <RootErrorBoundary>
         <Provider store={store}>
-          <GlobalSnackbarProvider>
-          <GlobalLoaderProvider>
+        <Router basename={process.env.PUBLIC_URL || '/'}>
+          <AppLoaderProvider>
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
               <WhitelabelProvider>
-                <Router basename={process.env.PUBLIC_URL || '/'}>
+                <FeedbackProvider>
                 <AuthProvider>
                   <MessagingProvider>
                   <NotificationProvider>
@@ -112,13 +136,14 @@ try {
                   </NotificationProvider>
                   </MessagingProvider>
                 </AuthProvider>
-              </Router>
+                <FeedbackWidget />
+              </FeedbackProvider>
             </WhitelabelProvider>
           </QueryClientProvider>
         </HelmetProvider>
         </I18nextProvider>
-        </GlobalLoaderProvider>
-        </GlobalSnackbarProvider>
+        </AppLoaderProvider>
+        </Router>
       </Provider>
       </RootErrorBoundary>
       {/* Removed duplicate main marker */}

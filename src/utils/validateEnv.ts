@@ -1,0 +1,74 @@
+// src/utils/validateEnv.ts
+
+interface EssentialEnvVars {
+  VITE_REOWN_PROJECT_ID: string;
+  VITE_SUPABASE_URL: string;
+  VITE_SUPABASE_ANON_KEY: string;
+}
+
+// List of critical environment variables that must be defined
+const CRITICAL_ENV_VARS: Array<keyof EssentialEnvVars> = [
+  'VITE_REOWN_PROJECT_ID',
+  'VITE_SUPABASE_URL',
+  'VITE_SUPABASE_ANON_KEY',
+];
+
+// Placeholder/default values that are considered invalid for VITE_REOWN_PROJECT_ID
+const INVALID_PROJECT_ID_FALLBACKS: string[] = [
+  'YOUR_PROJECT_ID', // Common placeholder from WalletContext
+  'dummy', // Common placeholder from WalletContext
+  'fallback', // Common placeholder from WalletContext
+  'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING', // From src/config/env.ts and WalletContext
+  'YOUR_DEFAULT_PROJECT_ID_FALLBACK', // From src/config/env.ts and WalletContext
+  'your_reown_project_id', // From .env.example
+];
+
+// Placeholder/default values that are considered invalid for Supabase URL and Key
+const INVALID_SUPABASE_FALLBACKS: string[] = [
+  'your_supabase_url_here', // From .env.example
+  'your_supabase_anon_key_here', // From .env.example
+];
+
+/**
+ * Checks if the essential environment variables are set.
+ * Throws an error if any critical variable is missing, empty, or a known invalid placeholder.
+ */
+export const checkEssentialEnvVars = (): void => {
+  const missingOrInvalidVars: string[] = [];
+
+  for (const varName of CRITICAL_ENV_VARS) {
+    const value = import.meta.env[varName];
+
+    if (value === undefined || value === null || String(value).trim() === '') {
+      missingOrInvalidVars.push(`${varName} is not defined or is empty.`);
+      continue;
+    }
+
+    // Specific checks for VITE_REOWN_PROJECT_ID placeholders
+    if (varName === 'VITE_REOWN_PROJECT_ID' && INVALID_PROJECT_ID_FALLBACKS.includes(String(value))) {
+      missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
+    }
+
+    // Specific checks for VITE_SUPABASE_URL placeholders
+    if (varName === 'VITE_SUPABASE_URL' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
+      missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
+    }
+
+    // Specific checks for VITE_SUPABASE_ANON_KEY placeholders
+    if (varName === 'VITE_SUPABASE_ANON_KEY' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
+      missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
+    }
+  }
+
+  if (missingOrInvalidVars.length > 0) {
+    const errorMessage = `Critical environment variable(s) missing or invalid:
+${missingOrInvalidVars.join('\n')}
+Please check your .env file or environment configuration. Application cannot start.`;
+    throw new Error(errorMessage);
+  }
+
+  // Optional: Log success in development
+  if (import.meta.env.DEV) {
+    console.log('Essential environment variables validated successfully.');
+  }
+};

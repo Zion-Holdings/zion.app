@@ -1,0 +1,63 @@
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Elements } from '@stripe/react-stripe-js';
+import { getStripe } from '@/utils/getStripe';
+import CardForm from '@/components/checkout/CardForm';
+import { ProductListing } from '@/types/listings';
+import { NEW_PRODUCTS } from '@/data/newProductsData';
+
+export default function CheckoutPage() {
+  const { id } = useParams();
+  const [product, setProduct] = useState<ProductListing | null>(null);
+  const [intent, setIntent] = useState<any | null>(null);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      if (!id) return;
+      try {
+        const res = await fetch(`/api/products/${id}`);
+        if (res.ok) {
+          const data = await res.json();
+          setProduct(data);
+          return;
+        }
+      } catch (err) {
+        console.error('Failed to load product', err);
+      }
+      const fallback = NEW_PRODUCTS.find(p => p.id === id) || null;
+      setProduct(fallback);
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  if (!product) {
+    return <div className="p-6 text-white">Loading...</div>;
+  }
+
+  return (
+    <div className="container max-w-2xl py-10 space-y-6">
+      <h1 className="text-3xl font-bold">Checkout</h1>
+      <div>
+        <p className="font-semibold">{product.title}</p>
+        <p className="text-sm text-zion-slate-light">{product.description}</p>
+        <p className="font-semibold mt-2">Price: ${product.price?.toFixed(2)}</p>
+      </div>
+      {intent ? (
+        <div className="space-y-2 text-center">
+          <p className="font-semibold">Payment Successful!</p>
+          <p>Confirmation ID: {intent.id}</p>
+        </div>
+      ) : (
+        <Elements stripe={getStripe()}>
+          <CardForm amount={product.price ?? 0} onSuccess={setIntent} />
+        </Elements>
+      )}
+      {!intent && (
+        <p className="text-xs text-zion-slate-light text-center">
+          Use test card 4242-4242-4242-4242 with any future date and CVC.
+        </p>
+      )}
+    </div>
+  );
+}
