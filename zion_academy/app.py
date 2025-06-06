@@ -34,6 +34,16 @@ def init_db_command():
 def index():
     return render_template('index.html', title='Welcome to Zion Academy')
 
+@app.route('/academy/founder-course')
+@app.route('/learn/launch')
+def founder_course():
+    """Display the founder onboarding course."""
+    with app.app_context():
+        course = Course.query.filter_by(title='Zion Founder Launch Course').first()
+    if course:
+        return render_template('course_detail.html', title=course.title, course=course)
+    return render_template('404.html', title='Course Not Found'), 404
+
 @app.route('/courses')
 def course_list():
     courses_data = []
@@ -169,6 +179,33 @@ def api_user_progress(user_id):
         ]
 
     return jsonify({'enrollments': progress_data, 'achievements': achievements})
+
+
+@app.route('/api/generate-quiz', methods=['POST'])
+def api_generate_quiz():
+    """Return a simple quiz for a topic."""
+    data = request.get_json() or {}
+    topic = data.get('topic', 'Zion OS')
+    quiz = [
+        {
+            'question': f'What is the primary goal of {topic}?',
+            'options': ['AI, Talent, Trust mission', 'Other'],
+        },
+        {
+            'question': 'Which token powers governance in Zion?',
+            'options': ['ZION$', 'BTC'],
+        },
+    ]
+    return jsonify({'quiz': quiz})
+
+
+@app.route('/api/summarize', methods=['POST'])
+def api_summarize():
+    """Return a basic summary of provided text."""
+    data = request.get_json() or {}
+    text = data.get('text', '')
+    summary = '.'.join(text.split('.')[:2]).strip()
+    return jsonify({'summary': summary})
 
 
 @app.route('/user/<int:user_id>')
