@@ -17,7 +17,7 @@
     "lint:a11y": "vitest run tests/Accessibility.test.tsx",
     "test:e2e": "playwright test",
     "es:index": "node scripts/index-elasticsearch.js",
-    "smoke:test": "cypress run --spec cypress/e2e/smoke.cy.ts"
+    "typecheck": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^9.0.2",

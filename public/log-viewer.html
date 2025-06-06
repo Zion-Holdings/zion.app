@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zion Debug Log Viewer</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
+    h1 { margin-bottom: 10px; }
+    pre { background: #eee; padding: 1rem; overflow-x: auto; }
+    .log-item { margin-bottom: 2rem; border-left: 4px solid #444; padding-left: 1rem; }
+    .timestamp { font-size: 0.9em; color: #666; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Zion App Offline Debug Logs</h1>
+  <div id="log-output"></div>
+
+  <script>
+    const logs = JSON.parse(localStorage.getItem('zion-logs') || '[]');
+    const container = document.getElementById('log-output');
+
+    if (!logs.length) {
+      container.innerHTML = '<p>No logs found in localStorage.</p>';
+    }
+
+    logs.forEach(({ timestamp, message, data }, i) => {
+      const div = document.createElement('div');
+      div.className = 'log-item';
+      div.innerHTML = `
+        <div class="timestamp">#${i + 1} — ${new Date(timestamp).toLocaleString()}</div>
+        <h3>${message}</h3>
+        <pre>${JSON.stringify(data, null, 2)}</pre>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>

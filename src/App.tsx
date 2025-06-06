@@ -1,8 +1,9 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import GlobalErrorBoundary
 import { captureException } from './utils/sentry'; // This might be redundant if GlobalErrorBoundary handles all Sentry logging
+import { logIssue } from './utils/logIssue';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { WalletProvider } from './context/WalletContext'; // Added WalletProvider
@@ -151,6 +152,13 @@ const App = () => {
   // Ensure each navigation starts at the top of the page
   useScrollToTop();
   const location = useLocation();
+  useEffect(() => {
+    try {
+      // critical render logic could go here
+    } catch (err) {
+      logIssue('Render failed in main view', { error: err });
+    }
+  }, []);
   return (
     <GlobalErrorBoundary>
       <WhitelabelProvider>

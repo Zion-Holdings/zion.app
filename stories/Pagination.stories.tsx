@@ -22,7 +22,7 @@ const Example = ({ total }: { total: number }) => {
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious
-            href="#"
+            href={`?page=${current - 1}`}
             onClick={(e) => {
               e.preventDefault();
               setCurrent((c) => Math.max(1, c - 1));
@@ -43,7 +43,7 @@ const Example = ({ total }: { total: number }) => {
         ))}
         <PaginationItem>
           <PaginationNext
-            href="#"
+            href={`?page=${current + 1}`}
             onClick={(e) => {
               e.preventDefault();
               setCurrent((c) => Math.min(total, c + 1));
