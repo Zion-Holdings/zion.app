@@ -1,5 +1,5 @@
 import React from 'react';
-import { RouteObject } from 'react-router-dom';
+import { RouteObject } from 'react-router';
 import Home from '@/pages/Home';
 import Marketplace from '@/pages/Marketplace'; // Assuming Marketplace component exists
 import Categories from '@/pages/Categories';
