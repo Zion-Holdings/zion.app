@@ -50,6 +50,7 @@ import Help from './pages/Help';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import SimpleSignup from './pages/SimpleSignup';
+import Dashboard from './pages/Dashboard';
 import OAuthCallback from './pages/OAuthCallback';
 import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
 import OpenAppRedirect from './pages/OpenAppRedirect';
@@ -89,63 +90,12 @@ import PrivateRoute from './components/PrivateRoute';
 const baseRoutes = [
   { path: '/', element: <PrivateRoute><Home /></PrivateRoute> },
   { path: '/about', element: <AboutPage /> },
-  // { path: '/categories/all', element: <AllCategoriesPage /> },
-  // { path: '/match', element: <AIMatcherPage /> },
-  // { path: '/login', element: <Login /> },
-  // { path: '/register', element: <Signup /> },
-  // { path: '/signup', element: <SimpleSignup /> },
-  // { path: '/oauth', element: <OAuthCallback /> },
-  // { path: '/talent', element: <TalentDirectory /> },
-  // { path: '/talents', element: <TalentsPage /> },
-  // { path: '/more-talents', element: <MoreTalentsPage /> },
-  // { path: '/additional-talents', element: <AdditionalTalentsPage /> },
-  // { path: '/services', element: <ServicesPage /> },
-  // { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
-  // { path: '/it-onsite-services/:country', element: <ITOnsiteServicesPage /> },
-  // { path: '/categories', element: <Categories /> },
-  // { path: '/equipment', element: <EquipmentPage /> },
-  // { path: '/equipment/:id', element: <EquipmentDetail /> },
-  // { path: '/new-products', element: <NewProductsPage /> },
-  // { path: '/analytics', element: <Analytics /> },
-  // { path: '/feedback-analytics', element: <FeedbackAnalytics /> },
-  // { path: '/mobile-launch', element: <MobileLaunchPage /> },
-  // { path: '/open-app', element: <OpenAppRedirect /> },
-  // {
-  //   path: '/community',
-  //   element: (
-  //     <CommunityProvider>
-  //       <CommunityPage />
-  //     </CommunityProvider>
-  //   ),
-  // },
-  // { path: '/contact', element: <ContactPage /> },
+  { path: '/login', element: <Login /> },
+  { path: '/register', element: <SimpleSignup /> },
+  { path: '/dashboard', element: <PrivateRoute><Dashboard /></PrivateRoute> },
   { path: '/partners', element: <PartnersPage /> },
-  // { path: '/sitemap', element: <Sitemap /> },
-  // { path: '/help', element: <Help /> },
-  // { path: '/zion-hire-ai', element: <ZionHireAI /> },
-  // { path: '/hire-ai', element: <ZionHireAI /> },
-  // { path: '/ai-talent-matching', element: <AITalentMatchingPage /> },
-  // { path: '/it-support', element: <ITSupportPage /> },
-  // { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
-  // { path: '/favorites', element: <FavoritesPage /> },
-  // { path: '/wishlist', element: <WishlistPage /> },
-  // { path: '/cart', element: <PrivateRoute><CartPage /></PrivateRoute> },
-  // { path: '/wallet', element: <PrivateRoute><Wallet /></PrivateRoute> },
-  // { path: '/profile', element: <PrivateRoute><Profile /></PrivateRoute> },
-  // { path: '/recommendations', element: <PrivateRoute><RecommendationsPage /></PrivateRoute> },
-  // { path: '/checkout', element: <PrivateRoute><Checkout /></PrivateRoute> },
-  // { path: '/forgot-password', element: <ForgotPassword /> },
-  // { path: '/reset-password/:token', element: <ResetPassword /> },
-  // { path: '/features/ai-content-generation', element: <AIPoweredContent /> },
-  // { path: '/features/talent-marketplace', element: <TalentMarketplace /> },
-  // { path: '/features/e-commerce', element: <Ecommerce /> },
-  // { path: '/features/instant-messaging', element: <InstantMessaging /> },
-  // { path: '/features/admin-dashboard', element: <AdminDashboard /> },
-  // { path: '/features/search', element: <SearchFeature /> },
-  // { path: '/features/integrations', element: <IntegrationsFeature /> },
-  // { path: '/features/internationalization', element: <Internationalization /> },
 ];
 
 const App = () => {
