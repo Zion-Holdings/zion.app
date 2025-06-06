@@ -85,7 +85,9 @@
       }
     </script>
     <script type="module">
-      if (import.meta.env.MODE === 'production') {
+      const isProd = import.meta.env.MODE === 'production';
+      const allowDevTools = import.meta.env.REACT_APP_DEVTOOLS === 'true';
+      if (isProd && !allowDevTools) {
         const noop = () => {};
         const DEV_TOOLS = window.__REACT_DEVTOOLS_GLOBAL_HOOK__;
         if (typeof DEV_TOOLS === 'object') {

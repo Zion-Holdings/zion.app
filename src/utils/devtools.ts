@@ -1,12 +1,14 @@
 export async function enableDevToolsInStaging() {
-  if (process.env.NODE_ENV !== 'production') {
+  const enable =
+    process.env.NODE_ENV !== 'production' ||
+    import.meta.env.REACT_APP_DEVTOOLS === 'true';
+  if (enable) {
     try {
-      // await import(
-      //   /* @vite-ignore */
-      //   'react-devtools'
-      // );
-      // console.log('DevTools enabled');
-      console.log('React DevTools import temporarily commented out for testing.');
+      await import(
+        /* @vite-ignore */
+        'react-devtools'
+      );
+      console.log('DevTools enabled');
     } catch (err) {
       console.error('Failed to load react-devtools', err);
     }

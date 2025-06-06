@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
+import { signup } from '@/services/signupApi';
 
 const SignupSchema = Yup.object({
   email: Yup.string().email('Invalid email').required('Email is required'),
@@ -21,27 +22,16 @@ export default function SimpleSignup() {
     validationSchema: SignupSchema,
     onSubmit: async (values, { setSubmitting, setErrors }) => {
       try {
-        const res = await fetch('/api/auth/register', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(values),
-        });
-
-        if (!res.ok) {
-          const data = await res.json().catch(() => ({ message: 'Signup failed' }));
-          setErrors({ email: data.message || 'Signup failed' });
-          return;
-        }
-
-        const data = await res.json();
+        const data = await signup({ email: values.email, password: values.password });
         if (data?.user && setUser) {
           setUser(data.user);
         }
-
         toast.success('Welcome to Zion!');
         navigate('/marketplace');
       } catch (err: any) {
-        toast.error(err?.message || 'Signup failed');
+        console.error('Signup error:', err.message);
+        setErrors({ email: err.message });
+        toast.error(err.message || 'Signup failed');
       } finally {
         setSubmitting(false);
       }

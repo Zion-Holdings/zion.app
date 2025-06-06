@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getWallet } from '@/api/wallet';
 import Spinner from '@/components/ui/spinner';
