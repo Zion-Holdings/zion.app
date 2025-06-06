@@ -18,17 +18,16 @@ const WalletDashboard = () => {
     retry: false,
   });
 
+  // Navigate to login on unauthorized error
   useEffect(() => {
-    if (isError) {
-      const status = (error as any)?.response?.status;
-      if (status === 401) {
-        navigate('/login');
-      }
+    if (isError && (error as any)?.response?.status === 401) {
+      navigate('/login');
     }
   }, [isError, error, navigate]);
 
-  if (isError && (error as any)?.response?.status !== 401) {
-    return <div className="p-6 text-white">Error loading wallet data.</div>;
+  if (isError) {
+    // For other errors, let the component render with fallback values
+    // to avoid breaking the UI entirely.
   }
 
   if (isLoading) {
