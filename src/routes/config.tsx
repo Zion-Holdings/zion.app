@@ -23,6 +23,7 @@ import CheckoutPage from '@/pages/CheckoutPage';
 import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
 import BlogPost from '@/pages/BlogPost';
+import GrantsPage from '@/pages/Grants';
 import ErrorTriggerComponent from '@/components/testing/ErrorTriggerComponent';
 import { CommunityProvider } from '@/context';
 const Signup = React.lazy(() => import('@/pages/Signup'));
@@ -66,6 +67,7 @@ export const allRoutes: AppRouteObject[] = [
     requiresAuth: true,
   },
   { path: '/partners', element: <PartnersPage /> },
+  { path: '/grants', element: <GrantsPage />, metaTitle: 'Grants - Zion' },
   { path: '/blog/:slug', element: <BlogPost /> },
   { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: true },
   { path: '/oauth', element: <OAuthCallback /> },
