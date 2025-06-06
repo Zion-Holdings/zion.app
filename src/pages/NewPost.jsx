@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
+const ReactMarkdown = React.lazy(() => import('react-markdown'));
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
@@ -11,16 +11,29 @@ export default function NewPost() {
   });
   const navigate = useNavigate();
   const content = watch('content');
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [error, setError] = React.useState(null);
 
   const onSubmit = async (values) => {
-    const res = await fetch('/forum/posts', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(values)
-    });
-    if (res.ok) {
+    setIsSubmitting(true);
+    setError(null);
+    try {
+      const res = await fetch('/forum/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values)
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.message || 'Failed to create post');
+      }
       const data = await res.json();
       navigate(`/community/${data.id}`);
+    } catch (e) {
+      console.error('Post creation error:', e);
+      setError(e.message);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -34,12 +47,17 @@ export default function NewPost() {
           placeholder="Write your post in markdown"
           {...register('content', { required: true })}
         />
-        <button type="submit" className="px-4 py-2 bg-zion-purple text-white rounded-md">Post</button>
+        <button type="submit" disabled={isSubmitting} className="px-4 py-2 bg-zion-purple text-white rounded-md">
+          {isSubmitting ? 'Posting...' : 'Post'}
+        </button>
       </form>
+      {error && <p className="text-red-500 mt-2">{error}</p>}
       {content && (
         <div className="mt-8">
           <h2 className="text-xl font-semibold mb-2">Preview</h2>
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <Suspense fallback={<div>Loading...</div>}>
+            <ReactMarkdown>{content}</ReactMarkdown>
+          </Suspense>
         </div>
       )}
     </div>

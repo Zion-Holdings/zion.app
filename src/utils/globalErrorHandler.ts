@@ -26,7 +26,7 @@ if (typeof window !== 'undefined') {
         }),
       });
     } catch (fetchErr) {
-      console.error('Failed to send error log:', fetchErr);
+      logError(fetchErr, 'Failed to send error log');
     }
   });
 }
