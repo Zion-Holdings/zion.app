@@ -15,6 +15,7 @@ import {
   AvatarImage,
   AvatarFallback,
 } from '@/components/ui/avatar';
+import { VerifiedBadge } from '@/components/VerifiedBadge';
 
 interface User {
   id: string;
@@ -23,6 +24,7 @@ interface User {
   avatarUrl: string;
   notifications: { email: boolean; push: boolean };
   softDeleted?: boolean;
+  kycStatus?: 'unverified' | 'pending' | 'verified';
 }
 
 export default function Profile() {
@@ -85,6 +87,9 @@ export default function Profile() {
                   <AvatarFallback>{user.name?.charAt(0)}</AvatarFallback>
                 )}
               </Avatar>
+              {user.kycStatus === 'verified' && (
+                <VerifiedBadge verified label="Verified Identity" />
+              )}
               <Input type="file" aria-label="avatar" onChange={handleAvatarChange} />
             </div>
             <div>

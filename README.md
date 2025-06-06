@@ -28,6 +28,7 @@ These components work in tandem to connect professionals and businesses.
 - **AI-Powered Capabilities:** Includes AI-driven content generation (ZionGPT), talent matching, and potentially other smart features.
 - **Content Management:** Integrated blog, whitepaper generation, and SEO content tools.
 - **Real-time Interactions:** Support for instant messaging and notifications (via Socket.io).
+- **Identity Verification:** Basic KYC submission and admin review flows.
 - **Internationalization (i18n):** Multi-language support for a global audience.
 - **Rich Media Product Listings:** Support for video and 3D models in product displays.
 - **Search Functionality:** Advanced search potentially powered by Elasticsearch.
