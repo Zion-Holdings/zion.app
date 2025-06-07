@@ -56,7 +56,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
         setResendStatusMessage(data.message || 'Failed to resend verification email.');
       }
     } catch (error) {
-      logError(error, 'Resend email error');
+      logError(error, { message: 'Resend email error' });
       setResendStatusMessage('An error occurred while resending the email.');
     } finally {
       setIsResendingEmail(false);
