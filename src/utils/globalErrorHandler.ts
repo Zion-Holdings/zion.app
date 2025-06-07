@@ -4,11 +4,11 @@ import { logError } from './logError';
 if (typeof window !== 'undefined') {
   window.onerror = function (message, source, lineno, colno, error) {
     console.error('Global Error:', { message, source, lineno, colno, error });
-    logError(error ?? message);
+    logError(error ?? message, { context: 'window.onerror', source, lineno, colno });
   };
 
   window.addEventListener('unhandledrejection', (event) => {
-    logError(event.reason);
+    logError(event.reason, { context: 'unhandledrejection' });
   });
 
   // Also send errors to the server for logging
@@ -26,7 +26,7 @@ if (typeof window !== 'undefined') {
         }),
       });
     } catch (fetchErr) {
-      logError(fetchErr, 'Failed to send error log');
+      logError(fetchErr, { message: 'Failed to send error log' });
     }
   });
 }

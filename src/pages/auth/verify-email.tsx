@@ -9,7 +9,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 // Check if Supabase URL and Anon Key are provided
 if (!supabaseUrl || !supabaseAnonKey) {
-  logError('Supabase URL or Anon Key is missing. Please check your environment variables.', 'verify-email init');
+  logError(new Error('Supabase URL or Anon Key is missing. Please check your environment variables.'), { context: 'verify-email init' });
   // You could throw an error here or handle it gracefully depending on your application's needs
 }
 
@@ -28,7 +28,7 @@ const VerifyEmailPage = () => {
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
 
         if (sessionError) {
-          logError(sessionError, 'Supabase getSession error');
+          logError(sessionError, { message: 'Supabase getSession error' });
           setStatus('error');
           setMessage(sessionError.message || 'Verification failed: Could not retrieve session.');
           return;
@@ -68,7 +68,7 @@ const VerifyEmailPage = () => {
           setMessage(responseData.message || 'Failed to finalize email verification in our system. Please try again or contact support.');
         }
       } catch (error: any) {
-        logError(error, 'Verification page error');
+        logError(error, { message: 'Verification page error' });
         setStatus('error');
         setMessage(error.message || 'An unexpected error occurred during verification.');
       }
@@ -78,7 +78,7 @@ const VerifyEmailPage = () => {
     if (typeof window !== 'undefined' && window.location.hash.includes('error_description')) {
         const params = new URLSearchParams(window.location.hash.substring(1)); // remove #
         const errorDescription = params.get('error_description');
-        logError(errorDescription, 'Error from Supabase redirect');
+        logError(new Error(errorDescription || 'Unknown error from Supabase redirect'), { message: 'Error from Supabase redirect' });
         setMessage(`Verification failed: ${errorDescription}`);
         setStatus('error');
     } else {

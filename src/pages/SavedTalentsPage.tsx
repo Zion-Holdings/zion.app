@@ -67,7 +67,7 @@ export default function SavedTalentsPage() {
           setSavedTalents(talentProfiles);
         }
       } catch (error) {
-        logError(error, 'Error fetching saved talents');
+        logError(error, { message: 'Error fetching saved talents' });
         toast({
           title: "Error",
           description: "Failed to load saved talents. Please try again later.",
@@ -137,7 +137,7 @@ export default function SavedTalentsPage() {
           .single();
   
         if (talentError) {
-          logError(talentError, 'Error fetching talent profile');
+          logError(talentError, { message: 'Error fetching talent profile' });
           toast({
             title: "Error",
             description: "Failed to update saved talents. Please try again later.",
@@ -155,7 +155,7 @@ export default function SavedTalentsPage() {
         }
       }
     } catch (error) {
-      logError(error, 'Error toggling saved talent');
+      logError(error, { message: 'Error toggling saved talent' });
       toast({
         title: "Error",
         description: "Failed to update saved talents. Please try again later.",

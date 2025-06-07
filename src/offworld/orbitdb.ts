@@ -6,8 +6,8 @@ import { identify } from '@libp2p/identify';
 import { tcp } from '@libp2p/tcp';
 import { noise } from '@chainsafe/libp2p-noise';
 import { yamux } from '@chainsafe/libp2p-yamux';
-import { MemoryBlockstore } from 'blockstore-memory';
-import { MemoryDatastore } from 'datastore-memory';
+import { MemoryBlockstore } from 'blockstore-core/memory';
+import { MemoryDatastore } from 'datastore-core/memory';
 
 // Types for OrbitDB and its stores might be needed from @orbitdb/core if used directly
 // import { LogStore } from '@orbitdb/core';

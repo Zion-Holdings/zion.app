@@ -19,7 +19,7 @@ export default function FounderBot() {
         body: JSON.stringify({ messages: [{ role: 'user', content: message }] })
       });
     } catch (err) {
-      logError(err, 'Founder bot error');
+      logError(err, { message: 'Founder bot error' });
     }
   };
 

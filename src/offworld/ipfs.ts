@@ -7,8 +7,8 @@ import { identify } from '@libp2p/identify';
 import { tcp } from '@libp2p/tcp';
 import { noise } from '@chainsafe/libp2p-noise';
 import { yamux } from '@chainsafe/libp2p-yamux';
-import { MemoryBlockstore } from 'blockstore-memory';
-import { MemoryDatastore } from 'datastore-memory';
+import { MemoryBlockstore } from 'blockstore-core/memory';
+import { MemoryDatastore } from 'datastore-core/memory';
 
 let heliaNode: Helia | null = null;
 let libp2pNode: Libp2p<any> | null = null; // Using 'any' for identify service

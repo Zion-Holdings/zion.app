@@ -114,7 +114,7 @@ export default function Contact() {
       
       return Promise.resolve();
     } catch (error) {
-      logError(error, 'Error in AI chat');
+      logError(error, { message: 'Error in AI chat' });
       toast({
         title: "Chat Error",
         description: "There was an error communicating with our AI assistant. Please try again.",

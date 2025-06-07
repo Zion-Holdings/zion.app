@@ -152,7 +152,7 @@ export default function PartnerManager() {
         filterPartners(data as PartnerProfile[], activeTab, searchQuery);
       }
     } catch (error) {
-      logError(error, 'Error fetching partners');
+      logError(error, { message: 'Error fetching partners' });
       toast({
         title: "Error",
         description: "Failed to load partner data",
@@ -230,7 +230,7 @@ export default function PartnerManager() {
         setIsDetailsOpen(false);
       }
     } catch (error) {
-      logError(error, 'Error updating partner status');
+      logError(error, { message: 'Error updating partner status' });
       toast({
         title: "Error",
         description: "Failed to update partner status",
@@ -262,7 +262,7 @@ export default function PartnerManager() {
       
       setIsSettingsOpen(false);
     } catch (error) {
-      logError(error, 'Error updating partner settings');
+      logError(error, { message: 'Error updating partner settings' });
       toast({
         title: "Error",
         description: "Failed to update partner settings",
