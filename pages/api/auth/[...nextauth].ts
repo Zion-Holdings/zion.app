@@ -224,7 +224,7 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       // Send properties to the client, like an access_token and user id from the token
       if (session.user) {
-        session.user.id = token.id as string;
+         (session.user as any).id = token.id as string;
         if (token.walletAddress) {
             session.user.walletAddress = token.walletAddress as string;
         }
