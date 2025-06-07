@@ -14,7 +14,7 @@ function RootFallback({ error, resetErrorBoundary }: FallbackProps) {
 
 export default function RootErrorBoundary({ children }: { children: React.ReactNode }) {
   return (
-    <ErrorBoundary FallbackComponent={RootFallback} onError={(error) => logError(error, 'UI Error')}>
+    <ErrorBoundary FallbackComponent={RootFallback} onError={(error) => logError(error, { type: 'UI Error' })}>
       <React.Suspense fallback={<div>Loading...</div>}>
         {children}
       </React.Suspense>
