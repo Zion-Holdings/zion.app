@@ -454,7 +454,7 @@ const LaunchToolkitPage = () => {
               href="/toolkit_assets/sample_zion_kit.pdf"
               download="Zion_Sample_Kit.pdf"
             >
-              <Button variant="secondary" size="md">
+              <Button variant="secondary">
                 Download Sample PDF Kit
               </Button>
             </a>
