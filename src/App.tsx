@@ -91,7 +91,7 @@ const baseRoutes = [
   { path: '/about', element: <AboutPage /> },
   // { path: '/categories/all', element: <AllCategoriesPage /> },
   // { path: '/match', element: <AIMatcherPage /> },
-  // { path: '/login', element: <Login /> },
+  { path: '/login', element: <Login /> },
   // { path: '/register', element: <Signup /> },
   // { path: '/signup', element: <SimpleSignup /> },
   // { path: '/oauth', element: <OAuthCallback /> },
