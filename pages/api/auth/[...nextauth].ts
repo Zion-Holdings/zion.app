@@ -226,7 +226,7 @@ export const authOptions: NextAuthOptions = {
       if (session.user) {
          (session.user as any).id = token.id as string;
         if (token.walletAddress) {
-            session.user.walletAddress = token.walletAddress as string;
+                 (session.user as any).walletAddress = token.walletAddress as string;
         }
       }
       // session.accessToken = token.accessToken; // If using OAuth and need token client-side
