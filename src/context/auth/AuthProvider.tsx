@@ -108,7 +108,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       const { res, data } = await registerUser(name, email, password);
 
-      if (!res.ok) {
+      if (!(res.status >= 200 && res.status < 300)) {
         // Handle API errors (e.g., 400, 409, 500) from /api/auth/register
         toast({
           title: "Signup Failed",
