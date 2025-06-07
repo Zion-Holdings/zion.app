@@ -40,7 +40,7 @@ export interface AxiosInstance {
   ): Promise<AxiosResponse<T>>;
 }
 
-export interface AxiosStatic {
+export interface CustomAxiosStatic {
   create: typeof create;
   defaults: AxiosDefaults;
   interceptors: { request: InterceptorManager; response: InterceptorManager };
@@ -160,7 +160,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
 
 const defaultInstance = create();
 
-const axios: AxiosStatic = {
+const customAxios: CustomAxiosStatic = {
   create,
   defaults: globalDefaults,
   interceptors: globalInterceptors,
@@ -168,4 +168,4 @@ const axios: AxiosStatic = {
   post: defaultInstance.post,
 };
 
-export default axios;
+export default customAxios;
