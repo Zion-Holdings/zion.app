@@ -17,3 +17,6 @@ jobs:
         with:
           add: 'package-lock.json'
           message: 'Fix: Regenerate package-lock.json'
+
+      author_name: 'Kleber Alcatrao'
+      author_email: 'kleber@ziontechgroup.com'
