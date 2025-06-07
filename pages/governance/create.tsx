@@ -24,14 +24,8 @@ const proposalSchema = z.object({
   proposal_type: z.enum(proposalTypes),
   voting_starts_at: z.string().optional().nullable(), // Using string for datetime-local
   voting_ends_at: z.string().optional().nullable(),   // Using string for datetime-local
-  quorum_percentage: z.preprocess(
-    (val) => (val === "" || val === undefined || val === null) ? undefined : parseFloat(String(val)),
-    z.number().min(0).max(1).optional().nullable()
-  ),
-  funding_ask_amount: z.preprocess(
-    (val) => (val === "" || val === undefined || val === null) ? undefined : parseFloat(String(val)),
-    z.number().positive().optional().nullable()
-  ),
+  quorum_percentage: z.coerce.number().min(0, { message: "Quorum must be between 0 and 1." }).max(1, { message: "Quorum must be between 0 and 1." }).optional().nullable(),
+  funding_ask_amount: z.coerce.number().positive({ message: "Funding amount must be positive." }).optional().nullable(),
   funding_ask_token_symbol: z.string().optional().nullable(),
   reference_links_input: z.string().optional().nullable(), // Raw input for links
 });
