@@ -40,7 +40,7 @@ export default function Profile() {
 
   const handleSave = async () => {
     if (!user) return;
-    const res = await axios.request({ method: 'PUT', url: '/api/users/me', data: user });
+    const res = await axios.patch('/api/users/me', user);
     setUser(res.data);
   };
 
