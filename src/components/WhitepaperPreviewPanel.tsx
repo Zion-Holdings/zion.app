@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
+import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 const ReactMarkdown = React.lazy(() => import('react-markdown'));
-const Recharts = React.lazy(() => import('recharts'));
 
 interface Section {
   id: string;
@@ -56,10 +56,9 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({
               {distributionChartData && distributionChartData.length > 0 && (
                 <div className="my-6">
                   <h3 className="text-xl font-semibold text-center mb-3">Distribution Chart</h3>
-                  <Suspense fallback={<div>Loading chart...</div>}>
-                    <Recharts.ResponsiveContainer width="100%" height={300}>
-                      <Recharts.PieChart>
-                        <Recharts.Pie
+                    <ResponsiveContainer width="100%" height={300}>
+                      <PieChart>
+                        <Pie
                           data={distributionChartData}
                           cx="50%"
                           cy="50%"
@@ -70,14 +69,13 @@ const WhitepaperPreviewPanel: React.FC<WhitepaperPreviewPanelProps> = ({
                           dataKey="value"
                         >
                           {distributionChartData.map((entry, index) => (
-                            <Recharts.Cell key={`cell-preview-${index}`} fill={COLORS[index % COLORS.length]} />
+                            <Cell key={`cell-preview-${index}`} fill={COLORS[index % COLORS.length]} />
                           ))}
-                        </Recharts.Pie>
-                        <Recharts.Tooltip formatter={(value: number, name: string) => [`${value}%`, name]} />
-                        <Recharts.Legend />
-                      </Recharts.PieChart>
-                    </Recharts.ResponsiveContainer>
-                  </Suspense>
+                        </Pie>
+                        <Tooltip formatter={(value: number, name: string) => [`${value}%`, name]} />
+                        <Legend />
+                      </PieChart>
+                    </ResponsiveContainer>
                 </div>
               )}
             </div>
