@@ -13,7 +13,7 @@ export function Footer() {
               <span className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">ZION</span>
             </div>
             <p className="text-foreground/80 mb-4 max-w-xs">
-              The world's first free marketplace dedicated to high-tech and artificial intelligence.
+              The world&apos;s first free marketplace dedicated to high-tech and artificial intelligence.
             </p>
             <div className="flex space-x-4">
               <a

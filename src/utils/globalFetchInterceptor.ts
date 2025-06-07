@@ -1,4 +1,5 @@
-import { toast } from "@/hooks/use-toast";
+import { getEnqueueSnackbar } from '@/context/SnackbarContext';
+import { logError } from './logError';
 
 if (typeof window !== "undefined" && window.fetch) {
   const originalFetch = window.fetch.bind(window);
@@ -9,19 +10,23 @@ if (typeof window !== "undefined" && window.fetch) {
       if (!response.ok) {
         try {
           const data = await response.clone().json();
+          const enqueueSnackbar = getEnqueueSnackbar();
           if (data && data.error) {
-            toast.error(String(data.error));
+            enqueueSnackbar(String(data.error), { variant: 'error' });
           } else {
-            toast.error(`Error ${response.status}`);
+            enqueueSnackbar(`Error ${response.status}`, { variant: 'error' });
           }
         } catch {
-          toast.error(`Error ${response.status}`);
+          const enqueueSnackbar = getEnqueueSnackbar();
+          enqueueSnackbar(`Error ${response.status}`, { variant: 'error' });
         }
       }
       return response;
     } catch (err: any) {
       const message = err?.response?.data?.error ?? "Network error";
-      toast.error(message);
+      const enqueueSnackbar = getEnqueueSnackbar();
+      enqueueSnackbar(message, { variant: 'error' });
+      logError(err);
       throw err;
     }
   };

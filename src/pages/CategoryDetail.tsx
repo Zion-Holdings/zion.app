@@ -50,9 +50,14 @@ function generateInnovationListing(index: number): ProductListing {
   };
 }
 
-export default function CategoryDetail() {
+interface CategoryDetailProps {
+  slug?: string;
+}
+
+export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps = {}) {
   // Cast to specify the expected route param type since useParams may be untyped
-  const { slug } = useParams() as { slug?: string };
+  const params = useParams() as { slug?: string };
+  const slug = slugProp ?? params.slug;
   const navigate = useNavigate();
 
   // Redirect to categories list if slug is missing

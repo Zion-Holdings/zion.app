@@ -65,6 +65,13 @@ export function MainNavigation({ className }: MainNavigationProps) {
         Categories
       </Link>
       <Link
+        to="/timeos"
+        aria-label="TimeOS"
+        className="text-zion-slate-light hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+      >
+        TimeOS
+      </Link>
+      <Link
         to="/about"
         aria-label="About Us"
         className="text-zion-slate-light hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"

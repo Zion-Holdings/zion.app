@@ -5,7 +5,7 @@ import { Bell } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { useNotifications } from '@/context/notifications/NotificationContext';
-import { toast } from 'sonner';
+import { useEnqueueSnackbar } from '@/context';
 import { 
   NotificationFilter, 
   NotificationHeader, 
@@ -29,10 +29,12 @@ export const NotificationCenter: React.FC = () => {
   
   const [open, setOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [loadedOnce, setLoadedOnce] = useState(false);
+  const enqueueSnackbar = useEnqueueSnackbar();
 
-  // Refresh notifications when popover opens
+  // Refresh notifications when popover opens, but avoid duplicate
   useEffect(() => {
-    if (open) {
+    if (open && !loadedOnce) {
       const loadNotifications = async () => {
         try {
           await fetchNotifications();
@@ -40,21 +42,23 @@ export const NotificationCenter: React.FC = () => {
         } catch (err) {
           console.error("Failed to fetch notifications:", err);
           setError("Couldn't load notifications");
-          toast.error("Failed to load notifications");
+          enqueueSnackbar(err?.response?.data?.message || err.message, { variant: 'error' });
+        } finally {
+          setLoadedOnce(true);
         }
       };
-      
+
       loadNotifications();
     }
-  }, [open, fetchNotifications]);
+  }, [open, loadedOnce, fetchNotifications]);
 
   const handleMarkAllAsRead = async () => {
     try {
       await markAllAsRead();
-      toast.success("All notifications marked as read");
+      enqueueSnackbar("All notifications marked as read", { variant: 'success' });
     } catch (err) {
       console.error("Failed to mark notifications as read:", err);
-      toast.error("Failed to update notifications");
+      enqueueSnackbar(err?.response?.data?.message || err.message, { variant: 'error' });
     }
   };
 
@@ -63,7 +67,7 @@ export const NotificationCenter: React.FC = () => {
   };
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover open={open} onOpenChange={(v) => setOpen(v ?? false)}>
       <PopoverTrigger asChild>
         <Button variant="ghost" size="icon" className="relative" aria-label="Open notifications">
           <Bell className="h-5 w-5 text-zion-slate-light" />

@@ -1,4 +1,12 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+  useRef,
+} from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 export interface GlobalLoaderContextType {
@@ -6,6 +14,8 @@ export interface GlobalLoaderContextType {
   setLoading: (value: boolean) => void;
   error: any;
   setError: (error: any) => void;
+  showLoader: () => void;
+  hideLoader: () => void;
 }
 
 const defaultState: GlobalLoaderContextType = {
@@ -13,27 +23,34 @@ const defaultState: GlobalLoaderContextType = {
   setLoading: () => {},
   error: null,
   setError: () => {},
+  showLoader: () => {},
+  hideLoader: () => {},
 };
 
 const GlobalLoaderContext = createContext<GlobalLoaderContextType>(defaultState);
 
 export const useGlobalLoader = () => useContext(GlobalLoaderContext);
 
-export function GlobalLoaderProvider({ children }: { children: ReactNode }) {
+export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<any>(null);
+  const location = useLocation();
+  const timeoutRef = useRef<NodeJS.Timeout>();
+
+  const showLoader = () => setLoading(true);
+  const hideLoader = () => setLoading(false);
 
   useEffect(() => {
     const onRequest = (config: any) => {
-      setLoading(true);
+      showLoader();
       return config;
     };
     const onResponse = (response: any) => {
-      setLoading(false);
+      hideLoader();
       return response;
     };
     const onError = (err: any) => {
-      setLoading(false);
+      hideLoader();
       setError(err);
       return Promise.reject(err);
     };
@@ -56,9 +73,29 @@ export function GlobalLoaderProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
+  // Hide loader when the route changes (routeChangeComplete analogue)
+  useEffect(() => {
+    hideLoader();
+  }, [location.pathname]);
+
+  // Auto-dismiss loader after 15 seconds
+  useEffect(() => {
+    if (loading) {
+      timeoutRef.current = setTimeout(hideLoader, 15000);
+    }
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [loading]);
+
   return (
-    <GlobalLoaderContext.Provider value={{ loading, setLoading, error, setError }}>
+    <GlobalLoaderContext.Provider
+      value={{ loading, setLoading, error, setError, showLoader, hideLoader }}
+    >
       {children}
     </GlobalLoaderContext.Provider>
   );
 }
+
+// Backwards compatibility
+export { AppLoaderProvider as GlobalLoaderProvider };

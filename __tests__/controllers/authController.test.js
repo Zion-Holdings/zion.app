@@ -29,7 +29,7 @@ describe('authController.loginUser', () => {
 
     expect(jwt.sign).toHaveBeenCalled();
     expect(res.json).toHaveBeenCalledWith({
-      token: 'signed-jwt',
+      accessToken: 'signed-jwt',
       user: { id: '1', email: 'test@example.com', name: 'Test' }
     });
   });
@@ -58,7 +58,7 @@ describe('authController.registerUser', () => {
     jest.clearAllMocks();
   });
 
-  it('creates a new user and returns token', async () => {
+  it('creates a new user and returns access token', async () => {
     User.create.mockResolvedValue({ _id: '1', email: 'test@example.com', name: 'Test' });
     jwt.sign.mockReturnValue('signed-jwt');
 
@@ -67,7 +67,7 @@ describe('authController.registerUser', () => {
     expect(User.create).toHaveBeenCalled();
     expect(res.status).toHaveBeenCalledWith(201);
     expect(res.json).toHaveBeenCalledWith({
-      token: 'signed-jwt',
+      accessToken: 'signed-jwt',
       user: { id: '1', email: 'test@example.com', name: 'Test' },
     });
   });

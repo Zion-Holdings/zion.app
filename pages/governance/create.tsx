@@ -1,6 +1,6 @@
 // pages/governance/create.tsx
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -11,6 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { PROPOSAL_TEMPLATES } from '@/data/proposalTemplates';
 // import MainLayout from '@/components/layout/MainLayout'; // If exists
 // import { useAuth } from '@/hooks/useAuth'; // If frontend auth is needed for API calls
 // import { useWallet } from '@/context/WalletContext'; // If wallet info is needed
@@ -23,14 +24,8 @@ const proposalSchema = z.object({
   proposal_type: z.enum(proposalTypes),
   voting_starts_at: z.string().optional().nullable(), // Using string for datetime-local
   voting_ends_at: z.string().optional().nullable(),   // Using string for datetime-local
-  quorum_percentage: z.preprocess(
-    (val) => (val === "" || val === undefined || val === null) ? undefined : parseFloat(String(val)),
-    z.number().min(0).max(1).optional().nullable()
-  ),
-  funding_ask_amount: z.preprocess(
-    (val) => (val === "" || val === undefined || val === null) ? undefined : parseFloat(String(val)),
-    z.number().positive().optional().nullable()
-  ),
+  quorum_percentage: z.coerce.number().min(0, { message: "Quorum must be between 0 and 1." }).max(1, { message: "Quorum must be between 0 and 1." }).optional().nullable(),
+  funding_ask_amount: z.coerce.number().positive({ message: "Funding amount must be positive." }).optional().nullable(),
   funding_ask_token_symbol: z.string().optional().nullable(),
   reference_links_input: z.string().optional().nullable(), // Raw input for links
 });
@@ -38,7 +33,7 @@ const proposalSchema = z.object({
 type ProposalFormData = z.infer<typeof proposalSchema>;
 
 const CreateProposalPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   // const { user, token } = useAuth(); // Example
   // const { address: walletAddress } = useWallet(); // Example
 
@@ -59,6 +54,26 @@ const CreateProposalPage: React.FC = () => {
       reference_links_input: '',
     },
   });
+
+  useEffect(() => {
+    const templateId = router.query.template as string | undefined;
+    if (templateId) {
+      const template = PROPOSAL_TEMPLATES.find((t) => t.id === templateId);
+      if (template) {
+        form.reset({
+          title: template.title,
+          summary: `${template.summary}\n\nMotivation: ${template.motivation}\n\nSpecification / Impact: ${template.specification}\n\nCode/Module: ${template.codeModule}`,
+          proposal_type: template.proposal_type,
+          voting_starts_at: '',
+          voting_ends_at: '',
+          quorum_percentage: undefined,
+          funding_ask_amount: undefined,
+          funding_ask_token_symbol: '',
+          reference_links_input: '',
+        });
+      }
+    }
+  }, [router.query.template]);
 
   const onSubmit = async (data: ProposalFormData) => {
     setIsLoading(true);
@@ -107,7 +122,7 @@ const CreateProposalPage: React.FC = () => {
       }
 
       const newProposal = await response.json();
-      navigate(`/governance/${newProposal.id}`);
+      router.push(`/governance/${newProposal.id}`);
     } catch (err: any) {
       setApiError(err.message || 'Failed to create proposal.');
       console.error(err);

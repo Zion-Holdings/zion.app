@@ -43,3 +43,13 @@ def test_progress_flow(client):
     assert data['enrollments'][0]['progress'] == 100
     assert data['enrollments'][0]['completed'] is True
     assert len(data['achievements']) == 1
+
+
+def test_quiz_and_summary(client):
+    r = client.post('/api/generate-quiz', json={'topic': 'Zion'})
+    assert r.status_code == 200
+    assert 'quiz' in r.get_json()
+
+    r = client.post('/api/summarize', json={'text': 'Zion is great. It helps founders.'})
+    assert r.status_code == 200
+    assert 'summary' in r.get_json()

@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { saveFeedback } from '@/services/feedbackService';
+import { postFeedback } from '@/services/feedbackService';
+import { useFeedback } from '@/context/FeedbackContext';
+import { useEnqueueSnackbar } from '@/context';
 
 const StarRatingInput: React.FC<{ value: number; onRate: (r:number) => void }> = ({ value, onRate }) => (
-  <div className="flex mb-2">
+  <div className="flex mb-2" aria-label="Star rating">
     {[1,2,3,4,5].map(star => (
       <button
         key={star}
@@ -22,14 +24,25 @@ const StarRatingInput: React.FC<{ value: number; onRate: (r:number) => void }> =
 
 export function FeedbackWidget() {
   const [open, setOpen] = useState(false);
-  const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState('');
+  const { rating, comment, setRating, setComment, reset } = useFeedback();
   const [submitted, setSubmitted] = useState(false);
+  const enqueueSnackbar = useEnqueueSnackbar();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    saveFeedback({ rating, comment, page: window.location.pathname });
+    try {
+      await postFeedback({
+        rating,
+        comment,
+        url: window.location.pathname,
+        userAgent: navigator.userAgent,
+      });
+      enqueueSnackbar('Thank you for your feedback!', { variant: 'success' });
+    } catch (err: any) {
+      enqueueSnackbar(err.message, { variant: 'error' });
+    }
     setSubmitted(true);
+    reset();
     setTimeout(() => setOpen(false), 1500);
   };
 

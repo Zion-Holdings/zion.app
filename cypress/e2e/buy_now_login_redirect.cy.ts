@@ -1,6 +1,6 @@
 describe('guest buy now flow', () => {
   it('redirects through login to checkout', () => {
-    cy.intercept('POST', '/api/auth/login', {
+    cy.intercept('POST', '/auth/login', {
       statusCode: 200,
       body: { token: 'jwt', user: { id: '1', email: 'test@example.com' } },
       headers: { 'set-cookie': 'token=jwt; HttpOnly; Path=/' },

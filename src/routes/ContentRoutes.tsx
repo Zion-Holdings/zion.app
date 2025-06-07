@@ -18,6 +18,7 @@ import HelpCenterPage from "@/pages/HelpCenterPage";
 import AccountSettings from "@/pages/AccountSettings";
 import ProjectRoom from "@/pages/ProjectRoom";
 import VideoCall from "@/pages/VideoCall";
+import Philosophy from "@/pages/Philosophy";
 
 const ContentRoutes = () => {
   return (
@@ -52,6 +53,8 @@ const ContentRoutes = () => {
 
       {/* Legal Pages */}
       <Route path="/terms" element={<Terms />} />
+      <Route path="/philosophy" element={<Philosophy />} />
+      <Route path="/constitution" element={<Philosophy />} />
 
       {/* Account Settings */}
       <Route path="/settings/account" element={<AccountSettings />} />

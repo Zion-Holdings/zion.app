@@ -2,7 +2,7 @@ import React from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { useNavigate, useLocation } from 'react-router-dom'; // Added for retry functionality and location
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
-import { captureException } from '@/utils/sentry'; // Added for Sentry integration
+import { logError } from '@/utils/logError';
 
 function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   const navigate = useNavigate(); // Added for retry functionality
@@ -44,15 +44,17 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
 
   const handleError = (error: Error, info: React.ErrorInfo) => {
     console.error("GlobalErrorBoundary caught an error:", error, info);
-
-    // Report to Sentry if DSN is configured
-    if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
-      captureException(error, { extra: { route: location.pathname } }); // Added Sentry call with route
-    }
+    logError(error, { route: location.pathname, componentStack: info.componentStack });
 
     try {
       const enqueueSnackbar = getEnqueueSnackbar();
-      enqueueSnackbar(error.message || "An unexpected error occurred.", { variant: 'error' });
+      let displayMessage = error.message || "An unexpected error occurred.";
+      if (error.message.includes("cannot read properties of null") || error.message.includes("cannot read property")) {
+        displayMessage = "A critical component failed to initialize. This might be due to a configuration issue or network problem. Please try refreshing. If the problem persists, contact support.";
+      } else if (error.message.includes("network error")) {
+        displayMessage = "A network error occurred. Please check your internet connection and try again.";
+      }
+      enqueueSnackbar(displayMessage, { variant: 'error' });
     } catch (e) {
       console.error("Error in enqueueSnackbar:", e);
       // noop if snackbar itself fails

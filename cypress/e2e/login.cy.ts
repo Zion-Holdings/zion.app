@@ -6,7 +6,7 @@ describe('login flow', () => {
   });
 
   it('shows error on invalid password', () => {
-    cy.intercept('POST', '/api/auth/login', {
+    cy.intercept('POST', '/auth/login', {
       statusCode: 401,
       body: { error: 'Invalid credentials' },
     }).as('login');
@@ -22,7 +22,7 @@ describe('login flow', () => {
   });
 
   it('redirects to next route on success', () => {
-    cy.intercept('POST', '/api/auth/login', {
+    cy.intercept('POST', '/auth/login', {
       statusCode: 200,
       body: { token: 'jwt', user: { id: '1', email: Cypress.env('TEST_USER_EMAIL') } },
       headers: { 'set-cookie': 'token=jwt; HttpOnly; Path=/' },

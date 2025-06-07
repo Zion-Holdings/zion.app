@@ -1,7 +1,9 @@
 [build]
-  command = "npm run build"
+  # Use `npm ci` for deterministic installs
+  command = "npm ci && npm run build"
   publish = "out"
 
 [build.environment]
   NODE_OPTIONS = "--max_old_space_size=4096"
   NPM_FLAGS = "--prefer-offline"
+  NODE_VERSION = "18"

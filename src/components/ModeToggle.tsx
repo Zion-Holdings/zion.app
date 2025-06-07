@@ -2,7 +2,9 @@ import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 // Use the ThemeProvider hook which is backed by src/components/ThemeProvider
 // to ensure we read and modify the same theme state used across the app.
-import { useTheme } from "@/context/ThemeContext"
+// The hook is re-exported from '@/hooks/useTheme' so that components don't need
+// to know the underlying context location.
+import { useTheme } from "@/hooks/useTheme"
 import { logIssue } from "@/utils/logIssue"
 
 export function ModeToggle() {

@@ -101,7 +101,6 @@ export function LoginForm() {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="password"
@@ -142,7 +141,6 @@ export function LoginForm() {
             </FormItem>
           )}
         />
-
         <FormField
           control={form.control}
           name="rememberMe"
@@ -162,7 +160,6 @@ export function LoginForm() {
             </FormItem>
           )}
         />
-
         <div className="flex items-center justify-between">
           <div className="text-sm">
             {/* "Remember me" checkbox is now above, this div can be used for "Forgot Password" if it's still needed */}
@@ -174,7 +171,6 @@ export function LoginForm() {
             </Link>
           </div>
         </div>
-
         <Button
           type="submit"
           className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
@@ -182,6 +178,11 @@ export function LoginForm() {
         >
           {isLoading || isSubmitting ? "Logging in..." : "Login"}
         </Button>
+        <p className="text-sm text-center mt-4">
+          <Link to="/signup" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
+            Create account
+          </Link>
+        </p>
       </form>
     </Form>
   );

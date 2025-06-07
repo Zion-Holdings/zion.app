@@ -6,4 +6,3 @@ test('Toggle theme from light to dark', async ({ page }) => {
   const html = page.locator('html');
   await expect(html).toHaveAttribute('data-theme', 'dark');
 });
-

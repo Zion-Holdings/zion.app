@@ -15,6 +15,10 @@ import ListingModeration from "@/pages/admin/ListingModeration";
 import TokenManager from "@/pages/admin/TokenManager";
 import IntegrationsPage from "@/pages/admin/IntegrationsPage";
 import WhitepaperGeneratorPage from "@/pages/WhitepaperGeneratorPage";
+import KycDashboard from "@/pages/admin/KycDashboard";
+import ZionBrain from "@/pages/admin/ZionBrain";
+import MetricsDashboard from "@/pages/dashboard/MetricsDashboard";
+import FounderBackupVault from "@/pages/FounderBackupVault";
 
 const AdminRoutes = () => {
   return (
@@ -110,10 +114,46 @@ const AdminRoutes = () => {
       />
 
       <Route
+        path="/admin/kyc"
+        element={
+          <ProtectedRoute adminOnly={true}>
+            <KycDashboard />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
         path="/admin/whitepaper-generator"
         element={
           <ProtectedRoute adminOnly={true}>
             <WhitepaperGeneratorPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/zion-brain"
+        element={
+          <ProtectedRoute adminOnly={true}>
+            <ZionBrain />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/vault"
+        element={
+          <ProtectedRoute adminOnly={true}>
+            <FounderBackupVault />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/kpi"
+        element={
+          <ProtectedRoute adminOnly={true}>
+            <MetricsDashboard adminView />
           </ProtectedRoute>
         }
       />

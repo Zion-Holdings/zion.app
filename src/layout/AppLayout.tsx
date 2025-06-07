@@ -5,11 +5,15 @@ import { Outlet } from "react-router-dom";
 import { useAuth } from '@/hooks/useAuth';
 import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // Assuming path
 import { AppHeader } from "./AppHeader";
+import { SecondaryNavbar } from "./SecondaryNavbar";
+import { useLocation } from "react-router-dom";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { Footer } from "@/components/Footer";
 import { SkipLink } from "@/components/SkipLink";
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
 import ErrorOverlay from '@/components/ErrorOverlay';
+import { logError } from '@/utils/logError';
 
 interface AppLayoutProps {
   children?: React.ReactNode; // Kept ReactNode for consistency
@@ -25,6 +29,8 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
   const [isResendingEmail, setIsResendingEmail] = useState(false);
   const [resendStatusMessage, setResendStatusMessage] = useState('');
   const { loading, error, setError } = useGlobalLoader();
+  const location = useLocation();
+  const isAuthPage = /^\/auth|\/login|\/register|\/signup|\/forgot-password|\/reset-password|\/update-password/.test(location.pathname);
 
   const handleResendVerificationEmail = async () => {
     if (!user || !user.email) {
@@ -50,7 +56,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
         setResendStatusMessage(data.message || 'Failed to resend verification email.');
       }
     } catch (error) {
-      console.error('Resend email error:', error);
+      logError(error, 'Resend email error');
       setResendStatusMessage('An error occurred while resending the email.');
     } finally {
       setIsResendingEmail(false);
@@ -82,7 +88,13 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
           )}
         </>
       )}
-      <AppHeader />
+      {!isAuthPage && (
+        <>
+          <AppHeader />
+          <SecondaryNavbar />
+        </>
+      )}
+      <ScrollToTop />
       {loading && <LoaderOverlay />}
       {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}
       <main id="main-content" className="flex-grow">

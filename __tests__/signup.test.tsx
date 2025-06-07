@@ -43,7 +43,7 @@ test('successful registration redirects to dashboard', async () => {
   (router.useNavigate as any).mockReturnValue(navigateMock);
   (toastHook.toast.success as any).mockImplementation(() => {});
   mockFetch([
-    { status: 201, body: { token: 'jwt' } },
+    { status: 201, body: { accessToken: 'jwt' } },
     { status: 200, body: { accessToken: 'jwt', refreshToken: 'ref' } }
   ]);
 
@@ -52,6 +52,14 @@ test('successful registration redirects to dashboard', async () => {
       <Signup />
     </MemoryRouter>
   );
+
+  // Verify form fields are present
+  expect(screen.getByLabelText(/full name/i)).toBeInTheDocument();
+  expect(screen.getByLabelText(/email address/i)).toBeInTheDocument();
+  expect(screen.getByLabelText(/^password$/i)).toBeInTheDocument();
+  expect(screen.getByLabelText(/confirm password/i)).toBeInTheDocument();
+  expect(screen.getByLabelText(/i agree to the terms and conditions/i)).toBeInTheDocument(); // Adjusted label text
+  expect(screen.getByRole('button', { name: /create account/i })).toBeInTheDocument();
 
   fireEvent.input(screen.getByLabelText(/full name/i), {
     target: { value: 'John Doe' },
@@ -65,7 +73,7 @@ test('successful registration redirects to dashboard', async () => {
   fireEvent.input(screen.getByLabelText(/confirm password/i), {
     target: { value: 'Password123' },
   });
-  fireEvent.click(screen.getByLabelText(/i agree/i));
+  fireEvent.click(screen.getByLabelText(/i agree to the terms and conditions/i)); // Adjusted label text
   fireEvent.submit(screen.getByRole('button', { name: /create account/i }));
 
   await screen.findByRole('button', { name: /create account/i });

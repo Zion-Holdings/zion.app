@@ -19,13 +19,14 @@ import HiringTracker from "@/pages/HiringTracker";
 import PortfolioBuilder from "@/pages/PortfolioBuilder";
 import Referrals from "@/pages/Referrals";
 import DeveloperPortal from "@/pages/DeveloperPortal";
-import WalletPage from "@/pages/Wallet";
+import WalletDashboard from "@/pages/Wallet";
 import OrdersPage from "@/pages/Orders";
 import OrderDetailPage from "@/pages/OrderDetail";
 import ContractBuilder from "@/pages/ContractBuilder";
 import Projects from "@/pages/Projects";
 import RewardsPage from "@/pages/Rewards";
 import AchievementsPage from "@/pages/Achievements";
+import MetricsDashboard from "@/pages/dashboard/MetricsDashboard";
 
 const DashboardRoutes = () => {
   return (
@@ -187,7 +188,7 @@ const DashboardRoutes = () => {
         path="/wallet"
         element={
           <ProtectedRoute>
-            <WalletPage />
+            <WalletDashboard />
           </ProtectedRoute>
         }
       />
@@ -204,6 +205,14 @@ const DashboardRoutes = () => {
         element={
           <ProtectedRoute>
             <AchievementsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dashboard/metrics"
+        element={
+          <ProtectedRoute>
+            <MetricsDashboard />
           </ProtectedRoute>
         }
       />

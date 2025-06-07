@@ -1,6 +1,6 @@
 // src/utils/consoleErrorToast.ts
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
-import { captureException } from './sentry'; // Added import
+import { logError } from './logError';
 
 const originalConsoleError = console.error;
 
@@ -17,17 +17,11 @@ console.error = (...args: any[]) => {
       originalConsoleError('Error showing snackbar in console.error override:', snackbarError);
     }
 
-    // Attempt to report to Sentry
+    // Attempt to report using centralized logger
     try {
-      if (first instanceof Error) {
-        captureException(first);
-      } else {
-        // Create a new error for better stack trace if the original arg isn't one.
-        // The stack will start from here, inside the console.error override.
-        captureException(new Error(message));
-      }
+      logError(first instanceof Error ? first : new Error(message));
     } catch (sentryError) {
-      originalConsoleError('Error reporting to Sentry in console.error override:', sentryError);
+      originalConsoleError('Error reporting to logger in console.error override:', sentryError);
     }
 
   } catch (overallError) {

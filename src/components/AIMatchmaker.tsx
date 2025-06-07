@@ -84,7 +84,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
           AI Matchmaker
         </CardTitle>
         <p className="text-sm text-zion-slate-light">
-          Describe what you're looking for and our AI will find the best matches
+          Describe what you&apos;re looking for and our AI will find the best matches
         </p>
       </CardHeader>
       <CardContent>

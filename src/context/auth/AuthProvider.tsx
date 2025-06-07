@@ -46,14 +46,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     password: string,
     rememberMe = false
   ) => {
-    const { res, data } = await loginUser(email, password); // Calls /api/auth/login
+    const { res, data } = await loginUser(email, password); // Calls /auth/login
 
     // data will have { error: "message", code: "ERROR_CODE" } from the API if status !== 200
-    // data will have { user, accessToken, refreshToken } from the API if status === 200
+    // data will have { user, accessToken } from the API if status === 200
 
     if (res.status === 200) {
       // Successful API call
-      setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
+      setTokens({ accessToken: data.accessToken });
       const authTokenKey = "auth.token";
       if (rememberMe) {
         safeStorage.setItem(authTokenKey, data.accessToken);
@@ -89,6 +89,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       toastMessage = data?.error || "Login failed due to a server error. Please try again later.";
     } else if (res.status === 400) { // Bad request (e.g. missing fields, though schema validation is in API)
         toastMessage = data?.error || "Invalid request. Please check your input.";
+    } else if (res.status === 404) { // Endpoint not found or invalid path
+        toastMessage = "Invalid credentials";
     }
     // Add any other specific error code handling here if needed
 

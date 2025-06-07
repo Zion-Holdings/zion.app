@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card";
 import { toast } from "@/components/ui/use-toast";
 import z from "zod";
 import { ChatAssistant } from "@/components/ChatAssistant";
+import { logError } from "@/utils/logError";
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,14 +19,12 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<{
     name?: string;
     email?: string;
-    subject?: string;
     message?: string;
   }>({});
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -43,7 +42,6 @@ export default function Contact() {
     const schema = z.object({
       name: z.string().min(2, "Name must be at least 2 characters"),
       email: z.string().email("Invalid email address"),
-      subject: z.string().min(2, "Subject must be at least 2 characters"),
       message: z.string().min(10, "Message must be at least 10 characters"),
     });
 
@@ -66,27 +64,35 @@ export default function Contact() {
 
     setErrors({});
 
-    // Simulate form submission
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message Sent",
-        description: "We've received your message and will get back to you soon.",
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    })
+      .then(async (res) => {
+        setIsSubmitting(false);
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || 'Failed to send message');
+        }
+        toast({
+          title: 'Message Sent',
+          description: "We've received your message and will get back to you soon."
+        });
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 2000);
+        setFormData({ name: '', email: '', message: '' });
+      })
+      .catch((err) => {
+        setIsSubmitting(false);
+        toast({
+          title: 'Submission Error',
+          description: err.message,
+          variant: 'destructive'
+        });
       });
-
-      setSubmitted(true);
-      setTimeout(() => setSubmitted(false), 2000);
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    }, 1500);
   };
 
   // Handle sending messages to the AI chat assistant
@@ -108,7 +114,7 @@ export default function Contact() {
       
       return Promise.resolve();
     } catch (error) {
-      console.error("Error in AI chat:", error);
+      logError(error, 'Error in AI chat');
       toast({
         title: "Chat Error",
         description: "There was an error communicating with our AI assistant. Please try again.",
@@ -136,7 +142,7 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact Zion - Get in Touch"
+        title="Contact | Zion Tech Group"
         description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform."
         keywords="contact Zion, AI marketplace support, tech platform contact"
         canonical="https://app.ziontechgroup.com/contact"
@@ -193,21 +199,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="subject" className="block text-white mb-2">Subject</label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className={`bg-zion-blue-dark border-zion-blue-light text-white ${errors.subject ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
-                    placeholder="How can we help you?"
-                    required
-                  />
-                  {errors.subject && (
-                    <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
-                  )}
-                </div>
 
                 <div>
                   <label htmlFor="message" className="block text-white mb-2">Message</label>

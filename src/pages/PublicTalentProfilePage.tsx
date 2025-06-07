@@ -9,6 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { HireNowCTA } from "@/components/profile/HireNowCTA";
+import { logError } from "@/utils/logError";
 import {
   Star,
   MapPin,
@@ -45,7 +46,7 @@ export default function ProfilePage() {
 
         setProfileData(data);
       } catch (error) {
-        console.error("Error fetching profile:", error);
+        logError(error, 'Error fetching profile');
         setIsError(true);
         toast({
           title: "Error",

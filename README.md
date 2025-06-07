@@ -1,5 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ziontechgroup.com/deploy-status)](https://app.netlify.com/sites/ziontechgroup.com/deploys)
 
+
 # Welcome to the project
 
 [![codecov](https://codecov.io/gh/Zion-support/zion.app/branch/main/graph/badge.svg)](https://codecov.io/gh/Zion-support/zion.app)
@@ -28,6 +29,7 @@ These components work in tandem to connect professionals and businesses.
 - **AI-Powered Capabilities:** Includes AI-driven content generation (ZionGPT), talent matching, and potentially other smart features.
 - **Content Management:** Integrated blog, whitepaper generation, and SEO content tools.
 - **Real-time Interactions:** Support for instant messaging and notifications (via Socket.io).
+- **Identity Verification:** Basic KYC submission and admin review flows.
 - **Internationalization (i18n):** Multi-language support for a global audience.
 - **Rich Media Product Listings:** Support for video and 3D models in product displays.
 - **Search Functionality:** Advanced search potentially powered by Elasticsearch.
@@ -36,6 +38,10 @@ These components work in tandem to connect professionals and businesses.
 - **Responsive Design:** User interface adapts to different screen sizes (implied by modern frontend stack).
 - **Service Integrations:** Connects with external services like Slack, Salesforce and Microsoft Teams (see `docs/Integrations.md`) and handles payments via Stripe (see `docs/Payments.md` for environment variable details).
 - **Rich Product Media:** Supports MP4 videos and GLB 3D models for product listings (`video_url`, `model_url` fields in database).
+- **Custom ZionGPT Instances:** See `docs/ZionGPT_Custom_Instance.md` for instructions on training localized models for DAOs and communities.
+- **Unified Deployment Protocol:** See `docs/UnifiedDeploymentProtocol.md` for guidelines on launching new market instances.
+- **On-chain Governance:** Solidity contracts in `dao/codebase` implement a stake-based DAO with 5-day voting periods and a 20% quorum requirement.
+- **Private ZK Voting:** Experimental module under `dao/zkvote` uses Semaphore proofs for anonymous, token-weighted voting.
 
 ### Visual Feature Summary
 
@@ -74,7 +80,7 @@ This project utilizes a modern, multi-component architecture:
 
 ### Prerequisites
 
-- Node.js (latest LTS version recommended)
+- Node.js 18 (LTS) or later
 - Python (version 3.10) & pip
 - Git
 - Access to a PostgreSQL server (for the Django backend)
@@ -195,6 +201,7 @@ The project exposes several APIs for programmatic access and integration.
 
 When developing or integrating, refer to these resources for accurate API information.
 For detailed examples, common use cases, and troubleshooting tips, see [docs/API_Guide.md](docs/API_Guide.md).
+An overview of the Zion OS stack APIs, including marketplace and talent modules, is available in [docs/ZionOS_Stack_API.md](docs/ZionOS_Stack_API.md).
 
 ## Testing
 
@@ -380,9 +387,9 @@ We welcome contributions to improve and expand this project! If you'd like to co
 3.  **Make Your Changes:** Implement your changes, ensuring you adhere to the project's coding style and conventions.
     - Run linters and formatters if configured (e.g., ESLint, Prettier for frontend; Black, Flake8 for Python). The project uses ESLint (see `eslint.config.js`).
 4.  **Test Your Changes:**
-    *   Add unit tests for any new functionality.
-    *   Ensure all existing and new tests pass (`npm run test` for frontend, `python manage.py test` for Django backend if applicable).
-    *   Ensure your changes pass type checking by running `npm run typecheck`.
+    - Add unit tests for any new functionality.
+    - Ensure all existing and new tests pass (`npm run test` for frontend, `python manage.py test` for Django backend if applicable).
+    - Ensure your changes pass type checking by running `npm run typecheck`.
 5.  **Commit Your Changes:** Write clear, concise commit messages.
 6.  **Push to Your Fork:** Push your changes to your forked repository.
 7.  **Submit a Pull Request (PR):** Open a PR from your branch to the `main` (or `develop`) branch of the original repository.
@@ -505,3 +512,52 @@ To run the pre-deploy smoke tests locally, first ensure the application is built
     ```
 
 Make sure your `cypress.config.ts` has `baseUrl: 'http://localhost:5000'` for local execution against the served build.
+
+### Blank Render Checks
+
+The Cypress test `cypress/e2e/blank_render.cy.ts` verifies that key routes render content inside the `<main>` element. To include additional pages in this check, add the desired path to the `routesToCheck` array at the top of that file.
+
+## Book Builder
+
+Use the `/book-builder` route to preview the Zion OS book. From there you can download a PDF edition or print a hard copy.
+
+## DevNet Sandbox
+
+Run `npm run devnet` to launch a local DevNet simulator. This command starts a
+Hardhat network alongside the development server. Once running, visit `/devnet`
+to access tools like the token faucet, proposal sandbox and GPT playground
+without impacting production data.
+
+## Offworld Deployment
+
+A minimal script is available to push a built Zion instance to IPFS for offline or mesh network distribution. After running `npm run build`, execute:
+
+```bash
+npx deploy-zion-ipfs
+```
+
+The command uploads the `dist` directory to your configured IPFS gateway and prints the resulting CID. Jobs, profiles, proposals and docs can be stored on IPFS, while messages and DAO vote logs sync through OrbitDB. See `src/offworld/` for helper modules.
+
+A remote test environment is available at **`/remote/dao`**. This route exposes a
+delay-tolerant governance panel that queues proposals and votes locally and
+syncs them once a low-latency link becomes available.
+
+## Multichain Governance
+
+The `token/multichain` directory provides Solidity contracts for deploying ZION$ across multiple chains. The LayerZero-based bridge wrapper allows deploying on zkSync while mirroring DAO votes to Starknet. Run the Hardhat script in `token/multichain/deploy` to deploy and record addresses.
+
+## Codex Automation
+
+This repository includes an optional workflow for automatically fixing lint errors using OpenAI Codex.
+
+- **codex-pipeline.yaml** – Defines an `openai-operator` pipeline that lints the `app/` directory, extracts failing code, sends it to Codex for a patch and then runs tests.
+- **scripts/codexApiFixer.js** – Simple script that sends a single file to Codex and writes the fixed version.
+- **scripts/codexWebhookServer.js** – Express server exposing `/webhook/trigger-fix` to launch the pipeline from external error reports.
+
+Start the webhook server with:
+
+```bash
+node scripts/codexWebhookServer.js
+```
+
+Then POST to `http://localhost:3001/webhook/trigger-fix` to trigger the automated fix pipeline.

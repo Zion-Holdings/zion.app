@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 import {
   Tabs,
   TabsList,
@@ -14,6 +15,7 @@ import {
   AvatarImage,
   AvatarFallback,
 } from '@/components/ui/avatar';
+import { VerifiedBadge } from '@/components/VerifiedBadge';
 
 interface User {
   id: string;
@@ -22,6 +24,7 @@ interface User {
   avatarUrl: string;
   notifications: { email: boolean; push: boolean };
   softDeleted?: boolean;
+  kycStatus?: 'unverified' | 'pending' | 'verified';
 }
 
 export default function Profile() {
@@ -29,21 +32,16 @@ export default function Profile() {
   const [avatarPreview, setAvatarPreview] = useState<string>('');
 
   useEffect(() => {
-    fetch('/api/users/me')
-      .then(res => res.json())
+    axios.get('/api/users/me')
+      .then(res => res.data)
       .then(setUser)
       .catch(() => {});
   }, []);
 
   const handleSave = async () => {
     if (!user) return;
-    const res = await fetch('/api/users/me', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(user),
-    });
-    const data = await res.json();
-    setUser(data);
+    const res = await axios.put('/api/users/me', user);
+    setUser(res.data);
   };
 
   const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -60,7 +58,7 @@ export default function Profile() {
   const handleDelete = async () => {
     const confirm = window.prompt('Enter password to confirm');
     if (!confirm) return;
-    await fetch('/api/users/me', { method: 'DELETE' });
+    await axios.delete('/api/users/me');
     setUser(prev => (prev ? { ...prev, softDeleted: true } : prev));
   };
 
@@ -89,6 +87,9 @@ export default function Profile() {
                   <AvatarFallback>{user.name?.charAt(0)}</AvatarFallback>
                 )}
               </Avatar>
+              {user.kycStatus === 'verified' && (
+                <VerifiedBadge verified label="Verified Identity" />
+              )}
               <Input type="file" aria-label="avatar" onChange={handleAvatarChange} />
             </div>
             <div>

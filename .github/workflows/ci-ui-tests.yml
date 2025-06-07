@@ -26,6 +26,9 @@ jobs:
       - name: 📦 Install Dependencies
         run: npm install
 
+      - name: 🌱 Seed Database
+        run: npx prisma db seed
+
       # --- CYPRESS TESTS (Optional) ---
       - name: 🔎 Run Cypress Tests
         uses: cypress-io/github-action@v6
@@ -45,7 +48,7 @@ jobs:
 
       - name: 📤 Upload Playwright Test Report (if failed)
         if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@43
         with:
           name: playwright-report
           path: playwright-logs/html-report

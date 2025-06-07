@@ -1,11 +1,11 @@
 describe('signup to checkout flow', () => {
   it('registers, logs in, adds to cart and completes checkout', () => {
-    cy.intercept('POST', '/api/auth/register', {
+    cy.intercept('POST', '/auth/register', {
       statusCode: 201,
       body: { token: 'jwt', user: { id: '1', email: 'new@example.com' } },
     }).as('register');
 
-    cy.intercept('POST', '/api/auth/login', {
+    cy.intercept('POST', '/auth/login', {
       statusCode: 200,
       body: { token: 'jwt', user: { id: '1', email: 'new@example.com' } },
       headers: { 'set-cookie': 'token=jwt; HttpOnly; Path=/' },

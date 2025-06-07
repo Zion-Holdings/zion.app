@@ -1,6 +1,6 @@
 
 import { GradientHeading } from "./GradientHeading";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Briefcase, HardDrive, Lightbulb, Users, HelpCircle } from "lucide-react"; // Added HelpCircle for default icon
 import { cn } from "@/lib/utils";
 
@@ -47,7 +47,7 @@ const defaultCategories = [
     name: "Innovation",
     description: "Discover cutting-edge solutions and tech breakthroughs",
     iconName: "Lightbulb",
-    link: "/category/innovation", // Assuming a generic link structure
+    link: "/innovation",
     color: "from-emerald-500 to-green-600",
   },
 ];
@@ -107,7 +107,7 @@ export function CategoriesSection({
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-white mb-4">No Categories Found</h2>
           <p className="text-zion-slate-light text-lg mb-2">
-            We couldn't find any categories to display at this time.
+            We couldn&apos;t find any categories to display at this time.
           </p>
           <p className="text-zion-slate-light text-md">
             Please check back later, or if you believe this is an error, contact support.
@@ -131,12 +131,12 @@ export function CategoriesSection({
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {displayCategories.map((category) => (
-            <Link 
-              key={category.id} // Use id for key
-              href={category.link || '#'} // Fallback link
-              className="group block"
+            <Link
+              key={category.id}
+              to={category.link || '#'}
+              className="group block rounded-lg focus:outline-none focus:ring-2 focus:ring-zion-cyan"
             >
-              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
+              <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 group-hover:border-zion-purple/50 group-focus:border-zion-purple/50 hover:translate-y-[-5px] group-hover:shadow-lg">
                 <div className={`rounded-full w-16 h-16 bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <div className="text-white">
                     {category.icon}

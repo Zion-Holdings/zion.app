@@ -38,8 +38,13 @@ import './utils/consoleErrorToast';
 import './utils/globalErrorHandler';
 import ToastProvider from './components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
+import { logError } from './utils/logError';
 import RootErrorBoundary from './components/RootErrorBoundary';
-import { GlobalSnackbarProvider, GlobalLoaderProvider, NotificationProvider, MessagingProvider } from './context';
+import {
+  AppLoaderProvider,
+  NotificationProvider,
+  MessagingProvider,
+} from './context';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
@@ -57,11 +62,14 @@ import { AuthProvider } from '@/context/auth/AuthProvider';
 import { CartProvider } from './context/CartContext';
 // import { FavoritesProvider } from './context/FavoritesContext.jsx';
 import { registerServiceWorker } from './serviceWorkerRegistration';
-import { enableDevToolsInStaging } from './utils/devtools';
+import { enableDevToolsInStaging, highlightZeroHeightElements } from './utils/devtools';
 import './utils/checkDuplicateClassNames';
 import { checkEssentialEnvVars } from './utils/validateEnv';
+import { FeedbackProvider } from './context/FeedbackContext';
+import { FeedbackWidget } from './components/feedback/FeedbackWidget';
 
 enableDevToolsInStaging();
+highlightZeroHeightElements();
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
@@ -94,13 +102,13 @@ try {
       />
       <RootErrorBoundary>
         <Provider store={store}>
-          <GlobalSnackbarProvider>
-          <GlobalLoaderProvider>
+        <Router basename={process.env.PUBLIC_URL || '/'}>
+          <AppLoaderProvider>
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
             <QueryClientProvider client={queryClient}>
               <WhitelabelProvider>
-                <Router basename={process.env.PUBLIC_URL || '/'}>
+                <FeedbackProvider>
                 <AuthProvider>
                   <MessagingProvider>
                   <NotificationProvider>
@@ -129,20 +137,21 @@ try {
                   </NotificationProvider>
                   </MessagingProvider>
                 </AuthProvider>
-              </Router>
+                <FeedbackWidget />
+              </FeedbackProvider>
             </WhitelabelProvider>
           </QueryClientProvider>
         </HelmetProvider>
         </I18nextProvider>
-        </GlobalLoaderProvider>
-        </GlobalSnackbarProvider>
+        </AppLoaderProvider>
+        </Router>
       </Provider>
       </RootErrorBoundary>
       {/* Removed duplicate main marker */}
     </React.StrictMode>,
   );
 } catch (error) {
-  console.error("Global error caught in main.tsx:", error);
+  logError(error, 'Global error caught in main.tsx');
   const rootElement = document.getElementById('root');
   if (rootElement) {
     rootElement.innerHTML = `
