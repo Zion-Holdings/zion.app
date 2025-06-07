@@ -38,6 +38,8 @@ export interface AxiosInstance {
     data?: any,
     config?: RequestInit
   ): Promise<AxiosResponse<T>>;
+  patch<T = any>(url: string, data?: any, config?: RequestInit): Promise<AxiosResponse<T>>;
+  delete<T = any>(url: string, config?: RequestInit): Promise<AxiosResponse<T>>;
 }
 
 export interface CustomAxiosStatic {
@@ -46,6 +48,8 @@ export interface CustomAxiosStatic {
   interceptors: { request: InterceptorManager; response: InterceptorManager };
   get: AxiosInstance['get'];
   post: AxiosInstance['post'];
+  patch: AxiosInstance['patch'];
+  delete: AxiosInstance['delete'];
 }
 
 interface AxiosDefaults {
@@ -82,6 +86,17 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       };
       const opts = { ...init, body: JSON.stringify(data), headers } as RequestInit;
       return request<T>(baseURL + url, 'POST', opts);
+    },
+    async patch<T = any>(url, data: any = {}, init: RequestInit = {}) {
+      const headers = {
+        'Content-Type': 'application/json',
+        ...(init as any).headers,
+      };
+      const opts = { ...init, body: JSON.stringify(data), headers } as RequestInit;
+      return request<T>(baseURL + url, 'PATCH', opts);
+    },
+    async delete<T = any>(url, init: RequestInit = {} as any) {
+      return request<T>(baseURL + url, 'DELETE', init);
     },
   };
 
@@ -166,6 +181,8 @@ const customAxios: CustomAxiosStatic = {
   interceptors: globalInterceptors,
   get: defaultInstance.get,
   post: defaultInstance.post,
+  patch: defaultInstance.patch,
+  delete: defaultInstance.delete,
 };
 
 export default customAxios;
