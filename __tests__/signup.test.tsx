@@ -43,7 +43,7 @@ test('successful registration redirects to dashboard', async () => {
   (router.useNavigate as any).mockReturnValue(navigateMock);
   (toastHook.toast.success as any).mockImplementation(() => {});
   mockFetch([
-    { status: 201, body: { token: 'jwt' } },
+    { status: 201, body: { accessToken: 'jwt' } },
     { status: 200, body: { accessToken: 'jwt', refreshToken: 'ref' } }
   ]);
 

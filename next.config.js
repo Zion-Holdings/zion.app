@@ -1,12 +1,9 @@
-import withTMInit from 'next-transpile-modules';
-
-const withTM = withTMInit([]);
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   eslint: {
     ignoreDuringBuilds: true,
   },
 };
 
-export default withTM(nextConfig);
+export default nextConfig;

@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { ChatAssistant } from '@/components/ChatAssistant';
+import { logError } from '@/utils/logError';
 
 export default function FounderBot() {
   const [open, setOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function FounderBot() {
         body: JSON.stringify({ messages: [{ role: 'user', content: message }] })
       });
     } catch (err) {
-      console.error('Founder bot error', err);
+      logError(err, { message: 'Founder bot error' });
     }
   };
 

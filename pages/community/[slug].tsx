@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'; // Removed useEffect
 import { NextSeo } from '@/components/NextSeo';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import EmptyState from '@/components/community/EmptyState';
@@ -60,7 +60,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCu
               <TooltipTrigger asChild>
                 {hasSession ? (
                   <Button asChild>
-                    <Link to={`/community?new=1&category=${category}`}>Create New Post</Link>
+                    <Link href={`/community?new=1&category=${category}`}>Create New Post</Link>
                   </Button>
                 ) : (
                   <Button disabled>Create New Post</Button>

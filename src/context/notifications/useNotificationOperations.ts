@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { Notification, FilterType, NotificationContextType } from './types';
-import axios from 'axios';
+import axios from '@/lib/axios';
 
 export const useNotificationOperations = (userId?: string): NotificationContextType => {
   const [notifications, setNotifications] = useState<Notification[]>([]);

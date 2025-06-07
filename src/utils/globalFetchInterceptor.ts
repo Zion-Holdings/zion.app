@@ -1,4 +1,5 @@
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
+import { logError } from './logError';
 
 if (typeof window !== "undefined" && window.fetch) {
   const originalFetch = window.fetch.bind(window);
@@ -25,6 +26,7 @@ if (typeof window !== "undefined" && window.fetch) {
       const message = err?.response?.data?.error ?? "Network error";
       const enqueueSnackbar = getEnqueueSnackbar();
       enqueueSnackbar(message, { variant: 'error' });
+      logError(err, { context: 'globalFetchInterceptor' });
       throw err;
     }
   };

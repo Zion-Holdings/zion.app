@@ -3,7 +3,14 @@ import { Footer } from '@/components/Footer';
 import { NextSeo } from '@/components/NextSeo';
 import { GradientHeading } from '@/components/GradientHeading';
 
+const historicalEvents: Record<string, string> = {
+  '01-01': 'Genesis block minted (2023)',
+  '06-06': 'Zion OS launched first governance portal (2024)',
+};
+
 export default function TimeOS() {
+  const todayKey = new Date().toISOString().slice(5, 10);
+  const todaysEvent = historicalEvents[todayKey];
   return (
     <>
       <NextSeo
@@ -46,6 +53,17 @@ export default function TimeOS() {
               <li>Shows “On this day in Zion history…”</li>
               <li>Pushes governance anniversaries into roadmap voting</li>
             </ul>
+            <div className="mt-4">
+              {todaysEvent ? (
+                <p className="text-zion-slate-light">
+                  <strong>On this day in Zion history:</strong> {todaysEvent}
+                </p>
+              ) : (
+                <p className="text-zion-slate-light italic">
+                  No historical events recorded for this day yet.
+                </p>
+              )}
+            </div>
           </section>
 
           <section className="space-y-4">

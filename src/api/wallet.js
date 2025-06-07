@@ -1,6 +1,11 @@
 import axios from 'axios';
 
 export const getWallet = async () => {
-  const res = await axios.get('/api/wallet');
-  return res.data;
+  try {
+    const res = await axios.get('/api/wallet');
+    return res.data;
+  } catch (err) {
+    console.error('Failed to fetch wallet', err);
+    throw err;
+  }
 };

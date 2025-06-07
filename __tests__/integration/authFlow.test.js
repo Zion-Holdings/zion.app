@@ -35,7 +35,7 @@ describe('auth flow integration', () => {
 
     expect(loginRes.status).not.toHaveBeenCalledWith(401);
     expect(loginRes.json).toHaveBeenCalledWith({
-      token: 'signed-jwt',
+      accessToken: 'signed-jwt',
       user: { id: '1', email: 'test@example.com', name: 'Test' },
     });
   });

@@ -2,13 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import WhitepaperSectionEditor from '@/components/WhitepaperSectionEditor';
 import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel'; // Import the new preview panel
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Trash2, Download, Share2, Send } from 'lucide-react'; // Added Send icon
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 import { toast } from "sonner";
+import { logError } from "@/utils/logError";
 
 
 interface WhitepaperSection {
@@ -168,7 +166,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
       setRawDraft(data.whitepaperDraft);
       setSections(parseWhitepaperDraft(data.whitepaperDraft));
     } catch (e: any) {
-      console.error("Error generating whitepaper:", e);
+      logError(e, { message: 'Error generating whitepaper' });
       setError(e.message || 'An unexpected error occurred.');
       setSections([]);
     } finally {
@@ -220,7 +218,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
       URL.revokeObjectURL(url);
       setError(null);
     } catch (e: any) {
-        console.error("Error downloading Markdown:", e);
+        logError(e, { message: 'Error downloading Markdown' });
         setError("Failed to download Markdown file. " + e.message);
     } finally {
         setIsDownloading(false);
@@ -241,6 +239,10 @@ const WhitepaperGeneratorPage: React.FC = () => {
       // This might involve temporarily changing styles, which is complex and error-prone.
       // A better approach for very long content is to paginate in jsPDF directly.
       // For now, we capture what's visible or rely on html2canvas's capabilities with scroll.
+
+      const html2canvasModule = await import('html2canvas');
+      const html2canvas = html2canvasModule.default;
+      const { default: jsPDF } = await import('jspdf');
 
       const canvas = await html2canvas(previewPanelRef.current, {
         scale: 2, // Increase scale for better resolution
@@ -276,7 +278,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
       pdf.save(`${slugify(tokenName || 'whitepaper')}_whitepaper.pdf`);
 
     } catch (e: any) {
-      console.error("Error downloading PDF:", e);
+      logError(e, { message: 'Error downloading PDF' });
       setError("Failed to download PDF file. " + e.message);
     } finally {
       setIsDownloading(false);
@@ -315,7 +317,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
       setCurrentSharedWhitepaperIsPublic(response.is_public); // is_public is returned by create-shared-whitepaper
       toast.success("Shareable link generated!");
     } catch (e: any) {
-      console.error("Error generating shareable link:", e);
+      logError(e, { message: 'Error generating shareable link' });
       setError("Failed to generate shareable link: " + e.message);
       toast.error("Failed to generate shareable link.");
     } finally {
@@ -345,7 +347,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         toast.success(`Whitepaper is now ${response.is_public ? 'public' : 'private'}.`);
 
     } catch (e: any) {
-        console.error("Error toggling public status:", e);
+        logError(e, { message: 'Error toggling public status' });
         setError("Failed to update public status: " + e.message);
         toast.error("Failed to update public status.");
         // Revert optimistic update if it failed:
@@ -406,7 +408,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
         toast.success("Whitepaper submitted to counsel successfully!");
 
     } catch (e: any) {
-        console.error("Error submitting to counsel:", e);
+        logError(e, { message: 'Error submitting to counsel' });
         setError("Failed to submit to counsel: " + e.message);
         toast.error("Failed to submit to counsel: " + e.message);
     } finally {

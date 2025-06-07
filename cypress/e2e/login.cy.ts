@@ -35,4 +35,23 @@ describe('login flow', () => {
     cy.wait('@login');
     cy.url().should('include', '/dashboard');
   });
+
+  it('should display login form elements on /login route', () => {
+    cy.visit('/login');
+
+    // Check for email input
+    cy.get('input[name="email"]')
+      .should('be.visible')
+      .and('have.attr', 'placeholder', 'you@example.com');
+
+    // Check for password input
+    cy.get('input[name="password"]')
+      .should('be.visible')
+      .and('have.attr', 'placeholder', 'Enter password');
+
+    // Check for login button
+    cy.get('button[type="submit"]')
+      .should('be.visible')
+      .and('contain.text', 'Login'); // Or use .invoke('text').then((text) => expect(text.trim()).to.equal('Login')); if needed for precise match
+  });
 });

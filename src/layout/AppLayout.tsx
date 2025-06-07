@@ -13,6 +13,7 @@ import { SkipLink } from "@/components/SkipLink";
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
 import ErrorOverlay from '@/components/ErrorOverlay';
+import { logError } from '@/utils/logError';
 
 interface AppLayoutProps {
   children?: React.ReactNode; // Kept ReactNode for consistency
@@ -55,7 +56,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
         setResendStatusMessage(data.message || 'Failed to resend verification email.');
       }
     } catch (error) {
-      console.error('Resend email error:', error);
+      logError(error, { message: 'Resend email error' });
       setResendStatusMessage('An error occurred while resending the email.');
     } finally {
       setIsResendingEmail(false);

@@ -10,26 +10,39 @@ export default function CheckoutPage() {
   const { id } = useParams();
   const [product, setProduct] = useState<ProductListing | null>(null);
   const [intent, setIntent] = useState<any | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchProduct = async () => {
       if (!id) return;
+      setIsLoading(true);
+      setError(null);
       try {
         const res = await fetch(`/api/products/${id}`);
-        if (res.ok) {
-          const data = await res.json();
-          setProduct(data);
-          return;
-        }
-      } catch (err) {
+        if (!res.ok) throw new Error('Failed to fetch product');
+        const data = await res.json();
+        setProduct(data);
+      } catch (err: any) {
         console.error('Failed to load product', err);
+        setError(err.message);
+        const fallback = NEW_PRODUCTS.find(p => p.id === id) || null;
+        setProduct(fallback);
+      } finally {
+        setIsLoading(false);
       }
-      const fallback = NEW_PRODUCTS.find(p => p.id === id) || null;
-      setProduct(fallback);
     };
 
     fetchProduct();
   }, [id]);
+
+  if (isLoading) {
+    return <div className="p-6 text-white">Loading...</div>;
+  }
+
+  if (error && !product) {
+    return <div className="p-6 text-white">Failed to load product.</div>;
+  }
 
   if (!product) {
     return <div className="p-6 text-white">Loading...</div>;

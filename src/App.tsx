@@ -73,7 +73,7 @@ const RecommendationsPage = React.lazy(() => import('./pages/RecommendationsPage
 // import ResetPassword from './pages/ResetPassword'; // Removed - Handled by allRoutes
 // import Wallet from './pages/Wallet'; // Removed - Handled by allRoutes
 import { SupportChatbot } from './components/SupportChatbot';
-// import PrivateRoute from './components/PrivateRoute'; // Removed - Handled by allRoutes
+import PrivateRoute from './components/PrivateRoute'; // Removed - Handled by allRoutes
 // FallbackProps, Button, Card components imports removed as RootErrorFallback is removed.
 
 // RootErrorFallback function removed.

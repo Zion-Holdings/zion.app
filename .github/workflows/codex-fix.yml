@@ -1,0 +1,22 @@
+name: Codex Bug Fix
+
+on:
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: 'Describe the bug to fix'
+        required: true
+
+jobs:
+  send-prompt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: node scripts/codex-bug-fix.js "$PROMPT"
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PROMPT: ${{ github.event.inputs.prompt }}

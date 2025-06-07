@@ -49,11 +49,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const { res, data } = await loginUser(email, password); // Calls /auth/login
 
     // data will have { error: "message", code: "ERROR_CODE" } from the API if status !== 200
-    // data will have { user, accessToken, refreshToken } from the API if status === 200
+    // data will have { user, accessToken } from the API if status === 200
 
     if (res.status === 200) {
       // Successful API call
-      setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
+      setTokens({ accessToken: data.accessToken });
       const authTokenKey = "auth.token";
       if (rememberMe) {
         safeStorage.setItem(authTokenKey, data.accessToken);
@@ -108,7 +108,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       const { res, data } = await registerUser(name, email, password);
 
-      if (!res.ok) {
+      if (!(res.status >= 200 && res.status < 300)) {
         // Handle API errors (e.g., 400, 409, 500) from /api/auth/register
         toast({
           title: "Signup Failed",

@@ -1,8 +1,10 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 export default function NationDashboard() {
-  const { slug } = useParams<{ slug: string }>();
+  const router = useRouter();
+  const { slug } = router.query as { slug?: string };
+  if (!slug) return null;
 
   return (
     <div className="container mx-auto py-8 space-y-6">

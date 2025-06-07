@@ -31,7 +31,7 @@ export default function FeedbackAnalytics() {
             {feedback.map(f => (
               <li key={f.id} className="border-b pb-2">
                 <div>Rating: {f.rating}</div>
-                {f.comments && <div className="text-sm italic">{f.comments}</div>}
+                {f.comment && <div className="text-sm italic">{f.comment}</div>}
                 <div className="text-xs text-muted-foreground">{new Date(f.createdAt).toLocaleString()}</div>
               </li>
             ))}

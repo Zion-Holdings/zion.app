@@ -1,5 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ziontechgroup.com/deploy-status)](https://app.netlify.com/sites/ziontechgroup.com/deploys)
 
+
 # Welcome to the project
 
 [![codecov](https://codecov.io/gh/Zion-support/zion.app/branch/main/graph/badge.svg)](https://codecov.io/gh/Zion-support/zion.app)
@@ -79,7 +80,7 @@ This project utilizes a modern, multi-component architecture:
 
 ### Prerequisites
 
- - Node.js 18 (LTS) or later
+- Node.js 18 (LTS) or later
 - Python (version 3.10) & pip
 - Git
 - Access to a PostgreSQL server (for the Django backend)
@@ -386,9 +387,9 @@ We welcome contributions to improve and expand this project! If you'd like to co
 3.  **Make Your Changes:** Implement your changes, ensuring you adhere to the project's coding style and conventions.
     - Run linters and formatters if configured (e.g., ESLint, Prettier for frontend; Black, Flake8 for Python). The project uses ESLint (see `eslint.config.js`).
 4.  **Test Your Changes:**
-    *   Add unit tests for any new functionality.
-    *   Ensure all existing and new tests pass (`npm run test` for frontend, `python manage.py test` for Django backend if applicable).
-    *   Ensure your changes pass type checking by running `npm run typecheck`.
+    - Add unit tests for any new functionality.
+    - Ensure all existing and new tests pass (`npm run test` for frontend, `python manage.py test` for Django backend if applicable).
+    - Ensure your changes pass type checking by running `npm run typecheck`.
 5.  **Commit Your Changes:** Write clear, concise commit messages.
 6.  **Push to Your Fork:** Push your changes to your forked repository.
 7.  **Submit a Pull Request (PR):** Open a PR from your branch to the `main` (or `develop`) branch of the original repository.
@@ -515,10 +516,10 @@ Make sure your `cypress.config.ts` has `baseUrl: 'http://localhost:5000'` for lo
 ### Blank Render Checks
 
 The Cypress test `cypress/e2e/blank_render.cy.ts` verifies that key routes render content inside the `<main>` element. To include additional pages in this check, add the desired path to the `routesToCheck` array at the top of that file.
+
 ## Book Builder
 
 Use the `/book-builder` route to preview the Zion OS book. From there you can download a PDF edition or print a hard copy.
-
 
 ## DevNet Sandbox
 
@@ -536,6 +537,27 @@ npx deploy-zion-ipfs
 ```
 
 The command uploads the `dist` directory to your configured IPFS gateway and prints the resulting CID. Jobs, profiles, proposals and docs can be stored on IPFS, while messages and DAO vote logs sync through OrbitDB. See `src/offworld/` for helper modules.
+
+A remote test environment is available at **`/remote/dao`**. This route exposes a
+delay-tolerant governance panel that queues proposals and votes locally and
+syncs them once a low-latency link becomes available.
+
 ## Multichain Governance
 
 The `token/multichain` directory provides Solidity contracts for deploying ZION$ across multiple chains. The LayerZero-based bridge wrapper allows deploying on zkSync while mirroring DAO votes to Starknet. Run the Hardhat script in `token/multichain/deploy` to deploy and record addresses.
+
+## Codex Automation
+
+This repository includes an optional workflow for automatically fixing lint errors using OpenAI Codex.
+
+- **codex-pipeline.yaml** – Defines an `openai-operator` pipeline that lints the `app/` directory, extracts failing code, sends it to Codex for a patch and then runs tests.
+- **scripts/codexApiFixer.js** – Simple script that sends a single file to Codex and writes the fixed version.
+- **scripts/codexWebhookServer.js** – Express server exposing `/webhook/trigger-fix` to launch the pipeline from external error reports.
+
+Start the webhook server with:
+
+```bash
+node scripts/codexWebhookServer.js
+```
+
+Then POST to `http://localhost:3001/webhook/trigger-fix` to trigger the automated fix pipeline.
