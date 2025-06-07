@@ -1,7 +1,7 @@
 name: Regenerate package-lock
 
 on:
-  workflow_dispatch:
+  w  orkflow_dispatch:
 
 jobs:
   regenerate:
