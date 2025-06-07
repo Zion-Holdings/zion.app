@@ -56,7 +56,7 @@ export default function CommunityPage() {
   console.log('CommunityPage featuredPosts:', featuredPosts);
   console.log('CommunityPage recentPosts:', recentPosts);
   if (!featuredPosts || !recentPosts) {
-    logError('CommunityPage: Posts data is missing from context!');
+    logError(new Error('CommunityPage: Posts data is missing from context!'), { message: 'CommunityPage: Posts data is missing from context!' });
   }
   
   return (

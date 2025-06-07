@@ -12,7 +12,7 @@ export default function AICoreDashboard() {
       setStatus(res.status);
     } catch (err: any) {
       setStatus('error');
-      logError(err, 'Training error');
+      logError(err, { message: 'Training error' });
     }
   }
 

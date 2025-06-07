@@ -59,7 +59,7 @@ export default function FraudDetection() {
       setStats(newStats);
       
     } catch (error) {
-      logError(error, 'Error fetching fraud flags');
+      logError(error, { message: 'Error fetching fraud flags' });
       toast({
         title: "Error",
         description: "Failed to load fraud detection data",
@@ -134,7 +134,7 @@ export default function FraudDetection() {
       fetchFraudFlags();
       
     } catch (error) {
-      logError(error, 'Error updating fraud flag');
+      logError(error, { message: 'Error updating fraud flag' });
       toast({
         title: "Error",
         description: "Failed to update flag",

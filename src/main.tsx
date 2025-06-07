@@ -151,7 +151,7 @@ try {
     </React.StrictMode>,
   );
 } catch (error) {
-  logError(error, 'Global error caught in main.tsx');
+  logError(error, { message: 'Global error caught in main.tsx' });
   const rootElement = document.getElementById('root');
   if (rootElement) {
     rootElement.innerHTML = `

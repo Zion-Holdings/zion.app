@@ -25,7 +25,7 @@ const CartContextTester = () => {
       </div>
     );
   } catch (error) {
-    logError(error, 'CartContextTester: useCart() FAILED!');
+    logError(error, { message: 'CartContextTester: useCart() FAILED!' });
     // Render an error message if it fails
     return (
       <div style={{ position: 'fixed', top: '10px', left: '10px', backgroundColor: 'red', color: 'white', padding: '5px', zIndex: 9999 }}>

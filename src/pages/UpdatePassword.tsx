@@ -112,7 +112,7 @@ export default function UpdatePassword() {
         navigate("/login");
       }, 3000);
     } catch (error: any) {
-      logError(error, 'Password update error');
+      logError(error, { message: 'Password update error' });
       toast({
         title: "Password update failed",
         description: error.message || "An unexpected error occurred",

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+import { useEffect } from 'react';
 import ProductCard from '@/components/ProductCard';
 import { showError } from '@/utils/showToast';
 
@@ -18,16 +19,23 @@ async function fetchProducts() {
 
 export default function MarketplaceLanding() {
   const navigate = useNavigate();
-  const { data: products = [], error } = useQuery('products', fetchProducts, {
+  const { data: products = [], error, isError } = useQuery({
+    queryKey: ['products'],
+    queryFn: fetchProducts,
     retry: 1,
-    onError: () => showError('products', 'Unable to load products'),
   });
 
-  if (!products.length && !error) {
+  useEffect(() => {
+    if (isError && error) {
+      showError('products', 'Unable to load products');
+    }
+  }, [isError, error]);
+
+  if (!products.length && !isError) {
     return <div className="p-6 text-white">Loading...</div>;
   }
 
-  if (error) {
+  if (isError) {
     return <div className="p-6 text-white">Error loading products</div>;
   }
 
