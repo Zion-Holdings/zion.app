@@ -143,6 +143,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+      "@rushstack/eslint-patch": "^1.5.1",
       "ts-node": "^10.9.1",
     "@axe-core/react": "^4.8.2",
     "@babel/preset-env": "^7.27.2",
