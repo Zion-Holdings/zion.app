@@ -55,8 +55,10 @@ const CreateProposalPage: React.FC = () => {
     },
   });
 
+  const { query } = router;
+
   useEffect(() => {
-    const templateId = router.query.template as string | undefined;
+    const templateId = Array.isArray(query.template) ? query.template[0] : query.template;
     if (templateId) {
       const template = PROPOSAL_TEMPLATES.find((t) => t.id === templateId);
       if (template) {
@@ -73,7 +75,7 @@ const CreateProposalPage: React.FC = () => {
         });
       }
     }
-  }, [router.query.template]);
+  }, [query.template]);
 
   const onSubmit = async (data: ProposalFormData) => {
     setIsLoading(true);

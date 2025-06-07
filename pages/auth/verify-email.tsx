@@ -27,7 +27,8 @@ const VerifyEmailPage = () => {
 
       // We need to check if the user object is available, indicating Supabase processed the link.
       // Supabase might also specific 'type' in URL like 'signup' or 'email_change'
-      const type = router.query.type as string | undefined;
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get('type');
 
       // If there's a user session, it means Supabase has processed the verification link successfully.
       if (user && user.id) {
@@ -105,7 +106,7 @@ const VerifyEmailPage = () => {
         window.removeEventListener('hashchange', handleHashChange);
     };
 
-  }, [user, authLoading, router.query.type, router, setUser]);
+  }, [user, authLoading, router, setUser]);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '20px' }}>
