@@ -2,7 +2,7 @@ import React from 'react';
 import { RouteObject } from 'react-router';
 import { Navigate } from 'react-router-dom';
 
-export interface AppRouteObject extends Omit<RouteObject, 'index'> {
+export interface AppRouteObject extends Omit<RouteObject, 'index' | 'children'> {
   /**
    * React Router allows `index: true` for index routes. The default
    * `RouteObject` type restricts non-index routes to `index?: false`, which
@@ -10,6 +10,7 @@ export interface AppRouteObject extends Omit<RouteObject, 'index'> {
    * here so routes may specify either `index: true` or `index: false`.
    */
   index?: boolean;
+  children?: AppRouteObject[];
   metaTitle?: string;
   requiresAuth?: boolean;
 }
