@@ -26,6 +26,7 @@ import PaymentSuccess from "@/pages/payment-success";
 import NewProductsPage from "@/pages/NewProductsPage";
 import NewServicesPage from "@/pages/NewServicesPage";
 import InnovationPage from "@/pages/InnovationPage";
+import CartPage from "@/pages/Cart";
 
 const MarketplaceRoutes = () => {
   return (
