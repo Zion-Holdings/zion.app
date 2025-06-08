@@ -1,7 +1,7 @@
 name: Regenerate package-lock
 
 on:
-  w   orkflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   regenerate:
@@ -17,6 +17,5 @@ jobs:
         with:
           add: 'package-lock.json'
           message: 'Fix: Regenerate package-lock.json'
-
-      author_name: 'Kleber Alcatrao'
-      author_email: 'kleber@ziontechgroup.com'
+          author_name: 'Kleber Alcatrao'
+          author_email: 'kleber@ziontechgroup.com'
