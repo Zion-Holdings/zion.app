@@ -4,7 +4,7 @@ import { showApiError } from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
 import axiosRetry from 'axios-retry';
 
-axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';
+axios.defaults.baseURL = 'your_base_url_here';
 
 // Global interceptor for all axios instances
 function mapStatusMessage(status?: number, fallback = ''): string {
