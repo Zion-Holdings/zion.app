@@ -2,15 +2,15 @@
 
 interface EssentialEnvVars {
   VITE_REOWN_PROJECT_ID: string;
-  VITE_SUPABASE_URL: string;
-  VITE_SUPABASE_ANON_KEY: string;
+  NEXT_PUBLIC_SUPABASE_URL: string;
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: string;
 }
 
 // List of critical environment variables that must be defined
 const CRITICAL_ENV_VARS: Array<keyof EssentialEnvVars> = [
   'VITE_REOWN_PROJECT_ID',
-  'VITE_SUPABASE_URL',
-  'VITE_SUPABASE_ANON_KEY',
+  'NEXT_PUBLIC_SUPABASE_URL',
+  'NEXT_PUBLIC_SUPABASE_ANON_KEY',
 ];
 
 // Placeholder/default values that are considered invalid for VITE_REOWN_PROJECT_ID
@@ -49,13 +49,13 @@ export const checkEssentialEnvVars = (): void => {
       missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
     }
 
-    // Specific checks for VITE_SUPABASE_URL placeholders
-    if (varName === 'VITE_SUPABASE_URL' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
+    // Specific checks for NEXT_PUBLIC_SUPABASE_URL placeholders
+    if (varName === 'NEXT_PUBLIC_SUPABASE_URL' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
       missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
     }
 
-    // Specific checks for VITE_SUPABASE_ANON_KEY placeholders
-    if (varName === 'VITE_SUPABASE_ANON_KEY' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
+    // Specific checks for NEXT_PUBLIC_SUPABASE_ANON_KEY placeholders
+    if (varName === 'NEXT_PUBLIC_SUPABASE_ANON_KEY' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
       missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
     }
   }

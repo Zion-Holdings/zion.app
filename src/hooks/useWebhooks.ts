@@ -36,7 +36,6 @@ export function useWebhooks() {
     // chaining avoids a TypeError in those cases and falls back to process.env.
     const env = (import.meta as any)?.env ?? process.env;
     const url =
-      env.VITE_SUPABASE_URL ||
       env.NEXT_PUBLIC_SUPABASE_URL ||
       env.SUPABASE_URL;
     return `${url}/functions/v1/webhook-manager`;
