@@ -110,6 +110,15 @@ This project utilizes a modern, multi-component architecture:
     Set `NEXT_PUBLIC_REOWN_PROJECT_ID` in your `.env` file with this value. If the domain is not on the allowlist you'll see an error like:
     `Origin https://app.ziontechgroup.com not found on Allowlist`.
 
+### Deployment Environment
+
+When deploying this application to a hosting service (e.g., Netlify, Vercel, AWS Amplify), it is crucial to configure the following environment variables in your deployment environment's settings:
+
+-   `NEXT_PUBLIC_SUPABASE_URL`: Your Supabase project URL.
+-   `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Your Supabase project anonymous (public) key.
+
+These variables are essential for the Supabase integration to function correctly in the live environment. Without them, features relying on Supabase (such as authentication, database interactions, etc.) will fail. Please refer to your `.env.example` file for the exact variable names and ensure they are set with your actual production Supabase credentials.
+
 ### Frontend (React + Vite)
 
 ```sh
