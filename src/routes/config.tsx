@@ -17,7 +17,7 @@ function guardRoutes(routes: AppRouteObject[]): AppRouteObject[] {
   return routes.map((r) => ({
     ...r,
     element: r.element ? <ErrorGuard>{r.element}</ErrorGuard> : r.element,
-    children: r.children ? guardRoutes(r.children) : undefined,
+    ...(r.children ? { children: guardRoutes(r.children) } : {}),
   }));
 }
 import { LoginForm } from '@/components/auth/login';
