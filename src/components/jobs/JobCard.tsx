@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import type { Job } from '@/types/jobs';
@@ -18,7 +18,7 @@ export function JobCard({ job }: JobCardProps) {
           )}
         </div>
         <p className="text-zion-slate-light">{job.description}</p>
-        <Link to={`/careers/${job.id}`} className="inline-block">
+        <Link href={`/careers/${job.id}`} className="inline-block">
           <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark">
             Apply Now
           </Button>
