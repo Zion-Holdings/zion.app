@@ -5,7 +5,7 @@ import z from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 
 import {
   Form,
@@ -34,9 +34,9 @@ const productSchema = z.object({
       message: "Price must be a valid number",
     }),
   category: z.string().min(1, "Please select a category"),
-  image: z.instanceof(File).optional(),
-  video: z.instanceof(File).optional(),
-  model: z.instanceof(File).optional(),
+  image: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
+  video: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
+  model: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
   tags: z.string().optional(),
 });
 
@@ -46,7 +46,7 @@ type ProductFormValues = z.infer<typeof productSchema>;
 export function ProductSubmissionForm() {
   const { user } = useAuth();
   const { toast } = useToast();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [imagePreview, setImagePreview] = React.useState(null as string | null);
   const [activeTab, setActiveTab] = React.useState("manual");
@@ -248,7 +248,7 @@ export function ProductSubmissionForm() {
       });
       
       // Redirect to product page
-      navigate(`/marketplace/listing/${productRecord.id}`);
+      router.push(`/marketplace/listing/${productRecord.id}`);
     } catch (error) {
       toast({
         title: "Publication Failed",
