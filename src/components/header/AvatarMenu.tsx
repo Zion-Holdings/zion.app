@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -29,10 +29,10 @@ export const AvatarMenu: React.FC = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem asChild>
-          <Link to="/profile">Profile</Link>
+          <Link href="/profile" passHref>Profile</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link to="/orders">Orders</Link>
+          <Link href="/orders" passHref>Orders</Link>
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={logout}>Logout</DropdownMenuItem>
       </DropdownMenuContent>
