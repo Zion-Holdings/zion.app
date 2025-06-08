@@ -17,5 +17,5 @@ export const showError = (
     : error.code
     ? `${error.code}: ${error.message}`
     : error.message;
-  toast.error(text, { id });
+  toast.error(String(text), { id });
 };
