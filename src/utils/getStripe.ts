@@ -42,12 +42,12 @@ export function getStripe() {
       if (livePublishableKey) {
         selectedKey = livePublishableKey;
       } else {
-        console.error('Production domain detected, but VITE_STRIPE_PUBLISHABLE_KEY is not set.');
+        console.error('Production domain detected, but NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set.');
       }
     } else if (testPublishableKey) {
       selectedKey = testPublishableKey;
     } else {
-      console.warn('Non-production domain, but VITE_STRIPE_TEST_PUBLISHABLE_KEY is not set. Stripe may not load.');
+      console.warn('Non-production domain, but NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY is not set. Stripe may not load.');
     }
 
     if (!selectedKey) {

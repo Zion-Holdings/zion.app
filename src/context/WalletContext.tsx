@@ -3,7 +3,18 @@
 
 // Definition of getAppKitProjectId
 const getAppKitProjectId = (): string | undefined => {
-  return process.env.NEXT_PUBLIC_REOWN_PROJECT_ID;
+  // Prioritize NEXT_PUBLIC_ variable for Next.js context
+  const nextPublicProjectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID;
+  if (nextPublicProjectId) {
+    return nextPublicProjectId;
+  }
+  // Fallback to VITE_ variable if NEXT_PUBLIC_ is not set
+  const viteProjectId = process.env.VITE_REOWN_PROJECT_ID;
+  if (viteProjectId) {
+    console.warn("WalletContext: Using VITE_REOWN_PROJECT_ID as fallback for AppKit Project ID.");
+    return viteProjectId;
+  }
+  return undefined;
 };
 
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect, useRef } from 'react';
