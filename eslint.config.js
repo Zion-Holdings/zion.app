@@ -137,7 +137,7 @@ export default tseslint.config(
   {
     files: [
         "*.cjs",
-        "babel.config.cjs",
+        "babel.config.js",
         "tailwind.config.js", // Typically CJS
         "workbox-config.js",
         "scripts/**/*.{js,cjs}",
