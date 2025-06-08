@@ -21,6 +21,10 @@ export default {
     "/playwright/", // Assuming playwright tests might be in a root /playwright folder
     "\\.spec\\.[jt]s?(x)$" // Convention for Playwright spec files, to avoid conflict if any
   ],
+  transformIgnorePatterns: [
+    '/node_modules/(?!(@babel|next|@next|react-markdown|@sentry/react)/)',
+    '^.+\\.module\\.(css|sass|scss)$',
+  ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
