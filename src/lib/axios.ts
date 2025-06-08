@@ -27,19 +27,23 @@ class InterceptorManager {
   }
 }
 
+export interface RequestConfig extends RequestInit {
+  withCredentials?: boolean;
+}
+
 export interface AxiosInstance {
   interceptors: { request: InterceptorManager; response: InterceptorManager };
   get<T = any>(
     url: string,
-    config?: { params?: Record<string, any> } & RequestInit
+    config?: { params?: Record<string, any> } & RequestConfig
   ): Promise<AxiosResponse<T>>;
   post<T = any>(
     url: string,
     data?: any,
-    config?: RequestInit
+    config?: RequestConfig
   ): Promise<AxiosResponse<T>>;
-  patch<T = any>(url: string, data?: any, config?: RequestInit): Promise<AxiosResponse<T>>;
-  delete<T = any>(url: string, config?: RequestInit): Promise<AxiosResponse<T>>;
+  patch<T = any>(url: string, data?: any, config?: RequestConfig): Promise<AxiosResponse<T>>;
+  delete<T = any>(url: string, config?: RequestConfig): Promise<AxiosResponse<T>>;
 }
 
 export interface CustomAxiosStatic {
@@ -69,35 +73,35 @@ const globalInterceptors = {
 
 export function create(config: { baseURL?: string; withCredentials?: boolean } = {}): AxiosInstance {
   const baseURL = config.baseURL || '';
-  const withCreds = !!config.withCredentials;
+  const defaultWithCreds = !!config.withCredentials;
 
   const instance: AxiosInstance = {
     interceptors: { request: new InterceptorManager(), response: new InterceptorManager() },
-    async get<T = any>(url, init: { params?: Record<string, any> } & RequestInit = {} as any) {
+    async get<T = any>(url, init: { params?: Record<string, any> } & RequestConfig = {} as any) {
       const params = (init as any).params
         ? '?' + new URLSearchParams((init as any).params).toString()
         : '';
-      const opts = { ...init } as RequestInit;
+      const opts = { ...init } as RequestConfig;
       delete (opts as any).params;
       return request<T>(baseURL + url + params, 'GET', opts);
     },
-    async post<T = any>(url, data: any = {}, init: RequestInit = {}) {
+    async post<T = any>(url, data: any = {}, init: RequestConfig = {}) {
       const headers = {
         'Content-Type': 'application/json',
         ...(init as any).headers,
       };
-      const opts = { ...init, body: JSON.stringify(data), headers } as RequestInit;
+      const opts = { ...init, body: JSON.stringify(data), headers } as RequestConfig;
       return request<T>(baseURL + url, 'POST', opts);
     },
-    async patch<T = any>(url, data: any = {}, init: RequestInit = {}) {
+    async patch<T = any>(url, data: any = {}, init: RequestConfig = {}) {
       const headers = {
         'Content-Type': 'application/json',
         ...(init as any).headers,
       };
-      const opts = { ...init, body: JSON.stringify(data), headers } as RequestInit;
+      const opts = { ...init, body: JSON.stringify(data), headers } as RequestConfig;
       return request<T>(baseURL + url, 'PATCH', opts);
     },
-    async delete<T = any>(url, init: RequestInit = {} as any) {
+    async delete<T = any>(url, init: RequestConfig = {} as any) {
       return request<T>(baseURL + url, 'DELETE', init);
     },
   };
@@ -110,8 +114,8 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     ...globalInterceptors.response.handlers
   );
 
-  async function request<T>(url: string, method: string, init: RequestInit): Promise<AxiosResponse<T>> {
-    let reqInit = { ...init };
+  async function request<T>(url: string, method: string, init: RequestConfig): Promise<AxiosResponse<T>> {
+    let reqInit: RequestConfig = { ...init };
     // Run request interceptors
     for (const h of instance.interceptors.request.handlers) {
       try {
@@ -138,6 +142,9 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     if (authToken) {
       headers['Authorization'] = `Bearer ${authToken}`;
     }
+
+    const withCreds = reqInit.withCredentials ?? defaultWithCreds;
+    delete reqInit.withCredentials;
 
     const response = await fetch(url, {
       ...reqInit,
