@@ -1,16 +1,16 @@
 // src/utils/validateEnv.ts
 
 interface EssentialEnvVars {
-  VITE_REOWN_PROJECT_ID: string;
-  VITE_SUPABASE_URL: string;
-  VITE_SUPABASE_ANON_KEY: string;
+  NEXT_PUBLIC_REOWN_PROJECT_ID: string;
+  NEXT_PUBLIC_SUPABASE_URL: string;
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: string;
 }
 
 // List of critical environment variables that must be defined
 const CRITICAL_ENV_VARS: Array<keyof EssentialEnvVars> = [
-  'VITE_REOWN_PROJECT_ID',
-  'VITE_SUPABASE_URL',
-  'VITE_SUPABASE_ANON_KEY',
+  'NEXT_PUBLIC_REOWN_PROJECT_ID',
+  'NEXT_PUBLIC_SUPABASE_URL',
+  'NEXT_PUBLIC_SUPABASE_ANON_KEY',
 ];
 
 // Placeholder/default values that are considered invalid for VITE_REOWN_PROJECT_ID
@@ -37,25 +37,25 @@ export const checkEssentialEnvVars = (): void => {
   const missingOrInvalidVars: string[] = [];
 
   for (const varName of CRITICAL_ENV_VARS) {
-    const value = import.meta.env[varName];
+    const value = process.env[varName]; // Changed from import.meta.env
 
     if (value === undefined || value === null || String(value).trim() === '') {
       missingOrInvalidVars.push(`${varName} is not defined or is empty.`);
       continue;
     }
 
-    // Specific checks for VITE_REOWN_PROJECT_ID placeholders
-    if (varName === 'VITE_REOWN_PROJECT_ID' && INVALID_PROJECT_ID_FALLBACKS.includes(String(value))) {
+    // Specific checks for NEXT_PUBLIC_REOWN_PROJECT_ID placeholders
+    if (varName === 'NEXT_PUBLIC_REOWN_PROJECT_ID' && INVALID_PROJECT_ID_FALLBACKS.includes(String(value))) {
       missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
     }
 
-    // Specific checks for VITE_SUPABASE_URL placeholders
-    if (varName === 'VITE_SUPABASE_URL' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
+    // Specific checks for NEXT_PUBLIC_SUPABASE_URL placeholders
+    if (varName === 'NEXT_PUBLIC_SUPABASE_URL' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
       missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
     }
 
-    // Specific checks for VITE_SUPABASE_ANON_KEY placeholders
-    if (varName === 'VITE_SUPABASE_ANON_KEY' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
+    // Specific checks for NEXT_PUBLIC_SUPABASE_ANON_KEY placeholders
+    if (varName === 'NEXT_PUBLIC_SUPABASE_ANON_KEY' && INVALID_SUPABASE_FALLBACKS.includes(String(value))) {
       missingOrInvalidVars.push(`${varName} is set to a placeholder value: "${value}".`);
     }
   }
@@ -68,7 +68,8 @@ Please check your .env file or environment configuration. Application cannot sta
   }
 
   // Optional: Log success in development
-  if (import.meta.env.DEV) {
+  // Note: process.env.NODE_ENV is typically 'development', 'production', or 'test' in Next.js
+  if (process.env.NODE_ENV === 'development') {
     console.log('Essential environment variables validated successfully.');
   }
 };

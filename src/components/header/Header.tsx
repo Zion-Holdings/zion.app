@@ -9,7 +9,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router"; // Changed from react-router-dom
 import { useState } from "react";
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useTranslation } from 'react-i18next';
@@ -30,7 +30,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     (user && typeof user !== 'boolean' ? (user.displayName?.split(' ')[0] || user.name?.split(' ')[0]) : undefined) || '';
   const { isWhitelabel, primaryColor } = useWhitelabel();
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from useNavigate
   const [query, setQuery] = useState("");
   const searchSuggestions = generateSearchSuggestions();
   
@@ -51,7 +51,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      navigate(`/search?q=${encodeURIComponent(query)}`);
+      router.push(`/search?q=${encodeURIComponent(query)}`);
       setQuery("");
     }
   };
@@ -72,7 +72,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             value={query}
             onChange={setQuery}
             onSelectSuggestion={(text) => {
-              navigate(`/search?q=${encodeURIComponent(text)}`);
+              router.push(`/search?q=${encodeURIComponent(text)}`);
               setQuery("");
             }}
             searchSuggestions={searchSuggestions}

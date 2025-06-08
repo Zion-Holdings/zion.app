@@ -4,95 +4,45 @@ import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
-  SidebarMenu,
   SidebarMenuItem,
-  SidebarMenuButton,
-  SidebarGroupLabel,
-  SidebarGroupContent,
+  // SidebarMenu, // Removed
+  // SidebarMenuButton, // Removed
+  // SidebarGroupLabel, // Not needed
+  // SidebarGroupContent, // Not needed
 } from "@/components/ui/sidebar";
 
 export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Dashboard</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <a href="/creator-dashboard">
-                    <Home size={16} />
-                    <span>Home</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <a href="/messaging">
-                    <Mail size={16} />
-                    <span>Messages</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <a href="/notifications">
-                    <Bell size={16} />
-                    <span>Notifications</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
+        <SidebarGroup title="Dashboard">
+          <SidebarMenuItem href="/creator-dashboard" icon={<Home size={16} />}>
+            <span>Home</span>
+          </SidebarMenuItem>
+          <SidebarMenuItem href="/messaging" icon={<Mail size={16} />}>
+            <span>Messages</span>
+          </SidebarMenuItem>
+          <SidebarMenuItem href="/notifications" icon={<Bell size={16} />}>
+            <span>Notifications</span>
+          </SidebarMenuItem>
         </SidebarGroup>
         
-        <SidebarGroup>
-          <SidebarGroupLabel>Content</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <a href="/publish">
-                    <FileText size={16} />
-                    <span>My Content</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <a href="/analytics">
-                    <Search size={16} />
-                    <span>Analytics</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
+        <SidebarGroup title="Content">
+          <SidebarMenuItem href="/publish" icon={<FileText size={16} />}>
+            <span>My Content</span>
+          </SidebarMenuItem>
+          <SidebarMenuItem href="/analytics" icon={<Search size={16} />}>
+            <span>Analytics</span>
+          </SidebarMenuItem>
         </SidebarGroup>
         
-        <SidebarGroup>
-          <SidebarGroupLabel>Settings</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <a href="/profile">
-                    <Users size={16} />
-                    <span>Profile</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <a href="/settings">
-                    <Settings size={16} />
-                    <span>Settings</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
+        <SidebarGroup title="Settings">
+          <SidebarMenuItem href="/profile" icon={<Users size={16} />}>
+            <span>Profile</span>
+          </SidebarMenuItem>
+          <SidebarMenuItem href="/settings" icon={<Settings size={16} />}>
+            <span>Settings</span>
+          </SidebarMenuItem>
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>

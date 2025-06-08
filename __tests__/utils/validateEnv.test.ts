@@ -48,9 +48,9 @@ describe('checkEssentialEnvVars', () => {
 
   it('should not throw an error when all essential environment variables are set correctly', () => {
     mockImportMetaEnv({
-      VITE_REOWN_PROJECT_ID: 'valid_project_id',
-      VITE_SUPABASE_URL: 'https://valid.supabase.co',
-      VITE_SUPABASE_ANON_KEY: 'valid_supabase_key',
+      NEXT_PUBLIC_REOWN_PROJECT_ID: 'valid_project_id',
+      NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
     });
     // Dynamically import after mocking
     return import('@/utils/validateEnv').then(module => {
@@ -58,55 +58,55 @@ describe('checkEssentialEnvVars', () => {
     });
   });
 
-  it('should throw an error if VITE_REOWN_PROJECT_ID is missing', () => {
+  it('should throw an error if NEXT_PUBLIC_REOWN_PROJECT_ID is missing', () => {
     mockImportMetaEnv({
-      // VITE_REOWN_PROJECT_ID is missing
-      VITE_SUPABASE_URL: 'https://valid.supabase.co',
-      VITE_SUPABASE_ANON_KEY: 'valid_supabase_key',
+      // NEXT_PUBLIC_REOWN_PROJECT_ID is missing
+      NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
     });
     return import('@/utils/validateEnv').then(module => {
-      expect(() => module.checkEssentialEnvVars()).toThrowError(/VITE_REOWN_PROJECT_ID is not defined or is empty/);
+      expect(() => module.checkEssentialEnvVars()).toThrowError(/NEXT_PUBLIC_REOWN_PROJECT_ID is not defined or is empty/);
     });
   });
 
-  it('should throw an error if VITE_SUPABASE_URL is empty', () => {
+  it('should throw an error if NEXT_PUBLIC_SUPABASE_URL is empty', () => {
     mockImportMetaEnv({
-      VITE_REOWN_PROJECT_ID: 'valid_project_id',
-      VITE_SUPABASE_URL: '', // Empty value
-      VITE_SUPABASE_ANON_KEY: 'valid_supabase_key',
+      NEXT_PUBLIC_REOWN_PROJECT_ID: 'valid_project_id',
+      NEXT_PUBLIC_SUPABASE_URL: '', // Empty value
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
     });
     return import('@/utils/validateEnv').then(module => {
-      expect(() => module.checkEssentialEnvVars()).toThrowError(/VITE_SUPABASE_URL is not defined or is empty/);
+      expect(() => module.checkEssentialEnvVars()).toThrowError(/NEXT_PUBLIC_SUPABASE_URL is not defined or is empty/);
     });
   });
 
-  it('should throw an error if VITE_SUPABASE_ANON_KEY is a placeholder value', () => {
+  it('should throw an error if NEXT_PUBLIC_SUPABASE_ANON_KEY is a placeholder value', () => {
     mockImportMetaEnv({
-      VITE_REOWN_PROJECT_ID: 'valid_project_id',
-      VITE_SUPABASE_URL: 'https://valid.supabase.co',
-      VITE_SUPABASE_ANON_KEY: 'your_supabase_anon_key_here', // Placeholder
+      NEXT_PUBLIC_REOWN_PROJECT_ID: 'valid_project_id',
+      NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: 'your_supabase_anon_key_here', // Placeholder
     });
     return import('@/utils/validateEnv').then(module => {
-      expect(() => module.checkEssentialEnvVars()).toThrowError(/VITE_SUPABASE_ANON_KEY is set to a placeholder value: "your_supabase_anon_key_here"/);
+      expect(() => module.checkEssentialEnvVars()).toThrowError(/NEXT_PUBLIC_SUPABASE_ANON_KEY is set to a placeholder value: "your_supabase_anon_key_here"/);
     });
   });
 
-  it('should throw an error if VITE_REOWN_PROJECT_ID is a placeholder value', () => {
+  it('should throw an error if NEXT_PUBLIC_REOWN_PROJECT_ID is a placeholder value', () => {
     mockImportMetaEnv({
-      VITE_REOWN_PROJECT_ID: 'YOUR_PROJECT_ID', // Placeholder
-      VITE_SUPABASE_URL: 'https://valid.supabase.co',
-      VITE_SUPABASE_ANON_KEY: 'valid_supabase_key',
+      NEXT_PUBLIC_REOWN_PROJECT_ID: 'YOUR_PROJECT_ID', // Placeholder
+      NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
     });
     return import('@/utils/validateEnv').then(module => {
-      expect(() => module.checkEssentialEnvVars()).toThrowError(/VITE_REOWN_PROJECT_ID is set to a placeholder value: "YOUR_PROJECT_ID"/);
+      expect(() => module.checkEssentialEnvVars()).toThrowError(/NEXT_PUBLIC_REOWN_PROJECT_ID is set to a placeholder value: "YOUR_PROJECT_ID"/);
     });
   });
 
   it('should throw an error listing multiple missing or invalid variables', () => {
     mockImportMetaEnv({
-      VITE_REOWN_PROJECT_ID: undefined, // Explicitly undefined, will be stubbed as '' by mockImportMetaEnv
-      VITE_SUPABASE_URL: 'your_supabase_url_here', // Placeholder
-      VITE_SUPABASE_ANON_KEY: undefined, // Explicitly undefined, will be stubbed as ''
+      NEXT_PUBLIC_REOWN_PROJECT_ID: undefined, // Explicitly undefined, will be stubbed as '' by mockImportMetaEnv
+      NEXT_PUBLIC_SUPABASE_URL: 'your_supabase_url_here', // Placeholder
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: undefined, // Explicitly undefined, will be stubbed as ''
     });
     return import('@/utils/validateEnv').then(module => {
       try {
@@ -115,18 +115,18 @@ describe('checkEssentialEnvVars', () => {
         throw new Error("checkEssentialEnvVars did not throw an error as expected");
       } catch (error: any) {
         const errorMessage = error.message;
-        expect(errorMessage).toMatch(/VITE_REOWN_PROJECT_ID is not defined or is empty/);
-        expect(errorMessage).toMatch(/VITE_SUPABASE_URL is set to a placeholder value: "your_supabase_url_here"/);
-        expect(errorMessage).toMatch(/VITE_SUPABASE_ANON_KEY is not defined or is empty/);
+        expect(errorMessage).toMatch(/NEXT_PUBLIC_REOWN_PROJECT_ID is not defined or is empty/);
+        expect(errorMessage).toMatch(/NEXT_PUBLIC_SUPABASE_URL is set to a placeholder value: "your_supabase_url_here"/);
+        expect(errorMessage).toMatch(/NEXT_PUBLIC_SUPABASE_ANON_KEY is not defined or is empty/);
       }
     });
   });
 
   it('should log success message in DEV mode when variables are valid', () => {
     mockImportMetaEnv({
-      VITE_REOWN_PROJECT_ID: 'valid_project_id',
-      VITE_SUPABASE_URL: 'https://valid.supabase.co',
-      VITE_SUPABASE_ANON_KEY: 'valid_supabase_key',
+      NEXT_PUBLIC_REOWN_PROJECT_ID: 'valid_project_id',
+      NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
       DEV: true, // Explicitly set DEV true
     });
     const consoleLogSpy = vi.spyOn(console, 'log');
@@ -139,9 +139,9 @@ describe('checkEssentialEnvVars', () => {
 
   it('should not log success message when not in DEV mode even if variables are valid', () => {
     mockImportMetaEnv({
-      VITE_REOWN_PROJECT_ID: 'valid_project_id',
-      VITE_SUPABASE_URL: 'https://valid.supabase.co',
-      VITE_SUPABASE_ANON_KEY: 'valid_supabase_key',
+      NEXT_PUBLIC_REOWN_PROJECT_ID: 'valid_project_id',
+      NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
       DEV: false, // Explicitly set DEV false
     });
 

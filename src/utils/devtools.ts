@@ -1,6 +1,6 @@
 export async function enableDevToolsInStaging() {
   // Only attempt to load in development, or if explicitly enabled via VITE_DEVTOOLS
-  const enable = import.meta.env.DEV || import.meta.env.VITE_DEVTOOLS === 'true';
+  const enable = import.meta.env.DEV || process.env.NEXT_PUBLIC_DEVTOOLS === 'true';
   if (enable) {
     try {
       // The /* @vite-ignore */ comment might still be useful if we want to avoid

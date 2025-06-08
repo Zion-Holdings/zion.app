@@ -3,7 +3,7 @@
 
 // Definition of getAppKitProjectId
 const getAppKitProjectId = (): string | undefined => {
-  return import.meta.env.VITE_REOWN_PROJECT_ID;
+  return process.env.NEXT_PUBLIC_REOWN_PROJECT_ID;
 };
 
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect, useRef } from 'react';

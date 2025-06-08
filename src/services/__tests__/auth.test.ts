@@ -3,7 +3,7 @@ import { resetPassword, register } from '../auth'; // Assuming register is also 
 // Mock global fetch
 global.fetch = jest.fn();
 
-const API_URL = import.meta.env.VITE_API_URL || '';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
 describe('Auth Service', () => {
   beforeEach(() => {

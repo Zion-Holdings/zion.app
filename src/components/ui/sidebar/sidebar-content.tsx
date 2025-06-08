@@ -86,7 +86,7 @@ export const SidebarContent = React.forwardRef<
 })
 SidebarContent.displayName = "SidebarContent"
 
-export const SidebarGroup = React.forwardRef<
+export const SidebarBasicGroup = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div">
 >((props, ref) => {
@@ -99,4 +99,4 @@ export const SidebarGroup = React.forwardRef<
     />
   )
 })
-SidebarGroup.displayName = "SidebarGroup"
+SidebarBasicGroup.displayName = "SidebarBasicGroup"

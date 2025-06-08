@@ -106,13 +106,11 @@ export const getServerSideProps = async ({ req, params }: { req: any; params?: {
   // Supabase client setup for SSR remains largely the same
   const supabaseUrl =
     process.env.SUPABASE_URL ||
-    process.env.VITE_SUPABASE_URL ||
-    process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    process.env.NEXT_PUBLIC_SUPABASE_URL || // Fallback to public URL if specific server URL isn't set
     '';
   const anonKey =
-    process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    process.env.VITE_SUPABASE_ANON_KEY ||
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+    process.env.SUPABASE_SERVICE_ROLE_KEY || // Prefer service role key for server-side operations
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || // Fallback to anon key if service role isn't set
     '';
   const token = req.cookies?.['sb-access-token'] || null;
 
