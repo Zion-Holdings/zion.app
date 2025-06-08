@@ -54,10 +54,12 @@ export interface CustomAxiosStatic {
 
 interface AxiosDefaults {
   headers: { common: Record<string, string> };
+  baseURL?: string;
 }
 
 const globalDefaults: AxiosDefaults = {
   headers: { common: {} },
+  baseURL: '',
 };
 
 const globalInterceptors = {
