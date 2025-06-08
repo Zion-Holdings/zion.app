@@ -14,13 +14,19 @@ import ServicesPage from '@/pages/ServicesPage';
 import ErrorGuard from '@/components/ErrorGuard';
 
 function guardRoutes(routes: AppRouteObject[]): AppRouteObject[] {
-  return routes.map(
-    (r): AppRouteObject => ({
-      ...r,
-      element: r.element ? <ErrorGuard>{r.element}</ErrorGuard> : r.element,
-      ...(r.children ? { children: guardRoutes(r.children) } : {}),
-    })
-  );
+  return routes.map((r) => {
+    const guarded: AppRouteObject = { ...r };
+
+    if (r.element) {
+      guarded.element = <ErrorGuard>{r.element}</ErrorGuard>;
+    }
+
+    if (r.children) {
+      guarded.children = guardRoutes(r.children);
+    }
+
+    return guarded;
+  });
 }
 import { LoginForm } from '@/components/auth/login';
 import OAuthCallback from '@/pages/OAuthCallback';
