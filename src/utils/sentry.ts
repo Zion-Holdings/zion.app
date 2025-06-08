@@ -29,15 +29,6 @@ if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
   });
 }
 
-// Optional server-side Sentry (from original file, for context if this file is shared)
-// Note: @sentry/node would need to be installed separately if actually used server-side.
-let nodeSentry: any;
-try {
-  nodeSentry = require('@sentry/node');
-} catch {
-  nodeSentry = null;
-}
-
 export function captureException(error: unknown, context?: any) { // Added context capability
   // Use the initialized @sentry/react SDK if DSN was set (client-side)
   if (process.env.NEXT_PUBLIC_SENTRY_DSN && Sentry.isInitialized()) {
@@ -45,14 +36,6 @@ export function captureException(error: unknown, context?: any) { // Added conte
       Sentry.captureException(error, context);
     } else {
       Sentry.captureException(error);
-    }
-  } else if (nodeSentry?.captureException) {
-    // Fallback to nodeSentry for server-side contexts if NEXT_PUBLIC_SENTRY_DSN isn't set
-    // and nodeSentry is available.
-    if (context) {
-        nodeSentry.captureException(error, context);
-    } else {
-        nodeSentry.captureException(error);
     }
   } else if (process.env.NODE_ENV === 'development') {
     // Fallback for development if Sentry DSN is not set or Sentry is not initialized
