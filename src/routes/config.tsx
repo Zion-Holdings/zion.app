@@ -2,7 +2,14 @@ import React from 'react';
 import { RouteObject } from 'react-router';
 import { Navigate } from 'react-router-dom';
 
-export type AppRouteObject = RouteObject & {
+export interface AppRouteObject extends Omit<RouteObject, 'index'> {
+  /**
+   * React Router allows `index: true` for index routes. The default
+   * `RouteObject` type restricts non-index routes to `index?: false`, which
+   * caused a type error when spreading route definitions. Relax the typing
+   * here so routes may specify either `index: true` or `index: false`.
+   */
+  index?: boolean;
   metaTitle?: string;
   requiresAuth?: boolean;
 }
