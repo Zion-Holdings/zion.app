@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   
   const router = useRouter(); // Changed from useNavigate and useLocation
   const dispatch = useDispatch<AppDispatch>();
-  const { handleSignedIn, handleSignedOut } = useAuthEventHandlers(setUser, setOnboardingStep);
+  const { handleSignedIn, handleSignedOut } = useAuthEventHandlers(setUser, setOnboardingStep, router); // Pass router instance
 
   const {
     login: loginImpl,

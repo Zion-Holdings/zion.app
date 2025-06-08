@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from react-router-dom
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -19,7 +19,7 @@ const SignupSchema = Yup.object({
 });
 
 export default function Signup() {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
   const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
@@ -40,7 +40,7 @@ export default function Signup() {
           password: values.password
         });
         if (res.status === 201) {
-          navigate('/login');
+          router.push('/login'); // Changed from navigate
         }
       } catch (err: any) {
         const message = err.response?.data?.message || 'Signup failed';

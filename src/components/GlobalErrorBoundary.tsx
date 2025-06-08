@@ -1,11 +1,11 @@
 import React from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
-import { useNavigate, useLocation } from 'react-router-dom'; // Added for retry functionality and location
+// Removed: import { useNavigate, useLocation } from 'react-router-dom';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 import { logError } from '@/utils/logError';
 
 function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
-  const navigate = useNavigate(); // Added for retry functionality
+  // Removed: const navigate = useNavigate();
   let specificMessage = "Please try again. If the problem continues, please contact support."; // Updated message
   const errorMessage = error?.message?.toLowerCase() || "";
 
@@ -30,7 +30,7 @@ function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
         </details>
       )}
       <button
-        onClick={() => navigate(0)} // Changed to navigate(0)
+        onClick={resetErrorBoundary} // Changed to use resetErrorBoundary
         className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
       >
         Retry {/* Changed button text */}
@@ -40,11 +40,15 @@ function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
 }
 
 export default function GlobalErrorBoundary({ children }: { children: React.ReactNode }) {
-  const location = useLocation(); // Get location information
+  // Removed: const location = useLocation();
 
   const handleError = (error: Error, info: React.ErrorInfo) => {
     console.error("GlobalErrorBoundary caught an error:", error, info);
-    logError(error, { route: location.pathname, componentStack: info.componentStack });
+    // Modified: logError call to not depend on location from react-router-dom
+    // You might want to get pathname via window.location.pathname if this is purely client-side,
+    // or pass it down as a prop if needed from a Next.js context.
+    // For now, removing the route from this specific log call.
+    logError(error, { route: typeof window !== 'undefined' ? window.location.pathname : 'Unknown route (SSR/SSG)', componentStack: info.componentStack });
 
     try {
       const enqueueSnackbar = getEnqueueSnackbar();

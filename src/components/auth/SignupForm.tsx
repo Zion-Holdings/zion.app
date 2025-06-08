@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useNavigate, Link } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from react-router-dom
+import Link from 'next/link'; // Changed from react-router-dom
 import axios from 'axios';
 import { toast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
@@ -32,7 +33,7 @@ const schema = z
 type FormValues = z.infer<typeof schema>;
 
 export default function SignupForm() {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
@@ -66,7 +67,7 @@ export default function SignupForm() {
         });
       } catch (_) {}
       toast.success('Welcome to Zion Tech Marketplace 🎉');
-      navigate('/dashboard');
+      router.push('/dashboard'); // Changed from navigate
     } catch (err: any) {
       const message = err.response?.data?.message || err.message || 'Signup failed';
       toast.error(message);
@@ -167,7 +168,7 @@ export default function SignupForm() {
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <div className="space-y-1 leading-none">
-                  <FormLabel>I agree to the <Link to="/terms">Terms</Link></FormLabel>
+                  <FormLabel>I agree to the <Link href="/terms">Terms</Link></FormLabel>
                 </div>
                 <FormMessage />
               </FormItem>
