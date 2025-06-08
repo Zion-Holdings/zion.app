@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import type { AppProps } from 'next/app';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from '@/context/auth/AuthProvider';
@@ -7,6 +8,7 @@ import { store } from '@/store';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
+import { Toaster } from '@/components/ui/toaster';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
@@ -20,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <WhitelabelProvider>
             <I18nextProvider i18n={i18n}>
               <Component {...pageProps} />
+              <Toaster />
             </I18nextProvider>
           </WhitelabelProvider>
         </AuthProvider>
