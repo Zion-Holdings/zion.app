@@ -9,7 +9,9 @@ export const showError = (
   id: string | number,
   error: string | ToastError
 ): void => {
-  if (toast.isActive(id)) return;
+  // `isActive` exists at runtime but may be missing from the type
+  // definitions of `react-hot-toast`. Cast to `any` to access it safely.
+  if ((toast as any).isActive?.(id)) return;
   const text = typeof error === 'string'
     ? error
     : error.code
