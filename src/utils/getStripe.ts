@@ -6,7 +6,7 @@ export function isProdDomain(host?: string) {
   const context =
     typeof window === 'undefined'
       ? process.env.CONTEXT
-      : import.meta.env.VITE_NETLIFY_CONTEXT;
+      : process.env.NEXT_PUBLIC_NETLIFY_CONTEXT;
 
   if (context && context !== 'production') {
     return false;
@@ -29,10 +29,10 @@ let stripePromise: Promise<Stripe | null>;
 export function getStripe() {
   if (!stripePromise) {
     const testPublishableKey =
-      import.meta.env.VITE_STRIPE_TEST_KEY as string | undefined ||
-      import.meta.env.VITE_STRIPE_TEST_PUBLISHABLE_KEY as string | undefined;
-    const livePublishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string | undefined;
-    const context = import.meta.env.VITE_NETLIFY_CONTEXT;
+      process.env.NEXT_PUBLIC_STRIPE_TEST_KEY as string | undefined ||
+      process.env.NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY as string | undefined;
+    const livePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string | undefined;
+    const context = process.env.NEXT_PUBLIC_NETLIFY_CONTEXT;
 
     let selectedKey: string | undefined;
 

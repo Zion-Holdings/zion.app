@@ -1,9 +1,8 @@
 import { TeamsService } from './TeamsService';
 
 const webhookUrl =
-  import.meta.env.VITE_TEAMS_WEBHOOK_URL ||
-  (import.meta.env as any).NEXT_PUBLIC_TEAMS_WEBHOOK_URL ||
-  process.env.TEAMS_WEBHOOK_URL;
+  process.env.NEXT_PUBLIC_TEAMS_WEBHOOK_URL ||
+  process.env.TEAMS_WEBHOOK_URL; // Fallback, but be cautious if TEAMS_WEBHOOK_URL is a secret and this runs client-side
 
 export const teamsService =
   webhookUrl ? new TeamsService(webhookUrl) : undefined;

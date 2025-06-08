@@ -1,13 +1,11 @@
 import { SalesforceService, SalesforceLead } from './SalesforceService';
 
 const instanceUrl =
-  import.meta.env.VITE_SALESFORCE_URL ||
-  (import.meta.env as any).NEXT_PUBLIC_SALESFORCE_URL ||
-  process.env.SALESFORCE_URL;
+  process.env.NEXT_PUBLIC_SALESFORCE_URL ||
+  process.env.SALESFORCE_URL; // Fallback, but be cautious if SALESFORCE_URL is a secret and this runs client-side
 const token =
-  import.meta.env.VITE_SALESFORCE_TOKEN ||
-  (import.meta.env as any).NEXT_PUBLIC_SALESFORCE_TOKEN ||
-  process.env.SALESFORCE_TOKEN;
+  process.env.NEXT_PUBLIC_SALESFORCE_TOKEN ||
+  process.env.SALESFORCE_TOKEN; // Fallback, but be cautious if SALESFORCE_TOKEN is a secret and this runs client-side
 
 export const salesforceService =
   instanceUrl && token ? new SalesforceService(instanceUrl, token) : undefined;

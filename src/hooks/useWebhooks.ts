@@ -34,11 +34,10 @@ export function useWebhooks() {
     // import.meta may be undefined when this hook is executed in a Node
     // environment (e.g. during server side rendering or tests). Using optional
     // chaining avoids a TypeError in those cases and falls back to process.env.
-    const env = (import.meta as any)?.env ?? process.env;
+    // For Next.js, process.env is the primary source.
     const url =
-      env.VITE_SUPABASE_URL ||
-      env.NEXT_PUBLIC_SUPABASE_URL ||
-      env.SUPABASE_URL;
+      process.env.NEXT_PUBLIC_SUPABASE_URL ||
+      process.env.SUPABASE_URL; // Fallback if NEXT_PUBLIC_ is not set but SUPABASE_URL is
     return `${url}/functions/v1/webhook-manager`;
   };
 

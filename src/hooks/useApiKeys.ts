@@ -41,11 +41,10 @@ export function useApiKeys() {
     // Using optional chaining ensures this function works both in the browser
     // (where import.meta.env is injected by Vite) and in Node environments
     // such as tests or server side rendering.
-    const env = (import.meta as any)?.env ?? process.env;
+    // For Next.js, process.env is the primary source.
     const url =
-      env.VITE_SUPABASE_URL ||
-      env.NEXT_PUBLIC_SUPABASE_URL ||
-      env.SUPABASE_URL;
+      process.env.NEXT_PUBLIC_SUPABASE_URL ||
+      process.env.SUPABASE_URL; // Fallback if NEXT_PUBLIC_ is not set but SUPABASE_URL is
     return `${url}/functions/v1/api-key-manager`;
   };
 

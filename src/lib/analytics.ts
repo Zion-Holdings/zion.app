@@ -1,5 +1,5 @@
 export const initGA = () => {
-  const measurementId = import.meta.env.VITE_GA_ID;
+  const measurementId = process.env.NEXT_PUBLIC_GA_ID;
   if (!measurementId) {
     console.error("VITE_GA_ID is not defined. GA4 initialization skipped.");
     return;

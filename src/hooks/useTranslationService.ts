@@ -3,9 +3,8 @@ import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
 const openAiKey =
-  import.meta.env.VITE_OPENAI_API_KEY ||
-  (import.meta.env as any).NEXT_PUBLIC_OPENAI_API_KEY ||
-  process.env.OPENAI_API_KEY;
+  process.env.NEXT_PUBLIC_OPENAI_API_KEY ||
+  process.env.OPENAI_API_KEY; // Fallback, but be cautious if OPENAI_API_KEY is a secret and this runs client-side
 import { useLanguage, SupportedLanguage } from '@/context/LanguageContext';
 
 type ContentType = 'job' | 'profile' | 'service' | 'general';

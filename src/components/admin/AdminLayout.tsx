@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'; // Changed from react-router-dom
 
 interface AdminLayoutProps {
   children: React.ReactNode;
@@ -21,12 +21,10 @@ export function AdminLayout({ children }: AdminLayoutProps) {
         <h2 className="font-semibold text-lg mb-4">Back Office</h2>
         <nav className="space-y-1">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
-            >
-              {item.title}
+            <Link key={item.href} href={item.href} legacyBehavior={false}>
+              <a className="block rounded-md px-3 py-2 text-sm hover:bg-accent">
+                {item.title}
+              </a>
             </Link>
           ))}
         </nav>
