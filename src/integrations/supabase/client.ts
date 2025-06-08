@@ -5,26 +5,32 @@ import { supabaseStorageAdapter } from './safeStorageAdapter';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-// Validate Supabase URL
-if (supabaseUrl) {
-  const lowercasedUrl = supabaseUrl.toLowerCase();
-  if (
-    lowercasedUrl.startsWith('your_supabase_url') ||
-    lowercasedUrl.startsWith('your_supabase_url_here') ||
-    !lowercasedUrl.startsWith('http://') && !lowercasedUrl.startsWith('https://')
-  ) {
-    throw new Error(
-      'Invalid Supabase URL format. Please check your NEXT_PUBLIC_SUPABASE_URL environment variable. It should be a valid HTTP/HTTPS URL and not a placeholder.'
-    );
-  }
+// Determine if an env var is missing or contains a placeholder value
+const isInvalid = (value?: string): boolean => {
+  if (!value) return true;
+  const lower = value.toLowerCase();
+  return (
+    lower.startsWith('your_supabase_url') ||
+    lower.startsWith('your_supabase_url_here') ||
+    lower === 'your_supabase_anon_key_here'
+  );
+};
+
+if (isInvalid(supabaseUrl) || isInvalid(supabaseAnonKey)) {
+  console.warn(
+    'Supabase environment variables are missing or placeholders. Using dummy credentials.'
+  );
 }
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
-}
+const effectiveUrl = !isInvalid(supabaseUrl)
+  ? (supabaseUrl as string)
+  : 'http://localhost';
+const effectiveAnonKey = !isInvalid(supabaseAnonKey)
+  ? (supabaseAnonKey as string)
+  : 'public-anon-key';
 
 // Create Supabase client with proper configuration
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = createClient(effectiveUrl, effectiveAnonKey, {
   auth: {
     persistSession: true,
     autoRefreshToken: true,
@@ -32,7 +38,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   },
   global: {
     headers: {
-      'apikey': supabaseAnonKey
+      'apikey': effectiveAnonKey
     }
   }
 });

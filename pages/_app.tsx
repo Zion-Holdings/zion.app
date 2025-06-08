@@ -11,6 +11,8 @@ import i18n from '@/i18n';
 // import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const isBrowser = typeof window !== 'undefined';
+  const Router = isBrowser ? BrowserRouter : MemoryRouter;
   return (
     <ReduxProvider store={store}>
       <HelmetProvider>
