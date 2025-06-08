@@ -7,7 +7,7 @@ import { ConversationsList, ConversationDetailView } from '@/components/messagin
 import { useIsMobile } from '@/hooks/use-mobile';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from react-router-dom
 
 export default function MessagingInbox() {
   const { 
@@ -19,7 +19,7 @@ export default function MessagingInbox() {
     isLoading
   } = useMessaging();
   const isMobile = useIsMobile();
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
   const [activeCall, setActiveCall] = useState<string | null>(null);
   
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function MessagingInbox() {
     });
     
     // Navigate to video call page
-    navigate(`/call/${roomId}`);
+    router.push(`/call/${roomId}`); // Changed from navigate
   };
   
   return (

@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useNavigate, Link } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from react-router-dom
+import Link from 'next/link'; // Changed from react-router-dom
 import axios from 'axios';
 import { toast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
@@ -30,7 +31,7 @@ const schema = z
 type FormValues = z.infer<typeof schema>;
 
 export default function RegisterForm() {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
@@ -46,7 +47,7 @@ export default function RegisterForm() {
         password: data.password,
       });
       if (res.status === 201) {
-        navigate('/login');
+        router.push('/login'); // Changed from navigate
       }
     } catch (err: any) {
       const status = err.response?.status;
@@ -124,7 +125,7 @@ export default function RegisterForm() {
         </form>
       </Form>
       <p className="text-sm mt-4 text-center">
-        <Link to="/login" className="text-blue-400 underline">
+        <Link href="/login" className="text-blue-400 underline">
           Already have an account? Sign in
         </Link>
       </p>
