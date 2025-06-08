@@ -1,10 +1,12 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
 import { HelmetProvider } from 'react-helmet-async';
-import { AuthProvider } from '@/context/auth/AuthProvider'; // Assuming @ is src/
+import { AuthProvider } from '@/context/auth/AuthProvider';
 import { Provider as ReduxProvider } from 'react-redux';
-import { store } from '@/store'; // Changed to named import
-import { WhitelabelProvider } from '@/context/WhitelabelContext'; // Added WhitelabelProvider
+import { store } from '@/store';
+import { WhitelabelProvider } from '@/context/WhitelabelContext';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '@/i18n';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
@@ -14,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <HelmetProvider>
         <AuthProvider>
           <WhitelabelProvider>
-            <Component {...pageProps} />
+            <I18nextProvider i18n={i18n}>
+              <Component {...pageProps} />
+            </I18nextProvider>
           </WhitelabelProvider>
         </AuthProvider>
       </HelmetProvider>
