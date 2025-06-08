@@ -22,25 +22,18 @@ const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps, router }: AppProps) { // Added router to props
   return (
-    <QueryClientProvider client={queryClient}>
-      <ReduxProvider store={store}>
-        <HelmetProvider>
-          <AuthProvider>
-            <WhitelabelProvider>
-              <StaticRouter location={router.pathname}> {/* Moved StaticRouter up */}
-                <AnalyticsProvider>
-                  <WalletProvider>
-                    <CartProvider> {/* Added CartProvider */}
-                      <Component {...pageProps} />
-                    </CartProvider>
-                  </WalletProvider>
-                </AnalyticsProvider>
-              </StaticRouter>
-            </WhitelabelProvider>
-          </AuthProvider>
-        </HelmetProvider>
-      </ReduxProvider>
-    </QueryClientProvider>
+    <ReduxProvider store={store}>
+      <HelmetProvider>
+        <AuthProvider>
+          <WhitelabelProvider>
+            <I18nextProvider i18n={i18n}>
+              <Component {...pageProps} />
+              <Toaster />
+            </I18nextProvider>
+          </WhitelabelProvider>
+        </AuthProvider>
+      </HelmetProvider>
+    </ReduxProvider>
   );
 }
 
