@@ -5,6 +5,20 @@ import { supabaseStorageAdapter } from './safeStorageAdapter';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
+// Validate Supabase URL
+if (supabaseUrl) {
+  const lowercasedUrl = supabaseUrl.toLowerCase();
+  if (
+    lowercasedUrl.startsWith('your_supabase_url') ||
+    lowercasedUrl.startsWith('your_supabase_url_here') ||
+    !lowercasedUrl.startsWith('http://') && !lowercasedUrl.startsWith('https://')
+  ) {
+    throw new Error(
+      'Invalid Supabase URL format. Please check your NEXT_PUBLIC_SUPABASE_URL environment variable. It should be a valid HTTP/HTTPS URL and not a placeholder.'
+    );
+  }
+}
+
 if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error('Missing Supabase environment variables');
 }
