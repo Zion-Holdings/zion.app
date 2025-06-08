@@ -1,4 +1,4 @@
-export function openAuthPopup(provider) {
+export function openAuthPopup(provider: string): Window | null {
   const width = 600;
   const height = 600;
   const left = window.screenX + (window.innerWidth - width) / 2;
