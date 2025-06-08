@@ -1,17 +1,27 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ProductSubmissionForm } from "@/components/ProductSubmissionForm";
 import { useAuth } from "@/hooks/useAuth";
-import { Navigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { SEO } from "@/components/SEO";
 
 export default function PublishProduct() {
   const { isAuthenticated, isLoading } = useAuth();
+  const router = useRouter();
   
-  // Show loading while checking authentication
-  if (isLoading) {
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      router.replace({
+        pathname: "/login",
+        query: { from: router.pathname },
+      });
+    }
+  }, [isLoading, isAuthenticated, router]);
+
+  // Show loading while checking authentication or if redirecting
+  if (isLoading || !isAuthenticated) {
     return (
       <div className="flex justify-center items-center min-h-screen bg-zion-blue">
         <div className="animate-pulse text-zion-purple text-lg">
@@ -19,11 +29,6 @@ export default function PublishProduct() {
         </div>
       </div>
     );
-  }
-  
-  // Redirect to login if not authenticated
-  if (!isAuthenticated) {
-    return <Navigate to="/login" state={{ from: '/publish' }} replace />;
   }
 
   return (

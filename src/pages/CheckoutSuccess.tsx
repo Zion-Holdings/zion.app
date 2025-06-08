@@ -1,5 +1,7 @@
+"use client";
 import React, { useEffect, useState } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import * as NextNavigation from 'next/navigation';
+import Link from 'next/link';
 
 interface Session {
   id: string;
@@ -9,7 +11,7 @@ interface Session {
 }
 
 export default function CheckoutSuccess() {
-  const [searchParams] = useSearchParams();
+  const searchParams = NextNavigation.useSearchParams();
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
@@ -49,7 +51,7 @@ export default function CheckoutSuccess() {
           </p>
         )}
       </div>
-      <Link to="/orders" className="text-zion-purple underline">
+      <Link href="/orders" className="text-zion-purple underline">
         View Orders
       </Link>
     </div>

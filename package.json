@@ -193,7 +193,7 @@
     "prettier": "^3.5.3",
     "prisma": "^6.9.0",
     "puppeteer": "^24.10.0",
-    "react-devtools": "^6.1.2",
+    "react-devtools": "^1.0.5",
     "rimraf": "^6.0.1",
     "rollup-plugin-visualizer": "^5.10.1",
     "serve": "^14.2.3",
