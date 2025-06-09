@@ -3,10 +3,7 @@ import React from "react"; // Suspense might still be needed if QuoteWizard uses
 import dynamic from 'next/dynamic';
 
 const QuoteWizard = dynamic(() =>
-  import("@/components/quote/QuoteWizard").then((module) => module.QuoteWizard),
-  {
-    loading: () => <div>Loading quote wizard...</div> // Optional: if not using suspense from parent
-  }
+  import("@/components/quote/QuoteWizard").then((module) => module.QuoteWizard)
 );
 
 export default function RequestQuotePage() {
