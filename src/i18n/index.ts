@@ -47,19 +47,22 @@ if (!i18n) {
     // This helps prevent an unhandled promise rejection if init fails.
   });
 
-  // For RTL language support
-  document.documentElement.dir = i18n.dir();
-
-  // Listen for language changes to update RTL/LTR direction
-  i18n.on('languageChanged', (lng) => {
+  // Add this check at the beginning of the relevant section
+  if (typeof window !== 'undefined') {
+    // For RTL language support
     document.documentElement.dir = i18n.dir();
 
-    // Save language preference to localStorage
-    safeStorage.setItem('i18n_lang', lng);
+    // Listen for language changes to update RTL/LTR direction
+    i18n.on('languageChanged', (lng) => {
+      document.documentElement.dir = i18n.dir();
 
-    // If user is authenticated, save language preference to profile
-    // This will be implemented in the LanguageContext
-  });
+      // Save language preference to localStorage
+      safeStorage.setItem('i18n_lang', lng);
+
+      // If user is authenticated, save language preference to profile
+      // This will be implemented in the LanguageContext
+    });
+  }
 }
 
 export default i18n;
