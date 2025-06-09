@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic';
 const QuoteWizard = dynamic(() =>
   import("@/components/quote/QuoteWizard").then((module) => module.QuoteWizard),
   {
-    suspense: true, // Enable suspense for the dynamic component
     loading: () => <div>Loading quote wizard...</div> // Optional: if not using suspense from parent
   }
 );

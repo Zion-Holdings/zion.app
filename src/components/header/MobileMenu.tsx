@@ -1,6 +1,5 @@
-
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Home, Search, BriefcaseIcon, MessageSquare, User, X, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
@@ -13,7 +12,7 @@ export interface MobileMenuProps {
 }
 
 export function MobileMenu({ unreadCount = 0, onClose }: MobileMenuProps) {
-  const location = useLocation();
+  const router = useRouter();
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const { t } = useTranslation();
@@ -87,11 +86,11 @@ export function MobileMenu({ unreadCount = 0, onClose }: MobileMenuProps) {
         {visibleItems.map(item => (
           <Link
             key={item.name}
-            to={item.href}
+            href={item.href}
             aria-label={item.name}
             className={cn(
               "flex items-center px-6 py-3 text-base font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
-              item.matches(location.pathname)
+              item.matches(router.pathname)
                 ? "bg-primary/20 text-primary border-l-4 border-primary"
                 : "text-foreground hover:bg-primary/10 hover:text-primary"
             )}

@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useRouter } from "next/router";
 import CreatePostButton from "@/components/community/CreatePostButton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
@@ -20,8 +20,7 @@ export default function CommunityPage() {
   const { user } = useAuth();
   const { featuredPosts, recentPosts } = useCommunity();
   const [activeTab, setActiveTab] = useState("categories");
-  const [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [showNewPost, setShowNewPost] = useState(false);
   const { markCommunityVisited } = useAdvancedOnboardingStatus();
 
@@ -32,24 +31,25 @@ export default function CommunityPage() {
     ).values()
   );
 
-  const initialCategory = searchParams.get("category") as ForumCategory | null;
+  const initialCategory = router.query.category as ForumCategory | null;
 
   useEffect(() => {
-    const wantsNew = searchParams.get("new") === "1";
+    const wantsNew = router.query.new === "1";
     if (wantsNew && !user) {
       const next = encodeURIComponent(`/community?new=1${initialCategory ? `&category=${initialCategory}` : ""}`);
-      navigate(`/login?next=${next}`, { replace: true });
+      router.replace(`/login?next=${next}`);
       return;
     }
     setShowNewPost(wantsNew && !!user);
     markCommunityVisited();
-  }, [searchParams, user, navigate, initialCategory, markCommunityVisited]);
+  }, [router, user, initialCategory, markCommunityVisited]);
 
   const handleDialogChange = (open: boolean) => {
     setShowNewPost(open);
     if (!open) {
-      searchParams.delete("new");
-      setSearchParams(searchParams, { replace: true });
+      const currentQuery = { ...router.query };
+      delete currentQuery.new;
+      router.replace({ pathname: router.pathname, query: currentQuery }, undefined, { shallow: true });
     }
   };
 
