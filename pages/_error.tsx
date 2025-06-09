@@ -3,7 +3,13 @@ import Head from 'next/head';
 
 // Placeholder for Zion Tech Logo - replace with actual logo component or URL
 const ZionTechLogo = () => (
-  <img src="/public/logos/zion-logo.png" alt="Zion Tech Logo" style={{ height: '50px', marginBottom: '20px' }} />
+  // In Next.js, files inside the `public` folder are served from the root path
+  // so the correct URL does not include the `public` prefix.
+  <img
+    src="/logos/zion-logo.png"
+    alt="Zion Tech Logo"
+    style={{ height: '50px', marginBottom: '20px' }}
+  />
 );
 
 // Placeholder for status page URL and support email - replace with actual values
