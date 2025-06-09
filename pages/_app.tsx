@@ -31,7 +31,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                   <WalletProvider>
                     <CartProvider>
                       <AnalyticsProvider>
-                        <MemoryRouter>
                         <Component {...pageProps} />
                           <MemoryRouter>
                       </AnalyticsProvider>
