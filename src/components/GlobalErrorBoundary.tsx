@@ -17,6 +17,7 @@ function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
     specificMessage = "It looks like there's an issue with loading this page's content or navigation setup. " + specificMessage;
   }
 
+  const displayErrorId = React.useMemo(() => Date.now().toString(36) + Math.random().toString(36).substring(2), []);
   return (
     <div role="alert" className="p-6 m-4 border border-red-300 rounded-md bg-red-50 text-center space-y-4">
       <h2 className="text-xl font-semibold text-red-700">Oops! Something went wrong.</h2> {/* Updated title */}
@@ -35,6 +36,8 @@ function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
       >
         Retry {/* Changed button text */}
       </button>
+      <p className="text-sm text-gray-600 mt-2">If retrying doesn't resolve the issue, please contact support. You can provide them with the error details below and the following Reference ID.</p>
+      <p className="text-sm text-gray-500 mt-1">Error Reference ID: {displayErrorId}</p>
     </div>
   );
 }
@@ -44,11 +47,16 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
 
   const handleError = (error: Error, info: React.ErrorInfo) => {
     console.error("GlobalErrorBoundary caught an error:", error, info);
+    const errorId = Date.now().toString(36) + Math.random().toString(36).substring(2);
     // Modified: logError call to not depend on location from react-router-dom
     // You might want to get pathname via window.location.pathname if this is purely client-side,
     // or pass it down as a prop if needed from a Next.js context.
     // For now, removing the route from this specific log call.
-    logError(error, { route: typeof window !== 'undefined' ? window.location.pathname : 'Unknown route (SSR/SSG)', componentStack: info.componentStack });
+    logError(error, {
+      route: typeof window !== 'undefined' ? window.location.pathname : 'Unknown route (SSR/SSG)',
+      componentStack: info.componentStack,
+      errorId: errorId
+    });
 
     try {
       const enqueueSnackbar = getEnqueueSnackbar();

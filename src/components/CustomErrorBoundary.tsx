@@ -28,9 +28,14 @@ const CustomErrorBoundary: React.FC<CustomErrorBoundaryProps> = ({ children }) =
     // Log the error using an existing utility or a new one
     // The existing logError function might need adjustment if it expects specific parameters
     console.error("CustomErrorBoundary caught an error:", error, info);
+    const errorId = Date.now().toString(36) + Math.random().toString(36).substring(2);
     // Example: logError(error, { componentStack: info.componentStack, route: window.location.pathname });
     // Ensure logError is called in a way that matches its signature and your logging strategy
-    logError(error, { extraData: { componentStack: info.componentStack, route: typeof window !== 'undefined' ? window.location.pathname : 'Unknown' }});
+    logError(error, {
+      componentStack: info.componentStack,
+      route: typeof window !== 'undefined' ? window.location.pathname : 'Unknown',
+      errorId: errorId
+    });
   };
 
   return (

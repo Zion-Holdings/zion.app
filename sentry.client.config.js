@@ -80,13 +80,13 @@ Sentry.init({
   },
   // You can add other client-specific integrations here
   // Example: Replay for session recording
-  // integrations: [
-  //   Sentry.replayIntegration({
-  //     // Additional Replay configuration options can be set here
-  //     maskAllText: true, // Mask all text input fields
-  //     blockAllMedia: true, // Block all media (images, videos, etc.)
-  //   }),
-  // ],
-  // replaysSessionSampleRate: 0.1, // Capture Replay for 10% of sessions
-  // replaysOnErrorSampleRate: 1.0, // Capture Replay for 100% of sessions that have an error
+  integrations: [
+    Sentry.replayIntegration({
+      // Additional Replay configuration options can be set here
+      maskAllText: true, // Mask all text input fields
+      blockAllMedia: true, // Block all media (images, videos, etc.)
+    }),
+  ],
+  replaysSessionSampleRate: 0.1, // Capture Replay for 10% of sessions
+  replaysOnErrorSampleRate: 1.0, // Capture Replay for 100% of sessions that have an error
 });

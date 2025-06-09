@@ -36,11 +36,11 @@ const CustomErrorPage = ({ statusCode }: { statusCode?: number }) => {
         <ZionTechLogo />
         <h1 style={{ fontSize: '2em', color: '#333', marginBottom: '0.5em' }}>
           {statusCode
-            ? `An error ${statusCode} occurred on server`
-            : 'Oops! Something went wrong.'}
+            ? `An Error Occurred (Status Code: ${statusCode})`
+            : 'Oops! Something went wrong on our end.'}
         </h1>
         <p style={{ fontSize: '1.2em', color: '#555', marginBottom: '1.5em' }}>
-          We apologize for the inconvenience. Our team has been notified.
+          We're sorry for the trouble. Our technical team has been automatically notified.
         </p>
         <button
           onClick={handleReload}
