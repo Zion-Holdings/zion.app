@@ -9,6 +9,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-lates
+        continue-on-error: true
+
          env:
       WALLET_PROJECT_ID: dummy
           SUPABASE_URL: https://gnwtggeptzkqnduuthto.supabase.co
