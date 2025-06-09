@@ -21,9 +21,6 @@ module.exports = {
     "/playwright/", // Assuming playwright tests might be in a root /playwright folder
     "\\.spec\\.[jt]s?(x)$" // Convention for Playwright spec files, to avoid conflict if any
   ],
-    '/__tests__/__context/WalletContext.test.tsx',
-  '/__tests__/__pages/WhitepaperGeneratorPage.test.tsx',
-  '/tests/Accessibility.test.tsx',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
