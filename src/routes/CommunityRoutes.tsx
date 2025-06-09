@@ -8,6 +8,7 @@ import ForumPostPage from "../pages/ForumPostPage";
 import CreatePostPage from "../pages/CreatePostPage";
 import EditPostPage from "../pages/EditPostPage";
 import CommunityProfilePage from "../pages/CommunityProfilePage";
+import NationDetailPage from '@/pages/community/NationDetailPage';
 
 const CommunityRoutes = () => {
   return (
@@ -55,6 +56,14 @@ const CommunityRoutes = () => {
         element={
           <ProtectedRoute>
             <EditPostPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/nations/:slug"
+        element={
+          <ProtectedRoute> {/* Or remove ProtectedRoute if not needed */}
+            <NationDetailPage />
           </ProtectedRoute>
         }
       />

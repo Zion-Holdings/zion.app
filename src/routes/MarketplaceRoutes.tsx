@@ -27,6 +27,7 @@ import NewProductsPage from "@/pages/NewProductsPage";
 import NewServicesPage from "@/pages/NewServicesPage";
 import InnovationPage from "@/pages/InnovationPage";
 import CartPage from "@/pages/Cart";
+import OrderConfirmationPage from '@/pages/marketplace/OrderConfirmationPage';
 
 const MarketplaceRoutes = () => {
   return (
@@ -106,6 +107,14 @@ const MarketplaceRoutes = () => {
         element={
           <ProtectedRoute>
             <VideoCall />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/order-confirmation/:orderId"
+        element={
+          <ProtectedRoute> {/* Or remove ProtectedRoute if not needed */}
+            <OrderConfirmationPage />
           </ProtectedRoute>
         }
       />

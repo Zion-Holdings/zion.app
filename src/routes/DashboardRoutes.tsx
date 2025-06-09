@@ -27,6 +27,7 @@ import Projects from "@/pages/Projects";
 import RewardsPage from "@/pages/Rewards";
 import AchievementsPage from "@/pages/Achievements";
 import MetricsDashboard from "@/pages/dashboard/MetricsDashboard";
+import AICorePage from '@/pages/dashboard/ai-core/AICorePage';
 
 const DashboardRoutes = () => {
   return (
@@ -247,6 +248,14 @@ const DashboardRoutes = () => {
             <ContractBuilder />
           </ProtectedRoute>
         } 
+      />
+      <Route
+        path="/dashboard/ai-core"
+        element={
+          <ProtectedRoute> {/* Or remove ProtectedRoute if not needed */}
+            <AICorePage />
+          </ProtectedRoute>
+        }
       />
     </Routes>
   );
