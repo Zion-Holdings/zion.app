@@ -13,6 +13,9 @@ const authSocialRoutes = require('./routes/authSocial');
 const recommendationsRoutes = require('./routes/recommendations');
 const syncRoutes = require('./routes/sync');
 const { logAndAlert } = require('./utils/alertLogger');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+const cors = require('cors');
 
 const app = express();
 
@@ -28,6 +31,10 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors({ origin: allowedOrigins }));
 app.use(passport.initialize());
+app.use(helmet());
+app.use(cors());
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
+app.use(limiter);
 
 // Health check endpoint
 app.get('/healthz', (req, res) => {
@@ -56,6 +63,9 @@ app.use('/api/auth', authRoutes);
 app.use('/', authSocialRoutes);
 app.use('/recommendations', recommendationsRoutes);
 app.use('/sync', syncRoutes);
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
 
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
@@ -66,9 +76,7 @@ mongoose.connect(mongoUri, {
 app.use((err, req, res, next) => {
   console.error(err);
   logAndAlert(err.stack || err.message);
-  res
-    .status(err.status || 500)
-    .json({ code: err.code, message: err.message });
+  res.status(err.status || 500).json({ code: err.code, message: err.message });
 });
 
 module.exports = app;

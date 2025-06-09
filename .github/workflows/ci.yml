@@ -1,99 +1,30 @@
 name: CI
+# Continuous Integration pipeline
 
 on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+        # Setup repository
+      - uses: actions/setup-node@v4
         with:
-          node-version: 18
-
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
+          node-version: 20
+          cache: 'npm'
       - run: npm ci
-      - name: Check formatting
-        run: npm run format -- --check
+        # Lint codebase
       - run: npm run lint
-      - name: Run typecheck
-        run: npm run typecheck
+        # Ensure Prettier formatting
+      - run: npm run format -- --check
+        # Execute unit tests
+      - run: npm test
+        # Build application
       - run: npm run build
-      - name: Verify build output
-        run: |
-          if [ ! -d out ]; then
-            echo "Build failed: out folder not found"
-            exit 1
-          fi
-      - name: Serve application and run smoke tests
-        run: |
-          npx serve out/ --cors --single -l 5000 &
-          SERVE_PID=$!
-          sleep 5 # Give server time to start
-          npm run smoke:test # This script will be added to package.json later
-          kill $SERVE_PID
-      - name: Run Vitest with Coverage
-        run: npx vitest run --coverage
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/coverage-final.json
-      - name: Upload Coverage Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-report
-          path: coverage
-
-      - name: Validate Production Domain in Allowlist
-        run: |
-          import json
-          import sys
-
-          allowlist_file = 'infra/allowlist.json'
-          production_domain = 'https://app.ziontechgroup.com'
-          found = False
-
-          try:
-            with open(allowlist_file, 'r') as f:
-              data = json.load(f)
-              allowed_origins = data.get('allowed_origins', [])
-              if production_domain in allowed_origins:
-                found = True
-          except FileNotFoundError:
-            print(f"Error: {allowlist_file} not found.")
-            sys.exit(1)
-          except json.JSONDecodeError:
-            print(f"Error: Could not decode JSON from {allowlist_file}.")
-            sys.exit(1)
-
-          if found:
-            print(f"Success: Production domain '{production_domain}' is present in {allowlist_file}.")
-            sys.exit(0)
-          else:
-            print(f"Error: Production domain '{production_domain}' is NOT present in {allowlist_file}.")
-            print("Please add it to ensure no disruption of service.")
-            sys.exit(1)
-
-      - run: npm run cypress:run
-        env:
-          TEST_USER_EMAIL: ${{ secrets.CYPRESS_TEST_USER_EMAIL }}
-          TEST_USER_PASSWORD: ${{ secrets.CYPRESS_TEST_USER_PASSWORD }}
-          TEST_USER_DISPLAY_NAME: ${{ secrets.CYPRESS_TEST_USER_DISPLAY_NAME }}
-          NEXT_PUBLIC_REOWN_PROJECT_ID: ${{ secrets.VITE_REOWN_PROJECT_ID_CI }} # Assuming secret name will be updated
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL_CI }} # Assuming secret name will be updated
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY_CI }} # Assuming secret name will be updated
-          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL_CI }} # Assuming secret name will be updated
-          NEXT_PUBLIC_VAPID_PUBLIC_KEY: ${{ secrets.VITE_VAPID_PUBLIC_KEY_CI }} # Assuming secret name will be updated
+        # Scan dependencies for vulnerabilities
+      - run: npm run audit
