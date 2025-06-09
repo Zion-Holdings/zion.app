@@ -32,8 +32,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <CartProvider>
                       <AnalyticsProvider>
                         <MemoryRouter>
-                        <Component {...pageProps} />
-                          <MemoryRouter>
+                          <Component {...pageProps} />
+                        </MemoryRouter>
                       </AnalyticsProvider>
                       <Toaster />
                     </CartProvider>
