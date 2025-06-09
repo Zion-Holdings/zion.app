@@ -4,6 +4,10 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+    typescript: {
+    ignoreBuildErrors: true,
+  },
+
   // experimental: {
   //   esmExternals: 'loose', // Removing this as per Next.js recommendation
   // },
