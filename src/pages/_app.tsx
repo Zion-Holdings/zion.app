@@ -32,40 +32,40 @@ import { HelmetProvider } from 'react-helmet-async';
 // Removed: import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@tanstack/react-query';
 import { showApiError } from '@/utils/apiErrorHandler';
-import './utils/globalFetchInterceptor';
-import './utils/consoleErrorToast';
-import './utils/globalErrorHandler';
-import ToastProvider from './components/ToastProvider';
-import GlobalErrorBoundary from './components/GlobalErrorBoundary';
-import { logError } from './utils/logError';
-import RootErrorBoundary from './components/RootErrorBoundary';
+import '../utils/globalFetchInterceptor';
+import '../utils/consoleErrorToast';
+import '../utils/globalErrorHandler';
+import ToastProvider from '../components/ToastProvider';
+import GlobalErrorBoundary from '../components/GlobalErrorBoundary';
+import { logError } from '../utils/logError';
+import RootErrorBoundary from '../components/RootErrorBoundary';
 import {
   AppLoaderProvider,
   NotificationProvider,
   MessagingProvider,
-} from './context';
+} from '../context';
 import { LanguageProvider } from '@/context/LanguageContext';
-import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
+import { LanguageDetectionPopup } from '../components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
 // import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
 import { Provider } from 'react-redux';
-import { store } from './store';
+import { store } from '../store';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
 
 // Import analytics provider
-// import { AnalyticsProvider } from './context/AnalyticsContext';
-// import { ViewModeProvider } from './context/ViewModeContext';
-import { CartProvider } from './context/CartContext';
-// import { FavoritesProvider } from './context/FavoritesContext.jsx';
-import { registerServiceWorker } from './serviceWorkerRegistration';
-import { enableDevToolsInStaging, highlightZeroHeightElements } from './utils/devtools';
-import './utils/checkDuplicateClassNames';
-import { checkEssentialEnvVars } from './utils/validateEnv';
-import { FeedbackProvider } from './context/FeedbackContext';
-import { FeedbackWidget } from './components/feedback/FeedbackWidget';
+// import { AnalyticsProvider } from '../context/AnalyticsContext';
+// import { ViewModeProvider } from '../context/ViewModeContext';
+import { CartProvider } from '../context/CartContext';
+// import { FavoritesProvider } from '../context/FavoritesContext.jsx';
+import { registerServiceWorker } from '../serviceWorkerRegistration';
+import { enableDevToolsInStaging, highlightZeroHeightElements } from '../utils/devtools';
+import '../utils/checkDuplicateClassNames';
+import { checkEssentialEnvVars } from '../utils/validateEnv';
+import { FeedbackProvider } from '../context/FeedbackContext';
+import { FeedbackWidget } from '../components/feedback/FeedbackWidget';
 
 enableDevToolsInStaging();
 highlightZeroHeightElements();
