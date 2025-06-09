@@ -26,7 +26,9 @@ import { SupportChatbot } from './components/SupportChatbot';
 
 // RootErrorFallback function removed.
 
-const App = ({ Component, pageProps }) => { // Component and pageProps are standard for Next.js _app.tsx
+// Since this component no longer renders <Component {...pageProps} />, it does
+// not require any props.
+const App = () => {
   const router = useRouter();
 
   useEffect(() => {
