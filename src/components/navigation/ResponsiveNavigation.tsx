@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -26,7 +27,7 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const { t } = useTranslation();
-  const location = useLocation();
+  const router = useRouter();
 
   const items: NavItem[] = [
     { label: t('nav.home', 'Home'), href: '/' },
@@ -68,10 +69,10 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
                       <li key={sub.href}>
                         <NavigationMenuLink asChild>
                           <Link
-                            to={sub.href}
+                            href={sub.href}
                             className={cn(
                               "block rounded-sm px-3 py-2 text-sm hover:bg-accent focus:bg-accent focus:outline-none",
-                              location.pathname === sub.href && "bg-accent text-accent-foreground"
+                              router.pathname === sub.href && "bg-accent text-accent-foreground"
                             )}
                           >
                             {sub.label}
@@ -85,10 +86,10 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
             ) : (
               <NavigationMenuLink asChild>
                 <Link
-                  to={item.href || '#'}
+                  href={item.href || '#'}
                   className={cn(
                     "inline-block px-4 py-2 text-sm font-medium",
-                    item.href && location.pathname === item.href && "text-primary"
+                    item.href && router.pathname === item.href && "text-primary"
                   )}
                 >
                   {item.label}

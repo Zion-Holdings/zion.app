@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { toast } from "sonner";
 
@@ -17,7 +17,7 @@ interface CreatePostButtonProps {
  */
 export function CreatePostButton({ categoryId, className }: CreatePostButtonProps) {
   const { user } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleClick = () => {
     const target = categoryId
@@ -25,11 +25,11 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
       : "/community?new=1";
 
     if (user) {
-      navigate(target);
+      router.push(target);
     } else {
       toast.info("Please log in to create a post");
       const next = encodeURIComponent(target);
-      navigate(`/login?next=${next}`, { replace: true });
+      router.replace(`/login?next=${next}`);
     }
   };
 
