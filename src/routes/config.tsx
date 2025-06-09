@@ -39,17 +39,6 @@ export interface AppRouteObject {
 import RootPage from '@/pages/RootPage';
 import MarketplaceLanding from '@/pages/MarketplaceLanding';
 import Categories from '@/pages/Categories';
-   * caused a type error when spreading route definitions. Relax the typing
-   * here so routes may specify either `index: true` or `index: false`.
-   */
-  index?: boolean;
-  children?: AppRouteObject[];
-  metaTitle?: string;
-  requiresAuth?: boolean;
-}
-import RootPage from '@/pages/RootPage';
-import MarketplaceLanding from '@/pages/MarketplaceLanding';
-import Categories from '@/pages/Categories';
 import Blog from '@/pages/Blog';
 import ServicesPage from '@/pages/ServicesPage';
 import ErrorGuard from '@/components/ErrorGuard';
