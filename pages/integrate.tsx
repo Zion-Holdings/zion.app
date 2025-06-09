@@ -1,1 +1,1 @@
-export { default } from '../src/pages/PartnerIntegration';
+export { default } from '@/pages/PartnerIntegration';

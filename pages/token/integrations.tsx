@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/TokenIntegrations';
+export { default } from '@/pages/TokenIntegrations';

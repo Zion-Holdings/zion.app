@@ -1,3 +1,3 @@
-import ProductsAdminPage from '../../src/pages/ProductsAdminPage';
+import ProductsAdminPage from '@/pages/ProductsAdminPage';
 
 export default ProductsAdminPage;

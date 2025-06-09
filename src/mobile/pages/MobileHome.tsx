@@ -1,9 +1,9 @@
 
 import React from "react";
-import { MobileHeader } from "../components/common/MobileHeader";
-import { BottomNavigation } from "../components/common/BottomNavigation";
-import { ClientDashboard } from "../components/dashboard/ClientDashboard";
-import { TalentDashboard } from "../components/dashboard/TalentDashboard";
+import { MobileHeader } from "@/mobile/components/common/MobileHeader";
+import { BottomNavigation } from "@/mobile/components/common/BottomNavigation";
+import { ClientDashboard } from "@/mobile/components/dashboard/ClientDashboard";
+import { TalentDashboard } from "@/mobile/components/dashboard/TalentDashboard";
 import { useAuth } from "@/hooks/useAuth";
 
 export function MobileHome() {

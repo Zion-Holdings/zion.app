@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/FounderBot';
+export { default } from '@/pages/FounderBot';

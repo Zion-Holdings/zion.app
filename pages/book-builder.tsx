@@ -1,1 +1,1 @@
-export { default } from '../src/pages/BookBuilder';
+export { default } from '@/pages/BookBuilder';

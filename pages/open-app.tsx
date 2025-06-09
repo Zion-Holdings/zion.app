@@ -1,1 +1,1 @@
-export { default } from '../src/pages/OpenAppRedirect';
+export { default } from '@/pages/OpenAppRedirect';

@@ -1,1 +1,1 @@
-export { default } from '../src/pages/AIMatcher';
+export { default } from '@/pages/AIMatcher';

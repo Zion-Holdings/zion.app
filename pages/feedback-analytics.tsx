@@ -1,1 +1,1 @@
-export { default } from '../src/pages/FeedbackAnalytics';
+export { default } from '@/pages/FeedbackAnalytics';

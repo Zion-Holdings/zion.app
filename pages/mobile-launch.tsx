@@ -1,1 +1,1 @@
-export { default } from '../src/pages/MobileLaunchPage';
+export { default } from '@/pages/MobileLaunchPage';

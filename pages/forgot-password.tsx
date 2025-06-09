@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { forgotPassword } from '../src/services/auth';
+import { forgotPassword } from '@/services/auth';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');

@@ -1,1 +1,1 @@
-export { default } from '../src/pages/MessagingInbox';
+export { default } from '@/pages/MessagingInbox';

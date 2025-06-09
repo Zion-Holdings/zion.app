@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/NationBuilder';
+export { default } from '@/pages/NationBuilder';

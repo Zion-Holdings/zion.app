@@ -1,4 +1,4 @@
-import Marketplace, { MarketplaceProps } from '../../src/pages/Marketplace';
+import Marketplace, { MarketplaceProps } from '@/pages/Marketplace';
 import type { GetServerSideProps } from 'next';
 
 export const getServerSideProps: GetServerSideProps<MarketplaceProps> = async () => {

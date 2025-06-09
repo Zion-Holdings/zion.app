@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/InternationalProposals';
+export { default } from '@/pages/InternationalProposals';

@@ -74,7 +74,7 @@ This project utilizes a modern, multi-component architecture:
   - **[Socket.io](https://socket.io/):** For real-time communication features like chat and notifications.
   - **[Firebase](https://firebase.google.com/):** Used for some backend functionalities and possibly hosting or real-time features.
 - **Testing:** The project employs a comprehensive testing strategy with [Jest](https://jestjs.io/) and [Vitest](https://vitest.dev/) for unit/integration tests, and [Cypress](https://www.cypress.io/) & [Playwright](https://playwright.dev/) for end-to-end testing.
-- **Deployment:** (Details TBD - current README mentions this will be updated. Likely involves CI/CD pipelines using GitHub Actions for deployments to platforms like Netlify, Vercel, or custom infrastructure).
+- **Deployment:** A GitHub Actions workflow builds a Docker image, pushes it to the configured container registry, and updates the Kubernetes *staging* environment on every merge to `main`. The cluster may run on Azure, GCP, or DigitalOcean.
 
 ## Setup and Local Development
 
@@ -629,6 +629,11 @@ These scripts are located in the `scripts/` directory and can be run from the pr
     *   Checks for outdated npm dependencies using `npm-check-updates`.
     *   Audits installed dependencies for known vulnerabilities using `npm audit`.
     *   Can be run via `npm run check-updates` and `npm run audit-vulnerabilities` for individual checks.
+*   **`hourly-npm-audit.sh`**:
+    *   Runs `npm audit --json` and logs results to `logs/security/hourly-fix.log`.
+    *   Automatically runs `npm audit fix --force` if critical vulnerabilities are detected.
+    *   Designed for hourly execution via cron (`cron/hourly-npm-audit`).
+    *   Set `WEBHOOK_URL` to send a JSON summary notification.
 *   **`generate-test-stubs.sh`**:
     *   Scans the `src/` directory (and its subdirectories like `components`, `pages`, `utils`, `lib`) for JavaScript/TypeScript files.
     *   Generates basic placeholder test files (e.g., `*.test.js` or `*.test.ts`) for files that do not yet have corresponding test files. This helps in identifying areas needing test coverage.

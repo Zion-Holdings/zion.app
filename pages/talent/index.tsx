@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/TalentDirectory';
+export { default } from '@/pages/TalentDirectory';
