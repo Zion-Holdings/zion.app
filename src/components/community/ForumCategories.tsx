@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
 import {
@@ -73,7 +73,7 @@ export const ForumCategories = () => {
       {visibleCategories.map((category) => {
         const Icon = iconMap[category.icon as keyof typeof iconMap];
         return (
-          <Link key={category.id} to={`/community/category/${category.id}`}>
+          <Link key={category.id} href={`/community/category/${category.id}`}>
             <Card className="h-full transition-all hover:shadow-md hover:border-zion-purple/50 cursor-pointer">
               <CardHeader className="flex flex-row items-center gap-4">
                 <div className="p-2 bg-zion-purple/10 rounded-full">

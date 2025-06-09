@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2, Sparkles } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
 import useSWRMutation from "swr/mutation";
 import Skeleton, { SkeletonCard } from "@/components/ui/skeleton"; // Import SkeletonCard
 import { FilterSidebarSkeleton } from "@/components/skeletons/FilterSidebarSkeleton"; // Import FilterSidebarSkeleton
@@ -52,8 +52,7 @@ export default function EquipmentPage() {
   // Initialize with undefined or null to better distinguish between empty data and loading states
   const [equipment, setEquipment] = useState<ProductListing[] | undefined>(undefined);
   const { user } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
 
   const {
     data: fetchedEquipment,
@@ -110,7 +109,7 @@ export default function EquipmentPage() {
 
   const handleRecommendations = async () => {
     if (!user) {
-      navigate('/login?next=/equipment&reco=1');
+      router.push('/login?next=/equipment&reco=1');
       return;
     }
     try {
@@ -126,13 +125,13 @@ export default function EquipmentPage() {
 
   // Make sure handleRecommendations is memoized or stable if it's a dependency elsewhere, though not strictly required here.
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    if (params.get('reco') === '1' && user) {
+    // Use router.query directly for Next.js
+    if (router.query.reco === '1' && user) {
       handleRecommendations();
     }
     // Added handleRecommendations to dependency array, ensure it's stable (e.g. via useCallback if it were passed down)
     // For now, this is okay as it's defined in the same scope.
-  }, [user, location.search, handleRecommendations]);
+  }, [user, router.query, handleRecommendations]); // Listen to router.query
 
   // Updated loading condition to specifically check for equipment being undefined
   if (isLoadingEquipment && equipment === undefined) {

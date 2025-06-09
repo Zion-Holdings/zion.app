@@ -5,7 +5,7 @@ import { NextSeo } from '@/components/NextSeo';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { ROADMAP_ITEMS, RoadmapItem } from '@/data/roadmap';
@@ -78,7 +78,7 @@ export default function RoadmapPage() {
                             Upvote ({f.upvotes})
                           </Button>
                           <Button variant="ghost" size="sm" asChild>
-                            <Link to={`/roadmap/${f.id}`}>Details</Link>
+                            <Link href={`/roadmap/${f.id}`}>Details</Link>
                           </Button>
                         </div>
                       </CardContent>
@@ -89,7 +89,7 @@ export default function RoadmapPage() {
           </div>
           <div className="pt-8">
             <Button asChild>
-              <Link to="/roadmap/suggest">Suggest a Feature</Link>
+              <Link href="/roadmap/suggest">Suggest a Feature</Link>
             </Button>
           </div>
         </div>

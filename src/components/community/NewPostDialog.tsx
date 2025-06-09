@@ -2,7 +2,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import PostForm from "./PostForm";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import type { ForumCategory } from "@/types/community";
 
 interface NewPostDialogProps {
@@ -14,7 +14,7 @@ interface NewPostDialogProps {
 export function NewPostDialog({ open, onOpenChange, initialCategory }: NewPostDialogProps) {
   const { user } = useAuth();
   const { toast } = useToast();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleSubmit = async (values: { title: string; content: string; categoryId: ForumCategory; tags: string; }) => {
     try {
@@ -28,7 +28,7 @@ export function NewPostDialog({ open, onOpenChange, initialCategory }: NewPostDi
         });
       }
       onOpenChange(false);
-      navigate(`/community/category/${values.categoryId}`);
+      router.push(`/community/category/${values.categoryId}`);
     } catch (error) {
       toast({ title: "Error", description: "There was a problem creating your post", variant: "destructive" });
     }

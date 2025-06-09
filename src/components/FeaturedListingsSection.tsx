@@ -2,7 +2,7 @@
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface FeaturedListingsSectionProps {
@@ -122,7 +122,7 @@ export function FeaturedListingsSection({
             className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-primary-foreground px-8 py-6"
             asChild
           >
-            <Link to="/marketplace">View All Listings</Link>
+            <Link href="/marketplace">View All Listings</Link>
           </Button>
         </div>
       </div>

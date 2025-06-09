@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { completeSitemap, dynamicPaths } from '@/config/sitemap';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { SEO } from './SEO';
 
@@ -49,7 +49,7 @@ export const SitemapPage: React.FC = () => {
                 .map(route => (
                   <li key={route.path}>
                     <Link
-                      to={resolvePath(route.path)}
+                      href={resolvePath(route.path)}
                       className="flex items-center hover:text-zion-purple"
                     >
                       <ChevronRight className="h-4 w-4 mr-2" />
@@ -74,7 +74,7 @@ export const SitemapPage: React.FC = () => {
                 .map(route => (
                   <li key={route.path}>
                     <Link
-                      to={resolvePath(route.path)}
+                      href={resolvePath(route.path)}
                       className="flex items-center hover:text-zion-purple"
                     >
                       <ChevronRight className="h-4 w-4 mr-2" />
@@ -99,7 +99,7 @@ export const SitemapPage: React.FC = () => {
                 .map(route => (
                   <li key={route.path}>
                     <Link
-                      to={resolvePath(route.path)}
+                      href={resolvePath(route.path)}
                       className="flex items-center hover:text-zion-purple"
                     >
                       <ChevronRight className="h-4 w-4 mr-2" />
@@ -124,7 +124,7 @@ export const SitemapPage: React.FC = () => {
                 .map(route => (
                   <li key={route.path}>
                     <Link
-                      to={resolvePath(route.path)}
+                      href={resolvePath(route.path)}
                       className="flex items-center hover:text-zion-purple"
                     >
                       <ChevronRight className="h-4 w-4 mr-2" />
@@ -148,7 +148,7 @@ export const SitemapPage: React.FC = () => {
                 .map(route => (
                   <li key={route.path}>
                     <Link
-                      to={resolvePath(route.path)}
+                      href={resolvePath(route.path)}
                       className="flex items-center hover:text-zion-purple"
                     >
                       <ChevronRight className="h-4 w-4 mr-2" />

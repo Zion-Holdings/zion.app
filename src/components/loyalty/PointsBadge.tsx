@@ -2,7 +2,7 @@ import { Gift } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useEffect, useState } from 'react';
 import { usePoints } from '@/hooks/usePoints';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 export function PointsBadge() {
@@ -54,7 +54,7 @@ export function PointsBadge() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
-            to="/wallet"
+            href="/wallet"
             title="View wallet"
             className="flex items-center gap-1 text-xs text-muted-foreground"
           >

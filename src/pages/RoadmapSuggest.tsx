@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface Suggestion {
   id: string;
@@ -67,7 +67,7 @@ export default function RoadmapSuggestPage() {
             </div>
           )}
           <Button variant="outline" asChild>
-            <Link to="/roadmap">Back to Roadmap</Link>
+            <Link href="/roadmap">Back to Roadmap</Link>
           </Button>
         </div>
       </main>
