@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useParams
 import { useEffect, useState } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { getStripe } from '@/utils/getStripe';
@@ -7,7 +7,9 @@ import { ProductListing } from '@/types/listings';
 import { NEW_PRODUCTS } from '@/data/newProductsData';
 
 export default function CheckoutPage() {
-  const { id } = useParams();
+  const router = useRouter();
+  const { id: rawId } = router.query;
+  const id = typeof rawId === 'string' ? rawId : undefined;
   const [product, setProduct] = useState<ProductListing | null>(null);
   const [intent, setIntent] = useState<any | null>(null);
   const [isLoading, setIsLoading] = useState(true);

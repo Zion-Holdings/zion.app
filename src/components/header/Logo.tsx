@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 
 interface LogoProps {
@@ -18,14 +18,14 @@ export function Logo({ customLogo, customColor }: LogoProps) {
   
   if (logoToUse) {
     return (
-      <Link to="/" className="flex items-center">
+      <Link href="/" className="flex items-center">
         <img src={logoToUse} alt={`${brandName} Logo`} className="h-8" />
       </Link>
     );
   }
   
   return (
-    <Link to="/" className="flex items-center">
+    <Link href="/" className="flex items-center">
       <img src="/logos/zion-logo.png" alt="Zion Logo" className="h-8" />
     </Link>
   );

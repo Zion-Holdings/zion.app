@@ -30,7 +30,7 @@ import './index.css';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n/index';
 import { HelmetProvider } from 'react-helmet-async';
-import { BrowserRouter as Router } from 'react-router-dom';
+// Removed: import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@tanstack/react-query';
 import { showApiError } from '@/utils/apiErrorHandler';
 import './utils/globalFetchInterceptor';
@@ -103,7 +103,7 @@ try {
       />
       <RootErrorBoundary>
         <Provider store={store}>
-        <Router basename={process.env.PUBLIC_URL || '/'}>
+        {/* <Router basename={process.env.PUBLIC_URL || '/'}> */}
           <AppLoaderProvider>
         <I18nextProvider i18n={i18n}>
           <HelmetProvider>
@@ -145,7 +145,7 @@ try {
         </HelmetProvider>
         </I18nextProvider>
         </AppLoaderProvider>
-        </Router>
+        {/* </Router> */}
       </Provider>
       </RootErrorBoundary>
       {/* Removed duplicate main marker */}

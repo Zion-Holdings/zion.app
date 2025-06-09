@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useNavigate
 import { useQuery } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import ProductCard from '@/components/ProductCard';
@@ -18,7 +18,7 @@ async function fetchProducts() {
 }
 
 export default function MarketplaceLanding() {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
   const { data: products = [], error, isError } = useQuery({
     queryKey: ['products'],
     queryFn: fetchProducts,
@@ -47,7 +47,7 @@ export default function MarketplaceLanding() {
           <ProductCard
             key={p.id}
             product={p}
-            onBuy={() => navigate(`/checkout/${p.id}`)}
+            onBuy={() => router.push(`/checkout/${p.id}`)} // Changed to router.push
           />
         ))}
       </div>

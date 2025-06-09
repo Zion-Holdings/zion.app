@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useLocation, useNavigate
 import { useAuth } from '@/hooks/useAuth';
 import { safeStorage } from '@/utils/safeStorage';
 
@@ -14,12 +14,16 @@ function decodeToken(token) {
 }
 
 export default function OAuthCallback() {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const router = useRouter(); // Initialized router
+  // location is now router
   const { setUser } = useAuth();
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
+    // Check if router.isReady is true before accessing router.query or router.asPath
+    if (!router.isReady) return;
+
+    const queryString = router.asPath.split('?')[1] || '';
+    const params = new URLSearchParams(queryString);
     const token = params.get('token');
     const next = params.get('next');
     if (token) {
@@ -28,9 +32,9 @@ export default function OAuthCallback() {
         const user = decodeToken(token);
         if (user) setUser(user);
       }
-      navigate(next || '/', { replace: true });
+      router.replace(next || '/'); // Use router.replace
     }
-  }, [location, navigate, setUser]);
+  }, [router.isReady, router.asPath, router, setUser]); // Added router.isReady and router.asPath to dependencies
 
   return <div>Loading...</div>;
 }

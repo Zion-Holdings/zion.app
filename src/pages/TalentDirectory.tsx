@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useNavigate
 import { FilterSidebar } from '@/components/talent/FilterSidebar';
 import { TalentResults } from '@/components/talent/TalentResults';
 import { TalentSkeleton } from '@/components/talent/TalentSkeleton';
@@ -20,7 +20,7 @@ import {
 } from '@/components/ui/pagination';
 
 export default function TalentDirectory() {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
 
   // Use our custom hook to manage state
   const {
@@ -73,7 +73,7 @@ export default function TalentDirectory() {
 
   const viewProfile = (id: string) => {
     // Navigate to the talent profile page
-    navigate(`/talent/${id}`);
+    router.push(`/talent/${id}`); // Changed to router.push
   };
 
   if (isLoading) {

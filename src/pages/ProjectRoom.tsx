@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useParams
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
@@ -12,7 +12,9 @@ import { VideoCallRoom } from '@/components/video/VideoCallRoom';
 import { toast } from 'sonner';
 
 export default function ProjectRoom() {
-  const { projectId } = useParams() as { projectId: string };
+  const router = useRouter();
+  const { projectId: rawProjectId } = router.query;
+  const projectId = typeof rawProjectId === 'string' ? rawProjectId : ''; // Ensure string, default to empty if not
   const [activeTab, setActiveTab] = useState('chat');
   const [isInCall, setIsInCall] = useState(false);
   const [callParticipants, setCallParticipants] = useState<Array<{

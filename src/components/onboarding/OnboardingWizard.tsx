@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -28,7 +28,7 @@ interface OnboardingWizardProps {
 
 export function OnboardingWizard({ type, onComplete, onSkip, className }: OnboardingWizardProps) {
   const [currentStep, setCurrentStep] = useState(0);
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from useNavigate to useRouter
   const { user } = useAuth();
   
   // Define steps based on user type
@@ -111,11 +111,11 @@ export function OnboardingWizard({ type, onComplete, onSkip, className }: Onboar
   // Navigate to the specified URL
   const handleAction = () => {
     if (currentStep < steps.length - 1) {
-      navigate(steps[currentStep].action.url);
+      router.push(steps[currentStep].action.url); // Changed to router.push
       setCurrentStep(currentStep + 1);
     } else {
       // Last step
-      navigate(steps[currentStep].action.url);
+      router.push(steps[currentStep].action.url); // Changed to router.push
       onComplete();
     }
   };

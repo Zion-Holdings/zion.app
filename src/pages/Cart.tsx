@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { getStripe } from '@/utils/getStripe';
@@ -55,7 +55,7 @@ export default function CartPage() {
         <img src="/placeholder.svg" alt="Empty cart" className="mx-auto mb-4" />
         <p>Your cart is empty</p>
         <Button asChild className="mt-4">
-          <Link to="/marketplace">Browse Marketplace</Link>
+          <Link href="/marketplace">Browse Marketplace</Link>
         </Button>
       </div>
     );

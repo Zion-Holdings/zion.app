@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link
+import Link from 'next/link'; // Import Link from next/link
 
 const NotFound: React.FC = () => (
   <div className="flex flex-1 items-center justify-center bg-gray-100">
@@ -9,15 +9,15 @@ const NotFound: React.FC = () => (
       <p className="text-lg text-gray-600 mb-4">
         Did you forget your password? You can reset it here:
       </p>
-      <Link // Changed from <a> to <Link>
-        to="/forgot-password" // Changed href to 'to' and path to /forgot-password
+      <Link
+        href="/forgot-password" // Changed to href
         className="text-blue-600 hover:text-blue-800 underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
       >
         Reset Password
       </Link>
       <p className="mt-4">
         <Link
-          to="/" // Link to home as a secondary option
+          href="/" // Changed to href
           className="text-sm text-gray-500 hover:text-gray-700 underline"
         >
           Or return to Home

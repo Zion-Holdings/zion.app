@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useProjects } from '@/hooks/useProjects';
 import { useMilestones } from '@/hooks/useMilestones';
 import { useJobDetails } from '@/hooks/useJobDetails';
@@ -17,7 +17,9 @@ import {
 } from './components';
 
 export function ProjectMilestonesContent() {
-  const { projectId } = useParams() as { projectId?: string };
+  const router = useRouter();
+  const { projectId: rawProjectId } = router.query;
+  const projectId = typeof rawProjectId === 'string' ? rawProjectId : undefined;
   const { user } = useAuth();
   const { getProjectById } = useProjects();
   const { 
