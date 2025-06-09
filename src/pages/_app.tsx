@@ -43,29 +43,29 @@ import {
   AppLoaderProvider,
   NotificationProvider,
   MessagingProvider,
-} from './context';
+} from '../context';
 import { LanguageProvider } from '@/context/LanguageContext';
-import { LanguageDetectionPopup } from './components/LanguageDetectionPopup';
+import { LanguageDetectionPopup } from '../components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
 // import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
 import { Provider } from 'react-redux';
-import { store } from './store';
+import { store } from '../store';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
 
 // Import analytics provider
-// import { AnalyticsProvider } from './context/AnalyticsContext';
-// import { ViewModeProvider } from './context/ViewModeContext';
-import { CartProvider } from './context/CartContext';
-// import { FavoritesProvider } from './context/FavoritesContext.jsx';
-import { registerServiceWorker } from './serviceWorkerRegistration';
-import { enableDevToolsInStaging, highlightZeroHeightElements } from './utils/devtools';
-import './utils/checkDuplicateClassNames';
-import { checkEssentialEnvVars } from './utils/validateEnv';
-import { FeedbackProvider } from './context/FeedbackContext';
-import { FeedbackWidget } from './components/feedback/FeedbackWidget';
+// import { AnalyticsProvider } from '../context/AnalyticsContext';
+// import { ViewModeProvider } from '../context/ViewModeContext';
+import { CartProvider } from '../context/CartContext';
+// import { FavoritesProvider } from '../context/FavoritesContext.jsx';
+import { registerServiceWorker } from '../serviceWorkerRegistration';
+import { enableDevToolsInStaging, highlightZeroHeightElements } from '../utils/devtools';
+import '../utils/checkDuplicateClassNames';
+import { checkEssentialEnvVars } from '../utils/validateEnv';
+import { FeedbackProvider } from '../context/FeedbackContext';
+import { FeedbackWidget } from '../components/feedback/FeedbackWidget';
 
 enableDevToolsInStaging();
 highlightZeroHeightElements();
