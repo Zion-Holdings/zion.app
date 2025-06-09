@@ -1,7 +1,7 @@
 import Categories, { CategoriesProps } from '../src/pages/Categories';
-import type { GetServerSideProps } from 'next';
+import type { GetStaticProps } from 'next';
 
-export const getServerSideProps: GetServerSideProps<CategoriesProps> = async () => {
+export const getStaticProps: GetStaticProps<CategoriesProps> = async () => {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   try {
     const res = await fetch(`${appUrl}/api/services`);
