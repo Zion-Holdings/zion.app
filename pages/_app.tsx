@@ -1,4 +1,5 @@
 import React from 'react';
+import Router from 'next/router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { HelmetProvider } from 'react-helmet-async';
@@ -20,6 +21,28 @@ import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import th
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
+
+  React.useEffect(() => {
+    const handleRouteChangeStart = (url: string) => {
+      console.log(`Router: routeChangeStart - ${url}`);
+    };
+    const handleRouteChangeComplete = (url: string) => {
+      console.log(`Router: routeChangeComplete - ${url}`);
+    };
+    const handleRouteChangeError = (err: any, url: string) => {
+      console.error(`Router: routeChangeError - Error: ${err.message || err} on URL: ${url}`);
+    };
+
+    Router.events.on('routeChangeStart', handleRouteChangeStart);
+    Router.events.on('routeChangeComplete', handleRouteChangeComplete);
+    Router.events.on('routeChangeError', handleRouteChangeError);
+
+    return () => {
+      Router.events.off('routeChangeStart', handleRouteChangeStart);
+      Router.events.off('routeChangeComplete', handleRouteChangeComplete);
+      Router.events.off('routeChangeError', handleRouteChangeError);
+    };
+  }, []);
 
   return (
     <GlobalErrorBoundary> {/* Wrap the entire application with CustomErrorBoundary */}
