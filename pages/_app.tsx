@@ -20,7 +20,12 @@ import { Toaster } from '@/components/ui/toaster';
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
   const isBrowser = typeof window !== 'undefined';
-  const Router = isBrowser ? BrowserRouter : MemoryRouter;
+  // Use StaticRouter for server-side/static export, BrowserRouter for client-side
+  const RouterComponent = isBrowser ? BrowserRouter : StaticRouter;
+
+  // Props for StaticRouter (location) vs BrowserRouter (none needed here)
+  const routerProps = isBrowser ? {} : { location: pageProps.router?.asPath || "/" };
+
   return (
     <QueryClientProvider client={queryClient}>
       <ReduxProvider store={store}>
@@ -31,9 +36,9 @@ function MyApp({ Component, pageProps }: AppProps) {
               <WalletProvider>
                 <CartProvider>
                   <AnalyticsProvider>
-                    <Router>
+                    <RouterComponent {...routerProps}>
                       <Component {...pageProps} />
-                    </Router>
+                    </RouterComponent>
                   </AnalyticsProvider>
                   <Toaster />
                 </CartProvider>
