@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useNavigate, useLocation
 import { useAuth } from '@/hooks/useAuth';
 import { safeStorage } from '@/utils/safeStorage';
 import { LoginContent } from '@/components/auth/login';
@@ -11,29 +11,30 @@ import { toast } from '@/hooks/use-toast';
 
 export default function Login() {
   const { isAuthenticated, user, isLoading } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter(); // Initialized router
+  // location is now router
   const { dispatch } = useCart();
 
   useEffect(() => {
     // This effect handles token processing (e.g., from magic link)
-    // It runs when component mounts or location.search changes
-    const params = new URLSearchParams(location.search);
+    // It runs when component mounts or router.asPath (containing query) changes
+    const queryString = router.asPath.split('?')[1] || '';
+    const params = new URLSearchParams(queryString);
     const token = params.get('token');
     if (token) {
       safeStorage.setItem('auth.token', token);
       // Clear token from URL to prevent re-processing and clean up history
       // The actual authentication state will update via useAuth's listeners,
       // which should trigger the other useEffect.
-      navigate(location.pathname, { replace: true });
+      router.replace(router.pathname, undefined, { shallow: true }); // Use router.replace with shallow routing
     }
-  }, [location.search, navigate]);
+  }, [router.asPath, router.pathname, router]); // Depend on router.asPath
 
   useEffect(() => {
     if (!isLoading && isAuthenticated) {
-      navigate('/dashboard', { replace: true });
+      router.replace('/dashboard'); // Use router.replace
     }
-  }, [isAuthenticated, isLoading, navigate]);
+  }, [isAuthenticated, isLoading, router]);
 
   // Render LoginContent if not authenticated and auth is not loading
   if (!isAuthenticated && !isLoading) {

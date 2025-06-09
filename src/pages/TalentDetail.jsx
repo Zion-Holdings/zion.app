@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useParams
 import { getTalentBySlug } from '@/api/talent';
 import Skeleton from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { SEO } from '@/components/SEO';
 
 export default function TalentDetail() {
-  const { slug } = useParams();
+  const router = useRouter();
+  const { slug: rawSlug } = router.query;
+  const slug = typeof rawSlug === 'string' ? rawSlug : undefined;
   const [talent, setTalent] = useState(null);
   const [loading, setLoading] = useState(true);
 

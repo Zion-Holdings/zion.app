@@ -1,11 +1,44 @@
 import React from 'react';
-import { RouteObject } from 'react-router';
-import { Navigate } from 'react-router-dom';
+// Removed: import { RouteObject } from 'react-router';
+// Removed: import { Navigate } from 'react-router-dom';
 
-export interface AppRouteObject extends Omit<RouteObject, 'index' | 'children'> {
-  /**
-   * React Router allows `index: true` for index routes. The default
-   * `RouteObject` type restricts non-index routes to `index?: false`, which
+// Redefined AppRouteObject without react-router types
+export interface AppRouteObject {
+  path?: string;
+  element?: React.ReactNode; // Keep as ReactNode for component references
+  index?: boolean;
+  children?: AppRouteObject[];
+  metaTitle?: string;
+  requiresAuth?: boolean;
+  // caseSensitive?: boolean; // Removed as it was from RouteObject
+}
+
+// Ensure this interface still meets the needs of guardRoutes and other usages.
+// It might need further adjustments based on how it's consumed elsewhere,
+// but for now, it removes the react-router dependency.
+
+/*
+  The original AppRouteObject extended Omit<RouteObject, 'index' | 'children'>.
+  RouteObject has properties like:
+  caseSensitive?: boolean;
+  path?: string;
+  id?: string;
+  loader?: LoaderFunction;
+  action?: ActionFunction;
+  element?: React.ReactNode | null;
+  errorElement?: React.ReactNode | null;
+  handle?: RouteHandle;
+  shouldRevalidate?: ShouldRevalidateFunction;
+  children?: RouteObject[];
+  index?: boolean;
+
+  The new AppRouteObject keeps path, element, index, children, metaTitle, requiresAuth.
+  If other properties from RouteObject were implicitly used (e.g. id, caseSensitive),
+  they might need to be explicitly added back or handled differently.
+*/
+import RootPage from '@/pages/RootPage';
+import MarketplaceLanding from '@/pages/MarketplaceLanding';
+import Categories from '@/pages/Categories';
    * caused a type error when spreading route definitions. Relax the typing
    * here so routes may specify either `index: true` or `index: false`.
    */
@@ -118,7 +151,7 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
   { path: '/admin/*', element: <AdminRoutes /> },
   { path: '/mobile/*', element: <MobileAppRoutes /> },
   { path: '/mobile/pwa/*', element: <MobilePwa />, metaTitle: 'Zion Mobile PWA' },
-  { path: '/m/*', element: <Navigate to="/mobile/pwa" replace /> },
+  // Removed: { path: '/m/*', element: <Navigate to="/mobile/pwa" replace /> }, // This redirect should be handled in next.config.js
   { path: '/content/*', element: <ContentRoutes /> },
   { path: '/enterprise/*', element: <EnterpriseRoutes /> },
   {

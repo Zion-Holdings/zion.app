@@ -1,18 +1,18 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 interface NotificationFooterProps {
   onClose: () => void;
 }
 
 export const NotificationFooter: React.FC<NotificationFooterProps> = ({ onClose }) => {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from useNavigate to useRouter
   
   const handleViewAll = () => {
     onClose();
-    navigate('/notifications');
+    router.push('/notifications'); // Changed to router.push
   };
   
   return (

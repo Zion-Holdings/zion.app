@@ -1,5 +1,5 @@
 import { FileText, CheckCircle2, Clock, ShieldAlert } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'; // Changed from react-router-dom
 import { useAuth } from '@/hooks/useAuth';
 import { useGetOrdersQuery } from '@/hooks/useOrders';
 import {
@@ -98,7 +98,7 @@ export default function OrdersPage() {
                 <TableCell>{getStatusBadge(order.status)}</TableCell>
                 <TableCell>
                   <Link
-                    to={`/orders/${order.orderId}`}
+                    href={`/orders/${order.orderId}`} // Changed to href
                     className="text-zion-purple underline"
                   >
                     View

@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useNavigate
 import { useQuery } from '@tanstack/react-query';
 import ProductCard from '@/components/ProductCard';
 
@@ -27,7 +27,7 @@ export interface MarketplaceProps {
 }
 
 export default function Marketplace({ products: initialProducts = [] }: MarketplaceProps) {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
   const {
     data: products = [],
     isLoading,
@@ -58,7 +58,7 @@ export default function Marketplace({ products: initialProducts = [] }: Marketpl
             <ProductCard
               key={p.id}
               product={p}
-              onBuy={() => navigate(`/checkout/${p.id}`)}
+              onBuy={() => router.push(`/checkout/${p.id}`)} // Changed to router.push
             />
           ))}
       </div>

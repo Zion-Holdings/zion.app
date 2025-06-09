@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useNavigate
 const ReactMarkdown = React.lazy(() => import('react-markdown'));
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -9,7 +9,7 @@ export default function NewPost() {
   const { register, handleSubmit, watch } = useForm({
     defaultValues: { title: '', content: '' }
   });
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
   const content = watch('content');
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [error, setError] = React.useState(null);
@@ -28,7 +28,7 @@ export default function NewPost() {
         throw new Error(err.message || 'Failed to create post');
       }
       const data = await res.json();
-      navigate(`/community/${data.id}`);
+      router.push(`/community/${data.id}`); // Changed to router.push
     } catch (e) {
       console.error('Post creation error:', e);
       setError(e.message);

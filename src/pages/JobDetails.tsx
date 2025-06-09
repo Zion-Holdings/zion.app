@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -16,11 +16,12 @@ import { SEO } from '@/components/SEO';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 
 export default function JobDetails() {
-  // Cast to specify the expected route param type since useParams may be untyped
-  const { jobId } = useParams() as { jobId?: string };
+  const router = useRouter(); // Init router
+  const { jobId: rawJobId } = router.query; // Get jobId from query
+  const jobId = typeof rawJobId === 'string' ? rawJobId : undefined;
   const { job, isLoading, error } = useJobDetails(jobId);
   const { user, isAuthenticated } = useAuth();
-  const navigate = useNavigate();
+  // navigate is now router
   const { isWhitelabel, brandName } = useWhitelabel();
   
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
@@ -40,7 +41,7 @@ export default function JobDetails() {
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-2xl font-bold mb-4">Job Not Found</h1>
           <p className="mb-8">The job you're looking for doesn't exist or has been removed.</p>
-          <Button onClick={() => navigate('/jobs')}>View All Jobs</Button>
+          <Button onClick={() => router.push('/jobs')}>View All Jobs</Button>
         </div>
         <Footer />
       </>
@@ -50,7 +51,7 @@ export default function JobDetails() {
   const handleApply = () => {
     if (!isAuthenticated) {
       toast.error("Please log in to apply for this job");
-      navigate('/login?redirect=' + encodeURIComponent(`/jobs/${jobId}`));
+      router.push(`/login?redirect=${encodeURIComponent(`/jobs/${jobId || ''}`)}`); // Added null check for jobId
       return;
     }
     
@@ -86,7 +87,7 @@ export default function JobDetails() {
           <Button 
             variant="outline" 
             size="sm"
-            onClick={() => navigate('/jobs')}
+            onClick={() => router.push('/jobs')}
           >
             ← Back to Jobs
           </Button>

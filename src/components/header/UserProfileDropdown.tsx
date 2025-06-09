@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
@@ -60,17 +60,17 @@ const UserProfileDropdown: React.FC = () => {
         >
           <ul style={{ listStyle: 'none', margin: 0, padding: '8px 0' }}>
             <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }}>
-              <Link to="/profile" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Link href="/profile" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>
                 Profile
               </Link>
             </li>
             <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }}>
-              <Link to="/orders" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Link href="/orders" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>
                 Orders
               </Link>
             </li>
             <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }}>
-              <Link to="/wallet" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Link href="/wallet" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>
                 Wallet
               </Link>
             </li>

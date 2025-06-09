@@ -3,14 +3,14 @@ import { useQuery } from '@tanstack/react-query';
 import { getWallet } from '@/api/wallet';
 import Spinner from '@/components/ui/spinner';
 import type { TokenTransaction } from '@/types/tokens';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useNavigate
 interface WalletResponse {
   points: number;
   history: TokenTransaction[];
 }
 
 const WalletDashboard = () => {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
 
   const { data, isLoading, isError, error } = useQuery<WalletResponse, Error>({
     queryKey: ['wallet'],
@@ -21,9 +21,9 @@ const WalletDashboard = () => {
   // Navigate to login on unauthorized error
   useEffect(() => {
     if (isError && (error as any)?.response?.status === 401) {
-      navigate('/login');
+      router.push('/login'); // Changed to router.push
     }
-  }, [isError, error, navigate]);
+  }, [isError, error, router]); // Changed navigate to router in dependencies
 
   if (isError) {
     // For other errors, let the component render with fallback values

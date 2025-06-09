@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter'; // Assuming this component exists
@@ -9,8 +9,10 @@ import { toast } from '@/hooks/use-toast'; // Assuming this hook exists
 import { resetPassword } from '@/services/auth';
 
 export default function ResetPasswordPage() {
-  const { token } = useParams();
-  const navigate = useNavigate();
+  const router = useRouter(); // Initialized router
+  const { token: rawToken } = router.query;
+  const token = typeof rawToken === 'string' ? rawToken : undefined;
+  // navigate is now router
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -50,7 +52,7 @@ export default function ResetPasswordPage() {
     try {
       await resetPassword(token, password);
       toast.success('Password has been reset successfully!');
-      navigate('/login'); // Redirect to login page on success
+      router.push('/login'); // Redirect to login page on success, changed to router.push
     } catch (err) {
       // Ensure err.message is a string.
       const errorMessage = err instanceof Error ? err.message : 'Failed to reset password. Please try again.';

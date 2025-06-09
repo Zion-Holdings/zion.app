@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useNavigate
 import CardForm from '@/components/checkout/CardForm';
 import { Elements } from '@stripe/react-stripe-js';
 import { getStripe } from '@/utils/getStripe';
@@ -21,7 +21,7 @@ interface CheckoutFormData {
 function CheckoutInner() {
   const items = useSelector((s: RootState) => s.cart.items);
   const form = useForm<CheckoutFormData>({ defaultValues: { name: '', email: '', address: '', city: '', country: '' } });
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
   const { user } = useAuth();
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);

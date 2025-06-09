@@ -23,13 +23,24 @@ jest.mock('@/hooks/use-toast');
 jest.mock('@/utils/safeStorage');
 
 const mockNavigate = jest.fn();
-// Mock useLocation at the module level for default behavior
-const mockUseLocation = jest.fn(() => ({ search: '', pathname: '/signup' }));
+// Mock useLocation at the module level for default behavior (will be used by mockUseRouter)
+const mockRawLocation = { search: '', pathname: '/signup' }; // Store the raw parts
+const mockUseLocationValues = jest.fn(() => mockRawLocation);
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-  useLocation: () => mockUseLocation(), // Call the mock function
+
+jest.mock('next/router', () => ({
+  ...jest.requireActual('next/router'), // Import and retain default behavior
+  useRouter: () => {
+    const { search, pathname } = mockUseLocationValues(); // Get current mocked location values
+    return {
+      push: mockNavigate,
+      replace: mockNavigate, // Assuming replace can also use mockNavigate for testing
+      pathname: pathname,
+      asPath: pathname + search,
+      query: Object.fromEntries(new URLSearchParams(search)),
+      isReady: true, // Important for tests that might depend on router.isReady
+    };
+  },
 }));
 
 // Typed mock for registerUser
@@ -44,7 +55,10 @@ describe('Signup Page', () => {
     mockSetUser = jest.fn();
 
     // Reset useLocation mock to default before each test
-    mockUseLocation.mockReturnValue({ search: '', pathname: '/signup' });
+    // Update the raw location object that mockUseLocationValues will use
+    mockRawLocation.search = '';
+    mockRawLocation.pathname = '/signup';
+
 
     mockAuthContextValue = {
       user: null,
@@ -157,10 +171,10 @@ describe('Signup Page', () => {
     });
 
     // Mock useLocation to return a search string with a 'next' param for this specific test
-    mockUseLocation.mockReturnValue({
-      search: '?next=/custom-path',
-      pathname: '/signup',
-    });
+    // Update the raw location object for this specific test
+    mockRawLocation.search = '?next=/custom-path';
+    mockRawLocation.pathname = '/signup';
+
 
     renderSignup(['/signup?next=/custom-path']); // Initial entry for MemoryRouter
     fillForm('nextuser@example.com'); // Use a unique email for this test

@@ -1,24 +1,14 @@
-import { Route, Routes } from 'react-router-dom';
-import GovernancePage from '@/pages/governance';
-import CreateProposalPage from '@/pages/governance/create';
-import ProposalDetailPage from '@/pages/governance/[proposalId]';
-import MyVotesPage from '@/pages/governance/my-votes';
-import ZgpLibraryPage from '@/pages/governance/zgp-library';
-import OrgChartPage from '@/pages/OrgChart';
-import PrivacyVotePage from '@/pages/governance/privacy';
+// This file was used for react-router-dom route definitions.
+// In Next.js, routing is file-system based.
+// The routes previously defined here should be migrated by creating
+// corresponding files and directories under the 'pages' directory.
+// For example:
+// - path="/governance" element={<GovernancePage />}
+//   should become pages/governance/index.tsx (or pages/governance.tsx) exporting GovernancePage.
+// - path="/governance/:proposalId" element={<ProposalDetailPage />}
+//   should become pages/governance/[proposalId].tsx exporting ProposalDetailPage.
+//
+// All components imported at the top (e.g., GovernancePage, CreateProposalPage)
+// should be moved to their respective file paths under the 'pages' directory.
 
-const GovernanceRoutes = () => (
-  <Routes>
-    <Route path="/governance" element={<GovernancePage />} />
-    <Route path="/governance/create" element={<CreateProposalPage />} />
-    <Route path="/governance/zgp-library" element={<ZgpLibraryPage />} />
-    <Route path="/governance/org-chart" element={<OrgChartPage />} />
-    <Route path="/dao/templates" element={<ZgpLibraryPage />} />
-    <Route path="/governance/my-votes" element={<MyVotesPage />} />
-    <Route path="/governance/privacy" element={<PrivacyVotePage />} />
-    <Route path="/dao/zkvote" element={<PrivacyVotePage />} />
-    <Route path="/governance/:proposalId" element={<ProposalDetailPage />} />
-  </Routes>
-);
-
-export default GovernanceRoutes;
+export {}; // Ensure this is treated as a module

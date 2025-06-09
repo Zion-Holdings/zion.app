@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Assuming react-router-dom is used
+import Link from 'next/link'; // Changed from react-router-dom
 import { forgotPassword } from '@/services/auth';
 
 const ForgotPassword = () => {
@@ -37,7 +37,7 @@ const ForgotPassword = () => {
       </form>
       {message && <p>{message}</p>}
       <p>
-        Remember your password? <Link to="/login">Login</Link>
+        Remember your password? <Link href="/login">Login</Link>
       </p>
     </div>
   );

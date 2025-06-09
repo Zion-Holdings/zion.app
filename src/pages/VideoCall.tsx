@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
@@ -9,10 +9,10 @@ import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 
 export default function VideoCall() {
-  // useParams is typed as `any` in this environment due to missing type
-  // definitions, so avoid passing a type argument to prevent TS2347.
-  const { roomId } = useParams();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const { roomId: rawRoomId } = router.query;
+  const roomId = typeof rawRoomId === 'string' ? rawRoomId : undefined;
+  // navigate is now router
   const [isJoining, setIsJoining] = useState(false);
   const [hasJoined, setHasJoined] = useState(false);
   const [participants, setParticipants] = useState<Array<{
@@ -52,7 +52,7 @@ export default function VideoCall() {
     
     // Navigate back after a short delay
     setTimeout(() => {
-      navigate(-1);
+      router.back(); // Changed to router.back()
     }, 1500);
   };
   

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useNavigate
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useAuth } from '@/hooks/useAuth';
@@ -14,7 +14,7 @@ const SignupSchema = Yup.object({
 });
 
 export default function SimpleSignup() {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
   const { setUser } = useAuth();
 
   const formik = useFormik({
@@ -27,7 +27,7 @@ export default function SimpleSignup() {
           setUser(data.user);
         }
         toast.success('Welcome to Zion!');
-        navigate('/marketplace');
+        router.push('/marketplace'); // Changed to router.push
       } catch (err: any) {
         console.error('Signup error:', err.message);
         setErrors({ email: err.message });

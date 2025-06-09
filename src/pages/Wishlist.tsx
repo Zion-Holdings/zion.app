@@ -7,16 +7,23 @@ import { Button } from '@/components/ui/button';
 import { useCart } from '@/context/CartContext';
 import { toast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useNavigate
+import { useEffect } from 'react'; // Added useEffect
 
 export default function WishlistPage() {
   const { favorites, loading } = useFavorites();
-  const { user } = useAuth();
-  const navigate = useNavigate();
+  const { user, isLoading: isAuthLoading } = useAuth(); // Added isAuthLoading
+  const router = useRouter(); // Changed from navigate
 
-  if (!user) {
-    navigate('/login');
-    return null;
+  useEffect(() => {
+    // Redirect if not authenticated and auth loading is complete
+    if (!isAuthLoading && !user) {
+      router.push('/login');
+    }
+  }, [user, isAuthLoading, router]);
+
+  if (isAuthLoading || !user) { // Show loading or null while auth check or redirect happens
+    return null; // Or a loading spinner
   }
 
   const { items, dispatch } = useCart();

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useNavigate
 import { logError } from '@/utils/logError';
 
 // Ensure these are set in your environment variables
@@ -18,7 +18,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 const VerifyEmailPage = () => {
   const [status, setStatus] = useState<'verifying' | 'success' | 'error'>('verifying');
   const [message, setMessage] = useState('Verifying your email...');
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
 
   useEffect(() => {
     const confirmVerification = async () => {
@@ -62,7 +62,7 @@ const VerifyEmailPage = () => {
         if (response.ok) {
           setStatus('success');
           setMessage(responseData.message || 'Email successfully verified! Redirecting to login...');
-          setTimeout(() => navigate('/login'), 3000);
+          setTimeout(() => router.push('/login'), 3000); // Changed to router.push
         } else {
           setStatus('error');
           setMessage(responseData.message || 'Failed to finalize email verification in our system. Please try again or contact support.');
@@ -90,7 +90,7 @@ const VerifyEmailPage = () => {
         return () => clearTimeout(timer); // Cleanup timer on unmount
     }
 
-  }, [navigate]);
+  }, [router]); // Changed navigate to router in dependencies
 
   return (
     <div style={{ padding: '20px', textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
@@ -111,7 +111,7 @@ const VerifyEmailPage = () => {
           <div style={{ marginTop: '20px' }}>
             <p style={{ color: 'red', fontWeight: 'bold' }}>❌ Verification Failed</p>
             <button
-              onClick={() => navigate('/login')}
+              onClick={() => router.push('/login')} // Changed to router.push
               style={{ marginTop: '10px', padding: '10px 15px', cursor: 'pointer', backgroundColor: '#0070f3', color: 'white', border: 'none', borderRadius: '5px' }}
             >
               Go to Login

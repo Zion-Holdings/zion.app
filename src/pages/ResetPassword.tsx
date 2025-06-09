@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react' // Added useEffect for router.isReady
+import { useRouter } from 'next/router' // Changed from useParams, useNavigate
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { toast } from '@/hooks/use-toast'
@@ -14,20 +14,34 @@ function strength(pw: string) {
 }
 
 export default function ResetPassword() {
-  const { token = '' } = useParams()
-  const navigate = useNavigate()
+  const router = useRouter()
+  const [token, setToken] = useState('')
+  // navigate is now router
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState('')
   const [loading, setLoading] = useState(false)
   const s = strength(password)
 
-  if (!token) {
+  useEffect(() => {
+    if (router.isReady) {
+      const { token: rawToken } = router.query;
+      setToken(typeof rawToken === 'string' ? rawToken : '');
+    }
+  }, [router.isReady, router.query]);
+
+  if (!token && router.isReady) { // Check token only after router is ready
     return (
       <div className="flex min-h-screen items-center justify-center p-4 text-red-500">
         <p>Invalid or missing reset token.</p>
       </div>
     )
   }
+
+  // Show loading or placeholder if router not ready and token not yet set.
+  if (!router.isReady && !token) {
+     return <div className="flex min-h-screen items-center justify-center p-4">Loading...</div>;
+  }
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -37,9 +51,9 @@ export default function ResetPassword() {
     }
     setLoading(true)
     try {
-      await resetPassword(token, password)
+      await resetPassword(token, password) // token is now from state, derived from router.query
       toast.success('Password has been reset successfully!')
-      navigate('/login')
+      router.push('/login') // Changed to router.push
     } catch (err: any) {
       toast.error(err.message || 'Reset failed')
     } finally {

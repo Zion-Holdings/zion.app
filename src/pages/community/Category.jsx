@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useParams
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { Alert } from '@/components/ui/alert';
@@ -11,7 +11,9 @@ import { Button } from '@/components/ui/button';
 const queryClient = new QueryClient();
 
 export default function Category() {
-  const { slug } = useParams();
+  const router = useRouter();
+  const { slug: rawSlug } = router.query;
+  const slug = typeof rawSlug === 'string' ? rawSlug : undefined;
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);

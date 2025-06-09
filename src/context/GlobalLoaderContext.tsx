@@ -6,7 +6,7 @@ import React, {
   ReactNode,
   useRef,
 } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useLocation
 import axios from 'axios';
 
 export interface GlobalLoaderContextType {
@@ -34,7 +34,7 @@ export const useGlobalLoader = () => useContext(GlobalLoaderContext);
 export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<any>(null);
-  const location = useLocation();
+  const router = useRouter(); // Changed from useLocation
   const timeoutRef = useRef<NodeJS.Timeout>();
 
   const showLoader = () => setLoading(true);
@@ -76,7 +76,7 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
   // Hide loader when the route changes (routeChangeComplete analogue)
   useEffect(() => {
     hideLoader();
-  }, [location.pathname]);
+  }, [router.asPath]); // Changed to router.asPath
 
   // Auto-dismiss loader after 15 seconds
   useEffect(() => {

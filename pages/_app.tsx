@@ -13,7 +13,6 @@ import { RouterWrapper } from '@/components/RouterWrapper';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
-import { MemoryRouter } from 'react-router-dom';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
@@ -31,9 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                   <WalletProvider>
                     <CartProvider>
                       <AnalyticsProvider>
-                        <MemoryRouter>
-                          <Component {...pageProps} />
-                        </MemoryRouter>
+                        <Component {...pageProps} />
                       </AnalyticsProvider>
                       <Toaster />
                     </CartProvider>

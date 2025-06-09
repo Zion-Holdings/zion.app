@@ -1,21 +1,25 @@
 import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useLocation, useNavigate
 import { safeStorage } from '@/utils/safeStorage';
 import { toast } from '@/hooks/use-toast'; // Optional: for user feedback
 
 const OAuthCallback = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const router = useRouter(); // Initialized router
+  // location is now router
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
+    // Check if router.isReady is true before accessing router.query or router.asPath
+    if (!router.isReady) return;
+
+    const queryString = router.asPath.split('?')[1] || '';
+    const params = new URLSearchParams(queryString);
     const token = params.get('token');
     const error = params.get('error'); // Handle potential errors from OAuth provider
 
     if (error) {
       console.error('OAuth Error:', error);
       toast.error(`Authentication failed: ${error}`);
-      navigate('/login', { replace: true });
+      router.replace('/login'); // Use router.replace
       return;
     }
 
@@ -24,13 +28,13 @@ const OAuthCallback = () => {
       // Redirect to login, which will handle the token and further redirection.
       // This reuses the logic in Login.jsx for token processing and redirecting
       // to the intended page (e.g., dashboard, onboarding, or 'next' URL).
-      navigate('/login', { replace: true });
+      router.replace('/login'); // Use router.replace
     } else {
       // No token found, something went wrong or accessed directly
       toast.error('Authentication token not found. Please try logging in again.');
-      navigate('/login', { replace: true });
+      router.replace('/login'); // Use router.replace
     }
-  }, [location, navigate]);
+  }, [router.isReady, router.asPath, router]); // Added router.isReady and router.asPath to dependencies
 
   // Render a loading state or null while processing
   return (

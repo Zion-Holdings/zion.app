@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { formatDistanceToNow } from 'date-fns';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { Notification, NotificationType } from '@/context/notifications';
 
 export const getTypeIcon = (type: NotificationType) => {
@@ -44,7 +44,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = ({
   onMarkAsRead, 
   onDismiss 
 }) => {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from useNavigate to useRouter
 
   const handleClick = () => {
     if (!notification.read) {
@@ -52,7 +52,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = ({
     }
     // If there's an action URL, navigate to it
     if (notification.action_url) {
-      navigate(notification.action_url);
+      router.push(notification.action_url); // Changed to router.push
     }
   };
 
