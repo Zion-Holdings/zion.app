@@ -28,10 +28,16 @@ function MyApp({ Component, pageProps }: AppProps) {
         <AuthProvider>
           <WhitelabelProvider>
             <I18nextProvider i18n={i18n}>
-              <Router>
-                <Component {...pageProps} />
-              </Router>
-              <Toaster />
+              <WalletProvider>
+                <CartProvider>
+                  <AnalyticsProvider>
+                    <Router>
+                      <Component {...pageProps} />
+                    </Router>
+                  </AnalyticsProvider>
+                  <Toaster />
+                </CartProvider>
+              </WalletProvider>
             </I18nextProvider>
           </WhitelabelProvider>
         </AuthProvider>
