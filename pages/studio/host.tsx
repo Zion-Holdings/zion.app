@@ -1,2 +1,2 @@
-import PodcastHost from '../../src/pages/PodcastHost';
+import PodcastHost from '@/pages/PodcastHost';
 export default PodcastHost;

@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
-import { ProtectedRoute } from "../components/ProtectedRoute";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
 import ErrorBoundary from "@/components/GlobalErrorBoundary";
-import TalentDirectory from "../pages/TalentDirectory";
-import TalentsPage from "../pages/TalentsPage";
-import MoreTalentsPage from "../pages/MoreTalentsPage";
-import AdditionalTalentsPage from "../pages/AdditionalTalentsPage";
-import TalentDetail from "../pages/TalentDetail";
-import SavedTalentsPage from "../pages/SavedTalentsPage";
-import CreateTalentProfile from "../pages/CreateTalentProfile";
-import PublicTalentProfilePage from "../pages/PublicTalentProfilePage"; // Updated import
+import TalentDirectory from "@/pages/TalentDirectory";
+import TalentsPage from "@/pages/TalentsPage";
+import MoreTalentsPage from "@/pages/MoreTalentsPage";
+import AdditionalTalentsPage from "@/pages/AdditionalTalentsPage";
+import TalentDetail from "@/pages/TalentDetail";
+import SavedTalentsPage from "@/pages/SavedTalentsPage";
+import CreateTalentProfile from "@/pages/CreateTalentProfile";
+import PublicTalentProfilePage from "@/pages/PublicTalentProfilePage"; // Updated import
 
 const TalentRoutes = () => {
   return (

@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/WorkFuturesSimulator';
+export { default } from '@/pages/WorkFuturesSimulator';

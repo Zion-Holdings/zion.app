@@ -1,1 +1,1 @@
-export { default } from '../src/pages/ZionHireAI';
+export { default } from '@/pages/ZionHireAI';

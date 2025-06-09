@@ -1,1 +1,1 @@
-export { default } from '../src/pages/CreatorDashboard';
+export { default } from '@/pages/CreatorDashboard';

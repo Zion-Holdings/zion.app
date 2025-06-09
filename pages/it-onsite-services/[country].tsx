@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/ITOnsiteServicesPage';
+export { default } from '@/pages/ITOnsiteServicesPage';

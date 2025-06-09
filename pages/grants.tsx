@@ -1,2 +1,2 @@
-import GrantsPage from '../src/pages/Grants';
+import GrantsPage from '@/pages/Grants';
 export default GrantsPage;

@@ -1,1 +1,1 @@
-export { default } from '../src/pages/Notifications';
+export { default } from '@/pages/Notifications';

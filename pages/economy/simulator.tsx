@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/TokenSimulator';
+export { default } from '@/pages/TokenSimulator';
