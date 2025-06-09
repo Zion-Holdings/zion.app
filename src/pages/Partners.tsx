@@ -10,13 +10,13 @@ import { PartnerDashboard } from "@/components/partners/PartnerDashboard";
 import { PartnerLeaderboard } from "@/components/partners/PartnerLeaderboard";
 import { PartnerResources } from "@/components/partners/PartnerResources";
 import { useAuth } from "@/hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 
 export default function Partners() {
   console.log('PartnersPage rendering');
   const [activeTab, setActiveTab] = useState("overview");
   const { user, isAuthenticated } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // If not authenticated, display partner program info and signup CTA
   if (!isAuthenticated) {
@@ -136,7 +136,7 @@ export default function Partners() {
           <Button 
             size="lg" 
             className="bg-zion-purple hover:bg-zion-purple-dark"
-            onClick={() => navigate('/signup')}
+            onClick={() => router.push('/signup')}
           >
             Apply to Join
           </Button>
@@ -144,7 +144,7 @@ export default function Partners() {
             size="lg" 
             variant="outline" 
             className="text-zion-cyan border-zion-cyan"
-            onClick={() => navigate('/login')}
+            onClick={() => router.push('/login')}
           >
             Partner Login
           </Button>
