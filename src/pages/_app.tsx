@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-import ReactDOM from 'react-dom/client';
 import 'normalize.css';
 import { Global, css } from '@emotion/react';
 
@@ -24,8 +23,8 @@ if (process.env.NODE_ENV !== 'production') {
   console.log('API_URL:', process.env.REACT_APP_API_URL);
 }
 
-import App from './App.tsx';
 import './index.css';
+import App from '../App'; // Or correct path
 // Removed feat/i18n-implementation and main markers
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n/index';
@@ -72,6 +71,8 @@ enableDevToolsInStaging();
 highlightZeroHeightElements();
 
 // Initialize a React Query client with global error handling
+// TODO: queryClient should ideally be defined within MyApp to avoid global scope,
+// or passed via context if shared across different MyApp instances (though unlikely for _app.tsx).
 const queryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => showApiError(error),
@@ -81,14 +82,20 @@ const queryClient = new QueryClient({
   }),
 });
 
-try {
-  checkEssentialEnvVars(); // Added call
+// Define MyApp component
+function MyApp({ Component, pageProps }) {
+  // TODO: Consider moving checkEssentialEnvVars and other initializations
+  // to an effect hook within MyApp or ensure they are Next.js compatible.
+  try {
+    checkEssentialEnvVars(); // Added call
+  } catch (error) {
+    logError(error, { message: 'Error in checkEssentialEnvVars during MyApp initialization' });
+    // Optionally, render a more Next.js friendly error UI or re-throw
+    // For now, logging and allowing Next.js default error handling to take over.
+  }
 
-  // Removed initGA() call as it's undefined and likely superseded by AnalyticsProvider
-  // Render the app with proper provider structure
-  if (typeof document !== 'undefined') {
-    ReactDOM.createRoot(document.getElementById('root')!).render(
-      <React.StrictMode>
+  return (
+    <React.StrictMode>
       <Global
         styles={css`
           * {
@@ -103,73 +110,61 @@ try {
       />
       <RootErrorBoundary>
         <Provider store={store}>
-        {/* <Router basename={process.env.PUBLIC_URL || '/'}> */}
+          {/* <Router basename={process.env.PUBLIC_URL || '/'}> */} {/* Router might not be needed with Next.js routing */}
           <AppLoaderProvider>
-        <I18nextProvider i18n={i18n}>
-          <HelmetProvider>
-            <QueryClientProvider client={queryClient}>
-              <WhitelabelProvider>
-                <FeedbackProvider>
-                <AuthProvider>
-                  <MessagingProvider>
-                  <NotificationProvider>
-                    {/* <AnalyticsProvider> */}
-                      {/* <LanguageProvider authState={{ isAuthenticated: false, user: null }}> */}
-                        {/* <ViewModeProvider> */}
-                          <CartProvider>
-                            {/* <FavoritesProvider> */}
+            <I18nextProvider i18n={i18n}>
+              <HelmetProvider>
+                <QueryClientProvider client={queryClient}>
+                  <WhitelabelProvider>
+                    <FeedbackProvider>
+                      <AuthProvider>
+                        <MessagingProvider>
+                          <NotificationProvider>
+                            {/* <AnalyticsProvider> */}
+                            {/* <LanguageProvider authState={{ isAuthenticated: false, user: null }}> */}
+                            {/* <ViewModeProvider> */}
+                            <CartProvider>
+                              {/* <FavoritesProvider> */}
                               {/* <ReferralMiddleware> */}
-                                <ToastProvider>
-                                  <GlobalErrorBoundary>
-                                    <Suspense fallback={<div>Loading App...</div>}>
-                                      <AppLayout>
-                                        <App />
-                                      </AppLayout>
-                                    </Suspense>
-                                  </GlobalErrorBoundary>
-                                </ToastProvider>
+                              <ToastProvider>
+                                <GlobalErrorBoundary>
+                                  <Suspense fallback={<div>Loading Page...</div>}>
+                                    <AppLayout> {/* AppLayout might need adjustment for Next.js page structure */}
+                                      <App>
+                                        <Component {...pageProps} />
+                                      </App>
+                                    </AppLayout>
+                                  </Suspense>
+                                </GlobalErrorBoundary>
+                              </ToastProvider>
                               {/* </ReferralMiddleware> */}
-                            {/* </FavoritesProvider> */}
-                          </CartProvider>
-                        {/* </ViewModeProvider> */}
-                        {/* <LanguageDetectionPopup /> */}
-                      {/* </LanguageProvider> */}
-                    {/* </AnalyticsProvider> */}
-                  </NotificationProvider>
-                  </MessagingProvider>
-                </AuthProvider>
-                <FeedbackWidget />
-              </FeedbackProvider>
-            </WhitelabelProvider>
-          </QueryClientProvider>
-        </HelmetProvider>
-        </I18nextProvider>
-        </AppLoaderProvider>
-        {/* </Router> */}
-      </Provider>
+                              {/* </FavoritesProvider> */}
+                            </CartProvider>
+                            {/* </ViewModeProvider> */}
+                            {/* <LanguageDetectionPopup /> */} {/* This might need to be integrated differently in Next.js */}
+                            {/* </LanguageProvider> */}
+                            {/* </AnalyticsProvider> */}
+                          </NotificationProvider>
+                        </MessagingProvider>
+                      </AuthProvider>
+                      <FeedbackWidget />
+                    </FeedbackProvider>
+                  </WhitelabelProvider>
+                </QueryClientProvider>
+              </HelmetProvider>
+            </I18nextProvider>
+          </AppLoaderProvider>
+          {/* </Router> */}
+        </Provider>
       </RootErrorBoundary>
-      {/* Removed duplicate main marker */}
-      </React.StrictMode>,
-    );
-  }
-} catch (error) {
-  logError(error, { message: 'Global error caught in main.tsx' });
-  if (typeof document !== 'undefined') {
-    const rootElement = document.getElementById('root');
-    if (rootElement) {
-      rootElement.innerHTML = `
-        <div style="background-color: white; color: black; padding: 20px; text-align: center; font-family: sans-serif; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;">
-          <h1>Application Error</h1>
-          <p>A critical error occurred while loading the application.</p>
-          <p>Error: ${(error as Error).message}</p>
-          <pre>${(error as Error).stack}</pre>
-          <p>Please check the console for more details.</p>
-        </div>
-      `;
-    }
-  }
+    </React.StrictMode>
+  );
 }
 
+export default MyApp;
+
+// The following code related to service workers and global error handling for images
+// might need to be adapted for a Next.js environment, possibly in `_document.tsx` or an effect hook.
 if (typeof window !== 'undefined') {
   registerServiceWorker();
 

@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { AnimatePresence } from 'framer-motion';
-import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import GlobalErrorBoundary
 // import { captureException } from './utils/sentry'; // This might be redundant if GlobalErrorBoundary handles all Sentry logging Removed: react-router specific
 import { logIssue } from './utils/logIssue';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { WalletProvider } from './context/WalletContext'; // Added WalletProvider
-import { WhitelabelProvider } from "./context/WhitelabelContext";
-import ToastProvider from "./components/ToastProvider";
 import OfflineToast from "./components/OfflineToast";
 import InstallPrompt from "./components/InstallPrompt";
 import { allRoutes } from './routes/config'; // Import the consolidated route configuration
@@ -26,7 +23,7 @@ import { SupportChatbot } from './components/SupportChatbot';
 
 // RootErrorFallback function removed.
 
-const App = ({ Component, pageProps }) => { // Component and pageProps are standard for Next.js _app.tsx
+const App = ({ children }) => { // Changed signature to accept children
   const router = useRouter();
 
   useEffect(() => {
@@ -59,27 +56,16 @@ const App = ({ Component, pageProps }) => { // Component and pageProps are stand
   // The <AnimatePresence> and routing logic previously here will be removed or relocated.
 
   return (
-    <GlobalErrorBoundary>
-      <WhitelabelProvider>
-        <WalletProvider>
-          <ThemeProvider defaultTheme="dark">
-            <ToastProvider>
-              <React.Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-                {/* Next.js handles page rendering. The children prop or Component prop in _app.tsx is where pages go. */}
-                {/* For now, this component will not render children directly in this manner. */}
-                {/* <AnimatePresence mode="wait"> */}
-                  {/* The explicit <Routes> and <Route> mapping is removed. */}
-                  {/* AuthGuard and PageTransition would be handled differently in Next.js, likely in _app.tsx or per-page layouts. */}
-                {/* </AnimatePresence> */}
-              </React.Suspense>
-              <OfflineToast />
-              <SupportChatbot />
-              <InstallPrompt />
-            </ToastProvider>
-          </ThemeProvider>
-        </WalletProvider>
-      </WhitelabelProvider>
-    </GlobalErrorBoundary>
+    <WalletProvider>
+      <ThemeProvider defaultTheme="dark">
+        <React.Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+          {children} {/* Render children here */}
+        </React.Suspense>
+        <OfflineToast />
+        <SupportChatbot />
+        <InstallPrompt />
+      </ThemeProvider>
+    </WalletProvider>
   );
 };
 
