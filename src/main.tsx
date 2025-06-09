@@ -86,8 +86,9 @@ try {
 
   // Removed initGA() call as it's undefined and likely superseded by AnalyticsProvider
   // Render the app with proper provider structure
-  ReactDOM.createRoot(document.getElementById('root')!).render(
-    <React.StrictMode>
+  if (typeof document !== 'undefined') {
+    ReactDOM.createRoot(document.getElementById('root')!).render(
+      <React.StrictMode>
       <Global
         styles={css`
           * {
@@ -148,36 +149,41 @@ try {
       </Provider>
       </RootErrorBoundary>
       {/* Removed duplicate main marker */}
-    </React.StrictMode>,
-  );
+      </React.StrictMode>,
+    );
+  }
 } catch (error) {
   logError(error, { message: 'Global error caught in main.tsx' });
-  const rootElement = document.getElementById('root');
-  if (rootElement) {
-    rootElement.innerHTML = `
-      <div style="background-color: white; color: black; padding: 20px; text-align: center; font-family: sans-serif; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;">
-        <h1>Application Error</h1>
-        <p>A critical error occurred while loading the application.</p>
-        <p>Error: ${(error as Error).message}</p>
-        <pre>${(error as Error).stack}</pre>
-        <p>Please check the console for more details.</p>
-      </div>
-    `;
+  if (typeof document !== 'undefined') {
+    const rootElement = document.getElementById('root');
+    if (rootElement) {
+      rootElement.innerHTML = `
+        <div style="background-color: white; color: black; padding: 20px; text-align: center; font-family: sans-serif; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;">
+          <h1>Application Error</h1>
+          <p>A critical error occurred while loading the application.</p>
+          <p>Error: ${(error as Error).message}</p>
+          <pre>${(error as Error).stack}</pre>
+          <p>Please check the console for more details.</p>
+        </div>
+      `;
+    }
   }
 }
 
-registerServiceWorker();
+if (typeof window !== 'undefined') {
+  registerServiceWorker();
 
-// Global fallback for images that fail to load
-// Replace broken images (e.g., offline Unsplash links) with a local placeholder
-document.addEventListener(
-  'error',
-  (event) => {
-    const target = event.target as HTMLElement;
-    if (target instanceof HTMLImageElement && !target.dataset.fallback) {
-      target.dataset.fallback = 'true';
-      target.src = '/placeholder.svg';
-    }
-  },
-  true,
-);
+  // Global fallback for images that fail to load
+  // Replace broken images (e.g., offline Unsplash links) with a local placeholder
+  document.addEventListener(
+    'error',
+    (event) => {
+      const target = event.target as HTMLElement;
+      if (target instanceof HTMLImageElement && !target.dataset.fallback) {
+        target.dataset.fallback = 'true';
+        target.src = '/placeholder.svg';
+      }
+    },
+    true,
+  );
+}
