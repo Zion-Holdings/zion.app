@@ -1,9 +1,9 @@
 
 import React, { useState } from "react";
-import { MobileHeader } from "../components/common/MobileHeader";
-import { BottomNavigation } from "../components/common/BottomNavigation";
-import { BrowseFilters } from "../components/browse/BrowseFilters";
-import { BrowseCards } from "../components/browse/BrowseCards";
+import { MobileHeader } from "@/mobile/components/common/MobileHeader";
+import { BottomNavigation } from "@/mobile/components/common/BottomNavigation";
+import { BrowseFilters } from "@/mobile/components/browse/BrowseFilters";
+import { BrowseCards } from "@/mobile/components/browse/BrowseCards";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 

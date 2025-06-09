@@ -1,5 +1,5 @@
 import React from 'react';
-import { getStripe } from '../../src/utils/getStripe'; // Assuming getStripe is in this location
+import { getStripe } from '@/utils/getStripe'; // Assuming getStripe is in this location
 
 const CheckoutTestPage = () => {
   const handleCheckout = async () => {

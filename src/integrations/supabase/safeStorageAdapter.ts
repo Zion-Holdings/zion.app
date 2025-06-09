@@ -1,4 +1,4 @@
-import { safeStorage } from '../../utils/safeStorage';
+import { safeStorage } from '@/utils/safeStorage';
 
 export const supabaseStorageAdapter = {
   async getItem(key: string): Promise<string | null> {

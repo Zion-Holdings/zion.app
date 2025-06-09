@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/UNBridge';
+export { default } from '@/pages/UNBridge';

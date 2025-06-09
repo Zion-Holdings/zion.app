@@ -1,1 +1,1 @@
-export { default } from '../src/pages/ZionBook';
+export { default } from '@/pages/ZionBook';

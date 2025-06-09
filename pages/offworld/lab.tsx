@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/OffworldLab';
+export { default } from '@/pages/OffworldLab';

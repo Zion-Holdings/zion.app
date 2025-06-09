@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { LanguageThemeSelector } from "../components/onboarding/LanguageThemeSelector";
-import { RolePicker } from "../components/onboarding/RolePicker";
-import { SignUpForm } from "../components/onboarding/SignUpForm";
+import { LanguageThemeSelector } from "@/mobile/components/onboarding/LanguageThemeSelector";
+import { RolePicker } from "@/mobile/components/onboarding/RolePicker";
+import { SignUpForm } from "@/mobile/components/onboarding/SignUpForm";
 
 type OnboardingStep = "language" | "role" | "signup";
 

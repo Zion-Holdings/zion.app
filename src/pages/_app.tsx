@@ -24,48 +24,48 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 import './index.css';
-import App from '../App'; // Or correct path
+import App from '@/App'; // Or correct path
 // Removed feat/i18n-implementation and main markers
 import { I18nextProvider } from 'react-i18next';
-import i18n from '../i18n';
+import i18n from '@/i18n';
 import { HelmetProvider } from 'react-helmet-async';
 // Removed: import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@tanstack/react-query';
 import { showApiError } from '@/utils/apiErrorHandler';
-import './utils/globalFetchInterceptor';
-import './utils/consoleErrorToast';
-import './utils/globalErrorHandler';
-import ToastProvider from '../components/ToastProvider';
-import GlobalErrorBoundary from './c.mponents/GlobalErrorBoundary';
-import { logError } from './utils/l.gError';
-import RootErrorBoundary from './com.onents/RootErrorBoundary';
+import '@/utils/globalFetchInterceptor';
+import '@/utils/consoleErrorToast';
+import '@/utils/globalErrorHandler';
+import ToastProvider from '@/components/ToastProvider';
+import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
+import { logError } from '@/utils/l.gError';
+import RootErrorBoundary from '@/components/RootErrorBoundary';
 import {
   AppLoaderProvider,
   NotificationProvider,
   MessagingProvider,
-} from '../context';
+} from '@/context';
 import { LanguageProvider } from '@/context/LanguageContext';
-import { LanguageDetectionPopup } from '../components/LanguageDetectionPopup';
+import { LanguageDetectionPopup } from '@/components/LanguageDetectionPopup';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { AppLayout } from '@/layout/AppLayout';
 // import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
 import { Provider } from 'react-redux';
-import { store } from '../store';
+import { store } from '@/store';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
 
 // Import analytics provider
-// import { AnalyticsProvider } from '../context/AnalyticsContext';
-// import { ViewModeProvider } from '../context/ViewModeContext';
-import { CartProvider } from '../context/CartContext';
-// import { FavoritesProvider } from '../context/FavoritesContext.jsx';
-import { registerServiceWorker } from '../serviceWorkerRegistration';
-import { enableDevToolsInStaging, highlightZeroHeightElements } from '../utils/devtools';
-import '../utils/checkDuplicateClassNames';
-import { checkEssentialEnvVars } from '../utils/validateEnv';
-import { FeedbackProvider } from '../context/FeedbackContext';
-import { FeedbackWidget } from '../components/feedback/FeedbackWidget';
+// import { AnalyticsProvider } from '@/context/AnalyticsContext';
+// import { ViewModeProvider } from '@/context/ViewModeContext';
+import { CartProvider } from '@/context/CartContext';
+// import { FavoritesProvider } from '@/context/FavoritesContext.jsx';
+import { registerServiceWorker } from '@/serviceWorkerRegistration';
+import { enableDevToolsInStaging, highlightZeroHeightElements } from '@/utils/devtools';
+import '@/utils/checkDuplicateClassNames';
+import { checkEssentialEnvVars } from '@/utils/validateEnv';
+import { FeedbackProvider } from '@/context/FeedbackContext';
+import { FeedbackWidget } from '@/components/feedback/FeedbackWidget';
 
 enableDevToolsInStaging();
 highlightZeroHeightElements();

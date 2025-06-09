@@ -1,4 +1,4 @@
-import Categories, { CategoriesProps } from '../src/pages/Categories';
+import Categories, { CategoriesProps } from '@/pages/Categories';
 import type { GetStaticProps } from 'next';
 
 export const getStaticProps: GetStaticProps<CategoriesProps> = async () => {

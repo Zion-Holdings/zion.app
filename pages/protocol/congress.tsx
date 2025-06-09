@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/Congress';
+export { default } from '@/pages/Congress';

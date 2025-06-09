@@ -1,1 +1,1 @@
-export { default } from '../../src/pages/FounderBackupVault';
+export { default } from '@/pages/FounderBackupVault';

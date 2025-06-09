@@ -1,1 +1,1 @@
-export { default } from '../src/pages/DevNet';
+export { default } from '@/pages/DevNet';

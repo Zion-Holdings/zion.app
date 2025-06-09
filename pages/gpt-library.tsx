@@ -1,1 +1,1 @@
-export { default } from '../src/pages/GPTLibraryPage';
+export { default } from '@/pages/GPTLibraryPage';

@@ -1,5 +1,5 @@
 import React from 'react';
-import LegalTemplates from '../components/dashboard/LegalTemplates'; // Import the component
+import LegalTemplates from '@/components/dashboard/LegalTemplates'; // Import the component
 
 const StartupOSPage: React.FC = () => {
   return (
