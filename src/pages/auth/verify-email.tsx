@@ -1,19 +1,8 @@
 import { useEffect, useState } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '@/integrations/supabase/client';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 import { logError } from '@/utils/logError';
 
-// Ensure these are set in your environment variables
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-
-// Check if Supabase URL and Anon Key are provided
-if (!supabaseUrl || !supabaseAnonKey) {
-  logError(new Error('Supabase URL or Anon Key is missing. Please check your environment variables.'), { context: 'verify-email init' });
-  // You could throw an error here or handle it gracefully depending on your application's needs
-}
-
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const VerifyEmailPage = () => {
   const [status, setStatus] = useState<'verifying' | 'success' | 'error'>('verifying');
