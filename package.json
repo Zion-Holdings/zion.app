@@ -117,7 +117,7 @@
     "notistack": "^3.0.0",
     "react": "~18.3.1",
     "react-day-picker": "^8.10.0",
-    "react-dom": "~18.3.1",
+    "react-dom": "~19.1.0",
     "react-error-boundary": "^3.1.4",
     "react-focus-lock": "^2.9.2",
     "react-helmet-async": "^2.0.4",
@@ -160,7 +160,7 @@
     "@types/jest": "^29.5.14",
     "@types/node": "^22.15.29",
     "@types/react": "18.3.23",
-    "@types/react-dom": "^18.3.7",
+    "@types/react-dom": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^8.33.1",
     "@typescript-eslint/parser": "^8.33.1",
     "@typescript-eslint/utils": "^5.62.0",
@@ -214,7 +214,7 @@
   },
   "peerDependencies": {
     "react": "~18.3.1",
-    "react-dom": "~18.3.1"
+    "react-dom": "~19.1.0"
   },
   "overrides": {
     "jsdom": "^24.0.0",
