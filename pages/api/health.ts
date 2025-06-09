@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { execSync } from 'child_process';
 
 type HealthResponse = {
   status: string;
@@ -8,15 +7,15 @@ type HealthResponse = {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<HealthResponse | { error: string }>
+  res: NextApiResponse<HealthResponse | { error: string; status: string }>
 ) {
   if (req.method === 'GET') {
     try {
-      const commitHash = execSync('git rev-parse HEAD').toString().trim();
-      res.status(200).json({ status: 'ok', version: commitHash });
+      const version = process.env.NEXT_PUBLIC_APP_VERSION || "unknown";
+      res.status(200).json({ status: 'ok', version });
     } catch (error) {
-      console.error('Failed to get commit hash:', error);
-      res.status(500).json({ error: 'Failed to retrieve version information.' });
+      console.error('Failed to retrieve version information:', error);
+      res.status(500).json({ error: 'Failed to retrieve version information.', status: 'error' });
     }
   } else {
     res.setHeader('Allow', ['GET']);
