@@ -43,6 +43,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
   // Removed: const location = useLocation();
 
   const handleError = (error: Error, info: React.ErrorInfo) => {
+    console.log("Detailed error info:", { name: error.name, message: error.message, stack: error.stack, componentStack: info.componentStack });
     console.error("GlobalErrorBoundary caught an error:", error, info);
     // Modified: logError call to not depend on location from react-router-dom
     // You might want to get pathname via window.location.pathname if this is purely client-side,
