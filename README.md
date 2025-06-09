@@ -571,3 +571,15 @@ node scripts/codexWebhookServer.js
 
 Then POST to `http://localhost:3001/webhook/trigger-fix` to trigger the automated fix pipeline.
 
+
+## API Endpoints
+
+### Health Check
+
+*   **URL:** `/api/health`
+*   **Method:** `GET`
+*   **Description:** Provides a health check for the application. It returns the current status and the deployed commit hash.
+*   **Success Response:**
+    *   **Code:** 200
+    *   **Content:** `{ "status": "ok", "version": "<commit-hash>" }`
+*   **Usage:** This endpoint is used by Netlify during the pre-deploy phase. If the endpoint does not return a 200 OK status with the expected JSON response, the deployment is halted to prevent a broken version from going live.
