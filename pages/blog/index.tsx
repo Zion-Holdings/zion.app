@@ -1,8 +1,8 @@
 import BlogPage, { BlogProps } from '../../src/pages/Blog';
 import { BLOG_POSTS } from '../../src/data/blog-posts';
-import type { GetServerSideProps } from 'next';
+import type { GetStaticProps } from 'next'; // Changed import
 
-export const getServerSideProps: GetServerSideProps<BlogProps> = async () => {
+export const getStaticProps: GetStaticProps<BlogProps> = async () => {
   return { props: { posts: BLOG_POSTS } };
 };
 

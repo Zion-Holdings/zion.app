@@ -4,10 +4,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import EmptyState from '@/components/community/EmptyState';
-import { createClient } from '@supabase/supabase-js'; // For getServerSideProps
+// import { createClient } from '@supabase/supabase-js'; // No longer needed for getStaticProps
 import PostCard from '@/components/community/PostCard';
 import type { ForumPost } from '@/types/community';
-import { fetchPostsByCategory } from '@/services/forumPostService';
+import { fetchPostsByCategory } from '@/services/forumPostService'; // This might be problematic for getStaticProps if it's server-dependent
+import type { GetStaticProps, GetStaticPaths } from 'next'; // Added import
 
 const POSTS_PER_PAGE = 20; // Or any other limit you prefer
 
@@ -101,47 +102,70 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCu
   );
 };
 
-export const getServerSideProps = async ({ req, params }: { req: any; params?: { slug?: string } }) => {
-  const category = params?.slug as string;
-  // Supabase client setup for SSR remains largely the same
-  const supabaseUrl =
-    process.env.SUPABASE_URL ||
-    process.env.NEXT_PUBLIC_SUPABASE_URL || // Fallback to public URL if specific server URL isn't set
-    '';
-  const anonKey =
-    process.env.SUPABASE_SERVICE_ROLE_KEY || // Prefer service role key for server-side operations
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || // Fallback to anon key if service role isn't set
-    '';
-  const token = req.cookies?.['sb-access-token'] || null;
+// export const getServerSideProps = async ({ req, params }: { req: any; params?: { slug?: string } }) => {
+//   const category = params?.slug as string;
+//   // Supabase client setup for SSR remains largely the same
+//   const supabaseUrl =
+//     process.env.SUPABASE_URL ||
+//     process.env.NEXT_PUBLIC_SUPABASE_URL || // Fallback to public URL if specific server URL isn't set
+//     '';
+//   const anonKey =
+//     process.env.SUPABASE_SERVICE_ROLE_KEY || // Prefer service role key for server-side operations
+//     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || // Fallback to anon key if service role isn't set
+//     '';
+//   const token = req.cookies?.['sb-access-token'] || null;
 
-  let initialPostsData: ForumPost[] = [];
-  let initialNextCursor: string | null = null;
+//   let initialPostsData: ForumPost[] = [];
+//   let initialNextCursor: string | null = null;
 
-  if (!supabaseUrl || !anonKey) {
-    // Return empty initialPosts if Supabase is not configured
-    return { props: { initialPosts: [], initialNextCursor: null, hasSession: Boolean(token), category } };
-  }
+//   if (!supabaseUrl || !anonKey) {
+//     // Return empty initialPosts if Supabase is not configured
+//     return { props: { initialPosts: [], initialNextCursor: null, hasSession: Boolean(token), category } };
+//   }
 
-  // const supabase = createClient(supabaseUrl, anonKey); // Not needed if calling service function
+//   // const supabase = createClient(supabaseUrl, anonKey); // Not needed if calling service function
 
-  try {
-    // Fetch initial posts using the modified service function
-    // No cursor is passed for the initial fetch (it will be undefined)
-    const { posts, nextCursor } = await fetchPostsByCategory(category, undefined, POSTS_PER_PAGE);
-    initialPostsData = posts;
-    initialNextCursor = nextCursor;
-  } catch (error: any) {
-    console.error('Initial post fetch error:', error.message);
-    // Handle error appropriately, maybe return empty or an error prop
-  }
+//   try {
+//     // Fetch initial posts using the modified service function
+//     // No cursor is passed for the initial fetch (it will be undefined)
+//     const { posts, nextCursor } = await fetchPostsByCategory(category, undefined, POSTS_PER_PAGE);
+//     initialPostsData = posts;
+//     initialNextCursor = nextCursor;
+//   } catch (error: any) {
+//     console.error('Initial post fetch error:', error.message);
+//     // Handle error appropriately, maybe return empty or an error prop
+//   }
 
+//   return {
+//     props: {
+//       initialPosts: initialPostsData,
+//       initialNextCursor, // Pass the cursor to the page component
+//       hasSession: Boolean(token),
+//       category
+//     }
+//   };
+// };
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [], // No paths are pre-rendered
+    fallback: 'blocking',
+  };
+};
+
+export const getStaticProps: GetStaticProps<CategoryPageProps> = async (context) => {
+  const category = context.params?.slug as string || 'default-category'; // Provide a default if slug is undefined
+  // Dummy data for static export - real data fetching would be more complex
+  // and might not be suitable for getStaticProps if it's highly dynamic or user-specific
+  // The service function fetchPostsByCategory likely cannot be used here directly if it relies on Supabase client initialized with auth tokens
   return {
     props: {
-      initialPosts: initialPostsData,
-      initialNextCursor, // Pass the cursor to the page component
-      hasSession: Boolean(token),
-      category
-    }
+      initialPosts: [],
+      initialNextCursor: null,
+      hasSession: false, // Cannot determine session status statically without req object
+      category: category,
+    },
+    // revalidate: 60, // Optional: ISR
   };
 };
 

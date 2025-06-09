@@ -8,12 +8,12 @@
   "scripts": {
     "dev": "vite",
     "generate": "prisma generate",
-    "build": "NODE_ENV=production npx next build && npx next export",
+    "build": "NODE_ENV=production npx next build",
     "deploy:ipfs": "node scripts/deploy-zion-ipfs.js",
     "lint": "eslint . --fix --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "preview": "NODE_ENV=production vite preview",
-    "test": "jest --coverage",
+    "test": "node ./node_modules/jest/bin/jest.js",
     "test:watch": "vitest --watch",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chrome",
@@ -84,7 +84,7 @@
     "clsx": "^2.1.0",
     "cmdk": "^1.1.1",
     "datastore-core": "^10.0.4",
-    "date-fns": "^4.1.0",
+    "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.0.0-rc19",
     "enhanced-resolve": "^5.18.1",
     "ethers": "^6.14.3",
@@ -115,9 +115,9 @@
     "node-fetch": "^2.7.0",
     "normalize.css": "^8.0.1",
     "notistack": "^3.0.0",
-    "react": "~18.3.1",
+    "react": "18.3.1",
     "react-day-picker": "^8.10.0",
-    "react-dom": "~19.1.0",
+    "react-dom": "18.3.1",
     "react-error-boundary": "^3.1.4",
     "react-focus-lock": "^2.9.2",
     "react-helmet-async": "^2.0.4",
@@ -159,8 +159,8 @@
     "@types/file-saver": "^2.0.7",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.15.29",
-    "@types/react": "18.3.23",
-    "@types/react-dom": "^19.1.6",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.1",
     "@typescript-eslint/eslint-plugin": "^8.33.1",
     "@typescript-eslint/parser": "^8.33.1",
     "@typescript-eslint/utils": "^5.62.0",
@@ -213,8 +213,8 @@
     "whatwg-fetch": "^3.6.20"
   },
   "peerDependencies": {
-    "react": "~18.3.1",
-    "react-dom": "~19.1.0"
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "overrides": {
     "jsdom": "^24.0.0",
