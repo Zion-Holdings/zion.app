@@ -27,7 +27,7 @@ import './index.css';
 import App from '../App'; // Or correct path
 // Removed feat/i18n-implementation and main markers
 import { I18nextProvider } from 'react-i18next';
-import i18n from './i18n/index';
+import i18n from '../i18n';
 import { HelmetProvider } from 'react-helmet-async';
 // Removed: import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@tanstack/react-query';
