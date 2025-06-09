@@ -31,8 +31,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                   <WalletProvider>
                     <CartProvider>
                       <AnalyticsProvider>
-                        <Component {...pageProps} />
-                          <MemoryRouter>
+                        <MemoryRouter>
+                          <Component {...pageProps} />
+                        </MemoryRouter>
                       </AnalyticsProvider>
                       <Toaster />
                     </CartProvider>
