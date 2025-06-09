@@ -117,7 +117,7 @@
     "notistack": "^3.0.0",
     "react": "~18.3.1",
     "react-day-picker": "^8.10.0",
-    "react-dom": "~19.1.0",
+    "react-dom": "~18.3.1",
     "react-error-boundary": "^3.1.4",
     "react-focus-lock": "^2.9.2",
     "react-helmet-async": "^2.0.4",
@@ -214,7 +214,7 @@
   },
   "peerDependencies": {
     "react": "~18.3.1",
-    "react-dom": "~19.1.0"
+    "react-dom": "~18.3.1"
   },
   "overrides": {
     "jsdom": "^24.0.0",
