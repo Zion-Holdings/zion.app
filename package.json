@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vite",
     "generate": "prisma generate",
-    "build": "NODE_ENV=production npx next build && npx next export",
+    "build": "NODE_ENV=production npx next build",
     "deploy:ipfs": "node scripts/deploy-zion-ipfs.js",
     "lint": "eslint . --fix --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",

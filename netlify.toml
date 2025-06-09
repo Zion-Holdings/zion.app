@@ -1,7 +1,7 @@
 [build]
   # Use `npm ci` for deterministic installs
   command = "npm ci && npm run build"
-  publish = "out"
+  publish = ".next"
 
 [build.environment]
   NODE_OPTIONS = "--max_old_space_size=4096"
