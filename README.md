@@ -616,3 +616,13 @@ Then POST to `http://localhost:3001/webhook/trigger-fix` to trigger the automate
     *   **Code:** 200
     *   **Content:** `{ "status": "ok", "version": "<commit-hash>" }`
 *   **Usage:** This endpoint is used by Netlify during the pre-deploy phase. If the endpoint does not return a 200 OK status with the expected JSON response, the deployment is halted to prevent a broken version from going live.
+
+### Node Server Health Check
+
+*   **URL:** `/health`
+*   **Method:** `GET`
+*   **Description:** Returns the app version, uptime, and database connectivity status.
+*   **Success Response:**
+    *   **Code:** 200
+    *   **Content:** `{ "version": "<package-version>", "uptime": 123.45, "db": "up" }`
+*   **Usage:** Used for Kubernetes liveness and readiness probes. See `docs/KubernetesProbes.md`.

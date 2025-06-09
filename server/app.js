@@ -8,6 +8,7 @@ const authRoutes = require('./routes/auth');
 const authSocialRoutes = require('./routes/authSocial');
 const recommendationsRoutes = require('./routes/recommendations');
 const syncRoutes = require('./routes/sync');
+const healthRoutes = require('./routes/health');
 const { logAndAlert } = require('./utils/alertLogger');
 
 const app = express();
@@ -22,6 +23,7 @@ app.use('/api/auth', authRoutes);
 app.use('/', authSocialRoutes);
 app.use('/recommendations', recommendationsRoutes);
 app.use('/sync', syncRoutes);
+app.use('/health', healthRoutes);
 
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
