@@ -237,15 +237,17 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
               </ul>
             </div>
           </CardContent>
-          <CardFooter>
-            <Button
-              onClick={handleApply}
-              className="w-full bg-gradient-to-r from-zion-cyan to-zion-cyan-dark hover:from-zion-cyan-light hover:to-zion-cyan text-white"
-            >
-              Apply to My Listing
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </CardFooter>
+          {onApplyGenerated && ( // Conditionally render CardFooter based on onApplyGenerated
+            <CardFooter>
+              <Button
+                onClick={handleApply}
+                className="w-full bg-gradient-to-r from-zion-cyan to-zion-cyan-dark hover:from-zion-cyan-light hover:to-zion-cyan text-white"
+              >
+                Apply to My Listing
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </CardFooter>
+          )}
         </Card>
       )}
     </div>

@@ -9,6 +9,7 @@ export function AuthButtons() {
   const handleSignIn = async (provider: string) => {
     setLoadingProvider(provider);
     await signIn(provider);
+    setLoadingProvider(null); // Reset loading state
   };
 
   return (

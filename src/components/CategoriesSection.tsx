@@ -154,9 +154,9 @@ export function CategoriesSection({
           <h3 className="text-center text-xl font-bold text-white mb-6">Featured Services</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {specialServices.map((service) => (
-              <Link 
-                key={service.title}
-                href={service.link}
+              <Link
+                key={service.title} // Key was already here, ensure 'to' is used
+                to={service.link} // Changed href to to
                 className="px-6 py-3 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300"
               >
                 {service.title}
@@ -166,8 +166,8 @@ export function CategoriesSection({
         </div>
         
         <div className="mt-12 flex justify-center">
-          <Link 
-            href="/categories/all" // This link might need to be dynamic or removed if CategoriesPage is the "all categories" view
+          <Link
+            to="/categories/all" // Changed href to to
             className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
           >
             View All Categories →
