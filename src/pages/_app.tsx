@@ -35,7 +35,7 @@ import { showApiError } from '@/utils/apiErrorHandler';
 import './utils/globalFetchInterceptor';
 import './utils/consoleErrorToast';
 import './utils/globalErrorHandler';
-import ToastProvider from './components/ToastProvider';
+import ToastProvider from '../components/ToastProvider';
 import GlobalErrorBoundary from './components/GlobalErrorBoundary';
 import { logError } from './utils/logError';
 import RootErrorBoundary from './components/RootErrorBoundary';
