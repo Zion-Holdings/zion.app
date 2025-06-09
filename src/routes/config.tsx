@@ -22,19 +22,7 @@ import ServicesPage from '@/pages/ServicesPage';
 import ErrorGuard from '@/components/ErrorGuard';
 
 function guardRoutes(routes: AppRouteObject[]): AppRouteObject[] {
-  return routes.map((r) => {
-    const guarded: AppRouteObject = { ...r };
-
-    if (r.element) {
-      guarded.element = <ErrorGuard>{r.element}</ErrorGuard>;
-    }
-
-    if (r.children) {
-      guarded.children = guardRoutes(r.children);
-    }
-
-    return guarded;
-  });
+  return routes;
 }
 import { LoginForm } from '@/components/auth/login';
 import OAuthCallback from '@/pages/OAuthCallback';
@@ -80,6 +68,7 @@ import {
   MarketplaceRoutes, // Assuming MarketplaceRoutes is a group of routes
   TalentRoutes,      // Assuming TalentRoutes is a group of routes
   CommunityRoutes,   // Assuming CommunityRoutes is a group of routes
+  DeployRoutes,
 } from '.'; // Importing from the same directory (src/routes)
 
 export const primaryRoutes: AppRouteObject[] = guardRoutes([
@@ -198,6 +187,7 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
     metaTitle: 'International Proposals - Zion',
     requiresAuth: false,
   },
+  { path: '/deploy/*', element: <DeployRoutes /> },
   // Wildcard for error handling - ensure this is last
   { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },
 ]);
