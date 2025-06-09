@@ -629,6 +629,11 @@ These scripts are located in the `scripts/` directory and can be run from the pr
     *   Checks for outdated npm dependencies using `npm-check-updates`.
     *   Audits installed dependencies for known vulnerabilities using `npm audit`.
     *   Can be run via `npm run check-updates` and `npm run audit-vulnerabilities` for individual checks.
+*   **`hourly-npm-audit.sh`**:
+    *   Runs `npm audit --json` and logs results to `logs/security/hourly-fix.log`.
+    *   Automatically runs `npm audit fix --force` if critical vulnerabilities are detected.
+    *   Designed for hourly execution via cron (`cron/hourly-npm-audit`).
+    *   Set `WEBHOOK_URL` to send a JSON summary notification.
 *   **`generate-test-stubs.sh`**:
     *   Scans the `src/` directory (and its subdirectories like `components`, `pages`, `utils`, `lib`) for JavaScript/TypeScript files.
     *   Generates basic placeholder test files (e.g., `*.test.js` or `*.test.ts`) for files that do not yet have corresponding test files. This helps in identifying areas needing test coverage.
