@@ -32,13 +32,13 @@ import { HelmetProvider } from 'react-helmet-async';
 // Removed: import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider, QueryCache, MutationCache } from '@tanstack/react-query';
 import { showApiError } from '@/utils/apiErrorHandler';
-import '../utils/globalFetchInterceptor';
-import '../utils/consoleErrorToast';
-import '../utils/globalErrorHandler';
+import './utils/globalFetchInterceptor';
+import './utils/consoleErrorToast';
+import './utils/globalErrorHandler';
 import ToastProvider from '../components/ToastProvider';
-import GlobalErrorBoundary from '../components/GlobalErrorBoundary';
-import { logError } from '../utils/logError';
-import RootErrorBoundary from '../components/RootErrorBoundary';
+import GlobalErrorBoundary from './components/GlobalErrorBoundary';
+import { logError } from './utils/logError';
+import RootErrorBoundary from './components/RootErrorBoundary';
 import {
   AppLoaderProvider,
   NotificationProvider,
