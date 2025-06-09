@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "dependencyDashboard": true,
+  "schedule": ["after 2am on monday"]
+}
