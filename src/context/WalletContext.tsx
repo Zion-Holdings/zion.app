@@ -123,50 +123,80 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
   const appKitRef = useRef<AppKitInstanceInterface | null>(null);
 
-  // Initialize AppKit (this is the useEffect previously around line 180)
+  // Initialize AppKit
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      console.log('WalletContext: SSR environment, AppKit not initialized.');
-      appKitRef.current = null;
-      setWallet(prev => ({ ...prev, isWalletSystemAvailable: false }));
+    // Priority 1: Check Project ID validity.
+    if (!isProjectIdValid) {
+      console.warn( // More of a warning during runtime, error is logged at init.
+        'WalletContext: Project ID is invalid or missing. AppKit initialization skipped. Wallet system unavailable. ID:',
+        rawProjectId
+      );
+      if (appKitRef.current) appKitRef.current = null; // Ensure it's nulled if it somehow existed
+      setWallet(prev => ({
+        ...initialWalletState, // Reset to initial, ensuring all fields are non-connected
+        isWalletSystemAvailable: false,
+      }));
       return;
     }
 
-    if (isProjectIdValid) {
-      if (!appKitRef.current) { // Check if already initialized
-        console.log('WalletContext: Valid project ID. Attempting AppKit init. ID:', rawProjectId);
-        try {
-          appKitRef.current = createAppKit({
-            adapters: [new EthersAdapter({ ethers })],
-            networks: [targetNetwork],
-            defaultNetwork: targetNetwork,
-            projectId: rawProjectId, // Use the validated projectId
-            metadata,
-            features: { analytics: false },
-          });
-          console.log('WalletContext: appKitInstance created successfully:', appKitRef.current);
-          setWallet(prev => ({ ...prev, isWalletSystemAvailable: !!appKitRef.current }));
-        } catch (error) {
-          console.error('WalletContext: CRITICAL error creating appKitInstance even with a valid Project ID:', error);
-          captureException(error);
-          appKitRef.current = null;
-          setWallet(prev => ({ ...prev, isWalletSystemAvailable: false }));
-        }
+    // Priority 2: Check for client-side environment.
+    if (typeof window === 'undefined') {
+      console.log('WalletContext: SSR environment or non-browser, AppKit not initialized.');
+      // appKitRef.current should be null from initialization.
+      // isWalletSystemAvailable was set by useState based on isProjectIdValid.
+      // If isProjectIdValid was true, we now mark isWalletSystemAvailable as false because AppKit can't run.
+      setWallet(prev => ({
+        ...initialWalletState, // Reset to initial state
+        isWalletSystemAvailable: false, // Crucially false for non-browser env
+        // projectId might have been valid, so initialWalletState is safer
+      }));
+      return;
+    }
+
+    // Proceed with AppKit initialization only if client-side and project ID is valid
+    if (!appKitRef.current) { // Check if already initialized
+      console.log('WalletContext: Client-side, valid project ID. Attempting AppKit init. ID:', rawProjectId);
+      try {
+        appKitRef.current = createAppKit({
+          adapters: [new EthersAdapter({ ethers })],
+          networks: [targetNetwork],
+          defaultNetwork: targetNetwork,
+          projectId: rawProjectId,
+          metadata,
+          features: { analytics: false },
+        });
+        console.log('WalletContext: appKitInstance created successfully:', appKitRef.current);
+        // On successful creation, system is available. Connection state will be updated by subscriptions.
+        setWallet(prev => ({
+          ...prev,
+          isWalletSystemAvailable: true,
+          isConnected: false, // Explicitly false until wallet connects
+        }));
+      } catch (error) {
+        console.error('WalletContext: CRITICAL error creating appKitInstance with valid Project ID:', error);
+        captureException(error);
+        appKitRef.current = null;
+        setWallet(prev => ({
+          ...initialWalletState,
+          isWalletSystemAvailable: false,
+        }));
       }
     } else {
-      console.error(
-        'WalletContext: CRITICAL - Wallet system disabled. Invalid, missing, or placeholder VITE_REOWN_PROJECT_ID. Detected ID: "' +
-          rawProjectId +
-          '". Please ensure VITE_REOWN_PROJECT_ID is correctly set in your environment.'
-      );
-      appKitRef.current = null;
-      setWallet(prev => ({ ...prev, isWalletSystemAvailable: false }));
+      // AppKit already initialized. This block might be hit if dependencies change (e.g. projectId)
+      // but AppKit instance was somehow preserved. Ensure state is consistent.
+      console.log('WalletContext: AppKit already initialized. Ensuring state consistency. ID:', rawProjectId);
+      setWallet(prev => ({
+        ...prev,
+        isWalletSystemAvailable: true,
+      }));
     }
-  }, [isProjectIdValid, rawProjectId]); // Dependencies as per subtask
+  }, [isProjectIdValid, rawProjectId, targetNetwork]); // Added targetNetwork
 
   const [wallet, setWallet] = useState<WalletState>({
     ...initialWalletState,
-    // isWalletSystemAvailable will be updated by the useEffect above
+    // Explicitly set based on project ID validity initial check.
+    // The useEffect below will further refine this if the project ID is valid and AppKit initializes.
+    isWalletSystemAvailable: isProjectIdValid,
   });
 
   // Removed commented out useAppKit related code and console logs.
