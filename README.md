@@ -664,3 +664,10 @@ The following GitHub Actions workflows are configured in the `.github/workflows/
 *   The application exposes a health check endpoint at `/healthz` (in the Node.js/Express server located in `server/app.js`).
 *   This endpoint can be used by monitoring services or orchestration platforms (like Kubernetes) to verify the application's operational status.
 *   Example Kubernetes probe configurations using this endpoint can be found in `kubernetes/probes-example.yaml`.
+
+### Hourly Alerts
+
+Running `npm run hourly-job` executes maintenance tasks and then calls
+`scripts/notify-slack-discord.js` to post a summary to Slack and Discord. Alerts
+include the top slow endpoints, any patched packages, latest test results, and a
+link to the commit if an automated fix was made.

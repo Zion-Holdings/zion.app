@@ -26,7 +26,8 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test:node": "node -v",
     "check-updates": "ncu",
-    "audit-vulnerabilities": "npm audit"
+    "audit-vulnerabilities": "npm audit",
+    "hourly-job": "node scripts/hourly-job.js"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
