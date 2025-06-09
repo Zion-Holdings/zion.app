@@ -110,6 +110,39 @@ This project utilizes a modern, multi-component architecture:
     Set `NEXT_PUBLIC_REOWN_PROJECT_ID` in your `.env` file with this value. If the domain is not on the allowlist you'll see an error like:
     `Origin https://app.ziontechgroup.com not found on Allowlist`.
 
+## Error Monitoring with Sentry
+
+This project uses [Sentry](https://sentry.io/) for real-time error monitoring and diagnostics in the front-end application. It helps developers identify, triage, and fix issues quickly.
+
+### Sentry Configuration and Environment Variables
+
+The Sentry integration is configured via specific environment variables. Ensure these are set correctly in your local `.env` file for development and in your hosting provider's settings for deployed environments (e.g., Staging, Production).
+
+-   `NEXT_PUBLIC_SENTRY_DSN`: This is the client-side Data Source Name (DSN) for the Sentry SDK. It's used to send errors from the user's browser to your Sentry project. This variable must be prefixed with `NEXT_PUBLIC_` to be available on the client-side.
+-   `SENTRY_DSN`: This is the server-side and edge function DSN. While it can be the same as `NEXT_PUBLIC_SENTRY_DSN`, using a distinct variable offers flexibility for different Sentry projects or configurations if needed. If not set, the Next.js SDK will often fall back to `NEXT_PUBLIC_SENTRY_DSN`.
+-   `NEXT_PUBLIC_SENTRY_ENVIRONMENT`: Defines the environment tag for errors reported to Sentry (e.g., 'development', 'staging', 'production'). This helps filter and categorize issues within the Sentry dashboard.
+-   `SENTRY_ORG`: Your Sentry organization's slug. This is required by the Sentry CLI for uploading source maps.
+-   `SENTRY_PROJECT`: Your Sentry project's slug. This is also required by the Sentry CLI for source map uploads.
+-   `SENTRY_AUTH_TOKEN`: An authentication token for the Sentry CLI. This token is necessary for uploading source maps during the build process. It requires `project:write` and `org:read` scopes.
+
+### Source Map Uploads
+
+Source maps are crucial for debugging minified production code. They map the compiled code back to your original source code, making stack traces readable.
+
+-   Source maps are automatically generated during the production build (`npm run build` or `yarn build`).
+-   The `withSentryConfig` higher-order function in `next.config.js` handles the process of uploading these source maps to Sentry.
+-   For automatic uploads to succeed, the `SENTRY_ORG`, `SENTRY_PROJECT`, and `SENTRY_AUTH_TOKEN` environment variables **must be set in your build environment** (e.g., Netlify, Vercel, GitHub Actions build steps).
+-   The `next.config.js` is also configured with `sentry: { hideSourceMaps: true }` to prevent public access to source maps through browser developer tools after they've been uploaded to Sentry.
+
+### Data Scrubbing
+
+To prevent sensitive user data from being sent to Sentry, basic data scrubbing is implemented in `sentry.client.config.js`. This includes:
+
+-   Replacing email addresses with `[REDACTED_EMAIL]`.
+-   Attempting to identify and replace common credit card number patterns with `[REDACTED_CREDIT_CARD]`.
+
+Review and extend this scrubbing logic if your application handles other forms of sensitive data.
+
 ### Deployment Environment
 
 When deploying this application to a hosting service (e.g., Netlify, Vercel, AWS Amplify), it is crucial to configure the following environment variables in your deployment environment's settings:
