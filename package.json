@@ -1,7 +1,8 @@
 {
-  "name": "project",
-  "private": true,
+  "name": @zion-holdings/zion.app
+  
   "version": "0.0.0",
+    "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "bin": {
     "deploy-zion-ipfs": "scripts/deploy-zion-ipfs.js"
   },
