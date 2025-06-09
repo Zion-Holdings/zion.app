@@ -1,8 +1,6 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import type { AppProps } from 'next/app';
-import { StaticRouter } from 'react-router-dom/server'; // Changed from BrowserRouter
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from '@/context/auth/AuthProvider';
 import { Provider as ReduxProvider } from 'react-redux';
@@ -19,12 +17,6 @@ import { Toaster } from '@/components/ui/toaster';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
-  const isBrowser = typeof window !== 'undefined';
-  // Use StaticRouter for server-side/static export, BrowserRouter for client-side
-  const RouterComponent = isBrowser ? BrowserRouter : StaticRouter;
-
-  // Props for StaticRouter (location) vs BrowserRouter (none needed here)
-  const routerProps = isBrowser ? {} : { location: pageProps.router?.asPath || "/" };
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -36,9 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               <WalletProvider>
                 <CartProvider>
                   <AnalyticsProvider>
-                    <RouterComponent {...routerProps}>
-                      <Component {...pageProps} />
-                    </RouterComponent>
+                    <Component {...pageProps} />
                   </AnalyticsProvider>
                   <Toaster />
                 </CartProvider>
