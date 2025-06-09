@@ -1,6 +1,18 @@
 import './commands';
 
-Cypress.on('uncaught:exception', (err) => {
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Log the error for better debugging
+  Cypress.log({
+    name: 'Uncaught Exception',
+    message: err.message,
+    consoleProps: () => {
+      return {
+        Error: err,
+        Runnable: runnable,
+      };
+    },
+  });
+
   // Returning false here prevents Cypress from
   // failing the test due to unhandled promise rejections
   // We are seeing "WebSocket closed without opened" from Vite HMR
