@@ -74,7 +74,7 @@ This project utilizes a modern, multi-component architecture:
   - **[Socket.io](https://socket.io/):** For real-time communication features like chat and notifications.
   - **[Firebase](https://firebase.google.com/):** Used for some backend functionalities and possibly hosting or real-time features.
 - **Testing:** The project employs a comprehensive testing strategy with [Jest](https://jestjs.io/) and [Vitest](https://vitest.dev/) for unit/integration tests, and [Cypress](https://www.cypress.io/) & [Playwright](https://playwright.dev/) for end-to-end testing.
-- **Deployment:** (Details TBD - current README mentions this will be updated. Likely involves CI/CD pipelines using GitHub Actions for deployments to platforms like Netlify, Vercel, or custom infrastructure).
+- **Deployment:** A GitHub Actions workflow builds a Docker image, pushes it to the configured container registry, and updates the Kubernetes *staging* environment on every merge to `main`. The cluster may run on Azure, GCP, or DigitalOcean.
 
 ## Setup and Local Development
 
