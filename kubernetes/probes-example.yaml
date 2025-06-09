@@ -1,0 +1,75 @@
+# kubernetes/probes-example.yaml
+# This is an example of how to configure liveness and readiness probes
+# in a Kubernetes Deployment manifest.
+# You would integrate this into your existing Deployment YAML.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-node-app-deployment # Replace with your actual deployment name
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-node-app # Replace with your app's label
+  template:
+    metadata:
+      labels:
+        app: my-node-app # Replace with your app's label
+    spec:
+      containers:
+      - name: my-node-app-container # Replace with your container name
+        image: your-docker-image:latest # Replace with your Docker image
+        ports:
+        - containerPort: 3000 # Replace with your app's port (ensure this matches where your Node.js app listens)
+
+        # Readiness Probe: Kubernetes uses this to know when the container is ready to start accepting traffic.
+        # If this probe fails, the Pod's IP address is removed from the Endpoints of all Services that match the Pod.
+        readinessProbe:
+          httpGet:
+            path: /healthz # Path to the health check endpoint added to your Express app
+            port: 3000    # The port your application is configured to listen on (should match containerPort)
+          initialDelaySeconds: 15 # Number of seconds after the container has started before readiness probes are initiated.
+          periodSeconds: 20       # How often (in seconds) to perform the probe.
+          timeoutSeconds: 5       # Number of seconds after which the probe times out.
+          successThreshold: 1     # Minimum consecutive successes for the probe to be considered successful after having failed.
+          failureThreshold: 3     # Minimum consecutive failures for the probe to be considered failed after having succeeded.
+
+        # Liveness Probe: Kubernetes uses this to know when to restart a container.
+        # If this probe fails (i.e., returns a failure status code), Kubernetes will kill the Pod and it will be restarted subject to its restart policy.
+        livenessProbe:
+          httpGet:
+            path: /healthz # Path to the health check endpoint
+            port: 3000    # The port your application is configured to listen on
+          initialDelaySeconds: 30 # Number of seconds after the container has started before liveness probes are initiated.
+          periodSeconds: 30       # How often (in seconds) to perform the probe.
+          timeoutSeconds: 5       # Number of seconds after which the probe times out.
+          successThreshold: 1     # Minimum consecutive successes for the probe to be considered successful after having failed.
+          failureThreshold: 3     # Minimum consecutive failures for the probe to be considered failed. Pod will be restarted.
+
+        # Optional: Startup Probe (for applications that have a long startup time)
+        # If a startup probe is defined, all other probes are disabled until it succeeds.
+        # This is useful to prevent liveness/readiness probes from interfering with application startup.
+        # startupProbe:
+        #   httpGet:
+        #     path: /healthz # Path to the health check endpoint
+        #     port: 3000    # The port your application is configured to listen on
+        #   failureThreshold: 30  # Number of times Kubernetes will try the startup probe before giving up (and restarting the container)
+        #   periodSeconds: 10     # How often (in seconds) to perform the probe.
+        #   initialDelaySeconds: 5 # Optional delay before the first startup probe is initiated.
+
+# ---
+# Note: You might also want to define a Service to expose your Deployment.
+# This is a basic example of a LoadBalancer Service.
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: my-node-app-service # Replace with your service name
+# spec:
+#   selector:
+#     app: my-node-app # Must match the labels of your Pods/Deployment
+#   ports:
+#     - protocol: TCP
+#       port: 80 # The port the service is exposed on externally (within the cluster or via LoadBalancer)
+#       targetPort: 3000 # The port your application container is listening on
+#   type: LoadBalancer # Other types include ClusterIP (internal only) or NodePort

@@ -4,6 +4,7 @@ import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import eslintConfigPrettier from "eslint-config-prettier";
+import pluginPrettier from "eslint-plugin-prettier"; // Added this line
 import eslintConfigNext from 'eslint-config-next';
 
 const projectRoot = import.meta.dirname;
@@ -250,6 +251,17 @@ export default tseslint.config(
   {
       files: ["src/pages/auth/verify-email.tsx"],
       rules: { "no-undef": "off" }
+  },
+  // Configuration for eslint-plugin-prettier
+  {
+    plugins: {
+      prettier: pluginPrettier // Assuming pluginPrettier is imported from 'eslint-plugin-prettier'
+    },
+    rules: {
+      "prettier/prettier": "error",
+      "arrow-body-style": "off", // Example: if you need to turn off specific ESLint core rules
+      "prefer-arrow-callback": "off" // Example: if you need to turn off specific ESLint core rules
+    }
   },
   eslintConfigPrettier
 );

@@ -1,4 +1,6 @@
 const express = require('express');
+const helmet = require('helmet');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const mongooseMorgan = require('mongoose-morgan');
@@ -13,12 +15,40 @@ const syncRoutes = require('./routes/sync');
 const { logAndAlert } = require('./utils/alertLogger');
 
 const app = express();
+
+// Use Helmet to apply various security headers
+app.use(helmet());
+
+// Enable CORS for all origins (default)
+app.use(cors());
+
 app.use(morgan('dev'));
 app.use(mongooseMorgan({ connectionString: mongoUri }));
 app.use(express.json());
 app.use(helmet());
 app.use(cors({ origin: allowedOrigins }));
 app.use(passport.initialize());
+
+// Health check endpoint
+app.get('/healthz', (req, res) => {
+  try {
+    // Optional: Add more sophisticated checks here if needed (e.g., DB connection)
+    res.status(200).json({
+      status: 'UP',
+      timestamp: new Date().toISOString(),
+      // Add any other relevant info, like service name or version from package.json
+      service: process.env.npm_package_name,
+      version: process.env.npm_package_version
+    });
+  } catch (error) {
+    // If any checks fail, respond with a 503 status
+    res.status(503).json({
+      status: 'DOWN',
+      error: error.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
 
 app.use('/auth', authRoutes);
 // Provide /api/auth routes for frontend API consistency
