@@ -27,7 +27,8 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test:node": "node -v",
     "check-updates": "ncu",
-    "audit-vulnerabilities": "npm audit"
+    "audit-vulnerabilities": "npm audit",
+    "monitor:perf": "node scripts/perf/monitor.js"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
@@ -145,7 +146,8 @@
     "validator": "^13.9.0",
     "vaul": "^1.1.2",
     "yup": "^1.2.0",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "node-cron": "^3.0.3"
   },
   "devDependencies": {
     "@axe-core/react": "^4.8.2",
