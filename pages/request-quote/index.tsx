@@ -1,19 +1,24 @@
 import ErrorBoundary from "@/components/GlobalErrorBoundary";
-import React, { lazy, Suspense } from "react";
+import React from "react"; // Suspense might still be needed if QuoteWizard uses it internally, or for the loading state.
+import dynamic from 'next/dynamic';
 
-const QuoteWizard = lazy(() =>
-  import("@/components/quote/QuoteWizard").then((module) => ({
-    default: module.QuoteWizard,
-  }))
+const QuoteWizard = dynamic(() =>
+  import("@/components/quote/QuoteWizard").then((module) => module.QuoteWizard),
+  {
+    suspense: true, // Enable suspense for the dynamic component
+    loading: () => <div>Loading quote wizard...</div> // Optional: if not using suspense from parent
+  }
 );
 
 export default function RequestQuotePage() {
   return (
     <ErrorBoundary>
-      <Suspense fallback={<div>Loading quote wizard...</div>}>
-        {/* Default to services category until additional categories are supported */}
+      {/* Suspense can be kept if you want to use React.Suspense features,
+          or rely on next/dynamic's own loading state.
+          Using suspense: true in dynamic options often works well. */}
+      <React.Suspense fallback={<div>Loading quote wizard...</div>}>
         <QuoteWizard category="services" />
-      </Suspense>
+      </React.Suspense>
     </ErrorBoundary>
   );
 }
