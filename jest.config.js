@@ -1,4 +1,10 @@
 module.exports = {
+  // Automatically clear mock calls and instances between every test
+  clearMocks: true,
+
+  // The directory where Jest should output its coverage files
+  coverageDirectory: 'coverage',
+
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   transform: {
@@ -7,6 +13,7 @@ module.exports = {
     }],
     '^.+\\.m?(js|jsx)$': ['babel-jest', { presets: [['@babel/preset-env', { targets: { node: 'current' }, modules: 'commonjs' }], ['@babel/preset-react', { runtime: 'automatic' }]], babelrc: false, configFile: false }],
   },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
   testMatch: [ // More specific test match patterns
     "**/__tests__/**/*.test.[jt]s?(x)",

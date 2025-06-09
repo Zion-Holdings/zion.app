@@ -616,3 +616,51 @@ Then POST to `http://localhost:3001/webhook/trigger-fix` to trigger the automate
     *   **Code:** 200
     *   **Content:** `{ "status": "ok", "version": "<commit-hash>" }`
 *   **Usage:** This endpoint is used by Netlify during the pre-deploy phase. If the endpoint does not return a 200 OK status with the expected JSON response, the deployment is halted to prevent a broken version from going live.
+
+## Automation & Maintenance
+
+This project includes several scripts and automated workflows to help with development, maintenance, and CI/CD.
+
+### Available Scripts
+
+These scripts are located in the `scripts/` directory and can be run from the project root (e.g., `bash scripts/security-audit.sh` or via `npm run <script-name>` if also added to `package.json`).
+
+*   **`security-audit.sh`**:
+    *   Checks for outdated npm dependencies using `npm-check-updates`.
+    *   Audits installed dependencies for known vulnerabilities using `npm audit`.
+    *   Can be run via `npm run check-updates` and `npm run audit-vulnerabilities` for individual checks.
+*   **`generate-test-stubs.sh`**:
+    *   Scans the `src/` directory (and its subdirectories like `components`, `pages`, `utils`, `lib`) for JavaScript/TypeScript files.
+    *   Generates basic placeholder test files (e.g., `*.test.js` or `*.test.ts`) for files that do not yet have corresponding test files. This helps in identifying areas needing test coverage.
+*   **`lint-format.sh`**:
+    *   Formats all relevant project files (JS, JSX, TS, TSX, JSON, CSS, MD) using Prettier.
+    *   Lints the codebase using ESLint and attempts to automatically fix any linting issues.
+    *   Can be run via `npm run lint-format`. Individual formatting and linting can be run with `npm run format` and `npm run lint -- --fix`.
+
+### Automated Workflows (GitHub Actions)
+
+The following GitHub Actions workflows are configured in the `.github/workflows/` directory:
+
+*   **`ci-cd.yml` (Node.js CI/CD)**:
+    *   **Triggers**: Automatically on pushes and pull requests to the `main` branch.
+    *   **Actions**:
+        *   Installs Node.js and project dependencies.
+        *   Runs security audits (`scripts/security-audit.sh`).
+        *   Runs linters and formatters (`scripts/lint-format.sh`).
+        *   Executes unit and integration tests (`npm test`).
+        *   Builds the application (`npm run build`).
+    *   **Purpose**: Ensures code quality, security, and that the application builds and tests successfully before merging changes.
+
+*   **`scheduled-audits.yml` (Scheduled Audits)**:
+    *   **Triggers**: Runs automatically every Sunday at midnight UTC. Can also be manually triggered.
+    *   **Actions**:
+        *   Installs Node.js and project dependencies.
+        *   Runs dependency and vulnerability audits (`scripts/security-audit.sh`).
+        *   Includes a placeholder for future integration of performance audits.
+    *   **Purpose**: Regularly checks for new vulnerabilities and outdated dependencies to help keep the project secure and up-to-date.
+
+### Health Check
+
+*   The application exposes a health check endpoint at `/healthz` (in the Node.js/Express server located in `server/app.js`).
+*   This endpoint can be used by monitoring services or orchestration platforms (like Kubernetes) to verify the application's operational status.
+*   Example Kubernetes probe configurations using this endpoint can be found in `kubernetes/probes-example.yaml`.
