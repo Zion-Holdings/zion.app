@@ -74,7 +74,7 @@ export const PostForm = ({
                 <FormItem>
                   <FormLabel>Title</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter post title..." {...field} />
+                    <Input placeholder="Enter post title..." {...field} data-testid="post-title-input" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -92,6 +92,7 @@ export const PostForm = ({
                       placeholder="Write your post content here..." 
                       className="min-h-[200px]"
                       {...field} 
+                      data-testid="post-content-input"
                     />
                   </FormControl>
                   <FormMessage />
@@ -138,7 +139,7 @@ export const PostForm = ({
               )}
             />
             
-            <Button type="submit" disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting} data-testid="publish-post-button">
               {isSubmitting ? "Submitting..." : isEditing ? "Update Post" : "Create Post"}
             </Button>
           </form>

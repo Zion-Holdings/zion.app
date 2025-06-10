@@ -171,7 +171,7 @@ export default function Dashboard() {
             <div className="lg:col-span-2">
               <div className="bg-zion-blue-dark rounded-xl p-6 mb-6">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-2xl font-bold text-white">Dashboard</h2>
+                  <h2 className="text-2xl font-bold text-white" data-testid="dashboard-header">Dashboard</h2>
                   <div className="flex items-center gap-2">
                     <NotificationBell />
                     <Button 

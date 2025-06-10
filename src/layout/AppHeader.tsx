@@ -57,14 +57,21 @@ export function AppHeader() {
 
           <PointsBadge />
           {!user && (
-            <div className="ml-4 relative z-10">
+            <div className="ml-4 relative z-10 flex items-center space-x-4">
               <Link
                 href="/login"
-                className="relative z-10 text-sm font-medium text-foreground/70 hover:text-foreground"
+                className="text-sm font-medium text-foreground/70 hover:text-foreground"
                 aria-label="Login"
                 data-testid="login-link"
               >
                 Login
+              </Link>
+              <Link
+                href="/signup"
+                className="text-sm font-medium text-foreground/70 hover:text-foreground"
+                data-testid="signup-nav-link"
+              >
+                Sign up
               </Link>
             </div>
           )}

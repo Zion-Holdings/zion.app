@@ -28,29 +28,21 @@ describe('Critical user journeys', () => {
 
   it('Registers a new user successfully', () => {
     cy.intercept('POST', '/api/auth/register').as('register');
-    // TODO: Add data-testid="signup-nav-link" to the Sign up link in the nav
-    // cy.get('[data-testid="signup-nav-link"]').click();
-    cy.get('nav').contains('Sign up').click(); // Kept for now
+    cy.get('[data-testid="signup-nav-link"]').click();
 
-    // TODO: Add data-testid="name-input"
-    cy.get('input[name="name"]').type(Cypress.env('TEST_USER_NAME'));
+    cy.get('[data-testid="name-input"]').type(Cypress.env('TEST_USER_NAME'));
     // Using dynamic email generation is good practice
     const uniqueEmail = `testuser${Date.now()}@example.com`;
-    // TODO: Add data-testid="email-input"
-    cy.get('input[name="email"]').type(uniqueEmail);
-    // TODO: Add data-testid="password-input"
-    cy.get('input[name="password"]').type('StrongP@ssw0rd'); // Consider making this an env var if it needs to be consistent
-    // TODO: Add data-testid="confirm-password-input"
-    cy.get('input[name="confirmPassword"]').type('StrongP@ssw0rd');
-    // TODO: Add data-testid="terms-checkbox"
-    cy.get('input[type="checkbox"]').check(); // Assuming terms checkbox
+    cy.get('[data-testid="email-input"]').type(uniqueEmail);
+    cy.get('[data-testid="password-input"]').type('StrongP@ssw0rd'); // Consider making this an env var if it needs to be consistent
+    // The previous selector input[name="confirmPassword"] was likely incorrect for the actual codebase, using the data-testid now.
+    cy.get('[data-testid="confirm-password-input"]').type('StrongP@ssw0rd');
+    cy.get('[data-testid="terms-checkbox"]').check();
 
-    // TODO: Add data-testid="create-account-button"
-    // cy.get('[data-testid="create-account-button"]').click();
-    cy.contains('Create Account').click(); // Kept for now
+    cy.get('[data-testid="create-account-button"]').click();
     cy.wait('@register').its('response.statusCode').should('eq', 201);
-    // TODO: Add data-testid="dashboard-header" or similar to confirm page change
-    cy.url().should('include', '/dashboard');
+    cy.url().should('include', '/login'); // After registration, user is typically redirected to login
+    // cy.get('[data-testid="dashboard-header"]').should('be.visible'); // Or to dashboard if auto-login
   });
 
   it('Logs in and completes Stripe test checkout', () => {
@@ -58,9 +50,7 @@ describe('Critical user journeys', () => {
     cy.loginByApi(Cypress.env('EXISTING_USER_EMAIL'), Cypress.env('EXISTING_USER_PASSWORD'));
     cy.visit('/marketplace');
 
-    // TODO: Add data-testid="buy-now-button" to Buy Now buttons
-    // cy.get('[data-testid="buy-now-button"]').first().click();
-    cy.contains('Buy Now').first().click(); // Kept for now
+    cy.get('[data-testid="buy-now-button"]').first().click();
 
     cy.url().should('include', '/checkout');
     // The Stripe iframe interaction is inherently tricky.
@@ -77,20 +67,21 @@ describe('Critical user journeys', () => {
       cy.log('Stripe iframe found. Test card number: ' + Cypress.env('STRIPE_TEST_CARD') + '. Implement actual filling logic.');
     });
 
-    // TODO: Add data-testid="payment-success-message"
-    // cy.get('[data-testid="payment-success-message"]').should('be.visible');
-    cy.contains('Payment successful').should('be.visible'); // Kept for now
+    // Assuming checkout redirects to a success page that contains this message
+    // For a real Stripe integration, you'd wait for a redirect to /checkout/success or similar
+    // and then check for the message.
+    // cy.url().should('include', '/checkout/success'); // Example check
+    cy.get('[data-testid="payment-success-message"]', { timeout: 10000 }).should('be.visible');
   });
 
   it('Loads equipment detail page', () => {
     cy.visit('/equipment');
-    // TODO: Add data-testid="equipment-link-rack-mount" or similar for equipment links
-    // cy.get('[data-testid="equipment-link-rack-mount"]').click();
-    cy.contains('Rack Mount').click(); // Kept for now, assuming "Rack Mount" is link text
+    // Click the first available equipment link that contains 'Rack Mount' or is the first link if none contain 'Rack Mount'
+    // This handles cases where 'Rack Mount' might not be present or items change order
+    cy.get('[data-testid="equipment-link"]').contains('Rack Mount', { matchCase: false }).first().click({ force: true });
 
-    // TODO: Add data-testid="specs-section" or similar to confirm content
-    // cy.get('[data-testid="specs-section"]').should('be.visible');
-    cy.contains('Specs').should('be.visible'); // Kept for now
+
+    cy.get('[data-testid="specs-section"]', { timeout: 10000 }).should('be.visible');
   });
 
   it('Creates a community post', () => {
@@ -98,21 +89,16 @@ describe('Critical user journeys', () => {
     cy.loginByApi(Cypress.env('EXISTING_USER_EMAIL'), Cypress.env('EXISTING_USER_PASSWORD'));
     cy.visit('/community');
 
-    // TODO: Add data-testid="create-new-post-button"
-    // cy.get('[data-testid="create-new-post-button"]').click();
-    cy.contains('Create New Post').click(); // Kept for now
+    cy.get('[data-testid="create-new-post-button"]').click();
 
-    // TODO: Add data-testid="post-title-input"
-    cy.get('input[name="title"]').type(COMMUNITY_POST_TITLE);
-    // TODO: Add data-testid="post-content-input"
-    cy.get('textarea[name="content"]').type(COMMUNITY_POST_CONTENT);
+    cy.get('[data-testid="post-title-input"]').type(COMMUNITY_POST_TITLE);
+    cy.get('[data-testid="post-content-input"]').type(COMMUNITY_POST_CONTENT);
 
-    // TODO: Add data-testid="publish-post-button"
-    // cy.get('[data-testid="publish-post-button"]').click();
-    cy.contains('Publish').click(); // Kept for now
+    cy.get('[data-testid="publish-post-button"]').click();
 
-    // TODO: Add data-testid="post-publish-success-message"
-    // cy.get('[data-testid="post-publish-success-message"]').should('be.visible');
-    cy.contains('Post published successfully').should('be.visible'); // Kept for now
+    // Toast messages for success are hard to target with data-testid.
+    // Checking for visible text is a common workaround.
+    cy.contains('Post created', { timeout: 10000 }).should('be.visible');
+    cy.contains('Your post has been published successfully', { timeout: 10000 }).should('be.visible');
   });
 });

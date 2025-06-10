@@ -81,6 +81,7 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
             size="sm"
             variant="outline"
             className="flex-1"
+            data-testid="buy-now-button"
           >
             Buy Now
           </Button>

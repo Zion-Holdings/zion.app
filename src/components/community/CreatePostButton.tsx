@@ -37,7 +37,7 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button className={className} onClick={handleClick}>
+          <Button className={className} onClick={handleClick} data-testid="create-new-post-button">
             Create New Post
           </Button>
         </TooltipTrigger>

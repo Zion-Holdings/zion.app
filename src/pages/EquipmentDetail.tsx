@@ -272,7 +272,7 @@ export default function EquipmentDetail() {
                     </div>
                   </TabsContent>
                   
-                  <TabsContent value="specifications" className="mt-4">
+                  <TabsContent value="specifications" className="mt-4" data-testid="specs-section">
                     <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {equipment.specifications.map((spec, index) => (
