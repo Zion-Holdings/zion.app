@@ -100,7 +100,30 @@ process.on('uncaughtException', (error) => {
  * current working directory. This avoids issues where `__dirname` resolves to
  * a read-only path such as `/app` in some deploy environments.
  */
-const BASE_LOG_PATH = process.env.WATCHDOG_LOG_PATH || path.resolve(process.cwd(), 'logs');
+// Determine the base path for logs. If WATCHDOG_LOG_PATH is provided but
+// cannot be created/written (e.g., due to permissions or non-existent mount),
+// fall back to a `logs` directory within the current working directory.
+function determineBaseLogPath() {
+  const envPath = process.env.WATCHDOG_LOG_PATH;
+  if (envPath) {
+    try {
+      fs.mkdirSync(envPath, { recursive: true });
+      fs.accessSync(envPath, fs.constants.W_OK);
+      return envPath;
+    } catch (e) {
+      logError(`Failed to use WATCHDOG_LOG_PATH at ${envPath}. Falling back to local logs directory.`, e);
+    }
+  }
+  const fallback = path.resolve(process.cwd(), 'logs');
+  try {
+    fs.mkdirSync(fallback, { recursive: true });
+  } catch (e) {
+    logError(`Failed to create fallback log directory at ${fallback}`, e);
+  }
+  return fallback;
+}
+
+const BASE_LOG_PATH = determineBaseLogPath();
 /** @const {string} PERF_LOG_FILE - Path to the performance log file to be monitored. */
 const PERF_LOG_FILE = path.join(BASE_LOG_PATH, 'perf', 'hourly.log');
 /** @const {string} SECURITY_LOG_FILE - Path to the security log file to be monitored for patch notifications. */
