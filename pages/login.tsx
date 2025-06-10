@@ -17,8 +17,8 @@ export default function Login() {
         body: JSON.stringify({ email, password }),
       });
       if (!res.ok) {
-        const msg = await res.text();
-        throw new Error(msg || 'Login failed');
+        const text = await res.text();
+        throw new Error(text || `HTTP ${res.status}`);
       }
       window.location.href = '/';
     } catch (err: any) {
