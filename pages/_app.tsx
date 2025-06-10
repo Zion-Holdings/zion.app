@@ -17,9 +17,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import the new Error Boundary
-import * as Sentry from '@sentry/nextjs';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors'; // Import global error handler initializer
-import { Sentry } from '@/utils/sentry';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
