@@ -4,6 +4,7 @@ import path from 'path';
 import { PrismaClient, ErrorAnalysisStatus } from '@prisma/client';
 import { captureException } from '../../src/utils/sentry'; // Adjusted path
 import type { NextApiRequest, NextApiResponse } from 'next';
+import type { ServerResponse } from 'http';
 
 const prisma = new PrismaClient();
 const CODEX_SCRIPT_PATH = path.resolve(process.cwd(), 'scripts/codex-bug-fix.js');
@@ -223,7 +224,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   } catch (error: any) {
     console.error('log-error API critical error during initial processing:', error.message, error.stack);
-    if (!res.headersSent) {
+    if (!(res as ServerResponse).headersSent) {
       res.status(500).json({ error: 'Server error during error processing.' });
     }
   }
