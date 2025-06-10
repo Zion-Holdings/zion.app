@@ -93,7 +93,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const errorSignature = generateErrorSignature(errorDetails);
   console.log(`Generated error signature: ${errorSignature}`);
 
-  let dbRecordId: number | undefined; // dbRecord.id is a number
+  let dbRecordId: string | undefined; // dbRecord.id is a string
   let formulatedPrompt: string | undefined;
 
   try {
@@ -128,7 +128,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
       console.log(`New error record created (ID: ${dbRecord.id})`);
     }
-    dbRecordId = parseInt(dbRecord.id, 10);
+    dbRecordId = dbRecord.id;
 
     formulatedPrompt = formulateCodexPrompt(errorDetails, errorSignature);
     console.log(`Formulated Codex prompt (ID: ${dbRecordId}, first 100 chars): ${formulatedPrompt.substring(0, 100)}...`);
