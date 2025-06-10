@@ -13,7 +13,7 @@ jobs:
         uses: amondnet/netlify-status@v1
         with:
           netlify_token: ${{ secrets.NETLIFY_TOKEN }}
-          site_id: "ziontechgroup.com"
+          site_id: "ziontechgroup"
 
       - name: Comment on PR if Deploy Failed
         if: failure() && github.event_name == 'pull_request'
