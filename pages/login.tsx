@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import * as Sentry from '@sentry/nextjs';
+import { toast } from 'react-hot-toast';
 
 export default function Login() {
   const [error, setError] = useState<string | null>(null);
@@ -10,18 +11,21 @@ export default function Login() {
     const email = formData.get('email');
     const password = formData.get('password');
     try {
-      const response = await fetch('/api/login', {
+      const res = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
-      if (!response.ok) {
-        throw new Error(await response.text());
+      if (!res.ok) {
+        const msg = await res.text();
+        throw new Error(msg || 'Login failed');
       }
       window.location.href = '/';
     } catch (err: any) {
       Sentry.captureException(err);
-      setError(err.message || 'Login failed');
+      const msg = err?.message || 'Login failed';
+      toast.error(msg);
+      setError(msg);
     }
   };
 
