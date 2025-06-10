@@ -86,7 +86,6 @@ import {
   ErrorRoutes,
   EnterpriseRoutes,
   DeveloperRoutes,
-  GovernanceRoutes,
   MarketplaceRoutes, // Assuming MarketplaceRoutes is a group of routes
   TalentRoutes,      // Assuming TalentRoutes is a group of routes
   CommunityRoutes,   // Assuming CommunityRoutes is a group of routes
@@ -153,8 +152,6 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
     metaTitle: 'Community - Zion'
   },
   { path: '/developers/*', element: <DeveloperRoutes />, metaTitle: 'Developers - Zion' },
-  { path: '/governance/*', element: <GovernanceRoutes />, metaTitle: 'Governance - Zion' },
-  { path: '/dao/*', element: <GovernanceRoutes />, metaTitle: 'DAO - Zion' },
   { path: '/governance/privacy', element: <PrivacyVotePage />, metaTitle: 'ZK Vote - Zion' },
   { path: '/dao/zkvote', element: <PrivacyVotePage />, metaTitle: 'ZK Vote - Zion' },
   // Test routes
