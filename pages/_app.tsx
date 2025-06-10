@@ -1,4 +1,6 @@
 import React from 'react';
+import { useRouter } from 'next/router';
+import { Sentry } from '@/utils/sentry';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { HelmetProvider } from 'react-helmet-async';
@@ -20,11 +22,17 @@ import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors'; // Impo
 // import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   const [queryClient] = React.useState(() => new QueryClient());
 
   React.useEffect(() => {
     initializeGlobalErrorHandlers(); // Initialize global error handlers
   }, []); // Empty dependency array ensures this runs only once on mount
+
+  React.useEffect(() => {
+    Sentry.setTag('route', router.pathname);
+    Sentry.setContext('query', router.query as Record<string, unknown>);
+  }, [router.pathname, router.query]);
 
   return (
     <GlobalErrorBoundary> {/* Wrap the entire application with CustomErrorBoundary */}
