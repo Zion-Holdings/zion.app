@@ -82,7 +82,7 @@ const KNOWN_INVALID_PROJECT_IDS = [
 
 export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
-  console.log('WalletProvider: Initializing...');
+  console.log('[WalletProvider] Initializing...');
 
   const rawProjectId = getAppKitProjectId();
   console.log('WalletContext: Resolved rawProjectId from getAppKitProjectId():', rawProjectId);

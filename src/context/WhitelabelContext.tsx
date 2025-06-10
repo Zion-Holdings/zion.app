@@ -50,6 +50,7 @@ interface WhitelabelProviderProps {
 }
 
 export const WhitelabelProvider = ({ children }: WhitelabelProviderProps) => {
+  console.log('[WhitelabelProvider] Initializing...');
   const [contextValue, setContextValue] = useState<WhitelabelContextType>(defaultContext);
   const { tenant, isLoading } = useWhitelabelTenant();
 
