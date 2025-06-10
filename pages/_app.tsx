@@ -16,6 +16,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import * as Sentry from '@sentry/nextjs';
 import { captureException } from '@/utils/sentry';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
@@ -62,7 +63,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   React.useEffect(() => {
     Sentry.setTag('route', router.pathname);
-    Sentry.setContext('query', router.query as Record<string, unknown>);
+    Sentry.setContext('query', router.query);
   }, [router.pathname]);
 
   return (
@@ -80,7 +81,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                       <WalletProvider>
                         <CartProvider>
                           <AnalyticsProvider>
-                            <Component {...pageProps} />
+                            <ErrorBoundary>
+                              <Component {...pageProps} />
+                            </ErrorBoundary>
                           </AnalyticsProvider>
                           <Toaster />
                         </CartProvider>
