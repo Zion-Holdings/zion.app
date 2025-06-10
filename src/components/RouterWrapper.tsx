@@ -1,7 +1,8 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { MemoryRouter } from 'react-router-dom';
-import type { BrowserRouterProps } from 'react-router-dom';
+import type { BrowserRouter } from 'react-router-dom';
+type BrowserRouterProps = React.ComponentProps<typeof BrowserRouter>;
 
 interface Props {
   children: React.ReactNode;
