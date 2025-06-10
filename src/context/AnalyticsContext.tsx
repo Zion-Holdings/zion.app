@@ -46,6 +46,7 @@ const AnalyticsContext = createContext<AnalyticsContextType | undefined>(
 );
 
 export function AnalyticsProvider({ children }: { children: ReactNode }) {
+  console.log('[AnalyticsProvider] Initializing...');
   const [pageViews, setPageViews] = useState(0);
   const [events, setEvents] = useState<AnalyticsEvent[]>([]);
   const [lastEvent, setLastEvent] = useState<AnalyticsEvent | null>(null);

@@ -15,6 +15,7 @@ import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+  console.log('[AuthProvider] Initializing...');
   const {
     user, setUser,
     isLoading, setIsLoading,

@@ -37,6 +37,32 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async (
   }
 };
 
+const ErrorTestButton = () => {
+  const throwTestError = () => {
+    throw new Error("This is a test error from the homepage button!");
+  };
+
+  return (
+    <button
+      onClick={throwTestError}
+      style={{
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        padding: '10px 20px',
+        backgroundColor: 'red',
+        color: 'white',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        zIndex: 1000
+      }}
+    >
+      Throw Test Error
+    </button>
+  );
+};
+
 const IndexPage: React.FC<HomePageProps> = (props) => {
   return (
     <>
@@ -46,6 +72,7 @@ const IndexPage: React.FC<HomePageProps> = (props) => {
         </div>
       )}
       <Home />
+      <ErrorTestButton /> {/* Add the button here */}
     </>
   );
 };

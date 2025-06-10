@@ -23,33 +23,13 @@ import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
-class AppErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
-  constructor(props: { children: React.ReactNode }) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    captureException(error, { extra: errorInfo });
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return <div className="p-4 text-red-500">Something went wrong.</div>;
-    }
-    return this.props.children;
-  }
-}
-
 function MyApp({ Component, pageProps }: AppProps) {
+  console.log('[App] MyApp component rendering started.');
   const router = useRouter();
   const [queryClient] = React.useState(() => new QueryClient());
 
   React.useEffect(() => {
+    console.log('[App] MyApp main useEffect hook started.');
     initializeGlobalErrorHandlers(); // Initialize global error handlers
     if (process.env.NEXT_PUBLIC_SENTRY_RELEASE) {
       Sentry.setTag('release', process.env.NEXT_PUBLIC_SENTRY_RELEASE);
@@ -57,6 +37,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     if (process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT) {
       Sentry.setTag('environment', process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
     }
+    console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY:", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+    console.log("NEXT_PUBLIC_REOWN_PROJECT_ID:", process.env.NEXT_PUBLIC_REOWN_PROJECT_ID);
   }, []); // Empty dependency array ensures this runs only once on mount
 
   React.useEffect(() => {
@@ -65,10 +47,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.pathname]);
 
   return (
-    <AppErrorBoundary>
-      <GlobalErrorBoundary>
-        {/* Wrap the entire application with CustomErrorBoundary */}
-        <QueryClientProvider client={queryClient}>
+    <GlobalErrorBoundary>
+      {/* Wrap the entire application with CustomErrorBoundary */}
+      <QueryClientProvider client={queryClient}>
           <ReduxProvider store={store}>
             <HelmetProvider>
               <ClientBrowserRouter> {/* Add ClientBrowserRouter here */}
@@ -95,7 +76,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         </ReduxProvider>
         </QueryClientProvider>
       </GlobalErrorBoundary>
-    </AppErrorBoundary>
   );
 }
 
