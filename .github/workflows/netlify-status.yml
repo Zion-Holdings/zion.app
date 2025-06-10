@@ -10,7 +10,8 @@ jobs:
     steps:
       - name: Check Netlify Deploy Status
         id: netlify_status
-        uses: amondnet/netlify-status@v1
+         - uses: actions/checkout@v2
+      - uses: amondnet/now-deployment@v2
         with:
           netlify_token: ${{ secrets.NETLIFY_TOKEN }}
           site_id: "ziontechgroup"
