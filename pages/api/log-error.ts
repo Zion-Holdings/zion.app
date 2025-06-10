@@ -224,7 +224,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   } catch (error: any) {
     console.error('log-error API critical error during initial processing:', error.message, error.stack);
-    if (!(res as ServerResponse).headersSent) {
+    if (!res.headersSent) {
       res.status(500).json({ error: 'Server error during error processing.' });
     }
   }
