@@ -3,6 +3,27 @@ import axios from 'axios';
 import logger from './logger';
 import { EndpointTestResult } from './latencyTester';
 
+export interface PatchedPackageInfo {
+  name: string;
+  version: string;
+  previousVersion?: string; // Optional, if available
+}
+
+export interface TestStatusInfo {
+  passed: number;
+  failed: number;
+  total: number;
+  coverage: number; // Percentage
+}
+
+export interface NotificationPayload {
+  slowEndpoints?: EndpointTestResult[]; // Reuse existing EndpointTestResult
+  patchedPackages?: PatchedPackageInfo[];
+  testStatus?: TestStatusInfo;
+  commitLink?: string;
+  customMessage?: string; // For general messages or errors
+}
+
 const ALERT_THRESHOLD_MS = 500;
 const ALERT_WEBHOOK_URL = process.env.ALERT_WEBHOOK_URL;
 
@@ -40,40 +61,82 @@ async function restartService(serviceName: string): Promise<void> {
   });
 }
 
-async function sendWebhookNotification(result: EndpointTestResult): Promise<void> {
+async function sendWebhookNotification(payload: NotificationPayload): Promise<void> {
   if (!ALERT_WEBHOOK_URL) {
-    logger.warn('ALERT_WEBHOOK_URL is not set. Skipping webhook notification.');
+    logger.warn('ALERT_WEBHOOK_URL is not set. Skipping notification.');
     return;
   }
 
-  const payload = {
-    text: `🚨 High Latency Alert 🚨
+  let messageParts: string[] = [];
+
+  if (payload.customMessage) {
+    messageParts.push(payload.customMessage);
+  }
+
+  if (payload.slowEndpoints && payload.slowEndpoints.length > 0) {
+    payload.slowEndpoints.forEach(result => {
+      messageParts.push(
+        `🚨 *High Latency Alert* 🚨
 Endpoint: \`${result.name}\` (\`${result.url}\`)
 Method: \`${result.method}\`
 Latency: \`${result.latencyMs}ms\` (Threshold: \`${ALERT_THRESHOLD_MS}ms\`)
 Status: \`${result.status}\`
-Timestamp: \`${result.timestamp}\`
-Attempting service restart... (if applicable)`,
-    // Add more structured data if your webhook receiver supports it (e.g., Slack blocks)
-  };
+Timestamp: \`${result.timestamp}\``
+      );
+    });
+    // Add a note about service restart if slowEndpoints are reported
+    messageParts.push("Attempting service restart for affected services... (if applicable)");
+  }
+
+  if (payload.patchedPackages && payload.patchedPackages.length > 0) {
+    messageParts.push("*Updated Packages:*");
+    payload.patchedPackages.forEach(pkg => {
+      let pkgStr = `  - ${pkg.name} (${pkg.version}`;
+      if (pkg.previousVersion) {
+        pkgStr += `, previously ${pkg.previousVersion}`;
+      }
+      pkgStr += ")";
+      messageParts.push(pkgStr);
+    });
+  }
+
+  if (payload.testStatus) {
+    messageParts.push(
+      `*Test Status:*
+Tests: ${payload.testStatus.passed}/${payload.testStatus.total} passed
+Coverage: ${payload.testStatus.coverage}%`
+    );
+  }
+
+  if (payload.commitLink) {
+    messageParts.push(`Commit: ${payload.commitLink}`);
+  }
+
+  if (messageParts.length === 0) {
+    logger.warn("No information to send in notification. Skipping.");
+    return;
+  }
+
+  const formattedMessageString = messageParts.join('\n\n');
+  const webhookPayload = { text: formattedMessageString };
 
   try {
-    logger.info(`Sending webhook notification for ${result.name} to ${ALERT_WEBHOOK_URL}`);
-    await axios.post(ALERT_WEBHOOK_URL, payload, { timeout: 10000 });
-    logger.info(`Webhook notification sent successfully for ${result.name}.`);
+    logger.info(`Sending notification to ${ALERT_WEBHOOK_URL}`);
+    await axios.post(ALERT_WEBHOOK_URL, webhookPayload, { timeout: 10000 });
+    logger.info(`Notification sent successfully.`);
   } catch (error) {
     let errorMessage = 'Unknown error';
     if (axios.isAxiosError(error)) {
       errorMessage = error.message;
       if (error.response) {
-        logger.error('Webhook notification failed with response:', {
+        logger.error('Notification failed with response:', {
             status: error.response.status, data: error.response.data
         });
       }
     } else if (error instanceof Error) {
       errorMessage = error.message;
     }
-    logger.error(`Failed to send webhook notification for ${result.name}. Error: ${errorMessage}`);
+    logger.error(`Failed to send notification. Error: ${errorMessage}`);
   }
 }
 
@@ -87,7 +150,7 @@ export async function triggerAlerts(result: EndpointTestResult): Promise<void> {
     logger.warn(`High latency detected for ${result.name} (${result.url}): ${result.latencyMs}ms. Triggering alerts.`);
 
     // 1. Send Webhook Notification (send this first, so team is aware before/during restart)
-    await sendWebhookNotification(result);
+    await sendWebhookNotification({ slowEndpoints: [result] });
 
     // 2. Attempt to Restart Service
     const serviceName = getServiceName(result.name);

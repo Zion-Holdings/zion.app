@@ -1,12 +1,12 @@
-name: Hourly Jest Tests
+name: Hourly Checks and Notifications
 
 on:
   schedule:
-    - cron: '0 * * * *'
-  workflow_dispatch:
+    - cron: '0 * * * *' # Runs at the start of every hour
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
-  hourly-jest:
+  hourly_checks:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,19 +16,70 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '20.x' # Specify your project's Node.js version
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Jest with coverage
+      - name: Run Hourly NPM Audit
+        id: npm_audit
+        run: bash ./scripts/hourly-npm-audit.sh
+        # This script is expected to create:
+        # - logs/security/hourly-fix.log
+        # - /tmp/notification_data/patched_packages.json (or $GITHUB_WORKSPACE/notification_data/patched_packages.json)
+
+      - name: Run Hourly Jest Tests and Coverage Check
+        id: jest_tests
         run: bash ./scripts/run-hourly-tests.sh
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # If any script part uses it (e.g., for GitHub API calls)
+        # This script is expected to create:
+        # - logs/tests/hourly-jest-results.json
+        # - logs/coverage/hourly/coverage-summary.json
+        # - /tmp/notification_data/test_status.json (or $GITHUB_WORKSPACE/notification_data/test_status.json via check_coverage_and_notify.js)
 
-      - name: Upload Coverage Report
+      - name: Gather and Send Notification
+        if: always() # Ensures this step runs even if prior steps fail (audit or tests)
+        env:
+          ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }} # Needs to be configured in repository secrets
+          GITHUB_WORKSPACE: ${{ github.workspace }} # Provides the correct base path for temp data files
+          GITHUB_REPOSITORY: ${{ github.repository }} # For constructing commit links
+          GITHUB_SERVER_URL: ${{ github.server_url }} # For constructing commit links
+        run: bash ./scripts/gather-notification-data.sh
+
+      - name: Upload Hourly Coverage Report
+        if: always() # Upload artifacts even if some script logic failed
         uses: actions/upload-artifact@v4
         with:
-          name: hourly-coverage
-          path: logs/coverage/hourly
+          name: hourly-coverage-report
+          path: logs/coverage/hourly # Directory where Jest saves coverage reports
+          retention-days: 7
+
+      - name: Upload NPM Audit Logs and Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-audit-data
+          path: |
+            logs/security
+            ${{ github.workspace }}/notification_data/patched_packages.json
+          retention-days: 7
+
+      - name: Upload Test Results and Status
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jest-results-data
+          path: |
+            logs/tests
+            ${{ github.workspace }}/notification_data/test_status.json
+          retention-days: 7
+
+      - name: Upload Full Notification Payload (for debugging)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: notification-payload-contents
+          path: ${{ github.workspace }}/notification_data/
+          retention-days: 3
