@@ -18,7 +18,7 @@
     "test": "jest",
     "test:watch": "vitest --watch",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run --browser chrome",
+    "cypress:run": "cypress run --browser electron",
     "audit": "npm audit --production",
     "lint:a11y": "vitest run tests/Accessibility.test.tsx",
     "test:e2e": "playwright test",

@@ -1,6 +1,6 @@
 [build]
   # Use `npm ci` for deterministic installs
-  command = "npm ci && npm run build && curl -sf $DEPLOY_PRIME_URL/api/health | grep '\"status\":\"ok\"'"
+  command = "npm ci && npm run build && if [ -n \"$DEPLOY_PRIME_URL\" ]; then curl -sf $DEPLOY_PRIME_URL/api/health | grep '\"status\":\"ok\"'; else echo 'DEPLOY_PRIME_URL not set, skipping health check'; fi"
   publish = ".next"
 
 [build.environment]
