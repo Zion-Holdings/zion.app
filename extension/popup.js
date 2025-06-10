@@ -6,11 +6,7 @@ async function ask() {
     return;
   }
   try {
-    const res = await chrome.runtime
-      .sendMessage({ type: 'ask', prompt })
-      .catch((err) => {
-        throw err;
-      });
+    const res = await chrome.runtime.sendMessage({ type: 'ask', prompt });
     if (res && res.answer) {
       document.getElementById('output').textContent = res.answer;
     } else if (res && res.error) {
