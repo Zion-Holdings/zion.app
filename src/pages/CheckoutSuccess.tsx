@@ -38,7 +38,7 @@ export default function CheckoutSuccess() {
 
   return (
     <div className="container max-w-2xl py-10 space-y-4">
-      <h1 className="text-3xl font-bold">Thank you for your purchase!</h1>
+      <h1 className="text-3xl font-bold" data-testid="payment-success-message">Thank you for your purchase!</h1>
       <div>
         <p><strong>Order ID:</strong> {session.id}</p>
         {session.customer_details?.email && (
