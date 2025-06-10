@@ -13,3 +13,6 @@
   # Sentry DSNs are intentionally exposed in client bundles. Exclude them from
   # Netlify's secrets scanning to prevent false positives during deploys.
   SECRETS_SCAN_OMIT_KEYS = "SENTRY_DSN,NEXT_PUBLIC_SENTRY_DSN"
+
+[functions.environment]
+  SENTRY_LOG_LEVEL = "debug"
