@@ -18,6 +18,7 @@ Sentry.init({
   environment: process.env.SENTRY_ENVIRONMENT,
   integrations: [new Integrations.Http({ tracing: true })],
   beforeSend(event) {
+    // Drop events without a meaningful exception message
     if (!event.exception?.values?.[0]?.value) {
       return null;
     }
