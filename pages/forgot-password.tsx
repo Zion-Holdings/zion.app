@@ -3,6 +3,8 @@ import Link from 'next/link';
 import * as Sentry from '@sentry/nextjs';
 import { Alert, AlertIcon, AlertDescription } from '@chakra-ui/react';
 import { forgotPassword } from '@/services/auth';
+import { toast } from '@/hooks/use-toast';
+import * as Sentry from '@sentry/nextjs';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -23,7 +25,9 @@ const ForgotPassword = () => {
       );
     } catch (err: any) {
       Sentry.captureException(err);
-      setError(err.message || 'Failed to send reset link. Please try again.');
+      const errorMessage = err?.response?.data?.message || err.message || 'Failed to send reset link. Please try again.';
+      setError(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
