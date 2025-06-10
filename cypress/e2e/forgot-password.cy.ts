@@ -42,7 +42,10 @@ describe('Forgot Password Page', () => {
   });
 
 
-  it('should display an error message if the API returns an error', () => {
+  it('handles server errors without uncaught exceptions', () => {
+    const errorStub = cy.stub();
+    cy.on('uncaught:exception', errorStub);
+
     // Intercept the API call and mock an error response
     cy.intercept('POST', '/api/auth/forgot', {
       statusCode: 500,
@@ -70,6 +73,10 @@ describe('Forgot Password Page', () => {
     // Verify the button is re-enabled
     cy.get('button[type="submit"]').should('not.be.disabled');
     cy.get('button[type="submit"]').contains('Send Reset Link').should('be.visible');
+
+    cy.then(() => {
+      expect(errorStub).not.to.be.called;
+    });
   });
 
   it('should display a specific client-side error message if the API call fails without a message', () => {

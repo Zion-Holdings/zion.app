@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { forgotPassword } from '@/services/auth';
+import { toast } from '@/hooks/use-toast';
+import * as Sentry from '@sentry/nextjs';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -18,7 +20,10 @@ const ForgotPassword = () => {
       await forgotPassword(email);
       setMessage('If your email address is registered, you will receive a password reset link shortly.');
     } catch (err: any) {
-      setError(err.message || 'Failed to send reset link. Please try again.');
+      Sentry.captureException(err);
+      const errorMessage = err?.response?.data?.message || err.message || 'Failed to send reset link. Please try again.';
+      setError(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
