@@ -39,7 +39,7 @@ jest.mock('child_process', () => ({
 // Mock Sentry's captureException
 // To ensure errors are reported to Sentry as expected.
 const mockCaptureException = jest.fn();
-jest.mock('../src/utils/sentry', () => ({ // Adjust path as per actual project structure
+jest.mock('../../../src/utils/sentry', () => ({ // Adjust path as per actual project structure
   captureException: mockCaptureException,
 }));
 
@@ -92,10 +92,10 @@ describe('/api/log-error Endpoint', () => {
     // This assumes api/log-error.js exports its handler function, e.g., module.exports = async function handler(...)
     // Adjust the path if your project structure is different.
     try {
-      const apiModule = require('../api/log-error.js'); // Path relative to this test file
-      logErrorApiHandler = apiModule; // Or apiModule.default if it's an ES module default export
+      const apiModule = require('../../pages/api/log-error.ts'); // Path relative to this test file
+      logErrorApiHandler = apiModule.default; // Or apiModule.default if it's an ES module default export
       if (typeof logErrorApiHandler !== 'function') {
-        throw new Error("Failed to load API handler. Ensure api/log-error.js exports its handler function.");
+        throw new Error("Failed to load API handler. Ensure pages/api/log-error.ts exports its handler function as default.");
       }
     } catch (e) {
       console.error("Error loading API handler for tests:", e);
@@ -288,7 +288,7 @@ describe('/api/log-error Endpoint', () => {
       expect.objectContaining({ // Context
         extra: expect.objectContaining({
           message: validErrorPayload.message,
-          sourceContext: 'api/log-error'
+          sourceContext: 'pages/api/log-error' // Updated source context
         })
       })
     );
