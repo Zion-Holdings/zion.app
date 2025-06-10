@@ -10,9 +10,24 @@ export function logError(error: unknown, context?: Record<string, unknown>) {
   if (error instanceof Error) {
     errorToSend = error;
   } else {
-    errorToSend = new Error(typeof error === 'string' ? error : 'Unknown error: non-Error object thrown');
+    let message = 'Unknown error: non-Error object thrown';
+    if (typeof error === 'string') {
+      message = error;
+    } else if (error && typeof error === 'object') {
+      try {
+        // Attempt to stringify the object to capture more details
+        const serializedError = JSON.stringify(error);
+        message = `Unknown error: non-Error object thrown. Details: ${serializedError}`;
+      } catch (stringifyError) {
+        // If stringification fails (e.g., circular references), fallback to a simpler message
+        message = 'Unknown error: non-Error object thrown. Could not serialize error object.';
+      }
+    }
+    // If error is null, undefined, or some other primitive, it will default to the initial 'Unknown error' message.
+
+    errorToSend = new Error(message);
     try {
-      // Preserve original error if possible, for stack trace etc.
+      // Preserve original error's stack or name if they exist (though less likely for non-Errors)
       errorToSend.stack = (error as any)?.stack || errorToSend.stack;
       errorToSend.name = (error as any)?.name || errorToSend.name;
     } catch {
