@@ -15,14 +15,12 @@ Set them in `.env` or your hosting provider's environment configuration.
 To redirect customers to Stripe Checkout in test mode:
 
 ```ts
-import { loadStripe } from '@stripe/stripe-js';
+import { getStripe } from '@/utils/getStripe';
 
-// Use the publishable test key so no live charges occur
-// Disable advanced fraud signals to avoid "Access to storage is not allowed"
-// errors when the app runs in an iframe or other restricted context.
-const stripe = await loadStripe(import.meta.env.STRIPE_TEST_KEY, {
-  advancedFraudSignals: false
-});
+// getStripe disables Stripe's advanced fraud signals which can
+// try to access localStorage. This avoids "Access to storage is not
+// allowed" errors in browsers with strict privacy settings.
+const stripe = await getStripe();
 
 // Request a Checkout Session from your backend
 const session = await axios.post('/payments/create-session', { priceId });
