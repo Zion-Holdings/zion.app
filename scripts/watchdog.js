@@ -102,6 +102,20 @@ const SECURITY_LOG_FILE = path.resolve(__dirname, '../logs/security/hourly-fix.l
 /** @const {string} SELF_HEAL_LOG_FILE - Path to the log file where this watchdog script records its own actions and errors. */
 const SELF_HEAL_LOG_FILE = path.resolve(__dirname, '../logs/self-heal.log');
 
+// Ensure log directories and files exist to avoid Tail initialization errors
+function ensureFileExists(filePath) {
+  try {
+    fs.mkdirSync(path.dirname(filePath), { recursive: true });
+    if (!fs.existsSync(filePath)) {
+      fs.closeSync(fs.openSync(filePath, 'a'));
+    }
+  } catch (err) {
+    logError(`Failed to create log file: ${filePath}`, err);
+  }
+}
+
+[PERF_LOG_FILE, SECURITY_LOG_FILE, SELF_HEAL_LOG_FILE].forEach(ensureFileExists);
+
 // --- Configuration: Regex Patterns ---
 /**
  * @const {RegExp} PERF_ERROR_REGEX
