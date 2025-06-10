@@ -11,6 +11,7 @@ import { WalletProvider } from '@/context/WalletContext'; // Added WalletProvide
 import { AnalyticsProvider } from '@/context/AnalyticsContext'; // Added AnalyticsProvider
 import { CartProvider } from '@/context/CartContext'; // Added CartProvider
 import ClientBrowserRouter from '@/components/ClientBrowserRouter'; // Add this import
+import { RouterWrapper } from '@/components/RouterWrapper';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
