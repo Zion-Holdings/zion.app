@@ -1,4 +1,5 @@
 const express = require('express');
+const { exec } = require('child_process'); // Make sure this is imported
 const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -12,8 +13,9 @@ const authRoutes = require('./routes/auth');
 const authSocialRoutes = require('./routes/authSocial');
 const recommendationsRoutes = require('./routes/recommendations');
 const syncRoutes = require('./routes/sync');
+const alertsRoutes = require('./routes/alerts'); // Add this
 const { logAndAlert } = require('./utils/alertLogger');
-const helmet = require('helmet');
+const helmet =require('helmet');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
 
@@ -63,8 +65,37 @@ app.use('/api/auth', authRoutes);
 app.use('/', authSocialRoutes);
 app.use('/recommendations', recommendationsRoutes);
 app.use('/sync', syncRoutes);
+app.use('/api/alerts', alertsRoutes); // Add this, choose a base path like /api/alerts
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
+});
+
+app.post('/api/codex/suggest-fix', (req, res) => {
+  // Optional: You might want to log which route is causing this, if passed in body
+  const { route } = req.body;
+  let command = 'openai-operator run ./codex-pipeline.yaml';
+
+  // Log the action
+  console.log(`Received request to trigger Codex fix. Route: ${route || 'N/A'}`);
+  // Potentially pass the route to the command if the pipeline can use it, e.g.:
+  // if (route) {
+  //   command = `openai-operator run ./codex-pipeline.yaml --route ${route}`;
+  // }
+  // For now, the command is fixed as per codexWebhookServer.js
+
+  exec(command, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Codex execution error: ${error.message}`);
+      // Use existing logAndAlert if appropriate
+      // logAndAlert(`Codex execution failed for route ${route || 'N/A'}: ${error.message}`);
+      return res.status(500).json({ error: 'Codex fix process failed to start or execute.' });
+    }
+    if (stderr) {
+      console.warn(`Codex execution stderr: ${stderr}`);
+    }
+    console.log(`Codex execution stdout: ${stdout}`);
+    res.status(200).json({ message: 'Codex fix process triggered successfully.' });
+  });
 });
 
 mongoose.connect(mongoUri, {

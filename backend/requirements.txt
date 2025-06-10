@@ -8,3 +8,4 @@ gunicorn>=20.0,<22.0
 psycopg2-binary>=2.9,<2.10
 qrcode
 Pillow
+requests
