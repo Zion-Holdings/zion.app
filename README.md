@@ -64,7 +64,16 @@ This Node.js service monitors specified frontend pages and backend endpoints, re
     *   `consecutiveChecksLimit`: The number of consecutive high response times before triggering the optimization script.
     *   `logFile`: Path to the file where performance metrics will be logged.
 
-5.  **Review and customize `optimize.sh`:**
+5.  **Set environment variables (optional):**
+    Copy `.env.example` to `.env` and adjust any values needed for your setup.
+    Important variables include:
+    * `DJANGO_API_BASE_URL`, `NEXTJS_API_BASE_URL`, `CUSTOM_SERVER_BASE_URL` –
+      base URLs for services you want to monitor.
+    * `ALERT_WEBHOOK_URL` – a webhook endpoint (Slack, Discord, etc.) for alert
+      notifications.
+    * `LOG_LEVEL` – logging verbosity (`error`, `warn`, `info`, `debug`).
+
+6.  **Review and customize `optimize.sh`:**
     The `optimize.sh` script is a placeholder. You should customize it to perform actual optimization tasks relevant to your environment (e.g., clearing caches, restarting services with PM2/Docker, rebuilding assets).
     Ensure the script is executable:
     ```bash
@@ -97,6 +106,14 @@ To run the test server:
     node test-server.js
     ```
     You can then add `http://localhost:3000/fast` and `http://localhost:3000/slow` to your `config.json` to test the monitor.
+
+## Running Tests
+
+Run the automated tests using npm:
+
+```bash
+npm run test
+```
 
 ## How it Works
 
