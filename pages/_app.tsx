@@ -1,6 +1,5 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Sentry } from '@/utils/sentry';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { HelmetProvider } from 'react-helmet-async';
@@ -12,16 +11,36 @@ import { WalletProvider } from '@/context/WalletContext'; // Added WalletProvide
 import { AnalyticsProvider } from '@/context/AnalyticsContext'; // Added AnalyticsProvider
 import { CartProvider } from '@/context/CartContext'; // Added CartProvider
 import ClientBrowserRouter from '@/components/ClientBrowserRouter'; // Add this import
-import { RouterWrapper } from '@/components/RouterWrapper';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
-import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import the new Error Boundary
+import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import * as Sentry from '@sentry/nextjs';
-import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors'; // Import global error handler initializer
-import { Sentry } from '@/utils/sentry';
+import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
+
+class AppErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    Sentry.captureException(error, { extra: errorInfo });
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <div className="p-4 text-red-500">Something went wrong.</div>;
+    }
+    return this.props.children;
+  }
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -45,7 +64,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.pathname, router.query]);
 
   return (
-    <Sentry.ErrorBoundary fallback={<div>Something went wrong.</div>}>
+    <AppErrorBoundary>
       <GlobalErrorBoundary>
         {/* Wrap the entire application with CustomErrorBoundary */}
         <QueryClientProvider client={queryClient}>
@@ -73,7 +92,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </ReduxProvider>
         </QueryClientProvider>
       </GlobalErrorBoundary>
-    </Sentry.ErrorBoundary>
+    </AppErrorBoundary>
   );
 }
 

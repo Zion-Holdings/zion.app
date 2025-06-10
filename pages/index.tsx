@@ -1,8 +1,8 @@
 import React from 'react';
 import Home from '@/pages/Home';
-import CustomErrorPage from './_error';
 import type { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import * as Sentry from '@sentry/nextjs';
+import { ErrorBanner } from '@/components/talent/ErrorBanner';
 
 export interface HomePageProps {
   hasError?: boolean;
@@ -16,7 +16,11 @@ export async function fetchHomeData() {
 export const getServerSideProps: GetServerSideProps<HomePageProps> = async (
   ctx: GetServerSidePropsContext
 ) => {
+  Sentry.addBreadcrumb({ category: 'route', message: '/', level: 'info' });
   try {
+    if (ctx.query.forceError) {
+      throw new Error('Forced error');
+    }
     await fetchHomeData();
     return { props: {} };
   } catch (error) {
@@ -27,10 +31,16 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async (
 };
 
 const IndexPage: React.FC<HomePageProps> = (props) => {
-  if (props.hasError) {
-    return <CustomErrorPage statusCode={500} />;
-  }
-  return <Home {...props} />;
+  return (
+    <>
+      {props.hasError && (
+        <div className="container mx-auto px-4 py-4">
+          <ErrorBanner msg="Failed to load home page." />
+        </div>
+      )}
+      <Home {...props} />
+    </>
+  );
 };
 
 export default IndexPage;
