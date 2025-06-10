@@ -1,16 +1,15 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { MemoryRouter } from 'react-router-dom';
-// Removed: import type { BrowserRouterProps } from 'react-router-dom';
+import type { BrowserRouterProps } from 'react-router-dom';
 
 interface Props {
   children: React.ReactNode;
 }
 
 // Dynamically import BrowserRouter so it is only used on the client.
-const DynamicBrowserRouter = dynamic(
-  () =>
-    import('react-router-dom').then((mod) => mod.BrowserRouter),
+const DynamicBrowserRouter = dynamic<BrowserRouterProps>(
+  () => import('react-router-dom').then((mod) => mod.BrowserRouter),
   { ssr: false },
 );
 
