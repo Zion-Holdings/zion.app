@@ -10,8 +10,11 @@ export function captureException(error: unknown, context?: any) { // Added conte
   }
   // Optionally, add a development console log if you still want to see errors when not connected to Sentry,
   // though Sentry's SDK might also provide some console output in dev mode by default.
-  if (process.env.NODE_ENV === 'development' && !process.env.NEXT_PUBLIC_SENTRY_DSN) {
-    console.error("Sentry DSN not configured, logging error to console:", error, context);
+  if (
+    process.env.NODE_ENV === 'development' &&
+    (!process.env.NEXT_PUBLIC_SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN.startsWith('YOUR_'))
+  ) {
+    console.error('Sentry DSN not configured, logging error to console:', error, context);
   }
 }
 

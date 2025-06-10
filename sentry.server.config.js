@@ -6,12 +6,11 @@ import { Integrations } from "@sentry/tracing";
 // serverless functions have access when only NEXT_PUBLIC_SENTRY_DSN is set.
 const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
 
-if (!SENTRY_DSN) {
-  console.warn("Sentry DSN is not defined; Sentry will not capture errors.");
-}
-
-Sentry.init({
-  dsn: SENTRY_DSN,
+if (!SENTRY_DSN || SENTRY_DSN.startsWith('YOUR_')) {
+  console.warn("Sentry DSN is not defined or is a placeholder; Sentry will not capture errors.");
+} else {
+  Sentry.init({
+    dsn: SENTRY_DSN,
   // Adjust this value in production, or use tracesSampler for greater control
   tracesSampleRate: 1.0,
   release: process.env.SENTRY_RELEASE,
@@ -35,6 +34,7 @@ Sentry.init({
   // `release` value here - use the environment variable `SENTRY_RELEASE`, so
   // that it will also get attached to your source maps
 
-  // Enable Spotlight in development
-  // spotlight: process.env.NODE_ENV === 'development',
-});
+    // Enable Spotlight in development
+    // spotlight: process.env.NODE_ENV === 'development',
+  });
+}

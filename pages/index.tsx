@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from '@/pages/Home';
-import type { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import type { GetServerSideProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { ErrorBanner } from '@/components/talent/ErrorBanner';
 
@@ -14,7 +14,7 @@ export async function fetchHomeData() {
 }
 
 export const getServerSideProps: GetServerSideProps<HomePageProps> = async (
-  ctx: GetServerSidePropsContext
+  ctx
 ) => {
   Sentry.addBreadcrumb({ category: 'route', message: '/', level: 'info' });
   try {

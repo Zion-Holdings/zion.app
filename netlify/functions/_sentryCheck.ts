@@ -1,7 +1,8 @@
 import * as Sentry from '@sentry/nextjs';
 export const handler = async () => {
-  if (!process.env.SENTRY_DSN) {
-    console.error('SENTRY_DSN missing in function runtime');
+  const dsn = process.env.SENTRY_DSN;
+  if (!dsn || dsn.startsWith('YOUR_')) {
+    console.error('SENTRY_DSN missing or placeholder in function runtime');
   }
   return { statusCode: 204 };
 };
