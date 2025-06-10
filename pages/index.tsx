@@ -25,9 +25,6 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async (
     Sentry.addBreadcrumb({ category: 'route', message: '/', level: 'info' });
   }
   try {
-    if (ctx.query.forceError) {
-      throw new Error('Forced error for testing');
-    }
     await fetchHomeData();
     return { props: {} };
   } catch (error: any) {
