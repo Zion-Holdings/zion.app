@@ -51,14 +51,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   React.useEffect(() => {
     initializeGlobalErrorHandlers(); // Initialize global error handlers
-    Sentry.configureScope(scope => {
-      if (process.env.NEXT_PUBLIC_SENTRY_RELEASE) {
-        scope.setTag('release', process.env.NEXT_PUBLIC_SENTRY_RELEASE);
-      }
-      if (process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT) {
-        scope.setTag('environment', process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
-      }
-    });
+    if (process.env.NEXT_PUBLIC_SENTRY_RELEASE) {
+      Sentry.setTag('release', process.env.NEXT_PUBLIC_SENTRY_RELEASE);
+    }
+    if (process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT) {
+      Sentry.setTag('environment', process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
+    }
   }, []); // Empty dependency array ensures this runs only once on mount
 
   React.useEffect(() => {
