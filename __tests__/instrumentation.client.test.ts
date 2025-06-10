@@ -1,6 +1,6 @@
 import { register } from '../instrumentation.client';
 import * as Sentry from '@sentry/nextjs';
-import { Integrations } from "@sentry/tracing"; // Import this if it's used in the Sentry.init call options
+import { Http } from "@sentry/integrations"; // Updated import for HTTP integration
 
 describe('Sentry Initialization', () => {
   let consoleWarnSpy: jest.SpyInstance;
@@ -47,7 +47,7 @@ describe('Sentry Initialization', () => {
     expect(sentryInitSpy).toHaveBeenCalledWith({
       dsn: 'https://mockdsn@sentry.io/123',
       tracesSampleRate: 1.0,
-      integrations: [new Integrations.Http({ tracing: true })],
+      integrations: [new Http({ tracing: true })],
     });
   });
 
@@ -64,7 +64,7 @@ describe('Sentry Initialization', () => {
       release: 'mock-release-1.0.0',
       environment: 'test-env',
       tracesSampleRate: 1.0,
-      integrations: [new Integrations.Http({ tracing: true })],
+      integrations: [new Http({ tracing: true })],
     });
   });
 
@@ -82,7 +82,7 @@ describe('Sentry Initialization', () => {
       dsn: 'https://mockdsn@sentry.io/123',
       release: 'mock-release-1.0.1',
       tracesSampleRate: 1.0,
-      integrations: [new Integrations.Http({ tracing: true })],
+      integrations: [new Http({ tracing: true })],
     });
   });
 
@@ -100,7 +100,7 @@ describe('Sentry Initialization', () => {
       dsn: 'https://mockdsn@sentry.io/123',
       environment: 'test-env-2',
       tracesSampleRate: 1.0,
-      integrations: [new Integrations.Http({ tracing: true })],
+      integrations: [new Http({ tracing: true })],
     });
   });
 });

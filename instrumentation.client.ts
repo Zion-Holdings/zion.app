@@ -1,4 +1,5 @@
 import * as Sentry from "@sentry/nextjs";
+import { Http } from "@sentry/integrations";
 
 export function register() {
   const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN;
@@ -22,6 +23,7 @@ export function register() {
   Sentry.init({
     dsn: SENTRY_DSN,
     tracesSampleRate: 1.0,
+    integrations: [new Http({ tracing: true })],
     ...(SENTRY_RELEASE && { release: SENTRY_RELEASE }),
     ...(SENTRY_ENVIRONMENT && { environment: SENTRY_ENVIRONMENT }),
   });

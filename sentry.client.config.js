@@ -1,6 +1,6 @@
 // Filename: sentry.client.config.js
 import * as Sentry from "@sentry/nextjs";
-import { Integrations } from "@sentry/tracing";
+import { Http } from "@sentry/integrations";
 
 const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN;
 
@@ -13,7 +13,7 @@ if (!SENTRY_DSN || SENTRY_DSN.startsWith('YOUR_')) {
     tracesSampleRate: 1.0,
     release: process.env.NEXT_PUBLIC_SENTRY_RELEASE,
     environment: process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT,
-    integrations: [new Integrations.Http({ tracing: true })],
+    integrations: [new Http({ tracing: true })],
     // ...
     // Note: if you want to override the automatic release value, do not set a
     // `release` value here - use the environment variable `SENTRY_RELEASE`, so

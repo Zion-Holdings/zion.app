@@ -1,6 +1,6 @@
 // Filename: sentry.server.config.js
 import * as Sentry from "@sentry/nextjs";
-import { Integrations } from "@sentry/tracing";
+import { Http } from "@sentry/integrations";
 
 // Allow the DSN to come from either server or client env vars so that
 // serverless functions have access when only NEXT_PUBLIC_SENTRY_DSN is set.
@@ -15,7 +15,7 @@ if (!SENTRY_DSN || SENTRY_DSN.startsWith('YOUR_')) {
   tracesSampleRate: 1.0,
   release: process.env.SENTRY_RELEASE,
   environment: process.env.SENTRY_ENVIRONMENT,
-  integrations: [new Integrations.Http({ tracing: true })],
+  integrations: [new Http({ tracing: true })],
   beforeSend(event) {
     // Drop events without a meaningful exception message
     if (!event.exception?.values?.[0]?.value) {
