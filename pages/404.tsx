@@ -35,12 +35,12 @@ export default function Custom404() {
         />
         <Button type="submit" className="w-full">Search</Button>
       </form>
-        <Link
-          href="/"
-          className="mt-4 text-blue-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+        <Button
+          asChild
+          className="mt-4 text-blue-400 hover:text-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
         >
-          Return to Home
-        </Link>
+          <Link href="/">Go Home</Link>
+        </Button>
     </main>
   );
 }
