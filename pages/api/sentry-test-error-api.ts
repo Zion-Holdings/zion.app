@@ -7,11 +7,12 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    throw new Error('Sentry API Test Error - /api/sentry-test-error-api called');
+    // This will intentionally throw an error
+    throw new Error('Sentry Test API Error: This is a test error from the API route.');
   } catch (error) {
+    // Capture the error with Sentry
     Sentry.captureException(error);
-    // Ensure the error is also logged to the console for visibility during testing if Sentry DSN is not set
-    console.error("Sentry API Test Error:", error);
-    res.status(500).json({ error: 'Simulated server error occurred and was captured by Sentry.' });
+    // Respond with an error status
+    res.status(500).json({ error: 'Sentry Test API Error: An error was thrown and captured by Sentry.' });
   }
 }
