@@ -1,4 +1,4 @@
-const { withErrorLogging } = require('./withErrorLogging.cjs');
+const { withSentry } = require('./withSentry.cjs');
 const fs = require('fs');
 const path = require('path');
 
@@ -44,4 +44,4 @@ async function handler(req, res) {
   }
 }
 
-module.exports = withErrorLogging(handler);
+module.exports = withSentry(handler);

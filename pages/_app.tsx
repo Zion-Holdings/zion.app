@@ -16,6 +16,7 @@ import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import the new Error Boundary
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors'; // Import global error handler initializer
+import { Sentry } from '@/utils/sentry';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
@@ -24,6 +25,14 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   React.useEffect(() => {
     initializeGlobalErrorHandlers(); // Initialize global error handlers
+    Sentry.configureScope(scope => {
+      if (process.env.NEXT_PUBLIC_SENTRY_RELEASE) {
+        scope.setTag('release', process.env.NEXT_PUBLIC_SENTRY_RELEASE);
+      }
+      if (process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT) {
+        scope.setTag('environment', process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
+      }
+    });
   }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
