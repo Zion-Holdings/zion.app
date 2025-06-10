@@ -85,3 +85,31 @@ model TalentProfile {
   // user User @relation(fields: [user_id], references: [id])
   // For now, user_id is kept as String.
 }
+
+enum ErrorAnalysisStatus {
+  NEW
+  ANALYZED
+  FIX_SUGGESTED
+  REVIEWED
+  FIX_APPLIED
+  IGNORED
+}
+
+model ErrorAnalysisSuggestion {
+  id                String   @id @default(cuid())
+  error_signature   String   @unique
+  error_message     String
+  stack_trace       String   @db.Text // Use Text for potentially long strings
+  component_stack   String?  @db.Text
+  url               String
+  source            String   // e.g., 'GlobalErrorBoundary', 'window.onerror', 'logError'
+  user_agent        String?  @db.Text
+  codex_prompt      String?  @db.Text
+  codex_suggestion  String?  @db.Text
+  codex_model       String?
+  analysis_error    String?  @db.Text // For errors from the Codex script or analysis process
+  status            ErrorAnalysisStatus @default(NEW)
+  first_seen_at     DateTime @default(now())
+  last_seen_at      DateTime @updatedAt
+  occurrence_count  Int      @default(1)
+}

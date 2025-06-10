@@ -16,11 +16,16 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import the new Error Boundary
+import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors'; // Import global error handler initializer
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
+
+  React.useEffect(() => {
+    initializeGlobalErrorHandlers(); // Initialize global error handlers
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   React.useEffect(() => {
     const handleRouteChangeStart = (url: string) => {
