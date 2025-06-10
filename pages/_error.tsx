@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { getSupportEmail } from '../src/config/env';
 
 // Placeholder for Zion Tech Logo - replace with actual logo component or URL
 const ZionTechLogo = () => (
@@ -14,9 +15,9 @@ const ZionTechLogo = () => (
 
 // Placeholder for status page URL and support email - replace with actual values
 const STATUS_PAGE_URL = 'https://status.ziontech.com'; // Example URL
-const SUPPORT_EMAIL = 'support@ziontech.com'; // Example email
 
 const CustomErrorPage = ({ statusCode }: { statusCode?: number }) => {
+  const supportEmail = getSupportEmail();
   const handleReload = () => {
     if (typeof window !== 'undefined') {
       window.location.reload();
@@ -66,7 +67,7 @@ const CustomErrorPage = ({ statusCode }: { statusCode?: number }) => {
         </button>
         <div style={{ marginTop: '20px', fontSize: '0.9em', color: '#666' }}>
           <p>If the problem persists, please check our <a href={STATUS_PAGE_URL} target="_blank" rel="noopener noreferrer" style={{ color: '#007bff', textDecoration: 'underline' }}>status page</a>.</p>
-          <p>You can also contact our support team at <a href={`mailto:${SUPPORT_EMAIL}`} style={{ color: '#007bff', textDecoration: 'underline' }}>{SUPPORT_EMAIL}</a>.</p>
+          <p>You can also contact our support team at <a href={`mailto:${supportEmail}`} style={{ color: '#007bff', textDecoration: 'underline' }}>{supportEmail}</a>.</p>
         </div>
       </div>
     </>
