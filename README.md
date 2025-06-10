@@ -117,3 +117,13 @@ Performance metrics are logged to the file specified by `logFile` in `config.jso
 {"timestamp":"2023-10-27T10:00:05.456Z","url":"https://www.google.com","status":200,"responseTime":150,"memoryUsage":"N/A","error":null}
 ```
 Console logs provide real-time information about the service's operations, including when monitoring cycles start/end and when alerts are triggered.
+
+## Generating Test Logs
+
+For offline debugging you can run the test suite and capture the output by using the helper script `scripts/generate-tests-log.sh`.
+
+```bash
+bash scripts/generate-tests-log.sh
+```
+
+This creates timestamped log files in `logs/tests/` containing the console output and Jest JSON results.
