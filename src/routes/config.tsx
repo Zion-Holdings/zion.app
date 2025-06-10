@@ -89,7 +89,6 @@ import {
   MarketplaceRoutes, // Assuming MarketplaceRoutes is a group of routes
   TalentRoutes,      // Assuming TalentRoutes is a group of routes
   CommunityRoutes,   // Assuming CommunityRoutes is a group of routes
-  DeployRoutes,
 } from '.'; // Importing from the same directory (src/routes)
 
 export const primaryRoutes: AppRouteObject[] = guardRoutes([
@@ -206,7 +205,6 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
     metaTitle: 'International Proposals - Zion',
     requiresAuth: false,
   },
-  { path: '/deploy/*', element: <DeployRoutes /> },
   // Wildcard for error handling - ensure this is last
   { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },
 ]);
