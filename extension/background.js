@@ -32,7 +32,7 @@ async function askZionGPT(prompt) {
   }
 }
 
-chrome.runtime.onMessage.addListener((message, sender) => {
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (sender.id !== chrome.runtime.id) {
     const errorMessage =
       `Receiving message from unauthorized sender. ` +
@@ -40,24 +40,34 @@ chrome.runtime.onMessage.addListener((message, sender) => {
       `Extension ID: ${chrome.runtime.id}`;
     console.error(errorMessage);
     if (message.type === 'ask') {
-      return Promise.resolve({ error: 'Unauthorized sender' });
+      sendResponse({ error: 'Unauthorized sender' });
+      return true;
     }
-    return false; // No response expected for other message types when unauthorized
+    sendResponse({ error: 'Unauthorized sender' });
+    return true;
   }
 
   if (message.type === 'ask') {
-    return askZionGPT(message.prompt);
+    askZionGPT(message.prompt).then((res) => sendResponse(res));
+    return true;
   }
 
   if (message.type === 'post-job') {
     chrome.tabs.create({ url: `${BASE_URL}/jobs/new` });
+    sendResponse({ ok: true });
+    return true;
   }
   if (message.type === 'resume-search') {
     chrome.tabs.create({ url: `${BASE_URL}/talent` });
+    sendResponse({ ok: true });
+    return true;
   }
   if (message.type === 'view-notifications') {
     chrome.tabs.create({ url: `${BASE_URL}/notifications` });
+    sendResponse({ ok: true });
+    return true;
   }
 
-  return false;
+  sendResponse({ error: 'Unknown message type' });
+  return true;
 });
