@@ -18,11 +18,16 @@ Sentry.init({
   environment: process.env.SENTRY_ENVIRONMENT,
   integrations: [new Integrations.Http({ tracing: true })],
   beforeSend(event) {
-    const firstException = event?.exception?.values?.[0];
-    if (firstException && !firstException.value) {
+    if (!event.exception?.values?.[0]?.value) {
       return null;
     }
     return event;
+  },
+  initialScope: {
+    tags: {
+      SENTRY_RELEASE: process.env.SENTRY_RELEASE,
+      SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT,
+    },
   },
   // ...
   // Note: if you want to override the automatic release value, do not set a
