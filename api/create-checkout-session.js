@@ -1,5 +1,5 @@
 import Stripe from 'stripe';
-import { withErrorLogging } from './withErrorLogging.cjs';
+import { withSentry } from './withSentry.cjs';
 
 const PROD_DOMAIN = 'app.ziontechgroup.com';
 
@@ -89,4 +89,4 @@ async function handler(req, res) {
   }
 }
 
-export default withErrorLogging(handler);
+export default withSentry(handler);

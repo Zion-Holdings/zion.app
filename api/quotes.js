@@ -1,4 +1,4 @@
-const { withErrorLogging } = require('./withErrorLogging.cjs');
+const { withSentry } = require('./withSentry.cjs');
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -35,4 +35,4 @@ async function handler(req, res) {
     res.json({ error: err.message || 'Quote submission failed' });
   }
 }
-module.exports = withErrorLogging(handler);
+module.exports = withSentry(handler);

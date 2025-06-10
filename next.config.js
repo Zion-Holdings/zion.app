@@ -2,6 +2,10 @@ const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    NEXT_PUBLIC_SENTRY_RELEASE: process.env.SENTRY_RELEASE,
+    NEXT_PUBLIC_SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT,
+  },
   images: {
     unoptimized: true,
   },
