@@ -60,6 +60,8 @@ const sentryWebpackPluginOptions = {
   //   urlPrefix, include, ignore
 
   silent: true, // Suppresses all logs
+  hideSourceMaps: true,
+  autoInstrumentServerFunctions: true,
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options
 };
@@ -70,26 +72,11 @@ const sentryOptions = {
   // For all available options, see:
   // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
   sentry: {
-    // Hides source maps from a browser console when devtools are open.
-    // This prevents end users from seeing your source code.
-    // Note: This option is deprecated and will be removed in the next major release.
-    // Use the `hiddenSourceMaps` option in the Sentry Webpack Plugin options directly instead.
-    // hideSourceMaps: true, // Deprecated, will use hiddenSourceMaps in sentryWebpackPluginOptions if needed
-
     // Enables automatic instrumentation of Vercel Cron Monitors.
     // See the following for more information:
     // https://docs.sentry.io/ zowel মনিটরিং/crons/
     // https://vercel.com/docs/cron-jobs
     // autoInstrumentCronMonitor: true, // Example, if you use Vercel Crons
-
-    // Enables automatic instrumentation of server functions.
-    // This flag is deprecated and will be removed in the next major release.
-    // Use the `autoInstrumentServerFunctions` option in the Sentry Webpack Plugin options directly instead.
-    autoInstrumentServerFunctions: true, // As requested
-
-    // Ensures that source maps are not publicly accessible
-    // This is the new recommended way.
-    hideSourceMaps: true,
 
     // Transpiles SDK to be compatible with IE11 (increases bundle size)
     // transpileClientSDK: false,
@@ -98,10 +85,6 @@ const sentryOptions = {
     // This can increase your server load as well as your hosting bill.
     // Note: Check that the configured route will not match with your Next.js pages and API routes.
     // tunnelRoute: "/monitoring",
-
-    // Hides source maps from browsers and ships them to Sentry.
-    // This is the new recommended way to manage source maps.
-    // hiddenSourceMaps: true, // This is now preferred over sentry.hideSourceMaps
 
     // Automatically tree-shake Sentry logger statements to reduce bundle size
     // disableLogger: true,
