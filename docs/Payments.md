@@ -18,7 +18,11 @@ To redirect customers to Stripe Checkout in test mode:
 import { loadStripe } from '@stripe/stripe-js';
 
 // Use the publishable test key so no live charges occur
-const stripe = await loadStripe(import.meta.env.STRIPE_TEST_KEY);
+// Disable advanced fraud signals to avoid "Access to storage is not allowed"
+// errors when the app runs in an iframe or other restricted context.
+const stripe = await loadStripe(import.meta.env.STRIPE_TEST_KEY, {
+  advancedFraudSignals: false
+});
 
 // Request a Checkout Session from your backend
 const session = await axios.post('/payments/create-session', { priceId });
