@@ -13,8 +13,8 @@ function handleGlobalError(
   let message: string;
   let stack: string | undefined;
   let filename: string | undefined = sourceUrl;
-  letlineNumber: number | undefined = lineno;
-  letcolNumber: number | undefined = colno;
+  let lineNumber: number | undefined = lineno;
+  let colNumber: number | undefined = colno;
 
   if (error) { // Prefer error object if available
     message = error.message;
