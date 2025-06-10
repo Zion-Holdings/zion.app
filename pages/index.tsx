@@ -38,7 +38,7 @@ const IndexPage: React.FC<HomePageProps> = (props) => {
           <ErrorBanner msg="Failed to load home page." />
         </div>
       )}
-      <Home {...props} />
+      <Home />
     </>
   );
 };
