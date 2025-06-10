@@ -1,6 +1,6 @@
 [build]
   # Use `npm ci` for deterministic installs
-  command = "npm ci && npm run build && curl -sf $DEPLOY_PRIME_URL/api/health | grep '\"status\":\"ok\"'"
+  command = "npm ci && npm run build && (n=0; until [ $n -ge 3 ]; do curl -sf --connect-timeout 10 $DEPLOY_PRIME_URL/api/health | grep '\"status\":\"ok\"' && break; n=$((n+1)); echo "Health check attempt $n failed, retrying in 15s..."; sleep 15; done; if [ $n -ge 3 ]; then echo "Health check failed after 3 attempts." && exit 1; fi)"
   publish = ".next"
 
 [build.environment]
