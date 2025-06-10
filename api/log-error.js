@@ -22,15 +22,30 @@ function generateErrorSignature(errorDetails) {
 
 function formulateCodexPrompt(errorDetails, signature) {
   const { message, stack, componentStack, url, source, timestamp } = errorDetails;
-  let prompt = `Analyze the following JavaScript error and provide a potential fix:\n\n`;
+  let prompt = `Analyze the following JavaScript error and provide a potential fix.\n`;
   prompt += `Error Signature: ${signature}\n`;
-  prompt += `Source: ${source}\n`;
+  prompt += `Source: ${source || 'N/A'}\n`;
   prompt += `URL: ${url || 'N/A'}\n`;
-  prompt += `Timestamp: ${timestamp}\n\n`;
+  prompt += `Timestamp: ${new Date(timestamp).toISOString()}\n\n`;
   prompt += `Error Message: ${message}\n\n`;
-  if (stack) prompt += `Stack Trace:\n${stack}\n\n`;
-  if (componentStack) prompt += `Component Stack:\n${componentStack}\n\n`;
-  prompt += `Please provide a concise explanation of the likely cause and a code snippet for a suggested fix if applicable.`;
+
+  if (stack) {
+    prompt += `Stack Trace:\n${stack}\n\n`;
+  } else {
+    prompt += `Stack Trace: N/A\n\n`;
+  }
+
+  if (componentStack) {
+    prompt += `Component Stack:\n${componentStack}\n\n`;
+  } else {
+    prompt += `Component Stack: N/A\n\n`;
+  }
+
+  prompt += `Please provide your analysis as a JSON object with the following fields:\n`;
+  prompt += `- "explanation": (string) A concise explanation of the likely cause of this error.\n`;
+  prompt += `- "suggestedFixCode": (string) A code snippet for the suggested fix. If no specific code fix is applicable, provide a general approach.\n`;
+  prompt += `- "impactAssessment": (string) A brief assessment of potential side effects of the suggested fix, or areas that need careful testing.\n\n`;
+  prompt += `Return ONLY the JSON object.`;
   return prompt;
 }
 
@@ -147,34 +162,46 @@ async function handler(req, res) {
         }
 
         console.log(`Codex script STDOUT (ID: ${dbRecordId}, first 100 chars): ${stdout.substring(0, 100)}...`);
-        let scriptOutput;
+        let parsedOutput;
         try {
-          scriptOutput = JSON.parse(stdout); // Expecting JSON success structure
-          if (!scriptOutput.success) throw new Error(scriptOutput.error || "Script reported failure without error message.");
+          parsedOutput = JSON.parse(stdout);
+
+          // Validate required fields
+          if (!parsedOutput.explanation || !parsedOutput.suggestedFixCode || !parsedOutput.impactAssessment) {
+            const missingFields = ['explanation', 'suggestedFixCode', 'impactAssessment'].filter(f => !parsedOutput[f]);
+            // Ensure model is checked if it's considered mandatory, or handle its absence gracefully later
+            // For now, only validating the core three.
+            throw new Error(`Missing required fields in Codex output: ${missingFields.join(', ')}`);
+          }
+
         } catch (parseError) {
-          console.error(`Failed to parse stdout JSON from Codex script (ID: ${dbRecordId}): ${parseError.message}`, { stdout });
+          console.error(`Failed to parse or validate stdout JSON from Codex script (ID: ${dbRecordId}): ${parseError.message}`, { stdoutPreview: stdout.substring(0,1000) });
           await prisma.errorAnalysisSuggestion.update({
             where: { id: dbRecordId },
             data: {
               codex_prompt: formulatedPrompt,
-              analysis_error: `Failed to parse script output: ${parseError.message}. Output: ${stdout.substring(0,1000)}`,
+              analysis_error: `Failed to parse or validate script output: ${parseError.message}. Output preview: ${stdout.substring(0,1000)}`,
               status: ErrorAnalysisStatus.ANALYZED,
             },
           });
           return;
         }
 
+        // If parsing and validation succeeded
         await prisma.errorAnalysisSuggestion.update({
           where: { id: dbRecordId },
           data: {
             codex_prompt: formulatedPrompt,
-            codex_suggestion: scriptOutput.suggestion,
-            codex_model: scriptOutput.model,
+            codex_explanation: parsedOutput.explanation,
+            codex_suggested_fix_code: parsedOutput.suggestedFixCode,
+            codex_impact_assessment: parsedOutput.impactAssessment,
+            codex_suggestion: parsedOutput.suggestedFixCode, // Populating old field as per instruction
+            codex_model: parsedOutput.model, // Assuming model is still part of the output, will be null if not
             status: ErrorAnalysisStatus.FIX_SUGGESTED,
             analysis_error: null,
           },
         });
-        console.log(`Successfully processed and stored Codex suggestion for ID: ${dbRecordId}`);
+        console.log(`Successfully processed and stored structured Codex suggestion for ID: ${dbRecordId}`);
 
       } catch (dbUpdateError) {
         console.error(`Failed to update DB record ${dbRecordId} after Codex script execution:`, dbUpdateError);
