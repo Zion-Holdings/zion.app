@@ -9,6 +9,7 @@
     "dev": "vite",
     "generate": "prisma generate",
     "build": "NODE_ENV=production npx next build",
+    "start": "npx next start",
     "deploy:ipfs": "node scripts/deploy-zion-ipfs.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",

@@ -18,29 +18,41 @@ function getServiceName(endpointName: string): string | null {
 }
 
 async function restartService(serviceName: string): Promise<void> {
-  // IMPORTANT: This is a placeholder. Actual commands depend on deployment (PM2, Docker, etc.)
-  // We'll try a PM2 restart command as a common example.
+  // IMPORTANT: This function's ability to restart services depends on the deployment strategy.
+  // For K8s-managed services like 'nextjs-service', a direct restart command from here is usually not appropriate.
+  // Kubernetes handles restarts via liveness probes.
+  // This function might be relevant for other services managed by PM2 on the same host as this monitor.
+
+  if (serviceName === 'nextjs-service') {
+    const message = `High latency detected for '${serviceName}'. This service is Kubernetes managed. Kubernetes liveness probes should handle restarts if the app becomes unresponsive. Manual investigation for persistent high latency is advised.`;
+    logger.info(message);
+    // Optionally, send a specific alert/event indicating K8s service needs attention for latency.
+    // For now, we just log and don't attempt a PM2 restart.
+    return Promise.resolve(); // Indicate successful handling (no action needed here)
+  }
+
+  // If serviceName is not 'nextjs-service', proceed with existing PM2 logic (if any other services use it)
+  // Ensure this part is relevant for your environment.
   const command = `pm2 restart ${serviceName}`;
-  logger.info(`Attempting to restart service: '${serviceName}' with command: '${command}'`);
+  logger.info(`Attempting to restart (PM2) service: '${serviceName}' with command: '${command}' (This should only apply to non-K8s services).`);
 
   return new Promise((resolve, reject) => {
     exec(command, (error, stdout, stderr) => {
       if (error) {
-        logger.error(`Failed to restart service '${serviceName}'. Error: ${error.message}`, { stdout, stderr });
+        logger.error(`Failed to restart (PM2) service '${serviceName}'. Error: ${error.message}`, { stdout, stderr });
         reject(error);
         return;
       }
       if (stderr) {
-        logger.warn(`Service restart for '${serviceName}' produced stderr: ${stderr}`, { stdout });
-        // Still resolve if stderr is present but no actual error code, as some tools output to stderr for info
+        logger.warn(`Service (PM2) restart for '${serviceName}' produced stderr: ${stderr}`, { stdout });
       }
-      logger.info(`Service '${serviceName}' restart command executed. Output: ${stdout}`);
+      logger.info(`Service (PM2) '${serviceName}' restart command executed. Output: ${stdout}`);
       resolve();
     });
   });
 }
 
-async function sendWebhookNotification(result: EndpointTestResult): Promise<void> {
+async function sendWebhookNotification(result: EndpointTestResult, messageSuffix: string = "Attempting service restart... (if applicable)"): Promise<void> {
   if (!ALERT_WEBHOOK_URL) {
     logger.warn('ALERT_WEBHOOK_URL is not set. Skipping webhook notification.');
     return;
@@ -53,7 +65,7 @@ Method: \`${result.method}\`
 Latency: \`${result.latencyMs}ms\` (Threshold: \`${ALERT_THRESHOLD_MS}ms\`)
 Status: \`${result.status}\`
 Timestamp: \`${result.timestamp}\`
-Attempting service restart... (if applicable)`,
+${messageSuffix}`, // Use the dynamic message suffix
     // Add more structured data if your webhook receiver supports it (e.g., Slack blocks)
   };
 
@@ -86,20 +98,27 @@ export async function triggerAlerts(result: EndpointTestResult): Promise<void> {
   if (result.latencyMs > ALERT_THRESHOLD_MS) {
     logger.warn(`High latency detected for ${result.name} (${result.url}): ${result.latencyMs}ms. Triggering alerts.`);
 
-    // 1. Send Webhook Notification (send this first, so team is aware before/during restart)
-    await sendWebhookNotification(result);
-
-    // 2. Attempt to Restart Service
     const serviceName = getServiceName(result.name);
-    if (serviceName) {
+    let webhookMessageSuffix: string;
+
+    if (serviceName === 'nextjs-service') {
+      webhookMessageSuffix = "Service is K8s managed. Kubernetes handles restarts. Manual investigation advised for persistent high latency.";
+      await sendWebhookNotification(result, webhookMessageSuffix);
+      // No automatic restart for nextjs-service from here
+      logger.info(`High latency alert for K8s managed service '${serviceName}'. No automatic restart attempted from monitor.`);
+    } else if (serviceName) {
+      webhookMessageSuffix = `Attempting PM2 service restart for ${serviceName}...`;
+      await sendWebhookNotification(result, webhookMessageSuffix);
       try {
-        await restartService(serviceName);
-        logger.info(`Service restart process initiated for ${serviceName} due to high latency on ${result.name}.`);
+        await restartService(serviceName); // This will now only run for non-nextjs-service
+        logger.info(`PM2 Service restart process initiated for ${serviceName} due to high latency on ${result.name}.`);
       } catch (restartError) {
-        logger.error(`Service restart attempt failed for ${serviceName}.`, restartError);
+        logger.error(`PM2 Service restart attempt failed for ${serviceName}.`, restartError);
         // Optionally send another webhook if restart fails critically
       }
     } else {
+      webhookMessageSuffix = "No specific service restart action defined for this endpoint.";
+      await sendWebhookNotification(result, webhookMessageSuffix);
       logger.warn(`No service mapping found for endpoint '${result.name}'. Cannot attempt restart.`);
     }
   }
