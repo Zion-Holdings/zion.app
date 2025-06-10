@@ -1,3 +1,6 @@
+const { EventEmitter } = require('events');
+EventEmitter.defaultMaxListeners = 20;
+
 const app = require('./app');
 const PORT = process.env.PORT || 3001;
 
