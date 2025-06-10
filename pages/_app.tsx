@@ -17,6 +17,7 @@ import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import * as Sentry from '@sentry/nextjs';
+import { captureException } from '@/utils/sentry';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
@@ -32,7 +33,7 @@ class AppErrorBoundary extends React.Component<{ children: React.ReactNode }, { 
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    Sentry.captureException(error, { extra: errorInfo });
+    captureException(error, { extra: errorInfo });
   }
 
   render() {
