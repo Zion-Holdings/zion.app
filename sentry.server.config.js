@@ -1,7 +1,13 @@
 // Filename: sentry.server.config.js
 import * as Sentry from "@sentry/nextjs";
 
-const SENTRY_DSN = process.env.SENTRY_DSN;
+// Allow the DSN to come from either server or client env vars so that
+// serverless functions have access when only NEXT_PUBLIC_SENTRY_DSN is set.
+const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
+
+if (!SENTRY_DSN) {
+  console.warn("Sentry DSN is not defined; Sentry will not capture errors.");
+}
 
 Sentry.init({
   dsn: SENTRY_DSN,
