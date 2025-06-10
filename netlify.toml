@@ -10,6 +10,9 @@
   NEXT_PUBLIC_SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY" # Replace with your actual Supabase key
   NEXT_PUBLIC_REOWN_PROJECT_ID = "VALID_PROJECT_ID_PLACEHOLDER" # IMPORTANT: Replace with your actual Reown AppKit Project ID
   EXAMPLE_API_URL = "https://jsonplaceholder.typicode.com/todos/1"
+  # Sentry DSN variables must be provided so Netlify Functions can access them
+  NEXT_PUBLIC_SENTRY_DSN = "YOUR_NEXT_PUBLIC_SENTRY_DSN" # Replace with your actual DSN
+  SENTRY_DSN = "YOUR_SENTRY_DSN" # Replace with your actual DSN
   # Sentry DSNs are intentionally exposed in client bundles. Exclude them from
   # Netlify's secrets scanning to prevent false positives during deploys.
   SECRETS_SCAN_OMIT_KEYS = "SENTRY_DSN,NEXT_PUBLIC_SENTRY_DSN"
