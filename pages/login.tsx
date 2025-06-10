@@ -17,15 +17,14 @@ export default function Login() {
         body: JSON.stringify({ email, password }),
       });
       if (!res.ok) {
-        const msg = await res.text();
-        throw new Error(msg || 'Login failed');
+        const text = await res.text();
+        throw new Error(text || `HTTP ${res.status}`);
       }
       window.location.href = '/';
     } catch (err: any) {
       Sentry.captureException(err);
-      const msg = err?.message || 'Login failed';
-      toast.error(msg);
-      setError(msg);
+      toast.error(err.message);
+      setError(err.message);
     }
   };
 
