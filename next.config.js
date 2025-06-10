@@ -52,6 +52,8 @@ const nextConfig = {
   },
 };
 
+const isNetlify = process.env.NETLIFY === 'true';
+
 const sentryWebpackPluginOptions = {
   // Additional config options for the Sentry Webpack plugin. Keep in mind that
   // the following options are set automatically, and overriding them is not
@@ -62,6 +64,8 @@ const sentryWebpackPluginOptions = {
   silent: true, // Suppresses all logs
   hideSourceMaps: true,
   autoInstrumentServerFunctions: true,
+  // Netlify's serverless functions don't need the server webpack plugin.
+  disableServerWebpackPlugin: isNetlify,
   // For all available options, see:
   // https://github.com/getsentry/sentry-webpack-plugin#options
 };
