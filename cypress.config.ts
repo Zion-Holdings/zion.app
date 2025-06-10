@@ -6,4 +6,9 @@ export default defineConfig({
     supportFile: 'cypress/support/e2e.ts',
     experimentalModifyObstructiveThirdPartyCode: true,
   },
+  reporter: 'junit',
+  reporterOptions: {
+    mochaFile: 'cypress/results/junit-[hash].xml',
+    toConsole: true,
+  },
 });
