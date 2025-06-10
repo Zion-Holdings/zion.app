@@ -45,6 +45,7 @@
     "@helia/unixfs": "^5.0.3",
     "@hello-pangea/dnd": "^18.0.1",
     "@hookform/resolvers": "^5.0.1",
+    "@chakra-ui/react": "^2.8.2",
     "@libp2p/identify": "^3.0.33",
     "@libp2p/tcp": "^10.1.14",
     "@orbitdb/core": "^3.0.2",

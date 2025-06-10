@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import * as Sentry from '@sentry/nextjs';
+import { Alert, AlertIcon, AlertDescription } from '@chakra-ui/react';
 import { forgotPassword } from '@/services/auth';
+import { toast } from '@/hooks/use-toast';
+import * as Sentry from '@sentry/nextjs';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -16,9 +20,14 @@ const ForgotPassword = () => {
 
     try {
       await forgotPassword(email);
-      setMessage('If your email address is registered, you will receive a password reset link shortly.');
+      setMessage(
+        'If your email address is registered, you will receive a password reset link shortly.'
+      );
     } catch (err: any) {
-      setError(err.message || 'Failed to send reset link. Please try again.');
+      Sentry.captureException(err);
+      const errorMessage = err?.response?.data?.message || err.message || 'Failed to send reset link. Please try again.';
+      setError(errorMessage);
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -44,7 +53,12 @@ const ForgotPassword = () => {
         </button>
       </form>
       {message && <p style={{ color: 'green' }}>{message}</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && (
+        <Alert status="error" mt={4}>
+          <AlertIcon />
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
       <p>
         Remember your password? <Link href="/login">Login</Link>
       </p>

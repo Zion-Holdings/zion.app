@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
     Sentry.setTag('route', router.pathname);
     Sentry.setContext('query', router.query as Record<string, unknown>);
-  }, [router.pathname, router.query]);
+  }, [router.pathname]);
 
   return (
     <AppErrorBoundary>
