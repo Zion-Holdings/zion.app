@@ -11,7 +11,11 @@ export default function handler(
 ) {
   if (req.method === 'GET') {
     try {
-      const version = process.env.NEXT_PUBLIC_APP_VERSION || "unknown";
+      let version = process.env.NEXT_PUBLIC_APP_VERSION;
+      if (!version) {
+        version = "unknown";
+        console.warn("Application version not set. Defaulting to 'unknown'.");
+      }
       res.status(200).json({ status: 'ok', version });
     } catch (error) {
       console.error('Failed to retrieve version information:', error);
