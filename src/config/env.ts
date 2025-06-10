@@ -13,3 +13,14 @@ export const getAppKitProjectId = (): string => {
   console.warn("Warning: NEXT_PUBLIC_REOWN_PROJECT_ID is not set or is a placeholder. Using fallback.");
   return 'YOUR_DEFAULT_PROJECT_ID_FALLBACK'; // Or consider throwing an error
 };
+
+export const getSupportEmail = (): string => {
+  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL;
+
+  if (supportEmail && supportEmail !== 'YOUR_SUPPORT_EMAIL_ENV_MISSING' && supportEmail !== 'YOUR_SUPPORT_EMAIL_FALLBACK') {
+    return supportEmail;
+  }
+
+  console.warn("Warning: NEXT_PUBLIC_SUPPORT_EMAIL is not set or is a placeholder. Using fallback 'support@example.com'.");
+  return 'support@example.com';
+};
