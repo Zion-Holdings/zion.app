@@ -1,3 +1,4 @@
 node_modules/
 performance.log
 package-lock.json
+logs/tests/
