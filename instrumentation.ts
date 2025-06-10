@@ -13,3 +13,7 @@ export function register() {
     environment: process.env.SENTRY_ENVIRONMENT,
   });
 }
+
+export function onRequestError(error: unknown) {
+  Sentry.captureRequestError(error);
+}
