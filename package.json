@@ -119,9 +119,11 @@
     "next": "^15.3.3",
     "next-auth": "^4.24.11",
     "next-transpile-modules": "^10.0.0",
+    "node-cron": "^3.0.3",
     "node-fetch": "^2.7.0",
     "normalize.css": "^8.0.1",
     "notistack": "^3.0.0",
+    "pidusage": "^4.0.1",
     "react": "~18.3.1",
     "react-day-picker": "^8.10.0",
     "react-dom": "~18.3.1",
@@ -146,8 +148,7 @@
     "validator": "^13.9.0",
     "vaul": "^1.1.2",
     "yup": "^1.2.0",
-    "zod": "^3.23.8",
-    "node-cron": "^3.0.3"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@axe-core/react": "^4.8.2",
@@ -183,9 +184,6 @@
     "cors": "^2.8.5",
     "cypress": "^14.4.0",
     "cypress-real-events": "^1.12.0",
-    "cors": "^2.8.5",
-    "express-rate-limit": "^7.0.0",
-    "helmet": "^7.0.0",
     "electron": "^36.4.0",
     "eslint": "^9.28.0",
     "eslint-config-next": "^15.3.3",
@@ -242,5 +240,22 @@
   },
   "engines": {
     "node": ">=20"
-  }
+  },
+  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/ziontechgroup.com/deploy-status)](https://app.netlify.com/sites/ziontechgroup.com/deploys)",
+  "main": "babel.config.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zion-Holdings/zion.app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zion-Holdings/zion.app/issues"
+  },
+  "homepage": "https://github.com/Zion-Holdings/zion.app#readme"
 }
