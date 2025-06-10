@@ -19,3 +19,6 @@
 
 [functions.environment]
   SENTRY_LOG_LEVEL = "debug"
+
+[functions.sentryDsnCheckCron]
+  schedule = "@daily"
