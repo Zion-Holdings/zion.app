@@ -112,4 +112,19 @@ app.command('/zion-rollback', async ({ ack, respond }: { ack: SlackAck, respond:
   await app.start(port);
 })();
 
+// Add this function either inside MockApp or as an exported function
+async function sendSlackAlert(message: string): Promise<void> {
+  // Safely log without direct console reference
+  const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
+  if (safeConsole && safeConsole.log) {
+    safeConsole.log(`SLACK_ALERT: ${message}`);
+  }
+  // In a real scenario, this would use the Slack API to send a message
+  // For example: await app.client.chat.postMessage({ channel: '#alerts', text: message });
+  return Promise.resolve();
+}
+
+// Export it if it's standalone, or ensure it can be called
+export { sendSlackAlert }; // If standalone
+
 export default app;
