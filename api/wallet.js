@@ -1,4 +1,4 @@
-const { withErrorLogging } = require('./withErrorLogging.cjs');
+const { withSentry } = require('./withSentry.cjs');
 
 async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -19,4 +19,4 @@ async function handler(req, res) {
   }
 }
 
-module.exports = withErrorLogging(handler);
+module.exports = withSentry(handler);
