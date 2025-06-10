@@ -1,4 +1,9 @@
 describe('add to cart', () => {
+  beforeEach(() => {
+    // Clear the cart from localStorage before each test
+    window.localStorage.removeItem('cart');
+  });
+
   it('stores item in local storage', () => {
     cy.visit('/equipment/pro-camera-x1000');
     // The deployed site can take a moment to load, so wait up to 10s
