@@ -4,6 +4,9 @@ import fs from 'fs';
 import path from 'path';
 import { sendEmailWithSendGrid } from '../src/lib/email';
 
+// This route uses the official Stripe Node.js SDK for server-to-server communication.
+// The getStripe() client-side helper (from src/utils/getStripe.ts) and its
+// advancedFraudSignals option are not applicable to this server-side implementation.
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
   apiVersion: '2023-10-16',
 });

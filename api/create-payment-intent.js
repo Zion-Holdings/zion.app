@@ -39,6 +39,9 @@ async function handler(req, res) {
       throw new Error('Refusing to use live Stripe key on non-production domain');
     }
 
+// This route uses the official Stripe Node.js SDK for server-to-server communication.
+// The getStripe() client-side helper (from src/utils/getStripe.ts) and its
+// advancedFraudSignals option are not applicable to this server-side implementation.
     const stripe = new Stripe(isProdDomain() ? liveKey : testKey, {
       apiVersion: '2023-10-16',
     });
