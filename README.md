@@ -10,6 +10,9 @@ This Node.js service monitors specified frontend pages and backend endpoints, re
 - Triggers a customizable shell script (`optimize.sh`) when performance degradation is detected.
 - Logs metrics to a local file (`performance.log` by default).
 
+## Monitoring and Automation
+- [Configuration File Integrity Monitoring](./docs/config_integrity_monitoring.md)
+
 ## Project Structure
 
 ```
