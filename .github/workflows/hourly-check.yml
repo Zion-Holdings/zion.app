@@ -1,16 +1,34 @@
-name: Hourly NPM Audit
+name: Hourly Dependency Check and Audit
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 * * * *' # Runs at the start of every hour
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
-  hourly-check:
+  dependency-check-and-audit:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to push branches
     steps:
-      - uses: actions/checkout@v3
-      - run: npm install
-      - run: npm audit --json > audit.json
-      - run: npm audit fix --force
-      - run: npm run test
-      - run: eslint . --fix
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required for git history to create new branches
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x' # Specify a Node.js version
+          cache: 'npm' # Enable caching for npm dependencies
+
+      - name: Install dependencies (clean install)
+        run: npm ci
+
+      - name: Make audit script executable
+        run: chmod +x ./scripts/hourly-npm-audit.sh
+
+      - name: Run hourly npm audit and update script
+        env:
+          WEBHOOK_URL: ${{ secrets.MAINTENANCE_WEBHOOK_URL }} # Pass webhook URL as env variable
+        run: ./scripts/hourly-npm-audit.sh
