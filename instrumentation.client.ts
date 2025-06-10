@@ -3,6 +3,10 @@ import { Integrations } from "@sentry/tracing";
 
 export function register() {
   const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN;
+  if (!SENTRY_DSN || SENTRY_DSN.startsWith('YOUR_')) {
+    console.warn('Sentry DSN is missing or placeholder; skipping Sentry initialization.');
+    return;
+  }
   Sentry.init({
     dsn: SENTRY_DSN,
     tracesSampleRate: 1.0,
