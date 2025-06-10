@@ -3,6 +3,7 @@ import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 // Removed: import { useNavigate, useLocation } from 'react-router-dom';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 import { logError } from '@/utils/logError';
+// Removed sendErrorToBackend import as it's no longer directly used.
 
 function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   // Removed: const navigate = useNavigate();
@@ -47,7 +48,19 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
     // You might want to get pathname via window.location.pathname if this is purely client-side,
     // or pass it down as a prop if needed from a Next.js context.
     // For now, removing the route from this specific log call.
-    logError(error, { route: typeof window !== 'undefined' ? window.location.pathname : 'Unknown route (SSR/SSG)', componentStack: info.componentStack });
+    // logError will also call sendErrorToBackend with source: 'logError'
+    // The componentStack from React's ErrorInfo is passed to logError,
+    // which then passes it to Sentry and to sendErrorToBackend.
+    logError(error, {
+      route: typeof window !== 'undefined' ? window.location.pathname : 'Unknown route (SSR/SSG)',
+      componentStack: info.componentStack,
+      // Add a clear source indicator for errors caught by GlobalErrorBoundary,
+      // this will be part of the 'context' in logError.
+      errorSourceContext: 'GlobalErrorBoundaryHandler'
+    });
+
+    // The direct call to sendErrorToBackend has been removed.
+    // logError now handles sending the report to the custom backend.
 
     try {
       const enqueueSnackbar = getEnqueueSnackbar();
