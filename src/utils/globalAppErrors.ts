@@ -1,4 +1,5 @@
 import { sendErrorToBackend } from './customErrorReporter';
+import { captureException } from './sentry';
 
 let handlersInitialized = false;
 
@@ -41,6 +42,26 @@ function handleGlobalError(
   sendErrorToBackend(errorDetails).catch(err => {
     console.error('Error sending window.onerror report to backend:', err);
   });
+
+  try {
+    const sentryContext = {
+      extra: {
+        sourceUrl: sourceUrl,
+        lineno: lineno,
+        colno: colno,
+        errorObj: error, // The original error object if available
+        sourceEventOrMessage: eventOrMessage // The original first argument to onerror
+      }
+    };
+    if (error) {
+      captureException(error, sentryContext);
+    } else {
+      // If no error object, create one for Sentry
+      captureException(new Error(typeof eventOrMessage === 'string' ? eventOrMessage : 'Global onerror event'), sentryContext);
+    }
+  } catch (sentryErr) {
+    console.error('Failed to report global error to Sentry:', sentryErr);
+  }
 }
 
 // Handler for window.onunhandledrejection
@@ -96,6 +117,22 @@ function handleUnhandledRejection(event: PromiseRejectionEvent): void {
   sendErrorToBackend(errorDetails).catch(err => {
     console.error('Error sending unhandledrejection report to backend:', err);
   });
+
+  try {
+    const sentryContext = {
+      extra: {
+        rejectionReason: event.reason, // The original reason
+      }
+    };
+    if (event.reason instanceof Error) {
+      captureException(event.reason, sentryContext);
+    } else {
+      // If reason is not an Error, create one for Sentry
+      captureException(new Error(typeof event.reason === 'string' ? event.reason : 'Unhandled promise rejection with non-Error reason'), sentryContext);
+    }
+  } catch (sentryErr) {
+    console.error('Failed to report unhandled rejection to Sentry:', sentryErr);
+  }
 }
 
 export function initializeGlobalErrorHandlers(): void {
