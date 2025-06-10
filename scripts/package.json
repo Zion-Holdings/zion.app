@@ -1,9 +1,11 @@
 {
-  "name": "icon-scripts",
+  "name": "codex-scripts",
   "version": "1.0.0",
-  "description": "Helper scripts for the project",
+  "description": "Scripts for Codex integration",
+  "type": "module",
   "private": true,
   "dependencies": {
+    "@octokit/rest": "^20.0.0",
     "axios": "^1.6.0",
     "glob": "^7.2.0",
     "os-utils": "^0.0.14",
