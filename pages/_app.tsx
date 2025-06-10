@@ -1,4 +1,6 @@
 import React from 'react';
+import { useRouter } from 'next/router';
+import { Sentry } from '@/utils/sentry';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { HelmetProvider } from 'react-helmet-async';
@@ -15,12 +17,14 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import the new Error Boundary
+import * as Sentry from '@sentry/nextjs';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors'; // Import global error handler initializer
 import { Sentry } from '@/utils/sentry';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   const [queryClient] = React.useState(() => new QueryClient());
 
   React.useEffect(() => {
@@ -35,33 +39,41 @@ function MyApp({ Component, pageProps }: AppProps) {
     });
   }, []); // Empty dependency array ensures this runs only once on mount
 
+  React.useEffect(() => {
+    Sentry.setTag('route', router.pathname);
+    Sentry.setContext('query', router.query as Record<string, unknown>);
+  }, [router.pathname, router.query]);
+
   return (
-    <GlobalErrorBoundary> {/* Wrap the entire application with CustomErrorBoundary */}
-      <QueryClientProvider client={queryClient}>
-        <ReduxProvider store={store}>
-          <HelmetProvider>
-            <ClientBrowserRouter> {/* Add ClientBrowserRouter here */}
-            <RouterWrapper>
-              <AuthProvider>
-                <WhitelabelProvider>
-                  <I18nextProvider i18n={i18n}>
-                    <WalletProvider>
-                      <CartProvider>
-                        <AnalyticsProvider>
-                          <Component {...pageProps} />
-                        </AnalyticsProvider>
-                        <Toaster />
-                      </CartProvider>
-                    </WalletProvider>
-                  </I18nextProvider>
-                </WhitelabelProvider>
-              </AuthProvider>
-            </RouterWrapper>
-          </ClientBrowserRouter> {/* Close ClientBrowserRouter here */}
-        </HelmetProvider>
-      </ReduxProvider>
-    </QueryClientProvider>
-    </GlobalErrorBoundary>
+    <Sentry.ErrorBoundary fallback={<div>Something went wrong.</div>}>
+      <GlobalErrorBoundary>
+        {/* Wrap the entire application with CustomErrorBoundary */}
+        <QueryClientProvider client={queryClient}>
+          <ReduxProvider store={store}>
+            <HelmetProvider>
+              <ClientBrowserRouter> {/* Add ClientBrowserRouter here */}
+              <RouterWrapper>
+                <AuthProvider>
+                  <WhitelabelProvider>
+                    <I18nextProvider i18n={i18n}>
+                      <WalletProvider>
+                        <CartProvider>
+                          <AnalyticsProvider>
+                            <Component {...pageProps} />
+                          </AnalyticsProvider>
+                          <Toaster />
+                        </CartProvider>
+                      </WalletProvider>
+                    </I18nextProvider>
+                  </WhitelabelProvider>
+                </AuthProvider>
+              </RouterWrapper>
+            </ClientBrowserRouter> {/* Close ClientBrowserRouter here */}
+          </HelmetProvider>
+        </ReduxProvider>
+        </QueryClientProvider>
+      </GlobalErrorBoundary>
+    </Sentry.ErrorBoundary>
   );
 }
 
