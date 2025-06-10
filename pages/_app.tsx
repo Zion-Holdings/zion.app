@@ -1,6 +1,5 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Sentry } from '@/utils/sentry';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { HelmetProvider } from 'react-helmet-async';
@@ -19,7 +18,6 @@ import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary'; // Import the new Error Boundary
 import * as Sentry from '@sentry/nextjs';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors'; // Import global error handler initializer
-import { Sentry } from '@/utils/sentry';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
@@ -42,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
     Sentry.setTag('route', router.pathname);
     Sentry.setContext('query', router.query as Record<string, unknown>);
-  }, [router.pathname, router.query]);
+  }, [router.pathname]);
 
   return (
     <Sentry.ErrorBoundary fallback={<div>Something went wrong.</div>}>
