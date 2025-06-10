@@ -1,12 +1,17 @@
-import * as Sentry from '@sentry/nextjs';
+// Filename: sentry.server.config.js
+import * as Sentry from "@sentry/nextjs";
 
-const SENTRY_RELEASE = 'jules-operator@' + (process.env.npm_package_version || '0.0.1');
-const SENTRY_ENVIRONMENT = process.env.SENTRY_ENVIRONMENT || process.env.NODE_ENV;
+const SENTRY_DSN = process.env.SENTRY_DSN;
 
 Sentry.init({
-  dsn: process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN,
-  release: SENTRY_RELEASE,
-  environment: SENTRY_ENVIRONMENT,
+  dsn: SENTRY_DSN,
+  // Adjust this value in production, or use tracesSampler for greater control
   tracesSampleRate: 1.0,
-  // Add any server-specific Sentry configuration here
+  // ...
+  // Note: if you want to override the automatic release value, do not set a
+  // `release` value here - use the environment variable `SENTRY_RELEASE`, so
+  // that it will also get attached to your source maps
+
+  // Enable Spotlight in development
+  // spotlight: process.env.NODE_ENV === 'development',
 });
