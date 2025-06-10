@@ -106,6 +106,9 @@ model ErrorAnalysisSuggestion {
   user_agent        String?  @db.Text
   codex_prompt      String?  @db.Text
   codex_suggestion  String?  @db.Text
+  codex_explanation String?  @db.Text
+  codex_suggested_fix_code String? @db.Text
+  codex_impact_assessment String? @db.Text
   codex_model       String?
   analysis_error    String?  @db.Text // For errors from the Codex script or analysis process
   status            ErrorAnalysisStatus @default(NEW)
