@@ -32,7 +32,8 @@ export default defineConfig({
   // subdirectory. By default we use '/' to work for most setups.
   base: '/',
   build: {
-    sourcemap: false,
+    // Enable source maps for easier debugging in production
+    sourcemap: true,
     minify: 'esbuild',
     cssCodeSplit: true,
     assetsInlineLimit: 4096,
