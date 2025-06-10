@@ -128,7 +128,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
       console.log(`New error record created (ID: ${dbRecord.id})`);
     }
-    dbRecordId = dbRecord.id;
+    dbRecordId = parseInt(dbRecord.id, 10);
 
     formulatedPrompt = formulateCodexPrompt(errorDetails, errorSignature);
     console.log(`Formulated Codex prompt (ID: ${dbRecordId}, first 100 chars): ${formulatedPrompt.substring(0, 100)}...`);
