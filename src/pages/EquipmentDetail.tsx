@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -150,9 +150,8 @@ export const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
 };
 
 export default function EquipmentDetail() {
-  const { id } = useParams() as { id?: string };
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const { id } = router.query as { id?: string };
   const { isAuthenticated, user } = useAuth();
   const { items, dispatch } = useCart();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -181,8 +180,8 @@ export default function EquipmentDetail() {
 
   const handleAddToCart = () => {
     if (!isAuthenticated) {
-      const nextUrl = encodeURIComponent(location.pathname + location.search);
-      navigate(`/login?next=${nextUrl}&msg=login_required`);
+      const nextUrl = encodeURIComponent(router.asPath);
+      router.push(`/login?next=${nextUrl}&msg=login_required`);
       toast.info("Please log in to add items to your cart.");
       return;
     }
@@ -199,13 +198,8 @@ export default function EquipmentDetail() {
 
   const handleBuyNow = async () => {
     if (!isAuthenticated) {
-      const next = encodeURIComponent(location.pathname + location.search); // Capture full current path
-      navigate(`/login?next=${next}`, {
-        state: {
-          pendingAction: 'buyNow',
-          pendingActionArgs: { id, title: equipment.name, price: equipment.price },
-        },
-      });
+      const next = encodeURIComponent(router.asPath); // Capture full current path
+      router.push(`/login?next=${next}`);
       return;
     }
 
@@ -213,7 +207,7 @@ export default function EquipmentDetail() {
       type: 'ADD_ITEM',
       payload: { id, name: equipment.name, price: equipment.price, quantity }
     });
-    navigate('/checkout');
+    router.push('/checkout');
   };
 
   return (
