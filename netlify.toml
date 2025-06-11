@@ -60,7 +60,7 @@
   schedule = "@daily"
 
 [functions.healthCheckCron]
-  schedule = "@every 5m"
+  schedule = "*/5 * * * *"
 
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
