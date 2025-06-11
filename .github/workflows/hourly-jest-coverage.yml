@@ -28,9 +28,7 @@ jobs:
           # Assuming jest is configured to output coverage-summary.json to logs/coverage/hourly/
           # If not, you might need to adjust Jest config or add a `cp` command here.
           # Example Jest command that specifies output directory for coverage reporter:
-          # npm test -- --coverage --coverageReporters="json-summary" --coverageDirectory="logs/coverage/hourly"
-          # For now, we rely on the existing `npm test -- --coverage` and assume it's configured.
-          npm test -- --coverage
+          npm test -- --coverage --coverageReporters="json-summary" --coverageReporters="lcov" --coverageDirectory="logs/coverage/hourly"
 
       - name: Check coverage threshold
         id: check_coverage
@@ -38,7 +36,6 @@ jobs:
         # This step is configured to fail (exit code 2) if coverage < 85%
         # We use `continue-on-error: true` so the workflow proceeds to the next step
         # to create the issue, instead of stopping the whole job.
-        continue-on-error: true
 
       - name: Create GitHub Issue if coverage is low
         if: steps.check_coverage.outcome == 'failure' # Only run if the check_coverage step failed
