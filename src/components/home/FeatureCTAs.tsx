@@ -150,6 +150,7 @@ export function FeatureCTAs({ className, style }: FeatureCTAsProps) {
                     to={feature.link}
                     aria-label={`Explore ${feature.title}`}
                     className="cursor-pointer"
+                    {...(feature.title === "AI Talent Matching" && { "data-testid": "explore-ai-talent-matching-cta" })}
                   >
                     <span>Explore {feature.title}</span>
                     <ArrowRight className="h-4 w-4" />
