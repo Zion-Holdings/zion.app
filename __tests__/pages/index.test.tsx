@@ -38,3 +38,14 @@ describe('Home page server side error handling', () => {
     expect(screen.getByText('Oops! Something went wrong.')).toBeInTheDocument();
   });
 });
+
+describe('Home page data fetch success', () => {
+  it('returns props when data fetch succeeds', async () => {
+    mockedFetchHomeData.mockResolvedValueOnce(null);
+    const ctx: any = { req: {}, res: { statusCode: 200 } };
+    const result = await getServerSideProps(ctx as any);
+    expect(result).toEqual({ props: {} });
+    render(<IndexPage {...(result as any).props} />);
+    expect(screen.getByText('Throw Test Error')).toBeInTheDocument();
+  });
+});
