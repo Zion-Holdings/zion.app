@@ -29,7 +29,8 @@
     "test:node": "node -v",
     "check-updates": "ncu",
     "audit-vulnerabilities": "npm audit",
-    "monitor:perf": "node scripts/perf/monitor.js"
+    "monitor:perf": "node scripts/perf/monitor.js",
+    "migrate:check": "npx prisma migrate diff --from-schema-datamodel prisma/schema.prisma --to-schema-datamodel prisma/schema.prisma --script"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
