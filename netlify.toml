@@ -6,7 +6,7 @@
 [build.environment]
   NODE_OPTIONS = "--max_old_space_size=4096"
   NPM_FLAGS = "--prefer-offline"
-  NODE_VERSION = "20"
+  NODE_VERSION = "18"
   NEXT_PUBLIC_SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY" # Replace with your actual Supabase key
   NEXT_PUBLIC_REOWN_PROJECT_ID = "VALID_PROJECT_ID_PLACEHOLDER" # IMPORTANT: Replace with your actual Reown AppKit Project ID
   EXAMPLE_API_URL = "https://jsonplaceholder.typicode.com/todos/1"
