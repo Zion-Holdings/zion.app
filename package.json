@@ -6,7 +6,7 @@
     "deploy-zion-ipfs": "scripts/deploy-zion-ipfs.js"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host | grep \"Local:\" | sed -E 's/.*Local:[[:space:]]+http:\\/\\/localhost:([0-9]+).*/\\1/' > .vite_port",
     "generate": "prisma generate",
     "build": "npx next build --no-lint && NODE_ENV=production npx next build",
     "start": "npx next start",
@@ -228,7 +228,7 @@
     "tailwindcss": "^3.4.1",
     "tough-cookie": "^5.1.2",
     "ts-jest": "^29.3.4",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.33.0",
     "vite": "^6.3.5",

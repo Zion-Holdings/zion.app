@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
@@ -14,6 +14,7 @@ export default function CardForm({ amount, onSuccess }: Props) {
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isStripeElementReady, setIsStripeElementReady] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,9 +112,16 @@ export default function CardForm({ amount, onSuccess }: Props) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <CardElement options={{ hidePostalCode: true }} />
+      <CardElement
+        options={{ hidePostalCode: true }}
+        onReady={() => setIsStripeElementReady(true)}
+      />
       {error && <p className="text-destructive text-sm">{error}</p>}
-      <Button type="submit" disabled={!stripe || loading} className="w-full">
+      <Button
+        type="submit"
+        disabled={!stripe || loading || !isStripeElementReady}
+        className="w-full"
+      >
         {loading ? 'Processing...' : `Pay $${amount.toFixed(2)}`}
       </Button>
       {process.env.NODE_ENV === 'development' && (

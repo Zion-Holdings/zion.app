@@ -1,8 +1,10 @@
 import { defineConfig } from 'cypress';
 
+// fs and path are no longer needed as getPort() is removed.
+
 export default defineConfig({
   e2e: {
-    baseUrl: process.env.URL || 'http://localhost:5173',
+    baseUrl: `http://localhost:3000`, // Standard Next.js port
     supportFile: 'cypress/support/e2e.ts',
     experimentalModifyObstructiveThirdPartyCode: true,
     env: {
