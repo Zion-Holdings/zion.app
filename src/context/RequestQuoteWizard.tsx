@@ -54,13 +54,18 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
 
   const submitQuote = async (message: string) => {
     if (!selectedService) return;
-    await axios.post('/api/quotes', {
-      service_id: selectedService,
-      user_message: message,
-    });
-    toast.success("Quote request submitted");
-    navigate("/dashboard/quotes");
-    setStep("Success");
+    try {
+      await axios.post('/api/quotes', {
+        service_id: selectedService,
+        user_message: message,
+      });
+      toast.success("Quote request submitted");
+      navigate("/dashboard/quotes");
+      setStep("Success");
+    } catch (err) {
+      console.error('Failed to submit quote', err);
+      toast({ title: 'Error submitting quote', variant: 'destructive' });
+    }
   };
 
   useEffect(() => {

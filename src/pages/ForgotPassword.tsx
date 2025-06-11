@@ -9,15 +9,24 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || ''
 export default function ForgotPassword() {
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
+    setError(null)
     try {
       const res = await axios.post(`${API_URL}/auth/forgot`, { email })
       if (res.status === 200) {
         toast.success('Email sent')
+      } else {
+        throw new Error('Request failed')
       }
+    } catch (err: any) {
+      console.error(err)
+      const msg = err?.response?.data?.message || err.message || 'Failed to send reset link'
+      setError(msg)
+      toast.error(msg)
     } finally {
       setLoading(false)
     }
@@ -33,6 +42,7 @@ export default function ForgotPassword() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        {error && <p className="text-red-500 text-sm">{error}</p>}
         <Button type="submit" disabled={loading}>
           {loading ? 'Sending...' : 'Submit'}
         </Button>

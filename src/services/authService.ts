@@ -25,8 +25,13 @@ export async function loginUser(email: string, password: string) {
 
 export async function registerUser(name: string, email: string, password: string) {
   const endpoint = `${API_URL}/auth/register`;
-  const res = await axios.post(endpoint, { name, email, password });
-  console.log('Register API Response Status:', res.status);
-  console.log('Register API Response Body:', res.data);
-  return { res, data: res.data };
+  try {
+    const res = await axios.post(endpoint, { name, email, password });
+    console.log('Register API Response Status:', res.status);
+    console.log('Register API Response Body:', res.data);
+    return { res, data: res.data };
+  } catch (err) {
+    console.error('Register API error:', err);
+    throw err;
+  }
 }
