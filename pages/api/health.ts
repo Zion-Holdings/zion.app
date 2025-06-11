@@ -3,6 +3,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 type HealthResponse = {
   status: string;
   version: string;
+  commit: string;
+  timestamp: string;
 };
 
 export default function handler(
@@ -16,7 +18,9 @@ export default function handler(
         version = "unknown";
         console.warn("Application version not set. Defaulting to 'unknown'.");
       }
-      res.status(200).json({ status: 'ok', version });
+      const commit = process.env.COMMIT_REF || "unknown";
+      const timestamp = new Date().toISOString();
+      res.status(200).json({ status: 'ok', version, commit, timestamp });
     } catch (error) {
       console.error('Failed to retrieve version information:', error);
       res.status(500).json({ error: 'Failed to retrieve version information.', status: 'error' });

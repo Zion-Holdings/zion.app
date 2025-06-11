@@ -31,3 +31,6 @@
 
 [functions.sentryDsnCheckCron]
   schedule = "@daily"
+
+[functions.healthCheckCron]
+  schedule = "@every 5m"
