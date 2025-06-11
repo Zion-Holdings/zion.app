@@ -62,24 +62,24 @@
 [functions.healthCheckCron]
   schedule = "*/5 * * * *"
 
-[[plugins]]
-package = "@netlify/plugin-lighthouse"
-  [plugins.inputs]
-  output_path = "lighthouse-reports" # This will save reports to 'lighthouse-reports/summary.html' and individual reports in the same dir.
-
-  [plugins.inputs.thresholds]
-  performance = 0.8 # Score from 0 to 1 (e.g., 0.8 = 80)
-
-  # Configure bundle size check if the plugin supports it directly.
-  # The issue mentions "Total JS bundle size > 250 KB".
-  # This plugin primarily uses Lighthouse's own audits.
-  # Lighthouse itself doesn't have a direct "total JS bundle size" audit in this format.
-  # It has "total-byte-weight" which includes all resources, and "unused-javascript".
-  # We'll rely on the Lighthouse performance score for now, as direct JS bundle size enforcement
-  # might need a separate tool or script if this plugin doesn't cover it.
-  # For the purpose of this task, we will focus on what the plugin *can* do.
-  # If a direct JS bundle size check is critical and not covered by this plugin,
-  # that would be a separate follow-up.
-
-  # The plugin will automatically create 'lighthouse-reports' in the publish directory.
-  # Netlify automatically makes build artifacts available from the publish directory.
+# [[plugins]]
+# package = "@netlify/plugin-lighthouse"
+#   [plugins.inputs]
+#   output_path = "lighthouse-reports" # This will save reports to 'lighthouse-reports/summary.html' and individual reports in the same dir.
+#
+#   [plugins.inputs.thresholds]
+#   performance = 0.8 # Score from 0 to 1 (e.g., 0.8 = 80)
+#
+#   # Configure bundle size check if the plugin supports it directly.
+#   # The issue mentions "Total JS bundle size > 250 KB".
+#   # This plugin primarily uses Lighthouse's own audits.
+#   # Lighthouse itself doesn't have a direct "total JS bundle size" audit in this format.
+#   # It has "total-byte-weight" which includes all resources, and "unused-javascript".
+#   # We'll rely on the Lighthouse performance score for now, as direct JS bundle size enforcement
+#   # might need a separate tool or script if this plugin doesn't cover it.
+#   # For the purpose of this task, we will focus on what the plugin *can* do.
+#   # If a direct JS bundle size check is critical and not covered by this plugin,
+#   # that would be a separate follow-up.
+#
+#   # The plugin will automatically create 'lighthouse-reports' in the publish directory.
+#   # Netlify automatically makes build artifacts available from the publish directory.
