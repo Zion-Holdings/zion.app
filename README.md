@@ -179,3 +179,12 @@ To adjust the performance thresholds:
 4.  Commit and push the changes to `netlify.toml`. The next Netlify build will use the new thresholds.
 
 Refer to the [official `@netlify/plugin-lighthouse` documentation](https://github.com/netlify/netlify-plugin-lighthouse) for more advanced configuration options.
+
+## Database Schema Check
+
+To check if the local Prisma schema (`prisma/schema.prisma`) is in sync with the schema that would be generated from the current database (as if it were a production environment), run the following command:
+
+```bash
+npm run migrate:check
+```
+This command is also run during the Netlify build process to prevent deployments if a schema drift is detected.

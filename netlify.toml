@@ -1,6 +1,6 @@
 [build]
   # Use `npm ci` for deterministic installs
-  command = "npm ci && npm run build && npm test -- --coverage && mkdir -p .next/coverage-report && cp -R coverage/lcov-report/* .next/coverage-report/ && npm run test:e2e"
+  command = "npm ci && npm run migrate:check && npm run build && npm test -- --coverage && mkdir -p .next/coverage-report && cp -R coverage/lcov-report/* .next/coverage-report/ && npm run test:e2e"
   publish = ".next"
 
 [build.environment]
