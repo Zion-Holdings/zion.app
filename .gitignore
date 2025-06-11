@@ -3,3 +3,5 @@ performance.log
 package-lock.json
 logs/tests/
 .next/
+cypress/results/
+cypress/screenshots/
