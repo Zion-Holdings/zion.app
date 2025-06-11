@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image'; // Import next/image
 
 interface InputFieldsProps {
   onSubmit: (data: any) => void; // Define a more specific type for data
@@ -16,6 +17,8 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
   });
 
   const [errors, setErrors] = useState<any>({});
+  const [logoPreview, setLogoPreview] = useState<string | null>(null);
+  const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -25,9 +28,26 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, files } = e.target;
     if (files && files.length > 0) {
-      setFormData(prev => ({ ...prev, [name]: files[0] }));
+      const file = files[0];
+      setFormData(prev => ({ ...prev, [name]: file }));
+      if (name === 'logos') {
+        // Revoke previous object URL if it exists
+        if (logoPreview) URL.revokeObjectURL(logoPreview);
+        setLogoPreview(URL.createObjectURL(file));
+      } else if (name === 'photos') {
+        // Revoke previous object URL if it exists
+        if (photoPreview) URL.revokeObjectURL(photoPreview);
+        setPhotoPreview(URL.createObjectURL(file));
+      }
     } else {
       setFormData(prev => ({ ...prev, [name]: null }));
+      if (name === 'logos') {
+        if (logoPreview) URL.revokeObjectURL(logoPreview);
+        setLogoPreview(null);
+      } else if (name === 'photos') {
+        if (photoPreview) URL.revokeObjectURL(photoPreview);
+        setPhotoPreview(null);
+      }
     }
   };
 
@@ -48,9 +68,20 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
+      // Note: Object URLs are not explicitly revoked here before submit
+      // because they are needed if the submission fails and the user needs to see previews.
+      // They are revoked on unmount or when a new file is selected.
       onSubmit(formData);
     }
   };
+
+  // Clean up object URLs on component unmount
+  React.useEffect(() => {
+    return () => {
+      if (logoPreview) URL.revokeObjectURL(logoPreview);
+      if (photoPreview) URL.revokeObjectURL(photoPreview);
+    };
+  }, [logoPreview, photoPreview]);
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -144,8 +175,11 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
           accept="image/*"
           className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100"
         />
-        {/* Basic preview for logo */}
-        {formData.logos && <img src={URL.createObjectURL(formData.logos)} alt="Logo preview" className="mt-2 h-16 w-auto" />}
+        {logoPreview && (
+          <div className="mt-2" style={{ position: 'relative', width: 'auto', height: '64px' }}> {/* Ensure parent has dimensions for layout='fill' */}
+            <Image src={logoPreview} alt="Logo preview" layout="fill" objectFit="contain" />
+          </div>
+        )}
       </div>
 
       <div>
@@ -160,8 +194,11 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
           accept="image/*"
           className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-600 hover:file:bg-indigo-100"
         />
-         {/* Basic preview for photo */}
-        {formData.photos && <img src={URL.createObjectURL(formData.photos)} alt="Photo preview" className="mt-2 h-16 w-auto" />}
+        {photoPreview && (
+          <div className="mt-2" style={{ position: 'relative', width: 'auto', height: '64px' }}> {/* Ensure parent has dimensions for layout='fill' */}
+            <Image src={photoPreview} alt="Photo preview" layout="fill" objectFit="contain" />
+          </div>
+        )}
       </div>
 
       <div>

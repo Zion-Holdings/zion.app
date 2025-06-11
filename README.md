@@ -144,3 +144,38 @@ bash scripts/generate-tests-log.sh
 ```
 
 This creates timestamped log files in `logs/tests/` containing the console output and Jest JSON results.
+
+
+## Performance Budget (Lighthouse CI)
+
+This project uses `@netlify/plugin-lighthouse` to automatically check performance budgets on every Netlify build. This helps ensure that the application remains fast and efficient.
+
+### Current Thresholds
+
+The build will fail if the following thresholds are not met:
+
+*   **Lighthouse Performance Score**: Must be 80 or higher (i.e., `>= 0.8`).
+*   **Total JavaScript Bundle Size**: While this plugin doesn't directly enforce a specific JavaScript bundle size in kilobytes, the overall Lighthouse performance score is heavily influenced by script size, execution time, and other related metrics. The target is to keep the total JS bundle size below 250 KB. Significant increases in JavaScript bundle size will likely degrade the performance score and cause the build to fail.
+
+### Lighthouse Reports
+
+HTML reports from the Lighthouse audit are automatically generated and stored as build artifacts in Netlify. You can find them in the `lighthouse-reports` directory of the build output. These reports provide detailed insights into the performance metrics and can help identify areas for improvement.
+
+### Adjusting Thresholds
+
+To adjust the performance thresholds:
+
+1.  Open the `netlify.toml` file in the root of the project.
+2.  Locate the `[[plugins]]` section for `package = "@netlify/plugin-lighthouse"`.
+3.  Modify the `plugins.inputs.thresholds.performance` value. For example, to set the performance score threshold to 85, change it to `0.85`.
+    ```toml
+    [[plugins]]
+    package = "@netlify/plugin-lighthouse"
+      # ... other configurations
+      [plugins.inputs.thresholds]
+      performance = 0.85 # Adjusted threshold
+      # ... other thresholds
+    ```
+4.  Commit and push the changes to `netlify.toml`. The next Netlify build will use the new thresholds.
+
+Refer to the [official `@netlify/plugin-lighthouse` documentation](https://github.com/netlify/netlify-plugin-lighthouse) for more advanced configuration options.

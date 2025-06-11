@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/router";
+import Image from 'next/image'; // Import next/image
 
 import {
   Form,
@@ -396,10 +397,16 @@ export function ProductSubmissionForm() {
                   {imagePreview && (
                     <div className="mt-2 w-full max-w-md border rounded overflow-hidden">
                       <AspectRatio ratio={3/2}>
-                        <img
+                        <Image
                           src={imagePreview}
                           alt="Preview"
+                          width={600} // Example width, adjust as needed
+                          height={400} // Example height, adjust as needed
                           className="w-full h-full object-cover"
+                          priority={false} // Preview images are not LCP
+                          // `sizes` might not be strictly necessary for a preview of this nature,
+                          // but can be added if responsive behavior is critical here.
+                          // For local object URLs, optimization via loader won't occur.
                         />
                       </AspectRatio>
                     </div>

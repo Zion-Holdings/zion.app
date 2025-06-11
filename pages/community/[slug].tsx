@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import EmptyState from '@/components/community/EmptyState';
-import { createClient } from '@supabase/supabase-js'; // For getServerSideProps
+// import { createClient } from '@supabase/supabase-js'; // No longer directly needed here if fetchPostsByCategory handles its own client
 import PostCard from '@/components/community/PostCard';
+import { withSentryGetServerSideProps } from '@sentry/nextjs';
 import type { ForumPost } from '@/types/community';
 import { fetchPostsByCategory } from '@/services/forumPostService';
 
@@ -101,9 +102,10 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCu
   );
 };
 
-export const getServerSideProps = async ({ req, params }: { req: any; params?: { slug?: string } }) => {
+export const getServerSideProps = withSentryGetServerSideProps(async ({ req, params }: { req: any; params?: { slug?: string } }) => {
   const category = params?.slug as string;
-  // Supabase client setup for SSR remains largely the same
+  // Supabase client setup for SSR, if needed directly here, should be maintained.
+  // However, if fetchPostsByCategory encapsulates Supabase client logic, direct use here might not be necessary.
   const supabaseUrl =
     process.env.SUPABASE_URL ||
     process.env.NEXT_PUBLIC_SUPABASE_URL || // Fallback to public URL if specific server URL isn't set
@@ -117,12 +119,17 @@ export const getServerSideProps = async ({ req, params }: { req: any; params?: {
   let initialPostsData: ForumPost[] = [];
   let initialNextCursor: string | null = null;
 
-  if (!supabaseUrl || !anonKey) {
-    // Return empty initialPosts if Supabase is not configured
-    return { props: { initialPosts: [], initialNextCursor: null, hasSession: Boolean(token), category } };
-  }
+  // The check for supabaseUrl and anonKey should ideally be within fetchPostsByCategory or similar service function.
+  // If fetchPostsByCategory handles its Supabase client initialization and error states,
+  // this direct check might be redundant or could be simplified.
+  // For now, assuming fetchPostsByCategory might throw an error if Supabase is not configured,
+  // which Sentry would then capture.
 
-  // const supabase = createClient(supabaseUrl, anonKey); // Not needed if calling service function
+  // if (!supabaseUrl || !anonKey) {
+    // It's better to let the error propagate to be caught by Sentry HOC or handle it by returning specific error props.
+    // console.warn('Supabase URL or anon key is not configured for SSR in community page.');
+    // return { props: { initialPosts: [], initialNextCursor: null, hasSession: Boolean(token), category, error: "Configuration error" } };
+  // }
 
   try {
     // Fetch initial posts using the modified service function
@@ -131,8 +138,11 @@ export const getServerSideProps = async ({ req, params }: { req: any; params?: {
     initialPostsData = posts;
     initialNextCursor = nextCursor;
   } catch (error: any) {
-    console.error('Initial post fetch error:', error.message);
-    // Handle error appropriately, maybe return empty or an error prop
+    console.error('Initial post fetch error in community page getServerSideProps:', error.message);
+    // Let Sentry HOC capture the error.
+    // You might want to return specific props to render an error state on the page.
+    // For example, re-throw the error if you want Next.js to handle it or if the HOC needs it.
+    throw error; // Re-throw to ensure Sentry captures it via the HOC
   }
 
   return {
@@ -140,9 +150,9 @@ export const getServerSideProps = async ({ req, params }: { req: any; params?: {
       initialPosts: initialPostsData,
       initialNextCursor, // Pass the cursor to the page component
       hasSession: Boolean(token),
-      category
-    }
+      category,
+    },
   };
-};
+});
 
 export default CategoryPage;

@@ -1,6 +1,6 @@
-
 import { GradientHeading } from "./GradientHeading";
-import { useState } from "react";
+import React, { useState } from 'react'; // Ensure React and useState are imported
+import Image from 'next/image'; // Import next/image
 
 // Real company logos for trusted partners - with more reliable image URLs
 const trustedCompanies = [
@@ -106,17 +106,39 @@ const trustedCompanies = [
   }
 ];
 
-export function TrustedBySection() {
-  // Use state to track logos that failed to load
-  const [failedLogos, setFailedLogos] = useState<Record<string, boolean>>({});
+// Sub-component for individual company logo
+const CompanyLogo = ({ company }: { company: typeof trustedCompanies[0] }) => {
+  const [hasError, setHasError] = useState(false);
 
-  const handleImageError = (companyName: string) => {
-    setFailedLogos(prev => ({
-      ...prev,
-      [companyName]: true
-    }));
+  const handleImageError = () => {
+    if (!hasError) {
+      setHasError(true);
+    }
   };
 
+  if (hasError) {
+    return (
+      <div className="text-white font-semibold text-center text-xs">
+        {company.name}
+      </div>
+    );
+  }
+
+  return (
+    <Image
+      src={company.logo}
+      alt={company.alt}
+      width={120} // Approximate width, adjust as needed
+      height={40}  // Approximate height for a logo, adjust as needed
+      sizes="(max-width: 768px) 30vw, 120px" // Example sizes
+      className="max-h-10 max-w-full opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter invert"
+      onError={handleImageError}
+      priority={false} // These are not LCP images
+    />
+  );
+};
+
+export function TrustedBySection() {
   return (
     <section className="py-16 bg-zion-blue-dark">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -131,19 +153,7 @@ export function TrustedBySection() {
               key={index} 
               className="flex items-center justify-center bg-zion-blue-light p-5 rounded-lg border border-zion-purple/10 h-20 transition-all duration-300 hover:border-zion-purple/30 hover:bg-zion-blue group"
             >
-              {failedLogos[company.name] ? (
-                // Fallback to text if image fails to load
-                <div className="text-white font-semibold text-center">
-                  {company.name}
-                </div>
-              ) : (
-                <img 
-                  src={company.logo} 
-                  alt={company.alt} 
-                  className="max-h-10 max-w-full opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter invert"
-                  onError={() => handleImageError(company.name)}
-                />
-              )}
+              <CompanyLogo company={company} /> {/* Use the sub-component */}
             </div>
           ))}
         </div>

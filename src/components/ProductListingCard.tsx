@@ -9,15 +9,12 @@ import { FavoriteButton } from "@/components/FavoriteButton";
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
+import Image from 'next/image'; // Import next/image
 
 interface ProductListingCardProps {
   listing: ProductListing;
   view?: 'grid' | 'list';
   onRequestQuote?: (id: string) => void;
-  /**
-   * Base path for linking to the detail page. Defaults to
-   * `/marketplace/listing` to preserve existing behaviour.
-   */
   detailBasePath?: string;
 }
 
@@ -30,24 +27,25 @@ const ProductListingCardComponent = ({
   const isGrid = view === 'grid';
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  
-  // Get the first image or use a placeholder
-  const imageUrl = listing.images && listing.images.length > 0 
+  const [imageSrc, setImageSrc] = useState(
+    listing.images && listing.images.length > 0
     ? listing.images[0] 
-    : '/placeholder.svg';
+    : '/placeholder.svg'
+  );
+  const [imageError, setImageError] = useState(false);
     
-  // Format price display
   const formatPrice = () => {
     if (listing.price === null) return "Custom pricing";
     return `${listing.currency}${listing.price.toLocaleString()}`;
   };
 
-  // Handle image loading errors
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    e.currentTarget.src = '/placeholder.svg';
+  const handleImageError = () => {
+    if (!imageError) { // Prevent infinite loops if placeholder also fails
+      setImageSrc('/placeholder.svg');
+      setImageError(true);
+    }
   };
   
-  // Handle navigating to listing detail
   const handleViewListing = () => {
     navigate(`${detailBasePath}/${listing.id}`);
   };
@@ -63,7 +61,6 @@ const ProductListingCardComponent = ({
     navigate('/cart');
   };
   
-  // Handle request quote button click
   const handleRequestQuote = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -71,11 +68,12 @@ const ProductListingCardComponent = ({
     if (onRequestQuote) {
       onRequestQuote(listing.id);
     } else {
-      // Default behavior if no handler provided
       navigate(`/request-quote?listing=${listing.id}`);
     }
   };
   
+  const imageContainerClasses = isGrid ? 'h-48' : 'h-32 w-48';
+
   return (
     <div
       data-testid="equipment-link"
@@ -93,9 +91,9 @@ const ProductListingCardComponent = ({
       {/* Image */}
       <div
         className={isGrid ? 'block w-full' : 'block w-48 flex-shrink-0'}
-        onClick={handleViewListing}
+        onClick={handleViewListing} // Keep existing onClick for navigation
         role="button"
-        tabIndex={0}
+        tabIndex={-1} // Remove from tab order as parent is focusable
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -103,12 +101,15 @@ const ProductListingCardComponent = ({
           }
         }}
       >
-        <div className={`relative ${isGrid ? 'h-48' : 'h-32 w-48'}`}>
-          <img
-            src={imageUrl}
+        <div className={`relative ${imageContainerClasses}`}> {/* Ensure this container has dimensions */}
+          <Image
+            src={imageSrc}
             alt={listing.title}
-            className="w-full h-full object-cover"
+            layout="fill"
+            objectFit="cover"
             onError={handleImageError}
+            priority={false} // Assuming these are not LCP images
+            sizes={isGrid ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" : "192px"} // 192px is w-48
           />
           {listing.featured && (
             <Badge className="absolute top-2 right-2 bg-primary text-primary-foreground border-none">
@@ -184,7 +185,6 @@ const ProductListingCardComponent = ({
             >
               {loading ? (
                 <>
-                  {/* You can replace this with a spinner icon component if you have one */}
                   <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
