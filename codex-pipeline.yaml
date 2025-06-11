@@ -2,7 +2,7 @@ version: 1.0
 tasks:
   - name: detect_errors
     run: |
-      eslint ./app --ext .js,.jsx,.ts,.tsx -f json > eslint-report.json
+      eslint ./src --ext .js,.jsx,.ts,.tsx -f json > eslint-report.json
 
   - name: extract_code
     run: |
@@ -22,7 +22,7 @@ tasks:
 
   - name: apply_patch
     run: |
-      echo "${{ steps.fix_code.output }}" > ./app/fixed-snippet.js
+      echo "${{ steps.fix_code.output }}" > ./src/fixed-snippet.js
 
   - name: test_patch
     run: |

@@ -13,7 +13,7 @@ interface ErrorDetails {
 
 export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<void> {
   try {
-    const response = await fetch('/api/log-error', {
+    const response = await fetch('http://localhost:3001/webhook/trigger-fix', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
