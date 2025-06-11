@@ -57,31 +57,48 @@ export default function WorkFuturesSimulator() {
     if (!networkCanvas.current) return;
     const ctx = networkCanvas.current.getContext('2d');
     if (!ctx) return;
-    const width = networkCanvas.current.width;
-    const height = networkCanvas.current.height;
-    ctx.clearRect(0, 0, width, height);
-    const nodes = 5;
-    const positions = Array.from({ length: nodes }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-    }));
-    ctx.fillStyle = '#3b82f6';
-    positions.forEach((p) => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
-      ctx.fill();
-    });
-    ctx.strokeStyle = 'rgba(59,130,246,0.6)';
-    positions.forEach((p, i) => {
-      positions.forEach((q, j) => {
-        if (i < j && Math.random() > 0.5) {
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(q.x, q.y);
-          ctx.stroke();
+    try {
+      const width = networkCanvas.current.width;
+      const height = networkCanvas.current.height;
+      ctx.clearRect(0, 0, width, height);
+      const nodes = 5;
+      const positions = Array.from({ length: nodes }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+      }));
+      ctx.fillStyle = '#3b82f6';
+      positions.forEach((p) => {
+        if (p?.x == null || p?.y == null) {
+          logError(new Error('Invalid position'), {
+            context: 'WorkFuturesSimulator.drawNode',
+          });
+          return;
         }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
+        ctx.fill();
       });
-    });
+      ctx.strokeStyle = 'rgba(59,130,246,0.6)';
+      positions.forEach((p, i) => {
+        positions.forEach((q, j) => {
+          if (
+            i < j &&
+            Math.random() > 0.5 &&
+            p?.x != null &&
+            p?.y != null &&
+            q?.x != null &&
+            q?.y != null
+          ) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.stroke();
+          }
+        });
+      });
+    } catch (err) {
+      logError(err, { context: 'WorkFuturesSimulator.useEffect' });
+    }
   }, [output]);
 
   const exportJSON = () => {
