@@ -16,6 +16,8 @@ import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import ErrorBoundary from '@/components/ErrorBoundary';
+import { ThemeProvider } from '@/components/ThemeProvider';
+import { AppLayout } from '@/layout/AppLayout';
 import * as Sentry from '@sentry/nextjs';
 import { captureException } from '@/utils/sentry';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
@@ -58,9 +60,14 @@ function MyApp({ Component, pageProps }: AppProps) {
                       <WalletProvider>
                         <CartProvider>
                           <AnalyticsProvider>
-                            <ErrorBoundary>
-                              <Component {...pageProps} />
-                            </ErrorBoundary>
+                            <ThemeProvider>
+                              {/* Wrap in ThemeProvider so dark/light toggle works globally */}
+                              <AppLayout> {/* Consistent header/footer layout */}
+                                <ErrorBoundary>
+                                  <Component {...pageProps} />
+                                </ErrorBoundary>
+                              </AppLayout>
+                            </ThemeProvider>
                           </AnalyticsProvider>
                           <Toaster />
                         </CartProvider>
