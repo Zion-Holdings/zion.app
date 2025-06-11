@@ -11,8 +11,15 @@ export function ModeToggle() {
   // Use theme and toggleTheme from the updated useTheme hook
   const { theme, toggleTheme } = useTheme();
 
-  // Determine if the current preset is considered "dark"
-  const isDarkMode = theme === "dark";
+  // Determine the actual mode. When "system" is selected we look up the
+  // user's preference so the icon reflects the correct state.
+  const resolvedTheme =
+    theme === "system" && typeof window !== "undefined"
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
+      : theme;
+  const isDarkMode = resolvedTheme === "dark";
 
   const handleToggle = () => {
     try {
