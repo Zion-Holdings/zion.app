@@ -3,6 +3,11 @@ import 'whatwg-fetch';
 import fetchMock from 'jest-fetch-mock';
 fetchMock.enableMocks();
 
+// Reset fetch mocks before each test to ensure isolation
+beforeEach(() => {
+  fetchMock.resetMocks();
+});
+
 // Jest-DOM matchers
 import '@testing-library/jest-dom';
 import { TextEncoder, TextDecoder } from 'util';
