@@ -107,6 +107,12 @@ export function useAuthOperations(
       } else {
         setUser(null); // Clear the user state upon successful logout
         setAvatarUrl(null);
+        try {
+          // Clear authToken cookie on backend
+          await fetch('/api/auth/logout', { method: 'POST' });
+        } catch (cookieErr) {
+          console.warn('useAuthOperations.logout: failed to clear auth cookie', cookieErr);
+        }
         toast({
           title: "Logout successful!",
           description: "You have been successfully logged out.",
