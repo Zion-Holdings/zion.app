@@ -16,6 +16,7 @@ import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import ErrorBoundary from '@/components/ErrorBoundary';
+import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 import * as Sentry from '@sentry/nextjs';
@@ -48,7 +49,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.pathname]);
 
   return (
-    <GlobalErrorBoundary>
+    <RootErrorBoundary>
+      <GlobalErrorBoundary>
       {/* Wrap the entire application with CustomErrorBoundary */}
       <QueryClientProvider client={queryClient}>
           <ReduxProvider store={store}>
@@ -80,6 +82,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </ReduxProvider>
         </QueryClientProvider>
       </GlobalErrorBoundary>
+    </RootErrorBoundary>
   );
 }
 

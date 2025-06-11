@@ -1,12 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import * as Sentry from '@sentry/nextjs';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY as string;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-export default async function handler(
+async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -73,3 +74,5 @@ export default async function handler(
       .json({ error: 'Login failed', code: 'LOGIN_FAILED' });
   }
 }
+
+export default withErrorLogging(handler);

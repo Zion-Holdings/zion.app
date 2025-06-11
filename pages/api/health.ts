@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
 type HealthResponse = {
   status: string;
@@ -7,7 +8,7 @@ type HealthResponse = {
   timestamp: string;
 };
 
-export default function handler(
+function handler(
   req: NextApiRequest,
   res: NextApiResponse<HealthResponse | { error: string; status: string }>
 ) {
@@ -30,3 +31,5 @@ export default function handler(
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
+
+export default withErrorLogging(handler);

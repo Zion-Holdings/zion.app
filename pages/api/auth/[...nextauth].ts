@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 import CredentialsProvider from "next-auth/providers/credentials";
 import type { NextAuthOptions } from "next-auth";
+import { withErrorLogging } from '@/utils/withErrorLogging';
 import { createClient } from '@supabase/supabase-js'; // Import Supabase
 import { verifyMessage } from 'ethers'; // Assuming ethers v6+
 
@@ -242,4 +243,6 @@ export const authOptions: NextAuthOptions = {
 };
 
 const handler = NextAuth(authOptions);
-export { handler as GET, handler as POST };
+const wrappedHandler = withErrorLogging(handler as any);
+export { wrappedHandler as GET, wrappedHandler as POST };
+export default wrappedHandler;

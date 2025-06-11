@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY as string;
@@ -12,7 +13,7 @@ const schema = z.object({
   password: z.string().min(6),
 });
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).end();
@@ -67,3 +68,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(503).json({ message: 'Network error. Please try again.' });
   }
 }
+
+export default withErrorLogging(handler);

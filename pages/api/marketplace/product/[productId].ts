@@ -1,5 +1,6 @@
 import { PrismaClient, type Product as ProductModel } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
 const prisma = new PrismaClient();
 
@@ -11,7 +12,7 @@ type ProductWithStats = ProductModel & {
   title: string; // Added title for consistency with list endpoint
 };
 
-export default async function handler(
+async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductWithStats | { error: string }>
 ) {
@@ -60,3 +61,5 @@ export default async function handler(
     await prisma.$disconnect();
   }
 }
+
+export default withErrorLogging(handler);
