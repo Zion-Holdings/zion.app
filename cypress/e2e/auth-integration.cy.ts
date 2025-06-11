@@ -10,21 +10,21 @@ describe('register and login flow', () => {
   beforeEach(() => {
     // Ensure environment variables are loaded, or provide defaults for local runs if desired
     // For this refactor, we assume they are set in cypress.env.json
-    if (!Cypress.env('TEST_USER_EMAIL')) {
-      throw new Error('TEST_USER_EMAIL environment variable is not set.');
+    if (!Cypress.env('CYPRESS_TEST_USER_EMAIL')) {
+      throw new Error('CYPRESS_TEST_USER_EMAIL environment variable is not set.');
     }
-    if (!Cypress.env('TEST_USER_PASSWORD')) {
-      throw new Error('TEST_USER_PASSWORD environment variable is not set.');
+    if (!Cypress.env('CYPRESS_TEST_USER_PASSWORD')) {
+      throw new Error('CYPRESS_TEST_USER_PASSWORD environment variable is not set.');
     }
-    if (!Cypress.env('TEST_USER_DISPLAY_NAME')) {
-      throw new Error('TEST_USER_DISPLAY_NAME environment variable is not set.');
+    if (!Cypress.env('CYPRESS_TEST_USER_DISPLAY_NAME')) {
+      throw new Error('CYPRESS_TEST_USER_DISPLAY_NAME environment variable is not set.');
     }
   });
 
   it('registers, gets auto-logged in, and user data is available', () => {
     const uniqueEmail = `testuser-${Date.now()}@example.com`;
-    const testPassword = Cypress.env('TEST_USER_PASSWORD');
-    const testDisplayName = Cypress.env('TEST_USER_DISPLAY_NAME');
+    const testPassword = Cypress.env('CYPRESS_TEST_USER_PASSWORD');
+    const testDisplayName = Cypress.env('CYPRESS_TEST_USER_DISPLAY_NAME');
 
     // Register - API call will be live
     cy.visit('/signup');
