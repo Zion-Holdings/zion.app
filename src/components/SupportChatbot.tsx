@@ -8,6 +8,7 @@ interface Msg { id: string; role: 'user' | 'assistant'; message: string; }
 export function SupportChatbot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
+  const [loading, setLoading] = useState(false);
   const endRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => { endRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages]);
@@ -15,18 +16,23 @@ export function SupportChatbot() {
   const sendMessage = async (text: string) => {
     const userMsg: Msg = { id: Date.now().toString(), role: 'user', message: text };
     setMessages(prev => [...prev, userMsg]);
+    setLoading(true);
     try {
       const res = await fetch('/api/kb-chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: [...messages.map(m => ({ role: m.role, content: m.message })), { role: 'user', content: text }] })
       });
-      const data = await res.json();
-      const botMsg: Msg = { id: Date.now().toString() + '-a', role: 'assistant', message: data.message };
+      if (!res.ok) throw new Error('Failed to fetch reply');
+      const data = await res.json().catch(() => ({}));
+      const message = typeof data.message === 'string' ? data.message : 'Sorry, I did not understand that.';
+      const botMsg: Msg = { id: Date.now().toString() + '-a', role: 'assistant', message };
       setMessages(prev => [...prev, botMsg]);
     } catch (err) {
       console.error(err);
       setMessages(prev => [...prev, { id: Date.now().toString() + '-e', role: 'assistant', message: 'Sorry, something went wrong.' }]);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -56,6 +62,9 @@ export function SupportChatbot() {
         {messages.map(m => (
           <ChatMessage key={m.id} role={m.role} message={m.message} />
         ))}
+        {loading && (
+          <ChatMessage role="assistant" message="..." />
+        )}
         <div ref={endRef} />
       </div>
       <div className="p-2 border-t border-zion-purple/20 bg-zion-blue-dark/30">

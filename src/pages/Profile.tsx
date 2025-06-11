@@ -30,18 +30,36 @@ interface User {
 export default function Profile() {
   const [user, setUser] = useState<User | null>(null);
   const [avatarPreview, setAvatarPreview] = useState<string>('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    axios.get('/api/users/me')
-      .then(res => res.data)
-      .then(setUser)
-      .catch(() => {});
+    const fetchUser = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const res = await axios.get('/api/users/me');
+        setUser(res.data);
+      } catch (err: any) {
+        console.error('Failed to load profile', err);
+        setError('Failed to load profile');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
   }, []);
 
   const handleSave = async () => {
     if (!user) return;
-    const res = await axios.patch('/api/users/me', user);
-    setUser(res.data);
+    try {
+      const res = await axios.patch('/api/users/me', user);
+      setUser(res.data);
+    } catch (err) {
+      console.error('Failed to save profile', err);
+      setError('Failed to save profile');
+    }
   };
 
   const handleAvatarChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,14 +76,25 @@ export default function Profile() {
   const handleDelete = async () => {
     const confirm = window.prompt('Enter password to confirm');
     if (!confirm) return;
-    await axios.delete('/api/users/me');
-    setUser(prev => (prev ? { ...prev, softDeleted: true } : prev));
+    try {
+      await axios.delete('/api/users/me');
+      setUser(prev => (prev ? { ...prev, softDeleted: true } : prev));
+    } catch (err) {
+      console.error('Failed to delete user', err);
+      setError('Deletion failed');
+    }
   };
 
+  if (loading) {
+    return <div className="p-4">Loading...</div>;
+  }
+
+  if (error && !user) {
+    return <div className="p-4 text-red-500">{error}</div>;
+  }
+
   if (!user) {
-    return (
-      <div className="p-4">Loading...</div>
-    );
+    return <div className="p-4">No user found.</div>;
   }
 
   return (

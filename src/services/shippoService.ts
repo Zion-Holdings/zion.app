@@ -24,18 +24,23 @@ const FROM_ADDRESS = {
 };
 
 export async function createShipment(addressTo: any, parcels: any[]): Promise<ShippoShipment> {
-  const res = await axios.post('https://api.goshippo.com/shipments/', {
-    address_from: FROM_ADDRESS,
-    address_to: addressTo,
-    parcels,
-  }, {
-    headers: {
-      Authorization: `ShippoToken ${SHIPPO_TOKEN}`,
-      'Content-Type': 'application/json',
-    },
-  });
+  try {
+    const res = await axios.post('https://api.goshippo.com/shipments/', {
+      address_from: FROM_ADDRESS,
+      address_to: addressTo,
+      parcels,
+    }, {
+      headers: {
+        Authorization: `ShippoToken ${SHIPPO_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+    });
 
-  return res.data as ShippoShipment;
+    return res.data as ShippoShipment;
+  } catch (err) {
+    console.error('Shippo create shipment error:', err);
+    throw err;
+  }
 }
 
 export function parseShippoWebhook(payload: any) {
