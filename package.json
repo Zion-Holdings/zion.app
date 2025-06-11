@@ -211,6 +211,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb-memory-server": "^10.1.4",
     "msw": "^2.8.7",
+    "netlify-plugin-cypress": "^2.2.1",
     "node-mocks-http": "^1.17.2",
     "npm-check-updates": "^18.0.1",
     "postcss": "^8.4.35",
@@ -240,6 +241,9 @@
     "react-dom": "~18.3.1"
   },
   "overrides": {
+    "netlify-plugin-cypress": {
+      "puppeteer": "^24.10.0"
+    },
     "jsdom": "^24.0.0",
     "eslint": "^9.28.0",
     "glob": "^11.0.2",
