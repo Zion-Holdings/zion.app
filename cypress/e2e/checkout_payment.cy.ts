@@ -1,6 +1,16 @@
 describe('test checkout purchase', () => {
   it('completes a $0.50 test purchase', () => {
+    cy.intercept('POST', '/api/auth/login', {
+      statusCode: 200,
+      body: {
+        user: { id: 'test-user-id', email: 'existing@test.com' },
+        accessToken: 'mock-access-token',
+        refreshToken: 'mock-refresh-token',
+      },
+    }).as('mockLogin');
+
     cy.loginByApi('existing@test.com', 'password123');
+    cy.wait('@mockLogin');
 
     const sessionId = 'cs_test_123';
     cy.intercept('POST', '/api/create-checkout-session', {

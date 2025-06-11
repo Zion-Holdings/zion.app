@@ -52,9 +52,10 @@ export default defineConfig({
       axios: path.resolve(__dirname, './src/lib/axios.ts'),
     },
   },
-  // server: {
-  //   allowedHosts: ['devserver-preview--ziontechgroup.netlify.app'],
-  // },
+  server: {
+    port: 5174,
+    // allowedHosts: ['devserver-preview--ziontechgroup.netlify.app'],
+  },
   test: {
     globals: true,
     environment: 'jsdom',

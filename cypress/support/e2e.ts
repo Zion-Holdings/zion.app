@@ -1,4 +1,5 @@
 import './commands';
+import 'cypress-stripe';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   // Log the error for better debugging
