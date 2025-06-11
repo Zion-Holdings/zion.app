@@ -3,6 +3,7 @@
 // This file handles interaction with the fine-tuned ZionGPT model
 
 import { supabase } from '@/integrations/supabase/client';
+import { logError } from './logError';
 
 export type ModelVersion = 'zion-job-generator-v1' | 'zion-resume-enhancer-v1' | 'zion-support-v1' | 'gpt-3.5-turbo';
 
@@ -35,6 +36,7 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
       .single();
     
     if (error || !data) {
+      logError(error || new Error('No model data returned'), { context: 'getActiveModelId' });
       console.warn('Failed to fetch active model, falling back to default', error);
       // Fallback to default models
       switch(purpose) {
@@ -47,7 +49,7 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
     
     return data.id as ModelVersion;
   } catch (error) {
-    console.error('Error fetching active model:', error);
+    logError(error, { context: 'getActiveModelId' });
     return 'gpt-3.5-turbo'; // Fallback to base model
   }
 }
@@ -74,7 +76,7 @@ export async function logModelUsage(
       });
       
   } catch (error) {
-    console.error('Error logging model usage:', error);
+    logError(error, { context: 'logModelUsage' });
     // Non-blocking - we don't want to fail the main operation
   }
 }
@@ -128,7 +130,7 @@ export async function callZionGPT({
     
     return data.completion;
   } catch (error) {
-    console.error('Error calling ZionGPT:', error);
+    logError(error, { context: 'callZionGPT' });
     throw error;
   }
 }
