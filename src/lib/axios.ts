@@ -136,7 +136,10 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       acc[name] = value;
       return acc;
     }, {} as Record<string, string>);
-    const authToken = cookies['authToken'] || safeStorage.getItem('token');
+    const authToken =
+      cookies['authToken'] ||
+      safeStorage.getItem('auth.token') ||
+      safeStorage.getItem('token');
 
     const headers = { ...globalDefaults.headers.common, ...reqInit.headers };
     if (authToken) {
