@@ -160,7 +160,7 @@
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
     "@eslint/js": "^9.28.0",
-    "@netlify/plugin-lighthouse": "^6.0.1",
+    "@netlify/plugin-lighthouse": "6.0.1",
     "@playwright/test": "^1.41.2",
     "@rushstack/eslint-patch": "^1.5.1",
     "@sentry/cli": "^2.46.0",
