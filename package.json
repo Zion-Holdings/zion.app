@@ -6,7 +6,7 @@
     "deploy-zion-ipfs": "scripts/deploy-zion-ipfs.js"
   },
   "scripts": {
-    "dev": "vite --host | grep \"Local:\" | sed -E 's/.*Local:[[:space:]]+http:\\/\\/localhost:([0-9]+).*/\\1/' > .vite_port",
+    "dev": "next dev",
     "generate": "prisma generate",
     "build": "npx next build --no-lint && NODE_ENV=production npx next build",
     "start": "npx next start",

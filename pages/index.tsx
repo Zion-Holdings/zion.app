@@ -19,31 +19,34 @@ export async function fetchHomeData() {
   return Promise.resolve(null);
 }
 
-export const getServerSideProps: GetServerSideProps<HomePageProps> = withSentryGetServerSideProps(async (
-  ctx
-) => {
-  // Sentry.addBreadcrumb can be kept if it provides useful context not automatically captured
-  // However, withSentryGetServerSideProps will automatically capture route information.
-  // For this example, let's assume automatic breadcrumbs are sufficient unless specific ones are needed.
-  // if (isSentryActive) { // No longer need isSentryActive check here for Sentry calls
-  //   Sentry.addBreadcrumb({ category: 'route', message: '/', level: 'info' });
-  // }
+// export const getServerSideProps: GetServerSideProps<HomePageProps> = withSentryGetServerSideProps(async (
+//   ctx
+// ) => {
+//   // Sentry.addBreadcrumb can be kept if it provides useful context not automatically captured
+//   // However, withSentryGetServerSideProps will automatically capture route information.
+//   // For this example, let's assume automatic breadcrumbs are sufficient unless specific ones are needed.
+//   // if (isSentryActive) { // No longer need isSentryActive check here for Sentry calls
+//   //   Sentry.addBreadcrumb({ category: 'route', message: '/', level: 'info' });
+//   // }
 
-  try {
-    await fetchHomeData();
-    return { props: {} };
-  } catch (error: any) {
-    // console.error("Error in getServerSideProps for /:", error); // Sentry will capture this
-    // Sentry.captureException(error); // This is now handled by withSentryGetServerSideProps
-    // It's good practice to re-throw the error or handle it as per application logic
-    // For instance, setting a status code and returning error props.
-    // withSentryGetServerSideProps will ensure the error is captured by Sentry.
-    ctx.res.statusCode = 500; // Still useful for Next.js to render an error page or behave accordingly
-    // The error will be captured by Sentry automatically by the HOC.
-    // You might still want to return error props for your UI to handle.
-    return { props: { hasError: true, errorMessage: error.message || 'An unexpected error occurred.' } };
-  }
-});
+//   try {
+//     await fetchHomeData();
+//     return { props: {} };
+//   } catch (error: any) {
+//     // console.error("Error in getServerSideProps for /:", error); // Sentry will capture this
+//     // Sentry.captureException(error); // This is now handled by withSentryGetServerSideProps
+//     // It's good practice to re-throw the error or handle it as per application logic
+//     // For instance, setting a status code and returning error props.
+//     // withSentryGetServerSideProps will ensure the error is captured by Sentry.
+//     ctx.res.statusCode = 500; // Still useful for Next.js to render an error page or behave accordingly
+//     // The error will be captured by Sentry automatically by the HOC.
+//     // You might still want to return error props for your UI to handle.
+//     return { props: { hasError: true, errorMessage: error.message || 'An unexpected error occurred.' } };
+//   }
+// });
+
+// Minimal version placeholder:
+// export const getServerSideProps = async () => ({ props: {} });
 
 const ErrorTestButton = () => {
   const throwTestError = () => {

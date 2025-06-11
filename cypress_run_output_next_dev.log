@@ -1,0 +1,1001 @@
+
+> project@0.0.0 cypress:run
+> cypress run --browser electron
+
+
+DevTools listening on ws://127.0.0.1:44235/devtools/browser/7428dfdb-1ee1-4004-8e2c-2d34a956f7b2
+Couldn't determine Mocha version
+
+================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        14.4.1                                                                         │
+  │ Browser:        Electron 130 (headless)                                                        │
+  │ Node Version:   v18.19.1 (/usr/bin/node)                                                       │
+  │ Specs:          57 found (add_to_cart.cy.ts, ai_matcher_home_card.cy.ts, auth-integration.cy.t │
+  │                 s, black_screen_spec.cy.ts, blank_render.cy.ts, blog.cy.ts, browse_marketplace │
+  │                 .cy.ts, browse_talent_detail.cy.ts, buy_now_login_redirect.cy.ts, cart_badge.c │
+  │                 y.ts, checkout_flow_spe...)                                                    │
+  │ Searched:       cypress/e2e/**/*.cy.{js,jsx,ts,tsx}                                            │
+  │ Experiments:    experimentalModifyObstructiveThirdPartyCode=true                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  add_to_cart.cy.ts                                                              (1 of 57)
+[11223:0611/135746.423861:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135746.564581:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135746.577101:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135748.258549:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135748.264135:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135748.266522:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135748.793357:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="31.334" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:57:56" tests="0" file="cypress/e2e/add_to_cart.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="add to cart" timestamp="2025-06-11T13:57:56" tests="1" time="31.324" failures="1">
+    <testcase name="add to cart stores item in local storage" time="0.000" classname="stores item in local storage">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/equipment/pro-camera-x1000
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/equipment/pro-camera-x1000
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135051:74)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135050:11)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/add_to_cart.cy.ts:8:7)
+
+From Node.js Internals:
+  Error: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (<embedded>:290:113952)
+      at Object.onceWrapper (node:events:632:28)
+      at ClientRequest.emit (node:events:518:28)
+      at Socket.emitRequestTimeout (node:_http_client:849:9)
+      at Object.onceWrapper (node:events:632:28)
+      at Socket.emit (node:events:530:35)
+      at Socket._onTimeout (node:net:595:8)
+      at listOnTimeout (node:internal/timers:581:17)
+      at process.processTimers (node:internal/timers:519:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     31 seconds                                                                       │
+  │ Spec Ran:     add_to_cart.cy.ts                                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/add_to_cart.cy.ts/add to cart -- stores item in local s     (1280x720)
+     torage (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  ai_matcher_home_card.cy.ts                                                     (2 of 57)
+[11223:0611/135828.899769:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135829.013603:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135829.018960:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135829.975036:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135829.992505:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135829.994420:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135830.607673:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="30.900" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:58:34" tests="0" file="cypress/e2e/ai_matcher_home_card.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="AI Matcher home card" timestamp="2025-06-11T13:58:34" tests="1" time="30.881" failures="1">
+    <testcase name="AI Matcher home card navigates to the matcher page via Explore button" time="0.000" classname="navigates to the matcher page via Explore button">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135051:74)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135050:11)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/ai_matcher_home_card.cy.ts:3:7)
+
+From Node.js Internals:
+  Error: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (<embedded>:290:113952)
+      at Object.onceWrapper (node:events:632:28)
+      at ClientRequest.emit (node:events:518:28)
+      at Socket.emitRequestTimeout (node:_http_client:849:9)
+      at Object.onceWrapper (node:events:632:28)
+      at Socket.emit (node:events:530:35)
+      at Socket._onTimeout (node:net:595:8)
+      at listOnTimeout (node:internal/timers:581:17)
+      at process.processTimers (node:internal/timers:519:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     30 seconds                                                                       │
+  │ Spec Ran:     ai_matcher_home_card.cy.ts                                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/ai_matcher_home_card.cy.ts/AI Matcher home card -- navi     (1280x720)
+     gates to the matcher page via Explore button (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  auth-integration.cy.ts                                                         (3 of 57)
+[11223:0611/135906.518327:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135906.615194:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135906.619371:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135908.010915:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135908.011605:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135908.190708:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135908.851943:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="30.712" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:59:13" tests="0" file="cypress/e2e/auth-integration.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="register and login flow" timestamp="2025-06-11T13:59:13" tests="1" time="30.703" failures="1">
+    <testcase name="register and login flow registers, gets auto-logged in, and user data is available" time="0.000" classname="registers, gets auto-logged in, and user data is available">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/signup
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/signup
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135051:74)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135050:11)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/auth-integration.cy.ts:30:7)
+
+From Node.js Internals:
+  Error: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (<embedded>:290:113952)
+      at Object.onceWrapper (node:events:632:28)
+      at ClientRequest.emit (node:events:518:28)
+      at Socket.emitRequestTimeout (node:_http_client:849:9)
+      at Object.onceWrapper (node:events:632:28)
+      at Socket.emit (node:events:530:35)
+      at Socket._onTimeout (node:net:595:8)
+      at listOnTimeout (node:internal/timers:581:17)
+      at process.processTimers (node:internal/timers:519:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     30 seconds                                                                       │
+  │ Spec Ran:     auth-integration.cy.ts                                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/auth-integration.cy.ts/register and login flow -- regis     (1280x720)
+     ters, gets auto-logged in, and user data is available (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  black_screen_spec.cy.ts                                                        (4 of 57)
+[11223:0611/135944.251797:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135944.320896:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135944.321443:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135945.320927:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135945.338714:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135945.339421:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135945.893411:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135949.661663:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135949.836001:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135949.840218:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135950.818898:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135950.822939:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135950.858916:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135951.379289:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="7.920" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:59:49" tests="0" file="cypress/e2e/black_screen_spec.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Zion App Load Test" timestamp="2025-06-11T13:59:49" tests="1" time="7.917" failures="0">
+    <testcase name="Zion App Load Test Should load without black screen or major rendering failure" time="2.667" classname="Should load without black screen or major rendering failure">
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     7 seconds                                                                        │
+  │ Spec Ran:     black_screen_spec.cy.ts                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  blank_render.cy.ts                                                             (5 of 57)
+[11223:0611/135957.383144:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135957.447207:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135957.452023:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135958.260093:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135958.280422:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135958.290256:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/135958.727400:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="217.609" tests="7" failures="7">
+  <testsuite name="Root Suite" timestamp="2025-06-11T14:00:01" tests="0" file="cypress/e2e/blank_render.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Blank render detection" timestamp="2025-06-11T14:00:01" tests="7" time="217.601" failures="7">
+    <testcase name="Blank render detection renders content for /" time="0.000" classname="renders content for /">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135051:74)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135050:11)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:14:9)
+
+From Node.js Internals:
+  Error: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (<embedded>:290:113952)
+      at Object.onceWrapper (node:events:632:28)
+      at ClientRequest.emit (node:events:518:28)
+      at Socket.emitRequestTimeout (node:_http_client:849:9)
+      at Object.onceWrapper (node:events:632:28)
+      at Socket.emit (node:events:530:35)
+      at Socket._onTimeout (node:net:595:8)
+      at listOnTimeout (node:internal/timers:581:17)
+      at process.processTimers (node:internal/timers:519:7)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /marketplace" time="0.000" classname="renders content for /marketplace">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/marketplace
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/marketplace
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135051:74)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135050:11)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:14:9)
+
+From Node.js Internals:
+  Error: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (<embedded>:290:113952)
+      at Object.onceWrapper (node:events:632:28)
+      at ClientRequest.emit (node:events:518:28)
+      at Socket.emitRequestTimeout (node:_http_client:849:9)
+      at Object.onceWrapper (node:events:632:28)
+      at Socket.emit (node:events:530:35)
+      at Socket._onTimeout (node:net:595:8)
+      at listOnTimeout (node:internal/timers:581:17)
+      at process.processTimers (node:internal/timers:519:7)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /services" time="0.000" classname="renders content for /services">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/services
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/services
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135051:74)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135050:11)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:14:9)
+
+From Node.js Internals:
+  Error: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (<embedded>:290:113952)
+      at Object.onceWrapper (node:events:632:28)
+      at ClientRequest.emit (node:events:518:28)
+      at Socket.emitRequestTimeout (node:_http_client:849:9)
+      at Object.onceWrapper (node:events:632:28)
+      at Socket.emit (node:events:530:35)
+      at Socket._onTimeout (node:net:595:8)
+      at listOnTimeout (node:internal/timers:581:17)
+      at process.processTimers (node:internal/timers:519:7)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /talent" time="0.000" classname="renders content for /talent">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/talent
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/talent
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135051:74)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135050:11)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:14:9)
+
+From Node.js Internals:
+  Error: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (<embedded>:290:113952)
+      at Object.onceWrapper (node:events:632:28)
+      at ClientRequest.emit (node:events:518:28)
+      at Socket.emitRequestTimeout (node:_http_client:849:9)
+      at Object.onceWrapper (node:events:632:28)
+      at Socket.emit (node:events:530:35)
+      at Socket._onTimeout (node:net:595:8)
+      at listOnTimeout (node:internal/timers:581:17)
+      at process.processTimers (node:internal/timers:519:7)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /equipment" time="0.000" classname="renders content for /equipment">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/equipment
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/equipment
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135051:74)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135050:11)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:14:9)
+
+From Node.js Internals:
+  Error: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (<embedded>:290:113952)
+      at Object.onceWrapper (node:events:632:28)
+      at ClientRequest.emit (node:events:518:28)
+      at Socket.emitRequestTimeout (node:_http_client:849:9)
+      at Object.onceWrapper (node:events:632:28)
+      at Socket.emit (node:events:530:35)
+      at Socket._onTimeout (node:net:595:8)
+      at listOnTimeout (node:internal/timers:581:17)
+      at process.processTimers (node:internal/timers:519:7)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /about" time="0.000" classname="renders content for /about">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/about
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/about
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135051:74)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135050:11)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:14:9)
+
+From Node.js Internals:
+  Error: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (<embedded>:290:113952)
+      at Object.onceWrapper (node:events:632:28)
+      at ClientRequest.emit (node:events:518:28)
+      at Socket.emitRequestTimeout (node:_http_client:849:9)
+      at Object.onceWrapper (node:events:632:28)
+      at Socket.emit (node:events:530:35)
+      at Socket._onTimeout (node:net:595:8)
+      at listOnTimeout (node:internal/timers:581:17)
+      at process.processTimers (node:internal/timers:519:7)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /blog" time="0.000" classname="renders content for /blog">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/blog
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/blog
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135051:74)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135050:11)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:14:9)
+
+From Node.js Internals:
+  Error: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (<embedded>:290:113952)
+      at Object.onceWrapper (node:events:632:28)
+      at ClientRequest.emit (node:events:518:28)
+      at Socket.emitRequestTimeout (node:_http_client:849:9)
+      at Object.onceWrapper (node:events:632:28)
+      at Socket.emit (node:events:530:35)
+      at Socket._onTimeout (node:net:595:8)
+      at listOnTimeout (node:internal/timers:581:17)
+      at process.processTimers (node:internal/timers:519:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        7                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      7                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  7                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     3 minutes, 37 seconds                                                            │
+  │ Spec Ran:     blank_render.cy.ts                                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for marketplace (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for services (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for talent (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for equipment (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for about (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for blog (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  blog.cy.ts                                                                     (6 of 57)
+[11223:0611/140339.116649:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140339.166837:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140339.167959:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140339.800459:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140339.813270:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140339.813771:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140340.146339:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="10.432" tests="2" failures="2">
+  <testsuite name="Root Suite" timestamp="2025-06-11T14:03:41" tests="0" file="cypress/e2e/blog.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="blog navigation" timestamp="2025-06-11T14:03:41" tests="2" time="10.431" failures="2">
+    <testcase name="blog navigation shows blog page header" time="0.000" classname="shows blog page header">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/blog
+
+The response we received from your web server was:
+
+  &gt; 500: Internal Server Error
+
+This was considered a failure because the status code was not `2xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/blog
+
+The response we received from your web server was:
+
+  > 500: Internal Server Error
+
+This was considered a failure because the status code was not `2xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135035:76)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135018:13)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/blog.cy.ts:3:7)]]></failure>
+    </testcase>
+    <testcase name="blog navigation opens article from list" time="0.000" classname="opens article from list">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/blog
+
+The response we received from your web server was:
+
+  &gt; 500: Internal Server Error
+
+This was considered a failure because the status code was not `2xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/blog
+
+The response we received from your web server was:
+
+  > 500: Internal Server Error
+
+This was considered a failure because the status code was not `2xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135035:76)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135018:13)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/blog.cy.ts:7:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      2                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  2                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     10 seconds                                                                       │
+  │ Spec Ran:     blog.cy.ts                                                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/blog.cy.ts/blog navigation -- shows blog page header (f     (1280x720)
+     ailed).png
+  -  /app/cypress/screenshots/blog.cy.ts/blog navigation -- opens article from list (     (1280x720)
+     failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  browse_marketplace.cy.ts                                                       (7 of 57)
+[11223:0611/140352.550983:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140352.613627:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140352.618726:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140353.186487:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140353.187618:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140353.189368:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140353.462684:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.847" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T14:03:54" tests="0" file="cypress/e2e/browse_marketplace.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="hero section browse marketplace" timestamp="2025-06-11T14:03:54" tests="1" time="0.846" failures="1">
+    <testcase name="hero section browse marketplace navigates to marketplace from home" time="0.000" classname="navigates to marketplace from home">
+      <failure message="`cy.visit()` failed trying to load:
+
+http://localhost:3000/
+
+The response we received from your web server was:
+
+  &gt; 500: Internal Server Error
+
+This was considered a failure because the status code was not `2xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+http://localhost:3000/
+
+The response we received from your web server was:
+
+  > 500: Internal Server Error
+
+This was considered a failure because the status code was not `2xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135035:76)
+    at visitFailedByErr (http://localhost:3000/__cypress/runner/cypress_runner.js:134441:12)
+    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:135018:13)
+    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:1667:18)
+    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/browse_marketplace.cy.ts:3:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     browse_marketplace.cy.ts                                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/browse_marketplace.cy.ts/hero section browse marketplac     (1280x720)
+     e -- navigates to marketplace from home (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  browse_talent_detail.cy.ts                                                     (8 of 57)
+[11223:0611/140356.734241:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[11223:0611/140402.561194:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
