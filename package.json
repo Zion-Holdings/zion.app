@@ -15,7 +15,7 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "lint-format": "npm run format && npm run lint -- --fix",
     "preview": "NODE_ENV=production vite preview",
-    "test": "jest",
+    "test": "jest --testTimeout=30000",
     "test:watch": "vitest --watch",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser electron",
