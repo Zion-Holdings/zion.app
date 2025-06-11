@@ -5,6 +5,7 @@ import { PrismaClient, ErrorAnalysisStatus } from '@prisma/client';
 import { captureException } from '../../src/utils/sentry'; // Adjusted path
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { ServerResponse } from 'http';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
 const prisma = new PrismaClient();
 const CODEX_SCRIPT_PATH = path.resolve(process.cwd(), 'scripts/codex-bug-fix.js');
@@ -68,7 +69,7 @@ function formulateCodexPrompt(errorDetails: ErrorDetails, signature: string): st
   return prompt;
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     res.status(405).end('Method Not Allowed');
@@ -230,3 +231,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
   }
 }
+
+export default withErrorLogging(handler);

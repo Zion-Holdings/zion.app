@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { handler as sentryCheck } from '../../netlify/functions/_sentryCheck';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
-export default async function handler(
+async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -13,3 +14,5 @@ export default async function handler(
   const result = await sentryCheck();
   return res.status(result.statusCode).end();
 }
+
+export default withErrorLogging(handler);

@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import mongoose from 'mongoose';
 import { z } from 'zod';
 import type { Document, Model } from 'mongoose';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
 const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/zion';
 
@@ -39,7 +40,7 @@ const FeedbackValidator = z.object({
   userAgent: z.string(),
 });
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).end(`Method ${req.method} Not Allowed`);
@@ -59,3 +60,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({ error: 'Failed to save feedback' });
   }
 }
+
+export default withErrorLogging(handler);
