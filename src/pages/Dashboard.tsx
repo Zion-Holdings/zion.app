@@ -10,14 +10,21 @@ import { NotificationBell } from "@/components/NotificationBell";
 import { GuidedTour } from "@/components/onboarding/GuidedTour";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { useRouter } from 'next/router';
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
   const { toast } = useToast();
+  const router = useRouter();
   const roleForTour =
-    user.userType === 'employer' || user.userType === 'buyer' ? 'client' : 'talent';
+    user?.userType === 'employer' || user?.userType === 'buyer' ? 'client' : 'talent';
 
-  if (!user) return null;
+  // If the user isn't loaded, redirect to login to avoid a blank page
+  // and show a minimal message while redirecting.
+  if (!user) {
+    router.replace('/login');
+    return <div className="p-4 text-center">Redirecting to login...</div>;
+  }
 
   const handleTestNotification = async () => {
     const result = await createTestNotification(user.id);

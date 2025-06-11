@@ -1,5 +1,5 @@
 import './commands';
-import 'cypress-stripe';
+import './stripe_mock.js';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   // Log the error for better debugging

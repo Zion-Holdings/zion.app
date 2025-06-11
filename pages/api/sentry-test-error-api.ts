@@ -1,6 +1,7 @@
 // pages/api/sentry-test-error-api.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
 import * as Sentry from '@sentry/nextjs';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
 if (process.env.NODE_ENV === 'development') {
   // Log the DSN during development to verify it's being read by the function
@@ -8,7 +9,7 @@ if (process.env.NODE_ENV === 'development') {
   console.log('SENTRY_DSN from API route:', process.env.SENTRY_DSN);
 }
 
-export default async function handler(
+async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -22,3 +23,5 @@ export default async function handler(
     res.status(500).json({ error: 'Sentry Test API Error' });
   }
 }
+
+export default withErrorLogging(handler);

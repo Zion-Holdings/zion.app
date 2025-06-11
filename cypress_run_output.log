@@ -1,0 +1,1886 @@
+
+> project@0.0.0 cypress:run
+> cypress run --browser electron --config baseUrl=http://localhost:5176
+
+
+DevTools listening on ws://127.0.0.1:44245/devtools/browser/6c0dc116-8d35-446a-b70f-b4e06a03743b
+Couldn't determine Mocha version
+
+================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        14.4.1                                                                         │
+  │ Browser:        Electron 130 (headless)                                                        │
+  │ Node Version:   v18.19.1 (/usr/bin/node)                                                       │
+  │ Specs:          57 found (add_to_cart.cy.ts, ai_matcher_home_card.cy.ts, auth-integration.cy.t │
+  │                 s, black_screen_spec.cy.ts, blank_render.cy.ts, blog.cy.ts, browse_marketplace │
+  │                 .cy.ts, browse_talent_detail.cy.ts, buy_now_login_redirect.cy.ts, cart_badge.c │
+  │                 y.ts, checkout_flow_spe...)                                                    │
+  │ Searched:       cypress/e2e/**/*.cy.{js,jsx,ts,tsx}                                            │
+  │ Experiments:    experimentalModifyObstructiveThirdPartyCode=true                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  add_to_cart.cy.ts                                                              (1 of 57)
+[8729:0611/134233.068451:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134233.122440:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134233.129737:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134233.561792:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134233.570157:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134233.578183:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134233.768622:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134238.738510:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134239.191740:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134239.239747:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="12.358" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:42:37" tests="0" file="cypress/e2e/add_to_cart.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="add to cart" timestamp="2025-06-11T13:42:37" tests="1" time="12.357" failures="1">
+    <testcase name="add to cart stores item in local storage" time="0.000" classname="stores item in local storage">
+      <failure message="Timed out retrying after 10000ms: Expected to find content: &apos;Add to Cart&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Add to Cart' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/add_to_cart.cy.ts:10:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     12 seconds                                                                       │
+  │ Spec Ran:     add_to_cart.cy.ts                                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/add_to_cart.cy.ts/add to cart -- stores item in local s     (1280x720)
+     torage (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  ai_matcher_home_card.cy.ts                                                     (2 of 57)
+[8729:0611/134250.233835:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134250.278214:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134250.278567:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134250.694959:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134250.695371:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134250.698302:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134250.890392:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134252.337262:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134252.424240:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134252.559662:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="10.772" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:42:52" tests="0" file="cypress/e2e/ai_matcher_home_card.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="AI Matcher home card" timestamp="2025-06-11T13:42:52" tests="1" time="10.772" failures="1">
+    <testcase name="AI Matcher home card navigates to the matcher page via Explore button" time="0.000" classname="navigates to the matcher page via Explore button">
+      <failure message="Timed out retrying after 10000ms: Expected to find element: `[data-testid=&quot;explore-ai-talent-matching-cta&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid="explore-ai-talent-matching-cta"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/ai_matcher_home_card.cy.ts:5:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     10 seconds                                                                       │
+  │ Spec Ran:     ai_matcher_home_card.cy.ts                                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/ai_matcher_home_card.cy.ts/AI Matcher home card -- navi     (1280x720)
+     gates to the matcher page via Explore button (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  auth-integration.cy.ts                                                         (3 of 57)
+[8729:0611/134303.156897:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134303.202764:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134303.203190:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134303.668464:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134303.668811:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134303.679675:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134303.989454:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134305.540448:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134305.624384:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134305.783638:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.780" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:43:05" tests="0" file="cypress/e2e/auth-integration.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="register and login flow" timestamp="2025-06-11T13:43:05" tests="1" time="4.779" failures="1">
+    <testcase name="register and login flow registers, gets auto-logged in, and user data is available" time="0.000" classname="registers, gets auto-logged in, and user data is available">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `[data-testid=&quot;display-name-input&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid="display-name-input"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/auth-integration.cy.ts:31:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     auth-integration.cy.ts                                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/auth-integration.cy.ts/register and login flow -- regis     (1280x720)
+     ters, gets auto-logged in, and user data is available (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  black_screen_spec.cy.ts                                                        (4 of 57)
+[8729:0611/134311.109306:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134320.529338:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134320.755030:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134320.758754:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134321.252426:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134321.255072:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134321.294988:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134321.546354:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="11.675" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:43:12" tests="0" file="cypress/e2e/black_screen_spec.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Zion App Load Test" timestamp="2025-06-11T13:43:12" tests="1" time="11.675" failures="0">
+    <testcase name="Zion App Load Test Should load without black screen or major rendering failure" time="1.231" classname="Should load without black screen or major rendering failure">
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     11 seconds                                                                       │
+  │ Spec Ran:     black_screen_spec.cy.ts                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  blank_render.cy.ts                                                             (5 of 57)
+[8729:0611/134324.335787:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134324.370174:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134324.371449:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134324.877173:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134324.883273:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134324.883999:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134325.082918:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134326.515542:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134326.645806:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134326.816808:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134337.438851:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134337.492606:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134337.494556:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134337.505052:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134337.533686:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134337.566804:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134337.674535:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134347.968860:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134348.035057:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134348.035583:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134348.036727:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134348.038032:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134348.043083:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134348.169255:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134358.433815:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134358.486315:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134358.491129:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134358.491575:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134358.491971:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134358.503245:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134358.596618:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134408.886661:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134408.946571:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134408.955562:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134408.956285:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134408.961398:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134408.961949:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134409.088146:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134419.423617:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134419.468083:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134419.472670:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134419.476361:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134419.479011:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134419.479288:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134419.594147:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134429.933059:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134429.989352:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134429.990018:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134429.990708:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134429.994514:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134430.000634:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134430.118234:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="74.157" tests="7" failures="7">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:43:26" tests="0" file="cypress/e2e/blank_render.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Blank render detection" timestamp="2025-06-11T13:43:26" tests="7" time="74.157" failures="7">
+    <testcase name="Blank render detection renders content for /" time="0.000" classname="renders content for /">
+      <failure message="Timed out retrying after 10000ms: Expected to find element: `main`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find element: `main`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:15:9)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /marketplace" time="0.000" classname="renders content for /marketplace">
+      <failure message="Timed out retrying after 10000ms: Expected to find element: `main`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find element: `main`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:15:9)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /services" time="0.000" classname="renders content for /services">
+      <failure message="Timed out retrying after 10000ms: Expected to find element: `main`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find element: `main`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:15:9)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /talent" time="0.000" classname="renders content for /talent">
+      <failure message="Timed out retrying after 10000ms: Expected to find element: `main`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find element: `main`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:15:9)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /equipment" time="0.000" classname="renders content for /equipment">
+      <failure message="Timed out retrying after 10000ms: Expected to find element: `main`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find element: `main`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:15:9)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /about" time="0.000" classname="renders content for /about">
+      <failure message="Timed out retrying after 10000ms: Expected to find element: `main`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find element: `main`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:15:9)]]></failure>
+    </testcase>
+    <testcase name="Blank render detection renders content for /blog" time="0.000" classname="renders content for /blog">
+      <failure message="Timed out retrying after 10000ms: Expected to find element: `main`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find element: `main`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/blank_render.cy.ts:15:9)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        7                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      7                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  7                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     1 minute, 14 seconds                                                             │
+  │ Spec Ran:     blank_render.cy.ts                                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for marketplace (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for services (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for talent (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for equipment (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for about (failed).png
+  -  /app/cypress/screenshots/blank_render.cy.ts/Blank render detection -- renders co     (1280x720)
+     ntent for blog (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  blog.cy.ts                                                                     (6 of 57)
+[8729:0611/134440.831888:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134440.883242:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134440.886776:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134441.390355:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134441.390808:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134441.392806:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134441.688930:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134443.249204:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134443.344442:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134443.528538:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134448.075513:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="9.129" tests="2" failures="2">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:44:43" tests="0" file="cypress/e2e/blog.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="blog navigation" timestamp="2025-06-11T13:44:43" tests="2" time="9.127" failures="2">
+    <testcase name="blog navigation shows blog page header" time="0.000" classname="shows blog page header">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `h1`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `h1`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/blog.cy.ts:4:17)]]></failure>
+    </testcase>
+    <testcase name="blog navigation opens article from list" time="0.000" classname="opens article from list">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `a`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `a`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/blog.cy.ts:8:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      2                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  2                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     9 seconds                                                                        │
+  │ Spec Ran:     blog.cy.ts                                                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/blog.cy.ts/blog navigation -- shows blog page header (f     (1280x720)
+     ailed).png
+  -  /app/cypress/screenshots/blog.cy.ts/blog navigation -- opens article from list (     (1280x720)
+     failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  browse_marketplace.cy.ts                                                       (7 of 57)
+[8729:0611/134453.095833:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134454.492865:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134454.582348:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134454.656652:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.980" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:44:54" tests="0" file="cypress/e2e/browse_marketplace.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="hero section browse marketplace" timestamp="2025-06-11T13:44:54" tests="1" time="4.979" failures="1">
+    <testcase name="hero section browse marketplace navigates to marketplace from home" time="0.000" classname="navigates to marketplace from home">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `#browse-marketplace`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `#browse-marketplace`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/browse_marketplace.cy.ts:4:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     browse_marketplace.cy.ts                                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/browse_marketplace.cy.ts/hero section browse marketplac     (1280x720)
+     e -- navigates to marketplace from home (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  browse_talent_detail.cy.ts                                                     (8 of 57)
+[8729:0611/134500.907687:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134502.457595:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134502.568985:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134502.657046:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.820" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:45:02" tests="0" file="cypress/e2e/browse_talent_detail.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="browse talents and view detail" timestamp="2025-06-11T13:45:02" tests="1" time="4.819" failures="1">
+    <testcase name="browse talents and view detail opens a talent detail page from the listing" time="0.000" classname="opens a talent detail page from the listing">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;View&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'View' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/browse_talent_detail.cy.ts:4:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     browse_talent_detail.cy.ts                                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/browse_talent_detail.cy.ts/browse talents and view deta     (1280x720)
+     il -- opens a talent detail page from the listing (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  buy_now_login_redirect.cy.ts                                                   (9 of 57)
+[8729:0611/134507.976333:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134509.360698:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134509.450732:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134509.563786:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.743" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:45:09" tests="0" file="cypress/e2e/buy_now_login_redirect.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="guest buy now flow" timestamp="2025-06-11T13:45:09" tests="1" time="4.742" failures="1">
+    <testcase name="guest buy now flow redirects through login to checkout" time="0.000" classname="redirects through login to checkout">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Buy Now&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Buy Now' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/buy_now_login_redirect.cy.ts:10:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     buy_now_login_redirect.cy.ts                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/buy_now_login_redirect.cy.ts/guest buy now flow -- redi     (1280x720)
+     rects through login to checkout (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  cart_badge.cy.ts                                                              (10 of 57)
+[8729:0611/134514.818532:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134516.234547:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134516.312931:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134516.450849:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.717" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:45:16" tests="0" file="cypress/e2e/cart_badge.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="cart badge" timestamp="2025-06-11T13:45:16" tests="1" time="4.715" failures="1">
+    <testcase name="cart badge shows count after adding first item" time="0.000" classname="shows count after adding first item">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Add to Cart&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Add to Cart' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/cart_badge.cy.ts:4:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     cart_badge.cy.ts                                                                 │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/cart_badge.cy.ts/cart badge -- shows count after adding     (1280x720)
+      first item (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  checkout_flow_spec.cy.ts                                                      (11 of 57)
+[8729:0611/134521.690293:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.251" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:45:23" tests="0" file="cypress/e2e/checkout_flow_spec.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Checkout Flow with Mocked Stripe" timestamp="2025-06-11T13:45:23" tests="1" time="0.249" failures="1">
+    <testcase name="Checkout Flow with Mocked Stripe should successfully complete the checkout process with mocked Stripe API calls" time="0.000" classname="should successfully complete the checkout process with mocked Stripe API calls">
+      <failure message="cy.stripeElements is not a function" type="TypeError"><![CDATA[TypeError: cy.stripeElements is not a function
+    at Context.eval (webpack://project/./cypress/e2e/checkout_flow_spec.cy.ts:7:7)
+    at runnable.fn (http://localhost:5176/__cypress/runner/cypress_runner.js:141791:19)
+    at callFn (http://localhost:5176/__cypress/runner/cypress_runner.js:160869:21)
+    at Runnable.run (http://localhost:5176/__cypress/runner/cypress_runner.js:160856:7)
+    at <unknown> (http://localhost:5176/__cypress/runner/cypress_runner.js:166928:30)
+    at PassThroughHandlerContext.finallyHandler (http://localhost:5176/__cypress/runner/cypress_runner.js:4042:23)
+    at PassThroughHandlerContext.tryCatcher (http://localhost:5176/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:5176/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:5176/__cypress/runner/cypress_runner.js:1546:18)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     checkout_flow_spec.cy.ts                                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/checkout_flow_spec.cy.ts/Checkout Flow with Mocked Stri     (1280x720)
+     pe -- should successfully complete the checkout process with mocked Stripe API c
+     alls (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  checkout_payment.cy.ts                                                        (12 of 57)
+[8729:0611/134524.648976:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.343" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:45:26" tests="0" file="cypress/e2e/checkout_payment.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="test checkout purchase" timestamp="2025-06-11T13:45:26" tests="1" time="0.342" failures="1">
+    <testcase name="test checkout purchase completes a $0.50 test purchase" time="0.000" classname="completes a $0.50 test purchase">
+      <failure message="`cy.request()` failed on:
+
+http://localhost:5176/api/auth/login
+
+The response we received from your web server was:
+
+  &gt; 404: Not Found
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: http://localhost:5176/api/auth/login
+Headers: {
+  &quot;Connection&quot;: &quot;keep-alive&quot;,
+  &quot;user-agent&quot;: &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.137 Safari/537.36&quot;,
+  &quot;accept&quot;: &quot;*/*&quot;,
+  &quot;accept-encoding&quot;: &quot;gzip, deflate&quot;,
+  &quot;content-type&quot;: &quot;application/json&quot;,
+  &quot;content-length&quot;: 54
+}
+Body: {&quot;email&quot;:&quot;existing@test.com&quot;,&quot;password&quot;:&quot;password123&quot;}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 404 - Not Found
+Headers: {
+  &quot;vary&quot;: &quot;Origin&quot;,
+  &quot;date&quot;: &quot;Wed, 11 Jun 2025 13:45:26 GMT&quot;,
+  &quot;connection&quot;: &quot;keep-alive&quot;,
+  &quot;keep-alive&quot;: &quot;timeout=5&quot;,
+  &quot;content-length&quot;: &quot;0&quot;
+}
+
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` failed on:
+
+http://localhost:5176/api/auth/login
+
+The response we received from your web server was:
+
+  > 404: Not Found
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: http://localhost:5176/api/auth/login
+Headers: {
+  "Connection": "keep-alive",
+  "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.137 Safari/537.36",
+  "accept": "*/*",
+  "accept-encoding": "gzip, deflate",
+  "content-type": "application/json",
+  "content-length": 54
+}
+Body: {"email":"existing@test.com","password":"password123"}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 404 - Not Found
+Headers: {
+  "vary": "Origin",
+  "date": "Wed, 11 Jun 2025 13:45:26 GMT",
+  "connection": "keep-alive",
+  "keep-alive": "timeout=5",
+  "content-length": "0"
+}
+
+
+https://on.cypress.io/request
+    at <unknown> (http://localhost:5176/__cypress/runner/cypress_runner.js:136322:72)
+    at tryCatcher (http://localhost:5176/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:5176/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:5176/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:5176/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:5176/__cypress/runner/cypress_runner.js:1671:18)
+    at _drainQueueStep (http://localhost:5176/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:5176/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:5176/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:5176/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/support/commands.js:2:5)
+    at wrapped (http://localhost:5176/__cypress/runner/cypress_runner.js:141516:43)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     checkout_payment.cy.ts                                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/checkout_payment.cy.ts/test checkout purchase -- comple     (1280x720)
+     tes a $0.50 test purchase (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  checkout_test_route_spec.cy.ts                                                (13 of 57)
+[8729:0611/134527.608039:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134529.053442:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134529.150018:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134529.215042:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134533.897207:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="9.368" tests="3" failures="2" skipped="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:45:28" tests="0" file="cypress/e2e/checkout_test_route_spec.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Checkout Test Route" timestamp="2025-06-11T13:45:28" tests="3" time="9.366" failures="2">
+    <testcase name="Checkout Test Route should display the dummy product and price" time="0.000" classname="should display the dummy product and price">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Test Product Checkout&apos; within the selector: &apos;h1&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Test Product Checkout' within the selector: 'h1' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/checkout_test_route_spec.cy.ts:8:47)]]></failure>
+    </testcase>
+    <testcase name="Checkout Test Route should attempt to redirect to Stripe checkout when &quot;Buy Now (Test)&quot; is clicked" time="0.000" classname="should attempt to redirect to Stripe checkout when &quot;Buy Now (Test)&quot; is clicked">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Buy Now (Test)&apos; within the selector: &apos;button&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Buy Now (Test)' within the selector: 'button' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/checkout_test_route_spec.cy.ts:27:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      2                                                                                │
+  │ Pending:      1                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  2                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     9 seconds                                                                        │
+  │ Spec Ran:     checkout_test_route_spec.cy.ts                                                   │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/checkout_test_route_spec.cy.ts/Checkout Test Route -- s     (1280x720)
+     hould display the dummy product and price (failed).png
+  -  /app/cypress/screenshots/checkout_test_route_spec.cy.ts/Checkout Test Route -- s     (1280x720)
+     hould attempt to redirect to Stripe checkout when Buy Now (Test) is clicked (fai
+     led).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  community-auth.cy.ts                                                          (14 of 57)
+[8729:0611/134539.208228:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134540.734658:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134540.817460:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134540.918163:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.805" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:45:40" tests="0" file="cypress/e2e/community-auth.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="community create post auth redirect" timestamp="2025-06-11T13:45:40" tests="1" time="4.803" failures="1">
+    <testcase name="community create post auth redirect redirects to login and back to create post" time="0.000" classname="redirects to login and back to create post">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Create New Post&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Create New Post' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/community-auth.cy.ts:10:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     community-auth.cy.ts                                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/community-auth.cy.ts/community create post auth redirec     (1280x720)
+     t -- redirects to login and back to create post (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  community-category.cy.ts                                                      (15 of 57)
+[8729:0611/134546.290710:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134547.827149:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134547.918946:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134547.964744:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.815" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:45:47" tests="0" file="cypress/e2e/community-category.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="community category listing" timestamp="2025-06-11T13:45:47" tests="1" time="4.815" failures="1">
+    <testcase name="community category listing displays posts in Getting Hired category" time="0.000" classname="displays posts in Getting Hired category">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Getting Hired&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Getting Hired' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/community-category.cy.ts:4:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     community-category.cy.ts                                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/community-category.cy.ts/community category listing --      (1280x720)
+     displays posts in Getting Hired category (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  community-empty.cy.ts                                                         (16 of 57)
+[8729:0611/134553.425446:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134555.042254:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134555.118192:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134555.280074:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5.805" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:45:54" tests="0" file="cypress/e2e/community-empty.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="community empty category" timestamp="2025-06-11T13:45:54" tests="1" time="5.803" failures="1">
+    <testcase name="community empty category shows empty state with disabled CTA" time="0.000" classname="shows empty state with disabled CTA">
+      <failure message="Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `getPosts`. No request ever occurred.
+
+https://on.cypress.io/wait" type="CypressError"><![CDATA[CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `getPosts`. No request ever occurred.
+
+https://on.cypress.io/wait
+    at cypressErr (http://localhost:5176/__cypress/runner/cypress_runner.js:77527:18)
+    at Object.errByPath (http://localhost:5176/__cypress/runner/cypress_runner.js:77581:10)
+    at checkForXhr (http://localhost:5176/__cypress/runner/cypress_runner.js:138815:84)
+    at <unknown> (http://localhost:5176/__cypress/runner/cypress_runner.js:138841:28)
+    at tryCatcher (http://localhost:5176/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise.attempt.Promise.try (http://localhost:5176/__cypress/runner/cypress_runner.js:4285:29)
+    at whenStable (http://localhost:5176/__cypress/runner/cypress_runner.js:147197:68)
+    at <unknown> (http://localhost:5176/__cypress/runner/cypress_runner.js:147138:14)
+    at tryCatcher (http://localhost:5176/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:5176/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:5176/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:5176/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:5176/__cypress/runner/cypress_runner.js:1671:18)
+    at Promise._fulfill (http://localhost:5176/__cypress/runner/cypress_runner.js:1615:18)
+    at <unknown> (http://localhost:5176/__cypress/runner/cypress_runner.js:5420:46)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/community-empty.cy.ts:9:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     5 seconds                                                                        │
+  │ Spec Ran:     community-empty.cy.ts                                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/community-empty.cy.ts/community empty category -- shows     (1280x720)
+      empty state with disabled CTA (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  criticalPaths.cy.ts                                                           (17 of 57)
+[8729:0611/134601.400221:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134601.400897:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134601.415929:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134601.684606:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.299" tests="4" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:46:03" tests="0" file="cypress/e2e/criticalPaths.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Critical user journeys" timestamp="2025-06-11T13:46:03" tests="4" time="0.297" failures="1">
+    <testcase name="Critical user journeys &quot;before each&quot; hook for &quot;Registers a new user successfully&quot;" time="0.000" classname="&quot;before each&quot; hook for &quot;Registers a new user successfully&quot;">
+      <failure message="EXISTING_USER_EMAIL or EXISTING_USER_PASSWORD environment variables are not set.
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Critical user journeys`" type="Error"><![CDATA[Error: EXISTING_USER_EMAIL or EXISTING_USER_PASSWORD environment variables are not set.
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Critical user journeys`
+    at Context.eval (webpack://project/./cypress/e2e/criticalPaths.cy.ts:19:12)
+    at runnable.fn (http://localhost:5176/__cypress/runner/cypress_runner.js:141791:19)
+    at callFn (http://localhost:5176/__cypress/runner/cypress_runner.js:160869:21)
+    at Runnable.run (http://localhost:5176/__cypress/runner/cypress_runner.js:160856:7)
+    at <unknown> (http://localhost:5176/__cypress/runner/cypress_runner.js:166928:30)
+    at PassThroughHandlerContext.finallyHandler (http://localhost:5176/__cypress/runner/cypress_runner.js:4042:23)
+    at PassThroughHandlerContext.tryCatcher (http://localhost:5176/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:5176/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:5176/__cypress/runner/cypress_runner.js:1546:18)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      3                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     criticalPaths.cy.ts                                                              │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/criticalPaths.cy.ts/Critical user journeys -- Registers     (1280x720)
+      a new user successfully -- before each hook (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  error_handling.cy.ts                                                          (18 of 57)
+[8729:0611/134604.786378:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134606.336470:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134606.414432:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134606.561477:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134611.145959:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134621.439197:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134621.500881:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134621.502670:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134621.507420:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134621.507939:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134621.508680:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134621.636363:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="25.652" tests="3" failures="3">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:46:06" tests="0" file="cypress/e2e/error_handling.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Error Handling" timestamp="2025-06-11T13:46:06" tests="3" time="25.651" failures="3">
+    <testcase name="Error Handling should load the main page (e.g., Home) without the global error boundary being visible" time="0.000" classname="should load the main page (e.g., Home) without the global error boundary being visible">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `main`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `main`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/error_handling.cy.ts:26:19)]]></failure>
+    </testcase>
+    <testcase name="Error Handling should display global error fallback for a render error and allow retry" time="0.000" classname="should display global error fallback for a render error and allow retry">
+      <failure message="Timed out retrying after 10000ms: Expected to find content: &apos;Oops! Something went wrong.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Oops! Something went wrong.' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/error_handling.cy.ts:33:67)]]></failure>
+    </testcase>
+    <testcase name="Error Handling should display global error fallback for an error thrown on mount and allow retry" time="0.000" classname="should display global error fallback for an error thrown on mount and allow retry">
+      <failure message="Timed out retrying after 10000ms: Expected to find content: &apos;Oops! Something went wrong.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Oops! Something went wrong.' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/error_handling.cy.ts:48:67)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      3                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  3                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     25 seconds                                                                       │
+  │ Spec Ran:     error_handling.cy.ts                                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/error_handling.cy.ts/Error Handling -- should load the      (1280x720)
+     main page (e.g., Home) without the global error boundary being visible (failed).
+     png
+  -  /app/cypress/screenshots/error_handling.cy.ts/Error Handling -- should display g     (1280x720)
+     lobal error fallback for a render error and allow retry (failed).png
+  -  /app/cypress/screenshots/error_handling.cy.ts/Error Handling -- should display g     (1280x720)
+     lobal error fallback for an error thrown on mount and allow retry (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  footer_newsletter.cy.ts                                                       (19 of 57)
+[8729:0611/134632.027750:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134632.075536:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134632.076329:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134632.647831:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134632.648449:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134632.648916:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134632.920797:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134634.357080:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134634.424475:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134634.549394:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134639.104180:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134643.492297:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="13.670" tests="3" failures="3">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:46:34" tests="0" file="cypress/e2e/footer_newsletter.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Footer Newsletter Form" timestamp="2025-06-11T13:46:34" tests="3" time="13.670" failures="3">
+    <testcase name="Footer Newsletter Form should allow a user to subscribe with a valid email" time="0.000" classname="should allow a user to subscribe with a valid email">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `input[placeholder=&quot;Enter your email&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[placeholder="Enter your email"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/footer_newsletter.cy.ts:7:7)]]></failure>
+    </testcase>
+    <testcase name="Footer Newsletter Form should show an inline error for an invalid email" time="0.000" classname="should show an inline error for an invalid email">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `input[placeholder=&quot;Enter your email&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[placeholder="Enter your email"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/footer_newsletter.cy.ts:14:7)]]></failure>
+    </testcase>
+    <testcase name="Footer Newsletter Form should show an inline error for an empty email submission" time="0.000" classname="should show an inline error for an empty email submission">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `form button[type=&quot;submit&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `form button[type="submit"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/footer_newsletter.cy.ts:22:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      3                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  3                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     13 seconds                                                                       │
+  │ Spec Ran:     footer_newsletter.cy.ts                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/footer_newsletter.cy.ts/Footer Newsletter Form -- shoul     (1280x720)
+     d allow a user to subscribe with a valid email (failed).png
+  -  /app/cypress/screenshots/footer_newsletter.cy.ts/Footer Newsletter Form -- shoul     (1280x720)
+     d show an inline error for an invalid email (failed).png
+  -  /app/cypress/screenshots/footer_newsletter.cy.ts/Footer Newsletter Form -- shoul     (1280x720)
+     d show an inline error for an empty email submission (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  forgot-password.cy.ts                                                         (20 of 57)
+[8729:0611/134649.187262:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134651.041811:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134651.151759:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134651.268175:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134656.389881:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134700.816197:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134705.303149:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="18.608" tests="4" failures="4">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:46:50" tests="0" file="cypress/e2e/forgot-password.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Forgot Password Page" timestamp="2025-06-11T13:46:50" tests="4" time="18.607" failures="4">
+    <testcase name="Forgot Password Page should allow a user to request a password reset and see a success message" time="0.000" classname="should allow a user to request a password reset and see a success message">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `input#email`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `input#email`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/forgot-password.cy.ts:15:7)]]></failure>
+    </testcase>
+    <testcase name="Forgot Password Page should display an error message if the email is not provided (HTML5 validation)" time="0.000" classname="should display an error message if the email is not provided (HTML5 validation)">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `button[type=&quot;submit&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `button[type="submit"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/forgot-password.cy.ts:35:7)]]></failure>
+    </testcase>
+    <testcase name="Forgot Password Page handles server errors without uncaught exceptions" time="0.000" classname="handles server errors without uncaught exceptions">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `input#email`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `input#email`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/forgot-password.cy.ts:55:7)]]></failure>
+    </testcase>
+    <testcase name="Forgot Password Page should display a specific client-side error message if the API call fails without a message" time="0.000" classname="should display a specific client-side error message if the API call fails without a message">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `input#email`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `input#email`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/forgot-password.cy.ts:88:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      4                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  4                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     18 seconds                                                                       │
+  │ Spec Ran:     forgot-password.cy.ts                                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/forgot-password.cy.ts/Forgot Password Page -- should al     (1280x720)
+     low a user to request a password reset and see a success message (failed).png
+  -  /app/cypress/screenshots/forgot-password.cy.ts/Forgot Password Page -- should di     (1280x720)
+     splay an error message if the email is not provided (HTML5 validation) (failed).
+     png
+  -  /app/cypress/screenshots/forgot-password.cy.ts/Forgot Password Page -- handles s     (1280x720)
+     erver errors without uncaught exceptions (failed).png
+  -  /app/cypress/screenshots/forgot-password.cy.ts/Forgot Password Page -- should di     (1280x720)
+     splay a specific client-side error message if the API call fails without a messa
+     ge (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  full_checkout_flow.cy.ts                                                      (21 of 57)
+[8729:0611/134710.400316:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.347" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:47:11" tests="0" file="cypress/e2e/full_checkout_flow.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="buy now full checkout" timestamp="2025-06-11T13:47:11" tests="1" time="0.345" failures="1">
+    <testcase name="buy now full checkout adds item and completes payment" time="0.000" classname="adds item and completes payment">
+      <failure message="`cy.request()` failed on:
+
+http://localhost:5176/api/auth/login
+
+The response we received from your web server was:
+
+  &gt; 404: Not Found
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: http://localhost:5176/api/auth/login
+Headers: {
+  &quot;Connection&quot;: &quot;keep-alive&quot;,
+  &quot;user-agent&quot;: &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.137 Safari/537.36&quot;,
+  &quot;accept&quot;: &quot;*/*&quot;,
+  &quot;accept-encoding&quot;: &quot;gzip, deflate&quot;,
+  &quot;content-type&quot;: &quot;application/json&quot;,
+  &quot;content-length&quot;: 54
+}
+Body: {&quot;email&quot;:&quot;existing@test.com&quot;,&quot;password&quot;:&quot;password123&quot;}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 404 - Not Found
+Headers: {
+  &quot;vary&quot;: &quot;Origin&quot;,
+  &quot;date&quot;: &quot;Wed, 11 Jun 2025 13:47:11 GMT&quot;,
+  &quot;connection&quot;: &quot;keep-alive&quot;,
+  &quot;keep-alive&quot;: &quot;timeout=5&quot;,
+  &quot;content-length&quot;: &quot;0&quot;
+}
+
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` failed on:
+
+http://localhost:5176/api/auth/login
+
+The response we received from your web server was:
+
+  > 404: Not Found
+
+This was considered a failure because the status code was not `2xx` or `3xx`.
+
+If you do not want status codes to cause failures pass the option: `failOnStatusCode: false`
+
+-----------------------------------------------------------
+
+The request we sent was:
+
+Method: POST
+URL: http://localhost:5176/api/auth/login
+Headers: {
+  "Connection": "keep-alive",
+  "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.137 Safari/537.36",
+  "accept": "*/*",
+  "accept-encoding": "gzip, deflate",
+  "content-type": "application/json",
+  "content-length": 54
+}
+Body: {"email":"existing@test.com","password":"password123"}
+
+-----------------------------------------------------------
+
+The response we got was:
+
+Status: 404 - Not Found
+Headers: {
+  "vary": "Origin",
+  "date": "Wed, 11 Jun 2025 13:47:11 GMT",
+  "connection": "keep-alive",
+  "keep-alive": "timeout=5",
+  "content-length": "0"
+}
+
+
+https://on.cypress.io/request
+    at <unknown> (http://localhost:5176/__cypress/runner/cypress_runner.js:136322:72)
+    at tryCatcher (http://localhost:5176/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:5176/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:5176/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:5176/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:5176/__cypress/runner/cypress_runner.js:1671:18)
+    at _drainQueueStep (http://localhost:5176/__cypress/runner/cypress_runner.js:2377:12)
+    at _drainQueue (http://localhost:5176/__cypress/runner/cypress_runner.js:2370:9)
+    at Async._drainQueues (http://localhost:5176/__cypress/runner/cypress_runner.js:2386:5)
+    at Async.drainQueues (http://localhost:5176/__cypress/runner/cypress_runner.js:2256:14)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/support/commands.js:2:5)
+    at wrapped (http://localhost:5176/__cypress/runner/cypress_runner.js:141516:43)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     full_checkout_flow.cy.ts                                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/full_checkout_flow.cy.ts/buy now full checkout -- adds      (1280x720)
+     item and completes payment (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  health-check.cy.ts                                                            (22 of 57)
+[8729:0611/134713.526120:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134715.381677:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.562" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:47:15" tests="0" file="cypress/e2e/health-check.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="API Health Check" timestamp="2025-06-11T13:47:15" tests="1" time="0.562" failures="1">
+    <testcase name="API Health Check should return a 200 OK status and correct body for /api/health" time="0.000" classname="should return a 200 OK status and correct body for /api/health">
+      <failure message="expected &apos;\n&lt;!DOCTYPE html&gt;\n&lt;html lang=&quot;en&quot;&gt;\n  &lt;head&gt;\n    &lt;script type=&quot;module&quot;&gt;import { injectIntoGlobalHook } from &quot;/@react-refresh&quot;;\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () =&gt; {};\nwindow.$RefreshSig$ = () =&gt; (type) =&gt; type;&lt;/script&gt;\n\n    &lt;script type=&quot;module&quot; src=&quot;/@vite/client&quot;&gt;&lt;/script&gt;\n\n    &lt;meta charset=&quot;UTF-8&quot; /&gt;\n    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;\n    &lt;script&gt;\n      // Force a cache reset to load latest assets\n      if (\&apos;caches\&apos; in window) {\n        caches.keys().then((names) =&gt; {\n          for (const name of names) caches.delete(name);\n        });\n      }\n    &lt;/script&gt;\n    &lt;title&gt;Zion - The Future of Tech &amp; AI Marketplace&lt;/title&gt;\n    &lt;meta name=&quot;description&quot; content=&quot;The world\&apos;s first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.&quot; /&gt;\n    &lt;meta name=&quot;author&quot; content=&quot;Zion Tech Group&quot; /&gt;\n    &lt;meta name=&quot;keywords&quot; content=&quot;AI marketplace, tech services, artificial intelligence, IT services, AI developers, technology marketplace, AI solutions, machine learning, digital transformation&quot; /&gt;\n\n    &lt;!-- High tech font --&gt;\n    &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot; /&gt;\n    &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin /&gt;\n    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&amp;display=swap&quot; rel=&quot;stylesheet&quot; /&gt;\n\n    &lt;meta name=&quot;theme-color&quot; content=&quot;#000000&quot; /&gt;\n    &lt;link rel=&quot;manifest&quot; href=&quot;/manifest.json&quot; /&gt;\n    \n    &lt;!-- Open Graph / Facebook --&gt;\n    &lt;meta property=&quot;og:title&quot; content=&quot;Zion - The Future of Tech &amp; AI Marketplace&quot; /&gt;\n    &lt;meta property=&quot;og:description&quot; content=&quot;The world\&apos;s first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.&quot; /&gt;\n    &lt;meta property=&quot;og:type&quot; content=&quot;website&quot; /&gt;\n    &lt;meta property=&quot;og:image&quot; content=&quot;/logos/zion-logo.png&quot; /&gt;\n    &lt;meta property=&quot;og:url&quot; content=&quot;https://app.ziontechgroup.com/&quot; /&gt;\n    &lt;meta property=&quot;og:site_name&quot; content=&quot;Zion Marketplace&quot; /&gt;\n    \n    &lt;!-- Twitter --&gt;\n    &lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;\n    &lt;meta name=&quot;twitter:site&quot; content=&quot;@lovable_dev&quot; /&gt;\n    &lt;meta name=&quot;twitter:title&quot; content=&quot;Zion - The Future of Tech &amp; AI Marketplace&quot; /&gt;\n    &lt;meta name=&quot;twitter:description&quot; content=&quot;The world\&apos;s first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.&quot; /&gt;\n    &lt;meta name=&quot;twitter:image&quot; content=&quot;/logos/zion-logo.png&quot; /&gt;\n    \n    &lt;!-- Canonical URL --&gt;\n    &lt;link rel=&quot;canonical&quot; href=&quot;https://app.ziontechgroup.com/&quot; /&gt;\n    \n    &lt;!-- Favicon --&gt;\n    &lt;link rel=&quot;icon&quot; href=&quot;/favicon.ico&quot; /&gt;\n    &lt;link rel=&quot;prefetch&quot; href=&quot;/request-quote&quot; /&gt;\n    &lt;link rel=&quot;prefetch&quot; href=&quot;/checkout&quot; /&gt;\n    &lt;link rel=&quot;prefetch&quot; href=&quot;/recommendations&quot; /&gt;\n    \n    &lt;!-- Apple Touch Icon --&gt;\n    &lt;link rel=&quot;apple-touch-icon&quot; href=&quot;/logos/zion-logo.png&quot; /&gt;\n\n    &lt;!-- Google Analytics --&gt;\n    &lt;script&gt;\n      (function() {\n        function storageAvailable(type) {\n          try {\n            var storage = window[type];\n            var test = \&apos;__storage_test__\&apos;;\n            storage.setItem(test, test);\n            storage.removeItem(test);\n            return true;\n          } catch {\n            return false;\n          }\n        }\n        if (storageAvailable(\&apos;localStorage\&apos;)) {\n          var gaScript = document.createElement(\&apos;script\&apos;);\n          gaScript.src = \&apos;https://www.googletagmanager.com/gtag/js?id=GA_ID_PLACEHOLDER\&apos;;\n          gaScript.defer = true;\n          document.head.appendChild(gaScript);\n          window.dataLayer = window.dataLayer || [];\n          function gtag(){dataLayer.push(arguments);}\n          window.addEventListener(\&apos;load\&apos;, function() {\n            gtag(\&apos;js\&apos;, new Date());\n            gtag(\&apos;config\&apos;, \&apos;GA_ID_PLACEHOLDER\&apos;);\n          });\n        } else {\n          console.warn(\&apos;Google Analytics disabled: storage is not available.\&apos;);\n        }\n      })();\n    &lt;/script&gt;\n    \n    &lt;!-- Structured data (JSON-LD) for SEO --&gt;\n    &lt;meta\n      http-equiv=&quot;Content-Security-Policy&quot;\n      content=&quot;script-src \&apos;self\&apos; \&apos;unsafe-inline\&apos; \&apos;unsafe-eval\&apos; https://js.stripe.com&quot;\n    /&gt;\n    &lt;script type=&quot;application/ld+json&quot;&gt;\n      {\n        &quot;@context&quot;: &quot;https://schema.org&quot;,\n        &quot;@type&quot;: &quot;Organization&quot;,\n        &quot;name&quot;: &quot;Zion&quot;,\n        &quot;url&quot;: &quot;https://app.ziontechgroup.com&quot;,\n        &quot;logo&quot;: &quot;/logos/zion-logo.png&quot;,\n        &quot;description&quot;: &quot;The world\&apos;s first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.&quot;,\n        &quot;sameAs&quot;: [\n          &quot;https://twitter.com/lovable_dev&quot;,\n          &quot;https://www.facebook.com/zionmarketplace&quot;,\n          &quot;https://www.linkedin.com/company/zion-marketplace&quot;\n        ]\n      }\n    &lt;/script&gt;\n    &lt;script type=&quot;module&quot; src=&quot;/index.html?html-proxy&amp;index=0.js&quot;&gt;&lt;/script&gt;\n  &lt;/head&gt;\n\n  &lt;body&gt;\n    &lt;div id=&quot;root&quot;&gt;\n      &lt;noscript&gt;\n        &lt;style&gt;\n          body {\n            background: #ffffff;\n            color: #000000;\n            font-family: Arial, sans-serif;\n            padding: 1rem;\n          }\n        &lt;/style&gt;\n        This application requires JavaScript. Please enable JavaScript and run\n        the development server.\n      &lt;/noscript&gt;\n    &lt;/div&gt;\n    &lt;!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! --&gt;\n    &lt;script type=&quot;module&quot; src=&quot;/src/main.tsx&quot;&gt;&lt;/script&gt;\n  &lt;/body&gt;\n&lt;/html&gt;\n&apos; to have property &apos;status&apos;" type="AssertionError"><![CDATA[AssertionError: expected '\n<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type="module" src="/@vite/client"></script>\n\n    <meta charset="UTF-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n    <script>\n      // Force a cache reset to load latest assets\n      if (\'caches\' in window) {\n        caches.keys().then((names) => {\n          for (const name of names) caches.delete(name);\n        });\n      }\n    </script>\n    <title>Zion - The Future of Tech & AI Marketplace</title>\n    <meta name="description" content="The world\'s first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place." />\n    <meta name="author" content="Zion Tech Group" />\n    <meta name="keywords" content="AI marketplace, tech services, artificial intelligence, IT services, AI developers, technology marketplace, AI solutions, machine learning, digital transformation" />\n\n    <!-- High tech font -->\n    <link rel="preconnect" href="https://fonts.googleapis.com" />\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />\n    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />\n\n    <meta name="theme-color" content="#000000" />\n    <link rel="manifest" href="/manifest.json" />\n    \n    <!-- Open Graph / Facebook -->\n    <meta property="og:title" content="Zion - The Future of Tech & AI Marketplace" />\n    <meta property="og:description" content="The world\'s first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place." />\n    <meta property="og:type" content="website" />\n    <meta property="og:image" content="/logos/zion-logo.png" />\n    <meta property="og:url" content="https://app.ziontechgroup.com/" />\n    <meta property="og:site_name" content="Zion Marketplace" />\n    \n    <!-- Twitter -->\n    <meta name="twitter:card" content="summary_large_image" />\n    <meta name="twitter:site" content="@lovable_dev" />\n    <meta name="twitter:title" content="Zion - The Future of Tech & AI Marketplace" />\n    <meta name="twitter:description" content="The world\'s first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place." />\n    <meta name="twitter:image" content="/logos/zion-logo.png" />\n    \n    <!-- Canonical URL -->\n    <link rel="canonical" href="https://app.ziontechgroup.com/" />\n    \n    <!-- Favicon -->\n    <link rel="icon" href="/favicon.ico" />\n    <link rel="prefetch" href="/request-quote" />\n    <link rel="prefetch" href="/checkout" />\n    <link rel="prefetch" href="/recommendations" />\n    \n    <!-- Apple Touch Icon -->\n    <link rel="apple-touch-icon" href="/logos/zion-logo.png" />\n\n    <!-- Google Analytics -->\n    <script>\n      (function() {\n        function storageAvailable(type) {\n          try {\n            var storage = window[type];\n            var test = \'__storage_test__\';\n            storage.setItem(test, test);\n            storage.removeItem(test);\n            return true;\n          } catch {\n            return false;\n          }\n        }\n        if (storageAvailable(\'localStorage\')) {\n          var gaScript = document.createElement(\'script\');\n          gaScript.src = \'https://www.googletagmanager.com/gtag/js?id=GA_ID_PLACEHOLDER\';\n          gaScript.defer = true;\n          document.head.appendChild(gaScript);\n          window.dataLayer = window.dataLayer || [];\n          function gtag(){dataLayer.push(arguments);}\n          window.addEventListener(\'load\', function() {\n            gtag(\'js\', new Date());\n            gtag(\'config\', \'GA_ID_PLACEHOLDER\');\n          });\n        } else {\n          console.warn(\'Google Analytics disabled: storage is not available.\');\n        }\n      })();\n    </script>\n    \n    <!-- Structured data (JSON-LD) for SEO -->\n    <meta\n      http-equiv="Content-Security-Policy"\n      content="script-src \'self\' \'unsafe-inline\' \'unsafe-eval\' https://js.stripe.com"\n    />\n    <script type="application/ld+json">\n      {\n        "@context": "https://schema.org",\n        "@type": "Organization",\n        "name": "Zion",\n        "url": "https://app.ziontechgroup.com",\n        "logo": "/logos/zion-logo.png",\n        "description": "The world\'s first free marketplace dedicated to high-tech and artificial intelligence. Publish, connect, and thrive — all in one place.",\n        "sameAs": [\n          "https://twitter.com/lovable_dev",\n          "https://www.facebook.com/zionmarketplace",\n          "https://www.linkedin.com/company/zion-marketplace"\n        ]\n      }\n    </script>\n    <script type="module" src="/index.html?html-proxy&index=0.js"></script>\n  </head>\n\n  <body>\n    <div id="root">\n      <noscript>\n        <style>\n          body {\n            background: #ffffff;\n            color: #000000;\n            font-family: Arial, sans-serif;\n            padding: 1rem;\n          }\n        </style>\n        This application requires JavaScript. Please enable JavaScript and run\n        the development server.\n      </noscript>\n    </div>\n    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->\n    <script type="module" src="/src/main.tsx"></script>\n  </body>\n</html>\n' to have property 'status'
+    at Context.eval (webpack://project/./cypress/e2e/health-check.cy.ts:6:38)
+    at getRet (http://localhost:5176/__cypress/runner/cypress_runner.js:120941:20)
+    at tryCatcher (http://localhost:5176/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise.attempt.Promise.try (http://localhost:5176/__cypress/runner/cypress_runner.js:4285:29)
+    at Context.thenFn (http://localhost:5176/__cypress/runner/cypress_runner.js:120952:66)
+    at Context.then (http://localhost:5176/__cypress/runner/cypress_runner.js:121203:21)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     health-check.cy.ts                                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/health-check.cy.ts/API Health Check -- should return a      (1280x720)
+     200 OK status and correct body for apihealth (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  home_error_boundary.cy.ts                                                     (23 of 57)
+[8729:0611/134716.698235:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134718.161158:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134718.326861:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.799" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:47:17" tests="0" file="cypress/e2e/home_error_boundary.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="home page error handling" timestamp="2025-06-11T13:47:17" tests="1" time="4.798" failures="1">
+    <testcase name="home page error handling shows fallback banner when server-side props fail" time="0.000" classname="shows fallback banner when server-side props fail">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Failed to load home page.&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Failed to load home page.' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/home_error_boundary.cy.ts:4:45)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     home_error_boundary.cy.ts                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/home_error_boundary.cy.ts/home page error handling -- s     (1280x720)
+     hows fallback banner when server-side props fail (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  home_page_health.cy.ts                                                        (24 of 57)
+[8729:0611/134723.612782:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134725.674086:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134725.731525:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134725.732076:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134726.159276:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134726.161115:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134726.161526:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134726.446838:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.280" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:47:24" tests="0" file="cypress/e2e/home_page_health.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Home Page Health" timestamp="2025-06-11T13:47:24" tests="1" time="4.279" failures="0">
+    <testcase name="Home Page Health should load the home page without runtime errors and display content" time="1.089" classname="should load the home page without runtime errors and display content">
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     home_page_health.cy.ts                                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  loader_overlay.cy.ts                                                          (25 of 57)
+[8729:0611/134729.773404:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134729.776495:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134729.778297:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134730.057901:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134731.705629:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134731.812872:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134732.001352:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.745" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:47:31" tests="0" file="cypress/e2e/loader_overlay.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="app loader overlay" timestamp="2025-06-11T13:47:31" tests="1" time="0.743" failures="0">
+    <testcase name="app loader overlay hides overlay after navigation" time="0.692" classname="hides overlay after navigation">
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     loader_overlay.cy.ts                                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  login-page-renders-and-attempts-auth.cy.ts                                    (26 of 57)
+[8729:0611/134733.095583:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134734.728946:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134745.203124:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134745.262846:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134745.265919:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134745.266174:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134745.274546:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134745.274932:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134745.338429:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134749.755280:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="15.365" tests="3" failures="2">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:47:34" tests="0" file="cypress/e2e/login-page-renders-and-attempts-auth.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Login Page Rendering and Basic Auth Attempt" timestamp="2025-06-11T13:47:34" tests="3" time="15.363" failures="2">
+    <testcase name="Login Page Rendering and Basic Auth Attempt should display the login form elements" time="0.000" classname="should display the login form elements">
+      <failure message="Timed out retrying after 10000ms: Expected to find content: &apos;Welcome back&apos; within the selector: &apos;h2&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find content: 'Welcome back' within the selector: 'h2' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/login-page-renders-and-attempts-auth.cy.ts:9:58)]]></failure>
+    </testcase>
+    <testcase name="Login Page Rendering and Basic Auth Attempt should allow typing into email and password fields and attempt login" time="0.000" classname="should allow typing into email and password fields and attempt login">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `input[name=&quot;email&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name="email"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/login-page-renders-and-attempts-auth.cy.ts:44:7)]]></failure>
+    </testcase>
+    <testcase name="Login Page Rendering and Basic Auth Attempt should display an error message from LoginForm if auth fails client-side" time="0.207" classname="should display an error message from LoginForm if auth fails client-side">
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      2                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  2                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     15 seconds                                                                       │
+  │ Spec Ran:     login-page-renders-and-attempts-auth.cy.ts                                       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/login-page-renders-and-attempts-auth.cy.ts/Login Page R     (1280x720)
+     endering and Basic Auth Attempt -- should display the login form elements (faile
+     d).png
+  -  /app/cypress/screenshots/login-page-renders-and-attempts-auth.cy.ts/Login Page R     (1280x720)
+     endering and Basic Auth Attempt -- should allow typing into email and password f
+     ields and attempt login (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  login.cy.ts                                                                   (27 of 57)
+[8729:0611/134750.826406:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.302" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:47:52" tests="0" file="cypress/e2e/login.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="login flow" timestamp="2025-06-11T13:47:52" tests="3" time="0.300" failures="1">
+    <testcase name="login flow &quot;before each&quot; hook for &quot;shows error on invalid password&quot;" time="0.000" classname="&quot;before each&quot; hook for &quot;shows error on invalid password&quot;">
+      <failure message="TEST_USER_EMAIL was not set: expected undefined to be a string
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `login flow`" type="AssertionError"><![CDATA[AssertionError: TEST_USER_EMAIL was not set: expected undefined to be a string
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `login flow`
+    at Context.eval (webpack://project/./cypress/e2e/login.cy.ts:4:81)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      2                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     0 seconds                                                                        │
+  │ Spec Ran:     login.cy.ts                                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/login.cy.ts/login flow -- shows error on invalid passwo     (1280x720)
+     rd -- before each hook (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  login_api.cy.ts                                                               (28 of 57)
+[8729:0611/134753.728138:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134755.254582:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134755.333505:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134755.396535:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134800.009138:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="9.058" tests="2" failures="2">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:47:55" tests="0" file="cypress/e2e/login_api.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="login API endpoint" timestamp="2025-06-11T13:47:55" tests="2" time="9.057" failures="2">
+    <testcase name="login API endpoint returns error on 401" time="0.000" classname="returns error on 401">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `input[name=&quot;email&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name="email"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/login_api.cy.ts:9:7)]]></failure>
+    </testcase>
+    <testcase name="login API endpoint logs in on 200" time="0.000" classname="logs in on 200">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `input[name=&quot;email&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name="email"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/login_api.cy.ts:23:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      2                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  2                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     9 seconds                                                                        │
+  │ Spec Ran:     login_api.cy.ts                                                                  │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/login_api.cy.ts/login API endpoint -- returns error on      (1280x720)
+     401 (failed).png
+  -  /app/cypress/screenshots/login_api.cy.ts/login API endpoint -- logs in on 200 (f     (1280x720)
+     ailed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  login_contains_signin.cy.ts                                                   (29 of 57)
+[8729:0611/134805.121749:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134806.545459:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134806.637050:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134806.704029:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.933" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:48:06" tests="0" file="cypress/e2e/login_contains_signin.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="login page contains Sign In" timestamp="2025-06-11T13:48:06" tests="1" time="4.932" failures="1">
+    <testcase name="login page contains Sign In shows Sign In text" time="0.000" classname="shows Sign In text">
+      <failure message="Timed out retrying after 4000ms: Expected to find content: &apos;Sign In&apos; but never did." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Sign In' but never did.
+    at Context.eval (webpack://project/./cypress/e2e/login_contains_signin.cy.ts:4:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     login_contains_signin.cy.ts                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/login_contains_signin.cy.ts/login page contains Sign In     (1280x720)
+      -- shows Sign In text (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  login_marketplace.cy.ts                                                       (30 of 57)
+[8729:0611/134812.430266:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134813.869669:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134813.951702:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134814.038077:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.736" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:48:13" tests="0" file="cypress/e2e/login_marketplace.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="login to reach marketplace" timestamp="2025-06-11T13:48:13" tests="1" time="4.734" failures="1">
+    <testcase name="login to reach marketplace allows user to login and redirect to marketplace" time="0.000" classname="allows user to login and redirect to marketplace">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `input[name=&quot;email&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name="email"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/login_marketplace.cy.ts:10:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     login_marketplace.cy.ts                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/login_marketplace.cy.ts/login to reach marketplace -- a     (1280x720)
+     llows user to login and redirect to marketplace (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  login_nav.cy.ts                                                               (31 of 57)
+[8729:0611/134819.322888:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134820.768877:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134820.843309:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134821.012314:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.810" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:48:20" tests="0" file="cypress/e2e/login_nav.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="login link navigation" timestamp="2025-06-11T13:48:20" tests="1" time="4.808" failures="1">
+    <testcase name="login link navigation navigates to login page from header" time="0.000" classname="navigates to login page from header">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `[data-testid=&quot;login-link&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid="login-link"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/login_nav.cy.ts:4:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     login_nav.cy.ts                                                                  │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/login_nav.cy.ts/login link navigation -- navigates to l     (1280x720)
+     ogin page from header (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  marketplace-loads.cy.ts                                                       (32 of 57)
+[8729:0611/134826.270089:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134827.783383:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134827.859326:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134827.897806:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="10.741" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:48:27" tests="0" file="cypress/e2e/marketplace-loads.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Marketplace Page" timestamp="2025-06-11T13:48:27" tests="1" time="10.740" failures="1">
+    <testcase name="Marketplace Page should load and display category cards" time="0.000" classname="should load and display category cards">
+      <failure message="Timed out retrying after 10000ms: Expected to find element: `[data-testid=&quot;category-card&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 10000ms: Expected to find element: `[data-testid="category-card"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/marketplace-loads.cy.ts:6:64)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     10 seconds                                                                       │
+  │ Spec Ran:     marketplace-loads.cy.ts                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/marketplace-loads.cy.ts/Marketplace Page -- should load     (1280x720)
+      and display category cards (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  marketplace-view.cy.ts                                                        (33 of 57)
+[8729:0611/134838.573690:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134838.607672:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134838.613236:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134839.083119:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134839.084049:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134839.093231:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134839.357428:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134840.795343:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134840.878581:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134840.943000:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.709" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:48:40" tests="0" file="cypress/e2e/marketplace-view.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="marketplace view toggle" timestamp="2025-06-11T13:48:40" tests="1" time="4.707" failures="1">
+    <testcase name="marketplace view toggle switches to list layout" time="0.000" classname="switches to list layout">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `button[aria-label=&quot;List view&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `button[aria-label="List view"]`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/marketplace-view.cy.ts:4:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     marketplace-view.cy.ts                                                           │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/marketplace-view.cy.ts/marketplace view toggle -- switc     (1280x720)
+     hes to list layout (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  oauth_google.cy.ts                                                            (34 of 57)
+[8729:0611/134846.381561:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134847.795540:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134847.874470:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134848.019898:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.735" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:48:47" tests="0" file="cypress/e2e/oauth_google.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="google oauth callback" timestamp="2025-06-11T13:48:47" tests="1" time="4.735" failures="1">
+    <testcase name="google oauth callback stores token and redirects to home" time="0.000" classname="stores token and redirects to home">
+      <failure message="Timed out retrying after 4000ms: expected &apos;http://localhost:5176/oauth?token=header.eyJpZCI6IjEiLCJkaXNwbGF5TmFtZSI6IlRlc3QgVXNlciJ9.sig&apos; to equal &apos;http://localhost:5176/&apos;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected 'http://localhost:5176/oauth?token=header.eyJpZCI6IjEiLCJkaXNwbGF5TmFtZSI6IlRlc3QgVXNlciJ9.sig' to equal 'http://localhost:5176/'
+    at Context.eval (webpack://project/./cypress/e2e/oauth_google.cy.ts:6:13)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     oauth_google.cy.ts                                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/oauth_google.cy.ts/google oauth callback -- stores toke     (1280x720)
+     n and redirects to home (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  orders.cy.ts                                                                  (35 of 57)
+[8729:0611/134853.197401:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134854.612840:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134854.719443:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134854.776761:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5.720" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2025-06-11T13:48:54" tests="0" file="cypress/e2e/orders.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="orders page" timestamp="2025-06-11T13:48:54" tests="1" time="5.719" failures="1">
+    <testcase name="orders page loads orders and shows download link" time="0.000" classname="loads orders and shows download link">
+      <failure message="Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `getOrders`. No request ever occurred.
+
+https://on.cypress.io/wait" type="CypressError"><![CDATA[CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `getOrders`. No request ever occurred.
+
+https://on.cypress.io/wait
+    at cypressErr (http://localhost:5176/__cypress/runner/cypress_runner.js:77527:18)
+    at Object.errByPath (http://localhost:5176/__cypress/runner/cypress_runner.js:77581:10)
+    at checkForXhr (http://localhost:5176/__cypress/runner/cypress_runner.js:138815:84)
+    at <unknown> (http://localhost:5176/__cypress/runner/cypress_runner.js:138841:28)
+    at tryCatcher (http://localhost:5176/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise.attempt.Promise.try (http://localhost:5176/__cypress/runner/cypress_runner.js:4285:29)
+    at whenStable (http://localhost:5176/__cypress/runner/cypress_runner.js:147197:68)
+    at <unknown> (http://localhost:5176/__cypress/runner/cypress_runner.js:147138:14)
+    at tryCatcher (http://localhost:5176/__cypress/runner/cypress_runner.js:1777:23)
+    at Promise._settlePromiseFromHandler (http://localhost:5176/__cypress/runner/cypress_runner.js:1489:31)
+    at Promise._settlePromise (http://localhost:5176/__cypress/runner/cypress_runner.js:1546:18)
+    at Promise._settlePromise0 (http://localhost:5176/__cypress/runner/cypress_runner.js:1591:10)
+    at Promise._settlePromises (http://localhost:5176/__cypress/runner/cypress_runner.js:1671:18)
+    at Promise._fulfill (http://localhost:5176/__cypress/runner/cypress_runner.js:1615:18)
+    at <unknown> (http://localhost:5176/__cypress/runner/cypress_runner.js:5420:46)
+From Your Spec Code:
+    at Context.eval (webpack://project/./cypress/e2e/orders.cy.ts:12:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  1                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     5 seconds                                                                        │
+  │ Spec Ran:     orders.cy.ts                                                                     │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  /app/cypress/screenshots/orders.cy.ts/orders page -- loads orders and shows down     (1280x720)
+     load link (failed).png
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  quote-request.cy.ts                                                           (36 of 57)
+[8729:0611/134900.852126:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134900.855959:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134900.856265:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134901.126506:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134902.608712:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134902.696118:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134902.813156:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)
+[8729:0611/134907.395977:ERROR:socket_posix.cc(93)] CreatePlatformSocket() failed: Address family not supported by protocol (97)

@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).end(`Method ${req.method} Not Allowed`);
@@ -24,3 +25,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   res.status(200).json({ questions, script });
 }
+
+export default withErrorLogging(handler);

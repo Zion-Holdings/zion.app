@@ -31,10 +31,13 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
     }
     const controller = new AbortController();
     fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, { signal: controller.signal })
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch suggestions');
+        return res.json();
+      })
       .then(data => {
         if (Array.isArray(data)) {
-          setSuggestions(data.slice(0, 5)); // Take only the top 5 suggestions
+          setSuggestions(data.slice(0, 5));
         } else {
           setSuggestions([]);
         }

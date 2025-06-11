@@ -12,7 +12,7 @@ import z from "zod";
 import { ChatAssistant } from "@/components/ChatAssistant";
 import { logError } from "@/utils/logError";
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Contact() {
@@ -328,9 +328,9 @@ export default function Contact() {
           <div className="mt-12 text-center">
             <p className="text-zion-slate-light text-lg">
               Looking for more details about our platform? Visit our{' '}
-              <Link to="/services" className="text-zion-cyan underline">services page</Link>{' '}
+              <Link href="/services" className="text-zion-cyan underline">services page</Link>{' '}
               or explore the{' '}
-              <Link to="/blog" className="text-zion-cyan underline">Zion blog</Link> for additional insights.
+              <Link href="/blog" className="text-zion-cyan underline">Zion blog</Link> for additional insights.
             </p>
           </div>
         </div>

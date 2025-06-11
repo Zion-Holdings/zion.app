@@ -1,8 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import isEmail from 'validator/lib/isEmail';
 import { subscribeToNewsletter } from '@/services/newsletterService';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
-export default async function handler(
+async function handler(
   req: NextApiRequest,
   res: NextApiResponse<{ status: string } | { error: string }>
 ) {
@@ -24,3 +25,5 @@ export default async function handler(
     return res.status(500).json({ error: 'Subscription failed' });
   }
 }
+
+export default withErrorLogging(handler);

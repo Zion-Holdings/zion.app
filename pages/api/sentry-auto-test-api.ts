@@ -1,7 +1,8 @@
 // pages/api/sentry-auto-test-api.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
-export default function handler(
+function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -11,3 +12,5 @@ export default function handler(
   // The following lines will not be reached.
   // res.status(200).json({ message: 'This should not be reached.' });
 }
+
+export default withErrorLogging(handler);
