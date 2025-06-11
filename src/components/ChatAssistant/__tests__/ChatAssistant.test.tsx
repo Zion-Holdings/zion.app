@@ -5,6 +5,7 @@ import { ChatAssistant, Message } from '../ChatAssistant';
 import { AuthContext } from '../../../context/auth/AuthContext';
 import * as UseLocalStorageHook from '../../../hooks/useLocalStorage';
 import * as UseDebounceHook from '../../../hooks/useDebounce'; // Assuming path
+import Image from 'next/image'; // Import next/image
 
 // Mock dependencies
 jest.mock('../../../hooks/useLocalStorage');
@@ -13,7 +14,9 @@ jest.mock('../../../hooks/useDebounce');
 // Mock UI sub-components if they cause issues or to simplify tests
 jest.mock('@/components/ui/avatar', () => ({
   Avatar: ({ children }: { children: React.ReactNode }) => <div data-testid="avatar">{children}</div>,
-  AvatarImage: ({ src, alt }: { src?: string, alt?: string }) => <img src={src} alt={alt} data-testid="avatar-image" />,
+  AvatarImage: ({ src, alt }: { src?: string, alt?: string }) => (
+    <Image src={src || '/default-avatar.png'} alt={alt || 'avatar'} width={40} height={40} data-testid="avatar-image" />
+  ),
   AvatarFallback: ({ children }: { children: React.ReactNode }) => <div data-testid="avatar-fallback">{children}</div>,
 }));
 jest.mock('@/components/ui/button', () => ({

@@ -1,14 +1,41 @@
-
 import { GradientHeading } from "./GradientHeading";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { BLOG_POSTS } from "@/data/blog-posts";
+import Image from 'next/image';
+import React, { useState } from 'react'; // Ensure React and useState are imported
 
 // Get the 3 most recent blog posts
 const recentPosts = [...BLOG_POSTS].sort((a, b) => {
   return new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime();
 }).slice(0, 3);
+
+// Define a sub-component for the image to manage its state
+const PostImage = ({ post }: { post: typeof recentPosts[0] }) => {
+  const [imageSrc, setImageSrc] = useState(post.featuredImage);
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    if (!imageError) { // Prevent infinite loops if placeholder also fails
+      setImageSrc("/images/blog-placeholder.svg");
+      setImageError(true);
+    }
+  };
+
+  return (
+    <Image
+      src={imageSrc}
+      alt={post.title}
+      width={300} // Placeholder width
+      height={200} // Placeholder height
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // General sizes
+      onError={handleImageError}
+      className="object-cover w-full h-full opacity-60 hover:opacity-80 transition-opacity duration-300"
+      priority={false} // Not LCP
+    />
+  );
+};
 
 export function BlogSection() {
   return (
@@ -34,16 +61,7 @@ export function BlogSection() {
           {recentPosts.map((post, index) => (
             <Card key={post.id} className="bg-zion-blue-light border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 overflow-hidden">
               <div className="h-48 bg-zion-blue-dark relative overflow-hidden">
-                <img 
-                  src={post.featuredImage}
-                  alt={post.title}
-                  className="object-cover w-full h-full opacity-60 hover:opacity-80 transition-opacity duration-300"
-                  loading="lazy"
-                  onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-                    const target = e.currentTarget as HTMLImageElement;
-                    target.src = "/images/blog-placeholder.svg";
-                  }}
-                />
+                <PostImage post={post} /> {/* Use the sub-component */}
                 <div className="absolute bottom-4 left-4 text-zion-purple/70 text-4xl font-bold">{index + 1}</div>
               </div>
               <CardContent className="p-6">
