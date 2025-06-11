@@ -1,6 +1,7 @@
 import type { GetServerSideProps } from 'next';
 import type { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
+import { withSentryGetServerSideProps } from '@sentry/nextjs';
 
 interface ListingPageProps {
   listing: ProductListing | null;
@@ -33,13 +34,31 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<ListingPageProps> = withSentryGetServerSideProps(async ({ params }) => {
   const slug = params?.slug as string;
-  const listing = MARKETPLACE_LISTINGS.find((l) => l.id === slug) || null;
-  if (!listing) {
-    return { notFound: true };
+
+  // Example: Add a breadcrumb for tracing
+  // Sentry.addBreadcrumb({
+  //   category: 'ssr',
+  //   message: `getServerSideProps for Marketplace Listing: ${slug}`,
+  //   level: 'info',
+  // });
+
+  try {
+    const listing = MARKETPLACE_LISTINGS.find((l) => l.id === slug) || null;
+    if (!listing) {
+      // This will be handled by Next.js to show a 404 page.
+      // Sentry typically doesn't report 404s as errors unless configured to do so,
+      // or if an error occurs while trying to render the 404 page itself.
+      return { notFound: true };
+    }
+    return { props: { listing } };
+  } catch (error) {
+    // This catch block would handle any unexpected errors during the listing lookup.
+    // console.error(`Error in getServerSideProps for marketplace listing ${slug}:`, error);
+    // Re-throw the error so withSentryGetServerSideProps can capture it.
+    throw error;
   }
-  return { props: { listing } };
-};
+});
 
 export default ListingPage;

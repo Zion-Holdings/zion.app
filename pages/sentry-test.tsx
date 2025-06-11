@@ -59,14 +59,42 @@ const SentryTestPage = () => {
   );
 };
 
+import { withSentryGetServerSideProps } from '@sentry/nextjs';
+
 // Example of how to trigger a server-side error during page load (SSR)
-// export async function getServerSideProps() {
-//   try {
-//     throw new Error("Sentry Server-Side Test Error - getServerSideProps");
-//   } catch (error) {
-//     Sentry.captureException(error);
-//   }
-//   return { props: {} };
-// }
+export const getServerSideProps = withSentryGetServerSideProps(async (context) => {
+  // The context object is passed here by Next.js and Sentry's HOC
+  // You can add custom Sentry tags or breadcrumbs related to this specific SSR execution if needed
+  Sentry.addBreadcrumb({
+    category: 'testing',
+    message: 'getServerSideProps in sentry-test.tsx was called',
+    level: 'info',
+  });
+
+  try {
+    // Simulate an error occurring during server-side rendering
+    throw new Error("Sentry Server-Side Test Error - getServerSideProps from sentry-test.tsx");
+  } catch (error) {
+    // withSentryGetServerSideProps will automatically capture this error.
+    // You could re-throw it if you want to ensure Next.js's default error handling also kicks in,
+    // or handle it gracefully by returning props for an error display.
+    // For testing, we want Sentry to capture it. Re-throwing is a common pattern.
+    // However, since this is a test page, we might just log and return empty props
+    // or props indicating an error occurred for the page to display.
+    console.error("Simulated error in getServerSideProps for sentry-test.tsx:", error);
+    // No need to call Sentry.captureException(error) here, HOC does it.
+
+    // Optionally, set status code on response if available in context
+    if (context.res) {
+      context.res.statusCode = 500;
+    }
+    // Return props, perhaps indicating an error state to the component
+    return { props: { serverSideErrorOccurred: true } };
+  }
+  // This line would not be reached if an error is thrown and not caught locally,
+  // but if the error is caught and handled (e.g., by returning error props),
+  // then you might return normal props here in a non-error scenario.
+  // return { props: { serverSideErrorOccurred: false } };
+});
 
 export default SentryTestPage;
