@@ -64,19 +64,6 @@
 
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
-
-  [plugins.inputs.thresholds]
-  performance = 0.8
-  totalBlockingTime = 600 # Default, can be adjusted
-
-  [plugins.inputs.audits]
-  # Example of a specific audit URL.
-  # We might need to make this more general or configurable if the app has many pages.
-  # For now, let's assume we audit the homepage.
-  output_path = "lighthouse-reports/index.html" # Default path for reports
-
-[[plugins]]
-package = "@netlify/plugin-lighthouse"
   [plugins.inputs]
   output_path = "lighthouse-reports" # This will save reports to 'lighthouse-reports/summary.html' and individual reports in the same dir.
 
