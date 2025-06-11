@@ -1,9 +1,10 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Star, MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { TalentProfile } from "@/types/talent";
+import Image from 'next/image'; // Import next/image
+import React, { useState } from 'react'; // Import React and useState
 
 export interface TalentCardProps {
   talent: TalentProfile;
@@ -22,6 +23,8 @@ export function TalentCard({
   onToggleSave,
   isAuthenticated
 }: TalentCardProps) {
+  const [avatarError, setAvatarError] = useState(false);
+
   const handleViewProfile = () => {
     if (onViewProfile) {
       onViewProfile(talent.id);
@@ -44,25 +47,28 @@ export function TalentCard({
     }
   };
 
-  // Extract skills - limit to 5 for display
   const skills = talent.skills?.slice(0, 5) || [];
+  const talentNameInitial = talent.full_name?.charAt(0) || "T";
 
   return (
     <Card className="overflow-hidden transition-all hover:shadow-lg border-zion-blue-light bg-zion-blue cursor-pointer" onClick={handleViewProfile}>
       <div className="p-6">
         <div className="flex items-start">
-          {/* Avatar */}
           <div className="relative mr-4">
-            <div className="w-16 h-16 rounded-full overflow-hidden bg-zion-blue-dark border border-zion-blue-light">
-              {talent.profile_picture_url ? (
-                <img 
+            <div className="w-16 h-16 rounded-full overflow-hidden bg-zion-blue-dark border border-zion-blue-light relative"> {/* Added relative for Image */}
+              {talent.profile_picture_url && !avatarError ? (
+                <Image
                   src={talent.profile_picture_url} 
-                  alt={talent.full_name} 
-                  className="w-full h-full object-cover" 
+                  alt={talent.full_name || 'Talent Avatar'}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-full" // Make sure image itself is rounded if layout fill is used in a rounded container
+                  onError={() => setAvatarError(true)}
+                  priority={false}
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-zion-slate-light text-xl font-bold">
-                  {talent.full_name?.charAt(0) || "T"}
+                  {talentNameInitial}
                 </div>
               )}
             </div>
@@ -73,7 +79,6 @@ export function TalentCard({
             )}
           </div>
           
-          {/* Main Info */}
           <div className="flex-1">
             <div className="flex justify-between items-start">
               <h3 className="text-lg font-bold text-white">{talent.full_name}</h3>
@@ -89,7 +94,6 @@ export function TalentCard({
             </div>
             <p className="text-zion-cyan font-medium">{talent.professional_title}</p>
             
-            {/* Location & Availability */}
             <div className="mt-2 flex flex-wrap gap-3 text-sm">
               {talent.location && (
                 <div className="flex items-center text-zion-slate-light">
@@ -107,7 +111,6 @@ export function TalentCard({
           </div>
         </div>
         
-        {/* Skills */}
         {skills.length > 0 && (
           <div className="mt-4">
             <div className="flex flex-wrap gap-2">
@@ -128,7 +131,6 @@ export function TalentCard({
           </div>
         )}
         
-        {/* Hourly Rate & Actions */}
         <div className="mt-5 flex items-center justify-between">
           <div>
             {talent.hourly_rate ? (
