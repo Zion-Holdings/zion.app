@@ -2,7 +2,7 @@ import React from 'react';
 import Home from '@/pages/Home';
 import type { GetServerSideProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
-import { withSentryGetServerSideProps } from '@sentry/nextjs';
+// import { withSentryGetServerSideProps } from '@sentry/nextjs'; // Removed
 import { ErrorBanner } from '@/components/talent/ErrorBanner';
 
 export interface HomePageProps {
@@ -19,9 +19,7 @@ export async function fetchHomeData() {
   return Promise.resolve(null);
 }
 
-export const getServerSideProps: GetServerSideProps<HomePageProps> = withSentryGetServerSideProps(async (
-  ctx
-) => {
+export const getServerSideProps: GetServerSideProps<HomePageProps> = async (ctx) => {
   // Sentry.addBreadcrumb can be kept if it provides useful context not automatically captured
   // However, withSentryGetServerSideProps will automatically capture route information.
   // For this example, let's assume automatic breadcrumbs are sufficient unless specific ones are needed.
@@ -33,6 +31,7 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = withSentryG
     await fetchHomeData();
     return { props: {} };
   } catch (error: any) {
+    Sentry.captureException(error);
     // console.error("Error in getServerSideProps for /:", error); // Sentry will capture this
     // Sentry.captureException(error); // This is now handled by withSentryGetServerSideProps
     // It's good practice to re-throw the error or handle it as per application logic
@@ -43,7 +42,7 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = withSentryG
     // You might still want to return error props for your UI to handle.
     return { props: { hasError: true, errorMessage: error.message || 'An unexpected error occurred.' } };
   }
-});
+};
 
 const ErrorTestButton = () => {
   const throwTestError = () => {

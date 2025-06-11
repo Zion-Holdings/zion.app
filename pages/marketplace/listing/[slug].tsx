@@ -1,7 +1,7 @@
 import type { GetServerSideProps } from 'next';
 import type { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
-import { withSentryGetServerSideProps } from '@sentry/nextjs';
+import * as Sentry from '@sentry/nextjs';
 
 interface ListingPageProps {
   listing: ProductListing | null;
@@ -34,7 +34,7 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<ListingPageProps> = withSentryGetServerSideProps(async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }) => {
   const slug = params?.slug as string;
 
   // Example: Add a breadcrumb for tracing
@@ -54,11 +54,12 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = withSent
     }
     return { props: { listing } };
   } catch (error) {
+    Sentry.captureException(error);
     // This catch block would handle any unexpected errors during the listing lookup.
     // console.error(`Error in getServerSideProps for marketplace listing ${slug}:`, error);
     // Re-throw the error so withSentryGetServerSideProps can capture it.
     throw error;
   }
-});
+};
 
 export default ListingPage;
