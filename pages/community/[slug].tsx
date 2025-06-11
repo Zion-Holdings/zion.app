@@ -6,7 +6,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import EmptyState from '@/components/community/EmptyState';
 // import { createClient } from '@supabase/supabase-js'; // No longer directly needed here if fetchPostsByCategory handles its own client
 import PostCard from '@/components/community/PostCard';
-import { withSentryGetServerSideProps } from '@sentry/nextjs';
+import * as Sentry from '@sentry/nextjs';
 import type { ForumPost } from '@/types/community';
 import { fetchPostsByCategory } from '@/services/forumPostService';
 
@@ -102,7 +102,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCu
   );
 };
 
-export const getServerSideProps = withSentryGetServerSideProps(async ({ req, params }: { req: any; params?: { slug?: string } }) => {
+export const getServerSideProps = async ({ req, params }: { req: any; params?: { slug?: string } }) => {
   const category = params?.slug as string;
   // Supabase client setup for SSR, if needed directly here, should be maintained.
   // However, if fetchPostsByCategory encapsulates Supabase client logic, direct use here might not be necessary.
@@ -139,10 +139,10 @@ export const getServerSideProps = withSentryGetServerSideProps(async ({ req, par
     initialNextCursor = nextCursor;
   } catch (error: any) {
     console.error('Initial post fetch error in community page getServerSideProps:', error.message);
-    // Let Sentry HOC capture the error.
+    Sentry.captureException(error);
     // You might want to return specific props to render an error state on the page.
     // For example, re-throw the error if you want Next.js to handle it or if the HOC needs it.
-    throw error; // Re-throw to ensure Sentry captures it via the HOC
+    throw error; // Re-throw to ensure Sentry captures it
   }
 
   return {
@@ -153,6 +153,6 @@ export const getServerSideProps = withSentryGetServerSideProps(async ({ req, par
       category,
     },
   };
-});
+};
 
 export default CategoryPage;
