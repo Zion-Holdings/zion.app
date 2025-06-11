@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { callZionGPT } from '@/utils/zion-gpt';
+import { logError } from '@/utils/logError';
+import { suggestFix } from '@/utils/suggestFix';
 
 const SCENARIOS = [
   { value: 'ubi', label: 'UBI' },
@@ -44,6 +46,9 @@ export default function WorkFuturesSimulator() {
       setOutput(result);
       setWorkIndex(Math.floor(Math.random() * 60) + 40); // simple placeholder
     } catch (err) {
+      logError(err, { context: 'WorkFuturesSimulator.runSimulation' });
+      const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
+      setOutput(suggestion);
       toast({ title: 'Simulation failed', variant: 'destructive' });
     }
   };

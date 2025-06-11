@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { logError } from '@/utils/logError';
+import { suggestFix } from '@/utils/suggestFix';
 import { supabase } from '@/integrations/supabase/client'; // Assuming supabase client is here
 import { useAuth } from '@/hooks/useAuth'; // To access user state
 
@@ -67,8 +69,9 @@ const VerifyEmailPage = () => {
           }, 3000);
 
         } catch (err: any) {
-          console.error('Verification error:', err);
-          setError(err.message || 'An error occurred during email verification.');
+          logError(err, { context: 'VerifyEmailPage.handleVerification' });
+          const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
+          setError(suggestion);
           setMessage(''); // Clear loading message
         } finally {
           setIsLoading(false);
