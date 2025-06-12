@@ -49,11 +49,19 @@ export default function CreatePostPage() {
       });
 
       if (user?.id) {
-        await fetch('/api/points/add', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId: user.id, amount: 2, reason: 'post' })
-        });
+        try {
+          const res = await fetch('/api/points/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId: user.id, amount: 2, reason: 'post' })
+          });
+          if (!res.ok) {
+            const text = await res.text().catch(() => '');
+            throw new Error(text || `Error ${res.status}`);
+          }
+        } catch (err) {
+          console.error('Failed to award points:', err);
+        }
       }
       
       // Redirect to the forum category
