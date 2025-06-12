@@ -14,6 +14,7 @@ import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { InteractiveFeatures } from "@/components/home/InteractiveFeatures";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { AllFeaturesSection } from "@/components/home/AllFeaturesSection";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -48,6 +49,8 @@ export default function Home() {
       <InteractiveFeatures className="animate-fadeIn" style={{ animationDelay: '0.25s' }} />
 
       <FeatureHighlights className="animate-fadeIn" style={{ animationDelay: '0.3s' }} />
+
+      <AllFeaturesSection className="animate-fadeIn" style={{ animationDelay: '0.35s' }} />
 
       <CategoriesSection className="animate-fadeIn" style={{ animationDelay: '0.4s' }} />
       <BenefitsSection className="animate-fadeIn" style={{ animationDelay: '0.5s' }} />
