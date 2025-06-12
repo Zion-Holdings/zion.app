@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { JobCard } from '@/components/jobs/JobCard';
 import { JOB_POSTS } from '@/data/jobsData';
+import type { Job } from '@/types/jobs';
 
 export default function CareersPage() {
-  const [jobs, setJobs] = useState(JOB_POSTS);
+  const [jobs, setJobs] = useState<Job[]>(JOB_POSTS);
 
   useEffect(() => {
     fetch('/api/jobs')
       .then(res => (res.ok ? res.json() : Promise.reject()))
-      .then(data => setJobs(data))
+      .then((data: Job[]) => setJobs(data))
       .catch(() => {
         // fall back to static data
         setJobs(JOB_POSTS);
