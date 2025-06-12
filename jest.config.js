@@ -41,7 +41,7 @@ module.exports = {
     '^@stripe/react-stripe-js$': '<rootDir>/tests/__mocks__/@stripe/react-stripe-js.js',
     '^@stripe/stripe-js$': '<rootDir>/tests/__mocks__/@stripe/stripe-js.js',
   },
-  roots: ['<rootDir>/__tests__', '<rootDir>/tests', '<rootDir>/src'], // Added <rootDir>/src in case tests live there
+  roots: ['<rootDir>/__tests__', '<rootDir>/tests', '<rootDir>/src'],
   coverageThreshold: {
     global: {
       statements: 80,
