@@ -54,9 +54,15 @@ export default function WorkFuturesSimulator() {
   };
 
   useEffect(() => {
-    if (!networkCanvas.current) return;
+    if (!networkCanvas.current) {
+      logError(new Error('Canvas ref missing'), { context: 'WorkFuturesSimulator.useEffect' });
+      return;
+    }
     const ctx = networkCanvas.current.getContext('2d');
-    if (!ctx) return;
+    if (!ctx) {
+      logError(new Error('2D context unavailable'), { context: 'WorkFuturesSimulator.useEffect' });
+      return;
+    }
     try {
       const width = networkCanvas.current.width;
       const height = networkCanvas.current.height;
@@ -68,9 +74,10 @@ export default function WorkFuturesSimulator() {
       }));
       ctx.fillStyle = '#3b82f6';
       positions.forEach((p) => {
-        if (p?.x == null || p?.y == null) {
+        if (!p || typeof p.x !== 'number' || typeof p.y !== 'number') {
           logError(new Error('Invalid position'), {
             context: 'WorkFuturesSimulator.drawNode',
+            position: p,
           });
           return;
         }
@@ -84,15 +91,23 @@ export default function WorkFuturesSimulator() {
           if (
             i < j &&
             Math.random() > 0.5 &&
-            p?.x != null &&
-            p?.y != null &&
-            q?.x != null &&
-            q?.y != null
+            p &&
+            q &&
+            typeof p.x === 'number' &&
+            typeof p.y === 'number' &&
+            typeof q.x === 'number' &&
+            typeof q.y === 'number'
           ) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(q.x, q.y);
             ctx.stroke();
+          } else if (!p || !q) {
+            logError(new Error('Invalid connection'), {
+              context: 'WorkFuturesSimulator.drawEdge',
+              p,
+              q,
+            });
           }
         });
       });
