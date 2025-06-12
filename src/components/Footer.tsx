@@ -1,5 +1,5 @@
 import { FooterNewsletter } from "@/components/FooterNewsletter";
-import { Twitter, Linkedin, Facebook, Instagram, Github } from "lucide-react";
+import { Twitter, Linkedin, Facebook, Instagram, Github, ChevronUp } from "lucide-react";
 import Link from "next/link"; // Changed from react-router-dom
 import config from "../config/default.json";
 
@@ -101,6 +101,18 @@ export function Footer() {
             </p>
             <FooterNewsletter />
           </div>
+        </div>
+
+        <div className="mt-8 flex justify-end">
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center space-x-1 text-foreground/80 hover:text-primary text-sm transition-colors"
+            aria-label="Back to top"
+          >
+            <ChevronUp className="h-4 w-4" aria-hidden="true" />
+            <span>Back to Top</span>
+          </button>
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary/20">
