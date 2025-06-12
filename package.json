@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "generate": "prisma generate",
-    "build": "npx next build --no-lint && NODE_ENV=production npx next build",
+    "build": "NODE_ENV=production npx next build --no-lint",
     "start": "npx next start",
     "deploy:ipfs": "node scripts/deploy-zion-ipfs.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
