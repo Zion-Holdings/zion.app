@@ -18,7 +18,8 @@ export default function DevNet() {
             <Link href="/faucet">Token Faucet</Link>
           </li>
           <li>
-            <Link href="/dao/dev">Proposal Sandbox</Link>
+            {/* Link corrected to existing proposal creation page */}
+            <Link href="/governance/create">Proposal Sandbox</Link>
           </li>
           <li>
             <Link href="/gpt-playground">GPT Playground</Link>
