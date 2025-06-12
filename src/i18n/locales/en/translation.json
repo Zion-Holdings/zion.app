@@ -63,7 +63,8 @@
     "tool_analytics": "Analytics",
     "tool_analytics_desc": "Insights and trends in the AI and tech industry",
     "tool_chat": "Chat Support",
-    "tool_chat_desc": "Get instant assistance from our AI-powered chat"
+    "tool_chat_desc": "Get instant assistance from our AI-powered chat",
+    "header_tagline": "Your gateway to AI & tech solutions"
   },
   "jobs": {
     "post_job_title": "Post a Job",
