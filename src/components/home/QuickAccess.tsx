@@ -73,19 +73,19 @@ export function QuickAccess({ className, style }: QuickAccessProps) {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
           {quickLinks.map((link, index) => (
-            <Link 
-              key={index} 
-              to={link.link} 
-              className="bg-zion-blue border border-zion-blue-light hover:border-zion-purple/50 rounded-lg p-4 transition-all duration-300 flex flex-col items-center text-center"
+            <Link
+              key={index}
+              to={link.link}
+              className="group bg-zion-blue relative border border-zion-blue-light hover:border-zion-purple/50 rounded-xl p-4 transition-all duration-300 flex flex-col items-center text-center hover:shadow-md hover:bg-zion-blue-light/20"
             >
-              <div className="bg-zion-blue-dark rounded-full w-12 h-12 flex items-center justify-center mb-3">
+              <div className="bg-zion-blue-dark rounded-full w-12 h-12 flex items-center justify-center mb-3 transition-transform group-hover:scale-110">
                 {link.icon}
               </div>
               <h3 className="text-white font-medium mb-1">{link.title}</h3>
               <p className="text-zion-slate-light text-xs mb-2">{link.description}</p>
               <div className="flex items-center text-zion-cyan text-xs mt-auto">
                 <span>{t('general.explore')}</span>
-                <ArrowRight className="ml-1 h-3 w-3" />
+                <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
               </div>
             </Link>
           ))}

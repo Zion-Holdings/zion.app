@@ -37,10 +37,8 @@ export default function Home() {
         </div>
       )}
 
-      <ITServiceRequestHero />
-
       <HeroSection />
-      
+
       <QuickAccess className="animate-fadeIn" style={{ animationDelay: '0.1s' }} />
 
       <FeatureCTAs className="animate-fadeIn" style={{ animationDelay: '0.2s' }} />
@@ -53,6 +51,7 @@ export default function Home() {
       <BenefitsSection className="animate-fadeIn" style={{ animationDelay: '0.5s' }} />
       <HowItWorksSection className="animate-fadeIn" style={{ animationDelay: '0.6s' }} />
       <FeaturedListingsSection className="animate-fadeIn" style={{ animationDelay: '0.7s' }} />
+      <ITServiceRequestHero />
       <NewsletterSection {...{ className: "animate-fadeIn", style: { animationDelay: '0.8s' } } as { className?: string; style?: React.CSSProperties }} />
     </div>
   );
