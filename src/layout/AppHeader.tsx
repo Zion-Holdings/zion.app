@@ -13,12 +13,15 @@ import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useAuth } from '@/hooks/useAuth';
 import { AvatarMenu } from '@/components/header/AvatarMenu';
 import { cn } from '@/lib/utils'; // Import cn utility
+import { useRouter } from 'next/router';
 
 export function AppHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   const { user } = useAuth();
+  const router = useRouter();
+  const showTagline = router.pathname === '/';
   
   // Try to access the messaging context, but provide a fallback value if it's not available
   let unreadCount = 0;
@@ -34,6 +37,11 @@ export function AppHeader() {
       <header className={cn("sticky top-0 z-50 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md", { "bg-red-500": mobileMenuOpen })}>
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
+          {showTagline && (
+            <span className="ml-4 hidden text-sm text-muted-foreground md:inline">
+              {t('home.header_tagline')}
+            </span>
+          )}
           <div className="ml-6 flex-1 hidden md:block">
             <ResponsiveNavigation />
           </div>
