@@ -5,15 +5,23 @@ import { Helmet } from 'react-helmet-async';
 import { NextSeo } from '@/components/NextSeo';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import type { BlogPost } from '@/types/blog';
+import type { GetStaticPaths, GetStaticProps } from 'next';
 
-const BlogPostPage: React.FC = () => {
+interface BlogPostPageProps {
+  /**
+   * Preloaded blog post for static generation. Can be null if not found.
+   */
+  initialPost: BlogPost | null;
+}
+
+const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
   const router = useRouter();
   const { slug } = router.query;
-  const [post, setPost] = React.useState<BlogPost | null>(null);
+  const [post, setPost] = React.useState<BlogPost | null>(initialPost);
   const [error, setError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
-    if (!slug) return;
+    if (!slug || initialPost) return; // skip fetch when preloaded
     const fetchPost = async () => {
       try {
         const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
@@ -74,4 +82,29 @@ const BlogPostPage: React.FC = () => {
 
 
 export default BlogPostPage;
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  // Pre-render only the sample posts. Others will be generated on demand.
+  const paths = BLOG_POSTS.map((p) => ({ params: { slug: p.slug } }));
+  return { paths, fallback: 'blocking' };
+};
+
+export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params }) => {
+  const slug = params?.slug as string;
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  try {
+    const res = await fetch(`${appUrl}/api/blog/${slug}`);
+    if (res.ok) {
+      const post: BlogPost = await res.json();
+      return { props: { initialPost: post }, revalidate: 60 };
+    }
+  } catch (err) {
+    console.error('getStaticProps fetch failed', err);
+  }
+  const fallback = BLOG_POSTS.find((p) => p.slug === slug) || null;
+  if (!fallback) {
+    return { notFound: true };
+  }
+  return { props: { initialPost: fallback }, revalidate: 60 };
+};
 
