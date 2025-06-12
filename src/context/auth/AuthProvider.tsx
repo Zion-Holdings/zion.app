@@ -65,6 +65,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       if (clientLoginResult?.error) {
         // loginImpl (useEmailAuth.login) already shows a toast.
         console.error("Client-side login after server confirmation failed:", clientLoginResult.error);
+        // Clear potentially stale tokens to avoid invalid session loops
+        cleanupAuthState();
         return { error: (clientLoginResult.error as any)?.message || "Client-side login failed." };
       }
 
@@ -149,6 +151,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             description: "Failed to initialize session. Please try logging in.",
             variant: "destructive"
           });
+          // Ensure any partial tokens are cleared to prevent invalid sessions
+          cleanupAuthState();
           setIsLoading(false);
           return { error: "Failed to initialize session.", emailVerificationRequired: false };
         }
@@ -197,6 +201,15 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
+        if (event === 'TOKEN_REFRESH_FAILED') {
+          console.error('AuthProvider: Token refresh failed, clearing session');
+          cleanupAuthState();
+          setUser(null);
+          setAvatarUrl(null);
+          handleSignedOut();
+          router.replace('/login');
+          return;
+        }
         try {
           if (session?.user) {
             try {

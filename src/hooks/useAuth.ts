@@ -5,11 +5,11 @@ import type { AuthContextType } from '@/types/auth';
 export const useAuth = (): AuthContextType => {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    // TEMPORARILY ALWAYS RETURN MOCK CONTEXT IF UNDEFINED for diagnostics
-    console.warn("'useAuth' context is undefined. Returning mock context for diagnostics.");
+    // Provide a minimal unauthenticated context to avoid infinite loading loops
+    console.warn("'useAuth' context is undefined. Returning fallback auth state.");
     return {
         user: null,
-        isLoading: true, // To allow pages to show a loading state or similar
+        isLoading: false, // Avoid endless spinners when provider is missing
         isAuthenticated: false,
         onboardingStep: null,
         setOnboardingStep: () => {},
