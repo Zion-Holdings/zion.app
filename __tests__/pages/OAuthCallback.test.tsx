@@ -31,7 +31,7 @@ describe('OAuthCallback page', () => {
     render(<OAuthCallback />);
 
     await waitFor(() => {
-      expect(safeStorage.setItem).toHaveBeenCalledWith('auth.token', 'testtoken');
+      expect(safeStorage.setItem).toHaveBeenCalledWith('zion_token', 'testtoken');
     });
 
     expect(replace).toHaveBeenCalledWith('/login');

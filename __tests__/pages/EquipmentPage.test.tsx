@@ -4,6 +4,7 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import EquipmentPage from '@/pages/EquipmentPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import apiClient from '@/services/apiClient';
+import { toast } from '@/hooks/use-toast';
 
 // Mock child components and hooks
 jest.mock('@/components/DynamicListingPage', () => ({
@@ -93,6 +94,18 @@ describe('EquipmentPage', () => {
     await waitFor(() => {
       expect(screen.getByText(`Failed to load equipment: ${errorMessage}`)).toBeInTheDocument();
     });
+  });
+
+  it('handles 500 error gracefully and shows toast', async () => {
+    const error = { response: { status: 500, headers: {} }, message: 'Server error' };
+    (apiClient.get as jest.Mock).mockRejectedValue(error);
+
+    renderWithProviders(<EquipmentPage />);
+
+    await waitFor(() => {
+      expect(screen.getByText('Failed to load equipment: Server error')).toBeInTheDocument();
+    });
+    expect(toast).toHaveBeenCalled();
   });
 
   it('shows loading skeletons initially', async () => {

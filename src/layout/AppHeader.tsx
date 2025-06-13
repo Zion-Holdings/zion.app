@@ -65,7 +65,7 @@ export function AppHeader() {
 
           <PointsBadge />
           {!user && (
-            <div className="ml-4 relative z-10 flex items-center space-x-4">
+            <div className="ml-4 relative z-10 flex items-center">
               <Link
                 href="/login"
                 className="text-sm font-medium text-foreground/70 hover:text-foreground"
@@ -76,7 +76,8 @@ export function AppHeader() {
               </Link>
               <Link
                 href="/signup"
-                className="text-sm font-medium text-foreground/70 hover:text-foreground"
+                className="ml-2 text-sm font-medium text-foreground/70 hover:text-foreground"
+                aria-label="Sign up"
                 data-testid="signup-nav-link"
               >
                 Sign up

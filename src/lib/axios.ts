@@ -138,7 +138,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     }, {} as Record<string, string>);
     const authToken =
       cookies['authToken'] ||
-      safeStorage.getItem('auth.token') ||
+      safeStorage.getItem('zion_token') ||
       safeStorage.getItem('token');
 
     const headers = { ...globalDefaults.headers.common, ...reqInit.headers };

@@ -13,7 +13,7 @@ describe('test checkout purchase', () => {
     cy.wait('@mockLogin');
 
     const sessionId = 'cs_test_123';
-    cy.intercept('POST', '/api/create-checkout-session', {
+    cy.intercept('POST', '/api/checkout-session', {
       statusCode: 200,
       body: { sessionId },
     }).as('createSession');

@@ -7,7 +7,7 @@ const CheckoutTestPage = () => {
     const priceId = 'price_1234567890'; // Replace with a real test price ID
 
     try {
-      const response = await fetch('/api/create-checkout-session', {
+      const response = await fetch('/api/checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

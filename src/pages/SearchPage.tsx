@@ -4,27 +4,77 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { SearchSuggestion } from "@/types/search";
-import { useAISearch } from "@/hooks/useAISearch";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
 import { Loader2 } from "lucide-react";
+
+interface SearchResult {
+  id: string;
+  type: "product" | "service" | "talent";
+  title: string;
+  description: string;
+}
+
+function highlight(text: string, term: string) {
+  if (!term) return text;
+  const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const regex = new RegExp(`(${escaped})`, "gi");
+  const parts = text.split(regex);
+  return (
+    <>
+      {parts.map((part, i) =>
+        regex.test(part) ? (
+          <mark key={i} className="bg-yellow-200 text-black">
+            {part}
+          </mark>
+        ) : (
+          part
+        )
+      )}
+    </>
+  );
+}
 
 export default function SearchPage() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const initial = params.get("q") || "";
   const [query, setQuery] = useState(initial);
-  const { results, loading, search } = useAISearch();
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [loading, setLoading] = useState(false);
   const suggestions: SearchSuggestion[] = generateSearchSuggestions();
 
   useEffect(() => {
     if (initial) {
-      search(initial);
+      fetchResults(initial);
     }
   }, [initial]);
+
+  const fetchResults = async (term: string) => {
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/search?query=${encodeURIComponent(term)}`);
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        setResults(data);
+      } else {
+        setResults([]);
+      }
+    } catch {
+      setResults([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     navigate(`/search?q=${encodeURIComponent(query)}`);
-    search(query);
+    fetchResults(query);
   };
 
   return (
@@ -37,7 +87,7 @@ export default function SearchPage() {
             onSelectSuggestion={(text) => {
               navigate(`/search?q=${encodeURIComponent(text)}`);
               setQuery(text);
-              search(text);
+              fetchResults(text);
             }}
             searchSuggestions={suggestions}
             placeholder="Search talent, jobs, and projects..."
@@ -53,20 +103,70 @@ export default function SearchPage() {
           <p className="text-zion-slate-light">No results found.</p>
         )}
         {!loading && results.length > 0 && (
-          <div className="space-y-4">
-            {results.map((r) => (
-              <div
-                key={`${r.type}-${r.id}`}
-                className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
-              >
-                <p className="text-xs uppercase text-zion-slate-light mb-1">
-                  {r.type}
-                </p>
-                <h3 className="text-lg font-bold text-white">{r.title}</h3>
-                <p className="text-zion-slate-light">{r.description}</p>
-              </div>
-            ))}
-          </div>
+          <Tabs defaultValue="product" className="space-y-4">
+            <TabsList className="mb-4">
+              <TabsTrigger value="product">
+                Products ({results.filter((r) => r.type === "product").length})
+              </TabsTrigger>
+              <TabsTrigger value="service">
+                Services ({results.filter((r) => r.type === "service").length})
+              </TabsTrigger>
+              <TabsTrigger value="talent">
+                Talent ({results.filter((r) => r.type === "talent").length})
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="product" className="space-y-4">
+              {results
+                .filter((r) => r.type === "product")
+                .map((r) => (
+                  <div
+                    key={`product-${r.id}`}
+                    className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
+                  >
+                    <h3 className="text-lg font-bold text-white">
+                      {highlight(r.title, query)}
+                    </h3>
+                    <p className="text-zion-slate-light">
+                      {highlight(r.description, query)}
+                    </p>
+                  </div>
+                ))}
+            </TabsContent>
+            <TabsContent value="service" className="space-y-4">
+              {results
+                .filter((r) => r.type === "service")
+                .map((r) => (
+                  <div
+                    key={`service-${r.id}`}
+                    className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
+                  >
+                    <h3 className="text-lg font-bold text-white">
+                      {highlight(r.title, query)}
+                    </h3>
+                    <p className="text-zion-slate-light">
+                      {highlight(r.description, query)}
+                    </p>
+                  </div>
+                ))}
+            </TabsContent>
+            <TabsContent value="talent" className="space-y-4">
+              {results
+                .filter((r) => r.type === "talent")
+                .map((r) => (
+                  <div
+                    key={`talent-${r.id}`}
+                    className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
+                  >
+                    <h3 className="text-lg font-bold text-white">
+                      {highlight(r.title, query)}
+                    </h3>
+                    <p className="text-zion-slate-light">
+                      {highlight(r.description, query)}
+                    </p>
+                  </div>
+                ))}
+            </TabsContent>
+          </Tabs>
         )}
       </main>
     </>

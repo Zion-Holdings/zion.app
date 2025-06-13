@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Helmet } from 'react-helmet-async';
 
 const SignupSchema = Yup.object({
   name: Yup.string().required('Name is required'),
@@ -52,8 +53,12 @@ export default function Signup() {
   });
 
   return (
-    <div className="flex min-h-screen items-center justify-center p-4">
-      <form onSubmit={formik.handleSubmit} className="w-full max-w-sm space-y-4" noValidate>
+    <>
+      <Helmet>
+        <link rel="stylesheet" href="/static/css/main.css" />
+      </Helmet>
+      <div className="flex min-h-screen items-center justify-center p-4">
+        <form onSubmit={formik.handleSubmit} className="w-full max-w-sm space-y-4" noValidate>
         <div>
           <label htmlFor="name" className="block text-sm font-medium">
             Full Name
@@ -138,5 +143,6 @@ export default function Signup() {
         </Button>
       </form>
     </div>
+    </>
   );
 }

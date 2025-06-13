@@ -7,7 +7,7 @@ interface CartState {
 }
 
 const loadState = (): CartItem[] => {
-  const stored = safeStorage.getItem('cart');
+  const stored = safeStorage.getItem('zion_cart');
   if (!stored) return [];
   try {
     return JSON.parse(stored) as CartItem[];

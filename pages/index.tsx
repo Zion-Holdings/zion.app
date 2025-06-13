@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import Home from '@/pages/Home';
 import type { GetServerSideProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
@@ -71,6 +72,10 @@ const ErrorTestButton = () => {
 };
 
 const IndexPage: React.FC<HomePageProps> = (props) => {
+  const router = useRouter();
+  const showDebug = router.query.debug === 'true';
+  const showButton = process.env.NODE_ENV === 'development' || showDebug;
+
   return (
     <>
       {props.hasError && (
@@ -79,7 +84,7 @@ const IndexPage: React.FC<HomePageProps> = (props) => {
         </div>
       )}
       <Home />
-      <ErrorTestButton /> {/* Add the button here */}
+      {showButton && <ErrorTestButton />}
     </>
   );
 };
