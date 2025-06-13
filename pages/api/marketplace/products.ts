@@ -91,7 +91,7 @@ async function handler(
     // This outer catch block now primarily handles the HTTP response
     return res
       .status(500)
-      .json({ error: 'Internal server error while fetching products.', details: e.message });
+      .json({ error: 'Internal server error while fetching products.' });
   } finally {
     await prisma.$disconnect();
   }
