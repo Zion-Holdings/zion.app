@@ -18,6 +18,16 @@ const nextConfig = {
   // Enable source maps in production for easier stack traces in Sentry
   productionBrowserSourceMaps: true,
 
+  async redirects() {
+    return [
+      {
+        source: '/m/:path*',
+        destination: '/mobile/pwa/:path*',
+        permanent: true,
+      },
+    ];
+  },
+
   // experimental: {
   //   esmExternals: 'loose', // Removing this as per Next.js recommendation
   // },

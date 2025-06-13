@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 
 export default function Ecommerce() {
   const schema = {
@@ -54,7 +55,7 @@ export default function Ecommerce() {
           </div>
           <div className="text-center">
             <Button size="lg" className="bg-zion-purple text-white" asChild>
-              <a href="/marketplace">Start Shopping</a>
+              <Link href="/marketplace">Start Shopping</Link>
             </Button>
           </div>
         </div>

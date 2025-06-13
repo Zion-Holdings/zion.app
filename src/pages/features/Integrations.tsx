@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
 
 export default function IntegrationsFeature() {
@@ -61,7 +62,7 @@ export default function IntegrationsFeature() {
           </div>
           <div className="text-center">
             <Button size="lg" className="bg-zion-purple text-white" asChild>
-              <a href="/developers">Learn More</a>
+              <Link href="/developers">Learn More</Link>
             </Button>
           </div>
         </div>

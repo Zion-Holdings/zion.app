@@ -9,7 +9,7 @@ import { createTestNotification, createOnboardingNotification, createSystemNotif
 import { NotificationBell } from "@/components/NotificationBell";
 import { GuidedTour } from "@/components/onboarding/GuidedTour";
 import { useToast } from "@/hooks/use-toast";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 export default function Dashboard() {
@@ -94,7 +94,7 @@ export default function Dashboard() {
                   <div className="flex justify-between items-center">
                     <span className="text-zion-slate-light">ZION$ Balance</span>
                     <span className="text-zion-cyan font-medium">
-                      <a href="/wallet" className="hover:underline">View Wallet</a>
+                      <Link href="/wallet" className="hover:underline">View Wallet</Link>
                     </span>
                   </div>
                   
@@ -164,7 +164,7 @@ export default function Dashboard() {
                   Recent Notifications
                 </h3>
                 <div className="space-y-4">
-                  <Link to="/notifications" className="block" id="notifications-link">
+                  <Link href="/notifications" className="block" id="notifications-link">
                     <Button variant="outline" className="w-full">
                       <Bell className="mr-2 h-4 w-4" />
                       View All Notifications

@@ -3,6 +3,7 @@ import React from "react";
 import ApiDocsLayout from "@/components/developers/ApiDocsLayout";
 import { CodeBlock } from "@/components/developers/CodeBlock";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from 'next/link';
 
 export function ApiWebhooks() {
   // Sample webhook event payload
@@ -178,7 +179,7 @@ app.listen(3000, () => {
 
         <h2>Setting Up Webhooks</h2>
         <p>
-          You can configure webhooks in the <a href="/developers/portal" className="text-zion-cyan">Developer Portal</a> under the Webhooks tab.
+          You can configure webhooks in the <Link href="/developers/portal" className="text-zion-cyan">Developer Portal</Link> under the Webhooks tab.
           For each webhook, you'll need to provide:
         </p>
         

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Skeleton from "@/components/ui/skeleton";
 import { Star, MessageSquare, Brain, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from 'next/link';
 import { MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
 import { toast } from "@/hooks/use-toast";
 import { PaymentButton } from "@/components/transactions/PaymentButton";
@@ -35,7 +36,7 @@ export default function ListingDetail() {
             <h1 className="text-3xl font-bold text-white mb-4">Listing Not Found</h1>
               <p className="text-zion-slate-light mb-8">The listing you're looking for doesn't exist or has been removed.</p>
               <Button asChild className="bg-gradient-to-r from-zion-purple to-zion-purple-dark">
-                <a href="/marketplace">Back to Marketplace</a>
+                <Link href="/marketplace">Back to Marketplace</Link>
               </Button>
             </div>
           </div>
