@@ -1,4 +1,3 @@
-
 import { useState, useMemo, useEffect } from "react";
 import { ProductListing } from "@/types/listings";
 import { SearchSuggestion, FilterOptions } from "@/types/search";
@@ -64,8 +63,8 @@ export function useMarketplaceSearch() {
       setIsLoading(true);
       setError(null);
       try {
-        // TODO: Add query parameters for search and filtering to the API call
-        const response = await fetch(`/api/products?q=${searchQuery}`);
+        // Changed to /api/search endpoint
+        const response = await fetch(`/api/search?q=${searchQuery}`);
         if (!response.ok) {
           throw new Error(`API error: ${response.statusText}`);
         }
@@ -81,8 +80,6 @@ export function useMarketplaceSearch() {
     };
 
     // Fetch when the component mounts or debouncedSearchQuery changes
-    // For now, we fetch all and filter client-side.
-    // Ideally, the API would handle filtering and search.
     fetchProducts();
   }, [searchQuery]); // searchQuery here is the debounced value
 
@@ -103,41 +100,10 @@ export function useMarketplaceSearch() {
     [],
   );
 
-  // Filter listings based on current search query and filters
-  // This filtering is now client-side after fetching all listings.
-  // For larger datasets, filtering should ideally be done server-side.
+  // Removed client-side filtering logic as the API now handles it.
   const filteredListings = useMemo(() => {
-    // Use `listings` from API data instead of MARKETPLACE_LISTINGS
-    return listings.filter(listing => {
-      // Search query filter (applied client-side for now, ideally server-side)
-      const matchesSearch = !searchQuery || // searchQuery is the debounced value
-        listing.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        listing.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (listing.tags && listing.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())));
-
-      // Product type filter
-      const matchesProductType = selectedProductTypes.length === 0 ||
-        selectedProductTypes.includes(listing.category);
-
-      // Location filter
-      const matchesLocation = selectedLocations.length === 0 ||
-        (listing.location && selectedLocations.includes(listing.location));
-
-      // Availability filter
-      const matchesAvailability = selectedAvailability.length === 0 ||
-        (listing.availability && selectedAvailability.includes(listing.availability));
-
-      // Rating filter
-      const matchesRating = selectedRating === null ||
-        (listing.rating !== undefined && listing.rating >= selectedRating);
-
-      return matchesSearch &&
-        matchesProductType &&
-        matchesLocation &&
-        matchesAvailability &&
-        matchesRating;
-    });
-  }, [listings, searchQuery, selectedProductTypes, selectedLocations, selectedAvailability, selectedRating]);
+    return listings;
+  }, [listings]);
 
   // Handle filter changes
   const handleFilterChange = (filterType: string, value: string) => {
@@ -175,18 +141,17 @@ export function useMarketplaceSearch() {
   return {
     searchQuery: immediateSearchQuery, // Expose the immediate value for the input field
     setSearchQuery: setImmediateSearchQuery, // Setter updates the immediate value
-    // The actual filtering logic will use `searchQuery` (which is `debouncedSearchQuery` via useEffect)
-    searchSuggestions, // Still using static/derived for now
+    searchSuggestions,
     selectedProductTypes,
     selectedLocations,
     selectedAvailability,
     selectedRating,
     setSelectedRating,
-    filteredListings, // Now based on API data + client-side filters
+    filteredListings,
     handleFilterChange,
     clearAllFilters,
-    filterOptions, // Still using static/derived for now
-    isLoading, // Expose loading state
-    error // Expose error state
+    filterOptions,
+    isLoading,
+    error
   };
 }
