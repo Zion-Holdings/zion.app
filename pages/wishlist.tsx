@@ -1,1 +1,1 @@
-export { default } from '@/pages/Wishlist';
+export { default } from '@/pages/Wishlist'
