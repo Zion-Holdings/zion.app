@@ -2,6 +2,11 @@ import { PrismaClient, type Product as ProductModel } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 
+interface ProductStats {
+  avg: number | null;
+  count: number;
+}
+
 const prisma = new PrismaClient();
 
 type ProductWithStats = ProductModel & {
@@ -54,7 +59,7 @@ async function handler(
       throw e;
     }
 
-    const statsMap = new Map(
+    const statsMap = new Map<string, ProductStats>(
       stats.map((s) => [s.productId, { avg: s._avg.rating, count: s._count.id }])
     );
 
