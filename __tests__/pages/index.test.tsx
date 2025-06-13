@@ -3,9 +3,14 @@ import { render, screen } from '@testing-library/react';
 import * as Sentry from '@sentry/nextjs';
 import IndexPage, { getServerSideProps, fetchHomeData } from '../../pages/index';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
+import { useRouter } from 'next/router';
 
 jest.mock('@sentry/nextjs', () => ({
   captureException: jest.fn(),
+}));
+
+jest.mock('next/router', () => ({
+  useRouter: jest.fn(),
 }));
 
 jest.mock('../../pages/index', () => {
@@ -22,6 +27,7 @@ const mockedFetchHomeData = fetchHomeData as jest.Mock;
 describe('Home page server side error handling', () => {
   it('renders error boundary fallback when getServerSideProps throws', async () => {
     mockedFetchHomeData.mockRejectedValueOnce(new Error('fail'));
+    (useRouter as jest.Mock).mockReturnValue({ query: {} });
 
     const ctx: any = { req: {}, res: { statusCode: 200 } };
     const result = await getServerSideProps(ctx as any);
@@ -45,6 +51,7 @@ describe('Home page data fetch success', () => {
     const ctx: any = { req: {}, res: { statusCode: 200 } };
     const result = await getServerSideProps(ctx as any);
     expect(result).toEqual({ props: {} });
+    (useRouter as jest.Mock).mockReturnValue({ query: { debug: 'true' } });
     render(<IndexPage {...(result as any).props} />);
     expect(screen.getByText('Throw Test Error')).toBeInTheDocument();
   });
