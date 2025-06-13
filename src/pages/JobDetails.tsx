@@ -41,7 +41,7 @@ export default function JobDetails() {
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-2xl font-bold mb-4">Job Not Found</h1>
           <p className="mb-8">The job you're looking for doesn't exist or has been removed.</p>
-          <Button onClick={() => router.push('/jobs')}>View All Jobs</Button>
+          <Button onClick={() => router.push('/careers')}>View All Jobs</Button>
         </div>
         <Footer />
       </>
@@ -87,7 +87,7 @@ export default function JobDetails() {
           <Button 
             variant="outline" 
             size="sm"
-            onClick={() => router.push('/jobs')}
+            onClick={() => router.push('/careers')}
           >
             ← Back to Jobs
           </Button>
