@@ -6,7 +6,6 @@ import axios from 'axios';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Helmet } from 'react-helmet-async';
-import '../styles/main.css';
 
 const SignupSchema = Yup.object({
   name: Yup.string().required('Name is required'),
