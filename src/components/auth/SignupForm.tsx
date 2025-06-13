@@ -78,7 +78,7 @@ export default function SignupForm() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-sm lg:w-96 p-4">
+    <div className="mx-auto w-full max-w-sm lg:w-96 p-4 mt-16">
       <h2 className="text-3xl font-bold tracking-tight text-white text-center mb-6">Create account</h2>
       <Form {...form}>
         {form.formState.errors.root && (
