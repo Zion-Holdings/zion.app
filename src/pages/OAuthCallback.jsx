@@ -27,7 +27,7 @@ export default function OAuthCallback() {
     const token = params.get('token');
     const next = params.get('next');
     if (token) {
-      safeStorage.setItem('auth.token', token);
+      safeStorage.setItem('zion_token', token);
       if (setUser) {
         const user = decodeToken(token);
         if (user) setUser(user);

@@ -8,7 +8,7 @@ import { safeStorage, safeSessionStorage } from './safeStorage';
  * This helps prevent auth state inconsistencies and "limbo" states
  */
 export const cleanupAuthState = () => {
-  const authTokenKey = "auth.token";
+  const authTokenKey = "zion_token";
   // Remove our custom auth token
   safeStorage.removeItem(authTokenKey);
   safeSessionStorage.removeItem(authTokenKey);

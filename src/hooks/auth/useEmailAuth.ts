@@ -13,7 +13,7 @@ export const useEmailAuth = (
     try {
       setIsLoading(true);
       // Clean up any stale auth state before login
-      // cleanupAuthState() will be updated separately to include clearing the new 'auth.token'
+      // cleanupAuthState() removes the stored `zion_token`
       cleanupAuthState();
 
       const response = await fetch("/auth/login", {
@@ -65,31 +65,10 @@ export const useEmailAuth = (
       // For now, I will write the logic as if they are available.
       // If this causes an issue, I'll revise to explicitly import them.
 
-      const authTokenKey = "auth.token";
-      if (rememberMe) {
-        // Assuming safeStorage is accessible here. If not, this needs adjustment.
-        // For now, let's proceed with the assumption it is through utils.
-        // This should actually be: import { safeStorage, safeSessionStorage } from "@/utils/safeStorage";
-        // And then use them.
-
-        // Let's refine this. The hook itself should not know about localStorage/sessionStorage directly.
-        // It should call a utility function, perhaps in authUtils.
-        // However, the original plan was to call safeStorage.setItem directly here.
-        // Let's try that first, assuming they are made available.
-        // The file `src/utils/authUtils.ts` imports and uses them.
-        // It is better to add an export for them from `src/utils/authUtils.ts` or import them directly.
-        // Let's assume they need to be imported directly into this file.
-
-        // Re-re-evaluating: The prompt implies modifying useEmailAuth to *handle* token storage.
-        // This means this hook *is* the place to decide localStorage vs sessionStorage.
-        // The utilities `safeStorage` and `safeSessionStorage` are available from `@/utils/safeStorage`.
-        // I will add these imports to `useEmailAuth.ts`.
-
-        // Final decision: Add imports for safeStorage and safeSessionStorage.
-        safeStorage.setItem(authTokenKey, token);
-      } else {
-        safeSessionStorage.setItem(authTokenKey, token);
-      }
+      const authTokenKey = "zion_token";
+      // Persist token in localStorage so it can be attached to
+      // subsequent API requests via the axios interceptor.
+      safeStorage.setItem(authTokenKey, token);
 
       return { data: { user, token } };
     } catch (error: any) {
