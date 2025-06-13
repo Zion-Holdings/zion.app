@@ -43,7 +43,18 @@ export default function Marketplace({ products: initialProducts = [] }: Marketpl
   }
 
   if (error) {
-    return <div className="p-6 text-white">Error loading products</div>;
+    return (
+      <div className="p-6 text-white text-center">
+        <p className="text-xl mb-4">We couldn't load the marketplace products at this moment.</p>
+        <p className="mb-2">Please try again later.</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Refresh Page
+        </button>
+      </div>
+    );
   }
 
   return (
