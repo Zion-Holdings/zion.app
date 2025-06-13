@@ -46,22 +46,20 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     password: string,
     rememberMe = false
   ) => {
-    const { res, data } = await loginUser(email, password); // Calls /auth/login
-    console.log('[AuthProvider] loginUser API call response:', { res, data });
+    try {
+      // loginUser will throw if API call is not successful (e.g. non-2xx status)
+      const { res, data } = await loginUser(email, password);
+      // If we reach here, loginUser's HTTP call was successful (e.g., status 200 from our API)
+      // data should contain { user, accessToken, refreshToken }
+      console.log('[AuthProvider] loginUser API call successful:', { res, data });
 
-    // data will have { error: "message", code: "ERROR_CODE" } from the API if status !== 200
-    // data will have { user, accessToken } from the API if status === 200
-
-    if (res.status === 200) {
-      // Successful API call
-      setTokens({ accessToken: data.accessToken });
-      // const authTokenKey = "zion_token"; // Removed as per requirement
-      // Persist token in localStorage for use in authenticated requests // Comment out or remove if not needed
-      // safeStorage.setItem(authTokenKey, data.accessToken); // Removed as per requirement
+      // Assuming data from a 200 response is always success.
+      // If API returns 200 but with an error payload, that needs specific handling here or API needs adjustment.
+      setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
 
       const { error: sessionError } = await supabase.auth.setSession({
         access_token: data.accessToken,
-        refresh_token: data.refreshToken, // Assuming data.refreshToken is available from your API response
+        refresh_token: data.refreshToken,
       });
 
       if (sessionError) {
@@ -71,45 +69,57 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           description: sessionError.message || "Failed to initialize client session.",
           variant: "destructive",
         });
-        cleanupAuthState(); // Ensure stale state is cleared
-        console.log('[AuthProvider] login function completed with error (client-side setSession failed).');
+        cleanupAuthState();
         return { error: sessionError.message || "Client-side session initialization failed." };
       }
 
-      // Navigation logic
-      const queryString = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
-      const params = new URLSearchParams(queryString);
-      const next = params.get('redirectTo') || params.get('next') || '/dashboard';
-      router.replace(next);
-
-      console.log('[AuthProvider] login function completed successfully.');
+      // const queryString = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
+      // const params = new URLSearchParams(queryString);
+      // const next = params.get('redirectTo') || params.get('next') || '/dashboard';
+      // router.replace(next); // Redirection moved to onAuthStateChange after profile validation
+      console.log('[AuthProvider] login function completed, onAuthStateChange will handle redirection.');
       return { error: null }; // Successful login
+
+    } catch (error: any) {
+      console.error('[AuthProvider] login function error:', error);
+      let toastMessage = "An unexpected error occurred during login. Please try again.";
+      const errorTitle = "Login Failed";
+
+      if (error.isAxiosError && error.response) {
+        // Error from API response (e.g., 401, 403, 400, 500)
+        const apiData = error.response.data; // This is the response body from your API
+        const apiStatus = error.response.status;
+
+        toastMessage = apiData?.error || apiData?.message || "Login failed. Please check your credentials or try again later.";
+        const errorCode = apiData?.code;
+
+        if (errorCode === "EMAIL_NOT_CONFIRMED") {
+          toastMessage = apiData?.error || "Email not confirmed. Please check your inbox to verify your email.";
+        } else if (errorCode === "INVALID_CREDENTIALS" || apiStatus === 401) {
+          toastMessage = apiData?.error || "Invalid email or password.";
+        } else if (errorCode === "LOGIN_FAILED" || apiStatus === 500) {
+          toastMessage = apiData?.error || "Login failed due to a server error. Please try again later.";
+        } else if (apiStatus === 400) {
+          toastMessage = apiData?.error || "Invalid request. Please check your input.";
+        } else if (apiStatus === 404) { // Endpoint not found
+            toastMessage = "Login service not found. Please contact support.";
+        }
+        // Add any other specific errorCode handling here
+      } else if (error.isAxiosError && !error.response) {
+        // Network error (axios error, but no response from server)
+        toastMessage = "Network error. Please check your internet connection and try again.";
+      } else if (error.message) {
+        // Other errors (not Axios, but have a message)
+        toastMessage = error.message;
+      }
+
+      toast({
+        title: errorTitle,
+        description: toastMessage,
+        variant: "destructive",
+      });
+      return { error: toastMessage }; // This is what LoginForm.tsx expects
     }
-
-    // Handle errors from the API call (res.status !== 200)
-    // data is expected to be { error: "message", code: "ERROR_CODE" }
-    let toastMessage = data?.error || "An unknown error occurred.";
-    const errorCode = data?.code;
-
-    if (errorCode === "EMAIL_NOT_CONFIRMED") { // Expected for 403
-      toastMessage = data?.error || "Email not confirmed. Please check your inbox to verify your email.";
-    } else if (errorCode === "INVALID_CREDENTIALS") { // Expected for 401
-      toastMessage = data?.error || "Invalid email or password.";
-    } else if (errorCode === "LOGIN_FAILED" || res.status === 500) { // Expected for 500 or other
-      toastMessage = data?.error || "Login failed due to a server error. Please try again later.";
-    } else if (res.status === 400) { // Bad request (e.g. missing fields, though schema validation is in API)
-        toastMessage = data?.error || "Invalid request. Please check your input.";
-    } else if (res.status === 404) { // Endpoint not found or invalid path
-        toastMessage = "Invalid credentials";
-    }
-    // Add any other specific error code handling here if needed
-
-    toast({
-      title: "Login Failed",
-      description: toastMessage,
-      variant: "destructive",
-    });
-    return { error: toastMessage };
   };
 
   // Refactored signup method
@@ -221,8 +231,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
               if (profileError) {
                 console.error("[AuthProvider] Error fetching user profile in onAuthStateChange:", profileError);
-                // Consider how to handle user state: setUser(null) or keep existing if any?
-                // For now, if profile fetch fails, treat as if user data is incomplete/unavailable for app use
+                toast({
+                  title: "Profile Load Error",
+                  description: "Login successful, but failed to load your profile. Please try again or contact support.",
+                  variant: "destructive",
+                });
                 setUser(null);
                 setAvatarUrl(null);
               } else if (profile) {
@@ -245,13 +258,20 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                   if (nextPathFromStorage) {
                     safeStorage.removeItem('nextPath');
                     router.replace(decodeURIComponent(nextPathFromStorage));
-                  } else if (nextFromUrl) { // Simplified: removed location.state logic for now
+                  } else if (nextFromUrl) {
                     router.replace(decodeURIComponent(nextFromUrl));
+                  } else {
+                    router.replace('/dashboard'); // Default redirect if no other path specified
                   }
                 }
               } else {
                 // Profile not found, but no error from Supabase (should be rare with .single() if no RLS issue)
                 console.warn("User profile not found for user:", session.user.id);
+                toast({
+                  title: "Profile Not Found",
+                  description: "Login successful, but your profile could not be found. Please contact support.",
+                  variant: "destructive",
+                });
                 setUser(null);
                 setAvatarUrl(null);
               }
