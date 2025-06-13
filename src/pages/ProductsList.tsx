@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, keepPreviousData } from '@tanstack/react-query';
 import ProductCard from '@/components/ProductCard';
 
 interface Product {
@@ -35,7 +35,7 @@ export default function ProductsList() {
   } = useQuery({
     queryKey: ['products', page, perPage],
     queryFn: () => fetchProducts(page, perPage),
-    keepPreviousData: true,
+    placeholderData: keepPreviousData,
   });
 
   if (isLoading) {
