@@ -46,6 +46,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     password: string,
     rememberMe = false
   ) => {
+    console.log('[AuthProvider] loginUser API call response:', { res, data });
     const { res, data } = await loginUser(email, password); // Calls /auth/login
 
     // data will have { error: "message", code: "ERROR_CODE" } from the API if status !== 200
@@ -58,12 +59,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       // Persist token in localStorage for use in authenticated requests
       safeStorage.setItem(authTokenKey, data.accessToken);
       const clientLoginResult = await loginImpl({ email, password }); // This is supabase.auth.signInWithPassword client-side
+      console.log('[AuthProvider] loginImpl (client-side supabase.auth.signInWithPassword) result:', clientLoginResult);
 
       if (clientLoginResult?.error) {
         // loginImpl (useEmailAuth.login) already shows a toast.
         console.error("Client-side login after server confirmation failed:", clientLoginResult.error);
         // Clear potentially stale tokens to avoid invalid session loops
         cleanupAuthState();
+        console.log('[AuthProvider] login function completed with error (client-side login failed).');
         return { error: (clientLoginResult.error as any)?.message || "Client-side login failed." };
       }
 
@@ -73,6 +76,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       const next = params.get('redirectTo') || params.get('next') || '/dashboard';
       router.replace(next);
 
+      console.log('[AuthProvider] login function completed successfully.');
       return { error: null }; // Successful login
     }
 
@@ -198,6 +202,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
+        console.log('[AuthProvider] onAuthStateChange triggered.');
+        console.log('[AuthProvider] onAuthStateChange event:', event);
+        console.log('[AuthProvider] onAuthStateChange session:', session);
         try {
           if (session?.user) {
             try {
@@ -207,13 +214,15 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 .single();
 
               if (profileError) {
-                console.error("Error fetching user profile:", profileError);
+                console.error("[AuthProvider] Error fetching user profile in onAuthStateChange:", profileError);
                 // Consider how to handle user state: setUser(null) or keep existing if any?
                 // For now, if profile fetch fails, treat as if user data is incomplete/unavailable for app use
                 setUser(null);
                 setAvatarUrl(null);
               } else if (profile) {
+                console.log('[AuthProvider] onAuthStateChange profile data:', profile);
                 const mappedUser = mapProfileToUser(session.user, profile);
+                console.log('[AuthProvider] onAuthStateChange mappedUser:', mappedUser);
                 setUser(mappedUser);
                 setAvatarUrl(mappedUser.avatarUrl || null);
 
