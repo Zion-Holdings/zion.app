@@ -20,9 +20,9 @@ describe('Checkout Test Route', () => {
 
     // For now, we are mostly testing that the button click initiates the process.
     // We won't assert the full Stripe redirection here as it's complex.
-    // We assume that if create-checkout-session is called, Stripe SDK will handle the redirect.
+    // We assume that if checkout-session is called, Stripe SDK will handle the redirect.
 
-    cy.intercept('POST', '/api/create-checkout-session').as('createCheckoutSession');
+    cy.intercept('POST', '/api/checkout-session').as('createCheckoutSession');
 
     cy.contains('button', 'Buy Now (Test)').click();
 
@@ -48,7 +48,7 @@ describe('Checkout Test Route', () => {
   // Placeholder for a test that mocks the Stripe success and checks the order confirmation page.
   // This would require more advanced mocking of the Stripe redirect and session status.
   it.skip('should redirect to order confirmation page on successful payment', () => {
-    // 1. Intercept /api/create-checkout-session and return a mock sessionId
+    // 1. Intercept /api/checkout-session and return a mock sessionId
     // 2. Stub stripe.redirectToCheckout to simulate a successful payment
     //    - This might involve calling a mock successUrl directly
     // 3. Verify navigation to /order-confirmation with the session_id
@@ -57,7 +57,7 @@ describe('Checkout Test Route', () => {
     cy.log('Test for successful payment and redirection to order confirmation is skipped.');
     // Example of how one might start (needs stripe.js stubbing):
     // const mockSessionId = 'cs_test_mock12345';
-    // cy.intercept('POST', '/api/create-checkout-session', {
+    // cy.intercept('POST', '/api/checkout-session', {
     //   statusCode: 200,
     //   body: { sessionId: mockSessionId },
     // }).as('createCheckoutSession');

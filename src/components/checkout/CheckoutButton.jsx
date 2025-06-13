@@ -14,7 +14,7 @@ export default function CheckoutButton({ priceId, quantity = 1 }) {
       const stripe = await getStripe();
       if (!stripe) throw new Error('Stripe not loaded');
 
-      const res = await fetch('/api/create-checkout-session', {
+      const res = await fetch('/api/checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
