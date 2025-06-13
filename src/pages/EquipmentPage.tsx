@@ -43,7 +43,11 @@ async function fetchEquipment(): Promise<ProductListing[]> {
       console.error("Error response data in fetchEquipment:", await error.response.text());
     }
     console.error("Failed to fetch equipment:", error);
-    // Propagate the error or return an empty array/handle as per application's error strategy
+    toast({
+      title: error.message || 'Failed to fetch equipment',
+      variant: 'destructive',
+    });
+    // Propagate the error so react-query can handle it
     throw error;
   }
 }

@@ -25,7 +25,8 @@ function mapStatusMessage(status?: number, fallback = ''): string {
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.headers['content-type']?.includes('text/html')) {
+    const contentType = error.response?.headers?.['content-type'];
+    if (contentType?.includes('text/html')) {
       showError('html-error', 'Server returned HTML instead of JSON');
     }
     showApiError(error);
