@@ -19,6 +19,8 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
+// Import global Tailwind styles so they load before the app renders
+import '../src/index.css';
 import * as Sentry from '@sentry/nextjs';
 import { captureException } from '@/utils/sentry';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
