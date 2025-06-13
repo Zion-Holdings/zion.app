@@ -32,7 +32,7 @@ const EQUIPMENT_FILTERS = [
   { label: "Robotics", value: "Robotics" },
 ];
 
-async function fetchEquipment(): Promise<ProductListing[]> {
+export async function fetchEquipment(): Promise<ProductListing[]> {
   // Added a try-catch block for better error handling during API call
   try {
     const { data } = await apiClient.get('/equipment');
@@ -40,7 +40,7 @@ async function fetchEquipment(): Promise<ProductListing[]> {
   } catch (error: any) {
     console.error("Raw error object in fetchEquipment:", error);
     if (error.response) {
-      console.error("Error response data in fetchEquipment:", await error.response.text());
+      console.error("Error response data in fetchEquipment:", error.response.data);
     }
     console.error("Failed to fetch equipment:", error);
     toast({
