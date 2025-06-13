@@ -24,7 +24,7 @@ const OAuthCallback = () => {
     }
 
     if (token) {
-      safeStorage.setItem('auth.token', token);
+      safeStorage.setItem('zion_token', token);
       // Redirect to login, which will handle the token and further redirection.
       // This reuses the logic in Login.jsx for token processing and redirecting
       // to the intended page (e.g., dashboard, onboarding, or 'next' URL).

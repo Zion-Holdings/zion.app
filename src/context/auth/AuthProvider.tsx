@@ -54,12 +54,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (res.status === 200) {
       // Successful API call
       setTokens({ accessToken: data.accessToken });
-      const authTokenKey = "auth.token";
-      if (rememberMe) {
-        safeStorage.setItem(authTokenKey, data.accessToken);
-      } else {
-        safeSessionStorage.setItem(authTokenKey, data.accessToken);
-      }
+      const authTokenKey = "zion_token";
+      // Persist token in localStorage for use in authenticated requests
+      safeStorage.setItem(authTokenKey, data.accessToken);
       const clientLoginResult = await loginImpl({ email, password }); // This is supabase.auth.signInWithPassword client-side
 
       if (clientLoginResult?.error) {
@@ -73,7 +70,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       // Navigation logic
       const queryString = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
       const params = new URLSearchParams(queryString);
-      const next = params.get('redirectTo') || params.get('next') || '/equipment/recommendations';
+      const next = params.get('redirectTo') || params.get('next') || '/dashboard';
       router.replace(next);
 
       return { error: null }; // Successful login

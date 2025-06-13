@@ -50,7 +50,7 @@ describe('useEmailAuth', () => {
         // Omitting dates for simplicity in this part of the test, or use expect.any(String)
     };
     expect(mockSetUser).toHaveBeenCalledWith(expect.objectContaining(expectedUser));
-    expect(safeStorage.setItem).toHaveBeenCalledWith('auth.token', 'mock-jwt-token');
+    expect(safeStorage.setItem).toHaveBeenCalledWith('zion_token', 'mock-jwt-token');
     expect(safeSessionStorage.setItem).not.toHaveBeenCalled();
     expect(loginResult?.data?.token).toBe('mock-jwt-token');
     expect(loginResult?.data?.user).toEqual(expect.objectContaining(expectedUser));
@@ -75,8 +75,8 @@ describe('useEmailAuth', () => {
     expect(fetch).toHaveBeenCalledWith('/auth/login', expect.any(Object));
     const expectedUser = { email: 'test@example.com' }; // Simplified check
     expect(mockSetUser).toHaveBeenCalledWith(expect.objectContaining(expectedUser));
-    expect(safeSessionStorage.setItem).toHaveBeenCalledWith('auth.token', 'mock-jwt-token');
-    expect(safeStorage.setItem).not.toHaveBeenCalled();
+    expect(safeStorage.setItem).toHaveBeenCalledWith('zion_token', 'mock-jwt-token');
+    expect(safeSessionStorage.setItem).not.toHaveBeenCalled();
     expect(loginResult?.data?.token).toBe('mock-jwt-token');
     expect(mockSetIsLoading).toHaveBeenCalledWith(false);
     expect(toast).not.toHaveBeenCalled();

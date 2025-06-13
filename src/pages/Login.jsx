@@ -22,7 +22,7 @@ export default function Login() {
     const params = new URLSearchParams(queryString);
     const token = params.get('token');
     if (token) {
-      safeStorage.setItem('auth.token', token);
+      safeStorage.setItem('zion_token', token);
       // Clear token from URL to prevent re-processing and clean up history
       // The actual authentication state will update via useAuth's listeners,
       // which should trigger the other useEffect.
