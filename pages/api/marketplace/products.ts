@@ -14,9 +14,10 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductWithStats[] | { error: string }>
 ) {
+  console.log(process.env.DATABASE_URL ? "DATABASE_URL is set" : "DATABASE_URL is not set");
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -26,15 +27,32 @@ async function handler(
   const skip = (page - 1) * limit;
 
   try {
-    const products = await prisma.product.findMany({ skip, take: limit });
+    let products: ProductModel[];
+    try {
+      products = await prisma.product.findMany({ skip, take: limit });
+      console.log('Fetched products:', products);
+    } catch (e) {
+      console.error('Error fetching products from Prisma:', e, { queryParams: { skip, limit } });
+      // Re-throw the error to be caught by the outer catch block
+      throw e;
+    }
+
     const ids = products.map((p) => p.id);
 
-    const stats = await prisma.productReview.groupBy({
-      by: ['productId'],
-      where: { productId: { in: ids } },
-      _avg: { rating: true },
-      _count: { id: true },
-    });
+    let stats;
+    try {
+      stats = await prisma.productReview.groupBy({
+        by: ['productId'],
+        where: { productId: { in: ids } },
+        _avg: { rating: true },
+        _count: { id: true },
+      });
+      console.log('Fetched product stats:', stats);
+    } catch (e) {
+      console.error('Error fetching product stats from Prisma:', e, { queryParams: { ids } });
+      // Re-throw the error to be caught by the outer catch block
+      throw e;
+    }
 
     const statsMap = new Map(
       stats.map((s) => [s.productId, { avg: s._avg.rating, count: s._count.id }])
@@ -49,7 +67,8 @@ async function handler(
 
     return res.status(200).json(result);
   } catch (e) {
-    console.error('Error fetching products:', e);
+    // The specific errors are already logged by the inner try-catch blocks
+    // This outer catch block now primarily handles the HTTP response
     return res
       .status(500)
       .json({ error: 'Internal server error while fetching products.' });
