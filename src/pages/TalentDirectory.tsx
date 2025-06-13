@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useNavigate
+import Link from 'next/link';
+import { useAuth } from '@/hooks/useAuth';
 import { FilterSidebar } from '@/components/talent/FilterSidebar';
 import { TalentResults } from '@/components/talent/TalentResults';
 import { TalentSkeleton } from '@/components/talent/TalentSkeleton';
@@ -55,6 +57,9 @@ export default function TalentDirectory() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
+
+  const { user } = useAuth();
+  const isAdmin = user?.userType === 'admin';
 
   useEffect(() => {
     setCurrentPage(1);
@@ -122,14 +127,24 @@ export default function TalentDirectory() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col space-y-8">
-        <div>
-          <h1 className="text-3xl font-bold text-white mb-2">
-            AI & Tech Talent Directory
-          </h1>
-          <p className="text-zion-slate-light">
-            Connect with expert AI developers, data scientists, ML engineers,
-            and tech professionals for your projects.
-          </p>
+        <div className="flex items-start justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-white mb-2">
+              AI & Tech Talent Directory
+            </h1>
+            <p className="text-zion-slate-light">
+              Connect with expert AI developers, data scientists, ML engineers,
+              and tech professionals for your projects.
+            </p>
+          </div>
+          {isAdmin && (
+            <Link
+              href="/create-talent-profile"
+              className="bg-zion-purple text-white px-4 py-2 rounded hover:bg-zion-purple-dark"
+            >
+              Add Talent
+            </Link>
+          )}
         </div>
 
         {/* Main content */}
