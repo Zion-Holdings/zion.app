@@ -34,7 +34,7 @@ const SearchPage: NextPageWithLayout = () => {
       {!isLoading && !error && filteredListings.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredListings.map((listing: ProductListing) => (
-            <ListingCard key={listing.id} listing={listing} />
+            <ListingCard key={listing.id} {...listing} />
           ))}
         </div>
       )}
