@@ -14,7 +14,10 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductWithStats[] | { error: string }>
 ) {
-  console.log(process.env.DATABASE_URL ? "DATABASE_URL is set" : "DATABASE_URL is not set");
+  if (!process.env.DATABASE_URL) {
+    console.error("DATABASE_URL is not set or empty.");
+    return res.status(503).json({ error: 'Service Unavailable: Database configuration is missing.' });
+  }
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
     return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
@@ -29,10 +32,12 @@ async function handler(
   try {
     let products: ProductModel[];
     try {
+      console.log('Attempting to connect to database and fetch products...');
       products = await prisma.product.findMany({ skip, take: limit });
+      console.log('Successfully fetched products from database.');
       console.log('Fetched products:', products);
     } catch (e) {
-      console.error('Error fetching products from Prisma:', e, { queryParams: { skip, limit } });
+      console.error('Error during database connection or fetching products from Prisma:', e, { queryParams: { skip, limit } });
       // Re-throw the error to be caught by the outer catch block
       throw e;
     }
@@ -41,15 +46,17 @@ async function handler(
 
     let stats;
     try {
+      console.log('Attempting to fetch product stats...');
       stats = await prisma.productReview.groupBy({
         by: ['productId'],
         where: { productId: { in: ids } },
         _avg: { rating: true },
         _count: { id: true },
       });
+      console.log('Successfully fetched product stats.');
       console.log('Fetched product stats:', stats);
     } catch (e) {
-      console.error('Error fetching product stats from Prisma:', e, { queryParams: { ids } });
+      console.error('Error during fetching product stats from Prisma:', e, { queryParams: { ids } });
       // Re-throw the error to be caught by the outer catch block
       throw e;
     }
@@ -71,7 +78,7 @@ async function handler(
     // This outer catch block now primarily handles the HTTP response
     return res
       .status(500)
-      .json({ error: 'Internal server error while fetching products.' });
+      .json({ error: 'Internal server error while fetching products.', details: e.message });
   } finally {
     await prisma.$disconnect();
   }
