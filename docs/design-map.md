@@ -16,7 +16,7 @@ This design map provides a Figma-compatible outline for the Zion OS ecosystem. E
 - Apply `--font-sans` and `--font-heading` tokens from `src/index.css`
 
 ### Icon Set
-- Use icons located in `docs/images/` (auth, ecommerce, talent, AI, content, realtime)
+- Use icons located in `./images/` (auth, ecommerce, talent, AI, content, realtime)
 
 ### Component Library
 - Core components: cards, buttons, badges, tags
@@ -50,7 +50,7 @@ This design map provides a Figma-compatible outline for the Zion OS ecosystem. E
 - User metrics and analytics panels
 - Content approval queues
 - Global toggle center for feature flags
-- Deployment panel (drawn from `docs/UnifiedDeploymentProtocol.md`)
+- Deployment panel (drawn from `./UnifiedDeploymentProtocol.md`)
 
 ## 7. Mobile Layouts
 - Bottom navigation tabs

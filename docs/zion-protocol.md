@@ -12,7 +12,7 @@ Zion's vision is an AI-powered multiverse where freelancers, businesses, and gov
 
 ## 2. System Architecture
 - **Zion OS Modules**: Marketplace, AI engine, Token system, DAO, and Academy.
-- **Multiverse Deployments**: Each market instance can run autonomously with shared standards. See `docs/UnifiedDeploymentProtocol.md` for how new instances come online.
+- **Multiverse Deployments**: Each market instance can run autonomously with shared standards. See `./UnifiedDeploymentProtocol.md` for how new instances come online.
 - **Decentralized GPT Layer (ZionGPT Core)**: Fine-tuned models operate locally when possible, with API fallback for heavy queries.
 
 ## 3. Tokenomics
