@@ -11,6 +11,8 @@ import { WalletProvider } from '@/context/WalletContext'; // Added WalletProvide
 import { AnalyticsProvider } from '@/context/AnalyticsContext'; // Added AnalyticsProvider
 import { CartProvider } from '@/context/CartContext'; // Added CartProvider
 import { RouterWrapper } from '@/components/RouterWrapper';
+import { ErrorProvider } from '@/context/ErrorContext';
+import ErrorResetOnRouteChange from '@/components/ErrorResetOnRouteChange';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
@@ -56,8 +58,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           <ReduxProvider store={store}>
             <HelmetProvider>
               <RouterWrapper>
-                <AuthProvider>
-                  <WhitelabelProvider>
+                <ErrorProvider>
+                  <ErrorResetOnRouteChange />
+                  <AuthProvider>
+                    <WhitelabelProvider>
                     <I18nextProvider i18n={i18n}>
                       <WalletProvider>
                         <CartProvider>
@@ -77,6 +81,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     </I18nextProvider>
                   </WhitelabelProvider>
                 </AuthProvider>
+                </ErrorProvider>
               </RouterWrapper>
           </HelmetProvider>
         </ReduxProvider>
