@@ -12,7 +12,7 @@ export const store = configureStore({
 
 store.subscribe(() => {
   const state = store.getState();
-  safeStorage.setItem('cart', JSON.stringify(state.cart.items));
+  safeStorage.setItem('zion_cart', JSON.stringify(state.cart.items));
   safeStorage.setItem('wishlist', JSON.stringify(state.wishlist.items));
 });
 

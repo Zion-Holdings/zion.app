@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { getStripe } from '@/utils/getStripe';
 import { useAuth } from '@/hooks/useAuth';
 import type { RootState, AppDispatch } from '@/store';
@@ -10,12 +10,32 @@ import {
   updateQuantity as updateQuantityAction,
 } from '@/store/cartSlice';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
+import { CartItem as CartItemType } from '@/types/cart';
+import { safeStorage } from '@/utils/safeStorage';
 
 export default function CartPage() {
-  const items = useSelector((s: RootState) => s.cart.items);
+  const reduxItems = useSelector((s: RootState) => s.cart.items);
+  const [items, setItems] = useState<CartItemType[]>(reduxItems);
   const dispatch = useDispatch<AppDispatch>();
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (reduxItems.length > 0) {
+      setItems(reduxItems);
+    } else {
+      const stored = safeStorage.getItem('zion_cart');
+      if (stored) {
+        try {
+          setItems(JSON.parse(stored) as CartItemType[]);
+        } catch {
+          setItems([]);
+        }
+      } else {
+        setItems([]);
+      }
+    }
+  }, [reduxItems]);
 
   const updateQuantity = (id: string, qty: number) => {
     dispatch(updateQuantityAction({ id, quantity: qty }));
