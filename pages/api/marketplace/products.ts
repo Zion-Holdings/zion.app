@@ -22,7 +22,7 @@ type ProductWithStats = ProductModel & {
 
 async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ProductWithStats[] | { error: string }>
+  res: NextApiResponse<ProductWithStats[] | { error: string; details?: string }>
 ) {
   if (!process.env.DATABASE_URL) {
     console.error("DATABASE_URL is not set or empty.");
