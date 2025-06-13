@@ -21,28 +21,28 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
   const [error, setError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
-    if (!slug || initialPost) return; // skip fetch when preloaded
-    const fetchPost = async () => {
-      try {
-        const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-        const res = await fetch(`${appUrl}/api/blog/${slug}`);
-        if (res.ok) {
-          const data: BlogPost = await res.json();
-          setPost(data);
-          return;
-        }
-      } catch (e) {
-        console.error('Failed to fetch blog post', e);
-      }
-      const fallback = BLOG_POSTS.find((p) => p.slug === slug) || null;
-      if (!fallback) {
-        setError('Article not found');
+    if (initialPost && initialPost.slug === slug) {
+      setPost(initialPost);
+      setError(null); // Clear any previous error
+    } else if (slug) {
+      // This case handles if the slug changes and initialPost is not for the current slug
+      // Or if initialPost was null from getStaticProps (which shouldn't happen if notFound is true)
+      // For now, we will rely on getStaticProps to provide the correct post or a 404.
+      // If initialPost is null and getStaticProps didn't return notFound, that's an inconsistent state.
+      // The previous logic tried a fallback here, but we aim to make getStaticProps authoritative.
+      const directFallback = BLOG_POSTS.find((p) => p.slug === slug) || null;
+      if (directFallback) {
+       setPost(directFallback);
+       setError(null);
       } else {
-        setPost(fallback);
+       // If getStaticProps is working correctly, this path (slug exists, no initialPost, no fallback)
+       // should ideally not be hit frequently, as getStaticProps would have returned notFound.
+       // However, to maintain some robustness for dynamic client-side slug changes not triggering a new getStaticProps:
+       setPost(null);
+       setError('Article not found');
       }
-    };
-    fetchPost();
-  }, [slug]);
+    }
+  }, [slug, initialPost]);
 
   if (error) {
     return <div>{error}</div>;
@@ -91,20 +91,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params }) => {
   const slug = params?.slug as string;
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-  try {
-    const res = await fetch(`${appUrl}/api/blog/${slug}`);
-    if (res.ok) {
-      const post: BlogPost = await res.json();
-      return { props: { initialPost: post }, revalidate: 60 };
-    }
-  } catch (err) {
-    console.error('getStaticProps fetch failed', err);
-  }
-  const fallback = BLOG_POSTS.find((p) => p.slug === slug) || null;
-  if (!fallback) {
+  const post = BLOG_POSTS.find((p) => p.slug === slug) || null; // Changed from 'fallback' to 'post' for clarity
+
+  if (!post) { // Changed from 'fallback' to 'post'
     return { notFound: true };
   }
-  return { props: { initialPost: fallback }, revalidate: 60 };
+  return { props: { initialPost: post }, revalidate: 60 }; // Changed from 'fallback' to 'post'
 };
 
