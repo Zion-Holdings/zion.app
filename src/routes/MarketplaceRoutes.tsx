@@ -28,6 +28,7 @@ import NewServicesPage from "@/pages/NewServicesPage";
 import InnovationPage from "@/pages/InnovationPage";
 import CartPage from "@/pages/Cart";
 import OrderConfirmationPage from '@/pages/marketplace/OrderConfirmationPage';
+import ProductsList from '@/pages/ProductsList';
 
 const MarketplaceRoutes = () => {
   return (
@@ -39,6 +40,7 @@ const MarketplaceRoutes = () => {
       <Route path="featured" element={<Featured />} />
       <Route path="listing/:id" element={<ListingDetail />} />
       <Route path="/listing/:id" element={<ListingDetail />} />
+      <Route path="products" element={<ProductsList />} />
       
       {/* Equipment Routes */}
       <Route path="equipment" element={<EquipmentPage />} />

@@ -18,6 +18,7 @@ const { logAndAlert } = require('./utils/alertLogger');
 const helmet =require('helmet');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
@@ -96,6 +97,14 @@ app.post('/api/codex/suggest-fix', (req, res) => {
     console.log(`Codex execution stdout: ${stdout}`);
     res.status(200).json({ message: 'Codex fix process triggered successfully.' });
   });
+});
+
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Fallback for client-side routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 mongoose.connect(mongoUri, {

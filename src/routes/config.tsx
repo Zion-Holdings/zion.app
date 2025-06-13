@@ -58,6 +58,7 @@ import AboutPage from '@/pages/About';
 import PartnersPage from '@/pages/Partners';
 import PartnerIntegration from '@/pages/PartnerIntegration';
 import InvestorMatchPage from '@/pages/InvestorMatch';
+import ProductsList from '@/pages/ProductsList';
 import BlogPost from '@/pages/BlogPost';
 import GrantsPage from '@/pages/Grants';
 import RoadmapPage from '@/pages/Roadmap';
@@ -133,6 +134,7 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
   { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: true },
   { path: '/oauth', element: <OAuthCallback /> },
   { path: '/auth/*', element: <AuthRoutes /> },
+  { path: '/marketplace/products', element: <ProductsList /> },
   { path: '/marketplace/*', element: <MarketplaceRoutes /> },
   { path: '/talent/*', element: <TalentRoutes /> },
   { path: '/admin/*', element: <AdminRoutes /> },
