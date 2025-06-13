@@ -4,6 +4,11 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 
 const prisma = new PrismaClient();
 
+interface ProductStats {
+  avg: number | null;
+  count: number;
+}
+
 type ProductWithStats = ProductModel & {
   averageRating: number | null;
   reviewCount: number;
@@ -54,16 +59,19 @@ async function handler(
       throw e;
     }
 
-    const statsMap = new Map(
+    const statsMap = new Map<string, ProductStats>(
       stats.map((s) => [s.productId, { avg: s._avg.rating, count: s._count.id }])
     );
 
-    const result: ProductWithStats[] = products.map((p) => ({
-      ...p,
-      title: p.name,
-      averageRating: statsMap.get(p.id)?.avg ?? null,
-      reviewCount: statsMap.get(p.id)?.count ?? 0,
-    }));
+    const result: ProductWithStats[] = products.map((p) => {
+      const productStats = statsMap.get(p.id);
+      return {
+        ...p,
+        title: p.name,
+        averageRating: productStats?.avg ?? null,
+        reviewCount: productStats?.count ?? 0,
+      };
+    });
 
     return res.status(200).json(result);
   } catch (e) {

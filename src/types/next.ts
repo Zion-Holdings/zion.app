@@ -9,22 +9,22 @@ declare module 'next/router' {
   export function useRouter(): any;
 }
 
+import * as React from 'react';
+
 declare module 'next/head' {
-  import * as React from 'react';
   const Head: React.FC<React.PropsWithChildren<Record<string, any>>>;
-  export default Head;
+  // export default Head; // Removed export default
 }
 
 declare module 'next' {
-  import * as React from 'react';
-  export interface NextApiRequest { [key: string]: any }
-  export interface NextApiResponse<T = any> {
+  interface NextApiRequest { [key: string]: any } // Removed export
+  interface NextApiResponse<T = any> { // Removed export
     status: (statusCode: number) => NextApiResponse<T>;
-    json: (body: any) => NextApiResponse<T>;
-    end: () => void;
+    json: (body: T) => NextApiResponse<T>; // Changed body from any to T
+    end: (data?: any) => NextApiResponse<T>; // Matched original signature
   }
-  export type NextPage<P = {}, IP = P> = React.FC<P>;
-  export type GetStaticProps<P = any, Params = any> = (context: any) => Promise<{ props: P }>;
-  export type GetStaticPaths = (context: any) => Promise<{ paths: any[]; fallback: boolean | 'blocking' }>;
-  export type GetServerSideProps<P = any, Params = any> = (context: any) => Promise<{ props: P }>;
+  // type NextPage<P = {}, IP = P> = React.FC<P>; // Removed export - Removed duplicate identifier
+  // type GetStaticProps<P = any, Params = any> = (context: any) => Promise<{ props: P }>; // Removed export - Removed duplicate identifier
+  // type GetStaticPaths = (context: any) => Promise<{ paths: any[]; fallback: boolean | 'blocking' }>; // Removed export - Removed duplicate identifier
+  // type GetServerSideProps<P = any, Params = any> = (context: any) => Promise<{ props: P }>; // Removed export - Removed duplicate identifier
 }

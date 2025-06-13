@@ -46,8 +46,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     password: string,
     rememberMe = false
   ) => {
-    console.log('[AuthProvider] loginUser API call response:', { res, data });
     const { res, data } = await loginUser(email, password); // Calls /auth/login
+    console.log('[AuthProvider] loginUser API call response:', { res, data });
 
     // data will have { error: "message", code: "ERROR_CODE" } from the API if status !== 200
     // data will have { user, accessToken } from the API if status === 200
