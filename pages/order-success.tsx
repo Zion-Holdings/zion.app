@@ -1,4 +1,4 @@
-import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import type { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import Stripe from 'stripe';
 
@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
   }
 };
 
-export default function OrderSuccess({ session }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function OrderSuccess({ session }: Props) {
   if (!session) {
     return (
       <div className="container max-w-2xl py-10">
