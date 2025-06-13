@@ -1,9 +1,8 @@
 
-import { useEffect, useState } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { GradientHeading } from "@/components/GradientHeading";
-import LoaderOverlay from "@/components/LoaderOverlay"; // Assuming a loading spinner component exists
+import { SkeletonCard } from '@/components/ui';
 import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
 
 // Define a basic type for Category - adjust as per actual API response
@@ -19,7 +18,7 @@ interface CategoryType {
 const queryClient = new QueryClient();
 
 const fetchCategories = async (): Promise<CategoryType[]> => {
-  const response = await fetch("/api/services");
+  const response = await fetch("/api/categories");
   if (!response.ok) {
     throw new Error(`API error: ${response.statusText}`);
   }
@@ -31,23 +30,12 @@ export interface CategoriesProps {
 }
 
 export default function Categories({ categories: initialCategories = [] }: CategoriesProps) {
-  const [categories, setCategories] = useState<CategoryType[]>(initialCategories);
-  const [isLoading, setIsLoading] = useState<boolean>(initialCategories.length === 0);
-  const [error, setError] = useState<Error | null>(null);
-
-  useEffect(() => {
-    if (initialCategories.length > 0) return;
-    setIsLoading(true);
-    setError(null);
-
-    fetchCategories()
-      .then(data => setCategories(data))
-      .catch(err => {
-        console.error("Failed to fetch categories:", err);
-        setError(err as Error);
-      })
-      .finally(() => setIsLoading(false));
-  }, [initialCategories.length]);
+  const { data: categories = [], isLoading, error } = useQuery<CategoryType[], Error>({
+    queryKey: ['categories'],
+    queryFn: fetchCategories,
+    initialData: initialCategories,
+    enabled: initialCategories.length === 0,
+  });
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -66,8 +54,10 @@ export default function Categories({ categories: initialCategories = [] }: Categ
 
           <ErrorBoundary>
             {isLoading && (
-              <div className="flex justify-center items-center h-64">
-                <LoaderOverlay />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-testid="skeleton-loader">
+                {Array.from({ length: 4 }).map((_, index) => (
+                  <SkeletonCard key={index} />
+                ))}
               </div>
             )}
             {error && (
