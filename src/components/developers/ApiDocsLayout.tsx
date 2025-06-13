@@ -68,24 +68,21 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
           </form>
         </div>
 
-        <nav>
-          <ul className="space-y-1">
-            {navigationItems.map((item) => (
-              <li key={item.path}>
-                <Link
-                  to={item.path}
-                  className={cn(
-                    "block px-3 py-2 rounded-md text-sm",
-                    currentPath === item.path
-                      ? "bg-zion-purple/20 text-zion-cyan"
-                      : "text-zinc-400 hover:text-white hover:bg-zinc-900"
-                  )}
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <nav role="navigation" aria-label="Main" className="flex flex-col space-y-1">
+          {navigationItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={cn(
+                "block px-3 py-2 rounded-md text-sm",
+                currentPath === item.path
+                  ? "bg-zion-purple/20 text-zion-cyan"
+                  : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+              )}
+            >
+              {item.title}
+            </Link>
+          ))}
         </nav>
       </div>
 
