@@ -55,19 +55,25 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (res.status === 200) {
       // Successful API call
       setTokens({ accessToken: data.accessToken });
-      const authTokenKey = "zion_token";
-      // Persist token in localStorage for use in authenticated requests
-      safeStorage.setItem(authTokenKey, data.accessToken);
-      const clientLoginResult = await loginImpl({ email, password }); // This is supabase.auth.signInWithPassword client-side
-      console.log('[AuthProvider] loginImpl (client-side supabase.auth.signInWithPassword) result:', clientLoginResult);
+      // const authTokenKey = "zion_token"; // Removed as per requirement
+      // Persist token in localStorage for use in authenticated requests // Comment out or remove if not needed
+      // safeStorage.setItem(authTokenKey, data.accessToken); // Removed as per requirement
 
-      if (clientLoginResult?.error) {
-        // loginImpl (useEmailAuth.login) already shows a toast.
-        console.error("Client-side login after server confirmation failed:", clientLoginResult.error);
-        // Clear potentially stale tokens to avoid invalid session loops
-        cleanupAuthState();
-        console.log('[AuthProvider] login function completed with error (client-side login failed).');
-        return { error: (clientLoginResult.error as any)?.message || "Client-side login failed." };
+      const { error: sessionError } = await supabase.auth.setSession({
+        access_token: data.accessToken,
+        refresh_token: data.refreshToken, // Assuming data.refreshToken is available from your API response
+      });
+
+      if (sessionError) {
+        console.error("Client-side session setting failed:", sessionError);
+        toast({
+          title: "Login Failed",
+          description: sessionError.message || "Failed to initialize client session.",
+          variant: "destructive",
+        });
+        cleanupAuthState(); // Ensure stale state is cleared
+        console.log('[AuthProvider] login function completed with error (client-side setSession failed).');
+        return { error: sessionError.message || "Client-side session initialization failed." };
       }
 
       // Navigation logic
