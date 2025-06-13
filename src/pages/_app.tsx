@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import 'normalize.css';
 import { Global, css } from '@emotion/react';
+import { ChakraProvider } from '@chakra-ui/react';
 
 // Integrate axe-core accessibility auditing in development
 // if (process.env.NODE_ENV !== 'production') {
@@ -129,11 +130,13 @@ function MyApp({ Component, pageProps }) {
                               <ToastProvider>
                                 <GlobalErrorBoundary>
                                   <Suspense fallback={<div>Loading Page...</div>}>
-                                    <AppLayout> {/* AppLayout might need adjustment for Next.js page structure */}
-                                      <App>
-                                        <Component {...pageProps} />
-                                      </App>
-                                    </AppLayout>
+                                    <ChakraProvider>
+                                      <AppLayout> {/* AppLayout might need adjustment for Next.js page structure */}
+                                        <App>
+                                          <Component {...pageProps} />
+                                        </App>
+                                      </AppLayout>
+                                    </ChakraProvider>
                                   </Suspense>
                                 </GlobalErrorBoundary>
                               </ToastProvider>

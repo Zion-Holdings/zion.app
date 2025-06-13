@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import * as Sentry from '@sentry/nextjs';
-import { Alert, AlertDescription } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon } from '@chakra-ui/react';
 import { toast } from '@/hooks/use-toast';
 
 async function resetPassword(email: string): Promise<{ ok: boolean; error?: string }> {
@@ -70,12 +70,10 @@ const ForgotPassword = () => {
       </form>
       {message && <p style={{ color: 'green' }}>{message}</p>}
       {error && (
-        <Alert.Root status="error" mt={4}>
-          <Alert.Indicator />
-          <Alert.Content>
-            <AlertDescription>{error}</AlertDescription>
-          </Alert.Content>
-        </Alert.Root>
+        <Alert status="error" mt={4}>
+          <AlertIcon />
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
       )}
       <p>
         Remember your password? <Link href="/login">Login</Link>
