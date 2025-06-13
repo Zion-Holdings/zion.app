@@ -39,15 +39,30 @@ const StaticPage: React.FC<PageProps> = ({ content, meta }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const dir = path.join(process.cwd(), 'content', 'pages');
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
+  const contentPagesDir = path.join(process.cwd(), 'content', 'pages');
+  const mainPagesDir = path.join(process.cwd(), 'pages');
 
-  // List of slugs that have dedicated pages and should be excluded from [slug].tsx
-  const reservedSlugs = ['about', 'careers', 'innovation', 'roadmap', 'privacy', 'terms'];
+  const contentFiles = fs.readdirSync(contentPagesDir).filter((f) => f.endsWith('.md'));
 
-  const paths = files
-    .map((f) => ({ params: { slug: f.replace(/\.md$/, '') } }))
-    .filter(p => !reservedSlugs.includes(p.params.slug));
+  const paths = contentFiles
+    .map((f) => {
+      const slug = f.replace(/\.md$/, '');
+      return { params: { slug } };
+    })
+    .filter(p => {
+      // Check if a dedicated page exists for this slug in the main 'pages' directory
+      // e.g., pages/privacy.tsx, pages/terms.js etc.
+      const potentialPagePathTs = path.join(mainPagesDir, `${p.params.slug}.tsx`);
+      const potentialPagePathJs = path.join(mainPagesDir, `${p.params.slug}.js`);
+      const potentialPagePathJsx = path.join(mainPagesDir, `${p.params.slug}.jsx`); // Added jsx check
+
+      if (fs.existsSync(potentialPagePathTs) || fs.existsSync(potentialPagePathJs) || fs.existsSync(potentialPagePathJsx)) {
+        // If a dedicated page exists, exclude this slug from being handled by [slug].tsx
+        return false;
+      }
+      // Otherwise, include it
+      return true;
+    });
 
   return { paths, fallback: false };
 };
