@@ -19,7 +19,6 @@ jest.mock('@/components/CategoriesSection', () => {
     );
   }}
 });
-jest.mock('@/components/LoaderOverlay', () => () => <div data-testid="loader-overlay">Loading...</div>);
 jest.mock('@/components/GlobalErrorBoundary', () => ({ children }: { children: React.ReactNode }) => <>{children}</>);
 
 
@@ -56,7 +55,7 @@ describe('Categories Page', () => {
     await waitFor(() => {
       expect(screen.getByText(/Browse Categories/i)).toBeInTheDocument();
     });
-    expect(global.fetch).toHaveBeenCalledWith('/api/services');
+    expect(global.fetch).toHaveBeenCalledWith('/api/categories');
   });
 
   it('displays category listings when API returns data', async () => {
