@@ -26,7 +26,7 @@ function renderCart(user: any) {
 
 describe('cart persistence', () => {
   it('shows item added before login after logging in', () => {
-    safeStorage.setItem('cart', JSON.stringify([item]));
+    safeStorage.setItem('zion_cart', JSON.stringify([item]));
     const { rerender } = renderCart(false);
     expect(screen.getByText('Login Page')).toBeInTheDocument();
 
