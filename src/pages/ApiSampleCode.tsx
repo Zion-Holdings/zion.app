@@ -2,6 +2,7 @@ import React from 'react';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout';
 import { CodeBlock } from '@/components/developers/CodeBlock';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import Link from 'next/link';
 
 export function ApiSampleCode() {
   // JavaScript example with Axios
@@ -305,9 +306,9 @@ main();`;
         <p>
           To use these examples, you'll need to replace 'YOUR_API_KEY' with your
           actual API key, which you can generate in the{' '}
-          <a href="/developers/portal" className="text-zion-cyan">
+          <Link href="/developers/portal" className="text-zion-cyan">
             Developer Portal
-          </a>
+          </Link>
           .
         </p>
 

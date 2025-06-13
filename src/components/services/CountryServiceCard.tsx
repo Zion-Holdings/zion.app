@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 import { Badge } from "@/components/ui/badge";
 import { Globe, Server, Clock, MapPin, Check } from "lucide-react";
 import { CountryPricing } from "@/data/onsiteServicePricing";
@@ -115,7 +116,7 @@ export function CountryServiceCard({ country, onSelect, onQuote, isPopular }: Co
           variant="ghost"
           className="w-full text-zion-cyan hover:text-zion-purple"
         >
-          <a href="/contact">Contact Sales</a>
+          <Link href="/contact">Contact Sales</Link>
         </Button>
       </CardFooter>
     </Card>

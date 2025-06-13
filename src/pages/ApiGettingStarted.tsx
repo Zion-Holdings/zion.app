@@ -1,6 +1,7 @@
 import React from 'react';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout';
 import { CodeBlock } from '@/components/developers/CodeBlock';
+import Link from 'next/link';
 
 export function ApiGettingStarted() {
   const authExample = `curl -X GET \\
@@ -33,9 +34,9 @@ console.log(response.data);`;
         <p>
           All API requests must include your API key in the Authorization
           header. You can generate API keys in the{' '}
-          <a href="/developers/portal" className="text-zion-cyan">
+          <Link href="/developers/portal" className="text-zion-cyan">
             Developer Portal
-          </a>
+          </Link>
           .
         </p>
 

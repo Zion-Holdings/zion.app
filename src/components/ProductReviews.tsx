@@ -1,4 +1,5 @@
 import React, { useEffect, useState, FormEvent } from 'react';
+import Link from 'next/link';
 // import { Review } from '@/types/reviews'; // Assuming this path is correct from earlier exploration
 // For the purpose of this subtask, let's define a local Review type if the import path is uncertain or to ensure self-containment
 // In a real scenario, this would be imported from the shared types.
@@ -207,7 +208,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
       )}
       {!isAuthenticated && (
         <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">
-          Please <a href="/login" className="text-blue-500 hover:underline">login</a> to write a review.
+          Please <Link href="/login" className="text-blue-500 hover:underline">login</Link> to write a review.
         </p>
       )}
     </div>
