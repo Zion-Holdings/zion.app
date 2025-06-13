@@ -23,7 +23,6 @@ export default function Partners() {
     console.log('PartnersPage rendering Unauthenticated View');
     return (
       <div className="container max-w-6xl py-10">
-        <h1>DEBUG: Partners Page - Unauthenticated View</h1>
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold tracking-tight text-white mb-2">Zion AI Partner Program</h1>
           <p className="text-xl text-zion-slate-light">Earn rewards by referring AI talent and clients to our marketplace</p>
