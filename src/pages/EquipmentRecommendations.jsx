@@ -5,6 +5,7 @@ import { fetchRecommendations } from '@/api/recommendations';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function EquipmentRecommendations() {
   const { isAuthenticated, user } = useAuth();
@@ -31,7 +32,7 @@ export default function EquipmentRecommendations() {
           </DialogHeader>
           <p>Please sign in to get personalized AI picks.</p>
           <Button asChild className="mt-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
-            <a href="/login?next=/equipment/recommendations">Sign In</a>
+            <Link href="/login?next=/equipment/recommendations">Sign In</Link>
           </Button>
         </DialogContent>
       </Dialog>

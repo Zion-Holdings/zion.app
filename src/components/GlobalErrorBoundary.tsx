@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 // Removed: import { useNavigate, useLocation } from 'react-router-dom';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
@@ -31,7 +32,7 @@ function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
         Reload {/* Changed button text */}
       </button>
       <div className="mt-4 space-x-4">
-        <a href="/status" className="text-blue-600 hover:underline">Status Page</a>
+        <Link href="/status" className="text-blue-600 hover:underline">Status Page</Link>
         <a href="mailto:support@example.com" className="text-blue-600 hover:underline">Contact Support</a>
       </div>
     </div>

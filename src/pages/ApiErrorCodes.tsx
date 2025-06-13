@@ -1,6 +1,7 @@
 import React from 'react';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout';
 import { CodeBlock } from '@/components/developers/CodeBlock';
+import Link from 'next/link';
 
 export function ApiErrorCodes() {
   const errorExample = `{
@@ -317,10 +318,10 @@ export function ApiErrorCodes() {
         <p>
           If you're encountering persistent errors or need higher rate limits,
           please
-          <a href="/contact" className="text-zion-cyan">
+          <Link href="/contact" className="text-zion-cyan">
             {' '}
             contact our support team
-          </a>
+          </Link>
           .
         </p>
       </div>
