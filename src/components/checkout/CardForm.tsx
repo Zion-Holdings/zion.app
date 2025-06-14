@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { mutate } from 'swr';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
@@ -57,12 +58,13 @@ export default function CardForm({ amount, onSuccess }: Props) {
       }
 
       if (intent?.status === 'succeeded') {
-        if (user && typeof user !== 'boolean' && user.id) { // Applied safer check here
-          await fetch('/api/points/add', {
+        if (user && typeof user !== 'boolean' && user.id) {
+          await fetch('/api/points/increment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userId: user.id, amount: -amount }), // user.id is safe here
+            body: JSON.stringify({ userId: user.id, amount: 50, reason: 'purchase' }),
           });
+          mutate('user');
         }
         console.log('Payment Success');
         onSuccess(result.paymentIntent);
@@ -94,11 +96,12 @@ export default function CardForm({ amount, onSuccess }: Props) {
       if (result.error) throw new Error(result.error.message);
       if (result.paymentIntent?.status === 'succeeded') {
         if (user && typeof user !== 'boolean' && user.id) {
-          await fetch('/api/points/add', {
+          await fetch('/api/points/increment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userId: user.id, amount: -amount }),
+            body: JSON.stringify({ userId: user.id, amount: 50, reason: 'purchase' }),
           });
+          mutate('user');
         }
         console.log('Payment Success');
         onSuccess(result.paymentIntent);

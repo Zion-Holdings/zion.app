@@ -1,5 +1,5 @@
 import { expect, test, vi } from 'vitest';
-import handler from '@/pages/api/points/add';
+import handler from '@/pages/api/points/increment';
 
 const insertMock = vi.fn();
 vi.mock('@supabase/supabase-js', () => ({
@@ -28,7 +28,7 @@ function mockRes() {
 
 test('points increase after order', async () => {
   insertMock.mockResolvedValue({ error: null });
-  const req = mockReq({ userId: '1', amount: 25 });
+  const req = mockReq({ userId: '1', amount: 25, reason: 'test' });
   const res = mockRes();
   await handler(req, res);
   expect(insertMock).toHaveBeenCalled();

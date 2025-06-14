@@ -3,6 +3,7 @@ import PostForm from "./PostForm";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
+import { mutate } from 'swr';
 import type { ForumCategory } from "@/types/community";
 
 interface NewPostDialogProps {
@@ -21,11 +22,12 @@ export function NewPostDialog({ open, onOpenChange, initialCategory }: NewPostDi
       const tagsArray = values.tags.split(",").map(tag => tag.trim());
       toast({ title: "Post created", description: "Your post has been published successfully" });
       if (user?.id) {
-        await fetch('/api/points/add', {
+        await fetch('/api/points/increment', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId: user.id, amount: 2, reason: 'post' })
+          body: JSON.stringify({ userId: user.id, amount: 5, reason: 'post' })
         });
+        mutate('user');
       }
       onOpenChange(false);
       navigate(`/community/category/${values.categoryId}`);
