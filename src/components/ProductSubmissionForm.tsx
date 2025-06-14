@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm, ControllerRenderProps } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import { supabase } from "@/integrations/supabase/client";
@@ -279,18 +279,27 @@ export function ProductSubmissionForm() {
             <FormField
               control={form.control}
               name="title"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Product Title</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter product title" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    Create a compelling title that describes your product
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
+              render={({ field }) => {
+                const { onChange, onBlur, value, ref } = field;
+                return (
+                  <FormItem>
+                    <FormLabel>Product Title</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter product title"
+                        onChange={onChange}
+                        onBlur={onBlur}
+                        value={value}
+                        ref={ref}
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      Create a compelling title that describes your product
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
             />
 
             <FormField
