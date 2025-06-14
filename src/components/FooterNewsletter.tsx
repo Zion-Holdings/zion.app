@@ -46,7 +46,7 @@ export function FooterNewsletter() {
         const data = await res.json().catch(() => ({}));
         toast.error(data.error || 'Subscription failed');
       }
-    } catch (err) {
+    } catch (err: any) {
       toast.error(err.message || 'Subscription failed');
     } finally {
       setIsSubmitting(false);

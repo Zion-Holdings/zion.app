@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ContactPublisherModal } from './ContactPublisherModal.jsx'; // Assuming .jsx is handled or use './ContactPublisherModal'
+import { ContactPublisherModal } from './ContactPublisherModal'; // Assuming .jsx is handled or use './ContactPublisherModal'
 
 interface ProductActionsProps {
   productId: string;

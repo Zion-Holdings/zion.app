@@ -3,7 +3,14 @@ import { sendMessage } from '../services/messages';
 import { toast } from '@/hooks/use-toast';
 
 
-export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }) {
+interface ContactPublisherModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  productId: string;
+  sellerId: string;
+}
+
+export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: ContactPublisherModalProps) {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');

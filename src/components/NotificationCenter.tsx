@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 // Use the shared icon wrapper
 import { Bell } from 'lucide-react';
@@ -42,7 +41,7 @@ export const NotificationCenter: React.FC = () => {
         } catch (err) {
           console.error("Failed to fetch notifications:", err);
           setError("Couldn't load notifications");
-          enqueueSnackbar(err?.response?.data?.message || err.message, { variant: 'error' });
+          enqueueSnackbar((err as any)?.response?.data?.message || (err instanceof Error ? err.message : String(err)), { variant: 'error' });
         } finally {
           setLoadedOnce(true);
         }
@@ -58,7 +57,7 @@ export const NotificationCenter: React.FC = () => {
       enqueueSnackbar("All notifications marked as read", { variant: 'success' });
     } catch (err) {
       console.error("Failed to mark notifications as read:", err);
-      enqueueSnackbar(err?.response?.data?.message || err.message, { variant: 'error' });
+      enqueueSnackbar((err as any)?.response?.data?.message || (err instanceof Error ? err.message : String(err)), { variant: 'error' });
     }
   };
 
