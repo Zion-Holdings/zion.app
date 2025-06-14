@@ -7,6 +7,7 @@ import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // A
 import { PrimaryNav } from "./PrimaryNav";
 import { useLocation } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { BackToTopButton } from "@/components/BackToTopButton";
 import { Footer } from "@/components/Footer";
 import { SkipLink } from "@/components/SkipLink";
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
@@ -94,6 +95,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
       <main id="main-content" className="flex-grow">
         {children ?? <Outlet />}
       </main>
+      <BackToTopButton />
       {!hideFooter && <Footer />}
     </div>
   );

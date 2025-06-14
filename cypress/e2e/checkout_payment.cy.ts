@@ -17,7 +17,7 @@ describe('test checkout purchase', () => {
       statusCode: 200,
       body: { sessionId },
     }).as('createSession');
-    cy.intercept('POST', '/api/points/add', { statusCode: 200 }).as('addPoints');
+    cy.intercept('POST', '/api/points/increment', { statusCode: 200 }).as('addPoints');
     cy.intercept('GET', /\/api\/orders\/.*/, (req) => {
       const id = req.url.split('/').pop();
       req.reply({

@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import Marketplace from "@/pages/Marketplace";
 import Categories from "@/pages/Categories";
-import CategoryDetail from "@/pages/CategoryDetail";
+import CategoryPage from "@/pages/CategoryPage";
 import Featured from "@/pages/Featured";
 import ListingDetail from "@/pages/ListingDetail";
 import EquipmentPage from "@/pages/EquipmentPage";
@@ -18,7 +18,7 @@ import RequestService from "@/pages/RequestService";
 import AIMatcher from "@/pages/AIMatcher";
 import ServiceDescriptionGenerator from "@/pages/ServiceDescriptionGenerator";
 import ITOnsiteServicesPage from "@/pages/ITOnsiteServicesPage";
-import SearchPage from "@/pages/SearchPage";
+import SearchResultsPage from "@/pages/SearchResultsPage";
 import ProjectRoom from "@/pages/ProjectRoom";
 import VideoCall from "@/pages/VideoCall";
 import Checkout from "@/pages/Checkout";
@@ -36,7 +36,7 @@ const MarketplaceRoutes = () => {
       {/* Marketplace Routes */}
       <Route index element={<Marketplace />} />
       <Route path="categories" element={<Categories />} />
-      <Route path="category/:slug" element={<CategoryDetail />} />
+      <Route path="category/:slug" element={<CategoryPage />} />
       <Route path="featured" element={<Featured />} />
       <Route path="listing/:id" element={<ListingDetail />} />
       <Route path="/listing/:id" element={<ListingDetail />} />
@@ -84,7 +84,7 @@ const MarketplaceRoutes = () => {
       <Route path="/service-description-generator" element={<ServiceDescriptionGenerator />} />
       
       {/* Search Route */}
-      <Route path="search" element={<SearchPage />} />
+      <Route path="search" element={<SearchResultsPage />} />
 
       {/* Cart Route */}
       <Route path="/cart" element={<CartPage />} />

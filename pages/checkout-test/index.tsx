@@ -1,47 +1,13 @@
 import React from 'react';
-import { getStripe } from '@/utils/getStripe'; // Assuming getStripe is in this location
+import axios from 'axios';
 
 const CheckoutTestPage = () => {
   const handleCheckout = async () => {
-    // TODO: Get the actual priceId for the dummy product from Stripe
-    const priceId = 'price_1234567890'; // Replace with a real test price ID
-
+    const cart = [{ priceId: 'price_1234567890', quantity: 1 }];
     try {
-      const response = await fetch('/api/checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          priceId,
-          quantity: 1,
-          // Optional: Add customer_email if needed for testing
-          // customer_email: 'test@example.com',
-          successUrl: `${window.location.origin}/order-confirmation?session_id={CHECKOUT_SESSION_ID}`, // Or your desired success URL structure
-          cancelUrl: `${window.location.origin}/checkout-test`, // Redirect back to this page on cancel
-        }),
-      });
-
-      const { sessionId, error } = await response.json();
-
-      if (error) {
-        console.error('Error creating checkout session:', error);
-        alert(`Error: ${error}`); // Or handle error more gracefully
-        return;
-      }
-
-      if (sessionId) {
-        const stripe = await getStripe();
-        if (stripe) {
-          const { error: stripeError } = await stripe.redirectToCheckout({ sessionId });
-          if (stripeError) {
-            console.error('Stripe redirect error:', stripeError);
-            alert(`Stripe Error: ${stripeError.message}`); // Or handle error
-          }
-        } else {
-          console.error('Stripe.js failed to load.');
-          alert('Error: Could not connect to payment gateway.');
-        }
+      const { data } = await axios.post('/api/checkout/session', { cart });
+      if (data.url) {
+        window.location.href = data.url;
       }
     } catch (err) {
       console.error('Checkout error:', err);

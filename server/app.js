@@ -14,6 +14,7 @@ const authSocialRoutes = require('./routes/authSocial');
 const recommendationsRoutes = require('./routes/recommendations');
 const syncRoutes = require('./routes/sync');
 const alertsRoutes = require('./routes/alerts'); // Add this
+const equipmentRoutes = require('./routes/items');
 const { logAndAlert } = require('./utils/alertLogger');
 const helmet =require('helmet');
 const rateLimit = require('express-rate-limit');
@@ -67,6 +68,7 @@ app.use('/', authSocialRoutes);
 app.use('/recommendations', recommendationsRoutes);
 app.use('/sync', syncRoutes);
 app.use('/api/alerts', alertsRoutes); // Add this, choose a base path like /api/alerts
+app.use('/api/equipment', equipmentRoutes);
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
 });

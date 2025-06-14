@@ -13,11 +13,13 @@ async function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const active = req.query.active === 'true';
+  const active = req.query.active;
 
   try {
     const categories = await prisma.category.findMany({
-      where: active ? { active: true } : undefined,
+      where: {
+        active: active === 'true' ? true : active === 'false' ? false : undefined,
+      },
       select: { id: true, name: true, slug: true, icon: true },
     });
     res.status(200).json(categories);

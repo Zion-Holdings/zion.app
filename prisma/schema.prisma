@@ -29,7 +29,7 @@ model ChatMessage {
   createdAt DateTime @default(now())
 }
 
-model Category {
+model category {
   id     String  @id @default(cuid())
   name   String
   slug   String  @unique
@@ -123,4 +123,13 @@ model ErrorAnalysisSuggestion {
   first_seen_at     DateTime @default(now())
   last_seen_at      DateTime @updatedAt
   occurrence_count  Int      @default(1)
+}
+
+model Talent {
+  id     Int      @id @default(autoincrement())
+  name   String
+  role   String
+  avatar String?
+  rate   Float?
+  skills String[]
 }

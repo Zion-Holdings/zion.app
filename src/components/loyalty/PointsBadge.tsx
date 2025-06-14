@@ -1,43 +1,13 @@
 import { Gift } from 'lucide-react';
-import { useAuth } from '@/hooks/useAuth';
-import { useEffect, useState } from 'react';
+import { useUser } from '@/hooks/useUser';
 import { usePoints } from '@/hooks/usePoints';
 import Link from 'next/link';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 export function PointsBadge() {
-  const { user, setUser } = useAuth();
+  const { user } = useUser();
   const { ledger } = usePoints();
-  const [points, setPoints] = useState(user?.points ?? 0);
-
-  useEffect(() => {
-    setPoints(user?.points ?? 0);
-  }, [user?.points]);
-
-  useEffect(() => {
-    let cancelled = false;
-    async function fetchPoints() {
-      try {
-        const res = await fetch('/api/users/me');
-        if (!res.ok) return;
-        const data = await res.json();
-        if (cancelled) return;
-        if (typeof data.points === 'number') {
-          setPoints(data.points);
-          if (setUser && user) setUser({ ...user, points: data.points });
-        }
-      } catch {
-        // ignore
-      }
-    }
-
-    fetchPoints();
-    const id = setInterval(fetchPoints, 60000);
-    return () => {
-      cancelled = true;
-      clearInterval(id);
-    };
-  }, [setUser, user]);
+  const points = user?.points ?? 0;
 
   const breakdown = ledger.reduce(
     (acc, e) => {

@@ -21,6 +21,8 @@ function handler(
   }
 
   const q = String(req.query.query ?? req.query.q ?? '').toLowerCase().trim();
+  const page = parseInt(String(req.query.page ?? '1'), 10);
+  const limit = parseInt(String(req.query.limit ?? '20'), 10);
 
   if (!q) return res.status(200).json([]);
 
@@ -53,7 +55,10 @@ function handler(
     description: t.professional_title,
   }));
 
-  return res.status(200).json([...products, ...services, ...talents]);
+  const allResults = [...products, ...services, ...talents];
+  const start = (page - 1) * limit;
+  const end = start + limit;
+  return res.status(200).json(allResults.slice(start, end));
 }
 
 export default withErrorLogging(handler);

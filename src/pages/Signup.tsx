@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Helmet } from 'react-helmet-async';
+import { AuthLayout } from '@/layout';
 
 const SignupSchema = Yup.object({
   name: Yup.string().required('Name is required'),
@@ -53,7 +54,7 @@ export default function Signup() {
   });
 
   return (
-    <>
+    <AuthLayout>
       <Helmet>
         <link rel="stylesheet" href="/static/css/main.css" />
       </Helmet>
@@ -143,6 +144,6 @@ export default function Signup() {
         </Button>
       </form>
     </div>
-    </>
+    </AuthLayout>
   );
 }

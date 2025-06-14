@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { mutate } from 'swr';
 import { supabase } from "@/integrations/supabase/client";
 import type { UserProfile } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
@@ -77,6 +78,16 @@ export function useAuthOperations(
       if (data?.user) {
         // Track referral if there was a referral code
         await trackReferral(data.user.id, email);
+        try {
+          await fetch('/api/points/increment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId: data.user.id, amount: 10, reason: 'signup' })
+          });
+        } catch (err) {
+          console.error('Failed to increment signup points', err);
+        }
+        mutate('user');
       }
 
       toast({

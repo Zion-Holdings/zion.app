@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 import { Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions';
@@ -6,6 +7,7 @@ import { fireEvent } from '@/lib/analytics';
 import { SearchSuggestion } from '@/types/search';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
+import { useNavigate } from 'react-router-dom';
 
 interface SearchBarProps {
   value: string;
@@ -15,6 +17,7 @@ interface SearchBarProps {
 }
 
 export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = 'Search...' }: SearchBarProps) {
+  const router = useRouter();
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
   const [focused, setFocused] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
@@ -22,6 +25,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
   const debounced = useDebounce(value, 150);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!debounced) {
@@ -55,7 +59,9 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
   const handleSelect = (text: string) => {
     onChange(text);
     if (onSelectSuggestion) onSelectSuggestion(text);
+    router.push(`/search?q=${encodeURIComponent(text)}`);
     fireEvent('search', { search_term: text });
+    navigate(`/search?q=${encodeURIComponent(text)}`);
     setFocused(false);
     setHighlightedIndex(-1);
     inputRef.current?.blur();
@@ -92,6 +98,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
               }
               if (e.key === 'Enter' && value) {
                 fireEvent('search', { search_term: value });
+                navigate(`/search?q=${encodeURIComponent(value)}`);
                 setFocused(false);
                 inputRef.current?.blur();
               }
@@ -113,6 +120,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
                   handleSelect(suggestions[highlightedIndex].text);
                 } else if (value) {
                   fireEvent('search', { search_term: value });
+                  navigate(`/search?q=${encodeURIComponent(value)}`);
                   setFocused(false);
                   inputRef.current?.blur();
                 }

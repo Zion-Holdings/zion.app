@@ -26,7 +26,7 @@ jest.mock('@/hooks/useAuth', () => ({
 global.fetch = jest.fn(() =>
   Promise.resolve({
     ok: true,
-    json: () => Promise.resolve({ talents: [] }), // Assuming API returns { talents: [...] }
+    json: () => Promise.resolve({ talents: [], total: 0 }),
   })
 ) as jest.Mock;
 
@@ -38,7 +38,7 @@ describe('TalentDirectory Page', () => {
     (global.fetch as jest.Mock).mockImplementation(() =>
       Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ talents: [] }), // Default empty state for talents
+        json: () => Promise.resolve({ talents: [], total: 0 }),
       })
     );
   });
@@ -63,7 +63,7 @@ describe('TalentDirectory Page', () => {
     (global.fetch as jest.Mock).mockImplementationOnce(() =>
       Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ talents: mockTalents }),
+        json: () => Promise.resolve({ talents: mockTalents, total: 2 }),
       })
     );
 
@@ -84,7 +84,7 @@ describe('TalentDirectory Page', () => {
     (global.fetch as jest.Mock).mockImplementationOnce(() =>
       Promise.resolve({
         ok: true,
-        json: () => Promise.resolve({ talents: [] }),
+        json: () => Promise.resolve({ talents: [], total: 0 }),
       })
     );
     render(

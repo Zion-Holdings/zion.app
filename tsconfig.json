@@ -23,6 +23,9 @@
       ],
       "axios": [
         "./src/lib/axios.ts"
+      ],
+      "next-cloudinary": [
+        "./types/next-cloudinary.d.ts"
       ]
     },
     /* Bundler mode */
