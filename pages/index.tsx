@@ -20,7 +20,7 @@ export async function fetchHomeData() {
   return Promise.resolve(null);
 }
 
-export const getServerSideProps: GetServerSideProps<HomePageProps> = async (ctx) => {
+export const getServerSideProps: GetServerSideProps<HomePageProps> = async (ctx: any) => {
   // Sentry.addBreadcrumb can be kept if it provides useful context not automatically captured
   // However, withSentryGetServerSideProps will automatically capture route information.
   // For this example, let's assume automatic breadcrumbs are sufficient unless specific ones are needed.
