@@ -7,7 +7,6 @@ import { AuthLayout } from '@/layout';
 import { ErrorBoundary } from 'react-error-boundary';
 import LoginErrorFallback from '@/components/auth/login/LoginErrorFallback';
 import { useCart } from '@/context/CartContext';
-import { SAMPLE_EQUIPMENT } from './EquipmentDetail';
 import { toast } from '@/hooks/use-toast';
 
 export default function Login() {
