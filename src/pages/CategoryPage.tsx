@@ -8,7 +8,7 @@ interface ApiResponse {
 }
 
 export default function CategoryPage() {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug } = useParams();
   const [data, setData] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
 

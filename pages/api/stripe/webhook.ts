@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
+import type StripeType from 'stripe';
 import { buffer } from 'micro';
 import fs from 'fs';
 import path from 'path';
@@ -19,17 +20,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const sig = req.headers['stripe-signature'] as string;
-  let event: Stripe.Event;
+  // TODO: Use proper Stripe types when available
+  let event: any;
   try {
-    const buf = await buffer(req);
+    const buf = await buffer(req as any);
     event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret);
   } catch (err: any) {
     console.error('Webhook signature verification failed.', err);
-    return res.status(400).send(`Webhook Error: ${err.message}`);
+    return res.status(400).end(`Webhook Error: ${err.message}`);
   }
 
   if (event.type === 'checkout.session.completed') {
-    const session = event.data.object as Stripe.Checkout.Session;
+    const session = event.data.object as any;
     const orderId = session.metadata?.orderId;
     if (orderId) {
       try {

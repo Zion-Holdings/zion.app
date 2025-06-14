@@ -37,6 +37,7 @@ export default function SearchResultsPage() {
       return (await res.json()) as SearchResult[];
     },
     enabled: !!query,
+    initialPageParam: 1,
     getNextPageParam: (lastPage, pages) =>
       lastPage.length < LIMIT ? undefined : pages.length + 1
   });

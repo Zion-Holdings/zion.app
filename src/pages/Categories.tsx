@@ -1,4 +1,3 @@
-
 import useSWR from 'swr';
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { GradientHeading } from "@/components/GradientHeading";
@@ -37,44 +36,39 @@ export default function Categories({ categories: initialCategories = [] }: Categ
   return (
     <div className="min-h-screen bg-zion-blue">
       <div className="container mx-auto px-4 py-12">
-          <div className="text-center mb-12">
-            <GradientHeading level="h1" className="text-4xl md:text-5xl font-bold mb-4">
-              Browse Categories
-            </GradientHeading>
-            <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-              Explore our extensive range of AI services and products organized by category.
-              Find exactly what you're looking for to enhance your business or personal projects.
-            </p>
-          </div>
-
-          <ErrorBoundary>
-            {isLoading && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-testid="skeleton-loader">
-                {Array.from({ length: 4 }).map((_, index) => (
-                  <SkeletonCard key={index} />
-                ))}
-              </div>
-            )}
-            {error && (
-              <div className="text-center text-red-500 py-8">
-                <p>Error loading categories: {error.message}</p>
-                <p>Please try again later.</p>
-              </div>
-            )}
-            {!isLoading && !error && categories.length === 0 && (
-              <div className="text-center text-zion-slate-light py-8">
-                <p>No categories are currently available. Please check back later.</p>
-              </div>
-            )}
-            {!isLoading && !error && categories.length > 0 && (
-              // Pass fetched categories to CategoriesSection
-              // This assumes CategoriesSection can accept a 'categories' prop
-              // and will render them. If CategoriesSection fetches its own data,
-              // this structure or CategoriesSection itself will need adjustment.
-              <CategoriesSection showTitle={false} categories={categories} />
-            )}
-          </ErrorBoundary>
+        <div className="text-center mb-12">
+          <GradientHeading level="h1" className="text-4xl md:text-5xl font-bold mb-4">
+            Browse Categories
+          </GradientHeading>
+          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
+            Explore our extensive range of AI services and products organized by category.
+            Find exactly what you're looking for to enhance your business or personal projects.
+          </p>
         </div>
+
+        <ErrorBoundary>
+          {isLoading && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-testid="skeleton-loader">
+              {Array.from({ length: 4 }).map((_, index) => (
+                <SkeletonCard key={index} />
+              ))}
+            </div>
+          )}
+          {error && (
+            <div className="text-center text-red-500 py-8">
+              <p>Error loading categories: {error.message}</p>
+              <p>Please try again later.</p>
+            </div>
+          )}
+          {!isLoading && !error && categories.length === 0 && (
+            <div className="text-center text-zion-slate-light py-8">
+              <p>No categories are currently available. Please check back later.</p>
+            </div>
+          )}
+          {!isLoading && !error && categories.length > 0 && (
+            <CategoriesSection showTitle={false} categories={categories} />
+          )}
+        </ErrorBoundary>
       </div>
     </div>
   );

@@ -17,6 +17,11 @@ async function fetchProducts() {
     }
     return res.json() as Promise<Product[]>;
   } catch (error) {
+    // During static export, allow build to succeed with empty data
+    if (process.env.NEXT_PHASE === 'phase-export') {
+      console.warn('Static export: fetchProducts failed, returning empty array');
+      return [];
+    }
     console.error('Error fetching products:', error);
     throw error;
   }

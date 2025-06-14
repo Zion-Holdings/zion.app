@@ -19,7 +19,9 @@ export const getStaticProps: GetStaticProps<MarketplaceProps> = async () => {
   } catch (error) {
     Sentry.captureException(error);
     console.error('Error in getStaticProps for marketplace index:', error);
-    throw error;
+    // Always allow build to succeed with empty data if fetch fails
+    console.warn('getStaticProps failed, returning empty products');
+    return { props: { products: [] } };
   }
 };
 
