@@ -15,7 +15,7 @@ export function FooterNewsletter() {
 
   const lastSubmit = useRef(0);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (honeypot) return; // ignore bots
     const now = Date.now();
@@ -73,7 +73,7 @@ export function FooterNewsletter() {
         type="text"
         value={honeypot}
         onChange={(e) => setHoneypot(e.target.value)}
-        tabIndex="-1"
+        tabIndex={-1}
         autoComplete="off"
         style={{ display: 'none' }}
       />
