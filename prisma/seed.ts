@@ -80,7 +80,7 @@ async function main() {
     { id: 'innovation', name: 'Innovation', slug: 'innovation', icon: 'Lightbulb', active: true },
   ];
 
-  await prisma.category.createMany({ data: categories, skipDuplicates: true });
+  await (prisma as any).category.createMany({ data: categories, skipDuplicates: true });
 }
 
 main()

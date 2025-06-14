@@ -16,7 +16,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    const category = await prisma.category.findUnique({ where: { slug } });
+    const category = await (prisma as any).category.findUnique({ where: { slug } });
     if (!category) {
       return res.status(404).json({ error: 'Category not found' });
     }
