@@ -12,6 +12,8 @@
       "axios": ["./src/lib/axios.ts"],
       "next": ["./types/next"],
       "next/*": ["./types/next/*"]
+      ,
+      "next-cloudinary": ["./types/next-cloudinary.d.ts"]
     },
     // Modified for Jest: removed vite/client, vitest/globals; added jest, @testing-library/jest-dom
     "types": ["jest", "@testing-library/jest-dom", "react"],
