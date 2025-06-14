@@ -34,7 +34,7 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }: { params: { slug: string } }) => {
   const slug = params?.slug as string;
 
   // Example: Add a breadcrumb for tracing
