@@ -46,6 +46,15 @@ async function main() {
   ];
 
   await prisma.product.createMany({ data: products, skipDuplicates: true });
+
+  const categories = [
+    { id: 'services', name: 'Services', slug: 'services', icon: 'Briefcase', active: true },
+    { id: 'talents', name: 'Talents', slug: 'talents', icon: 'Users', active: true },
+    { id: 'equipment', name: 'Equipment', slug: 'equipment', icon: 'HardDrive', active: true },
+    { id: 'innovation', name: 'Innovation', slug: 'innovation', icon: 'Lightbulb', active: true },
+  ];
+
+  await prisma.category.createMany({ data: categories, skipDuplicates: true });
 }
 
 main()

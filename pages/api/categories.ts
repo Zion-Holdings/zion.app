@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { PrismaClient } from '@prisma/client';
 import { withErrorLogging } from '@/utils/withErrorLogging';
-import { CATEGORIES } from '@/data/categories';
+
+const prisma = new PrismaClient();
 
 async function handler(
   req: NextApiRequest,
@@ -11,7 +13,20 @@ async function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  res.status(200).json(CATEGORIES);
+  const active = req.query.active === 'true';
+
+  try {
+    const categories = await prisma.category.findMany({
+      where: active ? { active: true } : undefined,
+      select: { id: true, name: true, slug: true, icon: true },
+    });
+    res.status(200).json(categories);
+  } catch (e) {
+    console.error('Error fetching categories:', e);
+    res.status(500).end('Internal Server Error');
+  } finally {
+    await prisma.$disconnect();
+  }
 }
 
 export default withErrorLogging(handler);
