@@ -17,12 +17,11 @@ export async function loginUser(email: string, password: string) {
     }
     return { res, data: res.data };
   } catch (err: any) {
-    const status = err.response?.status;
-    if (status >= 400 && status < 600) {
-      const msg = err.response?.data?.message || 'Login failed';
-      toast({ title: 'Login Failed', description: msg, variant: 'destructive' });
-    }
-    throw err;
+    // Optional: you can still prepare or log the error here if needed, but don't toast.
+    // For example, you might want to ensure the error object has a specific structure
+    // if it doesn't already.
+    // Example: if (!err.response?.data?.message) { /* augment error if necessary */ }
+    throw err; // Essential: re-throw the error for AuthProvider to handle
   }
 }
 
