@@ -48,9 +48,8 @@
     ],
     "typeRoots": [
       "./node_modules/@types"
-    ],
-    "noEmit": true
-  },
+    ]
+  }
   "include": [
     "src",
     "src/types",
