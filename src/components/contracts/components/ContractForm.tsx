@@ -25,10 +25,10 @@ const formSchema = z.object({
   endDate: z.date().optional(),
   paymentTerms: z.enum(["hourly", "fixed", "milestone"]),
   paymentAmount: z.string().min(1, "Payment amount is required"),
-  additionalClauses: z.array(z.string()).default([]),
+  additionalClauses: z.array(z.string()).optional().default([]),
 });
 
-export type ContractFormValues = z.infer<typeof formSchema>;
+export type ContractFormValues = z.infer<typeof formSchema> & { additionalClauses?: string[] };
 
 interface ContractFormProps {
   talent: TalentProfile;

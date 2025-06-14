@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, ControllerRenderProps } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -48,7 +48,7 @@ export const ReplyForm = ({ onSubmit, parentId }: ReplyFormProps) => {
             <FormField
               control={form.control}
               name="content"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<ReplyFormValues, "content"> }) => (
                 <FormItem>
                   <FormControl>
                     <Textarea

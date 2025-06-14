@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, ControllerRenderProps } from "react-hook-form";
 import { 
   Card,
   CardContent,
@@ -70,7 +70,7 @@ export const PostForm = ({
             <FormField
               control={form.control}
               name="title"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<PostFormValues, "title"> }) => (
                 <FormItem>
                   <FormLabel>Title</FormLabel>
                   <FormControl>
@@ -84,14 +84,14 @@ export const PostForm = ({
             <FormField
               control={form.control}
               name="content"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<PostFormValues, "content"> }) => (
                 <FormItem>
                   <FormLabel>Content</FormLabel>
                   <FormControl>
-                    <Textarea 
-                      placeholder="Write your post content here..." 
+                    <Textarea
+                      placeholder="Write your post content here..."
                       className="min-h-[200px]"
-                      {...field} 
+                      {...field}
                       data-testid="post-content-input"
                     />
                   </FormControl>
@@ -103,7 +103,7 @@ export const PostForm = ({
             <FormField
               control={form.control}
               name="categoryId"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<PostFormValues, "categoryId"> }) => (
                 <FormItem>
                   <FormLabel>Category</FormLabel>
                   <FormControl>
@@ -125,13 +125,13 @@ export const PostForm = ({
             <FormField
               control={form.control}
               name="tags"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<PostFormValues, "tags"> }) => (
                 <FormItem>
                   <FormLabel>Tags (comma-separated)</FormLabel>
                   <FormControl>
-                    <Input 
-                      placeholder="e.g. resume, hiring, flutter" 
-                      {...field} 
+                    <Input
+                      placeholder="e.g. resume, hiring, flutter"
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage />

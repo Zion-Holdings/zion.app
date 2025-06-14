@@ -129,7 +129,7 @@ export function UserBehaviorStats() {
         type="line"
         dataKeys={getEventTypes()}
         timeRange={timeRange}
-        onTimeRangeChange={(range: TimeRange) => setTimeRange(range)}
+        onTimeRangeChange={(range: string) => setTimeRange(range as TimeRange)}
       />
     </div>
   );

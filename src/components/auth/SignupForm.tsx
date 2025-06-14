@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, ControllerRenderProps } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useRouter } from 'next/router'; // Changed from react-router-dom
@@ -97,7 +97,7 @@ export default function SignupForm() {
           <FormField
             control={form.control}
             name="firstName"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<FormValues, "firstName"> }) => (
               <FormItem>
                 <FormLabel>First name</FormLabel>
                 <FormControl>
@@ -110,7 +110,7 @@ export default function SignupForm() {
           <FormField
             control={form.control}
             name="lastName"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<FormValues, "lastName"> }) => (
               <FormItem>
                 <FormLabel>Last name</FormLabel>
                 <FormControl>
@@ -123,7 +123,7 @@ export default function SignupForm() {
           <FormField
             control={form.control}
             name="email"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<FormValues, "email"> }) => (
               <FormItem>
                 <FormLabel>Email address</FormLabel>
                 <FormControl>
@@ -136,7 +136,7 @@ export default function SignupForm() {
           <FormField
             control={form.control}
             name="password"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<FormValues, "password"> }) => (
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
@@ -149,7 +149,7 @@ export default function SignupForm() {
           <FormField
             control={form.control}
             name="confirmPassword"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<FormValues, "confirmPassword"> }) => (
               <FormItem>
                 <FormLabel>Confirm Password</FormLabel>
                 <FormControl>
@@ -162,7 +162,7 @@ export default function SignupForm() {
           <FormField
             control={form.control}
             name="terms"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<FormValues, "terms"> }) => (
               <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                 <FormControl>
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />

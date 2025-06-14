@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
@@ -20,15 +20,15 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Link } from "react-router-dom";
 
 import { Checkbox } from "@/components/ui/checkbox";
-
 // Form validation schema
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email").min(1, "Email is required"),
   password: z.string().min(6, "Password must be at least 6 characters"),
-  rememberMe: z.boolean().default(false),
+  rememberMe: z.boolean().default(false).optional(),
 });
 
-type LoginFormValues = z.infer<typeof loginSchema>;
+
+type LoginFormValues = z.infer<typeof loginSchema> & { rememberMe?: boolean };
 
 export function LoginForm() {
   const { isLoading, login } = useAuth();
@@ -81,7 +81,7 @@ export function LoginForm() {
         <FormField
           control={form.control}
           name="email"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<LoginFormValues, "email"> }) => (
             <FormItem>
               <FormLabel className="text-zion-slate-light">Email address</FormLabel>
               <FormControl>
@@ -104,7 +104,7 @@ export function LoginForm() {
         <FormField
           control={form.control}
           name="password"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<LoginFormValues, "password"> }) => (
             <FormItem>
               <FormLabel className="text-zion-slate-light">Password</FormLabel>
               <FormControl>
@@ -144,7 +144,7 @@ export function LoginForm() {
         <FormField
           control={form.control}
           name="rememberMe"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<LoginFormValues, "rememberMe"> }) => (
             <FormItem className="flex flex-row items-start space-x-3 space-y-0">
               <FormControl>
                 <Checkbox

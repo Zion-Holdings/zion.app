@@ -1,8 +1,8 @@
 
-import { UseFormReturn } from "react-hook-form";
-import { 
-  FormField, 
-  FormItem, 
+import { UseFormReturn, ControllerRenderProps } from "react-hook-form";
+import {
+  FormField,
+  FormItem,
   FormLabel, 
   FormControl, 
   FormDescription 
@@ -31,7 +31,7 @@ export function AdditionalClausesFields({ form }: AdditionalClausesFieldsProps) 
             <FormField
               control={form.control}
               name="additionalClauses"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<ContractFormValues, "additionalClauses"> }) => (
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                   <FormControl>
                     <Checkbox
@@ -61,7 +61,7 @@ export function AdditionalClausesFields({ form }: AdditionalClausesFieldsProps) 
             <FormField
               control={form.control}
               name="additionalClauses"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<ContractFormValues, "additionalClauses"> }) => (
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                   <FormControl>
                     <Checkbox
@@ -91,7 +91,7 @@ export function AdditionalClausesFields({ form }: AdditionalClausesFieldsProps) 
             <FormField
               control={form.control}
               name="additionalClauses"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<ContractFormValues, "additionalClauses"> }) => (
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                   <FormControl>
                     <Checkbox
@@ -121,7 +121,7 @@ export function AdditionalClausesFields({ form }: AdditionalClausesFieldsProps) 
             <FormField
               control={form.control}
               name="additionalClauses"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<ContractFormValues, "additionalClauses"> }) => (
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                   <FormControl>
                     <Checkbox
