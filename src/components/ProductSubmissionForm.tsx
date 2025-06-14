@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import { supabase } from "@/integrations/supabase/client";
@@ -279,7 +279,7 @@ export function ProductSubmissionForm() {
             <FormField
               control={form.control}
               name="title"
-              render={({ field }) => {
+              render={({ field }: { field: ControllerRenderProps<ProductFormValues, "title"> }) => {
                 const { onChange, onBlur, value, ref } = field;
                 return (
                   <FormItem>
@@ -305,14 +305,14 @@ export function ProductSubmissionForm() {
             <FormField
               control={form.control}
               name="description"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<ProductFormValues, "description"> }) => (
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <Textarea 
-                      placeholder="Describe your product in detail..." 
-                      className="min-h-32" 
-                      {...field} 
+                    <Textarea
+                      placeholder="Describe your product in detail..."
+                      className="min-h-32"
+                      {...field}
                     />
                   </FormControl>
                   <FormDescription>
@@ -327,7 +327,7 @@ export function ProductSubmissionForm() {
               <FormField
                 control={form.control}
                 name="price"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<ProductFormValues, "price"> }) => (
                   <FormItem>
                     <FormLabel>Price (USD)</FormLabel>
                     <FormControl>
@@ -344,7 +344,7 @@ export function ProductSubmissionForm() {
               <FormField
                 control={form.control}
                 name="category"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<ProductFormValues, "category"> }) => (
                   <FormItem>
                     <FormLabel>Category</FormLabel>
                     <FormControl>
@@ -370,7 +370,7 @@ export function ProductSubmissionForm() {
             <FormField
               control={form.control}
               name="tags"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<ProductFormValues, "tags"> }) => (
                 <FormItem>
                   <FormLabel>Tags</FormLabel>
                   <FormControl>
