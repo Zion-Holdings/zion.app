@@ -3,6 +3,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/router";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { toast } from "sonner";
+import withAuth from "@/hoc/withAuth";
 
 interface CreatePostButtonProps {
   /** Optional category to preselect when creating a post */
@@ -49,4 +50,4 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
   );
 }
 
-export default CreatePostButton;
+export default withAuth(CreatePostButton);

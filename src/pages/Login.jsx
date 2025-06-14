@@ -8,12 +8,15 @@ import LoginErrorFallback from '@/components/auth/login/LoginErrorFallback';
 import { useCart } from '@/context/CartContext';
 import { SAMPLE_EQUIPMENT } from './EquipmentDetail';
 import { toast } from '@/hooks/use-toast';
+import { useDispatch } from 'react-redux';
+import { setLoggedIn } from '@/store/authSlice';
 
 export default function Login() {
   const { isAuthenticated, user, isLoading } = useAuth();
   const router = useRouter(); // Initialized router
   // location is now router
   const { dispatch } = useCart();
+  const reduxDispatch = useDispatch();
 
   useEffect(() => {
     // This effect handles token processing (e.g., from magic link)
@@ -32,9 +35,11 @@ export default function Login() {
 
   useEffect(() => {
     if (!isLoading && isAuthenticated) {
-      router.replace('/dashboard'); // Use router.replace
+      reduxDispatch(setLoggedIn(true));
+      const next = typeof router.query.next === 'string' ? router.query.next : '/dashboard';
+      router.replace(next);
     }
-  }, [isAuthenticated, isLoading, router]);
+  }, [isAuthenticated, isLoading, router, reduxDispatch]);
 
   // Render LoginContent if not authenticated and auth is not loading
   if (!isAuthenticated && !isLoading) {
