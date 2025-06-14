@@ -1,6 +1,6 @@
 import type { GetServerSideProps } from 'next';
-import type { ParsedUrlQuery, NextPage } from 'next';
-import { NextPageContext } from 'next';
+import type { NextPageContext } from 'next/types';
+import type {} from 'next';
 import Link from 'next/link';
 import Stripe from 'stripe';
 
@@ -13,7 +13,6 @@ interface Props {
   } | null;
 }
 
-import type { GetServerSideProps, NextPageContext } from 'next';
 
 export const getServerSideProps: GetServerSideProps<Props> = async (ctx: NextPageContext) => {
   const sessionId = ctx.query.session_id as string | undefined;
