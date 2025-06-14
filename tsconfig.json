@@ -35,7 +35,6 @@
     "allowSyntheticDefaultImports": true, // Added this
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "preserve",
     /* Linting */
     "strict": false,
