@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDisputes } from "@/hooks/useDisputes";
-import { Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus } from "@/types/disputes";
+import { Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus }, ResolutionType from "@/types/disputes"
+  imptor { ResolutionType } from "@/types/disputes";;
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -29,7 +30,7 @@ export function DisputeDetail() {
   const [isLoading, setIsLoading] = useState(true);
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
-  const [resolution, setResolution] = useState({
+  const [resolution, setResolution] = useSt<{ summary: string; resolution_type: ResolutionType }>ate({
     summary: "",
     resolution_type: "compromise",
   });
