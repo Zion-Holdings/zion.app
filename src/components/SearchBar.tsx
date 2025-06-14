@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 import { Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions';
@@ -15,6 +16,7 @@ interface SearchBarProps {
 }
 
 export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = 'Search...' }: SearchBarProps) {
+  const router = useRouter();
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
   const [focused, setFocused] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
@@ -55,6 +57,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
   const handleSelect = (text: string) => {
     onChange(text);
     if (onSelectSuggestion) onSelectSuggestion(text);
+    router.push(`/search?q=${encodeURIComponent(text)}`);
     fireEvent('search', { search_term: text });
     setFocused(false);
     setHighlightedIndex(-1);
