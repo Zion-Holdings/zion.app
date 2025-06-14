@@ -42,8 +42,8 @@ jest.mock('@/components/loyalty/PointsBadge', () => ({
 }));
 
 // Mock AvatarMenu to check for its presence by a data-testid
-jest.mock('@/components/header/AvatarMenu', () => ({
-  AvatarMenu: () => <div data-testid="avatar-menu">AvatarMenu</div>,
+jest.mock('@/components/header/UserMenu', () => ({
+  UserMenu: () => <div data-testid="user-menu">UserMenu</div>,
 }));
 
 // Mock MobileMenu and MobileBottomNav as they are complex and not central to these tests
@@ -98,9 +98,9 @@ describe('AppHeader', () => {
       expect(screen.getByTestId('language-selector')).toBeInTheDocument();
     });
 
-    it('renders AvatarMenu', () => {
+    it('renders UserMenu', () => {
       render(<MemoryRouter><AppHeader /></MemoryRouter>);
-      expect(screen.getByTestId('avatar-menu')).toBeInTheDocument();
+      expect(screen.getByTestId('user-menu')).toBeInTheDocument();
     });
 
     it('does NOT render the old "Hello, {firstName}!" greeting', () => {
@@ -126,9 +126,9 @@ describe('AppHeader', () => {
       } as unknown as AuthContextType);
     });
 
-    it('does NOT render AvatarMenu', () => {
+    it('does NOT render UserMenu', () => {
       render(<MemoryRouter><AppHeader /></MemoryRouter>);
-      expect(screen.queryByTestId('avatar-menu')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('user-menu')).not.toBeInTheDocument();
     });
 
     it('renders the Login link', () => {

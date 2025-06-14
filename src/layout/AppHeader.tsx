@@ -11,7 +11,9 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useAuth } from '@/hooks/useAuth';
-import { AvatarMenu } from '@/components/header/AvatarMenu';
+import { UserMenu } from '@/components/header/UserMenu';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/store';
 import { cn } from '@/lib/utils'; // Import cn utility
 import { useRouter } from 'next/router';
 
@@ -20,6 +22,7 @@ export function AppHeader() {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   const { user } = useAuth();
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   const router = useRouter();
   const showTagline = router.pathname === '/';
   
@@ -64,7 +67,7 @@ export function AppHeader() {
           </div>
 
           <PointsBadge />
-          {!user && (
+          {!isLoggedIn && (
             <div className="ml-4 relative z-10 flex items-center">
               <Link
                 href="/login"
@@ -85,9 +88,9 @@ export function AppHeader() {
             </div>
           )}
           {/* User avatar menu */}
-          {user && (
+          {isLoggedIn && (
             <div className="ml-4">
-              <AvatarMenu />
+              <UserMenu />
             </div>
           )}
         </div>
