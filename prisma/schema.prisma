@@ -116,3 +116,12 @@ model ErrorAnalysisSuggestion {
   last_seen_at      DateTime @updatedAt
   occurrence_count  Int      @default(1)
 }
+
+model Talent {
+  id     Int      @id @default(autoincrement())
+  name   String
+  role   String
+  avatar String?
+  rate   Float?
+  skills String[]
+}

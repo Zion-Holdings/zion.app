@@ -4,7 +4,7 @@ import { useTalentData } from "./talent/useTalentData";
 import { useFilterTalents } from "./talent/useFilterTalents";
 import { useUIState } from "./talent/useUIState";
 
-export function useTalentDirectory() {
+export function useTalentDirectory(page = 1, limit = 12) {
   // Fetch auth status and saved talents
   const { 
     isAuthenticated, 
@@ -16,9 +16,10 @@ export function useTalentDirectory() {
   // Fetch talent data
   const {
     talents,
+    total,
     isLoading,
     error,
-  } = useTalentData();
+  } = useTalentData(page, limit);
 
   // Apply filters and sorting
   const {
@@ -56,6 +57,7 @@ export function useTalentDirectory() {
     // Talents and loading state
     talents,
     filteredTalents,
+    total,
     isLoading,
     error,
     

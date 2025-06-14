@@ -46,6 +46,32 @@ async function main() {
   ];
 
   await prisma.product.createMany({ data: products, skipDuplicates: true });
+
+  const talents = [
+    {
+      name: 'Alice Johnson',
+      role: 'Full Stack Developer',
+      avatar: 'https://placehold.co/100x100?text=A',
+      rate: 100,
+      skills: ['React', 'Node.js', 'Prisma'],
+    },
+    {
+      name: 'Bob Smith',
+      role: 'Data Scientist',
+      avatar: 'https://placehold.co/100x100?text=B',
+      rate: 120,
+      skills: ['Python', 'TensorFlow', 'Pandas'],
+    },
+    {
+      name: 'Carol Williams',
+      role: 'DevOps Engineer',
+      avatar: 'https://placehold.co/100x100?text=C',
+      rate: 110,
+      skills: ['AWS', 'Docker', 'Kubernetes'],
+    },
+  ];
+
+  await prisma.talent.createMany({ data: talents, skipDuplicates: true });
 }
 
 main()

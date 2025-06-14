@@ -22,6 +22,11 @@ export interface TalentProfile {
   }[];
 }
 
+export interface TalentListResponse {
+  talents: TalentProfile[];
+  total: number;
+}
+
 export interface TalentProfileFilters {
   search?: string;
   skills?: string[];

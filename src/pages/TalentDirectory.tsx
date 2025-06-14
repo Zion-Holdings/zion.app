@@ -24,9 +24,13 @@ import {
 export default function TalentDirectory() {
   const router = useRouter(); // Changed from navigate
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
   // Use our custom hook to manage state
   const {
     filteredTalents,
+    total,
     isLoading,
     searchTerm,
     setSearchTerm,
@@ -53,23 +57,17 @@ export default function TalentDirectory() {
     toggleRegion,
     clearFilters,
     toggleSection,
-  } = useTalentDirectory();
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  } = useTalentDirectory(currentPage, itemsPerPage);
 
   const { user } = useAuth();
   const isAdmin = user?.userType === 'admin';
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [filteredTalents]);
+  }, [filteredTalents, total]);
 
-  const totalPages = Math.ceil(filteredTalents.length / itemsPerPage);
-  const paginatedTalents = filteredTalents.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+  const totalPages = Math.ceil(total / itemsPerPage);
+  const paginatedTalents = filteredTalents;
 
   const handleRequestHire = (talent: TalentProfile) => {
     setSelectedTalent(talent);
@@ -190,7 +188,7 @@ export default function TalentDirectory() {
             <ErrorBoundary>
               <TalentResults
                 talents={paginatedTalents}
-                totalCount={filteredTalents.length}
+                totalCount={total}
                 isLoading={isLoading}
                 viewProfile={viewProfile}
                 handleRequestHire={handleRequestHire}
