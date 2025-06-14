@@ -50,7 +50,9 @@
     "outDir": "dist",
     "jsx": "preserve",
     "declaration": true,
-    "allowImportingTsExtensions": false
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
+    "noEmit": true
   },
   "include": [
     "src",
