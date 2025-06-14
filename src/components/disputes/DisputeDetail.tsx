@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDisputes } from "@/hooks/useDisputes";
-import { disputeReasonLabels, DisputeMessage, DisputeStatus } from "@/types/disputes";
-import { Button } from "@/components/ui/button";
+import { Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType } from "@/types/disputes";
+ import {  Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
