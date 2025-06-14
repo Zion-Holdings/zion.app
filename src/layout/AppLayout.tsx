@@ -4,8 +4,7 @@ import { Outlet } from "react-router-dom";
 // Assume useAuth hook exists and provides user object with emailVerified status and email
 import { useAuth } from '@/hooks/useAuth';
 import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // Assuming path
-import { AppHeader } from "./AppHeader";
-import { SecondaryNavbar } from "./SecondaryNavbar";
+import { PrimaryNav } from "./PrimaryNav";
 import { useLocation } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { BackToTopButton } from "@/components/BackToTopButton";
@@ -89,12 +88,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
           )}
         </>
       )}
-      {!isAuthPage && (
-        <>
-          <AppHeader />
-          <SecondaryNavbar />
-        </>
-      )}
+      {!isAuthPage && <PrimaryNav />}
       <ScrollToTop />
       {loading && <LoaderOverlay />}
       {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}

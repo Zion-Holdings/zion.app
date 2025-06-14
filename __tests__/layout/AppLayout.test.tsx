@@ -7,8 +7,7 @@ import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 
 jest.mock('@/hooks/useAuth');
 jest.mock('@/context/GlobalLoaderContext');
-jest.mock('@/layout/AppHeader', () => ({ AppHeader: () => <div data-testid="header" /> }));
-jest.mock('@/layout/SecondaryNavbar', () => ({ SecondaryNavbar: () => <div data-testid="nav" /> }));
+jest.mock('@/layout/PrimaryNav', () => ({ PrimaryNav: () => <div data-testid="header" /> }));
 jest.mock('@/components/Footer', () => ({ Footer: () => <div data-testid="footer" /> }));
 jest.mock('@/components/EmailVerificationBanner', () => (props: any) => <div data-testid="verify-banner">{props.userEmail}</div>);
 
@@ -30,18 +29,16 @@ function renderRoute(path: string) {
 }
 
 describe('AppLayout', () => {
-  it('hides header and nav on auth routes', () => {
+  it('hides header on auth routes', () => {
     mockUseAuth.mockReturnValue({ user: null, isAuthenticated: false, isLoading: false });
     renderRoute('/login');
     expect(screen.queryByTestId('header')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('nav')).not.toBeInTheDocument();
   });
 
-  it('shows header and nav on non-auth routes', () => {
+  it('shows header on non-auth routes', () => {
     mockUseAuth.mockReturnValue({ user: null, isAuthenticated: false, isLoading: false });
     renderRoute('/dashboard');
     expect(screen.getByTestId('header')).toBeInTheDocument();
-    expect(screen.getByTestId('nav')).toBeInTheDocument();
   });
 
   it('displays email verification banner when user email not verified', () => {
