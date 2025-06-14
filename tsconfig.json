@@ -39,7 +39,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
-    "allowJs": true,
+    "allowJs": false,
     "incremental": true,
     "types": [
       "lodash"
@@ -49,12 +49,18 @@
     ],
     "outDir": "dist",
     "jsx": "preserve",
-    "noEmit": true
+    "declaration": true,
+    "allowImportingTsExtensions": false
   },
   "include": [
     "src",
     "src/types",
     "pages"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/components/ui/chart.tsx",
+    "src/store/index.ts"
   ],
   "references": [
     {
@@ -63,8 +69,5 @@
     {
       "path": "./tsconfig.node.json"
     }
-  ],
-  "exclude": [
-    "node_modules"
   ]
 }
