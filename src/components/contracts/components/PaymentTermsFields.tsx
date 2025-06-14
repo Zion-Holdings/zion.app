@@ -1,5 +1,5 @@
 
-import { UseFormReturn } from "react-hook-form";
+import { UseFormReturn, ControllerRenderProps } from "react-hook-form";
 import { 
   FormField, 
   FormItem, 
@@ -38,7 +38,7 @@ export function PaymentTermsFields({
         <FormField
           control={form.control}
           name="paymentTerms"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<ContractFormValues, "paymentTerms"> }) => (
             <FormItem>
               <FormLabel>Payment Terms</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -61,7 +61,7 @@ export function PaymentTermsFields({
         <FormField
           control={form.control}
           name="paymentAmount"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<ContractFormValues, "paymentAmount"> }) => (
             <FormItem>
               <FormLabel>Payment Amount</FormLabel>
               <FormControl>
