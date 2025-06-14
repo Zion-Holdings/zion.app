@@ -2,7 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDisputes } from "@/hooks/useDisputes";
-import { disputeReasonLabels, DisputeMessage, DisputeStatus } from "@/types/disputes";
+import {
+  disputeReasonLabels,
+  DisputeMessage,
+  DisputeStatus,
+  DisputeReason,
+} from "@/types/disputes";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
