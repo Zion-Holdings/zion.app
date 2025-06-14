@@ -10,7 +10,7 @@ import CaseStudies from "@/pages/CaseStudies";
 import CaseStudy from "@/pages/CaseStudy";
 import GreenIT from "@/pages/GreenIT";
 import Careers from "@/pages/Careers";
-import SearchPage from "@/pages/SearchPage";
+import SearchResultsPage from "@/pages/SearchResultsPage";
 import { SitemapPage } from "@/components/SitemapPage";
 import Sitemap from "@/pages/Sitemap";
 import Terms from "@/pages/Terms";
@@ -66,7 +66,7 @@ const ContentRoutes = () => {
       <Route path="/video-call/:roomId" element={<VideoCall />} />
 
       {/* Global Search Route */}
-      <Route path="/search" element={<SearchPage />} />
+      <Route path="/search" element={<SearchResultsPage />} />
       
       {/* Sitemap Pages */}
       <Route path="/sitemap" element={<Sitemap />} />
