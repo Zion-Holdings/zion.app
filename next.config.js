@@ -18,6 +18,12 @@ const nextConfig = {
   // Enable source maps in production for easier stack traces in Sentry
   productionBrowserSourceMaps: true,
 
+  exportPathMap: async function () {
+    return {
+      '/cart': { page: '/cart' },
+    };
+  },
+
   async redirects() {
     return [
       {
