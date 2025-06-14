@@ -14,6 +14,8 @@ import Skeleton, { SkeletonCard } from "@/components/ui/skeleton"; // Import Ske
 import { FilterSidebarSkeleton } from "@/components/skeletons/FilterSidebarSkeleton"; // Import FilterSidebarSkeleton
 import { useDelayedError } from '@/hooks/useDelayedError';
 import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
+import { safeStorage } from '@/utils/safeStorage';
+import { captureException } from '@/utils/sentry';
 
 // The EQUIPMENT_LISTINGS constant has been removed as it was commented out
 // and the page primarily relies on API calls and dynamic data generation.
@@ -32,12 +34,18 @@ const EQUIPMENT_FILTERS = [
   { label: "Robotics", value: "Robotics" },
 ];
 
+const EQUIPMENT_CACHE_KEY = 'equipmentCache';
+
 export async function fetchEquipment(): Promise<ProductListing[]> {
   // Added a try-catch block for better error handling during API call
   try {
     const { data } = await apiClient.get('/equipment');
+    if (typeof window !== 'undefined') {
+      safeStorage.setItem(EQUIPMENT_CACHE_KEY, JSON.stringify(data));
+    }
     return data;
   } catch (error: any) {
+    captureException(error);
     console.error("Raw error object in fetchEquipment:", error);
     if (error.response) {
       console.error("Error response data in fetchEquipment:", error.response.data);
@@ -47,6 +55,17 @@ export async function fetchEquipment(): Promise<ProductListing[]> {
       title: error.message || 'Failed to fetch equipment',
       variant: 'destructive',
     });
+    // Offline fallback from localStorage if available
+    if (typeof window !== 'undefined') {
+      const cached = safeStorage.getItem(EQUIPMENT_CACHE_KEY);
+      if (cached) {
+        try {
+          return JSON.parse(cached) as ProductListing[];
+        } catch (_) {
+          // ignore parse errors and fall through to throw
+        }
+      }
+    }
     // Propagate the error so react-query can handle it
     throw error;
   }
@@ -67,6 +86,18 @@ export default function EquipmentPage() {
   } = useQuery<ProductListing[], Error>({
     queryKey: ['equipment'],
     queryFn: fetchEquipment,
+    retry: 3,
+    retryDelay: (attempt) => Math.min(1000 * 2 ** attempt, 10000),
+    initialData: () => {
+      if (typeof window === 'undefined') return undefined;
+      const cached = safeStorage.getItem(EQUIPMENT_CACHE_KEY);
+      return cached ? (JSON.parse(cached) as ProductListing[]) : undefined;
+    },
+    onSuccess: (data) => {
+      if (typeof window !== 'undefined') {
+        safeStorage.setItem(EQUIPMENT_CACHE_KEY, JSON.stringify(data));
+      }
+    },
   });
   const delayedError = useDelayedError(equipmentError);
 
