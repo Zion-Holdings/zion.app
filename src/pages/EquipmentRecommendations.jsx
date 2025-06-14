@@ -6,19 +6,20 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import Link from 'next/link';
+import { ErrorState } from '@/components/jobs/applications';
 
 export default function EquipmentRecommendations() {
   const { isAuthenticated, user } = useAuth();
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (isAuthenticated && user?.id) {
       setLoading(true);
       fetchRecommendations(user.id)
         .then(setListings)
-        .catch((err) => setError(err))
+        .catch(() => setError(true))
         .finally(() => setLoading(false));
     }
   }, [isAuthenticated, user]);
@@ -47,9 +48,7 @@ export default function EquipmentRecommendations() {
           <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
         </div>
       )}
-      {error && (
-        <div className="text-red-400 text-center mb-6">Failed to load recommendations.</div>
-      )}
+      {error && <ErrorState error="Failed to load recommendations." />}
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
         {listings.map((listing) => (
           <div key={listing.id} className="break-inside-avoid mb-4">

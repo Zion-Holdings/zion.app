@@ -2,7 +2,7 @@ import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import apiClient from "@/services/apiClient";
+import axios from 'axios';
 import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
 import { Button } from "@/components/ui/button";
 import { Loader2, Sparkles } from "lucide-react";
@@ -35,7 +35,7 @@ const EQUIPMENT_FILTERS = [
 export async function fetchEquipment(): Promise<ProductListing[]> {
   // Added a try-catch block for better error handling during API call
   try {
-    const { data } = await apiClient.get('/equipment');
+    const { data } = await axios.get('/api/equipment');
     return data;
   } catch (error: any) {
     console.error("Raw error object in fetchEquipment:", error);

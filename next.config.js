@@ -28,6 +28,15 @@ const nextConfig = {
     ];
   },
 
+  async rewrites() {
+    return [
+      {
+        source: '/api/equipment',
+        destination: 'http://localhost:3001/api/equipment',
+      },
+    ];
+  },
+
   // experimental: {
   //   esmExternals: 'loose', // Removing this as per Next.js recommendation
   // },
