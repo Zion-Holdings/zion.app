@@ -37,6 +37,24 @@
   --accent-foreground: hsl(0, 0%, 88%);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --background: hsl(222, 47%, 8%);
+    --foreground: hsl(0, 0%, 88%);
+    --primary: hsl(188, 85%, 53%);
+    --primary-foreground: hsl(222, 47%, 8%);
+    --secondary: hsl(271, 76%, 53%);
+    --secondary-foreground: hsl(0, 0%, 88%);
+    --card: hsl(220, 30%, 11%);
+    --card-foreground: hsl(0, 0%, 88%);
+    --border: hsl(222, 39%, 17%);
+    --input: hsl(222, 39%, 17%);
+    --ring: hsl(188, 85%, 53%);
+    --accent: hsl(288, 85%, 60%);
+    --accent-foreground: hsl(0, 0%, 88%);
+  }
+}
+
 /*Scoped Theme Variables for Mobile App */
 .mobile-app {
   min-height: 100vh; /* Ensure it takes full height */
@@ -236,21 +254,22 @@ body {
   }
 
   ::-webkit-scrollbar-track {
-    background: theme('colors.card.DEFAULT');
+    background: var(--card);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: theme('colors.secondary.DEFAULT');
+    background: var(--accent);
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: theme('colors.accent.DEFAULT');
+    background: var(--accent);
   }
 
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+    scrollbar-color: var(--accent) var(--card);
   }
 
   img {

@@ -3,6 +3,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
+import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 import eslintConfigPrettier from "eslint-config-prettier";
 import pluginPrettier from "eslint-plugin-prettier"; // Added this line
 import eslintConfigNext from 'eslint-config-next';
@@ -106,6 +107,7 @@ export default tseslint.config(
     plugins: {
       react: pluginReact,
       "react-hooks": pluginReactHooks,
+      "jsx-a11y": pluginJsxA11y,
       // "@typescript-eslint": tseslint.plugin, // TS plugins should be inherited from Block 3 for .tsx files
     },
     languageOptions: { // This whole languageOptions will be merged; specific to jsx/tsx
@@ -126,6 +128,7 @@ export default tseslint.config(
       ...pluginReactHooks.configs.recommended.rules,
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "warn", // Keep for .jsx, TSX uses TS types
+      "jsx-a11y/alt-text": "error",
     },
     settings: {
       react: { version: "detect" },

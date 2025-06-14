@@ -70,9 +70,9 @@ const config: Config = {
           dark: "#530c8b",
         },
         "zion-cyan": {
-          DEFAULT: "#22ddd2",
+          DEFAULT: "#0d9488",
           light: "#7aeae4",
-          dark: "#14847e",
+          dark: "#0f766e",
         },
         "zion-slate": {
           DEFAULT: "#17072b",
