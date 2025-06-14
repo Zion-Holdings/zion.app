@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
 @import './styles/navbar.css';
 @import './styles/responsive.css';
+@import './styles/auth-layout.css';
 
 @import './styles/OnsiteForm.css';
 /* CSS Custom Properties for Theming */

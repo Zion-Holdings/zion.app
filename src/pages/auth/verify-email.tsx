@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 import { logError } from '@/utils/logError';
+import { AuthLayout } from '@/layout';
 
 
 const VerifyEmailPage = () => {
@@ -82,7 +83,8 @@ const VerifyEmailPage = () => {
   }, [router]); // Changed navigate to router in dependencies
 
   return (
-    <div style={{ padding: '20px', textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
+    <AuthLayout>
+      <div style={{ padding: '20px', textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
       <h1>Email Verification Status</h1>
       <div style={{ margin: '20px auto', padding: '20px', border: '1px solid #eee', borderRadius: '8px', maxWidth: '400px' }}>
         <p style={{ fontSize: '1.1em' }}>{message}</p>
@@ -116,6 +118,7 @@ const VerifyEmailPage = () => {
         }
       `}</style> */}
     </div>
+    </AuthLayout>
   );
 };
 
