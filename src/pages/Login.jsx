@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'; // Changed from useNavigate, useLocatio
 import { useAuth } from '@/hooks/useAuth';
 import { safeStorage } from '@/utils/safeStorage';
 import { LoginContent } from '@/components/auth/login';
+import { AuthLayout } from '@/layout';
 import { ErrorBoundary } from 'react-error-boundary';
 import LoginErrorFallback from '@/components/auth/login/LoginErrorFallback';
 import { useCart } from '@/context/CartContext';
@@ -39,9 +40,11 @@ export default function Login() {
   // Render LoginContent if not authenticated and auth is not loading
   if (!isAuthenticated && !isLoading) {
     return (
-      <ErrorBoundary FallbackComponent={LoginErrorFallback}>
-        <LoginContent />
-      </ErrorBoundary>
+      <AuthLayout>
+        <ErrorBoundary FallbackComponent={LoginErrorFallback}>
+          <LoginContent />
+        </ErrorBoundary>
+      </AuthLayout>
     );
   }
 

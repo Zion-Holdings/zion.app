@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
 import Link from 'next/link';
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
@@ -37,7 +37,13 @@ export function AppHeader() {
   
   return (
     <>
-      <header className={cn("sticky top-0 z-50 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md", { "bg-red-500": mobileMenuOpen })}>
+      <header
+        style={{ "--nav-height": "64px" } as React.CSSProperties}
+        className={cn(
+          "sticky top-0 z-50 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md",
+          { "bg-red-500": mobileMenuOpen }
+        )}
+      >
         <div className="container flex h-16 items-center px-4 sm:px-6">
           <Logo />
           {showTagline && (
