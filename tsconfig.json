@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2022",
     "useDefineForClassFields": true,
     "lib": [
       "ESNext",
@@ -47,9 +47,8 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
-    "allowImportingTsExtensions": true,
     "outDir": "dist",
-    "jsx": "transform"
+    "jsx": "react-jsx"
   },
   "include": [
     "src",
