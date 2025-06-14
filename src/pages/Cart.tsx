@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { getStripe } from '@/utils/getStripe';
+import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import type { RootState, AppDispatch } from '@/store';
 import {
@@ -48,17 +48,10 @@ export default function CartPage() {
   const handleCheckout = async () => {
     setLoading(true);
     try {
-      const stripe = await getStripe();
-      if (!stripe) throw new Error('Stripe not loaded');
-      const res = await fetch('/api/checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ cartItems: items, customer_email: user?.email }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to create session');
-      const { error } = await stripe.redirectToCheckout({ sessionId: data.sessionId });
-      if (error) throw error;
+      const { data } = await axios.post('/api/checkout/session', { cart: items });
+      if (data.url) {
+        window.location.href = data.url;
+      }
     } catch (err: any) {
       console.error('Checkout error:', err);
       alert(err.message || 'Checkout failed');
