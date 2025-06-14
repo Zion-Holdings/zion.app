@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import MemoryRouter from 'react-router-dom'; // Needed because AppHeader contains NavLink/Link components via MainNavigation
-import { AppHeader } from '../AppHeader'; // Adjust path as necessary
+import MemoryRouter from 'react-router-dom'; // Needed because PrimaryNav contains NavLink/Link components via MainNavigation
+import { PrimaryNav } from '../PrimaryNav';
 import { useAuth } from '@/hooks/useAuth';
 import type { AuthContextType } from '@/types/auth';
 import { useTranslation } from 'react-i18next';
@@ -55,7 +55,7 @@ jest.mock('@/components/header/MobileBottomNav', () => ({
   }));
 
 
-describe('AppHeader', () => {
+describe('PrimaryNav', () => {
   const mockT = jest.fn((key: string) => key) as jest.MockedFunction<(key: string) => string>; // Simple translation mock
 
   beforeEach(() => {
@@ -94,17 +94,17 @@ describe('AppHeader', () => {
     });
 
     it('renders LanguageSelector', () => {
-      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
       expect(screen.getByTestId('language-selector')).toBeInTheDocument();
     });
 
     it('renders UserMenu', () => {
-      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
       expect(screen.getByTestId('user-menu')).toBeInTheDocument();
     });
 
     it('does NOT render the old "Hello, {firstName}!" greeting', () => {
-      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
       // The greeting span had data-testid="header-greeting"
       // If AvatarMenu is rendered, the greeting span should not be.
       expect(screen.queryByTestId('header-greeting')).not.toBeInTheDocument();
@@ -112,7 +112,7 @@ describe('AppHeader', () => {
     });
 
     it('does NOT render the Login link', () => {
-      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
       expect(screen.queryByTestId('login-link')).not.toBeInTheDocument();
     });
   });
@@ -127,24 +127,24 @@ describe('AppHeader', () => {
     });
 
     it('does NOT render UserMenu', () => {
-      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
       expect(screen.queryByTestId('user-menu')).not.toBeInTheDocument();
     });
 
     it('renders the Login link', () => {
-      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
       const loginLink = screen.getByTestId('login-link');
       expect(loginLink).toBeInTheDocument();
       expect(loginLink).toHaveAttribute('href', '/login');
     });
 
     it('renders LanguageSelector (assuming it is shown for logged-out users too)', () => {
-      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
       expect(screen.getByTestId('language-selector')).toBeInTheDocument();
     });
 
     it('Login and language selector allow pointer events', () => {
-      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
       const loginLink = screen.getByTestId('login-link');
       const langSelector = screen.getByTestId('language-selector');
       expect(window.getComputedStyle(loginLink).pointerEvents).not.toBe('none');
@@ -152,7 +152,7 @@ describe('AppHeader', () => {
     });
 
     it('Login link is focusable via keyboard', async () => {
-      render(<MemoryRouter><AppHeader /></MemoryRouter>);
+      render(<MemoryRouter><PrimaryNav /></MemoryRouter>);
       const loginLink = screen.getByTestId('login-link');
       loginLink.focus();
       expect(loginLink).toHaveFocus();
