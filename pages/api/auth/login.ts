@@ -58,7 +58,7 @@ async function handler(
     const maxAge = parseInt(process.env.AUTH_TOKEN_MAX_AGE || '604800', 10); // default 7 days
     res.setHeader(
       'Set-Cookie',
-      `authToken=${data.session.access_token}; Max-Age=${maxAge}; HttpOnly; Path=/; Secure; SameSite=Strict`
+      `ztg_token=${data.session.access_token}; Max-Age=${maxAge}; HttpOnly; Path=/; Secure; SameSite=Lax`
     );
 
     return res.status(200).json({

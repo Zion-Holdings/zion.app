@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { toast } from '@/hooks/use-toast';
+import { safeStorage } from '@/utils/safeStorage';
+import { store } from '@/store';
+import { setToken } from '@/store/authSlice';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
@@ -7,18 +10,18 @@ export async function loginUser(email: string, password: string) {
   try {
     const endpoint = `${API_URL}/api/auth/login`;
     const res = await axios.post(endpoint, { email, password }, { withCredentials: true });
-    console.log('Login API Response Status:', res.status);
-    console.log('Login API Response Body:', res.data);
+    const token = res.data?.accessToken;
+    if (token) {
+      safeStorage.setItem('ztg_token', token);
+      store.dispatch(setToken(token));
+    }
     return { res, data: res.data };
   } catch (err: any) {
     const status = err.response?.status;
-    // if (status === 401) {
-    //   toast.error('Invalid email or password');
-    // } else if (status === 500) {
-    //   toast.error('Server error. Please try again later.');
-    // } else {
-    //   toast.error('Login failed');
-    // }
+    if (status >= 400 && status < 600) {
+      const msg = err.response?.data?.message || 'Login failed';
+      toast({ title: 'Login Failed', description: msg, variant: 'destructive' });
+    }
     throw err;
   }
 }

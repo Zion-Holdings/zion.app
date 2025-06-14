@@ -1,5 +1,5 @@
 
-import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
+import useSWR from 'swr';
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { GradientHeading } from "@/components/GradientHeading";
 import { SkeletonCard } from '@/components/ui';
@@ -15,10 +15,8 @@ interface CategoryType {
   itemCount?: number; // Example field for number of items in a category
 }
 
-const queryClient = new QueryClient();
-
-const fetchCategories = async (): Promise<CategoryType[]> => {
-  const response = await fetch("/api/categories");
+const fetcher = async (url: string): Promise<CategoryType[]> => {
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`API error: ${response.statusText}`);
   }
@@ -30,18 +28,15 @@ export interface CategoriesProps {
 }
 
 export default function Categories({ categories: initialCategories = [] }: CategoriesProps) {
-  const { data: categories = [], isLoading, error } = useQuery<CategoryType[], Error>({
-    queryKey: ['categories'],
-    queryFn: fetchCategories,
-    initialData: initialCategories,
-    enabled: initialCategories.length === 0,
+  const { data, error } = useSWR<CategoryType[]>('/api/categories', fetcher, {
+    fallbackData: initialCategories,
   });
+  const categories = data || [];
+  const isLoading = !data && !error;
 
   return (
-    <QueryClientProvider client={queryClient}>
-    <>
-      <div className="min-h-screen bg-zion-blue">
-        <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-zion-blue">
+      <div className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
             <GradientHeading level="h1" className="text-4xl md:text-5xl font-bold mb-4">
               Browse Categories
@@ -81,7 +76,6 @@ export default function Categories({ categories: initialCategories = [] }: Categ
           </ErrorBoundary>
         </div>
       </div>
-    </>
-    </QueryClientProvider>
+    </div>
   );
 }
