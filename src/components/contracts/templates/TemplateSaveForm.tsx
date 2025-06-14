@@ -14,7 +14,7 @@ import { Switch } from "@/components/ui/switch";
 
 const formSchema = z.object({
   title: z.string().min(1, "Title is required"),
-  isDefault: z.boolean().default(false),
+  isDefault: z.boolean(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
