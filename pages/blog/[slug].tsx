@@ -89,7 +89,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: 'blocking' };
 };
 
-export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params }: { params?: { slug?: string } }) => {
   const slug = params?.slug as string;
   const post = BLOG_POSTS.find((p) => p.slug === slug) || null; // Changed from 'fallback' to 'post' for clarity
 

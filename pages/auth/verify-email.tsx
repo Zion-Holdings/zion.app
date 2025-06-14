@@ -57,10 +57,10 @@ const VerifyEmailPage = () => {
           setError(null);
 
           // Update the local user context if the backend sends back updated user details
-          if (result.user) {
-             // Assuming result.user is of type UserDetails
-            setUser(prevUser => ({...prevUser, ...result.user}));
-          }
+         if (result.user && setUser) {
+            // Assuming result.user is of type UserDetails
+           setUser(prevUser => ({...prevUser, ...result.user}));
+         }
 
 
           // Redirect to login or dashboard after a short delay

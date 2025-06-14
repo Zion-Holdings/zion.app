@@ -48,7 +48,8 @@
       "./node_modules/@types"
     ],
     "outDir": "dist",
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "noEmit": true
   },
   "include": [
     "src",

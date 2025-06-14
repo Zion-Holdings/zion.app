@@ -52,7 +52,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<PageProps> = async ({ params }: { params?: { slug?: string } }) => {
   const slug = params?.slug as string;
   const filePath = path.join(process.cwd(), 'content', 'pages', `${slug}.md`);
   if (!fs.existsSync(filePath)) {

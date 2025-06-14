@@ -1,3 +1,4 @@
+import { NextApiResponse } from 'next';
 import React from 'react';
 import Head from 'next/head';
 import { getSupportEmail } from '../src/config/env';
@@ -74,8 +75,11 @@ const CustomErrorPage = ({ statusCode }: { statusCode?: number }) => {
   );
 };
 
-CustomErrorPage.getInitialProps = ({ res, err }) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+CustomErrorPage.getInitialProps = ({ res, err }: { res: NextApiResponse; err: any }) => {
+  const statusCode = err ? err.statusCode : 404;
+  if (res) {
+    (res as any).statusCode = statusCode;
+  }
   return { statusCode };
 };
 
