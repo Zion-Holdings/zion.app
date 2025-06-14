@@ -8,6 +8,23 @@ import { Badge } from "@/components/ui/badge";
 
 import CodeBlock from "./CodeBlock";
 
+interface EndpointParam {
+  name: string;
+  type: string;
+  description: string;
+  required?: boolean;
+}
+
+interface EndpointSectionProps {
+  method: string;
+  endpoint: string;
+  description: string;
+  note?: string;
+  params?: EndpointParam[];
+  codeExamples?: Record<string, string>;
+  responseExamples?: { success: string };
+}
+
 export function ApiDocumentation() {
   return (
     <Card className="bg-zinc-900 border-zinc-800 text-white">
@@ -788,15 +805,15 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
 }
 
 // Helper component for API endpoint documentation
-function EndpointSection({ 
-  method, 
-  endpoint, 
+function EndpointSection({
+  method,
+  endpoint,
   description,
   note,
   params = [],
   codeExamples,
   responseExamples
-}) {
+}: EndpointSectionProps) {
   const [activeTab, setActiveTab] = useState("curl");
   
   return (
