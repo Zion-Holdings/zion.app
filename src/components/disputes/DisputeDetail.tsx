@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDisputes } from "@/hooks/useDisputes";
-import { disputeReasonLabels, DisputeMessage, DisputeStatus } from "@/types/disputes";
+import { Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus } from "@/types/disputes";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -24,7 +24,7 @@ export function DisputeDetail() {
   const { user } = useAuth();
   const { getDisputeById, updateDisputeStatus, resolveDispute, getDisputeMessages, addDisputeMessage } = useDisputes();
   
-  const [dispute, setDispute] = useState<any>(null);
+  const [dispute, setDispute] = useState<Dispute | null>(null);
   const [messages, setMessages] = useState<DisputeMessage[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [message, setMessage] = useState("");
@@ -201,7 +201,7 @@ export function DisputeDetail() {
                     <h3 className="font-medium">Reason</h3>
                     <p>{
                       disputeReasonLabels[
-                        dispute.reason_code as DisputeReason
+                        dispute.reason_code
                       ] ?? dispute.reason_code
                     }</p>
                   </div>
