@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { mutate } from 'swr';
 import { Link, useNavigate, useSearchParams, useLocation } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -50,15 +51,16 @@ export default function CreatePostPage() {
 
       if (user?.id) {
         try {
-          const res = await fetch('/api/points/add', {
+          const res = await fetch('/api/points/increment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userId: user.id, amount: 2, reason: 'post' })
+            body: JSON.stringify({ userId: user.id, amount: 5, reason: 'post' })
           });
           if (!res.ok) {
             const text = await res.text().catch(() => '');
             throw new Error(text || `Error ${res.status}`);
           }
+          mutate('user');
         } catch (err) {
           console.error('Failed to award points:', err);
         }
