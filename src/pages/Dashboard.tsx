@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
@@ -10,19 +11,30 @@ import { NotificationBell } from "@/components/NotificationBell";
 import { GuidedTour } from "@/components/onboarding/GuidedTour";
 import { useToast } from "@/hooks/use-toast";
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'; // Ensure this is present
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
   const { toast } = useToast();
   const router = useRouter();
+  const [isLoadingUser, setIsLoadingUser] = useState(true); // New loading state
+
   const roleForTour =
     user?.userType === 'employer' || user?.userType === 'buyer' ? 'client' : 'talent';
 
-  // If the user isn't loaded, redirect to login to avoid a blank page
-  // and show a minimal message while redirecting.
+  useEffect(() => {
+    if (!user) {
+      router.replace('/login');
+    }
+    setIsLoadingUser(false);
+  }, [user, router]); // Dependencies for useEffect
+
+  if (isLoadingUser) {
+    return <div className="p-4 text-center">Loading dashboard...</div>;
+  }
+
+  // If user is still not available after loading, it means redirect is in progress
   if (!user) {
-    router.replace('/login');
     return <div className="p-4 text-center">Redirecting to login...</div>;
   }
 
