@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import Marketplace from "@/pages/Marketplace";
 import Categories from "@/pages/Categories";
-import CategoryDetail from "@/pages/CategoryDetail";
+import CategoryPage from "@/pages/CategoryPage";
 import Featured from "@/pages/Featured";
 import ListingDetail from "@/pages/ListingDetail";
 import EquipmentPage from "@/pages/EquipmentPage";
@@ -36,7 +36,7 @@ const MarketplaceRoutes = () => {
       {/* Marketplace Routes */}
       <Route index element={<Marketplace />} />
       <Route path="categories" element={<Categories />} />
-      <Route path="category/:slug" element={<CategoryDetail />} />
+      <Route path="category/:slug" element={<CategoryPage />} />
       <Route path="featured" element={<Featured />} />
       <Route path="listing/:id" element={<ListingDetail />} />
       <Route path="/listing/:id" element={<ListingDetail />} />
