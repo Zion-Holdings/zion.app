@@ -6,6 +6,7 @@ import { fireEvent } from '@/lib/analytics';
 import { SearchSuggestion } from '@/types/search';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
+import { useNavigate } from 'react-router-dom';
 
 interface SearchBarProps {
   value: string;
@@ -22,6 +23,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
   const debounced = useDebounce(value, 150);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!debounced) {
@@ -56,6 +58,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
     onChange(text);
     if (onSelectSuggestion) onSelectSuggestion(text);
     fireEvent('search', { search_term: text });
+    navigate(`/search?q=${encodeURIComponent(text)}`);
     setFocused(false);
     setHighlightedIndex(-1);
     inputRef.current?.blur();
@@ -92,6 +95,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
               }
               if (e.key === 'Enter' && value) {
                 fireEvent('search', { search_term: value });
+                navigate(`/search?q=${encodeURIComponent(value)}`);
                 setFocused(false);
                 inputRef.current?.blur();
               }
@@ -113,6 +117,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
                   handleSelect(suggestions[highlightedIndex].text);
                 } else if (value) {
                   fireEvent('search', { search_term: value });
+                  navigate(`/search?q=${encodeURIComponent(value)}`);
                   setFocused(false);
                   inputRef.current?.blur();
                 }
