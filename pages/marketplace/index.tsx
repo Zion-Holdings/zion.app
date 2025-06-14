@@ -1,4 +1,4 @@
-import Marketplace, { MarketplaceProps } from '@/pages/Marketplace';
+import Marketplace, { MarketplaceProps } from '../../src/pages/Marketplace';
 import type { GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
 

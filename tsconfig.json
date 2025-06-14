@@ -31,7 +31,6 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "noEmit": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true, // Added this
     "resolveJsonModule": true,
@@ -44,8 +43,13 @@
     "noFallthroughCasesInSwitch": true,
     "allowJs": true,
     "incremental": true,
-    "types": ["lodash"],
-    "typeRoots": ["./node_modules/@types"]
+    "types": [
+      "lodash"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "noEmit": true
   },
   "include": [
     "src",
