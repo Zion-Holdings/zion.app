@@ -71,14 +71,13 @@ export default function TalentDirectory() {
     currentPage * itemsPerPage
   );
 
-  const handleRequestHire = (talent: TalentProfile) => {
+  const handleBook = (talent: TalentProfile) => {
     setSelectedTalent(talent);
     setIsHireModalOpen(true);
   };
 
-  const viewProfile = (id: string) => {
-    // Navigate to the talent profile page
-    router.push(`/talent/${id}`); // Changed to router.push
+  const messageTalent = (id: string) => {
+    router.push(`/messages?talentId=${id}`);
   };
 
   if (isLoading) {
@@ -111,6 +110,12 @@ export default function TalentDirectory() {
           <p className="text-zion-slate-light max-w-md mx-auto">
             No talent profiles are currently available. Please check back later.
           </p>
+          <Link
+            href="/signup?role=talent"
+            className="inline-block mt-6 bg-zion-purple text-white px-4 py-2 rounded hover:bg-zion-purple-dark"
+          >
+            Become a Talent – Sign Up
+          </Link>
         </div>
       </div>
     );
@@ -192,8 +197,9 @@ export default function TalentDirectory() {
                 talents={paginatedTalents}
                 totalCount={filteredTalents.length}
                 isLoading={isLoading}
-                viewProfile={viewProfile}
-                handleRequestHire={handleRequestHire}
+                viewProfile={messageTalent}
+                handleBook={handleBook}
+                handleMessage={(talent) => messageTalent(talent.id)}
                 isAuthenticated={isAuthenticated}
                 activeFiltersProps={{
                   selectedSkills,

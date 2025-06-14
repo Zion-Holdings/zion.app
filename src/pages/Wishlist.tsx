@@ -67,8 +67,8 @@ export default function WishlistPage() {
                 <TalentCard
                   key={fav.item_id}
                   talent={talent}
-                  onViewProfile={() => {}}
-                  onRequestHire={() => {}}
+                  onMessage={() => {}}
+                  onBook={() => {}}
                   isAuthenticated={true}
                 />
               ) : null;

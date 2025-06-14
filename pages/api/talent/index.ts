@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
+import { TALENT_SEEDS } from '@/data/talentSeeds';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY as string;
@@ -20,6 +21,11 @@ async function handler(
   const from = (page - 1) * limit;
   const to = from + limit - 1;
 
+  // If Supabase credentials are not available, return seed data for demo
+  if (!supabaseUrl || !supabaseKey) {
+    return res.status(200).json(TALENT_SEEDS);
+  }
+
   const { data, error } = await supabase
     .from('talent_profiles')
     .select('*')
@@ -27,10 +33,11 @@ async function handler(
 
   if (error) {
     console.error('Error fetching talent profiles:', error);
-    return res.status(500).json({ error: 'Failed to fetch talent profiles' });
+    // Fallback to seed data in case of error
+    return res.status(200).json(TALENT_SEEDS);
   }
 
-  return res.status(200).json(data ?? []);
+  return res.status(200).json(data ?? TALENT_SEEDS);
 }
 
 export default withErrorLogging(handler);

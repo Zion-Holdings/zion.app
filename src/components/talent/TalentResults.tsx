@@ -10,7 +10,8 @@ interface TalentResultsProps {
   totalCount: number;
   isLoading: boolean;
   viewProfile: (id: string) => void;
-  handleRequestHire: (talent: TalentProfile) => void;
+  handleBook: (talent: TalentProfile) => void;
+  handleMessage: (talent: TalentProfile) => void;
   isAuthenticated: boolean;
   activeFiltersProps: {
     selectedSkills: string[];
@@ -32,7 +33,8 @@ export function TalentResults({
   totalCount,
   isLoading,
   viewProfile,
-  handleRequestHire,
+  handleBook,
+  handleMessage,
   isAuthenticated,
   activeFiltersProps
 }: TalentResultsProps) {
@@ -48,12 +50,12 @@ export function TalentResults({
       />
       
       {/* Talents grid */}
-      <TalentGrid 
+      <TalentGrid
         talents={talents}
         isLoading={isLoading}
         onTalentClick={viewProfile}
-        viewProfile={viewProfile}
-        handleRequestHire={handleRequestHire}
+        handleBook={handleBook}
+        handleMessage={handleMessage}
         isAuthenticated={isAuthenticated}
         clearFilters={activeFiltersProps.clearFilters}
       />

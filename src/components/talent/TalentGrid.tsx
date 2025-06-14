@@ -8,9 +8,10 @@ export interface TalentGridProps {
   isLoading: boolean;
   onTalentClick: (id: string) => void;
   isAuthenticated: boolean;
-  viewProfile?: (id: string) => void;
+  viewProfile?: (id: string) => void; // unused but kept for backward compatibility
   clearFilters?: () => void;
-  handleRequestHire?: (talent: TalentProfile) => void;
+  handleBook?: (talent: TalentProfile) => void;
+  handleMessage?: (talent: TalentProfile) => void;
 }
 
 export function TalentGrid({ 
@@ -20,22 +21,22 @@ export function TalentGrid({
   isAuthenticated,
   viewProfile,
   clearFilters,
-  handleRequestHire
+  handleBook,
+  handleMessage
 }: TalentGridProps) {
-  const handleRequestHireInternal = (talent: TalentProfile) => {
-    if (handleRequestHire) {
-      handleRequestHire(talent);
+  const handleBookInternal = (talent: TalentProfile) => {
+    if (handleBook) {
+      handleBook(talent);
     } else {
-      // Default implementation
-      console.log("Request to hire:", talent.id);
+      console.log("Book talent:", talent.id);
     }
   };
 
-  const handleViewProfile = (id: string) => {
-    if (viewProfile) {
-      viewProfile(id);
+  const handleMessageInternal = (talent: TalentProfile) => {
+    if (handleMessage) {
+      handleMessage(talent);
     } else {
-      onTalentClick(id);
+      onTalentClick(talent.id);
     }
   };
   
@@ -63,8 +64,8 @@ export function TalentGrid({
         <TalentCard
           key={talent.id}
           talent={talent}
-          onViewProfile={() => handleViewProfile(talent.id)}
-          onRequestHire={() => handleRequestHireInternal(talent)}
+          onMessage={() => handleMessageInternal(talent)}
+          onBook={() => handleBookInternal(talent)}
           isAuthenticated={isAuthenticated}
         />
       ))}

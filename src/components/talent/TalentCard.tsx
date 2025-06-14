@@ -2,41 +2,41 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
+import { MapPin, Clock, CheckCircle2 } from "lucide-react";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { useNavigate } from "react-router-dom";
 import { TalentProfile } from "@/types/talent";
 
 export interface TalentCardProps {
   talent: TalentProfile;
-  onViewProfile: (id: string) => void;
-  onRequestHire: (talent: TalentProfile) => void;
+  onBook: (talent: TalentProfile) => void;
+  onMessage: (talent: TalentProfile) => void;
   isAuthenticated: boolean;
 }
 
 const TalentCardComponent = ({
   talent,
-  onViewProfile,
-  onRequestHire,
+  onBook,
+  onMessage,
   isAuthenticated
 }: TalentCardProps) => {
   const navigate = useNavigate();
-  
-  const handleViewProfile = () => {
-    // Navigate directly to the talent profile
-    navigate(`/talent/${talent.id}`);
-    
-    // Also call the onViewProfile callback if provided
-    if (onViewProfile) {
-      onViewProfile(talent.id);
+
+  const handleMessage = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onMessage) {
+      onMessage(talent);
+    } else {
+      navigate(`/messages?talentId=${talent.id}`);
     }
   };
 
-  const handleRequestHire = (e: React.MouseEvent) => {
+  const handleBook = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (onRequestHire) {
-      onRequestHire(talent);
+    if (onBook) {
+      onBook(talent);
     }
   };
 
@@ -139,22 +139,19 @@ const TalentCardComponent = ({
               <Button
                 size="sm"
                 variant="secondary"
-                onClick={handleRequestHire}
+                onClick={handleBook}
                 className="bg-zion-purple hover:bg-zion-purple-light text-white"
               >
-                Hire
+                Book
               </Button>
             )}
             <Button
               size="sm"
               variant="ghost"
-              onClick={(e) => {
-                e.stopPropagation();
-                handleViewProfile();
-              }}
+              onClick={handleMessage}
               className="text-zion-cyan hover:text-white hover:bg-zion-blue-light"
             >
-              View <ArrowRight className="ml-1 h-4 w-4" />
+              Message
             </Button>
           </div>
         </div>
