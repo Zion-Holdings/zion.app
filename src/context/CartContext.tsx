@@ -25,6 +25,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
             id: action.payload.id,
             title: action.payload.name,
             price: action.payload.price,
+            image: action.payload.image,
           })
         );
         break;

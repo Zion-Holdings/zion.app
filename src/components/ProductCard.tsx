@@ -30,7 +30,14 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
   const productTitle = typeof product.title === 'string' ? product.title : 'Untitled Product';
 
   const addToCart = () => {
-    dispatch(addItem({ id: product.id, title: productTitle, price: product.price ?? 0 }));
+    dispatch(
+      addItem({
+        id: product.id,
+        title: productTitle,
+        price: product.price ?? 0,
+        image: imageUrl || undefined,
+      })
+    );
   };
 
   const imageUrl = Array.isArray(product.images) && product.images.length > 0 ? product.images[0] : null;

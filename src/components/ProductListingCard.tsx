@@ -55,7 +55,12 @@ const ProductListingCardComponent = ({
   const addToCart = () => {
     setLoading(true);
     dispatch(
-      addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 })
+      addItem({
+        id: listing.id,
+        title: listing.title,
+        price: listing.price ?? 0,
+        image: listing.images && listing.images.length > 0 ? listing.images[0] : undefined,
+      })
     );
     setLoading(false);
     navigate('/cart');

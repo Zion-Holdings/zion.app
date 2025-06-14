@@ -7,6 +7,10 @@ import { AuthContext } from '@/context/auth/AuthContext';
 import PrivateRoute from '@/components/PrivateRoute';
 import { safeStorage } from '@/utils/safeStorage';
 
+vi.mock('next/router', () => ({
+  useRouter: () => ({ push: vi.fn() })
+}));
+
 const item = { id: '1', name: 'Test Item', price: 10, quantity: 1 };
 
 function renderCart(user: any) {
