@@ -22,7 +22,7 @@ interface EndpointSectionProps {
   note?: string;
   params?: EndpointParam[];
   codeExamples?: Record<string, string>;
-  responseExamples?: Record<string, { success: string }>;
+  responseExamples?: { success: string };
 }
 
 export function ApiDocumentation() {
