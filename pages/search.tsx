@@ -15,7 +15,7 @@ interface SearchPageProps {
   q: string;
 }
 
-export const getServerSideProps: GetServerSideProps<SearchPageProps> = async ({ query }) => {
+export const getServerSideProps: GetServerSideProps<SearchPageProps> = async ({ query }: { query: { q?: string } }) => {
   const term = String(query.q ?? '').toLowerCase();
   const match = (text?: string) => text?.toLowerCase().includes(term);
 
