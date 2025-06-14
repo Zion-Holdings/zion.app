@@ -199,7 +199,11 @@ export function DisputeDetail() {
                 <CardContent className="space-y-4">
                   <div>
                     <h3 className="font-medium">Reason</h3>
-                    <p>{disputeReasonLabels[dispute.reason_code as any] || dispute.reason_code}</p>
+                    <p>{
+                      disputeReasonLabels[
+                        dispute.reason_code as DisputeReason
+                      ] ?? dispute.reason_code
+                    }</p>
                   </div>
                   
                   <div>
