@@ -55,28 +55,41 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
       // Assuming data from a 200 response is always success.
       // If API returns 200 but with an error payload, that needs specific handling here or API needs adjustment.
-      setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
+      // data should contain { user, accessToken, refreshToken }
+      console.log('[AuthProvider login] API call successful, data:', data); // Log received data
+      if (data.accessToken && data.refreshToken) {
+        console.log('[AuthProvider login] Attempting to set Supabase client session.');
+        setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
 
-      const { error: sessionError } = await supabase.auth.setSession({
-        access_token: data.accessToken,
-        refresh_token: data.refreshToken,
-      });
-
-      if (sessionError) {
-        console.error("Client-side session setting failed:", sessionError);
-        toast({
-          title: "Login Failed",
-          description: sessionError.message || "Failed to initialize client session.",
-          variant: "destructive",
+        const { error: sessionError } = await supabase.auth.setSession({
+          access_token: data.accessToken,
+          refresh_token: data.refreshToken,
         });
-        cleanupAuthState();
-        return { error: sessionError.message || "Client-side session initialization failed." };
+
+        if (sessionError) {
+          console.error("[AuthProvider login] Supabase client-side session setting failed:", sessionError); // Critical: Log this error
+          toast({
+            title: "Login Failed",
+            description: sessionError.message || "Failed to initialize client session.",
+            variant: "destructive",
+          });
+          cleanupAuthState(); // Make sure this is called
+          return { error: sessionError.message || "Client-side session initialization failed." };
+        } else {
+          console.log('[AuthProvider login] Supabase client-side session set successfully.');
+          // The onAuthStateChange event should now trigger.
+        }
+      } else {
+        console.error('[AuthProvider login] Missing accessToken or refreshToken from loginUser response.');
+        toast({
+            title: "Login Failed",
+            description: "Incomplete token data received from server. Cannot initialize session.",
+            variant: "destructive",
+        });
+        cleanupAuthState(); // Ensure cleanup
+        return { error: "Incomplete token data received from server." };
       }
 
-      // const queryString = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
-      // const params = new URLSearchParams(queryString);
-      // const next = params.get('redirectTo') || params.get('next') || '/dashboard';
-      // router.replace(next); // Redirection moved to onAuthStateChange after profile validation
       console.log('[AuthProvider] login function completed, onAuthStateChange will handle redirection.');
       return { error: null }; // Successful login
 
@@ -217,83 +230,95 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     cleanupAuthState();
     
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      // Inside the onAuthStateChange callback
       async (event, session) => {
-        console.log('[AuthProvider] onAuthStateChange triggered.');
-        console.log('[AuthProvider] onAuthStateChange event:', event);
-        console.log('[AuthProvider] onAuthStateChange session:', session);
+        console.log('[AuthProvider onAuthStateChange] Triggered. Event:', event, 'Session:', session); // Existing log, ensure it's there
+
+        setIsLoading(true); // Ensure isLoading is true at the start
+
         try {
           if (session?.user) {
-            try {
-              const { data: profile, error: profileError } = await getFromProfiles()
-                .select('*')
-                .eq('id', session.user.id)
-                .single();
+            console.log('[AuthProvider onAuthStateChange] Session and user found. User ID:', session.user.id);
+            console.log('[AuthProvider onAuthStateChange] Fetching profile for user ID:', session.user.id);
 
-              if (profileError) {
-                console.error("[AuthProvider] Error fetching user profile in onAuthStateChange:", profileError);
-                toast({
-                  title: "Profile Load Error",
-                  description: "Login successful, but failed to load your profile. Please try again or contact support.",
-                  variant: "destructive",
-                });
-                setUser(null);
-                setAvatarUrl(null);
-              } else if (profile) {
-                console.log('[AuthProvider] onAuthStateChange profile data:', profile);
-                const mappedUser = mapProfileToUser(session.user, profile);
-                console.log('[AuthProvider] onAuthStateChange mappedUser:', mappedUser);
-                setUser(mappedUser);
-                setAvatarUrl(mappedUser.avatarUrl || null);
+            // Explicitly log the exact query being made
+            console.log('[AuthProvider onAuthStateChange] Supabase query: getFromProfiles().select("*").eq("id", session.user.id).single()');
 
-                if (event === 'SIGNED_IN') {
-                  handleSignedIn(mappedUser);
-                  const queryStringAuthChange = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
-                  const paramsAuthChange = new URLSearchParams(queryStringAuthChange);
-                  const nextFromUrl = paramsAuthChange.get('redirectTo') || paramsAuthChange.get('next');
-                  const nextPathFromStorage = safeStorage.getItem('nextPath');
+            const { data: profile, error: profileError } = await getFromProfiles()
+              .select('*')
+              .eq('id', session.user.id)
+              .single();
 
-                  // Note: location.state from react-router-dom is not directly available with next/router.
-                  // This logic for 'pendingAction' would need to be re-implemented using query params or other state management if still needed.
-                  // For now, focusing on removing react-router-dom direct dependencies.
-                  if (nextPathFromStorage) {
-                    safeStorage.removeItem('nextPath');
-                    router.replace(decodeURIComponent(nextPathFromStorage));
-                  } else if (nextFromUrl) {
-                    router.replace(decodeURIComponent(nextFromUrl));
-                  } else {
-                    router.replace('/dashboard'); // Default redirect if no other path specified
-                  }
+            if (profileError) {
+              console.error("[AuthProvider onAuthStateChange] Error fetching user profile:", profileError); // Critical: Log this error
+              toast({
+                title: "Profile Load Error",
+                description: `Login successful, but failed to load your profile. ${profileError.message}. Please try again or contact support.`,
+                variant: "destructive",
+              });
+              setUser(null); // Ensure user is cleared
+              setAvatarUrl(null);
+              // Do NOT redirect to dashboard if profile load fails. User should probably stay on login or go to a generic error page.
+              // Consider if router.replace('/') or similar is needed here if not on login page already.
+            } else if (profile) {
+              console.log('[AuthProvider onAuthStateChange] Profile data fetched successfully:', profile);
+              const mappedUser = mapProfileToUser(session.user, profile);
+              console.log('[AuthProvider onAuthStateChange] Mapped user data:', mappedUser);
+              setUser(mappedUser);
+              setAvatarUrl(mappedUser.avatarUrl || null);
+              console.log('[AuthProvider onAuthStateChange] User state updated in context.');
+
+              if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED') { // Consider other events that mean user is authenticated
+                console.log('[AuthProvider onAuthStateChange] Event is SIGNED_IN (or similar), calling handleSignedIn.');
+                handleSignedIn(mappedUser); // Ensure this is called with the correct user
+
+                // Redirection logic - ensure this is robust
+                const queryStringAuthChange = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
+                const paramsAuthChange = new URLSearchParams(queryStringAuthChange);
+                const nextFromUrl = paramsAuthChange.get('redirectTo') || paramsAuthChange.get('next');
+                const nextPathFromStorage = safeStorage.getItem('nextPath');
+                let redirectTo = '/dashboard'; // Default
+
+                if (nextPathFromStorage) {
+                  redirectTo = decodeURIComponent(nextPathFromStorage);
+                  safeStorage.removeItem('nextPath');
+                  console.log('[AuthProvider onAuthStateChange] Redirecting to (from storage):', redirectTo);
+                } else if (nextFromUrl) {
+                  redirectTo = decodeURIComponent(nextFromUrl);
+                  console.log('[AuthProvider onAuthStateChange] Redirecting to (from URL params):', redirectTo);
+                } else {
+                  console.log('[AuthProvider onAuthStateChange] Redirecting to default dashboard.');
                 }
-              } else {
-                // Profile not found, but no error from Supabase (should be rare with .single() if no RLS issue)
-                console.warn("User profile not found for user:", session.user.id);
-                toast({
-                  title: "Profile Not Found",
-                  description: "Login successful, but your profile could not be found. Please contact support.",
-                  variant: "destructive",
-                });
-                setUser(null);
-                setAvatarUrl(null);
+                router.replace(redirectTo);
               }
-            } catch (innerError) {
-              console.error("Inner error during profile processing:", innerError);
-              setUser(null);
+            } else {
+              console.warn("[AuthProvider onAuthStateChange] Profile not found for user (no error, but profile is null):", session.user.id);
+              toast({
+                title: "Profile Not Found",
+                description: "Login successful, but your profile could not be found. Please contact support.",
+                variant: "destructive",
+              });
+              setUser(null); // Ensure user is cleared
               setAvatarUrl(null);
             }
           } else { // No session or session.user is null
+            console.log('[AuthProvider onAuthStateChange] No session or user. Clearing user state. Event:', event);
             setUser(null);
             setAvatarUrl(null);
             if (event === 'SIGNED_OUT') {
-              handleSignedOut();
+              console.log('[AuthProvider onAuthStateChange] Event is SIGNED_OUT, calling handleSignedOut.');
+              handleSignedOut(); // Ensure this is called
+              // Optional: redirect to login if not already there or on a public page
+              // if (router.pathname !== '/auth/login') router.replace('/auth/login');
             }
           }
         } catch (outerError) {
-          console.error("Outer error in onAuthStateChange callback:", outerError);
-          // Ensure user state is cleared in case of unexpected errors
-          setUser(null);
+          console.error("[AuthProvider onAuthStateChange] Outer error in callback:", outerError);
+          setUser(null); // Ensure user state is cleared
           setAvatarUrl(null);
         } finally {
-          setIsLoading(false);
+          setIsLoading(false); // Ensure isLoading is false at the end
+          console.log('[AuthProvider onAuthStateChange] Finished processing. isLoading set to false.');
         }
       }
     );
