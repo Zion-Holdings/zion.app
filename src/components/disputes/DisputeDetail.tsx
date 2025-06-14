@@ -410,7 +410,7 @@ export function DisputeDetail() {
                               <select 
                                 className="w-full p-2 border rounded"
                                 value={resolution.resolution_type}
-                                onChange={(e) => setResolution({ ...resolution, resolution_type: e.target.value })}
+                                onChange={(e) => setResolution({ ...resolution, resolution_type: e.target.value as ResolutionType })}
                               >
                                 <option value="client_favor">In Client's Favor</option>
                                 <option value="talent_favor">In Talent's Favor</option>
