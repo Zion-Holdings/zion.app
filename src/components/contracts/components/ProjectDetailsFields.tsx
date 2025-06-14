@@ -1,7 +1,7 @@
 
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
-import { UseFormReturn } from "react-hook-form";
+import { UseFormReturn, ControllerRenderProps } from "react-hook-form";
 import { 
   FormField, 
   FormItem, 
@@ -27,7 +27,7 @@ export function ProjectDetailsFields({ form }: ProjectDetailsFieldsProps) {
       <FormField
         control={form.control}
         name="projectName"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<ContractFormValues, "projectName"> }) => (
           <FormItem>
             <FormLabel>Project Name</FormLabel>
             <FormControl>
@@ -41,7 +41,7 @@ export function ProjectDetailsFields({ form }: ProjectDetailsFieldsProps) {
       <FormField
         control={form.control}
         name="scopeSummary"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<ContractFormValues, "scopeSummary"> }) => (
           <FormItem>
             <FormLabel>Scope Summary</FormLabel>
             <FormControl>
@@ -63,7 +63,7 @@ export function ProjectDetailsFields({ form }: ProjectDetailsFieldsProps) {
         <FormField
           control={form.control}
           name="startDate"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<ContractFormValues, "startDate"> }) => (
             <FormItem className="flex flex-col">
               <FormLabel>Start Date</FormLabel>
               <Popover>
@@ -100,7 +100,7 @@ export function ProjectDetailsFields({ form }: ProjectDetailsFieldsProps) {
         <FormField
           control={form.control}
           name="endDate"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<ContractFormValues, "endDate"> }) => (
             <FormItem className="flex flex-col">
               <FormLabel>End Date (Optional)</FormLabel>
               <Popover>
