@@ -29,7 +29,7 @@ model ChatMessage {
   createdAt DateTime @default(now())
 }
 
-model Category {
+model category {
   id     String  @id @default(cuid())
   name   String
   slug   String  @unique

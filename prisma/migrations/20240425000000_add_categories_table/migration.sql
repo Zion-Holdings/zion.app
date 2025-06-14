@@ -1,5 +1,5 @@
 -- CreateCategoryTable
-CREATE TABLE "Category" (
+CREATE TABLE "category" (
   "id" TEXT NOT NULL PRIMARY KEY,
   "name" TEXT NOT NULL,
   "slug" TEXT NOT NULL,
@@ -7,4 +7,4 @@ CREATE TABLE "Category" (
   "active" BOOLEAN NOT NULL DEFAULT true
 );
 
-CREATE UNIQUE INDEX "Category_slug_key" ON "Category"("slug");
+CREATE UNIQUE INDEX "category_slug_key" ON "category"("slug");

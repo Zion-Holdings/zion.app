@@ -16,7 +16,7 @@ async function handler(
   const active = req.query.active;
 
   try {
-    const categories = await prisma.Category.findMany({
+    const categories = await prisma.category.findMany({
       where: {
         active: active === 'true' ? true : active === 'false' ? false : undefined,
       },
