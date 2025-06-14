@@ -24,11 +24,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email").min(1, "Email is required"),
   password: z.string().min(6, "Password must be at least 6 characters"),
-  rememberMe: z.boolean().default(false).optional(),
+  rememberMe: z.boolean().default(false),
 });
 
 
-type LoginFormValues = z.infer<typeof loginSchema> & { rememberMe?: boolean };
+type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
   const { isLoading, login } = useAuth();
