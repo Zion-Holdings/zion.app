@@ -83,7 +83,7 @@ export default function CartPage() {
 
   return (
     <div className="container max-w-2xl py-10">
-      <h1 className="text-3xl font-bold mb-6">Shopping Cart</h1>
+      <h1 className="text-3xl font-bold mb-6">Your Cart</h1>
       <ul className="space-y-4">
         {items.map(item => (
           <CartItemComponent
