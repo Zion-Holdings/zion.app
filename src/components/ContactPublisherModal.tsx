@@ -20,14 +20,14 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
   useEffect(() => {
     if (!isOpen) return;
 
-    function handleKeyDown(e) {
+    function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
         e.preventDefault();
         onClose();
       }
     }
 
-    firstInputRef.current?.focus();
+    firstInputRef.current && (firstInputRef.current as HTMLInputElement).focus();
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
@@ -36,7 +36,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
     return null;
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!subject.trim() || !message.trim()) {
       setError('Subject and message are required.');
@@ -97,7 +97,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
               id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              rows="4"
+              rows={4}
               className="w-full p-2 mb-4 border border-gray-300 rounded"
             />
           </div>

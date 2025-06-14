@@ -51,7 +51,7 @@ export function ProductActions({ productId, addToCart, isDisabled, sellerId }: P
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         productId={productId}
-        sellerId={sellerId}
+        sellerId={sellerId || ""}
       />
     </>
   );
