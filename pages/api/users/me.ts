@@ -1,17 +1,7 @@
 import { withErrorLogging } from '@/utils/withErrorLogging';
+import { users } from './data';
 
-let mockUser = {
-  id: '1',
-  name: 'Jane Doe',
-  email: 'jane@example.com',
-  avatarUrl: '',
-  points: 0,
-  notifications: {
-    email: true,
-    push: false,
-  },
-  softDeleted: false,
-};
+let mockUser = users['1'];
 
 // Generic request/response types so this file works in Node or Next.js
 interface Req {
@@ -34,12 +24,14 @@ function handler(req: Req, res: JsonRes) {
 
   if (req.method === 'PUT') {
     mockUser = { ...mockUser, ...req.body };
+    users[mockUser.id] = mockUser;
     res.status(200).json(mockUser);
     return;
   }
 
   if (req.method === 'DELETE') {
     mockUser.softDeleted = true;
+    users[mockUser.id] = mockUser;
     res.status(200).json({ success: true });
     return;
   }

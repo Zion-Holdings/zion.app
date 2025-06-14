@@ -40,6 +40,7 @@ module.exports = {
     '^next-auth/react$': '<rootDir>/tests/__mocks__/next-auth/react.js',
     '^@stripe/react-stripe-js$': '<rootDir>/tests/__mocks__/@stripe/react-stripe-js.js',
     '^@stripe/stripe-js$': '<rootDir>/tests/__mocks__/@stripe/stripe-js.js',
+    '^next-cloudinary$': '<rootDir>/tests/__mocks__/next-cloudinary.js',
   },
   roots: ['<rootDir>/__tests__', '<rootDir>/tests', '<rootDir>/src'],
   coverageThreshold: {
