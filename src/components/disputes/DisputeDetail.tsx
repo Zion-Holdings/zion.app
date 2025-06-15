@@ -1,4 +1,5 @@
 
+import { DisputeReason } from "@/types/disputes";
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDisputes } from "@/hooks/useDisputes";
@@ -199,7 +200,7 @@ export function DisputeDetail() {
                 <CardContent className="space-y-4">
                   <div>
                     <h3 className="font-medium">Reason</h3>
-                    <p>{disputeReasonLabels[dispute.reason_code as any] || dispute.reason_code}</p>
+                    <p>{disputeReasonLabels[dispute.reason_code as DisputeReason] || dispute.reason_code}</p>
                   </div>
                   
                   <div>

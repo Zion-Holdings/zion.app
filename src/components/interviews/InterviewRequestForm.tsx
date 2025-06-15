@@ -11,7 +11,7 @@ import { TalentProfile } from "@/types/talent";
 import { UserProfile } from "@/types/auth";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, ControllerRenderProps } from "react-hook-form";
 import { z } from "zod";
 import { format, addDays } from "date-fns";
 import { CalendarIcon, Check, Clock } from "lucide-react";
@@ -129,7 +129,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
         <FormField
           control={form.control}
           name="title"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "title"> }) => (
             <FormItem>
               <FormLabel>Interview Title</FormLabel>
               <FormControl>
@@ -144,7 +144,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
           <FormField
             control={form.control}
             name="date"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "date"> }) => (
               <FormItem className="flex flex-col">
                 <FormLabel>Date</FormLabel>
                 <Popover>
@@ -185,7 +185,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
           <FormField
             control={form.control}
             name="time"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "time"> }) => (
               <FormItem>
                 <FormLabel>Time</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -212,7 +212,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
           <FormField
             control={form.control}
             name="duration"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "duration"> }) => (
               <FormItem>
                 <FormLabel>Duration</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -236,7 +236,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
           <FormField
             control={form.control}
             name="platform"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "platform"> }) => (
               <FormItem>
                 <FormLabel>Platform</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>

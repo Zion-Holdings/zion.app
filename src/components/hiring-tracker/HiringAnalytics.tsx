@@ -41,10 +41,14 @@ export function HiringAnalytics({ jobId }: HiringAnalyticsProps) {
       
       if (hiredApplications.length > 0) {
         const totalDays = hiredApplications.reduce((sum, app) => {
-          const hireDate = new Date(app.updated_at);
-          const applyDate = new Date(app.created_at);
-          const daysDiff = (hireDate.getTime() - applyDate.getTime()) / (1000 * 3600 * 24);
-          return sum + daysDiff;
+          const hireDate = app.updated_at ? new Date(app.updated_at) : null;
+          if (hireDate) {
+            const applyDate = new Date(app.created_at);
+            const daysDiff = (hireDate.getTime() - applyDate.getTime()) / (1000 * 3600 * 24);
+            return sum + daysDiff;
+          } else {
+            return sum;
+          }
         }, 0);
         
         avgTimeToHire = Math.round(totalDays / hiredApplications.length);
