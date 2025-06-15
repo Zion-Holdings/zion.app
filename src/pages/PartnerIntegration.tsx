@@ -133,7 +133,7 @@ export default function PartnerIntegration() {
                 <FormField
                   control={form.control}
                   name="useCase"
-                  render={({ field }) => (
+                  render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
                     <FormItem>
                       <FormLabel>Use Case</FormLabel>
                       <Select onValueChange={field.onChange} value={field.value}>
@@ -157,7 +157,7 @@ export default function PartnerIntegration() {
                 <FormField
                   control={form.control}
                   name="message"
-                  render={({ field }) => (
+                  render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
                     <FormItem>
                       <FormLabel>Additional Details</FormLabel>
                       <FormControl>
