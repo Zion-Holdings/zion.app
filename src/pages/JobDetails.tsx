@@ -1,4 +1,4 @@
-3import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -37,6 +37,11 @@ export default function JobDetails() {
   const { isWhitelabel, brandName } = useWhitelabel();
   
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+
+  const formatBudget = (budget: any) => {
+    if (!budget) return "Not specified";
+    return `$${budget.min} - $${budget.max}`;
+  };
 
   if (isLoading) {
     return (
@@ -80,10 +85,6 @@ export default function JobDetails() {
     setIsApplyModalOpen(false);
   };
 
-  const formatBudget = (budget: any) => {
-    if (!budget) return "Not specified";
-    return `$${budget.min} - $${budget.max}`;
-  };
 
   const isOwnJob = user?.id === job.client_id;
 

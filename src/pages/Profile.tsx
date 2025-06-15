@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { GetServerSideProps } from 'next';
+import type { GetServerSideProps, NextPageContext } from 'next';
 import { ProfileForm, ProfileValues } from '@/components/profile/ProfileForm';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import type { Order } from '@/hooks/useOrders';
@@ -55,8 +55,9 @@ export default function Profile({ user: initialUser, orders }: ProfileProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<ProfileProps> = async ({ req }) => {
+export const getServerSideProps: GetServerSideProps<ProfileProps> = async (context: NextPageContext) => {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const { req } = context;
   const [userRes, ordersRes] = await Promise.all([
     fetch(`${base}/api/users/me`, { headers: { cookie: req.headers.cookie || '' } }),
     fetch(`${base}/api/orders?user_id=me`, { headers: { cookie: req.headers.cookie || '' } })
