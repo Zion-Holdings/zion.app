@@ -75,7 +75,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="projectName"
-                render={({ field }) => (
+                render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
                   <FormItem>
                     <FormLabel>Project Name</FormLabel>
                     <FormControl>
@@ -88,7 +88,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="teamInfo"
-                render={({ field }) => (
+                render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
                   <FormItem>
                     <FormLabel>Team Info</FormLabel>
                     <FormControl>
@@ -101,7 +101,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="summary"
-                render={({ field }) => (
+                render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
                   <FormItem>
                     <FormLabel>Proposal Summary</FormLabel>
                     <FormControl>
@@ -114,7 +114,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="timeline"
-                render={({ field }) => (
+                render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
                   <FormItem>
                     <FormLabel>Timeline</FormLabel>
                     <FormControl>
@@ -127,7 +127,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="budget"
-                render={({ field }) => (
+                render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
                   <FormItem>
                     <FormLabel>Budget Request (ZION$ or USDC)</FormLabel>
                     <FormControl>
@@ -140,7 +140,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="links"
-                render={({ field }) => (
+                render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
                   <FormItem>
                     <FormLabel>Supporting Links / Pitch Deck</FormLabel>
                     <FormControl>
@@ -152,10 +152,12 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="category"
-                render={({ field }) => (
+                render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => {
+                 const categoryValue = form.watch('category');
+                 return (
                   <FormItem>
                     <FormLabel>Category</FormLabel>
-                    <Select value={field.value} onValueChange={field.onChange}>
+                    <Select value={categoryValue} onValueChange={(value) => field.onChange({ target: { value } } as any)}>
                       <FormControl>
                         <SelectTrigger>
                           <SelectValue />
@@ -170,7 +172,8 @@ export default function GrantsPage() {
                       </SelectContent>
                     </Select>
                   </FormItem>
-                )}
+                );
+               }}
               />
               <div className="flex gap-2">
                 <Button

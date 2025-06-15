@@ -81,7 +81,7 @@ export default function PartnerIntegration() {
                 <FormField
                   control={form.control}
                   name="name"
-                  render={({ field }) => (
+                  render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
                     <FormItem>
                       <FormLabel>Institution Name</FormLabel>
                       <FormControl>
