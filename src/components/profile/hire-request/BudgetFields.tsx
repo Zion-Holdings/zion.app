@@ -17,7 +17,7 @@ export function BudgetFields({ form, talent }: BudgetFieldsProps) {
       <FormField
         control={form.control}
         name="budgetMin"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel className="text-white">Budget (Min)</FormLabel>
             <FormControl>
@@ -38,7 +38,7 @@ export function BudgetFields({ form, talent }: BudgetFieldsProps) {
       <FormField
         control={form.control}
         name="budgetMax"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel className="text-white">Budget (Max)</FormLabel>
             <FormControl>

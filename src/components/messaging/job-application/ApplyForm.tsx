@@ -49,9 +49,9 @@ export function ApplyForm({ job, onClose, onApplySuccess }: ApplyFormProps) {
       
       // First submit the application to the job applications table
       const applicationSuccess = await applyToJob(
-        job.id, 
-        message, 
-        selectedResumeId
+        job.id,
+        message,
+        selectedResumeId || undefined
       );
       
       if (!applicationSuccess) {

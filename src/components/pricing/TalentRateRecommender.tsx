@@ -59,10 +59,10 @@ export const TalentRateRecommender: React.FC<TalentRateRecommenderProps> = ({
       onSuggestionApplied(suggestedRate);
       
       // Track this suggestion application
-      if (user) {
+      if (user && user.id) {
         trackPricingSuggestion({
           userId: user.id,
-          suggestionType: 'talent',
+          suggestionType: "talent",
           suggestedMin: suggestion.minRate,
           suggestedMax: suggestion.maxRate,
           actualValue: suggestedRate,

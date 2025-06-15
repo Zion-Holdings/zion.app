@@ -78,9 +78,10 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
   };
   
   // Auto translate content when language tab changes
-  const handleTabChange = async (tab: SupportedLanguage) => {
-    if (tab !== activeTab) {
-      setActiveTab(tab);
+  const handleTabChange = async (tab: string) => {
+    const selectedLanguage = tab as SupportedLanguage;
+    if (selectedLanguage !== activeTab) {
+      setActiveTab(selectedLanguage);
     }
   };
   

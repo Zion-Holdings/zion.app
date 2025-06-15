@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Control } from "react-hook-form";
-import { 
-  FormField, 
+import { Control, ControllerRenderProps } from "react-hook-form";
+import {
+  FormField,
   FormItem, 
   FormLabel, 
   FormControl, 
@@ -29,7 +29,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <FormField
         control={control}
         name="title"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<any, "title"> }) => (
           <FormItem>
             <FormLabel>Job Title</FormLabel>
             <FormControl>
@@ -43,7 +43,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <FormField
         control={control}
         name="company"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<any, "company"> }) => (
           <FormItem>
             <FormLabel>Company</FormLabel>
             <FormControl>
@@ -57,7 +57,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <FormField
         control={control}
         name="category"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<any, "category"> }) => (
           <FormItem>
             <FormLabel>Job Category</FormLabel>
             <FormControl>
@@ -84,14 +84,13 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
         <FormField
           control={control}
           name="budgetMin"
-          render={({ field: { onChange, ...rest } }) => (
+          render={({ field: { onChange, ...rest } }: { field: ControllerRenderProps<any, "budgetMin"> }) => (
             <FormItem>
               <FormLabel>Budget (Min)</FormLabel>
               <FormControl>
                 <Input
                   type="number"
                   placeholder="e.g. 30"
-                  value={minBudget || rest.value}
                   onChange={e => {
                     setMinBudget(e.target.value);
                     onChange(e);
@@ -107,14 +106,13 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
         <FormField
           control={control}
           name="budgetMax"
-          render={({ field: { onChange, ...rest } }) => (
+          render={({ field: { onChange, ...rest } }: { field: ControllerRenderProps<any, "budgetMax"> }) => (
             <FormItem>
               <FormLabel>Budget (Max)</FormLabel>
               <FormControl>
                 <Input
                   type="number"
                   placeholder="e.g. 60"
-                  value={maxBudget || rest.value}
                   onChange={e => {
                     setMaxBudget(e.target.value);
                     onChange(e);
@@ -142,7 +140,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <FormField
         control={control}
         name="location"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<any, "location"> }) => (
           <FormItem>
             <FormLabel>Location</FormLabel>
             <FormControl>
