@@ -1,4 +1,3 @@
-
 {
   "name": "project",
   "private": true,
@@ -156,6 +155,7 @@
     "react-resizable-panels": "^3.0.2",
     "react-router-dom": "^6.25.1",
     "recharts": "^2.12.0",
+    "sharp": "^0.33.4",
     "socket.io": "^4.7.2",
     "socket.io-client": "^4.7.2",
     "sonner": "^2.0.5",
@@ -260,6 +260,7 @@
     "react-dom": "~18.3.1"
   },
   "overrides": {
+    "puppeteer": "^24.10.0",
     "netlify-plugin-cypress": {
       "puppeteer": "^24.10.0"
     },
@@ -269,7 +270,7 @@
     "rimraf": "^6.0.1"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=18.17.0 <20.0.0"
   },
   "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/ziontechgroup.com/deploy-status)](https://app.netlify.com/sites/ziontechgroup.com/deploys)",
   "main": "babel.config.js",
