@@ -31,15 +31,15 @@ export default function Analytics() {
       if (error) throw error;
       
       // Group by date
-      const viewsByDate = {};
+      const viewsByDate: Record<string, { date: string; views: number }> = {};
       data?.forEach(view => {
         const date = new Date(view.created_at).toISOString().split('T')[0];
-        if (!viewsByDate[date]) viewsByDate[date] = { date, views: 0 };
+        if (!viewsByDate[date]) viewsByDate[date] = { date: date, views: 0 };
         viewsByDate[date].views++;
       });
       
       // Fill in missing dates
-      const result = [];
+      const result: { date: string; views: number }[] = [];
       for (let i = 0; i < days; i++) {
         const date = new Date();
         date.setDate(date.getDate() - i);
@@ -72,7 +72,7 @@ export default function Analytics() {
       if (error) throw error;
       
       // Group by conversion type and date
-      const conversionsByType = {};
+      const conversionsByType: Record<string, Record<string, number>> = {};
       data?.forEach(item => {
         const date = new Date(item.created_at).toISOString().split('T')[0];
         const conversionType = item.metadata?.conversionType || 'unknown';
@@ -89,7 +89,7 @@ export default function Analytics() {
       });
       
       // Get all dates in range
-      const dates = [];
+      const dates: string[] = [];
       for (let i = 0; i < days; i++) {
         const date = new Date();
         date.setDate(date.getDate() - i);
@@ -99,7 +99,7 @@ export default function Analytics() {
       
       // Format data for chart
       return dates.map(date => {
-        const result = { date };
+        const result: Record<string, any> = { date };
         
         Object.keys(conversionsByType).forEach(type => {
           result[type] = conversionsByType[type][date] || 0;

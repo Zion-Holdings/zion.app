@@ -50,35 +50,35 @@ function CheckoutInner() {
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-          <FormField name="name" control={form.control} render={({ field }) => (
+          <FormField name="name" control={form.control} render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl><Input {...field} /></FormControl>
               <FormMessage />
             </FormItem>
           )} />
-          <FormField name="email" control={form.control} render={({ field }) => (
+          <FormField name="email" control={form.control} render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl><Input type="email" {...field} /></FormControl>
               <FormMessage />
             </FormItem>
           )} />
-          <FormField name="address" control={form.control} render={({ field }) => (
+          <FormField name="address" control={form.control} render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
             <FormItem>
               <FormLabel>Address</FormLabel>
               <FormControl><Input {...field} /></FormControl>
               <FormMessage />
             </FormItem>
           )} />
-          <FormField name="city" control={form.control} render={({ field }) => (
+          <FormField name="city" control={form.control} render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
             <FormItem>
               <FormLabel>City</FormLabel>
               <FormControl><Input {...field} /></FormControl>
               <FormMessage />
             </FormItem>
           )} />
-          <FormField name="country" control={form.control} render={({ field }) => (
+          <FormField name="country" control={form.control} render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
             <FormItem>
               <FormLabel>Country</FormLabel>
               <FormControl><Input {...field} /></FormControl>

@@ -119,7 +119,7 @@ export default function EquipmentPage() {
     }
     try {
       // Ensure data is correctly typed or cast if necessary
-      const data: ProductListing[] = await fetchRecommendations({ userId: user.id });
+      const data: ProductListing[] = await fetchRecommendations({ userId: user?.id ?? "" });
       setEquipment(data); // data should be ProductListing[]
       toast({ title: 'Showing personalized recommendations' });
     } catch (err: any) { // Typed error

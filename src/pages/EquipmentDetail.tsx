@@ -205,7 +205,7 @@ export default function EquipmentDetail() {
 
     dispatch({
       type: 'ADD_ITEM',
-      payload: { id, name: equipment.name, price: equipment.price, quantity }
+      payload: { id: id ?? "", name: equipment.name ?? "", price: equipment.price, quantity }
     });
     router.push('/checkout');
   };

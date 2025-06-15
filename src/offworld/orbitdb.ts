@@ -1,4 +1,5 @@
 /// &lt;reference types="../types/orbitdb__core.d.ts" />
+import { createOrbitDB } from '@orbitdb/core';
 import { createHelia, Helia } from 'helia';
 import { createLibp2p, Libp2p } from 'libp2p';
 import { gossipsub } from '@chainsafe/libp2p-gossipsub';
