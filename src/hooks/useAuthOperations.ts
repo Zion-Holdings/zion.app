@@ -55,8 +55,20 @@ export function useAuthOperations(
       setIsLoading(false);
     }
   };
+  
+  interface SignupParams {
+    email: string;
+    password: string;
+    display_name: string;
+  }
 
-  const signup = async ({ email, password, display_name }) => {
+  export interface SignupParams {
+    email: string;
+    password: string;
+    display_name: string;
+  }
+
+  const signup = async ({ email, password, display_name }: SignupParams) => {
     setIsLoading(true);
     try {
       const { data, error } = await supabase.auth.signUp({
