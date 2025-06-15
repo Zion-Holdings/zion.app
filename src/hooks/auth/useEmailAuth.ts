@@ -1,7 +1,7 @@
 
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import type { UserDetails } from "@/types/auth.d";
+import type { UserDetails } from "@/types/auth";
 import { cleanupAuthState } from "@/utils/authUtils";
 import { safeStorage, safeSessionStorage } from "@/utils/safeStorage";
 
