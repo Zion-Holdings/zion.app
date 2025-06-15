@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import type { UserDetails } from "@/types/auth.d";
 import { mutate } from 'swr';
 import { SignupParams } from "@/types/auth";
 import { supabase } from "@/integrations/supabase/client";
@@ -10,7 +11,7 @@ import { trackReferral, checkUrlForReferralCode } from "@/utils/referralUtils";
 import { cleanupAuthState } from "@/utils/authUtils";
 
 export function useAuthOperations(
-  setUser: React.Dispatch<React.SetStateAction<UserProfile | null>>,
+  setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>,
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
   setAvatarUrl: React.Dispatch<React.SetStateAction<string | null>>
 ) {
@@ -305,16 +306,16 @@ export function useAuthOperations(
         params: [address, address]
       });
       
-      // Fix: Create a proper UserProfile object
+      // Fix: Create a proper UserDetails object
       setUser({
         id: address,
-        displayName: address,
+        name: address,
         profileComplete: true,
         email: '', // Add required fields
         userType: 'talent', // Default user type
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString()
-      } as UserProfile);
+      });
       
       toast({ title: 'Wallet connected', description: address });
     } catch (error: any) {

@@ -1,17 +1,17 @@
 
-import { UserProfile, UserDetails } from '@/types/auth';
+import { UserDetails } from '@/types/auth.d';
 import { Message, Conversation, ConversationContextData } from '@/types/messaging';
 import { useConversationState } from './useConversationState';
 import { useConversations } from './useConversations';
 import { useMessages } from './useMessages';
 
 // Allow either UserProfile or UserDetails
-type UserWithProfile = UserProfile | UserDetails | null;
+type UserWithProfile = UserDetails | null;
 
 /**
  * Hook that combines all messaging operations
  */
-export function useMessagingOperations(user: UserWithProfile) {
+export function useMessagingOperations(user: UserDetails | null) {
   // State management
   const {
     messages,

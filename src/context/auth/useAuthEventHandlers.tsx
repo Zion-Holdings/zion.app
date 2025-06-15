@@ -1,6 +1,7 @@
 
+import type { UserDetails } from "@/types/auth.d";
 import { toast } from "@/hooks/use-toast";
-import type { UserProfile } from "@/types/auth";
+import type { UserProfile } from "@/types/auth.d";
 import { checkNewRegistration } from "@/utils/authUtils";
 // Removed: import { useNavigate } from 'react-router-dom';
 import type { useRouter } from 'next/router'; // Import useRouter for ReturnType
@@ -9,7 +10,7 @@ import type { useRouter } from 'next/router'; // Import useRouter for ReturnType
  * Custom hook for auth event handling
  */
 export function useAuthEventHandlers(
-  setUser: React.Dispatch<React.SetStateAction<UserProfile | null>>,
+  setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>,
   setOnboardingStep: React.Dispatch<React.SetStateAction<string | null>>,
   router: ReturnType<typeof useRouter> // Use ReturnType<typeof useRouter>
 ) {

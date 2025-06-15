@@ -1,17 +1,17 @@
 
-import { UserProfile, UserDetails } from '@/types/auth';
+import { UserDetails } from '@/types/auth.d';
 import { supabase } from '@/integrations/supabase/client';
 import { Conversation, ConversationContextData } from '@/types/messaging';
 import { toast } from '@/hooks/use-toast';
 
 // Allow either UserProfile or UserDetails
-type UserWithProfile = UserProfile | UserDetails | null;
+type UserWithProfile = UserDetails | null;
 
 /**
  * Hook to handle conversation operations
  */
 export function useConversations(
-  user: UserWithProfile,
+  user: UserDetails | null,
   setConversations: (conversations: Conversation[]) => void,
   setUnreadCount: (count: number) => void,
   setIsLoading: (loading: boolean) => void
@@ -130,8 +130,8 @@ export function useConversations(
           .from('conversations')
           .insert({
             user_one_id: user.id,
-            user_one_name: user.displayName || user.email,
-            user_one_avatar: user.avatarUrl || ('avatar_url' in user ? user.avatar_url : undefined),
+            user_one_name: user.name || user.email,
+            user_one_avatar: user.avatarUrl,
             user_one_type: user.userType,
             user_two_id: recipientId,
             user_two_name: recipientData?.display_name || 'User',

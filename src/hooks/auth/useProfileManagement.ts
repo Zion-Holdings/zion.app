@@ -1,10 +1,10 @@
 
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import type { UserProfile } from "@/types/auth";
+import type { UserDetails } from "@/types/auth.d";
 
 export const useProfileManagement = (setIsLoading: (loading: boolean) => void) => {
-  const updateProfile = async (data: Partial<UserProfile>) => {
+  const updateProfile = async (data: Partial<UserDetails>) => {
     try {
       setIsLoading(true);
 
@@ -38,7 +38,7 @@ export const useProfileManagement = (setIsLoading: (loading: boolean) => void) =
           user_type: data.userType,
           bio: data.bio,
           headline: data.headline,
-          avatar_url: data.avatarUrl || data.avatar_url,
+          avatar_url: data.avatarUrl,
           profile_complete: data.profileComplete,
           updated_at: new Date().toISOString(),
         })

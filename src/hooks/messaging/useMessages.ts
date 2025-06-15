@@ -1,17 +1,17 @@
 
-import { UserProfile, UserDetails } from '@/types/auth';
+import { UserDetails } from '@/types/auth.d';
 import { supabase } from '@/integrations/supabase/client';
 import { Message, Conversation } from '@/types/messaging';
 import { toast } from '@/hooks/use-toast';
 
 // Allow either UserProfile or UserDetails
-type UserWithProfile = UserProfile | UserDetails | null;
+type UserWithProfile = UserDetails | null;
 
 /**
  * Hook to handle message operations
  */
 export function useMessages(
-  user: UserWithProfile,
+  user: UserDetails | null,
   activeConversation: Conversation | null,
   activeMessages: Message[],
   setActiveMessages: (updater: (prev: Message[]) => Message[]) => void,

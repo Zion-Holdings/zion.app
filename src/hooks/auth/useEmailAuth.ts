@@ -1,12 +1,12 @@
 
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
-import type { UserProfile } from "@/types/auth";
+import type { UserDetails } from "@/types/auth.d";
 import { cleanupAuthState } from "@/utils/authUtils";
 import { safeStorage, safeSessionStorage } from "@/utils/safeStorage";
 
 export const useEmailAuth = (
-  setUser: (user: UserProfile | null) => void,
+  setUser: (user: UserDetails | null) => void,
   setIsLoading: (loading: boolean) => void
 ) => {
   const login = async ({ email, password, rememberMe }: { email: string; password: string; rememberMe: boolean }) => {
@@ -45,7 +45,7 @@ export const useEmailAuth = (
 
       const { token, user } = await response.json();
 
-      setUser(user as UserProfile);
+      setUser(user as UserDetails);
 
       // These are imported from '@/utils/safeStorage' via authUtils.ts,
       // but useEmailAuth.ts doesn't directly import them.
