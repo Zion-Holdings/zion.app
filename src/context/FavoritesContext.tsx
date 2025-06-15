@@ -10,7 +10,7 @@ import { safeStorage } from '@/utils/safeStorage';
 
 export interface FavoritesContextType {
   favorites: Array<string | number>;
-  toggleFavorite: (productId: string | number) => Promise<void>;
+  toggleFavorite: (productId: string) => Promise<void>;
   isFavorite: (id: string | number) => boolean;
 }
 
@@ -36,7 +36,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
     safeStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
-  const toggleFavorite = async (productId: string | number) => {
+  const toggleFavorite = async (productId: string) => {
     try {
       await toggleFavoriteRequest(productId);
       setFavorites(prev =>

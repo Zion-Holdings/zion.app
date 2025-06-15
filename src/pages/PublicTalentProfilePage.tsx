@@ -160,7 +160,7 @@ export default function ProfilePage() {
               <h2 className="text-xl font-bold text-white mb-3">Portfolio</h2>
               <div className="space-y-3">
                 {profileData.portfolio_links && profileData.portfolio_links.length > 0 ? (
-                  profileData.portfolio_links.map((link: string, index) => (
+                  profileData.portfolio_links.map((link: string, index: number) => (
                     <a
                       key={link + index}
                       href={link}

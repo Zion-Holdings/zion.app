@@ -19,7 +19,7 @@ export interface FilterSidebarProps {
     experience: boolean;
     price: boolean;
   };
-  toggleSection: (sectionName: string) => void;
+  toggleSection: (sectionName: "region" | "price" | "experience" | "skills" | "availability") => void;
   sortOption: string;
   setSortOption: (option: string) => void;
   clearFilters: () => void;
