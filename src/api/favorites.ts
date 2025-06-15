@@ -1,4 +1,6 @@
-export async function toggleFavorite(productId) {
+export async function toggleFavorite(
+  productId: string | number
+): Promise<unknown> {
   const res = await fetch('/api/v1/favorites/toggle', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -7,5 +9,9 @@ export async function toggleFavorite(productId) {
   if (!res.ok) {
     throw new Error('Failed to toggle favorite');
   }
-  return res.json().catch(() => ({}));
+  try {
+    return await res.json();
+  } catch {
+    return {};
+  }
 }
