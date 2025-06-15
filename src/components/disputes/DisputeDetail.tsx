@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDisputes } from "@/hooks/useDisputes";
-imimport { Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType } from "@/types/disputes";
+import { Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType } from "@/types/disputes";
 
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
