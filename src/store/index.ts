@@ -1,9 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { AuthState } from '@/types/auth';
-import cartReducer from './cartSlice';
-import wishlistReducer from './wishlistSlice';
+import { CartState } from './cartSlice';
+import { WishlistState } from './wishlistSlice';
 import authReducer from './authSlice';
 import { safeStorage } from '@/utils/safeStorage';
+import { AuthState } from '@/types/auth';
+
+export interface RootState {
+  cart: CartState;
+  wishlist: WishlistState;
+  auth: AuthState;
+}
 
 export const store = configureStore({
   reducer: {
@@ -24,14 +30,5 @@ store.subscribe(() => {
   }
 });
 
-import CartState from './cartSlice';
-import WishlistState from './wishlistSlice';
-import { AuthState } from '@/types/auth';
-
-export interface RootState {
-  cart: typeof CartState;
-  wishlist: typeof WishlistState;
-  auth: AuthState;
-}
+export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-
