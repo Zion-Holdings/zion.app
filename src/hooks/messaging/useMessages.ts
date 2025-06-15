@@ -1,5 +1,5 @@
 
-import { UserDetails } from '@/types/auth.d';
+import { UserDetails } from '@/types/auth';
 import { supabase } from '@/integrations/supabase/client';
 import { Message, Conversation } from '@/types/messaging';
 import { toast } from '@/hooks/use-toast';
