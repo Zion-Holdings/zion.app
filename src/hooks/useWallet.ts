@@ -66,7 +66,7 @@ export function useWallet() {
         id: crypto.randomUUID(),
         user_id: user.id,
         amount,
-        transaction_type: 'earn',
+        transaction_type: 'earn' as const,
         reason: reason || null,
         created_at: new Date().toISOString(),
       };
@@ -84,7 +84,7 @@ export function useWallet() {
         id: crypto.randomUUID(),
         user_id: user.id,
         amount,
-        transaction_type: 'burn',
+        transaction_type: 'burn' as const,
         reason: reason || null,
         created_at: new Date().toISOString(),
       };
