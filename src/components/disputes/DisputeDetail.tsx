@@ -30,10 +30,11 @@ export function DisputeDetail() {
   const [isLoading, setIsLoading] = useState(true);
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
-  const [resolution, setResolution] = useState<{ { summary: string; resolution_type: ResolutionType }>({
-    summary: "",
-    resolution_type: "compromise",
-  });
+const [resolution, setResolution] = useState<{ summary: string; resolution_type: ResolutionType }>({
+  summary: "",
+  resolution_type: "compromise",
+});
+   
   const [activeTab, setActiveTab] = useState("overview");
 
   // Check if user is admin (placeholder - implement proper admin check)
@@ -83,10 +84,13 @@ export function DisputeDetail() {
       return;
     }
     
-    const success = await resolveDispute(disputeId, resolution);
+    const success = await resolveDispute(disputeId, {
+      summary: resolution.summary,
+      resolution_type: resolution.resolution_type as string,
+    });
     if (success && dispute) {
-      setDispute({ 
-        ...dispute, 
+      setDispute({
+        ...dispute,
         status: "resolved", 
         resolution_summary: resolution.summary,
         resolution_type: resolution.resolution_type,
@@ -404,10 +408,10 @@ export function DisputeDetail() {
                           <div className="grid grid-cols-2 gap-4">
                             <div>
                               <label className="text-sm font-medium mb-1 block">Resolution Type</label>
-                              <select 
+                              <select
                                 className="w-full p-2 border rounded"
-                                value={resolution.resolution_type}
-                                onChange={(e) => setResolution({ ...resolution, resolution_type: e.target.value })}
+                                value={resolution.resolution_type || ""}
+                                onChange={(e) => setResolution({ ...resolution, resolution_type: e.target.value as ResolutionType })}
                               >
                                 <option value="client_favor">In Client's Favor</option>
                                 <option value="talent_favor">In Talent's Favor</option>
