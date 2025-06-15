@@ -1,8 +1,9 @@
 
 import { useState, useEffect } from "react";
 import { mutate } from 'swr';
+import { SignupParams } from "@/types/auth";
 import { supabase } from "@/integrations/supabase/client";
-import type { UserProfile } from "@/types/auth";
+import type { UserProfile } from "@/types/auth.d";
 import { toast } from "@/hooks/use-toast";
 import { showApiError } from "@/utils/apiErrorHandler";
 import { trackReferral, checkUrlForReferralCode } from "@/utils/referralUtils";
@@ -13,6 +14,7 @@ export function useAuthOperations(
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
   setAvatarUrl: React.Dispatch<React.SetStateAction<string | null>>
 ) {
+  
   // Check for referral code in URL when the hook is first used
   useEffect(() => {
     checkUrlForReferralCode();
@@ -56,17 +58,7 @@ export function useAuthOperations(
     }
   };
   
-  interface SignupParams {
-    email: string;
-    password: string;
-    display_name: string;
-  }
 
-  export interface SignupParams {
-    email: string;
-    password: string;
-    display_name: string;
-  }
 
   const signup = async ({ email, password, display_name }: SignupParams) => {
     setIsLoading(true);

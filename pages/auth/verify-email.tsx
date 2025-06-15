@@ -59,7 +59,7 @@ const VerifyEmailPage = () => {
           // Update the local user context if the backend sends back updated user details
          if (result.user && setUser) {
             // Assuming result.user is of type UserDetails
-           setUser(prevUser => ({...prevUser, ...result.user}));
+           setUser((prevUser: any) => ({...prevUser, ...result.user}));
          }
 
 

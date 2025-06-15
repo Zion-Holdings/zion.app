@@ -6,7 +6,7 @@ import { ExternalLink } from "lucide-react";
 import { TalentProfile } from "@/types/talent";
 import { HireRequestModal } from "@/components/profile/hire-request";
 import { useAuthStatus } from "@/hooks/talent";
-import { UserProfile } from "@/types/auth";
+import { UserProfile } from "@/types/auth.d";
 import { useNavigate } from "react-router-dom";
 
 interface TalentCardFooterProps {
