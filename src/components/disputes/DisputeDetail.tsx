@@ -31,7 +31,7 @@ export function DisputeDetail() {
   const [isLoading, setIsLoading] = useState(true);
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
-  const [resolution, setResolution] = useState<{ summary: string; resolution_type: ResolutionType }>ate({
+  const [resolution, setResolution] = useState<{ summary: string; resolution_type: ResolutionType }>({
     summary: "",
     resolution_type: "compromise",
   });
@@ -84,9 +84,9 @@ export function DisputeDetail() {
       return;
     }
     
-    const success = await resolveDispute(disputeId, resolution);
+    const success = await resolveDispute(disputeId, { ...resolution, resolution_type: resolution.resolution_type || "compromise" });
     if (success && dispute) {
-      setDispute({ 
+      setDispute({
         ...dispute, 
         status: "resolved", 
         resolution_summary: resolution.summary,
@@ -409,9 +409,9 @@ export function DisputeDetail() {
                           <div className="grid grid-cols-2 gap-4">
                             <div>
                               <label className="text-sm font-medium mb-1 block">Resolution Type</label>
-                              <select 
+                              <select
                                 className="w-full p-2 border rounded"
-                                value={resolution.resolution_type}
+                                value={resolution.resolution_type || "compromise"}
                                 onChange={(e) => setResolution({ ...resolution, resolution_type: e.target.value as ResolutionType })}
                               >
                                 <option value="client_favor">In Client's Favor</option>
@@ -546,7 +546,7 @@ export function DisputeDetail() {
               </div>
               <div className="flex justify-between">
                 <span className="font-medium">Raised by:</span>
-                <span>{dispute.raised_by === dispute.client_profile?.id ? "Client" : "Talent"}</span>
+                <span>{dispute.client_profile && dispute.talent_profile && dispute.raised_by === (dispute.client_profile as any).id ? "Client" : dispute.talent_profile && dispute.raised_by === (dispute.talent_profile as any).id ? "Talent" : "Unknown"}</span>
               </div>
             </CardContent>
           </Card>
