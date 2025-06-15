@@ -61,17 +61,17 @@ export function useWallet() {
   async function earnTokens(amount: number, reason?: string) {
     if (!user?.id) return;
     setWallet(prev => prev ? { ...prev, balance: prev.balance + amount } : prev);
-    setTransactions(prev => [
-      {
+    setTransactions(prev => {
+      const newTransaction = {
         id: crypto.randomUUID(),
         user_id: user.id,
         amount,
         transaction_type: 'earn',
         reason: reason || null,
         created_at: new Date().toISOString(),
-      },
-      ...prev,
-    ]);
+      };
+      return [newTransaction, ...prev];
+    });
   }
 
   async function spendTokens(amount: number, reason?: string) {
@@ -79,17 +79,17 @@ export function useWallet() {
     setWallet(prev =>
       prev ? { ...prev, balance: Math.max(0, prev.balance - amount) } : prev
     );
-    setTransactions(prev => [
-      {
+    setTransactions(prev => {
+      const newTransaction = {
         id: crypto.randomUUID(),
         user_id: user.id,
         amount,
         transaction_type: 'burn',
         reason: reason || null,
         created_at: new Date().toISOString(),
-      },
-      ...prev,
-    ]);
+      };
+      return [newTransaction, ...prev];
+    });
   }
 
   useEffect(() => {
