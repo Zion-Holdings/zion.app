@@ -262,7 +262,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
           <FormField
             control={form.control}
             name="meetingLink"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "meetingLink"> }) => (
               <FormItem>
                 <FormLabel>Meeting Link (Optional)</FormLabel>
                 <FormControl>
@@ -280,7 +280,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
         <FormField
           control={form.control}
           name="notes"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "notes"> }) => (
             <FormItem>
               <FormLabel>Notes (Optional)</FormLabel>
               <FormControl>

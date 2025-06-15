@@ -30,7 +30,7 @@ export function DisputeDetail() {
   const [isLoading, setIsLoading] = useState(true);
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
-  const [resolution, setResolution] = useState({
+  const [resolution, setResolution] = useState<{ { summary: string; resolution_type: ResolutionType }>({
     summary: "",
     resolution_type: "compromise",
   });
