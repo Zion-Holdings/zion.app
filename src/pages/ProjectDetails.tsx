@@ -572,10 +572,10 @@ function ProjectDetailsContent() {
                   
                   <div className="flex items-start gap-4">
                     <Avatar className="h-10 w-10">
-                      {project.client_profile?.avatar_url ? (
+                      {project.talent_profile?.profile_picture_url ? (
                         <img
-                          src={project.client_profile.avatar_url}
-                          alt={project.client_profile.display_name}
+                          src={project.talent_profile.profile_picture_url}
+                          alt={project.talent_profile.full_name}
                         />
                       ) : (
                         <User className="h-6 w-6" />
@@ -583,7 +583,7 @@ function ProjectDetailsContent() {
                     </Avatar>
                     <div>
                       <h3 className="font-semibold">
-                        {project.client_profile?.display_name || "Client"}
+                        {project.talent_profile?.full_name || "Client"}
                       </h3>
                       <p className="text-sm text-muted-foreground">Project Owner</p>
                       {isTalent && (

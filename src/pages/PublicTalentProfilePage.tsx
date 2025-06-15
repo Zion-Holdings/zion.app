@@ -141,7 +141,7 @@ export default function ProfilePage() {
                 <div className="mt-4">
                   <h4 className="text-lg font-bold text-white mb-2">Skills</h4>
                   <div className="flex flex-wrap gap-2">
-                    {profileData.skills.map((skill, index) => (
+                    {profileData.skills.map((skill: string, index: number) => (
                       <Badge key={skill + index} variant="secondary">{skill}</Badge>
                     ))}
                   </div>
@@ -160,7 +160,7 @@ export default function ProfilePage() {
               <h2 className="text-xl font-bold text-white mb-3">Portfolio</h2>
               <div className="space-y-3">
                 {profileData.portfolio_links && profileData.portfolio_links.length > 0 ? (
-                  profileData.portfolio_links.map((link, index) => (
+                  profileData.portfolio_links.map((link: string, index) => (
                     <a
                       key={link + index}
                       href={link}
