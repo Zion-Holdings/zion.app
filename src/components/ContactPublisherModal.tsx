@@ -46,7 +46,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
     setIsLoading(true); // Set loading true
 
     try {
-      await sendMessage({ productId, sellerId, subject, message });
+      await sendMessage({ productId }, { sellerId }, { subject }, { message });
       toast.success('Message sent!');
       onClose(); // Close modal
       setSubject(''); // Clear subject

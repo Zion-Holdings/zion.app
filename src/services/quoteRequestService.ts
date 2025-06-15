@@ -74,7 +74,7 @@ export const quoteRequestService = {
         .eq('id', id)
         .single();
       
-      if (!data.viewed_at) {
+      if (data && !data.viewed_at) {
         updates.viewed_at = new Date().toISOString();
       }
     }
