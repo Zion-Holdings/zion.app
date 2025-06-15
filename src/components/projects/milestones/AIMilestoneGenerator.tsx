@@ -47,8 +47,8 @@ export function AIMilestoneGenerator({
 
     await generateMilestones(input);
     // Initially select all milestones
-    const initialSelection = {};
-    generatedMilestones.forEach((_, index) => {
+    const initialSelection: Record<number, boolean> = {};
+    generatedMilestones.forEach((_, index: number) => {
       initialSelection[index] = true;
     });
     setSelectedMilestones(initialSelection);

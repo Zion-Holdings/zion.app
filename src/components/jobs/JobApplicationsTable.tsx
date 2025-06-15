@@ -28,10 +28,10 @@ export function JobApplicationsTable({ jobId }: JobApplicationsTableProps) {
   const [selectedApplication, setSelectedApplication] = useState<JobApplication | null>(null);
   const [showScoreDialog, setShowScoreDialog] = useState(false);
   
-  const handleStatusChange = async (applicationId: string, newStatus: ApplicationStatus) => {
+  const handleStatusChange = async (applicationId: string, newStatus: string) => {
     setProcessingId(applicationId);
     try {
-      await updateApplicationStatus(applicationId, newStatus);
+      await updateApplicationStatus(applicationId, newStatus as ApplicationStatus);
       // If it's not already viewed, mark it as viewed
       const application = applications.find(app => app.id === applicationId);
       if (application && !application.viewed_at) {

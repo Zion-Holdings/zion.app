@@ -10,9 +10,9 @@ interface SuggestedTalentsProps {
   jobId: string;
   jobTitle?: string;
 }
-
+ 
 export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
-  const [talents, setTalents] = useState([]);
+  const [talents, setTalents] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
 

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,9 +20,9 @@ import {
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { X, Sparkles, Upload, Clock, Check, Briefcase, MapPin, UserRound, Globe } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { useAuth } from "@/hooks/useAuth";
 
 // Define form schema
 const serviceProfileSchema = z.object({
@@ -36,7 +35,7 @@ const serviceProfileSchema = z.object({
     message: "Rate must be a number",
   }),
   availability: z.enum(["available", "limited", "unavailable"]),
-  enhancedProfile: z.boolean().default(true),
+  enhancedProfile: z.boolean().transform(val => !!val),
   website: z.string().url("Please enter a valid URL").or(z.string().length(0)).optional(),
 });
 
@@ -52,7 +51,7 @@ export function ServiceProviderRegistrationForm() {
   
   // Initialize form with default values
   const form = useForm<ServiceFormValues>({
-    resolver: zodResolver(serviceProfileSchema),
+    resolver: zodResolver(serviceProfileSchema) as any,
     defaultValues: {
       name: user?.displayName || "",
       title: "",
@@ -61,7 +60,7 @@ export function ServiceProviderRegistrationForm() {
       services: "",
       hourlyRate: "",
       availability: "available",
-      enhancedProfile: true,
+      enhancedProfile: false,
       website: "",
     },
   });
@@ -327,7 +326,7 @@ export function ServiceProviderRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="name"
-                      render={({ field }) => (
+                      render={({ field }: { field: any }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Full Name</FormLabel>
                           <FormControl>
@@ -350,7 +349,7 @@ export function ServiceProviderRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="title"
-                      render={({ field }) => (
+                      render={({ field }: { field: any }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Business/Service Name</FormLabel>
                           <FormControl>
@@ -373,7 +372,7 @@ export function ServiceProviderRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="location"
-                      render={({ field }) => (
+                      render={({ field }: { field: any }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Location</FormLabel>
                           <FormControl>
@@ -396,7 +395,7 @@ export function ServiceProviderRegistrationForm() {
                     <FormField
                       control={form.control}
                       name="website"
-                      render={({ field }) => (
+                      render={({ field }: { field: any }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Website (optional)</FormLabel>
                           <FormControl>
@@ -461,7 +460,7 @@ export function ServiceProviderRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="bio"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel className="text-zion-slate-light">About Your Services</FormLabel>
                       <FormControl>
@@ -483,7 +482,7 @@ export function ServiceProviderRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="enhancedProfile"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem className="flex flex-row items-center justify-between p-3 border border-zion-blue-light bg-zion-blue/30 rounded-md">
                       <div className="space-y-0.5">
                         <FormLabel className="text-white flex items-center">
@@ -575,7 +574,7 @@ export function ServiceProviderRegistrationForm() {
                   <FormField
                     control={form.control}
                     name="services"
-                    render={({ field }) => (
+                    render={({ field }: { field: any }) => (
                       <FormItem>
                         <FormLabel className="text-zion-slate-light">Services</FormLabel>
                         <div className="flex gap-2">
@@ -632,7 +631,7 @@ export function ServiceProviderRegistrationForm() {
                   <FormField
                     control={form.control}
                     name="hourlyRate"
-                    render={({ field }) => (
+                    render={({ field }: { field: any }) => (
                       <FormItem>
                         <FormLabel className="text-zion-slate-light">Starting Rate (USD)</FormLabel>
                         <FormControl>
@@ -656,7 +655,7 @@ export function ServiceProviderRegistrationForm() {
                   <FormField
                     control={form.control}
                     name="availability"
-                    render={({ field }) => (
+                    render={({ field }: { field: any }) => (
                       <FormItem className="space-y-4">
                         <FormLabel className="text-zion-slate-light">Current Status</FormLabel>
                         <FormControl>
