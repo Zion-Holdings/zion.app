@@ -251,7 +251,9 @@
     "typescript-eslint": "^8.33.0",
     "vite": "^6.3.5",
     "vitest": "^3.2.1",
-    "whatwg-fetch": "^3.6.20"
+    "whatwg-fetch": "^3.6.20",
+    "@netlify/plugin-nextjs": "^5.0.0",
+    "@netlify/plugin-lighthouse": "^4.0.0"
   },
   "peerDependencies": {
     "react": "~18.3.1",

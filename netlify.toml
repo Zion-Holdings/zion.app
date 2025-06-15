@@ -8,8 +8,10 @@
   NODE_OPTIONS = "--max_old_space_size=4096"
   NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
   NODE_VERSION = "20"
-  NEXT_PUBLIC_SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY" # Replace with your actual Supabase key
-  NEXT_PUBLIC_REOWN_PROJECT_ID = "VALID_PROJECT_ID_PLACEHOLDER" # IMPORTANT: Replace with your actual Reown AppKit Project ID
+  # Environment variables required at build time should be provided via the
+  # Netlify UI. Setting placeholder values here caused the build to fail when
+  # `checkEssentialEnvVars` validates them. Remove the hard coded placeholders
+  # so the actual values from Netlify's configuration are used instead.
   EXAMPLE_API_URL = "https://jsonplaceholder.typicode.com/todos/1"
 
   # Sentry specific configuration
@@ -62,6 +64,17 @@
 
 [functions.healthCheckCron]
   schedule = "*/5 * * * *"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  # Run Lighthouse after the Next.js build to enforce performance budgets
+  package = "@netlify/plugin-lighthouse"
+    [plugins.inputs]
+    output_path = "lighthouse-reports"
+      [plugins.inputs.thresholds]
+      performance = 0.8
 
 # [[plugins]]
 # package = "@netlify/plugin-lighthouse"
