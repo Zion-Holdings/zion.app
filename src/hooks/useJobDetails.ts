@@ -1,9 +1,10 @@
+import { Job } from '@/types/jobs';
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
 export function useJobDetails(jobId: string | undefined) {
-  const [job, setJob] = useState(null);
+  const [job, setJob] = useState<Job | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 

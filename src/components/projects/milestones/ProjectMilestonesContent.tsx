@@ -1,3 +1,4 @@
+import { Project } from '@/types/projects';
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -33,7 +34,7 @@ export function ProjectMilestonesContent() {
     isSubmitting,
     refetch
   } = useMilestones(projectId);
-  const [project, setProject] = useState<any>(null);
+  const [project, setProject] = useState<Project | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('milestones');
   const { job, isLoading: jobLoading } = useJobDetails(project?.job_id);
@@ -109,7 +110,7 @@ export function ProjectMilestonesContent() {
         <ProjectActions 
           projectId={projectId || ''}
           isUnderDispute={isUnderDispute}
-          disputeId={disputeId}
+          disputeId={disputeId ?? undefined}
           isTalent={isTalent}
           onAddMilestone={() => setActiveTab('create')}
         />
@@ -154,7 +155,7 @@ export function ProjectMilestonesContent() {
               onCancel={() => setActiveTab('milestones')}
               projectScope={project.scope_summary}
               projectStartDate={project.start_date}
-              projectEndDate={project.end_date}
+              projectEndDate={project.end_date ?? undefined}
               projectType={projectType}
             />
           )}

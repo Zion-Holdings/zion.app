@@ -51,7 +51,7 @@ export function AddMilestoneForm({
   onCancel,
   projectScope = '',
   projectStartDate = '',
-  projectEndDate = null,
+  projectEndDate = '',
   projectType = 'Other'
 }: AddMilestoneFormProps) {
   const form = useForm<MilestoneFormValues>({
@@ -120,7 +120,7 @@ export function AddMilestoneForm({
           <FormField
             control={form.control}
             name="title"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>Title</FormLabel>
                 <FormControl>
@@ -134,7 +134,7 @@ export function AddMilestoneForm({
           <FormField
             control={form.control}
             name="description"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>Description (optional)</FormLabel>
                 <FormControl>
@@ -153,7 +153,7 @@ export function AddMilestoneForm({
             <FormField
               control={form.control}
               name="due_date"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>Due Date (optional)</FormLabel>
                   <Popover>
@@ -192,7 +192,7 @@ export function AddMilestoneForm({
             <FormField
               control={form.control}
               name="amount"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Amount ($)</FormLabel>
                   <FormControl>
