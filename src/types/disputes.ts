@@ -7,7 +7,7 @@ export interface Dispute {
   project_id: string;
   milestone_id?: string;
   raised_by: string;
-  reason_code: string;
+  reason_code: DisputeReason;
   description: string;
   created_at: string;
   updated_at: string;
