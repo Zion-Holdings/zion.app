@@ -140,7 +140,7 @@ export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => 
       <FormField
         control={control}
         name="location"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<any, "location"> }) => (
           <FormItem>
             <FormLabel>Location</FormLabel>
             <FormControl>

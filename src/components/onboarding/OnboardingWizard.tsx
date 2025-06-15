@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import Rocket from 'lucide-react/dist/esm/icons/rocket';
+import { Rocket } from 'lucide-react';
 import { FileText, Users, Calendar, Eye, MessageSquare } from 'lucide-react';
 import { cn } from '@/lib/utils';
 

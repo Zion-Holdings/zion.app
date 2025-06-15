@@ -130,7 +130,7 @@ export function ContactPublisherModal({
             <FormField
               control={form.control}
               name="subject"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Subject</FormLabel>
                   <FormControl>
@@ -147,7 +147,7 @@ export function ContactPublisherModal({
             <FormField
               control={form.control}
               name="message"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Message</FormLabel>
                   <FormControl>

@@ -106,7 +106,7 @@ export function ConversationDetailView() {
       {hasContextData && (
         <div className="p-4 border-b border-zion-purple/20 bg-zion-blue-dark/10">
           <div className="text-sm text-zion-slate flex items-start gap-3">
-            {activeConversation.context_data.image_url && (
+            {activeConversation.context_data && activeConversation.context_data.image_url && (
               <div className="w-16 h-16 flex-shrink-0">
                 <AspectRatio ratio={1/1} className="rounded bg-zion-blue-dark/30 overflow-hidden">
                   <img
@@ -124,9 +124,9 @@ export function ConversationDetailView() {
                  'Regarding:'}
               </div>
               <div className="text-zion-cyan font-medium">
-                {activeConversation.context_data.title}
+                {activeConversation.context_data && activeConversation.context_data.title}
               </div>
-              {activeConversation.context_data.description && (
+              {activeConversation.context_data && activeConversation.context_data.description && (
                 <div className="text-xs text-zion-slate mt-1 line-clamp-2">
                   {activeConversation.context_data.description}
                 </div>

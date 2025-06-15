@@ -51,7 +51,7 @@ export function PartnerRegistrationForm() {
     const { data: existingPartner } = await supabase
       .from('partner_profiles')
       .select('id')
-      .eq('user_id', user.id)
+      .eq('user_id', user?.id)
       .single();
 
     if (existingPartner) {
@@ -149,7 +149,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="name"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>Name / Brand</FormLabel>
                     <FormControl>
@@ -163,7 +163,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="website"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>Website (Optional)</FormLabel>
                     <FormControl>
@@ -178,7 +178,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="twitter"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>Twitter (Optional)</FormLabel>
                       <FormControl>
@@ -192,7 +192,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="instagram"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>Instagram (Optional)</FormLabel>
                       <FormControl>
@@ -208,7 +208,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="youtube"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>YouTube (Optional)</FormLabel>
                       <FormControl>
@@ -222,7 +222,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="linkedin"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>LinkedIn (Optional)</FormLabel>
                       <FormControl>
@@ -237,7 +237,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="niche"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>Your Niche</FormLabel>
                     <FormControl>
@@ -255,7 +255,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="audience_size"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>Audience Size</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -280,7 +280,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="payout_method"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>Preferred Payout Method</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -305,7 +305,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="bio"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>Bio</FormLabel>
                     <FormControl>

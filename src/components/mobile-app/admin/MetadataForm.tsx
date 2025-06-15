@@ -51,7 +51,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="appTitle"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>App Title</FormLabel>
                   <FormControl>
@@ -71,7 +71,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="shortDescription"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Short Description</FormLabel>
                   <FormControl>
@@ -91,7 +91,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="longDescription"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Long Description</FormLabel>
                   <FormControl>
@@ -140,7 +140,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="version"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>App Version</FormLabel>
                   <FormControl>

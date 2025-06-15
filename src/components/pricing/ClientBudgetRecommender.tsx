@@ -62,10 +62,10 @@ export const ClientBudgetRecommender: React.FC<ClientBudgetRecommenderProps> = (
       onSuggestionApplied(suggestion.minRate, suggestion.maxRate);
       
       // Track this suggestion application
-      if (user) {
+      if (user && user.id) {
         trackPricingSuggestion({
           userId: user.id,
-          suggestionType: 'client',
+          suggestionType: "client",
           suggestedMin: suggestion.minRate,
           suggestedMax: suggestion.maxRate,
           accepted: true
