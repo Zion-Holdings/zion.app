@@ -1,15 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { CartState } from './cartSlice';
+import CartState from './cartSlice';
 import { WishlistState } from './wishlistSlice';
 import authReducer from './authSlice';
 import { safeStorage } from '@/utils/safeStorage';
-import { AuthState } from '@/types/auth';
-
-export interface RootState {
-  cart: CartState;
-  wishlist: WishlistState;
-  auth: AuthState;
-}
 
 export const store = configureStore({
   reducer: {
