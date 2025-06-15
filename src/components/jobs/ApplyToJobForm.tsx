@@ -113,11 +113,12 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="">No resume</SelectItem>
-                {resumes.map((resume) => (
+                {resumes.map((resume) => (resume.id ?
                   <SelectItem key={resume.id} value={resume.id}>
                     {resume.basic_info.title || "Untitled Resume"}
-                  </SelectItem>
+                  </SelectItem> : null
                 ))}
+
               </SelectContent>
             </Select>
           ) : (
