@@ -16,7 +16,8 @@ const app = initializeApp(firebaseConfig);
 // environments where access to local storage is blocked (e.g. third-party
 // iframes or private browsing). Attempt to initialize normally and fall back to
 // an in-memory cache when storage access is denied.
-let db;
+import { Firestore, getFirestore, initializeFirestore, memoryLocalCache } from 'firebase/firestore';
+let db: Firestore;
 try {
   db = getFirestore(app);
 } catch (e) {
