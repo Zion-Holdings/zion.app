@@ -9,6 +9,7 @@ export interface AxiosResponse<T = any> {
 
 export interface AxiosError<T = any> extends Error {
   response?: AxiosResponse<T>;
+  config?: { url: string; method: string; [key: string]: any }; // Add config property
 }
 
 type FulfilledFn = (value: any) => any | Promise<any>;
@@ -93,7 +94,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       const opts = { ...init, body: JSON.stringify(data), headers } as RequestConfig;
       return request<T>(baseURL + url, 'POST', opts);
     },
-    async patch<T = any>(url, data: any = {}, init: RequestConfig = {}) {
+    async patch<T = any>(url: string, data: any = {}, init: RequestConfig = {}) {
       const headers = {
         'Content-Type': 'application/json',
         ...(init as any).headers,
@@ -101,7 +102,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       const opts = { ...init, body: JSON.stringify(data), headers } as RequestConfig;
       return request<T>(baseURL + url, 'PATCH', opts);
     },
-    async delete<T = any>(url, init: RequestConfig = {} as any) {
+    async delete<T = any>(url: string, init: RequestConfig = {} as any) {
       return request<T>(baseURL + url, 'DELETE', init);
     },
   };
@@ -141,7 +142,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       safeStorage.getItem('zion_token') ||
       safeStorage.getItem('token');
 
-    const headers = { ...globalDefaults.headers.common, ...reqInit.headers };
+    const headers: Record<string, string> = { ...globalDefaults.headers.common, ...(reqInit.headers as Record<string, string> || {}) };
     if (authToken) {
       headers['Authorization'] = `Bearer ${authToken}`;
     }
@@ -169,10 +170,9 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       }
       return res;
     } else {
-      const err: AxiosError = Object.assign(new Error('Request failed'), {
-        response: result,
-        config: { url, method },
-      });
+      const err: AxiosError = new Error('Request failed') as AxiosError;
+      err.response = result;
+      err.config = { url, method, ...reqInit };
       for (const h of instance.interceptors.response.handlers) {
         if (h?.rejected) {
           await h.rejected(err as any);

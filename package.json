@@ -233,7 +233,7 @@
     "prisma": "^6.9.0",
     "puppeteer": "^24.10.0",
     "puppeteer-core": "^22.6.0",
-    "react-devtools": "^1.0.5",
+    "react-devtools": "^6.1.2",
     "rimraf": "^6.0.1",
     "rollup-plugin-visualizer": "^5.10.1",
     "sass": "^1.89.1",
