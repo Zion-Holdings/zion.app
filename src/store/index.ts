@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { AuthState } from '@/types/auth';
 import cartReducer from './cartSlice';
 import wishlistReducer from './wishlistSlice';
 import authReducer from './authSlice';
@@ -23,6 +24,14 @@ store.subscribe(() => {
   }
 });
 
-export type RootState = ReturnType<typeof store.getState>;
+import CartState from './cartSlice';
+import WishlistState from './wishlistSlice';
+import { AuthState } from '@/types/auth';
+
+export interface RootState {
+  cart: typeof CartState;
+  wishlist: typeof WishlistState;
+  auth: AuthState;
+}
 export type AppDispatch = typeof store.dispatch;
 
