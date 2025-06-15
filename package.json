@@ -91,7 +91,7 @@
     "@types/micro": "^10.0.0",
     "axios-retry": "^4.5.0",
     "blockstore-core": "^5.0.4",
-    "boolean": "^3.2.0",
+    "boolean": "latest",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^1.1.1",
