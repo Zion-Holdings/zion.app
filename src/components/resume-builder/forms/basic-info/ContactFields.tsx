@@ -14,7 +14,7 @@ export function ContactFields({ control }: ContactFieldsProps) {
       <FormField
         control={control}
         name="location"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel>Location</FormLabel>
             <FormControl>
@@ -28,7 +28,7 @@ export function ContactFields({ control }: ContactFieldsProps) {
       <FormField
         control={control}
         name="website"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel>Website</FormLabel>
             <FormControl>
@@ -42,7 +42,7 @@ export function ContactFields({ control }: ContactFieldsProps) {
       <FormField
         control={control}
         name="linkedin"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel>LinkedIn</FormLabel>
             <FormControl>
@@ -56,7 +56,7 @@ export function ContactFields({ control }: ContactFieldsProps) {
       <FormField
         control={control}
         name="github"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel>GitHub</FormLabel>
             <FormControl>

@@ -104,7 +104,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="title"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Project Title</FormLabel>
               <FormControl>
@@ -118,7 +118,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="description"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Project Description</FormLabel>
               <FormControl>
@@ -136,7 +136,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="technologies"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Technologies Used</FormLabel>
               <FormControl>
@@ -151,7 +151,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
           <FormField
             control={form.control}
             name="github_url"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel className="flex items-center gap-2">
                   <Github className="h-4 w-4" />
@@ -168,7 +168,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
           <FormField
             control={form.control}
             name="demo_url"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel className="flex items-center gap-2">
                   <Link className="h-4 w-4" />
@@ -186,7 +186,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="image_url"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel className="flex items-center gap-2">
                 <FileImage className="h-4 w-4" />

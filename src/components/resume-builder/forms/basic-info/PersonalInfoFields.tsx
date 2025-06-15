@@ -14,7 +14,7 @@ export function PersonalInfoFields({ control }: PersonalInfoFieldsProps) {
       <FormField
         control={control}
         name="fullName"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel>Full Name</FormLabel>
             <FormControl>
@@ -28,7 +28,7 @@ export function PersonalInfoFields({ control }: PersonalInfoFieldsProps) {
       <FormField
         control={control}
         name="title"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel>Professional Title</FormLabel>
             <FormControl>
@@ -42,7 +42,7 @@ export function PersonalInfoFields({ control }: PersonalInfoFieldsProps) {
       <FormField
         control={control}
         name="email"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel>Email</FormLabel>
             <FormControl>
@@ -56,7 +56,7 @@ export function PersonalInfoFields({ control }: PersonalInfoFieldsProps) {
       <FormField
         control={control}
         name="phone"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel>Phone</FormLabel>
             <FormControl>

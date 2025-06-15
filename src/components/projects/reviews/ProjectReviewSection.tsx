@@ -1,3 +1,4 @@
+import { Project } from '@/types/projects';
 
 import { useState } from "react";
 import { Star } from "lucide-react";
@@ -6,7 +7,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ReviewsList } from "@/components/reviews/ReviewsList";
 import { LeaveReviewModal } from "@/components/reviews/LeaveReviewModal";
 import { useReviews } from "@/hooks/useReviews";
-import { Project } from "@/types/projects";
 import { useAuth } from "@/hooks/useAuth";
 
 interface ProjectReviewSectionProps {
@@ -22,15 +22,15 @@ export function ProjectReviewSection({ project }: ProjectReviewSectionProps) {
   const isClient = user?.id === project.client_id;
   const isTalent = user?.id === project.talent_id;
   
-  const clientProfile = project.client_profile;
+  const clientProfile = project?.talent_profile;
   const talentProfile = project.talent_profile;
-  
+
   // Determine who the current user needs to review
   const revieweeId = isClient ? project.talent_id : project.client_id;
   const revieweeName = isClient 
     ? talentProfile?.full_name || "Talent" 
-    : clientProfile?.display_name || "Client";
-  
+    : clientProfile?.full_name || "Client";
+
   const canLeaveReview = isCompleted && (isClient || isTalent) && !userReview;
   const hasLeftReview = userReview != null;
   

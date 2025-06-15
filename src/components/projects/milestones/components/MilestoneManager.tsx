@@ -42,20 +42,20 @@ export function MilestoneManager({
       await onUpdateStatus(milestoneId, "completed" as MilestoneStatus);
       enqueueSnackbar("Milestone approved", { variant: 'success' });
       await refetch();
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error approving milestone:", error);
-      enqueueSnackbar(error?.response?.data?.message || error.message, { variant: 'error' });
+      enqueueSnackbar(error.message, { variant: 'error' });
     }
   };
-  
+
   const handleMilestoneRejected = async (milestoneId: string) => {
     try {
       await onUpdateStatus(milestoneId, "rejected" as MilestoneStatus);
       enqueueSnackbar("Milestone rejected", { variant: 'success' });
       await refetch();
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error rejecting milestone:", error);
-      enqueueSnackbar(error?.response?.data?.message || error.message, { variant: 'error' });
+      enqueueSnackbar(error.message, { variant: 'error' });
     }
   };
 
@@ -79,7 +79,7 @@ export function MilestoneManager({
       <div>
         <PaymentSummary 
           milestones={milestones} 
-          paymentTerms={paymentTerms}
+          paymentTerms={paymentTerms ?? null}
         />
       </div>
     </div>
