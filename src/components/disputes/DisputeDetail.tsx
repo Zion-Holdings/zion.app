@@ -87,7 +87,7 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
     
     const success = await resolveDispute(disputeId, {
       summary: resolution.summary,
-      resolution_type: resolution.resolution_type as string,
+      resolution_type: (resolution.resolution_type || "compromise") as ResolutionType,
     });
     if (success && dispute) {
       setDispute({
