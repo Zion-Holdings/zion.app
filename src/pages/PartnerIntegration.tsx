@@ -95,7 +95,7 @@ export default function PartnerIntegration() {
                 <FormField
                   control={form.control}
                   name="entityType"
-                  render={({ field }) => (
+                  render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
                     <FormItem>
                       <FormLabel>Entity Type</FormLabel>
                       <Select onValueChange={field.onChange} value={field.value}>
@@ -119,7 +119,7 @@ export default function PartnerIntegration() {
                 <FormField
                   control={form.control}
                   name="contact"
-                  render={({ field }) => (
+                  render={({ field }: { field: import('react-hook-form').UseFormRegisterReturn }) => (
                     <FormItem>
                       <FormLabel>Point of Contact Email</FormLabel>
                       <FormControl>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+3import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
