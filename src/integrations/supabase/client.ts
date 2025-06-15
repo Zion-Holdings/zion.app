@@ -68,7 +68,7 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
   const fetchHeaders = new Headers(options.headers as HeadersInit);
 
   if (!fetchHeaders.has('apikey')) {
-    fetchHeaders.set('apikey', supabaseAnonKey);
+    fetchHeaders.set('apikey', effectiveAnonKey);
   }
 
   const maxRetries = 3;

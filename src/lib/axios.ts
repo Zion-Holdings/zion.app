@@ -77,7 +77,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
 
   const instance: AxiosInstance = {
     interceptors: { request: new InterceptorManager(), response: new InterceptorManager() },
-    async get<T = any>(url, init: { params?: Record<string, any> } & RequestConfig = {} as any) {
+    async get<T = any>(url: string, init: { params?: Record<string, any> } & RequestConfig = {} as any) {
       const params = (init as any).params
         ? '?' + new URLSearchParams((init as any).params).toString()
         : '';
@@ -85,7 +85,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       delete (opts as any).params;
       return request<T>(baseURL + url + params, 'GET', opts);
     },
-    async post<T = any>(url, data: any = {}, init: RequestConfig = {}) {
+    async post<T = any>(url: string, data: any = {}, init: RequestConfig = {}) {
       const headers = {
         'Content-Type': 'application/json',
         ...(init as any).headers,
@@ -119,12 +119,12 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     // Run request interceptors
     for (const h of instance.interceptors.request.handlers) {
       try {
-        if (h.fulfilled) {
+        if (h?.fulfilled) {
           const res = await h.fulfilled(reqInit);
           if (res) reqInit = res;
         }
       } catch (err) {
-        if (h.rejected) {
+        if (h?.rejected) {
           await h.rejected(err);
         }
       }
@@ -163,7 +163,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     if (response.ok) {
       let res: any = result;
       for (const h of instance.interceptors.response.handlers) {
-        if (h.fulfilled) {
+        if (h?.fulfilled) {
           res = await h.fulfilled(res);
         }
       }
@@ -174,8 +174,8 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
         config: { url, method },
       });
       for (const h of instance.interceptors.response.handlers) {
-        if (h.rejected) {
-          await h.rejected(err);
+        if (h?.rejected) {
+          await h.rejected(err as any);
         }
       }
       throw err;

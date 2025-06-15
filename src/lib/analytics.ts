@@ -11,10 +11,12 @@ export const initGA = () => {
     return;
   }
 
-  // Initialize GA4
-  window.gtag('config', measurementId);
-};
-
+  
+    // Initialize GA4
+    if (window.gtag) {
+      window.gtag('config', measurementId);
+    }
+  };
 export const fireEvent = (eventName: string, eventParams?: Record<string, any>) => {
   if (!window.gtag) {
     console.error("gtag is not defined. Make sure GA4 is initialized.");
