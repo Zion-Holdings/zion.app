@@ -550,7 +550,7 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
               </div>
               <div className="flex justify-between">
                 <span className="font-medium">Raised by:</span>
-                <span>{dispute.raised_by === dispute.client_profile?.id ? "Client" : "Talent"}</span>
+                <span>{dispute.client_profile && dispute.talent_profile && dispute.raised_by === (dispute.client_profile as any).id ? "Client" : dispute.talent_profile && dispute.raised_by === (dispute.talent_profile as any).id ? "Talent" : "Unknown"}</span>
               </div>
             </CardContent>
           </Card>
