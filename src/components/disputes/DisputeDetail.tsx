@@ -87,7 +87,7 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
     
     const success = await resolveDispute(disputeId, {
       summary: resolution.summary,
-      resolution_type: (resolution.resolution_type || "compromise") as ResolutionType,
+      resolution_type: (isValidResolutionType(resolution.resolution_type) ?? "compromise") as ResolutionType,
     });
     if (success && dispute) {
       setDispute({
@@ -147,6 +147,10 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
       case "closed": return "outline";
       default: return "default";
     }
+    
+    const isValidResolutionType = (value: string | null): value is ResolutionType => {
+      return value !== null && ["arbitration", "refund", "compromise"].includes(value);
+    };
   };
 
   return (
