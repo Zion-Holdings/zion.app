@@ -95,7 +95,7 @@ export function TransactionHistory() {
       console.error("Error managing transaction:", error);
       toast({
         title: "Error",
-        description: error.message || "Failed to update transaction",
+        description: error instanceof Error ? error.message : "Failed to update transaction",
         variant: "destructive",
       });
     }

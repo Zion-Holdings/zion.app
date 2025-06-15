@@ -28,11 +28,11 @@ export interface UserDetails {
 export interface UserProfile {
   id?: string;
   displayName?: string;
-  email: string;
-  userType: string;
-  profileComplete: boolean;
-  createdAt: string;
-  updatedAt: string;
+  email?: string;
+  userType?: string;
+  profileComplete?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
   avatar_url?: string;
   bio?: string;
   avatarUrl?: string;

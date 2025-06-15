@@ -18,7 +18,7 @@ export function mapProfileToUser(user: SupabaseUser, profile: any): UserProfile 
     id: user.id,
     email: user.email || "",
     displayName: profile.display_name || "",
-    userType: (profile.user_type as "creator" | "jobSeeker" | "employer" | "buyer" | "admin" | null) || null,
+    userType: (profile.user_type as "creator" | "jobSeeker" | "employer" | "buyer" | "admin" | null) || "",
     profileComplete: Boolean(profile.profile_complete),
     createdAt: new Date(profile.created_at).toISOString(),
     updatedAt: new Date(profile.updated_at).toISOString(),
