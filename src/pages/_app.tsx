@@ -52,6 +52,7 @@ import { AppLayout } from '@/layout/AppLayout';
 // import { ReferralMiddleware } from '@/components/referral/ReferralMiddleware';
 import { Provider } from 'react-redux';
 import { store } from '@/store';
+import type { AppProps } from 'next/app';
 
 // Import auth and notification providers
 import { AuthProvider } from '@/context/auth/AuthProvider';
@@ -84,7 +85,7 @@ const queryClient = new QueryClient({
 });
 
 // Define MyApp component
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   // TODO: Consider moving checkEssentialEnvVars and other initializations
   // to an effect hook within MyApp or ensure they are Next.js compatible.
   try {
