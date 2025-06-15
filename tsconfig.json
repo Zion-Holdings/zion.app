@@ -1,3 +1,4 @@
+"include": ["types/**/*.d.ts"]
 {
   "compilerOptions": {
     "target": "ES2022",
@@ -57,7 +58,8 @@
   "include": [
     "src",
     "src/types",
-    "pages"
+    "pages",
+    "types/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",

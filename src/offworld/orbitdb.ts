@@ -1,8 +1,4 @@
-import { createOrbitDB } from '@orbitdb/core';
-
-declare module '@orbitdb/core' {
-  export function createOrbitDB(ipfs: any, options?: any): Promise<any>;
-}
+/// &lt;reference types="../types/orbitdb__core.d.ts" />
 import { createHelia, Helia } from 'helia';
 import { createLibp2p, Libp2p } from 'libp2p';
 import { gossipsub } from '@chainsafe/libp2p-gossipsub';
