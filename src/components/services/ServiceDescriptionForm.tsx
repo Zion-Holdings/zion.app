@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Loader, Sparkles } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
+import { useForm, ControllerRenderProps } from "react-hook-form";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -92,7 +92,7 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
             <FormField
               control={form.control}
               name="title"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<FormData, "title"> }) => (
                 <FormItem>
                   <FormLabel className="text-zion-slate-light">Service Title</FormLabel>
                   <FormControl>
@@ -111,7 +111,7 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
             <FormField
               control={form.control}
               name="keyFeatures"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<FormData, "keyFeatures"> }) => (
                 <FormItem>
                   <FormLabel className="text-zion-slate-light">Key Features</FormLabel>
                   <FormControl>
@@ -130,7 +130,7 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
             <FormField
               control={form.control}
               name="targetAudience"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<FormData, "targetAudience"> }) => (
                 <FormItem>
                   <FormLabel className="text-zion-slate-light">Target Audience</FormLabel>
                   <FormControl>

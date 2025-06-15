@@ -60,7 +60,7 @@ export default function ProductPage() {
     setAdding(true);
     dispatch({
       type: 'ADD_ITEM',
-      payload: { id: product.id, name: product.title, price: product.price ?? 0, quantity: 1 }
+      payload: { id: product.id, title: product.title, price: product.price ?? 0 } // Corrected: name to title, removed quantity
     });
     toast.success(`1× ${product.title} added`);
     setTimeout(() => setAdding(false), 500);

@@ -60,11 +60,12 @@ export function useWallet() {
 
   async function earnTokens(amount: number, reason?: string) {
     if (!user?.id) return;
+    const currentUserId = user.id; // Added line
     setWallet(prev => prev ? { ...prev, balance: prev.balance + amount } : prev);
     setTransactions(prev => [
       {
         id: crypto.randomUUID(),
-        user_id: user.id,
+        user_id: currentUserId, // Replaced user.id
         amount,
         transaction_type: 'earn',
         reason: reason || null,
@@ -76,13 +77,14 @@ export function useWallet() {
 
   async function spendTokens(amount: number, reason?: string) {
     if (!user?.id) return;
+    const currentUserId = user.id; // Added line
     setWallet(prev =>
       prev ? { ...prev, balance: Math.max(0, prev.balance - amount) } : prev
     );
     setTransactions(prev => [
       {
         id: crypto.randomUUID(),
-        user_id: user.id,
+        user_id: currentUserId, // Replaced user.id
         amount,
         transaction_type: 'burn',
         reason: reason || null,

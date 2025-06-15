@@ -68,14 +68,21 @@ export const quoteRequestService = {
     
     // If marking as in_review and viewed_at is null, set viewed_at
     if (status === 'in_review') {
-      const { data } = await supabase
+      const { data, error: queryError } = await supabase
         .from('quote_requests')
         .select('viewed_at')
         .eq('id', id)
         .single();
+
+      if (queryError && queryError.code !== 'PGRST116') { // PGRST116: Row to be returned was not found
+        throw queryError; // Re-throw actual errors
+      }
       
-      if (!data.viewed_at) {
+      if (data && !data.viewed_at) { // Check if data exists and then if viewed_at is null/undefined
         updates.viewed_at = new Date().toISOString();
+      } else if (!data) {
+        // Handle case where quote request itself wasn't found, though this might be an error condition
+        console.warn(`Quote request with id ${id} not found when trying to update viewed_at.`);
       }
     }
     

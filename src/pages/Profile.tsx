@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import type { GetServerSideProps } from 'next';
+// Removed GetServerSidePropsContext, NextApiRequestCookies from 'next'
+// Removed ParsedUrlQuery from 'querystring' as it's not directly used if context is simplified
 import { ProfileForm, ProfileValues } from '@/components/profile/ProfileForm';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import type { Order } from '@/hooks/useOrders';
 import Link from 'next/link';
+import type { IncomingMessage, IncomingHttpHeaders } from 'http'; // For req type
 
 interface User {
   id: string;
@@ -16,6 +19,19 @@ interface User {
 interface ProfileProps {
   user: User;
   orders: Order[];
+}
+
+// Define a minimal context type focusing on what's used
+interface MySimpleServerSidePropsContext {
+  req: { headers: IncomingHttpHeaders }; // req.headers.cookie is used
+  // Add other context properties if they were used by the function:
+  // res?: ServerResponse; // from 'http'
+  // query?: ParsedUrlQuery; // from 'querystring'
+  // params?: ParsedUrlQuery;
+  // resolvedUrl?: string;
+  // locale?: string;
+  // locales?: string[];
+  // defaultLocale?: string;
 }
 
 export default function Profile({ user: initialUser, orders }: ProfileProps) {
@@ -55,7 +71,8 @@ export default function Profile({ user: initialUser, orders }: ProfileProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<ProfileProps> = async ({ req }) => {
+export const getServerSideProps: GetServerSideProps<ProfileProps> = async (context: MySimpleServerSidePropsContext) => {
+  const { req } = context;
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   const [userRes, ordersRes] = await Promise.all([
     fetch(`${base}/api/users/me`, { headers: { cookie: req.headers.cookie || '' } }),

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useJobApplications } from "@/hooks/useJobApplications";
@@ -113,25 +112,11 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="">No resume</SelectItem>
-<<<<<<< HEAD
                 {resumes.map((resume) => (resume.id ?
                   <SelectItem key={resume.id} value={resume.id}>
                     {resume.basic_info.title || "Untitled Resume"}
                   </SelectItem> : null
                 ))}
-
-=======
-                {resumes.map((resume) => {
-                  if (resume.id) {
-                    return (
-                      <SelectItem key={resume.id} value={resume.id}>
-                        {resume.basic_info.title || "Untitled Resume"}
-                      </SelectItem>
-                    );
-                  }
-                  return null;
-                })}
->>>>>>> 1ffcf134989eccb27fbb3fe635d87fb24b8f2cde
               </SelectContent>
             </Select>
           ) : (

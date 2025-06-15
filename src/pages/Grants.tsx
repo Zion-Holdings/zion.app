@@ -11,6 +11,7 @@ import {
   FormControl,
   FormMessage,
 } from '@/components/ui/form';
+import { ControllerRenderProps } from 'react-hook-form'; // Added import
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import {
@@ -75,7 +76,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="projectName"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "projectName"> }) => (
                   <FormItem>
                     <FormLabel>Project Name</FormLabel>
                     <FormControl>
@@ -88,7 +89,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="teamInfo"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "teamInfo"> }) => (
                   <FormItem>
                     <FormLabel>Team Info</FormLabel>
                     <FormControl>
@@ -101,7 +102,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="summary"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "summary"> }) => (
                   <FormItem>
                     <FormLabel>Proposal Summary</FormLabel>
                     <FormControl>
@@ -114,7 +115,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="timeline"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "timeline"> }) => (
                   <FormItem>
                     <FormLabel>Timeline</FormLabel>
                     <FormControl>
@@ -127,7 +128,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="budget"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "budget"> }) => (
                   <FormItem>
                     <FormLabel>Budget Request (ZION$ or USDC)</FormLabel>
                     <FormControl>
@@ -140,7 +141,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="links"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "links"> }) => (
                   <FormItem>
                     <FormLabel>Supporting Links / Pitch Deck</FormLabel>
                     <FormControl>
@@ -152,7 +153,7 @@ export default function GrantsPage() {
               <FormField
                 control={form.control}
                 name="category"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "category"> }) => (
                   <FormItem>
                     <FormLabel>Category</FormLabel>
                     <Select value={field.value} onValueChange={field.onChange}>

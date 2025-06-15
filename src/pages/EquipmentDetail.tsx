@@ -190,7 +190,7 @@ export default function EquipmentDetail() {
     setIsAdding(true);
     dispatch({
       type: 'ADD_ITEM',
-      payload: { id: equipment.id, name: equipment.name, price: equipment.price, quantity }
+      payload: { id: equipment.id, title: equipment.name, price: equipment.price } // quantity removed
     });
     toast.success(`${quantity}× ${equipment.name} added`);
     setTimeout(() => setIsAdding(false), 800);
@@ -205,7 +205,7 @@ export default function EquipmentDetail() {
 
     dispatch({
       type: 'ADD_ITEM',
-      payload: { id, name: equipment.name, price: equipment.price, quantity }
+      payload: { id: equipment.id, title: equipment.name, price: equipment.price } // quantity removed
     });
     router.push('/checkout');
   };

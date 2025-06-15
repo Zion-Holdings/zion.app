@@ -40,7 +40,7 @@ export default function CardForm({ amount, onSuccess }: Props) {
               email: (user && typeof user !== 'boolean' ? user.email : undefined),
               name:
                 user && typeof user !== 'boolean'
-                  ? user.displayName || user.name
+                  ? user.displayName
                   : undefined,
             },
           },

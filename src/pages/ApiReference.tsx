@@ -15,10 +15,10 @@ export function ApiReference() {
       path: "/api/jobs",
       description: "Retrieve a list of job postings with optional filtering",
       parameters: [
-        { name: "status", type: "string", description: "Filter by job status (open, closed, draft)" },
-        { name: "category", type: "string", description: "Filter by job category" },
-        { name: "limit", type: "integer", description: "Number of results per page (default: 20, max: 100)" },
-        { name: "offset", type: "integer", description: "Pagination offset (default: 0)" },
+        { name: "status", type: "string", required: false, description: "Filter by job status (open, closed, draft)" },
+        { name: "category", type: "string", required: false, description: "Filter by job category" },
+        { name: "limit", type: "integer", required: false, description: "Number of results per page (default: 20, max: 100)" },
+        { name: "offset", type: "integer", required: false, description: "Pagination offset (default: 0)" },
       ],
       responses: {
         "200": {
@@ -75,8 +75,8 @@ export function ApiReference() {
         { name: "description", type: "string", required: true, description: "Detailed job description" },
         { name: "category", type: "string", required: true, description: "Job category" },
         { name: "budget", type: "object", required: true, description: "Budget information with min, max, and currency" },
-        { name: "skills", type: "array", description: "Array of required skills" },
-        { name: "deadline", type: "string", description: "Application deadline (ISO date format)" },
+        { name: "skills", type: "array", required: false, description: "Array of required skills" },
+        { name: "deadline", type: "string", required: false, description: "Application deadline (ISO date format)" },
       ],
       responses: {
         "201": {
@@ -132,13 +132,13 @@ export function ApiReference() {
       path: "/api/talent",
       description: "Search for talent profiles with optional filtering",
       parameters: [
-        { name: "skills", type: "string", description: "Comma-separated list of skills" },
-        { name: "category", type: "string", description: "Filter by talent category" },
-        { name: "rate_min", type: "integer", description: "Minimum hourly rate" },
-        { name: "rate_max", type: "integer", description: "Maximum hourly rate" },
-        { name: "availability", type: "string", description: "Availability type (full-time, part-time)" },
-        { name: "limit", type: "integer", description: "Number of results per page (default: 20, max: 100)" },
-        { name: "offset", type: "integer", description: "Pagination offset (default: 0)" },
+        { name: "skills", type: "string", required: false, description: "Comma-separated list of skills" },
+        { name: "category", type: "string", required: false, description: "Filter by talent category" },
+        { name: "rate_min", type: "integer", required: false, description: "Minimum hourly rate" },
+        { name: "rate_max", type: "integer", required: false, description: "Maximum hourly rate" },
+        { name: "availability", type: "string", required: false, description: "Availability type (full-time, part-time)" },
+        { name: "limit", type: "integer", required: false, description: "Number of results per page (default: 20, max: 100)" },
+        { name: "offset", type: "integer", required: false, description: "Pagination offset (default: 0)" },
       ],
       responses: {
         "200": {

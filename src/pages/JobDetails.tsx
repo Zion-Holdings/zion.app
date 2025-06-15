@@ -188,8 +188,8 @@ export default function JobDetails() {
             id: job.id,
             title: job.title,
             description: job.description,
-            company_name: job.company_name || "Company",
-            budget: job.budget,
+            company_name: "Company", // Placeholder as job object doesn't have company_name directly
+            budget: formatBudget(job.budget), // Format budget object to string
             client_id: job.client_id
           }}
           isOpen={isApplyModalOpen}

@@ -27,7 +27,7 @@ export interface HeaderProps {
 export function Header({ hideLogin = false, customLogo, customTheme }: HeaderProps) {
   const { user } = useAuth();
   const firstName =
-    (user && typeof user !== 'boolean' ? (user.displayName?.split(' ')[0] || user.name?.split(' ')[0]) : undefined) || '';
+    (user && typeof user !== 'boolean' ? (user.displayName?.split(' ')[0]) : undefined) || '';
   const { isWhitelabel, primaryColor } = useWhitelabel();
   const { t } = useTranslation();
   const router = useRouter(); // Changed from useNavigate

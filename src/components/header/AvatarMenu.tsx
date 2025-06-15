@@ -14,14 +14,14 @@ export const AvatarMenu: React.FC = () => {
 
   if (!user) return null;
 
-  const initials = (user.displayName || user.name || 'U').charAt(0);
+  const initials = (user.displayName || 'U').charAt(0);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Avatar className="h-8 w-8 cursor-pointer">
           {avatarUrl ? (
-            <AvatarImage src={avatarUrl} alt={user.displayName || user.name || 'User'} />
+            <AvatarImage src={avatarUrl} alt={user.displayName || 'User'} />
           ) : (
             <AvatarFallback>{initials}</AvatarFallback>
           )}

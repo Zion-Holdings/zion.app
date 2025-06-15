@@ -41,11 +41,12 @@ export interface UserProfile {
   permissions?: string[];
   companyId?: string;
   points?: number;
+  emailVerified?: boolean; // Added emailVerified
 }
 
 // Update AuthContextType definition to match implementation
 export interface AuthContextType {
-  user: UserDetails | null;
+  user: UserProfile | null; // Changed from UserDetails
   isLoading: boolean;
   isAuthenticated: boolean;
   login: (
@@ -70,7 +71,7 @@ export interface AuthContextType {
   register?: (name: string, email: string, password: string) => Promise<{ error?: any }>; 
   logout: () => Promise<void>;
   resetPassword: (email: string) => Promise<{ error?: any }>;
-  updateProfile: (data: Partial<UserDetails>) => Promise<{ error?: any }>;
+  updateProfile: (data: Partial<UserProfile>) => Promise<{ error?: any }>; // Changed from UserDetails
   loginWithGoogle: () => Promise<void>;
   loginWithFacebook: () => Promise<void>;
   loginWithTwitter: () => Promise<void>;
@@ -80,9 +81,9 @@ export interface AuthContextType {
   signUp?: (
     email: string,
     password: string,
-    userData?: Partial<UserDetails>
+    userData?: Partial<UserProfile> // Changed from UserDetails
   ) => Promise<{ error: any; emailVerificationRequired?: boolean }>;
-  setUser?: React.Dispatch<React.SetStateAction<UserDetails | null>>;
+  setUser?: React.Dispatch<React.SetStateAction<UserProfile | null>>; // Changed from UserDetails
   tokens?: { accessToken: string; refreshToken?: string } | null;
   avatarUrl?: string | null;
   setAvatarUrl?: (url: string | null) => void;

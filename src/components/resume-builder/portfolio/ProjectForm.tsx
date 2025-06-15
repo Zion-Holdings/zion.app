@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, ControllerRenderProps } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
@@ -104,7 +104,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="title"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<ProjectFormValues, "title"> }) => (
             <FormItem>
               <FormLabel>Project Title</FormLabel>
               <FormControl>
@@ -118,7 +118,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="description"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<ProjectFormValues, "description"> }) => (
             <FormItem>
               <FormLabel>Project Description</FormLabel>
               <FormControl>
@@ -136,7 +136,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="technologies"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<ProjectFormValues, "technologies"> }) => (
             <FormItem>
               <FormLabel>Technologies Used</FormLabel>
               <FormControl>
@@ -151,7 +151,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
           <FormField
             control={form.control}
             name="github_url"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<ProjectFormValues, "github_url"> }) => (
               <FormItem>
                 <FormLabel className="flex items-center gap-2">
                   <Github className="h-4 w-4" />
@@ -168,7 +168,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
           <FormField
             control={form.control}
             name="demo_url"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<ProjectFormValues, "demo_url"> }) => (
               <FormItem>
                 <FormLabel className="flex items-center gap-2">
                   <Link className="h-4 w-4" />
@@ -186,7 +186,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="image_url"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<ProjectFormValues, "image_url"> }) => (
             <FormItem>
               <FormLabel className="flex items-center gap-2">
                 <FileImage className="h-4 w-4" />

@@ -38,9 +38,9 @@ const UserProfileDropdown: React.FC = () => {
       >
         <Avatar className="h-8 w-8">
           {(user && typeof user !== 'boolean' && user.avatarUrl) ? (
-            <AvatarImage src={user.avatarUrl} alt={(user && typeof user !== 'boolean' ? (user.displayName || user.name) : '') || 'User'} />
+            <AvatarImage src={user.avatarUrl} alt={(user && typeof user !== 'boolean' ? (user.displayName) : '') || 'User'} />
           ) : (
-            <AvatarFallback>{((user && typeof user !== 'boolean' ? (user.displayName || user.name) : '') || 'U').charAt(0)}</AvatarFallback>
+            <AvatarFallback>{((user && typeof user !== 'boolean' ? (user.displayName) : '') || 'U').charAt(0)}</AvatarFallback>
           )}
         </Avatar>
       </button>

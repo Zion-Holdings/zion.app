@@ -20,7 +20,7 @@ export default function Home() {
   const { t } = useTranslation();
   const { user } = useAuth();
   const firstName =
-    user?.displayName?.split(' ')[0] || user?.name?.split(' ')[0];
+    user?.displayName?.split(' ')[0] || 'User';
   return (
     <div className="min-h-screen bg-background">
       <NextSeo

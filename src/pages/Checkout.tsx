@@ -8,6 +8,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { getStripe } from '@/utils/getStripe';
 import { Input } from '@/components/ui/input';
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
+import { ControllerRenderProps } from 'react-hook-form'; // Added import
 import { useAuth } from '@/hooks/useAuth';
 
 interface CheckoutFormData {
@@ -50,35 +51,35 @@ function CheckoutInner() {
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-          <FormField name="name" control={form.control} render={({ field }) => (
+          <FormField name="name" control={form.control} render={({ field }: { field: ControllerRenderProps<CheckoutFormData, "name"> }) => (
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl><Input {...field} /></FormControl>
               <FormMessage />
             </FormItem>
           )} />
-          <FormField name="email" control={form.control} render={({ field }) => (
+          <FormField name="email" control={form.control} render={({ field }: { field: ControllerRenderProps<CheckoutFormData, "email"> }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl><Input type="email" {...field} /></FormControl>
               <FormMessage />
             </FormItem>
           )} />
-          <FormField name="address" control={form.control} render={({ field }) => (
+          <FormField name="address" control={form.control} render={({ field }: { field: ControllerRenderProps<CheckoutFormData, "address"> }) => (
             <FormItem>
               <FormLabel>Address</FormLabel>
               <FormControl><Input {...field} /></FormControl>
               <FormMessage />
             </FormItem>
           )} />
-          <FormField name="city" control={form.control} render={({ field }) => (
+          <FormField name="city" control={form.control} render={({ field }: { field: ControllerRenderProps<CheckoutFormData, "city"> }) => (
             <FormItem>
               <FormLabel>City</FormLabel>
               <FormControl><Input {...field} /></FormControl>
               <FormMessage />
             </FormItem>
           )} />
-          <FormField name="country" control={form.control} render={({ field }) => (
+          <FormField name="country" control={form.control} render={({ field }: { field: ControllerRenderProps<CheckoutFormData, "country"> }) => (
             <FormItem>
               <FormLabel>Country</FormLabel>
               <FormControl><Input {...field} /></FormControl>

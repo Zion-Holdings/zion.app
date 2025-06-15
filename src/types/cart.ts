@@ -11,7 +11,7 @@ export interface CartContextType {
 }
 
 export type CartAction =
-  | { type: 'ADD_ITEM'; payload: CartItem }
+  | { type: 'ADD_ITEM'; payload: { id: string; title: string; price: number } } // quantity removed, reducer handles it
   | { type: 'REMOVE_ITEM'; payload: string }
   | { type: 'CLEAR_CART' }
   | { type: 'SET_ITEMS'; payload: CartItem[] };

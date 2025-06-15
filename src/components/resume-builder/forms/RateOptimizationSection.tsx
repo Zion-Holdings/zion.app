@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Control } from "react-hook-form";
+import { Control, ControllerRenderProps, UseFormSetValue } from "react-hook-form"; // Added ControllerRenderProps and UseFormSetValue
 import { 
   FormField, 
   FormItem, 
@@ -15,7 +15,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 interface RateOptimizationSectionProps {
   control: Control<any>;
-  setValue: (name: string, value: any) => void;
+  setValue: UseFormSetValue<any>; // Changed to UseFormSetValue<any>
   skills: string[];
   yearsExperience: number;
   location?: string;
@@ -39,7 +39,7 @@ export const RateOptimizationSection: React.FC<RateOptimizationSectionProps> = (
       <FormField
         control={control}
         name="hourlyRate"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<any, "hourlyRate"> }) => (
           <FormItem>
             <FormLabel>Your {rateType === "hourly" ? "Hourly Rate" : "Fixed Rate"} ($USD)</FormLabel>
             <FormControl>

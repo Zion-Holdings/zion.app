@@ -12,7 +12,11 @@ export const initGA = () => {
   }
 
   // Initialize GA4
-  window.gtag('config', measurementId);
+  if (typeof window.gtag === 'function') {
+    window.gtag('config', measurementId);
+  } else {
+    console.warn("GA4 gtag function not found. 'config' not sent.");
+  }
 };
 
 export const fireEvent = (eventName: string, eventParams?: Record<string, any>) => {

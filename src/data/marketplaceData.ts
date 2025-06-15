@@ -456,8 +456,8 @@ export const generateFilterOptions = (
 ): FilterOptions => {
   // Extract unique categories, locations, and availability options from the provided listings
   const productTypes = [...new Set(listings.map(listing => listing.category))].sort();
-  const locations = [...new Set(listings.map(listing => listing.location).filter(Boolean))].sort();
-  const availability = [...new Set(listings.map(listing => listing.availability).filter(Boolean))].sort();
+  const locations = [...new Set(listings.map(listing => listing.location).filter((loc): loc is string => typeof loc === 'string'))].sort();
+  const availability = [...new Set(listings.map(listing => listing.availability).filter((avail): avail is string => typeof avail === 'string'))].sort();
   
   const prices = listings.map(listing => listing.price || 0);
   const minPrice = Math.min(...prices);

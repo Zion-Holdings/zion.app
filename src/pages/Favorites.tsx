@@ -3,14 +3,14 @@ import { useFavorites } from '@/context/FavoritesContext.jsx';
 import { NEW_PRODUCTS } from '@/data/newProductsData';
 
 export default function FavoritesPage() {
-  const { favorites } = useFavorites();
+  const { favorites, loading, error }: { favorites: string[]; loading: boolean; error: Error | null } = useFavorites();
 
   const map: Record<string, any> = {};
   for (const p of NEW_PRODUCTS) {
     map[p.id] = p;
   }
 
-  const items = favorites.map(id => map[id]).filter(Boolean);
+  const items = favorites.map((id: string) => map[id]).filter(Boolean);
 
   return (
     <div className="container py-8">

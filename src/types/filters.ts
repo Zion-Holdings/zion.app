@@ -1,4 +1,6 @@
 
+export type FilterSectionName = "region" | "price" | "experience" | "skills" | "availability";
+
 export interface FilterSidebarProps {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
@@ -19,7 +21,7 @@ export interface FilterSidebarProps {
     experience: boolean;
     price: boolean;
   };
-  toggleSection: (sectionName: string) => void;
+  toggleSection: (sectionName: FilterSectionName) => void;
   sortOption: string;
   setSortOption: (option: string) => void;
   clearFilters: () => void;

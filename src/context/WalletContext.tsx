@@ -196,7 +196,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     ...initialWalletState,
     // Explicitly set based on project ID validity initial check.
     // The useEffect below will further refine this if the project ID is valid and AppKit initializes.
-    isWalletSystemAvailable: isProjectIdValid,
+    isWalletSystemAvailable: !!isProjectIdValid, // Ensure boolean
   });
 
   // Removed commented out useAppKit related code and console logs.

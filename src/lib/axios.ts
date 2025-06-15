@@ -77,7 +77,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
 
   const instance: AxiosInstance = {
     interceptors: { request: new InterceptorManager(), response: new InterceptorManager() },
-    async get<T = any>(url, init: { params?: Record<string, any> } & RequestConfig = {} as any) {
+    async get<T = any>(url: string, init: { params?: Record<string, any> } & RequestConfig = {} as any) {
       const params = (init as any).params
         ? '?' + new URLSearchParams((init as any).params).toString()
         : '';
@@ -85,7 +85,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       delete (opts as any).params;
       return request<T>(baseURL + url + params, 'GET', opts);
     },
-    async post<T = any>(url, data: any = {}, init: RequestConfig = {}) {
+    async post<T = any>(url: string, data: any = {}, init: RequestConfig = {}) {
       const headers = {
         'Content-Type': 'application/json',
         ...(init as any).headers,
@@ -93,7 +93,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       const opts = { ...init, body: JSON.stringify(data), headers } as RequestConfig;
       return request<T>(baseURL + url, 'POST', opts);
     },
-    async patch<T = any>(url, data: any = {}, init: RequestConfig = {}) {
+    async patch<T = any>(url: string, data: any = {}, init: RequestConfig = {}) {
       const headers = {
         'Content-Type': 'application/json',
         ...(init as any).headers,
@@ -101,7 +101,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       const opts = { ...init, body: JSON.stringify(data), headers } as RequestConfig;
       return request<T>(baseURL + url, 'PATCH', opts);
     },
-    async delete<T = any>(url, init: RequestConfig = {} as any) {
+    async delete<T = any>(url: string, init: RequestConfig = {} as any) {
       return request<T>(baseURL + url, 'DELETE', init);
     },
   };
@@ -118,14 +118,16 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     let reqInit: RequestConfig = { ...init };
     // Run request interceptors
     for (const h of instance.interceptors.request.handlers) {
-      try {
-        if (h.fulfilled) {
-          const res = await h.fulfilled(reqInit);
-          if (res) reqInit = res;
-        }
-      } catch (err) {
-        if (h.rejected) {
-          await h.rejected(err);
+      if (h) { // Added null check for h
+        try {
+          if (h.fulfilled) {
+            const res = await h.fulfilled(reqInit);
+            if (res) reqInit = res;
+          }
+        } catch (err) {
+          if (h.rejected) { // h is not null here
+            await h.rejected(err);
+          }
         }
       }
     }
@@ -141,7 +143,18 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       safeStorage.getItem('zion_token') ||
       safeStorage.getItem('token');
 
-    const headers = { ...globalDefaults.headers.common, ...reqInit.headers };
+    const headers: Record<string, string> = { ...globalDefaults.headers.common };
+    if (reqInit.headers) {
+      if (reqInit.headers instanceof Headers) {
+        (reqInit.headers as Headers).forEach((value, key) => headers[key] = value);
+      } else if (Array.isArray(reqInit.headers)) { // string[][]
+        for (const [key, value] of (reqInit.headers as string[][])) {
+          headers[key] = value;
+        }
+      } else { // Record<string, string>
+        Object.assign(headers, reqInit.headers as Record<string, string>);
+      }
+    }
     if (authToken) {
       headers['Authorization'] = `Bearer ${authToken}`;
     }
@@ -163,7 +176,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     if (response.ok) {
       let res: any = result;
       for (const h of instance.interceptors.response.handlers) {
-        if (h.fulfilled) {
+        if (h && h.fulfilled) { // Added null check for h
           res = await h.fulfilled(res);
         }
       }
@@ -174,7 +187,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
         config: { url, method },
       });
       for (const h of instance.interceptors.response.handlers) {
-        if (h.rejected) {
+        if (h && h.rejected) { // Added null check for h
           await h.rejected(err);
         }
       }

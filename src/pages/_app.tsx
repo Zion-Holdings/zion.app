@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import type { AppProps } from 'next/app'; // Added AppProps import
 import 'normalize.css';
 import { Global, css } from '@emotion/react';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -84,7 +85,7 @@ const queryClient = new QueryClient({
 });
 
 // Define MyApp component
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) { // Typed props with AppProps
   // TODO: Consider moving checkEssentialEnvVars and other initializations
   // to an effect hook within MyApp or ensure they are Next.js compatible.
   try {
