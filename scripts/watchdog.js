@@ -9,12 +9,13 @@
  * For production, run this script using a process manager like PM2 (e.g., pm2 start scripts/watchdog.js --name my-watchdog)
  */
 
-const { Tail } = require('tail');
-const path =require('path');
-const { exec } = require('child_process');
-const fs = require('fs');
-const os = require('os-utils');
-const axios = require('axios');
+import { Tail } from 'tail';
+import path from 'path';
+import { exec } from 'child_process';
+import fs from 'fs';
+import os from 'os-utils';
+import axios from 'axios';
+import { pathToFileURL } from 'url';
 
 // --- Discord Configuration ---
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
@@ -390,52 +391,52 @@ function startMonitoring() {
 
 // This part runs when the script is executed directly
 // and not when imported as a module (e.g., for testing)
-if (require.main === module && process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV !== 'test' && import.meta.url === pathToFileURL(process.argv[1]).href) {
   startMonitoring();
 }
 
 // --- Exports for Testing ---
 // This allows Jest to import and test these functions and states.
-module.exports = {
-  // Functions
+export {
   logError,
   sendDiscordAlert,
   appendToSelfHealLog,
   triggerSelfHeal,
   monitorSystemResources,
-
-  // State (exposed via helpers for controlled access)
-  _getStateForTests: () => ({
-    perfErrorStreak,
-    securityPatchStreak,
-    isHealing,
-    highCpuUsageCount,
-  }),
-  _setStateForTests: (newState) => {
-    if (newState.hasOwnProperty('perfErrorStreak')) perfErrorStreak = newState.perfErrorStreak;
-    if (newState.hasOwnProperty('securityPatchStreak')) securityPatchStreak = newState.securityPatchStreak;
-    if (newState.hasOwnProperty('isHealing')) isHealing = newState.isHealing;
-    if (newState.hasOwnProperty('highCpuUsageCount')) highCpuUsageCount = newState.highCpuUsageCount;
-  },
-  _resetStateForTests: () => {
-    perfErrorStreak = 0;
-    securityPatchStreak = 0;
-    isHealing = false;
-    highCpuUsageCount = 0;
-  },
-  // Constants (if needed for test validation)
-  _getConstantsForTests: () => ({
-    BASE_LOG_PATH,
-    PERF_LOG_FILE,
-    SECURITY_LOG_FILE,
-    SELF_HEAL_LOG_FILE,
-    PERF_ERROR_REGEX,
-    SECURITY_PATCH_REGEX,
-    HEAL_COMMAND,
-    MEMORY_THRESHOLD,
-    CPU_THRESHOLD,
-    CPU_SUSTAINED_CHECKS,
-    SYSTEM_CHECK_INTERVAL,
-    DISCORD_WEBHOOK_URL // Include this to allow tests to check its usage if needed, though process.env is usually better for this one
-  })
 };
+
+export const _getStateForTests = () => ({
+  perfErrorStreak,
+  securityPatchStreak,
+  isHealing,
+  highCpuUsageCount,
+});
+
+export const _setStateForTests = (newState) => {
+  if (Object.prototype.hasOwnProperty.call(newState, 'perfErrorStreak')) perfErrorStreak = newState.perfErrorStreak;
+  if (Object.prototype.hasOwnProperty.call(newState, 'securityPatchStreak')) securityPatchStreak = newState.securityPatchStreak;
+  if (Object.prototype.hasOwnProperty.call(newState, 'isHealing')) isHealing = newState.isHealing;
+  if (Object.prototype.hasOwnProperty.call(newState, 'highCpuUsageCount')) highCpuUsageCount = newState.highCpuUsageCount;
+};
+
+export const _resetStateForTests = () => {
+  perfErrorStreak = 0;
+  securityPatchStreak = 0;
+  isHealing = false;
+  highCpuUsageCount = 0;
+};
+
+export const _getConstantsForTests = () => ({
+  BASE_LOG_PATH,
+  PERF_LOG_FILE,
+  SECURITY_LOG_FILE,
+  SELF_HEAL_LOG_FILE,
+  PERF_ERROR_REGEX,
+  SECURITY_PATCH_REGEX,
+  HEAL_COMMAND,
+  MEMORY_THRESHOLD,
+  CPU_THRESHOLD,
+  CPU_SUSTAINED_CHECKS,
+  SYSTEM_CHECK_INTERVAL,
+  DISCORD_WEBHOOK_URL,
+});
