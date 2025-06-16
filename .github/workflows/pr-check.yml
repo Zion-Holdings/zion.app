@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Node
+        id: setup-node
         uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -19,6 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        if: steps.setup-node.outputs.cache-hit != 'true'
 
       - name: Run ESLint
         run: npm run lint
