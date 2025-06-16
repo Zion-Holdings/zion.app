@@ -1,4 +1,4 @@
-import { handler as sentryCheck } from '../../netlify/functions/_sentryCheck';
+import { handler as sentryCheck } from '../../netlify/functions/sentryCheck';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 async function handler(req, res) {
     if (req.method !== 'GET') {
