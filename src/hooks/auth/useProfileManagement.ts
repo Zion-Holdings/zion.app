@@ -36,8 +36,6 @@ export const useProfileManagement = (setIsLoading: (loading: boolean) => void) =
         .update({
           display_name: data.displayName,
           user_type: data.userType,
-          bio: data.bio,
-          headline: data.headline,
           avatar_url: data.avatarUrl,
           profile_complete: data.profileComplete,
           updated_at: new Date().toISOString(),

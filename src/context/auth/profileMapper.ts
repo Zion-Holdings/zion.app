@@ -13,20 +13,28 @@ export interface SupabaseUser {
 /**
  * Maps Supabase profile data to our app's user model
  */
+const userTypeMap = {
+  creator: 'talent' as "talent",
+  jobSeeker: 'talent' as "talent",
+  employer: 'client' as "client",
+  buyer: 'client' as "client",
+  admin: 'admin' as "admin",
+  null: null as null,
+};
+
 export function mapProfileToUser(user: SupabaseUser, profile: any): UserProfile {
+  const userType = profile.user_type ? userTypeMap[profile.user_type as keyof typeof userTypeMap] : null;
   return {
     id: user.id,
     email: user.email || "",
     displayName: profile.display_name || "",
-    userType: (profile.user_type as "creator" | "jobSeeker" | "employer" | "buyer" | "admin" | null) || "",
+    userType: userType || undefined,
     profileComplete: Boolean(profile.profile_complete),
-    createdAt: new Date(profile.created_at).toISOString(),
-    updatedAt: new Date(profile.updated_at).toISOString(),
-    bio: profile.bio || undefined,
-    headline: profile.headline || undefined,
-    avatar_url: profile.avatar_url || undefined,
-    avatarUrl: profile.avatar_url || undefined, // Add for compatibility
-    role: profile.user_type, // Map user_type to role for backward compatibility
+    created_at: new Date(profile.created_at).toISOString(),
+    updated_at: new Date(profile.updated_at).toISOString(),
+    avatarUrl: profile.avatar_url || undefined,
+    name: profile.display_name || "",
+    role: userType || "", // Map user_type to role for backward compatibility
     points: profile.points ?? 0
   };
 }

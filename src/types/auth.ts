@@ -14,7 +14,7 @@ export interface UserProfile {
   role: string;
   displayName: string;
   points: number;
-  avatarUrl: string;
+  avatarUrl?: string;
 }
 
 export interface UserDetails extends UserProfile {
