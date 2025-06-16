@@ -29,10 +29,12 @@ export interface Project {
     full_name: string;
     professional_title?: string;
     profile_picture_url?: string;
+  };
   client_profile?: {
     display_name: string;
     avatar_url?: string;
   };
+}
 
 export interface ProjectNote {
   id: string;

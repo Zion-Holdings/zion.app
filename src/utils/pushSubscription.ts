@@ -21,6 +21,10 @@ export async function subscribeToPush() {
     const existing = await registration.pushManager.getSubscription();
     if (existing) return;
 
+    if (!VAPID_PUBLIC_KEY) {
+      throw new Error('VAPID public key is not defined. Cannot subscribe to push notifications.');
+    }
+
     const subscription = await registration.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
