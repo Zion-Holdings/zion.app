@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 export const AvatarMenu: React.FC = () => {
-  const { user, logout, avatarUrl } = useAuth();
+  const { user, signOut, avatarUrl } = useAuth();
 
   if (!user) return null;
 

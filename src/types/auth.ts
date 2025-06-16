@@ -13,6 +13,10 @@ export interface UserProfile {
   updated_at: string;
 }
 
+export interface UserDetails extends UserProfile {
+  // Add any additional fields if needed
+}
+
 export interface AuthContextType {
   user: UserDetails | null;
   isAuthenticated: boolean;
@@ -26,5 +30,6 @@ export interface AuthContextType {
   loginWithFacebook: () => void;
   loginWithTwitter: () => void;
   loginWithWeb3: () => Promise<void>;
+  avatarUrl: string | null;
   setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>;
 }
