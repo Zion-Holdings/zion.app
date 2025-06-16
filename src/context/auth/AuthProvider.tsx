@@ -9,6 +9,7 @@ import { useAuthEventHandlers } from "./useAuthEventHandlers";
 import { mapProfileToUser } from "./profileMapper";
 import { loginUser, registerUser } from "@/services/authService";
 import { safeStorage, safeSessionStorage } from "@/utils/safeStorage";
+import { UserDetails } from "@/types/auth";
 import { toast } from "@/hooks/use-toast"; // Import toast
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
@@ -136,10 +137,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   // Refactored signup method
-  const signup = async (name: string, email: string, password: string) => {
+  const signup = async (email: string, password: string, userData: Partial<UserDetails> = {}) => {
     setIsLoading(true);
     try {
-      const { res, data } = await registerUser(name, email, password);
+      const { res, data } = await registerUser(email, password, userData);
 
       if (!(res.status >= 200 && res.status < 300)) {
         // Handle API errors (e.g., 400, 409, 500) from /api/auth/register
@@ -332,9 +333,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     user,
     isLoading,
     isAuthenticated: !!user,
-    login,
+    signIn: login,
     // register, // Removed as signup now covers its functionality
-    signup,
+    signUp: signup,
     logout,
     resetPassword,
     updateProfile,
