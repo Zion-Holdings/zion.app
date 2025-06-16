@@ -15,10 +15,10 @@ interface User {
 
 interface ProfileProps {
   user: User;
-  orders: Order[];
+  orders?: Order[];
 }
 
-export default function Profile({ user: initialUser, orders }: ProfileProps) {
+export default function Profile({ user: initialUser, orders = [] }: ProfileProps) {
   const [user, setUser] = useState(initialUser);
 
   const handleSubmit = async (values: ProfileValues) => {
