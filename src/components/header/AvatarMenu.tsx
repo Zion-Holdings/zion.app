@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 export const AvatarMenu: React.FC = () => {
-  const { user, signOut, avatarUrl } = useAuth();
+  const { user, logout, avatarUrl } = useAuth();
 
   if (!user) return null;
 
@@ -34,7 +34,7 @@ export const AvatarMenu: React.FC = () => {
         <DropdownMenuItem asChild>
           <Link href="/orders" passHref>Orders</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem onSelect={signOut}>Logout</DropdownMenuItem>
+        <DropdownMenuItem onSelect={logout}>Logout</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
