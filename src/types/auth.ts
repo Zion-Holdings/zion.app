@@ -6,7 +6,9 @@ export interface AuthState {
 export interface UserProfile {
   id: string;
   email: string;
+  name: string;
   userType?: 'talent' | 'client' | 'admin' | null;
+  profileComplete: boolean;
   created_at: string;
   updated_at: string;
 }

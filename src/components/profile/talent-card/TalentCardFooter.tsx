@@ -22,7 +22,7 @@ export function TalentCardFooter({ profile, onViewProfile, onRequestHire }: Tale
   // Create a compatible UserProfile from UserDetails
   const userProfile: UserProfile = {
     id: userDetails?.id,
-    displayName: userDetails?.name || '',
+    name: userDetails?.name || '',
     email: userDetails?.email || '',
     userType: null,
     profileComplete: false,
