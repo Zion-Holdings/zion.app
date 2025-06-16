@@ -46,13 +46,20 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async (ctx:
 };
 
 const ErrorTestButton = () => {
-  const throwTestError = () => {
-    throw new Error("This is a test error from the homepage button!");
+  const handleClick = () => {
+    try {
+      throw new Error("This is a test error from the homepage button!");
+    } catch (error) {
+      if (isSentryActive) {
+        Sentry.captureException(error);
+      }
+      console.error(error);
+    }
   };
 
   return (
     <button
-      onClick={throwTestError}
+      onClick={handleClick}
       style={{
         position: 'fixed',
         bottom: '20px',
