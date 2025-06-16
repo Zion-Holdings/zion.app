@@ -32,9 +32,9 @@ export function useProjects() {
         `)
         .order("created_at", { ascending: false });
       
-      if (user.userType === "jobSeeker" || user.userType === "creator") {
+      if (user.userType === "talent") {
         query = query.eq("talent_id", user.id);
-      } else if (user.userType === "employer" || user.userType === "buyer") {
+      } else if (user.userType === "client") {
         query = query.eq("client_id", user.id);
       }
       

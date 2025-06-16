@@ -17,6 +17,7 @@ export interface UserProfile {
   avatarUrl?: string;
   bio?: string;
   headline?: string;
+  emailVerified?: boolean;
 }
 
 export interface UserDetails extends UserProfile {
