@@ -1,8 +1,4 @@
 import type { ProductListing } from '@/types/listings';
-<<<<<<< HEAD
-=======
-
->>>>>>> 15994bbe0c35c2d9d9fc06a593e6159ea10417bd
 export async function fetchRecommendations(
   userId: string,
   type: string = 'equipment'
