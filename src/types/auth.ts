@@ -14,7 +14,7 @@ export interface UserProfile {
 }
 
 export interface UserDetails extends UserProfile {
-  // Add any additional fields if needed
+  role: string;
 }
 
 export interface AuthContextType {
