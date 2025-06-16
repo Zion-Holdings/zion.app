@@ -30,8 +30,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const { handleSignedIn, handleSignedOut } = useAuthEventHandlers(setUser, setOnboardingStep, router); // Pass router instance
 
   const {
-    login: loginImpl,
-    signup: signupImpl,
+    login: signInImpl,
+    signUp: signUpImpl,
     logout,
     resetPassword,
     updateProfile,
@@ -334,9 +334,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     user,
     isLoading,
     isAuthenticated: !!user,
-    signIn: login,
+    signIn: signInImpl,
     // register, // Removed as signup now covers its functionality
-    signUp: signup,
+    signUp: signUpImpl,
     logout,
     resetPassword,
     updateProfile,

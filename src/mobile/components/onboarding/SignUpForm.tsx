@@ -10,7 +10,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export function SignUpForm() {
   const navigate = useNavigate();
-  const { signup, login, loginWithGoogle } = useAuth();
+  const { signUp, signIn, loginWithGoogle } = useAuth();
   
   const [formData, setFormData] = useState({
     email: "",
@@ -36,7 +36,7 @@ export function SignUpForm() {
     try {
       setShowVerificationMessage(false); // Reset verification message
       if (signupMode) {
-        const result = await signup(formData.email, formData.password, {
+        const result = await signUp(formData.email, formData.password, {
           name: formData.name,
         });
         
@@ -51,7 +51,7 @@ export function SignUpForm() {
           navigate("/mobile");
         }
       } else {
-        const { error } = await login(formData.email, formData.password, false);
+        const { error } = await signIn(formData.email, formData.password);
         
         if (error) {
           throw new Error(error);

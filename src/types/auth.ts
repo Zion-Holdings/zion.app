@@ -38,7 +38,7 @@ export interface AuthContextType {
   isLoading: boolean;
   signIn: (email: string, password: string) => Promise<{ error: any }>;
   logout: () => Promise<void>;
-  signUp: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any }>;
+  signUp: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any; emailVerificationRequired?: boolean }>;
   resetPassword: (email: string) => Promise<{ error: any }>;
   updateProfile: (data: Partial<UserDetails>) => Promise<{ error: any }>;
   loginWithGoogle: () => void;

@@ -21,7 +21,7 @@ export function useAuthOperations(
     checkUrlForReferralCode();
   }, []);
 
-  const login = async ({ email, password }: { email: string; password: string }) => {
+  const signIn = async ({ email, password }: { email: string; password: string }) => {
     setIsLoading(true);
     try {
       // Clean up any stale auth state before login
@@ -61,7 +61,7 @@ export function useAuthOperations(
   
 
 
-  const signup = async ({ email, password, display_name }: SignupParams) => {
+  const signUp = async ({ email, password, display_name }: SignupParams) => {
     setIsLoading(true);
     try {
       const { data, error } = await supabase.auth.signUp({
@@ -335,8 +335,8 @@ export function useAuthOperations(
   };
 
   return {
-    login,
-    signup,
+    login: async (email: string, password: string) => await signIn({email, password}),
+    signUp: async (email: string, password: string, userData?: Partial<UserDetails>) => await signUp({email, password, display_name: userData?.name || ""}),
     logout,
     resetPassword,
     updateProfile,
