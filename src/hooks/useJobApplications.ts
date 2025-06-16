@@ -35,18 +35,18 @@ export const useJobApplications = (jobId?: string) => {
       }
       
       // For talent users, only fetch their own applications
-      if (user.userType === "jobSeeker" || user.userType === "creator") {
+      if (user.userType === "talent") {
         query = query.eq("talent_id", user.id);
-      } 
+      }
       // For client users, fetch applications for their jobs
-      else if (user.userType === "employer" || user.userType === "buyer") {
+      else if (user.userType === "client") {
         if (!jobId) {
           // Fix: Convert the subquery to a proper array or string
           const { data: jobIds } = await supabase
             .from("jobs")
             .select("id")
             .eq("client_id", user.id);
-          
+
           if (jobIds && jobIds.length > 0) {
             const jobIdArray = jobIds.map(job => job.id);
             query = query.in("job_id", jobIdArray);
