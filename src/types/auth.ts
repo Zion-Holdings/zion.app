@@ -15,10 +15,14 @@ export interface UserProfile {
   displayName: string;
   points: number;
   avatarUrl?: string;
+  bio?: string;
+  headline?: string;
 }
 
 export interface UserDetails extends UserProfile {
   headline?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface SignupParams {

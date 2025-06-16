@@ -193,7 +193,7 @@ export function useAuthOperations(
           display_name: profileData.displayName,
           user_type: profileData.userType,
           profile_complete: profileData.profileComplete,
-          bio: profileData.bio,
+          bio: profileData.bio ?? null,
           avatar_url: profileData.avatarUrl,
           headline: profileData.headline,
         })
@@ -307,15 +307,20 @@ export function useAuthOperations(
       });
       
       // Fix: Create a proper UserDetails object
-      setUser({
-        id: address,
-        name: address,
-        profileComplete: true,
-        email: '', // Add required fields
-        userType: 'talent', // Default user type
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
-      });
+     setUser({
+       id: address,
+       name: address,
+       profileComplete: true,
+       email: '', // Add required fields
+       userType: 'talent', // Default user type
+       createdAt: new Date().toISOString(),
+       updatedAt: new Date().toISOString(),
+       created_at: new Date().toISOString(),
+       updated_at: new Date().toISOString(),
+       role: 'user',
+       displayName: address,
+       points: 0
+     });
       
       toast({ title: 'Wallet connected', description: address });
     } catch (error: any) {
