@@ -45,8 +45,8 @@ export default function TalentProfilePage() {
     email: userDetails?.email || '', // Ensure email is always a string
     userType: null, // Default empty string since userDetails doesn't have this property
     profileComplete: false, // Default value since userDetails doesn't have this property
-    createdAt: new Date().toISOString(), // Default value since userDetails doesn't have this property
-    updatedAt: new Date().toISOString(), // Default value since userDetails doesn't have this property
+    created_at: new Date().toISOString(), // Default value since userDetails doesn't have this property
+    updated_at: new Date().toISOString(), // Default value since userDetails doesn't have this property
     role: '', // Default empty string since userDetails doesn't have this property
     name: '',
     points: 0
