@@ -1,7 +1,8 @@
+import type { ProductListing } from '@/types/listings';
 export async function fetchRecommendations(
   userId: string,
   type: string = 'equipment'
-): Promise<unknown> {
+): Promise<ProductListing[]> {
   const params = new URLSearchParams({ userId });
   if (type) params.append('type', type);
   const res = await fetch(`/api/recommendations?${params.toString()}`);
