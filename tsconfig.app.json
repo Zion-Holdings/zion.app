@@ -23,6 +23,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/pages/*": ["./src/pages/*", "./pages/*"],
+      "@/api/*": ["./src/api/*"],
       "axios": ["./src/lib/axios.ts"],
       "next": ["../types/next"],
       "next/*": ["../types/next/*"]

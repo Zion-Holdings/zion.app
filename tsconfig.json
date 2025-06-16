@@ -21,6 +21,9 @@
       "@/components/*": [
         "./src/components/*"
       ],
+      "@/api/*": [
+        "./src/api/*"
+      ],
       "axios": [
         "./src/lib/axios.ts"
       ],
