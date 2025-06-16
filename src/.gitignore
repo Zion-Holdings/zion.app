@@ -16,3 +16,6 @@
 !types/jest.d.ts
 !types/vite/client.d.ts
 !types/vitest/globals.d.ts
+!types/TermsOfService.d.ts
+!types/PrivacyPolicy.d.ts
+!types/wallet.d.ts

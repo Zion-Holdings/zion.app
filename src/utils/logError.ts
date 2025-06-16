@@ -62,9 +62,15 @@ export function logError(error: unknown, context?: Record<string, unknown>) {
       message: errorToSend.message,
       stack: errorToSend.stack,
       componentStack: context?.componentStack as string | undefined,
+<<<<<<< fix/build-errors
       filename: undefined,
       lineno: undefined,
       colno: undefined,
+=======
+      filename: undefined as string | undefined, // Potentially parse from stack if needed and not too complex
+      lineno: undefined as number | undefined,   // Potentially parse from stack
+      colno: undefined as number | undefined,     // Potentially parse from stack
+>>>>>>> main
       url: typeof window !== 'undefined' ? window.location.href : '',
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
       timestamp: new Date().toISOString(),
@@ -82,7 +88,7 @@ export function logError(error: unknown, context?: Record<string, unknown>) {
         if (line.includes('node_modules')) continue; // Simple heuristic to skip library code
         const match = regex.exec(line.trim());
         if (match) {
-          errorDetails.filename = match[1].trim();
+          errorDetails.filename = match[1]?.trim();
           errorDetails.lineno = parseInt(match[2], 10);
           errorDetails.colno = parseInt(match[3], 10);
           break;

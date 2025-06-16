@@ -22,6 +22,7 @@ export async function subscribeToPush() {
     if (existing) return;
 
     if (!VAPID_PUBLIC_KEY) {
+      
       throw new Error('VAPID public key is not defined. Cannot subscribe to push notifications.');
     }
 
