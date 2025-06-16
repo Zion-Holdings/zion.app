@@ -1,4 +1,8 @@
 import type { ProductListing } from '@/types/listings';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 15994bbe0c35c2d9d9fc06a593e6159ea10417bd
 export async function fetchRecommendations(
   userId: string,
   type: string = 'equipment'
@@ -9,5 +13,5 @@ export async function fetchRecommendations(
   if (!res.ok) {
     throw new Error('Failed to fetch recommendations');
   }
-  return res.json();
+  return res.json() as Promise<ProductListing[]>;
 }
