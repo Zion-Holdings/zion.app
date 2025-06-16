@@ -11,12 +11,13 @@ export interface UserProfile {
   profileComplete: boolean;
   created_at: string;
   updated_at: string;
-}
-
-export interface UserDetails extends UserProfile {
   role: string;
   displayName: string;
   points: number;
+  avatarUrl: string;
+}
+
+export interface UserDetails extends UserProfile {
 }
 
 export interface AuthContextType {
