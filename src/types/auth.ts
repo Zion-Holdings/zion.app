@@ -14,7 +14,17 @@ export interface UserProfile {
 }
 
 export interface AuthContextType {
-  authState: AuthState;
-  setToken: (token: string | null) => void;
-  clearAuth: () => void;
+  user: UserDetails | null;
+  isAuthenticated: boolean;
+  isLoading: boolean;
+  signIn: (email: string, password: string) => Promise<{ error: any }>;
+  signOut: () => Promise<void>;
+  signUp: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any }>;
+  resetPassword: (email: string) => Promise<{ error: any }>;
+  updateProfile: (data: Partial<UserDetails>) => Promise<{ error: any }>;
+  loginWithGoogle: () => void;
+  loginWithFacebook: () => void;
+  loginWithTwitter: () => void;
+  loginWithWeb3: () => Promise<void>;
+  setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>;
 }
