@@ -173,6 +173,7 @@
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
     "@eslint/js": "^9.28.0",
+    "@netlify/plugin-nextjs": "^5.0.0",
     "@playwright/test": "^1.41.2",
     "@rushstack/eslint-patch": "^1.5.1",
     "@sentry/cli": "^2.46.0",
@@ -251,8 +252,7 @@
     "typescript-eslint": "^8.33.0",
     "vite": "^6.3.5",
     "vitest": "^3.2.1",
-    "whatwg-fetch": "^3.6.20",
-    "@netlify/plugin-nextjs": "^5.0.0"
+    "whatwg-fetch": "^3.6.20"
   },
   "peerDependencies": {
     "react": "~18.3.1",
