@@ -21,6 +21,10 @@ export async function subscribeToPush() {
     const existing = await registration.pushManager.getSubscription();
     if (existing) return;
 
+    if (!VAPID_PUBLIC_KEY) {
+      console.warn('VAPID_PUBLIC_KEY is not defined. Push subscription will be skipped.');
+      return;
+    }
     const subscription = await registration.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
