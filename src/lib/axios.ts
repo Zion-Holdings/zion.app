@@ -9,7 +9,17 @@ export interface AxiosResponse<T = any> {
 
 export interface AxiosError<T = any> extends Error {
   response?: AxiosResponse<T>;
-  config?: { url: string; method: string; [key: string]: any }; // Add config property
+  config?: { url: string; method: string; [key: string]: any };
+  /** Flag to identify errors originating from this axios replacement */
+  isAxiosError?: boolean;
+}
+
+export function isAxiosError(value: any): value is AxiosError {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    (value as any).isAxiosError === true
+  );
 }
 
 type FulfilledFn = (value: any) => any | Promise<any>;
@@ -55,6 +65,7 @@ export interface CustomAxiosStatic {
   post: AxiosInstance['post'];
   patch: AxiosInstance['patch'];
   delete: AxiosInstance['delete'];
+  isAxiosError: typeof isAxiosError;
 }
 
 interface AxiosDefaults {
@@ -173,6 +184,7 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
       const err: AxiosError = new Error('Request failed') as AxiosError;
       err.response = result;
       err.config = { url, method, ...reqInit };
+      err.isAxiosError = true;
       for (const h of instance.interceptors.response.handlers) {
         if (h?.rejected) {
           await h.rejected(err as any);
@@ -195,6 +207,7 @@ const customAxios: CustomAxiosStatic = {
   post: defaultInstance.post,
   patch: defaultInstance.patch,
   delete: defaultInstance.delete,
+  isAxiosError,
 };
 
 export default customAxios;
