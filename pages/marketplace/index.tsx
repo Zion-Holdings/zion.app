@@ -3,9 +3,12 @@ import type { GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
 
 export const getStaticProps: GetStaticProps<MarketplaceProps> = async () => {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
-  if (!process.env.NEXT_PUBLIC_APP_URL) {
-    console.warn('NEXT_PUBLIC_APP_URL is not defined. Skipping marketplace product fetch.');
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL;
+
+  if (!appUrl || appUrl.includes('localhost')) {
+    console.warn(
+      'NEXT_PUBLIC_APP_URL is not configured for production. Skipping marketplace product fetch.'
+    );
     return { props: { products: [] }, revalidate: 60 };
   }
   try {
