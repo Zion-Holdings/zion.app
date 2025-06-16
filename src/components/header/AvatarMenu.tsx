@@ -34,7 +34,7 @@ export const AvatarMenu: React.FC = () => {
         <DropdownMenuItem asChild>
           <Link href="/orders" passHref>Orders</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem onSelect={logout}>Logout</DropdownMenuItem>
+        <DropdownMenuItem onSelect={signOut}>Logout</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
