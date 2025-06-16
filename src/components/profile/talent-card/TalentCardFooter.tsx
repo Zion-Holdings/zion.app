@@ -26,7 +26,7 @@ export function TalentCardFooter({ profile, onViewProfile, onRequestHire }: Tale
     email: userDetails?.email || '',
     userType: null,
     profileComplete: false,
-    createdAt: new Date().toISOString(),
+    created_at: new Date().toISOString(),
     updatedAt: new Date().toISOString()
   };
 
