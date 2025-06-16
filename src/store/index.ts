@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { default as cartReducer, CartState } from './cartSlice';
+import cartReducer from './cartSlice';
+import { CartState } from './cartSlice';
 import { default as wishlistReducer, WishlistState } from './wishlistSlice';
 import authReducer from './authSlice';
 import { safeStorage } from '@/utils/safeStorage';

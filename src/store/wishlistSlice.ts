@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { safeStorage } from '@/utils/safeStorage';
 
-interface WishlistState {
+export interface WishlistState {
   items: string[];
 }
 
