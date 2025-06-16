@@ -21,6 +21,12 @@ export interface UserDetails extends UserProfile {
   headline?: string;
 }
 
+export interface SignupParams {
+  email: string;
+  password: string;
+  display_name: string;
+}
+
 export interface AuthContextType {
   user: UserDetails | null;
   isAuthenticated: boolean;
