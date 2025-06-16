@@ -27,7 +27,7 @@ export function TalentCardFooter({ profile, onViewProfile, onRequestHire }: Tale
     userType: null,
     profileComplete: false,
     created_at: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
+    updated_at: new Date().toISOString()
   };
 
   // Handle request to hire
