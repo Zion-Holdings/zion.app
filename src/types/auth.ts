@@ -12,3 +12,9 @@ export interface UserProfile {
   created_at: string;
   updated_at: string;
 }
+
+export interface AuthContextType {
+  authState: AuthState;
+  setToken: (token: string | null) => void;
+  clearAuth: () => void;
+}
