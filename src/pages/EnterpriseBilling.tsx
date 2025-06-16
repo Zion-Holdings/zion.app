@@ -13,7 +13,7 @@ export default function EnterpriseBilling() {
   
   // Check if user has billing permissions
   const hasBillingAccess = user?.role === "enterprise_admin" || 
-                          (user?.permissions && user.permissions.includes('billing_access'));
+                          (user?.userType === 'admin');
   
   if (!hasBillingAccess) {
     return <Navigate to="/unauthorized" />;

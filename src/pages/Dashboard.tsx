@@ -20,7 +20,7 @@ export default function Dashboard() {
   const [isLoadingUser, setIsLoadingUser] = useState(true); // New loading state
 
   const roleForTour =
-    user?.userType === 'employer' || user?.userType === 'buyer' ? 'client' : 'talent';
+    user?.userType === 'client' || user?.userType === 'admin' ? 'client' : 'talent';
 
   useEffect(() => {
     if (!user) {
@@ -133,7 +133,7 @@ export default function Dashboard() {
                         await createOnboardingNotification({
                           userId: user?.id ?? "",
                           missingMilestone: 'profile_completed',
-                          userRole: user?.userType === 'employer' || user?.userType === 'buyer' ? 'client' : 'talent'
+                          userRole: user?.userType === 'client' || user?.userType === 'admin' ? 'client' : 'talent'
                         });
                         toast({
                           title: "Onboarding notification sent",

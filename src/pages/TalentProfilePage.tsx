@@ -32,20 +32,24 @@ export default function TalentProfilePage() {
     id: user.id || '',
     displayName: user.displayName || '',
     email: user.email || '', // Ensure email is always a string
-    userType: user.userType || '',
+    userType: user.userType || null,
     profileComplete: user.profileComplete || false,
-    createdAt: user.createdAt || new Date().toISOString(),
-    updatedAt: user.updatedAt || new Date().toISOString(),
-    role: user.role || ''
+    created_at: user.created_at || new Date().toISOString(),
+    updated_at: user.updatedAt || new Date().toISOString(),
+    role: user.role || '',
+    name: user.name || '',
+    points: user.points || 0
   } : {
     id: userDetails?.id || '',
     displayName: userDetails?.name || '',
     email: userDetails?.email || '', // Ensure email is always a string
-    userType: '', // Default empty string since userDetails doesn't have this property
+    userType: null, // Default empty string since userDetails doesn't have this property
     profileComplete: false, // Default value since userDetails doesn't have this property
     createdAt: new Date().toISOString(), // Default value since userDetails doesn't have this property
     updatedAt: new Date().toISOString(), // Default value since userDetails doesn't have this property
-    role: '' // Default empty string since userDetails doesn't have this property
+    role: '', // Default empty string since userDetails doesn't have this property
+    name: '',
+    points: 0
   };
 
   // Handle loading error gracefully

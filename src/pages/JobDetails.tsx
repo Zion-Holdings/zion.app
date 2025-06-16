@@ -71,8 +71,8 @@ export default function JobDetails() {
       router.push(`/login?redirect=${encodeURIComponent(`/jobs/${jobId || ''}`)}`); // Added null check for jobId
       return;
     }
-    
-    if (user?.userType !== "jobSeeker" && user?.userType !== "talent") {
+
+    if (user?.userType !== "talent" && user?.userType !== "admin" && user?.userType !== "client") {
       toast.error("Only job seekers can apply for jobs");
       return;
     }

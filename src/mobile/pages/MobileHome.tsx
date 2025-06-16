@@ -8,8 +8,8 @@ import { useAuth } from "@/hooks/useAuth";
 
 export function MobileHome() {
   const { user } = useAuth();
-  const isClient = user?.userType === 'employer' || user?.userType === 'buyer';
-  
+  const isClient = user?.userType === 'client' || user?.userType === 'admin';
+
   return (
     <div className="min-h-screen">
       <MobileHeader 

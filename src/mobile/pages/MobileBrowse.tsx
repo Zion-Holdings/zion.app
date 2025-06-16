@@ -82,7 +82,7 @@ const talentsData = [
 
 export function MobileBrowse() {
   const { user } = useAuth();
-  const isClient = user?.userType === 'employer' || user?.userType === 'buyer';
+  const isClient = user?.userType === 'client' || user?.userType === 'admin';
   const [browseType, setBrowseType] = useState<"jobs" | "talents">(isClient ? "talents" : "jobs");
   
   const handleViewDetails = (id: string) => {

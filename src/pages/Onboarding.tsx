@@ -61,11 +61,11 @@ export default function Onboarding() {
     const dbUserType = mapUserTypeToDatabase(userType);
     
     try {
-      await updateProfile({ 
+      await updateProfile({
         id: user.id,
         displayName: data.displayName,
         bio: data.bio, // This is now valid since we added bio to UserDetails
-        userType: dbUserType,
+        userType: dbUserType as any,
         headline: data.headline,
         profileComplete: true
       });
