@@ -18,6 +18,7 @@ export interface UserProfile {
 }
 
 export interface UserDetails extends UserProfile {
+  headline?: string;
 }
 
 export interface AuthContextType {
