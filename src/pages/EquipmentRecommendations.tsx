@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ProductListingCard } from '@/components/ProductListingCard';
 import { useAuth } from '@/hooks/useAuth';
 import { fetchRecommendations } from '@/api/recommendations';
+import type { ProductListing } from '@/types/listings';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
@@ -10,9 +11,9 @@ import { ErrorState } from '@/components/jobs/applications';
 
 export default function EquipmentRecommendations() {
   const { isAuthenticated, user } = useAuth();
-  const [listings, setListings] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [listings, setListings] = useState<ProductListing[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     if (isAuthenticated && user?.id) {

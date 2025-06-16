@@ -46,31 +46,13 @@ export function logError(error: unknown, context?: Record<string, unknown>) {
   }
 
   try {
-    const errorDetails: {
-      message: string; // message will always be a string from Error object
-      stack: string | undefined;
-      componentStack: string | undefined;
-      filename: string | undefined;
-      lineno: number | undefined;
-      colno: number | undefined;
-      url: string;
-      userAgent: string;
-      timestamp: string;
-      source: string;
-      customContext?: Record<string, unknown>;
-    } = {
+    const errorDetails = {
       message: errorToSend.message,
       stack: errorToSend.stack,
       componentStack: context?.componentStack as string | undefined,
-<<<<<<< fix/build-errors
-      filename: undefined,
-      lineno: undefined,
-      colno: undefined,
-=======
       filename: undefined as string | undefined, // Potentially parse from stack if needed and not too complex
       lineno: undefined as number | undefined,   // Potentially parse from stack
       colno: undefined as number | undefined,     // Potentially parse from stack
->>>>>>> main
       url: typeof window !== 'undefined' ? window.location.href : '',
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
       timestamp: new Date().toISOString(),

@@ -1,1 +1,4 @@
-export function fetchRecommendations(userId: any, type?: string): Promise<any>;
+export function fetchRecommendations(
+  userId: string,
+  type?: string
+): Promise<any>;

@@ -1,7 +1,7 @@
 [build]
   # Use `npm ci` for deterministic installs
   # Generate Prisma client before building to ensure models are up to date
-  command = "npm run generate && npm run build"
+  command = "npm run build"
   publish = ".next"
 
 [build.environment]
