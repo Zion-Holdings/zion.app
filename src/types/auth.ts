@@ -15,6 +15,8 @@ export interface UserProfile {
 
 export interface UserDetails extends UserProfile {
   role: string;
+  displayName: string;
+  points: number;
 }
 
 export interface AuthContextType {
