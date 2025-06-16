@@ -31,7 +31,7 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
-  const { isLoading, login } = useAuth();
+  const { isLoading, signIn } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -49,8 +49,8 @@ export function LoginForm() {
 
     try {
       setIsSubmitting(true);
-      // Pass email, password, and rememberMe to the login function
-      const result = await login(data.email, data.password, data.rememberMe);
+      // Pass email and password to the login function
+      const result = await signIn(data.email, data.password);
       if (result.error) {
         form.setError("root", { message: result.error });
       } else {
