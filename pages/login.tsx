@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as Sentry from '@sentry/nextjs';
 import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/router';
-import { useAuth } from '@/context/auth/AuthProvider';
+import { AuthProvider, useAuth } from '@/context/auth/AuthProvider';
 
 export default function Login() {
   const [error, setError] = useState<string | null>(null);
