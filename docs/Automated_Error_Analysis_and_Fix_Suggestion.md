@@ -14,6 +14,7 @@ Errors are captured from multiple sources on the client-side to ensure comprehen
 
 ### 2. Client-Side Reporting:
 -   Regardless of the source, all caught errors are ultimately processed by the `sendErrorToBackend` function located in `src/utils/customErrorReporter.ts`.
+-   The endpoint used by this function is configurable via the `NEXT_PUBLIC_ERROR_REPORT_ENDPOINT` environment variable. When this variable is unset, reports are skipped (in development it defaults to `http://localhost:3001/webhook/trigger-fix`).
 -   This function gathers detailed error information, including:
     -   `message`: The error message.
     -   `stack`: The JavaScript stack trace.

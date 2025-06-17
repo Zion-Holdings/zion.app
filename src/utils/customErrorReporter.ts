@@ -11,9 +11,21 @@ interface ErrorDetails {
   source: 'GlobalErrorBoundary' | 'logError' | 'window.onerror' | 'unhandledrejection' | string; // string for flexibility
 }
 
+const DEFAULT_ENDPOINT = 'http://localhost:3001/webhook/trigger-fix';
+
 export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<void> {
   const endpoint =
-    process.env.NEXT_PUBLIC_ERROR_WEBHOOK_URL || '/api/log-error';
+    process.env.NEXT_PUBLIC_ERROR_REPORT_ENDPOINT ||
+    (process.env.NODE_ENV === 'development' ? DEFAULT_ENDPOINT : '');
+
+  if (!endpoint) {
+    if (process.env.NODE_ENV === 'development') {
+      console.warn(
+        'sendErrorToBackend skipped: NEXT_PUBLIC_ERROR_REPORT_ENDPOINT not set.'
+      );
+    }
+    return;
+  }
 
   try {
     const response = await fetch(endpoint, {
