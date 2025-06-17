@@ -23,6 +23,7 @@ import { AppLayout } from '@/layout/AppLayout';
 // Import global Tailwind styles so they load before the app renders
 import '../src/index.css';
 import * as Sentry from '@sentry/nextjs';
+import getConfig from 'next/config';
 import { captureException } from '@/utils/sentry';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 // If you have global CSS, import it here:
@@ -36,14 +37,16 @@ function MyApp({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
     console.log('[App] MyApp main useEffect hook started.');
     initializeGlobalErrorHandlers(); // Initialize global error handlers
-    if (process.env.NEXT_PUBLIC_SENTRY_RELEASE) {
-      Sentry.setTag('release', process.env.NEXT_PUBLIC_SENTRY_RELEASE);
+    const { publicRuntimeConfig } = getConfig();
+    console.log('[App] Public Runtime Config:', publicRuntimeConfig); // Add this line
+    if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE) {
+      Sentry.setTag('release', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE);
     }
-    if (process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT) {
-      Sentry.setTag('environment', process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
+    if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT) {
+      Sentry.setTag('environment', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
     }
-    console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY:", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-    console.log("NEXT_PUBLIC_REOWN_PROJECT_ID:", process.env.NEXT_PUBLIC_REOWN_PROJECT_ID);
+    console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY:", publicRuntimeConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+    console.log("NEXT_PUBLIC_REOWN_PROJECT_ID:", publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID);
   }, []); // Empty dependency array ensures this runs only once on mount
 
   React.useEffect(() => {
