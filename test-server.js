@@ -23,10 +23,10 @@ app.get('/flaky', (req, res) => {
   flakyCounter++;
   if (flakyCounter % 2 === 0) {
     setTimeout(() => {
-      res.status(200).send(\`Flaky response (Attempt \${flakyCounter}): Slow (1s)\`);
+      res.status(200).send(`Flaky response (Attempt ${flakyCounter}): Slow (1s)`);
     }, 1000);
   } else {
-    res.status(200).send(\`Flaky response (Attempt \${flakyCounter}): Fast\`);
+    res.status(200).send(`Flaky response (Attempt ${flakyCounter}): Fast`);
   }
 });
 
@@ -44,12 +44,12 @@ app.get('/random-error', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(\`Test server listening at http://localhost:\${port}\`);
+  console.log(`Test server listening at http://localhost:${port}`);
   console.log('Available endpoints:');
-  console.log(\`  http://localhost:\${port}/fast\`);
-  console.log(\`  http://localhost:\${port}/slow\`);
-  console.log(\`  http://localhost:\${port}/very-slow\`);
-  console.log(\`  http://localhost:\${port}/flaky\`);
-  console.log(\`  http://localhost:\${port}/error\`);
-  console.log(\`  http://localhost:\${port}/random-error\`);
+  console.log(`  http://localhost:${port}/fast`);
+  console.log(`  http://localhost:${port}/slow`);
+  console.log(`  http://localhost:${port}/very-slow`);
+  console.log(`  http://localhost:${port}/flaky`);
+  console.log(`  http://localhost:${port}/error`);
+  console.log(`  http://localhost:${port}/random-error`);
 });
