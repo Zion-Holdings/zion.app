@@ -1,7 +1,11 @@
 export async function enableDevToolsInStaging() {
-  // Only attempt to load in development, or if explicitly enabled via VITE_DEVTOOLS
-  const enable = import.meta.env.DEV || process.env.NEXT_PUBLIC_DEVTOOLS === 'true';
-  if (enable) {
+  // Only attempt to load in development, or if explicitly enabled via NEXT_PUBLIC_DEVTOOLS
+  const isDev =
+    (typeof import.meta !== 'undefined' &&
+      (import.meta as any).env &&
+      (import.meta as any).env.DEV) ||
+    process.env.NEXT_PUBLIC_DEVTOOLS === 'true';
+  if (isDev) {
     try {
       // The /* @vite-ignore */ comment might still be useful if we want to avoid
       // Vite trying to be too clever with this dynamic import even in dev.
@@ -15,7 +19,7 @@ export async function enableDevToolsInStaging() {
 }
 
 export function highlightZeroHeightElements() {
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {
     window.addEventListener('load', () => {
       const all = document.querySelectorAll<HTMLElement>('*');
       all.forEach((el) => {
