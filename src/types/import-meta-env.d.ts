@@ -32,6 +32,7 @@ interface ImportMetaEnv {
   readonly NEXT_PUBLIC_MAILCHIMP_API_KEY?: string;
   readonly NEXT_PUBLIC_MAILCHIMP_LIST_ID?: string;
   readonly NEXT_PUBLIC_TEAMS_WEBHOOK_URL?: string;
+  readonly NEXT_PUBLIC_ERROR_WEBHOOK_URL?: string;
   readonly NEXT_PUBLIC_BASE_URL?: string;
 
   // Optional: Allow any other string keys
