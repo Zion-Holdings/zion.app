@@ -4,13 +4,13 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/context/auth/AuthProvider";
 import { AlertCircle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export function SignUpForm() {
   const navigate = useNavigate();
-  const { signUp, signIn, loginWithGoogle } = useAuth();
+  const { signUp, login, loginWithGoogle } = useAuth();
   
   const [formData, setFormData] = useState({
     email: "",
@@ -51,7 +51,7 @@ export function SignUpForm() {
           navigate("/mobile");
         }
       } else {
-        const { error } = await signIn(formData.email, formData.password);
+        const { error } = await login(formData.email, formData.password);
         
         if (error) {
           throw new Error(error);

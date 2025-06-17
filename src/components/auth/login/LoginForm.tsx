@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
 import { fireEvent } from '@/lib/analytics';
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/context/auth/AuthProvider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -31,7 +31,7 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
-  const { isLoading, signIn } = useAuth();
+  const { isLoading, login } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -50,7 +50,7 @@ export function LoginForm() {
     try {
       setIsSubmitting(true);
       // Pass email and password to the login function
-      const result = await signIn(data.email, data.password);
+      const result = await login(data.email, data.password);
       if (result.error) {
         form.setError("root", { message: result.error });
       } else {

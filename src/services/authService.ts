@@ -12,7 +12,8 @@ export async function loginUser(email: string, password: string) {
     const res = await axios.post(endpoint, { email, password }, { withCredentials: true });
     const token = res.data?.accessToken;
     if (token) {
-      safeStorage.setItem('ztg_token', token);
+      safeStorage.setItem('authToken', token);
+      safeStorage.setItem('ztg_token', token); // For backward compatibility
       store.dispatch(setToken(token));
     }
     return { res, data: res.data };

@@ -18,8 +18,10 @@ store.subscribe(() => {
   safeStorage.setItem('zion_cart', JSON.stringify(state.cart.items));
   safeStorage.setItem('wishlist', JSON.stringify(state.wishlist.items));
   if (state.auth.token) {
-    safeStorage.setItem('ztg_token', state.auth.token);
+    safeStorage.setItem('authToken', state.auth.token);
+    safeStorage.setItem('ztg_token', state.auth.token); // For backward compatibility
   } else {
+    safeStorage.removeItem('authToken');
     safeStorage.removeItem('ztg_token');
   }
 });

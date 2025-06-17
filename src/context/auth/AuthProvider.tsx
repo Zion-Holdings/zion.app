@@ -291,6 +291,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 } else {
                   console.log('[AuthProvider onAuthStateChange] Redirecting to default dashboard.');
                 }
+                console.log('[AuthProvider onAuthStateChange] Redirecting to:', redirectTo);
                 router.replace(redirectTo);
               }
             } else {
@@ -334,7 +335,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     user,
     isLoading,
     isAuthenticated: !!user,
-    signIn: signInImpl,
+    login: signInImpl,
     // register, // Removed as signup now covers its functionality
     signUp: signUpImpl,
     logout,
@@ -350,10 +351,17 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     avatarUrl,
     setAvatarUrl
   };
+return (
+  <AuthContext.Provider value={authContextValue}>
+    {children}
+  </AuthContext.Provider>
+);
+};
 
-  return (
-    <AuthContext.Provider value={authContextValue}>
-      {children}
-    </AuthContext.Provider>
-  );
+export const useAuth = () => {
+const context = React.useContext(AuthContext);
+if (!context) {
+  throw new Error("useAuth must be used within an AuthProvider");
+}
+return context;
 };
