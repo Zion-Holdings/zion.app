@@ -5,3 +5,4 @@ logs/tests/
 .next/
 cypress/results/
 cypress/screenshots/
+.env
