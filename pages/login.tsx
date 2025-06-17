@@ -19,7 +19,6 @@ export default function Login() {
       if (loginError) {
         throw new Error(loginError);
       }
-      router.push('/');
     } catch (err: any) {
       Sentry.captureException(err);
       toast.error(err.message);

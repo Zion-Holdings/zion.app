@@ -291,6 +291,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 } else {
                   console.log('[AuthProvider onAuthStateChange] Redirecting to default dashboard.');
                 }
+                console.log('[AuthProvider onAuthStateChange] Redirecting to:', redirectTo);
                 router.replace(redirectTo);
               }
             } else {
