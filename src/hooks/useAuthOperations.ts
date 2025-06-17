@@ -10,6 +10,20 @@ import { showApiError } from "@/utils/apiErrorHandler";
 import { trackReferral, checkUrlForReferralCode } from "@/utils/referralUtils";
 import { cleanupAuthState } from "@/utils/authUtils";
 
+// Helper function to get the auth token from cookies
+function getAuthToken() {
+  if (typeof window === 'undefined') return null;
+  if (document.cookie.includes('authToken=')) {
+    const token = document.cookie.split('(^|;) ?authToken=([^;]*)(;|$)').pop()?.split(';').shift();
+    return token || null;
+  }
+  if (document.cookie.includes('ztg_token=')) {
+    const token = document.cookie.split('(^|;) ?ztg_token=([^;]*)(;|$)').pop()?.split(';').shift();
+    return token || null;
+  }
+  return null;
+}
+
 export function useAuthOperations(
   setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>,
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
