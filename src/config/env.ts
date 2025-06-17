@@ -1,8 +1,9 @@
 // src/config/env.ts
+import getConfig from 'next/config';
+
 export const getAppKitProjectId = (): string => {
-  // In a Next.js environment, environment variables are accessed via process.env.
-  // The NEXT_PUBLIC_ prefix makes them available client-side.
-  const projectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID;
+  const { publicRuntimeConfig } = getConfig();
+  const projectId = publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID;
 
   if (projectId && projectId !== 'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING' && projectId !== 'YOUR_DEFAULT_PROJECT_ID_FALLBACK') {
     return projectId;
@@ -15,7 +16,8 @@ export const getAppKitProjectId = (): string => {
 };
 
 export const getSupportEmail = (): string => {
-  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL;
+  const { publicRuntimeConfig } = getConfig();
+  const supportEmail = publicRuntimeConfig.NEXT_PUBLIC_SUPPORT_EMAIL;
 
   if (supportEmail && supportEmail !== 'YOUR_SUPPORT_EMAIL_ENV_MISSING' && supportEmail !== 'YOUR_SUPPORT_EMAIL_FALLBACK') {
     return supportEmail;

@@ -1,7 +1,10 @@
 import * as Sentry from "@sentry/nextjs";
+import getConfig from 'next/config';
 
 export function register() {
-  const SENTRY_DSN = process.env.SENTRY_DSN;
+  const { publicRuntimeConfig } = getConfig();
+  const SENTRY_DSN = publicRuntimeConfig.NEXT_PUBLIC_SENTRY_DSN;
+
   if (!SENTRY_DSN || SENTRY_DSN.startsWith('YOUR_')) {
     console.warn('Sentry DSN is missing or placeholder; skipping Sentry initialization.');
     return;
@@ -9,8 +12,8 @@ export function register() {
   Sentry.init({
     dsn: SENTRY_DSN,
     tracesSampleRate: 1.0,
-    release: process.env.SENTRY_RELEASE,
-    environment: process.env.SENTRY_ENVIRONMENT,
+    release: publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE,
+    environment: publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT,
   });
 }
 
