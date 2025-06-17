@@ -14,21 +14,18 @@ interface ErrorDetails {
 const DEFAULT_ENDPOINT = 'http://localhost:3001/webhook/trigger-fix';
 
 export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<void> {
-  const endpoint =
-    process.env.NEXT_PUBLIC_ERROR_REPORT_ENDPOINT ||
-    (process.env.NODE_ENV === 'development' ? DEFAULT_ENDPOINT : '');
+  const webhookUrl =
+    process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL ||
+    'http://localhost:3001/webhook/trigger-fix';
 
-  if (!endpoint) {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn(
-        'sendErrorToBackend skipped: NEXT_PUBLIC_ERROR_REPORT_ENDPOINT not set.'
-      );
-    }
-    return;
+  if (!process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL) {
+    console.warn(
+      'NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not set. Falling back to http://localhost:3001/webhook/trigger-fix'
+    );
   }
 
   try {
-    const response = await fetch(endpoint, {
+    const response = await fetch(webhookUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
