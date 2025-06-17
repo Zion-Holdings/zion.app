@@ -69,8 +69,6 @@ import { checkEssentialEnvVars } from '@/utils/validateEnv';
 import { FeedbackProvider } from '@/context/FeedbackContext';
 import { FeedbackWidget } from '@/components/feedback/FeedbackWidget';
 
-enableDevToolsInStaging();
-highlightZeroHeightElements();
 
 // Initialize a React Query client with global error handling
 // TODO: queryClient should ideally be defined within MyApp to avoid global scope,
@@ -95,6 +93,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     // Optionally, render a more Next.js friendly error UI or re-throw
     // For now, logging and allowing Next.js default error handling to take over.
   }
+
+  React.useEffect(() => {
+    enableDevToolsInStaging();
+    highlightZeroHeightElements();
+  }, []);
 
   return (
     <React.StrictMode>

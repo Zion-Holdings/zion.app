@@ -11,6 +11,8 @@ interface ErrorDetails {
   source: 'GlobalErrorBoundary' | 'logError' | 'window.onerror' | 'unhandledrejection' | string; // string for flexibility
 }
 
+const DEFAULT_ENDPOINT = 'http://localhost:3001/webhook/trigger-fix';
+
 export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<void> {
   const webhookUrl =
     process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL ||
@@ -34,7 +36,10 @@ export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<vo
     if (response.ok) {
       console.log(`Error report sent successfully from ${errorDetails.source}.`);
     } else {
-      console.error(`Failed to send error report from ${errorDetails.source}. Status: ${response.status}`, await response.text());
+      console.error(
+        `Failed to send error report from ${errorDetails.source}. Status: ${response.status}`,
+        await response.text()
+      );
     }
   } catch (error) {
     console.error(`Error sending report from ${errorDetails.source}:`, error);

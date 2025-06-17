@@ -14,6 +14,7 @@ Errors are captured from multiple sources on the client-side to ensure comprehen
 
 ### 2. Client-Side Reporting:
 -   Regardless of the source, all caught errors are ultimately processed by the `sendErrorToBackend` function located in `src/utils/customErrorReporter.ts`.
+-   The endpoint used by this function is configurable via the `NEXT_PUBLIC_ERROR_REPORT_ENDPOINT` environment variable. When this variable is unset, reports are skipped (in development it defaults to `http://localhost:3001/webhook/trigger-fix`).
 -   This function gathers detailed error information, including:
     -   `message`: The error message.
     -   `stack`: The JavaScript stack trace.
@@ -25,7 +26,8 @@ Errors are captured from multiple sources on the client-side to ensure comprehen
     -   `userAgent`: The browser's user agent string (`navigator.userAgent`).
     -   `timestamp`: An ISO string of when the error occurred (`new Date().toISOString()`).
     -   `source`: A string indicating how the error was caught (e.g., 'GlobalErrorBoundary', 'window.onerror', 'logError').
--   This consolidated error object is then POSTed to the `/api/log-error` backend endpoint.
+-   This consolidated error object is POSTed to the `/api/log-error` backend endpoint by default.
+-   You can override the destination by setting the `NEXT_PUBLIC_ERROR_WEBHOOK_URL` environment variable.
 -   Concurrently, errors processed by `src/utils/logError.ts` are also sent to Sentry for general error monitoring and aggregation, providing an additional layer of observability.
 
 ## Backend Processing (`/api/log-error`)
