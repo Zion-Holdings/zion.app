@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { ErrorState } from '@/components/jobs/applications/ErrorState';
 import { ProductListing } from '@/types/listings';
+import { fetchMarketplaceData } from '@/utils/fetchMarketplaceData';
 
 /** Marketplace component props */
 export interface MarketplaceProps {
@@ -14,20 +15,15 @@ export interface MarketplaceProps {
 
 /**
  * Marketplace component renders a list of products.
- * It attempts to use initial products provided by `getStaticProps`.
- * If initial products are empty, it falls back to client-side fetching using React Query,
- * including retry logic for resilience.
+ * It uses the fetchMarketplaceData function with proper error handling.
+ * Includes retry logic for resilience and fallback to empty array on errors.
  */
 export default function Marketplace({ products: _initialProducts = [] }: MarketplaceProps) {
   const router = useRouter();
   const [showLongLoadingMessage, setShowLongLoadingMessage] = useState(false);
 
-  // SWR fetcher
-  const fetcher = (url: string) =>
-    fetch(url).then((res) => {
-      if (!res.ok) throw new Error(`Request failed: ${res.status}`);
-      return res.json();
-    });
+  // SWR fetcher using the new fetchMarketplaceData function
+  const fetcher = () => fetchMarketplaceData({ limit: 20 });
 
   const { handleApiError, retryQuery } = useApiErrorHandling();
   
@@ -95,11 +91,14 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     );
   }
 
-  // Empty state
+  // Empty state - this will be the fallback when fetchMarketplaceData returns []
   if (!data || data.length === 0) {
     return (
       <div className="p-6 text-white text-center">
         <p className="text-xl mb-2">No products found.</p>
+        <p className="text-sm text-muted-foreground">
+          {showLongLoadingMessage ? 'This is taking longer than expected.' : 'Try refreshing the page.'}
+        </p>
       </div>
     );
   }

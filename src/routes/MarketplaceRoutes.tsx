@@ -1,6 +1,7 @@
-
 import { Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
+import { MarketplaceErrorBoundary } from "@/components/MarketplaceErrorBoundary";
+import { MarketplaceLayout } from "@/components/MarketplaceLayout";
 import Marketplace from "@/pages/Marketplace";
 import Categories from "@/pages/Categories";
 import CategoryPage from "@/pages/CategoryPage";
@@ -32,95 +33,99 @@ import ProductsList from '@/pages/ProductsList';
 
 const MarketplaceRoutes = () => {
   return (
-    <Routes>
-      {/* Marketplace Routes */}
-      <Route index element={<Marketplace />} />
-      <Route path="categories" element={<Categories />} />
-      <Route path="category/:slug" element={<CategoryPage />} />
-      <Route path="featured" element={<Featured />} />
-      <Route path="listing/:id" element={<ListingDetail />} />
-      <Route path="/listing/:id" element={<ListingDetail />} />
-      <Route path="products" element={<ProductsList />} />
-      
-      {/* Equipment Routes */}
-      <Route path="equipment" element={<EquipmentPage />} />
-      <Route path="equipment/recommendations" element={<EquipmentRecommendations />} />
-      <Route path="equipment/:id" element={<EquipmentDetail />} />
-      <Route path="new-products" element={<NewProductsPage />} />
-      <Route path="new-services" element={<NewServicesPage />} />
-      
-      {/* Job Routes */}
-      <Route
-        path="post-job"
-        element={
-          <ProtectedRoute>
-            <PostJob />
-          </ProtectedRoute>
-        }
-      />
-      <Route path="jobs/:id" element={<JobDetails />} />
-      
-      {/* AI Matcher Routes */}
-      <Route path="ai-matcher" element={<AIMatcher />} />
-      <Route path="match" element={<AIMatcher />} />
-      
-      {/* Creator Routes */}
-      <Route
-        path="publish"
-        element={
-          <ProtectedRoute>
-            <PublishProduct />
-          </ProtectedRoute>
-        }
-      />
-      
-      {/* Service Routes */}
-      <Route path="/services" element={<ServicesPage />} />
-      <Route path="/innovation" element={<InnovationPage />} />
-      <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
-      <Route path="/it-onsite-services/:country" element={<ITOnsiteServicesPage />} />
-      <Route path="/request-quote" element={<RequestQuote />} />
-      <Route path="/request-service" element={<RequestService />} />
-      <Route path="/service-description-generator" element={<ServiceDescriptionGenerator />} />
-      
-      {/* Search Route */}
-      <Route path="search" element={<SearchResultsPage />} />
+    <MarketplaceErrorBoundary>
+      <MarketplaceLayout>
+        <Routes>
+          {/* Marketplace Routes */}
+          <Route index element={<Marketplace />} />
+          <Route path="categories" element={<Categories />} />
+          <Route path="category/:slug" element={<CategoryPage />} />
+          <Route path="featured" element={<Featured />} />
+          <Route path="listing/:id" element={<ListingDetail />} />
+          <Route path="/listing/:id" element={<ListingDetail />} />
+          <Route path="products" element={<ProductsList />} />
+          
+          {/* Equipment Routes */}
+          <Route path="equipment" element={<EquipmentPage />} />
+          <Route path="equipment/recommendations" element={<EquipmentRecommendations />} />
+          <Route path="equipment/:id" element={<EquipmentDetail />} />
+          <Route path="new-products" element={<NewProductsPage />} />
+          <Route path="new-services" element={<NewServicesPage />} />
+          
+          {/* Job Routes */}
+          <Route
+            path="post-job"
+            element={
+              <ProtectedRoute>
+                <PostJob />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="jobs/:id" element={<JobDetails />} />
+          
+          {/* AI Matcher Routes */}
+          <Route path="ai-matcher" element={<AIMatcher />} />
+          <Route path="match" element={<AIMatcher />} />
+          
+          {/* Creator Routes */}
+          <Route
+            path="publish"
+            element={
+              <ProtectedRoute>
+                <PublishProduct />
+              </ProtectedRoute>
+            }
+          />
+          
+          {/* Service Routes */}
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/innovation" element={<InnovationPage />} />
+          <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
+          <Route path="/it-onsite-services/:country" element={<ITOnsiteServicesPage />} />
+          <Route path="/request-quote" element={<RequestQuote />} />
+          <Route path="/request-service" element={<RequestService />} />
+          <Route path="/service-description-generator" element={<ServiceDescriptionGenerator />} />
+          
+          {/* Search Route */}
+          <Route path="search" element={<SearchResultsPage />} />
 
-      {/* Cart Route */}
-      <Route path="/cart" element={<CartPage />} />
+          {/* Cart Route */}
+          <Route path="/cart" element={<CartPage />} />
 
-      {/* Checkout Route - accessible to guests */}
-      <Route path="checkout" element={<Checkout />} />
-      <Route path="success" element={<PaymentSuccess />} />
-      
-      {/* Project Room Routes */}
-      <Route
-        path="project/:projectId"
-        element={
-          <ProtectedRoute>
-            <ProjectRoom />
-          </ProtectedRoute>
-        }
-      />
-      
-      {/* Video Call Routes */}
-      <Route
-        path="call/:roomId"
-        element={
-          <ProtectedRoute>
-            <VideoCall />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/order-confirmation/:orderId"
-        element={
-          <ProtectedRoute> {/* Or remove ProtectedRoute if not needed */}
-            <OrderConfirmationPage />
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
+          {/* Checkout Route - accessible to guests */}
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="success" element={<PaymentSuccess />} />
+          
+          {/* Project Room Routes */}
+          <Route
+            path="project/:projectId"
+            element={
+              <ProtectedRoute>
+                <ProjectRoom />
+              </ProtectedRoute>
+            }
+          />
+          
+          {/* Video Call Routes */}
+          <Route
+            path="call/:roomId"
+            element={
+              <ProtectedRoute>
+                <VideoCall />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/order-confirmation/:orderId"
+            element={
+              <ProtectedRoute> {/* Or remove ProtectedRoute if not needed */}
+                <OrderConfirmationPage />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </MarketplaceLayout>
+    </MarketplaceErrorBoundary>
   );
 };
 
