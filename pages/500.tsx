@@ -27,7 +27,7 @@ export default function Custom500() {
   const handleError = (error: Error, info: React.ErrorInfo) => {
     logError(error, {
       route: router.asPath,
-      componentStack: info.componentStack,
+      componentStack: info.componentStack ?? undefined,
       userId: user?.id,
     });
   };
