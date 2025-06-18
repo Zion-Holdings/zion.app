@@ -20,7 +20,6 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { RouterWrapper } from '../src/components/RouterWrapper';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { RouterWrapper } from '../src/components/RouterWrapper';
 import { AppLayout } from '@/layout/AppLayout';
 // Import global Tailwind styles so they load before the app renders
 import '../src/index.css';
