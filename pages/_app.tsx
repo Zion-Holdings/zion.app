@@ -75,7 +75,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                             <ErrorBoundary>
                               {(() => {
                                 try {
-                                  return <Component {...pageProps} />;
+                                  console.log('[App] Rendering component:', Component.name);
+                                  const renderedComponent = <Component {...pageProps} />;
+                                  console.log('[App] Component rendered successfully:', Component.name);
+                                  return renderedComponent;
                                 } catch (error) {
                                   captureException(error, {
                                     message: 'Error rendering component',
