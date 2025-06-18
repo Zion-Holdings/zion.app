@@ -43,7 +43,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
 
   // List of slugs that have dedicated pages and should be excluded from [slug].tsx
-  const reservedSlugs = ['about', 'careers', 'innovation', 'roadmap', 'privacy', 'terms'];
+  const reservedSlugs = ['about', 'careers', 'innovation', 'roadmap', 'privacy', 'terms', 'status'];
 
   const paths = files
     .map((f) => ({ params: { slug: f.replace(/\.md$/, '') } }))
