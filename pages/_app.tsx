@@ -73,12 +73,25 @@ function MyApp({ Component, pageProps }: AppProps) {
                           {/* Wrap in ThemeProvider so dark/light toggle works globally */}
                           <AppLayout> {/* Consistent header/footer layout */}
                             <ErrorBoundary>
-                              <Component {...pageProps} />
+                              {(() => {
+                                try {
+                                  return <Component {...pageProps} />;
+                                } catch (error) {
+                                  captureException(error, {
+                                    message: 'Error rendering component',
+                                    extra: {
+                                      component: Component.name,
+                                      pageProps: pageProps,
+                                    },
+                                  });
+                                  return <div>Error rendering component. See console for details.</div>;
+                                }
+                              })()}
                             </ErrorBoundary>
                           </AppLayout>
                         </ThemeProvider>
                       </AnalyticsProvider>
-                      <Toaster />
+                      
                     </CartProvider>
                   </WalletProvider>
                 </I18nextProvider>
