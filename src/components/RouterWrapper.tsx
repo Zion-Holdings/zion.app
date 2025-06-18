@@ -9,9 +9,16 @@ interface Props {
 }
 
 // Dynamically import BrowserRouter so it is only used on the client.
+// While the component is loading on the client, fall back to MemoryRouter
+// so components that rely on router context do not throw errors.
 const DynamicBrowserRouter = dynamic<BrowserRouterProps>(
   () => import('react-router-dom').then((mod) => mod.BrowserRouter),
-  { ssr: false },
+  {
+    ssr: false,
+    loading: (props: BrowserRouterProps) => (
+      <MemoryRouter {...props}>{props.children}</MemoryRouter>
+    ),
+  },
 );
 
 export function RouterWrapper({ children }: Props) {
@@ -20,3 +27,4 @@ export function RouterWrapper({ children }: Props) {
   }
   return <DynamicBrowserRouter>{children}</DynamicBrowserRouter>;
 }
+
