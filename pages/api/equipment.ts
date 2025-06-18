@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { ProductListing } from '@/types/listings';
 
+// Default placeholder image for equipment without images
+const DEFAULT_EQUIPMENT_IMAGE = 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500';
+
 // Mock equipment data for development
 const mockEquipment: ProductListing[] = [
   {
@@ -143,41 +146,192 @@ const mockEquipment: ProductListing[] = [
     availability: '6-8 Weeks',
     brand: 'Vertiv',
     specifications: ['30kW Capacity', 'Variable Speed Fans', 'Intelligent Controls', 'High Efficiency']
+  },
+  // Add more equipment items to reach 12+ for pagination testing
+  {
+    id: 'firewall-1',
+    title: 'Palo Alto Networks PA-5220',
+    description: 'Next-generation firewall with advanced threat prevention, URL filtering, and application visibility.',
+    category: 'Equipment',
+    subcategory: 'Security',
+    price: 25000,
+    currency: '$',
+    tags: ['Firewall', 'Security', 'Palo Alto', 'Next-Gen'],
+    author: {
+      name: 'Security Solutions Pro',
+      id: 'security-pro',
+      avatarUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=100&h=100',
+    },
+    images: [DEFAULT_EQUIPMENT_IMAGE],
+    createdAt: '2024-02-15T12:00:00.000Z',
+    rating: 4.6,
+    reviewCount: 19,
+    location: 'Global',
+    availability: '3-4 Weeks',
+    brand: 'Palo Alto Networks',
+    specifications: ['10Gbps Throughput', 'Advanced Threat Prevention', 'HA Support', 'SSL Decryption']
+  },
+  {
+    id: 'backup-appliance-1',
+    title: 'Veeam Backup & Replication Appliance',
+    description: 'All-in-one backup solution with built-in deduplication, compression, and instant VM recovery.',
+    category: 'Equipment',
+    subcategory: 'Storage',
+    price: 18000,
+    currency: '$',
+    tags: ['Backup', 'Veeam', 'Appliance', 'Recovery'],
+    author: {
+      name: 'Backup Solutions Inc.',
+      id: 'backup-solutions',
+      avatarUrl: 'https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=100&h=100',
+    },
+    images: [DEFAULT_EQUIPMENT_IMAGE],
+    createdAt: '2024-02-20T14:30:00.000Z',
+    rating: 4.7,
+    reviewCount: 22,
+    location: 'North America',
+    availability: '2-3 Weeks',
+    brand: 'Veeam',
+    specifications: ['50TB Storage', 'Built-in Deduplication', 'Instant Recovery', 'Cloud Integration']
+  },
+  {
+    id: 'load-balancer-1',
+    title: 'F5 BIG-IP Virtual Edition',
+    description: 'Application delivery controller with load balancing, SSL termination, and application security.',
+    category: 'Equipment',
+    subcategory: 'Networking',
+    price: 12000,
+    currency: '$',
+    tags: ['Load Balancer', 'F5', 'ADC', 'Application Security'],
+    author: {
+      name: 'Network Infrastructure LLC',
+      id: 'network-infra',
+      avatarUrl: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=100&h=100',
+    },
+    images: [DEFAULT_EQUIPMENT_IMAGE],
+    createdAt: '2024-03-05T09:15:00.000Z',
+    rating: 4.4,
+    reviewCount: 16,
+    location: 'Global',
+    availability: '1-2 Weeks',
+    brand: 'F5',
+    specifications: ['SSL Termination', 'Layer 7 Load Balancing', 'WAF Protection', 'API Security']
+  },
+  {
+    id: 'monitoring-server-1',
+    title: 'SolarWinds NPM Monitoring Server',
+    description: 'Network performance monitoring server with real-time alerting and comprehensive reporting.',
+    category: 'Equipment',
+    subcategory: 'Management',
+    price: 8500,
+    currency: '$',
+    tags: ['Monitoring', 'SolarWinds', 'NPM', 'Network Management'],
+    author: {
+      name: 'Monitoring Solutions Corp',
+      id: 'monitoring-corp',
+      avatarUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=100&h=100',
+    },
+    images: [DEFAULT_EQUIPMENT_IMAGE],
+    createdAt: '2024-03-10T11:45:00.000Z',
+    rating: 4.3,
+    reviewCount: 25,
+    location: 'North America',
+    availability: 'Immediate',
+    brand: 'SolarWinds',
+    specifications: ['Real-time Monitoring', 'Custom Alerting', 'SNMP Support', 'Performance Analytics']
+  },
+  {
+    id: 'rack-cabinet-1',
+    title: 'APC NetShelter SX 42U Server Rack',
+    description: '42U server rack enclosure with enhanced airflow, cable management, and security features.',
+    category: 'Equipment',
+    subcategory: 'Infrastructure',
+    price: 1800,
+    currency: '$',
+    tags: ['Rack', 'APC', 'Enclosure', 'Infrastructure'],
+    author: {
+      name: 'Infrastructure Pro',
+      id: 'infra-pro',
+      avatarUrl: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=100&h=100',
+    },
+    images: [DEFAULT_EQUIPMENT_IMAGE],
+    createdAt: '2024-03-12T08:20:00.000Z',
+    rating: 4.8,
+    reviewCount: 33,
+    location: 'Global',
+    availability: 'Immediate',
+    brand: 'APC',
+    specifications: ['42U Height', 'Enhanced Airflow', 'Cable Management', 'Locking Side Panels']
+  },
+  {
+    id: 'kvm-switch-1',
+    title: 'Raritan Dominion KX III KVM',
+    description: 'Digital KVM over IP switch for secure remote access to servers and network equipment.',
+    category: 'Equipment',
+    subcategory: 'Management',
+    price: 3500,
+    currency: '$',
+    tags: ['KVM', 'Raritan', 'Remote Access', 'IP KVM'],
+    author: {
+      name: 'Remote Access Solutions',
+      id: 'remote-access',
+      avatarUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=100&h=100',
+    },
+    images: [DEFAULT_EQUIPMENT_IMAGE],
+    createdAt: '2024-03-15T15:30:00.000Z',
+    rating: 4.5,
+    reviewCount: 14,
+    location: 'Global',
+    availability: '2-3 Weeks',
+    brand: 'Raritan',
+    specifications: ['32-Port Capacity', 'Virtual Media', 'SSL Encryption', 'LDAP Integration']
   }
 ];
+
+// Function to ensure all equipment items have proper images
+function ensureEquipmentImages(equipment: ProductListing[]): ProductListing[] {
+  return equipment.map(item => ({
+    ...item,
+    images: item.images && item.images.length > 0 ? item.images : [DEFAULT_EQUIPMENT_IMAGE]
+  }));
+}
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductListing[] | { error: string }>
 ) {
-  // Add timeout handling
+  // Reduce timeout to 5 seconds for faster failure detection
   const timeout = setTimeout(() => {
     if (!(res as any).headersSent) {
-      res.status(408).json({ error: 'Request timeout' });
+      res.status(408).json({ error: 'Request timeout after 5 seconds' });
     }
-  }, 30000);
+  }, 5000);
 
   try {
     if (req.method !== 'GET') {
       res.setHeader('Allow', 'GET');
+      clearTimeout(timeout);
       return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
     }
 
-    // Handle pagination params
+    // Handle pagination params - default limit to 12 as requested
     const page = parseInt(req.query.page as string, 10) || 1;
-    const limit = parseInt(req.query.limit as string, 10) || 20;
+    const limit = Math.min(parseInt(req.query.limit as string, 10) || 12, 50); // Cap at 50 for performance
     const skip = (page - 1) * limit;
 
-    console.log(`Equipment API: page=${page}, limit=${limit}, skip=${skip}`);
+    console.log(`Equipment API: page=${page}, limit=${limit}, skip=${skip}, total=${mockEquipment.length}`);
 
-    // Simulate brief delay to test loading states
-    await new Promise(resolve => setTimeout(resolve, 100));
+    // Minimal delay for realistic API behavior
+    await new Promise(resolve => setTimeout(resolve, 50));
 
-    // Apply pagination
-    const paginatedEquipment = mockEquipment.slice(skip, skip + limit);
+    // Ensure all equipment has images and apply pagination
+    const equipmentWithImages = ensureEquipmentImages(mockEquipment);
+    const paginatedEquipment = equipmentWithImages.slice(skip, skip + limit);
 
     // Clear timeout since we're responding successfully
     clearTimeout(timeout);
+    
+    console.log(`Equipment API: returning ${paginatedEquipment.length} items`);
     
     return res.status(200).json(paginatedEquipment);
   } catch (error) {

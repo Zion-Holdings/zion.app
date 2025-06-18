@@ -12,6 +12,7 @@ export interface AxiosError<T = any> extends Error {
   config?: { url: string; method: string; [key: string]: any };
   /** Flag to identify errors originating from this axios replacement */
   isAxiosError?: boolean;
+  code?: string;
 }
 
 export function isAxiosError(value: any): value is AxiosError {
@@ -40,6 +41,11 @@ class InterceptorManager {
 
 export interface RequestConfig extends RequestInit {
   withCredentials?: boolean;
+  /**
+   * Timeout for the request in milliseconds. If the request does not complete
+   * within this time, it will be aborted and an error will be thrown.
+   */
+  timeout?: number;
 }
 
 export interface AxiosInstance {
@@ -161,12 +167,37 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     const withCreds = reqInit.withCredentials ?? defaultWithCreds;
     delete reqInit.withCredentials;
 
-    const response = await fetch(url, {
-      ...reqInit,
-      method,
-      headers,
-      credentials: withCreds ? 'include' : reqInit.credentials,
-    });
+    let abortCtrl: AbortController | undefined;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    if (typeof reqInit.timeout === 'number') {
+      abortCtrl = new AbortController();
+      timeoutId = setTimeout(() => abortCtrl?.abort(), reqInit.timeout);
+      reqInit.signal = abortCtrl.signal;
+      delete reqInit.timeout;
+    }
+
+    let response: Response;
+    try {
+      response = await fetch(url, {
+        ...reqInit,
+        method,
+        headers,
+        credentials: withCreds ? 'include' : reqInit.credentials,
+      });
+    } catch (err) {
+      if (abortCtrl && (err as any).name === 'AbortError') {
+        const timeoutError: AxiosError = new Error('Request timeout') as AxiosError;
+        timeoutError.code = 'ECONNABORTED';
+        timeoutError.config = { url, method, ...reqInit };
+        timeoutError.isAxiosError = true;
+        throw timeoutError;
+      }
+      throw err;
+    } finally {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    }
     let data: any = null;
     try {
       data = await response.clone().json();

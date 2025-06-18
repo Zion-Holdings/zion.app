@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from 'axios';
 import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
 import { Button } from "@/components/ui/button";
-import { Loader2, Sparkles } from "lucide-react";
+import { Loader2, Sparkles, AlertTriangle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -14,6 +14,7 @@ import Skeleton, { SkeletonCard } from "@/components/ui/skeleton"; // Import Ske
 import { FilterSidebarSkeleton } from "@/components/skeletons/FilterSidebarSkeleton"; // Import FilterSidebarSkeleton
 import { useDelayedError } from '@/hooks/useDelayedError';
 import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
+import { EmptyState } from "@/components/ui/EmptyState";
 
 // The EQUIPMENT_LISTINGS constant has been removed as it was commented out
 // and the page primarily relies on API calls and dynamic data generation.
@@ -34,7 +35,8 @@ const EQUIPMENT_FILTERS = [
 
 export async function fetchEquipment(): Promise<ProductListing[]> {
   try {
-    const { data } = await axios.get('/api/equipment', { timeout: 15000 });
+    const { data } = await axios.get('/api/equipment');
+    console.log('Equipment fetch successful:', data?.length || 0, 'items');
     return data;
   } catch (error: any) {
     console.error("Raw error object in fetchEquipment:", error);
@@ -62,6 +64,7 @@ export async function fetchEquipment(): Promise<ProductListing[]> {
 export default function EquipmentPage() {
   // Initialize with undefined or null to better distinguish between empty data and loading states
   const [equipment, setEquipment] = useState<ProductListing[] | undefined>(undefined);
+  const [hasExhaustedRetries, setHasExhaustedRetries] = useState(false);
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -70,13 +73,13 @@ export default function EquipmentPage() {
     data: fetchedEquipment,
     error: equipmentError,
     isLoading: isLoadingEquipment,
-    refetch: refetchEquipment
+    refetch: refetchEquipment,
+    failureCount
   } = useQuery<ProductListing[], Error>({
     queryKey: ['equipment'],
     queryFn: fetchEquipment,
-    retry: 3,
-    retryDelay: (attemptIndex) => Math.min(1000 * Math.pow(2, attemptIndex), 10000),
-    // Add 30-second timeout
+    retry: 3, // Retry up to 3 times
+    retryDelay: (attemptIndex) => Math.min(1000 * Math.pow(2, attemptIndex), 5000), // Exponential backoff, max 5s
     staleTime: 5 * 60 * 1000, // 5 minutes
     gcTime: 10 * 60 * 1000, // 10 minutes (formerly cacheTime)
   });
@@ -85,10 +88,17 @@ export default function EquipmentPage() {
   useEffect(() => {
     if (fetchedEquipment && Array.isArray(fetchedEquipment)) {
       setEquipment(fetchedEquipment);
+      setHasExhaustedRetries(false); // Reset on successful fetch
     }
-    // Added equipmentError to dependency array for useEffect,
-    // so if an error occurs, we can potentially clear existing equipment or handle error state.
   }, [fetchedEquipment, equipmentError]);
+
+  // Track when retries are exhausted
+  useEffect(() => {
+    if (equipmentError && failureCount >= 3) {
+      console.error('Equipment query failed after 3 retries:', equipmentError);
+      setHasExhaustedRetries(true);
+    }
+  }, [equipmentError, failureCount]);
 
   const {
     trigger: fetchRecommendations,
@@ -140,6 +150,11 @@ export default function EquipmentPage() {
     }
   };
 
+  const handleManualRetry = () => {
+    setHasExhaustedRetries(false);
+    refetchEquipment();
+  };
+
   // Make sure handleRecommendations is memoized or stable if it's a dependency elsewhere, though not strictly required here.
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -152,7 +167,7 @@ export default function EquipmentPage() {
 
   // Memoize skeleton placeholders to avoid re-render loop
   const skeletonPlaceholders = useMemo(
-    () => Array.from({ length: 6 }).map((_, index) => (
+    () => Array.from({ length: 12 }).map((_, index) => (
       <SkeletonCard key={index} />
     )),
     []
@@ -200,11 +215,39 @@ export default function EquipmentPage() {
     );
   }
 
-  // If there's an error and we don't have any equipment to show (even stale), show error.
-  if (delayedError && (!fetchedEquipment || !Array.isArray(fetchedEquipment) || fetchedEquipment.length === 0)) {
+  // If we've exhausted retries (3 attempts), show EmptyState
+  if (hasExhaustedRetries || (delayedError && failureCount >= 3)) {
+    return (
+      <div className="container mx-auto p-4">
+        <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
+          <div className="container mx-auto flex justify-end">
+            <Button onClick={handleRecommendations} disabled={isFetchingRecommendations} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
+              {isFetchingRecommendations ? (
+                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+              ) : (
+                <Sparkles className="h-4 w-4 mr-2" />
+              )}
+              AI Recommendations
+            </Button>
+          </div>
+        </div>
+        <EmptyState
+          text="No equipment available"
+          description="We're having trouble loading equipment right now. Please try again later or check your internet connection."
+          onRetry={handleManualRetry}
+          showRetry={true}
+          icon={<AlertTriangle className="h-16 w-16" />}
+        />
+      </div>
+    );
+  }
+
+  // If there's an error but we haven't exhausted retries yet, show error with retry
+  if (delayedError && !hasExhaustedRetries && failureCount < 3) {
     return (
       <div data-testid="error-state-equipment" className="py-12 text-center space-y-4">
         <p className="text-red-400">Failed to load equipment: {delayedError.message}</p>
+        <p className="text-gray-400 text-sm">Attempt {failureCount + 1} of 3</p>
         <Button data-testid="retry-button-equipment" onClick={() => refetchEquipment()}>
           Retry
         </Button>
@@ -212,13 +255,26 @@ export default function EquipmentPage() {
     );
   }
 
+  // If no equipment and not loading/error, show empty state
   if (!isLoadingEquipment && !equipmentError && (!equipment || equipment.length === 0) && !isFetchingRecommendations) {
     return (
-      <div className="text-center py-16">
-        <h2 className="text-2xl font-bold text-white mb-4">Equipment Catalog Currently Empty</h2>
-        <p className="text-zion-slate-light max-w-md mx-auto">
-          No equipment listings are currently available. Please check back later.
-        </p>
+      <div className="container mx-auto p-4">
+        <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
+          <div className="container mx-auto flex justify-end">
+            <Button onClick={handleRecommendations} disabled={isFetchingRecommendations} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
+              {isFetchingRecommendations ? (
+                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+              ) : (
+                <Sparkles className="h-4 w-4 mr-2" />
+              )}
+              AI Recommendations
+            </Button>
+          </div>
+        </div>
+        <EmptyState
+          text="Equipment catalog is empty"
+          description="No equipment listings are currently available. Check back later for new additions."
+        />
       </div>
     );
   }
