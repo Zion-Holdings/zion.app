@@ -24,6 +24,7 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductWithStats[] | { error: string; details?: string }>
 ) {
+  console.log('Marketplace products API handler started.');
   // DATABASE_URL is essential for Prisma Client to connect to the database.
   // This check ensures the service is not attempting to run without proper configuration.
   if (!process.env.DATABASE_URL) {
@@ -129,6 +130,7 @@ async function handler(
   } finally {
     // Ensures Prisma client is disconnected after the request is handled,
     // whether it succeeded or failed, to prevent resource leaks.
+    console.log('Marketplace products API handler finished.');
     await prisma.$disconnect();
   }
 }

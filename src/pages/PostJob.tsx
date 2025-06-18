@@ -1,5 +1,5 @@
 
-import { Header } from "@/components/header";
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JobPostingForm } from "@/components/jobs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
