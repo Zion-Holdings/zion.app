@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import * as Sentry from '@sentry/nextjs';
 import { toast } from '@/hooks/use-toast';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 export default function Login() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleLogin = async (email: string, password: string) => {
     try {
@@ -18,6 +20,9 @@ export default function Login() {
       });
 
       if (!res.ok) {
+        if (res.status === 401 || res.status === 403) {
+          throw new Error('Invalid email or password');
+        }
         const data = await res.json().catch(() => ({}));
         throw new Error(data?.message || 'Unable to login');
       }
@@ -27,7 +32,7 @@ export default function Login() {
     } catch (err: any) {
       Sentry.captureException(err);
       toast({ title: 'Login failed', description: err.message, variant: 'destructive' });
-      throw err; // re-throw so caller can handle if needed
+      throw err; // propagate to caller
     }
   };
 
@@ -45,10 +50,12 @@ export default function Login() {
     e.preventDefault();
 
     setIsSubmitting(true);
+    setErrorMsg('');
     try {
       await handleLogin(email, password);
-    } catch (_) {
-      // error already handled in handleLogin
+    } catch (err: any) {
+      // set error for UI
+      setErrorMsg(err.message || 'Login failed');
     } finally {
       setIsSubmitting(false);
     }
@@ -59,6 +66,11 @@ export default function Login() {
       <div className="w-full max-w-sm rounded-lg border border-border bg-card p-8 shadow-lg">
         <h1 className="mb-6 text-center text-2xl font-bold">Welcome back</h1>
 
+        {errorMsg && (
+          <Alert variant="destructive" className="mb-4">
+            <AlertDescription>{errorMsg}</AlertDescription>
+          </Alert>
+        )}
         <form onSubmit={handleSubmit} className="space-y-4" noValidate>
           <div>
             <label htmlFor="email" className="mb-1 block text-sm font-medium">
