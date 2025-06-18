@@ -16,16 +16,11 @@ const isInvalid = (value?: string): boolean => {
   );
 };
 
-if (isInvalid(supabaseUrl) || isInvalid(supabaseAnonKey)) {
-  throw new Error(
-    'Supabase URL or Anon Key is missing or invalid. Please check environment variables: NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY.'
-  );
-}
+// Use placeholder values for development if not configured
+const effectiveUrl = supabaseUrl || 'https://placeholder.supabase.co';
+const effectiveAnonKey = supabaseAnonKey || 'placeholder-anon-key';
 
-const effectiveUrl = supabaseUrl as string;
-const effectiveAnonKey = supabaseAnonKey as string;
-
-// Create Supabase client with proper configuration
+// Create Supabase client (this will fail gracefully in dev when used)
 export const supabase = createClient(effectiveUrl, effectiveAnonKey, {
   auth: {
     persistSession: true,

@@ -20,10 +20,10 @@ export default function Login() {
       });
 
       if (!res.ok) {
-        if (res.status === 401 || res.status === 403) {
-          throw new Error('Invalid email or password');
-        }
         const data = await res.json().catch(() => ({}));
+        if (res.status === 401 || res.status === 403) {
+          throw new Error(data?.message || 'Invalid email or password');
+        }
         throw new Error(data?.message || 'Unable to login');
       }
 
