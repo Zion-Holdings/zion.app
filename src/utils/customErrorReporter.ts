@@ -13,15 +13,12 @@ interface ErrorDetails {
 
 const DEFAULT_ENDPOINT = 'http://localhost:3001/webhook/trigger-fix';
 
-export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<void> {
-  const webhookUrl =
-    process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL ||
-    'http://localhost:3001/webhook/trigger-fix';
+ export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<void> {
+  const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;
 
-  if (!process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL) {
-    console.warn(
-      'NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not set. Falling back to http://localhost:3001/webhook/trigger-fix'
-    );
+  if (!webhookUrl || webhookUrl === '') {
+    console.warn('NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not set or is empty. Skipping error reporting.');
+    return;
   }
 
   try {
