@@ -84,10 +84,10 @@ export default function SearchPage() {
           <EnhancedSearchInput
             value={query}
             onChange={setQuery}
-            onSelectSuggestion={(text) => {
-              navigate(`/search?q=${encodeURIComponent(text)}`);
-              setQuery(text);
-              fetchResults(text);
+            onSelectSuggestion={(suggestion) => {
+              navigate(`/search?q=${encodeURIComponent(suggestion.text)}`);
+              setQuery(suggestion.text);
+              fetchResults(suggestion.text);
             }}
             searchSuggestions={suggestions}
             placeholder="Search talent, jobs, and projects..."
