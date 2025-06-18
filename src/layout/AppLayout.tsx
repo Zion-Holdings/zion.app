@@ -1,11 +1,10 @@
 
 import React, { ReactNode, useState } from "react"; // Added useState
-import { Outlet } from "react-router-dom";
+import { useRouter } from 'next/router';
 // Assume useAuth hook exists and provides user object with emailVerified status and email
 import { useAuth } from '@/hooks/useAuth';
 import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // Assuming path
 import { PrimaryNav } from "./PrimaryNav";
-import { useLocation } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { BackToTopButton } from "@/components/BackToTopButton";
 import { Footer } from "@/components/Footer";
@@ -104,7 +103,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
       {loading && <LoaderOverlay />}
       {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}
       <main id="main-content" className="flex-grow">
-        {children ?? <Outlet />}
+        {children}
       </main>
       <BackToTopButton />
       {!hideFooter && <Footer />}
