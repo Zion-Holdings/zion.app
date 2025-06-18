@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Search, Users, Zap, Settings } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface InteractiveFeaturesProps {
@@ -90,7 +90,7 @@ export function InteractiveFeatures({ className, style }: InteractiveFeaturesPro
                 <CardContent className="text-sm text-zion-slate-light p-0">
                   <p>{feature.details}</p>
                   <Button asChild variant="link" className="mt-3 p-0 h-auto text-primary">
-                    <Link to={feature.link} className="flex items-center gap-1">
+                    <Link href={feature.link} className="flex items-center gap-1">
                       Learn more <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>

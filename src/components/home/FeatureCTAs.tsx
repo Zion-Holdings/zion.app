@@ -3,7 +3,7 @@ import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { 
   ArrowRight, 
   Users, 
@@ -147,7 +147,7 @@ export function FeatureCTAs({ className, style }: FeatureCTAsProps) {
               <CardFooter>
                 <Button asChild className="w-full gap-1">
                   <Link
-                    to={feature.link}
+                    href={feature.link}
                     aria-label={`Explore ${feature.title}`}
                     className="cursor-pointer"
                     {...(feature.title === "AI Talent Matching" && { "data-testid": "explore-ai-talent-matching-cta" })}
