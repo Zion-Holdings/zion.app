@@ -66,8 +66,12 @@ export function PrimaryNav() {
               <EnhancedSearchInput
                 value={query}
                 onChange={setQuery}
-                onSelectSuggestion={(text) => {
-                  router.push(`/search?q=${encodeURIComponent(text)}`);
+                onSelectSuggestion={(sugg) => {
+                  if (sugg.id) {
+                    router.push(`/marketplace/listing/${sugg.id}`);
+                  } else {
+                    router.push(`/search?q=${encodeURIComponent(sugg.text)}`);
+                  }
                   setQuery('');
                 }}
                 searchSuggestions={suggestions}

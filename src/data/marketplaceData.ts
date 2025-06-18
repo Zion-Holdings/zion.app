@@ -1,4 +1,3 @@
-
 import { ProductListing } from "@/types/listings";
 import { SearchSuggestion, FilterOptions } from "@/types/search";
 
@@ -443,11 +442,15 @@ export const generateSearchSuggestions = (): SearchSuggestion[] => {
     "High performance storage"
   ];
   
-  // Convert strings to SearchSuggestion objects
-  return suggestions.map(text => ({
-    text,
-    type: 'product' // Use a valid type from the updated SearchSuggestion interface
+  const staticSuggestions = suggestions.map(text => ({ text, type: 'product' as const }));
+
+  const listingSuggestions = MARKETPLACE_LISTINGS.map(l => ({
+    id: l.id,
+    text: l.title,
+    type: 'product' as const,
   }));
+
+  return [...staticSuggestions, ...listingSuggestions];
 };
 
 // Generate filter options for sidebar

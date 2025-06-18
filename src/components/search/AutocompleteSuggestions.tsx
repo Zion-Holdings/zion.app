@@ -1,11 +1,10 @@
-
 import React, { useEffect, useRef } from "react";
 import { SearchSuggestion, SearchHighlight } from "@/types/search";
 
 interface AutocompleteSuggestionsProps {
   suggestions: SearchSuggestion[];
   searchTerm: string;
-  onSelectSuggestion: (suggestion: string) => void;
+  onSelectSuggestion: (suggestion: SearchSuggestion) => void;
   visible: boolean;
   highlightedIndex: number;
   listId: string;
@@ -74,9 +73,9 @@ export function AutocompleteSuggestions({
               role="option"
               aria-selected={isHighlighted}
               className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light' : 'hover:bg-zion-blue-light/20'}`}
-              onMouseDown={(e) => { // Use onMouseDown to prevent input blur before click is registered
+              onMouseDown={(e) => {
                 e.preventDefault();
-                onSelectSuggestion(suggestion.text);
+                onSelectSuggestion(suggestion);
               }}
             >
               <div className="flex items-center justify-between">
