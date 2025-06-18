@@ -33,22 +33,37 @@ const EQUIPMENT_FILTERS = [
 ];
 
 export async function fetchEquipment(): Promise<ProductListing[]> {
-  // Added a try-catch block for better error handling during API call
   try {
-    const { data } = await axios.get('/api/equipment');
+    // Add 30-second timeout to axios request
+    const { data } = await axios.get('/api/equipment', {
+      timeout: 30000, // 30 seconds
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    console.log('Equipment fetch successful:', data?.length || 0, 'items');
     return data;
   } catch (error: any) {
     console.error("Raw error object in fetchEquipment:", error);
-    if (error.response) {
+    
+    let errorMessage = 'Failed to fetch equipment';
+    
+    if (error.code === 'ECONNABORTED' || error.message?.includes('timeout')) {
+      errorMessage = 'Request timed out - please try again';
+    } else if (error.response) {
       console.error("Error response data in fetchEquipment:", error.response.data);
+      errorMessage = error.response.data?.error || `Server error: ${error.response.status}`;
+    } else if (error.request) {
+      errorMessage = 'Network error - please check your connection';
     }
-    console.error("Failed to fetch equipment:", error);
-    toast({
-      title: error.message || 'Failed to fetch equipment',
-      variant: 'destructive',
-    });
-    // Propagate the error so react-query can handle it
-    throw error;
+    
+    console.error("Failed to fetch equipment:", errorMessage);
+    
+    // Create a more informative error object
+    const enhancedError = new Error(errorMessage);
+    enhancedError.name = 'EquipmentFetchError';
+    throw enhancedError;
   }
 }
 
