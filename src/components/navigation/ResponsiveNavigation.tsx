@@ -34,7 +34,7 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
     {
       label: t('nav.marketplace', 'Marketplace'),
       subItems: [
-        { label: t('nav.marketplace', 'Marketplace'), href: '/marketplace' },
+        { label: t('nav.marketplace_overview', 'Overview'), href: '/marketplace' },
         { label: t('nav.categories', 'Categories'), href: '/categories' },
         { label: t('nav.talent', 'Talent'), href: '/talent' },
         { label: t('nav.equipment', 'Equipment'), href: '/equipment' },
@@ -43,9 +43,17 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
     {
       label: t('nav.community', 'Community'),
       subItems: [
-        { label: t('nav.community', 'Community'), href: '/community' },
+        { label: t('nav.community_overview', 'Overview'), href: '/community' },
         { label: t('nav.blog', 'Blog'), href: '/blog' },
         { label: t('nav.partners', 'Partners'), href: '/partners' },
+      ],
+    },
+    {
+      label: t('nav.resources', 'Resources'),
+      subItems: [
+        { label: t('nav.docs', 'Docs'), href: '/docs' },
+        { label: t('nav.tutorials', 'Tutorials'), href: '/tutorials' },
+        { label: t('nav.case_studies', 'Case Studies'), href: '/case-studies' },
       ],
     },
     { label: t('nav.about', 'About'), href: '/about' },
@@ -55,6 +63,16 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
     items.push({ label: t('nav.dashboard', 'Dashboard'), href: '/dashboard' });
   }
 
+  const isItemActive = (item: NavItem) => {
+    if (item.href) {
+      return router.pathname === item.href;
+    }
+    if (item.subItems) {
+      return item.subItems.some((sub) => router.pathname.startsWith(sub.href));
+    }
+    return false;
+  };
+
   return (
     <NavigationMenu className={cn('hidden md:flex', className)}>
       <NavigationMenuList>
@@ -62,7 +80,7 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
           <NavigationMenuItem key={item.label}>
             {item.subItems ? (
               <>
-                <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
+                <NavigationMenuTrigger className={cn(isItemActive(item) && 'text-primary')}>{item.label}</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="flex flex-col p-2 min-w-[180px]">
                     {item.subItems.map((sub) => (
@@ -72,7 +90,7 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
                             href={sub.href}
                             className={cn(
                               "block rounded-sm px-3 py-2 text-sm hover:bg-accent focus:bg-accent focus:outline-none",
-                              router.pathname === sub.href && "bg-accent text-accent-foreground"
+                              router.pathname.startsWith(sub.href) && "bg-accent text-accent-foreground"
                             )}
                           >
                             {sub.label}

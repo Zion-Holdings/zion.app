@@ -24,6 +24,8 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductWithStats[] | { error: string; details?: string }>
 ) {
+  // DATABASE_URL is essential for Prisma Client to connect to the database.
+  // This check ensures the service is not attempting to run without proper configuration.
   if (!process.env.DATABASE_URL) {
     console.error("DATABASE_URL is not set or empty.");
     return res.status(503).json({ error: 'Service Unavailable: Database configuration is missing.' });
@@ -46,8 +48,19 @@ async function handler(
       products = await prisma.product.findMany({ skip, take: limit });
       console.log('Successfully fetched products from database.');
       console.log('Fetched products:', products);
-    } catch (e) {
-      console.error('Error during database connection or fetching products from Prisma:', e, { queryParams: { skip, limit } });
+    } catch (e: any) {
+      // Logging detailed Prisma error including message, code, meta, and stack for findMany operation.
+      console.error(
+        'Error during database operation [prisma.product.findMany]:',
+        {
+          message: e.message,
+          code: e.code, // Prisma-specific error code
+          meta: e.meta, // Additional metadata about the error
+          stack: e.stack, // Call stack
+          fullError: e, // The complete error object
+        },
+        { queryParams: { skip, limit } } // Relevant query parameters for context
+      );
       // Re-throw the error to be caught by the outer catch block
       throw e;
     }
@@ -65,8 +78,19 @@ async function handler(
       });
       console.log('Successfully fetched product stats.');
       console.log('Fetched product stats:', stats);
-    } catch (e) {
-      console.error('Error during fetching product stats from Prisma:', e, { queryParams: { ids } });
+    } catch (e: any) {
+      // Logging detailed Prisma error including message, code, meta, and stack for groupBy operation.
+      console.error(
+        'Error during database operation [prisma.productReview.groupBy]:',
+        {
+          message: e.message,
+          code: e.code, // Prisma-specific error code
+          meta: e.meta, // Additional metadata about the error
+          stack: e.stack, // Call stack
+          fullError: e, // The complete error object
+        },
+        { queryParams: { ids } } // Relevant query parameters for context
+      );
       // Re-throw the error to be caught by the outer catch block
       throw e;
     }
@@ -86,13 +110,25 @@ async function handler(
     });
 
     return res.status(200).json(result);
-  } catch (e) {
-    // The specific errors are already logged by the inner try-catch blocks
-    // This outer catch block now primarily handles the HTTP response
+  } catch (e: any) {
+    // Inner try-catch blocks are responsible for logging specific Prisma errors with detailed context.
+    // This outer catch block handles any other generic errors that might occur,
+    // or errors re-thrown from the inner blocks.
+    console.error(
+      'Generic error in products API handler (fallback catch):',
+      {
+        message: e.message, // General error message
+        code: e.code,       // Error code, if present (e.g., from a non-Prisma error)
+        stack: e.stack,     // Call stack for debugging
+        fullError: e,       // The complete error object for comprehensive analysis
+      }
+    );
     return res
       .status(500)
-      .json({ error: 'Internal server error while fetching products.' });
+      .json({ error: 'Internal server error while fetching products.', details: e.message || 'An unexpected error occurred.' });
   } finally {
+    // Ensures Prisma client is disconnected after the request is handled,
+    // whether it succeeded or failed, to prevent resource leaks.
     await prisma.$disconnect();
   }
 }

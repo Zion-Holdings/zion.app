@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
 import { CartContextType, CartAction } from '@/types/cart';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store';
@@ -46,6 +46,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     items,
     dispatch,
   };
+
+  // Persist cart items to localStorage whenever they change
+  useEffect(() => {
+    try {
+      safeStorage.setItem('zion_cart', JSON.stringify(items));
+    } catch {}
+  }, [items]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }

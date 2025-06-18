@@ -13,8 +13,10 @@ import { generateSearchSuggestions } from '@/data/marketplaceData';
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingCart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/store';
 
 export function PrimaryNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,6 +35,10 @@ export function PrimaryNav() {
   } catch {
     // context not available
   }
+
+  const cartCount = useSelector((s: RootState) =>
+    s.cart.items.reduce((sum, i) => sum + i.quantity, 0)
+  );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,14 +66,26 @@ export function PrimaryNav() {
               <EnhancedSearchInput
                 value={query}
                 onChange={setQuery}
-                onSelectSuggestion={(text) => {
-                  router.push(`/search?q=${encodeURIComponent(text)}`);
+                onSelectSuggestion={(sugg) => {
+                  if (sugg.id) {
+                    router.push(`/marketplace/listing/${sugg.id}`);
+                  } else {
+                    router.push(`/search?q=${encodeURIComponent(sugg.text)}`);
+                  }
                   setQuery('');
                 }}
                 searchSuggestions={suggestions}
               />
             </form>
             <PointsBadge />
+            <Link href="/cart" className="relative" aria-label={t('nav.cart','Cart')}>
+              <ShoppingCart className="h-5 w-5 text-foreground hover:text-primary" />
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] rounded-full h-4 w-4 flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
+            </Link>
             <LanguageSelector />
             {!isLoggedIn && (
               <>

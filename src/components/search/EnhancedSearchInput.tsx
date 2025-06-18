@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -13,7 +12,7 @@ interface EnhancedSearchInputProps {
    * Optional callback when a suggestion is selected. This allows parent
    * components to perform actions such as navigation.
    */
-  onSelectSuggestion?: (value: string) => void;
+  onSelectSuggestion?: (suggestion: SearchSuggestion) => void;
   placeholder?: string;
   searchSuggestions: SearchSuggestion[];
 }
@@ -76,14 +75,14 @@ export function EnhancedSearchInput({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleSelectSuggestion = (suggestion: string) => {
-    onChange(suggestion);
+  const handleSelectSuggestion = (suggestionObj: SearchSuggestion) => {
+    onChange(suggestionObj.text);
     if (onSelectSuggestion) {
-      onSelectSuggestion(suggestion);
+      onSelectSuggestion(suggestionObj);
     }
     setIsFocused(false);
     inputRef.current?.blur();
-    setHighlightedIndex(-1); // Reset highlighted index on selection
+    setHighlightedIndex(-1);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -111,7 +110,7 @@ export function EnhancedSearchInput({
       case 'Enter':
         if (highlightedIndex !== -1 && filteredSuggestions[highlightedIndex]) {
           e.preventDefault();
-          handleSelectSuggestion(filteredSuggestions[highlightedIndex].text);
+          handleSelectSuggestion(filteredSuggestions[highlightedIndex]);
         }
         // If highlightedIndex is -1, default form submission is allowed (no e.preventDefault())
         break;
