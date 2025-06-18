@@ -287,6 +287,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     } catch (mappingError) {
                       console.error("[AuthProvider onAuthStateChange] Error mapping user:", mappingError);
                       mappedUser = null;
+                      setUser(null); // Clear user state on mapping error
+                      setAvatarUrl(null); // Clear avatar URL on mapping error
                     }
       
                     if (mappedUser) {
