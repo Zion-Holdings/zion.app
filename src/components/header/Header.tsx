@@ -71,8 +71,8 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           <EnhancedSearchInput
             value={query}
             onChange={setQuery}
-            onSelectSuggestion={(text) => {
-              router.push(`/search?q=${encodeURIComponent(text)}`);
+            onSelectSuggestion={(suggestion) => {
+              router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
               setQuery("");
             }}
             searchSuggestions={searchSuggestions}

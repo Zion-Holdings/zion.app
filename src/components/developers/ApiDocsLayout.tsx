@@ -1,4 +1,5 @@
 
+import { SearchSuggestion } from "@/types/search";
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Search } from "lucide-react";
@@ -27,8 +28,8 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
     { title: "Error Codes & Rate Limits", path: "/developers/docs/errors" },
   ];
 
-  const handleSelectSuggestion = (text: string) => {
-    const path = getDocsSearchPath(text);
+  const handleSelectSuggestion = (suggestion: SearchSuggestion) => {
+    const path = getDocsSearchPath(suggestion.text);
     if (path) {
       navigate(path);
       setSearchValue("");

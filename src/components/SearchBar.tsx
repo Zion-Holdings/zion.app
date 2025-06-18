@@ -56,12 +56,12 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
     setHighlightedIndex(-1);
   });
 
-  const handleSelect = (text: string) => {
-    onChange(text);
-    if (onSelectSuggestion) onSelectSuggestion(text);
-    router.push(`/search?q=${encodeURIComponent(text)}`);
-    fireEvent('search', { search_term: text });
-    navigate(`/search?q=${encodeURIComponent(text)}`);
+  const handleSelect = (suggestion: SearchSuggestion) => {
+    onChange(suggestion.text);
+    if (onSelectSuggestion) onSelectSuggestion(suggestion.text);
+    router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
+    fireEvent('search', { search_term: suggestion.text });
+    navigate(`/search?q=${encodeURIComponent(suggestion.text)}`);
     setFocused(false);
     setHighlightedIndex(-1);
     inputRef.current?.blur();
@@ -117,7 +117,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
               case 'Enter':
                 if (highlightedIndex !== -1 && suggestions[highlightedIndex]) {
                   e.preventDefault();
-                  handleSelect(suggestions[highlightedIndex].text);
+                  handleSelect(suggestions[highlightedIndex]);
                 } else if (value) {
                   fireEvent('search', { search_term: value });
                   navigate(`/search?q=${encodeURIComponent(value)}`);
