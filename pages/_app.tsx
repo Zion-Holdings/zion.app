@@ -18,6 +18,7 @@ import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
+import { RouterWrapper } from '../src/components/RouterWrapper';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { BrowserRouter } from 'react-router-dom';
 import { AppLayout } from '@/layout/AppLayout';
@@ -187,26 +188,22 @@ function MyApp({ Component, pageProps }: AppProps) {
                                       </ErrorProvider>
                                       );
                                     })()}
-                                    {console.log('[App Provider] HelmetProvider initialized.')}
-                                  </HelmetProvider>
-                                );
-                              })()}
-                              {console.log('[App Provider] ReduxProvider initialized.')}
-                            </ReduxProvider>
-                          );
-                        })()}
-                        {console.log('[App Provider] QueryClientProvider initialized.')}
-                      </QueryClientProvider>
-                    );
-                  })()}
-                  {console.log('[App Provider] GlobalErrorBoundary initialized.')}
-                </GlobalErrorBoundary>
-              );
-            })()}
-            {console.log('[App Provider] RootErrorBoundary initialized.')}
-          </RootErrorBoundary>
-        );
-      })()
+                                  </ErrorBoundary>
+                                </AppLayout>
+                              </ThemeProvider>
+                            </AnalyticsProvider>
+                          </CartProvider>
+                        </WalletProvider>
+                      </I18nextProvider>
+                    </WhitelabelProvider>
+                  </AuthProvider>
+                </ErrorProvider>
+              </HelmetProvider>
+            </ReduxProvider>
+          </QueryClientProvider>
+        </GlobalErrorBoundary>
+      </RootErrorBoundary>
+    </RouterWrapper>
   );
 }
 
