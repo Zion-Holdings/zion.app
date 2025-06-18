@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 interface SearchBarProps {
   value: string;
   onChange: (val: string) => void;
-  onSelectSuggestion?: (val: string) => void;
+  onSelectSuggestion?: (suggestion: SearchSuggestion) => void;
   placeholder?: string;
 }
 
@@ -58,7 +58,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
 
   const handleSelect = (suggestion: SearchSuggestion) => {
     onChange(suggestion.text);
-    if (onSelectSuggestion) onSelectSuggestion(suggestion.text);
+    if (onSelectSuggestion) onSelectSuggestion(suggestion);
     router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
     fireEvent('search', { search_term: suggestion.text });
     navigate(`/search?q=${encodeURIComponent(suggestion.text)}`);
