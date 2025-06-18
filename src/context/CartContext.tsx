@@ -1,3 +1,27 @@
+const safeStorage = {
+  setItem: (key: string, value: string) => {
+    try {
+      localStorage.setItem(key, value);
+    } catch (error) {
+      console.error("Error setting item in localStorage:", error);
+    }
+  },
+  getItem: (key: string) => {
+    try {
+      return localStorage.getItem(key);
+    } catch (error) {
+      console.error("Error getting item from localStorage:", error);
+      return null;
+    }
+  },
+  removeItem: (key: string) => {
+    try {
+      localStorage.removeItem(key);
+    } catch (error) {
+      console.error("Error removing item from localStorage:", error);
+    }
+  },
+};
 import React, { createContext, useContext, useEffect } from 'react';
 import { CartContextType, CartAction } from '@/types/cart';
 import { useSelector, useDispatch } from 'react-redux';

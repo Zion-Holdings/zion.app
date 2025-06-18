@@ -1,17 +1,15 @@
 import useSWR from 'swr';
-import { CategoriesSection } from "@/components/CategoriesSection";
+import { CategoryCard } from "@/components/CategoryCard";
 import { GradientHeading } from "@/components/GradientHeading";
 import { SkeletonCard } from '@/components/ui';
-import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
+import ErrorBoundary from "@/components/GlobalErrorBoundary";
+import * as Icons from 'lucide-react';
 
-// Define a basic type for Category - adjust as per actual API response
 interface CategoryType {
   id: string;
   name: string;
-  description?: string;
-  // Add other relevant fields based on your API structure for categories
-  iconName?: string; // Example field if categories have icons
-  itemCount?: number; // Example field for number of items in a category
+  slug: string;
+  icon: string;
 }
 
 const fetcher = async (url: string): Promise<CategoryType[]> => {
@@ -62,11 +60,25 @@ export default function Categories({ categories: initialCategories = [] }: Categ
           )}
           {!isLoading && !error && categories.length === 0 && (
             <div className="text-center text-zion-slate-light py-8">
-              <p>No categories are currently available. Please check back later.</p>
+              <p>No categories yet</p>
             </div>
           )}
           {!isLoading && !error && categories.length > 0 && (
-            <CategoriesSection showTitle={false} categories={categories} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {categories.map((category) => {
+                // Get the icon component from lucide-react
+                const IconComponent = (Icons as any)[category.icon] || Icons.Folder;
+                
+                return (
+                  <CategoryCard
+                    key={category.id}
+                    title={category.name}
+                    description={`Explore ${category.name.toLowerCase()} in our marketplace`}
+                    icon={<IconComponent className="w-6 h-6" />}
+                  />
+                );
+              })}
+            </div>
           )}
         </ErrorBoundary>
       </div>

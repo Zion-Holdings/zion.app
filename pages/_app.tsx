@@ -18,6 +18,8 @@ import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
+import { ApiErrorBoundary } from '@/components/ApiErrorBoundary';
+import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { RouterWrapper } from '../src/components/RouterWrapper';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
@@ -95,39 +97,42 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RootErrorBoundary>
       <GlobalErrorBoundary>
-        {/* Wrap the entire application with CustomErrorBoundary */}
+        {/* Wrap the entire application with QueryClientProvider first */}
         <QueryClientProvider client={queryClient}>
-          <ReduxProvider store={store}>
-            <HelmetProvider>
-              <ErrorProvider>
-                <ErrorResetOnRouteChange />
-                <AuthProvider>
-                  <WhitelabelProvider>
-                    <I18nextProvider i18n={i18n}>
-                      <WalletProvider>
-                        <CartProvider>
-                          <AnalyticsProvider>
-                            <ThemeProvider>
-                              {/* Wrap in ThemeProvider so dark/light toggle works globally */}
-                              <RouterWrapper>
-                                <AppLayout> {/* Consistent header/footer layout */}
-                                  <ErrorBoundary>
+          <ApiErrorBoundary queryClient={queryClient}>
+            <ReduxProvider store={store}>
+              <HelmetProvider>
+                <ErrorProvider>
+                  <ErrorResetOnRouteChange />
+                  <AuthProvider>
+                    <WhitelabelProvider>
+                      <I18nextProvider i18n={i18n}>
+                        <WalletProvider>
+                          <CartProvider>
+                            <AnalyticsProvider>
+                              <ThemeProvider>
+                                {/* Wrap in ThemeProvider so dark/light toggle works globally */}
+                                <RouterWrapper>
+                                  <AppLayout> {/* Consistent header/footer layout */}
                                     <ErrorBoundary>
-                                      {renderedComponent}
+                                      <ErrorBoundary>
+                                        {renderedComponent}
+                                      </ErrorBoundary>
                                     </ErrorBoundary>
-                                  </ErrorBoundary>
-                                </AppLayout>
-                              </RouterWrapper>
-                            </ThemeProvider>
-                          </AnalyticsProvider>
-                        </CartProvider>
-                      </WalletProvider>
-                    </I18nextProvider>
-                  </WhitelabelProvider>
-                </AuthProvider>
-              </ErrorProvider>
-            </HelmetProvider>
-          </ReduxProvider>
+                                    <OfflineIndicator />
+                                  </AppLayout>
+                                </RouterWrapper>
+                              </ThemeProvider>
+                            </AnalyticsProvider>
+                          </CartProvider>
+                        </WalletProvider>
+                      </I18nextProvider>
+                    </WhitelabelProvider>
+                  </AuthProvider>
+                </ErrorProvider>
+              </HelmetProvider>
+            </ReduxProvider>
+          </ApiErrorBoundary>
         </QueryClientProvider>
       </GlobalErrorBoundary>
     </RootErrorBoundary>
