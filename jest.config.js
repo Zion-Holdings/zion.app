@@ -9,7 +9,8 @@ module.exports = {
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
-      tsconfig: './tsconfig.jest.json' // Point to the new Jest-specific tsconfig
+      tsconfig: './tsconfig.jest.json', // Point to the new Jest-specific tsconfig
+      babelConfig: false, // Prevent ts-jest from using root babel.config.js
     }],
     '^.+\\.m?(js|jsx)$': ['babel-jest', { presets: [['@babel/preset-env', { targets: { node: 'current' }, modules: 'commonjs' }], ['@babel/preset-react', { runtime: 'automatic' }]], babelrc: false, configFile: false }],
   },
