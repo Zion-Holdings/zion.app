@@ -69,6 +69,9 @@ This Node.js service monitors specified frontend pages and backend endpoints, re
     Important variables include:
     * `DJANGO_API_BASE_URL`, `NEXTJS_API_BASE_URL`, `CUSTOM_SERVER_BASE_URL` –
       base URLs for services you want to monitor.
+    * `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
+      `SUPABASE_SERVICE_ROLE_KEY` – credentials required for Supabase
+      authentication (used for login).
     * `ALERT_WEBHOOK_URL` – a webhook endpoint (Slack, Discord, etc.) for alert
       notifications.
     * `LOG_LEVEL` – logging verbosity (`error`, `warn`, `info`, `debug`).
