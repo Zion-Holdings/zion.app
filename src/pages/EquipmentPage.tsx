@@ -1,6 +1,6 @@
 import { DynamicListingPage } from "@/components/DynamicListingPage";
 import { ProductListing } from "@/types/listings";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from 'axios';
 import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
@@ -67,6 +67,11 @@ export default function EquipmentPage() {
   } = useQuery<ProductListing[], Error>({
     queryKey: ['equipment'],
     queryFn: fetchEquipment,
+    retry: 3,
+    retryDelay: (attemptIndex) => Math.min(1000 * Math.pow(2, attemptIndex), 10000),
+    // Add 30-second timeout
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    cacheTime: 10 * 60 * 1000, // 10 minutes
   });
   const delayedError = useDelayedError(equipmentError);
 
@@ -138,13 +143,40 @@ export default function EquipmentPage() {
     // For now, this is okay as it's defined in the same scope.
   }, [user, location.search, handleRecommendations]);
 
+  // Memoize skeleton placeholders to avoid re-render loop
+  const skeletonPlaceholders = useMemo(
+    () => Array.from({ length: 6 }).map((_, index) => (
+      <SkeletonCard key={index} />
+    )),
+    []
+  );
+
+  const aiRecommendationSkeletons = useMemo(
+    () => [1, 2, 3, 4].map((i) => (
+      <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
+        <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
+        <div className="p-4">
+          <Skeleton className="h-6 w-1/3 mb-2 bg-zion-blue-light/20" />
+          <Skeleton className="h-8 w-5/6 mb-4 bg-zion-blue-light/20" />
+          <Skeleton className="h-4 w-full mb-2 bg-zion-blue-light/20" />
+          <Skeleton className="h-4 w-4/5 mb-4 bg-zion-blue-light/20" />
+          <div className="flex justify-between items-center pt-4">
+            <Skeleton className="h-6 w-1/4 bg-zion-blue-light/20" />
+            <Skeleton className="h-8 w-1/4 bg-zion-blue-light/20" />
+          </div>
+        </div>
+      </div>
+    )),
+    []
+  );
+
   // Updated loading condition to specifically check for equipment being undefined
   if (isLoadingEquipment && equipment === undefined) {
     return (
       <div data-testid="loading-state-equipment" className="container mx-auto p-4 space-y-4" aria-busy="true">
         {/* Skeleton for the top button (e.g., AI Recommendations) */}
         <div className="flex justify-end mb-6">
-            <Skeleton className="h-10 w-48" /> {/* Removed specific bg color, base Skeleton handles it */}
+            <Skeleton className="h-10 w-48" />
         </div>
         {/* Main layout for sidebar and cards */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -153,9 +185,7 @@ export default function EquipmentPage() {
           </div>
           <div className="lg:col-span-3">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              {Array.from({ length: 6 }).map((_, index) => (
-                <SkeletonCard key={index} />
-              ))}
+              {skeletonPlaceholders}
             </div>
           </div>
         </div>
@@ -201,23 +231,9 @@ export default function EquipmentPage() {
         </div>
       </div>
       <ErrorBoundary>
-        {isFetchingRecommendations ? ( // This is the skeleton for AI recommendations, keep as is
+        {isFetchingRecommendations ? (
           <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
-                <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
-                <div className="p-4">
-                  <Skeleton className="h-6 w-1/3 mb-2 bg-zion-blue-light/20" />
-                  <Skeleton className="h-8 w-5/6 mb-4 bg-zion-blue-light/20" />
-                  <Skeleton className="h-4 w-full mb-2 bg-zion-blue-light/20" />
-                  <Skeleton className="h-4 w-4/5 mb-4 bg-zion-blue-light/20" />
-                  <div className="flex justify-between items-center pt-4">
-                    <Skeleton className="h-6 w-1/4 bg-zion-blue-light/20" />
-                    <Skeleton className="h-8 w-1/4 bg-zion-blue-light/20" />
-                  </div>
-                </div>
-              </div>
-            ))}
+            {aiRecommendationSkeletons}
           </div>
         ) : (
           <DynamicListingPage
