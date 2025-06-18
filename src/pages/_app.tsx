@@ -135,11 +135,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                                 <GlobalErrorBoundary>
                                   <Suspense fallback={<div>Loading Page...</div>}>
                                     <ChakraProvider>
-                                      <AppLayout> {/* AppLayout might need adjustment for Next.js page structure */}
-                                        <App>
+                                      <App>
+                                        <AppLayout>
                                           <Component {...pageProps} />
-                                        </App>
-                                      </AppLayout>
+                                        </AppLayout>
+                                      </App>
                                     </ChakraProvider>
                                   </Suspense>
                                 </GlobalErrorBoundary>
