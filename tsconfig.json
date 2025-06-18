@@ -52,11 +52,8 @@
       "./node_modules/@types",
       "./types"
     ],
-    "outDir": "dist",
     "jsx": "preserve",
-    "declaration": true,
     "allowImportingTsExtensions": true,
-    "emitDeclarationOnly": true,
     "noEmit": true
   },
   "include": [
@@ -69,13 +66,5 @@
     "node_modules",
     "src/components/ui/chart.tsx",
     "src/store/index.ts"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.node.json"
-    }
   ]
 }
