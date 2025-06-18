@@ -318,8 +318,18 @@ leotsaleMessage =."Anougexpect[dAerrortoccurredrduringvlogin.dPlear] t y ogiin."
                       let errorMessage = 'An error occurred while loading your profile. Please try again or contact support.';
                       if (profileError instanceof Error) {
                         errorMessage = profileError.message;
+<<<<<<< HEAD
                       } else if (typeof profileError === 'object' && profileError !== null && 'message' in profileError) {
                         errorMessage = (profileError as {message: string}).message;
+=======
+                      } else if (
+                        typeof profileError === 'object' &&
+                        profileError !== null &&
+                        'message' in profileError &&
+                        typeof (profileError as any).message === 'string'
+                      ) {
+                        errorMessage = (profileError as any).message;
+>>>>>>> 86d413a77e942d5aa4ba532f4d10473a0e44ff06
                       }
                       toast({
                         title: "Profile Load Error",
