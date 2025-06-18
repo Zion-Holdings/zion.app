@@ -17,7 +17,6 @@ export function useTalentData(page = 1, limit = 12) {
   const { data, isLoading, error } = useQuery<TalentListResponse, Error>({
     queryKey: ['talent-profiles', page, limit],
     queryFn: () => fetchTalentProfiles(page, limit),
-    initialData: { talents: [], total: 0 },
   });
 
   return {

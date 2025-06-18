@@ -98,6 +98,42 @@ describe('TalentDirectory Page', () => {
     });
   });
 
+  it('displays skeleton loader during initial fetch and then empty state if no data', async () => {
+    // 1. Create a promise that we can control
+    let resolveFetchPromise: (value: any) => void;
+    const mockFetchPromise = new Promise((resolve) => {
+      resolveFetchPromise = resolve;
+    });
+
+    (global.fetch as jest.Mock).mockImplementationOnce(() => mockFetchPromise);
+
+    render(
+      <MemoryRouter>
+        <TalentDirectory />
+      </MemoryRouter>
+    );
+
+    // 2. Assert skeleton is visible and empty message is not (while promise is pending)
+    expect(screen.getByTestId('talent-skeleton')).toBeInTheDocument();
+    expect(screen.queryByText(/Talent Directory Currently Empty/i)).not.toBeInTheDocument();
+    expect(screen.queryByTestId('error-banner')).not.toBeInTheDocument();
+
+    // 3. Resolve the fetch promise (simulating API response)
+    resolveFetchPromise!({ // Use non-null assertion as it's guaranteed to be set
+      ok: true,
+      json: () => Promise.resolve({ talents: [], total: 0 }),
+    });
+
+    // 4. Wait for updates and assert skeleton is gone and empty message is now visible
+    await waitFor(() => {
+      expect(screen.queryByTestId('talent-skeleton')).not.toBeInTheDocument();
+    });
+    await waitFor(() => {
+      expect(screen.getByText(/Talent Directory Currently Empty/i)).toBeInTheDocument();
+    });
+    expect(screen.queryByTestId('error-banner')).not.toBeInTheDocument();
+  });
+
   it('handles API error when fetching talent profiles', async () => {
     (global.fetch as jest.Mock).mockImplementationOnce(() =>
       Promise.resolve({
