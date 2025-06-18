@@ -35,7 +35,7 @@ const EQUIPMENT_FILTERS = [
 export async function fetchEquipment(): Promise<ProductListing[]> {
   // Added a try-catch block for better error handling during API call
   try {
-    const { data } = await axios.get('/api/equipment');
+    const { data } = await axios.get('/api/equipment', { timeout: 15000 });
     return data;
   } catch (error: any) {
     console.error("Raw error object in fetchEquipment:", error);

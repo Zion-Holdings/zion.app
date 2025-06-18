@@ -119,4 +119,29 @@ describe('EquipmentPage', () => {
     expect(screen.getAllByTestId('skeleton-card').length).toBeGreaterThan(0);
     expect(screen.getByTestId('filter-sidebar-skeleton')).toBeInTheDocument();
   });
+
+  it('renders error state and hides skeletons on API timeout', async () => {
+    const timeoutError = new Error('timeout of 15000ms exceeded');
+    // Simulating Axios timeout error structure
+    (timeoutError as any).code = 'ECONNABORTED';
+    (apiClient.get as jest.Mock).mockRejectedValueOnce(timeoutError);
+
+    renderWithProviders(<EquipmentPage />);
+
+    await waitFor(() => {
+      // Check that the specific loading state for equipment is gone
+      expect(screen.queryByTestId('loading-state-equipment')).not.toBeInTheDocument();
+      // Check that skeleton cards are no longer rendered
+      expect(screen.queryAllByTestId('skeleton-card')).toHaveLength(0);
+    });
+
+    // Check for the error message display
+    expect(screen.getByText(/Failed to load equipment: timeout of 15000ms exceeded/i)).toBeInTheDocument();
+
+    // Check if toast was called with the error
+    expect(toast).toHaveBeenCalledWith(expect.objectContaining({
+      title: 'timeout of 15000ms exceeded',
+      variant: 'destructive',
+    }));
+  });
 });
