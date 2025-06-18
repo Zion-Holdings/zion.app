@@ -189,3 +189,10 @@ jest.mock('axios', () => ({
   post: jest.fn(() => Promise.resolve({ data: {} })),
   // Add other axios methods if used (e.g., put, delete, request)
 }));
+
+// Mock ResizeObserver for Radix UI components and other libraries that might use it
+global.ResizeObserver = jest.fn().mockImplementation(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  disconnect: jest.fn(),
+}));
