@@ -367,3 +367,56 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     console.log('[AuthProvider DEBUG] Event is SIGNED_OUT, calling handleSignedOut.');
                     handleSignedOut(); // Ensure this is called
                     // Optional: redirect to login if not already there or on a public page
+                    // if (router.pathname !== '/auth/login') router.replace('/auth/login');
+                  }
+                }
+              } catch (outerError) { // Catch errors from the main try block in onAuthStateChange
+                console.error("[AuthProvider DEBUG] Outer error in onAuthStateChange callback:", outerError);
+                setUser(null); // Ensure user state is cleared
+                setAvatarUrl(null);
+              } finally {
+                setIsLoading(false); // Ensure isLoading is false at the end
+                console.log('[AuthProvider DEBUG] onAuthStateChange finished processing. isLoading set to false.');
+              }
+            }
+          );
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [router, dispatch, handleSignedIn, handleSignedOut, setOnboardingStep, setUser, setAvatarUrl, setTokens]); // Added router and other dependencies
+
+  const authContextValue = {
+    user,
+    isLoading,
+    isAuthenticated: !!user,
+    login: signInImpl,
+    // register, // Removed as signup now covers its functionality
+    signUp: signUpImpl,
+    logout,
+    resetPassword,
+    updateProfile,
+    loginWithGoogle,
+    loginWithFacebook,
+    loginWithTwitter,
+    loginWithWeb3,
+    setUser,
+    onboardingStep,
+    tokens,
+    avatarUrl,
+    setAvatarUrl
+  };
+return (
+    <AuthContext.Provider value={authContextValue}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  const context = React.useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return context;
+};
