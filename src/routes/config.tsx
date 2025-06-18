@@ -77,6 +77,7 @@ import FounderBackupVault from '@/pages/FounderBackupVault';
 import CongressPage from '@/pages/Congress';
 import UNBridgePage from '@/pages/UNBridge';
 import InternationalProposalsPage from '@/pages/InternationalProposals';
+import DocsPage from '@/pages/DocsPage'; // Added import for DocsPage
 const Signup = React.lazy(() => import('@/pages/Signup'));
 import {
   AuthRoutes,
@@ -208,6 +209,8 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
     metaTitle: 'International Proposals - Zion',
     requiresAuth: false,
   },
+  // Route for documentation page
+  { path: '/docs', element: <DocsPage />, metaTitle: 'Documentation - Zion' },
   // Wildcard for error handling - ensure this is last
   { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },
 ]);
