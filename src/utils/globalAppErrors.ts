@@ -67,6 +67,9 @@ function handleGlobalError(
   console.error('[CRITICAL] Error within handleGlobalError:', e);
 }
 
+// Close handleGlobalError function
+}
+
 // Handler for window.onunhandledrejection
 function handleUnhandledRejection(event: PromiseRejectionEvent): void {
   try {
@@ -139,6 +142,9 @@ function handleUnhandledRejection(event: PromiseRejectionEvent): void {
   }
 } catch (e) {
   console.error('[CRITICAL] Error within handleUnhandledRejection:', e);
+}
+
+// Close handleUnhandledRejection function
 }
 
 export function initializeGlobalErrorHandlers(): void {
