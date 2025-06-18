@@ -5,6 +5,10 @@ import { SERVICES } from '@/data/servicesData';
 import * as Sentry from '@sentry/nextjs';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useDispatch } from 'react-redux';
+import type { AppDispatch } from '@/store';
+import { addItem } from '@/store/cartSlice';
+import { useRouter } from 'next/router';
 
 interface ListingPageProps {
   listing: ProductListing | null;
@@ -16,6 +20,13 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
   }
 
   const canonicalUrl = `/marketplace/listing/${listing.id}`;
+  const dispatch = useDispatch<AppDispatch>();
+  const router = useRouter();
+
+  const handleAddToCart = () => {
+    dispatch(addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 }));
+    router.push('/cart');
+  };
 
   return (
     <>
@@ -44,7 +55,7 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
         <p className="mb-4 whitespace-pre-line">{listing.description}</p>
         <div className="mb-4">Seller: {listing.author.name}</div>
         <div className="flex gap-2">
-          <button className="rounded bg-primary px-4 py-2 text-primary-foreground">Add to Cart</button>
+          <button onClick={handleAddToCart} className="rounded bg-primary px-4 py-2 text-primary-foreground">Add to Cart</button>
           <button className="rounded border px-4 py-2">Add to Wishlist</button>
         </div>
       </main>
