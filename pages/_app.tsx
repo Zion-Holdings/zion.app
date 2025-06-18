@@ -116,24 +116,15 @@ function MyApp({ Component, pageProps }: AppProps) {
                                       {renderedComponent}
                                     </ErrorBoundary>
                                   </ErrorBoundary>
-                                  {console.log('[App Provider] AppLayout initialized.')}
                                 </AppLayout>
                               </RouterWrapper>
-                              {console.log('[App Provider] ThemeProvider initialized.')}
                             </ThemeProvider>
-                            {console.log('[App Provider] AnalyticsProvider initialized.')}
                           </AnalyticsProvider>
-                          {console.log('[App Provider] CartProvider initialized.')}
                         </CartProvider>
-                        {console.log('[App Provider] WalletProvider initialized.')}
                       </WalletProvider>
-                      {console.log('[App Provider] I18nextProvider initialized.')}
                     </I18nextProvider>
-                    {console.log('[App Provider] WhitelabelProvider initialized.')}
                   </WhitelabelProvider>
-                  {console.log('[App Provider] AuthProvider initialized.')}
                 </AuthProvider>
-                {console.log('[App Provider] ErrorProvider initialized.')}
               </ErrorProvider>
             </HelmetProvider>
           </ReduxProvider>
