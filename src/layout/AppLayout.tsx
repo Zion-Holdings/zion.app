@@ -15,6 +15,17 @@ import LoaderOverlay from '@/components/LoaderOverlay';
 import ErrorOverlay from '@/components/ErrorOverlay';
 import { logError } from '@/utils/logError';
 
+function useSafePathname() {
+  try {
+    return useLocation().pathname;
+  } catch {
+    if (typeof window !== 'undefined') {
+      return window.location.pathname;
+    }
+    return '';
+  }
+}
+
 interface AppLayoutProps {
   children?: React.ReactNode; // Kept ReactNode for consistency
   hideFooter?: boolean;
@@ -29,8 +40,8 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
   const [isResendingEmail, setIsResendingEmail] = useState(false);
   const [resendStatusMessage, setResendStatusMessage] = useState('');
   const { loading, error, setError } = useGlobalLoader();
-  const location = useLocation();
-  const isAuthPage = /^\/auth|\/login|\/register|\/signup|\/forgot-password|\/reset-password|\/update-password/.test(location.pathname);
+  const pathname = useSafePathname();
+  const isAuthPage = /^\/auth|\/login|\/register|\/signup|\/forgot-password|\/reset-password|\/update-password/.test(pathname);
 
   const handleResendVerificationEmail = async () => {
     if (!user || !user.email) {
