@@ -262,17 +262,23 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                   }
       
                   if (profileError) {
-                    console.error("[AuthProvider onAuthStateChange] Error fetching user profile:", profileError); // Critical: Log this error
-                    toast({
-                      title: "Profile Load Error",
-                      description: `Login successful, but failed to load your profile. ${profileError.message}. Please try again or contact support.`,
-                      variant: "destructive",
-                    });
-                    setUser(null); // Ensure user is cleared
-                    setAvatarUrl(null);
-                    // Do NOT redirect to dashboard if profile load fails. User should probably stay on login or go to a generic error page.
-                    // Consider if router.replace('/') or similar is needed here if not on login page already.
-                  } else if (profile) {
+                                console.error("[AuthProvider onAuthStateChange] Error fetching user profile:", profileError); // Critical: Log this error
+                                let errorMessage = 'An error occurred while loading your profile. Please try again or contact support.';
+                                if (profileError instanceof Error) {
+                                  errorMessage = profileError.message;
+                                } else if (typeof profileError === 'object' && profileError !== null && 'message' in profileError && typeof profileError.message === 'string') {
+                                  errorMessage = profileError.message;
+                                }
+                                toast({
+                                  title: "Profile Load Error",
+                                  description: `Login successful, but failed to load your profile. ${errorMessage}`,
+                                  variant: "destructive",
+                                });
+                                setUser(null); // Ensure user is cleared
+                                setAvatarUrl(null);
+                                // Do NOT redirect to dashboard if profile load fails. User should probably stay on login or go to a generic error page.
+                                // Consider if router.replace('/') or similar is needed here if not on login page already.
+                              } else if (profile) {
                     console.log('[AuthProvider onAuthStateChange] Profile data fetched successfully:', profile);
                     let mappedUser;
                     try {
