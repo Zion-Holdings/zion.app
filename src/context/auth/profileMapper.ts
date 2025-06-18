@@ -30,8 +30,8 @@ export function mapProfileToUser(user: SupabaseUser, profile: any): UserProfile 
     displayName: profile.display_name || "",
     userType: userType || undefined,
     profileComplete: Boolean(profile.profile_complete),
-    created_at: new Date(profile.created_at).toISOString(),
-    updated_at: new Date(profile.updated_at).toISOString(),
+    created_at: (profile.created_at && !isNaN(new Date(profile.created_at).getTime())) ? new Date(profile.created_at).toISOString() : new Date().toISOString(),
+    updated_at: (profile.updated_at && !isNaN(new Date(profile.updated_at).getTime())) ? new Date(profile.updated_at).toISOString() : new Date().toISOString(),
     avatarUrl: profile.avatar_url || undefined,
     name: profile.display_name || "",
     role: userType || "", // Map user_type to role for backward compatibility
