@@ -17,7 +17,8 @@ interface CategoryType {
 const fetcher = async (url: string): Promise<CategoryType[]> => {
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`API error: ${response.statusText}`);
+    // Ensure the error message matches the bug report exactly
+    throw new Error("API error: Please try again later.");
   }
   return response.json();
 };
