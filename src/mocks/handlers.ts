@@ -38,4 +38,12 @@ export const handlers = [
         { status: 400 }
       )
   }),
+
+  // Handler for marketplace products API - simulates an error
+  http.get('/api/marketplace/products', ({ request, params, cookies }) => {
+    return HttpResponse.json(
+      { error: 'Internal Server Error from MSW' },
+      { status: 500 }
+    );
+  }),
 ]
