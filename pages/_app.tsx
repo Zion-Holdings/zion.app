@@ -18,6 +18,7 @@ import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
+import { RouterWrapper } from '../src/components/RouterWrapper';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 // Import global Tailwind styles so they load before the app renders
@@ -56,11 +57,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     (() => {
-      console.log('[App Provider] Initializing RootErrorBoundary...');
+      console.log('[App Provider] Initializing RouterWrapper...');
       return (
-        <RootErrorBoundary>
+        <RouterWrapper>
           {(() => {
-            console.log('[App Provider] Initializing GlobalErrorBoundary...');
+            console.log('[App Provider] Initializing RootErrorBoundary...');
+            return (
+              <RootErrorBoundary>
+                {(() => {
+                  console.log('[App Provider] Initializing GlobalErrorBoundary...');
             return (
               <GlobalErrorBoundary>
                 {/* Wrap the entire application with CustomErrorBoundary */}
@@ -194,8 +199,12 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </GlobalErrorBoundary>
               );
             })()}
-            {console.log('[App Provider] RootErrorBoundary initialized.')}
-          </RootErrorBoundary>
+                  {console.log('[App Provider] RootErrorBoundary initialized.')}
+                </RootErrorBoundary>
+              );
+            })()}
+            {console.log('[App Provider] RouterWrapper initialized.')}
+          </RouterWrapper>
         );
       })()
   );
