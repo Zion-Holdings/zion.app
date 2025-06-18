@@ -64,25 +64,17 @@ function MyApp({ Component, pageProps }: AppProps) {
               <ErrorProvider>
                 <ErrorResetOnRouteChange />
                 <AuthProvider>
-                  <WhitelabelProvider>
-                  <I18nextProvider i18n={i18n}>
-                    <WalletProvider>
-                      <CartProvider>
-                        <AnalyticsProvider>
-                          <ThemeProvider>
-                            {/* Wrap in ThemeProvider so dark/light toggle works globally */}
-                            <AppLayout> {/* Consistent header/footer layout */}
-                              <ErrorBoundary>
-                                <Component {...pageProps} />
-                              </ErrorBoundary>
-                            </AppLayout>
-                          </ThemeProvider>
-                        </AnalyticsProvider>
-                        <Toaster />
-                      </CartProvider>
-                    </WalletProvider>
-                  </I18nextProvider>
-                </WhitelabelProvider>
+                <I18nextProvider i18n={i18n}>
+                  <ThemeProvider>
+                    {/* Wrap in ThemeProvider so dark/light toggle works globally */}
+                    <AppLayout> {/* Consistent header/footer layout */}
+                      <ErrorBoundary>
+                        <Component {...pageProps} />
+                      </ErrorBoundary>
+                    </AppLayout>
+                  </ThemeProvider>
+                  <Toaster />
+                </I18nextProvider>
               </AuthProvider>
               </ErrorProvider>
             </HelmetProvider>
