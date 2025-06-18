@@ -6,6 +6,8 @@ import { toast } from '@/hooks/use-toast';
 export default function Login() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleLogin = async (email: string, password: string) => {
     try {
@@ -30,10 +32,17 @@ export default function Login() {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    if (!email.trim() || !password.trim()) {
+      e.preventDefault();
+      toast({
+        title: 'Missing credentials',
+        description: 'Both email and password are required.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const email = (formData.get('email') || '').toString();
-    const password = (formData.get('password') || '').toString();
 
     setIsSubmitting(true);
     try {
@@ -60,6 +69,8 @@ export default function Login() {
               name="email"
               type="email"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded border border-border px-3 py-2"
               aria-label="email address"
             />
@@ -73,6 +84,8 @@ export default function Login() {
               name="password"
               type="password"
               required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full rounded border border-border px-3 py-2"
               aria-label="password"
             />
