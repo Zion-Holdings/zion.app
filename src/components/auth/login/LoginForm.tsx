@@ -52,7 +52,8 @@ export function LoginForm() {
       // Pass email and password to the login function
       const result = await login(data.email, data.password);
       if (result.error) {
-        form.setError("root", { message: result.error });
+        // Prevent form reset on error
+        // form.setError("root", { message: result.error });
       } else {
         fireEvent('login', { method: 'email' }); // Assuming email login
       }
@@ -173,7 +174,7 @@ export function LoginForm() {
         </div>
         <Button
           type="submit"
-          className="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zion-purple-light"
+          className="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zion-purple-light visible"
           disabled={isLoading || isSubmitting}
         >
           {isLoading || isSubmitting ? "Logging in..." : "Login"}
