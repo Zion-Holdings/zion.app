@@ -234,97 +234,122 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       // Inside the onAuthStateChange callback
       async (event, session) => {
-        console.log('[AuthProvider onAuthStateChange] Triggered. Event:', event, 'Session:', session); // Existing log, ensure it's there
-
-        setIsLoading(true); // Ensure isLoading is true at the start
-
-        try {
-          if (session?.user) {
-            console.log('[AuthProvider onAuthStateChange] Session and user found. User ID:', session.user.id);
-            console.log('[AuthProvider onAuthStateChange] Fetching profile for user ID:', session.user.id);
-
-            // Explicitly log the exact query being made
-            console.log('[AuthProvider onAuthStateChange] Supabase query: getFromProfiles().select("*").eq("id", session.user.id).single()');
-
-            const { data: profile, error: profileError } = await getFromProfiles()
-              .select('*')
-              .eq('id', session.user.id)
-              .single();
-
-            if (profileError) {
-              console.error("[AuthProvider onAuthStateChange] Error fetching user profile:", profileError); // Critical: Log this error
-              toast({
-                title: "Profile Load Error",
-                description: `Login successful, but failed to load your profile. ${profileError.message}. Please try again or contact support.`,
-                variant: "destructive",
-              });
-              setUser(null); // Ensure user is cleared
-              setAvatarUrl(null);
-              // Do NOT redirect to dashboard if profile load fails. User should probably stay on login or go to a generic error page.
-              // Consider if router.replace('/') or similar is needed here if not on login page already.
-            } else if (profile) {
-              console.log('[AuthProvider onAuthStateChange] Profile data fetched successfully:', profile);
-              const mappedUser = mapProfileToUser(session.user, profile);
-              console.log('[AuthProvider onAuthStateChange] Mapped user data:', mappedUser);
-              setUser(mappedUser);
-              setAvatarUrl(mappedUser.avatarUrl || null);
-              console.log('[AuthProvider onAuthStateChange] User state updated in context.');
-
-              if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED') { // Consider other events that mean user is authenticated
-                console.log('[AuthProvider onAuthStateChange] Event is SIGNED_IN (or similar), calling handleSignedIn.');
-                handleSignedIn(mappedUser); // Ensure this is called with the correct user
-
-                // Redirection logic - ensure this is robust
-                const queryStringAuthChange = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
-                const paramsAuthChange = new URLSearchParams(queryStringAuthChange);
-                const nextFromUrl = paramsAuthChange.get('redirectTo') || paramsAuthChange.get('next');
-                const nextPathFromStorage = safeStorage.getItem('nextPath');
-                let redirectTo = '/dashboard'; // Default
-
-                if (nextPathFromStorage) {
-                  redirectTo = decodeURIComponent(nextPathFromStorage);
-                  safeStorage.removeItem('nextPath');
-                  console.log('[AuthProvider onAuthStateChange] Redirecting to (from storage):', redirectTo);
-                } else if (nextFromUrl) {
-                  redirectTo = decodeURIComponent(nextFromUrl);
-                  console.log('[AuthProvider onAuthStateChange] Redirecting to (from URL params):', redirectTo);
-                } else {
-                  console.log('[AuthProvider onAuthStateChange] Redirecting to default dashboard.');
+              console.log('[AuthProvider onAuthStateChange] Triggered. Event:', event, 'Session:', session); // Existing log, ensure it's there
+      
+              setIsLoading(true); // Ensure isLoading is true at the start
+      
+              try {
+                if (session?.user) {
+                  console.log('[AuthProvider onAuthStateChange] Session and user found. User ID:', session.user.id);
+                  console.log('[AuthProvider onAuthStateChange] Fetching profile for user ID:', session.user.id);
+      
+                  // Explicitly log the exact query being made
+                  console.log('[AuthProvider onAuthStateChange] Supabase query: getFromProfiles().select("*").eq("id", session.user.id).single()');
+      
+                  let profile;
+                  let profileError;
+                  try {
+                    const result = await getFromProfiles()
+                      .select('*')
+                      .eq('id', session.user.id)
+                      .single();
+                    profile = result.data;
+                    profileError = result.error;
+                    console.log('[AuthProvider onAuthStateChange] Profile fetch result:', result);
+                  } catch (fetchError) {
+                    console.error("[AuthProvider onAuthStateChange] Error during profile fetch:", fetchError);
+                    profileError = fetchError;
+                  }
+      
+                  if (profileError) {
+                    console.error("[AuthProvider onAuthStateChange] Error fetching user profile:", profileError); // Critical: Log this error
+                    toast({
+                      title: "Profile Load Error",
+                      description: `Login successful, but failed to load your profile. ${profileError.message}. Please try again or contact support.`,
+                      variant: "destructive",
+                    });
+                    setUser(null); // Ensure user is cleared
+                    setAvatarUrl(null);
+                    // Do NOT redirect to dashboard if profile load fails. User should probably stay on login or go to a generic error page.
+                    // Consider if router.replace('/') or similar is needed here if not on login page already.
+                  } else if (profile) {
+                    console.log('[AuthProvider onAuthStateChange] Profile data fetched successfully:', profile);
+                    let mappedUser;
+                    try {
+                      mappedUser = mapProfileToUser(session.user, profile);
+                      console.log('[AuthProvider onAuthStateChange] Mapped user data:', mappedUser);
+                    } catch (mappingError) {
+                      console.error("[AuthProvider onAuthStateChange] Error mapping user:", mappingError);
+                      mappedUser = null;
+                    }
+      
+                    if (mappedUser) {
+                      setUser(mappedUser);
+                      setAvatarUrl(mappedUser.avatarUrl || null);
+                      console.log('[AuthProvider onAuthStateChange] User state updated in context.');
+      
+                      if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED') { // Consider other events that mean user is authenticated
+                        console.log('[AuthProvider onAuthStateChange] Event is SIGNED_IN (or similar), calling handleSignedIn.');
+                        handleSignedIn(mappedUser); // Ensure this is called with the correct user
+      
+                        // Redirection logic - ensure this is robust
+                        try {
+                          const queryStringAuthChange = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
+                          const paramsAuthChange = new URLSearchParams(queryStringAuthChange);
+                          const nextFromUrl = paramsAuthChange.get('redirectTo') || paramsAuthChange.get('next');
+                          const nextPathFromStorage = safeStorage.getItem('nextPath');
+                          let redirectTo = '/dashboard'; // Default
+      
+                          if (nextPathFromStorage) {
+                            redirectTo = decodeURIComponent(nextPathFromStorage);
+                            safeStorage.removeItem('nextPath');
+                            console.log('[AuthProvider onAuthStateChange] Redirecting to (from storage):', redirectTo);
+                          } else if (nextFromUrl) {
+                            redirectTo = decodeURIComponent(nextFromUrl);
+                            console.log('[AuthProvider onAuthStateChange] Redirecting to (from URL params):', redirectTo);
+                          } else {
+                            console.log('[AuthProvider onAuthStateChange] Redirecting to default dashboard.');
+                          }
+                          console.log('[AuthProvider onAuthStateChange] Redirecting to:', redirectTo);
+                          router.replace(redirectTo);
+                        } catch (redirectError) {
+                          console.error("[AuthProvider onAuthStateChange] Error during redirection:", redirectError);
+                        }
+                      }
+                    } else {
+                      console.error("[AuthProvider onAuthStateChange] Mapped user is null. Not updating user state.");
+                    }
+                  } else {
+                    console.warn("[AuthProvider onAuthStateChange] Profile not found for user (no error, but profile is null):", session.user.id);
+                    toast({
+                      title: "Profile Not Found",
+                      description: "Login successful, but your profile could not be found. Please contact support.",
+                      variant: "destructive",
+                    });
+                    setUser(null); // Ensure user is cleared
+                    setAvatarUrl(null);
+                  }
+                } else { // No session or session.user is null
+                  console.log('[AuthProvider onAuthStateChange] No session or user. Clearing user state. Event:', event);
+                  setUser(null);
+                  setAvatarUrl(null);
+                  if (event === 'SIGNED_OUT') {
+                    console.log('[AuthProvider onAuthStateChange] Event is SIGNED_OUT, calling handleSignedOut.');
+                    handleSignedOut(); // Ensure this is called
+                    // Optional: redirect to login if not already there or on a public page
+                    // if (router.pathname !== '/auth/login') router.replace('/auth/login');
+                  }
                 }
-                console.log('[AuthProvider onAuthStateChange] Redirecting to:', redirectTo);
-                router.replace(redirectTo);
+              } catch (outerError) {
+                console.error("[AuthProvider onAuthStateChange] Outer error in callback:", outerError);
+                setUser(null); // Ensure user state is cleared
+                setAvatarUrl(null);
+              } finally {
+                setIsLoading(false); // Ensure isLoading is false at the end
+                console.log('[AuthProvider onAuthStateChange] Finished processing. isLoading set to false.');
               }
-            } else {
-              console.warn("[AuthProvider onAuthStateChange] Profile not found for user (no error, but profile is null):", session.user.id);
-              toast({
-                title: "Profile Not Found",
-                description: "Login successful, but your profile could not be found. Please contact support.",
-                variant: "destructive",
-              });
-              setUser(null); // Ensure user is cleared
-              setAvatarUrl(null);
             }
-          } else { // No session or session.user is null
-            console.log('[AuthProvider onAuthStateChange] No session or user. Clearing user state. Event:', event);
-            setUser(null);
-            setAvatarUrl(null);
-            if (event === 'SIGNED_OUT') {
-              console.log('[AuthProvider onAuthStateChange] Event is SIGNED_OUT, calling handleSignedOut.');
-              handleSignedOut(); // Ensure this is called
-              // Optional: redirect to login if not already there or on a public page
-              // if (router.pathname !== '/auth/login') router.replace('/auth/login');
-            }
-          }
-        } catch (outerError) {
-          console.error("[AuthProvider onAuthStateChange] Outer error in callback:", outerError);
-          setUser(null); // Ensure user state is cleared
-          setAvatarUrl(null);
-        } finally {
-          setIsLoading(false); // Ensure isLoading is false at the end
-          console.log('[AuthProvider onAuthStateChange] Finished processing. isLoading set to false.');
-        }
-      }
-    );
+          );
 
     return () => {
       subscription.unsubscribe();
