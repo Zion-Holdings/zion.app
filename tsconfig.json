@@ -47,7 +47,7 @@
     "noFallthroughCasesInSwitch": true,
     "allowJs": false,
     "incremental": true,
-    "types": [],
+    "types": ["node"],
     "typeRoots": [
       "./node_modules/@types",
       "./types"
@@ -57,7 +57,7 @@
     "declaration": true,
     "allowImportingTsExtensions": true,
     "emitDeclarationOnly": true,
-    "noEmit": true
+    "noEmit": false
   },
   "include": [
     "src",

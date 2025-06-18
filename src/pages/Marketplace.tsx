@@ -11,7 +11,7 @@ async function fetchProducts() {
   // Network errors are caught and logged here.
   // The error is re-thrown to be handled by react-query.
   try {
-    const res = await fetch('/api/marketplace/products?limit=20');
+    const res = await fetch('/api/marketplace?type=all');
     if (!res.ok) {
       throw new Error('Failed to fetch products');
     }
@@ -78,6 +78,11 @@ export default function Marketplace({ products: initialProducts = [] }: Marketpl
             />
           ))}
       </div>
+      {products.length === 0 && (
+        <div className="text-center text-gray-500">
+          <p>No products available.</p>
+        </div>
+      )}
     </div>
   );
 }

@@ -12,7 +12,7 @@ export const getStaticProps: GetStaticProps<MarketplaceProps> = async () => {
     return { props: { products: [] }, revalidate: 60 };
   }
   try {
-    const res = await fetch(`${appUrl}/api/marketplace/products?limit=20`);
+    const res = await fetch(`${appUrl}/api/marketplace?type=all`);
     if (!res.ok) {
       const errorText = await res.text();
       console.error(
