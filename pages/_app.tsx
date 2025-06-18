@@ -19,6 +19,7 @@ import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { RouterWrapper } from '../src/components/RouterWrapper';
 import { AppLayout } from '@/layout/AppLayout';
 // Import global Tailwind styles so they load before the app renders
 import '../src/index.css';
@@ -113,10 +114,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                                                                                   {(() => {
                                                                                     console.log('[App Provider] Initializing AppLayout...');
                                                                                     return (
-                                                                                      <AppLayout> {/* Consistent header/footer layout */}
-                                                                                        {(() => {
-                                                                                          console.log('[App Provider] Initializing ErrorBoundary (wrapping Component)...');
-                                                                                          return (
+                                                                                      <RouterWrapper>
+                                                                                        <AppLayout> {/* Consistent header/footer layout */}
+                                                                                          {(() => {
+                                                                                            console.log('[App Provider] Initializing ErrorBoundary (wrapping Component)...');
+                                                                                            return (
                                                                                             <ErrorBoundary>
                                                                                               {(() => {
                                                                                                 let renderedComponent;
@@ -142,8 +144,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                                                                                             </ErrorBoundary>
                                                                                           );
                                                                                         })()}
-                                                                                        {console.log('[App Provider] AppLayout initialized.')}
-                                                                                      </AppLayout>
+                                                                                          {console.log('[App Provider] AppLayout initialized.')}
+                                                                                        </AppLayout>
+                                                                                      </RouterWrapper>
                                                                                     );
                                                                                   })()}
                                                                                   {console.log('[App Provider] ThemeProvider initialized.')}
