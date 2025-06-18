@@ -12,6 +12,7 @@ import {
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
 import { CartItem as CartItemType } from '@/types/cart';
 import { safeStorage } from '@/utils/safeStorage';
+import { getStripe } from '@/utils/getStripe';
 
 export default function CartPage() {
   const reduxItems = useSelector((s: RootState) => s.cart.items);
@@ -48,10 +49,19 @@ export default function CartPage() {
   const handleCheckout = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.post('/api/checkout/session', { cart: items });
-      if (data.url) {
-        window.location.href = data.url;
-      }
+      const stripe = await getStripe();
+      if (!stripe) throw new Error('Stripe.js failed to load');
+
+      const { data } = await axios.post('/api/checkout-session', {
+        cartItems: items,
+        customer_email: user?.email,
+      });
+
+      const sessionId = data.sessionId as string | undefined;
+      if (!sessionId) throw new Error('Session ID missing in response');
+
+      const { error } = await stripe.redirectToCheckout({ sessionId });
+      if (error) console.error('Stripe redirect error:', error.message);
     } catch (err: any) {
       console.error('Checkout error:', err);
       alert(err.message || 'Checkout failed');
