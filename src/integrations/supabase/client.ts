@@ -17,17 +17,13 @@ const isInvalid = (value?: string): boolean => {
 };
 
 if (isInvalid(supabaseUrl) || isInvalid(supabaseAnonKey)) {
-  console.warn(
-    'Supabase environment variables are missing or placeholders. Using dummy credentials.'
+  throw new Error(
+    'Supabase URL or Anon Key is missing or invalid. Please check environment variables: NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY.'
   );
 }
 
-const effectiveUrl = !isInvalid(supabaseUrl)
-  ? (supabaseUrl as string)
-  : 'http://localhost';
-const effectiveAnonKey = !isInvalid(supabaseAnonKey)
-  ? (supabaseAnonKey as string)
-  : 'public-anon-key';
+const effectiveUrl = supabaseUrl as string;
+const effectiveAnonKey = supabaseAnonKey as string;
 
 // Create Supabase client with proper configuration
 export const supabase = createClient(effectiveUrl, effectiveAnonKey, {

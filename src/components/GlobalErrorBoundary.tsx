@@ -12,11 +12,24 @@ function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   const apologyMessage = "We apologize for the inconvenience.";
   const explanationMessage = "Our team has been notified and is working to fix the issue.";
 
+  let customUserMessage = "";
+  if (error?.message?.includes("Supabase URL or Anon Key is missing")) {
+    customUserMessage = "Application Configuration Error: Essential settings for connecting to backend services are missing. Please contact support or, if you are a developer, check the deployment configuration for Supabase environment variables (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY).";
+  }
+
   return (
     <div role="alert" className="p-6 m-4 border border-red-300 rounded-md bg-red-50 text-center space-y-4">
       <h2 className="text-xl font-semibold text-red-700">Oops! Something went wrong.</h2>
-      <p className="text-red-600">{apologyMessage}</p>
-      <p className="text-red-600">{explanationMessage}</p>
+
+      {customUserMessage ? (
+        <p className="text-red-600">{customUserMessage}</p>
+      ) : (
+        <>
+          <p className="text-red-600">{apologyMessage}</p>
+          <p className="text-red-600">{explanationMessage}</p>
+        </>
+      )}
+
       {error?.message && (
         <details className="p-2 bg-red-100 rounded text-left text-sm">
           <summary className="cursor-pointer text-red-500 font-medium">Error Details</summary>
