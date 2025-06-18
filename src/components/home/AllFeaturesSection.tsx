@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface AllFeaturesSectionProps {
@@ -40,7 +40,7 @@ export function AllFeaturesSection({ className, style }: AllFeaturesSectionProps
           {features.map((feature, idx) => (
             <Link
               key={idx}
-              to={feature.link}
+              href={feature.link}
               className="block bg-zion-blue border border-zion-blue-light hover:border-zion-purple/50 rounded-lg p-4 text-center transition-all"
             >
               {feature.title}

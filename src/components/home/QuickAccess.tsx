@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 import { 
@@ -75,7 +75,7 @@ export function QuickAccess({ className, style }: QuickAccessProps) {
           {quickLinks.map((link, index) => (
             <Link
               key={index}
-              to={link.link}
+              href={link.link}
               className="group bg-zion-blue relative border border-zion-blue-light hover:border-zion-purple/50 rounded-xl p-4 transition-all duration-300 flex flex-col items-center text-center hover:shadow-md hover:bg-zion-blue-light/20"
             >
               <div className="bg-zion-blue-dark rounded-full w-12 h-12 flex items-center justify-center mb-3 transition-transform group-hover:scale-110">
