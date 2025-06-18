@@ -55,156 +55,91 @@ function MyApp({ Component, pageProps }: AppProps) {
     Sentry.setContext('query', router.query);
   }, [router.pathname]);
 
+  // Log initialization messages
+  console.log('[App Provider] Initializing RootErrorBoundary...');
+  console.log('[App Provider] Initializing GlobalErrorBoundary...');
+  console.log('[App Provider] Initializing QueryClientProvider...');
+  console.log('[App Provider] Initializing ReduxProvider...');
+  console.log('[App Provider] Initializing HelmetProvider...');
+  console.log('[App Provider] Initializing ErrorProvider...');
+  console.log('[App Provider] Initializing AuthProvider...');
+  console.log('[App Provider] Initializing WhitelabelProvider...');
+  console.log('[App Provider] Initializing I18nextProvider...');
+  console.log('[App Provider] Initializing WalletProvider...');
+  console.log('[App Provider] Initializing CartProvider...');
+  console.log('[App Provider] Initializing AnalyticsProvider...');
+  console.log('[App Provider] Initializing ThemeProvider...');
+  console.log('[App Provider] Initializing BrowserRouter...');
+  console.log('[App Provider] Initializing ErrorBoundary (wrapping Component)...');
+
+  // Render component with error handling
+  let renderedComponent;
+  console.log('[App] Attempting to render component:', Component.name);
+  try {
+    console.log('[App] Rendering component:', Component.name);
+    renderedComponent = <Component {...pageProps} />;
+    console.log('[App] Component rendered successfully:', Component.name);
+  } catch (error) {
+    console.error('[App] Error rendering component:', Component.name, error);
+    captureException(error, {
+      message: 'Error rendering component',
+      extra: {
+        component: Component.name,
+        pageProps: pageProps,
+      },
+    });
+    renderedComponent = <div>Error rendering component. See console for details.</div>;
+  }
+  console.log('[App] Finished attempting to render component:', Component.name);
+
   return (
-    (() => {
-      console.log('[App Provider] Initializing RootErrorBoundary...');
-      return (
-        <RootErrorBoundary>
-          {(() => {
-            console.log('[App Provider] Initializing GlobalErrorBoundary...');
-            return (
-              <GlobalErrorBoundary>
-                {/* Wrap the entire application with CustomErrorBoundary */}
-                {(() => {
-                  console.log('[App Provider] Initializing QueryClientProvider...');
-                  return (
-                    <QueryClientProvider client={queryClient}>
-                      {(() => {
-                        console.log('[App Provider] Initializing ReduxProvider...');
-                        return (
-                          <ReduxProvider store={store}>
-                            {(() => {
-                              console.log('[App Provider] Initializing HelmetProvider...');
-                              return (
-                                <HelmetProvider>
-                                  {(() => {
-                                    console.log('[App Provider] Initializing ErrorProvider...');
-                                    return (
-                                      <ErrorProvider>
-                                        <ErrorResetOnRouteChange />
-                                        {(() => {
-                                          console.log('[App Provider] Initializing AuthProvider...');
-                                          return (
-                                            <AuthProvider>
-                                              {(() => {
-                                                console.log('[App Provider] Initializing WhitelabelProvider...');
-                                                return (
-                                                  <WhitelabelProvider>
-                                                    {(() => {
-                                                      console.log('[App Provider] Initializing I18nextProvider...');
-                                                      return (
-                                                        <I18nextProvider i18n={i18n}>
-                                                          {(() => {
-                                                            console.log('[App Provider] Initializing WalletProvider...');
-                                                            return (
-                                                              <WalletProvider>
-                                                                {(() => {
-                                                                  console.log('[App Provider] Initializing CartProvider...');
-                                                                  return (
-                                                                    <CartProvider>
-                                                                      {(() => {
-                                                                        console.log('[App Provider] Initializing AnalyticsProvider...');
-                                                                        return (
-                                                                          <AnalyticsProvider>
-                                                                            {(() => {
-                                                                              console.log('[App Provider] Initializing ThemeProvider...');
-                                                                              return (
-                                                                                <ThemeProvider>
-                                                                                  {/* Wrap in ThemeProvider so dark/light toggle works globally */}
-                                                                                  {(() => {
-                                                                                    console.log('[App Provider] Initializing BrowserRouter...');
-                                                                                    return (
-                                                                                      <RouterWrapper>
-                                                                                        <AppLayout> {/* Consistent header/footer layout */}
-                                                                                          {(() => {
-                                                                                            console.log('[App Provider] Initializing ErrorBoundary (wrapping Component)...');
-                                                                                            return (
-                                                                                            <ErrorBoundary>
-                                                                                              {(() => {
-                                                                                                console.log('[App Provider] Initializing ErrorBoundary (wrapping Component)...');
-                                                                                                return (
-                                                                                                  <ErrorBoundary>
-                                                                                                    {(() => {
-                                                                                                      let renderedComponent;
-                                                                                                      console.log('[App] Attempting to render component:', Component.name);
-                                                                                                      try {
-                                                                                                        console.log('[App] Rendering component:', Component.name);
-                                                                                                        renderedComponent = <Component {...pageProps} />;
-                                                                                                        console.log('[App] Component rendered successfully:', Component.name);
-                                                                                                      } catch (error) {
-                                                                                                        console.error('[App] Error rendering component:', Component.name, error);
-                                                                                                        captureException(error, {
-                                                                                                          message: 'Error rendering component',
-                                                                                                          extra: {
-                                                                                                            component: Component.name,
-                                                                                                            pageProps: pageProps,
-                                                                                                          },
-                                                                                                        });
-                                                                                                        renderedComponent = <div>Error rendering component. See console for details.</div>;
-                                                                                                      }
-                                                                                                      console.log('[App] Finished attempting to render component:', Component.name);
-                                                                                                      return renderedComponent;
-                                                                                                    })()}
-                                                                                                  </ErrorBoundary>
-                                                                                                );
-                                                                                              })()}
-                                                                                              {console.log('[App Provider] AppLayout initialized.')}
-                                                                                            </AppLayout>
-                                                                                          );
-                                                                                        })()}
-                                                                                          {console.log('[App Provider] AppLayout initialized.')}
-                                                                                        </AppLayout>
-                                                                                      </RouterWrapper>
-                                                                                    );
-                                                                                  })()}
-                                                                                  {console.log('[App Provider] ThemeProvider initialized.')}
-                                                                                </ThemeProvider>
-                                                                              );
-                                                                            })()}
-                                                                            {console.log('[App Provider] AnalyticsProvider initialized.')}
-                                                                          </AnalyticsProvider>
-                                                                        );
-                                                                      })()}
-                                                                      {console.log('[App Provider] CartProvider initialized.')}
-                                                                    </CartProvider>
-                                                                  );
-                                                                })()}
-                                                                {console.log('[App Provider] WalletProvider initialized.')}
-                                                              </WalletProvider>
-                                                              );
-                                                            })()}
-                                                            {console.log('[App Provider] I18nextProvider initialized.')}
-                                                          </I18nextProvider>
-                                                        );
-                                                      })()}
-                                                      {console.log('[App Provider] WhitelabelProvider initialized.')}
-                                                    </WhitelabelProvider>
-                                                  );
-                                                })()}
-                                                {console.log('[App Provider] AuthProvider initialized.')}
-                                              </AuthProvider>
-                                            );
-                                          })()}
-                                        {console.log('[App Provider] ErrorProvider initialized.')}
-                                      </ErrorProvider>
-                                      );
-                                    })()}
+    <RootErrorBoundary>
+      <GlobalErrorBoundary>
+        {/* Wrap the entire application with CustomErrorBoundary */}
+        <QueryClientProvider client={queryClient}>
+          <ReduxProvider store={store}>
+            <HelmetProvider>
+              <ErrorProvider>
+                <ErrorResetOnRouteChange />
+                <AuthProvider>
+                  <WhitelabelProvider>
+                    <I18nextProvider i18n={i18n}>
+                      <WalletProvider>
+                        <CartProvider>
+                          <AnalyticsProvider>
+                            <ThemeProvider>
+                              {/* Wrap in ThemeProvider so dark/light toggle works globally */}
+                              <RouterWrapper>
+                                <AppLayout> {/* Consistent header/footer layout */}
+                                  <ErrorBoundary>
+                                    <ErrorBoundary>
+                                      {renderedComponent}
+                                    </ErrorBoundary>
                                   </ErrorBoundary>
+                                  {console.log('[App Provider] AppLayout initialized.')}
                                 </AppLayout>
-                              </ThemeProvider>
-                            </AnalyticsProvider>
-                          </CartProvider>
-                        </WalletProvider>
-                      </I18nextProvider>
-                    </WhitelabelProvider>
-                  </AuthProvider>
-                </ErrorProvider>
-              </HelmetProvider>
-            </ReduxProvider>
-          </QueryClientProvider>
-        </GlobalErrorBoundary>
-      </RootErrorBoundary>
-    </RouterWrapper>
+                              </RouterWrapper>
+                              {console.log('[App Provider] ThemeProvider initialized.')}
+                            </ThemeProvider>
+                            {console.log('[App Provider] AnalyticsProvider initialized.')}
+                          </AnalyticsProvider>
+                          {console.log('[App Provider] CartProvider initialized.')}
+                        </CartProvider>
+                        {console.log('[App Provider] WalletProvider initialized.')}
+                      </WalletProvider>
+                      {console.log('[App Provider] I18nextProvider initialized.')}
+                    </I18nextProvider>
+                    {console.log('[App Provider] WhitelabelProvider initialized.')}
+                  </WhitelabelProvider>
+                  {console.log('[App Provider] AuthProvider initialized.')}
+                </AuthProvider>
+                {console.log('[App Provider] ErrorProvider initialized.')}
+              </ErrorProvider>
+            </HelmetProvider>
+          </ReduxProvider>
+        </QueryClientProvider>
+      </GlobalErrorBoundary>
+    </RootErrorBoundary>
   );
 }
 
