@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
+import { useApiErrorHandling } from '@/hooks/useApiErrorHandling';
 import ProductCard from '@/components/ProductCard';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { ErrorState } from '@/components/jobs/applications/ErrorState';
@@ -26,10 +27,21 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
       return res.json();
     });
 
+  const { handleApiError, retryQuery } = useApiErrorHandling();
+  
   const { data, error } = useSWR<ProductListing[]>(
     '/api/marketplace/overview',
     fetcher,
-    { shouldRetryOnError: true, errorRetryCount: 3 }
+    { 
+      shouldRetryOnError: true, 
+      errorRetryCount: 3,
+      onError: (error) => {
+        handleApiError(error, {
+          customMessage: 'Failed to load marketplace products',
+          showToast: false, // Don't show toast since we have inline error UI
+        });
+      }
+    }
   );
 
   // Loading skeletons
@@ -46,11 +58,19 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     );
   }
 
-  // Error state
+  // Error state with retry functionality
   if (error) {
     return (
       <div className="container py-8">
-        <ErrorState error={error.message || 'Unable to load products'} />
+        <div className="text-center space-y-4">
+          <ErrorState error={error.message || 'Unable to load products'} />
+          <button
+            onClick={() => retryQuery(['/api/marketplace/overview'])}
+            className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+          >
+            Try Again
+          </button>
+        </div>
       </div>
     );
   }
