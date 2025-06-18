@@ -31,7 +31,7 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
 
   const { handleApiError, retryQuery } = useApiErrorHandling();
   
-  const { data, error } = useSWR<ProductListing[]>(
+  const { data, error, isLoading } = useSWR<ProductListing[]>(
     '/api/marketplace/overview',
     fetcher,
     { 
@@ -49,7 +49,7 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
   useEffect(() => {
     let timer: NodeJS.Timeout;
 
-    if (isFetching && (!products || products.length === 0) && !error) {
+    if (isLoading && (!data || data.length === 0) && !error) {
       timer = setTimeout(() => {
         setShowLongLoadingMessage(true);
       }, 15000); // 15 seconds
@@ -58,22 +58,12 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     return () => {
       clearTimeout(timer);
       // Reset if loading completes or error occurs before timer fires
-      if (!isFetching || (products && products.length > 0) || error) {
+      if (!isLoading || (data && data.length > 0) || error) {
         setShowLongLoadingMessage(false);
       }
     };
-  }, [isFetching, products, error]);
+  }, [isLoading, data, error]);
 
-  // Conditional Rendering Logic:
-  // 1. Loading State: Displayed if products are being fetched for the first time
-  //    or during background refetches/retries when no data is yet available.
-  if ((isLoading || isFetching) && (!products || products.length === 0)) {
-    return (
-      <div className="p-6 text-white text-center">
-        Loading products...
-        {showLongLoadingMessage && (
-          <p className='mt-2 text-sm text-gray-400'>Still loading, this is taking longer than usual...</p>
-        )}
   // Loading skeletons
   if (!data && !error) {
     return (
