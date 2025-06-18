@@ -59,16 +59,18 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       // data should contain { user, accessToken, refreshToken }
       console.log('[AuthProvider login] API call successful, data:', data); // Log received data
       if (data.accessToken && data.refreshToken) {
-        console.log('[AuthProvider login] Attempting to set Supabase client session.');
+        console.log('[AuthProvider DEBUG] login: Attempting to set Supabase client session.');
+        console.log('[AuthProvider DEBUG] login: Using accessToken:', data.accessToken);
+        console.log('[AuthProvider DEBUG] login: Using refreshToken:', data.refreshToken);
         setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
 
-        const { error: sessionError } = await supabase.auth.setSession({
+        const { data: sessionData, error: sessionError } = await supabase.auth.setSession({
           access_token: data.accessToken,
           refresh_token: data.refreshToken,
         });
 
         if (sessionError) {
-          console.error("[AuthProvider login] Supabase client-side session setting failed:", sessionError); // Critical: Log this error
+          console.error("[AuthProvider DEBUG] login: Supabase client-side session setting failed:", sessionError);
           toast({
             title: "Login Failed",
             description: sessionError.message || "Failed to initialize client session.",
@@ -77,7 +79,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           cleanupAuthState(); // Make sure this is called
           return { error: sessionError.message || "Client-side session initialization failed." };
         } else {
-          console.log('[AuthProvider login] Supabase client-side session set successfully.');
+          console.log('[AuthProvider DEBUG] login: Supabase client-side session set successfully. Session data:', JSON.stringify(sessionData, null, 2));
           // The onAuthStateChange event should now trigger.
         }
       } else {
@@ -171,13 +173,16 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
         // Set Supabase client session - this will trigger onAuthStateChange
         // which should then fetch the profile and update the user state.
-        const { error: sessionError } = await supabase.auth.setSession({
+        console.log('[AuthProvider DEBUG] signup: Attempting to set Supabase client session.');
+        console.log('[AuthProvider DEBUG] signup: Using accessToken:', data.session.access_token);
+        console.log('[AuthProvider DEBUG] signup: Using refreshToken:', data.session.refresh_token);
+        const { data: sessionData, error: sessionError } = await supabase.auth.setSession({
           access_token: data.session.access_token,
           refresh_token: data.session.refresh_token,
         });
 
         if (sessionError) {
-          console.error("Error setting Supabase session:", sessionError);
+          console.error("[AuthProvider DEBUG] signup: Error setting Supabase session:", sessionError);
           toast({
             title: "Signup Error",
             description: "Failed to initialize session. Please try logging in.",
@@ -188,6 +193,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           setIsLoading(false);
           return { error: "Failed to initialize session.", emailVerificationRequired: false };
         }
+        console.log('[AuthProvider DEBUG] signup: Supabase client-side session set successfully. Session data:', JSON.stringify(sessionData, null, 2));
 
         // setTokens is handled by onAuthStateChange or if direct setting is preferred:
         setTokens({ accessToken: data.session.access_token, refreshToken: data.session.refresh_token });
@@ -202,6 +208,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         const queryStringSignup = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
         const paramsSignup = new URLSearchParams(queryStringSignup);
         const next = paramsSignup.get('redirectTo') || paramsSignup.get('next') || '/dashboard';
+        console.log('[AuthProvider DEBUG] signup: Attempting to redirect to:', next);
         router.replace(next);
         setIsLoading(false);
         return { error: null, emailVerificationRequired: false };
@@ -234,127 +241,142 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       // Inside the onAuthStateChange callback
       async (event, session) => {
-              console.log('[AuthProvider onAuthStateChange] Triggered. Event:', event, 'Session:', session); // Existing log, ensure it's there
+              console.log('[AuthProvider DEBUG] onAuthStateChange triggered. Event:', event);
+              console.log('[AuthProvider DEBUG] Session object:', JSON.stringify(session, null, 2));
       
               setIsLoading(true); // Ensure isLoading is true at the start
       
               try {
                 if (session?.user) {
-                  console.log('[AuthProvider onAuthStateChange] Session and user found. User ID:', session.user.id);
-                  console.log('[AuthProvider onAuthStateChange] Fetching profile for user ID:', session.user.id);
-      
-                  // Explicitly log the exact query being made
-                  console.log('[AuthProvider onAuthStateChange] Supabase query: getFromProfiles().select("*").eq("id", session.user.id).single()');
-      
-                  let profile;
-                  let profileError;
+                  console.log('[AuthProvider DEBUG] Session and user found. User ID:', session.user.id);
+
+                  // Inner try-catch for profile fetching and mapping
                   try {
-                    const result = await getFromProfiles()
+                    console.log('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', session.user.id);
+                    // Explicitly log the exact query being made
+                    console.log('[AuthProvider DEBUG] Supabase query: getFromProfiles().select("*").eq("id", session.user.id).single()');
+
+                    const { data: profile, error: profileError } = await getFromProfiles()
                       .select('*')
                       .eq('id', session.user.id)
                       .single();
-                    profile = result.data;
-                    profileError = result.error;
-                    console.log('[AuthProvider onAuthStateChange] Profile fetch result:', result);
-                  } catch (fetchError) {
-                    console.error("[AuthProvider onAuthStateChange] Error during profile fetch:", fetchError);
-                    profileError = fetchError;
-                  }
-      
-                  if (profileError) {
-                                console.error("[AuthProvider onAuthStateChange] Error fetching user profile:", profileError); // Critical: Log this error
-                                let errorMessage = 'An error occurred while loading your profile. Please try again or contact support.';
-                                if (profileError instanceof Error) {
-                                  errorMessage = profileError.message;
-                                } else if (typeof profileError === 'object' && profileError !== null && 'message' in profileError && typeof profileError.message === 'string') {
-                                  errorMessage = profileError.message;
-                                }
-                                toast({
-                                  title: "Profile Load Error",
-                                  description: `Login successful, but failed to load your profile. ${errorMessage}`,
-                                  variant: "destructive",
-                                });
-                                setUser(null); // Ensure user is cleared
-                                setAvatarUrl(null);
-                                // Do NOT redirect to dashboard if profile load fails. User should probably stay on login or go to a generic error page.
-                                // Consider if router.replace('/') or similar is needed here if not on login page already.
-                              } else if (profile) {
-                    console.log('[AuthProvider onAuthStateChange] Profile data fetched successfully:', profile);
-                    let mappedUser;
-                    try {
-                      mappedUser = mapProfileToUser(session.user, profile);
-                      console.log('[AuthProvider onAuthStateChange] Mapped user data:', mappedUser);
-                    } catch (mappingError) {
-                      console.error("[AuthProvider onAuthStateChange] Error mapping user:", mappingError);
-                      mappedUser = null;
-                      setUser(null); // Clear user state on mapping error
-                      setAvatarUrl(null); // Clear avatar URL on mapping error
-                    }
-      
-                    if (mappedUser) {
-                      setUser(mappedUser);
-                      setAvatarUrl(mappedUser.avatarUrl || null);
-                      console.log('[AuthProvider onAuthStateChange] User state updated in context.');
-      
-                      if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED') { // Consider other events that mean user is authenticated
-                        console.log('[AuthProvider onAuthStateChange] Event is SIGNED_IN (or similar), calling handleSignedIn.');
-                        handleSignedIn(mappedUser); // Ensure this is called with the correct user
-      
-                        // Redirection logic - ensure this is robust
-                        try {
-                          const queryStringAuthChange = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
-                          const paramsAuthChange = new URLSearchParams(queryStringAuthChange);
-                          const nextFromUrl = paramsAuthChange.get('redirectTo') || paramsAuthChange.get('next');
-                          const nextPathFromStorage = safeStorage.getItem('nextPath');
-                          let redirectTo = '/dashboard'; // Default
-      
-                          if (nextPathFromStorage) {
-                            redirectTo = decodeURIComponent(nextPathFromStorage);
-                            safeStorage.removeItem('nextPath');
-                            console.log('[AuthProvider onAuthStateChange] Redirecting to (from storage):', redirectTo);
-                          } else if (nextFromUrl) {
-                            redirectTo = decodeURIComponent(nextFromUrl);
-                            console.log('[AuthProvider onAuthStateChange] Redirecting to (from URL params):', redirectTo);
-                          } else {
-                            console.log('[AuthProvider onAuthStateChange] Redirecting to default dashboard.');
-                          }
-                          console.log('[AuthProvider onAuthStateChange] Redirecting to:', redirectTo);
-                          router.replace(redirectTo);
-                        } catch (redirectError) {
-                          console.error("[AuthProvider onAuthStateChange] Error during redirection:", redirectError);
-                        }
+
+                    console.log('[AuthProvider DEBUG] Raw profile data:', JSON.stringify(profile, null, 2));
+                    console.log('[AuthProvider DEBUG] Profile fetch error (if any):', JSON.stringify(profileError, null, 2));
+
+                    if (profileError) {
+                      console.error("[AuthProvider DEBUG] Error fetching user profile:", profileError);
+                      let errorMessage = 'An error occurred while loading your profile. Please try again or contact support.';
+                      if (profileError instanceof Error) {
+                        errorMessage = profileError.message;
+                      } else if (typeof profileError === 'object' && profileError !== null && 'message' in profileError && typeof profileError.message === 'string') {
+                        errorMessage = profileError.message;
                       }
-                    } else {
-                      console.error("[AuthProvider onAuthStateChange] Mapped user is null. Not updating user state.");
+                      toast({
+                        title: "Profile Load Error",
+                        description: `Login successful, but failed to load your profile. ${errorMessage}`,
+                        variant: "destructive",
+                      });
+                      setUser(null); // Ensure user is cleared
+                      setAvatarUrl(null);
+                      // Do NOT redirect to dashboard if profile load fails.
+                    } else if (profile) {
+                      console.log('[AuthProvider DEBUG] Profile data fetched successfully.');
+                      let mappedUser;
+                      try {
+                        console.log('[AuthProvider DEBUG] Mapping profile to user. session.user:', JSON.stringify(session.user, null, 2), 'profile:', JSON.stringify(profile, null, 2));
+                        mappedUser = mapProfileToUser(session.user, profile);
+                        console.log('[AuthProvider DEBUG] Mapped user data:', JSON.stringify(mappedUser, null, 2));
+                      } catch (mappingError) {
+                        console.error("[AuthProvider DEBUG] Error mapping profile to user:", mappingError);
+                        mappedUser = null; // Ensure mappedUser is null if mapping fails
+                      }
+      
+                      if (mappedUser) {
+                        setUser(mappedUser);
+                        setAvatarUrl(mappedUser.avatarUrl || null);
+                        console.log('[AuthProvider DEBUG] User state updated in context.');
+      
+                        if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED') {
+                          console.log('[AuthProvider DEBUG] Event is SIGNED_IN/TOKEN_REFRESHED/USER_UPDATED. Calling handleSignedIn.');
+                          console.log('[AuthProvider DEBUG] User object being passed to handleSignedIn:', JSON.stringify(mappedUser, null, 2));
+                          handleSignedIn(mappedUser);
+      
+                          // Redirection logic
+                          try {
+                            const queryStringAuthChange = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
+                            const paramsAuthChange = new URLSearchParams(queryStringAuthChange);
+                            const nextFromUrl = paramsAuthChange.get('redirectTo') || paramsAuthChange.get('next');
+                            const nextPathFromStorage = safeStorage.getItem('nextPath');
+                            let redirectTo = '/dashboard'; // Default
+      
+                            if (nextPathFromStorage) {
+                              redirectTo = decodeURIComponent(nextPathFromStorage);
+                              safeStorage.removeItem('nextPath');
+                              console.log('[AuthProvider DEBUG] Redirecting to (from storage):', redirectTo);
+                            } else if (nextFromUrl) {
+                              redirectTo = decodeURIComponent(nextFromUrl);
+                              console.log('[AuthProvider DEBUG] Redirecting to (from URL params):', redirectTo);
+                            } else {
+                              console.log('[AuthProvider DEBUG] Redirecting to default dashboard.');
+                            }
+                            console.log('[AuthProvider DEBUG] Attempting to redirect to:', redirectTo);
+                            router.replace(redirectTo);
+                          } catch (redirectError) {
+                            console.error("[AuthProvider DEBUG] Error during redirection:", redirectError);
+                          }
+                        }
+                      } else {
+                        console.error("[AuthProvider DEBUG] Mapped user is null. Not updating user state. Mapping failed or profile was insufficient.");
+                        // Consider if user should be cleared or toast shown if mapping fails but profile was technically fetched
+                         toast({
+                            title: "User Data Error",
+                            description: "Failed to process user information after login. Please contact support.",
+                            variant: "destructive",
+                         });
+                         setUser(null);
+                         setAvatarUrl(null);
+                      }
+                    } else { // Profile is null, but no error
+                      console.warn("[AuthProvider DEBUG] Profile not found for user (no error, but profile is null):", session.user.id);
+                      toast({
+                        title: "Profile Not Found",
+                        description: "Login successful, but your profile could not be found. Please contact support.",
+                        variant: "destructive",
+                      });
+                      setUser(null); // Ensure user is cleared
+                      setAvatarUrl(null);
                     }
-                  } else {
-                    console.warn("[AuthProvider onAuthStateChange] Profile not found for user (no error, but profile is null):", session.user.id);
+                  } catch (profileMapError) {
+                    // This catch block is for errors specifically within the profile fetching/mapping phase
+                    console.error("[AuthProvider DEBUG] Critical error in profile fetching/user mapping phase:", profileMapError);
                     toast({
-                      title: "Profile Not Found",
-                      description: "Login successful, but your profile could not be found. Please contact support.",
+                      title: "User Initialization Error",
+                      description: "A critical error occurred while setting up your user account. Please try logging out and in again.",
                       variant: "destructive",
                     });
-                    setUser(null); // Ensure user is cleared
+                    setUser(null);
                     setAvatarUrl(null);
+                    // Potentially call cleanupAuthState() or handleSignedOut() if appropriate
                   }
                 } else { // No session or session.user is null
-                  console.log('[AuthProvider onAuthStateChange] No session or user. Clearing user state. Event:', event);
+                  console.log('[AuthProvider DEBUG] No session or session.user. Clearing user state. Event:', event);
                   setUser(null);
                   setAvatarUrl(null);
                   if (event === 'SIGNED_OUT') {
-                    console.log('[AuthProvider onAuthStateChange] Event is SIGNED_OUT, calling handleSignedOut.');
+                    console.log('[AuthProvider DEBUG] Event is SIGNED_OUT, calling handleSignedOut.');
                     handleSignedOut(); // Ensure this is called
                     // Optional: redirect to login if not already there or on a public page
                     // if (router.pathname !== '/auth/login') router.replace('/auth/login');
                   }
                 }
-              } catch (outerError) {
-                console.error("[AuthProvider onAuthStateChange] Outer error in callback:", outerError);
+              } catch (outerError) { // Catch errors from the main try block in onAuthStateChange
+                console.error("[AuthProvider DEBUG] Outer error in onAuthStateChange callback:", outerError);
                 setUser(null); // Ensure user state is cleared
                 setAvatarUrl(null);
               } finally {
                 setIsLoading(false); // Ensure isLoading is false at the end
-                console.log('[AuthProvider onAuthStateChange] Finished processing. isLoading set to false.');
+                console.log('[AuthProvider DEBUG] onAuthStateChange finished processing. isLoading set to false.');
               }
             }
           );

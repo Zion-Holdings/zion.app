@@ -11,9 +11,10 @@ function handleGlobalError(
   colno?: number,
   error?: Error
 ): void {
-  let message: string;
-  let stack: string | undefined;
-  let filename: string | undefined = sourceUrl;
+  try {
+    let message: string;
+    let stack: string | undefined;
+    let filename: string | undefined = sourceUrl;
   let lineNumber: number | undefined = lineno;
   let colNumber: number | undefined = colno;
 
@@ -62,13 +63,16 @@ function handleGlobalError(
   } catch (sentryErr) {
     console.error('Failed to report global error to Sentry:', sentryErr);
   }
+} catch (e) {
+  console.error('[CRITICAL] Error within handleGlobalError:', e);
 }
 
 // Handler for window.onunhandledrejection
 function handleUnhandledRejection(event: PromiseRejectionEvent): void {
-  const reason = event.reason;
-  let message: string;
-  let stack: string | undefined;
+  try {
+    const reason = event.reason;
+    let message: string;
+    let stack: string | undefined;
   let filename: string | undefined;
   let lineno: number | undefined;
   let colno: number | undefined;
@@ -133,6 +137,8 @@ function handleUnhandledRejection(event: PromiseRejectionEvent): void {
   } catch (sentryErr) {
     console.error('Failed to report unhandled rejection to Sentry:', sentryErr);
   }
+} catch (e) {
+  console.error('[CRITICAL] Error within handleUnhandledRejection:', e);
 }
 
 export function initializeGlobalErrorHandlers(): void {
@@ -148,7 +154,7 @@ export function initializeGlobalErrorHandlers(): void {
       // Return false to prevent the default browser handling (e.g., console logging).
       // Return true to allow default handling. Depending on desired behavior.
       // For now, let's allow default handling as well.
-      return false;
+      return true;
     };
 
     window.addEventListener('unhandledrejection', handleUnhandledRejection);
