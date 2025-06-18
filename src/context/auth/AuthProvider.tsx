@@ -269,8 +269,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                       let errorMessage = 'An error occurred while loading your profile. Please try again or contact support.';
                       if (profileError instanceof Error) {
                         errorMessage = profileError.message;
-                      } else if (typeof profileError === 'object' && profileError !== null && 'message' in profileError && typeof profileError.message === 'string') {
-                        errorMessage = profileError.message;
+                      } else if (
+                        typeof profileError === 'object' &&
+                        profileError !== null &&
+                        'message' in profileError &&
+                        typeof (profileError as any).message === 'string'
+                      ) {
+                        errorMessage = (profileError as any).message;
                       }
                       toast({
                         title: "Profile Load Error",
