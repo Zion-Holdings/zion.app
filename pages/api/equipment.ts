@@ -152,7 +152,7 @@ export default async function handler(
 ) {
   // Add timeout handling
   const timeout = setTimeout(() => {
-    if (!res.headersSent) {
+    if (!(res as any).headersSent) {
       res.status(408).json({ error: 'Request timeout' });
     }
   }, 30000);

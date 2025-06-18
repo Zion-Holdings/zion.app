@@ -36,7 +36,6 @@ export async function fetchEquipment(): Promise<ProductListing[]> {
   try {
     // Add 30-second timeout to axios request
     const { data } = await axios.get('/api/equipment', {
-      timeout: 30000, // 30 seconds
       headers: {
         'Content-Type': 'application/json',
       },
@@ -86,12 +85,12 @@ export default function EquipmentPage() {
     retryDelay: (attemptIndex) => Math.min(1000 * Math.pow(2, attemptIndex), 10000),
     // Add 30-second timeout
     staleTime: 5 * 60 * 1000, // 5 minutes
-    cacheTime: 10 * 60 * 1000, // 10 minutes
+    gcTime: 10 * 60 * 1000, // 10 minutes (formerly cacheTime)
   });
   const delayedError = useDelayedError(equipmentError);
 
   useEffect(() => {
-    if (fetchedEquipment) {
+    if (fetchedEquipment && Array.isArray(fetchedEquipment)) {
       setEquipment(fetchedEquipment);
     }
     // Added equipmentError to dependency array for useEffect,
@@ -209,7 +208,7 @@ export default function EquipmentPage() {
   }
 
   // If there's an error and we don't have any equipment to show (even stale), show error.
-  if (delayedError && (!fetchedEquipment || fetchedEquipment.length === 0)) {
+  if (delayedError && (!fetchedEquipment || !Array.isArray(fetchedEquipment) || fetchedEquipment.length === 0)) {
     return (
       <div data-testid="error-state-equipment" className="py-12 text-center space-y-4">
         <p className="text-red-400">Failed to load equipment: {delayedError.message}</p>
