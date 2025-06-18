@@ -67,7 +67,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
     // which then passes it to Sentry and to sendErrorToBackend.
     logError(error, {
       route: typeof window !== 'undefined' ? window.location.pathname : 'Unknown route (SSR/SSG)',
-      componentStack: info.componentStack,
+      componentStack: info.componentStack || undefined,
       // Add a clear source indicator for errors caught by GlobalErrorBoundary,
       // this will be part of the 'context' in logError.
       errorSourceContext: 'GlobalErrorBoundaryHandler'

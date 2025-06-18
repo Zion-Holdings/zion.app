@@ -5,7 +5,7 @@ import { sendErrorToBackend } from './customErrorReporter';
  * Centralized error logger for frontend issues. Reports to Sentry when
  * available and falls back to console.error. Also sends to custom backend.
  */
-export function logError(error: unknown, context?: Record<string, unknown>) {
+export function logError(error: unknown, context?: { componentStack?: string } & Record<string, unknown>) {
   let errorToSend: Error;
   if (error instanceof Error) {
     errorToSend = error;
@@ -42,7 +42,7 @@ export function logError(error: unknown, context?: Record<string, unknown>) {
       captureException(errorToSend);
     }
   } catch (err) {
-    console.error('Failed to report error to Sentry:', err);
+    console.error('Failed to report error to Sentry:', err, context?.componentStack);
   }
 
   try {
@@ -80,7 +80,7 @@ export function logError(error: unknown, context?: Record<string, unknown>) {
 
     // Non-blocking call
     sendErrorToBackend(errorDetails).catch(err => {
-      console.error('Error sending logError to backend:', err);
+      console.error('Error sending logError to backend:', err, context?.componentStack);
     });
 
   } catch (err) {
