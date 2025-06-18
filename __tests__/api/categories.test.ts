@@ -1,5 +1,5 @@
 import { createMocks } from 'node-mocks-http';
-import handler from '@/pages/api/categories';
+import handler from '../../pages/api/categories';
 
 describe('/api/categories', () => {
   it('should return 200 with categories data', async () => {
