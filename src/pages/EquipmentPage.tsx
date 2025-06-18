@@ -34,14 +34,7 @@ const EQUIPMENT_FILTERS = [
 
 export async function fetchEquipment(): Promise<ProductListing[]> {
   try {
-    // Add 30-second timeout to axios request
-    const { data } = await axios.get('/api/equipment', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    
-    console.log('Equipment fetch successful:', data?.length || 0, 'items');
+    const { data } = await axios.get('/api/equipment', { timeout: 15000 });
     return data;
   } catch (error: any) {
     console.error("Raw error object in fetchEquipment:", error);
