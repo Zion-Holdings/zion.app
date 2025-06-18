@@ -38,6 +38,7 @@ import '@/utils/consoleErrorToast';
 import '@/utils/globalErrorHandler';
 import ToastProvider from '@/components/ToastProvider';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
+import ErrorResetOnRouteChange from '@/components/ErrorResetOnRouteChange';
 import { logError } from '../utils/logError';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
 import {
@@ -133,13 +134,14 @@ function MyApp({ Component, pageProps }: AppProps) {
                               {/* <ReferralMiddleware> */}
                               <ToastProvider>
                                 <GlobalErrorBoundary>
+                                  <ErrorResetOnRouteChange />
                                   <Suspense fallback={<div>Loading Page...</div>}>
                                     <ChakraProvider>
-                                      <AppLayout> {/* AppLayout might need adjustment for Next.js page structure */}
-                                        <App>
+                                      <App>
+                                        <AppLayout>
                                           <Component {...pageProps} />
-                                        </App>
-                                      </AppLayout>
+                                        </AppLayout>
+                                      </App>
                                     </ChakraProvider>
                                   </Suspense>
                                 </GlobalErrorBoundary>
