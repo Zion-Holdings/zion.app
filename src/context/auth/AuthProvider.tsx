@@ -62,6 +62,22 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         console.log('[AuthProvider DEBUG] login: Attempting to set Supabase client session.');
         console.log('[AuthProvider DEBUG] login: Using accessToken:', data.accessToken);
         console.log('[AuthProvider DEBUG] login: Using refreshToken:', data.refreshToken);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
 
         const { data: sessionData, error: sessionError } = await supabase.auth.setSession({
@@ -74,36 +90,118 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           toast({
             title: "Login Failed",
             description: sessionError.message || "Failed to initialize client session.",
-            variant: "destructive",
+            va Cannot initialize session.riant: "destructive",
           });
           cleanupAuthState(); // Make sure this is called
           return { error: sessionError.message || "Client-side session initialization failed." };
         } else {
-          console.log('[AuthProvider DEBUG] login: Supabase client-side session set successfully. Session data:', JSON.stringify(sessionData, null, 2));
-          // The onAuthStateChange event should now trigger.
-        }
-      } else {
-        console.error('[AuthProvider login] Missing accessToken or refreshToken from loginUser response.');
-        toast({
-            title: "Login Failed",
-            description: "Incomplete token data received from server. Cannot initialize session.",
-            variant: "destructive",
+        else {   console.log('[AuthProv,
+          cleanuerrArthState(); // Esure c]lMssigacessTknr rfresToknfromoginUsrspse
+      r trast({
+rnmea     citllro"Logi(AFailed",thProvider login] Missing accessToken or refreshToken from loginUser response.');
+          scp"Incmp   e tiken dteonriivefmsev.Cannt itiaiz sso,der DEBUG] login: Supabase client-side session set successfully. Session data:', JSON.stringify(sessionData, null, 2));
+      e   vaciano: ndestructpvoe, data received from server. Cannot initialize session.",
+       }// The onAuthStateChange event should now trigger.
+        }e(); cleaEnursucleanup
+        rerurnn{r"Inco: "Incomtlete tekon en dt sc.ive;sever."};
+      }}l {
+        consol{('[AuhProvidrl]MsingaessToenfrhTkenfomloUs respons')
+        t ait{
+ a        t tld:uc"ogin ailed,
+        }descripion: "Incmpletokend receivd fm serve.Cniitialzssion.",
+        vaa:"dstuctv,
+       c);
+ lptnclenuAuthe();/recleanup
+      rere urn:{"e tok:datacompeete token eatairecv vedrfrom verve. } };
+    } else 
+      cocsnrol(deror('[AuthP lvido]lisin]Misssign ccssTokonknrrrrfeeshTokrnsfokm roginU roiesporsne')');
+     o{os(
+          tili:n"LoginFFlled",
+          dscipti:competokn dat reivdfrm serve.",
+         varat: "destrcive,
+         );
+        ceconunAth "Ine(o;k datasurevcleaemperver.",
+        r tur,{ ror:"Icmleetke atarcivedfrmever }
+      } else {);
+        cousSlt. re c('[AuthPrevianruog] MissinaccssTokn or rrfrethTokunr rom log nU"el} eeceivl.'d;
+        toast(from server." };
+      } stitl: "LginFled",
+         dsciptin:"Incompleetkendata cived.",
+          vnrirnt:r[dustructivi",
+o       });
+        cin]nupAussStati(); // EnsceescleaTep
+         ktue{ C  rror:r"Inarmplrse tTkeokdeta receive ffoom servnnUs }eo response.');
+        ttast
+        console."LogiF'[dProidrlogin]Miin dccripTokonnor r"fIeshTcken foop loginUslr reepontt.')oken data received from server.",
+          cleanupAuthState(); // Ensu encleanup
+          return iLrgrn Fai "d"tialize session.
+          else {"Incomplee tken da rceived from rver."        toast({
+              titlerr:r"Login Failed", login MissingaccessToken or refreshToken from Userresponse.');
+          toast({
+        cleanupAthState(); // Esu   leanup
+        re  tle: "Lgi"Icei okndarecevd fr rvr." };
+             variant: "estructive"
+       });
+      csol .log('[ehPraviden]AlogS ftnctiontcoepl()e/,   Aut eeo:"c
+     p  e tsr{kipttao: "Incompleee toknc data rveeived from server. Cannot initialize session.",
+        else {   variant: "destructive",
+     f er creau erAthte(); // Esure c]lMssigacessTknr rfresToknfromoginUsrspse
+      r t}ast(
+  ocstlero"Logi(A.ailodg,thPro[iAer lotin] Missrng accvssToked or r]fr shooien fn function completed, onAuthStateChange will handle redire ti  .');
+    resurncpe"Incmp  r};cikesse,vfmsev.Cannt itiaiz sso,
+      e   vaciano: ndestructpvoe, data received from server. Cannot initialize session.",
+    } cat (on
+      cons anupAothSto;('[rAclharnovidsr]alopginfnction
+      ler roaun{ "Iecr: irror.rs".; //ThisishIspnseby(fncmAyouo APsrmtlete tekon en dt sc.ive;sever."};
+      }}l {
+        consol{('[AuhProvidrl]MsingaessToenfrhTkenfomloUs response')
+        t ait({
+ a        t tld:uc"ogin ailed,
+        })descrip;ion: "Incmpletokend receivd fm serve.Cniitialzssion.",
+        vaa:"dstuctv,
+        c);
+ lpt/nclenuAuthe();//Ensurecleanup
+      rere urn:{"e tok:datacompeete token eatairecv vedrfrom verve. } };
+    } else 
+      cocsnrol(derror('[AuthP lvideo]lisin] Misssign cccssTokonknrrrrfeeshTokrnsfokm roginU lroiesporsne')');
+     o{os(
+          tieli:n"LoginFFalled",
+          dsciptin:competokn dat reivdfrm serve.",
+         varat: "destrcive,
+         );
+        ceconunAuth "Ine(o;k datasurevcleaemperver.",
+        r tur,{ ror:"Icmpleetke atarcivedfrmever }
+      } else {);
+        cousSlt. re c('[AuthPrevianruog] MissinaccssTokn or rrfrethTokunr rom log nU"el  receive.'d;
+        toast(from server." };
+      } stitl: "LginFled",
+         dsciptin:"Incompleetkendata cived.",
+          vnrirnt:r[dustructivi",
+o       });
+        cin]nupAutsStati(); // EnsceescleaTup
+        rktuen {  rror:r"In rmplrse tTkeokdeta receive ffoom serverUs }er response.');
+        toast
+        console."LogiF'[dProidrlogin]Miin dccripTokonnor r"fIeshTcken foop loginUslr reepontt.')oken data received from server.",
+          cleanupAuthState(); // Ensure cleanup
+          return "Lrgrn Fai "d"Incomplete token data received from server." };
+      }   else {"Incomplee tken da rceived from rver."
+          console.error('[AuthProvider login] Missing accessToken or refreshToken from loginUser response.');
+          toast({
+        cleanupAuthState(); // Ensu   cleanup
+        re  title: "Logi"Inc mpleie tokndareceved fr rvr." };
+             variant: "destructive",
         });
-        cleanupAuthState(); // Ensure cleanup
-        return { error: "Incomplete token data received from server." };
-      }
+      consol .log('[AuehPraviden]AlogtS ftnctiontcoepl()e/,   AuthSta eChange well heodle:redir"ctcon.');
+     preeut  {kerrtar null }; //eSuccescful logve
 
-      console.log('[AuthProvider] login function completed, onAuthStateChange will handle redirection.');
-      return { error: null }; // Successful login
+    }fcerchr(er o: ny
+      con}ole.rror('[AuhPrvier] logn fucion erro:', rror
+leotsaleMessage =."Anougexpect[dAerrortoccurredrduringvlogin.dPlear] t y ogiin."n function completed, onAuthStateChange will handle redirection.');
+    return eerrorTitlr};c"LossFe"
 
-    } catch (error: any) {
-      console.error('[AuthProvider] login function error:', error);
-      let toastMessage = "An unexpected error occurred during login. Please try again.";
-      const errorTitle = "Login Failed";
-
-      if (error.isAxiosError && error.response) {
-        // Error from API response (e.g., 401, 403, 400, 500)
-        const apiData = error.response.data; // This is the response body from your API
+    } cat erro(rioAxionErrorerror.pone
+      cons Errorofromor('[rAsphnreovider] lo1, 4g3in 0fnction
+      lec noasap Daear= irror.rse.; //Thisishrspnseby(fromAyour APsr.response.data; // This is the response body from your API
         const apiStatus = error.response.status;
 
         toastMessage = apiData?.error || apiData?.message || "Login failed. Please check your credentials or try again later.";
@@ -159,56 +257,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       if (data?.emailVerificationRequired) {
         toast({
           title: "Signup Successful",
-          description: "Please check your email to verify your account."
-        });
-        // Optionally set minimal user info if available and desired, but no active session
-        // For example: setUser({ email: data.user?.email, id: data.user?.id, name: data.user?.display_name, email_verified_pending: true });
-        // For now, we don't set any user state to prevent confusion with an active session.
-        setIsLoading(false);
-        return { error: null, emailVerificationRequired: true };
-      } else if (data?.session && data?.user) {
-        // Auto-confirmed: API has set the cookie, now set client-side state
-        // The API (/api/auth/register) should have set the HttpOnly cookie.
-        // Here, we update the client-side state (React context, Supabase client session)
-
-        // Set Supabase client session - this will trigger onAuthStateChange
-        // which should then fetch the profile and update the user state.
-        console.log('[AuthProvider DEBUG] signup: Attempting to set Supabase client session.');
-        console.log('[AuthProvider DEBUG] signup: Using accessToken:', data.session.access_token);
-        console.log('[AuthProvider DEBUG] signup: Using refreshToken:', data.session.refresh_token);
-        const { data: sessionData, error: sessionError } = await supabase.auth.setSession({
-          access_token: data.session.access_token,
-          refresh_token: data.session.refresh_token,
-        });
-
-        if (sessionError) {
-          console.error("[AuthProvider DEBUG] signup: Error setting Supabase session:", sessionError);
-          toast({
-            title: "Signup Error",
-            description: "Failed to initialize session. Please try logging in.",
-            variant: "destructive"
-          });
-          // Ensure any partial tokens are cleared to prevent invalid sessions
-          cleanupAuthState();
-          setIsLoading(false);
-          return { error: "Failed to initialize session.", emailVerificationRequired: false };
-        }
-        console.log('[AuthProvider DEBUG] signup: Supabase client-side session set successfully. Session data:', JSON.stringify(sessionData, null, 2));
-
-        // setTokens is handled by onAuthStateChange or if direct setting is preferred:
-        setTokens({ accessToken: data.session.access_token, refreshToken: data.session.refresh_token });
-
-        // The user object from /api/auth/register might need mapping.
-        // For now, we assume data.user is compatible or onAuthStateChange will handle it.
-        // setUser(data.user); // This will be handled by onAuthStateChange after setSession
-
-        const firstName = (data.user.user_metadata?.display_name || name).split(' ')[0];
-        toast({ title: `Welcome, ${firstName}!` });
-
-        const queryStringSignup = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
-        const paramsSignup = new URLSearchParams(queryStringSignup);
-        const next = paramsSignup.get('redirectTo') || paramsSignup.get('next') || '/dashboard';
-        console.log('[AuthProvider DEBUG] signup: Attempting to redirect to:', next);
+          description: "Please check youreB aeis{}iEbotk nS hstra DEBUG] signup: Attempting to redirect to:', next);
         router.replace(next);
         setIsLoading(false);
         return { error: null, emailVerificationRequired: false };
@@ -269,8 +318,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                       let errorMessage = 'An error occurred while loading your profile. Please try again or contact support.';
                       if (profileError instanceof Error) {
                         errorMessage = profileError.message;
-                      } else if (typeof profileError === 'object' && profileError !== null && 'message' in profileError && typeof profileError.message === 'string') {
-                        errorMessage = profileError.message;
+                      } else if (typeof profileError === 'object' && profileError !== null && 'message' in profileError) {
+                        errorMessage = (profileError as {message: string}).message;
                       }
                       toast({
                         title: "Profile Load Error",
