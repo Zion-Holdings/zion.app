@@ -19,6 +19,7 @@ import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { BrowserRouter } from 'react-router-dom';
 import { AppLayout } from '@/layout/AppLayout';
 // Import global Tailwind styles so they load before the app renders
 import '../src/index.css';
@@ -111,39 +112,47 @@ function MyApp({ Component, pageProps }: AppProps) {
                                                                                 <ThemeProvider>
                                                                                   {/* Wrap in ThemeProvider so dark/light toggle works globally */}
                                                                                   {(() => {
-                                                                                    console.log('[App Provider] Initializing AppLayout...');
+                                                                                    console.log('[App Provider] Initializing BrowserRouter...');
                                                                                     return (
-                                                                                      <AppLayout> {/* Consistent header/footer layout */}
+                                                                                      <BrowserRouter>
                                                                                         {(() => {
-                                                                                          console.log('[App Provider] Initializing ErrorBoundary (wrapping Component)...');
+                                                                                          console.log('[App Provider] Initializing AppLayout...');
                                                                                           return (
-                                                                                            <ErrorBoundary>
+                                                                                            <AppLayout> {/* Consistent header/footer layout */}
                                                                                               {(() => {
-                                                                                                let renderedComponent;
-                                                                                                console.log('[App] Attempting to render component:', Component.name);
-                                                                                                try {
-                                                                                                  console.log('[App] Rendering component:', Component.name);
-                                                                                                  renderedComponent = <Component {...pageProps} />;
-                                                                                                  console.log('[App] Component rendered successfully:', Component.name);
-                                                                                                } catch (error) {
-                                                                                                  console.error('[App] Error rendering component:', Component.name, error);
-                                                                                                  captureException(error, {
-                                                                                                    message: 'Error rendering component',
-                                                                                                    extra: {
-                                                                                                      component: Component.name,
-                                                                                                      pageProps: pageProps,
-                                                                                                    },
-                                                                                                  });
-                                                                                                  renderedComponent = <div>Error rendering component. See console for details.</div>;
-                                                                                                }
-                                                                                                console.log('[App] Finished attempting to render component:', Component.name);
-                                                                                                return renderedComponent;
+                                                                                                console.log('[App Provider] Initializing ErrorBoundary (wrapping Component)...');
+                                                                                                return (
+                                                                                                  <ErrorBoundary>
+                                                                                                    {(() => {
+                                                                                                      let renderedComponent;
+                                                                                                      console.log('[App] Attempting to render component:', Component.name);
+                                                                                                      try {
+                                                                                                        console.log('[App] Rendering component:', Component.name);
+                                                                                                        renderedComponent = <Component {...pageProps} />;
+                                                                                                        console.log('[App] Component rendered successfully:', Component.name);
+                                                                                                      } catch (error) {
+                                                                                                        console.error('[App] Error rendering component:', Component.name, error);
+                                                                                                        captureException(error, {
+                                                                                                          message: 'Error rendering component',
+                                                                                                          extra: {
+                                                                                                            component: Component.name,
+                                                                                                            pageProps: pageProps,
+                                                                                                          },
+                                                                                                        });
+                                                                                                        renderedComponent = <div>Error rendering component. See console for details.</div>;
+                                                                                                      }
+                                                                                                      console.log('[App] Finished attempting to render component:', Component.name);
+                                                                                                      return renderedComponent;
+                                                                                                    })()}
+                                                                                                  </ErrorBoundary>
+                                                                                                );
                                                                                               })()}
-                                                                                            </ErrorBoundary>
+                                                                                              {console.log('[App Provider] AppLayout initialized.')}
+                                                                                            </AppLayout>
                                                                                           );
                                                                                         })()}
-                                                                                        {console.log('[App Provider] AppLayout initialized.')}
-                                                                                      </AppLayout>
+                                                                                        {console.log('[App Provider] BrowserRouter initialized.')}
+                                                                                      </BrowserRouter>
                                                                                     );
                                                                                   })()}
                                                                                   {console.log('[App Provider] ThemeProvider initialized.')}
