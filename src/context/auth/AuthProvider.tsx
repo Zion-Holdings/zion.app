@@ -98,11 +98,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
     } catch (error: any) {
       console.error('[AuthProvider] login function error:', error);
+      console.error('[AuthProvider] login function error (full):', error); // Log the full error object
       let toastMessage = "An unexpected error occurred during login. Please try again.";
       const errorTitle = "Login Failed";
 
       if (error.isAxiosError && error.response) {
         // Error from API response (e.g., 401, 403, 400, 500)
+        console.error('[AuthProvider] login API response:', error.response); // Log the full API response
         const apiData = error.response.data; // This is the response body from your API
         const apiStatus = error.response.status;
 

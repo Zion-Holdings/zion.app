@@ -51,9 +51,9 @@ export function LoginForm() {
       setIsSubmitting(true);
       // Pass email and password to the login function
       const result = await login(data.email, data.password);
-      if (result.error) {
+      if (result?.error) {
         let errorMessage = "Login failed. Please try again."; // Default generic error
-        if (result.error && result.error.message) {
+        if (result?.error && result?.error?.message) {
           if (result.error.message.toLowerCase().includes("email not confirmed")) {
             errorMessage = "Your email is not confirmed. Please check your inbox for a confirmation link.";
           } else {
@@ -62,7 +62,7 @@ export function LoginForm() {
         }
         form.setError("root", { message: errorMessage });
       } else {
-        fireEvent('login', { method: 'email' }); // Assuming email login
+        fireEvent('login', { method: 'email' });
       }
     } finally {
       setIsSubmitting(false);
