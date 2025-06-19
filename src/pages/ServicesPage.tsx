@@ -1,7 +1,7 @@
 import { TrustedBySection } from "@/components/TrustedBySection";
 import ErrorBoundary from "@/components/GlobalErrorBoundary";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Globe } from "lucide-react";
 import ServicesList from '@/components/ServicesList';
 

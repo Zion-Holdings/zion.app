@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useRouter } from "next/router";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { SearchResultCard } from "@/components/search/SearchResultCard";
@@ -15,9 +15,8 @@ interface SearchResult {
 const LIMIT = 20;
 
 export default function SearchResultsPage() {
-  const [params] = useSearchParams();
-  const navigate = useNavigate();
-  const initialQuery = params.get("q") || "";
+  const router = useRouter();
+  const initialQuery = (router.query.q as string) || "";
   const [query, setQuery] = useState(initialQuery);
 
   const {

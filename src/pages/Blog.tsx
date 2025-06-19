@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useDebounce } from "@/hooks/useDebounce";
 import { GradientHeading } from "@/components/GradientHeading";
 import { SEO } from "@/components/SEO";

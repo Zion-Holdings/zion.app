@@ -1,11 +1,13 @@
-import { useParams, Link } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { CASE_STUDIES } from "@/data/case-studies";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
 export default function CaseStudy() {
-  const { slug } = useParams() as { slug: string };
+  const router = useRouter();
+  const { slug } = router.query as { slug?: string };
   const study = CASE_STUDIES.find((s) => s.slug === slug);
 
   if (!study) {

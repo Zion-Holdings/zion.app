@@ -12,7 +12,7 @@ import { WaitlistSection } from "@/components/WaitlistSection";
 import { BlogSection } from "@/components/BlogSection";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
 import { FeaturesGuideSection } from "@/components/FeaturesGuideSection";
 import { SocialShareSection } from "@/components/SocialShareSection";
