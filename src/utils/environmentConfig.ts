@@ -30,8 +30,10 @@ interface EnvironmentConfig {
 function isPlaceholderValue(value?: string): boolean {
   if (!value) return true;
   
+  const lowercaseValue = value.toLowerCase();
+  
+  // Specific placeholder patterns to detect
   const placeholderPatterns = [
-    'YOUR_',
     'your_',
     'placeholder',
     'dummy',
@@ -39,11 +41,33 @@ function isPlaceholderValue(value?: string): boolean {
     'example',
     'test-key',
     'mock',
-    '.supabase.co', // Generic supabase URL
+    'https://placeholder.supabase.co',
     'https://example'
   ];
   
-  return placeholderPatterns.some(pattern => value.toLowerCase().includes(pattern.toLowerCase()));
+  // Check for placeholder patterns
+  const hasPlaceholderPattern = placeholderPatterns.some(pattern => 
+    lowercaseValue.includes(pattern.toLowerCase())
+  );
+  
+  // Additional validation for Supabase URLs - they should be valid URLs with proper format
+  if (lowercaseValue.includes('supabase.co')) {
+    // Valid Supabase URL pattern: https://[project-id].supabase.co
+    const supabaseUrlPattern = /^https:\/\/[a-zA-Z0-9-]+\.supabase\.co$/;
+    const isValidSupabaseUrl = supabaseUrlPattern.test(value);
+    
+    // If it contains supabase.co but doesn't match valid pattern, it's likely a placeholder
+    if (!isValidSupabaseUrl && !hasPlaceholderPattern) {
+      return true;
+    }
+    
+    // If it's a valid Supabase URL format, don't treat as placeholder
+    if (isValidSupabaseUrl) {
+      return false;
+    }
+  }
+  
+  return hasPlaceholderPattern;
 }
 
 /**
@@ -60,7 +84,20 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   
-  const supabaseConfigured = !isPlaceholderValue(supabaseUrl) && !isPlaceholderValue(supabaseAnonKey);
+  // Debug logging for Supabase configuration
+  const urlIsPlaceholder = isPlaceholderValue(supabaseUrl);
+  const keyIsPlaceholder = isPlaceholderValue(supabaseAnonKey);
+  
+  if (isDevelopment || process.env.DEBUG_ENV_CONFIG) {
+    console.log('[ENV CONFIG] Supabase configuration check:', {
+      url: supabaseUrl ? `${supabaseUrl.substring(0, 30)}...` : 'undefined',
+      urlIsPlaceholder,
+      keyPresent: !!supabaseAnonKey,
+      keyIsPlaceholder
+    });
+  }
+  
+  const supabaseConfigured = !urlIsPlaceholder && !keyIsPlaceholder;
 
   // Sentry Configuration
   const sentryDsn = process.env.NEXT_PUBLIC_SENTRY_DSN || process.env.SENTRY_DSN;
