@@ -50,11 +50,11 @@ export default function FraudDetection() {
       // Calculate stats
       const newStats: FraudStats = {
         total_flags: data?.length || 0,
-        pending_flags: data?.filter(flag => flag.status === 'pending').length || 0,
-        suspicious_count: data?.filter(flag => flag.severity === 'suspicious').length || 0,
-        dangerous_count: data?.filter(flag => flag.severity === 'dangerous').length || 0,
-        false_positives: data?.filter(flag => flag.is_false_positive).length || 0,
-        actioned_count: data?.filter(flag => flag.action_taken && flag.action_taken !== 'none').length || 0,
+        pending_flags: data?.filter((flag: any) => flag.status === 'pending').length || 0,
+        suspicious_count: data?.filter((flag: any) => flag.severity === 'suspicious').length || 0,
+        dangerous_count: data?.filter((flag: any) => flag.severity === 'dangerous').length || 0,
+        false_positives: data?.filter((flag: any) => flag.is_false_positive).length || 0,
+        actioned_count: data?.filter((flag: any) => flag.action_taken && flag.action_taken !== 'none').length || 0,
       };
       setStats(newStats);
       

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
@@ -107,10 +106,10 @@ export function useReferrals() {
       
       // Calculate stats
       const totalReferrals = referrals ? referrals.length : 0;
-      const pendingReferrals = referrals ? referrals.filter(r => r.status === 'pending').length : 0;
-      const completedReferrals = referrals ? referrals.filter(r => r.status === 'completed').length : 0;
+      const pendingReferrals = referrals ? referrals.filter((r: any) => r.status === 'pending').length : 0;
+      const completedReferrals = referrals ? referrals.filter((r: any) => r.status === 'completed').length : 0;
       
-      const totalRewards = rewards ? rewards.reduce((sum, item) => {
+      const totalRewards = rewards ? rewards.reduce((sum: number, item: any) => {
         return sum + (item.amount || 0);
       }, 0) : 0;
       

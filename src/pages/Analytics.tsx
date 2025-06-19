@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -32,8 +31,8 @@ export default function Analytics() {
       
       // Group by date
       const viewsByDate: Record<string, { date: string; views: number }> = {};
-      data?.forEach(view => {
-        const date = new Date(view.created_at).toISOString().split('T')[0];
+      data?.forEach((item: any) => {
+        const date = new Date(item.created_at).toISOString().split('T')[0];
         if (!viewsByDate[date]) viewsByDate[date] = { date: date, views: 0 };
         viewsByDate[date].views++;
       });
@@ -73,7 +72,7 @@ export default function Analytics() {
       
       // Group by conversion type and date
       const conversionsByType: Record<string, Record<string, number>> = {};
-      data?.forEach(item => {
+      data?.forEach((item: any) => {
         const date = new Date(item.created_at).toISOString().split('T')[0];
         const conversionType = item.metadata?.conversionType || 'unknown';
         
@@ -132,7 +131,7 @@ export default function Analytics() {
         if (manualError) throw manualError;
 
         const usageByDate: Record<string, Record<string, number>> = {};
-        manual?.forEach(ev => {
+        manual?.forEach((ev: any) => {
           const date = new Date(ev.created_at).toISOString().split('T')[0];
           const feature = ev.metadata?.feature || 'unknown';
           if (!usageByDate[date]) usageByDate[date] = {};

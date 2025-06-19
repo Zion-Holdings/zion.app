@@ -35,7 +35,7 @@ export function useSavedTalents() {
         if (savedError) throw savedError;
 
         if (savedData) {
-          const talentIds = savedData.map(item => item.talent_id);
+          const talentIds = savedData.map((item: any) => item.talent_id);
           setSavedTalentIds(talentIds);
           
           if (talentIds.length > 0) {

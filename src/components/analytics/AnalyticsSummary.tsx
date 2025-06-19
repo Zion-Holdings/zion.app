@@ -27,7 +27,7 @@ export function AnalyticsSummary() {
         
       if (uniqueVisitorsError) throw uniqueVisitorsError;
       
-      const uniqueUserIds = new Set(uniqueVisitorsData?.map(item => item.user_id) || []);
+      const uniqueUserIds = new Set(uniqueVisitorsData?.map((item: any) => item.user_id) || []);
       
       // Get conversion count
       const { data: conversionsData, error: conversionsError } = await supabase

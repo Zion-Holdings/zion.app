@@ -43,16 +43,16 @@ export function usePricingSuggestionAnalytics(days = 30) {
         if (error) throw error;
 
         const totalSuggestions = data.length;
-        const accepted = data.filter(d => d.accepted).length;
+        const accepted = data.filter((d: any) => d.accepted).length;
         const acceptanceRate = totalSuggestions ? accepted / totalSuggestions : 0;
 
         const gaps = data
-          .filter(d => d.actual_value !== null && d.actual_value !== undefined)
-          .map(d => Math.abs((d.actual_value as number) - ((d.suggested_min + d.suggested_max) / 2)));
-        const averagePriceGap = gaps.length ? gaps.reduce((a, b) => a + b, 0) / gaps.length : 0;
+          .filter((d: any) => d.actual_value !== null && d.actual_value !== undefined)
+          .map((d: any) => Math.abs((d.actual_value as number) - ((d.suggested_min + d.suggested_max) / 2)));
+        const averagePriceGap = gaps.length ? gaps.reduce((a: number, b: number) => a + b, 0) / gaps.length : 0;
 
         const categoryMap: Record<string, { count: number; accepted: number }> = {};
-        data.forEach(d => {
+        data.forEach((d: any) => {
           const cat = (d as any).category || 'other';
           if (!categoryMap[cat]) categoryMap[cat] = { count: 0, accepted: 0 };
           categoryMap[cat].count += 1;
@@ -65,9 +65,9 @@ export function usePricingSuggestionAnalytics(days = 30) {
         }));
 
         const recentSuggestions = data
-          .sort((a, b) => (b.created_at as string).localeCompare(a.created_at as string))
+          .sort((a: any, b: any) => (b.created_at as string).localeCompare(a.created_at as string))
           .slice(0, 10)
-          .map(d => ({
+          .map((d: any) => ({
             id: d.id as string,
             userId: d.user_id as string,
             suggestedMin: d.suggested_min as number,

@@ -36,7 +36,7 @@ export function useResumeList() {
       }
       
       // Transform data to match Resume type
-      const transformedResumes: Resume[] = resumeData.map(resume => ({
+      const transformedResumes: Resume[] = resumeData.map((resume: any) => ({
         id: resume.id,
         user_id: resume.user_id,
         basic_info: {

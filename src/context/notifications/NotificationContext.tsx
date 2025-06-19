@@ -52,7 +52,7 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): JSX
             table: 'notifications',
             filter: `user_id=eq.${user.id}`
           },
-          (payload) => {
+          (payload: any) => {
             console.log('Notification change received:', payload);
             notificationOps.fetchNotifications();
           }

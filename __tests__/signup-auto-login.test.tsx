@@ -42,7 +42,7 @@ vi.mock('@/integrations/supabase/client', () => ({
       getSession: vi.fn().mockResolvedValue({ data: { session: null }, error: null }),
     },
   },
-  getFromProfiles: () => ({
+  from: () => ({
     select: () => ({
       eq: () => ({
         single: () => Promise.resolve({ data: null, error: null }),

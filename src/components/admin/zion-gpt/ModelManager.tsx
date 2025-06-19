@@ -34,7 +34,7 @@ export function ZionGPTModelManager() {
       if (error) throw error;
       
       // Map the data to our component state
-      setModels(data.map(model => ({
+      setModels(data.map((model: any) => ({
         id: model.id,
         version: model.version,
         createdAt: model.created_at,

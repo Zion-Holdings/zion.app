@@ -44,7 +44,7 @@ export function UserBehaviorStats() {
         
         // Process data to count events by type and date
         const eventsByDate: Record<string, Record<string, number>> = {};
-        manualData?.forEach(event => {
+        manualData?.forEach((event: any) => {
           const date = new Date(event.created_at).toISOString().split('T')[0];
           if (!eventsByDate[date]) eventsByDate[date] = {};
           if (!eventsByDate[date][event.event_type]) eventsByDate[date][event.event_type] = 0;

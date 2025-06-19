@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
@@ -62,7 +61,7 @@ export default function SavedTalentsPage() {
         if (data) {
           // Extract talent profiles and convert to TalentProfile type
           const talentProfiles = data.map(
-            item => item.talent_profile as unknown as TalentProfile
+            (item: any) => item.talent_profile as unknown as TalentProfile
           );
           setSavedTalents(talentProfiles);
         }

@@ -48,7 +48,7 @@ export const useJobApplications = (jobId?: string) => {
             .eq("client_id", user.id);
 
           if (jobIds && jobIds.length > 0) {
-            const jobIdArray = jobIds.map(job => job.id);
+            const jobIdArray = jobIds.map((job: any) => job.id);
             query = query.in("job_id", jobIdArray);
           }
         }

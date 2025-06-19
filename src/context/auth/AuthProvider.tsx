@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { supabase, getFromProfiles } from "../../integrations/supabase/client";
+import { supabase } from "../../integrations/supabase/client";
 import { useAuthOperations } from "../../hooks/useAuthOperations";
 import { AuthContext } from "./AuthContext";
 import { cleanupAuthState } from "../../utils/authUtils";
@@ -242,7 +242,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       // Inside the onAuthStateChange callback
-      async (event, session) => {
+      async (event: any, session: any) => {
               console.log('[AuthProvider DEBUG] onAuthStateChange triggered. Event:', event);
               console.log('[AuthProvider DEBUG] Session object:', JSON.stringify(session, null, 2));
       
@@ -256,9 +256,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                   try {
                     console.log('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', session.user.id);
                     // Explicitly log the exact query being made
-                    console.log('[AuthProvider DEBUG] Supabase query: getFromProfiles().select("*").eq("id", session.user.id).single()');
+                    console.log('[AuthProvider DEBUG] Supabase query: supabase.from("profiles").select("*").eq("id", session.user.id).single()');
 
-                    const { data: profile, error: profileError } = await getFromProfiles()
+                    const { data: profile, error: profileError } = await supabase
+                      .from('profiles')
                       .select('*')
                       .eq('id', session.user.id)
                       .single();

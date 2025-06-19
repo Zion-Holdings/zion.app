@@ -60,7 +60,7 @@ export default function MetricsDashboard({ adminView = false }: MetricsDashboard
         .from('token_transactions')
         .select('amount')
         .gte('created_at', new Date(Date.now() - 24*60*60*1000).toISOString());
-      const totalVolume = volume.data?.reduce((t, v: any) => t + (v.amount || 0), 0) || 0;
+      const totalVolume = volume.data?.reduce((t: number, v: any) => t + (v.amount || 0), 0) || 0;
 
       return {
         supply: supply.data?.reduce((t:number,c:any)=>t+(c.balance||0),0) || 0,
