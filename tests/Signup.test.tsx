@@ -53,8 +53,9 @@ function setup(success = true, errorMsg?: string, status = success ? 201 : 400) 
     user: null,
   });
 
-  // Setup toast mock
-  (toastHook.toast as jest.Mock).mockImplementation(mockToast);
+      // Setup toast mock - fix TypeScript error
+    const toastMock = toastHook.toast as jest.MockedFunction<typeof toastHook.toast>;
+    toastMock.mockImplementation(mockToast);
 
   // Setup axios mock
   if (success) {

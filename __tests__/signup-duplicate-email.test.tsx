@@ -54,8 +54,9 @@ describe('Signup - Duplicate Email Error Handling', () => {
       asPath: '/signup',
     });
 
-    // Setup toast mock
-    (toastHook.toast as jest.Mock).mockImplementation(mockToast);
+    // Setup toast mock - fix TypeScript error
+    const toastMock = toastHook.toast as jest.MockedFunction<typeof toastHook.toast>;
+    toastMock.mockImplementation(mockToast);
   });
 
   const fillSignupForm = (email = 'test@example.com') => {
