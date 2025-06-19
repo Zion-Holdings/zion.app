@@ -22,7 +22,7 @@ export function TalentCardSaveButton({
 }: TalentCardSaveButtonProps) {
   const { toast } = useToast();
   const router = useRouter();
-  const location = useLocation();
+  // Using router.asPath for current path
   const [localIsSaved, setLocalIsSaved] = React.useState(isSaved);
   
   // Handle save toggle
@@ -35,7 +35,7 @@ export function TalentCardSaveButton({
         description: "Please log in to save talents to your favorites",
         variant: "destructive"
       });
-      const next = encodeURIComponent(location.pathname + location.search);
+      const next = encodeURIComponent(router.asPath);
       router.push(`/login?next=${next}`);
       return;
     }

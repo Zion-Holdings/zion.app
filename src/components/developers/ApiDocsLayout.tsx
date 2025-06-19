@@ -1,7 +1,7 @@
-
 import { SearchSuggestion } from "@/types/search";
 import React, { useState } from "react";
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { Search } from "lucide-react";
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { cn } from "@/lib/utils";
@@ -15,9 +15,9 @@ interface ApiDocsLayoutProps {
 }
 
 export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
-  const location = useLocation();
+  // Using router.pathname instead of useLocation
   const router = useRouter();
-  const currentPath = location.pathname;
+  const currentPath = router.pathname;
   const [searchValue, setSearchValue] = useState("");
   
   const navigationItems = [
@@ -49,7 +49,7 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
     <div className="flex min-h-screen bg-zinc-950">
       {/* Sidebar */}
       <div className="hidden md:block w-64 border-r border-zinc-800 p-6 sticky top-0 h-screen overflow-y-auto">
-        <Link to="/developers/docs" className="flex items-center mb-8">
+        <Link href="/developers/docs" className="flex items-center mb-8">
           <div className="bg-gradient-to-r from-zion-purple to-zion-cyan rounded-md w-8 h-8 mr-3 flex items-center justify-center">
             <span className="text-white font-bold">Z</span>
           </div>
@@ -73,7 +73,7 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
           {navigationItems.map((item) => (
             <Link
               key={item.path}
-              to={item.path}
+              href={item.path}
               className={cn(
                 "block px-3 py-2 rounded-md text-sm",
                 currentPath === item.path

@@ -1,4 +1,3 @@
-
 import { DisputeReason } from "@/types/disputes";
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
@@ -19,10 +18,9 @@ import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 
 export function DisputeDetail() {
-  // useParams may be untyped in this environment, so avoid passing a
-  // type argument and cast the result instead to prevent TS2347 errors.
-  const { disputeId } = useParams() as { disputeId?: string };
   const router = useRouter();
+  // Get disputeId from Next.js router query params
+  const disputeId = router.query.disputeId as string;
   const { user } = useAuth();
   const { getDisputeById, updateDisputeStatus, resolveDispute, getDisputeMessages, addDisputeMessage } = useDisputes();
   
@@ -66,7 +64,7 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
     };
     
     loadDisputeData();
-  }, [disputeId, navigate, getDisputeById, getDisputeMessages]);
+  }, [disputeId, router, getDisputeById, getDisputeMessages]);
 
   const handleStatusChange = async (status: DisputeStatus) => {
     if (!disputeId) return;
