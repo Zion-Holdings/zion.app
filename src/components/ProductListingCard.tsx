@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProductListing } from "@/types/listings";
@@ -25,7 +25,7 @@ const ProductListingCardComponent = ({
   detailBasePath = '/marketplace/listing'
 }: ProductListingCardProps) => {
   const isGrid = view === 'grid';
-  const navigate = useNavigate();
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [imageSrc, setImageSrc] = useState(
     listing.images && listing.images.length > 0
@@ -47,7 +47,7 @@ const ProductListingCardComponent = ({
   };
   
   const handleViewListing = () => {
-    navigate(`${detailBasePath}/${listing.id}`);
+    router.push(`${detailBasePath}/${listing.id}`);
   };
 
   const dispatch = useDispatch<AppDispatch>();
@@ -58,7 +58,7 @@ const ProductListingCardComponent = ({
       addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 })
     );
     setLoading(false);
-    navigate('/cart');
+    router.push('/cart');
   };
   
   const handleRequestQuote = (e: React.MouseEvent) => {
@@ -68,7 +68,7 @@ const ProductListingCardComponent = ({
     if (onRequestQuote) {
       onRequestQuote(listing.id);
     } else {
-      navigate(`/request-quote?listing=${listing.id}`);
+      router.push(`/request-quote?listing=${listing.id}`);
     }
   };
   

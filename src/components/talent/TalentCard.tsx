@@ -1,11 +1,14 @@
-
 import React from 'react';
+import { useRouter } from 'next/router';
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
 import { FavoriteButton } from "@/components/FavoriteButton";
-import { useNavigate } from "react-router-dom";
 import { TalentProfile } from "@/types/talent";
+import { RatingStars } from '@/components/RatingStars';
+import { useAuth } from '@/context/auth/AuthProvider';
+import { useCart } from '@/context/CartContext';
 
 export interface TalentCardProps {
   talent: TalentProfile;
@@ -20,11 +23,11 @@ const TalentCardComponent = ({
   onRequestHire,
   isAuthenticated
 }: TalentCardProps) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const handleViewProfile = () => {
     // Navigate directly to the talent profile
-    navigate(`/talent/${talent.id}`);
+    router.push(`/talent/${talent.id}`);
     
     // Also call the onViewProfile callback if provided
     if (onViewProfile) {

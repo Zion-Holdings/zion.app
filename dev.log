@@ -1,0 +1,194 @@
+
+> project@0.0.0 dev
+> next dev
+
+  ▲ Next.js 14.2.30
+  - Local:        http://localhost:3000
+  - Experiments (use with caution):
+    · instrumentationHook
+
+ ✓ Starting...
+   Disabled SWC as replacement for Babel because of custom Babel configuration "babel.config.js" https://nextjs.org/docs/messages/swc-disabled
+[@sentry/nextjs] DEPRECATION WARNING: It is recommended renaming your `sentry.client.config.js` file, or moving its content to `instrumentation-client.ts`. When using Turbopack `sentry.client.config.js` will no longer work. Read more about the `instrumentation-client.ts` file: https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation-client
+ ○ Compiling /instrumentation ...
+   Using external babel configuration from /Users/miami2/Documents/GitHub/bolt.new.zion.app/babel.config.js
+ ✓ Compiled /instrumentation in 10.4s (3147 modules)
+Sentry DSN is missing or placeholder; skipping Sentry initialization.
+ ✓ Ready in 19.7s
+ ○ Compiling / ...
+ ✓ Compiled / in 80.4s (11785 modules)
+ ✓ Compiled in 4.9s (11785 modules)
+[ENV CONFIG] Supabase configuration check: {
+  url: 'undefined',
+  urlIsPlaceholder: true,
+  keyPresent: false,
+  keyIsPlaceholder: true
+}
+⚠️ Supabase not configured - using mock client for development
+safeStorage.getItem: Attempting to get item "zion_cart". isLocalStorageAvailable: false
+safeStorage.getItem: Using in-memory store for key "zion_cart".
+safeStorage.getItem: Attempting to get item "wishlist". isLocalStorageAvailable: false
+safeStorage.getItem: Using in-memory store for key "wishlist".
+i18next: languageChanged en-US
+i18next: initialized {
+  debug: true,
+  initAsync: true,
+  ns: [ 'translation' ],
+  defaultNS: [ 'translation' ],
+  fallbackLng: [ 'en' ],
+  fallbackNS: false,
+  supportedLngs: false,
+  nonExplicitSupportedLngs: false,
+  load: 'all',
+  preload: false,
+  simplifyPluralSuffix: true,
+  keySeparator: '.',
+  nsSeparator: ':',
+  pluralSeparator: '_',
+  contextSeparator: '_',
+  partialBundledLanguages: false,
+  saveMissing: false,
+  updateMissing: false,
+  saveMissingTo: 'fallback',
+  saveMissingPlurals: true,
+  missingKeyHandler: false,
+  missingInterpolationHandler: false,
+  postProcess: false,
+  postProcessPassResolved: false,
+  returnNull: false,
+  returnEmptyString: true,
+  returnObjects: false,
+  joinArrays: false,
+  returnedObjectHandler: false,
+  parseMissingKeyHandler: false,
+  appendNamespaceToMissingKey: false,
+  appendNamespaceToCIMode: false,
+  overloadTranslationOptionHandler: [Function: overloadTranslationOptionHandler],
+  interpolation: {
+    escapeValue: false,
+    format: [Function: bound format],
+    prefix: '{{',
+    suffix: '}}',
+    formatSeparator: ',',
+    unescapePrefix: '-',
+    nestingPrefix: '$t(',
+    nestingSuffix: ')',
+    nestingOptionsSeparator: ',',
+    maxReplaces: 1000,
+    skipOnVariables: true
+  },
+  cacheInBuiltFormats: true,
+  resources: {
+    en: { translation: [Object] },
+    es: { translation: [Object] },
+    pt: { translation: [Object] },
+    ar: { translation: [Object] }
+  },
+  detection: {
+    order: [ 'navigator' ],
+    caches: [],
+    lookupQuerystring: 'lng',
+    lookupCookie: 'i18next',
+    lookupLocalStorage: 'i18nextLng',
+    lookupSessionStorage: 'i18nextLng',
+    excludeCacheFor: [ 'cimode' ],
+    convertDetectedLanguage: [Function: convertDetectedLanguage]
+  },
+  ignoreJSONStructure: true
+}
+[App] Finished attempting to render component: MyApp
+[App] MyApp component rendering started.
+[App Provider] Initializing RootErrorBoundary...
+[App Provider] Initializing GlobalErrorBoundary...
+[App Provider] Initializing QueryClientProvider...
+[App Provider] Initializing ReduxProvider...
+[App Provider] Initializing HelmetProvider...
+[App Provider] Initializing ErrorProvider...
+[App Provider] Initializing AuthProvider...
+[App Provider] Initializing WhitelabelProvider...
+[App Provider] Initializing I18nextProvider...
+[App Provider] Initializing WalletProvider...
+[App Provider] Initializing CartProvider...
+[App Provider] Initializing AnalyticsProvider...
+[App Provider] Initializing ThemeProvider...
+[App Provider] Initializing BrowserRouter...
+[App Provider] Initializing ErrorBoundary (wrapping Component)...
+[App] Attempting to render component: IndexPage
+[AuthProvider] Initializing...
+[WhitelabelProvider] Initializing...
+[WalletProvider] Initializing...
+WalletContext: Resolved rawProjectId from getAppKitProjectId(): undefined
+WalletContext: Invalid or placeholder project ID detected: "undefined". Wallet system will be unavailable.
+[CartProvider] Initializing...
+[AnalyticsProvider] Initializing...
+safeStorage.getItem: Attempting to get item "theme". isLocalStorageAvailable: false
+safeStorage.getItem: Using in-memory store for key "theme".
+i18next::translator: missingKey en-US translation nav.cart Cart
+i18next::translator: missingKey en-US translation login Login
+i18next::translator: missingKey en-US translation signup Sign up
+i18next::translator: missingKey en-US translation nav.marketplace_overview Overview
+i18next::translator: missingKey en-US translation nav.community_overview Overview
+i18next::translator: missingKey en-US translation nav.blog Blog
+i18next::translator: missingKey en-US translation nav.partners Partners
+i18next::translator: missingKey en-US translation nav.resources Resources
+i18next::translator: missingKey en-US translation nav.docs Docs
+i18next::translator: missingKey en-US translation nav.tutorials Tutorials
+i18next::translator: missingKey en-US translation nav.case_studies Case Studies
+i18next::translator: missingKey en-US translation nav.about About
+Image with src "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&h=500" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+Image with src "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&h=500" has legacy prop "objectFit". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+Image with src "https://images.unsplash.com/photo-1579403124614-197f69d8187b?auto=format&fit=crop&w=800&h=500" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+Image with src "https://images.unsplash.com/photo-1579403124614-197f69d8187b?auto=format&fit=crop&w=800&h=500" has legacy prop "objectFit". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+Image with src "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&h=500" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+Image with src "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&h=500" has legacy prop "objectFit". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+Image with src "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500" has legacy prop "layout". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+Image with src "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500" has legacy prop "objectFit". Did you forget to run the codemod?
+Read more: https://nextjs.org/docs/messages/next-image-upgrade-to-13
+ GET / 200 in 91072ms
+[App] MyApp component rendering started.
+[App Provider] Initializing RootErrorBoundary...
+[App Provider] Initializing GlobalErrorBoundary...
+[App Provider] Initializing QueryClientProvider...
+[App Provider] Initializing ReduxProvider...
+[App Provider] Initializing HelmetProvider...
+[App Provider] Initializing ErrorProvider...
+[App Provider] Initializing AuthProvider...
+[App Provider] Initializing WhitelabelProvider...
+[App Provider] Initializing I18nextProvider...
+[App Provider] Initializing WalletProvider...
+[App Provider] Initializing CartProvider...
+[App Provider] Initializing AnalyticsProvider...
+[App Provider] Initializing ThemeProvider...
+[App Provider] Initializing BrowserRouter...
+[App Provider] Initializing ErrorBoundary (wrapping Component)...
+[App] Attempting to render component: IndexPage
+[AuthProvider] Initializing...
+[WhitelabelProvider] Initializing...
+[WalletProvider] Initializing...
+WalletContext: Resolved rawProjectId from getAppKitProjectId(): undefined
+WalletContext: Invalid or placeholder project ID detected: "undefined". Wallet system will be unavailable.
+[CartProvider] Initializing...
+[AnalyticsProvider] Initializing...
+safeStorage.getItem: Attempting to get item "theme". isLocalStorageAvailable: false
+safeStorage.getItem: Using in-memory store for key "theme".
+i18next::translator: missingKey en-US translation nav.cart Cart
+i18next::translator: missingKey en-US translation login Login
+i18next::translator: missingKey en-US translation signup Sign up
+i18next::translator: missingKey en-US translation nav.marketplace_overview Overview
+i18next::translator: missingKey en-US translation nav.community_overview Overview
+i18next::translator: missingKey en-US translation nav.blog Blog
+i18next::translator: missingKey en-US translation nav.partners Partners
+i18next::translator: missingKey en-US translation nav.resources Resources
+i18next::translator: missingKey en-US translation nav.docs Docs
+i18next::translator: missingKey en-US translation nav.tutorials Tutorials
+i18next::translator: missingKey en-US translation nav.case_studies Case Studies
+i18next::translator: missingKey en-US translation nav.about About
+ GET / 200 in 1297ms
+[?25h
