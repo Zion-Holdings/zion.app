@@ -1,5 +1,6 @@
 import { GetServerSideProps, GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
+import { ENV_CONFIG } from './environmentConfig';
 
 interface ErrorPageProps {
   hasError: boolean;
@@ -45,25 +46,47 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
         
         // If we succeeded after retries, log the recovery
         if (attempt > 0) {
-          Sentry.addBreadcrumb({
-            message: `getServerSideProps succeeded on attempt ${attempt + 1}`,
-            level: 'info',
-            category: 'retry'
-          });
+          console.log(`✅ getServerSideProps succeeded on attempt ${attempt + 1} for ${context.resolvedUrl}`);
+          
+          if (ENV_CONFIG.sentry.isConfigured) {
+            Sentry.addBreadcrumb({
+              message: `getServerSideProps succeeded on attempt ${attempt + 1}`,
+              level: 'info',
+              category: 'retry',
+              data: { route: context.resolvedUrl, attempt }
+            });
+          }
         }
         
         return result;
       } catch (error: any) {
         lastError = error;
         
-        // Log each attempt
-        Sentry.withScope((scope) => {
-          scope.setTag('attempt', attempt + 1);
-          scope.setTag('maxRetries', config.maxRetries);
-          scope.setTag('route', context.resolvedUrl);
-          scope.setLevel('warning');
-          Sentry.captureException(error);
-        });
+        console.warn(`⚠️ getServerSideProps attempt ${attempt + 1}/${config.maxRetries + 1} failed for ${context.resolvedUrl}:`, error.message);
+        
+        // Log each attempt to Sentry if configured
+        if (ENV_CONFIG.sentry.isConfigured) {
+          Sentry.withScope((scope) => {
+            scope.setTag('attempt', attempt + 1);
+            scope.setTag('maxRetries', config.maxRetries);
+            scope.setTag('route', context.resolvedUrl);
+            scope.setTag('errorType', getErrorType(error));
+            scope.setLevel(attempt < config.maxRetries ? 'warning' : 'error');
+            scope.setContext('serverSideProps', {
+              query: context.query,
+              params: context.params,
+              req: {
+                url: context.req?.url,
+                method: context.req?.method,
+                headers: {
+                  'user-agent': context.req?.headers['user-agent'],
+                  'referer': context.req?.headers['referer']
+                }
+              }
+            });
+            Sentry.captureException(error);
+          });
+        }
 
         // Check if we should retry
         const shouldRetry = attempt < config.maxRetries && 
@@ -71,7 +94,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
                           config.retryCondition(error);
 
         if (shouldRetry) {
-          console.warn(`getServerSideProps attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:`, error.message);
+          console.log(`🔄 Retrying in ${config.retryDelay}ms...`);
           await new Promise(resolve => setTimeout(resolve, config.retryDelay));
           continue;
         }
@@ -83,25 +106,30 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
 
     // All attempts failed
     if (lastError) {
-      console.error('getServerSideProps failed after all retries:', lastError);
+      console.error(`❌ getServerSideProps failed after all retries for ${context.resolvedUrl}:`, lastError);
       
       // Log final failure to Sentry
-      Sentry.withScope((scope) => {
-        scope.setTag('finalFailure', true);
-        scope.setTag('route', context.resolvedUrl);
-        scope.setLevel('error');
-        Sentry.captureException(lastError);
-      });
+      if (ENV_CONFIG.sentry.isConfigured) {
+        Sentry.withScope((scope) => {
+          scope.setTag('finalFailure', true);
+          scope.setTag('route', context.resolvedUrl);
+          scope.setTag('errorType', getErrorType(lastError));
+          scope.setLevel('error');
+          scope.setContext('serverSideProps', {
+            query: context.query,
+            params: context.params,
+            environmentConfig: {
+              supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
+              sentryConfigured: ENV_CONFIG.sentry.isConfigured,
+              environment: ENV_CONFIG.app.environment
+            }
+          });
+          Sentry.captureException(lastError);
+        });
+      }
 
       // Determine error type for better user messaging
-      const errorType = lastError.message.includes('Supabase') || 
-                       lastError.message.includes('environment') ||
-                       lastError.message.includes('configuration')
-                       ? 'config'
-                       : lastError.message.includes('fetch') ||
-                         lastError.message.includes('network')
-                       ? 'network'
-                       : 'unknown';
+      const errorType = getErrorType(lastError);
 
       // Set appropriate status code
       const statusCode = errorType === 'config' ? 503 : 
@@ -114,7 +142,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
       return {
         props: {
           hasError: true,
-          errorMessage: lastError.message,
+          errorMessage: ENV_CONFIG.app.isDevelopment ? lastError.message : 'An error occurred while loading the page',
           errorType,
           statusCode
         } as unknown as P
@@ -144,25 +172,43 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
         
         // If we succeeded after retries, log the recovery
         if (attempt > 0) {
-          Sentry.addBreadcrumb({
-            message: `getStaticProps succeeded on attempt ${attempt + 1}`,
-            level: 'info',
-            category: 'retry'
-          });
+          console.log(`✅ getStaticProps succeeded on attempt ${attempt + 1}`);
+          
+          if (ENV_CONFIG.sentry.isConfigured) {
+            Sentry.addBreadcrumb({
+              message: `getStaticProps succeeded on attempt ${attempt + 1}`,
+              level: 'info',
+              category: 'retry',
+              data: { attempt }
+            });
+          }
         }
         
         return result;
       } catch (error: any) {
         lastError = error;
         
-        // Log each attempt
-        Sentry.withScope((scope) => {
-          scope.setTag('attempt', attempt + 1);
-          scope.setTag('maxRetries', config.maxRetries);
-          scope.setTag('staticGeneration', true);
-          scope.setLevel('warning');
-          Sentry.captureException(error);
-        });
+        console.warn(`⚠️ getStaticProps attempt ${attempt + 1}/${config.maxRetries + 1} failed:`, error.message);
+        
+        // Log each attempt to Sentry if configured
+        if (ENV_CONFIG.sentry.isConfigured) {
+          Sentry.withScope((scope) => {
+            scope.setTag('attempt', attempt + 1);
+            scope.setTag('maxRetries', config.maxRetries);
+            scope.setTag('staticGeneration', true);
+            scope.setTag('errorType', getErrorType(error));
+            scope.setLevel(attempt < config.maxRetries ? 'warning' : 'error');
+            scope.setContext('staticProps', {
+              params: context.params,
+              environmentConfig: {
+                supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
+                sentryConfigured: ENV_CONFIG.sentry.isConfigured,
+                environment: ENV_CONFIG.app.environment
+              }
+            });
+            Sentry.captureException(error);
+          });
+        }
 
         // Check if we should retry
         const shouldRetry = attempt < config.maxRetries && 
@@ -170,7 +216,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
                           config.retryCondition(error);
 
         if (shouldRetry) {
-          console.warn(`getStaticProps attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:`, error.message);
+          console.log(`🔄 Retrying in ${config.retryDelay}ms...`);
           await new Promise(resolve => setTimeout(resolve, config.retryDelay));
           continue;
         }
@@ -182,18 +228,21 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
 
     // All attempts failed - for static props, we should return empty data rather than crash the build
     if (lastError) {
-      console.error('getStaticProps failed after all retries:', lastError);
+      console.error(`❌ getStaticProps failed after all retries:`, lastError);
       
       // Log final failure to Sentry
-      Sentry.withScope((scope) => {
-        scope.setTag('finalFailure', true);
-        scope.setTag('staticGeneration', true);
-        scope.setLevel('error');
-        Sentry.captureException(lastError);
-      });
+      if (ENV_CONFIG.sentry.isConfigured) {
+        Sentry.withScope((scope) => {
+          scope.setTag('finalFailure', true);
+          scope.setTag('staticGeneration', true);
+          scope.setTag('errorType', getErrorType(lastError));
+          scope.setLevel('error');
+          Sentry.captureException(lastError);
+        });
+      }
 
       // For static props, return empty/fallback data instead of crashing the build
-      console.warn('Returning fallback data for failed getStaticProps');
+      console.warn('⚠️ Returning fallback data for failed getStaticProps');
       return {
         props: {} as P,
         revalidate: 60 // Try to regenerate more frequently
@@ -203,6 +252,32 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
     // This should never happen, but TypeScript needs it
     throw new Error('Unexpected error handling state');
   };
+}
+
+/**
+ * Determine error type based on error message and properties
+ */
+function getErrorType(error: Error): 'config' | 'network' | 'unknown' {
+  const message = error.message.toLowerCase();
+  
+  if (message.includes('supabase') || 
+      message.includes('environment') ||
+      message.includes('configuration') ||
+      message.includes('not configured') ||
+      message.includes('placeholder')) {
+    return 'config';
+  }
+  
+  if (message.includes('fetch') || 
+      message.includes('network') ||
+      message.includes('timeout') ||
+      message.includes('enotfound') ||
+      message.includes('econnrefused') ||
+      message.includes('offline')) {
+    return 'network';
+  }
+  
+  return 'unknown';
 }
 
 /**
@@ -270,7 +345,7 @@ export async function safeFetch(
                         config.retryCondition(error);
 
       if (shouldRetry) {
-        console.warn(`Fetch attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:`, error.message);
+        console.warn(`🔄 Fetch attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:`, error.message);
         await new Promise(resolve => setTimeout(resolve, config.retryDelay));
         continue;
       }
