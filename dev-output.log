@@ -1,0 +1,22 @@
+
+> project@0.0.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
+  ▲ Next.js 14.2.30
+  - Local:        http://localhost:3002
+  - Experiments (use with caution):
+    · instrumentationHook
+
+ ✓ Starting...
+   Disabled SWC as replacement for Babel because of custom Babel configuration "babel.config.js" https://nextjs.org/docs/messages/swc-disabled
+[@sentry/nextjs] DEPRECATION WARNING: It is recommended renaming your `sentry.client.config.js` file, or moving its content to `instrumentation-client.ts`. When using Turbopack `sentry.client.config.js` will no longer work. Read more about the `instrumentation-client.ts` file: https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation-client
+ ⚠ Duplicate page detected. pages/about.jsx and pages/about.tsx resolve to /about
+   Using external babel configuration from /Users/miami2/Documents/GitHub/bolt.new.zion.app/babel.config.js
+ ○ Compiling /instrumentation ...
+ ✓ Compiled /instrumentation in 34.8s (3147 modules)
+Sentry DSN is missing or placeholder; skipping Sentry initialization.
+ ⚠ Duplicate page detected. pages/about.jsx and pages/about.tsx resolve to /about
+ ✓ Ready in 49.1s
+[?25h

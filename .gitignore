@@ -6,3 +6,11 @@ logs/tests/
 cypress/results/
 cypress/screenshots/
 .env
+
+# Prevent compiled JS files from being committed when TS/TSX source exists
+# These should be generated at build time, not committed
+pages/**/*.js
+pages/**/*.d.ts
+
+# Exception: Allow standalone JS files that don't have TS counterparts
+# (This will need manual management if needed)
