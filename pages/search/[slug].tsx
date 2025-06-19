@@ -324,7 +324,9 @@ export default function SearchResultsPage({
   );
 }
 
-export const getServerSideProps: GetServerSideProps<SearchResultsPageProps> = async ({ params, query: urlQuery }) => {
+export const getServerSideProps: GetServerSideProps<SearchResultsPageProps> = async (context) => {
+  const params = context.params;
+  const urlQuery = context.query;
   const slug = params?.slug as string;
   
   // Convert slug back to query term
