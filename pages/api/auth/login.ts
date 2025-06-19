@@ -91,6 +91,16 @@ async function handler(
         // 🔧 Enhanced password comparison with bcrypt support
         let passwordMatch = false;
         
+        // Check if user has a password set
+        if (!user.password) {
+          console.log('🔧 LOGIN TRACE: User has no password set');
+          return res.status(401).json({
+            error: 'Invalid credentials',
+            message: 'User has no password configured',
+            code: 'NO_PASSWORD_SET'
+          });
+        }
+        
         if (isKalcatraoEmail) {
           console.log('🔧 LOGIN TRACE: KALCATRAO - Expected password:', user.password);
           console.log('🔧 LOGIN TRACE: KALCATRAO - Provided password:', password);
