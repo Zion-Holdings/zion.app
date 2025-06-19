@@ -21,7 +21,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const result = schema.safeParse(req.body);
   if (!result.success) {
-    return res.status(400).json({ message: result.error.errors[0].message });
+    return res.status(400).json({ error: result.error.errors[0].message });
   }
 
   const { name, email, password } = result.data;
@@ -34,12 +34,12 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     if (error) {
       if (error.message.includes('already registered')) {
-        return res.status(409).json({ message: 'Email already registered' });
+        return res.status(409).json({ error: 'Email already registered' });
       }
       if (error.message.toLowerCase().includes('weak')) {
-        return res.status(400).json({ message: 'Password is too weak' });
+        return res.status(400).json({ error: 'Password is too weak' });
       }
-      return res.status(error.status || 500).json({ message: error.message });
+      return res.status(error.status || 500).json({ error: error.message });
     }
 
     if (data?.user && !data?.session) {
@@ -62,10 +62,10 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       return res.status(201).json({ user: data.user, session: data.session });
     }
 
-    return res.status(500).json({ message: 'Unexpected response from auth provider' });
+    return res.status(500).json({ error: 'Unexpected response from auth provider' });
   } catch (err) {
     console.error(err);
-    return res.status(503).json({ message: 'Network error. Please try again.' });
+    return res.status(503).json({ error: 'Network error. Please try again.' });
   }
 }
 

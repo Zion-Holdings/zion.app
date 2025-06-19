@@ -56,6 +56,8 @@ export default function SignupForm() {
         email: values.email,
         password: values.password,
       });
+      
+      // Only proceed with auto-login and redirect if registration was successful
       try {
         // Auto login using NextAuth credentials provider
         // ignore error handling to mimic smooth flow
@@ -67,9 +69,18 @@ export default function SignupForm() {
         });
       } catch (_) {}
       toast.success('Welcome to Zion Tech Marketplace 🎉');
-      router.push('/dashboard'); // Changed from navigate
+      router.push('/dashboard');
     } catch (err: any) {
-      const message = err.response?.data?.message || err.message || 'Signup failed';
+      // Handle specific status codes for better user experience
+      if (err.response?.status === 409) {
+        const message = 'That email is already in use. Try logging in instead.';
+        toast.error(message);
+        form.setError('root', { message });
+        return; // Prevent auto-redirect, keep user on sign-up page
+      }
+      
+      // Handle other errors
+      const message = err.response?.data?.error || err.response?.data?.message || err.message || 'Signup failed';
       toast.error(message);
       form.setError('root', { message });
     } finally {
