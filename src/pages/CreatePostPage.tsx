@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { mutate } from 'swr';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
@@ -18,19 +19,18 @@ interface PostFormValues {
 
 export default function CreatePostPage() {
   const router = useRouter();
-  const location = useLocation();
   const { user } = useAuth();
   const { toast } = useToast();
-  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     if (!user) {
-      router.push(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+      const currentPath = router.asPath;
+      router.push(`/login?next=${encodeURIComponent(currentPath)}`);
     }
-  }, [user, navigate, location]);
+  }, [user, router]);
   
   // Get category from URL query params if available
-  const initialCategory = searchParams.get("category") as ForumCategory | null;
+  const initialCategory = router.query.category as ForumCategory | null;
   
   const initialValues: Partial<PostFormValues> = {
     categoryId: initialCategory || "project-help"
@@ -87,7 +87,7 @@ export default function CreatePostPage() {
       
       <div className="container py-8">
         <div className="flex items-center gap-3 mb-6">
-          <Link to="/community" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground">
             Forum
           </Link>
           <span className="text-muted-foreground">/</span>

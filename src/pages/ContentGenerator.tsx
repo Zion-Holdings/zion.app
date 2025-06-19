@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -30,13 +29,11 @@ export default function ContentGenerator() {
   const [previewContent, setPreviewContent] = useState<any>(null);
   const [testEmail, setTestEmail] = useState('');
 
-  // Redirect if not logged in
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isLoading && !user) {
-      toast.error("You must be logged in to access this page");
       router.push("/login?redirect=/content-generator");
     }
-  }, [user, isLoading, navigate]);
+  }, [user, isLoading, router]);
 
   const generateContent = async () => {
     setIsGenerating(true);

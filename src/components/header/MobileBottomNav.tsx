@@ -1,6 +1,6 @@
-
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { useWishlist } from "@/hooks/useWishlist";
@@ -20,7 +20,7 @@ interface MobileBottomNavProps {
 }
 
 export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
-  const location = useLocation();
+  const router = useRouter();
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const { items: wishlistItems } = useWishlist(); // Renamed to avoid conflict
@@ -96,11 +96,11 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
         {visibleItems.map(item => (
           <Link
             key={item.name}
-            to={item.href}
+            href={item.href}
             aria-label={item.name}
             className={cn(
               "flex flex-col items-center justify-center w-full h-full px-1 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
-              item.matches(location.pathname)
+              item.matches(router.pathname)
                 ? "text-primary"
                 : "text-foreground/70 hover:text-foreground"
             )}

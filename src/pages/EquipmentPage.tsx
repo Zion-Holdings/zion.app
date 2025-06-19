@@ -67,7 +67,6 @@ export default function EquipmentPage() {
   const [hasExhaustedRetries, setHasExhaustedRetries] = useState(false);
   const { user } = useAuth();
   const router = useRouter();
-  const location = useLocation();
 
   const {
     data: fetchedEquipment,
@@ -157,13 +156,14 @@ export default function EquipmentPage() {
 
   // Make sure handleRecommendations is memoized or stable if it's a dependency elsewhere, though not strictly required here.
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
+    const search = typeof window !== 'undefined' ? window.location.search : '';
+    const params = new URLSearchParams(search);
     if (params.get('reco') === '1' && user) {
       handleRecommendations();
     }
     // Added handleRecommendations to dependency array, ensure it's stable (e.g. via useCallback if it were passed down)
     // For now, this is okay as it's defined in the same scope.
-  }, [user, location.search, handleRecommendations]);
+  }, [user, router.asPath, handleRecommendations]);
 
   // Memoize skeleton placeholders to avoid re-render loop
   const skeletonPlaceholders = useMemo(

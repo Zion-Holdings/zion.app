@@ -14,11 +14,11 @@ export default function SavedTalentsPage() {
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
-  const location = useLocation();
+  // Using router.asPath instead of useLocation
 
   useEffect(() => {
     if (!user) {
-      router.push(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+      router.push(`/login?next=${encodeURIComponent(router.asPath)}`);
     }
   }, [user, navigate, location]);
 

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { TalentProfile } from "@/types/talent";
@@ -13,7 +12,6 @@ export function useSavedTalents() {
   const [savedTalentIds, setSavedTalentIds] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
-  const location = useLocation();
 
   // Fetch saved talents
   useEffect(() => {
@@ -71,7 +69,7 @@ export function useSavedTalents() {
         description: "Please log in to save talents to your favorites",
         variant: "destructive"
       });
-      const next = encodeURIComponent(location.pathname + location.search);
+      const next = encodeURIComponent(router.asPath);
       router.push(`/login?next=${next}`);
       return;
     }

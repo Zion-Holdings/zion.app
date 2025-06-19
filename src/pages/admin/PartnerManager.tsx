@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from 'next/router';
@@ -46,12 +45,12 @@ export default function PartnerManager() {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      router.push("/login");
+      router.push('/login?next=' + encodeURIComponent('/admin/partners'));
       return;
     }
 
     fetchPartners();
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, router]);
 
   const fetchPartners = async () => {
     try {
