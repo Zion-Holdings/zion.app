@@ -21,7 +21,12 @@ import { toast } from "sonner";
 
 export function DisputeDetail() {
   const router = useRouter();
+<<<<<<< HEAD
   const { disputeId } = router.query as { disputeId?: string };
+=======
+  // Get disputeId from Next.js router query params
+  const disputeId = router.query.disputeId as string;
+>>>>>>> b9bac077d84e5407c6cf317fad6df8be402b777b
   const { user } = useAuth();
   const { getDisputeById, updateDisputeStatus, resolveDispute, getDisputeMessages, addDisputeMessage } = useDisputes();
 
@@ -59,13 +64,19 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
       } catch (error) {
         console.error("Error loading dispute data:", error);
         toast.error("Failed to load dispute");
+        // Retry after a delay
+        setTimeout(loadDisputeData, 2000);
       } finally {
         setIsLoading(false);
       }
     };
     
     loadDisputeData();
+<<<<<<< HEAD
   }, [disputeId, getDisputeById, getDisputeMessages, router]);
+=======
+  }, [disputeId, router, getDisputeById, getDisputeMessages]);
+>>>>>>> b9bac077d84e5407c6cf317fad6df8be402b777b
 
   const handleStatusChange = async (status: DisputeStatus) => {
     if (!disputeId) return;
@@ -466,7 +477,9 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
                         )}
                       </div>
                       
-                      <div className="mt-4 space-y-4">
+                      <Separator className="my-4" />
+                      
+                      <div className="space-y-4">
                         <Textarea
                           placeholder="Add an admin note (only visible to administrators)..."
                           value={message}

@@ -4,13 +4,17 @@ import { Button } from '@/components/ui/button';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
-import Image from 'next/image'; // Import next/image
-import React, { useState } from 'react'; // Import useState for error handling
+import Image from 'next/image';
+import React, { useState } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { useRouter } from 'next/router';
+import { Product } from '@/types/product';
+import { useMediaQuery } from 'usehooks-ts';
+import { useEnqueueSnackbar } from '@/context/SnackbarContext';
+import { captureException } from '@/utils/sentry';
 
-export interface ProductCardProps {
-  product: any;
+interface ProductCardProps {
+  product: Product;
   onBuy?: () => void;
 }
 
@@ -19,6 +23,7 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
   const { isWishlisted, toggle } = useWishlist();
   const [imageError, setImageError] = useState(false);
   const router = useRouter();
+  const enqueueSnackbar = useEnqueueSnackbar();
 
   if (!product || typeof product.id !== 'string') {
     return (
@@ -35,9 +40,7 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
 
   const addToCart = () => {
     if (!isAuthenticated) {
-      // Show toast message
-      alert("Please log in to add items");
-      // Redirect to login page
+      enqueueSnackbar("Please log in to add items", { variant: 'warning' });
       router.push('/login?next=' + router.asPath);
       return;
     }
@@ -47,11 +50,20 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
   const imageUrl = Array.isArray(product.images) && product.images.length > 0 ? product.images[0] : null;
   const imageAltText = productTitle;
 
-  const handleImageError = () => {
+  const handleImageError = (error: any) => {
     if (!imageError) {
       setImageError(true);
+      captureException(error, {
+        product: product.id,
+        imageUrl,
+      });
     }
   };
+
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isTablet = useMediaQuery('(max-width: 1200px)');
+
+  const imageSizes = isMobile ? '100vw' : isTablet ? '50vw' : '33vw';
 
   return (
     <div className="relative border rounded-lg bg-card p-4" data-testid="product-card">
@@ -63,25 +75,28 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
         <Heart className={active ? 'text-red-500 fill-red-500' : 'text-gray-500'} />
       </button>
 
-      <div className="w-full h-40 relative mb-2"> {/* Added relative positioning for Image with layout='fill' */}
-        {imageUrl && !imageError ? (
-          <Image
-            src={imageUrl}
-            alt={imageAltText}
-            layout="fill" // Use fill to cover the container
-            objectFit="cover" // Equivalent to object-cover
-            onError={handleImageError}
-            priority={false} // These are typically not LCP images
-            // Add sizes attribute for better performance with layout="fill" or "responsive"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        ) : (
-          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-            <span className="text-gray-500">No Image</span>
-          </div>
-        )}
-      </div>
-
+    <div className="w-full h-40 relative mb-2">
+      {imageUrl && !imageError ? (
+        <Image
+          src={imageUrl}
+          alt={imageAltText}
+          layout="fill"
+          objectFit="cover"
+          onError={(e) => handleImageError(e)}
+          priority={false}
+          sizes={imageSizes}
+        />
+      ) : (
+        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+          <span className="text-gray-500">No Image</span>
+        </div>
+      )}
+      {active && (
+        <div className="absolute top-2 left-2 p-1 rounded-full bg-background/70">
+          <Heart className="text-red-500 fill-red-500" />
+        </div>
+      )}
+    </div>
       <h3 className="font-semibold mb-1">{productTitle}</h3>
       {product.price != null && (
         <p className="text-sm text-muted-foreground">
