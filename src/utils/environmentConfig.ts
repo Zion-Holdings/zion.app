@@ -52,6 +52,11 @@ function isPlaceholderValue(value?: string): boolean {
   
   // Additional validation for Supabase URLs - they should be valid URLs with proper format
   if (lowercaseValue.includes('supabase.co')) {
+    // Check for specific placeholder URLs first
+    if (lowercaseValue.includes('placeholder.supabase.co')) {
+      return true;
+    }
+    
     // Valid Supabase URL pattern: https://[project-id].supabase.co
     const supabaseUrlPattern = /^https:\/\/[a-zA-Z0-9-]+\.supabase\.co$/;
     const isValidSupabaseUrl = supabaseUrlPattern.test(value);
@@ -206,6 +211,11 @@ export function initializeServices(): void {
   console.log(`  Supabase: ${config.supabase.isConfigured ? '✅ Configured' : '⚠️ Using fallbacks'}`);
   console.log(`  Sentry: ${config.sentry.isConfigured ? '✅ Configured' : '⚠️ Disabled'}`);
   console.log(`  Reown Wallet: ${config.reown.isConfigured ? '✅ Configured' : '⚠️ Using fallbacks'}`);
+  
+  // Special message for Netlify deployments
+  if (config.app.isProduction && config.supabase.isConfigured) {
+    console.log('🌐 Netlify deployment detected with configured Supabase');
+  }
 }
 
 /**
