@@ -43,7 +43,6 @@ export default function UpdatePassword() {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const router = useRouter();
-  const location = useLocation();
 
   // Initialize react-hook-form
   const form = useForm<UpdatePasswordFormValues>({
@@ -55,8 +54,9 @@ export default function UpdatePassword() {
   });
 
   useEffect(() => {
-    // Extract access token from URL hash
-    const hashParams = new URLSearchParams(location.hash.substring(1));
+    // Extract access token from URL hash on the client
+    const hash = typeof window !== 'undefined' ? window.location.hash : "";
+    const hashParams = new URLSearchParams(hash.substring(1));
     const token = hashParams.get("access_token");
     
     if (token) {
@@ -67,7 +67,7 @@ export default function UpdatePassword() {
 
     // Clean up auth state to prevent issues
     cleanupAuthState();
-  }, [location]);
+  }, []);
 
   // Form submission handler
   const onSubmit = async (data: UpdatePasswordFormValues) => {
