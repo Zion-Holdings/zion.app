@@ -10,5 +10,7 @@ export interface MockUser {
         push: boolean;
     };
     softDeleted?: boolean;
+    password?: string;
+    emailVerified?: boolean;
 }
 export declare const users: Record<string, MockUser>;
