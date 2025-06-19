@@ -5,7 +5,7 @@ import { Search, Filter, Grid, List } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { ProductCard } from '@/components/ProductCard';
+import ProductCard from '@/components/ProductCard';
 import { TalentCard } from '@/components/talent/TalentCard';
 import { CategoryCard } from '@/components/CategoryCard';
 import { SearchEmptyState } from '@/components/marketplace/EmptyState';
@@ -110,15 +110,18 @@ export default function SearchResultsPage({
         return (
           <div key={result.id} data-testid="result-card">
             <ProductCard
-              id={result.id}
-              title={result.title}
-              description={result.description}
-              price={result.price}
-              image={result.image}
-              rating={result.rating}
-              author={result.author}
-              tags={result.tags}
-              category={result.category}
+              product={{
+                id: result.id,
+                title: result.title,
+                description: result.description,
+                price: result.price,
+                images: result.image ? [result.image] : [],
+                rating: result.rating,
+                author: result.author,
+                tags: result.tags,
+                category: result.category,
+                currency: '$'
+              }}
             />
           </div>
         );
