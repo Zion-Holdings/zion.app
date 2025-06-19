@@ -3,7 +3,9 @@ import { DisputeReason } from "@/types/disputes";
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { useDisputes } from "@/hooks/useDisputes";
-import { Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType } from "@/types/disputes";
+import {
+ Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType
+} from "@/types/disputes";
 
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,13 +21,11 @@ import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 
 export function DisputeDetail() {
-  // useParams may be untyped in this environment, so avoid passing a
-  // type argument and cast the result instead to prevent TS2347 errors.
-  const { disputeId } = useParams() as { disputeId?: string };
   const router = useRouter();
+  const { disputeId } = router.query as { disputeId?: string };
   const { user } = useAuth();
   const { getDisputeById, updateDisputeStatus, resolveDispute, getDisputeMessages, addDisputeMessage } = useDisputes();
-  
+
   const [dispute, setDispute] = useState<Dispute | null>(null);
   const [messages, setMessages] = useState<DisputeMessage[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -66,7 +66,7 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
     };
     
     loadDisputeData();
-  }, [disputeId, navigate, getDisputeById, getDisputeMessages]);
+  }, [disputeId, getDisputeById, getDisputeMessages, router]);
 
   const handleStatusChange = async (status: DisputeStatus) => {
     if (!disputeId) return;
