@@ -6,7 +6,7 @@ import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
 import Image from 'next/image'; // Import next/image
 import React, { useState } from 'react'; // Import useState for error handling
-import { useSession } from 'next-auth/react';
+import { useAuth } from '@/context/auth/AuthProvider';
 import { useRouter } from 'next/router';
 
 export interface ProductCardProps {
@@ -15,7 +15,7 @@ export interface ProductCardProps {
 }
 
 export default function ProductCard({ product, onBuy }: ProductCardProps) {
-  const { data: session } = useSession();
+  const { user, isLoading: authLoading, isAuthenticated } = useAuth();
   const { isWishlisted, toggle } = useWishlist();
   const [imageError, setImageError] = useState(false);
   const router = useRouter();
@@ -34,7 +34,7 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
   const productTitle = typeof product.title === 'string' ? product.title : 'Untitled Product';
 
   const addToCart = () => {
-    if (!session) {
+    if (!isAuthenticated) {
       // Show toast message
       alert("Please log in to add items");
       // Redirect to login page
@@ -103,7 +103,7 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
             variant="outline"
             className="flex-1"
             data-testid="buy-now-button"
-            disabled={!session}
+            disabled={!isAuthenticated}
           >
             Buy Now
           </Button>
