@@ -15,7 +15,9 @@ import { exec } from 'child_process';
 import fs from 'fs';
 import os from 'os-utils';
 import axios from 'axios';
-import { pathToFileURL } from 'url';
+import { pathToFileURL, fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // --- Discord Configuration ---
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
@@ -115,13 +117,23 @@ function determineBaseLogPath() {
       logError(`Failed to use WATCHDOG_LOG_PATH at ${envPath}. Falling back to local logs directory.`, e);
     }
   }
-  const fallback = path.resolve(process.cwd(), 'logs');
+
+  const fallback = path.resolve(__dirname, '../logs');
   try {
     fs.mkdirSync(fallback, { recursive: true });
+    fs.accessSync(fallback, fs.constants.W_OK);
+    return fallback;
   } catch (e) {
     logError(`Failed to create fallback log directory at ${fallback}`, e);
   }
-  return fallback;
+
+  const cwdFallback = path.resolve(process.cwd(), 'logs');
+  try {
+    fs.mkdirSync(cwdFallback, { recursive: true });
+  } catch (e) {
+    logError(`Failed to create cwd fallback log directory at ${cwdFallback}`, e);
+  }
+  return cwdFallback;
 }
 
 const BASE_LOG_PATH = determineBaseLogPath();
