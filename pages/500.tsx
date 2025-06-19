@@ -33,7 +33,6 @@ export default function Custom500() {
   };
 
   const handleReset = () => {
-    mutate(() => true, undefined, { revalidate: false });
     router.reload();
   };
 
