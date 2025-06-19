@@ -9,6 +9,7 @@ export const users = {
         notifications: { email: true, push: false },
         softDeleted: false,
         password: 'password123', // For testing
+        emailVerified: true, // Email is verified
     },
     '2': {
         id: '2',
@@ -20,6 +21,20 @@ export const users = {
         notifications: { email: true, push: true },
         softDeleted: false,
         password: 'kalc2024!', // Default password for testing
+        emailVerified: true, // Email is verified
+    },
+    // Add a test user with unverified email for testing
+    '3': {
+        id: '3',
+        name: 'Test User',
+        email: 'test@unverified.com',
+        avatarUrl: '',
+        bio: 'Test user with unverified email',
+        points: 0,
+        notifications: { email: true, push: false },
+        softDeleted: false,
+        password: 'test123',
+        emailVerified: false, // Email not verified - for testing 403 response
     },
 };
 
