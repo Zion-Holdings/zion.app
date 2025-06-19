@@ -324,7 +324,7 @@ export default function SearchResultsPage({
   );
 }
 
-export const getServerSideProps: GetServerSideProps<SearchResultsPageProps> = async (context) => {
+export const getServerSideProps: GetServerSideProps<SearchResultsPageProps> = async (context: any) => {
   const params = context.params;
   const urlQuery = context.query;
   const slug = params?.slug as string;

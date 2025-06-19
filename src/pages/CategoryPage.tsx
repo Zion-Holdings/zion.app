@@ -8,13 +8,14 @@ interface ApiResponse {
 }
 
 export default function CategoryPage() {
-  const { slug } = useParams();
+  const router = useRouter();
+  const { slug } = router.query;
   const [data, setData] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function load() {
-      if (!slug) return;
+      if (!slug || typeof slug !== 'string') return;
       setLoading(true);
       try {
         const res = await fetch(`/api/categories/${slug}/items`);
