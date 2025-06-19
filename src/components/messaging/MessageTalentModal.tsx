@@ -14,7 +14,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useMessaging } from "@/context/MessagingContext";
 import { TalentProfile } from "@/types/talent";
 import { toast } from "@/components/ui/use-toast";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 
 export interface MessageTalentModalProps {
   talent: TalentProfile;
@@ -30,7 +30,7 @@ export function MessageTalentModal({
   jobTitle
 }: MessageTalentModalProps) {
   const { createConversation } = useMessaging();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [message, setMessage] = useState(
     jobTitle 
       ? `Hi ${talent.full_name}, I'd like to invite you to discuss a project: ${jobTitle}`
@@ -75,7 +75,7 @@ export function MessageTalentModal({
       onClose();
       
       // Navigate to messages inbox
-      navigate("/messages");
+      router.push("/messages");
     } catch (error) {
       console.error("Failed to send message:", error);
       toast({

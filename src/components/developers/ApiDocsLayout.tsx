@@ -1,7 +1,7 @@
 
 import { SearchSuggestion } from "@/types/search";
 import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { Search } from "lucide-react";
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { cn } from "@/lib/utils";
@@ -16,7 +16,7 @@ interface ApiDocsLayoutProps {
 
 export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
   const location = useLocation();
-  const navigate = useNavigate();
+  const router = useRouter();
   const currentPath = location.pathname;
   const [searchValue, setSearchValue] = useState("");
   
@@ -31,7 +31,7 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
   const handleSelectSuggestion = (suggestion: SearchSuggestion) => {
     const path = getDocsSearchPath(suggestion.text);
     if (path) {
-      navigate(path);
+      router.push(path);
       setSearchValue("");
     }
   };
@@ -40,7 +40,7 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
     e.preventDefault();
     const path = getDocsSearchPath(searchValue);
     if (path) {
-      navigate(path);
+      router.push(path);
       setSearchValue("");
     }
   };

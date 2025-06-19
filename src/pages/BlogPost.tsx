@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { SEO } from "@/components/SEO";
 import JsonLd from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ import { BLOG_POSTS } from "@/data/blog-posts";
 
 export default function BlogPost() {
   const { slug } = useParams() as { slug: string };
-  const navigate = useNavigate();
+  const router = useRouter();
   const [post, setPost] = useState<BlogPostType | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);
   const [showShareMenu, setShowShareMenu] = useState(false);
@@ -49,7 +49,7 @@ export default function BlogPost() {
         ).slice(0, 3);
         setRelatedPosts(related);
       } else {
-        navigate('/blog', { replace: true });
+        router.push('/blog', { replace: true });
       }
     };
 

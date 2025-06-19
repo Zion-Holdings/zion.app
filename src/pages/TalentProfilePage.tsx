@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { TalentProfile } from "@/components/profile/TalentProfile";
 import { ProfileLoadingState } from "@/components/profile/ProfileLoadingState";
 import { ProfileErrorState } from "@/components/profile/ProfileErrorState";
@@ -20,7 +20,7 @@ import { SEO } from "@/components/SEO";
 export default function TalentProfilePage() {
   // Cast to specify the expected route param type since useParams may be untyped
   const { id } = useParams() as { id?: string };
-  const navigate = useNavigate();
+  const router = useRouter();
   const { profile, isLoading, error } = useTalentProfile(id);
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
   const [isMessageModalOpen, setIsMessageModalOpen] = useState(false);
@@ -78,7 +78,7 @@ export default function TalentProfilePage() {
         description: "Please sign in to hire this talent.",
         variant: "default",
       });
-      navigate('/login', { state: { from: `/talent/${id}` } });
+      router.push('/login', { state: { from: `/talent/${id}` } });
       return;
     }
     setIsHireModalOpen(true);
@@ -91,7 +91,7 @@ export default function TalentProfilePage() {
         description: "Please sign in to message this talent.",
         variant: "default",
       });
-      navigate('/login', { state: { from: `/talent/${id}` } });
+      router.push('/login', { state: { from: `/talent/${id}` } });
       return;
     }
     setIsMessageModalOpen(true);

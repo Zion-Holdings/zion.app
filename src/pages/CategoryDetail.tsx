@@ -1,5 +1,4 @@
 
-import { useParams, Link } from "react-router-dom";
 import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
@@ -8,7 +7,7 @@ import { useState, useEffect, useRef, Suspense } from "react";
 import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from "lucide-react";
 import { MARKETPLACE_LISTINGS } from "@/data/listingData";
 import { ProductListing } from "@/types/listings";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { toast } from "@/hooks/use-toast";
 
 const AUTO_SERVICE_TITLES = [
@@ -58,11 +57,11 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
   // Cast to specify the expected route param type since useParams may be untyped
   const params = useParams() as { slug?: string };
   const slug = slugProp ?? params.slug;
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // Redirect to categories list if slug is missing
   if (!slug) {
-    navigate('/categories');
+    router.push('/categories');
     return null;
   }
   const [isLoading, setIsLoading] = useState(true);
@@ -223,7 +222,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
       });
       
       // Navigate to the quote request page with the listing information
-      navigate("/request-quote", {
+      router.push("/request-quote", {
         state: { 
           serviceType: listing.category,
           specificItem: {

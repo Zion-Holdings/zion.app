@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { format } from "date-fns";
 import { useAuth } from "@/hooks/useAuth";
 import { useProjects } from "@/hooks/useProjects";
@@ -57,7 +57,7 @@ function ProjectDetailsContent() {
   // type argument and cast the result instead to prevent TS2347 errors.
   const { projectId } = useParams() as { projectId?: string };
   const { user } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
   const { getProjectById, updateProjectStatus } = useProjects();
   
   const [project, setProject] = useState<Project | null>(null);
@@ -86,7 +86,7 @@ function ProjectDetailsContent() {
           description: "The requested project could not be found.",
           variant: "destructive",
         });
-        navigate("/dashboard");
+        router.push("/dashboard");
       }
       
       setIsLoading(false);
@@ -214,7 +214,7 @@ function ProjectDetailsContent() {
             <p className="text-muted-foreground mb-4">
               The project you're looking for doesn't exist or you don't have access to it.
             </p>
-            <Button onClick={() => navigate("/dashboard")}>
+            <Button onClick={() => router.push("/dashboard")}>
               Return to Dashboard
             </Button>
           </CardContent>
@@ -228,7 +228,7 @@ function ProjectDetailsContent() {
   const isTalent = user?.id === project.talent_id;
   
   if (!isClient && !isTalent) {
-    navigate("/unauthorized");
+    router.push("/unauthorized");
     return null;
   }
   
@@ -332,7 +332,7 @@ function ProjectDetailsContent() {
               {(isClient || isTalent) && ["offer_sent", "offer_accepted", "in_progress"].includes(project.status) && (
                 <Button 
                   variant="outline" 
-                  onClick={() => navigate(`/messages?talentId=${project.talent_id}&clientId=${project.client_id}`)}
+                  onClick={() => router.push(`/messages?talentId=${project.talent_id}&clientId=${project.client_id}`)}
                 >
                   <MessageSquare className="mr-2 h-4 w-4" /> Message
                 </Button>
@@ -562,7 +562,7 @@ function ProjectDetailsContent() {
                           variant="outline"
                           size="sm"
                           className="mt-2"
-                          onClick={() => navigate(`/messages?talentId=${project.talent_id}`)}
+                          onClick={() => router.push(`/messages?talentId=${project.talent_id}`)}
                         >
                           <MessageSquare className="mr-1 h-3 w-3" /> Message
                         </Button>
@@ -591,7 +591,7 @@ function ProjectDetailsContent() {
                           variant="outline"
                           size="sm"
                           className="mt-2"
-                          onClick={() => navigate(`/messages?clientId=${project.client_id}`)}
+                          onClick={() => router.push(`/messages?clientId=${project.client_id}`)}
                         >
                           <MessageSquare className="mr-1 h-3 w-3" /> Message
                         </Button>
@@ -638,7 +638,7 @@ function ProjectDetailsContent() {
                   </p>
                   <Button 
                     variant="outline"
-                    onClick={() => navigate(`/messages?talentId=${project.talent_id}`)}
+                    onClick={() => router.push(`/messages?talentId=${project.talent_id}`)}
                     className="w-full"
                   >
                     <MessageSquare className="mr-2 h-4 w-4" /> Discuss Changes

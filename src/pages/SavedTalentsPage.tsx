@@ -6,19 +6,19 @@ import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { TalentProfile } from "@/types/talent";
 import { toast } from "@/components/ui/use-toast";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { logError } from "@/utils/logError";
 
 export default function SavedTalentsPage() {
   const { user } = useAuth();
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
+  const router = useRouter();
   const location = useLocation();
 
   useEffect(() => {
     if (!user) {
-      navigate(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+      router.push(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
     }
   }, [user, navigate, location]);
 
@@ -81,7 +81,7 @@ export default function SavedTalentsPage() {
   }, [user]);
 
   const handleViewProfile = (talentId: string) => {
-    navigate(`/talent/${talentId}`);
+    router.push(`/talent/${talentId}`);
   };
 
   const handleRequestHire = (talent: TalentProfile) => {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { 
   Form, FormControl, FormField, FormItem, FormLabel, FormMessage 
 } from "@/components/ui/form";
@@ -68,7 +68,7 @@ type TalentFormValues = z.infer<typeof talentSchema>;
 
 export function TalentOnboardingForm() {
   const { user } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [profilePictureUrl, setProfilePictureUrl] = useState<string | null>(null);
   const [cvFileName, setCvFileName] = useState<string | null>(null);

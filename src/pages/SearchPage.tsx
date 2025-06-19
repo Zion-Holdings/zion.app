@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { SearchSuggestion } from "@/types/search";
@@ -41,7 +41,7 @@ function highlight(text: string, term: string) {
 
 export default function SearchPage() {
   const [params] = useSearchParams();
-  const navigate = useNavigate();
+  const router = useRouter();
   const initial = params.get("q") || "";
   const [query, setQuery] = useState(initial);
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -73,7 +73,7 @@ export default function SearchPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate(`/search?q=${encodeURIComponent(query)}`);
+    router.push(`/search?q=${encodeURIComponent(query)}`);
     fetchResults(query);
   };
 
@@ -85,7 +85,7 @@ export default function SearchPage() {
             value={query}
             onChange={setQuery}
             onSelectSuggestion={(suggestion) => {
-              navigate(`/search?q=${encodeURIComponent(suggestion.text)}`);
+              router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
               setQuery(suggestion.text);
               fetchResults(suggestion.text);
             }}

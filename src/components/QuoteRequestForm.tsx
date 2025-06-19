@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { GradientHeading } from "@/components/GradientHeading";
@@ -24,7 +24,7 @@ const serviceStepSchema = z.object({
 });
 
 export function QuoteRequestForm() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { toast } = useToast();
   const [currentStep, setCurrentStep] = useState<QuoteRequestSteps>("service");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -126,7 +126,7 @@ export function QuoteRequestForm() {
       });
       
       // Redirect to confirmation page or homepage
-      navigate("/");
+      router.push("/");
     } catch (error) {
       toast({
         title: "Submission Failed",

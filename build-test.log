@@ -1,0 +1,10 @@
+
+> project@0.0.0 build
+> npx next build --no-lint
+
+ ⚠ Linting is disabled.
+  ▲ Next.js 14.2.30
+  - Experiments (use with caution):
+    · instrumentationHook
+
+   Checking validity of types ...

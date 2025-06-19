@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
@@ -15,7 +15,7 @@ export default function Onboarding() {
   const { user, updateProfile, isLoading } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
   const [userType, setUserType] = useState<"serviceProvider" | "talent" | "client" | null>(null);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // Convert our user types to match what's expected in the database
   const mapUserTypeToDatabase = (type: "serviceProvider" | "talent" | "client") => {
@@ -36,10 +36,10 @@ export default function Onboarding() {
     
     // Direct to specific registration page based on user type
     if (type === "serviceProvider") {
-      navigate('/service-onboarding');
+      router.push('/service-onboarding');
       return;
     } else if (type === "talent") {
-      navigate('/talent-onboarding');
+      router.push('/talent-onboarding');
       return;
     }
     
@@ -54,7 +54,7 @@ export default function Onboarding() {
         description: "Your session may have expired. Please log in again.",
         variant: "destructive",
       });
-      navigate('/login');
+      router.push('/login');
       return;
     }
     
@@ -88,7 +88,7 @@ export default function Onboarding() {
         : "/talent-dashboard";
       
       // Redirect to dashboard
-      navigate(dashboardRoute);
+      router.push(dashboardRoute);
       
     } catch (error) {
       console.error('Error updating profile:', error);
@@ -106,7 +106,7 @@ export default function Onboarding() {
   ];
 
   if (!user) {
-    navigate('/login');
+    router.push('/login');
     return null;
   }
 

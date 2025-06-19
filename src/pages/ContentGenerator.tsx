@@ -15,11 +15,11 @@ import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 
 export default function ContentGenerator() {
   const { user, isLoading } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [contentType, setContentType] = useState<'blog' | 'newsletter' | 'serviceDescription' | 'faq'>('blog');
   const [customPrompt, setCustomPrompt] = useState('');
   const [topic, setTopic] = useState('');
@@ -34,7 +34,7 @@ export default function ContentGenerator() {
   React.useEffect(() => {
     if (!isLoading && !user) {
       toast.error("You must be logged in to access this page");
-      navigate("/login?redirect=/content-generator");
+      router.push("/login?redirect=/content-generator");
     }
   }, [user, isLoading, navigate]);
 

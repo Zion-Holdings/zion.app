@@ -6,7 +6,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 
 interface PaymentButtonProps {
   amount: number;
@@ -29,7 +29,7 @@ export function PaymentButton({
 }: PaymentButtonProps) {
   const [isProcessing, setIsProcessing] = useState(false);
   const { isAuthenticated, user } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const handlePaymentClick = async () => {
     if (!isAuthenticated) {
@@ -39,7 +39,7 @@ export function PaymentButton({
       });
 
       const next = encodeURIComponent(`/checkout?sku=${serviceId}`);
-      navigate(`/login?next=${next}`);
+      router.push(`/login?next=${next}`);
       return;
     }
     

@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useNavigate, Link } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { useAuth } from "@/context/auth/AuthProvider";
 import { AlertCircle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export function SignUpForm() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { signUp, login, loginWithGoogle } = useAuth();
   
   const [formData, setFormData] = useState({
@@ -48,7 +48,7 @@ export function SignUpForm() {
           setShowVerificationMessage(true);
         } else {
           // Only navigate if email verification is not required
-          navigate("/mobile");
+          router.push("/mobile");
         }
       } else {
         const { error } = await login(formData.email, formData.password);
@@ -57,7 +57,7 @@ export function SignUpForm() {
           throw new Error(error);
         }
         
-        navigate("/mobile");
+        router.push("/mobile");
       }
     } catch (err: any) {
       setError(err.message);

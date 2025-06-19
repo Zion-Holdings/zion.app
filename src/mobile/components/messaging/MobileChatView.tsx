@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Send, PaperclipIcon, ChevronLeft, MoreVertical, Video, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { toast } from "sonner";
 
 interface Message {
@@ -32,7 +32,7 @@ interface MobileChatViewProps {
 
 export function MobileChatView({ contact, messages, onBack, onSendMessage }: MobileChatViewProps) {
   const [newMessage, setNewMessage] = useState("");
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const handleSend = () => {
     if (newMessage.trim() !== "") {
@@ -55,7 +55,7 @@ export function MobileChatView({ contact, messages, onBack, onSendMessage }: Mob
     });
     
     // Navigate to video call page
-    navigate(`/call/${roomId}`);
+    router.push(`/call/${roomId}`);
   };
   
   const startAudioCall = () => {
@@ -65,7 +65,7 @@ export function MobileChatView({ contact, messages, onBack, onSendMessage }: Mob
     });
     
     // Navigate to video call page with audio-only flag
-    navigate(`/call/${roomId}?audioOnly=true`);
+    router.push(`/call/${roomId}?audioOnly=true`);
   };
   
   return (

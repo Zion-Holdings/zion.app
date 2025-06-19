@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
-// Removed: import { useNavigate, useLocation } from 'react-router-dom';
+// Removed: import { useRouter } from 'next/router';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 import { logError } from '@/utils/logError';
 // Removed sendErrorToBackend import as it's no longer directly used.
 
 function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
-  // Removed: const navigate = useNavigate();
+  // Removed: const router = useRouter();
   // Updated user-friendly messages
   const apologyMessage = "We apologize for the inconvenience.";
   const explanationMessage = "Our team has been notified and is working to fix the issue.";

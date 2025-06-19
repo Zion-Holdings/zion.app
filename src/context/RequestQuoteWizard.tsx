@@ -5,7 +5,7 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { toast } from "@/hooks/use-toast";
 import axios from 'axios';
 
@@ -38,7 +38,7 @@ export function useRequestQuoteWizard(): RequestQuoteWizardContextType {
 export function RequestQuoteWizardProvider({ children }: { children: ReactNode }) {
   const [step, setStep] = useState<WizardStep>("Services");
   const [selectedService, setSelectedService] = useState<string | null>(null);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const goToStep = (next: WizardStep) => setStep(next);
 
@@ -60,7 +60,7 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
         user_message: message,
       });
       toast.success("Quote request submitted");
-      navigate("/dashboard/quotes");
+      router.push("/dashboard/quotes");
       setStep("Success");
     } catch (err) {
       console.error('Failed to submit quote', err);

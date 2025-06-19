@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useAuth } from "@/hooks/useAuth";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter } from 'next/router';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -36,7 +36,7 @@ export function TemplateList({
   const [templateToDelete, setTemplateToDelete] = useState<string | null>(null);
   const { deleteTemplate, setDefaultTemplate } = useContractTemplates();
   const { user } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
   const location = useLocation();
 
   const handleDeleteClick = (templateId: string) => {
@@ -52,7 +52,7 @@ export function TemplateList({
 
   const handleSetDefault = async (templateId: string) => {
     if (!user) {
-      navigate(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+      router.push(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
       return;
     }
     await setDefaultTemplate.mutateAsync(templateId);

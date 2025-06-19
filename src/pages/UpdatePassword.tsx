@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, ControllerRenderProps } from "react-hook-form";
 import { z } from "zod";
@@ -42,7 +42,7 @@ export default function UpdatePassword() {
   const [accessToken, setAccessToken] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
   const location = useLocation();
 
   // Initialize react-hook-form
@@ -109,7 +109,7 @@ export default function UpdatePassword() {
       // Clean auth state and redirect after a delay
       cleanupAuthState();
       setTimeout(() => {
-        navigate("/login");
+        router.push("/login");
       }, 3000);
     } catch (error: any) {
       logError(error, { message: 'Password update error' });
@@ -152,7 +152,7 @@ export default function UpdatePassword() {
                   <Button 
                     className="mt-3 text-xs"
                     variant="outline"
-                    onClick={() => navigate('/forgot-password')}
+                    onClick={() => router.push('/forgot-password')}
                   >
                     Request new reset link
                   </Button>
@@ -231,7 +231,7 @@ export default function UpdatePassword() {
                       <Button
                         variant="link"
                         className="text-sm font-medium text-zion-cyan hover:text-zion-cyan-light p-0"
-                        onClick={() => navigate("/login")}
+                        onClick={() => router.push("/login")}
                         type="button"
                       >
                         Back to login

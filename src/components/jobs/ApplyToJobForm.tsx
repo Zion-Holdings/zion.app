@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { useJobApplications } from "@/hooks/useJobApplications";
 import { useResume } from "@/hooks/useResume";
 import { useAuth } from "@/hooks/useAuth";
@@ -23,7 +23,7 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
   const { user } = useAuth();
   const { applyToJob } = useJobApplications();
   const { resumes, isLoading: isResumesLoading } = useResume();
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const [coverLetter, setCoverLetter] = useState(`I'm interested in the "${job.title}" position and would like to apply. My skills and experience align well with this role.`);
   const [selectedResumeId, setSelectedResumeId] = useState<string>("");
@@ -35,7 +35,7 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
     
     if (!user) {
       toast.error("You must be logged in to apply");
-      navigate("/login", { state: { returnTo: `/jobs/${job.id}` } });
+      router.push("/login", { state: { returnTo: `/jobs/${job.id}` } });
       return;
     }
     
@@ -135,7 +135,7 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
                 variant="outline" 
                 size="sm" 
                 type="button"
-                onClick={() => navigate("/dashboard/talent/portfolio")}
+                onClick={() => router.push("/dashboard/talent/portfolio")}
               >
                 Create Resume
               </Button>

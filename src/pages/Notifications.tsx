@@ -16,7 +16,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import Skeleton from "@/components/ui/skeleton";
 import { SEO } from "@/components/SEO";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { cn } from "@/lib/utils";
 
 const getNotificationIcon = (type: NotificationType, className: string = "h-5 w-5") => {
@@ -79,7 +79,7 @@ const NotificationCard: React.FC<{
   onMarkAsRead: (id: string) => Promise<void>;
   onDismiss: (id: string) => Promise<void>;
 }> = ({ notification, onMarkAsRead, onDismiss }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const handleAction = () => {
     if (!notification.read) {
@@ -87,7 +87,7 @@ const NotificationCard: React.FC<{
     }
     
     if (notification.action_url) {
-      navigate(notification.action_url);
+      router.push(notification.action_url);
     }
   };
   

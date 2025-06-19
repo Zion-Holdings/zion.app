@@ -1,7 +1,7 @@
 
 import { DisputeReason } from "@/types/disputes";
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { useDisputes } from "@/hooks/useDisputes";
 import { Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType } from "@/types/disputes";
 
@@ -22,7 +22,7 @@ export function DisputeDetail() {
   // useParams may be untyped in this environment, so avoid passing a
   // type argument and cast the result instead to prevent TS2347 errors.
   const { disputeId } = useParams() as { disputeId?: string };
-  const navigate = useNavigate();
+  const router = useRouter();
   const { user } = useAuth();
   const { getDisputeById, updateDisputeStatus, resolveDispute, getDisputeMessages, addDisputeMessage } = useDisputes();
   
@@ -50,7 +50,7 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
         const disputeData = await getDisputeById(disputeId);
         if (!disputeData) {
           toast.error("Dispute not found");
-          navigate("/dashboard/disputes");
+          router.push("/dashboard/disputes");
           return;
         }
         setDispute(disputeData);
@@ -132,7 +132,7 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
     return (
       <div className="p-8 text-center">
         <p>Dispute not found</p>
-        <Button onClick={() => navigate("/dashboard/disputes")} className="mt-4">
+        <Button onClick={() => router.push("/dashboard/disputes")} className="mt-4">
           Back to Disputes
         </Button>
       </div>
@@ -169,7 +169,7 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
         </div>
         
         <div className="flex gap-2">
-          <Button variant="outline" onClick={() => navigate("/dashboard/disputes")}>
+          <Button variant="outline" onClick={() => router.push("/dashboard/disputes")}>
             Back to List
           </Button>
           {isAdmin && dispute.status === "open" && (

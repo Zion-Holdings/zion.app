@@ -7,7 +7,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { CheckCircle, ChevronRight, FileText, MessageSquare, Video } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { SeverityIndicator } from "../common/SeverityIndicator";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { toast } from "sonner";
 
 interface Milestone {
@@ -38,7 +38,7 @@ interface ProjectViewProps {
 }
 
 export function MobileProjectView({ project, milestones }: ProjectViewProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const startProjectCall = () => {
     const roomId = `project-${project.id}`;
@@ -46,7 +46,7 @@ export function MobileProjectView({ project, milestones }: ProjectViewProps) {
       description: "Initializing video connection..."
     });
     
-    navigate(`/call/${roomId}`);
+    router.push(`/call/${roomId}`);
   };
   
   const messageClient = () => {

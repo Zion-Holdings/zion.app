@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { mutate } from 'swr';
-import { Link, useNavigate, useSearchParams, useLocation } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
@@ -17,7 +17,7 @@ interface PostFormValues {
 }
 
 export default function CreatePostPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const location = useLocation();
   const { user } = useAuth();
   const { toast } = useToast();
@@ -25,7 +25,7 @@ export default function CreatePostPage() {
 
   useEffect(() => {
     if (!user) {
-      navigate(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+      router.push(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
     }
   }, [user, navigate, location]);
   
@@ -67,7 +67,7 @@ export default function CreatePostPage() {
       }
       
       // Redirect to the forum category
-      navigate(`/community/category/${values.categoryId}`);
+      router.push(`/community/category/${values.categoryId}`);
     } catch (error) {
       toast({
         title: "Error",

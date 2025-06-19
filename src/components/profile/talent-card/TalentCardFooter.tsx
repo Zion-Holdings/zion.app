@@ -6,7 +6,7 @@ import { TalentProfile } from "@/types/talent";
 import { HireRequestModal } from "@/components/profile/hire-request";
 import { useAuthStatus } from "@/hooks/talent";
 import type { UserProfile } from "@/types/auth";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 
 interface TalentCardFooterProps {
   profile: TalentProfile;
@@ -17,7 +17,7 @@ interface TalentCardFooterProps {
 export function TalentCardFooter({ profile, onViewProfile, onRequestHire }: TalentCardFooterProps) {
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
   const { userDetails } = useAuthStatus();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // Create a compatible UserProfile from UserDetails
   const userProfile: UserProfile = {
@@ -51,7 +51,7 @@ export function TalentCardFooter({ profile, onViewProfile, onRequestHire }: Tale
     e.stopPropagation();
     
     // Navigate to the talent profile page
-    navigate(`/talent/${profile.id || ''}`);
+    router.push(`/talent/${profile.id || ''}`);
     
     // Also call the onViewProfile callback if provided
     if (onViewProfile) {

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { GradientHeading } from "@/components/GradientHeading";
@@ -11,7 +11,7 @@ import { useFeatureUsage } from "@/hooks/useFeatureUsage";
 import { MatchResult } from "@/lib/ai-matchmaking";
 
 export default function AIMatcherPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   useFeatureUsage('AI Matchmaker');
   
@@ -33,7 +33,7 @@ export default function AIMatcherPage() {
     });
     
     // Navigate to the quote request page with the selected item
-    navigate("/request-quote", {
+    router.push("/request-quote", {
       state: { 
         serviceType: itemType,
         specificItem: match.item

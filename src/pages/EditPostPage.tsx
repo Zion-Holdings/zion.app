@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
@@ -37,7 +37,7 @@ const mockPost: ForumPost = {
 
 export default function EditPostPage() {
   const { postId } = useParams() as { postId?: string };
-  const navigate = useNavigate();
+  const router = useRouter();
   const { toast } = useToast();
   const { user } = useAuth();
   const [post, setPost] = useState<ForumPost | null>(mockPost);
@@ -104,7 +104,7 @@ export default function EditPostPage() {
       });
       
       // Redirect back to the post
-      navigate(`/community/post/${postId}`);
+      router.push(`/community/post/${postId}`);
     } catch (error) {
       toast({
         title: "Error",

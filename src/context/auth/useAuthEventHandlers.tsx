@@ -14,7 +14,7 @@ export function useAuthEventHandlers(
   setOnboardingStep: React.Dispatch<React.SetStateAction<string | null>>,
   router: ReturnType<typeof useRouter> // Use ReturnType<typeof useRouter>
 ) {
-  // Removed: const navigate = useNavigate();
+  // Removed: const router = useRouter();
 
   const handleSignedIn = (mappedUser: UserProfile) => {
     toast({

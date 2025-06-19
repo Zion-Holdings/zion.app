@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { Bell, Calendar, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,7 +8,7 @@ import { useProjects } from "@/hooks/useProjects";
 import { Project } from "@/types/projects";
 
 export function ProjectOfferBanner() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { projects, isLoading } = useProjects();
   const [pendingOffers, setPendingOffers] = useState<Project[]>([]);
   const [dismissed, setDismissed] = useState<Set<string>>(new Set());
@@ -30,7 +30,7 @@ export function ProjectOfferBanner() {
   };
   
   const handleViewOffer = (projectId: string) => {
-    navigate(`/project/${projectId}`);
+    router.push(`/project/${projectId}`);
   };
   
   if (isLoading || pendingOffers.length === 0 || pendingOffers.every(p => dismissed.has(p.id))) {

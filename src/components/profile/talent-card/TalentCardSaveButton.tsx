@@ -3,7 +3,7 @@ import React from "react";
 import { Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter } from 'next/router';
 
 interface TalentCardSaveButtonProps {
   profileId: string;
@@ -21,7 +21,7 @@ export function TalentCardSaveButton({
   isAuthenticated
 }: TalentCardSaveButtonProps) {
   const { toast } = useToast();
-  const navigate = useNavigate();
+  const router = useRouter();
   const location = useLocation();
   const [localIsSaved, setLocalIsSaved] = React.useState(isSaved);
   
@@ -36,7 +36,7 @@ export function TalentCardSaveButton({
         variant: "destructive"
       });
       const next = encodeURIComponent(location.pathname + location.search);
-      navigate(`/login?next=${next}`);
+      router.push(`/login?next=${next}`);
       return;
     }
     

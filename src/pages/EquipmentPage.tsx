@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2, Sparkles, AlertTriangle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter } from 'next/router';
 import useSWRMutation from "swr/mutation";
 import Skeleton, { SkeletonCard } from "@/components/ui/skeleton"; // Import SkeletonCard
 import { FilterSidebarSkeleton } from "@/components/skeletons/FilterSidebarSkeleton"; // Import FilterSidebarSkeleton
@@ -66,7 +66,7 @@ export default function EquipmentPage() {
   const [equipment, setEquipment] = useState<ProductListing[] | undefined>(undefined);
   const [hasExhaustedRetries, setHasExhaustedRetries] = useState(false);
   const { user } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
   const location = useLocation();
 
   const {
@@ -136,7 +136,7 @@ export default function EquipmentPage() {
 
   const handleRecommendations = async () => {
     if (!user) {
-      navigate('/login?next=/equipment&reco=1');
+      router.push('/login?next=/equipment&reco=1');
       return;
     }
     try {

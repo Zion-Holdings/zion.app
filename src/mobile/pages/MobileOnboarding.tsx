@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { Button } from "@/components/ui/button";
 import { LanguageThemeSelector } from "@/mobile/components/onboarding/LanguageThemeSelector";
 import { RolePicker } from "@/mobile/components/onboarding/RolePicker";
@@ -10,7 +10,7 @@ type OnboardingStep = "language" | "role" | "signup";
 
 export function MobileOnboarding() {
   const [currentStep, setCurrentStep] = useState<OnboardingStep>("language");
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const goToNextStep = () => {
     if (currentStep === "language") {
@@ -18,7 +18,7 @@ export function MobileOnboarding() {
     } else if (currentStep === "role") {
       setCurrentStep("signup");
     } else {
-      navigate("/mobile");
+      router.push("/mobile");
     }
   };
   
