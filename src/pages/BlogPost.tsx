@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { SEO } from "@/components/SEO";
 import JsonLd from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
@@ -12,11 +12,12 @@ import { Separator } from "@/components/ui/separator";
 import { BLOG_POSTS } from "@/data/blog-posts";
 
 export default function BlogPost() {
-  const { slug } = useParams() as { slug: string };
   const router = useRouter();
+  const { slug } = router.query as { slug: string };
   const [post, setPost] = useState<BlogPostType | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);
   const [showShareMenu, setShowShareMenu] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
     const fetchPost = async () => {
@@ -55,7 +56,7 @@ export default function BlogPost() {
 
     fetchPost();
     window.scrollTo(0, 0);
-  }, [slug, navigate]);
+  }, [slug, router]);
   
   if (!post) {
     return (
@@ -114,7 +115,7 @@ export default function BlogPost() {
               className="border-zion-blue-light text-zion-slate-light hover:bg-zion-blue-light hover:text-white"
               asChild
             >
-              <Link to="/blog">
+              <Link href="/blog">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to all articles
               </Link>
@@ -257,7 +258,7 @@ export default function BlogPost() {
                   {relatedPosts.map(relatedPost => (
                     <Link 
                       key={relatedPost.id}
-                      to={`/blog/${relatedPost.slug}`}
+                      href={`/blog/${relatedPost.slug}`}
                       className="bg-zion-blue-dark border border-zion-blue-light rounded-lg overflow-hidden hover:border-zion-purple transition-all duration-300"
                     >
                       <div className="aspect-[16/9] relative">
@@ -284,9 +285,9 @@ export default function BlogPost() {
             <div className="mt-12 text-center">
               <p className="text-zion-slate-light">
                 Ready to put these ideas into action? Explore our{' '}
-                <Link to="/services" className="text-zion-cyan underline">AI services</Link>{' '}
+                <Link href="/services" className="text-zion-cyan underline">AI services</Link>{' '}
                 or browse expert{' '}
-                <Link to="/talent" className="text-zion-cyan underline">talent</Link> to accelerate your projects.
+                <Link href="/talent" className="text-zion-cyan underline">talent</Link> to accelerate your projects.
               </p>
             </div>
 
@@ -297,7 +298,7 @@ export default function BlogPost() {
                 className="border-zion-blue-light text-zion-slate-light hover:bg-zion-blue-light hover:text-white"
                 asChild
               >
-                <Link to="/blog">
+                <Link href="/blog">
                   <ChevronLeft className="mr-2 h-4 w-4" />
                   All Articles
                 </Link>

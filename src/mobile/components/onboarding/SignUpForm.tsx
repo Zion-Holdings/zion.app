@@ -1,9 +1,9 @@
-
 import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { useAuth } from "@/context/auth/AuthProvider";
 import { AlertCircle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -189,7 +189,7 @@ export function SignUpForm() {
           : "Don't have an account? "
         }
         <Link
-          to="/login"
+          href="/login"
           className="p-0 h-auto text-zion-cyan hover:text-zion-cyan-light cursor-pointer"
         >
           Sign In

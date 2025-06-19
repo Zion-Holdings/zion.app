@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
@@ -54,10 +53,10 @@ interface CategoryDetailProps {
 }
 
 export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps = {}) {
-  // Cast to specify the expected route param type since useParams may be untyped
-  const params = useParams() as { slug?: string };
-  const slug = slugProp ?? params.slug;
   const router = useRouter();
+  // Get slug from Next.js router query params
+  const params = router.query as { slug?: string };
+  const slug = slugProp ?? params.slug;
 
   // Redirect to categories list if slug is missing
   if (!slug) {

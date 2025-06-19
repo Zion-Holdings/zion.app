@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -22,7 +21,7 @@ export function BottomNavigation() {
         return (
           <Link 
             key={item.path} 
-            to={item.path}
+            href={item.path}
             className={cn(
               "flex flex-col items-center justify-center flex-1 py-1 px-2",
               isActive ? "text-primary" : "text-muted-foreground"

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -97,7 +96,7 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
         {visibleItems.map(item => (
           <Link
             key={item.name}
-            to={item.href}
+            href={item.href}
             aria-label={item.name}
             className={cn(
               "flex flex-col items-center justify-center w-full h-full px-1 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
