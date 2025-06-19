@@ -12,5 +12,8 @@ cypress/screenshots/
 pages/**/*.js
 pages/**/*.d.ts
 
+# Prevent JSX/TSX conflicts - prefer TSX for consistency
+pages/**/*.jsx
+
 # Exception: Allow standalone JS files that don't have TS counterparts
 # (This will need manual management if needed)
