@@ -7,6 +7,7 @@ import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from "lucide
 import { MARKETPLACE_LISTINGS } from "@/data/listingData";
 import { ProductListing } from "@/types/listings";
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { toast } from "@/hooks/use-toast";
 
 const AUTO_SERVICE_TITLES = [
@@ -242,7 +243,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
         <div className="min-h-screen bg-zion-blue">
           <div className="container mx-auto px-4 py-12">
           <div className="mb-4">
-            <Link to="/categories" className="text-zion-cyan hover:text-zion-cyan-light transition-colors inline-flex items-center">
+            <Link href="/categories" className="text-zion-cyan hover:text-zion-cyan-light transition-colors inline-flex items-center">
               ← Back to Categories
             </Link>
           </div>
