@@ -4,7 +4,7 @@ import { showApiError } from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
 import axiosRetry from 'axios-retry';
 
-axios.defaults.baseURL = 'your_base_url_here';
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
 
 // Global interceptor for all axios instances
 function mapStatusMessage(status?: number, fallback = ''): string {
