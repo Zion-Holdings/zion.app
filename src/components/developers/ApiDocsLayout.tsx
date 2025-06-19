@@ -1,8 +1,8 @@
+
 import { SearchSuggestion } from "@/types/search";
 import React, { useState } from "react";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import { Search } from "lucide-react";
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { cn } from "@/lib/utils";
@@ -16,10 +16,6 @@ interface ApiDocsLayoutProps {
 }
 
 export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
-<<<<<<< HEAD
-=======
-  // Using router.pathname instead of useLocation
->>>>>>> 63d35340c457663db429def48e184362fa016df0
   const router = useRouter();
   const currentPath = router.pathname;
   const [searchValue, setSearchValue] = useState("");
@@ -51,7 +47,6 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
 
   return (
     <div className="flex min-h-screen bg-zinc-950">
-<<<<<<< HEAD
      {/* Sidebar */}
      <div className="hidden md:block w-64 border-r border-zinc-800 p-6 sticky top-0 h-screen overflow-y-auto">
       <Link href="/developers/docs" className="flex items-center mb-8">
@@ -87,62 +82,15 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
          )}
         >
          {item.title}
-=======
-      {/* Sidebar */}
-      <div className="hidden md:block w-64 border-r border-zinc-800 p-6 sticky top-0 h-screen overflow-y-auto">
-        <Link href="/developers/docs" className="flex items-center mb-8">
-          <div className="bg-gradient-to-r from-zion-purple to-zion-cyan rounded-md w-8 h-8 mr-3 flex items-center justify-center">
-            <span className="text-white font-bold">Z</span>
-          </div>
-          <span className="font-bold text-white">API Docs</span>
->>>>>>> 63d35340c457663db429def48e184362fa016df0
         </Link>
        ))}
       </nav>
      </div>
 
-<<<<<<< HEAD
      {/* Main content */}
      <div className="flex-grow max-w-5xl mx-auto px-4 py-8 md:px-8 md:py-12">
       {children}
      </div>
-=======
-        <div className="mb-6">
-          <form onSubmit={handleSubmit} className="relative">
-            <Search className="absolute left-2 top-2.5 h-4 w-4 text-zinc-500" />
-            <EnhancedSearchInput
-              value={searchValue}
-              onChange={setSearchValue}
-              onSelectSuggestion={handleSelectSuggestion}
-              searchSuggestions={docsSearchSuggestions}
-              placeholder="Search documentation"
-            />
-          </form>
-        </div>
-
-        <nav role="navigation" aria-label="Main" className="flex flex-col space-y-1">
-          {navigationItems.map((item) => (
-            <Link
-              key={item.path}
-              href={item.path}
-              className={cn(
-                "block px-3 py-2 rounded-md text-sm",
-                currentPath === item.path
-                  ? "bg-zion-purple/20 text-zion-cyan"
-                  : "text-zinc-400 hover:text-white hover:bg-zinc-900"
-              )}
-            >
-              {item.title}
-            </Link>
-          ))}
-        </nav>
-      </div>
-
-      {/* Main content */}
-      <div className="flex-grow max-w-5xl mx-auto px-4 py-8 md:px-8 md:py-12">
-        {children}
-      </div>
->>>>>>> 63d35340c457663db429def48e184362fa016df0
     </div>
   );
 }
