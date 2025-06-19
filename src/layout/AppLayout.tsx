@@ -1,6 +1,5 @@
 import React, { ReactNode, useState } from "react"; // Added useState
 import { useRouter } from 'next/router';
-import { useLocation } from 'react-router-dom';
 // Assume useAuth hook exists and provides user object with emailVerified status and email
 import { useAuth } from '@/hooks/useAuth';
 import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // Assuming path
@@ -15,14 +14,8 @@ import ErrorOverlay from '@/components/ErrorOverlay';
 import { logError } from '@/utils/logError';
 
 function useSafePathname() {
-  try {
-    return useLocation().pathname;
-  } catch {
-    if (typeof window !== 'undefined') {
-      return window.location.pathname;
-    }
-    return '';
-  }
+  const router = useRouter();
+  return router.pathname || (typeof window !== 'undefined' ? window.location.pathname : '');
 }
 
 interface AppLayoutProps {

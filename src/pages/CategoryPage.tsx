@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { CategoryListingPage } from '@/components/CategoryListingPage';
 
 interface ApiResponse {

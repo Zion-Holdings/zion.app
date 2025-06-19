@@ -20,7 +20,6 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { ApiErrorBoundary } from '@/components/ApiErrorBoundary';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
-import { RouterWrapper } from '../src/components/RouterWrapper';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 // Import global Tailwind styles so they load before the app renders
@@ -71,7 +70,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   console.log('[App Provider] Initializing CartProvider...');
   console.log('[App Provider] Initializing AnalyticsProvider...');
   console.log('[App Provider] Initializing ThemeProvider...');
-  console.log('[App Provider] Initializing BrowserRouter...');
   console.log('[App Provider] Initializing ErrorBoundary (wrapping Component)...');
 
   // Render component with error handling
@@ -112,16 +110,14 @@ function MyApp({ Component, pageProps }: AppProps) {
                             <AnalyticsProvider>
                               <ThemeProvider>
                                 {/* Wrap in ThemeProvider so dark/light toggle works globally */}
-                                <RouterWrapper>
-                                  <AppLayout> {/* Consistent header/footer layout */}
+                                <AppLayout> {/* Consistent header/footer layout */}
+                                  <ErrorBoundary>
                                     <ErrorBoundary>
-                                      <ErrorBoundary>
-                                        {renderedComponent}
-                                      </ErrorBoundary>
+                                      {renderedComponent}
                                     </ErrorBoundary>
-                                    <OfflineIndicator />
-                                  </AppLayout>
-                                </RouterWrapper>
+                                  </ErrorBoundary>
+                                  <OfflineIndicator />
+                                </AppLayout>
                               </ThemeProvider>
                             </AnalyticsProvider>
                           </CartProvider>

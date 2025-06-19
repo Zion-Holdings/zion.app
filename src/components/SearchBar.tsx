@@ -7,7 +7,6 @@ import { fireEvent } from '@/lib/analytics';
 import { SearchSuggestion } from '@/types/search';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
-import { useNavigate } from 'react-router-dom';
 
 interface SearchBarProps {
   value: string;
@@ -25,7 +24,6 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
   const debounced = useDebounce(value, 150);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (!debounced) {
@@ -61,7 +59,6 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
     if (onSelectSuggestion) onSelectSuggestion(suggestion);
     router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
     fireEvent('search', { search_term: suggestion.text });
-    navigate(`/search?q=${encodeURIComponent(suggestion.text)}`);
     setFocused(false);
     setHighlightedIndex(-1);
     inputRef.current?.blur();
@@ -98,7 +95,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
               }
               if (e.key === 'Enter' && value) {
                 fireEvent('search', { search_term: value });
-                navigate(`/search?q=${encodeURIComponent(value)}`);
+                router.push(`/search?q=${encodeURIComponent(value)}`);
                 setFocused(false);
                 inputRef.current?.blur();
               }
@@ -120,7 +117,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
                   handleSelect(suggestions[highlightedIndex]);
                 } else if (value) {
                   fireEvent('search', { search_term: value });
-                  navigate(`/search?q=${encodeURIComponent(value)}`);
+                  router.push(`/search?q=${encodeURIComponent(value)}`);
                   setFocused(false);
                   inputRef.current?.blur();
                 }
