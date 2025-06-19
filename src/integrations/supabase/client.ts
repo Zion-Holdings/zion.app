@@ -1,41 +1,71 @@
 import { createClient } from '@supabase/supabase-js';
 import { Headers as NodeHeaders } from 'node-fetch';
 import { supabaseStorageAdapter } from './safeStorageAdapter';
+import { ENV_CONFIG } from '@/utils/environmentConfig';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+// Use the environment configuration
+const { supabase: supabaseConfig } = ENV_CONFIG;
 
-// Determine if an env var is missing or contains a placeholder value
-const isInvalid = (value?: string): boolean => {
-  if (!value) return true;
-  const lower = value.toLowerCase();
-  return (
-    lower.startsWith('your_supabase_url') ||
-    lower.startsWith('your_supabase_url_here') ||
-    lower === 'your_supabase_anon_key_here'
-  );
-};
+// Create Supabase client with proper error handling
+let supabaseClient: any = null;
 
-// Use placeholder values for development if not configured
-const effectiveUrl = supabaseUrl || 'https://placeholder.supabase.co';
-const effectiveAnonKey = supabaseAnonKey || 'placeholder-anon-key';
-
-// Create Supabase client (this will fail gracefully in dev when used)
-export const supabase = createClient(effectiveUrl, effectiveAnonKey, {
-  auth: {
-    persistSession: true,
-    autoRefreshToken: true,
-    storage: supabaseStorageAdapter,
-  },
-  global: {
-    headers: {
-      'apikey': effectiveAnonKey
-    }
+try {
+  if (supabaseConfig.isConfigured) {
+    supabaseClient = createClient(supabaseConfig.url, supabaseConfig.anonKey, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        storage: supabaseStorageAdapter,
+      },
+      global: {
+        headers: {
+          'apikey': supabaseConfig.anonKey
+        }
+      }
+    });
+    console.log('✅ Supabase client initialized successfully');
+  } else {
+    // Create a mock client for development that won't fail
+    supabaseClient = {
+      auth: {
+        onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
+        getSession: () => Promise.resolve({ data: { session: null }, error: null }),
+        signUp: () => Promise.resolve({ data: { user: null }, error: new Error('Supabase not configured') }),
+        signInWithPassword: () => Promise.resolve({ data: { user: null }, error: new Error('Supabase not configured') }),
+        signOut: () => Promise.resolve({ error: null }),
+        getUser: () => Promise.resolve({ data: { user: null }, error: new Error('Supabase not configured') })
+      },
+      from: () => ({
+        select: () => ({ data: [], error: new Error('Supabase not configured') }),
+        insert: () => ({ data: null, error: new Error('Supabase not configured') }),
+        update: () => ({ data: null, error: new Error('Supabase not configured') }),
+        delete: () => ({ data: null, error: new Error('Supabase not configured') })
+      }),
+      rpc: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') }),
+      storage: {
+        from: () => ({
+          upload: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') }),
+          download: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') })
+        })
+      }
+    };
+    console.warn('⚠️ Supabase not configured - using mock client for development');
   }
-});
+} catch (error) {
+  console.error('❌ Failed to initialize Supabase client:', error);
+  // Create a basic mock client as fallback
+  supabaseClient = {
+    auth: {
+      onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
+      getSession: () => Promise.resolve({ data: { session: null }, error: new Error('Supabase initialization failed') })
+    },
+    from: () => ({
+      select: () => ({ data: [], error: new Error('Supabase initialization failed') })
+    })
+  };
+}
 
-// Helper function to access profiles table
-export const getFromProfiles = () => supabase.from('profiles');
+export const supabase = supabaseClient;
 
 // Check if the browser is online. Gracefully handle environments where
 // `navigator` is undefined such as server side rendering or tests.
@@ -47,19 +77,21 @@ export async function checkOnline(): Promise<boolean> {
   }
 }
 
-// Helper function for safe fetching with retries. Adds the Supabase API key
-// header while preserving any existing Headers instance passed in `options`.
-// Throws a consistent error message when the request ultimately fails.
+// Helper function for safe fetching with retries. Only works if Supabase is configured.
 export async function safeFetch(url: string, options: RequestInit = {}) {
+  if (!supabaseConfig.isConfigured) {
+    throw new Error('Supabase not configured - cannot perform fetch operations');
+  }
+
   if (!(await checkOnline())) {
-    throw new Error('Failed to connect to Supabase');
+    throw new Error('Network unavailable - please check your connection');
   }
 
   // Ensure 'fetchHeaders' is compatible with the global fetch
   const fetchHeaders = new Headers(options.headers as HeadersInit);
 
   if (!fetchHeaders.has('apikey')) {
-    fetchHeaders.set('apikey', effectiveAnonKey);
+    fetchHeaders.set('apikey', supabaseConfig.anonKey);
   }
 
   const maxRetries = 3;
@@ -69,7 +101,7 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
     try {
       const response = await fetch(url, {
         ...options,
-        headers: fetchHeaders, // Use the new 'fetchHeaders' variable
+        headers: fetchHeaders,
       });
       
       if (!response.ok) {
@@ -84,5 +116,8 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
     }
   }
 
-  throw new Error('Failed to connect to Supabase');
+  throw new Error(`Network request failed after ${maxRetries} retries: ${lastError?.message}`);
 }
+
+// Export configuration status for components to check
+export const isSupabaseConfigured = supabaseConfig.isConfigured;

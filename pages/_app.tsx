@@ -29,7 +29,7 @@ import * as Sentry from '@sentry/nextjs';
 import getConfig from 'next/config';
 import { captureException } from '@/utils/sentry';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
-import { validateEnvironment } from '@/utils/withErrorHandling';
+import { validateProductionEnvironment, initializeServices } from '@/utils/environmentConfig';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
@@ -42,14 +42,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     console.log('[App] MyApp main useEffect hook started.');
     
     try {
-      // Validate essential environment variables
-      validateEnvironment([
-        'NEXT_PUBLIC_SUPABASE_URL',
-        'NEXT_PUBLIC_SUPABASE_ANON_KEY',
-        'NEXT_PUBLIC_REOWN_PROJECT_ID'
-      ]);
+      // Validate environment variables (graceful in development, strict in production)
+      validateProductionEnvironment();
       
-      initializeGlobalErrorHandlers(); // Initialize global error handlers
+      // Initialize services based on configuration
+      initializeServices();
+      
+      // Initialize global error handlers
+      initializeGlobalErrorHandlers();
       
       const { publicRuntimeConfig } = getConfig();
       console.log('[App] Public Runtime Config:', publicRuntimeConfig);
@@ -61,11 +61,18 @@ function MyApp({ Component, pageProps }: AppProps) {
         Sentry.setTag('environment', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
       }
       
-      console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY:", publicRuntimeConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-      console.log("NEXT_PUBLIC_REOWN_PROJECT_ID:", publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID);
+      console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY:", publicRuntimeConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'NOT_SET');
+      console.log("NEXT_PUBLIC_REOWN_PROJECT_ID:", publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID ? 'SET' : 'NOT_SET');
     } catch (error) {
       console.error('[App] Critical initialization error:', error);
-      Sentry.captureException(error);
+      
+      // Only send to Sentry if it's available and configured
+      try {
+        Sentry.captureException(error);
+      } catch (sentryError) {
+        console.warn('[App] Could not send error to Sentry:', sentryError);
+      }
+      
       // Don't throw here - let the error boundary handle it in the UI
     }
   }, []); // Empty dependency array ensures this runs only once on mount
@@ -89,69 +96,56 @@ function MyApp({ Component, pageProps }: AppProps) {
   console.log('[App Provider] Initializing CartProvider...');
   console.log('[App Provider] Initializing AnalyticsProvider...');
   console.log('[App Provider] Initializing ThemeProvider...');
+  console.log('[App Provider] Initializing BrowserRouter...');
   console.log('[App Provider] Initializing ErrorBoundary (wrapping Component)...');
 
-  // Render component with error handling
-  let renderedComponent;
-  console.log('[App] Attempting to render component:', Component.name);
-  try {
-    console.log('[App] Rendering component:', Component.name);
-    renderedComponent = <Component {...pageProps} />;
-    console.log('[App] Component rendered successfully:', Component.name);
-  } catch (error) {
-    console.error('[App] Error rendering component:', Component.name, error);
-    captureException(error, {
-      message: 'Error rendering component',
-      extra: {
-        component: Component.name,
-        pageProps: pageProps,
-      },
-    });
-    renderedComponent = <div>Error rendering component. See console for details.</div>;
-  }
-  console.log('[App] Finished attempting to render component:', Component.name);
+  console.log('[App] Attempting to render component:', Component.name || 'UnnamedComponent');
 
+  // Use ProductionErrorBoundary as the top-level error boundary
   return (
-    <ProductionErrorBoundary maxRetries={3}>
+    <ProductionErrorBoundary>
       <RootErrorBoundary>
-        <GlobalErrorBoundary>
-          {/* Wrap the entire application with QueryClientProvider first */}
-          <QueryClientProvider client={queryClient}>
-            <ApiErrorBoundary queryClient={queryClient}>
-              <ReduxProvider store={store}>
-                <HelmetProvider>
-                  <ErrorProvider>
-                    <ErrorResetOnRouteChange />
-                    <AuthProvider>
-                      <WhitelabelProvider>
-                        <I18nextProvider i18n={i18n}>
-                          <WalletProvider>
-                            <CartProvider>
-                              <AnalyticsProvider>
-                                <ThemeProvider>
-                                  {/* Wrap in ThemeProvider so dark/light toggle works globally */}
-                                  <AppLayout> {/* Consistent header/footer layout */}
-                                    <ProductionErrorBoundary maxRetries={2}>
-                                      {renderedComponent}
-                                    </ProductionErrorBoundary>
-                                    <OfflineIndicator />
-                                  </AppLayout>
-                                </ThemeProvider>
-                              </AnalyticsProvider>
-                            </CartProvider>
-                          </WalletProvider>
-                        </I18nextProvider>
-                      </WhitelabelProvider>
-                    </AuthProvider>
-                  </ErrorProvider>
-                </HelmetProvider>
-              </ReduxProvider>
-            </ApiErrorBoundary>
-          </QueryClientProvider>
-        </GlobalErrorBoundary>
+        <React.Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+          <GlobalErrorBoundary>
+            <QueryClientProvider client={queryClient}>
+              <ApiErrorBoundary>
+                <ReduxProvider store={store}>
+                  <HelmetProvider>
+                    <ErrorProvider>
+                      <AuthProvider>
+                        <WhitelabelProvider>
+                          <I18nextProvider i18n={i18n}>
+                            <WalletProvider>
+                              <CartProvider>
+                                <AnalyticsProvider>
+                                  <ThemeProvider>
+                                    <AppLayout>
+                                      <ErrorBoundary>
+                                        <Component {...pageProps} />
+                                      </ErrorBoundary>
+                                      <ErrorResetOnRouteChange />
+                                      <Toaster />
+                                      <OfflineIndicator />
+                                    </AppLayout>
+                                  </ThemeProvider>
+                                </AnalyticsProvider>
+                              </CartProvider>
+                            </WalletProvider>
+                          </I18nextProvider>
+                        </WhitelabelProvider>
+                      </AuthProvider>
+                    </ErrorProvider>
+                  </HelmetProvider>
+                </ReduxProvider>
+              </ApiErrorBoundary>
+            </QueryClientProvider>
+          </GlobalErrorBoundary>
+        </React.Suspense>
       </RootErrorBoundary>
     </ProductionErrorBoundary>
   );
 }
+
+console.log('[App] Finished attempting to render component:', MyApp.name || 'UnnamedComponent');
 
 export default MyApp;
