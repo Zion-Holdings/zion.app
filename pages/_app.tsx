@@ -22,12 +22,14 @@ import { ApiErrorBoundary } from '@/components/ApiErrorBoundary';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
+import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
 // Import global Tailwind styles so they load before the app renders
 import '../src/index.css';
 import * as Sentry from '@sentry/nextjs';
 import getConfig from 'next/config';
 import { captureException } from '@/utils/sentry';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
+import { validateEnvironment } from '@/utils/withErrorHandling';
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
@@ -38,17 +40,34 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   React.useEffect(() => {
     console.log('[App] MyApp main useEffect hook started.');
-    initializeGlobalErrorHandlers(); // Initialize global error handlers
-    const { publicRuntimeConfig } = getConfig();
-    console.log('[App] Public Runtime Config:', publicRuntimeConfig); // Add this line
-    if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE) {
-      Sentry.setTag('release', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE);
+    
+    try {
+      // Validate essential environment variables
+      validateEnvironment([
+        'NEXT_PUBLIC_SUPABASE_URL',
+        'NEXT_PUBLIC_SUPABASE_ANON_KEY',
+        'NEXT_PUBLIC_REOWN_PROJECT_ID'
+      ]);
+      
+      initializeGlobalErrorHandlers(); // Initialize global error handlers
+      
+      const { publicRuntimeConfig } = getConfig();
+      console.log('[App] Public Runtime Config:', publicRuntimeConfig);
+      
+      if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE) {
+        Sentry.setTag('release', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE);
+      }
+      if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT) {
+        Sentry.setTag('environment', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
+      }
+      
+      console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY:", publicRuntimeConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+      console.log("NEXT_PUBLIC_REOWN_PROJECT_ID:", publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID);
+    } catch (error) {
+      console.error('[App] Critical initialization error:', error);
+      Sentry.captureException(error);
+      // Don't throw here - let the error boundary handle it in the UI
     }
-    if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT) {
-      Sentry.setTag('environment', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
-    }
-    console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY:", publicRuntimeConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-    console.log("NEXT_PUBLIC_REOWN_PROJECT_ID:", publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID);
   }, []); // Empty dependency array ensures this runs only once on mount
 
   React.useEffect(() => {
@@ -93,45 +112,45 @@ function MyApp({ Component, pageProps }: AppProps) {
   console.log('[App] Finished attempting to render component:', Component.name);
 
   return (
-    <RootErrorBoundary>
-      <GlobalErrorBoundary>
-        {/* Wrap the entire application with QueryClientProvider first */}
-        <QueryClientProvider client={queryClient}>
-          <ApiErrorBoundary queryClient={queryClient}>
-            <ReduxProvider store={store}>
-              <HelmetProvider>
-                <ErrorProvider>
-                  <ErrorResetOnRouteChange />
-                  <AuthProvider>
-                    <WhitelabelProvider>
-                      <I18nextProvider i18n={i18n}>
-                        <WalletProvider>
-                          <CartProvider>
-                            <AnalyticsProvider>
-                              <ThemeProvider>
-                                {/* Wrap in ThemeProvider so dark/light toggle works globally */}
-                                <AppLayout> {/* Consistent header/footer layout */}
-                                  <ErrorBoundary>
-                                    <ErrorBoundary>
+    <ProductionErrorBoundary maxRetries={3}>
+      <RootErrorBoundary>
+        <GlobalErrorBoundary>
+          {/* Wrap the entire application with QueryClientProvider first */}
+          <QueryClientProvider client={queryClient}>
+            <ApiErrorBoundary queryClient={queryClient}>
+              <ReduxProvider store={store}>
+                <HelmetProvider>
+                  <ErrorProvider>
+                    <ErrorResetOnRouteChange />
+                    <AuthProvider>
+                      <WhitelabelProvider>
+                        <I18nextProvider i18n={i18n}>
+                          <WalletProvider>
+                            <CartProvider>
+                              <AnalyticsProvider>
+                                <ThemeProvider>
+                                  {/* Wrap in ThemeProvider so dark/light toggle works globally */}
+                                  <AppLayout> {/* Consistent header/footer layout */}
+                                    <ProductionErrorBoundary maxRetries={2}>
                                       {renderedComponent}
-                                    </ErrorBoundary>
-                                  </ErrorBoundary>
-                                  <OfflineIndicator />
-                                </AppLayout>
-                              </ThemeProvider>
-                            </AnalyticsProvider>
-                          </CartProvider>
-                        </WalletProvider>
-                      </I18nextProvider>
-                    </WhitelabelProvider>
-                  </AuthProvider>
-                </ErrorProvider>
-              </HelmetProvider>
-            </ReduxProvider>
-          </ApiErrorBoundary>
-        </QueryClientProvider>
-      </GlobalErrorBoundary>
-    </RootErrorBoundary>
+                                    </ProductionErrorBoundary>
+                                    <OfflineIndicator />
+                                  </AppLayout>
+                                </ThemeProvider>
+                              </AnalyticsProvider>
+                            </CartProvider>
+                          </WalletProvider>
+                        </I18nextProvider>
+                      </WhitelabelProvider>
+                    </AuthProvider>
+                  </ErrorProvider>
+                </HelmetProvider>
+              </ReduxProvider>
+            </ApiErrorBoundary>
+          </QueryClientProvider>
+        </GlobalErrorBoundary>
+      </RootErrorBoundary>
+    </ProductionErrorBoundary>
   );
 }
 
