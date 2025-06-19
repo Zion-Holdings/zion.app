@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -120,9 +120,9 @@ export default function About() {
         <div className="content-section text-center">
           <p className="text-zion-slate-light text-lg">
             Ready to work with us? Explore our{' '}
-            <Link to="/services" className="text-zion-cyan underline">AI & IT services</Link>{' '}
-            or <Link to="/contact" className="text-zion-cyan underline">get in touch</Link>. For the latest updates, visit our{' '}
-            <Link to="/blog" className="text-zion-cyan underline">blog</Link>.
+            <Link href="/services" className="text-zion-cyan underline">AI & IT services</Link>{' '}
+            or <Link href="/contact" className="text-zion-cyan underline">get in touch</Link>. For the latest updates, visit our{' '}
+            <Link href="/blog" className="text-zion-cyan underline">blog</Link>.
           </p>
         </div>
       </main>
