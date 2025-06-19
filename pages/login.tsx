@@ -13,25 +13,80 @@ export default function Login() {
 
   const handleLogin = async (email: string, password: string) => {
     try {
+      console.log('🔧 Frontend: Attempting login for:', email);
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
 
+      console.log('🔧 Frontend: Login response status:', res.status);
+
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        if (res.status === 401 || res.status === 403) {
-          throw new Error(data?.message || 'Invalid email or password');
+        console.log('🔧 Frontend: Login error response:', data);
+        
+        let errorMessage = 'Unable to login';
+        
+        // 🔧 Use specific error messages from API
+        if (data?.message) {
+          errorMessage = data.message;
+        } else if (data?.error) {
+          errorMessage = data.error;
         }
-        throw new Error(data?.message || 'Unable to login');
+
+        // 🔧 Handle email verification specifically
+        if (res.status === 403) {
+          if (data?.code === 'EMAIL_NOT_VERIFIED' || data?.code === 'EMAIL_NOT_CONFIRMED') {
+            errorMessage = 'Please verify your email address before logging in';
+            // Show toast for email verification
+            toast({ 
+              title: 'Email verification required', 
+              description: errorMessage, 
+              variant: 'destructive' 
+            });
+          } else {
+            // Show toast for other 403 errors
+            toast({ 
+              title: 'Access denied', 
+              description: errorMessage, 
+              variant: 'destructive' 
+            });
+          }
+        } else if (res.status === 401) {
+          // Show toast for authentication errors
+          toast({ 
+            title: 'Authentication failed', 
+            description: errorMessage, 
+            variant: 'destructive' 
+          });
+        } else {
+          // Show toast for other errors
+          toast({ 
+            title: 'Login failed', 
+            description: errorMessage, 
+            variant: 'destructive' 
+          });
+        }
+        
+        throw new Error(errorMessage);
       }
+
+      const data = await res.json();
+      console.log('🔧 Frontend: Login successful, user:', data.user?.email);
+
+      // Show success toast
+      toast({ 
+        title: 'Login successful', 
+        description: `Welcome back, ${data.user?.name || data.user?.email}!`,
+        variant: 'default'
+      });
 
       // success – redirect to dashboard
       router.replace('/dashboard');
     } catch (err: any) {
+      console.error('🔧 Frontend: Login error:', err);
       Sentry.captureException(err);
-      toast({ title: 'Login failed', description: err.message, variant: 'destructive' });
       throw err; // propagate to caller
     }
   };
@@ -54,8 +109,14 @@ export default function Login() {
     try {
       await handleLogin(email, password);
     } catch (err: any) {
-      // set error for UI
-      setErrorMsg(err.message || 'Login failed');
+      // 🔧 Set error for UI display and show toast
+      const errorMessage = err.message || 'Login failed';
+      setErrorMsg(errorMessage);
+      
+      // Toast is already shown in handleLogin, but ensure we have one
+      if (!toast) {
+        console.error('Toast not available, showing alert only');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -85,6 +146,7 @@ export default function Login() {
               onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded border border-border px-3 py-2"
               aria-label="email address"
+              placeholder="Enter your email"
             />
           </div>
           <div>
@@ -100,6 +162,7 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
               className="w-full rounded border border-border px-3 py-2"
               aria-label="password"
+              placeholder="Enter your password"
             />
           </div>
           <button
@@ -110,6 +173,13 @@ export default function Login() {
             {isSubmitting ? 'Logging in…' : 'Login'}
           </button>
         </form>
+        
+        {/* 🔧 Add helpful information for development */}
+        <div className="mt-4 text-center text-xs text-muted-foreground">
+          <p>Development login available:</p>
+          <p>kalcatrao@hotmail.com / kalc2024!</p>
+          <p>jane@example.com / password123</p>
+        </div>
       </div>
     </div>
   );
