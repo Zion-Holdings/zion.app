@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react';
 import { Search, Filter, Grid, List } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
@@ -41,6 +42,7 @@ export default function SearchResultsPage({
   totalCount 
 }: SearchResultsPageProps) {
   const router = useRouter();
+  const { data: session } = useSession();
   const [results, setResults] = useState<SearchResult[]>(initialResults);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState(query);
@@ -129,12 +131,27 @@ export default function SearchResultsPage({
         return (
           <div key={result.id} data-testid="result-card">
             <TalentCard
-              id={result.id}
-              name={result.title}
-              title={result.description || ''}
-              avatar={result.image}
-              rating={result.rating}
-              skills={result.tags || []}
+              talent={{
+                id: result.id,
+                user_id: result.id,
+                full_name: result.title,
+                professional_title: result.description || '',
+                profile_picture_url: result.image,
+                average_rating: result.rating,
+                skills: result.tags || [],
+                location: result.category,
+                bio: result.description,
+                summary: result.description,
+                is_verified: false,
+                availability_type: 'available'
+              }}
+              onViewProfile={(id: string) => {
+                router.push(`/talent/${id}`);
+              }}
+              onRequestHire={(talent) => {
+                router.push(`/talent/${talent.id}?action=hire`);
+              }}
+              isAuthenticated={!!session}
             />
           </div>
         );
@@ -142,11 +159,9 @@ export default function SearchResultsPage({
         return (
           <div key={result.id} data-testid="result-card">
             <CategoryCard
-              id={result.id}
-              name={result.title}
-              description={result.description}
-              slug={result.slug}
-              icon={result.image}
+              title={result.title}
+              description={result.description || ''}
+              icon={result.image || '📁'}
             />
           </div>
         );
