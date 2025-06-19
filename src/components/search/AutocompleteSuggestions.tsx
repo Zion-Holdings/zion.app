@@ -54,7 +54,10 @@ export function AutocompleteSuggestions({
   }, [highlightedIndex]);
 
   return (
-    <div className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto">
+    <div 
+      className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto"
+      data-testid="search-suggestions"
+    >
       <ul
         ref={listRef}
         id={listId}
@@ -72,7 +75,8 @@ export function AutocompleteSuggestions({
               ref={isHighlighted ? highlightedItemRef : null}
               role="option"
               aria-selected={isHighlighted}
-              className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light' : 'hover:bg-zion-blue-light/20'}`}
+              className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light highlighted' : 'hover:bg-zion-blue-light/20'}`}
+              data-testid="suggestion-item"
               onMouseDown={(e) => {
                 e.preventDefault();
                 onSelectSuggestion(suggestion);

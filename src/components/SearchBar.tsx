@@ -57,8 +57,14 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
   const handleSelect = (suggestion: SearchSuggestion) => {
     onChange(suggestion.text);
     if (onSelectSuggestion) onSelectSuggestion(suggestion);
-    router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
-    fireEvent('search', { search_term: suggestion.text });
+    
+    // Navigate to slug-based URL if available, otherwise fallback to query-based
+    const searchUrl = suggestion.slug 
+      ? `/search/${suggestion.slug}` 
+      : `/search?q=${encodeURIComponent(suggestion.text)}`;
+    
+    router.push(searchUrl);
+    fireEvent('search', { search_term: suggestion.text, search_slug: suggestion.slug });
     setFocused(false);
     setHighlightedIndex(-1);
     inputRef.current?.blur();
@@ -72,6 +78,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
       aria-expanded={focused && suggestions.length > 0}
       aria-haspopup="listbox"
       aria-controls={listId}
+      data-testid="search-bar"
     >
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zion-slate" />
