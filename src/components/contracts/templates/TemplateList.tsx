@@ -37,7 +37,6 @@ export function TemplateList({
   const { deleteTemplate, setDefaultTemplate } = useContractTemplates();
   const { user } = useAuth();
   const router = useRouter();
-  const location = useLocation();
 
   const handleDeleteClick = (templateId: string) => {
     setTemplateToDelete(templateId);
@@ -52,7 +51,8 @@ export function TemplateList({
 
   const handleSetDefault = async (templateId: string) => {
     if (!user) {
-      router.push(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+      const currentPath = router.asPath;
+      router.push(`/login?next=${encodeURIComponent(currentPath)}`);
       return;
     }
     await setDefaultTemplate.mutateAsync(templateId);
