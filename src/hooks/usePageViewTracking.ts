@@ -1,13 +1,13 @@
 
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 /**
  * Custom hook to track page views for analytics purposes
  * Attaches event listeners to track route changes and logs page views
  */
 export function usePageViewTracking() {
-  const location = useLocation();
+  const router = useRouter();
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -26,8 +26,8 @@ export function usePageViewTracking() {
     };
   }, []);
 
-  // Also track when location changes directly via React Router
+  // Also track when location changes directly via Next Router
   useEffect(() => {
-    console.log('Page view:', location.pathname);
-  }, [location.pathname]);
+    console.log('Page view:', router.pathname);
+  }, [router.pathname]);
 }

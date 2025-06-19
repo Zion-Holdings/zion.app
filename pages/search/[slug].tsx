@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import { useSession } from 'next-auth/react';
+import { useAuth } from '@/context/auth/AuthProvider';
 import { Search, Filter, Grid, List } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
@@ -42,7 +42,7 @@ export default function SearchResultsPage({
   totalCount 
 }: SearchResultsPageProps) {
   const router = useRouter();
-  const { data: session } = useSession();
+  const { user, isLoading: authLoading, isAuthenticated } = useAuth();
   const [results, setResults] = useState<SearchResult[]>(initialResults);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState(query);
@@ -151,7 +151,7 @@ export default function SearchResultsPage({
               onRequestHire={(talent) => {
                 router.push(`/talent/${talent.id}?action=hire`);
               }}
-              isAuthenticated={!!session}
+              isAuthenticated={isAuthenticated}
             />
           </div>
         );
