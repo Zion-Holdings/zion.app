@@ -2,7 +2,9 @@ import { DisputeReason } from "@/types/disputes";
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { useDisputes } from "@/hooks/useDisputes";
-import { Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType } from "@/types/disputes";
+import {
+ Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType
+} from "@/types/disputes";
 
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,11 +21,15 @@ import { toast } from "sonner";
 
 export function DisputeDetail() {
   const router = useRouter();
+<<<<<<< HEAD
+  const { disputeId } = router.query as { disputeId?: string };
+=======
   // Get disputeId from Next.js router query params
   const disputeId = router.query.disputeId as string;
+>>>>>>> 63d35340c457663db429def48e184362fa016df0
   const { user } = useAuth();
   const { getDisputeById, updateDisputeStatus, resolveDispute, getDisputeMessages, addDisputeMessage } = useDisputes();
-  
+
   const [dispute, setDispute] = useState<Dispute | null>(null);
   const [messages, setMessages] = useState<DisputeMessage[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -64,7 +70,11 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
     };
     
     loadDisputeData();
+<<<<<<< HEAD
+  }, [disputeId, getDisputeById, getDisputeMessages, router]);
+=======
   }, [disputeId, router, getDisputeById, getDisputeMessages]);
+>>>>>>> 63d35340c457663db429def48e184362fa016df0
 
   const handleStatusChange = async (status: DisputeStatus) => {
     if (!disputeId) return;
