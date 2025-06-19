@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
@@ -36,8 +36,8 @@ const mockPost: ForumPost = {
 };
 
 export default function EditPostPage() {
-  const { postId } = useParams() as { postId?: string };
   const router = useRouter();
+  const { postId } = router.query as { postId?: string };
   const { toast } = useToast();
   const { user } = useAuth();
   const [post, setPost] = useState<ForumPost | null>(mockPost);
@@ -64,7 +64,7 @@ export default function EditPostPage() {
       <div className="container py-8">
         <h1>Post not found</h1>
         <Button asChild className="mt-4">
-          <Link to="/community">Back to Community</Link>
+          <Link href="/community">Back to Community</Link>
         </Button>
       </div>
     );
@@ -80,7 +80,7 @@ export default function EditPostPage() {
         <h1 className="text-2xl font-bold mb-4">Permission Denied</h1>
         <p className="mb-4">You don't have permission to edit this post.</p>
         <Button asChild>
-          <Link to={`/community/post/${postId}`}>Back to Post</Link>
+          <Link href={`/community/post/${postId}`}>Back to Post</Link>
         </Button>
       </div>
     );
@@ -124,11 +124,11 @@ export default function EditPostPage() {
       
       <div className="container py-8">
         <div className="flex items-center gap-3 mb-6">
-          <Link to="/community" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground">
             Forum
           </Link>
           <span className="text-muted-foreground">/</span>
-          <Link to={`/community/post/${postId}`} className="text-sm text-muted-foreground hover:text-foreground">
+          <Link href={`/community/post/${postId}`} className="text-sm text-muted-foreground hover:text-foreground">
             Post
           </Link>
           <span className="text-muted-foreground">/</span>

@@ -15,9 +15,8 @@ interface SearchResult {
 const LIMIT = 20;
 
 export default function SearchResultsPage() {
-  const [params] = useSearchParams();
   const router = useRouter();
-  const initialQuery = params.get("q") || "";
+  const initialQuery = (router.query.q as string) || "";
   const [query, setQuery] = useState(initialQuery);
 
   const {
