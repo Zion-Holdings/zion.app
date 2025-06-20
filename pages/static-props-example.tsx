@@ -22,18 +22,31 @@ export async function getStaticProps() {
   }
 
   try {
-    const res = await fetch(API_URL); // No longer using '!' as we've checked API_URL
+    const res = await fetch(API_URL);
     if (!res.ok) {
-      // Handle HTTP errors like 404 or 500
       console.error(`SSR fetch error: Failed to fetch ${API_URL}, status: ${res.status}`);
-      return { props: { data: [] } };
+      return { notFound: true }; // Fail the page build if status is not ok
     }
-    const data = await res.json();
+
+    const contentType = res.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      console.error(`SSR fetch error: Expected application/json but got ${contentType} from ${API_URL}`);
+      // Try to read the response as text to log it, but still return notFound
+      try {
+        const textResponse = await res.text();
+        console.error("SSR fetch error: Response body (text):", textResponse.substring(0, 200)); // Log first 200 chars
+      } catch (textError) {
+        console.error("SSR fetch error: Could not read response body as text.", textError);
+      }
+      return { notFound: true }; // Fail the page build
+    }
+
+    const data = await res.json(); // This might still fail if JSON is malformed
     return { props: { data } };
   } catch (error) {
-    // Handle network errors or JSON parsing errors
+    // Handle network errors or JSON parsing errors (if res.json() fails)
     console.error(`SSR fetch error: Error fetching or parsing data from ${API_URL}:`, error);
-    return { props: { data: [] } }; // Prevent build-time failure
+    return { notFound: true }; // Fail the page build
   }
 }
 

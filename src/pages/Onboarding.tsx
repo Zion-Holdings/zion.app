@@ -17,6 +17,13 @@ export default function Onboarding() {
   const [userType, setUserType] = useState<"serviceProvider" | "talent" | "client" | null>(null);
   const router = useRouter();
 
+  useEffect(() => {
+    // Redirect to login if user is not authenticated and auth state is not loading
+    if (!isLoading && !user) {
+      router.push('/login');
+    }
+  }, [user, isLoading, router]);
+
   // Convert our user types to match what's expected in the database
   const mapUserTypeToDatabase = (type: "serviceProvider" | "talent" | "client") => {
     switch (type) {
@@ -105,14 +112,11 @@ export default function Onboarding() {
     { label: "Create Profile", description: "Tell us about yourself" },
   ];
 
-  useEffect(() => {
-    if (!isLoading && !user) {
-      router.push('/login');
-    }
-  }, [user, isLoading, router]);
-
-  // Render loading state or null if user is not available yet or redirecting
-  if (isLoading || !user) return null;
+  // Show loading state or null while checking auth, useEffect will handle redirect
+  if (isLoading || !user) {
+    // You can return a loader here, or null, or a basic skeleton
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
