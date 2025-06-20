@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useInterviews } from "@/hooks/useInterviews";
 import { Interview } from "@/types/interview";
 import { format, isPast, parseISO } from "date-fns";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Calendar, Clock, Video } from "lucide-react";
 import { Avatar } from "@/components/ui/avatar";
 
@@ -83,7 +83,7 @@ export function UpcomingInterviewsCard() {
             <Calendar className="h-10 w-10 mx-auto mb-2 text-muted-foreground" />
             <p className="text-sm text-muted-foreground">No upcoming interviews scheduled</p>
             <Button asChild className="mt-4" variant="outline" size="sm">
-              <Link to="/interviews">Schedule Interview</Link>
+              <Link href="/interviews">Schedule Interview</Link>
             </Button>
           </div>
         </CardContent>
@@ -149,7 +149,7 @@ export function UpcomingInterviewsCard() {
         
         <div className="mt-4 pt-3 border-t border-zion-blue-light/40">
           <Button asChild size="sm" variant="outline" className="w-full">
-            <Link to="/interviews">
+            <Link href="/interviews">
               View All Interviews
             </Link>
           </Button>
