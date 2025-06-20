@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { supabase } from "../../integrations/supabase/client";
+import { supabase, isSupabaseConfigured } from "../../integrations/supabase/client";
 import { useAuthOperations } from "../../hooks/useAuthOperations";
 import { AuthContext } from "./AuthContext";
 import { cleanupAuthState } from "../../utils/authUtils";
@@ -137,7 +137,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     
     // Clean up any potential stale auth state before setting up listeners
     cleanupAuthState();
-    
+
+    if (!isSupabaseConfigured) {
+      console.warn('[AuthProvider] Supabase not configured - skipping auth state listener');
+      setIsLoading(false);
+      return;
+    }
+
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       // Inside the onAuthStateChange callback
       async (event: any, session: any) => {
