@@ -123,15 +123,22 @@ async function submitQuoteRequest(quoteDetails) {
  */
 async function getQuoteStatus(quoteId) {
   console.log('getQuoteStatus called for quoteId:', quoteId);
-  // TODO: Implement fetch call to /api/marketplace/quotes/:id/status
-  // Placeholder:
-  return Promise.resolve({
-    quoteId,
-    status: 'PendingReview',
-    submittedAt: new Date().toISOString(),
-    estimatedCompletion: null,
-    notes: ['Initial review scheduled.']
-  });
+  if (!quoteId) {
+    throw new Error('Quote ID is required.');
+  }
+
+  const response = await fetch(`/api/marketplace/quotes/${quoteId}/status`);
+
+  if (response.status === 404) {
+    return null; // Quote not found
+  }
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({ message: `Failed to get status for quote ${quoteId}` }));
+    throw new Error(errorData.message || `Failed to get quote status. Status: ${response.status}`);
+  }
+
+  return response.json();
 }
 
 /**
@@ -147,12 +154,27 @@ async function getQuoteStatus(quoteId) {
  */
 async function listJobs(options = {}) {
   console.log('listJobs called with options:', options);
-  // TODO: Implement fetch call to /api/marketplace/jobs
-  // Placeholder:
-  return Promise.resolve([
-    { id: 'job1', title: 'Frontend Developer Needed', skills: ['React', 'Next.js'], budget: 5000 },
-    { id: 'job2', title: 'Backend Engineer (Node.js)', skills: ['Node.js', 'PostgreSQL'], budget: 7000 },
-  ]);
+  const { page = 1, limit = 20, ...filters } = options;
+
+  const params = new URLSearchParams({
+    page: page.toString(),
+    limit: limit.toString(),
+  });
+
+  for (const [key, value] of Object.entries(filters)) {
+    if (value !== undefined && value !== null) {
+      params.append(key, String(value));
+    }
+  }
+
+  const response = await fetch(`/api/marketplace/jobs?${params.toString()}`);
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({ message: 'Failed to list jobs' }));
+    throw new Error(errorData.message || `Failed to list jobs. Status: ${response.status}`);
+  }
+
+  return response.json();
 }
 
 /**
@@ -163,12 +185,22 @@ async function listJobs(options = {}) {
  */
 async function getJobDetails(jobId) {
   console.log('getJobDetails called for jobId:', jobId);
-  // TODO: Implement fetch call to /api/marketplace/jobs/:id
-  // Placeholder:
-  if (jobId === 'job1') {
-    return Promise.resolve({ id: 'job1', title: 'Frontend Developer Needed', description: 'Looking for an experienced React dev...', skills: ['React', 'Next.js'], budget: 5000, postedBy: 'user123' });
+  if (!jobId) {
+    throw new Error('Job ID is required.');
   }
-  return Promise.resolve(null);
+
+  const response = await fetch(`/api/marketplace/jobs/${jobId}`);
+
+  if (response.status === 404) {
+    return null;
+  }
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({ message: `Failed to get job details for ID ${jobId}` }));
+    throw new Error(errorData.message || `Failed to get job details. Status: ${response.status}`);
+  }
+
+  return response.json();
 }
 
 /**
@@ -184,12 +216,27 @@ async function getJobDetails(jobId) {
  */
 async function listTalent(options = {}) {
   console.log('listTalent called with options:', options);
-  // TODO: Implement fetch call to /api/marketplace/talent
-  // Placeholder:
-  return Promise.resolve([
-    { id: 'talent1', name: 'Alice Wonderland', skills: ['UX Design', 'Figma'], experience: '5 years' },
-    { id: 'talent2', name: 'Bob The Builder', skills: ['Construction', 'Project Management'], experience: '10 years' },
-  ]);
+  const { page = 1, limit = 20, ...filters } = options;
+
+  const params = new URLSearchParams({
+    page: page.toString(),
+    limit: limit.toString(),
+  });
+
+  for (const [key, value] of Object.entries(filters)) {
+    if (value !== undefined && value !== null) {
+      params.append(key, String(value));
+    }
+  }
+
+  const response = await fetch(`/api/marketplace/talent?${params.toString()}`);
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({ message: 'Failed to list talent' }));
+    throw new Error(errorData.message || `Failed to list talent. Status: ${response.status}`);
+  }
+
+  return response.json();
 }
 
 /**
@@ -200,19 +247,22 @@ async function listTalent(options = {}) {
  */
 async function getTalentDetails(talentId) {
   console.log('getTalentDetails called for talentId:', talentId);
-  // TODO: Implement fetch call to /api/marketplace/talent/:id
-  // Placeholder:
-  if (talentId === 'talent1') {
-    return Promise.resolve({
-      id: 'talent1',
-      name: 'Alice Wonderland',
-      bio: 'Creative UX designer with a passion for intuitive interfaces.',
-      skills: ['UX Design', 'Figma', 'User Research'],
-      experience: '5 years',
-      portfolio: ['link1', 'link2']
-    });
+  if (!talentId) {
+    throw new Error('Talent ID is required.');
   }
-  return Promise.resolve(null);
+
+  const response = await fetch(`/api/marketplace/talent/${talentId}`);
+
+  if (response.status === 404) {
+    return null;
+  }
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({ message: `Failed to get talent details for ID ${talentId}` }));
+    throw new Error(errorData.message || `Failed to get talent details. Status: ${response.status}`);
+  }
+
+  return response.json();
 }
 
 export {
