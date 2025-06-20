@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Heart } from 'lucide-react';
 import { useWishlist } from '@/hooks/useWishlist';
 import { Button } from '@/components/ui/button';
@@ -80,8 +81,8 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
         <Image
           src={imageUrl}
           alt={imageAltText}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           onError={(e) => handleImageError(e)}
           priority={false}
           sizes={imageSizes}
@@ -97,7 +98,9 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
         </div>
       )}
     </div>
-      <h3 className="font-semibold mb-1">{productTitle}</h3>
+      <Link href={`/listing/${product.id}`}>
+        <h3 className="font-semibold mb-1">{productTitle}</h3>
+      </Link>
       {product.price != null && (
         <p className="text-sm text-muted-foreground">
           {product.currency}

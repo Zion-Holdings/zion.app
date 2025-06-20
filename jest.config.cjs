@@ -5,16 +5,20 @@ module.exports = {
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
 
-  preset: 'ts-jest',
   testEnvironment: 'jsdom',
   transform: {
-    '^.+\\.tsx?$': ['ts-jest', {
-      tsconfig: './tsconfig.jest.json', // Point to the new Jest-specific tsconfig
-      babelConfig: false, // Prevent ts-jest from using root babel.config.js
+    '^.+\\.(t|j)sx?$': ['babel-jest', {
+      presets: [
+        ['@babel/preset-env', { targets: { node: 'current' }, modules: 'commonjs' }],
+        ['@babel/preset-typescript', { allExtensions: true, isTSX: true }], // Added isTSX: true
+        ['@babel/preset-react', { runtime: 'automatic' }]
+      ],
+      // plugins: ['babel-plugin-istanbul'], // Removed this line
+      babelrc: false,
+      configFile: false
     }],
-    '^.+\\.m?(js|jsx)$': ['babel-jest', { presets: [['@babel/preset-env', { targets: { node: 'current' }, modules: 'commonjs' }], ['@babel/preset-react', { runtime: 'automatic' }]], babelrc: false, configFile: false }],
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'], // Keep ts/tsx here
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
   testMatch: [ // More specific test match patterns
     "**/__tests__/**/*.test.[jt]s?(x)",
