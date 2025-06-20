@@ -10,7 +10,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 async function handler(
-<<<<<<< HEAD
   _req: NextApiRequest,
 =======
   
