@@ -182,7 +182,7 @@ const SECURITY_PATCH_REGEX = /CRIT_SECURITY_PATCH/;
  *   - `npm run build`: Executes the build script defined in package.json.
  *   - `pm2 restart all`: Restarts all applications managed by PM2.
  */
-const HEAL_COMMAND = 'echo "Watchdog detected issue. Performing git pull, dependency update, and build. Manual K8s check for zion-app may be needed." && git pull && npm install && npm run build';
+const HEAL_COMMAND = 'WATCHDOG_LOG_PATH=./logs echo "Watchdog detected issue. Performing git pull, dependency update, and build. Manual K8s check for zion-app may be needed." && git pull && npm install && npm run build';
 
 // --- State Variables ---
 /** @type {number} perfErrorStreak - Counter for consecutive performance errors detected. Resets on a normal line or after a heal. */
