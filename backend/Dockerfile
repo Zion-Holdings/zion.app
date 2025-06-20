@@ -24,12 +24,9 @@ COPY . .
 # Expose the port Gunicorn will run on
 EXPOSE 8000
 
-# TODO: Create an entrypoint script (entrypoint.sh) to handle database migrations
-# and then start Gunicorn. For now, just Gunicorn.
-# CMD ["gunicorn", "django_backend.wsgi:application", "--bind", "0.0.0.0:8000"]
-# Entrypoint script would look something like:
-# #!/bin/sh
-# python manage.py migrate --noinput
-# gunicorn django_backend.wsgi:application --bind 0.0.0.0:8000
-# For now, keeping it simple:
-CMD ["gunicorn", "django_backend.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]
+# Copy entrypoint script and use it as the container's entrypoint. This script
+# handles database migrations before starting Gunicorn.
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
+ENTRYPOINT ["/app/entrypoint.sh"]
