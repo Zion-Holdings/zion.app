@@ -210,7 +210,7 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
     requiresAuth: false,
   },
   // Route for documentation page
-  { path: '/docs', element: <DocsPage />, metaTitle: 'Documentation - Zion' },
+  { path: '/resources/docs', element: <DocsPage />, metaTitle: 'Documentation - Zion' },
   // Wildcard for error handling - ensure this is last
   { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },
 ]);
