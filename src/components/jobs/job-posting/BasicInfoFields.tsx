@@ -16,8 +16,8 @@ interface BasicInfoFieldsProps {
 }
 
 export const BasicInfoFields: React.FC<BasicInfoFieldsProps> = ({ control }) => {
-  const [minBudget, setMinBudget] = useState<string>("");
-  const [maxBudget, setMaxBudget] = useState<string>("");
+  const [_minBudget, setMinBudget] = useState<string>("");
+  const [_maxBudget, setMaxBudget] = useState<string>("");
 
   const handleSuggestionApplied = (min: number, max: number) => {
     setMinBudget(min.toString());

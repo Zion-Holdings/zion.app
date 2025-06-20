@@ -1,7 +1,7 @@
 import { GradientHeading } from "./GradientHeading";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { BLOG_POSTS } from "@/data/blog-posts";
 import Image from 'next/image';
 import React, { useState } from 'react'; // Ensure React and useState are imported
@@ -53,7 +53,7 @@ export function BlogSection() {
             className="mt-4 md:mt-0 border-zion-purple text-white hover:bg-zion-purple/10"
             asChild
           >
-            <Link to="/blog">View All Articles</Link>
+            <Link href="/blog">View All Articles</Link>
           </Button>
         </div>
 
@@ -78,7 +78,7 @@ export function BlogSection() {
                   className="text-zion-blue-dark p-0 hover:text-zion-purple-dark"
                   asChild
                 >
-                  <Link to={`/blog/${post.slug}`}>Read More →</Link>
+                  <Link href={`/blog/${post.slug}`}>Read More →</Link>
                 </Button>
               </CardFooter>
             </Card>

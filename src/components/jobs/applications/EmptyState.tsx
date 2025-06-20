@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export function EmptyState() {
   return (
@@ -12,7 +12,7 @@ export function EmptyState() {
           You haven't submitted any applications yet. Browse available jobs to get started!
         </p>
         <Button className="mt-4" asChild>
-          <Link to="/jobs">Browse Jobs</Link>
+          <Link href="/jobs">Browse Jobs</Link>
         </Button>
       </CardContent>
     </Card>

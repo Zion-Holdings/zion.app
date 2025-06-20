@@ -1,11 +1,13 @@
-import { useParams, Link } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { CASE_STUDIES } from "@/data/case-studies";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
 export default function CaseStudy() {
-  const { slug } = useParams() as { slug: string };
+  const router = useRouter();
+  const slug = router.query.slug as string; as { slug: string };
   const study = CASE_STUDIES.find((s) => s.slug === slug);
 
   if (!study) {
@@ -26,7 +28,7 @@ export default function CaseStudy() {
             className="mb-8 border-zion-blue-light text-zion-slate-light hover:bg-zion-blue-light hover:text-white"
             asChild
           >
-            <Link to="/case-studies">
+            <Link href="/case-studies">
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Case Studies
             </Link>
           </Button>

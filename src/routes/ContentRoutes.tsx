@@ -1,5 +1,5 @@
 
-import { Route, Routes } from "react-router-dom";
+// Router components removed - convert to Next.js pages structure
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";

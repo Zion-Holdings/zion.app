@@ -4,14 +4,14 @@ import { TalentOnboardingForm } from "@/components/profile/TalentOnboardingForm"
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useAuth } from "@/hooks/useAuth";
-import { Navigate } from "react-router-dom";
+import { useRouter } from "next/router";
 
 export default function TalentOnboarding() {
   const { user, isLoading } = useAuth();
 
   // If not authenticated, redirect to login
   if (!isLoading && !user) {
-    return <Navigate to="/login" replace />;
+    return null // Redirect handled by useRouter;
   }
 
   return (

@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/hooks/useAuth";
-import { Navigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -36,7 +36,7 @@ export default function TenantOnboarding() {
   const isAdmin = user?.role === "admin";
   
   if (!isAdmin) {
-    return <Navigate to="/unauthorized" />;
+    return // Use router.push('/unauthorized') or redirect in getServerSideProps;
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

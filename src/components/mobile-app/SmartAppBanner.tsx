@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { safeStorage } from "@/utils/safeStorage";
 import { X, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface SmartAppBannerProps {
@@ -75,7 +75,7 @@ export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
         
         <div className="flex items-center gap-3">
           <Link 
-            to="/open-app" 
+            href="/open-app" 
             className="flex items-center px-4 py-1.5 bg-zion-cyan text-zion-blue-dark rounded text-sm font-medium"
           >
             View

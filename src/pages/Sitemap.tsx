@@ -1,6 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { completeSitemap } from "@/config/sitemap";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function Sitemap() {
   return (
@@ -17,7 +17,7 @@ export default function Sitemap() {
           <ul className="space-y-2">
             {completeSitemap.map(route => (
               <li key={route.path}>
-                <Link to={route.path} className="text-zion-cyan hover:underline">
+                <Link href={route.path} className="text-zion-cyan hover:underline">
                   {route.label}
                 </Link>
               </li>

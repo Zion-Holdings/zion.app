@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { JobsList } from "@/components/jobs/JobsList";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { JobStatus } from "@/types/jobs";
 import { SEO } from "@/components/SEO";
 import { BriefcaseIcon, UserIcon, MessageSquare, Star, PlusCircle, Kanban, Video } from "lucide-react";
@@ -57,12 +57,12 @@ function ClientDashboardContent() {
           </div>
           <div className={`flex gap-2 ${isMobile ? 'flex-col' : ''}`}>
             <Button variant="outline" asChild className={isMobile ? 'w-full justify-center' : ''}>
-              <Link to="/hiring-tracker">
+              <Link href="/hiring-tracker">
                 <Kanban className="h-4 w-4 mr-2" /> Hiring Pipeline
               </Link>
             </Button>
             <Button asChild className={isMobile ? 'w-full justify-center' : ''}>
-              <Link to="/post-job">
+              <Link href="/post-job">
                 <PlusCircle className="h-4 w-4 mr-2" /> Post New Job
               </Link>
             </Button>

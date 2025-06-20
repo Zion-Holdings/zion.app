@@ -1,7 +1,6 @@
 import { format } from "date-fns";
 import { JobApplication } from "@/types/jobs";
 import { Avatar as AvatarPrimitive } from "@/components/ui/avatar"; // Renamed
-import { Badge } from "@/components/ui/badge";
 import { ClickableBadge } from "@/components/ui/clickable-badge";
 import { 
   Table,

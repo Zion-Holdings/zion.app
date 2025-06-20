@@ -2,7 +2,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface EmptyStateProps {
   icon: React.ReactNode;
@@ -46,7 +46,7 @@ export function EmptyState({
         {action && (
           action.href ? (
             <Button asChild size="lg" className="bg-zion-purple hover:bg-zion-purple-light">
-              <Link to={action.href}>{action.text}</Link>
+              <Link href={action.href}>{action.text}</Link>
             </Button>
           ) : (
             <Button 
@@ -62,7 +62,7 @@ export function EmptyState({
         {secondaryAction && (
           secondaryAction.href ? (
             <Button asChild variant="outline" size="lg" className="border-zion-blue-light hover:bg-zion-blue-light">
-              <Link to={secondaryAction.href}>{secondaryAction.text}</Link>
+              <Link href={secondaryAction.href}>{secondaryAction.text}</Link>
             </Button>
           ) : (
             <Button 

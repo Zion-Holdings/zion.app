@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { SEO } from "@/components/SEO";
 import { BriefcaseIcon, UserIcon, MessageSquare, Star, PlusCircle, FileText, Inbox, Video } from "lucide-react";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
@@ -43,13 +43,13 @@ function TalentDashboardContent() {
           </div>
           <div className="flex gap-4">
             <Button variant="outline" asChild>
-              <Link to="/settings/account">
+              <Link href="/settings/account">
                 <UserIcon className="h-4 w-4 mr-2" />
                 Profile Settings
               </Link>
             </Button>
             <Button asChild>
-              <Link to="/dashboard/talent/applications">
+              <Link href="/dashboard/talent/applications">
                 <Inbox className="h-4 w-4 mr-2" /> Application Tracker
               </Link>
             </Button>
@@ -99,7 +99,7 @@ function TalentDashboardContent() {
                 
                 <div className="mt-4">
                   <Button className="w-full" asChild>
-                    <Link to="/messages">
+                    <Link href="/messages">
                       <MessageSquare className="h-4 w-4 mr-2" />
                       Messages
                     </Link>
@@ -167,7 +167,7 @@ function TalentDashboardContent() {
                 <MyApplications />
                 <div className="mt-4 flex justify-center">
                   <Button variant="outline" asChild>
-                    <Link to="/dashboard/talent/applications">
+                    <Link href="/dashboard/talent/applications">
                       <Inbox className="h-4 w-4 mr-2" /> View Full Application Tracker
                     </Link>
                   </Button>
@@ -181,7 +181,7 @@ function TalentDashboardContent() {
                       You haven't saved any jobs yet.
                     </p>
                     <Button className="mt-4" asChild>
-                      <Link to="/jobs">Browse Jobs</Link>
+                      <Link href="/jobs">Browse Jobs</Link>
                     </Button>
                   </CardContent>
                 </Card>

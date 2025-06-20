@@ -1,6 +1,5 @@
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -79,7 +78,7 @@ export function ApplicationActions({
         size="sm"
         asChild
       >
-        <Link to={`/messages?talentId=${application.talent_id}`}>
+        <Link href={`/messages?talentId=${application.talent_id}`}>
           Contact
         </Link>
       </Button>

@@ -7,7 +7,7 @@ import { WhitelabelRequestForm } from "@/components/admin/whitelabel/WhitelabelR
 import { TenantsList } from "@/components/admin/whitelabel/TenantsList";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/hooks/useAuth";
-import { Navigate } from "react-router-dom";
+import { useRouter } from "next/router";
 
 export default function WhitelabelManager() {
   const { user } = useAuth();
@@ -17,7 +17,7 @@ export default function WhitelabelManager() {
   const isAdmin = user?.role === "admin";
   
   if (!isAdmin) {
-    return <Navigate to="/unauthorized" />;
+    return // Use router.push('/unauthorized') or redirect in getServerSideProps;
   }
 
   return (

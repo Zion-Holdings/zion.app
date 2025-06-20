@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRight, Plus, UserCheck, FileText, Bell } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export function ClientDashboard() {
   return (
@@ -18,7 +18,7 @@ export function ClientDashboard() {
       <section>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-medium">Active Projects</h2>
-          <Link to="/mobile/projects">
+          <Link href="/mobile/projects">
             <Button variant="ghost" size="sm" className="h-8 gap-1">
               View all <ChevronRight className="h-4 w-4" />
             </Button>
@@ -65,7 +65,7 @@ export function ClientDashboard() {
       <section>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-medium">Suggested Talents</h2>
-          <Link to="/mobile/marketplace">
+          <Link href="/mobile/marketplace">
             <Button variant="ghost" size="sm" className="h-8 gap-1">
               View all <ChevronRight className="h-4 w-4" />
             </Button>

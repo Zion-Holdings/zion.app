@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
@@ -47,7 +47,7 @@ export function FloatingCTA() {
             className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple whitespace-nowrap"
             asChild
           >
-            <Link to="/signup">Register Now</Link>
+            <Link href="/signup">Register Now</Link>
           </Button>
           <button 
             onClick={handleClose}

@@ -81,7 +81,7 @@ const TalentCardComponent = ({
           <div className="flex-1">
             <div className="flex justify-between items-start">
               <h3 className="text-lg font-bold text-white">{talent.full_name}</h3>
-              <FavoriteButton itemId={talent.id} itemType="talent" className="-mt-1" />
+              <FavoriteButton itemId={talent.id} className="-mt-1" />
             </div>
             <p className="text-white font-medium">{talent.professional_title}</p>
             

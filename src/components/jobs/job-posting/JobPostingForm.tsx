@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { useRouter } from 'next/router';
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,11 +14,12 @@ import { JobSchemaType } from './validation';
 
 interface JobPostingFormProps {
   jobId?: string;
+  
   onSuccess?: () => void;
 }
 
 export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
-  const router = useRouter(); // Changed from useNavigate
+  // const router = useRouter(); // Available for navigation if needed // Changed from useNavigate
   const { createJob, updateJob, getJobById } = useJobs();
   const [isFormLoading, setIsFormLoading] = useState(false);
   const [editorContent, setEditorContent] = useState("");

@@ -1,6 +1,6 @@
 
 import { Fragment } from "react";
-import { Route, Routes } from "react-router-dom";
+// Router components removed - convert to Next.js pages structure
 import NotFound from "@/pages/NotFound";
 import Unauthorized from "@/pages/Unauthorized";
 

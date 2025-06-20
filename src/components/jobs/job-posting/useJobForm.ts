@@ -1,8 +1,7 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { format } from 'date-fns';
 import { toast } from "sonner";
 import { useRouter } from 'next/router';
 
@@ -11,6 +10,7 @@ import { useAuth } from "@/hooks/useAuth";
 
 export interface JobPostingProps {
   jobId?: string;
+  
   onSuccess?: () => void;
 }
 

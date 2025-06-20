@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+// Router components removed - convert to Next.js pages structure
 import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
 import ForgotPassword from "@/pages/ForgotPassword";
@@ -16,7 +16,7 @@ const AuthRoutes = () => {
       {/* Auth Routes */}
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/register" element={<Navigate to="/signup" replace />} />
+      <Route path="/register" element={<Navigate href="/signup" replace />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password/:token" element={<ResetPassword />} />
       <Route path="/update-password" element={<UpdatePassword />} />

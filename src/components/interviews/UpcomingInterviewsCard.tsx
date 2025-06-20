@@ -19,7 +19,6 @@ export function UpcomingInterviewsCard() {
       setIsLoading(true);
       try {
         const interviews = await fetchInterviews();
-        const now = new Date();
         
         // Filter for confirmed interviews in the future
         const upcoming = interviews

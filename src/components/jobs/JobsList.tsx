@@ -136,13 +136,13 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
           </CardContent>
           <CardFooter className="flex justify-between p-4 pt-0 gap-2">
             <Button variant="outline" size="sm" asChild>
-              <Link to={`/jobs/${job.id}`}>
+              <Link href={`/jobs/${job.id}`}>
                 <Eye className="h-4 w-4 mr-1" /> View Details
               </Link>
             </Button>
             <div className="flex gap-2">
               <Button variant="outline" size="sm" asChild>
-                <Link to={`/jobs/${job.id}/edit`}>
+                <Link href={`/jobs/${job.id}/edit`}>
                   <Edit className="h-4 w-4" />
                 </Link>
               </Button>

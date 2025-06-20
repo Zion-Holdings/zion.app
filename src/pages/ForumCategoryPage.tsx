@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import CreatePostButton from "@/components/community/CreatePostButton";
@@ -102,7 +103,7 @@ function CategoryContent({
   return (
     <div className="container py-8">
       <div className="flex items-center gap-3 mb-6">
-        <Link to="/community" className="text-sm text-muted-foreground hover:text-foreground">
+        <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground">
           Forum
         </Link>
         <span className="text-muted-foreground">/</span>
@@ -158,7 +159,8 @@ function CategoryContent({
 }
 
 export default function ForumCategoryPage() {
-  const { categoryId } = useParams();
+  const router = useRouter();
+  const categoryId = router.query.categoryId as string;
   const { user } = useAuth();
 
   if (!categoryId || !categoriesInfo[categoryId]) {

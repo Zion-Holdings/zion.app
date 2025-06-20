@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRight, FileText, Image, Clock, Zap, BookOpen } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export function TalentDashboard() {
   return (
@@ -12,7 +12,7 @@ export function TalentDashboard() {
       <section>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-medium">New Job Matches</h2>
-          <Link to="/mobile/marketplace">
+          <Link href="/mobile/marketplace">
             <Button variant="ghost" size="sm" className="h-8 gap-1">
               View all <ChevronRight className="h-4 w-4" />
             </Button>

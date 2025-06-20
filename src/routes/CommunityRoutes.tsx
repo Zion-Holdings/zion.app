@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+// Router components removed - convert to Next.js pages structure
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import CommunityPage from "@/pages/CommunityPage";
 import { CommunityProvider } from "@/context";
@@ -39,7 +39,7 @@ const CommunityRoutes = () => {
         path="/community/new"
         element={
           <ProtectedRoute>
-            <Navigate to="/community?new=1" replace />
+            <Navigate href="/community?new=1" replace />
           </ProtectedRoute>
         }
       />

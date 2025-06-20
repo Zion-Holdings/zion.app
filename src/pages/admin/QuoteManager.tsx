@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useAdminQuotes } from "@/hooks/useAdminQuotes";
@@ -9,7 +8,7 @@ import {
   CardContent
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Navigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import type { QuoteRequest } from "@/types/quotes";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { QuoteDetails } from "@/components/quotes/QuoteDetails";
@@ -22,6 +21,7 @@ import {
 
 export default function QuoteManager() {
   const { user } = useAuth();
+  const router = useRouter();
   const isAdmin = user?.userType === 'admin';
   
   const [selectedQuote, setSelectedQuote] = useState<QuoteRequest | null>(null);
@@ -65,8 +65,14 @@ export default function QuoteManager() {
     setDateRange({ from: undefined, to: undefined });
   };
 
-  if (!isAdmin) {
-    return <Navigate to="/unauthorized" replace />;
+  useEffect(() => {
+    if (user && !isAdmin) {
+      router.push('/unauthorized');
+    }
+  }, [user, isAdmin, router]);
+
+  if (!user || !isAdmin) {
+    return null; // Or a loading spinner
   }
 
   return (

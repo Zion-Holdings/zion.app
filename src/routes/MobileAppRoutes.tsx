@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+// Router components removed - convert to Next.js pages structure
 import MobileAppPage from "@/pages/MobileAppPage";
 import MobileLaunchPage from "@/pages/MobileLaunchPage";
 import OpenAppRedirect from "@/pages/OpenAppRedirect";

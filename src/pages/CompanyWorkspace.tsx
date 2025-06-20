@@ -4,14 +4,15 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CompanyDashboard } from "@/components/enterprise/workspace/CompanyDashboard";
 import { useAuth } from "@/hooks/useAuth";
-import { Navigate, useParams } from "react-router-dom"; // Changed to named import
+import { useRouter } from "next/router"; // Changed to named import
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { useCompanyWorkspace } from "@/hooks/useCompanyWorkspace";
 import { useWhitelabel } from "@/context/WhitelabelContext";
 
 export default function CompanyWorkspace() {
-  const { companySlug } = useParams() as { companySlug?: string };
+  const router = useRouter();
+  const companySlug = router.query.companySlug as string; as { companySlug?: string };
   const { user } = useAuth();
   const { company, isLoading, error } = useCompanyWorkspace(companySlug);
   const { isWhitelabel, tenant, brandName } = useWhitelabel();
@@ -25,7 +26,7 @@ export default function CompanyWorkspace() {
   }
   
   if (error || !company) {
-    return <Navigate to="/not-found" />;
+    return // Use router.push('/not-found') or redirect in getServerSideProps;
   }
   
   // In white-label mode, use the tenant's theme instead of the company's theme
@@ -39,7 +40,7 @@ export default function CompanyWorkspace() {
   const hasAccess = true; // For demo purposes, always grant access
 
   if (!hasAccess) {
-    return <Navigate to="/unauthorized" />;
+    return // Use router.push('/unauthorized') or redirect in getServerSideProps;
   }
 
   return (

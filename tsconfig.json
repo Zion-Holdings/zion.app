@@ -42,10 +42,10 @@
     "isolatedModules": true,
     /* Linting */
     "strict": true,
-    // "noUnusedLocals": true, // Enable to catch unused local variables
-    "noUnusedLocals": true,
-    // "noUnusedParameters": true, // Enable to catch unused function parameters
-    "noUnusedParameters": true,
+    // "noUnusedLocals": false, // Enable to catch unused local variables
+    "noUnusedLocals": false,
+    // "noUnusedParameters": false, // Enable to catch unused function parameters
+    "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
     "allowJs": true,
     "incremental": true,

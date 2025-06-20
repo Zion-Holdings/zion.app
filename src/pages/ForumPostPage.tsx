@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -92,7 +93,8 @@ export default function ForumPostPage() {
   // Using `useParams` without type arguments avoids issues when TypeScript
   // can't determine the generic type for the helper from React Router.
   // Cast the result instead to provide the expected shape.
-  const { postId } = useParams() as { postId?: string };
+  const router = useRouter();
+  const postId = router.query.postId as string; as { postId?: string };
   const { user } = useAuth();
   const { toast } = useToast();
   const [post, setPost] = useState(mockPost);
@@ -110,7 +112,7 @@ export default function ForumPostPage() {
       <div className="container py-8">
         <h1>Post not found</h1>
         <Button asChild className="mt-4">
-          <Link to="/community">Back to Community</Link>
+          <Link href="/community">Back to Community</Link>
         </Button>
       </div>
     );
@@ -257,11 +259,11 @@ export default function ForumPostPage() {
       
       <div className="container py-8">
         <div className="flex items-center gap-3 mb-6">
-          <Link to="/community" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground">
             Forum
           </Link>
           <span className="text-muted-foreground">/</span>
-          <Link to={`/community/category/${post.categoryId}`} className="text-sm text-muted-foreground hover:text-foreground">
+          <Link href={`/community/category/${post.categoryId}`} className="text-sm text-muted-foreground hover:text-foreground">
             {post.categoryId.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
           </Link>
           <span className="text-muted-foreground">/</span>
@@ -335,7 +337,7 @@ export default function ForumPostPage() {
               <div className="flex items-center gap-2">
                 {(isAuthor || isAdminOrMod) && (
                   <Button variant="ghost" size="sm" asChild>
-                    <Link to={`/community/edit/${post.id}`}>
+                    <Link href={`/community/edit/${post.id}`}>
                       <Edit className="h-4 w-4 mr-1" />
                       Edit
                     </Link>
@@ -399,7 +401,7 @@ export default function ForumPostPage() {
               ) : (
                 <Alert>
                   <AlertDescription>
-                    Please <Link to="/login" className="font-medium text-zion-purple hover:underline">sign in</Link> to join the discussion.
+                    Please <Link href="/login" className="font-medium text-zion-purple hover:underline">sign in</Link> to join the discussion.
                   </AlertDescription>
                 </Alert>
               )}
