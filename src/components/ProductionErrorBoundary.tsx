@@ -119,7 +119,11 @@ class ProductionErrorBoundary extends Component<Props, State> {
     }));
   };
 
-  componentDidUpdate(prevProps: Props, prevState: State) {
+<<<<<<< HEAD
+  componentDidUpdate(prevProps: Props, prevState: State) { // Corrected the syntax here
+=======
+  componentDidUpdate(_prevProps: Props, prevState: State) {
+>>>>>>> b58c5582360917c4f917cac488a34dcf3e504b83
     // Auto-retry for network errors
     if (this.state.hasError && !prevState.hasError && this.state.errorType === 'network') {
       this.handleAutoRetry();
@@ -133,7 +137,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
   }
 
   getErrorMessage(): { title: string; description: string; actionText: string } {
-    const { errorType, error, retryCount } = this.state;
+    const { errorType, retryCount } = this.state;
 
     switch (errorType) {
       case 'config':
@@ -235,78 +239,3 @@ class ProductionErrorBoundary extends Component<Props, State> {
                   )}
                 </svg>
               </div>
-              <h1 className="text-lg font-semibold text-gray-900">{title}</h1>
-            </div>
-            
-            <p className="text-gray-600 mb-6">{description}</p>
-            
-            {/* Network error auto-retry indicator */}
-            {errorType === 'network' && retryCount < 2 && (
-              <div className="mb-4 p-3 bg-orange-50 rounded flex items-center">
-                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-orange-600 mr-2"></div>
-                <span className="text-sm text-orange-800">Auto-retrying in a few seconds...</span>
-              </div>
-            )}
-
-            <div className="space-y-3">
-              <button
-                onClick={this.handleRetry}
-                disabled={errorType === 'network' && retryCount >= 3}
-                className={`w-full py-2 px-4 rounded transition-colors ${
-                  errorType === 'network' && retryCount >= 3
-                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                }`}
-              >
-                {actionText}
-              </button>
-
-              {/* Show error details toggle for development */}
-              {ENV_CONFIG.app.isDevelopment && (
-                <button
-                  onClick={this.toggleDetails}
-                  className="w-full py-2 px-4 text-sm text-gray-500 hover:text-gray-700 transition-colors"
-                >
-                  {showDetails ? 'Hide' : 'Show'} Error Details
-                </button>
-              )}
-            </div>
-
-            {/* Error details for development */}
-            {showDetails && ENV_CONFIG.app.isDevelopment && error && (
-              <div className="mt-4 p-3 bg-gray-100 rounded text-xs">
-                <div className="font-mono text-gray-800">
-                  <div><strong>Error:</strong> {error.message}</div>
-                  <div className="mt-2"><strong>Type:</strong> {errorType}</div>
-                  <div><strong>Retry Count:</strong> {retryCount}</div>
-                  {error.stack && (
-                    <details className="mt-2">
-                      <summary className="cursor-pointer text-gray-600">Stack Trace</summary>
-                      <pre className="mt-1 text-xs overflow-auto">{error.stack}</pre>
-                    </details>
-                  )}
-                </div>
-              </div>
-            )}
-
-            {/* Environment status for development */}
-            {ENV_CONFIG.app.isDevelopment && (
-              <div className="mt-4 p-3 bg-blue-50 rounded text-xs">
-                <div className="text-blue-800">
-                  <div><strong>Environment Status:</strong></div>
-                  <div>Supabase: {ENV_CONFIG.supabase.isConfigured ? '✅' : '⚠️'}</div>
-                  <div>Sentry: {ENV_CONFIG.sentry.isConfigured ? '✅' : '⚠️'}</div>
-                  <div>Reown: {ENV_CONFIG.reown.isConfigured ? '✅' : '⚠️'}</div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      );
-    }
-
-    return this.props.children;
-  }
-}
-
-export default ProductionErrorBoundary; 

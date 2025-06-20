@@ -1,13 +1,9 @@
 const express = require('express');
 const { exec } = require('child_process'); // Make sure this is imported
-const helmet = require('helmet');
-const cors = require('cors');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const mongooseMorgan = require('mongoose-morgan');
 const passport = require('passport');
-const helmet = require('helmet');
-const cors = require('cors');
 const { mongoUri, allowedOrigins } = require('./config');
 const authRoutes = require('./routes/auth');
 const authSocialRoutes = require('./routes/authSocial');
@@ -26,17 +22,13 @@ const app = express();
 // Use Helmet to apply various security headers
 app.use(helmet());
 
-// Enable CORS for all origins (default)
-app.use(cors());
+// Enable CORS for allowed origins
+app.use(cors({ origin: allowedOrigins }));
 
 app.use(morgan('dev'));
 app.use(mongooseMorgan({ connectionString: mongoUri }));
 app.use(express.json());
-app.use(helmet());
-app.use(cors({ origin: allowedOrigins }));
 app.use(passport.initialize());
-app.use(helmet());
-app.use(cors());
 const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
 app.use(limiter);
 
