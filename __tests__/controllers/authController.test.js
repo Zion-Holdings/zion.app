@@ -46,7 +46,23 @@ describe('authController.loginUser', () => {
     await loginUser(req, res);
 
     expect(res.status).toHaveBeenCalledWith(401);
-    expect(res.json).toHaveBeenCalledWith({ message: 'Invalid credentials' });
+    expect(res.json).toHaveBeenCalledWith({ code: 'WRONG_PASSWORD', message: 'Incorrect password' });
+  });
+
+  it('returns 403 when account inactive', async () => {
+    User.findOne.mockResolvedValue({
+      _id: '1',
+      email: 'test@example.com',
+      name: 'Test',
+      passwordHash: 'hashed',
+      active: false,
+    });
+    bcrypt.compareSync.mockReturnValue(true);
+
+    await loginUser(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(403);
+    expect(res.json).toHaveBeenCalledWith({ code: 'ACCOUNT_INACTIVE', message: 'Account inactive' });
   });
 });
 
