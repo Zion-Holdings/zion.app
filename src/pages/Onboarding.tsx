@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
@@ -105,10 +105,14 @@ export default function Onboarding() {
     { label: "Create Profile", description: "Tell us about yourself" },
   ];
 
-  if (!user) {
-    router.push('/login');
-    return null;
-  }
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push('/login');
+    }
+  }, [user, isLoading, router]);
+
+  // Render loading state or null if user is not available yet or redirecting
+  if (isLoading || !user) return null;
 
   return (
     <>
