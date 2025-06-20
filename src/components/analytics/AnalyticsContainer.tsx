@@ -10,7 +10,6 @@ interface AnalyticsContainerProps {
 export function AnalyticsContainer({ children }: AnalyticsContainerProps) {
   const { isAuthenticated, isLoading, user } = useAuth();
   const router = useRouter();
-  const router = useRouter();
   
   // Check if user is admin (using either role or userType)
   const isAdmin = user?.role === 'admin' || user?.userType === 'admin';
