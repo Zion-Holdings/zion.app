@@ -386,6 +386,25 @@ function startMonitoring() {
         ensureFileExists(PERF_LOG_FILE);
         console.log(`Created missing performance log file at ${PERF_LOG_FILE}`);
         appendToSelfHealLog(`[${new Date().toISOString()}] Created missing performance log file: ${PERF_LOG_FILE}\n`);
+        const perfTail = new Tail(PERF_LOG_FILE);
+        perfTail.on('line', function(data) {
+          if (PERF_ERROR_REGEX.test(data)) {
+            perfErrorStreak++;
+            console.log(`Performance error detected. Streak: ${perfErrorStreak}`);
+            if (perfErrorStreak >= 3) {
+              triggerSelfHeal('3 consecutive performance errors');
+            }
+          } else if (perfErrorStreak > 0) {
+            console.log('Performance log normal. Resetting streak.');
+            perfErrorStreak = 0;
+          }
+        });
+        perfTail.on('error', function(error) {
+          logError(`Error tailing performance log file: ${PERF_LOG_FILE}`, error);
+          appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing performance log file ${PERF_LOG_FILE}: ${error.message}\n`);
+        });
+        perfTail.watch();
+        console.log(`Watching performance log: ${PERF_LOG_FILE}`);
       } catch (createErr) {
         logError(`Unable to create performance log file ${PERF_LOG_FILE}`, createErr);
         appendToSelfHealLog(`[${new Date().toISOString()}] Error creating performance log file ${PERF_LOG_FILE}: ${createErr.message}\n`);
@@ -422,6 +441,25 @@ function startMonitoring() {
         ensureFileExists(SECURITY_LOG_FILE);
         console.log(`Created missing security log file at ${SECURITY_LOG_FILE}`);
         appendToSelfHealLog(`[${new Date().toISOString()}] Created missing security log file: ${SECURITY_LOG_FILE}\n`);
+        const securityTail = new Tail(SECURITY_LOG_FILE);
+        securityTail.on('line', function(data) {
+          if (SECURITY_PATCH_REGEX.test(data)) {
+            securityPatchStreak++;
+            console.log(`Security patch detected. Streak: ${securityPatchStreak}`);
+            if (securityPatchStreak >= 3) {
+              triggerSelfHeal('3 consecutive security patches');
+            }
+          } else if (securityPatchStreak > 0) {
+            console.log('Security log normal. Resetting streak.');
+            securityPatchStreak = 0;
+          }
+        });
+        securityTail.on('error', function(error) {
+          logError(`Error tailing security log file: ${SECURITY_LOG_FILE}`, error);
+          appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing security log file ${SECURITY_LOG_FILE}: ${error.message}\n`);
+        });
+        securityTail.watch();
+        console.log(`Watching security log: ${SECURITY_LOG_FILE}`);
       } catch (createErr) {
         logError(`Unable to create security log file ${SECURITY_LOG_FILE}`, createErr);
         appendToSelfHealLog(`[${new Date().toISOString()}] Error creating security log file ${SECURITY_LOG_FILE}: ${createErr.message}\n`);
