@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/nextjs';
 export const handler = async () => {
   const dsn = process.env.SENTRY_DSN;
   if (!dsn || dsn.startsWith('YOUR_')) {
