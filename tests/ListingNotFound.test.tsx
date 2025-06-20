@@ -12,7 +12,5 @@ test('visit unknown slug shows 404 page', async () => {
   }
 
   expect(show404).toBe(true);
-  expect(
-    screen.getByRole('button', { name: /back to marketplace/i })
-  ).toBeInTheDocument();
+  expect(screen.getByText('404 – Page Not Found')).toBeInTheDocument();
 });

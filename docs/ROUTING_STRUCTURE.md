@@ -74,7 +74,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
 | `/community/category/[slug]` | `ForumCategoryPage` | `@/pages/ForumCategoryPage` |
 | `/resources/docs` | `ResourcesDocsPage` | Custom documentation page |
 | `/about` | `About` | Custom about page |
-| `/404` | `Custom404` | Custom 404 with animation |
+| `/404` | `Custom404` | Custom 404 page |
 
 ## Testing Navigation
 
@@ -113,11 +113,7 @@ npm test __tests__/routing.test.tsx
 
 ## 404 Handling
 
-The 404 page (`pages/404.tsx`) provides:
-- ✅ **Animated 404 illustration** using Lottie
-- ✅ **Search functionality** to help users find content
-- ✅ **Analytics tracking** for 404 events
-- ✅ **Navigation back to home**
+The 404 page (`pages/404.tsx`) displays a simple message when a route is not found.
 
 ## Next.js Features Used
 
