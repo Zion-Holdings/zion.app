@@ -189,12 +189,12 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
           {!isLoading && filteredPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
-                <Link
+                <Card
                   key={post.id}
-                  href={`/blog/${post.slug}`}
-                  className="block group"
+                  asChild
+                  className="bg-zion-blue-dark border border-zion-blue-light hover:border-zion-purple transition-all duration-300 group-hover:shadow-lg"
                 >
-                  <Card className="bg-zion-blue-dark border border-zion-blue-light hover:border-zion-purple transition-all duration-300 group-hover:shadow-lg">
+                  <Link href={`/blog/${post.slug}`} className="block group">
                   <div className="aspect-[16/9] relative overflow-hidden">
                     <OptimizedImage
                       src={post.featuredImage}
@@ -237,8 +237,8 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                   <CardFooter className="p-6 pt-0">
                     <span className="text-zion-cyan group-hover:text-zion-purple">Read More →</span>
                   </CardFooter>
-                  </Card>
-                </Link>
+                  </Link>
+                </Card>
               ))}
             </div>
           ) : null}
