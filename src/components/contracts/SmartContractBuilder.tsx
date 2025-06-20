@@ -33,7 +33,7 @@ export function SmartContractBuilder({
     undefined
   );
   const [templateManagerOpen, setTemplateManagerOpen] = useState(false);
-  const [deployOptions, setDeployOptions] = useState<DeploymentOptions>({
+  const [deployOptions, _setDeployOptions] = useState<DeploymentOptions>({
     network: 'ethereum',
     useEscrow: true,
     deployToChain: false
@@ -41,27 +41,13 @@ export function SmartContractBuilder({
   const [deployStatus, setDeployStatus] = useState<string>('');
   const [deploymentInfo, setDeploymentInfo] = useState<SmartContractInfo | null>(null);
   
-  const { generateSolidityContract, deploySmartContract, deploymentStatus } = useSmartContracts();
+  const { generateSolidityContract, deploySmartContract } = useSmartContracts();
 
   const handleLoadTemplate = (templateData: ContractFormValues) => {
     setFormValues(templateData);
   };
 
   // Convert ContractFormValues to contract content string
-  const handleContractGenerated = async (formValues: ContractFormValues) => {
-    if (!formValues) return;
-    try {
-      const generatedContractText = await generateSolidityContract(formValues, talent, clientName);
-      setGeneratedContract(generatedContractText);
-      setActiveTab("preview");
-      if (onContractGenerated) {
-        onContractGenerated(generatedContractText);
-      }
-    } catch (error) {
-      console.error("Error generating contract:", error);
-      toast.error("Failed to generate smart contract");
-    }
-  };
   
   const handleDeployContract = async () => {
     if (!generatedContract) return;
