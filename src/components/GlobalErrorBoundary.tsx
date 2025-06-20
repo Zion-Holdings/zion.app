@@ -6,7 +6,7 @@ import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 import { logError } from '@/utils/logError';
 // Removed sendErrorToBackend import as it's no longer directly used.
 
-function GlobalErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
+function GlobalErrorFallback({ error }: FallbackProps) {
   // Removed: const router = useRouter();
   // Updated user-friendly messages
   const apologyMessage = "We apologize for the inconvenience.";

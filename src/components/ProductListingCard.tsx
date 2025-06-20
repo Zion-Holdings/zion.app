@@ -116,7 +116,7 @@ const ProductListingCardComponent = ({
               Featured
             </Badge>
           )}
-          <FavoriteButton itemId={listing.id} itemType="product" />
+           <FavoriteButton itemId={listing.id} />
         </div>
       </div>
       

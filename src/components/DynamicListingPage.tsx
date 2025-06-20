@@ -18,14 +18,6 @@ import { ProductListing, ListingView } from "@/types/listings";
 import { Search, Filter, LayoutGrid, List, Star } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { captureException } from "@/utils/sentry";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationButton,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
 
 interface PriceRange {
   min: number;
@@ -159,8 +151,6 @@ export function DynamicListingPage({
     captureException(error);
     console.error("Listing filter error:", error);
   }
-
-  const paginatedListings = filteredListings;
 
   const handleRequestQuote = (listingId: string) => {
     setIsLoading(true);

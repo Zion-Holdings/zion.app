@@ -119,7 +119,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
     }));
   };
 
-  componentDidUpdate(prevProps: Props, prevState: State) {
+  componentDidUpdate(_prevProps: Props, prevState: State) {
     // Auto-retry for network errors
     if (this.state.hasError && !prevState.hasError && this.state.errorType === 'network') {
       this.handleAutoRetry();
@@ -133,7 +133,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
   }
 
   getErrorMessage(): { title: string; description: string; actionText: string } {
-    const { errorType, error, retryCount } = this.state;
+    const { errorType, retryCount } = this.state;
 
     switch (errorType) {
       case 'config':
