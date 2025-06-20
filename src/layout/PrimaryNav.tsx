@@ -17,6 +17,7 @@ import { Menu, X, ShoppingCart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
+import { ModeToggle } from '@/components/ModeToggle';
 
 export function PrimaryNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -87,6 +88,7 @@ export function PrimaryNav() {
               )}
             </Link>
             <LanguageSelector />
+            <ModeToggle />
             {!isLoggedIn && (
               <>
                 <Link href="/login" className="text-sm hover:text-primary" data-testid="login-link">

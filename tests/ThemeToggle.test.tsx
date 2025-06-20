@@ -13,7 +13,9 @@ import { ModeToggle } from '@/components/ModeToggle';
 // Use the ThemeProvider from src/components to match the hook used by ModeToggle
 import { ThemeProvider } from '@/components/ThemeProvider';
 
-it('applies dark class when toggled', async () => { // Made test async
+it('saves theme to localStorage when toggled', async () => {
+  localStorage.setItem('theme', 'light');
+
   render(
     <ThemeProvider>
       <ModeToggle />
@@ -23,7 +25,8 @@ it('applies dark class when toggled', async () => { // Made test async
   const button = document.querySelector('button');
   fireEvent.click(button!);
 
-  await waitFor(() => { // Added waitFor for the assertion
+  await waitFor(() => {
+    expect(localStorage.getItem('theme')).toBe('dark');
     expect(document.documentElement.classList.contains('dark')).toBe(true);
   });
 });
