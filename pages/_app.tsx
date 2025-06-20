@@ -120,7 +120,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                   <ThemeProvider>
                                     <AppLayout>
                                       <ErrorBoundary>
-                                        <Component {...pageProps} />
+                                        <Component {...pageProps} productId="example-product-id" />
                                       </ErrorBoundary>
                                       <ErrorResetOnRouteChange />
                                       <Toaster />
