@@ -7,7 +7,11 @@ export default function ProductsList() {
       <h1 className="text-3xl font-bold mb-6">Products</h1>
       <div data-testid="products-grid" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {MARKETPLACE_LISTINGS.map(p => (
-          <ProductCard key={p.id} product={p} />
+          <ProductCard key={p.id} product={{
+            ...p,
+            price: p.price || 0, // Convert null to 0 for Product interface
+            description: p.description || '' // Ensure description is never undefined
+          }} />
         ))}
       </div>
     </div>
