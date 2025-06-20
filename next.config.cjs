@@ -49,6 +49,44 @@ const nextConfig = {
   // Enable source maps in production for easier stack traces in Sentry
   productionBrowserSourceMaps: true,
 
+  // Add custom headers to prevent caching issues
+  async headers() {
+    return [
+      {
+        // Apply cache headers to the home page
+        source: '/',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, s-maxage=60, stale-while-revalidate=300',
+          },
+          {
+            key: 'X-Route-Type',
+            value: 'home-page',
+          },
+        ],
+      },
+      {
+        // Prevent caching issues on dynamic pages
+        source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
+          },
+        ],
+      },
+    ];
+  },
+
   exportPathMap: async function () {
     return {
       '/cart': { page: '/cart' },
@@ -62,6 +100,12 @@ const nextConfig = {
         destination: '/mobile/pwa/:path*',
         permanent: true,
       },
+      // Add explicit redirect for /home to / to prevent conflicts
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 
@@ -72,6 +116,12 @@ const nextConfig = {
         destination: 'http://localhost:3001/api/equipment',
       },
     ];
+  },
+
+  // Improve build performance and reduce bundle size
+  experimental: {
+    optimizeCss: true,
+    swcMinify: true,
   },
 
   // experimental: {
@@ -109,6 +159,25 @@ const nextConfig = {
         url: false, // Added url as it's often a dependency
       };
     }
+
+    // Optimize chunk splitting to reduce initial load
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          ...config.optimization.splitChunks,
+          cacheGroups: {
+            ...config.optimization.splitChunks.cacheGroups,
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+            },
+          },
+        },
+      };
+    }
+
     return config;
   },
 };

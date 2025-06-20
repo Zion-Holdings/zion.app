@@ -3,11 +3,18 @@ import axios from 'axios';
 export interface SignupPayload {
   email: string;
   password: string;
+  name?: string;
 }
 
 export interface SignupResponse {
-  token?: string;
-  [key: string]: any;
+  message: string;
+  user?: {
+    id: string;
+    email: string;
+    display_name?: string;
+  };
+  session?: any;
+  emailVerificationRequired?: boolean;
 }
 
 export async function signup(payload: SignupPayload): Promise<SignupResponse> {
@@ -20,12 +27,30 @@ export async function signup(payload: SignupPayload): Promise<SignupResponse> {
     if (res.status === 201) {
       return res.data;
     }
-    if (res.status === 409) {
-      throw new Error('Email already exists');
-    }
-    throw new Error(res.data?.message || `Unexpected status ${res.status}`);
+    // Handle unexpected success status codes
+    throw new Error(`Unexpected status ${res.status}`);
   } catch (err: any) {
-    console.error('Signup error:', err.message);
-    throw new Error(err.message);
+    console.error('Signup error:', err);
+    
+    if (err.response) {
+      // Server responded with error status
+      const status = err.response.status;
+      // Try both 'error' and 'message' fields for compatibility
+      const errorMessage = err.response.data?.error || err.response.data?.message || 'Signup failed';
+      
+      if (status === 409) {
+        throw new Error('Email already exists');
+      } else if (status === 400) {
+        throw new Error(errorMessage);
+      } else {
+        throw new Error(errorMessage);
+      }
+    } else if (err.request) {
+      // Network error
+      throw new Error('Network error. Please check your connection and try again.');
+    } else {
+      // Other error
+      throw new Error(err.message || 'Signup failed');
+    }
   }
 }

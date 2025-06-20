@@ -71,6 +71,8 @@ export default function SignupForm() {
       toast.success('Welcome to Zion Tech Marketplace 🎉');
       router.push('/dashboard');
     } catch (err: any) {
+      console.error('Signup error:', err);
+      
       // Handle specific status codes for better user experience
       if (err.response?.status === 409) {
         const message = 'That email is already in use. Try logging in instead.';
@@ -79,7 +81,7 @@ export default function SignupForm() {
         return; // Prevent auto-redirect, keep user on sign-up page
       }
       
-      // Handle other errors
+      // Handle other errors - try both 'error' and 'message' fields for compatibility
       const message = err.response?.data?.error || err.response?.data?.message || err.message || 'Signup failed';
       toast.error(message);
       form.setError('root', { message });
