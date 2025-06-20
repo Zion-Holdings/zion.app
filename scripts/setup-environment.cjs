@@ -24,6 +24,10 @@ NEXTAUTH_URL=http://localhost:3000
 # Wallet & Web3 Configuration
 NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id_here
 NEXT_PUBLIC_ALCHEMY_API_KEY=your_alchemy_api_key_here
+NEXT_PUBLIC_ZION_TOKEN_CONTRACT_ADDRESS=your_token_contract_address_here
+NEXT_PUBLIC_ZION_TOKEN_NETWORK_ID=1
+NEXT_PUBLIC_SNAPSHOT_SPACE_ID=yourproject.eth
+NEXT_PUBLIC_SNAPSHOT_HUB_URL=https://hub.snapshot.org
 
 # Sentry Error Monitoring
 NEXT_PUBLIC_SENTRY_DSN=your_sentry_dsn_here
@@ -80,6 +84,10 @@ NEXTAUTH_URL=http://localhost:3000
 
 # Wallet Integration - Get from WalletConnect/Reown
 NEXT_PUBLIC_REOWN_PROJECT_ID=your_project_id_here
+NEXT_PUBLIC_ZION_TOKEN_CONTRACT_ADDRESS=your_token_contract_address_here
+NEXT_PUBLIC_ZION_TOKEN_NETWORK_ID=1
+NEXT_PUBLIC_SNAPSHOT_SPACE_ID=yourproject.eth
+NEXT_PUBLIC_SNAPSHOT_HUB_URL=https://hub.snapshot.org
 
 # Email
 NEXT_PUBLIC_SUPPORT_EMAIL=support@localhost.com

@@ -8,13 +8,33 @@ import { SearchSuggestion } from '@/types/search';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
 
+/**
+ * SearchBar component props
+ */
 interface SearchBarProps {
+  /**
+   * The current value of the search input
+   */
   value: string;
+  /**
+   * Function to call when the search input changes
+   * @param {string} val - The new value of the search input
+   */
   onChange: (val: string) => void;
+  /**
+   * Function to call when a suggestion is selected
+   * @param {SearchSuggestion} suggestion - The selected suggestion
+   */
   onSelectSuggestion?: (suggestion: SearchSuggestion) => void;
+  /**
+   * The placeholder text for the search input
+   */
   placeholder?: string;
 }
 
+/**
+ * SearchBar component that allows users to search for content.
+ */
 export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = 'Search...' }: SearchBarProps) {
   const router = useRouter();
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);

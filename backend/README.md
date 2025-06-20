@@ -1,5 +1,4 @@
 # Django Backend
-
 This directory contains the Django backend for the Zion platform. It provides specialized services including the IPO Portal, Governance module, Public API key management, and core authentication features like password reset.
 
 ## Core Technologies

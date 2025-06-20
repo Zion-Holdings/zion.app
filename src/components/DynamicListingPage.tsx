@@ -18,14 +18,6 @@ import { ProductListing, ListingView } from "@/types/listings";
 import { Search, Filter, LayoutGrid, List, Star } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { captureException } from "@/utils/sentry";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationButton,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
 
 interface PriceRange {
   min: number;
@@ -344,7 +336,7 @@ export function DynamicListingPage({
                         setSelectedRating(rating);
                       }}
                       aria-pressed={selectedRating === rating}
-                      className={`${
+                      className={`{
                         selectedRating === rating
                           ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
                           : "border-zion-blue-light text-zion-slate-light"
@@ -377,9 +369,6 @@ export function DynamicListingPage({
                   setSelectedCategory("all");
                   setCurrentPriceFilter([0, priceRange.max]);
                   setSelectedRating(null);
-                  setSelectedBrand("all");
-                  setSpecQuery("");
-                  setSelectedAvailability("all");
                 }}
               >
                 Reset Filters
@@ -426,7 +415,7 @@ export function DynamicListingPage({
               <p className="text-zion-slate-light">
                 Showing {filteredListings.length} results
                 {selectedCategory !== "all" && ` in ${selectedCategory}`}
-                {searchQuery && ` for "${searchQuery}"`}
+                {searchQuery && ` for "{searchQuery}"`}
               </p>
             </div>
 

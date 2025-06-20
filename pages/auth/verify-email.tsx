@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { logError } from '@/utils/logError';
 import { suggestFix } from '@/utils/suggestFix';
 import { useAuth } from '@/hooks/useAuth'; // To access user state
-
 const VerifyEmailPage = () => {
   const router = useRouter();
   const { user, isLoading: authLoading, setUser } = useAuth();
@@ -57,10 +56,10 @@ const VerifyEmailPage = () => {
           setError(null);
 
           // Update the local user context if the backend sends back updated user details
-         if (result.user && setUser) {
-            // Assuming result.user is of type UserDetails
-           setUser((prevUser: UserDetails | null) => prevUser ? ({...prevUser, ...result.user}) : result.user);
-         }
+        if (result.user && setUser) {
+          // Assuming result.user is of type UserDetails
+          setUser((prevUser: UserDetails | null) => prevUser ? ({...prevUser, ...result.user}) : result.user);
+        }
 
 
           // Redirect to login or dashboard after a short delay
@@ -68,12 +67,12 @@ const VerifyEmailPage = () => {
             router.push('/auth/login');
           }, 3000);
 
-        } catch (err: any) {
-          logError(err, { context: 'VerifyEmailPage.handleVerification' });
-          const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
-          setError(suggestion);
-          setMessage(''); // Clear loading message
-        } finally {
+      } catch (err: any) {
+        logError(err, { context: 'VerifyEmailPage.handleVerification' });
+        const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
+        setError(suggestion);
+        // setMessage(''); // Clear loading message - keep it to avoid confusion
+      } finally {
           setIsLoading(false);
         }
       } else if (!authLoading) {

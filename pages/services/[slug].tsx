@@ -5,7 +5,6 @@ import { NextSeo } from '@/components/NextSeo';
 import { SERVICES } from '@/data/servicesData';
 import { slugify } from '@/lib/slugify';
 import Custom404 from '../404';
-import type { ProductListing } from '@/types/listings';
 
 const ServicePage: React.FC = () => {
   const router = useRouter();
