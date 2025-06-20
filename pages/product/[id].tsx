@@ -1,117 +1,153 @@
-import type { GetServerSideProps } from 'next';
-import type { ProductListing } from '@/types/listings';
-import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
-import { SERVICES } from '@/data/servicesData';
-import * as Sentry from '@sentry/nextjs';
+import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useDispatch } from 'react-redux';
-import type { AppDispatch } from '@/store';
-import { addItem } from '@/store/cartSlice';
-import { useRouter } from 'next/router';
-import { ProductGallery } from '@/components/gallery/ProductGallery';
-import ProductReviews from '@/components/ProductReviews';
+import { fetchProductById } from '../../src/services/productService';
+import type { ProductDetailsData } from '../../src/types/product';
+// Import React if not implicitly available
+// import React from 'react';
 
-interface ProductPageProps {
-  product: ProductListing | null;
-}
+// Define props type for the page component based on getServerSideProps return
+type ProductPageProps = {
+  product: ProductDetailsData | null; // Allow null if product might not be found and handled in component
+};
 
-const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
+const ProductDetailPage = ({ product }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   if (!product) {
+    // This case should ideally be handled by getServerSideProps returning notFound: true
+    // but as a fallback:
     return (
-      <div className="max-w-3xl mx-auto py-8 px-4">Product not found.</div>
+      <div>
+        <Head>
+          <title>Product Not Found</title>
+        </Head>
+        <main>
+          <p>Product not found. Please try again or check the URL.</p>
+          <Link href="/">Go back to homepage</Link>
+        </main>
+      </div>
     );
   }
 
-  const canonicalUrl = `/product/${product.id}`;
-  const dispatch = useDispatch<AppDispatch>();
-  const router = useRouter();
-
-  const handleAddToCart = () => {
-    dispatch(
-      addItem({
-        id: product.id,
-        title: product.title,
-        price: product.price ?? 0,
-      }),
-    );
-    router.push('/cart');
-  };
+  // Assuming product.images can be a string URL, or an array of objects with a URL, or an array of strings.
+  // This is a simplified image handling logic.
+  let imageUrl: string | undefined = undefined;
+  if (product.images) {
+    if (Array.isArray(product.images) && product.images.length > 0) {
+      if (typeof product.images[0] === 'string') {
+        imageUrl = product.images[0];
+      } else if (typeof product.images[0] === 'object' && product.images[0] !== null && 'url' in product.images[0]) {
+        imageUrl = (product.images[0] as { url: string }).url;
+      }
+    } else if (typeof product.images === 'string') {
+      imageUrl = product.images;
+    }
+  }
 
   return (
     <>
       <Head>
-        <title>{product.title} | Zion Marketplace</title>
-        <link rel="canonical" href={canonicalUrl} />
+        <title>{product.name} | Zion Store</title>
+        <meta name="description" content={product.description || `Details for ${product.name}`} />
+        <link rel="canonical" href={`/product/${product.id}`} />
       </Head>
-      <nav
-        className="max-w-3xl mx-auto mt-4 px-4 text-sm text-muted-foreground space-x-1"
-        aria-label="Breadcrumb"
-      >
-        <Link href="/" className="hover:underline">
-          Home
-        </Link>
-        <span>/</span>
-        <Link href="/products" className="hover:underline">
-          Products
-        </Link>
-        <span>/</span>
-        <span aria-current="page" className="text-foreground font-medium">
-          {product.title}
-        </span>
+
+      <nav style={{ padding: '1rem' }}> {/* Basic styling */}
+        <Link href="/">Home</Link> /
+        {/* Placeholder for a general products listing page */}
+        <Link href="/marketplace">Marketplace</Link> /
+        <span>{product.name}</span>
       </nav>
-      <main className="max-w-3xl mx-auto py-8 px-4">
-        <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
-        {product.images?.length ? (
-          <div className="mb-4">
-            <ProductGallery
-              images={product.images}
-              videoUrl={product.videoUrl}
-              modelUrl={product.modelUrl}
-            />
-          </div>
-        ) : null}
-        <div className="font-bold mb-2">
-          {product.currency}
-          {product.price}
-        </div>
-        <p className="mb-4 whitespace-pre-line">{product.description}</p>
-        <div className="mb-4">Seller: {product.author.name}</div>
-        <div className="flex gap-2 mb-8">
+
+      <main style={{ padding: '1rem' }}>
+        <h1>{product.name}</h1>
+
+        {imageUrl && (
+          <img
+            src={imageUrl}
+            alt={`Image of ${product.name}`}
+            style={{ maxWidth: '400px', height: 'auto', marginBlock: '1rem' }}
+          />
+        )}
+
+        {product.price !== null && product.currency && (
+          <p style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>
+            Price: {product.currency} {product.price}
+          </p>
+        )}
+
+        {product.description && (
+          <section style={{ marginBlock: '1rem' }}>
+            <h2>Description</h2>
+            <p>{product.description}</p>
+          </section>
+        )}
+
+        {product.category && (
+          <p>Category: {product.category}</p>
+        )}
+
+        {product.tags && product.tags.length > 0 && (
+          <p>Tags: {product.tags.join(', ')}</p>
+        )}
+
+        <section style={{ marginBlock: '1rem' }}>
+          <h2>Reviews</h2>
+          <p>
+            Average Rating: {product.averageRating ? product.averageRating.toFixed(1) + '/5' : 'Not yet rated'}
+          </p>
+          <p>({product.reviewCount} reviews)</p>
+          {/* Detailed reviews could be listed here in a future iteration */}
+        </section>
+
+        <div style={{ marginTop: '2rem' }}>
           <button
-            onClick={handleAddToCart}
-            className="rounded bg-primary px-4 py-2 text-primary-foreground"
+            onClick={() => console.log('Add to cart:', product.id)}
+            style={{ padding: '0.5rem 1rem', marginRight: '0.5rem' }}
           >
             Add to Cart
           </button>
-          <button className="rounded border px-4 py-2">Add to Wishlist</button>
+          <button
+            onClick={() => console.log('Add to wishlist:', product.id)}
+            style={{ padding: '0.5rem 1rem' }}
+          >
+            Add to Wishlist
+          </button>
         </div>
-        <ProductReviews productId={product.id} />
       </main>
     </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps<ProductPageProps> = async ({
-  params,
-}: {
-  params?: { id?: string };
-}) => {
-  const id = params?.id as string;
+export const getServerSideProps: GetServerSideProps<ProductPageProps> = async (context) => {
+  const { id } = context.params || {};
+
+  if (typeof id !== 'string') {
+    return { notFound: true };
+  }
 
   try {
-    const product =
-      MARKETPLACE_LISTINGS.find((p) => p.id === id) ||
-      SERVICES.find((s) => s.id === id) ||
-      null;
-    if (!product) {
+    const productData = await fetchProductById(id);
+
+    if (!productData) {
       return { notFound: true };
     }
-    return { props: { product } };
+
+    // Ensure price is serializable (Prisma Decimal can be an object)
+    // The ProductDetailsData type expects number|null, productService should handle conversion if API returns string/object.
+    // If API returns Decimal object, it needs conversion here or in fetchProductById.
+    // For now, assuming fetchProductById correctly returns serializable ProductDetailsData.
+
+    return {
+      props: {
+        product: productData,
+      },
+    };
   } catch (error) {
-    Sentry.captureException(error);
-    throw error;
+    console.error(`Error fetching product ${id} in getServerSideProps:`, error);
+    // Optionally, you could pass an error prop to the page
+    // return { props: { product: null, error: 'Failed to load product data.' } };
+    return { notFound: true }; // Or redirect to a generic error page
   }
 };
 
-export default ProductPage;
+export default ProductDetailPage;
