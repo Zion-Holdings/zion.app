@@ -14,7 +14,6 @@ import { generateContract } from "../utils/contractUtils";
 import { ProjectDetailsFields } from "./ProjectDetailsFields";
 import { PaymentTermsFields } from "./PaymentTermsFields";
 import { AdditionalClausesFields } from "./AdditionalClausesFields";
-import { DeploymentOptions } from "@/types/smart-contracts";
 
 const formSchema = z.object({
   projectName: z.string().min(1, "Project name is required"),
