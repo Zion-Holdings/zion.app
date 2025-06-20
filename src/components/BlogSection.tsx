@@ -31,7 +31,7 @@ const PostImage = ({ post }: { post: typeof recentPosts[0] }) => {
       height={200} // Placeholder height
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // General sizes
       onError={handleImageError}
-      className="object-cover w-full h-full opacity-60 hover:opacity-80 transition-opacity duration-300"
+      className="object-cover w-full h-full hover:opacity-80 transition-opacity duration-300"
       priority={false} // Not LCP
     />
   );
