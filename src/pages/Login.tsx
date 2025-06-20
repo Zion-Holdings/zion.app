@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'; // Changed from useNavigate, useLocation
 import { useAuth } from '@/hooks/useAuth';
 import { safeStorage } from '@/utils/safeStorage';
@@ -10,10 +10,28 @@ import { useCart } from '@/context/CartContext';
 import { toast } from '@/hooks/use-toast';
 
 export default function Login() {
-  const { isAuthenticated, user, isLoading } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth();
   const router = useRouter(); // Initialized router
   // location is now router
-  const { dispatch } = useCart();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { dispatch } = useCart(); // Reserved for future cart handling
+  const [authTimedOut, setAuthTimedOut] = useState(false);
+
+  // If auth status check takes too long, show a fallback message
+  useEffect(() => {
+    if (!isLoading) return;
+    const timer = setTimeout(() => setAuthTimedOut(true), 10000);
+    return () => clearTimeout(timer);
+  }, [isLoading]);
+
+  const resendVerificationEmail = async () => {
+    try {
+      await fetch('/api/auth/resend-verification-email', { method: 'POST' });
+      toast({ title: 'Verification email sent' });
+    } catch (err) {
+      toast({ title: 'Failed to resend email', variant: 'destructive' });
+    }
+  };
 
   useEffect(() => {
     // This effect handles token processing (e.g., from magic link)
@@ -43,6 +61,27 @@ export default function Login() {
         <ErrorBoundary FallbackComponent={LoginErrorFallback}>
           <LoginContent />
         </ErrorBoundary>
+      </AuthLayout>
+    );
+  }
+
+  // Show fallback if auth status check timed out
+  if (authTimedOut && isLoading) {
+    return (
+      <AuthLayout>
+        <div className="p-4 text-center space-y-4 text-foreground">
+          <p>Checking login status…</p>
+          <p>
+            This is taking longer than expected. If you recently signed up, your
+            email may still need verification.
+          </p>
+          <button
+            onClick={resendVerificationEmail}
+            className="underline text-primary"
+          >
+            Resend verification email
+          </button>
+        </div>
       </AuthLayout>
     );
   }
