@@ -179,20 +179,17 @@ export default function EquipmentDetail() {
   const inCart = items.some(i => i.id === equipment.id);
 
   const handleAddToCart = () => {
-    if (!isAuthenticated) {
-      const nextUrl = encodeURIComponent(router.asPath);
-      router.push(`/login?next=${nextUrl}&msg=login_required`);
-      toast.info("Please log in to add items to your cart.");
-      return;
-    }
-
     if (inCart) return;
     setIsAdding(true);
     dispatch({
       type: 'ADD_ITEM',
       payload: { id: equipment.id, name: equipment.name, price: equipment.price, quantity }
     });
-    toast.success(`${quantity}× ${equipment.name} added`);
+    if (isAuthenticated) {
+      toast.success(`${quantity}× ${equipment.name} added`);
+    } else {
+      toast.info('Item added. Login to checkout.');
+    }
     setTimeout(() => setIsAdding(false), 800);
   };
 

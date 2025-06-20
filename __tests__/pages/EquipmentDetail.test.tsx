@@ -85,7 +85,7 @@ describe('EquipmentDetail - Add To Cart', () => {
     });
   });
 
-  test('unauthenticated user clicking "Add to Cart" is redirected to login and shown a toast', async () => {
+  test('unauthenticated user clicking "Add to Cart" adds item locally and shows info toast', async () => {
     require('@/hooks/useAuth').useAuth.mockReturnValue({
       isAuthenticated: false,
       user: null,
@@ -96,18 +96,23 @@ describe('EquipmentDetail - Add To Cart', () => {
 
     const addToCartButton = screen.getByRole('button', { name: /add to cart/i });
     await act(async () => {
-        fireEvent.click(addToCartButton);
+      fireEvent.click(addToCartButton);
     });
 
+    expect(mockNavigate).not.toHaveBeenCalled();
 
-    expect(mockNavigate).toHaveBeenCalledTimes(1);
-    const expectedNextUrl = encodeURIComponent(`/equipment/${testProductId}?from=test`);
-    expect(mockNavigate).toHaveBeenCalledWith(`/login?next=${expectedNextUrl}&msg=login_required`);
+    const product = SAMPLE_EQUIPMENT[testProductId];
+    expect(product).toBeDefined();
+
+    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledWith({
+      type: 'ADD_ITEM',
+      payload: { id: product.id, name: product.name, price: product.price, quantity: 1 }
+    });
 
     expect(mockInfoFnForToast).toHaveBeenCalledTimes(1);
-    expect(mockInfoFnForToast).toHaveBeenCalledWith('Please log in to add items to your cart.');
+    expect(mockInfoFnForToast).toHaveBeenCalledWith('Item added. Login to checkout.');
 
-    expect(mockDispatch).not.toHaveBeenCalled();
     expect(mockSuccessFnForToast).not.toHaveBeenCalled();
   });
 
