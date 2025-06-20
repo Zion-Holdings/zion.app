@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { Helmet } from 'react-helmet-async';
 import { NextSeo } from '@/components/NextSeo';
 import { BLOG_POSTS } from '@/data/blog-posts';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import type { BlogPost } from '@/types/blog';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 
@@ -62,6 +63,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
       name: post.author.name,
     },
   };
+  const body = (post as any).body || post.content;
   return (
     <>
       <NextSeo
@@ -74,7 +76,36 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
       </Helmet>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
         <h1>{post.title}</h1>
-        <ReactMarkdown>{post.content}</ReactMarkdown>
+        {post.excerpt && <p className="lead">{post.excerpt}</p>}
+        <div className="flex items-center gap-3 mb-6">
+          <OptimizedImage
+            src={post.author.avatarUrl}
+            alt={post.author.name}
+            className="w-10 h-10 rounded-full"
+            onError={(e) => {
+              const target = e.currentTarget as HTMLImageElement;
+              target.src = '/images/blog-placeholder.svg';
+            }}
+          />
+          <div>
+            <p className="m-0 font-medium">{post.author.name}</p>
+            {post.author.title && (
+              <p className="m-0 text-sm text-zion-slate-light">{post.author.title}</p>
+            )}
+          </div>
+        </div>
+        {post.featuredImage && (
+          <OptimizedImage
+            src={post.featuredImage}
+            alt={post.title}
+            className="w-full rounded mb-6"
+            onError={(e) => {
+              const target = e.currentTarget as HTMLImageElement;
+              target.src = '/images/blog-placeholder.svg';
+            }}
+          />
+        )}
+        <ReactMarkdown>{body}</ReactMarkdown>
       </main>
     </>
   );
