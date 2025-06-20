@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useWallet } from '@/context/WalletContext'; // Adjust path
 // Import shadcn/ui components: Button, Card, Badge, Progress, Input, etc.
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Input } from '@/components/ui/input'; // For voting power temporary input
