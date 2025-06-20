@@ -128,6 +128,7 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
                 description: p.description || '' // Ensure description is never undefined
               }}
               onBuy={() => router.push(`/checkout/${p.id}`)}
+              buyDisabled
             />
           ))}
       </div>
