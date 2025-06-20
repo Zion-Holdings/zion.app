@@ -10,6 +10,7 @@ import {
   updateQuantity as updateQuantityAction,
 } from '@/store/cartSlice';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
+import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
 import { CartItem as CartItemType } from '@/types/cart';
 import { safeStorage } from '@/utils/safeStorage';
 import { getStripe } from '@/utils/getStripe';
@@ -20,6 +21,7 @@ export default function CartPage() {
   const dispatch = useDispatch<AppDispatch>();
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [guestOpen, setGuestOpen] = useState(false);
 
   useEffect(() => {
     if (reduxItems.length > 0) {
@@ -46,7 +48,7 @@ export default function CartPage() {
     dispatch(removeItemAction(id));
   };
 
-  const handleCheckout = async () => {
+  const handleCheckout = async (details?: { email?: string; address?: string }) => {
     setLoading(true);
     try {
       const stripe = await getStripe();
@@ -54,7 +56,8 @@ export default function CartPage() {
 
       const { data } = await axios.post('/api/checkout-session', {
         cartItems: items,
-        customer_email: user?.email,
+        customer_email: details?.email || user?.email,
+        shipping_address: details?.address,
       });
 
       const sessionId = data.sessionId as string | undefined;
@@ -67,6 +70,14 @@ export default function CartPage() {
       alert(err.message || 'Checkout failed');
     } finally {
       setLoading(false);
+    }
+  }; 
+
+  const startCheckout = () => {
+    if (!user) {
+      setGuestOpen(true);
+    } else {
+      handleCheckout();
     }
   };
 
@@ -101,9 +112,14 @@ export default function CartPage() {
         <span>Subtotal</span>
         <span>${subtotal.toFixed(2)}</span>
       </div>
-      <Button className="mt-4 w-full" onClick={handleCheckout} disabled={loading}>
+      <Button className="mt-4 w-full" onClick={startCheckout} disabled={loading}>
         {loading ? 'Processing...' : 'Checkout'}
       </Button>
+      <GuestCheckoutModal
+        open={guestOpen}
+        onOpenChange={setGuestOpen}
+        onSubmit={(d) => handleCheckout(d)}
+      />
     </div>
   );
 }
