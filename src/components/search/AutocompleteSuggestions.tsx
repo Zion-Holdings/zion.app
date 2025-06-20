@@ -54,8 +54,8 @@ export function AutocompleteSuggestions({
   }, [highlightedIndex]);
 
   return (
-    <div 
-      className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto"
+    <div
+      className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto search-dropdown"
       data-testid="search-suggestions"
     >
       <ul
