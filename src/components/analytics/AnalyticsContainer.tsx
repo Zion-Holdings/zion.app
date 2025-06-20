@@ -1,7 +1,6 @@
-
-import React from "react";
+import React, { useEffect } from "react";
 import { SEO } from "@/components/SEO";
-import { Navigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { useAuth } from "@/hooks/useAuth";
 
 interface AnalyticsContainerProps {
@@ -10,9 +9,27 @@ interface AnalyticsContainerProps {
 
 export function AnalyticsContainer({ children }: AnalyticsContainerProps) {
   const { isAuthenticated, isLoading, user } = useAuth();
+  const router = useRouter();
+  const router = useRouter();
   
   // Check if user is admin (using either role or userType)
   const isAdmin = user?.role === 'admin' || user?.userType === 'admin';
+  
+  useEffect(() => {
+    if (!isLoading) {
+      // If not authenticated, redirect
+      if (!isAuthenticated) {
+        router.push('/login?from=/analytics');
+        return;
+      }
+      
+      // If not admin, redirect
+      if (!isAdmin) {
+        router.push('/unauthorized');
+        return;
+      }
+    }
+  }, [isAuthenticated, isAdmin, isLoading, router]);
   
   // If still loading auth status, show loading
   if (isLoading) {
@@ -23,14 +40,13 @@ export function AnalyticsContainer({ children }: AnalyticsContainerProps) {
     );
   }
   
-  // If not authenticated, redirect
-  if (!isAuthenticated) {
-    return <Navigate to="/login" state={{ from: '/analytics' }} replace />;
-  }
-  
-  // If not admin, redirect
-  if (!isAdmin) {
-    return <Navigate to="/unauthorized" replace />;
+  // If not authenticated or not admin, show loading while redirecting
+  if (!isAuthenticated || !isAdmin) {
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-zion-blue">
+        <div className="animate-pulse text-zion-purple text-lg">Redirecting...</div>
+      </div>
+    );
   }
 
   return (
