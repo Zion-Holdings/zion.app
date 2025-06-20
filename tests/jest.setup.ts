@@ -196,3 +196,33 @@ global.ResizeObserver = jest.fn().mockImplementation(() => ({
   unobserve: jest.fn(),
   disconnect: jest.fn(),
 }));
+
+// Polyfill for URL.revokeObjectURL
+if (typeof URL.revokeObjectURL === 'undefined') {
+  // @ts-ignore
+  URL.revokeObjectURL = jest.fn();
+}
+
+// Polyfill for BroadcastChannel
+if (typeof BroadcastChannel === 'undefined') {
+  // @ts-ignore
+  global.BroadcastChannel = class BroadcastChannelMock {
+    constructor(name: string) {
+      // @ts-ignore
+      this.name = name;
+    }
+    postMessage = jest.fn();
+    close = jest.fn();
+    onmessage = null;
+    onmessageerror = null;
+    addEventListener = jest.fn();
+    removeEventListener = jest.fn();
+    dispatchEvent = jest.fn();
+  };
+}
+
+// Polyfill for window.scrollTo
+if (typeof window.scrollTo === 'undefined') {
+  // @ts-ignore
+  window.scrollTo = jest.fn();
+}
