@@ -78,5 +78,18 @@
     "ar": "العربية",
     "language_changed": "Idioma cambiado a {{language}}",
     "switch_to_detected": "¿Cambiar a {{language}}?"
+  },
+  "errors": {
+    "page_not_found": "¡Vaya! Página no encontrada",
+    "return_home": "Volver al Inicio",
+    "forgot_password_prompt": "¿Olvidaste tu contraseña? Puedes restablecerla aquí:",
+    "reset_password": "Restablecer Contraseña",
+    "or_return_home": "O volver al Inicio",
+    "access_denied": "Acceso Denegado",
+    "no_permission": "No tienes permiso para acceder a esta página. Puede ser porque tu cuenta no tiene los permisos requeridos o necesitas completar tu perfil.",
+    "login_different_account": "Iniciar sesión con otra cuenta",
+    "payment_success_title": "¡Pago Exitoso!",
+    "payment_success_message": "Tu pago se ha procesado correctamente. Ahora tienes acceso a todas las funciones premium.",
+    "go_to_dashboard": "Ir al Panel"
   }
 }
