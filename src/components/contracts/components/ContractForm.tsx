@@ -135,7 +135,6 @@ export function ContractForm({
           
           <PaymentTermsFields 
             form={form}
-            _talent={talent}
             handleMilestonesGenerated={handleMilestonesGenerated}
           />
           
