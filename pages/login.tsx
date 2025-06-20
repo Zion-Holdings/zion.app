@@ -16,11 +16,12 @@ export default function Login() {
   // Redirect if already authenticated
   useEffect(() => {
     if (isAuthenticated && !isLoading) {
+      const { next, ...rest } = router.query;
       const nextRoute =
-        typeof router.query.next === 'string'
-          ? decodeURIComponent(router.query.next)
+        typeof next === 'string'
+          ? decodeURIComponent(next)
           : '/dashboard';
-      router.replace(nextRoute);
+      router.replace({ pathname: nextRoute, query: rest });
     }
   }, [isAuthenticated, isLoading, router]);
 
