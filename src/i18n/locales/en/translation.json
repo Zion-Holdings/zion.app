@@ -45,7 +45,7 @@
   "cart": {
     "title": "Your Cart",
     "empty": "Your cart is empty",
-    "browse_marketplace": "Browse Marketplace",
+    "continue_shopping": "Continue Shopping",
     "subtotal": "Subtotal",
     "processing": "Processing...",
     "checkout": "Checkout"

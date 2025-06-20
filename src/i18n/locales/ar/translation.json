@@ -42,7 +42,7 @@
   "cart": {
     "title": "سلة التسوق",
     "empty": "سلة التسوق فارغة",
-    "browse_marketplace": "تصفح السوق",
+    "continue_shopping": "متابعة التسوق",
     "subtotal": "المجموع الفرعي",
     "processing": "جار المعالجة...",
     "checkout": "إتمام الشراء"
