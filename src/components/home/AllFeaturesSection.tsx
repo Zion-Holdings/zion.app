@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 
 interface AllFeaturesSectionProps {
@@ -30,11 +31,12 @@ const features = [
 ];
 
 export function AllFeaturesSection({ className, style }: AllFeaturesSectionProps) {
+  const { t } = useTranslation();
   return (
     <section className={cn("py-16 bg-zion-blue-dark", className)} style={style}>
       <div className="container mx-auto px-4">
         <h2 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">
-          Explore All Features
+          {t('home.all_features_title', 'Explore All Features')}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {features.map((feature, idx) => (

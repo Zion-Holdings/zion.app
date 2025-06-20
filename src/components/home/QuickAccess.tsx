@@ -52,8 +52,8 @@ export function QuickAccess({ className, style }: QuickAccessProps) {
       link: "/community"
     },
     {
-      title: "Mobile App",
-      description: "Zion on the go",
+      title: t('home.tool_mobile_app', 'Mobile App'),
+      description: t('home.tool_mobile_app_desc', 'Zion on the go'),
       icon: <Smartphone className="h-6 w-6 text-zion-purple" />,
       link: "/mobile-launch"
     }
@@ -64,10 +64,10 @@ export function QuickAccess({ className, style }: QuickAccessProps) {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent mb-2">
-            Quick Access
+            {t('home.quick_access_title', 'Quick Access')}
           </h2>
           <p className="text-zion-slate-light text-lg">
-            Jump directly to our most popular features
+            {t('home.quick_access_subtitle', 'Jump directly to our most popular features')}
           </p>
         </div>
         

@@ -46,7 +46,12 @@
     "create_profile": "Criar Perfil",
     "explore_tools": "Explorar Nossas Ferramentas",
     "tools_description": "Tudo o que você precisa para se conectar ao ecossistema de IA e tecnologia",
-    "header_tagline": "Seu portal para soluções de IA e tecnologia"
+    "header_tagline": "Seu portal para soluções de IA e tecnologia",
+    "quick_access_title": "Acesso Rápido",
+    "quick_access_subtitle": "Vá direto para nossos recursos mais populares",
+    "tool_mobile_app": "Aplicativo Mobile",
+    "tool_mobile_app_desc": "Zion sempre com você",
+    "all_features_title": "Explorar Todos os Recursos"
   },
   "jobs": {
     "post_job_title": "Publicar uma Vaga",

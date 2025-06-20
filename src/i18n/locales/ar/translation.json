@@ -46,7 +46,12 @@
     "create_profile": "إنشاء ملف شخصي",
     "explore_tools": "استكشاف أدواتنا",
     "tools_description": "كل ما تحتاجه للتواصل مع نظام الذكاء الاصطناعي والتكنولوجيا",
-    "header_tagline": "بوابتك لحلول الذكاء الاصطناعي والتكنولوجيا"
+    "header_tagline": "بوابتك لحلول الذكاء الاصطناعي والتكنولوجيا",
+    "quick_access_title": "وصول سريع",
+    "quick_access_subtitle": "انتقل مباشرة إلى ميزاتنا الأكثر شعبية",
+    "tool_mobile_app": "تطبيق الجوال",
+    "tool_mobile_app_desc": "زيون أثناء التنقل",
+    "all_features_title": "استكشاف جميع الميزات"
   },
   "jobs": {
     "post_job_title": "نشر وظيفة",
