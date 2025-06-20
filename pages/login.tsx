@@ -82,8 +82,12 @@ export default function Login() {
         variant: 'default'
       });
 
-      // success – redirect to dashboard
-      router.replace('/dashboard');
+      // success – redirect to specified next route or dashboard
+      const nextRoute =
+        typeof router.query.next === 'string'
+          ? decodeURIComponent(router.query.next)
+          : '/dashboard';
+      router.replace(nextRoute);
     } catch (err: any) {
       console.error('🔧 Frontend: Login error:', err);
       Sentry.captureException(err);
