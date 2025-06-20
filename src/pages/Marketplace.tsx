@@ -5,6 +5,7 @@ import ProductCard from '@/components/ProductCard';
 import { useState, useEffect } from 'react';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { ErrorState } from '@/components/jobs/applications/ErrorState';
+import { ProductsEmptyState } from '@/components/marketplace/EmptyState';
 import { ProductListing } from '@/types/listings';
 import { fetchMarketplaceData } from '@/utils/fetchMarketplaceData';
 
@@ -100,14 +101,14 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     );
   }
 
-  // Empty state - this will be the fallback when fetchMarketplaceData returns []
+  // Empty state with call to action if no products are available
   if (!data || data.length === 0) {
     return (
-      <div className="p-6 text-white text-center">
-        <p className="text-xl mb-2">No products found.</p>
-        <p className="text-sm text-muted-foreground">
-          {showLongLoadingMessage ? 'This is taking longer than expected.' : 'Try refreshing the page.'}
-        </p>
+      <div className="container py-8" data-testid="marketplace-empty">
+        <ProductsEmptyState
+          onAddProduct={() => router.push('/admin/products')}
+          onRetry={() => retryQuery(['/api/marketplace/overview'])}
+        />
       </div>
     );
   }

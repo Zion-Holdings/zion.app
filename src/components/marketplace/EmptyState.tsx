@@ -109,13 +109,20 @@ export function EmptyState({
 }
 
 // Specific empty state variants for quick use
-export function ProductsEmptyState({ onRetry }: { onRetry?: () => void }) {
-  return (
-    <EmptyState
-      type="products"
-      action={onRetry ? { label: 'Try Again', onClick: onRetry } : undefined}
-    />
-  );
+export function ProductsEmptyState({
+  onRetry,
+  onAddProduct
+}: {
+  onRetry?: () => void;
+  onAddProduct?: () => void;
+}) {
+  const action = onAddProduct
+    ? { label: 'Add Product', onClick: onAddProduct }
+    : onRetry
+    ? { label: 'Try Again', onClick: onRetry }
+    : undefined;
+
+  return <EmptyState type="products" action={action} />;
 }
 
 export function CategoriesEmptyState({ onRetry }: { onRetry?: () => void }) {
