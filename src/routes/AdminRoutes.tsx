@@ -20,12 +20,8 @@ import MetricsDashboard from "@/pages/dashboard/MetricsDashboard";
 import FounderBackupVault from "@/pages/FounderBackupVault";
 
 const AdminRoutes = () => {
-<<<<<<< HEAD
-  return <></>;
-=======
   // Placeholder component - admin routes are handled via Next.js pages structure
   return null;
->>>>>>> 8cf7e4b1ab21954d1640e90dc4646d5d83fa7263
 };
 
 export default AdminRoutes;
