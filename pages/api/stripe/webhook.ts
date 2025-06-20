@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
-import type StripeType from 'stripe';
 import { buffer } from 'micro';
 import fs from 'fs';
 import path from 'path';
