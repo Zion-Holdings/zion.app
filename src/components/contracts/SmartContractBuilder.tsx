@@ -18,7 +18,6 @@ interface SmartContractBuilderProps {
   talent: TalentProfile;
   clientName: string;
   onContractGenerated?: (contractContent: string) => void;
-  onDeploy?: (contractContent: string) => void;
 }
 
 export function SmartContractBuilder({
@@ -27,7 +26,6 @@ export function SmartContractBuilder({
   talent,
   clientName,
   onContractGenerated,
-  onDeploy
 }: SmartContractBuilderProps) {
   const [activeTab, setActiveTab] = useState<string>("form");
   const [generatedContract, setGeneratedContract] = useState<string | null>(null);
@@ -128,7 +126,6 @@ export function SmartContractBuilder({
               initialValues={formValues}
               onFormValuesChange={setFormValues}
               onContractGenerated={handleFormSubmit}
-              onDeployOptionsChange={setDeployOptions}
             />
           </TabsContent>
           
