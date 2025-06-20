@@ -36,7 +36,7 @@ export interface AuthContextType {
   user: UserDetails | null;
   isAuthenticated: boolean;
   isLoading: boolean;
-  login: (email: string, password: string) => Promise<{ error: any }>;
+  login: (email: string, password: string, rememberMe?: boolean) => Promise<{ error: any }>;
   logout: () => Promise<void>;
   signUp: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any; emailVerificationRequired?: boolean }>;
   resetPassword: (email: string) => Promise<{ error: any }>;

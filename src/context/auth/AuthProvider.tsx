@@ -48,49 +48,68 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     rememberMe = false
   ) => {
     try {
-      // loginUser will throw if API call is not successful (e.g. non-2xx status)
+      // Make API call to our custom login endpoint
       const { res, data } = await loginUser(email, password);
-      // If we reach here, loginUser's HTTP call was successful (e.g., status 200 from our API)
-      // data should contain { user, accessToken, refreshToken }
       console.log('[AuthProvider] loginUser API call successful:', { res, data });
 
-      // Assuming data from a 200 response is always success.
-      // If API returns 200 but with an error payload, that needs specific handling here or API needs adjustment.
-      // data should contain { user, accessToken, refreshToken }
-      console.log('[AuthProvider login] API call successful, data:', data); // Log received data
-      if (data.accessToken && data.refreshToken) {
-        console.log('[AuthProvider DEBUG] login: Attempting to set Supabase client session.');
-        console.log('[AuthProvider DEBUG] login: Using accessToken:', data.accessToken);
-        console.log('[AuthProvider DEBUG] login: Using refreshToken:', data.refreshToken);
-        setTokens({ accessToken: data.accessToken, refreshToken: data.refreshToken });
+      // Our API uses a different approach - it directly returns user data from our custom login API
+      // We need to handle Supabase authentication differently for our setup
+      console.log('[AuthProvider] Login successful via custom API, now setting up authentication');
 
-        const { data: sessionData, error: sessionError } = await supabase.auth.setSession({
-          access_token: data.accessToken,
-          refresh_token: data.refreshToken,
-        });
-
-        if (sessionError) {
-          console.error("[AuthProvider DEBUG] login: Supabase client-side session setting failed:", sessionError);
-          toast({
-            title: "Login Failed",
-            description: sessionError.message || "Failed to initialize client session.",
-            variant: "destructive",
+      // Since our API doesn't return Supabase tokens, we need to handle authentication differently
+      // For development mode with environment-based authentication or Supabase with direct password sign-in
+      if (data.user) {
+        console.log('[AuthProvider DEBUG] User data received from API:', data.user);
+        
+        // Check if we're using Supabase (ENV_CONFIG would be available) 
+        // If not, we'll simulate the auth state change for development mode
+        if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+          // Production/Supabase mode - attempt to sign in with Supabase
+          const { data: supabaseAuthData, error: supabaseError } = await supabase.auth.signInWithPassword({
+            email,
+            password,
           });
-          cleanupAuthState(); // Make sure this is called
-          return { error: sessionError.message || "Client-side session initialization failed." };
+
+          if (supabaseError) {
+            console.error("[AuthProvider DEBUG] Supabase authentication failed:", supabaseError);
+            toast({
+              title: "Authentication Error",
+              description: supabaseError.message || "Failed to authenticate with Supabase.",
+              variant: "destructive",
+            });
+            return { error: supabaseError.message || "Authentication failed." };
+          }
+
+          console.log('[AuthProvider DEBUG] Supabase authentication successful');
+          // The onAuthStateChange event should now trigger automatically
         } else {
-          console.log('[AuthProvider DEBUG] login: Supabase client-side session set successfully. Session data:', JSON.stringify(sessionData, null, 2));
-          // The onAuthStateChange event should now trigger.
+          // Development mode - simulate successful authentication
+          console.log('[AuthProvider DEBUG] Development mode - simulating authentication');
+          setUser(data.user);
+          setIsLoading(false);
+          
+          // Show success toast
+          toast({
+            title: 'Login successful',
+            description: `Welcome back, ${data.user.name || data.user.email}!`,
+            variant: 'default'
+          });
+
+          // Handle redirect
+          const nextRoute =
+            typeof router.query.next === 'string'
+              ? decodeURIComponent(router.query.next)
+              : '/dashboard';
+          router.replace(nextRoute);
         }
       } else {
-        console.error('[AuthProvider login] Missing accessToken or refreshToken from loginUser response.');
+        console.error('[AuthProvider login] No user data in API response.');
         toast({
           title: "Login Failed",
-          description: "Incomplete token data received from server. Cannot initialize session.",
+          description: "No user data received from server.",
           variant: "destructive",
         });
-        cleanupAuthState(); // Ensure cleanup
-        return { error: "Incomplete token data received from server." };
+        return { error: "No user data received from server." };
       }
 
       console.log('[AuthProvider] login function completed, onAuthStateChange will handle redirection.');
@@ -393,9 +412,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     user,
     isLoading,
     isAuthenticated: !!user,
-    login: signInImpl,
+    login: login, // Use the custom login function instead of signInImpl
     // register, // Removed as signup now covers its functionality
-    signUp: signUpImpl,
+    signUp: signup, // Use the custom signup function instead of signUpImpl
     logout,
     resetPassword,
     updateProfile,

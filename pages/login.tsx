@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Sentry from '@sentry/nextjs';
 import { toast } from '@/hooks/use-toast';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { useAuth } from '@/context/auth/AuthProvider';
 
 export default function Login() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -10,84 +11,36 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const { login, isLoading, isAuthenticated } = useAuth();
 
-  const handleLogin = async (email: string, password: string) => {
-    try {
-      console.log('🔧 Frontend: Attempting login for:', email);
-      const res = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-
-      console.log('🔧 Frontend: Login response status:', res.status);
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        console.log('🔧 Frontend: Login error response:', data);
-        
-        let errorMessage = 'Unable to login';
-        
-        // 🔧 Use specific error messages from API
-        if (data?.message) {
-          errorMessage = data.message;
-        } else if (data?.error) {
-          errorMessage = data.error;
-        }
-
-        // 🔧 Handle email verification specifically
-        if (res.status === 403) {
-          if (data?.code === 'EMAIL_NOT_VERIFIED' || data?.code === 'EMAIL_NOT_CONFIRMED') {
-            errorMessage = 'Please verify your email address before logging in';
-            // Show toast for email verification
-            toast({ 
-              title: 'Email verification required', 
-              description: errorMessage, 
-              variant: 'destructive' 
-            });
-          } else {
-            // Show toast for other 403 errors
-            toast({ 
-              title: 'Access denied', 
-              description: errorMessage, 
-              variant: 'destructive' 
-            });
-          }
-        } else if (res.status === 401) {
-          // Show toast for authentication errors
-          toast({ 
-            title: 'Authentication failed', 
-            description: errorMessage, 
-            variant: 'destructive' 
-          });
-        } else {
-          // Show toast for other errors
-          toast({ 
-            title: 'Login failed', 
-            description: errorMessage, 
-            variant: 'destructive' 
-          });
-        }
-        
-        throw new Error(errorMessage);
-      }
-
-      const data = await res.json();
-      console.log('🔧 Frontend: Login successful, user:', data.user?.email);
-
-      // Show success toast
-      toast({ 
-        title: 'Login successful', 
-        description: `Welcome back, ${data.user?.name || data.user?.email}!`,
-        variant: 'default'
-      });
-
-      // success – redirect to specified next route or dashboard
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (isAuthenticated && !isLoading) {
       const nextRoute =
         typeof router.query.next === 'string'
           ? decodeURIComponent(router.query.next)
           : '/dashboard';
       router.replace(nextRoute);
+    }
+  }, [isAuthenticated, isLoading, router]);
+
+  const handleLogin = async (email: string, password: string) => {
+    try {
+      console.log('🔧 Frontend: Attempting login for:', email);
+      
+      // Use AuthProvider's login method which handles state management and redirects
+      const result = await login(email, password, false);
+      
+      if (result.error) {
+        console.error('🔧 Frontend: Login error:', result.error);
+        throw new Error(result.error);
+      }
+      
+      console.log('🔧 Frontend: Login successful via AuthProvider');
+      
+      // AuthProvider handles the redirect automatically via onAuthStateChange
+      // No need to manually redirect here
+      
     } catch (err: any) {
       console.error('🔧 Frontend: Login error:', err);
       Sentry.captureException(err);
@@ -113,14 +66,9 @@ export default function Login() {
     try {
       await handleLogin(email, password);
     } catch (err: any) {
-      // 🔧 Set error for UI display and show toast
+      // 🔧 Set error for UI display (toast is already shown by AuthProvider)
       const errorMessage = err.message || 'Login failed';
       setErrorMsg(errorMessage);
-      
-      // Toast is already shown in handleLogin, but ensure we have one
-      if (!toast) {
-        console.error('Toast not available, showing alert only');
-      }
     } finally {
       setIsSubmitting(false);
     }
@@ -129,6 +77,20 @@ export default function Login() {
   // Get development credentials from environment (only in development)
   const isDevelopment = process.env.NODE_ENV === 'development';
   const showDevHints = isDevelopment && process.env.NEXT_PUBLIC_SHOW_DEV_LOGIN === 'true';
+
+  // Show loading state while checking authentication or if already authenticated
+  if (isLoading || isAuthenticated) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background p-4">
+        <div className="w-full max-w-sm rounded-lg border border-border bg-card p-8 shadow-lg text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-sm text-muted-foreground">
+            {isAuthenticated ? 'Redirecting...' : 'Loading...'}
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
@@ -176,9 +138,9 @@ export default function Login() {
           <button
             type="submit"
             className="inline-flex w-full items-center justify-center rounded bg-primary px-4 py-2 font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 disabled:opacity-50"
-            disabled={isSubmitting}
+            disabled={isSubmitting || isLoading}
           >
-            {isSubmitting ? 'Logging in…' : 'Login'}
+            {isSubmitting || isLoading ? 'Logging in…' : 'Login'}
           </button>
         </form>
         
