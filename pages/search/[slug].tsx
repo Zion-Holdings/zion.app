@@ -42,7 +42,7 @@ export default function SearchResultsPage({
   totalCount 
 }: SearchResultsPageProps) {
   const router = useRouter();
-  const { isLoading: authLoading, isAuthenticated } = useAuth();
+  const { isAuthenticated } = useAuth();
   const [results, setResults] = useState<SearchResult[]>(initialResults);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState(query);
@@ -326,7 +326,6 @@ export default function SearchResultsPage({
 
 export const getServerSideProps: GetServerSideProps<SearchResultsPageProps> = async (context: any) => {
   const params = context.params;
-  const urlQuery = context.query;
   const slug = params?.slug as string;
   
   // Convert slug back to query term
