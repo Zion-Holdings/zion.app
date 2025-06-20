@@ -1,14 +1,14 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Home from '@/pages/Home';
-import type { GetServerSideProps } from 'next';
+import type { GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
-// import { withSentryGetServerSideProps } from '@sentry/nextjs'; // Removed
 import { ErrorBanner } from '@/components/talent/ErrorBanner';
 
 export interface HomePageProps {
   hasError?: boolean;
-  errorMessage?: string; // For better debugging if needed
+  errorMessage?: string;
+  timestamp?: number; // Add timestamp for cache busting
 }
 
 // Check if Sentry is likely initialized (basic check, mirrors sentry.server.config.js)
@@ -20,14 +20,39 @@ export async function fetchHomeData() {
   return Promise.resolve(null);
 }
 
-import { withServerSideErrorHandling } from '@/utils/withErrorHandling';
-
-const getServerSidePropsImpl: GetServerSideProps<HomePageProps> = async (_ctx: any) => {
-  await fetchHomeData();
-  return { props: {} };
+// Use getStaticProps instead of getServerSideProps for better reliability and caching
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  try {
+    await fetchHomeData();
+    return { 
+      props: {
+        timestamp: Date.now()
+      },
+      // Revalidate every 5 minutes in production for fresh content
+      revalidate: 300
+    };
+  } catch (error) {
+    console.error('Error in getStaticProps for home page:', error);
+    
+    // Log to Sentry if available, but don't block the page
+    if (isSentryActive) {
+      try {
+        Sentry.captureException(error);
+      } catch (sentryError) {
+        console.warn('Failed to log to Sentry:', sentryError);
+      }
+    }
+    
+    // Return fallback props instead of crashing
+    return {
+      props: {
+        hasError: false, // Don't show error on home page, show fallback content
+        timestamp: Date.now()
+      },
+      revalidate: 60 // Retry more frequently if there was an error
+    };
+  }
 };
-
-export const getServerSideProps = withServerSideErrorHandling(getServerSidePropsImpl);
 
 const ErrorTestButton = () => {
   const handleClick = () => {
