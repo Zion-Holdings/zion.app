@@ -45,12 +45,12 @@ Submits a request for a quote, typically for services or custom orders.
 
 ---
 
-### Future Placeholders:
+### Additional Methods:
 
 #### `getQuoteStatus(quoteId)`
 *   **Purpose:** Fetches the current status of a previously submitted quote request.
 *   **Parameters:** `quoteId` (string, required)
-*   **Returns:** `Promise<object>` (e.g., `{ quoteId, status, estimatedCompletion, notes }`)
+*   **Returns:** `Promise<object|null>` - `null` if the quote is not found.
 
 #### `listJobs(options)`
 *   **Purpose:** Fetches a list of job postings from the marketplace.
@@ -60,7 +60,7 @@ Submits a request for a quote, typically for services or custom orders.
 #### `getJobDetails(jobId)`
 *   **Purpose:** Fetches details for a specific job posting.
 *   **Parameters:** `jobId` (string, required)
-*   **Returns:** `Promise<object|null>`
+*   **Returns:** `Promise<object|null>` - `null` if the job is not found.
 
 #### `listTalent(options)`
 *   **Purpose:** Fetches a list of talent profiles.
@@ -70,4 +70,4 @@ Submits a request for a quote, typically for services or custom orders.
 #### `getTalentDetails(talentId)`
 *   **Purpose:** Fetches details for a specific talent profile.
 *   **Parameters:** `talentId` (string, required)
-*   **Returns:** `Promise<object|null>`
+*   **Returns:** `Promise<object|null>` - `null` if the talent profile is not found.
