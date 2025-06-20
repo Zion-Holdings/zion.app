@@ -7,6 +7,21 @@ import { BLOG_POSTS } from '@/data/blog-posts';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import type { BlogPost } from '@/types/blog';
 import type { GetStaticPaths, GetStaticProps } from 'next';
+import fs from 'fs';
+import path from 'path';
+
+function parseMarkdown(filePath: string): BlogPost | null {
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
+  const raw = fs.readFileSync(filePath, 'utf8');
+  const match = raw.match(/---\n([\s\S]+?)\n---\n([\s\S]*)/);
+  if (!match) return null;
+  const meta = JSON.parse(match[1]);
+  const content = match[2].trim();
+  const slug = path.basename(filePath).replace(/\.md$/, '');
+  return { ...meta, id: slug, slug, content } as BlogPost;
+}
 
 interface BlogPostPageProps {
   /**
@@ -33,14 +48,14 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
       // The previous logic tried a fallback here, but we aim to make getStaticProps authoritative.
       const directFallback = BLOG_POSTS.find((p) => p.slug === slug) || null;
       if (directFallback) {
-       setPost(directFallback);
-       setError(null);
+        setPost(directFallback);
+        setError(null);
       } else {
-       // If getStaticProps is working correctly, this path (slug exists, no initialPost, no fallback)
-       // should ideally not be hit frequently, as getStaticProps would have returned notFound.
-       // However, to maintain some robustness for dynamic client-side slug changes not triggering a new getStaticProps:
-       setPost(null);
-       setError('Article not found');
+        // If getStaticProps is working correctly, this path (slug exists, no initialPost, no fallback)
+        // should ideally not be hit frequently, as getStaticProps would have returned notFound.
+        // However, to maintain some robustness for dynamic client-side slug changes not triggering a new getStaticProps:
+        setPost(null);
+        setError('Article not found');
       }
     }
   }, [slug, initialPost]);
@@ -52,14 +67,14 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
     return <div>Article not found</div>;
   }
   const articleLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
     image: post.featuredImage,
     datePublished: post.publishedDate,
     author: {
-      "@type": "Person",
+      '@type': 'Person',
       name: post.author.name,
     },
   };
@@ -69,7 +84,13 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
       <NextSeo
         title={post.title}
         description={post.excerpt}
-        openGraph={{ title: post.title, description: post.excerpt, images: post.featuredImage ? [{ url: post.featuredImage }] : undefined }}
+        openGraph={{
+          title: post.title,
+          description: post.excerpt,
+          images: post.featuredImage
+            ? [{ url: post.featuredImage }]
+            : undefined,
+        }}
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(articleLd)}</script>
@@ -90,7 +111,9 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
           <div>
             <p className="m-0 font-medium">{post.author.name}</p>
             {post.author.title && (
-              <p className="m-0 text-sm text-zion-slate-light">{post.author.title}</p>
+              <p className="m-0 text-sm text-zion-slate-light">
+                {post.author.title}
+              </p>
             )}
           </div>
         </div>
@@ -111,22 +134,27 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
   );
 };
 
-
 export default BlogPostPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Pre-render only the sample posts. Others will be generated on demand.
-  const paths = BLOG_POSTS.map((p) => ({ params: { slug: p.slug } }));
-  return { paths, fallback: 'blocking' };
+  const dir = path.join(process.cwd(), 'content', 'blog');
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
+  const paths = files.map((f) => ({
+    params: { slug: f.replace(/\.md$/, '') },
+  }));
+  return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({ params }: { params?: { slug?: string } }) => {
+export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
+  params,
+}: {
+  params?: { slug?: string };
+}) => {
   const slug = params?.slug as string;
-  const post = BLOG_POSTS.find((p) => p.slug === slug) || null; // Changed from 'fallback' to 'post' for clarity
-
-  if (!post) { // Changed from 'fallback' to 'post'
+  const filePath = path.join(process.cwd(), 'content', 'blog', `${slug}.md`);
+  const post = parseMarkdown(filePath);
+  if (!post) {
     return { notFound: true };
   }
-  return { props: { initialPost: post }, revalidate: 60 }; // Changed from 'fallback' to 'post'
+  return { props: { initialPost: post }, revalidate: 60 };
 };
-
