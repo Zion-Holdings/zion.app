@@ -64,9 +64,9 @@
       *   `config_integrity.log` shows:
           *   "Warning: Target file 'babel.config.js' not found. Skipping."
           *   If `babel.config.js` was in the previous `checksums.txt`: "Monitored file 'babel.config.js' has been deleted."
-      *   The entry for `babel.config.js` is removed from `checksums.txt`. (The script does not currently attempt to auto-revert deleted files).
-      *   Notification sent: "File Deleted" for `babel.config.js`.
-      *   **Manual Action for Test Reset**: To continue testing with this file, manually restore it: `git checkout HEAD -- babel.config.js`. The *next* run of the script would then treat it as a "newly tracked" file if it was previously removed from `checksums.txt`.
+      *   The script attempts to restore `babel.config.js` using `git checkout HEAD -- babel.config.js`.
+      *   On success, `config_integrity.log` records the restoration and updates `checksums.txt` with the new checksum. A notification "File Deleted & Restored" is sent.
+      *   On failure, `config_integrity.log` notes the error and the entry is removed from `checksums.txt`. A "File Deleted & Restore FAILED" notification is sent.
 
 **5. Test Case: File Not Found (Initially)**
    a. Add a non-existent file path (e.g., `nonexistent_config.yml`) to `scripts/config_integrity_check.txt`.
