@@ -26,6 +26,7 @@ The frontend is built using Next.js and React, with TypeScript as the primary la
 -   **Authentication:** NextAuth.js (client-side integration via `AuthProvider` in `src/context/auth/`), interacting with Supabase.
 -   **Internationalization (i18n):** `i18next`, `react-i18next`.
 -   **Web3/Decentralization:** Ethers.js, Helia, libp2p, OrbitDB (client-side interactions).
+    -   Custom `useTokenBalance` hook retrieves ERC20 balances when a wallet is connected.
 -   **Error Monitoring:** Sentry (`@sentry/nextjs`).
 -   **Testing:**
     -   Jest (with React Testing Library) for unit/integration tests (tests primarily in `__tests__/` at root).

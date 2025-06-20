@@ -1,29 +1,13 @@
 // src/components/ConnectWalletButton.tsx
 import React from 'react';
-import { useWallet } from '@/context/WalletContext'; // Adjust path if needed
+import { useWallet } from '@/context/WalletContext';
+import { useTokenBalance } from '@/hooks/useTokenBalance';
+import { ZION_TOKEN_CONTRACT_ADDRESS } from '@/config/governanceConfig';
 
 const ConnectWalletButton: React.FC = () => {
-  const { isConnected, connectWallet, disconnectWallet, displayAddress, address, chainId } = useWallet();
+  const { isConnected, connectWallet, disconnectWallet, displayAddress, address, chainId, provider } = useWallet();
 
-  // Placeholder for ZION$ balance
-  const [zionBalance, setZionBalance] = React.useState<string | null>(null);
-
-  React.useEffect(() => {
-    if (isConnected && address) {
-      // TODO: Implement actual ZION$ balance fetching here
-      // 1. Check if ZION_TOKEN_CONTRACT_ADDRESS is set
-      // 2. Use ethers.js to interact with the contract (if ERC20)
-      //    const contract = new ethers.Contract(ZION_TOKEN_CONTRACT_ADDRESS, ERC20_ABI, provider);
-      //    const balance = await contract.balanceOf(address);
-      //    setZionBalance(ethers.utils.formatUnits(balance, 18)); // Assuming 18 decimals
-      // OR
-      // 3. Fetch from backend API if balance is off-chain
-      console.log(`Fetching ZION$ balance for ${address} on chain ${chainId}`);
-      setZionBalance("N/A"); // Placeholder
-    } else {
-      setZionBalance(null);
-    }
-  }, [isConnected, address, chainId]);
+  const zionBalance = useTokenBalance(address, ZION_TOKEN_CONTRACT_ADDRESS, provider);
 
   if (isConnected) {
     return (
