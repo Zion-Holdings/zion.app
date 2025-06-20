@@ -36,7 +36,7 @@ interface ContractFormProps {
   initialValues?: ContractFormValues;
   onFormValuesChange?: (values: ContractFormValues) => void;
   onContractGenerated: (contractContent: string) => void;
-  deployOptions?: DeploymentOptions;
+  _deployOptions?: DeploymentOptions;
   onDeployOptionsChange?: (options: DeploymentOptions) => void;
 }
 
