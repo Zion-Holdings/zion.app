@@ -24,7 +24,7 @@ export function ContractPreview({
   onDeploy, 
   onSign,
   onClose,
-  deployStatus,
+  _deployStatus,
   deploymentInfo
 }: ContractPreviewProps) {
   
