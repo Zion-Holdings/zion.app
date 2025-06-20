@@ -3,9 +3,11 @@ import { useRouter } from 'next/router'; // Changed from react-router-dom
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
 import { AlertCircle, CheckCircle, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { Helmet } from 'react-helmet-async';
@@ -16,6 +18,9 @@ const SignupSchema = Yup.object({
   email: Yup.string().email('Invalid email').required('Email is required'),
   password: Yup.string()
     .min(8, 'Password must be at least 8 characters')
+    .matches(/[A-Z]/, 'Password must include an uppercase letter')
+    .matches(/[a-z]/, 'Password must include a lowercase letter')
+    .matches(/[0-9]/, 'Password must include a number')
     .required('Password is required'),
   confirm: Yup.string()
     .oneOf([Yup.ref('password')], 'Passwords must match')
@@ -202,19 +207,20 @@ export default function Signup() {
             <label htmlFor="password" className="block text-sm font-medium">
               Password
             </label>
-            <Input
-              id="password"
-              type="password"
-              name="password"
-              data-testid="password-input"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              disabled={loading || emailVerificationRequired}
-            />
-            {formik.touched.password && formik.errors.password && (
-              <div className="text-red-500 text-sm">{formik.errors.password}</div>
-            )}
-          </div>
+          <Input
+            id="password"
+            type="password"
+            name="password"
+            data-testid="password-input"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            disabled={loading || emailVerificationRequired}
+          />
+          <PasswordStrengthMeter password={formik.values.password} />
+          {formik.touched.password && formik.errors.password && (
+            <div className="text-red-500 text-sm">{formik.errors.password}</div>
+          )}
+        </div>
           
           <div>
             <label htmlFor="confirm" className="block text-sm font-medium">
@@ -245,7 +251,10 @@ export default function Signup() {
               disabled={loading || emailVerificationRequired}
             />
             <label htmlFor="terms" className="text-sm">
-              I agree to the Terms and Conditions
+              I agree to the{' '}
+              <Link href="/terms" className="underline">Terms of Service</Link>{' '}
+              and{' '}
+              <Link href="/privacy" className="underline">Privacy Policy</Link>
             </label>
           </div>
           {formik.touched.terms && formik.errors.terms && (

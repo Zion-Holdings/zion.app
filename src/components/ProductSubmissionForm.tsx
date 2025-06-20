@@ -408,7 +408,7 @@ export function ProductSubmissionForm() {
                       <AspectRatio ratio={3/2}>
                         <Image
                           src={imagePreview}
-                          alt="Preview"
+                          alt="Product image preview"
                           width={600} // Example width, adjust as needed
                           height={400} // Example height, adjust as needed
                           className="w-full h-full object-cover"
