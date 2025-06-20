@@ -23,13 +23,13 @@ import { ContractFormValues } from "./ContractForm";
 
 interface PaymentTermsFieldsProps {
   form: UseFormReturn<ContractFormValues>;
-  talent: TalentProfile;
+  _talent: TalentProfile;
   handleMilestonesGenerated: (milestones: GeneratedMilestone[]) => void;
 }
 
 export function PaymentTermsFields({ 
   form, 
-  talent,
+  _talent,
   handleMilestonesGenerated 
 }: PaymentTermsFieldsProps) {
   return (
