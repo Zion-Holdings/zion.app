@@ -36,8 +36,6 @@ interface ContractFormProps {
   initialValues?: ContractFormValues;
   onFormValuesChange?: (values: ContractFormValues) => void;
   onContractGenerated: (contractContent: string) => void;
-  _deployOptions?: DeploymentOptions;
-  onDeployOptionsChange?: (options: DeploymentOptions) => void;
 }
 
 export function ContractForm({
@@ -46,8 +44,6 @@ export function ContractForm({
   initialValues,
   onFormValuesChange,
   onContractGenerated,
-  _deployOptions,
-  onDeployOptionsChange
 }: ContractFormProps) {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedMilestones, setGeneratedMilestones] = useState<GeneratedMilestone[]>([]);
