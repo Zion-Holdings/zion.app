@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { logError } from '@/utils/logError';
 import { suggestFix } from '@/utils/suggestFix';
-<<<<<<< HEAD
 
 =======
 >>>>>>> 811455ae44ee272872c503f5acbc946c1373d39f
