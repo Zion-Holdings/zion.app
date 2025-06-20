@@ -15,6 +15,8 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
 
+const LOGIN_TIMEOUT_MS = 15000; // 15 seconds timeout
+
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   console.log('[AuthProvider] Initializing...');
   const {
@@ -47,9 +49,18 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     password: string,
     rememberMe = false
   ) => {
+    setIsLoading(true); // Set loading true at the start of login attempt
     try {
-      // Make API call to our custom login endpoint
-      const { res, data } = await loginUser(email, password);
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error("Login timed out")), LOGIN_TIMEOUT_MS)
+      );
+
+      // Make API call to our custom login endpoint, raced with timeout
+      const { res, data } = await Promise.race([
+        loginUser(email, password),
+        timeoutPromise,
+      ]) as { res: any; data: any }; // Type assertion needed after Promise.race
+
       console.log('[AuthProvider] loginUser API call successful:', { res, data });
 
       // Our API uses a different approach - it directly returns user data from our custom login API
@@ -109,6 +120,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           description: "No user data received from server.",
           variant: "destructive",
         });
+        setIsLoading(false); // Ensure loading is stopped
         return { error: "No user data received from server." };
       }
 
@@ -121,7 +133,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       let toastMessage = "An unexpected error occurred during login. Please try again.";
       const errorTitle = "Login Failed";
 
-      if (error.isAxiosError && error.response) {
+      if (error.message === "Login timed out") {
+        toastMessage = "Login request timed out. Please check your connection and try again.";
+        // Ensure isLoading is set to false specifically for timeout
+        setIsLoading(false);
+      } else if (error.isAxiosError && error.response) {
         // Error from API response (e.g., 401, 403, 400, 500)
         console.error('[AuthProvider] login API response:', error.response); // Log the full API response
         const apiData = error.response.data; // This is the response body from your API
@@ -155,8 +171,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         description: toastMessage,
         variant: "destructive",
       });
+      setIsLoading(false); // Ensure isLoading is false in all error paths of login
       return { error: toastMessage }; // This is what LoginForm.tsx expects
     }
+    // Removed finally block here as onAuthStateChange and specific error paths handle setIsLoading(false)
   };
 
   // Refactored signup method
@@ -262,10 +280,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       // Inside the onAuthStateChange callback
       async (event: any, session: any) => {
+              console.log('[AuthProvider DEBUG] onAuthStateChange: Entered. Current isLoading:', isLoading);
               console.log('[AuthProvider DEBUG] onAuthStateChange triggered. Event:', event);
               console.log('[AuthProvider DEBUG] Session object:', JSON.stringify(session, null, 2));
       
               setIsLoading(true); // Ensure isLoading is true at the start
+              console.log('[AuthProvider DEBUG] onAuthStateChange: setIsLoading(true) called. New isLoading:', isLoading);
       
               try {
                 if (session?.user) {
@@ -276,7 +296,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     console.log('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', session.user.id);
                     // Explicitly log the exact query being made
                     console.log('[AuthProvider DEBUG] Supabase query: supabase.from("profiles").select("*").eq("id", session.user.id).single()');
-
+                    console.log('[AuthProvider DEBUG] onAuthStateChange: About to fetch profile. Session user available:', !!session?.user);
                     const { data: profile, error: profileError } = await supabase
                       .from('profiles')
                       .select('*')
@@ -288,6 +308,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
                     if (profileError) {
                       console.error("[AuthProvider DEBUG] Error fetching user profile:", profileError);
+                      console.error('[AuthProvider DEBUG] onAuthStateChange: Profile fetch failed.', profileError);
                       let errorMessage = 'An error occurred while loading your profile. Please try again or contact support.';
                       if (profileError instanceof Error) {
                         errorMessage = profileError.message;
@@ -322,6 +343,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                         if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED') {
                           console.log('[AuthProvider DEBUG] Event is SIGNED_IN/TOKEN_REFRESHED/USER_UPDATED. Calling handleSignedIn.');
                           console.log('[AuthProvider DEBUG] User object being passed to handleSignedIn:', JSON.stringify(mappedUser, null, 2));
+                          console.log('[AuthProvider DEBUG] onAuthStateChange: Calling handleSignedIn.');
                           handleSignedIn(mappedUser);
         
                           // Redirection logic
@@ -350,6 +372,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                         }
                       } else {
                         console.error("[AuthProvider DEBUG] Mapped user is null. Not updating user state. Mapping failed or profile was insufficient.");
+                        console.warn('[AuthProvider DEBUG] onAuthStateChange: mappedUser is null after mapping.');
                         // Consider if user should be cleared or toast shown if mapping fails but profile was technically fetched
                          toast({
                             title: "User Data Error",
@@ -361,6 +384,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                       }
                     } else { // Profile is null, but no error
                       console.warn("[AuthProvider DEBUG] Profile not found for user (no error, but profile is null):", session.user.id);
+                      console.warn('[AuthProvider DEBUG] onAuthStateChange: Profile fetched but is null.');
                       toast({
                         title: "Profile Not Found",
                         description: "Login successful, but your profile could not be found. Please contact support.",
@@ -382,11 +406,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     // Potentially call cleanupAuthState() or handleSignedOut() if appropriate
                   }
                 } else { // No session or session.user is null
+                  console.log('[AuthProvider DEBUG] onAuthStateChange: No session or session.user. Event:', event);
                   console.log('[AuthProvider DEBUG] No session or session.user. Clearing user state. Event:', event);
                   setUser(null);
                   setAvatarUrl(null);
                   if (event === 'SIGNED_OUT') {
                     console.log('[AuthProvider DEBUG] Event is SIGNED_OUT, calling handleSignedOut.');
+                    console.log('[AuthProvider DEBUG] onAuthStateChange: Calling handleSignedOut.');
                     handleSignedOut(); // Ensure this is called
                     // Optional: redirect to login if not already there or on a public page
                     // if (router.pathname !== '/auth/login') router.replace('/auth/login');
@@ -397,7 +423,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 setUser(null); // Ensure user state is cleared
                 setAvatarUrl(null);
               } finally {
+                console.log('[AuthProvider DEBUG] onAuthStateChange: Entering finally block. Current isLoading:', isLoading);
                 setIsLoading(false); // Ensure isLoading is false at the end
+                console.log('[AuthProvider DEBUG] onAuthStateChange: setIsLoading(false) called. New isLoading:', isLoading);
                 console.log('[AuthProvider DEBUG] onAuthStateChange finished processing. isLoading set to false.');
               }
             }
