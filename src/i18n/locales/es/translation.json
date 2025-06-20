@@ -42,7 +42,7 @@
   "cart": {
     "title": "Tu Carrito",
     "empty": "Tu carrito está vacío",
-    "browse_marketplace": "Explorar Mercado",
+    "continue_shopping": "Seguir comprando",
     "subtotal": "Subtotal",
     "processing": "Procesando...",
     "checkout": "Pagar"
