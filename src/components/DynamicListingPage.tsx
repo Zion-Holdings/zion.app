@@ -152,8 +152,6 @@ export function DynamicListingPage({
     console.error("Listing filter error:", error);
   }
 
-  const paginatedListings = filteredListings;
-
   const handleRequestQuote = (listingId: string) => {
     setIsLoading(true);
 
