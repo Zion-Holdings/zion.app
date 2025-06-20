@@ -115,14 +115,15 @@ export default function SearchResultsPage({
               product={{
                 id: result.id,
                 title: result.title,
-                description: result.description,
-                price: result.price,
+                description: result.description || '',
+                price: result.price || 0,
                 images: result.image ? [result.image] : [],
                 rating: result.rating,
-                author: result.author,
-                tags: result.tags,
-                category: result.category,
-                currency: '$'
+                author: result.author || { name: '', id: '' },
+                tags: result.tags || [],
+                category: result.category || '',
+                currency: '$',
+                createdAt: new Date().toISOString()
               }}
             />
           </div>

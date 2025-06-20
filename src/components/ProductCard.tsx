@@ -9,7 +9,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { useRouter } from 'next/router';
-import { Product } from '@/types/product';
+import { Product } from '@/services/marketplace';
 import { useMediaQuery } from 'usehooks-ts';
 import { useEnqueueSnackbar } from '@/context/SnackbarContext';
 import { captureException } from '@/utils/sentry';

@@ -118,8 +118,12 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<ProductPageProps> = async (context) => {
-  const { id } = context.params || {};
+export const getServerSideProps: GetServerSideProps<ProductPageProps> = async ({
+  params,
+}: {
+  params?: { id?: string };
+}) => {
+  const id = params?.id;
 
   if (typeof id !== 'string') {
     return { notFound: true };
