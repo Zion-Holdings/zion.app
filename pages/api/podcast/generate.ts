@@ -7,11 +7,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-<<<<<<< HEAD
-  const { invitee = "Guest", topic = "Zion" } = req.body || {};
-=======
   const { invitee = 'Guest', topic = 'Zion' } = req.body || {};
->>>>>>> 2ebab79b0d36d84366b3fc49914d1bb3515d18d1
 
   const questions = [
     `Could you introduce yourself and tell us about your background?`,
@@ -24,7 +20,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   ];
 
   const script = `Intro (0:00): Welcome to the Zion Podcast. Today we chat with ${invitee}.\n` +
-    `Questions: \n` + questions.map((q, i) => `${i + 1}. ${q}`).join('\n') + `\n` +
+    `Questions: \n${questions.map((q, i) => `${i + 1}. ${q}`).join('\n')}\n` +
     `Closing (14:30): Thanks for joining us! Learn more at zion.community.`;
 
   res.status(200).json({ questions, script });
