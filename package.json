@@ -26,6 +26,8 @@
     "seed": "prisma db seed",
     "es:index": "node scripts/index-elasticsearch.js",
     "devnet": "node scripts/start-devnet.js",
+    "storybook": "storybook dev -p 6006",
+    "env:check": "npx ts-node --transpile-only scripts/check-env.ts",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test:node": "node -v",
     "check-updates": "ncu",

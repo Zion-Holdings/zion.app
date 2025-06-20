@@ -86,7 +86,9 @@ This will create an optimized production build in the `.next` directory.
     npm run playwright test # (or similar, check Playwright scripts)
     ```
 -   **Storybook (Component Development/Testing):**
-    *   **TODO:** Add command to run Storybook (e.g., `npm run storybook`).
+    ```bash
+    npm run storybook
+    ```
 
 ## Coding Conventions & Style Guides
 
@@ -102,7 +104,7 @@ The application employs a hybrid state management approach:
 2.  **Redux Toolkit:** For complex global client-side state (e.g., shopping cart, wishlist, detailed auth session info).
 3.  **React Context API:** For simpler global state that needs to be shared across components (e.g., theme, basic auth status, wallet connection).
 
--   **TODO:** Add a link to `docs/frontend_state_management_guidelines.md` once it's created (as per a later plan step).
+-   See [Frontend State Management Guidelines](../docs/frontend_state_management_guidelines.md) for more details on choosing between React Query, Redux Toolkit and React Context.
 
 ## Key Architectural Decisions & Notes
 
