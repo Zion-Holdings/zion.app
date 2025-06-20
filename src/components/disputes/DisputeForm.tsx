@@ -89,7 +89,7 @@ export function DisputeForm({
         // Future enhancement: Upload attachments
         // For now we just log the files that would be uploaded
         if (files.length > 0) {
-          console.log(`Would upload ${files.length} files for dispute ${dispute.id}`);
+          // console.log(`Would upload ${files.length} files for dispute ${dispute.id}`);
         }
         
         toast.success("Your dispute has been submitted");
