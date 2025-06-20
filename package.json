@@ -93,6 +93,7 @@
     "@supabase/supabase-js": "^2.50.0",
     "@tanstack/react-query": "^5.80.7",
     "@types/lodash.debounce": "^4.0.9",
+    "@types/next": "^9.0.0",
     "axios-retry": "^4.5.0",
     "blockstore-core": "^5.0.4",
     "boolean": "latest",

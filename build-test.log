@@ -4,20 +4,54 @@
 
  ⚠ Linting is disabled.
   ▲ Next.js 14.2.30
-  - Experiments (use with caution):
-    · instrumentationHook
+  - Environments: .env.local
 
    Checking validity of types ...
+   Creating an optimized production build ...
 Failed to compile.
 
-./src/components/contracts/templates/TemplateList.tsx:40:20
-Type error: Cannot find name 'useLocation'.
+./src/components/CategoriesSection.js
+Module not found: Can't resolve 'react-router-dom'
 
-[0m [90m 38 |[39m   [36mconst[39m { user } [33m=[39m useAuth()[33m;[39m[0m
-[0m [90m 39 |[39m   [36mconst[39m router [33m=[39m useRouter()[33m;[39m[0m
-[0m[31m[1m>[22m[39m[90m 40 |[39m   [36mconst[39m location [33m=[39m useLocation()[33m;[39m[0m
-[0m [90m    |[39m                    [31m[1m^[22m[39m[0m
-[0m [90m 41 |[39m[0m
-[0m [90m 42 |[39m   [36mconst[39m handleDeleteClick [33m=[39m (templateId[33m:[39m string) [33m=>[39m {[0m
-[0m [90m 43 |[39m     setTemplateToDelete(templateId)[33m;[39m[0m
-Next.js build worker exited with code: 1 and signal: null
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/Categories.js
+./pages/categories.tsx
+
+./src/components/CategoryCard.js
+Module not found: Can't resolve 'react-router-dom'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/search/[slug].tsx
+
+./src/components/DynamicListingPage.js
+Module not found: Can't resolve 'react-router-dom'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/AdditionalTalentsPage.js
+./pages/additional-talents.tsx
+
+./src/components/ErrorResetOnRouteChange.js
+Module not found: Can't resolve 'react-router-dom'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./pages/_app.tsx
+
+./src/components/FeaturedListingsSection.js
+Module not found: Can't resolve 'react-router-dom'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/pages/Home.js
+./pages/index.tsx
+
+
+> Build failed because of webpack errors
