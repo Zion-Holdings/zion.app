@@ -7,11 +7,10 @@ import { LoginModal } from '@/components/auth/LoginModal';
 
 interface FavoriteButtonProps {
   itemId: string;
-  itemType: string;
   className?: string;
 }
 
-export function FavoriteButton({ itemId, itemType, className }: FavoriteButtonProps) {
+export function FavoriteButton({ itemId, className }: FavoriteButtonProps) {
   const { isWishlisted, toggle } = useWishlist();
   const { isAuthenticated } = useAuth();
   const [loginOpen, setLoginOpen] = React.useState(false);
