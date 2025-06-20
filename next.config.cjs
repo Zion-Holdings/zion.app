@@ -1,4 +1,4 @@
-import { withSentryConfig } from "@sentry/nextjs";
+const { withSentryConfig } = require('@sentry/nextjs');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -20,14 +20,105 @@ const nextConfig = {
 
   images: {
     unoptimized: false, // Enabled Next.js Image Optimization for performance
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pravatar.cc',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'randomuser.me',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'assets.aceternity.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pbs.twimg.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.gravatar.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdnjs.cloudflare.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.jsdelivr.net',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
-  eslint: {
-    // ignoreDuringBuilds: true, // Ensuring ESLint runs during build
+
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  // Enable source maps in production for easier stack traces in Sentry
+
+  reactStrictMode: true,
   productionBrowserSourceMaps: true, // Re-enabled
 
   // Custom headers for performance and security
@@ -109,15 +200,6 @@ const nextConfig = {
     swcMinify: true,
     // Enable modern JavaScript features
     esmExternals: true,
-    // Improve tree shaking
-    modularizeImports: {
-      '@mui/material': {
-        transform: '@mui/material/{{member}}',
-      },
-      '@mui/icons-material': {
-        transform: '@mui/icons-material/{{member}}',
-      },
-    },
   },
 
   transpilePackages: [
@@ -180,7 +262,8 @@ const nextConfig = {
                 );
               },
               name(module) {
-                const hash = require('crypto').createHash('sha1');
+                const crypto = require('crypto');
+                const hash = crypto.createHash('sha1');
                 hash.update(module.identifier());
                 return hash.digest('hex').substring(0, 8);
               },
@@ -208,49 +291,16 @@ const nextConfig = {
 
 const isNetlify = process.env.NETLIFY === 'true';
 
-const sentryWebpackPluginOptions = {
-  // Additional config options for the Sentry Webpack plugin. Keep in mind that
-  // the following options are set automatically, and overriding them is not
-  // recommended:
-  //   release, url, authToken, configFile, stripPrefix,
-  //   urlPrefix, include, ignore
+if (isNetlify) {
+  console.log('Building for Netlify deployment...');
+}
 
-  silent: true, // Suppresses all logs
+module.exports = withSentryConfig(nextConfig, {
+  org: 'ziontechgroup',
+  project: 'zion-ai-marketplace',
+  widenClientFileUpload: true,
+  transpileClientSDK: true,
   hideSourceMaps: true,
-  autoInstrumentServerFunctions: true,
-  // Netlify's serverless functions don't need the server webpack plugin.
-  disableServerWebpackPlugin: isNetlify,
-  // For all available options, see:
-  // https://github.com/getsentry/sentry-webpack-plugin#options
-};
-
-const sentryOptions = {
-  // Suppresses Sentry logs during build
-  silent: true,
-  // For all available options, see:
-  // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
-  sentry: {
-    // Enables automatic instrumentation of Vercel Cron Monitors.
-    // See the following for more information:
-    // https://docs.sentry.io/ zowel মনিটরিং/crons/
-    // https://vercel.com/docs/cron-jobs
-    // autoInstrumentCronMonitor: true, // Example, if you use Vercel Crons
-
-    // Transpiles SDK to be compatible with IE11 (increases bundle size)
-    // transpileClientSDK: false,
-
-    // Routes browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers.
-    // This can increase your server load as well as your hosting bill.
-    // Note: Check that the configured route will not match with your Next.js pages and API routes.
-    // tunnelRoute: "/monitoring",
-
-    // Automatically tree-shake Sentry logger statements to reduce bundle size
-    // disableLogger: true,
-  }
-};
-
-
-export default withSentryConfig(nextConfig, sentryOptions, sentryWebpackPluginOptions);
-// If you're using a next-i18next.config.js file, uncomment the following (see https://github.com/i18next/next-i18next#readme):
-// import { i18n } from "./next-i18next.config.js"; // Changed require to import
-// export default withSentryConfig({ ...nextConfig, i18n }, sentryOptions, sentryWebpackPluginOptions); // Changed module.exports to export default
+  disableLogger: true,
+  automaticVercelMonitors: true,
+});
