@@ -4,9 +4,11 @@ import path from 'path';
 import type { GetStaticProps } from 'next';
 
 export const getStaticProps: GetStaticProps<DocsPageProps> = async () => {
-  const filePath = path.join(process.cwd(), 'docs', 'gitbook', 'README.md');
-  const content = fs.readFileSync(filePath, 'utf8');
-  return { props: { content } };
+  // Temporarily disable content fetching to debug timeout
+  // const filePath = path.join(process.cwd(), 'docs', 'gitbook', 'README.md');
+  // const content = fs.readFileSync(filePath, 'utf8');
+  // return { props: { content } };
+  return { notFound: true }; // More aggressive
 };
 
 export default DocsPage;

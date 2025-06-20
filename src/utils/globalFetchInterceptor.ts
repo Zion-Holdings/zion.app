@@ -9,7 +9,9 @@ if (typeof window !== "undefined" && window.fetch) {
       const response = await originalFetch(...args);
       if (!response.ok) {
         const enqueueSnackbar = getEnqueueSnackbar();
-        const url = typeof args[0] === 'string' ? args[0] : args[0].url;
+       const url = typeof args[0] === 'string'
+         ? args[0]
+         : (args[0] instanceof URL ? args[0].href : args[0].url);
         if (response.status === 401 && url.includes('/api/auth/session')) {
           enqueueSnackbar('Session expired', { variant: 'error' });
         } else {

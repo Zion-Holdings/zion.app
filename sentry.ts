@@ -1,4 +1,11 @@
 import * as Sentry from "@sentry/nextjs";
+import {
+  feedbackIntegration,
+  browserProfilingIntegration,
+  browserTracingIntegration,
+  replayIntegration,
+} from "@sentry/browser"; // Attempting import from @sentry/browser
+// import { captureRouterTransitionStart } from "@sentry/nextjs"; // Removing this as it causes warning and might be handled by browserTracingIntegration
 import getConfig from "next/config";
 import { safeSessionStorage } from "@/utils/safeStorage";
 
@@ -13,18 +20,19 @@ export function register() {
     return;
   }
 
-  const integrations = [
-    Sentry.feedbackIntegration({ colorScheme: "system" }),
-    Sentry.browserProfilingIntegration(),
-    Sentry.browserTracingIntegration({ enableInp: true })
+  const baseIntegrations = [
+    feedbackIntegration({ colorScheme: "system" }),
+    browserProfilingIntegration(),
+    browserTracingIntegration({ enableInp: true })
   ];
 
   let replaysSessionSampleRate = 0.1;
   let replaysOnErrorSampleRate = 1.0;
+  let finalIntegrations = [...baseIntegrations];
 
   if (safeSessionStorage.isAvailable) {
-    integrations.unshift(
-      Sentry.replayIntegration({ maskAllText: true, blockAllMedia: true })
+    finalIntegrations.unshift(
+      replayIntegration({ maskAllText: true, blockAllMedia: true })
     );
   } else {
     console.warn('sessionStorage is not available; disabling Sentry Replay.');
@@ -32,6 +40,7 @@ export function register() {
     replaysOnErrorSampleRate = 0;
   }
 
+  /*
   Sentry.init({
     dsn: SENTRY_DSN,
     release: SENTRY_RELEASE,
@@ -39,10 +48,13 @@ export function register() {
     tracesSampleRate: 1.0,
     replaysSessionSampleRate,
     replaysOnErrorSampleRate,
-    integrations,
+    integrations: finalIntegrations,
     tracePropagationTargets: ["localhost", /^https?:\/\//, /^\//],
     profilesSampleRate: 1.0
   });
+  */
+  console.log("sentry.ts: Client-side Sentry initialization SKIPPED to debug timeout.");
+
 
   if (SENTRY_RELEASE) {
     Sentry.setTag("release", SENTRY_RELEASE);
@@ -53,8 +65,9 @@ export function register() {
   console.log(`Sentry initialized. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
 }
 
-export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
+// Now using the direct import if available
+// export const onRouterTransitionStart = captureRouterTransitionStart; // Removing this
 
 export function onRequestError(error: unknown) {
-  Sentry.captureRequestError(error);
+  Sentry.captureRequestError(error); // Assuming captureRequestError is a valid method on Sentry object
 }
