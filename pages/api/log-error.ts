@@ -4,7 +4,6 @@ import path from 'path';
 import { PrismaClient, ErrorAnalysisStatus } from '@prisma/client';
 import { captureException } from '../../src/utils/sentry'; // Adjusted path
 import type { NextApiRequest, NextApiResponse } from 'next';
-import type { ServerResponse } from 'http';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 
 const prisma = new PrismaClient();

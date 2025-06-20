@@ -7,7 +7,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const { invitee = 'Guest', bio = '', topic = 'Zion' } = req.body || {};
+  const { invitee = 'Guest', topic = 'Zion' } = req.body || {};
 
   const questions = [
     `Could you introduce yourself and tell us about your background?`,

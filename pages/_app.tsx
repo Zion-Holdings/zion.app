@@ -27,7 +27,6 @@ import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
 import '../src/index.css';
 import * as Sentry from '@sentry/nextjs';
 import getConfig from 'next/config';
-import { captureException } from '@/utils/sentry';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 import { validateProductionEnvironment, initializeServices } from '@/utils/environmentConfig';
 // If you have global CSS, import it here:

@@ -1,6 +1,5 @@
 import React from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
-import { mutate } from 'swr';
 import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { logError } from '@/utils/logError';
