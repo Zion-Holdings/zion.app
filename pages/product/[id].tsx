@@ -94,6 +94,8 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
 
 export const getServerSideProps: GetServerSideProps<ProductPageProps> = async ({
   params,
+}: {
+  params?: { id?: string };
 }) => {
   const id = params?.id as string;
 
