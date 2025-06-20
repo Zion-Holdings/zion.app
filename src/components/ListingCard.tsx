@@ -1,7 +1,7 @@
-
+import React from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface ListingCardProps {
   id?: string;
@@ -32,7 +32,7 @@ export function ListingCard({
 
   return (
     <Link
-      to={`/profile/${profileId}`}
+      href={`/profile/${profileId}`}
       tabIndex={0}
       className={cn(
         "flex flex-col overflow-hidden rounded-lg border border-zion-blue-light bg-zion-blue hover:border-zion-purple/50 transition-all duration-300 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple",

@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { LoginForm } from "./LoginForm";
 import { AuthButtons } from "@/components/AuthButtons";
 
@@ -13,7 +13,7 @@ export function LoginCard() {
         <div className="mt-2 text-sm text-zion-slate-light flex justify-center space-x-1">
           <span>Don't have an account?</span>
           <Link
-            to="/signup"
+            href="/signup"
             className="font-medium text-zion-cyan hover:text-zion-cyan-light"
             style={{ color: "#0af" }}
           >

@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { slugify } from "@/lib/slugify";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface CategoryCardProps {
   title: string;
@@ -23,7 +23,7 @@ export function CategoryCard({ title, description, icon, color, count, className
 
   return (
     <Link
-      to={`/category/${slug}`}
+      href={`/category/${slug}`}
       tabIndex={0}
       data-testid="category-card" // Added data-testid
       className={cn(
