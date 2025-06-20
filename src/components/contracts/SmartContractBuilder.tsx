@@ -41,7 +41,7 @@ export function SmartContractBuilder({
   const [deployStatus, setDeployStatus] = useState<string>('');
   const [deploymentInfo, setDeploymentInfo] = useState<SmartContractInfo | null>(null);
   
-  const { generateSolidityContract, deploySmartContract } = useSmartContracts();
+  const { deploySmartContract } = useSmartContracts();
 
   const handleLoadTemplate = (templateData: ContractFormValues) => {
     setFormValues(templateData);
