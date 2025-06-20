@@ -1,6 +1,6 @@
 
 import { useQuery } from '@tanstack/react-query';
-// import { TALENT_PROFILES } from '@/data/talentData'; // Remove mock data import
+import { TALENT_PROFILES } from '@/data/talentData';
 import { TalentListResponse, TalentProfile } from '@/types/talent';
 
 async function fetchTalentProfiles(page = 1, limit = 12): Promise<TalentListResponse> {
@@ -20,9 +20,19 @@ export function useTalentData(page = 1, limit = 12) {
     initialData: { talents: [], total: 0 },
   });
 
+  let talents = data?.talents ?? [];
+  let total = data?.total ?? 0;
+
+  // Fallback to local sample data if API returns no results or errors
+  if ((!isLoading && talents.length === 0) || error) {
+    const startIndex = (page - 1) * limit;
+    talents = TALENT_PROFILES.slice(startIndex, startIndex + limit);
+    total = TALENT_PROFILES.length;
+  }
+
   return {
-    talents: data?.talents ?? [],
-    total: data?.total ?? 0,
+    talents,
+    total,
     isLoading,
     error: error ? error : null, // Ensure error is Error or null
   };
