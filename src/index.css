@@ -350,3 +350,10 @@ body {
 .request-btn { background:#00bcd4;color:#fff; }
 .request-textarea { color:#000; }
 .request-textarea::placeholder { color:#777; }
+
+@media (max-width: 640px) {
+  .search-dropdown {
+    max-width: 90vw;
+    left: 5vw;
+  }
+}
