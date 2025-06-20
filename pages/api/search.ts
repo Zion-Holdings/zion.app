@@ -54,7 +54,21 @@ function handler(
     });
   }
 
-  const match = (text?: string) => text?.toLowerCase().includes(q);
+  const slugify = (str: string) =>
+    str
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+
+  const querySlug = slugify(q);
+
+  const match = (text?: string) => {
+    if (!text) return false;
+    const lower = text.toLowerCase();
+    if (lower.includes(q)) return true;
+    const textSlug = slugify(text);
+    return textSlug.includes(querySlug);
+  };
   const matchTags = (tags?: string[]) => tags?.some((tag) => match(tag));
 
   // Helper function to create slug from title
