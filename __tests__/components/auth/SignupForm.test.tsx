@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { renderWithProviders, screen, fireEvent, waitFor } from '__tests__/test-utils.tsx';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import { toast } from '@/hooks/use-toast';
@@ -55,7 +55,7 @@ describe('SignupForm', () => {
       },
     });
 
-    render(<SignupForm />);
+    renderWithProviders(<SignupForm />);
     
     await fillOutForm();
     await fireEvent.click(screen.getByRole('button', { name: /create account/i }));
@@ -92,7 +92,7 @@ describe('SignupForm', () => {
     const { signIn } = require('next-auth/react');
     signIn.mockResolvedValueOnce({ ok: true });
 
-    render(<SignupForm />);
+    renderWithProviders(<SignupForm />);
     
     await fillOutForm();
     await fireEvent.click(screen.getByRole('button', { name: /create account/i }));
@@ -123,7 +123,7 @@ describe('SignupForm', () => {
       },
     });
 
-    render(<SignupForm />);
+    renderWithProviders(<SignupForm />);
     
     await fillOutForm();
     await fireEvent.click(screen.getByRole('button', { name: /create account/i }));
@@ -150,7 +150,7 @@ describe('SignupForm', () => {
       message: 'Network Error',
     });
 
-    render(<SignupForm />);
+    renderWithProviders(<SignupForm />);
     
     await fillOutForm();
     await fireEvent.click(screen.getByRole('button', { name: /create account/i }));
@@ -175,7 +175,7 @@ describe('SignupForm', () => {
       () => new Promise(resolve => setTimeout(resolve, 1000))
     );
 
-    render(<SignupForm />);
+    renderWithProviders(<SignupForm />);
     
     await fillOutForm();
     
@@ -195,7 +195,7 @@ describe('SignupForm', () => {
   });
 
   test('should validate form fields before submission', async () => {
-    render(<SignupForm />);
+    renderWithProviders(<SignupForm />);
     
     // Try to submit empty form
     await fireEvent.click(screen.getByRole('button', { name: /create account/i }));
@@ -212,7 +212,7 @@ describe('SignupForm', () => {
   });
 
   test('should validate password requirements', async () => {
-    render(<SignupForm />);
+    renderWithProviders(<SignupForm />);
     
     // Fill form with weak password
     await fireEvent.change(screen.getByLabelText(/first name/i), {
