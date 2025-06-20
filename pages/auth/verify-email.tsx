@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import { UserDetails } from "@/types/auth";
 import { useEffect, useState } from 'react';
+=======
+import React, { useEffect, useState } from 'react';
+>>>>>>> ec5dc85e1515fc597fc419c617d9c04931dd9702
 import { useRouter } from 'next/router';
 import { logError } from '@/utils/logError';
 import { suggestFix } from '@/utils/suggestFix';
