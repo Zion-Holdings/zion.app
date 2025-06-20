@@ -6,9 +6,11 @@ import axios from 'axios';
 import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
 import { Button } from "@/components/ui/button";
 import { Loader2, Sparkles, AlertTriangle } from "lucide-react";
+import Image from 'next/image';
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import useSWRMutation from "swr/mutation";
 import Skeleton, { SkeletonCard } from "@/components/ui/skeleton"; // Import SkeletonCard
 import { FilterSidebarSkeleton } from "@/components/skeletons/FilterSidebarSkeleton"; // Import FilterSidebarSkeleton
@@ -271,10 +273,24 @@ export default function EquipmentPage() {
             </Button>
           </div>
         </div>
-        <EmptyState
-          text="Equipment catalog is empty"
-          description="No equipment listings are currently available. Check back later for new additions."
-        />
+        <div className="text-center py-10">
+          <Image
+            src="/images/equipment-placeholder.svg"
+            alt="No equipment"
+            width={200}
+            height={200}
+            className="mx-auto mb-6"
+          />
+          <EmptyState
+            text="Equipment catalog is empty"
+            description="No equipment listings are currently available."
+          />
+          <Link href="/publish">
+            <Button className="mt-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
+              Be the first to list a talent
+            </Button>
+          </Link>
+        </div>
       </div>
     );
   }
