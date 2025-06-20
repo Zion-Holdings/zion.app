@@ -4,12 +4,6 @@ import { TalentProfile } from "@/types/talent";
 import { GeneratedMilestone } from "@/hooks/useMilestoneGenerator";
 import { ContractFormValues } from "../components/ContractForm";
 
-interface Milestone {
-  title: string;
-  description: string;
-  dueDate: string;
-  estimatedHours: number;
-}
 
 export async function generateContract(
   values: ContractFormValues, 
