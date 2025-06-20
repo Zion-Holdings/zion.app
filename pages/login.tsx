@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import * as Sentry from '@sentry/nextjs';
 import { toast } from '@/hooks/use-toast';
@@ -12,6 +12,37 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const { login, isLoading, isAuthenticated } = useAuth();
+  const [showLongLoadingMessage, setShowLongLoadingMessage] = useState(false);
+  const longLoadTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Effect for long loading message
+  useEffect(() => {
+    if (isLoading) {
+      // Clear any existing timer
+      if (longLoadTimerRef.current) {
+        clearTimeout(longLoadTimerRef.current);
+      }
+      // Set a timer to show the long loading message
+      longLoadTimerRef.current = setTimeout(() => {
+        if (isLoading) { // Check again if still loading
+          setShowLongLoadingMessage(true);
+        }
+      }, 25000); // 25 seconds
+
+      return () => {
+        // Cleanup: clear the timer if the component unmounts or isLoading changes
+        if (longLoadTimerRef.current) {
+          clearTimeout(longLoadTimerRef.current);
+        }
+      };
+    } else {
+      // If not loading, ensure the message is hidden and timer is cleared
+      setShowLongLoadingMessage(false);
+      if (longLoadTimerRef.current) {
+        clearTimeout(longLoadTimerRef.current);
+      }
+    }
+  }, [isLoading]);
 
   // Redirect if already authenticated
   useEffect(() => {
@@ -88,6 +119,11 @@ export default function Login() {
           <p className="text-sm text-muted-foreground">
             {isAuthenticated ? 'Redirecting...' : 'Loading...'}
           </p>
+          {isLoading && showLongLoadingMessage && (
+            <p className="mt-4 text-xs text-muted-foreground">
+              Login is taking longer than usual. Please check your internet connection or try refreshing the page. If the problem persists, please contact support.
+            </p>
+          )}
         </div>
       </div>
     );
