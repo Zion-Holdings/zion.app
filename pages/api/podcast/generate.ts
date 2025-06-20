@@ -20,7 +20,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   ];
 
   const script = `Intro (0:00): Welcome to the Zion Podcast. Today we chat with ${invitee}.\n` +
-    `Questions: \n` + questions.map((q, i) => `${i + 1}. ${q}`).join('\n') + `\n` +
+    `Questions: \n${questions.map((q, i) => `${i + 1}. ${q}`).join('\n')}\n` +
     `Closing (14:30): Thanks for joining us! Learn more at zion.community.`;
 
   res.status(200).json({ questions, script });

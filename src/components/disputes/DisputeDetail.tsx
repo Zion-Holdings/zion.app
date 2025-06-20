@@ -1,4 +1,4 @@
-import { DisputeReason } from "@/types/disputes";
+
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { useDisputes } from "@/hooks/useDisputes";
