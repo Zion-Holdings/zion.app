@@ -136,6 +136,15 @@ function determineBaseLogPath() {
     logError(`Failed to create fallback log directory at ${fallback}`, e);
   }
 
+  const tmpPath = '/tmp/watchdog-logs';
+  try {
+    fs.mkdirSync(tmpPath, { recursive: true });
+    fs.accessSync(tmpPath, fs.constants.W_OK);
+    return tmpPath;
+  } catch (e) {
+    logError(`Failed to create tmp log directory at ${tmpPath}`, e);
+  }
+
   return cwdPath;
 }
 
