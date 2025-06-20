@@ -1,20 +1,13 @@
-export interface Product {
+export interface ProductDetailsData {
   id: string;
+  name: string;
   title: string;
-  description?: string;
-  price?: number | null;
-  currency?: string;
-  images?: string[];
-  category?: string;
-  /** Average rating from user reviews */
-  rating?: number;
-  /** Total number of user reviews */
-  reviewCount?: number;
-  author?: {
-    name: string;
-    avatar?: string;
-  };
-  tags?: string[];
-  createdAt?: string;
-  updatedAt?: string;
+  description: string | null;
+  price: number | null;
+  currency: string | null;
+  category: string | null;
+  tags: string[];
+  images: any | null;
+  averageRating: number | null;
+  reviewCount: number;
 }
