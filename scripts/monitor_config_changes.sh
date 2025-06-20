@@ -117,13 +117,29 @@ while IFS= read -r target_file_path || [ -n "$target_file_path" ]; do
   log_message "Processing: $target_file_path"
 
   if [ ! -f "$target_file_path" ]; then
-    log_message "Warning: Target file '$target_file_path' not found. Skipping."
-    # If it was tracked, now it's gone. A notification for this might be useful.
-    # Check if it was in the old checksum file
+    log_message "Warning: Target file '$target_file_path' not found."
     stored_checksum_line=$(grep " $target_file_path$" "$CHECKSUM_FILE")
     if [ -n "$stored_checksum_line" ]; then
         log_message "Monitored file '$target_file_path' has been deleted."
-        send_notification "File Deleted" "$target_file_path" "File was previously tracked but is now missing."
+        if git ls-files --error-unmatch "$target_file_path" >/dev/null 2>&1; then
+          log_message "Attempting to restore '$target_file_path' from git."
+          git checkout HEAD -- "$target_file_path"
+          restore_exit_code=$?
+          if [ "$restore_exit_code" -eq 0 ]; then
+            restored_checksum=$(sha256sum "$target_file_path" | awk '{print $1}')
+            log_message "File '$target_file_path' restored. Checksum is now '$restored_checksum'."
+            echo "$restored_checksum $target_file_path" >> "$CHECKSUM_FILE_TMP"
+            send_notification "File Deleted & Restored" "$target_file_path" "File restored from git. New checksum: $restored_checksum."
+            continue
+          else
+            log_message "ERROR: Failed to restore '$target_file_path' (git checkout exit code: $restore_exit_code)."
+            send_notification "File Deleted & Restore FAILED" "$target_file_path" "File missing and restore attempt failed (code: $restore_exit_code)."
+            # Removal from tracking - don't add to new checksum file
+            continue
+          fi
+        else
+          send_notification "File Deleted" "$target_file_path" "File was previously tracked but is now missing."
+        fi
     fi
     # Do not add to CHECKSUM_FILE_TMP, effectively removing it
     continue

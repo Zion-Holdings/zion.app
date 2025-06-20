@@ -77,7 +77,7 @@ This Node.js service monitors specified frontend pages and backend endpoints, re
     * `LOG_LEVEL` – logging verbosity (`error`, `warn`, `info`, `debug`).
 
 6.  **Review and customize `optimize.sh`:**
-    The `optimize.sh` script is a placeholder. You should customize it to perform actual optimization tasks relevant to your environment (e.g., clearing caches, restarting services with PM2/Docker, rebuilding assets).
+    The `optimize.sh` script now runs `npm run build` and attempts to restart the application using `pm2` or `systemctl` if available. Adjust the commands as needed for your environment.
     Ensure the script is executable:
     ```bash
     chmod +x optimize.sh

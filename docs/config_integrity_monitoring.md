@@ -71,8 +71,8 @@ To run the script automatically at regular intervals (e.g., hourly), a cron job 
         - If the file is not tracked by Git, a warning is logged, and the checksum in `checksums.txt` is updated to the new, modified checksum. No revert is possible via Git.
 - **File Not Found**: If a file listed in `config_integrity_check.txt` is not found:
     - A warning is logged.
-    - If the file was previously tracked (i.e., an entry existed in `checksums.txt`), its entry is removed from `checksums.txt`, and a notification is sent.
-    - *(Note: For files tracked by Git, this means the script currently does not automatically restore a deleted tracked file. It will notify about its absence. Manual intervention or a `git checkout` would be needed to restore it, after which the script would pick it up as a new file to track or match its HEAD version.)*
+    - If the file was previously tracked (i.e., an entry existed in `checksums.txt`), the script attempts to restore it using `git checkout HEAD -- <file_path>`.
+    - The outcome of the restore attempt is logged. On success, the file's new checksum is stored and a notification is sent indicating the file was restored. On failure, a notification is still sent and the file is removed from tracking until manually restored.
 - **No Changes**: If a file is unchanged, the script typically logs this minimally or not at all to keep the main log focused on events. Its entry in `checksums.txt` remains the same.
 
 ## Manual Execution
