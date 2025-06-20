@@ -238,3 +238,4 @@ class ProductionErrorBoundary extends Component<Props, State> {
                   )}
                 </svg>
               </div>
+export default ProductionErrorBoundary;
