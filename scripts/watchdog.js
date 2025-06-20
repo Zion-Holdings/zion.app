@@ -344,7 +344,9 @@ function startMonitoring() {
   }
 
   console.log('Watchdog script started. Monitoring log files...');
-  appendToSelfHealLog(`[${new Date().toISOString()}] Watchdog script started.\n`);
+  appendToSelfHealLog(
+    `[${new Date().toISOString()}] Watchdog script started. Logs directory: ${BASE_LOG_PATH}\n`
+  );
 
   // Initialize Tailing Logic for Performance Log File
   try {
