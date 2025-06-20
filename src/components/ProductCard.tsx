@@ -40,12 +40,10 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
   const productTitle = typeof product.title === 'string' ? product.title : 'Untitled Product';
 
   const addToCart = () => {
-    if (!isAuthenticated) {
-      enqueueSnackbar("Please log in to add items", { variant: 'warning' });
-      router.push('/login?next=' + router.asPath);
-      return;
-    }
     dispatch(addItem({ id: product.id, title: productTitle, price: product.price ?? 0 }));
+    if (!isAuthenticated) {
+      enqueueSnackbar('Item added. Login to checkout.', { variant: 'info' });
+    }
   };
 
   const imageUrl = Array.isArray(product.images) && product.images.length > 0 ? product.images[0] : null;
