@@ -4,7 +4,6 @@ import { useForm, ControllerRenderProps } from "react-hook-form";
 import { 
   Card,
   CardContent,
-  CardFooter,
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
