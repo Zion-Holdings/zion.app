@@ -87,9 +87,14 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
           sizes={imageSizes}
         />
       ) : (
-        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-          <span className="text-gray-500">No Image</span>
-        </div>
+        <Image
+          src="/images/product-placeholder.svg"
+          alt="No product image available"
+          layout="fill"
+          objectFit="cover"
+          priority={false} // It's a placeholder, so not high priority
+          sizes={imageSizes} // Reuse existing imageSizes logic
+        />
       )}
       {active && (
         <div className="absolute top-2 left-2 p-1 rounded-full bg-background/70">
