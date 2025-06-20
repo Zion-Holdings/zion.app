@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
+import Skeleton from '@/components/ui/skeleton';
 import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import type { RootState, AppDispatch } from '@/store';
@@ -20,10 +21,13 @@ export default function CartPage() {
   const dispatch = useDispatch<AppDispatch>();
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [cartLoading, setCartLoading] = useState(true);
+  const [showEmpty, setShowEmpty] = useState(false);
 
   useEffect(() => {
     if (reduxItems.length > 0) {
       setItems(reduxItems);
+      setCartLoading(false);
     } else {
       const stored = safeStorage.getItem('zion_cart');
       if (stored) {
@@ -36,7 +40,14 @@ export default function CartPage() {
         setItems([]);
       }
     }
+    setCartLoading(false);
   }, [reduxItems]);
+
+  useEffect(() => {
+    if (!cartLoading && items.length === 0) {
+      setShowEmpty(true);
+    }
+  }, [cartLoading, items]);
 
   const updateQuantity = (id: string, qty: number) => {
     dispatch(updateQuantityAction({ id, quantity: qty }));
@@ -72,7 +83,16 @@ export default function CartPage() {
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
-  if (items.length === 0) {
+  if (cartLoading) {
+    return (
+      <div className="container py-10 space-y-4">
+        <Skeleton className="h-8 w-1/3" />
+        <Skeleton className="h-32 w-full" />
+      </div>
+    );
+  }
+
+  if (showEmpty) {
     return (
       <div className="container py-10 text-center">
         <img src="/placeholder.svg" alt="Empty cart" className="mx-auto mb-4" />
