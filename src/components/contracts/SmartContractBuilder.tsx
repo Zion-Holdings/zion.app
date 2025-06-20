@@ -139,7 +139,6 @@ export function SmartContractBuilder({
                   generatedContract={generatedContract}
                   talent={talent}
                   onClose={onClose}
-                  _deployStatus={deployStatus}
                   deploymentInfo={deploymentInfo}
                 />
                 
