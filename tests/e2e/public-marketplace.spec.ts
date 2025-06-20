@@ -6,8 +6,8 @@ test('guest can view marketplace listings', async ({ page }) => {
   await expect(page.locator('[data-testid="product-card"]').first()).toBeVisible();
 });
 
-test('unauthenticated user redirected to login on add to cart', async ({ page }) => {
+test('guest can add items to cart without redirect', async ({ page }) => {
   await page.goto('/marketplace');
   await page.locator('[data-testid="product-card"]').first().locator('button:has-text("Add to Cart")').click();
-  await expect(page.url()).toBe('/login?next=/marketplace');
+  await expect(page.url()).toBe('/marketplace');
 });
