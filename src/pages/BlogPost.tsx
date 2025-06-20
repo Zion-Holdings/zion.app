@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, ChevronLeft, ChevronRight, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import type { BlogPost as BlogPostType } from "@/types/blog";
 import { Separator } from "@/components/ui/separator";
+import ReactMarkdown from 'react-markdown';
 
 // Importing the sample blog posts - in a real app, you would fetch this from an API
 import { BLOG_POSTS } from "@/data/blog-posts";
@@ -231,10 +232,9 @@ export default function BlogPost() {
           
           {/* Article content */}
           <div className="max-w-4xl mx-auto">
-            <div 
-              className="prose prose-lg prose-invert max-w-none"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+            <ReactMarkdown className="prose prose-lg prose-invert max-w-none">
+              {post.content}
+            </ReactMarkdown>
             
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mt-12">
