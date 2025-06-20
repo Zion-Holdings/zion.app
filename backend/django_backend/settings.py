@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django_otp.plugins.otp_totp',
     'governance.apps.GovernanceConfig',
     'deployment', # Added new deployment app - corrected path
+    'categories_app',
 ]
 
 MIDDLEWARE = [

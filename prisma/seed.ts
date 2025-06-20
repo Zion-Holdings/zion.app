@@ -1,7 +1,22 @@
 import { PrismaClient } from '@prisma/client';
+import { execSync } from 'child_process';
 const prisma = new PrismaClient();
 
 async function main() {
+  // At the beginning of main() or after prisma client initialization
+  console.log('Attempting to seed categories via Django management command...');
+  try {
+    // Adjust the path to manage.py and python executable if necessary based on your environment
+    // Assuming prisma/seed.ts is run from the root of the project
+    const command = 'python backend/manage.py seed_categories';
+    execSync(command, { stdio: 'inherit', cwd: process.cwd() }); // stdio: 'inherit' will show output from the command
+    console.log('Django seed_categories command executed successfully.');
+  } catch (error) {
+    console.error('Failed to execute Django seed_categories command:', error);
+    // Decide if you want to exit the process or continue with other seeding operations
+    // process.exit(1); // Uncomment to exit if Django seeding fails
+  }
+
   const products = [
     {
       id: 'demo-ai-writer',
@@ -73,14 +88,6 @@ async function main() {
 
   await prisma.talent.createMany({ data: talents, skipDuplicates: true });
 
-  const categories = [
-    { id: 'services', name: 'Services', slug: 'services', icon: 'Briefcase', active: true },
-    { id: 'talents', name: 'Talents', slug: 'talents', icon: 'Users', active: true },
-    { id: 'equipment', name: 'Equipment', slug: 'equipment', icon: 'HardDrive', active: true },
-    { id: 'innovation', name: 'Innovation', slug: 'innovation', icon: 'Lightbulb', active: true },
-  ];
-
-  await (prisma as any).category.createMany({ data: categories, skipDuplicates: true });
 }
 
 main()

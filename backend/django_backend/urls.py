@@ -21,6 +21,7 @@ urlpatterns = [
     # App-specific URLs
     path('auth/', include('authentication.urls')), # Assuming this is for other auth parts like password reset
     path('api/', include('public_api.urls')),
+    path('api/market/', include('categories_app.urls')), # Prefixing with 'market' to group marketplace related APIs
     path('api/governance/', include('governance.urls')),
     path('admin/ipo-portal/', include('ipo_portal.urls')), # App's own features like 2FA setup
 

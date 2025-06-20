@@ -214,9 +214,10 @@ export const fetchProducts = async (params: {
 
 export const fetchCategories = async (): Promise<Category[]> => {
   try {
-    console.log('Fetching marketplace categories...');
+    console.log('Fetching marketplace categories from /api/market/categories/ ...');
     
-    const response = await marketplaceClient.get('/categories', {
+    // Ensure the path is correct for the new Django endpoint
+    const response = await marketplaceClient.get('/api/market/categories/', { // MODIFIED PATH
       timeout: 10000, // 10 second timeout
     });
     
@@ -225,7 +226,7 @@ export const fetchCategories = async (): Promise<Category[]> => {
       return response.data;
     } else {
       console.warn('Categories API returned unexpected data format:', response.data);
-      return [];
+      return []; // Or throw an error if preferred
     }
   } catch (error: any) {
     console.error('Marketplace fetch failed - Categories:', {
@@ -234,8 +235,8 @@ export const fetchCategories = async (): Promise<Category[]> => {
       url: error.config?.url,
     });
     
-    // Return empty array for graceful degradation
-    return [];
+    // Re-throw the error so the hook can catch the raw error object
+    throw error;
   }
 };
 
