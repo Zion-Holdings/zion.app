@@ -1,5 +1,5 @@
 // pages/api/sentry-test-error-api.ts
-import type { NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 
@@ -11,9 +11,6 @@ if (process.env.NODE_ENV === 'development') {
 
 async function handler(
   _req: NextApiRequest,
-=======
-  
->>>>>>> a796ccd089a3e9795845f1d2f221410231e6cf64
   res: NextApiResponse
 ) {
   try {
