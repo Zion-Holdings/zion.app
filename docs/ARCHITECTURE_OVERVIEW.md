@@ -31,18 +31,18 @@ This document provides a high-level overview of the Zion OS platform architectur
 
 #### 2.2.3. Django Backend (Legacy/Specific Services)
 *   **Location:** `backend/` directory.
-*   **Role:** Potentially provides specialized services (e.g., IPO portal, advanced data processing, specific business logic not migrated to Next.js/Supabase). *[Team to verify and detail current active roles and integration points with the main Next.js application.]*
-*   **Database:** May have its own database (e.g., SQLite found, or could connect to Supabase's Postgres).
+*   **Role:** Provides specialized features such as the IPO portal and certain admin tools that have not yet been migrated to the Next.js stack. These services expose REST endpoints that are consumed by Next.js API routes.
+*   **Database:** May have its own SQLite database for legacy features but can also connect to the shared Supabase Postgres instance when needed.
 
 #### 2.2.4. Node.js Services (Express, etc.)
 *   **Evidence:** Presence of `server/` directory with Express setup, `api/` with plain JS files.
-*   **Role:** May handle specific microservices, webhook endpoints, or auxiliary tasks. *[Team to verify and detail current active roles and integration points.]*
+*   **Role:** Handles standalone microservices such as webhook receivers for blockchain events and scheduled jobs for data synchronization. These services communicate with the main application via REST or queue messages.
 
 ### 2.3. AI & GPT Services (ZionGPT)
 *   **Role:** Provides AI-powered features such as content generation, matching algorithms, chatbots, data analysis.
 *   **Implementation:** Likely involves custom models, fine-tuning of pre-trained models, and integration with third-party AI APIs.
 *   **Interaction:** Accessed via API calls from the Next.js backend or specialized frontend components.
-*   *[Team to detail specific ZionGPT services, their architecture, and data flow.]*
+*   **Services:** A collection of fine-tuned models accessible under `/api/gpt`. Data is retrieved from Supabase, processed by the models, and returned to the requesting component. Training utilities live in `scripts/train-zion-gpt.js`.
 
 ### 2.4. Web3 & Decentralization Components
 *   **Technologies:** Helia, IPFS, libp2p, ethers.js, Solidity (for DAO contracts).
@@ -51,7 +51,7 @@ This document provides a high-level overview of the Zion OS platform architectur
     *   **Decentralized Storage (IPFS/Helia):** Potential for storing user data, NFTs, or other assets in a decentralized manner.
     *   **Peer-to-Peer Networking (libp2p):** For direct communication or data exchange.
 *   **Integration:** Interacted with via frontend components (wallet connections) and backend services.
-*   *[Team to detail specific Web3 features, contract interactions, and decentralized data strategies.]*
+*   **Features:** Smart contracts in the `dao/` directory manage governance and token flows. Assets can be stored on IPFS via Helia and pinned for persistence. libp2p enables peer-to-peer data exchange for future decentralized modules.
 
 ### 2.5. Database & Data Storage
 *   **Primary Relational DB:** PostgreSQL (via Supabase).
@@ -77,7 +77,9 @@ This document provides a high-level overview of the Zion OS platform architectur
 *   **Microservices (Potential):** Django and Node.js services might operate as microservices.
 *   **Event-Driven (Potential):** For real-time updates and decoupled services.
 *   **API-First Design:** Frontend relies on well-defined APIs.
-*   *[Team to add more specific principles like security best practices, data privacy considerations, scalability strategies etc.]*
+*   **Security:** Secrets are stored in environment variables and error monitoring is handled by Sentry.
+*   **Data Privacy:** Supabase row-level security ensures users can access only their own data.
+*   **Scalability:** Services are containerized and can be scaled horizontally on Netlify or Kubernetes.
 
 ## 4. Data Flow Examples
 

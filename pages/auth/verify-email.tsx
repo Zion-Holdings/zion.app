@@ -1,11 +1,8 @@
+import { UserDetails } from "@/types/auth";
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { logError } from '@/utils/logError';
 import { suggestFix } from '@/utils/suggestFix';
-<<<<<<< HEAD
-
-=======
->>>>>>> 811455ae44ee272872c503f5acbc946c1373d39f
 import { useAuth } from '@/hooks/useAuth'; // To access user state
 
 const VerifyEmailPage = () => {
@@ -33,7 +30,7 @@ const VerifyEmailPage = () => {
       // We need to check if the user object is available, indicating Supabase processed the link.
       // Supabase might also specific 'type' in URL like 'signup' or 'email_change'
       // const params = new URLSearchParams(window.location.search);
-      // const type = params.get("type"); // Unused but available for future use
+      // Unused but available for future use
 
       // If there's a user session, it means Supabase has processed the verification link successfully.
       if (user && user.id) {
@@ -62,7 +59,7 @@ const VerifyEmailPage = () => {
           // Update the local user context if the backend sends back updated user details
          if (result.user && setUser) {
             // Assuming result.user is of type UserDetails
-           setUser((prevUser: any) => ({...prevUser, ...result.user}));
+           setUser((prevUser: UserDetails | null) => prevUser ? ({...prevUser, ...result.user}) : result.user);
          }
 
 
@@ -89,7 +86,7 @@ const VerifyEmailPage = () => {
          // Optional: Redirect to login or a page to request new verification
          setTimeout(() => {
             router.push('/auth/login');
-        }, 5000);
+        }, 3000);
       }
     };
 
@@ -97,19 +94,10 @@ const VerifyEmailPage = () => {
     // The `onAuthStateChange` in `useAuth` should handle this.
     // We add a listener for hash changes as well, just in case, or if not using Next.js router events for this.
     // However, onAuthStateChange in useAuth is the primary mechanism expected to handle session changes.
-    const handleHashChange = () => {
-        // This function is mostly a placeholder or for debugging.
-        // Supabase client library's onAuthStateChange is expected to react to the hash fragment
-        // containing the access token and type when the page loads after email verification link click.
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-
     // Initial call
     handleVerification();
 
     return () => {
-        window.removeEventListener('hashchange', handleHashChange);
     };
 
   }, [user, authLoading, router, setUser]);
