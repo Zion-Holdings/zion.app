@@ -32,6 +32,7 @@ import * as Sentry from '@sentry/nextjs';
 import getConfig from 'next/config';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 import { validateProductionEnvironment, initializeServices } from '@/utils/environmentConfig';
+import { initializePerformanceOptimizations } from '@/utils/performance';
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
@@ -70,6 +71,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       
       // Initialize global error handlers
       initializeGlobalErrorHandlers();
+      
+      // Initialize performance monitoring and optimizations
+      initializePerformanceOptimizations();
       
       const { publicRuntimeConfig } = getConfig();
       console.log('[App] Public Runtime Config:', publicRuntimeConfig);
