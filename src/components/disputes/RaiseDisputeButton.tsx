@@ -7,7 +7,6 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-  DialogOverlay
 } from "@/components/ui/dialog";
 import { DisputeForm } from "./DisputeForm";
 import { useRouter } from 'next/router';

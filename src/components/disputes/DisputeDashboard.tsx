@@ -4,7 +4,6 @@ import { useDisputes } from "@/hooks/useDisputes";
 import { DisputesList } from "./DisputesList";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShieldAlert } from "lucide-react";
 
 export function DisputeDashboard() {
   const { disputes, isLoading, refetch } = useDisputes();

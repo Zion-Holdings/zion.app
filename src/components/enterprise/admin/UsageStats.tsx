@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Slider } from "@/components/ui/slider";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
