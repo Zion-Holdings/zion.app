@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-// Router components removed - convert to Next.js pages structure
+import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
 import ForgotPassword from "@/pages/ForgotPassword";

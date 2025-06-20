@@ -1,6 +1,6 @@
 import js from "@eslint/js";
 import globals from "globals";
-import tseslint from "typescript-eslint";
+import * as tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginJsxA11y from "eslint-plugin-jsx-a11y";
@@ -82,13 +82,13 @@ export default tseslint.config(
     files: ["**/*.{ts,tsx,mts,cts}"], // Broadly applies to all TS files
     ignores: ["**/*.d.ts"], // Ignore all .d.ts files from this type-aware block
     plugins: {
-      ...tsPluginDef,
+      "@typescript-eslint": tseslint.plugin,
       "react-hooks": pluginReactHooks, // Add react-hooks plugin here
     },
     languageOptions: {
-      parser: tseslint.parser,
+      parser: tseslint.parser, // Explicitly use typescript-eslint parser
       parserOptions: {
-        project: "./tsconfig.eslint.json", // Points to our standalone tsconfig
+        project: "./tsconfig.eslint.json",
         tsconfigRootDir: projectRoot,
         sourceType: "module",
       },
@@ -108,12 +108,12 @@ export default tseslint.config(
       react: pluginReact,
       "react-hooks": pluginReactHooks,
       "jsx-a11y": pluginJsxA11y,
-      // "@typescript-eslint": tseslint.plugin, // TS plugins should be inherited from Block 3 for .tsx files
+      // "@typescript-eslint": tseslint.plugin,
     },
-    languageOptions: { // This whole languageOptions will be merged; specific to jsx/tsx
-      parser: tseslint.parser, // ESSENTIAL: ensure ts-parser for TSX
+    languageOptions: {
+      parser: tseslint.parser, // Explicitly use typescript-eslint parser
       parserOptions: {
-        project: "./tsconfig.eslint.json", // ESSENTIAL: ensure project context for TSX
+        project: "./tsconfig.eslint.json",
         tsconfigRootDir: projectRoot,      // ESSENTIAL: ensure root dir for TSX
         ecmaFeatures: { jsx: true },       // Specific to JSX/TSX
         sourceType: "module",
