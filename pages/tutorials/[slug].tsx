@@ -1,8 +1,15 @@
 import TutorialPage from '@/pages/Tutorial';
 import { TUTORIALS } from '@/data/tutorials';
 import type { GetStaticPaths, GetStaticProps } from 'next';
+import type { Tutorial } from '@/types/tutorial';
 
-export default TutorialPage;
+interface PageProps {
+  tutorial: Tutorial;
+}
+
+export default function Page({ tutorial }: PageProps) {
+  return <TutorialPage tutorial={tutorial} />;
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = TUTORIALS.map(t => ({ params: { slug: t.slug } }));
@@ -19,5 +26,5 @@ export const getStaticProps: GetStaticProps = async ({
   if (!tutorial) {
     return { notFound: true };
   }
-  return { props: {} };
+  return { props: { tutorial } };
 };
