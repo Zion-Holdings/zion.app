@@ -39,4 +39,17 @@ describe('auth flow integration', () => {
       user: { id: '1', email: 'test@example.com', name: 'Test' },
     });
   });
+
+  it('prevents login for inactive account', async () => {
+    const loginReq = { body: { email: 'inactive@example.com', password: 'Password123' } };
+    const loginRes = { status: jest.fn().mockReturnThis(), json: jest.fn() };
+
+    User.findOne.mockResolvedValue({ _id: '1', email: 'inactive@example.com', name: 'Test', passwordHash: 'hashed', active: false });
+    bcrypt.compareSync.mockReturnValue(true);
+
+    await loginUser(loginReq, loginRes);
+
+    expect(loginRes.status).toHaveBeenCalledWith(403);
+    expect(loginRes.json).toHaveBeenCalledWith({ code: 'ACCOUNT_INACTIVE', message: 'Account inactive' });
+  });
 });
