@@ -17,3 +17,4 @@ export * from './useDelayedError';
 export * from './useIsMounted';
 export * from './useFeatureUsage';
 export * from "./useAdvancedOnboardingStatus";
+export * from './useTokenBalance';

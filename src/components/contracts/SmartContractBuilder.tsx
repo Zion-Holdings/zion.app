@@ -128,7 +128,6 @@ export function SmartContractBuilder({
               initialValues={formValues}
               onFormValuesChange={setFormValues}
               onContractGenerated={handleFormSubmit}
-              deployOptions={deployOptions}
               onDeployOptionsChange={setDeployOptions}
             />
           </TabsContent>
@@ -140,7 +139,6 @@ export function SmartContractBuilder({
                   generatedContract={generatedContract}
                   talent={talent}
                   onClose={onClose}
-                  deployStatus={deployStatus}
                   deploymentInfo={deploymentInfo}
                 />
                 

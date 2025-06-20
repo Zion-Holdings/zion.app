@@ -19,7 +19,6 @@ export function NewPostDialog({ open, onOpenChange, initialCategory }: NewPostDi
 
   const handleSubmit = async (values: { title: string; content: string; categoryId: ForumCategory; tags: string; }) => {
     try {
-      const tagsArray = values.tags.split(",").map(tag => tag.trim());
       toast({ title: "Post created", description: "Your post has been published successfully" });
       if (user?.id) {
         await fetch('/api/points/increment', {

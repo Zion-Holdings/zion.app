@@ -13,7 +13,6 @@ interface ContractPreviewProps {
   onDeploy?: () => void;
   onSign?: () => void;
   onClose?: () => void;
-  deployStatus?: string;
   deploymentInfo?: SmartContractInfo | null;
 }
 
@@ -24,7 +23,6 @@ export function ContractPreview({
   onDeploy, 
   onSign,
   onClose,
-  deployStatus,
   deploymentInfo
 }: ContractPreviewProps) {
   

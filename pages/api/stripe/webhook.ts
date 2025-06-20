@@ -19,7 +19,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const sig = req.headers['stripe-signature'] as string;
-  // TODO: Use proper Stripe types when available
   let event: any;
   try {
     const buf = await buffer(req as any);

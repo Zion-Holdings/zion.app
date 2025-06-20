@@ -14,7 +14,6 @@ import { generateContract } from "../utils/contractUtils";
 import { ProjectDetailsFields } from "./ProjectDetailsFields";
 import { PaymentTermsFields } from "./PaymentTermsFields";
 import { AdditionalClausesFields } from "./AdditionalClausesFields";
-import { DeploymentOptions } from "@/types/smart-contracts";
 
 const formSchema = z.object({
   projectName: z.string().min(1, "Project name is required"),
@@ -36,8 +35,6 @@ interface ContractFormProps {
   initialValues?: ContractFormValues;
   onFormValuesChange?: (values: ContractFormValues) => void;
   onContractGenerated: (contractContent: string) => void;
-  deployOptions?: DeploymentOptions;
-  onDeployOptionsChange?: (options: DeploymentOptions) => void;
 }
 
 export function ContractForm({
@@ -46,8 +43,6 @@ export function ContractForm({
   initialValues,
   onFormValuesChange,
   onContractGenerated,
-  deployOptions,
-  onDeployOptionsChange
 }: ContractFormProps) {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedMilestones, setGeneratedMilestones] = useState<GeneratedMilestone[]>([]);
@@ -140,7 +135,6 @@ export function ContractForm({
           
           <PaymentTermsFields 
             form={form}
-            talent={talent}
             handleMilestonesGenerated={handleMilestonesGenerated}
           />
           

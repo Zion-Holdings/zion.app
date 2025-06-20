@@ -27,6 +27,18 @@ jobs:
     - name: Install dependencies
       run: npm ci # Installs dependencies cleanly using package-lock.json
 
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' # Or a generic '3.x' if preferred
+        cache: 'pip'
+
+    - name: Install pip-audit
+      run: pip install pip-audit
+
+    - name: Run Python Dependency Audit
+      run: pip-audit -r backend/requirements.txt
+
     - name: Run Dependency and Vulnerability Audits
       run: bash ./scripts/security-audit.sh # Executes the custom script for security audits
       # This script is expected to run 'npm run check-updates' (via 'ncu') and 'npm run audit-vulnerabilities' (via 'npm audit').
