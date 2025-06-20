@@ -39,8 +39,8 @@ export function getAppConfig(): AppConfig {
   
   // Wallet configuration with proper fallbacks
   const walletProjectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || 'your_project_id_here';
-  const isWalletConfigured = walletProjectId && 
-    !['your_project_id_here', 'YOUR_PROJECT_ID', 'dummy', 'fallback'].includes(walletProjectId);
+  const isWalletConfigured = Boolean(walletProjectId && 
+    !['your_project_id_here', 'YOUR_PROJECT_ID', 'dummy', 'fallback'].includes(walletProjectId));
 
   return {
     app: {
