@@ -11,6 +11,7 @@ import ReactMarkdown from 'react-markdown';
 
 // Importing the sample blog posts - in a real app, you would fetch this from an API
 import { BLOG_POSTS } from "@/data/blog-posts";
+import { useSkeletonTimeout } from '@/hooks/useSkeletonTimeout';
 
 export default function BlogPost() {
   const router = useRouter();
@@ -19,9 +20,13 @@ export default function BlogPost() {
   const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const timedOut = useSkeletonTimeout(20000);
   
   useEffect(() => {
     const fetchPost = async () => {
+      setIsLoading(true);
+      setError(null);
       try {
         const res = await fetch(`/api/blog/${slug}`);
         if (res.ok) {
@@ -34,10 +39,12 @@ export default function BlogPost() {
                 p.tags.some((tag) => data.tags.includes(tag)))
           ).slice(0, 3);
           setRelatedPosts(related);
+          setIsLoading(false);
           return;
         }
       } catch (err) {
         console.error('Failed to fetch blog post', err);
+        setError('Failed to load article');
       }
 
       const currentPost = BLOG_POSTS.find((p) => p.slug === slug);
@@ -53,16 +60,26 @@ export default function BlogPost() {
       } else {
         router.push('/blog', { replace: true });
       }
+      setIsLoading(false);
     };
 
     fetchPost();
     window.scrollTo(0, 0);
   }, [slug, router]);
   
-  if (!post) {
+  if (isLoading && !timedOut) {
     return (
       <div className="min-h-screen bg-zion-blue text-white p-8 flex justify-center items-center">
         <div className="animate-pulse">Loading article...</div>
+      </div>
+    );
+  }
+
+  if (!post && (error || timedOut)) {
+    return (
+      <div className="min-h-screen bg-zion-blue text-white p-8 flex flex-col justify-center items-center space-y-4">
+        <p>Failed to load article.</p>
+        <Button onClick={() => router.reload()}>Retry</Button>
       </div>
     );
   }

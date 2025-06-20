@@ -9,6 +9,7 @@ import { FavoriteButton } from "@/components/FavoriteButton";
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
+import { toast } from '@/hooks/use-toast';
 import Image from 'next/image'; // Import next/image
 
 interface ProductListingCardProps {
@@ -57,8 +58,8 @@ const ProductListingCardComponent = ({
     dispatch(
       addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 })
     );
+    toast.success(`1× ${listing.title} added`);
     setLoading(false);
-    router.push('/cart');
   };
   
   const handleRequestQuote = (e: React.MouseEvent) => {

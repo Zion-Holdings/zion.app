@@ -17,9 +17,11 @@ import { captureException } from '@/utils/sentry';
 interface ProductCardProps {
   product: Product;
   onBuy?: () => void;
+  /** Disable the Buy Now button (e.g. when the checkout route isn't ready). */
+  buyDisabled?: boolean;
 }
 
-export default function ProductCard({ product, onBuy }: ProductCardProps) {
+export default function ProductCard({ product, onBuy, buyDisabled = false }: ProductCardProps) {
   const { isAuthenticated } = useAuth();
   const { isWishlisted, toggle } = useWishlist();
   const [imageError, setImageError] = useState(false);
@@ -40,12 +42,10 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
   const productTitle = typeof product.title === 'string' ? product.title : 'Untitled Product';
 
   const addToCart = () => {
-    if (!isAuthenticated) {
-      enqueueSnackbar("Please log in to add items", { variant: 'warning' });
-      router.push('/login?next=' + router.asPath);
-      return;
-    }
     dispatch(addItem({ id: product.id, title: productTitle, price: product.price ?? 0 }));
+    if (!isAuthenticated) {
+      enqueueSnackbar('Item added. Login to checkout.', { variant: 'info' });
+    }
   };
 
   const imageUrl = Array.isArray(product.images) && product.images.length > 0 ? product.images[0] : null;
@@ -98,7 +98,7 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
         </div>
       )}
     </div>
-      <Link href={`/listing/${product.id}`}>
+      <Link href={`/marketplace/listing/${product.id}`}>
         <h3 className="font-semibold mb-1">{productTitle}</h3>
       </Link>
       {product.price != null && (
@@ -121,7 +121,7 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
             variant="outline"
             className="flex-1"
             data-testid="buy-now-button"
-            disabled={!isAuthenticated}
+            disabled={!isAuthenticated || buyDisabled}
           >
             Buy Now
           </Button>

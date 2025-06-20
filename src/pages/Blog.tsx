@@ -45,24 +45,31 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
   // }, []);
 
   useEffect(() => {
-    if (searchQuery !== query) {
+    const fetchPosts = async () => {
       setIsLoading(true);
-    } else {
-      setIsLoading(false);
-    }
-  }, [searchQuery, query]);
+      try {
+        const res = await fetch(`/api/blog?query=${encodeURIComponent(query)}`);
+        if (res.ok) {
+          const data: BlogPost[] = await res.json();
+          setPosts(data);
+        }
+      } catch (err) {
+        console.error('Failed to fetch blog posts', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  // Filter blog posts based on search and category
+    fetchPosts();
+  }, [query]);
+
+  // Filter blog posts based on selected category only.
+  // Search filtering is handled server-side.
   const filteredPosts = posts.filter(post => {
-    const lowercasedQuery = query.toLowerCase();
-    const matchesSearch =
-      post.title.toLowerCase().includes(lowercasedQuery) ||
-      post.excerpt.toLowerCase().includes(lowercasedQuery) ||
-      post.tags.some(tag => tag.toLowerCase().includes(lowercasedQuery));
-      
-    const matchesCategory = selectedCategory === "All Categories" || post.category === selectedCategory;
-    
-    return matchesSearch && matchesCategory;
+    const matchesCategory =
+      selectedCategory === "All Categories" || post.category === selectedCategory;
+
+    return matchesCategory;
   });
   
   // Get featured posts
@@ -182,12 +189,12 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
           {!isLoading && filteredPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post) => (
-                <Link
+                <Card
                   key={post.id}
-                  href={`/blog/${post.slug}`}
-                  className="block group"
+                  asChild
+                  className="bg-zion-blue-dark border border-zion-blue-light hover:border-zion-purple transition-all duration-300 group-hover:shadow-lg"
                 >
-                  <Card className="bg-zion-blue-dark border border-zion-blue-light hover:border-zion-purple transition-all duration-300 group-hover:shadow-lg">
+                  <Link href={`/blog/${post.slug}`} className="block group">
                   <div className="aspect-[16/9] relative overflow-hidden">
                     <OptimizedImage
                       src={post.featuredImage}
@@ -230,8 +237,8 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                   <CardFooter className="p-6 pt-0">
                     <span className="text-zion-cyan group-hover:text-zion-purple">Read More →</span>
                   </CardFooter>
-                  </Card>
-                </Link>
+                  </Link>
+                </Card>
               ))}
             </div>
           ) : null}

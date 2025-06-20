@@ -30,8 +30,11 @@ export function getStripe() {
   if (!stripePromise) {
     const testPublishableKey =
       process.env.NEXT_PUBLIC_STRIPE_TEST_KEY as string | undefined ||
-      process.env.NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY as string | undefined;
-    const livePublishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string | undefined;
+      process.env.NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY as string | undefined ||
+      process.env.NEXT_PUBLIC_STRIPE_PK as string | undefined;
+    const livePublishableKey =
+      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string | undefined ||
+      process.env.NEXT_PUBLIC_STRIPE_PK as string | undefined;
     const context = process.env.NEXT_PUBLIC_NETLIFY_CONTEXT;
 
     let selectedKey: string | undefined;

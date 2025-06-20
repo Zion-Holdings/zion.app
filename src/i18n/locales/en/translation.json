@@ -42,6 +42,14 @@
     "login_success": "Logged in successfully",
     "logout_success": "Logged out successfully"
   },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "continue_shopping": "Continue Shopping",
+    "subtotal": "Subtotal",
+    "processing": "Processing...",
+    "checkout": "Checkout"
+  },
   "home": {
     "hero_title": "The Future of Tech & AI Marketplace",
     "hero_subtitle": "The world's first free marketplace dedicated to high-tech and artificial intelligence",
@@ -114,5 +122,18 @@
     "edit": "Edit",
     "saved": "Saved",
     "changes_saved": "Translation changes have been saved"
+  },
+  "errors": {
+    "page_not_found": "Oops! Page not found",
+    "return_home": "Return to Home",
+    "forgot_password_prompt": "Did you forget your password? You can reset it here:",
+    "reset_password": "Reset Password",
+    "or_return_home": "Or return to Home",
+    "access_denied": "Access Denied",
+    "no_permission": "You don't have permission to access this page. This could be because your account doesn't have the required permissions or you need to complete your profile.",
+    "login_different_account": "Login with Different Account",
+    "payment_success_title": "Payment Successful!",
+    "payment_success_message": "Your payment has been processed successfully. You now have access to all the premium features.",
+    "go_to_dashboard": "Go to Dashboard"
   }
 }

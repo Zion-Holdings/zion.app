@@ -11,6 +11,7 @@ import { useTalentDirectory } from '@/hooks/useTalentDirectory';
 import { SORT_OPTIONS } from '@/data/sortOptions';
 import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 import { TalentProfile } from '@/types/talent';
 import {
   Pagination,
@@ -103,12 +104,24 @@ export default function TalentDirectory() {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="text-center py-16">
+          <Image
+            src="/images/talent-placeholder.svg"
+            alt="No talent"
+            width={200}
+            height={200}
+            className="mx-auto mb-6"
+          />
           <h2 className="text-2xl font-bold text-white mb-4">
             Talent Directory Currently Empty
           </h2>
-          <p className="text-zion-slate-light max-w-md mx-auto">
-            No talent profiles are currently available. Please check back later.
+          <p className="text-zion-slate-light max-w-md mx-auto mb-6">
+            No talent profiles are currently available.
           </p>
+          <Link href="/create-talent-profile">
+            <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
+              Be the first to list a talent
+            </Button>
+          </Link>
         </div>
       </div>
     );

@@ -4,6 +4,7 @@ import { GradientHeading } from "@/components/GradientHeading";
 import { SkeletonCard } from '@/components/ui';
 import ErrorBoundary from "@/components/GlobalErrorBoundary";
 import * as Icons from 'lucide-react';
+import { CATEGORIES } from '@/data/categories';
 
 interface CategoryType {
   id: string;
@@ -13,12 +14,18 @@ interface CategoryType {
 }
 
 const fetcher = async (url: string): Promise<CategoryType[]> => {
-  const response = await fetch(url);
-  if (!response.ok) {
-    // Ensure the error message matches the bug report exactly
-    throw new Error("API error: Please try again later.");
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.error('Categories API error:', response.statusText);
+      return CATEGORIES;
+    }
+    const data = await response.json();
+    return Array.isArray(data) && data.length > 0 ? data : CATEGORIES;
+  } catch (err) {
+    console.error('Categories API fetch failed:', err);
+    return CATEGORIES;
   }
-  return response.json();
 };
 
 export interface CategoriesProps {

@@ -39,6 +39,14 @@
     "login_success": "Login realizado com sucesso",
     "logout_success": "Logout realizado com sucesso"
   },
+  "cart": {
+    "title": "Seu Carrinho",
+    "empty": "Seu carrinho está vazio",
+    "continue_shopping": "Continuar Comprando",
+    "subtotal": "Subtotal",
+    "processing": "Processando...",
+    "checkout": "Finalizar Compra"
+  },
   "home": {
     "hero_title": "O Futuro do Mercado de Tecnologia e IA",
     "hero_subtitle": "O primeiro mercado gratuito dedicado à alta tecnologia e inteligência artificial",
@@ -70,5 +78,18 @@
     "ar": "العربية",
     "language_changed": "Idioma alterado para {{language}}",
     "switch_to_detected": "Mudar para {{language}}?"
+  },
+  "errors": {
+    "page_not_found": "Ops! Página não encontrada",
+    "return_home": "Voltar para Início",
+    "forgot_password_prompt": "Esqueceu sua senha? Você pode redefini-la aqui:",
+    "reset_password": "Redefinir Senha",
+    "or_return_home": "Ou voltar para Início",
+    "access_denied": "Acesso Negado",
+    "no_permission": "Você não tem permissão para acessar esta página. Isso pode ocorrer porque sua conta não possui as permissões necessárias ou você precisa completar seu perfil.",
+    "login_different_account": "Entrar com Outra Conta",
+    "payment_success_title": "Pagamento Realizado!",
+    "payment_success_message": "Seu pagamento foi processado com sucesso. Agora você tem acesso a todos os recursos premium.",
+    "go_to_dashboard": "Ir para o Painel"
   }
 }

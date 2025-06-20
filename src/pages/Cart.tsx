@@ -10,16 +10,20 @@ import {
   updateQuantity as updateQuantityAction,
 } from '@/store/cartSlice';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
+import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
 import { CartItem as CartItemType } from '@/types/cart';
 import { safeStorage } from '@/utils/safeStorage';
 import { getStripe } from '@/utils/getStripe';
+import { useTranslation } from 'react-i18next';
 
 export default function CartPage() {
+  const { t } = useTranslation();
   const reduxItems = useSelector((s: RootState) => s.cart.items);
   const [items, setItems] = useState<CartItemType[]>(reduxItems);
   const dispatch = useDispatch<AppDispatch>();
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
+  const [guestOpen, setGuestOpen] = useState(false);
 
   useEffect(() => {
     if (reduxItems.length > 0) {
@@ -46,7 +50,7 @@ export default function CartPage() {
     dispatch(removeItemAction(id));
   };
 
-  const handleCheckout = async () => {
+  const handleCheckout = async (details?: { email?: string; address?: string }) => {
     setLoading(true);
     try {
       const stripe = await getStripe();
@@ -54,7 +58,8 @@ export default function CartPage() {
 
       const { data } = await axios.post('/api/checkout-session', {
         cartItems: items,
-        customer_email: user?.email,
+        customer_email: details?.email || user?.email,
+        shipping_address: details?.address,
       });
 
       const sessionId = data.sessionId as string | undefined;
@@ -68,6 +73,14 @@ export default function CartPage() {
     } finally {
       setLoading(false);
     }
+  }; 
+
+  const startCheckout = () => {
+    if (!user) {
+      setGuestOpen(true);
+    } else {
+      handleCheckout();
+    }
   };
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
@@ -75,10 +88,14 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <div className="container py-10 text-center">
-        <img src="/placeholder.svg" alt="Empty cart" className="mx-auto mb-4" />
-        <p>Your cart is empty</p>
+        <img
+          src="/images/empty-cart.svg"
+          alt="Empty cart"
+          className="mx-auto mb-4 w-48 h-36"
+        />
+        <p>{t('cart.empty')}</p>
         <Button asChild className="mt-4">
-          <Link href="/marketplace">Browse Marketplace</Link>
+          <Link href="/marketplace">{t('cart.continue_shopping')}</Link>
         </Button>
       </div>
     );
@@ -86,7 +103,7 @@ export default function CartPage() {
 
   return (
     <div className="container max-w-2xl py-10">
-      <h1 className="text-3xl font-bold mb-6">Your Cart</h1>
+      <h1 className="text-3xl font-bold mb-6">{t('cart.title')}</h1>
       <ul className="space-y-4">
         {items.map(item => (
           <CartItemComponent
@@ -98,12 +115,17 @@ export default function CartPage() {
         ))}
       </ul>
       <div className="flex justify-between mt-6 font-semibold">
-        <span>Subtotal</span>
+        <span>{t('cart.subtotal')}</span>
         <span>${subtotal.toFixed(2)}</span>
       </div>
-      <Button className="mt-4 w-full" onClick={handleCheckout} disabled={loading}>
-        {loading ? 'Processing...' : 'Checkout'}
+      <Button className="mt-4 w-full" onClick={startCheckout} disabled={loading}>
+        {loading ? t('cart.processing') : t('cart.checkout')}
       </Button>
+      <GuestCheckoutModal
+        open={guestOpen}
+        onOpenChange={setGuestOpen}
+        onSubmit={(d) => handleCheckout(d)}
+      />
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 The demo checkout flow uses Stripe in test mode. Configure these environment variables before running the app:
 
-- `STRIPE_TEST_KEY` – publishable test key loaded by the client.
+- `NEXT_PUBLIC_STRIPE_PK` – publishable test key loaded by the client.
 - `STRIPE_SECRET_KEY` – secret API key used by `/api/create-payment-intent` and `/api/checkout_sessions`.
 - `STRIPE_WEBHOOK_SECRET` – signing secret used by the Stripe webhook handler.
 - `SERVERLESS_FUNCTION_SECRET` – shared secret for authenticated serverless requests.
@@ -43,3 +43,17 @@ DEV_USER_1_PASSWORD=pass1234
 
 These credentials are loaded only in development and allow you to sign in to the
 app without creating a real account.
+
+### Staging Test Payments
+
+When the app runs in a staging environment it also uses Stripe test mode. The
+guest checkout modal displays a banner reminding testers to pay with the demo
+card `4242 4242 4242 4242` and any future expiration date and CVC.
+
+## Sandbox Sample SKUs
+
+If your environment has no products available, the application falls back to a
+set of demo listings defined in `src/data/marketplaceData.ts`. These sample
+items let QA walk through the Add‑to‑Cart and payment screens without needing a
+live catalog. The fallback is automatic whenever the marketplace API returns an
+error or an empty array.

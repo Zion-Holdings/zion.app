@@ -49,6 +49,10 @@ export default function SearchResultsPage({
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
   const [sortBy, setSortBy] = useState('relevance');
+  const [categoryFilter, setCategoryFilter] = useState('all');
+  const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
+  const [minRating, setMinRating] = useState('');
 
   // Fetch search results
   const fetchResults = async (searchTerm: string, page = 1) => {
@@ -98,8 +102,28 @@ export default function SearchResultsPage({
     fetchResults(searchQuery, nextPage);
   };
 
+  const categories = Array.from(
+    new Set(results.map(r => r.category).filter(Boolean))
+  );
+
+  const filteredResults = results.filter((r) => {
+    if (categoryFilter !== 'all' && categoryFilter && r.category !== categoryFilter) {
+      return false;
+    }
+    if (minPrice && (r.price ?? 0) < Number(minPrice)) {
+      return false;
+    }
+    if (maxPrice && (r.price ?? 0) > Number(maxPrice)) {
+      return false;
+    }
+    if (minRating && (r.rating ?? 0) < Number(minRating)) {
+      return false;
+    }
+    return true;
+  });
+
   // Group results by type for better display
-  const groupedResults = results.reduce((acc, result) => {
+  const groupedResults = filteredResults.reduce((acc, result) => {
     if (!acc[result.type]) acc[result.type] = [];
     acc[result.type].push(result);
     return acc;
@@ -199,10 +223,9 @@ export default function SearchResultsPage({
                   Search Results
                 </h1>
                 <p className="text-gray-600 dark:text-gray-400" data-testid="results-count">
-                  {totalCount > 0 
-                    ? `Found ${totalCount} results for "${query}"`
-                    : `No results found for "${query}"`
-                  }
+                  {filteredResults.length > 0
+                    ? `Found ${filteredResults.length} results for "${query}"`
+                    : `No results found for "${query}"`}
                 </p>
               </div>
 
@@ -221,7 +244,7 @@ export default function SearchResultsPage({
 
             {/* Controls */}
             <div className="flex flex-wrap items-center justify-between gap-4 mt-6">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
                 <Button
                   variant="outline"
                   size="sm"
@@ -231,7 +254,7 @@ export default function SearchResultsPage({
                   <Filter className="h-4 w-4" />
                   Filters
                 </Button>
-                
+
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
@@ -243,6 +266,46 @@ export default function SearchResultsPage({
                   <option value="price_asc">Price: Low to High</option>
                   <option value="price_desc">Price: High to Low</option>
                   <option value="rating">Highest Rated</option>
+                </select>
+
+                <select
+                  value={categoryFilter}
+                  onChange={(e) => setCategoryFilter(e.target.value)}
+                  className="px-3 py-1 border border-gray-300 rounded-md text-sm"
+                >
+                  <option value="all">All Categories</option>
+                  {categories.map((c) => (
+                    <option key={c} value={c}>{c}</option>
+                  ))}
+                </select>
+
+                <div className="flex items-center gap-1">
+                  <input
+                    type="number"
+                    placeholder="Min $"
+                    value={minPrice}
+                    onChange={(e) => setMinPrice(e.target.value)}
+                    className="w-20 px-2 py-1 border border-gray-300 rounded-md text-sm"
+                  />
+                  <span>-</span>
+                  <input
+                    type="number"
+                    placeholder="Max $"
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(e.target.value)}
+                    className="w-20 px-2 py-1 border border-gray-300 rounded-md text-sm"
+                  />
+                </div>
+
+                <select
+                  value={minRating}
+                  onChange={(e) => setMinRating(e.target.value)}
+                  className="px-3 py-1 border border-gray-300 rounded-md text-sm"
+                >
+                  <option value="">All Ratings</option>
+                  <option value="4">4★ & up</option>
+                  <option value="3">3★ & up</option>
+                  <option value="2">2★ & up</option>
                 </select>
               </div>
 
@@ -277,14 +340,14 @@ export default function SearchResultsPage({
           )}
 
           {/* Empty State */}
-          {!loading && results.length === 0 && (
+          {!loading && filteredResults.length === 0 && (
             <div data-testid="search-empty-state">
               <SearchEmptyState onRetry={() => fetchResults(searchQuery)} />
             </div>
           )}
 
           {/* Results */}
-          {results.length > 0 && (
+          {filteredResults.length > 0 && (
             <div className="space-y-8">
               {Object.entries(groupedResults).map(([type, typeResults]) => (
                 <div key={type}>

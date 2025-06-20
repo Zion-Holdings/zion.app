@@ -11,6 +11,7 @@ const recommendationsRoutes = require('./routes/recommendations');
 const syncRoutes = require('./routes/sync');
 const alertsRoutes = require('./routes/alerts'); // Add this
 const equipmentRoutes = require('./routes/items');
+const stripeRoutes = require('./routes/stripe'); // Add this for Stripe webhooks
 const { logAndAlert } = require('./utils/alertLogger');
 const helmet =require('helmet');
 const rateLimit = require('express-rate-limit');
@@ -61,6 +62,7 @@ app.use('/recommendations', recommendationsRoutes);
 app.use('/sync', syncRoutes);
 app.use('/api/alerts', alertsRoutes); // Add this, choose a base path like /api/alerts
 app.use('/api/equipment', equipmentRoutes);
+app.use('/api/stripe', stripeRoutes); // Add this for Stripe webhooks
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
 });

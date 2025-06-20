@@ -61,14 +61,20 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
 
   const handleContinue = () => {
     if (!selectedItemId) {
-      setSelectionError(`Please choose at least one ${category === 'services' ? 'service' : category === 'talent' ? 'talent' : 'item'}`);
+      setSelectionError(
+        `Please choose a ${
+          category === 'services'
+            ? 'service'
+            : category === 'talent'
+            ? 'talent'
+            : 'item'
+        } to continue.`
+      );
       return;
     }
+
     setSelectionError('');
-    // Step transition is handled by handleSelect if needed, or directly if item already selected
-    if (selectedItemId) {
-       setStep(2);
-    }
+    setStep(2);
   };
 
   const handleSubmit = async () => {

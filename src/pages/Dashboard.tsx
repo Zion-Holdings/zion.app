@@ -5,7 +5,11 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CommunityDiscussion } from "@/components/CommunityDiscussion";
 import { Badge } from "@/components/ui/badge";
-import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings } from "lucide-react";
+import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings, FileText, Heart, Key } from "lucide-react";
+import { PointsBadge } from '@/components/loyalty/PointsBadge';
+import { ApiKeysManager } from '@/components/developers/ApiKeysManager';
+import { useGetOrdersQuery } from '@/hooks/useOrders';
+import { useFavorites } from '@/hooks/useFavorites';
 import { createTestNotification, createOnboardingNotification, createSystemNotification } from "@/utils/notifications";
 import { NotificationBell } from "@/components/NotificationBell";
 import { GuidedTour } from "@/components/onboarding/GuidedTour";
@@ -18,6 +22,8 @@ export default function Dashboard() {
   const { toast } = useToast();
   const router = useRouter();
   const [isLoadingUser, setIsLoadingUser] = useState(true); // New loading state
+  const { data: orders = [], isLoading: ordersLoading } = useGetOrdersQuery(user?.id);
+  const { favorites } = useFavorites();
 
   const roleForTour =
     user?.userType === 'client' || user?.userType === 'admin' ? 'client' : 'talent';
@@ -100,8 +106,8 @@ export default function Dashboard() {
                   </div>
                   
                   <div className="flex justify-between items-center">
-                    <span className="text-zion-slate-light">Community Points</span>
-                    <span className="text-zion-cyan font-medium">125</span>
+                    <span className="text-zion-slate-light">Points</span>
+                    <PointsBadge />
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-zion-slate-light">ZION$ Balance</span>
@@ -250,6 +256,57 @@ export default function Dashboard() {
                 <div id="community-section">
                   <h3 className="text-lg font-bold text-white mb-4">Community</h3>
                   <CommunityDiscussion />
+                </div>
+
+                {/* User Overview */}
+                <div className="mt-8 space-y-8">
+                  <div className="bg-zion-blue-dark rounded-xl p-6">
+                    <h3 className="text-lg font-bold text-white mb-4 flex items-center">
+                      <FileText className="mr-2" size={18} /> Recent Orders
+                    </h3>
+                    {ordersLoading ? (
+                      <p className="text-zion-slate-light">Loading...</p>
+                    ) : orders.length === 0 ? (
+                      <p className="text-zion-slate-light">No orders found.</p>
+                    ) : (
+                      <ul className="space-y-1">
+                        {orders.slice(0, 3).map(o => (
+                          <li key={o.orderId} className="flex justify-between">
+                            <span>#{o.orderId}</span>
+                            <Link href={`/orders/${o.orderId}`} className="text-zion-purple underline">View</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    <div className="mt-2 text-right">
+                      <Link href="/orders" className="text-zion-purple underline">View all</Link>
+                    </div>
+                  </div>
+
+                  <div className="bg-zion-blue-dark rounded-xl p-6">
+                    <h3 className="text-lg font-bold text-white mb-4 flex items-center">
+                      <Heart className="mr-2" size={18} /> Wishlist
+                    </h3>
+                    {favorites.length === 0 ? (
+                      <p className="text-zion-slate-light">No items saved.</p>
+                    ) : (
+                      <ul className="space-y-1">
+                        {favorites.slice(0, 3).map(f => (
+                          <li key={f.item_id}>{f.item_id}</li>
+                        ))}
+                      </ul>
+                    )}
+                    <div className="mt-2 text-right">
+                      <Link href="/wishlist" className="text-zion-purple underline">View all</Link>
+                    </div>
+                  </div>
+
+                  <div className="bg-zion-blue-dark rounded-xl p-6">
+                    <h3 className="text-lg font-bold text-white mb-4 flex items-center">
+                      <Key className="mr-2" size={18} /> API Keys
+                    </h3>
+                    <ApiKeysManager />
+                  </div>
                 </div>
               </div>
             </div>

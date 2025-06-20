@@ -17,6 +17,8 @@ import { Menu, X, ShoppingCart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
+import { MiniCartPreview } from '@/components/cart/MiniCartPreview';
 
 export function PrimaryNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -78,22 +80,29 @@ export function PrimaryNav() {
               />
             </form>
             <PointsBadge />
-            <Link href="/cart" className="relative" aria-label={t('nav.cart','Cart')}>
-              <ShoppingCart className="h-5 w-5 text-foreground hover:text-primary" />
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] rounded-full h-4 w-4 flex items-center justify-center">
-                  {cartCount}
-                </span>
-              )}
-            </Link>
+            <HoverCard openDelay={100}>
+              <HoverCardTrigger asChild>
+                <Link href="/cart" className="relative" aria-label={t('nav.cart','Cart')}>
+                  <ShoppingCart className="h-5 w-5 text-foreground hover:text-primary" />
+                  {cartCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] rounded-full h-4 w-4 flex items-center justify-center">
+                      {cartCount}
+                    </span>
+                  )}
+                </Link>
+              </HoverCardTrigger>
+              <HoverCardContent>
+                <MiniCartPreview />
+              </HoverCardContent>
+            </HoverCard>
             <LanguageSelector />
             {!isLoggedIn && (
               <>
                 <Link href="/login" className="text-sm hover:text-primary" data-testid="login-link">
-                  {t('login', 'Login')}
+                  {t('auth.login')}
                 </Link>
                 <Link href="/signup" className="ml-2 text-sm hover:text-primary">
-                  {t('signup', 'Sign up')}
+                  {t('auth.signup')}
                 </Link>
               </>
             )}

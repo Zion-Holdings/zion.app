@@ -47,7 +47,14 @@
   # Example if SENTRY_AUTH_TOKEN were also listed here (it should be a secret in UI):
   # SECRETS_SCAN_OMIT_KEYS = "SENTRY_DSN,NEXT_PUBLIC_SENTRY_DSN,SENTRY_AUTH_TOKEN"
   # Current SECRETS_SCAN_OMIT_KEYS, DSNs are public but omitting them can reduce scanner noise.
-  SECRETS_SCAN_OMIT_KEYS = "SENTRY_DSN,NEXT_PUBLIC_SENTRY_DSN,NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,CLOUDINARY_CLOUD_NAME" # SENTRY_AUTH_TOKEN should be a secret in UI
+  SECRETS_SCAN_OMIT_KEYS = "SENTRY_DSN,NEXT_PUBLIC_SENTRY_DSN,NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,CLOUDINARY_CLOUD_NAME,INTERNAL_AUTH_SERVICE_URL" # SENTRY_AUTH_TOKEN should be a secret in UI
+
+  # URL for the internal Node.js authentication microservice.
+  # This is used by the /api/auth/register Next.js function to call the backend auth microservice.
+  # !!! THIS MUST BE SET IN THE NETLIFY UI for production/preview builds !!!
+  # Example for local development: http://localhost:3001 (if your Node.js auth service runs on port 3001)
+  # Example for Kubernetes: http://auth-service.your-namespace.svc.cluster.local:PORT
+  INTERNAL_AUTH_SERVICE_URL = "YOUR_INTERNAL_AUTH_SERVICE_URL_HERE"
   CYPRESS_TEST_USER_DISPLAY_NAME = "YOUR_CYPRESS_TEST_USER_DISPLAY_NAME"
   CYPRESS_TEST_USER_EMAIL = "YOUR_CYPRESS_TEST_USER_EMAIL"
   CYPRESS_TEST_USER_PASSWORD = "YOUR_CYPRESS_TEST_USER_PASSWORD"

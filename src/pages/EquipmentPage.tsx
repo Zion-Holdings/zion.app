@@ -6,13 +6,16 @@ import axios from 'axios';
 import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
 import { Button } from "@/components/ui/button";
 import { Loader2, Sparkles, AlertTriangle } from "lucide-react";
+import Image from 'next/image';
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import useSWRMutation from "swr/mutation";
 import Skeleton, { SkeletonCard } from "@/components/ui/skeleton"; // Import SkeletonCard
 import { FilterSidebarSkeleton } from "@/components/skeletons/FilterSidebarSkeleton"; // Import FilterSidebarSkeleton
 import { useDelayedError } from '@/hooks/useDelayedError';
+import { useSkeletonTimeout } from '@/hooks/useSkeletonTimeout';
 import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
 import { EmptyState } from "@/components/ui/EmptyState";
 
@@ -35,9 +38,10 @@ const EQUIPMENT_FILTERS = [
 
 export async function fetchEquipment(): Promise<ProductListing[]> {
   try {
-    const { data } = await axios.get('/api/equipment');
-    console.log('Equipment fetch successful:', data?.length || 0, 'items');
-    return data;
+    const { data } = await axios.get('/api/equipment', { timeout: 10000 });
+    const items = Array.isArray(data) ? data : data?.items;
+    console.log('Equipment fetch successful:', items?.length || 0, 'items');
+    return items;
   } catch (error: any) {
     console.error("Raw error object in fetchEquipment:", error);
     
@@ -67,6 +71,7 @@ export default function EquipmentPage() {
   const [hasExhaustedRetries, setHasExhaustedRetries] = useState(false);
   const { user } = useAuth();
   const router = useRouter();
+  const timedOut = useSkeletonTimeout(20000);
 
   const {
     data: fetchedEquipment,
@@ -193,7 +198,7 @@ export default function EquipmentPage() {
   );
 
   // Updated loading condition to specifically check for equipment being undefined
-  if (isLoadingEquipment && equipment === undefined) {
+  if (isLoadingEquipment && equipment === undefined && !timedOut) {
     return (
       <div data-testid="loading-state-equipment" className="container mx-auto p-4 space-y-4" aria-busy="true">
         {/* Skeleton for the top button (e.g., AI Recommendations) */}
@@ -211,6 +216,15 @@ export default function EquipmentPage() {
             </div>
           </div>
         </div>
+      </div>
+    );
+  }
+
+  if (isLoadingEquipment && timedOut) {
+    return (
+      <div className="py-12 text-center space-y-4">
+        <p className="text-red-400">Request timed out.</p>
+        <Button onClick={handleManualRetry}>Retry</Button>
       </div>
     );
   }
@@ -271,10 +285,24 @@ export default function EquipmentPage() {
             </Button>
           </div>
         </div>
-        <EmptyState
-          text="Equipment catalog is empty"
-          description="No equipment listings are currently available. Check back later for new additions."
-        />
+        <div className="text-center py-10">
+          <Image
+            src="/images/equipment-placeholder.svg"
+            alt="No equipment"
+            width={200}
+            height={200}
+            className="mx-auto mb-6"
+          />
+          <EmptyState
+            text="Equipment catalog is empty"
+            description="No equipment listings are currently available."
+          />
+          <Link href="/publish">
+            <Button className="mt-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
+              Be the first to list a talent
+            </Button>
+          </Link>
+        </div>
       </div>
     );
   }

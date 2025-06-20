@@ -78,18 +78,18 @@ export function AppHeader() {
               <Link
                 href="/login"
                 className="text-sm font-medium text-foreground/70 hover:text-foreground"
-                aria-label="Login"
+                aria-label={t('auth.login')}
                 data-testid="login-link"
               >
-                Login
+                {t('auth.login')}
               </Link>
               <Link
                 href="/signup"
                 className="ml-2 text-sm font-medium text-foreground/70 hover:text-foreground"
-                aria-label="Sign up"
+                aria-label={t('auth.signup')}
                 data-testid="signup-nav-link"
               >
-                Sign up
+                {t('auth.signup')}
               </Link>
             </div>
           )}

@@ -33,6 +33,7 @@ import getConfig from 'next/config';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 import { validateProductionEnvironment, initializeServices } from '@/utils/environmentConfig';
 import { initializePerformanceOptimizations } from '@/utils/performance';
+import '@/utils/globalFetchInterceptor';
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
