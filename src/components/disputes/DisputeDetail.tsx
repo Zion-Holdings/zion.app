@@ -21,7 +21,12 @@ import { toast } from "sonner";
 
 export function DisputeDetail() {
   const router = useRouter();
+<<<<<<< HEAD
   const { disputeId } = router.query as { disputeId?: string };
+=======
+  // Get disputeId from Next.js router query params
+  const disputeId = router.query.disputeId as string;
+>>>>>>> 2930c7bd629267a6944379b59c50953d5712e63f
   const { user } = useAuth();
   const { getDisputeById, updateDisputeStatus, resolveDispute, getDisputeMessages, addDisputeMessage } = useDisputes();
 
@@ -29,8 +34,10 @@ export function DisputeDetail() {
   const [messages, setMessages] = useState<DisputeMessage[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [message, setMessage] = useState("");
+  const [adminNote, setAdminNote] = useState("");
   const [isSending, setIsSending] = useState(false);
-const [resolution, setResolution] = useState<{ summary: string; resolution_type: ResolutionType }>({
+  const [disputeStatus, setDisputeStatus] = useState<DisputeStatus | undefined>(dispute?.status);
+  const [resolution, setResolution] = useState<{ summary: string; resolution_type: ResolutionType }>({
   summary: "",
   resolution_type: "compromise",
 });
@@ -65,14 +72,20 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
     };
     
     loadDisputeData();
+<<<<<<< HEAD
   }, [disputeId, getDisputeById, getDisputeMessages, router]);
+=======
+  }, [disputeId, router, getDisputeById, getDisputeMessages]);
+>>>>>>> 2930c7bd629267a6944379b59c50953d5712e63f
 
   const handleStatusChange = async (status: DisputeStatus) => {
     if (!disputeId) return;
-    
+
     const success = await updateDisputeStatus(disputeId, status);
-    if (success && dispute) {
-      setDispute({ ...dispute, status });
+    if (success) {
+      setDisputeStatus(status);
+    } else {
+      toast.error("Failed to update dispute status");
     }
   };
 
@@ -91,11 +104,13 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
     if (success && dispute) {
       setDispute({
         ...dispute,
-        status: "resolved", 
         resolution_summary: resolution.summary,
         resolution_type: resolution.resolution_type,
-        resolved_at: new Date().toISOString()
+        resolved_at: new Date().toISOString(),
       });
+      setDisputeStatus("resolved");
+    } else {
+      toast.error("Failed to resolve dispute");
     }
   };
 
@@ -146,10 +161,6 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
       case "closed": return "outline";
       default: return "default";
     }
-    
-    const isValidResolutionType = (value: string | null): value is ResolutionType => {
-      return value !== null && ["arbitration", "refund", "compromise"].includes(value);
-    };
   };
 
   return (
@@ -158,12 +169,12 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-2xl font-bold">Dispute Case</h1>
-            <Badge variant={getStatusBadgeVariant(dispute.status)}>
-              {dispute.status.replace('_', ' ')}
+            <Badge variant={getStatusBadgeVariant(disputeStatus || dispute.status)}>
+              {(disputeStatus || dispute.status).replace('_', ' ')}
             </Badge>
           </div>
           <p className="text-muted-foreground">
-            Reported {formatDistanceToNow(new Date(dispute.created_at), { addSuffix: true })}
+            Reported {formatDistanceToNow(new Date(dispute?.created_at || ""), { addSuffix: true })}
           </p>
         </div>
         
@@ -171,7 +182,7 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
           <Button variant="outline" onClick={() => router.push("/dashboard/disputes")}>
             Back to List
           </Button>
-          {isAdmin && dispute.status === "open" && (
+          {isAdmin && (disputeStatus || dispute?.status) === "open" && (
             <Button onClick={() => handleStatusChange("under_review")}>
               Start Review
             </Button>
@@ -471,16 +482,16 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
                       <div className="space-y-4">
                         <Textarea
                           placeholder="Add an admin note (only visible to administrators)..."
-                          value={message}
-                          onChange={(e) => setMessage(e.target.value)}
+                          value={adminNote}
+                          onChange={(e) => setAdminNote(e.target.value)}
                         />
-                        <Button 
-                          variant="outline" 
+                        <Button
+                          variant="outline"
                           onClick={() => {
-                            if (message.trim()) {
-                              addDisputeMessage(disputeId!, message, true).then(() => {
+                            if (adminNote.trim()) {
+                              addDisputeMessage(disputeId!, adminNote, true).then(() => {
                                 getDisputeMessages(disputeId!).then(setMessages);
-                                setMessage("");
+                                setAdminNote("");
                               });
                             }
                           }}
@@ -549,8 +560,8 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
               </div>
               <div className="flex justify-between">
                 <span className="font-medium">Status:</span>
-                <Badge variant={getStatusBadgeVariant(dispute.status)}>
-                  {dispute.status.replace('_', ' ')}
+                <Badge variant={getStatusBadgeVariant(disputeStatus || dispute.status)}>
+                  {(disputeStatus || dispute.status).replace('_', ' ')}
                 </Badge>
               </div>
               <div className="flex justify-between">
