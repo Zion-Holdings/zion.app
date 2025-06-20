@@ -33,11 +33,19 @@ export function observeCLS(callback: (cls: number) => void): void {
 
   const observer = new PerformanceObserver((entryList) => {
     for (const entry of entryList.getEntries()) {
+      const layoutShiftEntry = entry as any;
       // Only count layout shifts without recent user input
-      if ((entry as any).hadRecentInput) continue;
+      if (layoutShiftEntry.hadRecentInput) continue;
 
-      clsValue += (entry as any).value;
-      clsEntries.push(entry as CLSEntry);
+      clsValue += layoutShiftEntry.value;
+      clsEntries.push({
+        name: entry.name,
+        entryType: entry.entryType,
+        startTime: entry.startTime,
+        duration: entry.duration,
+        value: layoutShiftEntry.value,
+        hadRecentInput: layoutShiftEntry.hadRecentInput
+      });
     }
     
     callback(clsValue);
