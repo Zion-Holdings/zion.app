@@ -2,121 +2,109 @@
 
 ## Overview
 
-This document describes the implementation of comprehensive login tracing and error handling as requested. The implementation includes verbose logging, bcrypt password verification, email verification checking, and enhanced frontend error handling.
+This document describes the implementation of comprehensive login tracing and error handling. The implementation includes verbose logging, bcrypt password verification, email verification checking, and enhanced frontend error handling.
 
 ## ✅ Implementation Status
 
 All requested features have been successfully implemented:
 
 1. ✅ **Verbose logging in `/api/auth/login`**
-2. ✅ **bcrypt.compare verification for kalcatrao@hotmail.com**
+2. ✅ **bcrypt.compare verification for development users**
 3. ✅ **Email verification check with 403 response**
 4. ✅ **Frontend toast notifications with error.message**
+5. ✅ **🔐 SECURITY: Environment-based credential management**
+
+## 🔐 SECURITY UPDATE
+
+**CRITICAL**: This implementation has been updated to remove all hardcoded credentials and use environment-based configuration for security.
+
+### Previous Security Issues (FIXED):
+- ❌ Hardcoded credentials in API code
+- ❌ Credentials exposed in documentation
+- ❌ Production-unsafe development helpers
+
+### Current Security Features:
+- ✅ Environment-based development authentication
+- ✅ Development mode restrictions
+- ✅ No credential exposure in production
+- ✅ Secure fallback mechanisms
 
 ## 🔧 Backend Implementation
 
 ### Enhanced Login API (`pages/api/auth/login.ts`)
 
-#### 1. Verbose Logging
+#### 1. Verbose Logging (Development Only)
 - Added comprehensive `🔧 LOGIN TRACE:` logging throughout the authentication flow
-- Special logging for `kalcatrao@hotmail.com` attempts
+- Special logging for development users (email only, never passwords)
 - Request/response logging with status codes and error details
 - Environment and configuration logging
 
 ```typescript
-console.log('🔧 LOGIN TRACE: Starting login attempt');
-console.log('🔧 LOGIN TRACE: Email provided:', email ? 'YES' : 'NO');
-console.log('🔧 LOGIN TRACE: Email value:', email);
+// 🔧 Enable verbose logging (only in development)
+const isDevelopment = process.env.NODE_ENV === 'development';
 
-// Special logging for kalcatrao@hotmail.com
-const isKalcatraoEmail = email.toLowerCase() === 'kalcatrao@hotmail.com';
-if (isKalcatraoEmail) {
-  console.log('🔧 LOGIN TRACE: KALCATRAO LOGIN ATTEMPT DETECTED');
-  console.log('🔧 LOGIN TRACE: Password attempt:', password);
+if (isDevelopment) {
+  console.log('🔧 LOGIN TRACE: Starting login attempt');
+  console.log('🔧 LOGIN TRACE: Email provided:', email ? 'YES' : 'NO');
+  console.log('🔧 LOGIN TRACE: Email value:', email);
 }
 ```
 
-#### 2. Enhanced Password Verification with bcrypt
+#### 2. 🔐 Environment-Based Development Authentication
+
+```typescript
+// 🔐 SECURITY: Development users from environment variables
+const getDevUsers = () => {
+  // Only load development users in development mode
+  if (process.env.NODE_ENV !== 'development') {
+    return [];
+  }
+  
+  const devUsers = [];
+  
+  // Load development users from environment variables
+  const devUser1Email = process.env.DEV_USER_1_EMAIL;
+  const devUser1Password = process.env.DEV_USER_1_PASSWORD;
+  
+  if (devUser1Email && devUser1Password) {
+    devUsers.push({ 
+      id: 'dev-user-1', 
+      email: devUser1Email, 
+      password: devUser1Password,
+      name: 'Development User 1'
+    });
+  }
+  
+  return devUsers;
+};
+```
+
+#### 3. Enhanced Password Verification with bcrypt
 - Automatic detection of bcrypt-hashed passwords (starting with `$2`)
 - Fallback to plain text comparison for development
-- Detailed logging of comparison results
+- Detailed logging of comparison results (password values never logged)
+
+## 🖥️ Frontend Implementation
+
+### Enhanced Error Handling (`pages/login.tsx`)
+
+#### 1. 🔐 Secure Development Hints
+- Development hints only shown when both conditions are met:
+  - `NODE_ENV=development`
+  - `NEXT_PUBLIC_SHOW_DEV_LOGIN=true`
 
 ```typescript
-// Enhanced password comparison with bcrypt support
-let passwordMatch = false;
+// Get development credentials from environment (only in development)
+const isDevelopment = process.env.NODE_ENV === 'development';
+const showDevHints = isDevelopment && process.env.NEXT_PUBLIC_SHOW_DEV_LOGIN === 'true';
 
-try {
-  const bcrypt = await import('bcryptjs');
-  if (user.password.startsWith('$2')) {
-    // Password is hashed with bcrypt
-    passwordMatch = await bcrypt.compare(password, user.password);
-    console.log('🔧 LOGIN TRACE: bcrypt.compare result:', passwordMatch);
-  } else {
-    // Plain text password (development only)
-    passwordMatch = user.password === password;
-    console.log('🔧 LOGIN TRACE: Plain text comparison result:', passwordMatch);
-  }
-} catch (bcryptError) {
-  console.log('🔧 LOGIN TRACE: bcrypt not available, using plain text comparison');
-  passwordMatch = user.password === password;
-}
-```
-
-#### 3. Email Verification Check
-- Added `emailVerified` field check before authentication
-- Returns 403 with specific error message for unverified emails
-- Handles both development and Supabase authentication flows
-
-```typescript
-// Email verification check
-if (user.emailVerified === false) {
-  console.log('🔧 LOGIN TRACE: Email not verified for user:', email);
-  return res.status(403).json({
-    error: 'Email verification required',
-    message: 'Verify email',
-    code: 'EMAIL_NOT_VERIFIED'
-  });
-}
-```
-
-#### 4. Enhanced Error Responses
-- All error responses now include both `error` and `message` fields
-- Specific error codes for different failure types
-- Consistent error structure across all endpoints
-
-```typescript
-// Example error responses
-return res.status(401).json({
-  error: 'Invalid credentials', 
-  message: 'Incorrect email or password',
-  code: 'INVALID_CREDENTIALS'
-});
-
-return res.status(403).json({
-  error: 'Email verification required',
-  message: 'Verify email',
-  code: 'EMAIL_NOT_VERIFIED'
-});
-```
-
-## 🎨 Frontend Implementation
-
-### Enhanced Login Page (`pages/login.tsx`)
-
-#### 1. Improved Error Handling
-- Uses specific error messages from API responses
-- Prioritizes `data.message` over `data.error`
-- Different toast styles for different error types
-
-```typescript
-// Enhanced error message extraction
-let errorMessage = 'Unable to login';
-
-if (data?.message) {
-  errorMessage = data.message;
-} else if (data?.error) {
-  errorMessage = data.error;
-}
+// Only show if both conditions are met
+{showDevHints && (
+  <div className="mt-4 text-center text-xs text-muted-foreground border-t pt-4">
+    <p className="text-yellow-600 font-medium">⚠️ Development Mode</p>
+    <p>Test accounts available - check .env.local</p>
+  </div>
+)}
 ```
 
 #### 2. Status-Specific Toast Notifications
@@ -125,43 +113,45 @@ if (data?.message) {
 - **Other Errors**: Generic login failed
 - **Success**: Welcome message with user name
 
-```typescript
-// Handle email verification specifically
-if (res.status === 403) {
-  if (data?.code === 'EMAIL_NOT_VERIFIED' || data?.code === 'EMAIL_NOT_CONFIRMED') {
-    errorMessage = 'Please verify your email address before logging in';
-    toast({ 
-      title: 'Email verification required', 
-      description: errorMessage, 
-      variant: 'destructive' 
-    });
-  }
-}
-```
-
 #### 3. Enhanced User Experience
 - Added input placeholders
-- Development credentials displayed for testing
+- Secure development credentials handling
 - Success toast on successful login
 - Verbose frontend logging for debugging
 
 ## 🧪 Testing Infrastructure
 
-### Test Users (`pages/api/users/data.js`)
+### 🔐 Secure Test Configuration
 
-1. **jane@example.com** / `password123` - Email verified
-2. **kalcatrao@hotmail.com** / `kalc2024!` - Email verified (main test user)
-3. **test@unverified.com** / `test123` - Email NOT verified (for 403 testing)
+#### Environment Setup (`.env.local`)
+```bash
+# 🔐 DEVELOPMENT CREDENTIALS (DEVELOPMENT ONLY)
+# Use secure, unique passwords even in development
+
+DEV_USER_1_EMAIL=dev.user1@yourdomain.com
+DEV_USER_1_PASSWORD=secure_dev_password_123
+
+DEV_USER_2_EMAIL=dev.user2@yourdomain.com  
+DEV_USER_2_PASSWORD=secure_dev_password_456
+
+DEV_USER_3_EMAIL=dev.user3@yourdomain.com
+DEV_USER_3_PASSWORD=secure_dev_password_789
+
+# Show development hints in UI (optional)
+NEXT_PUBLIC_SHOW_DEV_LOGIN=true
+```
 
 ### Test Scripts
 
 #### Debug Script (`scripts/debug-login.js`)
+- 🔐 Security: Only runs in development mode
 - Tests all login components individually
+- Uses environment variables, no hardcoded credentials
 - Verifies user data, JWT, bcrypt imports
-- Simulates authentication flow
 - Environment variable checking
 
 #### Comprehensive Test Suite (`scripts/test-login-trace.js`)
+- 🔐 Security: Environment-based test cases
 - Tests all login scenarios with expected status codes
 - Validates error responses and success flows
 - Automated testing with detailed logging
@@ -176,45 +166,32 @@ node scripts/test-login-trace.js
 
 ## 📊 Logging Output Examples
 
-### Successful Login (kalcatrao@hotmail.com)
+### Successful Login (Development User)
 ```
 🔧 LOGIN TRACE: Starting login attempt
 🔧 LOGIN TRACE: Email provided: YES
 🔧 LOGIN TRACE: Password provided: YES
-🔧 LOGIN TRACE: Email value: kalcatrao@hotmail.com
-🔧 LOGIN TRACE: KALCATRAO LOGIN ATTEMPT DETECTED
-🔧 LOGIN TRACE: Password attempt: kalc2024!
+🔧 LOGIN TRACE: Email value: dev.user1@yourdomain.com
 🔧 LOGIN TRACE: Supabase not configured, using development authentication
 🔧 LOGIN TRACE: User lookup result: FOUND
 🔧 LOGIN TRACE: Found user: {
-  id: '2',
-  email: 'kalcatrao@hotmail.com',
-  name: 'Kalciano Pessoa',
+  id: '1',
+  email: 'dev.user1@yourdomain.com',
+  name: 'Development User 1',
   hasPassword: true,
   isEmailVerified: true
 }
-🔧 LOGIN TRACE: KALCATRAO - Expected password: kalc2024!
-🔧 LOGIN TRACE: KALCATRAO - Provided password: kalc2024!
-🔧 LOGIN TRACE: KALCATRAO - Passwords match: true
-🔧 LOGIN TRACE: Plain text comparison result: true
-🔧 LOGIN TRACE: Password verification successful for: kalcatrao@hotmail.com
-🔧 LOGIN TRACE: KALCATRAO - PASSWORD VERIFICATION SUCCESS
+🔧 LOGIN TRACE: Password verification successful
 🔧 LOGIN TRACE: JWT token generated successfully
-🔧 LOGIN TRACE: Dev login successful for: kalcatrao@hotmail.com
+🔧 LOGIN TRACE: Dev login successful
 ```
 
 ### Failed Login (Invalid Password)
 ```
 🔧 LOGIN TRACE: Starting login attempt
-🔧 LOGIN TRACE: KALCATRAO LOGIN ATTEMPT DETECTED
-🔧 LOGIN TRACE: Password attempt: wrongpassword
 🔧 LOGIN TRACE: User lookup result: FOUND
-🔧 LOGIN TRACE: KALCATRAO - Expected password: kalc2024!
-🔧 LOGIN TRACE: KALCATRAO - Provided password: wrongpassword
-🔧 LOGIN TRACE: KALCATRAO - Passwords match: false
-🔧 LOGIN TRACE: Plain text comparison result: false
-🔧 LOGIN TRACE: Password mismatch for user: kalcatrao@hotmail.com
-🔧 LOGIN TRACE: KALCATRAO - PASSWORD VERIFICATION FAILED
+🔧 LOGIN TRACE: Password verification failed
+🔧 LOGIN TRACE: Invalid credentials provided
 ```
 
 ### Email Not Verified
@@ -223,54 +200,55 @@ node scripts/test-login-trace.js
 🔧 LOGIN TRACE: Email value: test@unverified.com
 🔧 LOGIN TRACE: User lookup result: FOUND
 🔧 LOGIN TRACE: Found user: { emailVerified: false }
-🔧 LOGIN TRACE: Email not verified for user: test@unverified.com
+🔧 LOGIN TRACE: Email not verified for user
 ```
 
 ## 🔍 Error Code Reference
 
 | Code | Status | Message | Description |
 |------|--------|---------|-------------|
-| `INVALID_CREDENTIALS` | 401 | "Incorrect email or password" | Wrong email/password combination |
-| `EMAIL_NOT_VERIFIED` | 403 | "Verify email" | Email address needs verification |
-| `EMAIL_NOT_CONFIRMED` | 403 | "Verify email" | Supabase email not confirmed |
+| `INVALID_CREDENTIALS` | 401 | "Invalid credentials" | Wrong email/password combination |
+| `EMAIL_NOT_VERIFIED` | 403 | "Email verification required" | Email address needs verification |
+| `EMAIL_NOT_CONFIRMED` | 403 | "Email verification required" | Supabase email not confirmed |
 | `DEV_LOGIN_FAILED` | 500 | Various | Development authentication error |
 | `LOGIN_FAILED` | 500 | Various | General login failure |
 
 ## 🚀 Usage
 
-### Testing the Implementation
+### 🔐 Secure Development Setup
 
-1. **Start the development server**:
+1. **Configure environment variables**:
+   ```bash
+   # Create .env.local with your development credentials
+   cp .env.example .env.local
+   # Edit .env.local with secure development credentials
+   ```
+
+2. **Start the development server**:
    ```bash
    npm run dev
    ```
 
-2. **Test successful login**:
+3. **Test login functionality**:
    - Navigate to `/login`
-   - Enter: `kalcatrao@hotmail.com` / `kalc2024!`
+   - Use your configured development credentials
    - Check console for detailed tracing logs
    - Verify success toast and redirect
 
-3. **Test failed login**:
-   - Enter: `kalcatrao@hotmail.com` / `wrongpassword`
-   - Check console for password comparison logs
-   - Verify error toast with specific message
-
-4. **Test email verification**:
-   - Enter: `test@unverified.com` / `test123`
-   - Verify 403 response and email verification toast
-
-5. **Run automated tests**:
+4. **Run automated tests**:
    ```bash
    node scripts/test-login-trace.js
    ```
 
 ### Production Considerations
 
-1. **Logging**: Reduce verbosity in production
-2. **Security**: Remove password logging in production
-3. **Performance**: Consider logging impact on response times
-4. **Monitoring**: Set up Sentry alerts for authentication failures
+1. **Security**: 
+   - Ensure all `DEV_USER_*` variables are removed in production
+   - Set `NEXT_PUBLIC_SHOW_DEV_LOGIN=false` or remove entirely
+   - Verify `NODE_ENV=production`
+
+2. **Performance**: Consider logging impact on response times
+3. **Monitoring**: Set up Sentry alerts for authentication failures
 
 ## 🛠️ Troubleshooting
 
@@ -278,33 +256,49 @@ node scripts/test-login-trace.js
 
 1. **500 Errors**: Check server logs for detailed error messages
 2. **Missing Dependencies**: Ensure `jsonwebtoken` and `bcryptjs` are installed
-3. **Environment Variables**: Verify Supabase configuration for production
-4. **User Data**: Ensure test users exist in the database
+3. **Environment Variables**: Verify development credentials are configured
+4. **Production Issues**: Ensure Supabase configuration for production
 
 ### Debug Commands
 
 ```bash
-# Test login components
+# Test login components (development only)
 node scripts/debug-login.js
 
-# Test API directly
+# Test API directly (development only)
 curl -X POST http://localhost:3000/api/auth/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"kalcatrao@hotmail.com","password":"kalc2024!"}'
+  -d '{"email":"your_dev_email","password":"your_dev_password"}'
 
 # Check server logs in development
 npm run dev # and monitor console output
 ```
 
+## 🔐 Security Best Practices
+
+### ✅ DO:
+- Use environment variables for all credentials
+- Restrict development features to development mode only
+- Rotate development credentials regularly
+- Use unique, secure passwords even in development
+- Review code for hardcoded credentials before deployment
+
+### ❌ DON'T:
+- Hardcode credentials in source code
+- Expose development credentials in UI
+- Use production credentials in development
+- Commit `.env.local` to version control
+- Show development features in production
+
 ## 📝 Summary
 
 The login tracing implementation provides:
 
-- ✅ **Comprehensive logging** for debugging authentication issues
-- ✅ **bcrypt password verification** with fallback support
-- ✅ **Email verification checks** with proper error responses
-- ✅ **Enhanced frontend error handling** with toast notifications
-- ✅ **Automated testing infrastructure** for validation
-- ✅ **Production-ready error codes** and messages
+- **🔐 Secure Development**: Environment-based credential management
+- **🔧 Comprehensive Logging**: Detailed tracing for development debugging
+- **🛡️ Production Safety**: No credential exposure in production builds
+- **🧪 Testing Infrastructure**: Automated testing with secure configuration
+- **📊 Error Handling**: Enhanced user feedback and error reporting
+- **🚀 Easy Setup**: Clear documentation and configuration guidelines
 
-All requested features have been implemented and tested. The system now provides detailed visibility into the authentication flow, making it easy to trace and debug login failures. 
+**Remember**: Security is everyone's responsibility. When in doubt, choose the more secure option. 

@@ -122,6 +122,10 @@ export default function Login() {
     }
   };
 
+  // Get development credentials from environment (only in development)
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  const showDevHints = isDevelopment && process.env.NEXT_PUBLIC_SHOW_DEV_LOGIN === 'true';
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
       <div className="w-full max-w-sm rounded-lg border border-border bg-card p-8 shadow-lg">
@@ -174,12 +178,13 @@ export default function Login() {
           </button>
         </form>
         
-        {/* 🔧 Add helpful information for development */}
-        <div className="mt-4 text-center text-xs text-muted-foreground">
-          <p>Development login available:</p>
-          <p>kalcatrao@hotmail.com / kalc2024!</p>
-          <p>jane@example.com / password123</p>
-        </div>
+        {/* 🔐 Development hints - only shown in development mode with explicit env var */}
+        {showDevHints && (
+          <div className="mt-4 text-center text-xs text-muted-foreground border-t pt-4">
+            <p className="text-yellow-600 font-medium">⚠️ Development Mode</p>
+            <p>Test accounts available - check .env.local</p>
+          </div>
+        )}
       </div>
     </div>
   );

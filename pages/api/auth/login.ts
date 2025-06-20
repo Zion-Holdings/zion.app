@@ -4,19 +4,78 @@ import * as Sentry from '@sentry/nextjs';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
 
+// 🔐 SECURITY: Development users from environment variables
+const getDevUsers = () => {
+  // Only load development users in development mode
+  if (process.env.NODE_ENV !== 'development') {
+    return [];
+  }
+
+  const devUsers = [];
+  
+  // Load development users from environment variables
+  const devUser1Email = process.env.DEV_USER_1_EMAIL;
+  const devUser1Password = process.env.DEV_USER_1_PASSWORD;
+  const devUser2Email = process.env.DEV_USER_2_EMAIL;
+  const devUser2Password = process.env.DEV_USER_2_PASSWORD;
+  const devUser3Email = process.env.DEV_USER_3_EMAIL;
+  const devUser3Password = process.env.DEV_USER_3_PASSWORD;
+
+  if (devUser1Email && devUser1Password) {
+    devUsers.push({ 
+      id: 'dev-user-1', 
+      email: devUser1Email, 
+      password: devUser1Password,
+      name: 'Development User 1'
+    });
+  }
+
+  if (devUser2Email && devUser2Password) {
+    devUsers.push({ 
+      id: 'dev-user-2', 
+      email: devUser2Email, 
+      password: devUser2Password,
+      name: 'Development User 2'
+    });
+  }
+
+  if (devUser3Email && devUser3Password) {
+    devUsers.push({ 
+      id: 'dev-user-3', 
+      email: devUser3Email, 
+      password: devUser3Password,
+      name: 'Development User 3'
+    });
+  }
+
+  // Fallback to basic test users if no env vars are set
+  if (devUsers.length === 0) {
+    devUsers.push(
+      { id: 'dev-user-1', email: 'dev@example.com', password: 'dev123', name: 'Dev User' },
+      { id: 'dev-user-2', email: 'test@example.com', password: 'test123', name: 'Test User' }
+    );
+  }
+
+  return devUsers;
+};
+
 async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // 🔧 Enable verbose logging
-  console.log('🔧 LOGIN TRACE: Starting login attempt');
-  console.log('🔧 LOGIN TRACE: Request method:', req.method);
-  console.log('🔧 LOGIN TRACE: Request body keys:', Object.keys(req.body || {}));
-  console.log('🔧 LOGIN TRACE: Environment config status:', {
-    supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
-    sentryConfigured: ENV_CONFIG.sentry.isConfigured,
-    environment: ENV_CONFIG.app.environment
-  });
+  // 🔧 Enable verbose logging (only in development)
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  
+  if (isDevelopment) {
+    console.log('🔧 LOGIN TRACE: Starting login attempt');
+    console.log('🔧 LOGIN TRACE: Request method:', req.method);
+    console.log('🔧 LOGIN TRACE: Request body keys:', Object.keys(req.body || {}));
+    console.log('🔧 LOGIN TRACE: Environment config status:', {
+      supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
+      sentryConfigured: ENV_CONFIG.sentry.isConfigured,
+      environment: ENV_CONFIG.app.environment
+    });
+  }
 
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -30,30 +89,33 @@ async function handler(
 
   // Check if Supabase is configured
   if (!ENV_CONFIG.supabase.isConfigured) {
-    console.log('🔧 LOGIN TRACE: Supabase not configured - using development authentication');
+    if (isDevelopment) {
+      console.log('🔧 LOGIN TRACE: Supabase not configured - using development authentication');
+    }
     
-    // Development fallback authentication
-    const devUsers = [
-      { id: 'dev-user-1', email: 'kalcatrao@hotmail.com', password: 'kalc2024!' },
-      { id: 'dev-user-2', email: 'dev@example.com', password: 'dev123' },
-      { id: 'dev-user-3', email: 'test@example.com', password: 'test123' }
-    ];
-
+    // 🔐 SECURITY: Use environment-based development authentication
+    const devUsers = getDevUsers();
     const user = devUsers.find(u => u.email === email && u.password === password);
     
     if (user) {
-      console.log('🔧 LOGIN TRACE: Development user authenticated successfully');
+      if (isDevelopment) {
+        console.log('🔧 LOGIN TRACE: Development user authenticated successfully');
+      }
       return res.status(200).json({
         user: {
           id: user.id,
           email: user.email,
+          name: user.name,
           email_verified: true,
           created_at: new Date().toISOString()
         },
         message: 'Development authentication successful'
       });
     } else {
-      console.log('🔧 LOGIN TRACE: Development authentication failed');
+      if (isDevelopment) {
+        console.log('🔧 LOGIN TRACE: Development authentication failed');
+        console.log('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));
+      }
       return res.status(401).json({ error: 'Invalid credentials' });
     }
   }
@@ -65,7 +127,9 @@ async function handler(
       ENV_CONFIG.supabase.serviceRoleKey || ENV_CONFIG.supabase.anonKey
     );
 
-    console.log('🔧 LOGIN TRACE: Attempting Supabase authentication');
+    if (isDevelopment) {
+      console.log('🔧 LOGIN TRACE: Attempting Supabase authentication');
+    }
 
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
@@ -73,7 +137,9 @@ async function handler(
     });
 
     if (error) {
-      console.error('🔧 LOGIN TRACE: Supabase authentication error:', error);
+      if (isDevelopment) {
+        console.error('🔧 LOGIN TRACE: Supabase authentication error:', error);
+      }
       
       if (ENV_CONFIG.sentry.isConfigured) {
         Sentry.captureException(error, {
@@ -86,11 +152,15 @@ async function handler(
     }
 
     if (!data.user) {
-      console.error('🔧 LOGIN TRACE: No user data returned from Supabase');
+      if (isDevelopment) {
+        console.error('🔧 LOGIN TRACE: No user data returned from Supabase');
+      }
       return res.status(401).json({ error: 'Authentication failed' });
     }
 
-    console.log('🔧 LOGIN TRACE: Supabase authentication successful');
+    if (isDevelopment) {
+      console.log('🔧 LOGIN TRACE: Supabase authentication successful');
+    }
     
     return res.status(200).json({
       user: data.user,
@@ -99,7 +169,9 @@ async function handler(
     });
 
   } catch (error: any) {
-    console.error('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
+    if (isDevelopment) {
+      console.error('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
+    }
     
     if (ENV_CONFIG.sentry.isConfigured) {
       Sentry.captureException(error, {
