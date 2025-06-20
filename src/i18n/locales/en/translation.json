@@ -42,6 +42,14 @@
     "login_success": "Logged in successfully",
     "logout_success": "Logged out successfully"
   },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "browse_marketplace": "Browse Marketplace",
+    "subtotal": "Subtotal",
+    "processing": "Processing...",
+    "checkout": "Checkout"
+  },
   "home": {
     "hero_title": "The Future of Tech & AI Marketplace",
     "hero_subtitle": "The world's first free marketplace dedicated to high-tech and artificial intelligence",

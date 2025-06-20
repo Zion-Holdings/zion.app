@@ -39,6 +39,14 @@
     "login_success": "Sesión iniciada correctamente",
     "logout_success": "Sesión cerrada correctamente"
   },
+  "cart": {
+    "title": "Tu Carrito",
+    "empty": "Tu carrito está vacío",
+    "browse_marketplace": "Explorar Mercado",
+    "subtotal": "Subtotal",
+    "processing": "Procesando...",
+    "checkout": "Pagar"
+  },
   "home": {
     "hero_title": "El Futuro del Mercado de Tecnología e IA",
     "hero_subtitle": "El primer mercado gratuito dedicado a la alta tecnología e inteligencia artificial",

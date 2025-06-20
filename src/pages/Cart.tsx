@@ -14,8 +14,10 @@ import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
 import { CartItem as CartItemType } from '@/types/cart';
 import { safeStorage } from '@/utils/safeStorage';
 import { getStripe } from '@/utils/getStripe';
+import { useTranslation } from 'react-i18next';
 
 export default function CartPage() {
+  const { t } = useTranslation();
   const reduxItems = useSelector((s: RootState) => s.cart.items);
   const [items, setItems] = useState<CartItemType[]>(reduxItems);
   const dispatch = useDispatch<AppDispatch>();
@@ -87,9 +89,9 @@ export default function CartPage() {
     return (
       <div className="container py-10 text-center">
         <img src="/placeholder.svg" alt="Empty cart" className="mx-auto mb-4" />
-        <p>Your cart is empty</p>
+        <p>{t('cart.empty')}</p>
         <Button asChild className="mt-4">
-          <Link href="/marketplace">Browse Marketplace</Link>
+          <Link href="/marketplace">{t('cart.browse_marketplace')}</Link>
         </Button>
       </div>
     );
@@ -97,7 +99,7 @@ export default function CartPage() {
 
   return (
     <div className="container max-w-2xl py-10">
-      <h1 className="text-3xl font-bold mb-6">Your Cart</h1>
+      <h1 className="text-3xl font-bold mb-6">{t('cart.title')}</h1>
       <ul className="space-y-4">
         {items.map(item => (
           <CartItemComponent
@@ -109,11 +111,11 @@ export default function CartPage() {
         ))}
       </ul>
       <div className="flex justify-between mt-6 font-semibold">
-        <span>Subtotal</span>
+        <span>{t('cart.subtotal')}</span>
         <span>${subtotal.toFixed(2)}</span>
       </div>
       <Button className="mt-4 w-full" onClick={startCheckout} disabled={loading}>
-        {loading ? 'Processing...' : 'Checkout'}
+        {loading ? t('cart.processing') : t('cart.checkout')}
       </Button>
       <GuestCheckoutModal
         open={guestOpen}
