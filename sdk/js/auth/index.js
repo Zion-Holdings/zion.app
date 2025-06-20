@@ -109,7 +109,9 @@ async function signupWithEmail(email, password, otherDetails = {}) {
   const data = await response.json();
 
   if (!response.ok) {
-    throw new Error(data.message || `Signup failed. Status: ${response.status}`);
+    throw new Error(
+      data.error || data.message || `Signup failed. Status: ${response.status}`
+    );
   }
   // data typically contains { message, emailVerificationRequired, user } or { user, session }
   return data;
