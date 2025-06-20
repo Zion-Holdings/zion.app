@@ -1,4 +1,4 @@
-import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { fetchProductById } from '../../src/services/productService';
@@ -11,7 +11,7 @@ type ProductPageProps = {
   product: ProductDetailsData | null; // Allow null if product might not be found and handled in component
 };
 
-const ProductDetailPage = ({ product }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const ProductDetailPage = ({ product }: ProductPageProps) => {
   if (!product) {
     // This case should ideally be handled by getServerSideProps returning notFound: true
     // but as a fallback:

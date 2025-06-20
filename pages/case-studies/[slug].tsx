@@ -9,7 +9,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({
+  params,
+}: {
+  params?: { slug?: string };
+}) => {
   const slug = params?.slug as string;
   const study = CASE_STUDIES.find(s => s.slug === slug) || null;
   if (!study) {
