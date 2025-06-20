@@ -1,27 +1,25 @@
 # Monitoring Service
 
-This directory contains a Node.js service dedicated to monitoring URL performance and health for the Zion platform.
+This directory contains a small Node.js service dedicated to monitoring URL performance and health for the Zion platform.
 
 ## Overview
 
-The service likely periodically checks a list of specified URLs, measures response times, checks for availability, and logs this information. It might also integrate with alerting systems if issues are detected.
+The service periodically checks several URLs, measures response times, verifies availability and logs the results. Alerts can be sent if latency thresholds are exceeded.
 
-## Core Technologies (Assumed)
+## Core Technologies
 
-- Node.js
-- TypeScript (likely, if consistent with other Node.js services in the project)
-- Common HTTP client libraries (e.g., Axios, node-fetch/got) for making requests.
-- Potentially a scheduling library (e.g., `node-cron`) if it runs its own checks, or it might be triggered by external cron jobs (like GitHub Actions).
+- Node.js & TypeScript
+- [axios](https://github.com/axios/axios) for HTTP requests
+- [node-cron](https://github.com/node-cron/node-cron) for scheduling hourly checks
+- [winston](https://github.com/winstonjs/winston) for structured logging
 
-**TODO:** Verify the exact technologies and libraries used by inspecting `monitoring/package.json` (if it exists) or relevant scripts.
+## Key Features
 
-## Key Features (Inferred)
-
-- URL health checking (status codes).
-- Response time measurement.
-- Logging of monitoring data (to console, files, or a database).
-- **TODO:** Determine if it has alerting capabilities (e.g., integration with Slack, PagerDuty, Sentry).
-- **TODO:** Identify how the list of URLs to monitor is configured.
+- URL health checking for several endpoints
+- Response time measurement and logging to `logs/perf`
+- Alerting via webhook (`ALERT_WEBHOOK_URL`) when latency exceeds a threshold
+- Optional service restart through PM2 for non-Kubernetes services
+- Endpoints configured via environment variables (see `.env.example`)
 
 ## Setup and Local Development
 
@@ -39,11 +37,11 @@ The service likely periodically checks a list of specified URLs, measures respon
     *   If dependencies are managed in the root `package.json`, they should already be installed.
 
 3.  **Configure Environment Variables:**
-    *   This service might require environment variables for:
-        *   Target URLs or a path to a configuration file listing them.
-        *   API keys for alerting services.
-        *   Logging configurations.
-    *   Check for a `.env.example` in this directory.
+    *   Copy `.env.example` to `.env` and adjust values as needed.
+    *   Variables include:
+        *   `DJANGO_API_BASE_URL`, `NEXTJS_API_BASE_URL`, `CUSTOM_SERVER_BASE_URL` – base URLs for monitored services
+        *   `ALERT_WEBHOOK_URL` – where alert notifications are sent
+        *   `LOG_LEVEL` – logging verbosity
 
 4.  **Running the Service:**
     *   There might be an npm script in `monitoring/package.json` or the root `package.json`.
@@ -56,12 +54,18 @@ The service likely periodically checks a list of specified URLs, measures respon
 
 ## Running Tests
 
--   **TODO:** Add instructions on how to run tests specific to this monitoring service.
+This submodule currently has no automated tests. Running `npm test` will execute
+the placeholder script defined in `package.json`.
 
 ## Deployment
 
--   **TODO:** Document how this service is deployed. Is it containerized? Does it run as a cron job on a server or as part of a CI/CD scheduled task (like the GitHub Actions `hourly-check.yml`)?
+The service is designed to run as a background process. The default cron schedule
+in `src/index.ts` triggers the monitoring job hourly. In production it can be
+run either via `node index.js` or packaged into a container and launched via a
+scheduler (e.g., a system cron job or CI runner).
 
 ## Integration with Other Systems
 
--   **TODO:** Describe how this monitoring service's findings are used. Are reports generated? Are alerts sent to a central system?
+Latency alerts are sent to the webhook configured in `ALERT_WEBHOOK_URL`. If a
+service is not Kubernetes managed the monitor attempts a PM2 restart when
+latency exceeds the threshold.
