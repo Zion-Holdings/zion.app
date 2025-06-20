@@ -2,7 +2,7 @@
 
 The demo checkout flow uses Stripe in test mode. Configure these environment variables before running the app:
 
-- `STRIPE_TEST_KEY` – publishable test key loaded by the client.
+- `NEXT_PUBLIC_STRIPE_PK` – publishable test key loaded by the client.
 - `STRIPE_SECRET_KEY` – secret API key used by `/api/create-payment-intent` and `/api/checkout_sessions`.
 - `STRIPE_WEBHOOK_SECRET` – signing secret used by the Stripe webhook handler.
 - `SERVERLESS_FUNCTION_SECRET` – shared secret for authenticated serverless requests.
