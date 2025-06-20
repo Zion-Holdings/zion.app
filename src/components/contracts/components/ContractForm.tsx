@@ -46,7 +46,7 @@ export function ContractForm({
   initialValues,
   onFormValuesChange,
   onContractGenerated,
-  deployOptions,
+  _deployOptions,
   onDeployOptionsChange
 }: ContractFormProps) {
   const [isGenerating, setIsGenerating] = useState(false);
