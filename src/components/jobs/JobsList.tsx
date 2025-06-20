@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import { Loader2, Edit, X, Eye } from "lucide-react";
 import { format } from "date-fns";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface JobsListProps {
   filter?: JobStatus;
@@ -67,7 +67,7 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
           }
         </p>
         <Button asChild className="mt-4">
-          <Link to="/post-job">Post Your First Job</Link>
+          <Link href="/post-job">Post Your First Job</Link>
         </Button>
       </div>
     );
