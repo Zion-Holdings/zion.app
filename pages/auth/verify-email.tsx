@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { logError } from '@/utils/logError';
 import { suggestFix } from '@/utils/suggestFix';
-import { supabase } from '@/integrations/supabase/client'; // Assuming supabase client is here
+
 import { useAuth } from '@/hooks/useAuth'; // To access user state
 
 const VerifyEmailPage = () => {
