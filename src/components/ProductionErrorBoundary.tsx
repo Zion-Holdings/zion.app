@@ -164,7 +164,6 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
       this.handleAutoRetry();
     }
   }
->>>>>>> f8392cbf8e4e50377f0c3e906c963f8d84d248e5
 
       {!isLoading && !error && reviews.length === 0 && (
         <p>No reviews yet. Be the first to review!</p>
@@ -257,4 +256,27 @@ export default ProductReviews;
                 </svg>
               </div>
 export default ProductionErrorBoundary;
->>>>>>> f8392cbf8e4e50377f0c3e906c963f8d84d248e5
+              <h1 className="text-lg font-semibold text-gray-900">{title}</h1>
+            </div>
+            
+            <p className="text-gray-600 mb-6">{description}</p>
+            
+            <div className="space-y-3">
+              <button
+                onClick={this.handleRetry}
+                disabled={retryCount >= 3}
+                className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                {actionText}
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+export default ProductionErrorBoundary; 
