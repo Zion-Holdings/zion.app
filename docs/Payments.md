@@ -28,3 +28,18 @@ const session = await axios.post('/payments/create-session', { priceId });
 // Redirect the browser to the hosted Checkout page
 await stripe?.redirectToCheckout({ sessionId: session.data.id });
 ```
+
+## Guest Checkout and Sandbox Login
+
+During development you can test payments without authenticating a user. Navigate
+to `/marketplace/checkout` to open the guest checkout page. For flows that
+require authentication, define development credentials in `.env.local` (see
+[SECURITY_CREDENTIALS.md](SECURITY_CREDENTIALS.md) for details):
+
+```bash
+DEV_USER_1_EMAIL=guest@example.com
+DEV_USER_1_PASSWORD=pass1234
+```
+
+These credentials are loaded only in development and allow you to sign in to the
+app without creating a real account.

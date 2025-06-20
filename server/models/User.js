@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, lowercase: true, trim: true, unique: true },
   passwordHash: { type: String, required: true, select: false },
+  active: { type: Boolean, default: true },
 });
 
 // Ensure a unique index exists for the email field. This prevents duplicate

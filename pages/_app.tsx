@@ -23,12 +23,34 @@ import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
+// Import Next.js fonts for optimal loading and CLS prevention
+import { Inter, Montserrat } from 'next/font/google';
+import Head from 'next/head';
 // Import global Tailwind styles so they load before the app renders
 import '../src/index.css';
 import * as Sentry from '@sentry/nextjs';
 import getConfig from 'next/config';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 import { validateProductionEnvironment, initializeServices } from '@/utils/environmentConfig';
+import { initializePerformanceOptimizations } from '@/utils/performance';
+
+// Configure fonts with optimal loading strategies
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
+  adjustFontFallback: true,
+  variable: '--font-inter',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['system-ui', 'arial'],
+  adjustFontFallback: true,
+  variable: '--font-montserrat',
+});
+
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
 
@@ -49,6 +71,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       
       // Initialize global error handlers
       initializeGlobalErrorHandlers();
+      
+      // Initialize performance monitoring and optimizations
+      initializePerformanceOptimizations();
       
       const { publicRuntimeConfig } = getConfig();
       console.log('[App] Public Runtime Config:', publicRuntimeConfig);
@@ -102,46 +127,111 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // Use ProductionErrorBoundary as the top-level error boundary
   return (
-    <ProductionErrorBoundary>
-      <RootErrorBoundary>
-        <React.Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
-          <GlobalErrorBoundary>
-            <QueryClientProvider client={queryClient}>
-              <ApiErrorBoundary>
-                <ReduxProvider store={store}>
-                  <HelmetProvider>
-                    <ErrorProvider>
-                      <AuthProvider>
-                        <WhitelabelProvider>
-                          <I18nextProvider i18n={i18n}>
-                            <WalletProvider>
-                              <CartProvider>
-                                <AnalyticsProvider>
-                                  <ThemeProvider>
-                                    <AppLayout>
-                                      <ErrorBoundary>
-                                        <Component {...pageProps} productId="example-product-id" />
-                                      </ErrorBoundary>
-                                      <ErrorResetOnRouteChange />
-                                      <Toaster />
-                                      <OfflineIndicator />
-                                    </AppLayout>
-                                  </ThemeProvider>
-                                </AnalyticsProvider>
-                              </CartProvider>
-                            </WalletProvider>
-                          </I18nextProvider>
-                        </WhitelabelProvider>
-                      </AuthProvider>
-                    </ErrorProvider>
-                  </HelmetProvider>
-                </ReduxProvider>
-              </ApiErrorBoundary>
-            </QueryClientProvider>
-          </GlobalErrorBoundary>
-        </React.Suspense>
-      </RootErrorBoundary>
-    </ProductionErrorBoundary>
+    <>
+      <Head>
+        {/* Critical font preloading to prevent CLS */}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+          as="style"
+          onLoad={(e) => {
+            const target = e.target as HTMLLinkElement;
+            target.onload = null;
+            target.rel = 'stylesheet';
+          }}
+        />
+        <noscript>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            rel="stylesheet"
+          />
+        </noscript>
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+          as="style"
+          onLoad={(e) => {
+            const target = e.target as HTMLLinkElement;
+            target.onload = null;
+            target.rel = 'stylesheet';
+          }}
+        />
+        <noscript>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+            rel="stylesheet"
+          />
+        </noscript>
+        {/* Font optimization CSS to prevent CLS */}
+        <style jsx global>{`
+          :root {
+            --font-inter: ${inter.style.fontFamily};
+            --font-montserrat: ${montserrat.style.fontFamily};
+          }
+          
+          /* Fallback font adjustments to match Inter/Montserrat metrics */
+          @font-face {
+            font-family: 'Inter Fallback';
+            src: local('Arial'), local('system-ui');
+            size-adjust: 107%;
+            ascent-override: 90%;
+            descent-override: 25%;
+            line-gap-override: 0%;
+          }
+          
+          @font-face {
+            font-family: 'Montserrat Fallback';
+            src: local('Arial'), local('system-ui');
+            size-adjust: 103%;
+            ascent-override: 92%;
+            descent-override: 24%;
+            line-gap-override: 0%;
+          }
+        `}</style>
+      </Head>
+      <div className={`${inter.variable} ${montserrat.variable}`}>
+        <ProductionErrorBoundary>
+          <RootErrorBoundary>
+            <React.Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+              <GlobalErrorBoundary>
+                <QueryClientProvider client={queryClient}>
+                  <ApiErrorBoundary>
+                    <ReduxProvider store={store}>
+                      <HelmetProvider>
+                        <ErrorProvider>
+                          <AuthProvider>
+                            <WhitelabelProvider>
+                              <I18nextProvider i18n={i18n}>
+                                <WalletProvider>
+                                  <CartProvider>
+                                    <AnalyticsProvider>
+                                      <ThemeProvider>
+                                        <AppLayout>
+                                          <ErrorBoundary>
+                                            <Component {...pageProps} productId="example-product-id" />
+                                          </ErrorBoundary>
+                                          <ErrorResetOnRouteChange />
+                                          <Toaster />
+                                          <OfflineIndicator />
+                                        </AppLayout>
+                                      </ThemeProvider>
+                                    </AnalyticsProvider>
+                                  </CartProvider>
+                                </WalletProvider>
+                              </I18nextProvider>
+                            </WhitelabelProvider>
+                          </AuthProvider>
+                        </ErrorProvider>
+                      </HelmetProvider>
+                    </ReduxProvider>
+                  </ApiErrorBoundary>
+                </QueryClientProvider>
+              </GlobalErrorBoundary>
+            </React.Suspense>
+          </RootErrorBoundary>
+        </ProductionErrorBoundary>
+      </div>
+    </>
   );
 }
 
