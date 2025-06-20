@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'; // Changed from react-router-dom
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -250,7 +251,10 @@ export default function Signup() {
               disabled={loading || emailVerificationRequired}
             />
             <label htmlFor="terms" className="text-sm">
-              I agree to the Terms and Conditions
+              I agree to the{' '}
+              <Link href="/terms" className="underline">Terms of Service</Link>{' '}
+              and{' '}
+              <Link href="/privacy" className="underline">Privacy Policy</Link>
             </label>
           </div>
           {formik.touched.terms && formik.errors.terms && (

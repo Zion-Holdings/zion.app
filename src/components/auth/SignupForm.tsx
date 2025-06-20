@@ -181,7 +181,12 @@ export default function SignupForm() {
                   <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                 </FormControl>
                 <div className="space-y-1 leading-none">
-                  <FormLabel>I agree to the <Link href="/terms">Terms</Link></FormLabel>
+                  <FormLabel>
+                    I agree to the{' '}
+                    <Link href="/terms" className="underline">Terms of Service</Link>{' '}
+                    and{' '}
+                    <Link href="/privacy" className="underline">Privacy Policy</Link>
+                  </FormLabel>
                 </div>
                 <FormMessage />
               </FormItem>
