@@ -96,7 +96,7 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
         </div>
       )}
     </div>
-      <Link href={`/listing/${product.id}`}>
+      <Link href={`/marketplace/listing/${product.id}`}>
         <h3 className="font-semibold mb-1">{productTitle}</h3>
       </Link>
       {product.price != null && (
