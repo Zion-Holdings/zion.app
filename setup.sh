@@ -42,6 +42,13 @@ else
   echo "Warning: npx not found. Skipping Prisma client generation."
 fi
 
+# Create example environment files and check configuration
+echo "Configuring environment files..."
+node scripts/setup-environment.cjs
+
+echo "Validating environment configuration..."
+npx ts-node --transpile-only scripts/check-env.ts || true
+
 # Development message
 echo ""
 echo "✅ Setup complete!"
