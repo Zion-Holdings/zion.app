@@ -8,15 +8,24 @@ import { ErrorState } from '@/components/jobs/applications/ErrorState';
 import { ProductListing } from '@/types/listings';
 import { fetchMarketplaceData } from '@/utils/fetchMarketplaceData';
 
-/** Marketplace component props */
+/**
+ * Marketplace component props
+ */
 export interface MarketplaceProps {
-  products?: ProductListing[]; // (kept for fallback but not used now)
+  /**
+   * Products to display in the marketplace (kept for fallback but not used now)
+   * @deprecated
+   * @remarks This prop is deprecated and should not be used.
+   */
+  products?: ProductListing[];
 }
 
 /**
  * Marketplace component renders a list of products.
  * It uses the fetchMarketplaceData function with proper error handling.
  * Includes retry logic for resilience and fallback to empty array on errors.
+ *
+ * @param {MarketplaceProps} props - The component props.
  */
 export default function Marketplace({ products: _initialProducts = [] }: MarketplaceProps) {
   const router = useRouter();
