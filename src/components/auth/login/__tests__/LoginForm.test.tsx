@@ -10,10 +10,11 @@ jest.mock('@/context/auth/AuthProvider', () => ({
 }));
 
 jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'), // import and retain default behavior
-  Link: ({ children, to }: { children: React.ReactNode; to: string }) => (
-    <a href={to}>{children}</a>
-  ),
+  Link: jest.fn(({ children, to }: { children: React.ReactNode; to: string }) => <a href={to}>{children}</a>),
+  useNavigate: jest.fn(() => jest.fn()), // Mock useNavigate as it's commonly used
+  useParams: jest.fn(() => ({})),       // Mock useParams
+  useLocation: jest.fn(() => ({ pathname: '/' })), // Mock useLocation
+  // Add any other exports from react-router-dom that might be used directly or indirectly
 }));
 
 jest.mock('@/lib/analytics', () => ({

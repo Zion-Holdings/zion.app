@@ -209,8 +209,8 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
     metaTitle: 'International Proposals - Zion',
     requiresAuth: false,
   },
-  // Route for documentation page
-  { path: '/docs', element: <DocsPage />, metaTitle: 'Documentation - Zion' },
+  // Route for documentation page - This is handled by pages/docs.tsx which provides props via getStaticProps
+  // { path: '/docs', element: <DocsPage />, metaTitle: 'Documentation - Zion' },
   // Wildcard for error handling - ensure this is last
   { path: '*', element: <ErrorRoutes />, metaTitle: 'Not Found - Zion' },
 ]);

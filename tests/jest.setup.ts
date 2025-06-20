@@ -3,6 +3,30 @@ import 'whatwg-fetch';
 import fetchMock from 'jest-fetch-mock';
 fetchMock.enableMocks();
 
+// Mock next/config
+jest.mock('next/config', () => () => ({
+  publicRuntimeConfig: {
+    NEXT_PUBLIC_SENTRY_DSN: 'https_mock_sentry_dsn@example.com/0',
+    // Add other NEXT_PUBLIC_ variables your application might need during tests
+    NEXT_PUBLIC_API_URL: 'http://localhost:3000/api',
+    // ... other env vars
+  },
+  serverRuntimeConfig: {
+    // Add any server-side runtime configs if needed
+  },
+}));
+
+jest.mock('@sentry/nextjs', () => ({
+  init: jest.fn(),
+  captureException: jest.fn(),
+  BrowserTracing: jest.fn(() => ({ name: 'BrowserTracing' })), // Mock for BrowserTracing
+  feedbackIntegration: jest.fn(() => ({ name: 'Feedback' })), // Mock for feedbackIntegration
+  withScope: jest.fn((callback) => callback(global)), // Mock for withScope, calls callback with a mock scope
+  // Add any other Sentry exports you use that need mocking, e.g.:
+  // setUser: jest.fn(),
+  // etc.
+}));
+
 // Reset fetch mocks before each test to ensure isolation
 beforeEach(() => {
   fetchMock.resetMocks();
@@ -24,6 +48,32 @@ global.TextDecoder = TextDecoder;
 // or that import.meta itself is transformed into an object where 'env' can be populated.
 process.env.VITE_REOWN_PROJECT_ID = 'test_project_id_from_jest_setup';
 
+
+// Polyfill URL.revokeObjectURL
+if (!URL.revokeObjectURL) {
+  // @ts-ignore
+  URL.revokeObjectURL = jest.fn();
+}
+
+// Polyfill BroadcastChannel
+if (!global.BroadcastChannel) {
+  // @ts-ignore
+  global.BroadcastChannel = class BroadcastChannel {
+    constructor(name) {
+      // @ts-ignore
+      this.name = name;
+      // @ts-ignore
+      this.onmessage = null;
+      // @ts-ignore
+      this.onmessageerror = null;
+    }
+    postMessage(message) {}
+    close() {}
+    addEventListener(type, listener) {}
+    removeEventListener(type, listener) {}
+    dispatchEvent(event) { return false; }
+  };
+}
 
 // Jest-axe matchers for accessibility
 import { toHaveNoViolations } from 'jest-axe';

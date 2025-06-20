@@ -3,51 +3,61 @@
 // NOTE: DO NOT add a static import for checkEssentialEnvVars here.
 // It needs to be dynamically imported within each test after mocks are applied.
 
-// Mock import.meta.env
-const mockImportMetaEnv = (envValues: Record<string, string | boolean | undefined>) => {
+let originalProcessEnv: NodeJS.ProcessEnv;
+let originalImportMeta: any;
+
+const mockProcessEnvAndImportMeta = (envValues: Record<string, string | boolean | undefined>) => {
+  originalProcessEnv = { ...process.env }; // Backup original process.env
+  originalImportMeta = globalThis.import?.meta ? { ...globalThis.import.meta } : undefined;
+
+  // Clear existing process.env keys that might interfere (those being tested)
+  delete process.env.NEXT_PUBLIC_REOWN_PROJECT_ID;
+  delete process.env.NEXT_PUBLIC_SUPABASE_URL;
+  delete process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  // ... clear other specific envs if necessary for other tests
+
+  const newMetaEnv: Record<string, any> = {};
+  if (globalThis.import?.meta?.env) {
+    Object.assign(newMetaEnv, globalThis.import.meta.env);
+  }
+
   let devToSet = true;
   if (typeof envValues.DEV === 'boolean') {
     devToSet = envValues.DEV;
   }
-  // Separate DEV from other envValues for clarity
   const otherEnvValues = { ...envValues };
   delete otherEnvValues.DEV;
 
   for (const key of Object.keys(otherEnvValues)) {
     const value = otherEnvValues[key];
-    if (value !== undefined) {
-      vi.stubEnv(key, String(value));
-    } else {
-      // If undefined in input, stub as empty string to override vitest.config.ts defaults
-      // and ensure it's treated as "missing" by the validator.
-      vi.stubEnv(key, '');
-    }
+    process.env[key] = value === undefined ? '' : String(value); // Set on process.env for jest
+    newMetaEnv[key] = value === undefined ? '' : String(value); // Also set on import.meta.env mock
   }
 
-  // Apply DEV last, merging with whatever import.meta.env looks like after stubEnv calls.
-  // This attempts to ensure DEV is correctly set even if stubEnv is aggressive.
-  const currentEnv = globalThis.import?.meta?.env || {};
-  vi.stubGlobal('import', { meta: { env: { ...currentEnv, DEV: devToSet } } });
+  newMetaEnv.DEV = devToSet;
+
+  // @ts-ignore
+  globalThis.import = { meta: { env: newMetaEnv } };
 };
 
 describe('checkEssentialEnvVars', () => {
   beforeEach(() => {
-    vi.resetModules();
-    vi.unstubAllGlobals();
-    vi.unstubAllEnvs();
-    // Aggressively ensure import.meta.env is reset if it exists from a previous state
-    if (globalThis.import && globalThis.import.meta) {
-      globalThis.import.meta.env = {};
-    }
+    jest.resetModules(); // Jest's equivalent for vi.resetModules()
+    // Backup and clear envs will be handled by mockProcessEnvAndImportMeta
   });
 
   afterEach(() => {
-    vi.unstubAllGlobals();
-    vi.unstubAllEnvs();
+    process.env = originalProcessEnv; // Restore original process.env
+    if (originalImportMeta) {
+      globalThis.import.meta = originalImportMeta;
+    } else if (globalThis.import) {
+      // @ts-ignore
+      delete globalThis.import.meta;
+    }
   });
 
   it('should not throw an error when all essential environment variables are set correctly', () => {
-    mockImportMetaEnv({
+    mockProcessEnvAndImportMeta({
       NEXT_PUBLIC_REOWN_PROJECT_ID: 'valid_project_id',
       NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
       NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
@@ -59,8 +69,8 @@ describe('checkEssentialEnvVars', () => {
   });
 
   it('should throw an error if NEXT_PUBLIC_REOWN_PROJECT_ID is missing', () => {
-    mockImportMetaEnv({
-      // NEXT_PUBLIC_REOWN_PROJECT_ID is missing
+    mockProcessEnvAndImportMeta({
+      // NEXT_PUBLIC_REOWN_PROJECT_ID is missing by not being set on process.env
       NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
       NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
     });
@@ -70,7 +80,7 @@ describe('checkEssentialEnvVars', () => {
   });
 
   it('should throw an error if NEXT_PUBLIC_SUPABASE_URL is empty', () => {
-    mockImportMetaEnv({
+    mockProcessEnvAndImportMeta({
       NEXT_PUBLIC_REOWN_PROJECT_ID: 'valid_project_id',
       NEXT_PUBLIC_SUPABASE_URL: '', // Empty value
       NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
@@ -81,7 +91,7 @@ describe('checkEssentialEnvVars', () => {
   });
 
   it('should throw an error if NEXT_PUBLIC_SUPABASE_ANON_KEY is a placeholder value', () => {
-    mockImportMetaEnv({
+    mockProcessEnvAndImportMeta({
       NEXT_PUBLIC_REOWN_PROJECT_ID: 'valid_project_id',
       NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
       NEXT_PUBLIC_SUPABASE_ANON_KEY: 'your_supabase_anon_key_here', // Placeholder
@@ -92,7 +102,7 @@ describe('checkEssentialEnvVars', () => {
   });
 
   it('should throw an error if NEXT_PUBLIC_REOWN_PROJECT_ID is a placeholder value', () => {
-    mockImportMetaEnv({
+    mockProcessEnvAndImportMeta({
       NEXT_PUBLIC_REOWN_PROJECT_ID: 'YOUR_PROJECT_ID', // Placeholder
       NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
       NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
@@ -103,10 +113,10 @@ describe('checkEssentialEnvVars', () => {
   });
 
   it('should throw an error listing multiple missing or invalid variables', () => {
-    mockImportMetaEnv({
-      NEXT_PUBLIC_REOWN_PROJECT_ID: undefined, // Explicitly undefined, will be stubbed as '' by mockImportMetaEnv
+    mockProcessEnvAndImportMeta({
+      NEXT_PUBLIC_REOWN_PROJECT_ID: undefined, // Will be set to '' by mockProcessEnvAndImportMeta
       NEXT_PUBLIC_SUPABASE_URL: 'your_supabase_url_here', // Placeholder
-      NEXT_PUBLIC_SUPABASE_ANON_KEY: undefined, // Explicitly undefined, will be stubbed as ''
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: undefined, // Will be set to ''
     });
     return import('@/utils/validateEnv').then(module => {
       try {
@@ -123,13 +133,13 @@ describe('checkEssentialEnvVars', () => {
   });
 
   it('should log success message in DEV mode when variables are valid', () => {
-    mockImportMetaEnv({
+    mockProcessEnvAndImportMeta({
       NEXT_PUBLIC_REOWN_PROJECT_ID: 'valid_project_id',
       NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
       NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
       DEV: true, // Explicitly set DEV true
     });
-    const consoleLogSpy = vi.spyOn(console, 'log');
+    const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {}); // Mock console.log
     return import('@/utils/validateEnv').then(module => {
       module.checkEssentialEnvVars();
       expect(consoleLogSpy).toHaveBeenCalledWith('Essential environment variables validated successfully.');
@@ -138,16 +148,16 @@ describe('checkEssentialEnvVars', () => {
   });
 
   it('should not log success message when not in DEV mode even if variables are valid', () => {
-    mockImportMetaEnv({
+    mockProcessEnvAndImportMeta({
       NEXT_PUBLIC_REOWN_PROJECT_ID: 'valid_project_id',
       NEXT_PUBLIC_SUPABASE_URL: 'https://valid.supabase.co',
       NEXT_PUBLIC_SUPABASE_ANON_KEY: 'valid_supabase_key',
       DEV: false, // Explicitly set DEV false
     });
 
-    const consoleLogSpy = vi.spyOn(console, 'log');
+    const consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
     // Ensure spy is clean before the specific call we want to monitor
-    consoleLogSpy.mockClear();
+    // consoleLogSpy.mockClear(); // Not strictly necessary with mockImplementation above for this test
 
     return import('@/utils/validateEnv').then(module => {
       try {

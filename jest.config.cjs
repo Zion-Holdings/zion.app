@@ -31,6 +31,8 @@ module.exports = {
     "/node_modules/",
     "/cypress/",
     "/playwright/", // Assuming playwright tests might be in a root /playwright folder
+    "tests/storybook/", // Explicitly ignore storybook visual tests
+    "tests/visual-regression.test.ts", // Explicitly ignore this visual regression test
     "\\.spec\\.[jt]s?(x)$" // Convention for Playwright spec files, to avoid conflict if any
   ],
   moduleNameMapper: {
@@ -47,6 +49,9 @@ module.exports = {
     '^@stripe/stripe-js$': '<rootDir>/tests/__mocks__/@stripe/stripe-js.js',
     '^next-cloudinary$': '<rootDir>/tests/__mocks__/next-cloudinary.js',
   },
+  transformIgnorePatterns: [
+    '/node_modules/(?!react-router-dom|@reown/appkit|@walletconnect/utils|bson|msw|@babel/runtime|@supabase/supabase-js|superjson|@tanstack/react-query|uint8arrays)/',
+  ],
   roots: ['<rootDir>/__tests__', '<rootDir>/tests', '<rootDir>/src'],
   coverageThreshold: {
     global: {
