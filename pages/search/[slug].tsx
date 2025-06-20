@@ -119,7 +119,11 @@ export default function SearchResultsPage({
                 price: result.price || 0,
                 images: result.image ? [result.image] : [],
                 rating: result.rating,
-                author: result.author || { name: '', id: '' },
+                author: result.author ? { 
+                  name: result.author.name, 
+                  id: result.id, 
+                  avatarUrl: result.author.avatar 
+                } : { name: '', id: '' },
                 tags: result.tags || [],
                 category: result.category || '',
                 currency: '$',

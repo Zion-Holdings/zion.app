@@ -232,9 +232,11 @@ export default function BlogPost() {
           
           {/* Article content */}
           <div className="max-w-4xl mx-auto">
-            <ReactMarkdown className="prose prose-lg prose-invert max-w-none">
-              {post.content}
-            </ReactMarkdown>
+            <div className="prose prose-lg prose-invert max-w-none">
+              <ReactMarkdown>
+                {post.content}
+              </ReactMarkdown>
+            </div>
             
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mt-12">

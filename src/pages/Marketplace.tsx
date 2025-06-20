@@ -122,7 +122,11 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
           .map((p) => (
             <ProductCard
               key={p.id}
-              product={p}
+              product={{
+                ...p,
+                price: p.price || 0, // Convert null to 0 for Product interface
+                description: p.description || '' // Ensure description is never undefined
+              }}
               onBuy={() => router.push(`/checkout/${p.id}`)}
             />
           ))}
