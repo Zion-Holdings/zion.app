@@ -15,6 +15,7 @@ import useSWRMutation from "swr/mutation";
 import Skeleton, { SkeletonCard } from "@/components/ui/skeleton"; // Import SkeletonCard
 import { FilterSidebarSkeleton } from "@/components/skeletons/FilterSidebarSkeleton"; // Import FilterSidebarSkeleton
 import { useDelayedError } from '@/hooks/useDelayedError';
+import { useSkeletonTimeout } from '@/hooks/useSkeletonTimeout';
 import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
 import { EmptyState } from "@/components/ui/EmptyState";
 
@@ -70,6 +71,7 @@ export default function EquipmentPage() {
   const [hasExhaustedRetries, setHasExhaustedRetries] = useState(false);
   const { user } = useAuth();
   const router = useRouter();
+  const timedOut = useSkeletonTimeout(20000);
 
   const {
     data: fetchedEquipment,
@@ -196,7 +198,7 @@ export default function EquipmentPage() {
   );
 
   // Updated loading condition to specifically check for equipment being undefined
-  if (isLoadingEquipment && equipment === undefined) {
+  if (isLoadingEquipment && equipment === undefined && !timedOut) {
     return (
       <div data-testid="loading-state-equipment" className="container mx-auto p-4 space-y-4" aria-busy="true">
         {/* Skeleton for the top button (e.g., AI Recommendations) */}
@@ -214,6 +216,15 @@ export default function EquipmentPage() {
             </div>
           </div>
         </div>
+      </div>
+    );
+  }
+
+  if (isLoadingEquipment && timedOut) {
+    return (
+      <div className="py-12 text-center space-y-4">
+        <p className="text-red-400">Request timed out.</p>
+        <Button onClick={handleManualRetry}>Retry</Button>
       </div>
     );
   }
