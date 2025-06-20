@@ -118,6 +118,15 @@ function determineBaseLogPath() {
     }
   }
 
+  const cwdPath = path.resolve(process.cwd(), 'logs');
+  try {
+    fs.mkdirSync(cwdPath, { recursive: true });
+    fs.accessSync(cwdPath, fs.constants.W_OK);
+    return cwdPath;
+  } catch (e) {
+    logError(`Failed to create cwd log directory at ${cwdPath}`, e);
+  }
+
   const fallback = path.resolve(__dirname, '../logs');
   try {
     fs.mkdirSync(fallback, { recursive: true });
@@ -127,13 +136,7 @@ function determineBaseLogPath() {
     logError(`Failed to create fallback log directory at ${fallback}`, e);
   }
 
-  const cwdFallback = path.resolve(process.cwd(), 'logs');
-  try {
-    fs.mkdirSync(cwdFallback, { recursive: true });
-  } catch (e) {
-    logError(`Failed to create cwd fallback log directory at ${cwdFallback}`, e);
-  }
-  return cwdFallback;
+  return cwdPath;
 }
 
 const BASE_LOG_PATH = determineBaseLogPath();
