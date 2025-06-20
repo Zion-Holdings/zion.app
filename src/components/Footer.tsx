@@ -2,6 +2,17 @@ import { FooterNewsletter } from "@/components/FooterNewsletter";
 import { Twitter, Linkedin, Facebook, Instagram, Github, ChevronUp } from "lucide-react";
 import Link from "next/link"; // Changed from react-router-dom
 
+const TWITTER_URL = process.env.NEXT_PUBLIC_SOCIAL_TWITTER_URL ||
+  "https://twitter.com/ZionTechGroup";
+const LINKEDIN_URL = process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN_URL ||
+  "https://linkedin.com/company/ziontechgroup";
+const FACEBOOK_URL = process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK_URL ||
+  "https://facebook.com/ZionTechGroup";
+const INSTAGRAM_URL = process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL ||
+  "https://instagram.com/ZionTechGroup";
+const GITHUB_URL = process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL ||
+  "https://github.com/ZionTechGroup";
+
 export function Footer() {
   return (
     <footer className="bg-card border-t border-primary/20 pt-12 pb-8">
@@ -16,7 +27,7 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href={process.env.NEXT_PUBLIC_SOCIAL_TWITTER_URL}
+                href={TWITTER_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/80 hover:text-primary transition-colors"
@@ -26,7 +37,7 @@ export function Footer() {
                 <Twitter className="h-5 w-5" aria-label="Twitter" />
               </a>
               <a
-                href={process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN_URL}
+                href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/80 hover:text-primary transition-colors"
@@ -36,7 +47,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" aria-label="LinkedIn" />
               </a>
               <a
-                href={process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK_URL}
+                href={FACEBOOK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/80 hover:text-primary transition-colors"
@@ -46,7 +57,7 @@ export function Footer() {
                 <Facebook className="h-5 w-5" aria-label="Facebook" />
               </a>
               <a
-                href={process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL}
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/80 hover:text-primary transition-colors"
@@ -56,7 +67,7 @@ export function Footer() {
                 <Instagram className="h-5 w-5" aria-label="Instagram" />
               </a>
               <a
-                href={process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL}
+                href={GITHUB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/80 hover:text-primary transition-colors"
