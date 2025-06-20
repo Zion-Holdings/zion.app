@@ -43,6 +43,9 @@ The project is structured as a monorepo and includes:
     -   Django backend: (e.g., `python backend/manage.py runserver`)
     -   Node.js server (`server/`): (e.g., `node server/index.js` or via an npm script if defined in its own package.json or the root one)
 
+9.  **Cleaning caches and logs:**
+    -   Run `npm run clean:cache` to remove temporary log files and common build caches.
+
 (Detailed setup instructions for each component should be available in their respective READMEs or the `docs/` directory. See `docs/BACKEND_DEPENDENCIES.md` for notes on managing Python and Node dependencies.)
 
 ---
