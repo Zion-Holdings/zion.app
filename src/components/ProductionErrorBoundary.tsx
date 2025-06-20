@@ -151,8 +151,20 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
     <div className="mt-8">
       <h3 className="text-xl font-semibold mb-4">Product Reviews</h3>
 
+<<<<<<< HEAD
       {isLoading && <p>Loading reviews...</p>}
       {error && <p className="text-red-500">Error: {error}</p>}
+=======
+  componentDidUpdate(prevProps: Props, prevState: State) { // Corrected the syntax here
+=======
+  componentDidUpdate(_prevProps: Props, prevState: State) {
+>>>>>>> b58c5582360917c4f917cac488a34dcf3e504b83
+    // Auto-retry for network errors
+    if (this.state.hasError && !prevState.hasError && this.state.errorType === 'network') {
+      this.handleAutoRetry();
+    }
+  }
+>>>>>>> f8392cbf8e4e50377f0c3e906c963f8d84d248e5
 
       {!isLoading && !error && reviews.length === 0 && (
         <p>No reviews yet. Be the first to review!</p>
@@ -176,6 +188,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
         </div>
       )}
 
+<<<<<<< HEAD
       {isAuthenticated && (
         <div className="mt-6 p-4 border rounded-md bg-white dark:bg-gray-900">
           <h4 className="text-lg font-semibold mb-3">Write a Review</h4>
@@ -216,3 +229,32 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
 };
 
 export default ProductReviews;
+=======
+      // Production or other error types
+      return (
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+          <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-6">
+            <div className="flex items-center mb-4">
+              <div className={`rounded-full p-2 mr-3 ${
+                errorType === 'network' ? 'bg-orange-100' :
+                errorType === 'config' ? 'bg-red-100' :
+                errorType === 'runtime' ? 'bg-blue-100' :
+                'bg-gray-100'
+              }`}>
+                <svg className={`w-6 h-6 ${
+                  errorType === 'network' ? 'text-orange-600' :
+                  errorType === 'config' ? 'text-red-600' :
+                  errorType === 'runtime' ? 'text-blue-600' :
+                  'text-gray-600'
+                }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {errorType === 'network' ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  ) : errorType === 'runtime' ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.314 15.5c-.77.833.192 2.5 1.732 2.5z" />
+                  )}
+                </svg>
+              </div>
+export default ProductionErrorBoundary;
+>>>>>>> f8392cbf8e4e50377f0c3e906c963f8d84d248e5

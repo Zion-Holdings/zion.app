@@ -8,7 +8,7 @@ import { TalentProfile } from "@/types/talent";
 import { ContractForm, ContractFormValues } from "./components/ContractForm";
 import { ContractPreview } from "./components/ContractPreview";
 import { TemplateManager } from "./templates/TemplateManager";
-import { BlockchainNetwork, DeploymentOptions, SmartContractInfo } from "@/types/smart-contracts";
+import { DeploymentOptions, SmartContractInfo } from "@/types/smart-contracts";
 import { useSmartContracts } from "@/hooks/useSmartContracts";
 import { toast } from "sonner";
 
