@@ -1,5 +1,4 @@
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 
@@ -48,7 +47,6 @@ export default function Privacy() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
