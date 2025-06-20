@@ -37,9 +37,10 @@ const EQUIPMENT_FILTERS = [
 
 export async function fetchEquipment(): Promise<ProductListing[]> {
   try {
-    const { data } = await axios.get('/api/equipment');
-    console.log('Equipment fetch successful:', data?.length || 0, 'items');
-    return data;
+    const { data } = await axios.get('/api/equipment', { timeout: 10000 });
+    const items = Array.isArray(data) ? data : data?.items;
+    console.log('Equipment fetch successful:', items?.length || 0, 'items');
+    return items;
   } catch (error: any) {
     console.error("Raw error object in fetchEquipment:", error);
     
