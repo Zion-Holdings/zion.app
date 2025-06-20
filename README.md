@@ -1,197 +1,49 @@
-# URL Performance Monitoring Service
+# Zion Multi-Component Platform
 
-This Node.js service monitors specified frontend pages and backend endpoints, records their response time and status, and logs this information. If a monitored URL's response time exceeds a configured threshold for a set number of consecutive checks, it triggers a performance optimization script.
+This repository contains the Zion project, a comprehensive platform featuring a web application, backend services, and various specialized modules.
 
-While this README focuses on the monitoring utility, the repository also contains the wider **Zion OS** platform which powers the marketplace, AI assistants and Web3 features. A high-level description of all components can be found in [ARCHITECTURE_OVERVIEW.md](./docs/ARCHITECTURE_OVERVIEW.md).
+## Overview
 
-## Features
+The project is structured as a monorepo and includes:
 
-- Monitors multiple URLs concurrently.
-- Logs response time, status, and timestamp for each check.
-- Configurable check interval, response time threshold, and consecutive check limit.
-- Triggers a customizable shell script (`optimize.sh`) when performance degradation is detected.
-- Logs metrics to a local file (`performance.log` by default).
+-   **Frontend Application (Next.js):** Located primarily in `src/` (for application code like components, hooks, pages using App Router) and `pages/` (for API routes and potentially older Pages Router content). This is the main user-facing application.
+-   **Backend API (Django):** Located in `backend/`. This Python-based backend serves core business logic and data management, likely interacting with a PostgreSQL database.
+-   **Node.js Backend Services:**
+    -   **`server/`:** An Express.js application that provides additional API endpoints, potentially for specific features, BFF patterns, or integration tasks. It connects to MongoDB.
+    -   **`api/` (within `pages/api/` or `src/pages/api`):** Next.js API routes providing serverless backend functionality directly within the Next.js application.
+-   **Monitoring Service:** Located in `monitoring/`. A Node.js service for monitoring URL performance and health. (See `monitoring/README.md` for details).
+-   **Supabase Integration:** Utilizes Supabase for backend-as-a-service features, with functions in `supabase/functions/` and schema definitions in `prisma/` (Prisma is used with Supabase, and potentially also for the Django backend or other Node.js services).
+-   **Blockchain/DAO Components:** Directories like `dao/` and `token/` suggest features related to Decentralized Autonomous Organizations and cryptocurrency tokens.
+-   **SDK:** A software development kit is present in `sdk/`, likely for interacting with Zion platform services.
+-   **Documentation:** General documentation is in `docs/`, with specific component documentation potentially within their respective directories.
+-   **Testing:** Extensive testing suites using Jest, Vitest, and Cypress are in `__tests__/` and `cypress/`.
 
-## Monitoring and Automation
-- [Configuration File Integrity Monitoring](./docs/config_integrity_monitoring.md)
+## Key Technologies
 
-## Project Structure
+-   **Frontend:** Next.js, React, TypeScript, Redux Toolkit, Chakra UI, Radix UI, Tailwind CSS
+-   **Backend (Django):** Python, Django, Django REST Framework, PostgreSQL
+-   **Backend (Node.js):** Node.js, Express.js, TypeScript, MongoDB (for `server/`), Next.js API Routes
+-   **Database/BaaS:** PostgreSQL, MongoDB, Supabase, Prisma
+-   **Monitoring:** Custom Node.js service, Sentry
+-   **CI/CD:** GitHub Actions, Netlify (including Lighthouse CI)
+-   **Other:** IPFS, OrbitDB, Ethers.js, Elasticsearch
 
-```
-.
-├── config.json           # Configuration file for URLs, thresholds, etc.
-├── optimize.sh           # Shell script triggered for performance optimization.
-├── package.json          # Project dependencies and scripts.
-├── performance.log       # Log file for performance metrics (ignored by git).
-├── README.md             # This file.
-├── src/
-│   ├── alerter.js        # Logic for alert conditions and triggering optimization.
-│   ├── index.js          # Main entry point of the service.
-│   ├── logger.js         # Module for logging metrics to a file.
-│   └── monitor.js        # Module for checking URL status and response times.
-└── test-server.js        # A simple Express server for testing purposes.
-```
+## Getting Started
 
-## Setup
+1.  **Prerequisites:** Node.js, npm, Python, pip, Docker (recommended).
+2.  **Clone the repository.**
+3.  **Install frontend dependencies:** `npm install` in the root directory.
+4.  **Install backend (Django) dependencies:** Refer to `backend/README.md` or setup instructions. Typically involves creating a virtual environment and `pip install -r backend/requirements.txt`.
+5.  **Install monitoring service dependencies:** `cd monitoring && npm install`.
+6.  **Environment Variables:** Copy `.env.example` to `.env` (and potentially similar files in sub-projects like `backend/`) and configure necessary variables (database credentials, API keys, etc.).
+7.  **Database Setup:** Run Prisma migrations (`npx prisma migrate dev`), seed data (`npx prisma db seed`), and set up Django database.
+8.  **Running the application:**
+    -   Next.js frontend: `npm run dev`
+    -   Django backend: (e.g., `python backend/manage.py runserver`)
+    -   Node.js server (`server/`): (e.g., `node server/index.js` or via an npm script if defined in its own package.json or the root one)
 
-1.  **Clone the repository (if applicable) or download the files.**
+(Detailed setup instructions for each component should be available in their respective READMEs or the `docs/` directory.)
 
-2.  **Install Node.js and npm:**
-    Ensure you have Node.js (which includes npm) installed on your system. You can download it from [https://nodejs.org/](https://nodejs.org/).
+---
 
-3.  **Install dependencies:**
-    Navigate to the project's root directory in your terminal and run:
-    ```bash
-    npm install
-    ```
-
-4.  **Configure the service:**
-    Edit the `config.json` file in the project root:
-    ```json
-    {
-      "urlsToMonitor": [
-        "http://localhost:3000/fast",
-        "http://localhost:3000/slow",
-        "https://www.google.com"
-      ],
-      "checkIntervalMinutes": 5,
-      "responseTimeThresholdMs": 500,
-      "consecutiveChecksLimit": 3,
-      "logFile": "performance.log"
-    }
-    ```
-    *   `urlsToMonitor`: An array of URLs to monitor.
-    *   `checkIntervalMinutes`: How often to check the URLs (in minutes).
-    *   `responseTimeThresholdMs`: The response time (in milliseconds) above which a check is considered "high".
-    *   `consecutiveChecksLimit`: The number of consecutive high response times before triggering the optimization script.
-    *   `logFile`: Path to the file where performance metrics will be logged.
-
-5.  **Set environment variables (optional):**
-    Copy `.env.example` to `.env` and adjust any values needed for your setup.
-    Important variables include:
-    * `DJANGO_API_BASE_URL`, `NEXTJS_API_BASE_URL`, `CUSTOM_SERVER_BASE_URL` –
-      base URLs for services you want to monitor.
-    * `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
-      `SUPABASE_SERVICE_ROLE_KEY` – credentials required for Supabase
-      authentication (used for login).
-    * `ALERT_WEBHOOK_URL` – a webhook endpoint (Slack, Discord, etc.) for alert
-      notifications.
-    * `LOG_LEVEL` – logging verbosity (`error`, `warn`, `info`, `debug`).
-
-Additional production variables are documented in [PRODUCTION_ENV_SETUP.md](./docs/PRODUCTION_ENV_SETUP.md).
-
-6.  **Review and customize `optimize.sh`:**
-    The `optimize.sh` script now runs `npm run build` and attempts to restart the application using `pm2` or `systemctl` if available. Adjust the commands as needed for your environment.
-    Ensure the script is executable:
-    ```bash
-    chmod +x optimize.sh
-    ```
-    *(This should have been set during project setup, but verifying is good practice.)*
-
-## Running the Service
-
-To start the monitoring service, run the following command from the project's root directory:
-
-```bash
-node src/index.js
-```
-
-The service will start logging to the console and to the specified log file. It will perform its first check immediately and then continue based on the `checkIntervalMinutes` in the configuration.
-
-## Running the Test Server (Optional)
-
-A simple Express.js server is provided in `test-server.js` to help test the monitoring service. It has a few endpoints:
-*   `/fast`: Responds quickly.
-*   `/slow`: Responds after 1 second (to test high response times).
-*   `/flaky`: Responds normally 50% of the time, and slowly 50% of the time.
-*   `/error`: Responds with a 500 error.
-
-To run the test server:
-1.  Install Express if you haven't (it might have been installed as part of dev setup): `npm install express`
-2.  Start the server (it runs on port 3000 by default):
-    ```bash
-    node test-server.js
-    ```
-    You can then add `http://localhost:3000/fast` and `http://localhost:3000/slow` to your `config.json` to test the monitor.
-
-## Running Tests
-
-Run the automated tests using npm:
-
-```bash
-npm run test
-```
-
-## How it Works
-
-1.  The `index.js` script loads the configuration from `config.json`.
-2.  It schedules a cron job using `node-cron` to run at the specified interval.
-3.  In each cycle, `monitor.js` fetches each URL in `urlsToMonitor`, recording response time and status.
-    *   Memory usage is currently logged as "N/A" for URLs. The `pidusage` library is included for potential future use if monitoring specific local PIDs.
-4.  `logger.js` appends these metrics to the `logFile` in JSON line format.
-5.  `alerter.js` checks if any URL has exceeded `responseTimeThresholdMs` for `consecutiveChecksLimit` times.
-6.  If the alert condition is met, `alerter.js` executes `optimize.sh`, passing the problematic URL as an argument, and resets the alert counter for that URL.
-
-## Logs
-
-Performance metrics are logged to the file specified by `logFile` in `config.json` (default: `performance.log`). Each log entry is a JSON object on a new line, for example:
-
-```json
-{"timestamp":"2023-10-27T10:00:05.123Z","url":"http://localhost:3000/slow","status":200,"responseTime":1005,"memoryUsage":"N/A","error":null}
-{"timestamp":"2023-10-27T10:00:05.456Z","url":"https://www.google.com","status":200,"responseTime":150,"memoryUsage":"N/A","error":null}
-```
-Console logs provide real-time information about the service's operations, including when monitoring cycles start/end and when alerts are triggered.
-
-## Generating Test Logs
-
-For offline debugging you can run the test suite and capture the output by using the helper script `scripts/generate-tests-log.sh`.
-
-```bash
-bash scripts/generate-tests-log.sh
-```
-
-This creates timestamped log files in `logs/tests/` containing the console output and Jest JSON results.
-
-
-## Performance Budget (Lighthouse CI)
-
-This project uses `@netlify/plugin-lighthouse` to automatically check performance budgets on every Netlify build. This helps ensure that the application remains fast and efficient.
-
-### Current Thresholds
-
-The build will fail if the following thresholds are not met:
-
-*   **Lighthouse Performance Score**: Must be 80 or higher (i.e., `>= 0.8`).
-*   **Total JavaScript Bundle Size**: While this plugin doesn't directly enforce a specific JavaScript bundle size in kilobytes, the overall Lighthouse performance score is heavily influenced by script size, execution time, and other related metrics. The target is to keep the total JS bundle size below 250 KB. Significant increases in JavaScript bundle size will likely degrade the performance score and cause the build to fail.
-
-### Lighthouse Reports
-
-HTML reports from the Lighthouse audit are automatically generated and stored as build artifacts in Netlify. You can find them in the `lighthouse-reports` directory of the build output. These reports provide detailed insights into the performance metrics and can help identify areas for improvement.
-
-### Adjusting Thresholds
-
-To adjust the performance thresholds:
-
-1.  Open the `netlify.toml` file in the root of the project.
-2.  Locate the `[[plugins]]` section for `package = "@netlify/plugin-lighthouse"`.
-3.  Modify the `plugins.inputs.thresholds.performance` value. For example, to set the performance score threshold to 85, change it to `0.85`.
-    ```toml
-    [[plugins]]
-    package = "@netlify/plugin-lighthouse"
-      # ... other configurations
-      [plugins.inputs.thresholds]
-      performance = 0.85 # Adjusted threshold
-      # ... other thresholds
-    ```
-4.  Commit and push the changes to `netlify.toml`. The next Netlify build will use the new thresholds.
-
-Refer to the [official `@netlify/plugin-lighthouse` documentation](https://github.com/netlify/netlify-plugin-lighthouse) for more advanced configuration options.
-
-## Database Schema Check
-
-To check if the local Prisma schema (`prisma/schema.prisma`) is in sync with the schema that would be generated from the current database (as if it were a production environment), run the following command:
-
-```bash
-npm run migrate:check
-```
-This command is also run during the Netlify build process to prevent deployments if a schema drift is detected.
+*This README provides a general overview. For more detailed information on specific parts of the system, please refer to the README files within the relevant subdirectories and the `docs/` folder.*
