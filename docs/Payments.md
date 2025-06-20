@@ -43,3 +43,9 @@ DEV_USER_1_PASSWORD=pass1234
 
 These credentials are loaded only in development and allow you to sign in to the
 app without creating a real account.
+
+### Staging Test Payments
+
+When the app runs in a staging environment it also uses Stripe test mode. The
+guest checkout modal displays a banner reminding testers to pay with the demo
+card `4242 4242 4242 4242` and any future expiration date and CVC.
