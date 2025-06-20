@@ -105,13 +105,13 @@ export const getServerSideProps = async ({ req, params }: { req: any; params?: {
   const category = params?.slug as string;
   
   try {
-    const { posts, nextCursor } = await fetchPostsByCategory(category, null, POSTS_PER_PAGE);
+    const { posts, nextCursor } = await fetchPostsByCategory(category, undefined, POSTS_PER_PAGE);
     
     return {
       props: {
         initialPosts: posts,
         initialNextCursor: nextCursor,
-        hasSession: !!req.headers.authorization, // Simple session check
+        hasSession: !!req.headers.authorization,
         category,
       },
     };
