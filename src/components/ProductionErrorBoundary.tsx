@@ -119,7 +119,6 @@ class ProductionErrorBoundary extends Component<Props, State> {
     }));
   };
 
-<<<<<<< HEAD
   componentDidUpdate(prevProps: Props, prevState: State) { // Corrected the syntax here
 =======
   componentDidUpdate(_prevProps: Props, prevState: State) {
