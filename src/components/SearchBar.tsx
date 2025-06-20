@@ -78,9 +78,10 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
     onChange(suggestion.text);
     if (onSelectSuggestion) onSelectSuggestion(suggestion);
 
-    // Always navigate using the suggestion text as the query
-    const query = encodeURIComponent(suggestion.text);
-    router.push(`/search?q=${query}`);
+    const searchUrl = suggestion.slug
+      ? `/search/${suggestion.slug}`
+      : `/search?q=${encodeURIComponent(suggestion.text)}`;
+    router.push(searchUrl);
     fireEvent('search', { search_term: suggestion.text });
     setFocused(false);
     setHighlightedIndex(-1);
