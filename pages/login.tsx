@@ -115,7 +115,7 @@ export default function Login() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded border border-border px-3 py-2"
+              className="w-full rounded border border-border px-3 py-2 text-gray-900 dark:text-gray-200"
               aria-label="email address"
               placeholder="Enter your email"
             />
@@ -131,7 +131,7 @@ export default function Login() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded border border-border px-3 py-2"
+              className="w-full rounded border border-border px-3 py-2 text-gray-900 dark:text-gray-200"
               aria-label="password"
               placeholder="Enter your password"
             />
