@@ -3,30 +3,34 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 
-const LOG_FILE = process.env.PERFORMANCE_LOG_FILE || path.join('logs', 'performance.log');
-const THRESHOLD_MS = parseInt(process.env.PERFORMANCE_THRESHOLD_MS || '500', 10);
+const LOG_FILE: string = process.env.PERFORMANCE_LOG_FILE || path.join('logs', 'performance.log');
+const THRESHOLD_MS: number = parseInt(process.env.PERFORMANCE_THRESHOLD_MS || '500', 10);
 
-function parseTimes(file) {
+function parseTimes(file: string): number[] {
   if (!fs.existsSync(file)) return [];
   const lines = fs.readFileSync(file, 'utf8').split('\n').filter(Boolean);
-  return lines.map(line => {
-    line = line.trim();
-    if (!line) return null;
-    try {
-      const obj = JSON.parse(line);
-      if (typeof obj.response_time_ms === 'number') return obj.response_time_ms;
-    } catch {}
-    const match = line.match(/([0-9.]+)ms/);
-    return match ? parseFloat(match[1]) : null;
-  }).filter(n => typeof n === 'number');
+  return lines
+    .map((line) => {
+      const trimmed = line.trim();
+      if (!trimmed) return null;
+      try {
+        const obj = JSON.parse(trimmed);
+        if (typeof obj.response_time_ms === 'number') return obj.response_time_ms as number;
+      } catch {
+        /* ignore */
+      }
+      const match = trimmed.match(/([0-9.]+)ms/);
+      return match ? parseFloat(match[1]) : null;
+    })
+    .filter((n): n is number => typeof n === 'number');
 }
 
-function average(list) {
+function average(list: number[]): number {
   if (!list.length) return 0;
   return list.reduce((a, b) => a + b, 0) / list.length;
 }
 
-function createPR(avg) {
+function createPR(avg: number): void {
   const branch = `perf-monitor-${Date.now()}`;
   const filePath = path.join('infra', 'scale-request.md');
   const message = `Average response time exceeded ${THRESHOLD_MS}ms: ${avg.toFixed(2)}ms\n` +

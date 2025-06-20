@@ -8,7 +8,7 @@ scale infrastructure or enable profiling/tracing.
 ## Usage
 
 1. Install and authenticate the GitHub CLI (`gh`).
-2. Run `node scripts/check-performance-logs.js`.
+2. Run `npx ts-node scripts/check-performance-logs.ts`.
    - Optionally set `PERFORMANCE_LOG_FILE` or `PERFORMANCE_THRESHOLD_MS`.
 3. Schedule the command with cron or a CI workflow to run weekly.
 

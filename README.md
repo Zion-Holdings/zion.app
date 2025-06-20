@@ -2,6 +2,8 @@
 
 This Node.js service monitors specified frontend pages and backend endpoints, records their response time and status, and logs this information. If a monitored URL's response time exceeds a configured threshold for a set number of consecutive checks, it triggers a performance optimization script.
 
+While this README focuses on the monitoring utility, the repository also contains the wider **Zion OS** platform which powers the marketplace, AI assistants and Web3 features. A high-level description of all components can be found in [ARCHITECTURE_OVERVIEW.md](./docs/ARCHITECTURE_OVERVIEW.md).
+
 ## Features
 
 - Monitors multiple URLs concurrently.
@@ -75,6 +77,8 @@ This Node.js service monitors specified frontend pages and backend endpoints, re
     * `ALERT_WEBHOOK_URL` – a webhook endpoint (Slack, Discord, etc.) for alert
       notifications.
     * `LOG_LEVEL` – logging verbosity (`error`, `warn`, `info`, `debug`).
+
+Additional production variables are documented in [PRODUCTION_ENV_SETUP.md](./docs/PRODUCTION_ENV_SETUP.md).
 
 6.  **Review and customize `optimize.sh`:**
     The `optimize.sh` script now runs `npm run build` and attempts to restart the application using `pm2` or `systemctl` if available. Adjust the commands as needed for your environment.
