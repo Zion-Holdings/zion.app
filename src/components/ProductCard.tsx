@@ -17,9 +17,11 @@ import { captureException } from '@/utils/sentry';
 interface ProductCardProps {
   product: Product;
   onBuy?: () => void;
+  /** Disable the Buy Now button (e.g. when the checkout route isn't ready). */
+  buyDisabled?: boolean;
 }
 
-export default function ProductCard({ product, onBuy }: ProductCardProps) {
+export default function ProductCard({ product, onBuy, buyDisabled = false }: ProductCardProps) {
   const { isAuthenticated } = useAuth();
   const { isWishlisted, toggle } = useWishlist();
   const [imageError, setImageError] = useState(false);
@@ -119,7 +121,7 @@ export default function ProductCard({ product, onBuy }: ProductCardProps) {
             variant="outline"
             className="flex-1"
             data-testid="buy-now-button"
-            disabled={!isAuthenticated}
+            disabled={!isAuthenticated || buyDisabled}
           >
             Buy Now
           </Button>
