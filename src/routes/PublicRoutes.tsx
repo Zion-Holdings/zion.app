@@ -1,4 +1,4 @@
-// Router components removed - convert to Next.js pages structure
+import { Routes, Route } from "react-router-dom";
 import WhitepaperViewPage from "@/pages/WhitepaperViewPage";
 // Generic catch-all 404 page for public routes
 import NotFound from "@/pages/NotFound";

@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-// Router components removed - convert to Next.js pages structure
+import { Routes, Route, Navigate } from "react-router-dom";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import CommunityPage from "@/pages/CommunityPage";
 import { CommunityProvider } from "@/context";
