@@ -182,7 +182,7 @@ const SECURITY_PATCH_REGEX = /CRIT_SECURITY_PATCH/;
  *   - `npm run build`: Executes the build script defined in package.json.
  *   - `pm2 restart all`: Restarts all applications managed by PM2.
  */
-const HEAL_COMMAND = 'WATCHDOG_LOG_PATH=./logs echo "Watchdog detected issue. Performing git pull, dependency update, and build. Manual K8s check for zion-app may be needed." && git pull && npm install && npm run build';
+const HEAL_COMMAND = 'WATCHDOG_LOG_PATH=./logs  git pull && npm install && npm run build && pm2 restart all';
 
 // --- State Variables ---
 /** @type {number} perfErrorStreak - Counter for consecutive performance errors detected. Resets on a normal line or after a heal. */
@@ -197,8 +197,8 @@ let highCpuUsageCount = 0;
 // --- System Monitoring Configuration ---
 const MEMORY_THRESHOLD = 0.80; // 80% memory usage
 const CPU_THRESHOLD = 0.80;    // 80% CPU usage
-const CPU_SUSTAINED_CHECKS = 3; // 3 consecutive checks for CPU
-const SYSTEM_CHECK_INTERVAL = 10000; // 10 seconds in milliseconds
+const CPU_SUSTAINED_CHECKS = 5; // 5 consecutive checks for CPU
+const SYSTEM_CHECK_INTERVAL = 60000; // 60 seconds in milliseconds
 
 // --- Helper Functions ---
 /**
@@ -241,11 +241,11 @@ function triggerSelfHeal(reason) {
   console.log(logMessage);
   appendToSelfHealLog(`[${timestamp}] ${logMessage}\n`);
 
-  // Send Discord Alert
-  const discordAlertMessage = `🚨 **Watchdog Alert** 🚨\n\n**Reason:** ${reason}\n\n**Action:** Initiating self-heal sequence (code update & build). Manual K8s check for zion-app may be needed.\n**Command:** \`\`\`${HEAL_COMMAND}\`\`\``;
+  // Send Discord Alert - Disabled because no webhook URL is configured
+  // const discordAlertMessage = `🚨 **Watchdog Alert** 🚨\n\n**Reason:** ${reason}\n\n**Action:** Initiating self-heal sequence (code update & build). Manual K8s check for zion-app may be needed.\n**Command:** \`\`\`${HEAL_COMMAND}\`\`\``;
   // We don't await sendDiscordAlert here to prevent blocking the healing process
   // if Discord is slow or unresponsive. It has its own internal logging.
-  sendDiscordAlert(discordAlertMessage);
+  // sendDiscordAlert(discordAlertMessage);
 
   const healCmdLog = `Executing self-heal command: ${HEAL_COMMAND}`;
   console.log(healCmdLog);
