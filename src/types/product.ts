@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   title: string;
   description?: string;
-  price?: number;
+  price?: number | null;
   currency?: string;
   images?: string[];
   category?: string;
@@ -13,6 +13,6 @@ export interface Product {
     avatar?: string;
   };
   tags?: string[];
-  createdAt?: Date;
-  updatedAt?: Date;
+  createdAt?: string;
+  updatedAt?: string;
 }

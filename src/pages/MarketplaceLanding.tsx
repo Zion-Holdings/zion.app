@@ -2,12 +2,8 @@ import { useRouter } from 'next/router'; // Changed from useNavigate
 import { useQuery } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import ProductCard from '@/components/ProductCard';
+import { Product } from '@/types/product';
 import { showError } from '@/utils/showToast';
-
-interface Product {
-  id: string;
-  [key: string]: any;
-}
 
 async function fetchProducts() {
   const res = await fetch('/api/products?limit=20');
