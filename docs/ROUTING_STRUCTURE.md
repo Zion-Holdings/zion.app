@@ -35,6 +35,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
 /marketplace/categories → Categories Page (pages/marketplace/categories.tsx) ✅
 /marketplace/talent → Talent Page (pages/marketplace/talent.tsx) ✅
 /marketplace/equipment → Equipment Page (pages/marketplace/equipment.tsx) ✅
+/category/[slug] → Category Page (pages/category/[slug].tsx) ✅
 ```
 
 ### Community Routes
@@ -69,6 +70,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
 | `/marketplace/categories` | `Categories` | `@/pages/Categories` |
 | `/marketplace/talent` | `TalentsPage` | `@/pages/TalentsPage` |
 | `/marketplace/equipment` | `EquipmentPage` | `@/pages/EquipmentPage` |
+| `/category/[slug]` | `CategoryPage` | `@/pages/CategoryPage` |
 | `/community/blog` | `Blog` | `@/pages/Blog` |
 | `/community/forum` | `CommunityPage` | `@/pages/CommunityPage` |
 | `/community/category/[slug]` | `ForumCategoryPage` | `@/pages/ForumCategoryPage` |
