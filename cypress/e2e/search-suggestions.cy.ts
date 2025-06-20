@@ -18,8 +18,8 @@ describe('Search Suggestions Navigation', () => {
       .should('be.visible')
       .click();
 
-    // Assert URL contains the correct slug
-    cy.url().should('include', '/search/gpu-cluster');
+    // Assert URL contains the encoded query
+    cy.url().should('include', '/search?q=GPU%20cluster');
 
     // Assert that search results page is loaded
     cy.get('[data-testid="search-results"]').should('be.visible');
