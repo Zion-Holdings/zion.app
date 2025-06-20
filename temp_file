@@ -103,29 +103,3 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCu
 
 export const getServerSideProps = async ({ req, params }: { req: any; params?: { slug?: string } }) => {
   const category = params?.slug as string;
-  
-  try {
-    const { posts, nextCursor } = await fetchPostsByCategory(category, null, POSTS_PER_PAGE);
-    
-    return {
-      props: {
-        initialPosts: posts,
-        initialNextCursor: nextCursor,
-        hasSession: !!req.headers.authorization, // Simple session check
-        category,
-      },
-    };
-  } catch (error) {
-    console.error('Error fetching posts:', error);
-    return {
-      props: {
-        initialPosts: [],
-        initialNextCursor: null,
-        hasSession: false,
-        category,
-      },
-    };
-  }
-};
-
-export default CategoryPage;
