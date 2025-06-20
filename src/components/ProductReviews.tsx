@@ -51,7 +51,7 @@ interface RatingStarsProps {
 const RatingStarsDisplay: React.FC<Pick<RatingStarsProps, 'value'>> = ({ value }) => (
   <div className="flex items-center">
     {Array.from({ length: 5 }, (_, i) => (
-      <span key={i} className={i < value ? 'text-yellow-400' : 'text-gray-300"}>★</span>
+      <span key={i} className={`text-yellow-400 ${i < value ? "" : "text-gray-300"}`}>★</span>
     ))}
     <span className="ml-2 text-sm text-gray-600">({value.toFixed(1)})</span>
   </div>
@@ -127,7 +127,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
     try {
       const response = await fetch('/api/reviews', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId, rating: newRating, comment: newComment }),
       });
 
