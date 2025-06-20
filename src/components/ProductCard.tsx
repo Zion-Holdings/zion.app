@@ -19,7 +19,7 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, onBuy }: ProductCardProps) {
-  const { user, isLoading: authLoading, isAuthenticated } = useAuth();
+  const { user, isAuthenticated } = useAuth();
   const { isWishlisted, toggle } = useWishlist();
   const [imageError, setImageError] = useState(false);
   const router = useRouter();

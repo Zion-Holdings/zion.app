@@ -15,7 +15,7 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { format, formatDistanceToNow } from "date-fns";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { ShieldAlert, ArrowDown, Check, X, MessageSquare, Download } from "lucide-react";
+import { ArrowDown, Check, MessageSquare, Download } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 
@@ -31,7 +31,6 @@ export function DisputeDetail() {
   const [message, setMessage] = useState("");
   const [adminNote, setAdminNote] = useState("");
   const [isSending, setIsSending] = useState(false);
-  const [disputeStatus, setDisputeStatus] = useState<DisputeStatus | undefined>(dispute?.status);
   const [resolution, setResolution] = useState<{ summary: string; resolution_type: ResolutionType }>({
   summary: "",
   resolution_type: "compromise",
@@ -74,7 +73,8 @@ export function DisputeDetail() {
 
     const success = await updateDisputeStatus(disputeId, status);
     if (success) {
-      setDisputeStatus(status);
+      // Update the dispute object with the new status
+      setDispute({ ...dispute!, status: status });
     } else {
       toast.error("Failed to update dispute status");
     }
@@ -99,7 +99,6 @@ export function DisputeDetail() {
         resolution_type: resolution.resolution_type,
         resolved_at: new Date().toISOString(),
       });
-      setDisputeStatus("resolved");
     } else {
       toast.error("Failed to resolve dispute");
     }
@@ -160,8 +159,8 @@ export function DisputeDetail() {
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-2xl font-bold">Dispute Case</h1>
-            <Badge variant={getStatusBadgeVariant(disputeStatus || dispute.status)}>
-              {(disputeStatus || dispute.status).replace('_', ' ')}
+            <Badge variant={getStatusBadgeVariant(dispute.status)}>
+              {dispute.status.replace('_', ' ')}
             </Badge>
           </div>
           <p className="text-muted-foreground">
@@ -173,7 +172,7 @@ export function DisputeDetail() {
           <Button variant="outline" onClick={() => router.push("/dashboard/disputes")}>
             Back to List
           </Button>
-          {isAdmin && (disputeStatus || dispute?.status) === "open" && (
+          {isAdmin && dispute?.status === "open" && (
             <Button onClick={() => handleStatusChange("under_review")}>
               Start Review
             </Button>
@@ -551,8 +550,8 @@ export function DisputeDetail() {
               </div>
               <div className="flex justify-between">
                 <span className="font-medium">Status:</span>
-                <Badge variant={getStatusBadgeVariant(disputeStatus || dispute.status)}>
-                  {(disputeStatus || dispute.status).replace('_', ' ')}
+                <Badge variant={getStatusBadgeVariant(dispute.status)}>
+                  {dispute.status.replace('_', ' ')}
                 </Badge>
               </div>
               <div className="flex justify-between">
