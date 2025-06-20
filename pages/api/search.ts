@@ -31,14 +31,16 @@ interface SearchResponse {
 
 function handler(
   req: NextApiRequest,
-  res: NextApiResponse<SearchResponse | { error: string }>
+  res: NextApiResponse<SearchResponse | { error: string }>,
 ) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const q = String(req.query.query ?? req.query.q ?? '').toLowerCase().trim();
+  const q = String(req.query.query ?? req.query.q ?? '')
+    .toLowerCase()
+    .trim();
   const page = parseInt(String(req.query.page ?? '1'), 10);
   const limit = parseInt(String(req.query.limit ?? '20'), 10);
 
@@ -48,17 +50,26 @@ function handler(
       totalCount: 0,
       page,
       limit,
-      query: q
+      query: q,
     });
   }
 
   const match = (text?: string) => text?.toLowerCase().includes(q);
+  const matchTags = (tags?: string[]) => tags?.some((tag) => match(tag));
 
   // Helper function to create slug from title
-  const createSlug = (title: string) => title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const createSlug = (title: string) =>
+    title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
 
   const products: SearchResult[] = MARKETPLACE_LISTINGS.filter(
-    (p) => match(p.title) || match(p.description)
+    (p) =>
+      match(p.title) ||
+      match(p.description) ||
+      match(p.category) ||
+      matchTags((p as any).tags),
   ).map((p) => ({
     id: p.id,
     type: 'product' as const,
@@ -74,7 +85,11 @@ function handler(
   }));
 
   const services: SearchResult[] = SERVICES.filter(
-    (s) => match(s.title) || match(s.description)
+    (s) =>
+      match(s.title) ||
+      match(s.description) ||
+      match(s.category) ||
+      matchTags((s as any).tags),
   ).map((s) => ({
     id: s.id,
     type: 'service' as const,
@@ -90,7 +105,11 @@ function handler(
   }));
 
   const talents: SearchResult[] = TALENT_PROFILES.filter(
-    (t) => match(t.full_name) || match(t.professional_title) || match(t.bio)
+    (t) =>
+      match(t.full_name) ||
+      match(t.professional_title) ||
+      match(t.bio) ||
+      matchTags((t as any).skills || (t as any).tags),
   ).map((t) => ({
     id: t.id,
     type: 'talent' as const,
@@ -117,7 +136,7 @@ function handler(
     totalCount,
     page,
     limit,
-    query: q
+    query: q,
   });
 }
 

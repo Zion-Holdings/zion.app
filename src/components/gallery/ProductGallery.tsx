@@ -60,7 +60,15 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
       {videoUrl && (
         <TabsContent value="video" className="pt-4">
           <AspectRatio ratio={16 / 9}>
-            <Suspense fallback={<img src={poster} alt="video" className="w-full h-full object-cover" />}>
+            <Suspense
+              fallback={
+                <img
+                  src={poster}
+                  alt="Video preview"
+                  className="w-full h-full object-cover"
+                />
+              }
+            >
               <ReactPlayer url={videoUrl} width="100%" height="100%" controls />
             </Suspense>
           </AspectRatio>
@@ -70,7 +78,15 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
       {modelUrl && (
         <TabsContent value="model" className="pt-4">
           <AspectRatio ratio={16 / 9}>
-            <Suspense fallback={<img src={poster} alt="model" className="w-full h-full object-cover" />}>
+            <Suspense
+              fallback={
+                <img
+                  src={poster}
+                  alt="3D model preview"
+                  className="w-full h-full object-cover"
+                />
+              }
+            >
               <ModelViewer src={modelUrl} alt="3d model" camera-controls style={{ width: '100%', height: '100%' }} />
             </Suspense>
           </AspectRatio>

@@ -42,6 +42,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
 /community → Community Index (pages/community/index.tsx) ✅
 /community/blog → Blog Page (pages/community/blog.tsx) ✅
 /community/forum → Forum Page (pages/community/forum.tsx) ✅
+/community/category/[slug] → Forum Category Page (pages/community/category/[slug].tsx) ✅
 /community/[slug] → Dynamic Community Pages ✅
 ```
 
@@ -70,6 +71,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
 | `/marketplace/equipment` | `EquipmentPage` | `@/pages/EquipmentPage` |
 | `/community/blog` | `Blog` | `@/pages/Blog` |
 | `/community/forum` | `CommunityPage` | `@/pages/CommunityPage` |
+| `/community/category/[slug]` | `ForumCategoryPage` | `@/pages/ForumCategoryPage` |
 | `/resources/docs` | `ResourcesDocsPage` | Custom documentation page |
 | `/about` | `About` | Custom about page |
 | `/404` | `Custom404` | Custom 404 with animation |

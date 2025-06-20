@@ -31,7 +31,7 @@ const PostImage = ({ post }: { post: typeof recentPosts[0] }) => {
       height={200} // Placeholder height
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // General sizes
       onError={handleImageError}
-      className="object-cover w-full h-full opacity-60 hover:opacity-80 transition-opacity duration-300"
+      className="object-cover w-full h-full hover:opacity-80 transition-opacity duration-300"
       priority={false} // Not LCP
     />
   );
@@ -59,29 +59,29 @@ export function BlogSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {recentPosts.map((post, index) => (
-            <Card key={post.id} className="bg-zion-blue-light border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 overflow-hidden">
-              <div className="h-48 bg-zion-blue-dark relative overflow-hidden">
-                <PostImage post={post} /> {/* Use the sub-component */}
-                <div className="absolute bottom-4 left-4 text-zion-purple/70 text-4xl font-bold">{index + 1}</div>
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs text-white bg-zion-blue-dark px-2 py-1 rounded">{post.category}</span>
-                  <div className="text-xs text-zion-slate-light">{post.publishedDate} • {post.readTime}</div>
+            <Link
+              key={post.id}
+              href={`/blog/${post.slug}`}
+              className="block group"
+            >
+              <Card className="bg-zion-blue-light border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 overflow-hidden group-hover:shadow-lg">
+                <div className="h-48 bg-zion-blue-dark relative overflow-hidden">
+                  <PostImage post={post} /> {/* Use the sub-component */}
+                  <div className="absolute bottom-4 left-4 text-zion-purple/70 text-4xl font-bold">{index + 1}</div>
                 </div>
-                <h3 className="text-xl font-bold text-zion-blue-dark mb-3">{post.title}</h3>
-                <p className="text-zion-blue-dark line-clamp-2">{post.excerpt}</p>
-              </CardContent>
-              <CardFooter className="p-6 pt-0">
-                <Button
-                  variant="link"
-                  className="text-zion-blue-dark p-0 hover:text-zion-purple-dark"
-                  asChild
-                >
-                  <Link href={`/blog/${post.slug}`}>Read More →</Link>
-                </Button>
-              </CardFooter>
-            </Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs text-white bg-zion-blue-dark px-2 py-1 rounded">{post.category}</span>
+                    <div className="text-xs text-zion-slate-light">{post.publishedDate} • {post.readTime}</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-zion-blue-dark mb-3">{post.title}</h3>
+                  <p className="text-zion-blue-dark line-clamp-2">{post.excerpt}</p>
+                </CardContent>
+                <CardFooter className="p-6 pt-0">
+                  <span className="text-zion-blue-dark group-hover:text-zion-purple-dark">Read More →</span>
+                </CardFooter>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

@@ -64,7 +64,12 @@
     "tool_analytics_desc": "Insights and trends in the AI and tech industry",
     "tool_chat": "Chat Support",
     "tool_chat_desc": "Get instant assistance from our AI-powered chat",
-    "header_tagline": "Your gateway to AI & tech solutions"
+    "header_tagline": "Your gateway to AI & tech solutions",
+    "quick_access_title": "Quick Access",
+    "quick_access_subtitle": "Jump directly to our most popular features",
+    "tool_mobile_app": "Mobile App",
+    "tool_mobile_app_desc": "Zion on the go",
+    "all_features_title": "Explore All Features"
   },
   "jobs": {
     "post_job_title": "Post a Job",

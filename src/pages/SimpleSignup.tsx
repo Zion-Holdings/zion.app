@@ -5,11 +5,15 @@ import * as Yup from 'yup';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { signup } from '@/services/signupApi';
+import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
 
 const SignupSchema = Yup.object({
   email: Yup.string().email('Invalid email').required('Email is required'),
   password: Yup.string()
     .min(8, 'Password must be at least 8 characters')
+    .matches(/[A-Z]/, 'Password must include an uppercase letter')
+    .matches(/[a-z]/, 'Password must include a lowercase letter')
+    .matches(/[0-9]/, 'Password must include a number')
     .required('Password is required'),
 });
 
@@ -83,6 +87,7 @@ export default function SimpleSignup() {
           className="border px-2 py-1 w-full"
           aria-invalid={!!formik.errors.password && formik.touched.password}
         />
+        <PasswordStrengthMeter password={formik.values.password} />
         {formik.touched.password && formik.errors.password ? (
           <div className="text-red-500 text-sm">{formik.errors.password}</div>
         ) : null}

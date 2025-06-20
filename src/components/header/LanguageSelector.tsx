@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,6 +14,7 @@ import { safeStorage } from '@/utils/safeStorage';
 export function LanguageSelector() {
   const { t, i18n } = useTranslation();
   const { currentLanguage, supportedLanguages } = useLanguage();
+  const [isOpen, setIsOpen] = useState(false);
 
   const changeLang = async (lang: SupportedLanguage) => {
     if (lang === currentLanguage) return;
@@ -25,13 +26,15 @@ export function LanguageSelector() {
     supportedLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
 
   return (
-    <DropdownMenu>
+    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
           size="icon"
           className="text-white hover:bg-zion-purple/10"
           aria-label={t('general.select_language')}
+          aria-expanded={isOpen}
+          tabIndex={0}
         >
           <span className="text-lg" aria-hidden="true">
             {currentFlag}

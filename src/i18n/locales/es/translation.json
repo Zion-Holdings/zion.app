@@ -46,7 +46,12 @@
     "create_profile": "Crear Perfil",
     "explore_tools": "Explorar Nuestras Herramientas",
     "tools_description": "Todo lo que necesitas para conectarte con el ecosistema de IA y tecnología",
-    "header_tagline": "Tu puerta de entrada a soluciones de IA y tecnología"
+    "header_tagline": "Tu puerta de entrada a soluciones de IA y tecnología",
+    "quick_access_title": "Acceso Rápido",
+    "quick_access_subtitle": "Ve directo a nuestras funciones más populares",
+    "tool_mobile_app": "Aplicación Móvil",
+    "tool_mobile_app_desc": "Zion sobre la marcha",
+    "all_features_title": "Explora Todas las Funciones"
   },
   "jobs": {
     "post_job_title": "Publicar un Trabajo",

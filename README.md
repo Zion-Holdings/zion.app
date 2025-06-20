@@ -46,6 +46,10 @@ The project is structured as a monorepo and includes:
 9.  **Cleaning caches and logs:**
     -   Run `npm run clean:cache` to remove temporary log files and common build caches.
 
+10. **Payment Testing:**
+    - Guest checkout is available at `/marketplace/checkout`.
+    - For a sandbox login, add development credentials in `.env.local` as explained in `docs/SECURITY_CREDENTIALS.md`.
+
 (Detailed setup instructions for each component should be available in their respective READMEs or the `docs/` directory. See `docs/BACKEND_DEPENDENCIES.md` for notes on managing Python and Node dependencies.)
 
 ---
