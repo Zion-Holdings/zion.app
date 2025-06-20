@@ -3,23 +3,7 @@ import Link from 'next/link';
 import * as Sentry from '@sentry/nextjs';
 import { Alert, AlertDescription, AlertIcon } from '@chakra-ui/react';
 import { toast } from '@/hooks/use-toast';
-
-async function resetPassword(email: string): Promise<{ ok: boolean; error?: string }> {
-  try {
-    const res = await fetch('/api/auth/forgot', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email })
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      return { ok: false, error: data.error || data.message };
-    }
-    return { ok: true };
-  } catch (err: any) {
-    return { ok: false, error: err.message };
-  }
-}
+import { supabase } from '@/integrations/supabase/client';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -34,11 +18,19 @@ const ForgotPassword = () => {
     setError(null);
 
     try {
-      const { ok, error } = await resetPassword(email);
-      if (!ok) throw new Error(error || 'Reset failed');
-      setMessage(
-        'If your email address is registered, you will receive a password reset link shortly.'
-      );
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/auth/verify-email`,
+      });
+      if (error) {
+        Sentry.captureException(error);
+        const errorMessage = error.message || 'Failed to send reset link. Please try again.';
+        setError(errorMessage);
+        toast.error(errorMessage);
+      } else {
+        setMessage(
+          'If your email address is registered, you will receive a password reset link shortly.'
+        );
+      }
     } catch (err: any) {
       Sentry.captureException(err);
       const errorMessage = err.message || 'Failed to send reset link. Please try again.';
