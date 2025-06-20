@@ -1,10 +1,8 @@
+import { UserDetails } from "@/types/auth";
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { logError } from '@/utils/logError';
 import { suggestFix } from '@/utils/suggestFix';
-
-=======
->>>>>>> 811455ae44ee272872c503f5acbc946c1373d39f
 import { useAuth } from '@/hooks/useAuth'; // To access user state
 
 const VerifyEmailPage = () => {
@@ -61,7 +59,7 @@ const VerifyEmailPage = () => {
           // Update the local user context if the backend sends back updated user details
          if (result.user && setUser) {
             // Assuming result.user is of type UserDetails
-           setUser((prevUser: any) => ({...prevUser, ...result.user}));
+           setUser((prevUser: UserDetails | null) => prevUser ? ({...prevUser, ...result.user}) : result.user);
          }
 
 
