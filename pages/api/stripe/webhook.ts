@@ -19,8 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const sig = req.headers['stripe-signature'] as string;
-  // TODO: Use proper Stripe types when available
-  let event: any;
+  let event: Stripe.Event;
   try {
     const buf = await buffer(req as any);
     event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret);
@@ -30,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   if (event.type === 'checkout.session.completed') {
-    const session = event.data.object as any;
+    const session = event.data.object as Stripe.Checkout.Session;
     const orderId = session.metadata?.orderId;
     if (orderId) {
       try {
