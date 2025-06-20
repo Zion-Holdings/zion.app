@@ -276,7 +276,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
             {showDetails && ENV_CONFIG.app.isDevelopment && error && (
               <div className="mt-4 p-3 bg-gray-100 rounded text-xs">
                 <div className="font-mono text-gray-800">
-                  <div><strong>Error:</strong> {error.message}</div>
+                  <strong>Error:</strong> {error.message}</div>
                   <div className="mt-2"><strong>Type:</strong> {errorType}</div>
                   <div><strong>Retry Count:</strong> {retryCount}</div>
                   {error.stack && (
@@ -293,7 +293,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
             {ENV_CONFIG.app.isDevelopment && (
               <div className="mt-4 p-3 bg-blue-50 rounded text-xs">
                 <div className="text-blue-800">
-                  <div><strong>Environment Status:</strong></div>
+                  <strong>Environment Status:</strong></div>
                   <div>Supabase: {ENV_CONFIG.supabase.isConfigured ? '✅' : '⚠️'}</div>
                   <div>Sentry: {ENV_CONFIG.sentry.isConfigured ? '✅' : '⚠️'}</div>
                   <div>Reown: {ENV_CONFIG.reown.isConfigured ? '✅' : '⚠️'}</div>
@@ -309,4 +309,226 @@ class ProductionErrorBoundary extends Component<Props, State> {
   }
 }
 
-export default ProductionErrorBoundary; 
+export default ProductionErrorBoundary;
+</content>
+</file>
+<file><path>src/components/ProductReviews.tsx</path>
+<content lines="1-218">
+  1 | import React, { useEffect, useState, FormEvent } from 'react';
+  2 | import Link from 'next/link';
+  3 | // import { Review } from '@/types/reviews'; // Assuming this path is correct from earlier exploration
+  4 | // For the purpose of this subtask, let's define a local Review type if the import path is uncertain or to ensure self-containment
+  5 | // In a real scenario, this would be imported from the shared types.
+  6 | export interface Review {
+  7 |   id: string;
+  8 |   rating: number;
+  9 |   comment?: string | null; // Ensure this matches your actual type (e.g. review_text)
+ 10 |   review_text?: string | null; // Alternative field name for comment
+ 11 |   created_at: string; // Or Date
+ 12 |   user?: { // Assuming user is nested and might have a name
+ 13 |     id: string | number; // User ID could be string or number
+ 14 |     name?: string | null;
+ 15 |   } | null;
+ 16 |   reviewer_profile?: { // Another possible structure for reviewer info
+ 17 |     display_name?: string | null;
+ 18 |   } | null;
+ 19 |   // Add any other fields that your Review type actually has
+ 20 | }
+ 21 | 
+ 22 | 
+ 23 | // import { useAuth } from '@/hooks/useAuth'; // Assuming an auth hook exists
+ 24 | // For now, let's mock a basic useAuth hook if not available to allow component structure
+ 25 | // In a real scenario, this would come from your actual auth context/hooks
+ 26 | const useAuth = () => {
+ 27 |   // Replace with actual auth logic
+ 28 |   // For now, simulate a logged-in user for development of this component's structure
+ 29 |   const [user] = useState<{ id: string; name: string, isLoggedIn: boolean } | null>({ isLoggedIn: true, id: 'mockUserId', name: 'Mock User' });
+ 30 |   // useEffect(() => {
+ 31 |   //  // logic to check actual auth status and set user
+ 32 |   // }, []);
+ 33 |   return { user, isAuthenticated: user?.isLoggedIn ?? false };
+ 34 | };
+ 35 | 
+ 36 | 
+ 37 | // Assuming RatingStars component exists as seen in ProductListingCard.tsx
+ 38 | // If not, a simple display of rating number will be shown.
+ 39 | // For actual stars, you'd import your RatingStars component:
+ 40 | // import { RatingStars } from '@/components/RatingStars'; // Or its correct path
+ 41 | 
+ 42 | interface RatingStarsProps {
+ 43 |   value: number;
+ 44 |   count?: number; // Optional review count
+ 45 |   size?: 'sm' | 'md' | 'lg';
+ 46 |   interactive?: boolean;
+ 47 |   onRate?: (rating: number) => void;
+ 48 | }
+ 49 | 
+ 50 | // Placeholder for RatingStars if not available or for simplicity in this subtask
+ 51 | const RatingStarsDisplay: React.FC<Pick<RatingStarsProps, 'value'>> = ({ value }) => (
+ 52 |   <div className="flex items-center">
+ 53 |     {Array.from({ length: 5 }, (_, i) => (
+ 54 |       <span key={i} className={i < value ? 'text-yellow-400' : 'text-gray-300'}>★</span>
+ 55 |     ))}
+ 56 |     <span className="ml-2 text-sm text-gray-600">({value.toFixed(1)})</span>
+ 57 |   </div>
+ 58 | );
+ 59 | 
+ 60 | // Placeholder for an interactive star rating input
+ 61 | const StarRatingInput: React.FC<Pick<RatingStarsProps, 'value' | 'onRate'>> = ({ value, onRate }) => (
+ 62 |   <div className="flex">
+ 63 |     {[1, 2, 3, 4, 5].map((star) => (
+ 64 |       <button
+ 65 |         type="button"
+ 66 |         key={star}
+ 67 |         onClick={() => onRate?.(star)}
+ 68 |         className={`text-2xl ${star <= value ? 'text-yellow-400' : 'text-gray-300'} focus:outline-none`}
+ 69 |       >
+ 70 |         ★
+ 71 |       </button>
+ 72 |     ))}
+ 73 |   </div>
+ 74 | );
+ 75 | 
+ 76 | 
+ 77 | interface ProductReviewsProps {
+ 78 |   productId: string;
+ 79 | }
+ 80 | 
+ 81 | const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
+ 82 |   const { isAuthenticated } = useAuth();
+ 83 |   const [reviews, setReviews] = useState<Review[]>([]);
+ 84 |   const [isLoading, setIsLoading] = useState(false);
+ 85 |   const [error, setError] = useState<string | null>(null);
+ 86 | 
+ 87 |   const [newRating, setNewRating] = useState(0);
+ 88 |   const [newComment, setNewComment] = useState('');
+ 89 |   const [isSubmitting, setIsSubmitting] = useState(false);
+ 90 |   const [submitError, setSubmitError] = useState<string | null>(null);
+ 91 |   const [submitSuccess, setSubmitSuccess] = useState<string | null>(null);
+ 92 | 
+ 93 |   const fetchReviews = async () => {
+ 94 |     setIsLoading(true);
+ 95 |     setError(null);
+ 96 |     try {
+ 97 |       const response = await fetch(`/api/reviews/${productId}`);
+ 98 |       if (!response.ok) {
+ 99 |         const errorData = await response.json();
+100 |         throw new Error(errorData.error || `Failed to fetch reviews: ${response.statusText}`);
+101 |       }
+102 |       const data: Review[] = await response.json();
+103 |       setReviews(data);
+104 |     } catch (err: any) {
+105 |       setError(err.message);
+106 |     } finally {
+107 |       setIsLoading(false);
+108 |     }
+109 |   };
+110 | 
+111 |   useEffect(() => {
+112 |     if (productId) {
+113 |       fetchReviews();
+114 |     }
+115 |   }, [productId]);
+116 | 
+117 |   const handleSubmitReview = async (e: FormEvent) => {
+118 |     e.preventDefault();
+119 |     if (newRating === 0) {
+120 |       setSubmitError('Please select a rating.');
+121 |       return;
+122 |     }
+123 |     setIsSubmitting(true);
+124 |     setSubmitError(null);
+125 |     setSubmitSuccess(null);
+126 | 
+127 |     try {
+128 |       const response = await fetch('/api/reviews', {
+129 |         method: 'POST',
+130 |         headers: { 'Content-Type': 'application/json' },
+131 |         body: JSON.stringify({ productId, rating: newRating, comment: newComment }),
+132 |       });
+133 | 
+134 |       if (!response.ok) {
+135 |         const errorData = await response.json();
+136 |         throw new Error(errorData.error || `Failed to submit review: ${response.statusText}`);
+137 |       }
+138 | 
+139 |       setSubmitSuccess('Review submitted successfully! It may take some time to appear.');
+140 |       setNewRating(0);
+141 |       setNewComment('');
+142 |       fetchReviews(); // Refresh reviews list
+143 |     } catch (err: any) {
+144 |       setSubmitError(err.message);
+145 |     } finally {
+146 |       setIsSubmitting(false);
+147 |     }
+148 |   };
+149 | 
+150 |   return (
+151 |     <div className="mt-8">
+152 |       <h3 className="text-xl font-semibold mb-4">Product Reviews</h3>
+153 | 
+154 |       {isLoading && <p>Loading reviews...</p>}
+155 |       {error && <p className="text-red-500">Error: {error}</p>}
+156 | 
+157 |       {!isLoading && !error && reviews.length === 0 && (
+158 |         <p>No reviews yet. Be the first to review!</p>
+159 |       )}
+160 | 
+161 |       {!isLoading && !error && reviews.length > 0 && (
+162 |         <div className="space-y-4 mb-6">
+163 |           {reviews.map((review) => (
+164 |             <div key={review.id} className="border p-4 rounded-md bg-gray-50 dark:bg-gray-800">
+165 |               <div className="flex items-center mb-1">
+166 |                 <strong className="mr-2">{review.reviewer_profile?.display_name || review.user?.name || 'Anonymous'}</strong>
+167 |                 {/* Assuming review.rating is a number from the backend */}
+168 |                 <RatingStarsDisplay value={review.rating} />
+169 |               </div>
+170 |               <p className="text-gray-700 dark:text-gray-300">{review.review_text || review.comment}</p>
+171 |               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+172 |                 {new Date(review.created_at).toLocaleDateString()}
+173 |               </p>
+174 |             </div>
+175 |           ))}
+176 |         </div>
+177 |       )}
+178 | 
+179 |       {isAuthenticated && (
+180 |         <div className="mt-6 p-4 border rounded-md bg-white dark:bg-gray-900">
+181 |           <h4 className="text-lg font-semibold mb-3">Write a Review</h4>
+182 |           <form onSubmit={handleSubmitReview}>
+183 |             <div className="mb-3">
+184 |               <label htmlFor="rating" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">Your Rating:</label>
+185 |               <StarRatingInput value={newRating} onRate={setNewRating} />
+186 |             </div>
+187 |             <div className="mb-3">
+188 |               <label htmlFor="comment" className="block text-sm font-medium text-gray-700 dark:text-gray-200">Your Comment (Optional):</label>
+189 |               <textarea
+190 |                 id="comment"
+191 |                 value={newComment}
+192 |                 onChange={(e) => setNewComment(e.target.value)}
+193 |                 rows={4}
+194 |                 className="w-full p-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+195 |               />
+196 |             </div>
+197 |             {submitError && <p className="text-red-500 text-sm mb-2">Error: {submitError}</p>}
+198 |             {submitSuccess && <p className="text-green-500 text-sm mb-2">{submitSuccess}</p>}
+199 |             <button
+200 |               type="submit"
+201 |               disabled={isSubmitting || newRating === 0}
+202 |               className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400"
+203 |             >
+204 |               {isSubmitting ? 'Submitting...' : 'Submit Review'}
+205 |             </button>
+206 |           </form>
+207 |         </div>
+208 |       )}
+209 |       {!isAuthenticated && (
+210 |         <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">
+211 |           Please <Link href="/login" className="text-blue-500 hover:underline">login</Link> to write a review.
+212 |         </p>
+213 |       )}
+214 |     </div>
+215 |   );
+216 | };
+217 | 
+218 | export default ProductReviews;
