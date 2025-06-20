@@ -34,7 +34,7 @@ export default function Home() {
           className="bg-primary/10 text-primary text-center p-2"
           data-testid="home-greeting"
         >
-          {t('greeting', { name: firstName })}
+          {t('general.greeting_user', { name: firstName })}
         </div>
       )}
 
