@@ -68,7 +68,14 @@ This directory contains the Django backend for the Zion platform. It provides sp
 
 ## Running Tests
 
--   **TODO:** Add instructions on how to run backend-specific tests (e.g., `python manage.py test <app_name>`, or if `pytest` is used). Include any specific setup needed for the test environment.
+Run the Django test suite using the built-in `manage.py` command:
+
+```bash
+python manage.py test
+```
+
+If the project later adopts `pytest`, the same command can be swapped for
+`pytest` with any desired flags.
 
 ## API Documentation
 
@@ -85,4 +92,16 @@ This directory contains the Django backend for the Zion platform. It provides sp
 
 ## Deployment
 
--   **TODO:** Add details about how this Django application is containerized (if it is) and deployed to staging/production environments. Reference any specific Dockerfiles or deployment scripts if they are separate from the root ones.
+The backend includes a `Dockerfile` for containerized deployments. The image
+copies the source code, installs dependencies from `requirements.txt`, and uses
+an entrypoint script (`entrypoint.sh`) to apply database migrations before
+starting Gunicorn. A typical build and run sequence looks like:
+
+```bash
+docker build -t zion-backend ./backend
+docker run -p 8000:8000 zion-backend
+```
+
+Integration with the wider platform's Kubernetes or other deployment systems
+should invoke this container image and provide environment variables (database
+credentials, secret keys, etc.) as appropriate.
