@@ -381,6 +381,16 @@ function startMonitoring() {
   } catch (e) {
     logError(`Failed to initialize tail for performance log: ${PERF_LOG_FILE}`, e);
     appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${PERF_LOG_FILE}: ${e.message}\n`);
+    if (e.code === 'ENOENT') {
+      try {
+        ensureFileExists(PERF_LOG_FILE);
+        console.log(`Created missing performance log file at ${PERF_LOG_FILE}`);
+        appendToSelfHealLog(`[${new Date().toISOString()}] Created missing performance log file: ${PERF_LOG_FILE}\n`);
+      } catch (createErr) {
+        logError(`Unable to create performance log file ${PERF_LOG_FILE}`, createErr);
+        appendToSelfHealLog(`[${new Date().toISOString()}] Error creating performance log file ${PERF_LOG_FILE}: ${createErr.message}\n`);
+      }
+    }
   }
 
   // Initialize Tailing Logic for Security Log File
@@ -407,6 +417,16 @@ function startMonitoring() {
   } catch (e) {
     logError(`Failed to initialize tail for security log: ${SECURITY_LOG_FILE}`, e);
     appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${SECURITY_LOG_FILE}: ${e.message}\n`);
+    if (e.code === 'ENOENT') {
+      try {
+        ensureFileExists(SECURITY_LOG_FILE);
+        console.log(`Created missing security log file at ${SECURITY_LOG_FILE}`);
+        appendToSelfHealLog(`[${new Date().toISOString()}] Created missing security log file: ${SECURITY_LOG_FILE}\n`);
+      } catch (createErr) {
+        logError(`Unable to create security log file ${SECURITY_LOG_FILE}`, createErr);
+        appendToSelfHealLog(`[${new Date().toISOString()}] Error creating security log file ${SECURITY_LOG_FILE}: ${createErr.message}\n`);
+      }
+    }
   }
 
   // Initialize System Resource Monitoring
