@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { isProdDomain } from '@/utils/getStripe';
 
 interface GuestCheckoutModalProps {
   open: boolean;
@@ -30,6 +31,11 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
         <DialogHeader>
           <DialogTitle>Guest Checkout</DialogTitle>
         </DialogHeader>
+        {!isProdDomain() && (
+          <div className="rounded-md bg-amber-500/20 p-2 text-center text-amber-400">
+            Pay with test data – use card 4242 4242 4242 4242 and any future date.
+          </div>
+        )}
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
             type="email"
