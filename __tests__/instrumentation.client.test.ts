@@ -1,4 +1,4 @@
-import { register } from '../instrumentation.client';
+import { register } from '../sentry';
 import * as Sentry from '@sentry/nextjs';
 import { Integrations } from "@sentry/tracing"; // Import this if it's used in the Sentry.init call options
 
