@@ -62,7 +62,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
       style={headerStyle}
     >
       <div className="container flex h-16 items-center px-4 sm:px-6">
-        <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
+        <Logo customLogo={customLogo}  />
 
         <div className="ml-6 flex-1">
           <MainNavigation />

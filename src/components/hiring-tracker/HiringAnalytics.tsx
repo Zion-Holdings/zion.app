@@ -115,7 +115,7 @@ export function HiringAnalytics({ jobId }: HiringAnalyticsProps) {
                 dataKey="count"
                 label={({name, percent}) => `${name}: ${(percent * 100).toFixed(0)}%`}
               >
-                {analyticsData.statusDistribution.map((entry, index) => (
+                {analyticsData.statusDistribution.map((_entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
@@ -170,7 +170,7 @@ export function HiringAnalytics({ jobId }: HiringAnalyticsProps) {
               <YAxis dataKey="name" type="category" width={100} />
               <Tooltip />
               <Bar dataKey="value" fill="#8884d8" radius={[0, 4, 4, 0]}>
-                {analyticsData.funnelData.map((entry, index) => (
+                {analyticsData.funnelData.map((_entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Bar>
