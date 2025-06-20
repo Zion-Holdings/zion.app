@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
-import { useRouter } from 'next/router';
+import { toast } from '@/hooks/use-toast';
 
 interface ListingPageProps {
   listing: ProductListing | null;
@@ -21,11 +21,12 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
 
   const canonicalUrl = `/marketplace/listing/${listing.id}`;
   const dispatch = useDispatch<AppDispatch>();
-  const router = useRouter();
 
   const handleAddToCart = () => {
-    dispatch(addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 }));
-    router.push('/cart');
+    dispatch(
+      addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 })
+    );
+    toast.success(`1× ${listing.title} added`);
   };
 
   return (
