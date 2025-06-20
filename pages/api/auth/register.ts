@@ -21,7 +21,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const result = schema.safeParse(req.body);
   if (!result.success) {
-    return res.status(400).json({ error: result.error.errors[0].message });
+    const errorMessage = result.error.errors[0].message;
+    return res.status(400).json({ 
+      error: errorMessage,
+      message: errorMessage // Include both for compatibility
+    });
   }
 
   const { name, email, password } = result.data;
@@ -33,18 +37,27 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     if (error) {
+      let errorMessage = error.message;
+      let statusCode = error.status || 500;
+      
       if (error.message.includes('already registered')) {
-        return res.status(409).json({ error: 'Email already registered' });
+        errorMessage = 'Email already registered';
+        statusCode = 409;
+      } else if (error.message.toLowerCase().includes('weak')) {
+        errorMessage = 'Password is too weak';
+        statusCode = 400;
       }
-      if (error.message.toLowerCase().includes('weak')) {
-        return res.status(400).json({ error: 'Password is too weak' });
-      }
-      return res.status(error.status || 500).json({ error: error.message });
+      
+      return res.status(statusCode).json({ 
+        error: errorMessage,
+        message: errorMessage // Include both for compatibility
+      });
     }
 
     if (data?.user && !data?.session) {
+      const successMessage = 'Registration successful. Please check your email to verify your account.';
       return res.status(201).json({
-        message: 'Registration successful. Please check your email to verify your account.',
+        message: successMessage,
         emailVerificationRequired: true,
         user: {
           id: data.user.id,
@@ -59,13 +72,25 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         'Set-Cookie',
         `authToken=${data.session.access_token}; HttpOnly; Path=/; Secure; SameSite=Strict`
       );
-      return res.status(201).json({ user: data.user, session: data.session });
+      return res.status(201).json({ 
+        message: 'Registration successful',
+        user: data.user, 
+        session: data.session 
+      });
     }
 
-    return res.status(500).json({ error: 'Unexpected response from auth provider' });
+    const errorMessage = 'Unexpected response from auth provider';
+    return res.status(500).json({ 
+      error: errorMessage,
+      message: errorMessage // Include both for compatibility
+    });
   } catch (err) {
     console.error(err);
-    return res.status(503).json({ error: 'Network error. Please try again.' });
+    const errorMessage = 'Network error. Please try again.';
+    return res.status(503).json({ 
+      error: errorMessage,
+      message: errorMessage // Include both for compatibility
+    });
   }
 }
 

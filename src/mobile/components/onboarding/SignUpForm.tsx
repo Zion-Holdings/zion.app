@@ -60,7 +60,8 @@ export function SignUpForm() {
         router.push("/mobile");
       }
     } catch (err: any) {
-      setError(err.message);
+      console.error('Signup/Login error:', err);
+      setError(err.message || 'An unexpected error occurred. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -112,18 +113,20 @@ export function SignUpForm() {
         <div className="flex-grow border-t border-border"></div>
       </div>
       
-      {error && !showVerificationMessage && ( // Only show error if not showing verification message
-        <Alert variant="destructive">
+      {/* Error Alert */}
+      {error && (
+        <Alert variant="destructive" className="mb-4">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>{error}</AlertDescription>
         </Alert>
       )}
 
+      {/* Verification Message */}
       {showVerificationMessage && (
-        <Alert variant="default" className="bg-blue-50 border-blue-200 text-blue-700">
-          <AlertCircle className="h-4 w-4 !text-blue-700" />
+        <Alert className="mb-4 border-blue-500 bg-blue-50">
+          <AlertCircle className="h-4 w-4" />
           <AlertDescription>
-            Registration successful. Please check your email to verify your account.
+            Please check your email and click the verification link before signing in.
           </AlertDescription>
         </Alert>
       )}

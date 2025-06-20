@@ -23,11 +23,20 @@ export default function SimpleSignup() {
     onSubmit: async (values, { setSubmitting, setErrors }) => {
       try {
         const data = await signup({ email: values.email, password: values.password });
-        if (data?.user && setUser) {
-          setUser(data.user);
+        
+        if (data?.emailVerificationRequired) {
+          // Email verification required
+          toast.success('Account created! Please check your email to verify your account.');
+          router.push('/login?message=verify-email');
+        } else if (data?.user) {
+          // Account created and ready to use
+          toast.success('Welcome to Zion!');
+          router.push('/marketplace');
+        } else {
+          // Unexpected response
+          toast.success('Account created successfully!');
+          router.push('/login');
         }
-        toast.success('Welcome to Zion!');
-        router.push('/marketplace'); // Changed to router.push
       } catch (err: any) {
         console.error('Signup error:', err.message);
         setErrors({ email: err.message });
