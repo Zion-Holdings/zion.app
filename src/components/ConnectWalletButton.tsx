@@ -5,7 +5,7 @@ import { useTokenBalance } from '@/hooks/useTokenBalance';
 import { ZION_TOKEN_CONTRACT_ADDRESS } from '@/config/governanceConfig';
 
 const ConnectWalletButton: React.FC = () => {
-  const { isConnected, connectWallet, disconnectWallet, displayAddress, address, chainId, provider } = useWallet();
+  const { isConnected, connectWallet, disconnectWallet, displayAddress, address, provider } = useWallet();
 
   const zionBalance = useTokenBalance(address, ZION_TOKEN_CONTRACT_ADDRESS, provider);
 
