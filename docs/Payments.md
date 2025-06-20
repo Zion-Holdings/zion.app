@@ -49,3 +49,11 @@ app without creating a real account.
 When the app runs in a staging environment it also uses Stripe test mode. The
 guest checkout modal displays a banner reminding testers to pay with the demo
 card `4242 4242 4242 4242` and any future expiration date and CVC.
+
+## Sandbox Sample SKUs
+
+If your environment has no products available, the application falls back to a
+set of demo listings defined in `src/data/marketplaceData.ts`. These sample
+items let QA walk through the Add‑to‑Cart and payment screens without needing a
+live catalog. The fallback is automatic whenever the marketplace API returns an
+error or an empty array.
