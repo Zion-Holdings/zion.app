@@ -57,3 +57,7 @@ if (typeof window !== "undefined") { // Ensure this only runs on the client
     }
   }
 }
+
+
+
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;

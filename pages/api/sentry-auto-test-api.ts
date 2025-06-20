@@ -1,9 +1,8 @@
 // pages/api/sentry-auto-test-api.ts
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 
 function handler(
-  req: NextApiRequest,
   res: NextApiResponse
 ) {
   // This error should be automatically captured by Sentry's

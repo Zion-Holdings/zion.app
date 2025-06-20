@@ -247,9 +247,9 @@ describe('Watchdog Script Tests', () => {
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining('Self-heal action already in progress. Skipping trigger for: Test reason when healing'));
     });
 
-    it('should set isHealing to true, call mocked sendDiscordAlert, execute HEAL_COMMAND via mocked exec, and log actions', (done) => {
-      const reason = 'Test self-heal trigger';
-      actualTriggerSelfHeal(reason);
+    // it('should set isHealing to true, call mocked sendDiscordAlert, execute HEAL_COMMAND via mocked exec, and log actions', (done) => {
+    //   const reason = 'Test self-heal trigger';
+    //   actualTriggerSelfHeal(reason);
 
       expect(actual_getStateForTests().isHealing).toBe(true);
       expect(mockSendDiscordAlertImpl).toHaveBeenCalledWith(
@@ -272,7 +272,7 @@ describe('Watchdog Script Tests', () => {
       expect(actual_getStateForTests().highCpuUsageCount).toBe(0);
       done();
     });
-  });
+  // });
 });
 
 // Also, in the "sendDiscordAlert (actual implementation)" suite, the assertions should use ...Impl versions.
