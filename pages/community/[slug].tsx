@@ -6,7 +6,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import EmptyState from '@/components/community/EmptyState';
 // import { createClient } from '@supabase/supabase-js'; // No longer directly needed here if fetchPostsByCategory handles its own client
 import PostCard from '@/components/community/PostCard';
-import * as Sentry from '@sentry/nextjs';
 import type { ForumPost } from '@/types/community';
 import { fetchPostsByCategory } from '@/services/forumPostService';
 
@@ -106,3 +105,4 @@ export const getServerSideProps = async ({ req, params }: { req: any; params?: {
   const category = params?.slug as string;
   // Supabase client setup for SSR, if needed directly here, should be maintained.
   // However, if fetchPostsByCategory encapsulates Supabase client logic, direct use here might not be necessary.
+export default CategoryPage;
