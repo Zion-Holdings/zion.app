@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { List, RefreshCw } from "lucide-react";
-import { useApiKeys, type ApiLog } from "@/hooks/useApiKeys";
+import { useApiKeys } from "@/hooks/useApiKeys";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
