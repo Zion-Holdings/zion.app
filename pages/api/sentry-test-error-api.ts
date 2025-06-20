@@ -10,7 +10,11 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 async function handler(
+<<<<<<< HEAD
+  _req: NextApiRequest,
+=======
   
+>>>>>>> a796ccd089a3e9795845f1d2f221410231e6cf64
   res: NextApiResponse
 ) {
   try {

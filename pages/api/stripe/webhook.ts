@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 811455ae44ee272872c503f5acbc946c1373d39f
 import { buffer } from 'micro';
 import fs from 'fs';
 import path from 'path';

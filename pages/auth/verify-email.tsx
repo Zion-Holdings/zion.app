@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { logError } from '@/utils/logError';
 import { suggestFix } from '@/utils/suggestFix';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 811455ae44ee272872c503f5acbc946c1373d39f
 import { useAuth } from '@/hooks/useAuth'; // To access user state
 
 const VerifyEmailPage = () => {
@@ -29,8 +32,8 @@ const VerifyEmailPage = () => {
 
       // We need to check if the user object is available, indicating Supabase processed the link.
       // Supabase might also specific 'type' in URL like 'signup' or 'email_change'
-      const params = new URLSearchParams(window.location.search);
-      const type = params.get('type');
+      // const params = new URLSearchParams(window.location.search);
+      // const type = params.get("type"); // Unused but available for future use
 
       // If there's a user session, it means Supabase has processed the verification link successfully.
       if (user && user.id) {
