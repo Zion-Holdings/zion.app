@@ -1,4 +1,4 @@
-// The Sentry SDK, initialized via instrumentation.client.ts,
+// The Sentry SDK, initialized via sentry.ts,
 // automatically handles global errors (window.onerror) and unhandled promise rejections.
 // Custom global error handlers that duplicate this functionality have been removed.
 
