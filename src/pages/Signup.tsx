@@ -267,17 +267,27 @@ export default function Signup() {
             </Button>
           ) : (
             <div className="space-y-2">
-              <Button 
-                type="button" 
-                variant="outline" 
+              <Button
+                type="button"
+                variant="outline"
                 className="w-full"
                 onClick={() => router.push('/login')}
               >
                 Go to Login
               </Button>
-              <Button 
-                type="button" 
-                variant="ghost" 
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full"
+                onClick={() =>
+                  router.push(`/verify-status?email=${encodeURIComponent(formik.values.email)}`)
+                }
+              >
+                Check Verification Status
+              </Button>
+              <Button
+                type="button"
+                variant="ghost"
                 className="w-full text-sm"
                 onClick={() => {
                   setEmailVerificationRequired(false);
