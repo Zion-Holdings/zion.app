@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { formatDistanceToNow } from "date-fns";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ThumbsUp, ThumbsDown, MessageSquare, Pin, Lock, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -34,8 +34,10 @@ const PostCardComponent = ({ post, compact = false }: PostCardProps) => {
         </Avatar>
         <div className="flex-1">
           <div className="flex items-center">
-            <Link to={`/community/post/${post.id}`} className="font-semibold text-lg hover:text-zion-purple transition-colors">
-              {post.title}
+            <Link href={`/community/post/${post.id}`}>
+              <a className="font-semibold text-lg hover:text-zion-purple transition-colors">
+                {post.title}
+              </a>
             </Link>
             {post.isAnswered && (
               <CheckCircle className="h-4 w-4 text-green-500 ml-2" />

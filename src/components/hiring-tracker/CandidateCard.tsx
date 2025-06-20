@@ -3,7 +3,7 @@ import { useState } from "react";
 // available in this environment.
 import { Draggable } from "@/lib/dnd-stub";
 import { formatDistanceToNow } from "date-fns";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { JobApplication } from "@/types/jobs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar as AvatarPrimitive } from "@/components/ui/avatar"; // Renamed to avoid conflict
@@ -118,7 +118,7 @@ export function CandidateCard({ application, index }: CandidateCardProps) {
                       <BriefcaseIcon className="h-4 w-4 mr-2" /> Hire Candidate
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link to={`/messages?talentId=${application.talent_id}`}>
+                      <Link href={`/messages?talentId=${application.talent_id}`}>
                         Message
                       </Link>
                     </DropdownMenuItem>
@@ -178,7 +178,7 @@ export function CandidateCard({ application, index }: CandidateCardProps) {
                   className="flex-1"
                   asChild
                 >
-                  <Link to={`/messages?talentId=${application.talent_id}`}>
+                  <Link href={`/messages?talentId=${application.talent_id}`}>
                     <MessageSquare className="h-3 w-3 mr-1" /> Message
                   </Link>
                 </Button>

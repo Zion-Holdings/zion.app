@@ -1,58 +1,57 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router'; // Changed from useNavigate, useLocation
+import React, { useEffect, ReactElement } from 'react'; // Added ReactElement
+import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { safeStorage } from '@/utils/safeStorage';
 import { LoginContent } from '@/components/auth/login';
-import { AuthLayout } from '@/layout';
+import { AuthLayout } from '@/layout/AuthLayout'; // Keep AuthLayout import for getLayout
 import { ErrorBoundary } from 'react-error-boundary';
 import LoginErrorFallback from '@/components/auth/login/LoginErrorFallback';
 import { useCart } from '@/context/CartContext';
-import { toast } from '@/hooks/use-toast';
+// import { toast } from '@/hooks/use-toast'; // toast seems unused directly here after AuthProvider changes
 
-export default function Login() {
+// Define the main Login component
+const LoginPage = () => {
   const { isAuthenticated, user, isLoading } = useAuth();
-  const router = useRouter(); // Initialized router
-  // location is now router
-  const { dispatch } = useCart();
+  const router = useRouter();
+  const { dispatch } = useCart(); // dispatch seems unused, consider removing if not needed
 
   useEffect(() => {
-    // This effect handles token processing (e.g., from magic link)
-    // It runs when component mounts or router.asPath (containing query) changes
     const queryString = router.asPath.split('?')[1] || '';
     const params = new URLSearchParams(queryString);
     const token = params.get('token');
     if (token) {
       safeStorage.setItem('zion_token', token);
-      // Clear token from URL to prevent re-processing and clean up history
-      // The actual authentication state will update via useAuth's listeners,
-      // which should trigger the other useEffect.
-      router.replace(router.pathname, undefined, { shallow: true }); // Use router.replace with shallow routing
+      router.replace(router.pathname, undefined, { shallow: true });
     }
-  }, [router.asPath, router.pathname, router]); // Depend on router.asPath
+  }, [router]); // Simplified router dependency
 
   useEffect(() => {
     if (!isLoading && isAuthenticated) {
-      router.replace('/dashboard'); // Use router.replace
+      const redirectTo = router.query.redirectTo || '/dashboard';
+      router.replace(Array.isArray(redirectTo) ? redirectTo[0] : redirectTo);
     }
   }, [isAuthenticated, isLoading, router]);
 
   // Render LoginContent if not authenticated and auth is not loading
+  // AuthLayout will be applied by getLayout
   if (!isAuthenticated && !isLoading) {
     return (
-      <AuthLayout>
-        <ErrorBoundary FallbackComponent={LoginErrorFallback}>
-          <LoginContent />
-        </ErrorBoundary>
-      </AuthLayout>
+      <ErrorBoundary FallbackComponent={LoginErrorFallback}>
+        <LoginContent />
+      </ErrorBoundary>
     );
   }
 
-  // Optional: Render a loading indicator while isLoading is true
   if (isLoading) {
-    return <div className="p-4 text-center text-foreground">Loading...</div>; // Or a proper loading spinner component
+    return <div className="p-4 text-center text-foreground">Loading...</div>;
   }
 
-  // If authenticated and isLoading is false, the useEffect above should have navigated.
-  // Return null or a minimal layout if needed, though direct navigation is preferred.
-  return null;
-}
+  return null; // Or some other placeholder if needed before redirect
+};
+
+// Assign getLayout to the LoginPage component
+LoginPage.getLayout = function getLayout(page: ReactElement) {
+  return <AuthLayout>{page}</AuthLayout>;
+};
+
+export default LoginPage;

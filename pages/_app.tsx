@@ -1,54 +1,54 @@
-import React from 'react';
+import React, { ReactElement, ReactNode } from 'react';
+import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from '@/context/auth/AuthProvider';
 import { Provider as ReduxProvider } from 'react-redux';
-import { store } from '@/store'; // Changed to named import
-import { WhitelabelProvider } from '@/context/WhitelabelContext'; // Added WhitelabelProvider
-import { WalletProvider } from '@/context/WalletContext'; // Added WalletProvider
-import { AnalyticsProvider } from '@/context/AnalyticsContext'; // Added AnalyticsProvider
-import { CartProvider } from '@/context/CartContext'; // Added CartProvider
+import { store } from '@/store';
+import { WhitelabelProvider } from '@/context/WhitelabelContext';
+import { WalletProvider } from '@/context/WalletContext';
+import { AnalyticsProvider } from '@/context/AnalyticsContext';
+import { CartProvider } from '@/context/CartContext';
 import { ErrorProvider } from '@/context/ErrorContext';
 import ErrorResetOnRouteChange from '@/components/ErrorResetOnRouteChange';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
-import ErrorBoundary from '@/components/ErrorBoundary';
+import ErrorBoundary from '@/components/ErrorBoundary'; // Generic ErrorBoundary
 import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { ApiErrorBoundary } from '@/components/ApiErrorBoundary';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { AppLayout } from '@/layout/AppLayout';
+import { AppLayout } from '@/layout/AppLayout'; // Default AppLayout
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
-// Import global Tailwind styles so they load before the app renders
-import '../src/index.css';
+import '../src/index.css'; // Global Tailwind styles
 import * as Sentry from '@sentry/nextjs';
 import getConfig from 'next/config';
-import { captureException } from '@/utils/sentry';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 import { validateProductionEnvironment, initializeServices } from '@/utils/environmentConfig';
-// If you have global CSS, import it here:
-// import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
+// Define types for getLayout pattern
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   console.log('[App] MyApp component rendering started.');
   const router = useRouter();
   const [queryClient] = React.useState(() => new QueryClient());
 
   React.useEffect(() => {
     console.log('[App] MyApp main useEffect hook started.');
-    
     try {
-      // Validate environment variables (graceful in development, strict in production)
       validateProductionEnvironment();
-      
-      // Initialize services based on configuration
       initializeServices();
-      
-      // Initialize global error handlers
       initializeGlobalErrorHandlers();
       
       const { publicRuntimeConfig } = getConfig();
@@ -60,48 +60,26 @@ function MyApp({ Component, pageProps }: AppProps) {
       if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT) {
         Sentry.setTag('environment', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
       }
-      
-      console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY:", publicRuntimeConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'NOT_SET');
-      console.log("NEXT_PUBLIC_REOWN_PROJECT_ID:", publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID ? 'SET' : 'NOT_SET');
     } catch (error) {
       console.error('[App] Critical initialization error:', error);
-      
-      // Only send to Sentry if it's available and configured
       try {
         Sentry.captureException(error);
       } catch (sentryError) {
         console.warn('[App] Could not send error to Sentry:', sentryError);
       }
-      
-      // Don't throw here - let the error boundary handle it in the UI
     }
-  }, []); // Empty dependency array ensures this runs only once on mount
+  }, []);
 
   React.useEffect(() => {
     Sentry.setTag('route', router.pathname);
     Sentry.setContext('query', router.query);
-  }, [router.pathname]);
+  }, [router.pathname, router.query]); // Added router.query as dependency
 
-  // Log initialization messages
-  console.log('[App Provider] Initializing RootErrorBoundary...');
-  console.log('[App Provider] Initializing GlobalErrorBoundary...');
-  console.log('[App Provider] Initializing QueryClientProvider...');
-  console.log('[App Provider] Initializing ReduxProvider...');
-  console.log('[App Provider] Initializing HelmetProvider...');
-  console.log('[App Provider] Initializing ErrorProvider...');
-  console.log('[App Provider] Initializing AuthProvider...');
-  console.log('[App Provider] Initializing WhitelabelProvider...');
-  console.log('[App Provider] Initializing I18nextProvider...');
-  console.log('[App Provider] Initializing WalletProvider...');
-  console.log('[App Provider] Initializing CartProvider...');
-  console.log('[App Provider] Initializing AnalyticsProvider...');
-  console.log('[App Provider] Initializing ThemeProvider...');
-  console.log('[App Provider] Initializing BrowserRouter...');
-  console.log('[App Provider] Initializing ErrorBoundary (wrapping Component)...');
+  console.log('[App] Attempting to render component:', Component.displayName || Component.name || 'UnnamedComponent');
 
-  console.log('[App] Attempting to render component:', Component.name || 'UnnamedComponent');
+  // Use the getLayout defined on the page component, or default to AppLayout
+  const getLayout = Component.getLayout ?? ((page) => <AppLayout>{page}</AppLayout>);
 
-  // Use ProductionErrorBoundary as the top-level error boundary
   return (
     <ProductionErrorBoundary>
       <RootErrorBoundary>
@@ -119,14 +97,17 @@ function MyApp({ Component, pageProps }: AppProps) {
                               <CartProvider>
                                 <AnalyticsProvider>
                                   <ThemeProvider>
-                                    <AppLayout>
-                                      <ErrorBoundary>
-                                        <Component {...pageProps} />
-                                      </ErrorBoundary>
-                                      <ErrorResetOnRouteChange />
-                                      <Toaster />
-                                      <OfflineIndicator />
-                                    </AppLayout>
+                                    {getLayout(
+                                      <>
+                                        {/* ErrorBoundary now wraps only the Component */}
+                                        <ErrorBoundary>
+                                          <Component {...pageProps} />
+                                        </ErrorBoundary>
+                                        <ErrorResetOnRouteChange />
+                                        <Toaster />
+                                        <OfflineIndicator />
+                                      </>
+                                    )}
                                   </ThemeProvider>
                                 </AnalyticsProvider>
                               </CartProvider>

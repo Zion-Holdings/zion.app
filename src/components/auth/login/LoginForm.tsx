@@ -17,7 +17,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import { Checkbox } from "@/components/ui/checkbox";
 // Form validation schema
@@ -174,8 +174,10 @@ export function LoginForm() {
             {/* If "Remember me" was previously here, it's moved. */}
           </div>
           <div className="text-sm">
-            <Link to="/forgot-password" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
-              Forgot password?
+            <Link href="/forgot-password">
+              <a className="font-medium text-zion-cyan hover:text-zion-cyan-light">
+                Forgot password?
+              </a>
             </Link>
           </div>
         </div>
@@ -187,8 +189,10 @@ export function LoginForm() {
           {isLoading || isSubmitting ? "Logging in..." : "Login"}
         </Button>
         <p className="text-sm text-center mt-4">
-          <Link to="/signup" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
-            Create account
+          <Link href="/signup">
+            <a className="font-medium text-zion-cyan hover:text-zion-cyan-light">
+              Create account
+            </a>
           </Link>
         </p>
       </form>

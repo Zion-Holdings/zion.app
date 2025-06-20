@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { GradientHeading } from "./GradientHeading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "./ui/button";
@@ -179,7 +179,7 @@ export function FeaturesGuideSection() {
                     className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple"
                     asChild
                   >
-                    <Link to={feature.link}>
+                    <Link href={feature.link}>
                       {feature.buttonText}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -208,7 +208,7 @@ export function FeaturesGuideSection() {
             className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10"
             asChild
           >
-            <Link to="/marketplace">
+            <Link href="/marketplace">
               Explore Full Marketplace
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
