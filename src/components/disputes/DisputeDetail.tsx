@@ -21,8 +21,12 @@ import { toast } from "sonner";
 
 export function DisputeDetail() {
   const router = useRouter();
+<<<<<<< HEAD
+  const { disputeId } = router.query as { disputeId?: string };
+=======
   // Get disputeId from Next.js router query params
   const disputeId = router.query.disputeId as string;
+>>>>>>> 2930c7bd629267a6944379b59c50953d5712e63f
   const { user } = useAuth();
   const { getDisputeById, updateDisputeStatus, resolveDispute, getDisputeMessages, addDisputeMessage } = useDisputes();
 
@@ -62,15 +66,17 @@ export function DisputeDetail() {
       } catch (error) {
         console.error("Error loading dispute data:", error);
         toast.error("Failed to load dispute");
-        // Retry after a delay
-        setTimeout(loadDisputeData, 2000);
       } finally {
         setIsLoading(false);
       }
     };
     
     loadDisputeData();
+<<<<<<< HEAD
+  }, [disputeId, getDisputeById, getDisputeMessages, router]);
+=======
   }, [disputeId, router, getDisputeById, getDisputeMessages]);
+>>>>>>> 2930c7bd629267a6944379b59c50953d5712e63f
 
   const handleStatusChange = async (status: DisputeStatus) => {
     if (!disputeId) return;
