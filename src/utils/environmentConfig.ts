@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/nextjs';
+import { z } from 'zod';
 
 interface EnvironmentConfig {
   supabase: {
@@ -23,6 +24,22 @@ interface EnvironmentConfig {
     isProduction: boolean;
   };
 }
+
+// Typed environment schema using zod for early validation
+const EnvSchema = z.object({
+  NEXT_PUBLIC_SUPABASE_URL: z.string().optional(),
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().optional(),
+  SUPABASE_SERVICE_ROLE_KEY: z.string().optional(),
+  NEXT_PUBLIC_SENTRY_DSN: z.string().optional(),
+  SENTRY_DSN: z.string().optional(),
+  NEXT_PUBLIC_SENTRY_ENVIRONMENT: z.string().optional(),
+  SENTRY_ENVIRONMENT: z.string().optional(),
+  NEXT_PUBLIC_SENTRY_RELEASE: z.string().optional(),
+  SENTRY_RELEASE: z.string().optional(),
+  NEXT_PUBLIC_REOWN_PROJECT_ID: z.string().optional(),
+});
+
+type RawEnv = z.infer<typeof EnvSchema>;
 
 /**
  * Check if a value is a placeholder or invalid
@@ -84,10 +101,13 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const isDevelopment = nodeEnv === 'development';
   const isProduction = nodeEnv === 'production';
 
+  // Parse environment variables using the typed schema
+  const env = EnvSchema.parse(process.env) as RawEnv;
+
   // Supabase Configuration
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const supabaseServiceRoleKey = env.SUPABASE_SERVICE_ROLE_KEY;
   
   // Debug logging for Supabase configuration
   const urlIsPlaceholder = isPlaceholderValue(supabaseUrl);
@@ -105,14 +125,14 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const supabaseConfigured = !urlIsPlaceholder && !keyIsPlaceholder;
 
   // Sentry Configuration
-  const sentryDsn = process.env.NEXT_PUBLIC_SENTRY_DSN || process.env.SENTRY_DSN;
-  const sentryEnvironment = process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT || process.env.SENTRY_ENVIRONMENT || nodeEnv;
-  const sentryRelease = process.env.NEXT_PUBLIC_SENTRY_RELEASE || process.env.SENTRY_RELEASE || 'unknown';
+  const sentryDsn = env.NEXT_PUBLIC_SENTRY_DSN || env.SENTRY_DSN;
+  const sentryEnvironment = env.NEXT_PUBLIC_SENTRY_ENVIRONMENT || env.SENTRY_ENVIRONMENT || nodeEnv;
+  const sentryRelease = env.NEXT_PUBLIC_SENTRY_RELEASE || env.SENTRY_RELEASE || 'unknown';
   
   const sentryConfigured = !isPlaceholderValue(sentryDsn);
 
   // Reown Configuration
-  const reownProjectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID;
+  const reownProjectId = env.NEXT_PUBLIC_REOWN_PROJECT_ID;
   const reownConfigured = !isPlaceholderValue(reownProjectId);
 
   return {
