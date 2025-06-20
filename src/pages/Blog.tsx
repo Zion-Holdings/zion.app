@@ -45,24 +45,31 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
   // }, []);
 
   useEffect(() => {
-    if (searchQuery !== query) {
+    const fetchPosts = async () => {
       setIsLoading(true);
-    } else {
-      setIsLoading(false);
-    }
-  }, [searchQuery, query]);
+      try {
+        const res = await fetch(`/api/blog?query=${encodeURIComponent(query)}`);
+        if (res.ok) {
+          const data: BlogPost[] = await res.json();
+          setPosts(data);
+        }
+      } catch (err) {
+        console.error('Failed to fetch blog posts', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  // Filter blog posts based on search and category
+    fetchPosts();
+  }, [query]);
+
+  // Filter blog posts based on selected category only.
+  // Search filtering is handled server-side.
   const filteredPosts = posts.filter(post => {
-    const lowercasedQuery = query.toLowerCase();
-    const matchesSearch =
-      post.title.toLowerCase().includes(lowercasedQuery) ||
-      post.excerpt.toLowerCase().includes(lowercasedQuery) ||
-      post.tags.some(tag => tag.toLowerCase().includes(lowercasedQuery));
-      
-    const matchesCategory = selectedCategory === "All Categories" || post.category === selectedCategory;
-    
-    return matchesSearch && matchesCategory;
+    const matchesCategory =
+      selectedCategory === "All Categories" || post.category === selectedCategory;
+
+    return matchesCategory;
   });
   
   // Get featured posts
