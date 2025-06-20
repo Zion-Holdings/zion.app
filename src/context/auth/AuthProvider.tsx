@@ -18,7 +18,9 @@ import { addItem } from '@/store/cartSlice';
 const LOGIN_TIMEOUT_MS = 15000; // 15 seconds timeout
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  console.log('[AuthProvider] Initializing...');
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[AuthProvider] Initializing...');
+  }
   const {
     user, setUser,
     isLoading, setIsLoading,
@@ -274,37 +276,51 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[App] MyApp main useEffect hook started.');
+    }
+    
     // Clean up any potential stale auth state before setting up listeners
     cleanupAuthState();
     
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       // Inside the onAuthStateChange callback
       async (event: any, session: any) => {
-              console.log('[AuthProvider DEBUG] onAuthStateChange: Entered. Current isLoading:', isLoading);
-              console.log('[AuthProvider DEBUG] onAuthStateChange triggered. Event:', event);
-              console.log('[AuthProvider DEBUG] Session object:', JSON.stringify(session, null, 2));
+              if (process.env.NODE_ENV === 'development') {
+                console.log('[AuthProvider DEBUG] onAuthStateChange: Entered. Current isLoading:', isLoading);
+                console.log('[AuthProvider DEBUG] onAuthStateChange triggered. Event:', event);
+                console.log('[AuthProvider DEBUG] Session object:', JSON.stringify(session, null, 2));
+              }
       
               setIsLoading(true); // Ensure isLoading is true at the start
-              console.log('[AuthProvider DEBUG] onAuthStateChange: setIsLoading(true) called. New isLoading:', isLoading);
+              if (process.env.NODE_ENV === 'development') {
+                console.log('[AuthProvider DEBUG] onAuthStateChange: setIsLoading(true) called. New isLoading:', isLoading);
+              }
       
               try {
                 if (session?.user) {
-                  console.log('[AuthProvider DEBUG] Session and user found. User ID:', session.user.id);
+                  if (process.env.NODE_ENV === 'development') {
+                    console.log('[AuthProvider DEBUG] Session and user found. User ID:', session.user.id);
+                  }
 
                   // Inner try-catch for profile fetching and mapping
                   try {
-                    console.log('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', session.user.id);
-                    // Explicitly log the exact query being made
-                    console.log('[AuthProvider DEBUG] Supabase query: supabase.from("profiles").select("*").eq("id", session.user.id).single()');
-                    console.log('[AuthProvider DEBUG] onAuthStateChange: About to fetch profile. Session user available:', !!session?.user);
+                    if (process.env.NODE_ENV === 'development') {
+                      console.log('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', session.user.id);
+                      console.log('[AuthProvider DEBUG] Supabase query: supabase.from("profiles").select("*").eq("id", session.user.id).single()');
+                      console.log('[AuthProvider DEBUG] onAuthStateChange: About to fetch profile. Session user available:', !!session?.user);
+                    }
+                    
                     const { data: profile, error: profileError } = await supabase
                       .from('profiles')
                       .select('*')
                       .eq('id', session.user.id)
                       .single();
 
-                    console.log('[AuthProvider DEBUG] Raw profile data:', JSON.stringify(profile, null, 2));
-                    console.log('[AuthProvider DEBUG] Profile fetch error (if any):', JSON.stringify(profileError, null, 2));
+                    if (process.env.NODE_ENV === 'development') {
+                      console.log('[AuthProvider DEBUG] Raw profile data:', JSON.stringify(profile, null, 2));
+                      console.log('[AuthProvider DEBUG] Profile fetch error (if any):', JSON.stringify(profileError, null, 2));
+                    }
 
                     if (profileError) {
                       console.error("[AuthProvider DEBUG] Error fetching user profile:", profileError);

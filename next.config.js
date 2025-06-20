@@ -2,41 +2,22 @@ import { withSentryConfig } from "@sentry/nextjs";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // publicRuntimeConfig is generally not needed for NEXT_PUBLIC_ variables in modern Next.js.
-  // These variables are available via process.env directly.
-  // publicRuntimeConfig: {
-  //   NEXT_PUBLIC_SENTRY_RELEASE: process.env.SENTRY_RELEASE,
-  //   NEXT_PUBLIC_SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT,
-  //   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
-  //   NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY,
-  //   NEXT_PUBLIC_STRIPE_TEST_KEY: process.env.NEXT_PUBLIC_STRIPE_TEST_KEY,
-  //   NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
-  //   NEXT_PUBLIC_REOWN_PROJECT_ID: process.env.NEXT_PUBLIC_REOWN_PROJECT_ID,
-  //   NEXT_PUBLIC_VAPID_PUBLIC_KEY: process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY,
-  //   NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
-  //   NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-  //   NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-  //   NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL: process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL,
-  //   NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
-  //   NEXT_PUBLIC_FIREBASE_API_KEY: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  //   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  //   NEXT_PUBLIC_FIREBASE_PROJECT_ID: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  //   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  //   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  //   NEXT_PUBLIC_FIREBASE_APP_ID: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  //   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-  //   NEXT_PUBLIC_ANALYTICS_TRACKING_ID: process.env.NEXT_PUBLIC_ANALYTICS_TRACKING_ID,
-  //   NEXT_PUBLIC_DEVTOOLS: process.env.NEXT_PUBLIC_DEVTOOLS,
-  //   NEXT_PUBLIC_NETLIFY_CONTEXT: process.env.NEXT_PUBLIC_NETLIFY_CONTEXT,
-  //   NEXT_PUBLIC_SALESFORCE_URL: process.env.NEXT_PUBLIC_SALESFORCE_URL,
-  //   NEXT_PUBLIC_SALESFORCE_TOKEN: process.env.NEXT_PUBLIC_SALESFORCE_TOKEN,
-  //   NEXT_PUBLIC_MAILCHIMP_API_KEY: process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY,
-  //   NEXT_PUBLIC_MAILCHIMP_LIST_ID: process.env.NEXT_PUBLIC_MAILCHIMP_LIST_ID,
-  //   NEXT_PUBLIC_TEAMS_WEBHOOK_URL: process.env.NEXT_PUBLIC_TEAMS_WEBHOOK_URL,
-  //   NEXT_PUBLIC_ERROR_WEBHOOK_URL: process.env.NEXT_PUBLIC_ERROR_WEBHOOK_URL,
-  //   NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
-  //   NEXT_PUBLIC_SUPPORT_EMAIL: process.env.NEXT_PUBLIC_SUPPORT_EMAIL, // Added based on task description
-  // },
+  // Environment configuration
+  env: {
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+  },
+
+  // Public runtime configuration
+  publicRuntimeConfig: {
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    NEXT_PUBLIC_REOWN_PROJECT_ID: process.env.NEXT_PUBLIC_REOWN_PROJECT_ID,
+    NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
+    NEXT_PUBLIC_SENTRY_ENVIRONMENT: process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT || 'development',
+    NEXT_PUBLIC_SENTRY_RELEASE: process.env.NEXT_PUBLIC_SENTRY_RELEASE || '1.0.0',
+  },
+
   images: {
     unoptimized: false, // Enabled Next.js Image Optimization for performance
   },
@@ -49,27 +30,18 @@ const nextConfig = {
   // Enable source maps in production for easier stack traces in Sentry
   productionBrowserSourceMaps: true, // Re-enabled
 
-  // Add custom headers to prevent caching issues
+  // Custom headers for performance and security
   async headers() {
     return [
       {
-        // Apply cache headers to the home page
-        source: '/',
+        source: '/(.*)',
         headers: [
+          // Cache control
           {
             key: 'Cache-Control',
-            value: 'public, s-maxage=60, stale-while-revalidate=300',
+            value: 'public, max-age=31536000, immutable',
           },
-          {
-            key: 'X-Route-Type',
-            value: 'home-page',
-          },
-        ],
-      },
-      {
-        // Prevent caching issues on dynamic pages
-        source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
-        headers: [
+          // Security headers
           {
             key: 'X-Frame-Options',
             value: 'DENY',
@@ -81,6 +53,19 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+        ],
+      },
+      {
+        source: '/api/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
           },
         ],
       },
@@ -120,13 +105,21 @@ const nextConfig = {
 
   // Improve build performance and reduce bundle size
   experimental: {
-    optimizeCss: false, // Disabled again to try and avoid timeout
-    swcMinify: true, // Remains enabled
+    optimizeCss: false, // Disabled to avoid timeout
+    swcMinify: true,
+    // Enable modern JavaScript features
+    esmExternals: true,
+    // Improve tree shaking
+    modularizeImports: {
+      '@mui/material': {
+        transform: '@mui/material/{{member}}',
+      },
+      '@mui/icons-material': {
+        transform: '@mui/icons-material/{{member}}',
+      },
+    },
   },
 
-  // experimental: {
-  //   esmExternals: 'loose', // Removing this as per Next.js recommendation
-  // },
   transpilePackages: [
     'react-markdown',
     'date-fns',
@@ -136,7 +129,7 @@ const nextConfig = {
     'libp2p',
     '@libp2p/identify',
   ],
-  webpack: (config, { isServer }) => {
+  webpack: (config, { isServer, dev }) => {
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
@@ -156,22 +149,53 @@ const nextConfig = {
         stream: false,
         util: false,
         zlib: false,
-        url: false, // Added url as it's often a dependency
+        url: false,
       };
     }
 
-    // Optimize chunk splitting to reduce initial load
-    if (!isServer) {
+    // Optimize chunk splitting for better performance
+    if (!isServer && !dev) {
       config.optimization = {
         ...config.optimization,
         splitChunks: {
           ...config.optimization.splitChunks,
           cacheGroups: {
             ...config.optimization.splitChunks.cacheGroups,
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
+            default: false,
+            vendors: false,
+            // Framework chunk
+            framework: {
               chunks: 'all',
+              name: 'framework',
+              test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|use-subscription)[\\/]/,
+              priority: 40,
+              enforce: true,
+            },
+            // Large libraries
+            lib: {
+              test(module) {
+                return (
+                  module.size() > 160000 &&
+                  /node_modules[/\\]/.test(module.identifier())
+                );
+              },
+              name(module) {
+                const hash = require('crypto').createHash('sha1');
+                hash.update(module.identifier());
+                return hash.digest('hex').substring(0, 8);
+              },
+              priority: 30,
+              minChunks: 1,
+              reuseExistingChunk: true,
+            },
+            // Common libraries
+            commons: {
+              name: 'commons',
+              minChunks: 2,
+              priority: 20,
+              chunks: 'all',
+              reuseExistingChunk: true,
+              enforce: true,
             },
           },
         },
