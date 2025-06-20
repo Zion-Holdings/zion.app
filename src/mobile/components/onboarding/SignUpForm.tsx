@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useAuth } from "@/context/auth/AuthProvider";
 import { AlertCircle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
 
 export function SignUpForm() {
   const router = useRouter();
@@ -32,6 +33,13 @@ export function SignUpForm() {
     e.preventDefault();
     setError("");
     setIsLoading(true);
+
+    const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    if (!strongPasswordRegex.test(formData.password)) {
+      setError('Password must be at least 8 characters and include uppercase, lowercase, and a number.');
+      setIsLoading(false);
+      return;
+    }
     
     try {
       setShowVerificationMessage(false); // Reset verification message
@@ -170,6 +178,7 @@ export function SignUpForm() {
             required
             placeholder="Create a password"
           />
+          <PasswordStrengthMeter password={formData.password} />
         </div>
         
         <Button 
