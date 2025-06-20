@@ -22,7 +22,7 @@ const mockTalent: TalentProfile = {
 export function ContractBuilderContent() {
   const { user } = useAuth();
   const [showBuilderType, setShowBuilderType] = useState<'none' | 'standard' | 'smart'>('none');
-  const [recentContracts, setRecentContracts] = useState([
+  const [recentContracts, _setRecentContracts] = useState([
     {
       id: 'contract-1',
       title: 'Website Redesign',
