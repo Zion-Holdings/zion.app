@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { Search, Filter, Grid, List } from 'lucide-react';
 import { SEO } from '@/components/SEO';
@@ -42,7 +42,7 @@ export default function SearchResultsPage({
   totalCount 
 }: SearchResultsPageProps) {
   const router = useRouter();
-  const { user, isLoading: authLoading, isAuthenticated } = useAuth();
+  const { isLoading: authLoading, isAuthenticated } = useAuth();
   const [results, setResults] = useState<SearchResult[]>(initialResults);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState(query);
