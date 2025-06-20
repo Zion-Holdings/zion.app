@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import * as Sentry from '@sentry/nextjs';
 import { toast } from '@/hooks/use-toast';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import EmailVerificationBanner from '@/components/EmailVerificationBanner';
 
 export default function Login() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -10,6 +11,8 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [showVerificationBanner, setShowVerificationBanner] = useState(false);
+  const [isResendingEmail, setIsResendingEmail] = useState(false);
 
   const handleLogin = async (email: string, password: string) => {
     try {
@@ -39,18 +42,19 @@ export default function Login() {
         if (res.status === 403) {
           if (data?.code === 'EMAIL_NOT_VERIFIED' || data?.code === 'EMAIL_NOT_CONFIRMED') {
             errorMessage = 'Please verify your email address before logging in';
+            setShowVerificationBanner(true);
             // Show toast for email verification
-            toast({ 
-              title: 'Email verification required', 
-              description: errorMessage, 
-              variant: 'destructive' 
+            toast({
+              title: 'Email verification required',
+              description: errorMessage,
+              variant: 'destructive'
             });
           } else {
             // Show toast for other 403 errors
-            toast({ 
-              title: 'Access denied', 
-              description: errorMessage, 
-              variant: 'destructive' 
+            toast({
+              title: 'Access denied',
+              description: errorMessage,
+              variant: 'destructive'
             });
           }
         } else if (res.status === 401) {
@@ -95,6 +99,36 @@ export default function Login() {
     }
   };
 
+  const handleResendVerification = async () => {
+    if (!email) return;
+    setIsResendingEmail(true);
+    try {
+      const res = await fetch('/api/auth/resend-verification-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) {
+        toast({ title: 'Verification email sent', description: data.message });
+      } else {
+        toast({
+          title: 'Resend failed',
+          description: data.message || 'Could not resend verification email',
+          variant: 'destructive'
+        });
+      }
+    } catch (err: any) {
+      toast({
+        title: 'Resend failed',
+        description: err.message || 'Could not resend verification email',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsResendingEmail(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if (!email.trim() || !password.trim()) {
       e.preventDefault();
@@ -131,8 +165,15 @@ export default function Login() {
   const showDevHints = isDevelopment && process.env.NEXT_PUBLIC_SHOW_DEV_LOGIN === 'true';
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background p-4">
-      <div className="w-full max-w-sm rounded-lg border border-border bg-card p-8 shadow-lg">
+    <div className="flex min-h-screen flex-col items-start justify-start bg-background p-4">
+      {showVerificationBanner && (
+        <EmailVerificationBanner
+          onResendEmail={handleResendVerification}
+          userEmail={email}
+          isResending={isResendingEmail}
+        />
+      )}
+      <div className="w-full max-w-sm mt-4 self-center rounded-lg border border-border bg-card p-8 shadow-lg">
         <h1 className="mb-6 text-center text-2xl font-bold">Welcome back</h1>
 
         {errorMsg && (
