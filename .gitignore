@@ -6,6 +6,9 @@ logs/tests/
 cypress/results/
 cypress/screenshots/
 .env
+dist/
+coverage/
+tsconfig.tsbuildinfo
 
 # Prevent compiled JS files from being committed when TS/TSX source exists
 # These should be generated at build time, not committed

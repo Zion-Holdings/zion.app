@@ -14,13 +14,19 @@ const getStaticPropsImpl: GetStaticProps<MarketplaceProps> = async () => {
     return { props: { products: [] }, revalidate: 60 };
   }
 
-  const res = await fetch(`${appUrl}/api/marketplace/overview?limit=20`);
-  if (!res.ok) {
-    const errorText = await res.text();
-    throw new Error(`Failed to fetch marketplace products: ${res.status} ${errorText}`);
+  try {
+    const res = await fetch(`${appUrl}/api/marketplace/overview?limit=20`);
+    if (!res.ok) {
+      const errorText = await res.text();
+      throw new Error(`Failed to fetch marketplace products: ${res.status} ${errorText}`);
+    }
+    const products = await res.json();
+    return { props: { products }, revalidate: 60 };
+  } catch (error: any) {
+    Sentry.captureException(error);
+    console.error(error);
+    return { props: { products: [] }, revalidate: 60 };
   }
-  const products = await res.json();
-  return { props: { products }, revalidate: 60 };
 };
 
 export const getStaticProps = withStaticErrorHandling(getStaticPropsImpl);

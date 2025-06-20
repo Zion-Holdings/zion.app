@@ -1,7 +1,7 @@
 // pages/governance/create.tsx
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 

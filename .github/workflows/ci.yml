@@ -26,6 +26,8 @@ jobs:
       - run: npm run format -- --check
         # Execute unit tests
       - run: npm test
+      - run: npx vitest run --coverage
+      - run: npm run cypress:run
         # Build application
       - run: npm run build
         # Scan dependencies for vulnerabilities

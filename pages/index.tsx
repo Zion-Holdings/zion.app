@@ -22,7 +22,7 @@ export async function fetchHomeData() {
 
 import { withServerSideErrorHandling } from '@/utils/withErrorHandling';
 
-const getServerSidePropsImpl: GetServerSideProps<HomePageProps> = async (ctx: any) => {
+const getServerSidePropsImpl: GetServerSideProps<HomePageProps> = async (_ctx: any) => {
   await fetchHomeData();
   return { props: {} };
 };

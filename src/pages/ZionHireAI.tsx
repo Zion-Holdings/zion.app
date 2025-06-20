@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Briefcase, PenTool, BarChart3, Users, Shield, Globe } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function ZionHireAI() {
   const { isWhitelabel, brandName, primaryColor } = useWhitelabel();
@@ -43,7 +43,7 @@ export default function ZionHireAI() {
                     className="bg-zion-purple hover:bg-zion-purple-light text-white"
                     asChild
                   >
-                    <Link to={isAuthenticated ? "/enterprise/admin" : "/login"}>
+                    <Link href={isAuthenticated ? "/enterprise/admin" : "/login"}>
                       Get Started <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -53,7 +53,7 @@ export default function ZionHireAI() {
                     className="bg-transparent border-white text-white hover:bg-white/10"
                     asChild
                   >
-                    <Link to="/enterprise/demo">
+                    <Link href="/enterprise/demo">
                       Request Demo
                     </Link>
                   </Button>
@@ -255,7 +255,7 @@ export default function ZionHireAI() {
               className="bg-zion-purple hover:bg-zion-purple-light text-white"
               asChild
             >
-              <Link to="/enterprise/demo">
+              <Link href="/enterprise/demo">
                 Schedule a Demo
               </Link>
             </Button>

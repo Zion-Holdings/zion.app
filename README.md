@@ -36,13 +36,14 @@ The project is structured as a monorepo and includes:
 4.  **Install backend (Django) dependencies:** Refer to `backend/README.md` or setup instructions. Typically involves creating a virtual environment and `pip install -r backend/requirements.txt`.
 5.  **Install monitoring service dependencies:** `cd monitoring && npm install`.
 6.  **Environment Variables:** Copy `.env.example` to `.env` (and potentially similar files in sub-projects like `backend/`) and configure necessary variables (database credentials, API keys, etc.).
+    Run `npx ts-node --transpile-only scripts/check-env.ts` to validate the configuration.
 7.  **Database Setup:** Run Prisma migrations (`npx prisma migrate dev`), seed data (`npx prisma db seed`), and set up Django database.
 8.  **Running the application:**
     -   Next.js frontend: `npm run dev`
     -   Django backend: (e.g., `python backend/manage.py runserver`)
     -   Node.js server (`server/`): (e.g., `node server/index.js` or via an npm script if defined in its own package.json or the root one)
 
-(Detailed setup instructions for each component should be available in their respective READMEs or the `docs/` directory.)
+(Detailed setup instructions for each component should be available in their respective READMEs or the `docs/` directory. See `docs/BACKEND_DEPENDENCIES.md` for notes on managing Python and Node dependencies.)
 
 ---
 
