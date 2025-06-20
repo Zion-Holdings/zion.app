@@ -1,10 +1,13 @@
-import axios, { AxiosError } from 'axios';
+import axios, { AxiosError, Method } from 'axios';
 
 export interface Endpoint {
   name: string; // e.g., 'Django Ping'
-  baseURL: string;
+  baseURL: string; // This will be resolved by monitor.ts before calling measureLatency
   path: string;
-  method?: 'GET' | 'POST' | 'PUT' | 'DELETE'; // Default to GET
+  method?: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'HEAD' | 'OPTIONS'; // Optional method
+  body?: any; // Optional body for POST/PUT
+  headers?: Record<string, string>; // Optional headers
+  serviceName: string; // Added for remediation
 }
 
 export interface EndpointTestResult {
@@ -15,6 +18,7 @@ export interface EndpointTestResult {
   latencyMs?: number;
   error?: string;
   timestamp: string;
+  serviceName: string; // Added
 }
 
 export async function measureLatency(endpoints: Endpoint[]): Promise<EndpointTestResult[]> {
@@ -22,7 +26,8 @@ export async function measureLatency(endpoints: Endpoint[]): Promise<EndpointTes
 
   for (const endpoint of endpoints) {
     const url = `${endpoint.baseURL}${endpoint.path}`;
-    const method = endpoint.method || 'GET';
+    // Ensure method is a valid Axios Method or default to 'GET'
+    const method: Method = (endpoint.method?.toUpperCase() as Method) || 'GET';
     const startTime = Date.now();
     const timestamp = new Date().toISOString();
 
@@ -30,6 +35,8 @@ export async function measureLatency(endpoints: Endpoint[]): Promise<EndpointTes
       const response = await axios({
         method: method,
         url: url,
+        data: endpoint.body, // Add body to request if provided
+        headers: endpoint.headers, // Add headers to request if provided
         timeout: 10000, // 10 second timeout
       });
       const endTime = Date.now();
@@ -40,6 +47,7 @@ export async function measureLatency(endpoints: Endpoint[]): Promise<EndpointTes
         status: response.status,
         latencyMs: endTime - startTime,
         timestamp: timestamp,
+        serviceName: endpoint.serviceName, // Pass serviceName
       });
     } catch (error) {
       const endTime = Date.now();
@@ -54,6 +62,7 @@ export async function measureLatency(endpoints: Endpoint[]): Promise<EndpointTes
           latencyMs: latencyMs,
           error: axiosError.message,
           timestamp: timestamp,
+          serviceName: endpoint.serviceName, // Pass serviceName
         });
       } else if (error instanceof Error) {
         results.push({
@@ -63,6 +72,7 @@ export async function measureLatency(endpoints: Endpoint[]): Promise<EndpointTes
           latencyMs: latencyMs,
           error: error.message,
           timestamp: timestamp,
+          serviceName: endpoint.serviceName, // Pass serviceName
         });
       } else {
         results.push({
@@ -72,6 +82,7 @@ export async function measureLatency(endpoints: Endpoint[]): Promise<EndpointTes
           latencyMs: latencyMs,
           error: 'Unknown error',
           timestamp: timestamp,
+          serviceName: endpoint.serviceName, // Pass serviceName
         });
       }
     }

@@ -1,0 +1,27 @@
+{
+  "alertThresholdMs": 500,
+  "consecutiveChecksLimit": 3,
+  "endpoints": [
+    {
+      "name": "Django Ping",
+      "baseURLKey": "DJANGO_API_BASE_URL",
+      "defaultBaseURL": "http://localhost:8000",
+      "path": "/api/ping/",
+      "serviceName": "django-service"
+    },
+    {
+      "name": "Next.js Health",
+      "baseURLKey": "NEXTJS_API_BASE_URL",
+      "defaultBaseURL": "http://localhost:3000",
+      "path": "/api/health",
+      "serviceName": "nextjs-service"
+    },
+    {
+      "name": "Custom Server Health",
+      "baseURLKey": "CUSTOM_SERVER_BASE_URL",
+      "defaultBaseURL": "http://localhost:3001",
+      "path": "/healthz",
+      "serviceName": "custom-server-service"
+    }
+  ]
+}

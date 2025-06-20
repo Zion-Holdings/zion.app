@@ -2,61 +2,51 @@ import { exec } from 'child_process';
 import axios from 'axios';
 import logger from './logger';
 import { EndpointTestResult } from './latencyTester';
+import * as fs from 'fs';
+import * as path from 'path';
 
-const ALERT_THRESHOLD_MS = 500;
+// Define the structure of the configuration file
+interface MonitoringConfig {
+  alertThresholdMs: number;
+  consecutiveChecksLimit: number;
+  // We don't need the full endpoints array structure here, just the thresholds
+}
+
+// Function to read and parse the configuration file for alert thresholds
+function loadAlertConfig(): { alertThresholdMs: number; consecutiveChecksLimit: number } {
+  const configPath = path.join(__dirname, '../../monitoring-config.json'); // Adjust path as necessary
+  try {
+    const configFile = fs.readFileSync(configPath, 'utf-8');
+    const parsedConfig = JSON.parse(configFile) as MonitoringConfig;
+    return {
+      alertThresholdMs: parsedConfig.alertThresholdMs,
+      consecutiveChecksLimit: parsedConfig.consecutiveChecksLimit,
+    };
+  } catch (error) {
+    logger.error('Error reading or parsing monitoring-config.json in alerter.ts:', error);
+    // Return default values if config loading fails
+    return {
+      alertThresholdMs: 1000, // Default threshold
+      consecutiveChecksLimit: 3, // Default limit
+    };
+  }
+}
+
+const { alertThresholdMs: ALERT_THRESHOLD_MS, consecutiveChecksLimit: CONSECUTIVE_CHECKS_LIMIT } = loadAlertConfig();
 const ALERT_WEBHOOK_URL = process.env.ALERT_WEBHOOK_URL;
 
-// Basic mapping from endpoint name to a hypothetical service identifier
-// This will likely need to be more sophisticated or configurable
-function getServiceName(endpointName: string): string | null {
-  if (endpointName.toLowerCase().includes('django')) return 'django-service';
-  if (endpointName.toLowerCase().includes('next.js')) return 'nextjs-service';
-  if (endpointName.toLowerCase().includes('custom server')) return 'custom-server-service';
-  // Add more specific mappings as needed
-  // e.g., 'Next.js Marketplace' -> 'marketplace-next-app'
-  return null;
-}
+// Map to store consecutive high latency counts for each endpoint
+const alertConsecutiveCounts: Map<string, number> = new Map();
 
-async function restartService(serviceName: string): Promise<void> {
-  // IMPORTANT: This function's ability to restart services depends on the deployment strategy.
-  // For K8s-managed services like 'nextjs-service', a direct restart command from here is usually not appropriate.
-  // Kubernetes handles restarts via liveness probes.
-  // This function might be relevant for other services managed by PM2 on the same host as this monitor.
-
-  if (serviceName === 'nextjs-service') {
-    const message = `High latency detected for '${serviceName}'. This service is Kubernetes managed. Kubernetes liveness probes should handle restarts if the app becomes unresponsive. Manual investigation for persistent high latency is advised.`;
-    logger.info(message);
-    // Optionally, send a specific alert/event indicating K8s service needs attention for latency.
-    // For now, we just log and don't attempt a PM2 restart.
-    return Promise.resolve(); // Indicate successful handling (no action needed here)
-  }
-
-  // If serviceName is not 'nextjs-service', proceed with existing PM2 logic (if any other services use it)
-  // Ensure this part is relevant for your environment.
-  const command = `pm2 restart ${serviceName}`;
-  logger.info(`Attempting to restart (PM2) service: '${serviceName}' with command: '${command}' (This should only apply to non-K8s services).`);
-
-  return new Promise((resolve, reject) => {
-    exec(command, (error, stdout, stderr) => {
-      if (error) {
-        logger.error(`Failed to restart (PM2) service '${serviceName}'. Error: ${error.message}`, { stdout, stderr });
-        reject(error);
-        return;
-      }
-      if (stderr) {
-        logger.warn(`Service (PM2) restart for '${serviceName}' produced stderr: ${stderr}`, { stdout });
-      }
-      logger.info(`Service (PM2) '${serviceName}' restart command executed. Output: ${stdout}`);
-      resolve();
-    });
-  });
-}
-
-async function sendWebhookNotification(result: EndpointTestResult, messageSuffix: string = "Attempting service restart... (if applicable)"): Promise<void> {
+// sendWebhookNotification remains unchanged from the previous version
+async function sendWebhookNotification(result: EndpointTestResult, messageSuffix: string = "Attempting service remediation... (if applicable)"): Promise<void> {
   if (!ALERT_WEBHOOK_URL) {
     logger.warn('ALERT_WEBHOOK_URL is not set. Skipping webhook notification.');
     return;
   }
+
+  // Ensure serviceName is included in the webhook if available
+  const serviceNameText = result.serviceName ? `\nService: \`${result.serviceName}\`` : "";
 
   const payload = {
     text: `🚨 High Latency Alert 🚨
@@ -64,15 +54,15 @@ Endpoint: \`${result.name}\` (\`${result.url}\`)
 Method: \`${result.method}\`
 Latency: \`${result.latencyMs}ms\` (Threshold: \`${ALERT_THRESHOLD_MS}ms\`)
 Status: \`${result.status}\`
-Timestamp: \`${result.timestamp}\`
+Timestamp: \`${result.timestamp}\`${serviceNameText}
 ${messageSuffix}`, // Use the dynamic message suffix
     // Add more structured data if your webhook receiver supports it (e.g., Slack blocks)
   };
 
   try {
-    logger.info(`Sending webhook notification for ${result.name} to ${ALERT_WEBHOOK_URL}`);
+    logger.info(`Sending webhook notification for ${result.name} (Service: ${result.serviceName || 'N/A'}) to ${ALERT_WEBHOOK_URL}`);
     await axios.post(ALERT_WEBHOOK_URL, payload, { timeout: 10000 });
-    logger.info(`Webhook notification sent successfully for ${result.name}.`);
+    logger.info(`Webhook notification sent successfully for ${result.name} (Service: ${result.serviceName || 'N/A'}).`);
   } catch (error) {
     let errorMessage = 'Unknown error';
     if (axios.isAxiosError(error)) {
@@ -90,36 +80,62 @@ ${messageSuffix}`, // Use the dynamic message suffix
 }
 
 export async function triggerAlerts(result: EndpointTestResult): Promise<void> {
-  if (result.error || !result.latencyMs) {
-    // Don't alert for endpoints that had errors, only for high latency on success
+  // If the test resulted in an error or latency couldn't be measured, reset consecutive count and do nothing.
+  if (result.error || typeof result.latencyMs === 'undefined') {
+    logger.debug(`Test for ${result.name} resulted in error or no latency. Resetting consecutive count.`);
+    alertConsecutiveCounts.set(result.name, 0);
     return;
   }
 
   if (result.latencyMs > ALERT_THRESHOLD_MS) {
-    logger.warn(`High latency detected for ${result.name} (${result.url}): ${result.latencyMs}ms. Triggering alerts.`);
+    const currentCount = (alertConsecutiveCounts.get(result.name) || 0) + 1;
+    alertConsecutiveCounts.set(result.name, currentCount);
 
-    const serviceName = getServiceName(result.name);
-    let webhookMessageSuffix: string;
+    if (currentCount >= CONSECUTIVE_CHECKS_LIMIT) {
+      logger.warn(`High latency ALERT for ${result.name} (${result.url}): ${result.latencyMs}ms. Consecutive count: ${currentCount}/${CONSECUTIVE_CHECKS_LIMIT}. Threshold met.`);
 
-    if (serviceName === 'nextjs-service') {
-      webhookMessageSuffix = "Service is K8s managed. Kubernetes handles restarts. Manual investigation advised for persistent high latency.";
-      await sendWebhookNotification(result, webhookMessageSuffix);
-      // No automatic restart for nextjs-service from here
-      logger.info(`High latency alert for K8s managed service '${serviceName}'. No automatic restart attempted from monitor.`);
-    } else if (serviceName) {
-      webhookMessageSuffix = `Attempting PM2 service restart for ${serviceName}...`;
-      await sendWebhookNotification(result, webhookMessageSuffix);
-      try {
-        await restartService(serviceName); // This will now only run for non-nextjs-service
-        logger.info(`PM2 Service restart process initiated for ${serviceName} due to high latency on ${result.name}.`);
-      } catch (restartError) {
-        logger.error(`PM2 Service restart attempt failed for ${serviceName}.`, restartError);
-        // Optionally send another webhook if restart fails critically
+      const serviceName = result.serviceName;
+      let webhookMessageSuffix: string = "Attempting service remediation..."; // Default suffix
+
+      if (serviceName) {
+        // Remediation will be attempted
+        logger.info(`High latency alert for ${result.name}. ${webhookMessageSuffix}`);
+        await sendWebhookNotification(result, webhookMessageSuffix);
+
+        // Construct path to the remediation script
+        const remediationScriptPath = path.join(__dirname, '..', 'remediate.sh');
+        // Ensure arguments are quoted to handle spaces or special characters
+        const command = `bash "${remediationScriptPath}" "${serviceName}" "${result.url}" "${result.latencyMs || 0}"`;
+
+        logger.info(`Attempting to execute remediation script for ${serviceName}: ${command}`);
+        exec(command, (error, stdout, stderr) => {
+          if (error) {
+            logger.error(`Remediation script error for ${serviceName} ('${result.name}'): ${error.message}`, { command, stdout, stderr });
+            // Optionally send another webhook if remediation script fails
+            return;
+          }
+          if (stderr) {
+            logger.warn(`Remediation script for ${serviceName} ('${result.name}') produced stderr: ${stderr}`, { command, stdout });
+          }
+          logger.info(`Remediation script for ${serviceName} ('${result.name}') executed. Output: ${stdout}`);
+        });
+      } else {
+        // No serviceName, so no remediation script to call.
+        webhookMessageSuffix = "No specific serviceName defined for remediation.";
+        logger.warn(`High latency alert for ${result.name}. ${webhookMessageSuffix} No remediation attempted.`);
+        await sendWebhookNotification(result, webhookMessageSuffix);
       }
+
+      // Reset count after alert and remediation attempt (or decision not to attempt)
+      alertConsecutiveCounts.set(result.name, 0);
     } else {
-      webhookMessageSuffix = "No specific service restart action defined for this endpoint.";
-      await sendWebhookNotification(result, webhookMessageSuffix);
-      logger.warn(`No service mapping found for endpoint '${result.name}'. Cannot attempt restart.`);
+      logger.warn(`High latency detected for ${result.name} (${result.url}): ${result.latencyMs}ms. Consecutive count: ${currentCount}/${CONSECUTIVE_CHECKS_LIMIT}. No alert triggered yet.`);
     }
+  } else {
+    // Latency is fine, reset consecutive count for this endpoint.
+    if (alertConsecutiveCounts.get(result.name) !== 0) { // Only log if it was previously not 0
+        logger.info(`Latency for ${result.name} is normal (${result.latencyMs}ms). Resetting consecutive count.`);
+    }
+    alertConsecutiveCounts.set(result.name, 0);
   }
 }
