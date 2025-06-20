@@ -7,7 +7,7 @@ import { ArrowLeft } from "lucide-react";
 
 export default function CaseStudy() {
   const router = useRouter();
-  const slug = router.query.slug as string; as { slug: string };
+  const slug = router.query.slug as string;
   const study = CASE_STUDIES.find((s) => s.slug === slug);
 
   if (!study) {

@@ -94,7 +94,7 @@ export default function ForumPostPage() {
   // can't determine the generic type for the helper from React Router.
   // Cast the result instead to provide the expected shape.
   const router = useRouter();
-  const postId = router.query.postId as string; as { postId?: string };
+  const postId = router.query.postId as string;
   const { user } = useAuth();
   const { toast } = useToast();
   const [post, setPost] = useState(mockPost);
