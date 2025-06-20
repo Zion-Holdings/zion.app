@@ -21,12 +21,7 @@ import { toast } from "sonner";
 
 export function DisputeDetail() {
   const router = useRouter();
-<<<<<<< HEAD
   const { disputeId } = router.query as { disputeId?: string };
-=======
-  // Get disputeId from Next.js router query params
-  const disputeId = router.query.disputeId as string;
->>>>>>> 63d35340c457663db429def48e184362fa016df0
   const { user } = useAuth();
   const { getDisputeById, updateDisputeStatus, resolveDispute, getDisputeMessages, addDisputeMessage } = useDisputes();
 
@@ -70,11 +65,7 @@ const [resolution, setResolution] = useState<{ summary: string; resolution_type:
     };
     
     loadDisputeData();
-<<<<<<< HEAD
   }, [disputeId, getDisputeById, getDisputeMessages, router]);
-=======
-  }, [disputeId, router, getDisputeById, getDisputeMessages]);
->>>>>>> 63d35340c457663db429def48e184362fa016df0
 
   const handleStatusChange = async (status: DisputeStatus) => {
     if (!disputeId) return;

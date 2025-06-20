@@ -20,7 +20,7 @@ export default function SavedTalentsPage() {
     if (!user) {
       router.push(`/login?next=${encodeURIComponent(router.asPath)}`);
     }
-  }, [user, navigate, location]);
+  }, [user, router]);
 
   useEffect(() => {
     const fetchSavedTalents = async () => {

@@ -40,9 +40,8 @@ function highlight(text: string, term: string) {
 }
 
 export default function SearchPage() {
-  const [params] = useSearchParams();
   const router = useRouter();
-  const initial = params.get("q") || "";
+  const initial = (router.query.q as string) || "";
   const [query, setQuery] = useState(initial);
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);

@@ -19,8 +19,8 @@ import { SEO } from "@/components/SEO";
 
 export default function TalentProfilePage() {
   // Cast to specify the expected route param type since useParams may be untyped
-  const { id } = useParams() as { id?: string };
   const router = useRouter();
+  const { id } = router.query as { id?: string };
   const { profile, isLoading, error } = useTalentProfile(id);
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
   const [isMessageModalOpen, setIsMessageModalOpen] = useState(false);
