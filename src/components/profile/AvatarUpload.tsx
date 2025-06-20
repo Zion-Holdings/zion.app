@@ -18,7 +18,13 @@ export function AvatarUpload({ value, onChange }: Props) {
 
   return (
     <div className="space-y-2">
-      {url && <img src={url} alt="avatar" className="h-20 w-20 rounded-full" />}
+      {url && (
+        <img
+          src={url}
+          alt="Avatar preview"
+          className="h-20 w-20 rounded-full"
+        />
+      )}
       <CldUploadButton uploadPreset="avatar_preset" onUpload={handleUpload}>
         Upload Avatar
       </CldUploadButton>
