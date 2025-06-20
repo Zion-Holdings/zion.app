@@ -213,7 +213,7 @@ async function main(projectRoot = '.') {
   const absoluteProjectRoot = path.resolve(projectRoot);
 
   const filePatterns = [
-    path.join(absoluteProjectRoot, 'src/config/default.json'),
+    path.join(absoluteProjectRoot, 'src/config/variables/default.json'),
     path.join(absoluteProjectRoot, 'pages/**/*.{jsx,tsx}'),
     path.join(absoluteProjectRoot, 'src/components/**/*.{jsx,tsx}'),
     path.join(absoluteProjectRoot, 'src/pages/**/*.{jsx,tsx}'),
@@ -242,7 +242,7 @@ async function main(projectRoot = '.') {
       extracted = extractLinksFromMarkdown(content, relativeFilePath);
     } else if (ext === '.jsx' || ext === '.tsx') {
       extracted = extractLinksFromJsx(content, relativeFilePath);
-    } else if (path.basename(filePath) === 'default.json' && filePath.includes(path.join('src','config'))) {
+    } else if (path.basename(filePath) === 'default.json' && filePath.includes(path.join('src','config', 'variables'))) {
       extracted = extractLinksFromJson(content, relativeFilePath);
     }
     if (extracted.length > 0) {
