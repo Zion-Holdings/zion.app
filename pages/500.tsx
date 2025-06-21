@@ -6,26 +6,26 @@ import { useAuth } from '@/hooks/useAuth';
 import { captureException } from '@/utils/sentry';
 import { Button } from '@/components/ui/button';
 
-export default function Custom404() {
+export default function Custom500() {
   const { user } = useAuth();
 
   useEffect(() => {
-    const err = new Error('404 - Page Not Found');
+    const err = new Error('500 - Server Error');
     const eventId = captureException(err, {
       user: user ? { id: user.id, email: user.email } : undefined,
       extra: { path: window.location.pathname },
     });
-    console.log('Reported 404 error. Error ID:', eventId);
+    console.log('Reported 500 error. Error ID:', eventId);
   }, [user]);
 
   return (
     <>
       <NextSeo
-        title="Page Not Found"
-        description="The requested page could not be found."
+        title="Server Error"
+        description="An unexpected error occurred."
       />
       <Center minH="100vh" flexDirection="column" gap={4}>
-        <h1>404 – Page Not Found</h1>
+        <h1>500 – Server Error</h1>
         <Button asChild>
           <Link href="/">Return to Home</Link>
         </Button>
