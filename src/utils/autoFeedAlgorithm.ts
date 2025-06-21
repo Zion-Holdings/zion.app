@@ -282,7 +282,7 @@ export function getRecommendedProducts(products: ProductListing[], userPreferenc
     }
     
     if (userPreferences.rating) {
-      filtered = filtered.filter(p => p.rating >= userPreferences.rating!);
+      filtered = filtered.filter(p => p.rating != null && p.rating >= userPreferences.rating!);
     }
   }
   
