@@ -31,233 +31,91 @@ import AICorePage from '@/pages/dashboard/ai-core/AICorePage';
 
 const DashboardRoutes = () => {
   return (
-    <Routes>
+    <Fragment>
       {/* Dashboard Routes */}
-      <Route 
-        path="/dashboard" 
-        element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        } 
-      />
-      <Route 
-        path="/client-dashboard" 
-        element={
-          <ProtectedRoute>
-            <ClientDashboard />
-          </ProtectedRoute>
-        } 
-      />
-      <Route 
-        path="/talent-dashboard" 
-        element={
-          <ProtectedRoute>
-            <TalentDashboard />
-          </ProtectedRoute>
-        }
-      />
-      <Route 
-        path="/creator-dashboard" 
-        element={
-          <ProtectedRoute>
-            <CreatorDashboard />
-          </ProtectedRoute>
-        } 
-      />
-      <Route 
-        path="/analytics" 
-        element={
-          <ProtectedRoute>
-            <Analytics />
-          </ProtectedRoute>
-        } 
-      />
-      <Route 
-        path="/project/:id/milestones" 
-        element={
-          <ProtectedRoute>
-            <ProjectMilestones />
-          </ProtectedRoute>
-        } 
-      />
-      <Route
-        path="/project/:id"
-        element={
-          <ProtectedRoute>
-            <ProjectDetails />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/project/:id/room"
-        element={
-          <ProtectedRoute>
-            <ProjectRoom />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/messages"
-        element={
-          <ProtectedRoute>
-            <MessagingInbox />
-          </ProtectedRoute>
-        } 
-      />
-      <Route 
-        path="/inbox" 
-        element={
-          <ProtectedRoute>
-            <MessagingInbox />
-          </ProtectedRoute>
-        } 
-      />
-      <Route 
-        path="/payments" 
-        element={
-          <ProtectedRoute>
-            <Payments />
-          </ProtectedRoute>
-        } 
-      />
-      <Route 
-        path="/interviews" 
-        element={
-          <ProtectedRoute>
-            <Interviews />
-          </ProtectedRoute>
-        } 
-      />
-      <Route 
-        path="/notifications" 
-        element={
-          <ProtectedRoute>
-            <Notifications />
-          </ProtectedRoute>
-        } 
-      />
-      <Route 
-        path="/applications/track" 
-        element={
-          <ProtectedRoute>
-            <ApplicationStatusTracker />
-          </ProtectedRoute>
-        } 
-      />
-      <Route
-        path="/hiring-tracker"
-        element={
-          <ProtectedRoute>
-            <HiringTracker />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/projects"
-        element={
-          <ProtectedRoute>
-            <Projects />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/portfolio-builder"
-        element={
-          <ProtectedRoute>
-            <PortfolioBuilder />
-          </ProtectedRoute>
-        } 
-      />
-      <Route 
-        path="/referrals" 
-        element={
-          <ProtectedRoute>
-            <Referrals />
-          </ProtectedRoute>
-        } 
-      />
-      <Route
-        path="/developers"
-        element={
-          <ProtectedRoute>
-            <DeveloperPortal />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/wallet"
-        element={
-          <ProtectedRoute>
-            <WalletDashboard />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/rewards"
-        element={
-          <ProtectedRoute>
-            <RewardsPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/achievements"
-        element={
-          <ProtectedRoute>
-            <AchievementsPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/dashboard/metrics"
-        element={
-          <ProtectedRoute>
-            <MetricsDashboard />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/orders"
-        element={
-          <ProtectedRoute>
-            <OrdersPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/orders/:orderId"
-        element={
-          <ProtectedRoute>
-            <OrderDetailPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/dashboard/api-access"
-        element={
-          <ProtectedRoute>
-            <DeveloperPortal />
-          </ProtectedRoute>
-        } 
-      />
-      <Route
-        path="/contract-builder"
-        element={
-          <ProtectedRoute>
-            <ContractBuilder />
-          </ProtectedRoute>
-        } 
-      />
-      <Route
-        path="/dashboard/ai-core"
-        element={
-          <ProtectedRoute> {/* Or remove ProtectedRoute if not needed */}
-            <AICorePage />
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <ClientDashboard />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <TalentDashboard />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <CreatorDashboard />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <Analytics />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <ProjectMilestones /> {/* Assuming this is located in pages/project/[id]/milestones.tsx */}
+      </ProtectedRoute>
+      <ProjectDetails /> {/* Located in src/pages/ProjectDetails.tsx */}
+      <ProtectedRoute>
+        <ProjectRoom /> {/* Assuming this is located in pages/project/[id]/room.tsx */}
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <MessagingInbox />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <MessagingInbox />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <Payments />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <Interviews />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <Notifications />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <ApplicationStatusTracker />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <HiringTracker />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <Projects />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <PortfolioBuilder />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <Referrals />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <DeveloperPortal />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <WalletDashboard />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <RewardsPage />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <AchievementsPage />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <MetricsDashboard />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <OrdersPage /> {/* Assuming this is located in pages/orders.tsx */}
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <OrderDetailPage /> {/* Assuming this is located in pages/orders/[orderId].tsx */}
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <DeveloperPortal />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <ContractBuilder />
+      </ProtectedRoute>
+      <ProtectedRoute>
+        <AICorePage />
+      </ProtectedRoute>
+    </Fragment>
   );
 };
 

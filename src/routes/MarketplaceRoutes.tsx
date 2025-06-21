@@ -1,4 +1,5 @@
 import { ProtectedRoute } from "@/components/ProtectedRoute";
+import { Routes, Route } from 'react-router-dom';
 // Router components removed - convert to Next.js pages structure
 import { MarketplaceErrorBoundary } from "@/components/MarketplaceErrorBoundary";
 import { MarketplaceLayout } from "@/components/MarketplaceLayout";
@@ -41,7 +42,6 @@ const MarketplaceRoutes = () => {
           <Route path="categories" element={<Categories />} />
           <Route path="category/:slug" element={<CategoryPage />} />
           <Route path="featured" element={<Featured />} />
-          <Route path="listing/:id" element={<ListingDetail />} />
           <Route path="/listing/:id" element={<ListingDetail />} />
           <Route path="products" element={<ProductsList />} />
           

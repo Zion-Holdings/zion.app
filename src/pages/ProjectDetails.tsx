@@ -315,7 +315,7 @@ function ProjectDetailsContent() {
               
               {isActiveProject && (
                 <Button variant="default" asChild>
-                  <Link href={`/project/${project.id}/milestones`}>
+                  <Link href={`/project/[id]/milestones`}>
                     <Layers className="mr-2 h-4 w-4" /> Milestones
                   </Link>
                 </Button>
@@ -323,7 +323,7 @@ function ProjectDetailsContent() {
 
               {isActiveProject && (
                 <Button variant="outline" asChild>
-                  <Link href={`/project/${project.id}/room`}>
+                  <Link href={`/project/[id]/room`}>
                     <Video className="mr-2 h-4 w-4" /> Project Room
                   </Link>
                 </Button>

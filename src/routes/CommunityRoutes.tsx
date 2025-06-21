@@ -1,3 +1,4 @@
+import { Routes, Route, Navigate } from "react-router-dom";
 import { Fragment } from "react";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 // Router components removed - convert to Next.js pages structure
