@@ -50,6 +50,9 @@ The project is structured as a monorepo and includes:
 10. **Payment Testing:**
     - Guest checkout is available at `/marketplace/checkout`.
     - For a sandbox login, add development credentials in `.env.local` as explained in `docs/SECURITY_CREDENTIALS.md`.
+11. **Contract Tests:**
+    - Pact-based contract tests verify that front-end routes match available API endpoints.
+    - Start the stub server with `node server/stubServer.js` and run `npm test`.
 
 (Detailed setup instructions for each component should be available in their respective READMEs or the `docs/` directory. See `docs/BACKEND_DEPENDENCIES.md` for notes on managing Python and Node dependencies.)
 
