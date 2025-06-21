@@ -36,8 +36,18 @@ type FormValues = z.infer<typeof schema>;
 export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestCheckoutModalProps) {
   const form = useForm<FormValues>({ resolver: zodResolver(schema) });
 
-  const handleSubmit = (values: FormValues) => {
-    onSubmit(values);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const normalizedEmailForSubmit = email.replace(/@@+/g, '@');
+    if (email !== normalizedEmailForSubmit) {
+      console.warn(`DIAGNOSTIC: Normalized email value during handleSubmit from "${email}" to "${normalizedEmailForSubmit}"`);
+    }
+    console.log("Email value at submission (original):", email, "(normalized):", normalizedEmailForSubmit);
+    if (email.includes('@@')) { // Keep check on original email for diagnostics
+      console.error("DIAGNOSTIC: Original email contained '@@' in handleSubmit before calling onSubmit");
+      alert("DIAGNOSTIC: Original email contained '@@'. Check console. Submitting normalized version."); // Temporary
+    }
+    onSubmit({ email: normalizedEmailForSubmit, address });
   };
 
   return (
@@ -51,55 +61,36 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
             Pay with test data – use card 4242 4242 4242 4242 and any future date.
           </div>
         )}
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(handleSubmit, (errors) => {
-            const firstError = Object.keys(errors)[0] as keyof FormValues | undefined;
-            if (firstError) {
-              form.setFocus(firstError);
-            }
-          })} className="space-y-4">
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="Email"
-                      className="bg-zion-blue-dark border-zion-blue-light text-white"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="address"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Shipping Address</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Shipping Address"
-                      className="bg-zion-blue-dark border-zion-blue-light text-white"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <DialogFooter>
-              <Button type="submit" className="w-full">
-                Continue to Payment
-              </Button>
-            </DialogFooter>
-          </form>
-        </Form>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <Input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => {
+              const rawValue = e.target.value;
+              console.log("Email input onChange raw value:", rawValue);
+              const normalizedValue = rawValue.replace(/@@+/g, '@');
+              if (rawValue !== normalizedValue) {
+                console.warn(`DIAGNOSTIC: Normalized email value during onChange from "${rawValue}" to "${normalizedValue}"`);
+              }
+              setEmail(normalizedValue);
+            }}
+            className="guest-checkout-modal-input"
+            required
+          />
+          <Input
+            placeholder="Shipping Address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            className="guest-checkout-modal-input"
+            required
+          />
+          <DialogFooter>
+            <Button type="submit" className="w-full">
+              Continue to Payment
+            </Button>
+          </DialogFooter>
+        </form>
       </DialogContent>
     </Dialog>
   );
