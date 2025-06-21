@@ -198,7 +198,7 @@ export default function SearchResultsPage({
         return (
           <div key={result.id} className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow" data-testid="result-card">
             <h3 className="font-semibold">{result.title}</h3>
-            <p className="text-gray-600 dark:text-gray-400">{result.description}</p>
+            <p className="text-gray-600 dark:text-gray-200">{result.description}</p>
           </div>
         );
     }
@@ -222,7 +222,7 @@ export default function SearchResultsPage({
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                   Search Results
                 </h1>
-                <p className="text-gray-600 dark:text-gray-400" data-testid="results-count">
+                <p className="text-gray-600 dark:text-gray-200" data-testid="results-count">
                   {filteredResults.length > 0
                     ? `Found ${filteredResults.length} results for "${query}"`
                     : `No results found for "${query}"`}
@@ -231,7 +231,7 @@ export default function SearchResultsPage({
 
               {/* Search Input */}
               <div className="relative w-full lg:w-96">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-200" />
                 <Input
                   type="text"
                   value={searchQuery}
