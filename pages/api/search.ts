@@ -4,13 +4,15 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { SERVICES } from '@/data/servicesData';
 import { TALENT_PROFILES } from '@/data/talentData';
+import { BLOG_POSTS } from '@/data/blog-posts';
+import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
 import Fuse from 'fuse.js';
 
 // Define SearchResult interface (assuming it's not already globally defined or imported elsewhere)
 // If it is, this definition can be removed.
 interface SearchResult {
   id: string;
-  type: 'product' | 'service' | 'talent' | 'equipment' | 'category';
+  type: 'product' | 'service' | 'talent' | 'equipment' | 'category' | 'doc' | 'blog';
   title: string;
   description: string;
   slug: string;
@@ -73,6 +75,20 @@ const SEARCH_DOCUMENTS: SearchResult[] = [
     rating: (t as any).rating,
     author: { name: t.full_name, avatar: (t as any).avatar },
     tags: (t as any).skills || (t as any).tags,
+  })),
+  ...BLOG_POSTS.map((p) => ({
+    id: p.id,
+    type: 'blog' as const,
+    title: p.title,
+    description: p.excerpt,
+    slug: p.slug,
+  })),
+  ...DOCS_SEARCH_ITEMS.map((d) => ({
+    id: d.text,
+    type: 'doc' as const,
+    title: d.text,
+    description: d.path,
+    slug: d.path,
   })),
 ];
 

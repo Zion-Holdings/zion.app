@@ -11,6 +11,7 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Slider } from "@/components/ui/slider";
@@ -48,7 +49,15 @@ export function DynamicListingPage({
 }: DynamicListingPageProps) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const toggleCategory = (category: string) => {
+    setSelectedCategories(prev =>
+      prev.includes(category)
+        ? prev.filter(c => c !== category)
+        : [...prev, category]
+    );
+  };
+  const clearCategories = () => setSelectedCategories([]);
   const [view, setView] = useState<ListingView>("grid");
   const isGrid = view === "grid";
   // Swap icons to match action
@@ -67,6 +76,7 @@ export function DynamicListingPage({
   const [selectedBrand, setSelectedBrand] = useState("all");
   const [specQuery, setSpecQuery] = useState("");
   const [selectedAvailability, setSelectedAvailability] = useState("all");
+  const [sortOption, setSortOption] = useState("newest");
 
   const brandOptions = Array.from(
     new Set(allListings.map((l) => l.brand).filter(Boolean)),
@@ -126,7 +136,8 @@ export function DynamicListingPage({
         (listing.availability && listing.availability === selectedAvailability);
 
       const matchesCategory =
-        selectedCategory === "all" || listing.category === selectedCategory;
+        selectedCategories.length === 0 ||
+        selectedCategories.includes(listing.category);
 
       const matchesPrice =
         listing.price === null ||
@@ -146,6 +157,22 @@ export function DynamicListingPage({
         matchesSpecs &&
         matchesAvailability
       );
+    });
+    filteredListings.sort((a, b) => {
+      switch (sortOption) {
+        case "price-asc":
+          return (a.price || 0) - (b.price || 0);
+        case "price-desc":
+          return (b.price || 0) - (a.price || 0);
+        case "rating":
+          return (b.rating || 0) - (a.rating || 0);
+        case "newest":
+        default:
+          return (
+            new Date(b.createdAt).getTime() -
+            new Date(a.createdAt).getTime()
+          );
+      }
     });
   } catch (error) {
     captureException(error);
@@ -199,33 +226,26 @@ export function DynamicListingPage({
 
               <div className="mb-6">
                 <label className="text-sm font-medium text-zion-slate-light block mb-2">
-                  Category
+                  Categories
                 </label>
-                <Select
-                  value={selectedCategory}
-                  onValueChange={(value: string) => {
-                    console.log("Category selected:", value);
-                    setSelectedCategory(value);
-                  }}
-                >
-                  <SelectTrigger className="bg-zion-blue border border-zion-blue-light text-white">
-                    <SelectValue placeholder="Select Category" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zion-blue-dark border border-zion-blue-light">
-                    <SelectItem value="all" className="text-white">
-                      All Categories
-                    </SelectItem>
-                    {categoryFilters.map((filter) => (
-                      <SelectItem
-                        key={filter.value}
-                        value={filter.value}
-                        className="text-white"
+                <div className="space-y-2">
+                  {categoryFilters.map(filter => (
+                    <div key={filter.value} className="flex items-center">
+                      <Checkbox
+                        id={`cat-${filter.value}`}
+                        checked={selectedCategories.includes(filter.value)}
+                        onCheckedChange={() => toggleCategory(filter.value)}
+                        className="border-zion-slate-light data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple"
+                      />
+                      <label
+                        htmlFor={`cat-${filter.value}`}
+                        className="ml-2 text-sm text-zion-slate-light cursor-pointer"
                       >
                         {filter.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                      </label>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {brandOptions.length > 0 && (
@@ -362,14 +382,17 @@ export function DynamicListingPage({
                 variant="outline"
                 className="w-full border-zion-purple text-zion-purple hover:bg-zion-purple/10"
                 onClick={() => {
-                  console.log("Resetting filters");
+                  console.log("Clearing filters");
                   setSearchQuery("");
-                  setSelectedCategory("all");
+                  clearCategories();
                   setCurrentPriceFilter([0, priceRange.max]);
                   setSelectedRating(null);
+                  setSelectedBrand("all");
+                  setSpecQuery("");
+                  setSelectedAvailability("all");
                 }}
               >
-                Reset Filters
+                Clear All
               </Button>
             </div>
           </div>
@@ -392,6 +415,17 @@ export function DynamicListingPage({
                 </div>
 
                 <div className="flex items-center gap-2 ml-auto">
+                  <Select value={sortOption} onValueChange={setSortOption}>
+                    <SelectTrigger className="w-[150px] bg-zion-blue border border-zion-blue-light text-white">
+                      <SelectValue placeholder="Sort" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-zion-blue-dark border border-zion-blue-light">
+                      <SelectItem value="newest" className="text-white">Newest</SelectItem>
+                      <SelectItem value="price-asc" className="text-white">Price: Low to High</SelectItem>
+                      <SelectItem value="price-desc" className="text-white">Price: High to Low</SelectItem>
+                      <SelectItem value="rating" className="text-white">Highest Rating</SelectItem>
+                    </SelectContent>
+                  </Select>
                   <Button
                     variant="outline"
                     size="icon"
@@ -412,8 +446,9 @@ export function DynamicListingPage({
             <div className="mb-6">
               <p className="text-zion-slate-light">
                 Showing {filteredListings.length} results
-                {selectedCategory !== "all" && ` in ${selectedCategory}`}
-                {searchQuery && ` for "{searchQuery}"`}
+                {selectedCategories.length > 0 &&
+                  ` in ${selectedCategories.join(', ')}`}
+                {searchQuery && ` for "${searchQuery}"`}
               </p>
             </div>
 
@@ -474,13 +509,16 @@ export function DynamicListingPage({
                   variant="outline"
                   onClick={() => {
                     setSearchQuery("");
-                    setSelectedCategory("all");
+                    clearCategories();
                     setCurrentPriceFilter([0, priceRange.max]);
                     setSelectedRating(null);
+                    setSelectedBrand("all");
+                    setSpecQuery("");
+                    setSelectedAvailability("all");
                   }}
                   className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"
                 >
-                  Clear all filters
+                  Clear All
                 </Button>
               </div>
             )}

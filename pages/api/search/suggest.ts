@@ -3,12 +3,14 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { SERVICES } from '@/data/servicesData';
 import { TALENT_PROFILES } from '@/data/talentData';
+import { BLOG_POSTS } from '@/data/blog-posts';
+import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
 
 interface SearchSuggestion {
   id?: string;
   text: string;
   slug: string;
-  type: 'product' | 'service' | 'talent' | 'category' | 'skill' | 'recent';
+  type: 'product' | 'service' | 'talent' | 'category' | 'skill' | 'recent' | 'doc' | 'blog';
   iconUrl?: string;
 }
 
@@ -77,6 +79,31 @@ function handler(
     }));
 
   suggestions.push(...talentSuggestions);
+
+  // Add blog post suggestions
+  const blogSuggestions = BLOG_POSTS
+    .filter((p) => match(p.title) || match(p.excerpt))
+    .slice(0, 1)
+    .map((p) => ({
+      id: p.id,
+      text: p.title,
+      slug: p.slug,
+      type: 'blog' as const,
+    }));
+
+  suggestions.push(...blogSuggestions);
+
+  // Add documentation suggestions
+  const docsSuggestions = DOCS_SEARCH_ITEMS
+    .filter((d) => match(d.text))
+    .slice(0, 1)
+    .map((d) => ({
+      text: d.text,
+      slug: d.path,
+      type: 'doc' as const,
+    }));
+
+  suggestions.push(...docsSuggestions);
 
   // Add some popular/trending suggestions if query matches
   const popularSuggestions = [

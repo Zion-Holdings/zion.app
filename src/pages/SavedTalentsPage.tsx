@@ -8,6 +8,8 @@ import { TalentProfile } from "@/types/talent";
 import { toast } from "@/components/ui/use-toast";
 import { useRouter } from 'next/router';
 import { logError } from "@/utils/logError";
+import { EmptyState } from "@/components/ui/empty-state";
+import { Heart } from "lucide-react";
 
 export default function SavedTalentsPage() {
   const { user } = useAuth();
@@ -178,7 +180,15 @@ export default function SavedTalentsPage() {
         {isLoading ? (
           <div className="text-center py-8">Loading saved talents...</div>
         ) : savedTalents.length === 0 ? (
-          <div className="text-center py-8">No talents saved yet.</div>
+          <div className="py-8">
+            <EmptyState
+              icon={<Heart className="h-8 w-8" />}
+              title="No Saved Talents"
+              description="You haven't saved any talents yet."
+              action={{ text: 'Browse Talent', href: '/talent' }}
+              className="border-none bg-transparent text-center"
+            />
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {savedTalents.map((talent) => (
