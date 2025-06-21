@@ -5,7 +5,12 @@ interface ToastProps {
   title?: string;
   description?: string;
   variant?: 'default' | 'destructive' | 'success'; // Add other variants if used
-  action?: React.ReactNode; // Assuming action might be needed as per ShadCN/Sonner patterns
+  action?: ToastActionProps; // Assuming action might be needed as per ShadCN/Sonner patterns
+}
+
+interface ToastActionProps {
+  label: string;
+  onClick: () => void;
 }
 
 // Adapter function
