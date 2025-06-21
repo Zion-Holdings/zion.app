@@ -2,8 +2,29 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import * as Sentry from '@sentry/nextjs';
 import { Alert, AlertDescription, AlertIcon } from '@chakra-ui/react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { AuthLayout } from '@/layout';
 import { toast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
+
+async function resetPassword(
+  email: string,
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    const res = await fetch('/api/auth/forgot', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      return { ok: false, error: data.error || data.message };
+    }
+    return { ok: true };
+  } catch (err: any) {
+    return { ok: false, error: err.message };
+  }
+}
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -18,22 +39,15 @@ const ForgotPassword = () => {
     setError(null);
 
     try {
-      const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/auth/verify-email`,
-      });
-      if (error) {
-        Sentry.captureException(error);
-        const errorMessage = error.message || 'Failed to send reset link. Please try again.';
-        setError(errorMessage);
-        toast.error(errorMessage);
-      } else {
-        setMessage(
-          'If your email address is registered, you will receive a password reset link shortly.'
-        );
-      }
+      const { ok, error } = await resetPassword(email);
+      if (!ok) throw new Error(error || 'Reset failed');
+      setMessage(
+        'If your email address is registered, you will receive a password reset link shortly.',
+      );
     } catch (err: any) {
       Sentry.captureException(err);
-      const errorMessage = err.message || 'Failed to send reset link. Please try again.';
+      const errorMessage =
+        err.message || 'Failed to send reset link. Please try again.';
       setError(errorMessage);
       toast.error(errorMessage);
     } finally {
@@ -42,35 +56,50 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div>
-      <h2>Forgot Password</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            disabled={loading} // Disable input when loading
-          />
+    <AuthLayout>
+      <div className="flex min-h-screen items-center justify-center bg-background p-4">
+        <div className="w-full max-w-sm rounded-lg border border-border bg-card p-8 shadow-lg">
+          <h1 className="mb-6 text-center text-2xl font-bold">
+            Forgot Password
+          </h1>
+
+          <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+            <div>
+              <label htmlFor="email" className="mb-1 block text-sm font-medium">
+                Email Address
+              </label>
+              <Input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={loading}
+              />
+            </div>
+            <Button type="submit" className="w-full" disabled={loading}>
+              {loading ? 'Sending...' : 'Send Reset Link'}
+            </Button>
+          </form>
+
+          {message && (
+            <p className="mt-4 text-center text-sm text-green-600">{message}</p>
+          )}
+          {error && (
+            <Alert status="error" mt={4}>
+              <AlertIcon />
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
+          <p className="mt-4 text-center text-sm">
+            Remember your password?{' '}
+            <Link href="/login" className="underline">
+              Login
+            </Link>
+          </p>
         </div>
-        <button type="submit" disabled={loading}>
-          {loading ? 'Sending...' : 'Send Reset Link'}
-        </button>
-      </form>
-      {message && <p style={{ color: 'green' }}>{message}</p>}
-      {error && (
-        <Alert status="error" mt={4}>
-          <AlertIcon />
-          <AlertDescription>{error}</AlertDescription>
-        </Alert>
-      )}
-      <p>
-        Remember your password? <Link href="/login">Login</Link>
-      </p>
-    </div>
+      </div>
+    </AuthLayout>
   );
 };
 
