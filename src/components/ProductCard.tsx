@@ -20,12 +20,6 @@ import { useMediaQuery } from 'usehooks-ts';
 import { useEnqueueSnackbar } from '@/context/SnackbarContext';
 import { closeSnackbar } from 'notistack';
 import { captureException } from '@/utils/sentry';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
 
 interface ProductCardProps {
   product: Product;
