@@ -37,9 +37,9 @@ export function PointsBadge() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
-            href={isAuthenticated ? "/wallet" : "#"}
+            href={isAuthenticated ? "/points" : "#"}
             onClick={handleClick}
-            title={isAuthenticated ? "View wallet" : "Earn points by creating an account"}
+            title={isAuthenticated ? "View points" : "Earn points by creating an account"}
             className="flex items-center gap-1 text-xs text-muted-foreground"
           >
             <Gift className="h-4 w-4" />
