@@ -104,7 +104,7 @@ function generateCompanyName(): string {
 }
 
 // Generate market-appropriate pricing
-function generateMarketPrice(category: typeof AI_IT_CATEGORIES[0], popularityBoost: number = 1): number {
+function generateMarketPrice(category: typeof AI_IT_CATEGORIES[number], popularityBoost: number = 1): number {
   const [min, max] = category.priceRange;
   
   // Use normal distribution for more realistic pricing
@@ -178,7 +178,7 @@ function generateRating(): { rating: number; reviewCount: number } {
 }
 
 // Generate AI score
-function generateAIScore(category: typeof AI_IT_CATEGORIES[0]): number {
+function generateAIScore(category: typeof AI_IT_CATEGORIES[number]): number {
   const baseScore = 75 + Math.random() * 20; // 75-95 base range
   const categoryBonus = category.popularity * 10; // Up to 10 point bonus
   return Math.min(99, Math.round(baseScore + categoryBonus));
