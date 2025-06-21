@@ -143,4 +143,4 @@ export default async function handler(
       message: 'An unexpected error occurred during registration. Please try again.' 
     });
   }
-}
+} 
