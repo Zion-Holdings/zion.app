@@ -3,83 +3,12 @@ import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from "next/link";
+import { CAREER_JOBS } from "@/data/careersJobs";
 
 export default function Careers() {
   const applyEmail = "careers@ziontechgroup.com";
-  // Sample job listings
-  const jobs = {
-    engineering: [
-      {
-        title: "Senior Frontend Engineer",
-        location: "Remote",
-        type: "Full-time",
-        department: "Engineering",
-        description: "Join our frontend team to build beautiful, responsive, and accessible user interfaces for our AI-powered marketplace."
-      },
-      {
-        title: "AI Research Engineer",
-        location: "San Francisco, CA",
-        type: "Full-time",
-        department: "Engineering",
-        description: "Work on cutting-edge AI technologies to power our matching algorithms and recommendation systems."
-      },
-      {
-        title: "Full Stack Developer",
-        location: "Remote",
-        type: "Full-time",
-        department: "Engineering",
-        description: "Develop end-to-end features across our platform, working with modern technologies like React, Node.js, and PostgreSQL."
-      }
-    ],
-    product: [
-      {
-        title: "Product Manager",
-        location: "New York, NY",
-        type: "Full-time",
-        department: "Product",
-        description: "Lead product development initiatives to enhance our marketplace experience for both talent and clients."
-      },
-      {
-        title: "UX/UI Designer",
-        location: "Remote",
-        type: "Full-time",
-        department: "Product",
-        description: "Create intuitive and engaging user experiences that make complex technology accessible to all users."
-      }
-    ],
-    marketing: [
-      {
-        title: "Growth Marketing Manager",
-        location: "Remote",
-        type: "Full-time",
-        department: "Marketing",
-        description: "Drive user acquisition and engagement strategies across multiple channels to grow our marketplace."
-      },
-      {
-        title: "Content Strategist",
-        location: "London, UK",
-        type: "Full-time",
-        department: "Marketing",
-        description: "Develop compelling content that educates and inspires our audience about the future of AI and technology."
-      }
-    ],
-    operations: [
-      {
-        title: "Community Manager",
-        location: "Remote",
-        type: "Full-time",
-        department: "Operations",
-        description: "Build and nurture our growing community of AI specialists, developers, and tech enthusiasts."
-      },
-      {
-        title: "Talent Acquisition Specialist",
-        location: "Remote",
-        type: "Full-time",
-        department: "Operations",
-        description: "Help connect the right talent with the right opportunities on our platform through personalized matching."
-      }
-    ]
-  };
+  const jobs = CAREER_JOBS;
 
   // Benefits list
   const benefits = [
@@ -209,7 +138,7 @@ export default function Careers() {
                             asChild
                             className="w-full md:w-auto mt-4 md:mt-0 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple"
                           >
-                            <a href={`mailto:${applyEmail}?subject=${encodeURIComponent(`Application for ${job.title}`)}`}>Apply via Email</a>
+                            <Link href={`/careers/${job.id}`}>View Details</Link>
                           </Button>
                         </div>
                       </CardContent>
