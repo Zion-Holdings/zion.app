@@ -1,5 +1,10 @@
 import React from 'react';
 import { toast as sonnerToast } from 'sonner';
+
+const variantStyles = {
+  info: { background: '#1e3a8a', color: '#fff' },
+  error: { background: '#7f1d1d', color: '#fff' },
+};
 import { logError } from '@/utils/logError';
 
 const DEDUPE_DELAY = 3000; // 3 seconds debounce for identical messages
@@ -63,7 +68,7 @@ const toastAdapter = (props: ToastProps | string) => {
   switch (variant) {
     case 'destructive':
       const traceId = (options as any)?.traceId ?? logError(new Error(message));
-      sonnerToast.error(`${message} (Trace ID: ${traceId})`, options);
+      sonnerToast.error(`${message} (Trace ID: ${traceId})`, { ...options, style: variantStyles.error });
       break;
     case 'success':
       sonnerToast.success(message, options);
@@ -90,12 +95,12 @@ toastAdapter.success = (message: string, options?: object) => {
 toastAdapter.error = (message: string, options?: object) => {
   const opts = options as { skipLog?: boolean; traceId?: string } | undefined;
   if (shouldShow(`error|${message}`)) {
-    sonnerToast.error(message, { duration: 4000, ...(options || {}) });
+    sonnerToast.error(message, { duration: 4000, ...(options || {}), style: variantStyles.error });
   }
 };
 toastAdapter.info = (message: string, options?: object) => {
   if (shouldShow(`info|${message}`)) {
-    sonnerToast.info(message, { duration: 4000, ...(options || {}) });
+    sonnerToast.info(message, { duration: 4000, ...(options || {}), style: variantStyles.info });
   }
 };
 toastAdapter.warning = (message: string, options?: object) => {

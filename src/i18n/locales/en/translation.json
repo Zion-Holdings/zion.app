@@ -17,7 +17,9 @@
     "saving": "Saving...",
     "open_main_menu": "Open main menu",
     "toggle_mobile_menu": "Toggle mobile menu",
-    "greeting_user": "Hello, {{name}}!"
+    "greeting_user": "Hello, {{name}}!",
+    "status_page": "Status Page",
+    "check_status_page": "You can try refreshing the page or visit our"
   },
   "nav": {
     "home": "Home",
