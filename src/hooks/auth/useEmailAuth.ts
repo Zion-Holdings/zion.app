@@ -66,9 +66,13 @@ export const useEmailAuth = (
       // If this causes an issue, I'll revise to explicitly import them.
 
       const authTokenKey = "zion_token";
-      // Persist token in localStorage so it can be attached to
-      // subsequent API requests via the axios interceptor.
-      safeStorage.setItem(authTokenKey, token);
+      if (rememberMe) {
+        // Persist token in localStorage for long-term sessions
+        safeStorage.setItem(authTokenKey, token);
+      } else {
+        // Store token in sessionStorage for this browser session only
+        safeSessionStorage.setItem(authTokenKey, token);
+      }
 
       return { data: { user, token } };
     } catch (error: any) {

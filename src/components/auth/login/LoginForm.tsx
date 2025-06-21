@@ -50,7 +50,7 @@ export function LoginForm() {
     try {
       setIsSubmitting(true);
       // Pass email and password to the login function
-      const result = await login(data.email, data.password);
+      const result = await login(data.email, data.password, data.rememberMe);
       if (result?.error) {
         let errorMessage = "Login failed. Please try again."; // Default generic error
         if (result?.error && result?.error?.message) {
