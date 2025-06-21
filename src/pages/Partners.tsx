@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle, FileDown, FileText, PieChart, Users } from "lucide-react";
 import { useState } from "react";
+import Link from 'next/link';
 import { PartnerRegistrationForm } from "@/components/partners/PartnerRegistrationForm";
 import { PartnerReferralLinks } from "@/components/partners/PartnerReferralLinks";
 import { PartnerDashboard } from "@/components/partners/PartnerDashboard";
@@ -132,12 +133,12 @@ export default function Partners() {
         </div>
 
         <div className="flex justify-center gap-4">
-          <Button 
-            size="lg" 
-            className="bg-zion-purple hover:bg-zion-purple-dark"
-            onClick={() => router.push('/signup')}
+          <Button
+            size="lg"
+            className="bg-zion-purple hover:bg-zion-purple-dark text-white"
+            asChild
           >
-            Apply to Join
+            <Link href="/signup">Apply as Partner</Link>
           </Button>
           <Button 
             size="lg" 

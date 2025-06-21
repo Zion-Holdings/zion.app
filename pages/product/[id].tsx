@@ -3,6 +3,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { fetchProductById } from '../../src/services/productService';
 import type { ProductDetailsData } from '../../src/types/product';
+import { useWishlist } from '@/hooks/useWishlist';
+import { useAuth } from '@/hooks/useAuth';
+import { toast } from '@/hooks/use-toast';
+import { LoginModal } from '@/components/auth/LoginModal';
+import { useState } from 'react';
 // Import React if not implicitly available
 // import React from 'react';
 
@@ -27,6 +32,22 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
       </div>
     );
   }
+
+  const { isAuthenticated } = useAuth();
+  const { isWishlisted, toggle } = useWishlist();
+  const [loginOpen, setLoginOpen] = useState(false);
+
+  const handleWishlist = () => {
+    if (!isAuthenticated) {
+      setLoginOpen(true);
+      return;
+    }
+    const already = isWishlisted(product.id);
+    toggle(product.id);
+    toast.success(already ? 'Removed from wishlist' : 'Added to wishlist');
+  };
+
+  const inWishlist = isWishlisted(product.id);
 
   // Assuming product.images can be a string URL, or an array of objects with a URL, or an array of strings.
   // This is a simplified image handling logic.
@@ -106,12 +127,10 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
           >
             Add to Cart
           </button>
-          <button
-            onClick={() => console.log('Add to wishlist:', product.id)}
-            style={{ padding: '0.5rem 1rem' }}
-          >
-            Add to Wishlist
+          <button onClick={handleWishlist} style={{ padding: '0.5rem 1rem' }}>
+            {inWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}
           </button>
+          <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />
         </div>
       </main>
     </>
