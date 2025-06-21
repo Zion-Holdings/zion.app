@@ -1,6 +1,30 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 
+interface RateInfo { count: number; first: number }
+const WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const MAX_REQUESTS = 5;
+const ipMap = new Map<string, RateInfo>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = ipMap.get(ip);
+  if (!entry) {
+    ipMap.set(ip, { count: 1, first: now });
+    return false;
+  }
+  if (now - entry.first > WINDOW_MS) {
+    ipMap.set(ip, { count: 1, first: now });
+    return false;
+  }
+  entry.count += 1;
+  if (entry.count > MAX_REQUESTS) {
+    return true;
+  }
+  ipMap.set(ip, entry);
+  return false;
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -8,6 +32,11 @@ export default async function handler(
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
     return res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
+
+  const ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '') as string;
+  if (isRateLimited(ip)) {
+    return res.status(429).json({ message: 'Too many requests. Please try again later.' });
   }
 
   try {
