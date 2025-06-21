@@ -553,7 +553,7 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
             🎉 You've explored all available products!
           </div>
           <div className="text-sm text-muted-foreground">
-            Showing {products.length} {total && `of ${total}`} AI-powered solutions
+            Showing {products.length} AI-powered solutions
           </div>
         </motion.div>
       )}
