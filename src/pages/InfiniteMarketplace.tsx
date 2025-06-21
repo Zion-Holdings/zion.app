@@ -136,9 +136,7 @@ export default function InfiniteMarketplace() {
     }
     
     // Generate new AI products for infinite feed
-    const startId = MARKETPLACE_LISTINGS.length + (page - 1) * limit + totalGenerated;
-    const newProducts = generateAIProducts(limit, startId);
-    setTotalGenerated(prev => prev + newProducts.length);
+    const newProducts = generateAIProducts(limit);
     
     allProducts = [...allProducts, ...newProducts];
     
@@ -185,7 +183,7 @@ export default function InfiniteMarketplace() {
       hasMore: endIndex < filteredProducts.length || page < 10, // Allow up to 10 pages
       total: filteredProducts.length
     };
-  }, [sortBy, filterCategory, showRecommended, totalGenerated]);
+  }, [sortBy, filterCategory, showRecommended]);
 
   // Infinite scroll hook
   const {
@@ -203,7 +201,6 @@ export default function InfiniteMarketplace() {
   // Refresh when filters change
   useEffect(() => {
     refresh();
-    setTotalGenerated(0);
   }, [sortBy, filterCategory, showRecommended]);
 
   // Calculate market stats
@@ -403,4 +400,4 @@ export default function InfiniteMarketplace() {
       </div>
     </div>
   );
-} 
+}
