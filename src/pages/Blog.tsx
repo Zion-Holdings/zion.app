@@ -13,6 +13,7 @@ import { BlogPost } from "@/types/blog";
 import { generateRandomBlogPost } from "@/utils/generateRandomBlogPost";
 import { BLOG_POSTS } from "@/data/blog-posts";
 import { Search } from "lucide-react";
+import { fetchWithRetry } from '@/utils/fetchWithRetry';
 
 // Categories for filtering
 const CATEGORIES = [
@@ -48,11 +49,10 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
     const fetchPosts = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch(`/api/blog?query=${encodeURIComponent(query)}`);
-        if (res.ok) {
-          const data: BlogPost[] = await res.json();
-          setPosts(data);
-        }
+        const data: BlogPost[] = await fetchWithRetry(
+          `/api/blog?query=${encodeURIComponent(query)}`
+        );
+        setPosts(data);
       } catch (err) {
         console.error('Failed to fetch blog posts', err);
       } finally {
