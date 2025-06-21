@@ -13,6 +13,12 @@ import { Product } from '@/services/marketplace';
 import { useMediaQuery } from 'usehooks-ts';
 import { useEnqueueSnackbar } from '@/context/SnackbarContext';
 import { captureException } from '@/utils/sentry';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 interface ProductCardProps {
   product: Product;
@@ -112,19 +118,28 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
           Add to Cart
         </Button>
         {onBuy && (
-          <Button
-            onClick={(e) => {
-              e.stopPropagation();
-              onBuy();
-            }}
-            size="sm"
-            variant="outline"
-            className="flex-1"
-            data-testid="buy-now-button"
-            disabled={!isAuthenticated || buyDisabled}
-          >
-            Buy Now
-          </Button>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onBuy();
+                  }}
+                  size="sm"
+                  variant="outline"
+                  className="flex-1"
+                  data-testid="buy-now-button"
+                  disabled={!isAuthenticated || buyDisabled}
+                >
+                  Buy Now
+                </Button>
+              </TooltipTrigger>
+              {!isAuthenticated && (
+                <TooltipContent>Login required</TooltipContent>
+              )}
+            </Tooltip>
+          </TooltipProvider>
         )}
       </div>
     </div>
