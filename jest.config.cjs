@@ -87,6 +87,7 @@ module.exports = {
     '^@/public/(.*)$': '<rootDir>/public/$1',
     // General alias last
     '^@/(.*)$': '<rootDir>/src/$1',
+    'react-router-dom$': '<rootDir>/src/shims/react-router-dom.ts',
     // 'vitest$': '<rootDir>/tests/vitest-mock.ts', // Removed vitest mock
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     // Next.js mocks
