@@ -219,6 +219,11 @@ const SYSTEM_CHECK_INTERVAL = 60000; // 60 seconds in milliseconds
  * @param {string} message - The message to append.
  */
 function appendToSelfHealLog(message) {
+  // Do not write to physical log file during test runs to avoid polluting it.
+  // Tests can spy on this function to ensure it's called, without needing file I/O.
+  if (process.env.NODE_ENV === 'test') {
+    return;
+  }
   try {
     fs.appendFileSync(SELF_HEAL_LOG_FILE, message);
   } catch (err) {
