@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { GetServerSideProps } from 'next';
+import { toast } from '@/hooks/use-toast';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ProfileForm, type ProfileValues } from '@/components/profile/ProfileForm';
@@ -28,13 +29,22 @@ function Account({ user: initialUser, orders }: AccountProps) {
   const [user, setUser] = useState(initialUser);
 
   const handleSubmit = async (values: ProfileValues) => {
-    const res = await fetch(`/api/users/${user.id}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(values),
-    });
-    const data = await res.json();
-    setUser(data);
+    try {
+      const res = await fetch(`/api/users/${user.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
+      const data = await res.json();
+      setUser(data);
+    } catch (error: any) {
+      console.error('Error updating profile:', error);
+      toast({
+        title: 'Error updating profile',
+        description: error.message || 'Failed to update profile. Please try again.',
+        variant: 'destructive',
+      });
+    }
   };
 
   return (
