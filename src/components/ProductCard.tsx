@@ -35,10 +35,15 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
   const router = useRouter();
   const enqueueSnackbar = useEnqueueSnackbar();
 
-  if (!product || typeof product.id !== 'string') {
+  if (!product || typeof product.id !== 'string' || typeof product.title !== 'string' || product.title.trim() === '') {
+    captureException(new Error('Invalid product data received by ProductCard'), {
+      extra: { product },
+    });
     return (
-      <div className="relative border rounded-lg bg-card p-4 text-center" data-testid="product-card-error">
-        <p className="text-red-500">Invalid product data.</p>
+      <div className="relative border rounded-lg bg-card p-4 text-center h-full flex flex-col justify-center items-center" data-testid="product-card-error">
+        <p className="text-destructive text-sm">Product information unavailable.</p>
+        {/* Optionally, provide more details if product ID is known */}
+        {/* {product && product.id && <p className="text-xs text-muted-foreground">ID: {product.id}</p>} */}
       </div>
     );
   }
@@ -46,7 +51,8 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
   const active = isWishlisted(product.id);
   const dispatch = useDispatch<AppDispatch>();
 
-  const productTitle = typeof product.title === 'string' ? product.title : 'Untitled Product';
+  // Title is now guaranteed to be a non-empty string by the check above.
+  const productTitle = product.title;
 
   const addToCart = () => {
     dispatch(addItem({ id: product.id, title: productTitle, price: product.price ?? 0 }));
