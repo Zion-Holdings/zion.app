@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { SEO } from "@/components/SEO";
 import JsonLd from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
+import ImageWithRetry from '@/components/ui/ImageWithRetry';
 import { ArrowLeft, Calendar, Clock, ChevronLeft, ChevronRight, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import type { BlogPost as BlogPostType } from "@/types/blog";
 import { Separator } from "@/components/ui/separator";
@@ -167,14 +168,11 @@ export default function BlogPost() {
             {/* Author and metadata */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8">
               <div className="flex items-center mb-4 sm:mb-0">
-                <img 
-                  src={post.author.avatarUrl} 
-                  alt={post.author.name} 
+                <ImageWithRetry
+                  src={post.author.avatarUrl}
+                  alt={post.author.name}
                   className="w-12 h-12 rounded-full mr-3"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "/images/blog-placeholder.svg";
-                  }}
+                  fallbackSrc="/images/blog-placeholder.svg"
                 />
                 <div>
                   <p className="text-white font-medium">{post.author.name}</p>
@@ -247,14 +245,11 @@ export default function BlogPost() {
           {/* Featured image */}
           <div className="mb-12 max-w-5xl mx-auto">
             <div className="aspect-[21/9] rounded-lg overflow-hidden">
-              <img 
-                src={post.featuredImage} 
+              <ImageWithRetry
+                src={post.featuredImage}
                 alt={post.title}
                 className="object-cover w-full h-full"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = "/images/blog-placeholder.svg";
-                }}
+                fallbackSrc="/images/blog-placeholder.svg"
               />
             </div>
           </div>
@@ -293,14 +288,11 @@ export default function BlogPost() {
                       className="bg-zion-blue-dark border border-zion-blue-light rounded-lg overflow-hidden hover:border-zion-purple transition-all duration-300"
                     >
                       <div className="aspect-[16/9] relative">
-                        <img 
-                          src={relatedPost.featuredImage} 
+                        <ImageWithRetry
+                          src={relatedPost.featuredImage}
                           alt={relatedPost.title}
                           className="object-cover w-full h-full"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = "/images/blog-placeholder.svg";
-                          }}
+                          fallbackSrc="/images/blog-placeholder.svg"
                         />
                       </div>
                       <div className="p-4">
