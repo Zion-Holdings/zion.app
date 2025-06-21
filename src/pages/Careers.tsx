@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Careers() {
+  const applyEmail = "careers@ziontechgroup.com";
   // Sample job listings
   const jobs = {
     engineering: [
@@ -204,8 +205,11 @@ export default function Careers() {
                             </div>
                             <p className="text-zion-slate-light mb-4">{job.description}</p>
                           </div>
-                          <Button className="w-full md:w-auto mt-4 md:mt-0 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple">
-                            Apply Now
+                          <Button
+                            asChild
+                            className="w-full md:w-auto mt-4 md:mt-0 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple"
+                          >
+                            <a href={`mailto:${applyEmail}?subject=${encodeURIComponent(`Application for ${job.title}`)}`}>Apply via Email</a>
                           </Button>
                         </div>
                       </CardContent>
@@ -219,11 +223,22 @@ export default function Careers() {
           <div className="bg-gradient-to-r from-zion-blue-dark to-zion-blue-light border border-zion-purple/30 rounded-xl p-8 md:p-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-6">Don't see the right position?</h2>
             <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
-              We're always looking for talented individuals who are passionate about AI and technology. 
-              Send us your resume and let's start a conversation.
+              We're always looking for talented individuals who are passionate about AI and technology.
+              Send us your resume and let's start a conversation. You can also
+              apply directly by emailing us at
+              <a
+                href={`mailto:${applyEmail}`}
+                className="text-zion-cyan hover:text-zion-purple transition-colors"
+              >
+                {applyEmail}
+              </a>
+              .
             </p>
-            <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple">
-              Send General Application
+            <Button
+              asChild
+              className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple"
+            >
+              <a href={`mailto:${applyEmail}`}>Send General Application</a>
             </Button>
           </div>
         </div>
