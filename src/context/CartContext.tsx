@@ -90,6 +90,23 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     dispatch,
   };
 
+  // Load cart items from localStorage on initial mount
+  useEffect(() => {
+    try {
+      const stored = safeStorage.getItem('zion_cart');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          dispatch({ type: 'SET_ITEMS', payload: parsed });
+        }
+      }
+    } catch (error) {
+      console.error('Failed to load cart from localStorage', error);
+    }
+    // Only run on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Persist cart items to localStorage whenever they change
   useEffect(() => {
     try {
