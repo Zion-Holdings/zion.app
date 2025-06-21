@@ -151,7 +151,7 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     }
     
     if (showRecommended) {
-      filteredProducts = filteredProducts.filter(p => p.rating >= 4.3);
+      filteredProducts = filteredProducts.filter(p => p.rating != null && p.rating >= 4.3);
     }
     
     // Apply sorting
