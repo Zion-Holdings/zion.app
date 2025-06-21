@@ -27,14 +27,21 @@ interface GuestCheckoutModalProps {
 }
 
 const schema = z.object({
-  email: z.string().email('Enter a valid email'),
+  email: z.string().min(1, 'Email is required').email('Enter a valid email'),
   address: z.string().min(1, 'Address is required'),
 });
 
 type FormValues = z.infer<typeof schema>;
 
 export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestCheckoutModalProps) {
-  const form = useForm<FormValues>({ resolver: zodResolver(schema), mode: 'onChange' });
+  const form = useForm<FormValues>({
+    resolver: zodResolver(schema),
+    mode: 'onChange',
+    defaultValues: {
+      email: '',
+      address: '',
+    },
+  });
 
   const handleSubmit = (values: FormValues) => {
     onSubmit(values);

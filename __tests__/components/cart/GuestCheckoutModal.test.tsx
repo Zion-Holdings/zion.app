@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { GuestCheckoutModal } from '@/components/cart/GuestCheckoutModal'; // Adjust path as necessary
 
@@ -51,20 +51,24 @@ describe('GuestCheckoutModal', () => {
     expect(addressInput).toHaveClass('guest-checkout-modal-input');
   });
 
-  test('Input Value Test', () => {
+  test('Input Value Test', async () => {
     render(<GuestCheckoutModal {...defaultProps} />);
 
     const emailInput = screen.getByPlaceholderText('Email') as HTMLInputElement;
     const addressInput = screen.getByPlaceholderText('Shipping Address') as HTMLInputElement;
 
-    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+    await act(async () => {
+      fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+    });
     expect(emailInput.value).toBe('test@example.com');
 
-    fireEvent.change(addressInput, { target: { value: '123 Main St' } });
+    await act(async () => {
+      fireEvent.change(addressInput, { target: { value: '123 Main St' } });
+    });
     expect(addressInput.value).toBe('123 Main St');
   });
 
-  test('Submit button disabled until form valid', () => {
+  test('Submit button disabled until form valid', async () => {
     render(<GuestCheckoutModal {...defaultProps} />);
 
     const emailInput = screen.getByPlaceholderText('Email');
@@ -73,22 +77,29 @@ describe('GuestCheckoutModal', () => {
 
     expect(submitButton).toBeDisabled();
 
-    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
-    fireEvent.change(addressInput, { target: { value: '123 Main St' } });
+    await act(async () => {
+      fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+      fireEvent.change(addressInput, { target: { value: '123 Main St' } });
+    });
 
     expect(submitButton).toBeEnabled();
   });
 
-  test('Submission Test (Happy Path)', () => {
+  test('Submission Test (Happy Path)', async () => {
     render(<GuestCheckoutModal {...defaultProps} />);
 
     const emailInput = screen.getByPlaceholderText('Email') as HTMLInputElement;
     const addressInput = screen.getByPlaceholderText('Shipping Address') as HTMLInputElement;
     const submitButton = screen.getByRole('button', { name: 'Continue to Payment' });
 
-    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
-    fireEvent.change(addressInput, { target: { value: '123 Main St' } });
-    fireEvent.click(submitButton);
+    await act(async () => {
+      fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+      fireEvent.change(addressInput, { target: { value: '123 Main St' } });
+    });
+
+    await act(async () => {
+      fireEvent.click(submitButton);
+    });
 
     expect(mockOnSubmit).toHaveBeenCalledTimes(1);
     expect(mockOnSubmit).toHaveBeenCalledWith({
@@ -103,18 +114,24 @@ describe('GuestCheckoutModal', () => {
     expect(screen.queryByText(/Pay with test data/)).not.toBeInTheDocument();
   });
 
-  test('Email Normalization Test (@@ to @)', () => {
+  test('Email Normalization Test (@@ to @)', async () => { // Already async, no change needed here specifically for this error, but reviewing all act calls.
     render(<GuestCheckoutModal {...defaultProps} />);
 
     const emailInput = screen.getByPlaceholderText('Email') as HTMLInputElement;
     const addressInput = screen.getByPlaceholderText('Shipping Address') as HTMLInputElement;
     const submitButton = screen.getByRole('button', { name: 'Continue to Payment' });
 
-    fireEvent.change(emailInput, { target: { value: 'test@@example.com' } });
+    await act(async () => {
+      fireEvent.change(emailInput, { target: { value: 'test@@example.com' } });
+    });
     expect(emailInput.value).toBe('test@example.com'); // Check normalization during typing
 
-    fireEvent.change(addressInput, { target: { value: 'sample address' } });
-    fireEvent.click(submitButton);
+    await act(async () => {
+      fireEvent.change(addressInput, { target: { value: 'sample address' } });
+    });
+    await act(async () => {
+      fireEvent.click(submitButton);
+    });
 
     expect(mockOnSubmit).toHaveBeenCalledTimes(1);
     expect(mockOnSubmit).toHaveBeenCalledWith({
@@ -125,18 +142,24 @@ describe('GuestCheckoutModal', () => {
     expect(global.alert).toHaveBeenCalledWith(expect.stringContaining("Original email contained '@@'"));
   });
 
-  test('Email Normalization Test (multiple @@@ to @)', () => {
+  test('Email Normalization Test (multiple @@@ to @)', async () => { // Already async, reviewing act calls.
     render(<GuestCheckoutModal {...defaultProps} />);
 
     const emailInput = screen.getByPlaceholderText('Email') as HTMLInputElement;
     const addressInput = screen.getByPlaceholderText('Shipping Address') as HTMLInputElement;
     const submitButton = screen.getByRole('button', { name: 'Continue to Payment' });
 
-    fireEvent.change(emailInput, { target: { value: 'contact@@@domain.com' } });
+    await act(async () => {
+      fireEvent.change(emailInput, { target: { value: 'contact@@@domain.com' } });
+    });
     expect(emailInput.value).toBe('contact@domain.com'); // Check normalization during typing
 
-    fireEvent.change(addressInput, { target: { value: 'another sample address' } });
-    fireEvent.click(submitButton);
+    await act(async () => {
+      fireEvent.change(addressInput, { target: { value: 'another sample address' } });
+    });
+    await act(async () => {
+      fireEvent.click(submitButton);
+    });
 
     expect(mockOnSubmit).toHaveBeenCalledTimes(1);
     expect(mockOnSubmit).toHaveBeenCalledWith({
@@ -170,22 +193,32 @@ describe('GuestCheckoutModal', () => {
       submitButton = screen.getByRole('button', { name: 'Continue to Payment' });
     });
 
-    test('should not submit if both fields are empty', () => {
-      fireEvent.click(submitButton);
+    test('should not submit if both fields are empty', async () => {
+      await act(async () => {
+        fireEvent.click(submitButton);
+      });
       expect(mockOnSubmit).not.toHaveBeenCalled();
     });
 
-    test('should not submit if address is empty', () => {
+    test('should not submit if address is empty', async () => {
       mockOnSubmit.mockClear();
-      fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
-      fireEvent.click(submitButton);
+      await act(async () => {
+        fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+      });
+      await act(async () => {
+        fireEvent.click(submitButton);
+      });
       expect(mockOnSubmit).not.toHaveBeenCalled();
     });
 
-    test('should not submit if email is empty', () => {
+    test('should not submit if email is empty', async () => {
       mockOnSubmit.mockClear();
-      fireEvent.change(addressInput, { target: { value: '123 Main St' } });
-      fireEvent.click(submitButton);
+      await act(async () => {
+        fireEvent.change(addressInput, { target: { value: '123 Main St' } });
+      });
+      await act(async () => {
+        fireEvent.click(submitButton);
+      });
       expect(mockOnSubmit).not.toHaveBeenCalled();
     });
   });
@@ -196,4 +229,102 @@ describe('GuestCheckoutModal', () => {
     // This is a placeholder, actual close simulation depends on Dialog internals
   });
 
+  describe('Validation Messages and Behavior', () => {
+    test('should display required messages for empty fields on initial render and disable submit', async () => {
+      render(<GuestCheckoutModal {...defaultProps} />);
+
+      await waitFor(() => {
+        expect(screen.getByText('Email is required')).toBeInTheDocument();
+        expect(screen.getByText('Address is required')).toBeInTheDocument();
+      });
+      expect(screen.getByRole('button', { name: 'Continue to Payment' })).toBeDisabled();
+    });
+
+    test('should remove email required message when email is filled, but keep address required', async () => {
+      render(<GuestCheckoutModal {...defaultProps} />);
+      const emailInput = screen.getByPlaceholderText('Email');
+
+      // Initial errors
+      await waitFor(() => {
+        expect(screen.getByText('Email is required')).toBeInTheDocument();
+        expect(screen.getByText('Address is required')).toBeInTheDocument();
+      });
+
+      await act(async () => {
+        fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+      });
+
+      // Email error should be gone, address error remains
+      expect(screen.queryByText('Email is required')).not.toBeInTheDocument();
+      expect(await screen.findByText('Address is required')).toBeInTheDocument(); // Address is still required
+      expect(screen.getByRole('button', { name: 'Continue to Payment' })).toBeDisabled();
+    });
+
+    test('should display invalid email message for incorrect format', async () => {
+      render(<GuestCheckoutModal {...defaultProps} />);
+      const emailInput = screen.getByPlaceholderText('Email');
+
+      // Initial "Email is required"
+      await waitFor(() => {
+        expect(screen.getByText('Email is required')).toBeInTheDocument();
+      });
+
+      await act(async () => {
+        fireEvent.change(emailInput, { target: { value: 'invalid-email' } });
+      });
+
+      // Now it should be "Enter a valid email"
+      expect(await screen.findByText('Enter a valid email')).toBeInTheDocument();
+      expect(screen.queryByText('Email is required')).not.toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Continue to Payment' })).toBeDisabled();
+    });
+
+    test('should re-display required message if field is cleared after input', async () => {
+      render(<GuestCheckoutModal {...defaultProps} />);
+      const emailInput = screen.getByPlaceholderText('Email');
+
+      // Fill then clear
+      await act(async () => {
+        fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+      });
+      expect(screen.queryByText('Email is required')).not.toBeInTheDocument(); // Valid input, so no "required" message
+
+      await act(async () => {
+        fireEvent.change(emailInput, { target: { value: '' } }); // Clear the input
+      });
+      expect(await screen.findByText('Email is required')).toBeInTheDocument(); // "Required" message should reappear
+      expect(screen.getByRole('button', { name: 'Continue to Payment' })).toBeDisabled();
+    });
+
+    test('submit button enables only when both fields are valid', async () => {
+      render(<GuestCheckoutModal {...defaultProps} />);
+      const emailInput = screen.getByPlaceholderText('Email');
+      const addressInput = screen.getByPlaceholderText('Shipping Address');
+      const submitButton = screen.getByRole('button', { name: 'Continue to Payment' });
+
+      // Initial state
+      expect(submitButton).toBeDisabled();
+      await waitFor(() => {
+        expect(screen.getByText('Email is required')).toBeInTheDocument();
+        expect(screen.getByText('Address is required')).toBeInTheDocument();
+      });
+
+      // Fill email
+      await act(async () => {
+        fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+      });
+      expect(screen.queryByText('Email is required')).not.toBeInTheDocument();
+      expect(submitButton).toBeDisabled(); // Address still missing
+
+      // Fill address
+      await act(async () => {
+        fireEvent.change(addressInput, { target: { value: '123 Main St' } });
+      });
+      expect(screen.queryByText('Address is required')).not.toBeInTheDocument();
+
+      // Wait for react-hook-form to update validity state
+      // screen.debug(submitButton); // Useful for debugging
+      await waitFor(() => expect(submitButton).toBeEnabled());
+    });
+  });
 });
