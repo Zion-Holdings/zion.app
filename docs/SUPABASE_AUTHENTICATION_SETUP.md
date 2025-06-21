@@ -60,9 +60,16 @@ INTERNAL_AUTH_SERVICE_URL=https://your-auth-service-url.com
 3. Set up email templates if desired
 
 #### Social Authentication (Optional)
-1. Go to **Authentication** → **Providers**
-2. Enable and configure providers (Google, Facebook, Twitter)
-3. Add redirect URLs for your domain
+1. Go to **Authentication** → **Providers** in your Supabase project dashboard.
+2. Enable and configure providers such as Google, Facebook, GitHub, Microsoft, etc.
+   - You will typically need to provide the **Client ID** and **Client Secret** obtained from the respective OAuth provider's developer console.
+   - **Redirect URI / Callback URL:**
+     - If Supabase is handling the OAuth flow directly (e.g., using `supabase.auth.signInWithOAuth()`), the redirect URI to configure on the provider's site is typically `https://YOUR_PROJECT_ID.supabase.co/auth/v1/callback`.
+     - **If using NextAuth.js as the primary OAuth handler (as implemented in this project for social logins):**
+       - The Client ID and Secret are used by NextAuth.js (configured via environment variables like `GOOGLE_CLIENT_ID`, `GITHUB_CLIENT_ID`, etc.).
+       - The redirect URI to configure on the OAuth provider's developer portal (e.g., Google Cloud Console, GitHub Developer Settings, Azure App Registration) should be your application's NextAuth.js callback URL: `YOUR_APP_URL/api/auth/callback/PROVIDER_NAME` (e.g., `http://localhost:3000/api/auth/callback/google` or `https://yourdomain.com/api/auth/callback/github`).
+       - While you can enable the provider in Supabase dashboard for consistency or if you plan to use Supabase's JS library for OAuth elsewhere, the primary interaction for login buttons added in this project goes through NextAuth.js. The NextAuth.js `signIn` callback then handles creating/linking the user in Supabase.
+3. Ensure your application's domain and the necessary callback URLs are correctly registered with each OAuth provider.
 
 ### 4. Set Up Database Schema
 
