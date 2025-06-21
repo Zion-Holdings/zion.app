@@ -92,6 +92,7 @@ export default function CartPage() {
           src="/images/empty-cart.svg"
           alt="Empty cart"
           className="mx-auto mb-4 w-48 h-36"
+          loading="lazy"
         />
         <p>{t('cart.empty')}</p>
         <Button asChild className="mt-4">

@@ -24,35 +24,35 @@
 
 [data-theme='dark'] {
   --background: hsl(222, 47%, 8%);
-  --foreground: hsl(0, 0%, 88%);
+  --foreground: hsl(0, 0%, 95%);
   --primary: hsl(188, 85%, 53%);
   --primary-foreground: hsl(222, 47%, 8%);
   --secondary: hsl(271, 76%, 60%);
-  --secondary-foreground: hsl(0, 0%, 88%);
+  --secondary-foreground: hsl(0, 0%, 95%);
   --card: hsl(220, 30%, 11%);
-  --card-foreground: hsl(0, 0%, 88%);
+  --card-foreground: hsl(0, 0%, 95%);
   --border: hsl(222, 39%, 17%);
   --input: hsl(222, 39%, 17%);
   --ring: hsl(188, 85%, 53%);
   --accent: hsl(288, 85%, 60%);
-  --accent-foreground: hsl(0, 0%, 88%);
+  --accent-foreground: hsl(0, 0%, 95%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     --background: hsl(222, 47%, 8%);
-    --foreground: hsl(0, 0%, 88%);
+    --foreground: hsl(0, 0%, 95%);
     --primary: hsl(188, 85%, 53%);
     --primary-foreground: hsl(222, 47%, 8%);
     --secondary: hsl(271, 76%, 60%);
-    --secondary-foreground: hsl(0, 0%, 88%);
+    --secondary-foreground: hsl(0, 0%, 95%);
     --card: hsl(220, 30%, 11%);
-    --card-foreground: hsl(0, 0%, 88%);
+    --card-foreground: hsl(0, 0%, 95%);
     --border: hsl(222, 39%, 17%);
     --input: hsl(222, 39%, 17%);
     --ring: hsl(188, 85%, 53%);
     --accent: hsl(288, 85%, 60%);
-    --accent-foreground: hsl(0, 0%, 88%);
+    --accent-foreground: hsl(0, 0%, 95%);
   }
 }
 
@@ -82,18 +82,18 @@
 
 .mobile-app[data-theme='dark'] {
   --background: hsl(222, 47%, 8%);
-  --foreground: hsl(0, 0%, 88%);
+  --foreground: hsl(0, 0%, 95%);
   --primary: hsl(188, 85%, 53%);
   --primary-foreground: hsl(222, 47%, 8%);
   --secondary: hsl(271, 76%, 60%);
-  --secondary-foreground: hsl(0, 0%, 88%);
+  --secondary-foreground: hsl(0, 0%, 95%);
   --card: hsl(220, 30%, 11%);
-  --card-foreground: hsl(0, 0%, 88%);
+  --card-foreground: hsl(0, 0%, 95%);
   --border: hsl(222, 39%, 17%);
   --input: hsl(222, 39%, 17%);
   --ring: hsl(188, 85%, 53%);
   --accent: hsl(288, 85%, 60%);
-  --accent-foreground: hsl(0, 0%, 88%);
+  --accent-foreground: hsl(0, 0%, 95%);
 
   background-color: var(--background);
   color: var(--foreground);
@@ -129,7 +129,7 @@ body {
     --foreground: 0 0% 95%;
 
     --card: 220 30% 11%;
-    --card-foreground: 0 0% 88%;
+    --card-foreground: 0 0% 95%;
 
     --popover: 0 0% 100%; /* Kept existing */
     --popover-foreground: 224 71% 4%; /* Kept existing */
@@ -301,6 +301,13 @@ body {
 
   .skip-link:focus {
     top: 0;
+  }
+
+  /* Ensure keyboard focus outlines are visible */
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 
   /* Improved placeholder contrast */

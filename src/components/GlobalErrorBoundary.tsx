@@ -78,13 +78,41 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
 
     try {
       const enqueueSnackbar = getEnqueueSnackbar();
-      let displayMessage = error.message || "An unexpected error occurred.";
-      if (error.message.includes("cannot read properties of null") || error.message.includes("cannot read property")) {
-        displayMessage = "A critical component failed to initialize. This might be due to a configuration issue or network problem. Please try refreshing. If the problem persists, contact support.";
-      } else if (error.message.includes("network error")) {
-        displayMessage = "A network error occurred. Please check your internet connection and try again.";
+      let displayMessage = "An unexpected error occurred. Our team has been notified."; // Default generic message
+
+      // Check if the error object might be from an HTTP request (e.g., Axios error)
+      // Axios errors often have a `response` object with a `status`.
+      const httpStatus = (error as any)?.response?.status;
+
+      if (httpStatus) {
+        if (httpStatus === 404) {
+          displayMessage = "A background request encountered an issue (Not Found). If you see this after a successful action, the action likely completed.";
+        } else if (httpStatus >= 400 && httpStatus < 500) {
+          displayMessage = `A background request failed (Error ${httpStatus}). If you see this after a successful action, the action likely completed.`;
+        } else if (httpStatus >= 500) {
+          displayMessage = `A server error occurred with a background request (Error ${httpStatus}). Our team is looking into it.`;
+        }
+        // For other HTTP statuses, the default generic message might be fine, or add more specific handling.
+      } else if (error.message) {
+        // Use the original error message if it's not an HTTP-like error with a status,
+        // but still keep it relatively generic for the toast.
+        // Specific messages for common client-side issues:
+        if (error.message.includes("cannot read properties of null") || error.message.includes("cannot read property")) {
+          displayMessage = "A critical component encountered an issue. Please try refreshing. If the problem persists, contact support.";
+        } else if (error.message.includes("network error") || error.message.toLowerCase().includes("failed to fetch")) {
+          displayMessage = "A network error occurred. Please check your internet connection and try again.";
+        } else {
+          // For other errors, provide a less alarming generic message.
+          // Avoid showing raw error messages directly in toasts if they might be confusing.
+          displayMessage = "An unexpected issue occurred. This has been logged.";
+        }
       }
-      enqueueSnackbar(displayMessage, { variant: 'error' });
+
+      enqueueSnackbar(displayMessage, {
+        variant: 'error',
+        // Prevent this generic error toast from persisting too long if it's a background issue
+        autoHideDuration: 5000,
+      });
     } catch (e) {
       console.error("Error in enqueueSnackbar:", e);
       // noop if snackbar itself fails

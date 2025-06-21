@@ -32,11 +32,6 @@ export const globalAxiosErrorHandler = (error: any) => {
   const config = error.config || {};
   const axiosRetryState = config['axios-retry']; // Standard property used by axios-retry
 
-  // Check if the request was handled by axios-retry and if it's not the final attempt
-  // attemptNumber is 1-indexed (1 = initial request, 2 = 1st retry, etc.)
-  // retryCount is the number of configured retries (e.g., 3)
-  // We suppress if it's a 404 AND (attemptNumber <= retryCount), meaning more retries are possible or this is the last configured retry.
-  // We show if attemptNumber > retryCount (meaning all configured retries + initial attempt are done)
   const isRetryingAndNotFinalConfiguredRetry = axiosRetryState && axiosRetryState.attemptNumber <= axiosRetryState.retryCount;
 
   const status = error.response?.status;

@@ -17,7 +17,7 @@ const REQUIRED_VARS = {
     required: true,
     validation: (value) => {
       if (!value) return 'Missing Supabase URL';
-      if (isPlaceholder(value)) return 'Supabase URL appears to be a placeholder';
+      if (process.env.NODE_ENV === 'production' && isPlaceholder(value)) return 'Supabase URL appears to be a placeholder';
       if (!value.includes('.supabase.co')) return 'Invalid Supabase URL format';
       return null;
     },
@@ -27,7 +27,7 @@ const REQUIRED_VARS = {
     required: true,
     validation: (value) => {
       if (!value) return 'Missing Supabase anonymous key';
-      if (isPlaceholder(value)) return 'Supabase anon key appears to be a placeholder';
+      if (process.env.NODE_ENV === 'production' && isPlaceholder(value)) return 'Supabase anon key appears to be a placeholder';
       if (value.length < 100) return 'Supabase anon key appears to be invalid (too short)';
       return null;
     },

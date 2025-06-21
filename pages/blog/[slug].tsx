@@ -5,6 +5,9 @@ import { Helmet } from 'react-helmet-async';
 import { NextSeo } from '@/components/NextSeo';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import { AuthorBio } from '@/components/blog/AuthorBio';
+import { SocialShareButtons } from '@/components/blog/SocialShareButtons';
+import { CommentsSection } from '@/components/blog/CommentsSection';
 import type { BlogPost } from '@/types/blog';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import fs from 'fs';
@@ -129,6 +132,9 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
           />
         )}
         <ReactMarkdown>{body}</ReactMarkdown>
+        <AuthorBio author={post.author} />
+        <SocialShareButtons title={post.title} />
+        <CommentsSection slug={post.slug} />
       </main>
     </>
   );

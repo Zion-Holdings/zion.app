@@ -36,6 +36,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
             src={images[selected]}
             alt={`Product image ${selected + 1}`}
             className="w-full h-full object-contain bg-zion-blue-light/10 p-4"
+            loading="lazy"
           />
         </div>
         {images.length > 1 && (
@@ -50,6 +51,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
                   src={img}
                   alt={`Thumbnail image ${idx + 1}`}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -66,6 +68,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
                   src={poster}
                   alt="Video preview"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               }
             >
@@ -84,6 +87,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
                   src={poster}
                   alt="3D model preview"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               }
             >

@@ -51,7 +51,12 @@ export function ApplyForm({ job, onClose, onApplySuccess }: ApplyFormProps) {
       const applicationSuccess = await applyToJob(
         job.id,
         message,
-        selectedResumeId || undefined
+        selectedResume && selectedResume.type === 'ai_resume'
+          ? selectedResumeId || undefined
+          : undefined,
+        selectedResume && selectedResume.type === 'custom_upload'
+          ? selectedResume.file
+          : undefined
       );
       
       if (!applicationSuccess) {

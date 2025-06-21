@@ -23,6 +23,7 @@ export function AvatarUpload({ value, onChange }: Props) {
           src={url}
           alt="Avatar preview"
           className="h-20 w-20 rounded-full"
+          loading="lazy"
         />
       )}
       {process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME &&

@@ -5,7 +5,12 @@
   "category": "Automation",
   "tags": ["AI", "Customer Support"],
   "featuredImage": "https://images.unsplash.com/photo-1581091012184-7b3403d00985?auto=format&fit=crop&w=1200&h=630",
-  "author": {"name": "Editorial Team", "title": "Staff Writer", "avatarUrl": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=64&h=64"},
+  "author": {
+    "name": "Editorial Team",
+    "title": "Staff Writer",
+    "avatarUrl": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=64&h=64",
+    "bio": "The Zion editorial team covers the latest in AI and technology, helping our community stay informed."
+  },
   "publishedDate": "Jul 1, 2024",
   "readTime": "5 min read",
   "isFeatured": true

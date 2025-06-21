@@ -1,9 +1,10 @@
 const express = require('express');
 const Item = require('../models/Item');
+const cache = require('../utils/cache');
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', cache, async (req, res) => {
   try {
     const { category } = req.query;
     const query = category ? { category } : {};

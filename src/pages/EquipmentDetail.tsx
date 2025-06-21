@@ -133,10 +133,11 @@ export default function EquipmentDetail() {
               <div className="bg-zion-blue-dark rounded-lg overflow-hidden border border-zion-blue-light">
                 {/* Main Image */}
                 <div className="aspect-video w-full relative">
-                  <img 
-                    src={equipment.images[selectedImageIndex]} 
-                    alt={equipment.name} 
+                  <img
+                    src={equipment.images[selectedImageIndex]}
+                    alt={equipment.name}
                     className="w-full h-full object-contain bg-zion-blue-light/10 p-4"
+                    loading="lazy"
                   />
                 </div>
                 
@@ -151,10 +152,11 @@ export default function EquipmentDetail() {
                           index === selectedImageIndex ? "border-zion-purple" : "border-transparent"
                         }`}
                       >
-                        <img 
-                          src={image} 
-                          alt={`${equipment.name} - image ${index + 1}`} 
+                        <img
+                          src={image}
+                          alt={`${equipment.name} - image ${index + 1}`}
                           className="w-full h-full object-cover"
+                          loading="lazy"
                         />
                       </div>
                     ))}
@@ -285,10 +287,11 @@ export default function EquipmentDetail() {
                 <div className="mb-6">
                   <label className="text-sm text-zion-slate-light block mb-2">Quantity</label>
                   <div className="flex items-center border border-zion-blue-light rounded-md w-32">
-                    <button 
-                      className="px-3 py-1 text-zion-slate-light hover:text-white disabled:opacity-50"
+                    <button
+                      className="px-3 py-1 text-zion-slate-light hover:text-white disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
                       disabled={quantity <= 1 || !equipment.inStock}
+                      aria-label="Decrease quantity"
                     >
                       -
                     </button>
@@ -298,10 +301,11 @@ export default function EquipmentDetail() {
                       value={quantity}
                       readOnly
                     />
-                    <button 
-                      className="px-3 py-1 text-zion-slate-light hover:text-white disabled:opacity-50"
+                    <button
+                      className="px-3 py-1 text-zion-slate-light hover:text-white disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       onClick={() => setQuantity(prev => prev + 1)}
                       disabled={!equipment.inStock}
+                      aria-label="Increase quantity"
                     >
                       +
                     </button>

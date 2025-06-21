@@ -1,6 +1,7 @@
 import { PrismaClient, type Product as ProductModel } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
+import { connectWithTimeout } from '@/utils/prismaConnect';
 
 const prisma = new PrismaClient();
 
@@ -21,6 +22,13 @@ async function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
+  if (!process.env.DATABASE_URL) {
+    console.error('DATABASE_URL is not set or empty.');
+    return res
+      .status(503)
+      .json({ error: 'Service Unavailable: Database configuration is missing.' });
+  }
+
   const { productId } = req.query;
 
   if (!productId || typeof productId !== 'string') {
@@ -30,6 +38,8 @@ async function handler(
   res.setHeader('Access-Control-Allow-Origin', '*'); // CORS header
 
   try {
+    await connectWithTimeout(prisma);
+
     const product = await prisma.product.findUnique({
       where: { id: productId },
     });
@@ -55,8 +65,11 @@ async function handler(
     return res.status(200).json(result);
   } catch (e) {
     console.error(`Error fetching product ${productId}:`, e);
-    // More specific error checking can be done here (e.g., Prisma known errors)
-    return res.status(500).json({ error: 'Internal server error while fetching product details.' });
+    const message =
+      e instanceof Error && e.message.includes('timed out')
+        ? 'Service Unavailable: Database connection failed.'
+        : 'Internal server error while fetching product details.';
+    return res.status(500).json({ error: message });
   } finally {
     await prisma.$disconnect();
   }

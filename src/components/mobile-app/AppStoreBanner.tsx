@@ -43,7 +43,11 @@ export const AppStoreBanner: React.FC = () => {
           >
             View
           </a>
-          <button onClick={dismissBanner} className="text-gray-400">
+          <button
+            onClick={dismissBanner}
+            className="text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+            aria-label="Dismiss banner"
+          >
             <X className="h-5 w-5" />
           </button>
         </div>

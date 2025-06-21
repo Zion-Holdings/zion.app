@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { RefreshCw, Wifi, Server, ShoppingCart, Users, Wrench, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 export interface EmptyStateProps {
   type: 'products' | 'categories' | 'talent' | 'equipment' | 'search' | 'error' | 'network' | 'loading';
@@ -56,13 +58,14 @@ const defaultContent = {
   },
 };
 
-export function EmptyState({ 
-  type, 
-  title, 
-  description, 
-  action, 
-  icon 
+export function EmptyState({
+  type,
+  title,
+  description,
+  action,
+  icon
 }: EmptyStateProps) {
+  const { t } = useTranslation();
   const content = defaultContent[type];
   const displayTitle = title || content.title;
   const displayDescription = description || content.description;
@@ -101,7 +104,14 @@ export function EmptyState({
       
       {type === 'network' && (
         <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-          <p>You can try refreshing the page or check our status page for updates.</p>
+          <p>
+            {t('general.check_status_page')}
+            {" "}
+            <Link href="https://status.zion.ai" className="underline">
+              {t('general.status_page')}
+            </Link>
+            .
+          </p>
         </div>
       )}
     </div>

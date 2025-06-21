@@ -138,14 +138,16 @@ export const ScreenshotManager: React.FC<ScreenshotManagerProps> = ({ platform }
         <div className="grid grid-cols-2 gap-3">
           {screenshots.map((screenshot) => (
             <div key={screenshot.id} className="relative group">
-              <img 
+              <img
                 src={screenshot.url}
                 alt="App screenshot"
                 className="w-full h-auto rounded border border-zion-purple/20"
+                loading="lazy"
               />
               <button
                 onClick={() => removeScreenshot(screenshot.id)}
-                className="absolute top-1 right-1 bg-red-500/80 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute top-1 right-1 bg-red-500/80 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                aria-label="Remove screenshot"
               >
                 <Trash2 className="h-3 w-3" />
               </button>
