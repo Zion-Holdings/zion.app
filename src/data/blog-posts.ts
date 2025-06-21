@@ -12,7 +12,8 @@ export const BLOG_POSTS: BlogPost[] = [
     "author": {
       "name": "Editorial Team",
       "title": "Staff Writer",
-      "avatarUrl": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=64&h=64"
+      "avatarUrl": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=64&h=64",
+      "bio": "The Zion editorial team covers the latest in AI and technology, helping our community stay informed."
     },
     "publishedDate": "Jul 1, 2024",
     "readTime": "5 min read",
