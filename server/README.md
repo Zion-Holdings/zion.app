@@ -65,6 +65,17 @@ Based on `server/app.js`:
 
 -   **TODO:** Add instructions on how to run tests specific to this Express.js server. This might involve Jest, Mocha, Chai, Supertest, or other Node.js testing frameworks. Check for test files or scripts.
 
+### Stub Server
+
+For API contract testing a lightweight stub server is provided in `stubServer.js`.
+It exposes a `/hello` endpoint that simply returns `{ "message": "Hello world" }`.
+Start it with:
+
+```bash
+node server/stubServer.js
+```
+
+
 ## API Documentation
 
 -   **TODO:** Document the API endpoints provided by this server in more detail. Consider integrating tools like `swagger-jsdoc` and `swagger-ui-express` to generate and serve OpenAPI documentation.

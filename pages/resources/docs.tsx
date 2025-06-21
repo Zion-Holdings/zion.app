@@ -54,7 +54,7 @@ export default function ResourcesDocsPage() {
             <p className="text-zion-slate-light mb-4">
               Complete API documentation with examples and best practices.
             </p>
-            <a href="/docs/api" className="text-blue-400 hover:text-blue-300">
+            <a href="/docs/api-reference" className="text-blue-400 hover:text-blue-300">
               Read more →
             </a>
           </div>

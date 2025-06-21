@@ -444,11 +444,16 @@ export const generateSearchSuggestions = (): SearchSuggestion[] => {
     "High performance storage"
   ];
   
-  const staticSuggestions = suggestions.map(text => ({ text, type: 'product' as const }));
+  const staticSuggestions = suggestions.map(text => ({
+    text,
+    slug: slugify(text),
+    type: 'product' as const,
+  }));
 
   const listingSuggestions = MARKETPLACE_LISTINGS.map(l => ({
     id: l.id,
     text: l.title,
+    slug: slugify(l.title),
     type: 'product' as const,
   }));
   const blogSuggestions = BLOG_POSTS.map(p => ({ text: p.title, type: 'blog' as const }));

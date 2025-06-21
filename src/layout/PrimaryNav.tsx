@@ -10,6 +10,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { useMessaging } from '@/context/MessagingContext';
 import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput';
 import { generateSearchSuggestions } from '@/data/marketplaceData';
+import { slugify } from '@/lib/slugify';
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
@@ -45,7 +46,7 @@ export function PrimaryNav() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      router.push(`/search?q=${encodeURIComponent(query)}`);
+      router.push(`/search/${slugify(query)}`);
       setQuery('');
     }
   };
@@ -72,7 +73,8 @@ export function PrimaryNav() {
                   if (sugg.id) {
                     router.push(`/marketplace/listing/${sugg.id}`);
                   } else {
-                    router.push(`/search?q=${encodeURIComponent(sugg.text)}`);
+                    const slug = sugg.slug || slugify(sugg.text);
+                    router.push(`/search/${slug}`);
                   }
                   setQuery('');
                 }}

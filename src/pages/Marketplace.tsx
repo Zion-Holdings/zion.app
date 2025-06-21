@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
 import { useApiErrorHandling } from '@/hooks/useApiErrorHandling';
 import ProductCard from '@/components/ProductCard';
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp, Filter, SortAsc, Sparkles, TrendingUp, Star } from 'lucide-react';
 import { SkeletonCard } from '@/components/ui/skeleton';
@@ -12,8 +11,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ProductListing } from '@/types/listings';
-import { fetchMarketplaceData } from '@/utils/fetchMarketplaceData';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
+import { useToast } from '@/hooks/use-toast';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 
 /**
@@ -126,6 +125,8 @@ const FilterControls: React.FC<{
  */
 export default function Marketplace({ products: _initialProducts = [] }: MarketplaceProps) {
   const router = useRouter();
+  const { toast } = useToast();
+  const firstRenderRef = useRef(true);
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
@@ -133,57 +134,51 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
 
   // Fetch function for infinite scroll with AI product generation
   const fetchProducts = useCallback(async (page: number, limit: number) => {
-    // Add realistic loading delay
-    await new Promise(resolve => setTimeout(resolve, 200));
+    await new Promise((resolve) => setTimeout(resolve, 200));
 
-    let allProducts: ProductListing[] = [];
-    
-    // Start with existing marketplace listings
-    if (page === 1) {
-      allProducts = [...MARKETPLACE_LISTINGS];
-    }
-    
-    // Apply filters
-    let filteredProducts = allProducts;
-    
-    if (filterCategory) {
-      filteredProducts = filteredProducts.filter(p => p.category === filterCategory);
-    }
-    
-    if (showRecommended) {
-      filteredProducts = filteredProducts.filter(p => p.rating != null && p.rating >= 4.3);
-    }
-    
-    // Apply sorting
-    filteredProducts.sort((a, b) => {
-      switch (sortBy) {
-        case 'price-low':
-          return (a.price || 0) - (b.price || 0);
-        case 'price-high':
-          return (b.price || 0) - (a.price || 0);
-        case 'rating':
-          return (b.rating || 0) - (a.rating || 0);
-        case 'popular':
-          return (b.reviewCount || 0) - (a.reviewCount || 0);
-        case 'ai-score':
-          return (b.aiScore || 0) - (a.aiScore || 0);
-        case 'newest':
-        default:
-          return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    const params = new URLSearchParams({ page: String(page), limit: String(limit) });
+    if (filterCategory) params.append('category', filterCategory);
+
+    try {
+      const res = await fetch(`/api/products?${params.toString()}`);
+      if (!res.ok) {
+        throw new Error(`${res.status}`);
       }
-    });
-    
-    // Paginate results
-    const startIndex = (page - 1) * limit;
-    const endIndex = startIndex + limit;
-    const items = filteredProducts.slice(startIndex, endIndex);
-    
-    return {
-      items,
-      hasMore: endIndex < filteredProducts.length || page < 15, // Allow up to 15 pages
-      total: filteredProducts.length
-    };
-  }, [sortBy, filterCategory, showRecommended]);
+
+      let items: ProductListing[] = await res.json();
+
+      if (showRecommended) {
+        items = items.filter((p) => p.rating != null && p.rating >= 4.3);
+      }
+
+      items.sort((a, b) => {
+        switch (sortBy) {
+          case 'price-low':
+            return (a.price || 0) - (b.price || 0);
+          case 'price-high':
+            return (b.price || 0) - (a.price || 0);
+          case 'rating':
+            return (b.rating || 0) - (a.rating || 0);
+          case 'popular':
+            return (b.reviewCount || 0) - (a.reviewCount || 0);
+          case 'ai-score':
+            return (b.aiScore || 0) - (a.aiScore || 0);
+          case 'newest':
+          default:
+            return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+        }
+      });
+
+      return {
+        items,
+        hasMore: items.length === limit,
+        total: undefined
+      };
+    } catch (err: any) {
+      handleApiError(err);
+      throw err;
+    }
+  }, [filterCategory, sortBy, showRecommended, handleApiError]);
 
   // Use infinite scroll hook
   const {
@@ -198,6 +193,16 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     scrollToTop
   } = useInfiniteScrollPagination(fetchProducts, 16);
 
+  useEffect(() => {
+    if (firstRenderRef.current) {
+      firstRenderRef.current = false;
+      return;
+    }
+    refresh();
+    scrollToTop();
+    toast({ title: showRecommended ? 'Showing recommended products' : 'Showing all products' });
+  }, [showRecommended, refresh, scrollToTop, toast]);
+
   // Calculate market stats
   const marketStats = useMemo(() => {
     if (products.length === 0) return null;
@@ -211,8 +216,8 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
 
   // Get unique categories
   const categories = useMemo(() => {
-    return Array.from(new Set(products.map(p => p.category)));
-  }, [products]);
+    return Array.from(new Set(MARKETPLACE_LISTINGS.map((p) => p.category)));
+  }, []);
 
   // Show scroll to top button
   const [showScrollTop, setShowScrollTop] = useState(false);
