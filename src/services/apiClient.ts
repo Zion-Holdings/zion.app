@@ -24,14 +24,66 @@ function mapStatusMessage(status?: number, fallback = ''): string {
 
 axios.interceptors.response.use(
   (response) => response,
-  (error) => {
+  // Exported for testing purposes
+  export const globalAxiosErrorHandler = (error: any) => {
     const contentType = error.response?.headers?.['content-type'];
     if (contentType?.includes('text/html')) {
       showError('html-error', 'Server returned HTML instead of JSON');
     }
-    showApiError(error);
+
+    const config = error.config || {};
+    const axiosRetryState = config['axios-retry']; // Standard property used by axios-retry
+
+    // Check if the request was handled by axios-retry and if it's not the final attempt
+    // attemptNumber is 1-indexed (1 = initial request, 2 = 1st retry, etc.)
+    // retryCount is the number of configured retries (e.g., 3)
+    // We suppress if it's a 404 AND (attemptNumber <= retryCount), meaning more retries are possible or this is the last configured retry.
+    // We show if attemptNumber > retryCount (meaning all configured retries + initial attempt are done)
+    const isRetryingAndNotFinalConfiguredRetry = axiosRetryState && axiosRetryState.attemptNumber <= axiosRetryState.retryCount;
+
+    const status = error.response?.status;
+    if (status === 404 && isRetryingAndNotFinalConfiguredRetry) {
+      // Suppress 404 toast if retries are pending / this isn't past the configured retries
+    } else {
+      showApiError(error);
+    }
+
     return Promise.reject(error);
   }
+// This line replaces the previous anonymous function directly in the use() call.
+// No, the previous change was to name the function and then use it.
+// The original structure was: axios.interceptors.response.use(onFulfilled, onRejected)
+// The new structure is: export const globalAxiosErrorHandler = onRejected; axios.interceptors.response.use(onFulfilled, globalAxiosErrorHandler);
+// So the duplicate call was indeed an error. The `export const globalAxiosErrorHandler = ...` defines the function,
+// then it's passed to `.use()`.
+
+// Corrected logic:
+// Define the handler
+export const globalAxiosErrorHandler = (error: any) => {
+  const contentType = error.response?.headers?.['content-type'];
+  if (contentType?.includes('text/html')) {
+    showError('html-error', 'Server returned HTML instead of JSON');
+  }
+
+  const config = error.config || {};
+  const axiosRetryState = config['axios-retry'];
+
+  const isRetryingAndNotFinalConfiguredRetry = axiosRetryState && axiosRetryState.attemptNumber <= axiosRetryState.retryCount;
+
+  const status = error.response?.status;
+  if (status === 404 && isRetryingAndNotFinalConfiguredRetry) {
+    // Suppress
+  } else {
+    showApiError(error);
+  }
+
+  return Promise.reject(error);
+};
+
+// Use the handler
+axios.interceptors.response.use(
+  (response) => response,
+  globalAxiosErrorHandler
 );
 
 const API_BASE = axios.defaults.baseURL;
