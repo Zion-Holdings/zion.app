@@ -2,6 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { CATEGORIES } from '@/data/categories';
+// import { withCache, cacheKeys, cacheCategory } from '@/lib/serverCache';
 
 const prisma = new PrismaClient();
 
@@ -30,10 +31,13 @@ async function handler(
     // Otherwise, if no categories are found in DB and CATEGORIES is not empty,
     // it implies a preference for DB data first, then static as a fallback if DB is empty.
     if (categories.length > 0) {
+      // Set cache headers for client-side caching
+      res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=3600');
       return res.status(200).json(categories);
     }
     // If CATEGORIES is meant to be a fallback for an empty DB table (not an error)
     if (CATEGORIES.length > 0) {
+      res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=3600');
       return res.status(200).json(CATEGORIES);
     }
     // If both DB and fallback are empty

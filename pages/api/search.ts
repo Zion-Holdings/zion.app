@@ -6,6 +6,7 @@ import { SERVICES } from '@/data/servicesData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
+// import { withCache, cacheKeys, cacheCategory } from '@/lib/serverCache';
 import Fuse from 'fuse.js';
 
 // Define SearchResult interface (assuming it's not already globally defined or imported elsewhere)
@@ -129,13 +130,19 @@ async function handler(
     const end = start + limit;
     const paginatedResults = results.slice(start, end).map((r) => r.item);
 
-    return res.status(200).json({
+    const searchResponse = {
       results: paginatedResults,
       totalCount,
       page,
       limit,
       query: q,
-    });
+    };
+
+    // Set cache headers for client-side caching
+    res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
+    res.setHeader('X-Search-Results', searchResponse.totalCount.toString());
+
+    return res.status(200).json(searchResponse);
   } catch (error: any) {
     console.error('Search query failed:', error);
     return res.status(500).json({ error: 'Search query failed' });

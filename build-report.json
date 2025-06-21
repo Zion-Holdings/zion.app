@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-06-21T21:28:56.268Z",
+  "build": {
+    "successful": false,
+    "buildTime": "unknown",
+    "totalPages": 152
+  },
+  "bundle": {
+    "totalSize": "5.57 MB",
+    "chunks": 47,
+    "largestChunk": "vendors-afbf79cc2c32c030.js"
+  },
+  "recommendations": [
+    "Consider bundle optimization",
+    "Review large dependencies",
+    "Implement code splitting"
+  ],
+  "nextSteps": [
+    "Monitor bundle growth over time",
+    "Set up automated performance testing",
+    "Configure CDN for static assets",
+    "Enable compression in production"
+  ]
+}
