@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
+import { useForm, type ControllerRenderProps } from 'react-hook-form';
 import { z } from 'zod';
 import {
   Dialog,
@@ -61,7 +61,7 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
             <FormField
               control={form.control}
               name="email"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'email'> }) => (
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
@@ -79,7 +79,7 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
             <FormField
               control={form.control}
               name="address"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'address'> }) => (
                 <FormItem>
                   <FormLabel>Shipping Address</FormLabel>
                   <FormControl>
