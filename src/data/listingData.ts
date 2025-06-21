@@ -1,6 +1,7 @@
 
 import { ProductListing } from "@/types/listings";
 import { SearchSuggestion } from "@/types/search";
+import { slugify } from "@/lib/slugify";
 
 // Shared data source for marketplace listings
 export const MARKETPLACE_LISTINGS: ProductListing[] = [
@@ -270,6 +271,7 @@ export const generateSearchSuggestions = (): SearchSuggestion[] => {
   
   return suggestions.map(text => ({
     text,
+    slug: slugify(text),
     type: 'product' // Use a valid type from the SearchSuggestion interface
   }));
 };
