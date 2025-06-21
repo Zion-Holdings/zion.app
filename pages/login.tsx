@@ -1,10 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import * as Sentry from '@sentry/nextjs';
+import { signIn } from 'next-auth/react';
 import { toast } from '@/hooks/use-toast';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { isSupabaseConfigured } from '@/integrations/supabase/client';
+
+// Placeholder for social login icons - in a real scenario, you'd use SVGs or an icon library
+const GoogleIcon = () => <span className="mr-2"> G </span>;
+const MicrosoftIcon = () => <span className="mr-2"> M </span>;
+const GitHubIcon = () => <span className="mr-2"> GH </span>;
+
 
 export default function Login() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -249,8 +256,43 @@ export default function Login() {
             {isSubmitting || isLoading ? 'Logging in…' : 'Login'}
           </button>
         </form>
+
+        <div className="my-6 flex items-center">
+          <div className="flex-grow border-t border-border"></div>
+          <span className="mx-4 flex-shrink text-sm text-muted-foreground">
+            Or continue with
+          </span>
+          <div className="flex-grow border-t border-border"></div>
+        </div>
+
+        <div className="space-y-3">
+          <button
+            type="button"
+            onClick={() => signIn('google', { callbackUrl: router.query.next ? decodeURIComponent(router.query.next as string) : '/dashboard' })}
+            className="inline-flex w-full items-center justify-center rounded border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+          >
+            <GoogleIcon />
+            Sign in with Google
+          </button>
+          <button
+            type="button"
+            onClick={() => signIn('github', { callbackUrl: router.query.next ? decodeURIComponent(router.query.next as string) : '/dashboard' })}
+            className="inline-flex w-full items-center justify-center rounded border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+          >
+            <GitHubIcon />
+            Sign in with GitHub
+          </button>
+          <button
+            type="button"
+            onClick={() => signIn('microsoft', { callbackUrl: router.query.next ? decodeURIComponent(router.query.next as string) : '/dashboard' })}
+            className="inline-flex w-full items-center justify-center rounded border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+          >
+            <MicrosoftIcon />
+            Sign in with Microsoft
+          </button>
+        </div>
         
-        <div className="mt-4 text-center text-sm space-y-2">
+        <div className="mt-6 text-center text-sm space-y-2">
           <a href="/forgot-password" className="text-primary hover:underline">
             Forgot your password?
           </a>
