@@ -13,6 +13,7 @@ import ReactMarkdown from 'react-markdown';
 // Importing the sample blog posts - in a real app, you would fetch this from an API
 import { BLOG_POSTS } from "@/data/blog-posts";
 import { useSkeletonTimeout } from '@/hooks/useSkeletonTimeout';
+import { fetchWithRetry } from '@/utils/fetchWithRetry';
 
 export default function BlogPost() {
   const router = useRouter();
@@ -29,20 +30,17 @@ export default function BlogPost() {
       setIsLoading(true);
       setError(null);
       try {
-        const res = await fetch(`/api/blog/${slug}`);
-        if (res.ok) {
-          const data = await res.json();
-          setPost(data);
-          const related = BLOG_POSTS.filter(
-            (p) =>
-              p.id !== data.id &&
-              (p.category === data.category ||
-                p.tags.some((tag) => data.tags.includes(tag)))
-          ).slice(0, 3);
-          setRelatedPosts(related);
-          setIsLoading(false);
-          return;
-        }
+        const data = await fetchWithRetry(`/api/blog/${slug}`);
+        setPost(data);
+        const related = BLOG_POSTS.filter(
+          (p) =>
+            p.id !== data.id &&
+            (p.category === data.category ||
+              p.tags.some((tag) => data.tags.includes(tag)))
+        ).slice(0, 3);
+        setRelatedPosts(related);
+        setIsLoading(false);
+        return;
       } catch (err) {
         console.error('Failed to fetch blog post', err);
         setError('Failed to load article');

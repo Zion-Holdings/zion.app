@@ -12,10 +12,6 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async () => {
     //   level: 'info',
     // });
 
-    // Simulate a potential error during data fetching or processing, even for static data
-    if (Math.random() > 0.8) { // ~20% chance of error for testing
-      throw new Error("Simulated SSR error in BlogPage getServerSideProps");
-    }
 
     return { props: { posts: BLOG_POSTS } };
   } catch (error) {
