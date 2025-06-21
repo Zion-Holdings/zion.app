@@ -5,6 +5,7 @@ import { SERVICES } from '@/data/servicesData';
 import * as Sentry from '@sentry/nextjs';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
@@ -55,8 +56,8 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
       <main className="max-w-3xl mx-auto py-8 px-4">
         <h1 className="text-2xl font-bold mb-4">{listing.title}</h1>
         {listing.images?.length ? (
-          <div className="mb-4">
-            <img src={listing.images[0]} alt={listing.title} className="rounded-md w-full object-cover" />
+          <div className="mb-4 relative h-64">
+            <Image src={listing.images[0]} alt={listing.title} fill className="object-cover rounded-md" loading="lazy" />
           </div>
         ) : null}
         <div className="font-bold mb-2">

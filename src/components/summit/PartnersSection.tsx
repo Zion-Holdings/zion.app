@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const partners = [
   { name: 'Partner A', logo: 'https://placehold.co/150x80' },
   { name: 'Partner B', logo: 'https://placehold.co/150x80' },
@@ -10,7 +12,15 @@ export function PartnersSection() {
         <h2 className="text-3xl font-bold mb-8 text-center">Partners</h2>
         <div className="flex flex-wrap items-center justify-center gap-6">
           {partners.map((p) => (
-            <img key={p.name} src={p.logo} alt={p.name} className="h-16" />
+            <Image
+              key={p.name}
+              src={p.logo}
+              alt={p.name}
+              width={150}
+              height={80}
+              className="h-16 w-auto"
+              loading="lazy"
+            />
           ))}
         </div>
         <div className="text-center mt-8">

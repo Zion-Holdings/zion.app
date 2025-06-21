@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Server, Clock, MapPin } from "lucide-react";
+import Image from "next/image";
 
 interface ServiceDetailsProps {
   country: string;
@@ -77,11 +78,13 @@ export function ServiceDetails({ country }: ServiceDetailsProps) {
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="overflow-hidden rounded-lg mb-4">
-          <img 
+        <div className="overflow-hidden rounded-lg mb-4 relative h-48">
+          <Image
             src={getRegionalImage(country)}
             alt={`Datacenter in ${country}`}
-            className="w-full object-cover h-48 transform transition-transform duration-500 hover:scale-110"
+            fill
+            className="object-cover transform transition-transform duration-500 hover:scale-110"
+            loading="lazy"
           />
         </div>
         
