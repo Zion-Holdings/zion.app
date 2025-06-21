@@ -56,6 +56,7 @@ export const ServiceLandingTemplate: React.FC<ServiceLandingTemplateProps> = ({
                 fill
                 className="object-cover rounded-lg"
                 loading="lazy"
+                quality={60}
               />
             </div>
           )}

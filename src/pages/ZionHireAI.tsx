@@ -65,6 +65,7 @@ export default function ZionHireAI() {
                   src="https://placehold.co/600x400/192134/9b87f5?text=Zion+Hire+AI"
                   alt="Zion Hire AI Dashboard"
                   className="relative z-10 rounded-lg shadow-xl"
+                  loading="lazy"
                 />
               </div>
             </div>

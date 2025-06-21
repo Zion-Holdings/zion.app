@@ -67,7 +67,7 @@ function TalentDashboardContent() {
                   <div className="flex items-center gap-3">
                     <Avatar className="h-12 w-12 border">
                       {user?.avatarUrl ? (
-                        <img src={user.avatarUrl} alt={user.displayName || "User"} />
+                        <img src={user.avatarUrl} alt={user.displayName || "User"} loading="lazy" />
                       ) : (
                         <div className="flex h-full w-full items-center justify-center bg-muted text-lg font-medium uppercase">
                           {user?.displayName?.charAt(0) || "U"}

@@ -485,6 +485,7 @@ function ProjectDetailsContent() {
                                     <img
                                       src={note.created_by_profile.avatar_url}
                                       alt={note.created_by_profile.display_name}
+                                      loading="lazy"
                                     />
                                   ) : (
                                     <User className="h-4 w-4" />
@@ -550,6 +551,7 @@ function ProjectDetailsContent() {
                         <img
                           src={project.talent_profile.profile_picture_url}
                           alt={project.talent_profile.full_name}
+                          loading="lazy"
                         />
                       ) : (
                         <User className="h-6 w-6" />
@@ -581,6 +583,7 @@ function ProjectDetailsContent() {
                         <img
                           src={project.talent_profile.profile_picture_url}
                           alt={project.talent_profile.full_name}
+                          loading="lazy"
                         />
                       ) : (
                         <User className="h-6 w-6" />

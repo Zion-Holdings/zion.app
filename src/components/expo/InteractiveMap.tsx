@@ -13,6 +13,7 @@ export function InteractiveMap() {
             src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.png"
             alt="World map"
             className="w-full h-auto"
+            loading="lazy"
           />
           {locations.map((loc) => (
             <a

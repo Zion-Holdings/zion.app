@@ -9,6 +9,7 @@ import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Spinner from '@/components/ui/spinner';
 import { SERVICES } from '@/data/servicesData';
 
 // Initial services from existing data
@@ -44,10 +45,18 @@ const ServicesMarketInsights = ({ stats }: { stats: any }) => (
 );
 
 // Filter controls
-const ServiceFilterControls = ({ 
-  sortBy, setSortBy, filterCategory, setFilterCategory, categories, showRecommended, setShowRecommended 
+const ServiceFilterControls = ({
+  sortBy,
+  setSortBy,
+  filterCategory,
+  setFilterCategory,
+  categories,
+  showRecommended,
+  setShowRecommended,
+  loading
 }: any) => (
-  <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg">
+  <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">
+    {loading && <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />}
     <div className="flex items-center gap-2">
       <Filter className="h-4 w-4 text-muted-foreground" />
       <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)} className="bg-background border border-border px-3 py-2 rounded">
@@ -253,8 +262,14 @@ export default function ServicesPage() {
 
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
         <ServiceFilterControls
-          sortBy={sortBy} setSortBy={setSortBy} filterCategory={filterCategory} setFilterCategory={setFilterCategory}
-          categories={categories} showRecommended={showRecommended} setShowRecommended={setShowRecommended}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          filterCategory={filterCategory}
+          setFilterCategory={setFilterCategory}
+          categories={categories}
+          showRecommended={showRecommended}
+          setShowRecommended={setShowRecommended}
+          loading={isFetching}
         />
       </motion.div>
 
