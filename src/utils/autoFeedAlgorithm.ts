@@ -192,7 +192,7 @@ export function generateAIProducts(count: number, startId: number = 1): ProductL
     // Select category based on popularity weights
     const randomValue = Math.random();
     let cumulativeWeight = 0;
-    let selectedCategory = AI_IT_CATEGORIES[0];
+    let selectedCategory: typeof AI_IT_CATEGORIES[number] = AI_IT_CATEGORIES[0];
     
     for (const category of AI_IT_CATEGORIES) {
       cumulativeWeight += category.popularity / AI_IT_CATEGORIES.reduce((sum, cat) => sum + cat.popularity, 0);
