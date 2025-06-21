@@ -92,7 +92,9 @@ export default function ProtectedAccount(props: AccountProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<AccountProps> = async ({ req }) => {
+import { NextApiRequest } from 'next';
+
+export const getServerSideProps: GetServerSideProps<AccountProps> = async ({ req }: { req: NextApiRequest }) => {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
   const [userRes, ordersRes] = await Promise.all([
