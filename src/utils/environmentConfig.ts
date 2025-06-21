@@ -18,6 +18,10 @@ interface EnvironmentConfig {
     projectId: string;
     isConfigured: boolean;
   };
+  authService: {
+    url: string;
+    isConfigured: boolean;
+  };
   app: {
     environment: string;
     isDevelopment: boolean;
@@ -37,6 +41,7 @@ const EnvSchema = z.object({
   NEXT_PUBLIC_SENTRY_RELEASE: z.string().optional(),
   SENTRY_RELEASE: z.string().optional(),
   NEXT_PUBLIC_REOWN_PROJECT_ID: z.string().optional(),
+  INTERNAL_AUTH_SERVICE_URL: z.string().optional(),
 });
 
 type RawEnv = z.infer<typeof EnvSchema>;
@@ -135,6 +140,9 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const reownProjectId = env.NEXT_PUBLIC_REOWN_PROJECT_ID;
   const reownConfigured = !isPlaceholderValue(reownProjectId);
 
+  const authServiceUrl = env.INTERNAL_AUTH_SERVICE_URL;
+  const authServiceConfigured = !isPlaceholderValue(authServiceUrl);
+
   return {
     supabase: {
       url: supabaseConfigured ? supabaseUrl! : 'https://placeholder.supabase.co',
@@ -151,6 +159,10 @@ export function getEnvironmentConfig(): EnvironmentConfig {
     reown: {
       projectId: reownConfigured ? reownProjectId! : 'placeholder-project-id',
       isConfigured: reownConfigured
+    },
+    authService: {
+      url: authServiceConfigured ? authServiceUrl! : '',
+      isConfigured: authServiceConfigured
     },
     app: {
       environment: nodeEnv,
@@ -181,6 +193,10 @@ export function validateProductionEnvironment(): void {
     if (!config.reown.isConfigured) {
       warnings.push('Reown wallet is not configured - wallet features disabled');
     }
+
+    if (!config.authService.isConfigured) {
+      warnings.push('Internal auth service URL is not configured - signup disabled');
+    }
     
     if (warnings.length > 0) {
       console.warn('⚠️ Development Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
@@ -195,9 +211,13 @@ export function validateProductionEnvironment(): void {
   if (!config.supabase.isConfigured) {
     errors.push('NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY must be configured in production');
   }
-  
+
   if (!config.sentry.isConfigured) {
     errors.push('NEXT_PUBLIC_SENTRY_DSN must be configured in production for error monitoring');
+  }
+
+  if (!config.authService.isConfigured) {
+    errors.push('INTERNAL_AUTH_SERVICE_URL must be configured in production for user signup');
   }
   
   if (errors.length > 0) {
