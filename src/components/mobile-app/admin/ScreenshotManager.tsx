@@ -108,7 +108,7 @@ export const ScreenshotManager: React.FC<ScreenshotManagerProps> = ({ platform }
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
         >
-          <Upload className="mx-auto h-8 w-8 text-gray-400 mb-2" />
+          <Upload className="mx-auto h-8 w-8 text-gray-300 mb-2" />
           <p className="text-sm mb-2">Drag & drop screenshots here</p>
           <input
             ref={fileInputRef}
@@ -128,7 +128,7 @@ export const ScreenshotManager: React.FC<ScreenshotManagerProps> = ({ platform }
           </Button>
         </div>
         
-        <div className="text-xs text-gray-400 mb-4">
+        <div className="text-xs text-gray-300 mb-4">
           {platform === "ios" 
             ? "Recommended size: 1290x2796 pixels for iPhone. Max 10 screenshots."
             : "Vary by device. Include phone and tablet screenshots. Max 8 per device type."
