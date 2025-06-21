@@ -57,6 +57,7 @@ INTERNAL_AUTH_SERVICE_URL=https://your-auth-service-url.com
 # Optional but Recommended
 NEXT_PUBLIC_SENTRY_DSN=your_sentry_dsn
 NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id
+NEXT_PUBLIC_DEVTOOLS=false # set to true in staging to allow React DevTools
 ```
 
 For **local development**, create a `.env.local` file with the same variables.
