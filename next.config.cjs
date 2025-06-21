@@ -1,4 +1,5 @@
 const { withSentryConfig } = require('@sentry/nextjs');
+const path = require('path');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -232,6 +233,10 @@ const nextConfig = {
         util: false,
         zlib: false,
         url: false,
+      };
+      config.resolve.alias = {
+        ...(config.resolve.alias || {}),
+        'react-router-dom': path.resolve(__dirname, 'src/shims/react-router-dom.ts'),
       };
     }
 

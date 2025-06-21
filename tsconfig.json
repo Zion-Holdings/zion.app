@@ -24,6 +24,9 @@
       "@/api/*": [
         "./src/api/*"
       ],
+      "react-router-dom": [
+        "./src/shims/react-router-dom.ts"
+      ],
       "axios": [
         "./src/lib/axios.ts"
       ],
