@@ -1,6 +1,7 @@
 import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { fetchProductById } from '../../src/services/productService';
 import type { ProductDetailsData } from '../../src/types/product';
 import { useWishlist } from '@/hooks/useWishlist';
@@ -83,11 +84,15 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
         <h1>{product.name}</h1>
 
         {imageUrl && (
-          <img
-            src={imageUrl}
-            alt={`Image of ${product.name}`}
-            style={{ maxWidth: '400px', height: 'auto', marginBlock: '1rem' }}
-          />
+          <div style={{ maxWidth: '400px', height: 'auto', marginBlock: '1rem', position: 'relative' }}>
+            <Image
+              src={imageUrl}
+              alt={`Image of ${product.name}`}
+              fill
+              style={{ objectFit: 'contain' }}
+              loading="lazy"
+            />
+          </div>
         )}
 
         {product.price !== null && product.currency && (

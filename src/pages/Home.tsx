@@ -1,20 +1,22 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import dynamic from 'next/dynamic';
 import { useAuth } from "@/hooks/useAuth";
-import { CategoriesSection } from "@/components/CategoriesSection";
-import { BenefitsSection } from "@/components/BenefitsSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { NewsletterSection } from "@/components/NewsletterSection";
-import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
 import { NextSeo } from "@/components/NextSeo";
-import { HeroSection } from "@/components/HeroSection";
-import { QuickAccess } from "@/components/home/QuickAccess";
-import { FeatureCTAs } from "@/components/home/FeatureCTAs";
-import { FeatureHighlights } from "@/components/home/FeatureHighlights";
-import { InteractiveFeatures } from "@/components/home/InteractiveFeatures";
-import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { AllFeaturesSection } from "@/components/home/AllFeaturesSection";
+
+const CategoriesSection = dynamic(() => import("@/components/CategoriesSection"));
+const BenefitsSection = dynamic(() => import("@/components/BenefitsSection"));
+const HowItWorksSection = dynamic(() => import("@/components/HowItWorksSection"));
+const NewsletterSection = dynamic(() => import("@/components/NewsletterSection"));
+const FeaturedListingsSection = dynamic(() => import("@/components/FeaturedListingsSection"));
+const HeroSection = dynamic(() => import("@/components/HeroSection"));
+const QuickAccess = dynamic(() => import("@/components/home/QuickAccess"));
+const FeatureCTAs = dynamic(() => import("@/components/home/FeatureCTAs"));
+const FeatureHighlights = dynamic(() => import("@/components/home/FeatureHighlights"));
+const InteractiveFeatures = dynamic(() => import("@/components/home/InteractiveFeatures"));
+const ITServiceRequestHero = dynamic(() => import("@/components/home/ITServiceRequestHero"));
+const AllFeaturesSection = dynamic(() => import("@/components/home/AllFeaturesSection"));
 
 export default function Home() {
   const { t } = useTranslation();

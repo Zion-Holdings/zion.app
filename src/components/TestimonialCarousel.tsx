@@ -11,6 +11,7 @@ import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Quote } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { CASE_STUDIES } from "@/data/case-studies";
 
 const testimonials = CASE_STUDIES;
@@ -41,7 +42,13 @@ export function TestimonialCarousel() {
                     <CardContent className="p-8 flex flex-col md:flex-row gap-6 flex-1">
                       <div className="flex-shrink-0 flex flex-col items-center">
                         <Avatar className="h-20 w-20 border-2 border-zion-cyan mb-3">
-                          <img src={testimonial.avatar} alt={testimonial.author} />
+                          <Image
+                            src={testimonial.avatar}
+                            alt={testimonial.author}
+                            width={80}
+                            height={80}
+                            loading="lazy"
+                          />
                         </Avatar>
                         <div className="text-center md:text-left">
                           <p className="font-bold text-zion-cyan">{testimonial.author}</p>
@@ -50,7 +57,14 @@ export function TestimonialCarousel() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-4">
-                          <img src={testimonial.companyLogo} alt={`${testimonial.company} logo`} className="h-8 w-auto" />
+                          <Image
+                            src={testimonial.companyLogo}
+                            alt={`${testimonial.company} logo`}
+                            width={32}
+                            height={32}
+                            className="h-8 w-auto"
+                            loading="lazy"
+                          />
                           <span className="text-white font-semibold">{testimonial.company}</span>
                         </div>
                         <Quote className="h-10 w-10 text-zion-cyan opacity-30 mb-3" />

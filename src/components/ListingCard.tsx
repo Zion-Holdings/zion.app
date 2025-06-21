@@ -2,6 +2,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ListingCardProps {
   id?: string;
@@ -40,11 +41,13 @@ export function ListingCard({
       )}
     >
       {images && images.length > 0 && (
-        <div className="h-48 w-full overflow-hidden">
-          <img 
+        <div className="h-48 w-full overflow-hidden relative">
+          <Image
             src={images[0]}
-            alt={title} 
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
           />
         </div>
       )}
@@ -70,7 +73,7 @@ export function ListingCard({
         {author && (
           <div className="flex items-center mt-auto pt-4 border-t border-zion-blue-light">
             {author.avatarUrl ? (
-              <img src={author.avatarUrl} alt={author.name} className="h-8 w-8 rounded-full mr-2" />
+              <Image src={author.avatarUrl} alt={author.name} width={32} height={32} className="rounded-full mr-2" loading="lazy" />
             ) : (
               <div className="h-8 w-8 rounded-full bg-zion-purple/20 mr-2" />
             )}
