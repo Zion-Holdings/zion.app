@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+// Load environment variables from .env.local, .env.development, .env
+require('dotenv').config({ path: '.env.local' });
+require('dotenv').config({ path: '.env.development' }); // often used for dev defaults
+require('dotenv').config({ path: '.env' }); // for any base defaults
+
 /**
  * Pre-build Check Script
  * This script runs before the build process to ensure all required environment variables
