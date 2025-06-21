@@ -103,7 +103,19 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          onFocus={() => setFocused(true)}
+          onFocus={(e) => {
+            setFocused(true);
+            // Ensure the input receives focus properly
+            e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+          }}
+          onBlur={(e) => {
+            // Only blur if not clicking on suggestions
+            const relatedTarget = e.relatedTarget as HTMLElement;
+            if (!relatedTarget || !containerRef.current?.contains(relatedTarget)) {
+              setFocused(false);
+              setHighlightedIndex(-1);
+            }
+          }}
           placeholder={placeholder}
           className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate"
           aria-autocomplete="list"

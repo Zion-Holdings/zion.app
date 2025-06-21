@@ -51,13 +51,28 @@ export default function SearchPage() {
   );
   const blogResults = results.filter(r => r.type === 'blog');
 
+  // Sync query with URL parameter changes
   useEffect(() => {
-    if (initial) {
-      fetchResults(initial);
+    if (initial !== query) {
+      setQuery(initial);
     }
   }, [initial]);
 
+  // Fetch results when query changes
+  useEffect(() => {
+    if (query.trim()) {
+      fetchResults(query.trim());
+    } else {
+      setResults([]);
+    }
+  }, [query]);
+
   const fetchResults = async (term: string) => {
+    if (!term.trim()) {
+      setResults([]);
+      return;
+    }
+
     setLoading(true);
     try {
       const res = await fetch(`/api/search?query=${encodeURIComponent(term)}`);
@@ -66,10 +81,10 @@ export default function SearchPage() {
         setResults(data.results);
       } else {
         setResults([]);
-        // Optional: log an error if the structure is unexpected
         console.error("Search API response structure is not as expected:", data);
       }
-    } catch {
+    } catch (error) {
+      console.error("Search failed:", error);
       setResults([]);
     } finally {
       setLoading(false);
@@ -78,8 +93,9 @@ export default function SearchPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push(`/search?q=${encodeURIComponent(query)}`);
-    fetchResults(query);
+    if (query.trim()) {
+      router.push(`/search?q=${encodeURIComponent(query.trim())}`);
+    }
   };
 
   return (
@@ -90,9 +106,9 @@ export default function SearchPage() {
             value={query}
             onChange={setQuery}
             onSelectSuggestion={(suggestion) => {
-              router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
-              setQuery(suggestion.text);
-              fetchResults(suggestion.text);
+              const searchTerm = suggestion.text.trim();
+              setQuery(searchTerm);
+              router.push(`/search?q=${encodeURIComponent(searchTerm)}`);
             }}
             searchSuggestions={suggestions}
             placeholder="Search talent, jobs, and projects..."
