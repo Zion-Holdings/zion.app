@@ -21,10 +21,12 @@ interface TalentProfileBasic {
 const handleApiResponse = async (res: Response) => {
   if (!res.ok) {
     const error = new Error('An error occurred while fetching the data.');
+    // Read response body once and attempt to parse JSON
+    const raw = await res.text();
     try {
-      (error as any).info = await res.json();
-    } catch (e) {
-      (error as any).info = { message: await res.text() };
+      (error as any).info = JSON.parse(raw);
+    } catch {
+      (error as any).info = { message: raw };
     }
     (error as any).status = res.status;
     throw error;

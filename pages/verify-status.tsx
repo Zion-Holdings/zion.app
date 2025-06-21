@@ -20,30 +20,6 @@ export default function VerifyStatus() {
     }
   }, [emailParam]);
 
-  const resendEmail = async () => {
-    if (!email) return;
-    setIsResending(true);
-    setMessage('');
-    setError('');
-    try {
-      const res = await fetch('/api/auth/resend-verification-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setMessage(data.message || 'Verification email resent.');
-      } else {
-        setError(data.message || 'Failed to resend verification email.');
-      }
-    } catch {
-      setError('Failed to resend verification email.');
-    } finally {
-      setIsResending(false);
-    }
-  };
-
   return (
     <AuthLayout>
       <div className="flex min-h-screen items-center justify-center p-4">
@@ -77,9 +53,6 @@ export default function VerifyStatus() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <Button className="w-full" disabled={isResending || !email} onClick={resendEmail}>
-            {isResending ? 'Resending...' : 'Resend Verification Email'}
-          </Button>
           <Button
             type="button"
             variant="ghost"

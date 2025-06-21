@@ -84,8 +84,20 @@ export default function BlogPost() {
     );
   }
 
+  // If post is still null after loading, show not found
+  if (!post) {
+    return (
+      <div className="min-h-screen bg-zion-blue text-white p-8 flex flex-col justify-center items-center space-y-4">
+        <p>Article not found.</p>
+        <Button onClick={() => router.push('/blog')}>Back to Blog</Button>
+      </div>
+    );
+  }
+
   // Helper function to get share URL
   const getShareUrl = (platform: string) => {
+    if (!post) return '';
+    
     const url = encodeURIComponent(window.location.href);
     const title = encodeURIComponent(post.title);
     

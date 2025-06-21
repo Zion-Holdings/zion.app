@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm, type ControllerRenderProps } from 'react-hook-form';
+import { z } from 'zod';
 import {
   Dialog,
   DialogContent,
@@ -8,6 +10,14 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from '@/components/ui/form';
 import { isProdDomain } from '@/utils/getStripe';
 
 interface GuestCheckoutModalProps {
@@ -16,13 +26,18 @@ interface GuestCheckoutModalProps {
   onSubmit: (data: { email: string; address: string }) => void;
 }
 
-export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestCheckoutModalProps) {
-  const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
+const schema = z.object({
+  email: z.string().email('Enter a valid email'),
+  address: z.string().min(1, 'Address is required'),
+});
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    onSubmit({ email, address });
+type FormValues = z.infer<typeof schema>;
+
+export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestCheckoutModalProps) {
+  const form = useForm<FormValues>({ resolver: zodResolver(schema) });
+
+  const handleSubmit = (values: FormValues) => {
+    onSubmit(values);
   };
 
   return (
@@ -36,28 +51,55 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
             Pay with test data – use card 4242 4242 4242 4242 and any future date.
           </div>
         )}
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <Input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="bg-zion-blue-dark border-zion-blue-light text-white"
-            required
-          />
-          <Input
-            placeholder="Shipping Address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            className="bg-zion-blue-dark border-zion-blue-light text-white"
-            required
-          />
-          <DialogFooter>
-            <Button type="submit" className="w-full">
-              Continue to Payment
-            </Button>
-          </DialogFooter>
-        </form>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(handleSubmit, (errors) => {
+            const firstError = Object.keys(errors)[0] as keyof FormValues | undefined;
+            if (firstError) {
+              form.setFocus(firstError);
+            }
+          })} className="space-y-4">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'email'> }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="Email"
+                      className="bg-zion-blue-dark border-zion-blue-light text-white"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="address"
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'address'> }) => (
+                <FormItem>
+                  <FormLabel>Shipping Address</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Shipping Address"
+                      className="bg-zion-blue-dark border-zion-blue-light text-white"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <DialogFooter>
+              <Button type="submit" className="w-full">
+                Continue to Payment
+              </Button>
+            </DialogFooter>
+          </form>
+        </Form>
       </DialogContent>
     </Dialog>
   );

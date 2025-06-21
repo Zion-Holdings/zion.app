@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { supabase } from "../../integrations/supabase/client";
+import { supabase, isSupabaseConfigured } from "../../integrations/supabase/client";
 import { useAuthOperations } from "../../hooks/useAuthOperations";
 import { AuthContext } from "./AuthContext";
 import { cleanupAuthState } from "../../utils/authUtils";
@@ -18,7 +18,9 @@ import { addItem } from '@/store/cartSlice';
 const LOGIN_TIMEOUT_MS = 15000; // 15 seconds timeout
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  console.log('[AuthProvider] Initializing...');
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[AuthProvider] Initializing...');
+  }
   const {
     user, setUser,
     isLoading, setIsLoading,
@@ -51,216 +53,71 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   ) => {
     setIsLoading(true); // Set loading true at the start of login attempt
     try {
-      const timeoutPromise = new Promise((_, reject) =>
-        setTimeout(() => reject(new Error("Login timed out")), LOGIN_TIMEOUT_MS)
-      );
+      // Production/Supabase mode - attempt to sign in with Supabase
+      const { error: supabaseError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
 
-      // Make API call to our custom login endpoint, raced with timeout
-      const { res, data } = await Promise.race([
-        loginUser(email, password),
-        timeoutPromise,
-      ]) as { res: any; data: any }; // Type assertion needed after Promise.race
-
-      console.log('[AuthProvider] loginUser API call successful:', { res, data });
-
-      // Our API uses a different approach - it directly returns user data from our custom login API
-      // We need to handle Supabase authentication differently for our setup
-      console.log('[AuthProvider] Login successful via custom API, now setting up authentication');
-
-      // Since our API doesn't return Supabase tokens, we need to handle authentication differently
-      // For development mode with environment-based authentication or Supabase with direct password sign-in
-      if (data.user) {
-        console.log('[AuthProvider DEBUG] User data received from API:', data.user);
-        
-        // Check if we're using Supabase (ENV_CONFIG would be available) 
-        // If not, we'll simulate the auth state change for development mode
-        if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-          // Production/Supabase mode - attempt to sign in with Supabase
-          const { data: supabaseAuthData, error: supabaseError } = await supabase.auth.signInWithPassword({
-            email,
-            password,
-          });
-
-          if (supabaseError) {
-            console.error("[AuthProvider DEBUG] Supabase authentication failed:", supabaseError);
-            toast({
-              title: "Authentication Error",
-              description: supabaseError.message || "Failed to authenticate with Supabase.",
-              variant: "destructive",
-            });
-            return { error: supabaseError.message || "Authentication failed." };
-          }
-
-          console.log('[AuthProvider DEBUG] Supabase authentication successful');
-          // The onAuthStateChange event should now trigger automatically
-        } else {
-          // Development mode - simulate successful authentication
-          console.log('[AuthProvider DEBUG] Development mode - simulating authentication');
-          setUser(data.user);
-          setIsLoading(false);
-          
-          // Show success toast
-          toast({
-            title: 'Login successful',
-            description: `Welcome back, ${data.user.name || data.user.email}!`,
-            variant: 'default'
-          });
-
-          // Handle redirect
-          const nextRoute =
-            typeof router.query.next === 'string'
-              ? decodeURIComponent(router.query.next)
-              : '/dashboard';
-          router.replace(nextRoute);
-        }
-      } else {
-        console.error('[AuthProvider login] No user data in API response.');
+      if (supabaseError) {
+        console.error("[AuthProvider DEBUG] Supabase authentication failed:", supabaseError);
         toast({
-          title: "Login Failed",
-          description: "No user data received from server.",
+          title: "Authentication Error",
+          description: supabaseError.message || "Failed to authenticate with Supabase.",
           variant: "destructive",
         });
-        setIsLoading(false); // Ensure loading is stopped
-        return { error: "No user data received from server." };
+        setIsLoading(false);
+        return { error: supabaseError.message || "Authentication failed." };
       }
 
-      console.log('[AuthProvider] login function completed, onAuthStateChange will handle redirection.');
+      console.log('[AuthProvider DEBUG] Supabase authentication successful');
+      // The onAuthStateChange event should now trigger automatically
       return { error: null }; // Successful login
-
     } catch (error: any) {
       console.error('[AuthProvider] login function error:', error);
-      console.error('[AuthProvider] login function error (full):', error); // Log the full error object
-      let toastMessage = "An unexpected error occurred during login. Please try again.";
-      const errorTitle = "Login Failed";
-
-      if (error.message === "Login timed out") {
-        toastMessage = "Login request timed out. Please check your connection and try again.";
-        // Ensure isLoading is set to false specifically for timeout
-        setIsLoading(false);
-      } else if (error.isAxiosError && error.response) {
-        // Error from API response (e.g., 401, 403, 400, 500)
-        console.error('[AuthProvider] login API response:', error.response); // Log the full API response
-        const apiData = error.response.data; // This is the response body from your API
-        const apiStatus = error.response.status;
-
-        toastMessage = apiData?.error || apiData?.message || "Login failed. Please check your credentials or try again later.";
-        const errorCode = apiData?.code;
-
-        if (errorCode === "EMAIL_NOT_CONFIRMED") {
-          toastMessage = apiData?.error || "Email not confirmed. Please check your inbox to verify your email.";
-        } else if (errorCode === "INVALID_CREDENTIALS" || apiStatus === 401) {
-          toastMessage = apiData?.error || "Invalid email or password.";
-        } else if (errorCode === "LOGIN_FAILED" || apiStatus === 500) {
-          toastMessage = apiData?.error || "Login failed due to a server error. Please try again later.";
-        } else if (apiStatus === 400) {
-          toastMessage = apiData?.error || "Invalid request. Please check your input.";
-        } else if (apiStatus === 404) { // Endpoint not found
-            toastMessage = "Login service not found. Please contact support.";
-        }
-        // Add any other specific errorCode handling here
-      } else if (error.isAxiosError && !error.response) {
-        // Network error (axios error, but no response from server)
-        toastMessage = "Network error. Please check your internet connection and try again.";
-      } else if (error.message) {
-        // Other errors (not Axios, but have a message)
-        toastMessage = error.message;
-      }
-
       toast({
-        title: errorTitle,
-        description: toastMessage,
+        title: "Login Failed",
+        description: error.message || "An unexpected error occurred during login. Please try again.",
         variant: "destructive",
       });
-      setIsLoading(false); // Ensure isLoading is false in all error paths of login
-      return { error: toastMessage }; // This is what LoginForm.tsx expects
+      setIsLoading(false);
+      return { error: error.message || "Login failed" };
     }
-    // Removed finally block here as onAuthStateChange and specific error paths handle setIsLoading(false)
   };
 
   // Refactored signup method
   const signup = async (email: string, password: string, userData: Partial<UserDetails> = {}) => {
-      setIsLoading(true);
-      try {
-        const { name = '' } = userData;
-        const { res, data } = await registerUser(name, email, password);
+    setIsLoading(true);
+    try {
+      const { name = '' } = userData;
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            ...userData,
+            display_name: name, // Store name in display_name
+          },
+        },
+      });
 
-      if (!(res.status >= 200 && res.status < 300)) {
-        // Handle API errors (e.g., 400, 409, 500) from /api/auth/register
+      if (error) {
+        console.error("Supabase signup error:", error);
         toast({
           title: "Signup Failed",
-          description: data?.message || 'An unexpected error occurred.',
-          variant: "destructive"
+          description: error.message || "An unexpected error occurred during signup.",
+          variant: "destructive",
         });
         setIsLoading(false);
-        return { error: data?.message || 'Signup failed', emailVerificationRequired: false };
+        return { error: error.message || "Signup failed", emailVerificationRequired: false };
       }
 
-      if (data?.emailVerificationRequired) {
-        toast({
-          title: "Signup Successful",
-          description: "Please check your email to verify your account."
-        });
-        // Optionally set minimal user info if available and desired, but no active session
-        // For example: setUser({ email: data.user?.email, id: data.user?.id, name: data.user?.display_name, email_verified_pending: true });
-        // For now, we don't set any user state to prevent confusion with an active session.
-        setIsLoading(false);
-        return { error: null, emailVerificationRequired: true };
-      } else if (data?.session && data?.user) {
-        // Auto-confirmed: API has set the cookie, now set client-side state
-        // The API (/api/auth/register) should have set the HttpOnly cookie.
-        // Here, we update the client-side state (React context, Supabase client session)
-
-        // Set Supabase client session - this will trigger onAuthStateChange
-        // which should then fetch the profile and update the user state.
-        console.log('[AuthProvider DEBUG] signup: Attempting to set Supabase client session.');
-        console.log('[AuthProvider DEBUG] signup: Using accessToken:', data.session.access_token);
-        console.log('[AuthProvider DEBUG] signup: Using refreshToken:', data.session.refresh_token);
-        const { data: sessionData, error: sessionError } = await supabase.auth.setSession({
-          access_token: data.session.access_token,
-          refresh_token: data.session.refresh_token,
-        });
-
-        if (sessionError) {
-          console.error("[AuthProvider DEBUG] signup: Error setting Supabase session:", sessionError);
-          toast({
-            title: "Signup Error",
-            description: "Failed to initialize session. Please try logging in.",
-            variant: "destructive"
-          });
-          // Ensure any partial tokens are cleared to prevent invalid sessions
-          cleanupAuthState();
-          setIsLoading(false);
-          return { error: "Failed to initialize session.", emailVerificationRequired: false };
-        }
-        console.log('[AuthProvider DEBUG] signup: Supabase client-side session set successfully. Session data:', JSON.stringify(sessionData, null, 2));
-
-        // setTokens is handled by onAuthStateChange or if direct setting is preferred:
-        setTokens({ accessToken: data.session.access_token, refreshToken: data.session.refresh_token });
-
-        // The user object from /api/auth/register might need mapping.
-        // For now, we assume data.user is compatible or onAuthStateChange will handle it.
-        // setUser(data.user); // This will be handled by onAuthStateChange after setSession
-
-        const firstName = (data.user.user_metadata?.display_name || name).split(' ')[0];
-        toast({ title: `Welcome, ${firstName}!` });
-
-        const queryStringSignup = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
-        const paramsSignup = new URLSearchParams(queryStringSignup);
-        const next = paramsSignup.get('redirectTo') || paramsSignup.get('next') || '/dashboard';
-        console.log('[AuthProvider DEBUG] signup: Attempting to redirect to:', next);
-        router.replace(next);
-        setIsLoading(false);
-        return { error: null, emailVerificationRequired: false };
-      } else {
-        // Fallback for unexpected successful response structure
-        toast({
-          title: "Signup Error",
-          description: "Unexpected response from server.",
-          variant: "destructive"
-        });
-        setIsLoading(false);
-        return { error: "Unexpected response from server.", emailVerificationRequired: false };
-      }
+      toast({
+        title: "Signup Successful",
+        description: "Please check your email to verify your account.",
+      });
+      setIsLoading(false);
+      return { error: null, emailVerificationRequired: true };
     } catch (err: any) {
       console.error("Signup exception:", err);
       toast({
@@ -274,37 +131,57 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[App] MyApp main useEffect hook started.');
+    }
+    
     // Clean up any potential stale auth state before setting up listeners
     cleanupAuthState();
-    
+
+    if (!isSupabaseConfigured) {
+      console.warn('[AuthProvider] Supabase not configured - skipping auth state listener');
+      setIsLoading(false);
+      return;
+    }
+
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       // Inside the onAuthStateChange callback
       async (event: any, session: any) => {
-              console.log('[AuthProvider DEBUG] onAuthStateChange: Entered. Current isLoading:', isLoading);
-              console.log('[AuthProvider DEBUG] onAuthStateChange triggered. Event:', event);
-              console.log('[AuthProvider DEBUG] Session object:', JSON.stringify(session, null, 2));
+              if (process.env.NODE_ENV === 'development') {
+                console.log('[AuthProvider DEBUG] onAuthStateChange: Entered. Current isLoading:', isLoading);
+                console.log('[AuthProvider DEBUG] onAuthStateChange triggered. Event:', event);
+                console.log('[AuthProvider DEBUG] Session object:', JSON.stringify(session, null, 2));
+              }
       
               setIsLoading(true); // Ensure isLoading is true at the start
-              console.log('[AuthProvider DEBUG] onAuthStateChange: setIsLoading(true) called. New isLoading:', isLoading);
+              if (process.env.NODE_ENV === 'development') {
+                console.log('[AuthProvider DEBUG] onAuthStateChange: setIsLoading(true) called. New isLoading:', isLoading);
+              }
       
               try {
                 if (session?.user) {
-                  console.log('[AuthProvider DEBUG] Session and user found. User ID:', session.user.id);
+                  if (process.env.NODE_ENV === 'development') {
+                    console.log('[AuthProvider DEBUG] Session and user found. User ID:', session.user.id);
+                  }
 
                   // Inner try-catch for profile fetching and mapping
                   try {
-                    console.log('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', session.user.id);
-                    // Explicitly log the exact query being made
-                    console.log('[AuthProvider DEBUG] Supabase query: supabase.from("profiles").select("*").eq("id", session.user.id).single()');
-                    console.log('[AuthProvider DEBUG] onAuthStateChange: About to fetch profile. Session user available:', !!session?.user);
+                    if (process.env.NODE_ENV === 'development') {
+                      console.log('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', session.user.id);
+                      console.log('[AuthProvider DEBUG] Supabase query: supabase.from("profiles").select("*").eq("id", session.user.id).single()');
+                      console.log('[AuthProvider DEBUG] onAuthStateChange: About to fetch profile. Session user available:', !!session?.user);
+                    }
+                    
                     const { data: profile, error: profileError } = await supabase
                       .from('profiles')
                       .select('*')
                       .eq('id', session.user.id)
                       .single();
 
-                    console.log('[AuthProvider DEBUG] Raw profile data:', JSON.stringify(profile, null, 2));
-                    console.log('[AuthProvider DEBUG] Profile fetch error (if any):', JSON.stringify(profileError, null, 2));
+                    if (process.env.NODE_ENV === 'development') {
+                      console.log('[AuthProvider DEBUG] Raw profile data:', JSON.stringify(profile, null, 2));
+                      console.log('[AuthProvider DEBUG] Profile fetch error (if any):', JSON.stringify(profileError, null, 2));
+                    }
 
                     if (profileError) {
                       console.error("[AuthProvider DEBUG] Error fetching user profile:", profileError);
@@ -394,7 +271,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                       setAvatarUrl(null);
                     }
                   } catch (profileMapError) {
-                    // This catch block is for errors specifically within the profile fetching/mapping phase
+                    // This catch block is for errors specifically within the profile fetching/user mapping phase
                     console.error("[AuthProvider DEBUG] Critical error in profile fetching/user mapping phase:", profileMapError);
                     toast({
                       title: "User Initialization Error",
@@ -444,7 +321,39 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     // register, // Removed as signup now covers its functionality
     signUp: signup, // Use the custom signup function instead of signUpImpl
     logout,
-    resetPassword,
+    resetPassword: async (email: string) => {
+      setIsLoading(true);
+      try {
+        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+          redirectTo: `${window.location.origin}/auth/verify-email`,
+        });
+        if (error) {
+          console.error("Supabase password reset error:", error);
+          toast({
+            title: "Password Reset Failed",
+            description: error.message || "Failed to send password reset email.",
+            variant: "destructive",
+          });
+          setIsLoading(false);
+          return { error: error.message || "Password reset failed" };
+        }
+        toast({
+          title: "Password Reset Email Sent",
+          description: "Please check your email to reset your password.",
+        });
+        setIsLoading(false);
+        return { error: null };
+      } catch (err: any) {
+        console.error("Password reset exception:", err);
+        toast({
+          title: "Password Reset Failed",
+          description: err.message || "An unexpected error occurred during password reset.",
+          variant: "destructive",
+        });
+        setIsLoading(false);
+        return { error: err.message || "Password reset failed" };
+      }
+    },
     updateProfile,
     loginWithGoogle,
     loginWithFacebook,
@@ -456,7 +365,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     avatarUrl,
     setAvatarUrl
   };
-return (
+  return (
     <AuthContext.Provider value={authContextValue}>
       {children}
     </AuthContext.Provider>

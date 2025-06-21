@@ -57,10 +57,12 @@ export default function SearchPage() {
     try {
       const res = await fetch(`/api/search?query=${encodeURIComponent(term)}`);
       const data = await res.json();
-      if (Array.isArray(data)) {
-        setResults(data);
+      if (data && data.results && Array.isArray(data.results)) {
+        setResults(data.results);
       } else {
         setResults([]);
+        // Optional: log an error if the structure is unexpected
+        console.error("Search API response structure is not as expected:", data);
       }
     } catch {
       setResults([]);

@@ -1,10 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { Client } from '@elastic/elasticsearch';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { SERVICES } from '@/data/servicesData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import Fuse from 'fuse.js';
 
+// Define SearchResult interface (assuming it's not already globally defined or imported elsewhere)
+// If it is, this definition can be removed.
 interface SearchResult {
   id: string;
   type: 'product' | 'service' | 'talent' | 'equipment' | 'category';
@@ -109,13 +112,17 @@ function handler(
   const end = start + limit;
   const paginatedResults = results.slice(start, end).map((r) => r.item);
 
-  return res.status(200).json({
-    results: paginatedResults,
-    totalCount,
-    page,
-    limit,
-    query: q,
-  });
+  } catch (error) {
+    console.error('Elasticsearch query failed:', error);
+    // Check if error is an Elasticsearch client error to provide more specific details
+    // Type assertion for error.meta is needed as it's not standard on Error
+    const esError = error as any;
+    if (esError.meta?.body?.error) {
+       console.error('Elasticsearch error details:', esError.meta.body.error);
+       return res.status(500).json({ error: 'Search query failed due to backend error.' });
+    }
+    return res.status(500).json({ error: 'Search query failed.' });
+  }
 }
 
 export default withErrorLogging(handler);

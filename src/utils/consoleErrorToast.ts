@@ -1,5 +1,5 @@
 // src/utils/consoleErrorToast.ts
-import { getEnqueueSnackbar } from '@/context/SnackbarContext';
+import { toast } from '@/hooks/use-toast';
 import { logError } from './logError';
 
 const originalConsoleError = console.error;
@@ -9,12 +9,11 @@ console.error = (...args: any[]) => {
     const first = args[0];
     const message = first instanceof Error ? first.message : String(first);
 
-    // Attempt to show snackbar
+    // Attempt to show toast
     try {
-      const enqueueSnackbar = getEnqueueSnackbar();
-      enqueueSnackbar(message, { variant: 'error' });
+      toast.error(message);
     } catch (snackbarError) {
-      originalConsoleError('Error showing snackbar in console.error override:', snackbarError);
+      originalConsoleError('Error showing toast in console.error override:', snackbarError);
     }
 
     // Attempt to report using centralized logger
