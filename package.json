@@ -19,6 +19,7 @@
     "test": "jest --runInBand --testTimeout=600000 --coverage",
     "test:watch": "vitest --watch",
     "test:search": "node scripts/test-search-functionality.cjs",
+    "perf:check": "node scripts/performance-check.cjs",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser electron",
     "audit": "npm audit --production",

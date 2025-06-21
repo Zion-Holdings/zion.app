@@ -114,6 +114,9 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    domains: ['images.unsplash.com', 'via.placeholder.com', 'localhost'],
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 60,
   },
 
   compiler: {
@@ -145,7 +148,7 @@ const nextConfig = {
           },
           {
             key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin',
+            value: 'strict-origin-when-cross-origin',
           },
           {
             key: 'Permissions-Policy',
@@ -198,7 +201,7 @@ const nextConfig = {
 
   // Improve build performance and reduce bundle size
   experimental: {
-    optimizeCss: false, // Disabled to avoid timeout
+    optimizeCss: true,
     swcMinify: true,
     // Enable modern JavaScript features
     esmExternals: true,
@@ -286,9 +289,26 @@ const nextConfig = {
               reuseExistingChunk: true,
               enforce: true,
             },
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              chunks: 'all',
+              priority: 10,
+            },
+            common: {
+              name: 'common',
+              minChunks: 2,
+              chunks: 'all',
+              priority: 5,
+              reuseExistingChunk: true,
+            },
           },
         },
       };
+    }
+
+    // Reduce build size by excluding source maps in production
+    if (!dev) {
+      config.devtool = false;
     }
 
     return config;
