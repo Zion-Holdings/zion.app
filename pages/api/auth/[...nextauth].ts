@@ -2,12 +2,13 @@ import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
 import GitHubProvider from "next-auth/providers/github";
-import MicrosoftEntraIdProvider from "next-auth/providers/microsoft-entra-id";
+import AzureADProvider from "next-auth/providers/azure-ad";
 import CredentialsProvider from "next-auth/providers/credentials";
 import type { NextAuthOptions } from "next-auth";
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { createClient } from '@supabase/supabase-js'; // Import Supabase
 import { verifyMessage } from 'ethers'; // Assuming ethers v6+
+import * as Sentry from '@sentry/nextjs';
 
 // Initialize Supabase client (ensure these ENV vars are set)
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
@@ -167,10 +168,10 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GITHUB_CLIENT_ID || "",
       clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
     }),
-    MicrosoftEntraIdProvider({
-      clientId: process.env.MICROSOFT_CLIENT_ID || "",
-      clientSecret: process.env.MICROSOFT_CLIENT_SECRET || "",
-      tenantId: process.env.MICROSOFT_TENANT_ID || "common", // Or specific tenant ID
+    AzureADProvider({
+      clientId: process.env.AZURE_AD_CLIENT_ID || "",
+      clientSecret: process.env.AZURE_AD_CLIENT_SECRET || "",
+      tenantId: process.env.AZURE_AD_TENANT_ID || "common", // Or specific tenant ID
     }),
     CredentialsProvider({
       name: "Credentials",
@@ -239,7 +240,6 @@ export const authOptions: NextAuthOptions = {
           // For now, let's assume we can find the profile via email, or we create one.
 
           let supabaseUserId: string | null = null;
-          let existingUserProfile = null;
 
           // Attempt to find user by email in 'auth.users' via a profile lookup
           // This part is tricky with client SDK if email is not directly queryable in a public table
@@ -275,63 +275,9 @@ export const authOptions: NextAuthOptions = {
           //    Let's assume we have to create a user if we can't find one,
           //    and Supabase's own RLS/unique constraints on `auth.users.email` will prevent duplicates.
 
-          const { data: existingUserInAuth, error: lookupAuthUserError } = await supabase
-            .from('users') // This is accessing auth.users table
-            .select('id, email')
-            .eq('email', user.email)
-            .single();
-
-          if (lookupAuthUserError && lookupAuthUserError.code !== 'PGRST116') {
-            console.error(`OAuth signIn: Error looking up user by email ${user.email} in auth.users:`, lookupAuthUserError);
-            throw new Error(`Error looking up user: ${lookupAuthUserError.message}`);
-          }
-
-          if (existingUserInAuth) {
-            supabaseUserId = existingUserInAuth.id;
-            console.log(`OAuth signIn: Found existing Supabase auth user ${supabaseUserId} for email ${user.email}`);
-
-            // Check if profile exists
-            const { data: profile, error: profileError } = await supabase
-              .from('profiles')
-              .select('id, user_id, display_name, avatar_url')
-              .eq('user_id', supabaseUserId)
-              .single();
-
-            if (profileError && profileError.code !== 'PGRST116') {
-              console.error(`OAuth signIn: Error fetching profile for user ${supabaseUserId}:`, profileError.message);
-              // Non-fatal for sign-in, but log it. Profile might be created later or manually.
-            }
-            existingUserProfile = profile;
-
-            if (!existingUserProfile) {
-                 console.log(`OAuth signIn: Profile not found for existing auth user ${supabaseUserId}. Creating profile.`);
-                 const { error: createProfileError } = await supabase.from('profiles').insert({
-                    user_id: supabaseUserId,
-                    display_name: user.name,
-                    avatar_url: user.image,
-                    // email: user.email // if your 'profiles' table has an email column
-                 });
-                 if (createProfileError) {
-                    console.error(`OAuth signIn: Error creating profile for user ${supabaseUserId}:`, createProfileError.message);
-                    // Non-fatal for sign-in
-                 }
-            } else {
-                // Optionally, update existing profile with fresh data from provider
-                const { error: updateProfileError } = await supabase
-                    .from('profiles')
-                    .update({ display_name: user.name, avatar_url: user.image })
-                    .eq('user_id', supabaseUserId);
-                if (updateProfileError) {
-                    console.warn(`OAuth signIn: Could not update profile for ${supabaseUserId}:`, updateProfileError.message);
-                }
-            }
-          } else {
-            // User does not exist in auth.users, create them.
-            // This is the tricky part. `supabase.auth.signUp()` requires a password
-            // and may send a confirmation email, which is not ideal for OAuth.
-            // If Supabase "Confirm email" is disabled, this might work.
-            // Otherwise, an admin method to create user is preferred.
-            console.log(`OAuth signIn: No Supabase auth user for ${user.email}. Attempting to create.`);
+          // For OAuth sign-in, we'll create users and handle duplicates gracefully
+          // Since we can't easily check if user exists, we'll attempt to create and handle errors
+          console.log(`OAuth signIn: Creating/updating Supabase user for ${user.email}`);
 
             // Using a strong random password as it's required by signUp
             const randomPassword = Math.random().toString(36).slice(-16) + Math.random().toString(36).slice(-16);
@@ -352,68 +298,36 @@ export const authOptions: NextAuthOptions = {
               console.error(`OAuth signIn: Supabase signUp error for ${user.email}:`, signUpError.message);
               // Check if error is because user already exists (e.g. "User already registered")
               if (signUpError.message.includes("already registered")) {
-                // Try to fetch the user again, as our initial lookup might have failed due to RLS on auth.users
-                // This is a common issue if not using service_role key for lookups.
-                const { data: existingUserRetry, error: retryError } = await supabase
-                    .from('users') // Querying auth.users
-                    .select('id')
-                    .eq('email', user.email)
-                    .single();
-                if (existingUserRetry) {
-                    supabaseUserId = existingUserRetry.id;
-                    console.log(`OAuth signIn: Found existing Supabase user ${supabaseUserId} on retry after signUp conflict.`);
-                     // Proceed to create/update profile as in the "if (existingUserInAuth)" block
-                    const { data: profile, error: profileError } = await supabase
-                        .from('profiles')
-                        .select('id, user_id')
-                        .eq('user_id', supabaseUserId)
-                        .single();
-                    if (!profile && !(profileError && profileError.code !== 'PGRST116')) {
-                        await supabase.from('profiles').insert({ user_id: supabaseUserId, display_name: user.name, avatar_url: user.image });
-                    } else if (profile) {
-                        await supabase.from('profiles').update({ display_name: user.name, avatar_url: user.image }).eq('user_id', supabaseUserId);
-                    }
-
-                } else {
-                    console.error(`OAuth signIn: User exists error, but failed to retrieve on retry for ${user.email}:`, retryError?.message);
-                    throw new Error(`User creation failed: ${signUpError.message}`);
-                }
+                console.log(`OAuth signIn: User already exists for ${user.email}, proceeding with sign-in`);
+                // User already exists, we can proceed as this is not an error for OAuth flow
+                // The user ID will be handled by NextAuth's normal flow
+                return true;
               } else {
                 throw new Error(`User creation failed: ${signUpError.message}`);
               }
             } else if (signUpData.user) {
               supabaseUserId = signUpData.user.id;
-              console.log(`OAuth signIn: New Supabase auth user ${supabaseUserId} created for ${user.email}. Creating profile.`);
-              // Create profile
-              const { error: createProfileError } = await supabase.from('profiles').insert({
-                user_id: supabaseUserId,
-                display_name: user.name,
-                avatar_url: user.image,
-                // email: user.email // if your 'profiles' table has an email column
-              });
-              if (createProfileError) {
-                console.error(`OAuth signIn: Error creating profile for new user ${supabaseUserId}:`, createProfileError.message);
-                // This is not ideal, user created in auth but not in profiles.
-                // Consider cleanup or retry logic for production.
+              console.log(`OAuth signIn: New Supabase auth user ${supabaseUserId} created for ${user.email}`);
+              
+              // Create profile (optional, non-blocking)
+              try {
+                await supabase.from('profiles').insert({
+                  user_id: supabaseUserId,
+                  display_name: user.name,
+                  avatar_url: user.image,
+                });
+                console.log(`OAuth signIn: Profile created for user ${supabaseUserId}`);
+              } catch (profileError) {
+                console.warn(`OAuth signIn: Could not create profile for ${supabaseUserId}:`, profileError);
+                // Non-blocking error
               }
+
+              // Set the user ID for NextAuth
+              user.id = supabaseUserId;
             } else {
-                 console.error(`OAuth signIn: Supabase signUp for ${user.email} did not return user data or error.`);
-                 throw new Error('User creation failed: No user data returned from signUp.');
+              console.error(`OAuth signIn: Supabase signUp for ${user.email} did not return user data.`);
+              throw new Error('User creation failed: No user data returned from signUp.');
             }
-          }
-
-          if (!supabaseUserId) {
-            console.error(`OAuth signIn: Could not determine Supabase user ID for ${user.email}. Aborting sign in.`);
-            return false; // Or redirect to an error page: '/auth/error?error=SupabaseUserSyncFailed'
-          }
-
-          // IMPORTANT: Mutate the NextAuth `user` object to ensure `user.id` is the Supabase user ID.
-          // This ID will then be passed to the `jwt` callback.
-          user.id = supabaseUserId;
-          (user as any).supabaseUserId = supabaseUserId; // also add it explicitly if needed elsewhere
-          (user as any).email = user.email; // ensure email is correctly on the user object for jwt callback
-          (user as any).name = user.name; // ensure name is correctly on the user object
-          (user as any).image = user.image; // ensure image is correctly on the user object
 
           return true; // Continue with NextAuth sign-in
         } catch (error: any) {

@@ -14,7 +14,9 @@
     "error": "Error",
     "open_main_menu": "Abrir menú principal",
     "toggle_mobile_menu": "Alternar menú móvil",
-    "greeting_user": "¡Hola, {{name}}!"
+    "greeting_user": "¡Hola, {{name}}!",
+    "status_page": "Página de estado",
+    "check_status_page": "Puedes intentar refrescar la página o visitar nuestra"
   },
   "nav": {
     "home": "Inicio",

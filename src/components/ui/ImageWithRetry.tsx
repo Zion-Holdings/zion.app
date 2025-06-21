@@ -31,6 +31,8 @@ export function ImageWithRetry({
     setCurrentSrc(src);
   };
 
+  const { alt = '', ...rest } = props
+
   return (
     <div className={cn('relative inline-block', className)}>
       {/* eslint-disable-next-line @next/next/no-img-element */}

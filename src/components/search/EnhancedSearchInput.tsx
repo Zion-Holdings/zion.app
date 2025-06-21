@@ -147,7 +147,19 @@ export function EnhancedSearchInput({
             // Potentially show suggestions again if user types after clearing or selecting
             // However, debouncedFilterSuggestions already handles showing suggestions based on value
           }}
-          onFocus={() => setIsFocused(true)}
+          onFocus={(e) => {
+            setIsFocused(true);
+            // Ensure proper cursor position
+            e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+          }}
+          onBlur={(e) => {
+            // Only blur if not interacting with suggestions
+            const relatedTarget = e.relatedTarget as HTMLElement;
+            if (!relatedTarget || !containerRef.current?.contains(relatedTarget)) {
+              setIsFocused(false);
+              setHighlightedIndex(-1);
+            }
+          }}
           onKeyDown={handleKeyDown} // Attached keydown handler
           placeholder={placeholder}
           className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate h-auto py-0 min-w-0"

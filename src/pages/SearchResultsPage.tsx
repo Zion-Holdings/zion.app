@@ -17,8 +17,14 @@ const LIMIT = 20;
 
 export default function SearchResultsPage() {
   const router = useRouter();
-  const initialQuery = (router.query.q as string) || "";
-  const [query, setQuery] = useState(initialQuery);
+  const [query, setQuery] = useState("");
+
+  // Sync query state with the URL once the router is ready
+  useEffect(() => {
+    if (!router.isReady) return;
+    const urlQuery = (router.query.q as string) || "";
+    setQuery(urlQuery);
+  }, [router.isReady, router.query.q]);
 
   const {
     data,
@@ -36,19 +42,12 @@ export default function SearchResultsPage() {
       if (!res.ok) throw new Error("Failed to fetch");
       return (await res.json()) as SearchResult[];
     },
-    enabled: !!query,
+    enabled: router.isReady && !!query,
     initialPageParam: 1,
     getNextPageParam: (lastPage, pages) =>
       lastPage.length < LIMIT ? undefined : pages.length + 1
   });
 
-  // Refetch when the URL param changes
-  useEffect(() => {
-    if (initialQuery !== query) {
-      setQuery(initialQuery);
-      refetch();
-    }
-  }, [initialQuery]);
 
   const allResults = data?.pages.flat() ?? [];
   const loader = useRef<HTMLDivElement>(null);

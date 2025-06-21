@@ -8,12 +8,14 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store'; // Changed to named import
 import { WhitelabelProvider } from '@/context/WhitelabelContext'; // Added WhitelabelProvider
 import { WalletProvider } from '@/context/WalletContext'; // Added WalletProvider
+import { useAuth } from '@/hooks/useAuth';
 import { AnalyticsProvider } from '@/context/AnalyticsContext'; // Added AnalyticsProvider
 import { CartProvider } from '@/context/CartContext'; // Added CartProvider
 import { ErrorProvider } from '@/context/ErrorContext';
 import ErrorResetOnRouteChange from '@/components/ErrorResetOnRouteChange';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
+import { LanguageProvider } from '@/context/LanguageContext';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import ErrorBoundary from '@/components/ErrorBoundary';
@@ -52,6 +54,15 @@ const montserrat = Montserrat({
   adjustFontFallback: true,
   variable: '--font-montserrat',
 });
+
+const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { user, isAuthenticated } = useAuth();
+  return (
+    <LanguageProvider authState={{ isAuthenticated: !!isAuthenticated, user }}>
+      {children}
+    </LanguageProvider>
+  );
+};
 
 // If you have global CSS, import it here:
 // import '../styles/globals.css';
@@ -199,7 +210,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                           <AuthProvider>
                             <WhitelabelProvider>
                               <I18nextProvider i18n={i18n}>
-                                <WalletProvider>
+                                <LanguageProviderWrapper>
+                                  <WalletProvider>
                                   <CartProvider>
                                     <AnalyticsProvider>
                                       <ThemeProvider>
@@ -216,6 +228,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                     </AnalyticsProvider>
                                   </CartProvider>
                                 </WalletProvider>
+                                </LanguageProviderWrapper>
                               </I18nextProvider>
                             </WhitelabelProvider>
                           </AuthProvider>

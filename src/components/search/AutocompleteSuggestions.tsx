@@ -77,9 +77,16 @@ export function AutocompleteSuggestions({
               aria-selected={isHighlighted}
               className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light highlighted' : 'hover:bg-zion-blue-light/20'}`}
               data-testid="suggestion-item"
-              onMouseDown={(e) => {
+              onClick={(e) => {
                 e.preventDefault();
                 onSelectSuggestion(suggestion);
+              }}
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectSuggestion(suggestion);
+              onMouseDown={(e) => {
+                // Prevent input blur when clicking suggestions
+                e.preventDefault();
               }}
             >
               <div className="flex items-center justify-between">

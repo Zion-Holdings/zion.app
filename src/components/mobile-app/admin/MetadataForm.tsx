@@ -122,10 +122,11 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
                 {keywords.map((keyword, index) => (
                   <Badge key={index} className="bg-zion-purple/60 hover:bg-zion-purple">
                     {keyword}
-                    <button 
+                    <button
                       type="button"
                       onClick={() => removeKeyword(keyword)}
-                      className="ml-1 hover:text-red-300"
+                      className="ml-1 hover:text-red-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                      aria-label="Remove keyword"
                     >
                       <X className="h-3 w-3" />
                     </button>
