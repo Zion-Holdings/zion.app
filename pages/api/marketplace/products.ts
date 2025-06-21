@@ -1,6 +1,7 @@
 import { PrismaClient, type Product as ProductModel } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
+import { connectWithTimeout } from '@/utils/prismaConnect';
 
 interface ProductStats {
   avg: number | null;
@@ -46,6 +47,7 @@ async function handler(
     let products: ProductModel[];
     try {
       console.log('Attempting to connect to database and fetch products...');
+      await connectWithTimeout(prisma);
       products = await prisma.product.findMany({ skip, take: limit });
       console.log('Successfully fetched products from database.');
       console.log('Fetched products:', products);
@@ -112,21 +114,20 @@ async function handler(
 
     return res.status(200).json(result);
   } catch (e: any) {
-    // Inner try-catch blocks are responsible for logging specific Prisma errors with detailed context.
-    // This outer catch block handles any other generic errors that might occur,
-    // or errors re-thrown from the inner blocks.
     console.error(
       'Generic error in products API handler (fallback catch):',
       {
-        message: e.message, // General error message
-        code: e.code,       // Error code, if present (e.g., from a non-Prisma error)
-        stack: e.stack,     // Call stack for debugging
-        fullError: e,       // The complete error object for comprehensive analysis
+        message: e.message,
+        code: e.code,
+        stack: e.stack,
+        fullError: e,
       }
     );
-    return res
-      .status(500)
-      .json({ error: 'Internal server error while fetching products.', details: e.message || 'An unexpected error occurred.' });
+    const message =
+      e instanceof Error && e.message.includes('timed out')
+        ? 'Service Unavailable: Database connection failed.'
+        : 'Internal server error while fetching products.';
+    return res.status(500).json({ error: message, details: e.message });
   } finally {
     // Ensures Prisma client is disconnected after the request is handled,
     // whether it succeeded or failed, to prevent resource leaks.
