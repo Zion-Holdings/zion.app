@@ -33,7 +33,7 @@ const GenesisPage: React.FC = () => {
     <div className="min-h-screen bg-gray-900 text-white p-8">
       <header className="mb-12">
         <h1 className="text-4xl font-bold text-purple-400">Zion OS Instance Deployment</h1>
-        <p className="text-gray-300">Configure and deploy your Zion OS instances with ease.</p>
+        <p className="text-gray-200">Configure and deploy your Zion OS instances with ease.</p>
       </header>
 
       <main className="space-y-10">
@@ -41,7 +41,7 @@ const GenesisPage: React.FC = () => {
           <h2 className="text-2xl font-semibold text-purple-300 mb-6">Instance Configuration</h2>
           <form className="space-y-6">
             <div>
-              <label htmlFor="instanceName" className="block text-sm font-medium text-gray-300">
+              <label htmlFor="instanceName" className="block text-sm font-medium text-gray-200">
                 Instance Name
               </label>
               <input
@@ -54,7 +54,7 @@ const GenesisPage: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="defaultLanguage" className="block text-sm font-medium text-gray-300">
+              <label htmlFor="defaultLanguage" className="block text-sm font-medium text-gray-200">
                 Default Language
               </label>
               <select
@@ -71,7 +71,7 @@ const GenesisPage: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="deploymentRegion" className="block text-sm font-medium text-gray-300">
+              <label htmlFor="deploymentRegion" className="block text-sm font-medium text-gray-200">
                 Deployment Region
               </label>
               <select
@@ -88,7 +88,7 @@ const GenesisPage: React.FC = () => {
             </div>
 
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-300">Token Activation</span>
+              <span className="text-sm font-medium text-gray-200">Token Activation</span>
               <label htmlFor="tokenActivation" className="inline-flex relative items-center cursor-pointer">
                 <input type="checkbox" id="tokenActivation" className="sr-only peer" />
                 <div className="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-500 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-purple-600"></div>
@@ -96,7 +96,7 @@ const GenesisPage: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="governanceMode" className="block text-sm font-medium text-gray-300">
+              <label htmlFor="governanceMode" className="block text-sm font-medium text-gray-200">
                 Governance Mode
               </label>
               <select
@@ -116,19 +116,19 @@ const GenesisPage: React.FC = () => {
           <h2 className="text-2xl font-semibold text-purple-300 mb-6">Branding &amp; Customization</h2>
           <form className="space-y-6">
             <div>
-              <label htmlFor="logoUpload" className="block text-sm font-medium text-gray-300">
+              <label htmlFor="logoUpload" className="block text-sm font-medium text-gray-200">
                 Logo Upload
               </label>
               <input
                 type="file"
                 name="logoUpload"
                 id="logoUpload"
-                className="mt-1 block w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 bg-gray-700 border-gray-600 rounded-md cursor-pointer"
+                className="mt-1 block w-full text-sm text-gray-200 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 bg-gray-700 border-gray-600 rounded-md cursor-pointer"
               />
             </div>
 
             <div>
-              <label htmlFor="colorPaletteUpload" className="block text-sm font-medium text-gray-300">
+              <label htmlFor="colorPaletteUpload" className="block text-sm font-medium text-gray-200">
                 Color Palette Upload (JSON)
               </label>
               <input
@@ -136,11 +136,11 @@ const GenesisPage: React.FC = () => {
                 name="colorPaletteUpload"
                 id="colorPaletteUpload"
                 accept=".json"
-                className="mt-1 block w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 bg-gray-700 border-gray-600 rounded-md cursor-pointer"
+                className="mt-1 block w-full text-sm text-gray-200 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700 bg-gray-700 border-gray-600 rounded-md cursor-pointer"
               />
             </div>
             <div>
-              <label htmlFor="subdomain" className="block text-sm font-medium text-gray-300">
+              <label htmlFor="subdomain" className="block text-sm font-medium text-gray-200">
                 Subdomain
               </label>
               <input
@@ -169,7 +169,7 @@ const GenesisPage: React.FC = () => {
                   />
                   <label
                     htmlFor={`module-${moduleId}`}
-                    className="ml-3 block text-sm font-medium text-gray-300"
+                    className="ml-3 block text-sm font-medium text-gray-200"
                   >
                     {module}
                   </label>
@@ -194,7 +194,7 @@ const GenesisPage: React.FC = () => {
                   />
                   <label
                     htmlFor={`module-${moduleId}`}
-                    className="ml-3 block text-sm font-medium text-gray-300"
+                    className="ml-3 block text-sm font-medium text-gray-200"
                   >
                     {module}
                   </label>
@@ -214,7 +214,7 @@ const GenesisPage: React.FC = () => {
         </div>
       </main>
 
-      <footer className="text-center text-gray-300 mt-12">
+      <footer className="text-center text-gray-200 mt-12">
         <p>&copy; {new Date().getFullYear()} Zion Project. All rights reserved.</p>
       </footer>
     </div>
