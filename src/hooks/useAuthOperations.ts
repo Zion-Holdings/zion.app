@@ -210,6 +210,8 @@ export function useAuthOperations(
           bio: profileData.bio ?? null,
           avatar_url: profileData.avatarUrl,
           headline: profileData.headline,
+          interests: profileData.interests,
+          preferred_categories: profileData.preferredCategories,
         })
         .eq("id", profileData.id);
 
