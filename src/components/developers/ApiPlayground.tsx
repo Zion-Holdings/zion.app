@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocalStorage } from "@/hooks";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -17,7 +18,7 @@ interface ApiPlaygroundProps {
 }
 
 export function ApiPlayground({ method, path, params = [] }: ApiPlaygroundProps) {
-  const [apiKey, setApiKey] = useState("demo_key_123");
+  const [apiKey, setApiKey] = useLocalStorage<string>("zion_api_key", "");
   const [paramValues, setParamValues] = useState<Record<string, string>>({});
   const [body, setBody] = useState("{}");
   const [response, setResponse] = useState<string | null>(null);

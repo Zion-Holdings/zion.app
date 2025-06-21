@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { safeStorage } from "@/utils/safeStorage";
 
 export type ApiKeyScope = 'jobs:read' | 'jobs:write' | 'talent:read' | 'quotes:write' | 'webhooks:manage';
 
@@ -129,6 +130,7 @@ export function useApiKeys() {
       
       // Store the actual key value temporarily so it can be displayed once
       setNewApiKey(result.key);
+      safeStorage.setItem('zion_api_key', result.key);
       
       toast({
         title: "API Key Created",
@@ -186,6 +188,7 @@ export function useApiKeys() {
       
       // Store the new key value
       setNewApiKey(result.key);
+      safeStorage.setItem('zion_api_key', result.key);
       
       toast({
         title: "API Key Regenerated",
