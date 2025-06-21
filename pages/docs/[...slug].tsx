@@ -32,7 +32,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
     for (const file of fs.readdirSync(docsDir)) {
       if (file.endsWith('.md')) {
         const slug = file.replace(/\.md$/, '');
-        paths.push({ params: { slug: [slug] } });
+        // Ensure we don't generate a path for 'api-reference' if the dedicated page exists
+        if (slug !== 'api-reference') {
+          paths.push({ params: { slug: [slug] } });
+        }
       }
     }
   }
