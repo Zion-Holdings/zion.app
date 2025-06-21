@@ -34,7 +34,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestCheckoutModalProps) {
-  const form = useForm<FormValues>({ resolver: zodResolver(schema) });
+  const form = useForm<FormValues>({ resolver: zodResolver(schema), mode: 'onChange' });
 
   const handleSubmit = (values: FormValues) => {
     onSubmit(values);
@@ -68,8 +68,16 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
                     <Input
                       type="email"
                       placeholder="Email"
-                      className="bg-zion-blue-dark border-zion-blue-light text-white"
+                      className="guest-checkout-modal-input"
                       {...field}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        const normalized = value.replace(/@{2,}/g, '@');
+                        if (normalized !== value) {
+                          alert("Original email contained '@@'");
+                        }
+                        field.onChange(normalized);
+                      }}
                     />
                   </FormControl>
                   <FormMessage />
@@ -85,7 +93,7 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
                   <FormControl>
                     <Input
                       placeholder="Shipping Address"
-                      className="bg-zion-blue-dark border-zion-blue-light text-white"
+                      className="guest-checkout-modal-input"
                       {...field}
                     />
                   </FormControl>
@@ -94,7 +102,7 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
               )}
             />
             <DialogFooter>
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full" disabled={!form.formState.isValid}>
                 Continue to Payment
               </Button>
             </DialogFooter>
