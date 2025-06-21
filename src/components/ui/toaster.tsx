@@ -16,6 +16,7 @@ export function Toaster() {
           },
           duration: 4000,
           descriptionClassName: "text-zion-slate-light",
+          closeButtonProps: { 'aria-label': 'Close notification' }
         }}
       />
     </div>
