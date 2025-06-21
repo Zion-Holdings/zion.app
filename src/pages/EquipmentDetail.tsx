@@ -185,11 +185,16 @@ export default function EquipmentDetail() {
       type: 'ADD_ITEM',
       payload: { id: equipment.id, name: equipment.name, price: equipment.price, quantity }
     });
-    if (isAuthenticated) {
-      toast.success(`${quantity}× ${equipment.name} added`);
-    } else {
-      toast.info('Item added. Login to checkout.');
-    }
+    const message = isAuthenticated
+      ? `${quantity}× ${equipment.name} added`
+      : 'Item added. Login to checkout.';
+    const fn = isAuthenticated ? toast.success : toast.info;
+    fn(message, {
+      action: {
+        label: 'View Cart',
+        onClick: () => router.push('/cart'),
+      },
+    });
     setTimeout(() => setIsAdding(false), 800);
   };
 
