@@ -105,6 +105,13 @@ export default async function handler(
           message: 'Password is too weak. Please choose a stronger password.' 
         });
       }
+
+      if (error.message.includes('Supabase not configured')) {
+        console.error('[API /api/auth/register] CRITICAL: Supabase is not configured. Registration disabled.');
+        return res.status(503).json({
+          message: 'The registration service is temporarily unavailable. Please try again later.'
+        });
+      }
       
       return res.status(400).json({ 
         message: error.message || 'Registration failed. Please check your information and try again.' 
@@ -112,9 +119,16 @@ export default async function handler(
     }
 
     if (!data.user) {
-      console.error('[API /api/auth/register] No user data returned from Supabase');
+      // Check if the error was due to Supabase not being configured, as data might be null in that case
+      if (error && error.message.includes('Supabase not configured')) {
+        console.error('[API /api/auth/register] CRITICAL: Supabase is not configured. No user data returned.');
+        return res.status(503).json({
+          message: 'The registration service is temporarily unavailable. Please try again later.'
+        });
+      }
+      console.error('[API /api/auth/register] No user data returned from Supabase without specific error.');
       return res.status(500).json({ 
-        message: 'Registration failed. Please try again.' 
+        message: 'Registration failed due to an unexpected issue. Please try again.'
       });
     }
 
