@@ -6,6 +6,7 @@ import {
   ReactNode,
 } from 'react';
 import { toggleFavorite as toggleFavoriteRequest } from '@/api/favorites';
+import { toast } from '@/hooks/use-toast';
 import { safeStorage } from '@/utils/safeStorage';
 
 export interface FavoritesContextType {
@@ -38,7 +39,17 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
 
   const toggleFavorite = async (productId: string) => {
     try {
-      await toggleFavoriteRequest(productId);
+      const result = await toggleFavoriteRequest(productId);
+      if ((result as any)?.needsAuth) {
+        toast.info('Login required to save favorites');
+        setFavorites(prev =>
+          prev.includes(productId)
+            ? prev.filter(id => id !== productId)
+            : [...prev, productId]
+        );
+        return;
+      }
+
       setFavorites(prev =>
         prev.includes(productId)
           ? prev.filter(id => id !== productId)
