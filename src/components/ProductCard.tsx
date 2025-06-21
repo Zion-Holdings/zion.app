@@ -20,6 +20,12 @@ import { useMediaQuery } from 'usehooks-ts';
 import { useEnqueueSnackbar } from '@/context/SnackbarContext';
 import { closeSnackbar } from 'notistack';
 import { captureException } from '@/utils/sentry';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 interface ProductCardProps {
   product: Product;
@@ -151,7 +157,7 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
                 </Button>
               </TooltipTrigger>
               {!isAuthenticated && (
-                <TooltipContent>Please log in to purchase</TooltipContent>
+                <TooltipContent>Login required</TooltipContent>
               )}
             </Tooltip>
           </TooltipProvider>
