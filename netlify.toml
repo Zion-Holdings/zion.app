@@ -30,6 +30,7 @@
   # ========================================
   # MONITORING & ANALYTICS CONFIGURATION
   # ========================================
+<<<<<<< HEAD
   # Sentry for error monitoring (RECOMMENDED for production)
   NEXT_PUBLIC_SENTRY_DSN = "your_sentry_dsn_here"
   NEXT_PUBLIC_SENTRY_ENVIRONMENT = "production"
@@ -38,6 +39,14 @@
   # Analytics and monitoring
   NEXT_PUBLIC_GA_ID = "your_google_analytics_id_here"
   NEXT_PUBLIC_INTERCOM_APP_ID = "your_intercom_app_id_here"
+=======
+  # URL for the internal Node.js authentication microservice.
+  # This is used by the /api/auth/register Next.js function to call the backend auth microservice.
+  # !!! THIS MUST BE SET IN THE NETLIFY UI for production/preview builds !!!
+  # Example for local development: http://localhost:3001 (if your Node.js auth service runs on port 3001)
+  # Example for Kubernetes: http://auth-service.your-namespace.svc.cluster.local:PORT
+  INTERNAL_AUTH_SERVICE_URL = "https://dev-l3jva0th67s2iap4.us.auth0.com/api/v2/"
+>>>>>>> b990c54401c84db5ebd842d9336c7c40883d07bc
   
   # ========================================
   # WALLET & WEB3 CONFIGURATION  
