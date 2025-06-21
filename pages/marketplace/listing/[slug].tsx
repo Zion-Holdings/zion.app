@@ -5,6 +5,7 @@ import { SERVICES } from '@/data/servicesData';
 import * as Sentry from '@sentry/nextjs';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
@@ -17,6 +18,8 @@ interface ListingPageProps {
 }
 
 const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
+  const router = useRouter();
+  
   if (!listing) {
     return <div className="max-w-3xl mx-auto py-8 px-4">Listing not found.</div>;
   }
@@ -29,7 +32,9 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
     dispatch(
       addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 })
     );
-    toast.success(`1× ${listing.title} added`, {
+    toast({
+      title: "Added to cart",
+      description: `${listing.title} has been added to your cart`,
       action: {
         label: 'View Cart',
         onClick: () => router.push('/cart'),
