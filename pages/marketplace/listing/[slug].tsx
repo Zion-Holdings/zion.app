@@ -9,6 +9,8 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
 import { toast } from '@/hooks/use-toast';
+import { getBreadcrumbsForPath } from '@/utils/routeUtils';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 interface ListingPageProps {
   listing: ProductListing | null;
@@ -20,6 +22,7 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
   }
 
   const canonicalUrl = `/marketplace/listing/${listing.id}`;
+  const breadcrumbs = getBreadcrumbsForPath(canonicalUrl);
   const dispatch = useDispatch<AppDispatch>();
 
   const handleAddToCart = () => {
@@ -35,6 +38,7 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
         <title>{listing.title} | Zion Marketplace</title>
         <link rel="canonical" href={canonicalUrl} />
       </Head>
+      <BreadcrumbJsonLd breadcrumbs={breadcrumbs} />
       <nav className="max-w-3xl mx-auto mt-4 px-4 text-sm text-muted-foreground space-x-1" aria-label="Breadcrumb">
         <Link href="/" className="hover:underline">Home</Link>
         <span>/</span>
