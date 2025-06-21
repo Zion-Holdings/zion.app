@@ -109,8 +109,13 @@ function ProjectDetailsContent() {
       if (error) throw error;
       
       setNotes(data || []);
-    } catch (err) {
+    } catch (err: any) {
       console.error("Error fetching project notes:", err);
+      toast({
+        title: "Failed to load notes",
+        description: err.message || "An error occurred while loading project notes.",
+        variant: "destructive",
+      });
     }
   };
   
@@ -143,7 +148,7 @@ function ProjectDetailsContent() {
       console.error("Error adding note:", err);
       toast({
         title: "Failed to add note",
-        description: err.message || "An error occurred while adding your note.",
+        description: err.message || "An error occurred while adding note.",
         variant: "destructive",
       });
     } finally {
