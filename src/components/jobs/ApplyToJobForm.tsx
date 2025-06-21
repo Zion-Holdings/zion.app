@@ -27,6 +27,7 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
   
   const [coverLetter, setCoverLetter] = useState(`I'm interested in the "${job.title}" position and would like to apply. My skills and experience align well with this role.`);
   const [selectedResumeId, setSelectedResumeId] = useState<string>("");
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
@@ -48,7 +49,12 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
     setError(null);
     
     try {
-      const success = await applyToJob(job.id, coverLetter, selectedResumeId || undefined);
+      const success = await applyToJob(
+        job.id,
+        coverLetter,
+        selectedResumeId || undefined,
+        resumeFile || undefined
+      );
       
       if (success) {
         toast.success("Your application has been submitted!");
@@ -141,6 +147,17 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
               </Button>
             </div>
           )}
+        </div>
+
+        <div>
+          <Label htmlFor="cvUpload">Or Upload CV (PDF)</Label>
+          <input
+            id="cvUpload"
+            type="file"
+            accept=".pdf"
+            className="mt-1"
+            onChange={(e) => setResumeFile(e.target.files?.[0] || null)}
+          />
         </div>
       </div>
       

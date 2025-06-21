@@ -80,21 +80,42 @@ export const useJobApplications = (jobId?: string) => {
     }
   };
   
-  const applyToJob = async (jobId: string, coverLetter: string, resumeId?: string) => {
+  const applyToJob = async (
+    jobId: string,
+    coverLetter: string,
+    resumeId?: string,
+    resumeFile?: File
+  ) => {
     if (!user) {
       toast.error("You must be logged in to apply for jobs");
       return false;
     }
     
     try {
+      let resumeUrl: string | undefined;
+
+      if (resumeFile) {
+        const fileName = `resume-${user.id}-${Date.now()}-${resumeFile.name}`;
+        const { error: uploadError } = await supabase.storage
+          .from('resumes')
+          .upload(fileName, resumeFile);
+        if (uploadError) throw uploadError;
+
+        const {
+          data: { publicUrl }
+        } = supabase.storage.from('resumes').getPublicUrl(fileName);
+        resumeUrl = publicUrl;
+      }
+
       const { data, error } = await supabase
-        .from("job_applications")
+        .from('job_applications')
         .insert({
           job_id: jobId,
           talent_id: user.id,
           resume_id: resumeId,
+          resume_url: resumeUrl,
           cover_letter: coverLetter,
-          status: "new"
+          status: 'new'
         })
         .select()
         .single();
@@ -109,7 +130,17 @@ export const useJobApplications = (jobId?: string) => {
       }
       
       // Add the new application to the local state
-      const newApplication = data as JobApplication;
+      const newApplication = {
+        ...(data as JobApplication),
+        resume: resumeUrl
+          ? {
+              id: crypto.randomUUID(),
+              title: resumeFile?.name || 'Uploaded CV',
+              type: 'custom_upload',
+              file_url: resumeUrl
+            }
+          : (data as any).resume
+      } as JobApplication;
       setApplications(prev => [newApplication, ...prev]);
       
       toast.success("Application submitted successfully");
