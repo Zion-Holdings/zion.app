@@ -196,19 +196,23 @@ export const fetchProducts = async (params: {
       console.log(`Successfully fetched ${response.data.length} products`);
       return response.data;
     } else {
-      console.warn('Products API returned unexpected data format:', response.data);
-      return [];
+      console.warn('Products API returned unexpected data format. Raw response:', response.data);
+      // It might be better to throw an error here if data is present but not an array
+      // For now, let's align with the issue's goal of surfacing errors
+      throw new Error('Products API returned unexpected data format.');
     }
   } catch (error: any) {
     console.error('Marketplace fetch failed - Products:', {
       message: error.message,
       status: error.response?.status,
+      data: error.response?.data, // Log response data on error
       url: error.config?.url,
+      method: error.config?.method,
       params,
     });
     
-    // Return empty array for graceful degradation
-    return [];
+    // Re-throw the error so the caller can handle it
+    throw error;
   }
 };
 
@@ -234,8 +238,8 @@ export const fetchCategories = async (): Promise<Category[]> => {
       url: error.config?.url,
     });
     
-    // Return empty array for graceful degradation
-    return [];
+    // Re-throw the error so the caller can handle it
+    throw error;
   }
 };
 
@@ -268,8 +272,8 @@ export const fetchTalent = async (params: {
       params,
     });
     
-    // Return empty array for graceful degradation
-    return [];
+    // Re-throw the error so the caller can handle it
+    throw error;
   }
 };
 
@@ -302,8 +306,8 @@ export const fetchEquipment = async (params: {
       params,
     });
     
-    // Return empty array for graceful degradation
-    return [];
+    // Re-throw the error so the caller can handle it
+    throw error;
   }
 };
 

@@ -146,6 +146,7 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
       }
 
       let items: ProductListing[] = await res.json();
+      console.log('Marketplace.tsx: Raw items from API before filtering/sorting:', JSON.stringify(items, null, 2));
 
       if (showRecommended) {
         items = items.filter((p) => p.rating != null && p.rating >= 4.3);
@@ -165,43 +166,56 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
             return (b.aiScore || 0) - (a.aiScore || 0);
           case 'newest':
           default:
-            return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+            // Ensure createdAt exists and is a valid date string before parsing
+            const timeA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+            const timeB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+
+            // Handle NaN cases that might arise from invalid date strings
+            if (isNaN(timeB) && isNaN(timeA)) return 0; // Both invalid, treat as equal
+            if (isNaN(timeB)) return -1; // b is invalid, a comes first (appears newer)
+            if (isNaN(timeA)) return 1;  // a is invalid, b comes first
+
+            return timeB - timeA; // Both valid, sort by time
         }
       });
 
       return {
         items,
         hasMore: items.length === limit,
-        total: undefined
+        total: undefined // Total is not provided by this simplified API
       };
     } catch (err: any) {
-      handleApiError(err);
-      throw err;
+      // Log the error and allow useInfiniteScrollPagination to handle it
+      console.error("Error in Marketplace fetchProducts:", err);
+      handleApiError(err); // This might show a toast or log to Sentry
+      throw err; // Re-throw to let useInfiniteScrollPagination know about the failure
     }
   }, [filterCategory, sortBy, showRecommended, handleApiError]);
 
-  // Use infinite scroll hook
+  // useInfiniteScrollPagination hook
   const {
-    items: products,
-    loading,
-    error,
-    hasMore,
-    total,
-    isFetching,
-    lastElementRef,
-    refresh,
-    scrollToTop
-  } = useInfiniteScrollPagination(fetchProducts, 16);
+    items: products, // These are the products to render
+    loading,          // True when initially loading or when fetchProducts is running
+    error,            // Contains the error object if fetchProducts throws
+    hasMore,          // True if the API indicates more items are available
+    isFetching,       // True if fetching more items (for infinite scroll)
+    lastElementRef,   // Ref for the last element to trigger loading more
+    refresh,          // Function to reload data from page 1
+    scrollToTop       // Function to scroll to the top of the page
+  } = useInfiniteScrollPagination(fetchProducts, 16); // 16 items per page
 
-  useEffect(() => {
+  // Effect to refresh data when filters change (excluding initial render)
+   useEffect(() => {
     if (firstRenderRef.current) {
-      firstRenderRef.current = false;
+      firstRenderRef.current = false; // Skip refresh on initial mount
       return;
     }
-    refresh();
-    scrollToTop();
-    toast({ title: showRecommended ? 'Showing recommended products' : 'Showing all products' });
-  }, [showRecommended, refresh, scrollToTop, toast]);
+    console.log('Filters changed, refreshing marketplace data. Filters:', { filterCategory, sortBy, showRecommended });
+    refresh(); // Reload data when filterCategory or sortBy changes
+    scrollToTop(); // Scroll to top after refresh
+    // Optionally, provide user feedback about the filter change
+    // toast({ title: 'Filters updated', description: 'Displaying products based on new criteria.' });
+  }, [filterCategory, sortBy, showRecommended, refresh, scrollToTop, toast]); // Added filterCategory and sortBy to dependency array
 
   // Calculate market stats
   const marketStats = useMemo(() => {
