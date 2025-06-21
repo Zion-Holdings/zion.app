@@ -6,6 +6,7 @@ import { SERVICES } from '@/data/servicesData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
+import { withCache, cacheKeys, cacheCategory } from '@/lib/cache';
 import Fuse from 'fuse.js';
 
 // Define SearchResult interface (assuming it's not already globally defined or imported elsewhere)
@@ -123,19 +124,37 @@ async function handler(
   }
 
   try {
-    const results = fuse.search(q);
-    const totalCount = results.length;
-    const start = (page - 1) * limit;
-    const end = start + limit;
-    const paginatedResults = results.slice(start, end).map((r) => r.item);
+    // Create cache key including pagination parameters
+    const cacheKey = cacheKeys.search(q, `page:${page}-limit:${limit}`);
+    
+    // Use cache for search results (5 minute cache for search)
+    const searchResponse = await withCache(
+      cacheKey,
+      async () => {
+        const results = fuse.search(q);
+        const totalCount = results.length;
+        const start = (page - 1) * limit;
+        const end = start + limit;
+        const paginatedResults = results.slice(start, end).map((r) => r.item);
 
-    return res.status(200).json({
-      results: paginatedResults,
-      totalCount,
-      page,
-      limit,
-      query: q,
-    });
+        return {
+          results: paginatedResults,
+          totalCount,
+          page,
+          limit,
+          query: q,
+        };
+      },
+      cacheCategory.SHORT, // 5 minute cache for search results
+      300 // 5 minutes in seconds
+    );
+
+    // Set cache headers for client-side caching
+    res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
+    res.setHeader('X-Cache', 'server-cached');
+    res.setHeader('X-Search-Results', searchResponse.totalCount.toString());
+
+    return res.status(200).json(searchResponse);
   } catch (error: any) {
     console.error('Search query failed:', error);
     return res.status(500).json({ error: 'Search query failed' });

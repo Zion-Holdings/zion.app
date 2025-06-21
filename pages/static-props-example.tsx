@@ -16,37 +16,69 @@ const StaticPropsExamplePage: React.FC<StaticPropsExamplePageProps> = ({ data })
 export async function getStaticProps() {
   const API_URL = process.env.EXAMPLE_API_URL;
 
+  // Provide mock data for build time when API is not available
+  const mockData = [
+    { id: 1, name: 'Example Item 1', description: 'This is a mock item for build-time static generation' },
+    { id: 2, name: 'Example Item 2', description: 'Another mock item showing static props functionality' },
+    { id: 3, name: 'Example Item 3', description: 'Final mock item demonstrating the feature' }
+  ];
+
+  // If no API URL is configured, use mock data (common during build)
   if (!API_URL) {
-    console.error("SSR fetch error: EXAMPLE_API_URL is not defined. Returning empty data for static-props-example page.");
-    return { props: { data: [] } }; // Prevent build-time failure if URL is missing
+    console.log("EXAMPLE_API_URL not defined. Using mock data for static-props-example page.");
+    return { 
+      props: { data: mockData },
+      revalidate: 3600 // Revalidate every hour when deployed
+    };
   }
 
   try {
-    const res = await fetch(API_URL);
+    const res = await fetch(API_URL, {
+      headers: {
+        'Accept': 'application/json',
+        'User-Agent': 'Zion-App-SSR'
+      }
+    });
+
     if (!res.ok) {
-      console.error(`SSR fetch error: Failed to fetch ${API_URL}, status: ${res.status}`);
-      return { notFound: true }; // Fail the page build if status is not ok
+      console.warn(`API fetch failed with status ${res.status}, using mock data`);
+      return { 
+        props: { data: mockData },
+        revalidate: 300 // Try again in 5 minutes
+      };
     }
 
     const contentType = res.headers.get("content-type");
     if (!contentType || !contentType.includes("application/json")) {
-      console.error(`SSR fetch error: Expected application/json but got ${contentType} from ${API_URL}`);
-      // Try to read the response as text to log it, but still return notFound
-      try {
-        const textResponse = await res.text();
-        console.error("SSR fetch error: Response body (text):", textResponse.substring(0, 200)); // Log first 200 chars
-      } catch (textError) {
-        console.error("SSR fetch error: Could not read response body as text.", textError);
-      }
-      return { notFound: true }; // Fail the page build
+      console.warn(`Expected JSON but got ${contentType}, using mock data`);
+      return { 
+        props: { data: mockData },
+        revalidate: 300
+      };
     }
 
-    const data = await res.json(); // This might still fail if JSON is malformed
-    return { props: { data } };
+    const data = await res.json();
+    
+    // Validate data structure
+    if (!Array.isArray(data)) {
+      console.warn("API returned invalid data structure, using mock data");
+      return { 
+        props: { data: mockData },
+        revalidate: 300
+      };
+    }
+
+    return { 
+      props: { data },
+      revalidate: 3600 // Revalidate every hour
+    };
   } catch (error) {
-    // Handle network errors or JSON parsing errors (if res.json() fails)
-    console.error(`SSR fetch error: Error fetching or parsing data from ${API_URL}:`, error);
-    return { notFound: true }; // Fail the page build
+    // Gracefully handle all errors by falling back to mock data
+    console.warn('API fetch error, using mock data:', error.message);
+    return { 
+      props: { data: mockData },
+      revalidate: 300 // Retry in 5 minutes
+    };
   }
 }
 

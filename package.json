@@ -20,6 +20,8 @@
     "test:watch": "vitest --watch",
     "test:search": "node scripts/test-search-functionality.cjs",
     "perf:check": "node scripts/performance-check.cjs",
+    "build:monitor": "node scripts/build-monitor.cjs",
+    "build:analyze": "npm run build && npm run build:monitor",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser electron",
     "audit": "npm audit --production",
