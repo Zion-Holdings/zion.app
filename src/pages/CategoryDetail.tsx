@@ -7,6 +7,7 @@ import { ProductListing } from "@/types/listings";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { toast } from "@/hooks/use-toast";
+import { NextSeo } from '@/components/NextSeo';
 
 const AUTO_SERVICE_TITLES = [
   "AI-Powered Customer Support",
@@ -234,8 +235,16 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
     }
   };
 
+  const seoTitle = category.title
+    ? `${category.title} | Zion Marketplace`
+    : 'Category | Zion Marketplace';
+  const seoDescription =
+    category.description || 'Explore listings in this category.';
+
   return (
     <>
+      <NextSeo title={seoTitle} description={seoDescription} />
+      <Header />
       <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
         <div className="min-h-screen bg-zion-blue">
           <div className="container mx-auto px-4 py-12">

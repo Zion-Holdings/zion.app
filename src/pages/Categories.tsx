@@ -5,6 +5,7 @@ import { SkeletonCard } from '@/components/ui';
 import ErrorBoundary from "@/components/GlobalErrorBoundary";
 import * as Icons from 'lucide-react';
 import { CATEGORIES } from '@/data/categories';
+import { NextSeo } from '@/components/NextSeo';
 
 interface CategoryType {
   id: string;
@@ -40,11 +41,16 @@ export default function Categories({ categories: initialCategories = [] }: Categ
   const isLoading = !data && !error;
 
   return (
-    <div className="min-h-screen bg-zion-blue">
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <GradientHeading level="h1" className="text-4xl md:text-5xl font-bold mb-4">
-            Browse Categories
+    <>
+      <NextSeo
+        title="Browse Categories"
+        description="Explore AI service and product categories in the Zion marketplace."
+      />
+      <div className="min-h-screen bg-zion-blue">
+        <div className="container mx-auto px-4 py-12">
+          <div className="text-center mb-12">
+            <GradientHeading level="h1" className="text-4xl md:text-5xl font-bold mb-4">
+              Browse Categories
           </GradientHeading>
           <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
             Explore our extensive range of AI services and products organized by category.
@@ -91,5 +97,6 @@ export default function Categories({ categories: initialCategories = [] }: Categ
         </ErrorBoundary>
       </div>
     </div>
+    </>
   );
 }
