@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker';
+import { v4 as uuidv4 } from 'uuid';
 import { ProductListing } from "@/types/listings";
 
 // IT and AI product categories with market data
@@ -104,7 +106,7 @@ function generateCompanyName(): string {
 }
 
 // Generate market-appropriate pricing
-function generateMarketPrice(category: typeof AI_IT_CATEGORIES[0], popularityBoost: number = 1): number {
+function generateMarketPrice(category: (typeof AI_IT_CATEGORIES)[number], popularityBoost: number = 1): number {
   const [min, max] = category.priceRange;
   
   // Use normal distribution for more realistic pricing
@@ -178,21 +180,21 @@ function generateRating(): { rating: number; reviewCount: number } {
 }
 
 // Generate AI score
-function generateAIScore(category: typeof AI_IT_CATEGORIES[0]): number {
+function generateAIScore(category: (typeof AI_IT_CATEGORIES)[number]): number {
   const baseScore = 75 + Math.random() * 20; // 75-95 base range
   const categoryBonus = category.popularity * 10; // Up to 10 point bonus
   return Math.min(99, Math.round(baseScore + categoryBonus));
 }
 
 // Main algorithm to generate products
-export function generateAIProducts(count: number, startId: number = 1): ProductListing[] {
+export function generateAIProducts(count: number): ProductListing[] {
   const products: ProductListing[] = [];
   
   for (let i = 0; i < count; i++) {
     // Select category based on popularity weights
     const randomValue = Math.random();
     let cumulativeWeight = 0;
-    let selectedCategory: typeof AI_IT_CATEGORIES[number] = AI_IT_CATEGORIES[0];
+    let selectedCategory: (typeof AI_IT_CATEGORIES)[number] = AI_IT_CATEGORIES[0];
     
     for (const category of AI_IT_CATEGORIES) {
       cumulativeWeight += category.popularity / AI_IT_CATEGORIES.reduce((sum, cat) => sum + cat.popularity, 0);
@@ -221,7 +223,7 @@ export function generateAIProducts(count: number, startId: number = 1): ProductL
     const aiScore = generateAIScore(selectedCategory);
     
     const product: ProductListing = {
-      id: `ai-generated-${startId + i}`,
+      id: uuidv4(),
       title,
       description,
       category: selectedCategory.name,
@@ -278,18 +280,18 @@ export function getRecommendedProducts(products: ProductListing[], userPreferenc
     
     if (userPreferences.priceRange) {
       const [min, max] = userPreferences.priceRange;
-      filtered = filtered.filter(p => p.price >= min && p.price <= max);
+      filtered = filtered.filter(p => (p.price ?? 0) >= min && (p.price ?? 0) <= max);
     }
     
     if (userPreferences.rating) {
-      filtered = filtered.filter(p => p.rating >= userPreferences.rating!);
+      filtered = filtered.filter(p => (p.rating ?? 0) >= userPreferences.rating!);
     }
   }
   
   // Sort by AI score and rating for best recommendations
   return filtered.sort((a, b) => {
-    const scoreA = (a.aiScore || 0) * 0.6 + a.rating * 0.4;
-    const scoreB = (b.aiScore || 0) * 0.6 + b.rating * 0.4;
+    const scoreA = ((a.aiScore ?? 0) * 0.6) + ((a.rating ?? 0) * 0.4);
+    const scoreB = ((b.aiScore ?? 0) * 0.6) + ((b.rating ?? 0) * 0.4);
     return scoreB - scoreA;
   });
-} 
+}
