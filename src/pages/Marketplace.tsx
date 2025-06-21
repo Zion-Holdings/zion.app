@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useApiErrorHandling } from '@/hooks/useApiErrorHandling';
 import ProductCard from '@/components/ProductCard';
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp, Filter, SortAsc, Sparkles, TrendingUp, Star } from 'lucide-react';
 import { SkeletonCard } from '@/components/ui/skeleton';
@@ -12,6 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ProductListing } from '@/types/listings';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
+import { useToast } from '@/hooks/use-toast';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 
 /**
@@ -124,6 +125,8 @@ const FilterControls: React.FC<{
  */
 export default function Marketplace({ products: _initialProducts = [] }: MarketplaceProps) {
   const router = useRouter();
+  const { toast } = useToast();
+  const firstRenderRef = useRef(true);
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
@@ -191,8 +194,14 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
   } = useInfiniteScrollPagination(fetchProducts, 16);
 
   useEffect(() => {
+    if (firstRenderRef.current) {
+      firstRenderRef.current = false;
+      return;
+    }
     refresh();
-  }, [filterCategory, sortBy, showRecommended, refresh]);
+    scrollToTop();
+    toast({ title: showRecommended ? 'Showing recommended products' : 'Showing all products' });
+  }, [showRecommended, refresh, scrollToTop, toast]);
 
   // Calculate market stats
   const marketStats = useMemo(() => {
