@@ -8,12 +8,34 @@
   NODE_OPTIONS = "--max_old_space_size=4096"
   NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
   NODE_VERSION = "20"
-  # Environment variables required at build time should be provided via the
-  # Netlify UI. Setting placeholder values here caused the build to fail when
-  # `checkEssentialEnvVars` validates them. Remove the hard coded placeholders
-  # so the actual values from Netlify's configuration are used instead.
-  EXAMPLE_API_URL = "https://jsonplaceholder.typicode.com/todos/1"
-
+  
+  # ========================================
+  # SUPABASE AUTHENTICATION CONFIGURATION
+  # ========================================
+  # Supabase handles all authentication (login, signup, password reset, etc.)
+  # These variables MUST be set in Netlify UI with actual values from your Supabase project
+  # Get these from: https://app.supabase.com/project/YOUR_PROJECT_ID/settings/api
+  
+  # REQUIRED: Supabase project URL and anonymous key
+  NEXT_PUBLIC_SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL_HERE"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY_HERE"
+  
+  # OPTIONAL: Service role key for server-side operations (keep secret!)
+  SUPABASE_SERVICE_ROLE_KEY = "YOUR_SUPABASE_SERVICE_ROLE_KEY_HERE"
+  
+  # ========================================
+  # AUTHENTICATION SERVICE CONFIGURATION
+  # ========================================
+  # URL for the internal Node.js authentication microservice.
+  # This is used by the /api/auth/register Next.js function to call the backend auth microservice.
+  # !!! THIS MUST BE SET IN THE NETLIFY UI for production/preview builds !!!
+  # Example for local development: http://localhost:3001 (if your Node.js auth service runs on port 3001)
+  # Example for Kubernetes: http://auth-service.your-namespace.svc.cluster.local:PORT
+  INTERNAL_AUTH_SERVICE_URL = "YOUR_INTERNAL_AUTH_SERVICE_URL_HERE"
+  
+  # ========================================
+  # SENTRY ERROR MONITORING CONFIGURATION
+  # ========================================
   # Sentry specific configuration
   # These should be set in Netlify UI for actual values, these are placeholders/docs
   SENTRY_ORG = "YOUR_SENTRY_ORG_SLUG" # User must set this in Netlify build environment variables
@@ -41,20 +63,27 @@
   NEXT_PUBLIC_SENTRY_DSN = "YOUR_NEXT_PUBLIC_SENTRY_DSN_HERE" # User must set this in Netlify build environment variables
   SENTRY_DSN = "YOUR_SENTRY_DSN_HERE" # User must set this in Netlify build environment variables
 
-  # Ensure SECRETS_SCAN_OMIT_KEYS includes all relevant Sentry keys if needed,
-  # though SENTRY_AUTH_TOKEN is the main one to protect.
-  # DSNs are public but omitting them can reduce noise.
-  # Example if SENTRY_AUTH_TOKEN were also listed here (it should be a secret in UI):
-  # SECRETS_SCAN_OMIT_KEYS = "SENTRY_DSN,NEXT_PUBLIC_SENTRY_DSN,SENTRY_AUTH_TOKEN"
-  # Current SECRETS_SCAN_OMIT_KEYS, DSNs are public but omitting them can reduce scanner noise.
-  SECRETS_SCAN_OMIT_KEYS = "SENTRY_DSN,NEXT_PUBLIC_SENTRY_DSN,NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,CLOUDINARY_CLOUD_NAME,INTERNAL_AUTH_SERVICE_URL" # SENTRY_AUTH_TOKEN should be a secret in UI
-
-  # URL for the internal Node.js authentication microservice.
-  # This is used by the /api/auth/register Next.js function to call the backend auth microservice.
-  # !!! THIS MUST BE SET IN THE NETLIFY UI for production/preview builds !!!
-  # Example for local development: http://localhost:3001 (if your Node.js auth service runs on port 3001)
-  # Example for Kubernetes: http://auth-service.your-namespace.svc.cluster.local:PORT
-  INTERNAL_AUTH_SERVICE_URL = "YOUR_INTERNAL_AUTH_SERVICE_URL_HERE"
+  # ========================================
+  # OPTIONAL INTEGRATIONS
+  # ========================================
+  # Additional service configurations (set in Netlify UI if needed)
+  
+  # Reown (WalletConnect) for Web3 integration
+  NEXT_PUBLIC_REOWN_PROJECT_ID = "YOUR_REOWN_PROJECT_ID_HERE"
+  
+  # Stripe for payment processing
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY = "YOUR_STRIPE_PUBLISHABLE_KEY_HERE"
+  STRIPE_SECRET_KEY = "YOUR_STRIPE_SECRET_KEY_HERE"
+  
+  # Cloudinary for image hosting
+  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME = "YOUR_CLOUDINARY_CLOUD_NAME_HERE"
+  CLOUDINARY_API_KEY = "YOUR_CLOUDINARY_API_KEY_HERE"
+  CLOUDINARY_API_SECRET = "YOUR_CLOUDINARY_API_SECRET_HERE"
+  
+  # ========================================
+  # TESTING CONFIGURATION
+  # ========================================
+  # Environment variables for automated testing (Cypress E2E tests)
   CYPRESS_TEST_USER_DISPLAY_NAME = "YOUR_CYPRESS_TEST_USER_DISPLAY_NAME"
   CYPRESS_TEST_USER_EMAIL = "YOUR_CYPRESS_TEST_USER_EMAIL"
   CYPRESS_TEST_USER_PASSWORD = "YOUR_CYPRESS_TEST_USER_PASSWORD"
@@ -62,6 +91,23 @@
   CYPRESS_EXISTING_USER_PASSWORD = "YOUR_CYPRESS_EXISTING_USER_PASSWORD"
   CYPRESS_TEST_USER_NAME = "YOUR_CYPRESS_TEST_USER_NAME"
   CYPRESS_STRIPE_TEST_CARD = "YOUR_CYPRESS_STRIPE_TEST_CARD"
+  
+  # ========================================
+  # DEVELOPMENT CONFIGURATION
+  # ========================================
+  # Example API URL for development/testing
+  EXAMPLE_API_URL = "https://jsonplaceholder.typicode.com/todos/1"
+  
+  # Application URL (automatically set by Netlify, but can be overridden)
+  NEXT_PUBLIC_APP_URL = "$DEPLOY_PRIME_URL"
+
+  # Ensure SECRETS_SCAN_OMIT_KEYS includes all relevant Sentry keys if needed,
+  # though SENTRY_AUTH_TOKEN is the main one to protect.
+  # DSNs are public but omitting them can reduce noise.
+  # Example if SENTRY_AUTH_TOKEN were also listed here (it should be a secret in UI):
+  # SECRETS_SCAN_OMIT_KEYS = "SENTRY_DSN,NEXT_PUBLIC_SENTRY_DSN,SENTRY_AUTH_TOKEN"
+  # Current SECRETS_SCAN_OMIT_KEYS, DSNs are public but omitting them can reduce scanner noise.
+  SECRETS_SCAN_OMIT_KEYS = "SENTRY_DSN,NEXT_PUBLIC_SENTRY_DSN,NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,CLOUDINARY_CLOUD_NAME,INTERNAL_AUTH_SERVICE_URL,SUPABASE_SERVICE_ROLE_KEY"
 
 [functions.environment]
   SENTRY_LOG_LEVEL = "debug"
