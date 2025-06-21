@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { toast } from "@/hooks/use-toast";
 import { NextSeo } from '@/components/NextSeo';
+import { Header } from "@/components/Header";
 
 const AUTO_SERVICE_TITLES = [
   "AI-Powered Customer Support",
