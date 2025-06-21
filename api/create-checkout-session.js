@@ -34,15 +34,18 @@ async function handler(req, res) {
   try {
     const liveKey = process.env.STRIPE_SECRET_KEY || '';
     const testKey = process.env.STRIPE_TEST_SECRET_KEY || liveKey;
+    const useTest =
+      process.env.STRIPE_TEST_MODE === 'true' ||
+      (!isProdDomain() && liveKey.startsWith('sk_live'));
 
     if (!isProdDomain() && liveKey.startsWith('sk_live') && !process.env.STRIPE_TEST_SECRET_KEY) {
       throw new Error('Refusing to use live Stripe key on non-production domain');
     }
 
-// This route uses the official Stripe Node.js SDK for server-to-server communication.
-// The getStripe() client-side helper (from src/utils/getStripe.ts) and its
-// advancedFraudSignals option are not applicable to this server-side implementation.
-    const stripe = new Stripe(isProdDomain() ? liveKey : testKey, {
+    // This route uses the official Stripe Node.js SDK for server-to-server communication.
+    // The getStripe() client-side helper (from src/utils/getStripe.ts) and its
+    // advancedFraudSignals option are not applicable to this server-side implementation.
+    const stripe = new Stripe(useTest ? testKey : liveKey, {
       apiVersion: '2023-10-16',
     });
 
@@ -77,7 +80,7 @@ async function handler(req, res) {
     try {
       orders = JSON.parse(fs.readFileSync(file, 'utf8'));
     } catch {}
-    orders.push({ id: orderId, items: cartItems, status: 'pending' });
+    orders.push({ id: orderId, items: cartItems, status: 'pending', sandbox: useTest });
     fs.writeFileSync(file, JSON.stringify(orders, null, 2));
 
     res.statusCode = 200;

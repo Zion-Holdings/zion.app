@@ -3,9 +3,14 @@ import Stripe from 'stripe';
 import fs from 'fs';
 import path from 'path';
 
+const useTest = process.env.STRIPE_TEST_MODE === 'true';
+
 function getStripeKey() {
   const live = process.env.STRIPE_SECRET_KEY || '';
   const test = process.env.STRIPE_TEST_SECRET_KEY || live;
+  if (useTest) {
+    return test;
+  }
   if (process.env.NODE_ENV !== 'production' && live.startsWith('sk_live')) {
     return test;
   }
@@ -55,7 +60,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
       orders = JSON.parse(fs.readFileSync(file, 'utf8'));
     } catch {}
-    orders.push({ id: orderId, items: cartItems, status: 'pending' });
+    orders.push({ id: orderId, items: cartItems, status: 'pending', sandbox: useTest });
     fs.writeFileSync(file, JSON.stringify(orders, null, 2));
 
     res.status(200).json({ sessionId: session.id });
