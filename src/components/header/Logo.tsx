@@ -19,14 +19,14 @@ export function Logo({ customLogo }: LogoProps) {
   if (logoToUse) {
     return (
       <Link href="/" className="flex items-center">
-        <img src={logoToUse} alt={`${brandName} Logo`} className="h-8" />
+        <img src={logoToUse} alt={`${brandName} Logo`} className="h-8" loading="lazy" />
       </Link>
     );
   }
   
   return (
     <Link href="/" className="flex items-center">
-      <img src="/logos/zion-logo.png" alt="Zion Logo" className="h-8" />
+      <img src="/logos/zion-logo.png" alt="Zion Logo" className="h-8" loading="lazy" />
     </Link>
   );
 }

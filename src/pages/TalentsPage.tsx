@@ -10,6 +10,7 @@ import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Spinner from '@/components/ui/spinner';
 
 // Market insights component for talents
 const TalentMarketInsights: React.FC<{ stats: any }> = ({ stats }) => (
@@ -56,18 +57,21 @@ const TalentFilterControls: React.FC<{
   specializations: string[];
   showRecommended: boolean;
   setShowRecommended: (show: boolean) => void;
-}> = ({ 
-  sortBy, 
-  setSortBy, 
-  filterSpecialization, 
+  loading: boolean;
+}> = ({
+  sortBy,
+  setSortBy,
+  filterSpecialization,
   setFilterSpecialization,
   filterAvailability,
   setFilterAvailability,
-  specializations, 
-  showRecommended, 
-  setShowRecommended 
+  specializations,
+  showRecommended,
+  setShowRecommended,
+  loading
 }) => (
-  <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg">
+  <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">
+    {loading && <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />}
     <div className="flex items-center gap-2">
       <Filter className="h-4 w-4 text-muted-foreground" />
       <select
@@ -135,6 +139,7 @@ const TalentCard: React.FC<{ talent: TalentProfile; onHire: () => void }> = ({ t
             src={talent.profile_picture_url || `https://api.dicebear.com/6.x/initials/svg?seed=${talent.full_name}`}
             alt={talent.full_name}
             className="w-12 h-12 rounded-full object-cover"
+            loading="lazy"
           />
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
@@ -403,6 +408,7 @@ export default function TalentsPage() {
           specializations={specializations}
           showRecommended={showRecommended}
           setShowRecommended={setShowRecommended}
+          loading={isFetching}
         />
       </motion.div>
 

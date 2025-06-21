@@ -33,10 +33,11 @@ export function ProfileHero({
       <div className="relative">
         <AspectRatio ratio={3/1} className="bg-zion-blue-light">
           {coverImageUrl ? (
-            <img 
-              src={coverImageUrl} 
-              alt={`${name} cover`} 
-              className="w-full h-full object-cover" 
+            <img
+              src={coverImageUrl}
+              alt={`${name} cover`}
+              className="w-full h-full object-cover"
+              loading="lazy"
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-r from-zion-blue via-zion-blue-light to-zion-blue-dark" />

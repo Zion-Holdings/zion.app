@@ -10,6 +10,7 @@ import { ProductsEmptyState } from '@/components/marketplace/EmptyState';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import Spinner from '@/components/ui/spinner';
 import { ProductListing } from '@/types/listings';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { useToast } from '@/hooks/use-toast';
@@ -79,6 +80,7 @@ const FilterControls: React.FC<{
   locations: string[];
   showRecommended: boolean;
   setShowRecommended: (show: boolean) => void;
+  loading: boolean;
 }> = ({
   sortBy,
   setSortBy,
@@ -98,9 +100,11 @@ const FilterControls: React.FC<{
   setFilterLocation,
   locations,
   showRecommended,
-  setShowRecommended
+  setShowRecommended,
+  loading
 }) => (
-  <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg">
+  <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">
+    {loading && <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />}
     <div className="flex items-center gap-2">
       <Filter className="h-4 w-4 text-muted-foreground" />
       <select
@@ -487,6 +491,7 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
           locations={locations}
           showRecommended={showRecommended}
           setShowRecommended={setShowRecommended}
+          loading={isFetching}
         />
       </motion.div>
 

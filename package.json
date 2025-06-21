@@ -146,6 +146,7 @@
     "next-auth": "^4.24.11",
     "next-cloudinary": "^6.16.0",
     "next-transpile-modules": "^10.0.1",
+    "node-cache": "^5.1.2",
     "node-cron": "^3.0.3",
     "node-fetch": "^2.7.0",
     "normalize.css": "^8.0.1",
