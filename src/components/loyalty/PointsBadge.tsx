@@ -40,6 +40,7 @@ export function PointsBadge() {
             href={isAuthenticated ? "/wallet" : "#"}
             onClick={handleClick}
             title={isAuthenticated ? "View wallet" : "Earn points by creating an account"}
+            aria-label={isAuthenticated ? "View wallet" : "Earn points by creating an account"}
             className="flex items-center gap-1 text-xs text-muted-foreground"
           >
             <Gift className="h-4 w-4" />
