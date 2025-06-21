@@ -9,6 +9,7 @@ from django.utils.encoding import force_bytes
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
+from django.core.cache import cache
 from django.core.mail import send_mail
 from django.core.validators import EmailValidator
 from django.core.exceptions import ValidationError as DjangoValidationError # Alias to avoid confusion
@@ -16,9 +17,24 @@ from django.contrib.auth import password_validation # For password strength
 
 logger = logging.getLogger(__name__)
 
+FORGOT_PW_LIMIT = getattr(settings, 'FORGOT_PASSWORD_RATE_LIMIT', 5)
+FORGOT_PW_WINDOW = getattr(settings, 'FORGOT_PASSWORD_RATE_WINDOW', 15 * 60)
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        return x_forwarded_for.split(',')[0]
+    return request.META.get('REMOTE_ADDR')
+
 @csrf_exempt
 @require_POST
 def forgot_password(request):
+    ip = get_client_ip(request)
+    key = f"forgot_pw:{ip}"
+    attempts = cache.get(key, 0)
+    if attempts >= FORGOT_PW_LIMIT:
+        return JsonResponse({'error': 'Too many requests. Please try again later.'}, status=429)
+    cache.set(key, attempts + 1, FORGOT_PW_WINDOW)
     data = json_from_request(request)
     email = data.get('email')
 

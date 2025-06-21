@@ -47,7 +47,7 @@ export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
   // Only render on mobile devices
   if (!isMobile || !isVisible) {
     return process.env.NODE_ENV === 'development' ? (
-      <div className="bg-zion-blue-dark p-2 text-xs text-center text-gray-400">
+      <div className="bg-zion-blue-dark p-2 text-xs text-center text-gray-300">
         Smart banner hidden. <button onClick={resetBanner} className="text-zion-cyan underline">Show banner</button> (development only)
       </div>
     ) : null;
@@ -82,7 +82,7 @@ export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
             <ArrowRight className="w-3 h-3 ml-1" />
           </Link>
           
-          <button onClick={dismissBanner} className="text-gray-400" aria-label="Dismiss">
+          <button onClick={dismissBanner} className="text-gray-300" aria-label="Dismiss">
             <X className="h-5 w-5" />
           </button>
         </div>

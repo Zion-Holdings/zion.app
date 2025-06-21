@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useWhitelabelTenant, WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
 
@@ -50,7 +49,9 @@ interface WhitelabelProviderProps {
 }
 
 export const WhitelabelProvider = ({ children }: WhitelabelProviderProps) => {
-  console.log('[WhitelabelProvider] Initializing...');
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[WhitelabelProvider] Initializing...');
+  }
   const [contextValue, setContextValue] = useState<WhitelabelContextType>(defaultContext);
   const { tenant, isLoading } = useWhitelabelTenant();
 

@@ -33,48 +33,12 @@ const VerifyEmailPage = () => {
 
       // If there's a user session, it means Supabase has processed the verification link successfully.
       if (user && user.id) {
-        setMessage('Email recognized by authentication provider. Confirming with our records...');
-        try {
-          // Call your backend to update the emailVerified field in Prisma
-          const response = await fetch('/api/auth/confirm-email-verification', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            // The backend might infer the user from the session/cookie managed by Supabase Auth Helpers
-            // or you might need to send the user ID if your API requires it explicitly.
-            // body: JSON.stringify({ userId: user.id })
-          });
-
-          if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || 'Failed to confirm email verification with backend.');
-          }
-
-          const result = await response.json();
-          setMessage(result.message || 'Email successfully verified! Redirecting...');
-          setError(null);
-
-          // Update the local user context if the backend sends back updated user details
-        if (result.user && setUser) {
-          // Assuming result.user is of type UserDetails
-          setUser((prevUser: UserDetails | null) => prevUser ? ({...prevUser, ...result.user}) : result.user);
-        }
-
-
-          // Redirect to login or dashboard after a short delay
-          setTimeout(() => {
-            router.push('/auth/login');
-          }, 3000);
-
-      } catch (err: any) {
-        logError(err, { context: 'VerifyEmailPage.handleVerification' });
-        const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
-        setError(suggestion);
-        // setMessage(''); // Clear loading message - keep it to avoid confusion
-      } finally {
-          setIsLoading(false);
-        }
+        setMessage('Email recognized by authentication provider. Redirecting...');
+        // Email verification is handled by Supabase.
+        // We just need to redirect the user to the login page.
+        setTimeout(() => {
+          router.push('/auth/login');
+        }, 3000);
       } else if (!authLoading) {
         // This block runs if useAuth has loaded but there's no user.
         // This could mean the token is invalid, expired, or already used.

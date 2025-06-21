@@ -111,7 +111,9 @@ describe('EquipmentDetail - Add To Cart', () => {
     });
 
     expect(mockInfoFnForToast).toHaveBeenCalledTimes(1);
-    expect(mockInfoFnForToast).toHaveBeenCalledWith('Item added. Login to checkout.');
+    expect(mockInfoFnForToast).toHaveBeenCalledWith('Item added. Login to checkout.', {
+      action: { label: 'View Cart', onClick: expect.any(Function) }
+    });
 
     expect(mockSuccessFnForToast).not.toHaveBeenCalled();
   });
@@ -141,7 +143,9 @@ describe('EquipmentDetail - Add To Cart', () => {
     });
 
     expect(mockSuccessFnForToast).toHaveBeenCalledTimes(1);
-    expect(mockSuccessFnForToast).toHaveBeenCalledWith(`1× ${product.name} added`);
+    expect(mockSuccessFnForToast).toHaveBeenCalledWith(`1× ${product.name} added`, {
+      action: { label: 'View Cart', onClick: expect.any(Function) }
+    });
 
     expect(mockNavigate).not.toHaveBeenCalledWith(expect.stringContaining('/login'));
     expect(mockInfoFnForToast).not.toHaveBeenCalled();
