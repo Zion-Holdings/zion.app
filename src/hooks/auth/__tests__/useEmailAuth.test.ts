@@ -75,8 +75,8 @@ describe('useEmailAuth', () => {
     expect(fetch).toHaveBeenCalledWith('/auth/login', expect.any(Object));
     const expectedUser = { email: 'test@example.com' }; // Simplified check
     expect(mockSetUser).toHaveBeenCalledWith(expect.objectContaining(expectedUser));
-    expect(safeStorage.setItem).toHaveBeenCalledWith('zion_token', 'mock-jwt-token');
-    expect(safeSessionStorage.setItem).not.toHaveBeenCalled();
+    expect(safeSessionStorage.setItem).toHaveBeenCalledWith('zion_token', 'mock-jwt-token');
+    expect(safeStorage.setItem).not.toHaveBeenCalled();
     expect(loginResult?.data?.token).toBe('mock-jwt-token');
     expect(mockSetIsLoading).toHaveBeenCalledWith(false);
     expect(toast).not.toHaveBeenCalled();
