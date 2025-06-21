@@ -1,3 +1,4 @@
+import axios from 'axios';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 interface RateInfo { count: number; first: number }
