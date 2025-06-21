@@ -30,8 +30,9 @@ export default function ResourcesDocsPage() {
             <div className="aspect-video max-w-3xl mx-auto">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?mute=1&controls=1"
                 title="Zion Tech Marketplace Quick Start"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>

@@ -12,8 +12,9 @@ export function ExpoHero() {
         <div className="aspect-video max-w-3xl mx-auto">
           <iframe
             className="w-full h-full"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?mute=1&controls=1"
             title="Zion Expo Welcome"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
         </div>
