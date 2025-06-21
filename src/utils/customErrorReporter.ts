@@ -8,6 +8,7 @@ interface ErrorDetails {
   url: string;
   userAgent: string;
   timestamp: string;
+  traceId: string;
   source: 'GlobalErrorBoundary' | 'logError' | 'window.onerror' | 'unhandledrejection' | string; // string for flexibility
 }
 

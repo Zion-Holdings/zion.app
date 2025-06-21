@@ -105,7 +105,6 @@ export const primaryRoutes: AppRouteObject[] = guardRoutes([
   { path: '/blog', element: <Blog />, metaTitle: 'Blog - Zion', requiresAuth: false },
   { path: '/services', element: <ServicesPage />, metaTitle: 'Services - Zion', requiresAuth: false },
   { path: '/products', element: <ProductsList />, metaTitle: 'Products - Zion', requiresAuth: false },
-  { path: '/login', element: <LoginForm />, metaTitle: 'Login - Zion', requiresAuth: false },
 ]);
 
 export const allRoutes: AppRouteObject[] = guardRoutes([

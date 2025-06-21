@@ -14,6 +14,7 @@ import { ProductListing } from '@/types/listings';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { useToast } from '@/hooks/use-toast';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
+import { MAX_PRICE, MIN_PRICE } from '@/data/marketplaceData';
 
 /**
  * Marketplace component props
@@ -64,16 +65,40 @@ const FilterControls: React.FC<{
   filterCategory: string;
   setFilterCategory: (category: string) => void;
   categories: string[];
+  priceRange: [number, number];
+  setPriceRange: (range: [number, number]) => void;
+  minAiScore: number;
+  setMinAiScore: (score: number) => void;
+  minRating: number;
+  setMinRating: (rating: number) => void;
+  filterAvailability: string;
+  setFilterAvailability: (value: string) => void;
+  availabilityOptions: string[];
+  filterLocation: string;
+  setFilterLocation: (value: string) => void;
+  locations: string[];
   showRecommended: boolean;
   setShowRecommended: (show: boolean) => void;
-}> = ({ 
-  sortBy, 
-  setSortBy, 
-  filterCategory, 
-  setFilterCategory, 
-  categories, 
-  showRecommended, 
-  setShowRecommended 
+}> = ({
+  sortBy,
+  setSortBy,
+  filterCategory,
+  setFilterCategory,
+  categories,
+  priceRange,
+  setPriceRange,
+  minAiScore,
+  setMinAiScore,
+  minRating,
+  setMinRating,
+  filterAvailability,
+  setFilterAvailability,
+  availabilityOptions,
+  filterLocation,
+  setFilterLocation,
+  locations,
+  showRecommended,
+  setShowRecommended
 }) => (
   <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg">
     <div className="flex items-center gap-2">
@@ -106,6 +131,81 @@ const FilterControls: React.FC<{
       </select>
     </div>
 
+    <div className="flex items-center gap-2">
+      <span className="text-sm">$</span>
+      <input
+        type="number"
+        value={priceRange[0]}
+        min={MIN_PRICE}
+        max={priceRange[1]}
+        onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
+        className="w-20 bg-background border border-border px-2 py-1 rounded"
+      />
+      <span>-</span>
+      <input
+        type="number"
+        value={priceRange[1]}
+        min={priceRange[0]}
+        max={MAX_PRICE}
+        onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
+        className="w-20 bg-background border border-border px-2 py-1 rounded"
+      />
+    </div>
+
+    <div className="flex items-center gap-2">
+      <span className="text-sm">AI ≥</span>
+      <input
+        type="number"
+        value={minAiScore}
+        min={0}
+        max={100}
+        onChange={(e) => setMinAiScore(Number(e.target.value))}
+        className="w-16 bg-background border border-border px-2 py-1 rounded"
+      />
+    </div>
+
+    <div className="flex items-center gap-2">
+      <span className="text-sm">Rating ≥</span>
+      <select
+        value={minRating}
+        onChange={(e) => setMinRating(Number(e.target.value))}
+        className="bg-background border border-border px-2 py-1 rounded"
+      >
+        <option value={0}>Any</option>
+        <option value={5}>5</option>
+        <option value={4}>4</option>
+        <option value={3}>3</option>
+        <option value={2}>2</option>
+        <option value={1}>1</option>
+      </select>
+    </div>
+
+    <div className="flex items-center gap-2">
+      <select
+        value={filterAvailability}
+        onChange={(e) => setFilterAvailability(e.target.value)}
+        className="bg-background border border-border px-3 py-2 rounded"
+      >
+        <option value="">Any Availability</option>
+        {availabilityOptions.map(opt => (
+          <option key={opt} value={opt as string}>{opt}</option>
+        ))}
+      </select>
+    </div>
+
+    <div className="flex items-center gap-2">
+      <select
+        value={filterLocation}
+        onChange={(e) => setFilterLocation(e.target.value)}
+        className="bg-background border border-border px-3 py-2 rounded"
+      >
+        <option value="">All Locations</option>
+        {locations.map(loc => (
+          <option key={loc} value={loc}>{loc}</option>
+        ))}
+      </select>
+    </div>
+
     <Button
       variant={showRecommended ? "default" : "outline"}
       size="sm"
@@ -130,6 +230,11 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
+  const [priceRange, setPriceRange] = useState<[number, number]>([MIN_PRICE, MAX_PRICE]);
+  const [minAiScore, setMinAiScore] = useState(0);
+  const [minRating, setMinRating] = useState(0);
+  const [filterAvailability, setFilterAvailability] = useState('');
+  const [filterLocation, setFilterLocation] = useState('');
   const { handleApiError, retryQuery } = useApiErrorHandling();
 
   // Fetch function for infinite scroll with AI product generation
@@ -151,6 +256,22 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
       if (showRecommended) {
         items = items.filter((p) => p.rating != null && p.rating >= 4.3);
       }
+
+      items = items.filter((p) => {
+        const price = p.price || 0;
+        const ai = p.aiScore || 0;
+        const rating = p.rating || 0;
+        const location = (p.location || '').toLowerCase();
+        const availability = (p.availability || '').toLowerCase();
+        return (
+          price >= priceRange[0] &&
+          price <= priceRange[1] &&
+          ai >= minAiScore &&
+          rating >= minRating &&
+          (!filterLocation || location.includes(filterLocation.toLowerCase())) &&
+          (!filterAvailability || availability === filterAvailability.toLowerCase())
+        );
+      });
 
       items.sort((a, b) => {
         switch (sortBy) {
@@ -190,7 +311,7 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
       handleApiError(err); // This might show a toast or log to Sentry
       throw err; // Re-throw to let useInfiniteScrollPagination know about the failure
     }
-  }, [filterCategory, sortBy, showRecommended, handleApiError]);
+  }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation, handleApiError]);
 
   // useInfiniteScrollPagination hook
   const {
@@ -228,10 +349,16 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     };
   }, [products]);
 
-  // Get unique categories
+  // Get unique categories and other filter values
   const categories = useMemo(() => {
     return Array.from(new Set(MARKETPLACE_LISTINGS.map((p) => p.category)));
   }, []);
+  const locations = useMemo(() => {
+    return Array.from(new Set(MARKETPLACE_LISTINGS.map((p) => p.location).filter(Boolean)));
+  }, []).filter(Boolean) as string[];
+  const availabilityOptions = useMemo(() => {
+    return Array.from(new Set(MARKETPLACE_LISTINGS.map((p) => p.availability).filter(Boolean)));
+  }, []).filter(Boolean) as string[];
 
   // Show scroll to top button
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -334,6 +461,18 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
           filterCategory={filterCategory}
           setFilterCategory={setFilterCategory}
           categories={categories}
+          priceRange={priceRange}
+          setPriceRange={setPriceRange}
+          minAiScore={minAiScore}
+          setMinAiScore={setMinAiScore}
+          minRating={minRating}
+          setMinRating={setMinRating}
+          filterAvailability={filterAvailability}
+          setFilterAvailability={setFilterAvailability}
+          availabilityOptions={availabilityOptions.filter(Boolean) as string[]}
+          filterLocation={filterLocation}
+          setFilterLocation={setFilterLocation}
+          locations={locations}
           showRecommended={showRecommended}
           setShowRecommended={setShowRecommended}
         />

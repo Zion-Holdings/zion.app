@@ -27,7 +27,7 @@
   --foreground: hsl(0, 0%, 88%);
   --primary: hsl(188, 85%, 53%);
   --primary-foreground: hsl(222, 47%, 8%);
-  --secondary: hsl(271, 76%, 53%);
+  --secondary: hsl(271, 76%, 60%);
   --secondary-foreground: hsl(0, 0%, 88%);
   --card: hsl(220, 30%, 11%);
   --card-foreground: hsl(0, 0%, 88%);
@@ -44,7 +44,7 @@
     --foreground: hsl(0, 0%, 88%);
     --primary: hsl(188, 85%, 53%);
     --primary-foreground: hsl(222, 47%, 8%);
-    --secondary: hsl(271, 76%, 53%);
+    --secondary: hsl(271, 76%, 60%);
     --secondary-foreground: hsl(0, 0%, 88%);
     --card: hsl(220, 30%, 11%);
     --card-foreground: hsl(0, 0%, 88%);
@@ -85,7 +85,7 @@
   --foreground: hsl(0, 0%, 88%);
   --primary: hsl(188, 85%, 53%);
   --primary-foreground: hsl(222, 47%, 8%);
-  --secondary: hsl(271, 76%, 53%);
+  --secondary: hsl(271, 76%, 60%);
   --secondary-foreground: hsl(0, 0%, 88%);
   --card: hsl(220, 30%, 11%);
   --card-foreground: hsl(0, 0%, 88%);
@@ -137,7 +137,7 @@ body {
     --primary: 220 80% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 70% 50%;
+    --secondary: 280 70% 60%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96%; /* Kept existing */

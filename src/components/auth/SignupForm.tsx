@@ -1,231 +1,179 @@
-import { useState } from 'react';
-import { useForm, ControllerRenderProps } from 'react-hook-form';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useRouter } from 'next/router'; // Changed from react-router-dom
-import Link from 'next/link'; // Changed from react-router-dom
-import axios from 'axios';
-import { toast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
+import { Label } from '@/components/ui/label';
+import { useAuth } from '@/hooks/useAuth';
+import { toast } from '@/hooks/use-toast';
 
-const schema = z
-  .object({
-    firstName: z.string().min(1, 'First name is required'),
-    lastName: z.string().min(1, 'Last name is required'),
-    email: z.string().email('Please enter a valid email'),
-    password: z
-      .string()
-      .min(8, 'Password must be at least 8 characters')
-      .regex(/[A-Z]/, 'Password must include an uppercase letter')
-      .regex(/[a-z]/, 'Password must include a lowercase letter')
-      .regex(/[0-9]/, 'Password must include a number'),
-    confirmPassword: z.string(),
-    terms: z.boolean().refine((v) => v, { message: 'You must accept the terms' }),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    path: ['confirmPassword'],
-    message: 'Passwords do not match',
-  });
+const signupSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  email: z.string().email('Please enter a valid email address'),
+  password: z.string().min(6, 'Password must be at least 6 characters'),
+  confirmPassword: z.string()
+}).refine((data) => data.password === data.confirmPassword, {
+  message: "Passwords don't match",
+  path: ["confirmPassword"],
+});
 
-type FormValues = z.infer<typeof schema>;
+type SignupFormData = z.infer<typeof signupSchema>;
 
-export default function SignupForm() {
-  const router = useRouter(); // Changed from navigate
+interface SignupFormProps {
+  onSuccess?: () => void;
+  onError?: (error: string) => void;
+}
+
+export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isAuthServiceConfigured, setIsAuthServiceConfigured] = useState(true); // Added state
-  const form = useForm<FormValues>({
-    resolver: zodResolver(schema),
-    defaultValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
-      terms: false,
-    },
+  const { signUp } = useAuth();
+  
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+    reset
+  } = useForm<SignupFormData>({
+    resolver: zodResolver(signupSchema)
   });
 
-  const onSubmit = async (values: FormValues) => {
-    if (isSubmitting) return;
+  const onSubmit = async (data: SignupFormData) => {
     setIsSubmitting(true);
+
     try {
-      await axios.post('/api/auth/register', {
-        name: `${values.firstName} ${values.lastName}`,
-        email: values.email,
-        password: values.password,
+      // Use AuthProvider's signup function instead of API call
+      const result = await signUp(data.email, data.password, {
+        name: data.name,
+        displayName: data.name
       });
-      
-      // Only proceed with auto-login and redirect if registration was successful
-      try {
-        // Auto login using NextAuth credentials provider
-        // ignore error handling to mimic smooth flow
-        const { signIn } = await import('next-auth/react');
-        await signIn('credentials', {
-          redirect: false,
-          email: values.email,
-          password: values.password,
-        });
-      } catch (_) {}
-      toast.success('Welcome to Zion Tech Marketplace 🎉');
-      router.push('/dashboard');
-    } catch (err: any) {
-      console.error('Signup error:', err);
-      
-      // Handle specific status codes for better user experience
-      if (err.response?.status === 409) {
-        const message = 'That email is already in use. Try logging in instead.';
-        toast.error(message);
-        form.setError('root', { message });
-        return; // Prevent auto-redirect, keep user on sign-up page
-      }
-      
-      // Handle specific status codes for better user experience
-      if (err.response?.status === 409) {
-        const message = 'That email is already in use. Try logging in instead.';
-        toast.error(message);
-        form.setError('root', { message });
-        return; // Prevent auto-redirect, keep user on sign-up page
+
+      if (result.error) {
+        console.error('Signup error:', result.error);
+        
+        // Handle specific error cases
+        if (result.error.includes('already registered') || result.error.includes('already exists')) {
+          setError('email', { 
+            message: 'An account with this email already exists. Please try logging in instead.' 
+          });
+        } else if (result.error.includes('invalid email')) {
+          setError('email', { 
+            message: 'Please enter a valid email address.' 
+          });
+        } else if (result.error.includes('weak password')) {
+          setError('password', { 
+            message: 'Password is too weak. Please choose a stronger password.' 
+          });
+        } else {
+          setError('root', { 
+            message: result.error 
+          });
+        }
+        
+        onError?.(result.error);
+        return;
       }
 
-      // Check for auth service configuration error
-      if (err.response?.data?.message === 'Server configuration error: Auth service URL not set.') {
-        setIsAuthServiceConfigured(false);
-        form.setError('root', { message: 'Signup is temporarily unavailable due to a configuration issue. Please try again later.' });
-        // No toast here, the UI will show the message
-      } else {
-        // Handle other errors - try both 'error' and 'message' fields for compatibility
-        const message = err.response?.data?.error || err.response?.data?.message || err.message || 'Signup failed';
-        toast.error(message);
-        form.setError('root', { message });
-      }
+      // Success
+      toast({
+        title: "Account Created Successfully!",
+        description: result.emailVerificationRequired 
+          ? "Please check your email to verify your account before logging in."
+          : "You can now log in to your account.",
+      });
+
+      reset();
+      onSuccess?.();
+
+    } catch (error: any) {
+      console.error('Unexpected signup error:', error);
+      const errorMessage = 'An unexpected error occurred during signup. Please try again.';
+      
+      setError('root', { message: errorMessage });
+      onError?.(errorMessage);
+
+      toast({
+        title: "Signup Failed",
+        description: errorMessage,
+        variant: "destructive",
+      });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Conditional rendering if auth service is not configured
-  if (!isAuthServiceConfigured) {
-    return (
-      <div className="mx-auto w-full max-w-sm lg:w-96 p-4 mt-16 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-white mb-6">Create account</h2>
-        <p className="text-red-500" data-testid="config-error-message">
-          Signup is temporarily unavailable due to a configuration issue. Please try again later.
-        </p>
-        {/* Optional: Add a link to contact support or go back */}
-      </div>
-    );
-  }
-
   return (
-    <div className="mx-auto w-full max-w-sm lg:w-96 p-4 mt-16">
-      <h2 className="text-3xl font-bold tracking-tight text-white text-center mb-6">Create account</h2>
-      <Form {...form}>
-        {form.formState.errors.root && (
-          <p className="text-red-500 mb-2" data-testid="error-message">
-            {form.formState.errors.root.message}
-          </p>
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <div className="space-y-2">
+        <Label htmlFor="name">Full Name</Label>
+        <Input
+          id="name"
+          type="text"
+          placeholder="Enter your full name"
+          {...register('name')}
+          disabled={isSubmitting}
+        />
+        {errors.name && (
+          <p className="text-sm text-red-600">{errors.name.message}</p>
         )}
-        <form
-          onSubmit={form.handleSubmit(onSubmit, (errors) => {
-            const firstError = Object.keys(errors)[0] as keyof FormValues;
-            if (firstError) form.setFocus(firstError);
-          })}
-          className="space-y-4"
-          noValidate
-        >
-          <FormField
-            control={form.control}
-            name="firstName"
-            render={({ field }: { field: ControllerRenderProps<FormValues, "firstName"> }) => (
-              <FormItem>
-                <FormLabel>First name</FormLabel>
-                <FormControl>
-                  <Input autoComplete="given-name" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="lastName"
-            render={({ field }: { field: ControllerRenderProps<FormValues, "lastName"> }) => (
-              <FormItem>
-                <FormLabel>Last name</FormLabel>
-                <FormControl>
-                  <Input autoComplete="family-name" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }: { field: ControllerRenderProps<FormValues, "email"> }) => (
-              <FormItem>
-                <FormLabel>Email address</FormLabel>
-                <FormControl>
-                  <Input type="email" autoComplete="off" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }: { field: ControllerRenderProps<FormValues, "password"> }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <Input type="password" autoComplete="new-password" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="confirmPassword"
-            render={({ field }: { field: ControllerRenderProps<FormValues, "confirmPassword"> }) => (
-              <FormItem>
-                <FormLabel>Confirm Password</FormLabel>
-                <FormControl>
-                  <Input type="password" autoComplete="new-password" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="terms"
-            render={({ field }: { field: ControllerRenderProps<FormValues, "terms"> }) => (
-              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                </FormControl>
-                <div className="space-y-1 leading-none">
-                  <FormLabel>
-                    I agree to the{' '}
-                    <Link href="/terms" className="underline">Terms of Service</Link>{' '}
-                    and{' '}
-                    <Link href="/privacy" className="underline">Privacy Policy</Link>
-                  </FormLabel>
-                </div>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type="submit" className="w-full" disabled={isSubmitting || !isAuthServiceConfigured}>
-            {isSubmitting ? 'Creating Account...' : 'Create Account'}
-          </Button>
-        </form>
-      </Form>
-    </div>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="email">Email Address</Label>
+        <Input
+          id="email"
+          type="email"
+          placeholder="Enter your email address"
+          {...register('email')}
+          disabled={isSubmitting}
+        />
+        {errors.email && (
+          <p className="text-sm text-red-600">{errors.email.message}</p>
+        )}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="password">Password</Label>
+        <Input
+          id="password"
+          type="password"
+          placeholder="Create a password (min. 6 characters)"
+          {...register('password')}
+          disabled={isSubmitting}
+        />
+        {errors.password && (
+          <p className="text-sm text-red-600">{errors.password.message}</p>
+        )}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="confirmPassword">Confirm Password</Label>
+        <Input
+          id="confirmPassword"
+          type="password"
+          placeholder="Confirm your password"
+          {...register('confirmPassword')}
+          disabled={isSubmitting}
+        />
+        {errors.confirmPassword && (
+          <p className="text-sm text-red-600">{errors.confirmPassword.message}</p>
+        )}
+      </div>
+
+      {errors.root && (
+        <div className="p-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded">
+          {errors.root.message}
+        </div>
+      )}
+
+      <Button 
+        type="submit" 
+        className="w-full" 
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? 'Creating Account...' : 'Create Account'}
+      </Button>
+    </form>
   );
 }
