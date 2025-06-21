@@ -64,3 +64,4 @@ export async function register() {
   });
   //console.log("instrumentation.ts: Server-side Sentry initialization SKIPPED to debug timeout.");
 }
+}
