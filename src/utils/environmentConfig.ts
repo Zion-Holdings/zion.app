@@ -2,10 +2,13 @@ import * as Sentry from '@sentry/nextjs';
 import { z } from 'zod';
 
 interface EnvironmentConfig {
-  supabase: {
-    url: string;
-    anonKey: string;
-    serviceRoleKey?: string;
+  auth0: {
+    secret: string;
+    baseUrl: string;
+    issuerBaseUrl: string;
+    clientId: string;
+    clientSecret: string;
+    audience?: string;
     isConfigured: boolean;
   };
   sentry: {
@@ -18,10 +21,6 @@ interface EnvironmentConfig {
     projectId: string;
     isConfigured: boolean;
   };
-  authService: {
-    url: string;
-    isConfigured: boolean;
-  };
   app: {
     environment: string;
     isDevelopment: boolean;
@@ -31,9 +30,12 @@ interface EnvironmentConfig {
 
 // Typed environment schema using zod for early validation
 const EnvSchema = z.object({
-  NEXT_PUBLIC_SUPABASE_URL: z.string().optional(),
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().optional(),
-  SUPABASE_SERVICE_ROLE_KEY: z.string().optional(),
+  AUTH0_SECRET: z.string().optional(),
+  AUTH0_BASE_URL: z.string().optional(),
+  AUTH0_ISSUER_BASE_URL: z.string().optional(),
+  AUTH0_CLIENT_ID: z.string().optional(),
+  AUTH0_CLIENT_SECRET: z.string().optional(),
+  AUTH0_AUDIENCE: z.string().optional(),
   NEXT_PUBLIC_SENTRY_DSN: z.string().optional(),
   SENTRY_DSN: z.string().optional(),
   NEXT_PUBLIC_SENTRY_ENVIRONMENT: z.string().optional(),
@@ -41,60 +43,63 @@ const EnvSchema = z.object({
   NEXT_PUBLIC_SENTRY_RELEASE: z.string().optional(),
   SENTRY_RELEASE: z.string().optional(),
   NEXT_PUBLIC_REOWN_PROJECT_ID: z.string().optional(),
-  INTERNAL_AUTH_SERVICE_URL: z.string().optional(),
 });
 
 type RawEnv = z.infer<typeof EnvSchema>;
 
 /**
- * Check if a value is a placeholder or invalid
+ * Check if a value is a placeholder or default development value
  */
-function isPlaceholderValue(value?: string): boolean {
+function isPlaceholderValue(value: string | undefined): boolean {
   if (!value) return true;
   
-  const lowercaseValue = value.toLowerCase();
-  
-  // Specific placeholder patterns to detect
   const placeholderPatterns = [
-    'your_',
     'placeholder',
-    'dummy',
-    'fallback',
+    'your_',
     'example',
-    'test-key',
-    'mock',
-    'https://placeholder.supabase.co',
-    'https://example'
+    'test_key',
+    'localhost',
+    'change_me',
+    'replace_with',
+    'insert_',
+    'add_your',
+    'enter_your',
+    // Auth0 specific placeholders
+    'your-tenant.us.auth0.com',
+    'your_auth0_',
+    'auth0_client_id_here',
+    'auth0_client_secret_here',
+    'auth0_secret_here'
   ];
   
-  // Check for placeholder patterns
-  const hasPlaceholderPattern = placeholderPatterns.some(pattern => 
-    lowercaseValue.includes(pattern.toLowerCase())
-  );
+  const lowerValue = value.toLowerCase();
+  return placeholderPatterns.some(pattern => lowerValue.includes(pattern));
+}
+
+/**
+ * Initialize services based on configuration
+ */
+export function initializeServices(): void {
+  const config = getEnvironmentConfig();
   
-  // Additional validation for Supabase URLs - they should be valid URLs with proper format
-  if (lowercaseValue.includes('supabase.co')) {
-    // Check for specific placeholder URLs first
-    if (lowercaseValue.includes('placeholder.supabase.co')) {
-      return true;
-    }
-    
-    // Valid Supabase URL pattern: https://[project-id].supabase.co
-    const supabaseUrlPattern = /^https:\/\/[a-zA-Z0-9-]+\.supabase\.co$/;
-    const isValidSupabaseUrl = supabaseUrlPattern.test(value);
-    
-    // If it contains supabase.co but doesn't match valid pattern, it's likely a placeholder
-    if (!isValidSupabaseUrl && !hasPlaceholderPattern) {
-      return true;
-    }
-    
-    // If it's a valid Supabase URL format, don't treat as placeholder
-    if (isValidSupabaseUrl) {
-      return false;
+  // Initialize Sentry if configured
+  if (config.sentry.isConfigured && config.app.isProduction) {
+    try {
+      Sentry.init({
+        dsn: config.sentry.dsn,
+        environment: config.sentry.environment,
+        release: config.sentry.release,
+        tracesSampleRate: 1.0,
+      });
+      console.log('✅ Sentry initialized successfully');
+    } catch (error) {
+      console.warn('Failed to initialize Sentry:', error);
     }
   }
   
-  return hasPlaceholderPattern;
+  if (config.app.isDevelopment) {
+    console.log('🔧 Services initialized for development environment');
+  }
 }
 
 /**
@@ -109,25 +114,39 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   // Parse environment variables using the typed schema
   const env = EnvSchema.parse(process.env) as RawEnv;
 
-  // Supabase Configuration
-  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  const supabaseServiceRoleKey = env.SUPABASE_SERVICE_ROLE_KEY;
+  // Auth0 Configuration
+  const auth0Secret = env.AUTH0_SECRET;
+  const auth0BaseUrl = env.AUTH0_BASE_URL;
+  const auth0IssuerBaseUrl = env.AUTH0_ISSUER_BASE_URL;
+  const auth0ClientId = env.AUTH0_CLIENT_ID;
+  const auth0ClientSecret = env.AUTH0_CLIENT_SECRET;
+  const auth0Audience = env.AUTH0_AUDIENCE;
   
-  // Debug logging for Supabase configuration
-  const urlIsPlaceholder = isPlaceholderValue(supabaseUrl);
-  const keyIsPlaceholder = isPlaceholderValue(supabaseAnonKey);
+  // Debug logging for Auth0 configuration
+  const secretIsPlaceholder = isPlaceholderValue(auth0Secret);
+  const baseUrlIsPlaceholder = isPlaceholderValue(auth0BaseUrl);
+  const issuerIsPlaceholder = isPlaceholderValue(auth0IssuerBaseUrl);
+  const clientIdIsPlaceholder = isPlaceholderValue(auth0ClientId);
+  const clientSecretIsPlaceholder = isPlaceholderValue(auth0ClientSecret);
   
   if (isDevelopment || process.env.DEBUG_ENV_CONFIG) {
-    console.log('[ENV CONFIG] Supabase configuration check:', {
-      url: supabaseUrl ? `${supabaseUrl.substring(0, 30)}...` : 'undefined',
-      urlIsPlaceholder,
-      keyPresent: !!supabaseAnonKey,
-      keyIsPlaceholder
+    console.log('[ENV CONFIG] Auth0 configuration check:', {
+      secret: auth0Secret ? `${auth0Secret.substring(0, 8)}...` : 'undefined',
+      secretIsPlaceholder,
+      baseUrl: auth0BaseUrl ? `${auth0BaseUrl.substring(0, 30)}...` : 'undefined',
+      baseUrlIsPlaceholder,
+      issuer: auth0IssuerBaseUrl ? `${auth0IssuerBaseUrl.substring(0, 30)}...` : 'undefined',
+      issuerIsPlaceholder,
+      clientIdPresent: !!auth0ClientId,
+      clientIdIsPlaceholder,
+      clientSecretPresent: !!auth0ClientSecret,
+      clientSecretIsPlaceholder
     });
   }
   
-  const supabaseConfigured = !urlIsPlaceholder && !keyIsPlaceholder;
+  const auth0Configured = !secretIsPlaceholder && !baseUrlIsPlaceholder && 
+                         !issuerIsPlaceholder && !clientIdIsPlaceholder && 
+                         !clientSecretIsPlaceholder;
 
   // Sentry Configuration
   const sentryDsn = env.NEXT_PUBLIC_SENTRY_DSN || env.SENTRY_DSN;
@@ -140,25 +159,15 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const reownProjectId = env.NEXT_PUBLIC_REOWN_PROJECT_ID;
   const reownConfigured = !isPlaceholderValue(reownProjectId);
 
-  const authServiceUrl = env.INTERNAL_AUTH_SERVICE_URL;
-  let authServiceConfigured = !isPlaceholderValue(authServiceUrl);
-
-  // Fallback for INTERNAL_AUTH_SERVICE_URL if not configured
-  let finalAuthServiceUrl = authServiceUrl;
-  if (!authServiceConfigured) {
-    finalAuthServiceUrl = 'https://default-auth-service.example.com'; // Default fallback URL
-    // In production, this will be flagged by validateProductionEnvironment,
-    // but we provide a fallback to prevent crashes during startup in dev/test.
-    // The validateProductionEnvironment function will handle logging warnings/errors.
-    authServiceConfigured = true; // Mark as configured to use fallback
-  }
-
   return {
-    supabase: {
-      url: supabaseConfigured ? supabaseUrl! : 'https://placeholder.supabase.co',
-      anonKey: supabaseConfigured ? supabaseAnonKey! : 'placeholder-anon-key',
-      serviceRoleKey: supabaseServiceRoleKey,
-      isConfigured: supabaseConfigured
+    auth0: {
+      secret: auth0Configured ? auth0Secret! : 'placeholder-secret',
+      baseUrl: auth0Configured ? auth0BaseUrl! : 'http://localhost:3000',
+      issuerBaseUrl: auth0Configured ? auth0IssuerBaseUrl! : 'https://placeholder.us.auth0.com',
+      clientId: auth0Configured ? auth0ClientId! : 'placeholder-client-id',
+      clientSecret: auth0Configured ? auth0ClientSecret! : 'placeholder-client-secret',
+      audience: auth0Audience,
+      isConfigured: auth0Configured
     },
     sentry: {
       dsn: sentryConfigured ? sentryDsn! : '',
@@ -169,10 +178,6 @@ export function getEnvironmentConfig(): EnvironmentConfig {
     reown: {
       projectId: reownConfigured ? reownProjectId! : 'placeholder-project-id',
       isConfigured: reownConfigured
-    },
-    authService: {
-      url: finalAuthServiceUrl!,
-      isConfigured: !isPlaceholderValue(env.INTERNAL_AUTH_SERVICE_URL) // True if explicitly set and not a placeholder
     },
     app: {
       environment: nodeEnv,
@@ -192,8 +197,8 @@ export function validateProductionEnvironment(): void {
     // Only warn in development
     const warnings = [];
     
-    if (!config.supabase.isConfigured) {
-      warnings.push('Supabase is not configured - using placeholder values');
+    if (!config.auth0.isConfigured) {
+      warnings.push('Auth0 is not configured - using placeholder values');
     }
     
     if (!config.sentry.isConfigured) {
@@ -202,10 +207,6 @@ export function validateProductionEnvironment(): void {
     
     if (!config.reown.isConfigured) {
       warnings.push('Reown wallet is not configured - wallet features disabled');
-    }
-
-    if (!config.authService.isConfigured && isPlaceholderValue(process.env.INTERNAL_AUTH_SERVICE_URL)) {
-      warnings.push('Internal auth service URL is not configured - using fallback. Signup might be affected.');
     }
     
     if (warnings.length > 0) {
@@ -218,16 +219,12 @@ export function validateProductionEnvironment(): void {
   // Strict validation for production
   const errors = [];
   
-  if (!config.supabase.isConfigured) {
-    errors.push('NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY must be configured in production');
+  if (!config.auth0.isConfigured) {
+    errors.push('Auth0 configuration must be complete in production (AUTH0_SECRET, AUTH0_BASE_URL, AUTH0_ISSUER_BASE_URL, AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET)');
   }
 
   if (!config.sentry.isConfigured) {
     errors.push('NEXT_PUBLIC_SENTRY_DSN must be configured in production for error monitoring');
-  }
-
-  if (!config.authService.isConfigured && isPlaceholderValue(process.env.INTERNAL_AUTH_SERVICE_URL)) {
-    errors.push('INTERNAL_AUTH_SERVICE_URL must be configured in production for user signup. Application is currently using a default fallback, which is not suitable for production.');
   }
   
   if (errors.length > 0) {
@@ -236,45 +233,5 @@ export function validateProductionEnvironment(): void {
   }
 }
 
-/**
- * Initialize services based on environment configuration
- */
-export function initializeServices(): void {
-  const config = getEnvironmentConfig();
-  
-  // Initialize Sentry if configured
-  if (config.sentry.isConfigured) {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('🔍 Initializing Sentry with configured DSN...');
-    }
-    
-    // Sentry is already initialized by sentry.client.config.js and sentry.server.config.js
-    // This just sets additional context
-    Sentry.setTag('environmentConfigured', 'true');
-    Sentry.setTag('supabaseConfigured', config.supabase.isConfigured.toString());
-    Sentry.setTag('reownConfigured', config.reown.isConfigured.toString());
-  } else {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('⚠️ Sentry not configured - error monitoring disabled');
-    }
-  }
-  
-  // Log configuration status only in development
-  if (process.env.NODE_ENV === 'development') {
-    console.log('🚀 Environment Configuration Status:');
-    console.log(`  Environment: ${config.app.environment}`);
-    console.log(`  Supabase: ${config.supabase.isConfigured ? '✅ Configured' : '⚠️ Using fallbacks'}`);
-    console.log(`  Sentry: ${config.sentry.isConfigured ? '✅ Configured' : '⚠️ Disabled'}`);
-    console.log(`  Reown Wallet: ${config.reown.isConfigured ? '✅ Configured' : '⚠️ Using fallbacks'}`);
-    
-    // Special message for Netlify deployments
-    if (config.app.isProduction && config.supabase.isConfigured) {
-      console.log('🌐 Netlify deployment detected with configured Supabase');
-    }
-  }
-}
-
-/**
- * Export environment config instance for use throughout the app
- */
+// Export the singleton configuration
 export const ENV_CONFIG = getEnvironmentConfig(); 

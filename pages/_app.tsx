@@ -14,7 +14,7 @@ import { CartProvider } from '@/context/CartContext'; // Added CartProvider
 import { ErrorProvider } from '@/context/ErrorContext';
 import ErrorResetOnRouteChange from '@/components/ErrorResetOnRouteChange';
 import { I18nextProvider } from 'react-i18next';
-import i18n from '@/i18n';
+import i18n from '@/i18next';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
@@ -37,6 +37,7 @@ import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 import { validateProductionEnvironment, initializeServices } from '@/utils/environmentConfig';
 import { initializePerformanceOptimizations } from '@/utils/performance';
 import '@/utils/globalFetchInterceptor';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
@@ -102,8 +103,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       }
       
       if (process.env.NODE_ENV === 'development') {
-        console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY:", publicRuntimeConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'NOT_SET');
-        console.log("NEXT_PUBLIC_REOWN_PROJECT_ID:", publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID ? 'SET' : 'NOT_SET');
+        console.log("AUTH0_CLIENT_ID:", process.env.AUTH0_CLIENT_ID ? 'SET' : 'NOT_SET');
+        console.log("AUTH0_ISSUER_BASE_URL:", process.env.AUTH0_ISSUER_BASE_URL ? 'SET' : 'NOT_SET');
       }
     } catch (error) {
       console.error('[App] Critical initialization error:', error);
@@ -207,31 +208,33 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <ReduxProvider store={store}>
                       <HelmetProvider>
                         <ErrorProvider>
-                          <AuthProvider>
-                            <WhitelabelProvider>
-                              <I18nextProvider i18n={i18n}>
-                                <LanguageProviderWrapper>
-                                  <WalletProvider>
-                                  <CartProvider>
-                                    <AnalyticsProvider>
-                                      <ThemeProvider>
-                                        <AppLayout>
-                                          <ErrorBoundary>
-                                            <Component {...pageProps} productId="example-product-id" />
-                                          </ErrorBoundary>
-                                          <ErrorResetOnRouteChange />
-                                          <Toaster />
-                                          <OfflineIndicator />
-                                          <IntercomChat />
-                                        </AppLayout>
-                                      </ThemeProvider>
-                                    </AnalyticsProvider>
-                                  </CartProvider>
-                                </WalletProvider>
-                                </LanguageProviderWrapper>
-                              </I18nextProvider>
-                            </WhitelabelProvider>
-                          </AuthProvider>
+                          <UserProvider>
+                            <AuthProvider>
+                              <WhitelabelProvider>
+                                <I18nextProvider i18n={i18n}>
+                                  <LanguageProviderWrapper>
+                                    <WalletProvider>
+                                    <CartProvider>
+                                      <AnalyticsProvider>
+                                        <ThemeProvider>
+                                          <AppLayout>
+                                            <ErrorBoundary>
+                                              <Component {...pageProps} productId="example-product-id" />
+                                            </ErrorBoundary>
+                                            <ErrorResetOnRouteChange />
+                                            <Toaster />
+                                            <OfflineIndicator />
+                                            <IntercomChat />
+                                          </AppLayout>
+                                        </ThemeProvider>
+                                      </AnalyticsProvider>
+                                    </CartProvider>
+                                  </WalletProvider>
+                                  </LanguageProviderWrapper>
+                                </I18nextProvider>
+                              </WhitelabelProvider>
+                            </AuthProvider>
+                          </UserProvider>
                         </ErrorProvider>
                       </HelmetProvider>
                     </ReduxProvider>
