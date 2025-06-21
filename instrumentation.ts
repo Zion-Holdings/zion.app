@@ -20,7 +20,6 @@ export async function register() {
 
   console.log(`instrumentation.ts: Initializing Sentry for server-side. Release: ${SENTRY_RELEASE}, Env: ${SENTRY_ENVIRONMENT}`);
 
-  
   Sentry.init({
     dsn: SENTRY_DSN!,
     release: SENTRY_RELEASE,
@@ -29,7 +28,6 @@ export async function register() {
 
     // Consider adding sendDefaultPii: true if needed, as shown in Sentry docs
     // sendDefaultPii: true,
-
     // Remove direct Integrations.Http, as @sentry/nextjs handles this.
     // integrations: [new Integrations.Http({ tracing: true })],
 
@@ -64,6 +62,5 @@ export async function register() {
     // Enable to log internal Sentry debug messages
     // debug: process.env.NODE_ENV === 'development',
   });
-  */
   //console.log("instrumentation.ts: Server-side Sentry initialization SKIPPED to debug timeout.");
 }
