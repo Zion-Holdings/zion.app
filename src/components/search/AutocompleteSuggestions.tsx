@@ -81,6 +81,9 @@ export function AutocompleteSuggestions({
                 e.preventDefault();
                 onSelectSuggestion(suggestion);
               }}
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectSuggestion(suggestion);
               onMouseDown={(e) => {
                 // Prevent input blur when clicking suggestions
                 e.preventDefault();
