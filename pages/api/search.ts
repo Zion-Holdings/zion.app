@@ -81,7 +81,7 @@ const fuse = new Fuse(SEARCH_DOCUMENTS, {
   threshold: 0.3,
 });
 
-function handler(
+async function handler(
   req: NextApiRequest,
   res: NextApiResponse<SearchResponse | { error: string }>,
 ) {
@@ -106,19 +106,24 @@ function handler(
     });
   }
 
-  const results = fuse.search(q);
-  const totalCount = results.length;
-  const start = (page - 1) * limit;
-  const end = start + limit;
-  const paginatedResults = results.slice(start, end).map((r) => r.item);
+  try {
+    const results = fuse.search(q);
+    const totalCount = results.length;
+    const start = (page - 1) * limit;
+    const end = start + limit;
+    const paginatedResults = results.slice(start, end).map((r) => r.item);
 
-  return res.status(200).json({
-    results: paginatedResults,
-    totalCount,
-    page,
-    limit,
-    query: q,
-  });
+    return res.status(200).json({
+      results: paginatedResults,
+      totalCount,
+      page,
+      limit,
+      query: q,
+    });
+  } catch (error: any) {
+    console.error('Search query failed:', error);
+    return res.status(500).json({ error: 'Search query failed' });
+  }
 }
 
 export default withErrorLogging(handler);
