@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { ListingScoreCard } from "@/components/ListingScoreCard";
 import { Button } from "@/components/ui/button";
@@ -122,7 +120,6 @@ export function CategoryListingPage({
 
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-zion-blue py-12 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -239,7 +236,6 @@ export function CategoryListingPage({
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

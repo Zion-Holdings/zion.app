@@ -1,5 +1,3 @@
-import { Header } from "@/components/header/Header";
-import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { useState, useEffect, useRef, Suspense } from "react";
@@ -238,7 +236,6 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
 
   return (
     <>
-      <Header />
       <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
         <div className="min-h-screen bg-zion-blue">
           <div className="container mx-auto px-4 py-12">
@@ -280,7 +277,6 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
           </div>
         </div>
       </Suspense>
-      <Footer />
     </>
   );
 }

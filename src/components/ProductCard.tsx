@@ -2,6 +2,12 @@ import Link from 'next/link';
 import { Heart } from 'lucide-react';
 import { useWishlist } from '@/hooks/useWishlist';
 import { Button } from '@/components/ui/button';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
@@ -112,19 +118,28 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
           Add to Cart
         </Button>
         {onBuy && (
-          <Button
-            onClick={(e) => {
-              e.stopPropagation();
-              onBuy();
-            }}
-            size="sm"
-            variant="outline"
-            className="flex-1"
-            data-testid="buy-now-button"
-            disabled={!isAuthenticated || buyDisabled}
-          >
-            Buy Now
-          </Button>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onBuy();
+                  }}
+                  size="sm"
+                  variant="outline"
+                  className="flex-1"
+                  data-testid="buy-now-button"
+                  disabled={!isAuthenticated || buyDisabled}
+                >
+                  Buy Now
+                </Button>
+              </TooltipTrigger>
+              {!isAuthenticated && (
+                <TooltipContent>Please log in to purchase</TooltipContent>
+              )}
+            </Tooltip>
+          </TooltipProvider>
         )}
       </div>
     </div>
