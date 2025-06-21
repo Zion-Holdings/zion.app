@@ -14,7 +14,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ProductListing } from '@/types/listings';
 import { fetchMarketplaceData } from '@/utils/fetchMarketplaceData';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
-import { generateAIProducts, getMarketStats, getRecommendedProducts } from '@/utils/autoFeedAlgorithm';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 
 /**
@@ -130,7 +129,6 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
-  const [totalGenerated, setTotalGenerated] = useState(0);
   const { handleApiError, retryQuery } = useApiErrorHandling();
 
   // Fetch function for infinite scroll with AI product generation
@@ -145,13 +143,6 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
       allProducts = [...MARKETPLACE_LISTINGS];
     }
     
-    // Generate new AI/IT products using the auto-feed algorithm
-    const startId = MARKETPLACE_LISTINGS.length + (page - 1) * limit + totalGenerated;
-    const newProducts = generateAIProducts(limit, startId);
-    setTotalGenerated(prev => prev + newProducts.length);
-    
-    allProducts = [...allProducts, ...newProducts];
-    
     // Apply filters
     let filteredProducts = allProducts;
     
@@ -160,10 +151,7 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     }
     
     if (showRecommended) {
-      filteredProducts = getRecommendedProducts(filteredProducts, {
-        rating: 4.3,
-        categories: filterCategory ? [filterCategory] : undefined
-      });
+      filteredProducts = filteredProducts.filter(p => p.rating >= 4.3);
     }
     
     // Apply sorting
@@ -195,7 +183,7 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
       hasMore: endIndex < filteredProducts.length || page < 15, // Allow up to 15 pages
       total: filteredProducts.length
     };
-  }, [sortBy, filterCategory, showRecommended, totalGenerated]);
+  }, [sortBy, filterCategory, showRecommended]);
 
   // Use infinite scroll hook
   const {
@@ -210,21 +198,20 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     scrollToTop
   } = useInfiniteScrollPagination(fetchProducts, 16);
 
-  // Refresh when filters change
-  useEffect(() => {
-    refresh();
-    setTotalGenerated(0);
-  }, [sortBy, filterCategory, showRecommended]);
-
   // Calculate market stats
   const marketStats = useMemo(() => {
     if (products.length === 0) return null;
-    return getMarketStats(products);
+    return {
+      averagePrice: products.reduce((sum, p) => sum + (p.price || 0), 0) / products.length,
+      averageRating: products.reduce((sum, p) => sum + (p.rating || 0), 0) / products.length,
+      totalProducts: products.length,
+      categoriesCount: Array.from(new Set(products.map(p => p.category))).length
+    };
   }, [products]);
 
   // Get unique categories
   const categories = useMemo(() => {
-    return Array.from(new Set([...MARKETPLACE_LISTINGS, ...products].map(p => p.category)));
+    return Array.from(new Set(products.map(p => p.category)));
   }, [products]);
 
   // Show scroll to top button
