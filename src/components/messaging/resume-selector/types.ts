@@ -7,6 +7,7 @@ export interface ResumeOption {
   type: 'ai_resume' | 'custom_upload';
   resume?: Resume;
   file?: File;
+  url?: string;
 }
 
 export interface ResumeSelectorProps {
