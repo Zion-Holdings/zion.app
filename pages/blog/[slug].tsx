@@ -142,7 +142,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = files.map((f) => ({
     params: { slug: f.replace(/\.md$/, '') },
   }));
-  return { paths, fallback: false };
+  // Use `blocking` so new posts added after build can be generated on demand
+  return { paths, fallback: 'blocking' };
 };
 
 export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
@@ -151,6 +152,10 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async ({
   params?: { slug?: string };
 }) => {
   const slug = params?.slug as string;
+  // Validate slug to prevent malformed paths
+  if (!/^[a-z0-9-]+$/.test(slug)) {
+    return { notFound: true };
+  }
   const filePath = path.join(process.cwd(), 'content', 'blog', `${slug}.md`);
   const post = parseMarkdown(filePath);
   if (!post) {
