@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getCacheStats, cacheCategory } from '@/lib/cache';
+// import { getCacheStats, cacheCategory } from '@/lib/serverCache';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 
 interface SystemMetrics {
@@ -53,11 +53,11 @@ async function handler(
   }
 
   try {
-    // Gather cache statistics
+    // Gather cache statistics (disabled for now)
     const cacheMetrics = {
-      short: getCacheStats(cacheCategory.SHORT),
-      medium: getCacheStats(cacheCategory.MEDIUM),
-      long: getCacheStats(cacheCategory.LONG),
+      short: null, // getCacheStats(cacheCategory.SHORT),
+      medium: null, // getCacheStats(cacheCategory.MEDIUM),
+      long: null, // getCacheStats(cacheCategory.LONG),
     };
 
     // System runtime metrics

@@ -72,9 +72,9 @@ export async function getStaticProps() {
       props: { data },
       revalidate: 3600 // Revalidate every hour
     };
-  } catch (error) {
+  } catch (error: any) {
     // Gracefully handle all errors by falling back to mock data
-    console.warn('API fetch error, using mock data:', error.message);
+    console.warn('API fetch error, using mock data:', error?.message || error);
     return { 
       props: { data: mockData },
       revalidate: 300 // Retry in 5 minutes

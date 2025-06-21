@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { CATEGORIES } from '@/data/categories';
-import { withCache, cacheKeys, cacheCategory } from '@/lib/cache';
+// import { withCache, cacheKeys, cacheCategory } from '@/lib/serverCache';
 
 const prisma = new PrismaClient();
 
@@ -16,37 +16,32 @@ async function handler(
   }
 
   try {
-    // Use cache to improve performance (30 minute cache for categories)
-    const categories = await withCache(
-      cacheKeys.api('categories', 'active'),
-      async () => {
-        const dbCategories = await prisma.category.findMany({
-          where: { active: true },
-          select: {
-            id: true,
-            name: true,
-            slug: true,
-            icon: true,
-          },
-          orderBy: { name: 'asc' },
-        });
-
-        // Return DB categories if found, otherwise fallback to static data
-        if (dbCategories.length > 0) {
-          return dbCategories;
-        }
-        
-        return CATEGORIES.length > 0 ? CATEGORIES : [];
+    const categories = await prisma.category.findMany({
+      where: { active: true },
+      select: {
+        id: true,
+        name: true,
+        slug: true,
+        icon: true,
       },
-      cacheCategory.MEDIUM, // 30 minute cache
-      1800 // 30 minutes in seconds
-    );
+      orderBy: { name: 'asc' },
+    });
 
-    // Set cache headers for client-side caching
-    res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=3600');
-    res.setHeader('X-Cache', 'server-cached');
-    
-    return res.status(200).json(categories);
+    // If categories are found or the CATEGORIES constant is empty, return them.
+    // Otherwise, if no categories are found in DB and CATEGORIES is not empty,
+    // it implies a preference for DB data first, then static as a fallback if DB is empty.
+    if (categories.length > 0) {
+      // Set cache headers for client-side caching
+      res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=3600');
+      return res.status(200).json(categories);
+    }
+    // If CATEGORIES is meant to be a fallback for an empty DB table (not an error)
+    if (CATEGORIES.length > 0) {
+      res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=3600');
+      return res.status(200).json(CATEGORIES);
+    }
+    // If both DB and fallback are empty
+    return res.status(200).json([]);
 
   } catch (error) {
     console.error('Failed to fetch categories from database:', error);
