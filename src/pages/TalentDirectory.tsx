@@ -27,6 +27,7 @@ export default function TalentDirectory() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
+  const [initialized, setInitialized] = useState(false);
 
   // Use our custom hook to manage state
   const {
@@ -69,6 +70,71 @@ export default function TalentDirectory() {
 
   const totalPages = Math.ceil(total / itemsPerPage);
   const paginatedTalents = filteredTalents;
+
+  // Load filters from query parameters on first load
+  useEffect(() => {
+    if (!router.isReady || initialized) return;
+    const {
+      search,
+      skills,
+      availability,
+      regions,
+      priceMin,
+      priceMax,
+      expMin,
+      expMax,
+      sort,
+      page,
+    } = router.query as Record<string, string>;
+
+    if (page) setCurrentPage(parseInt(page, 10) || 1);
+    if (search) setSearchTerm(search);
+    if (skills) skills.split(',').forEach((s) => toggleSkill(s));
+    if (availability)
+      availability.split(',').forEach((a) => toggleAvailability(a));
+    if (regions) regions.split(',').forEach((r) => toggleRegion(r));
+    if (priceMin && priceMax)
+      setPriceRange([Number(priceMin), Number(priceMax)]);
+    if (expMin && expMax)
+      setExperienceRange([Number(expMin), Number(expMax)]);
+    if (sort && SORT_OPTIONS.some((o) => o.value === sort))
+      setSortOption(sort);
+    setInitialized(true);
+  }, [router.isReady, initialized]);
+
+  // Persist filters to query parameters
+  useEffect(() => {
+    if (!initialized) return;
+    const query: Record<string, string> = {};
+    if (searchTerm) query.search = searchTerm;
+    if (selectedSkills.length) query.skills = selectedSkills.join(',');
+    if (selectedAvailability.length)
+      query.availability = selectedAvailability.join(',');
+    if (selectedRegions.length) query.regions = selectedRegions.join(',');
+    if (priceRange[0] !== 50 || priceRange[1] !== 200) {
+      query.priceMin = String(priceRange[0]);
+      query.priceMax = String(priceRange[1]);
+    }
+    if (experienceRange[0] !== 0 || experienceRange[1] !== 15) {
+      query.expMin = String(experienceRange[0]);
+      query.expMax = String(experienceRange[1]);
+    }
+    if (sortOption !== 'relevance') query.sort = sortOption;
+    if (currentPage > 1) query.page = String(currentPage);
+    router.replace({ pathname: router.pathname, query }, undefined, {
+      shallow: true,
+    });
+  }, [
+    searchTerm,
+    selectedSkills,
+    selectedAvailability,
+    selectedRegions,
+    priceRange,
+    experienceRange,
+    sortOption,
+    currentPage,
+    initialized,
+  ]);
 
   const handleRequestHire = (talent: TalentProfile) => {
     setSelectedTalent(talent);

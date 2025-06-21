@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm, type ControllerRenderProps } from 'react-hook-form';
+import { z } from 'zod';
 import {
   Dialog,
   DialogContent,
@@ -8,6 +10,14 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from '@/components/ui/form';
 import { isProdDomain } from '@/utils/getStripe';
 
 interface GuestCheckoutModalProps {
@@ -16,13 +26,28 @@ interface GuestCheckoutModalProps {
   onSubmit: (data: { email: string; address: string }) => void;
 }
 
+const schema = z.object({
+  email: z.string().email('Enter a valid email'),
+  address: z.string().min(1, 'Address is required'),
+});
+
+type FormValues = z.infer<typeof schema>;
+
 export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestCheckoutModalProps) {
-  const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
+  const form = useForm<FormValues>({ resolver: zodResolver(schema) });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmit({ email, address });
+    const normalizedEmailForSubmit = email.replace(/@@+/g, '@');
+    if (email !== normalizedEmailForSubmit) {
+      console.warn(`DIAGNOSTIC: Normalized email value during handleSubmit from "${email}" to "${normalizedEmailForSubmit}"`);
+    }
+    console.log("Email value at submission (original):", email, "(normalized):", normalizedEmailForSubmit);
+    if (email.includes('@@')) { // Keep check on original email for diagnostics
+      console.error("DIAGNOSTIC: Original email contained '@@' in handleSubmit before calling onSubmit");
+      alert("DIAGNOSTIC: Original email contained '@@'. Check console. Submitting normalized version."); // Temporary
+    }
+    onSubmit({ email: normalizedEmailForSubmit, address });
   };
 
   return (
@@ -36,20 +61,79 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
             Pay with test data – use card 4242 4242 4242 4242 and any future date.
           </div>
         )}
+<<<<<<< HEAD
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(handleSubmit, (errors) => {
+            const firstError = Object.keys(errors)[0] as keyof FormValues | undefined;
+            if (firstError) {
+              form.setFocus(firstError);
+            }
+          })} className="space-y-4">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'email'> }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="Email"
+                      className="bg-zion-blue-dark border-zion-blue-light text-white"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="address"
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'address'> }) => (
+                <FormItem>
+                  <FormLabel>Shipping Address</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Shipping Address"
+                      className="bg-zion-blue-dark border-zion-blue-light text-white"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <DialogFooter>
+              <Button type="submit" className="w-full">
+                Continue to Payment
+              </Button>
+            </DialogFooter>
+          </form>
+        </Form>
+=======
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
             type="email"
             placeholder="Email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="bg-zion-blue-dark border-zion-blue-light text-white"
+            onChange={(e) => {
+              const rawValue = e.target.value;
+              console.log("Email input onChange raw value:", rawValue);
+              const normalizedValue = rawValue.replace(/@@+/g, '@');
+              if (rawValue !== normalizedValue) {
+                console.warn(`DIAGNOSTIC: Normalized email value during onChange from "${rawValue}" to "${normalizedValue}"`);
+              }
+              setEmail(normalizedValue);
+            }}
+            className="guest-checkout-modal-input"
             required
           />
           <Input
             placeholder="Shipping Address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            className="bg-zion-blue-dark border-zion-blue-light text-white"
+            className="guest-checkout-modal-input"
             required
           />
           <DialogFooter>
@@ -58,6 +142,7 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
             </Button>
           </DialogFooter>
         </form>
+>>>>>>> a652f9cc60a0195bd91cf60bb38f3aaa3de1ff47
       </DialogContent>
     </Dialog>
   );
