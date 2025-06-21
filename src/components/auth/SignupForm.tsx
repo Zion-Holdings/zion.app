@@ -46,7 +46,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
       // Use AuthProvider's signup function instead of API call
       const result = await signUp(data.email, data.password, {
         name: data.name,
-        display_name: data.name
+        displayName: data.name
       });
 
       if (result.error) {
