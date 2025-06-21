@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { GradientHeading } from "@/components/GradientHeading";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { HowItWorksVideo } from "@/components/HowItWorksVideo";
 
 export function HeroSection() {
   const { t } = useTranslation();
@@ -61,6 +62,7 @@ export function HeroSection() {
             </Link>
           </div>
         </div>
+        <HowItWorksVideo />
       </div>
     </section>
   );
