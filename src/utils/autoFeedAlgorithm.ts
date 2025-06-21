@@ -106,7 +106,11 @@ function generateCompanyName(): string {
 }
 
 // Generate market-appropriate pricing
+<<<<<<< HEAD
 function generateMarketPrice(category: (typeof AI_IT_CATEGORIES)[number], popularityBoost: number = 1): number {
+=======
+function generateMarketPrice(category: typeof AI_IT_CATEGORIES[number], popularityBoost: number = 1): number {
+>>>>>>> f8c85c7db2af60b3eb01533e3364061e74753446
   const [min, max] = category.priceRange;
   
   // Use normal distribution for more realistic pricing
@@ -180,7 +184,11 @@ function generateRating(): { rating: number; reviewCount: number } {
 }
 
 // Generate AI score
+<<<<<<< HEAD
 function generateAIScore(category: (typeof AI_IT_CATEGORIES)[number]): number {
+=======
+function generateAIScore(category: typeof AI_IT_CATEGORIES[number]): number {
+>>>>>>> f8c85c7db2af60b3eb01533e3364061e74753446
   const baseScore = 75 + Math.random() * 20; // 75-95 base range
   const categoryBonus = category.popularity * 10; // Up to 10 point bonus
   return Math.min(99, Math.round(baseScore + categoryBonus));
@@ -280,11 +288,19 @@ export function getRecommendedProducts(products: ProductListing[], userPreferenc
     
     if (userPreferences.priceRange) {
       const [min, max] = userPreferences.priceRange;
+<<<<<<< HEAD
       filtered = filtered.filter(p => (p.price ?? 0) >= min && (p.price ?? 0) <= max);
     }
     
     if (userPreferences.rating) {
       filtered = filtered.filter(p => (p.rating ?? 0) >= userPreferences.rating!);
+=======
+      filtered = filtered.filter(p => p.price != null && p.price >= min && p.price <= max);
+    }
+    
+    if (userPreferences.rating) {
+      filtered = filtered.filter(p => p.rating != null && p.rating >= userPreferences.rating!);
+>>>>>>> f8c85c7db2af60b3eb01533e3364061e74753446
     }
   }
   
