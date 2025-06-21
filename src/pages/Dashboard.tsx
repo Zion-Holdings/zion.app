@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CommunityDiscussion } from "@/components/CommunityDiscussion";
 import { Badge } from "@/components/ui/badge";
-import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings, FileText, Heart, Key } from "lucide-react";
+import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings, FileText, Heart, Key, ShoppingBag } from "lucide-react";
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { ApiKeysManager } from '@/components/developers/ApiKeysManager';
 import { useGetOrdersQuery } from '@/hooks/useOrders';
@@ -14,6 +14,7 @@ import { createTestNotification, createOnboardingNotification, createSystemNotif
 import { NotificationBell } from "@/components/NotificationBell";
 import { GuidedTour } from "@/components/onboarding/GuidedTour";
 import { useToast } from "@/hooks/use-toast";
+import { EmptyState } from "@/components/ui/empty-state";
 import Link from 'next/link';
 import { useRouter } from 'next/router'; // Ensure this is present
 
@@ -267,7 +268,13 @@ export default function Dashboard() {
                     {ordersLoading ? (
                       <p className="text-zion-slate-light">Loading...</p>
                     ) : orders.length === 0 ? (
-                      <p className="text-zion-slate-light">No orders found.</p>
+                      <EmptyState
+                        icon={<ShoppingBag className="h-8 w-8" />}
+                        title="No Orders"
+                        description="You haven't purchased anything yet."
+                        action={{ text: 'Visit Marketplace', href: '/marketplace' }}
+                        className="border-none bg-transparent text-center"
+                      />
                     ) : (
                       <ul className="space-y-1">
                         {orders.slice(0, 3).map(o => (
