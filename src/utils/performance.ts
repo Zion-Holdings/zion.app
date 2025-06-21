@@ -120,38 +120,52 @@ export function initPerformanceMonitoring(): void {
 
   observeCLS((cls) => {
     metrics.cls = cls;
-    console.log(`CLS: ${cls.toFixed(4)}`);
     
-    // Log warning if CLS is high
-    if (cls > 0.1) {
-      console.warn(`⚠️ High CLS detected: ${cls.toFixed(4)} (target: <0.1)`);
-    } else if (cls > 0.25) {
-      console.error(`🔴 Poor CLS: ${cls.toFixed(4)} (target: <0.1)`);
-    } else {
-      console.log(`✅ Good CLS: ${cls.toFixed(4)}`);
+    // Only log in development or when performance monitoring is explicitly enabled
+    if (process.env.NODE_ENV === 'development' || 
+        localStorage.getItem('performance-monitoring') === 'true') {
+      console.log(`CLS: ${cls.toFixed(4)}`);
+      
+      // Log warning if CLS is high
+      if (cls > 0.1) {
+        console.warn(`⚠️ High CLS detected: ${cls.toFixed(4)} (target: <0.1)`);
+      } else if (cls > 0.25) {
+        console.error(`🔴 Poor CLS: ${cls.toFixed(4)} (target: <0.1)`);
+      } else {
+        console.log(`✅ Good CLS: ${cls.toFixed(4)}`);
+      }
     }
   });
 
   observeFCP((fcp) => {
     metrics.fcp = fcp;
-    console.log(`FCP: ${fcp.toFixed(2)}ms`);
+    if (process.env.NODE_ENV === 'development' || 
+        localStorage.getItem('performance-monitoring') === 'true') {
+      console.log(`FCP: ${fcp.toFixed(2)}ms`);
+    }
   });
 
   observeLCP((lcp) => {
     metrics.lcp = lcp;
-    console.log(`LCP: ${lcp.toFixed(2)}ms`);
-    
-    if (lcp > 2500) {
-      console.warn(`⚠️ Slow LCP: ${lcp.toFixed(2)}ms (target: <2.5s)`);
+    if (process.env.NODE_ENV === 'development' || 
+        localStorage.getItem('performance-monitoring') === 'true') {
+      console.log(`LCP: ${lcp.toFixed(2)}ms`);
+      
+      if (lcp > 2500) {
+        console.warn(`⚠️ Slow LCP: ${lcp.toFixed(2)}ms (target: <2.5s)`);
+      }
     }
   });
 
   observeFID((fid) => {
     metrics.fid = fid;
-    console.log(`FID: ${fid.toFixed(2)}ms`);
-    
-    if (fid > 100) {
-      console.warn(`⚠️ Slow FID: ${fid.toFixed(2)}ms (target: <100ms)`);
+    if (process.env.NODE_ENV === 'development' || 
+        localStorage.getItem('performance-monitoring') === 'true') {
+      console.log(`FID: ${fid.toFixed(2)}ms`);
+      
+      if (fid > 100) {
+        console.warn(`⚠️ Slow FID: ${fid.toFixed(2)}ms (target: <100ms)`);
+      }
     }
   });
 
@@ -160,13 +174,19 @@ export function initPerformanceMonitoring(): void {
     const timing = performance.timing;
     const ttfb = timing.responseStart - timing.requestStart;
     metrics.ttfb = ttfb;
-    console.log(`TTFB: ${ttfb}ms`);
+    if (process.env.NODE_ENV === 'development' || 
+        localStorage.getItem('performance-monitoring') === 'true') {
+      console.log(`TTFB: ${ttfb}ms`);
+    }
   }
 
   // Report metrics after page load
   window.addEventListener('load', () => {
     setTimeout(() => {
-      console.log('📊 Performance Metrics Summary:', metrics);
+      if (process.env.NODE_ENV === 'development' || 
+          localStorage.getItem('performance-monitoring') === 'true') {
+        console.log('📊 Performance Metrics Summary:', metrics);
+      }
     }, 5000); // Wait 5 seconds for metrics to stabilize
   });
 }
@@ -195,6 +215,12 @@ export function reportPerformanceMetrics(metrics: Partial<PerformanceMetrics>): 
  */
 export function observeFontLoading(): void {
   if (typeof window === 'undefined' || !('fonts' in document)) {
+    return;
+  }
+
+  // Only monitor font loading in development or when explicitly enabled
+  if (process.env.NODE_ENV !== 'development' && 
+      localStorage.getItem('performance-monitoring') !== 'true') {
     return;
   }
 

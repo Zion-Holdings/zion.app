@@ -15,21 +15,19 @@ export async function register() {
 
   if (!SENTRY_DSN || SENTRY_DSN.startsWith('YOUR_') || SENTRY_DSN.startsWith('https_example')) {
     console.warn("instrumentation.ts: Sentry DSN is not defined or is a placeholder; Server-side Sentry will not capture errors.");
+    console.warn("instrumentation.ts: The SENTRY_DSN environment variable is handled by Netlify and should be configured in the Netlify environment settings.");
     return;
-  }
 
   console.log(`instrumentation.ts: Initializing Sentry for server-side. Release: ${SENTRY_RELEASE}, Env: ${SENTRY_ENVIRONMENT}`);
 
-  /*
   Sentry.init({
-    dsn: SENTRY_DSN,
+    dsn: SENTRY_DSN!,
     release: SENTRY_RELEASE,
     environment: SENTRY_ENVIRONMENT,
     tracesSampleRate: 1.0, // Adjust this value in production
 
     // Consider adding sendDefaultPii: true if needed, as shown in Sentry docs
     // sendDefaultPii: true,
-
     // Remove direct Integrations.Http, as @sentry/nextjs handles this.
     // integrations: [new Integrations.Http({ tracing: true })],
 
@@ -64,6 +62,5 @@ export async function register() {
     // Enable to log internal Sentry debug messages
     // debug: process.env.NODE_ENV === 'development',
   });
-  */
-  console.log("instrumentation.ts: Server-side Sentry initialization SKIPPED to debug timeout.");
+  //console.log("instrumentation.ts: Server-side Sentry initialization SKIPPED to debug timeout.");
 }
