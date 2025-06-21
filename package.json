@@ -30,6 +30,8 @@
     "devnet": "node scripts/start-devnet.js",
     "storybook": "storybook dev -p 6006",
     "env:check": "npx ts-node --transpile-only scripts/check-env.ts",
+    "env:dev": "node scripts/check-dev-environment.cjs",
+    "build:report": "npm run build && node scripts/build-performance-report.cjs",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test:node": "node -v",
     "check-updates": "ncu",
