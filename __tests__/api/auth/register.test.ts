@@ -118,4 +118,18 @@ describe('/api/auth/register API Endpoint', () => {
       message: 'An unexpected error occurred while processing the signup request.',
     });
   });
+
+  it('rate limits after too many requests', async () => {
+    process.env.INTERNAL_AUTH_SERVICE_URL = 'http://fake-auth-service.com';
+    const body = { name: 'Test', email: 'a@b.com', password: 'pass1234' };
+    for (let i = 0; i < 5; i++) {
+      mockedAxios.post.mockResolvedValueOnce({ status: 201, data: {} });
+      const { req, res } = createMocks<NextApiRequest, NextApiResponse>({ method: 'POST', body });
+      await registerHandler(req, res);
+    }
+    mockedAxios.post.mockResolvedValueOnce({ status: 201, data: {} });
+    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({ method: 'POST', body });
+    await registerHandler(req, res);
+    expect(res._getStatusCode()).toBe(429);
+  });
 });
