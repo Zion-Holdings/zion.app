@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+// Routes have been converted to Next.js pages structure
+// This component is no longer needed since Next.js uses file-based routing
+=======
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Fragment } from "react";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
@@ -10,66 +14,10 @@ import CreatePostPage from "@/pages/CreatePostPage";
 import EditPostPage from "@/pages/EditPostPage";
 import CommunityProfilePage from "@/pages/CommunityProfilePage";
 import NationDetailPage from '@/pages/community/NationDetailPage';
+>>>>>>> abd3ab5905cc1c71bdb81adf19825162f921e7a5
 
 const CommunityRoutes = () => {
-  return (
-    <Routes>
-      {/* Public routes */}
-      <Route
-        path="/community"
-        element={
-          <CommunityProvider>
-            <CommunityPage />
-          </CommunityProvider>
-        }
-      />
-      <Route
-        path="/forum"
-        element={
-          <CommunityProvider>
-            <CommunityPage />
-          </CommunityProvider>
-        }
-      />
-      <Route path="/community/category/:categoryId" element={<ForumCategoryPage />} />
-      <Route path="/community/post/:postId" element={<ForumPostPage />} />
-      <Route path="/community/profile/:userId" element={<CommunityProfilePage />} />
-
-      {/* Protected routes */}
-      <Route
-        path="/community/new"
-        element={
-          <ProtectedRoute>
-            <Navigate href="/community?new=1" replace />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/community/create"
-        element={
-          <ProtectedRoute>
-            <CreatePostPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/community/edit/:postId"
-        element={
-          <ProtectedRoute>
-            <EditPostPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/nations/:slug"
-        element={
-          <ProtectedRoute> {/* Or remove ProtectedRoute if not needed */}
-            <NationDetailPage />
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
-  );
+  return null;
 };
 
 export default CommunityRoutes;

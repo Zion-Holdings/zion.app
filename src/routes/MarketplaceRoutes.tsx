@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+// Routes have been converted to Next.js pages structure
+// This component is no longer needed since Next.js uses file-based routing
+
+const MarketplaceRoutes = () => {
+  return null;
+=======
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Routes, Route } from 'react-router-dom';
 // Router components removed - convert to Next.js pages structure
@@ -127,6 +134,7 @@ const MarketplaceRoutes = () => {
       </MarketplaceLayout>
     </MarketplaceErrorBoundary>
   );
+>>>>>>> abd3ab5905cc1c71bdb81adf19825162f921e7a5
 };
 
 export default MarketplaceRoutes;

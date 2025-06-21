@@ -1,35 +1,10 @@
-
-import { Fragment } from "react";
-import { ProtectedRoute } from "@/components/ProtectedRoute";
-// Router components removed - convert to Next.js pages structure
-import Dashboard from "@/pages/Dashboard";
-import ClientDashboard from "@/pages/ClientDashboard";
-import TalentDashboard from "@/pages/TalentDashboard";
-import CreatorDashboard from "@/pages/CreatorDashboard";
-import Analytics from "@/pages/Analytics";
-import ProjectMilestones from "@/pages/ProjectMilestones";
-import ProjectDetails from "@/pages/ProjectDetails";
-import ProjectRoom from "@/pages/ProjectRoom";
-import MessagingInbox from "@/pages/MessagingInbox";
-import Payments from "@/pages/Payments";
-import Interviews from "@/pages/Interviews";
-import Notifications from "@/pages/Notifications";
-import ApplicationStatusTracker from "@/pages/ApplicationStatusTracker";
-import HiringTracker from "@/pages/HiringTracker";
-import PortfolioBuilder from "@/pages/PortfolioBuilder";
-import Referrals from "@/pages/Referrals";
-import DeveloperPortal from "@/pages/DeveloperPortal";
-import WalletDashboard from "@/pages/Wallet";
-import OrdersPage from "@/pages/Orders";
-import OrderDetailPage from "@/pages/OrderDetail";
-import ContractBuilder from "@/pages/ContractBuilder";
-import Projects from "@/pages/Projects";
-import RewardsPage from "@/pages/Rewards";
-import AchievementsPage from "@/pages/Achievements";
-import MetricsDashboard from "@/pages/dashboard/MetricsDashboard";
-import AICorePage from '@/pages/dashboard/ai-core/AICorePage';
+// Routes have been converted to Next.js pages structure
+// This component is no longer needed since Next.js uses file-based routing
 
 const DashboardRoutes = () => {
+<<<<<<< HEAD
+  return null;
+=======
   return (
     <Fragment>
       {/* Dashboard Routes */}
@@ -117,6 +92,7 @@ const DashboardRoutes = () => {
       </ProtectedRoute>
     </Fragment>
   );
+>>>>>>> abd3ab5905cc1c71bdb81adf19825162f921e7a5
 };
 
 export default DashboardRoutes;
