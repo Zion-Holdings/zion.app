@@ -150,11 +150,11 @@ function determineBaseLogPath() {
 
 const BASE_LOG_PATH = determineBaseLogPath();
 /** @const {string} PERF_LOG_FILE - Path to the performance log file to be monitored. */
-const PERF_LOG_FILE = path.join(BASE_LOG_PATH, 'perf', 'hourly.log');
+const PERF_LOG_FILE = path.join('./logs', 'perf', 'hourly.log');
 /** @const {string} SECURITY_LOG_FILE - Path to the security log file to be monitored for patch notifications. */
-const SECURITY_LOG_FILE = path.join(BASE_LOG_PATH, 'security', 'hourly-fix.log');
+const SECURITY_LOG_FILE = path.join('./logs', 'security', 'hourly-fix.log');
 /** @const {string} SELF_HEAL_LOG_FILE - Path to the log file where this watchdog script records its own actions and errors. */
-const SELF_HEAL_LOG_FILE = path.join(BASE_LOG_PATH, 'self-heal.log');
+const SELF_HEAL_LOG_FILE = path.join('./logs', 'self-heal.log');
 
 // Ensure log directories and files exist to avoid Tail initialization errors
 function ensureFileExists(filePath) {
@@ -176,13 +176,13 @@ function ensureFileExists(filePath) {
  * Regex to detect performance error lines in PERF_LOG_FILE.
  * This is a placeholder and should be adjusted to match actual log content.
  */
-const PERF_ERROR_REGEX = /PERF_ERROR/;
+const PERF_ERROR_REGEX = /error/i;
 /**
  * @const {RegExp} SECURITY_PATCH_REGEX
  * Regex to detect critical security patch notifications in SECURITY_LOG_FILE.
  * This is a placeholder and should be adjusted to match actual log content.
  */
-const SECURITY_PATCH_REGEX = /CRIT_SECURITY_PATCH/;
+const SECURITY_PATCH_REGEX = /patch/i;
 
 // --- Configuration: Self-Healing ---
 /**
@@ -207,9 +207,9 @@ let isHealing = false;
 let highCpuUsageCount = 0;
 
 // --- System Monitoring Configuration ---
-const MEMORY_THRESHOLD = 0.80; // 80% memory usage
-const CPU_THRESHOLD = 0.80;    // 80% CPU usage
-const CPU_SUSTAINED_CHECKS = 5; // 5 consecutive checks for CPU
+const MEMORY_THRESHOLD = 0.90; // 90% memory usage
+const CPU_THRESHOLD = 0.90;    // 90% CPU usage
+const CPU_SUSTAINED_CHECKS = 10; // 10 consecutive checks for CPU
 const SYSTEM_CHECK_INTERVAL = 60000; // 60 seconds in milliseconds
 
 // --- Helper Functions ---
