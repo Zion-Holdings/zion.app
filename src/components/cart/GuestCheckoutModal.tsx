@@ -22,7 +22,16 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onSubmit({ email, address });
+    const normalizedEmailForSubmit = email.replace(/@@+/g, '@');
+    if (email !== normalizedEmailForSubmit) {
+      console.warn(`DIAGNOSTIC: Normalized email value during handleSubmit from "${email}" to "${normalizedEmailForSubmit}"`);
+    }
+    console.log("Email value at submission (original):", email, "(normalized):", normalizedEmailForSubmit);
+    if (email.includes('@@')) { // Keep check on original email for diagnostics
+      console.error("DIAGNOSTIC: Original email contained '@@' in handleSubmit before calling onSubmit");
+      alert("DIAGNOSTIC: Original email contained '@@'. Check console. Submitting normalized version."); // Temporary
+    }
+    onSubmit({ email: normalizedEmailForSubmit, address });
   };
 
   return (
@@ -41,15 +50,23 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
             type="email"
             placeholder="Email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="bg-zion-blue-dark border-zion-blue-light text-white"
+            onChange={(e) => {
+              const rawValue = e.target.value;
+              console.log("Email input onChange raw value:", rawValue);
+              const normalizedValue = rawValue.replace(/@@+/g, '@');
+              if (rawValue !== normalizedValue) {
+                console.warn(`DIAGNOSTIC: Normalized email value during onChange from "${rawValue}" to "${normalizedValue}"`);
+              }
+              setEmail(normalizedValue);
+            }}
+            className="guest-checkout-modal-input"
             required
           />
           <Input
             placeholder="Shipping Address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            className="bg-zion-blue-dark border-zion-blue-light text-white"
+            className="guest-checkout-modal-input"
             required
           />
           <DialogFooter>
