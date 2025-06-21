@@ -18,6 +18,8 @@ export interface UserProfile {
   bio?: string;
   headline?: string;
   emailVerified?: boolean;
+  interests?: string[];
+  preferredCategories?: string[];
 }
 
 export interface UserDetails extends UserProfile {

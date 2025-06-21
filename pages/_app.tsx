@@ -23,6 +23,7 @@ import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
+import { IntercomChat } from '@/components/IntercomChat';
 // Import Next.js fonts for optimal loading and CLS prevention
 import { Inter, Montserrat } from 'next/font/google';
 import Head from 'next/head';
@@ -209,6 +210,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                           <ErrorResetOnRouteChange />
                                           <Toaster />
                                           <OfflineIndicator />
+                                          <IntercomChat />
                                         </AppLayout>
                                       </ThemeProvider>
                                     </AnalyticsProvider>
