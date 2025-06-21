@@ -39,6 +39,10 @@ const nextConfig = {
   // },
   images: {
     unoptimized: false, // Enabled Next.js Image Optimization for performance
+    domains: [
+      'images.unsplash.com',
+      'source.unsplash.com'
+    ]
   },
   eslint: {
     // ignoreDuringBuilds: true, // Ensuring ESLint runs during build
