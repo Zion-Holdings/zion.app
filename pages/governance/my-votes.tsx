@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'; // Adjust path
 import { Badge } from '@/components/ui/badge'; // Adjust path
 import ConnectWalletButton from '@/components/ConnectWalletButton'; // Assuming this is the correct path
+import { captureException } from '@/utils/sentry';
+import { useAuth } from '@/hooks/useAuth';
 // import MainLayout from '@/components/layout/MainLayout';
 
 // Types (should ideally be shared)
@@ -24,6 +26,7 @@ interface UserVote {
 
 const MyVotesPage: React.FC = () => {
   const { isConnected, address: connectedWalletAddress } = useWallet();
+  const { user } = useAuth();
   const [votes, setVotes] = useState<UserVote[]>([]);
   const [isLoading, setIsLoading] = useState(false); // Set to false initially if wallet not connected
   const [error, setError] = useState<string | null>(null);
@@ -46,6 +49,10 @@ const MyVotesPage: React.FC = () => {
         const response = await fetch('/api/governance/my-votes/');
 
         if (response.status === 401 || response.status === 403) {
+            captureException(new Error(`Forbidden - ${response.status}`), {
+              extra: { path: '/api/governance/my-votes/' },
+              user: user ? { id: user.id, email: user.email } : undefined,
+            });
             setError("Authentication issue: Please ensure you are logged in via the platform's main authentication, or this feature might require wallet-based vote fetching in the future if platform login is separate.");
             setVotes([]);
             return;

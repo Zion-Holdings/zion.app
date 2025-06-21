@@ -63,15 +63,57 @@ export function getThemeColors(preset: ThemePreset, primaryColor: string): Theme
 }
 
 // Apply theme colors to document CSS variables
+function hexToHsl(hex: string): string {
+  let r = 0, g = 0, b = 0;
+  if (hex.startsWith('#')) {
+    const parsed = hex.slice(1);
+    if (parsed.length === 3) {
+      r = parseInt(parsed[0] + parsed[0], 16);
+      g = parseInt(parsed[1] + parsed[1], 16);
+      b = parseInt(parsed[2] + parsed[2], 16);
+    } else if (parsed.length === 6) {
+      r = parseInt(parsed.substring(0, 2), 16);
+      g = parseInt(parsed.substring(2, 4), 16);
+      b = parseInt(parsed.substring(4, 6), 16);
+    }
+  }
+  r /= 255;
+  g /= 255;
+  b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h = 0, s = 0;
+  const l = (max + min) / 2;
+  if (max !== min) {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r:
+        h = (g - b) / d + (g < b ? 6 : 0);
+        break;
+      case g:
+        h = (b - r) / d + 2;
+        break;
+      default:
+        h = (r - g) / d + 4;
+    }
+    h /= 6;
+  }
+  return `${Math.round(h * 360)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
+}
+
+function toHsl(value: string): string {
+  return value.startsWith('#') ? hexToHsl(value) : value.replace(/hsl\(|\)/g, '');
+}
+
 export function applyThemeColors(colors: ThemeColors) {
   const root = document.documentElement;
 
   // Map ThemeColors to the CSS variables expected by tailwind.config.js
-  root.style.setProperty('--background', colors.backgroundColor); // Maps to tailwind 'background'
-  root.style.setProperty('--foreground', colors.textColor);       // Maps to tailwind 'foreground'
-  root.style.setProperty('--primary', colors.primaryColor);       // Maps to tailwind 'primary.DEFAULT'
-  root.style.setProperty('--accent', colors.accentColor);         // Maps to tailwind 'accent.DEFAULT'
-  root.style.setProperty('--card', colors.cardBackground);         // Maps to tailwind 'card.DEFAULT'
+  root.style.setProperty('--background', toHsl(colors.backgroundColor)); // Maps to tailwind 'background'
+  root.style.setProperty('--foreground', toHsl(colors.textColor));       // Maps to tailwind 'foreground'
+  root.style.setProperty('--primary', toHsl(colors.primaryColor));       // Maps to tailwind 'primary.DEFAULT'
+  root.style.setProperty('--accent', toHsl(colors.accentColor));         // Maps to tailwind 'accent.DEFAULT'
+  root.style.setProperty('--card', toHsl(colors.cardBackground));         // Maps to tailwind 'card.DEFAULT'
 
   // We are not setting --primary-foreground, --accent-foreground, --card-foreground etc. yet.
   // These would require more detailed color definitions in ThemeColors.

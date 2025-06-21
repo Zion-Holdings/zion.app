@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
 import { Edit, Trash2, Github, Link, FileText } from 'lucide-react';
+import Image from 'next/image';
 import { PortfolioProject } from '@/types/resume';
 
 interface ProjectCardProps {
@@ -27,10 +28,12 @@ export function ProjectCard({ project, onEdit, onDelete }: ProjectCardProps) {
     <Card className="h-full flex flex-col">
       <div className="relative h-48 overflow-hidden rounded-t-lg bg-muted">
         {project.image_url ? (
-          <img 
-            src={project.image_url} 
-            alt={project.title} 
-            className="w-full h-full object-cover"
+          <Image
+            src={project.image_url}
+            alt={project.title}
+            fill
+            className="object-cover"
+            loading="lazy"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-muted">
