@@ -285,10 +285,11 @@ export default function EquipmentDetail() {
                 <div className="mb-6">
                   <label className="text-sm text-zion-slate-light block mb-2">Quantity</label>
                   <div className="flex items-center border border-zion-blue-light rounded-md w-32">
-                    <button 
-                      className="px-3 py-1 text-zion-slate-light hover:text-white disabled:opacity-50"
+                    <button
+                      className="px-3 py-1 text-zion-slate-light hover:text-white disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
                       disabled={quantity <= 1 || !equipment.inStock}
+                      aria-label="Decrease quantity"
                     >
                       -
                     </button>
@@ -298,10 +299,11 @@ export default function EquipmentDetail() {
                       value={quantity}
                       readOnly
                     />
-                    <button 
-                      className="px-3 py-1 text-zion-slate-light hover:text-white disabled:opacity-50"
+                    <button
+                      className="px-3 py-1 text-zion-slate-light hover:text-white disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       onClick={() => setQuantity(prev => prev + 1)}
                       disabled={!equipment.inStock}
+                      aria-label="Increase quantity"
                     >
                       +
                     </button>
