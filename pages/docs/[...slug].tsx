@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: 'blocking' };
 };
 
-export const getStaticProps: GetStaticProps<DocProps, DocPageParams> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<DocProps, DocPageParams> = async ({ params }: { params: DocPageParams }) => {
   const slugParts = params?.slug ?? [];
   const filePath = path.join(docsDir, `${slugParts.join('/')}.md`);
 
