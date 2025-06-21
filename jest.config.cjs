@@ -74,7 +74,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     // Specific aliases first
-    '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
+    '^@/pages/(.*)$': '<rootDir>/pages/$1',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
     '^@/hooks/(.*)$': '<rootDir>/src/hooks/$1',
     '^@/context/(.*)$': '<rootDir>/src/context/$1',
