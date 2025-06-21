@@ -188,7 +188,7 @@ const FilterControls: React.FC<{
       >
         <option value="">Any Availability</option>
         {availabilityOptions.map(opt => (
-          <option key={opt} value={opt}>{opt}</option>
+          <option key={opt} value={opt as string}>{opt}</option>
         ))}
       </select>
     </div>
@@ -341,10 +341,10 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
   }, []);
   const locations = useMemo(() => {
     return Array.from(new Set(MARKETPLACE_LISTINGS.map((p) => p.location).filter(Boolean)));
-  }, []);
+  }, []).filter(Boolean) as string[];
   const availabilityOptions = useMemo(() => {
     return Array.from(new Set(MARKETPLACE_LISTINGS.map((p) => p.availability).filter(Boolean)));
-  }, []);
+  }, []).filter(Boolean) as string[];
 
   // Show scroll to top button
   const [showScrollTop, setShowScrollTop] = useState(false);
