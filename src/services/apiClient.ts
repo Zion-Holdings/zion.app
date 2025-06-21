@@ -22,7 +22,12 @@ function mapStatusMessage(status?: number, fallback = ''): string {
   }
 }
 
+<<<<<<< HEAD
 // Define the global error handler (exported for testing purposes)
+=======
+// Corrected logic:
+// Define the handler
+>>>>>>> 45853b0985633bb6c128b151e5affed3881ed049
 export const globalAxiosErrorHandler = (error: any) => {
   const contentType = error.response?.headers?.['content-type'];
   if (contentType?.includes('text/html')) {
@@ -40,12 +45,26 @@ export const globalAxiosErrorHandler = (error: any) => {
   const isRetryingAndNotFinalConfiguredRetry = axiosRetryState && axiosRetryState.attemptNumber <= axiosRetryState.retryCount;
 
   const status = error.response?.status;
+<<<<<<< HEAD
   if (status === 404 && isRetryingAndNotFinalConfiguredRetry) {
     // Suppress 404 toast if retries are pending / this isn't past the configured retries
   } else {
     showApiError(error);
+=======
+  const method = (config.method || '').toUpperCase();
+
+  if (status === 404 && method === 'DELETE') {
+    // Item already removed - treat as success and skip toast
+    return Promise.resolve(error.response);
+>>>>>>> 45853b0985633bb6c128b151e5affed3881ed049
   }
 
+  if (status === 404 && isRetryingAndNotFinalConfiguredRetry) {
+    // Suppress toast while retries remain
+    return Promise.reject(error);
+  }
+
+  showApiError(error);
   return Promise.reject(error);
 };
 
