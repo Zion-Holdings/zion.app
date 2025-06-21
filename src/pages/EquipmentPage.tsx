@@ -1,343 +1,317 @@
-import { DynamicListingPage } from "@/components/DynamicListingPage";
-import { ProductListing } from "@/types/listings";
-import { useEffect, useState, useMemo } from "react";
-import { useQuery } from "@tanstack/react-query";
-import axios from 'axios';
-import { generateRandomEquipment } from "@/utils/generateRandomEquipment";
-import { Button } from "@/components/ui/button";
-import { Loader2, Sparkles, AlertTriangle } from "lucide-react";
-import Image from 'next/image';
-import { toast } from "@/hooks/use-toast";
-import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from 'next/router';
-import Link from 'next/link';
-import useSWRMutation from "swr/mutation";
-import Skeleton, { SkeletonCard } from "@/components/ui/skeleton"; // Import SkeletonCard
-import { FilterSidebarSkeleton } from "@/components/skeletons/FilterSidebarSkeleton"; // Import FilterSidebarSkeleton
-import { useDelayedError } from '@/hooks/useDelayedError';
-import { useSkeletonTimeout } from '@/hooks/useSkeletonTimeout';
-import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
-import { EmptyState } from "@/components/ui/EmptyState";
+import { useState, useEffect, useCallback, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUp, Filter, SortAsc, Zap, TrendingUp, Star, ShoppingCart, MapPin, Package } from 'lucide-react';
+import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
+import { generateDatacenterEquipment, getEquipmentMarketStats, getRecommendedEquipment } from '@/utils/equipmentAutoFeedAlgorithm';
+import { ProductListing } from '@/types/listings';
+import { SkeletonCard } from '@/components/ui/skeleton';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-// The EQUIPMENT_LISTINGS constant has been removed as it was commented out
-// and the page primarily relies on API calls and dynamic data generation.
-// This helps simplify the file and eliminate potential parsing issues.
-
-const EQUIPMENT_FILTERS = [
-  { label: "Servers", value: "Servers" },
-  { label: "Networking", value: "Networking" },
-  { label: "Power", value: "Power" },
-  { label: "Cooling", value: "Cooling" },
-  { label: "Storage", value: "Storage" },
-  { label: "Security", value: "Security" },
-  { label: "Management", value: "Management" },
-  { label: "Infrastructure", value: "Infrastructure" },
-  { label: "AI", value: "AI" },
-  { label: "Robotics", value: "Robotics" },
+// Sample equipment listings to start with
+const INITIAL_EQUIPMENT: ProductListing[] = [
+  {
+    id: "nvidia-a100-server",
+    title: "NVIDIA A100 GPU Training Server",
+    description: "High-performance AI training server with 8x A100 GPUs, designed for demanding machine learning workloads.",
+    category: "AI Hardware",
+    price: 85000,
+    currency: "$",
+    brand: "NVIDIA",
+    specifications: ["8x A100 GPUs", "2TB HBM2e", "NVLink"],
+    tags: ["AI", "Machine Learning", "GPU"],
+    author: { name: "NVIDIA", id: "nvidia" },
+    images: ["https://images.unsplash.com/photo-1618599515406-3e5fd8cd9a27?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-15T10:30:00.000Z",
+    rating: 4.9,
+    reviewCount: 27,
+    location: "Santa Clara, CA",
+    availability: "In Stock"
+  }
 ];
 
-export async function fetchEquipment(): Promise<ProductListing[]> {
-  try {
-    const { data } = await axios.get('/api/equipment', { timeout: 10000 });
-    const items = Array.isArray(data) ? data : data?.items;
-    console.log('Equipment fetch successful:', items?.length || 0, 'items');
-    return items;
-  } catch (error: any) {
-    console.error("Raw error object in fetchEquipment:", error);
-    
-    let errorMessage = 'Failed to fetch equipment';
-    
-    if (error.code === 'ECONNABORTED' || error.message?.includes('timeout')) {
-      errorMessage = 'Request timed out - please try again';
-    } else if (error.response) {
-      console.error("Error response data in fetchEquipment:", error.response.data);
-      errorMessage = error.response.data?.error || `Server error: ${error.response.status}`;
-    } else if (error.request) {
-      errorMessage = 'Network error - please check your connection';
-    }
-    
-    console.error("Failed to fetch equipment:", errorMessage);
-    
-    // Create a more informative error object
-    const enhancedError = new Error(errorMessage);
-    enhancedError.name = 'EquipmentFetchError';
-    throw enhancedError;
-  }
-}
-
-export default function EquipmentPage() {
-  // Initialize with undefined or null to better distinguish between empty data and loading states
-  const [equipment, setEquipment] = useState<ProductListing[] | undefined>(undefined);
-  const [hasExhaustedRetries, setHasExhaustedRetries] = useState(false);
-  const { user } = useAuth();
-  const router = useRouter();
-  const timedOut = useSkeletonTimeout(20000);
-
-  const {
-    data: fetchedEquipment,
-    error: equipmentError,
-    isLoading: isLoadingEquipment,
-    refetch: refetchEquipment,
-    failureCount
-  } = useQuery<ProductListing[], Error>({
-    queryKey: ['equipment'],
-    queryFn: fetchEquipment,
-    retry: 3, // Retry up to 3 times
-    retryDelay: (attemptIndex) => Math.min(1000 * Math.pow(2, attemptIndex), 5000), // Exponential backoff, max 5s
-    staleTime: 5 * 60 * 1000, // 5 minutes
-    gcTime: 10 * 60 * 1000, // 10 minutes (formerly cacheTime)
-  });
-  const delayedError = useDelayedError(equipmentError);
-
-  useEffect(() => {
-    if (fetchedEquipment && Array.isArray(fetchedEquipment)) {
-      setEquipment(fetchedEquipment);
-      setHasExhaustedRetries(false); // Reset on successful fetch
-    }
-  }, [fetchedEquipment, equipmentError]);
-
-  // Track when retries are exhausted
-  useEffect(() => {
-    if (equipmentError && failureCount >= 3) {
-      console.error('Equipment query failed after 3 retries:', equipmentError);
-      setHasExhaustedRetries(true);
-    }
-  }, [equipmentError, failureCount]);
-
-  const {
-    trigger: fetchRecommendations,
-    isMutating: isFetchingRecommendations,
-  } = useSWRMutation(
-    "/api/equipment/recommendations",
-    async ( // Added async here
-      url: string,
-      { arg }: { arg: { userId: string } }
-    ): Promise<ProductListing[]> => { // Added return type
-      const res = await fetch(`${url}?userId=${arg.userId}`); // Added await
-      if (!res.ok) {
-        // Enhanced error handling for failed recommendations fetch
-        const errorData = await res.json().catch(() => ({ message: "Failed to fetch recommendations, and error response is not JSON."}));
-        console.error("Raw error object in fetchRecommendations:", errorData);
-        // The errorData is already logged, but this is to ensure it's captured before throwing.
-        console.error("Recommendation fetch error:", errorData);
-        throw new Error(errorData.message || "Failed to fetch recommendations");
-      }
-      return res.json();
-    }
-  );
-
-  // Interval for adding random equipment
-  // useEffect(() => {
-  //   // Only set interval if equipment is already loaded/exists to prevent adding to undefined
-  //   if (equipment && equipment.length > 0) {
-  //     const interval = setInterval(() => {
-  //       setEquipment((prev = []) => [...prev, generateRandomEquipment()]); // Ensure prev is an array
-  //     }, 120000);
-  //     return () => clearInterval(interval);
-  //   }
-  // }, [equipment]); // Added equipment to dependency array
-  // Removed the random equipment generation interval to rely on API data.
-
-  const handleRecommendations = async () => {
-    if (!user) {
-      router.push('/login?next=/equipment&reco=1');
-      return;
-    }
-    try {
-      // Ensure data is correctly typed or cast if necessary
-      const data: ProductListing[] = await fetchRecommendations({ userId: user?.id ?? "" });
-      setEquipment(data); // data should be ProductListing[]
-      toast({ title: 'Showing personalized recommendations' });
-    } catch (err: any) { // Typed error
-      console.error("Error in handleRecommendations:", err);
-      toast({ title: err.message || 'Failed to load recommendations', variant: 'destructive' });
-    }
-  };
-
-  const handleManualRetry = () => {
-    setHasExhaustedRetries(false);
-    refetchEquipment();
-  };
-
-  // Make sure handleRecommendations is memoized or stable if it's a dependency elsewhere, though not strictly required here.
-  useEffect(() => {
-    const search = typeof window !== 'undefined' ? window.location.search : '';
-    const params = new URLSearchParams(search);
-    if (params.get('reco') === '1' && user) {
-      handleRecommendations();
-    }
-    // Added handleRecommendations to dependency array, ensure it's stable (e.g. via useCallback if it were passed down)
-    // For now, this is okay as it's defined in the same scope.
-  }, [user, router.asPath, handleRecommendations]);
-
-  // Memoize skeleton placeholders to avoid re-render loop
-  const skeletonPlaceholders = useMemo(
-    () => Array.from({ length: 12 }).map((_, index) => (
-      <SkeletonCard key={index} />
-    )),
-    []
-  );
-
-  const aiRecommendationSkeletons = useMemo(
-    () => [1, 2, 3, 4].map((i) => (
-      <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
-        <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
-        <div className="p-4">
-          <Skeleton className="h-6 w-1/3 mb-2 bg-zion-blue-light/20" />
-          <Skeleton className="h-8 w-5/6 mb-4 bg-zion-blue-light/20" />
-          <Skeleton className="h-4 w-full mb-2 bg-zion-blue-light/20" />
-          <Skeleton className="h-4 w-4/5 mb-4 bg-zion-blue-light/20" />
-          <div className="flex justify-between items-center pt-4">
-            <Skeleton className="h-6 w-1/4 bg-zion-blue-light/20" />
-            <Skeleton className="h-8 w-1/4 bg-zion-blue-light/20" />
-          </div>
+// Market insights component
+const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
+  <Card className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30 mb-6">
+    <CardContent className="p-6">
+      <div className="flex items-center gap-2 mb-4">
+        <TrendingUp className="h-5 w-5 text-blue-400" />
+        <h3 className="text-lg font-semibold">Equipment Market Insights</h3>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="text-center">
+          <div className="text-2xl font-bold text-blue-400">${Math.round(stats.averagePrice / 1000)}k</div>
+          <div className="text-sm text-muted-foreground">Avg Price</div>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-green-400">{stats.averageRating.toFixed(1)}</div>
+          <div className="text-sm text-muted-foreground">Avg Rating</div>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-purple-400">{stats.totalEquipment}</div>
+          <div className="text-sm text-muted-foreground">Total Items</div>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-orange-400">{stats.inStockCount}</div>
+          <div className="text-sm text-muted-foreground">In Stock</div>
         </div>
       </div>
-    )),
-    []
-  );
+    </CardContent>
+  </Card>
+);
 
-  // Updated loading condition to specifically check for equipment being undefined
-  if (isLoadingEquipment && equipment === undefined && !timedOut) {
-    return (
-      <div data-testid="loading-state-equipment" className="container mx-auto p-4 space-y-4" aria-busy="true">
-        {/* Skeleton for the top button (e.g., AI Recommendations) */}
-        <div className="flex justify-end mb-6">
-            <Skeleton className="h-10 w-48" />
-        </div>
-        {/* Main layout for sidebar and cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          <div className="lg:col-span-1">
-            <FilterSidebarSkeleton />
-          </div>
-          <div className="lg:col-span-3">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              {skeletonPlaceholders}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+// Filter controls
+const EquipmentFilterControls = ({ 
+  sortBy, setSortBy, filterCategory, setFilterCategory, categories, showRecommended, setShowRecommended 
+}: any) => (
+  <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg">
+    <div className="flex items-center gap-2">
+      <Filter className="h-4 w-4 text-muted-foreground" />
+      <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)} className="bg-background border border-border px-3 py-2 rounded">
+        <option value="">All Categories</option>
+        {categories.map((cat: string) => <option key={cat} value={cat}>{cat}</option>)}
+      </select>
+    </div>
+    <div className="flex items-center gap-2">
+      <SortAsc className="h-4 w-4 text-muted-foreground" />
+      <select value={sortBy} onChange={(e) => setSortBy(e.target.value)} className="bg-background border border-border px-3 py-2 rounded">
+        <option value="newest">Newest First</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="rating">Highest Rated</option>
+      </select>
+    </div>
+    <Button variant={showRecommended ? "default" : "outline"} size="sm" onClick={() => setShowRecommended(!showRecommended)}>
+      <Star className="h-4 w-4 mr-1" />
+      {showRecommended ? "All Equipment" : "Recommended"}
+    </Button>
+  </div>
+);
 
-  if (isLoadingEquipment && timedOut) {
-    return (
-      <div className="py-12 text-center space-y-4">
-        <p className="text-red-400">Request timed out.</p>
-        <Button onClick={handleManualRetry}>Retry</Button>
-      </div>
-    );
-  }
-
-  // If we've exhausted retries (3 attempts), show EmptyState
-  if (hasExhaustedRetries || (delayedError && failureCount >= 3)) {
-    return (
-      <div className="container mx-auto p-4">
-        <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
-          <div className="container mx-auto flex justify-end">
-            <Button onClick={handleRecommendations} disabled={isFetchingRecommendations} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
-              {isFetchingRecommendations ? (
-                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-              ) : (
-                <Sparkles className="h-4 w-4 mr-2" />
-              )}
-              AI Recommendations
-            </Button>
+// Equipment card
+const EquipmentCard = ({ equipment, onViewDetails }: { equipment: ProductListing; onViewDetails: () => void }) => (
+  <Card className="h-full hover:shadow-lg transition-shadow">
+    <CardHeader className="pb-3">
+      <div className="flex items-start justify-between">
+        <div className="flex-1 min-w-0">
+          <h3 className="font-semibold text-lg truncate">{equipment.title}</h3>
+          <p className="text-sm text-muted-foreground">{equipment.category}</p>
+          <div className="flex items-center gap-2 mt-2">
+            <Badge variant="secondary" className="text-xs">{equipment.brand}</Badge>
           </div>
         </div>
-        <EmptyState
-          text="No equipment available"
-          description="We're having trouble loading equipment right now. Please try again later or check your internet connection."
-          onRetry={handleManualRetry}
-          showRetry={true}
-          icon={<AlertTriangle className="h-16 w-16" />}
-        />
+        <div className="text-right">
+          <div className="text-xl font-bold text-blue-600">${equipment.price?.toLocaleString()}</div>
+          <Badge variant={equipment.availability === "In Stock" ? "default" : "outline"} className="text-xs">
+            {equipment.availability}
+          </Badge>
+        </div>
       </div>
-    );
-  }
-
-  // If there's an error but we haven't exhausted retries yet, show error with retry
-  if (delayedError && !hasExhaustedRetries && failureCount < 3) {
-    return (
-      <div data-testid="error-state-equipment" className="py-12 text-center space-y-4">
-        <p className="text-red-400">Failed to load equipment: {delayedError.message}</p>
-        <p className="text-gray-400 text-sm">Attempt {failureCount + 1} of 3</p>
-        <Button data-testid="retry-button-equipment" onClick={() => refetchEquipment()}>
-          Retry
+    </CardHeader>
+    <CardContent className="pt-0">
+      <div className="flex items-center gap-4 mb-3">
+        <div className="flex items-center gap-1">
+          <Star className="h-4 w-4 text-yellow-500 fill-current" />
+          <span className="text-sm font-medium">{equipment.rating?.toFixed(1)}</span>
+          <span className="text-xs text-muted-foreground">({equipment.reviewCount} reviews)</span>
+        </div>
+      </div>
+      <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{equipment.description}</p>
+      <div className="flex items-center justify-between">
+        <span className="text-sm font-medium">{equipment.category}</span>
+        <Button size="sm" onClick={onViewDetails}>
+          <ShoppingCart className="h-4 w-4 mr-1" />
+          View Details
         </Button>
       </div>
+    </CardContent>
+  </Card>
+);
+
+// Loading grid
+const EquipmentLoadingGrid = ({ count = 8 }: { count?: number }) => (
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    {Array.from({ length: count }).map((_, i) => <SkeletonCard key={i} />)}
+  </div>
+);
+
+// Main component
+export default function EquipmentPage() {
+  const router = useRouter();
+  const [sortBy, setSortBy] = useState('newest');
+  const [filterCategory, setFilterCategory] = useState('');
+  const [showRecommended, setShowRecommended] = useState(false);
+  const [totalGenerated, setTotalGenerated] = useState(0);
+
+  const fetchEquipment = useCallback(async (page: number, limit: number) => {
+    await new Promise(resolve => setTimeout(resolve, 400));
+
+    let allEquipment: ProductListing[] = [];
+    
+    if (page === 1) {
+      allEquipment = [...INITIAL_EQUIPMENT];
+    }
+    
+    const startId = INITIAL_EQUIPMENT.length + (page - 1) * limit + totalGenerated;
+    const newEquipment = generateDatacenterEquipment(limit, startId);
+    setTotalGenerated(prev => prev + newEquipment.length);
+    
+    allEquipment = [...allEquipment, ...newEquipment];
+    
+    let filteredEquipment = allEquipment;
+    
+    if (filterCategory) {
+      filteredEquipment = filteredEquipment.filter(e => e.category === filterCategory);
+    }
+    
+    if (showRecommended) {
+      filteredEquipment = getRecommendedEquipment(filteredEquipment);
+    }
+    
+    filteredEquipment.sort((a, b) => {
+      switch (sortBy) {
+        case 'price-low':
+          return (a.price || 0) - (b.price || 0);
+        case 'price-high':
+          return (b.price || 0) - (a.price || 0);
+        case 'rating':
+          return (b.rating || 0) - (a.rating || 0);
+        default:
+          return new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime();
+      }
+    });
+    
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+    const items = filteredEquipment.slice(startIndex, endIndex);
+    
+    return {
+      items,
+      hasMore: endIndex < filteredEquipment.length || page < 10,
+      total: filteredEquipment.length
+    };
+  }, [sortBy, filterCategory, showRecommended, totalGenerated]);
+
+  const {
+    items: equipment,
+    loading,
+    error,
+    hasMore,
+    total,
+    isFetching,
+    lastElementRef,
+    refresh,
+    scrollToTop
+  } = useInfiniteScrollPagination(fetchEquipment, 12);
+
+  useEffect(() => {
+    refresh();
+    setTotalGenerated(0);
+  }, [sortBy, filterCategory, showRecommended]);
+
+  const marketStats = useMemo(() => {
+    if (equipment.length === 0) return null;
+    return getEquipmentMarketStats(equipment);
+  }, [equipment]);
+
+  const categories = useMemo(() => {
+    return Array.from(new Set(equipment.map(e => e.category).filter(Boolean)));
+  }, [equipment]);
+
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => setShowScrollTop(window.scrollY > 800);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  if (loading && equipment.length === 0) {
+    return (
+      <div className="container py-8">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Datacenter Equipment
+          </h1>
+          <p className="text-muted-foreground text-lg">Professional hardware for modern IT infrastructure</p>
+        </motion.div>
+        <EquipmentLoadingGrid />
+      </div>
     );
   }
 
-  // If no equipment and not loading/error, show empty state
-  if (!isLoadingEquipment && !equipmentError && (!equipment || equipment.length === 0) && !isFetchingRecommendations) {
+  if (error) {
     return (
-      <div className="container mx-auto p-4">
-        <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
-          <div className="container mx-auto flex justify-end">
-            <Button onClick={handleRecommendations} disabled={isFetchingRecommendations} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
-              {isFetchingRecommendations ? (
-                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-              ) : (
-                <Sparkles className="h-4 w-4 mr-2" />
-              )}
-              AI Recommendations
-            </Button>
-          </div>
-        </div>
-        <div className="text-center py-10">
-          <Image
-            src="/images/equipment-placeholder.svg"
-            alt="No equipment"
-            width={200}
-            height={200}
-            className="mx-auto mb-6"
-          />
-          <EmptyState
-            text="Equipment catalog is empty"
-            description="No equipment listings are currently available."
-          />
-          <Link href="/publish">
-            <Button className="mt-4 bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
-              Be the first to list a talent
-            </Button>
-          </Link>
+      <div className="container py-8">
+        <div className="text-center space-y-4">
+          <h2 className="text-2xl font-bold">Unable to load equipment</h2>
+          <p className="text-muted-foreground">{error}</p>
+          <Button onClick={refresh}>Try Again</Button>
         </div>
       </div>
     );
   }
 
   return (
-    <>
-      <div className="bg-zion-blue-dark py-4 px-4 md:px-8 mb-6 border-b border-zion-blue-light">
-        <div className="container mx-auto flex justify-end">
-          <Button onClick={handleRecommendations} disabled={isFetchingRecommendations} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white">
-            {isFetchingRecommendations ? (
-              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-            ) : (
-              <Sparkles className="h-4 w-4 mr-2" />
-            )}
-            AI Recommendations
-          </Button>
-        </div>
-      </div>
-      <ErrorBoundary>
-        {isFetchingRecommendations ? (
-          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            {aiRecommendationSkeletons}
-          </div>
-        ) : (
-          <DynamicListingPage
-            title="Datacenter Equipment"
-            description="Browse professional hardware for modern datacenter and network deployments."
-            categorySlug="equipment"
-            listings={equipment || []} // Pass empty array if equipment is undefined to prevent errors in DynamicListingPage
-            categoryFilters={EQUIPMENT_FILTERS}
-            initialPrice={{ min: 400, max: 50000 }}
-            detailBasePath="/equipment"
-          />
+    <div className="container py-8">
+      <motion.div className="text-center mb-8" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Datacenter Equipment
+        </h1>
+        <p className="text-muted-foreground text-lg">Professional hardware for modern IT infrastructure and AI workloads</p>
+      </motion.div>
+
+      {marketStats && (
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+          <EquipmentMarketInsights stats={marketStats} />
+        </motion.div>
+      )}
+
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+        <EquipmentFilterControls
+          sortBy={sortBy} setSortBy={setSortBy} filterCategory={filterCategory} setFilterCategory={setFilterCategory}
+          categories={categories} showRecommended={showRecommended} setShowRecommended={setShowRecommended}
+        />
+      </motion.div>
+
+      <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
+        <AnimatePresence mode="popLayout">
+          {equipment.map((item, index) => (
+            <motion.div
+              key={item.id} ref={index === equipment.length - 1 ? lastElementRef : null}
+              initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ delay: Math.min(index * 0.03, 0.5) }} whileHover={{ scale: 1.02 }}
+            >
+              <EquipmentCard equipment={item} onViewDetails={() => router.push(`/equipment/${item.id}`)} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+
+      {(isFetching || loading) && (
+        <motion.div className="mt-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <EquipmentLoadingGrid count={4} />
+        </motion.div>
+      )}
+
+      {!hasMore && equipment.length > 0 && (
+        <motion.div className="text-center mt-12 py-8 border-t" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <div className="text-muted-foreground text-lg mb-2">🏭 You've explored all available equipment!</div>
+          <div className="text-sm text-muted-foreground">Showing {equipment.length} datacenter equipment items</div>
+        </motion.div>
+      )}
+
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button onClick={scrollToTop} className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary/90 rounded-full shadow-lg z-50"
+            initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0 }}
+            whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+          >
+            <ArrowUp className="h-5 w-5 text-primary-foreground" />
+          </motion.button>
         )}
-      </ErrorBoundary>
-    </>
+      </AnimatePresence>
+    </div>
   );
 }
