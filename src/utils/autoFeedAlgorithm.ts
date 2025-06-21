@@ -278,7 +278,7 @@ export function getRecommendedProducts(products: ProductListing[], userPreferenc
     
     if (userPreferences.priceRange) {
       const [min, max] = userPreferences.priceRange;
-      filtered = filtered.filter(p => p.price >= min && p.price <= max);
+      filtered = filtered.filter(p => p.price != null && p.price >= min && p.price <= max);
     }
     
     if (userPreferences.rating) {
