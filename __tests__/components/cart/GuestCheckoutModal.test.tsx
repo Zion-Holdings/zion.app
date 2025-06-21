@@ -64,6 +64,18 @@ describe('GuestCheckoutModal', () => {
     expect(addressInput.value).toBe('123 Main St');
   });
 
+  test('Input does not duplicate value on focus', () => {
+    render(<GuestCheckoutModal {...defaultProps} />);
+
+    const emailInput = screen.getByPlaceholderText('Email') as HTMLInputElement;
+
+    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+    fireEvent.blur(emailInput);
+    fireEvent.focus(emailInput);
+
+    expect(emailInput.value).toBe('test@example.com');
+  });
+
   test('Submission Test (Happy Path)', () => {
     render(<GuestCheckoutModal {...defaultProps} />);
 
