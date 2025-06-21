@@ -54,6 +54,18 @@ When the app runs in a staging environment it also uses Stripe test mode. The
 guest checkout modal displays a banner reminding testers to pay with the demo
 card `4242 4242 4242 4242` and any future expiration date and CVC.
 
+### Demo Products
+
+If no products appear in your marketplace view, seed the local database with
+sample listings:
+
+```bash
+npm run seed
+```
+
+This executes the Prisma seeding script (`prisma/seed.ts`) so you can fully walk
+through the checkout process with populated data.
+
 ## Sandbox Sample SKUs
 
 If your environment has no products available, the application falls back to a

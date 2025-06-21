@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast as sonnerToast } from 'sonner';
+import { logError } from '@/utils/logError';
 
 const DEDUPE_DELAY = 3000; // 3 seconds debounce for identical messages
 let lastKey = '';
@@ -61,7 +62,8 @@ const toastAdapter = (props: ToastProps | string) => {
 
   switch (variant) {
     case 'destructive':
-      sonnerToast.error(message, options);
+      const traceId = (options as any)?.traceId ?? logError(new Error(message));
+      sonnerToast.error(`${message} (Trace ID: ${traceId})`, options);
       break;
     case 'success':
       sonnerToast.success(message, options);
@@ -86,6 +88,7 @@ toastAdapter.success = (message: string, options?: object) => {
   }
 };
 toastAdapter.error = (message: string, options?: object) => {
+  const opts = options as { skipLog?: boolean; traceId?: string } | undefined;
   if (shouldShow(`error|${message}`)) {
     sonnerToast.error(message, { duration: 4000, ...(options || {}) });
   }

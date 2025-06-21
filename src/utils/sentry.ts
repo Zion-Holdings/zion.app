@@ -13,14 +13,13 @@ Sentry.init({
   //   release: process.env.npm_package_version,
 });
 
-export function captureException(error: unknown, context?: any) { // Added context capability
+export function captureException(error: unknown, context?: any): string { // Added context capability
   // The @sentry/nextjs SDK handles initialization.
   // We can directly call captureException.
   if (context) {
-    Sentry.captureException(error, context);
-  } else {
-    Sentry.captureException(error);
+    return Sentry.captureException(error, context);
   }
+  return Sentry.captureException(error);
 }
 
 // It's good practice to also export Sentry itself if you need to use other Sentry methods elsewhere.

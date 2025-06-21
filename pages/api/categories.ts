@@ -26,13 +26,32 @@ async function handler(
       orderBy: { name: 'asc' },
     });
 
-    const result = categories.length > 0 ? categories : CATEGORIES;
-    return res.status(200).json(result);
+    // If categories are found or the CATEGORIES constant is empty, return them.
+    // Otherwise, if no categories are found in DB and CATEGORIES is not empty,
+    // it implies a preference for DB data first, then static as a fallback if DB is empty.
+    if (categories.length > 0) {
+      return res.status(200).json(categories);
+    }
+    // If CATEGORIES is meant to be a fallback for an empty DB table (not an error)
+    if (CATEGORIES.length > 0) {
+      return res.status(200).json(CATEGORIES);
+    }
+    // If both DB and fallback are empty
+    return res.status(200).json([]);
+
   } catch (error) {
-    console.error('Failed to fetch categories:', error);
-    return res.status(200).json(CATEGORIES);
+    console.error('Failed to fetch categories from database:', error);
+    // It's important to return a 500 status code when the database operation fails.
+    // Optionally, you could still return CATEGORIES as fallback data in the client-side service
+    // if the API call fails, but the API itself should indicate the error.
+    return res.status(500).json({ error: 'Failed to fetch categories from database.' });
   } finally {
-    await prisma.$disconnect();
+    // Ensure prisma client is disconnected regardless of the outcome.
+    // Adding a check to ensure prisma has a $disconnect method,
+    // which is good practice if the prisma client instance might be mocked or altered in tests.
+    if (prisma && typeof prisma.$disconnect === 'function') {
+      await prisma.$disconnect();
+    }
   }
 }
 

@@ -36,6 +36,8 @@ export function mapProfileToUser(user: SupabaseUser, profile: any): UserProfile 
     name: profile.display_name || "",
     role: userType || "", // Map user_type to role for backward compatibility
     points: profile.points ?? 0,
-    emailVerified: profile.email_verified ?? false
+    emailVerified: profile.email_verified ?? false,
+    interests: profile.interests || [],
+    preferredCategories: profile.preferred_categories || []
   };
 }
