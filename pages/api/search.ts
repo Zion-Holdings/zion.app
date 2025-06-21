@@ -81,13 +81,11 @@ async function handler(
       index: 'listings',
       from: (page - 1) * limit,
       size: limit,
-      body: {
-        query: {
-          multi_match: {
-            query: q,
-            fields: ['title', 'description'],
-            fuzziness: 'AUTO',
-          },
+      query: {
+        multi_match: {
+          query: q,
+          fields: ['title', 'description'],
+          fuzziness: 'AUTO',
         },
       },
     });
