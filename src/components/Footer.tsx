@@ -124,7 +124,16 @@ export function Footer() {
               <li><Link href="/partners" className="text-foreground/80 hover:text-primary transition-colors">Partners</Link></li>
               <li><Link href="/careers" className="text-foreground/80 hover:text-primary transition-colors">Careers</Link></li>
               <li><Link href="/contact" className="text-foreground/80 hover:text-primary transition-colors">Contact</Link></li>
-              <li><Link href="/sitemap" className="text-foreground/80 hover:text-primary transition-colors">Sitemap</Link></li>
+              <li>
+                <Link
+                  href="/sitemap"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground/80 hover:text-primary transition-colors"
+                >
+                  Sitemap
+                </Link>
+              </li>
             </ul>
           </div>
 

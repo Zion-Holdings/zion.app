@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast as sonnerToast } from 'sonner';
+import { logError } from '@/utils/logError';
 
 const DEDUPE_DELAY = 3000; // 3 seconds debounce for identical messages
 let lastKey = '';
@@ -45,7 +46,13 @@ const toastAdapter = (props: ToastProps | string) => {
   const { title, description, variant, action } = props;
   const message = title || description || '';
 
-  const options: { description?: string; action?: React.ReactNode; } = {};
+  const options: {
+    description?: string;
+    action?: React.ReactNode;
+    duration?: number;
+  } = {
+    duration: 4000,
+  };
   if (title && description) {
     options.description = description;
   }
@@ -55,14 +62,15 @@ const toastAdapter = (props: ToastProps | string) => {
 
   switch (variant) {
     case 'destructive':
-      sonnerToast.error(message, options);
+      const traceId = (options as any)?.traceId ?? logError(new Error(message));
+      sonnerToast.error(`${message} (Trace ID: ${traceId})`, options);
       break;
     case 'success':
       sonnerToast.success(message, options);
       break;
     default:
       if (title && description) {
-        sonnerToast(title, { description });
+        sonnerToast(title, { description, duration: 4000 });
       } else if (title) {
         sonnerToast(title, options);
       } else if (description) {
@@ -76,32 +84,33 @@ const toastAdapter = (props: ToastProps | string) => {
 
 toastAdapter.success = (message: string, options?: object) => {
   if (shouldShow(`success|${message}`)) {
-    sonnerToast.success(message, options);
+    sonnerToast.success(message, { duration: 4000, ...(options || {}) });
   }
 };
 toastAdapter.error = (message: string, options?: object) => {
+  const opts = options as { skipLog?: boolean; traceId?: string } | undefined;
   if (shouldShow(`error|${message}`)) {
-    sonnerToast.error(message, options);
+    sonnerToast.error(message, { duration: 4000, ...(options || {}) });
   }
 };
 toastAdapter.info = (message: string, options?: object) => {
   if (shouldShow(`info|${message}`)) {
-    sonnerToast.info(message, options);
+    sonnerToast.info(message, { duration: 4000, ...(options || {}) });
   }
 };
 toastAdapter.warning = (message: string, options?: object) => {
   if (shouldShow(`warning|${message}`)) {
-    sonnerToast.warning(message, options);
+    sonnerToast.warning(message, { duration: 4000, ...(options || {}) });
   }
 };
 toastAdapter.loading = (message: string, options?: object) => {
   if (shouldShow(`loading|${message}`)) {
-    sonnerToast.loading(message, options);
+    sonnerToast.loading(message, { duration: 4000, ...(options || {}) });
   }
 };
 toastAdapter.custom = (component: React.ReactElement, options?: object) => {
   if (shouldShow('custom')) {
-    sonnerToast.custom(() => component, options);
+    sonnerToast.custom(() => component, { duration: 4000, ...(options || {}) });
   }
 };
 toastAdapter.dismiss = (toastId?: string | number) => sonnerToast.dismiss(toastId);

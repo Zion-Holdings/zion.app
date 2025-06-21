@@ -7,6 +7,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { UserTypeSelection } from "@/components/onboarding/UserTypeSelection";
 import { ProfileSetup } from "@/components/onboarding/ProfileSetup";
+import { InterestSelection } from "@/components/onboarding/InterestSelection";
+import { CategorySelection } from "@/components/onboarding/CategorySelection";
 import { Steps, Step } from "@/components/ui/steps";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
@@ -15,6 +17,8 @@ export default function Onboarding() {
   const { user, updateProfile, isLoading } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
   const [userType, setUserType] = useState<"serviceProvider" | "talent" | "client" | null>(null);
+  const [interests, setInterests] = useState<string[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
   const router = useRouter();
 
   useEffect(() => {
@@ -88,15 +92,10 @@ export default function Onboarding() {
         title: 'Profile completed!',
         description: 'Your profile has been set up successfully.',
       });
-      
-      // Get the appropriate dashboard route based on user type
-      const dashboardRoute = userType === "client" 
-        ? "/client-dashboard" 
-        : "/talent-dashboard";
-      
-      // Redirect to dashboard
-      router.push(dashboardRoute);
-      
+
+      // Proceed to next step
+      setCurrentStep(2);
+
     } catch (error) {
       console.error('Error updating profile:', error);
       toast({
@@ -107,9 +106,33 @@ export default function Onboarding() {
     }
   };
 
+  const handleInterestsComplete = (list: string[]) => {
+    setInterests(list);
+    setCurrentStep(3);
+  };
+
+  const handleCategoriesComplete = async (list: string[]) => {
+    setCategories(list);
+    if (user) {
+      try {
+        await updateProfile({
+          id: user.id,
+          interests,
+          preferredCategories: list,
+        });
+      } catch (err) {
+        console.error('Error saving onboarding data:', err);
+      }
+    }
+    const dashboardRoute = userType === 'client' ? '/client-dashboard' : '/talent-dashboard';
+    router.push(dashboardRoute);
+  };
+
   const steps = [
     { label: "Select Role", description: "Choose how you'll use the platform" },
     { label: "Create Profile", description: "Tell us about yourself" },
+    { label: "Interests", description: "What topics are you into?" },
+    { label: "Categories", description: "Tailor your experience" },
   ];
 
   // Show loading state or null while checking auth, useEffect will handle redirect
@@ -152,20 +175,27 @@ export default function Onboarding() {
           </div>
 
           <div className="bg-zion-blue-dark rounded-xl p-8 shadow-lg border border-zion-blue-light">
-            {currentStep === 0 ? (
+            {currentStep === 0 && (
               <UserTypeSelection onSelect={handleUserTypeSelect} selectedType={userType} />
-            ) : (
+            )}
+            {currentStep === 1 && (
               <ProfileSetup onComplete={handleProfileComplete} userType={userType!} />
             )}
+            {currentStep === 2 && (
+              <InterestSelection onComplete={handleInterestsComplete} />
+            )}
+            {currentStep === 3 && (
+              <CategorySelection onComplete={handleCategoriesComplete} />
+            )}
 
-            {currentStep === 1 && (
+            {currentStep > 0 && (
               <div className="mt-6">
                 <Button
                   variant="outline"
                   className="w-full border-zion-blue-light text-white hover:bg-zion-blue-light"
-                  onClick={() => setCurrentStep(0)}
+                  onClick={() => setCurrentStep(currentStep - 1)}
                 >
-                  Back to Role Selection
+                  Back
                 </Button>
               </div>
             )}

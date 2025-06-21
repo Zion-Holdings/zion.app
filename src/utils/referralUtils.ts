@@ -42,10 +42,10 @@ export function checkUrlForReferralCode(): string | null {
 /**
  * Track referral when a user signs up
  */
-export async function trackReferral(userId: string, email: string) {
+export async function trackReferral(userId: string, email: string): Promise<boolean> {
   try {
     const refCode = safeStorage.getItem('referral_code');
-    if (!refCode) return;
+    if (!refCode) return false;
     
     // Call API to record the referral
     const response = await fetch('/api/track-referral', {
@@ -64,8 +64,10 @@ export async function trackReferral(userId: string, email: string) {
     if (response.ok) {
       // Clear the stored referral code
       safeStorage.removeItem('referral_code');
+      return true;
     }
   } catch (error) {
     console.error('Error tracking referral:', error);
   }
+  return false;
 }

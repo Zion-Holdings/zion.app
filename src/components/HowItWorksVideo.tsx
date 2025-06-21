@@ -6,8 +6,9 @@ export function HowItWorksVideo() {
       <div className="aspect-video w-full max-w-4xl">
         <iframe
           className="w-full h-full rounded-lg shadow-lg"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ?mute=1&controls=1"
           title="How Zion Marketplace Works"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
       </div>

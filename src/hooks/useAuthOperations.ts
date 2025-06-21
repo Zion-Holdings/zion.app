@@ -95,16 +95,30 @@ export function useAuthOperations(
 
       // Add this after successful signup
       if (data?.user) {
+        let usedReferral = false;
         // Track referral if there was a referral code
-        await trackReferral(data.user.id, email);
+        usedReferral = await trackReferral(data.user.id, email);
+
         try {
           await fetch('/api/points/increment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userId: data.user.id, amount: 10, reason: 'signup' })
           });
+
+          // Bonus points when signing up with a referral code
+          if (usedReferral) {
+            await fetch('/api/points/increment', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ userId: data.user.id, amount: 20, reason: 'referral_signup' })
+            });
+          }
+
+          // Generate a referral code for the new user
+          await supabase.rpc('generate_referral_code', { user_id: data.user.id });
         } catch (err) {
-          console.error('Failed to increment signup points', err);
+          console.error('Failed to complete signup rewards', err);
         }
         mutate('user');
       }
@@ -210,6 +224,8 @@ export function useAuthOperations(
           bio: profileData.bio ?? null,
           avatar_url: profileData.avatarUrl,
           headline: profileData.headline,
+          interests: profileData.interests,
+          preferred_categories: profileData.preferredCategories,
         })
         .eq("id", profileData.id);
 

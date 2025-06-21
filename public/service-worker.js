@@ -33,6 +33,20 @@ workbox.routing.registerRoute(
   })
 );
 
+// Cache documentation pages for offline access
+workbox.routing.registerRoute(
+  ({ url }) => url.pathname.startsWith('/docs') || url.pathname.startsWith('/resources/docs'),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'docs-pages',
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 50,
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      })
+    ]
+  })
+);
+
 let bgSyncPlugin = null;
 try {
   bgSyncPlugin = new workbox.backgroundSync.BackgroundSyncPlugin('apiQueue', {
