@@ -7,6 +7,7 @@ const UserProfileDropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { logout, user } = useAuth(); // Destructure user as well, if needed for display or checks
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLUListElement>(null);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -33,7 +34,16 @@ const UserProfileDropdown: React.FC = () => {
     <div style={{ position: 'relative' }} ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleDropdown();
+            setTimeout(() => menuRef.current?.querySelector<HTMLElement>('a,button')?.focus(), 0);
+          }
+        }}
         style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+        aria-haspopup="true"
+        aria-expanded={isOpen}
         aria-label="User profile"
       >
         <Avatar className="h-8 w-8">
@@ -58,25 +68,47 @@ const UserProfileDropdown: React.FC = () => {
             minWidth: '150px',
           }}
         >
-          <ul style={{ listStyle: 'none', margin: 0, padding: '8px 0' }}>
-            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }}>
-              <Link href="/profile" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <ul
+            ref={menuRef}
+            style={{ listStyle: 'none', margin: 0, padding: '8px 0' }}
+            role="menu"
+            onKeyDown={(e) => {
+              const items = Array.from(menuRef.current?.querySelectorAll<HTMLElement>('a,button') || []);
+              const index = items.indexOf(document.activeElement as HTMLElement);
+              if (e.key === 'Escape') {
+                setIsOpen(false);
+                (e.target as HTMLElement).blur();
+              } else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                const next = items[(index + 1) % items.length];
+                next?.focus();
+              } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                const prev = items[(index - 1 + items.length) % items.length];
+                prev?.focus();
+              }
+            }}
+          >
+            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
+              <Link href="/profile" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem" tabIndex={-1}>
                 Profile
               </Link>
             </li>
-            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }}>
-              <Link href="/orders" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
+              <Link href="/orders" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem" tabIndex={-1}>
                 Orders
               </Link>
             </li>
-            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }}>
-              <Link href="/wallet" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
+              <Link href="/wallet" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem" tabIndex={-1}>
                 Wallet
               </Link>
             </li>
-            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }}>
+            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
               <button
                 onClick={handleLogout}
+                role="menuitem"
+                tabIndex={-1}
                 style={{
                   background: 'none',
                   border: 'none',
