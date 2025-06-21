@@ -46,4 +46,35 @@ describe('Footer social links', () => {
       screen.getByRole('link', { name: 'GitHub' })
     ).toHaveAttribute('href', process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL);
   });
+
+  test('links fall back to defaults when env values are invalid', () => {
+    process.env.NEXT_PUBLIC_SOCIAL_TWITTER_URL = '#';
+    process.env.NEXT_PUBLIC_SOCIAL_LINKEDIN_URL = '/';
+    process.env.NEXT_PUBLIC_SOCIAL_FACEBOOK_URL = '';
+    delete process.env.NEXT_PUBLIC_SOCIAL_INSTAGRAM_URL;
+    delete process.env.NEXT_PUBLIC_SOCIAL_GITHUB_URL;
+
+    render(<Footer />);
+
+    expect(screen.getByRole('link', { name: 'Twitter' })).toHaveAttribute(
+      'href',
+      'https://twitter.com/ZionTechGroup'
+    );
+    expect(screen.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute(
+      'href',
+      'https://linkedin.com/company/ziontechgroup'
+    );
+    expect(screen.getByRole('link', { name: 'Facebook' })).toHaveAttribute(
+      'href',
+      'https://facebook.com/ZionTechGroup'
+    );
+    expect(screen.getByRole('link', { name: 'Instagram' })).toHaveAttribute(
+      'href',
+      'https://instagram.com/ZionTechGroup'
+    );
+    expect(screen.getByRole('link', { name: 'GitHub' })).toHaveAttribute(
+      'href',
+      'https://github.com/ZionTechGroup'
+    );
+  });
 });

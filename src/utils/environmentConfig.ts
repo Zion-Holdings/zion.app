@@ -214,7 +214,9 @@ export function initializeServices(): void {
   
   // Initialize Sentry if configured
   if (config.sentry.isConfigured) {
-    console.log('🔍 Initializing Sentry with configured DSN...');
+    if (process.env.NODE_ENV === 'development') {
+      console.log('🔍 Initializing Sentry with configured DSN...');
+    }
     
     // Sentry is already initialized by sentry.client.config.js and sentry.server.config.js
     // This just sets additional context
@@ -222,19 +224,23 @@ export function initializeServices(): void {
     Sentry.setTag('supabaseConfigured', config.supabase.isConfigured.toString());
     Sentry.setTag('reownConfigured', config.reown.isConfigured.toString());
   } else {
-    console.warn('⚠️ Sentry not configured - error monitoring disabled');
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('⚠️ Sentry not configured - error monitoring disabled');
+    }
   }
   
-  // Log configuration status
-  console.log('🚀 Environment Configuration Status:');
-  console.log(`  Environment: ${config.app.environment}`);
-  console.log(`  Supabase: ${config.supabase.isConfigured ? '✅ Configured' : '⚠️ Using fallbacks'}`);
-  console.log(`  Sentry: ${config.sentry.isConfigured ? '✅ Configured' : '⚠️ Disabled'}`);
-  console.log(`  Reown Wallet: ${config.reown.isConfigured ? '✅ Configured' : '⚠️ Using fallbacks'}`);
-  
-  // Special message for Netlify deployments
-  if (config.app.isProduction && config.supabase.isConfigured) {
-    console.log('🌐 Netlify deployment detected with configured Supabase');
+  // Log configuration status only in development
+  if (process.env.NODE_ENV === 'development') {
+    console.log('🚀 Environment Configuration Status:');
+    console.log(`  Environment: ${config.app.environment}`);
+    console.log(`  Supabase: ${config.supabase.isConfigured ? '✅ Configured' : '⚠️ Using fallbacks'}`);
+    console.log(`  Sentry: ${config.sentry.isConfigured ? '✅ Configured' : '⚠️ Disabled'}`);
+    console.log(`  Reown Wallet: ${config.reown.isConfigured ? '✅ Configured' : '⚠️ Using fallbacks'}`);
+    
+    // Special message for Netlify deployments
+    if (config.app.isProduction && config.supabase.isConfigured) {
+      console.log('🌐 Netlify deployment detected with configured Supabase');
+    }
   }
 }
 

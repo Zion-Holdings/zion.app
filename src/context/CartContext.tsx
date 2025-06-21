@@ -23,7 +23,7 @@ const safeStorage = {
   },
 };
 import React, { createContext, useContext, useEffect } from 'react';
-import { CartContextType, CartAction } from '@/types/cart';
+import { CartContextType, CartAction, CartItem } from '@/types/cart';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store';
 import { addItem, removeItem, clear, setItems } from '@/store/cartSlice';
@@ -37,9 +37,28 @@ export function useCart(): CartContextType {
 }
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  console.log('[CartProvider] Initializing...');
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[CartProvider] Initializing...');
+  }
   const items = useSelector((state: RootState) => state.cart.items);
   const reduxDispatch = useDispatch<AppDispatch>();
+
+  // On mount, if Redux has no cart items but localStorage does, hydrate the store
+  useEffect(() => {
+    if (items.length === 0) {
+      const stored = safeStorage.getItem('zion_cart');
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored) as CartItem[];
+          if (parsed.length > 0) {
+            reduxDispatch(setItems(parsed));
+          }
+        } catch {
+          // Ignore parse errors and fall back to empty cart
+        }
+      }
+    }
+  }, []);
 
   const dispatch = (action: CartAction) => {
     switch (action.type) {

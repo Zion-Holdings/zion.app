@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import axios from 'axios';
 
 interface RateInfo { count: number; first: number }
 const WINDOW_MS = 15 * 60 * 1000; // 15 minutes
