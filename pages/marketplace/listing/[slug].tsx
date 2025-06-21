@@ -35,10 +35,6 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
     toast({
       title: "Added to cart",
       description: `${listing.title} has been added to your cart`,
-      action: {
-        label: 'View Cart',
-        onClick: () => router.push('/cart'),
-      },
     });
   };
 
