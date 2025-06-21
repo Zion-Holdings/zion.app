@@ -81,6 +81,10 @@ export function AutocompleteSuggestions({
                 e.preventDefault();
                 onSelectSuggestion(suggestion);
               }}
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectSuggestion(suggestion);
+              }}
             >
               <div className="flex items-center justify-between">
                 <div>

@@ -97,6 +97,13 @@ describe('AutocompleteSuggestions', () => {
     expect(mockOnSelectSuggestion).toHaveBeenCalledTimes(1);
   });
 
+  test('calls onSelectSuggestion on click', async () => {
+    renderComponent();
+    const firstSuggestionItem = screen.getByText('Apple iPhone');
+    fireEvent.click(firstSuggestionItem);
+    expect(mockOnSelectSuggestion).toHaveBeenCalledWith('Apple iPhone');
+  });
+
   test('renders correct ARIA roles and ID for listbox', () => {
     renderComponent();
     const listbox = screen.getByRole('listbox');
