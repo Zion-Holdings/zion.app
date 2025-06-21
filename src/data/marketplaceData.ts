@@ -1,5 +1,7 @@
 import { ProductListing } from "@/types/listings";
 import { SearchSuggestion, FilterOptions } from "@/types/search";
+import { docsSearchSuggestions } from './docsSearchData';
+import { BLOG_POSTS } from './blog-posts';
 
 // Mock marketplace listings with more realistic data
 export const MARKETPLACE_LISTINGS: ProductListing[] = [
@@ -449,8 +451,9 @@ export const generateSearchSuggestions = (): SearchSuggestion[] => {
     text: l.title,
     type: 'product' as const,
   }));
+  const blogSuggestions = BLOG_POSTS.map(p => ({ text: p.title, type: 'blog' as const }));
 
-  return [...staticSuggestions, ...listingSuggestions];
+  return [...staticSuggestions, ...listingSuggestions, ...docsSearchSuggestions, ...blogSuggestions];
 };
 
 // Generate filter options for sidebar
