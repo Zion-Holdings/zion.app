@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
 import EnterprisePlans from "@/pages/EnterprisePlans";
+// Router components removed - convert to Next.js pages structure
 import EnterpriseAdmin from "@/pages/EnterpriseAdmin";
 import CompanyWorkspace from "@/pages/CompanyWorkspace";
 import EnterpriseBilling from "@/pages/EnterpriseBilling";

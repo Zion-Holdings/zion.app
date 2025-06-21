@@ -1,6 +1,6 @@
 
-import Link from "next/link"; // Changed from react-router-dom
-import { useRouter } from "next/router"; // Added for Next.js navigation
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";

@@ -1,6 +1,6 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
 import DeveloperPortal from "@/pages/DeveloperPortal";
+// Router components removed - convert to Next.js pages structure
 import ApiDocsHub from "@/pages/ApiDocsHub";
 import ApiReference from "@/pages/ApiReference";
 import ApiGettingStarted from "@/pages/ApiGettingStarted";

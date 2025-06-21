@@ -3,7 +3,6 @@ import type { UserDetails } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
 import type { UserProfile } from "@/types/auth";
 import { checkNewRegistration } from "@/utils/authUtils";
-// Removed: import { useNavigate } from 'react-router-dom';
 import type { useRouter } from 'next/router'; // Import useRouter for ReturnType
 
 /**

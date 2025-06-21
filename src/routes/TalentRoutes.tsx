@@ -1,5 +1,5 @@
-import { Routes, Route } from "react-router-dom";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
+// Router components removed - convert to Next.js pages structure
 import ErrorBoundary from "@/components/GlobalErrorBoundary";
 import TalentDirectory from "@/pages/TalentDirectory";
 import TalentsPage from "@/pages/TalentsPage";

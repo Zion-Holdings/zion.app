@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
+// Router components removed - convert to Next.js pages structure
 import CommunityPage from "@/pages/CommunityPage";
 import { CommunityProvider } from "@/context";
 import ForumCategoryPage from "@/pages/ForumCategoryPage";

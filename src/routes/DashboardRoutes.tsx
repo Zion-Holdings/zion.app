@@ -1,7 +1,7 @@
 
 import { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
+// Router components removed - convert to Next.js pages structure
 import Dashboard from "@/pages/Dashboard";
 import ClientDashboard from "@/pages/ClientDashboard";
 import TalentDashboard from "@/pages/TalentDashboard";

@@ -1,5 +1,5 @@
-import { Routes, Route } from "react-router-dom";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
+// Router components removed - convert to Next.js pages structure
 import { MarketplaceErrorBoundary } from "@/components/MarketplaceErrorBoundary";
 import { MarketplaceLayout } from "@/components/MarketplaceLayout";
 import Marketplace from "@/pages/Marketplace";
