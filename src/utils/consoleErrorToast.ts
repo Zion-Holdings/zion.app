@@ -9,18 +9,17 @@ console.error = (...args: any[]) => {
     const first = args[0];
     const message = first instanceof Error ? first.message : String(first);
 
-    // Attempt to show toast
+    let traceId: string | undefined;
     try {
-      toast.error(message);
-    } catch (snackbarError) {
-      originalConsoleError('Error showing toast in console.error override:', snackbarError);
-    }
-
-    // Attempt to report using centralized logger
-    try {
-      logError(first instanceof Error ? first : new Error(message));
+      traceId = logError(first instanceof Error ? first : new Error(message));
     } catch (sentryError) {
       originalConsoleError('Error reporting to logger in console.error override:', sentryError);
+    }
+
+    try {
+      toast.error(message, { skipLog: true, traceId });
+    } catch (snackbarError) {
+      originalConsoleError('Error showing toast in console.error override:', snackbarError);
     }
 
   } catch (overallError) {
