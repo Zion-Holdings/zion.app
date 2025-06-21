@@ -81,14 +81,16 @@ async function handler(
       index: 'listings',
       from: (page - 1) * limit,
       size: limit,
-      query: {
-        multi_match: {
-          query: q,
-          fields: ['title', 'description'],
-          fuzziness: 'AUTO',
+      body: {
+        query: {
+          multi_match: {
+            query: q,
+            fields: ['title', 'description'],
+            fuzziness: 'AUTO',
+          },
         },
       },
-    });
+    } as any);
 
     const results: SearchResult[] = searchResponse.hits.hits.map((hit: any) => {
       const source = hit._source as any;
