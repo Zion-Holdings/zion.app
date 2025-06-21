@@ -3,8 +3,12 @@ import { Toaster as SonnerToaster } from "sonner";
 
 export function Toaster() {
   return (
-    <div role="status" aria-live="polite" aria-atomic="true">
+    <>
+      <div id="toast-announcer" className="sr-only" aria-live="polite" aria-atomic="true" />
       <SonnerToaster
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
         position="top-right"
         toastOptions={{
           className: "bg-zion-blue-dark text-white border border-zion-blue-light shadow-lg shadow-zion-purple/10",
@@ -17,6 +21,6 @@ export function Toaster() {
           descriptionClassName: "text-zion-slate-light"
         }}
       />
-    </div>
+    </>
   );
 }
