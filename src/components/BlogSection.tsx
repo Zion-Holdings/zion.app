@@ -59,12 +59,12 @@ export function BlogSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {recentPosts.map((post, index) => (
-            <Link
+            <Card
               key={post.id}
-              href={`/blog/${post.slug}`}
-              className="block group"
+              asChild
+              className="bg-zion-blue-light border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 overflow-hidden group-hover:shadow-lg"
             >
-              <Card className="bg-zion-blue-light border border-zion-purple/20 hover:border-zion-purple/50 transition-all duration-300 overflow-hidden group-hover:shadow-lg">
+              <Link href={`/blog/${post.slug}`} className="block group">
                 <div className="h-48 bg-zion-blue-dark relative overflow-hidden">
                   <PostImage post={post} /> {/* Use the sub-component */}
                   <div className="absolute bottom-4 left-4 text-zion-purple/70 text-4xl font-bold">{index + 1}</div>
@@ -80,8 +80,8 @@ export function BlogSection() {
                 <CardFooter className="p-6 pt-0">
                   <span className="text-zion-blue-dark group-hover:text-zion-purple-dark">Read More →</span>
                 </CardFooter>
-              </Card>
-            </Link>
+              </Link>
+            </Card>
           ))}
         </div>
       </div>
