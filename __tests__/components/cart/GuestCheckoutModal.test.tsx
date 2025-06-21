@@ -64,16 +64,19 @@ describe('GuestCheckoutModal', () => {
     expect(addressInput.value).toBe('123 Main St');
   });
 
-  test('Input does not duplicate value on focus', () => {
+  test('Submit button disabled until form valid', () => {
     render(<GuestCheckoutModal {...defaultProps} />);
 
-    const emailInput = screen.getByPlaceholderText('Email') as HTMLInputElement;
+    const emailInput = screen.getByPlaceholderText('Email');
+    const addressInput = screen.getByPlaceholderText('Shipping Address');
+    const submitButton = screen.getByRole('button', { name: 'Continue to Payment' });
+
+    expect(submitButton).toBeDisabled();
 
     fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
-    fireEvent.blur(emailInput);
-    fireEvent.focus(emailInput);
+    fireEvent.change(addressInput, { target: { value: '123 Main St' } });
 
-    expect(emailInput.value).toBe('test@example.com');
+    expect(submitButton).toBeEnabled();
   });
 
   test('Submission Test (Happy Path)', () => {
@@ -169,37 +172,21 @@ describe('GuestCheckoutModal', () => {
 
     test('should not submit if both fields are empty', () => {
       fireEvent.click(submitButton);
-      // Assuming the form's default HTML5 validation (via 'required' attribute)
-      // would prevent the onSubmit handler from being called by the browser.
-      // In JSDOM, this prevention might not occur, and onSubmit could be called.
-      // If we want to test the 'required' attribute's effect, we'd check form validity.
-      // However, the current component structure *will* call mockOnSubmit because
-      // there's no client-side JS validation preventing it beyond the `required` attribute.
-      // Let's adjust the expectation: if it calls onSubmit, it should be with empty strings.
-      // This also means the component *should* have client-side validation for better UX.
-      // For now, testing its current behavior:
-      expect(mockOnSubmit).toHaveBeenCalledTimes(1); // It will be called in JSDOM
-      expect(mockOnSubmit).toHaveBeenCalledWith({ email: '', address: '' });
+      expect(mockOnSubmit).not.toHaveBeenCalled();
     });
 
     test('should not submit if address is empty', () => {
-      mockOnSubmit.mockClear(); // Clear from previous sub-test
+      mockOnSubmit.mockClear();
       fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
       fireEvent.click(submitButton);
-      // Similar to above, JSDOM will likely call onSubmit.
-      expect(mockOnSubmit).toHaveBeenCalledTimes(1);
-      expect(mockOnSubmit).toHaveBeenCalledWith({ email: 'test@example.com', address: '' });
+      expect(mockOnSubmit).not.toHaveBeenCalled();
     });
 
     test('should not submit if email is empty', () => {
-      mockOnSubmit.mockClear(); // Clear from previous sub-test
-      // Clear email input from previous test if state persists across renders (it doesn't here due to rerender)
-      fireEvent.change(emailInput, { target: { value: '' } });
+      mockOnSubmit.mockClear();
       fireEvent.change(addressInput, { target: { value: '123 Main St' } });
       fireEvent.click(submitButton);
-      // Similar to above, JSDOM will likely call onSubmit.
-      expect(mockOnSubmit).toHaveBeenCalledTimes(1);
-      expect(mockOnSubmit).toHaveBeenCalledWith({ email: '', address: '123 Main St' });
+      expect(mockOnSubmit).not.toHaveBeenCalled();
     });
   });
 

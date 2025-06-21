@@ -10,8 +10,18 @@ async function fetchServices(): Promise<ProductListing[]> {
   try {
     const res = await fetch('/api/services');
     if (!res.ok) {
+      // Gracefully handle 404 by returning an empty list
+      if (res.status === 404) {
+        return [];
+      }
       throw new Error(`Failed to fetch services: ${res.status}`);
     }
+
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) {
+      throw new Error(`Invalid content type: ${contentType}`);
+    }
+
     return (await res.json()) as ProductListing[];
   } catch (err) {
     captureException(err);
