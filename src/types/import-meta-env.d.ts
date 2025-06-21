@@ -28,6 +28,7 @@ interface ImportMetaEnv {
   readonly NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY?: string;
   readonly NEXT_PUBLIC_STRIPE_PK?: string;
   readonly NEXT_PUBLIC_GA_ID?: string;
+  readonly NEXT_PUBLIC_INTERCOM_APP_ID?: string;
   readonly NEXT_PUBLIC_SALESFORCE_URL?: string;
   readonly NEXT_PUBLIC_SALESFORCE_TOKEN?: string;
   readonly NEXT_PUBLIC_MAILCHIMP_API_KEY?: string;
