@@ -1,4 +1,3 @@
-import axios from 'axios';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 interface RateInfo { count: number; first: number }
@@ -53,33 +52,32 @@ export default async function handler(
       return res.status(500).json({ message: 'Server configuration error: Auth service URL not set.' });
     }
 
-    // Forward the request to the Node.js authentication service
-    // The actual endpoint in the Node.js service is /register as seen in server/routes/auth.js
+    // Forward the request to the Node.js authentication service using fetch
     const authServiceEndpoint = `${internalAuthServiceUrl}/register`;
 
     console.log(`Forwarding registration request for ${email} to ${authServiceEndpoint}`);
 
-    const responseFromAuthService = await axios.post(authServiceEndpoint, {
-      name,
-      email,
-      password,
+    const response = await fetch(authServiceEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+      }),
     });
 
-    // TODO: Handle the response from the authentication service (Plan Step 3)
-    // For now, just return what the auth service sent.
-    // This will be refined in the next step.
-    return res.status(responseFromAuthService.status).json(responseFromAuthService.data);
+    const responseData = await response.json();
+
+    // Return the response from the authentication service
+    return res.status(response.status).json(responseData);
 
   } catch (error: any) {
     console.error('[API /api/auth/register] Error forwarding to auth service:', error);
 
-    if (axios.isAxiosError(error) && error.response) {
-      // If the error is from the auth service, relay its response
-      console.error('Error response from auth service:', error.response.data);
-      return res.status(error.response.status).json(error.response.data);
-    }
-
-    // Generic error for other issues (e.g., network error connecting to auth service)
+    // Generic error for network issues or other problems
     let message = 'An unexpected error occurred while processing the signup request.';
     if (error instanceof Error) {
         message = error.message;

@@ -112,17 +112,13 @@ function handler(
   const end = start + limit;
   const paginatedResults = results.slice(start, end).map((r) => r.item);
 
-  } catch (error) {
-    console.error('Elasticsearch query failed:', error);
-    // Check if error is an Elasticsearch client error to provide more specific details
-    // Type assertion for error.meta is needed as it's not standard on Error
-    const esError = error as any;
-    if (esError.meta?.body?.error) {
-       console.error('Elasticsearch error details:', esError.meta.body.error);
-       return res.status(500).json({ error: 'Search query failed due to backend error.' });
-    }
-    return res.status(500).json({ error: 'Search query failed.' });
-  }
+  return res.status(200).json({
+    results: paginatedResults,
+    totalCount,
+    page,
+    limit,
+    query: q,
+  });
 }
 
 export default withErrorLogging(handler);
