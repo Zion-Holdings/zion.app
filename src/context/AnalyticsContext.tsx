@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
@@ -46,7 +45,9 @@ const AnalyticsContext = createContext<AnalyticsContextType | undefined>(
 );
 
 export function AnalyticsProvider({ children }: { children: ReactNode }) {
-  console.log('[AnalyticsProvider] Initializing...');
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[AnalyticsProvider] Initializing...');
+  }
   const [pageViews, setPageViews] = useState(0);
   const [events, setEvents] = useState<AnalyticsEvent[]>([]);
   const [lastEvent, setLastEvent] = useState<AnalyticsEvent | null>(null);
@@ -82,9 +83,13 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
         metadata: metadata
       }]);
       
-      console.log(`Analytics event tracked: ${type}`, metadata);
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Analytics event tracked: ${type}`, metadata);
+      }
     } catch (error) {
-      console.error('Error logging analytics event:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error logging analytics event:', error);
+      }
     }
   };
 

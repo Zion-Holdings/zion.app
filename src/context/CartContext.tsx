@@ -37,7 +37,9 @@ export function useCart(): CartContextType {
 }
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  console.log('[CartProvider] Initializing...');
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[CartProvider] Initializing...');
+  }
   const items = useSelector((state: RootState) => state.cart.items);
   const reduxDispatch = useDispatch<AppDispatch>();
 
