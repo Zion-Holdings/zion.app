@@ -141,7 +141,17 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const reownConfigured = !isPlaceholderValue(reownProjectId);
 
   const authServiceUrl = env.INTERNAL_AUTH_SERVICE_URL;
-  const authServiceConfigured = !isPlaceholderValue(authServiceUrl);
+  let authServiceConfigured = !isPlaceholderValue(authServiceUrl);
+
+  // Fallback for INTERNAL_AUTH_SERVICE_URL if not configured
+  let finalAuthServiceUrl = authServiceUrl;
+  if (!authServiceConfigured) {
+    finalAuthServiceUrl = 'https://default-auth-service.example.com'; // Default fallback URL
+    // In production, this will be flagged by validateProductionEnvironment,
+    // but we provide a fallback to prevent crashes during startup in dev/test.
+    // The validateProductionEnvironment function will handle logging warnings/errors.
+    authServiceConfigured = true; // Mark as configured to use fallback
+  }
 
   return {
     supabase: {
@@ -161,8 +171,8 @@ export function getEnvironmentConfig(): EnvironmentConfig {
       isConfigured: reownConfigured
     },
     authService: {
-      url: authServiceConfigured ? authServiceUrl! : '',
-      isConfigured: authServiceConfigured
+      url: finalAuthServiceUrl!,
+      isConfigured: !isPlaceholderValue(env.INTERNAL_AUTH_SERVICE_URL) // True if explicitly set and not a placeholder
     },
     app: {
       environment: nodeEnv,
@@ -194,8 +204,8 @@ export function validateProductionEnvironment(): void {
       warnings.push('Reown wallet is not configured - wallet features disabled');
     }
 
-    if (!config.authService.isConfigured) {
-      warnings.push('Internal auth service URL is not configured - signup disabled');
+    if (!config.authService.isConfigured && isPlaceholderValue(process.env.INTERNAL_AUTH_SERVICE_URL)) {
+      warnings.push('Internal auth service URL is not configured - using fallback. Signup might be affected.');
     }
     
     if (warnings.length > 0) {
@@ -216,8 +226,8 @@ export function validateProductionEnvironment(): void {
     errors.push('NEXT_PUBLIC_SENTRY_DSN must be configured in production for error monitoring');
   }
 
-  if (!config.authService.isConfigured) {
-    errors.push('INTERNAL_AUTH_SERVICE_URL must be configured in production for user signup');
+  if (!config.authService.isConfigured && isPlaceholderValue(process.env.INTERNAL_AUTH_SERVICE_URL)) {
+    errors.push('INTERNAL_AUTH_SERVICE_URL must be configured in production for user signup. Application is currently using a default fallback, which is not suitable for production.');
   }
   
   if (errors.length > 0) {
