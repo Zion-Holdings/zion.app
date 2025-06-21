@@ -31,10 +31,12 @@ export function ImageWithRetry({
     setCurrentSrc(src);
   };
 
+  const { alt = '', ...rest } = props
+
   return (
     <div className={cn('relative inline-block', className)}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img {...props} src={currentSrc} onError={handleError} />
+      <img {...rest} src={currentSrc} onError={handleError} alt={alt} />
       {failed && (
         <button
           type="button"
