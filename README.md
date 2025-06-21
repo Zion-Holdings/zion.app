@@ -121,7 +121,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
 10. **Payment Testing:**
     - Seed demo products with `npm run seed` if no listings appear.
     - Guest checkout is available at `/marketplace/checkout`.
-    - Set `STRIPE_TEST_SECRET_KEY` and `NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY` to enable Stripe test mode and pay with the `4242 4242 4242 4242` card.
+    - Set `STRIPE_TEST_SECRET_KEY` and `NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY` to enable Stripe test mode and pay with the `4242 4242 4242 4242` card. Set `STRIPE_TEST_MODE=true` to force sandbox orders even on production domains.
     - For a sandbox login, add development credentials in `.env.local` as explained in `docs/SECURITY_CREDENTIALS.md`.
     - See [docs/Payments.md](docs/Payments.md) for full details.
 

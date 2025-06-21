@@ -37,6 +37,8 @@ NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id_here
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key_here
 NEXT_PUBLIC_STRIPE_PK=
 STRIPE_SECRET_KEY=your_stripe_secret_key_here
+# Set to true on staging/QA environments to avoid real charges
+STRIPE_TEST_MODE=false
 STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret_here
 
 # Analytics

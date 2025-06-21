@@ -5,11 +5,16 @@ import fs from 'fs';
 import path from 'path';
 import { randomUUID } from 'crypto';
 
+const useTest = process.env.STRIPE_TEST_MODE === 'true';
+
 export const config = { api: { bodyParser: false } };
 
-const stripe = new Stripe(process.env.STRIPE_TEST_SECRET_KEY || '', {
-  apiVersion: '2023-10-16',
-});
+const stripe = new Stripe(
+  useTest ? process.env.STRIPE_TEST_SECRET_KEY || '' : process.env.STRIPE_SECRET_KEY || '',
+  {
+    apiVersion: '2023-10-16',
+  }
+);
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

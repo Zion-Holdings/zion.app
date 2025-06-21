@@ -3,9 +3,14 @@ import Stripe from 'stripe';
 import fs from 'fs';
 import path from 'path';
 
-const stripe = new Stripe(process.env.STRIPE_TEST_SECRET_KEY || '', {
-  apiVersion: '2023-10-16',
-});
+const useTest = process.env.STRIPE_TEST_MODE === 'true';
+
+const stripe = new Stripe(
+  useTest ? process.env.STRIPE_TEST_SECRET_KEY || '' : process.env.STRIPE_SECRET_KEY || '',
+  {
+    apiVersion: '2023-10-16',
+  }
+);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -42,7 +47,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
       orders = JSON.parse(fs.readFileSync(file, 'utf8'));
     } catch {}
-    orders.push({ id: orderId, items: cart, status: 'pending' });
+    orders.push({ id: orderId, items: cart, status: 'pending', sandbox: useTest });
     fs.writeFileSync(file, JSON.stringify(orders, null, 2));
 
     res.status(200).json({ url: session.url });

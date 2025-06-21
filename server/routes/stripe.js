@@ -2,10 +2,25 @@ const express = require('express');
 const router = express.Router();
 const stripe = require('stripe'); // Import the stripe library
 
-// Ensure STRIPE_SECRET_KEY is set for initializing Stripe
-// This is typically your main Stripe secret key, not the webhook signing secret.
-// The webhook signing secret is used specifically in constructEvent.
-const stripeInstance = process.env.STRIPE_SECRET_KEY ? stripe(process.env.STRIPE_SECRET_KEY) : null;
+const PROD_DOMAIN = 'app.ziontechgroup.com';
+function isProdDomain() {
+  const context = process.env.CONTEXT;
+  if (context && context !== 'production') {
+    return false;
+  }
+  const url = process.env.URL || '';
+  try {
+    return new URL(url).hostname === PROD_DOMAIN;
+  } catch {
+    return false;
+  }
+}
+
+const liveKey = process.env.STRIPE_SECRET_KEY || '';
+const testKey = process.env.STRIPE_TEST_SECRET_KEY || liveKey;
+const useTest = process.env.STRIPE_TEST_MODE === 'true' || (!isProdDomain() && liveKey.startsWith('sk_live'));
+
+const stripeInstance = liveKey || testKey ? stripe(useTest ? testKey : liveKey) : null;
 
 // Webhook secret - THIS MUST BE SET IN YOUR ENVIRONMENT VARIABLES
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
