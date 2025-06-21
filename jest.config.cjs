@@ -39,7 +39,7 @@ module.exports = {
     "tests/storybook/", // Exclude storybook visual tests
     "\\.spec\\.[jt]s?(x)$", // Convention for Playwright spec files, to avoid conflict if any
     // Attempt to ignore specific vitest files or directories
-    "__tests__/utils/validateEnv.test.ts",
+    // "__tests__/utils/validateEnv.test.ts", // Removed to allow running this test with Jest
     "src/hooks/auth/__tests__/useEmailAuth.test.ts",
     "tests/Accessibility.test.tsx", // This one imports vitest
     "tests/apiClient.msw.test.ts", // This one imports vitest

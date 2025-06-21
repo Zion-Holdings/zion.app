@@ -38,29 +38,32 @@ The project is structured as a monorepo and includes:
 The application uses Supabase for all authentication functionality:
 - User registration and login
 - Email verification and password reset
-- Social authentication (Google, Facebook, Twitter)
+- Social authentication (Google, Facebook, GitHub, Microsoft, Twitter)
 - Session management and profile handling
 
 ### Required Environment Variables
 
-For **production deployment on Netlify**, set these variables in the Netlify UI:
+A comprehensive list of environment variables can be found in the `.env.example` file. For local development, create a `.env.local` file and populate it with the necessary values based on `.env.example`. For production deployment (e.g., on Netlify), these variables must be configured in your hosting provider's UI.
 
-```bash
-# Supabase Configuration (REQUIRED)
-NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+**Key variables include:**
 
-# Authentication Service (REQUIRED for user registration)
-INTERNAL_AUTH_SERVICE_URL=https://your-auth-service-url.com
+-   **Supabase Configuration:**
+    -   `NEXT_PUBLIC_SUPABASE_URL`
+    -   `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+    -   `SUPABASE_SERVICE_ROLE_KEY` (for server-side operations)
+-   **NextAuth.js Configuration:**
+    -   `NEXTAUTH_SECRET` (a randomly generated string for signing tokens)
+    -   `NEXTAUTH_URL` (the canonical URL of your application)
+-   **OAuth Provider Credentials:**
+    -   `GOOGLE_CLIENT_ID` & `GOOGLE_CLIENT_SECRET`
+    -   `FACEBOOK_CLIENT_ID` & `FACEBOOK_CLIENT_SECRET`
+    -   `GITHUB_CLIENT_ID` & `GITHUB_CLIENT_SECRET`
+    -   `MICROSOFT_CLIENT_ID` & `MICROSOFT_CLIENT_SECRET` (and potentially `MICROSOFT_TENANT_ID`)
+    -   Other provider credentials as needed.
+-   **Internal Authentication Service:**
+    -   `INTERNAL_AUTH_SERVICE_URL` (if used for specific flows like registration)
 
-# Optional but Recommended
-NEXT_PUBLIC_SENTRY_DSN=your_sentry_dsn
-NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id
-NEXT_PUBLIC_DEVTOOLS=false # set to true in staging to allow React DevTools
-```
-
-For **local development**, create a `.env.local` file with the same variables.
+Ensure all variables marked as required in `.env.example` or in specific documentation (like `docs/SUPABASE_AUTHENTICATION_SETUP.md`) are correctly set.
 
 ### 📚 Detailed Setup Guides
 

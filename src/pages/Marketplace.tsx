@@ -227,6 +227,8 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
   const router = useRouter();
   const { toast } = useToast();
   const firstRenderRef = useRef(true);
+  const isRefreshingAfterFilterChange = useRef(false); // New ref to track refresh state
+
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
@@ -325,18 +327,28 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     scrollToTop       // Function to scroll to the top of the page
   } = useInfiniteScrollPagination(fetchProducts, 16); // 16 items per page
 
-  // Effect to refresh data when filters change (excluding initial render)
-   useEffect(() => {
+  // Effect to refresh data when filters change
+  useEffect(() => {
     if (firstRenderRef.current) {
-      firstRenderRef.current = false; // Skip refresh on initial mount
+      firstRenderRef.current = false;
       return;
     }
-    console.log('Filters changed, refreshing marketplace data. Filters:', { filterCategory, sortBy, showRecommended });
-    refresh(); // Reload data when filterCategory or sortBy changes
-    scrollToTop(); // Scroll to top after refresh
-    // Optionally, provide user feedback about the filter change
-    // toast({ title: 'Filters updated', description: 'Displaying products based on new criteria.' });
-  }, [filterCategory, sortBy, showRecommended, refresh, scrollToTop, toast]); // Added filterCategory and sortBy to dependency array
+    console.log('Filters changed, initiating refresh. Filters:', { filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation });
+    isRefreshingAfterFilterChange.current = true; // Set flag before refresh
+    refresh();
+    // scrollToTop(); // Removed from here
+  }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation, refresh, toast]); // Added all filter dependencies
+
+  // New effect to scroll to top AFTER products have been updated and refresh flag is set
+  useEffect(() => {
+    if (isRefreshingAfterFilterChange.current && !loading) { // Check flag and ensure loading is false
+      console.log('Refresh complete and products updated, scrolling to top.');
+      scrollToTop();
+      isRefreshingAfterFilterChange.current = false; // Reset flag
+      // Optionally, provide user feedback about the filter change
+      // toast({ title: 'Filters updated', description: 'Displaying products based on new criteria.' });
+    }
+  }, [products, loading, scrollToTop, toast]); // Depends on products and loading state
 
   // Calculate market stats
   const marketStats = useMemo(() => {

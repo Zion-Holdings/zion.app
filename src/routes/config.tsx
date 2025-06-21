@@ -79,18 +79,19 @@ import UNBridgePage from '@/pages/UNBridge';
 import InternationalProposalsPage from '@/pages/InternationalProposals';
 import DocsPage from '@/pages/DocsPage'; // Added import for DocsPage
 const Signup = React.lazy(() => import('@/pages/Signup'));
+
 import {
-  AuthRoutes,
-  DashboardRoutes,
-  AdminRoutes,
-  MobileAppRoutes,
-  ContentRoutes,
-  ErrorRoutes,
-  EnterpriseRoutes,
-  DeveloperRoutes,
-  MarketplaceRoutes, // Assuming MarketplaceRoutes is a group of routes
-  TalentRoutes,      // Assuming TalentRoutes is a group of routes
-  CommunityRoutes,   // Assuming CommunityRoutes is a group of routes
+ AuthRoutes,
+ DashboardRoutes,
+ AdminRoutes,
+ MobileAppRoutes,
+ ContentRoutes,
+ ErrorRoutes,
+ EnterpriseRoutes,
+ DeveloperRoutes,
+ MarketplaceRoutes, // Assuming MarketplaceRoutes is a group of routes
+ TalentRoutes,      // Assuming TalentRoutes is a group of routes
+ CommunityRoutes,   // Assuming CommunityRoutes is a group of routes
 } from '.'; // Importing from the same directory (src/routes)
 
 export const primaryRoutes: AppRouteObject[] = guardRoutes([
@@ -108,6 +109,7 @@ export const primaryRoutes: AppRouteObject[] = guardRoutes([
 ]);
 
 export const allRoutes: AppRouteObject[] = guardRoutes([
+  { path: '/login', element: <LoginForm /> },
   ...primaryRoutes,
   { path: '/about', element: <AboutPage />, metaTitle: 'About - Zion' },
   { path: '/register', element: <Signup />, metaTitle: 'Register - Zion' },
