@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { Client } from '@elastic/elasticsearch';
 import { withErrorLogging } from '@/utils/withErrorLogging';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
-import { SERVICES } from '@/data/servicesData';
-import { TALENT_PROFILES } from '@/data/talentData';
 
+// Define SearchResult interface (assuming it's not already globally defined or imported elsewhere)
+// If it is, this definition can be removed.
 interface SearchResult {
   id: string;
   type: 'product' | 'service' | 'talent' | 'equipment' | 'category';
@@ -29,13 +29,35 @@ interface SearchResponse {
   query: string;
 }
 
-function handler(
+let client: Client | null = null;
+if (process.env.ELASTIC_CLOUD_ID && process.env.ELASTIC_API_KEY) {
+  client = new Client({
+    cloud: { id: process.env.ELASTIC_CLOUD_ID },
+    auth: { apiKey: process.env.ELASTIC_API_KEY },
+  });
+} else {
+  console.error('Elasticsearch environment variables ELASTIC_CLOUD_ID or ELASTIC_API_KEY are not set.');
+}
+
+// Helper function to create slug from title (can be moved or imported if used elsewhere)
+const createSlug = (title: string) =>
+  title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+
+async function handler(
   req: NextApiRequest,
   res: NextApiResponse<SearchResponse | { error: string }>,
 ) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
     return res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
+
+  if (!client) {
+    console.error('Search service not configured due to missing Elasticsearch client.');
+    return res.status(500).json({ error: 'Search service is not configured.' });
   }
 
   const q = String(req.query.query ?? req.query.q ?? '')
@@ -54,90 +76,62 @@ function handler(
     });
   }
 
-  const match = (text?: string) => text?.toLowerCase().includes(q);
-  const matchTags = (tags?: string[]) => tags?.some((tag) => match(tag));
+  try {
+    const searchResponse = await client.search({
+      index: 'listings',
+      from: (page - 1) * limit,
+      size: limit,
+      body: {
+        query: {
+          multi_match: {
+            query: q,
+            fields: ['title', 'description'],
+            fuzziness: 'AUTO',
+          },
+        },
+      },
+    });
 
-  // Helper function to create slug from title
-  const createSlug = (title: string) =>
-    title
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)/g, '');
+    const results: SearchResult[] = searchResponse.hits.hits.map((hit: any) => {
+      const source = hit._source as any;
+      return {
+        id: hit._id,
+        type: source.type as 'product' | 'service' | 'talent', // Ensure 'type' is indexed
+        title: source.title,
+        description: source.description,
+        slug: source.slug || createSlug(source.title || ''), // Fallback for slug
+        image: source.image,
+        price: source.price,
+        rating: source.rating,
+        author: source.author,
+        tags: source.tags,
+        category: source.category,
+      };
+    });
 
-  const products: SearchResult[] = MARKETPLACE_LISTINGS.filter(
-    (p) =>
-      match(p.title) ||
-      match(p.description) ||
-      match(p.category) ||
-      matchTags((p as any).tags),
-  ).map((p) => ({
-    id: p.id,
-    type: 'product' as const,
-    title: p.title,
-    description: p.description,
-    slug: createSlug(p.title),
-    image: (p as any).image,
-    price: (p as any).price,
-    rating: (p as any).rating,
-    author: (p as any).author,
-    tags: (p as any).tags,
-    category: (p as any).category,
-  }));
+    const totalCount = typeof searchResponse.hits.total === 'number'
+      ? searchResponse.hits.total
+      : (searchResponse.hits.total as { value: number }).value;
 
-  const services: SearchResult[] = SERVICES.filter(
-    (s) =>
-      match(s.title) ||
-      match(s.description) ||
-      match(s.category) ||
-      matchTags((s as any).tags),
-  ).map((s) => ({
-    id: s.id,
-    type: 'service' as const,
-    title: s.title,
-    description: s.description,
-    slug: createSlug(s.title),
-    image: (s as any).image,
-    price: (s as any).price,
-    rating: (s as any).rating,
-    author: (s as any).author,
-    tags: (s as any).tags,
-    category: (s as any).category,
-  }));
+    return res.status(200).json({
+      results,
+      totalCount,
+      page,
+      limit,
+      query: q,
+    });
 
-  const talents: SearchResult[] = TALENT_PROFILES.filter(
-    (t) =>
-      match(t.full_name) ||
-      match(t.professional_title) ||
-      match(t.bio) ||
-      matchTags((t as any).skills || (t as any).tags),
-  ).map((t) => ({
-    id: t.id,
-    type: 'talent' as const,
-    title: t.full_name,
-    description: t.professional_title || '',
-    slug: createSlug(t.full_name),
-    image: (t as any).avatar || (t as any).image,
-    rating: (t as any).rating,
-    author: {
-      name: t.full_name,
-      avatar: (t as any).avatar,
-    },
-    tags: (t as any).skills || (t as any).tags,
-  }));
-
-  const allResults = [...products, ...services, ...talents];
-  const totalCount = allResults.length;
-  const start = (page - 1) * limit;
-  const end = start + limit;
-  const paginatedResults = allResults.slice(start, end);
-
-  return res.status(200).json({
-    results: paginatedResults,
-    totalCount,
-    page,
-    limit,
-    query: q,
-  });
+  } catch (error) {
+    console.error('Elasticsearch query failed:', error);
+    // Check if error is an Elasticsearch client error to provide more specific details
+    // Type assertion for error.meta is needed as it's not standard on Error
+    const esError = error as any;
+    if (esError.meta?.body?.error) {
+       console.error('Elasticsearch error details:', esError.meta.body.error);
+       return res.status(500).json({ error: 'Search query failed due to backend error.' });
+    }
+    return res.status(500).json({ error: 'Search query failed.' });
+  }
 }
 
 export default withErrorLogging(handler);
