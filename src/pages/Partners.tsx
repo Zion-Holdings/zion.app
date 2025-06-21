@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle, FileDown, FileText, PieChart, Users } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from 'next/link';
 import { PartnerRegistrationForm } from "@/components/partners/PartnerRegistrationForm";
 import { PartnerReferralLinks } from "@/components/partners/PartnerReferralLinks";
@@ -18,6 +18,20 @@ export default function Partners() {
   const [activeTab, setActiveTab] = useState("overview");
   const { user, isAuthenticated } = useAuth();
   const router = useRouter();
+  const [authServiceAvailable, setAuthServiceAvailable] = useState(true);
+
+  useEffect(() => {
+    async function checkHealth() {
+      try {
+        const res = await fetch('/api/auth/health');
+        setAuthServiceAvailable(res.ok);
+      } catch (err) {
+        console.error('Partner login auth health check failed', err);
+        setAuthServiceAvailable(false);
+      }
+    }
+    checkHealth();
+  }, []);
 
   // If not authenticated, display partner program info and signup CTA
   if (!isAuthenticated) {
@@ -140,14 +154,18 @@ export default function Partners() {
           >
             <Link href="/signup">Apply as Partner</Link>
           </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
+          <Button
+            size="lg"
+            variant="outline"
             className="text-zion-cyan border-zion-cyan"
+            disabled={!authServiceAvailable}
             onClick={() => router.push('/login')}
           >
             Partner Login
           </Button>
+          {!authServiceAvailable && (
+            <p className="text-red-500 text-sm mt-2">Login temporarily unavailable</p>
+          )}
         </div>
       </div>
     );
