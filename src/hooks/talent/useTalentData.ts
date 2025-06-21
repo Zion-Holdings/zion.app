@@ -2,15 +2,16 @@
 import { useQuery } from '@tanstack/react-query';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { TalentListResponse, TalentProfile } from '@/types/talent';
+import { fetchWithRetry } from '@/utils/fetchWithRetry';
 
 async function fetchTalentProfiles(page = 1, limit = 12): Promise<TalentListResponse> {
-  const response = await fetch(`/api/talent?page=${page}&limit=${limit}`);
-  if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: response.statusText }));
-    throw new Error(errorData.message || `API error: ${response.status}`);
-  }
-  const data: TalentListResponse = await response.json();
-  return data;
+  return fetchWithRetry(
+    `/api/talent?page=${page}&limit=${limit}`,
+    {},
+    3,
+    500,
+    10000
+  );
 }
 
 export function useTalentData(page = 1, limit = 12) {
