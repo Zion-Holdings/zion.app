@@ -36,7 +36,7 @@ The project is structured as a monorepo and includes:
 4.  **Install backend (Django) dependencies:** Refer to `backend/README.md` or setup instructions. Typically involves creating a virtual environment and `pip install -r backend/requirements.txt`.
 5.  **Install monitoring service dependencies:** `cd monitoring && npm install`.
 6.  **Environment Variables:** Copy `.env.example` to `.env` (and potentially similar files in sub-projects like `backend/`) and configure necessary variables (database credentials, API keys, etc.).
-    Ensure `INTERNAL_AUTH_SERVICE_URL` is set to the base URL of the Node.js authentication service so user signup can succeed.
+    Ensure `INTERNAL_AUTH_SERVICE_URL` is set to the base URL of the Node.js authentication service so user signup and health checks can succeed.
     Run `npx ts-node --transpile-only scripts/check-env.ts` to validate the configuration.
 7.  **Database Setup:** Run Prisma migrations (`npx prisma migrate dev`), seed data (`npx prisma db seed`), and set up Django database.
 8.  **Running the application:**
@@ -50,6 +50,9 @@ The project is structured as a monorepo and includes:
 10. **Payment Testing:**
     - Guest checkout is available at `/marketplace/checkout`.
     - For a sandbox login, add development credentials in `.env.local` as explained in `docs/SECURITY_CREDENTIALS.md`.
+11. **Contract Tests:**
+    - Pact-based contract tests verify that front-end routes match available API endpoints.
+    - Start the stub server with `node server/stubServer.js` and run `npm test`.
 
 (Detailed setup instructions for each component should be available in their respective READMEs or the `docs/` directory. See `docs/BACKEND_DEPENDENCIES.md` for notes on managing Python and Node dependencies.)
 

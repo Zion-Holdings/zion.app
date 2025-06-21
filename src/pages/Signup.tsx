@@ -34,6 +34,20 @@ export default function Signup() {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [emailVerificationRequired, setEmailVerificationRequired] = useState(false);
+  const [authServiceAvailable, setAuthServiceAvailable] = useState(true);
+
+  useEffect(() => {
+    async function checkHealth() {
+      try {
+        const res = await axios.get('/api/auth/health');
+        setAuthServiceAvailable(res.status === 200);
+      } catch (err) {
+        console.error('Auth service health check failed', err);
+        setAuthServiceAvailable(false);
+      }
+    }
+    checkHealth();
+  }, []);
 
   const formik = useFormik({
     initialValues: {
@@ -135,6 +149,18 @@ export default function Signup() {
       }
     }
   });
+
+  if (!authServiceAvailable) {
+    return (
+      <AuthLayout>
+        <div className="flex min-h-screen items-center justify-center p-4">
+          <p className="text-red-500" data-testid="config-error-message">
+            Signup is temporarily unavailable due to a server configuration issue. Please try again later.
+          </p>
+        </div>
+      </AuthLayout>
+    );
+  }
 
   return (
     <AuthLayout>

@@ -1,5 +1,6 @@
 import { ProductListing } from "@/types/listings";
 import { SearchSuggestion, FilterOptions } from "@/types/search";
+import { slugify } from "@/lib/slugify";
 
 // Mock marketplace listings with more realistic data
 export const MARKETPLACE_LISTINGS: ProductListing[] = [
@@ -442,11 +443,16 @@ export const generateSearchSuggestions = (): SearchSuggestion[] => {
     "High performance storage"
   ];
   
-  const staticSuggestions = suggestions.map(text => ({ text, type: 'product' as const }));
+  const staticSuggestions = suggestions.map(text => ({
+    text,
+    slug: slugify(text),
+    type: 'product' as const,
+  }));
 
   const listingSuggestions = MARKETPLACE_LISTINGS.map(l => ({
     id: l.id,
     text: l.title,
+    slug: slugify(l.title),
     type: 'product' as const,
   }));
 
