@@ -39,6 +39,12 @@ const nextConfig = {
   // },
   images: {
     unoptimized: false, // Enabled Next.js Image Optimization for performance
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
   eslint: {
     // ignoreDuringBuilds: true, // Ensuring ESLint runs during build

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { GetServerSideProps } from 'next';
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
+import Image from 'next/image';
 
 export const getServerSideProps: GetServerSideProps = async () => {
   return {
@@ -45,10 +46,13 @@ export default function About() {
               </p>
             </div>
             <div className="rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600" 
-                alt="Team collaboration" 
+              <Image
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600"
+                alt="Team collaboration"
+                width={800}
+                height={600}
                 className="object-cover w-full h-full"
+                loading="lazy"
               />
             </div>
           </div>
@@ -71,10 +75,13 @@ export default function About() {
               </p>
             </div>
             <div className="rounded-lg overflow-hidden lg:order-first">
-              <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=600" 
-                alt="Tech innovation" 
+              <Image
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=600"
+                alt="Tech innovation"
+                width={800}
+                height={600}
                 className="object-cover w-full h-full"
+                loading="lazy"
               />
             </div>
           </div>

@@ -86,7 +86,7 @@ export function ITServiceRequestHero() {
               width={200}
               height={200}
               className="w-full h-auto md:w-40"
-              priority
+              loading="lazy"
             />
             <form onSubmit={handleSubmit} className="space-y-4 flex-1">
               <Input
