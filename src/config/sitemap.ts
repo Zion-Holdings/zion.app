@@ -98,6 +98,14 @@ export const publicPages: SitemapItem[] = [
     lastmod: currentDate,
   },
   {
+    path: '/docs/api-reference',
+    label: 'API Reference',
+    description: 'Zion API endpoints and documentation',
+    priority: 0.7,
+    changeFreq: 'monthly',
+    lastmod: currentDate,
+  },
+  {
     path: '/terms',
     label: 'Terms of Service',
     description: 'Terms and conditions for using Zion',
