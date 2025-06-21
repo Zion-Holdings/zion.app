@@ -10,9 +10,10 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { toast } from "@/hooks/use-toast";
-import { Check, Flag, Search, Settings, X } from "lucide-react";
+import { Check, Flag, Search, Settings, X, Users } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { logError } from "@/utils/logError";
+import { EmptyState } from "@/components/ui/empty-state";
 
 interface PartnerProfile {
   id: string;
@@ -634,8 +635,13 @@ function PartnerTable({
   
   if (partners.length === 0) {
     return (
-      <div className="text-center py-8">
-        <p className="text-zion-slate-light">No partners found.</p>
+      <div className="py-8">
+        <EmptyState
+          icon={<Users className="h-8 w-8" />}
+          title="No Partners Found"
+          description="There are no partner applications to display."
+          className="border-none bg-transparent text-center"
+        />
       </div>
     );
   }
