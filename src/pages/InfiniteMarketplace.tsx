@@ -164,15 +164,9 @@ export default function InfiniteMarketplace() {
         case 'price-high':
           return (b.price || 0) - (a.price || 0);
         case 'rating':
-<<<<<<< HEAD
-          return (b.rating || 0) - (a.rating || 0);
-        case 'popular':
-          return (b.reviewCount || 0) - (a.reviewCount || 0);
-=======
           return (b.rating ?? 0) - (a.rating ?? 0);
         case 'popular':
           return (b.reviewCount ?? 0) - (a.reviewCount ?? 0);
->>>>>>> 6dbe8bf8fae925d198e70712c85229bbc6de29ee
         case 'ai-score':
           return (b.aiScore || 0) - (a.aiScore || 0);
         case 'newest':
