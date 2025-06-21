@@ -68,7 +68,7 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
                     <Input
                       type="email"
                       placeholder="Email"
-                      className="bg-zion-blue-dark border-zion-blue-light text-white"
+                      className="guest-checkout-modal-input bg-zion-blue-dark border-zion-blue-light text-white"
                       {...field}
                     />
                   </FormControl>
@@ -85,7 +85,7 @@ export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestChecko
                   <FormControl>
                     <Input
                       placeholder="Shipping Address"
-                      className="bg-zion-blue-dark border-zion-blue-light text-white"
+                      className="guest-checkout-modal-input bg-zion-blue-dark border-zion-blue-light text-white"
                       {...field}
                     />
                   </FormControl>

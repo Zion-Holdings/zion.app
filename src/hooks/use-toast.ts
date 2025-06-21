@@ -1,6 +1,20 @@
 import React from 'react';
 import { toast as sonnerToast } from 'sonner';
 
+const DEDUPE_DELAY = 3000; // 3 seconds debounce for identical messages
+let lastKey = '';
+let lastShown = 0;
+
+function shouldShow(key: string) {
+  const now = Date.now();
+  if (key === lastKey && now - lastShown < DEDUPE_DELAY) {
+    return false;
+  }
+  lastKey = key;
+  lastShown = now;
+  return true;
+}
+
 interface ToastActionProps {
   label: string;
   onClick: () => void;
@@ -14,6 +28,15 @@ interface ToastProps {
 }
 
 const toastAdapter = (props: ToastProps | string) => {
+  const key =
+    typeof props === 'string'
+      ? `default|${props}`
+      : `${props.variant ?? 'default'}|${props.title}|${props.description}`;
+
+  if (!shouldShow(key)) {
+    return;
+  }
+
   if (typeof props === 'string') {
     sonnerToast(props);
     return;
@@ -51,12 +74,36 @@ const toastAdapter = (props: ToastProps | string) => {
   }
 };
 
-toastAdapter.success = (message: string, options?: object) => sonnerToast.success(message, options);
-toastAdapter.error = (message: string, options?: object) => sonnerToast.error(message, options);
-toastAdapter.info = (message: string, options?: object) => sonnerToast.info(message, options);
-toastAdapter.warning = (message: string, options?: object) => sonnerToast.warning(message, options);
-toastAdapter.loading = (message: string, options?: object) => sonnerToast.loading(message, options);
-toastAdapter.custom = (component: React.ReactElement, options?: object) => sonnerToast.custom(() => component, options);
+toastAdapter.success = (message: string, options?: object) => {
+  if (shouldShow(`success|${message}`)) {
+    sonnerToast.success(message, options);
+  }
+};
+toastAdapter.error = (message: string, options?: object) => {
+  if (shouldShow(`error|${message}`)) {
+    sonnerToast.error(message, options);
+  }
+};
+toastAdapter.info = (message: string, options?: object) => {
+  if (shouldShow(`info|${message}`)) {
+    sonnerToast.info(message, options);
+  }
+};
+toastAdapter.warning = (message: string, options?: object) => {
+  if (shouldShow(`warning|${message}`)) {
+    sonnerToast.warning(message, options);
+  }
+};
+toastAdapter.loading = (message: string, options?: object) => {
+  if (shouldShow(`loading|${message}`)) {
+    sonnerToast.loading(message, options);
+  }
+};
+toastAdapter.custom = (component: React.ReactElement, options?: object) => {
+  if (shouldShow('custom')) {
+    sonnerToast.custom(() => component, options);
+  }
+};
 toastAdapter.dismiss = (toastId?: string | number) => sonnerToast.dismiss(toastId);
 
 export const toast = toastAdapter;
