@@ -33,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<DocProps, DocPageParams> = async (
-  { params } // Type for params should be inferred by GetStaticProps<DocProps, DocPageParams>
+  { params }: { params: DocPageParams }
 ) => {
   // Minimal version to prevent timeouts
   return { props: { content: null, __prevent_build: true }, notFound: true };

@@ -56,12 +56,13 @@ const montserrat = Montserrat({
 // import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  console.log('[App] MyApp component rendering started.');
   const router = useRouter();
   const [queryClient] = React.useState(() => new QueryClient());
 
   React.useEffect(() => {
-    console.log('[App] MyApp main useEffect hook started.');
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[App] MyApp main useEffect hook started.');
+    }
     
     try {
       // Validate environment variables (graceful in development, strict in production)
@@ -77,7 +78,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       initializePerformanceOptimizations();
       
       const { publicRuntimeConfig } = getConfig();
-      console.log('[App] Public Runtime Config:', publicRuntimeConfig);
+      if (process.env.NODE_ENV === 'development') {
+        console.log('[App] Public Runtime Config:', publicRuntimeConfig);
+      }
       
       if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE) {
         Sentry.setTag('release', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE);
@@ -86,8 +89,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         Sentry.setTag('environment', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
       }
       
-      console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY:", publicRuntimeConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'NOT_SET');
-      console.log("NEXT_PUBLIC_REOWN_PROJECT_ID:", publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID ? 'SET' : 'NOT_SET');
+      if (process.env.NODE_ENV === 'development') {
+        console.log("NEXT_PUBLIC_SUPABASE_ANON_KEY:", publicRuntimeConfig.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'NOT_SET');
+        console.log("NEXT_PUBLIC_REOWN_PROJECT_ID:", publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID ? 'SET' : 'NOT_SET');
+      }
     } catch (error) {
       console.error('[App] Critical initialization error:', error);
       
@@ -107,24 +112,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     Sentry.setContext('query', router.query);
   }, [router.pathname]);
 
-  // Log initialization messages
-  console.log('[App Provider] Initializing RootErrorBoundary...');
-  console.log('[App Provider] Initializing GlobalErrorBoundary...');
-  console.log('[App Provider] Initializing QueryClientProvider...');
-  console.log('[App Provider] Initializing ReduxProvider...');
-  console.log('[App Provider] Initializing HelmetProvider...');
-  console.log('[App Provider] Initializing ErrorProvider...');
-  console.log('[App Provider] Initializing AuthProvider...');
-  console.log('[App Provider] Initializing WhitelabelProvider...');
-  console.log('[App Provider] Initializing I18nextProvider...');
-  console.log('[App Provider] Initializing WalletProvider...');
-  console.log('[App Provider] Initializing CartProvider...');
-  console.log('[App Provider] Initializing AnalyticsProvider...');
-  console.log('[App Provider] Initializing ThemeProvider...');
-  console.log('[App Provider] Initializing BrowserRouter...');
-  console.log('[App Provider] Initializing ErrorBoundary (wrapping Component)...');
+  // Only log provider initialization in development
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[App Provider] Initializing providers...');
+  }
 
-  console.log('[App] Attempting to render component:', Component.name || 'UnnamedComponent');
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[App] Attempting to render component:', Component.name || 'UnnamedComponent');
+  }
 
   // Use ProductionErrorBoundary as the top-level error boundary
   return (
