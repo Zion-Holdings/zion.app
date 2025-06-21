@@ -17,11 +17,11 @@
   # Get these from: https://app.supabase.com/project/YOUR_PROJECT_ID/settings/api
   
   # REQUIRED: Supabase project URL and anonymous key
-  NEXT_PUBLIC_SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL_HERE"
-  NEXT_PUBLIC_SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY_HERE"
+  NEXT_PUBLIC_SUPABASE_URL = "https://gnwtggeptzkqnduuthto.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY"
   
   # OPTIONAL: Service role key for server-side operations (keep secret!)
-  SUPABASE_SERVICE_ROLE_KEY = "YOUR_SUPABASE_SERVICE_ROLE_KEY_HERE"
+  SUPABASE_SERVICE_ROLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0NTQxNDIyNywiZXhwIjoyMDYwOTkwMjI3fQ.GkITz4albDzDESjUo7CUXQEku-QDKgkLsZDPz4X7Swg"
   
   # ========================================
   # AUTHENTICATION SERVICE CONFIGURATION
