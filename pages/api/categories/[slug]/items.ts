@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
+import { captureException } from '@/utils/sentry';
 
 const prisma = new PrismaClient();
 
@@ -29,6 +30,10 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     if (!categoryDetails) {
+      captureException(new Error('Category not found'), {
+        extra: { slug, path: req.url },
+        user: (req as any).user ? { id: (req as any).user.id, email: (req as any).user.email } : undefined,
+      });
       return res.status(404).json({ message: `Category with slug '${slug}' not found.` });
     }
 

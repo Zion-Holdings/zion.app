@@ -1,4 +1,6 @@
 const express = require('express');
+const Sentry = require('@sentry/node');
+const Tracing = require('@sentry/tracing');
 const { exec } = require('child_process'); // Make sure this is imported
 const mongoose = require('mongoose');
 const morgan = require('morgan');
@@ -19,6 +21,14 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  tracesSampleRate: 1.0,
+});
+
+app.use(Sentry.Handlers.requestHandler());
+app.use(Sentry.Handlers.tracingHandler());
 
 // Use Helmet to apply various security headers
 app.use(helmet());
@@ -103,6 +113,9 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'));
 });
 
+// Sentry error handler must come before any custom error middleware
+app.use(Sentry.Handlers.errorHandler());
+
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -112,6 +125,16 @@ mongoose.connect(mongoUri, {
 app.use((err, req, res, next) => {
   console.error(err);
   logAndAlert(err.stack || err.message);
+  if (err.status === 404 || err.status === 403) {
+    Sentry.withScope(scope => {
+      if (req.user) {
+        scope.setUser({ id: req.user.id, email: req.user.email });
+      }
+      scope.setExtra('url', req.originalUrl);
+      scope.setTag('status', err.status);
+      Sentry.captureException(err);
+    });
+  }
   res.status(err.status || 500).json({ code: err.code, message: err.message });
 });
 
