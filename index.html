@@ -108,7 +108,7 @@
     </script>
     <script type="module">
       const isProd = import.meta.env.MODE === 'production';
-      const allowDevTools = import.meta.env.REACT_APP_DEVTOOLS === 'true';
+      const allowDevTools = import.meta.env.NEXT_PUBLIC_DEVTOOLS === 'true';
       if (isProd && !allowDevTools) {
         const noop = () => {};
         const DEV_TOOLS = window.__REACT_DEVTOOLS_GLOBAL_HOOK__;
