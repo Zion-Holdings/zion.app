@@ -217,6 +217,15 @@ const nextConfig = {
     '@libp2p/identify',
   ],
   webpack: (config, { isServer, dev }) => {
+    // Suppress punycode deprecation warnings
+    if (!dev) {
+      config.ignoreWarnings = [
+        /punycode.*deprecated/i,
+        /DEP0040/,
+        /Critical dependency/,
+      ];
+    }
+
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
