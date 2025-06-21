@@ -222,7 +222,7 @@ export default function EquipmentDetail() {
               <div className="bg-zion-blue-dark rounded-lg overflow-hidden border border-zion-blue-light">
                 {/* Main Image */}
                 <div className="aspect-video w-full relative">
-                  <img 
+                  <img loading="lazy" 
                     src={equipment.images[selectedImageIndex]} 
                     alt={equipment.name} 
                     className="w-full h-full object-contain bg-zion-blue-light/10 p-4"
@@ -240,7 +240,7 @@ export default function EquipmentDetail() {
                           index === selectedImageIndex ? "border-zion-purple" : "border-transparent"
                         }`}
                       >
-                        <img 
+                        <img loading="lazy" 
                           src={image} 
                           alt={`${equipment.name} - image ${index + 1}`} 
                           className="w-full h-full object-cover"

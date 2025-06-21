@@ -1,6 +1,8 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Home from '@/pages/Home';
+import dynamic from 'next/dynamic';
+
+const Home = dynamic(() => import('@/pages/Home'));
 import type { GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { ErrorBanner } from '@/components/talent/ErrorBanner';

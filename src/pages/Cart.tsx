@@ -88,7 +88,7 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <div className="container py-10 text-center">
-        <img
+        <img loading="lazy"
           src="/images/empty-cart.svg"
           alt="Empty cart"
           className="mx-auto mb-4 w-48 h-36"

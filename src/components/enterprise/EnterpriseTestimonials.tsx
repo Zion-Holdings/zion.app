@@ -57,7 +57,7 @@ export function EnterpriseTestimonials() {
                   </blockquote>
                   <div className="flex items-center gap-4">
                     <div className="h-12 w-12 rounded-full overflow-hidden bg-muted">
-                      <img
+                      <img loading="lazy"
                         src={testimonial.image}
                         alt={testimonial.author}
                         className="h-full w-full object-cover"

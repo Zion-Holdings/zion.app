@@ -24,7 +24,7 @@ export function SpeakersSection() {
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center">
           {speakers.map((sp) => (
             <div key={sp.name} className="text-center space-y-2">
-              <img src={sp.avatar} alt={sp.name} className="w-24 h-24 rounded-full mx-auto" />
+              <img loading="lazy" src={sp.avatar} alt={sp.name} className="w-24 h-24 rounded-full mx-auto" />
               <p className="font-semibold">{sp.name}</p>
               <p className="text-sm opacity-80">{sp.title}</p>
               <div className="flex justify-center gap-3 text-zion-cyan">

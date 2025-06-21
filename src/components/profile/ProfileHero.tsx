@@ -33,7 +33,7 @@ export function ProfileHero({
       <div className="relative">
         <AspectRatio ratio={3/1} className="bg-zion-blue-light">
           {coverImageUrl ? (
-            <img 
+            <img loading="lazy" 
               src={coverImageUrl} 
               alt={`${name} cover`} 
               className="w-full h-full object-cover" 

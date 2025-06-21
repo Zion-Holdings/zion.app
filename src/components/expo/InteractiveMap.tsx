@@ -9,7 +9,7 @@ export function InteractiveMap() {
       <div className="container mx-auto px-4 space-y-6 text-center">
         <h2 className="text-3xl font-bold">Zion Multiverse Map</h2>
         <div className="relative max-w-3xl mx-auto">
-          <img
+          <img loading="lazy"
             src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.png"
             alt="World map"
             className="w-full h-auto"

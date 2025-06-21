@@ -477,7 +477,7 @@ function ProjectDetailsContent() {
                               <div className="flex items-center gap-2 mb-2">
                                 <Avatar className="h-6 w-6">
                                   {note.created_by_profile?.avatar_url ? (
-                                    <img
+                                    <img loading="lazy"
                                       src={note.created_by_profile.avatar_url}
                                       alt={note.created_by_profile.display_name}
                                     />
@@ -542,7 +542,7 @@ function ProjectDetailsContent() {
                   <div className="flex items-start gap-4">
                     <Avatar className="h-10 w-10">
                       {project.talent_profile?.profile_picture_url ? (
-                        <img
+                        <img loading="lazy"
                           src={project.talent_profile.profile_picture_url}
                           alt={project.talent_profile.full_name}
                         />
@@ -573,7 +573,7 @@ function ProjectDetailsContent() {
                   <div className="flex items-start gap-4">
                     <Avatar className="h-10 w-10">
                       {project.talent_profile?.profile_picture_url ? (
-                        <img
+                        <img loading="lazy"
                           src={project.talent_profile.profile_picture_url}
                           alt={project.talent_profile.full_name}
                         />

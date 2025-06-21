@@ -422,7 +422,7 @@ export function ServiceProviderRegistrationForm() {
                     <div className="relative w-24 h-24 rounded-full overflow-hidden bg-zion-blue-light border border-zion-blue-light">
                       {uploadedAvatar ? (
                         <AspectRatio ratio={1/1}>
-                          <img
+                          <img loading="lazy"
                             src={uploadedAvatar}
                             alt="Avatar preview"
                             className="w-full h-full object-cover"

@@ -109,7 +109,7 @@ export function ConversationDetailView() {
             {activeConversation.context_data && activeConversation.context_data.image_url && (
               <div className="w-16 h-16 flex-shrink-0">
                 <AspectRatio ratio={1/1} className="rounded bg-zion-blue-dark/30 overflow-hidden">
-                  <img
+                  <img loading="lazy"
                     src={activeConversation.context_data.image_url}
                     alt={activeConversation.context_data.title || "Context"}
                     className="object-cover"

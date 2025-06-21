@@ -10,7 +10,7 @@ export function PartnersSection() {
         <h2 className="text-3xl font-bold mb-8 text-center">Partners</h2>
         <div className="flex flex-wrap items-center justify-center gap-6">
           {partners.map((p) => (
-            <img key={p.name} src={p.logo} alt={p.name} className="h-16" />
+            <img loading="lazy" key={p.name} src={p.logo} alt={p.name} className="h-16" />
           ))}
         </div>
         <div className="text-center mt-8">

@@ -27,7 +27,7 @@ export function ProjectCard({ project, onEdit, onDelete }: ProjectCardProps) {
     <Card className="h-full flex flex-col">
       <div className="relative h-48 overflow-hidden rounded-t-lg bg-muted">
         {project.image_url ? (
-          <img 
+          <img loading="lazy" 
             src={project.image_url} 
             alt={project.title} 
             className="w-full h-full object-cover"

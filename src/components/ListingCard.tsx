@@ -41,7 +41,7 @@ export function ListingCard({
     >
       {images && images.length > 0 && (
         <div className="h-48 w-full overflow-hidden">
-          <img 
+          <img loading="lazy" 
             src={images[0]}
             alt={title} 
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -70,7 +70,7 @@ export function ListingCard({
         {author && (
           <div className="flex items-center mt-auto pt-4 border-t border-zion-blue-light">
             {author.avatarUrl ? (
-              <img src={author.avatarUrl} alt={author.name} className="h-8 w-8 rounded-full mr-2" />
+              <img loading="lazy" src={author.avatarUrl} alt={author.name} className="h-8 w-8 rounded-full mr-2" />
             ) : (
               <div className="h-8 w-8 rounded-full bg-zion-purple/20 mr-2" />
             )}

@@ -35,7 +35,7 @@ export default function InstantMessaging() {
           <p className="text-center text-zion-slate-light max-w-3xl mx-auto mb-8">
             Communicate with partners and support staff instantly from any device.
           </p>
-          <img src="https://placehold.co/800x400" alt="Screenshot of chat interface" className="rounded-lg shadow-xl mx-auto mb-12" />
+          <img loading="lazy" src="https://placehold.co/800x400" alt="Screenshot of chat interface" className="rounded-lg shadow-xl mx-auto mb-12" />
           <h2 className="text-2xl font-bold mb-4">Benefits &amp; Use Cases</h2>
           <ul className="list-disc list-inside space-y-2 mb-8 text-zion-slate-light">
             <li>Real-time notifications keep everyone updated.</li>

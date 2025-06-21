@@ -19,7 +19,7 @@ export function ProfileProjects({ projects }: ProfileProjectsProps) {
           <Card key={project.id} className="bg-zion-blue border-zion-blue-light overflow-hidden hover:border-zion-purple/40 transition-colors duration-300">
             {project.imageUrl ? (
               <AspectRatio ratio={16/9}>
-                <img 
+                <img loading="lazy" 
                   src={project.imageUrl} 
                   alt={project.title} 
                   className="w-full h-full object-cover"

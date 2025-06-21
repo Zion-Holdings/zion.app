@@ -82,7 +82,7 @@ export default function TokenIntegrations() {
                     {CHAINS.map(c => (
                       <SelectItem key={c.id} value={c.id}>
                         <div className="flex items-center gap-2">
-                          <img src={c.logo} alt={c.name} className="h-4" />
+                          <img loading="lazy" src={c.logo} alt={c.name} className="h-4" />
                           {c.name}
                         </div>
                       </SelectItem>
@@ -97,7 +97,7 @@ export default function TokenIntegrations() {
                     {CHAINS.map(c => (
                       <SelectItem key={c.id} value={c.id}>
                         <div className="flex items-center gap-2">
-                          <img src={c.logo} alt={c.name} className="h-4" />
+                          <img loading="lazy" src={c.logo} alt={c.name} className="h-4" />
                           {c.name}
                         </div>
                       </SelectItem>

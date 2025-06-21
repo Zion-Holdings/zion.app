@@ -32,7 +32,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
 
       <TabsContent value="images" className="pt-4">
         <div className="aspect-video w-full relative">
-          <img
+          <img loading="lazy"
             src={images[selected]}
             alt={`Product image ${selected + 1}`}
             className="w-full h-full object-contain bg-zion-blue-light/10 p-4"
@@ -46,7 +46,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
                 onClick={() => setSelected(idx)}
                 className={`w-20 h-20 flex-shrink-0 cursor-pointer rounded overflow-hidden border-2 ${idx === selected ? 'border-zion-purple' : 'border-transparent'}`}
               >
-                <img
+                <img loading="lazy"
                   src={img}
                   alt={`Thumbnail image ${idx + 1}`}
                   className="w-full h-full object-cover"
@@ -62,7 +62,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
           <AspectRatio ratio={16 / 9}>
             <Suspense
               fallback={
-                <img
+                <img loading="lazy"
                   src={poster}
                   alt="Video preview"
                   className="w-full h-full object-cover"
@@ -80,7 +80,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
           <AspectRatio ratio={16 / 9}>
             <Suspense
               fallback={
-                <img
+                <img loading="lazy"
                   src={poster}
                   alt="3D model preview"
                   className="w-full h-full object-cover"

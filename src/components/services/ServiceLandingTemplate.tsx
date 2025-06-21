@@ -48,7 +48,7 @@ export const ServiceLandingTemplate: React.FC<ServiceLandingTemplateProps> = ({
             {subtitle}
           </p>
           {heroImage && (
-            <img
+            <img loading="lazy"
               src={heroImage}
               alt={title}
               className="mx-auto mt-8 rounded-lg shadow-xl max-w-3xl"
@@ -106,7 +106,7 @@ export const ServiceLandingTemplate: React.FC<ServiceLandingTemplateProps> = ({
                 <CardFooter className="border-t border-zion-purple/20 pt-4">
                   <div className="flex items-center">
                     {t.avatar && (
-                      <img
+                      <img loading="lazy"
                         src={t.avatar}
                         alt={t.name}
                         className="h-10 w-10 rounded-full mr-4"

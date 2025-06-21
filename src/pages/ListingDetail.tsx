@@ -234,7 +234,7 @@ export default function ListingDetail() {
                   <h3 className="text-lg font-bold text-white mb-3">Publisher</h3>
                   <div className="flex items-center gap-3">
                     {listing.author.avatarUrl ? (
-                      <img 
+                      <img loading="lazy" 
                         src={listing.author.avatarUrl} 
                         alt={listing.author.name} 
                         className="h-12 w-12 rounded-full"

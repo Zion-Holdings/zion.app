@@ -155,7 +155,7 @@ export default function Careers() {
               </p>
             </div>
             <div className="rounded-lg overflow-hidden">
-              <img 
+              <img loading="lazy" 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&h=600" 
                 alt="Team collaboration" 
                 className="object-cover w-full h-full"

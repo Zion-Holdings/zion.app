@@ -38,7 +38,7 @@ export default function About() {
               </p>
             </div>
             <div className="rounded-lg overflow-hidden">
-              <img 
+              <img loading="lazy" 
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600" 
                 alt="Team collaboration" 
                 className="object-cover w-full h-full"
@@ -64,7 +64,7 @@ export default function About() {
               </p>
             </div>
             <div className="rounded-lg overflow-hidden lg:order-first">
-              <img 
+              <img loading="lazy" 
                 src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=600" 
                 alt="Tech innovation" 
                 className="object-cover w-full h-full"

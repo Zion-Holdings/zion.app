@@ -35,7 +35,7 @@ export default function SearchFeature() {
           <p className="text-center text-zion-slate-light max-w-3xl mx-auto mb-8">
             Filter listings by skills, price, availability and more. Our engine helps you discover relevant results instantly.
           </p>
-          <img src="https://placehold.co/800x400" alt="Screenshot of search results" className="rounded-lg shadow-xl mx-auto mb-12" />
+          <img loading="lazy" src="https://placehold.co/800x400" alt="Screenshot of search results" className="rounded-lg shadow-xl mx-auto mb-12" />
           <h2 className="text-2xl font-bold mb-4">Benefits &amp; Use Cases</h2>
           <ul className="list-disc list-inside space-y-2 mb-8 text-zion-slate-light">
             <li>Find the right expert or product without endless scrolling.</li>

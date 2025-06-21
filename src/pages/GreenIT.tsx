@@ -62,7 +62,7 @@ export default function GreenIT() {
                   </div>
                 </div>
                 <div className="rounded-lg overflow-hidden">
-                  <img 
+                  <img loading="lazy" 
                     src="https://images.unsplash.com/photo-1473876637954-4b493d59fd97?auto=format&fit=crop&w=800&h=600" 
                     alt="Green IT sustainability" 
                     className="object-cover w-full h-full"

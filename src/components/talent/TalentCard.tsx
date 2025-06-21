@@ -59,7 +59,7 @@ const TalentCardComponent = ({
           <div className="relative mr-4">
             <div className="w-16 h-16 rounded-full overflow-hidden bg-zion-blue-dark border border-zion-blue-light">
               {talent.profile_picture_url ? (
-                <img 
+                <img loading="lazy" 
                   src={talent.profile_picture_url} 
                   alt={talent.full_name} 
                   className="w-full h-full object-cover" 

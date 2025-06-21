@@ -34,7 +34,7 @@ export function ImageWithRetry({
   return (
     <div className={cn('relative inline-block', className)}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img {...props} src={currentSrc} onError={handleError} />
+      <img loading="lazy" {...props} src={currentSrc} onError={handleError} />
       {failed && (
         <button
           type="button"
