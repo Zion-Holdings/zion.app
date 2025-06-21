@@ -14,7 +14,9 @@
     "error": "خطأ",
     "open_main_menu": "افتح القائمة الرئيسية",
     "toggle_mobile_menu": "تبديل قائمة الجوال",
-    "greeting_user": "مرحباً، {{name}}!"
+    "greeting_user": "مرحباً، {{name}}!",
+    "status_page": "صفحة الحالة",
+    "check_status_page": "يمكنك محاولة تحديث الصفحة أو زيارة"
   },
   "nav": {
     "home": "الرئيسية",
