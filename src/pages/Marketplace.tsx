@@ -2,12 +2,20 @@ import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import { useApiErrorHandling } from '@/hooks/useApiErrorHandling';
 import ProductCard from '@/components/ProductCard';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUp, Filter, SortAsc, Sparkles, TrendingUp, Star } from 'lucide-react';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { ErrorState } from '@/components/jobs/applications/ErrorState';
 import { ProductsEmptyState } from '@/components/marketplace/EmptyState';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
 import { ProductListing } from '@/types/listings';
 import { fetchMarketplaceData } from '@/utils/fetchMarketplaceData';
+import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
+import { generateAIProducts, getMarketStats, getRecommendedProducts } from '@/utils/autoFeedAlgorithm';
+import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 
 /**
  * Marketplace component props
@@ -21,62 +29,232 @@ export interface MarketplaceProps {
   products?: ProductListing[];
 }
 
+// Market insights component
+const MarketInsights: React.FC<{ stats: any }> = ({ stats }) => (
+  <Card className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30 mb-6">
+    <CardContent className="p-6">
+      <div className="flex items-center gap-2 mb-4">
+        <TrendingUp className="h-5 w-5 text-blue-400" />
+        <h3 className="text-lg font-semibold">Market Insights</h3>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="text-center">
+          <div className="text-2xl font-bold text-blue-400">${Math.round(stats.averagePrice)}</div>
+          <div className="text-sm text-muted-foreground">Avg Price</div>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-green-400">{stats.averageRating.toFixed(1)}</div>
+          <div className="text-sm text-muted-foreground">Avg Rating</div>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-purple-400">{stats.totalProducts}</div>
+          <div className="text-sm text-muted-foreground">Products</div>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-yellow-400">{stats.categoriesCount}</div>
+          <div className="text-sm text-muted-foreground">Categories</div>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+);
+
+// Filter and sort controls
+const FilterControls: React.FC<{
+  sortBy: string;
+  setSortBy: (sort: string) => void;
+  filterCategory: string;
+  setFilterCategory: (category: string) => void;
+  categories: string[];
+  showRecommended: boolean;
+  setShowRecommended: (show: boolean) => void;
+}> = ({ 
+  sortBy, 
+  setSortBy, 
+  filterCategory, 
+  setFilterCategory, 
+  categories, 
+  showRecommended, 
+  setShowRecommended 
+}) => (
+  <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg">
+    <div className="flex items-center gap-2">
+      <Filter className="h-4 w-4 text-muted-foreground" />
+      <select
+        value={filterCategory}
+        onChange={(e) => setFilterCategory(e.target.value)}
+        className="bg-background border border-border px-3 py-2 rounded"
+      >
+        <option value="">All Categories</option>
+        {categories.map(category => (
+          <option key={category} value={category}>{category}</option>
+        ))}
+      </select>
+    </div>
+    
+    <div className="flex items-center gap-2">
+      <SortAsc className="h-4 w-4 text-muted-foreground" />
+      <select
+        value={sortBy}
+        onChange={(e) => setSortBy(e.target.value)}
+        className="bg-background border border-border px-3 py-2 rounded"
+      >
+        <option value="newest">Newest First</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="rating">Highest Rated</option>
+        <option value="popular">Most Popular</option>
+        <option value="ai-score">AI Score</option>
+      </select>
+    </div>
+
+    <Button
+      variant={showRecommended ? "default" : "outline"}
+      size="sm"
+      onClick={() => setShowRecommended(!showRecommended)}
+      className="flex items-center gap-2"
+    >
+      <Sparkles className="h-4 w-4" />
+      {showRecommended ? "All Products" : "Recommended"}
+    </Button>
+  </div>
+);
+
 /**
- * Marketplace component renders a list of products.
- * It uses the fetchMarketplaceData function with proper error handling.
- * Includes retry logic for resilience and fallback to empty array on errors.
- *
- * @param {MarketplaceProps} props - The component props.
+ * Enhanced Marketplace component with infinite scroll and AI product generation
+ * Uses the auto-feed algorithm to continuously generate IT and AI products
+ * Includes intelligent filtering, sorting, and recommendation features
  */
 export default function Marketplace({ products: _initialProducts = [] }: MarketplaceProps) {
   const router = useRouter();
-  const [showLongLoadingMessage, setShowLongLoadingMessage] = useState(false);
-
-  // SWR fetcher using the new fetchMarketplaceData function
-  const fetcher = () => fetchMarketplaceData({ limit: 20 });
-
+  const [sortBy, setSortBy] = useState('newest');
+  const [filterCategory, setFilterCategory] = useState('');
+  const [showRecommended, setShowRecommended] = useState(false);
+  const [totalGenerated, setTotalGenerated] = useState(0);
   const { handleApiError, retryQuery } = useApiErrorHandling();
-  
-  const { data, error, isLoading } = useSWR<ProductListing[]>(
-    '/api/marketplace/overview',
-    fetcher,
-    { 
-      shouldRetryOnError: true, 
-      errorRetryCount: 3,
-      onError: (error) => {
-        handleApiError(error, {
-          customMessage: 'Failed to load marketplace products',
-          showToast: false, // Don't show toast since we have inline error UI
-        });
-      }
+
+  // Fetch function for infinite scroll with AI product generation
+  const fetchProducts = useCallback(async (page: number, limit: number) => {
+    // Add realistic loading delay
+    await new Promise(resolve => setTimeout(resolve, 200));
+
+    let allProducts: ProductListing[] = [];
+    
+    // Start with existing marketplace listings
+    if (page === 1) {
+      allProducts = [...MARKETPLACE_LISTINGS];
     }
-  );
-
-  useEffect(() => {
-    let timer: NodeJS.Timeout;
-
-    if (isLoading && (!data || data.length === 0) && !error) {
-      timer = setTimeout(() => {
-        setShowLongLoadingMessage(true);
-      }, 15000); // 15 seconds
+    
+    // Generate new AI/IT products using the auto-feed algorithm
+    const startId = MARKETPLACE_LISTINGS.length + (page - 1) * limit + totalGenerated;
+    const newProducts = generateAIProducts(limit, startId);
+    setTotalGenerated(prev => prev + newProducts.length);
+    
+    allProducts = [...allProducts, ...newProducts];
+    
+    // Apply filters
+    let filteredProducts = allProducts;
+    
+    if (filterCategory) {
+      filteredProducts = filteredProducts.filter(p => p.category === filterCategory);
     }
-
-    return () => {
-      clearTimeout(timer);
-      // Reset if loading completes or error occurs before timer fires
-      if (!isLoading || (data && data.length > 0) || error) {
-        setShowLongLoadingMessage(false);
+    
+    if (showRecommended) {
+      filteredProducts = getRecommendedProducts(filteredProducts, {
+        rating: 4.3,
+        categories: filterCategory ? [filterCategory] : undefined
+      });
+    }
+    
+    // Apply sorting
+    filteredProducts.sort((a, b) => {
+      switch (sortBy) {
+        case 'price-low':
+          return (a.price || 0) - (b.price || 0);
+        case 'price-high':
+          return (b.price || 0) - (a.price || 0);
+        case 'rating':
+          return b.rating - a.rating;
+        case 'popular':
+          return b.reviewCount - a.reviewCount;
+        case 'ai-score':
+          return (b.aiScore || 0) - (a.aiScore || 0);
+        case 'newest':
+        default:
+          return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
       }
+    });
+    
+    // Paginate results
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+    const items = filteredProducts.slice(startIndex, endIndex);
+    
+    return {
+      items,
+      hasMore: endIndex < filteredProducts.length || page < 15, // Allow up to 15 pages
+      total: filteredProducts.length
     };
-  }, [isLoading, data, error]);
+  }, [sortBy, filterCategory, showRecommended, totalGenerated]);
 
-  // Loading skeletons
-  if (!data && !error) {
+  // Use infinite scroll hook
+  const {
+    items: products,
+    loading,
+    error,
+    hasMore,
+    total,
+    isFetching,
+    lastElementRef,
+    refresh,
+    scrollToTop
+  } = useInfiniteScrollPagination(fetchProducts, 16);
+
+  // Refresh when filters change
+  useEffect(() => {
+    refresh();
+    setTotalGenerated(0);
+  }, [sortBy, filterCategory, showRecommended]);
+
+  // Calculate market stats
+  const marketStats = useMemo(() => {
+    if (products.length === 0) return null;
+    return getMarketStats(products);
+  }, [products]);
+
+  // Get unique categories
+  const categories = useMemo(() => {
+    return Array.from(new Set([...MARKETPLACE_LISTINGS, ...products].map(p => p.category)));
+  }, [products]);
+
+  // Show scroll to top button
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 800);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Loading state with skeleton
+  if (loading && products.length === 0) {
     return (
       <div className="container py-8" data-testid="marketplace-loading">
-        <h1 className="text-3xl font-bold mb-6">Marketplace</h1>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-8"
+        >
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            AI Marketplace
+          </h1>
+          <p className="text-muted-foreground text-lg">
+            Discover cutting-edge AI and IT solutions
+          </p>
+        </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {Array.from({ length: 12 }).map((_, i) => (
             <SkeletonCard key={i} />
           ))}
         </div>
@@ -84,55 +262,173 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     );
   }
 
-  // Error state with retry functionality
+  // Error state with retry
   if (error) {
     return (
       <div className="container py-8">
         <div className="text-center space-y-4">
-          <ErrorState error={error.message || 'Unable to load products'} />
-          <button
-            onClick={() => retryQuery(['/api/marketplace/overview'])}
-            className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
-          >
+          <ErrorState error={error} />
+          <Button onClick={refresh}>
             Try Again
-          </button>
+          </Button>
         </div>
       </div>
     );
   }
 
-  // Empty state with call to action if no products are available
-  if (!data || data.length === 0) {
+  // Empty state (should rarely happen with AI generation)
+  if (!products || products.length === 0) {
     return (
       <div className="container py-8" data-testid="marketplace-empty">
         <ProductsEmptyState
           onAddProduct={() => router.push('/admin/products')}
-          onRetry={() => retryQuery(['/api/marketplace/overview'])}
+          onRetry={refresh}
         />
       </div>
     );
   }
 
-  // Success
+  // Main marketplace render
   return (
     <div className="container py-8">
-      <h1 className="text-3xl font-bold mb-6">Marketplace</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {data
-          .filter((p) => p && p.id)
-          .map((p) => (
-            <ProductCard
-              key={p.id}
-              product={{
-                ...p,
-                price: p.price || 0, // Convert null to 0 for Product interface
-                description: p.description || '' // Ensure description is never undefined
-              }}
-              onBuy={() => router.push(`/checkout/${p.id}`)}
-              buyDisabled
-            />
+      {/* Header */}
+      <motion.div 
+        className="text-center mb-8"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          AI Marketplace
+        </h1>
+        <p className="text-muted-foreground text-lg">
+          Discover cutting-edge AI and IT solutions powered by intelligent algorithms
+        </p>
+      </motion.div>
+
+      {/* Market Insights */}
+      {marketStats && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <MarketInsights stats={marketStats} />
+        </motion.div>
+      )}
+
+      {/* Filter Controls */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        <FilterControls
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          filterCategory={filterCategory}
+          setFilterCategory={setFilterCategory}
+          categories={categories}
+          showRecommended={showRecommended}
+          setShowRecommended={setShowRecommended}
+        />
+      </motion.div>
+
+      {/* Product Grid */}
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+      >
+        <AnimatePresence mode="popLayout">
+          {products.map((product, index) => (
+            <motion.div
+              key={product.id}
+              ref={index === products.length - 1 ? lastElementRef : null}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ delay: Math.min(index * 0.03, 0.5) }}
+              whileHover={{ scale: 1.02 }}
+              className="relative group"
+            >
+              <ProductCard
+                product={{
+                  ...product,
+                  price: product.price || 0,
+                  description: product.description || ''
+                }}
+                onBuy={() => router.push(`/checkout/${product.id}`)}
+                buyDisabled={false}
+              />
+              
+              {/* AI Score Badge */}
+              {product.aiScore && product.aiScore > 90 && (
+                <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-500 to-orange-500 z-10 text-black">
+                  <Sparkles className="h-3 w-3 mr-1" />
+                  AI {product.aiScore}
+                </Badge>
+              )}
+              
+              {/* Featured Badge */}
+              {product.featured && (
+                <Badge className="absolute top-2 left-2 bg-gradient-to-r from-blue-500 to-purple-500 z-10">
+                  <Star className="h-3 w-3 mr-1" />
+                  Featured
+                </Badge>
+              )}
+            </motion.div>
           ))}
-      </div>
+        </AnimatePresence>
+      </motion.div>
+
+      {/* Loading More Indicator */}
+      {(isFetching || loading) && (
+        <motion.div
+          className="mt-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <SkeletonCard key={`loading-${i}`} />
+            ))}
+          </div>
+        </motion.div>
+      )}
+
+      {/* End of Results */}
+      {!hasMore && products.length > 0 && (
+        <motion.div
+          className="text-center mt-12 py-8 border-t"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <div className="text-muted-foreground text-lg mb-2">
+            🎉 You've explored all available products!
+          </div>
+          <div className="text-sm text-muted-foreground">
+            Showing {products.length} {total && `of ${total}`} AI-powered solutions
+          </div>
+        </motion.div>
+      )}
+
+      {/* Scroll to Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary/90 rounded-full shadow-lg z-50"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <ArrowUp className="h-5 w-5 text-primary-foreground" />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
