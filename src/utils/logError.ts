@@ -1,11 +1,16 @@
 import { captureException } from './sentry';
 import { sendErrorToBackend } from './customErrorReporter';
+import { generateTraceId } from './generateTraceId';
 
 /**
  * Centralized error logger for frontend issues. Reports to Sentry when
  * available and falls back to console.error. Also sends to custom backend.
  */
-export function logError(error: unknown, context?: { componentStack?: string } & Record<string, unknown>) {
+export function logError(
+  error: unknown,
+  context?: { componentStack?: string } & Record<string, unknown>
+): string {
+  const traceId = generateTraceId();
   let errorToSend: Error;
   if (error instanceof Error) {
     errorToSend = error;
@@ -37,9 +42,9 @@ export function logError(error: unknown, context?: { componentStack?: string } &
 
   try {
     if (context) {
-      captureException(errorToSend, { extra: context });
+      captureException(errorToSend, { extra: { traceId, ...context } });
     } else {
-      captureException(errorToSend);
+      captureException(errorToSend, { extra: { traceId } });
     }
   } catch (err) {
     console.error('Failed to report error to Sentry:', err, context?.componentStack);
@@ -58,6 +63,7 @@ export function logError(error: unknown, context?: { componentStack?: string } &
       timestamp: new Date().toISOString(),
       source: 'logError',
       // any other relevant context fields
+      traceId,
       ...(context && { customContext: context }),
     };
 
@@ -86,4 +92,6 @@ export function logError(error: unknown, context?: { componentStack?: string } &
   } catch (err) {
     console.error('Failed to prepare or send error to custom backend:', err);
   }
+
+  return traceId;
 }

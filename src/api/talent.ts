@@ -16,3 +16,11 @@ export async function getTalentBySlug(slug: string): Promise<TalentProfile | nul
     throw err;
   }
 }
+
+/**
+ * Fetch all talent profiles.
+ */
+export async function getAllTalent(): Promise<TalentProfile[]> {
+  const res = await axios.get('/api/talent');
+  return res.data.profiles as TalentProfile[];
+}

@@ -3,7 +3,12 @@ import { Toaster as SonnerToaster } from "sonner";
 
 export function Toaster() {
   return (
-    <div role="status" aria-live="polite" aria-atomic="true">
+    <div
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <div id="toast-announcer" className="sr-only" aria-live="polite" aria-atomic="true" />
       <SonnerToaster
         position="top-right"
         toastOptions={{

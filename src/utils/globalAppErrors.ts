@@ -38,6 +38,7 @@ function handleGlobalError(
     userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
     timestamp: new Date().toISOString(),
     source: 'window.onerror' as const,
+    traceId: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
   };
 
   sendErrorToBackend(errorDetails).catch(err => {
@@ -119,6 +120,7 @@ function handleUnhandledRejection(event: PromiseRejectionEvent): void {
     userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
     timestamp: new Date().toISOString(),
     source: 'unhandledrejection' as const,
+    traceId: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
   };
 
   sendErrorToBackend(errorDetails).catch(err => {

@@ -13,7 +13,7 @@ import { Loader2 } from "lucide-react";
 
 interface SearchResult {
   id: string;
-  type: "product" | "service" | "talent";
+  type: "product" | "service" | "talent" | "blog";
   title: string;
   description: string;
 }
@@ -45,6 +45,11 @@ export default function SearchPage() {
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
   const suggestions: SearchSuggestion[] = generateSearchSuggestions();
+
+  const marketplaceResults = results.filter(r =>
+    r.type === 'product' || r.type === 'service' || r.type === 'talent'
+  );
+  const blogResults = results.filter(r => r.type === 'blog');
 
   useEffect(() => {
     if (initial) {
@@ -99,10 +104,23 @@ export default function SearchPage() {
             <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
           </div>
         )}
-        {!loading && results.length === 0 && (
+        {!loading && marketplaceResults.length === 0 && blogResults.length > 0 && (
+          <div>
+            <p className="text-zion-slate-light mb-2">No marketplace results found. Related blog posts:</p>
+            <div className="space-y-4">
+              {blogResults.map(r => (
+                <div key={`blog-${r.id}`} className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4">
+                  <h3 className="text-lg font-bold text-white">{highlight(r.title, query)}</h3>
+                  <p className="text-zion-slate-light">{highlight(r.description, query)}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        {!loading && marketplaceResults.length === 0 && blogResults.length === 0 && (
           <p className="text-zion-slate-light">No results found.</p>
         )}
-        {!loading && results.length > 0 && (
+        {!loading && marketplaceResults.length > 0 && (
           <Tabs defaultValue="product" className="space-y-4">
             <TabsList className="mb-4">
               <TabsTrigger value="product">
