@@ -1,5 +1,3 @@
-import { Header } from "@/components/header/Header";
-import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { useState, useEffect, useRef, Suspense } from "react";
@@ -288,7 +286,6 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
           </div>
         </div>
       </Suspense>
-      <Footer />
     </>
   );
 }

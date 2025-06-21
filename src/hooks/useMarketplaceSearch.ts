@@ -68,8 +68,16 @@ export function useMarketplaceSearch() {
         if (!response.ok) {
           throw new Error(`API error: ${response.statusText}`);
         }
-        const data: ProductListing[] = await response.json();
-        setListings(data);
+        const responseData = await response.json(); // Get the full response object
+        if (responseData && responseData.results && Array.isArray(responseData.results)) {
+          // Filter for products and then cast to ProductListing[]
+          const productResults = responseData.results.filter((item: any) => item.type === 'product');
+          setListings(productResults as ProductListing[]); // Use the 'results' array
+        } else {
+          setListings([]); // Default to empty if structure is wrong
+          // Optional: log an error
+          console.error("Search API response structure in useMarketplaceSearch is not as expected:", responseData);
+        }
       } catch (e) {
         setError(e as Error);
         console.error("Failed to fetch products:", e);

@@ -35,6 +35,7 @@ type FormValues = z.infer<typeof schema>;
 export default function SignupForm() {
   const router = useRouter(); // Changed from navigate
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isAuthServiceConfigured, setIsAuthServiceConfigured] = useState(true); // Added state
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -81,14 +82,42 @@ export default function SignupForm() {
         return; // Prevent auto-redirect, keep user on sign-up page
       }
       
-      // Handle other errors - try both 'error' and 'message' fields for compatibility
-      const message = err.response?.data?.error || err.response?.data?.message || err.message || 'Signup failed';
-      toast.error(message);
-      form.setError('root', { message });
+      // Handle specific status codes for better user experience
+      if (err.response?.status === 409) {
+        const message = 'That email is already in use. Try logging in instead.';
+        toast.error(message);
+        form.setError('root', { message });
+        return; // Prevent auto-redirect, keep user on sign-up page
+      }
+
+      // Check for auth service configuration error
+      if (err.response?.data?.message === 'Server configuration error: Auth service URL not set.') {
+        setIsAuthServiceConfigured(false);
+        form.setError('root', { message: 'Signup is temporarily unavailable due to a configuration issue. Please try again later.' });
+        // No toast here, the UI will show the message
+      } else {
+        // Handle other errors - try both 'error' and 'message' fields for compatibility
+        const message = err.response?.data?.error || err.response?.data?.message || err.message || 'Signup failed';
+        toast.error(message);
+        form.setError('root', { message });
+      }
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  // Conditional rendering if auth service is not configured
+  if (!isAuthServiceConfigured) {
+    return (
+      <div className="mx-auto w-full max-w-sm lg:w-96 p-4 mt-16 text-center">
+        <h2 className="text-3xl font-bold tracking-tight text-white mb-6">Create account</h2>
+        <p className="text-red-500" data-testid="config-error-message">
+          Signup is temporarily unavailable due to a configuration issue. Please try again later.
+        </p>
+        {/* Optional: Add a link to contact support or go back */}
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto w-full max-w-sm lg:w-96 p-4 mt-16">
@@ -192,7 +221,7 @@ export default function SignupForm() {
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
+          <Button type="submit" className="w-full" disabled={isSubmitting || !isAuthServiceConfigured}>
             {isSubmitting ? 'Creating Account...' : 'Create Account'}
           </Button>
         </form>
