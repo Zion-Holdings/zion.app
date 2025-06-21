@@ -3,11 +3,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import type { ProductListing } from '@/types/listings';
 import type { TalentProfile } from '@/types/talent';
 import type { BlogPost } from '@/types/blog';
+import type { DocsSearchItem } from '@/data/docsSearchData';
 
 interface SearchTabsProps {
   products: ProductListing[];
   talent: TalentProfile[];
   posts: BlogPost[];
+  docs: DocsSearchItem[];
   query: string;
 }
 
@@ -31,13 +33,14 @@ function highlight(text: string, term: string) {
   );
 }
 
-export function SearchTabs({ products, talent, posts, query }: SearchTabsProps) {
+export function SearchTabs({ products, talent, posts, docs, query }: SearchTabsProps) {
   return (
     <Tabs defaultValue="products" className="space-y-4">
       <TabsList className="mb-4">
         <TabsTrigger value="products">Products ({products.length})</TabsTrigger>
         <TabsTrigger value="talent">Talent ({talent.length})</TabsTrigger>
         <TabsTrigger value="posts">Posts ({posts.length})</TabsTrigger>
+        <TabsTrigger value="docs">Docs ({docs.length})</TabsTrigger>
       </TabsList>
       <TabsContent value="products" className="space-y-4">
         {products.map((p) => (
@@ -60,6 +63,14 @@ export function SearchTabs({ products, talent, posts, query }: SearchTabsProps) 
           <div key={post.id} className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4">
             <h3 className="text-lg font-bold text-white">{highlight(post.title, query)}</h3>
             <p className="text-zion-slate-light">{highlight(post.excerpt, query)}</p>
+          </div>
+        ))}
+      </TabsContent>
+      <TabsContent value="docs" className="space-y-4">
+        {docs.map((doc) => (
+          <div key={doc.text} className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4">
+            <h3 className="text-lg font-bold text-white">{highlight(doc.text, query)}</h3>
+            <p className="text-zion-slate-light">{doc.path}</p>
           </div>
         ))}
       </TabsContent>
