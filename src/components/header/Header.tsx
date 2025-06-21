@@ -9,6 +9,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useWhitelabel } from '@/context/WhitelabelContext';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
+import { slugify } from "@/lib/slugify";
 import { useRouter } from "next/router"; // Changed from react-router-dom
 import { useState } from "react";
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
@@ -51,7 +52,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      router.push(`/search?q=${encodeURIComponent(query)}`);
+      router.push(`/search/${slugify(query)}`);
       setQuery("");
     }
   };
@@ -72,7 +73,8 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             value={query}
             onChange={setQuery}
             onSelectSuggestion={(suggestion) => {
-              router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
+              const slug = suggestion.slug || slugify(suggestion.text);
+              router.push(`/search/${slug}`);
               setQuery("");
             }}
             searchSuggestions={searchSuggestions}
