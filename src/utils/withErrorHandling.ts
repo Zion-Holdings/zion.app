@@ -119,7 +119,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
             query: context.query,
             params: context.params,
             environmentConfig: {
-              supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
+              auth0Configured: ENV_CONFIG.auth0.isConfigured,
               sentryConfigured: ENV_CONFIG.sentry.isConfigured,
               environment: ENV_CONFIG.app.environment
             }
@@ -201,7 +201,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
             scope.setContext('staticProps', {
               params: context.params,
               environmentConfig: {
-                supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
+                auth0Configured: ENV_CONFIG.auth0.isConfigured,
                 sentryConfigured: ENV_CONFIG.sentry.isConfigured,
                 environment: ENV_CONFIG.app.environment
               }

@@ -300,7 +300,8 @@ export default function TalentsPage() {
     isFetching,
     lastElementRef,
     refresh,
-    scrollToTop
+    scrollToTop,
+    loadMore
   } = useInfiniteScrollPagination(fetchTalents, 16);
 
   // Refresh when filters change

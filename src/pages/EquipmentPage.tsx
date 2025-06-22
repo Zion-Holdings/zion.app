@@ -208,7 +208,8 @@ export default function EquipmentPage() {
     isFetching,
     lastElementRef,
     refresh,
-    scrollToTop
+    scrollToTop,
+    loadMore
   } = useInfiniteScrollPagination(fetchEquipment, 12);
 
   useEffect(() => {

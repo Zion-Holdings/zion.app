@@ -1,10 +1,18 @@
 import { createClient } from '@supabase/supabase-js';
 import { Headers as NodeHeaders } from 'node-fetch';
 import { supabaseStorageAdapter } from './safeStorageAdapter';
-import { ENV_CONFIG } from '@/utils/environmentConfig';
 
-// Use the environment configuration
-const { supabase: supabaseConfig } = ENV_CONFIG;
+// Use environment variables directly for Supabase configuration
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+
+const supabaseConfig = {
+  url: supabaseUrl,
+  anonKey: supabaseAnonKey,
+  serviceRoleKey: supabaseServiceRoleKey,
+  isConfigured: !!supabaseUrl && !!supabaseAnonKey
+};
 
 // Create Supabase client with proper error handling
 let supabaseClient: any = null;

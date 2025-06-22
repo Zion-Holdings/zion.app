@@ -91,6 +91,7 @@ export function useTranslationService() {
         const initialTranslations: Record<SupportedLanguage, string> = {
           en: content,
           es: '',
+          fr: '',
           pt: '',
           ar: ''
         };
@@ -106,6 +107,7 @@ export function useTranslationService() {
       const initialTranslations: Record<SupportedLanguage, string> = {
         en: content,
         es: '',
+        fr: '',
         pt: '',
         ar: ''
       };
