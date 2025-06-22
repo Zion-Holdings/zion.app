@@ -12,7 +12,13 @@
     ".netlify/.next/cache/**",
     "docs/**",
     "scripts/**",
-    ".next/**"
+    ".next/**",
+    ".netlify/.next/static/**"
+  ]
+  # Ignore public environment variables that are intentionally in client code
+  omit_keys = [
+    "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME",
+    "NEXT_PUBLIC_*"
   ]
 
 [build.environment]
