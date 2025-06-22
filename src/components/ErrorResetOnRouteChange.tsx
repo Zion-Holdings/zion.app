@@ -8,9 +8,16 @@ export default function ErrorResetOnRouteChange() {
   const { resetError } = useError();
 
   useEffect(() => {
-    resetError();
-    toast.dismiss();
-  }, [router.pathname, resetError]);
+    const handleRouteChange = () => {
+      resetError();
+      toast.dismiss();
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router.events, resetError]);
 
   return null;
 }

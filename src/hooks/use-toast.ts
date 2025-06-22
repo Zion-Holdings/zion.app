@@ -31,13 +31,14 @@ interface ToastProps {
   description?: string;
   variant?: 'default' | 'destructive' | 'success';
   action?: ToastActionProps;
+  id?: string;
 }
 
 const toastAdapter = (props: ToastProps | string) => {
   const key =
     typeof props === 'string'
-      ? `default|${props}`
-      : `${props.variant ?? 'default'}|${props.title}|${props.description}`;
+      ? props
+      : props.id ?? `${props.variant ?? 'default'}|${props.title}|${props.description}`;
 
   if (!shouldShow(key)) {
     return;
@@ -48,13 +49,14 @@ const toastAdapter = (props: ToastProps | string) => {
     return;
   }
 
-  const { title, description, variant, action } = props;
+  const { title, description, variant, action, id } = props;
   const message = title || description || '';
 
   const options: {
     description?: string;
     action?: React.ReactNode;
     duration?: number;
+    id?: string;
   } = {
     duration: 4000,
   };
@@ -68,53 +70,59 @@ const toastAdapter = (props: ToastProps | string) => {
   switch (variant) {
     case 'destructive':
       const traceId = (options as any)?.traceId ?? logError(new Error(message));
-      sonnerToast.error(`${message} (Trace ID: ${traceId})`, { ...options, style: variantStyles.error });
+      sonnerToast.error(`${message} (Trace ID: ${traceId})`, { ...options, id, style: variantStyles.error });
       break;
     case 'success':
-      sonnerToast.success(message, options);
+      sonnerToast.success(message, { ...options, id });
       break;
     default:
       if (title && description) {
-        sonnerToast(title, { description, duration: 4000 });
+        sonnerToast(title, { description, duration: 4000, id });
       } else if (title) {
-        sonnerToast(title, options);
+        sonnerToast(title, { ...options, id });
       } else if (description) {
-        sonnerToast(description, options);
+        sonnerToast(description, { ...options, id });
       } else {
-        sonnerToast("Notification", options);
+        sonnerToast("Notification", { ...options, id });
       }
       break;
   }
 };
 
-toastAdapter.success = (message: string, options?: object) => {
-  if (shouldShow(`success|${message}`)) {
+toastAdapter.success = (message: string, options?: { id?: string } & Record<string, any>) => {
+  const id = options?.id;
+  if (shouldShow(id ?? `success|${message}`)) {
     sonnerToast.success(message, { duration: 4000, ...(options || {}) });
   }
 };
-toastAdapter.error = (message: string, options?: object) => {
-  const opts = options as { skipLog?: boolean; traceId?: string } | undefined;
-  if (shouldShow(`error|${message}`)) {
+toastAdapter.error = (message: string, options?: { id?: string } & Record<string, any>) => {
+  const opts = options as { skipLog?: boolean; traceId?: string; id?: string } | undefined;
+  const id = opts?.id;
+  if (shouldShow(id ?? `error|${message}`)) {
     sonnerToast.error(message, { duration: 4000, ...(options || {}), style: variantStyles.error });
   }
 };
-toastAdapter.info = (message: string, options?: object) => {
-  if (shouldShow(`info|${message}`)) {
+toastAdapter.info = (message: string, options?: { id?: string } & Record<string, any>) => {
+  const id = options?.id;
+  if (shouldShow(id ?? `info|${message}`)) {
     sonnerToast.info(message, { duration: 4000, ...(options || {}), style: variantStyles.info });
   }
 };
-toastAdapter.warning = (message: string, options?: object) => {
-  if (shouldShow(`warning|${message}`)) {
+toastAdapter.warning = (message: string, options?: { id?: string } & Record<string, any>) => {
+  const id = options?.id;
+  if (shouldShow(id ?? `warning|${message}`)) {
     sonnerToast.warning(message, { duration: 4000, ...(options || {}) });
   }
 };
-toastAdapter.loading = (message: string, options?: object) => {
-  if (shouldShow(`loading|${message}`)) {
+toastAdapter.loading = (message: string, options?: { id?: string } & Record<string, any>) => {
+  const id = options?.id;
+  if (shouldShow(id ?? `loading|${message}`)) {
     sonnerToast.loading(message, { duration: 4000, ...(options || {}) });
   }
 };
-toastAdapter.custom = (component: React.ReactElement, options?: object) => {
-  if (shouldShow('custom')) {
+toastAdapter.custom = (component: React.ReactElement, options?: { id?: string } & Record<string, any>) => {
+  const id = options?.id;
+  if (shouldShow(id ?? 'custom')) {
     sonnerToast.custom(() => component, { duration: 4000, ...(options || {}) });
   }
 };
