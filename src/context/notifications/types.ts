@@ -8,7 +8,8 @@ export type NotificationType =
   | 'onboarding'
   | 'system'
   | 'project_update'
-  | 'milestone_complete';
+  | 'milestone_complete'
+  | 'order_status';
 
 export interface Notification extends BaseNotification {
   type: NotificationType;
@@ -21,7 +22,8 @@ export type FilterType =
   | 'unread'
   | 'messages'
   | 'onboarding'
-  | 'system';
+  | 'system'
+  | 'orders';
 
 export interface NotificationContextType {
   notifications: Notification[];

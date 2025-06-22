@@ -3,11 +3,13 @@ import { safeStorage } from '@/utils/safeStorage';
 import { Notification, FilterType, NotificationContextType } from './types';
 import axios from '@/lib/axios';
 
-export const useNotificationOperations = (userId?: string): NotificationContextType => {
+export const useNotificationOperations = (
+  userId?: string,
+): NotificationContextType => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [loading, setLoading] = useState(false);
   const [filter, setFilter] = useState<FilterType>(
-    () => (safeStorage.getItem('notification_filter') as FilterType) || 'all'
+    () => (safeStorage.getItem('notification_filter') as FilterType) || 'all',
   );
 
   useEffect(() => {
@@ -28,16 +30,19 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
     }
   }, [userId]);
 
-  const markAsRead = useCallback(async (id: string) => {
-    if (!userId) return;
+  const markAsRead = useCallback(
+    async (id: string) => {
+      if (!userId) return;
 
-    try {
-      await axios.patch(`/api/notifications/${id}`, { read: true });
-      await fetchNotifications();
-    } catch (err) {
-      console.error('Error marking notification as read:', err);
-    }
-  }, [userId, fetchNotifications]);
+      try {
+        await axios.patch(`/api/notifications/${id}`, { read: true });
+        await fetchNotifications();
+      } catch (err) {
+        console.error('Error marking notification as read:', err);
+      }
+    },
+    [userId, fetchNotifications],
+  );
 
   const markAllAsRead = useCallback(async () => {
     if (!userId) return;
@@ -45,10 +50,10 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
     try {
       await Promise.all(
         notifications
-          .filter(n => !n.read)
-          .map(n =>
-            axios.patch(`/api/notifications/${n.id}`, { read: true })
-          )
+          .filter((n) => !n.read)
+          .map((n) =>
+            axios.patch(`/api/notifications/${n.id}`, { read: true }),
+          ),
       );
       await fetchNotifications();
     } catch (err) {
@@ -56,18 +61,21 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
     }
   }, [userId, fetchNotifications, notifications]);
 
-  const dismissNotification = useCallback(async (id: string) => {
-    if (!userId) return;
+  const dismissNotification = useCallback(
+    async (id: string) => {
+      if (!userId) return;
 
-    try {
-      await axios.delete(`/api/notifications/${id}`);
-      await fetchNotifications();
-    } catch (err) {
-      console.error('Error dismissing notification:', err);
-    }
-  }, [userId, fetchNotifications]);
+      try {
+        await axios.delete(`/api/notifications/${id}`);
+        await fetchNotifications();
+      } catch (err) {
+        console.error('Error dismissing notification:', err);
+      }
+    },
+    [userId, fetchNotifications],
+  );
 
-  const filteredNotifications = notifications.filter(notification => {
+  const filteredNotifications = notifications.filter((notification) => {
     switch (filter) {
       case 'unread':
         return !notification.read;
@@ -77,12 +85,14 @@ export const useNotificationOperations = (userId?: string): NotificationContextT
         return notification.type === 'onboarding';
       case 'system':
         return notification.type === 'system';
+      case 'orders':
+        return notification.type === 'order_status';
       default:
         return true;
     }
   });
 
-  const unreadCount = notifications.filter(n => !n.read).length;
+  const unreadCount = notifications.filter((n) => !n.read).length;
 
   return {
     notifications,

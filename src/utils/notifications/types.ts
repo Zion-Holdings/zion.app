@@ -1,4 +1,3 @@
-
 export type NotificationType =
   | 'message'
   | 'quote_request'
@@ -7,7 +6,8 @@ export type NotificationType =
   | 'onboarding'
   | 'system'
   | 'project_update'
-  | 'milestone_complete';
+  | 'milestone_complete'
+  | 'order_status';
 
 export interface CreateNotificationParams {
   userId: string;
