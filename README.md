@@ -119,11 +119,16 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
     - Run `npm run clean:cache` to remove temporary log files and common build caches.
 
 10. **Payment Testing:**
-    - Seed demo products with `npm run seed` if no listings appear.
-    - Guest checkout is available at `/marketplace/checkout`.
-    - Set `STRIPE_TEST_SECRET_KEY` and `NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY` to enable Stripe test mode and pay with the `4242 4242 4242 4242` card. Set `STRIPE_TEST_MODE=true` to force sandbox orders even on production domains.
-    - For a sandbox login, add development credentials in `.env.local` as explained in `docs/SECURITY_CREDENTIALS.md`.
-    - See [docs/Payments.md](docs/Payments.md) for full details.
+    - **Enable Test Mode:** Ensure `STRIPE_TEST_MODE=true` (for backend) and `NEXT_PUBLIC_STRIPE_TEST_MODE=true` (for frontend) are set in your environment (e.g., `.env.local` or CI/staging environment variables). This forces the application to use Stripe test API keys.
+    - **Test Card:** Use the generic Stripe test card:
+        - Card Number: `4242 4242 4242 4242`
+        - Expiration Date: Any future date (e.g., 12/30)
+        - CVC: Any 3 digits (e.g., 123)
+    - **View Transactions:** Test transactions can be viewed in your Stripe Dashboard (ensure "View test data" is enabled).
+    - **Demo Products:** If no products appear, run `npm run seed` to populate demo products.
+    - **Guest Checkout:** Available at `/marketplace` (add items to cart and proceed to checkout).
+    - **Sandbox Login:** For authenticated flows, use development credentials from `.env.local` as described in `docs/SECURITY_CREDENTIALS.md`.
+    - **Full Details:** For a comprehensive list of test cards and scenarios, see the detailed guide in **[docs/Payments.md](docs/Payments.md)**.
 
 11. **Contract Tests:**
     - Pact-based contract tests verify that front-end routes match available API endpoints.
