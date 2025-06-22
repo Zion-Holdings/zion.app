@@ -106,12 +106,15 @@ const TalentPage: React.FC = () => {
             </div>
           )}
 
-          {data.portfolio && data.portfolio.length > 0 && (
+          {data.key_projects && data.key_projects.length > 0 && (
             <div>
-              <h2 className="text-xl font-semibold mb-2">Portfolio</h2>
-              <ul className="list-disc ml-5 space-y-1">
-                {data.portfolio.map((item) => (
-                  <li key={item}>{item}</li>
+              <h2 className="text-xl font-semibold mb-2">Key Projects</h2>
+              <ul className="space-y-2">
+                {data.key_projects.map((project, index) => (
+                  <li key={index} className="border-l-2 border-zion-purple pl-4">
+                    <h3 className="font-medium">{project.title}</h3>
+                    <p className="text-zion-slate-light text-sm">{project.description}</p>
+                  </li>
                 ))}
               </ul>
             </div>
