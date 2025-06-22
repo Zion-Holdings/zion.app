@@ -294,7 +294,19 @@ export default function EquipmentPage() {
               initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
               transition={{ delay: Math.min(index * 0.03, 0.5) }} whileHover={{ scale: 1.02 }}
             >
-              <EquipmentCard equipment={item} onViewDetails={() => router.push(`/equipment/${item.id}`)} />
+              <EquipmentCard
+                equipment={item}
+                onViewDetails={() => {
+                  if (typeof window !== 'undefined') {
+                    try {
+                      sessionStorage.setItem(`equipment:${item.id}`, JSON.stringify(item));
+                    } catch {
+                      // ignore storage errors
+                    }
+                  }
+                  router.push(`/equipment/${item.id}`);
+                }}
+              />
             </motion.div>
           ))}
         </AnimatePresence>
