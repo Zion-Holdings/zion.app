@@ -4,6 +4,17 @@
   command = "npm run build"
   publish = ".next"
 
+# Secrets scanning configuration
+[build.processing.secrets]
+  enabled = true
+  # Ignore certain paths that might contain placeholder values
+  omit_paths = [
+    ".netlify/.next/cache/**",
+    "docs/**",
+    "scripts/**",
+    ".next/**"
+  ]
+
 [build.environment]
   NODE_OPTIONS = "--max_old_space_size=4096"
   NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
@@ -62,9 +73,9 @@
   # MEDIA & CONTENT CONFIGURATION
   # ========================================
   # Cloudinary for image management
-  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME = "your_cloudinary_cloud_name_here"
-  CLOUDINARY_API_KEY = "your_cloudinary_api_key_here"
-  CLOUDINARY_API_SECRET = "your_cloudinary_api_secret_here"
+  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME = "SET_IN_NETLIFY_UI"
+  CLOUDINARY_API_KEY = "SET_IN_NETLIFY_UI"
+  CLOUDINARY_API_SECRET = "SET_IN_NETLIFY_UI"
   
   # ========================================
   # COMMUNICATION CONFIGURATION
@@ -86,7 +97,7 @@
   NEXT_PUBLIC_ENABLE_PAYMENTS = "true"
   
   # External APIs
-  OPENAI_API_KEY = "sk-your_openai_api_key_here"
+  OPENAI_API_KEY = "SET_IN_NETLIFY_UI"
   EXAMPLE_API_URL = "https://api.example.com"
 
 # Deploy contexts for different environments
