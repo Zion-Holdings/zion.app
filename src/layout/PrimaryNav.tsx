@@ -5,6 +5,7 @@ import { Logo } from '@/components/header/Logo';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { UserMenu } from '@/components/header/UserMenu';
 import { LanguageSelector } from '@/components/header/LanguageSelector';
+import { ModeToggle } from '@/components/ModeToggle';
 import { useAuth } from '@/hooks/useAuth';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useMessaging } from '@/context/MessagingContext';
@@ -18,7 +19,11 @@ import { Menu, X, ShoppingCart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
-import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
+import {
+  HoverCard,
+  HoverCardTrigger,
+  HoverCardContent,
+} from '@/components/ui/hover-card';
 import { MiniCartPreview } from '@/components/cart/MiniCartPreview';
 
 export function PrimaryNav() {
@@ -40,7 +45,7 @@ export function PrimaryNav() {
   }
 
   const cartCount = useSelector((s: RootState) =>
-    s.cart.items.reduce((sum, i) => sum + i.quantity, 0)
+    s.cart.items.reduce((sum, i) => sum + i.quantity, 0),
   );
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -84,7 +89,11 @@ export function PrimaryNav() {
             <PointsBadge />
             <HoverCard openDelay={100}>
               <HoverCardTrigger asChild>
-                <Link href="/cart" className="relative" aria-label={t('nav.cart','Cart')}>
+                <Link
+                  href="/cart"
+                  className="relative"
+                  aria-label={t('nav.cart', 'Cart')}
+                >
                   <ShoppingCart className="h-5 w-5 text-foreground hover:text-primary" />
                   {cartCount > 0 && (
                     <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] rounded-full h-4 w-4 flex items-center justify-center">
@@ -97,13 +106,21 @@ export function PrimaryNav() {
                 <MiniCartPreview />
               </HoverCardContent>
             </HoverCard>
+            <ModeToggle />
             <LanguageSelector />
             {!isLoggedIn && (
               <>
-                <Link href="/login" className="text-sm hover:text-primary" data-testid="login-link">
+                <Link
+                  href="/login"
+                  className="text-sm hover:text-primary"
+                  data-testid="login-link"
+                >
                   {t('auth.login')}
                 </Link>
-                <Link href="/signup" className="ml-2 text-sm hover:text-primary">
+                <Link
+                  href="/signup"
+                  className="ml-2 text-sm hover:text-primary"
+                >
                   {t('auth.signup')}
                 </Link>
               </>
@@ -116,15 +133,26 @@ export function PrimaryNav() {
             aria-expanded={mobileMenuOpen}
             aria-label={t('general.toggle_mobile_menu')}
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
       </header>
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-0 z-60 pt-16">
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} aria-hidden="true" />
+          <div
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
           <div className="relative bg-card border-t border-primary/20 max-h-[calc(100vh-4rem)] overflow-y-auto">
-            <MobileMenu unreadCount={unreadCount} onClose={() => setMobileMenuOpen(false)} />
+            <MobileMenu
+              unreadCount={unreadCount}
+              onClose={() => setMobileMenuOpen(false)}
+            />
           </div>
         </div>
       )}
