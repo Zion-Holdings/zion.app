@@ -59,13 +59,18 @@ const LoginPage = () => {
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Sign in to your account
             </h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
-              Or{' '}
-              <Link href="/auth/register" className="font-medium text-blue-600 hover:text-blue-500">
-                create a new account
-              </Link>
-            </p>
-          </div>
+          <p className="mt-2 text-center text-sm text-gray-600">
+            Or{' '}
+            <Link href="/auth/register" className="font-medium text-blue-600 hover:text-blue-500">
+              create a new account
+            </Link>
+          </p>
+          <p className="mt-2 text-center text-sm">
+            <Link href="/forgot-password" className="text-blue-600 hover:text-blue-500">
+              Forgot password?
+            </Link>
+          </p>
+        </div>
 
           {error && (
             <div className="bg-red-50 border border-red-200 rounded-md p-4">
