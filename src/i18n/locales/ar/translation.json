@@ -76,6 +76,7 @@
   "language": {
     "en": "English",
     "es": "Español",
+    "fr": "Français",
     "pt": "Português",
     "ar": "العربية",
     "language_changed": "تم تغيير اللغة إلى {{language}}",

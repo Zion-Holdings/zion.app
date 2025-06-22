@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { useLanguage, SupportedLanguage } from '@/context/LanguageContext';
 import { safeStorage } from '@/utils/safeStorage';
+import { setCookie } from '@/utils/cookies';
 
 export function LanguageSwitcher() {
   const { t } = useTranslation();
@@ -18,6 +19,7 @@ export function LanguageSwitcher() {
 
   const selectLanguage = async (lang: SupportedLanguage) => {
     await changeLanguage(lang);
+    setCookie('i18n_lang', lang);
     safeStorage.setItem('i18n_lang', lang);
     const langName = supportedLanguages.find((l) => l.code === lang)?.name || lang;
     setAnnounce(t('language.language_changed', { language: langName }));

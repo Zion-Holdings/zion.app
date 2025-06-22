@@ -1,25 +1,25 @@
 
 {
   "general": {
-    "app_name": "Zion AI Marketplace",
-    "loading": "Loading...",
-    "search": "Search",
-    "select_language": "Select language",
-    "save": "Save",
-    "cancel": "Cancel",
-    "submit": "Submit",
-    "yes": "Yes",
-    "no": "No",
-    "success": "Success",
-    "error": "Error",
-    "explore": "Explore",
+    "app_name": "Marché IA de Zion",
+    "loading": "Chargement...",
+    "search": "Rechercher",
+    "select_language": "Choisir la langue",
+    "save": "Sauvegarder",
+    "cancel": "Annuler",
+    "submit": "Envoyer",
+    "yes": "Oui",
+    "no": "Non",
+    "success": "Succès",
+    "error": "Erreur",
+    "explore": "Explorer",
     "menu": "Menu",
-    "saving": "Saving...",
-    "open_main_menu": "Open main menu",
-    "toggle_mobile_menu": "Toggle mobile menu",
-    "greeting_user": "Hello, {{name}}!",
-    "status_page": "Status Page",
-    "check_status_page": "You can try refreshing the page or visit our"
+    "saving": "Enregistrement...",
+    "open_main_menu": "Ouvrir le menu principal",
+    "toggle_mobile_menu": "Basculer le menu mobile",
+    "greeting_user": "Bonjour, {{name}} !",
+    "status_page": "Page de statut",
+    "check_status_page": "Vous pouvez essayer de rafraîchir la page ou visiter notre"
   },
   "nav": {
     "home": "Home",
@@ -102,8 +102,8 @@
     "fr": "Français",
     "pt": "Português",
     "ar": "العربية",
-    "language_changed": "Language changed to {{language}}",
-    "switch_to_detected": "Switch to {{language}}?"
+    "language_changed": "Langue changée en {{language}}",
+    "switch_to_detected": "Passer en {{language}}?"
   },
   "translation": {
     "auto_translate": "Auto-Translate",

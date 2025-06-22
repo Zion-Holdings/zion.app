@@ -22,7 +22,7 @@ export function useTranslationService() {
     content: string,
     contentType: ContentType = 'general',
     sourceLanguage: SupportedLanguage = 'en',
-    targetLanguages: SupportedLanguage[] = ['en', 'es', 'pt', 'ar']
+    targetLanguages: SupportedLanguage[] = ['en', 'es', 'fr', 'pt', 'ar']
   ): Promise<TranslationResponse> => {
     setIsTranslating(true);
 

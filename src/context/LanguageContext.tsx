@@ -1,10 +1,11 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
+import { setCookie, getCookie } from '@/utils/cookies';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '../integrations/supabase/client';
 import { toast } from '../components/ui/use-toast';
 
-export type SupportedLanguage = 'en' | 'es' | 'pt' | 'ar';
+export type SupportedLanguage = 'en' | 'es' | 'fr' | 'pt' | 'ar';
 
 export type LanguageContextType = {
   currentLanguage: SupportedLanguage;
@@ -16,6 +17,7 @@ export type LanguageContextType = {
 const supportedLanguages = [
   { code: 'en' as SupportedLanguage, name: 'English', flag: '🇺🇸' },
   { code: 'es' as SupportedLanguage, name: 'Español', flag: '🇪🇸' },
+  { code: 'fr' as SupportedLanguage, name: 'Français', flag: '🇫🇷' },
   { code: 'pt' as SupportedLanguage, name: 'Português', flag: '🇧🇷' },
   { code: 'ar' as SupportedLanguage, name: 'العربية', flag: '🇸🇦' }
 ];
@@ -51,8 +53,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   const [isRTL, setIsRTL] = useState(i18n.dir() === 'rtl');
   
   useEffect(() => {
-    // Set initial language from localStorage or browser
-    const savedLang = safeStorage.getItem('i18n_lang') as SupportedLanguage;
+    // Set initial language from cookie or browser
+    const savedLang = (getCookie('i18n_lang') as SupportedLanguage) ||
+      (safeStorage.getItem('i18n_lang') as SupportedLanguage);
     if (savedLang && supportedLanguages.some(lang => lang.code === savedLang)) {
       i18n.changeLanguage(savedLang);
       setCurrentLanguage(savedLang);
@@ -101,6 +104,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     try {
       await i18n.changeLanguage(lang);
       setCurrentLanguage(lang);
+      setCookie('i18n_lang', lang);
       safeStorage.setItem('i18n_lang', lang);
       
       // Get language name for toast
