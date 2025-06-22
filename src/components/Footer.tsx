@@ -109,7 +109,15 @@ export function Footer() {
               <li><Link href="/marketplace" className="text-foreground/80 hover:text-primary transition-colors">Products</Link></li>
               <li><Link href="/services" className="text-foreground/80 hover:text-primary transition-colors">Services</Link></li>
               <li><Link href="/talent" className="text-foreground/80 hover:text-primary transition-colors">Talent</Link></li>
-              <li><Link href="/equipment" className="text-foreground/80 hover:text-primary transition-colors">Equipment</Link></li>
+              <li>
+                <Link
+                  href="/equipment"
+                  className="text-foreground/80 hover:text-primary transition-colors"
+                  target="_self"
+                >
+                  Equipment
+                </Link>
+              </li>
               <li><Link href="/categories" className="text-foreground/80 hover:text-primary transition-colors">Categories</Link></li>
               <li><Link href="/green-it" className="text-foreground/80 hover:text-primary transition-colors">Green IT</Link></li>
             </ul>
