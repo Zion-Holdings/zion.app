@@ -145,34 +145,36 @@ export default function EquipmentPage() {
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
-  const [totalGenerated, setTotalGenerated] = useState(0);
+
+  // Define a constant for the size of the virtual dataset
+  const VIRTUAL_DATASET_SIZE = 200;
 
   const fetchEquipment = useCallback(async (page: number, limit: number) => {
-    await new Promise(resolve => setTimeout(resolve, 400));
+    await new Promise(resolve => setTimeout(resolve, 400)); // Simulate API delay
 
-    let allEquipment: ProductListing[] = [];
+    // 1. Generate a larger, consistent "virtual" dataset
+    // This dataset is regenerated on each call but will be consistent if inputs to generateDatacenterEquipment are consistent.
+    // For a true backend, this would be a single dataset you query.
+    // Here, we simulate it for each fetch based on current filters potentially changing the "base" data.
+    // However, for this specific implementation, we'll generate it once conceptually per "overall list view".
+    // The key is that filtering/sorting happens on this larger set.
     
-    if (page === 1) {
-      allEquipment = [...INITIAL_EQUIPMENT];
-    }
-    
-    const startId = INITIAL_EQUIPMENT.length + (page - 1) * limit + totalGenerated;
-    const newEquipment = generateDatacenterEquipment(limit, startId);
-    setTotalGenerated(prev => prev + newEquipment.length);
-    
-    allEquipment = [...allEquipment, ...newEquipment];
-    
-    let filteredEquipment = allEquipment;
-    
+    const baseVirtualEquipment = generateDatacenterEquipment(VIRTUAL_DATASET_SIZE, INITIAL_EQUIPMENT.length);
+    const fullVirtualDataset: ProductListing[] = [...INITIAL_EQUIPMENT, ...baseVirtualEquipment];
+
+    // 2. Apply category filtering
+    let processedDataset = fullVirtualDataset;
     if (filterCategory) {
-      filteredEquipment = filteredEquipment.filter(e => e.category === filterCategory);
+      processedDataset = processedDataset.filter(e => e.category === filterCategory);
     }
-    
+
+    // 3. Apply recommended filtering
     if (showRecommended) {
-      filteredEquipment = getRecommendedEquipment(filteredEquipment);
+      processedDataset = getRecommendedEquipment(processedDataset);
     }
-    
-    filteredEquipment.sort((a, b) => {
+
+    // 4. Sort the processed dataset
+    processedDataset.sort((a, b) => {
       switch (sortBy) {
         case 'price-low':
           return (a.price || 0) - (b.price || 0);
@@ -180,21 +182,22 @@ export default function EquipmentPage() {
           return (b.price || 0) - (a.price || 0);
         case 'rating':
           return (b.rating || 0) - (a.rating || 0);
-        default:
+        default: // 'newest'
           return new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime();
       }
     });
-    
+
+    // 5. Slice for pagination
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
-    const items = filteredEquipment.slice(startIndex, endIndex);
-    
+    const items = processedDataset.slice(startIndex, endIndex);
+
     return {
       items,
-      hasMore: endIndex < filteredEquipment.length || page < 10,
-      total: filteredEquipment.length
+      hasMore: endIndex < processedDataset.length,
+      total: processedDataset.length
     };
-  }, [sortBy, filterCategory, showRecommended, totalGenerated]);
+  }, [sortBy, filterCategory, showRecommended]); // totalGenerated removed
 
   const {
     items: equipment,
@@ -210,7 +213,7 @@ export default function EquipmentPage() {
 
   useEffect(() => {
     refresh();
-    setTotalGenerated(0);
+    // setTotalGenerated(0); // Removed as totalGenerated state is removed
   }, [sortBy, filterCategory, showRecommended]);
 
   const marketStats = useMemo(() => {
