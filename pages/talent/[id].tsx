@@ -8,14 +8,10 @@ import useSWR from 'swr';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import type { TalentProfile } from '@/types/talent';
 
-interface TalentProfileBasic {
-  id: string;
-  name: string;
-  bio?: string;
-  skills?: string[];
-  portfolio?: string[];
-}
+// API returns `{ profile: TalentProfile }`; swr will store just the profile
+type TalentProfileResponse = { profile: TalentProfile | null };
 
 // fetcher-like function for handling API responses
 const handleApiResponse = async (res: Response) => {
@@ -38,9 +34,12 @@ const TalentPage: React.FC = () => {
   const router = useRouter();
   const { id } = router.query as { id?: string };
 
-  const { data, error, isLoading } = useSWR<TalentProfileBasic>(
+  const { data, error, isLoading } = useSWR<TalentProfile | null>(
     id ? `/api/talent/${id}` : null,
-    (url: string) => fetch(url).then(handleApiResponse)
+    async (url: string) => {
+      const result: TalentProfileResponse = await fetch(url).then(handleApiResponse);
+      return result.profile;
+    }
   );
 
   if (isLoading || !router.isReady || !id) {
@@ -75,23 +74,23 @@ const TalentPage: React.FC = () => {
   return (
     <>
       <NextSeo
-        title={data.name}
-        description={data.bio ?? undefined} // Ensure description is string or undefined
+        title={data?.full_name}
+        description={data?.bio ?? undefined}
         openGraph={{
           images: undefined,
-          title: data.name,
-          description: data.bio ?? undefined // Ensure description is string or undefined
+          title: data?.full_name,
+          description: data?.bio ?? undefined
         }}
       />
       <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">
         <div className="container mx-auto px-4 space-y-6">
           <div className="flex items-center gap-4">
             <Avatar className="h-20 w-20">
-              <AvatarFallback>{data.name.charAt(0)}</AvatarFallback>
+              <AvatarFallback>{data?.full_name?.charAt(0)}</AvatarFallback>
             </Avatar>
             <div>
               <h1 className="text-3xl font-bold" data-testid="profile-name">
-                {data.name}
+                {data?.full_name}
               </h1>
               {data.bio && <p className="text-zion-slate-light">{data.bio}</p>}
             </div>
