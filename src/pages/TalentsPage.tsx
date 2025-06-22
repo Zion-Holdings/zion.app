@@ -450,6 +450,21 @@ export default function TalentsPage() {
         </motion.div>
       )}
 
+      {hasMore && (
+        <div className="text-center mt-8">
+          {isFetching ? (
+            <Spinner className="mx-auto h-6 w-6" />
+          ) : (
+            <Button onClick={loadMore}>Load More</Button>
+          )}
+          {total !== undefined && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              Showing {talents.length} of {total} professionals
+            </p>
+          )}
+        </div>
+      )}
+
       {/* End of Results */}
       {!hasMore && talents.length > 0 && (
         <motion.div
