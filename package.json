@@ -30,6 +30,7 @@
     "cypress:run": "cypress run --browser electron",
     "audit": "npm audit --production",
     "clean:cache": "node scripts/clean-cache.js",
+    "sitemap": "node scripts/generate-sitemap.mjs",
     "lint:a11y": "vitest run tests/Accessibility.test.tsx",
     "test:axe": "vitest run tests/Accessibility.test.tsx",
     "test:e2e": "cypress run --browser electron",
