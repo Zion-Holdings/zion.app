@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -68,9 +68,27 @@ export default function EquipmentDetail() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
-  
-  // In a real app, this would fetch from an API
-  const equipment = id ? SAMPLE_EQUIPMENT[id] : undefined;
+
+  const equipmentFromSample = id ? SAMPLE_EQUIPMENT[id] : undefined;
+  const [equipment, setEquipment] = useState<EquipmentDetails | undefined>(equipmentFromSample);
+
+  useEffect(() => {
+    if (!id) return;
+    if (equipmentFromSample) {
+      setEquipment(equipmentFromSample);
+      return;
+    }
+    if (typeof window !== 'undefined') {
+      try {
+        const stored = sessionStorage.getItem(`equipment:${id}`);
+        if (stored) {
+          setEquipment(JSON.parse(stored));
+        }
+      } catch {
+        setEquipment(undefined);
+      }
+    }
+  }, [id, equipmentFromSample]);
   
   if (!equipment) {
     return (
