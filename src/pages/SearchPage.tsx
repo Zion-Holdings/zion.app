@@ -13,7 +13,7 @@ import { Loader2 } from "lucide-react";
 
 interface SearchResult {
   id: string;
-  type: "product" | "service" | "talent" | "blog";
+  type: "product" | "service" | "talent" | "blog" | "doc";
   title: string;
   description: string;
 }
@@ -46,10 +46,13 @@ export default function SearchPage() {
   const [loading, setLoading] = useState(false);
   const suggestions: SearchSuggestion[] = generateSearchSuggestions();
 
-  const marketplaceResults = results.filter(r =>
-    r.type === 'product' || r.type === 'service' || r.type === 'talent'
+  const productResults = results.filter(
+    r => r.type === 'product' || r.type === 'service'
   );
+  const talentResults = results.filter(r => r.type === 'talent');
+  const docResults = results.filter(r => r.type === 'doc');
   const blogResults = results.filter(r => r.type === 'blog');
+  const marketplaceResults = [...productResults, ...talentResults];
 
   // Sync query with URL parameter changes
   useEffect(() => {
@@ -137,41 +140,27 @@ export default function SearchPage() {
           <p className="text-zion-slate-light">No results found.</p>
         )}
         {!loading && marketplaceResults.length > 0 && (
-          <Tabs defaultValue="product" className="space-y-4">
+          <Tabs defaultValue="products" className="space-y-4">
             <TabsList className="mb-4">
-              <TabsTrigger value="product">
-                Products ({results.filter((r) => r.type === "product").length})
-              </TabsTrigger>
-              <TabsTrigger value="service">
-                Services ({results.filter((r) => r.type === "service").length})
+              <TabsTrigger value="products">
+                Products ({productResults.length})
               </TabsTrigger>
               <TabsTrigger value="talent">
-                Talent ({results.filter((r) => r.type === "talent").length})
+                Talent ({talentResults.length})
+              </TabsTrigger>
+              <TabsTrigger value="docs">
+                Docs ({docResults.length})
+              </TabsTrigger>
+              <TabsTrigger value="blog">
+                Blog ({blogResults.length})
               </TabsTrigger>
             </TabsList>
-            <TabsContent value="product" className="space-y-4">
+            <TabsContent value="products" className="space-y-4">
               {results
-                .filter((r) => r.type === "product")
+                .filter((r) => r.type === "product" || r.type === "service")
                 .map((r) => (
                   <div
-                    key={`product-${r.id}`}
-                    className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
-                  >
-                    <h3 className="text-lg font-bold text-white">
-                      {highlight(r.title, query)}
-                    </h3>
-                    <p className="text-zion-slate-light">
-                      {highlight(r.description, query)}
-                    </p>
-                  </div>
-                ))}
-            </TabsContent>
-            <TabsContent value="service" className="space-y-4">
-              {results
-                .filter((r) => r.type === "service")
-                .map((r) => (
-                  <div
-                    key={`service-${r.id}`}
+                    key={`${r.type}-${r.id}`}
                     className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
                   >
                     <h3 className="text-lg font-bold text-white">
@@ -189,6 +178,40 @@ export default function SearchPage() {
                 .map((r) => (
                   <div
                     key={`talent-${r.id}`}
+                    className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
+                  >
+                    <h3 className="text-lg font-bold text-white">
+                      {highlight(r.title, query)}
+                    </h3>
+                    <p className="text-zion-slate-light">
+                      {highlight(r.description, query)}
+                    </p>
+                  </div>
+                ))}
+            </TabsContent>
+            <TabsContent value="docs" className="space-y-4">
+              {results
+                .filter((r) => r.type === "doc")
+                .map((r) => (
+                  <div
+                    key={`doc-${r.id}`}
+                    className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
+                  >
+                    <h3 className="text-lg font-bold text-white">
+                      {highlight(r.title, query)}
+                    </h3>
+                    <p className="text-zion-slate-light">
+                      {highlight(r.description, query)}
+                    </p>
+                  </div>
+                ))}
+            </TabsContent>
+            <TabsContent value="blog" className="space-y-4">
+              {results
+                .filter((r) => r.type === "blog")
+                .map((r) => (
+                  <div
+                    key={`blog-${r.id}`}
                     className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-4"
                   >
                     <h3 className="text-lg font-bold text-white">
