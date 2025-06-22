@@ -318,6 +318,21 @@ export default function EquipmentPage() {
         </motion.div>
       )}
 
+      {hasMore && (
+        <div className="text-center mt-8">
+          {isFetching ? (
+            <Spinner className="mx-auto h-6 w-6" />
+          ) : (
+            <Button onClick={loadMore}>Load More</Button>
+          )}
+          {total !== undefined && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              Showing {equipment.length} of {total} items
+            </p>
+          )}
+        </div>
+      )}
+
       {!hasMore && equipment.length > 0 && (
         <motion.div className="text-center mt-12 py-8 border-t" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <div className="text-muted-foreground text-lg mb-2">🏭 You've explored all available equipment!</div>
