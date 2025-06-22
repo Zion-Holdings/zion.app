@@ -1,4 +1,3 @@
-
 import React from 'react';
 // Use the centralized icon wrapper to avoid missing icons
 import { Check, Trash2, ChevronRight } from 'lucide-react';
@@ -6,7 +5,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { formatDistanceToNow } from 'date-fns';
 import { cn } from '@/lib/utils';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { useRouter } from 'next/router';
 import { Notification, NotificationType } from '@/context/notifications';
 
@@ -28,6 +32,8 @@ export const getTypeIcon = (type: NotificationType) => {
       return <span className="text-indigo-400">📌</span>;
     case 'milestone_complete':
       return <span className="text-green-500">🏁</span>;
+    case 'order_status':
+      return <span className="text-orange-500">📦</span>;
     default:
       return <span className="text-gray-500">📣</span>;
   }
@@ -39,10 +45,10 @@ interface NotificationItemProps {
   onDismiss: (id: string) => Promise<void>;
 }
 
-export const NotificationItem: React.FC<NotificationItemProps> = ({ 
-  notification, 
-  onMarkAsRead, 
-  onDismiss 
+export const NotificationItem: React.FC<NotificationItemProps> = ({
+  notification,
+  onMarkAsRead,
+  onDismiss,
 }) => {
   const router = useRouter(); // Changed from useNavigate to useRouter
 
@@ -57,27 +63,35 @@ export const NotificationItem: React.FC<NotificationItemProps> = ({
   };
 
   return (
-    <div 
+    <div
       className={cn(
-        "p-3 border-b border-zion-blue-light relative group",
-        !notification.read ? "bg-zion-blue-dark/30" : ""
+        'p-3 border-b border-zion-blue-light relative group',
+        !notification.read ? 'bg-zion-blue-dark/30' : '',
       )}
     >
       <div className="flex items-start gap-2">
         <div className="text-xl">{getTypeIcon(notification.type)}</div>
         <div className="flex-1">
           <div className="flex justify-between items-center mb-1">
-            <h4 className="font-medium text-white">{notification.title || "Notification"}</h4>
+            <h4 className="font-medium text-white">
+              {notification.title || 'Notification'}
+            </h4>
             {!notification.read && (
               <Badge className="bg-zion-cyan text-xs">New</Badge>
             )}
           </div>
-          <p className="text-sm text-zion-slate-light">{notification.message || "You have a new notification"}</p>
+          <p className="text-sm text-zion-slate-light">
+            {notification.message || 'You have a new notification'}
+          </p>
           <div className="flex justify-between items-center mt-1">
             <p className="text-xs text-zion-slate">
-              {notification.created_at ? formatDistanceToNow(new Date(notification.created_at), { addSuffix: true }) : "Just now"}
+              {notification.created_at
+                ? formatDistanceToNow(new Date(notification.created_at), {
+                    addSuffix: true,
+                  })
+                : 'Just now'}
             </p>
-            
+
             {notification.action_url && notification.action_text && (
               <Button
                 variant="link"
@@ -92,7 +106,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = ({
           </div>
         </div>
       </div>
-      
+
       {/* Action buttons that appear on hover */}
       <div className="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
         <TooltipProvider>
@@ -116,7 +130,7 @@ export const NotificationItem: React.FC<NotificationItemProps> = ({
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
-        
+
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
