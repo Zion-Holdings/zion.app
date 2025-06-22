@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Gift } from 'lucide-react';
-import { useUser } from '@/hooks/useUser';
 import { usePoints } from '@/hooks/usePoints';
 import { useAuth } from '@/hooks/useAuth';
 import Link from 'next/link';
@@ -8,12 +7,11 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { LoginModal } from '@/components/auth/LoginModal';
 
 export function PointsBadge() {
-  const { user } = useUser();
   const { isAuthenticated } = useAuth();
-  const { ledger } = usePoints();
+  const { ledger, balance } = usePoints();
   const [loginOpen, setLoginOpen] = useState(false);
 
-  const points = user?.points ?? 0;
+  const points = balance;
 
   const breakdown = ledger.reduce(
     (acc, e) => {
@@ -39,7 +37,7 @@ export function PointsBadge() {
           <Link
             href={isAuthenticated ? "/points" : "#"}
             onClick={handleClick}
-            title={isAuthenticated ? "View points" : "Earn points by creating an account"}
+            title={isAuthenticated ? "View points" : "Earn points by participating"}
             className="flex items-center gap-1 text-xs text-muted-foreground"
           >
             <Gift className="h-4 w-4" />
@@ -57,7 +55,7 @@ export function PointsBadge() {
               </ul>
             </>
           ) : (
-            <p className="text-sm">Earn points by creating an account</p>
+            <p className="text-sm">Earn points by creating an account, posting, and making purchases</p>
           )}
         </TooltipContent>
       </Tooltip>
