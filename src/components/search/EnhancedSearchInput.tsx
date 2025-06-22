@@ -26,9 +26,11 @@ export function EnhancedSearchInput({
 }: EnhancedSearchInputProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState<SearchSuggestion[]>([]);
-  const [highlightedIndex, setHighlightedIndex] = useState<number>(-1); // Added state for highlighted index
+  const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [valueOnFocus, setValueOnFocus] = useState<string | null>(null);
+  const [enterHandledPostFocus, setEnterHandledPostFocus] = useState(false);
 
   const debouncedFilterSuggestions = useCallback(
     debounce((currentValue: string, suggestions: SearchSuggestion[]) => {
@@ -68,6 +70,7 @@ export function EnhancedSearchInput({
     function handleClickOutside(event: MouseEvent) {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
         setIsFocused(false);
+        // setHighlightedIndex(-1); // Already handled in onBlur generally
       }
     }
     
@@ -86,41 +89,46 @@ export function EnhancedSearchInput({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    // Suggestions are not visible or no suggestions available
-    if (!isFocused || filteredSuggestions.length === 0) {
-      if (e.key === 'Escape') { // Still allow escape to blur if no suggestions but focused
-        e.preventDefault();
-        setIsFocused(false);
-        setHighlightedIndex(-1);
-        inputRef.current?.blur();
-      }
-      // For Enter, let default form submission happen if suggestions are not visible/available
-      return;
+    if (!isFocused && e.key !== 'Escape') {
+        return;
     }
 
     switch (e.key) {
       case 'ArrowDown':
-        e.preventDefault();
-        setHighlightedIndex(prev => (prev + 1) % filteredSuggestions.length);
+        if (filteredSuggestions.length > 0) {
+          e.preventDefault();
+          setHighlightedIndex(prev => (prev + 1) % filteredSuggestions.length);
+        }
         break;
       case 'ArrowUp':
-        e.preventDefault();
-        setHighlightedIndex(prev => (prev - 1 + filteredSuggestions.length) % filteredSuggestions.length);
+        if (filteredSuggestions.length > 0) {
+          e.preventDefault();
+          setHighlightedIndex(prev => (prev - 1 + filteredSuggestions.length) % filteredSuggestions.length);
+        }
         break;
       case 'Enter':
         if (highlightedIndex !== -1 && filteredSuggestions[highlightedIndex]) {
-          e.preventDefault();
+          e.preventDefault(); // Prevent form submission
           handleSelectSuggestion(filteredSuggestions[highlightedIndex]);
+        } else {
+          // No suggestion selected. Default is form submission.
+          if (value === valueOnFocus && !enterHandledPostFocus) {
+            e.preventDefault(); // Prevent this submission if value hasn't changed since focus
+            setEnterHandledPostFocus(true); // Mark that we've handled (blocked) one Enter.
+          }
+          // Otherwise, allow form submission (no e.preventDefault()).
         }
-        // If highlightedIndex is -1, default form submission is allowed (no e.preventDefault())
         break;
       case 'Escape':
         e.preventDefault();
         setIsFocused(false);
         setHighlightedIndex(-1);
+        setValueOnFocus(null);
         inputRef.current?.blur();
         break;
       default:
+        // For other keys (character input), reset enterHandledPostFocus
+        setEnterHandledPostFocus(false);
         break;
     }
   };
@@ -144,23 +152,25 @@ export function EnhancedSearchInput({
           value={value}
           onChange={(e) => {
             onChange(e.target.value);
-            // Potentially show suggestions again if user types after clearing or selecting
-            // However, debouncedFilterSuggestions already handles showing suggestions based on value
+            setEnterHandledPostFocus(false);
           }}
           onFocus={(e) => {
             setIsFocused(true);
-            // Ensure proper cursor position
-            e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+            setHighlightedIndex(-1); // Explicitly reset on focus
+            const currentVal = e.target.value;
+            setValueOnFocus(currentVal);
+            setEnterHandledPostFocus(false);
+            e.target.setSelectionRange(currentVal.length, currentVal.length);
           }}
           onBlur={(e) => {
-            // Only blur if not interacting with suggestions
             const relatedTarget = e.relatedTarget as HTMLElement;
-            if (!relatedTarget || !containerRef.current?.contains(relatedTarget)) {
+            if (!containerRef.current || !containerRef.current.contains(relatedTarget as Node)) {
               setIsFocused(false);
               setHighlightedIndex(-1);
             }
+            setValueOnFocus(null);
           }}
-          onKeyDown={handleKeyDown} // Attached keydown handler
+          onKeyDown={handleKeyDown}
           placeholder={placeholder}
           className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate h-auto py-0 min-w-0"
           aria-autocomplete="list"
