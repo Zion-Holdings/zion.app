@@ -65,7 +65,24 @@ const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
 
 // Filter controls
 const EquipmentFilterControls = ({
-  sortBy, setSortBy, filterCategory, setFilterCategory, categories, showRecommended, setShowRecommended, loading
+  sortBy,
+  setSortBy,
+  filterCategory,
+  setFilterCategory,
+  categories,
+  priceRange,
+  setPriceRange,
+  filterBrand,
+  setFilterBrand,
+  brandOptions,
+  filterAvailability,
+  setFilterAvailability,
+  availabilityOptions,
+  minRating,
+  setMinRating,
+  showRecommended,
+  setShowRecommended,
+  loading
 }: any) => (
   <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">
     {loading && <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />}
@@ -83,6 +100,65 @@ const EquipmentFilterControls = ({
         <option value="price-low">Price: Low to High</option>
         <option value="price-high">Price: High to Low</option>
         <option value="rating">Highest Rated</option>
+      </select>
+    </div>
+    <div className="flex items-center gap-2">
+      <span className="text-sm">$</span>
+      <input
+        type="number"
+        value={priceRange[0]}
+        onChange={(e) => setPriceRange([Number(e.target.value), priceRange[1]])}
+        className="w-20 bg-background border border-border px-2 py-1 rounded"
+      />
+      <span>-</span>
+      <input
+        type="number"
+        value={priceRange[1]}
+        onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
+        className="w-20 bg-background border border-border px-2 py-1 rounded"
+      />
+    </div>
+    {brandOptions.length > 0 && (
+      <div className="flex items-center gap-2">
+        <select
+          value={filterBrand}
+          onChange={(e) => setFilterBrand(e.target.value)}
+          className="bg-background border border-border px-3 py-2 rounded"
+        >
+          <option value="">All Brands</option>
+          {brandOptions.map((b: string) => (
+            <option key={b} value={b}>{b}</option>
+          ))}
+        </select>
+      </div>
+    )}
+    {availabilityOptions.length > 0 && (
+      <div className="flex items-center gap-2">
+        <select
+          value={filterAvailability}
+          onChange={(e) => setFilterAvailability(e.target.value)}
+          className="bg-background border border-border px-3 py-2 rounded"
+        >
+          <option value="">Any Availability</option>
+          {availabilityOptions.map((a: string) => (
+            <option key={a} value={a}>{a}</option>
+          ))}
+        </select>
+      </div>
+    )}
+    <div className="flex items-center gap-2">
+      <span className="text-sm">Rating ≥</span>
+      <select
+        value={minRating}
+        onChange={(e) => setMinRating(Number(e.target.value))}
+        className="bg-background border border-border px-2 py-1 rounded"
+      >
+        <option value={0}>Any</option>
+        <option value={5}>5</option>
+        <option value={4}>4</option>
+        <option value={3}>3</option>
+        <option value={2}>2</option>
+        <option value={1}>1</option>
       </select>
     </div>
     <Button variant={showRecommended ? "default" : "outline"} size="sm" onClick={() => setShowRecommended(!showRecommended)}>
@@ -144,6 +220,10 @@ export default function EquipmentPage() {
   const router = useRouter();
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 200000]);
+  const [filterBrand, setFilterBrand] = useState('');
+  const [filterAvailability, setFilterAvailability] = useState('');
+  const [minRating, setMinRating] = useState(0);
   const [showRecommended, setShowRecommended] = useState(false);
   const [totalGenerated, setTotalGenerated] = useState(0);
 
@@ -163,11 +243,28 @@ export default function EquipmentPage() {
     allEquipment = [...allEquipment, ...newEquipment];
     
     let filteredEquipment = allEquipment;
-    
+
     if (filterCategory) {
       filteredEquipment = filteredEquipment.filter(e => e.category === filterCategory);
     }
-    
+
+    if (filterBrand) {
+      filteredEquipment = filteredEquipment.filter(e => e.brand === filterBrand);
+    }
+
+    if (filterAvailability) {
+      filteredEquipment = filteredEquipment.filter(e => e.availability === filterAvailability);
+    }
+
+    filteredEquipment = filteredEquipment.filter(e => {
+      const price = e.price || 0;
+      return price >= priceRange[0] && price <= priceRange[1];
+    });
+
+    if (minRating > 0) {
+      filteredEquipment = filteredEquipment.filter(e => (e.rating || 0) >= minRating);
+    }
+
     if (showRecommended) {
       filteredEquipment = getRecommendedEquipment(filteredEquipment);
     }
@@ -194,7 +291,7 @@ export default function EquipmentPage() {
       hasMore: endIndex < filteredEquipment.length || page < 10,
       total: filteredEquipment.length
     };
-  }, [sortBy, filterCategory, showRecommended, totalGenerated]);
+  }, [sortBy, filterCategory, filterBrand, filterAvailability, priceRange, minRating, showRecommended, totalGenerated]);
 
   const {
     items: equipment,
@@ -211,7 +308,7 @@ export default function EquipmentPage() {
   useEffect(() => {
     refresh();
     setTotalGenerated(0);
-  }, [sortBy, filterCategory, showRecommended]);
+  }, [sortBy, filterCategory, filterBrand, filterAvailability, priceRange, minRating, showRecommended]);
 
   const marketStats = useMemo(() => {
     if (equipment.length === 0) return null;
@@ -220,6 +317,23 @@ export default function EquipmentPage() {
 
   const categories = useMemo(() => {
     return Array.from(new Set(equipment.map(e => e.category).filter(Boolean)));
+  }, [equipment]);
+
+  const brandOptions = useMemo(() => {
+    return Array.from(new Set(equipment.map(e => e.brand).filter(Boolean)));
+  }, [equipment]);
+
+  const availabilityOptions = useMemo(() => {
+    return Array.from(new Set(equipment.map(e => e.availability).filter(Boolean)));
+  }, [equipment]);
+
+  useEffect(() => {
+    if (equipment.length > 0 && priceRange[0] === 0 && priceRange[1] === 200000) {
+      const prices = equipment.map(e => e.price || 0);
+      const min = Math.min(...prices);
+      const max = Math.max(...prices);
+      setPriceRange([min, max]);
+    }
   }, [equipment]);
 
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -277,6 +391,16 @@ export default function EquipmentPage() {
           filterCategory={filterCategory}
           setFilterCategory={setFilterCategory}
           categories={categories}
+          priceRange={priceRange}
+          setPriceRange={setPriceRange}
+          filterBrand={filterBrand}
+          setFilterBrand={setFilterBrand}
+          brandOptions={brandOptions}
+          filterAvailability={filterAvailability}
+          setFilterAvailability={setFilterAvailability}
+          availabilityOptions={availabilityOptions}
+          minRating={minRating}
+          setMinRating={setMinRating}
           showRecommended={showRecommended}
           setShowRecommended={setShowRecommended}
           loading={isFetching}
