@@ -6,7 +6,7 @@ interface HealthCheckResult {
   timestamp: string;
   environment: string;
   services: {
-    supabase: {
+    auth0: {
       configured: boolean;
       status: 'ok' | 'warning' | 'error';
       details?: string;
@@ -51,22 +51,22 @@ export default async function handler(
   const warnings: string[] = [];
   const errors: string[] = [];
   
-  // Check Supabase configuration
-  const supabaseConfigured = ENV_CONFIG.supabase.isConfigured;
-  const supabaseUrlValid = !checkPlaceholder(ENV_CONFIG.supabase.url);
-  const supabaseKeyValid = !checkPlaceholder(ENV_CONFIG.supabase.anonKey);
+  // Check Auth0 configuration
+  const auth0Configured = process.env.AUTH0_CLIENT_ID && process.env.AUTH0_CLIENT_SECRET && process.env.AUTH0_SECRET && process.env.AUTH0_BASE_URL && process.env.AUTH0_ISSUER_BASE_URL;
+  const auth0ClientIdValid = !checkPlaceholder(process.env.AUTH0_CLIENT_ID);
+  const auth0SecretValid = !checkPlaceholder(process.env.AUTH0_SECRET);
   
-  let supabaseStatus: 'ok' | 'warning' | 'error' = 'ok';
-  let supabaseDetails = '';
+  let auth0Status: 'ok' | 'warning' | 'error' = 'ok';
+  let auth0Details = '';
   
-  if (!supabaseConfigured) {
-    supabaseStatus = 'error';
-    supabaseDetails = 'Supabase not configured - authentication will fail';
-    errors.push('Supabase configuration missing');
-  } else if (!supabaseUrlValid || !supabaseKeyValid) {
-    supabaseStatus = 'error';
-    supabaseDetails = 'Supabase credentials appear to be placeholders';
-    errors.push('Supabase credentials are placeholder values');
+  if (!auth0Configured) {
+    auth0Status = 'error';
+    auth0Details = 'Auth0 not configured - authentication will fail';
+    errors.push('Auth0 configuration missing');
+  } else if (!auth0ClientIdValid || !auth0SecretValid) {
+    auth0Status = 'error';
+    auth0Details = 'Auth0 credentials appear to be placeholders';
+    errors.push('Auth0 credentials are placeholder values');
   }
   
   // Check Sentry configuration
@@ -89,10 +89,10 @@ export default async function handler(
   let authDetails = '';
   
   try {
-    // Simple check - if supabase is not configured, auth will fail
-    if (!supabaseConfigured) {
+    // Simple check - if auth0 is not configured, auth will fail
+    if (!auth0Configured) {
       authStatus = 'error';
-      authDetails = 'Authentication unavailable due to missing Supabase configuration';
+      authDetails = 'Authentication unavailable due to missing Auth0 configuration';
     }
   } catch (error) {
     authStatus = 'error';
@@ -114,10 +114,10 @@ export default async function handler(
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'unknown',
     services: {
-      supabase: {
-        configured: supabaseConfigured,
-        status: supabaseStatus,
-        details: supabaseDetails || undefined
+      auth0: {
+        configured: !!auth0Configured,
+        status: auth0Status,
+        details: auth0Details || undefined
       },
       sentry: {
         configured: sentryConfigured,
