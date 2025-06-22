@@ -37,7 +37,7 @@ import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 import { validateProductionEnvironment, initializeServices } from '@/utils/environmentConfig';
 import { initializePerformanceOptimizations } from '@/utils/performance';
 import '@/utils/globalFetchInterceptor';
-import { UserProvider } from '@auth0/nextjs-auth0/client';
+import { Auth0Provider } from '@auth0/nextjs-auth0';
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
@@ -208,7 +208,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <ReduxProvider store={store}>
                       <HelmetProvider>
                         <ErrorProvider>
-                          <UserProvider>
+                          <Auth0Provider>
                             <AuthProvider>
                               <WhitelabelProvider>
                                 <I18nextProvider i18n={i18n}>
@@ -234,7 +234,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                 </I18nextProvider>
                               </WhitelabelProvider>
                             </AuthProvider>
-                          </UserProvider>
+                          </Auth0Provider>
                         </ErrorProvider>
                       </HelmetProvider>
                     </ReduxProvider>
