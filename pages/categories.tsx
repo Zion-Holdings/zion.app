@@ -4,6 +4,14 @@ import { CATEGORIES } from '@/data/categories'; // Import CATEGORIES
 
 export const getStaticProps: GetStaticProps<CategoriesProps> = async () => {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  const isBuildTime = process.env.NETLIFY || process.env.NODE_ENV === 'production' && !process.env.RUNTIME_ENVIRONMENT;
+  
+  // During build time, skip API fetch and use static data
+  if (isBuildTime || appUrl.includes('localhost')) {
+    console.log('Build time detected, using static categories data.');
+    return { props: { categories: CATEGORIES } };
+  }
+
   console.log(`Fetching categories from: ${appUrl}/api/categories`);
 
   try {
