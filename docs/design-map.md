@@ -5,7 +5,7 @@ This design map provides a Figma-compatible outline for the Zion OS ecosystem. E
 ## 1. Foundations
 ### Color System
 - `zion-blue` (`#2e73ea`, light `#8ab1f3`, dark `#172d67`)
-- `zion-purple` (`#8c15e9`, light `#b971f2`, dark `#530c8b`)
+- `zion-purple` (`#a855f7`, light `#c084fc`, dark `#6b21a8`)
 - `zion-cyan` (`#22ddd2`, light `#7aeae4`, dark `#14847e`)
 - `zion-slate` (`#17072b`, light `#451582`, dark `#000000`)
 - Primary/secondary variables from `src/index.css`

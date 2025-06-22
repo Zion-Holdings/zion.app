@@ -223,7 +223,7 @@ export function ApiKeysManager() {
                   
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon">
+                      <Button variant="ghost" size="icon" aria-label="More options">
                         <MoreVertical size={16} />
                       </Button>
                     </DropdownMenuTrigger>

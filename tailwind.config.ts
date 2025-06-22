@@ -65,9 +65,9 @@ const config: Config = {
           dark: "#172d67",
         },
         "zion-purple": {
-          DEFAULT: "#8c15e9",
-          light: "#b971f2",
-          dark: "#530c8b",
+          DEFAULT: "#a855f7",
+          light: "#c084fc",
+          dark: "#6b21a8",
         },
         "zion-cyan": {
           DEFAULT: "#0d9488",

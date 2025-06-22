@@ -20,6 +20,7 @@ export const SkillItem = ({ skill, category, onDelete }: SkillItemProps) => {
         size="icon"
         className="h-5 w-5 p-0 ml-1"
         onClick={() => onDelete(skill.id!, category)}
+        aria-label="Delete skill"
       >
         <Trash2 className="h-3 w-3" />
       </Button>

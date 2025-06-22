@@ -35,6 +35,7 @@ export function EducationItem({ education, onEdit, onDelete }: EducationItemProp
               variant="ghost"
               size="icon"
               onClick={() => onEdit(education)}
+              aria-label="Edit education"
             >
               <Edit className="h-4 w-4" />
             </Button>
@@ -42,6 +43,7 @@ export function EducationItem({ education, onEdit, onDelete }: EducationItemProp
               variant="ghost"
               size="icon"
               onClick={() => onDelete(education.id!)}
+              aria-label="Delete education"
             >
               <Trash2 className="h-4 w-4" />
             </Button>
