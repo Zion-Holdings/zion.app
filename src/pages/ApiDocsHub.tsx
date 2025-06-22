@@ -31,7 +31,7 @@ export function ApiDocsHub() {
       title: "Sample Code",
       description: "Examples in JavaScript, Python, and Node.js",
       icon: Zap,
-      path: "/developers/docs/samples",
+      path: "/docs/sample-code",
       color: "from-yellow-500 to-orange-500",
     },
     {

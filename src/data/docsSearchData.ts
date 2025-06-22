@@ -23,7 +23,7 @@ export const DOCS_SEARCH_ITEMS: DocsSearchItem[] = [
   {
     text: "Sample Code",
     type: "doc",
-    path: "/developers/docs/samples",
+    path: "/docs/sample-code",
   },
   {
     text: "Error Codes & Rate Limits",
