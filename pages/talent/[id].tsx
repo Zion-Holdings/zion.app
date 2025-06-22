@@ -49,7 +49,12 @@ const TalentPage: React.FC = () => {
 
   // Specific 404 error from API
   if (error && (error as any).status === 404) {
-    return <NotFound />;
+    return (
+      <>
+        <NextSeo title="Talent Not Found" description="Talent profile unavailable" />
+        <NotFound />
+      </>
+    );
   }
 
   // Other errors (non-404)
@@ -68,7 +73,12 @@ const TalentPage: React.FC = () => {
   // API call was successful (no error thrown) but no profile found
   // This also implies !isLoading at this point.
   if (!data) {
-    return <NotFound />;
+    return (
+      <>
+        <NextSeo title="Talent Not Found" description="Talent profile unavailable" />
+        <NotFound />
+      </>
+    );
   }
 
   // If we reach here, talent data is available
