@@ -14,7 +14,7 @@ import { CartProvider } from '@/context/CartContext'; // Added CartProvider
 import { ErrorProvider } from '@/context/ErrorContext';
 import ErrorResetOnRouteChange from '@/components/ErrorResetOnRouteChange';
 import { I18nextProvider } from 'react-i18next';
-import i18n from '@/i18next';
+import i18n from '@/i18n';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { Toaster } from '@/components/ui/toaster';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
