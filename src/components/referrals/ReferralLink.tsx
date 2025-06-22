@@ -39,7 +39,7 @@ export function ReferralLink({ referralLink, onCopy, onShare }: ReferralLinkProp
               readOnly
               className="font-mono text-sm"
             />
-            <Button variant="outline" size="icon" onClick={handleCopy}>
+            <Button variant="outline" size="icon" onClick={handleCopy} aria-label="Copy referral link">
               <Copy className="h-4 w-4" />
               <span className="sr-only">Copy</span>
             </Button>
