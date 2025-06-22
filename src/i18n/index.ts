@@ -3,10 +3,12 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { safeStorage } from '../utils/safeStorage';
+import { setCookie } from '../utils/cookies';
 
 import enTranslation from './locales/en/translation.json';
 import esTranslation from './locales/es/translation.json';
 import ptTranslation from './locales/pt/translation.json';
+import frTranslation from './locales/fr/translation.json';
 import arTranslation from './locales/ar/translation.json';
 
 if (!i18n) {
@@ -24,6 +26,9 @@ if (!i18n) {
       es: {
         translation: esTranslation
       },
+      fr: {
+        translation: frTranslation
+      },
       pt: {
         translation: ptTranslation
       },
@@ -37,9 +42,9 @@ if (!i18n) {
       escapeValue: false, // React already escapes by default
     },
     detection: {
-      // Avoid using localStorage directly to prevent cross-context errors
-      order: ['navigator'],
-      caches: []
+      order: ['cookie', 'navigator'],
+      lookupCookie: 'i18n_lang',
+      caches: ['cookie'],
     },
   })
   .catch(error => {
@@ -56,7 +61,8 @@ if (!i18n) {
     i18n.on('languageChanged', (lng) => {
       document.documentElement.dir = i18n.dir();
 
-      // Save language preference to localStorage
+      // Save language preference to cookie and localStorage
+      setCookie('i18n_lang', lng);
       safeStorage.setItem('i18n_lang', lng);
 
       // If user is authenticated, save language preference to profile
