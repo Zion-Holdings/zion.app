@@ -225,120 +225,112 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ user, account, profile }) {
       // For OAuth providers (Google, Facebook, GitHub, Microsoft)
-      if (account && profile && user.email) {
+      if (account && profile && user.email) { // Ensure user.email is present
         try {
-          console.log(`OAuth signIn callback: User email ${user.email}, Provider: ${account.provider}`);
+          console.log(`OAuth signIn: User email ${user.email}, Provider: ${account.provider}`);
+          let supabaseUserIdToUse: string | null = null;
 
-          // 1. Check if user exists in Supabase auth.users by email
-          // Note: Supabase client SDK doesn't have a direct "getUserByEmail" for admin purposes.
-          // We'll query the 'profiles' table, assuming email in profiles is linked to auth.users.email
-          // or that email is a reliable unique identifier to find the profile and thus the user_id.
-          // This assumes 'profiles' table has an 'email' column or user_id links to auth.users which has email.
-
-          // Let's refine the lookup: Query 'profiles' for a 'user_id' that links to an 'auth.users' with this email.
-          // This is a bit indirect. A direct `rpc` call or a view might be better in a real scenario if email isn't on profiles.
-          // For now, let's assume we can find the profile via email, or we create one.
-
-          let supabaseUserId: string | null = null;
-
-          // Attempt to find user by email in 'auth.users' via a profile lookup
-          // This part is tricky with client SDK if email is not directly queryable in a public table
-          // or if we don't want to expose emails in 'profiles'.
-          // The WalletConnectProvider uses a custom 'wallet_address' column.
-          // For OAuth, email is the common link.
-
-          // Option A: Query 'profiles' if it has an email field (denormalized, but makes this query easy)
-          // const { data: profileByEmail, error: emailError } = await supabase
-          //   .from('profiles')
-          //   .select('*, user_id (id, email)') // Adjust if user_id is just the UUID string
-          //   .eq('email', user.email) // Assuming 'profiles.email' exists
-          //   .single();
-
-          // Option B: More robustly, assume we might need to create or link.
-          // Let's try to get the user from Supabase auth directly if possible,
-          // though this usually requires admin privileges for arbitrary lookups.
-          // Supabase client `signInWithPassword` implicitly finds user by email.
-          // For OAuth, Supabase itself would handle this if it were the primary OAuth handler.
-          // Since NextAuth is the handler, we need to bridge.
-
-          // Simplified: Check if a profile exists linked to an auth.user with this email.
-          // This requires a way to query auth.users or a table linked to it.
-          // Let's assume 'profiles' table has 'user_id' (FK to auth.users.id)
-          // and we need to get the user from auth.users first, then check profiles.
-          // This logic is becoming complex and might be better handled by Supabase Edge Functions or specific db functions.
-
-          // Fallback to a pattern similar to WalletConnect if email is the key.
-          // 1. Try to find an auth.user by email. This is the difficult part with client SDK.
-          //    Supabase doesn't expose a direct "get user by email" for client-side without logging them in.
-          //    This typically requires admin rights.
-          //
-          //    Let's assume we have to create a user if we can't find one,
-          //    and Supabase's own RLS/unique constraints on `auth.users.email` will prevent duplicates.
-
-          // For OAuth sign-in, we'll create users and handle duplicates gracefully
-          // Since we can't easily check if user exists, we'll attempt to create and handle errors
-          console.log(`OAuth signIn: Creating/updating Supabase user for ${user.email}`);
-
-            // Using a strong random password as it's required by signUp
-            const randomPassword = Math.random().toString(36).slice(-16) + Math.random().toString(36).slice(-16);
-            const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
-              email: user.email,
-              password: randomPassword,
-              options: {
-                data: { // metadata for auth.users.raw_user_meta_data
-                  display_name: user.name,
-                  avatar_url: user.image,
-                  // provider: account.provider // good to store which provider was used
-                }
+          // Attempt to sign up the user. This also serves as a way to check if they exist.
+          const randomPassword = Math.random().toString(36).slice(-12); // Reduced length, still random
+          const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+            email: user.email,
+            password: randomPassword, // Supabase requires a password for signUp
+            options: {
+              data: { // Metadata for auth.users.raw_user_meta_data
+                display_name: user.name,
+                avatar_url: user.image,
+                provider: account.provider,
               }
-            });
-
-            if (signUpError) {
-              // This could fail if email already exists but our initial lookup failed (e.g. RLS issues)
-              console.error(`OAuth signIn: Supabase signUp error for ${user.email}:`, signUpError.message);
-              // Check if error is because user already exists (e.g. "User already registered")
-              if (signUpError.message.includes("already registered")) {
-                console.log(`OAuth signIn: User already exists for ${user.email}, proceeding with sign-in`);
-                // User already exists, we can proceed as this is not an error for OAuth flow
-                // The user ID will be handled by NextAuth's normal flow
-                return true;
-              } else {
-                throw new Error(`User creation failed: ${signUpError.message}`);
-              }
-            } else if (signUpData.user) {
-              supabaseUserId = signUpData.user.id;
-              console.log(`OAuth signIn: New Supabase auth user ${supabaseUserId} created for ${user.email}`);
-              
-              // Create profile (optional, non-blocking)
-              try {
-                await supabase.from('profiles').insert({
-                  user_id: supabaseUserId,
-                  display_name: user.name,
-                  avatar_url: user.image,
-                });
-                console.log(`OAuth signIn: Profile created for user ${supabaseUserId}`);
-              } catch (profileError) {
-                console.warn(`OAuth signIn: Could not create profile for ${supabaseUserId}:`, profileError);
-                // Non-blocking error
-              }
-
-              // Set the user ID for NextAuth
-              user.id = supabaseUserId;
-            } else {
-              console.error(`OAuth signIn: Supabase signUp for ${user.email} did not return user data.`);
-              throw new Error('User creation failed: No user data returned from signUp.');
             }
+          });
 
-          return true; // Continue with NextAuth sign-in
+          if (signUpError) {
+            const errorStatus = (signUpError as any).status; // Supabase errors often have a status
+            if (signUpError.message.includes("User already registered") ||
+                signUpError.message.includes("user_already_exists") ||
+                (errorStatus === 400 && signUpError.message.includes("already exists")) || // More specific check for some Supabase versions
+                (errorStatus === 422 && signUpError.message.includes("already exists")) // Another possible error for existing user
+            ) {
+              console.log(`OAuth signIn: User ${user.email} already registered in Supabase auth.`);
+              // User exists. Try to get their Supabase ID by checking current Supabase session.
+              // This relies on Supabase potentially establishing a session during its part of OAuth flow,
+              // even if NextAuth is the primary handler.
+              const { data: { user: supabaseUserAfterPossibleImplicitLogin } } = await supabase.auth.getUser();
+              if (supabaseUserAfterPossibleImplicitLogin && supabaseUserAfterPossibleImplicitLogin.email === user.email) {
+                console.log(`OAuth signIn: Found active Supabase session for ${user.email}, ID: ${supabaseUserAfterPossibleImplicitLogin.id}`);
+                supabaseUserIdToUse = supabaseUserAfterPossibleImplicitLogin.id;
+                // Ensure profile is up-to-date for existing user
+                try {
+                    await supabase.from('profiles').upsert({
+                        id: supabaseUserIdToUse,
+                        display_name: user.name,
+                        avatar_url: user.image,
+                    }, { onConflict: 'id' });
+                    console.log(`OAuth signIn: Profile upserted for existing user ${supabaseUserIdToUse}`);
+                } catch (profileError: any) {
+                    console.warn(`OAuth signIn: Could not upsert profile for existing user ${supabaseUserIdToUse}:`, profileError.message);
+                    Sentry.captureException(profileError, { extra: { email: user.email, supabaseUserId: supabaseUserIdToUse, flow: 'profileUpsertErrorExistingUser' } });
+                }
+
+              } else {
+                console.error(`OAuth signIn: User ${user.email} exists in Supabase auth, but could not retrieve Supabase ID via current session. This may indicate an incomplete OAuth link or session issue.`);
+                Sentry.captureMessage("OAuthExistingUserSupabaseIDMissing", { extra: { email: user.email, provider: account.provider }});
+                return false; // Block login if Supabase ID cannot be confirmed for existing user.
+              }
+            } else { // Other signUp error not related to user already existing
+              console.error(`OAuth signIn: Supabase signUp error for ${user.email}:`, signUpError.message, signUpError);
+              Sentry.captureException(signUpError, { extra: { email: user.email, provider: account.provider, flow: 'signUpErrorNotExisting' } });
+              return false; // Block login for other signUp errors
+            }
+          } else if (signUpData && signUpData.user) { // New user signed up successfully
+            supabaseUserIdToUse = signUpData.user.id;
+            console.log(`OAuth signIn: New Supabase auth user ${supabaseUserIdToUse} created for ${user.email}`);
+            try {
+              // Ensure profile is created for new user
+              const { error: profileInsertError } = await supabase
+                .from('profiles')
+                .insert({ // Use insert for new user, though upsert would also work if ID is unique
+                  id: supabaseUserIdToUse, // This is auth.users.id
+                  display_name: user.name,
+                  avatar_url: user.image,
+                  // email: user.email, // Only if 'profiles' table has an email column and you want to store it there
+                });
+
+              if (profileInsertError) {
+                console.warn(`OAuth signIn: Could not create profile for new user ${supabaseUserIdToUse}:`, profileInsertError.message);
+                Sentry.captureException(profileInsertError, { extra: { email: user.email, supabaseUserId: supabaseUserIdToUse, flow: 'profileInsertErrorNewUser' } });
+                // Depending on requirements, this could be a blocking error. Original logic was non-blocking.
+                // For now, let's keep it non-blocking but logged.
+              } else {
+                console.log(`OAuth signIn: Profile created for new user ${supabaseUserIdToUse}`);
+              }
+            } catch (e: any) {
+                console.warn(`OAuth signIn: Exception during profile insert for new user ${supabaseUserIdToUse}:`, e.message);
+                Sentry.captureException(e, { extra: { email: user.email, supabaseUserId: supabaseUserIdToUse, flow: 'profileInsertExceptionNewUser' } });
+            }
+          } else { // No signUpData.user and no specific signUpError handled (should be rare)
+            console.error(`OAuth signIn: Supabase signUp for ${user.email} did not return user data and no recognized error.`);
+            Sentry.captureMessage("OAuthUnknownSignUpBehavior", { extra: { email: user.email, provider: account.provider }});
+            return false; // Block login
+          }
+
+          if (!supabaseUserIdToUse) {
+            console.error(`OAuth signIn: Supabase User ID could not be determined for ${user.email}. Blocking sign-in.`);
+            Sentry.captureMessage("OAuthSupabaseIDDeterminationFailed", { extra: { email: user.email, provider: account.provider }});
+            return false;
+          }
+
+          user.id = supabaseUserIdToUse; // CRITICAL: Ensure NextAuth user object gets the Supabase ID
+          console.log(`OAuth signIn: Successfully processed ${user.email}, Supabase ID ${user.id}. Allowing sign-in.`);
+          return true; // Allow NextAuth sign-in to proceed
+
         } catch (error: any) {
-          console.error(`OAuth signIn: Critical error during Supabase user sync for ${user.email}:`, error.message);
-          Sentry.captureException(error, { extra: { email: user.email, provider: account.provider } });
-          // Returning false will stop the sign-in.
-          // Alternatively, redirect to an error page: return '/auth/error?error=OAuthSupabaseSyncFailed';
-          return false;
+          console.error(`OAuth signIn: Outer catch block error for ${user.email || 'unknown user'}:`, error.message, error);
+          Sentry.captureException(error, { extra: { email: user.email, provider: account?.provider, flow: 'signInOuterCatch' } });
+          return false; // Block login on any other critical error
         }
       }
-      // For other providers (Credentials, WalletConnect), their authorize methods handle Supabase interaction.
+      // For Credentials and WalletConnect, their authorize methods should have set user.id to Supabase ID.
       return true; // Allow other sign-in methods to proceed
     },
     async jwt({ token, user, account, profile }) {

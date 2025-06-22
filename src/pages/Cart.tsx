@@ -11,36 +11,25 @@ import {
 } from '@/store/cartSlice';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
 import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
-import { CartItem as CartItemType } from '@/types/cart';
-import { safeStorage } from '@/utils/safeStorage';
+// CartItemType is already imported via RootState from cartSlice which uses CartItem from @/types/cart
+// import { CartItem as CartItemType } from '@/types/cart';
+// safeStorage is no longer needed here for reading
+// import { safeStorage } from '@/utils/safeStorage';
 import { getStripe } from '@/utils/getStripe';
 import { useTranslation } from 'react-i18next';
 
 export default function CartPage() {
   const { t } = useTranslation();
-  const reduxItems = useSelector((s: RootState) => s.cart.items);
-  const [items, setItems] = useState<CartItemType[]>(reduxItems);
+  // items directly from Redux store is the source of truth
+  const items = useSelector((s: RootState) => s.cart.items);
   const dispatch = useDispatch<AppDispatch>();
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
   const [guestOpen, setGuestOpen] = useState(false);
 
-  useEffect(() => {
-    if (reduxItems.length > 0) {
-      setItems(reduxItems);
-    } else {
-      const stored = safeStorage.getItem('zion_cart');
-      if (stored) {
-        try {
-          setItems(JSON.parse(stored) as CartItemType[]);
-        } catch {
-          setItems([]);
-        }
-      } else {
-        setItems([]);
-      }
-    }
-  }, [reduxItems]);
+  // Removed useEffect that was syncing reduxItems to a local 'items' state
+  // and attempting to load from localStorage.
+  // The 'items' constant above now directly uses the Redux state.
 
   const updateQuantity = (id: string, qty: number) => {
     dispatch(updateQuantityAction({ id, quantity: qty }));
@@ -56,6 +45,7 @@ export default function CartPage() {
       const stripe = await getStripe();
       if (!stripe) throw new Error('Stripe.js failed to load');
 
+      // Ensure 'items' passed to backend are from Redux state
       const { data } = await axios.post('/api/checkout-session', {
         cartItems: items,
         customer_email: details?.email || user?.email,
