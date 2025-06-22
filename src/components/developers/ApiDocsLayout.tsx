@@ -24,7 +24,7 @@ export function ApiDocsLayout({ children }: ApiDocsLayoutProps) {
    { title: "Getting Started", path: "/developers/docs/getting-started" },
     { title: "API Reference", path: "/developers/docs/reference" },
     { title: "Webhooks", path: "/developers/docs/webhooks" },
-    { title: "Sample Code", path: "/developers/docs/samples" },
+    { title: "Sample Code", path: "/docs/sample-code" },
     { title: "Error Codes & Rate Limits", path: "/developers/docs/errors" },
   ];
 
