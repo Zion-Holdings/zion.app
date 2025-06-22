@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useDebounce } from "@/hooks/useDebounce";
 import { GradientHeading } from "@/components/GradientHeading";
 import { SEO } from "@/components/SEO";
@@ -37,6 +38,16 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
   const [posts, setPosts] = useState<BlogPost[]>([...initialPosts]);
   const query = useDebounce(searchQuery, 300);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  // Reset state when navigating away to avoid cross-page leakage
+  useEffect(() => {
+    return () => {
+      setSearchQuery("");
+      setSelectedCategory("All Categories");
+      setPosts([...initialPosts]);
+    };
+  }, [router.asPath, initialPosts]);
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
