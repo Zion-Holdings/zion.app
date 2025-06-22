@@ -117,6 +117,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
 
 9.  **Cleaning caches and logs:**
     - Run `npm run clean:cache` to remove temporary log files and common build caches.
+    - Regenerate the sitemap with `npm run sitemap` whenever routes change.
 
 10. **Payment Testing:**
     - Seed demo products with `npm run seed` if no listings appear.
