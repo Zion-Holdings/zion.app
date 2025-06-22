@@ -107,7 +107,15 @@ export function Footer() {
             <h3 className="text-foreground font-semibold mb-4 text-lg">Marketplace</h3>
             <ul className="space-y-2">
               <li><Link href="/marketplace" className="text-foreground/80 hover:text-primary transition-colors">Products</Link></li>
-              <li><Link href="/services" className="text-foreground/80 hover:text-primary transition-colors">Services</Link></li>
+              {/* Ensure the services link routes to the main services page */}
+              <li>
+                <Link
+                  href="/services"
+                  className="text-foreground/80 hover:text-primary transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
               <li><Link href="/talent" className="text-foreground/80 hover:text-primary transition-colors">Talent</Link></li>
               <li>
                 <Link
