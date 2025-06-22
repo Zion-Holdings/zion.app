@@ -24,7 +24,7 @@ The project is structured as a monorepo and includes:
 -   **Backend (Django):** Python, Django, Django REST Framework, PostgreSQL
 -   **Backend (Node.js):** Node.js, Express.js, TypeScript, MongoDB (for `server/`), Next.js API Routes
 -   **Database/BaaS:** PostgreSQL, MongoDB, Supabase, Prisma
--   **Authentication:** Supabase Auth (handles login, signup, password reset, social auth)
+-   **Authentication:** Supabase Auth (handles login, signup, password reset, social auth) with optional two-factor authentication for the IPO portal
 -   **Monitoring:** Custom Node.js service, Sentry
 -   **CI/CD:** GitHub Actions, Netlify (including Lighthouse CI)
 -   **Other:** IPFS, OrbitDB, Ethers.js, Elasticsearch
@@ -69,6 +69,7 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 
 - **[Supabase Authentication Setup](docs/SUPABASE_AUTHENTICATION_SETUP.md)** - Complete guide for configuring Supabase authentication
 - **[Netlify Deployment Guide](docs/NETLIFY_DEPLOYMENT_GUIDE.md)** - Step-by-step Netlify deployment with environment variables
+- **[Optional Two-Factor Authentication](TWO_FACTOR_AUTHENTICATION_SUMMARY.md)** - Overview of enabling 2FA in the IPO portal
 
 ### Quick Setup Verification
 
