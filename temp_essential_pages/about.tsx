@@ -124,9 +124,15 @@ export default function About() {
         <div className="content-section text-center">
           <p className="text-zion-slate-light text-lg">
             Ready to work with us? Explore our{' '}
-            <Link href="/services" className="text-zion-cyan underline">AI & IT services</Link>{' '}
-            or <Link href="/contact" className="text-zion-cyan underline">get in touch</Link>. For the latest updates, visit our{' '}
-            <Link href="/blog" className="text-zion-cyan underline">blog</Link>.
+            <Link href="/services" legacyBehavior>
+              <a className="text-zion-cyan underline">AI & IT services</a>
+            </Link>{' '}
+            or{' '}
+            <Link href="/contact" className="text-zion-cyan underline">get in touch</Link>. For the latest updates, visit our{' '}
+            <Link href="/blog" legacyBehavior>
+              <a className="text-zion-cyan underline">blog</a>
+            </Link>
+            .
           </p>
         </div>
       </main>
