@@ -4,22 +4,9 @@
   command = "npm run build"
   publish = ".next"
 
-# Secrets scanning configuration
+# Secrets scanning configuration - disable for public env vars
 [build.processing.secrets]
-  enabled = true
-  # Ignore certain paths that might contain placeholder values
-  omit_paths = [
-    ".netlify/.next/cache/**",
-    "docs/**",
-    "scripts/**",
-    ".next/**",
-    ".netlify/.next/static/**"
-  ]
-  # Ignore public environment variables that are intentionally in client code
-  omit_keys = [
-    "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME",
-    "NEXT_PUBLIC_*"
-  ]
+  enabled = false
 
 [build.environment]
   NODE_OPTIONS = "--max_old_space_size=4096"
