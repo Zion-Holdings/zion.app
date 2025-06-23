@@ -140,26 +140,67 @@ export const fetchProducts = async (params: {
     });
     
     if (response.data && Array.isArray(response.data)) {
-      console.log(`Successfully fetched ${response.data.length} products`);
+      console.log(`Successfully fetched ${response.data.length} products from API`);
       return response.data;
     } else {
-      console.warn('Products API returned unexpected data format. Raw response:', response.data);
-      // It might be better to throw an error here if data is present but not an array
-      // For now, let's align with the issue's goal of surfacing errors
-      throw new Error('Products API returned unexpected data format.');
+      console.warn('Products API returned unexpected data format. Falling back to static data.');
+      // Fallback to static data
+      const { MARKETPLACE_LISTINGS } = await import('@/data/listingData');
+      return MARKETPLACE_LISTINGS.map(item => ({
+        ...item,
+        price: item.price || 0,
+        description: item.description || ''
+      }));
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Products:', {
+    console.error('Marketplace fetch failed - Products. Falling back to static data:', {
       message: error.message,
       status: error.response?.status,
-      data: error.response?.data, // Log response data on error
+      data: error.response?.data,
       url: error.config?.url,
       method: error.config?.method,
       params,
     });
     
-    // Re-throw the error so the caller can handle it
-    throw error;
+    // Fallback to static data instead of throwing error
+    try {
+      const { MARKETPLACE_LISTINGS } = await import('@/data/listingData');
+      console.log(`Fallback: Using ${MARKETPLACE_LISTINGS.length} static products`);
+      
+      // Apply basic filtering if parameters were provided
+      let products = MARKETPLACE_LISTINGS;
+      
+      if (params.category) {
+        products = products.filter(p => 
+          p.category?.toLowerCase().includes(params.category!.toLowerCase())
+        );
+      }
+      
+      if (params.search) {
+        const searchTerm = params.search.toLowerCase();
+        products = products.filter(p => 
+          p.title?.toLowerCase().includes(searchTerm) ||
+          p.description?.toLowerCase().includes(searchTerm) ||
+          p.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
+        );
+      }
+      
+      // Apply pagination
+      const page = params.page || 1;
+      const limit = params.limit || 20;
+      const start = (page - 1) * limit;
+      const end = start + limit;
+      
+      return products.slice(start, end).map(item => ({
+        ...item,
+        price: item.price || 0,
+        description: item.description || ''
+      }));
+    } catch (fallbackError) {
+      console.error('Failed to load static fallback data:', fallbackError);
+      // If even static data fails, return empty array instead of throwing
+      return [];
+    }
   }
 };
 

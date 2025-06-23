@@ -19,7 +19,7 @@ const defaultContent = {
   products: {
     icon: <ShoppingCart className="w-16 h-16 text-gray-400" />,
     title: 'No Products Available',
-    description: 'We\'re working on adding new products to our marketplace. Check back soon for exciting new offerings!',
+    description: 'We\'re loading our marketplace products. If this persists, there might be a connection issue. Try refreshing the page or check back soon for exciting new offerings!',
   },
   categories: {
     icon: <Lightbulb className="w-16 h-16 text-gray-400" />,
