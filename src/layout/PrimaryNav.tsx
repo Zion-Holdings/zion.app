@@ -106,8 +106,11 @@ export function PrimaryNav() {
                 <MiniCartPreview />
               </HoverCardContent>
             </HoverCard>
-            <ModeToggle />
-            <LanguageSelector />
+            {/* Visual separator and theme toggle group */}
+            <div className="flex items-center gap-2 border-l border-primary/20 pl-2 ml-1">
+              <ModeToggle />
+              <LanguageSelector />
+            </div>
             {!isLoggedIn && (
               <>
                 <Link
