@@ -1,17 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 
 const CheckoutTestPage = () => {
+  const [loading, setLoading] = useState(false);
+  const [testResults, setTestResults] = useState({});
+
+  // Use real marketplace products for testing
+  const testProducts = MARKETPLACE_LISTINGS.slice(0, 3);
+
   const handleCheckout = async () => {
-    const cart = [{ priceId: 'price_1234567890', quantity: 1 }];
+    setLoading(true);
+    const cart = [{ title: 'Test Product', price: 1.00, quantity: 1 }];
     try {
-      const { data } = await axios.post('/api/checkout/session', { cart });
-      if (data.url) {
-        window.location.href = data.url;
+      const { data } = await axios.post('/api/checkout-session', { 
+        cartItems: cart,
+        customer_email: 'test@example.com'
+      });
+      if (data.sessionId) {
+        alert('✅ Checkout session created successfully! In production, you would be redirected to Stripe.');
+        setTestResults(prev => ({ ...prev, checkout: 'success' }));
       }
     } catch (err) {
       console.error('Checkout error:', err);
-      alert('An unexpected error occurred during checkout.');
+      alert('❌ Checkout test failed. Check console for details.');
+      setTestResults(prev => ({ ...prev, checkout: 'error' }));
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const testPaymentIntent = async () => {
+    setLoading(true);
+    try {
+      const { data } = await axios.post('/api/create-payment-intent', {
+        amount: 50.00,
+        userId: 'test-user'
+      });
+      if (data.clientSecret) {
+        alert('✅ Payment intent created successfully!');
+        setTestResults(prev => ({ ...prev, paymentIntent: 'success' }));
+      }
+    } catch (err) {
+      console.error('Payment intent error:', err);
+      alert('❌ Payment intent test failed. Check console for details.');
+      setTestResults(prev => ({ ...prev, paymentIntent: 'error' }));
+    } finally {
+      setLoading(false);
     }
   };
 
