@@ -10,38 +10,38 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        border: "hsl(222, 39%, 17%)",
-        input: "hsl(222, 39%, 17%)",
-        ring: "hsl(188, 85%, 53%)",
-        background: "hsl(222, 47%, 8%)",
-        foreground: "hsl(0, 0%, 88%)",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(188, 85%, 53%)",
-          foreground: "hsl(222, 47%, 8%)",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(271, 76%, 53%)",
-          foreground: "hsl(0, 0%, 88%)",
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))", // Keeping existing destructive colors
+          DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))", // Keeping existing muted colors
+          DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(288, 85%, 60%)",
-          foreground: "hsl(0, 0%, 88%)",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))", // Keeping existing popover colors
+          DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "hsl(220, 30%, 11%)",
-          foreground: "hsl(0, 0%, 88%)", // Using foreground for card text
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
       },
       fontFamily: {
