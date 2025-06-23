@@ -14,6 +14,7 @@ import Spinner from '@/components/ui/spinner';
 import { ProductListing } from '@/types/listings';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/context/auth/AuthProvider';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { MAX_PRICE, MIN_PRICE } from '@/data/marketplaceData';
 
@@ -230,6 +231,7 @@ const FilterControls: React.FC<{
 export default function Marketplace({ products: _initialProducts = [] }: MarketplaceProps) {
   const router = useRouter();
   const { toast } = useToast();
+  const { isAuthenticated, user } = useAuth();
   const firstRenderRef = useRef(true);
   const isRefreshingAfterFilterChange = useRef(false); // New ref to track refresh state
 
@@ -242,6 +244,35 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
   const [filterAvailability, setFilterAvailability] = useState('');
   const [filterLocation, setFilterLocation] = useState('');
   const { handleApiError, retryQuery } = useApiErrorHandling();
+
+  // Handle Add Product button with authentication check
+  const handleAddProduct = useCallback(() => {
+    if (!isAuthenticated) {
+      toast({
+        title: "Login Required",
+        description: "Please log in to add products to the marketplace.",
+        variant: "destructive",
+      });
+      
+      // Redirect to login with return URL to marketplace
+      const returnUrl = encodeURIComponent('/marketplace');
+      router.push(`/login?next=${returnUrl}`);
+      return;
+    }
+
+    // Check if user has permission to add products (optional - can be removed if all users can add)
+    if (user && !user.isAdmin && !user.permissions?.includes('marketplace:write')) {
+      toast({
+        title: "Permission Required",
+        description: "You need permission to add products. Please contact an administrator.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Navigate to admin products page
+    router.push('/admin/products');
+  }, [isAuthenticated, user, router, toast]);
 
   // Fetch function for infinite scroll with AI product generation
   const fetchProducts = useCallback(async (page: number, limit: number) => {
@@ -452,8 +483,9 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     return (
       <div className="container py-8" data-testid="marketplace-empty">
         <ProductsEmptyState
-          onAddProduct={() => router.push('/admin/products')}
+          onAddProduct={handleAddProduct}
           onRetry={refresh}
+          isAuthenticated={isAuthenticated}
         />
       </div>
     );

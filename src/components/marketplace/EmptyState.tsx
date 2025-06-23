@@ -121,18 +121,33 @@ export function EmptyState({
 // Specific empty state variants for quick use
 export function ProductsEmptyState({
   onRetry,
-  onAddProduct
+  onAddProduct,
+  isAuthenticated = false
 }: {
   onRetry?: () => void;
   onAddProduct?: () => void;
+  isAuthenticated?: boolean;
 }) {
   const action = onAddProduct
-    ? { label: 'Add Product', onClick: onAddProduct }
+    ? { 
+        label: isAuthenticated ? 'Add Product' : 'Login to Add Product', 
+        onClick: onAddProduct 
+      }
     : onRetry
     ? { label: 'Try Again', onClick: onRetry }
     : undefined;
 
-  return <EmptyState type="products" action={action} />;
+  const customDescription = isAuthenticated 
+    ? "We're working on adding new products to our marketplace. Check back soon for exciting new offerings, or add your own!"
+    : "We're working on adding new products to our marketplace. Check back soon for exciting new offerings, or log in to add your own!";
+
+  return (
+    <EmptyState 
+      type="products" 
+      action={action}
+      description={customDescription}
+    />
+  );
 }
 
 export function CategoriesEmptyState({ onRetry }: { onRetry?: () => void }) {
