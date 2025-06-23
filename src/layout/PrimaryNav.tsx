@@ -64,13 +64,18 @@ export function PrimaryNav() {
         aria-label="Primary"
         data-testid="header"
       >
-        <div className="container grid grid-cols-[auto_1fr_auto] items-center gap-4 h-16 px-4 sm:px-6">
+        <div className="container flex flex-wrap items-center justify-between gap-2 min-h-16 px-4 sm:px-6">
           <Logo />
-          <div className="hidden md:block">
+          
+          {/* Navigation - hidden on mobile, shown on desktop */}
+          <div className="hidden md:block order-1 flex-shrink-0">
             <ResponsiveNavigation />
           </div>
-          <div className="hidden md:flex items-center gap-2 justify-self-end">
-            <form onSubmit={handleSubmit} className="w-64">
+          
+          {/* Actions container with responsive layout */}
+          <div className="hidden md:flex items-center gap-2 order-2 flex-shrink-0 min-w-0">
+            {/* Search form with clamped width */}
+            <form onSubmit={handleSubmit} className="flex-shrink-0" style={{ width: 'clamp(12rem, 20vw, 16rem)' }}>
               <EnhancedSearchInput
                 value={query}
                 onChange={setQuery}
@@ -104,52 +109,63 @@ export function PrimaryNav() {
                 searchSuggestions={suggestions}
               />
             </form>
-            <PointsBadge />
-            <HoverCard openDelay={100}>
-              <HoverCardTrigger asChild>
-                <Link
-                  href="/cart"
-                  className="relative"
-                  aria-label={t('nav.cart', 'Cart')}
-                >
-                  <ShoppingCart className="h-5 w-5 text-foreground hover:text-primary" />
-                  {cartCount > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] rounded-full h-4 w-4 flex items-center justify-center">
-                      {cartCount}
-                    </span>
-                  )}
-                </Link>
-              </HoverCardTrigger>
-              <HoverCardContent>
-                <MiniCartPreview />
-              </HoverCardContent>
-            </HoverCard>
-            {/* Visual separator and theme toggle group */}
-            <div className="flex items-center gap-2 border-l border-primary/20 pl-2 ml-1">
+            
+            {/* Compact actions group */}
+            <div className="flex items-center gap-1">
+              <PointsBadge />
+              <HoverCard openDelay={100}>
+                <HoverCardTrigger asChild>
+                  <Link
+                    href="/cart"
+                    className="relative p-1"
+                    aria-label={t('nav.cart', 'Cart')}
+                  >
+                    <ShoppingCart className="h-5 w-5 text-foreground hover:text-primary" />
+                    {cartCount > 0 && (
+                      <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] rounded-full h-4 w-4 flex items-center justify-center">
+                        {cartCount}
+                      </span>
+                    )}
+                  </Link>
+                </HoverCardTrigger>
+                <HoverCardContent>
+                  <MiniCartPreview />
+                </HoverCardContent>
+              </HoverCard>
+            </div>
+            
+            {/* Compact controls group */}
+            <div className="flex items-center gap-1 border-l border-primary/20 pl-1 ml-1">
               <ModeToggle />
               <LanguageSelector />
             </div>
-            {!isLoggedIn && (
-              <>
-                <Link
-                  href="/login"
-                  className="text-sm hover:text-primary"
-                  data-testid="login-link"
-                >
-                  {t('auth.login')}
-                </Link>
-                <Link
-                  href="/signup"
-                  className="ml-2 text-sm hover:text-primary"
-                >
-                  {t('auth.signup')}
-                </Link>
-              </>
-            )}
-            {isLoggedIn && <UserMenu />}
+            
+            {/* Auth links - flex wrap for very small screens */}
+            <div className="flex items-center gap-1 flex-wrap">
+              {!isLoggedIn && (
+                <>
+                  <Link
+                    href="/login"
+                    className="text-sm hover:text-primary whitespace-nowrap"
+                    data-testid="login-link"
+                  >
+                    {t('auth.login')}
+                  </Link>
+                  <Link
+                    href="/signup"
+                    className="text-sm hover:text-primary whitespace-nowrap"
+                  >
+                    {t('auth.signup')}
+                  </Link>
+                </>
+              )}
+              {isLoggedIn && <UserMenu />}
+            </div>
           </div>
+          
+          {/* Mobile menu button */}
           <button
-            className="md:hidden ml-auto mr-2 p-2 rounded focus:outline-none"
+            className="md:hidden p-2 rounded focus:outline-none flex-shrink-0"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
             aria-label={t('general.toggle_mobile_menu')}

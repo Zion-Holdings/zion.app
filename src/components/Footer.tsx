@@ -41,15 +41,15 @@ export function Footer() {
   return (
     <footer className="bg-card border-t border-primary/20 pt-12 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="space-y-4">
             <div className="mb-4">
               <span className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">ZION</span>
             </div>
-            <p className="text-foreground/80 mb-4 max-w-xs">
+            <p className="text-foreground/80 mb-4" style={{ maxWidth: 'clamp(16rem, 90%, 20rem)' }}>
               The world&apos;s first free marketplace dedicated to high-tech and artificial intelligence.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-3">
               <a
                 href={TWITTER_URL}
                 target="_blank"
@@ -58,7 +58,7 @@ export function Footer() {
                 aria-label="Twitter"
                 title="Twitter"
               >
-                <Twitter className="h-5 w-5" aria-label="Twitter" />
+                <Twitter className="h-5 w-5" aria-hidden="true" />
               </a>
               <a
                 href={LINKEDIN_URL}
@@ -68,7 +68,7 @@ export function Footer() {
                 aria-label="LinkedIn"
                 title="LinkedIn"
               >
-                <Linkedin className="h-5 w-5" aria-label="LinkedIn" />
+                <Linkedin className="h-5 w-5" aria-hidden="true" />
               </a>
               <a
                 href={FACEBOOK_URL}
@@ -78,7 +78,7 @@ export function Footer() {
                 aria-label="Facebook"
                 title="Facebook"
               >
-                <Facebook className="h-5 w-5" aria-label="Facebook" />
+                <Facebook className="h-5 w-5" aria-hidden="true" />
               </a>
               <a
                 href={INSTAGRAM_URL}
@@ -88,7 +88,7 @@ export function Footer() {
                 aria-label="Instagram"
                 title="Instagram"
               >
-                <Instagram className="h-5 w-5" aria-label="Instagram" />
+                <Instagram className="h-5 w-5" aria-hidden="true" />
               </a>
               <a
                 href={GITHUB_URL}
@@ -98,54 +98,54 @@ export function Footer() {
                 aria-label="GitHub"
                 title="GitHub"
               >
-                <Github className="h-5 w-5" aria-label="GitHub" />
+                <Github className="h-5 w-5" aria-hidden="true" />
               </a>
             </div>
           </div>
 
-          <div>
+          <div className="space-y-4">
             <h3 className="text-foreground font-semibold mb-4 text-lg">Marketplace</h3>
             <ul className="space-y-2">
-              <li><Link href="/marketplace" className="text-foreground/80 hover:text-primary transition-colors">Products</Link></li>
+              <li><Link href="/marketplace" className="text-foreground/80 hover:text-primary transition-colors text-sm">Products</Link></li>
               {/* Ensure the services link routes to the main services page */}
               <li>
                 <Link
                   href="/services"
-                  className="text-foreground/80 hover:text-primary transition-colors"
+                  className="text-foreground/80 hover:text-primary transition-colors text-sm"
                 >
                   Services
                 </Link>
               </li>
-              <li><Link href="/talent" className="text-foreground/80 hover:text-primary transition-colors">Talent</Link></li>
+              <li><Link href="/talent" className="text-foreground/80 hover:text-primary transition-colors text-sm">Talent</Link></li>
               <li>
                 <Link
                   href="/equipment"
-                  className="text-foreground/80 hover:text-primary transition-colors"
+                  className="text-foreground/80 hover:text-primary transition-colors text-sm"
                   target="_self"
                 >
                   Equipment
                 </Link>
               </li>
-              <li><Link href="/categories" className="text-foreground/80 hover:text-primary transition-colors">Categories</Link></li>
-              <li><Link href="/green-it" className="text-foreground/80 hover:text-primary transition-colors">Green IT</Link></li>
+              <li><Link href="/categories" className="text-foreground/80 hover:text-primary transition-colors text-sm">Categories</Link></li>
+              <li><Link href="/green-it" className="text-foreground/80 hover:text-primary transition-colors text-sm">Green IT</Link></li>
             </ul>
           </div>
 
-          <div>
+          <div className="space-y-4">
             <h3 className="text-foreground font-semibold mb-4 text-lg">Company</h3>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-foreground/80 hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/blog" className="text-foreground/80 hover:text-primary transition-colors">Blog</Link></li>
-              <li><Link href="/innovation" className="text-foreground/80 hover:text-primary transition-colors">Innovation</Link></li>
-              <li><Link href="/partners" className="text-foreground/80 hover:text-primary transition-colors">Partners</Link></li>
-              <li><Link href="/careers" className="text-foreground/80 hover:text-primary transition-colors">Careers</Link></li>
-              <li><Link href="/contact" className="text-foreground/80 hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link href="/about" className="text-foreground/80 hover:text-primary transition-colors text-sm">About Us</Link></li>
+              <li><Link href="/blog" className="text-foreground/80 hover:text-primary transition-colors text-sm">Blog</Link></li>
+              <li><Link href="/innovation" className="text-foreground/80 hover:text-primary transition-colors text-sm">Innovation</Link></li>
+              <li><Link href="/partners" className="text-foreground/80 hover:text-primary transition-colors text-sm">Partners</Link></li>
+              <li><Link href="/careers" className="text-foreground/80 hover:text-primary transition-colors text-sm">Careers</Link></li>
+              <li><Link href="/contact" className="text-foreground/80 hover:text-primary transition-colors text-sm">Contact</Link></li>
               <li>
                 <Link
                   href="/sitemap"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground/80 hover:text-primary transition-colors"
+                  className="text-foreground/80 hover:text-primary transition-colors text-sm"
                 >
                   Sitemap
                 </Link>
@@ -153,12 +153,14 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-foreground font-semibold mb-4 text-lg">Subscribe to our newsletter</h3>
-            <p className="text-foreground/80 mb-4">
+          <div className="space-y-4 sm:col-span-2 lg:col-span-1">
+            <h3 className="text-foreground font-semibold mb-4 text-lg">Newsletter</h3>
+            <p className="text-foreground/80 mb-4 text-sm">
               Stay updated with the latest news on tech, AI, and marketplace opportunities.
             </p>
-            <FooterNewsletter />
+            <div className="max-w-sm">
+              <FooterNewsletter />
+            </div>
           </div>
         </div>
 
