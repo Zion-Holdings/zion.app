@@ -50,7 +50,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   try {
     let categoryDetails = null;
-    let products = [];
+    let products: any[] = [];
     let usingFallback = false;
 
     // Special handling for talent category
