@@ -71,9 +71,23 @@ export function PointsBadge() {
                   <li>Posts: {breakdown.post}</li>
                   <li>Referrals: {breakdown.referral}</li>
                 </ul>
+                <p className="text-xs mt-2 text-muted-foreground border-t pt-1">
+                  Click to view full rewards program
+                </p>
               </>
             ) : (
-              <p className="text-sm">Earn points by creating an account, posting, and making purchases</p>
+              <>
+                <p className="text-sm font-medium">Zion Rewards Program</p>
+                <p className="text-xs mt-1 text-muted-foreground">
+                  • Sign up: 50 pts<br/>
+                  • First purchase: 100 pts<br/>
+                  • Community posts: 25 pts each<br/>
+                  • Refer friends: 200 pts each
+                </p>
+                <p className="text-xs mt-2 text-muted-foreground border-t pt-1">
+                  Click to learn more and join!
+                </p>
+              </>
             )}
           </TooltipContent>
         </Tooltip>
