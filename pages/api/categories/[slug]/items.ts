@@ -105,7 +105,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         select: {
           name: true,
           slug: true,
-          description: true,
         },
       });
 
@@ -160,7 +159,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       category: {
         name: categoryDetails.name,
         slug: categoryDetails.slug,
-        description: categoryDetails.description || '',
+        description: MOCK_CATEGORIES[slug as keyof typeof MOCK_CATEGORIES]?.description || '',
       },
       items: products,
     };
