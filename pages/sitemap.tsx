@@ -1,2 +1,2 @@
-export { default } from '@/pages/Sitemap';
+export { default } from '../src/pages/Sitemap';
 
