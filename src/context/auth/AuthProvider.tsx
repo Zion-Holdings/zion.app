@@ -61,13 +61,38 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
       if (supabaseError) {
         console.error("[AuthProvider DEBUG] Supabase authentication failed:", supabaseError);
+        
+        // Provide specific error messages based on error code
+        let errorMessage = "Authentication failed. Please try again.";
+        let toastTitle = "Authentication Error";
+        
+        if (supabaseError.message) {
+          // Check for specific error types
+          if (supabaseError.message.toLowerCase().includes("email not confirmed") || 
+              supabaseError.message.toLowerCase().includes("email address is not confirmed")) {
+            errorMessage = "Your email address needs to be verified. Please check your inbox for a verification link and click it to activate your account.";
+            toastTitle = "Email Verification Required";
+          } else if (supabaseError.message.toLowerCase().includes("invalid login credentials") ||
+                     supabaseError.message.toLowerCase().includes("invalid credentials")) {
+            errorMessage = "Invalid email or password. Please check your credentials and try again.";
+            toastTitle = "Invalid Credentials";
+          } else if (supabaseError.message.toLowerCase().includes("too many requests")) {
+            errorMessage = "Too many login attempts. Please wait a moment before trying again.";
+            toastTitle = "Rate Limited";
+          } else {
+            errorMessage = supabaseError.message;
+          }
+        }
+        
+        // Show specific toast based on error type
         toast({
-          title: "Authentication Error",
-          description: supabaseError.message || "Failed to authenticate with Supabase.",
+          title: toastTitle,
+          description: errorMessage,
           variant: "destructive",
         });
+        
         setIsLoading(false);
-        return { error: supabaseError.message || "Authentication failed." };
+        return { error: errorMessage };
       }
 
       console.log('[AuthProvider DEBUG] Supabase authentication successful');
@@ -75,13 +100,18 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       return { error: null }; // Successful login
     } catch (error: any) {
       console.error('[AuthProvider] login function error:', error);
+      
+      // Handle unexpected errors with a fallback message
+      const errorMessage = error.message || "An unexpected error occurred during login. Please try again.";
+      
       toast({
         title: "Login Failed",
-        description: error.message || "An unexpected error occurred during login. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
+      
       setIsLoading(false);
-      return { error: error.message || "Login failed" };
+      return { error: errorMessage };
     }
   };
 

@@ -19,6 +19,8 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [showResendVerification, setShowResendVerification] = useState(false);
+  const [isResendingVerification, setIsResendingVerification] = useState(false);
   const { login, isLoading, isAuthenticated } = useAuth();
   const [showLongLoadingMessage, setShowLongLoadingMessage] = useState(false);
   const [authTimeout, setAuthTimeout] = useState(false);
@@ -112,14 +114,73 @@ export default function Login() {
 
     setIsSubmitting(true);
     setErrorMsg('');
+    setShowResendVerification(false); // Reset resend verification option
+    
     try {
       await handleLogin(email, password);
     } catch (err: any) {
-      // 🔧 Set error for UI display (toast is already shown by AuthProvider)
+      // Check if this is an email verification error
       const errorMessage = err.message || 'Login failed';
+      const isEmailVerificationError = 
+        errorMessage.toLowerCase().includes('email address needs to be verified') ||
+        errorMessage.toLowerCase().includes('email not confirmed') ||
+        errorMessage.toLowerCase().includes('email address is not confirmed');
+      
       setErrorMsg(errorMessage);
+      
+      // Show resend verification option for email verification errors
+      if (isEmailVerificationError && email.trim()) {
+        setShowResendVerification(true);
+      }
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleResendVerification = async () => {
+    if (!email.trim()) {
+      toast({
+        title: 'Email required',
+        description: 'Please enter your email address to resend verification.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    setIsResendingVerification(true);
+    
+    try {
+      const response = await fetch('/api/auth/resend-verification-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: 'Verification email sent',
+          description: 'Please check your inbox for a new verification link.',
+        });
+        setShowResendVerification(false);
+      } else {
+        toast({
+          title: 'Failed to send verification email',
+          description: data.message || 'Please try again later.',
+          variant: 'destructive',
+        });
+      }
+    } catch (error) {
+      toast({
+        title: 'Failed to send verification email',
+        description: 'Please try again later.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsResendingVerification(false);
     }
   };
 
@@ -213,6 +274,22 @@ export default function Login() {
         {errorMsg && (
           <Alert variant="destructive" className="mb-4">
             <AlertDescription>{errorMsg}</AlertDescription>
+          </Alert>
+        )}
+        
+        {showResendVerification && (
+          <Alert className="mb-4 border-orange-500 bg-orange-50 text-orange-900">
+            <AlertDescription className="flex items-center justify-between">
+              <span>Need a new verification email?</span>
+              <button
+                type="button"
+                onClick={handleResendVerification}
+                disabled={isResendingVerification}
+                className="ml-2 px-3 py-1 text-sm bg-orange-600 text-white rounded hover:bg-orange-700 disabled:opacity-50"
+              >
+                {isResendingVerification ? 'Sending...' : 'Resend'}
+              </button>
+            </AlertDescription>
           </Alert>
         )}
         <form onSubmit={handleSubmit} className="space-y-4" noValidate>
