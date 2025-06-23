@@ -247,17 +247,20 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
   const fetchProducts = useCallback(async (page: number, limit: number) => {
     await new Promise((resolve) => setTimeout(resolve, 200));
 
-    const params = new URLSearchParams({ page: String(page), limit: String(limit) });
-    if (filterCategory) params.append('category', filterCategory);
-
     try {
-      const res = await fetch(`/api/products?${params.toString()}`);
-      if (!res.ok) {
-        throw new Error(`${res.status}`);
-      }
+      // Use the proper marketplace service instead of direct fetch
+      const { fetchProducts: fetchProductsService } = await import('@/services/marketplace');
+      
+      const params = {
+        page,
+        limit,
+        ...(filterCategory && { category: filterCategory })
+      };
 
-      let items: ProductListing[] = await res.json();
-      console.log('Marketplace.tsx: Raw items from API before filtering/sorting:', JSON.stringify(items, null, 2));
+      console.log('Marketplace.tsx: Fetching products using marketplace service with params:', params);
+      
+      let items: ProductListing[] = await fetchProductsService(params) as ProductListing[];
+      console.log('Marketplace.tsx: Raw items from marketplace service before filtering/sorting:', JSON.stringify(items, null, 2));
 
       if (showRecommended) {
         items = items.filter((p) => p.rating != null && p.rating >= 4.3);
@@ -314,10 +317,29 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     } catch (err: any) {
       // Log the error and allow useInfiniteScrollPagination to handle it
       console.error("Error in Marketplace fetchProducts:", err);
-      handleApiError(err); // This might show a toast or log to Sentry
+      
+      // Show more specific error messages based on the error type
+      if (err.response?.status === 403) {
+        console.error("403 Forbidden error - authentication issue");
+        toast({
+          title: "Access Denied",
+          description: "Please log in to access the marketplace.",
+          variant: "destructive",
+        });
+      } else if (err.response?.status === 500) {
+        console.error("500 Server error");
+        toast({
+          title: "Server Error", 
+          description: "The marketplace is temporarily unavailable. Please try again later.",
+          variant: "destructive",
+        });
+      } else {
+        handleApiError(err); // This might show a toast or log to Sentry
+      }
+      
       throw err; // Re-throw to let useInfiniteScrollPagination know about the failure
     }
-  }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation, handleApiError]);
+  }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation, handleApiError, toast]);
 
   // useInfiniteScrollPagination hook
   const {

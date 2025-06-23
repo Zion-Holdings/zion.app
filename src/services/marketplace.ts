@@ -82,22 +82,12 @@ console.log('Marketplace Service - API Base URL:', API_BASE_URL);
 const createMarketplaceClient = (): AxiosInstance => {
   const client = axios.create({
     baseURL: API_BASE_URL,
-    withCredentials: true,
+    withCredentials: false, // Remove auth requirements for now
   });
 
-  // Request interceptor to add auth token
+  // Request interceptor for debugging - auth token not required for public endpoints
   client.interceptors.request.use(
     async (config) => {
-      try {
-        const { data: { session } } = await supabase.auth.getSession();
-        if (session?.access_token) {
-          if (!config.headers) config.headers = {};
-          (config.headers as any).Authorization = `Bearer ${session.access_token}`;
-        }
-      } catch (error) {
-        console.warn('Failed to get auth session for marketplace request:', error);
-      }
-      
       console.log(`Marketplace API Request: ${config.method?.toUpperCase()} ${config.url}`);
       return config;
     },
@@ -107,56 +97,13 @@ const createMarketplaceClient = (): AxiosInstance => {
     }
   );
 
-  // Response interceptor with automatic token refresh
+  // Response interceptor with error logging
   client.interceptors.response.use(
     (response) => {
       console.log(`Marketplace API Response: ${response.status}`);
       return response;
     },
     async (error: AxiosError) => {
-      const originalConfig = error.config as any;
-
-      // Handle 401 errors with token refresh
-      if (error.response?.status === 401 && !originalConfig._retry) {
-        originalConfig._retry = true;
-        
-        try {
-          console.log('Attempting to refresh auth token for marketplace request...');
-          const { data, error: refreshError } = await supabase.auth.refreshSession();
-          
-          if (refreshError || !data.session) {
-            console.error('Token refresh failed:', refreshError);
-            // Redirect to login
-            if (typeof window !== 'undefined') {
-              window.location.href = '/login';
-            }
-            return Promise.reject(error);
-          }
-
-          // Make a new request with the refreshed token
-          const { data: { session } } = await supabase.auth.getSession();
-          if (session?.access_token) {
-            const retryConfig = {
-              ...originalConfig,
-              headers: {
-                ...originalConfig.headers,
-                Authorization: `Bearer ${session.access_token}`,
-              },
-            };
-            
-            // Retry the request based on the method
-            if (originalConfig.method === 'GET') {
-              return client.get(originalConfig.url, retryConfig);
-            } else if (originalConfig.method === 'POST') {
-              return client.post(originalConfig.url, originalConfig.body, retryConfig);
-            }
-          }
-        } catch (refreshError) {
-          console.error('Error during token refresh:', refreshError);
-          return Promise.reject(error);
-        }
-      }
-
       // Log detailed error information
       console.error('Marketplace API Error:', {
         message: error.message,
@@ -187,7 +134,7 @@ export const fetchProducts = async (params: {
   try {
     console.log('Fetching marketplace products with params:', params);
     
-    const response = await marketplaceClient.get('/products', { 
+    const response = await marketplaceClient.get('/api/products', { 
       params,
       timeout: 10000, // 10 second timeout
     });
@@ -220,7 +167,7 @@ export const fetchCategories = async (): Promise<Category[]> => {
   try {
     console.log('Fetching marketplace categories...');
     
-    const response = await marketplaceClient.get('/categories', {
+    const response = await marketplaceClient.get('/api/categories', {
       timeout: 10000, // 10 second timeout
     });
     
@@ -252,7 +199,7 @@ export const fetchTalent = async (params: {
   try {
     console.log('Fetching marketplace talent with params:', params);
     
-    const response = await marketplaceClient.get('/talent', { 
+    const response = await marketplaceClient.get('/api/talent', { 
       params,
       timeout: 10000, // 10 second timeout
     });
@@ -286,7 +233,7 @@ export const fetchEquipment = async (params: {
   try {
     console.log('Fetching marketplace equipment with params:', params);
     
-    const response = await marketplaceClient.get('/equipment', { 
+    const response = await marketplaceClient.get('/api/equipment', { 
       params,
       timeout: 10000, // 10 second timeout
     });
