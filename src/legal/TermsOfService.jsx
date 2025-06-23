@@ -1,9 +1,46 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
-import { TERMS_SECTIONS } from "./termsContent";
 
 export default function TermsOfService() {
+  const { t } = useTranslation();
+  
+  // Create localized terms sections
+  const getTermsSections = () => [
+    {
+      id: "introduction",
+      title: t('terms.sections.introduction.title'),
+      content: `<p>${t('terms.sections.introduction.content')}</p>`
+    },
+    {
+      id: "accounts",
+      title: t('terms.sections.accounts.title'),
+      content: `<p>${t('terms.sections.accounts.content')}</p>`
+    },
+    {
+      id: "payments",
+      title: t('terms.sections.payments.title'),
+      content: `<p>${t('terms.sections.payments.content')}</p>`
+    },
+    {
+      id: "prohibited",
+      title: t('terms.sections.prohibited.title'),
+      content: `<p>${t('terms.sections.prohibited.content')}</p>`
+    },
+    {
+      id: "termination",
+      title: t('terms.sections.termination.title'),
+      content: `<p>${t('terms.sections.termination.content')}</p>`
+    },
+    {
+      id: "contact",
+      title: t('terms.sections.contact.title'),
+      content: `<p>${t('terms.sections.contact.content')}</p>`
+    }
+  ];
+
+  const TERMS_SECTIONS = getTermsSections();
   const [active, setActive] = useState(TERMS_SECTIONS[0].id);
   const headingRefs = useRef({});
 
@@ -28,7 +65,7 @@ export default function TermsOfService() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [TERMS_SECTIONS]);
 
   return (
     <div className="md:flex gap-8">

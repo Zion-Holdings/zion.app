@@ -1,12 +1,15 @@
 import { SEO } from "@/components/SEO";
 import TermsOfService from "@/legal/TermsOfService";
+import { useTranslation } from "react-i18next";
 
 export default function Terms() {
+  const { t } = useTranslation();
+  
   return (
     <>
       <SEO
-        title="Terms of Service"
-        description="The terms and conditions for using the Zion platform."
+        title={t('terms.title')}
+        description={t('terms.description')}
         canonical="https://app.ziontechgroup.com/terms"
       />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
