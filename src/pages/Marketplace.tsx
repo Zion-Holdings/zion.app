@@ -260,11 +260,11 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
       return;
     }
 
-    // Check if user has permission to add products (optional - can be removed if all users can add)
-    if (user && user.userType !== 'admin' && !user.permissions?.includes('marketplace:write')) {
+    // Check if user has permission to add products (simplified to admin check)
+    if (user && user.userType !== 'admin') {
       toast({
-        title: "Permission Required",
-        description: "You need permission to add products. Please contact an administrator.",
+        title: "Admin Access Required",
+        description: "Only administrators can add products to the marketplace. Please contact an administrator.",
         variant: "destructive",
       });
       return;
