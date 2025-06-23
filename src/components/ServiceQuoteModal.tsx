@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -203,7 +202,7 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
                           "bg-zion-blue-dark border-zion-blue-light text-white"
                         )}
                       >
-                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        <CalendarIcon className="mr-2 h-4 w-4" aria-hidden="true" />
                         {startDate ? format(startDate, "PPP") : <span>Pick a date</span>}
                       </Button>
                     </PopoverTrigger>
@@ -230,7 +229,7 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
                           "bg-zion-blue-dark border-zion-blue-light text-white"
                         )}
                       >
-                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        <CalendarIcon className="mr-2 h-4 w-4" aria-hidden="true" />
                         {endDate ? format(endDate, "PPP") : <span>Pick a date</span>}
                       </Button>
                     </PopoverTrigger>

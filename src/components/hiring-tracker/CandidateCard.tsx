@@ -115,7 +115,7 @@ export function CandidateCard({ application, index }: CandidateCardProps) {
                       {showNotes ? "Hide notes" : "Add notes"}
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => setShowHireModal(true)}>
-                      <BriefcaseIcon className="h-4 w-4 mr-2" /> Hire Candidate
+                      <BriefcaseIcon className="h-4 w-4 mr-2" aria-hidden="true" /> Hire Candidate
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
                       <Link href={`/messages?talentId=${application.talent_id}`}>

@@ -90,37 +90,25 @@ const UserProfileDropdown: React.FC = () => {
             }}
           >
             <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
-              <Link href="/profile" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem" tabIndex={-1}>
+              <Link href="/profile" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem">
                 Profile
               </Link>
             </li>
             <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
-              <Link href="/orders" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem" tabIndex={-1}>
+              <Link href="/orders" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem">
                 Orders
               </Link>
             </li>
             <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
-              <Link href="/wallet" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem" tabIndex={-1}>
-                Wallet
+              <Link href="/settings" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem">
+                Settings
               </Link>
             </li>
-            <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
+            <li style={{ padding: '8px 0 8px 16px', borderTop: '1px solid #ccc' }} role="none">
               <button
                 onClick={handleLogout}
+                style={{ background: 'none', border: 'none', textAlign: 'left', width: '100%', padding: 0, cursor: 'pointer', color: 'inherit' }}
                 role="menuitem"
-                tabIndex={-1}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  padding: 0,
-                  margin: 0,
-                  cursor: 'pointer',
-                  width: '100%',
-                  textAlign: 'left',
-                  color: 'inherit',
-                  font: 'inherit',
-                  fontSize: 'inherit', // Ensure button text matches link text style
-                }}
               >
                 Logout
               </button>
