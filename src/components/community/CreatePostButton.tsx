@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/router";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { toast } from "sonner";
+import { useToast } from "@/hooks/use-toast";
 
 interface CreatePostButtonProps {
   /** Optional category to preselect when creating a post */
@@ -18,6 +18,7 @@ interface CreatePostButtonProps {
 export function CreatePostButton({ categoryId, className }: CreatePostButtonProps) {
   const { user } = useAuth();
   const router = useRouter();
+  const { toast } = useToast();
 
   const handleClick = () => {
     const target = categoryId
@@ -27,9 +28,18 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
     if (user) {
       router.push(target);
     } else {
-      toast.info("Please log in to create a post");
-      const next = encodeURIComponent(target);
-      router.replace(`/login?next=${next}`);
+      // Show informative toast and redirect to login
+      toast({
+        title: "Login Required",
+        description: "Please log in to create a post. You'll be redirected to the login page.",
+        variant: "default",
+      });
+      
+      // Redirect to login with return URL after a short delay
+      setTimeout(() => {
+        const next = encodeURIComponent(target);
+        router.push(`/login?next=${next}`);
+      }, 1000); // 1 second delay to show the toast
     }
   };
 
