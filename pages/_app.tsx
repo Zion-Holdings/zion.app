@@ -37,6 +37,7 @@ import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 import { validateProductionEnvironment, initializeServices } from '@/utils/environmentConfig';
 import { initializePerformanceOptimizations } from '@/utils/performance';
 import '@/utils/globalFetchInterceptor';
+import '@/utils/consoleErrorToast';
 import { Auth0Provider } from '@auth0/nextjs-auth0';
 
 // Configure fonts with optimal loading strategies

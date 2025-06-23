@@ -36,6 +36,7 @@ export const globalAxiosErrorHandler = (error: any) => {
 
   const status = error.response?.status;
   const method = (config.method || '').toUpperCase();
+  const url = config.url || '';
 
   // Handle DELETE 404 as success (item already removed)
   if (status === 404 && method === 'DELETE') {
@@ -47,7 +48,62 @@ export const globalAxiosErrorHandler = (error: any) => {
     return Promise.reject(error);
   }
 
-  showApiError(error);
+  // URLs that should not trigger user-facing error toasts
+  const SILENT_ERROR_PATTERNS = [
+    '/health',
+    '/status',
+    '/heartbeat',
+    '/ping',
+    '/analytics',
+    '/metrics',
+    '/telemetry',
+    'supabase.co',
+    'googleapis.com',
+    'github.com/api',
+  ];
+
+  // Check if URL should fail silently
+  const shouldFailSilently = (url: string): boolean => {
+    return SILENT_ERROR_PATTERNS.some(pattern => url.includes(pattern));
+  };
+
+  // Check if error should be shown to user
+  const shouldShowErrorToUser = (status: number, method: string, url: string): boolean => {
+    // Never show errors for silent URLs
+    if (shouldFailSilently(url)) {
+      return false;
+    }
+
+    // Only show user-facing errors for specific cases
+    switch (status) {
+      case 401: // Unauthorized - only for auth-related endpoints
+        return url.includes('/auth/') || url.includes('/login') || url.includes('/signup');
+      case 403: // Forbidden - only for user-initiated actions (POST, PUT, DELETE)
+        return ['POST', 'PUT', 'DELETE', 'PATCH'].includes(method);
+      case 404: // Not found - only for user resources, not background calls
+        return ['POST', 'PUT', 'DELETE', 'PATCH'].includes(method) || url.includes('/user/') || url.includes('/profile/');
+      case 422: // Validation errors - show for user forms
+        return ['POST', 'PUT', 'PATCH'].includes(method);
+      case 429: // Rate limiting - always show to user
+        return true;
+      case 500: // Server errors - only for user-initiated actions
+      case 502:
+      case 503:
+      case 504:
+        return ['POST', 'PUT', 'DELETE', 'PATCH'].includes(method);
+      default:
+        return false;
+    }
+  };
+
+  // Only show error toast if it's a user-facing error
+  if (shouldShowErrorToUser(status, method, url)) {
+    showApiError(error);
+  } else {
+    // Log background errors without showing toast
+    console.debug(`Background API request failed (${status} ${method}): ${url}`, error.response?.data);
+  }
+
   return Promise.reject(error);
 };
 
