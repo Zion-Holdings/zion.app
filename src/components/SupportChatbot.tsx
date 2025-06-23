@@ -38,14 +38,14 @@ export function SupportChatbot() {
 
   if (!open) {
     return (
-      <Button onClick={() => setOpen(true)} size="icon" variant="outline" className="fixed bottom-4 right-4 h-12 w-12 rounded-full shadow-lg bg-zion-purple text-white hover:bg-zion-purple-light z-50" aria-label="Open help chat">
+      <Button onClick={() => setOpen(true)} size="icon" variant="outline" className="fixed bottom-4 right-20 h-12 w-12 rounded-full shadow-lg bg-zion-purple text-white hover:bg-zion-purple-light z-40" aria-label="Open help chat">
         <MessageSquare className="h-5 w-5" />
       </Button>
     );
   }
 
   return (
-    <div className="fixed bottom-4 right-4 bg-zion-blue w-80 max-w-full rounded-lg shadow-xl flex flex-col z-50">
+    <div className="fixed bottom-4 right-20 bg-zion-blue w-80 max-w-full rounded-lg shadow-xl flex flex-col z-40">
       <div className="bg-zion-blue-dark p-2 flex justify-between items-center">
         <span className="text-white font-medium">Help Bot</span>
         <Button
