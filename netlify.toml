@@ -86,7 +86,6 @@
   NEXT_PUBLIC_ENABLE_PAYMENTS = "true"
   
   # External APIs
-  OPENAI_API_KEY = "SET_IN_NETLIFY_UI"
   EXAMPLE_API_URL = "https://api.example.com"
 
 # Deploy contexts for different environments
