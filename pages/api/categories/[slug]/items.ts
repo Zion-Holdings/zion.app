@@ -105,6 +105,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         select: {
           name: true,
           slug: true,
+          description: true,
         },
       });
 
