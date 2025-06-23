@@ -33,16 +33,25 @@ export function EnhancedNewsletterForm() {
         body: JSON.stringify({ email: trimmed }),
       });
 
+      const data = await res.json().catch(() => ({}));
+
       if (res.ok) {
-        toast.success("Thanks for subscribing!");
+        // Handle different success statuses
+        if (data.status === 'already_subscribed') {
+          toast.success(data.message || "You're already subscribed!");
+        } else {
+          toast.success(data.message || "Thanks for subscribing!");
+        }
         setIsSubmitted(true);
         setEmail("");
       } else {
-        const data = await res.json().catch(() => ({}));
-        toast.error(data.error || "Already subscribed");
+        // Handle error responses
+        console.error('Newsletter subscription failed:', data);
+        toast.error(data.error || "Subscription failed. Please try again.");
       }
     } catch (err: any) {
-      toast.error(err?.message || "Already subscribed");
+      console.error('Newsletter subscription error:', err);
+      toast.error("Unable to subscribe right now. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
