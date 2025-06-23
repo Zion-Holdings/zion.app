@@ -4,10 +4,6 @@
   command = "npm run build"
   publish = ".next"
 
-# Secrets scanning configuration - disable for public env vars
-[build.processing.secrets]
-  enabled = false
-
 [build.environment]
   NODE_OPTIONS = "--max_old_space_size=4096"
   NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
