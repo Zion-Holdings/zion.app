@@ -44,11 +44,17 @@ async function handler(
     return res.status(200).json([]);
 
   } catch (error) {
-    console.error('Failed to fetch categories from database:', error);
-    // It's important to return a 500 status code when the database operation fails.
-    // Optionally, you could still return CATEGORIES as fallback data in the client-side service
-    // if the API call fails, but the API itself should indicate the error.
-    return res.status(500).json({ error: 'Failed to fetch categories from database.' });
+    console.error('Failed to fetch categories from database, using fallback data:', error);
+    // Use fallback data instead of returning 500 error
+    // This ensures the API always returns categories even if database is unavailable
+    if (CATEGORIES && CATEGORIES.length > 0) {
+      console.log(`Database unavailable, returning ${CATEGORIES.length} fallback categories`);
+      res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600'); // Shorter cache for fallback
+      return res.status(200).json(CATEGORIES);
+    } else {
+      // Only return error if no fallback data is available
+      return res.status(500).json({ error: 'Categories temporarily unavailable. Please try again later.' });
+    }
   } finally {
     // Ensure prisma client is disconnected regardless of the outcome.
     // Adding a check to ensure prisma has a $disconnect method,

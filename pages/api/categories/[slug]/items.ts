@@ -99,30 +99,43 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     try {
-      // Try to fetch from database first for non-talent categories
-      categoryDetails = await prisma.category.findUnique({
-        where: { slug: slug, active: true },
-        select: {
-          name: true,
-          slug: true,
-        },
-      });
+      // Add timeout to database queries to prevent hanging
+      const dbQueryPromise = Promise.race([
+        (async () => {
+          const categoryDetails = await prisma.category.findUnique({
+            where: { slug: slug, active: true },
+            select: {
+              name: true,
+              slug: true,
+            },
+          });
 
-      if (categoryDetails) {
-        products = await prisma.product.findMany({
-          where: { category: slug },
-          select: {
-            id: true,
-            name: true,
-            description: true,
-            price: true,
-            currency: true,
-            images: true,
-          },
-        });
-      }
+          if (categoryDetails) {
+            const products = await prisma.product.findMany({
+              where: { category: slug },
+              select: {
+                id: true,
+                name: true,
+                description: true,
+                price: true,
+                currency: true,
+                images: true,
+              },
+            });
+            return { categoryDetails, products };
+          }
+          return { categoryDetails: null, products: [] };
+        })(),
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Database query timeout')), 5000)
+        )
+      ]) as Promise<{ categoryDetails: any, products: any[] }>;
+
+      const result = await dbQueryPromise;
+      categoryDetails = result.categoryDetails;
+      products = result.products;
     } catch (dbError) {
-      console.warn('Database query failed, using fallback data:', dbError);
+      console.warn('Database query failed or timed out, using fallback data:', dbError);
       usingFallback = true;
     }
 
@@ -137,11 +150,47 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         });
       }
 
-      // Filter marketplace listings by category
-      const filteredListings = MARKETPLACE_LISTINGS.filter(item => 
-        item.category?.toLowerCase() === slug.toLowerCase() ||
-        item.tags?.some(tag => tag.toLowerCase().includes(slug.toLowerCase()))
-      );
+      // Enhanced category matching for better results
+      const normalizeString = (str: string) => 
+        str.toLowerCase().replace(/[^a-z0-9]/g, '').trim();
+      
+      const normalizedSlug = normalizeString(slug);
+      
+      const filteredListings = MARKETPLACE_LISTINGS.filter(item => {
+        const normalizedCategory = item.category ? normalizeString(item.category) : '';
+        const normalizedTags = item.tags?.map(tag => normalizeString(tag)) || [];
+        
+        // Direct category match
+        if (normalizedCategory === normalizedSlug) return true;
+        
+        // Category contains slug or slug contains category
+        if (normalizedCategory.includes(normalizedSlug) || normalizedSlug.includes(normalizedCategory)) return true;
+        
+        // Tag matches
+        if (normalizedTags.some(tag => tag === normalizedSlug || tag.includes(normalizedSlug) || normalizedSlug.includes(tag))) return true;
+        
+        // Special mapping for common category aliases
+        const categoryMappings: Record<string, string[]> = {
+          'services': ['service', 'consulting', 'support'],
+          'equipment': ['hardware', 'device', 'computer'],
+          'aimodelsapis': ['ai', 'model', 'api', 'artificial', 'intelligence'],
+          'contentcreation': ['content', 'creative', 'writing', 'generation'],
+          'dataanalysis': ['data', 'analytics', 'analysis', 'intelligence', 'bi'],
+          'computervision': ['vision', 'image', 'visual', 'recognition'],
+          'cloudservices': ['cloud', 'saas', 'platform', 'hosting'],
+          'security': ['secure', 'protection', 'safety', 'monitoring'],
+          'marketing': ['promotion', 'advertising', 'campaign', 'social']
+        };
+        
+        if (categoryMappings[normalizedSlug]) {
+          return categoryMappings[normalizedSlug].some(alias => 
+            normalizedCategory.includes(alias) || 
+            normalizedTags.some(tag => tag.includes(alias))
+          );
+        }
+        
+        return false;
+      });
 
       categoryDetails = mockCategory;
       products = filteredListings.map(item => ({
