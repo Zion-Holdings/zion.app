@@ -114,13 +114,12 @@ export function EnhancedSearchInput({
         if (highlightedIndex !== -1 && filteredSuggestions[highlightedIndex]) {
           e.preventDefault(); // Prevent form submission
           handleSelectSuggestion(filteredSuggestions[highlightedIndex]);
-        } else {
-          // No suggestion selected. Default is form submission.
-          if (value === valueOnFocus && !enterHandledPostFocus) {
-            e.preventDefault(); // Prevent this submission if value hasn't changed since focus
-            setEnterHandledPostFocus(true); // Mark that we've handled (blocked) one Enter.
-          }
-          // Otherwise, allow form submission (no e.preventDefault()).
+        } else if (value.trim()) {
+          // Allow form submission when there's a value and no suggestion is selected
+          // Don't prevent default - let the form handle submission
+          setIsFocused(false);
+          setHighlightedIndex(-1);
+          inputRef.current?.blur();
         }
         break;
       case 'Escape':
