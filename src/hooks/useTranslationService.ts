@@ -2,9 +2,8 @@
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
-const openAiKey =
-  process.env.NEXT_PUBLIC_OPENAI_API_KEY ||
-  process.env.OPENAI_API_KEY; // Fallback, but be cautious if OPENAI_API_KEY is a secret and this runs client-side
+// Only use the public client-side OpenAI key - never reference server-side secrets
+const openAiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 import { useLanguage, SupportedLanguage } from '@/context/LanguageContext';
 
 type ContentType = 'job' | 'profile' | 'service' | 'general';
