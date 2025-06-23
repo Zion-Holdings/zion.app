@@ -1,6 +1,7 @@
 import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { toast } from "@/components/ui/use-toast"
 // Use the ThemeProvider hook which is backed by src/components/ThemeProvider
 // to ensure we read and modify the same theme state used across the app.
 // The hook is re-exported from '@/hooks/useTheme' so that components don't need
@@ -26,8 +27,20 @@ export function ModeToggle() {
     try {
       // Toggle theme using the toggleTheme function from context
       toggleTheme();
+      
+      // Show user feedback with toast notification
+      const newTheme = isDarkMode ? 'light' : 'dark';
+      toast({
+        title: `Switched to ${newTheme} mode`,
+        description: `Theme changed successfully`,
+      });
     } catch (error) {
       logIssue('Theme switch failed', { error });
+      toast({
+        title: "Theme switch failed",
+        description: "Unable to change theme. Please try again.",
+        variant: "destructive",
+      });
     }
   };
 
