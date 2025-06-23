@@ -4,23 +4,47 @@ export default async function handler(
   _req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const internalAuthServiceUrl = process.env.INTERNAL_AUTH_SERVICE_URL;
+  // Check Auth0 configuration
+  const auth0Domain = process.env.AUTH0_ISSUER_BASE_URL;
+  const auth0ClientId = process.env.AUTH0_CLIENT_ID;
+  const auth0ClientSecret = process.env.AUTH0_CLIENT_SECRET;
+  const auth0Secret = process.env.AUTH0_SECRET;
 
-  if (!internalAuthServiceUrl) {
-    console.error('INTERNAL_AUTH_SERVICE_URL is not set. Cannot perform health check.');
-    return res.status(500).json({ message: 'Auth service URL not configured' });
+  const missingVars = [];
+  if (!auth0Domain) missingVars.push('AUTH0_ISSUER_BASE_URL');
+  if (!auth0ClientId) missingVars.push('AUTH0_CLIENT_ID');
+  if (!auth0ClientSecret) missingVars.push('AUTH0_CLIENT_SECRET');
+  if (!auth0Secret) missingVars.push('AUTH0_SECRET');
+
+  if (missingVars.length > 0) {
+    console.error('Auth0 configuration incomplete. Missing:', missingVars.join(', '));
+    return res.status(500).json({ 
+      message: 'Auth service not configured',
+      missing: missingVars
+    });
   }
 
+  // Check if Auth0 domain is reachable
   try {
-    const response = await fetch(`${internalAuthServiceUrl}/health`);
+    const wellKnownUrl = `${auth0Domain}/.well-known/openid_configuration`;
+    const response = await fetch(wellKnownUrl);
+    
     if (!response.ok) {
-      console.error('Auth service health check failed with status', response.status);
+      console.error('Auth0 well-known endpoint failed with status', response.status);
       return res.status(500).json({ message: 'Auth service unreachable' });
     }
-    const data = await response.json().catch(() => ({ status: 'unknown' }));
-    return res.status(200).json({ status: 'ok', service: data });
+    
+    const data = await response.json();
+    return res.status(200).json({ 
+      status: 'ok', 
+      service: {
+        issuer: data.issuer,
+        authorization_endpoint: data.authorization_endpoint,
+        token_endpoint: data.token_endpoint
+      }
+    });
   } catch (error: any) {
-    console.error('Auth service health check error:', error);
+    console.error('Auth0 health check error:', error);
     return res.status(500).json({ message: 'Auth service unreachable' });
   }
 }
