@@ -10,6 +10,12 @@ const schema = z.object({
     .regex(/[A-Z]/, 'Password must include an uppercase letter')
     .regex(/[a-z]/, 'Password must include a lowercase letter')
     .regex(/[0-9]/, 'Password must include a number'),
+  userType: z.string().optional(),
+  source: z.string().optional(),
+  metadata: z.object({
+    partnerProgram: z.boolean().optional(),
+    signupType: z.string().optional(),
+  }).optional(),
 });
 
 async function getAuth0ManagementToken() {
@@ -59,7 +65,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
   }
 
-  const { name, email, password } = result.data;
+  const { name, email, password, userType, source, metadata } = result.data;
   const domain = process.env.AUTH0_ISSUER_BASE_URL;
 
   if (!domain) {
@@ -88,7 +94,17 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         email_verified: false,
         verify_email: true, // Send verification email
         user_metadata: {
-          display_name: name
+          display_name: name,
+          userType: userType || 'user',
+          signupSource: source || 'direct',
+          ...(metadata && { partnerProgram: metadata.partnerProgram })
+        },
+        app_metadata: {
+          ...(userType === 'partner' && { 
+            role: 'partner',
+            partnerProgram: true,
+            partnerStatus: 'pending_approval'
+          })
         }
       }),
     });

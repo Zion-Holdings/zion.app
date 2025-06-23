@@ -35,6 +35,10 @@ export default function Signup() {
   const [successMessage, setSuccessMessage] = useState('');
   const [emailVerificationRequired, setEmailVerificationRequired] = useState(false);
   const [authServiceAvailable, setAuthServiceAvailable] = useState(true);
+  
+  // Check if this is a partner signup
+  const isPartnerSignup = router.query.type === 'partner';
+  const signupSource = router.query.source as string || 'direct';
 
   useEffect(() => {
     async function checkHealth() {
@@ -68,7 +72,15 @@ export default function Signup() {
         const res = await axios.post('/api/auth/register', {
           name: values.name,
           email: values.email,
-          password: values.password
+          password: values.password,
+          ...(isPartnerSignup && {
+            userType: 'partner',
+            source: signupSource,
+            metadata: {
+              partnerProgram: true,
+              signupType: 'partner'
+            }
+          })
         });
         
         if (res.status === 201) {
@@ -77,24 +89,34 @@ export default function Signup() {
           if (data.emailVerificationRequired) {
             // Email verification is required
             setEmailVerificationRequired(true);
-            setSuccessMessage(data.message || 'Account created! Please check your email to verify your account.');
+            const message = isPartnerSignup 
+              ? 'Partner application submitted! Please check your email to verify your account. Once verified, your partner application will be reviewed.'
+              : 'Account created! Please check your email to verify your account.';
+            setSuccessMessage(data.message || message);
             
             toast({
-              title: 'Account created!',
-              description: 'Please check your email to verify your account before logging in.',
+              title: isPartnerSignup ? 'Partner application submitted!' : 'Account created!',
+              description: isPartnerSignup 
+                ? 'Please verify your email. Your partner application will be reviewed after verification.'
+                : 'Please check your email to verify your account before logging in.',
             });
           } else {
             // Account created and ready to use
-            setSuccessMessage(data.message || 'Account created successfully!');
+            const message = isPartnerSignup 
+              ? 'Partner application submitted successfully! You can now log in and your application will be reviewed.'
+              : 'Account created successfully!';
+            setSuccessMessage(data.message || message);
             
             toast({
-              title: 'Account created successfully!',
-              description: 'Welcome to the platform. You can now log in.',
+              title: isPartnerSignup ? 'Partner application submitted!' : 'Account created successfully!',
+              description: isPartnerSignup 
+                ? 'Welcome to the partner program. You can now log in.'
+                : 'Welcome to the platform. You can now log in.',
             });
             
-            // Redirect to login after a short delay
+            // Redirect to appropriate page after a short delay
             setTimeout(() => {
-              router.push('/login');
+              router.push(isPartnerSignup ? '/partners' : '/login');
             }, 2000);
           }
         }
@@ -168,7 +190,16 @@ export default function Signup() {
         <link rel="stylesheet" href="/static/css/main.css" />
       </Helmet>
       <div className="flex min-h-screen items-center justify-center p-4">
-        <form onSubmit={formik.handleSubmit} className="w-full max-w-sm space-y-4" noValidate>
+        <div className="w-full max-w-sm space-y-4">
+          {isPartnerSignup && (
+            <div className="text-center mb-6">
+              <h1 className="text-2xl font-bold text-foreground">Partner Application</h1>
+              <p className="text-sm text-muted-foreground mt-2">
+                Join the Zion AI Partner Program and start earning rewards
+              </p>
+            </div>
+          )}
+          <form onSubmit={formik.handleSubmit} className="space-y-4" noValidate>
           {/* Show Success message */}
           {successMessage && (
             <Alert className="border-green-500 bg-green-50 text-green-900" data-testid="success-alert">
@@ -324,7 +355,8 @@ export default function Signup() {
               </Button>
             </div>
           )}
-        </form>
+          </form>
+        </div>
       </div>
     </AuthLayout>
   );

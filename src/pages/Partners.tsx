@@ -152,7 +152,7 @@ export default function Partners() {
             className="bg-zion-purple hover:bg-zion-purple-dark text-white"
             asChild
           >
-            <Link href="/signup">Apply as Partner</Link>
+            <Link href="/signup?type=partner&source=partner-program">Apply as Partner</Link>
           </Button>
           <Button
             size="lg"
