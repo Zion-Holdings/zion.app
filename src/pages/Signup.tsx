@@ -35,22 +35,40 @@ export default function Signup() {
   const [successMessage, setSuccessMessage] = useState('');
   const [emailVerificationRequired, setEmailVerificationRequired] = useState(false);
   const [authServiceAvailable, setAuthServiceAvailable] = useState(true);
+  const [healthCheckLoading, setHealthCheckLoading] = useState(true);
+  const [healthCheckError, setHealthCheckError] = useState<string | null>(null);
   
   // Check if this is a partner signup
   const isPartnerSignup = router.query.type === 'partner';
   const signupSource = router.query.source as string || 'direct';
 
-  useEffect(() => {
-    async function checkHealth() {
-      try {
-        const res = await axios.get('/api/auth/health');
-        setAuthServiceAvailable(res.status === 200);
-      } catch (err) {
-        console.error('Auth service health check failed', err);
-        setAuthServiceAvailable(false);
+  const performHealthCheck = async () => {
+    setHealthCheckLoading(true);
+    setHealthCheckError(null);
+    try {
+      const res = await axios.get('/api/auth/health');
+      setAuthServiceAvailable(res.status === 200);
+      if (res.status !== 200) {
+        setHealthCheckError('Authentication service is experiencing issues');
       }
+    } catch (err: any) {
+      console.error('Auth service health check failed', err);
+      setAuthServiceAvailable(false);
+      // Set a more specific error message based on the error type
+      if (err.code === 'NETWORK_ERROR' || err.message?.includes('Network Error')) {
+        setHealthCheckError('Network connection issues detected');
+      } else if (err.response?.status === 500) {
+        setHealthCheckError('Authentication service is temporarily unavailable');
+      } else {
+        setHealthCheckError('Unable to verify authentication service status');
+      }
+    } finally {
+      setHealthCheckLoading(false);
     }
-    checkHealth();
+  };
+
+  useEffect(() => {
+    performHealthCheck();
   }, []);
 
   const formik = useFormik({
@@ -172,13 +190,15 @@ export default function Signup() {
     }
   });
 
-  if (!authServiceAvailable) {
+  // Show loading state only during initial health check
+  if (healthCheckLoading) {
     return (
       <AuthLayout>
         <div className="flex min-h-screen items-center justify-center p-4">
-          <p className="text-red-500" data-testid="config-error-message">
-            Signup is temporarily unavailable due to a server configuration issue. Please try again later.
-          </p>
+          <div className="text-center space-y-4">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="text-muted-foreground">Initializing signup...</p>
+          </div>
         </div>
       </AuthLayout>
     );
@@ -200,6 +220,25 @@ export default function Signup() {
             </div>
           )}
           <form onSubmit={formik.handleSubmit} className="space-y-4" noValidate>
+          {/* Show Health Check Warning */}
+          {healthCheckError && (
+            <Alert variant="destructive" className="border-yellow-500 bg-yellow-50 text-yellow-900">
+              <AlertCircle className="h-4 w-4" />
+              <AlertDescription className="flex items-center justify-between">
+                <span>{healthCheckError}. You can still try to sign up, but it may fail.</span>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={performHealthCheck}
+                  disabled={healthCheckLoading}
+                  className="ml-2 text-xs"
+                >
+                  {healthCheckLoading ? 'Checking...' : 'Retry'}
+                </Button>
+              </AlertDescription>
+            </Alert>
+          )}
+          
           {/* Show Success message */}
           {successMessage && (
             <Alert className="border-green-500 bg-green-50 text-green-900" data-testid="success-alert">
@@ -319,8 +358,13 @@ export default function Signup() {
           )}
           
           {!emailVerificationRequired ? (
-            <Button type="submit" disabled={loading} data-testid="signup-submit">
-              {loading ? 'Creating Account...' : 'Create Account'}
+            <Button 
+              type="submit" 
+              disabled={loading} 
+              data-testid="signup-submit"
+              className={healthCheckError ? 'bg-yellow-600 hover:bg-yellow-700' : ''}
+            >
+              {loading ? 'Creating Account...' : (healthCheckError ? 'Try Creating Account' : 'Create Account')}
             </Button>
           ) : (
             <div className="space-y-2">
@@ -353,6 +397,14 @@ export default function Signup() {
               >
                 Try Different Email
               </Button>
+            </div>
+          )}
+          
+          {/* Additional help text when service issues are detected */}
+          {healthCheckError && (
+            <div className="text-center text-xs text-muted-foreground mt-4 p-3 bg-muted rounded">
+              <p>⚠️ We detected some authentication service issues.</p>
+              <p>If signup fails, please try again in a few minutes or contact support.</p>
             </div>
           )}
           </form>
