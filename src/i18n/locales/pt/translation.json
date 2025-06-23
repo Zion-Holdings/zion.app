@@ -61,7 +61,18 @@
     "quick_access_subtitle": "Vá direto para nossos recursos mais populares",
     "tool_mobile_app": "Aplicativo Mobile",
     "tool_mobile_app_desc": "Zion sempre com você",
-    "all_features_title": "Explorar Todos os Recursos"
+    "all_features_title": "Explorar Todos os Recursos",
+    "categories_title": "Explorar Categorias",
+    "categories_subtitle": "Descubra nosso ecossistema abrangente de serviços tecnológicos, talento, equipamentos e inovação",
+    "no_categories_title": "Nenhuma Categoria Encontrada",
+    "no_categories_desc": "Não conseguimos encontrar categorias para exibir no momento.",
+    "no_categories_support": "Por favor, volte mais tarde, ou se acredita que isso é um erro, entre em contato com o suporte.",
+    "featured_services": "Serviços Destacados",
+    "view_all_categories": "Ver Todas as Categorias →",
+    "benefits_title": "Por que Zion?",
+    "benefits_subtitle": "Experimente a próxima geração de marketplace tecnológico com recursos projetados para maximizar eficiência e valor",
+    "how_it_works_title": "Como Funciona",
+    "how_it_works_subtitle": "Um processo simples de quatro etapas para conectar provedores de tecnologia com clientes"
   },
   "jobs": {
     "post_job_title": "Publicar uma Vaga",
@@ -94,5 +105,36 @@
     "payment_success_title": "Pagamento Realizado!",
     "payment_success_message": "Seu pagamento foi processado com sucesso. Agora você tem acesso a todos os recursos premium.",
     "go_to_dashboard": "Ir para o Painel"
+  },
+  "categories": {
+    "services": "Serviços",
+    "services_desc": "Suporte de TI sob demanda, consultoria, desenvolvimento e mais",
+    "talents": "Talentos",
+    "talents_desc": "Conecte-se com especialistas em IA, desenvolvedores e especialistas em tecnologia",
+    "equipment": "Equipamentos",
+    "equipment_desc": "Alugue ou compre hardware especializado, servidores e dispositivos",
+    "innovation": "Inovação",
+    "innovation_desc": "Descubra soluções de ponta e avanços tecnológicos",
+    "it_onsite_services": "Serviços de TI no Local"
+  },
+  "benefits": {
+    "ai_matchmaking": "Correspondência com IA",
+    "ai_matchmaking_desc": "Nossos algoritmos avançados combinam suas necessidades com os provedores de serviços ou produtos perfeitos, economizando tempo e garantindo resultados ótimos.",
+    "global_availability": "Disponibilidade Global",
+    "global_availability_desc": "Acesse uma rede mundial de talentos tecnológicos, produtos e serviços para encontrar as melhores soluções, independentemente das limitações geográficas.",
+    "support_24_7": "Suporte 24/7",
+    "support_24_7_desc": "Nossa equipe dedicada está disponível 24 horas por dia para ajudar com qualquer dúvida ou problema que você possa encontrar durante sua jornada.",
+    "cost_reduction": "Redução de Custos",
+    "cost_reduction_desc": "Elimine intermediários e reduza custos em até 40% através de conexões diretas com provedores de serviços e fornecedores de produtos."
+  },
+  "how_it_works": {
+    "post": "Publicar",
+    "post_desc": "Publique seu serviço, trabalho ou equipamento em minutos com nosso formulário alimentado por IA.",
+    "match": "Combinar",
+    "match_desc": "Nossa IA combina automaticamente suas necessidades com os provedores ou oportunidades perfeitos.",
+    "hire_buy": "Contratar/Comprar",
+    "hire_buy_desc": "Conecte-se diretamente com provedores combinados e complete sua transação com segurança.",
+    "done": "Pronto",
+    "done_desc": "Desfrute de entrega sem complicações e suporte para suas soluções tecnológicas."
   }
 }

@@ -77,9 +77,20 @@
     "header_tagline": "Your gateway to AI & tech solutions",
     "quick_access_title": "Quick Access",
     "quick_access_subtitle": "Jump directly to our most popular features",
-    "tool_mobile_app": "Mobile App",
-    "tool_mobile_app_desc": "Zion on the go",
-    "all_features_title": "Explore All Features"
+    "tool_mobile_app": "Application Mobile",
+    "tool_mobile_app_desc": "Zion en déplacement",
+    "all_features_title": "Explorer Toutes les Fonctionnalités",
+    "categories_title": "Explorer les Catégories",
+    "categories_subtitle": "Découvrez notre écosystème complet de services technologiques, talents, équipements et innovation",
+    "no_categories_title": "Aucune Catégorie Trouvée",
+    "no_categories_desc": "Nous n'avons trouvé aucune catégorie à afficher pour le moment.",
+    "no_categories_support": "Veuillez revenir plus tard, ou si vous pensez que c'est une erreur, contactez le support.",
+    "featured_services": "Services en Vedette",
+    "view_all_categories": "Voir Toutes les Catégories →",
+    "benefits_title": "Pourquoi Zion?",
+    "benefits_subtitle": "Découvrez la prochaine génération de marché technologique avec des fonctionnalités conçues pour maximiser l'efficacité et la valeur",
+    "how_it_works_title": "Comment Ça Marche",
+    "how_it_works_subtitle": "Un processus simple en quatre étapes pour connecter les fournisseurs de technologie avec les clients"
   },
   "jobs": {
     "post_job_title": "Post a Job",
@@ -135,8 +146,39 @@
     "access_denied": "Access Denied",
     "no_permission": "You don't have permission to access this page. This could be because your account doesn't have the required permissions or you need to complete your profile.",
     "login_different_account": "Login with Different Account",
-    "payment_success_title": "Payment Successful!",
-    "payment_success_message": "Your payment has been processed successfully. You now have access to all the premium features.",
-    "go_to_dashboard": "Go to Dashboard"
+    "payment_success_title": "Paiement Réussi!",
+    "payment_success_message": "Votre paiement a été traité avec succès. Vous avez maintenant accès à toutes les fonctionnalités premium.",
+    "go_to_dashboard": "Aller au Tableau de Bord"
+  },
+  "categories": {
+    "services": "Services",
+    "services_desc": "Support IT à la demande, conseil, développement et plus",
+    "talents": "Talents",
+    "talents_desc": "Connectez-vous avec des experts en IA, développeurs et spécialistes technologiques",
+    "equipment": "Équipement",
+    "equipment_desc": "Louez ou achetez du matériel spécialisé, serveurs et dispositifs",
+    "innovation": "Innovation",
+    "innovation_desc": "Découvrez des solutions de pointe et des percées technologiques",
+    "it_onsite_services": "Services IT sur Site"
+  },
+  "benefits": {
+    "ai_matchmaking": "Appariement par IA",
+    "ai_matchmaking_desc": "Nos algorithmes avancés font correspondre vos besoins avec les fournisseurs de services ou produits parfaits, vous faisant gagner du temps et garantissant des résultats optimaux.",
+    "global_availability": "Disponibilité Mondiale",
+    "global_availability_desc": "Accédez à un réseau mondial de talents technologiques, produits et services pour trouver les meilleures solutions, quelles que soient les limitations géographiques.",
+    "support_24_7": "Support 24/7",
+    "support_24_7_desc": "Notre équipe dédiée est disponible 24h/24 pour vous aider avec toute question ou problème que vous pourriez rencontrer durant votre parcours.",
+    "cost_reduction": "Réduction des Coûts",
+    "cost_reduction_desc": "Éliminez les intermédiaires et réduisez les coûts jusqu'à 40% grâce à des connexions directes avec les fournisseurs de services et vendeurs de produits."
+  },
+  "how_it_works": {
+    "post": "Publier",
+    "post_desc": "Publiez votre service, emploi ou équipement en quelques minutes avec notre formulaire alimenté par IA.",
+    "match": "Apparier",
+    "match_desc": "Notre IA apparie automatiquement vos besoins avec les fournisseurs ou opportunités parfaits.",
+    "hire_buy": "Embaucher/Acheter",
+    "hire_buy_desc": "Connectez-vous directement avec les fournisseurs appariés et complétez votre transaction en sécurité.",
+    "done": "Terminé",
+    "done_desc": "Profitez d'une livraison sans tracas et du support pour vos solutions technologiques."
   }
 }
