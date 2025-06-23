@@ -478,10 +478,42 @@ export default function Marketplace({ products: _initialProducts = [] }: Marketp
     );
   }
 
-  // Empty state (should rarely happen with AI generation)
+  // Empty state (should rarely happen with fallback data)
   if (!products || products.length === 0) {
     return (
       <div className="container py-8" data-testid="marketplace-empty">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-8"
+        >
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            AI Marketplace
+          </h1>
+          <p className="text-muted-foreground text-lg">
+            Discover cutting-edge AI and IT solutions
+          </p>
+        </motion.div>
+
+        {/* Show categories even when no products */}
+        {categories.length > 0 && (
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Browse Categories</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {categories.map((category) => (
+                <motion.div
+                  key={category}
+                  whileHover={{ scale: 1.05 }}
+                  className="p-4 bg-card border border-border rounded-lg cursor-pointer"
+                  onClick={() => setFilterCategory(category)}
+                >
+                  <p className="text-center font-medium">{category}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        )}
+
         <ProductsEmptyState
           onAddProduct={handleAddProduct}
           onRetry={refresh}
