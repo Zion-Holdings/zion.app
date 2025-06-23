@@ -9,6 +9,10 @@
   NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
   NODE_VERSION = "20"
   
+  # Configure secrets scanning to omit legitimate public environment variables
+  # NEXT_PUBLIC_* variables are meant to be public and embedded in client bundles
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME"
+  
   # ========================================
   # AUTH0 AUTHENTICATION CONFIGURATION
   # ========================================
@@ -134,13 +138,7 @@
   schedule = "@daily"
 
 [functions.healthCheckCron]
-  schedule = "*/5 * * * *"
-
-# Configure secrets scanning to handle public environment variables correctly
-[build.processing.secrets]
-  # NEXT_PUBLIC_* variables are meant to be public and embedded in client bundles
-  # Disable secrets scanning to prevent false positives with public env vars
-  enabled = false
+    schedule = "*/5 * * * *"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
