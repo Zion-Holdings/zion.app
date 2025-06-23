@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { captureException } from '@/utils/sentry';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
+import { TALENT_PROFILES } from '@/data/talentData';
 
 // Mock category data for fallback
 const MOCK_CATEGORIES = {
@@ -25,6 +26,11 @@ const MOCK_CATEGORIES = {
     name: 'Machine Learning',
     slug: 'machine-learning',
     description: 'Cutting-edge machine learning solutions and tools'
+  },
+  talent: {
+    name: 'AI Talent Directory',
+    slug: 'talent',
+    description: 'Discover and connect with skilled AI professionals and experts'
   }
 };
 
@@ -47,8 +53,53 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     let products = [];
     let usingFallback = false;
 
+    // Special handling for talent category
+    if (slug === 'talent') {
+      const talentCategory = MOCK_CATEGORIES.talent;
+      
+      // Convert talent profiles to match the expected Listing interface format
+      const talentItems = TALENT_PROFILES.map(profile => ({
+        id: profile.id,
+        title: profile.full_name,
+        description: profile.bio || `${profile.professional_title} with ${profile.years_experience || 0} years experience`,
+        category: 'talent',
+        subcategory: profile.professional_title,
+        image: profile.profile_picture_url || '/images/default-avatar.png',
+        tags: profile.skills || [],
+        author: profile.full_name,
+        authorImage: profile.profile_picture_url,
+        aiScore: profile.average_rating ? Math.round(profile.average_rating * 20) : undefined, // Convert 5-star to 100-point scale
+        rating: profile.average_rating,
+        reviewCount: profile.rating_count,
+        price: profile.hourly_rate,
+        createdAt: new Date().toISOString(), // Default to current date since we don't have creation dates
+        // Additional talent-specific fields
+        name: profile.full_name, // For backward compatibility
+        currency: 'USD',
+        images: profile.profile_picture_url ? [{ url: profile.profile_picture_url, alt: profile.full_name }] : null,
+        type: 'talent',
+        role: profile.professional_title,
+        experience: profile.years_experience,
+        skills: profile.skills,
+        location: profile.location,
+        availability: profile.availability_type,
+        hourlyRate: profile.hourly_rate
+      }));
+
+      const responseData = {
+        category: {
+          name: talentCategory.name,
+          slug: talentCategory.slug,
+          description: talentCategory.description,
+        },
+        items: talentItems,
+      };
+
+      return res.status(200).json(responseData);
+    }
+
     try {
-      // Try to fetch from database first
+      // Try to fetch from database first for non-talent categories
       categoryDetails = await prisma.category.findUnique({
         where: { slug: slug, active: true },
         select: {
