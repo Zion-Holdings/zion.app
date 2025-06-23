@@ -18,8 +18,8 @@ describe('Search Suggestions Navigation', () => {
       .should('be.visible')
       .click();
 
-    // Assert URL contains the encoded query
-    cy.url().should('include', '/search?q=GPU%20cluster');
+    // Assert URL contains the slug-based path (updated for new routing)
+    cy.url().should('include', '/search/gpu-cluster');
 
     // Assert that search results page is loaded
     cy.get('[data-testid="search-results"]').should('be.visible');
@@ -32,6 +32,42 @@ describe('Search Suggestions Navigation', () => {
     
     // Verify results counter is shown
     cy.get('[data-testid="results-count"]').should('be.visible');
+  });
+
+  it('should navigate to marketplace listing when clicking a product suggestion', () => {
+    // Type to get product suggestions
+    cy.get('[data-testid="search-bar"] input').type('GPT');
+    cy.get('[data-testid="search-suggestions"]').should('be.visible');
+    
+    // Click on a specific product suggestion
+    cy.get('[data-testid="search-suggestions"]')
+      .contains('GPT-4 API Integration Package', { matchCase: false })
+      .should('be.visible')
+      .click();
+
+    // Should navigate to marketplace listing page
+    cy.url().should('include', '/marketplace/listing/ai-model-1');
+    
+    // Verify we're on the product detail page
+    cy.contains('GPT-4 API Integration Package').should('be.visible');
+  });
+
+  it('should navigate to documentation when clicking a doc suggestion', () => {
+    // Type to get documentation suggestions
+    cy.get('[data-testid="search-bar"] input').type('API');
+    cy.get('[data-testid="search-suggestions"]').should('be.visible');
+    
+    // Click on API Reference documentation suggestion
+    cy.get('[data-testid="search-suggestions"]')
+      .contains('API Reference', { matchCase: false })
+      .should('be.visible')
+      .click();
+
+    // Should navigate directly to documentation page
+    cy.url().should('include', '/developers/docs/reference');
+    
+    // Verify we're on the API Reference page
+    cy.contains('API Reference').should('be.visible');
   });
 
   it('should handle search with no results gracefully', () => {
