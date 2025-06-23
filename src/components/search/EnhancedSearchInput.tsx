@@ -79,9 +79,13 @@ export function EnhancedSearchInput({
   }, []);
 
   const handleSelectSuggestion = (suggestionObj: SearchSuggestion) => {
+    console.log('EnhancedSearchInput handleSelectSuggestion called:', suggestionObj);
     onChange(suggestionObj.text);
     if (onSelectSuggestion) {
+      console.log('Calling onSelectSuggestion with:', suggestionObj);
       onSelectSuggestion(suggestionObj);
+    } else {
+      console.warn('onSelectSuggestion callback not provided');
     }
     setIsFocused(false);
     inputRef.current?.blur();

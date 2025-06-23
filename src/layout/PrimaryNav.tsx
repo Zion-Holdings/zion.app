@@ -75,13 +75,31 @@ export function PrimaryNav() {
                 value={query}
                 onChange={setQuery}
                 onSelectSuggestion={(sugg) => {
+                  // Handle different suggestion types with proper navigation
                   if (sugg.id) {
+                    // Product listings with IDs go to product detail page
                     router.push(`/marketplace/listing/${sugg.id}`);
+                  } else if (sugg.type === 'doc' && sugg.slug && sugg.slug.startsWith('/')) {
+                    // Documentation suggestions navigate directly to their path
+                    router.push(sugg.slug);
+                  } else if (sugg.type === 'blog' && sugg.slug) {
+                    // Blog posts navigate to blog detail page
+                    router.push(`/blog/${sugg.slug}`);
                   } else {
+                    // Default: search results page
                     const slug = sugg.slug || slugify(sugg.text);
                     router.push(`/search/${slug}`);
                   }
                   setQuery('');
+                  
+                  // Track analytics event
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'search_suggestion_click', {
+                      search_term: sugg.text,
+                      suggestion_type: sugg.type,
+                      suggestion_id: sugg.id || sugg.slug
+                    });
+                  }
                 }}
                 searchSuggestions={suggestions}
               />

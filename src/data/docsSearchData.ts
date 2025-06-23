@@ -33,7 +33,7 @@ export const DOCS_SEARCH_ITEMS: DocsSearchItem[] = [
 ];
 
 export const docsSearchSuggestions: SearchSuggestion[] = DOCS_SEARCH_ITEMS.map(
-  ({ text, type }) => ({ text, type })
+  ({ text, type, path }) => ({ text, type, slug: path })
 );
 
 export function getDocsSearchPath(text: string): string | undefined {

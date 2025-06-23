@@ -79,6 +79,7 @@ export function AutocompleteSuggestions({
               data-testid="suggestion-item"
               onClick={(e) => {
                 e.preventDefault();
+                console.log('Search suggestion clicked:', suggestion);
                 onSelectSuggestion(suggestion);
               }}
               onMouseDown={(e) => {

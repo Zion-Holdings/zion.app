@@ -106,6 +106,7 @@ export const generateSearchSuggestions = (): SearchSuggestion[] => {
   
   const blogSuggestions = BLOG_POSTS.map(p => ({ 
     text: p.title, 
+    slug: p.slug || slugify(p.title),
     type: 'blog' as const 
   }));
 
