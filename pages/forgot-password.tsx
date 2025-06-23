@@ -41,9 +41,19 @@ const ForgotPassword = () => {
     try {
       const { ok, error } = await resetPassword(email);
       if (!ok) throw new Error(error || 'Reset failed');
+      
+      // Clear any previous errors and show success message
+      setError(null);
       setMessage(
         'If your email address is registered, you will receive a password reset link shortly.',
       );
+      
+      // Also show a toast for better user feedback
+      toast({
+        title: "Reset Link Sent",
+        description: "Please check your email for password reset instructions.",
+        variant: "default",
+      });
     } catch (err: any) {
       Sentry.captureException(err);
       const errorMessage =
