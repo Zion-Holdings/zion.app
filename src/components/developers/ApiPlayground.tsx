@@ -28,7 +28,8 @@ export function ApiPlayground({ method, path, params = [] }: ApiPlaygroundProps)
   };
 
   const sendRequest = async () => {
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "";
+    // For API documentation, use current domain if NEXT_PUBLIC_API_URL is not set
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' ? window.location.origin : '');
     let url = `${baseUrl}${path}`;
 
     const searchParams = new URLSearchParams();
@@ -47,6 +48,8 @@ export function ApiPlayground({ method, path, params = [] }: ApiPlaygroundProps)
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
+      // Add timeout to prevent hanging
+      signal: AbortSignal.timeout(15000),
     };
 
     if (method !== "GET" && method !== "DELETE") {
@@ -62,10 +65,35 @@ export function ApiPlayground({ method, path, params = [] }: ApiPlaygroundProps)
 
     try {
       const res = await fetch(url, options);
-      const text = await res.text();
-      setResponse(text);
-    } catch (err) {
-      setResponse((err as Error).message);
+      const contentType = res.headers.get('content-type');
+      
+      let responseText: string;
+      if (contentType?.includes('application/json')) {
+        try {
+          const jsonData = await res.json();
+          responseText = JSON.stringify(jsonData, null, 2);
+        } catch {
+          responseText = await res.text();
+        }
+      } else {
+        responseText = await res.text();
+      }
+
+      // Format the response with status information
+      const statusInfo = `HTTP ${res.status} ${res.statusText}\n\n`;
+      setResponse(statusInfo + responseText);
+    } catch (err: any) {
+      let errorMessage = 'Request failed';
+      
+      if (err.name === 'AbortError') {
+        errorMessage = 'Request timed out (15s)';
+      } else if (err.message?.includes('Failed to fetch')) {
+        errorMessage = 'Network error - check CORS configuration or API endpoint';
+      } else {
+        errorMessage = err.message || 'Unknown error occurred';
+      }
+      
+      setResponse(`Error: ${errorMessage}\n\nAttempted URL: ${url}\n\nTroubleshooting:\n- Ensure the API endpoint exists\n- Check CORS configuration\n- Verify API key is valid\n- Check network connectivity`);
     } finally {
       setLoading(false);
     }

@@ -1,7 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
+import { applyCorsHeaders } from '@/middleware/cors';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  // Apply CORS headers for API documentation
+  applyCorsHeaders(req, res);
+
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
     return res.status(405).end(`Method ${req.method} Not Allowed`);
