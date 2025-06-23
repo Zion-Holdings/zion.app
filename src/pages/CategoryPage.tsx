@@ -20,7 +20,9 @@ export default function CategoryPage() {
   const { slug } = router.query;
   const [data, setData] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null); // New state for error messages
+  const [error, setError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
+  const maxRetries = 3;
 
   useEffect(() => {
     async function load() {
@@ -37,7 +39,18 @@ export default function CategoryPage() {
       setData(null); // Reset data before new fetch
 
       try {
-        const res = await fetch(`/api/categories/${slug}/items`);
+        // Add timeout to prevent hanging requests
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+        
+        const res = await fetch(`/api/categories/${slug}/items`, {
+          signal: controller.signal,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        
+        clearTimeout(timeoutId);
         
         // Check if response is ok before trying to parse JSON
         if (!res.ok) {
@@ -58,16 +71,32 @@ export default function CategoryPage() {
         }
 
         setData(json);
+        setRetryCount(0); // Reset retry count on success
         if (json.category?.name) {
           document.title = `${json.category.name} | Zion Marketplace`;
         }
       } catch (e: any) {
         console.error('Failed to load category items:', e);
         
+        // Auto-retry for network errors
+        if (retryCount < maxRetries && (
+          e.name === 'AbortError' || 
+          e.message.includes('Failed to fetch') ||
+          e.message.includes('timeout') ||
+          e.message.includes('500')
+        )) {
+          console.log(`Retrying request (attempt ${retryCount + 1}/${maxRetries})`);
+          setRetryCount(prev => prev + 1);
+          setTimeout(() => load(), 1000 * (retryCount + 1)); // Exponential backoff
+          return;
+        }
+        
         // Provide specific error messages based on the error type
         let errorMessage = 'Failed to load category items. Please try again.';
         
-        if (e.message.includes('Failed to fetch')) {
+        if (e.name === 'AbortError' || e.message.includes('timeout')) {
+          errorMessage = 'Request timed out. The server might be temporarily unavailable. Please try again.';
+        } else if (e.message.includes('Failed to fetch')) {
           errorMessage = 'Unable to connect to the server. Please check your internet connection and try again.';
         } else if (e.message.includes('Unexpected token')) {
           errorMessage = 'Server configuration error. The development team has been notified.';
