@@ -81,13 +81,20 @@ export default function Signup() {
     },
     validationSchema: SignupSchema,
     onSubmit: async (values, { setErrors }) => {
+      console.log('Form submission started with:', { 
+        name: values.name, 
+        email: values.email,
+        hasPassword: !!values.password,
+        isPartnerSignup 
+      });
+      
       setLoading(true);
       setErrorMessage(''); // Clear any previous error
       setSuccessMessage(''); // Clear any previous success message
       setEmailVerificationRequired(false);
       
       try {
-        const res = await axios.post('/api/auth/register', {
+        const requestData = {
           name: values.name,
           email: values.email,
           password: values.password,
@@ -99,6 +106,18 @@ export default function Signup() {
               signupType: 'partner'
             }
           })
+        };
+        
+        console.log('Making API request to /api/auth/register with:', { 
+          ...requestData, 
+          password: '[REDACTED]' 
+        });
+        
+        const res = await axios.post('/api/auth/register', requestData);
+        
+        console.log('API response received:', { 
+          status: res.status, 
+          data: res.data 
         });
         
         if (res.status === 201) {
@@ -139,11 +158,25 @@ export default function Signup() {
           }
         }
       } catch (err: any) {
-        console.error('Signup error:', err);
+        console.error('Signup error details:', {
+          message: err.message,
+          response: err.response ? {
+            status: err.response.status,
+            statusText: err.response.statusText,
+            data: err.response.data
+          } : 'No response',
+          request: err.request ? 'Request made but no response' : 'No request',
+          config: err.config ? {
+            url: err.config.url,
+            method: err.config.method
+          } : 'No config'
+        });
         
         const status = err.response?.status;
         // Try both 'error' and 'message' fields for compatibility
         const errorMsg = err.response?.data?.error || err.response?.data?.message || 'Signup failed. Please try again.';
+        
+        console.log('Processed error message:', errorMsg);
         
         if (status === 409) {
           // Handle duplicate email specifically
@@ -185,6 +218,7 @@ export default function Signup() {
           });
         }
       } finally {
+        console.log('Form submission completed, setting loading to false');
         setLoading(false);
       }
     }
