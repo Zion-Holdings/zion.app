@@ -8,13 +8,33 @@ const LoginPage = () => {
   const { user, error, isLoading } = useUser();
   const router = useRouter();
 
+  // Log Auth0 configuration status (client-side)
   useEffect(() => {
+    console.log('Auth0 Environment Check:', {
+      baseUrl: typeof window !== 'undefined' ? window.location.origin : 'server-side',
+      auth0IssuerBaseUrl: process.env.NEXT_PUBLIC_AUTH0_ISSUER_BASE_URL ? 'SET' : 'NOT SET',
+      auth0ClientId: process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID ? 'SET' : 'NOT SET'
+    });
+  }, []);
+
+  useEffect(() => {
+    console.log('Login page - Auth state:', { 
+      user: user ? { 
+        sub: user.sub, 
+        email: user.email, 
+        name: user.name 
+      } : null, 
+      isLoading, 
+      error: error ? error.message : null 
+    });
+    
     // Redirect authenticated users to dashboard
     if (user && !isLoading) {
       const returnTo = router.query.returnTo as string || '/dashboard';
+      console.log('User is authenticated, redirecting to:', returnTo);
       router.push(returnTo);
     }
-  }, [user, isLoading, router]);
+  }, [user, isLoading, router, error]);
 
   if (isLoading) {
     return (
@@ -92,6 +112,11 @@ const LoginPage = () => {
             <div>
               <a
                 href="/api/auth/login"
+                onClick={(e) => {
+                  console.log('Login button clicked - redirecting to /api/auth/login');
+                  console.log('Current URL:', window.location.href);
+                  // Don't prevent default - let the navigation happen
+                }}
                 className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200"
               >
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
@@ -117,6 +142,9 @@ const LoginPage = () => {
               <div className="mt-6 grid grid-cols-2 gap-3">
                 <a
                   href="/api/auth/login?connection=google-oauth2"
+                  onClick={(e) => {
+                    console.log('Google login button clicked - redirecting to /api/auth/login?connection=google-oauth2');
+                  }}
                   className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
                 >
                   <svg className="h-5 w-5" viewBox="0 0 24 24">
@@ -130,6 +158,9 @@ const LoginPage = () => {
 
                 <a
                   href="/api/auth/login?connection=github"
+                  onClick={(e) => {
+                    console.log('GitHub login button clicked - redirecting to /api/auth/login?connection=github');
+                  }}
                   className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
                 >
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
