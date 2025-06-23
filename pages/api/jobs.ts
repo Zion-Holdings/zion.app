@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { withApiDocsCors } from '@/middleware/cors';
+import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
 
 // Mock jobs data for API documentation and testing
 const MOCK_JOBS = [
@@ -69,19 +70,50 @@ const MOCK_JOBS = [
   }
 ];
 
-// Authentication middleware for demo purposes
+// Simple demo API key validation
 function validateApiKey(req: NextApiRequest): boolean {
-  const authHeader = req.headers.authorization;
-  if (!authHeader) return false;
+  const apiKey = req.headers.authorization?.replace('Bearer ', '') || req.query.api_key;
+  return apiKey === 'demo_key_123' || apiKey === 'test_key_456';
+}
+
+// Optimized job filtering function
+function filterAndSortJobs(jobs: any[], params: {
+  status: string;
+  category?: string;
+  sort: string;
+  limit: number;
+  offset: number;
+}) {
+  const { status, category, sort, limit, offset } = params;
   
-  const token = authHeader.replace('Bearer ', '');
-  
-  // Allow demo key for testing API documentation
-  if (token === 'demo_key_123') return true;
-  
-  // In production, validate against real API keys
-  // For now, we'll allow any non-empty token for demo purposes
-  return token.length > 0;
+  // Filter jobs based on query parameters
+  let filteredJobs = [...jobs];
+
+  if (status !== 'all') {
+    filteredJobs = filteredJobs.filter(job => job.status === status);
+  }
+
+  if (category) {
+    filteredJobs = filteredJobs.filter(job => 
+      job.category.toLowerCase() === category.toLowerCase()
+    );
+  }
+
+  // Sort jobs
+  if (sort === 'created_at') {
+    filteredJobs.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+  } else if (sort === 'budget') {
+    filteredJobs.sort((a, b) => b.budget.max - a.budget.max);
+  }
+
+  // Apply pagination
+  const paginatedJobs = filteredJobs.slice(offset, offset + limit);
+
+  return {
+    jobs: paginatedJobs,
+    totalFiltered: filteredJobs.length,
+    totalAll: jobs.length
+  };
 }
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -116,45 +148,57 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     const limitNum = Math.min(parseInt(limit as string, 10) || 20, 100);
     const offsetNum = parseInt(offset as string, 10) || 0;
 
-    // Filter jobs based on query parameters
-    let filteredJobs = [...MOCK_JOBS];
+    // Create cache key based on parameters
+    const filterParams = `${status}-${category || 'all'}-${sort}-${limitNum}-${offsetNum}`;
+    const cacheKey = cacheKeys.jobs.filtered(filterParams);
 
-    if (status !== 'all') {
-      filteredJobs = filteredJobs.filter(job => job.status === status);
-    }
+    // Use cache-or-compute pattern
+    const result = await cacheOrCompute(
+      cacheKey,
+      async () => {
+        console.log(`Computing jobs with filters: ${filterParams}`);
+        return filterAndSortJobs(MOCK_JOBS, {
+          status: status as string,
+          category: category as string,
+          sort: sort as string,
+          limit: limitNum,
+          offset: offsetNum
+        });
+      },
+      CacheCategory.SHORT, // 5 minutes cache for job listings
+      300 // 5 minutes TTL
+    );
 
-    if (category) {
-      filteredJobs = filteredJobs.filter(job => 
-        job.category.toLowerCase() === (category as string).toLowerCase()
-      );
-    }
-
-    // Sort jobs
-    if (sort === 'created_at') {
-      filteredJobs.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
-    } else if (sort === 'budget') {
-      filteredJobs.sort((a, b) => b.budget.max - a.budget.max);
-    }
-
-    // Apply pagination
-    const paginatedJobs = filteredJobs.slice(offsetNum, offsetNum + limitNum);
-
-    // Set cache headers
-    res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
+    // Apply cache headers
+    applyCacheHeaders(res, CacheCategory.SHORT);
+    
+    // Add performance and metadata headers
+    res.setHeader('X-Response-Time', Date.now().toString());
+    res.setHeader('X-Total-Jobs', result.totalAll.toString());
+    res.setHeader('X-Filtered-Count', result.totalFiltered.toString());
+    res.setHeader('X-Page-Size', limitNum.toString());
 
     return res.status(200).json({
-      jobs: paginatedJobs,
-      count: filteredJobs.length,
+      jobs: result.jobs,
+      count: result.totalFiltered,
       limit: limitNum,
       offset: offsetNum,
-      total: MOCK_JOBS.length
+      total: result.totalAll
     });
 
-  } catch (error) {
+  } catch (error: any) {
     console.error('Jobs API error:', error);
-    return res.status(500).json({ 
-      error: 'internal_server_error',
-      message: 'An internal server error occurred while fetching jobs' 
+    
+    // Return fallback data on error
+    applyCacheHeaders(res, CacheCategory.SHORT);
+    res.setHeader('X-Data-Source', 'fallback');
+    
+    return res.status(200).json({
+      jobs: MOCK_JOBS.slice(0, 20), // Return first 20 jobs as fallback
+      count: MOCK_JOBS.length,
+      limit: 20,
+      offset: 0,
+      total: MOCK_JOBS.length
     });
   }
 }

@@ -2,9 +2,42 @@ import { PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { CATEGORIES } from '@/data/categories';
-// import { withCache, cacheKeys, cacheCategory } from '@/lib/serverCache';
+import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  log: ['error'],
+  datasources: {
+    db: {
+      url: process.env.DATABASE_URL,
+    },
+  },
+});
+
+// Add connection timeout and proper error handling
+async function getCategoriesFromDB() {
+  const timeoutPromise = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error('Database query timeout')), 3000)
+  );
+
+  const queryPromise = prisma.category.findMany({
+    where: { active: true },
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      icon: true,
+    },
+    orderBy: { name: 'asc' },
+  });
+
+  try {
+    const result = await Promise.race([queryPromise, timeoutPromise]);
+    return result as any[];
+  } finally {
+    // Ensure connection is closed
+    await prisma.$disconnect().catch(() => {});
+  }
+}
 
 async function handler(
   req: NextApiRequest,
@@ -16,52 +49,59 @@ async function handler(
   }
 
   try {
-    const categories = await prisma.category.findMany({
-      where: { active: true },
-      select: {
-        id: true,
-        name: true,
-        slug: true,
-        icon: true,
+    // Use cache-or-compute pattern with 30-minute cache
+    const categories = await cacheOrCompute(
+      cacheKeys.categories,
+      async () => {
+        console.log('Fetching categories from database...');
+        
+        try {
+          const dbCategories = await getCategoriesFromDB();
+          
+          if (dbCategories && dbCategories.length > 0) {
+            console.log(`Successfully fetched ${dbCategories.length} categories from DB`);
+            return dbCategories;
+          }
+        } catch (dbError) {
+          console.warn('Database query failed, using fallback:', dbError);
+        }
+
+        // Fallback to static data if DB fails
+        if (CATEGORIES && CATEGORIES.length > 0) {
+          console.log(`Using ${CATEGORIES.length} fallback categories`);
+          return CATEGORIES;
+        }
+
+        // Return empty array if no data available
+        console.warn('No categories data available');
+        return [];
       },
-      orderBy: { name: 'asc' },
-    });
+      CacheCategory.MEDIUM, // 30 minutes cache
+      1800 // 30 minutes TTL
+    );
 
-    // If categories are found or the CATEGORIES constant is empty, return them.
-    // Otherwise, if no categories are found in DB and CATEGORIES is not empty,
-    // it implies a preference for DB data first, then static as a fallback if DB is empty.
-    if (categories.length > 0) {
-      // Set cache headers for client-side caching
-      res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=3600');
-      return res.status(200).json(categories);
-    }
-    // If CATEGORIES is meant to be a fallback for an empty DB table (not an error)
-    if (CATEGORIES.length > 0) {
-      res.setHeader('Cache-Control', 'public, s-maxage=1800, stale-while-revalidate=3600');
-      return res.status(200).json(CATEGORIES);
-    }
-    // If both DB and fallback are empty
-    return res.status(200).json([]);
+    // Apply appropriate cache headers
+    applyCacheHeaders(res, CacheCategory.MEDIUM);
+    
+    // Add performance headers
+    res.setHeader('X-Response-Time', Date.now().toString());
+    res.setHeader('X-Data-Source', categories.length > 0 ? 'cached' : 'computed');
 
-  } catch (error) {
-    console.error('Failed to fetch categories from database, using fallback data:', error);
-    // Use fallback data instead of returning 500 error
-    // This ensures the API always returns categories even if database is unavailable
+    return res.status(200).json(categories);
+
+  } catch (error: any) {
+    console.error('Categories API error:', error);
+    
+    // Return fallback data even on error
     if (CATEGORIES && CATEGORIES.length > 0) {
-      console.log(`Database unavailable, returning ${CATEGORIES.length} fallback categories`);
-      res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600'); // Shorter cache for fallback
+      applyCacheHeaders(res, CacheCategory.SHORT); // Shorter cache for fallback
+      res.setHeader('X-Data-Source', 'fallback');
       return res.status(200).json(CATEGORIES);
-    } else {
-      // Only return error if no fallback data is available
-      return res.status(500).json({ error: 'Categories temporarily unavailable. Please try again later.' });
     }
-  } finally {
-    // Ensure prisma client is disconnected regardless of the outcome.
-    // Adding a check to ensure prisma has a $disconnect method,
-    // which is good practice if the prisma client instance might be mocked or altered in tests.
-    if (prisma && typeof prisma.$disconnect === 'function') {
-      await prisma.$disconnect();
-    }
+
+    return res.status(500).json({ 
+      error: 'Categories temporarily unavailable. Please try again later.' 
+    });
   }
 }
 

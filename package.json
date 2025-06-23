@@ -20,6 +20,7 @@
     "test:watch": "vitest --watch",
     "test:search": "node scripts/test-search-functionality.cjs",
     "perf:check": "node scripts/performance-check.cjs",
+    "perf:api": "node scripts/test-api-performance.js",
     "build:monitor": "node scripts/build-monitor.cjs",
     "build:analyze": "cross-env ANALYZE=true npm run build",
     "deps:check": "npm outdated && npm audit",
