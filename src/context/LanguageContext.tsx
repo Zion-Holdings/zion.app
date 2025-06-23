@@ -104,7 +104,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     try {
       await i18n.changeLanguage(lang);
       setCurrentLanguage(lang);
-      setCookie('i18n_lang', lang);
+      
+      // Persist language choice with longer expiration (1 year)
+      setCookie('i18n_lang', lang, 365);
       safeStorage.setItem('i18n_lang', lang);
       
       // Get language name for toast
@@ -124,8 +126,25 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
           console.error('Error updating language preference:', error);
         }
       }
+      
+      // Force immediate DOM updates
+      setTimeout(() => {
+        if (typeof document !== 'undefined') {
+          document.documentElement.lang = lang;
+          document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+          
+          // Trigger a custom event to notify components about language change
+          window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+        }
+      }, 50);
+      
     } catch (err) {
       console.error('Error changing language:', err);
+      toast({
+        title: 'Error',
+        description: 'Failed to change language',
+        variant: 'destructive',
+      });
     }
   };
   

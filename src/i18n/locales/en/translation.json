@@ -79,7 +79,18 @@
     "quick_access_subtitle": "Jump directly to our most popular features",
     "tool_mobile_app": "Mobile App",
     "tool_mobile_app_desc": "Zion on the go",
-    "all_features_title": "Explore All Features"
+    "all_features_title": "Explore All Features",
+    "categories_title": "Explore Categories",
+    "categories_subtitle": "Discover our comprehensive ecosystem of tech services, talent, equipment, and innovation",
+    "no_categories_title": "No Categories Found",
+    "no_categories_desc": "We couldn't find any categories to display at this time.",
+    "no_categories_support": "Please check back later, or if you believe this is an error, contact support.",
+    "featured_services": "Featured Services",
+    "view_all_categories": "View All Categories →",
+    "benefits_title": "Why Zion?",
+    "benefits_subtitle": "Experience the next generation of tech marketplace with features designed to maximize efficiency and value",
+    "how_it_works_title": "How It Works",
+    "how_it_works_subtitle": "A simple four-step process to connect technology providers with clients"
   },
   "jobs": {
     "post_job_title": "Post a Job",
@@ -125,6 +136,37 @@
     "edit": "Edit",
     "saved": "Saved",
     "changes_saved": "Translation changes have been saved"
+  },
+  "categories": {
+    "services": "Services",
+    "services_desc": "On-demand IT support, consulting, development, and more",
+    "talents": "Talents",
+    "talents_desc": "Connect with AI experts, developers, and tech specialists",
+    "equipment": "Equipment", 
+    "equipment_desc": "Rent or buy specialized hardware, servers, and devices",
+    "innovation": "Innovation",
+    "innovation_desc": "Discover cutting-edge solutions and tech breakthroughs",
+    "it_onsite_services": "IT Onsite Services"
+  },
+  "benefits": {
+    "ai_matchmaking": "AI-Powered Matchmaking",
+    "ai_matchmaking_desc": "Our advanced algorithms match your needs with the perfect service providers or products, saving you time and ensuring optimal results.",
+    "global_availability": "Global Availability", 
+    "global_availability_desc": "Access a worldwide network of tech talents, products, and services to find the best solutions regardless of geographic limitations.",
+    "support_24_7": "24/7 Support",
+    "support_24_7_desc": "Our dedicated team is available around the clock to assist with any questions or issues you might encounter during your journey.",
+    "cost_reduction": "Cost Reduction",
+    "cost_reduction_desc": "Eliminate middlemen and reduce costs by up to 40% through direct connections with service providers and product vendors."
+  },
+  "how_it_works": {
+    "post": "Post",
+    "post_desc": "Publish your service, job, or equipment in minutes with our AI-powered form.",
+    "match": "Match",
+    "match_desc": "Our AI automatically matches your needs with the perfect providers or opportunities.",
+    "hire_buy": "Hire/Buy",
+    "hire_buy_desc": "Connect directly with matched providers and complete your transaction securely.",
+    "done": "Done",
+    "done_desc": "Enjoy hassle-free delivery and support for your technology solutions."
   },
   "errors": {
     "page_not_found": "Oops! Page not found",

@@ -58,9 +58,20 @@
     "header_tagline": "Tu puerta de entrada a soluciones de IA y tecnología",
     "quick_access_title": "Acceso Rápido",
     "quick_access_subtitle": "Ve directo a nuestras funciones más populares",
-    "tool_mobile_app": "Aplicación Móvil",
+    "tool_mobile_app": "Aplicación Móvil", 
     "tool_mobile_app_desc": "Zion sobre la marcha",
-    "all_features_title": "Explora Todas las Funciones"
+    "all_features_title": "Explora Todas las Funciones",
+    "categories_title": "Explorar Categorías",
+    "categories_subtitle": "Descubre nuestro ecosistema integral de servicios tecnológicos, talento, equipamiento e innovación",
+    "no_categories_title": "No se Encontraron Categorías",
+    "no_categories_desc": "No pudimos encontrar categorías para mostrar en este momento.",
+    "no_categories_support": "Por favor, vuelve más tarde, o si crees que esto es un error, contacta al soporte.",
+    "featured_services": "Servicios Destacados",
+    "view_all_categories": "Ver Todas las Categorías →",
+    "benefits_title": "¿Por qué Zion?",
+    "benefits_subtitle": "Experimenta la próxima generación de mercado tecnológico con funciones diseñadas para maximizar la eficiencia y el valor",
+    "how_it_works_title": "Cómo Funciona",
+    "how_it_works_subtitle": "Un proceso simple de cuatro pasos para conectar proveedores de tecnología con clientes"
   },
   "jobs": {
     "post_job_title": "Publicar un Trabajo",
@@ -100,9 +111,40 @@
     "subtitle": "Tu privacidad es importante para nosotros. Esta página explica cómo recopilamos, usamos y protegemos tu información.",
     "data_collection": "Recopilamos información personal que proporcionas al crear una cuenta o usar nuestros servicios. Esto puede incluir tu nombre, correo electrónico y cualquier otro detalle requerido para entregar las funciones de nuestro mercado.",
     "data_usage": "Zion Tech Group usa estos datos únicamente para operar y mejorar nuestra plataforma. No vendemos tu información personal a terceros.",
-    "contact_info": "Si tienes preguntas sobre nuestras prácticas de privacidad, por favor contáctanos en",
-    "support_email": "support@ziontechgroup.com"
-  },
+          "contact_info": "Si tienes preguntas sobre nuestras prácticas de privacidad, por favor contáctanos en",
+      "support_email": "support@ziontechgroup.com"
+    },
+    "categories": {
+      "services": "Servicios",
+      "services_desc": "Soporte IT bajo demanda, consultoría, desarrollo y más",
+      "talents": "Talentos",
+      "talents_desc": "Conecta con expertos en IA, desarrolladores y especialistas tecnológicos",
+      "equipment": "Equipamiento",
+      "equipment_desc": "Alquila o compra hardware especializado, servidores y dispositivos",
+      "innovation": "Innovación", 
+      "innovation_desc": "Descubre soluciones vanguardistas y avances tecnológicos",
+      "it_onsite_services": "Servicios IT In Situ"
+    },
+    "benefits": {
+      "ai_matchmaking": "Emparejamiento con IA",
+      "ai_matchmaking_desc": "Nuestros algoritmos avanzados conectan tus necesidades con los proveedores de servicios o productos perfectos, ahorrándote tiempo y garantizando resultados óptimos.",
+      "global_availability": "Disponibilidad Global",
+      "global_availability_desc": "Accede a una red mundial de talentos tecnológicos, productos y servicios para encontrar las mejores soluciones independientemente de las limitaciones geográficas.",
+      "support_24_7": "Soporte 24/7",
+      "support_24_7_desc": "Nuestro equipo dedicado está disponible las 24 horas del día para ayudarte con cualquier pregunta o problema que puedas encontrar durante tu experiencia.",
+      "cost_reduction": "Reducción de Costos",
+      "cost_reduction_desc": "Elimina intermediarios y reduce costos hasta un 40% a través de conexiones directas con proveedores de servicios y vendedores de productos."
+    },
+    "how_it_works": {
+      "post": "Publicar",
+      "post_desc": "Publica tu servicio, trabajo o equipamiento en minutos con nuestro formulario potenciado por IA.",
+      "match": "Emparejar",
+      "match_desc": "Nuestra IA empareja automáticamente tus necesidades con los proveedores u oportunidades perfectos.",
+      "hire_buy": "Contratar/Comprar",
+      "hire_buy_desc": "Conecta directamente con proveedores emparejados y completa tu transacción de forma segura.",
+      "done": "Listo",
+      "done_desc": "Disfruta de entrega sin complicaciones y soporte para tus soluciones tecnológicas."
+    },
   "terms": {
     "title": "Términos de Servicio",
     "description": "Los términos y condiciones para usar la plataforma Zion.",

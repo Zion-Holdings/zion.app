@@ -3,6 +3,7 @@ import { GradientHeading } from "./GradientHeading";
 import Link from "next/link";
 import { Briefcase, HardDrive, Lightbulb, Users, HelpCircle } from "lucide-react"; // Added HelpCircle for default icon
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 // This is the type definition copied from Categories.tsx for consistency.
 // Ideally, this would be in a shared types file.
@@ -16,36 +17,36 @@ interface CategoryType {
   link?: string;
 }
 
-// Default static categories, used if no categories are passed via props
-const defaultCategories = [
+// Default static categories with translation keys
+const getDefaultCategories = (t: any) => [
   {
     id: "services",
-    name: "Services",
-    description: "On-demand IT support, consulting, development, and more",
+    name: t('categories.services'),
+    description: t('categories.services_desc'),
     iconName: "Briefcase", // Corresponds to lucide icon name
     link: "/services",
     color: "from-purple-500 to-indigo-600", // Keep color for styling
   },
   {
     id: "talents",
-    name: "Talents",
-    description: "Connect with AI experts, developers, and tech specialists",
+    name: t('categories.talents'),
+    description: t('categories.talents_desc'),
     iconName: "Users",
     link: "/talent",
     color: "from-cyan-500 to-blue-600",
   },
   {
     id: "equipment",
-    name: "Equipment",
-    description: "Rent or buy specialized hardware, servers, and devices",
+    name: t('categories.equipment'),
+    description: t('categories.equipment_desc'),
     iconName: "HardDrive",
     link: "/equipment",
     color: "from-amber-500 to-orange-600",
   },
   {
     id: "innovation",
-    name: "Innovation",
-    description: "Discover cutting-edge solutions and tech breakthroughs",
+    name: t('categories.innovation'),
+    description: t('categories.innovation_desc'),
     iconName: "Lightbulb",
     link: "/innovation",
     color: "from-emerald-500 to-green-600",
@@ -63,9 +64,9 @@ const getIcon = (iconName?: string) => {
   }
 };
 
-const specialServices = [
+const getSpecialServices = (t: any) => [
   {
-    title: "IT Onsite Services",
+    title: t('categories.it_onsite_services'),
     link: "/it-onsite-services"
   }
 ];
@@ -83,6 +84,9 @@ export function CategoriesSection({
   style,
   categories: fetchedCategories, // Rename prop for clarity
 }: CategoriesSectionProps) {
+  const { t } = useTranslation();
+  const defaultCategories = getDefaultCategories(t);
+  
   // Use fetchedCategories if provided, otherwise fallback to defaultCategories
   const displayCategories = fetchedCategories && fetchedCategories.length > 0
     ? fetchedCategories.map(cat => ({
@@ -105,12 +109,12 @@ export function CategoriesSection({
     return (
       <section className={cn("py-20 bg-zion-blue text-center", className)} style={style}>
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-white mb-4">No Categories Found</h2>
+          <h2 className="text-3xl font-semibold text-white mb-4">{t('home.no_categories_title')}</h2>
           <p className="text-zion-slate-light text-lg mb-2">
-            We couldn&apos;t find any categories to display at this time.
+            {t('home.no_categories_desc')}
           </p>
           <p className="text-zion-slate-light text-md">
-            Please check back later, or if you believe this is an error, contact support.
+            {t('home.no_categories_support')}
           </p>
         </div>
       </section>
@@ -122,9 +126,9 @@ export function CategoriesSection({
       <div className="container mx-auto px-4">
         {showTitle && (
           <div className="text-center mb-16">
-            <GradientHeading>Explore Categories</GradientHeading>
+            <GradientHeading>{t('home.categories_title')}</GradientHeading>
             <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto">
-              Discover our comprehensive ecosystem of tech services, talent, equipment, and innovation
+              {t('home.categories_subtitle')}
             </p>
           </div>
         )}
@@ -149,11 +153,11 @@ export function CategoriesSection({
           ))}
         </div>
         
-        {/* Keep special services and view all categories link as they are, unless they also need to be dynamic */}
+        {/* Special services section with translations */}
         <div className="mt-8">
-          <h3 className="text-center text-xl font-bold text-white mb-6">Featured Services</h3>
+          <h3 className="text-center text-xl font-bold text-white mb-6">{t('home.featured_services')}</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {specialServices.map((service) => (
+            {getSpecialServices(t).map((service) => (
               <Link 
                 key={service.title}
                 href={service.link}
@@ -167,10 +171,10 @@ export function CategoriesSection({
         
         <div className="mt-12 flex justify-center">
           <Link 
-            href="/categories/all" // This link might need to be dynamic or removed if CategoriesPage is the "all categories" view
+            href="/categories/all"
             className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
           >
-            View All Categories →
+            {t('home.view_all_categories')}
           </Link>
         </div>
       </div>
