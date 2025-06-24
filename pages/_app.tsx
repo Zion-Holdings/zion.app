@@ -83,7 +83,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       validateProductionEnvironment();
       
       // Initialize services based on configuration
-      initializeServices();
+      initializeServices().catch(err =>
+        console.warn('Service initialization failed', err)
+      );
       
       // Initialize global error handlers
       initializeGlobalErrorHandlers();
