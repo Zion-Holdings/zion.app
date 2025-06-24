@@ -34,7 +34,12 @@ export default function TalentMarketplace() {
           <p className="text-center text-zion-slate-light max-w-3xl mx-auto mb-8">
             Browse thousands of verified AI engineers, data scientists and other tech professionals.
           </p>
-          <img src="https://placehold.co/800x400" alt="Screenshot of talent directory" className="rounded-lg shadow-xl mx-auto mb-12" />
+          <img
+            src="https://placehold.co/800x400"
+            alt="Screenshot of talent directory"
+            className="rounded-lg shadow-xl mx-auto mb-12"
+            loading="lazy"
+          />
           <h2 className="text-2xl font-bold mb-4">Benefits &amp; Use Cases</h2>
           <ul className="list-disc list-inside space-y-2 mb-8 text-zion-slate-light">
             <li>Find pre-screened experts for short or long term projects.</li>

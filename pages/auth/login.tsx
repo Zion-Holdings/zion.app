@@ -71,10 +71,11 @@ const LoginPage = () => {
         <div className="max-w-md w-full space-y-8">
           <div>
             <div className="mx-auto h-12 w-auto">
-              <img 
-                className="mx-auto h-12 w-auto" 
-                src="/logos/zion-logo.png" 
-                alt="Zion Tech" 
+              <img
+                className="mx-auto h-12 w-auto"
+                src="/logos/zion-logo.png"
+                alt="Zion Tech"
+                loading="lazy"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
