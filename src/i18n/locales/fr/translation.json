@@ -94,7 +94,12 @@
     "benefits_title": "Pourquoi Zion?",
     "benefits_subtitle": "Découvrez la prochaine génération de marché technologique avec des fonctionnalités conçues pour maximiser l'efficacité et la valeur",
     "how_it_works_title": "Comment Ça Marche",
-    "how_it_works_subtitle": "Un processus simple en quatre étapes pour connecter les fournisseurs de technologie avec les clients"
+    "how_it_works_subtitle": "Un processus simple de quatre étapes pour connecter les fournisseurs de technologie avec les clients",
+    "title_placeholder": "Enter job title",
+    "description_placeholder": "Describe the job in detail",
+    "requirements_placeholder": "List required skills and qualifications",
+    "submitting": "Submitting...",
+    "post_job_button": "Post Job"
   },
   "jobs": {
     "post_job_title": "Post a Job",

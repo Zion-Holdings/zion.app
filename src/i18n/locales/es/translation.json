@@ -85,7 +85,12 @@
     "skills_required": "Habilidades Requeridas",
     "budget": "Presupuesto",
     "deadline": "Fecha Límite",
-    "job_posted": "Trabajo publicado correctamente"
+    "job_posted": "Trabajo publicado correctamente",
+    "title_placeholder": "Enter job title",
+    "description_placeholder": "Describe the job in detail",
+    "requirements_placeholder": "List required skills and qualifications",
+    "submitting": "Submitting...",
+    "post_job_button": "Post Job"
   },
   "language": {
     "en": "English",

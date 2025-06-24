@@ -75,7 +75,12 @@
     "skills_required": "المهارات المطلوبة",
     "budget": "الميزانية",
     "deadline": "الموعد النهائي",
-    "job_posted": "تم نشر الوظيفة بنجاح"
+    "job_posted": "تم نشر الوظيفة بنجاح",
+    "title_placeholder": "Enter job title",
+    "description_placeholder": "Describe the job in detail",
+    "requirements_placeholder": "List required skills and qualifications",
+    "submitting": "Submitting...",
+    "post_job_button": "Post Job"
   },
   "language": {
     "en": "English",
