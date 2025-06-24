@@ -1,11 +1,7 @@
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { useRouter } from 'next/router'; // Changed from useNavigate
-import CardForm from '@/components/checkout/CardForm';
-import { Elements } from '@stripe/react-stripe-js';
-import { getStripe } from '@/utils/getStripe';
 import { Input } from '@/components/ui/input';
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
 import { useAuth } from '@/hooks/useAuth';
@@ -26,9 +22,29 @@ function CheckoutInner() {
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
-  const [intent, setIntent] = useState<any | null>(null);
 
-  const onSubmit = () => {};
+  const onSubmit = async (data: CheckoutFormData) => {
+    try {
+      const res = await fetch('/api/checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          cartItems: items,
+          customer_email: data.email,
+          shipping_address: `${data.address}, ${data.city}, ${data.country}`,
+        }),
+      });
+      const respData = await res.json();
+      if (!res.ok) {
+        throw new Error(respData.error || 'Failed to start checkout');
+      }
+      if (respData.url) {
+        window.location.href = respData.url;
+      }
+    } catch (err: any) {
+      console.error('Checkout error:', err);
+    }
+  };
 
   return (
     <div className="container max-w-2xl py-10">
@@ -85,21 +101,12 @@ function CheckoutInner() {
               <FormMessage />
             </FormItem>
           )} />
-          {intent ? (
-            <div className="space-y-2 text-center">
-              <p className="font-semibold">Payment Successful!</p>
-              <p>Confirmation ID: {intent.id}</p>
-            </div>
-          ) : (
-            <Elements stripe={getStripe()}>
-              <CardForm amount={subtotal} onSuccess={setIntent} />
-            </Elements>
-          )}
-          {!intent && (
-            <p className="text-xs text-zion-slate-light">
-              Use test card 4242 4242 4242 4242 with any future date and CVC.
-            </p>
-          )}
+          <button
+            type="submit"
+            className="w-full mt-4 bg-blue-600 text-white p-2 rounded-md"
+          >
+            Continue to Payment
+          </button>
         </form>
       </Form>
     </div>
