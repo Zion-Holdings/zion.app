@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { useFavorites } from "@/hooks/useFavorites";
-import { useCart } from "@/hooks/useCart";
+import { useCart } from "@/context/CartContext";
 import { Heart, MessageSquare, CreditCard, ShoppingCart } from "lucide-react";
 import { LanguageSelector } from '@/components/header/LanguageSelector';
 import { CartDrawer } from '@/components/cart/CartDrawer';
@@ -23,7 +23,8 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const { count } = useFavorites();
-  const { itemCount: cartCount } = useCart();
+  const { items } = useCart();
+  const cartCount = items.length;
   const router = useRouter(); // Changed from useLocation
   const { t } = useTranslation();
 
