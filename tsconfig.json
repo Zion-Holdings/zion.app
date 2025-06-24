@@ -69,6 +69,7 @@
   "exclude": [
     "node_modules",
     "src/components/ui/chart.tsx",
-    "src/store/index.ts"
+    "src/store/index.ts",
+    "temp_essential_pages"
   ]
 }
