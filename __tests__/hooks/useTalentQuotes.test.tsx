@@ -1,0 +1,121 @@
+import React from 'react';
+import { renderHook, act } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useTalentQuotes } from '@/hooks/useTalentQuotes';
+import { quoteRequestService } from '@/services/quoteRequestService';
+import { showApiError } from '@/utils/apiErrorHandler';
+import { useAuth } from '@/hooks/useAuth';
+import { useToast } from '@/hooks/use-toast';
+
+// Mocks
+vi.mock('next/config', () => ({
+  default: () => ({
+    publicRuntimeConfig: {
+      NEXT_PUBLIC_SENTRY_DSN: 'dummy-sentry-dsn',
+      // Add other necessary runtime config variables here if needed by Sentry/logError
+    },
+  }),
+}));
+vi.mock('@/services/quoteRequestService');
+vi.mock('@/utils/apiErrorHandler');
+vi.mock('@/hooks/useAuth');
+vi.mock('@/hooks/use-toast');
+
+const mockUser = { id: 'talent-123' };
+const mockQuotes = [
+  { id: 'q1', talent_id: 'talent-123', status: 'new', is_archived: false, viewed_at: null },
+  { id: 'q2', talent_id: 'talent-123', status: 'in_review', is_archived: false, viewed_at: new Date().toISOString() },
+  { id: 'q3', talent_id: 'talent-123', status: 'responded', is_archived: true, viewed_at: new Date().toISOString() },
+];
+
+describe('useTalentQuotes', () => {
+  let queryClient: QueryClient;
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    queryClient = new QueryClient({
+      defaultOptions: {
+        queries: {
+          retry: false, // Disable retries for testing to avoid interference
+        },
+      },
+    });
+    (useAuth as vi.Mock).mockReturnValue({ user: mockUser });
+    (useToast as vi.Mock).mockReturnValue({ toast: vi.fn() });
+    (quoteRequestService.getByTalentId as vi.Mock).mockResolvedValue(mockQuotes);
+  });
+
+  const wrapper = ({ children }: { children: React.ReactNode }) => (
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  );
+
+  describe('updateStatusMutation', () => {
+    it('should call showApiError with retryCallback on updateStatus failure', async () => {
+      const mockError = new Error('Failed to update status');
+      (quoteRequestService.updateStatus as vi.Mock).mockRejectedValueOnce(mockError);
+
+      const { result } = renderHook(() => useTalentQuotes(), { wrapper });
+
+      const mutationArgs = { id: 'q1', status: 'in_review' as const };
+      await act(async () => {
+        try {
+          await result.current.markAsViewed(mutationArgs.id);
+        } catch (e) {
+          // Expected to throw if not handled by react-query's error boundary
+        }
+      });
+
+      // Ensure mutation promise settles
+      await new Promise(resolve => setTimeout(resolve, 0));
+
+
+      expect(showApiError).toHaveBeenCalledTimes(1);
+      const [errorArg, messageArg, retryCallback] = (showApiError as vi.Mock).mock.calls[0];
+      expect(errorArg).toBe(mockError);
+      expect(messageArg).toBe('Failed to update status');
+      expect(retryCallback).toBeInstanceOf(Function);
+
+      // Simulate retry
+      (quoteRequestService.updateStatus as vi.Mock).mockResolvedValueOnce({ success: true }); // Success on retry
+      await act(async () => {
+        await retryCallback();
+      });
+      expect(quoteRequestService.updateStatus).toHaveBeenCalledTimes(2); // Original + retry
+      expect(showApiError).toHaveBeenCalledTimes(1); // Not called again
+    });
+  });
+
+  describe('toggleArchiveMutation', () => {
+    it('should call showApiError with retryCallback on toggleArchive failure', async () => {
+      const mockError = new Error('Failed to update quote (archive)');
+      (quoteRequestService.toggleArchive as vi.Mock).mockRejectedValueOnce(mockError);
+
+      const { result } = renderHook(() => useTalentQuotes(), { wrapper });
+
+      const mutationArgs = { id: 'q1', isArchived: true };
+      await act(async () => {
+        try {
+          await result.current.toggleArchive(mutationArgs.id, mutationArgs.isArchived);
+        } catch (e) {
+          // Expected
+        }
+      });
+      await new Promise(resolve => setTimeout(resolve, 0));
+
+
+      expect(showApiError).toHaveBeenCalledTimes(1);
+      const [errorArg, messageArg, retryCallback] = (showApiError as vi.Mock).mock.calls[0];
+      expect(errorArg).toBe(mockError);
+      expect(messageArg).toBe('Failed to update quote');
+      expect(retryCallback).toBeInstanceOf(Function);
+
+      // Simulate retry
+      (quoteRequestService.toggleArchive as vi.Mock).mockResolvedValueOnce({ success: true }); // Success on retry
+      await act(async () => {
+        await retryCallback();
+      });
+      expect(quoteRequestService.toggleArchive).toHaveBeenCalledTimes(2);
+      expect(showApiError).toHaveBeenCalledTimes(1);
+    });
+  });
+});

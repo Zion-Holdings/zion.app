@@ -89,7 +89,7 @@ export function useAuthOperations(
       });
 
       if (error) {
-        showApiError(error, "Error during signup");
+        showApiError(error, "Error during signup", () => signUp({ email, password, display_name }));
         return { data: null, error: error.message };
       }
 
@@ -130,7 +130,7 @@ export function useAuthOperations(
 
       return { data, error: null };
     } catch (error) {
-      showApiError(error, "Failed to sign up. Please try again.");
+      showApiError(error, "Failed to sign up. Please try again.", () => signUp({ email, password, display_name }));
       return { data: null, error: "Failed to sign up." };
     } finally {
       setIsLoading(false);
