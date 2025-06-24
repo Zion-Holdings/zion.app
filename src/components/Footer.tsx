@@ -8,6 +8,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 import Link from "next/link"; // Changed from react-router-dom
+import { useTranslation } from "react-i18next";
 
 function resolveUrl(envVar: string | undefined, fallback: string) {
   if (!envVar || envVar.trim() === "" || envVar === "#" || envVar === "/") {
@@ -38,6 +39,7 @@ const GITHUB_URL = resolveUrl(
 );
 
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-card border-t border-primary/20 pt-12 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -169,10 +171,10 @@ export function Footer() {
             type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center space-x-1 text-foreground/80 hover:text-primary text-sm transition-colors"
-            aria-label="Back to top"
+            aria-label={t('general.back_to_top')}
           >
             <ChevronUp className="h-4 w-4" aria-hidden="true" />
-            <span>Back to Top</span>
+            <span>{t('general.back_to_top')}</span>
           </button>
         </div>
 

@@ -55,8 +55,7 @@ export default function Custom404() {
               {t('errors.page_not_found')}
             </h1>
             <p className="text-zion-slate-light text-lg md:text-xl max-w-lg mx-auto">
-              The page you're looking for seems to have vanished into the digital void. 
-              Let's get you back on track to explore the future of AI and technology.
+              {t('errors.page_not_found_details')}
             </p>
           </div>
 
@@ -68,7 +67,7 @@ export default function Custom404() {
               className="bg-zion-blue-dark border-zion-purple text-white hover:bg-zion-purple hover:border-zion-purple-light min-w-[180px]"
             >
               <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" />
-              Go Back
+              {t('errors.go_back')}
             </Button>
             
             <Button asChild className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white min-w-[180px]">
@@ -82,7 +81,7 @@ export default function Custom404() {
           {/* Quick Navigation Links */}
           <div className="bg-zion-blue-dark/50 backdrop-blur-sm rounded-2xl border border-zion-blue-light p-6 mb-8">
             <h2 className="text-xl font-semibold text-white mb-4">
-              Explore Our Marketplace
+              {t('errors.explore_marketplace')}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Link 
@@ -90,7 +89,7 @@ export default function Custom404() {
                 className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate-light hover:text-white transition-all group"
               >
                 <ShoppingCart className="w-5 h-5 text-zion-cyan group-hover:text-zion-cyan-light" aria-hidden="true" />
-                <span>Browse Marketplace</span>
+                <span>{t('errors.browse_marketplace')}</span>
                 <ExternalLink className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
               </Link>
               
@@ -99,7 +98,7 @@ export default function Custom404() {
                 className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate-light hover:text-white transition-all group"
               >
                 <Users className="w-5 h-5 text-zion-cyan group-hover:text-zion-cyan-light" aria-hidden="true" />
-                <span>Find Talent</span>
+                <span>{t('errors.find_talent')}</span>
                 <ExternalLink className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
               </Link>
               
@@ -108,7 +107,7 @@ export default function Custom404() {
                 className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate-light hover:text-white transition-all group"
               >
                 <Search className="w-5 h-5 text-zion-cyan group-hover:text-zion-cyan-light" aria-hidden="true" />
-                <span>Browse Categories</span>
+                <span>{t('errors.browse_categories')}</span>
                 <ExternalLink className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
               </Link>
               
@@ -117,7 +116,7 @@ export default function Custom404() {
                 className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate-light hover:text-white transition-all group"
               >
                 <span className="w-5 h-5 text-zion-cyan group-hover:text-zion-cyan-light text-center leading-none font-bold" aria-hidden="true">?</span>
-                <span>Get Help</span>
+                <span>{t('errors.get_help')}</span>
                 <ExternalLink className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
               </Link>
             </div>
@@ -126,13 +125,13 @@ export default function Custom404() {
           {/* Additional Info */}
           <div className="text-sm text-zion-slate-light/70">
             <p>
-              If you believe this is an error, please{' '}
+              {t('errors.error_help_intro')}{' '}
               <Link href="/help" className="text-zion-cyan hover:text-zion-cyan-light underline">
-                contact our support team
-              </Link>
-              {' '}or check our{' '}
+                {t('errors.error_help_contact')}
+              </Link>{' '}
+              {t('errors.error_help_or')}{' '}
               <Link href="/status" className="text-zion-cyan hover:text-zion-cyan-light underline">
-                status page
+                {t('general.status_page')}
               </Link>
               .
             </p>

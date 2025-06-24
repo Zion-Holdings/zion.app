@@ -62,7 +62,7 @@ if (!i18n) {
       document.documentElement.dir = i18n.dir();
 
       // Save language preference to cookie and localStorage
-      setCookie('i18n_lang', lng);
+      setCookie('i18n_lang', lng, 365);
       safeStorage.setItem('i18n_lang', lng);
 
       // If user is authenticated, save language preference to profile

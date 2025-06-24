@@ -19,7 +19,8 @@
     "toggle_mobile_menu": "Basculer le menu mobile",
     "greeting_user": "Bonjour, {{name}} !",
     "status_page": "Page de statut",
-    "check_status_page": "Vous pouvez essayer de rafraîchir la page ou visiter notre"
+    "check_status_page": "Vous pouvez essayer de rafraîchir la page ou visiter notre",
+    "back_to_top": "Haut de page"
   },
   "nav": {
     "home": "Home",
@@ -109,6 +110,14 @@
     "submitting": "Submitting...",
     "post_job_button": "Post Job"
   },
+  "onboarding": {
+    "title": "Qu'est-ce qui vous amène sur Zion ?",
+    "subtitle": "Choisissez comment vous souhaitez utiliser notre plateforme",
+    "talent_title": "Je propose des services",
+    "talent_desc": "Trouvez du travail et montrez vos compétences",
+    "client_title": "Je recrute",
+    "client_desc": "Publiez des offres et trouvez des professionnels talentueux"
+  },
   "language": {
     "en": "English",
     "es": "Español",
@@ -150,7 +159,17 @@
     "login_different_account": "Login with Different Account",
     "payment_success_title": "Paiement Réussi!",
     "payment_success_message": "Votre paiement a été traité avec succès. Vous avez maintenant accès à toutes les fonctionnalités premium.",
-    "go_to_dashboard": "Aller au Tableau de Bord"
+    "go_to_dashboard": "Aller au Tableau de Bord",
+    "go_back": "Retour",
+    "page_not_found_details": "La page que vous recherchez semble avoir disparu dans le vide numérique. Revenons sur la bonne voie pour explorer l'avenir de l'IA et de la technologie.",
+    "explore_marketplace": "Explorer Notre Marché",
+    "browse_marketplace": "Parcourir le Marché",
+    "find_talent": "Trouver des Talents",
+    "browse_categories": "Parcourir les Catégories",
+    "get_help": "Obtenir de l'aide",
+    "error_help_intro": "Si vous pensez qu'il s'agit d'une erreur, veuillez",
+    "error_help_contact": "contacter notre équipe d'assistance",
+    "error_help_or": "ou consulter notre"
   },
   "categories": {
     "services": "Services",

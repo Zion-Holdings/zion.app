@@ -19,7 +19,8 @@
     "toggle_mobile_menu": "Toggle mobile menu",
     "greeting_user": "Hello, {{name}}!",
     "status_page": "Status Page",
-    "check_status_page": "You can try refreshing the page or visit our"
+    "check_status_page": "You can try refreshing the page or visit our",
+    "back_to_top": "Back to Top"
   },
   "nav": {
     "home": "Home",
@@ -109,6 +110,14 @@
     "submitting": "Submitting...",
     "post_job_button": "Post Job"
   },
+  "onboarding": {
+    "title": "What brings you to Zion?",
+    "subtitle": "Choose how you want to use our platform",
+    "talent_title": "I'm offering services",
+    "talent_desc": "Find work and showcase your skills",
+    "client_title": "I'm hiring",
+    "client_desc": "Post jobs and find talented professionals"
+  },
   "language": {
     "en": "English",
     "es": "Español",
@@ -181,6 +190,16 @@
     "login_different_account": "Login with Different Account",
     "payment_success_title": "Payment Successful!",
     "payment_success_message": "Your payment has been processed successfully. You now have access to all the premium features.",
-    "go_to_dashboard": "Go to Dashboard"
+    "go_to_dashboard": "Go to Dashboard",
+    "go_back": "Go Back",
+    "page_not_found_details": "The page you're looking for seems to have vanished into the digital void. Let's get you back on track to explore the future of AI and technology.",
+    "explore_marketplace": "Explore Our Marketplace",
+    "browse_marketplace": "Browse Marketplace",
+    "find_talent": "Find Talent",
+    "browse_categories": "Browse Categories",
+    "get_help": "Get Help",
+    "error_help_intro": "If you believe this is an error, please",
+    "error_help_contact": "contact our support team",
+    "error_help_or": "or check our"
   }
 }

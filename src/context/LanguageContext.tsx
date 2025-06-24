@@ -59,6 +59,13 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     if (savedLang && supportedLanguages.some(lang => lang.code === savedLang)) {
       i18n.changeLanguage(savedLang);
       setCurrentLanguage(savedLang);
+    } else {
+      const detected = i18n.language.substring(0, 2) as SupportedLanguage;
+      if (supportedLanguages.some(l => l.code === detected)) {
+        setCookie('i18n_lang', detected, 365);
+        safeStorage.setItem('i18n_lang', detected);
+        setCurrentLanguage(detected);
+      }
     }
   }, []);
   

@@ -15,7 +15,8 @@
     "toggle_mobile_menu": "Alternar menú móvil",
     "greeting_user": "¡Hola, {{name}}!",
     "status_page": "Página de estado",
-    "check_status_page": "Puedes intentar refrescar la página o visitar nuestra"
+    "check_status_page": "Puedes intentar refrescar la página o visitar nuestra",
+    "back_to_top": "Volver arriba"
   },
   "nav": {
     "home": "Inicio",
@@ -85,6 +86,14 @@
     "deadline": "Fecha Límite",
     "job_posted": "Trabajo publicado correctamente"
   },
+  "onboarding": {
+    "title": "¿Qué te trae a Zion?",
+    "subtitle": "Elige cómo deseas usar nuestra plataforma",
+    "talent_title": "Ofrezco servicios",
+    "talent_desc": "Encuentra trabajo y muestra tus habilidades",
+    "client_title": "Estoy contratando",
+    "client_desc": "Publica trabajos y encuentra profesionales talentosos"
+  },
   "language": {
     "en": "English",
     "es": "Español",
@@ -105,7 +114,17 @@
     "login_different_account": "Iniciar sesión con otra cuenta",
     "payment_success_title": "¡Pago Exitoso!",
     "payment_success_message": "Tu pago se ha procesado correctamente. Ahora tienes acceso a todas las funciones premium.",
-    "go_to_dashboard": "Ir al Panel"
+    "go_to_dashboard": "Ir al Panel",
+    "go_back": "Volver",
+    "page_not_found_details": "La página que buscas parece haber desaparecido en el vacío digital. Volvamos al camino para explorar el futuro de la IA y la tecnología.",
+    "explore_marketplace": "Explora Nuestro Mercado",
+    "browse_marketplace": "Explorar Mercado",
+    "find_talent": "Encontrar Talento",
+    "browse_categories": "Ver Categorías",
+    "get_help": "Obtener Ayuda",
+    "error_help_intro": "Si crees que esto es un error, por favor",
+    "error_help_contact": "contacta a nuestro equipo de soporte",
+    "error_help_or": "o revisa nuestra"
   },
   "privacy": {
     "title": "Política de Privacidad",

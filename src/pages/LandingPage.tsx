@@ -67,8 +67,8 @@ export default function LandingPage() {
       link: "/analytics"
     },
     {
-      title: "Mobile App",
-      description: "Take Zion with you on the go with our mobile app for iOS and Android",
+      title: t('home.tool_mobile_app'),
+      description: t('home.tool_mobile_app_desc'),
       icon: <Smartphone className="h-6 w-6 text-zion-purple" />,
       link: "/mobile-launch"
     }

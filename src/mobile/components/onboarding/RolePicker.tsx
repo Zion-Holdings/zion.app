@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Briefcase, Users, Check } from "lucide-react";
@@ -12,6 +13,7 @@ interface RolePickerProps {
 
 export function RolePicker({ onSelect }: RolePickerProps) {
   const [selectedRole, setSelectedRole] = useState<UserRole>(null);
+  const { t } = useTranslation();
 
   const handleSelect = (role: UserRole) => {
     setSelectedRole(role);
@@ -20,8 +22,8 @@ export function RolePicker({ onSelect }: RolePickerProps) {
 
   return (
     <div className="space-y-4 px-4">
-      <h2 className="text-xl font-medium">What brings you to Zion?</h2>
-      <p className="text-muted-foreground">Choose how you want to use our platform</p>
+      <h2 className="text-xl font-medium">{t('onboarding.title')}</h2>
+      <p className="text-muted-foreground">{t('onboarding.subtitle')}</p>
 
       <div className="space-y-3 mt-6">
         <Card 
@@ -38,8 +40,8 @@ export function RolePicker({ onSelect }: RolePickerProps) {
                 <Briefcase className="h-6 w-6 text-primary" />
               </div>
               <div className="flex-1">
-                <h3 className="font-medium">I'm offering services</h3>
-                <p className="text-sm text-muted-foreground">Find work and showcase your skills</p>
+                <h3 className="font-medium">{t('onboarding.talent_title')}</h3>
+                <p className="text-sm text-muted-foreground">{t('onboarding.talent_desc')}</p>
               </div>
               {selectedRole === 'talent' && (
                 <Check className="h-5 w-5 text-primary" />
@@ -62,8 +64,8 @@ export function RolePicker({ onSelect }: RolePickerProps) {
                 <Users className="h-6 w-6 text-primary" />
               </div>
               <div className="flex-1">
-                <h3 className="font-medium">I'm hiring</h3>
-                <p className="text-sm text-muted-foreground">Post jobs and find talented professionals</p>
+                <h3 className="font-medium">{t('onboarding.client_title')}</h3>
+                <p className="text-sm text-muted-foreground">{t('onboarding.client_desc')}</p>
               </div>
               {selectedRole === 'client' && (
                 <Check className="h-5 w-5 text-primary" />

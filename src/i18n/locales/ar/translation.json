@@ -16,7 +16,8 @@
     "toggle_mobile_menu": "تبديل قائمة الجوال",
     "greeting_user": "مرحباً، {{name}}!",
     "status_page": "صفحة الحالة",
-    "check_status_page": "يمكنك محاولة تحديث الصفحة أو زيارة"
+    "check_status_page": "يمكنك محاولة تحديث الصفحة أو زيارة",
+    "back_to_top": "العودة للأعلى"
   },
   "nav": {
     "home": "الرئيسية",
@@ -75,6 +76,14 @@
     "deadline": "الموعد النهائي",
     "job_posted": "تم نشر الوظيفة بنجاح"
   },
+  "onboarding": {
+    "title": "ما الذي جلبك إلى زيون؟",
+    "subtitle": "اختر كيفية استخدامك لمنصتنا",
+    "talent_title": "أقدم خدمات",
+    "talent_desc": "ابحث عن عمل واعرض مهاراتك",
+    "client_title": "أقوم بالتوظيف",
+    "client_desc": "انشر الوظائف وابحث عن محترفين موهوبين"
+  },
   "language": {
     "en": "English",
     "es": "Español",
@@ -96,6 +105,16 @@
     "login_different_account": "تسجيل الدخول بحساب مختلف",
     "payment_success_title": "تم الدفع بنجاح!",
     "payment_success_message": "تمت معالجة دفعتك بنجاح. لديك الآن إمكانية الوصول إلى جميع الميزات المميزة.",
-    "go_to_dashboard": "الانتقال إلى لوحة التحكم"
+    "go_to_dashboard": "الانتقال إلى لوحة التحكم",
+    "go_back": "عودة",
+    "page_not_found_details": "يبدو أن الصفحة التي تبحث عنها اختفت في الفراغ الرقمي. لنعُد إلى المسار لاستكشاف مستقبل الذكاء الاصطناعي والتكنولوجيا.",
+    "explore_marketplace": "استكشف سوقنا",
+    "browse_marketplace": "تصفح السوق",
+    "find_talent": "ابحث عن المواهب",
+    "browse_categories": "تصفح الفئات",
+    "get_help": "الحصول على مساعدة",
+    "error_help_intro": "إذا كنت تعتقد أن هذا خطأ، يرجى",
+    "error_help_contact": "التواصل مع فريق الدعم لدينا",
+    "error_help_or": "أو التحقق من"
   }
 }
