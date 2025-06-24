@@ -252,7 +252,7 @@ describe('Error Recovery Scenarios', () => {
   test('error messages guide user to correct configuration', () => {
     const errorMessages = {
       missing_config: 'Authentication service not configured',
-      unreachable: 'Auth service unreachable',
+      unreachable: 'Authentication service is temporarily unavailable. Please try again later.',
       invalid_credentials: 'Authentication service configuration error',
       network_error: 'Connection error to authentication service'
     };
