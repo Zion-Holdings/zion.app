@@ -13,6 +13,7 @@ import useJobDetails from '@/hooks/useJobDetails';
 import { ApplyToJobModal } from '@/components/messaging/job-application';
 import { SEO } from '@/components/SEO';
 import { useWhitelabel } from '@/context/WhitelabelContext';
+import { JobDetailsSkeleton } from '@/components/jobs';
 
 interface Job {
   id: string;
@@ -44,11 +45,7 @@ export default function JobDetails() {
   };
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-      </div>
-    );
+    return <JobDetailsSkeleton />;
   }
 
   if (error || !job) {
