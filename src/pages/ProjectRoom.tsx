@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useRouter } from 'next/router'; // Changed from useParams
 import { Header } from '@/components/Header';
@@ -62,7 +61,7 @@ export default function ProjectRoom() {
     
     const randomUser = mockUsers[Math.floor(Math.random() * mockUsers.length)];
     
-    if (!callParticipants.find(p => p.id === randomUser.id)) {
+    if (randomUser && !callParticipants.find(p => p.id === randomUser.id)) {
       setCallParticipants(prev => [...prev, randomUser]);
       toast(`${randomUser.name} joined the call`);
     }
