@@ -253,7 +253,11 @@ export default function EquipmentDetail() {
       <NextSeo
         title={`${equipment.name} - Zion Marketplace`}
         description={equipment.description}
-        image={equipment.images[0]}
+        openGraph={{
+          title: `${equipment.name} - Zion Marketplace`,
+          description: equipment.description,
+          images: [{ url: equipment.images[0] }]
+        }}
       />
       <div className="min-h-screen bg-zion-blue py-8 px-4">
         <div className="container mx-auto">
