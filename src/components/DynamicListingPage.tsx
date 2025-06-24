@@ -100,7 +100,7 @@ export function DynamicListingPage({
 
   const handleSliderChange = (values: number[]) => {
     const [min, max] = values.map(Number);
-    if (isNaN(min) || isNaN(max)) return;
+    if (min == null || max == null || isNaN(min) || isNaN(max)) return;
     setCurrentPriceFilter([min, max]);
   };
 
