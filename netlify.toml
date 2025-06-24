@@ -102,11 +102,13 @@
   AUTH0_BASE_URL = "https://deploy-preview-${REVIEW_ID}--your-site.netlify.app"
   NEXT_PUBLIC_SENTRY_ENVIRONMENT = "preview"
   NEXT_PUBLIC_ENABLE_ANALYTICS = "false"
+  NEXT_PUBLIC_DEVTOOLS = "true"
 
 [context.branch-deploy.environment]
   AUTH0_BASE_URL = "https://${BRANCH}--your-site.netlify.app"
   NEXT_PUBLIC_SENTRY_ENVIRONMENT = "staging"
   NEXT_PUBLIC_ENABLE_ANALYTICS = "false"
+  NEXT_PUBLIC_DEVTOOLS = "true"
 
 # Redirects for Single Page Application
 [[redirects]]
