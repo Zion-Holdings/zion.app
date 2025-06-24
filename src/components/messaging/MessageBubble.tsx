@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { format } from 'date-fns';
 import { PaperclipIcon } from 'lucide-react';
@@ -31,7 +30,7 @@ export function MessageBubble({ message, isUserMessage }: MessageBubbleProps) {
             rel="noopener noreferrer"
             className="flex items-center mt-2 p-2 bg-black/20 rounded text-xs hover:bg-black/30"
           >
-            <PaperclipIcon className="h-3 w-3 mr-1" />
+            <PaperclipIcon className="h-3 w-3 mr-1" aria-hidden="true" />
             {message.attachment_name || 'Attachment'}
           </a>
         )}
