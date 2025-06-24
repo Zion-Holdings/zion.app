@@ -19,13 +19,22 @@ export const AvatarMenu: React.FC = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Avatar className="h-8 w-8 cursor-pointer">
-          {avatarUrl ? (
-            <AvatarImage src={avatarUrl} alt={user.displayName || user.name || 'User'} />
-          ) : (
-            <AvatarFallback>{initials}</AvatarFallback>
-          )}
-        </Avatar>
+        <button
+          className="h-8 w-8 cursor-pointer rounded-full focus:outline-none"
+          aria-label="User menu"
+          title="User menu"
+        >
+          <Avatar>
+            {avatarUrl ? (
+              <AvatarImage
+                src={avatarUrl}
+                alt={user.displayName || user.name || 'User'}
+              />
+            ) : (
+              <AvatarFallback>{initials}</AvatarFallback>
+            )}
+          </Avatar>
+        </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem asChild>

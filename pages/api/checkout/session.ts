@@ -45,9 +45,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     orders.push({ id: orderId, items: cart, status: 'pending' });
     fs.writeFileSync(file, JSON.stringify(orders, null, 2));
 
-    res.status(200).json({ url: session.url });
+    return res.status(200).json({ url: session.url });
   } catch (err: any) {
     console.error('Checkout session error:', err);
-    res.status(500).json({ error: err.message });
+    return res.status(500).json({ error: err.message });
   }
 }

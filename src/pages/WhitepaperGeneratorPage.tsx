@@ -73,7 +73,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
 
   useEffect(() => {
     if(error && !isLoading && !isDownloading && !isSharing && !isSubmittingToCounsel) setError(null);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+   
   }, [tokenName, tokenSupply, useCases, rewardsLogic, distributionData, governanceLogic, legalDisclaimers, sections]);
 
 

@@ -3,11 +3,31 @@ import react from '@vitejs/plugin-react';
 import path from 'node:path';
 import { SAMPLE_SERVICES } from './src/data/sampleServices';
 import { visualizer } from 'rollup-plugin-visualizer';
+import { gzipSync, brotliCompressSync } from 'node:zlib';
+
+function compressAssets() {
+  return {
+    name: 'compress-assets',
+    generateBundle(_: any, bundle: any) {
+      for (const file of Object.keys(bundle)) {
+        if (/\.(js|css)$/.test(file)) {
+          const data =
+            bundle[file].type === 'asset' ? bundle[file].source : bundle[file].code;
+          const gzip = gzipSync(Buffer.from(data));
+          this.emitFile({ type: 'asset', fileName: `${file}.gz`, source: gzip });
+          const brotli = brotliCompressSync(Buffer.from(data));
+          this.emitFile({ type: 'asset', fileName: `${file}.br`, source: brotli });
+        }
+      }
+    },
+  };
+}
 
 export default defineConfig({
   plugins: [
     react(),
     visualizer({ open: false, filename: 'bundle-stats.html' }),
+    compressAssets(),
     {
       name: 'mock-api',
       configureServer(server) {

@@ -1,12 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 // Removed: import { useRouter } from 'next/router';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 import { logError } from '@/utils/logError';
-// Removed sendErrorToBackend import as it's no longer directly used.
+import { sendErrorToBackend } from '@/utils/customErrorReporter';
+import { getCapturedLogs } from '@/utils/consoleLogCapture';
+import { generateTraceId } from '@/utils/generateTraceId';
 
-function GlobalErrorFallback({ error }: FallbackProps) {
+// Fallback is defined inside GlobalErrorBoundary to access state
+
+export default function GlobalErrorBoundary({ children }: { children: React.ReactNode }) {
+  const [traceId, setTraceId] = useState<string | null>(null);
+  const [componentStack, setComponentStack] = useState<string | undefined>(undefined);
+
+  const handleReportIssue = async (error: Error) => {
+    const logs = getCapturedLogs().map(
+      (l) => `[${l.timestamp}] [${l.level}] ${l.message}`
+    );
+    const id = traceId || generateTraceId();
+    await sendErrorToBackend({
+      message: error.message,
+      stack: error.stack,
+      componentStack,
+      url: typeof window !== 'undefined' ? window.location.href : '',
+      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
+      timestamp: new Date().toISOString(),
+      traceId: id,
+      logs,
+      source: 'GlobalErrorBoundaryReport',
+    });
+    try {
+      const enqueueSnackbar = getEnqueueSnackbar();
+      enqueueSnackbar(`Issue reported. Reference ID: ${id}`, { variant: 'success' });
+    } catch (err) {
+      console.error('Failed to show report confirmation:', err);
+    }
+  };
+
+  function GlobalErrorFallback({ error }: FallbackProps) {
   // Removed: const router = useRouter();
   // Updated user-friendly messages
   const apologyMessage = "We apologize for the inconvenience.";
@@ -47,13 +79,14 @@ function GlobalErrorFallback({ error }: FallbackProps) {
       <div className="mt-4 space-x-4">
         <Link href="/status" className="text-blue-600 hover:underline">Status Page</Link>
         <a href="mailto:support@example.com" className="text-blue-600 hover:underline">Contact Support</a>
+        <button onClick={() => handleReportIssue(error)} className="text-blue-600 hover:underline">Report Issue</button>
       </div>
+      {traceId && (
+        <p className="text-xs text-muted-foreground mt-2">Reference ID: {traceId}</p>
+      )}
     </div>
   );
 }
-
-export default function GlobalErrorBoundary({ children }: { children: React.ReactNode }) {
-  // Removed: const location = useLocation();
 
   const handleError = (error: Error, info: React.ErrorInfo) => {
     console.log("Detailed error info:", { name: error.name, message: error.message, stack: error.stack, componentStack: info.componentStack });
@@ -65,13 +98,15 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
     // logError will also call sendErrorToBackend with source: 'logError'
     // The componentStack from React's ErrorInfo is passed to logError,
     // which then passes it to Sentry and to sendErrorToBackend.
-    logError(error, {
+    const id = logError(error, {
       route: typeof window !== 'undefined' ? window.location.pathname : 'Unknown route (SSR/SSG)',
       componentStack: info.componentStack || undefined,
       // Add a clear source indicator for errors caught by GlobalErrorBoundary,
       // this will be part of the 'context' in logError.
       errorSourceContext: 'GlobalErrorBoundaryHandler'
     });
+    setTraceId(id);
+    setComponentStack(info.componentStack || undefined);
 
     // The direct call to sendErrorToBackend has been removed.
     // logError now handles sending the report to the custom backend.

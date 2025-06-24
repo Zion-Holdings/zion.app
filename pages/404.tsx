@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import { SEO } from '@/components/SEO';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { captureException } from '@/utils/sentry';
@@ -139,7 +138,6 @@ export default function Custom404() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

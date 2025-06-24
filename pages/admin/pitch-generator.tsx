@@ -135,7 +135,7 @@ const PitchGeneratorPage: React.FC = () => {
         setVersionHistory(sortedHistory);
 
         if (sortedHistory.length > 0) {
-            setDeckVersion(sortedHistory[0].version + 1);
+            setDeckVersion((sortedHistory[0]?.version ?? 0) + 1);
         } else {
             setDeckVersion(1); // Start with v1 if no history
         }
@@ -231,6 +231,8 @@ const PitchGeneratorPage: React.FC = () => {
       const pdf = new jsPDF('landscape', 'pt', 'a4');
       for (let i = 0; i < generatedSlides.length; i++) {
         const slide = generatedSlides[i];
+        if (!slide) continue; // Skip if slide is undefined
+        
         const slideElement = document.createElement('div');
         slideElement.style.width = '1024px';
         slideElement.style.height = '576px';

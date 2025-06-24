@@ -1,6 +1,5 @@
 import React from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
@@ -35,7 +34,12 @@ export default function AdminDashboard() {
           <p className="text-center text-zion-slate-light max-w-3xl mx-auto mb-8">
             Visualize user activity, manage orders and keep your marketplace running smoothly.
           </p>
-          <img src="https://placehold.co/800x400" alt="Screenshot of admin dashboard" className="rounded-lg shadow-xl mx-auto mb-12" />
+          <img
+            src="https://placehold.co/800x400"
+            alt="Screenshot of admin dashboard"
+            className="rounded-lg shadow-xl mx-auto mb-12"
+            loading="lazy"
+          />
           <h2 className="text-2xl font-bold mb-4">Benefits &amp; Use Cases</h2>
           <ul className="list-disc list-inside space-y-2 mb-8 text-zion-slate-light">
             <li>Track sales and service metrics in real time.</li>
@@ -60,7 +64,6 @@ export default function AdminDashboard() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

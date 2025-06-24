@@ -1,5 +1,4 @@
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { NextSeo } from '@/components/NextSeo';
 
 interface Proposal {
@@ -51,7 +50,6 @@ export default function InternationalProposalsPage() {
           Community commentary is open per region.
         </p>
       </main>
-      <Footer />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 
 import React from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { BillingDashboard } from "@/components/enterprise/billing/BillingDashboard";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/router"; // Changed to named import
@@ -29,7 +28,6 @@ export default function EnterpriseBilling() {
       <main className="min-h-screen bg-background">
         <BillingDashboard />
       </main>
-      <Footer />
     </ProtectedRoute>
   );
 }

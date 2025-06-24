@@ -1,7 +1,6 @@
 
 import { useState } from "react";
 import { useRouter } from 'next/router';
-import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { GradientHeading } from "@/components/GradientHeading";
 import { AIMatchmaker } from "@/components/AIMatchmaker";
@@ -78,7 +77,6 @@ export default function AIMatcherPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

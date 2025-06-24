@@ -1,7 +1,6 @@
 
 import React from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { CompanyDashboard } from "@/components/enterprise/workspace/CompanyDashboard";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/router"; // Changed to named import
@@ -56,7 +55,6 @@ export default function CompanyWorkspace() {
       <main className="min-h-screen" style={{ backgroundColor: effectiveTheme?.backgroundColor || 'var(--background)' }}>
         <CompanyDashboard company={company} />
       </main>
-      <Footer />
     </ProtectedRoute>
   );
 }

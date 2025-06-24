@@ -1,5 +1,4 @@
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { ExpoHero } from '@/components/expo/ExpoHero';
 import { AgendaTimeline } from '@/components/expo/AgendaTimeline';
@@ -27,7 +26,6 @@ export default function ExpoPage() {
         <ExpoGPTPrompt />
         <ExportsSection />
       </main>
-      <Footer />
     </>
   );
 }

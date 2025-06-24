@@ -34,9 +34,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const items = products.slice(start, end);
 
     console.log(`[API] Returning ${items.length} products (page ${page}, limit ${limit})`);
-    res.status(200).json(items);
+    return res.status(200).json(items);
   } catch (error) {
     console.error('[API] Error in /api/products:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 }

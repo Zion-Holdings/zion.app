@@ -19,7 +19,7 @@ function parseMarkdown(filePath: string): BlogPost | null {
   }
   const raw = fs.readFileSync(filePath, 'utf8');
   const match = raw.match(/---\n([\s\S]+?)\n---\n([\s\S]*)/);
-  if (!match) return null;
+  if (!match || !match[1] || !match[2]) return null;
   const meta = JSON.parse(match[1]);
   const content = match[2].trim();
   const slug = path.basename(filePath).replace(/\.md$/, '');

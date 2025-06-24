@@ -9,6 +9,7 @@ interface ErrorDetails {
   userAgent: string;
   timestamp: string;
   traceId: string;
+  logs?: string[];
   source: 'GlobalErrorBoundary' | 'logError' | 'window.onerror' | 'unhandledrejection' | string; // string for flexibility
 }
 

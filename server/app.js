@@ -1,6 +1,7 @@
 const express = require('express');
 const Sentry = require('@sentry/node');
 const Tracing = require('@sentry/tracing');
+const tracer = require('dd-trace').init();
 const { exec } = require('child_process'); // Make sure this is imported
 const mongoose = require('mongoose');
 const morgan = require('morgan');
@@ -25,6 +26,18 @@ const app = express();
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
   tracesSampleRate: 1.0,
+  beforeSend(event) {
+    const span = tracer.scope().active();
+    if (span) {
+      const ctx = span.context();
+      event.tags = {
+        ...event.tags,
+        dd_trace_id: ctx.toTraceId(),
+        dd_span_id: ctx.toSpanId(),
+      };
+    }
+    return event;
+  },
 });
 
 app.use(Sentry.Handlers.requestHandler());
