@@ -60,7 +60,7 @@ export default function SearchResultsPage() {
 
   useEffect(() => {
     fetchResults();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [router.isReady, query, page, typeFilter, sortBy]);
 
   const totalPages = Math.max(1, Math.ceil(totalCount / LIMIT));

@@ -1,5 +1,10 @@
 import axios, { AxiosInstance, AxiosError } from 'axios';
 import { supabase } from '@/integrations/supabase/client';
+import { MarketplaceListing, TalentProfile, EquipmentItem } from '@/types/marketplace';
+import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
+import { TALENT_PROFILES } from '@/data/mockTalents';
+import { EQUIPMENT_ITEMS } from '@/data/equipmentData';
+import { logger } from '@/utils/logger';
 
 // Types for marketplace data
 export interface Product {
@@ -33,18 +38,6 @@ export interface Category {
   icon: string;
 }
 
-export interface TalentProfile {
-  id: string;
-  name: string;
-  title: string;
-  skills: string[];
-  hourlyRate?: number;
-  avatar?: string;
-  rating?: number;
-  reviewCount?: number;
-  availability?: string;
-}
-
 export interface Equipment {
   id: string;
   title: string;
@@ -65,18 +58,10 @@ declare const process: {
   };
 };
 
-const getApiBaseUrl = (): string => {
-  // For client-side, use the current origin for local API calls
-  if (typeof window !== 'undefined') {
-    return window.location.origin;
-  }
-  // For server-side, use environment variable or fallback
-  return process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
-};
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
-const API_BASE_URL = getApiBaseUrl();
-
-console.log('Marketplace Service - API Base URL:', API_BASE_URL);
+// Development debug logging
+logger.debug('Marketplace Service - API Base URL:', API_BASE_URL);
 
 // Create axios instance with proper configuration for the custom implementation
 const createMarketplaceClient = (): AxiosInstance => {
