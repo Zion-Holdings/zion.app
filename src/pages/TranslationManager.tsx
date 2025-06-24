@@ -121,7 +121,7 @@ export default function TranslationManager() {
         if (!updatedTranslations[lang.code]) {
           updatedTranslations[lang.code] = {};
         }
-        updatedTranslations[lang.code][key] = editedTranslations[key][lang.code];
+        updatedTranslations[lang.code][key] = editedTranslations[key]?.[lang.code] || '';
       });
       
       setTranslations(updatedTranslations);
