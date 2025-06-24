@@ -16,7 +16,7 @@ export async function createTestNotification(userId: string) {
     'milestone_complete',
     'order_status',
   ];
-  const randomType = types[Math.floor(Math.random() * types.length)];
+  const randomType = types[Math.floor(Math.random() * types.length)] || 'system';
 
   const titles = {
     message: 'New Message Received',

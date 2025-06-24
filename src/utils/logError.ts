@@ -88,8 +88,8 @@ export function logError(
         const match = regex.exec(line.trim());
         if (match) {
           errorDetails.filename = match[1]?.trim();
-          errorDetails.lineno = parseInt(match[2], 10);
-          errorDetails.colno = parseInt(match[3], 10);
+          errorDetails.lineno = parseInt(match[2] || '0', 10);
+          errorDetails.colno = parseInt(match[3] || '0', 10);
           break;
         }
       }
