@@ -85,7 +85,7 @@ const WhitepaperGeneratorPage: React.FC = () => {
     let idCounter = 0;
     while ((match = sectionRegex.exec(draft)) !== null) {
       const title = (match[1] || match[2] || `Section ${idCounter + 1}`).trim();
-      const content = match[3].trim();
+      const content = (match[3] || '').trim();
       parsed.push({ id: `section-${idCounter++}-${title.toLowerCase().replace(/\s+/g, '-')}`, title, content });
     }
     if (parsed.length === 0 && draft.trim().length > 0) {

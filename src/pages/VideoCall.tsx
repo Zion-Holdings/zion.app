@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Header } from '@/components/Header';
@@ -65,7 +64,7 @@ export default function VideoCall() {
     
     const randomUser = mockUsers[Math.floor(Math.random() * mockUsers.length)];
     
-    if (!participants.find(p => p.id === randomUser.id)) {
+    if (randomUser && !participants.find(p => p.id === randomUser.id)) {
       setParticipants(prev => [...prev, randomUser]);
       toast(`${randomUser.name} joined the call`);
     }
