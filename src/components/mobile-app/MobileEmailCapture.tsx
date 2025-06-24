@@ -64,7 +64,7 @@ export const MobileEmailCapture: React.FC = () => {
             </Button>
           </form>
           
-          <p className="text-sm text-gray-400 mt-4">
+          <p className="text-sm text-gray-300 mt-4">
             We respect your privacy and will never share your information.
           </p>
         </div>

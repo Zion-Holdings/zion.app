@@ -231,7 +231,7 @@ export default function SearchResultsPage({
 
               {/* Search Input */}
               <div className="relative w-full lg:w-96">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-200" />
+                <Search aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-200" />
                 <Input
                   type="text"
                   value={searchQuery}
@@ -251,7 +251,7 @@ export default function SearchResultsPage({
                   className="flex items-center gap-2"
                   data-testid="filter-button"
                 >
-                  <Filter className="h-4 w-4" />
+                  <Filter aria-hidden="true" className="h-4 w-4" />
                   Filters
                 </Button>
 
@@ -315,18 +315,20 @@ export default function SearchResultsPage({
                   size="sm"
                   onClick={() => setViewMode('grid')}
                   data-testid="view-mode-grid"
+                  aria-label="Grid view"
                   className={viewMode === 'grid' ? 'active' : ''}
                 >
-                  <Grid className="h-4 w-4" />
+                  <Grid aria-hidden="true" className="h-4 w-4" />
                 </Button>
                 <Button
                   variant={viewMode === 'list' ? 'default' : 'outline'}
                   size="sm"
                   onClick={() => setViewMode('list')}
                   data-testid="view-mode-list"
+                  aria-label="List view"
                   className={viewMode === 'list' ? 'active' : ''}
                 >
-                  <List className="h-4 w-4" />
+                  <List aria-hidden="true" className="h-4 w-4" />
                 </Button>
               </div>
             </div>

@@ -146,7 +146,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                         : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
                     )}
                   >
-                    <Heart className="w-4 h-4" />
+                    <Heart aria-hidden="true" className="w-4 h-4" />
                     {count > 0 && (
                       <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
                         {count}
@@ -172,7 +172,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                         : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
                     )}
                   >
-                    <CreditCard className="w-4 h-4 mr-1" />
+                    <CreditCard aria-hidden="true" className="w-4 h-4 mr-1" />
                     {t('nav.wallet', 'Wallet')}
                   </a>
                 </Link>
@@ -194,7 +194,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                         : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
                     )}
                   >
-                    <MessageSquare className="w-4 h-4 mr-1" />
+                    <MessageSquare aria-hidden="true" className="w-4 h-4 mr-1" />
                     {t('nav.messages')}
                     {unreadCount > 0 && (
                       <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
@@ -222,7 +222,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                           : 'text-white hover:bg-zion-purple/10 hover:text-zion-cyan'
                       )}
                     >
-                      <ShoppingCart className="w-4 h-4 mr-1" />
+                      <ShoppingCart aria-hidden="true" className="w-4 h-4 mr-1" />
                       {t('nav.cart', 'Cart')}
                       {cartCount > 0 && (
                         <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { focusManagement } from '@/utils/accessibility';
 import { sendMessage } from '../services/messages';
 import { toast } from '@/hooks/use-toast';
 
@@ -15,7 +16,8 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false); // New loading state
-  const firstInputRef = useRef(null);
+  const firstInputRef = useRef<HTMLInputElement | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -26,10 +28,13 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
         onClose();
       }
     }
-
-    firstInputRef.current && (firstInputRef.current as HTMLInputElement).focus();
+    const removeTrap = modalRef.current ? focusManagement.trapFocus(modalRef.current) : undefined;
+    firstInputRef.current?.focus();
     document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      removeTrap && removeTrap();
+    };
   }, [isOpen, onClose]);
 
   if (!isOpen) {
@@ -63,6 +68,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
 
   return (
     <div
+      ref={modalRef}
       className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
       role="dialog"
       aria-modal="true"

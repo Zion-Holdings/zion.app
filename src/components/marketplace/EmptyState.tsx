@@ -17,27 +17,27 @@ export interface EmptyStateProps {
 
 const defaultContent = {
   products: {
-    icon: <ShoppingCart className="w-16 h-16 text-gray-400" />,
+    icon: <ShoppingCart className="w-16 h-16 text-gray-500" />,
     title: 'No Products Available',
     description: 'We\'re loading our marketplace products. If this persists, there might be a connection issue. Try refreshing the page or check back soon for exciting new offerings!',
   },
   categories: {
-    icon: <Lightbulb className="w-16 h-16 text-gray-400" />,
+    icon: <Lightbulb className="w-16 h-16 text-gray-500" />,
     title: 'No Categories Found',
     description: 'Categories are being organized. Please try refreshing the page or come back later.',
   },
   talent: {
-    icon: <Users className="w-16 h-16 text-gray-400" />,
+    icon: <Users className="w-16 h-16 text-gray-500" />,
     title: 'No Talent Profiles',
     description: 'No talent profiles match your criteria. Try adjusting your filters or search terms.',
   },
   equipment: {
-    icon: <Wrench className="w-16 h-16 text-gray-400" />,
+    icon: <Wrench className="w-16 h-16 text-gray-500" />,
     title: 'No Equipment Available',
     description: 'Equipment listings are being updated. Please check back soon for the latest hardware offerings.',
   },
   search: {
-    icon: <ShoppingCart className="w-16 h-16 text-gray-400" />,
+    icon: <ShoppingCart className="w-16 h-16 text-gray-500" />,
     title: 'No Results Found',
     description: 'Try adjusting your search terms or browse our categories to discover what we have available.',
   },

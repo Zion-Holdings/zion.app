@@ -7,6 +7,7 @@ import { ChatInput } from './ChatInput';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import { focusManagement } from '@/utils/accessibility';
 
 export interface Message {
   id: string;
@@ -53,6 +54,7 @@ export function ChatAssistant({
   const [loggedInMessages, setLoggedInMessages] = useState<Message[]>(initialMessages);
 
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const guestModalRef = useRef<HTMLDivElement>(null);
   const [pendingApiCallParams, setPendingApiCallParams] = useState<{ message: string, conversationId?: string } | null>(null);
   const [showGuestModal, setShowGuestModal] = useState(false);
   const [guestMessage, setGuestMessage] = useState<string | null>(null);
@@ -147,6 +149,22 @@ export function ChatAssistant({
   };
 
   useEffect(() => {
+    if (!showGuestModal) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        handleModalCancel();
+      }
+    };
+    const removeTrap = guestModalRef.current ? focusManagement.trapFocus(guestModalRef.current) : undefined;
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      removeTrap && removeTrap();
+    };
+  }, [showGuestModal]);
+
+  useEffect(() => {
     if (!isOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -230,6 +248,7 @@ export function ChatAssistant({
 
       {showGuestModal && guestMessage && (
         <div
+          ref={guestModalRef}
           className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4"
           role="dialog"
           aria-modal="true"

@@ -87,15 +87,15 @@ export function OnChainExport() {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           {isConnected ? (
-            <Wallet className="h-5 w-5 text-primary" />
+            <Wallet aria-hidden="true" className="h-5 w-5 text-primary" />
           ) : (
-            <Wallet className="h-5 w-5" />
+            <Wallet aria-hidden="true" className="h-5 w-5" />
           )}
           On-chain Export
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Info className="h-4 w-4 text-muted-foreground cursor-help" />
+                <Info aria-label="More info" className="h-4 w-4 text-muted-foreground cursor-help" />
               </TooltipTrigger>
               <TooltipContent>
                 <p className="max-w-xs">Export your ZION$ tokens to an external blockchain wallet</p>
@@ -114,7 +114,7 @@ export function OnChainExport() {
             </div>
             {exportStatus === 'success' ? (
               <Button className="w-full bg-green-600 hover:bg-green-700" disabled>
-                <Check className="mr-2 h-4 w-4" />
+                <Check aria-hidden="true" className="mr-2 h-4 w-4" />
                 Tokens Exported
               </Button>
             ) : (
@@ -124,7 +124,7 @@ export function OnChainExport() {
                 disabled={isExporting}
               >
                 {isExporting ? "Processing..." : "Export Tokens"}
-                {!isExporting && <ArrowUpRight className="ml-2 h-4 w-4" />}
+                {!isExporting && <ArrowUpRight aria-hidden="true" className="ml-2 h-4 w-4" />}
               </Button>
             )}
           </div>

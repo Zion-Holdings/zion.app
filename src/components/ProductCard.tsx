@@ -100,7 +100,7 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
         onClick={() => toggle(product.id)}
         aria-label={active ? 'Remove from favorites' : 'Add to favorites'}
       >
-        <Heart className={active ? 'text-red-500 fill-red-500' : 'text-gray-500'} />
+        <Heart aria-hidden="true" className={active ? 'text-red-500 fill-red-500' : 'text-gray-500'} />
       </button>
 
     <div className="w-full h-40 relative mb-2">
@@ -121,7 +121,7 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
       )}
       {active && (
         <div className="absolute top-2 left-2 p-1 rounded-full bg-background/70">
-          <Heart className="text-red-500 fill-red-500" />
+          <Heart aria-hidden="true" className="text-red-500 fill-red-500" />
         </div>
       )}
     </div>

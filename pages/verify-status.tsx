@@ -32,13 +32,13 @@ export default function VerifyStatus() {
           )}
           {message && (
             <Alert className="border-green-500 bg-green-50 text-green-900">
-              <CheckCircle className="h-4 w-4" />
+              <CheckCircle aria-hidden="true" className="h-4 w-4" />
               <AlertDescription>{message}</AlertDescription>
             </Alert>
           )}
           {error && (
             <Alert variant="destructive">
-              <AlertCircle className="h-4 w-4" />
+              <AlertCircle aria-hidden="true" className="h-4 w-4" />
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}

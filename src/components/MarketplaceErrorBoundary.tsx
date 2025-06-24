@@ -26,7 +26,7 @@ function MarketplaceErrorFallback({ error, resetErrorBoundary }: MarketplaceErro
     <div className="flex items-center justify-center min-h-[400px] p-6">
       <div className="max-w-md w-full space-y-4">
         <Alert variant="destructive">
-          <AlertCircle className="h-4 w-4" />
+          <AlertCircle aria-hidden="true" className="h-4 w-4" />
           <AlertTitle>Something went wrong in the marketplace</AlertTitle>
           <AlertDescription className="mt-2">
             {error?.message || 'An unexpected error occurred while loading marketplace content.'}
@@ -39,7 +39,7 @@ function MarketplaceErrorFallback({ error, resetErrorBoundary }: MarketplaceErro
             className="w-full"
             variant="default"
           >
-            <RefreshCcw className="mr-2 h-4 w-4" />
+            <RefreshCcw aria-hidden="true" className="mr-2 h-4 w-4" />
             Retry
           </Button>
           

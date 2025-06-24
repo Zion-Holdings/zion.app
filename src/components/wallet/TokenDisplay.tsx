@@ -16,7 +16,7 @@ export function TokenDisplay() {
           <CardTitle className="text-xl">ZION$ Balance</CardTitle>
           <CardDescription>Your current token balance</CardDescription>
         </div>
-        <BadgeDollarSign className="h-6 w-6 text-primary" />
+        <BadgeDollarSign aria-hidden="true" className="h-6 w-6 text-primary" />
       </CardHeader>
       <CardContent>
         {loading ? (

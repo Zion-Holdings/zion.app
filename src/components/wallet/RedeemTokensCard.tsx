@@ -60,7 +60,7 @@ export function RedeemTokensCard() {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Gift className="h-5 w-5" /> Redeem Rewards
+          <Gift aria-hidden="true" className="h-5 w-5" /> Redeem Rewards
         </CardTitle>
         <CardDescription>Exchange your ZION$ for rewards and perks</CardDescription>
       </CardHeader>
@@ -91,7 +91,7 @@ export function RedeemTokensCard() {
                       disabled={!wallet || wallet.balance < option.cost}
                       onClick={() => handleRedeem(option)}
                     >
-                      Redeem <ArrowRight className="ml-1 h-3 w-3" />
+                      Redeem <ArrowRight aria-hidden="true" className="ml-1 h-3 w-3" />
                     </Button>
                   </div>
                 </div>
@@ -100,7 +100,7 @@ export function RedeemTokensCard() {
             <div className="flex justify-between">
               <Button variant="outline" size="sm" onClick={() => setOpen(false)}>Close</Button>
               <Button variant="ghost" size="sm">
-                Learn More <ExternalLink className="ml-1 h-3 w-3" />
+                Learn More <ExternalLink aria-hidden="true" className="ml-1 h-3 w-3" />
               </Button>
             </div>
           </DialogContent>

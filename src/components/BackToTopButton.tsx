@@ -22,7 +22,7 @@ export function BackToTopButton() {
         visible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <ArrowUp className="h-5 w-5" />
+      <ArrowUp aria-hidden="true" className="h-5 w-5" />
     </button>
   );
 }
