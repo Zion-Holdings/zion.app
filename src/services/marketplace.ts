@@ -1,10 +1,9 @@
 import axios, { AxiosInstance, AxiosError } from 'axios';
 import { supabase } from '@/integrations/supabase/client';
-import { MarketplaceListing, TalentProfile, EquipmentItem } from '@/types/marketplace';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
-import { TALENT_PROFILES } from '@/data/mockTalents';
-import { EQUIPMENT_ITEMS } from '@/data/equipmentData';
 import { logger } from '@/utils/logger';
+import { ProductListing } from '@/types/listings';
+import { TalentProfile as TalentProfileType } from '@/types/talent';
 
 // Types for marketplace data
 export interface Product {
@@ -221,7 +220,7 @@ export const fetchTalent = async (params: {
   limit?: number;
   skills?: string[];
   search?: string;
-} = {}): Promise<TalentProfile[]> => {
+} = {}): Promise<TalentProfileType[]> => {
   try {
     console.log('Fetching marketplace talent with params:', params);
     
@@ -296,7 +295,7 @@ const getFallbackCategories = (): Category[] => {
   ];
 };
 
-const getFallbackTalent = async (params: any): Promise<TalentProfile[]> => {
+const getFallbackTalent = async (params: any): Promise<TalentProfileType[]> => {
   try {
     const { TALENT_PROFILES } = await import('@/data/talentData');
     
@@ -329,15 +328,22 @@ const getFallbackTalent = async (params: any): Promise<TalentProfile[]> => {
     // Map the data to match the marketplace interface
     return profiles.slice(start, end).map(profile => ({
       id: profile.id,
-      name: profile.full_name,
-      title: profile.professional_title,
+      user_id: profile.id,
+      full_name: profile.full_name,
+      professional_title: profile.professional_title,
       skills: profile.skills || [],
-      hourlyRate: profile.hourly_rate,
-      avatar: profile.profile_picture_url,
-      rating: profile.average_rating,
-      reviewCount: profile.rating_count || 0,
-      availability: profile.availability_type
-    }));
+      hourly_rate: profile.hourly_rate,
+      profile_picture_url: profile.profile_picture_url,
+      average_rating: profile.average_rating,
+      rating_count: profile.rating_count || 0,
+      availability_type: profile.availability_type,
+      location: profile.location,
+      bio: profile.bio,
+      portfolio_url: profile.portfolio_url,
+      years_experience: profile.years_experience,
+      created_at: profile.created_at,
+      updated_at: profile.updated_at
+    } as TalentProfileType));
   } catch (error) {
     console.error('Failed to load fallback talent data:', error);
     return [];
