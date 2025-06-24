@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -179,7 +178,7 @@ export function WorkExperienceItemForm({
                           ) : (
                             <span>Select date</span>
                           )}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" aria-hidden="true" />
                         </Button>
                       </FormControl>
                     </PopoverTrigger>
@@ -222,7 +221,7 @@ export function WorkExperienceItemForm({
                             ) : (
                               <span>Select date</span>
                             )}
-                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" aria-hidden="true" />
                           </Button>
                         </FormControl>
                       </PopoverTrigger>
