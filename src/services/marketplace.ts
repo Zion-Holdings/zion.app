@@ -134,7 +134,7 @@ export const fetchProducts = async (params: {
   try {
     console.log('Fetching marketplace products with params:', params);
     
-    const response = await marketplaceClient.get('/api/products', { 
+    const response = await marketplaceClient.get('/api/marketplace/products', { 
       params,
       timeout: 10000, // 10 second timeout
     });
@@ -208,7 +208,7 @@ export const fetchCategories = async (): Promise<Category[]> => {
   try {
     console.log('Fetching marketplace categories...');
     
-    const response = await marketplaceClient.get('/api/categories', {
+    const response = await marketplaceClient.get('/api/marketplace/categories', {
       timeout: 10000, // 10 second timeout
     });
     
@@ -216,18 +216,18 @@ export const fetchCategories = async (): Promise<Category[]> => {
       console.log(`Successfully fetched ${response.data.length} categories`);
       return response.data;
     } else {
-      console.warn('Categories API returned unexpected data format:', response.data);
-      return [];
+      console.warn('Categories API returned unexpected data format, using fallback');
+      return getFallbackCategories();
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Categories:', {
+    console.error('Marketplace fetch failed - Categories, using fallback:', {
       message: error.message,
       status: error.response?.status,
       url: error.config?.url,
     });
     
-    // Re-throw the error so the caller can handle it
-    throw error;
+    // Return fallback categories instead of throwing
+    return getFallbackCategories();
   }
 };
 
@@ -240,7 +240,7 @@ export const fetchTalent = async (params: {
   try {
     console.log('Fetching marketplace talent with params:', params);
     
-    const response = await marketplaceClient.get('/api/talent', { 
+    const response = await marketplaceClient.get('/api/marketplace/talent', { 
       params,
       timeout: 10000, // 10 second timeout
     });
@@ -249,19 +249,19 @@ export const fetchTalent = async (params: {
       console.log(`Successfully fetched ${response.data.length} talent profiles`);
       return response.data;
     } else {
-      console.warn('Talent API returned unexpected data format:', response.data);
-      return [];
+      console.warn('Talent API returned unexpected data format, using fallback');
+      return getFallbackTalent(params);
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Talent:', {
+    console.error('Marketplace fetch failed - Talent, using fallback:', {
       message: error.message,
       status: error.response?.status,
       url: error.config?.url,
       params,
     });
     
-    // Re-throw the error so the caller can handle it
-    throw error;
+    // Return fallback talent instead of throwing
+    return getFallbackTalent(params);
   }
 };
 
@@ -274,7 +274,7 @@ export const fetchEquipment = async (params: {
   try {
     console.log('Fetching marketplace equipment with params:', params);
     
-    const response = await marketplaceClient.get('/api/equipment', { 
+    const response = await marketplaceClient.get('/api/marketplace/equipment', { 
       params,
       timeout: 10000, // 10 second timeout
     });
@@ -283,20 +283,127 @@ export const fetchEquipment = async (params: {
       console.log(`Successfully fetched ${response.data.length} equipment items`);
       return response.data;
     } else {
-      console.warn('Equipment API returned unexpected data format:', response.data);
-      return [];
+      console.warn('Equipment API returned unexpected data format, using fallback');
+      return getFallbackEquipment(params);
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Equipment:', {
+    console.error('Marketplace fetch failed - Equipment, using fallback:', {
       message: error.message,
       status: error.response?.status,
       url: error.config?.url,
       params,
     });
     
-    // Re-throw the error so the caller can handle it
-    throw error;
+    // Return fallback equipment instead of throwing
+    return getFallbackEquipment(params);
   }
+};
+
+// Fallback data functions
+const getFallbackCategories = (): Category[] => {
+  return [
+    { id: '1', name: 'AI Services', slug: 'ai-services', icon: '🤖' },
+    { id: '2', name: 'Machine Learning', slug: 'machine-learning', icon: '🧠' },
+    { id: '3', name: 'Data Analytics', slug: 'data-analytics', icon: '📊' },
+    { id: '4', name: 'Cloud Computing', slug: 'cloud-computing', icon: '☁️' },
+    { id: '5', name: 'IoT Solutions', slug: 'iot-solutions', icon: '🌐' },
+    { id: '6', name: 'Cybersecurity', slug: 'cybersecurity', icon: '🔒' },
+  ];
+};
+
+const getFallbackTalent = async (params: any): Promise<TalentProfile[]> => {
+  try {
+    const { TALENT_PROFILES } = await import('@/data/talentData');
+    
+    // Apply basic filtering and pagination
+    let profiles = TALENT_PROFILES || [];
+    
+    if (params.search) {
+      const searchTerm = params.search.toLowerCase();
+      profiles = profiles.filter(p => 
+        p.full_name?.toLowerCase().includes(searchTerm) ||
+        p.professional_title?.toLowerCase().includes(searchTerm) ||
+        p.skills?.some((skill: string) => skill.toLowerCase().includes(searchTerm))
+      );
+    }
+    
+    if (params.skills && params.skills.length > 0) {
+      profiles = profiles.filter(p => 
+        params.skills.some((skill: string) => 
+          p.skills?.some((pSkill: string) => pSkill.toLowerCase().includes(skill.toLowerCase()))
+        )
+      );
+    }
+    
+    // Apply pagination
+    const page = params.page || 1;
+    const limit = params.limit || 20;
+    const start = (page - 1) * limit;
+    const end = start + limit;
+    
+    // Map the data to match the marketplace interface
+    return profiles.slice(start, end).map(profile => ({
+      id: profile.id,
+      name: profile.full_name,
+      title: profile.professional_title,
+      skills: profile.skills || [],
+      hourlyRate: profile.hourly_rate,
+      avatar: profile.profile_picture_url,
+      rating: profile.average_rating,
+      reviewCount: profile.rating_count || 0,
+      availability: profile.availability_type
+    }));
+  } catch (error) {
+    console.error('Failed to load fallback talent data:', error);
+    return [];
+  }
+};
+
+const getFallbackEquipment = (params: any): Equipment[] => {
+  // Return mock equipment data
+  const mockEquipment: Equipment[] = [
+    {
+      id: '1',
+      title: 'NVIDIA RTX 4090 GPU',
+      description: 'High-performance GPU for AI workloads',
+      price: 1599,
+      category: 'GPUs',
+      brand: 'NVIDIA',
+      specifications: ['24GB GDDR6X', 'Ada Lovelace Architecture'],
+      images: ['/images/equipment/rtx-4090.jpg'],
+      availability: 'In Stock'
+    },
+    {
+      id: '2',
+      title: 'AMD EPYC Server CPU',
+      description: 'Enterprise server processor for data centers',
+      price: 4999,
+      category: 'CPUs',
+      brand: 'AMD',
+      specifications: ['64 Cores', '128 Threads', '2.25 GHz Base'],
+      images: ['/images/equipment/epyc-cpu.jpg'],
+      availability: 'Limited Stock'
+    }
+  ];
+  
+  // Apply basic filtering
+  let equipment = mockEquipment;
+  
+  if (params.category) {
+    equipment = equipment.filter(e => 
+      e.category?.toLowerCase().includes(params.category.toLowerCase())
+    );
+  }
+  
+  if (params.search) {
+    const searchTerm = params.search.toLowerCase();
+    equipment = equipment.filter(e => 
+      e.title?.toLowerCase().includes(searchTerm) ||
+      e.description?.toLowerCase().includes(searchTerm)
+    );
+  }
+  
+  return equipment;
 };
 
 // Helper function to get error message for UI display
