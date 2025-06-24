@@ -5,7 +5,9 @@ import { SERVICES } from '@/data/servicesData';
 import * as Sentry from '@sentry/nextjs';
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/image';
+import { RatingStars } from '@/components/RatingStars';
+import ProductReviews from '@/components/ProductReviews';
+import { ProductGallery } from '@/components/gallery/ProductGallery';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
@@ -55,21 +57,32 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
       </nav>
       <main className="max-w-3xl mx-auto py-8 px-4">
         <h1 className="text-2xl font-bold mb-4">{listing.title}</h1>
-        {listing.images?.length && listing.images[0] ? (
-          <div className="mb-4 relative h-64">
-            <Image src={listing.images[0]} alt={listing.title} fill className="object-cover rounded-md" loading="lazy" />
+        {listing.images?.length ? (
+          <div className="mb-4">
+            <ProductGallery images={listing.images} />
           </div>
         ) : null}
+        {typeof listing.rating === 'number' && (
+          <div className="mb-2">
+            <RatingStars value={listing.rating} count={listing.reviewCount} />
+          </div>
+        )}
         <div className="font-bold mb-2">
           {listing.currency}
           {listing.price}
         </div>
+        {listing.availability && (
+          <div className="mb-2 text-sm text-muted-foreground">
+            Availability: {listing.availability}
+          </div>
+        )}
         <p className="mb-4 whitespace-pre-line">{listing.description}</p>
         <div className="mb-4">Seller: {listing.author.name}</div>
         <div className="flex gap-2">
           <button onClick={handleAddToCart} className="rounded bg-primary px-4 py-2 text-primary-foreground">Add to Cart</button>
           <button className="rounded border px-4 py-2">Add to Wishlist</button>
         </div>
+        <ProductReviews productId={listing.id} />
       </main>
     </>
   );
