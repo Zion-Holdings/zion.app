@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/components/ui/use-toast";
 import { SEO } from "@/components/SEO";
-import { Footer } from "@/components/Footer";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -243,7 +242,6 @@ export default function ProfilePage() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

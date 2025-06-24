@@ -1,6 +1,5 @@
 
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { FloatingCTA } from "@/components/FloatingCTA";
@@ -136,7 +135,6 @@ export default function LandingPage() {
       
       <WaitlistSection />
       <FloatingCTA />
-      <Footer />
     </div>
   );
 }

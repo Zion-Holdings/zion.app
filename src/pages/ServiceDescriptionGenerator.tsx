@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { ServiceDescriptionForm } from "@/components/services/ServiceDescriptionForm";
 import { GeneratedDescriptionDisplay } from "@/components/services/GeneratedDescriptionDisplay";
 import { SEO } from "@/components/SEO";
@@ -60,7 +59,6 @@ export default function ServiceDescriptionGenerator() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

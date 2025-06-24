@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { useLocalStorage } from '@/hooks';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
@@ -272,7 +271,6 @@ export default function AccountSettings() {
           </Card>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
