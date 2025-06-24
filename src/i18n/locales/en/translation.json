@@ -182,5 +182,44 @@
     "payment_success_title": "Payment Successful!",
     "payment_success_message": "Your payment has been processed successfully. You now have access to all the premium features.",
     "go_to_dashboard": "Go to Dashboard"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "Learn how Zion Tech Group handles your data and protects your privacy.",
+    "subtitle": "Your privacy is important to us. This page explains how we collect, use, and protect your information.",
+    "data_collection": "We collect personal information you provide when creating an account or using our services. This can include your name, email address and any other details required to deliver marketplace features.",
+    "data_usage": "Zion Tech Group uses this data solely to operate and improve our platform. We do not sell your personal information to third parties.",
+    "contact_info": "If you have questions about our privacy practices, please contact us at",
+    "support_email": "support@ziontechgroup.com"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "description": "The terms and conditions for using the Zion platform.",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "Welcome to Zion Tech Group. These Terms of Service govern your use of our marketplace platform."
+      },
+      "accounts": {
+        "title": "Accounts",
+        "content": "You must create an account to access certain features of the platform. You are responsible for keeping your login credentials secure."
+      },
+      "payments": {
+        "title": "Payments",
+        "content": "All transactions are processed securely. You agree to provide accurate billing details and comply with our payment policies."
+      },
+      "prohibited": {
+        "title": "Prohibited Activities",
+        "content": "Users may not engage in fraudulent, abusive, or illegal activities while using the platform."
+      },
+      "termination": {
+        "title": "Termination",
+        "content": "We may suspend or terminate your account if you violate these terms or engage in activities that harm the platform or other users."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "If you have questions about these Terms of Service, contact us at <a href=\"mailto:support@ziontechgroup.com\">support@ziontechgroup.com</a>."
+      }
+    }
   }
 }
