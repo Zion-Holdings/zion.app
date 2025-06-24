@@ -1,6 +1,5 @@
 
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { JobPostingForm } from "@/components/jobs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { SEO } from "@/components/SEO";
@@ -40,7 +39,6 @@ export default function PostJob() {
           </CardContent>
         </Card>
       </main>
-      <Footer />
       {/* Add extra bottom padding on mobile to account for the bottom nav */}
       {isMobile && <div className="h-16"></div>}
     </>

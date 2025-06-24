@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { GradientHeading } from '@/components/GradientHeading';
 import { Input } from '@/components/ui/input';
 import { Markdown } from '@/components/ui/markdown';
@@ -92,7 +91,6 @@ export default function Help() {
         </div>
       </main>
       <SupportChatbot />
-      <Footer />
     </>
   );
 }

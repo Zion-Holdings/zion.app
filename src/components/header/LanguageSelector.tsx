@@ -8,15 +8,28 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useLanguage, SupportedLanguage } from '@/context/LanguageContext';
+import { useLanguage, type SupportedLanguage } from '@/context/LanguageContext';
 
 export function LanguageSelector() {
   const { t } = useTranslation();
   const { currentLanguage, supportedLanguages, changeLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
+  console.log('LanguageSelector: Rendered with currentLanguage:', currentLanguage);
+  console.log('LanguageSelector: Available languages:', supportedLanguages.map(l => l.code));
+
   const currentFlag =
     supportedLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
+
+  const handleLanguageChange = async (langCode: SupportedLanguage) => {
+    console.log('LanguageSelector: Language item clicked:', langCode);
+    try {
+      await changeLanguage(langCode);
+      setIsOpen(false);
+    } catch (error) {
+      console.error('LanguageSelector: Error changing language:', error);
+    }
+  };
 
   return (
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
@@ -42,7 +55,7 @@ export function LanguageSelector() {
             className={`cursor-pointer ${
               currentLanguage === lang.code ? 'bg-zion-purple/20 text-zion-cyan' : 'text-white hover:bg-zion-purple/10'
             }`}
-            onClick={() => changeLanguage(lang.code)}
+            onClick={() => handleLanguageChange(lang.code)}
           >
             <div className="flex items-center gap-2">
               <span className="text-lg">{lang.flag}</span>

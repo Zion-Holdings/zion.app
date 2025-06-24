@@ -2,7 +2,6 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/creator/CreatorSidebar";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 
 export default function CreatorDashboard() {
   return (
@@ -47,7 +46,6 @@ export default function CreatorDashboard() {
               {/* Placeholder for more creator-specific content */}
             </div>
           </main>
-          <Footer />
         </div>
       </div>
       <SidebarTrigger />

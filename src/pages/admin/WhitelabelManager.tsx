@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { WhitelabelRequestForm } from "@/components/admin/whitelabel/WhitelabelRequestForm";
 import { TenantsList } from "@/components/admin/whitelabel/TenantsList";
@@ -101,7 +100,6 @@ export default function WhitelabelManager() {
           </Tabs>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

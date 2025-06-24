@@ -21,6 +21,13 @@ interface EnvironmentConfig {
     projectId: string;
     isConfigured: boolean;
   };
+  datadog: {
+    clientToken?: string;
+    site?: string;
+    service?: string;
+    env?: string;
+    enabled: boolean;
+  };
   app: {
     environment: string;
     isDevelopment: boolean;
@@ -43,6 +50,12 @@ const EnvSchema = z.object({
   NEXT_PUBLIC_SENTRY_RELEASE: z.string().optional(),
   SENTRY_RELEASE: z.string().optional(),
   NEXT_PUBLIC_REOWN_PROJECT_ID: z.string().optional(),
+  NEXT_PUBLIC_DD_CLIENT_TOKEN: z.string().optional(),
+  NEXT_PUBLIC_DD_SITE: z.string().optional(),
+  NEXT_PUBLIC_DD_SERVICE: z.string().optional(),
+  NEXT_PUBLIC_DD_ENV: z.string().optional(),
+  DD_SERVICE: z.string().optional(),
+  DD_ENV: z.string().optional(),
 });
 
 type RawEnv = z.infer<typeof EnvSchema>;
@@ -79,7 +92,7 @@ function isPlaceholderValue(value: string | undefined): boolean {
 /**
  * Initialize services based on configuration
  */
-export function initializeServices(): void {
+export async function initializeServices(): Promise<void> {
   const config = getEnvironmentConfig();
   
   // Initialize Sentry if configured
@@ -94,6 +107,24 @@ export function initializeServices(): void {
       console.log('✅ Sentry initialized successfully');
     } catch (error) {
       console.warn('Failed to initialize Sentry:', error);
+    }
+  }
+
+  // Initialize Datadog logs in the browser if configured
+  if (config.datadog.enabled && typeof window !== 'undefined') {
+    try {
+      const { datadogLogs } = await import('@datadog/browser-logs');
+      datadogLogs.init({
+        clientToken: config.datadog.clientToken!,
+        site: config.datadog.site,
+        service: config.datadog.service,
+        env: config.datadog.env,
+        forwardErrorsToLogs: true,
+        sampleRate: 100,
+      });
+      console.log('✅ Datadog Logs initialized');
+    } catch (error) {
+      console.warn('Failed to initialize Datadog Logs:', error);
     }
   }
   
@@ -159,6 +190,13 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const reownProjectId = env.NEXT_PUBLIC_REOWN_PROJECT_ID;
   const reownConfigured = !isPlaceholderValue(reownProjectId);
 
+  // Datadog Configuration
+  const ddClientToken = env.NEXT_PUBLIC_DD_CLIENT_TOKEN;
+  const ddSite = env.NEXT_PUBLIC_DD_SITE || 'datadoghq.com';
+  const ddService = env.NEXT_PUBLIC_DD_SERVICE || env.DD_SERVICE || 'zion-app';
+  const ddEnv = env.NEXT_PUBLIC_DD_ENV || env.DD_ENV || nodeEnv;
+  const datadogEnabled = !!ddClientToken || !!env.DD_SERVICE;
+
   return {
     auth0: {
       secret: auth0Configured ? auth0Secret! : 'placeholder-secret',
@@ -178,6 +216,13 @@ export function getEnvironmentConfig(): EnvironmentConfig {
     reown: {
       projectId: reownConfigured ? reownProjectId! : 'placeholder-project-id',
       isConfigured: reownConfigured
+    },
+    datadog: {
+      clientToken: ddClientToken,
+      site: ddSite,
+      service: ddService,
+      env: ddEnv,
+      enabled: datadogEnabled
     },
     app: {
       environment: nodeEnv,
@@ -225,6 +270,10 @@ export function validateProductionEnvironment(): void {
 
   if (!config.sentry.isConfigured) {
     errors.push('NEXT_PUBLIC_SENTRY_DSN must be configured in production for error monitoring');
+  }
+
+  if (!config.datadog.enabled) {
+    errors.push('Datadog logging must be configured in production (NEXT_PUBLIC_DD_CLIENT_TOKEN)');
   }
   
   if (errors.length > 0) {

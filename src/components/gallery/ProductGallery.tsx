@@ -1,4 +1,9 @@
 import React, { useState, Suspense } from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
@@ -20,10 +25,13 @@ interface ProductGalleryProps {
 
 export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryProps) {
   const [selected, setSelected] = useState(0);
+  const [zoomOpen, setZoomOpen] = useState(false);
+  const [zoomed, setZoomed] = useState(false);
   const poster = images[0];
 
   return (
-    <Tabs defaultValue="images" className="w-full">
+    <Dialog open={zoomOpen} onOpenChange={(o) => { setZoomOpen(o); if (!o) setZoomed(false); }}>
+      <Tabs defaultValue="images" className="w-full">
       <TabsList className="grid grid-cols-3 bg-zion-blue-dark border border-zion-blue-light">
         <TabsTrigger value="images">Images</TabsTrigger>
         {videoUrl && <TabsTrigger value="video">Video</TabsTrigger>}
@@ -32,12 +40,14 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
 
       <TabsContent value="images" className="pt-4">
         <div className="aspect-video w-full relative">
-          <img
-            src={images[selected]}
-            alt={`Product image ${selected + 1}`}
-            className="w-full h-full object-contain bg-zion-blue-light/10 p-4"
-            loading="lazy"
-          />
+          <DialogTrigger asChild>
+            <img
+              src={images[selected]}
+              alt={`Product image ${selected + 1}`}
+              className="w-full h-full object-contain bg-zion-blue-light/10 p-4 cursor-zoom-in"
+              loading="lazy"
+            />
+          </DialogTrigger>
         </div>
         {images.length > 1 && (
           <div className="flex p-4 gap-2 overflow-x-auto">
@@ -97,5 +107,20 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
         </TabsContent>
       )}
     </Tabs>
+    {images.length > 0 && (
+      <DialogContent className="max-w-3xl p-0">
+        <div
+          className={`w-full h-full overflow-auto ${zoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}
+          onClick={() => setZoomed(!zoomed)}
+        >
+          <img
+            src={images[selected]}
+            alt="Zoomed view"
+            className={`w-full h-full object-contain transition-transform ${zoomed ? 'scale-150' : ''}`}
+          />
+        </div>
+      </DialogContent>
+    )}
+    </Dialog>
   );
 }

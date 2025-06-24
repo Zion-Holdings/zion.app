@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { useTalentQuotes } from "@/hooks/useTalentQuotes";
 import { useAuth } from "@/hooks/useAuth";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -103,7 +102,6 @@ export default function RequestsPanel() {
           }}
         />
         
-        <Footer />
       </div>
     </ProtectedRoute>
   );

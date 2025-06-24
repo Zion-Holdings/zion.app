@@ -25,7 +25,7 @@ The project is structured as a monorepo and includes:
 -   **Backend (Node.js):** Node.js, Express.js, TypeScript, MongoDB (for `server/`), Next.js API Routes
 -   **Database/BaaS:** PostgreSQL, MongoDB, Supabase, Prisma
 -   **Authentication:** Supabase Auth (handles login, signup, password reset, social auth) with optional two-factor authentication for the IPO portal
--   **Monitoring:** Custom Node.js service, Sentry
+-   **Monitoring:** Custom Node.js service, Sentry, Datadog
 -   **CI/CD:** GitHub Actions, Netlify (including Lighthouse CI)
 -   **Other:** IPFS, OrbitDB, Ethers.js, Elasticsearch
 
@@ -95,6 +95,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
     - For **local development**: Create `.env.local` based on environment variable requirements above
     - For **production**: Set variables in Netlify UI (see deployment guide)
     - Ensure `INTERNAL_AUTH_SERVICE_URL` points to your authentication service
+    - **Enable DevTools**: Set `NEXT_PUBLIC_DEVTOOLS=true` in `.env.local` if you want browser DevTools enabled
     - **Validate configuration**: Run `npx ts-node --transpile-only scripts/check-env.ts`
 
 5.  **Install backend dependencies:**

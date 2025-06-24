@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { UserTypeSelection } from "@/components/onboarding/UserTypeSelection";
 import { ProfileSetup } from "@/components/onboarding/ProfileSetup";
 import { InterestSelection } from "@/components/onboarding/InterestSelection";
@@ -202,7 +201,6 @@ export default function Onboarding() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -69,7 +69,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Validate input
   const result = schema.safeParse(req.body);
   if (!result.success) {
-    const errorMessage = result.error.errors[0].message;
+    const errorMessage = result.error.errors[0]?.message || 'Invalid input';
     console.error('Registration validation failed:', result.error.errors);
     return res.status(400).json({ 
       error: errorMessage,

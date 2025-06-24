@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { CategoryListingPage } from '@/components/CategoryListingPage'; // Ensure this path is correct
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
 
@@ -161,12 +162,12 @@ export default function CategoryPage() {
         <div className="text-center space-y-4">
           <h2 className="text-2xl font-bold">Category Not Found</h2>
           <p className="text-muted-foreground">The requested category could not be found.</p>
-          <button
-            onClick={() => router.push('/marketplace')}
+          <Link
+            href="/marketplace"
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-md"
           >
             Browse All Products
-          </button>
+          </Link>
         </div>
       </div>
     );

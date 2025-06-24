@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { CommunityDiscussion } from "@/components/CommunityDiscussion";
 import { Badge } from "@/components/ui/badge";
 import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings, FileText, Heart, Key, ShoppingBag } from "lucide-react";
@@ -321,7 +320,6 @@ export default function Dashboard() {
         </div>
       </div>
       <GuidedTour role={roleForTour} />
-      <Footer />
     </>
   );
 }

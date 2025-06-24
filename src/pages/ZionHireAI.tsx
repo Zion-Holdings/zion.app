@@ -1,7 +1,6 @@
 
 import React from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useWhitelabel } from "@/context/WhitelabelContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -263,7 +262,6 @@ export default function ZionHireAI() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

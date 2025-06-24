@@ -14,23 +14,63 @@ const MOCK_CATEGORIES = {
   },
   equipment: {
     name: 'Equipment',
-    slug: 'equipment', 
+    slug: 'equipment',
     description: 'High-quality equipment and hardware solutions'
+  },
+  hardware: {
+    name: 'Hardware',
+    slug: 'hardware',
+    description: 'Servers, networking gear and other hardware'
   },
   consulting: {
     name: 'AI Consulting',
     slug: 'consulting',
     description: 'Expert AI consulting and strategy services'
   },
-  'machine-learning': {
-    name: 'Machine Learning',
-    slug: 'machine-learning',
-    description: 'Cutting-edge machine learning solutions and tools'
+  'ai-models-apis': {
+    name: 'AI Models & APIs',
+    slug: 'ai-models-apis',
+    description: 'Ready to use AI models, endpoints and APIs'
   },
-  talent: {
+  'content-creation': {
+    name: 'Content Creation',
+    slug: 'content-creation',
+    description: 'Tools for generating and managing content'
+  },
+  'data-analysis': {
+    name: 'Data Analysis',
+    slug: 'data-analysis',
+    description: 'Analytics and business intelligence solutions'
+  },
+  'computer-vision': {
+    name: 'Computer Vision',
+    slug: 'computer-vision',
+    description: 'Visual recognition and imaging tools'
+  },
+  'cloud-services': {
+    name: 'Cloud Services',
+    slug: 'cloud-services',
+    description: 'Hosted platforms and SaaS offerings'
+  },
+  security: {
+    name: 'Security',
+    slug: 'security',
+    description: 'Security monitoring and protection tools'
+  },
+  marketing: {
+    name: 'Marketing',
+    slug: 'marketing',
+    description: 'Marketing and advertising solutions'
+  },
+  talents: {
     name: 'AI Talent Directory',
-    slug: 'talent',
+    slug: 'talents',
     description: 'Discover and connect with skilled AI professionals and experts'
+  },
+  innovation: {
+    name: 'Innovation',
+    slug: 'innovation',
+    description: 'Cutting-edge innovations and research'
   }
 };
 
@@ -53,9 +93,9 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     let products: any[] = [];
     let usingFallback = false;
 
-    // Special handling for talent category
-    if (slug === 'talent') {
-      const talentCategory = MOCK_CATEGORIES.talent;
+    // Special handling for talent directory
+    if (slug === 'talents') {
+      const talentCategory = MOCK_CATEGORIES.talents;
       
       // Convert talent profiles to match the expected Listing interface format
       const talentItems = TALENT_PROFILES.map(profile => ({
@@ -171,15 +211,18 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         
         // Special mapping for common category aliases
         const categoryMappings: Record<string, string[]> = {
-          'services': ['service', 'consulting', 'support'],
-          'equipment': ['hardware', 'device', 'computer'],
-          'aimodelsapis': ['ai', 'model', 'api', 'artificial', 'intelligence'],
-          'contentcreation': ['content', 'creative', 'writing', 'generation'],
-          'dataanalysis': ['data', 'analytics', 'analysis', 'intelligence', 'bi'],
-          'computervision': ['vision', 'image', 'visual', 'recognition'],
-          'cloudservices': ['cloud', 'saas', 'platform', 'hosting'],
-          'security': ['secure', 'protection', 'safety', 'monitoring'],
-          'marketing': ['promotion', 'advertising', 'campaign', 'social']
+          services: ['service', 'consulting', 'support'],
+          equipment: ['hardware', 'device', 'computer'],
+          hardware: ['hardware', 'device', 'computer', 'equipment'],
+          aimodelsapis: ['ai', 'model', 'api', 'artificial', 'intelligence'],
+          contentcreation: ['content', 'creative', 'writing', 'generation'],
+          dataanalysis: ['data', 'analytics', 'analysis', 'intelligence', 'bi'],
+          computervision: ['vision', 'image', 'visual', 'recognition'],
+          cloudservices: ['cloud', 'saas', 'platform', 'hosting'],
+          security: ['secure', 'protection', 'safety', 'monitoring'],
+          marketing: ['promotion', 'advertising', 'campaign', 'social'],
+          talents: ['talent', 'freelancer', 'expert'],
+          innovation: ['innovation', 'research', 'future']
         };
         
         if (categoryMappings[normalizedSlug]) {

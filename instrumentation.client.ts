@@ -1,1 +1,1 @@
-export { register, onRouterTransitionStart } from './sentry';
+export { register } from './sentry';

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
@@ -104,7 +103,6 @@ export default function ContentGenerator() {
         <div className="min-h-screen bg-zion-blue flex items-center justify-center">
           <div className="animate-pulse text-white">Loading...</div>
         </div>
-        <Footer />
       </>
     );
   }
@@ -301,7 +299,6 @@ export default function ContentGenerator() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

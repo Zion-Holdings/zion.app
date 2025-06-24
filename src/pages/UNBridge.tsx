@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { NextSeo } from '@/components/NextSeo';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -88,7 +87,6 @@ export default function UNBridgePage() {
           </div>
         )}
       </main>
-      <Footer />
     </div>
   );
 }
