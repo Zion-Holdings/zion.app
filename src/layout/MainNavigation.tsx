@@ -202,7 +202,33 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
 
             {/* Cart icon with badge */}
             <li className="nav-item">
-              <CartDrawer />
+              <HoverCard openDelay={100}>
+                <HoverCardTrigger asChild>
+                  <Link
+                    href="/cart"
+                    aria-label={t('nav.cart')}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={cn(
+                      'nav-link',
+                      'inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
+                      router.pathname.startsWith('/cart')
+                        ? 'bg-zion-purple/20 text-zion-cyan'
+                        : 'text-white hover:bg-zion-purple/10 hover:text-zion-cyan'
+                    )}
+                  >
+                    <ShoppingCart className="w-4 h-4 mr-1" />
+                    {t('nav.cart', 'Cart')}
+                    {cartCount > 0 && (
+                      <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                        {cartCount}
+                      </span>
+                    )}
+                  </Link>
+                </HoverCardTrigger>
+                <HoverCardContent>
+                  <MiniCartPreview />
+                </HoverCardContent>
+              </HoverCard>
             </li>
           </ul>
           <div className="flex items-center gap-2 mt-4 md:mt-0 md:ml-auto">
