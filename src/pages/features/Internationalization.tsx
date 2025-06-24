@@ -35,7 +35,12 @@ export default function Internationalization() {
           <p className="text-center text-zion-slate-light max-w-3xl mx-auto mb-8">
             Our interface and search support multiple languages so you can collaborate without barriers.
           </p>
-          <img src="https://placehold.co/800x400" alt="Screenshot of language options" className="rounded-lg shadow-xl mx-auto mb-12" />
+          <img
+            src="https://placehold.co/800x400"
+            alt="Screenshot of language options"
+            className="rounded-lg shadow-xl mx-auto mb-12"
+            loading="lazy"
+          />
           <h2 className="text-2xl font-bold mb-4">Benefits &amp; Use Cases</h2>
           <ul className="list-disc list-inside space-y-2 mb-8 text-zion-slate-light">
             <li>Publish product and service pages in your native language.</li>
