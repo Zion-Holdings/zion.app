@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { NextSeo } from '@/components/NextSeo';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
@@ -189,7 +188,6 @@ export default function Fundraising() {
           <Button onClick={() => alert('Round closed and stakeholders notified (placeholder).')}>Close Round</Button>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

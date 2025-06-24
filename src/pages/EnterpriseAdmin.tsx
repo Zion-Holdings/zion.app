@@ -1,7 +1,6 @@
 
 import React from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { AdminDashboard } from "@/components/enterprise/admin/AdminDashboard";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/router"; // Changed to named import
@@ -28,7 +27,6 @@ export default function EnterpriseAdmin() {
       <main className="min-h-screen bg-background">
         <AdminDashboard />
       </main>
-      <Footer />
     </ProtectedRoute>
   );
 }

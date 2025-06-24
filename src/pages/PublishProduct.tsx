@@ -1,7 +1,6 @@
 
 import React, { useEffect } from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { ProductSubmissionForm } from "@/components/ProductSubmissionForm";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/router";
@@ -51,7 +50,6 @@ export default function PublishProduct() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

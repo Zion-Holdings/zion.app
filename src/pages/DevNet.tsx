@@ -1,5 +1,4 @@
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import Link from "next/link";
 
@@ -29,7 +28,6 @@ export default function DevNet() {
           Start it locally with <code>zion devnet start</code>.
         </p>
       </main>
-      <Footer />
     </>
   );
 }

@@ -1,6 +1,5 @@
 
 import { useState } from 'react';
-import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -34,7 +33,6 @@ function PortfolioBuilderContent() {
           </TabsContent>
         </Tabs>
       </main>
-      <Footer />
     </>
   );
 }

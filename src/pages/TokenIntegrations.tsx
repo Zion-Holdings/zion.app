@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import ConnectWalletButton from '@/components/ConnectWalletButton';
 import { useWallet } from '@/context/WalletContext';
 import { Button } from '@/components/ui/button';
@@ -136,7 +135,6 @@ export default function TokenIntegrations() {
           </Card>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

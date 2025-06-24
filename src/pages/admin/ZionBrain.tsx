@@ -1,6 +1,5 @@
 import { SEO } from '@/components/SEO';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { ZionBrainDashboard } from '@/components/admin/zion-brain';
 
@@ -12,7 +11,6 @@ export default function ZionBrain() {
       <main className="min-h-screen bg-background p-6">
         <ZionBrainDashboard />
       </main>
-      <Footer />
     </ProtectedRoute>
   );
 }

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { NextSeo } from '@/components/NextSeo';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -71,7 +70,6 @@ export default function RoadmapFeaturePage() {
           </Card>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

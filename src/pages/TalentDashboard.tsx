@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
@@ -190,7 +189,6 @@ function TalentDashboardContent() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
