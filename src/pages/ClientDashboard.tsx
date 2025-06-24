@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { JobsList } from "@/components/jobs/JobsList";
 import { Button } from "@/components/ui/button";
@@ -32,8 +31,11 @@ function ClientDashboardContent() {
   // Set the first job as selected when jobs are loaded (if any)
   useEffect(() => {
     if (jobs.length > 0 && !selectedJobId) {
-      setSelectedJobId(jobs[0].id);
-      setSelectedJobTitle(jobs[0].title);
+      const firstJob = jobs[0];
+      if (firstJob) {
+        setSelectedJobId(firstJob.id);
+        setSelectedJobTitle(firstJob.title);
+      }
     }
   }, [jobs, selectedJobId]);
 
