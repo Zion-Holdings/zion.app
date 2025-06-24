@@ -38,6 +38,7 @@ import { validateProductionEnvironment, initializeServices } from '@/utils/envir
 import { initializePerformanceOptimizations } from '@/utils/performance';
 import '@/utils/globalFetchInterceptor';
 import '@/utils/consoleErrorToast';
+import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
 import { Auth0Provider } from '@auth0/nextjs-auth0';
 
 // Configure fonts with optimal loading strategies
@@ -74,6 +75,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
 
   React.useEffect(() => {
+    initConsoleLogCapture();
     if (process.env.NODE_ENV === 'development') {
       console.log('[App] MyApp main useEffect hook started.');
     }
