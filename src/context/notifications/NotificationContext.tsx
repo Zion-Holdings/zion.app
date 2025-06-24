@@ -63,6 +63,7 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): JSX
         supabase.removeChannel(channel);
       };
     }
+    return undefined;
   }, [user]);
   
   return (
