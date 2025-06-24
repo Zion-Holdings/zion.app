@@ -72,13 +72,15 @@ export function AddMilestoneForm({
     // If there's only one milestone, submit it directly
     if (milestones.length === 1) {
       const milestone = milestones[0];
-      onSubmit({
-        title: milestone.title,
-        description: milestone.description,
-        due_date: milestone.dueDate ? new Date(milestone.dueDate) : undefined,
-        amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount
-      });
-      return;
+      if (milestone) {
+        onSubmit({
+          title: milestone.title,
+          description: milestone.description,
+          due_date: milestone.dueDate ? new Date(milestone.dueDate) : undefined,
+          amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount
+        });
+        return;
+      }
     }
 
     // If there are multiple milestones, submit them one by one

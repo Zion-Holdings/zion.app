@@ -30,7 +30,7 @@ export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform }) 
   
   const [newEntry, setNewEntry] = useState<Omit<ChangelogEntry, "id">>({
     version: "",
-    date: new Date().toISOString().split('T')[0],
+    date: new Date().toISOString().split('T')[0] || new Date().toLocaleDateString('en-CA'),
     changes: ""
   });
   
@@ -45,7 +45,7 @@ export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform }) 
     setEntries([entry, ...entries]);
     setNewEntry({
       version: "",
-      date: new Date().toISOString().split('T')[0],
+      date: new Date().toISOString().split('T')[0] || new Date().toLocaleDateString('en-CA'),
       changes: ""
     });
   };

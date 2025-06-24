@@ -18,7 +18,9 @@ export function ApiLogsChart({ logs }: ApiLogsChartProps) {
       const dateMap: Record<string, number> = {};
       logs.forEach((log) => {
         const day = new Date(log.created_at).toISOString().split("T")[0];
-        dateMap[day] = (dateMap[day] || 0) + 1;
+        if (day) {
+          dateMap[day] = (dateMap[day] || 0) + 1;
+        }
       });
       const labels = Object.keys(dateMap).sort();
       const data = labels.map((l) => dateMap[l]);

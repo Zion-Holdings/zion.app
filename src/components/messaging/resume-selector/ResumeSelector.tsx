@@ -50,7 +50,7 @@ export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
       setResumeOptions(options);
       
       // Pre-select the most recent resume
-      if (options.length > 0 && selectedOption === 'recent') {
+      if (options.length > 0 && selectedOption === 'recent' && options[0]) {
         setSelectedResume(options[0]);
         onResumeSelected(options[0]);
       }
@@ -61,7 +61,7 @@ export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
   const handleOptionChange = (value: 'recent' | 'select' | 'upload') => {
     setSelectedOption(value);
     
-    if (value === 'recent' && resumeOptions.length > 0) {
+    if (value === 'recent' && resumeOptions.length > 0 && resumeOptions[0]) {
       setSelectedResume(resumeOptions[0]);
       onResumeSelected(resumeOptions[0]);
     } else if (value === 'select') {

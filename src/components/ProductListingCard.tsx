@@ -29,7 +29,7 @@ const ProductListingCardComponent = ({
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [imageSrc, setImageSrc] = useState(
-    listing.images && listing.images.length > 0
+    listing.images && listing.images.length > 0 && listing.images[0]
     ? listing.images[0] 
     : '/placeholder.svg'
   );

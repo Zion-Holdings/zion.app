@@ -40,7 +40,7 @@ export function ListingCard({
         className
       )}
     >
-      {images && images.length > 0 && (
+      {images && images.length > 0 && images[0] && (
         <div className="h-48 w-full overflow-hidden relative">
           <Image
             src={images[0]}

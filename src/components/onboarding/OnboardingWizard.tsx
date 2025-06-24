@@ -110,12 +110,15 @@ export function OnboardingWizard({ type, onComplete, onSkip, className }: Onboar
 
   // Navigate to the specified URL
   const handleAction = () => {
+    const currentStepData = steps[currentStep];
+    if (!currentStepData) return;
+    
     if (currentStep < steps.length - 1) {
-      router.push(steps[currentStep].action.url); // Changed to router.push
+      router.push(currentStepData.action.url); // Changed to router.push
       setCurrentStep(currentStep + 1);
     } else {
       // Last step
-      router.push(steps[currentStep].action.url); // Changed to router.push
+      router.push(currentStepData.action.url); // Changed to router.push
       onComplete();
     }
   };
@@ -161,10 +164,10 @@ export function OnboardingWizard({ type, onComplete, onSkip, className }: Onboar
 
         <div className="flex flex-col items-center text-center p-4">
           <div className="bg-gradient-to-br from-zion-blue to-zion-purple/20 p-4 rounded-full mb-4">
-            {steps[currentStep].icon}
+            {steps[currentStep]?.icon}
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">{steps[currentStep].title}</h3>
-          <p className="text-zion-slate-light mb-6">{steps[currentStep].description}</p>
+          <h3 className="text-xl font-bold text-white mb-2">{steps[currentStep]?.title}</h3>
+          <p className="text-zion-slate-light mb-6">{steps[currentStep]?.description}</p>
         </div>
       </CardContent>
       <CardFooter className="flex flex-col space-y-2">
@@ -172,16 +175,16 @@ export function OnboardingWizard({ type, onComplete, onSkip, className }: Onboar
           className="w-full bg-zion-purple hover:bg-zion-purple-light"
           onClick={handleAction}
         >
-          {steps[currentStep].action.text}
+          {steps[currentStep]?.action.text}
         </Button>
         
-        {steps[currentStep].skipText && (
+        {steps[currentStep]?.skipText && (
           <Button
             variant="ghost"
             className="text-zion-slate-light hover:text-white"
             onClick={handleSkip}
           >
-            {steps[currentStep].skipText}
+            {steps[currentStep]?.skipText}
           </Button>
         )}
       </CardFooter>

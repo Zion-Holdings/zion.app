@@ -893,7 +893,7 @@ function EndpointSection({
             </div>
           </div>
           <CodeBlock 
-            code={codeExamples[activeTab]}
+            code={codeExamples[activeTab] || "// Code example not available"}
             language={activeTab === "curl" ? "bash" : activeTab}
           />
         </div>

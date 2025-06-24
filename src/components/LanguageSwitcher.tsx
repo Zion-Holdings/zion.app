@@ -78,8 +78,11 @@ export function LanguageSwitcher() {
       buttonRef.current?.focus();
     } else if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      if (highlighted >= 0) {
-        selectLanguage(supportedLanguages[highlighted].code);
+      if (highlighted >= 0 && highlighted < supportedLanguages.length) {
+        const selectedLanguage = supportedLanguages[highlighted];
+        if (selectedLanguage) {
+          selectLanguage(selectedLanguage.code);
+        }
       }
     }
   };

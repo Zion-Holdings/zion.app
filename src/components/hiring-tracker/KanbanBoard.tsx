@@ -92,10 +92,10 @@ export function KanbanBoard({ jobId }: KanbanBoardProps) {
     const newStatus = destination.droppableId as ApplicationStatus;
     
     // Optimistically update the UI
-    const sourceColumn = [...columns[source.droppableId]];
-    const destColumn = [...columns[destination.droppableId]];
+    const sourceColumn = [...(columns[source.droppableId] || [])];
+    const destColumn = [...(columns[destination.droppableId] || [])];
     const [removed] = sourceColumn.splice(source.index, 1);
-    destColumn.splice(destination.index, 0, { ...removed, status: newStatus });
+    destColumn.splice(destination.index, 0, { ...removed, status: newStatus } as JobApplication);
     
     setColumns({
       ...columns,
