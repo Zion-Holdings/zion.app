@@ -20,7 +20,7 @@ export default async function handler(
   // Reduce timeout to 5 seconds for faster failure detection
   const timeout = setTimeout(() => {
     if (!(res as any).headersSent) {
-      res.status(408).json({ error: 'Request timeout after 5 seconds' });
+              return res.status(408).json({ error: 'Request timeout after 5 seconds' });
     }
   }, 5000);
 

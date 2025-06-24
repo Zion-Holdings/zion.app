@@ -43,5 +43,5 @@ export default function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  res.status(200).json(SERVICES);
+  return res.status(200).json(SERVICES);
 }
