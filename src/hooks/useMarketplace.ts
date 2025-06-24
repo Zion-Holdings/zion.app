@@ -7,9 +7,9 @@ import {
   getMarketplaceErrorMessage,
   type Product,
   type Category,
-  type TalentProfile,
   type Equipment,
 } from '@/services/marketplace';
+import { TalentProfile } from '@/types/talent';
 
 export interface UseMarketplaceState<T> {
   data: T[];
