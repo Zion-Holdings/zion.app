@@ -201,7 +201,7 @@ export default function TranslationManager() {
     setEditedTranslations({
       ...editedTranslations,
       [key]: {
-        ...editedTranslations[key],
+        ...(editedTranslations[key] || {}),
         [lang]: value
       }
     });
