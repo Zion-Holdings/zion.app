@@ -152,12 +152,31 @@ const EQUIPMENT_POOL: ProductListing[] = [
 ];
 
 export function generateRandomEquipment(): ProductListing {
-  const base =
-    EQUIPMENT_POOL[Math.floor(Math.random() * EQUIPMENT_POOL.length)];
+  const base = EQUIPMENT_POOL[Math.floor(Math.random() * EQUIPMENT_POOL.length)];
   const timestamp = Date.now();
+  
+  if (!base) {
+    // Fallback equipment if pool is empty (shouldn't happen but for type safety)
+    return {
+      id: `fallback-${timestamp}`,
+      title: 'Equipment',
+      description: 'Professional equipment',
+      category: 'Equipment',
+      price: 1000,
+      currency: '$',
+      tags: ['equipment'],
+      author: { name: 'Unknown', id: 'unknown' },
+      images: ['/placeholder.svg'],
+      createdAt: new Date(timestamp).toISOString(),
+    } as ProductListing;
+  }
+  
   return {
     ...base,
     id: `${base.id}-${timestamp}`,
+    title: base.title || 'Equipment',
+    description: base.description || 'Professional equipment',
+    category: base.category || 'Equipment',
     createdAt: new Date(timestamp).toISOString(),
-  };
+  } as ProductListing;
 }

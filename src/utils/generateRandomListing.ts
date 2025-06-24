@@ -76,16 +76,16 @@ export function generateRandomListing(): ProductListing {
   const category = categories[Math.floor(Math.random() * categories.length)];
   const provider = providers[Math.floor(Math.random() * providers.length)];
   const price = Math.floor(
-    category.priceRange[0] +
-      Math.random() * (category.priceRange[1] - category.priceRange[0])
+    (category?.priceRange?.[0] || 100) +
+      Math.random() * ((category?.priceRange?.[1] || 1000) - (category?.priceRange?.[0] || 100))
   );
 
-  const title = `${category.name} ${
+  const title = `${category?.name || 'Service'} ${
     titlePhrases[Math.floor(Math.random() * titlePhrases.length)]
   }`;
 
   const randomTags = Array.from({ length: 3 }, () =>
-    tags[Math.floor(Math.random() * tags.length)]
+    tags[Math.floor(Math.random() * tags.length)] || 'misc'
   );
 
   return {
@@ -94,16 +94,16 @@ export function generateRandomListing(): ProductListing {
     description: `Professional ${title.toLowerCase()} generated on ${new Date(
       timestamp
     ).toLocaleDateString()} to accelerate your projects with expert support and modern tooling.`,
-    category: category.name,
+    category: category?.name || 'Service',
     price,
     currency: "$",
     tags: randomTags,
     author: {
-      name: provider,
-      id: provider.toLowerCase().replace(/\s+/g, "-")
+      name: provider || 'Unknown Provider',
+      id: (provider || 'unknown').toLowerCase().replace(/\s+/g, "-")
     },
     images: [
-      `https://source.unsplash.com/random/800x500?technology,${category.name.split(" ")[0]}`
+      `https://source.unsplash.com/random/800x500?technology,${(category?.name?.split(" ")[0]) || 'tech'}`
     ],
     createdAt: new Date(timestamp).toISOString(),
     rating: Math.round((4 + Math.random()) * 10) / 10,
