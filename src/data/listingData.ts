@@ -251,6 +251,52 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 93
+  },
+  {
+    id: "talent-19",
+    title: "Freelance AI Engineer",
+    description:
+      "Contract-based AI engineer specializing in model development and deployment.",
+    category: "Talents",
+    price: 120,
+    currency: "$",
+    tags: ["AI", "Machine Learning", "Freelance"],
+    author: {
+      name: "ExpertAI Freelancers",
+      id: "expertai"
+    },
+    images: [
+      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&h=500"
+    ],
+    createdAt: "2024-03-25T10:00:00.000Z",
+    rating: 4.8,
+    reviewCount: 20,
+    location: "Remote",
+    availability: "Immediate",
+    aiScore: 91
+  },
+  {
+    id: "innovation-20",
+    title: "AI Innovation Bootcamp",
+    description:
+      "Four-week program turning AI ideas into prototypes with expert mentorship.",
+    category: "Innovation",
+    price: 3000,
+    currency: "$",
+    tags: ["Innovation", "Prototype", "Bootcamp"],
+    author: {
+      name: "InnovateLabs",
+      id: "innovate-labs"
+    },
+    images: [
+      "https://images.unsplash.com/photo-1532619187600-fb0b141abd59?auto=format&fit=crop&w=800&h=500"
+    ],
+    createdAt: "2024-03-30T09:00:00.000Z",
+    rating: 4.7,
+    reviewCount: 12,
+    location: "Global",
+    availability: "Scheduled",
+    aiScore: 88
   }
 ];
 
