@@ -120,7 +120,6 @@ export async function initializeServices(): Promise<void> {
         service: config.datadog.service,
         env: config.datadog.env,
         forwardErrorsToLogs: true,
-        sampleRate: 100,
       });
       console.log('✅ Datadog Logs initialized');
     } catch (error) {
