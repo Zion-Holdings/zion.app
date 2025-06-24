@@ -95,6 +95,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
     - For **local development**: Create `.env.local` based on environment variable requirements above
     - For **production**: Set variables in Netlify UI (see deployment guide)
     - Ensure `INTERNAL_AUTH_SERVICE_URL` points to your authentication service
+    - **Enable DevTools**: Set `NEXT_PUBLIC_DEVTOOLS=true` in `.env.local` if you want browser DevTools enabled
     - **Validate configuration**: Run `npx ts-node --transpile-only scripts/check-env.ts`
 
 5.  **Install backend dependencies:**
