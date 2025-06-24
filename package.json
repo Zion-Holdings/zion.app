@@ -51,7 +51,7 @@
     "audit-vulnerabilities": "npm audit",
     "monitor:perf": "node scripts/perf/monitor.js",
     "migrate:check": "npx prisma migrate diff --from-schema-datamodel prisma/schema.prisma --to-schema-datamodel prisma/schema.prisma --script",
-    "setup:auth0": "node scripts/setup-auth0-environment.cjs",
+    "setup:auth0": "node scripts/setup-auth0.js",
     "migrate:auth0": "npm run setup:auth0 && npm run env:validate"
   },
   "prisma": {
