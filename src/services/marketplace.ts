@@ -339,10 +339,7 @@ const getFallbackTalent = async (params: any): Promise<TalentProfileType[]> => {
       availability_type: profile.availability_type,
       location: profile.location,
       bio: profile.bio,
-      portfolio_url: profile.portfolio_url,
-      years_experience: profile.years_experience,
-      created_at: profile.created_at,
-      updated_at: profile.updated_at
+      years_experience: profile.years_experience
     } as TalentProfileType));
   } catch (error) {
     console.error('Failed to load fallback talent data:', error);
