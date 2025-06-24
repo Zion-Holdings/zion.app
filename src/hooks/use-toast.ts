@@ -31,6 +31,7 @@ interface ToastProps {
   description?: string;
   variant?: 'default' | 'destructive' | 'success';
   action?: ToastActionProps;
+  onRetry?: () => void; // Added for retry functionality
   id?: string;
 }
 
@@ -49,7 +50,7 @@ const toastAdapter = (props: ToastProps | string) => {
     return;
   }
 
-  const { title, description, variant, action, id } = props;
+  const { title, description, variant, action, id, onRetry } = props;
   const message = title || description || '';
 
   const options: {
@@ -63,13 +64,18 @@ const toastAdapter = (props: ToastProps | string) => {
   if (title && description) {
     options.description = description;
   }
-  if (action) {
+
+  // Prefer onRetry if available for destructive toasts, otherwise use generic action
+  if (variant === 'destructive' && onRetry) {
+    options.action = React.createElement('button', { onClick: onRetry }, 'Retry');
+  } else if (action) {
     options.action = React.createElement('button', { onClick: action.onClick }, action.label);
   }
 
   switch (variant) {
     case 'destructive':
       const traceId = (options as any)?.traceId ?? logError(new Error(message));
+      // Ensure action (like Retry) is included if onRetry was provided
       sonnerToast.error(`${message} (Trace ID: ${traceId})`, { ...options, id, style: variantStyles.error });
       break;
     case 'success':

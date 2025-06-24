@@ -52,7 +52,11 @@ export function useSavedTalents() {
         }
       } catch (error) {
         console.error('Error fetching saved talents:', error);
-        showApiError(error, 'There was a problem loading your saved talents.');
+        showApiError(
+          error,
+          'There was a problem loading your saved talents.',
+          fetchSavedTalents // Pass self as retry callback
+        );
       } finally {
         setIsLoading(false);
       }
@@ -115,7 +119,11 @@ export function useSavedTalents() {
       }
     } catch (error) {
       console.error('Error toggling saved talent:', error);
-      showApiError(error, 'There was a problem updating your favorites. Please try again.');
+      showApiError(
+        error,
+        'There was a problem updating your favorites. Please try again.',
+        () => toggleSaveTalent(talent) // Pass a function that calls toggleSaveTalent with the current talent
+      );
     }
   };
 
