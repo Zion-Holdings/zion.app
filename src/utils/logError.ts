@@ -1,6 +1,7 @@
 import { captureException } from './sentry';
 import { sendErrorToBackend } from './customErrorReporter';
 import { generateTraceId } from './generateTraceId';
+import { datadogLogs } from '@datadog/browser-logs';
 
 /**
  * Centralized error logger for frontend issues. Reports to Sentry when
@@ -43,8 +44,18 @@ export function logError(
   try {
     if (context) {
       captureException(errorToSend, { extra: { traceId, ...context } });
+      if (datadogLogs?.logger) {
+        datadogLogs.logger.error(errorToSend.message, {
+          error: errorToSend,
+          traceId,
+          ...context,
+        });
+      }
     } else {
       captureException(errorToSend, { extra: { traceId } });
+      if (datadogLogs?.logger) {
+        datadogLogs.logger.error(errorToSend.message, { error: errorToSend, traceId });
+      }
     }
   } catch (err) {
     console.error('Failed to report error to Sentry:', err, context?.componentStack);

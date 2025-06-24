@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { ShieldAlert } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -38,7 +37,6 @@ export default function Unauthorized() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

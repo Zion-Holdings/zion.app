@@ -8,11 +8,15 @@ import { useWishlist } from '@/hooks/useWishlist';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { LoginModal } from '@/components/auth/LoginModal';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
 import { useRouter } from 'next/router';
+import { fetchProducts } from '@/services/marketplace';
+import type { ProductListing } from '@/types/listings';
+import ProductListingCard from '@/components/ProductListingCard';
+import ProductReviews from '@/components/ProductReviews';
 // Import React if not implicitly available
 // import React from 'react';
 
@@ -44,6 +48,7 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
   const [addingToCart, setAddingToCart] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
+  const [relatedProducts, setRelatedProducts] = useState<ProductListing[]>([]);
 
   const handleWishlist = () => {
     if (!isAuthenticated) {
@@ -56,6 +61,19 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
   };
 
   const inWishlist = isWishlisted(product.id);
+
+  useEffect(() => {
+    async function loadRelated() {
+      if (!product.category) return;
+      try {
+        const items = await fetchProducts({ category: product.category, limit: 4 });
+        setRelatedProducts(items.filter((p) => p.id !== product.id));
+      } catch (e) {
+        console.error('Failed to load related products', e);
+      }
+    }
+    loadRelated();
+  }, [product.category, product.id]);
 
   const handleAddToCart = async () => {
     if (!isAuthenticated) {
@@ -91,18 +109,16 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
     }
   };
 
-  // Assuming product.images can be a string URL, or an array of objects with a URL, or an array of strings.
-  // This is a simplified image handling logic.
-  let imageUrl: string | undefined = undefined;
+  // Normalize images into an array of URLs
+  const imageUrls: string[] = [];
   if (product.images) {
-    if (Array.isArray(product.images) && product.images.length > 0) {
-      if (typeof product.images[0] === 'string') {
-        imageUrl = product.images[0];
-      } else if (typeof product.images[0] === 'object' && product.images[0] !== null && 'url' in product.images[0]) {
-        imageUrl = (product.images[0] as { url: string }).url;
+    if (Array.isArray(product.images)) {
+      for (const img of product.images) {
+        if (typeof img === 'string') imageUrls.push(img);
+        else if (img && typeof img === 'object' && 'url' in img) imageUrls.push((img as { url: string }).url);
       }
     } else if (typeof product.images === 'string') {
-      imageUrl = product.images;
+      imageUrls.push(product.images);
     }
   }
 
@@ -124,15 +140,13 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
       <main style={{ padding: '1rem' }}>
         <h1>{product.name}</h1>
 
-        {imageUrl && (
-          <div style={{ maxWidth: '400px', height: 'auto', marginBlock: '1rem', position: 'relative' }}>
-            <Image
-              src={imageUrl}
-              alt={`Image of ${product.name}`}
-              fill
-              style={{ objectFit: 'contain' }}
-              loading="lazy"
-            />
+        {imageUrls.length > 0 && (
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBlock: '1rem' }}>
+            {imageUrls.map((url, idx) => (
+              <div key={idx} style={{ width: '200px', height: '200px', position: 'relative' }}>
+                <Image src={url} alt={`${product.name} image ${idx + 1}`} fill style={{ objectFit: 'cover' }} loading="lazy" />
+              </div>
+            ))}
           </div>
         )}
 
@@ -157,13 +171,40 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
           <p>Tags: {product.tags.join(', ')}</p>
         )}
 
+        {product.specifications && product.specifications.length > 0 && (
+          <section style={{ marginBlock: '1rem' }}>
+            <h2>Specifications</h2>
+            <ul>
+              {product.specifications.map((spec, idx) => (
+                <li key={idx}>{spec}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {product.priceTiers && product.priceTiers.length > 0 && (
+          <section style={{ marginBlock: '1rem' }}>
+            <h2>Price Tiers</h2>
+            <table>
+              <tbody>
+                {product.priceTiers.map((tier, idx) => (
+                  <tr key={idx}>
+                    <td style={{ paddingRight: '1rem' }}>{tier.tier}</td>
+                    <td>{tier.currency || product.currency} {tier.price}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+        )}
+
         <section style={{ marginBlock: '1rem' }}>
           <h2>Reviews</h2>
           <p>
             Average Rating: {product.averageRating ? product.averageRating.toFixed(1) + '/5' : 'Not yet rated'}
           </p>
           <p>({product.reviewCount} reviews)</p>
-          {/* Detailed reviews could be listed here in a future iteration */}
+          <ProductReviews productId={product.id} />
         </section>
 
         <div style={{ marginTop: '2rem' }}>
@@ -200,6 +241,19 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
           </button>
           <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />
         </div>
+
+        {relatedProducts.length > 0 && (
+          <section style={{ marginBlock: '2rem' }}>
+            <h2>Related Items</h2>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              {relatedProducts.map((item) => (
+                <div key={item.id} style={{ width: '200px' }}>
+                  <ProductListingCard listing={item} detailBasePath="/product" />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
       </main>
     </>
   );

@@ -1,5 +1,4 @@
 
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ReviewsModerationTable } from "@/components/admin/reviews/ReviewsModerationTable";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
@@ -94,7 +93,6 @@ function ReviewsModerationContent() {
           </CardContent>
         </Card>
       </main>
-      <Footer />
     </>
   );
 }

@@ -31,7 +31,7 @@ export default async function handler(
     
     if (!response.ok) {
       console.error('Auth0 well-known endpoint failed with status', response.status);
-      return res.status(500).json({ message: 'Auth service unreachable' });
+      return res.status(500).json({ message: 'Authentication service is temporarily unavailable. Please try again later.' });
     }
     
     const data = await response.json();
@@ -45,6 +45,6 @@ export default async function handler(
     });
   } catch (error: any) {
     console.error('Auth0 health check error:', error);
-    return res.status(500).json({ message: 'Auth service unreachable' });
+    return res.status(500).json({ message: 'Authentication service is temporarily unavailable. Please try again later.' });
   }
 }

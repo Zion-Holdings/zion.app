@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
@@ -228,7 +227,6 @@ export default function WorkFuturesSimulator() {
           )}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -84,7 +84,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Validate input
   const result = schema.safeParse(req.body);
   if (!result.success) {
-    const errorMessage = result.error.errors[0].message;
+    const errorMessage = result.error.errors[0]?.message || 'Invalid input';
     return res.status(400).json({ 
       error: errorMessage,
       message: errorMessage

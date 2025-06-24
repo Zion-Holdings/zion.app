@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/router";
@@ -325,7 +324,6 @@ export default function TenantOnboarding() {
           </Card>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

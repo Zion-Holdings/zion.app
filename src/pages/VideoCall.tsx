@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { VideoCallRoom } from '@/components/video/VideoCallRoom';
 import { Button } from '@/components/ui/button';
@@ -107,7 +106,6 @@ export default function VideoCall() {
           </div>
         )}
       </main>
-      <Footer />
     </>
   );
 }

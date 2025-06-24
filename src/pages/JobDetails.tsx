@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -57,7 +56,6 @@ export default function JobDetails() {
           <p className="mb-8">The job you're looking for doesn't exist or has been removed.</p>
           <Button onClick={() => router.push('/careers')}>View All Jobs</Button>
         </div>
-        <Footer />
       </>
     );
   }
@@ -189,7 +187,6 @@ export default function JobDetails() {
           </div>
         </div>
       </main>
-      <Footer />
       
       {/* Job application modal */}
       {job && (

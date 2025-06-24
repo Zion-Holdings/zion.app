@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router'; // Changed from useParams
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -233,7 +232,6 @@ export default function ProjectRoom() {
           </TabsContent>
         </Tabs>
       </main>
-      <Footer />
     </>
   );
 }

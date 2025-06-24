@@ -1,5 +1,4 @@
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { SummitHero } from '@/components/summit/SummitHero';
 import { AgendaSection } from '@/components/summit/AgendaSection';
@@ -21,7 +20,6 @@ export default function SummitPage() {
         <LivestreamSection />
         <RegistrationForm />
       </main>
-      <Footer />
     </>
   );
 }

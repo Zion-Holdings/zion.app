@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 
-export function FooterNewsletter() {
+export function FooterNewsletter(): React.ReactElement {
   const [email, setEmail] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,16 +29,6 @@ export function FooterNewsletter() {
     } else {
       setEmailError("");
     }
-
-    setIsSubmitting(true);
-    try {
-      const res = await fetch('/api/newsletter', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: trimmedEmail })
-      });
-
-      const data = await res.json().catch(() => ({}));
 
     setIsSubmitting(true);
     const uniqueToastIdBase = `newsletter-toast-${Date.now()}`; // Generate a base for unique ID
@@ -114,4 +104,4 @@ export function FooterNewsletter() {
       </Button>
     </form>
   );
-}
+} 

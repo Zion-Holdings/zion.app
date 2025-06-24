@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { NextSeo } from '@/components/NextSeo';
 import { Globe, MapPin } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -145,7 +144,6 @@ export default function GlobalMapPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

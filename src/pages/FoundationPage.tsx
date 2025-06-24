@@ -1,5 +1,4 @@
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 
 export default function FoundationPage() {
@@ -52,7 +51,6 @@ export default function FoundationPage() {
           </p>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

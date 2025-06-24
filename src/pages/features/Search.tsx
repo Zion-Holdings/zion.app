@@ -1,6 +1,5 @@
 import React from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
@@ -60,7 +59,6 @@ export default function SearchFeature() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

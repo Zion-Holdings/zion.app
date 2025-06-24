@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { Footer } from "@/components/Footer";
 import { JobsList } from "@/components/jobs/JobsList";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -137,7 +136,6 @@ function ClientDashboardContent() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

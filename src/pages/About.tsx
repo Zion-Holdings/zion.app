@@ -1,9 +1,31 @@
 
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
+import { ContactSection } from "@/components/ContactSection";
 import Link from "next/link";
 
 export default function About() {
+  const team = [
+    {
+      name: "Alex Johnson",
+      role: "CEO",
+      image:
+        "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=300&q=80"
+    },
+    {
+      name: "Maria Chen",
+      role: "CTO",
+      image:
+        "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80"
+    },
+    {
+      name: "Sam Lee",
+      role: "Head of Product",
+      image:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80"
+    }
+  ];
+
   return (
     <>
       <SEO 
@@ -74,7 +96,7 @@ export default function About() {
           
           <div className="text-center content-section">
             <h2 className="text-3xl font-bold text-white mb-8">Our Values</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light">
                 <div className="bg-zion-blue inline-flex p-4 rounded-full mb-4">
                   <svg className="w-8 h-8 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -106,10 +128,27 @@ export default function About() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">Trust</h3>
-                <p className="text-zion-slate-light">
+              <p className="text-zion-slate-light">
                   We maintain the highest standards of integrity, transparency, and ethical practices in everything we do.
                 </p>
               </div>
+            </div>
+          </div>
+
+          <div className="content-section text-center">
+            <h2 className="text-3xl font-bold text-white mb-8">Meet the Team</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              {team.map((member) => (
+                <div key={member.name} className="text-center">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="rounded-full w-40 h-40 mx-auto object-cover mb-4"
+                  />
+                  <p className="text-white font-bold">{member.name}</p>
+                  <p className="text-zion-slate-light">{member.role}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -128,6 +167,8 @@ export default function About() {
             .
           </p>
         </div>
+
+        <ContactSection />
       </main>
     </>
   );

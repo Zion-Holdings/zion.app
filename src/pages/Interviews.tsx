@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { useInterviews } from "@/hooks/useInterviews";
 import { Interview } from "@/types/interview";
-import { Footer } from "@/components/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
@@ -178,7 +177,6 @@ function InterviewsContent() {
           </TabsContent>
         </Tabs>
       </main>
-      <Footer />
     </>
   );
 }
