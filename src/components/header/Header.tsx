@@ -52,7 +52,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     e.preventDefault();
     if (query.trim()) {
       console.log('Header search submit:', query);
-      router.push(`/search?q=${encodeURIComponent(query)}`);
+      router.push(`/search/${slugify(query)}`);
       setQuery("");
     }
   };
@@ -74,7 +74,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             onChange={setQuery}
             onSelectSuggestion={(suggestion) => {
               console.log('Header search suggestion selected:', suggestion);
-              router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
+              router.push(`/search/${suggestion.slug || slugify(suggestion.text)}`);
               setQuery("");
             }}
             searchSuggestions={searchSuggestions}

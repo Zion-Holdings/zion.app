@@ -52,7 +52,7 @@ export function PrimaryNav() {
     e.preventDefault();
     if (query.trim()) {
       console.log('PrimaryNav search submit:', query);
-      router.push(`/search?q=${encodeURIComponent(query)}`);
+      router.push(`/search/${slugify(query)}`);
       setQuery('');
     }
   };
@@ -93,8 +93,8 @@ export function PrimaryNav() {
                     // Blog posts navigate to blog detail page
                     router.push(`/blog/${sugg.slug}`);
                   } else {
-                    // Default: search results page with query parameter
-                    router.push(`/search?q=${encodeURIComponent(sugg.text)}`);
+                    // Default: search results page with slug
+                    router.push(`/search/${sugg.slug || slugify(sugg.text)}`);
                   }
                   setQuery('');
                   
