@@ -1,8 +1,10 @@
 import winston from 'winston';
 import path from 'path';
 
-// Ensure logs directory exists (relative to project root)
-const logsDir = path.join(__dirname, '..', '..', 'logs', 'perf');
+// Allow overriding the log directory via WATCHDOG_LOG_PATH so logging works
+// in read-only environments.
+const baseLogDir = process.env.WATCHDOG_LOG_PATH || path.join(__dirname, '..', '..', 'logs');
+const logsDir = path.join(baseLogDir, 'perf');
 
 // Determine log level from environment variable or default to 'info'
 const logLevel = process.env.LOG_LEVEL || 'info';

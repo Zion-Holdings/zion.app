@@ -150,11 +150,11 @@ function determineBaseLogPath() {
 
 const BASE_LOG_PATH = determineBaseLogPath();
 /** @const {string} PERF_LOG_FILE - Path to the performance log file to be monitored. */
-const PERF_LOG_FILE = path.resolve(__dirname, '../logs/perf/hourly.log');
+const PERF_LOG_FILE = path.join(BASE_LOG_PATH, 'perf', 'hourly.log');
 /** @const {string} SECURITY_LOG_FILE - Path to the security log file to be monitored for patch notifications. */
-const SECURITY_LOG_FILE = path.resolve(__dirname, '../logs/security/hourly-fix.log');
+const SECURITY_LOG_FILE = path.join(BASE_LOG_PATH, 'security', 'hourly-fix.log');
 /** @const {string} SELF_HEAL_LOG_FILE - Path to the log file where this watchdog script records its own actions and errors. */
-const SELF_HEAL_LOG_FILE = path.resolve(__dirname, '../logs/self-heal.log');
+const SELF_HEAL_LOG_FILE = path.join(BASE_LOG_PATH, 'self-heal.log');
 
 // Ensure log directories and files exist to avoid Tail initialization errors
 function ensureFileExists(filePath) {
