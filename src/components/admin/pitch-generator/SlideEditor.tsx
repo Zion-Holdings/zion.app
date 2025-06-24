@@ -40,6 +40,7 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
     // Placeholder for AI rephrase functionality
     console.log(`Rephrasing slide ${index + 1}`);
     const currentSlide = slides[index];
+    if (!currentSlide) return;
     // Example: append "(Rephrased)" to content
     const rephrasedContent = currentSlide.content + " (Rephrased by AI - placeholder)";
     handleSlideChange(index, 'content', rephrasedContent);

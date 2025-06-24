@@ -8,7 +8,7 @@ interface FeatureUsageChartProps {
 }
 
 export function FeatureUsageChart({ data, timeRange, onTimeRangeChange }: FeatureUsageChartProps) {
-  const dataKeys = data && data.length > 0
+  const dataKeys = data && data.length > 0 && data[0]
     ? Object.keys(data[0]).filter(key => key !== 'date')
     : [];
 

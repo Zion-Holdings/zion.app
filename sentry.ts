@@ -69,5 +69,5 @@ export function register() {
 // export const onRouterTransitionStart = captureRouterTransitionStart; // Removing this
 
 export function onRequestError(error: unknown) {
-  Sentry.captureRequestError(error); // Assuming captureRequestError is a valid method on Sentry object
+  Sentry.captureException(error); // Use the standard captureException method
 }

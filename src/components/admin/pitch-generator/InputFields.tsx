@@ -29,15 +29,17 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
     const { name, files } = e.target;
     if (files && files.length > 0) {
       const file = files[0];
-      setFormData(prev => ({ ...prev, [name]: file }));
-      if (name === 'logos') {
-        // Revoke previous object URL if it exists
-        if (logoPreview) URL.revokeObjectURL(logoPreview);
-        setLogoPreview(URL.createObjectURL(file));
-      } else if (name === 'photos') {
-        // Revoke previous object URL if it exists
-        if (photoPreview) URL.revokeObjectURL(photoPreview);
-        setPhotoPreview(URL.createObjectURL(file));
+      if (file) {
+        setFormData(prev => ({ ...prev, [name]: file }));
+        if (name === 'logos') {
+          // Revoke previous object URL if it exists
+          if (logoPreview) URL.revokeObjectURL(logoPreview);
+          setLogoPreview(URL.createObjectURL(file));
+        } else if (name === 'photos') {
+          // Revoke previous object URL if it exists
+          if (photoPreview) URL.revokeObjectURL(photoPreview);
+          setPhotoPreview(URL.createObjectURL(file));
+        }
       }
     } else {
       setFormData(prev => ({ ...prev, [name]: null }));

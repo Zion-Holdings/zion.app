@@ -45,9 +45,9 @@ export function UserBehaviorStats() {
         const eventsByDate: Record<string, Record<string, number>> = {};
         manualData?.forEach((event: any) => {
           const date = new Date(event.created_at).toISOString().split('T')[0];
-          if (!eventsByDate[date]) eventsByDate[date] = {};
-          if (!eventsByDate[date][event.event_type]) eventsByDate[date][event.event_type] = 0;
-          eventsByDate[date][event.event_type]++;
+          if (date && !eventsByDate[date]) eventsByDate[date] = {};
+          if (date && !eventsByDate[date]![event.event_type]) eventsByDate[date]![event.event_type] = 0;
+          if (date) eventsByDate[date]![event.event_type]++;
         });
         
         // Convert to array format for the chart

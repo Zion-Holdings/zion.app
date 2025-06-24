@@ -10,7 +10,7 @@ interface ConversionAnalysisProps {
 }
 
 export function ConversionAnalysisChart({ data, timeRange, onTimeRangeChange }: ConversionAnalysisProps) {
-  const dataKeys = data && data.length > 0
+  const dataKeys = data && data.length > 0 && data[0]
     ? Object.keys(data[0]).filter(key => key !== 'date')
     : [];
 

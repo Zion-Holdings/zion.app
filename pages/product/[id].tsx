@@ -15,7 +15,7 @@ import { addItem } from '@/store/cartSlice';
 import { useRouter } from 'next/router';
 import { fetchProducts } from '@/services/marketplace';
 import type { ProductListing } from '@/types/listings';
-import ProductListingCard from '@/components/ProductListingCard';
+import { ProductListingCard } from '@/components/ProductListingCard';
 import ProductReviews from '@/components/ProductReviews';
 // Import React if not implicitly available
 // import React from 'react';
@@ -64,7 +64,7 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
 
   useEffect(() => {
     async function loadRelated() {
-      if (!product.category) return;
+      if (!product || !product.category) return;
       try {
         const items = await fetchProducts({ category: product.category, limit: 4 });
         setRelatedProducts(items.filter((p) => p.id !== product.id));
@@ -73,7 +73,7 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
       }
     }
     loadRelated();
-  }, [product.category, product.id]);
+  }, [product?.category, product?.id]);
 
   const handleAddToCart = async () => {
     if (!isAuthenticated) {
