@@ -201,10 +201,10 @@ export default function TranslationManager() {
     setEditedTranslations({
       ...editedTranslations,
       [key]: {
-        ...(editedTranslations[key] || {}),
+        ...(editedTranslations[key] || {} as Record<SupportedLanguage, string>),
         [lang]: value
       }
-    });
+    } as Record<string, Record<SupportedLanguage, string>>);
   };
   
   const getMissingLanguages = (key: string): SupportedLanguage[] => {
