@@ -32,7 +32,11 @@ const skillsByCategory: Record<string, string[]> = {
 };
 
 function randomItem<T>(arr: T[]): T {
-  return arr[Math.floor(Math.random() * arr.length)];
+  const item = arr[Math.floor(Math.random() * arr.length)];
+  if (item === undefined) {
+    throw new Error('Cannot get random item from empty array');
+  }
+  return item;
 }
 
 export function generateRandomTalentListing(): ProductListing {

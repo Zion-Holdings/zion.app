@@ -85,7 +85,7 @@ export function generateRandomListing(): ProductListing {
   }`;
 
   const randomTags = Array.from({ length: 3 }, () =>
-    tags[Math.floor(Math.random() * tags.length)]
+    tags[Math.floor(Math.random() * tags.length)] || 'misc'
   );
 
   return {
