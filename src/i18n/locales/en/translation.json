@@ -181,6 +181,22 @@
     "login_different_account": "Login with Different Account",
     "payment_success_title": "Payment Successful!",
     "payment_success_message": "Your payment has been processed successfully. You now have access to all the premium features.",
-    "go_to_dashboard": "Go to Dashboard"
+    "go_to_dashboard": "Go to Dashboard",
+    "failed_to_load": "Failed to load",
+    "failed_to_save": "Failed to save",
+    "failed_to_connect": "Failed to connect",
+    "unable_to_connect": "Unable to connect to the server",
+    "check_internet_connection": "Please check your internet connection and try again",
+    "failed_to_fetch": "Failed to fetch",
+    "cannot_delete_last": "Cannot delete the last item",
+    "failed_to_copy": "Failed to copy",
+    "failed_to_send": "Failed to send",
+    "failed_to_schedule": "Failed to schedule",
+    "failed_to_cancel": "Failed to cancel",
+    "failed_to_respond": "Failed to respond",
+    "failed_to_update": "Failed to update",
+    "try_again": "Please try again",
+    "try_again_later": "Please try again later",
+    "action_cannot_be_undone": "This action cannot be undone"
   }
 }
