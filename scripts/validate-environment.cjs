@@ -12,33 +12,62 @@ const path = require('path');
 
 // Define required environment variables and their validation rules
 const REQUIRED_VARS = {
-  // Critical for authentication
-  'NEXT_PUBLIC_SUPABASE_URL': {
+  // Critical for authentication (Auth0)
+  'AUTH0_SECRET': {
     required: true,
     validation: (value) => {
-      if (!value) return 'Missing Supabase URL';
-      if (process.env.NODE_ENV === 'production' && isPlaceholder(value)) return 'Supabase URL appears to be a placeholder';
-      if (!value.includes('.supabase.co')) return 'Invalid Supabase URL format';
+      if (!value) return 'Missing Auth0 secret';
+      if (process.env.NODE_ENV === 'production' && isPlaceholder(value)) return 'Auth0 secret appears to be a placeholder';
+      if (value.length < 32) return 'Auth0 secret should be at least 32 characters';
       return null;
     },
-    description: 'Supabase project URL from dashboard Settings > API'
+    description: 'Auth0 secret for encrypting session cookies (generate with openssl rand -hex 32)'
   },
-  'NEXT_PUBLIC_SUPABASE_ANON_KEY': {
+  'AUTH0_BASE_URL': {
     required: true,
     validation: (value) => {
-      if (!value) return 'Missing Supabase anonymous key';
-      if (process.env.NODE_ENV === 'production' && isPlaceholder(value)) return 'Supabase anon key appears to be a placeholder';
-      if (value.length < 100) return 'Supabase anon key appears to be invalid (too short)';
+      if (!value) return 'Missing Auth0 base URL';
+      if (process.env.NODE_ENV === 'production' && isPlaceholder(value)) return 'Auth0 base URL appears to be a placeholder';
+      if (!value.startsWith('http')) return 'Auth0 base URL must be a valid URL';
       return null;
     },
-    description: 'Supabase anonymous key from dashboard Settings > API'
+    description: 'Auth0 base URL of your application'
+  },
+  'AUTH0_ISSUER_BASE_URL': {
+    required: true,
+    validation: (value) => {
+      if (!value) return 'Missing Auth0 issuer base URL';
+      if (process.env.NODE_ENV === 'production' && isPlaceholder(value)) return 'Auth0 issuer base URL appears to be a placeholder';
+      if (!value.includes('.auth0.com')) return 'Invalid Auth0 domain format';
+      return null;
+    },
+    description: 'Auth0 domain from your Auth0 dashboard'
+  },
+  'AUTH0_CLIENT_ID': {
+    required: true,
+    validation: (value) => {
+      if (!value) return 'Missing Auth0 client ID';
+      if (process.env.NODE_ENV === 'production' && isPlaceholder(value)) return 'Auth0 client ID appears to be a placeholder';
+      if (value.length < 20) return 'Auth0 client ID appears to be invalid (too short)';
+      return null;
+    },
+    description: 'Auth0 client ID from your Auth0 application'
+  },
+  'AUTH0_CLIENT_SECRET': {
+    required: true,
+    validation: (value) => {
+      if (!value) return 'Missing Auth0 client secret';
+      if (process.env.NODE_ENV === 'production' && isPlaceholder(value)) return 'Auth0 client secret appears to be a placeholder';
+      if (value.length < 40) return 'Auth0 client secret appears to be invalid (too short)';
+      return null;
+    },
+    description: 'Auth0 client secret from your Auth0 application'
   },
   
   // Important for production
   'NEXT_PUBLIC_SENTRY_DSN': {
-    required: process.env.NODE_ENV === 'production',
+    required: false, // Optional, but recommended for production
     validation: (value) => {
-      if (!value && process.env.NODE_ENV === 'production') return 'Sentry DSN required for production';
       if (value && isPlaceholder(value)) return 'Sentry DSN appears to be a placeholder';
       return null;
     },
@@ -48,9 +77,10 @@ const REQUIRED_VARS = {
 
 // Define optional but recommended variables
 const RECOMMENDED_VARS = {
-  'SUPABASE_SERVICE_ROLE_KEY': 'Service role key for server-side operations',
   'NEXT_PUBLIC_REOWN_PROJECT_ID': 'Reown project ID for wallet functionality',
-  'NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY': 'Stripe key for payment processing'
+  'NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY': 'Stripe key for payment processing',
+  'STRIPE_SECRET_KEY': 'Stripe secret key for server-side payment processing',
+  'NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME': 'Cloudinary cloud name for image hosting'
 };
 
 /**
@@ -181,12 +211,14 @@ function generateSetupGuide() {
 
 Set these in your Netlify dashboard (Site settings > Environment variables):
 
-### 🔑 Supabase Configuration (CRITICAL)
-- NEXT_PUBLIC_SUPABASE_URL: Your Supabase project URL
-- NEXT_PUBLIC_SUPABASE_ANON_KEY: Your Supabase anonymous key
-- SUPABASE_SERVICE_ROLE_KEY: Your Supabase service role key
+### 🔑 Auth0 Configuration (CRITICAL)
+- AUTH0_SECRET: Random 32-character string for encrypting session cookies
+- AUTH0_BASE_URL: Your application URL (e.g., https://app.ziontechgroup.com)
+- AUTH0_ISSUER_BASE_URL: Your Auth0 domain (e.g., https://your-tenant.auth0.com)
+- AUTH0_CLIENT_ID: Your Auth0 application client ID
+- AUTH0_CLIENT_SECRET: Your Auth0 application client secret
 
-Get these from: https://app.supabase.com/project/YOUR_PROJECT_ID/settings/api
+Get these from: https://manage.auth0.com/dashboard/
 
 ### 📊 Error Monitoring (RECOMMENDED)
 - NEXT_PUBLIC_SENTRY_DSN: Your Sentry DSN for error tracking
@@ -194,6 +226,7 @@ Get these from: https://app.supabase.com/project/YOUR_PROJECT_ID/settings/api
 ### 🔗 Optional Integrations
 - NEXT_PUBLIC_REOWN_PROJECT_ID: For wallet functionality
 - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: For payments
+- STRIPE_SECRET_KEY: For server-side payment processing
 - NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: For image hosting
 
 ## How to Set Up:

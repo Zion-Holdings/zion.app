@@ -2,11 +2,52 @@ import type { NextRequest } from "next/server";
 import { auth0 } from "./lib/auth0";
 
 export async function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
+  
   console.log('Auth0 middleware processing request:', {
     url: request.url,
-    pathname: request.nextUrl.pathname,
+    pathname,
     method: request.method
   });
+
+  // Public routes that don't require authentication
+  const publicRoutes = [
+    '/',
+    '/about',
+    '/marketplace',
+    '/cart',
+    '/checkout',
+    '/products',
+    '/product',
+    '/services',
+    '/contact',
+    '/blog',
+    '/tutorials',
+    '/case-studies',
+    '/categories',
+    '/search',
+    '/api/products',
+    '/api/categories',
+    '/api/search',
+    '/api/marketplace',
+    '/signup',
+    '/forgot-password',
+    '/verify-status',
+    '/auth', // Auth0 routes themselves
+  ];
+
+  // Check if the request is for a public route
+  const isPublicRoute = publicRoutes.some(route => 
+    pathname === route || 
+    pathname.startsWith(route + '/') ||
+    pathname.startsWith('/api/auth/') // Allow all auth API routes
+  );
+
+  // Skip Auth0 middleware for public routes
+  if (isPublicRoute) {
+    console.log('Skipping Auth0 middleware for public route:', pathname);
+    return;
+  }
 
   try {
     const response = await auth0.middleware(request);

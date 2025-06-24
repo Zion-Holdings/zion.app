@@ -143,7 +143,7 @@ export default function PageErrorBoundary({
     
     logError(error, {
       page: pageName || 'unknown',
-      componentStack: errorInfo.componentStack,
+      componentStack: errorInfo.componentStack || undefined,
       errorBoundary: 'PageErrorBoundary',
       timestamp: new Date().toISOString()
     });

@@ -163,8 +163,6 @@ export default function EquipmentDetail() {
           name: equipment.name,
           price: equipment.price,
           quantity,
-          image: equipment.images[0],
-          category: equipment.category,
         },
       });
 
@@ -255,7 +253,11 @@ export default function EquipmentDetail() {
       <NextSeo
         title={`${equipment.name} - Zion Marketplace`}
         description={equipment.description}
-        image={equipment.images[0]}
+        openGraph={{
+          title: `${equipment.name} - Zion Marketplace`,
+          description: equipment.description,
+          images: equipment.images.length > 0 ? [{ url: equipment.images[0] }] : undefined
+        }}
       />
       <div className="min-h-screen bg-zion-blue py-8 px-4">
         <div className="container mx-auto">

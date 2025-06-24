@@ -9,6 +9,10 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { LoginModal } from '@/components/auth/LoginModal';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import type { AppDispatch } from '@/store';
+import { addItem } from '@/store/cartSlice';
+import { useRouter } from 'next/router';
 // Import React if not implicitly available
 // import React from 'react';
 
@@ -37,6 +41,9 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
   const { isAuthenticated } = useAuth();
   const { isWishlisted, toggle } = useWishlist();
   const [loginOpen, setLoginOpen] = useState(false);
+  const [addingToCart, setAddingToCart] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
+  const router = useRouter();
 
   const handleWishlist = () => {
     if (!isAuthenticated) {
@@ -49,6 +56,40 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
   };
 
   const inWishlist = isWishlisted(product.id);
+
+  const handleAddToCart = async () => {
+    if (!isAuthenticated) {
+      setLoginOpen(true);
+      return;
+    }
+
+    setAddingToCart(true);
+    try {
+      dispatch(addItem({ 
+        id: product.id, 
+        title: product.name, 
+        price: product.price ?? 0 
+      }));
+      
+      toast({
+        title: "Added to cart",
+        description: `${product.name} has been added to your cart`,
+        action: {
+          label: "View cart",
+          onClick: () => router.push('/cart'),
+        },
+      });
+    } catch (error) {
+      console.error('Error adding to cart:', error);
+      toast({
+        title: "Error",
+        description: "Failed to add item to cart. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setAddingToCart(false);
+    }
+  };
 
   // Assuming product.images can be a string URL, or an array of objects with a URL, or an array of strings.
   // This is a simplified image handling logic.
@@ -127,12 +168,34 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
 
         <div style={{ marginTop: '2rem' }}>
           <button
-            onClick={() => console.log('Add to cart:', product.id)}
-            style={{ padding: '0.5rem 1rem', marginRight: '0.5rem' }}
+            onClick={handleAddToCart}
+            disabled={addingToCart}
+            style={{ 
+              padding: '0.75rem 1.5rem', 
+              marginRight: '0.5rem',
+              backgroundColor: addingToCart ? '#ccc' : '#007bff',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: addingToCart ? 'not-allowed' : 'pointer',
+              fontSize: '1rem',
+              fontWeight: 'bold'
+            }}
           >
-            Add to Cart
+            {addingToCart ? 'Adding...' : 'Add to Cart'}
           </button>
-          <button onClick={handleWishlist} style={{ padding: '0.5rem 1rem' }}>
+          <button 
+            onClick={handleWishlist} 
+            style={{ 
+              padding: '0.75rem 1.5rem',
+              backgroundColor: inWishlist ? '#dc3545' : '#28a745',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '1rem'
+            }}
+          >
             {inWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}
           </button>
           <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />

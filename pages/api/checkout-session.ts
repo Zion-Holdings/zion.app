@@ -3,6 +3,8 @@ import Stripe from 'stripe';
 import fs from 'fs';
 import path from 'path';
 
+// Note: Stripe instance will be created dynamically with the correct key
+
 // Helper to determine if the current environment is production-like
 function isProductionEnvironment(req: NextApiRequest): boolean {
   // Check common environment variables that indicate production
@@ -62,10 +64,6 @@ function getStripeSecretKey(isProdEnv: boolean): string {
   return testSecretKey;
 }
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
-  apiVersion: '2024-06-20',
-});
-
 interface CartItem {
   id: string;
   name: string;
@@ -89,6 +87,13 @@ export default async function handler(
   }
 
   try {
+    // Initialize Stripe with the correct key for the environment
+    const isProdEnv = isProductionEnvironment(req);
+    const stripeKey = getStripeSecretKey(isProdEnv);
+    const stripe = new Stripe(stripeKey, {
+      apiVersion: '2024-06-20',
+    });
+
     const { cartItems, customer_email, shipping_address }: CheckoutRequest = req.body;
 
     // Validate required fields
@@ -105,7 +110,7 @@ export default async function handler(
     }
 
     // Convert cart items to Stripe line items
-    const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = cartItems.map((item) => ({
+    const lineItems = cartItems.map((item) => ({
       price_data: {
         currency: 'usd',
         product_data: {

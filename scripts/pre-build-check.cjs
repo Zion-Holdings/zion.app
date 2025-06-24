@@ -47,11 +47,11 @@ if (!result.isValid) {
     console.log(`       Current: ${error.current}\n`);
   });
   
-  console.log('3. 🔧 Get your Supabase credentials:');
-  console.log('   - Go to https://app.supabase.com/');
-  console.log('   - Select your project');
-  console.log('   - Navigate to Settings > API');
-  console.log('   - Copy the Project URL and anon public key\n');
+  console.log('3. 🔧 Get your Auth0 credentials:');
+  console.log('   - Go to https://manage.auth0.com/dashboard/');
+  console.log('   - Select your application');
+  console.log('   - Copy the Domain, Client ID, and Client Secret');
+  console.log('   - Generate a random 32-character secret for AUTH0_SECRET\n');
   
   console.log('4. 💾 Click "Save" and then "Deploy site"\n');
   
