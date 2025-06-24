@@ -4,7 +4,8 @@ import { ListingScoreCard } from "@/components/ListingScoreCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
-import { Search, Filter, ArrowDownAZ, ArrowUpZA, Loader2 } from "lucide-react";
+import { Search, Filter, ArrowDownAZ, ArrowUpZA } from "lucide-react";
+import ListingGridSkeleton from "@/components/skeletons/ListingGridSkeleton";
 import { safeStorage } from "@/utils/safeStorage";
 
 // Example listing type
@@ -196,9 +197,7 @@ export function CategoryListingPage({
           {/* Listings Grid */}
           <div aria-busy={isLoading}>
             {isLoading ? (
-              <div className="flex justify-center py-20">
-                <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
-              </div>
+              <ListingGridSkeleton />
             ) : processedListings.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {processedListings.map((listing) => (
