@@ -25,7 +25,7 @@ The project is structured as a monorepo and includes:
 -   **Backend (Node.js):** Node.js, Express.js, TypeScript, MongoDB (for `server/`), Next.js API Routes
 -   **Database/BaaS:** PostgreSQL, MongoDB, Supabase, Prisma
 -   **Authentication:** Supabase Auth (handles login, signup, password reset, social auth) with optional two-factor authentication for the IPO portal
--   **Monitoring:** Custom Node.js service, Sentry
+-   **Monitoring:** Custom Node.js service, Sentry, Datadog
 -   **CI/CD:** GitHub Actions, Netlify (including Lighthouse CI)
 -   **Other:** IPFS, OrbitDB, Ethers.js, Elasticsearch
 
