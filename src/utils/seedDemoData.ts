@@ -74,7 +74,7 @@ export function generateRandomProduct() {
   return {
     id: `demo-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
     title: randomName,
-    description: `Professional ${randomName.toLowerCase()} solution for enterprise applications.`,
+    description: `Professional ${(randomName || 'service').toLowerCase()} solution for enterprise applications.`,
     category: randomCategory,
     price: randomPrice,
     currency: "$",

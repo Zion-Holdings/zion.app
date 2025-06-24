@@ -184,7 +184,7 @@ function generateServiceDescription(category: string, serviceName: string): stri
   };
   
   const categoryDescriptions = descriptions[category as keyof typeof descriptions] || descriptions['IT Consulting'];
-  return categoryDescriptions[Math.floor(Math.random() * categoryDescriptions.length)];
+  return categoryDescriptions[Math.floor(Math.random() * categoryDescriptions.length)] || 'Professional service with expert implementation and support.';
 }
 
 // Generate service tags

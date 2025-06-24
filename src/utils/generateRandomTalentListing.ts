@@ -53,7 +53,7 @@ export function generateRandomTalentListing(): ProductListing {
     category,
     price,
     currency: "$",
-    tags: skillsByCategory[category].slice(0, 3),
+    tags: (skillsByCategory[category] || ['General']).slice(0, 3),
     author: {
       name,
       id: name.toLowerCase().replace(/\s+/g, "-"),
