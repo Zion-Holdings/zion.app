@@ -57,6 +57,7 @@ export function LazyLoad({
 
       return () => clearTimeout(timer);
     }
+    return undefined;
   }, [isVisible]);
 
   const defaultLoadingComponent = (
