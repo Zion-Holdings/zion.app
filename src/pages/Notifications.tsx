@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Footer } from '@/components/Footer';
 import { useNotifications } from '@/context/notifications/NotificationContext';
 import {
   NotificationType,
@@ -274,7 +273,6 @@ export default function NotificationsPage() {
           </Tabs>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

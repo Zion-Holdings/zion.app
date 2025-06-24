@@ -1,7 +1,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { Footer } from "@/components/Footer";
 import { KanbanBoard } from "@/components/hiring-tracker/KanbanBoard";
 import { HiringAnalytics } from "@/components/hiring-tracker/HiringAnalytics";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -48,7 +47,6 @@ function HiringTrackerContent() {
           </TabsContent>
         </Tabs>
       </main>
-      <Footer />
     </>
   );
 }

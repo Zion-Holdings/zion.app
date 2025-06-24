@@ -1,7 +1,6 @@
 
 import React from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { EnterpriseHero } from "@/components/enterprise/EnterpriseHero";
 import { EnterpriseStickyNav } from "@/components/enterprise/EnterpriseStickyNav";
 import { EnterprisePricingTable } from "@/components/enterprise/EnterprisePricingTable";
@@ -28,7 +27,6 @@ export default function EnterprisePlans() {
         <EnterpriseTrustBadges />
         <EnterpriseCTA />
       </main>
-      <Footer />
     </>
   );
 }

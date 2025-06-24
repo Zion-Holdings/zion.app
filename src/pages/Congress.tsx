@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { NextSeo } from '@/components/NextSeo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -166,7 +165,6 @@ export default function CongressPage() {
           </ul>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

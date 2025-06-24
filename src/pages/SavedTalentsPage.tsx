@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { TalentCard } from "@/components/talent/TalentCard";
 import { useAuth } from "@/hooks/useAuth";
@@ -203,7 +202,6 @@ export default function SavedTalentsPage() {
           </div>
         )}
       </div>
-      <Footer />
     </>
   );
 }

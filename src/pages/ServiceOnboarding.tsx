@@ -2,7 +2,6 @@
 import React from "react";
 import { ServiceProviderRegistrationForm } from "@/components/profile/ServiceProviderRegistrationForm";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/router";
 
@@ -30,7 +29,6 @@ export default function ServiceOnboarding() {
           <ServiceProviderRegistrationForm />
         </div>
       </div>
-      <Footer />
     </>
   );
 }

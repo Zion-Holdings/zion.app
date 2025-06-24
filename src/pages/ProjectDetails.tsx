@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { format } from "date-fns";
 import { useAuth } from "@/hooks/useAuth";
 import { useProjects } from "@/hooks/useProjects";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Project, ProjectStatus } from "@/types/projects";
@@ -681,7 +680,6 @@ function ProjectDetailsContent() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

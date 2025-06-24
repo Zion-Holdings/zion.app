@@ -2,7 +2,6 @@
 import React from "react";
 import { TalentOnboardingForm } from "@/components/profile/TalentOnboardingForm";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/router";
 
@@ -30,7 +29,6 @@ export default function TalentOnboarding() {
           <TalentOnboardingForm />
         </div>
       </div>
-      <Footer />
     </>
   );
 }
