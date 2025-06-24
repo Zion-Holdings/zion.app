@@ -16,9 +16,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       : [];
     subs.push(req.body);
     fs.writeFileSync(FILE_PATH, JSON.stringify(subs, null, 2));
-    res.status(200).json({ success: true });
+    return res.status(200).json({ success: true });
   } catch (err) {
     console.error('Failed to save push subscription', err);
-    res.status(500).json({ error: 'Failed to save subscription' });
+    return res.status(500).json({ error: 'Failed to save subscription' });
   }
 }

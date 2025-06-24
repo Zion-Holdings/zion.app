@@ -55,7 +55,7 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
       </nav>
       <main className="max-w-3xl mx-auto py-8 px-4">
         <h1 className="text-2xl font-bold mb-4">{listing.title}</h1>
-        {listing.images?.length ? (
+        {listing.images?.length && listing.images[0] ? (
           <div className="mb-4 relative h-64">
             <Image src={listing.images[0]} alt={listing.title} fill className="object-cover rounded-md" loading="lazy" />
           </div>
