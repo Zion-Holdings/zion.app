@@ -79,7 +79,7 @@ export default function ProductPage() {
         {product.images?.length ? (
           <div className="mb-4 relative w-full h-64">
             <Image
-              src={product.images[0]}
+              src={product.images[0] || '/placeholder.svg'}
               alt={product.title}
               fill
               className="object-cover rounded-md"
