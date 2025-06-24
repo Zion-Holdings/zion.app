@@ -52,7 +52,6 @@
     "noFallthroughCasesInSwitch": true,
     "allowJs": true,
     "incremental": true,
-    "types": [],
     "typeRoots": [
       "./node_modules/@types",
       "./types"

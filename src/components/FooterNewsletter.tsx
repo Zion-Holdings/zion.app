@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 
-export function FooterNewsletter() {
+export function FooterNewsletter(): React.ReactElement {
   const [email, setEmail] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -104,4 +104,4 @@ export function FooterNewsletter() {
       </Button>
     </form>
   );
-}
+} 
