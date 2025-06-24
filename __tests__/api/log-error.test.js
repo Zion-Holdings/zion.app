@@ -92,8 +92,8 @@ describe('/api/log-error Endpoint', () => {
     // This assumes api/log-error.js exports its handler function, e.g., module.exports = async function handler(...)
     // Adjust the path if your project structure is different.
     try {
-      const apiModule = require('../../pages/api/log-error.ts'); // Path relative to this test file
-      logErrorApiHandler = apiModule.default; // Or apiModule.default if it's an ES module default export
+      const { default: apiModule } = await import('../../pages/api/log-error.ts'); // Path relative to this test file
+      logErrorApiHandler = apiModule; // ES module default export
       if (typeof logErrorApiHandler !== 'function') {
         throw new Error("Failed to load API handler. Ensure pages/api/log-error.ts exports its handler function as default.");
       }
