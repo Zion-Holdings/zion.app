@@ -163,8 +163,6 @@ export default function EquipmentDetail() {
           name: equipment.name,
           price: equipment.price,
           quantity,
-          image: equipment.images[0],
-          category: equipment.category,
         },
       });
 
