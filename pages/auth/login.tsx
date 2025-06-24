@@ -1,6 +1,7 @@
 import { useUser } from '@auth0/nextjs-auth0';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { ENV_CONFIG } from '@/utils/environmentConfig';
 import Link from 'next/link';
 import { Facebook } from 'lucide-react';
 import Head from 'next/head';
@@ -12,6 +13,7 @@ const LoginPage = () => {
     ? 'Authentication service is temporarily unavailable. Please try again later.'
     : error?.message;
   const router = useRouter();
+  const authConfigured = ENV_CONFIG.auth0.isConfigured;
 
   // Log Auth0 configuration status (client-side)
   useEffect(() => {
@@ -45,6 +47,14 @@ const LoginPage = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
+
+  if (!authConfigured) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-red-600">Authentication service not configured.</p>
       </div>
     );
   }
