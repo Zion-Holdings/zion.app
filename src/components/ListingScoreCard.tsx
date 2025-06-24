@@ -45,9 +45,8 @@ export function ListingScoreCard({
           <Image
             src={image} 
             alt={title} 
-            layout="fill"
-            objectFit="cover"
-            className="transition-transform duration-300 group-hover:scale-105"
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
             onError={() => setMainImageError(true)}
             priority={false}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // General sizes
@@ -121,9 +120,8 @@ export function ListingScoreCard({
                 <Image
                   src={authorImage}
                   alt={author}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-full" // Ensure image itself is rounded if needed
+                  fill
+                  className="object-cover rounded-full"
                   onError={() => setAuthorImageError(true)}
                   priority={false}
                 />
