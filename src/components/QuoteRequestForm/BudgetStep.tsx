@@ -90,7 +90,7 @@ export function BudgetStep({ formData, updateFormData }: BudgetStepProps) {
                 max={50000}
                 step={500}
                 onValueChange={(value) => updateFormData({
-                  budget: { ...formData.budget, amount: value[0] }
+                  budget: { ...formData.budget, amount: value[0] || 0 }
                 })}
                 className="py-4"
               />
@@ -112,7 +112,7 @@ export function BudgetStep({ formData, updateFormData }: BudgetStepProps) {
                 max={500}
                 step={5}
                 onValueChange={(value) => updateFormData({
-                  budget: { ...formData.budget, amount: value[0] }
+                  budget: { ...formData.budget, amount: value[0] || 0 }
                 })}
                 className="py-4"
               />
@@ -135,7 +135,7 @@ export function BudgetStep({ formData, updateFormData }: BudgetStepProps) {
                   max={50000}
                   step={500}
                   onValueChange={(value) => {
-                    const newAmount = value[0];
+                    const newAmount = value[0] || 0;
                     const maxAmount = formData.budget.maxAmount || 50000;
                     
                     updateFormData({
@@ -165,7 +165,7 @@ export function BudgetStep({ formData, updateFormData }: BudgetStepProps) {
                   max={100000}
                   step={500}
                   onValueChange={(value) => updateFormData({
-                    budget: { ...formData.budget, maxAmount: value[0] }
+                    budget: { ...formData.budget, maxAmount: value[0] || 0 }
                   })}
                   className="py-4"
                 />
