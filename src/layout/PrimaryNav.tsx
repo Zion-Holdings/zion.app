@@ -20,10 +20,10 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import {
-  HoverCard,
-  HoverCardTrigger,
-  HoverCardContent,
-} from '@/components/ui/hover-card';
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from '@/components/ui/popover';
 import { MiniCartPreview } from '@/components/cart/MiniCartPreview';
 
 export function PrimaryNav() {
@@ -114,10 +114,9 @@ export function PrimaryNav() {
             {/* Compact actions group */}
             <div className="flex items-center gap-1">
               <PointsBadge />
-              <HoverCard openDelay={100}>
-                <HoverCardTrigger asChild>
-                  <Link
-                    href="/cart"
+              <Popover>
+                <PopoverTrigger asChild>
+                  <button
                     className="relative p-1"
                     aria-label={t('nav.cart', 'Cart')}
                   >
@@ -127,12 +126,15 @@ export function PrimaryNav() {
                         {cartCount}
                       </span>
                     )}
-                  </Link>
-                </HoverCardTrigger>
-                <HoverCardContent>
+                  </button>
+                </PopoverTrigger>
+                <PopoverContent className="w-56" align="end">
                   <MiniCartPreview />
-                </HoverCardContent>
-              </HoverCard>
+                  <Link href="/cart" className="mt-2 block text-sm text-primary hover:underline">
+                    {t('cart.view_cart', 'View Cart')}
+                  </Link>
+                </PopoverContent>
+              </Popover>
             </div>
             
             {/* Compact controls group */}

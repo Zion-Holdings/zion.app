@@ -52,7 +52,8 @@
     "continue_shopping": "Continuer les Achats",
     "subtotal": "Sous-total",
     "processing": "Traitement...",
-    "checkout": "Commander"
+    "checkout": "Commander",
+    "view_cart": "Voir le Panier"
   },
   "home": {
     "hero_title": "The Future of Tech & AI Marketplace",

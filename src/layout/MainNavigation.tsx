@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { Heart, MessageSquare, ShoppingCart, CreditCard } from "lucide-react";
 import { LanguageSelector } from '@/components/header/LanguageSelector';
-import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
+import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
 import { MiniCartPreview } from '@/components/cart/MiniCartPreview';
 
 interface MainNavigationProps {
@@ -208,34 +208,37 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
 
             {/* Cart icon with badge */}
             <li className="nav-item">
-              <HoverCard openDelay={100}>
-                <HoverCardTrigger asChild>
+              <Popover>
+                <PopoverTrigger asChild>
+                  <button
+                    aria-label={t('nav.cart')}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={cn(
+                      'nav-link',
+                      'inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
+                      router.pathname.startsWith('/cart')
+                        ? 'bg-zion-purple/20 text-zion-cyan'
+                        : 'text-white hover:bg-zion-purple/10 hover:text-zion-cyan'
+                    )}
+                  >
+                    <ShoppingCart className="w-4 h-4 mr-1" />
+                    {t('nav.cart', 'Cart')}
+                    {cartCount > 0 && (
+                      <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                        {cartCount}
+                      </span>
+                    )}
+                  </button>
+                </PopoverTrigger>
+                <PopoverContent className="w-56" align="end">
+                  <MiniCartPreview />
                   <Link href="/cart" legacyBehavior={false}>
-                    <a
-                      aria-label={t('nav.cart')}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className={cn(
-                        'nav-link',
-                        'inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
-                        router.pathname.startsWith('/cart')
-                          ? 'bg-zion-purple/20 text-zion-cyan'
-                          : 'text-white hover:bg-zion-purple/10 hover:text-zion-cyan'
-                      )}
-                    >
-                      <ShoppingCart className="w-4 h-4 mr-1" />
-                      {t('nav.cart', 'Cart')}
-                      {cartCount > 0 && (
-                        <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                          {cartCount}
-                        </span>
-                      )}
+                    <a className="mt-2 block text-sm text-primary hover:underline">
+                      {t('cart.view_cart', 'View Cart')}
                     </a>
                   </Link>
-                </HoverCardTrigger>
-                <HoverCardContent>
-                  <MiniCartPreview />
-                </HoverCardContent>
-              </HoverCard>
+                </PopoverContent>
+              </Popover>
             </li>
           </ul>
           <div className="flex items-center gap-2 mt-4 md:mt-0 md:ml-auto">

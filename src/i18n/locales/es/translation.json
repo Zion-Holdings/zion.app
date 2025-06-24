@@ -48,7 +48,8 @@
     "continue_shopping": "Seguir comprando",
     "subtotal": "Subtotal",
     "processing": "Procesando...",
-    "checkout": "Pagar"
+    "checkout": "Pagar",
+    "view_cart": "Ver Carrito"
   },
   "home": {
     "hero_title": "El Futuro del Mercado de Tecnología e IA",

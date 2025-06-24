@@ -58,8 +58,21 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     dispatch,
   };
 
-  // This useEffect for loading items from localStorage was also redundant
-  // as cartSlice.ts handles initial load.
+  // Rehydrate cart from localStorage on mount for guests
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      const stored = safeStorage.getItem('zion_cart');
+      if (stored) {
+        const parsed = JSON.parse(stored) as CartItem[];
+        reduxDispatch(setItems(parsed));
+      }
+    } catch (error) {
+      console.error('[CartProvider] Failed to load cart from localStorage', error);
+    }
+  }, [reduxDispatch]);
+
+  // Persist updated items to localStorage so guests don't lose their cart
 
   // Persist cart items to localStorage whenever they change from Redux state
   useEffect(() => {
