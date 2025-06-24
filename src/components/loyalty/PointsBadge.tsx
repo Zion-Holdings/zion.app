@@ -58,7 +58,7 @@ export function PointsBadge() {
               title={isAuthenticated ? "View points" : "Earn points by participating"}
               className="flex items-center gap-1 text-xs text-muted-foreground"
             >
-              <Gift className="h-4 w-4" />
+              <Gift className="h-4 w-4" aria-hidden="true" />
               <span>{`${points} pts`}</span>
             </Link>
           </TooltipTrigger>
@@ -103,7 +103,10 @@ export function PointsBadge() {
                 className="p-1 h-6 w-6 text-muted-foreground hover:text-foreground"
                 aria-label="Refresh points"
               >
-                <RefreshCw className={`h-3 w-3 ${isRefreshing || loading ? 'animate-spin' : ''}`} />
+                <RefreshCw
+                  className={`h-3 w-3 ${isRefreshing || loading ? 'animate-spin' : ''}`}
+                  aria-hidden="true"
+                />
               </Button>
             </TooltipTrigger>
             <TooltipContent>
