@@ -90,3 +90,13 @@ Alert routing (e.g., sending notifications to Slack or email for new issues) and
     *   Correct release version (commit SHA).
     *   Correct environment tag.
     *   Readable stack traces (indicating source maps are working).
+
+## Datadog Correlation
+
+Datadog tracing is enabled on the Express server using `dd-trace`. The active
+Datadog `trace_id` and `span_id` are added to each Sentry event via the
+`beforeSend` hook. In the browser, analytics and error logs are forwarded to
+Datadog when `NEXT_PUBLIC_DD_CLIENT_TOKEN` is configured.
+
+This allows stack traces in Sentry to be correlated with Datadog traces for
+end‑to‑end debugging.

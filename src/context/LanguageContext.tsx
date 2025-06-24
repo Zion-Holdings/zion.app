@@ -2,7 +2,6 @@ import React, { createContext, useState, useContext, useEffect, ReactNode } from
 import { safeStorage } from '@/utils/safeStorage';
 import { setCookie, getCookie } from '@/utils/cookies';
 import { useTranslation } from 'react-i18next';
-import { supabase } from '../integrations/supabase/client';
 import { toast } from '../components/ui/use-toast';
 
 export type SupportedLanguage = 'en' | 'es' | 'fr' | 'pt' | 'ar';
@@ -76,32 +75,19 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     }
   }, [currentLanguage, i18n]);
   
-  // Sync language preference with user profile when authenticated
-  useEffect(() => {
-    const syncLanguageWithProfile = async () => {
-      if (isAuthenticated && user?.id) {
-        try {
-          const { error } = await supabase
-            .from('profiles')
-            .update({ preferred_language: currentLanguage })
-            .eq('id', user.id);
-            
-          if (error) {
-            console.error('Error updating language preference:', error);
-          }
-        } catch (err) {
-          console.error('Error syncing language with profile:', err);
-        }
-      }
-    };
-    
-    syncLanguageWithProfile();
-  }, [currentLanguage, isAuthenticated, user]);
+  // Note: Language preference sync with user profile removed after Auth0 migration
+  // Future: Implement Auth0 user metadata sync if needed
   
   const changeLanguage = async (lang: SupportedLanguage) => {
-    if (lang === currentLanguage) return;
+    if (lang === currentLanguage) {
+      console.log('LanguageContext: Language already selected:', lang);
+      return;
+    }
+    
+    console.log('LanguageContext: Changing language from', currentLanguage, 'to', lang);
     
     try {
+      // Change i18n language
       await i18n.changeLanguage(lang);
       setCurrentLanguage(lang);
       
@@ -111,21 +97,12 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       
       // Get language name for toast
       const langName = supportedLanguages.find(l => l.code === lang)?.name || lang;
+      
+      console.log('LanguageContext: Language changed successfully to', lang, '(' + langName + ')');
+      
       toast({
         description: t('language.language_changed', { language: langName })
       });
-      
-      // If user is authenticated, update their profile
-      if (isAuthenticated && user?.id) {
-        const { error } = await supabase
-          .from('profiles')
-          .update({ preferred_language: lang })
-          .eq('id', user.id);
-          
-        if (error) {
-          console.error('Error updating language preference:', error);
-        }
-      }
       
       // Force immediate DOM updates
       setTimeout(() => {
@@ -135,11 +112,13 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
           
           // Trigger a custom event to notify components about language change
           window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+          
+          console.log('LanguageContext: DOM updated with new language:', lang);
         }
       }, 50);
       
     } catch (err) {
-      console.error('Error changing language:', err);
+      console.error('LanguageContext: Error changing language:', err);
       toast({
         title: 'Error',
         description: 'Failed to change language',

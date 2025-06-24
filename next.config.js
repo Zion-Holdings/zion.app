@@ -12,6 +12,7 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     serverComponentsExternalPackages: ['@prisma/client'],
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
     outputFileTracingExcludes: {
       '*': [
         'node_modules/@swc/core-linux-x64-gnu',
@@ -32,6 +33,7 @@ const nextConfig = {
       'app.ziontechgroup.com',
     ],
     formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 31536000, // 1 year
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? {
@@ -45,10 +47,11 @@ const nextConfig = {
         ...config.optimization,
         splitChunks: {
           ...config.optimization.splitChunks,
+          chunks: 'all',
           cacheGroups: {
             ...config.optimization.splitChunks.cacheGroups,
             vendor: {
-              test: /[\\\/]node_modules[\\\/]/i,
+              test: /[\\/]node_modules[\\/]/,
               name: 'vendors',
               priority: 10,
               reuseExistingChunk: true,
@@ -56,6 +59,18 @@ const nextConfig = {
             common: {
               minChunks: 2,
               priority: 5,
+              reuseExistingChunk: true,
+            },
+            react: {
+              test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+              name: 'react',
+              priority: 20,
+              reuseExistingChunk: true,
+            },
+            ui: {
+              test: /[\\/]node_modules[\\/](@radix-ui|@chakra-ui)[\\/]/,
+              name: 'ui',
+              priority: 15,
               reuseExistingChunk: true,
             },
           },
@@ -71,6 +86,14 @@ const nextConfig = {
       tls: false,
       crypto: false,
     };
+
+    // Optimize bundle size
+    if (!dev) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'lodash': 'lodash-es',
+      };
+    }
 
     return config;
   },
@@ -94,6 +117,28 @@ const nextConfig = {
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains',
+          },
+        ],
+      },
+      {
+        source: '/api/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, max-age=0',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },

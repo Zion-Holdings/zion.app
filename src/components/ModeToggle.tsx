@@ -11,7 +11,7 @@ import { logIssue } from "@/utils/logIssue"
 
 export function ModeToggle() {
   // Use theme and toggleTheme from the updated useTheme hook
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   // Determine the actual mode. When "system" is selected we look up the
   // user's preference so the icon reflects the correct state.
@@ -25,14 +25,18 @@ export function ModeToggle() {
 
   const handleToggle = () => {
     try {
-      // Toggle theme using the toggleTheme function from context
-      toggleTheme();
-      
+      // Determine the theme we are switching **to** first so the
+      // toast reflects the correct state even before React re-renders.
+      const newTheme = isDarkMode ? "light" : "dark";
+
+      // Apply the new theme using the context helper
+      // Prefer setTheme here to avoid potential stale closures
+      setTheme(newTheme);
+
       // Show user feedback with toast notification
-      const newTheme = isDarkMode ? 'light' : 'dark';
       toast({
         title: `Switched to ${newTheme} mode`,
-        description: `Theme changed successfully`,
+        description: "Theme changed successfully",
       });
     } catch (error) {
       logIssue('Theme switch failed', { error });

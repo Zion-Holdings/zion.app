@@ -15,16 +15,9 @@ import { slugify } from '@/lib/slugify';
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
-import { Menu, X, ShoppingCart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import type { RootState } from '@/store';
-import {
-  HoverCard,
-  HoverCardTrigger,
-  HoverCardContent,
-} from '@/components/ui/hover-card';
-import { MiniCartPreview } from '@/components/cart/MiniCartPreview';
+import { CartDrawer } from '@/components/cart/CartDrawer';
 
 export function PrimaryNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,9 +37,6 @@ export function PrimaryNav() {
     // context not available
   }
 
-  const cartCount = useSelector((s: RootState) =>
-    s.cart.items.reduce((sum, i) => sum + i.quantity, 0),
-  );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -114,25 +104,7 @@ export function PrimaryNav() {
             {/* Compact actions group */}
             <div className="flex items-center gap-1">
               <PointsBadge />
-              <HoverCard openDelay={100}>
-                <HoverCardTrigger asChild>
-                  <Link
-                    href="/cart"
-                    className="relative p-1"
-                    aria-label={t('nav.cart', 'Cart')}
-                  >
-                    <ShoppingCart className="h-5 w-5 text-foreground hover:text-primary" />
-                    {cartCount > 0 && (
-                      <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] rounded-full h-4 w-4 flex items-center justify-center">
-                        {cartCount}
-                      </span>
-                    )}
-                  </Link>
-                </HoverCardTrigger>
-                <HoverCardContent>
-                  <MiniCartPreview />
-                </HoverCardContent>
-              </HoverCard>
+              <CartDrawer />
             </div>
             
             {/* Compact controls group */}
