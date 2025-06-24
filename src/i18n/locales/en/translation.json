@@ -231,22 +231,45 @@
     "login_different_account": "Login with Different Account",
     "payment_success_title": "Payment Successful!",
     "payment_success_message": "Your payment has been processed successfully. You now have access to all the premium features.",
-    "go_to_dashboard": "Go to Dashboard",
-    "failed_to_load": "Failed to load",
-    "failed_to_save": "Failed to save",
-    "failed_to_connect": "Failed to connect",
-    "unable_to_connect": "Unable to connect to the server",
-    "check_internet_connection": "Please check your internet connection and try again",
-    "failed_to_fetch": "Failed to fetch",
-    "cannot_delete_last": "Cannot delete the last item",
-    "failed_to_copy": "Failed to copy",
-    "failed_to_send": "Failed to send",
-    "failed_to_schedule": "Failed to schedule",
-    "failed_to_cancel": "Failed to cancel",
-    "failed_to_respond": "Failed to respond",
-    "failed_to_update": "Failed to update",
-    "try_again": "Please try again",
-    "try_again_later": "Please try again later",
-    "action_cannot_be_undone": "This action cannot be undone"
+    "go_to_dashboard": "Go to Dashboard"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "Learn how Zion Tech Group handles your data and protects your privacy.",
+    "subtitle": "Your privacy is important to us. This page explains how we collect, use, and protect your information.",
+    "data_collection": "We collect personal information you provide when creating an account or using our services. This can include your name, email address and any other details required to deliver marketplace features.",
+    "data_usage": "Zion Tech Group uses this data solely to operate and improve our platform. We do not sell your personal information to third parties.",
+    "contact_info": "If you have questions about our privacy practices, please contact us at",
+    "support_email": "support@ziontechgroup.com"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "description": "The terms and conditions for using the Zion platform.",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "Welcome to Zion Tech Group. These Terms of Service govern your use of our marketplace platform."
+      },
+      "accounts": {
+        "title": "Accounts",
+        "content": "You must create an account to access certain features of the platform. You are responsible for keeping your login credentials secure."
+      },
+      "payments": {
+        "title": "Payments",
+        "content": "All transactions are processed securely. You agree to provide accurate billing details and comply with our payment policies."
+      },
+      "prohibited": {
+        "title": "Prohibited Activities",
+        "content": "Users may not engage in fraudulent, abusive, or illegal activities while using the platform."
+      },
+      "termination": {
+        "title": "Termination",
+        "content": "We may suspend or terminate your account if you violate these terms or engage in activities that harm the platform or other users."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "If you have questions about these Terms of Service, contact us at <a href=\"mailto:support@ziontechgroup.com\">support@ziontechgroup.com</a>."
+      }
+    }
   }
 }
