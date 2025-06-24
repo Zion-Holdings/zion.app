@@ -45,12 +45,14 @@
     "logout_success": "Logged out successfully"
   },
   "cart": {
-    "title": "Your Cart",
-    "empty": "Your cart is empty",
-    "continue_shopping": "Continue Shopping",
-    "subtotal": "Subtotal",
-    "processing": "Processing...",
-    "checkout": "Checkout"
+    "title": "Votre Panier",
+    "empty": "Votre panier est vide",
+    "empty_alt": "Illustration de panier d'achat vide",
+    "empty_preview": "Le panier est vide",
+    "continue_shopping": "Continuer les Achats",
+    "subtotal": "Sous-total",
+    "processing": "Traitement...",
+    "checkout": "Commander"
   },
   "home": {
     "hero_title": "The Future of Tech & AI Marketplace",

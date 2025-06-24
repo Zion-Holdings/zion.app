@@ -47,6 +47,8 @@
   "cart": {
     "title": "Your Cart",
     "empty": "Your cart is empty",
+    "empty_alt": "Empty shopping cart illustration",
+    "empty_preview": "Cart is empty",
     "continue_shopping": "Continue Shopping",
     "subtotal": "Subtotal",
     "processing": "Processing...",

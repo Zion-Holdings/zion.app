@@ -44,6 +44,8 @@
   "cart": {
     "title": "Seu Carrinho",
     "empty": "Seu carrinho está vazio",
+    "empty_alt": "Ilustração de carrinho de compras vazio",
+    "empty_preview": "Carrinho está vazio",
     "continue_shopping": "Continuar Comprando",
     "subtotal": "Subtotal",
     "processing": "Processando...",

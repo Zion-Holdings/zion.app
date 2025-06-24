@@ -80,7 +80,7 @@ export default function CartPage() {
       <div className="container py-10 text-center">
         <img
           src="/images/empty-cart.svg"
-          alt="Empty cart"
+          alt={t('cart.empty_alt')}
           className="mx-auto mb-4 w-48 h-36"
           loading="lazy"
         />
