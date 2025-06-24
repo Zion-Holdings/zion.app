@@ -2,8 +2,11 @@
 import { Button } from "./ui/button";
 import { Twitter, Facebook, Linkedin, Link } from "lucide-react";
 import { toast } from "./ui/use-toast";
+import { useTranslation } from 'react-i18next';
 
 export function SocialShareSection() {
+  const { t } = useTranslation();
+  
   // Current URL is not available during SSR, guard with typeof check
   const shareUrl = typeof window !== 'undefined'
     ? encodeURIComponent(window.location.href)
@@ -33,7 +36,7 @@ export function SocialShareSection() {
       })
       .catch(() => {
         toast({
-          title: "Failed to copy",
+          title: t('errors.failed_to_copy'),
           description: "Please try again or copy the URL manually",
           variant: "destructive"
         });

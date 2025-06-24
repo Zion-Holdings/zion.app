@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { AutocompleteSuggestions } from "@/components/search/AutocompleteSuggestions";
 import { SearchSuggestion } from "@/types/search";
 import { useDebounce } from "@/hooks/useDebounce";
+import { useRouter } from "next/router";
+import { slugify } from "@/lib/slugify";
 
 interface EnhancedSearchInputProps {
   value: string;
@@ -83,6 +85,8 @@ export function EnhancedSearchInput({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const router = useRouter();
+
   const handleSelectSuggestion = (suggestionObj: SearchSuggestion) => {
     console.log('EnhancedSearchInput handleSelectSuggestion called:', suggestionObj);
     onChange(suggestionObj.text);
@@ -90,7 +94,17 @@ export function EnhancedSearchInput({
       console.log('Calling onSelectSuggestion with:', suggestionObj);
       onSelectSuggestion(suggestionObj);
     } else {
+      // Provide a sensible default navigation if the parent did not supply a handler
       console.warn('onSelectSuggestion callback not provided');
+      if (suggestionObj.id) {
+        router.push(`/marketplace/listing/${suggestionObj.id}`);
+      } else if (suggestionObj.type === 'doc' && suggestionObj.slug?.startsWith('/')) {
+        router.push(suggestionObj.slug);
+      } else if (suggestionObj.type === 'blog' && suggestionObj.slug) {
+        router.push(`/blog/${suggestionObj.slug}`);
+      } else {
+        router.push(`/search/${suggestionObj.slug || slugify(suggestionObj.text)}`);
+      }
     }
     setIsFocused(false);
     inputRef.current?.blur();

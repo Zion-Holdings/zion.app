@@ -6,12 +6,9 @@ import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { useFavorites } from "@/hooks/useFavorites";
-import { useSelector } from 'react-redux';
-import type { RootState } from '@/store';
-import { Heart, MessageSquare, ShoppingCart, CreditCard } from "lucide-react";
+import { Heart, MessageSquare, CreditCard } from "lucide-react";
 import { LanguageSelector } from '@/components/header/LanguageSelector';
-import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
-import { MiniCartPreview } from '@/components/cart/MiniCartPreview';
+import { CartDrawer } from '@/components/cart/CartDrawer';
 
 interface MainNavigationProps {
   isAdmin?: boolean;
@@ -26,9 +23,6 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   const { count } = useFavorites();
   const router = useRouter(); // Changed from useLocation
   const { t } = useTranslation();
-  const cartCount = useSelector((s: RootState) =>
-    s.cart.items.reduce((sum, i) => sum + i.quantity, 0)
-  );
 
   const baseLinks = [
     {

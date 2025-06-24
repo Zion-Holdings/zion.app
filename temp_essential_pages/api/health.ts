@@ -24,7 +24,7 @@ function handler(
         }
       }
 
-      let version = publicRuntimeConfig.NEXT_PUBLIC_APP_VERSION || "unknown";
+      const version = publicRuntimeConfig.NEXT_PUBLIC_APP_VERSION || "unknown";
       if (version === "unknown") {
         console.warn("Application version not set (NEXT_PUBLIC_APP_VERSION). Defaulting to 'unknown'.");
       }

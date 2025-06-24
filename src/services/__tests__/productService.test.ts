@@ -14,6 +14,8 @@ const mockProduct: ProductDetailsData = {
   images: [{ url: 'http://example.com/image.jpg', alt: 'Test Image' }], // Assuming images is an array of objects
   averageRating: 4.5,
   reviewCount: 100,
+  specifications: ['Spec A', 'Spec B'],
+  priceTiers: [{ tier: 'Standard', price: 99.99 }]
 };
 
 describe('fetchProductById', () => {

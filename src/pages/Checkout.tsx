@@ -28,7 +28,11 @@ function CheckoutInner() {
 
   const [intent, setIntent] = useState<any | null>(null);
 
-  const onSubmit = () => {};
+  const onSubmit = (data: CheckoutFormData) => {
+    console.log('Checkout form data:', data);
+    // TODO: Implement payment processing logic here
+    router.push('/order-confirmation'); // Redirect to order confirmation page
+  };
 
   return (
     <div className="container max-w-2xl py-10">
