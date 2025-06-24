@@ -46,7 +46,7 @@ const LoginPage = () => {
     checkSession();
 
     if (isSupabaseConfigured) {
-        const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
+        const { data: authListener } = supabase.auth.onAuthStateChange((_event: any, session: any) => {
           console.log('Auth state changed:', _event, session);
           const currentUser = session?.user ?? null;
           setUser(currentUser);
@@ -61,6 +61,11 @@ const LoginPage = () => {
           authListener?.subscription.unsubscribe();
         };
       }
+      
+      // Return cleanup function for all code paths
+      return () => {
+        // No cleanup needed when Supabase is not configured
+      };
   }, [router, isLoading, isCheckingSession]); // Added isLoading and isCheckingSession to dependencies
 
   const handleLogin = async (e: FormEvent) => {
