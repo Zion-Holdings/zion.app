@@ -221,6 +221,5 @@ if (typeof BroadcastChannel === 'undefined') {
 
 // Polyfill for window.scrollTo
 if (typeof window.scrollTo === 'undefined') {
-  // @ts-expect-error
   window.scrollTo = jest.fn();
 }
