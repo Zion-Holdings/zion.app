@@ -29,7 +29,7 @@ export function observeCLS(callback: (cls: number) => void): void {
   }
 
   let clsValue = 0;
-  let clsEntries: CLSEntry[] = [];
+  const clsEntries: PerformanceEntry[] = [];
 
   const observer = new PerformanceObserver((entryList) => {
     for (const entry of entryList.getEntries()) {
@@ -38,14 +38,7 @@ export function observeCLS(callback: (cls: number) => void): void {
       if (layoutShiftEntry.hadRecentInput) continue;
 
       clsValue += layoutShiftEntry.value;
-      clsEntries.push({
-        name: entry.name,
-        entryType: entry.entryType,
-        startTime: entry.startTime,
-        duration: entry.duration,
-        value: layoutShiftEntry.value,
-        hadRecentInput: layoutShiftEntry.hadRecentInput
-      });
+      clsEntries.push(entry);
     }
     
     callback(clsValue);
@@ -280,4 +273,10 @@ export function initializePerformanceOptimizations(): void {
 
   observeFontLoading();
   preloadCriticalResources();
+}
+
+export function calculateCLS(): number {
+  const clsValue = 0;
+  const clsEntries: PerformanceEntry[] = [];
+  // ... rest of the function ...
 } 

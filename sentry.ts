@@ -28,7 +28,7 @@ export function register() {
 
   let replaysSessionSampleRate = 0.1;
   let replaysOnErrorSampleRate = 1.0;
-  let finalIntegrations = [...baseIntegrations];
+  const finalIntegrations = [...baseIntegrations];
 
   if (safeSessionStorage.isAvailable) {
     finalIntegrations.unshift(
