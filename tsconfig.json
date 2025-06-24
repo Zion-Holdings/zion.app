@@ -94,13 +94,9 @@
     "out",
     "dist",
     "build",
-<<<<<<< HEAD
     "coverage",
     "cypress",
     "monitoring",
     "netlify"
-=======
-    "coverage"
->>>>>>> 6cb5dc687ca7c82b10c745c9b15260fd5131977e
   ]
 }
