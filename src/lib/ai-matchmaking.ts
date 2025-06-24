@@ -1,4 +1,3 @@
-
 // AI Matchmaking utility functions
 
 export interface MatchResultItem {
@@ -72,7 +71,7 @@ export async function findMatches(
       item,
       score: Math.floor(Math.random() * 40) + 60, // Random score between 60 and 99
       matchedSkills: item.skills?.slice(0, 2) || [],
-      reason: `This ${item.category.split(' - ')[0].toLowerCase()} matches your needs based on the provided description.`
+      reason: `This ${(item.category?.split(' - ')[0] || 'item').toLowerCase()} matches your needs based on the provided description.`
     }));
     
     // Sort by score
