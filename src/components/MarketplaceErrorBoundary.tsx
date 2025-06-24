@@ -78,7 +78,7 @@ export function MarketplaceErrorBoundary({ children }: MarketplaceErrorBoundaryP
     Sentry.withScope((scope) => {
       scope.setTag('errorBoundary', 'marketplace');
       scope.setContext('errorInfo', {
-        componentStack: errorInfo.componentStack,
+        componentStack: errorInfo.componentStack || undefined,
       });
       scope.setLevel('error');
       Sentry.captureException(error);
