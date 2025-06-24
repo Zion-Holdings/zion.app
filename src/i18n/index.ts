@@ -42,9 +42,9 @@ if (!i18n) {
       escapeValue: false, // React already escapes by default
     },
     detection: {
-      order: ['cookie', 'navigator'],
+      order: ['cookie', 'navigator'], // Keep navigator as a fallback for first-time users
       lookupCookie: 'i18n_lang',
-      caches: ['cookie'],
+      // caches: ['cookie'], // REMOVED: Prevent navigator fallback from overwriting user's explicit cookie choice
     },
   })
   .catch(error => {
