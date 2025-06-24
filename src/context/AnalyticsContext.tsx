@@ -58,7 +58,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     trackEvent('page_view', { path: router.pathname });
     setPageViews((prev) => prev + 1);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [router.pathname]);
 
   // Function to track general analytics events

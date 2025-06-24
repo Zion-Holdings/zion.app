@@ -24,6 +24,22 @@
       "@/api/*": [
         "./src/api/*"
       ],
+      "@/types/*": [
+        "./src/types/*",
+        "./types/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@/context/*": [
+        "./src/context/*"
+      ],
+      "@/services/*": [
+        "./src/services/*"
+      ],
       "react-router-dom": [
         "./src/shims/react-router-dom.ts"
       ],
@@ -45,13 +61,14 @@
     "isolatedModules": true,
     /* Linting */
     "strict": true,
-    // "noUnusedLocals": false, // Enable to catch unused local variables
     "noUnusedLocals": false,
-    // "noUnusedParameters": false, // Enable to catch unused function parameters
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
     "allowJs": true,
     "incremental": true,
+    "types": ["node", "jest"],
     "typeRoots": [
       "./node_modules/@types",
       "./types"
@@ -64,12 +81,23 @@
     "src",
     "src/types",
     "pages",
-    "types/**/*.d.ts"
+    "types/**/*.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules",
+<<<<<<< HEAD
     "src/components/ui/chart.tsx",
     "src/store/index.ts",
     "temp_essential_pages"
+=======
+    ".next",
+    "out",
+    "dist",
+    "build",
+    "coverage"
+>>>>>>> a88468e4d599bb02989002651f3229fb543653d7
   ]
 }
