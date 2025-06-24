@@ -14,9 +14,9 @@ function compressAssets() {
           const data =
             bundle[file].type === 'asset' ? bundle[file].source : bundle[file].code;
           const gzip = gzipSync(Buffer.from(data));
-          this.emitFile({ type: 'asset', fileName: `${file}.gz`, source: gzip });
+          (this as any).emitFile({ type: 'asset', fileName: `${file}.gz`, source: gzip });
           const brotli = brotliCompressSync(Buffer.from(data));
-          this.emitFile({ type: 'asset', fileName: `${file}.br`, source: brotli });
+          (this as any).emitFile({ type: 'asset', fileName: `${file}.br`, source: brotli });
         }
       }
     },
