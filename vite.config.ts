@@ -34,7 +34,7 @@ export default defineConfig({
         // server.middlewares may be undefined in some preview environments
         if (!server?.middlewares?.use) return;
         server.middlewares.use('/api/public/services', (req, res) => {
-          const url = new URL(req.originalUrl || req.url, 'http://localhost');
+          const url = new URL(req.originalUrl || req.url || '/', 'http://localhost');
           const category = url.searchParams.get('category');
           const q = (url.searchParams.get('q') || '').toLowerCase();
           const data = SAMPLE_SERVICES.filter((item) => {
