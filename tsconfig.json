@@ -88,16 +88,13 @@
   ],
   "exclude": [
     "node_modules",
-<<<<<<< HEAD
     "src/components/ui/chart.tsx",
     "src/store/index.ts",
-    "temp_essential_pages"
-=======
+    "temp_essential_pages",
     ".next",
     "out",
     "dist",
     "build",
     "coverage"
->>>>>>> a88468e4d599bb02989002651f3229fb543653d7
   ]
 }
