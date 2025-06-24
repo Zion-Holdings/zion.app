@@ -68,7 +68,7 @@ export default function GlobalMapPage() {
         'New franchise deployed: Zion Indonesia',
       ];
       const id = Date.now();
-      const text = messages[Math.floor(Math.random() * messages.length)];
+      const text = messages[Math.floor(Math.random() * messages.length)] || 'System update in progress';
       setFeed((f) => [{ id, text }, ...f].slice(0, 5));
     }, 5000);
     return () => clearInterval(interval);
