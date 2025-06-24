@@ -23,7 +23,7 @@ export function ServiceDetails({ country }: ServiceDetailsProps) {
       "default": ["Major metropolitan areas"]
     };
     
-    return dataCenters[country] || dataCenters["default"];
+    return dataCenters[country] || dataCenters["default"] || ["Major metropolitan areas"];
   };
   
   // Get region-specific image
