@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { vi } from 'vitest';
@@ -165,17 +165,28 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
       expect(screen.getByText(/stay updated with the latest news/i)).toBeInTheDocument();
     });
     
-    test('Footer legal links wrap properly', () => {
+    test('Footer legal links wrap properly', async () => {
+      const originalFetch = global.fetch;
+      global.fetch = vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({ uptime: 99.99 }),
+      }) as any;
+
       render(
         <TestWrapper>
           <Footer />
         </TestWrapper>
       );
-      
-      // Check legal links are present
+
       expect(screen.getByText('Privacy Policy')).toBeInTheDocument();
       expect(screen.getByText('Terms of Service')).toBeInTheDocument();
       expect(screen.getByText('API Status')).toBeInTheDocument();
+
+      await waitFor(() => {
+        expect(screen.getByText(/99.99% uptime/)).toBeInTheDocument();
+      });
+
+      global.fetch = originalFetch;
     });
   });
 

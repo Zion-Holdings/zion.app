@@ -58,11 +58,17 @@ export default function Status() {
   useEffect(() => {
     async function fetchUptime() {
       try {
-        const res = await fetch('/api/health');
+        const res = await fetch('/api/status/summary');
         if (!res.ok) return;
         const data = await res.json();
-        if (typeof data.uptime === 'number') {
-          setUptime(data.uptime);
+        const pct =
+          typeof data.uptime === 'number'
+            ? data.uptime
+            : typeof data.uptimePercent === 'number'
+            ? data.uptimePercent
+            : null;
+        if (typeof pct === 'number') {
+          setUptime(pct);
         }
       } catch (err) {
         console.warn('Failed to fetch uptime', err);
@@ -116,15 +122,8 @@ export default function Status() {
     }
   };
 
-  const formatUptime = (seconds: number) => {
-    const days = Math.floor(seconds / 86400);
-    const hours = Math.floor((seconds % 86400) / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const parts: string[] = [];
-    if (days > 0) parts.push(`${days}d`);
-    if (hours > 0) parts.push(`${hours}h`);
-    parts.push(`${minutes}m`);
-    return parts.join(' ');
+  const formatUptimePercent = (pct: number) => {
+    return pct.toFixed(2) + '%';
   };
 
   return (
@@ -142,7 +141,7 @@ export default function Status() {
               Real-time monitoring of Zion platform services
             </p>
             {uptime !== null && (
-              <p className="text-zion-slate-light text-sm mt-2">Uptime: {formatUptime(uptime)}</p>
+              <p className="text-zion-slate-light text-sm mt-2">Uptime: {formatUptimePercent(uptime)}</p>
             )}
           </div>
 
