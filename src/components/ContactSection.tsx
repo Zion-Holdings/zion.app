@@ -53,7 +53,7 @@ export function ContactSection() {
       setErrors(fieldErrors);
       toast({
         title: "Form Validation Error",
-        description: result.error.errors[0].message,
+        description: result.error.errors[0]?.message || "Please check your form and try again",
         variant: "destructive",
       });
       return;
