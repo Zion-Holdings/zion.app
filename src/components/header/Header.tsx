@@ -51,7 +51,8 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      router.push(`/search/${slugify(query)}`);
+      console.log('Header search submit:', query);
+      router.push(`/search?q=${encodeURIComponent(query)}`);
       setQuery("");
     }
   };
@@ -72,8 +73,8 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             value={query}
             onChange={setQuery}
             onSelectSuggestion={(suggestion) => {
-              const slug = suggestion.slug || slugify(suggestion.text);
-              router.push(`/search/${slug}`);
+              console.log('Header search suggestion selected:', suggestion);
+              router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
               setQuery("");
             }}
             searchSuggestions={searchSuggestions}
