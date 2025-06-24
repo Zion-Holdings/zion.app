@@ -31,16 +31,6 @@ export function FooterNewsletter() {
     }
 
     setIsSubmitting(true);
-    try {
-      const res = await fetch('/api/newsletter', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: trimmedEmail })
-      });
-
-      const data = await res.json().catch(() => ({}));
-
-    setIsSubmitting(true);
     const uniqueToastIdBase = `newsletter-toast-${Date.now()}`; // Generate a base for unique ID
 
     try {

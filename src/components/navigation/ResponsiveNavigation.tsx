@@ -33,6 +33,7 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
     { label: t('nav.home', 'Home'), href: '/' },
     {
       label: t('nav.marketplace', 'Marketplace'),
+      href: '/marketplace',
       subItems: [
         { label: t('nav.marketplace_overview', 'Overview'), href: '/marketplace' },
         { label: t('nav.categories', 'Categories'), href: '/categories' },

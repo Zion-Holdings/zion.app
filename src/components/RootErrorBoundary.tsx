@@ -1,29 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { logError } from '@/utils/logError';
 
-function RootFallback({ error, resetErrorBoundary }: FallbackProps) {
+interface RootFallbackProps extends FallbackProps {
+  traceId?: string | null;
+}
+
+function RootFallback({ error, resetErrorBoundary, traceId }: RootFallbackProps) {
   return (
-    <div role="alert" className="p-4 text-center">
-      <p>Something went wrong.</p>
-      {error && (
-        <>
-          <pre className="text-red-500 whitespace-pre-wrap">{error.message}</pre>
-          {error.stack && (
-            <pre className="text-xs mt-2 whitespace-pre-wrap text-left overflow-x-auto">
-              {error.stack}
-            </pre>
-          )}
-        </>
+    <div role="alert" className="p-6 text-center space-y-4">
+      <div>
+        <h2 className="text-lg font-semibold">Something went wrong</h2>
+        <p className="text-sm text-gray-600">Please try again. If the problem persists contact support.</p>
+      </div>
+      {traceId && (
+        <p className="text-xs text-gray-500" data-testid="trace-id">Trace ID: {traceId}</p>
       )}
-      <button onClick={resetErrorBoundary} className="mt-2 px-4 py-2 bg-blue-500 text-white rounded">Try again</button>
+      <button
+        onClick={resetErrorBoundary}
+        className="mt-2 px-4 py-2 bg-blue-500 text-white rounded"
+      >
+        Retry
+      </button>
+      {process.env.NODE_ENV === 'development' && error && (
+        <pre className="mt-4 text-left text-xs whitespace-pre-wrap overflow-x-auto">
+          {error.stack || error.message}
+        </pre>
+      )}
     </div>
   );
 }
 
 export default function RootErrorBoundary({ children }: { children: React.ReactNode }) {
+  const [traceId, setTraceId] = useState<string | null>(null);
+
   return (
-    <ErrorBoundary FallbackComponent={RootFallback} onError={(error) => logError(error, { type: 'UI Error' })}>
+    <ErrorBoundary
+      fallbackRender={(props) => <RootFallback {...props} traceId={traceId} />}
+      onError={(error, info) => {
+        const id = logError(error, { type: 'UI Error', componentStack: info.componentStack });
+        setTraceId(id);
+      }}
+    >
       <React.Suspense fallback={<div>Loading...</div>}>
         {children}
       </React.Suspense>

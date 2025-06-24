@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { toast } from "@/hooks/use-toast";
 import { NextSeo } from '@/components/NextSeo';
 import { Header } from "@/components/Header";
+import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
 
 const AUTO_SERVICE_TITLES = [
   "AI-Powered Customer Support",
@@ -246,7 +247,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
     <>
       <NextSeo title={seoTitle} description={seoDescription} />
       <Header />
-      <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+      <Suspense fallback={<ListingGridSkeleton />}> 
         <div className="min-h-screen bg-zion-blue">
           <div className="container mx-auto px-4 py-12">
           <div className="mb-4">
@@ -270,14 +271,12 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
           </div>
           
           {isLoading ? (
-            <div className="flex justify-center items-center h-64">
-              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-zion-purple"></div>
-            </div>
+            <ListingGridSkeleton />
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {listings.map((listing) => (
-                <ProductListingCard 
-                  key={listing.id} 
+                <ProductListingCard
+                  key={listing.id}
                   listing={listing}
                   onRequestQuote={handleRequestQuote} 
                 />
