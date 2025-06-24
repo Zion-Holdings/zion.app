@@ -63,6 +63,8 @@ export default function Fundraising() {
       const pdf = new jsPDF('landscape', 'pt', 'a4');
       for (let i = 0; i < slides.length; i++) {
         const slide = slides[i];
+        if (!slide) continue;
+        
         const slideElement = document.createElement('div');
         slideElement.style.width = '1024px';
         slideElement.style.height = '576px';
