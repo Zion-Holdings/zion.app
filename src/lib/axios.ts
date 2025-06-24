@@ -1,4 +1,3 @@
-
 import { safeStorage } from '@/utils/safeStorage';
 
 
@@ -151,7 +150,9 @@ export function create(config: { baseURL?: string; withCredentials?: boolean } =
     // Read authToken from cookies
     const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
       const [name, value] = cookie.split('=');
-      acc[name] = value;
+      if (name && value !== undefined) {
+        acc[name] = value;
+      }
       return acc;
     }, {} as Record<string, string>);
     const authToken =
