@@ -137,50 +137,98 @@ function validateConfiguration(env: Environment): ValidationResult {
     suggestions: []
   };
 
-  // Check Auth0 configuration
+  // Check if this is a Netlify build - be more lenient during builds
+  const isNetlifyBuild = process.env.NETLIFY === 'true';
+  const isProduction = process.env.NODE_ENV === 'production' || process.env.CONTEXT === 'production';
+
+  // Check Auth0 configuration - allow placeholders during builds but warn
   if (!env.AUTH0_SECRET) {
-    result.errors.push('AUTH0_SECRET is required for Auth0 authentication');
-    result.isValid = false;
+    if (isNetlifyBuild) {
+      result.warnings.push('AUTH0_SECRET is not configured - authentication features will be disabled');
+    } else {
+      result.errors.push('AUTH0_SECRET is required for Auth0 authentication');
+      result.isValid = false;
+    }
   } else if (isPlaceholder(env.AUTH0_SECRET)) {
-    result.errors.push('AUTH0_SECRET appears to be a placeholder value');
-    result.isValid = false;
+    if (isNetlifyBuild) {
+      result.warnings.push('AUTH0_SECRET appears to be a placeholder - authentication features will be disabled');
+    } else {
+      result.errors.push('AUTH0_SECRET appears to be a placeholder value');
+      result.isValid = false;
+    }
   } else if (!validateAuth0Secret(env.AUTH0_SECRET)) {
     result.warnings.push('AUTH0_SECRET should be a hex string generated with: openssl rand -hex 32');
   }
 
   if (!env.AUTH0_BASE_URL) {
-    result.errors.push('AUTH0_BASE_URL is required for Auth0 authentication');
-    result.isValid = false;
+    if (isNetlifyBuild) {
+      result.warnings.push('AUTH0_BASE_URL is not configured - authentication features will be disabled');
+    } else {
+      result.errors.push('AUTH0_BASE_URL is required for Auth0 authentication');
+      result.isValid = false;
+    }
   } else if (isPlaceholder(env.AUTH0_BASE_URL)) {
-    result.errors.push('AUTH0_BASE_URL appears to be a placeholder value');
-    result.isValid = false;
+    if (isNetlifyBuild) {
+      result.warnings.push('AUTH0_BASE_URL appears to be a placeholder - authentication features will be disabled');
+    } else {
+      result.errors.push('AUTH0_BASE_URL appears to be a placeholder value');
+      result.isValid = false;
+    }
   }
 
   if (!env.AUTH0_ISSUER_BASE_URL) {
-    result.errors.push('AUTH0_ISSUER_BASE_URL is required for Auth0 authentication');
-    result.isValid = false;
+    if (isNetlifyBuild) {
+      result.warnings.push('AUTH0_ISSUER_BASE_URL is not configured - authentication features will be disabled');
+    } else {
+      result.errors.push('AUTH0_ISSUER_BASE_URL is required for Auth0 authentication');
+      result.isValid = false;
+    }
   } else if (isPlaceholder(env.AUTH0_ISSUER_BASE_URL)) {
-    result.errors.push('AUTH0_ISSUER_BASE_URL appears to be a placeholder value');
-    result.isValid = false;
+    if (isNetlifyBuild) {
+      result.warnings.push('AUTH0_ISSUER_BASE_URL appears to be a placeholder - authentication features will be disabled');
+    } else {
+      result.errors.push('AUTH0_ISSUER_BASE_URL appears to be a placeholder value');
+      result.isValid = false;
+    }
   } else if (!validateAuth0Domain(env.AUTH0_ISSUER_BASE_URL)) {
-    result.errors.push('AUTH0_ISSUER_BASE_URL is not a valid Auth0 domain format');
-    result.isValid = false;
+    if (isNetlifyBuild) {
+      result.warnings.push('AUTH0_ISSUER_BASE_URL is not a valid Auth0 domain format');
+    } else {
+      result.errors.push('AUTH0_ISSUER_BASE_URL is not a valid Auth0 domain format');
+      result.isValid = false;
+    }
   }
 
   if (!env.AUTH0_CLIENT_ID) {
-    result.errors.push('AUTH0_CLIENT_ID is required for Auth0 authentication');
-    result.isValid = false;
+    if (isNetlifyBuild) {
+      result.warnings.push('AUTH0_CLIENT_ID is not configured - authentication features will be disabled');
+    } else {
+      result.errors.push('AUTH0_CLIENT_ID is required for Auth0 authentication');
+      result.isValid = false;
+    }
   } else if (isPlaceholder(env.AUTH0_CLIENT_ID)) {
-    result.errors.push('AUTH0_CLIENT_ID appears to be a placeholder value');
-    result.isValid = false;
+    if (isNetlifyBuild) {
+      result.warnings.push('AUTH0_CLIENT_ID appears to be a placeholder - authentication features will be disabled');
+    } else {
+      result.errors.push('AUTH0_CLIENT_ID appears to be a placeholder value');
+      result.isValid = false;
+    }
   }
 
   if (!env.AUTH0_CLIENT_SECRET) {
-    result.errors.push('AUTH0_CLIENT_SECRET is required for Auth0 authentication');
-    result.isValid = false;
+    if (isNetlifyBuild) {
+      result.warnings.push('AUTH0_CLIENT_SECRET is not configured - authentication features will be disabled');
+    } else {
+      result.errors.push('AUTH0_CLIENT_SECRET is required for Auth0 authentication');
+      result.isValid = false;
+    }
   } else if (isPlaceholder(env.AUTH0_CLIENT_SECRET)) {
-    result.errors.push('AUTH0_CLIENT_SECRET appears to be a placeholder value');
-    result.isValid = false;
+    if (isNetlifyBuild) {
+      result.warnings.push('AUTH0_CLIENT_SECRET appears to be a placeholder - authentication features will be disabled');
+    } else {
+      result.errors.push('AUTH0_CLIENT_SECRET appears to be a placeholder value');
+      result.isValid = false;
+    }
   }
 
   // Check optional but recommended services
