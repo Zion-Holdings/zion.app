@@ -103,7 +103,7 @@ const ForgotPassword = () => {
           )}
           <p className="mt-4 text-center text-sm">
             Remember your password?{' '}
-            <Link href="/login" className="underline">
+                          <Link href="/auth/login" className="underline">
               Login
             </Link>
           </p>

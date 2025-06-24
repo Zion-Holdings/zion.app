@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useMessaging } from '@/context/MessagingContext';
 import Link from 'next/link';
@@ -76,7 +75,7 @@ export function AppHeader() {
           {!isLoggedIn && (
             <div className="ml-4 relative z-10 flex items-center">
               <Link
-                href="/login"
+                href="/auth/login"
                 className="text-sm font-medium text-foreground/70 hover:text-foreground"
                 aria-label={t('auth.login')}
                 data-testid="login-link"

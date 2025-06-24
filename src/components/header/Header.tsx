@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Link from 'next/link';
 import { Logo } from './Logo';
@@ -86,7 +85,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           {!user && !hideLogin && (
             <>
               <Link
-                href="/login"
+                href="/auth/login"
                 prefetch={false}
                 className="text-sm text-white hover:text-zion-cyan"
                 aria-label="Login"

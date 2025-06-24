@@ -401,7 +401,7 @@ export default function ForumPostPage() {
               ) : (
                 <Alert>
                   <AlertDescription>
-                    Please <Link href="/login" className="font-medium text-zion-purple hover:underline">sign in</Link> to join the discussion.
+                    Please <Link href="/auth/login" className="font-medium text-zion-purple hover:underline">sign in</Link> to join the discussion.
                   </AlertDescription>
                 </Alert>
               )}

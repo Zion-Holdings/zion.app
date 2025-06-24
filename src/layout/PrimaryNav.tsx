@@ -145,7 +145,7 @@ export function PrimaryNav() {
               {!isLoggedIn && (
                 <>
                   <Link
-                    href="/login"
+                    href="/auth/login"
                     className="text-sm hover:text-primary whitespace-nowrap"
                     data-testid="login-link"
                   >
