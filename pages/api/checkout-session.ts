@@ -105,7 +105,7 @@ export default async function handler(
     }
 
     // Convert cart items to Stripe line items
-    const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = cartItems.map((item) => ({
+    const lineItems = cartItems.map((item) => ({
       price_data: {
         currency: 'usd',
         product_data: {
