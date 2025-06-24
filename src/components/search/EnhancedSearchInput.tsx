@@ -93,33 +93,33 @@ export function EnhancedSearchInput({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!isFocused && e.key !== 'Escape') {
-        return;
-    }
-
     switch (e.key) {
       case 'ArrowDown':
-        if (filteredSuggestions.length > 0) {
+        if (isFocused && filteredSuggestions.length > 0) {
           e.preventDefault();
           setHighlightedIndex(prev => (prev + 1) % filteredSuggestions.length);
         }
         break;
       case 'ArrowUp':
-        if (filteredSuggestions.length > 0) {
+        if (isFocused && filteredSuggestions.length > 0) {
           e.preventDefault();
           setHighlightedIndex(prev => (prev - 1 + filteredSuggestions.length) % filteredSuggestions.length);
         }
         break;
       case 'Enter':
-        if (highlightedIndex !== -1 && filteredSuggestions[highlightedIndex]) {
+        if (isFocused && highlightedIndex !== -1 && filteredSuggestions[highlightedIndex]) {
           e.preventDefault(); // Prevent form submission
           handleSelectSuggestion(filteredSuggestions[highlightedIndex]);
         } else if (value.trim()) {
           // Allow form submission when there's a value and no suggestion is selected
           // Don't prevent default - let the form handle submission
+          console.log('EnhancedSearchInput: Allowing form submission for query:', value);
           setIsFocused(false);
           setHighlightedIndex(-1);
           inputRef.current?.blur();
+        } else {
+          // Prevent empty form submission
+          e.preventDefault();
         }
         break;
       case 'Escape':

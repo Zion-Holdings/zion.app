@@ -51,7 +51,8 @@ export function PrimaryNav() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      router.push(`/search/${slugify(query)}`);
+      console.log('PrimaryNav search submit:', query);
+      router.push(`/search?q=${encodeURIComponent(query)}`);
       setQuery('');
     }
   };
@@ -80,6 +81,7 @@ export function PrimaryNav() {
                 value={query}
                 onChange={setQuery}
                 onSelectSuggestion={(sugg) => {
+                  console.log('PrimaryNav search suggestion selected:', sugg);
                   // Handle different suggestion types with proper navigation
                   if (sugg.id) {
                     // Product listings with IDs go to product detail page
@@ -91,9 +93,8 @@ export function PrimaryNav() {
                     // Blog posts navigate to blog detail page
                     router.push(`/blog/${sugg.slug}`);
                   } else {
-                    // Default: search results page
-                    const slug = sugg.slug || slugify(sugg.text);
-                    router.push(`/search/${slug}`);
+                    // Default: search results page with query parameter
+                    router.push(`/search?q=${encodeURIComponent(sugg.text)}`);
                   }
                   setQuery('');
                   

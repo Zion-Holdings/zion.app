@@ -19,6 +19,8 @@ interface SearchPageProps {
 
 export const getServerSideProps: GetServerSideProps<SearchPageProps> = async ({ query }: { query: { q?: string } }) => {
   const term = String(query.q ?? '').toLowerCase();
+  console.log('🔍 Search page getServerSideProps called with query:', { q: query.q, term });
+  
   const match = (text?: string) => text?.toLowerCase().includes(term);
 
   const [products, talent, posts, docs] = await Promise.all([
@@ -28,12 +30,28 @@ export const getServerSideProps: GetServerSideProps<SearchPageProps> = async ({ 
     Promise.resolve(DOCS_SEARCH_ITEMS.filter(d => match(d.text)))
   ]);
 
+  console.log('🔍 Search results:', { 
+    term, 
+    products: products.length, 
+    talent: talent.length, 
+    posts: posts.length, 
+    docs: docs.length 
+  });
+
   return { props: { products, talent, posts, docs, q: term } };
 };
 
 const SearchPage = ({ products, talent, posts, docs, q }: SearchPageProps) => {
+  console.log('🔍 SearchPage component rendered with:', { q, counts: { products: products.length, talent: talent.length, posts: posts.length, docs: docs.length } });
+  
   return (
     <div className="container mx-auto px-4 py-8">
+      <div className="mb-4">
+        <h1 className="text-2xl font-bold">Search Results for "{q}"</h1>
+        <p className="text-gray-600">
+          Found {products.length + talent.length + posts.length + docs.length} results
+        </p>
+      </div>
       <SearchTabs products={products} talent={talent} posts={posts} docs={docs} query={q} />
     </div>
   );
