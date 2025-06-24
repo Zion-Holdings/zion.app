@@ -93,9 +93,9 @@ function handleUnhandledRejection(event: PromiseRejectionEvent): void {
           if (line.includes('node_modules') || line.trim().startsWith('at <anonymous>') || line.trim().startsWith('at Object.BuiltinNama')) continue;
           const match = regex.exec(line.trim());
           if (match) {
-            filename = match[1].trim();
-            lineno = parseInt(match[2], 10);
-            colno = parseInt(match[3], 10);
+            filename = match[1]?.trim() || 'unknown';
+            lineno = parseInt(match[2] || '0', 10);
+            colno = parseInt(match[3] || '0', 10);
             break;
           }
         }
@@ -175,12 +175,12 @@ export function initializeGlobalErrorHandlers(): void {
 function parseStackTrace(stack: string) {
   const lines = stack.split('\n');
   const firstLine = lines[1] || lines[0];
-  const match = firstLine.match(/\((.*):(\d+):(\d+)\)/) || firstLine.match(/at (.*):(\d+):(\d+)/);
+  const match = firstLine?.match(/\((.*):(\d+):(\d+)\)/) || firstLine?.match(/at (.*):(\d+):(\d+)/);
   
   if (match) {
     const filename = match[1] || 'unknown';
-    const lineNumber = parseInt(match[2]) || 0;
-    const colNumber = parseInt(match[3]) || 0;
+    const lineNumber = parseInt(match[2] || '0', 10) || 0;
+    const colNumber = parseInt(match[3] || '0', 10) || 0;
     // ... rest of the function ...
   }
 }
