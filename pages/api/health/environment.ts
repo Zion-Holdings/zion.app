@@ -137,5 +137,5 @@ export default async function handler(
   const httpStatus = overallStatus === 'unhealthy' ? 503 : 
                     overallStatus === 'degraded' ? 200 : 200;
   
-  res.status(httpStatus).json(result);
+  return res.status(httpStatus).json(result);
 } 
