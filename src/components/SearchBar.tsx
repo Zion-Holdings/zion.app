@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions';
 import { fireEvent } from '@/lib/analytics';
 import { SearchSuggestion } from '@/types/search';
+import { slugify } from '@/lib/slugify';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';
 
@@ -78,8 +79,8 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
     onChange(suggestion.text);
     if (onSelectSuggestion) onSelectSuggestion(suggestion);
 
-    const searchParam = suggestion.slug || suggestion.text;
-    router.push(`/search?q=${encodeURIComponent(searchParam)}`);
+    const searchParam = suggestion.slug || slugify(suggestion.text);
+    router.push(`/search/${searchParam}`);
     fireEvent('search', { search_term: suggestion.text });
     setFocused(false);
     setHighlightedIndex(-1);
@@ -130,7 +131,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
               }
               if (e.key === 'Enter' && value) {
                 fireEvent('search', { search_term: value });
-                router.push(`/search?q=${encodeURIComponent(value)}`);
+                router.push(`/search/${slugify(value)}`);
                 setFocused(false);
                 inputRef.current?.blur();
               }
@@ -152,7 +153,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
                   handleSelect(suggestions[highlightedIndex]);
                 } else if (value) {
                   fireEvent('search', { search_term: value });
-                  router.push(`/search?q=${encodeURIComponent(value)}`);
+                  router.push(`/search/${slugify(value)}`);
                   setFocused(false);
                   inputRef.current?.blur();
                 }
