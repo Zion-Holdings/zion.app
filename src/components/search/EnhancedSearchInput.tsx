@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { AutocompleteSuggestions } from "@/components/search/AutocompleteSuggestions"; 
+import { AutocompleteSuggestions } from "@/components/search/AutocompleteSuggestions";
 import { SearchSuggestion } from "@/types/search";
-import debounce from 'lodash.debounce';
+import { useDebounce } from "@/hooks/useDebounce";
 
 interface EnhancedSearchInputProps {
   value: string;
@@ -14,7 +14,11 @@ interface EnhancedSearchInputProps {
    */
   onSelectSuggestion?: (suggestion: SearchSuggestion) => void;
   placeholder?: string;
-  searchSuggestions: SearchSuggestion[];
+  /**
+   * Optional list of fallback suggestions (e.g. recent searches).
+   * If provided, these will be shown when the input is empty.
+   */
+  searchSuggestions?: SearchSuggestion[];
 }
 
 export function EnhancedSearchInput({
@@ -32,38 +36,39 @@ export function EnhancedSearchInput({
   const [valueOnFocus, setValueOnFocus] = useState<string | null>(null);
   const [enterHandledPostFocus, setEnterHandledPostFocus] = useState(false);
 
-  const debouncedFilterSuggestions = useCallback(
-    debounce((currentValue: string, suggestions: SearchSuggestion[]) => {
-      if (!currentValue) {
-        // Show recent searches when input is empty
-        setFilteredSuggestions(suggestions.filter(s => s.type === 'recent'));
-        return;
-      }
+  const debounced = useDebounce(value, 200);
 
-      const filtered = suggestions.filter(suggestion =>
-        suggestion.text.toLowerCase().includes(currentValue.toLowerCase())
-      );
-
-      // Sort suggestions to prioritize those that start with the search term
-      filtered.sort((a, b) => {
-        const aStartsWith = a.text.toLowerCase().startsWith(currentValue.toLowerCase()) ? -1 : 0;
-        const bStartsWith = b.text.toLowerCase().startsWith(currentValue.toLowerCase()) ? -1 : 0;
-        return aStartsWith - bStartsWith;
-      });
-
-      setFilteredSuggestions(filtered.slice(0, 8)); // Limit to 8 suggestions
-    }, 300),
-    [] // setFilteredSuggestions is stable
-  );
-
-  // Filter suggestions based on input value
+  // Fetch suggestions from API when input value changes
   useEffect(() => {
-    debouncedFilterSuggestions(value, searchSuggestions);
-    setHighlightedIndex(-1); // Reset highlighted index when value changes
-    return () => {
-      debouncedFilterSuggestions.cancel();
-    };
-  }, [value, searchSuggestions, debouncedFilterSuggestions]);
+    if (!debounced) {
+      // Show recent suggestions provided via props when no query entered
+      setFilteredSuggestions(
+        (searchSuggestions || []).filter(s => s.type === 'recent')
+      );
+      setHighlightedIndex(-1);
+      return;
+    }
+
+    const controller = new AbortController();
+    fetch(`/api/search/suggest?q=${encodeURIComponent(debounced)}`, {
+      signal: controller.signal
+    })
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch suggestions');
+        return res.json();
+      })
+      .then(data => {
+        if (Array.isArray(data)) {
+          setFilteredSuggestions(data.slice(0, 8));
+        } else {
+          setFilteredSuggestions([]);
+        }
+        setHighlightedIndex(-1);
+      })
+      .catch(() => setFilteredSuggestions([]));
+
+    return () => controller.abort();
+  }, [debounced, searchSuggestions]);
 
   // Handle clicks outside the component to close suggestions
   useEffect(() => {

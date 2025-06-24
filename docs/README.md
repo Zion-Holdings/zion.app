@@ -8,6 +8,7 @@ This folder contains various guides and references for the Zion application. Bel
 - [Performance Monitoring](./PerformanceMonitoring.md)
 - [Marketplace API Integration](./MARKETPLACE_API_INTEGRATION.md)
 - [Frontend State Management Guidelines](./frontend_state_management_guidelines.md)
+- [Public API Documentation](./public-api/README.md)
 
 Additional documents cover troubleshooting guides, internal protocols and other topics. Browse the files in this folder for more details.
 

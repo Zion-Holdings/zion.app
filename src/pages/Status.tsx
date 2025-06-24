@@ -41,6 +41,7 @@ const FALLBACK_SERVICES: ServiceStatus[] = [
 export default function Status() {
   const [externalStatusLoaded, setExternalStatusLoaded] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
+  const [uptime, setUptime] = useState<number | null>(null);
   const statusUrl = process.env.NEXT_PUBLIC_STATUS_PAGE_URL || "https://status.ziontechgroup.com";
 
   useEffect(() => {
@@ -53,6 +54,22 @@ export default function Status() {
 
     return () => clearTimeout(timeout);
   }, [externalStatusLoaded]);
+
+  useEffect(() => {
+    async function fetchUptime() {
+      try {
+        const res = await fetch('/api/health');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (typeof data.uptime === 'number') {
+          setUptime(data.uptime);
+        }
+      } catch (err) {
+        console.warn('Failed to fetch uptime', err);
+      }
+    }
+    fetchUptime();
+  }, []);
 
   const getStatusIcon = (status: ServiceStatus['status']) => {
     switch (status) {
@@ -99,6 +116,17 @@ export default function Status() {
     }
   };
 
+  const formatUptime = (seconds: number) => {
+    const days = Math.floor(seconds / 86400);
+    const hours = Math.floor((seconds % 86400) / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const parts: string[] = [];
+    if (days > 0) parts.push(`${days}d`);
+    if (hours > 0) parts.push(`${hours}h`);
+    parts.push(`${minutes}m`);
+    return parts.join(' ');
+  };
+
   return (
     <>
       <SEO
@@ -113,6 +141,9 @@ export default function Status() {
             <p className="text-zion-slate-light text-lg">
               Real-time monitoring of Zion platform services
             </p>
+            {uptime !== null && (
+              <p className="text-zion-slate-light text-sm mt-2">Uptime: {formatUptime(uptime)}</p>
+            )}
           </div>
 
           {!showFallback && (

@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
-import { Gift, Star, Users, ShoppingBag, MessageSquare, TrendingUp } from 'lucide-react';
+import {
+  Gift,
+  Star,
+  Users,
+  ShoppingBag,
+  MessageSquare,
+  TrendingUp,
+  History,
+} from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { usePoints } from '@/hooks/usePoints';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { formatDistanceToNow } from 'date-fns';
 import Link from 'next/link';
 import { LoginModal } from '@/components/auth/LoginModal';
 
 export default function PointsPage() {
   const { isAuthenticated } = useAuth();
-  const { balance, loading } = usePoints();
+  const { ledger, balance, loading } = usePoints();
   const [loginOpen, setLoginOpen] = useState(false);
 
   const earningOpportunities = [
@@ -201,6 +211,43 @@ export default function PointsPage() {
           </CardContent>
         </Card>
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <History className="h-5 w-5" />
+            Points History
+          </CardTitle>
+          <CardDescription>Your recent points activity</CardDescription>
+        </CardHeader>
+        <CardContent>
+          {ledger.length === 0 ? (
+            <p className="text-center py-8 text-muted-foreground">No points activity yet.</p>
+          ) : (
+            <ScrollArea className="h-64">
+              <div className="space-y-2 mt-2">
+                {ledger.map(entry => (
+                  <div key={entry.id} className="flex items-center justify-between py-2 border-b">
+                    <div>
+                      <p className="font-medium capitalize">{entry.reason || 'adjustment'}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {formatDistanceToNow(new Date(entry.created_at), { addSuffix: true })}
+                      </p>
+                    </div>
+                    <Badge
+                      variant="outline"
+                      className={entry.delta >= 0 ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}
+                    >
+                      {entry.delta >= 0 ? '+' : ''}
+                      {entry.delta} pts
+                    </Badge>
+                  </div>
+                ))}
+              </div>
+            </ScrollArea>
+          )}
+        </CardContent>
+      </Card>
 
       <Card className="text-center">
         <CardContent className="pt-6">
