@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'; // Changed from useParams
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { NEW_PRODUCTS } from '@/data/newProductsData';
 import { useCart } from '@/context/CartContext';
@@ -75,6 +76,16 @@ export default function ProductPage() {
       />
       <div className="min-h-screen bg-zion-blue p-6 text-white">
         <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
+        {product.images?.length ? (
+          <div className="mb-4 relative w-full h-64">
+            <Image
+              src={product.images[0]}
+              alt={product.title}
+              fill
+              className="object-cover rounded-md"
+            />
+          </div>
+        ) : null}
         <p className="mb-6">{product.description}</p>
         <Button onClick={handleAdd} disabled={adding || inCart}>
           {inCart ? 'In Cart' : adding ? 'Adding...' : 'Add to Cart'}
