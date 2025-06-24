@@ -1,4 +1,3 @@
-
 {
   "general": {
     "app_name": "Zion AI Marketplace",
@@ -24,10 +23,20 @@
   "nav": {
     "home": "Home",
     "marketplace": "Marketplace",
+    "marketplace_overview": "Overview",
     "categories": "Categories",
     "talent": "Talent",
     "equipment": "Equipment",
     "community": "Community",
+    "community_overview": "Overview",
+    "blog": "Blog",
+    "partners": "Partners",
+    "resources": "Resources",
+    "docs": "Docs",
+    "tutorials": "Tutorials",
+    "case_studies": "Case Studies",
+    "about": "About",
+    "cart": "Cart",
     "dashboard": "Dashboard",
     "messages": "Messages",
     "post_job": "Post Job",
@@ -271,5 +280,7 @@
         "content": "If you have questions about these Terms of Service, contact us at <a href=\"mailto:support@ziontechgroup.com\">support@ziontechgroup.com</a>."
       }
     }
-  }
+  },
+  "login": "Login",
+  "signup": "Sign up"
 }
