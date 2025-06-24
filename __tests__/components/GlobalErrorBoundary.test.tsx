@@ -62,9 +62,9 @@ describe('GlobalErrorBoundary', () => {
 
     // Mock window.location.reload
     const originalLocation = window.location;
-    // @ts-ignore
+    // @ts-expect-error - Intentionally deleting window.location for test mocking
     delete window.location;
-    // @ts-ignore
+    // Intentionally overriding window.location with mock for testing
     window.location = { ...originalLocation, reload: jest.fn() };
 
     render(
