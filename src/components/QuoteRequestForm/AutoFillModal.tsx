@@ -37,6 +37,7 @@ export function AutoFillModal({
     if (!loading) {
       setProgress(100);
     }
+    return undefined;
   }, [loading]);
 
   const handleSubmit = () => {
