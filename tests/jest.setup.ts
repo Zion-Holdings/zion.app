@@ -45,7 +45,6 @@ Object.defineProperty(window, 'matchMedia', {
 });
 
 // Mock import.meta.env for Jest - This was ineffective for the SyntaxError
-// @ts-expect-error
 // global.import = {
 //   // @ts-expect-error
 //   meta: {
@@ -199,7 +198,6 @@ global.ResizeObserver = jest.fn().mockImplementation(() => ({
 
 // Polyfill for URL.revokeObjectURL
 if (typeof URL.revokeObjectURL === 'undefined') {
-  // @ts-expect-error
   URL.revokeObjectURL = jest.fn();
 }
 
