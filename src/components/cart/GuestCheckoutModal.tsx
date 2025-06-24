@@ -1,116 +1,133 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm, type ControllerRenderProps } from 'react-hook-form';
-import { z } from 'zod';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogFooter,
 } from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import {
-  Form,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormMessage,
-} from '@/components/ui/form';
+import { User, Mail, MapPin, CreditCard } from 'lucide-react';
 import { isProdDomain } from '@/utils/getStripe';
 
 interface GuestCheckoutModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  onSubmit: (data: { email: string; address: string }) => void;
+  onSubmit: (details: { email: string; address: string }) => void;
 }
 
-const schema = z.object({
-  email: z.string().email('Enter a valid email'),
-  address: z.string().min(1, 'Address is required'),
-});
+export default function GuestCheckoutModal({
+  open,
+  onOpenChange,
+  onSubmit,
+}: GuestCheckoutModalProps) {
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-type FormValues = z.infer<typeof schema>;
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !address) {
+      alert('Please fill in all required fields');
+      return;
+    }
 
-export function GuestCheckoutModal({ open, onOpenChange, onSubmit }: GuestCheckoutModalProps) {
-  const form = useForm<FormValues>({ resolver: zodResolver(schema), mode: 'onChange' });
-
-  const handleSubmit = (values: FormValues) => {
-    onSubmit(values);
+    setIsSubmitting(true);
+    try {
+      onSubmit({ email, address });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-zion-blue border-zion-blue-light text-white">
+      <DialogContent className="bg-zion-blue border-zion-cyan/20 max-w-md">
         <DialogHeader>
-          <DialogTitle>Guest Checkout</DialogTitle>
+          <DialogTitle className="text-white flex items-center gap-2">
+            <User className="h-5 w-5 text-zion-cyan" />
+            Guest Checkout
+          </DialogTitle>
+          <DialogDescription className="text-zion-slate-light">
+            Enter your details to complete your purchase as a guest.
+          </DialogDescription>
         </DialogHeader>
+
         {!isProdDomain() && (
           <div className="rounded-md bg-amber-500/20 p-2 text-center text-amber-400">
             Pay with test data – use card 4242 4242 4242 4242 and any future date.
           </div>
         )}
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(handleSubmit, (errors) => {
-            const firstError = Object.keys(errors)[0] as keyof FormValues | undefined;
-            if (firstError) {
-              form.setFocus(firstError);
-            }
-          })} className="space-y-4">
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }: { field: ControllerRenderProps<FormValues, 'email'> }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="Email"
-                      className="guest-checkout-modal-input"
-                      {...field}
-                      onChange={(e) => {
-                        const value = e.target.value;
-                        const normalized = value.replace(/@{2,}/g, '@');
-                        if (normalized !== value) {
-                          alert("Original email contained '@@'");
-                        }
-                        field.onChange(normalized);
-                      }}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="guest-email" className="text-white flex items-center gap-2">
+              <Mail className="h-4 w-4 text-zion-cyan" />
+              Email Address
+            </Label>
+            <Input
+              id="guest-email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your.email@example.com"
+              required
+              className="bg-zion-blue-light border-zion-cyan/30 text-white placeholder:text-zion-slate-light"
             />
-            <FormField
-              control={form.control}
-              name="address"
-              render={({ field }: { field: ControllerRenderProps<FormValues, 'address'> }) => (
-                <FormItem>
-                  <FormLabel>Shipping Address</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Shipping Address"
-                      className="guest-checkout-modal-input"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="guest-address" className="text-white flex items-center gap-2">
+              <MapPin className="h-4 w-4 text-zion-cyan" />
+              Shipping Address
+            </Label>
+            <Textarea
+              id="guest-address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              placeholder="Enter your full shipping address..."
+              required
+              className="bg-zion-blue-light border-zion-cyan/30 text-white placeholder:text-zion-slate-light min-h-[80px]"
             />
-            <DialogFooter>
-              <Button type="submit" className="w-full" disabled={!form.formState.isValid}>
-                Continue to Payment
-              </Button>
-            </DialogFooter>
-          </form>
-        </Form>
+          </div>
+
+          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3">
+            <p className="text-yellow-400 text-sm">
+              💡 Creating an account allows you to track your order and checkout faster next time.
+            </p>
+          </div>
+
+          <DialogFooter className="space-x-2">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => onOpenChange(false)}
+              className="border-zion-cyan/30 text-zion-slate-light hover:bg-zion-cyan/10"
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              disabled={isSubmitting || !email || !address}
+              className="bg-zion-cyan hover:bg-zion-cyan/90 text-zion-blue"
+            >
+              {isSubmitting ? (
+                'Processing...'
+              ) : (
+                <>
+                  <CreditCard className="h-4 w-4 mr-2" />
+                  Continue to Payment
+                </>
+              )}
+            </Button>
+          </DialogFooter>
+        </form>
       </DialogContent>
     </Dialog>
   );
 }
-
-export default GuestCheckoutModal;

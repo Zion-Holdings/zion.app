@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp, Filter, SortAsc, Zap, TrendingUp, Star, ShoppingCart, MapPin, Package } from 'lucide-react';
+import { ArrowUp, Filter, SortAsc, Zap, TrendingUp, Star, ShoppingCart, MapPin, Package, AlertTriangle, RefreshCw } from 'lucide-react';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { generateDatacenterEquipment, getEquipmentMarketStats, getRecommendedEquipment } from '@/utils/equipmentAutoFeedAlgorithm';
 import { ProductListing } from '@/types/listings';
@@ -10,8 +10,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
+import { EquipmentErrorBoundary } from '@/components/EquipmentErrorBoundary';
 
-// Sample equipment listings to start with
+// Enhanced initial equipment with more variety
 const INITIAL_EQUIPMENT: ProductListing[] = [
   {
     id: "nvidia-a100-server",
@@ -29,6 +30,42 @@ const INITIAL_EQUIPMENT: ProductListing[] = [
     rating: 4.9,
     reviewCount: 27,
     location: "Santa Clara, CA",
+    availability: "In Stock"
+  },
+  {
+    id: "dell-poweredge-r750",
+    title: "Dell PowerEdge R750 Server",
+    description: "2U rack server with dual Intel Xeon processors, enterprise-grade performance for virtualization workloads.",
+    category: "Servers & Compute",
+    price: 12500,
+    currency: "$",
+    brand: "Dell",
+    specifications: ["2U Rack", "Dual Xeon", "128GB RAM", "2TB SSD"],
+    tags: ["Server", "Enterprise", "Virtualization"],
+    author: { name: "Dell", id: "dell" },
+    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-12T14:20:00.000Z",
+    rating: 4.7,
+    reviewCount: 34,
+    location: "Austin, TX",
+    availability: "In Stock"
+  },
+  {
+    id: "cisco-nexus-9k",
+    title: "Cisco Nexus 9000 Switch",
+    description: "High-performance datacenter switch with 100GbE ports for modern cloud infrastructure.",
+    category: "Networking",
+    price: 18500,
+    currency: "$",
+    brand: "Cisco",
+    specifications: ["48x 100GbE", "QSFP28", "Line Rate"],
+    tags: ["Switch", "100GbE", "Datacenter"],
+    author: { name: "Cisco", id: "cisco" },
+    images: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-10T09:15:00.000Z",
+    rating: 4.8,
+    reviewCount: 19,
+    location: "San Jose, CA",
     availability: "In Stock"
   }
 ];
@@ -139,65 +176,94 @@ const EquipmentLoadingGrid = ({ count = 8 }: { count?: number }) => (
   </div>
 );
 
+// Error fallback component
+function EquipmentErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
+  return (
+    <div className="container py-8">
+      <Card className="border-red-200 bg-red-50">
+        <CardContent className="p-8 text-center">
+          <AlertTriangle className="mx-auto mb-4 h-12 w-12 text-red-600" />
+          <h2 className="text-2xl font-bold text-red-900 mb-2">Something went wrong</h2>
+          <p className="text-red-700 mb-4">
+            We're having trouble loading the equipment listings. This might be a temporary issue.
+          </p>
+          <div className="flex gap-2 justify-center">
+            <Button onClick={resetErrorBoundary} variant="outline">
+              <RefreshCw className="h-4 w-4 mr-2" />
+              Try Again
+            </Button>
+            <Button onClick={() => window.location.reload()} variant="default">
+              Refresh Page
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
 // Main component
-export default function EquipmentPage() {
+function EquipmentPageContent() {
   const router = useRouter();
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
 
-  // Define a constant for the size of the virtual dataset
-  const VIRTUAL_DATASET_SIZE = 200;
+  // Generate a consistent seed based on current filters for deterministic data
+  const dataSeed = useMemo(() => {
+    return `equipment-${filterCategory}-${showRecommended}`;
+  }, [filterCategory, showRecommended]);
 
   const fetchEquipment = useCallback(async (page: number, limit: number) => {
-    await new Promise(resolve => setTimeout(resolve, 400)); // Simulate API delay
+    // Simulate realistic API delay
+    await new Promise(resolve => setTimeout(resolve, 300));
 
-    // 1. Generate a larger, consistent "virtual" dataset
-    // This dataset is regenerated on each call but will be consistent if inputs to generateDatacenterEquipment are consistent.
-    // For a true backend, this would be a single dataset you query.
-    // Here, we simulate it for each fetch based on current filters potentially changing the "base" data.
-    // However, for this specific implementation, we'll generate it once conceptually per "overall list view".
-    // The key is that filtering/sorting happens on this larger set.
-    
-    const baseVirtualEquipment = generateDatacenterEquipment(VIRTUAL_DATASET_SIZE, INITIAL_EQUIPMENT.length);
-    const fullVirtualDataset: ProductListing[] = [...INITIAL_EQUIPMENT, ...baseVirtualEquipment];
+    try {
+      // Generate consistent virtual dataset using the seed
+      const VIRTUAL_DATASET_SIZE = 150;
+      const baseVirtualEquipment = generateDatacenterEquipment(VIRTUAL_DATASET_SIZE, INITIAL_EQUIPMENT.length, dataSeed);
+      const fullVirtualDataset: ProductListing[] = [...INITIAL_EQUIPMENT, ...baseVirtualEquipment];
 
-    // 2. Apply category filtering
-    let processedDataset = fullVirtualDataset;
-    if (filterCategory) {
-      processedDataset = processedDataset.filter(e => e.category === filterCategory);
-    }
-
-    // 3. Apply recommended filtering
-    if (showRecommended) {
-      processedDataset = getRecommendedEquipment(processedDataset);
-    }
-
-    // 4. Sort the processed dataset
-    processedDataset.sort((a, b) => {
-      switch (sortBy) {
-        case 'price-low':
-          return (a.price || 0) - (b.price || 0);
-        case 'price-high':
-          return (b.price || 0) - (a.price || 0);
-        case 'rating':
-          return (b.rating || 0) - (a.rating || 0);
-        default: // 'newest'
-          return new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime();
+      // Apply category filtering
+      let processedDataset = fullVirtualDataset;
+      if (filterCategory) {
+        processedDataset = processedDataset.filter(e => e.category === filterCategory);
       }
-    });
 
-    // 5. Slice for pagination
-    const startIndex = (page - 1) * limit;
-    const endIndex = startIndex + limit;
-    const items = processedDataset.slice(startIndex, endIndex);
+      // Apply recommended filtering
+      if (showRecommended) {
+        processedDataset = getRecommendedEquipment(processedDataset);
+      }
 
-    return {
-      items,
-      hasMore: endIndex < processedDataset.length,
-      total: processedDataset.length
-    };
-  }, [sortBy, filterCategory, showRecommended]); // totalGenerated removed
+      // Sort the processed dataset
+      processedDataset.sort((a, b) => {
+        switch (sortBy) {
+          case 'price-low':
+            return (a.price || 0) - (b.price || 0);
+          case 'price-high':
+            return (b.price || 0) - (a.price || 0);
+          case 'rating':
+            return (b.rating || 0) - (a.rating || 0);
+          default: // 'newest'
+            return new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime();
+        }
+      });
+
+      // Slice for pagination
+      const startIndex = (page - 1) * limit;
+      const endIndex = startIndex + limit;
+      const items = processedDataset.slice(startIndex, endIndex);
+
+      return {
+        items,
+        hasMore: endIndex < processedDataset.length,
+        total: processedDataset.length
+      };
+    } catch (error) {
+      console.error('Error in fetchEquipment:', error);
+      throw new Error('Failed to load equipment data. Please try again.');
+    }
+  }, [sortBy, filterCategory, showRecommended, dataSeed]);
 
   const {
     items: equipment,
@@ -212,10 +278,14 @@ export default function EquipmentPage() {
     loadMore
   } = useInfiniteScrollPagination(fetchEquipment, 12);
 
+  // Refresh when filters change
   useEffect(() => {
-    refresh();
-    // setTotalGenerated(0); // Removed as totalGenerated state is removed
-  }, [sortBy, filterCategory, showRecommended]);
+    const timeoutId = setTimeout(() => {
+      refresh();
+    }, 100); // Small delay to prevent rapid successive refreshes
+
+    return () => clearTimeout(timeoutId);
+  }, [sortBy, filterCategory, showRecommended, refresh]);
 
   const marketStats = useMemo(() => {
     if (equipment.length === 0) return null;
@@ -223,8 +293,9 @@ export default function EquipmentPage() {
   }, [equipment]);
 
   const categories = useMemo(() => {
-    return Array.from(new Set(equipment.map(e => e.category).filter(Boolean)));
-  }, [equipment]);
+    // Use all possible categories, not just from current items
+    return ["AI Hardware", "Servers & Compute", "Networking", "Storage Systems", "Power & Cooling"];
+  }, []);
 
   const [showScrollTop, setShowScrollTop] = useState(false);
   useEffect(() => {
@@ -233,6 +304,7 @@ export default function EquipmentPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Loading state
   if (loading && equipment.length === 0) {
     return (
       <div className="container py-8">
@@ -247,13 +319,23 @@ export default function EquipmentPage() {
     );
   }
 
-  if (error) {
+  // Error state
+  if (error && equipment.length === 0) {
     return (
       <div className="container py-8">
         <div className="text-center space-y-4">
+          <AlertTriangle className="mx-auto h-12 w-12 text-red-500" />
           <h2 className="text-2xl font-bold">Unable to load equipment</h2>
-          <p className="text-muted-foreground">{error}</p>
-          <Button onClick={refresh}>Try Again</Button>
+          <p className="text-muted-foreground max-w-md mx-auto">{error}</p>
+          <div className="flex gap-2 justify-center">
+            <Button onClick={refresh} variant="outline">
+              <RefreshCw className="h-4 w-4 mr-2" />
+              Try Again
+            </Button>
+            <Button onClick={() => window.location.reload()}>
+              Refresh Page
+            </Button>
+          </div>
         </div>
       </div>
     );
@@ -291,9 +373,13 @@ export default function EquipmentPage() {
         <AnimatePresence mode="popLayout">
           {equipment.map((item, index) => (
             <motion.div
-              key={item.id} ref={index === equipment.length - 1 ? lastElementRef : null}
-              initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ delay: Math.min(index * 0.03, 0.5) }} whileHover={{ scale: 1.02 }}
+              key={item.id} 
+              ref={index === equipment.length - 1 ? lastElementRef : null}
+              initial={{ opacity: 0, scale: 0.9 }} 
+              animate={{ opacity: 1, scale: 1 }} 
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ delay: Math.min(index * 0.03, 0.5) }} 
+              whileHover={{ scale: 1.02 }}
             >
               <EquipmentCard
                 equipment={item}
@@ -313,18 +399,20 @@ export default function EquipmentPage() {
         </AnimatePresence>
       </motion.div>
 
-      {(isFetching || loading) && (
+      {(isFetching || loading) && equipment.length > 0 && (
         <motion.div className="mt-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <EquipmentLoadingGrid count={4} />
         </motion.div>
       )}
 
-      {hasMore && (
+      {hasMore && !loading && (
         <div className="text-center mt-8">
           {isFetching ? (
             <Spinner className="mx-auto h-6 w-6" />
           ) : (
-            <Button onClick={loadMore}>Load More</Button>
+            <Button onClick={loadMore} variant="outline" size="lg">
+              Load More Equipment
+            </Button>
           )}
           {total !== undefined && (
             <p className="mt-2 text-sm text-muted-foreground">
@@ -343,14 +431,28 @@ export default function EquipmentPage() {
 
       <AnimatePresence>
         {showScrollTop && (
-          <motion.button onClick={scrollToTop} className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary/90 rounded-full shadow-lg z-50"
-            initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0 }}
-            whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+          <motion.button 
+            onClick={scrollToTop} 
+            className="fixed bottom-8 right-8 p-3 bg-primary hover:bg-primary/90 rounded-full shadow-lg z-50"
+            initial={{ opacity: 0, scale: 0 }} 
+            animate={{ opacity: 1, scale: 1 }} 
+            exit={{ opacity: 0, scale: 0 }}
+            whileHover={{ scale: 1.1 }} 
+            whileTap={{ scale: 0.9 }}
           >
             <ArrowUp className="h-5 w-5 text-primary-foreground" />
           </motion.button>
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+// Main export with error boundary
+export default function EquipmentPage() {
+  return (
+    <EquipmentErrorBoundary>
+      <EquipmentPageContent />
+    </EquipmentErrorBoundary>
   );
 }

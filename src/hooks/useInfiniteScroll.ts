@@ -29,7 +29,7 @@ export function useInfiniteScroll(
 
   const [isFetching, setIsFetching] = useState(false);
   const observer = useRef<IntersectionObserver | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   
   // Cleanup timeout on unmount
   useEffect(() => {
@@ -116,9 +116,11 @@ export function useInfiniteScrollPagination<T>(
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [total, setTotal] = useState<number | undefined>();
+  const [isInitialized, setIsInitialized] = useState(false);
+  const isResetting = useRef(false);
 
   const loadMore = useCallback(async () => {
-    if (loading || !hasMore) return;
+    if (loading || !hasMore || isResetting.current) return;
 
     setLoading(true);
     setError(null);
@@ -126,14 +128,22 @@ export function useInfiniteScrollPagination<T>(
     try {
       const result = await fetchFunction(page, initialLimit);
       
-      setItems(prevItems => [...prevItems, ...result.items]);
+      if (page === 1) {
+        // First page - replace items
+        setItems(result.items);
+      } else {
+        // Subsequent pages - append items
+        setItems((prevItems: T[]) => [...prevItems, ...result.items]);
+      }
+      
       setHasMore(result.hasMore);
-      setPage(prevPage => prevPage + 1);
+      setPage((prevPage: number) => prevPage + 1);
       
       if (result.total !== undefined) {
         setTotal(result.total);
       }
     } catch (err) {
+      console.error('Error loading equipment:', err);
       setError(err instanceof Error ? err.message : 'Failed to load more items');
     } finally {
       setLoading(false);
@@ -141,25 +151,48 @@ export function useInfiniteScrollPagination<T>(
   }, [fetchFunction, page, initialLimit, loading, hasMore]);
 
   const reset = useCallback(() => {
+    isResetting.current = true;
     setItems([]);
     setPage(1);
     setHasMore(true);
     setLoading(false);
     setError(null);
     setTotal(undefined);
+    setIsInitialized(false);
+    // Small delay to prevent race conditions
+    setTimeout(() => {
+      isResetting.current = false;
+    }, 100);
   }, []);
 
   const refresh = useCallback(async () => {
     reset();
-    await loadMore();
-  }, [reset, loadMore]);
-
-  // Load initial page
-  useEffect(() => {
-    if (items.length === 0 && !loading) {
-      loadMore();
+    // Wait for reset to complete
+    await new Promise(resolve => setTimeout(resolve, 150));
+    try {
+      setLoading(true);
+      const result = await fetchFunction(1, initialLimit);
+      setItems(result.items);
+      setHasMore(result.hasMore);
+      setPage(2); // Next page will be 2
+      if (result.total !== undefined) {
+        setTotal(result.total);
+      }
+      setIsInitialized(true);
+    } catch (err) {
+      console.error('Error refreshing equipment:', err);
+      setError(err instanceof Error ? err.message : 'Failed to refresh items');
+    } finally {
+      setLoading(false);
     }
-  }, []);
+  }, [fetchFunction, initialLimit, reset]);
+
+  // Load initial page only once
+  useEffect(() => {
+    if (!isInitialized && !loading && !isResetting.current) {
+      refresh();
+    }
+  }, [isInitialized, loading, refresh]);
 
   const infiniteScrollProps = useInfiniteScroll(loadMore, {
     hasMore,

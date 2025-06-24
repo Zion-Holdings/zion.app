@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { NextSeo } from '@/components/NextSeo';
@@ -6,12 +5,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-react";
+import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock, AlertTriangle, ArrowLeft } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { getStripe } from "@/utils/getStripe";
 import { useCart } from '@/context/CartContext';
 import { equipmentListings } from '@/data/equipmentData';
+import { ProductListing } from '@/types/listings';
+import { motion } from 'framer-motion';
 
 interface EquipmentSpecification {
   name: string;
@@ -38,26 +39,36 @@ interface EquipmentDetails {
   returnPolicy?: string;
 }
 
+// Convert ProductListing to EquipmentDetails format
+function convertProductListingToEquipmentDetails(item: ProductListing): EquipmentDetails {
+  return {
+    id: item.id,
+    name: item.title,
+    description: item.description,
+    brand: item.brand || 'Unknown',
+    category: item.category,
+    subcategory: item.subcategory,
+    images: item.images || ['https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500'],
+    price: item.price || 0,
+    currency: item.currency || '$',
+    rating: item.rating,
+    reviewCount: item.reviewCount,
+    inStock: item.availability === 'In Stock' || !item.availability,
+    expectedShipping: item.availability || 'In Stock',
+    specifications: (item.specifications || []).map((spec) => ({ 
+      name: spec, 
+      value: '' 
+    })),
+    features: item.tags || [],
+    warranty: '1 Year Manufacturer Warranty',
+    returnPolicy: '30-day return policy'
+  };
+}
+
 // Build sample data from the shared equipment listings
 export const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } =
   equipmentListings.reduce((acc, item) => {
-    acc[item.id] = {
-      id: item.id,
-      name: item.title,
-      description: item.description,
-      brand: item.brand ?? '',
-      category: item.category,
-      subcategory: item.subcategory,
-      images: item.images,
-      price: item.price ?? 0,
-      currency: item.currency,
-      rating: item.rating,
-      reviewCount: item.reviewCount,
-      inStock: true,
-      expectedShipping: item.availability,
-      specifications: (item.specifications || []).map((s) => ({ name: s, value: '' })),
-      features: [],
-    };
+    acc[item.id] = convertProductListingToEquipmentDetails(item);
     return acc;
   }, {} as { [key: string]: EquipmentDetails });
 
@@ -69,29 +80,130 @@ export default function EquipmentDetail() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const equipmentFromSample = id ? SAMPLE_EQUIPMENT[id] : undefined;
-  const [equipment, setEquipment] = useState<EquipmentDetails | undefined>(equipmentFromSample);
+  const [equipment, setEquipment] = useState<EquipmentDetails | undefined>();
 
   useEffect(() => {
-    if (!id) return;
-    if (equipmentFromSample) {
-      setEquipment(equipmentFromSample);
-      return;
-    }
-    if (typeof window !== 'undefined') {
+    async function loadEquipment() {
+      if (!id) {
+        setLoading(false);
+        setError('No equipment ID provided');
+        return;
+      }
+
       try {
-        const stored = sessionStorage.getItem(`equipment:${id}`);
-        if (stored) {
-          setEquipment(JSON.parse(stored));
+        setLoading(true);
+        setError(null);
+
+        // Try to find in static data first
+        const equipmentFromSample = SAMPLE_EQUIPMENT[id];
+        if (equipmentFromSample) {
+          setEquipment(equipmentFromSample);
+          setLoading(false);
+          return;
         }
-      } catch {
-        setEquipment(undefined);
+
+        // Try to get from sessionStorage (for dynamically generated equipment)
+        if (typeof window !== 'undefined') {
+          try {
+            const stored = sessionStorage.getItem(`equipment:${id}`);
+            if (stored) {
+              const storedData = JSON.parse(stored);
+              
+              // Check if it's already in EquipmentDetails format or needs conversion
+              let equipmentData: EquipmentDetails;
+              if (storedData.name) {
+                // Already in EquipmentDetails format
+                equipmentData = storedData;
+              } else {
+                // It's a ProductListing, convert it
+                equipmentData = convertProductListingToEquipmentDetails(storedData as ProductListing);
+              }
+              
+              setEquipment(equipmentData);
+              setLoading(false);
+              return;
+            }
+          } catch (storageError) {
+            console.error('Error reading from sessionStorage:', storageError);
+          }
+        }
+
+        // If not found anywhere, set error
+        setError('Equipment not found');
+        setLoading(false);
+      } catch (error) {
+        console.error('Error loading equipment:', error);
+        setError('Failed to load equipment details');
+        setLoading(false);
       }
     }
-  }, [id, equipmentFromSample]);
-  
-  if (!equipment) {
+
+    loadEquipment();
+  }, [id]);
+
+  const handleAddToCart = async () => {
+    if (!equipment || !isAuthenticated) {
+      toast({
+        title: "Authentication Required",
+        description: "Please log in to add items to cart",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsAdding(true);
+    try {
+      dispatch({
+        type: 'ADD_ITEM',
+        payload: {
+          id: equipment.id,
+          name: equipment.name,
+          price: equipment.price,
+          quantity,
+          image: equipment.images[0],
+          category: equipment.category,
+        },
+      });
+
+      toast({
+        title: "Added to Cart",
+        description: `${equipment.name} has been added to your cart.`,
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to add item to cart. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsAdding(false);
+    }
+  };
+
+  const inCart = items.some(item => item.id === equipment?.id);
+
+  // Loading state
+  if (loading) {
+    return (
+      <>
+        <NextSeo title="Loading Equipment..." />
+        <div className="min-h-screen bg-zion-blue py-12 px-4">
+          <div className="container mx-auto">
+            <div className="text-center py-20">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zion-cyan mx-auto mb-4"></div>
+              <p className="text-zion-slate-light">Loading equipment details...</p>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  // Error state
+  if (error || !equipment) {
     return (
       <>
         <NextSeo
@@ -100,302 +212,254 @@ export default function EquipmentDetail() {
         />
         <div className="min-h-screen bg-zion-blue py-12 px-4">
           <div className="container mx-auto">
-            <div className="text-center py-20">
-              <h1 className="text-3xl font-bold text-white mb-4">Equipment Not Found</h1>
-              <p className="text-zion-slate-light mb-8">The equipment you're looking for doesn't exist or has been removed.</p>
-            </div>
+            <motion.div 
+              className="text-center py-20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <AlertTriangle className="mx-auto h-16 w-16 text-red-500 mb-6" />
+              <h1 className="text-3xl font-bold text-white mb-4">
+                {error === 'Equipment not found' ? 'Equipment Not Found' : 'Something went wrong'}
+              </h1>
+              <p className="text-zion-slate-light mb-8 max-w-md mx-auto">
+                {error === 'Equipment not found' 
+                  ? "The equipment you're looking for doesn't exist or has been removed." 
+                  : error || "We couldn't load the equipment details. Please try again."
+                }
+              </p>
+              <div className="space-x-4">
+                <Button 
+                  onClick={() => router.back()} 
+                  variant="outline"
+                  className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue"
+                >
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  Go Back
+                </Button>
+                <Button 
+                  onClick={() => router.push('/equipment')}
+                  className="bg-zion-cyan hover:bg-zion-cyan/90 text-zion-blue"
+                >
+                  Browse Equipment
+                </Button>
+              </div>
+            </motion.div>
           </div>
         </div>
       </>
     );
   }
 
-  const inCart = items.some(i => i.id === equipment.id);
-
-  const handleAddToCart = () => {
-    if (inCart) return;
-    setIsAdding(true);
-    dispatch({
-      type: 'ADD_ITEM',
-      payload: { id: equipment.id, name: equipment.name, price: equipment.price, quantity }
-    });
-    const message = isAuthenticated
-      ? `${quantity}× ${equipment.name} added`
-      : 'Item added. Login to checkout.';
-    const fn = isAuthenticated ? toast.success : toast.info;
-    fn(message, {
-      action: {
-        label: 'View Cart',
-        onClick: () => router.push('/cart'),
-      },
-    });
-    setTimeout(() => setIsAdding(false), 800);
-  };
-
-  const handleBuyNow = async () => {
-    if (!isAuthenticated) {
-      const next = encodeURIComponent(router.asPath); // Capture full current path
-      router.push(`/login?next=${next}`);
-      return;
-    }
-
-    dispatch({
-      type: 'ADD_ITEM',
-      payload: { id: id ?? "", name: equipment.name ?? "", price: equipment.price, quantity }
-    });
-    router.push('/checkout');
-  };
-
   return (
     <>
       <NextSeo
-        title={equipment.name}
+        title={`${equipment.name} - Zion Marketplace`}
         description={equipment.description}
-        openGraph={{ title: equipment.name, description: equipment.description }}
+        image={equipment.images[0]}
       />
-      <div className="min-h-screen bg-zion-blue py-12 px-4">
+      <div className="min-h-screen bg-zion-blue py-8 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Left Column - Images */}
-            <div className="lg:col-span-2">
-              <div className="bg-zion-blue-dark rounded-lg overflow-hidden border border-zion-blue-light">
-                {/* Main Image */}
-                <div className="aspect-video w-full relative">
-                  <img
-                    src={equipment.images[selectedImageIndex]}
-                    alt={equipment.name}
-                    className="w-full h-full object-contain bg-zion-blue-light/10 p-4"
-                    loading="lazy"
-                  />
-                </div>
-                
-                {/* Thumbnail Gallery */}
-                {equipment.images.length > 1 && (
-                  <div className="flex p-4 gap-2 overflow-x-auto">
-                    {equipment.images.map((image, index) => (
-                      <div
-                        key={image + index}
-                        onClick={() => setSelectedImageIndex(index)}
-                        className={`w-20 h-20 flex-shrink-0 cursor-pointer rounded overflow-hidden border-2 ${
-                          index === selectedImageIndex ? "border-zion-purple" : "border-transparent"
-                        }`}
-                      >
-                        <img
-                          src={image}
-                          alt={`${equipment.name} - image ${index + 1}`}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+          {/* Breadcrumb */}
+          <motion.nav 
+            className="flex mb-8"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <button
+              onClick={() => router.push('/equipment')}
+              className="text-zion-cyan hover:text-white transition-colors"
+            >
+              Equipment
+            </button>
+            <span className="mx-2 text-zion-slate-light">/</span>
+            <span className="text-zion-slate-light">{equipment.name}</span>
+          </motion.nav>
 
-              {/* Product Details Tabs */}
-              <div className="mt-8">
-                <Tabs defaultValue="description" className="w-full">
-                  <TabsList className="bg-zion-blue-dark border border-zion-blue-light grid grid-cols-3 h-auto">
-                    <TabsTrigger value="description" className="py-3 data-[state=active]:bg-zion-purple/10">
-                      Description
-                    </TabsTrigger>
-                    <TabsTrigger value="specifications" className="py-3 data-[state=active]:bg-zion-purple/10">
-                      Specifications
-                    </TabsTrigger>
-                    <TabsTrigger value="features" className="py-3 data-[state=active]:bg-zion-purple/10">
-                      Features
-                    </TabsTrigger>
-                  </TabsList>
-                  
-                  <TabsContent value="description" className="mt-4">
-                    <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
-                      <p className="text-zion-slate-light whitespace-pre-line">
-                        {equipment.description}
-                      </p>
-                    </div>
-                  </TabsContent>
-                  
-                  <TabsContent value="specifications" className="mt-4" data-testid="specs-section">
-                    <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {equipment.specifications.map((spec, index) => (
-                          <div key={spec.name + index} className="border-b border-zion-blue-light pb-2 mb-2 last:border-0 last:mb-0 last:pb-0">
-                            <div className="flex justify-between">
-                              <span className="text-zion-slate-light">{spec.name}</span>
-                              <span className="text-white font-medium">{spec.value}</span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </TabsContent>
-                  
-                  <TabsContent value="features" className="mt-4">
-                    <div className="bg-zion-blue-dark border border-zion-blue-light rounded-lg p-6">
-                      <ul className="space-y-2">
-                        {equipment.features.map((feature, index) => (
-                          <li key={feature + index} className="flex items-start gap-2">
-                            <div className="text-zion-cyan mt-1 flex-shrink-0">•</div>
-                            <span className="text-zion-slate-light">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </TabsContent>
-                </Tabs>
-              </div>
-            </div>
-            
-            {/* Right Column - Purchase Info */}
-            <div className="lg:col-span-1">
-              <div className="bg-zion-blue-dark rounded-lg p-6 border border-zion-blue-light sticky top-6">
-                {/* Category and Brand */}
-                <div className="flex flex-wrap gap-2 mb-3">
-                  <Badge variant="outline" className="text-zion-slate-light border-zion-blue-light">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Images */}
+            <motion.div 
+              className="space-y-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <AspectRatio ratio={1} className="bg-zion-blue-light rounded-lg overflow-hidden">
+                <img
+                  src={equipment.images[selectedImageIndex] || equipment.images[0]}
+                  alt={equipment.name}
+                  className="w-full h-full object-cover"
+                />
+              </AspectRatio>
+              
+              {equipment.images.length > 1 && (
+                <div className="grid grid-cols-4 gap-2">
+                  {equipment.images.map((image, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedImageIndex(index)}
+                      className={`aspect-square rounded-md overflow-hidden border-2 transition-all ${
+                        selectedImageIndex === index
+                          ? 'border-zion-cyan'
+                          : 'border-transparent hover:border-zion-slate-light'
+                      }`}
+                    >
+                      <img
+                        src={image}
+                        alt={`${equipment.name} view ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+
+            {/* Product Details */}
+            <motion.div 
+              className="space-y-6"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              {/* Header */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 mb-2">
+                  <Badge variant="secondary" className="bg-zion-cyan/10 text-zion-cyan border-zion-cyan/20">
                     {equipment.category}
                   </Badge>
-                  {equipment.subcategory && (
-                    <Badge variant="outline" className="text-zion-slate-light border-zion-blue-light">
-                      {equipment.subcategory}
-                    </Badge>
-                  )}
+                  <Badge variant="outline" className="border-zion-slate-light text-zion-slate-light">
+                    {equipment.brand}
+                  </Badge>
                 </div>
                 
-                {/* Product Title */}
-                <h1 className="text-2xl font-bold text-white mb-1">{equipment.name}</h1>
-                <p className="text-zion-cyan mb-4">Brand: {equipment.brand}</p>
+                <h1 className="text-3xl font-bold text-white">{equipment.name}</h1>
                 
-                {/* Rating */}
                 {equipment.rating && (
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2">
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className={`h-5 w-5 ${
+                          className={`h-4 w-4 ${
                             i < Math.floor(equipment.rating!) 
-                              ? "text-zion-cyan fill-zion-cyan" 
-                              : "text-zion-slate-light"
+                              ? 'text-yellow-400 fill-current' 
+                              : 'text-zion-slate-light'
                           }`}
                         />
                       ))}
                     </div>
                     <span className="text-sm text-zion-slate-light">
-                      {equipment.rating.toFixed(1)} ({equipment.reviewCount} reviews)
+                      {equipment.rating?.toFixed(1)} ({equipment.reviewCount} reviews)
                     </span>
                   </div>
                 )}
-                
-                {/* Price */}
-                <div className="text-3xl font-bold text-white mb-4">
+              </div>
+
+              {/* Price */}
+              <div className="bg-zion-blue-light rounded-lg p-4">
+                <div className="text-3xl font-bold text-zion-cyan mb-2">
                   {equipment.currency}{equipment.price.toLocaleString()}
                 </div>
-                
-                {/* Stock Status */}
-                <div className="mb-6">
-                  {equipment.inStock ? (
-                    <div className="text-emerald-400 flex items-center gap-1">
-                      <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
-                      <span>In Stock</span>
-                      {equipment.expectedShipping && (
-                        <span className="text-zion-slate-light ml-1 text-sm">
-                          (Ships in {equipment.expectedShipping})
-                        </span>
-                      )}
-                    </div>
-                  ) : (
-                    <div className="text-rose-400 flex items-center gap-1">
-                      <span className="w-2 h-2 bg-rose-400 rounded-full"></span>
-                      <span>Out of Stock</span>
-                    </div>
-                  )}
-                </div>
-                
-                {/* Quantity */}
-                <div className="mb-6">
-                  <label className="text-sm text-zion-slate-light block mb-2">Quantity</label>
-                  <div className="flex items-center border border-zion-blue-light rounded-md w-32">
-                    <button
-                      className="px-3 py-1 text-zion-slate-light hover:text-white disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                      onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
-                      disabled={quantity <= 1 || !equipment.inStock}
-                      aria-label="Decrease quantity"
-                    >
-                      -
-                    </button>
-                    <input 
-                      type="number" 
-                      className="w-full text-center bg-transparent border-0 text-white focus:ring-0"
-                      value={quantity}
-                      readOnly
-                    />
-                    <button
-                      className="px-3 py-1 text-zion-slate-light hover:text-white disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                      onClick={() => setQuantity(prev => prev + 1)}
-                      disabled={!equipment.inStock}
-                      aria-label="Increase quantity"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-                
-                {/* Purchase Buttons */}
-                <div className="space-y-3 mb-6">
-                  <Button 
-                    onClick={handleBuyNow}
-                    disabled={isAdding || !equipment.inStock}
-                    className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white py-6"
-                  >
-                    {isAdding ? "Processing..." : "Buy Now"}
-                  </Button>
-                  
-                  <Button
-                    onClick={handleAddToCart}
-                    disabled={isAdding || !equipment.inStock || inCart}
-                    variant="outline"
-                    className="w-full border-zion-purple text-zion-cyan hover:bg-zion-purple/10"
-                  >
-                    <ShoppingCart className="h-4 w-4 mr-2" />
-                    {inCart ? 'In Cart' : 'Add to Cart'}
-                  </Button>
-                </div>
-                
-                {/* Additional Info */}
-                <div className="space-y-4 border-t border-zion-blue-light pt-4">
-                  {/* Shipping */}
-                  <div className="flex gap-3 text-zion-slate-light">
-                    <Truck className="h-5 w-5 text-zion-cyan flex-shrink-0" />
-                    <div>
-                      <p className="text-white text-sm font-medium">Free Shipping</p>
-                      <p className="text-xs">For orders over $100 within the US</p>
-                    </div>
-                  </div>
-                  
-                  {/* Warranty */}
-                  {equipment.warranty && (
-                    <div className="flex gap-3 text-zion-slate-light">
-                      <Shield className="h-5 w-5 text-zion-cyan flex-shrink-0" />
-                      <div>
-                        <p className="text-white text-sm font-medium">Warranty</p>
-                        <p className="text-xs">{equipment.warranty}</p>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {/* Return Policy */}
-                  {equipment.returnPolicy && (
-                    <div className="flex gap-3 text-zion-slate-light">
-                      <RotateCcw className="h-5 w-5 text-zion-cyan flex-shrink-0" />
-                      <div>
-                        <p className="text-white text-sm font-medium">Returns</p>
-                        <p className="text-xs">{equipment.returnPolicy}</p>
-                      </div>
-                    </div>
-                  )}
+                <div className="flex items-center gap-2 text-sm">
+                  <Clock className="h-4 w-4 text-zion-cyan" />
+                  <span className={equipment.inStock ? 'text-green-400' : 'text-yellow-400'}>
+                    {equipment.expectedShipping}
+                  </span>
                 </div>
               </div>
-            </div>
+
+              {/* Description */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-white">Description</h3>
+                <p className="text-zion-slate-light leading-relaxed">{equipment.description}</p>
+              </div>
+
+              {/* Specifications */}
+              {equipment.specifications.length > 0 && (
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-white">Specifications</h3>
+                  <div className="grid gap-2">
+                    {equipment.specifications.map((spec, index) => (
+                      <div key={index} className="flex justify-between py-2 border-b border-zion-blue-light">
+                        <span className="text-zion-slate-light">{spec.name}</span>
+                        <span className="text-white">{spec.value || 'Enterprise Grade'}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Add to Cart */}
+              <div className="space-y-4 pt-6 border-t border-zion-blue-light">
+                <div className="flex items-center gap-4">
+                  <label className="text-white font-medium">Quantity:</label>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                      className="h-8 w-8 p-0"
+                    >
+                      -
+                    </Button>
+                    <span className="text-white w-8 text-center">{quantity}</span>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setQuantity(quantity + 1)}
+                      className="h-8 w-8 p-0"
+                    >
+                      +
+                    </Button>
+                  </div>
+                </div>
+                
+                <Button
+                  onClick={handleAddToCart}
+                  disabled={isAdding || !equipment.inStock}
+                  size="lg"
+                  variant="outline"
+                  className="w-full border-zion-purple text-zion-cyan hover:bg-zion-purple/10"
+                >
+                  <ShoppingCart className="h-4 w-4 mr-2" />
+                  {isAdding ? 'Adding...' : inCart ? 'In Cart' : 'Add to Cart'}
+                </Button>
+              </div>
+              
+              {/* Additional Info */}
+              <div className="space-y-4 border-t border-zion-blue-light pt-4">
+                {/* Shipping */}
+                <div className="flex gap-3 text-zion-slate-light">
+                  <Truck className="h-5 w-5 text-zion-cyan flex-shrink-0" />
+                  <div>
+                    <p className="text-white text-sm font-medium">Free Shipping</p>
+                    <p className="text-xs">For orders over $100 within the US</p>
+                  </div>
+                </div>
+                
+                {/* Warranty */}
+                {equipment.warranty && (
+                  <div className="flex gap-3 text-zion-slate-light">
+                    <Shield className="h-5 w-5 text-zion-cyan flex-shrink-0" />
+                    <div>
+                      <p className="text-white text-sm font-medium">Warranty</p>
+                      <p className="text-xs">{equipment.warranty}</p>
+                    </div>
+                  </div>
+                )}
+                
+                {/* Return Policy */}
+                {equipment.returnPolicy && (
+                  <div className="flex gap-3 text-zion-slate-light">
+                    <RotateCcw className="h-5 w-5 text-zion-cyan flex-shrink-0" />
+                    <div>
+                      <p className="text-white text-sm font-medium">Returns</p>
+                      <p className="text-xs">{equipment.returnPolicy}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>

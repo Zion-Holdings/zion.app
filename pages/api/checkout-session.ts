@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import fs from 'fs';
 import path from 'path';
@@ -62,83 +62,150 @@ function getStripeSecretKey(isProdEnv: boolean): string {
   return testSecretKey;
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
+  apiVersion: '2024-06-20',
+});
+
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+interface CheckoutRequest {
+  cartItems: CartItem[];
+  customer_email?: string;
+  shipping_address?: string;
+}
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
-    return res.status(405).end('Method Not Allowed');
+    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
-  const { cartItems = [], customer_email } = req.body || {};
-  if (!Array.isArray(cartItems) || cartItems.length === 0) {
-    return res.status(400).json({ error: 'Missing cartItems' });
-  }
-
-  let stripeKey: string;
-  let isSandboxOrder = true; // Default to true, will be updated based on key selection
   try {
-    const isProd = isProductionEnvironment(req);
-    stripeKey = getStripeSecretKey(isProd);
-    isSandboxOrder = stripeKey === process.env.STRIPE_TEST_SECRET_KEY || process.env.STRIPE_TEST_MODE === 'true';
+    const { cartItems, customer_email, shipping_address }: CheckoutRequest = req.body;
 
-    const stripe = new Stripe(stripeKey, { apiVersion: '2023-10-16' });
+    // Validate required fields
+    if (!cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {
+      return res.status(400).json({ 
+        error: 'Cart items are required and must be a non-empty array' 
+      });
+    }
 
-    const line_items = cartItems.map((item: any) => {
-      if (item.priceId) { // For items with a pre-defined Stripe Price ID
-        return { price: item.priceId, quantity: item.quantity || 1 };
-      }
-      // For items without a Price ID, create price data on the fly
-      return {
+    if (!customer_email) {
+      return res.status(400).json({ 
+        error: 'Customer email is required' 
+      });
+    }
+
+    // Convert cart items to Stripe line items
+    const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = cartItems.map((item) => ({
+      price_data: {
+        currency: 'usd',
+        product_data: {
+          name: item.name,
+          description: `Professional datacenter equipment - ${item.name}`,
+        },
+        unit_amount: Math.round(item.price * 100), // Convert to cents
+      },
+      quantity: item.quantity,
+    }));
+
+    // Calculate totals for reference
+    const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const hasShipping = subtotal <= 100; // Free shipping over $100
+
+    // Add shipping if applicable
+    if (hasShipping) {
+      lineItems.push({
         price_data: {
           currency: 'usd',
-          unit_amount: Math.round((item.price || 0) * 100), // Price in cents
-          product_data: { name: item.title || item.name || 'Unnamed Product' },
+          product_data: {
+            name: 'Shipping',
+            description: 'Standard shipping (Free on orders over $100)',
+          },
+          unit_amount: 1500, // $15.00 in cents
         },
-        quantity: item.quantity || 1,
-      };
-    });
-
-    const orderId = `ord_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
-    const session = await stripe.checkout.sessions.create({
-      line_items,
-      mode: 'payment',
-      customer_email: customer_email || undefined, // Pass email if available
-      success_url: `${req.headers.origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}&order_id=${orderId}`,
-      cancel_url: `${req.headers.origin}/cart`,
-      metadata: { orderId },
-    });
-
-    // Save order to a local JSON file (for demo/simplicity)
-    // In a real app, this would be a database operation.
-    const dataDir = path.join(process.cwd(), 'data');
-    const file = path.join(dataDir, 'orders.json');
-    let orders: any[] = [];
-    try {
-      if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir, { recursive: true });
-      }
-      if (fs.existsSync(file)) {
-        orders = JSON.parse(fs.readFileSync(file, 'utf8'));
-      }
-    } catch (e) {
-      console.warn('Could not read existing orders.json, starting new.', e);
-      orders = []; // Initialize if file is corrupt or unreadable
+        quantity: 1,
+      });
     }
-    orders.push({
-      id: orderId,
-      sessionId: session.id,
-      items: cartItems,
-      customer_email: customer_email,
-      status: 'pending', // Initial status
-      created_at: new Date().toISOString(),
-      sandbox: isSandboxOrder
-    });
-    fs.writeFileSync(file, JSON.stringify(orders, null, 2));
 
-    res.status(200).json({ sessionId: session.id, orderId: orderId });
-  } catch (err: any) {
-    console.error('Checkout session error:', err.message);
-    // Log which key was attempted if possible, but be careful not to log the key itself.
-    console.error(`Error occurred. Sandbox mode determined: ${isSandboxOrder}. Details: ${err.type || 'N/A'} - ${err.code || 'N/A'}`);
-    res.status(500).json({ error: err.message || 'Failed to create checkout session.' });
+    // Create Stripe checkout session
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      customer_email,
+      line_items: lineItems,
+      mode: 'payment',
+      success_url: `${process.env.NEXT_PUBLIC_SITE_URL || req.headers.origin}/order-confirmation?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL || req.headers.origin}/cart`,
+      metadata: {
+        customer_email,
+        shipping_address: shipping_address || '',
+        item_count: cartItems.length.toString(),
+        subtotal: subtotal.toString(),
+      },
+      shipping_address_collection: {
+        allowed_countries: ['US', 'CA'], // Adjust as needed
+      },
+      billing_address_collection: 'required',
+      payment_intent_data: {
+        metadata: {
+          customer_email,
+          order_type: 'equipment_purchase',
+        },
+      },
+    });
+
+    console.log('Checkout session created:', {
+      sessionId: session.id,
+      customerEmail: customer_email,
+      itemCount: cartItems.length,
+      subtotal,
+    });
+
+    return res.status(200).json({
+      sessionId: session.id,
+      url: session.url,
+    });
+
+  } catch (error: any) {
+    console.error('Checkout session creation error:', error);
+    
+    // Handle specific Stripe errors
+    if (error.type === 'StripeCardError') {
+      return res.status(400).json({
+        error: 'Payment processing error',
+        details: error.message,
+      });
+    }
+
+    if (error.type === 'StripeInvalidRequestError') {
+      return res.status(400).json({
+        error: 'Invalid checkout request',
+        details: error.message,
+      });
+    }
+
+    // Handle missing Stripe key
+    if (error.message?.includes('No API key provided')) {
+      return res.status(500).json({
+        error: 'Payment system configuration error',
+        details: process.env.NODE_ENV === 'development' 
+          ? 'Stripe secret key not configured' 
+          : 'Payment system temporarily unavailable',
+      });
+    }
+
+    // Generic error response
+    return res.status(500).json({
+      error: 'Failed to create checkout session',
+      details: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error',
+    });
   }
 }
