@@ -1,3 +1,4 @@
+import { logError } from "@/utils/logError";
 
 import { supabase } from "@/integrations/supabase/client";
 import { CreateNotificationParams, CreateNotificationResult } from './types';
@@ -28,13 +29,9 @@ export async function createNotification({
     });
     
     if (error) throw error;
-    
     // Properly type the data as string (notification ID)
-<<<<<<< HEAD
-    const notificationId = Array.isArray(data) && data.length > 0 ? data[0] as unknown as string : null;
-=======
     const notificationId = Array.isArray(data) && data.length > 0 && data[0] !== undefined ? data[0] as string : null;
->>>>>>> 4581a9ab7280be8b99d43545dfe53d314d18493a
+    
     
     // If sendEmail is true, call the edge function to send an email
     if (sendEmail && notificationId != null) {
@@ -46,6 +43,9 @@ export async function createNotification({
     return { success: true, notificationId: notificationId || undefined };
   } catch (error) {
     console.error('Error creating notification:', error);
+    // Report error to Sentry
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    typeof logError !== 'undefined' ? logError(error, { message: 'Error creating notification' }) : null;
     return { success: false, error };
   }
 }
