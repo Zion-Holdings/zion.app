@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -16,7 +15,7 @@ export function AnalyticsSummary() {
         .eq('event_type', 'page_view')
         .single();
 
-      if (pageViewsError && pageViewsError.code !== 'PGRST116') throw pageViewsError;
+      if (pageViewsError && (pageViewsError as any).code !== 'PGRST116') throw pageViewsError;
       
       // Get unique visitors (by counting distinct user IDs)
       const { data: uniqueVisitorsData, error: uniqueVisitorsError } = await supabase
@@ -36,7 +35,7 @@ export function AnalyticsSummary() {
         .eq('event_type', 'conversion')
         .single();
         
-      if (conversionsError && conversionsError.code !== 'PGRST116') throw conversionsError;
+      if (conversionsError && (conversionsError as any).code !== 'PGRST116') throw conversionsError;
       
       // Get most recent event to calculate "last updated"
       const { data: lastEventData, error: lastEventError } = await supabase
@@ -46,7 +45,7 @@ export function AnalyticsSummary() {
         .limit(1)
         .single();
         
-      if (lastEventError && lastEventError.code !== 'PGRST116') throw lastEventError;
+      if (lastEventError && (lastEventError as any).code !== 'PGRST116') throw lastEventError;
         
       return {
         totalPageViews: pageViewsData?.count || 0,

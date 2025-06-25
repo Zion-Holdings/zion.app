@@ -1,50 +1,58 @@
 import { createClient } from '@supabase/supabase-js';
-import { Headers as NodeHeaders } from 'node-fetch';
 
 // COMPLETELY DISABLED Supabase to prevent infinite token loops
 // Using Auth0 for authentication instead
 
-const supabaseConfig = {
-  isConfigured: false // Force disable to prevent any Supabase initialization
-};
-
 console.warn('⚠️ Supabase not configured - using mock client for development');
 
-// Create a complete mock client to prevent any Supabase operations
+// Create a chainable query builder
+const createQueryBuilder = () => {
+  const builder: any = {
+    select: (columns?: string) => builder,
+    eq: (column: string, value: any) => builder,
+    order: (column: string, options?: any) => builder,
+    limit: (count: number) => builder,
+    single: () => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } }),
+    is: (column: string, value: any) => builder,
+    insert: (data: any) => builder,
+    update: (data: any) => builder,
+    delete: () => builder,
+    then: (resolve: any) => resolve({ data: [], error: { message: 'Supabase disabled' } })
+  };
+  return builder;
+};
+
 const supabaseClient = {
   auth: {
-    signInWithPassword: () => Promise.resolve({ error: { message: 'Supabase disabled - using Auth0' } }),
-    signUp: () => Promise.resolve({ error: { message: 'Supabase disabled - using Auth0' } }),
+    signInWithPassword: (credentials: any) => Promise.resolve({ 
+      data: { user: null, session: null }, 
+      error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true }
+    }),
+    signUp: (credentials: any) => Promise.resolve({ 
+      data: { user: null, session: null }, 
+      error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true }
+    }),
     signOut: () => Promise.resolve({ error: null }),
-    onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
-    resetPasswordForEmail: () => Promise.resolve({ error: { message: 'Supabase disabled - using Auth0' } }),
+    onAuthStateChange: (callback: (event: any, session: any) => void) => ({ data: { subscription: { unsubscribe: () => {} } } }),
+    resetPasswordForEmail: (email: string) => Promise.resolve({ error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true } }),
     getSession: () => Promise.resolve({ data: { session: null }, error: null }),
     getUser: () => Promise.resolve({ data: { user: null }, error: null })
   },
-  from: () => ({
-    select: () => ({
-      eq: () => ({
-        single: () => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } })
-      }),
-      limit: () => Promise.resolve({ data: [], error: { message: 'Supabase disabled' } })
-    }),
-    insert: () => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } }),
-    update: () => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } }),
-    delete: () => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } })
-  }),
+  from: (tableName: string) => createQueryBuilder(),
+  rpc: (functionName: string, params?: any) => Promise.resolve({ data: [], error: { message: 'Supabase disabled' } }),
   storage: {
-    from: () => ({
-      upload: () => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } }),
-      download: () => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } })
+    from: (bucketName: string) => ({
+      upload: (path: string, file: any, options?: any) => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } }),
+      download: (path: string) => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } })
     })
   },
   functions: {
-    invoke: () => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } })
+    invoke: (functionName: string, options?: any) => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } })
   }
 };
 
 export const supabase = supabaseClient;
-export const isSupabaseConfigured = false; // Always false to prevent usage
+export const isSupabaseConfigured = false;
 
 // Helper function to check online status
 async function checkOnline(): Promise<boolean> {
@@ -60,4 +68,4 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
 }
 
 // Enhanced type safety for TypeScript
-export type SupabaseClient = typeof supabaseClient;
+export type SupabaseClient = typeof supabaseClient; 

@@ -22,7 +22,7 @@ export default async function handler(
       .json({ error: 'Not authenticated or session error.' });
   }
 
-  const email = sessionData.session.user.email;
+  const email = (sessionData.session as any)?.user?.email;
   if (!email) {
     await prisma.$disconnect();
     return res.status(401).json({ error: 'User email not found in session.' });

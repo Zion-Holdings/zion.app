@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -66,7 +65,7 @@ export function ZionGPTModelManager() {
       setModels(prev => 
         prev.map(model => 
           model.id === modelId 
-            ? { ...model, trainingStatus: data.status, errorMessage: data.error || null } 
+            ? { ...model, trainingStatus: (data as any)?.status || 'failed', errorMessage: (data as any)?.error || 'Unknown error' } 
             : model
         )
       );
@@ -75,10 +74,10 @@ export function ZionGPTModelManager() {
       await supabase
         .from('model_versions')
         .update({
-          training_status: data.status,
-          error_message: data.error || null,
+          training_status: (data as any)?.status || 'failed',
+          error_message: (data as any)?.error || 'Unknown error',
           // If training succeeded, automatically set to active
-          ...(data.status === 'succeeded' ? { active: true } : {})
+          ...((data as any)?.status === 'succeeded' ? { active: true } : {})
         })
         .eq('id', modelId);
       
