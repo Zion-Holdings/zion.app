@@ -57,19 +57,52 @@ async function getAuth0ManagementToken() {
         const data = await response.json();
         if (!data.access_token) {
           console.error("Auth0 management token response did not include access_token:", data);
-          // This is a non-retryable error, as the request was successful but the payload is wrong.
           throw new Error('Failed to get management token: No access_token in response.');
         }
         return data.access_token;
       }
 
+      // Handle specific Auth0 Management API authorization errors
+      if (response.status === 401 || response.status === 403) {
+        const errorText = await response.text();
+        console.error('Auth0 Management API Authorization Error:', {
+          status: response.status,
+          error: errorText,
+          domain,
+          clientId: clientId.substring(0, 8) + '...',
+          audience
+        });
+        
+        // Provide detailed instructions for fixing the Auth0 configuration
+        const configInstructions = `
+Auth0 Management API Authorization Failed (${response.status}):
+
+REQUIRED SETUP STEPS:
+1. Go to Auth0 Dashboard: https://manage.auth0.com/
+2. Navigate to Applications → APIs → Auth0 Management API
+3. Go to Machine to Machine Applications tab
+4. Find your application (Client ID: ${clientId.substring(0, 8)}...)
+5. Toggle "Authorized" to ON for your application
+6. Click the down arrow to expand scopes
+7. Enable these required scopes:
+   ✅ create:users
+   ✅ read:users  
+   ✅ update:users
+   ✅ update:users_app_metadata
+   ✅ create:user_tickets
+8. Click "Update" to save
+
+Without these permissions, user registration will fail.
+        `.trim();
+        
+        throw new Error(configInstructions);
+      }
+
       // Non-retryable errors
-      if (!RETRYABLE_STATUS_CODES.includes(response.status) && response.status !== 429) { // 429 Too Many Requests might be retryable with backoff
+      if (!RETRYABLE_STATUS_CODES.includes(response.status) && response.status !== 429) {
         const errorText = await response.text();
         let errorMessage = `Failed to get management token: ${errorText}`;
-        if (response.status === 401 || response.status === 403) {
-          errorMessage = `Failed to get management token (${response.status}): ${errorText}. This usually indicates that the application is not authorized for the Auth0 Management API or lacks necessary permissions. Please check the Auth0 dashboard: Applications -> APIs -> Auth0 Management API -> Machine to Machine Applications. Ensure this application is authorized and has scopes like 'create:users'.`;
-        } else if (response.status === 404) {
+        if (response.status === 404) {
           errorMessage = `Failed to get management token (${response.status}): ${errorText}. This might indicate an incorrect Auth0 domain or audience configuration. Ensure AUTH0_ISSUER_BASE_URL is correct and the Management API (audience: ${audience}) is enabled for your tenant.`;
         }
         console.error("Error fetching Auth0 management token (non-retryable):", { status: response.status, statusText: response.statusText, errorBody: errorText });
@@ -82,10 +115,10 @@ async function getAuth0ManagementToken() {
       console.warn(lastError.message);
 
     } catch (error: any) {
-      lastError = error; // Capture network errors or other exceptions
-      // If it's a non-retryable error thrown from within the try block (e.g., bad payload)
-      if (error.message.startsWith('Failed to get management token: No access_token in response') ||
-          error.message.includes('not authorized for the Auth0 Management API') ||
+      lastError = error;
+      // If it's a non-retryable error thrown from within the try block (e.g., bad payload or auth config)
+      if (error.message.includes('Auth0 Management API Authorization Failed') ||
+          error.message.startsWith('Failed to get management token: No access_token in response') ||
           error.message.includes('incorrect Auth0 domain or audience configuration')) {
         throw error;
       }
@@ -260,10 +293,29 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   } catch (err: any) {
     console.error('Registration error:', {
       message: err.message,
-      stack: err.stack,
       name: err.name,
-      ...(err.cause && { cause: err.cause })
     });
+    
+    // Check if it's a Management API authorization error
+    if (err.message?.includes('Auth0 Management API Authorization Failed')) {
+      console.error('[SETUP REQUIRED] Auth0 Management API needs configuration');
+      
+      // In development, provide detailed setup instructions
+      if (process.env.NODE_ENV === 'development') {
+        return res.status(500).json({
+          error: 'Auth0 Setup Required',
+          message: 'Auth0 Management API authorization failed. Check server logs for setup instructions.',
+          setupRequired: true,
+          instructions: err.message
+        });
+      }
+      
+      // In production, provide user-friendly message
+      return res.status(500).json({
+        error: 'Registration temporarily unavailable',
+        message: 'User registration is temporarily unavailable due to a configuration issue. Please try again later or contact support.'
+      });
+    }
     
     // Check if it's a network/connection error
     if (err.message?.includes('fetch') || err.code === 'ECONNREFUSED' || err.code === 'ENOTFOUND') {
@@ -282,7 +334,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     }
     
     // Development fallback for Auth0 Management API permissions issues
-    if (process.env.NODE_ENV === 'development' && err.message?.includes('access_denied')) {
+    if (process.env.NODE_ENV === 'development' && (err.message?.includes('access_denied') || err.message?.includes('unauthorized'))) {
       console.warn('[DEV MODE] Auth0 Management API not configured, using development fallback');
       
       // Simulate successful user creation for development

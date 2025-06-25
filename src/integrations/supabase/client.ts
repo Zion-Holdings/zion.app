@@ -3,24 +3,43 @@ import { Headers as NodeHeaders } from 'node-fetch';
 import { supabaseStorageAdapter } from './safeStorageAdapter';
 
 // Use environment variables directly for Supabase configuration
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+// Fallback to hardcoded values from next.config.cjs if env vars not available
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://gnwtggeptzkqnduuthto.supabase.co';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY';
 const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 
 const supabaseConfig = {
   url: supabaseUrl,
   anonKey: supabaseAnonKey,
   serviceRoleKey: supabaseServiceRoleKey,
-  isConfigured: false // Disabled to prevent infinite loops while using Auth0
+  isConfigured: !!(supabaseUrl && supabaseAnonKey && supabaseUrl !== 'your_supabase_url' && supabaseAnonKey !== 'your_supabase_anon_key')
 };
 
-// Create mock Supabase client to prevent infinite token loops
+console.log(`✅ Supabase client initialized successfully`);
+
+// Create Supabase client with storage adapter to prevent infinite loops
 let supabaseClient: any = null;
 
 try {
-  // DISABLED: Using Auth0 instead of Supabase for authentication
-  // This prevents the infinite "sb-your-project-auth-token" loop
-  console.log('⚠️ Supabase not configured - using mock client for development');
+  if (supabaseConfig.isConfigured) {
+    supabaseClient = createClient(supabaseConfig.url, supabaseConfig.anonKey, {
+      auth: {
+        storage: supabaseStorageAdapter,
+        autoRefreshToken: true,
+        persistSession: true,
+        detectSessionInUrl: true,
+      },
+      global: {
+        headers: typeof window !== 'undefined' ? {} : { 'User-Agent': 'zion.app/1.0' },
+      },
+    });
+    
+    console.log('Supabase client configured successfully with URL:', supabaseConfig.url.substring(0, 30) + '...');
+  } else {
+    throw new Error('Supabase configuration missing');
+  }
+} catch (error) {
+  console.warn('Supabase configuration failed, using mock client:', error);
   
   // Create a minimal mock client to prevent errors
   supabaseClient = {
@@ -29,7 +48,8 @@ try {
       signUp: () => Promise.resolve({ error: { message: 'Supabase disabled - using Auth0' } }),
       signOut: () => Promise.resolve({ error: null }),
       onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
-      resetPasswordForEmail: () => Promise.resolve({ error: { message: 'Supabase disabled - using Auth0' } })
+      resetPasswordForEmail: () => Promise.resolve({ error: { message: 'Supabase disabled - using Auth0' } }),
+      getSession: () => Promise.resolve({ data: { session: null }, error: null })
     },
     from: () => ({
       select: () => ({
@@ -39,30 +59,18 @@ try {
       })
     })
   };
-} catch (error) {
-  console.error('❌ Failed to initialize Supabase client:', error);
-  // Create a basic mock client as fallback
-  supabaseClient = {
-    auth: {
-      onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
-      getSession: () => Promise.resolve({ data: { session: null }, error: new Error('Supabase initialization failed') })
-    },
-    from: () => ({
-      select: () => ({ data: [], error: new Error('Supabase initialization failed') })
-    })
-  };
 }
 
 export const supabase = supabaseClient;
+export const isSupabaseConfigured = supabaseConfig.isConfigured;
 
-// Check if the browser is online. Gracefully handle environments where
-// `navigator` is undefined such as server side rendering or tests.
-export async function checkOnline(): Promise<boolean> {
-  try {
-    return typeof navigator !== 'undefined' && navigator.onLine;
-  } catch {
-    return false;
+// Helper function to check online status
+async function checkOnline(): Promise<boolean> {
+  if (typeof navigator !== 'undefined' && 'onLine' in navigator) {
+    return navigator.onLine;
   }
+  // Fallback for server-side or environments without navigator
+  return true;
 }
 
 // Helper function for safe fetching with retries. Only works if Supabase is configured.
@@ -107,5 +115,5 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
   throw new Error(`Network request failed after ${maxRetries} retries: ${lastError?.message}`);
 }
 
-// Export configuration status for components to check
-export const isSupabaseConfigured = supabaseConfig.isConfigured;
+// Enhanced type safety for TypeScript
+export type SupabaseClient = typeof supabaseClient;

@@ -278,7 +278,8 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
                 <ProductListingCard
                   key={listing.id}
                   listing={listing}
-                  onRequestQuote={handleRequestQuote} 
+                  onRequestQuote={handleRequestQuote}
+                  detailBasePath="/marketplace/listing"
                 />
               ))}
             </div>
