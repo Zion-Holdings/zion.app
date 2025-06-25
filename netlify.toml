@@ -5,9 +5,9 @@
   publish = ".next"
 
 [build.environment]
-  NODE_OPTIONS = "--max_old_space_size=4096"
+  NODE_OPTIONS = "--no-deprecation"
   NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
-  NODE_VERSION = "20"
+  NODE_VERSION = "18.17.0"
   
   # Configure secrets scanning to omit legitimate public environment variables
   # NEXT_PUBLIC_* variables are meant to be public and embedded in client bundles
