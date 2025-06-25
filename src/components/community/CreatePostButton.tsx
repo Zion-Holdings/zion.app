@@ -28,18 +28,16 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
     if (user) {
       router.push(target);
     } else {
-      // Show informative toast and redirect to login
+      // Show informative toast
       toast({
         title: "Login Required",
-        description: "Please log in to create a post. You'll be redirected to the login page.",
+        description: "Redirecting to login page...",
         variant: "default",
       });
       
-      // Redirect to login with return URL after a short delay
-      setTimeout(() => {
-        const next = encodeURIComponent(target);
-        router.push(`/login?next=${next}`);
-      }, 1000); // 1 second delay to show the toast
+      // Immediate redirect to login with return URL
+      const next = encodeURIComponent(target);
+      router.push(`/auth/login?next=${next}`);
     }
   };
 
