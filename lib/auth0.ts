@@ -9,13 +9,16 @@ const auth0Config = {
   secret: process.env.AUTH0_SECRET
 };
 
-console.log('Initializing Auth0 client with configuration:', {
-  domain: auth0Config.domain ? 'SET' : 'NOT SET',
-  clientId: auth0Config.clientId ? 'SET' : 'NOT SET',
-  clientSecret: auth0Config.clientSecret ? 'SET' : 'NOT SET',
-  appBaseUrl: auth0Config.appBaseUrl ? 'SET' : 'NOT SET',
-  secret: auth0Config.secret ? 'SET' : 'NOT SET'
-});
+// Only log configuration in development to reduce production noise
+if (process.env.NODE_ENV === 'development') {
+  console.log('Initializing Auth0 client with configuration:', {
+    domain: auth0Config.domain ? `${auth0Config.domain.substring(0, 10)}...` : 'NOT SET',
+    clientId: auth0Config.clientId ? `${auth0Config.clientId.substring(0, 10)}...` : 'NOT SET', 
+    clientSecret: auth0Config.clientSecret ? `${auth0Config.clientSecret.substring(0, 10)}...` : 'NOT SET',
+    appBaseUrl: auth0Config.appBaseUrl ? `${auth0Config.appBaseUrl.substring(0, 25)}...` : 'NOT SET',
+    secret: auth0Config.secret ? `${auth0Config.secret.substring(0, 10)}...` : 'NOT SET'
+  });
+}
 
 // Only initialize Auth0 client if all required config is present
 export const auth0 = auth0Config.domain && auth0Config.clientId && auth0Config.secret

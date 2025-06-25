@@ -59,8 +59,10 @@ declare const process: {
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
-// Development debug logging
-logger.debug('Marketplace Service - API Base URL:', API_BASE_URL);
+// Conditional debug logging only when explicitly enabled
+if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
+  logger.debug('Marketplace Service - API Base URL:', API_BASE_URL);
+}
 
 // Create axios instance with proper configuration for the custom implementation
 const createMarketplaceClient = (): AxiosInstance => {
@@ -72,13 +74,16 @@ const createMarketplaceClient = (): AxiosInstance => {
   // Request interceptor for debugging - auth token not required for public endpoints
   client.interceptors.request.use(
     async (config) => {
-      if (process.env.NODE_ENV === 'development') {
+      // Only log in development with explicit debug flag
+      if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         console.log(`Marketplace API Request: ${config.method?.toUpperCase()} ${config.url}`);
       }
       return config;
     },
     (error) => {
-      console.error('Marketplace request interceptor error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Marketplace request interceptor error:', error);
+      }
       return Promise.reject(error);
     }
   );
@@ -86,21 +91,24 @@ const createMarketplaceClient = (): AxiosInstance => {
   // Response interceptor with error logging
   client.interceptors.response.use(
     (response) => {
-      if (process.env.NODE_ENV === 'development') {
+      // Only log in development with explicit debug flag
+      if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         console.log(`Marketplace API Response: ${response.status}`);
       }
       return response;
     },
     async (error: AxiosError) => {
-      // Log detailed error information
-      console.error('Marketplace API Error:', {
-        message: error.message,
-        status: error.response?.status,
-        url: error.config?.url,
-        method: error.config?.method,
-        data: error.response?.data,
-        stack: error.stack,
-      });
+      // Always log errors, but less verbosely in production
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Marketplace API Error:', {
+          message: error.message,
+          status: error.response?.status,
+          url: error.config?.url,
+          method: error.config?.method,
+        });
+      } else {
+        console.error('Marketplace API Error:', error.message);
+      }
 
       return Promise.reject(error);
     }
@@ -120,7 +128,8 @@ export const fetchProducts = async (params: {
   search?: string;
 } = {}): Promise<Product[]> => {
   try {
-    if (process.env.NODE_ENV === 'development') {
+    // Only log params with debug flag
+    if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
       console.log('Fetching marketplace products with params:', params);
     }
     
@@ -130,12 +139,15 @@ export const fetchProducts = async (params: {
     });
     
     if (response.data && Array.isArray(response.data)) {
-      if (process.env.NODE_ENV === 'development') {
+      if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         console.log(`Successfully fetched ${response.data.length} products from API`);
       }
       return response.data;
     } else {
-      console.warn('Products API returned unexpected data format. Falling back to static data.');
+      // Only warn when not in production
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn('Products API returned unexpected data format. Falling back to static data.');
+      }
       // Fallback to static data
       const { MARKETPLACE_LISTINGS } = await import('@/data/listingData');
       return MARKETPLACE_LISTINGS.map(item => ({
@@ -145,19 +157,14 @@ export const fetchProducts = async (params: {
       }));
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Products. Falling back to static data:', {
-      message: error.message,
-      status: error.response?.status,
-      data: error.response?.data,
-      url: error.config?.url,
-      method: error.config?.method,
-      params,
-    });
+    // Reduced error logging
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Marketplace fetch failed - Products:', error.message);
+    }
     
     // Fallback to static data instead of throwing error
     try {
       const { MARKETPLACE_LISTINGS } = await import('@/data/listingData');
-      console.log(`Fallback: Using ${MARKETPLACE_LISTINGS.length} static products`);
       
       // Apply basic filtering if parameters were provided
       let products = MARKETPLACE_LISTINGS;
@@ -198,25 +205,19 @@ export const fetchProducts = async (params: {
 
 export const fetchCategories = async (): Promise<Category[]> => {
   try {
-    console.log('Fetching marketplace categories...');
-    
     const response = await marketplaceClient.get('/api/marketplace/categories', {
       timeout: 10000, // 10 second timeout
     });
     
     if (response.data && Array.isArray(response.data)) {
-      console.log(`Successfully fetched ${response.data.length} categories`);
       return response.data;
     } else {
-      console.warn('Categories API returned unexpected data format, using fallback');
       return getFallbackCategories();
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Categories, using fallback:', {
-      message: error.message,
-      status: error.response?.status,
-      url: error.config?.url,
-    });
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Marketplace fetch failed - Categories:', error.message);
+    }
     
     // Return fallback categories instead of throwing
     return getFallbackCategories();
@@ -230,27 +231,20 @@ export const fetchTalent = async (params: {
   search?: string;
 } = {}): Promise<TalentProfileType[]> => {
   try {
-    console.log('Fetching marketplace talent with params:', params);
-    
     const response = await marketplaceClient.get('/api/marketplace/talent', { 
       params,
       timeout: 10000, // 10 second timeout
     });
     
     if (response.data && Array.isArray(response.data)) {
-      console.log(`Successfully fetched ${response.data.length} talent profiles`);
       return response.data;
     } else {
-      console.warn('Talent API returned unexpected data format, using fallback');
       return getFallbackTalent(params);
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Talent, using fallback:', {
-      message: error.message,
-      status: error.response?.status,
-      url: error.config?.url,
-      params,
-    });
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Marketplace fetch failed - Talent:', error.message);
+    }
     
     // Return fallback talent instead of throwing
     return getFallbackTalent(params);
@@ -264,27 +258,20 @@ export const fetchEquipment = async (params: {
   search?: string;
 } = {}): Promise<Equipment[]> => {
   try {
-    console.log('Fetching marketplace equipment with params:', params);
-    
     const response = await marketplaceClient.get('/api/marketplace/equipment', { 
       params,
       timeout: 10000, // 10 second timeout
     });
     
     if (response.data && Array.isArray(response.data)) {
-      console.log(`Successfully fetched ${response.data.length} equipment items`);
       return response.data;
     } else {
-      console.warn('Equipment API returned unexpected data format, using fallback');
       return getFallbackEquipment(params);
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Equipment, using fallback:', {
-      message: error.message,
-      status: error.response?.status,
-      url: error.config?.url,
-      params,
-    });
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Marketplace fetch failed - Equipment:', error.message);
+    }
     
     // Return fallback equipment instead of throwing
     return getFallbackEquipment(params);

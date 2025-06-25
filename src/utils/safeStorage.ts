@@ -4,6 +4,9 @@ let localStorageAvailable: boolean | null = null; // Cache the availability chec
 let lastAvailabilityCheck = 0;
 const AVAILABILITY_CHECK_INTERVAL = 5000; // Check every 5 seconds max
 
+// Recursion prevention for error logging
+let isLoggingError = false;
+
 function isLocalStorageAvailable(): boolean {
   const now = Date.now();
   
@@ -31,40 +34,63 @@ function isLocalStorageAvailable(): boolean {
   }
 }
 
+function safeConsoleError(message: string, error?: any) {
+  // Prevent infinite recursion in console logging
+  if (isLoggingError || process.env.NODE_ENV === 'production') return;
+  
+  isLoggingError = true;
+  try {
+    if (process.env.NODE_ENV === 'development') {
+      console.error(message, error);
+    }
+  } catch {
+    // Silent fail if console.error causes recursion
+  } finally {
+    isLoggingError = false;
+  }
+}
+
 export const safeStorage = {
   getItem: (key: string): string | null => {
     if (typeof window === 'undefined') return null;
+    
+    // Don't log verbose messages for Supabase auth tokens to prevent spam
+    const isVerboseKey = key.includes('sb-') || key.includes('supabase');
+    
     try {
       return localStorage.getItem(key);
     } catch (e) {
-      console.error(
-        `safeStorage.getItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`,
-        e
-      );
-      return null;
+      if (!isVerboseKey) {
+        safeConsoleError(`safeStorage.getItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`, e);
+      }
+      return inMemoryStore[key] || null;
     }
   },
   setItem: (key: string, value: string) => {
     if (typeof window === 'undefined') return;
+    
+    const isVerboseKey = key.includes('sb-') || key.includes('supabase');
+    
     try {
       localStorage.setItem(key, value);
     } catch (e) {
-      console.error(
-        `safeStorage.setItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`,
-        e
-      );
+      if (!isVerboseKey) {
+        safeConsoleError(`safeStorage.setItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`, e);
+      }
       inMemoryStore[key] = value;
     }
   },
   removeItem: (key: string) => {
     if (typeof window === 'undefined') return;
+    
+    const isVerboseKey = key.includes('sb-') || key.includes('supabase');
+    
     try {
       localStorage.removeItem(key);
     } catch (e) {
-      console.error(
-        `safeStorage.removeItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`,
-        e
-      );
+      if (!isVerboseKey) {
+        safeConsoleError(`safeStorage.removeItem: Error accessing localStorage for key "${key}". Falling back to in-memory.`, e);
+      }
       delete inMemoryStore[key];
     }
   },
