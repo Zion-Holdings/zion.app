@@ -267,11 +267,12 @@ const nextConfig = {
         ...config.optimization,
         splitChunks: {
           ...config.optimization.splitChunks,
+          chunks: 'all',
           cacheGroups: {
             ...config.optimization.splitChunks.cacheGroups,
             default: false,
             vendors: false,
-            // Framework chunk
+            // React and core framework chunk
             framework: {
               chunks: 'all',
               name: 'framework',
@@ -279,7 +280,39 @@ const nextConfig = {
               priority: 40,
               enforce: true,
             },
-            // Large libraries
+            // Next.js chunks
+            nextjs: {
+              chunks: 'all',
+              name: 'nextjs',
+              test: /[\\/]node_modules[\\/]next[\\/]/,
+              priority: 35,
+              enforce: true,
+            },
+            // UI libraries (heavy components)
+            ui: {
+              chunks: 'all',
+              name: 'ui-libs',
+              test: /[\\/]node_modules[\\/](@tanstack|@headlessui|framer-motion|react-select|react-datepicker)[\\/]/,
+              priority: 30,
+              enforce: true,
+            },
+            // Auth libraries
+            auth: {
+              chunks: 'all',
+              name: 'auth-libs',
+              test: /[\\/]node_modules[\\/](@auth0|supabase|@supabase)[\\/]/,
+              priority: 25,
+              enforce: true,
+            },
+            // Large utility libraries
+            utils: {
+              chunks: 'all',
+              name: 'utils',
+              test: /[\\/]node_modules[\\/](lodash|moment|date-fns|axios|zod)[\\/]/,
+              priority: 20,
+              enforce: true,
+            },
+            // Large libraries that should be in their own chunk
             lib: {
               test(module) {
                 return (
@@ -291,26 +324,22 @@ const nextConfig = {
                 const crypto = require('crypto');
                 const hash = crypto.createHash('sha1');
                 hash.update(module.identifier());
-                return hash.digest('hex').substring(0, 8);
+                return 'lib-' + hash.digest('hex').substring(0, 8);
               },
-              priority: 30,
+              priority: 15,
               minChunks: 1,
               reuseExistingChunk: true,
             },
-            // Common libraries
-            commons: {
-              name: 'commons',
-              minChunks: 2,
-              priority: 20,
-              chunks: 'all',
-              reuseExistingChunk: true,
-              enforce: true,
-            },
+            // Common vendor libraries
             vendor: {
               test: /[\\/]node_modules[\\/]/,
               chunks: 'all',
+              name: 'vendors',
               priority: 10,
+              minChunks: 2,
+              reuseExistingChunk: true,
             },
+            // Common application code
             common: {
               name: 'common',
               minChunks: 2,
@@ -320,6 +349,11 @@ const nextConfig = {
             },
           },
         },
+        // Enable module concatenation for better tree shaking
+        concatenateModules: true,
+        // Minimize chunk names in production
+        moduleIds: 'deterministic',
+        chunkIds: 'deterministic',
       };
     }
 
