@@ -63,3 +63,16 @@ No vendor profiles. Suggested sections with placeholder copy:
 No comparison tool.
 
 **Compare Items** – Compare Items is a shopping assistant that lets users evaluate multiple marketplace listings side by side. When a user selects two or more items, a sticky bar appears with a "Compare" button. Clicking it opens a modal displaying feature tables, prices, and ratings. Users can toggle differences, save comparisons, or add items to their cart. Benefits include: 1) faster decision making, 2) clear visibility of feature differences, 3) reduced return rates from informed purchases, and 4) convenient access to wishlists. The flow: select products, tap compare, review details in the modal, then choose to close or proceed to checkout. This streamlined tool supports desktop and mobile views, allows sharing comparison links, and helps shoppers find right option quickly and easily.
+### Additional AI Copy Prompts
+
+| Page / Element | AI Prompt | Enhancement |
+| --- | --- | --- |
+| Marketplace Overview Metrics | "Explain ‘Avg. Price’, ‘Avg. Rating’, ‘Products’, ‘Available’ in 15 words each, emphasizing transparency." | Adds info tooltips. |
+| Category Filter Descriptions | "Write 30‑word intros for categories: Services, Talent, Equipment, Software, Courses." | Helps users pick filters. |
+| Product Card Copy | "For the listing ‘AI Innovation Bootcamp’, create a 40‑word summary, 3 bullet benefits, and a 6‑word CTA button label." | Enriches each card. |
+| User Reviews Module | "Generate 5 sample 25‑word reviews with star ratings (4–5) for a generic AI service." | Seeds testimonial section. |
+| Sorting Options | "List 8 sorting labels (Price Low→High, Newest, Best Rated, etc.) each ≤12 characters." | Expands sorting menu. |
+| Empty State Message | "Write a 35‑word encouraging message for when no products match a filter, suggesting popular categories to explore." | Better UX during zero results. |
+| AI‑Driven Recommendations | "Draft a 50‑word explanation of how Zion’s AI suggests relevant listings, emphasizing privacy and personalization." | Builds trust in AI features. |
+| Price Breakdown Tooltip | "Create a 30‑word note clarifying that listed prices exclude taxes and transaction fees." | Prevents confusion. |
+
