@@ -412,4 +412,67 @@ export const getMarketplaceErrorMessage = (error: any): string => {
 };
 
 // Export the client for advanced usage
-export { marketplaceClient }; 
+export { marketplaceClient };
+
+// Add product validation and auto-generation utilities
+export const validateProductData = (product: any): boolean => {
+  const requiredFields = ['id', 'title', 'description', 'category'];
+  return requiredFields.every(field => product[field] && product[field].toString().trim() !== '');
+};
+
+export const generateProductId = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .substring(0, 50);
+};
+
+export const ensureProductIntegrity = (products: any[]): any[] => {
+  return products.map((product, index) => {
+    const validated = { ...product };
+    
+    // Ensure ID exists
+    if (!validated.id) {
+      validated.id = generateProductId(validated.title || `product-${index}`);
+      console.warn(`[Auto-Fix] Generated ID for product: ${validated.id}`);
+    }
+    
+    // Ensure required fields exist
+    if (!validated.title) {
+      validated.title = `Product ${index + 1}`;
+      console.warn(`[Auto-Fix] Generated title for product: ${validated.id}`);
+    }
+    
+    if (!validated.description) {
+      validated.description = `Description for ${validated.title}`;
+      console.warn(`[Auto-Fix] Generated description for product: ${validated.id}`);
+    }
+    
+    if (!validated.category) {
+      validated.category = 'General';
+      console.warn(`[Auto-Fix] Generated category for product: ${validated.id}`);
+    }
+    
+    // Ensure price is a valid number
+    if (typeof validated.price !== 'number' || validated.price < 0) {
+      validated.price = 0;
+    }
+    
+    // Ensure author exists
+    if (!validated.author) {
+      validated.author = {
+        name: 'Zion Marketplace',
+        id: 'zion-marketplace'
+      };
+    }
+    
+    // Ensure creation date exists
+    if (!validated.createdAt) {
+      validated.createdAt = new Date().toISOString();
+    }
+    
+    return validated;
+  });
+}; 

@@ -99,23 +99,48 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
   // });
 
   try {
-    const listing =
-      MARKETPLACE_LISTINGS.find((l) => l.id === slug) ||
-      SERVICES.find((s) => s.id === slug) ||
-      null;
+    // First try to find in MARKETPLACE_LISTINGS
+    let listing = MARKETPLACE_LISTINGS.find((l) => l.id === slug) || null;
+    
+    // If not found, try SERVICES
     if (!listing) {
-      // This will be handled by Next.js to show a 404 page.
-      // Sentry typically doesn't report 404s as errors unless configured to do so,
-      // or if an error occurs while trying to render the 404 page itself.
+      listing = SERVICES.find((s) => s.id === slug) || null;
+    }
+    
+    // If still not found, try to load from API or additional data sources
+    if (!listing) {
+      try {
+        // Try to load additional listings that might not be in static data
+        const { fetchProducts } = await import('@/services/marketplace');
+        const additionalProducts = await fetchProducts({ search: slug });
+        listing = additionalProducts.find((p: any) => p.id === slug) || null;
+      } catch (apiError) {
+        console.warn(`Failed to fetch additional products for slug ${slug}:`, apiError);
+      }
+    }
+    
+    // If still not found, try to match by title or other fields
+    if (!listing) {
+      const allListings = [...MARKETPLACE_LISTINGS, ...SERVICES];
+      listing = allListings.find((l) => 
+        l.title?.toLowerCase().replace(/\s+/g, '-') === slug.toLowerCase() ||
+        l.title?.toLowerCase().includes(slug.toLowerCase())
+      ) || null;
+    }
+    
+    if (!listing) {
+      // Log for debugging but don't treat as error - this is expected for invalid slugs
+      console.log(`Listing not found for slug: ${slug}`);
       return { notFound: true };
     }
+    
     return { props: { listing } };
   } catch (error) {
     Sentry.captureException(error);
-    // This catch block would handle any unexpected errors during the listing lookup.
-    // console.error(`Error in getServerSideProps for marketplace listing ${slug}:`, error);
-    // Re-throw the error so withSentryGetServerSideProps can capture it.
-    throw error;
+    console.error(`Error in getServerSideProps for marketplace listing ${slug}:`, error);
+    
+    // Return 404 instead of throwing to prevent 500 errors
+    return { notFound: true };
   }
 };
 

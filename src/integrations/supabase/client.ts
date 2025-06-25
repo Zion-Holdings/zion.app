@@ -11,54 +11,34 @@ const supabaseConfig = {
   url: supabaseUrl,
   anonKey: supabaseAnonKey,
   serviceRoleKey: supabaseServiceRoleKey,
-  isConfigured: !!supabaseUrl && !!supabaseAnonKey
+  isConfigured: false // Disabled to prevent infinite loops while using Auth0
 };
 
-// Create Supabase client with proper error handling
+// Create mock Supabase client to prevent infinite token loops
 let supabaseClient: any = null;
 
 try {
-  if (supabaseConfig.isConfigured) {
-    supabaseClient = createClient(supabaseConfig.url, supabaseConfig.anonKey, {
-      auth: {
-        persistSession: true,
-        autoRefreshToken: true,
-        storage: supabaseStorageAdapter,
-      },
-      global: {
-        headers: {
-          'apikey': supabaseConfig.anonKey
-        }
-      }
-    });
-    console.log('✅ Supabase client initialized successfully');
-  } else {
-    // Create a mock client for development that won't fail
-    supabaseClient = {
-      auth: {
-        onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
-        getSession: () => Promise.resolve({ data: { session: null }, error: null }),
-        signUp: () => Promise.resolve({ data: { user: null }, error: new Error('Supabase not configured') }),
-        signInWithPassword: () => Promise.resolve({ data: { user: null }, error: new Error('Supabase not configured') }),
-        signOut: () => Promise.resolve({ error: null }),
-        getUser: () => Promise.resolve({ data: { user: null }, error: new Error('Supabase not configured') })
-      },
-      from: () => ({
-        select: () => ({ data: [], error: new Error('Supabase not configured') }),
-        insert: () => ({ data: null, error: new Error('Supabase not configured') }),
-        update: () => ({ data: null, error: new Error('Supabase not configured') }),
-        delete: () => ({ data: null, error: new Error('Supabase not configured') })
-      }),
-      rpc: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') }),
-      storage: {
-        from: () => ({
-          upload: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') }),
-          download: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') })
+  // DISABLED: Using Auth0 instead of Supabase for authentication
+  // This prevents the infinite "sb-your-project-auth-token" loop
+  console.log('⚠️ Supabase not configured - using mock client for development');
+  
+  // Create a minimal mock client to prevent errors
+  supabaseClient = {
+    auth: {
+      signInWithPassword: () => Promise.resolve({ error: { message: 'Supabase disabled - using Auth0' } }),
+      signUp: () => Promise.resolve({ error: { message: 'Supabase disabled - using Auth0' } }),
+      signOut: () => Promise.resolve({ error: null }),
+      onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
+      resetPasswordForEmail: () => Promise.resolve({ error: { message: 'Supabase disabled - using Auth0' } })
+    },
+    from: () => ({
+      select: () => ({
+        eq: () => ({
+          single: () => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } })
         })
-      }
-    };
-    console.warn('⚠️ Supabase not configured - using mock client for development');
-  }
+      })
+    })
+  };
 } catch (error) {
   console.error('❌ Failed to initialize Supabase client:', error);
   // Create a basic mock client as fallback

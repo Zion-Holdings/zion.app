@@ -48,6 +48,24 @@ const ProductListingCardComponent = ({
   };
   
   const handleViewListing = () => {
+    // Debug logging for development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[ProductCard] Navigating to:', `${detailBasePath}/${listing.id}`);
+      console.log('[ProductCard] Listing ID:', listing.id);
+      console.log('[ProductCard] Listing Title:', listing.title);
+    }
+    
+    // Validate listing ID exists before navigation
+    if (!listing.id) {
+      console.error('[ProductCard] Missing listing ID, cannot navigate');
+      toast({
+        title: "Navigation Error",
+        description: "Product information is incomplete",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     router.push(`${detailBasePath}/${listing.id}`);
   };
 
