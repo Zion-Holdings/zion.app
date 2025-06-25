@@ -137,6 +137,10 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
     - Pact-based contract tests verify that front-end routes match available API endpoints.
     - Start the stub server with `node server/stubServer.js` and run `npm test`.
 
+12. **Privacy Policy & Terms (login-gated):**
+    - AI-Prompt: "Generate a plain-language summary (≤ 200 words) of a standard tech marketplace privacy policy aimed at U.S. users."
+    - AI-Prompt: "Write an FAQ with 5 common questions users ask about Zion’s Terms of Service."
+
 ## Troubleshooting
 
 ### Common Issues
