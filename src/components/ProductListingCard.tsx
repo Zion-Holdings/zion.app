@@ -219,6 +219,24 @@ const ProductListingCardComponent = ({
                 "Add to Cart"
               )}
             </Button>
+            
+            <Button
+              size="sm"
+              variant="default"
+              className="bg-green-600 hover:bg-green-700 text-white"
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent card click event
+                // Add to cart first, then redirect to checkout
+                dispatch(
+                  addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 })
+                );
+                router.push('/checkout');
+              }}
+              disabled={loading}
+            >
+              Buy Now
+            </Button>
+            
             {onRequestQuote && (
               <Button 
                 size="sm"
