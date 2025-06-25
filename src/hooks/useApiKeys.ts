@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
@@ -65,7 +64,7 @@ export function useApiKeys() {
       const response = await fetch(`${getApiUrl()}/keys`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         }
       });
@@ -108,7 +107,7 @@ export function useApiKeys() {
       const response = await fetch(`${getApiUrl()}/create`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -167,7 +166,7 @@ export function useApiKeys() {
       const response = await fetch(`${getApiUrl()}/regenerate`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ keyId })
@@ -223,7 +222,7 @@ export function useApiKeys() {
       const response = await fetch(`${getApiUrl()}/revoke`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ keyId })
@@ -278,7 +277,7 @@ export function useApiKeys() {
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${session.access_token}`,
+            'Authorization': `Bearer ${(session as any)?.access_token}`,
             'Content-Type': 'application/json'
           }
         }

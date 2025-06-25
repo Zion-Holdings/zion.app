@@ -20,7 +20,7 @@ const VerifyEmailPage = () => {
         if (sessionError) {
           logError(sessionError, { message: 'Supabase getSession error' });
           setStatus('error');
-          setMessage(sessionError.message || 'Verification failed: Could not retrieve session.');
+          setMessage((sessionError as any)?.message || 'Verification failed: Could not retrieve session.');
           return;
         }
 

@@ -157,14 +157,14 @@ const WhitepaperGeneratorPage: React.FC = () => {
       if (funcError) {
         throw new Error(`Supabase function error: ${funcError.message}`);
       }
-      if (data && data.error) {
-        throw new Error(`Generation error: ${data.error}`);
+      if (data && (data as any).error) {
+        throw new Error(`Generation error: ${(data as any).error}`);
       }
-      if (!data || !data.whitepaperDraft) {
+      if (!data || !(data as any).whitepaperDraft) {
         throw new Error('No whitepaper draft received from the function.');
       }
-      setRawDraft(data.whitepaperDraft);
-      setSections(parseWhitepaperDraft(data.whitepaperDraft));
+      setRawDraft((data as any).whitepaperDraft);
+      setSections(parseWhitepaperDraft((data as any).whitepaperDraft));
     } catch (e: any) {
       logError(e, { message: 'Error generating whitepaper' });
       setError(e.message || 'An unexpected error occurred.');
@@ -308,13 +308,14 @@ const WhitepaperGeneratorPage: React.FC = () => {
       });
 
       if (funcError) throw new Error(`Supabase function error: ${funcError.message}`);
-      if (response.error) throw new Error(`Error from create-shared-whitepaper: ${response.error}`);
-      if (!response.id) throw new Error('Failed to get ID for shareable link.');
+      if (!response) throw new Error('No response received from create-shared-whitepaper function');
+      if ((response as any).error) throw new Error(`Error from create-shared-whitepaper: ${(response as any).error}`);
+      if (!(response as any).id) throw new Error('Failed to get ID for shareable link.');
 
-      const link = `${window.location.origin}/whitepaper/view/${response.id}`;
+      const link = `${window.location.origin}/whitepaper/view/${(response as any).id}`;
       setShareableLink(link);
-      setCurrentSharedWhitepaperId(response.id);
-      setCurrentSharedWhitepaperIsPublic(response.is_public); // is_public is returned by create-shared-whitepaper
+      setCurrentSharedWhitepaperId((response as any).id);
+      setCurrentSharedWhitepaperIsPublic((response as any).is_public);
       toast.success("Shareable link generated!");
     } catch (e: any) {
       logError(e, { message: 'Error generating shareable link' });
@@ -341,10 +342,11 @@ const WhitepaperGeneratorPage: React.FC = () => {
             body: { whitepaperId: currentSharedWhitepaperId, isPublic: newPublicStatus },
         });
         if (funcError) throw new Error(`Supabase function error: ${funcError.message}`);
-        if (response.error) throw new Error(`Error from set-shared-whitepaper-public-status: ${response.error}`);
+        if (!response) throw new Error('No response received from set-shared-whitepaper-public-status function');
+        if ((response as any).error) throw new Error(`Error from set-shared-whitepaper-public-status: ${(response as any).error}`);
 
-        setCurrentSharedWhitepaperIsPublic(response.is_public); // Update with actual status from DB
-        toast.success(`Whitepaper is now ${response.is_public ? 'public' : 'private'}.`);
+        setCurrentSharedWhitepaperIsPublic((response as any).is_public); // Update with actual status from DB
+        toast.success(`Whitepaper is now ${(response as any).is_public ? 'public' : 'private'}.`);
 
     } catch (e: any) {
         logError(e, { message: 'Error toggling public status' });

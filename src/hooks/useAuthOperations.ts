@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import type { UserDetails } from "@/types/auth";
 import { mutate } from 'swr';
@@ -94,16 +93,16 @@ export function useAuthOperations(
       }
 
       // Add this after successful signup
-      if (data?.user) {
+      if ((data as any)?.user) {
         let usedReferral = false;
         // Track referral if there was a referral code
-        usedReferral = await trackReferral(data.user.id, email);
+        usedReferral = await trackReferral((data as any).user.id, email);
 
         try {
           await fetch('/api/points/increment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userId: data.user.id, amount: 10, reason: 'signup' })
+            body: JSON.stringify({ userId: (data as any).user.id, amount: 10, reason: 'signup' })
           });
 
           // Bonus points when signing up with a referral code
@@ -111,12 +110,12 @@ export function useAuthOperations(
             await fetch('/api/points/increment', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ userId: data.user.id, amount: 20, reason: 'referral_signup' })
+              body: JSON.stringify({ userId: (data as any).user.id, amount: 20, reason: 'referral_signup' })
             });
           }
 
           // Generate a referral code for the new user
-          await supabase.rpc('generate_referral_code', { user_id: data.user.id });
+          await supabase.rpc('generate_referral_code', { user_id: (data as any).user.id });
         } catch (err) {
           console.error('Failed to complete signup rewards', err);
         }
@@ -146,7 +145,7 @@ export function useAuthOperations(
         toast({
           variant: "destructive",
           title: "Oh no! Something went wrong.",
-          description: error.message,
+          description: (error as any)?.message,
         });
       } else {
         setUser(null); // Clear the user state upon successful logout

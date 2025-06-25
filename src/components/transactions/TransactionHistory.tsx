@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -87,7 +86,7 @@ export function TransactionHistory() {
       
       toast({
         title: "Success",
-        description: data.message || "Transaction updated successfully",
+        description: (data as any)?.message || "Transaction updated successfully",
       });
       
       refetch();

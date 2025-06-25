@@ -32,18 +32,30 @@ const supabaseClient = {
       data: { user: null, session: null }, 
       error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true }
     }),
-    signOut: () => Promise.resolve({ error: null }),
+    signOut: (options?: any) => Promise.resolve({ error: null }),
     onAuthStateChange: (callback: (event: any, session: any) => void) => ({ data: { subscription: { unsubscribe: () => {} } } }),
-    resetPasswordForEmail: (email: string) => Promise.resolve({ error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true } }),
+    resetPasswordForEmail: (email: string, options?: any) => Promise.resolve({ data: null, error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true } }),
     getSession: () => Promise.resolve({ data: { session: null }, error: null }),
-    getUser: () => Promise.resolve({ data: { user: null }, error: null })
+    getUser: () => Promise.resolve({ data: { user: null }, error: null }),
+    updateUser: (data: any) => Promise.resolve({ data: { user: null }, error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true } }),
+    signInWithOAuth: (options: any) => Promise.resolve({ data: { user: null, session: null }, error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true } }),
+    setSession: (session: any) => Promise.resolve({ data: { session: null }, error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true } })
   },
   from: (tableName: string) => createQueryBuilder(),
   rpc: (functionName: string, params?: any) => Promise.resolve({ data: [], error: { message: 'Supabase disabled' } }),
+  channel: (channelName: string) => ({
+    on: (event: string, config: any, callback?: any) => ({
+      subscribe: () => ({ status: 'subscribed', unsubscribe: () => {} })
+    }),
+    subscribe: () => ({ status: 'subscribed', unsubscribe: () => {} }),
+    remove: () => {}
+  }),
+  removeChannel: (channel: any) => {},
   storage: {
     from: (bucketName: string) => ({
       upload: (path: string, file: any, options?: any) => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } }),
-      download: (path: string) => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } })
+      download: (path: string) => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } }),
+      getPublicUrl: (path: string) => ({ data: { publicUrl: `https://mock-storage.example.com/${bucketName}/${path}` } })
     })
   },
   functions: {
@@ -62,9 +74,15 @@ async function checkOnline(): Promise<boolean> {
   return true;
 }
 
-// Disabled safeFetch since Supabase is not configured
+// Mock safeFetch for development mode
 export async function safeFetch(url: string, options: RequestInit = {}) {
-  throw new Error('Supabase disabled - please use regular fetch or Auth0 APIs instead');
+  // Return a mock Response-like object for development
+  return {
+    ok: true,
+    status: 200,
+    json: async () => ([]), // Return empty array for favorites
+    text: async () => '[]',
+  } as Response;
 }
 
 // Enhanced type safety for TypeScript

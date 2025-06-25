@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -39,6 +38,11 @@ export function useTalentProfileEnhancer() {
 
       if (error) {
         throw new Error(error.message);
+      }
+      
+      // Check if data exists before casting
+      if (!data) {
+        throw new Error('No enhanced profile data received');
       }
       
       return data as EnhancedProfile;

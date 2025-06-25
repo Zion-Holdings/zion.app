@@ -8,8 +8,8 @@ import {
   type Product,
   type Category,
   type Equipment,
+  type TalentProfile,
 } from '@/services/marketplace';
-import { TalentProfile } from '@/types/talent';
 
 export interface UseMarketplaceState<T> {
   data: T[];

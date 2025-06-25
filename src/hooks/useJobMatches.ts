@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
@@ -57,7 +56,7 @@ export function useJobMatches(jobId: string) {
       
       toast({
         title: "AI Matching Complete",
-        description: `Found ${response.data.matches || 0} potential talent matches for this job.`,
+        description: `Found ${(response.data as any)?.matches || 0} potential talent matches for this job.`,
       });
       
       // Refresh the matches list

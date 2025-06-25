@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -66,9 +65,10 @@ export function PaymentButton({
         throw error;
       }
       
-      if (data?.url) {
+      // Type assertion needed for mock Supabase client compatibility
+      if ((data as any)?.url) {
         // Open Stripe checkout in a new tab
-        window.open(data.url, '_blank');
+        window.open((data as any).url, '_blank');
       } else {
         throw new Error("No checkout URL returned");
       }

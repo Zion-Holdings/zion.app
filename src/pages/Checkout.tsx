@@ -10,6 +10,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import { ControllerRenderProps } from 'react-hook-form';
 
 // Form validation schema
 const checkoutSchema = z.object({
@@ -129,7 +130,7 @@ function CheckoutInner() {
         <h2 className="font-semibold mb-3">Order Summary</h2>
         {items.map(item => (
           <div key={item.id} className="flex justify-between items-center py-2">
-            <span>{item.title} (x{item.quantity})</span>
+            <span>{item.name} (x{item.quantity})</span>
             <span>${(item.price * item.quantity).toFixed(2)}</span>
           </div>
         ))}
@@ -146,7 +147,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="name"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>Full Name *</FormLabel>
                 <FormControl>
@@ -160,7 +161,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="email"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>Email Address *</FormLabel>
                 <FormControl>
@@ -174,7 +175,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="address"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>Address *</FormLabel>
                 <FormControl>
@@ -188,7 +189,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="city"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>City *</FormLabel>
                 <FormControl>
@@ -202,7 +203,7 @@ function CheckoutInner() {
           <FormField
             control={form.control}
             name="country"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>Country *</FormLabel>
                 <FormControl>

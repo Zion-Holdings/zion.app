@@ -78,8 +78,8 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
           return;
         }
 
-        if (data.tenant) {
-          setTenant(data.tenant);
+        if ((data as any)?.tenant) {
+          setTenant((data as any).tenant);
           setRetryCount(0); // Reset retry count on success
         } else {
           setTenant(null);
@@ -140,7 +140,7 @@ export function useTenantAdminStatus(tenantId?: string) {
           return;
         }
 
-        const userId = sessionData.session.user.id;
+        const userId = (sessionData as any).session?.user?.id;
         const { data, error } = await supabase
           .from('tenant_administrators')
           .select('*')

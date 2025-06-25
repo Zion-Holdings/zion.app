@@ -65,15 +65,20 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
     const timeouts: Record<string, NodeJS.Timeout> = {};
 
     Object.keys(watchedFields).forEach((fieldName) => {
-      if (touchedFields[fieldName]) {
+      const typedFieldName = fieldName as keyof SignupFormData;
+      if (touchedFields[typedFieldName]) {
         setFieldStates(prev => ({
           ...prev,
-          [fieldName]: { ...prev[fieldName], isValidating: true }
+          [fieldName]: { 
+            isValid: prev[fieldName]?.isValid ?? false,
+            isValidating: true,
+            error: prev[fieldName]?.error ?? null
+          }
         }));
 
         timeouts[fieldName] = setTimeout(async () => {
-          const result = await trigger(fieldName as keyof SignupFormData);
-          const error = errors[fieldName as keyof SignupFormData];
+          const result = await trigger(typedFieldName);
+          const error = errors[typedFieldName];
           
           setFieldStates(prev => ({
             ...prev,

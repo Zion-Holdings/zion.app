@@ -196,7 +196,8 @@ export function useAuthGuard() {
     if (!isAuthenticated || !user) return false;
     
     // Simple permission check - can be extended based on your permission system
-    const userPermissions = user.permissions || [];
+    // Use type assertion for extensibility, as permissions might be added to user type later
+    const userPermissions = (user as any).permissions || [];
     return userPermissions.includes(permission);
   };
 

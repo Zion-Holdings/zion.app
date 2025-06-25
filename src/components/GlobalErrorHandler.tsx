@@ -50,23 +50,16 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
       title: "Something went wrong",
       description: getErrorMessage(error),
       variant: "destructive",
-      action: retryAction ? (
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => {
-            setRetryCount(prev => ({
-              ...prev,
-              [errorKey]: currentRetryCount + 1
-            }));
-            retryAction();
-          }}
-          className="ml-2"
-        >
-          <RefreshCw className="h-4 w-4 mr-1" />
-          Try Again
-        </Button>
-      ) : undefined,
+      action: retryAction ? {
+        label: "Try Again",
+        onClick: () => {
+          setRetryCount(prev => ({
+            ...prev,
+            [errorKey]: currentRetryCount + 1
+          }));
+          retryAction();
+        }
+      } : undefined,
     });
   }, [retryCount, reportError]);
 
@@ -79,17 +72,10 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
         ? "Unable to connect to our servers. Please check your connection and try again."
         : "You appear to be offline. Please check your internet connection.",
       variant: "destructive",
-      action: retryAction ? (
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={retryAction}
-          className="ml-2"
-        >
-          {isOnline ? <Wifi className="h-4 w-4 mr-1" /> : <WifiOff className="h-4 w-4 mr-1" />}
-          Retry
-        </Button>
-      ) : undefined,
+      action: retryAction ? {
+        label: "Retry",
+        onClick: retryAction
+      } : undefined,
     });
   }, []);
 
@@ -98,17 +84,10 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
       title: "Authentication Required",
       description: "Please log in to continue with this action.",
       variant: "destructive",
-      action: loginAction ? (
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={loginAction}
-          className="ml-2"
-        >
-          <Shield className="h-4 w-4 mr-1" />
-          Log In
-        </Button>
-      ) : undefined,
+      action: loginAction ? {
+        label: "Log In",
+        onClick: loginAction
+      } : undefined,
     });
   }, []);
 
@@ -190,7 +169,7 @@ export function useErrorHandler() {
     }
   }, [showRetryableError, showNetworkError, showAuthError]);
 
-  const handleAsyncOperation = useCallback(async <T>(
+  const handleAsyncOperation = useCallback(async <T,>(
     operation: () => Promise<T>,
     options?: {
       onError?: (error: Error) => void;

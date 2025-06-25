@@ -1,4 +1,3 @@
-
 import { supabase } from "@/integrations/supabase/client";
 import { TalentProfile } from "@/types/talent";
 import { GeneratedMilestone } from "@/hooks/useMilestoneGenerator";
@@ -42,8 +41,9 @@ export async function generateContract(
     throw error;
   }
   
-  if (data.success && data.contract) {
-    return data.contract;
+  // Type assertion needed for mock Supabase client compatibility
+  if (data && (data as any).success && (data as any).contract) {
+    return (data as any).contract;
   } else {
     throw new Error("Failed to generate contract");
   }
