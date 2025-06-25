@@ -38,7 +38,7 @@ export function ModeToggle() {
       // Apply the new theme
       setTheme(newTheme);
 
-      // Show user feedback with correct message
+      // Show user feedback with correct message based on the NEW theme
       toast({
         title: `Switched to ${newTheme} mode`,
         description: `Theme changed to ${newTheme} mode successfully`,

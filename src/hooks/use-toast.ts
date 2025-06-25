@@ -6,6 +6,11 @@ const variantStyles = {
   error: { background: '#7f1d1d', color: '#fff' },
 };
 
+// Deduplication settings
+const DEDUPE_DELAY = 3000; // 3 seconds
+let lastKey = '';
+let lastShown = 0;
+
 interface ToastActionProps {
   label: string;
   onClick: () => void;
@@ -20,14 +25,29 @@ interface ToastProps {
   id?: string;
 }
 
+const shouldShow = (key: string): boolean => {
+  const now = Date.now();
+  if (key === lastKey && (now - lastShown) < DEDUPE_DELAY) {
+    return false;
+  }
+  lastKey = key;
+  lastShown = now;
+  return true;
+};
+
 const toastAdapter = (props: ToastProps | string) => {
   if (typeof props === 'string') {
-    sonnerToast(props);
+    const key = props;
+    if (!shouldShow(key)) return;
+    sonnerToast(props, { duration: 4000 });
     return;
   }
 
   const { title, description, variant, action, id, onRetry } = props;
   const message = title || description || '';
+  const key = `${variant}-${message}`;
+  
+  if (!shouldShow(key)) return;
 
   const options: {
     description?: string;
@@ -35,7 +55,7 @@ const toastAdapter = (props: ToastProps | string) => {
     duration?: number;
     id?: string;
   } = {
-    duration: 4000,
+    duration: 4000, // Auto-dismiss after 4 seconds
   };
   
   if (title && description) {
@@ -70,18 +90,26 @@ const toastAdapter = (props: ToastProps | string) => {
 };
 
 toastAdapter.success = (message: string, options?: { id?: string } & Record<string, any>) => {
+  const key = `success-${message}`;
+  if (!shouldShow(key)) return;
   sonnerToast.success(message, { duration: 4000, ...(options || {}) });
 };
 
 toastAdapter.error = (message: string, options?: { id?: string } & Record<string, any>) => {
+  const key = `error-${message}`;
+  if (!shouldShow(key)) return;
   sonnerToast.error(message, { duration: 4000, ...(options || {}), style: variantStyles.error });
 };
 
 toastAdapter.info = (message: string, options?: { id?: string } & Record<string, any>) => {
+  const key = `info-${message}`;
+  if (!shouldShow(key)) return;
   sonnerToast.info(message, { duration: 4000, ...(options || {}), style: variantStyles.info });
 };
 
 toastAdapter.warning = (message: string, options?: { id?: string } & Record<string, any>) => {
+  const key = `warning-${message}`;
+  if (!shouldShow(key)) return;
   sonnerToast.warning(message, { duration: 4000, ...(options || {}) });
 };
 

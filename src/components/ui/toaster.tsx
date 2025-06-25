@@ -19,11 +19,16 @@ export function Toaster() {
             background: '#0a1429',
             color: '#fff',
             border: '1px solid #1e3a6f',
-            zIndex: 50,
+            zIndex: 40,
+            marginTop: '80px',
           },
           duration: 4000,
           descriptionClassName: "text-zion-slate-light"
         }}
+        expand={false}
+        richColors={false}
+        gap={8}
+        offset="80px"
       />
     </div>
   );

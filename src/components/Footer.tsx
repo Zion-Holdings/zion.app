@@ -167,8 +167,13 @@ export function Footer() {
         <div className="mt-8 flex justify-end">
           <button
             type="button"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center space-x-1 text-foreground/80 hover:text-primary text-sm transition-colors"
+            onClick={() => {
+              window.scrollTo({ 
+                top: 0, 
+                behavior: 'smooth' 
+              });
+            }}
+            className="flex items-center space-x-1 text-foreground/80 hover:text-primary text-sm transition-colors cursor-pointer"
             aria-label="Back to top"
           >
             <ChevronUp className="h-4 w-4" aria-hidden="true" />
