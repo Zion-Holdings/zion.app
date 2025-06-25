@@ -23,7 +23,7 @@ const AUTO_SERVICE_TITLES = [
 ];
 
 function generateInnovationListing(index: number): ProductListing {
-  const title = AUTO_SERVICE_TITLES[index % AUTO_SERVICE_TITLES.length];
+  const title = AUTO_SERVICE_TITLES[index % AUTO_SERVICE_TITLES.length] || 'AI Service';
   const price = Math.floor(Math.random() * 9500) + 500; // $500 - $10,000
   const rating = Math.floor(Math.random() * 2) + 4; // 4-5 stars
   const reviewCount = Math.floor(Math.random() * 50) + 10;
@@ -278,7 +278,8 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
                 <ProductListingCard
                   key={listing.id}
                   listing={listing}
-                  onRequestQuote={handleRequestQuote} 
+                  onRequestQuote={handleRequestQuote}
+                  detailBasePath="/marketplace/listing"
                 />
               ))}
             </div>

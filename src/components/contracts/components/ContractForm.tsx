@@ -79,6 +79,7 @@ export function ContractForm({
       
       return () => subscription.unsubscribe();
     }
+    return undefined;
   }, [form, onFormValuesChange]);
   
   const handleMilestonesGenerated = (milestones: GeneratedMilestone[]) => {

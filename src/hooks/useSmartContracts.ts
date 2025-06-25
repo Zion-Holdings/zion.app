@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
@@ -36,8 +35,8 @@ export function useSmartContracts() {
       
       if (error) throw error;
       
-      if (data && data.solidityCode) {
-        return data.solidityCode;
+      if (data && (data as any).solidityCode) {
+        return (data as any).solidityCode;
       } else {
         throw new Error("Failed to generate Solidity contract");
       }

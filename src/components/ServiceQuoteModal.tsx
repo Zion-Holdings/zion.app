@@ -40,8 +40,8 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
   const [formData, setFormData] = useState({
     description: '',
     email: '',
-    budget: BUDGET_RANGES[0].value,
-    timeframe: TIMELINE_OPTIONS[0].value,
+    budget: BUDGET_RANGES[0]?.value || '0-5000',
+    timeframe: TIMELINE_OPTIONS[0]?.value || 'lt-1month',
   });
   const [startDate, setStartDate] = useState<Date | undefined>(new Date());
   const [endDate, setEndDate] = useState<Date | undefined>(undefined);
@@ -87,8 +87,8 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
       setFormData({
         description: '',
         email: '',
-        budget: BUDGET_RANGES[0].value,
-        timeframe: TIMELINE_OPTIONS[0].value,
+        budget: BUDGET_RANGES[0]?.value || '0-5000',
+        timeframe: TIMELINE_OPTIONS[0]?.value || 'lt-1month',
       });
       setStartDate(new Date());
       setEndDate(undefined);

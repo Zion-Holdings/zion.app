@@ -4,7 +4,18 @@ import { logError } from './logError';
 
 const originalConsoleError = console.error;
 
+// Add recursion prevention
+let isProcessingError = false;
+
 console.error = (...args: any[]) => {
+  // Prevent infinite recursion
+  if (isProcessingError) {
+    originalConsoleError(...args);
+    return;
+  }
+  
+  isProcessingError = true;
+  
   try {
     const first = args[0];
     const message = first instanceof Error ? first.message : String(first);
@@ -80,6 +91,9 @@ console.error = (...args: any[]) => {
   } catch (overallError) {
     // Fallback if determining message or other initial logic failed.
     originalConsoleError('Critical error in console.error override:', overallError);
+  } finally {
+    // Reset recursion flag
+    isProcessingError = false;
   }
 
   // Call the original console.error in all cases to maintain original behavior

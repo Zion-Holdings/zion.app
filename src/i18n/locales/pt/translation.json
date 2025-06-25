@@ -86,7 +86,12 @@
     "skills_required": "Habilidades Necessárias",
     "budget": "Orçamento",
     "deadline": "Prazo",
-    "job_posted": "Vaga publicada com sucesso"
+    "job_posted": "Vaga publicada com sucesso",
+    "title_placeholder": "Enter job title",
+    "description_placeholder": "Describe the job in detail",
+    "requirements_placeholder": "List required skills and qualifications",
+    "submitting": "Submitting...",
+    "post_job_button": "Post Job"
   },
   "language": {
     "en": "English",

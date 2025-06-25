@@ -76,10 +76,10 @@ describe('AuthProvider Login Timeout', () => {
     jest.useFakeTimers();
     mockedToast.mockClear();
     mockedAuthService.loginUser.mockClear();
-    // @ts-ignore
+    // @ts-expect-error - Intentionally accessing mock methods for test setup
     mockedSupabase.auth.signInWithPassword.mockClear();
      // Reset onAuthStateChange mock for each test to ensure clean state
-    // @ts-ignore
+    // @ts-expect-error - Intentionally accessing mock methods for test setup
     mockedSupabase.auth.onAuthStateChange.mockImplementation(jest.fn().mockReturnValue({
         data: { subscription: { unsubscribe: jest.fn() } },
     }));
@@ -134,21 +134,21 @@ describe('AuthProvider Login Timeout', () => {
     mockedAuthService.loginUser.mockResolvedValue(mockApiResponse);
 
     // For this test, we need signInWithPassword to succeed for the Supabase path
-    // @ts-ignore
+    // @ts-expect-error - Intentionally accessing mock methods for test setup
     mockedSupabase.auth.signInWithPassword.mockResolvedValue({
       data: { user: { id: 'supabase-user-id', email: 'success@example.com' }, session: {} },
       error: null,
     });
 
     // Mock onAuthStateChange to simulate Supabase returning a user and profile
-    // @ts-ignore
+    // @ts-expect-error - Intentionally accessing mock methods for test setup
     mockedSupabase.auth.onAuthStateChange.mockImplementation((callback) => {
         act(() => {
             callback('SIGNED_IN', { user: { id: 'supabase-user-id', email: 'success@example.com' }, session: {} });
         });
         return { data: { subscription: { unsubscribe: jest.fn() } } };
     });
-    // @ts-ignore
+    // @ts-expect-error - Intentionally accessing mock methods for test setup
     mockedSupabase.from.mockReturnValue({
         select: jest.fn().mockReturnThis(),
         eq: jest.fn().mockReturnThis(),

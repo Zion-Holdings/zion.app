@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -98,7 +97,20 @@ export function useTranslationService() {
         return { translations: initialTranslations, error: error.message };
       }
       
-      return { translations: data.translations };
+      // Handle mock response with fallback
+      if (!data || !(data as any)?.translations) {
+        const initialTranslations: Record<SupportedLanguage, string> = {
+          en: content,
+          es: '',
+          fr: '',
+          pt: '',
+          ar: ''
+        };
+        initialTranslations[sourceLanguage] = content;
+        return { translations: initialTranslations };
+      }
+      
+      return { translations: (data as any).translations };
     } catch (err) {
       setIsTranslating(false);
       console.error('Translation service error:', err);

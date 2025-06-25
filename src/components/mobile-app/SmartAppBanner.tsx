@@ -32,6 +32,7 @@ export const SmartAppBanner: React.FC<SmartAppBannerProps> = ({
       
       return () => clearTimeout(timer);
     }
+    return undefined;
   }, [isMobile, delay]);
   
   const dismissBanner = () => {

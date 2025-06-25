@@ -1,4 +1,3 @@
-
 export type ThemePreset = 'light' | 'dark' | 'neon' | 'corporate' | 'startup';
 
 export interface ThemeColors {
@@ -68,9 +67,9 @@ function hexToHsl(hex: string): string {
   if (hex.startsWith('#')) {
     const parsed = hex.slice(1);
     if (parsed.length === 3) {
-      r = parseInt(parsed[0] + parsed[0], 16);
-      g = parseInt(parsed[1] + parsed[1], 16);
-      b = parseInt(parsed[2] + parsed[2], 16);
+      r = parseInt((parsed[0] || '0') + (parsed[0] || '0'), 16);
+      g = parseInt((parsed[1] || '0') + (parsed[1] || '0'), 16);
+      b = parseInt((parsed[2] || '0') + (parsed[2] || '0'), 16);
     } else if (parsed.length === 6) {
       r = parseInt(parsed.substring(0, 2), 16);
       g = parseInt(parsed.substring(2, 4), 16);

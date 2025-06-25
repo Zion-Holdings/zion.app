@@ -54,10 +54,10 @@ export function CategoryListingPage({
 }: CategoryListingPageProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSort, setSelectedSort] = useState(
-    () => safeStorage.getItem('category_selected_sort') || sortOptions[0].value
+    () => safeStorage.getItem('category_selected_sort') || sortOptions[0]?.value || 'newest'
   );
   const [selectedFilter, setSelectedFilter] = useState(
-    () => safeStorage.getItem('category_selected_filter') || filterOptions[0].value
+    () => safeStorage.getItem('category_selected_filter') || filterOptions[0]?.value || 'all'
   );
   const [isLoading, setIsLoading] = useState(false);
 
@@ -224,7 +224,7 @@ export function CategoryListingPage({
                   variant="outline"
                   onClick={() => {
                     setSearchQuery("");
-                    setSelectedFilter(filterOptions[0].value);
+                    setSelectedFilter(filterOptions[0]?.value || 'all');
                   }}
                   className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"
                 >

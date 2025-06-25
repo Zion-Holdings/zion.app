@@ -184,7 +184,7 @@ function generateServiceDescription(category: string, serviceName: string): stri
   };
   
   const categoryDescriptions = descriptions[category as keyof typeof descriptions] || descriptions['IT Consulting'];
-  return categoryDescriptions[Math.floor(Math.random() * categoryDescriptions.length)];
+  return categoryDescriptions[Math.floor(Math.random() * categoryDescriptions.length)] || 'Professional service with expert implementation and support.';
 }
 
 // Generate service tags
@@ -217,11 +217,11 @@ export function generateITServices(count: number, startId: number = 0): ProductL
   const categories = Object.keys(SERVICE_CATEGORIES);
   
   for (let i = 0; i < count; i++) {
-    const category = categories[Math.floor(Math.random() * categories.length)];
+    const category = categories[Math.floor(Math.random() * categories.length)] || 'IT Consulting';
     const categoryData = SERVICE_CATEGORIES[category as keyof typeof SERVICE_CATEGORIES];
-    const serviceName = categoryData.services[Math.floor(Math.random() * categoryData.services.length)];
-    const provider = SERVICE_PROVIDERS[Math.floor(Math.random() * SERVICE_PROVIDERS.length)];
-    const price = generateServicePrice(category);
+    const serviceName = categoryData.services[Math.floor(Math.random() * categoryData.services.length)] || 'IT Consulting Service';
+    const provider = SERVICE_PROVIDERS[Math.floor(Math.random() * SERVICE_PROVIDERS.length)] || 'Professional Services Inc.';
+    const price = generateServicePrice(category || 'IT Consulting');
     
     // Generate realistic ratings with slight bias toward category average
     const baseRating = categoryData.averageRating;

@@ -1,4 +1,5 @@
 import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 import { auth0 } from "./lib/auth0";
 
 export async function middleware(request: NextRequest) {
@@ -53,6 +54,12 @@ export async function middleware(request: NextRequest) {
   }
 
   try {
+    // Only use Auth0 middleware if properly configured
+    if (!auth0) {
+      console.log('Auth0 not configured, skipping middleware');
+      return NextResponse.next();
+    }
+    
     const response = await auth0.middleware(request);
     
     console.log('Auth0 middleware response:', {

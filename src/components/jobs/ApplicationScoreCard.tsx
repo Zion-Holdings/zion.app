@@ -68,7 +68,8 @@ export function ApplicationScoreCard({ application, onScoreUpdated }: Applicatio
           
         if (error) {
           setIsScoring(false);
-          return toast.error("Failed to check scoring status");
+          toast.error("Failed to check scoring status");
+          return;
         }
         
         if (data.scored_at) {

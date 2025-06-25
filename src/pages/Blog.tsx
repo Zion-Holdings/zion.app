@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -107,14 +106,18 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
           </div>
           
           {/* Featured Post Section - Only show if there are featured posts */}
-          {featuredPosts.length > 0 && (
+          {featuredPosts.length > 0 && (() => {
+            const featuredPost = featuredPosts[0];
+            if (!featuredPost) return null;
+            
+            return (
             <div className="mb-16">
               <h2 className="text-2xl font-bold text-white mb-6">Featured Article</h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="aspect-video overflow-hidden rounded-lg">
                   <OptimizedImage
-                    src={featuredPosts[0].featuredImage}
-                    alt={featuredPosts[0].title}
+                    src={featuredPost.featuredImage}
+                    alt={featuredPost.title}
                     className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       const target = e.currentTarget as HTMLImageElement;
@@ -124,18 +127,18 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="text-sm text-zion-cyan bg-zion-blue-dark px-3 py-1 rounded-full inline-block mb-2">
-                    {featuredPosts[0].category}
+                    {featuredPost.category}
                   </span>
                   <h3 className="text-3xl font-bold text-white mb-4">
-                    {featuredPosts[0].title}
+                    {featuredPost.title}
                   </h3>
                   <p className="text-zion-slate-light mb-6">
-                    {featuredPosts[0].excerpt}
+                    {featuredPost.excerpt}
                   </p>
                   <div className="flex items-center mb-6">
                     <OptimizedImage
-                      src={featuredPosts[0].author.avatarUrl}
-                      alt={featuredPosts[0].author.name}
+                      src={featuredPost.author.avatarUrl}
+                      alt={featuredPost.author.name}
                       className="w-10 h-10 rounded-full mr-3"
                       onError={(e) => {
                         const target = e.currentTarget as HTMLImageElement;
@@ -143,9 +146,9 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                       }}
                     />
                     <div>
-                      <p className="text-white font-medium">{featuredPosts[0].author.name}</p>
+                      <p className="text-white font-medium">{featuredPost.author.name}</p>
                       <p className="text-sm text-zion-slate-light">
-                        {featuredPosts[0].publishedDate} • {featuredPosts[0].readTime}
+                        {featuredPost.publishedDate} • {featuredPost.readTime}
                       </p>
                     </div>
                   </div>
@@ -153,14 +156,15 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                     asChild
                     className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple w-fit"
                   >
-                    <Link href={`/blog/${featuredPosts[0].slug}`} prefetch={false}>
+                    <Link href={`/blog/${featuredPost.slug}`} prefetch={false}>
                       Read Article
                     </Link>
                   </Button>
                 </div>
               </div>
             </div>
-          )}
+            );
+          })()}
         
           {/* Filters and Search */}
           <div className="bg-zion-blue-dark rounded-lg p-6 mb-8 border border-zion-blue-light">

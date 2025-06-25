@@ -159,6 +159,7 @@ export function useReferrals() {
         description: error.message || "There was a problem generating your referral code",
         variant: "destructive",
       });
+      return null;
     }
   };
 

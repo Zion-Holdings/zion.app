@@ -28,10 +28,10 @@ const LoginPage = () => {
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
         if (sessionError) {
           console.error('Error getting session:', sessionError);
-          setError(sessionError);
-        } else if (session?.user) {
-          setUser(session.user);
-          console.log('User session found:', session.user);
+          setError(sessionError as any);
+        } else if ((session as any)?.user) {
+          setUser((session as any).user);
+          console.log('User session found:', (session as any).user);
           const returnTo = router.query.returnTo as string || '/dashboard';
           console.log('User is authenticated, redirecting to:', returnTo);
           router.push(returnTo);
@@ -46,7 +46,7 @@ const LoginPage = () => {
     checkSession();
 
     if (isSupabaseConfigured) {
-        const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
+        const { data: authListener } = supabase.auth.onAuthStateChange((_event: any, session: any) => {
           console.log('Auth state changed:', _event, session);
           const currentUser = session?.user ?? null;
           setUser(currentUser);
@@ -61,6 +61,11 @@ const LoginPage = () => {
           authListener?.subscription.unsubscribe();
         };
       }
+      
+      // Return cleanup function for all code paths
+      return () => {
+        // No cleanup needed when Supabase is not configured
+      };
   }, [router, isLoading, isCheckingSession]); // Added isLoading and isCheckingSession to dependencies
 
   const handleLogin = async (e: FormEvent) => {
@@ -80,7 +85,7 @@ const LoginPage = () => {
 
       if (signInError) {
         console.error('Supabase sign-in error:', signInError);
-        setError(signInError);
+        setError(signInError as any);
       } else if (data.user) {
         console.log('Supabase sign-in successful, user:', data.user);
         setUser(data.user); // setUser to trigger useEffect for redirection

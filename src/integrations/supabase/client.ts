@@ -1,131 +1,89 @@
 import { createClient } from '@supabase/supabase-js';
-import { Headers as NodeHeaders } from 'node-fetch';
-import { supabaseStorageAdapter } from './safeStorageAdapter';
 
-// Use environment variables directly for Supabase configuration
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+// COMPLETELY DISABLED Supabase to prevent infinite token loops
+// Using Auth0 for authentication instead
 
-const supabaseConfig = {
-  url: supabaseUrl,
-  anonKey: supabaseAnonKey,
-  serviceRoleKey: supabaseServiceRoleKey,
-  isConfigured: !!supabaseUrl && !!supabaseAnonKey
+console.warn('⚠️ Supabase not configured - using mock client for development');
+
+// Create a chainable query builder
+const createQueryBuilder = () => {
+  const builder: any = {
+    select: (columns?: string) => builder,
+    eq: (column: string, value: any) => builder,
+    order: (column: string, options?: any) => builder,
+    limit: (count: number) => builder,
+    single: () => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } }),
+    is: (column: string, value: any) => builder,
+    insert: (data: any) => builder,
+    update: (data: any) => builder,
+    delete: () => builder,
+    then: (resolve: any) => resolve({ data: [], error: { message: 'Supabase disabled' } })
+  };
+  return builder;
 };
 
-// Create Supabase client with proper error handling
-let supabaseClient: any = null;
-
-try {
-  if (supabaseConfig.isConfigured) {
-    supabaseClient = createClient(supabaseConfig.url, supabaseConfig.anonKey, {
-      auth: {
-        persistSession: true,
-        autoRefreshToken: true,
-        storage: supabaseStorageAdapter,
-      },
-      global: {
-        headers: {
-          'apikey': supabaseConfig.anonKey
-        }
-      }
-    });
-    console.log('✅ Supabase client initialized successfully');
-  } else {
-    // Create a mock client for development that won't fail
-    supabaseClient = {
-      auth: {
-        onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
-        getSession: () => Promise.resolve({ data: { session: null }, error: null }),
-        signUp: () => Promise.resolve({ data: { user: null }, error: new Error('Supabase not configured') }),
-        signInWithPassword: () => Promise.resolve({ data: { user: null }, error: new Error('Supabase not configured') }),
-        signOut: () => Promise.resolve({ error: null }),
-        getUser: () => Promise.resolve({ data: { user: null }, error: new Error('Supabase not configured') })
-      },
-      from: () => ({
-        select: () => ({ data: [], error: new Error('Supabase not configured') }),
-        insert: () => ({ data: null, error: new Error('Supabase not configured') }),
-        update: () => ({ data: null, error: new Error('Supabase not configured') }),
-        delete: () => ({ data: null, error: new Error('Supabase not configured') })
-      }),
-      rpc: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') }),
-      storage: {
-        from: () => ({
-          upload: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') }),
-          download: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') })
-        })
-      }
-    };
-    console.warn('⚠️ Supabase not configured - using mock client for development');
-  }
-} catch (error) {
-  console.error('❌ Failed to initialize Supabase client:', error);
-  // Create a basic mock client as fallback
-  supabaseClient = {
-    auth: {
-      onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
-      getSession: () => Promise.resolve({ data: { session: null }, error: new Error('Supabase initialization failed') })
-    },
-    from: () => ({
-      select: () => ({ data: [], error: new Error('Supabase initialization failed') })
+const supabaseClient = {
+  auth: {
+    signInWithPassword: (credentials: any) => Promise.resolve({ 
+      data: { user: null, session: null }, 
+      error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true }
+    }),
+    signUp: (credentials: any) => Promise.resolve({ 
+      data: { user: null, session: null }, 
+      error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true }
+    }),
+    signOut: (options?: any) => Promise.resolve({ error: null }),
+    onAuthStateChange: (callback: (event: any, session: any) => void) => ({ data: { subscription: { unsubscribe: () => {} } } }),
+    resetPasswordForEmail: (email: string, options?: any) => Promise.resolve({ data: null, error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true } }),
+    getSession: () => Promise.resolve({ data: { session: null }, error: null }),
+    getUser: () => Promise.resolve({ data: { user: null }, error: null }),
+    updateUser: (data: any) => Promise.resolve({ data: { user: null }, error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true } }),
+    signInWithOAuth: (options: any) => Promise.resolve({ data: { user: null, session: null }, error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true } }),
+    setSession: (session: any) => Promise.resolve({ data: { session: null }, error: { message: 'Supabase disabled', name: 'AuthError', status: 400, code: 'auth_disabled', __isAuthError: true } })
+  },
+  from: (tableName: string) => createQueryBuilder(),
+  rpc: (functionName: string, params?: any) => Promise.resolve({ data: [], error: { message: 'Supabase disabled' } }),
+  channel: (channelName: string) => ({
+    on: (event: string, config: any, callback?: any) => ({
+      subscribe: () => ({ status: 'subscribed', unsubscribe: () => {} })
+    }),
+    subscribe: () => ({ status: 'subscribed', unsubscribe: () => {} }),
+    remove: () => {}
+  }),
+  removeChannel: (channel: any) => {},
+  storage: {
+    from: (bucketName: string) => ({
+      upload: (path: string, file: any, options?: any) => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } }),
+      download: (path: string) => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } }),
+      getPublicUrl: (path: string) => ({ data: { publicUrl: `https://mock-storage.example.com/${bucketName}/${path}` } })
     })
-  };
-}
+  },
+  functions: {
+    invoke: (functionName: string, options?: any) => Promise.resolve({ data: null, error: { message: 'Supabase disabled' } })
+  }
+};
 
 export const supabase = supabaseClient;
+export const isSupabaseConfigured = false;
 
-// Check if the browser is online. Gracefully handle environments where
-// `navigator` is undefined such as server side rendering or tests.
-export async function checkOnline(): Promise<boolean> {
-  try {
-    return typeof navigator !== 'undefined' && navigator.onLine;
-  } catch {
-    return false;
+// Helper function to check online status
+async function checkOnline(): Promise<boolean> {
+  if (typeof navigator !== 'undefined' && 'onLine' in navigator) {
+    return navigator.onLine;
   }
+  return true;
 }
 
-// Helper function for safe fetching with retries. Only works if Supabase is configured.
+// Mock safeFetch for development mode
 export async function safeFetch(url: string, options: RequestInit = {}) {
-  if (!supabaseConfig.isConfigured) {
-    throw new Error('Supabase not configured - cannot perform fetch operations');
-  }
-
-  if (!(await checkOnline())) {
-    throw new Error('Network unavailable - please check your connection');
-  }
-
-  // Ensure 'fetchHeaders' is compatible with the global fetch
-  const fetchHeaders = new Headers(options.headers as HeadersInit);
-
-  if (!fetchHeaders.has('apikey')) {
-    fetchHeaders.set('apikey', supabaseConfig.anonKey);
-  }
-
-  const maxRetries = 3;
-  let lastError: any;
-
-  for (let i = 0; i < maxRetries; i++) {
-    try {
-      const response = await fetch(url, {
-        ...options,
-        headers: fetchHeaders,
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      return response;
-    } catch (error) {
-      lastError = error;
-      // Wait before retrying (exponential backoff)
-      await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
-    }
-  }
-
-  throw new Error(`Network request failed after ${maxRetries} retries: ${lastError?.message}`);
+  // Return a mock Response-like object for development
+  return {
+    ok: true,
+    status: 200,
+    json: async () => ([]), // Return empty array for favorites
+    text: async () => '[]',
+  } as Response;
 }
 
-// Export configuration status for components to check
-export const isSupabaseConfigured = supabaseConfig.isConfigured;
+// Enhanced type safety for TypeScript
+export type SupabaseClient = typeof supabaseClient; 

@@ -3,6 +3,7 @@ import { Heart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useWishlist } from '@/hooks/useWishlist';
 import { useAuth } from '@/hooks/useAuth';
+import { toast } from '@/hooks/use-toast';
 import { LoginModal } from '@/components/auth/LoginModal';
 import {
   Tooltip,
@@ -27,7 +28,17 @@ export function FavoriteButton({ itemId, className }: FavoriteButtonProps) {
       setLoginOpen(true);
       return;
     }
+    
+    const wasWishlisted = isWishlisted(itemId);
     toggle(itemId);
+    
+    // Provide feedback
+    toast({
+      title: wasWishlisted ? "Removed from wishlist" : "Added to wishlist",
+      description: wasWishlisted 
+        ? "Item has been removed from your wishlist" 
+        : "Item has been added to your wishlist",
+    });
   };
 
   const active = isWishlisted(itemId);

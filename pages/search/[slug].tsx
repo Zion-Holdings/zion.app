@@ -125,7 +125,7 @@ export default function SearchResultsPage({
   // Group results by type for better display
   const groupedResults = filteredResults.reduce((acc, result) => {
     if (!acc[result.type]) acc[result.type] = [];
-    acc[result.type].push(result);
+    acc[result.type]!.push(result);
     return acc;
   }, {} as Record<string, SearchResult[]>);
 

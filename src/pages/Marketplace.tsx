@@ -22,12 +22,7 @@ import { MAX_PRICE, MIN_PRICE } from '@/data/marketplaceData';
  * Marketplace component props
  */
 export interface MarketplaceProps {
-  /**
-   * Products to display in the marketplace (kept for fallback but not used now)
-   * @deprecated
-   * @remarks This prop is deprecated and should not be used.
-   */
-  products?: ProductListing[];
+  // All props removed - component now fetches data independently
 }
 
 // Market insights component
@@ -228,7 +223,7 @@ const FilterControls: React.FC<{
  * Uses the auto-feed algorithm to continuously generate IT and AI products
  * Includes intelligent filtering, sorting, and recommendation features
  */
-export default function Marketplace({ products: _initialProducts = [] }: MarketplaceProps) {
+export default function Marketplace() {
   const router = useRouter();
   const { toast } = useToast();
   const { isAuthenticated, user } = useAuth();

@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -6,9 +5,12 @@ import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { useFavorites } from "@/hooks/useFavorites";
-import { Heart, MessageSquare, CreditCard } from "lucide-react";
+import { useCart } from "@/context/CartContext";
+import { Heart, MessageSquare, CreditCard, ShoppingCart } from "lucide-react";
 import { LanguageSelector } from '@/components/header/LanguageSelector';
 import { CartDrawer } from '@/components/cart/CartDrawer';
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
+import { MiniCartPreview } from '@/components/cart/MiniCartPreview';
 
 interface MainNavigationProps {
   isAdmin?: boolean;
@@ -21,6 +23,8 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const { count } = useFavorites();
+  const { items } = useCart();
+  const cartCount = items.length;
   const router = useRouter(); // Changed from useLocation
   const { t } = useTranslation();
 

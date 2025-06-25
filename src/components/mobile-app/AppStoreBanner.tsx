@@ -18,6 +18,7 @@ export const AppStoreBanner: React.FC = () => {
       
       return () => clearTimeout(timer);
     }
+    return undefined;
   }, [isMobile]);
   
   const dismissBanner = () => {

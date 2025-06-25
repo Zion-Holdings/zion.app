@@ -20,7 +20,7 @@ const VerifyEmailPage = () => {
         if (sessionError) {
           logError(sessionError, { message: 'Supabase getSession error' });
           setStatus('error');
-          setMessage(sessionError.message || 'Verification failed: Could not retrieve session.');
+          setMessage((sessionError as any)?.message || 'Verification failed: Could not retrieve session.');
           return;
         }
 
@@ -71,6 +71,7 @@ const VerifyEmailPage = () => {
         logError(new Error(errorDescription || 'Unknown error from Supabase redirect'), { message: 'Error from Supabase redirect' });
         setMessage(`Verification failed: ${errorDescription}`);
         setStatus('error');
+        return undefined;
     } else {
         // Attempt to confirm verification.
         // A small delay can sometimes help ensure the Supabase client has processed any URL hash tokens.

@@ -29,15 +29,17 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
     const { name, files } = e.target;
     if (files && files.length > 0) {
       const file = files[0];
-      setFormData(prev => ({ ...prev, [name]: file }));
-      if (name === 'logos') {
-        // Revoke previous object URL if it exists
-        if (logoPreview) URL.revokeObjectURL(logoPreview);
-        setLogoPreview(URL.createObjectURL(file));
-      } else if (name === 'photos') {
-        // Revoke previous object URL if it exists
-        if (photoPreview) URL.revokeObjectURL(photoPreview);
-        setPhotoPreview(URL.createObjectURL(file));
+      if (file) {
+        setFormData(prev => ({ ...prev, [name]: file }));
+        if (name === 'logos') {
+          // Revoke previous object URL if it exists
+          if (logoPreview) URL.revokeObjectURL(logoPreview);
+          setLogoPreview(URL.createObjectURL(file));
+        } else if (name === 'photos') {
+          // Revoke previous object URL if it exists
+          if (photoPreview) URL.revokeObjectURL(photoPreview);
+          setPhotoPreview(URL.createObjectURL(file));
+        }
       }
     } else {
       setFormData(prev => ({ ...prev, [name]: null }));
@@ -177,7 +179,7 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
         />
         {logoPreview && (
           <div className="mt-2" style={{ position: 'relative', width: 'auto', height: '64px' }}> {/* Ensure parent has dimensions for layout='fill' */}
-            <Image src={logoPreview} alt="Logo preview" layout="fill" objectFit="contain" />
+            <Image src={logoPreview} alt="Logo preview" fill className="object-contain" />
           </div>
         )}
       </div>
@@ -196,7 +198,7 @@ const InputFields: React.FC<InputFieldsProps> = ({ onSubmit }) => {
         />
         {photoPreview && (
           <div className="mt-2" style={{ position: 'relative', width: 'auto', height: '64px' }}> {/* Ensure parent has dimensions for layout='fill' */}
-            <Image src={photoPreview} alt="Photo preview" layout="fill" objectFit="contain" />
+            <Image src={photoPreview} alt="Photo preview" fill className="object-contain" />
           </div>
         )}
       </div>

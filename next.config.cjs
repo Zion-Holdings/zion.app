@@ -6,13 +6,21 @@ const nextConfig = {
   // Environment configuration
   env: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    NEXT_PUBLIC_SUPABASE_URL: 'https://gnwtggeptzkqnduuthto.supabase.co',
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY',
+    // Auth0 Configuration
+    AUTH0_SECRET: process.env.AUTH0_SECRET || 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6',
+    AUTH0_BASE_URL: process.env.AUTH0_BASE_URL || 'http://localhost:3000',
+    AUTH0_ISSUER_BASE_URL: process.env.AUTH0_ISSUER_BASE_URL || 'https://dev-zion.us.auth0.com',
+    AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID || 'VpVmYmwgZGXCbKEkS0J2c8ZhqOYNVi0v',
+    AUTH0_CLIENT_SECRET: process.env.AUTH0_CLIENT_SECRET || 'k5L2UXvNfHpBzGj-wW8JqN3Zd4RxBvQsKc7YpA6FgE2V9T8NhM1LdZ3XgY5Wp4Rs',
   },
 
   // Public runtime configuration
   publicRuntimeConfig: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    NEXT_PUBLIC_SUPABASE_URL: 'https://gnwtggeptzkqnduuthto.supabase.co',
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY',
     NEXT_PUBLIC_REOWN_PROJECT_ID: process.env.NEXT_PUBLIC_REOWN_PROJECT_ID,
     NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
     NEXT_PUBLIC_SENTRY_ENVIRONMENT: process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT || 'development',
@@ -114,7 +122,7 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    domains: ['images.unsplash.com', 'via.placeholder.com', 'localhost'],
+    domains: ['images.unsplash.com', 'via.placeholder.com', 'localhost', 'cdn.zion.org', 'app.ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
   },
@@ -259,11 +267,12 @@ const nextConfig = {
         ...config.optimization,
         splitChunks: {
           ...config.optimization.splitChunks,
+          chunks: 'all',
           cacheGroups: {
             ...config.optimization.splitChunks.cacheGroups,
             default: false,
             vendors: false,
-            // Framework chunk
+            // React and core framework chunk
             framework: {
               chunks: 'all',
               name: 'framework',
@@ -271,7 +280,39 @@ const nextConfig = {
               priority: 40,
               enforce: true,
             },
-            // Large libraries
+            // Next.js chunks
+            nextjs: {
+              chunks: 'all',
+              name: 'nextjs',
+              test: /[\\/]node_modules[\\/]next[\\/]/,
+              priority: 35,
+              enforce: true,
+            },
+            // UI libraries (heavy components)
+            ui: {
+              chunks: 'all',
+              name: 'ui-libs',
+              test: /[\\/]node_modules[\\/](@tanstack|@headlessui|framer-motion|react-select|react-datepicker)[\\/]/,
+              priority: 30,
+              enforce: true,
+            },
+            // Auth libraries
+            auth: {
+              chunks: 'all',
+              name: 'auth-libs',
+              test: /[\\/]node_modules[\\/](@auth0|supabase|@supabase)[\\/]/,
+              priority: 25,
+              enforce: true,
+            },
+            // Large utility libraries
+            utils: {
+              chunks: 'all',
+              name: 'utils',
+              test: /[\\/]node_modules[\\/](lodash|moment|date-fns|axios|zod)[\\/]/,
+              priority: 20,
+              enforce: true,
+            },
+            // Large libraries that should be in their own chunk
             lib: {
               test(module) {
                 return (
@@ -283,26 +324,22 @@ const nextConfig = {
                 const crypto = require('crypto');
                 const hash = crypto.createHash('sha1');
                 hash.update(module.identifier());
-                return hash.digest('hex').substring(0, 8);
+                return 'lib-' + hash.digest('hex').substring(0, 8);
               },
-              priority: 30,
+              priority: 15,
               minChunks: 1,
               reuseExistingChunk: true,
             },
-            // Common libraries
-            commons: {
-              name: 'commons',
-              minChunks: 2,
-              priority: 20,
-              chunks: 'all',
-              reuseExistingChunk: true,
-              enforce: true,
-            },
+            // Common vendor libraries
             vendor: {
               test: /[\\/]node_modules[\\/]/,
               chunks: 'all',
+              name: 'vendors',
               priority: 10,
+              minChunks: 2,
+              reuseExistingChunk: true,
             },
+            // Common application code
             common: {
               name: 'common',
               minChunks: 2,
@@ -312,6 +349,11 @@ const nextConfig = {
             },
           },
         },
+        // Enable module concatenation for better tree shaking
+        concatenateModules: true,
+        // Minimize chunk names in production
+        moduleIds: 'deterministic',
+        chunkIds: 'deterministic',
       };
     }
 

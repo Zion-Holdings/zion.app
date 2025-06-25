@@ -16,7 +16,7 @@ function isProdDomain() {
   }
 }
 
-async function handler(req, res) {
+async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     res.statusCode = 405;
     res.setHeader('Allow', 'POST');
@@ -59,7 +59,7 @@ async function handler(req, res) {
   } catch (err) {
     console.error('Create payment intent error:', err);
     res.statusCode = 500;
-    res.json({ error: err.message });
+    res.json({ error: err instanceof Error ? err.message : 'An error occurred' });
   }
 }
 

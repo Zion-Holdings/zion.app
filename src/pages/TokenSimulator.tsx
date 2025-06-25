@@ -286,7 +286,7 @@ export default function TokenSimulator() {
                   max={36}
                   step={1}
                   defaultValue={[12]}
-                  onValueChange={([v]) => setMonths(v)}
+                  onValueChange={([v]) => setMonths(v || 12)}
                 />
               </div>
             </CardContent>

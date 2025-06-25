@@ -15,7 +15,7 @@ import { addItem } from '@/store/cartSlice';
 import { useRouter } from 'next/router';
 import { fetchProducts } from '@/services/marketplace';
 import type { ProductListing } from '@/types/listings';
-import ProductListingCard from '@/components/ProductListingCard';
+import { ProductListingCard } from '@/components/ProductListingCard';
 import ProductReviews from '@/components/ProductReviews';
 // Import React if not implicitly available
 // import React from 'react';
@@ -64,16 +64,30 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
 
   useEffect(() => {
     async function loadRelated() {
-      if (!product.category) return;
+      if (!product || !product.category) return;
       try {
         const items = await fetchProducts({ category: product.category, limit: 4 });
-        setRelatedProducts(items.filter((p) => p.id !== product.id));
+        // Transform Product array to ProductListing array with safe defaults
+        const transformedItems: ProductListing[] = items
+          .filter((p) => p.id !== product.id)
+          .map((item) => ({
+            ...item,
+            currency: item.currency || 'USD',
+            author: item.author || { name: 'Unknown', id: 'unknown' },
+            category: item.category || 'general',
+            subcategory: item.subcategory,
+            availability: item.availability,
+            rating: item.rating,
+            reviewCount: item.reviewCount || 0,
+            featured: item.featured || false,
+          } as ProductListing));
+        setRelatedProducts(transformedItems);
       } catch (e) {
         console.error('Failed to load related products', e);
       }
     }
     loadRelated();
-  }, [product.category, product.id]);
+  }, [product?.category, product?.id]);
 
   const handleAddToCart = async () => {
     if (!isAuthenticated) {

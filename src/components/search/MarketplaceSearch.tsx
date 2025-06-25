@@ -55,7 +55,10 @@ export function MarketplaceSearch({ products, onSelect }: MarketplaceSearchProps
       setHighlight(h => Math.max(h - 1, 0));
     } else if (e.key === 'Enter' && highlight >= 0) {
       e.preventDefault();
-      select(suggestions[highlight]);
+      const selectedSuggestion = suggestions[highlight];
+      if (selectedSuggestion) {
+        select(selectedSuggestion);
+      }
     }
   };
 

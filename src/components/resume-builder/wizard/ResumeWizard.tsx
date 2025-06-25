@@ -52,14 +52,20 @@ export function ResumeWizard() {
   const nextStep = () => {
     const currentIndex = RESUME_STEPS.findIndex(step => step.id === activeTab);
     if (currentIndex < RESUME_STEPS.length - 1) {
-      setActiveTab(RESUME_STEPS[currentIndex + 1].id);
+      const nextStep = RESUME_STEPS[currentIndex + 1];
+      if (nextStep) {
+        setActiveTab(nextStep.id);
+      }
     }
   };
   
   const prevStep = () => {
     const currentIndex = RESUME_STEPS.findIndex(step => step.id === activeTab);
     if (currentIndex > 0) {
-      setActiveTab(RESUME_STEPS[currentIndex - 1].id);
+      const prevStep = RESUME_STEPS[currentIndex - 1];
+      if (prevStep) {
+        setActiveTab(prevStep.id);
+      }
     }
   };
 

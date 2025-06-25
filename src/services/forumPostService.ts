@@ -30,7 +30,7 @@ export async function fetchPostsByCategory(
   // If posts array is empty or shorter than limit, it means no more posts.
   const nextCursor =
     posts.length === limit && posts.length > 0
-      ? posts[posts.length - 1].createdAt
+      ? posts[posts.length - 1]?.createdAt ?? null
       : null;
 
   return { posts, nextCursor };

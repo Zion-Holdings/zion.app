@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
@@ -44,7 +43,8 @@ export function useAIContentEnhancer() {
         throw new Error(error.message);
       }
       
-      return data.enhancedContent;
+      // Handle mock response with fallback
+      return data ? (data as any).enhancedContent : content;
     } catch (err: any) {
       const errorMessage = err.message || 'Failed to enhance content';
       setError(errorMessage);

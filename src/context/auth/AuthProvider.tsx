@@ -14,6 +14,7 @@ import { toast } from "@/hooks/use-toast"; // Import toast
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
+import { logger } from '@/utils/logger';
 
 const LOGIN_TIMEOUT_MS = 15000; // 15 seconds timeout
 
@@ -60,7 +61,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       });
 
       if (supabaseError) {
-        console.error("[AuthProvider DEBUG] Supabase authentication failed:", supabaseError);
+        logger.error("AuthProvider: Supabase authentication failed", supabaseError);
         
         // Provide specific error messages based on error code
         let errorMessage = "Authentication failed. Please try again.";
@@ -95,7 +96,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         return { error: errorMessage };
       }
 
-      console.log('[AuthProvider DEBUG] Supabase authentication successful');
+              logger.debug('AuthProvider: Supabase authentication successful');
       // The onAuthStateChange event should now trigger automatically
       return { error: null }; // Successful login
     } catch (error: any) {
@@ -115,39 +116,49 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
-  // Refactored signup method
+  // Refactored signup method to use Auth0 API
   const signup = async (email: string, password: string, userData: Partial<UserDetails> = {}) => {
     setIsLoading(true);
     try {
       const { name = '' } = userData;
-      const { data, error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          data: {
-            ...userData,
-            display_name: name, // Store name in display_name
-          },
+      
+      // Use Auth0 API via our register endpoint instead of Supabase
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          ...userData
+        }),
       });
 
-      if (error) {
-        console.error("Supabase signup error:", error);
+      const data = await response.json();
+
+      if (!response.ok) {
+        console.error("Auth0 signup error:", data);
         toast({
           title: "Signup Failed",
-          description: error.message || "An unexpected error occurred during signup.",
+          description: data.error || data.message || "An unexpected error occurred during signup.",
           variant: "destructive",
         });
         setIsLoading(false);
-        return { error: error.message || "Signup failed", emailVerificationRequired: false };
+        return { error: data.error || data.message || "Signup failed", emailVerificationRequired: false };
       }
 
       toast({
         title: "Signup Successful",
-        description: "Please check your email to verify your account.",
+        description: data.message || "Please check your email to verify your account.",
       });
       setIsLoading(false);
-      return { error: null, emailVerificationRequired: true };
+      return { 
+        error: null, 
+        emailVerificationRequired: data.emailVerificationRequired || true,
+        user: data.user 
+      };
     } catch (err: any) {
       console.error("Signup exception:", err);
       toast({
@@ -178,9 +189,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       // Inside the onAuthStateChange callback
       async (event: any, session: any) => {
               if (process.env.NODE_ENV === 'development') {
-                console.log('[AuthProvider DEBUG] onAuthStateChange: Entered. Current isLoading:', isLoading);
-                console.log('[AuthProvider DEBUG] onAuthStateChange triggered. Event:', event);
-                console.log('[AuthProvider DEBUG] Session object:', JSON.stringify(session, null, 2));
+                      logger.debug('AuthProvider: onAuthStateChange entered', { isLoading, event, sessionExists: !!session });
               }
       
               setIsLoading(true); // Ensure isLoading is true at the start

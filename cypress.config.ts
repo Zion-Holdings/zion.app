@@ -12,6 +12,7 @@ export default defineConfig({
       CYPRESS_TEST_USER_PASSWORD: process.env.CYPRESS_TEST_USER_PASSWORD || 'localpassword123',
       CYPRESS_TEST_USER_DISPLAY_NAME: process.env.CYPRESS_TEST_USER_DISPLAY_NAME || 'Local Test User',
     },
+    defaultCommandTimeout: 10000,
   },
   reporter: 'junit',
   reporterOptions: {

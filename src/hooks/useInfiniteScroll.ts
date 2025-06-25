@@ -48,7 +48,7 @@ export function useInfiniteScroll(
     observer.current = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
-        if (entry.isIntersecting && hasMore && !loading && !isFetching) {
+        if (entry && entry.isIntersecting && hasMore && !loading && !isFetching) {
           setIsFetching(true);
           
           // Add delay to prevent rapid successive calls

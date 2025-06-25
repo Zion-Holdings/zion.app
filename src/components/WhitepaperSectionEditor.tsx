@@ -31,15 +31,15 @@ const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({ title
         throw new Error(`Supabase function error: ${funcError.message}`);
       }
 
-      if (data && data.error) {
-        throw new Error(`Suggestion generation error: ${data.error}`);
+      if (data && (data as any).error) {
+        throw new Error(`Suggestion generation error: ${(data as any).error}`);
       }
 
-      if (!data || !data.suggestions) {
+      if (!data || !(data as any).suggestions) {
         throw new Error('No suggestions received from the function.');
       }
 
-      setSuggestions(data.suggestions);
+      setSuggestions((data as any).suggestions);
       setShowSuggestions(true);
 
     } catch (e: any) {

@@ -36,7 +36,11 @@ export function IntercomChat() {
           s.async = true;
           s.src = 'https://widget.intercom.io/widget/' + appId;
           const x = d.getElementsByTagName('script')[0];
-          x.parentNode?.insertBefore(s, x);
+          if (x) {
+            x.parentNode?.insertBefore(s, x);
+          } else {
+            d.head.appendChild(s);
+          }
         };
         if (document.readyState === 'complete') {
           l();

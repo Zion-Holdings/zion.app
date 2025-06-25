@@ -25,8 +25,8 @@ export function useTokenBalance(
       try {
         const contract = new ethers.Contract(tokenAddress, ERC20_ABI, provider);
         const [rawBalance, decimals] = await Promise.all([
-          contract.balanceOf(address),
-          contract.decimals()
+          (contract as any).balanceOf(address),
+          (contract as any).decimals()
         ]);
         if (!isStale) {
           setBalance(ethers.formatUnits(rawBalance, decimals));

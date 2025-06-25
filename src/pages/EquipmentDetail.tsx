@@ -256,7 +256,7 @@ export default function EquipmentDetail() {
         openGraph={{
           title: `${equipment.name} - Zion Marketplace`,
           description: equipment.description,
-          images: equipment.images.length > 0 ? [{ url: equipment.images[0] }] : undefined
+          images: equipment.images.length > 0 && equipment.images[0] ? [{ url: equipment.images[0] }] : undefined
         }}
       />
       <div className="min-h-screen bg-zion-blue py-8 px-4">

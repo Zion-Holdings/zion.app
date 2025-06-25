@@ -29,7 +29,7 @@ const ProductListingCardComponent = ({
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [imageSrc, setImageSrc] = useState(
-    listing.images && listing.images.length > 0
+    listing.images && listing.images.length > 0 && listing.images[0]
     ? listing.images[0] 
     : '/placeholder.svg'
   );
@@ -48,6 +48,24 @@ const ProductListingCardComponent = ({
   };
   
   const handleViewListing = () => {
+    // Debug logging for development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[ProductCard] Navigating to:', `${detailBasePath}/${listing.id}`);
+      console.log('[ProductCard] Listing ID:', listing.id);
+      console.log('[ProductCard] Listing Title:', listing.title);
+    }
+    
+    // Validate listing ID exists before navigation
+    if (!listing.id) {
+      console.error('[ProductCard] Missing listing ID, cannot navigate');
+      toast({
+        title: "Navigation Error",
+        description: "Product information is incomplete",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     router.push(`${detailBasePath}/${listing.id}`);
   };
 
@@ -201,6 +219,24 @@ const ProductListingCardComponent = ({
                 "Add to Cart"
               )}
             </Button>
+            
+            <Button
+              size="sm"
+              variant="default"
+              className="bg-green-600 hover:bg-green-700 text-white"
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent card click event
+                // Add to cart first, then redirect to checkout
+                dispatch(
+                  addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 })
+                );
+                router.push('/checkout');
+              }}
+              disabled={loading}
+            >
+              Buy Now
+            </Button>
+            
             {onRequestQuote && (
               <Button 
                 size="sm"

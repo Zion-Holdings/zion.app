@@ -5,7 +5,7 @@ import { ExperienceFilterProps } from "@/types/filters";
 
 export function ExperienceFilter({ experienceRange, setExperienceRange, expanded, toggleSection, isMobileFilterOpen }: ExperienceFilterProps) {
   const handleChange = (values: number[]) => {
-    setExperienceRange([values[0], values[1]]);
+    setExperienceRange([values[0] || 0, values[1] || 15]);
   };
 
   return (

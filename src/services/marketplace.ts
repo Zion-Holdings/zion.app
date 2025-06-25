@@ -1,98 +1,97 @@
 import axios, { AxiosInstance, AxiosError } from 'axios';
-import { supabase } from '@/integrations/supabase/client';
+import * as Sentry from '@sentry/nextjs';
+import { logger } from '@/utils/logger';
+import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
+import { ProductListing } from '@/types/listings';
+import { TalentProfile as TalentProfileType } from '@/types/talent';
 
-// Types for marketplace data
+// TypeScript interfaces
 export interface Product {
   id: string;
   title: string;
+  name?: string; // Alternative property name
   description: string;
   price: number;
-  currency: string;
+  currency?: string;
   category: string;
   subcategory?: string;
-  tags: string[];
-  author: {
+  image?: string;
+  images?: string[];
+  author?: {
     name: string;
     id: string;
     avatarUrl?: string;
   };
-  images: string[];
+  tags?: string[];
   createdAt: string;
   rating?: number;
   reviewCount?: number;
-  featured?: boolean;
-  location?: string;
   availability?: string;
-  brand?: string;
+  location?: string;
+  featured?: boolean;
+  aiScore?: number;
 }
 
 export interface Category {
   id: string;
   name: string;
   slug: string;
-  icon: string;
-}
-
-export interface TalentProfile {
-  id: string;
-  name: string;
-  title: string;
-  skills: string[];
-  hourlyRate?: number;
-  avatar?: string;
-  rating?: number;
-  reviewCount?: number;
-  availability?: string;
+  description?: string;
+  productCount?: number;
 }
 
 export interface Equipment {
   id: string;
-  title: string;
+  name: string;
   description: string;
-  price: number;
   category: string;
-  brand?: string;
+  price: number;
+  currency: string;
+  availability: string;
+  location?: string;
   specifications?: string[];
-  images: string[];
-  availability?: string;
+  images?: string[];
+  rating?: number;
+  reviewCount?: number;
 }
 
-// API Configuration - Use environment variable or fallback to API URL
-declare const process: {
-  env: {
-    NEXT_PUBLIC_API_URL?: string;
-    [key: string]: string | undefined;
-  };
-};
+export interface TalentProfile {
+  id: string;
+  full_name: string;
+  professional_title: string;
+  description: string;
+  skills: string[];
+  hourly_rate?: number;
+  currency?: string;
+  availability: string;
+  location?: string;
+  avatar?: string;
+  rating?: number;
+  reviewCount?: number;
+}
 
-const getApiBaseUrl = (): string => {
-  // For client-side, use the current origin for local API calls
-  if (typeof window !== 'undefined') {
-    return window.location.origin;
-  }
-  // For server-side, use environment variable or fallback
-  return process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
-};
-
-const API_BASE_URL = getApiBaseUrl();
-
-console.log('Marketplace Service - API Base URL:', API_BASE_URL);
-
-// Create axios instance with proper configuration for the custom implementation
+// Use internal Next.js API routes instead of external URLs
 const createMarketplaceClient = (): AxiosInstance => {
   const client = axios.create({
-    baseURL: API_BASE_URL,
-    withCredentials: false, // Remove auth requirements for now
+    baseURL: '', // Use relative URLs for internal API routes
+    withCredentials: false,
   });
+  
+  // Set timeout with proper typing
+  (client as any).defaults.timeout = 10000;
 
-  // Request interceptor for debugging - auth token not required for public endpoints
+  // Request interceptor for debugging
   client.interceptors.request.use(
     async (config) => {
-      console.log(`Marketplace API Request: ${config.method?.toUpperCase()} ${config.url}`);
+      if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
+        console.log(`[DEBUG] Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
+      }
       return config;
     },
     (error) => {
-      console.error('Marketplace request interceptor error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Marketplace request interceptor error:', error);
+      }
       return Promise.reject(error);
     }
   );
@@ -100,20 +99,20 @@ const createMarketplaceClient = (): AxiosInstance => {
   // Response interceptor with error logging
   client.interceptors.response.use(
     (response) => {
-      console.log(`Marketplace API Response: ${response.status}`);
+      if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
+        console.log(`[DEBUG] Marketplace API Response: ${response.status}`);
+      }
       return response;
     },
-    async (error: AxiosError) => {
-      // Log detailed error information
-      console.error('Marketplace API Error:', {
-        message: error.message,
-        status: error.response?.status,
-        url: error.config?.url,
-        method: error.config?.method,
-        data: error.response?.data,
-        stack: error.stack,
-      });
-
+    (error: AxiosError) => {
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Marketplace API Error:', {
+          message: error.message,
+          status: error.response?.status,
+          url: error.config?.url,
+          method: error.config?.method,
+        });
+      }
       return Promise.reject(error);
     }
   );
@@ -123,7 +122,7 @@ const createMarketplaceClient = (): AxiosInstance => {
 
 const marketplaceClient = createMarketplaceClient();
 
-// Marketplace API Functions with detailed error handling
+// Marketplace API Functions with internal API route calls
 
 export const fetchProducts = async (params: {
   page?: number;
@@ -132,19 +131,26 @@ export const fetchProducts = async (params: {
   search?: string;
 } = {}): Promise<Product[]> => {
   try {
-    console.log('Fetching marketplace products with params:', params);
+    if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
+      console.log('[DEBUG] Marketplace Service - API Base URL:', process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api');
+      console.log('Fetching marketplace products with params:', params);
+    }
     
-    const response = await marketplaceClient.get('/api/marketplace/products', { 
+    // Use internal Next.js API route
+    const response = await marketplaceClient.get('/api/products', { 
       params,
-      timeout: 10000, // 10 second timeout
     });
     
     if (response.data && Array.isArray(response.data)) {
-      console.log(`Successfully fetched ${response.data.length} products from API`);
+      if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
+        console.log(`Successfully fetched ${response.data.length} products from API`);
+      }
       return response.data;
     } else {
-      console.warn('Products API returned unexpected data format. Falling back to static data.');
-      // Fallback to static data
+      // Fallback to static data if API returns unexpected format
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn('Products API returned unexpected data format. Using static fallback.');
+      }
       const { MARKETPLACE_LISTINGS } = await import('@/data/listingData');
       return MARKETPLACE_LISTINGS.map(item => ({
         ...item,
@@ -153,116 +159,130 @@ export const fetchProducts = async (params: {
       }));
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Products. Falling back to static data:', {
-      message: error.message,
-      status: error.response?.status,
-      data: error.response?.data,
-      url: error.config?.url,
-      method: error.config?.method,
-      params,
-    });
+    console.error('Marketplace fetch failed - Products:', error.message);
     
-    // Fallback to static data instead of throwing error
+    // Log to Sentry for production debugging
+    if (process.env.NODE_ENV === 'production') {
+      Sentry.captureException(error, {
+        tags: { service: 'marketplace', endpoint: 'fetchProducts' },
+        extra: { params }
+      });
+    }
+    
+    // Always return fallback data instead of throwing to prevent infinite loops
     try {
       const { MARKETPLACE_LISTINGS } = await import('@/data/listingData');
-      console.log(`Fallback: Using ${MARKETPLACE_LISTINGS.length} static products`);
       
-      // Apply basic filtering if parameters were provided
-      let products = MARKETPLACE_LISTINGS;
+      // Apply client-side filtering if needed
+      let filteredListings = [...MARKETPLACE_LISTINGS]; // Create a copy to avoid mutations
       
       if (params.category) {
-        products = products.filter(p => 
-          p.category?.toLowerCase().includes(params.category!.toLowerCase())
+        filteredListings = filteredListings.filter(item => 
+          item.category?.toLowerCase() === params.category?.toLowerCase()
         );
       }
       
       if (params.search) {
         const searchTerm = params.search.toLowerCase();
-        products = products.filter(p => 
-          p.title?.toLowerCase().includes(searchTerm) ||
-          p.description?.toLowerCase().includes(searchTerm) ||
-          p.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
+        filteredListings = filteredListings.filter(item =>
+          item.title?.toLowerCase().includes(searchTerm) ||
+          item.description?.toLowerCase().includes(searchTerm) ||
+          item.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
         );
       }
       
       // Apply pagination
-      const page = params.page || 1;
-      const limit = params.limit || 20;
-      const start = (page - 1) * limit;
-      const end = start + limit;
+      if (params.page && params.limit) {
+        const start = (params.page - 1) * params.limit;
+        const end = start + params.limit;
+        filteredListings = filteredListings.slice(start, end);
+      } else if (params.limit) {
+        filteredListings = filteredListings.slice(0, params.limit);
+      }
       
-      return products.slice(start, end).map(item => ({
+      return filteredListings.map(item => ({
         ...item,
         price: item.price || 0,
         description: item.description || ''
       }));
     } catch (fallbackError) {
-      console.error('Failed to load static fallback data:', fallbackError);
-      // If even static data fails, return empty array instead of throwing
+      console.error('Critical error: Even fallback data failed to load:', fallbackError);
+      // Return minimal empty array to prevent complete failure
       return [];
     }
   }
 };
 
+// Helper function to get fallback categories
+const getFallbackCategories = (): Category[] => {
+  return [
+    { id: '1', name: 'AI Models & APIs', slug: 'ai-models-apis', description: 'Pre-trained models and API endpoints', productCount: 25 },
+    { id: '2', name: 'Services', slug: 'services', description: 'Professional AI and tech services', productCount: 18 },
+    { id: '3', name: 'Equipment', slug: 'equipment', description: 'Hardware and computing equipment', productCount: 12 },
+    { id: '4', name: 'Content Creation', slug: 'content-creation', description: 'AI-powered content tools', productCount: 15 },
+    { id: '5', name: 'Data Analysis', slug: 'data-analysis', description: 'Analytics and BI solutions', productCount: 20 },
+  ];
+};
+
 export const fetchCategories = async (): Promise<Category[]> => {
   try {
-    console.log('Fetching marketplace categories...');
-    
-    const response = await marketplaceClient.get('/api/marketplace/categories', {
-      timeout: 10000, // 10 second timeout
-    });
+    // Use internal Next.js API route  
+    const response = await marketplaceClient.get('/api/categories');
     
     if (response.data && Array.isArray(response.data)) {
-      console.log(`Successfully fetched ${response.data.length} categories`);
       return response.data;
     } else {
-      console.warn('Categories API returned unexpected data format, using fallback');
       return getFallbackCategories();
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Categories, using fallback:', {
-      message: error.message,
-      status: error.response?.status,
-      url: error.config?.url,
-    });
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Marketplace fetch failed - Categories:', error.message);
+    }
     
     // Return fallback categories instead of throwing
     return getFallbackCategories();
   }
 };
 
-export const fetchTalent = async (params: {
-  page?: number;
-  limit?: number;
-  skills?: string[];
-  search?: string;
-} = {}): Promise<TalentProfile[]> => {
-  try {
-    console.log('Fetching marketplace talent with params:', params);
-    
-    const response = await marketplaceClient.get('/api/marketplace/talent', { 
-      params,
-      timeout: 10000, // 10 second timeout
-    });
-    
-    if (response.data && Array.isArray(response.data)) {
-      console.log(`Successfully fetched ${response.data.length} talent profiles`);
-      return response.data;
-    } else {
-      console.warn('Talent API returned unexpected data format, using fallback');
-      return getFallbackTalent(params);
+// Helper function to get fallback equipment
+const getFallbackEquipment = (params: any): Equipment[] => {
+  const fallbackEquipment: Equipment[] = [
+    {
+      id: 'eq-1',
+      name: 'AI Workstation Pro',
+      description: 'High-performance workstation optimized for AI development',
+      category: 'Hardware',
+      price: 4999,
+      currency: 'USD',
+      availability: 'In Stock',
+      location: 'San Francisco, CA',
+      specifications: ['NVIDIA RTX 4090', '128GB RAM', '2TB NVMe SSD'],
+      rating: 4.8,
+      reviewCount: 23
+    },
+    {
+      id: 'eq-2', 
+      name: 'Cloud GPU Cluster',
+      description: 'Scalable GPU cluster for machine learning training',
+      category: 'Cloud',
+      price: 2.50,
+      currency: 'USD',
+      availability: 'Available',
+      location: 'Global',
+      specifications: ['NVIDIA A100', 'Auto-scaling', 'Kubernetes'],
+      rating: 4.9,
+      reviewCount: 67
     }
-  } catch (error: any) {
-    console.error('Marketplace fetch failed - Talent, using fallback:', {
-      message: error.message,
-      status: error.response?.status,
-      url: error.config?.url,
-      params,
-    });
-    
-    // Return fallback talent instead of throwing
-    return getFallbackTalent(params);
+  ];
+  
+  // Apply basic filtering
+  if (params.category) {
+    return fallbackEquipment.filter(eq => 
+      eq.category.toLowerCase() === params.category.toLowerCase()
+    );
   }
+  
+  return fallbackEquipment;
 };
 
 export const fetchEquipment = async (params: {
@@ -272,138 +292,83 @@ export const fetchEquipment = async (params: {
   search?: string;
 } = {}): Promise<Equipment[]> => {
   try {
-    console.log('Fetching marketplace equipment with params:', params);
-    
-    const response = await marketplaceClient.get('/api/marketplace/equipment', { 
+    // Use internal Next.js API route
+    const response = await marketplaceClient.get('/api/equipment', { 
       params,
-      timeout: 10000, // 10 second timeout
     });
     
     if (response.data && Array.isArray(response.data)) {
-      console.log(`Successfully fetched ${response.data.length} equipment items`);
       return response.data;
     } else {
-      console.warn('Equipment API returned unexpected data format, using fallback');
       return getFallbackEquipment(params);
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Equipment, using fallback:', {
-      message: error.message,
-      status: error.response?.status,
-      url: error.config?.url,
-      params,
-    });
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Marketplace fetch failed - Equipment:', error.message);
+    }
     
     // Return fallback equipment instead of throwing
     return getFallbackEquipment(params);
   }
 };
 
-// Fallback data functions
-const getFallbackCategories = (): Category[] => {
+// Helper function to get fallback talent profiles
+const getFallbackTalent = (): TalentProfile[] => {
   return [
-    { id: '1', name: 'AI Services', slug: 'ai-services', icon: '🤖' },
-    { id: '2', name: 'Machine Learning', slug: 'machine-learning', icon: '🧠' },
-    { id: '3', name: 'Data Analytics', slug: 'data-analytics', icon: '📊' },
-    { id: '4', name: 'Cloud Computing', slug: 'cloud-computing', icon: '☁️' },
-    { id: '5', name: 'IoT Solutions', slug: 'iot-solutions', icon: '🌐' },
-    { id: '6', name: 'Cybersecurity', slug: 'cybersecurity', icon: '🔒' },
-  ];
-};
-
-const getFallbackTalent = async (params: any): Promise<TalentProfile[]> => {
-  try {
-    const { TALENT_PROFILES } = await import('@/data/talentData');
-    
-    // Apply basic filtering and pagination
-    let profiles = TALENT_PROFILES || [];
-    
-    if (params.search) {
-      const searchTerm = params.search.toLowerCase();
-      profiles = profiles.filter(p => 
-        p.full_name?.toLowerCase().includes(searchTerm) ||
-        p.professional_title?.toLowerCase().includes(searchTerm) ||
-        p.skills?.some((skill: string) => skill.toLowerCase().includes(searchTerm))
-      );
-    }
-    
-    if (params.skills && params.skills.length > 0) {
-      profiles = profiles.filter(p => 
-        params.skills.some((skill: string) => 
-          p.skills?.some((pSkill: string) => pSkill.toLowerCase().includes(skill.toLowerCase()))
-        )
-      );
-    }
-    
-    // Apply pagination
-    const page = params.page || 1;
-    const limit = params.limit || 20;
-    const start = (page - 1) * limit;
-    const end = start + limit;
-    
-    // Map the data to match the marketplace interface
-    return profiles.slice(start, end).map(profile => ({
-      id: profile.id,
-      name: profile.full_name,
-      title: profile.professional_title,
-      skills: profile.skills || [],
-      hourlyRate: profile.hourly_rate,
-      avatar: profile.profile_picture_url,
-      rating: profile.average_rating,
-      reviewCount: profile.rating_count || 0,
-      availability: profile.availability_type
-    }));
-  } catch (error) {
-    console.error('Failed to load fallback talent data:', error);
-    return [];
-  }
-};
-
-const getFallbackEquipment = (params: any): Equipment[] => {
-  // Return mock equipment data
-  const mockEquipment: Equipment[] = [
     {
-      id: '1',
-      title: 'NVIDIA RTX 4090 GPU',
-      description: 'High-performance GPU for AI workloads',
-      price: 1599,
-      category: 'GPUs',
-      brand: 'NVIDIA',
-      specifications: ['24GB GDDR6X', 'Ada Lovelace Architecture'],
-      images: ['/images/equipment/rtx-4090.jpg'],
-      availability: 'In Stock'
+      id: 'talent-1',
+      full_name: 'Alex Chen',
+      professional_title: 'Senior AI Engineer',
+      description: 'Specialized in computer vision and deep learning with 8+ years experience',
+      skills: ['TensorFlow', 'PyTorch', 'Computer Vision', 'MLOps'],
+      hourly_rate: 150,
+      currency: 'USD',
+      availability: 'Available',
+      location: 'San Francisco, CA',
+      rating: 4.9,
+      reviewCount: 34
     },
     {
-      id: '2',
-      title: 'AMD EPYC Server CPU',
-      description: 'Enterprise server processor for data centers',
-      price: 4999,
-      category: 'CPUs',
-      brand: 'AMD',
-      specifications: ['64 Cores', '128 Threads', '2.25 GHz Base'],
-      images: ['/images/equipment/epyc-cpu.jpg'],
-      availability: 'Limited Stock'
+      id: 'talent-2',
+      full_name: 'Sarah Rodriguez',
+      professional_title: 'ML Data Scientist',
+      description: 'Expert in NLP and recommendation systems with proven track record',
+      skills: ['Python', 'R', 'NLP', 'Recommendation Systems'],
+      hourly_rate: 120,
+      currency: 'USD',
+      availability: 'Available',
+      location: 'New York, NY',
+      rating: 4.7,
+      reviewCount: 28
     }
   ];
-  
-  // Apply basic filtering
-  let equipment = mockEquipment;
-  
-  if (params.category) {
-    equipment = equipment.filter(e => 
-      e.category?.toLowerCase().includes(params.category.toLowerCase())
-    );
+};
+
+export const fetchTalent = async (params: {
+  page?: number;
+  limit?: number;
+  skills?: string;
+  search?: string;
+} = {}): Promise<TalentProfile[]> => {
+  try {
+    // Use internal Next.js API route
+    const response = await marketplaceClient.get('/api/talent', { 
+      params,
+    });
+    
+    if (response.data && Array.isArray(response.data)) {
+      return response.data;
+    } else {
+      return getFallbackTalent();
+    }
+  } catch (error: any) {
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Marketplace fetch failed - Talent:', error.message);
+    }
+    
+    // Return fallback talent instead of throwing
+    return getFallbackTalent();
   }
-  
-  if (params.search) {
-    const searchTerm = params.search.toLowerCase();
-    equipment = equipment.filter(e => 
-      e.title?.toLowerCase().includes(searchTerm) ||
-      e.description?.toLowerCase().includes(searchTerm)
-    );
-  }
-  
-  return equipment;
 };
 
 // Helper function to get error message for UI display
@@ -416,7 +381,7 @@ export const getMarketplaceErrorMessage = (error: any): string => {
     return 'Please log in to access marketplace data.';
   } else if (error.code === 'ECONNABORTED') {
     return 'Request timeout. Please check your connection and try again.';
-  } else if (!navigator.onLine) {
+  } else if (typeof navigator !== 'undefined' && !navigator.onLine) {
     return 'No internet connection. Please check your network.';
   } else {
     return 'Unable to load marketplace data. Please try again.';
@@ -424,4 +389,71 @@ export const getMarketplaceErrorMessage = (error: any): string => {
 };
 
 // Export the client for advanced usage
-export { marketplaceClient }; 
+export { marketplaceClient };
+
+// Add product validation and auto-generation utilities
+export const validateProductData = (product: any): boolean => {
+  const requiredFields = ['id', 'title', 'description', 'category'];
+  return requiredFields.every(field => product[field] && product[field].toString().trim() !== '');
+};
+
+export const generateProductId = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .substring(0, 50);
+};
+
+export const ensureProductIntegrity = (products: any[]): any[] => {
+  return products.map((product, index) => {
+    const validated = { ...product };
+    
+    // Ensure ID exists
+    if (!validated.id) {
+      validated.id = generateProductId(validated.title || `product-${index}`);
+      console.warn(`[Auto-Fix] Generated ID for product: ${validated.id}`);
+    }
+    
+    // Ensure required fields exist
+    if (!validated.title) {
+      validated.title = `Product ${index + 1}`;
+      console.warn(`[Auto-Fix] Generated title for product: ${validated.id}`);
+    }
+    
+    if (!validated.description) {
+      validated.description = `Description for ${validated.title}`;
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`[Auto-Fix] Generated description for product: ${validated.id}`);
+      }
+    }
+    
+    if (!validated.category) {
+      validated.category = 'General';
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`[Auto-Fix] Generated category for product: ${validated.id}`);
+      }
+    }
+    
+    // Ensure price is a valid number
+    if (typeof validated.price !== 'number' || validated.price < 0) {
+      validated.price = 0;
+    }
+    
+    // Ensure author exists
+    if (!validated.author) {
+      validated.author = {
+        name: 'Zion Marketplace',
+        id: 'zion-marketplace'
+      };
+    }
+    
+    // Ensure creation date exists
+    if (!validated.createdAt) {
+      validated.createdAt = new Date().toISOString();
+    }
+    
+    return validated;
+  });
+};

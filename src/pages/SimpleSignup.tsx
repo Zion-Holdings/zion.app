@@ -54,8 +54,10 @@ export default function SimpleSignup() {
   useEffect(() => {
     if (formik.submitCount > 0 && Object.keys(formik.errors).length > 0) {
       const firstError = Object.keys(formik.errors)[0];
-      const element = document.getElementsByName(firstError)[0] as HTMLElement | undefined;
-      element?.focus();
+      if (firstError) {
+        const element = document.getElementsByName(firstError)[0] as HTMLElement | undefined;
+        element?.focus();
+      }
     }
   }, [formik.errors, formik.submitCount]);
 

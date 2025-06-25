@@ -1,4 +1,3 @@
-
 {
   "general": {
     "app_name": "Marché IA de Zion",
@@ -22,16 +21,26 @@
     "check_status_page": "Vous pouvez essayer de rafraîchir la page ou visiter notre"
   },
   "nav": {
-    "home": "Home",
-    "marketplace": "Marketplace",
-    "categories": "Categories",
+    "home": "Accueil",
+    "marketplace": "Marché",
+    "marketplace_overview": "Aperçu",
+    "categories": "Catégories",
     "talent": "Talent",
-    "equipment": "Equipment",
-    "community": "Community",
-    "dashboard": "Dashboard",
+    "equipment": "Équipement",
+    "community": "Communauté",
+    "community_overview": "Aperçu",
+    "blog": "Blog",
+    "partners": "Partenaires",
+    "resources": "Ressources",
+    "docs": "Documentation",
+    "tutorials": "Tutoriels",
+    "case_studies": "Études de Cas",
+    "about": "À propos",
+    "cart": "Panier",
+    "dashboard": "Tableau de Bord",
     "messages": "Messages",
-    "post_job": "Post Job",
-    "analytics": "Analytics"
+    "post_job": "Publier un Emploi",
+    "analytics": "Analytiques"
   },
   "auth": {
     "login": "Login",
@@ -94,7 +103,12 @@
     "benefits_title": "Pourquoi Zion?",
     "benefits_subtitle": "Découvrez la prochaine génération de marché technologique avec des fonctionnalités conçues pour maximiser l'efficacité et la valeur",
     "how_it_works_title": "Comment Ça Marche",
-    "how_it_works_subtitle": "Un processus simple en quatre étapes pour connecter les fournisseurs de technologie avec les clients"
+    "how_it_works_subtitle": "Un processus simple de quatre étapes pour connecter les fournisseurs de technologie avec les clients",
+    "title_placeholder": "Enter job title",
+    "description_placeholder": "Describe the job in detail",
+    "requirements_placeholder": "List required skills and qualifications",
+    "submitting": "Submitting...",
+    "post_job_button": "Post Job"
   },
   "jobs": {
     "post_job_title": "Post a Job",
@@ -232,5 +246,7 @@
     "hire_buy_desc": "Connectez-vous directement avec les fournisseurs appariés et complétez votre transaction en sécurité.",
     "done": "Terminé",
     "done_desc": "Profitez d'une livraison sans tracas et du support pour vos solutions technologiques."
-  }
+  },
+  "login": "Connexion",
+  "signup": "S'inscrire"
 }

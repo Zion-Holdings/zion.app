@@ -15,7 +15,9 @@ interface CountryServiceCardProps {
 
 export function CountryServiceCard({ country, onSelect, onQuote, isPopular }: CountryServiceCardProps) {
   // Get region flag based on country name (for demo purposes)
-  const getRegionEmoji = (countryName: string): string => {
+  const getRegionEmoji = (countryName: string | undefined): string => {
+    if (!countryName) return "🌐";
+    
     const emojiMap: Record<string, string> = {
       "United States": "🇺🇸",
       "United Kingdom": "🇬🇧",
@@ -35,11 +37,13 @@ export function CountryServiceCard({ country, onSelect, onQuote, isPopular }: Co
       "default": "🌐"
     };
     
-    return emojiMap[countryName] || emojiMap["default"];
+    return emojiMap[countryName] || "🌐";
   };
   
   // Get response time estimate based on country
-  const getResponseTime = (countryName: string): string => {
+  const getResponseTime = (countryName: string | undefined): string => {
+    if (!countryName) return "8-24 hours";
+    
     const tier1 = ["United States", "United Kingdom", "Germany", "Japan", "Singapore", "Australia", "Canada", "France"];
     const tier2 = ["China", "Brazil", "India", "South Korea", "South Africa", "Russia"];
     
@@ -62,7 +66,7 @@ export function CountryServiceCard({ country, onSelect, onQuote, isPopular }: Co
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <span className="text-2xl" aria-hidden="true">{getRegionEmoji(country.country)}</span>
-            <h3 className="text-lg font-semibold text-white truncate">{country.country}</h3>
+            <h3 className="text-lg font-semibold text-white truncate">{country.country || 'Unknown Country'}</h3>
           </div>
           {isPopular && (
             <Badge className="bg-zion-purple text-white border-none">Popular</Badge>

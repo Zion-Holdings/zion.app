@@ -93,7 +93,8 @@ export function TeamActivity() {
       billing: { variant: "destructive" },
     };
 
-    return <Badge variant={categoryStyles[category].variant}>{category}</Badge>;
+    const style = categoryStyles[category] || { variant: "default" as const };
+    return <Badge variant={style.variant}>{category}</Badge>;
   };
 
   return (

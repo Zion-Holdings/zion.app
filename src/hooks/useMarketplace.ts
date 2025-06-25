@@ -7,8 +7,8 @@ import {
   getMarketplaceErrorMessage,
   type Product,
   type Category,
-  type TalentProfile,
   type Equipment,
+  type TalentProfile,
 } from '@/services/marketplace';
 
 export interface UseMarketplaceState<T> {
@@ -121,7 +121,15 @@ export function useMarketplaceTalent(filters: MarketplaceFilters = {}): UseMarke
       setError(null);
       console.log('useMarketplaceTalent: Fetching talent with filters:', filters);
       
-      const talent = await fetchTalent(filters);
+      // Transform filters to match fetchTalent expected interface
+      const talentFilters = {
+        page: filters.page,
+        limit: filters.limit,
+        search: filters.search,
+        skills: filters.skills ? filters.skills.join(',') : undefined, // Convert array to comma-separated string
+      };
+      
+      const talent = await fetchTalent(talentFilters);
       setData(talent);
     } catch (err: any) {
       console.error('useMarketplaceTalent: Error fetching talent:', err);

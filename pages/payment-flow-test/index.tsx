@@ -83,10 +83,10 @@ export default function PaymentFlowTest() {
       <ul>
         {testProducts.map((p) => (
           <li key={p.id} style={{ marginBottom: '8px' }}>
-            {p.title} - ${p.price.toFixed(2)}{' '}
+            {p.title} - ${(p.price ?? 0).toFixed(2)}{' '}
             <button
               onClick={() =>
-                addToCart({ id: p.id, title: p.title, price: p.price })
+                addToCart({ id: p.id, title: p.title, price: p.price ?? 0 })
               }
             >
               Add to Cart

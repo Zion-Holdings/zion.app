@@ -32,7 +32,7 @@ export default function Analytics() {
       // Group by date
       const viewsByDate: Record<string, { date: string; views: number }> = {};
       data?.forEach((item: any) => {
-        const date = new Date(item.created_at).toISOString().split('T')[0];
+        const date = new Date(item.created_at).toISOString().split('T')[0] || 'unknown';
         if (!viewsByDate[date]) viewsByDate[date] = { date: date, views: 0 };
         viewsByDate[date].views++;
       });
@@ -42,7 +42,7 @@ export default function Analytics() {
       for (let i = 0; i < days; i++) {
         const date = new Date();
         date.setDate(date.getDate() - i);
-        const dateStr = date.toISOString().split('T')[0];
+        const dateStr = date.toISOString().split('T')[0] || 'unknown';
         
         if (viewsByDate[dateStr]) {
           result.push(viewsByDate[dateStr]);
@@ -73,7 +73,7 @@ export default function Analytics() {
       // Group by conversion type and date
       const conversionsByType: Record<string, Record<string, number>> = {};
       data?.forEach((item: any) => {
-        const date = new Date(item.created_at).toISOString().split('T')[0];
+        const date = new Date(item.created_at).toISOString().split('T')[0] || 'unknown';
         const conversionType = item.metadata?.conversionType || 'unknown';
         
         if (!conversionsByType[conversionType]) {
@@ -92,7 +92,7 @@ export default function Analytics() {
       for (let i = 0; i < days; i++) {
         const date = new Date();
         date.setDate(date.getDate() - i);
-        dates.push(date.toISOString().split('T')[0]);
+        dates.push(date.toISOString().split('T')[0] || 'unknown');
       }
       dates.sort();
       
@@ -101,7 +101,7 @@ export default function Analytics() {
         const result: Record<string, any> = { date };
         
         Object.keys(conversionsByType).forEach(type => {
-          result[type] = conversionsByType[type][date] || 0;
+          result[type] = conversionsByType[type]?.[date] || 0;
         });
         
         return result;
@@ -132,7 +132,7 @@ export default function Analytics() {
 
         const usageByDate: Record<string, Record<string, number>> = {};
         manual?.forEach((ev: any) => {
-          const date = new Date(ev.created_at).toISOString().split('T')[0];
+          const date = new Date(ev.created_at).toISOString().split('T')[0] || 'unknown';
           const feature = ev.metadata?.feature || 'unknown';
           if (!usageByDate[date]) usageByDate[date] = {};
           if (!usageByDate[date][feature]) usageByDate[date][feature] = 0;

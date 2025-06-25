@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
@@ -58,7 +57,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/webhooks`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         }
       });
@@ -100,7 +99,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/create`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -156,7 +155,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/toggle`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId, isActive })
@@ -209,7 +208,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/delete`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId })
@@ -261,7 +260,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/test`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId, eventType })

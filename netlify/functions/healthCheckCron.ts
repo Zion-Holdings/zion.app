@@ -18,15 +18,16 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
     const duration = Date.now() - startTime;
 
     if (response.status !== 200) {
+      const responseText = await response.text();
       console.error(
-        `Health check failed for ${healthEndpoint}: Status code ${response.status}. Response: ${await response.text()}`
+        `Health check failed for ${healthEndpoint}: Status code ${response.status}. Response: ${responseText.substring(0, 100)}... (truncated)`
       );
     } else {
       console.log(`Health check successful for ${healthEndpoint}: Status ${response.status}, Duration ${duration}ms`);
     }
 
     if (duration > 1000) {
-      console.error(
+      console.warn(
         `Health check latency exceeded for ${healthEndpoint}: ${duration}ms`
       );
     }
@@ -34,7 +35,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
   } catch (error) {
     const duration = Date.now() - startTime;
     console.error(
-      `Error during health check for ${healthEndpoint}: ${error instanceof Error ? error.message : String(error)}. Duration: ${duration}ms`
+      `Error during health check for ${healthEndpoint}: ${error instanceof Error ? error.message : String(error)}. Duration: ${duration}ms. Stack: ${error instanceof Error ? error.stack?.substring(0, 100) : String(error)}...(truncated)`
     );
   }
 
