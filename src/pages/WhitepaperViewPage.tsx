@@ -50,8 +50,8 @@ const WhitepaperViewPage: React.FC = () => {
         });
 
         if (funcError) throw new Error(`Supabase function error: ${funcError.message}`);
-        if (responseData && responseData.error) throw new Error(responseData.error);
-        if (!responseData || !responseData.whitepaper_data) {
+        if (responseData && (responseData as any).error) throw new Error((responseData as any).error);
+        if (!responseData || !(responseData as any).whitepaper_data) {
           throw new Error('Shared whitepaper not found or data is invalid.');
         }
 

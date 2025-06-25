@@ -375,14 +375,15 @@ const WhitepaperGeneratorPage: React.FC = () => {
                 body: whitepaperPayload,
             });
             if (linkFuncError) throw new Error(`Failed to create link for counsel: ${linkFuncError.message}`);
-            if (linkResponse.error) throw new Error(`Error from create-shared-whitepaper function: ${linkResponse.error}`);
-            if (!linkResponse.id) throw new Error('Failed to get ID for shareable link for counsel.');
+            if (!linkResponse) throw new Error('No response received from create-shared-whitepaper function for counsel');
+            if ((linkResponse as any).error) throw new Error(`Error from create-shared-whitepaper function: ${(linkResponse as any).error}`);
+            if (!(linkResponse as any).id) throw new Error('Failed to get ID for shareable link for counsel.');
 
-            linkToSubmit = `${window.location.origin}/whitepaper/view/${linkResponse.id}`;
-            whitepaperIdToSubmit = linkResponse.id;
+            linkToSubmit = `${window.location.origin}/whitepaper/view/${(linkResponse as any).id}`;
+            whitepaperIdToSubmit = (linkResponse as any).id;
             setShareableLink(linkToSubmit);
             setCurrentSharedWhitepaperId(whitepaperIdToSubmit);
-            setCurrentSharedWhitepaperIsPublic(linkResponse.is_public); // Store initial public status
+            setCurrentSharedWhitepaperIsPublic((linkResponse as any).is_public);
         }
 
         // Ensure it's public before submitting, or handle as per requirements
@@ -392,7 +393,8 @@ const WhitepaperGeneratorPage: React.FC = () => {
                 body: { whitepaperId: whitepaperIdToSubmit, isPublic: true },
             });
             if (statusError) throw new Error(`Failed to make whitepaper public: ${statusError.message}`);
-            if (statusResponse.error) throw new Error (statusResponse.error);
+            if (!statusResponse) throw new Error('No response received from set-shared-whitepaper-public-status function');
+            if ((statusResponse as any).error) throw new Error((statusResponse as any).error);
             setCurrentSharedWhitepaperIsPublic(true);
         }
 
@@ -405,7 +407,8 @@ const WhitepaperGeneratorPage: React.FC = () => {
             }
         });
         if (notifyError) throw new Error(`Failed to notify counsel: ${notifyError.message}`);
-        if (notifyResponse.error) throw new Error(`Error from notify-legal-team: ${notifyResponse.error}`);
+        if (!notifyResponse) throw new Error('No response received from notify-legal-team function');
+        if ((notifyResponse as any).error) throw new Error(`Error from notify-legal-team: ${(notifyResponse as any).error}`);
 
         toast.success("Whitepaper submitted to counsel successfully!");
 
