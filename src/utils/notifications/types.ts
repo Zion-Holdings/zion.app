@@ -22,7 +22,7 @@ export interface CreateNotificationParams {
 
 export interface CreateNotificationResult {
   success: boolean;
-  notificationId?: string;
+  notificationId?: string | null;
   error?: any;
 }
 
