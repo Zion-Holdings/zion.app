@@ -1,11 +1,11 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { auth0 } from "./lib/auth0";
+import { createClient } from '@supabase/supabase-js';
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   
-  console.log('Auth0 middleware processing request:', {
+  console.log('Supabase middleware processing request:', {
     url: request.url,
     pathname,
     method: request.method
@@ -37,7 +37,8 @@ export async function middleware(request: NextRequest) {
     '/signup',
     '/forgot-password',
     '/verify-status',
-    '/auth', // Auth0 routes themselves
+    '/auth', // Auth routes
+    '/login',
   ];
 
   // Check if the request is for a public route
@@ -47,32 +48,28 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith('/api/auth/') // Allow all auth API routes
   );
 
-  // Skip Auth0 middleware for public routes
+  // Skip authentication middleware for public routes
   if (isPublicRoute) {
-    console.log('Skipping Auth0 middleware for public route:', pathname);
-    return;
+    console.log('Skipping authentication middleware for public route:', pathname);
+    return NextResponse.next();
   }
 
   try {
-    // Only use Auth0 middleware if properly configured
-    if (!auth0) {
-      console.log('Auth0 not configured, skipping middleware');
-      return NextResponse.next();
+    // Get the session token from cookies
+    const sessionToken = request.cookies.get('sb-gnwtggeptzkqnduuthto-auth-token')?.value;
+    
+    // If there's no session token, redirect to login for protected routes
+    if (!sessionToken) {
+      console.log('No session found, redirecting to login');
+      const loginUrl = new URL('/auth/login', request.url);
+      loginUrl.searchParams.set('returnTo', pathname);
+      return NextResponse.redirect(loginUrl);
     }
     
-    const response = await auth0.middleware(request);
-    
-    console.log('Auth0 middleware response:', {
-      status: response?.status,
-      statusText: response?.statusText,
-      redirected: response?.redirected
-    });
-    
-    return response;
+    return NextResponse.next();
   } catch (error) {
-    console.error('Auth0 middleware error:', error);
-    // Return the request as-is if middleware fails
-    return;
+    console.error('Middleware error:', error);
+    return NextResponse.next();
   }
 }
 

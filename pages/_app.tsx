@@ -40,7 +40,7 @@ import { initializePerformanceOptimizations } from '@/utils/performance';
 import '@/utils/globalFetchInterceptor';
 import '@/utils/consoleErrorToast';
 import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
-import { Auth0Provider } from '@auth0/nextjs-auth0';
+
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
@@ -124,8 +124,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       }
       
       if (process.env.NODE_ENV === 'development') {
-        console.log("AUTH0_CLIENT_ID:", process.env.AUTH0_CLIENT_ID ? 'SET' : 'NOT_SET');
-        console.log("AUTH0_ISSUER_BASE_URL:", process.env.AUTH0_ISSUER_BASE_URL ? 'SET' : 'NOT_SET');
+        console.log("SUPABASE_URL:", process.env.NEXT_PUBLIC_SUPABASE_URL ? 'SET' : 'NOT_SET');
+        console.log("SUPABASE_ANON_KEY:", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'NOT_SET');
       }
       
       // Mark as initialized after successful setup
@@ -171,16 +171,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     );
   }
 
-  // Configure Auth0 properly or skip if not configured
-  const auth0Config = {
-    domain: process.env.AUTH0_ISSUER_BASE_URL?.replace('https://', '') || '',
-    clientId: process.env.AUTH0_CLIENT_ID || '',
-    authorizationParams: {
-      redirect_uri: typeof window !== 'undefined' ? window.location.origin : '',
-    },
-  };
 
-  const shouldUseAuth0 = auth0Config.domain && auth0Config.clientId;
 
   // Use ProductionErrorBoundary as the top-level error boundary
   return (
@@ -257,40 +248,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                       <ReduxProvider store={store}>
                         <HelmetProvider>
                           <ErrorProvider>
-                            {shouldUseAuth0 ? (
-                              <Auth0Provider {...auth0Config}>
-                                <AuthProvider>
-                                  <WhitelabelProvider>
-                                    <I18nextProvider i18n={i18n}>
-                                      <LanguageProviderWrapper>
-                                        <WalletProvider>
-                                        <CartProvider>
-                                          <AnalyticsProvider>
-                                            <ThemeProvider>
-                                              <AppLayout>
-                                                <ErrorBoundary>
-                                                  <Component {...pageProps} productId="example-product-id" />
-                                                </ErrorBoundary>
-                                                <ErrorResetOnRouteChange />
-                                                <Toaster />
-                                                <OfflineIndicator />
-                                                <IntercomChat />
-                                              </AppLayout>
-                                            </ThemeProvider>
-                                          </AnalyticsProvider>
-                                        </CartProvider>
-                                      </WalletProvider>
-                                      </LanguageProviderWrapper>
-                                    </I18nextProvider>
-                                  </WhitelabelProvider>
-                                </AuthProvider>
-                              </Auth0Provider>
-                            ) : (
-                              <AuthProvider>
-                                <WhitelabelProvider>
-                                  <I18nextProvider i18n={i18n}>
-                                    <LanguageProviderWrapper>
-                                      <WalletProvider>
+                            <AuthProvider>
+                              <WhitelabelProvider>
+                                <I18nextProvider i18n={i18n}>
+                                  <LanguageProviderWrapper>
+                                    <WalletProvider>
                                       <CartProvider>
                                         <AnalyticsProvider>
                                           <ThemeProvider>
@@ -307,11 +269,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                                         </AnalyticsProvider>
                                       </CartProvider>
                                     </WalletProvider>
-                                    </LanguageProviderWrapper>
-                                  </I18nextProvider>
-                                </WhitelabelProvider>
-                              </AuthProvider>
-                            )}
+                                  </LanguageProviderWrapper>
+                                </I18nextProvider>
+                              </WhitelabelProvider>
+                            </AuthProvider>
                           </ErrorProvider>
                         </HelmetProvider>
                       </ReduxProvider>

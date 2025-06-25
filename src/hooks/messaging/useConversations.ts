@@ -101,7 +101,7 @@ export function useConversations(
       
       if (existingConversations && existingConversations.length > 0) {
         // Use existing conversation
-        conversationId = existingConversations[0].id;
+        conversationId = existingConversations[0]?.id;
         
         // Update context if provided
         if (contextType || contextId || contextData) {

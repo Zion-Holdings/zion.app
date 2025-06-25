@@ -2,13 +2,10 @@ import * as Sentry from '@sentry/nextjs';
 import { z } from 'zod';
 
 interface EnvironmentConfig {
-  auth0: {
-    secret: string;
-    baseUrl: string;
-    issuerBaseUrl: string;
-    clientId: string;
-    clientSecret: string;
-    audience?: string;
+  supabase: {
+    url: string;
+    anonKey: string;
+    serviceRoleKey?: string;
     isConfigured: boolean;
   };
   sentry: {
@@ -37,12 +34,9 @@ interface EnvironmentConfig {
 
 // Typed environment schema using zod for early validation
 const EnvSchema = z.object({
-  AUTH0_SECRET: z.string().optional(),
-  AUTH0_BASE_URL: z.string().optional(),
-  AUTH0_ISSUER_BASE_URL: z.string().optional(),
-  AUTH0_CLIENT_ID: z.string().optional(),
-  AUTH0_CLIENT_SECRET: z.string().optional(),
-  AUTH0_AUDIENCE: z.string().optional(),
+  NEXT_PUBLIC_SUPABASE_URL: z.string().optional(),
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().optional(),
+  SUPABASE_SERVICE_ROLE_KEY: z.string().optional(),
   NEXT_PUBLIC_SENTRY_DSN: z.string().optional(),
   SENTRY_DSN: z.string().optional(),
   NEXT_PUBLIC_SENTRY_ENVIRONMENT: z.string().optional(),
@@ -144,39 +138,26 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   // Parse environment variables using the typed schema
   const env = EnvSchema.parse(process.env) as RawEnv;
 
-  // Auth0 Configuration
-  const auth0Secret = env.AUTH0_SECRET;
-  const auth0BaseUrl = env.AUTH0_BASE_URL;
-  const auth0IssuerBaseUrl = env.AUTH0_ISSUER_BASE_URL;
-  const auth0ClientId = env.AUTH0_CLIENT_ID;
-  const auth0ClientSecret = env.AUTH0_CLIENT_SECRET;
-  const auth0Audience = env.AUTH0_AUDIENCE;
+  // Supabase Configuration
+  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const supabaseServiceRoleKey = env.SUPABASE_SERVICE_ROLE_KEY;
   
-  // Debug logging for Auth0 configuration
-  const secretIsPlaceholder = isPlaceholderValue(auth0Secret);
-  const baseUrlIsPlaceholder = isPlaceholderValue(auth0BaseUrl);
-  const issuerIsPlaceholder = isPlaceholderValue(auth0IssuerBaseUrl);
-  const clientIdIsPlaceholder = isPlaceholderValue(auth0ClientId);
-  const clientSecretIsPlaceholder = isPlaceholderValue(auth0ClientSecret);
+  // Debug logging for Supabase configuration
+  const urlIsPlaceholder = isPlaceholderValue(supabaseUrl);
+  const anonKeyIsPlaceholder = isPlaceholderValue(supabaseAnonKey);
   
   if (isDevelopment || process.env.DEBUG_ENV_CONFIG) {
-    console.log('[ENV CONFIG] Auth0 configuration check:', {
-      secret: auth0Secret ? `${auth0Secret.substring(0, 8)}...` : 'undefined',
-      secretIsPlaceholder,
-      baseUrl: auth0BaseUrl ? `${auth0BaseUrl.substring(0, 30)}...` : 'undefined',
-      baseUrlIsPlaceholder,
-      issuer: auth0IssuerBaseUrl ? `${auth0IssuerBaseUrl.substring(0, 30)}...` : 'undefined',
-      issuerIsPlaceholder,
-      clientIdPresent: !!auth0ClientId,
-      clientIdIsPlaceholder,
-      clientSecretPresent: !!auth0ClientSecret,
-      clientSecretIsPlaceholder
+    console.log('[ENV CONFIG] Supabase configuration check:', {
+      url: supabaseUrl ? `${supabaseUrl.substring(0, 30)}...` : 'undefined',
+      urlIsPlaceholder,
+      anonKeyPresent: !!supabaseAnonKey,
+      anonKeyIsPlaceholder,
+      serviceRoleKeyPresent: !!supabaseServiceRoleKey
     });
   }
   
-  const auth0Configured = !secretIsPlaceholder && !baseUrlIsPlaceholder && 
-                         !issuerIsPlaceholder && !clientIdIsPlaceholder && 
-                         !clientSecretIsPlaceholder;
+  const supabaseConfigured = !urlIsPlaceholder && !anonKeyIsPlaceholder;
 
   // Sentry Configuration
   const sentryDsn = env.NEXT_PUBLIC_SENTRY_DSN || env.SENTRY_DSN;
@@ -197,14 +178,11 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const datadogEnabled = !!ddClientToken || !!env.DD_SERVICE;
 
   return {
-    auth0: {
-      secret: auth0Configured ? auth0Secret! : 'placeholder-secret',
-      baseUrl: auth0Configured ? auth0BaseUrl! : 'http://localhost:3000',
-      issuerBaseUrl: auth0Configured ? auth0IssuerBaseUrl! : 'https://placeholder.us.auth0.com',
-      clientId: auth0Configured ? auth0ClientId! : 'placeholder-client-id',
-      clientSecret: auth0Configured ? auth0ClientSecret! : 'placeholder-client-secret',
-      audience: auth0Audience,
-      isConfigured: auth0Configured
+    supabase: {
+      url: supabaseConfigured ? supabaseUrl! : 'https://placeholder.supabase.co',
+      anonKey: supabaseConfigured ? supabaseAnonKey! : 'placeholder-anon-key',
+      serviceRoleKey: supabaseServiceRoleKey,
+      isConfigured: supabaseConfigured
     },
     sentry: {
       dsn: sentryConfigured ? sentryDsn! : '',
@@ -241,8 +219,8 @@ export function validateProductionEnvironment(): void {
     // Only warn in development
     const warnings = [];
     
-    if (!config.auth0.isConfigured) {
-      warnings.push('Auth0 is not configured - using placeholder values');
+    if (!config.supabase.isConfigured) {
+      warnings.push('Supabase is not configured - using placeholder values');
     }
     
     if (!config.sentry.isConfigured) {
@@ -263,8 +241,8 @@ export function validateProductionEnvironment(): void {
   // Strict validation for production
   const errors = [];
   
-  if (!config.auth0.isConfigured) {
-    errors.push('Auth0 configuration must be complete in production (AUTH0_SECRET, AUTH0_BASE_URL, AUTH0_ISSUER_BASE_URL, AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET)');
+  if (!config.supabase.isConfigured) {
+    errors.push('Supabase configuration must be complete in production (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)');
   }
 
   if (!config.sentry.isConfigured) {
