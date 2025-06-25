@@ -10,6 +10,7 @@ This folder contains various guides and references for the Zion application. Bel
 - [Frontend State Management Guidelines](./frontend_state_management_guidelines.md)
 - [UX Micro-Interactions](./UX_MICRO_INTERACTIONS.md)
 - [Public API Documentation](./public-api/README.md)
+- [Resources Page Prompts](./resources_prompt.md)
 
 Additional documents cover troubleshooting guides, internal protocols and other topics. Browse the files in this folder for more details.
 
