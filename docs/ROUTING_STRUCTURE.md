@@ -44,6 +44,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
 /community/blog → Blog Page (pages/community/blog.tsx) ✅
 /community/forum → Forum Page (pages/community/forum.tsx) ✅
 /community/category/[slug] → Forum Category Page (pages/community/category/[slug].tsx) ✅
+/partners → Partners Page (pages/partners.tsx) – loads Community Forum
 /community/[slug] → Dynamic Community Pages ✅
 ```
 
@@ -73,6 +74,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
 | `/category/[slug]` | `CategoryPage` | `@/pages/CategoryPage` |
 | `/community/blog` | `Blog` | `@/pages/Blog` |
 | `/community/forum` | `CommunityPage` | `@/pages/CommunityPage` |
+| `/partners` | `Partners` | `@/pages/Partners` |
 | `/community/category/[slug]` | `ForumCategoryPage` | `@/pages/ForumCategoryPage` |
 | `/resources/docs` | `ResourcesDocsPage` | Custom documentation page |
 | `/about` | `About` | Custom about page |
@@ -101,6 +103,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
    http://localhost:3000/marketplace/equipment
    http://localhost:3000/community/blog
    http://localhost:3000/community/forum
+   http://localhost:3000/partners
    http://localhost:3000/resources/docs
    http://localhost:3000/about
    http://localhost:3000/cart
