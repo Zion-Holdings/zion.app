@@ -119,16 +119,16 @@ export async function callZionGPT({
     if (error) throw error;
     
     // Log usage for analytics
-    if (data && data.tokensUsed) {
+    if (data && (data as any).tokensUsed) {
       await logModelUsage(
         modelId, 
-        data.tokensUsed,
+        (data as any).tokensUsed,
         `${purpose}-generation`,
         userId
       );
     }
     
-    return data?.completion || '';
+    return (data as any)?.completion || '';
   } catch (error) {
     logError(error, { context: 'callZionGPT' });
     throw error;
