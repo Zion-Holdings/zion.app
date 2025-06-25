@@ -25,8 +25,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <NextSeo
-        title="Zion - The Tech & AI Marketplace"
-        description="Discover top AI and tech talent, services, and equipment in one place."
+        title="Zion Tech Marketplace - Discover Innovative Tech Solutions"
+        description="Explore Zion Tech Marketplace for game-changing solutions. Join now to connect, shop, and grow with leading innovators. Get started today for free resources and exclusive offers!"
         openGraph={{ images: [{ url: 'https://app.ziontechgroup.com/og.png' }] }}
       />
 

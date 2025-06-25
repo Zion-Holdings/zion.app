@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import CreatePostButton from "@/components/community/CreatePostButton";
@@ -13,7 +12,6 @@ import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus
 import { useCommunity } from "@/context";
 import type { ForumCategory } from "@/types/community";
 import { logError } from "@/utils/logError";
-
 
 export default function CommunityPage() {
   console.log('CommunityPage rendering');
@@ -37,12 +35,27 @@ export default function CommunityPage() {
     const wantsNew = router.query.new === "1";
     if (wantsNew && !user) {
       const next = encodeURIComponent(`/community?new=1${initialCategory ? `&category=${initialCategory}` : ""}`);
-      router.replace(`/login?next=${next}`);
+      router.replace(`/auth/login?next=${next}`);
       return;
     }
     setShowNewPost(wantsNew && !!user);
     markCommunityVisited();
   }, [router, user, initialCategory, markCommunityVisited]);
+
+  // Handle tab changes in URL query params for better UX
+  useEffect(() => {
+    const tab = router.query.tab as string;
+    if (tab && ["categories", "featured", "recent", "qa"].includes(tab)) {
+      setActiveTab(tab);
+    }
+  }, [router.query.tab]);
+
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+    // Update URL to reflect active tab
+    const newQuery = { ...router.query, tab: value };
+    router.replace({ pathname: router.pathname, query: newQuery }, undefined, { shallow: true });
+  };
 
   const handleDialogChange = (open: boolean) => {
     setShowNewPost(open);
@@ -55,6 +68,8 @@ export default function CommunityPage() {
 
   console.log('CommunityPage featuredPosts:', featuredPosts);
   console.log('CommunityPage recentPosts:', recentPosts);
+  console.log('CommunityPage activeTab:', activeTab);
+  
   if (!featuredPosts || !recentPosts) {
     logError(new Error('CommunityPage: Posts data is missing from context!'), { message: 'CommunityPage: Posts data is missing from context!' });
   }
@@ -62,8 +77,8 @@ export default function CommunityPage() {
   return (
     <>
       <SEO
-        title="Community Forum | Zion AI Marketplace"
-        description="Join the Zion AI Marketplace community forum. Ask questions, share knowledge, and connect with other AI professionals."
+        title="Community - Join the Zion Tech Marketplace Network"
+        description="Connect with innovators in the Zion Tech Marketplace community. Share ideas, collaborate on projects, and expand your tech network today. Gain points and unlock resources."
         keywords="community, forum, discussion, AI marketplace, questions, answers"
         canonical="https://app.ziontechgroup.com/community"
       />
@@ -79,17 +94,8 @@ export default function CommunityPage() {
           
           <CreatePostButton />
         </div>
-        
-        {/* {featuredPosts && featuredPosts.length > 0 ? (
-          <>
-            <p>Attempting to render a PostCard directly.</p>
-            <PostCard post={featuredPosts[0]} />
-          </>
-        ) : (
-          <p>No featured posts available to render a PostCard directly.</p>
-        )} */}
 
-        <Tabs defaultValue="categories" value={activeTab} onValueChange={setActiveTab} className="mb-8">
+        <Tabs value={activeTab} onValueChange={handleTabChange} className="mb-8">
           <TabsList className="mb-6">
             <TabsTrigger value="categories">Categories</TabsTrigger>
             <TabsTrigger value="featured">Featured</TabsTrigger>
@@ -99,37 +105,50 @@ export default function CommunityPage() {
           
           <TabsContent value="categories">
             <ForumCategories />
-            {/* <p>Categories Tab Content</p> */}
           </TabsContent>
           
           <TabsContent value="featured">
             <div className="space-y-4">
-              {featuredPosts.map((post) => (
-                <PostCard key={post.id} post={post} />
-              ))}
+              {featuredPosts && featuredPosts.length > 0 ? (
+                featuredPosts.map((post) => (
+                  <PostCard key={post.id} post={post} />
+                ))
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>No featured posts available at the moment.</p>
+                </div>
+              )}
             </div>
-            {/* <p>Featured Tab Content</p> */}
           </TabsContent>
           
           <TabsContent value="recent">
             <div className="space-y-4">
-              {recentPosts.map((post) => (
-                <PostCard key={post.id} post={post} />
-              ))}
+              {recentPosts && recentPosts.length > 0 ? (
+                recentPosts.map((post) => (
+                  <PostCard key={post.id} post={post} />
+                ))
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>No recent posts available at the moment.</p>
+                </div>
+              )}
             </div>
-            {/* <p>Recent Tab Content</p> */}
           </TabsContent>
 
           <TabsContent value="qa">
             <div className="space-y-4">
-              {qaPosts.map((post) => (
-                <PostCard key={post.id} post={post} />
-              ))}
+              {qaPosts && qaPosts.length > 0 ? (
+                qaPosts.map((post) => (
+                  <PostCard key={post.id} post={post} />
+                ))
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>No Q&A posts available at the moment.</p>
+                </div>
+              )}
             </div>
           </TabsContent>
         </Tabs>
-        {/* <p>Attempting to render ForumCategories directly.</p>
-        <ForumCategories /> */}
       </div>
 
       <NewPostDialog

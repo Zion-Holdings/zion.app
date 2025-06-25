@@ -1,5 +1,6 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
+import { SEO } from '@/components/SEO';
 
 export const getServerSideProps: GetServerSideProps = async () => {
   return {
@@ -9,6 +10,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 export default function ResourcesDocsPage() {
   return (
+    <>
+      <SEO
+        title="Docs - Zion Tech Marketplace Guides & APIs"
+        description="Access developer docs, APIs, and step-by-step guides for Zion Tech Marketplace. Start building integrations and enhancing your workflow now. Explore samples; join our community."
+        canonical="https://app.ziontechgroup.com/resources/docs"
+      />
     <div className="min-h-screen bg-zion-blue">
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
@@ -70,7 +77,29 @@ export default function ResourcesDocsPage() {
             </a>
           </div>
         </div>
+
+        <div className="mt-12">
+          <h2 className="text-2xl font-semibold text-white mb-4">AI Prompt</h2>
+          <p className="text-zion-slate-light mb-6">
+            Outline API documentation structure: Quick Start, Authentication,
+            Endpoints, Webhooks, Error Codes. Provide 1-sentence intro for each.
+          </p>
+          <pre className="bg-zion-blue-light text-white p-4 rounded-lg overflow-auto">
+{`import requests
+
+API_BASE = "https://api.ziontechgroup.com/v1"
+API_KEY = "YOUR_API_KEY"
+
+headers = {"Authorization": f"Bearer {API_KEY}"}
+response = requests.get(f"{API_BASE}/products", headers=headers, timeout=10)
+response.raise_for_status()
+products = response.json()
+print(products)
+`}
+          </pre>
+        </div>
       </div>
     </div>
+    </>
   );
-} 
+}

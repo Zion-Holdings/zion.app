@@ -11,15 +11,16 @@ jest.mock('@/components/ChatAssistant', () => ({
 jest.mock('@/components/Header', () => ({ Header: () => <div /> }));
 jest.mock('@/components/Footer', () => ({ Footer: () => <div /> }));
 
-
 describe('Contact Page', () => {
   it('renders heading "Get in Touch"', () => {
     render(
       <MemoryRouter>
         <Contact />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
-    expect(screen.getByRole('heading', { name: /get in touch/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: /get in touch/i }),
+    ).toBeInTheDocument();
   });
 });
 
@@ -31,14 +32,25 @@ test('submits contact form', async () => {
   render(
     <MemoryRouter>
       <Contact />
-    </MemoryRouter>
+    </MemoryRouter>,
   );
 
   await userEvent.type(screen.getByLabelText(/your name/i), 'John');
-  await userEvent.type(screen.getByLabelText(/email address/i), 'john@example.com');
-  await userEvent.type(screen.getByLabelText(/message/i), 'Hello there is a message');
+  await userEvent.type(
+    screen.getByLabelText(/email address/i),
+    'john@example.com',
+  );
+  await userEvent.type(
+    screen.getByLabelText(/message/i),
+    'Hello there is a message',
+  );
   await userEvent.click(screen.getByRole('button', { name: /send message/i }));
 
-  await waitFor(() => expect(fetchMock).toHaveBeenCalledWith('/api/contact', expect.any(Object)));
-  expect((screen.getByLabelText(/your name/i) as HTMLInputElement).value).toBe('');
+  await waitFor(() =>
+    expect(fetchMock).toHaveBeenCalledWith('/api/contact', expect.any(Object)),
+  );
+  expect((screen.getByLabelText(/your name/i) as HTMLInputElement).value).toBe(
+    '',
+  );
+  expect(await screen.findByText(/Message Sent!/i)).toBeInTheDocument();
 });

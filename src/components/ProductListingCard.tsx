@@ -159,6 +159,11 @@ const ProductListingCardComponent = ({
           
           {/* Title & Description */}
           <div onClick={handleViewListing} className="block">
+            {listing.uspHeadline && (
+              <p className="text-primary font-semibold text-sm mb-1">
+                {listing.uspHeadline}
+              </p>
+            )}
             <h3 className="font-semibold text-foreground mb-2 hover:text-primary transition-colors text-[clamp(1rem,2.5vw,1.125rem)]">
               {listing.title}
             </h3>
