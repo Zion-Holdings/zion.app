@@ -1,45 +1,68 @@
 import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { toast } from "@/components/ui/use-toast"
-// Use the ThemeProvider hook which is backed by src/components/ThemeProvider
-// to ensure we read and modify the same theme state used across the app.
-// The hook is re-exported from '@/hooks/useTheme' so that components don't need
-// to know the underlying context location.
-import { useTheme } from "@/hooks/useTheme"
+import { toast } from "@/hooks/use-toast"
+// Use the ThemeProvider hook directly to ensure no conflicts
+import { useTheme } from "@/components/ThemeProvider"
 import { logIssue } from "@/utils/logIssue"
+import { useEffect, useState } from "react"
 
 export function ModeToggle() {
-  // Use theme and toggleTheme from the updated useTheme hook
   const { theme, setTheme } = useTheme();
+  const [isClient, setIsClient] = useState(false);
 
-  // Determine the actual mode. When "system" is selected we look up the
-  // user's preference so the icon reflects the correct state.
-  const resolvedTheme =
-    theme === "system" && typeof window !== "undefined"
-      ? window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light"
-      : theme;
+  // Ensure we're on the client side to avoid hydration mismatches
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Determine the actual resolved theme for display purposes
+  const resolvedTheme = (() => {
+    if (!isClient) return 'light'; // Default for SSR
+    
+    if (theme === "system") {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    return theme;
+  })();
+
   const isDarkMode = resolvedTheme === "dark";
 
   const handleToggle = () => {
     try {
-      // Determine the theme we are switching **to** first so the
-      // toast reflects the correct state even before React re-renders.
+      // Determine the new theme we are switching TO
       const newTheme = isDarkMode ? "light" : "dark";
+      
+      console.log(`Theme toggle: ${resolvedTheme} → ${newTheme}`);
 
-      // Apply the new theme using the context helper
-      // Prefer setTheme here to avoid potential stale closures
+      // Apply the new theme
       setTheme(newTheme);
 
-      // Show user feedback with toast notification
+      // Show user feedback with correct message
       toast({
         title: `Switched to ${newTheme} mode`,
-        description: "Theme changed successfully",
+        description: `Theme changed to ${newTheme} mode successfully`,
       });
+
+      // Accessibility announcement for screen readers
+      const announcement = `Theme switched to ${newTheme} mode`;
+      
+      // Create a live region announcement
+      const liveRegion = document.createElement('div');
+      liveRegion.setAttribute('aria-live', 'polite');
+      liveRegion.setAttribute('aria-atomic', 'true');
+      liveRegion.className = 'sr-only';
+      liveRegion.textContent = announcement;
+      document.body.appendChild(liveRegion);
+      
+      // Clean up the announcement after it's been read
+      setTimeout(() => {
+        document.body.removeChild(liveRegion);
+      }, 1000);
+      
     } catch (error) {
-      logIssue('Theme switch failed', { error });
+      console.error('Theme toggle error:', error);
+      logIssue('Theme switch failed', { error, currentTheme: theme, resolvedTheme });
       toast({
         title: "Theme switch failed",
         description: "Unable to change theme. Please try again.",
@@ -47,6 +70,22 @@ export function ModeToggle() {
       });
     }
   };
+
+  if (!isClient) {
+    // Return a neutral state during SSR to prevent hydration issues
+    return (
+      <Button
+        variant="ghost"
+        size="icon"
+        disabled
+        aria-label="Loading theme toggle"
+        className="focus-visible:ring-zion-purple relative"
+      >
+        <div className="h-5 w-5 bg-slate-300 rounded animate-pulse" />
+        <span className="sr-only">Loading theme toggle</span>
+      </Button>
+    );
+  }
 
   return (
     <TooltipProvider>
@@ -56,27 +95,39 @@ export function ModeToggle() {
             variant="ghost"
             size="icon"
             onClick={handleToggle}
-            aria-pressed={isDarkMode} // Reflects the current mode based on theme
-            aria-label="Toggle theme"
+            aria-pressed={isDarkMode}
+            aria-label={`Toggle theme. Current theme: ${resolvedTheme}. Click to switch to ${isDarkMode ? 'light' : 'dark'} mode.`}
             title={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
             className="focus-visible:ring-zion-purple relative group"
             data-testid="theme-toggle"
+            data-theme={resolvedTheme}
           >
             {isDarkMode ? (
-              <Sun className="h-5 w-5 text-yellow-400 transition-colors group-hover:text-yellow-300" />
+              <Sun className="h-5 w-5 text-yellow-400 transition-all duration-300 group-hover:text-yellow-300 group-hover:rotate-12" />
             ) : (
-              <Moon className="h-5 w-5 text-slate-400 transition-colors group-hover:text-slate-300" />
+              <Moon className="h-5 w-5 text-slate-600 dark:text-slate-400 transition-all duration-300 group-hover:text-slate-500 group-hover:-rotate-12" />
             )}
-            {/* Visual indicator badge */}
-            <div className={`absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full transition-opacity ${
-              isDarkMode ? 'bg-yellow-400' : 'bg-slate-400'
-            } opacity-60`} />
-            <span className="sr-only">Toggle theme</span>
+            
+            {/* Enhanced visual indicator */}
+            <div className={`absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full transition-all duration-300 ${
+              isDarkMode 
+                ? 'bg-yellow-400 shadow-sm shadow-yellow-400/50' 
+                : 'bg-slate-600 dark:bg-slate-400'
+            } opacity-70 group-hover:opacity-100`} />
+            
+            <span className="sr-only">
+              Toggle theme. Current: {resolvedTheme}. Click to switch to {isDarkMode ? 'light' : 'dark'}.
+            </span>
           </Button>
         </TooltipTrigger>
         <TooltipContent>
-          <p className="text-sm font-medium">Theme: {isDarkMode ? 'Dark' : 'Light'}</p>
-          <p className="text-xs opacity-80">Click to switch to {isDarkMode ? 'light' : 'dark'} mode</p>
+          <div className="text-center">
+            <p className="text-sm font-medium">Theme: {resolvedTheme}</p>
+            <p className="text-xs opacity-80">Click to switch to {isDarkMode ? 'light' : 'dark'} mode</p>
+            {theme === 'system' && (
+              <p className="text-xs opacity-60 mt-1">Following system preference</p>
+            )}
+          </div>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
