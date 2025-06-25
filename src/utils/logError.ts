@@ -1,7 +1,7 @@
 import { captureException } from './sentry';
 import { sendErrorToBackend } from './customErrorReporter';
 import { generateTraceId } from './generateTraceId';
-import { datadogLogs } from '@datadog/browser-logs';
+// Do not import datadogLogs at the top level for server-side compatibility
 
 /**
  * Centralized error logger for frontend issues. Reports to Sentry when
@@ -42,20 +42,30 @@ export function logError(
   }
 
   try {
+    // Sentry logging (can run on both client and server if Sentry is configured for both)
     if (context) {
       captureException(errorToSend, { extra: { traceId, ...context } });
-      if (datadogLogs?.logger) {
-        datadogLogs.logger.error(errorToSend.message, {
-          error: errorToSend,
-          traceId,
-          ...context,
-        });
-      }
     } else {
       captureException(errorToSend, { extra: { traceId } });
-      if (datadogLogs?.logger) {
-        datadogLogs.logger.error(errorToSend.message, { error: errorToSend, traceId });
-      }
+    }
+
+    // Datadog logging - client-side only
+    if (typeof window !== 'undefined') {
+      import('@datadog/browser-logs').then(({ datadogLogs }) => {
+        if (datadogLogs && datadogLogs.logger) {
+          if (context) {
+            datadogLogs.logger.error(errorToSend.message, {
+              error: errorToSend,
+              traceId,
+              ...context,
+            });
+          } else {
+            datadogLogs.logger.error(errorToSend.message, { error: errorToSend, traceId });
+          }
+        }
+      }).catch(ddImportError => {
+        console.warn('Failed to import or use Datadog logger:', ddImportError);
+      });
     }
   } catch (err) {
     console.error('Failed to report error to Sentry:', err, context?.componentStack);
