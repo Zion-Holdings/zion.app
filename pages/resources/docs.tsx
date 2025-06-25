@@ -1,5 +1,6 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
+import { SEO } from '@/components/SEO';
 
 export const getServerSideProps: GetServerSideProps = async () => {
   return {
@@ -9,6 +10,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 export default function ResourcesDocsPage() {
   return (
+    <>
+      <SEO
+        title="Docs - Zion Tech Marketplace Guides & APIs"
+        description="Access developer docs, APIs, and step-by-step guides for Zion Tech Marketplace. Start building integrations and enhancing your workflow now. Explore samples; join our community."
+        canonical="https://app.ziontechgroup.com/resources/docs"
+      />
     <div className="min-h-screen bg-zion-blue">
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
@@ -72,5 +79,6 @@ export default function ResourcesDocsPage() {
         </div>
       </div>
     </div>
+    </>
   );
-} 
+}
