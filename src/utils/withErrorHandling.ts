@@ -119,7 +119,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
             query: context.query,
             params: context.params,
             environmentConfig: {
-              auth0Configured: ENV_CONFIG.auth0.isConfigured,
+              supabaseConfigured: ENV_CONFIG.supabase.isConfigured,
               sentryConfigured: ENV_CONFIG.sentry.isConfigured,
               environment: ENV_CONFIG.app.environment
             }
