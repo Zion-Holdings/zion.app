@@ -29,13 +29,14 @@ export function useInfiniteScroll(
 
   const [isFetching, setIsFetching] = useState(false);
   const observer = useRef<IntersectionObserver | null>(null);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
       }
     };
   }, []);
@@ -51,6 +52,11 @@ export function useInfiniteScroll(
         if (entry && entry.isIntersecting && hasMore && !loading && !isFetching) {
           setIsFetching(true);
           
+          // Clear any existing timeout
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+          }
+          
           // Add delay to prevent rapid successive calls
           timeoutRef.current = setTimeout(async () => {
             try {
@@ -59,6 +65,7 @@ export function useInfiniteScroll(
               console.error('Error loading more items:', error);
             } finally {
               setIsFetching(false);
+              timeoutRef.current = null;
             }
           }, delayMs);
         }
@@ -118,6 +125,17 @@ export function useInfiniteScrollPagination<T>(
   const [total, setTotal] = useState<number | undefined>();
   const [isInitialized, setIsInitialized] = useState(false);
   const isResetting = useRef(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    };
+  }, []);
 
   const loadMore = useCallback(async () => {
     if (loading || !hasMore || isResetting.current) return;
@@ -143,7 +161,7 @@ export function useInfiniteScrollPagination<T>(
         setTotal(result.total);
       }
     } catch (err) {
-      console.error('Error loading equipment:', err);
+      console.error('Error loading items:', err);
       setError(err instanceof Error ? err.message : 'Failed to load more items');
     } finally {
       setLoading(false);
@@ -159,9 +177,17 @@ export function useInfiniteScrollPagination<T>(
     setError(null);
     setTotal(undefined);
     setIsInitialized(false);
+    
+    // Clear any pending timeouts
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    
     // Small delay to prevent race conditions
-    setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       isResetting.current = false;
+      timeoutRef.current = null;
     }, 100);
   }, []);
 
@@ -180,7 +206,7 @@ export function useInfiniteScrollPagination<T>(
       }
       setIsInitialized(true);
     } catch (err) {
-      console.error('Error refreshing equipment:', err);
+      console.error('Error refreshing items:', err);
       setError(err instanceof Error ? err.message : 'Failed to refresh items');
     } finally {
       setLoading(false);

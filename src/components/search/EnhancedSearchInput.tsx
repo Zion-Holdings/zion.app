@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { AutocompleteSuggestions } from "@/components/search/AutocompleteSuggestions";
@@ -6,6 +6,7 @@ import { SearchSuggestion } from "@/types/search";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useRouter } from "next/router";
 import { slugify } from "@/lib/slugify";
+import { debounce } from "lodash";
 
 interface EnhancedSearchInputProps {
   value: string;
@@ -37,8 +38,45 @@ export function EnhancedSearchInput({
   const containerRef = useRef<HTMLDivElement>(null);
   const [valueOnFocus, setValueOnFocus] = useState<string | null>(null);
   const [enterHandledPostFocus, setEnterHandledPostFocus] = useState(false);
+  const [apiSuggestions, setApiSuggestions] = useState<SearchSuggestion[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const debounced = useDebounce(value, 200);
+
+  const debouncedFetchSuggestions = useMemo(
+    () =>
+      debounce(async (query: string) => {
+        if (!query.trim()) {
+          setApiSuggestions([]);
+          return;
+        }
+
+        setLoading(true);
+        try {
+          const response = await fetch(`/api/search/suggest?q=${encodeURIComponent(query)}`, {
+            signal: AbortSignal.timeout(5000) // 5 second timeout
+          });
+          
+          if (response.ok) {
+            const data = await response.json();
+            if (Array.isArray(data)) {
+              setApiSuggestions(data.slice(0, 5)); // Limit to 5 API suggestions
+            }
+          } else {
+            // Silently fail for search suggestions - don't show error toast
+            console.warn('Search suggestions API error:', response.status);
+            setApiSuggestions([]);
+          }
+        } catch (error) {
+          // Silently fail for search suggestions - don't show error toast
+          console.warn('Search suggestions fetch error:', error);
+          setApiSuggestions([]);
+        } finally {
+          setLoading(false);
+        }
+      }, 300),
+    []
+  );
 
   // Fetch suggestions from API when input value changes
   useEffect(() => {

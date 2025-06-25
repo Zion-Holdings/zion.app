@@ -12,6 +12,7 @@ interface SearchSuggestion {
   slug: string;
   type: 'product' | 'service' | 'talent' | 'category' | 'skill' | 'recent' | 'doc' | 'blog';
   iconUrl?: string;
+  category?: string;
 }
 
 function handler(
@@ -48,6 +49,7 @@ function handler(
       slug: createSlug(p.title),
       type: 'product' as const,
       iconUrl: (p as any).image,
+      category: p.category
     }));
 
   suggestions.push(...productSuggestions);
@@ -62,6 +64,7 @@ function handler(
       slug: createSlug(s.title),
       type: 'service' as const,
       iconUrl: (s as any).image,
+      category: s.category
     }));
 
   suggestions.push(...serviceSuggestions);
@@ -123,6 +126,19 @@ function handler(
    }));
 
   suggestions.push(...popularSuggestions);
+
+  // Add category suggestions
+  const categories = ['AI & Machine Learning', 'Cloud Services', 'Software Development', 'Hardware & Equipment'];
+  categories.forEach(category => {
+    if (category.toLowerCase().includes(q) && suggestions.length < 10) {
+      suggestions.push({
+        id: category.toLowerCase().replace(/\s+/g, '-'),
+        text: category,
+        type: 'category' as const,
+        slug: category.toLowerCase().replace(/\s+/g, '-')
+      });
+    }
+  });
 
   // Return limited and sorted suggestions
   return res.status(200).json(

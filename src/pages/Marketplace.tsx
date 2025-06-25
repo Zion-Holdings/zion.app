@@ -460,7 +460,7 @@ export default function Marketplace() {
   }
 
   // Error state with retry
-  if (error) {
+  if (error && products.length === 0) {
     return (
       <div className="container py-8">
         <div className="text-center space-y-4">
@@ -473,10 +473,10 @@ export default function Marketplace() {
     );
   }
 
-  // Empty state (should rarely happen with fallback data)
-  if (!products || products.length === 0) {
+  // Empty state (only show when not loading and no products)
+  if (!loading && products.length === 0 && !error) {
     return (
-      <div className="container py-8" data-testid="marketplace-empty">
+      <div className="container py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -489,31 +489,8 @@ export default function Marketplace() {
             Discover cutting-edge AI and IT solutions
           </p>
         </motion.div>
-
-        {/* Show categories even when no products */}
-        {categories.length > 0 && (
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Browse Categories</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {categories.map((category) => (
-                <motion.div
-                  key={category}
-                  whileHover={{ scale: 1.05 }}
-                  className="p-4 bg-card border border-border rounded-lg cursor-pointer"
-                  onClick={() => setFilterCategory(category)}
-                >
-                  <p className="text-center font-medium">{category}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <ProductsEmptyState
-          onAddProduct={handleAddProduct}
-          onRetry={refresh}
-          isAuthenticated={isAuthenticated}
-        />
+        
+        <ProductsEmptyState />
       </div>
     );
   }
