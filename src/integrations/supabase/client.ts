@@ -47,4 +47,4 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
 }
 
 // Enhanced type safety for TypeScript
-export type SupabaseClient = typeof supabaseClient; 
+export type SupabaseClientType = typeof supabase; 
