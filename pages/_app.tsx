@@ -26,6 +26,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
 import { IntercomChat } from '@/components/IntercomChat';
+import { HydrationErrorBoundary } from '@/components/HydrationErrorBoundary';
 // Import Next.js fonts for optimal loading and CLS prevention
 import { Inter, Montserrat } from 'next/font/google';
 import Head from 'next/head';
@@ -60,8 +61,22 @@ const montserrat = Montserrat({
 
 const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, isAuthenticated } = useAuth();
+  
+  // Prevent hydration issues by ensuring this only runs on client
+  const [isClient, setIsClient] = React.useState(false);
+  
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
+  
+  // Provide safe defaults during initial render to prevent blank screens
+  const safeAuthState = React.useMemo(() => ({
+    isAuthenticated: isClient ? !!isAuthenticated : false,
+    user: isClient ? user : null
+  }), [isClient, isAuthenticated, user]);
+  
   return (
-    <LanguageProvider authState={{ isAuthenticated: !!isAuthenticated, user }}>
+    <LanguageProvider authState={safeAuthState}>
       {children}
     </LanguageProvider>
   );
@@ -73,6 +88,7 @@ const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ chil
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [queryClient] = React.useState(() => new QueryClient());
+  const [isInitialized, setIsInitialized] = React.useState(false);
 
   React.useEffect(() => {
     initConsoleLogCapture();
@@ -111,6 +127,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         console.log("AUTH0_CLIENT_ID:", process.env.AUTH0_CLIENT_ID ? 'SET' : 'NOT_SET');
         console.log("AUTH0_ISSUER_BASE_URL:", process.env.AUTH0_ISSUER_BASE_URL ? 'SET' : 'NOT_SET');
       }
+      
+      // Mark as initialized after successful setup
+      setIsInitialized(true);
     } catch (error) {
       console.error('[App] Critical initialization error:', error);
       
@@ -121,7 +140,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         console.warn('[App] Could not send error to Sentry:', sentryError);
       }
       
-      // Don't throw here - let the error boundary handle it in the UI
+      // Still mark as initialized even with errors to prevent infinite loading
+      setIsInitialized(true);
     }
   }, []); // Empty dependency array ensures this runs only once on mount
 
@@ -138,6 +158,29 @@ function MyApp({ Component, pageProps }: AppProps) {
   if (process.env.NODE_ENV === 'development') {
     console.log('[App] Attempting to render component:', Component.name || 'UnnamedComponent');
   }
+
+  // Show loading screen during critical initialization to prevent blank screens
+  if (!isInitialized) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-zion-blue">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zion-cyan mx-auto mb-4"></div>
+          <p className="text-white text-lg">Initializing Zion App...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Configure Auth0 properly or skip if not configured
+  const auth0Config = {
+    domain: process.env.AUTH0_ISSUER_BASE_URL?.replace('https://', '') || '',
+    clientId: process.env.AUTH0_CLIENT_ID || '',
+    authorizationParams: {
+      redirect_uri: typeof window !== 'undefined' ? window.location.origin : '',
+    },
+  };
+
+  const shouldUseAuth0 = auth0Config.domain && auth0Config.clientId;
 
   // Use ProductionErrorBoundary as the top-level error boundary
   return (
@@ -206,47 +249,77 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className={`${inter.variable} ${montserrat.variable}`}>
         <ProductionErrorBoundary>
           <RootErrorBoundary>
-            <React.Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
-              <GlobalErrorBoundary>
-                <QueryClientProvider client={queryClient}>
-                  <ApiErrorBoundary>
-                    <ReduxProvider store={store}>
-                      <HelmetProvider>
-                        <ErrorProvider>
-                          <Auth0Provider>
-                            <AuthProvider>
-                              <WhitelabelProvider>
-                                <I18nextProvider i18n={i18n}>
-                                  <LanguageProviderWrapper>
-                                    <WalletProvider>
-                                    <CartProvider>
-                                      <AnalyticsProvider>
-                                        <ThemeProvider>
-                                          <AppLayout>
-                                            <ErrorBoundary>
-                                              <Component {...pageProps} productId="example-product-id" />
-                                            </ErrorBoundary>
-                                            <ErrorResetOnRouteChange />
-                                            <Toaster />
-                                            <OfflineIndicator />
-                                            <IntercomChat />
-                                          </AppLayout>
-                                        </ThemeProvider>
-                                      </AnalyticsProvider>
-                                    </CartProvider>
-                                  </WalletProvider>
-                                  </LanguageProviderWrapper>
-                                </I18nextProvider>
-                              </WhitelabelProvider>
-                            </AuthProvider>
-                          </Auth0Provider>
-                        </ErrorProvider>
-                      </HelmetProvider>
-                    </ReduxProvider>
-                  </ApiErrorBoundary>
-                </QueryClientProvider>
-              </GlobalErrorBoundary>
-            </React.Suspense>
+            <HydrationErrorBoundary>
+              <React.Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+                <GlobalErrorBoundary>
+                  <QueryClientProvider client={queryClient}>
+                    <ApiErrorBoundary>
+                      <ReduxProvider store={store}>
+                        <HelmetProvider>
+                          <ErrorProvider>
+                            {shouldUseAuth0 ? (
+                              <Auth0Provider {...auth0Config}>
+                                <AuthProvider>
+                                  <WhitelabelProvider>
+                                    <I18nextProvider i18n={i18n}>
+                                      <LanguageProviderWrapper>
+                                        <WalletProvider>
+                                        <CartProvider>
+                                          <AnalyticsProvider>
+                                            <ThemeProvider>
+                                              <AppLayout>
+                                                <ErrorBoundary>
+                                                  <Component {...pageProps} productId="example-product-id" />
+                                                </ErrorBoundary>
+                                                <ErrorResetOnRouteChange />
+                                                <Toaster />
+                                                <OfflineIndicator />
+                                                <IntercomChat />
+                                              </AppLayout>
+                                            </ThemeProvider>
+                                          </AnalyticsProvider>
+                                        </CartProvider>
+                                      </WalletProvider>
+                                      </LanguageProviderWrapper>
+                                    </I18nextProvider>
+                                  </WhitelabelProvider>
+                                </AuthProvider>
+                              </Auth0Provider>
+                            ) : (
+                              <AuthProvider>
+                                <WhitelabelProvider>
+                                  <I18nextProvider i18n={i18n}>
+                                    <LanguageProviderWrapper>
+                                      <WalletProvider>
+                                      <CartProvider>
+                                        <AnalyticsProvider>
+                                          <ThemeProvider>
+                                            <AppLayout>
+                                              <ErrorBoundary>
+                                                <Component {...pageProps} productId="example-product-id" />
+                                              </ErrorBoundary>
+                                              <ErrorResetOnRouteChange />
+                                              <Toaster />
+                                              <OfflineIndicator />
+                                              <IntercomChat />
+                                            </AppLayout>
+                                          </ThemeProvider>
+                                        </AnalyticsProvider>
+                                      </CartProvider>
+                                    </WalletProvider>
+                                    </LanguageProviderWrapper>
+                                  </I18nextProvider>
+                                </WhitelabelProvider>
+                              </AuthProvider>
+                            )}
+                          </ErrorProvider>
+                        </HelmetProvider>
+                      </ReduxProvider>
+                    </ApiErrorBoundary>
+                  </QueryClientProvider>
+                </GlobalErrorBoundary>
+              </React.Suspense>
+            </HydrationErrorBoundary>
           </RootErrorBoundary>
         </ProductionErrorBoundary>
       </div>
