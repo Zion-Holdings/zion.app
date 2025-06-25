@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -30,17 +29,17 @@ export function MainNavigation({ className }: MainNavigationProps) {
       {navLinks.map(({ href, label, exact, isButton }) => {
         const isActive = exact ? router.pathname === href : router.pathname.startsWith(href);
         return (
-          <Link key={href} href={href} legacyBehavior={false}>
-            <a
-              aria-label={label}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded",
-                isActive ? "text-zion-cyan" : "text-muted-foreground",
-                isButton && "bg-zion-purple px-4 py-2 rounded-md hover:bg-zion-purple-light text-white" // Ensure button text is white
-              )}
-            >
-              {label}
-            </a>
+          <Link 
+            key={href} 
+            href={href}
+            aria-label={label}
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded",
+              isActive ? "text-zion-cyan" : "text-muted-foreground",
+              isButton && "bg-zion-purple px-4 py-2 rounded-md hover:bg-zion-purple-light text-white"
+            )}
+          >
+            {label}
           </Link>
         );
       })}

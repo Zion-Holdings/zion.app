@@ -6,7 +6,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { useFavorites } from "@/hooks/useFavorites";
 import { useCart } from "@/context/CartContext";
-import { Heart, MessageSquare, CreditCard, ShoppingCart } from "lucide-react";
+import { Heart, MessageSquare, CreditCard, ShoppingCart, Wallet } from "lucide-react";
 import { LanguageSelector } from '@/components/header/LanguageSelector';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
@@ -111,20 +111,19 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
           <ul className="navbar-nav flex flex-col md:flex-row md:items-center md:gap-1"> {/* Added navbar-nav and flex direction classes */}
             {links.map((link) => (
               <li key={link.name} className="nav-item">
-                <Link href={link.href} legacyBehavior={false}>
-                  <a
-                    aria-label={link.name}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={cn(
-                      "nav-link",
-                      "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
-                      link.matches(router.pathname)
-                        ? "bg-zion-purple/20 text-zion-cyan"
-                        : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-                    )}
-                  >
-                    {link.name}
-                  </a>
+                <Link 
+                  href={link.href}
+                  aria-label={link.name}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    "nav-link",
+                    "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                    link.matches(router.pathname)
+                      ? "bg-zion-purple/20 text-zion-cyan"
+                      : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  )}
+                >
+                  {link.name}
                 </Link>
               </li>
             ))}
@@ -132,25 +131,24 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             {/* Wishlist link */}
             {isAuthenticated && (
               <li className="nav-item">
-                <Link href="/wishlist" legacyBehavior={false}>
-                  <a
-                    aria-label="Wishlist"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={cn(
-                      "nav-link",
-                      "relative inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
-                      router.pathname === "/wishlist"
-                        ? "bg-zion-purple/20 text-zion-cyan"
-                        : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-                    )}
-                  >
-                    <Heart className="w-4 h-4" />
-                    {count > 0 && (
-                      <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                        {count}
-                      </span>
-                    )}
-                  </a>
+                <Link 
+                  href="/wishlist"
+                  aria-label="Wishlist"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    "nav-link",
+                    "relative inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                    router.pathname === "/wishlist"
+                      ? "bg-zion-purple/20 text-zion-cyan"
+                      : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  )}
+                >
+                  <Heart className="w-4 h-4" />
+                  {count > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                      {count}
+                    </span>
+                  )}
                 </Link>
               </li>
             )}
@@ -158,48 +156,44 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
             {/* Wallet link */}
             {isAuthenticated && (
               <li className="nav-item">
-                <Link href="/wallet" legacyBehavior={false}>
-                  <a
-                    aria-label={t('nav.wallet')}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={cn(
-                      "nav-link",
-                      "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
-                      router.pathname === "/wallet"
-                        ? "bg-zion-purple/20 text-zion-cyan"
-                        : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-                    )}
-                  >
-                    <CreditCard className="w-4 h-4 mr-1" />
-                    {t('nav.wallet', 'Wallet')}
-                  </a>
+                <Link 
+                  href="/wallet"
+                  aria-label="Wallet"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    "nav-link",
+                    "relative inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                    router.pathname === "/wallet"
+                      ? "bg-zion-purple/20 text-zion-cyan"
+                      : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  )}
+                >
+                  <Wallet className="w-4 h-4" />
                 </Link>
               </li>
             )}
 
-            {/* Messages link with unread counter */}
+            {/* Messages link */}
             {isAuthenticated && (
               <li className="nav-item">
-                <Link href="/messages" legacyBehavior={false}>
-                  <a
-                    aria-label={t('nav.messages')}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={cn(
-                      "nav-link",
-                      "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
-                      router.pathname === "/messages" || router.pathname === "/inbox"
-                        ? "bg-zion-purple/20 text-zion-cyan"
-                        : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-                    )}
-                  >
-                    <MessageSquare className="w-4 h-4 mr-1" />
-                    {t('nav.messages')}
-                    {unreadCount > 0 && (
-                      <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                        {unreadCount}
-                      </span>
-                    )}
-                  </a>
+                <Link 
+                  href="/messages"
+                  aria-label="Messages"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    "nav-link",
+                    "relative inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                    router.pathname === "/messages"
+                      ? "bg-zion-purple/20 text-zion-cyan"
+                      : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
+                  )}
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  {unreadCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                      {unreadCount > 9 ? '9+' : unreadCount}
+                    </span>
+                  )}
                 </Link>
               </li>
             )}
