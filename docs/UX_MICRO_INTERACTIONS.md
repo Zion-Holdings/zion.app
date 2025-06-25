@@ -30,3 +30,14 @@ Your cart is waiting to be filled with innovation!
 - **ES:** ¡Bienvenido a Zion!
 - **FR:** Bienvenue sur Zion !
 - **DE:** Willkommen bei Zion!
+
+## Global Navigation & Layout Prompts
+
+| Area | AI Prompt (copy-paste) | Purpose / Enhancement |
+| --- | --- | --- |
+| Top Navigation Bar | "Write concise, 6-word tooltip texts for each top-nav item (Home, Marketplace, Community, Resources, About) explaining the benefit of clicking it. Tone: friendly, tech-savvy." | Adds helpful hover-tooltips for first-time visitors. |
+| Search Bar Autocomplete | "Generate 25 smart search-suggestion phrases users might type on Zion (e.g., 'AI engineer for healthcare', 'GPU rental under $10'). Format as JSON array." | Feeds an autocomplete engine to improve search UX. |
+| Gamification Points (0 pts indicator) | "Draft a 100-word pop-up explaining how Zion points are earned and redeemed. Tone: motivational, clear." | Clarifies the points system and encourages engagement. |
+| Multi-Language Support | "Translate Zion’s primary menu labels and footer headings into Spanish, French, German, and Japanese, keeping each under 18 characters." | Prepares copy for additional language toggle options. |
+| Theme Toggle | "Create 3 catchy one-line messages that appear briefly when a user switches between light and dark mode, celebrating their choice." | Adds delightful micro-copy. |
+| 404 / Error State | "Write a 60-word 404-page message that keeps Zion’s futuristic tone, offers quick links to Home, Marketplace, and Community, and includes an encouraging emoji." | Improves the current ‘Oops! Page not found’ experience. |

@@ -75,3 +75,16 @@ No comparison tool.
 | Cross‑Sell Banner | "Suggest 3 related product titles and 10‑word teasers to display under ‘You might also like’." | Increases average order value. |
 | Success Metrics | "Draft a 25‑word stat blurb: ‘Trusted by 120+ startups, 98% satisfaction, 3.2M compute hours delivered’." | Social proof. |
 | Call‑to‑Action Buttons | "Provide 4 alternative CTA labels (e.g., ‘Start Now’, ‘Book Demo’) ≤12 characters." | A/B testing options. |
+
+### Additional AI Copy Prompts
+
+| Page / Element | AI Prompt | Enhancement |
+| --- | --- | --- |
+| Marketplace Overview Metrics | "Explain ‘Avg. Price’, ‘Avg. Rating’, ‘Products’, ‘Available’ in 15 words each, emphasizing transparency." | Adds info tooltips. |
+| Category Filter Descriptions | "Write 30‑word intros for categories: Services, Talent, Equipment, Software, Courses." | Helps users pick filters. |
+| Product Card Copy | "For the listing ‘AI Innovation Bootcamp’, create a 40‑word summary, 3 bullet benefits, and a 6‑word CTA button label." | Enriches each card. |
+| User Reviews Module | "Generate 5 sample 25‑word reviews with star ratings (4–5) for a generic AI service." | Seeds testimonial section. |
+| Sorting Options | "List 8 sorting labels (Price Low→High, Newest, Best Rated, etc.) each ≤12 characters." | Expands sorting menu. |
+| Empty State Message | "Write a 35‑word encouraging message for when no products match a filter, suggesting popular categories to explore." | Better UX during zero results. |
+| AI‑Driven Recommendations | "Draft a 50‑word explanation of how Zion’s AI suggests relevant listings, emphasizing privacy and personalization." | Builds trust in AI features. |
+| Price Breakdown Tooltip | "Create a 30‑word note clarifying that listed prices exclude taxes and transaction fees." | Prevents confusion. |
