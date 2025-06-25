@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function ITServiceRequestHero() {
   const [name, setName] = useState("");
@@ -17,6 +18,7 @@ export function ITServiceRequestHero() {
   const [details, setDetails] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -93,43 +95,49 @@ export function ITServiceRequestHero() {
               <Input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Your name"
+                placeholder={t('onsite_form.name_placeholder', 'Full name')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
                 required
               />
+              <p className="text-xs text-zion-slate-light">{t('onsite_form.name_helper', 'Enter the main contact for this request.')}</p>
               <Input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email"
+                placeholder={t('onsite_form.email_placeholder', 'Work email')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
                 required
               />
+              <p className="text-xs text-zion-slate-light">{t('onsite_form.email_helper', "We'll confirm your request here.")}</p>
               <Input
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="Phone number"
+                placeholder={t('onsite_form.phone_placeholder', 'Phone number (optional)')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
               />
+              <p className="text-xs text-zion-slate-light">{t('onsite_form.phone_helper', 'Include a direct line for urgent updates.')}</p>
               <Input
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
-                placeholder="Company"
+                placeholder={t('onsite_form.company_placeholder', 'Company name')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
               />
+              <p className="text-xs text-zion-slate-light">{t('onsite_form.company_helper', 'Who do you represent?')}</p>
               <Input
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                placeholder="Service location"
+                placeholder={t('onsite_form.location_placeholder', 'Service address or city')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
                 required
               />
+              <p className="text-xs text-zion-slate-light">{t('onsite_form.location_helper', 'Where do you need on-site support?')}</p>
               <Textarea
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
-                placeholder="Describe the issue or service needed"
+                placeholder={t('onsite_form.details_placeholder', 'Briefly describe the issue or equipment')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white min-h-[80px]"
               />
+              <p className="text-xs text-zion-slate-light">{t('onsite_form.details_helper', 'Share any important context for our technicians.')}</p>
               <Button
                 type="submit"
                 disabled={isSubmitting}
@@ -143,7 +151,7 @@ export function ITServiceRequestHero() {
             </form>
           </div>
           <p className="text-xs text-center text-zion-slate-light mt-3">
-            Available worldwide, 24 hours a day
+            {t('onsite_form.privacy_notice', 'Rest assured, your personal information stays private. We use it only to coordinate service and never share details outside our secure scheduling system with anyone.')}
           </p>
         </div>
       </div>
