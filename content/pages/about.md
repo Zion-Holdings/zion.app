@@ -18,6 +18,8 @@ Get in touch anytime at [support@ziontechgroup.com](mailto:support@ziontechgroup
 
 ## AI-Prompt
 
-* "Write a mission statement (30 words) and vision statement (40 words) for Zion Tech Group."
-* "Create 4 executive bio snippets (name, role, 40-word bio) in first-person plural voice."
-* "Draft a company timeline with 6 milestones (year, 12-word description)."
+* "Write a 40-word mission that positions Zion as the catalyst for responsible AI innovation worldwide."
+* "Create 5 milestone blurbs (Year + 15 words) from founding to present."
+* "For a fictional CEO, write a 60-word bio highlighting AI expertise and community focus."
+* "List 4 core values (one word each) and 20-word explanations."
+* "Draft a 70-word statement on Zion’s commitment to green IT and carbon-neutral data centers."
