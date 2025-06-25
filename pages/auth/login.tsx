@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState, FormEvent } from 'react';
 import Link from 'next/link';
-import { Facebook } from 'lucide-react';
+import { Facebook, Mail, Clock, RefreshCw } from 'lucide-react';
 import Head from 'next/head';
 import { supabase, isSupabaseConfigured } from '../../src/integrations/supabase/client'; // Adjusted path
 import type { AuthError, User } from '@supabase/supabase-js';
@@ -14,7 +14,9 @@ const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [isCheckingSession, setIsCheckingSession] = useState(true);
-
+  const [isEmailUnverified, setIsEmailUnverified] = useState(false);
+  const [verificationEmailSent, setVerificationEmailSent] = useState(false);
+  const [isResendingVerification, setIsResendingVerification] = useState(false);
 
   useEffect(() => {
     const checkSession = async () => {
@@ -78,6 +80,34 @@ const LoginPage = () => {
       };
   }, [router, isLoading, isCheckingSession]); // Added isLoading and isCheckingSession to dependencies
 
+  const handleResendVerification = async () => {
+    if (!email) {
+      setError({ name: 'ValidationError', message: 'Please enter your email address first' } as AuthError);
+      return;
+    }
+    
+    setIsResendingVerification(true);
+    try {
+      const response = await fetch('/api/resend-verification-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      
+      if (response.ok) {
+        setVerificationEmailSent(true);
+        setError(null);
+      } else {
+        const data = await response.json();
+        setError({ name: 'ResendError', message: data.message || 'Failed to resend verification email' } as AuthError);
+      }
+    } catch (err) {
+      setError({ name: 'NetworkError', message: 'Failed to resend verification email. Please try again.' } as AuthError);
+    } finally {
+      setIsResendingVerification(false);
+    }
+  };
+
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     if (!isSupabaseConfigured) {
@@ -86,6 +116,9 @@ const LoginPage = () => {
     }
     setIsLoading(true);
     setError(null);
+    setIsEmailUnverified(false);
+    setVerificationEmailSent(false);
+    
     try {
       console.log('Attempting Supabase login with email:', email);
       const { data, error: signInError } = await supabase.auth.signInWithPassword({
@@ -95,7 +128,25 @@ const LoginPage = () => {
 
       if (signInError) {
         console.error('Supabase sign-in error:', signInError);
-        setError(signInError as any);
+        
+        // Check if error is related to email verification
+        if (signInError.message?.toLowerCase().includes('email not confirmed') || 
+            signInError.message?.toLowerCase().includes('email_not_confirmed') ||
+            signInError.message?.toLowerCase().includes('verify') ||
+            signInError.message?.toLowerCase().includes('confirm')) {
+          setIsEmailUnverified(true);
+          setError({ 
+            name: 'EmailNotVerifiedError', 
+            message: 'Please verify your email address before logging in. Check your inbox for a verification link.' 
+          } as AuthError);
+          
+          // Auto-resend verification email
+          setTimeout(() => {
+            handleResendVerification();
+          }, 1000);
+        } else {
+          setError(signInError as any);
+        }
       } else if (data.user) {
         console.log('Supabase sign-in successful, user:', data.user);
         setUser(data.user); // setUser to trigger useEffect for redirection
@@ -112,6 +163,17 @@ const LoginPage = () => {
       setIsLoading(false);
     }
   };
+
+  // Auto-redirect to verification status page for unverified users after showing message
+  useEffect(() => {
+    if (isEmailUnverified && verificationEmailSent && email) {
+      const timer = setTimeout(() => {
+        router.push(`/verify-status?email=${encodeURIComponent(email)}`);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [isEmailUnverified, verificationEmailSent, email, router]);
 
   if (isCheckingSession || (isLoading && !error)) { // Show loader if checking session OR loading and no error yet
     return (
@@ -184,6 +246,52 @@ const LoginPage = () => {
             </p>
           </div>
 
+          {/* Email verification notice */}
+          {isEmailUnverified && (
+            <div className="bg-blue-50 border border-blue-200 rounded-md p-4">
+              <div className="flex items-start">
+                <Mail className="h-5 w-5 text-blue-400 mt-0.5 mr-3" />
+                <div className="flex-1">
+                  <h3 className="text-sm font-medium text-blue-800">Email Verification Required</h3>
+                  <div className="mt-2 text-sm text-blue-700">
+                    <p>Your email address needs to be verified before you can log in.</p>
+                    {verificationEmailSent && (
+                      <p className="mt-1 font-medium">✓ Verification email sent to {email}</p>
+                    )}
+                  </div>
+                  <div className="mt-4 flex space-x-3">
+                    <button
+                      onClick={handleResendVerification}
+                      disabled={isResendingVerification}
+                      className="text-sm bg-blue-100 hover:bg-blue-200 text-blue-800 px-3 py-1 rounded disabled:opacity-50"
+                    >
+                      {isResendingVerification ? (
+                        <>
+                          <RefreshCw className="h-4 w-4 inline animate-spin mr-1" />
+                          Sending...
+                        </>
+                      ) : (
+                        'Resend Email'
+                      )}
+                    </button>
+                    <Link
+                      href={`/verify-status?email=${encodeURIComponent(email)}`}
+                      className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded"
+                    >
+                      Check Status
+                    </Link>
+                  </div>
+                  {verificationEmailSent && (
+                    <p className="mt-2 text-xs text-blue-600 flex items-center">
+                      <Clock className="h-3 w-3 mr-1" />
+                      Redirecting to verification status in 3 seconds...
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
           <form className="mt-8 space-y-6" onSubmit={handleLogin}>
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
@@ -222,7 +330,7 @@ const LoginPage = () => {
               </div>
             </div>
 
-            {error && (
+            {error && !isEmailUnverified && (
               <div className="bg-red-50 border border-red-200 rounded-md p-4">
                 <div className="flex">
                   <div className="flex-shrink-0">
@@ -245,7 +353,7 @@ const LoginPage = () => {
             <div>
               <button
                 type="submit"
-                disabled={isLoading}
+                disabled={isLoading || isEmailUnverified}
                 className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 disabled:opacity-50"
               >
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
@@ -253,7 +361,7 @@ const LoginPage = () => {
                     <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                   </svg>
                 </span>
-                {isLoading ? 'Signing in...' : 'Sign in'}
+                {isLoading ? 'Signing in...' : isEmailUnverified ? 'Email Verification Required' : 'Sign in'}
               </button>
             </div>
           </form>
