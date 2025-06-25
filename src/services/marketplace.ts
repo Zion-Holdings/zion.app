@@ -72,7 +72,9 @@ const createMarketplaceClient = (): AxiosInstance => {
   // Request interceptor for debugging - auth token not required for public endpoints
   client.interceptors.request.use(
     async (config) => {
-      console.log(`Marketplace API Request: ${config.method?.toUpperCase()} ${config.url}`);
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Marketplace API Request: ${config.method?.toUpperCase()} ${config.url}`);
+      }
       return config;
     },
     (error) => {
@@ -84,7 +86,9 @@ const createMarketplaceClient = (): AxiosInstance => {
   // Response interceptor with error logging
   client.interceptors.response.use(
     (response) => {
-      console.log(`Marketplace API Response: ${response.status}`);
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Marketplace API Response: ${response.status}`);
+      }
       return response;
     },
     async (error: AxiosError) => {
@@ -116,7 +120,9 @@ export const fetchProducts = async (params: {
   search?: string;
 } = {}): Promise<Product[]> => {
   try {
-    console.log('Fetching marketplace products with params:', params);
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Fetching marketplace products with params:', params);
+    }
     
     const response = await marketplaceClient.get('/api/marketplace/products', { 
       params,
@@ -124,7 +130,9 @@ export const fetchProducts = async (params: {
     });
     
     if (response.data && Array.isArray(response.data)) {
-      console.log(`Successfully fetched ${response.data.length} products from API`);
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`Successfully fetched ${response.data.length} products from API`);
+      }
       return response.data;
     } else {
       console.warn('Products API returned unexpected data format. Falling back to static data.');
@@ -447,12 +455,16 @@ export const ensureProductIntegrity = (products: any[]): any[] => {
     
     if (!validated.description) {
       validated.description = `Description for ${validated.title}`;
-      console.warn(`[Auto-Fix] Generated description for product: ${validated.id}`);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`[Auto-Fix] Generated description for product: ${validated.id}`);
+      }
     }
     
     if (!validated.category) {
       validated.category = 'General';
-      console.warn(`[Auto-Fix] Generated category for product: ${validated.id}`);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`[Auto-Fix] Generated category for product: ${validated.id}`);
+      }
     }
     
     // Ensure price is a valid number
@@ -475,4 +487,4 @@ export const ensureProductIntegrity = (products: any[]): any[] => {
     
     return validated;
   });
-}; 
+};
