@@ -30,6 +30,8 @@ export async function middleware(request: NextRequest) {
     '/status',
     '/categories',
     '/search',
+    '/community', // Community sections should be public
+    '/resources', // Resources sections should be public
     '/api/products',
     '/api/categories',
     '/api/search',

@@ -139,7 +139,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     try {
-      // Add timeout to database queries to prevent hanging
+      // Reduce timeout and add better error handling
       const dbQueryPromise = Promise.race([
         (async () => {
           const categoryDetails = await prisma.category.findUnique({
@@ -161,19 +161,26 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
                 currency: true,
                 images: true,
               },
+              take: 50, // Limit results for better performance
             });
             return { categoryDetails, products };
           }
           return { categoryDetails: null, products: [] };
         })(),
         new Promise((_, reject) => 
-          setTimeout(() => reject(new Error('Database query timeout')), 5000)
+          setTimeout(() => reject(new Error('Database query timeout')), 2000) // Reduced from 5s to 2s
         )
       ]) as Promise<{ categoryDetails: any, products: any[] }>;
 
       const result = await dbQueryPromise;
       categoryDetails = result.categoryDetails;
       products = result.products;
+      
+      // If we got data but it's empty, still use fallback for better UX
+      if (categoryDetails && products.length === 0) {
+        console.log('Database returned empty results, using fallback data for better UX');
+        usingFallback = true;
+      }
     } catch (dbError) {
       console.warn('Database query failed or timed out, using fallback data:', dbError);
       usingFallback = true;
