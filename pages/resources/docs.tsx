@@ -70,7 +70,28 @@ export default function ResourcesDocsPage() {
             </a>
           </div>
         </div>
+
+        <div className="mt-12">
+          <h2 className="text-2xl font-semibold text-white mb-4">AI Prompt</h2>
+          <p className="text-zion-slate-light mb-6">
+            Outline API documentation structure: Quick Start, Authentication,
+            Endpoints, Webhooks, Error Codes. Provide 1-sentence intro for each.
+          </p>
+          <pre className="bg-zion-blue-light text-white p-4 rounded-lg overflow-auto">
+{`import requests
+
+API_BASE = "https://api.ziontechgroup.com/v1"
+API_KEY = "YOUR_API_KEY"
+
+headers = {"Authorization": f"Bearer {API_KEY}"}
+response = requests.get(f"{API_BASE}/products", headers=headers, timeout=10)
+response.raise_for_status()
+products = response.json()
+print(products)
+`}
+          </pre>
+        </div>
       </div>
     </div>
   );
-} 
+}
