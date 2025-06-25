@@ -116,39 +116,49 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
-  // Refactored signup method
+  // Refactored signup method to use Auth0 API
   const signup = async (email: string, password: string, userData: Partial<UserDetails> = {}) => {
     setIsLoading(true);
     try {
       const { name = '' } = userData;
-      const { data, error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          data: {
-            ...userData,
-            display_name: name, // Store name in display_name
-          },
+      
+      // Use Auth0 API via our register endpoint instead of Supabase
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          ...userData
+        }),
       });
 
-      if (error) {
-        console.error("Supabase signup error:", error);
+      const data = await response.json();
+
+      if (!response.ok) {
+        console.error("Auth0 signup error:", data);
         toast({
           title: "Signup Failed",
-          description: error.message || "An unexpected error occurred during signup.",
+          description: data.error || data.message || "An unexpected error occurred during signup.",
           variant: "destructive",
         });
         setIsLoading(false);
-        return { error: error.message || "Signup failed", emailVerificationRequired: false };
+        return { error: data.error || data.message || "Signup failed", emailVerificationRequired: false };
       }
 
       toast({
         title: "Signup Successful",
-        description: "Please check your email to verify your account.",
+        description: data.message || "Please check your email to verify your account.",
       });
       setIsLoading(false);
-      return { error: null, emailVerificationRequired: true };
+      return { 
+        error: null, 
+        emailVerificationRequired: data.emailVerificationRequired || true,
+        user: data.user 
+      };
     } catch (err: any) {
       console.error("Signup exception:", err);
       toast({
