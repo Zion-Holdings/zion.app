@@ -67,6 +67,60 @@ const INITIAL_EQUIPMENT: ProductListing[] = [
     reviewCount: 19,
     location: "San Jose, CA",
     availability: "In Stock"
+  },
+  {
+    id: "hpe-proliant-dl380",
+    title: "HPE ProLiant DL380 Gen10",
+    description: "Versatile 2U server optimized for compute-intensive workloads.",
+    category: "Servers & Compute",
+    price: 14500,
+    currency: "$",
+    brand: "HPE",
+    specifications: ["2U Rack", "Dual Xeon", "256GB RAM", "4TB SSD"],
+    tags: ["Server", "Enterprise", "Compute"],
+    author: { name: "HPE", id: "hpe" },
+    images: ["https://images.unsplash.com/photo-1555617981-dac388a08846?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-18T11:00:00.000Z",
+    rating: 4.6,
+    reviewCount: 21,
+    location: "Houston, TX",
+    availability: "In Stock"
+  },
+  {
+    id: "netapp-aff-a250",
+    title: "NetApp AFF A250 All-Flash Array",
+    description: "Enterprise all-flash storage system for demanding workloads.",
+    category: "Storage Systems",
+    price: 42000,
+    currency: "$",
+    brand: "NetApp",
+    specifications: ["24TB Flash", "NVMe", "Active-Active"],
+    tags: ["Storage", "Flash", "NVMe"],
+    author: { name: "NetApp", id: "netapp" },
+    images: ["https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-18T09:45:00.000Z",
+    rating: 4.7,
+    reviewCount: 18,
+    location: "Chicago, IL",
+    availability: "2-3 Weeks"
+  },
+  {
+    id: "arista-7050x",
+    title: "Arista 7050X Series Switch",
+    description: "High-density 10/40GbE switch for modern datacenter networks.",
+    category: "Networking",
+    price: 23000,
+    currency: "$",
+    brand: "Arista",
+    specifications: ["48x10GbE", "6x40GbE", "Wire Speed"],
+    tags: ["Switch", "10GbE", "Datacenter"],
+    author: { name: "Arista", id: "arista" },
+    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
+    createdAt: "2024-01-17T12:10:00.000Z",
+    rating: 4.5,
+    reviewCount: 16,
+    location: "Sunnyvale, CA",
+    availability: "In Stock"
   }
 ];
 
@@ -221,8 +275,24 @@ function EquipmentPageContent() {
     try {
       // Generate consistent virtual dataset using the seed
       const VIRTUAL_DATASET_SIZE = 150;
-      const baseVirtualEquipment = generateDatacenterEquipment(VIRTUAL_DATASET_SIZE, INITIAL_EQUIPMENT.length, dataSeed);
-      const fullVirtualDataset: ProductListing[] = [...INITIAL_EQUIPMENT, ...baseVirtualEquipment];
+      const baseVirtualEquipment = generateDatacenterEquipment(
+        VIRTUAL_DATASET_SIZE,
+        INITIAL_EQUIPMENT.length,
+        dataSeed
+      );
+      let fullVirtualDataset: ProductListing[] = [
+        ...INITIAL_EQUIPMENT,
+        ...baseVirtualEquipment
+      ];
+
+      // Deduplicate by ID in case of overlaps
+      const dedupMap = new Map<string, ProductListing>();
+      for (const item of fullVirtualDataset) {
+        if (!dedupMap.has(item.id)) {
+          dedupMap.set(item.id, item);
+        }
+      }
+      fullVirtualDataset = Array.from(dedupMap.values());
 
       // Apply category filtering
       let processedDataset = fullVirtualDataset;
