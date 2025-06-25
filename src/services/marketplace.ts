@@ -141,11 +141,25 @@ export const fetchProducts = async (params: {
       params,
     });
     
-    if (response.data && Array.isArray(response.data)) {
-      if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        console.log(`Successfully fetched ${response.data.length} products from API`);
+    // Handle both direct array response and object with products array
+    let products = [];
+    if (response.data) {
+      if (Array.isArray(response.data)) {
+        products = response.data;
+      } else if (response.data.products && Array.isArray(response.data.products)) {
+        products = response.data.products;
       }
-      return response.data;
+    }
+    
+    if (products.length > 0) {
+      if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
+        console.log(`Successfully fetched ${products.length} products from API`);
+      }
+      return products.map((item: any) => ({
+        ...item,
+        price: item.price || 0,
+        description: item.description || ''
+      }));
     } else {
       // Fallback to static data if API returns unexpected format
       if (process.env.NODE_ENV !== 'production') {

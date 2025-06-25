@@ -131,16 +131,21 @@ export default async function handler(
 
     // Calculate totals for reference
     const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const hasShipping = subtotal <= 100; // Free shipping over $100
+    
+    // Check if any items require physical shipping
+    const hasPhysicalItems = cartItems.some((item: any) => 
+      !item.type || item.type === 'physical' // Default to physical if type not specified
+    );
+    const needsShipping = hasPhysicalItems && subtotal <= 100;
 
-    // Add shipping if applicable
-    if (hasShipping) {
+    // Add shipping if applicable (only for physical items)
+    if (needsShipping) {
       lineItems.push({
         price_data: {
           currency: 'usd',
           product_data: {
-            name: 'Shipping',
-            description: 'Standard shipping (Free on orders over $100)',
+                      name: 'Shipping',
+          description: 'Standard shipping for physical items (Free on orders over $100)',
           },
           unit_amount: 1500, // $15.00 in cents
         },
@@ -162,9 +167,12 @@ export default async function handler(
         item_count: cartItems.length.toString(),
         subtotal: subtotal.toString(),
       },
-      shipping_address_collection: {
-        allowed_countries: ['US', 'CA'], // Adjust as needed
-      },
+      // Only collect shipping address if we have physical items
+      ...(hasPhysicalItems && {
+        shipping_address_collection: {
+          allowed_countries: ['US', 'CA'], // Adjust as needed
+        },
+      }),
       billing_address_collection: 'required',
       payment_intent_data: {
         metadata: {

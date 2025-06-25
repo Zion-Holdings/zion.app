@@ -21,33 +21,36 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
   try {
-    // Get user session to validate request
+    // For public resend endpoint, we allow email to be provided without auth
+    // This is common for verification email resending before login
+    let emailToResend = email;
+    
+    // If auth header is provided, validate and use authenticated user's email
     const authHeader = req.headers.authorization;
-    if (!authHeader) {
-      return res.status(401).json({ error: 'Authentication required' });
+    if (authHeader) {
+      try {
+        const token = authHeader.replace('Bearer ', '');
+        const { data: { user }, error: userError } = await supabase.auth.getUser(token);
+        
+        if (!userError && user?.email) {
+          emailToResend = user.email; // Use authenticated user's email
+        }
+      } catch (authError) {
+        console.warn('Auth validation failed, proceeding with provided email:', authError);
+      }
     }
 
-    // Extract token from Bearer header
-    const token = authHeader.replace('Bearer ', '');
-    
-    // Verify the session
-    const { data: { user }, error: userError } = await supabase.auth.getUser(token);
-    
-    if (userError || !user) {
-      return res.status(401).json({ error: 'Invalid authentication token' });
-    }
-
-    // Check if email matches the authenticated user
-    const emailToResend = email || user.email;
     if (!emailToResend) {
       return res.status(400).json({ error: 'Email address is required' });
     }
 
-    if (emailToResend !== user.email) {
-      return res.status(403).json({ error: 'You can only resend verification for your own email' });
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailToResend)) {
+      return res.status(400).json({ error: 'Invalid email format' });
     }
 
-    // Resend verification email
+    // Resend verification email using admin client
     const { error: resendError } = await supabase.auth.resend({
       type: 'signup',
       email: emailToResend,

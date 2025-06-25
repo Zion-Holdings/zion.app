@@ -3,6 +3,10 @@ export interface CartItem {
   name: string;
   price: number;
   quantity: number;
+  description?: string;
+  image?: string;
+  category?: string;
+  type?: 'physical' | 'digital' | 'service';
 }
 
 export interface CartContextType {

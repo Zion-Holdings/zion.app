@@ -73,7 +73,12 @@ export default function CartPage() {
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
   const tax = subtotal * 0.08; // 8% tax estimate
-  const shipping = subtotal > 100 ? 0 : 15; // Free shipping over $100
+  
+  // Only add shipping for physical items
+  const hasPhysicalItems = items.some(item => 
+    !item.type || item.type === 'physical' // Default to physical if type not specified
+  );
+  const shipping = hasPhysicalItems && subtotal <= 100 ? 15 : 0;
   const total = subtotal + tax + shipping;
 
   // Empty cart state
