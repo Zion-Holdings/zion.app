@@ -76,15 +76,15 @@ const createMarketplaceClient = (): AxiosInstance => {
     baseURL: '', // Use relative URLs for internal API routes
     withCredentials: false,
   });
-
-  // Set timeout separately to avoid TypeScript config issues
-  client.defaults.timeout = 10000;
+  
+  // Set timeout with proper typing
+  (client as any).defaults.timeout = 10000;
 
   // Request interceptor for debugging
   client.interceptors.request.use(
     async (config) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        console.log(`[Marketplace API] ${config.method?.toUpperCase()} ${config.url}`);
+        console.log(`[DEBUG] Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
       }
       return config;
     },
@@ -100,11 +100,11 @@ const createMarketplaceClient = (): AxiosInstance => {
   client.interceptors.response.use(
     (response) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        console.log(`[Marketplace API] Response: ${response.status}`);
+        console.log(`[DEBUG] Marketplace API Response: ${response.status}`);
       }
       return response;
     },
-    async (error: AxiosError) => {
+    (error: AxiosError) => {
       if (process.env.NODE_ENV === 'development') {
         console.error('Marketplace API Error:', {
           message: error.message,
@@ -113,7 +113,6 @@ const createMarketplaceClient = (): AxiosInstance => {
           method: error.config?.method,
         });
       }
-
       return Promise.reject(error);
     }
   );
@@ -133,6 +132,7 @@ export const fetchProducts = async (params: {
 } = {}): Promise<Product[]> => {
   try {
     if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
+      console.log('[DEBUG] Marketplace Service - API Base URL:', process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api');
       console.log('Fetching marketplace products with params:', params);
     }
     
@@ -169,41 +169,47 @@ export const fetchProducts = async (params: {
       });
     }
     
-    // Always return fallback data instead of throwing
-    const { MARKETPLACE_LISTINGS } = await import('@/data/listingData');
-    
-    // Apply client-side filtering if needed
-    let filteredListings = MARKETPLACE_LISTINGS;
-    
-    if (params.category) {
-      filteredListings = filteredListings.filter(item => 
-        item.category?.toLowerCase() === params.category?.toLowerCase()
-      );
+    // Always return fallback data instead of throwing to prevent infinite loops
+    try {
+      const { MARKETPLACE_LISTINGS } = await import('@/data/listingData');
+      
+      // Apply client-side filtering if needed
+      let filteredListings = [...MARKETPLACE_LISTINGS]; // Create a copy to avoid mutations
+      
+      if (params.category) {
+        filteredListings = filteredListings.filter(item => 
+          item.category?.toLowerCase() === params.category?.toLowerCase()
+        );
+      }
+      
+      if (params.search) {
+        const searchTerm = params.search.toLowerCase();
+        filteredListings = filteredListings.filter(item =>
+          item.title?.toLowerCase().includes(searchTerm) ||
+          item.description?.toLowerCase().includes(searchTerm) ||
+          item.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
+        );
+      }
+      
+      // Apply pagination
+      if (params.page && params.limit) {
+        const start = (params.page - 1) * params.limit;
+        const end = start + params.limit;
+        filteredListings = filteredListings.slice(start, end);
+      } else if (params.limit) {
+        filteredListings = filteredListings.slice(0, params.limit);
+      }
+      
+      return filteredListings.map(item => ({
+        ...item,
+        price: item.price || 0,
+        description: item.description || ''
+      }));
+    } catch (fallbackError) {
+      console.error('Critical error: Even fallback data failed to load:', fallbackError);
+      // Return minimal empty array to prevent complete failure
+      return [];
     }
-    
-    if (params.search) {
-      const searchTerm = params.search.toLowerCase();
-      filteredListings = filteredListings.filter(item =>
-        item.title?.toLowerCase().includes(searchTerm) ||
-        item.description?.toLowerCase().includes(searchTerm) ||
-        item.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
-      );
-    }
-    
-    // Apply pagination
-    if (params.page && params.limit) {
-      const start = (params.page - 1) * params.limit;
-      const end = start + params.limit;
-      filteredListings = filteredListings.slice(start, end);
-    } else if (params.limit) {
-      filteredListings = filteredListings.slice(0, params.limit);
-    }
-    
-    return filteredListings.map(item => ({
-      ...item,
-      price: item.price || 0,
-      description: item.description || ''
-    }));
   }
 };
 
