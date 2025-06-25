@@ -31,7 +31,7 @@ export function LivestreamSection() {
         <div className="aspect-video max-w-3xl mx-auto">
           <iframe
             className="w-full h-full"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?mute=1&controls=1"
+            src="https://www.youtube.com/embed/OYxhW22Kv30?mute=1&controls=1"
             title="Zion Summit Livestream"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
