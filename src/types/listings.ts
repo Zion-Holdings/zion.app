@@ -32,6 +32,7 @@ export interface ProductListing {
   availability?: string; // Adding availability property to fix TypeScript errors
   brand?: string; // Brand of the equipment
   specifications?: string[]; // Key specifications for filtering
+  uspHeadline?: string; // Short unique selling point headline
 }
 
 export interface ListingItem {

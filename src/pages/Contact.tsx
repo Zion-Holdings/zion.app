@@ -141,8 +141,8 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact | Zion Tech Group"
-        description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform."
+        title="Contact Us - Get Help from Zion Tech Marketplace"
+        description="Reach out to Zion Tech Marketplace for personalized support. Ask questions, get guidance, and connect with our tech-savvy team today. We’re eager to assist—drop us a line anytime."
         keywords="contact Zion, AI marketplace support, tech platform contact"
         canonical="https://app.ziontechgroup.com/contact"
       />
