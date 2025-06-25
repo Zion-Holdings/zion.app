@@ -88,6 +88,8 @@ export const PROMPT_LIBRARY: Prompt[] = [
   { id: 'admin-23', category: 'admin', text: 'Create a template for weekly admin meetings' },
   { id: 'admin-24', category: 'admin', text: 'Draft a quick start guide for new admins' },
   { id: 'admin-25', category: 'admin', text: 'Outline steps to escalate unresolved disputes' },
+  { id: 'admin-26', category: 'admin', text: 'Produce an SEO-optimized landing page outline for the "AI Models & APIs" category: intro (80 words), benefits list, top products grid, FAQ (4 Q&As).' },
+  { id: 'admin-27', category: 'admin', text: 'Create a 3-step onboarding wizard copy for first-time category visitors: Step titles, subtitles, and button labels.' },
 
   // Partners 25 prompts
   { id: 'partner-1', category: 'partner', text: 'Create a curriculum brief for AI readiness program' },
