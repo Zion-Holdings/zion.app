@@ -30,10 +30,10 @@ export async function createNotification({
     if (error) throw error;
     
     // Properly type the data as string (notification ID)
-    const notificationId = data as string;
+    const notificationId = Array.isArray(data) && data.length > 0 ? data[0] as string : null;
     
     // If sendEmail is true, call the edge function to send an email
-    if (sendEmail && notificationId) {
+    if (sendEmail && notificationId != null) {
       await supabase.functions.invoke('send-notification-email', {
         body: { user_id: userId, notification_id: notificationId }
       });
