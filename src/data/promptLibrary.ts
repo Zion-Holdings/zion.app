@@ -88,6 +88,8 @@ export const PROMPT_LIBRARY: Prompt[] = [
   { id: 'admin-23', category: 'admin', text: 'Create a template for weekly admin meetings' },
   { id: 'admin-24', category: 'admin', text: 'Draft a quick start guide for new admins' },
   { id: 'admin-25', category: 'admin', text: 'Outline steps to escalate unresolved disputes' },
+  { id: 'admin-26', category: 'admin', text: "Write a 150-word 'Why Work With Us' paragraph plus 5 bullet perks for Zion's Careers page." },
+  { id: 'admin-27', category: 'admin', text: 'Create a job-posting template: Position summary (60 words), responsibilities list (6 items), requirements list (6 items), CTA.' },
 
   // Partners 25 prompts
   { id: 'partner-1', category: 'partner', text: 'Create a curriculum brief for AI readiness program' },
