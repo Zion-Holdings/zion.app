@@ -29,15 +29,17 @@ export async function createNotification({
     
     if (error) throw error;
     
+    // Properly type the data as string (notification ID)
+    const notificationId = data as string;
+    
     // If sendEmail is true, call the edge function to send an email
-    if (sendEmail && data) {
-      const notificationId = data;
+    if (sendEmail && notificationId) {
       await supabase.functions.invoke('send-notification-email', {
         body: { user_id: userId, notification_id: notificationId }
       });
     }
     
-    return { success: true, notificationId: data };
+    return { success: true, notificationId };
   } catch (error) {
     console.error('Error creating notification:', error);
     return { success: false, error };
