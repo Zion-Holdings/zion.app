@@ -284,6 +284,8 @@ export const getServerSideProps: GetServerSideProps<ProductPageProps> = async ({
     return { notFound: true };
   }
 
+
+
   try {
     const productData = await fetchProductById(id);
 
@@ -303,6 +305,14 @@ export const getServerSideProps: GetServerSideProps<ProductPageProps> = async ({
     };
   } catch (error) {
     console.error(`Error fetching product ${id} in getServerSideProps:`, error);
+    // During build, return null product instead of failing
+    if (process.env.NODE_ENV === 'production') {
+      return {
+        props: {
+          product: null,
+        },
+      };
+    }
     // Optionally, you could pass an error prop to the page
     // return { props: { product: null, error: 'Failed to load product data.' } };
     return { notFound: true }; // Or redirect to a generic error page
