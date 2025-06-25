@@ -37,13 +37,6 @@ export function AuthGuard({
           title: "Authentication Required",
           description: "Please log in to access this feature.",
           variant: "destructive",
-          action: {
-            label: "Log In",
-            onClick: () => {
-              const returnUrl = encodeURIComponent(router.asPath);
-              router.push(`${redirectTo}?next=${returnUrl}`);
-            },
-          },
         });
       }
 

@@ -2,7 +2,6 @@ import * as React from "react"
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { cva, type VariantProps } from "class-variance-authority"
 import { X } from "lucide-react"
-
 import { cn } from "@/lib/utils"
 
 const ToastProvider = ToastPrimitives.Provider
@@ -29,8 +28,10 @@ const toastVariants = cva(
       variant: {
         default: "border bg-background text-foreground",
         destructive:
-          "destructive group border-destructive bg-destructive text-destructive-foreground",
-        success: "border bg-background text-foreground",
+          "destructive border-destructive bg-destructive text-destructive-foreground",
+        success: "border-green-500 bg-green-50 text-green-900 dark:bg-green-900/20 dark:text-green-100",
+        warning: "border-yellow-500 bg-yellow-50 text-yellow-900 dark:bg-yellow-900/20 dark:text-yellow-100",
+        info: "border-blue-500 bg-blue-50 text-blue-900 dark:bg-blue-900/20 dark:text-blue-100",
       },
     },
     defaultVariants: {
@@ -80,12 +81,9 @@ const ToastClose = React.forwardRef<
       className
     )}
     toast-close=""
-    aria-label="Close"
-    title="Close"
     {...props}
   >
     <X className="h-4 w-4" />
-    <span className="sr-only">Close</span>
   </ToastPrimitives.Close>
 ))
 ToastClose.displayName = ToastPrimitives.Close.displayName
@@ -116,10 +114,7 @@ ToastDescription.displayName = ToastPrimitives.Description.displayName
 
 type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>
 
-// Older React type definitions may not support generics on `ReactElement`.
-// Using the base `ReactElement` type here avoids compilation errors while
-// still representing a valid React element returned by `ToastAction`.
-type ToastActionElement = React.ReactElement
+type ToastActionElement = React.ReactElement<typeof ToastAction>
 
 export {
   type ToastProps,

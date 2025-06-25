@@ -24,8 +24,17 @@ const LoginPage = () => {
         setIsCheckingSession(false);
         return;
       }
+      
+      // Add timeout to prevent infinite loading
+      const timeoutId = setTimeout(() => {
+        console.warn('Session check timeout after 5 seconds');
+        setIsCheckingSession(false);
+      }, 5000);
+      
       try {
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+        clearTimeout(timeoutId);
+        
         if (sessionError) {
           console.error('Error getting session:', sessionError);
           setError(sessionError as any);
@@ -38,6 +47,7 @@ const LoginPage = () => {
         }
       } catch (e) {
         console.error('Exception during session check:', e);
+        clearTimeout(timeoutId);
       } finally {
         setIsCheckingSession(false);
       }
@@ -106,7 +116,11 @@ const LoginPage = () => {
   if (isCheckingSession || (isLoading && !error)) { // Show loader if checking session OR loading and no error yet
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Checking authentication...</p>
+          <p className="text-sm text-gray-500 mt-2">This should only take a moment</p>
+        </div>
       </div>
     );
   }

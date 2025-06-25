@@ -168,7 +168,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           return { categoryDetails: null, products: [] };
         })(),
         new Promise((_, reject) => 
-          setTimeout(() => reject(new Error('Database query timeout')), 2000) // Reduced from 5s to 2s
+          setTimeout(() => reject(new Error('Database query timeout')), 8000) // Increased to 8s for better reliability
         )
       ]) as Promise<{ categoryDetails: any, products: any[] }>;
 
