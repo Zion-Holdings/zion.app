@@ -113,7 +113,23 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
         // Try to load additional listings that might not be in static data
         const { fetchProducts } = await import('@/services/marketplace');
         const additionalProducts = await fetchProducts({ search: slug });
-        listing = additionalProducts.find((p: any) => p.id === slug) || null;
+        const product = additionalProducts.find((p: any) => p.id === slug);
+        
+        // Transform Product to ProductListing format if found
+        if (product) {
+          listing = {
+            ...product,
+            currency: product.currency || 'USD', // Ensure currency is defined
+            author: product.author || { name: 'Unknown', id: 'unknown' },
+            category: product.category || 'general',
+            subcategory: product.subcategory,
+            availability: product.availability,
+            rating: product.rating,
+            reviewCount: product.reviewCount || 0,
+            featured: product.featured || false,
+            // Ensure all required ProductListing fields are present
+          } as ProductListing;
+        }
       } catch (apiError) {
         console.warn(`Failed to fetch additional products for slug ${slug}:`, apiError);
       }

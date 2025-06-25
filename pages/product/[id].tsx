@@ -67,7 +67,21 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
       if (!product || !product.category) return;
       try {
         const items = await fetchProducts({ category: product.category, limit: 4 });
-        setRelatedProducts(items.filter((p) => p.id !== product.id));
+        // Transform Product array to ProductListing array with safe defaults
+        const transformedItems: ProductListing[] = items
+          .filter((p) => p.id !== product.id)
+          .map((item) => ({
+            ...item,
+            currency: item.currency || 'USD',
+            author: item.author || { name: 'Unknown', id: 'unknown' },
+            category: item.category || 'general',
+            subcategory: item.subcategory,
+            availability: item.availability,
+            rating: item.rating,
+            reviewCount: item.reviewCount || 0,
+            featured: item.featured || false,
+          } as ProductListing));
+        setRelatedProducts(transformedItems);
       } catch (e) {
         console.error('Failed to load related products', e);
       }
