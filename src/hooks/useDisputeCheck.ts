@@ -38,8 +38,8 @@ export function useDisputeCheck(projectId?: string, milestoneId?: string) {
         if (data && data.length > 0) {
           // Get the first dispute (highest priority based on status)
           setIsUnderDispute(true);
-          setDisputeStatus(data[0].status as any);
-          setDisputeId(data[0].id);
+          setDisputeStatus(data[0]?.status as any);
+          setDisputeId(data[0]?.id);
         } else {
           setIsUnderDispute(false);
           setDisputeStatus(null);
