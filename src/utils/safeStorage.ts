@@ -1,33 +1,39 @@
-function checkStorageAvailable(type: 'localStorage' | 'sessionStorage'): boolean {
-  if (typeof window === 'undefined') return false;
+// In-memory storage for fallback with optimizations
+let inMemoryStore: Record<string, string> = {};
+let localStorageAvailable: boolean | null = null; // Cache the availability check
+let lastAvailabilityCheck = 0;
+const AVAILABILITY_CHECK_INTERVAL = 5000; // Check every 5 seconds max
+
+function isLocalStorageAvailable(): boolean {
+  const now = Date.now();
+  
+  // Use cached result if checked recently
+  if (localStorageAvailable !== null && (now - lastAvailabilityCheck) < AVAILABILITY_CHECK_INTERVAL) {
+    return localStorageAvailable;
+  }
+  
+  lastAvailabilityCheck = now;
+  
   try {
-    const storage = window[type];
-    const testKey = '__storage_test__';
-    storage.setItem(testKey, '1');
-    storage.removeItem(testKey);
+    if (typeof window === 'undefined') {
+      localStorageAvailable = false;
+      return false;
+    }
+    
+    const testKey = '__localStorage_test__';
+    localStorage.setItem(testKey, 'test');
+    localStorage.removeItem(testKey);
+    localStorageAvailable = true;
     return true;
   } catch {
+    localStorageAvailable = false;
     return false;
   }
 }
 
-let isLocalStorageAvailable = checkStorageAvailable('localStorage');
-const localStorageMemoryStore: { [key: string]: string } = {};
-const isDev = process.env.NODE_ENV !== 'production';
-
 export const safeStorage = {
   getItem: (key: string): string | null => {
-    if (isDev) {
-      console.log(
-        `safeStorage.getItem: Attempting to get item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`
-      );
-    }
-    if (!isLocalStorageAvailable) {
-      if (isDev) {
-        console.log(`safeStorage.getItem: Using in-memory store for key "${key}".`);
-      }
-      return localStorageMemoryStore[key] || null;
-    }
+    if (typeof window === 'undefined') return null;
     try {
       return localStorage.getItem(key);
     } catch (e) {
@@ -35,26 +41,11 @@ export const safeStorage = {
         `safeStorage.getItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`,
         e
       );
-      if (isLocalStorageAvailable) { // Only log once
-        console.warn('localStorage is not available. Falling back to in-memory storage for this session.', e);
-        isLocalStorageAvailable = false;
-      }
-      return localStorageMemoryStore[key] || null;
+      return null;
     }
   },
   setItem: (key: string, value: string) => {
-    if (isDev) {
-      console.log(
-        `safeStorage.setItem: Attempting to set item "${key}" with value "${value}". isLocalStorageAvailable: ${isLocalStorageAvailable}`
-      );
-    }
-    if (!isLocalStorageAvailable) {
-      if (isDev) {
-        console.log(`safeStorage.setItem: Using in-memory store for key "${key}".`);
-      }
-      localStorageMemoryStore[key] = value;
-      return;
-    }
+    if (typeof window === 'undefined') return;
     try {
       localStorage.setItem(key, value);
     } catch (e) {
@@ -62,26 +53,11 @@ export const safeStorage = {
         `safeStorage.setItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`,
         e
       );
-      if (isLocalStorageAvailable) { // Only log once
-        console.warn('localStorage is not available. Falling back to in-memory storage for this session.', e);
-        isLocalStorageAvailable = false;
-      }
-      localStorageMemoryStore[key] = value;
+      inMemoryStore[key] = value;
     }
   },
   removeItem: (key: string) => {
-    if (isDev) {
-      console.log(
-        `safeStorage.removeItem: Attempting to remove item "${key}". isLocalStorageAvailable: ${isLocalStorageAvailable}`
-      );
-    }
-    if (!isLocalStorageAvailable) {
-      if (isDev) {
-        console.log(`safeStorage.removeItem: Using in-memory store for key "${key}".`);
-      }
-      delete localStorageMemoryStore[key];
-      return;
-    }
+    if (typeof window === 'undefined') return;
     try {
       localStorage.removeItem(key);
     } catch (e) {
@@ -89,103 +65,51 @@ export const safeStorage = {
         `safeStorage.removeItem: Error accessing localStorage for key "${key}". Falling back to in-memory. Error:`,
         e
       );
-      if (isLocalStorageAvailable) { // Only log once
-        console.warn('localStorage is not available. Falling back to in-memory storage for this session.', e);
-        isLocalStorageAvailable = false;
-      }
-      delete localStorageMemoryStore[key];
+      delete inMemoryStore[key];
     }
   },
   get isAvailable(): boolean {
-    return isLocalStorageAvailable;
+    return isLocalStorageAvailable();
   }
 };
 
-let isSessionStorageAvailable = checkStorageAvailable('sessionStorage');
-const sessionStorageMemoryStore: { [key: string]: string } = {};
+// Simplified session storage without excessive logging
+const sessionMemoryStore: Record<string, string> = {};
 
 export const safeSessionStorage = {
   getItem: (key: string): string | null => {
-    if (isDev) {
-      console.log(
-        `safeSessionStorage.getItem: Attempting to get item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`
-      );
-    }
-    if (!isSessionStorageAvailable) {
-      if (isDev) {
-        console.log(`safeSessionStorage.getItem: Using in-memory store for key "${key}".`);
-      }
-      return sessionStorageMemoryStore[key] || null;
-    }
+    if (typeof window === 'undefined') return null;
     try {
       return sessionStorage.getItem(key);
     } catch (e) {
-      console.error(
-        `safeSessionStorage.getItem: Error accessing sessionStorage for key "${key}". Falling back to in-memory. Error:`,
-        e
-      );
-      if (isSessionStorageAvailable) { // Only log once
-        console.warn('sessionStorage is not available. Falling back to in-memory storage for this session.', e);
-        isSessionStorageAvailable = false;
-      }
-      return sessionStorageMemoryStore[key] || null;
+      return sessionMemoryStore[key] || null;
     }
   },
   setItem: (key: string, value: string) => {
-    if (isDev) {
-      console.log(
-        `safeSessionStorage.setItem: Attempting to set item "${key}" with value "${value}". isSessionStorageAvailable: ${isSessionStorageAvailable}`
-      );
-    }
-    if (!isSessionStorageAvailable) {
-      if (isDev) {
-        console.log(`safeSessionStorage.setItem: Using in-memory store for key "${key}".`);
-      }
-      sessionStorageMemoryStore[key] = value;
-      return;
-    }
+    if (typeof window === 'undefined') return;
     try {
       sessionStorage.setItem(key, value);
     } catch (e) {
-      console.error(
-        `safeSessionStorage.setItem: Error accessing sessionStorage for key "${key}". Falling back to in-memory. Error:`,
-        e
-      );
-      if (isSessionStorageAvailable) { // Only log once
-        console.warn('sessionStorage is not available. Falling back to in-memory storage for this session.', e);
-        isSessionStorageAvailable = false;
-      }
-      sessionStorageMemoryStore[key] = value;
+      sessionMemoryStore[key] = value;
     }
   },
   removeItem: (key: string) => {
-    if (isDev) {
-      console.log(
-        `safeSessionStorage.removeItem: Attempting to remove item "${key}". isSessionStorageAvailable: ${isSessionStorageAvailable}`
-      );
-    }
-    if (!isSessionStorageAvailable) {
-      if (isDev) {
-        console.log(`safeSessionStorage.removeItem: Using in-memory store for key "${key}".`);
-      }
-      delete sessionStorageMemoryStore[key];
-      return;
-    }
+    if (typeof window === 'undefined') return;
     try {
       sessionStorage.removeItem(key);
     } catch (e) {
-      console.error(
-        `safeSessionStorage.removeItem: Error accessing sessionStorage for key "${key}". Falling back to in-memory. Error:`,
-        e
-      );
-      if (isSessionStorageAvailable) { // Only log once
-        console.warn('sessionStorage is not available. Falling back to in-memory storage for this session.', e);
-        isSessionStorageAvailable = false;
-      }
-      delete sessionStorageMemoryStore[key];
+      delete sessionMemoryStore[key];
     }
   },
   get isAvailable(): boolean {
-    return isSessionStorageAvailable;
+    try {
+      if (typeof window === 'undefined') return false;
+      const testKey = '__session_test__';
+      sessionStorage.setItem(testKey, 'test');
+      sessionStorage.removeItem(testKey);
+      return true;
+    } catch {
+      return false;
+    }
   }
 };
