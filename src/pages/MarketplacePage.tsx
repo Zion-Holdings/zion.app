@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp, Filter, SortAsc, Sparkles, TrendingUp, Star, ShoppingCart, AlertTriangle, RefreshCw } from 'lucide-react';
+import { NextSeo } from '@/components/NextSeo';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { ProductListing } from '@/types/listings';
 import { SkeletonCard } from '@/components/ui/skeleton';
@@ -288,6 +289,12 @@ function MarketplacePageContent() {
   // Loading state
   if (loading && products.length === 0) {
     return (
+      <>
+        <NextSeo
+          title="Marketplace - Zion Tech Marketplace Solutions & Services"
+          description="Visit our Zion Tech Marketplace to browse top-rated products, service packages, and exclusive offers. Start shopping with confidence today. Earn rewards and access limited deals."
+          openGraph={{ images: [{ url: 'https://app.ziontechgroup.com/og.png' }] }}
+        />
       <div className="container py-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -297,12 +304,19 @@ function MarketplacePageContent() {
         </motion.div>
         <MarketplaceLoadingGrid />
       </div>
+      </>
     );
   }
 
   // Error state
   if (error && products.length === 0) {
     return (
+      <>
+        <NextSeo
+          title="Marketplace - Zion Tech Marketplace Solutions & Services"
+          description="Visit our Zion Tech Marketplace to browse top-rated products, service packages, and exclusive offers. Start shopping with confidence today. Earn rewards and access limited deals."
+          openGraph={{ images: [{ url: 'https://app.ziontechgroup.com/og.png' }] }}
+        />
       <div className="container py-8">
         <div className="text-center space-y-4">
           <AlertTriangle className="mx-auto h-12 w-12 text-red-500" />
@@ -319,10 +333,17 @@ function MarketplacePageContent() {
           </div>
         </div>
       </div>
+      </>
     );
   }
 
   return (
+    <>
+      <NextSeo
+        title="Marketplace - Zion Tech Marketplace Solutions & Services"
+        description="Visit our Zion Tech Marketplace to browse top-rated products, service packages, and exclusive offers. Start shopping with confidence today. Earn rewards and access limited deals."
+        openGraph={{ images: [{ url: 'https://app.ziontechgroup.com/og.png' }] }}
+      />
     <div className="container py-8">
       <motion.div className="text-center mb-8" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -426,6 +447,7 @@ function MarketplacePageContent() {
         )}
       </AnimatePresence>
     </div>
+    </>
   );
 }
 

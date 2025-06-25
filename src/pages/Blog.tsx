@@ -89,9 +89,9 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
   
   return (
     <>
-      <SEO 
-        title="Blog - AI & Tech Insights" 
-        description="Stay updated with the latest trends in AI technology, marketplace strategies, and IT services. Expert articles on innovation, sustainability, and digital transformation." 
+      <SEO
+        title="Blog - Latest from Zion Tech Marketplace"
+        description="Read expert insights and news on the Zion Tech Marketplace blog. Stay informed about trends, tips, and stories that help you succeed. Sign up for updates and never miss a breakthrough."
         keywords="AI blog, tech trends, IT services blog, artificial intelligence news, technology innovation, digital transformation, sustainable IT"
         canonical="https://app.ziontechgroup.com/blog"
       />
