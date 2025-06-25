@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import { toast } from '@/hooks/use-toast';
 import SignupForm from '@/components/auth/SignupForm';
+import { signIn } from 'next-auth/react';
 
 // Mock dependencies
 jest.mock('next/router');
@@ -89,7 +90,6 @@ describe('SignupForm', () => {
     });
 
     // Mock successful sign-in
-    const { signIn } = require('next-auth/react');
     signIn.mockResolvedValueOnce({ ok: true });
 
     renderWithProviders(<SignupForm />);

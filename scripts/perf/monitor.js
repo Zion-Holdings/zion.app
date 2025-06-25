@@ -10,7 +10,8 @@ const ENDPOINTS = (process.env.MONITOR_ENDPOINTS
   : ['/healthz', '/recommendations', '/sync/status'])
   .map((p) => p.trim());
 
-const LOG_DIR = path.join(__dirname, '..', '..', 'logs', 'perf');
+const BASE_LOG_DIR = process.env.WATCHDOG_LOG_PATH || path.join(__dirname, '..', '..', 'logs');
+const LOG_DIR = path.join(BASE_LOG_DIR, 'perf');
 const LOG_FILE = path.join(LOG_DIR, 'hourly.log');
 const MAX_LOG_SIZE = 5 * 1024 * 1024; // 5MB
 

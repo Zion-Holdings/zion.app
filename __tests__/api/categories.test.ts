@@ -3,6 +3,7 @@ import { CATEGORIES } from '@/data/categories';
 // Prisma is now mocked from @prisma/client directly in the jest.mock call
 import { createMocks, createRequest, createResponse } from 'node-mocks-http';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { PrismaClient } from '@prisma/client';
 
 // Mock Prisma
 jest.mock('@prisma/client', () => {
@@ -24,10 +25,9 @@ describe('/api/categories API Endpoint', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
-    // Dynamically import to get the fresh mocked instance for each test
-    const { PrismaClient } = require('@prisma/client');
+    // Use the already imported and mocked PrismaClient
     const prisma = new PrismaClient();
-    mockPrismaCategory = prisma.category;
+    mockPrismaCategory = (prisma as any).category;
   });
 
   afterEach(() => {
@@ -123,6 +123,6 @@ describe('/api/categories API Endpoint', () => {
 
     expect(res._getStatusCode()).toBe(405);
     expect(res._getJSONData()).toEqual({ error: 'Method POST Not Allowed' });
-    expect(mockPrismaClient.category.findMany).not.toHaveBeenCalled();
+    expect(mockPrismaCategory.findMany).not.toHaveBeenCalled();
   });
 });

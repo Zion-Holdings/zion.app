@@ -1,8 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Footer } from '@/components/Footer';
+import nextRouterMock from 'next-router-mock';
 
-jest.mock('next/router', () => require('next-router-mock'));
+jest.mock('next/router', () => nextRouterMock);
 
 /**
  * Verify that social media links contain the correct href attributes.

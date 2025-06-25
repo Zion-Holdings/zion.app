@@ -10,8 +10,8 @@ export const vi = {
   },
 };
 
-export const describe = global.describe;
-export const it = global.it;
-export const test = global.test;
-export const expect = global.expect;
-export const beforeEach = global.beforeEach;
+export const describe = (global as any).describe;
+export const it = (global as any).it;
+export const test = (global as any).test;
+export const expect = (global as any).expect;
+export const beforeEach = (global as any).beforeEach;

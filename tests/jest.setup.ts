@@ -14,7 +14,7 @@ import { TextEncoder, TextDecoder } from 'util';
 
 // Polyfill TextEncoder and TextDecoder for JSDOM environment
 global.TextEncoder = TextEncoder;
-// @ts-ignore // Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
+// @ts-expect-error // Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
 global.TextDecoder = TextDecoder;
 
 
@@ -45,9 +45,8 @@ Object.defineProperty(window, 'matchMedia', {
 });
 
 // Mock import.meta.env for Jest - This was ineffective for the SyntaxError
-// @ts-ignore
 // global.import = {
-//   // @ts-ignore
+//   // @ts-expect-error
 //   meta: {
 //     env: {
 //       VITE_SUPABASE_URL: 'mock_supabase_url',
@@ -199,16 +198,15 @@ global.ResizeObserver = jest.fn().mockImplementation(() => ({
 
 // Polyfill for URL.revokeObjectURL
 if (typeof URL.revokeObjectURL === 'undefined') {
-  // @ts-ignore
   URL.revokeObjectURL = jest.fn();
 }
 
 // Polyfill for BroadcastChannel
 if (typeof BroadcastChannel === 'undefined') {
-  // @ts-ignore
+  // @ts-expect-error
   global.BroadcastChannel = class BroadcastChannelMock {
     constructor(name: string) {
-      // @ts-ignore
+      // @ts-expect-error
       this.name = name;
     }
     postMessage = jest.fn();
@@ -223,6 +221,5 @@ if (typeof BroadcastChannel === 'undefined') {
 
 // Polyfill for window.scrollTo
 if (typeof window.scrollTo === 'undefined') {
-  // @ts-ignore
   window.scrollTo = jest.fn();
 }
