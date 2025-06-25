@@ -30,7 +30,7 @@ export async function createNotification({
     if (error) throw error;
     
     // Properly type the data as string (notification ID)
-    const notificationId = Array.isArray(data) && data.length > 0 ? data[0] as string : null;
+    const notificationId = Array.isArray(data) && data.length > 0 && data[0] !== undefined ? data[0] as string : "";
     
     // If sendEmail is true, call the edge function to send an email
     if (sendEmail && notificationId != null) {
