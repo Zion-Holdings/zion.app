@@ -119,7 +119,7 @@ export async function callZionGPT({
     if (error) throw error;
     
     // Log usage for analytics
-    if (data.tokensUsed) {
+    if (data && data.tokensUsed) {
       await logModelUsage(
         modelId, 
         data.tokensUsed,
@@ -128,7 +128,7 @@ export async function callZionGPT({
       );
     }
     
-    return data.completion;
+    return data?.completion || '';
   } catch (error) {
     logError(error, { context: 'callZionGPT' });
     throw error;
