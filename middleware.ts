@@ -29,6 +29,7 @@ export async function middleware(request: NextRequest) {
     '/case-studies',
     '/status',
     '/categories',
+    '/category',
     '/search',
     '/equipment', // Add equipment as public route
     '/talent', // Add talent as public route
