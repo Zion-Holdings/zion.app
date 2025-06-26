@@ -3,7 +3,7 @@ import { useEffect, useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { Facebook, Mail, Clock, RefreshCw } from 'lucide-react';
 import Head from 'next/head';
-import { supabase, isSupabaseConfigured } from '../../src/integrations/supabase/client'; // Adjusted path
+import { createClient } from '../../src/utils/supabase/client';
 import type { AuthError, User } from '@supabase/supabase-js';
 
 const LoginPage = () => {
@@ -25,6 +25,9 @@ const LoginPage = () => {
   const [isProactivelyResending, setIsProactivelyResending] = useState(false);
   const [proactiveResendMessage, setProactiveResendMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
+  // Initialize Supabase client
+  const supabase = createClient();
+
 
   useEffect(() => {
     let mounted = true;
@@ -33,11 +36,7 @@ const LoginPage = () => {
       if (!mounted) return;
       setIsCheckingSession(true);
 
-      if (!isSupabaseConfigured) {
-        console.warn('Supabase is not configured. Skipping session check.');
-        if (mounted) setIsCheckingSession(false);
-        return;
-      }
+
       
       const timeoutId = setTimeout(() => {
         if (!mounted) return;
@@ -82,25 +81,23 @@ const LoginPage = () => {
     checkSession();
 
     let authListenerSubscription: any = null;
-    if (isSupabaseConfigured) {
-        const { data: authListener } = supabase.auth.onAuthStateChange((_event: any, session: any) => {
-          if (!mounted) return;
-          console.log('Auth state changed:', _event, session);
-          const currentUser = session?.user ?? null;
-          setUser(currentUser); // Update user state, important for UI reacting to external logout/login
+    const { data: authListener } = supabase.auth.onAuthStateChange((_event: any, session: any) => {
+      if (!mounted) return;
+      console.log('Auth state changed:', _event, session);
+      const currentUser = session?.user ?? null;
+      setUser(currentUser); // Update user state, important for UI reacting to external logout/login
 
-          // Only redirect from listener if initial check is complete AND not currently handling a login submission
-          if (currentUser && !isCheckingSession && !isLoading) {
-            const returnTo = router.query.returnTo as string || '/dashboard';
-            console.log('User authenticated via listener, initial check done, redirecting to:', returnTo);
-            // Avoid redirecting if already on the target page or if it's the login page itself without returnTo
-            if (router.pathname !== returnTo || (returnTo === '/dashboard' && router.pathname === '/auth/login' && !router.query.returnTo)) {
-                 router.push(returnTo);
-            }
-          }
-        });
-        authListenerSubscription = authListener?.subscription;
-    }
+      // Only redirect from listener if initial check is complete AND not currently handling a login submission
+      if (currentUser && !isCheckingSession && !isLoading) {
+        const returnTo = router.query.returnTo as string || '/dashboard';
+        console.log('User authenticated via listener, initial check done, redirecting to:', returnTo);
+        // Avoid redirecting if already on the target page or if it's the login page itself without returnTo
+        if (router.pathname !== returnTo || (returnTo === '/dashboard' && router.pathname === '/auth/login' && !router.query.returnTo)) {
+             router.push(returnTo);
+        }
+      }
+    });
+    authListenerSubscription = authListener?.subscription;
       
     return () => {
       mounted = false;
@@ -168,10 +165,6 @@ const LoginPage = () => {
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
-    if (!isSupabaseConfigured) {
-      setError({ name: 'ConfigurationError', message: 'Supabase is not configured. Cannot attempt login.' } as AuthError);
-      return;
-    }
     setIsLoading(true);
     setError(null);
     setIsEmailUnverified(false);
@@ -281,20 +274,7 @@ const LoginPage = () => {
     );
   }
 
-  if (!isSupabaseConfigured) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8 text-center">
-          <h2 className="mt-6 text-center text-2xl font-extrabold text-red-600">
-            Authentication Not Configured
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            The application's authentication system (Supabase) is not properly configured. Please contact support.
-          </p>
-        </div>
-      </div>
-    );
-  }
+
 
   return (
     <>
