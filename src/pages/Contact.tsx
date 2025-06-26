@@ -45,6 +45,8 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('[ContactForm] handleSubmit triggered.');
+    console.log('[ContactForm] formData:', formData);
 
     const schema = z.object({
       name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -53,6 +55,8 @@ export default function Contact() {
     });
 
     const result = schema.safeParse(formData);
+    console.log('[ContactForm] Zod validation result:', result);
+
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       for (const err of result.error.errors) {
@@ -61,48 +65,79 @@ export default function Contact() {
         }
       }
       setErrors(fieldErrors);
+      const validationErrorMsg = result.error.errors[0]?.message || 'Please check your form and try again';
+      console.warn('[ContactForm] Validation failed:', validationErrorMsg, result.error.flatten().fieldErrors);
       toast({
         title: 'Form Validation Error',
-        description:
-          result.error.errors[0]?.message ||
-          'Please check your form and try again',
+        description: validationErrorMsg,
         variant: 'destructive',
       });
       return;
     }
 
     setErrors({});
-
     setIsSubmitting(true);
+    console.log('[ContactForm] Starting form submission (fetch to /api/contact).');
 
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    })
-      .then(async (res) => {
-        setIsSubmitting(false);
-        if (!res.ok) {
-          const data = await res.json().catch(() => ({}));
-          throw new Error(data.error || 'Failed to send message');
-        }
-        toast({
-          title: 'Message Sent',
-          description:
-            "We've received your message and will get back to you soon.",
-        });
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 2000);
-        setFormData({ name: '', email: '', message: '' });
+    try {
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       })
-      .catch((err) => {
-        setIsSubmitting(false);
-        toast({
-          title: 'Submission Error',
-          description: err.message,
-          variant: 'destructive',
+        .then(async (res) => {
+          console.log('[ContactForm] API response status:', res.status);
+          const responseBody = await res.text(); // Read as text first to avoid JSON parse error if not JSON
+          console.log('[ContactForm] API response body:', responseBody);
+
+          // Note: setIsSubmitting(false) is called within then/catch of the promise.
+          // If fetch itself or .then/.catch structure has a synchronous error,
+          // the outer try/catch will handle it.
+
+          if (!res.ok) {
+            let errorData = { error: `Request failed with status ${res.status}` };
+            try {
+              errorData = JSON.parse(responseBody);
+            } catch (parseError) {
+              console.warn('[ContactForm] Could not parse error response as JSON.', parseError);
+            }
+            console.error('[ContactForm] API error response:', errorData);
+            // This throw will be caught by the .catch block below
+            throw new Error(errorData.error || 'Failed to send message');
+          }
+
+          setIsSubmitting(false); // Moved here for success path
+          console.log('[ContactForm] Message submission successful.');
+          toast({
+            title: 'Message Sent',
+            description:
+              "We've received your message and will get back to you soon.",
+          });
+          setSubmitted(true);
+          setTimeout(() => setSubmitted(false), 2000);
+          setFormData({ name: '', email: '', message: '' });
+        })
+        .catch((err) => {
+          // This catches errors from the fetch promise (network, res.ok is false, or manual throw)
+          console.error('[ContactForm] Fetch promise chain error:', err);
+          setIsSubmitting(false);
+          toast({
+            title: 'Submission Error',
+            description: err.message || 'An unexpected error occurred during submission.',
+            variant: 'destructive',
+          });
         });
+    } catch (error) {
+      // This catches synchronous errors that might occur when initiating fetch or in its direct vicinity
+      // if not caught by the promise's .catch (less common for typical fetch issues but good for safety)
+      console.error('[ContactForm] Synchronous error during fetch initiation or processing:', error);
+      setIsSubmitting(false);
+      toast({
+        title: 'Critical Submission Error',
+        description: error instanceof Error ? error.message : 'An unexpected critical error occurred.',
+        variant: 'destructive',
       });
+    }
   };
 
   // Handle sending messages to the AI chat assistant
