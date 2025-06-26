@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import Link from 'next/link';
 
 export default function Ecommerce() {
@@ -34,12 +35,14 @@ export default function Ecommerce() {
           <p className="text-center text-zion-slate-light max-w-3xl mx-auto mb-8">
             Showcase your products with rich media listings and accept payments with Stripe-powered checkout.
           </p>
-          <img
-            src="https://placehold.co/800x400"
-            alt="Screenshot of marketplace interface"
-            className="rounded-lg shadow-xl mx-auto mb-12"
-            loading="lazy"
-          />
+          <div className="relative w-full h-auto aspect-video mx-auto mb-12 rounded-lg shadow-xl overflow-hidden">
+            <OptimizedImage
+              src="https://placehold.co/800x400"
+              alt="Screenshot of marketplace interface"
+              className="object-cover"
+              fill
+            />
+          </div>
           <h2 className="text-2xl font-bold mb-4">Benefits &amp; Use Cases</h2>
           <ul className="list-disc list-inside space-y-2 mb-8 text-zion-slate-light">
             <li>Support for videos and 3D models to highlight your offerings.</li>

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import Image, { type ImageProps } from 'next/image';
 import { cn } from '@/lib/utils';
 
-interface ImageWithRetryProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface ImageWithRetryProps extends Omit<ImageProps, 'src' | 'alt'> {
+  src: string;
+  alt?: string;
   /** Source to use if the main src fails */
   fallbackSrc?: string;
   /** CSS class for the retry button */
@@ -13,6 +16,7 @@ interface ImageWithRetryProps extends React.ImgHTMLAttributes<HTMLImageElement> 
  */
 export function ImageWithRetry({
   src,
+  alt = '',
   fallbackSrc = '/images/image-placeholder.svg',
   className,
   retryClassName,
@@ -31,12 +35,19 @@ export function ImageWithRetry({
     setCurrentSrc(src);
   };
 
-  const { alt = '', ...rest } = props
+  const fill = !('width' in props) && !('height' in props);
 
   return (
-    <div className={cn('relative inline-block', className)}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img {...props} src={currentSrc} onError={handleError} loading="lazy" />
+    <div className="relative inline-block">
+      <Image
+        {...props}
+        src={currentSrc}
+        alt={alt}
+        onError={handleError}
+        className={cn(className)}
+        fill={fill}
+        sizes={fill ? props.sizes || '100vw' : props.sizes}
+      />
       {failed && (
         <button
           type="button"

@@ -2,6 +2,7 @@
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { ContactSection } from "@/components/ContactSection";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import Link from "next/link";
 
 export default function About() {
@@ -59,11 +60,12 @@ export default function About() {
                 a global community where the future of technology is being built today.
               </p>
             </div>
-            <div className="rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600" 
-                alt="Team collaboration" 
-                className="object-cover w-full h-full"
+            <div className="rounded-lg overflow-hidden relative w-full h-full">
+              <OptimizedImage
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600&q=80"
+                alt="Team collaboration"
+                className="object-cover"
+                fill
               />
             </div>
           </div>
@@ -85,11 +87,12 @@ export default function About() {
                 a community that shapes the future of how we live, work, and interact with technology.
               </p>
             </div>
-            <div className="rounded-lg overflow-hidden lg:order-first">
-              <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=600" 
-                alt="Tech innovation" 
-                className="object-cover w-full h-full"
+            <div className="rounded-lg overflow-hidden lg:order-first relative w-full h-full">
+              <OptimizedImage
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=600&q=80"
+                alt="Tech innovation"
+                className="object-cover"
+                fill
               />
             </div>
           </div>
@@ -140,11 +143,14 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {team.map((member) => (
                 <div key={member.name} className="text-center">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="rounded-full w-40 h-40 mx-auto object-cover mb-4"
-                  />
+                  <div className="relative w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden">
+                    <OptimizedImage
+                      src={member.image}
+                      alt={member.name}
+                      className="object-cover rounded-full"
+                      fill
+                    />
+                  </div>
                   <p className="text-white font-bold">{member.name}</p>
                   <p className="text-zion-slate-light">{member.role}</p>
                 </div>

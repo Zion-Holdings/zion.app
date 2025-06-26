@@ -1,30 +1,23 @@
 import React from 'react';
+import Image, { type ImageProps } from 'next/image';
 import { cn } from '@/lib/utils';
 
-interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface OptimizedImageProps extends Omit<ImageProps, 'src' | 'alt'> {
   src: string;
   alt: string;
-  width?: number;
-  height?: number;
 }
 
-export function OptimizedImage({
-  src,
-  alt,
-  width,
-  height,
-  className,
-  ...rest
-}: OptimizedImageProps) {
+export function OptimizedImage({ src, alt, className, ...rest }: OptimizedImageProps) {
+  const fill = !('width' in rest) && !('height' in rest);
   return (
-    <img
+    <Image
       src={src}
       alt={alt}
+      className={cn(className)}
       loading="lazy"
       decoding="async"
-      width={width}
-      height={height}
-      className={cn(className)}
+      fill={fill}
+      sizes={fill ? rest.sizes || '100vw' : rest.sizes}
       {...rest}
     />
   );

@@ -10,6 +10,7 @@ import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { getStripe } from "@/utils/getStripe";
 import { useCart } from '@/context/CartContext';
+import { ImageWithRetry } from '@/components/ui/ImageWithRetry';
 import { equipmentListings } from '@/data/equipmentData';
 import { ProductListing } from '@/types/listings';
 import { motion } from 'framer-motion';
@@ -286,10 +287,11 @@ export default function EquipmentDetail() {
               transition={{ delay: 0.2 }}
             >
               <AspectRatio ratio={1} className="bg-zion-blue-light rounded-lg overflow-hidden">
-                <img
+                <ImageWithRetry
                   src={equipment.images[selectedImageIndex] || equipment.images[0]}
                   alt={equipment.name}
-                  className="w-full h-full object-cover"
+                  className="object-cover"
+                  fill
                 />
               </AspectRatio>
               
@@ -305,10 +307,11 @@ export default function EquipmentDetail() {
                           : 'border-transparent hover:border-zion-slate-light'
                       }`}
                     >
-                      <img
+                      <ImageWithRetry
                         src={image}
                         alt={`${equipment.name} view ${index + 1}`}
-                        className="w-full h-full object-cover"
+                        className="object-cover"
+                        fill
                       />
                     </button>
                   ))}

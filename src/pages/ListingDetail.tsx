@@ -67,8 +67,9 @@ export default function ListingDetail() {
                     <ImageWithRetry
                       src={listing.images[selectedImageIndex]}
                       alt={listing.title}
-                      className="w-full h-full object-cover"
+                      className="object-cover"
                       fallbackSrc="/placeholder.svg"
+                      fill
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-zion-blue-light/20">
@@ -91,8 +92,9 @@ export default function ListingDetail() {
                         <ImageWithRetry
                           src={image}
                           alt={`${listing.title} - image ${index + 1}`}
-                          className="w-full h-full object-cover"
+                          className="object-cover"
                           fallbackSrc="/placeholder.svg"
+                          fill
                         />
                       </div>
                     ))}
@@ -234,15 +236,18 @@ export default function ListingDetail() {
                   <h3 className="text-lg font-bold text-white mb-3">Publisher</h3>
                   <div className="flex items-center gap-3">
                     {listing.author.avatarUrl ? (
-                      <img 
-                        src={listing.author.avatarUrl} 
-                        alt={listing.author.name} 
-                        className="h-12 w-12 rounded-full"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = "https://ui-avatars.com/api/?name=" + encodeURIComponent(listing.author.name);
-                        }}
-                      />
+                      <div className="relative h-12 w-12 rounded-full overflow-hidden">
+                        <ImageWithRetry
+                          src={listing.author.avatarUrl}
+                          alt={listing.author.name}
+                          className="object-cover"
+                          fill
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = "https://ui-avatars.com/api/?name=" + encodeURIComponent(listing.author.name);
+                          }}
+                        />
+                      </div>
                     ) : (
                       <div className="h-12 w-12 rounded-full bg-zion-purple/20 flex items-center justify-center">
                         <span className="text-lg font-medium text-zion-purple">{listing.author.name.charAt(0)}</span>
