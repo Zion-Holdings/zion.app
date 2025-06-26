@@ -28,13 +28,11 @@ async function getCsrfToken() {
  */
 async function loginWithEmail(email, password) {
   console.log('loginWithEmail called with:', email);
-  // TODO: Proper CSRF token handling is crucial for POST requests to NextAuth.
-  // next-auth/react client's signIn() handles this.
-  // For a direct API call, we'd typically fetch /api/auth/csrf first.
-  // This is a simplified example and might not work directly without full CSRF flow.
+  // Note: For direct API calls to NextAuth.js POST endpoints,
+  // CSRF token handling is crucial. This function fetches and includes it.
+  // Using next-auth/react client's signIn() is generally preferred as it handles this automatically.
 
   // The body for credentials provider should be x-www-form-urlencoded
-  // For simplicity, sending JSON and assuming NextAuth might be configured to parse it, or this will need adjustment.
   const csrfToken = await getCsrfToken(); // Simplistic CSRF fetch
   if (!csrfToken) {
     // In a real scenario, might not proceed or use a previously stored token
@@ -225,10 +223,14 @@ async function loginWithWallet(walletProvider) {
  */
 async function logout() {
   console.log('logout called');
-  // TODO: Proper CSRF token handling
-  const csrfToken = await getCsrfToken(); // Simplistic CSRF fetch
+  // Note: For direct API calls to NextAuth.js POST endpoints (like signout),
+  // CSRF token handling is crucial. This function fetches and includes it.
+  // Using next-auth/react client's signOut() is generally preferred as it handles this automatically.
+  const csrfToken = await getCsrfToken();
   if (!csrfToken) {
-    console.warn('CSRF token not found for logout, proceeding for demo.');
+    // This might occur if /api/auth/csrf fails or returns no token.
+    // Depending on server config, proceeding might fail.
+    console.warn('CSRF token not found for logout. Proceeding, but this may fail if CSRF is strictly enforced.');
   }
 
   const body = new URLSearchParams();

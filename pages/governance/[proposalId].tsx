@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Input } from '@/components/ui/input'; // For voting power temporary input
 // import MainLayout from '@/components/layout/MainLayout'; // If a MainLayout component exists
+import { getCsrfToken } from '@/utils/cookies'; // Import the CSRF token utility
 
 // Types (should ideally be shared, e.g., from a types/governance.ts file)
 interface Vote {
@@ -133,8 +134,7 @@ const ProposalDetailPage: React.FC = () => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // TODO: Add CSRF token header if Django backend requires it for POST requests
-            // Example: 'X-CSRFToken': getCookie('csrftoken'),
+            'X-CSRFToken': getCsrfToken() || '', // Add CSRF token header
         },
         body: JSON.stringify({
           choice: choice,
