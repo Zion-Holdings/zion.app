@@ -20,10 +20,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (!error) {
       // redirect user to specified redirect URL or root of app
-      return res.redirect(302, redirectTo)
+      res.setHeader('Location', redirectTo)
+      res.status(302).end()
+      return
     }
   }
 
   // redirect the user to an error page with some instructions
-  return res.redirect(302, '/error')
+  res.setHeader('Location', '/error')
+  res.status(302).end()
 } 
