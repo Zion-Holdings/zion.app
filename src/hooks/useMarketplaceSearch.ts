@@ -4,7 +4,7 @@ import { SearchSuggestion, FilterOptions } from "@/types/search";
 // import { generateSearchSuggestions, generateFilterOptions, MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
 import { useDebounce } from "./useDebounce"; // Import the debounce hook
 
-// TODO: These could be fetched from the API or generated from listings in the future
+// Default suggestions shown before the user types a query
 const staticSearchSuggestions: SearchSuggestion[] = [
   { type: "recent", text: "Modern web app" },
   { type: "recent", text: "Data analysis script" },
@@ -97,11 +97,33 @@ export function useMarketplaceSearch() {
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [selectedAvailability, setSelectedAvailability] = useState<string[]>([]);
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
+  const [searchSuggestions, setSearchSuggestions] = useState<SearchSuggestion[]>(staticSearchSuggestions);
 
-  // Use static suggestions and options for now
-  const searchSuggestions: SearchSuggestion[] = useMemo(
-    () => staticSearchSuggestions,
-    [],
+  // Fetch dynamic search suggestions when the query changes
+  useEffect(() => {
+    const fetchSuggestions = async () => {
+      if (!searchQuery) {
+        setSearchSuggestions(staticSearchSuggestions);
+        return;
+      }
+      try {
+        const res = await fetch(`/api/search/suggest?q=${encodeURIComponent(searchQuery)}`);
+        if (res.ok) {
+          const data: SearchSuggestion[] = await res.json();
+          setSearchSuggestions(data);
+        } else {
+          setSearchSuggestions(staticSearchSuggestions);
+        }
+      } catch {
+        setSearchSuggestions(staticSearchSuggestions);
+      }
+    };
+    fetchSuggestions();
+  }, [searchQuery]);
+
+  const searchSuggestionList: SearchSuggestion[] = useMemo(
+    () => searchSuggestions,
+    [searchSuggestions]
   );
   const filterOptions: FilterOptions = useMemo(
     () => staticFilterOptions,
@@ -149,7 +171,7 @@ export function useMarketplaceSearch() {
   return {
     searchQuery: immediateSearchQuery, // Expose the immediate value for the input field
     setSearchQuery: setImmediateSearchQuery, // Setter updates the immediate value
-    searchSuggestions,
+    searchSuggestions: searchSuggestionList,
     selectedProductTypes,
     selectedLocations,
     selectedAvailability,
