@@ -40,7 +40,7 @@ import { initializePerformanceOptimizations } from '@/utils/performance';
 import '@/utils/globalFetchInterceptor';
 import '@/utils/consoleErrorToast';
 import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
-
+import { RouteChangeHandler } from '@/components/RouteChangeHandler';
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
@@ -148,7 +148,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
     Sentry.setTag('route', router.pathname);
     Sentry.setContext('query', router.query);
-  }, [router.pathname]);
+  }, [router.pathname, router.query]);
 
   // Only log provider initialization in development
   if (process.env.NODE_ENV === 'development') {
@@ -170,8 +170,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </div>
     );
   }
-
-
 
   // Use ProductionErrorBoundary as the top-level error boundary
   return (
@@ -247,18 +245,22 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <ApiErrorBoundary>
                       <ReduxProvider store={store}>
                         <HelmetProvider>
-                          <ErrorProvider>
-                            <AuthProvider>
-                              <WhitelabelProvider>
-                                <I18nextProvider i18n={i18n}>
+                          <I18nextProvider i18n={i18n}>
+                            <ErrorProvider>
+                              <AuthProvider>
+                                <WhitelabelProvider>
                                   <LanguageProviderWrapper>
                                     <WalletProvider>
                                       <CartProvider>
                                         <AnalyticsProvider>
                                           <ThemeProvider>
                                             <AppLayout>
+                                              <RouteChangeHandler 
+                                                resetScrollOnChange={true}
+                                                forceRerender={true}
+                                              />
                                               <ErrorBoundary>
-                                                <Component {...pageProps} productId="example-product-id" />
+                                                <Component key={router.asPath} {...pageProps} />
                                               </ErrorBoundary>
                                               <ErrorResetOnRouteChange />
                                               <Toaster />
@@ -270,10 +272,10 @@ function MyApp({ Component, pageProps }: AppProps) {
                                       </CartProvider>
                                     </WalletProvider>
                                   </LanguageProviderWrapper>
-                                </I18nextProvider>
-                              </WhitelabelProvider>
-                            </AuthProvider>
-                          </ErrorProvider>
+                                </WhitelabelProvider>
+                              </AuthProvider>
+                            </ErrorProvider>
+                          </I18nextProvider>
                         </HelmetProvider>
                       </ReduxProvider>
                     </ApiErrorBoundary>

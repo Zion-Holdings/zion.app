@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { CategoryListingPage } from '@/components/CategoryListingPage'; // Ensure this path is correct
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
+import { useRouterReady } from '@/hooks/useRouterReady';
 
 interface CategoryData {
   name: string;
@@ -18,7 +19,7 @@ interface ApiResponse {
 }
 
 export default function CategoryPage() {
-  const router = useRouter();
+  const router = useRouterReady(); // Use our custom hook
   const { slug } = router.query;
   const [data, setData] = useState<ApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
@@ -26,13 +27,20 @@ export default function CategoryPage() {
   const [retryCount, setRetryCount] = useState(0);
   const maxRetries = 3;
 
+  // Reset state when slug changes to force re-render
+  useEffect(() => {
+    setData(null);
+    setError(null);
+    setRetryCount(0);
+  }, [slug]);
+
   useEffect(() => {
     async function load() {
-      if (!slug || typeof slug !== 'string') {
-        // This case should ideally not happen if routing is set up correctly
-        // and slug is always a string.
-        setLoading(false);
-        setError("Invalid category identifier.");
+      if (!router.isReady || !slug || typeof slug !== 'string') {
+        if (router.isReady && !slug) {
+          setLoading(false);
+          setError("Invalid category identifier.");
+        }
         return;
       }
 
@@ -116,11 +124,14 @@ export default function CategoryPage() {
       }
     }
     load();
-  }, [slug]);
+  }, [router.isReady, slug, retryCount]); // Added all dependencies
+
+  // Add key prop to force re-render when slug changes
+  const pageKey = `category-${slug}-${router.asPath}`;
 
   if (loading) {
     return (
-      <div className="container py-8">
+      <div key={pageKey} className="container py-8">
         <ListingGridSkeleton />
       </div>
     );
@@ -128,7 +139,7 @@ export default function CategoryPage() {
 
   if (error) {
     return (
-      <div className="container py-8">
+      <div key={pageKey} className="container py-8">
         <div className="text-center space-y-4">
           <div className="text-red-500 text-xl font-semibold">Category Error</div>
           <p className="text-red-400 max-w-md mx-auto">{error}</p>
@@ -158,7 +169,7 @@ export default function CategoryPage() {
 
   if (!data || !data.category) { // Added check for data.category
     return (
-      <div className="container py-8">
+      <div key={pageKey} className="container py-8">
         <div className="text-center space-y-4">
           <h2 className="text-2xl font-bold">Category Not Found</h2>
           <p className="text-muted-foreground">The requested category could not be found.</p>
@@ -174,10 +185,12 @@ export default function CategoryPage() {
   }
 
   return (
-    <CategoryListingPage
-      title={data.category.name}
-      description={data.category.description || ''}
-      listings={data.items}
-    />
+    <div key={pageKey}>
+      <CategoryListingPage
+        title={data.category.name}
+        description={data.category.description || ''}
+        listings={data.items}
+      />
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
+import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { SearchSuggestion } from "@/types/search";
@@ -39,12 +40,17 @@ function highlight(text: string, term: string) {
 }
 
 export default function SearchPage() {
-  const router = useRouter();
-  const initial = (router.query.q as string) || "";
-  const [query, setQuery] = useState(initial);
+  const router = useRouterReady(); // Use our custom hook
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
   const suggestions: SearchSuggestion[] = generateSearchSuggestions();
+
+  // Force re-render and reset state when route changes
+  const routeKey = useRouteChange(() => {
+    setResults([]);
+    setLoading(false);
+  });
 
   const productResults = results.filter(
     r => r.type === 'product' || r.type === 'service'
@@ -56,19 +62,24 @@ export default function SearchPage() {
 
   // Sync query with URL parameter changes
   useEffect(() => {
-    if (initial !== query) {
-      setQuery(initial);
+    if (!router.isReady) return;
+    
+    const urlQuery = (router.query.q as string) || "";
+    if (urlQuery !== query) {
+      setQuery(urlQuery);
     }
-  }, [initial]);
+  }, [router.isReady, router.query.q]); // Fixed dependency array
 
   // Fetch results when query changes
   useEffect(() => {
+    if (!router.isReady) return;
+    
     if (query.trim()) {
       fetchResults(query.trim());
     } else {
       setResults([]);
     }
-  }, [query]);
+  }, [router.isReady, query]); // Fixed dependency array
 
   const fetchResults = async (term: string) => {
     if (!term.trim()) {
@@ -101,8 +112,11 @@ export default function SearchPage() {
     }
   };
 
+  // Add key prop to force re-render when route changes
+  const pageKey = `search-${routeKey}-${router.asPath}`;
+
   return (
-    <>
+    <div key={pageKey}>
       <main className="container mx-auto px-4 py-8">
         <form onSubmit={handleSubmit} className="mb-6">
           <EnhancedSearchInput
@@ -136,8 +150,8 @@ export default function SearchPage() {
             </div>
           </div>
         )}
-        {!loading && marketplaceResults.length === 0 && blogResults.length === 0 && (
-          <p className="text-zion-slate-light">No results found.</p>
+        {!loading && marketplaceResults.length === 0 && blogResults.length === 0 && query && (
+          <p className="text-zion-slate-light">No results found for "{query}".</p>
         )}
         {!loading && marketplaceResults.length > 0 && (
           <Tabs defaultValue="products" className="space-y-4">
@@ -226,6 +240,6 @@ export default function SearchPage() {
           </Tabs>
         )}
       </main>
-    </>
+    </div>
   );
 }

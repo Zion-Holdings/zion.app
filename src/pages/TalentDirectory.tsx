@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
+import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady';
 import { FilterSidebar } from '@/components/talent/FilterSidebar';
 import { TalentResults } from '@/components/talent/TalentResults';
 import { TalentSkeleton } from '@/components/talent/TalentSkeleton';
@@ -23,11 +24,16 @@ import {
 } from '@/components/ui/pagination';
 
 export default function TalentDirectory() {
-  const router = useRouter(); // Changed from navigate
-
+  const router = useRouterReady(); // Use our custom hook
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
   const [initialized, setInitialized] = useState(false);
+
+  // Force re-render and reset state when route changes
+  const routeKey = useRouteChange(() => {
+    setInitialized(false);
+    setCurrentPage(1);
+  });
 
   // Use our custom hook to manage state
   const {
@@ -74,6 +80,7 @@ export default function TalentDirectory() {
   // Load filters from query parameters on first load
   useEffect(() => {
     if (!router.isReady || initialized) return;
+    
     const {
       search,
       skills,
@@ -100,11 +107,12 @@ export default function TalentDirectory() {
     if (sort && SORT_OPTIONS.some((o) => o.value === sort))
       setSortOption(sort);
     setInitialized(true);
-  }, [router.isReady, initialized]);
+  }, [router.isReady, router.query, initialized]); // Fixed dependencies
 
   // Persist filters to query parameters
   useEffect(() => {
-    if (!initialized) return;
+    if (!initialized || !router.isReady) return;
+    
     const query: Record<string, string> = {};
     if (searchTerm) query.search = searchTerm;
     if (selectedSkills.length) query.skills = selectedSkills.join(',');
@@ -121,10 +129,12 @@ export default function TalentDirectory() {
     }
     if (sortOption !== 'relevance') query.sort = sortOption;
     if (currentPage > 1) query.page = String(currentPage);
+    
     router.replace({ pathname: router.pathname, query }, undefined, {
       shallow: true,
     });
   }, [
+    router.isReady,
     searchTerm,
     selectedSkills,
     selectedAvailability,
@@ -134,7 +144,7 @@ export default function TalentDirectory() {
     sortOption,
     currentPage,
     initialized,
-  ]);
+  ]); // Fixed dependencies
 
   const handleRequestHire = (talent: TalentProfile) => {
     setSelectedTalent(talent);
@@ -146,9 +156,12 @@ export default function TalentDirectory() {
     router.push(`/talent/${id}`); // Changed to router.push
   };
 
+  // Add key prop to force re-render when route changes
+  const pageKey = `talent-directory-${routeKey}-${router.asPath}`;
+
   if (isLoading) {
     return (
-      <div className="container mx-auto px-4 py-8">
+      <div key={pageKey} className="container mx-auto px-4 py-8">
         <TalentSkeleton />
       </div>
     );
@@ -168,7 +181,7 @@ export default function TalentDirectory() {
     experienceRange[1] === 15
   ) {
     return (
-      <div className="container mx-auto px-4 py-8">
+      <div key={pageKey} className="container mx-auto px-4 py-8">
         <div className="text-center py-16">
           <Image
             src="/images/talent-placeholder.svg"
@@ -195,14 +208,14 @@ export default function TalentDirectory() {
 
   if (error) {
     return (
-      <div className="container mx-auto px-4 py-8">
+      <div key={pageKey} className="container mx-auto px-4 py-8">
         <ErrorBanner msg="Unable to load talent profiles." />
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div key={pageKey} className="container mx-auto px-4 py-8">
       <div className="flex flex-col space-y-8">
         <div className="flex items-start justify-between">
           <div>
