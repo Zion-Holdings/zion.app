@@ -133,8 +133,15 @@ const MarketplaceFilterControls = ({
   </div>
 );
 
+import { useDispatch } from 'react-redux';
+import type { AppDispatch } from '@/store';
+import { addItem } from '@/store/cartSlice';
+import { useAuth } from '@/context/auth/AuthProvider';
+import { useEnqueueSnackbar } from '@/context/SnackbarContext';
+import { closeSnackbar } from 'notistack';
+
 // Product card
-const MarketplaceCard = ({ product, onViewDetails }: { product: ProductListing; onViewDetails: () => void }) => (
+const MarketplaceCard = ({ product, onViewDetails, onAddToCart }: { product: ProductListing; onViewDetails: () => void; onAddToCart: () => void; }) => (
   <Card className="h-full hover:shadow-lg transition-shadow">
     <CardHeader className="pb-3">
       <div className="flex items-start justify-between">
@@ -167,10 +174,11 @@ const MarketplaceCard = ({ product, onViewDetails }: { product: ProductListing; 
         </div>
       </div>
       <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
-      <div className="flex items-center justify-between">
-        <span className="text-sm font-medium">{product.category}</span>
-        <Button size="sm" onClick={onViewDetails}>
-          <ShoppingCart className="h-4 w-4 mr-1" />
+      <div className="flex items-center justify-between gap-2">
+        <Button size="icon" variant="outline" onClick={onAddToCart} aria-label="Add to cart">
+          <ShoppingCart className="h-4 w-4" />
+        </Button>
+        <Button size="sm" variant="outline" className="flex-1" onClick={onViewDetails}>
           View Details
         </Button>
       </div>
@@ -188,6 +196,9 @@ const MarketplaceLoadingGrid = ({ count = 8 }: { count?: number }) => (
 // Main component
 function MarketplacePageContent() {
   const router = useRouter();
+  const dispatch = useDispatch<AppDispatch>();
+  const { isAuthenticated } = useAuth();
+  const enqueueSnackbar = useEnqueueSnackbar();
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
@@ -394,6 +405,26 @@ function MarketplacePageContent() {
                     }
                   }
                   router.push(`/marketplace/listing/${item.id}`);
+                }}
+                onAddToCart={() => {
+                  dispatch(addItem({ id: item.id, title: item.title, price: item.price ?? 0 }));
+                  const message = isAuthenticated ? `1× ${item.title} added` : 'Item added. Login to checkout.';
+                  const variant = isAuthenticated ? 'success' as const : 'info' as const;
+                  enqueueSnackbar(message, {
+                    variant,
+                    action: key => (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => {
+                          router.push('/cart');
+                          closeSnackbar(key);
+                        }}
+                      >
+                        View Cart
+                      </Button>
+                    ),
+                  });
                 }}
               />
             </motion.div>
