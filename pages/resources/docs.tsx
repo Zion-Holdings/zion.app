@@ -66,6 +66,16 @@ export default function ResourcesDocsPage() {
               Read more →
             </a>
           </div>
+
+          <div className="bg-zion-blue-light p-6 rounded-lg border border-zion-blue-light">
+            <h3 className="text-xl font-semibold text-white mb-3">OpenAPI Playground</h3>
+            <p className="text-zion-slate-light mb-4">
+              Explore interactive docs generated from our OpenAPI specification.
+            </p>
+            <a href="/docs/swagger" className="text-blue-400 hover:text-blue-300">
+              Try it →
+            </a>
+          </div>
           
           <div className="bg-zion-blue-light p-6 rounded-lg border border-zion-blue-light">
             <h3 className="text-xl font-semibold text-white mb-3">Integration Guide</h3>
