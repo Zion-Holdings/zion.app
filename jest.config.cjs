@@ -74,7 +74,8 @@ module.exports = {
   ],
   moduleNameMapper: {
     // Specific aliases first
-    '^@/pages/api/(.*)$': '<rootDir>/pages/api/$1', // Added for root pages/api
+    // Ensure more specific aliases come before the general one
+    '^@/pages/api/(.*)$': '<rootDir>/src/pages/api/$1', // Assuming API routes are under src
     '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
     '^@/hooks/(.*)$': '<rootDir>/src/hooks/$1',
@@ -85,12 +86,24 @@ module.exports = {
     '^@/styles/(.*)$': '<rootDir>/src/styles/$1',
     '^@/integrations/(.*)$': '<rootDir>/src/integrations/$1',
     '^@/public/(.*)$': '<rootDir>/public/$1',
-    // General alias last
+    '^@/routes/(.*)$': '<rootDir>/src/routes/$1',
+    '^@/schemas/(.*)$': '<rootDir>/src/schemas/$1',
+    '^@/services/(.*)$': '<rootDir>/src/services/$1',
+    '^@/store/(.*)$': '<rootDir>/src/store/$1',
+    '^@/types/(.*)$': '<rootDir>/src/types/$1',
+    '^@/data/(.*)$': '<rootDir>/src/data/$1',
+    '^@/sdk/(.*)$': '<rootDir>/sdk/$1',
+    '^@/__mocks__/(.*)$': '<rootDir>/__mocks__/$1',
+    '^@/tests/(.*)$': '<rootDir>/tests/$1',
+    // General alias for anything under src not explicitly listed above
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^@sentry/nextjs': '<rootDir>/__mocks__/@sentry/nextjs.js', // Added this line based on previous error and Sentry mock file
+
     'react-router-dom$': '<rootDir>/src/shims/react-router-dom.ts',
-    // 'vitest$': '<rootDir>/tests/vitest-mock.ts', // Removed vitest mock
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-    // Next.js mocks
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/__mocks__/fileMock.js',
+
+    // Next.js mocks (keep existing ones, ensure they are correct)
     '^next/router$': '<rootDir>/tests/__mocks__/next/router.js',
     '^next/image$': '<rootDir>/tests/__mocks__/next/image.js',
     '^next/link$': '<rootDir>/tests/__mocks__/next/link.js',
@@ -100,9 +113,9 @@ module.exports = {
     '^next-cloudinary$': '<rootDir>/tests/__mocks__/next-cloudinary.js',
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!(@reown/.*|@walletconnect/.*|uint8arrays/.*|multiformats/.*|bson|mongodb|mongoose|lit|lit-html|lit-element|@lit/reactive-element)/)', // Specifically add @lit/reactive-element
+    '/node_modules/(?!(isows|@supabase/supabase-js|@supabase/realtime-js|@supabase/gotrue-js|@supabase/postgrest-js|@supabase/storage-js|@supabase/functions-js|@helia|libp2p|@chainsafe|@libp2p|@orbitdb|datastore-core|blockstore-core|uint8arrays|multiformats|@multiformats|debug|axios|@reown/.*|@walletconnect/.*|lit|lit-html|lit-element|@lit/reactive-element|bson|mongodb|mongoose)/)',
   ],
-  roots: ['<rootDir>/__tests__', '<rootDir>/tests', '<rootDir>/src'],
+  roots: ['<rootDir>/__tests__', '<rootDir>/tests', '<rootDir>/src'], // Ensure all test locations are covered
   coverageThreshold: {
     global: {
       statements: 80,
