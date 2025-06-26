@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { getStripe } from '@/utils/getStripe';
 import CardForm from '@/components/checkout/CardForm';
+import CheckoutProgress from '@/components/checkout/CheckoutProgress';
 import { ProductListing } from '@/types/listings';
 import { NEW_PRODUCTS } from '@/data/newProductsData';
 
@@ -53,6 +54,7 @@ export default function CheckoutPage() {
   return (
     <div className="container max-w-2xl py-10 space-y-6">
       <h1 className="text-3xl font-bold">Checkout</h1>
+      <CheckoutProgress currentStep={1} className="mb-6" />
       <div>
         <p className="font-semibold">{product.title}</p>
         <p className="text-sm text-zion-slate-light">{product.description}</p>
