@@ -28,12 +28,15 @@ export async function middleware(request: NextRequest) {
     '/tutorials',
     '/case-studies',
     '/status',
+    '/api-status',
     '/categories',
     '/search',
     '/equipment', // Add equipment as public route
     '/talent', // Add talent as public route
     '/community', // Community sections should be public
     '/resources', // Resources sections should be public
+    '/api/health',
+    '/api/health/environment',
     '/api/products',
     '/api/categories',
     '/api/search',
