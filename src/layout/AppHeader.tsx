@@ -83,7 +83,7 @@ export function AppHeader() {
                 {t('auth.login')}
               </Link>
               <Link
-                href="/signup"
+                href="/auth/register"
                 className="ml-2 text-sm font-medium text-foreground/70 hover:text-foreground"
                 aria-label={t('auth.signup')}
                 data-testid="signup-nav-link"

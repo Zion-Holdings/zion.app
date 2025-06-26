@@ -13,7 +13,7 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { useRouter } from 'next/router';
 import { Product } from '@/services/marketplace';
@@ -23,15 +23,17 @@ import { captureException } from '@/utils/sentry';
 
 interface ProductCardProps {
   product: Product;
-  onBuy?: () => void;
+  onBuy?: () => Promise<void>; // Changed to allow async and signal completion/failure
+  onBuyAttemptComplete?: () => void; // Callback to signal the buy attempt is finished (success or fail)
   /** Disable the Buy Now button (e.g. when the checkout route isn't ready). */
   buyDisabled?: boolean;
 }
 
-export default function ProductCard({ product, onBuy, buyDisabled = false }: ProductCardProps) {
+export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyDisabled = false }: ProductCardProps) {
   const { isAuthenticated } = useAuth();
   const { isWishlisted, toggle } = useWishlist();
   const [imageError, setImageError] = useState(false);
+  const [isRedirecting, setIsRedirecting] = useState(false); // Added for loading state
   const router = useRouter();
 
   const stockStatus =
@@ -51,6 +53,12 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
       : product.stock <= 5
       ? 'warning'
       : 'success';
+  // Reset redirecting state if component unmounts (e.g., navigation cancelled by user)
+  useEffect(() => {
+    return () => {
+      setIsRedirecting(false);
+    };
+  }, []);
 
   if (!product || typeof product.id !== 'string' || typeof product.title !== 'string' || product.title.trim() === '') {
     captureException(new Error('Invalid product data received by ProductCard'), {
@@ -72,6 +80,15 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
   const productTitle = product.title;
 
   const addToCart = () => {
+    if (!isAuthenticated) {
+      toast({
+        title: 'Login Required',
+        description: 'Please log in to add items to your cart.',
+        variant: 'destructive',
+      });
+      router.push(`/auth/login?returnTo=${encodeURIComponent(router.asPath)}`);
+      return;
+    }
     dispatch(addItem({ id: product.id, title: productTitle, price: product.price ?? 0 }));
     toast({
       title: 'Added to cart',
@@ -139,6 +156,28 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
       )}
     </div>
       <Link href={`/marketplace/listing/${product.id}`}>
+        <div className="w-full h-40 relative mb-2 cursor-pointer">
+          {imageUrl && !imageError ? (
+            <Image
+              src={imageUrl}
+              alt={imageAltText}
+              fill
+              style={{ objectFit: 'cover' }}
+              onError={(e) => handleImageError(e)}
+              priority={false}
+              sizes={imageSizes}
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-500">No Image</span>
+            </div>
+          )}
+          {active && (
+            <div className="absolute top-2 left-2 p-1 rounded-full bg-background/70">
+              <Heart className="text-red-500 fill-red-500" />
+            </div>
+          )}
+        </div>
         <h3 className="font-semibold mb-1">{productTitle}</h3>
       </Link>
       {product.price != null && (
@@ -158,18 +197,37 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
                 <Button
                   onClick={(e) => {
                     e.stopPropagation();
-                    onBuy();
+                    if (onBuy) {
+                      setIsRedirecting(true);
+                      onBuy()
+                        .catch(() => {
+                          // Error is handled by parent, but we still need to reset loading locally
+                        })
+                        .finally(() => {
+                          setIsRedirecting(false); // Always reset loading state
+                          if (onBuyAttemptComplete) {
+                            onBuyAttemptComplete(); // Notify parent if it provided this callback
+                          }
+                        });
+                    }
                   }}
                   size="sm"
                   variant="outline"
                   className="flex-1"
                   data-testid="buy-now-button"
-                  disabled={!isAuthenticated || buyDisabled}
+                  disabled={!isAuthenticated || buyDisabled || isRedirecting}
                 >
-                  Buy Now
+                  {isRedirecting ? (
+                    <>
+                      <span className="animate-spin inline-block mr-2 h-4 w-4 border-2 border-current border-t-transparent rounded-full" role="status" aria-hidden="true"></span>
+                      Processing...
+                    </>
+                  ) : (
+                    'Buy Now'
+                  )}
                 </Button>
               </TooltipTrigger>
-              {!isAuthenticated && (
+              {!isAuthenticated && !isRedirecting && (
                 <TooltipContent>Login required</TooltipContent>
               )}
             </Tooltip>

@@ -3,7 +3,7 @@ import { useEffect, useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { Facebook, Mail, Clock, RefreshCw } from 'lucide-react';
 import Head from 'next/head';
-import { supabase, isSupabaseConfigured } from '../../src/integrations/supabase/client'; // Adjusted path
+import { createClient } from '../../src/utils/supabase/client';
 import type { AuthError, User } from '@supabase/supabase-js';
 
 const LoginPage = () => {
@@ -11,10 +11,11 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<AuthError | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // For login form submission
   const [user, setUser] = useState<User | null>(null);
-  const [isCheckingSession, setIsCheckingSession] = useState(true);
-  const [sessionCheckTimedOut, setSessionCheckTimedOut] = useState(false); // New state for timeout
+  const [isCheckingSession, setIsCheckingSession] = useState(true); // For initial session check
+  const [sessionChecked, setSessionChecked] = useState(false); // New state: true after initial getSession completes
+  const [sessionCheckTimedOut, setSessionCheckTimedOut] = useState(false);
   const [isEmailUnverified, setIsEmailUnverified] = useState(false);
   const [verificationEmailSent, setVerificationEmailSent] = useState(false);
   const [isResendingVerification, setIsResendingVerification] = useState(false);
@@ -25,89 +26,104 @@ const LoginPage = () => {
   const [isProactivelyResending, setIsProactivelyResending] = useState(false);
   const [proactiveResendMessage, setProactiveResendMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
+  // Initialize Supabase client
+  const supabase = createClient();
 
+
+  // Effect for initial session check and auth state changes
   useEffect(() => {
     let mounted = true;
+    console.log('LoginPage: Initial session check effect runs.');
 
-    const checkSession = async () => {
-      if (!mounted) return;
-      setIsCheckingSession(true);
-
-      if (!isSupabaseConfigured) {
-        console.warn('Supabase is not configured. Skipping session check.');
-        if (mounted) setIsCheckingSession(false);
-        return;
+    const sessionTimeoutId = setTimeout(() => {
+      if (mounted) {
+        console.warn('LoginPage: Session check timeout after 5 seconds');
+        setSessionCheckTimedOut(true);
+        setIsCheckingSession(false); // Allow form to render if timeout
+        setSessionChecked(true); // Mark check as complete even on timeout
       }
-      
-      const timeoutId = setTimeout(() => {
-        if (!mounted) return;
-        console.warn('Session check timeout after 5 seconds');
-        if (mounted) {
-          setSessionCheckTimedOut(true); // Set timeout flag
-          setIsCheckingSession(false); // Show form if timeout
-        }
-      }, 5000);
-      
+    }, 5000);
+
+    const checkSessionAndListen = async () => {
+      if (!mounted) return;
+
+      setIsCheckingSession(true);
       try {
+        console.log('LoginPage: Calling supabase.auth.getSession()');
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
-        clearTimeout(timeoutId);
+        clearTimeout(sessionTimeoutId); // Clear timeout once getSession completes
         if (!mounted) return;
 
         if (sessionError) {
-          console.error('Error getting session:', sessionError);
-          setError(sessionError as any);
-        } else if (session?.user) {
-          setUser(session.user);
-          console.log('User session found:', session.user);
-          let returnTo = router.query.returnTo as string || '/dashboard';
-          // Ensure we don't redirect back to login or auth pages after successful login
-          if (returnTo === '/auth/login' || returnTo.startsWith('/auth/')) {
-            returnTo = '/dashboard';
-          }
-          console.log('User is authenticated by getSession, redirecting to:', returnTo);
-          router.push(returnTo);
+          console.error('LoginPage: Error getting session:', sessionError);
+          setError(sessionError as any); // Cast to any if type is too strict
+        } else {
+          console.log('LoginPage: getSession returned, user:', session?.user?.id);
+          setUser(session?.user ?? null);
         }
-        // If no user, do nothing here, allow form to render
       } catch (e) {
-        if (!mounted) return;
-        console.error('Exception during session check:', e);
-        clearTimeout(timeoutId); // Ensure timeout is cleared on error too
+        if (mounted) {
+          console.error('LoginPage: Exception during getSession:', e);
+          clearTimeout(sessionTimeoutId); // Ensure timeout is cleared on error too
+        }
       } finally {
         if (mounted) {
           setIsCheckingSession(false);
+          setSessionChecked(true);
+          console.log('LoginPage: Initial session check complete. isCheckingSession: false, sessionChecked: true');
         }
       }
+
+      // Listener for auth state changes
+      console.log('LoginPage: Setting up onAuthStateChange listener.');
+      const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+        if (!mounted) return;
+        console.log('LoginPage: onAuthStateChange event:', event, 'user:', session?.user?.id);
+        setUser(session?.user ?? null);
+        // If auth state changes after initial check, ensure sessionChecked is true
+        // This handles cases like login/logout in another tab.
+        if (!sessionChecked && event !== "INITIAL_SESSION") {
+           setSessionChecked(true);
+           console.log('LoginPage: onAuthStateChange updated sessionChecked to true.');
+        }
+      });
+      
+      return () => { // Cleanup for listener
+        console.log('LoginPage: Unsubscribing from onAuthStateChange.');
+        authListener?.subscription?.unsubscribe();
+      };
     };
 
-    checkSession();
+    const unsubscribePromise = checkSessionAndListen();
 
-    let authListenerSubscription: any = null;
-    if (isSupabaseConfigured) {
-        const { data: authListener } = supabase.auth.onAuthStateChange((_event: any, session: any) => {
-          if (!mounted) return;
-          console.log('Auth state changed:', _event, session);
-          const currentUser = session?.user ?? null;
-          setUser(currentUser); // Update user state, important for UI reacting to external logout/login
-
-          // Only redirect from listener if initial check is complete AND not currently handling a login submission
-          if (currentUser && !isCheckingSession && !isLoading) {
-            const returnTo = router.query.returnTo as string || '/dashboard';
-            console.log('User authenticated via listener, initial check done, redirecting to:', returnTo);
-            // Avoid redirecting if already on the target page or if it's the login page itself without returnTo
-            if (router.pathname !== returnTo || (returnTo === '/dashboard' && router.pathname === '/auth/login' && !router.query.returnTo)) {
-                 router.push(returnTo);
-            }
-          }
-        });
-        authListenerSubscription = authListener?.subscription;
-    }
-      
     return () => {
       mounted = false;
-      authListenerSubscription?.unsubscribe();
+      clearTimeout(sessionTimeoutId); // Clear timeout on unmount
+      console.log('LoginPage: Unmounting, cleaning up auth listener.');
+      unsubscribePromise.then(cleanup => cleanup && cleanup());
     };
-  }, [router]); // Simplified dependencies: router is the main trigger for re-evaluation of returnTo.
-                // isLoading and isCheckingSession are internal states managed by this effect.
+  }, []); // Run only once on mount
+
+  // Effect for handling redirection AFTER session is checked and user state is updated
+  useEffect(() => {
+    console.log(`LoginPage: Redirection effect runs. sessionChecked: ${sessionChecked}, isLoading: ${isLoading}, user: ${user?.id}, pathname: ${router.pathname}`);
+    // Only redirect if the initial session check is complete, not currently submitting login form, and user exists
+    if (sessionChecked && !isLoading && user) {
+      let returnTo = router.query.returnTo as string || '/dashboard';
+      // Ensure we don't redirect back to login or auth pages after successful login
+      if (returnTo === '/auth/login' || returnTo.startsWith('/auth/')) {
+        returnTo = '/dashboard';
+      }
+      console.log(`LoginPage: Conditions met for redirect. Current path: ${router.pathname}, Target: ${returnTo}`);
+      // Only push if we are not already on the target, to avoid loops
+      if (router.pathname !== returnTo) {
+        console.log(`LoginPage: Executing redirect to ${returnTo}`);
+        router.push(returnTo);
+      } else {
+        console.log(`LoginPage: Already on target path ${returnTo}, no redirect needed.`);
+      }
+    }
+  }, [user, sessionChecked, isLoading, router]); // Dependencies: user, sessionChecked, isLoading, router
 
   const handleResendVerification = async () => {
     if (!email) {
@@ -168,10 +184,6 @@ const LoginPage = () => {
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
-    if (!isSupabaseConfigured) {
-      setError({ name: 'ConfigurationError', message: 'Supabase is not configured. Cannot attempt login.' } as AuthError);
-      return;
-    }
     setIsLoading(true);
     setError(null);
     setIsEmailUnverified(false);
@@ -209,7 +221,19 @@ const LoginPage = () => {
             handleResendVerification();
           }, 1000);
         } else {
-          setError(signInError as any);
+          // MODIFIED SECTION FOR BETTER ERROR MESSAGES
+          let displayMessage = 'Login failed. Please check your credentials and try again.'; // Default user-friendly message
+          if (signInError.message) {
+              if (signInError.message.toLowerCase().includes('invalid login credentials')) {
+                  displayMessage = 'Invalid email or password. Please try again.';
+              } else if (signInError.message.toLowerCase().includes('network request failed')) {
+                  displayMessage = 'Network error. Please check your internet connection and try again.';
+              } else if (signInError.message.toLowerCase().includes('user disabled')) {
+                  displayMessage = 'Your account has been disabled. Please contact support.';
+              }
+              // Add more specific checks here if needed for other Supabase error messages
+          }
+          setError({ name: signInError.name || 'AuthApiError', message: displayMessage } as AuthError);
         }
       } else if (data.user) {
         console.log('Supabase sign-in successful, user:', data.user);
@@ -218,11 +242,18 @@ const LoginPage = () => {
       } else {
         // Should not happen if signInError is null and data.user is null
         console.warn('Supabase sign-in returned no error but no user.');
-        setError({ name: 'UnknownAuthError', message: 'Login failed. Please try again.' } as AuthError);
+        setError({ name: 'UnknownAuthError', message: 'Login failed due to an unknown error. Please try again.' } as AuthError);
       }
     } catch (catchedError: any) {
       console.error('Exception during Supabase sign-in:', catchedError);
-      setError({ name: 'ExceptionError', message: catchedError.message || 'An unexpected error occurred.' } as AuthError);
+      // Check if the caught error is a network error
+      let exceptionMessage = 'An unexpected error occurred. Please try again.';
+      if (catchedError.message && catchedError.message.toLowerCase().includes('networkerror when attempting to fetch resource')) {
+        exceptionMessage = 'Network error. Please check your internet connection and try again.';
+      } else if (catchedError.message) {
+        exceptionMessage = catchedError.message;
+      }
+      setError({ name: 'ExceptionError', message: exceptionMessage } as AuthError);
     } finally {
       setIsLoading(false);
     }
@@ -236,10 +267,14 @@ const LoginPage = () => {
       }, 3000);
       return () => clearTimeout(timer);
     }
-    return undefined;
+    return undefined; // Explicitly return undefined if condition is not met
   }, [isEmailUnverified, verificationEmailSent, email, router]);
 
-  if (isCheckingSession || (isLoading && !error)) { // Show loader if checking session OR loading and no error yet
+  // --- Rendering Logic ---
+
+  // 1. Primary Loading State: During initial session check
+  if (isCheckingSession) {
+    console.log('LoginPage: Rendering "Checking authentication..."');
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -251,32 +286,24 @@ const LoginPage = () => {
     );
   }
 
-  if (user && !isCheckingSession) { // If user exists and we are done checking session
+  // 2. Redirecting State: If session is checked, user exists, and not currently submitting form
+  // The redirection useEffect will handle the actual push. This UI is for the brief moment before that.
+  if (sessionChecked && user && !isLoading) {
+    console.log('LoginPage: Rendering "Already Logged In / Redirecting..."');
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <h2 className="text-2xl font-bold mb-4">Already Logged In</h2>
-          <p className="text-gray-600 mb-4">Redirecting to dashboard...</p>
+          <p className="text-gray-600 mb-4">Redirecting to your dashboard...</p>
         </div>
       </div>
     );
   }
 
-  if (!isSupabaseConfigured) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8 text-center">
-          <h2 className="mt-6 text-center text-2xl font-extrabold text-red-600">
-            Authentication Not Configured
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            The application's authentication system (Supabase) is not properly configured. Please contact support.
-          </p>
-        </div>
-      </div>
-    );
-  }
-
+  // 3. Render Login Form: If session is checked and no user, OR if a login attempt is in progress (isLoading)
+  // This also covers the case where a user was present but a login attempt failed, clearing the user.
+  console.log(`LoginPage: Rendering login form. sessionChecked: ${sessionChecked}, user: ${user?.id}, isLoading: ${isLoading}`);
   return (
     <>
       <Head>

@@ -20,6 +20,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const page = parseInt(req.query.page as string, 10) || 1;
     const limit = parseInt(req.query.limit as string, 10) || 20;
     const category = (req.query.category as string | undefined)?.toLowerCase();
+    const sort = (req.query.sort as string | undefined)?.toLowerCase();
 
     let products = [...MARKETPLACE_LISTINGS]; // Create a copy to avoid mutations
 
@@ -28,6 +29,33 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       products = products.filter(
         (p) => p.category?.toLowerCase() === category
       );
+    }
+
+    // Apply sorting before pagination
+    switch (sort) {
+      case 'price-low':
+        products.sort((a, b) => (a.price || 0) - (b.price || 0));
+        break;
+      case 'price-high':
+        products.sort((a, b) => (b.price || 0) - (a.price || 0));
+        break;
+      case 'rating':
+        products.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+        break;
+      case 'popular':
+        products.sort((a, b) => (b.reviewCount || 0) - (a.reviewCount || 0));
+        break;
+      case 'ai-score':
+        products.sort((a, b) => (b.aiScore || 0) - (a.aiScore || 0));
+        break;
+      case 'newest':
+      default:
+        products.sort(
+          (a, b) =>
+            new Date(b.createdAt || '').getTime() -
+            new Date(a.createdAt || '').getTime()
+        );
+        break;
     }
 
     // Apply pagination

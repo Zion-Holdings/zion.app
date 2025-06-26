@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp, Filter, SortAsc, Sparkles, TrendingUp, Star, ShoppingCart, AlertTriangle, RefreshCw } from 'lucide-react';
 import { NextSeo } from '@/components/NextSeo';
@@ -12,6 +13,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
+import { useCurrency } from '@/hooks/useCurrency';
 
 // Market insights component
 const MarketplaceInsights = ({ stats }: { stats: any }) => (
@@ -42,6 +44,7 @@ const MarketplaceInsights = ({ stats }: { stats: any }) => (
     </CardContent>
   </Card>
 );
+};
 
 // Filter controls
 const MarketplaceFilterControls = ({
@@ -81,7 +84,9 @@ import { useAuth } from '@/context/auth/AuthProvider';
 import { toast } from '@/hooks/use-toast';
 
 // Product card
-const MarketplaceCard = ({ product, onViewDetails, onAddToCart }: { product: ProductListing; onViewDetails: () => void; onAddToCart: () => void; }) => (
+const MarketplaceCard = ({ product, onViewDetails, onAddToCart }: { product: ProductListing; onViewDetails: () => void; onAddToCart: () => void; }) => {
+  const { formatPrice } = useCurrency();
+  return (
   <Card className="h-full hover:shadow-lg transition-shadow">
     <CardHeader className="pb-3">
       <div className="flex items-start justify-between">
@@ -98,7 +103,7 @@ const MarketplaceCard = ({ product, onViewDetails, onAddToCart }: { product: Pro
           </div>
         </div>
         <div className="text-right">
-          <div className="text-xl font-bold text-blue-600">${product.price?.toLocaleString()}</div>
+          <div className="text-xl font-bold text-blue-600">{formatPrice(product.price ?? 0)}</div>
           <Badge variant={product.availability === "Available" ? "default" : "outline"} className="text-xs">
             {product.availability}
           </Badge>
@@ -136,6 +141,7 @@ const MarketplaceLoadingGrid = ({ count = 8 }: { count?: number }) => (
 // Main component
 function MarketplacePageContent() {
   const router = useRouter();
+  const { t } = useTranslation();
   const dispatch = useDispatch<AppDispatch>();
   const { isAuthenticated } = useAuth();
   const [sortBy, setSortBy] = useState('newest');
@@ -250,9 +256,9 @@ function MarketplacePageContent() {
       <div className="container py-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            AI Marketplace
+            {t('marketplace.hero_title')}
           </h1>
-          <p className="text-muted-foreground text-lg">Discover cutting-edge AI and technology solutions</p>
+          <p className="text-muted-foreground text-lg">{t('marketplace.hero_subtitle')}</p>
         </motion.div>
         <MarketplaceLoadingGrid />
       </div>
@@ -299,9 +305,9 @@ function MarketplacePageContent() {
     <div className="container py-8">
       <motion.div className="text-center mb-8" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          AI Marketplace
+          {t('marketplace.hero_title')}
         </h1>
-        <p className="text-muted-foreground text-lg">Discover cutting-edge AI and technology solutions for your business</p>
+        <p className="text-muted-foreground text-lg">{t('marketplace.hero_subtitle')}</p>
       </motion.div>
 
       {marketStats && (

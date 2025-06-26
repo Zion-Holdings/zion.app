@@ -74,7 +74,12 @@
     ],
     "jsx": "preserve",
     "allowImportingTsExtensions": true,
-    "noEmit": true
+    "noEmit": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "src",
@@ -83,7 +88,8 @@
     "types/**/*.d.ts",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

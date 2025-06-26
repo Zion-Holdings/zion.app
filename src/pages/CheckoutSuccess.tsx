@@ -15,6 +15,7 @@ export default function CheckoutSuccess() {
   const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
+    if (!searchParams) return;
     const sessionId = searchParams.get('session_id');
     if (!sessionId) return;
 

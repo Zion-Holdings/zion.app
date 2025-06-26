@@ -2,7 +2,9 @@ import { useRouter } from 'next/router';
 import { useApiErrorHandling } from '@/hooks/useApiErrorHandling';
 import ProductCard from '@/components/ProductCard';
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
+import { AuthModal } from '@/components/auth/AuthModal';
 import { ArrowUp, Filter, SortAsc, Sparkles, TrendingUp, Star } from 'lucide-react';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { ErrorState } from '@/components/jobs/applications/ErrorState';
@@ -225,10 +227,12 @@ const FilterControls: React.FC<{
  */
 export default function Marketplace() {
   const router = useRouter();
+  const { t } = useTranslation();
   const { toast } = useToast();
   const { isAuthenticated, user } = useAuth();
   const firstRenderRef = useRef(true);
   const isRefreshingAfterFilterChange = useRef(false); // New ref to track refresh state
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
@@ -243,15 +247,7 @@ export default function Marketplace() {
   // Handle Add Product button with authentication check
   const handleAddProduct = useCallback(() => {
     if (!isAuthenticated) {
-      toast({
-        title: "Login Required",
-        description: "Please log in to add products to the marketplace.",
-        variant: "destructive",
-      });
-      
-      // Redirect to login with return URL to marketplace
-      const returnUrl = encodeURIComponent('/marketplace');
-      router.push(`/login?next=${returnUrl}`);
+      setIsAuthModalOpen(true); // Use the new auth modal
       return;
     }
 
@@ -280,7 +276,8 @@ export default function Marketplace() {
       const params = {
         page,
         limit,
-        ...(filterCategory && { category: filterCategory })
+        ...(filterCategory && { category: filterCategory }),
+        sort: sortBy
       };
 
       console.log('Marketplace.tsx: Fetching products using marketplace service with params:', params);
@@ -347,11 +344,7 @@ export default function Marketplace() {
       // Show more specific error messages based on the error type
       if (err.response?.status === 403) {
         console.error("403 Forbidden error - authentication issue");
-        toast({
-          title: "Access Denied",
-          description: "Please log in to access the marketplace.",
-          variant: "destructive",
-        });
+        // Don't show toast here, let the AuthModal handle it or rely on ProductCard's tooltip
       } else if (err.response?.status === 500) {
         console.error("500 Server error");
         toast({
@@ -444,10 +437,10 @@ export default function Marketplace() {
           className="text-center mb-8"
         >
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            AI Marketplace
+            {t('marketplace.hero_title')}
           </h1>
           <p className="text-muted-foreground text-lg">
-            Discover cutting-edge AI and IT solutions
+            {t('marketplace.hero_subtitle')}
           </p>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -483,10 +476,10 @@ export default function Marketplace() {
           className="text-center mb-8"
         >
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            AI Marketplace
+            {t('marketplace.hero_title')}
           </h1>
           <p className="text-muted-foreground text-lg">
-            Discover cutting-edge AI and IT solutions
+            {t('marketplace.hero_subtitle')}
           </p>
         </motion.div>
         
@@ -498,6 +491,11 @@ export default function Marketplace() {
   // Main marketplace render
   return (
     <div className="container py-8">
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        returnUrl={router.asPath} // Pass current path for better UX on return
+      />
       {/* Header */}
       <motion.div 
         className="text-center mb-8"
@@ -505,10 +503,10 @@ export default function Marketplace() {
         animate={{ opacity: 1, y: 0 }}
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          AI Marketplace
+          {t('marketplace.hero_title')}
         </h1>
         <p className="text-muted-foreground text-lg">
-          Discover cutting-edge AI and IT solutions powered by intelligent algorithms
+          {t('marketplace.hero_subtitle')}
         </p>
       </motion.div>
 
@@ -578,8 +576,26 @@ export default function Marketplace() {
                   price: product.price || 0,
                   description: product.description || ''
                 }}
-                onBuy={() => router.push(`/checkout/${product.id}`)}
-                buyDisabled={false}
+                onBuy={async () => {
+                  if (!isAuthenticated) {
+                    setIsAuthModalOpen(true);
+                    return; // Stop further execution
+                  }
+                  try {
+                    await router.push(`/checkout/${product.id}`);
+                  } catch (error) {
+                    console.error("Failed to navigate to checkout:", error);
+                    toast({
+                      title: "Navigation Error",
+                      description: "Could not navigate to checkout. Please try again.",
+                      variant: "destructive",
+                    });
+                    // Re-throw to allow ProductCard's catch to also run if needed,
+                    // though ProductCard will reset its state in .finally() regardless.
+                    throw error;
+                  }
+                }}
+                buyDisabled={false} // Still false, ProductCard handles its own disabled state based on auth
               />
               
               {/* AI Score Badge */}

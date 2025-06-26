@@ -70,7 +70,14 @@ describe('ProductCard', () => {
 
     expect(screen.getByText('Valid Test Product')).toBeInTheDocument();
     expect(screen.getByText(/USD99.99/)).toBeInTheDocument(); // Price and currency
-    expect(screen.getByRole('link', { name: 'Valid Test Product' })).toHaveAttribute('href', '/marketplace/listing/prod123');
+    // Check that the link wraps both the title and implicitly the image
+    const linkElement = screen.getByRole('link', { name: /Valid Test Product/i });
+    expect(linkElement).toBeInTheDocument();
+    expect(linkElement).toHaveAttribute('href', '/marketplace/listing/prod123');
+    // Check that the image is within the link
+    const imageElement = screen.getByAltText('Valid Test Product');
+    expect(linkElement).toContainElement(imageElement);
+
     expect(screen.getByRole('button', { name: /add to cart/i })).toBeInTheDocument();
     expect(screen.getByTestId('buy-now-button')).toBeInTheDocument(); // Buy Now button
     expect(screen.queryByTestId('product-card-error')).not.toBeInTheDocument();

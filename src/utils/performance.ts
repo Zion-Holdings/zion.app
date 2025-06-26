@@ -3,6 +3,8 @@
  * Helps track CLS improvements and other performance metrics
  */
 
+import { onCLS, onINP, onFCP, onLCP, onTTFB } from 'web-vitals';
+
 export interface PerformanceMetrics {
   cls: number;
   fcp: number;
@@ -282,4 +284,241 @@ export function calculateCLS(): number {
   const clsEntries: PerformanceEntry[] = [];
   // ... rest of the function ...
   return clsValue;
-} 
+}
+
+// Performance monitoring and optimization utilities
+export class PerformanceMonitor {
+  private static instance: PerformanceMonitor;
+  private metrics: Record<string, number> = {};
+  private observers: PerformanceObserver[] = [];
+
+  static getInstance(): PerformanceMonitor {
+    if (!PerformanceMonitor.instance) {
+      PerformanceMonitor.instance = new PerformanceMonitor();
+    }
+    return PerformanceMonitor.instance;
+  }
+
+  // Initialize Core Web Vitals monitoring
+  initializeWebVitals(): void {
+    if (typeof window === 'undefined') return;
+
+    // Measure and report Core Web Vitals
+    onCLS((metric) => this.reportMetric('CLS', metric.value));
+    onINP((metric) => this.reportMetric('INP', metric.value));
+    onFCP((metric) => this.reportMetric('FCP', metric.value));
+    onLCP((metric) => this.reportMetric('LCP', metric.value));
+    onTTFB((metric) => this.reportMetric('TTFB', metric.value));
+  }
+
+  // Report performance metrics
+  private reportMetric(name: string, value: number): void {
+    this.metrics[name] = value;
+    
+    // Send to analytics in production
+    if (process.env.NODE_ENV === 'production') {
+      // Report to analytics service
+      this.sendToAnalytics(name, value);
+    }
+    
+    console.log(`[Performance] ${name}: ${value}`);
+  }
+
+  private sendToAnalytics(name: string, value: number): void {
+    // Send to your analytics service
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', name, {
+        event_category: 'Web Vitals',
+        value: Math.round(value),
+        non_interaction: true,
+      });
+    }
+  }
+
+  // Get current metrics
+  getMetrics(): Record<string, number> {
+    return { ...this.metrics };
+  }
+
+  // Measure custom performance timing
+  startTiming(label: string): () => number {
+    const start = performance.now();
+    return () => {
+      const duration = performance.now() - start;
+      this.reportMetric(label, duration);
+      return duration;
+    };
+  }
+
+  // Performance observer for long tasks
+  observeLongTasks(): void {
+    if (typeof window === 'undefined' || !('PerformanceObserver' in window)) return;
+
+    try {
+      const observer = new PerformanceObserver((list) => {
+        list.getEntries().forEach((entry) => {
+          if (entry.duration > 50) {
+            console.warn(`Long task detected: ${entry.duration}ms`);
+            this.reportMetric('LongTask', entry.duration);
+          }
+        });
+      });
+      
+      observer.observe({ entryTypes: ['longtask'] });
+      this.observers.push(observer);
+    } catch (error) {
+      console.warn('Long task observer not supported');
+    }
+  }
+
+  // Clean up observers
+  disconnect(): void {
+    this.observers.forEach(observer => observer.disconnect());
+    this.observers = [];
+  }
+}
+
+// Image optimization utilities
+export const imageOptimization = {
+  // Generate srcSet for responsive images
+  generateSrcSet(baseUrl: string, sizes: number[] = [400, 800, 1200, 1600]): string {
+    return sizes
+      .map(size => `${baseUrl}?w=${size}&q=75 ${size}w`)
+      .join(', ');
+  },
+
+  // Generate optimized image URL
+  optimizeUrl(url: string, width?: number, quality = 75): string {
+    if (!url) return '';
+    
+    // For Unsplash images
+    if (url.includes('unsplash.com')) {
+      const params = new URLSearchParams();
+      if (width) params.set('w', width.toString());
+      params.set('q', quality.toString());
+      params.set('auto', 'format');
+      params.set('fit', 'crop');
+      
+      return `${url}&${params.toString()}`;
+    }
+    
+    return url;
+  },
+
+  // Preload critical images
+  preloadImage(src: string, as: 'image' | 'fetch' = 'image'): void {
+    if (typeof document === 'undefined') return;
+    
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = as;
+    link.href = src;
+    document.head.appendChild(link);
+  }
+};
+
+// Bundle optimization utilities
+export const bundleOptimization = {
+  // Dynamic import with error handling
+  async dynamicImport<T>(importFn: () => Promise<T>): Promise<T> {
+    try {
+      return await importFn();
+    } catch (error) {
+      console.error('Dynamic import failed:', error);
+      throw new Error('Failed to load component');
+    }
+  },
+
+  // Preload route
+  preloadRoute(route: string): void {
+    if (typeof window === 'undefined') return;
+    
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = route;
+    document.head.appendChild(link);
+  }
+};
+
+// Memory optimization utilities
+export const memoryOptimization = {
+  // Debounce function calls
+  debounce<T extends (...args: any[]) => any>(
+    func: T,
+    wait: number
+  ): (...args: Parameters<T>) => void {
+    let timeout: NodeJS.Timeout;
+    return (...args: Parameters<T>) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), wait);
+    };
+  },
+
+  // Throttle function calls
+  throttle<T extends (...args: any[]) => any>(
+    func: T,
+    limit: number
+  ): (...args: Parameters<T>) => void {
+    let inThrottle: boolean;
+    return (...args: Parameters<T>) => {
+      if (!inThrottle) {
+        func(...args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
+      }
+    };
+  },
+
+  // Check if user prefers reduced motion
+  prefersReducedMotion(): boolean {
+    if (typeof window === 'undefined') return false;
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+};
+
+// Resource hint utilities
+export const resourceHints = {
+  // Add DNS prefetch
+  addDnsPrefetch(domain: string): void {
+    if (typeof document === 'undefined') return;
+    
+    const link = document.createElement('link');
+    link.rel = 'dns-prefetch';
+    link.href = domain;
+    document.head.appendChild(link);
+  },
+
+  // Add preconnect
+  addPreconnect(origin: string): void {
+    if (typeof document === 'undefined') return;
+    
+    const link = document.createElement('link');
+    link.rel = 'preconnect';
+    link.href = origin;
+    document.head.appendChild(link);
+  }
+};
+
+// Initialize performance monitoring
+export const initializePerformance = (): PerformanceMonitor => {
+  const monitor = PerformanceMonitor.getInstance();
+  
+  if (typeof window !== 'undefined') {
+    monitor.initializeWebVitals();
+    monitor.observeLongTasks();
+    
+    // Add common resource hints
+    resourceHints.addDnsPrefetch('//images.unsplash.com');
+    resourceHints.addPreconnect('https://fonts.googleapis.com');
+    
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+      monitor.disconnect();
+    });
+  }
+  
+  return monitor;
+};
+
+// Export default instance
+export default PerformanceMonitor.getInstance(); 

@@ -35,7 +35,7 @@ import * as Sentry from '@sentry/nextjs';
 import getConfig from 'next/config';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 import { validateProductionEnvironment, initializeServices } from '@/utils/environmentConfig';
-import { initializePerformanceOptimizations } from '@/utils/performance';
+import { initializePerformanceOptimizations, initializePerformance } from '@/utils/performance';
 import '@/utils/globalFetchInterceptor';
 import '@/utils/consoleErrorToast';
 import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
@@ -109,6 +109,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       
       // Initialize performance monitoring and optimizations
       initializePerformanceOptimizations();
+      
+      // Initialize advanced performance monitoring
+      if (typeof window !== 'undefined') {
+        initializePerformance();
+      }
       
       const { publicRuntimeConfig } = getConfig();
       if (process.env.NODE_ENV === 'development') {

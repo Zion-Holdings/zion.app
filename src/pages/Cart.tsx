@@ -20,6 +20,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ShoppingCart, User, CreditCard, ArrowRight, Package, Shield } from 'lucide-react';
 import { useWishlist } from '@/hooks/useWishlist';
+import { toast } from '@/hooks/use-toast';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -30,19 +31,33 @@ export default function CartPage() {
   const { user, isAuthenticated } = useAuth();
   const [loading, setLoading] = useState(false);
   const [guestOpen, setGuestOpen] = useState(false);
-  const { toggle: toggleWishlist } = useWishlist();
+  const { toggle: toggleWishlist, isWishlisted } = useWishlist();
 
   const updateQuantity = (id: string, qty: number) => {
     dispatch(updateQuantityAction({ id, quantity: qty }));
   };
 
   const removeItem = (id: string) => {
+    const item = items.find(i => i.id === id);
     dispatch(removeItemAction(id));
+    
+    if (item) {
+      toast({
+        title: "Item removed",
+        description: `${item.name} has been removed from your cart`,
+      });
+    }
   };
 
-  const saveForLater = (id: string) => {
+  const saveForLater = (id: string, name: string) => {
+    const wasWishlisted = isWishlisted(id);
     toggleWishlist(id);
-    dispatch(removeItemAction(id));
+    toast({
+      title: wasWishlisted ? 'Removed from wishlist' : 'Added to wishlist',
+      description: wasWishlisted
+        ? `${name} has been removed from your wishlist`
+        : `${name} has been added to your wishlist`,
+    });
   };
 
   const handleCheckout = async (details?: { email?: string; address?: string }) => {
@@ -213,10 +228,10 @@ export default function CartPage() {
                             <Button
                               variant="ghost"
                               size="sm"
-                              onClick={() => saveForLater(item.id)}
+                              onClick={() => saveForLater(item.id, item.name)}
                               className="text-zion-cyan hover:bg-zion-cyan/10"
                             >
-                              Save for Later
+                              Add to Wishlist
                             </Button>
                           </div>
                         </div>
