@@ -3,6 +3,7 @@ export interface NextApiRequest {
   query: Record<string, any>;
   body?: any;
   cookies?: Record<string, any>;
+  headers?: Record<string, string | string[] | undefined>;
 }
 
 export interface NextApiResponse<T = any> {

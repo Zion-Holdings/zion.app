@@ -17,8 +17,9 @@ declare module 'next/head' {
 }
 
 declare module 'next' {
-  interface NextApiRequest { 
+  interface NextApiRequest {
     [key: string]: unknown;
+    headers: Record<string, string | string[] | undefined>;
   }
   interface NextApiResponse<T = unknown> {
     status: (statusCode: number) => NextApiResponse<T>;
