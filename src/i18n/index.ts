@@ -23,7 +23,13 @@ if (!i18n) {
       en: {
         translation: enTranslation
       },
+      'en-US': {
+        translation: enTranslation
+      },
       es: {
+        translation: esTranslation
+      },
+      'es-ES': {
         translation: esTranslation
       },
       fr: {
@@ -37,6 +43,8 @@ if (!i18n) {
       }
     },
     fallbackLng: 'en', // Default language
+    preload: ['en-US', 'es-ES'],
+    supportedLngs: ['en', 'en-US', 'es', 'es-ES', 'fr', 'pt', 'ar'],
     debug: process.env.NODE_ENV === 'development',
     interpolation: {
       escapeValue: false, // React already escapes by default

@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { useLanguage, SupportedLanguage } from '@/context/LanguageContext';
@@ -9,6 +8,8 @@ import { setCookie } from '@/utils/cookies';
 export function LanguageSwitcher() {
   const { t } = useTranslation();
   const { currentLanguage, changeLanguage, supportedLanguages } = useLanguage();
+  const currentFlag =
+    supportedLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
   const [open, setOpen] = useState(false);
   const [highlighted, setHighlighted] = useState<number>(-1);
   const [announce, setAnnounce] = useState('');
@@ -99,7 +100,9 @@ export function LanguageSwitcher() {
         onClick={toggleOpen}
         onKeyDown={handleButtonKeyDown}
       >
-        <Globe className="h-5 w-5" />
+        <span className="text-lg" aria-hidden="true">
+          {currentFlag}
+        </span>
         <span className="sr-only">{t('general.select_language')}</span>
       </Button>
       {open && (
