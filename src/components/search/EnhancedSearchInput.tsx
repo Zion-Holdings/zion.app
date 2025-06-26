@@ -201,6 +201,7 @@ export function EnhancedSearchInput({
       aria-expanded={isFocused && filteredSuggestions.length > 0}
       aria-haspopup="listbox"
       aria-controls="autocomplete-suggestions-list" // Added aria-controls
+      onClick={() => inputRef.current?.focus()}
     >
       <div className="relative flex items-center w-full">
         <Search 
