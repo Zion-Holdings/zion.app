@@ -1,0 +1,55 @@
+import React, { useEffect, useState } from 'react';
+import { safeStorage } from '@/utils/safeStorage';
+import { initGA } from '@/lib/analytics';
+
+export const AnalyticsConsentBanner: React.FC = () => {
+  const [showBanner, setShowBanner] = useState(false);
+
+  useEffect(() => {
+    const consent = safeStorage.getItem('analyticsConsent');
+    if (consent === 'granted') {
+      initGA();
+    } else if (!consent) {
+      setShowBanner(true);
+    }
+  }, []);
+
+  const accept = () => {
+    safeStorage.setItem('analyticsConsent', 'granted');
+    setShowBanner(false);
+    initGA();
+  };
+
+  const decline = () => {
+    safeStorage.setItem('analyticsConsent', 'denied');
+    setShowBanner(false);
+  };
+
+  if (!showBanner) return null;
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-zion-blue-dark/90 text-gray-200 p-4 text-sm flex flex-col md:flex-row items-start md:items-center gap-3">
+      <p className="flex-1">
+        We use analytics cookies to improve the site.{' '}
+        <a href="/privacy" className="underline">
+          Learn more
+        </a>
+        .
+      </p>
+      <div className="flex gap-2">
+        <button
+          onClick={decline}
+          className="px-3 py-1 rounded bg-muted text-zion-blue-dark"
+        >
+          Decline
+        </button>
+        <button
+          onClick={accept}
+          className="px-3 py-1 rounded bg-zion-cyan text-zion-blue-dark font-medium"
+        >
+          Accept
+        </button>
+      </div>
+    </div>
+  );
+};

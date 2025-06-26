@@ -7,6 +7,7 @@ import { PrimaryNav } from "./PrimaryNav";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { BackToTopButton } from "@/components/BackToTopButton";
 import { Footer } from "@/components/Footer";
+import { AnalyticsConsentBanner } from "@/components/AnalyticsConsentBanner";
 import { SkipLink } from "@/components/SkipLink";
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
@@ -100,6 +101,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
       </main>
       <BackToTopButton />
       {!hideFooter && <Footer />}
+      <AnalyticsConsentBanner />
     </div>
   );
 }
