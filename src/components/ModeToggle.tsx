@@ -2,6 +2,7 @@ import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { toast } from "@/hooks/use-toast"
+import { darkModeMessages, lightModeMessages } from "@/utils/themeToggleMessages"
 // Use the ThemeProvider hook directly to ensure no conflicts
 import { useTheme } from "@/components/ThemeProvider"
 import { logIssue } from "@/utils/logIssue"
@@ -38,9 +39,11 @@ export function ModeToggle() {
       // Apply the new theme
       setTheme(newTheme);
 
-      // Show user feedback with correct message based on the NEW theme
+      // Show user feedback with a developer-centric message
+      const messages = newTheme === 'dark' ? darkModeMessages : lightModeMessages
+      const title = messages[Math.floor(Math.random() * messages.length)]
       toast({
-        title: `Switched to ${newTheme} mode`,
+        title,
         description: `Theme changed to ${newTheme} mode successfully`,
       });
 
