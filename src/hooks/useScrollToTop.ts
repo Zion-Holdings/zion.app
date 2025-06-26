@@ -9,6 +9,6 @@ export function useScrollToTop() {
   const { pathname } = router;
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname]);
 }
