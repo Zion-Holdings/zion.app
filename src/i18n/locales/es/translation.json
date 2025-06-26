@@ -265,6 +265,59 @@
       }
     }
   },
+  "partner": {
+    "title": "Programa de Socios de Zion AI",
+    "subtitle": "Gana recompensas recomendando talento y clientes de IA a nuestro mercado",
+    "influencers": {
+      "title": "Para Influencers de IA",
+      "desc": "Comparte tu experiencia y gana",
+      "points": {
+        "audience": "Monetiza tu audiencia",
+        "audience_desc": "Gana comisiones por referidos exitosos",
+        "insights": "Información exclusiva",
+        "insights_desc": "Obtén acceso anticipado a tendencias de IA",
+        "resources": "Recursos de marketing",
+        "resources_desc": "Accede a nuestro kit de socios con materiales listos para usar"
+      }
+    },
+    "organizations": {
+      "title": "Para Organizaciones de IA",
+      "desc": "Alianzas estratégicas",
+      "points": {
+        "ecosystem": "Expande tu ecosistema",
+        "ecosystem_desc": "Conecta tu comunidad con oportunidades de trabajo en IA",
+        "co_brand": "Oportunidades co-marcadas",
+        "co_brand_desc": "Crea contenido y eventos conjuntos",
+        "tracking": "Seguimiento personalizado",
+        "tracking_desc": "Analíticas detalladas de tus referencias"
+      }
+    },
+    "how_it_works": "Cómo Funciona",
+    "steps": {
+      "join_title": "1. Únete al Programa",
+      "join_desc": "Regístrate y obtén aprobación como socio de Zion AI con tu propio panel",
+      "share_title": "2. Comparte tu Enlace",
+      "share_desc": "Genera enlaces de referencia y promuévelos a tu audiencia",
+      "earn_title": "3. Gana Recompensas",
+      "earn_desc": "Recibe pagos cuando tus referidos se registren y usen nuestra plataforma"
+    },
+    "apply": "Solicitar ser Socio",
+    "login": "Ingreso de Socios",
+    "login_unavailable": "Inicio de sesión temporalmente no disponible",
+    "dashboard_title": "Panel de Socios",
+    "dashboard_desc": "Gestiona tus enlaces de referencia y monitorea tu desempeño",
+    "export_csv": "Exportar CSV",
+    "tabs": {
+      "overview": "Resumen",
+      "referrals": "Enlaces de Referencia",
+      "earnings": "Ganancias",
+      "leaderboard": "Clasificación",
+      "resources": "Recursos"
+    },
+    "earnings_title": "Ganancias y Pagos",
+    "earnings_desc": "Seguimiento de tus ganancias y gestiona pagos",
+    "earnings_placeholder": "El seguimiento de ganancias y las solicitudes de pago estarán disponibles pronto."
+  },
   "login": "Iniciar Sesión",
   "signup": "Registrarse"
 }
