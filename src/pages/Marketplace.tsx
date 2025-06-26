@@ -581,7 +581,21 @@ export default function Marketplace() {
                   price: product.price || 0,
                   description: product.description || ''
                 }}
-                onBuy={() => router.push(`/checkout/${product.id}`)}
+                onBuy={async () => {
+                  try {
+                    await router.push(`/checkout/${product.id}`);
+                  } catch (error) {
+                    console.error("Failed to navigate to checkout:", error);
+                    toast({
+                      title: "Navigation Error",
+                      description: "Could not navigate to checkout. Please try again.",
+                      variant: "destructive",
+                    });
+                    // Re-throw to allow ProductCard's catch to also run if needed,
+                    // though ProductCard will reset its state in .finally() regardless.
+                    throw error;
+                  }
+                }}
                 buyDisabled={false}
               />
               
