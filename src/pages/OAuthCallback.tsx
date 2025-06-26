@@ -19,7 +19,7 @@ const OAuthCallback = () => {
     if (error) {
       console.error('OAuth Error:', error);
       toast.error(`Authentication failed: ${error}`);
-      router.replace('/login'); // Use router.replace
+      router.replace('/auth/login');
       return;
     }
 
@@ -28,11 +28,11 @@ const OAuthCallback = () => {
       // Redirect to login, which will handle the token and further redirection.
       // This reuses the logic in Login.jsx for token processing and redirecting
       // to the intended page (e.g., dashboard, onboarding, or 'next' URL).
-      router.replace('/login'); // Use router.replace
+      router.replace('/auth/login');
     } else {
       // No token found, something went wrong or accessed directly
       toast.error('Authentication token not found. Please try logging in again.');
-      router.replace('/login'); // Use router.replace
+      router.replace('/auth/login');
     }
   }, [router.isReady, router.asPath, router]); // Added router.isReady and router.asPath to dependencies
 

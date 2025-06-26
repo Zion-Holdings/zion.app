@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
@@ -18,10 +18,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router'; // Ensure this is present
 
 export default function Dashboard() {
-  const { user, logout } = useAuth();
+  const { user, logout, isLoading } = useAuth();
   const { toast } = useToast();
   const router = useRouter();
-  const [isLoadingUser, setIsLoadingUser] = useState(true); // New loading state
   const { data: orders = [], isLoading: ordersLoading } = useGetOrdersQuery(user?.id);
   const { favorites } = useFavorites();
 
@@ -29,17 +28,15 @@ export default function Dashboard() {
     user?.userType === 'client' || user?.userType === 'admin' ? 'client' : 'talent';
 
   useEffect(() => {
-    if (!user) {
-      router.replace('/login');
+    if (!user && !isLoading) {
+      router.replace('/auth/login');
     }
-    setIsLoadingUser(false);
-  }, [user, router]); // Dependencies for useEffect
+  }, [user, isLoading, router]);
 
-  if (isLoadingUser) {
+  if (isLoading) {
     return <div className="p-4 text-center">Loading dashboard...</div>;
   }
 
-  // If user is still not available after loading, it means redirect is in progress
   if (!user) {
     return <div className="p-4 text-center">Redirecting to login...</div>;
   }
