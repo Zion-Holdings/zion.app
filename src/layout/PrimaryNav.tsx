@@ -54,7 +54,7 @@ export function PrimaryNav() {
         aria-label="Primary"
         data-testid="header"
       >
-        <div className="container flex flex-wrap items-center justify-between gap-2 min-h-16 px-4 sm:px-6">
+        <div className="container flex items-center justify-between gap-2 min-h-16 px-4 sm:px-6 max-[320px]:flex-wrap">
           <Logo />
           
           {/* Navigation - hidden on mobile and tablets, shown on desktop */}
