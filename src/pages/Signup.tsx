@@ -224,6 +224,17 @@ export default function Signup() {
     }
   });
 
+  // After successful registration, guide the user to the verification screen
+  useEffect(() => {
+    if (emailVerificationRequired && formik.values.email) {
+      const timer = setTimeout(() => {
+        router.push(`/verify-status?email=${encodeURIComponent(formik.values.email)}`);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [emailVerificationRequired, formik.values.email, router]);
+
   // Show loading state only during initial health check
   if (healthCheckLoading) {
     return (
