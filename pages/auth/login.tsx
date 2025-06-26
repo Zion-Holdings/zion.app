@@ -59,7 +59,11 @@ const LoginPage = () => {
         } else if (session?.user) {
           setUser(session.user);
           console.log('User session found:', session.user);
-          const returnTo = router.query.returnTo as string || '/dashboard';
+          let returnTo = router.query.returnTo as string || '/dashboard';
+          // Ensure we don't redirect back to login or auth pages after successful login
+          if (returnTo === '/auth/login' || returnTo.startsWith('/auth/')) {
+            returnTo = '/dashboard';
+          }
           console.log('User is authenticated by getSession, redirecting to:', returnTo);
           router.push(returnTo);
         }
