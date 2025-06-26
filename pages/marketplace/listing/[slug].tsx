@@ -1,6 +1,7 @@
 import type { GetServerSideProps } from 'next';
 import type { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
+import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
 import { SERVICES } from '@/data/servicesData';
 import * as Sentry from '@sentry/nextjs';
 import Head from 'next/head';
@@ -99,8 +100,11 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
   // });
 
   try {
-    // First try to find in MARKETPLACE_LISTINGS
-    let listing = MARKETPLACE_LISTINGS.find((l) => l.id === slug) || null;
+    // First try to find in the static datasets
+    let listing =
+      INITIAL_MARKETPLACE_PRODUCTS.find((l) => l.id === slug) ||
+      MARKETPLACE_LISTINGS.find((l) => l.id === slug) ||
+      null;
     
     // If not found, try SERVICES
     if (!listing) {
@@ -137,8 +141,12 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
     
     // If still not found, try to match by title or other fields
     if (!listing) {
-      const allListings = [...MARKETPLACE_LISTINGS, ...SERVICES];
-      listing = allListings.find((l) => 
+      const allListings = [
+        ...INITIAL_MARKETPLACE_PRODUCTS,
+        ...MARKETPLACE_LISTINGS,
+        ...SERVICES,
+      ];
+      listing = allListings.find((l) =>
         l.title?.toLowerCase().replace(/\s+/g, '-') === slug.toLowerCase() ||
         l.title?.toLowerCase().includes(slug.toLowerCase())
       ) || null;
