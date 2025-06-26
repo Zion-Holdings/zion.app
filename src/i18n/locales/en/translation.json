@@ -353,6 +353,59 @@
       }
     }
   },
+  "partner": {
+    "title": "Zion AI Partner Program",
+    "subtitle": "Earn rewards by referring AI talent and clients to our marketplace",
+    "influencers": {
+      "title": "For AI Influencers",
+      "desc": "Share your expertise and earn",
+      "points": {
+        "audience": "Monetize your audience",
+        "audience_desc": "Earn commissions from successful referrals",
+        "insights": "Exclusive insights",
+        "insights_desc": "Get early access to AI marketplace trends",
+        "resources": "Marketing resources",
+        "resources_desc": "Access our partner toolkit with ready-to-use materials"
+      }
+    },
+    "organizations": {
+      "title": "For AI Organizations",
+      "desc": "Strategic partnerships",
+      "points": {
+        "ecosystem": "Expand your ecosystem",
+        "ecosystem_desc": "Connect your community to AI job opportunities",
+        "co_brand": "Co-branded opportunities",
+        "co_brand_desc": "Create joint content and events",
+        "tracking": "Custom tracking",
+        "tracking_desc": "Detailed analytics on your referral performance"
+      }
+    },
+    "how_it_works": "How It Works",
+    "steps": {
+      "join_title": "1. Join the Program",
+      "join_desc": "Sign up and get approved as a Zion AI partner with your own dashboard",
+      "share_title": "2. Share Your Link",
+      "share_desc": "Generate custom referral links and promote to your audience",
+      "earn_title": "3. Earn Rewards",
+      "earn_desc": "Get paid when referrals complete onboarding and engage with our platform"
+    },
+    "apply": "Apply as Partner",
+    "login": "Partner Login",
+    "login_unavailable": "Login temporarily unavailable",
+    "dashboard_title": "Partner Dashboard",
+    "dashboard_desc": "Manage your referral links and track your performance",
+    "export_csv": "Export CSV",
+    "tabs": {
+      "overview": "Overview",
+      "referrals": "Referral Links",
+      "earnings": "Earnings",
+      "leaderboard": "Leaderboard",
+      "resources": "Resources"
+    },
+    "earnings_title": "Earnings & Payouts",
+    "earnings_desc": "Track your earnings and manage payouts",
+    "earnings_placeholder": "Earnings tracking and payout requests will be available soon."
+  },
   "login": "Login",
   "signup": "Sign up"
 }
