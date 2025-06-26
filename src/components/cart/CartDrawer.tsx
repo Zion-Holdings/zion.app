@@ -67,7 +67,15 @@ export function CartDrawer() {
           <DrawerTitle>Your Cart</DrawerTitle>
         </DrawerHeader>
         {items.length === 0 ? (
-          <p className="text-sm text-muted-foreground">Your cart is empty.</p>
+          <>
+            <p className="text-sm text-muted-foreground">Your cart is empty.</p>
+            <div className="flex flex-col gap-2 pt-2">
+              <Button asChild variant="outline" onClick={() => setIsOpen(false)}>
+                <Link href="/cart">View Cart</Link>
+              </Button>
+              <Button disabled>Checkout</Button>
+            </div>
+          </>
         ) : (
           <>
             <ul className="space-y-3">
