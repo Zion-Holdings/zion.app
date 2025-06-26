@@ -56,8 +56,28 @@ INTERNAL_AUTH_SERVICE_URL=https://your-auth-service-url.com
 
 #### Email Authentication (Default)
 1. Go to **Authentication** → **Settings**
-2. Ensure "Enable email confirmations" is configured as needed
-3. Set up email templates if desired
+2. Ensure "Enable email confirmations" is configured as needed. This is the standard Supabase setting for requiring email verification.
+3. Set up email templates if desired.
+
+##### Auto-Email Verification in Development/Staging Environments
+
+To facilitate testing and development, the application includes logic to **automatically verify user emails upon registration** when in `development` or `staging` environments. This bypasses the need to click a verification link.
+
+For this feature to work, the following environment variables must be correctly set in your development, staging, or QA environments:
+
+-   `NEXT_PUBLIC_APP_ENV`: This variable must be set to `development` or `staging`. If it's unset or set to `production` (or any other value), auto-verification will be skipped.
+    ```bash
+    # Example for .env.local or Netlify UI for staging
+    NEXT_PUBLIC_APP_ENV=staging
+    ```
+
+-   `SUPABASE_SERVICE_ROLE_KEY`: This key is **required** for the backend to perform the administrative action of marking an email as confirmed. Ensure this key is provided and has the necessary permissions in your Supabase project to update user attributes.
+    ```bash
+    # Example for .env.local or Netlify UI for staging
+    SUPABASE_SERVICE_ROLE_KEY=your_actual_supabase_service_role_key
+    ```
+
+If `NEXT_PUBLIC_APP_ENV` is correctly set but `SUPABASE_SERVICE_ROLE_KEY` is missing or invalid, the auto-verification will be skipped, and the system will fall back to requiring manual email verification. Refer to the server logs for `/api/auth/register` for more details if auto-verification is not working as expected.
 
 #### Social Authentication (Optional)
 1. Go to **Authentication** → **Providers** in your Supabase project dashboard.
