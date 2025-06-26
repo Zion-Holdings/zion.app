@@ -36,7 +36,7 @@ export default async function handler(
   }
 
   try {
-    const query = String(req.query.query || '').toLowerCase().trim();
+    const query = String((req.query as any).query || '').toLowerCase().trim();
     
     // Create cache key based on query
     const cacheKey = query 

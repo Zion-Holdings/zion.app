@@ -43,8 +43,7 @@ const ServicesMarketInsights = ({ stats }: { stats: any }) => (
       </div>
     </CardContent>
   </Card>
-  );
-};
+);
 
 // Filter controls
 const ServiceFilterControls = ({

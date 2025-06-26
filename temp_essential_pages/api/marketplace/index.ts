@@ -14,8 +14,8 @@ async function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const page = parseInt(req.query.page as string, 10) || 1;
-  const limit = parseInt(req.query.limit as string, 10) || 20;
+  const page = parseInt(((req.query as any).page as string, 10) || 1;
+  const limit = parseInt(((req.query as any).limit as string, 10) || 20;
   const skip = (page - 1) * limit;
 
   try {

@@ -315,8 +315,8 @@ export default async function handler(
     }
 
     // Handle pagination params - default limit to 12 as requested
-    const page = parseInt(req.query.page as string, 10) || 1;
-    const limit = Math.min(parseInt(req.query.limit as string, 10) || 12, 50); // Cap at 50 for performance
+    const page = parseInt(((req.query as any).page as string, 10) || 1;
+    const limit = Math.min(parseInt(((req.query as any).limit as string, 10) || 12, 50); // Cap at 50 for performance
     const skip = (page - 1) * limit;
 
     console.log(`Equipment API: page=${page}, limit=${limit}, skip=${skip}, total=${mockEquipment.length}`);

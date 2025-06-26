@@ -62,7 +62,7 @@ export default async function handler(
   }
 
   try {
-    const userId = req.query.userId as string;
+    const userId = ((req.query as any).userId as string;
     
     if (!userId) {
       return res.status(400).json({ error: 'User ID is required for recommendations' });

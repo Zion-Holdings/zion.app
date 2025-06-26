@@ -26,7 +26,7 @@ export const equipmentListings: ProductListing[] = [
     availability: '2-3 Weeks',
     brand: 'Dell',
     specifications: ['2U Rack Mount', 'Dual Intel Xeon', '128GB RAM', '2TB NVMe'],
-    stock: 5,
+    stock: 5
   },
   {
     id: 'network-switch-1',
@@ -49,7 +49,7 @@ export const equipmentListings: ProductListing[] = [
     location: 'North America',
     availability: '1-2 Weeks',
     brand: 'Cisco',
-    stock: 2,
+    stock: 2
     specifications: ['48-Port Gigabit', 'PoE+ Support', 'Layer 3', 'Stackable'],
   },
   {
@@ -73,7 +73,7 @@ export const equipmentListings: ProductListing[] = [
     featured: true,
     location: 'Global',
     availability: '4-6 Weeks',
-    stock: 0,
+    stock: 0
     brand: 'HPE',
     specifications: ['24TB Capacity', 'All-Flash', 'Predictive Analytics', '99.9999% Uptime'],
   },
@@ -96,7 +96,7 @@ export const equipmentListings: ProductListing[] = [
     rating: 4.6,
     reviewCount: 31,
     location: 'North America',
-    stock: 10,
+    stock: 10
     availability: 'Immediate',
     brand: 'APC',
     specifications: ['3000VA/2700W', 'LCD Display', 'Network Management', 'Hot-Swappable Batteries'],
@@ -120,7 +120,7 @@ export const equipmentListings: ProductListing[] = [
     rating: 5.0,
     reviewCount: 8,
     featured: true,
-    stock: 4,
+    stock: 4
     location: 'Global',
     availability: '8-12 Weeks',
     brand: 'NVIDIA',
@@ -143,7 +143,7 @@ export const equipmentListings: ProductListing[] = [
     images: ['https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&h=500'],
     createdAt: '2024-01-25T11:30:00.000Z',
     rating: 4.5,
-    stock: 7,
+    stock: 7
     reviewCount: 15,
     location: 'Global',
     availability: '6-8 Weeks',
@@ -166,7 +166,7 @@ export const equipmentListings: ProductListing[] = [
     },
     images: [DEFAULT_EQUIPMENT_IMAGE],
     createdAt: '2024-02-15T12:00:00.000Z',
-    stock: 1,
+    stock: 1
     rating: 4.6,
     reviewCount: 19,
     location: 'Global',
@@ -189,7 +189,7 @@ export const equipmentListings: ProductListing[] = [
       avatarUrl: 'https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=100&h=100',
     },
     images: [DEFAULT_EQUIPMENT_IMAGE],
-    stock: 3,
+    stock: 3
     createdAt: '2024-02-20T14:30:00.000Z',
     rating: 4.7,
     reviewCount: 22,
@@ -212,7 +212,7 @@ export const equipmentListings: ProductListing[] = [
       id: 'network-infra',
       avatarUrl: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=100&h=100',
     },
-    stock: 6,
+    stock: 6
     images: [DEFAULT_EQUIPMENT_IMAGE],
     createdAt: '2024-03-05T09:15:00.000Z',
     rating: 4.4,
@@ -242,7 +242,7 @@ export const equipmentListings: ProductListing[] = [
     reviewCount: 25,
     location: 'North America',
     availability: 'Immediate',
-    stock: 8,
+    stock: 8
     brand: 'SolarWinds',
     specifications: ['Real-time Monitoring', 'Custom Alerting', 'SNMP Support', 'Performance Analytics'],
   },
@@ -262,7 +262,7 @@ export const equipmentListings: ProductListing[] = [
     },
     images: [DEFAULT_EQUIPMENT_IMAGE],
     createdAt: '2024-03-12T08:20:00.000Z',
-    stock: 5,
+    stock: 5
     rating: 4.8,
     reviewCount: 33,
     location: 'Global',
@@ -286,7 +286,7 @@ export const equipmentListings: ProductListing[] = [
     },
     images: [DEFAULT_EQUIPMENT_IMAGE],
     createdAt: '2024-03-15T15:30:00.000Z',
-    stock: 4,
+    stock: 4
     rating: 4.5,
     reviewCount: 14,
     location: 'Global',

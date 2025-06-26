@@ -21,8 +21,8 @@ function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const q = String(req.query.q ?? '').toLowerCase().trim();
-  const limit = parseInt(String(req.query.limit ?? '5'), 10);
+  const q = String(((req.query as any).q ?? '').toLowerCase().trim();
+  const limit = parseInt(String(((req.query as any).limit ?? '5'), 10);
 
   if (!q) {
     return res.status(200).json([]);

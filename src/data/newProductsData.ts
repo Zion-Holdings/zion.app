@@ -21,7 +21,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 12,
     location: "Global",
     availability: "Immediate",
-    aiScore: 90
+    aiScore: 90,
   },
   {
     id: "np-voice-translate",
@@ -43,7 +43,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 8,
     location: "Global",
     availability: "Immediate",
-    aiScore: 88
+    aiScore: 88,
   },
   {
     id: "np-data-viz-dashboard",
@@ -65,7 +65,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 10,
     location: "North America",
     availability: "1-2 Weeks",
-    aiScore: 86
+    aiScore: 86,
   },
   {
     id: "np-iot-hub",
@@ -87,7 +87,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 6,
     location: "Europe",
     availability: "2-4 Weeks",
-    aiScore: 84
+    aiScore: 84,
   },
   {
     id: "np-code-review",
@@ -109,7 +109,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 14,
     location: "Global",
     availability: "Immediate",
-    aiScore: 87
+    aiScore: 87,
   },
   {
     id: "np-social-sentiment",
@@ -131,7 +131,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 9,
     location: "Global",
     availability: "Immediate",
-    aiScore: 85
+    aiScore: 85,
   },
   {
     id: "np-video-edit-suite",
@@ -153,7 +153,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 11,
     location: "Global",
     availability: "1-2 Weeks",
-    aiScore: 89
+    aiScore: 89,
   },
   {
     id: "np-ar-vr-generator",
@@ -175,7 +175,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 7,
     location: "North America",
     availability: "2-4 Weeks",
-    aiScore: 83
+    aiScore: 83,
   },
   {
     id: "np-ml-experiment",
@@ -197,7 +197,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 10,
     location: "Global",
     availability: "Immediate",
-    aiScore: 88
+    aiScore: 88,
   },
   {
     id: "np-chatbot-platform",
@@ -219,6 +219,6 @@ export const NEW_PRODUCTS: ProductListing[] = [
     reviewCount: 13,
     location: "Global",
     availability: "Immediate",
-    aiScore: 92
+    aiScore: 92,
   }
 ];

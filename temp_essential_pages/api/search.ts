@@ -38,11 +38,11 @@ function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const q = String(req.query.query ?? req.query.q ?? '')
+  const q = String(((req.query as any).query ?? ((req.query as any).q ?? '')
     .toLowerCase()
     .trim();
-  const page = parseInt(String(req.query.page ?? '1'), 10);
-  const limit = parseInt(String(req.query.limit ?? '20'), 10);
+  const page = parseInt(String(((req.query as any).page ?? '1'), 10);
+  const limit = parseInt(String(((req.query as any).limit ?? '20'), 10);
 
   if (!q) {
     return res.status(200).json({

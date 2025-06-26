@@ -10,7 +10,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   try {
     // Limit query param ?limit=
-    const limitParam = parseInt(req.query.limit as string, 10);
+    const limitParam = parseInt(((req.query as any).limit as string, 10);
     const listings = Number.isFinite(limitParam)
       ? MARKETPLACE_LISTINGS.slice(0, Math.max(limitParam, 0))
       : MARKETPLACE_LISTINGS;

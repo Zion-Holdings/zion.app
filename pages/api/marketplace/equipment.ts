@@ -96,10 +96,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
     // Get query parameters
-    const page = parseInt(req.query.page as string, 10) || 1;
-    const limit = parseInt(req.query.limit as string, 10) || 20;
-    const search = req.query.search as string;
-    const category = req.query.category as string;
+    const page = parseInt(((req.query as any).page as string, 10) || 1;
+    const limit = parseInt(((req.query as any).limit as string, 10) || 20;
+    const search = ((req.query as any).search as string;
+    const category = ((req.query as any).category as string;
 
     // Start with all equipment
     let equipment = MOCK_EQUIPMENT;

@@ -154,8 +154,6 @@ const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
     </CardContent>
   </Card>
 );
-};
-};
 
 // Filter controls
 const EquipmentFilterControls = ({

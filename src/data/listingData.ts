@@ -25,8 +25,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     featured: true,
     location: "Global",
     availability: "Immediate",
-    aiScore: 98
-    stock: 12,
+    aiScore: 98,
+    stock: 12
   },
   {
     id: "ai-service-2",
@@ -47,8 +47,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 32,
     location: "North America",
     availability: "4-6 Weeks",
-    aiScore: 92
-    stock: 3,
+    aiScore: 92,
+    stock: 3
   },
   {
     id: "ai-equipment-3",
@@ -69,8 +69,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     featured: true,
     location: "Global",
     availability: "2-3 Weeks",
-    aiScore: 95
-    stock: 0,
+    aiScore: 95,
+    stock: 0
   },
   {
     id: "ai-content-4",
@@ -91,8 +91,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 124,
     location: "Global",
     availability: "Immediate",
-    aiScore: 88
-    stock: 7,
+    aiScore: 88,
+    stock: 7
   },
   {
     id: "ai-analytics-5",
@@ -112,8 +112,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 47,
     location: "North America",
     availability: "1-2 Weeks",
-    aiScore: 90
-    stock: 15,
+    aiScore: 90,
+    stock: 15
   },
   {
     id: "ai-vision-6",
@@ -135,8 +135,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     featured: true,
     location: "Global",
     availability: "Immediate",
-    aiScore: 94
-    stock: 0,
+    aiScore: 94,
+    stock: 0
   },
   {
     id: "ai-storage-13",
@@ -156,8 +156,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 27,
     location: "Global",
     availability: "Immediate",
-    aiScore: 87
-    stock: 8,
+    aiScore: 87,
+    stock: 8
   },
   {
     id: "ai-edge-14",
@@ -177,8 +177,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 15,
     location: "Global",
     availability: "1-2 Weeks",
-    aiScore: 90
-    stock: 6,
+    aiScore: 90,
+    stock: 6
   },
   {
     id: "ai-labeling-15",
@@ -198,8 +198,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 23,
     location: "Europe",
     availability: "2-3 Weeks",
-    aiScore: 85
-    stock: 2,
+    aiScore: 85,
+    stock: 2
   },
     id: "ai-security-16",
     title: "AI Security Monitoring Suite",
@@ -218,8 +218,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 34,
     location: "North America",
     availability: "Immediate",
-    aiScore: 92
-    stock: 5,
+    aiScore: 92,
+    stock: 5
   },
   {
     id: "ai-marketing-17",
@@ -239,8 +239,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 52,
     location: "Global",
     availability: "Immediate",
-    stock: 8,
-    aiScore: 89
+    stock: 8
+    aiScore: 89,
   },
   {
     id: "ai-cloudgpu-18",
@@ -260,8 +260,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 48,
     location: "Global",
     availability: "Immediate",
-    aiScore: 93
-    stock: 4,
+    aiScore: 93,
+    stock: 4
   },
   {
     id: "talent-19",
@@ -284,8 +284,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 20,
     location: "Remote",
     availability: "Immediate",
-    stock: 9,
-    aiScore: 91
+    stock: 9
+    aiScore: 91,
   },
   {
     id: "innovation-20",
@@ -308,8 +308,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 12,
     location: "Global",
     availability: "Scheduled",
-    aiScore: 88
-    stock: 1,
+    aiScore: 88,
+    stock: 1
   }
 ];
 

@@ -138,11 +138,11 @@ async function handler(
   const startTime = Date.now();
 
   try {
-    const q = String(req.query.query ?? req.query.q ?? '')
+    const q = String(((req.query as any).query ?? ((req.query as any).q ?? '')
       .toLowerCase()
       .trim();
-    const page = parseInt(String(req.query.page ?? '1'), 10);
-    const limit = Math.min(parseInt(String(req.query.limit ?? '20'), 10), 100); // Cap at 100
+    const page = parseInt(String(((req.query as any).page ?? '1'), 10);
+    const limit = Math.min(parseInt(String(((req.query as any).limit ?? '20'), 10), 100); // Cap at 100
 
     // Return empty results for empty query
     if (!q) {
@@ -203,7 +203,7 @@ async function handler(
       totalCount: 0,
       page: 1,
       limit: 20,
-      query: String(req.query.query ?? req.query.q ?? ''),
+      query: String(((req.query as any).query ?? ((req.query as any).q ?? ''),
       hasMore: false,
     });
   }
