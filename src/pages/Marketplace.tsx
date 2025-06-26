@@ -4,6 +4,7 @@ import ProductCard from '@/components/ProductCard';
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
+import { AuthModal } from '@/components/auth/AuthModal';
 import { ArrowUp, Filter, SortAsc, Sparkles, TrendingUp, Star } from 'lucide-react';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { ErrorState } from '@/components/jobs/applications/ErrorState';
@@ -231,6 +232,7 @@ export default function Marketplace() {
   const { isAuthenticated, user } = useAuth();
   const firstRenderRef = useRef(true);
   const isRefreshingAfterFilterChange = useRef(false); // New ref to track refresh state
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
@@ -245,15 +247,7 @@ export default function Marketplace() {
   // Handle Add Product button with authentication check
   const handleAddProduct = useCallback(() => {
     if (!isAuthenticated) {
-      toast({
-        title: "Login Required",
-        description: "Please log in to add products to the marketplace.",
-        variant: "destructive",
-      });
-      
-      // Redirect to login with return URL to marketplace
-      const returnUrl = encodeURIComponent('/marketplace');
-      router.push(`/login?next=${returnUrl}`);
+      setIsAuthModalOpen(true); // Use the new auth modal
       return;
     }
 
@@ -350,11 +344,7 @@ export default function Marketplace() {
       // Show more specific error messages based on the error type
       if (err.response?.status === 403) {
         console.error("403 Forbidden error - authentication issue");
-        toast({
-          title: "Access Denied",
-          description: "Please log in to access the marketplace.",
-          variant: "destructive",
-        });
+        // Don't show toast here, let the AuthModal handle it or rely on ProductCard's tooltip
       } else if (err.response?.status === 500) {
         console.error("500 Server error");
         toast({
@@ -501,6 +491,11 @@ export default function Marketplace() {
   // Main marketplace render
   return (
     <div className="container py-8">
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        returnUrl={router.asPath} // Pass current path for better UX on return
+      />
       {/* Header */}
       <motion.div 
         className="text-center mb-8"
@@ -582,6 +577,10 @@ export default function Marketplace() {
                   description: product.description || ''
                 }}
                 onBuy={async () => {
+                  if (!isAuthenticated) {
+                    setIsAuthModalOpen(true);
+                    return; // Stop further execution
+                  }
                   try {
                     await router.push(`/checkout/${product.id}`);
                   } catch (error) {
@@ -596,7 +595,7 @@ export default function Marketplace() {
                     throw error;
                   }
                 }}
-                buyDisabled={false}
+                buyDisabled={false} // Still false, ProductCard handles its own disabled state based on auth
               />
               
               {/* AI Score Badge */}
