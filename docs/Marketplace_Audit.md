@@ -47,6 +47,7 @@ Filters exist but no descriptions.
 
 ### User Reviews
 No user reviews shown.
+- Add product ratings & reviews once marketplace items are live.
 - **Exceptional Performance** – Rented the cloud GPU for a week and experienced seamless scaling. Setup was easy, and the support team answered questions quickly. My training jobs finished on schedule with excellent reliability. **★★★★★**
 - **Great Value** – I needed extra computing power for a short project. The rental price was fair and the GPUs performed flawlessly. Customer service helped configure the environment, making deployment straightforward and stress-free. **★★★★★**
 - **Reliable Service** – Cloud GPU rental let us meet a tight deadline without buying hardware. Performance stayed consistent under heavy loads and billing was transparent. We'll use this provider again for future experiments. **★★★★★**
