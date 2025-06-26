@@ -26,7 +26,7 @@ import { useAuth } from "@/hooks/useAuth";
 
 // Define form schema
 const talentProfileSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters long"),
+  name: z.string().min(2, "Full Name must be at least 2 characters long"),
   title: z.string().min(5, "Professional title is required"),
   bio: z.string().min(50, "Bio must be at least 50 characters long").max(1000, "Bio cannot exceed 1000 characters"),
   location: z.string().min(2, "Location is required"),

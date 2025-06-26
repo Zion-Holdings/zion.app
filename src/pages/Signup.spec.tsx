@@ -259,7 +259,7 @@ describe('Signup Page', () => {
 
     await waitFor(() => {
       // Check for some of the expected validation messages
-      expect(screen.getByText('Name must be at least 2 characters')).toBeInTheDocument();
+      expect(screen.getByText('Full Name must be at least 2 characters')).toBeInTheDocument();
       expect(screen.getByText('Please enter a valid email')).toBeInTheDocument();
       expect(screen.getByText('Password must be at least 8 characters')).toBeInTheDocument();
       // For terms accepted:

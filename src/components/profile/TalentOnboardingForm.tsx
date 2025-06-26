@@ -27,7 +27,7 @@ import { supabase } from "@/integrations/supabase/client";
 const talentSchema = z.object({
   // Step 1: Basic Info
   basicInfo: z.object({
-    fullName: z.string().min(2, "Name must be at least 2 characters"),
+    fullName: z.string().min(2, "Full Name must be at least 2 characters"),
     professionalTitle: z.string().min(2, "Professional title is required"),
     profilePicture: z.any().optional(),
   }),

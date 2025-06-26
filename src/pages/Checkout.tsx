@@ -14,7 +14,7 @@ import { ControllerRenderProps } from 'react-hook-form';
 
 // Form validation schema
 const checkoutSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
+  name: z.string().min(2, 'Full Name must be at least 2 characters'),
   email: z.string().email('Please enter a valid email address'),
   address: z.string().min(5, 'Address must be at least 5 characters'),
   city: z.string().min(2, 'City must be at least 2 characters'),
