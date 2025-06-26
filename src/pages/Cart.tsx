@@ -262,17 +262,10 @@ export default function CartPage() {
 
                 {/* Authentication Status */}
                 <div className="border-t border-zion-cyan/20 pt-4">
-                  {isAuthenticated ? (
+                  {isAuthenticated && (
                     <div className="flex items-center gap-2 text-green-400 mb-4">
                       <User className="h-4 w-4" />
                       <span className="text-sm">Signed in as {user?.email}</span>
-                    </div>
-                  ) : (
-                    <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 mb-4">
-                      <p className="text-yellow-400 text-sm flex items-center gap-2">
-                        <User className="h-4 w-4" />
-                        Sign in for faster checkout
-                      </p>
                     </div>
                   )}
                   
@@ -292,16 +285,7 @@ export default function CartPage() {
                     )}
                   </Button>
                   
-                  {!isAuthenticated && (
-                    <div className="mt-3 text-center">
-                      <Link 
-                        href="/auth/login" 
-                        className="text-zion-cyan hover:text-white text-sm transition-colors"
-                      >
-                        Have an account? Sign in
-                      </Link>
-                    </div>
-                  )}
+                  {/* Login link removed to streamline guest checkout experience */}
                 </div>
 
                 {/* Security Features */}
