@@ -121,15 +121,18 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
           </div>
         </div>
         {post.featuredImage && (
-          <OptimizedImage
-            src={post.featuredImage}
-            alt={post.title}
-            className="w-full rounded mb-6"
-            onError={(e) => {
-              const target = e.currentTarget as HTMLImageElement;
-              target.src = '/images/blog-placeholder.svg';
-            }}
-          />
+          <div className="aspect-[16/9] w-full relative overflow-hidden rounded-lg mb-6">
+            <OptimizedImage
+              src={post.featuredImage}
+              alt={post.title}
+              className="object-cover w-full h-full"
+              fill={true} // Add fill for Next.js OptimizedImage if layout="fill" behavior is intended within a sized parent
+              onError={(e) => {
+                const target = e.currentTarget as HTMLImageElement;
+                target.src = '/images/blog-placeholder.svg';
+              }}
+            />
+          </div>
         )}
         <ReactMarkdown>{body}</ReactMarkdown>
         <AuthorBio author={post.author} />
