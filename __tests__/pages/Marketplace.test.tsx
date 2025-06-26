@@ -5,11 +5,27 @@ import Marketplace from '@/pages/Marketplace'; // Adjust path as necessary
 import { server } from '@/mocks/server'; // MSW server
 import { http, HttpResponse } from 'msw';
 import { ProductListing } from '@/types/listings';
+import { MARKETPLACE_LISTINGS as allStaticMarketplaceData } from '@/data/marketplaceData';
+import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
+import { SERVICES as allStaticServiceData } from '@/data/servicesData';
+
+
+// Combine all static data sources for link checking
+const allKnownProductsForTest = [
+  ...allStaticMarketplaceData,
+  ...INITIAL_MARKETPLACE_PRODUCTS,
+  ...allStaticServiceData,
+];
 
 // Mock ProductCard to simplify Marketplace tests
+// Modify the ProductCard mock to include a link
 jest.mock('@/components/ProductCard', () => {
   return function DummyProductCard({ product }: { product: ProductListing }) {
-    return <div data-testid="product-card">{product.title}</div>;
+    return (
+      <div data-testid="product-card">
+        <a href={`/marketplace/listing/${product.id}`}>{product.title}</a>
+      </div>
+    );
   };
 });
 
@@ -187,4 +203,78 @@ describe('Marketplace Page', () => {
   // Example:
   // test('filters products by category', async () => { ... });
   // test('sorts products by price', async () => { ... });
+
+  test('product cards link to valid product pages', async () => {
+    const mockProducts: ProductListing[] = [
+      { id: 'prod-1', title: 'Product Alpha', description: 'Desc Alpha', category: 'AI Models', price: 100, currency: 'USD', tags: [], author: { name: 'Auth1', id: 'a1' }, images: [], createdAt: new Date().toISOString(), rating: 4.5, reviewCount: 10, aiScore: 92 },
+      { id: 'innovation-20', title: 'AI Innovation Bootcamp', description: 'Bootcamp desc', category: 'Innovation', price: 3000, currency: 'USD', tags: [], author: { name: 'InnovateLabs', id: 'innovate-labs' }, images: [], createdAt: new Date().toISOString(), rating: 4.7, reviewCount: 12, aiScore: 88 },
+      { id: 'prod-3', title: 'Product Gamma', description: 'Desc Gamma', category: 'Hardware', price: 50, currency: 'USD', tags: [], author: { name: 'Auth3', id: 'a3' }, images: [], createdAt: new Date().toISOString(), rating: 4.0, reviewCount: 5, aiScore: 90 },
+    ];
+
+    // Mock the API response from @/services/marketplace
+    // This is a simplified mock for the service itself.
+    // The component uses dynamic import, so this needs to be hoisted by Jest.
+    jest.mock('@/services/marketplace', () => ({
+      ...jest.requireActual('@/services/marketplace'), // Import and retain default exports
+      fetchProducts: jest.fn().mockResolvedValue(mockProducts), // Mock specific function
+    }));
+
+    // MSW handler for the initial fetch from the component's perspective via /api/products
+    // This is what the component's internal useInfiniteScrollPagination will trigger.
+    server.use(
+      http.get('/api/products', ({ request }) => {
+        const url = new URL(request.url);
+        // Ensure this matches the component's initial fetch parameters
+        if (url.searchParams.get('page') === '1' && url.searchParams.get('limit') === '16') {
+          // The fetchProducts hook in Marketplace.tsx expects { items, hasMore, total }
+          return HttpResponse.json({
+            items: mockProducts,
+            hasMore: false, // For simplicity, assume all products fit on one page for this test
+            total: mockProducts.length,
+          });
+        }
+        // Fallback for other calls if any, or if params don't match
+        return HttpResponse.json({ items: [], hasMore: false, total: 0 });
+      })
+    );
+
+    const queryClient = createTestQueryClient();
+    renderMarketplace(queryClient);
+
+    await waitFor(() => {
+      expect(screen.getByText('Product Alpha')).toBeInTheDocument();
+      expect(screen.getByText('AI Innovation Bootcamp')).toBeInTheDocument();
+      expect(screen.getByText('Product Gamma')).toBeInTheDocument();
+    }, { timeout: 3000 }); // Increased timeout for potential async operations
+
+    const productCards = screen.getAllByTestId('product-card');
+    expect(productCards).toHaveLength(mockProducts.length);
+
+    // Prepare combined static data for link validation
+    // These imports need to be at the top of the file.
+    // For this diff, we assume they are already there or will be added.
+    // import { MARKETPLACE_LISTINGS as allStaticMarketplaceData } from '@/data/marketplaceData';
+    // import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
+    // import { SERVICES as allStaticServiceData } from '@/data/servicesData';
+    // const allKnownProductsForTest = [...allStaticMarketplaceData, ...INITIAL_MARKETPLACE_PRODUCTS, ...allStaticServiceData];
+    // For the purpose of this specific test, we'll just check against mockProducts.
+    // A more comprehensive test could use allKnownProductsForTest.
+
+    productCards.forEach(card => {
+      const link = card.querySelector('a');
+      expect(link).toBeInTheDocument();
+      const href = link?.getAttribute('href');
+      expect(href).toMatch(/^\/marketplace\/listing\//);
+
+      const slugFromLink = href?.split('/').pop();
+      expect(slugFromLink).toBeTruthy();
+
+      const isMockedProduct = mockProducts.some(mp => mp.id === slugFromLink);
+      expect(isMockedProduct).toBe(true, `Link slug "${slugFromLink}" for product "${link?.textContent}" does not match any ID in the mocked product list for this test run.`);
+
+      if (link?.textContent === 'AI Innovation Bootcamp') {
+        expect(href).toBe('/marketplace/listing/innovation-20');
+      }
+    });
+  });
 });

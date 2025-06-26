@@ -94,7 +94,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     aiScore: 91
   },
   {
-    id: "innovation-5",
+    id: "innovation-20",
     title: "AI Innovation Bootcamp",
     description:
       "Four-week program turning AI ideas into prototypes with expert mentorship.",
