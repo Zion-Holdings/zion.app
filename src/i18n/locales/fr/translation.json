@@ -110,6 +110,10 @@
     "submitting": "Submitting...",
     "post_job_button": "Post Job"
   },
+  "marketplace": {
+    "hero_title": "Marché de l'IA",
+    "hero_subtitle": "Découvrez des solutions d'IA et de technologie de pointe"
+  },
   "jobs": {
     "post_job_title": "Post a Job",
     "post_job_description": "Fill out the form below to post your job and find the perfect talent",

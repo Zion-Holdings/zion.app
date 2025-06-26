@@ -112,6 +112,10 @@
     "how_it_works_title": "How It Works",
     "how_it_works_subtitle": "A simple four-step process to connect technology providers with clients"
   },
+  "marketplace": {
+    "hero_title": "AI Marketplace",
+    "hero_subtitle": "Discover cutting-edge AI and IT solutions"
+  },
   "jobs": {
     "post_job_title": "Post a Job",
     "post_job_description": "Fill out the form below to post your job and find the perfect talent",
