@@ -5,7 +5,7 @@ export function ScrollToTop() {
   const router = useRouter();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [router.asPath]); // Using router.asPath to trigger on any URL change
 
   return null;
