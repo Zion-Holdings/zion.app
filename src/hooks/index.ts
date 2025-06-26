@@ -19,3 +19,4 @@ export * from './useFeatureUsage';
 export * from "./useAdvancedOnboardingStatus";
 export * from './useTokenBalance';
 export * from './useSkeletonTimeout';
+export * from './useCurrency';
