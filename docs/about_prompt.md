@@ -1,11 +1,10 @@
 # About Page Prompts
 
-7. About Page
+12. About Page (/about)
 
-| Element | AI Prompt | Purpose |
+| Area | AI Prompt | Goal |
 | --- | --- | --- |
-| Mission Statement | "Write a 40-word mission that positions Zion as the catalyst for responsible AI innovation worldwide." | Clear vision. |
-| Company Timeline | "Create 5 milestone blurbs (Year + 15 words) from founding to present." | Shows growth. |
-| Leadership Bios | "For a fictional CEO, write a 60-word bio highlighting AI expertise and community focus." | Humanizes team. |
-| Core Values | "List 4 core values (one word each) and 20-word explanations." | Culture showcase. |
-| Sustainability Pledge | "Draft a 70-word statement on Zion’s commitment to green IT and carbon-neutral data centers." | CSR emphasis. |
+| Mission statement | "Write a 40-word mission statement positioning Zion as the bridge between AI innovators and global businesses." | Brand identity |
+| Timeline | "Create a 6-milestone company timeline (year + 15-word description each)." | Storytelling |
+| Team bios | "Provide 80-word bios for CEO, CTO, and Head of Community." | Humanize brand |
+| Values | "List 5 core values (≤3 words each) with 20-word explanations." | Culture showcase |
