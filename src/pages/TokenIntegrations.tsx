@@ -33,22 +33,118 @@ export default function TokenIntegrations() {
   const { address, isConnected } = useWallet();
   const [fromChain, setFromChain] = useState<string>('ethereum');
   const [toChain, setToChain] = useState<string>('polygon');
+  const [amount, setAmount] = useState<string>('100'); // Amount of ZION$ to bridge
+  const [fee, setFee] = useState<string | null>(null);
   const [txHash, setTxHash] = useState<string | null>(null);
   const [status, setStatus] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const [region, setRegion] = useState('');
   const [stake, setStake] = useState(0);
   const [suggested, setSuggested] = useState<string | null>(null);
 
-  const handleBridge = () => {
-    setStatus('Bridging...');
+  // --- Mock LayerZero Functions ---
+  const mockGetLayerZeroFee = async (
+    sourceChain: string,
+    destinationChain: string,
+    tokenAmount: string
+  ): Promise<string> => {
+    console.log(
+      `[Mock L0] Estimating fee for ${tokenAmount} ZION$ from ${sourceChain} to ${destinationChain}`
+    );
+    // Simulate network delay and fee calculation
+    await new Promise(resolve => setTimeout(resolve, 500));
+    const calculatedFee = (parseFloat(tokenAmount) * 0.001).toFixed(4); // Example fee: 0.1%
+    return `${calculatedFee} ZION$`;
+  };
+
+  const mockSendTokenViaLayerZero = async (
+    sourceChain: string,
+    destinationChain: string,
+    tokenAmount: string,
+    userAddress: string | null
+  ): Promise<{ transactionHash: string; arrivalTimeEstimate: string }> => {
+    console.log(
+      `[Mock L0] Sending ${tokenAmount} ZION$ from ${sourceChain} to ${destinationChain} for address ${userAddress}`
+    );
+    // Simulate network delay for transaction
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    // Record onchain tx logs (placeholder)
+    console.log(`[Mock L0] Recording on-chain tx log for source chain ${sourceChain}`);
+    // Enforce rate limits (placeholder)
+    console.log(`[Mock L0] Checking rate limits for user ${userAddress}`);
+    // Use burn-and-mint model if tokens are wrapped (placeholder logic)
+    if (sourceChain !== 'ethereum' || destinationChain !== 'ethereum') {
+      console.log('[Mock L0] Using burn-and-mint model for wrapped ZION$');
+    }
+
+    const randomHash = `0x${[...Array(64)].map(() => Math.floor(Math.random() * 16).toString(16)).join('')}`;
+    const arrivalTime = Math.floor(Math.random() * (45 - 10 + 1)) + 10; // Random time between 10-45 seconds
+
+    return {
+      transactionHash: randomHash,
+      arrivalTimeEstimate: `${arrivalTime}s`,
+    };
+  };
+  // --- End Mock LayerZero Functions ---
+
+  const handleEstimateFee = async () => {
+    if (!fromChain || !toChain || !amount || parseFloat(amount) <= 0) {
+      setError('Please select chains and enter a valid amount.');
+      setFee(null);
+      return;
+    }
+    setError(null);
+    setStatus('Estimating fee...');
+    setFee(null);
+    try {
+      const estimatedFee = await mockGetLayerZeroFee(fromChain, toChain, amount);
+      setFee(estimatedFee);
+      setStatus('Fee estimated.');
+    } catch (e: any) {
+      setError(`Fee estimation failed: ${e.message}`);
+      setStatus(null);
+    }
+  };
+
+  const handleBridge = async () => {
+    if (!isConnected || !address) {
+      setError('Please connect your wallet.');
+      return;
+    }
+    if (!fromChain || !toChain || !amount || parseFloat(amount) <= 0) {
+      setError('Please select chains and enter a valid amount to bridge.');
+      return;
+    }
+    setError(null);
+    setStatus(`Initiating bridge for ${amount} ZION$ from ${fromChain} to ${toChain}...`);
     setTxHash(null);
+
     // TODO: integrate actual LayerZero bridge logic
-    // Record onchain tx logs and enforce rate limits
-    // Use burn-and-mint model if tokens are wrapped
-    setTimeout(() => {
-      setTxHash('0xabc123');
-      setStatus(`ZION$ arrived on ${toChain} in 12s`);
-    }, 1200);
+    // This is where you would replace mockSendTokenViaLayerZero with actual LayerZero SDK calls.
+    // Example steps:
+    // 1. Get signer from useWallet()
+    // 2. Instantiate LayerZero Endpoint contract
+    // 3. Call LayerZero's send() or equivalent function, passing parameters like:
+    //    - destination chain ID (LayerZero specific)
+    //    - recipient address (likely `address`)
+    //    - amount
+    //    - adapter parameters (for gas, etc.)
+    //    - fee (obtained from `estimateFee` or similar LayerZero SDK function)
+
+    try {
+      // Optional: Re-estimate fee or use a pre-estimated one if UI supports it
+      const currentFee = fee || await mockGetLayerZeroFee(fromChain, toChain, amount);
+      setFee(currentFee); // Update fee display if it was re-estimated
+      setStatus(`Bridging with fee: ${currentFee}. Please confirm in your wallet.`);
+
+      const result = await mockSendTokenViaLayerZero(fromChain, toChain, amount, address);
+      setTxHash(result.transactionHash);
+      setStatus(`Transaction submitted! ZION$ expected on ${toChain} in approx. ${result.arrivalTimeEstimate}. Tx: ${result.transactionHash}`);
+    } catch (e: any) {
+      console.error("Bridging error:", e);
+      setError(`Bridging failed: ${e.message}`);
+      setStatus(null);
+    }
   };
 
   const handleSuggest = () => {
@@ -104,9 +200,23 @@ export default function TokenIntegrations() {
                   </SelectContent>
                 </Select>
               </div>
-              <Button onClick={handleBridge}>Bridge Now</Button>
-              {txHash && <p className="text-white">Tx Hash: {txHash}</p>}
-              {status && <p className="text-white">{status}</p>}
+              <Input
+                type="number"
+                placeholder="Amount of ZION$ to bridge"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                className="text-black"
+              />
+              <div className="flex gap-4">
+                <Button onClick={handleEstimateFee} variant="outline">Estimate Fee</Button>
+                <Button onClick={handleBridge} disabled={!isConnected || status?.startsWith('Initiating') || status?.startsWith('Bridging')}>
+                  {status?.startsWith('Initiating') || status?.startsWith('Bridging...') ? 'Processing...' : 'Bridge Now'}
+                </Button>
+              </div>
+              {fee && <p className="text-sm text-gray-300">Estimated Fee: {fee}</p>}
+              {status && <p className="text-sm text-gray-200 mt-2">{status}</p>}
+              {txHash && <p className="text-sm text-green-400 mt-1">Tx Hash: <a href={`#${txHash}`} className="underline hover:text-green-300 break-all" target="_blank" rel="noopener noreferrer">{txHash}</a></p>}
+              {error && <p className="text-sm text-red-400 mt-1">Error: {error}</p>}
             </CardContent>
           </Card>
 

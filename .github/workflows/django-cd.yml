@@ -34,7 +34,26 @@ jobs:
           push: true
           tags: ${{ secrets.REGISTRY_URL }}/zion-django-backend:${{ github.sha }} # Different image name
 
-      # TODO: Add Trivy scan step for this image, similar to frontend cd.yml
+      - name: Run Trivy vulnerability scanner for Django
+        uses: aquasecurity/trivy-action@0.20.0
+        with:
+          image-ref: '${{ secrets.REGISTRY_URL }}/zion-django-backend:${{ github.sha }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
+          # Optional: To fail on specific CVEs, add:
+          # cve-ids: 'CVE-2021-12345,CVE-2022-67890'
+          # Optional: For Sarif report to upload to GitHub Security tab
+          # sarif-file: 'trivy-django-results.sarif'
+
+      # If using Sarif report, uncomment and add this step to upload it
+      # - name: Upload Trivy scan results to GitHub Security tab
+      #   uses: github/codeql-action/upload-sarif@v2
+      #   if: always() # Ensure this runs even if Trivy fails the build
+      #   with:
+      #     sarif_file: 'trivy-django-results.sarif'
 
       - name: Set up kubectl
         uses: azure/setup-kubectl@v3

@@ -108,5 +108,5 @@
    - `git checkout -- .` (to revert any intentional modifications made during testing)
    - Remove any dummy files created for testing (e.g., `.env`, `another_config.js`) and revert changes to `scripts/config_integrity_check.txt`.
 
-**Note on a potential script improvement (identified during test planning):**
-For Test Case 4 (File Deletion), the current script logs the deletion and removes the file from `checksums.txt`. A potential enhancement would be for the script to attempt `git checkout HEAD -- <deleted_file_path>` if the file was previously tracked and is found to be missing, thereby attempting an auto-revert for deletions as well. This is not current behavior.
+**Note on Test Case 4 (File Deletion):**
+The script correctly attempts to restore Git-tracked files that are found to be deleted, using `git checkout HEAD -- <deleted_file_path>`. This behavior is covered by the expected outcomes in Test Case 4.
