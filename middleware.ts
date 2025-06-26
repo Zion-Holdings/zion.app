@@ -30,6 +30,7 @@ export async function middleware(request: NextRequest) {
     '/status',
     '/api-status',
     '/categories',
+    '/category',
     '/search',
     '/equipment', // Add equipment as public route
     '/talent', // Add talent as public route
