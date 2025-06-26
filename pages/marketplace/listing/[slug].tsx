@@ -15,6 +15,13 @@ import { addItem } from '@/store/cartSlice';
 import { toast } from '@/hooks/use-toast';
 import { getBreadcrumbsForPath } from '@/utils/routeUtils';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 
 interface ListingPageProps {
   listing: ProductListing | null;
@@ -48,13 +55,27 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
         <link rel="canonical" href={canonicalUrl} />
       </Head>
       <BreadcrumbJsonLd breadcrumbs={breadcrumbs} />
-      <nav className="max-w-3xl mx-auto mt-4 px-4 text-sm text-muted-foreground space-x-1" aria-label="Breadcrumb">
-        <Link href="/" className="hover:underline">Home</Link>
-        <span>/</span>
-        <Link href="/marketplace" className="hover:underline">Marketplace</Link>
-        <span>/</span>
-        <span aria-current="page" className="text-foreground font-medium">{listing.title}</span>
-      </nav>
+      <Breadcrumb className="max-w-3xl mx-auto mt-4 px-4 text-sm text-muted-foreground">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/">Home</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/marketplace">Marketplace</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild aria-current="page">
+              <span>{listing.title}</span>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
       <main className="max-w-3xl mx-auto py-8 px-4">
         <h1 className="text-2xl font-bold mb-4">{listing.title}</h1>
         {listing.images?.length ? (
