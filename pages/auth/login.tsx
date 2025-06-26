@@ -14,71 +14,89 @@ const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [isCheckingSession, setIsCheckingSession] = useState(true);
+  const [sessionCheckTimedOut, setSessionCheckTimedOut] = useState(false); // New state for timeout
   const [isEmailUnverified, setIsEmailUnverified] = useState(false);
   const [verificationEmailSent, setVerificationEmailSent] = useState(false);
   const [isResendingVerification, setIsResendingVerification] = useState(false);
 
   useEffect(() => {
+    let mounted = true;
+
     const checkSession = async () => {
+      if (!mounted) return;
       setIsCheckingSession(true);
+
       if (!isSupabaseConfigured) {
         console.warn('Supabase is not configured. Skipping session check.');
-        setIsCheckingSession(false);
+        if (mounted) setIsCheckingSession(false);
         return;
       }
       
-      // Add timeout to prevent infinite loading
       const timeoutId = setTimeout(() => {
+        if (!mounted) return;
         console.warn('Session check timeout after 5 seconds');
-        setIsCheckingSession(false);
+        if (mounted) {
+          setSessionCheckTimedOut(true); // Set timeout flag
+          setIsCheckingSession(false); // Show form if timeout
+        }
       }, 5000);
       
       try {
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
         clearTimeout(timeoutId);
-        
+        if (!mounted) return;
+
         if (sessionError) {
           console.error('Error getting session:', sessionError);
           setError(sessionError as any);
-        } else if ((session as any)?.user) {
-          setUser((session as any).user);
-          console.log('User session found:', (session as any).user);
+        } else if (session?.user) {
+          setUser(session.user);
+          console.log('User session found:', session.user);
           const returnTo = router.query.returnTo as string || '/dashboard';
-          console.log('User is authenticated, redirecting to:', returnTo);
+          console.log('User is authenticated by getSession, redirecting to:', returnTo);
           router.push(returnTo);
         }
+        // If no user, do nothing here, allow form to render
       } catch (e) {
+        if (!mounted) return;
         console.error('Exception during session check:', e);
-        clearTimeout(timeoutId);
+        clearTimeout(timeoutId); // Ensure timeout is cleared on error too
       } finally {
-        setIsCheckingSession(false);
+        if (mounted) {
+          setIsCheckingSession(false);
+        }
       }
     };
 
     checkSession();
 
+    let authListenerSubscription: any = null;
     if (isSupabaseConfigured) {
         const { data: authListener } = supabase.auth.onAuthStateChange((_event: any, session: any) => {
+          if (!mounted) return;
           console.log('Auth state changed:', _event, session);
           const currentUser = session?.user ?? null;
-          setUser(currentUser);
-          if (currentUser && !isLoading && !isCheckingSession) { // Ensure not in initial loading/checking phase
+          setUser(currentUser); // Update user state, important for UI reacting to external logout/login
+
+          // Only redirect from listener if initial check is complete AND not currently handling a login submission
+          if (currentUser && !isCheckingSession && !isLoading) {
             const returnTo = router.query.returnTo as string || '/dashboard';
-            console.log('User authenticated via listener, redirecting to:', returnTo);
-            router.push(returnTo);
+            console.log('User authenticated via listener, initial check done, redirecting to:', returnTo);
+            // Avoid redirecting if already on the target page or if it's the login page itself without returnTo
+            if (router.pathname !== returnTo || (returnTo === '/dashboard' && router.pathname === '/auth/login' && !router.query.returnTo)) {
+                 router.push(returnTo);
+            }
           }
         });
-
-        return () => {
-          authListener?.subscription.unsubscribe();
-        };
-      }
+        authListenerSubscription = authListener?.subscription;
+    }
       
-      // Return cleanup function for all code paths
-      return () => {
-        // No cleanup needed when Supabase is not configured
-      };
-  }, [router, isLoading, isCheckingSession]); // Added isLoading and isCheckingSession to dependencies
+    return () => {
+      mounted = false;
+      authListenerSubscription?.unsubscribe();
+    };
+  }, [router]); // Simplified dependencies: router is the main trigger for re-evaluation of returnTo.
+                // isLoading and isCheckingSession are internal states managed by this effect.
 
   const handleResendVerification = async () => {
     if (!email) {
@@ -245,6 +263,21 @@ const LoginPage = () => {
               </Link>
             </p>
           </div>
+
+          {/* Session Check Timeout Notice */}
+          {sessionCheckTimedOut && !user && !error && !isEmailUnverified && (
+            <div className="bg-yellow-50 border border-yellow-200 rounded-md p-4 mb-4">
+              <div className="flex items-start">
+                <Clock className="h-5 w-5 text-yellow-400 mt-0.5 mr-3" />
+                <div className="flex-1">
+                  <h3 className="text-sm font-medium text-yellow-800">Session Check Timed Out</h3>
+                  <div className="mt-1 text-sm text-yellow-700">
+                    <p>We couldn't verify your session status quickly. Please try logging in or refresh the page.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Email verification notice */}
           {isEmailUnverified && (
