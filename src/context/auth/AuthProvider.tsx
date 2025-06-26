@@ -188,163 +188,199 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       // Inside the onAuthStateChange callback
       async (event: any, session: any) => {
-              if (process.env.NODE_ENV === 'development') {
-                      logger.debug('AuthProvider: onAuthStateChange entered', { isLoading, event, sessionExists: !!session });
-              }
-      
-              setIsLoading(true); // Ensure isLoading is true at the start
-              if (process.env.NODE_ENV === 'development') {
-                console.log('[AuthProvider DEBUG] onAuthStateChange: setIsLoading(true) called. New isLoading:', isLoading);
-              }
-      
-              try {
-                if (session?.user) {
-                  if (process.env.NODE_ENV === 'development') {
-                    console.log('[AuthProvider DEBUG] Session and user found. User ID:', session.user.id);
-                  }
+        if (process.env.NODE_ENV === 'development') {
+            logger.debug('AuthProvider: onAuthStateChange entered', { isLoading, event, sessionExists: !!session });
+        }
 
-                  // Inner try-catch for profile fetching and mapping
-                  try {
+        // Only set isLoading true if we are expecting a significant state change or async operation
+        // For example, when a user is signing in, or we are actively fetching a profile.
+        // Avoid setting it true for every single event if not necessary.
+
+        try {
+            // If a session and user exist AND the event indicates a successful login or session refresh
+            if (session?.user && (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED')) {
+                setIsLoading(true); // Set loading before starting async profile fetch
+                if (process.env.NODE_ENV === 'development') {
+                    console.log('[AuthProvider DEBUG] Session and user found, and event is appropriate. User ID:', session.user.id, 'Event:', event);
+                }
+
+                try {
                     if (process.env.NODE_ENV === 'development') {
-                      console.log('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', session.user.id);
-                      console.log('[AuthProvider DEBUG] Supabase query: supabase.from("profiles").select("*").eq("id", session.user.id).single()');
-                      console.log('[AuthProvider DEBUG] onAuthStateChange: About to fetch profile. Session user available:', !!session?.user);
+                        console.log('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', session.user.id);
                     }
                     
                     const { data: profile, error: profileError } = await supabase
-                      .from('profiles')
-                      .select('*')
-                      .eq('id', session.user.id)
-                      .single();
+                        .from('profiles')
+                        .select('*')
+                        .eq('id', session.user.id)
+                        .single();
 
                     if (process.env.NODE_ENV === 'development') {
-                      console.log('[AuthProvider DEBUG] Raw profile data:', JSON.stringify(profile, null, 2));
-                      console.log('[AuthProvider DEBUG] Profile fetch error (if any):', JSON.stringify(profileError, null, 2));
+                        console.log('[AuthProvider DEBUG] Raw profile data:', JSON.stringify(profile, null, 2));
+                        console.log('[AuthProvider DEBUG] Profile fetch error (if any):', JSON.stringify(profileError, null, 2));
                     }
 
                     if (profileError) {
-                      console.error("[AuthProvider DEBUG] Error fetching user profile:", profileError);
-                      console.error('[AuthProvider DEBUG] onAuthStateChange: Profile fetch failed.', profileError);
-                      let errorMessage = 'An error occurred while loading your profile. Please try again or contact support.';
-                      if (profileError instanceof Error) {
-                        errorMessage = profileError.message;
-                      } else if (typeof profileError === 'object' && profileError !== null && 'message' in profileError) {
-                        errorMessage = (profileError as {message: string}).message;
-                      }
-                      toast({
-                        title: "Profile Load Error",
-                        description: `Login successful, but failed to load your profile. ${errorMessage}`,
-                        variant: "destructive",
-                      });
-                      setUser(null); // Ensure user is cleared
-                      setAvatarUrl(null);
-                      // Do NOT redirect to dashboard if profile load fails.
-                    } else if (profile) {
-                      console.log('[AuthProvider DEBUG] Profile data fetched successfully.');
-                      let mappedUser;
-                      try {
-                        console.log('[AuthProvider DEBUG] Mapping profile to user. session.user:', JSON.stringify(session.user, null, 2), 'profile:', JSON.stringify(profile, null, 2));
-                        mappedUser = mapProfileToUser(session.user, profile);
-                        console.log('[AuthProvider DEBUG] Mapped user data:', JSON.stringify(mappedUser, null, 2));
-                      } catch (mappingError) {
-                        console.error("[AuthProvider DEBUG] Error mapping profile to user:", mappingError);
-                        mappedUser = null; // Ensure mappedUser is null if mapping fails
-                      }
-        
-                      if (mappedUser) {
-                        setUser(mappedUser);
-                        setAvatarUrl(mappedUser.avatarUrl || null);
-                        console.log('[AuthProvider DEBUG] User state updated in context.');
-        
-                        if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED') {
-                          console.log('[AuthProvider DEBUG] Event is SIGNED_IN/TOKEN_REFRESHED/USER_UPDATED. Calling handleSignedIn.');
-                          console.log('[AuthProvider DEBUG] User object being passed to handleSignedIn:', JSON.stringify(mappedUser, null, 2));
-                          console.log('[AuthProvider DEBUG] onAuthStateChange: Calling handleSignedIn.');
-                          handleSignedIn(mappedUser);
-        
-                          // Redirection logic
-                          try {
-                            const queryStringAuthChange = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
-                            const paramsAuthChange = new URLSearchParams(queryStringAuthChange);
-                            const nextFromUrl = paramsAuthChange.get('redirectTo') || paramsAuthChange.get('next');
-                            const nextPathFromStorage = safeStorage.getItem('nextPath');
-                            let redirectTo = '/dashboard'; // Default
-        
-                            if (nextPathFromStorage) {
-                              redirectTo = decodeURIComponent(nextPathFromStorage);
-                              safeStorage.removeItem('nextPath');
-                              console.log('[AuthProvider DEBUG] Redirecting to (from storage):', redirectTo);
-                            } else if (nextFromUrl) {
-                              redirectTo = decodeURIComponent(nextFromUrl);
-                              console.log('[AuthProvider DEBUG] Redirecting to (from URL params):', redirectTo);
-                            } else {
-                              console.log('[AuthProvider DEBUG] Redirecting to default dashboard.');
+                        console.error("[AuthProvider DEBUG] Error fetching user profile:", profileError);
+                        // Only show toast if it's a genuine signed-in event, not for passive token refreshes if profile is missing
+                        if (event === 'SIGNED_IN') {
+                            let errorMessage = 'An error occurred while loading your profile. Please try again or contact support.';
+                            if (profileError instanceof Error) {
+                               errorMessage = profileError.message;
+                            } else if (typeof profileError === 'object' && profileError !== null && 'message' in profileError) {
+                               errorMessage = (profileError as {message: string}).message;
                             }
-                            console.log('[AuthProvider DEBUG] Attempting to redirect to:', redirectTo);
-                            router.replace(redirectTo);
-                          } catch (redirectError) {
-                            console.error("[AuthProvider DEBUG] Error during redirection:", redirectError);
-                          }
+                            toast({
+                                title: "Profile Load Error",
+                                description: `Login successful, but failed to load your profile. ${errorMessage}`,
+                                variant: "destructive",
+                            });
+                        } else {
+                            // For TOKEN_REFRESHED or USER_UPDATED, if profile fails, log it but don't show a disruptive toast
+                            // as the user might already be using the app.
+                            console.warn(`[AuthProvider] Profile fetch failed during ${event} for user ${session.user.id}: ${profileError.message}`);
                         }
-                      } else {
-                        console.error("[AuthProvider DEBUG] Mapped user is null. Not updating user state. Mapping failed or profile was insufficient.");
-                        console.warn('[AuthProvider DEBUG] onAuthStateChange: mappedUser is null after mapping.');
-                        // Consider if user should be cleared or toast shown if mapping fails but profile was technically fetched
-                         toast({
-                            title: "User Data Error",
-                            description: "Failed to process user information after login. Please contact support.",
-                            variant: "destructive",
-                         });
-                         setUser(null);
-                         setAvatarUrl(null);
-                      }
+                        setUser(null);
+                        setAvatarUrl(null);
+                    } else if (profile) {
+                        console.log('[AuthProvider DEBUG] Profile data fetched successfully.');
+                        let mappedUser;
+                        try {
+                            console.log('[AuthProvider DEBUG] Mapping profile to user. session.user:', JSON.stringify(session.user, null, 2), 'profile:', JSON.stringify(profile, null, 2));
+                            mappedUser = mapProfileToUser(session.user, profile);
+                            console.log('[AuthProvider DEBUG] Mapped user data:', JSON.stringify(mappedUser, null, 2));
+                        } catch (mappingError) {
+                            console.error("[AuthProvider DEBUG] Error mapping profile to user:", mappingError);
+                            mappedUser = null;
+                        }
+
+                        if (mappedUser) {
+                            setUser(mappedUser);
+                            setAvatarUrl(mappedUser.avatarUrl || null);
+                            console.log('[AuthProvider DEBUG] User state updated in context.');
+
+                            // Call handleSignedIn for SIGNED_IN event to trigger redirection etc.
+                            if (event === 'SIGNED_IN') {
+                                 console.log('[AuthProvider DEBUG] Event is SIGNED_IN. Calling handleSignedIn.');
+                                 console.log('[AuthProvider DEBUG] User object being passed to handleSignedIn:', JSON.stringify(mappedUser, null, 2));
+                                 handleSignedIn(mappedUser); // This often handles redirection
+
+                                // Redirection logic
+                                try {
+                                    const queryStringAuthChange = router.asPath.includes('?') ? router.asPath.substring(router.asPath.indexOf('?')) : '';
+                                    const paramsAuthChange = new URLSearchParams(queryStringAuthChange);
+                                    const nextFromUrl = paramsAuthChange.get('redirectTo') || paramsAuthChange.get('next');
+                                    const nextPathFromStorage = safeStorage.getItem('nextPath');
+                                    let redirectTo = '/dashboard'; // Default
+
+                                    if (nextPathFromStorage) {
+                                      redirectTo = decodeURIComponent(nextPathFromStorage);
+                                      safeStorage.removeItem('nextPath');
+                                      console.log('[AuthProvider DEBUG] Redirecting to (from storage):', redirectTo);
+                                    } else if (nextFromUrl) {
+                                      redirectTo = decodeURIComponent(nextFromUrl);
+                                      console.log('[AuthProvider DEBUG] Redirecting to (from URL params):', redirectTo);
+                                    } else {
+                                      console.log('[AuthProvider DEBUG] Redirecting to default dashboard.');
+                                    }
+                                    console.log('[AuthProvider DEBUG] Attempting to redirect to:', redirectTo);
+                                    router.replace(redirectTo);
+                                  } catch (redirectError) {
+                                    console.error("[AuthProvider DEBUG] Error during redirection:", redirectError);
+                                  }
+                            }
+                        } else {
+                            console.error("[AuthProvider DEBUG] Mapped user is null. Not updating user state. Mapping failed or profile was insufficient.");
+                             if (event === 'SIGNED_IN') { // Only toast if it was an active sign-in attempt
+                                toast({
+                                    title: "User Data Error",
+                                    description: "Failed to process user information after login. Please contact support.",
+                                    variant: "destructive",
+                                });
+                             }
+                             setUser(null);
+                             setAvatarUrl(null);
+                        }
                     } else { // Profile is null, but no error
-                      console.warn("[AuthProvider DEBUG] Profile not found for user (no error, but profile is null):", session.user.id);
-                      console.warn('[AuthProvider DEBUG] onAuthStateChange: Profile fetched but is null.');
-                      toast({
-                        title: "Profile Not Found",
-                        description: "Login successful, but your profile could not be found. Please contact support.",
-                        variant: "destructive",
-                      });
-                      setUser(null); // Ensure user is cleared
-                      setAvatarUrl(null);
+                        console.warn("[AuthProvider DEBUG] Profile not found for user (no error, but profile is null):", session.user.id);
+                        if (event === 'SIGNED_IN') { // Only toast if it was an active sign-in attempt
+                            toast({
+                                title: "Profile Not Found",
+                                description: "Login successful, but your profile could not be found. Please contact support.",
+                                variant: "destructive",
+                            });
+                        }
+                        setUser(null);
+                        setAvatarUrl(null);
                     }
-                  } catch (profileMapError) {
+                } catch (profileMapError) {
                     // This catch block is for errors specifically within the profile fetching/user mapping phase
                     console.error("[AuthProvider DEBUG] Critical error in profile fetching/user mapping phase:", profileMapError);
-                    toast({
-                      title: "User Initialization Error",
-                      description: "A critical error occurred while setting up your user account. Please try logging out and in again.",
-                      variant: "destructive",
-                    });
+                     if (event === 'SIGNED_IN') {
+                        toast({
+                            title: "User Initialization Error",
+                            description: "A critical error occurred while setting up your user account. Please try logging out and in again.",
+                            variant: "destructive",
+                        });
+                    }
                     setUser(null);
                     setAvatarUrl(null);
                     // Potentially call cleanupAuthState() or handleSignedOut() if appropriate
-                  }
-                } else { // No session or session.user is null
-                  console.log('[AuthProvider DEBUG] onAuthStateChange: No session or session.user. Event:', event);
-                  console.log('[AuthProvider DEBUG] No session or session.user. Clearing user state. Event:', event);
+                } finally {
+                    console.log('[AuthProvider DEBUG] onAuthStateChange profile fetch: Entering finally block. Current isLoading:', isLoading);
+                    setIsLoading(false); // Stop loading after profile fetch attempt
+                    console.log('[AuthProvider DEBUG] onAuthStateChange profile fetch: setIsLoading(false) called. New isLoading:', isLoading);
+                }
+            } else if (event === 'SIGNED_OUT') {
+                if (process.env.NODE_ENV === 'development') {
+                    console.log('[AuthProvider DEBUG] Event is SIGNED_OUT. Clearing user state and calling handleSignedOut.');
+                }
+                setIsLoading(true); // Briefly set loading true while clearing state
+                setUser(null);
+                setAvatarUrl(null);
+                setTokens(null); // Clear tokens
+                cleanupAuthState(); // Utility to clear local/session storage
+                console.log('[AuthProvider DEBUG] onAuthStateChange: Calling handleSignedOut for SIGNED_OUT event.');
+                handleSignedOut();
+                setIsLoading(false);
+                console.log('[AuthProvider DEBUG] onAuthStateChange SIGNED_OUT: setIsLoading(false) called. New isLoading:', isLoading);
+            } else {
+                // Handles cases like:
+                // - No session initially (e.g., anonymous user on first load)
+                // - Events like PASSWORD_RECOVERY, USER_DELETED etc. that don't imply an active session for profile fetch
+                // - Or if session.user is null even if session object exists.
+                if (process.env.NODE_ENV === 'development') {
+                    console.log('[AuthProvider DEBUG] No active session for profile fetch or event is not SIGNED_IN/TOKEN_REFRESHED/USER_UPDATED. Event:', event, 'Session user present:', !!session?.user);
+                }
+                // If user is not null, it means there was a user, but now the session is not one for active profile loading.
+                // This could happen if a token refresh fails and Supabase reverts to no user, or an initial check.
+                if (user !== null) { // Only update state if it's currently non-null, to avoid unnecessary re-renders
                   setUser(null);
                   setAvatarUrl(null);
-                  if (event === 'SIGNED_OUT') {
-                    console.log('[AuthProvider DEBUG] Event is SIGNED_OUT, calling handleSignedOut.');
-                    console.log('[AuthProvider DEBUG] onAuthStateChange: Calling handleSignedOut.');
-                    handleSignedOut(); // Ensure this is called
-                    // Optional: redirect to login if not already there or on a public page
-                    // if (router.pathname !== '/auth/login') router.replace('/auth/login');
-                  }
+                  setTokens(null);
                 }
-              } catch (outerError) { // Catch errors from the main try block in onAuthStateChange
-                console.error("[AuthProvider DEBUG] Outer error in onAuthStateChange callback:", outerError);
-                setUser(null); // Ensure user state is cleared
-                setAvatarUrl(null);
-              } finally {
-                console.log('[AuthProvider DEBUG] onAuthStateChange: Entering finally block. Current isLoading:', isLoading);
-                setIsLoading(false); // Ensure isLoading is false at the end
-                console.log('[AuthProvider DEBUG] onAuthStateChange: setIsLoading(false) called. New isLoading:', isLoading);
-                console.log('[AuthProvider DEBUG] onAuthStateChange finished processing. isLoading set to false.');
-              }
+                // Ensure isLoading is false if no action is taken or if we fall through here.
+                // This is crucial for anonymous users on initial load.
+                if (isLoading) { // Only set if it's currently true
+                    setIsLoading(false);
+                    console.log('[AuthProvider DEBUG] onAuthStateChange fallback: setIsLoading(false) called. New isLoading:', isLoading);
+                }
             }
+        } catch (outerError) { // Catch errors from the main try block in onAuthStateChange
+            console.error("[AuthProvider DEBUG] Outer error in onAuthStateChange callback:", outerError);
+            setUser(null); // Ensure user state is cleared
+            setAvatarUrl(null);
+            setTokens(null);
+            setIsLoading(false); // Ensure loading is false on any error
+            console.log('[AuthProvider DEBUG] onAuthStateChange outer catch: setIsLoading(false) called. New isLoading:', isLoading);
+        }
+        // Final check to ensure isLoading is false if we've reached the end of processing for this event
+        // This is particularly important if an early exit or an unhandled case doesn't reset it.
+        if (isLoading) {
+             // console.log('[AuthProvider DEBUG] onAuthStateChange: Reached end of callback, ensuring isLoading is false. Current isLoading was true.');
+             // setIsLoading(false); // This might be too broad, rely on specific path resets.
+        }
+      }
           );
 
     return () => {
