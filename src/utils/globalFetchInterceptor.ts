@@ -1,5 +1,6 @@
 import { toast } from '@/hooks/use-toast';
 import { logError } from './logError';
+import { isPublicRoute } from '../config/publicRoutes';
 
 if (typeof window !== "undefined" && window.fetch) {
   const originalFetch = window.fetch.bind(window);
@@ -34,25 +35,40 @@ if (typeof window !== "undefined" && window.fetch) {
       return false;
     }
 
-    // Only show user-facing errors for specific status codes
+    // If it's an auth error (401/403) and the user is on a public page, don't show the toast.
+    if (
+      (status === 401 || status === 403) &&
+      typeof window !== 'undefined' && isPublicRoute(window.location.pathname)
+    ) {
+      logError(new Error(`GlobalFetchInterceptor: Auth error ${status} for API ${url} on public page ${window.location.pathname} suppressed.`), {
+        context: 'globalFetchInterceptorPublicPageContext',
+        status,
+        apiUrl: url,
+        pageUrl: window.location.pathname,
+      });
+      return false; // Suppress toast
+    }
+
+    // Original logic for showing user-facing errors for specific status codes,
+    // now only applies if not an auth error on a public page.
     switch (status) {
-      case 401: // Unauthorized - only for auth-related endpoints
+      case 401: // Unauthorized - for auth-related API endpoints (and not on a public page)
         return url.includes('/api/auth/') || url.includes('/login') || url.includes('/signup');
-      case 403: // Forbidden - only for user-initiated actions
-        return url.includes('/api/') && (url.includes('POST') || url.includes('PUT') || url.includes('DELETE'));
-      case 404: // Not found - only for main resource requests, not background calls
-        return !url.includes('/api/') || url.includes('/api/user/') || url.includes('/api/profile/');
-      case 422: // Validation errors - show for user forms
-        return url.includes('/api/') && (url.includes('POST') || url.includes('PUT'));
-      case 429: // Rate limiting - show to user
-        return true;
-      case 500: // Server errors - only for user-initiated actions
+      case 403: // Forbidden - for API actions (and not on a public page)
+        return url.includes('/api/');
+      case 404: // Not found - for main resource API requests
+        return url.includes('/api/user/') || url.includes('/api/profile/') || !url.includes('/api/'); // Show for non-API or specific API resource not found
+      case 422: // Validation errors - for API actions
+        return url.includes('/api/');
+      case 429: // Rate limiting - show to user for any API
+        return url.includes('/api/');
+      case 500: // Server errors - for API actions
       case 502:
       case 503:
       case 504:
-        return url.includes('/api/') && (url.includes('POST') || url.includes('PUT') || url.includes('DELETE'));
+        return url.includes('/api/');
       default:
-        return false;
+        return false; // Do not show toast for other statuses or non-API URLs unless specified
     }
   };
 
@@ -71,12 +87,18 @@ if (typeof window !== "undefined" && window.fetch) {
         }
 
         // Check if we should show this error to the user
+        // This check now incorporates isPublicRoute for 401/403 cases
         if (!shouldShowErrorToUser(response.status, url)) {
-          // Log the error but don't show toast
-          console.debug(`Background request failed (${response.status}): ${url}`);
+          // Log the error but don't show toast if shouldShowErrorToUser is false
+          // (which could be due to it being a silent URL or a public auth error)
+          if (!shouldFailSilently(url) && !((response.status === 401 || response.status === 403) && isPublicRoute(url))) {
+            // Log only if not already logged by the isPublicRoute check inside shouldShowErrorToUser
+            console.debug(`GlobalFetchInterceptor: Error not shown to user (${response.status}): ${url}`);
+          }
           return response;
         }
 
+        // If shouldShowErrorToUser is true, proceed to notify.
         const notify = (msg: string) => {
           const now = Date.now();
           if (msg !== lastMessage || now - lastTime > 5000) {
