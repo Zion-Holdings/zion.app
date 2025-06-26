@@ -19,7 +19,7 @@ interface SearchResult {
   id: string;
   title: string;
   description?: string;
-  type: 'product' | 'talent' | 'category' | 'equipment';
+  type: 'product' | 'talent' | 'category' | 'equipment' | 'blog';
   slug: string;
   image?: string;
   price?: number;
@@ -60,7 +60,7 @@ function offlineSearch(
     type: 'product' as const,
     slug: p.id,
     image: p.images?.[0],
-    price: p.price,
+    price: p.price ?? undefined,
     rating: p.rating,
     author: p.author
       ? { name: p.author.name, avatar: p.author.avatarUrl }
