@@ -17,10 +17,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    const page = parseInt(((req.query as any).page as string, 10) || 1;
-    const limit = parseInt(((req.query as any).limit as string, 10) || 20;
-    const category = (((req.query as any).category as string | undefined)?.toLowerCase();
-    const sort = (((req.query as any).sort as string | undefined)?.toLowerCase();
+    const page = parseInt(((req.query as any).page as string), 10) || 1;
+    const limit = parseInt(((req.query as any).limit as string), 10) || 20;
+    const category = (((req.query as any).category as string | undefined))?.toLowerCase();
+    const sort = (((req.query as any).sort as string | undefined))?.toLowerCase();
 
     let products = [...MARKETPLACE_LISTINGS]; // Create a copy to avoid mutations
 

@@ -201,6 +201,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     aiScore: 85,
     stock: 2
   },
+  {
     id: "ai-security-16",
     title: "AI Security Monitoring Suite",
     description: "Real-time threat detection powered by AI with automated incident response for cloud and on-premise systems.",
@@ -239,7 +240,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 52,
     location: "Global",
     availability: "Immediate",
-    stock: 8
+    stock: 8,
     aiScore: 89,
   },
   {
@@ -284,7 +285,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 20,
     location: "Remote",
     availability: "Immediate",
-    stock: 9
+    stock: 9,
     aiScore: 91,
   },
   {

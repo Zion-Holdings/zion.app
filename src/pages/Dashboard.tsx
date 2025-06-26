@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import { useAuth } from "@/hooks/useAuth";
+import { useRequireAuth } from "@/hooks/useAuthGuard";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { CommunityDiscussion } from "@/components/CommunityDiscussion";
@@ -15,33 +15,38 @@ import { GuidedTour } from "@/components/onboarding/GuidedTour";
 import { useToast } from "@/hooks/use-toast";
 import { EmptyState } from "@/components/ui/empty-state";
 import Link from 'next/link';
-import { useRouter } from 'next/router'; // Ensure this is present
 
 export default function Dashboard() {
-  const { user, logout } = useAuth();
+  const { logout } = useAuth();
+  const { user, loading } = useRequireAuth(); // This will handle authentication and redirects
   const { toast } = useToast();
-  const router = useRouter();
-  const [isLoadingUser, setIsLoadingUser] = useState(true); // New loading state
   const { data: orders = [], isLoading: ordersLoading } = useGetOrdersQuery(user?.id);
   const { favorites } = useFavorites();
 
   const roleForTour =
     user?.userType === 'client' || user?.userType === 'admin' ? 'client' : 'talent';
 
-  useEffect(() => {
-    if (!user) {
-      router.replace('/login');
-    }
-    setIsLoadingUser(false);
-  }, [user, router]); // Dependencies for useEffect
-
-  if (isLoadingUser) {
-    return <div className="p-4 text-center">Loading dashboard...</div>;
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading dashboard...</p>
+        </div>
+      </div>
+    );
   }
 
-  // If user is still not available after loading, it means redirect is in progress
+  // useRequireAuth will handle redirect if user is not authenticated
   if (!user) {
-    return <div className="p-4 text-center">Redirecting to login...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Redirecting to login...</p>
+        </div>
+      </div>
+    );
   }
 
   const handleTestNotification = async () => {
