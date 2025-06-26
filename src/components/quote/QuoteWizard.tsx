@@ -79,11 +79,32 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
 
   const handleSubmit = async () => {
     if (!selectedItemId) return;
-    // TODO: Adapt API endpoint and payload based on category if necessary
-    await fetch('/api/quotes', {
+
+    let endpoint = '/api/quotes';
+    const payload: Record<string, any> = { user_message: message };
+
+    switch (category) {
+      case 'services':
+        endpoint = '/api/services/quotes';
+        payload.service_id = selectedItemId;
+        break;
+      case 'talent':
+        endpoint = '/api/talent/quotes';
+        payload.talent_id = selectedItemId;
+        break;
+      case 'equipment':
+        endpoint = '/api/equipment/quotes';
+        payload.item_id = selectedItemId;
+        break;
+      default:
+        payload.item_id = selectedItemId;
+        payload.category = category;
+    }
+
+    await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ item_id: selectedItemId, category: category, user_message: message })
+      body: JSON.stringify(payload)
     });
     setStep(3);
   };

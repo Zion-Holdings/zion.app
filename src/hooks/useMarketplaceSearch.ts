@@ -4,7 +4,6 @@ import { SearchSuggestion, FilterOptions } from "@/types/search";
 // import { generateSearchSuggestions, generateFilterOptions, MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
 import { useDebounce } from "./useDebounce"; // Import the debounce hook
 
-// TODO: These could be fetched from the API or generated from listings in the future
 const staticSearchSuggestions: SearchSuggestion[] = [
   { type: "recent", text: "Modern web app" },
   { type: "recent", text: "Data analysis script" },
@@ -98,11 +97,27 @@ export function useMarketplaceSearch() {
   const [selectedAvailability, setSelectedAvailability] = useState<string[]>([]);
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
 
-  // Use static suggestions and options for now
-  const searchSuggestions: SearchSuggestion[] = useMemo(
-    () => staticSearchSuggestions,
-    [],
-  );
+  // Search suggestions
+  const [searchSuggestions, setSearchSuggestions] = useState<SearchSuggestion[]>(staticSearchSuggestions);
+
+  useEffect(() => {
+    const fetchSuggestions = async () => {
+      try {
+        const res = await fetch('/api/search/suggest?q=');
+        if (res.ok) {
+          const data = await res.json();
+          if (Array.isArray(data)) {
+            setSearchSuggestions(data);
+          }
+        }
+      } catch (err) {
+        console.error('Failed to fetch search suggestions', err);
+      }
+    };
+
+    fetchSuggestions();
+  }, []);
+
   const filterOptions: FilterOptions = useMemo(
     () => staticFilterOptions,
     [],
