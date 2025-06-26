@@ -90,9 +90,59 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     // Check if email verification is required
-    const emailVerificationRequired = !data.session && data.user && !data.user.email_confirmed_at;
+    let emailVerificationRequired = !data.session && data.user && !data.user.email_confirmed_at;
+    const appEnv = process.env.NEXT_PUBLIC_APP_ENV || 'production';
+
+    if (emailVerificationRequired && data.user && (appEnv === 'development' || appEnv === 'staging')) {
+      console.log(`Auto-verifying email for user ${data.user.id} in ${appEnv} environment.`);
+
+      // Ensure we have service role key for admin operations
+      if (!ENV_CONFIG.supabase.serviceRoleKey) {
+        console.error('SUPABASE_SERVICE_ROLE_KEY is not configured. Cannot auto-verify email.');
+        // Proceed without auto-verification, standard flow
+        return res.status(201).json({
+          message: 'Registration successful. Please check your email to verify your account. (Auto-verification skipped due to missing service key)',
+          emailVerificationRequired: true,
+          user: {
+            id: data.user.id,
+            email: data.user.email,
+            display_name: name,
+          },
+        });
+      }
+
+      // Use the existing Supabase client if it was initialized with the service_role key,
+      // or create a new one specifically for admin tasks if necessary.
+      // The current 'supabase' instance should be fine if ENV_CONFIG.supabase.serviceRoleKey is set.
+      const { error: adminUpdateError } = await supabase.auth.admin.updateUserById(
+        data.user.id,
+        { email_confirm: true } // Supabase uses email_confirm: true
+      );
+
+      if (adminUpdateError) {
+        console.error('Error auto-verifying email:', adminUpdateError);
+        // If auto-verification fails, fall back to requiring manual verification
+        return res.status(201).json({
+          message: 'Registration successful. Please check your email to verify your account. (Auto-verification failed)',
+          emailVerificationRequired: true,
+          user: {
+            id: data.user.id,
+            email: data.user.email,
+            display_name: name,
+          },
+        });
+      } else {
+        console.log(`Email for user ${data.user.id} auto-verified successfully.`);
+        emailVerificationRequired = false; // Update status after successful auto-verification
+        // The user object 'data.user' from signUp might not immediately reflect this change.
+        // A fresh fetch of the user or session might be needed if exact up-to-date user object is returned.
+        // For now, we'll just confirm it's done on the backend.
+      }
+    }
+
 
     if (emailVerificationRequired && data.user) {
+      // This block will now only be reached if not auto-verified (e.g., in prod or if auto-verification failed)
       return res.status(201).json({
         message: 'Registration successful. Please check your email to verify your account.',
         emailVerificationRequired: true,
@@ -104,10 +154,10 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       });
     }
 
-    // Account created and ready to use
+    // Account created and (potentially auto-verified) ready to use
     return res.status(201).json({
-      message: 'Account created successfully!',
-      emailVerificationRequired: false,
+      message: `Account created successfully!${!emailVerificationRequired ? ' (Email auto-verified)' : ''}`,
+      emailVerificationRequired: false, // This will be false if auto-verified, true otherwise (handled above)
       user: {
         id: data.user?.id,
         email: data.user?.email,
