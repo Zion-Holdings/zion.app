@@ -26,7 +26,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 // Define form schema
 const serviceProfileSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters long"),
+  name: z.string().min(2, "Full Name must be at least 2 characters long"),
   title: z.string().min(5, "Business name/title is required"),
   bio: z.string().min(50, "Bio must be at least 50 characters long").max(1000, "Bio cannot exceed 1000 characters"),
   location: z.string().min(2, "Location is required"),
