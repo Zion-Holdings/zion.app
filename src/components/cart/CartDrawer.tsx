@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { CartItem } from './CartItem';
 import Link from 'next/link';
 import { ShoppingCart } from 'lucide-react';
+import { toast } from '@/hooks/use-toast';
 
 export function CartDrawer() {
   const router = useRouter();
@@ -83,7 +84,16 @@ export function CartDrawer() {
                 <CartItem
                   key={item.id}
                   item={item}
-                  onRemove={id => dispatch(removeItem(id))}
+                  onRemove={id => {
+                    const itemToRemove = items.find(i => i.id === id);
+                    dispatch(removeItem(id));
+                    if (itemToRemove) {
+                      toast({
+                        title: "Item removed",
+                        description: `${itemToRemove.name} has been removed from your cart`,
+                      });
+                    }
+                  }}
                   onUpdateQuantity={(id, qty) => dispatch(updateQuantity({ id, quantity: qty }))}
                 />
               ))}

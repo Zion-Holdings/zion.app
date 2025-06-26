@@ -22,6 +22,7 @@ import { ShoppingCart, User, CreditCard, ArrowRight, Package, Shield } from 'luc
 import { useWishlist } from '@/hooks/useWishlist';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { toast } from '@/hooks/use-toast';
 
 export default function CartPage() {
   const { t } = useTranslation();
@@ -37,12 +38,28 @@ export default function CartPage() {
   };
 
   const removeItem = (id: string) => {
+    const item = items.find(i => i.id === id);
     dispatch(removeItemAction(id));
+    
+    if (item) {
+      toast({
+        title: "Item removed",
+        description: `${item.name} has been removed from your cart`,
+      });
+    }
   };
 
   const saveForLater = (id: string) => {
+    const item = items.find(i => i.id === id);
     toggleWishlist(id);
     dispatch(removeItemAction(id));
+    
+    if (item) {
+      toast({
+        title: "Saved for later",
+        description: `${item.name} has been saved to your wishlist`,
+      });
+    }
   };
 
   const handleCheckout = async (details?: { email?: string; address?: string }) => {
