@@ -39,7 +39,9 @@ export function AutocompleteSuggestions({
   highlightedIndex,
   listId
 }: AutocompleteSuggestionsProps) {
-  if (!visible || suggestions.length === 0) return null;
+  if (!visible) return null;
+
+  const noResults = suggestions.length === 0;
   
   const listRef = useRef<HTMLUListElement>(null);
   const highlightedItemRef = useRef<HTMLLIElement>(null);
@@ -64,6 +66,11 @@ export function AutocompleteSuggestions({
         role="listbox"
         className="py-2"
       >
+        {noResults && (
+          <li className="px-4 py-2 text-sm text-zion-slate-light" data-testid="no-results">
+            No results found
+          </li>
+        )}
         {suggestions.map((suggestion, index) => {
           const highlight = highlightMatch(suggestion.text, searchTerm);
           const isHighlighted = index === highlightedIndex;

@@ -20,6 +20,8 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ShoppingCart, User, CreditCard, ArrowRight, Package, Shield } from 'lucide-react';
 import { useWishlist } from '@/hooks/useWishlist';
+import ProductCard from '@/components/ProductCard';
+import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -87,6 +89,11 @@ export default function CartPage() {
   );
   const shipping = hasPhysicalItems && subtotal <= 100 ? 15 : 0;
   const total = subtotal + tax + shipping;
+  const { items: saved } = useWishlist();
+  const savedMap = MARKETPLACE_LISTINGS.reduce<Record<string, any>>((acc, p) => {
+    acc[p.id] = p;
+    return acc;
+  }, {});
 
   // Empty cart state
   if (items.length === 0) {
@@ -327,6 +334,24 @@ export default function CartPage() {
           onOpenChange={setGuestOpen}
           onSubmit={(details) => handleCheckout(details)}
         />
+
+        {saved.length > 0 && (
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-white mb-4">Saved for Later</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {saved.map(id => {
+                const p = savedMap[id];
+                return p ? (
+                  <ProductCard
+                    key={id}
+                    product={{ ...p, price: p.price || 0, description: p.description || '' }}
+                    onBuy={() => router.push('/checkout')}
+                  />
+                ) : null;
+              })}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

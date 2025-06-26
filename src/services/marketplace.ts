@@ -13,6 +13,8 @@ export interface Product {
   description: string;
   price: number;
   currency?: string;
+  /** Available inventory count. 0 means out of stock. */
+  stock?: number;
   category: string;
   subcategory?: string;
   image?: string;
