@@ -112,80 +112,95 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
 
 export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({ params }: { params: { slug: string } }) => {
   const slug = params?.slug as string;
+  let listing: ProductListing | null = null;
 
-  // Example: Add a breadcrumb for tracing
-  // Sentry.addBreadcrumb({
-  //   category: 'ssr',
-  //   message: `getServerSideProps for Marketplace Listing: ${slug}`,
-  //   level: 'info',
-  // });
+  Sentry.addBreadcrumb({
+    category: 'ssr',
+    message: `getServerSideProps for Marketplace Listing: ${slug}`,
+    level: 'info',
+  });
 
   try {
-    // First try to find in the static datasets
-    let listing =
-      INITIAL_MARKETPLACE_PRODUCTS.find((l) => l.id === slug) ||
-      MARKETPLACE_LISTINGS.find((l) => l.id === slug) ||
-      null;
-    
-    // If not found, try SERVICES
-    if (!listing) {
-      listing = SERVICES.find((s) => s.id === slug) || null;
+    const { fetchProducts, validateProductData, ensureProductIntegrity } = await import('@/services/marketplace');
+
+    // Step 1: Try to fetch directly by ID from API
+    // Assuming fetchProducts can take an `id: slug` parameter or similar for direct lookup.
+    // If not, this will behave like `search: slug` and then we filter by id.
+    try {
+      // Attempting a more specific fetch if the API supports it (e.g., by id)
+      // For now, we'll use `search: slug` and then filter, as `fetchProducts` might not support `id: slug` directly.
+      // If an `id` param was available, it would be `fetchProducts({ id: slug })`
+      const potentialProducts = await fetchProducts({ search: slug /* or id: slug if supported */ });
+      const productFromApi = potentialProducts.find((p: any) => p.id === slug);
+
+      if (productFromApi && validateProductData(productFromApi)) {
+        const ensuredProduct = ensureProductIntegrity([productFromApi])[0];
+        listing = {
+          ...ensuredProduct,
+          currency: ensuredProduct.currency || 'USD',
+          author: ensuredProduct.author || { name: 'Unknown', id: 'unknown' },
+          category: ensuredProduct.category || 'general',
+        } as ProductListing;
+        Sentry.addBreadcrumb({ message: `Found product ${slug} via API direct ID match.` });
+      }
+    } catch (apiError) {
+      console.warn(`API fetch for product ${slug} (attempting ID match) failed:`, apiError);
+      Sentry.captureMessage(`API fetch for product ${slug} (attempting ID match) failed`, { extra: { error: apiError } });
     }
-    
-    // If still not found, try to load from API or additional data sources
+
+    // Step 2: If not found via direct API ID lookup, try static data by ID
     if (!listing) {
-      try {
-        // Try to load additional listings that might not be in static data
-        const { fetchProducts } = await import('@/services/marketplace');
-        const additionalProducts = await fetchProducts({ search: slug });
-        const product = additionalProducts.find((p: any) => p.id === slug);
-        
-        // Transform Product to ProductListing format if found
-        if (product) {
-          listing = {
-            ...product,
-            currency: product.currency || 'USD', // Ensure currency is defined
-            author: product.author || { name: 'Unknown', id: 'unknown' },
-            category: product.category || 'general',
-            subcategory: product.subcategory,
-            availability: product.availability,
-            rating: product.rating,
-            reviewCount: product.reviewCount || 0,
-            featured: product.featured || false,
-            // Ensure all required ProductListing fields are present
-          } as ProductListing;
-        }
-      } catch (apiError) {
-        console.warn(`Failed to fetch additional products for slug ${slug}:`, apiError);
+      Sentry.addBreadcrumb({ message: `Product ${slug} not found via API ID match. Trying static data.` });
+      const staticListing =
+        INITIAL_MARKETPLACE_PRODUCTS.find((l) => l.id === slug) ||
+        MARKETPLACE_LISTINGS.find((l) => l.id === slug) ||
+        SERVICES.find((s) => s.id === slug) ||
+        null;
+
+      if (staticListing) {
+        listing = staticListing as ProductListing; // Assuming static data is already in correct format
+        Sentry.addBreadcrumb({ message: `Found product ${slug} in static data.` });
       }
     }
     
-    // If still not found, try to match by title or other fields
+    // Step 3: If still not found, try broader API search (if different from step 1)
+    // This step might be redundant if step 1 already used `search: slug`.
+    // If step 1 was a true `id: slug` call, this would be the fallback general search.
+    // For now, we assume step 1 was effectively `search: slug`, so this might not find new items unless API behaves differently.
+    // To avoid redundant calls if fetchProducts doesn't differentiate `id` and `search` params well, we can be cautious.
+    // Let's assume for now the first API call was comprehensive enough for ID search.
+
+    // Step 4: If still not found, try title-based fuzzy matching on static data
     if (!listing) {
+      Sentry.addBreadcrumb({ message: `Product ${slug} not found by ID (API or static). Trying title match on static data.` });
       const allListings = [
         ...INITIAL_MARKETPLACE_PRODUCTS,
         ...MARKETPLACE_LISTINGS,
         ...SERVICES,
       ];
-      listing = allListings.find((l) =>
+      const matchedByTitle = allListings.find((l) =>
         l.title?.toLowerCase().replace(/\s+/g, '-') === slug.toLowerCase() ||
         l.title?.toLowerCase().includes(slug.toLowerCase())
       ) || null;
+
+      if (matchedByTitle) {
+        listing = matchedByTitle as ProductListing;
+        Sentry.addBreadcrumb({ message: `Found product ${slug} by title match in static data.` });
+      }
     }
     
     if (!listing) {
-      // Log for debugging but don't treat as error - this is expected for invalid slugs
       console.log(`Listing not found for slug: ${slug}`);
+      Sentry.captureMessage(`Listing not found for slug: ${slug}`, { level: 'warning' });
       return { notFound: true };
     }
     
     return { props: { listing } };
+
   } catch (error) {
     Sentry.captureException(error);
-    console.error(`Error in getServerSideProps for marketplace listing ${slug}:`, error);
-    
-    // Return 404 instead of throwing to prevent 500 errors
-    return { notFound: true };
+    console.error(`Critical error in getServerSideProps for marketplace listing ${slug}:`, error);
+    return { notFound: true }; // Ensure 404 for any unhandled errors
   }
 };
 
