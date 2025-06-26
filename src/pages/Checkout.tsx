@@ -11,6 +11,15 @@ import { toast } from '@/hooks/use-toast';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { ControllerRenderProps } from 'react-hook-form';
+import { getBreadcrumbsForPath } from '@/utils/routeUtils';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 
 // Form validation schema
 const checkoutSchema = z.object({
@@ -34,6 +43,7 @@ function CheckoutInner() {
   const router = useRouter();
   const { user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const breadcrumbs = getBreadcrumbsForPath('/checkout');
 
   const form = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
@@ -115,6 +125,22 @@ function CheckoutInner() {
   if (items.length === 0) {
     return (
       <div className="max-w-2xl mx-auto p-6 text-center">
+        <BreadcrumbJsonLd breadcrumbs={breadcrumbs} />
+        <Breadcrumb className="mb-4 text-sm text-muted-foreground" >
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild aria-current="page">
+                <span>Checkout</span>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
         <h1 className="text-2xl font-bold mb-4">Your cart is empty</h1>
         <p className="text-gray-600 mb-6">Add some items to your cart to continue with checkout.</p>
         <Button onClick={() => router.push('/marketplace')}>
@@ -126,6 +152,22 @@ function CheckoutInner() {
 
   return (
     <div className="max-w-2xl mx-auto p-6">
+      <BreadcrumbJsonLd breadcrumbs={breadcrumbs} />
+      <Breadcrumb className="mb-4 text-sm text-muted-foreground">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/">Home</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild aria-current="page">
+              <span>Checkout</span>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
       <h1 className="text-2xl font-bold mb-6">Checkout</h1>
       
       {/* Order Summary */}
