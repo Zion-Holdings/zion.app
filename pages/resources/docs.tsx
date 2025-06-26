@@ -23,7 +23,11 @@ export default function ResourcesDocsPage() {
             Documentation
           </h1>
           <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-            Comprehensive guides and API documentation to help you integrate with Zion.
+            Welcome to Zion’s API portal, your gateway to streamlined integration. Discover
+            straightforward authentication steps, quick-start examples, and thorough endpoint
+            references. Tutorials and case studies show practical strategies so you can develop,
+            test, deploy, and scale seamlessly within Zion’s talent marketplace and cloud
+            services ecosystem. Explore.
           </p>
           <div className="mt-8 max-w-4xl mx-auto">
             <h2 className="text-2xl font-semibold text-white mb-4">
