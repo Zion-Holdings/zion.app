@@ -137,8 +137,7 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
 import { useAuth } from '@/context/auth/AuthProvider';
-import { useEnqueueSnackbar } from '@/context/SnackbarContext';
-import { closeSnackbar } from 'notistack';
+import { toast } from '@/hooks/use-toast';
 
 // Product card
 const MarketplaceCard = ({ product, onViewDetails, onAddToCart }: { product: ProductListing; onViewDetails: () => void; onAddToCart: () => void; }) => (
@@ -198,7 +197,6 @@ function MarketplacePageContent() {
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
   const { isAuthenticated } = useAuth();
-  const enqueueSnackbar = useEnqueueSnackbar();
   const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
@@ -408,22 +406,13 @@ function MarketplacePageContent() {
                 }}
                 onAddToCart={() => {
                   dispatch(addItem({ id: item.id, title: item.title, price: item.price ?? 0 }));
-                  const message = isAuthenticated ? `1× ${item.title} added` : 'Item added. Login to checkout.';
-                  const variant = isAuthenticated ? 'success' as const : 'info' as const;
-                  enqueueSnackbar(message, {
-                    variant,
-                    action: key => (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => {
-                          router.push('/cart');
-                          closeSnackbar(key);
-                        }}
-                      >
-                        View Cart
-                      </Button>
-                    ),
+                  toast({
+                    title: 'Added to cart',
+                    description: `${item.title} has been added to your cart`,
+                    action: {
+                      label: 'View Cart',
+                      onClick: () => router.push('/cart'),
+                    },
                   });
                 }}
               />

@@ -17,8 +17,7 @@ import { useAuth } from '@/context/auth/AuthProvider';
 import { useRouter } from 'next/router';
 import { Product } from '@/services/marketplace';
 import { useMediaQuery } from 'usehooks-ts';
-import { useEnqueueSnackbar } from '@/context/SnackbarContext';
-import { closeSnackbar } from 'notistack';
+import { toast } from '@/hooks/use-toast';
 import { captureException } from '@/utils/sentry';
 
 interface ProductCardProps {
@@ -33,7 +32,6 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
   const { isWishlisted, toggle } = useWishlist();
   const [imageError, setImageError] = useState(false);
   const router = useRouter();
-  const enqueueSnackbar = useEnqueueSnackbar();
 
   if (!product || typeof product.id !== 'string' || typeof product.title !== 'string' || product.title.trim() === '') {
     captureException(new Error('Invalid product data received by ProductCard'), {
@@ -56,22 +54,13 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
 
   const addToCart = () => {
     dispatch(addItem({ id: product.id, title: productTitle, price: product.price ?? 0 }));
-    const message = isAuthenticated ? `1× ${productTitle} added` : 'Item added. Login to checkout.';
-    const variant = isAuthenticated ? 'success' as const : 'info' as const;
-    enqueueSnackbar(message, {
-      variant,
-      action: key => (
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => {
-            router.push('/cart');
-            closeSnackbar(key);
-          }}
-        >
-          View Cart
-        </Button>
-      ),
+    toast({
+      title: 'Added to cart',
+      description: `${productTitle} has been added to your cart`,
+      action: {
+        label: 'View Cart',
+        onClick: () => router.push('/cart'),
+      },
     });
   };
 
