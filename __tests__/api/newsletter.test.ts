@@ -6,6 +6,9 @@ import { mailchimpService } from '@/integrations/mailchimp';
 jest.mock('@/integrations/mailchimp', () => ({
   mailchimpService: { addSubscriber: jest.fn() }
 }));
+jest.mock('@/lib/email', () => ({
+  sendEmailWithSendGrid: jest.fn().mockResolvedValue(undefined)
+}));
 
 describe('/api/newsletter API', () => {
   const mc = mailchimpService as { addSubscriber: jest.Mock };
@@ -39,6 +42,13 @@ describe('/api/newsletter API', () => {
     await handler(req as unknown as NextApiRequest, res as unknown as NextApiResponse);
     expect(res._getStatusCode()).toBe(200);
     expect(res._getJSONData()).toEqual({ status: 'subscribed' });
-    expect(mc.addSubscriber).toHaveBeenCalledWith({ email: 'test@example.com' });
+    expect(mc.addSubscriber).toHaveBeenCalledWith(
+      expect.objectContaining({
+        email: 'test@example.com',
+        mergeFields: expect.any(Object)
+      })
+    );
+    const { sendEmailWithSendGrid } = jest.requireMock('@/lib/email');
+    expect(sendEmailWithSendGrid).toHaveBeenCalled();
   });
 });
