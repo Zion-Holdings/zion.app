@@ -209,7 +209,19 @@ const LoginPage = () => {
             handleResendVerification();
           }, 1000);
         } else {
-          setError(signInError as any);
+          // MODIFIED SECTION FOR BETTER ERROR MESSAGES
+          let displayMessage = 'Login failed. Please check your credentials and try again.'; // Default user-friendly message
+          if (signInError.message) {
+              if (signInError.message.toLowerCase().includes('invalid login credentials')) {
+                  displayMessage = 'Invalid email or password. Please try again.';
+              } else if (signInError.message.toLowerCase().includes('network request failed')) {
+                  displayMessage = 'Network error. Please check your internet connection and try again.';
+              } else if (signInError.message.toLowerCase().includes('user disabled')) {
+                  displayMessage = 'Your account has been disabled. Please contact support.';
+              }
+              // Add more specific checks here if needed for other Supabase error messages
+          }
+          setError({ name: signInError.name || 'AuthApiError', message: displayMessage } as AuthError);
         }
       } else if (data.user) {
         console.log('Supabase sign-in successful, user:', data.user);
@@ -218,11 +230,18 @@ const LoginPage = () => {
       } else {
         // Should not happen if signInError is null and data.user is null
         console.warn('Supabase sign-in returned no error but no user.');
-        setError({ name: 'UnknownAuthError', message: 'Login failed. Please try again.' } as AuthError);
+        setError({ name: 'UnknownAuthError', message: 'Login failed due to an unknown error. Please try again.' } as AuthError);
       }
     } catch (catchedError: any) {
       console.error('Exception during Supabase sign-in:', catchedError);
-      setError({ name: 'ExceptionError', message: catchedError.message || 'An unexpected error occurred.' } as AuthError);
+      // Check if the caught error is a network error
+      let exceptionMessage = 'An unexpected error occurred. Please try again.';
+      if (catchedError.message && catchedError.message.toLowerCase().includes('networkerror when attempting to fetch resource')) {
+        exceptionMessage = 'Network error. Please check your internet connection and try again.';
+      } else if (catchedError.message) {
+        exceptionMessage = catchedError.message;
+      }
+      setError({ name: 'ExceptionError', message: exceptionMessage } as AuthError);
     } finally {
       setIsLoading(false);
     }
