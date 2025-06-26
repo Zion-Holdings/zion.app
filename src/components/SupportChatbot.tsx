@@ -73,7 +73,7 @@ export function SupportChatbot() {
           buffer += decoder.decode(result.value || new Uint8Array());
           const lines = buffer.split('\n');
           for (let i = 0; i < lines.length - 1; i++) {
-            let line = lines[i].trim();
+            let line = lines[i]?.trim();
             if (!line) continue;
             if (line.startsWith('data:')) {
               line = line.replace(/^data:\s*/, '');
@@ -93,7 +93,7 @@ export function SupportChatbot() {
               }
             }
           }
-          buffer = lines[lines.length - 1];
+          buffer = lines[lines.length - 1] || '';
         }
         const final = accumulated.trim() ||
           (FALLBACK_RESPONSES[Math.floor(Math.random() * FALLBACK_RESPONSES.length)] || "I'm experiencing technical difficulties. Please contact support@ziontechgroup.com for assistance.");

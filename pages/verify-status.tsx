@@ -10,7 +10,7 @@ import { useAuth } from '@/hooks/useAuth'; // Import useAuth to access user stat
 
 export default function VerifyStatus() {
   const router = useRouter();
-  const { user: authUser, isLoading: authLoading, refreshUser } = useAuth(); // Get user from AuthContext
+  const { user: authUser, isLoading: authLoading } = useAuth(); // Get user from AuthContext
   const { email: emailParam } = router.query;
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
