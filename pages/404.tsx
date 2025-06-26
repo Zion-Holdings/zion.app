@@ -61,19 +61,26 @@ export default function Custom404() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
+            <Button
               onClick={handleGoBack}
-              variant="outline" 
+              variant="outline"
               className="bg-zion-blue-dark border-zion-purple text-white hover:bg-zion-purple hover:border-zion-purple-light min-w-[180px]"
             >
               <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" />
               Go Back
             </Button>
-            
+
             <Button asChild className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white min-w-[180px]">
               <Link href="/">
                 <Home className="w-4 h-4 mr-2" aria-hidden="true" />
                 {t('errors.return_home')}
+              </Link>
+            </Button>
+
+            <Button asChild className="bg-gradient-to-r from-zion-cyan to-zion-cyan-light hover:from-zion-cyan-light hover:to-zion-cyan text-white min-w-[180px]">
+              <Link href="/marketplace">
+                <ShoppingCart className="w-4 h-4 mr-2" aria-hidden="true" />
+                {t('errors.go_to_marketplace')}
               </Link>
             </Button>
           </div>

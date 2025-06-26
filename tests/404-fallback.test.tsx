@@ -57,6 +57,7 @@ mockI18n.use(initReactI18next).init({
         errors: {
           page_not_found: 'Oops! Page not found',
           return_home: 'Return to Home',
+          go_to_marketplace: 'Go to Marketplace',
         },
       },
     },
@@ -87,6 +88,9 @@ const Mock404Page = () => {
           </button>
           <a href="/" data-testid="home-link">
             {t('errors.return_home')}
+          </a>
+          <a href="/marketplace" data-testid="marketplace-btn">
+            {t('errors.go_to_marketplace')}
           </a>
           <div data-testid="navigation-links">
             <a href="/marketplace" data-testid="marketplace-link">Browse Marketplace</a>
@@ -154,11 +158,20 @@ describe('404 Page Fallback Fixes (Issue #20)', () => {
 
   test('includes home navigation link', () => {
     renderPage();
-    
+
     const homeLink = screen.getByTestId('home-link');
     expect(homeLink).toBeInTheDocument();
     expect(homeLink).toHaveAttribute('href', '/');
     expect(homeLink).toHaveTextContent('Return to Home');
+  });
+
+  test('includes CTA link to marketplace', () => {
+    renderPage();
+
+    const marketplaceBtn = screen.getByTestId('marketplace-btn');
+    expect(marketplaceBtn).toBeInTheDocument();
+    expect(marketplaceBtn).toHaveAttribute('href', '/marketplace');
+    expect(marketplaceBtn).toHaveTextContent('Go to Marketplace');
   });
 
   test('provides quick navigation to key marketplace sections', () => {
