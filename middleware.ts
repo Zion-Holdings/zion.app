@@ -47,38 +47,63 @@ export async function middleware(request: NextRequest) {
     '/signup',
     '/forgot-password',
     '/verify-status',
-    '/auth', // Auth routes
-    '/login',
+    '/auth', // Auth routes including /auth/login
+    '/login', // Explicitly public, though covered by /auth
   ];
 
-  // Check if the request is for a public route
-  const isPublicRoute = publicRoutes.some(route => 
-    pathname === route || 
-    pathname.startsWith(route + '/') ||
-    pathname.startsWith('/api/auth/') // Allow all auth API routes
-  );
+  const isPublicRoute = publicRoutes.some(route => {
+    if (route === '/') return pathname === '/'; // Exact match for root
+    return pathname.startsWith(route) || pathname.startsWith('/api/auth/');
+  });
 
-  // Skip authentication middleware for public routes
+  const returnTo = request.nextUrl.searchParams.get('returnTo');
+
+  // Prevent redirect loop if already on login and returnTo is also login
+  if (pathname === '/auth/login' && returnTo === '/auth/login') {
+    console.log('Redirect loop detected on /auth/login. Clearing returnTo and redirecting to /');
+    const response = NextResponse.redirect(new URL('/', request.url));
+    response.cookies.delete('returnTo'); // Example if returnTo was stored in a cookie
+    // If returnTo is only a URL param, this redirect to '/' effectively clears it for the next navigation
+    return response;
+  }
+
+  // If trying to access a public route, allow it, regardless of a potentially problematic returnTo.
   if (isPublicRoute) {
     console.log('Skipping authentication middleware for public route:', pathname);
+    // If a 'returnTo' parameter led to a public page, we might want to clear it
+    // so it doesn't interfere with future navigations.
+    // However, simply proceeding should be fine as the public route takes precedence.
     return NextResponse.next();
   }
 
+  // Protected route logic
   try {
-    // Get the session token from cookies
     const sessionToken = request.cookies.get('sb-gnwtggeptzkqnduuthto-auth-token')?.value;
     
-    // If there's no session token, redirect to login for protected routes
     if (!sessionToken) {
-      console.log('No session found, redirecting to login');
+      console.log(`No session found for protected route ${pathname}, redirecting to login.`);
       const loginUrl = new URL('/auth/login', request.url);
-      loginUrl.searchParams.set('returnTo', pathname);
+      // Set returnTo only if it's not already pointing to login page itself, to avoid issues.
+      // And only if the current path is not already a login/auth path.
+      if (pathname !== '/auth/login' && !pathname.startsWith('/auth/')) {
+        loginUrl.searchParams.set('returnTo', pathname);
+      }
       return NextResponse.redirect(loginUrl);
     }
     
+    // User is authenticated
+    console.log(`User authenticated for route: ${pathname}`);
+    // If user is authenticated and tries to go to login, redirect to dashboard or returnTo if valid
+    if (pathname === '/auth/login') {
+      const validReturnTo = returnTo && returnTo !== '/auth/login' ? returnTo : '/dashboard';
+      console.log(`Authenticated user on login page, redirecting to: ${validReturnTo}`);
+      return NextResponse.redirect(new URL(validReturnTo, request.url));
+    }
+
     return NextResponse.next();
   } catch (error) {
     console.error('Middleware error:', error);
+    // Fallback: allow request to proceed to avoid breaking site on middleware errors
     return NextResponse.next();
   }
 }
