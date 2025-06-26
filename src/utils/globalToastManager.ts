@@ -425,28 +425,51 @@ export class EnhancedGlobalErrorHandler {
       priority,
       retryAction,
       metadata,
-      showToast: shouldShowToast = true,
+      showToast: actualShowToastFlag = true, // Internal variable
     } = context || {};
 
     const errorMessage = error instanceof Error ? error.message : error;
     const errorKey = `${type}-${errorMessage}`;
 
-    // Track retry count
+    // Suppress specific "Authentication Required / Access denied" toast on public pages for unauthenticated users.
+    if (
+      type === ToastType.AUTH_ERROR &&
+      errorMessage.toLowerCase().trim() === 'access denied' &&
+      this.getErrorTitle(type) === 'Authentication Required' &&
+      actualShowToastFlag
+    ) {
+      let isLikelyUnauthenticated = true; // Default assumption for this specific error
+      if (typeof window !== 'undefined' && window.localStorage) {
+        // Check for Supabase auth token in localStorage. This is a heuristic.
+        const supabaseAuthTokenKey = Object.keys(window.localStorage).find(k => k.startsWith('sb-') && k.endsWith('-auth-token'));
+        if (supabaseAuthTokenKey && window.localStorage.getItem(supabaseAuthTokenKey)) {
+          isLikelyUnauthenticated = false; // Found a token, user might be authenticated
+        }
+      }
+
+      if (isLikelyUnauthenticated) {
+        // Log suppression for debugging, but don't show the toast.
+        console.warn(`[EnhancedGlobalErrorHandler] Suppressing toast for ${type} with message "${errorMessage}" for assumed unauthenticated user.`);
+        return null;
+      } else {
+        if (process.env.NODE_ENV === 'development') {
+          console.log(`[EnhancedGlobalErrorHandler] NOT suppressing "${errorMessage}" toast as user appears authenticated or check is inconclusive.`);
+        }
+      }
+    }
+
     const currentRetries = this.retryCount.get(errorKey) || 0;
 
-    // Log to console for development
     if (process.env.NODE_ENV === 'development') {
       console.error('Enhanced Global Error Handler:', error, context);
     }
 
-    // Don't show toast if we've exceeded retry limit
     if (currentRetries >= this.maxRetries) {
       console.warn(`Max retries exceeded for error: ${errorMessage}`);
       return null;
     }
 
-    // Show toast if requested
-    if (shouldShowToast) {
+    if (actualShowToastFlag) {
       const toastId = globalToastManager.showToast({
         message: this.getErrorMessage(errorMessage),
         title: this.getErrorTitle(type),
@@ -462,10 +485,8 @@ export class EnhancedGlobalErrorHandler {
           retryCount: currentRetries,
         },
       });
-
       return toastId;
     }
-
     return null;
   }
 
