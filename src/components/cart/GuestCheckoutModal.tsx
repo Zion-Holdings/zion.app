@@ -73,8 +73,8 @@ export default function GuestCheckoutModal({
             <Input
               id="guest-email"
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={email || ''}
+              onChange={(e) => setEmail(e.target.value || '')}
               placeholder="your.email@example.com"
               required
               className="bg-zion-blue-light border-zion-cyan/30 text-white placeholder:text-zion-slate-light"
@@ -88,8 +88,8 @@ export default function GuestCheckoutModal({
             </Label>
             <Textarea
               id="guest-address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
+              value={address || ''}
+              onChange={(e) => setAddress(e.target.value || '')}
               placeholder="Enter your full shipping address..."
               required
               className="bg-zion-blue-light border-zion-cyan/30 text-white placeholder:text-zion-slate-light min-h-[80px]"
