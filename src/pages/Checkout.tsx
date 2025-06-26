@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';

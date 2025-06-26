@@ -288,7 +288,7 @@ export default function EquipmentDetail() {
             >
               <AspectRatio ratio={1} className="bg-zion-blue-light rounded-lg overflow-hidden">
                 <ImageWithRetry
-                  src={equipment.images[selectedImageIndex] || equipment.images[0]}
+                  src={equipment.images[selectedImageIndex] || equipment.images[0] || 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500'}
                   alt={equipment.name}
                   className="object-cover"
                   fill

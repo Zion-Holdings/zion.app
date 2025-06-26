@@ -65,7 +65,7 @@ export default function ListingDetail() {
                 <div className="aspect-[16/9] w-full relative">
                   {listing.images && listing.images.length > 0 ? (
                     <ImageWithRetry
-                      src={listing.images[selectedImageIndex]}
+                      src={listing.images[selectedImageIndex] || listing.images[0] || "/placeholder.svg"}
                       alt={listing.title}
                       className="object-cover"
                       fallbackSrc="/placeholder.svg"
