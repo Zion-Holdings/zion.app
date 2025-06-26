@@ -107,23 +107,46 @@ const LoginPage = () => {
   // Effect for handling redirection AFTER session is checked and user state is updated
   useEffect(() => {
     console.log(`LoginPage: Redirection effect runs. sessionChecked: ${sessionChecked}, isLoading: ${isLoading}, user: ${user?.id}, pathname: ${router.pathname}`);
+    
     // Only redirect if the initial session check is complete, not currently submitting login form, and user exists
     if (sessionChecked && !isLoading && user) {
-      let returnTo = router.query.returnTo as string || '/dashboard';
-      // Ensure we don't redirect back to login or auth pages after successful login
-      if (returnTo === '/auth/login' || returnTo.startsWith('/auth/')) {
+      // Get returnTo from query params, decode it if it exists
+      let returnTo = '/dashboard'; // Default fallback
+      
+      if (router.query.returnTo && typeof router.query.returnTo === 'string') {
+        try {
+          returnTo = decodeURIComponent(router.query.returnTo);
+        } catch (e) {
+          console.warn('Failed to decode returnTo parameter:', router.query.returnTo);
+          returnTo = '/dashboard';
+        }
+      }
+      
+      // Prevent redirecting back to auth pages or creating loops
+      const authPages = ['/auth/login', '/auth/register', '/login', '/signup', '/auth/forgot-password'];
+      if (authPages.includes(returnTo) || returnTo.startsWith('/auth/')) {
         returnTo = '/dashboard';
       }
-      console.log(`LoginPage: Conditions met for redirect. Current path: ${router.pathname}, Target: ${returnTo}`);
-      // Only push if we are not already on the target, to avoid loops
-      if (router.pathname !== returnTo) {
-        console.log(`LoginPage: Executing redirect to ${returnTo}`);
-        router.push(returnTo);
-      } else {
-        console.log(`LoginPage: Already on target path ${returnTo}, no redirect needed.`);
+      
+      // Ensure returnTo is a relative path to prevent open redirect attacks
+      if (returnTo.startsWith('http') || returnTo.includes('://')) {
+        returnTo = '/dashboard';
       }
+      
+      console.log(`LoginPage: Conditions met for redirect. Current path: ${router.pathname}, Target: ${returnTo}`);
+      
+      // Add a small delay to ensure session is fully established
+      const redirectTimer = setTimeout(() => {
+        // Double-check that we're still logged in before redirecting
+        if (user && router.pathname === '/auth/login') {
+          console.log(`LoginPage: Executing delayed redirect to ${returnTo}`);
+          router.replace(returnTo); // Use replace to avoid back button issues
+        }
+      }, 100); // Small delay to let session stabilize
+      
+      return () => clearTimeout(redirectTimer);
     }
-  }, [user, sessionChecked, isLoading, router]); // Dependencies: user, sessionChecked, isLoading, router
+  }, [user, sessionChecked, isLoading, router, router.query.returnTo]); // Dependencies: user, sessionChecked, isLoading, router
 
   const handleResendVerification = async () => {
     if (!email) {
