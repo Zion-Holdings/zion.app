@@ -35,6 +35,24 @@ const ProductListingCardComponent = ({
     : '/placeholder.svg'
   );
   const [imageError, setImageError] = useState(false);
+
+  const stockStatus =
+    listing.stock === undefined
+      ? 'In stock'
+      : listing.stock <= 0
+      ? 'Out of stock'
+      : listing.stock <= 5
+      ? 'Low stock'
+      : 'In stock';
+
+  const stockVariant =
+    listing.stock === undefined
+      ? 'success'
+      : listing.stock <= 0
+      ? 'destructive'
+      : listing.stock <= 5
+      ? 'warning'
+      : 'success';
     
   const { formatPrice } = useCurrency();
 
@@ -141,6 +159,14 @@ const ProductListingCardComponent = ({
           {listing.featured && (
             <Badge className="absolute top-2 right-2 bg-primary text-primary-foreground border-none">
               Featured
+            </Badge>
+          )}
+          {stockStatus && (
+            <Badge
+              variant={stockVariant as any}
+              className="absolute top-2 left-2"
+            >
+              {stockStatus}
             </Badge>
           )}
            <FavoriteButton itemId={listing.id} />
