@@ -3,7 +3,6 @@ import { axe, toHaveNoViolations } from 'jest-axe';
 import { MemoryRouter } from 'react-router-dom';
 import React from 'react';
 import { vi } from 'vitest';
-import { HelmetProvider } from 'react-helmet-async';
 
 // Actual Context for AuthProvider
 import { AuthContext } from '@/context/auth/AuthContext';
@@ -285,13 +284,11 @@ test('Table has no accessibility violations', async () => {
 
 const AllCoreProviders = ({ children }: { children: React.ReactNode }) => (
   <MemoryRouter>
-    <HelmetProvider>
-      <MockAuthProvider>
-        <MockThemeProvider>
-          {children}
-        </MockThemeProvider>
-      </MockAuthProvider>
-    </HelmetProvider>
+    <MockAuthProvider>
+      <MockThemeProvider>
+        {children}
+      </MockThemeProvider>
+    </MockAuthProvider>
   </MemoryRouter>
 );
 

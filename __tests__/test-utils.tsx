@@ -2,7 +2,6 @@ import React, { FC, ReactElement } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Provider as ReduxProvider } from 'react-redux';
-import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from '@/context/auth/AuthProvider';
 import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { I18nextProvider } from 'react-i18next';
@@ -32,8 +31,7 @@ const AllTheProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
     <MemoryRouterProvider>
       <QueryClientProvider client={testQueryClient}>
         <ReduxProvider store={store}>
-          <HelmetProvider>
-            <AuthProvider>
+          <AuthProvider>
               <WhitelabelProvider>
                 <I18nextProvider i18n={i18n}>
                   <WalletProvider>
@@ -50,7 +48,6 @@ const AllTheProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
                 </I18nextProvider>
               </WhitelabelProvider>
             </AuthProvider>
-          </HelmetProvider>
         </ReduxProvider>
       </QueryClientProvider>
     </MemoryRouterProvider>

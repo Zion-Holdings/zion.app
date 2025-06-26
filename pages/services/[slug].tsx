@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
 import { NextSeo } from '@/components/NextSeo';
 import { SERVICES } from '@/data/servicesData';
 import { slugify } from '@/lib/slugify';
@@ -37,9 +37,9 @@ const ServicePage: React.FC = () => {
         description={service.description}
         openGraph={{ title: service.title, description: service.description }}
       />
-      <Helmet>
+      <Head>
         <script type="application/ld+json">{JSON.stringify(serviceLd)}</script>
-      </Helmet>
+      </Head>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
         <h1>{service.title}</h1>
         <p>{service.description}</p>

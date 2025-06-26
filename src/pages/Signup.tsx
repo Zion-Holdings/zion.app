@@ -10,7 +10,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
 import { AlertCircle, CheckCircle, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
 import { AuthLayout } from '@/layout';
 
 const SignupSchema = Yup.object({
@@ -251,9 +251,9 @@ export default function Signup() {
 
   return (
     <AuthLayout>
-      <Helmet>
+      <Head>
         <link rel="stylesheet" href="/static/css/main.css" />
-      </Helmet>
+      </Head>
       <div className="flex min-h-screen items-center justify-center p-4">
         <div className="w-full max-w-sm space-y-4">
           {isPartnerSignup && (
