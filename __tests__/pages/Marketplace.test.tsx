@@ -17,6 +17,8 @@ const allKnownProductsForTest = [
   ...allStaticServiceData,
 ];
 
+import userEvent from '@testing-library/user-event';
+
 // Mock ProductCard to simplify Marketplace tests
 // Modify the ProductCard mock to include a link
 jest.mock('@/components/ProductCard', () => {
@@ -276,5 +278,136 @@ describe('Marketplace Page', () => {
         expect(href).toBe('/marketplace/listing/innovation-20');
       }
     });
+  });
+
+  test('filters products by category', async () => {
+    const user = userEvent.setup();
+    const mockProductsForFilter: ProductListing[] = [
+      { id: 'filter-prod-1', title: 'AI Model Alpha', category: 'AI Models', price: 100, currency: 'USD', tags: [], author: { name: 'Auth1', id: 'a1' }, images: [], createdAt: new Date(2023, 0, 1).toISOString(), rating: 4.5, reviewCount: 10, aiScore: 92 },
+      { id: 'filter-prod-2', title: 'Service Beta', category: 'AI Services', price: 200, currency: 'USD', tags: [], author: { name: 'Auth2', id: 'a2' }, images: [], createdAt: new Date(2023, 0, 2).toISOString(), rating: 4.7, reviewCount: 20, aiScore: 95 },
+      { id: 'filter-prod-3', title: 'AI Model Gamma', category: 'AI Models', price: 150, currency: 'USD', tags: [], author: { name: 'Auth3', id: 'a3' }, images: [], createdAt: new Date(2023, 0, 3).toISOString(), rating: 4.0, reviewCount: 5, aiScore: 90 },
+      { id: 'filter-prod-4', title: 'Hardware Delta', category: 'Hardware', price: 500, currency: 'USD', tags: [], author: { name: 'Auth4', id: 'a4' }, images: [], createdAt: new Date(2023, 0, 4).toISOString(), rating: 4.8, reviewCount: 15, aiScore: 98 },
+    ];
+
+    server.use(
+      http.get('/api/products', ({ request }) => {
+        // The Marketplace component fetches all and then filters client-side
+        // So, we return all mock products for the initial fetch.
+        return HttpResponse.json({
+          items: mockProductsForFilter,
+          hasMore: false,
+          total: mockProductsForFilter.length,
+        });
+      })
+    );
+
+    renderMarketplace();
+
+    // Wait for initial products to load
+    await waitFor(() => {
+      expect(screen.getByText('AI Model Alpha')).toBeInTheDocument();
+      expect(screen.getByText('Service Beta')).toBeInTheDocument();
+      expect(screen.getAllByTestId('product-card')).toHaveLength(4);
+    });
+
+    // Find the category select dropdown. Assuming it has a default "All Categories" or similar.
+    // The FilterControls component uses a native select. We can find it by its current value or a label.
+    // Let's assume the initial value is empty string for "All Categories".
+    const categorySelect = screen.getByRole('combobox', { name: /categories/i }); // Or find by a more specific label if available in FilterControls
+
+    // Select 'AI Models' category
+    // The options in Marketplace.tsx are dynamically generated.
+    // We need to ensure 'AI Models' is an option. The mock data includes it.
+    await user.selectOptions(categorySelect, 'AI Models');
+
+    // Wait for the component to re-render with filtered products
+    // Since filtering is client-side, this should be relatively quick.
+    await waitFor(() => {
+      expect(screen.getByText('AI Model Alpha')).toBeInTheDocument();
+      expect(screen.getByText('AI Model Gamma')).toBeInTheDocument();
+      expect(screen.queryByText('Service Beta')).not.toBeInTheDocument();
+      expect(screen.queryByText('Hardware Delta')).not.toBeInTheDocument();
+    });
+
+    const displayedCards = screen.getAllByTestId('product-card');
+    expect(displayedCards).toHaveLength(2);
+    displayedCards.forEach(card => {
+      expect(card).toHaveTextContent('Category: AI Models');
+    });
+
+    // Select 'All Categories' again (empty value for the select)
+    await user.selectOptions(categorySelect, ''); // Assuming '' is the value for "All Categories"
+
+    await waitFor(() => {
+      expect(screen.getByText('AI Model Alpha')).toBeInTheDocument();
+      expect(screen.getByText('Service Beta')).toBeInTheDocument();
+      expect(screen.getByText('AI Model Gamma')).toBeInTheDocument();
+      expect(screen.getByText('Hardware Delta')).toBeInTheDocument();
+      expect(screen.getAllByTestId('product-card')).toHaveLength(4);
+    });
+  });
+
+  test('sorts products by price (low to high)', async () => {
+    const user = userEvent.setup();
+    const mockProductsForSort: ProductListing[] = [
+      { id: 'sort-prod-1', title: 'Expensive Product', category: 'AI Models', price: 500, currency: 'USD', tags: [], author: { name: 'Auth1', id: 'a1' }, images: [], createdAt: new Date(2023, 0, 1).toISOString(), rating: 4.5, reviewCount: 10, aiScore: 92 },
+      { id: 'sort-prod-2', title: 'Cheap Product', category: 'AI Services', price: 50, currency: 'USD', tags: [], author: { name: 'Auth2', id: 'a2' }, images: [], createdAt: new Date(2023, 0, 2).toISOString(), rating: 4.7, reviewCount: 20, aiScore: 95 },
+      { id: 'sort-prod-3', title: 'Mid-Range Product', category: 'AI Models', price: 250, currency: 'USD', tags: [], author: { name: 'Auth3', id: 'a3' }, images: [], createdAt: new Date(2023, 0, 3).toISOString(), rating: 4.0, reviewCount: 5, aiScore: 90 },
+    ];
+
+    server.use(
+      http.get('/api/products', ({ request }) => {
+        return HttpResponse.json({
+          items: mockProductsForSort,
+          hasMore: false,
+          total: mockProductsForSort.length,
+        });
+      })
+    );
+
+    renderMarketplace();
+
+    // Wait for initial products to load
+    await waitFor(() => {
+      expect(screen.getByText('Expensive Product')).toBeInTheDocument();
+      expect(screen.getByText('Cheap Product')).toBeInTheDocument();
+      expect(screen.getAllByTestId('product-card')).toHaveLength(3);
+    });
+
+    // Find the sort select dropdown.
+    // The FilterControls component uses a native select.
+    // The options are: "newest", "price-low", "price-high", "rating", "popular", "ai-score"
+    const sortSelect = screen.getByRole('combobox', { name: /sort by/i }); // Or a more specific label / test-id
+
+    // Select 'Price: Low to High'
+    await user.selectOptions(sortSelect, 'price-low');
+
+    // Wait for the component to re-render with sorted products
+    await waitFor(() => {
+      const productCards = screen.getAllByTestId('product-card');
+      const titles = productCards.map(card => card.querySelector('a')?.textContent);
+      // Expected order: Cheap Product, Mid-Range Product, Expensive Product
+      expect(titles[0]).toBe('Cheap Product');
+      expect(titles[1]).toBe('Mid-Range Product');
+      expect(titles[2]).toBe('Expensive Product');
+    });
+
+    const displayedCards = screen.getAllByTestId('product-card');
+    expect(displayedCards[0]).toHaveTextContent('Price: $50');
+    expect(displayedCards[1]).toHaveTextContent('Price: $250');
+    expect(displayedCards[2]).toHaveTextContent('Price: $500');
+
+    // Optional: Test sorting by 'Price: High to Low'
+    await user.selectOptions(sortSelect, 'price-high');
+    await waitFor(() => {
+      const productCards = screen.getAllByTestId('product-card');
+      const titles = productCards.map(card => card.querySelector('a')?.textContent);
+      expect(titles[0]).toBe('Expensive Product');
+      expect(titles[1]).toBe('Mid-Range Product');
+      expect(titles[2]).toBe('Cheap Product');
+    });
+     expect(screen.getAllByTestId('product-card')[0]).toHaveTextContent('Price: $500');
+     expect(screen.getAllByTestId('product-card')[1]).toHaveTextContent('Price: $250');
+     expect(screen.getAllByTestId('product-card')[2]).toHaveTextContent('Price: $50');
   });
 });

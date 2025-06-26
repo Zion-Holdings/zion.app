@@ -27,7 +27,7 @@ The Next.js frontend application has two main deployment configurations:
     -   Production hosting for the main website.
     -   Preview deployments for pull requests.
     -   Hosting for specific branches or staging environments.
-    -   **TODO:** Confirm the exact purpose of Netlify deployments (e.g., production, previews, specific staging instances) if Kubernetes is also used for staging/production.
+    -   **Clarification:** Netlify typically serves as the primary platform for production deployments of the Next.js frontend due to its ease of use, CDN capabilities, and integration with serverless functions for Next.js API routes. It's also excellent for generating preview deployments for each pull request, allowing for easy review of changes. While Kubernetes is used for staging, Netlify often handles the production user-facing deployment.
 
 ### b. Deployment to Kubernetes (Staging)
 
@@ -43,34 +43,53 @@ The Next.js frontend application has two main deployment configurations:
 -   **Purpose:**
     -   Currently targets a `staging` environment.
     -   Could potentially be adapted for production deployments to Kubernetes.
--   **TODO:** Clarify if Kubernetes is also used for production or other environments for the Next.js app.
+-   **Clarification:** While Netlify is often used for the primary frontend production deployment, Kubernetes might be used for production instances of specific backend services or potentially for a more complex, scalable production version of the Next.js app if advanced orchestration, private networking, or specific compute resources are needed beyond Netlify's typical scope. However, without explicit confirmation, assume Kubernetes is primarily for staging and specialized backend services.
 
 ## 2. Django Backend (`backend/`)
 
--   **Current Documentation Status:** The current manual or semi-automated deployment process for the Django backend needs to be documented here by the development team. This documentation should cover all environments (staging, production) and include steps for database migrations and static file collection.
--   **CI Integration:** The `.github/workflows/pr-check.yml` includes steps to install Python dependencies and compile Python files for the backend, indicating it's part of the CI validation.
--   **Potential Deployment Strategies (Needs Confirmation):**
-    -   **Containerization:** Could be containerized (requiring its own `Dockerfile`) and deployed to Kubernetes, similar to the Next.js app.
-    -   **Platform-as-a-Service (PaaS):** Could be deployed to platforms like Heroku, Google App Engine, AWS Elastic Beanstalk.
-    -   **Virtual Machines:** Traditional deployment to VMs.
--   **TODO (Team Action):** Document the existing manual or semi-automated deployment process for the Django backend.
+-   **Current Documentation Status & Initial Details:**
+    -   The Django backend's deployment process is currently managed via the `.github/workflows/django-cd.yml` workflow, which builds a Docker image and pushes it to a container registry (`${{ secrets.REGISTRY_URL }}/zion-django-backend`).
+    -   This image is then intended for deployment to a Kubernetes environment (likely staging, as per the workflow's environment setting).
+    -   The workflow includes placeholder steps for `kubectl` commands to update the deployment, suggesting a Kubernetes-native deployment.
+    -   **Key areas requiring detailed documentation by the team include:**
+        -   The exact `kubectl` commands or Kustomize overlays used for staging and production.
+        -   The process for database schema migrations (`python backend/manage.py migrate`) within the deployment pipeline or as a post-deployment step. This is critical and must be handled carefully to avoid data loss or service interruption.
+        -   Management of static files (`python backend/manage.py collectstatic`), including where they are collected and how they are served (e.g., via Whitenoise, a CDN, or a separate web server).
+        -   Configuration and secrets management specific to the Django deployment in different environments (refer to `docs/secrets_management.md`).
+        -   Health check configurations for Kubernetes.
+        -   Rollback procedures.
+-   **CI Integration:** The `.github/workflows/pr-check.yml` includes steps to install Python dependencies and compile Python files for the backend, indicating it's part of the CI validation. The `django-cd.yml` handles the build and deployment automation.
+-   **Deployment Strategy:** The primary strategy appears to be containerization (using `backend/Dockerfile`) and deployment to Kubernetes.
+-   **TODO (Team Action):** Expand on the above points with specific commands, configurations, and operational procedures for both staging and production environments.
 -   **TODO:**
-    *   Create a dedicated Dockerfile for the Django backend if containerization is desired/used. (Partially addressed in this update)
-    *   Develop a GitHub Actions workflow (e.g., `django-cd.yml`) for automated deployment. (Partially addressed in this update)
+    *   The `backend/Dockerfile` exists. Ensure it's optimized for production (e.g., multi-stage builds, non-root user).
+    *   The `django-cd.yml` workflow provides a good starting point for automation. Refine the Kubernetes deployment step with actual commands or Kustomize usage.
     *   Detail how database migrations (`python manage.py migrate`) are handled during deployment (should be part of the team-documented process and future automation).
     *   Explain how static files (`python manage.py collectstatic`) are managed (should be part of the team-documented process and future automation).
 
 ## 3. Express.js Server (`server/`)
 
--   **Current Documentation Status:** Similar to the Django backend, a specific, automated deployment workflow for the Express.js server is not yet fully documented from the reviewed files.
--   **Potential Deployment Strategies (Needs Confirmation):**
-    -   **Containerization:** Could be containerized and deployed to Kubernetes.
-    -   **PaaS or Serverless:** Could be deployed to a PaaS or adapted to run in a serverless environment (though its current structure as a persistent server might not directly fit serverless functions without refactoring).
-    -   **VMs.**
--   **TODO:**
-    -   Document the current deployment process for the Express.js server.
-    *   Create a dedicated Dockerfile for the Express.js server if containerization is desired/used.
-    *   Develop a GitHub Actions workflow (e.g., `express-cd.yml`) for automated deployment.
+-   **Current Documentation Status & Initial Details:**
+    -   The `server/` directory contains an Express.js application. Currently, there is no dedicated Dockerfile specifically for this server within its directory, nor a dedicated GitHub Actions CD workflow like `express-cd.yml`.
+    -   The root `Dockerfile` seems to package the entire application, including the Next.js frontend. If the Express server is meant to be deployed independently, it would typically have its own `Dockerfile`.
+    -   **Deployment likely involves:**
+        -   **Containerization:** Creating a `Dockerfile` for the Express server (if not already implicitly covered by a broader build process that separates it out).
+        -   **Deployment Target:** This could be Kubernetes (similar to Django or Next.js staging), a PaaS (like Heroku, Fly.io, Google App Engine), or even a VM.
+    -   **Key areas requiring detailed documentation by the team include:**
+        -   The intended deployment environment(s) for this server.
+        -   If containerized, the Docker build process and image name/registry.
+        -   The CI/CD pipeline for building and deploying this server.
+        -   Configuration and secrets management (refer to `docs/secrets_management.md`).
+        -   Process management (e.g., using PM2 or similar if deployed to a VM).
+        -   Logging and monitoring setup.
+-   **Potential Deployment Strategies (Needs Confirmation by Team):**
+    -   **Containerization & Kubernetes:** Deploy as a separate service in the existing Kubernetes cluster. This would require a `Dockerfile` in `server/` and Kubernetes manifests.
+    -   **PaaS:** Deploy to a platform like Heroku or Google App Engine, which simplifies infrastructure management.
+    -   **Serverless Functions (Refactor):** Parts of the Express server might be refactorable into serverless functions (e.g., on Netlify or AWS Lambda) if they handle discrete API endpoints, though its current setup as a persistent server suggests it handles more.
+-   **TODO (Team Action):**
+    -   Document the intended deployment strategy and current (even if manual) process for the Express.js server.
+    -   If containerization is the path, create a dedicated `Dockerfile` in `server/`.
+    -   Develop a GitHub Actions workflow (e.g., `express-cd.yml`) for automated deployment if it's to be deployed as a distinct service.
 
 ## 4. Supabase Functions (`supabase/functions/`)
 

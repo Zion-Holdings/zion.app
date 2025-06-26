@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const stripe = require('stripe'); // Import the stripe library
+const User = require('../models/User'); // Assuming you have a User model
+const Subscription = require('../models/Subscription'); // Assuming you have a Subscription model
 
 const PROD_DOMAIN = 'app.ziontechgroup.com';
 function isProdDomain() {
@@ -69,24 +71,149 @@ router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) =>
 
   // Handle the event
   switch (event.type) {
-    case 'invoice.payment_succeeded':
+    case 'invoice.payment_succeeded': {
       const invoice = event.data.object;
-      // Logic for successful payment:
-      // 1. Retrieve customer information (if needed, e.g., invoice.customer).
-      // 2. Check if you've already processed this event (idempotency).
-      // 3. Update your database (e.g., mark order as paid, provision service).
-      // 4. Send a confirmation email to the customer.
-      console.log(`Invoice payment succeeded for invoice ID: ${invoice.id}, Customer: ${invoice.customer}`);
-      // Example: TODO: Replace with actual business logic
-      // db.orders.update({ stripeInvoiceId: invoice.id }, { status: 'paid', paidAt: new Date() });
-      // emailService.sendPaymentConfirmation(invoice.customer_email, invoice.id);
+      console.log(`Invoice payment succeeded for invoice ID: ${invoice.id}, Customer: ${invoice.customer}, Subscription: ${invoice.subscription}`);
+
+      if (invoice.billing_reason === 'subscription_create' || invoice.billing_reason === 'subscription_cycle' || invoice.billing_reason === 'subscription_update') {
+        if (invoice.subscription) {
+          try {
+            const subscription = await stripeInstance.subscriptions.retrieve(invoice.subscription);
+            if (!subscription) {
+              console.error(`Webhook Error: Subscription ${invoice.subscription} not found in Stripe for invoice ${invoice.id}`);
+              // Still return 200 to Stripe to acknowledge receipt, but log the error
+              return res.status(200).json({ received: true, error: "Subscription not found in Stripe" });
+            }
+
+            const user = await User.findOne({ stripeCustomerId: subscription.customer });
+            if (!user) {
+              console.error(`Webhook Error: User not found for Stripe customer ID ${subscription.customer}`);
+              return res.status(200).json({ received: true, error: "User not found" });
+            }
+
+            const updatedSubscription = await Subscription.findOneAndUpdate(
+              { stripeSubscriptionId: subscription.id },
+              {
+                stripePriceId: subscription.items.data[0].price.id,
+                stripeProductId: subscription.items.data[0].price.product,
+                status: subscription.status,
+                currentPeriodStart: new Date(subscription.current_period_start * 1000),
+                currentPeriodEnd: new Date(subscription.current_period_end * 1000),
+                cancelAtPeriodEnd: subscription.cancel_at_period_end,
+                userId: user._id, // Ensure userId is linked
+              },
+              { upsert: true, new: true, setDefaultsOnInsert: true }
+            );
+            console.log(`Subscription ${updatedSubscription.stripeSubscriptionId} updated/created from invoice.payment_succeeded.`);
+
+            // Update user's plan status
+            user.planStatus = subscription.status;
+            user.stripeSubscriptionId = subscription.id; // Ensure this is linked on the user
+            await user.save();
+            console.log(`User ${user.email} plan status updated to ${subscription.status}.`);
+
+          } catch (err) {
+            console.error(`Error processing invoice.payment_succeeded for subscription: ${err.message}`);
+            // Don't send 500 to Stripe, as it will retry. Log error and investigate.
+            return res.status(200).json({ received: true, error: `Error processing: ${err.message}` });
+          }
+        } else {
+          console.log(`Invoice ${invoice.id} is not related to a subscription. Skipping subscription update.`);
+          // Handle non-subscription payments if necessary
+        }
+      } else {
+        console.log(`Invoice ${invoice.id} with reason ${invoice.billing_reason} not handled for subscription update.`);
+        // Handle other invoice reasons if necessary
+      }
       break;
-    // Example: Handling another event type
-    // case 'customer.subscription.created':
-    //   const subscription = event.data.object;
-    //   console.log('Subscription created:', subscription.id);
-    //   // TODO: Store subscription details, update user's plan
-    //   break;
+    }
+    case 'customer.subscription.created':
+    case 'customer.subscription.updated': {
+      const subscription = event.data.object;
+      console.log(`${event.type} event for subscription ID: ${subscription.id}`);
+      try {
+        const user = await User.findOne({ stripeCustomerId: subscription.customer });
+        if (!user) {
+          console.error(`Webhook Error: User not found for Stripe customer ID ${subscription.customer}`);
+          // If the user isn't found, it might be an issue with your user creation flow
+          // or the webhook arrived before the user was fully set up with a stripeCustomerId.
+          // Depending on your app's logic, you might retry later or create the user.
+          // For now, we'll log and acknowledge.
+          return res.status(200).json({ received: true, error: "User not found for customer ID" });
+        }
+
+        const subscriptionData = {
+          userId: user._id,
+          stripeCustomerId: subscription.customer,
+          stripeSubscriptionId: subscription.id,
+          stripePriceId: subscription.items.data[0].price.id,
+          stripeProductId: subscription.items.data[0].price.product,
+          status: subscription.status,
+          currentPeriodStart: new Date(subscription.current_period_start * 1000),
+          currentPeriodEnd: new Date(subscription.current_period_end * 1000),
+          cancelAtPeriodEnd: subscription.cancel_at_period_end,
+          trialStart: subscription.trial_start ? new Date(subscription.trial_start * 1000) : null,
+          trialEnd: subscription.trial_end ? new Date(subscription.trial_end * 1000) : null,
+        };
+
+        const updatedSubscription = await Subscription.findOneAndUpdate(
+          { stripeSubscriptionId: subscription.id },
+          subscriptionData,
+          { upsert: true, new: true, setDefaultsOnInsert: true }
+        );
+        console.log(`Subscription ${updatedSubscription.stripeSubscriptionId} created/updated.`);
+
+        // Update user's plan status
+        user.planStatus = subscription.status;
+        user.stripeSubscriptionId = subscription.id; // Link current subscription to user
+        await user.save();
+        console.log(`User ${user.email} plan status updated to ${subscription.status}.`);
+
+      } catch (err) {
+        console.error(`Error processing ${event.type}: ${err.message}`);
+        return res.status(200).json({ received: true, error: `Error processing: ${err.message}` });
+      }
+      break;
+    }
+    case 'customer.subscription.deleted': {
+      const subscription = event.data.object; // This is the Stripe Subscription object
+      console.log(`customer.subscription.deleted event for subscription ID: ${subscription.id}`);
+      try {
+        const subInDb = await Subscription.findOne({ stripeSubscriptionId: subscription.id });
+        if (!subInDb) {
+          console.warn(`Webhook Warning: Subscription ${subscription.id} not found in DB for deletion.`);
+          return res.status(200).json({ received: true, warning: "Subscription not found in DB" });
+        }
+
+        // Update the subscription status in your database
+        // Stripe sends 'canceled' status when a subscription is deleted.
+        // The 'ended_at' field indicates when the subscription actually ended.
+        subInDb.status = subscription.status; // should be 'canceled'
+        subInDb.canceledAt = subscription.canceled_at ? new Date(subscription.canceled_at * 1000) : new Date();
+        subInDb.endedAt = subscription.ended_at ? new Date(subscription.ended_at * 1000) : new Date(); // if not present, means ended now
+        await subInDb.save();
+        console.log(`Subscription ${subInDb.stripeSubscriptionId} status updated to ${subscription.status}.`);
+
+        // Update the corresponding user's planStatus
+        const user = await User.findById(subInDb.userId);
+        if (user) {
+          // Only clear planStatus if this was their active subscription
+          if (user.stripeSubscriptionId === subscription.id) {
+            user.planStatus = null; // Or 'canceled', depending on desired state
+            user.stripeSubscriptionId = null; // Remove link to this subscription
+            await user.save();
+            console.log(`User ${user.email} plan status updated due to subscription deletion.`);
+          }
+        } else {
+            console.warn(`Webhook Warning: User ${subInDb.userId} not found for deleted subscription ${subscription.id}`);
+        }
+
+      } catch (err) {
+        console.error(`Error processing customer.subscription.deleted: ${err.message}`);
+        return res.status(200).json({ received: true, error: `Error processing: ${err.message}` });
+      }
+      break;
+    }
     default:
       console.log(`Unhandled event type ${event.type}`);
   }
