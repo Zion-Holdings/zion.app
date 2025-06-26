@@ -6,6 +6,8 @@ This directory contains the publicly available API specification and usage examp
 
 The full schema is defined in [openapi.yaml](./openapi.yaml). You can import this file into tools like Postman or Insomnia to explore the endpoints.
 
+For a hosted, interactive version of these docs, visit [/docs/swagger](/docs/swagger) in the application.
+
 ## Authentication
 
 1. Obtain an access token using your normal login process.
