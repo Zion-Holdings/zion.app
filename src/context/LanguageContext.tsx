@@ -82,8 +82,51 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
         langToSet = browserBaseLang;
       } else {
         // Final fallback if browser's language is not directly supported (e.g. 'de' and only 'en', 'es' are options)
-        langToSet = (i18n.options.fallbackLng as SupportedLanguage[] | SupportedLanguage)?.[0] || 'en';
-        if (Array.isArray(langToSet)) langToSet = langToSet[0] || 'en'; // handle array fallbackLng
+        const fallbackLng = i18n.options.fallbackLng;
+        let determinedFallback: string | undefined;
+
+        if (typeof fallbackLng === 'string') {
+          determinedFallback = fallbackLng;
+        } else if (Array.isArray(fallbackLng)) {
+          determinedFallback = fallbackLng[0];
+        } else if (typeof fallbackLng === 'object' && fallbackLng !== null && !Array.isArray(fallbackLng)) { // Explicitly check it's an object and not an array
+          // It's an object, try 'default' or the first property
+          const fallbackLngObj = fallbackLng as { [key: string]: string[] }; // Cast to a more specific object type
+          if (fallbackLngObj['default'] && Array.isArray(fallbackLngObj['default']) && fallbackLngObj['default'].length > 0) {
+            determinedFallback = fallbackLngObj['default'][0];
+          } else {
+            const keys = Object.keys(fallbackLngObj);
+            if (keys.length > 0 && keys[0] !== undefined) { // Ensure keys[0] is not undefined
+              const firstKey = keys[0];
+              const firstKeyValues = fallbackLngObj[firstKey];
+              if (Array.isArray(firstKeyValues) && firstKeyValues.length > 0) {
+                determinedFallback = firstKeyValues[0];
+              }
+            }
+          }
+        }
+
+        if (determinedFallback && supportedLanguages.some(l => l.code === determinedFallback)) {
+          langToSet = determinedFallback as SupportedLanguage;
+        } else {
+          // Fallback logic: try i18next's own fallback list if primary determination fails or isn't supported
+          const i18nFallbackSetting = i18n.options.fallbackLng;
+          let finalFallbackAttempt: string | undefined;
+
+          if (typeof i18nFallbackSetting === 'string') {
+            finalFallbackAttempt = i18nFallbackSetting;
+          } else if (Array.isArray(i18nFallbackSetting) && i18nFallbackSetting.length > 0) {
+            finalFallbackAttempt = i18nFallbackSetting[0];
+          }
+          // Note: Complex object fallbacks from i18next settings are tricky to universally apply here without specific rules.
+          // We prioritize simple string/array fallbacks from i18next if our initial 'determinedFallback' is invalid.
+
+          if (finalFallbackAttempt && supportedLanguages.some(l => l.code === finalFallbackAttempt)) {
+            langToSet = finalFallbackAttempt as SupportedLanguage;
+          } else {
+            langToSet = 'en'; // Absolute fallback
+          }
+        }
       }
     }
     
