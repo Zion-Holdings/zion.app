@@ -29,7 +29,7 @@ async function handler(
       .json({ error: 'Service Unavailable: Database configuration is missing.' });
   }
 
-  const { productId } = req.query;
+  const { productId } = req.query as { productId: string | string[] };
 
   if (!productId || typeof productId !== 'string') {
     return res.status(400).json({ error: 'Product ID is required and must be a string.' });

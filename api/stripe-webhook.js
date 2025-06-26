@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     res.status(405).end('Method Not Allowed');
     return;
   }
-  const sig = req.headers['stripe-signature'];
+  const sig = (req.headers as Record<string, string | string[] | undefined>)['stripe-signature'];
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
   let event;
   try {

@@ -35,7 +35,7 @@ export default async function handler(
   }
 
   try {
-    const { messages } = req.body;
+    const { messages } = req.body as { messages?: unknown };
 
     if (!messages || !Array.isArray(messages)) {
       return res.status(400).json({ error: 'Messages array is required' });

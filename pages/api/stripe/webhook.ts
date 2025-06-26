@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).end('Method Not Allowed');
   }
 
-  const sig = req.headers['stripe-signature'] as string;
+  const sig = (req.headers as Record<string, string | string[] | undefined>)['stripe-signature'] as string;
   let event: any;
   try {
     const buf = await buffer(req as any);

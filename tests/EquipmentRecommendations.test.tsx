@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, useNavigate } from 'react-router-dom';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import EquipmentPage from '@/pages/EquipmentPage';
@@ -80,7 +80,13 @@ test('loads AI recommendations', async () => {
 vi.spyOn(auth, 'useAuth').mockReturnValueOnce({ user: null, isLoading: false } as any);
 test('redirects to login when not authenticated', () => {
   const navigateMock = vi.fn();
-  vi.spyOn(require('react-router-dom'), 'useNavigate').mockReturnValue(navigateMock);
+  vi.mock('react-router-dom', async () => {
+    const actual = await vi.importActual('react-router-dom');
+    return {
+      ...actual,
+      useNavigate: () => navigateMock
+    };
+  });
 
   render(
     <MemoryRouter initialEntries={['/equipment']}>

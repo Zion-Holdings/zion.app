@@ -20,7 +20,7 @@ describe('apiClient interceptor', () => {
   it('logs out on 401 and redirects', async () => {
     const error = { response: { status: 401, data: { message: 'Bad' } } } as any;
     const redirect = vi.spyOn(window.location, 'assign').mockImplementation(() => {});
-    // @ts-ignore access internal handler
+    // @ts-expect-error - accessing internal handler for testing
     const instanceHandler = apiClient.interceptors.response.handlers[0].rejected;
     const globalHandler = axios.interceptors.response.handlers[0].rejected;
     await expect(instanceHandler(error)).rejects.toBe(error);
@@ -34,7 +34,7 @@ describe('apiClient interceptor', () => {
 
   it('handles other errors', async () => {
     const error = { response: { status: 500, data: {} } } as any;
-    // @ts-ignore access internal handler
+    // @ts-expect-error - accessing internal handler for testing
     const instanceHandler = apiClient.interceptors.response.handlers[0].rejected;
     const globalHandler = axios.interceptors.response.handlers[0].rejected;
     await expect(instanceHandler(error)).rejects.toBe(error);

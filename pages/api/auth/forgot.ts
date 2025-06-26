@@ -13,8 +13,9 @@ const MAX_ATTEMPTS = 5;
 const WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 
 function getRateLimitKey(req: NextApiRequest): string {
-  const forwarded = req.headers['x-forwarded-for'];
-  const ip = forwarded ? String(forwarded).split(',')[0] : req.connection.remoteAddress;
+  const headers = req.headers as Record<string, string | string[] | undefined>;
+  const forwarded = headers['x-forwarded-for'];
+  const ip = forwarded ? String(forwarded).split(',')[0] : (req as any).connection?.remoteAddress || 'unknown';
   return `forgot_password:${ip}`;
 }
 

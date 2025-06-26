@@ -9,7 +9,14 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
-  const { name, email, password, userType, source, metadata } = req.body;
+  const { name, email, password, userType, source, metadata } = req.body as {
+    name?: string;
+    email?: string;
+    password?: string;
+    userType?: string;
+    source?: string;
+    metadata?: Record<string, unknown>;
+  };
 
   // Validate required fields
   if (!name || !email || !password) {

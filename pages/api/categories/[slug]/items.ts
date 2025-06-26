@@ -82,7 +82,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).json({ message: `Method ${req.method} Not Allowed` });
   }
 
-  const { slug } = req.query;
+  const { slug } = req.query as { slug: string | string[] };
 
   if (typeof slug !== 'string') {
     return res.status(400).json({ message: 'Invalid slug provided.' });

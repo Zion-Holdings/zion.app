@@ -14,7 +14,7 @@ import { TextEncoder, TextDecoder } from 'util';
 
 // Polyfill TextEncoder and TextDecoder for JSDOM environment
 global.TextEncoder = TextEncoder;
-// @ts-expect-error // Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
+// @ts-expect-error - Node's TextDecoder might not perfectly match DOM's, but it's usually sufficient for tests
 global.TextDecoder = TextDecoder;
 
 
@@ -203,10 +203,10 @@ if (typeof URL.revokeObjectURL === 'undefined') {
 
 // Polyfill for BroadcastChannel
 if (typeof BroadcastChannel === 'undefined') {
-  // @ts-expect-error
+  // @ts-expect-error - BroadcastChannel polyfill for test environment
   global.BroadcastChannel = class BroadcastChannelMock {
     constructor(name: string) {
-      // @ts-expect-error
+      // @ts-expect-error - Mock name property assignment
       this.name = name;
     }
     postMessage = jest.fn();

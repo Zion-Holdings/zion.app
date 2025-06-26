@@ -8,7 +8,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
-  const { email } = req.body;
+  const { email } = req.body as { email?: unknown };
 
   // Create Supabase client
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;

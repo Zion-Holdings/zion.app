@@ -1,22 +1,28 @@
 import type { NextPage } from 'next';
 import type { ReactElement, ReactNode } from 'react';
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+import type { NextRouter } from 'next/router';
+
+export type NextPageWithLayout<P = Record<string, unknown>, IP = P> = NextPage<P, IP> & {
     getLayout?: (page: ReactElement) => ReactNode;
 };
+
 declare module 'next/router' {
-    function useRouter(): any;
+    function useRouter(): NextRouter;
 }
+
 import * as React from 'react';
+
 declare module 'next/head' {
-    const Head: React.FC<React.PropsWithChildren<Record<string, any>>>;
+    const Head: React.FC<React.PropsWithChildren<Record<string, unknown>>>;
 }
+
 declare module 'next' {
     interface NextApiRequest {
-        [key: string]: any;
+        [key: string]: unknown;
     }
-    interface NextApiResponse<T = any> {
+    interface NextApiResponse<T = unknown> {
         status: (statusCode: number) => NextApiResponse<T>;
         json: (body: T) => NextApiResponse<T>;
-        end: (data?: any) => NextApiResponse<T>;
+        end: (data?: unknown) => NextApiResponse<T>;
     }
 }

@@ -12,7 +12,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const { productId } = req.query;
+  const { productId } = req.query as { productId: string | string[] };
   if (!productId || typeof productId !== 'string') {
     return res.status(400).json({
       error: 'productId is required in the URL path and must be a string.',

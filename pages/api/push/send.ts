@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.setHeader('Allow', 'POST');
     return res.status(405).end('Method Not Allowed');
   }
-  const { title, body, url } = req.body;
+  const { title, body, url } = req.body as { title?: unknown, body?: unknown, url?: unknown };
   const payload = JSON.stringify({ title, body, url });
 
   const subs = fs.existsSync(FILE_PATH)

@@ -143,7 +143,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       limit = '20',
       offset = '0',
       sort = 'created_at'
-    } = req.query;
+    } = req.query as { 
+      status?: string | string[];
+      category?: string | string[];
+      limit?: string | string[];
+      offset?: string | string[];
+      sort?: string | string[];
+    };
 
     const limitNum = Math.min(parseInt(limit as string, 10) || 20, 100);
     const offsetNum = parseInt(offset as string, 10) || 0;

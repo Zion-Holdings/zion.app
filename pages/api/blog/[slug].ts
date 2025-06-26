@@ -11,7 +11,7 @@ export default function handler(
     return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
-  const { slug } = req.query;
+  const { slug } = req.query as { slug: string };
   if (!slug || typeof slug !== 'string') {
     return res.status(400).json({ error: 'Slug is required' });
   }
