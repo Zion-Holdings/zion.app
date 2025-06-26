@@ -100,6 +100,14 @@ describe('apiErrorHandler', () => {
       expect(parsed.code).toBe('VALIDATION_ERROR');
       expect(parsed.message).toBe('Invalid input.');
     });
+
+    it('should use response.data.error as code and message if no message is provided', () => {
+      const error = { response: { status: 404, data: { error: 'USER_NOT_FOUND' } } };
+      const parsed = parseApiError(error);
+      expect(parsed.status).toBe(404);
+      expect(parsed.code).toBe('USER_NOT_FOUND');
+      expect(parsed.message).toBe('USER_NOT_FOUND');
+    });
   });
 
   describe('showApiError', () => {
@@ -120,6 +128,14 @@ describe('apiErrorHandler', () => {
       showApiError(error);
       expect(toast).toHaveBeenCalledWith(expect.objectContaining({
         description: `VALIDATION_ERR: ${specificBackendMessage}`,
+      }));
+    });
+
+    it('should surface backend error code when only error field is provided', () => {
+      const error = { response: { status: 404, data: { error: 'USER_NOT_FOUND' } } };
+      showApiError(error);
+      expect(toast).toHaveBeenCalledWith(expect.objectContaining({
+        description: 'USER_NOT_FOUND: USER_NOT_FOUND',
       }));
     });
 

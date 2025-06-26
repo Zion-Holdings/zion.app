@@ -103,10 +103,14 @@ if (typeof window !== "undefined" && window.fetch) {
           // Try to get a more specific error message from the response
           try {
             const data = await response.clone().json();
-            if (data && data.error) {
-              notify(String(data.error));
-            } else if (data && data.message) {
-              notify(String(data.message));
+            if (data) {
+              const code = data.code || data.error;
+              const message = data.message || data.error;
+              if (message) {
+                notify(code ? `${code}: ${message}` : String(message));
+              } else {
+                notify('Request failed. Please try again.');
+              }
             } else {
               notify('Request failed. Please try again.');
             }
@@ -121,14 +125,17 @@ if (typeof window !== "undefined" && window.fetch) {
       const url = typeof args[0] === 'string' ? args[0] : '';
       
       if (!shouldFailSilently(url)) {
-        const message = err?.response?.data?.error ?? 'Network error - please check your connection';
-        if (message !== lastMessage || Date.now() - lastTime > 5000) {
+        const data = err?.response?.data;
+        const code = data?.code || data?.error;
+        const message = data?.message || data?.error || 'Network error - please check your connection';
+        const text = code ? `${code}: ${message}` : message;
+        if (text !== lastMessage || Date.now() - lastTime > 5000) {
           toast({
             title: "Network Error",
-            description: message,
+            description: text,
             variant: "destructive",
           });
-          lastMessage = message;
+          lastMessage = text;
           lastTime = Date.now();
         }
       }
