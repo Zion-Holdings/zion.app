@@ -5,9 +5,12 @@ import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Mail, AlertCircle, CheckCircle, Clock, RefreshCw, ArrowLeft, Eye } from 'lucide-react';
 import { AuthLayout } from '@/layout';
+import { supabase } from '@/integrations/supabase/client'; // Import Supabase client
+import { useAuth } from '@/hooks/useAuth'; // Import useAuth to access user state
 
 export default function VerifyStatus() {
   const router = useRouter();
+  const { user: authUser, isLoading: authLoading, refreshUser } = useAuth(); // Get user from AuthContext
   const { email: emailParam } = router.query;
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -78,14 +81,44 @@ export default function VerifyStatus() {
     setMessage('');
 
     try {
-      // Simulate checking verification status
-      // In a real app, this would check with Supabase or your backend
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // For now, just show a message - in reality you'd check actual status
-      setMessage('Status check complete. If your email is verified, you can now log in.');
-    } catch (err) {
-      setError('Failed to check verification status. Please try again.');
+      // Attempt to refresh the session to get the latest user status
+      const { error: refreshError } = await supabase.auth.refreshSession();
+
+      if (refreshError) {
+        // Don't treat all refresh errors as critical for this check,
+        // as user might not have a session yet or it might be invalid.
+        console.warn('Error during session refresh:', refreshError.message);
+      }
+
+      // Get the current user details from Supabase
+      const { data: { user }, error: getUserError } = await supabase.auth.getUser();
+
+      if (getUserError) {
+        setError(`Failed to get user status: ${getUserError.message}. Please try logging in directly.`);
+        setIsCheckingStatus(false);
+        return;
+      }
+
+      if (user && user.email_confirmed_at) {
+        setMessage('Email is verified! Redirecting to login...');
+        // The onAuthStateChange listener in AuthProvider should ideally handle redirection.
+        // But we can also push them to login page directly.
+        setTimeout(() => {
+          router.push(`/auth/login?email=${encodeURIComponent(email)}`);
+        }, 2000);
+      } else if (user) {
+        setMessage('Email is not yet verified. Please check your inbox for the verification link and click it. If you have already clicked it, try logging in.');
+        setMessage('Email is not yet verified. Please check your inbox for the verification link. If you have just clicked it, please wait a few moments and try again, or attempt to log in.');
+        setError(''); // Clear previous errors
+      } else {
+        // This case means there's no active user session found by Supabase client.
+        // This is expected if they haven't clicked the link from a different browser/device context yet.
+        setMessage('No active session found. Please click the verification link in your email. If you have just done so, please wait a few moments and try again, or attempt to log in.');
+        setError('');
+      }
+    } catch (err: any) {
+      console.error('Error checking verification status:', err);
+      setError('An unexpected error occurred while checking status. Please try again.');
     } finally {
       setIsCheckingStatus(false);
     }
