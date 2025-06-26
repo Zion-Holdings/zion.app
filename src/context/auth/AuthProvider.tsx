@@ -67,21 +67,23 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         let errorMessage = "Authentication failed. Please try again.";
         let toastTitle = "Authentication Error";
         
-        if (supabaseError.message) {
-          // Check for specific error types
-          if (supabaseError.message.toLowerCase().includes("email not confirmed") || 
-              supabaseError.message.toLowerCase().includes("email address is not confirmed")) {
+        if (supabaseError.message || (supabaseError as any).code) { // Check code as well
+          const messageIncludesEmailNotConfirmed = supabaseError.message?.toLowerCase().includes("email not confirmed") ||
+                                                 supabaseError.message?.toLowerCase().includes("email address is not confirmed");
+          const codeIsEmailNotVerified = (supabaseError as any).code === 'email_not_verified';
+
+          if (messageIncludesEmailNotConfirmed || codeIsEmailNotVerified) {
             errorMessage = "Your email address needs to be verified. Please check your inbox for a verification link and click it to activate your account.";
             toastTitle = "Email Verification Required";
-          } else if (supabaseError.message.toLowerCase().includes("invalid login credentials") ||
-                     supabaseError.message.toLowerCase().includes("invalid credentials")) {
+          } else if (supabaseError.message?.toLowerCase().includes("invalid login credentials") ||
+                     supabaseError.message?.toLowerCase().includes("invalid credentials")) {
             errorMessage = "Invalid email or password. Please check your credentials and try again.";
             toastTitle = "Invalid Credentials";
-          } else if (supabaseError.message.toLowerCase().includes("too many requests")) {
+          } else if (supabaseError.message?.toLowerCase().includes("too many requests")) {
             errorMessage = "Too many login attempts. Please wait a moment before trying again.";
             toastTitle = "Rate Limited";
           } else {
-            errorMessage = supabaseError.message;
+            errorMessage = supabaseError.message || "An unknown authentication error occurred.";
           }
         }
         
