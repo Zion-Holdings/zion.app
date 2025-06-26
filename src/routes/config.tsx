@@ -78,6 +78,7 @@ import CongressPage from '@/pages/Congress';
 import UNBridgePage from '@/pages/UNBridge';
 import InternationalProposalsPage from '@/pages/InternationalProposals';
 import DocsPage from '@/pages/DocsPage'; // Added import for DocsPage
+import CartPage from '@/pages/Cart'; // Import CartPage
 const Signup = React.lazy(() => import('@/pages/Signup'));
 
 import {
@@ -134,6 +135,7 @@ export const allRoutes: AppRouteObject[] = guardRoutes([
   { path: '/roadmap/suggest', element: <RoadmapSuggestPage />, metaTitle: 'Suggest Feature - Zion' },
   { path: '/roadmap/:id', element: <RoadmapFeaturePage />, metaTitle: 'Feature - Zion' },
   { path: '/verify', element: <VerifyIdentity />, metaTitle: 'Verify Identity', requiresAuth: true },
+  { path: '/cart', element: <CartPage />, metaTitle: 'Cart - Zion' }, // Added cart route
   { path: '/checkout/:id', element: <CheckoutPage />, requiresAuth: true },
   { path: '/oauth', element: <OAuthCallback /> },
   { path: '/auth/*', element: <AuthRoutes /> },
