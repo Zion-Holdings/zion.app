@@ -11,6 +11,7 @@ This folder contains various guides and references for the Zion application. Bel
 - [UX Micro-Interactions](./UX_MICRO_INTERACTIONS.md)
 - [Public API Documentation](./public-api/README.md)
 - [Resources Page Prompts](./resources_prompt.md)
+- [AI Talent Matcher (Planned Feature)](./AI_Talent_Matcher.md)
 
 Additional documents cover troubleshooting guides, internal protocols and other topics. Browse the files in this folder for more details.
 
