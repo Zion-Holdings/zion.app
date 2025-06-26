@@ -17,10 +17,13 @@ export function createClient(req: NextApiRequest, res: NextApiResponse) {
         },
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) => {
-            res.setHeader('Set-Cookie', [
-              res.getHeader('Set-Cookie'),
-              `${name}=${value}; Path=/; ${options?.httpOnly ? 'HttpOnly;' : ''} ${options?.secure ? 'Secure;' : ''} ${options?.sameSite ? `SameSite=${options.sameSite};` : ''} ${options?.maxAge ? `Max-Age=${options.maxAge};` : ''}`
-            ].filter(Boolean).flat())
+            let cookieString = `${name}=${value}; Path=/`
+            if (options?.httpOnly) cookieString += '; HttpOnly'
+            if (options?.secure) cookieString += '; Secure'
+            if (options?.sameSite) cookieString += `; SameSite=${options.sameSite}`
+            if (options?.maxAge) cookieString += `; Max-Age=${options.maxAge}`
+            
+            res.setHeader('Set-Cookie', cookieString)
           })
         },
       },
@@ -43,10 +46,13 @@ export function createServerSideClient(context: GetServerSidePropsContext) {
         },
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) => {
-            context.res.setHeader('Set-Cookie', [
-              context.res.getHeader('Set-Cookie'),
-              `${name}=${value}; Path=/; ${options?.httpOnly ? 'HttpOnly;' : ''} ${options?.secure ? 'Secure;' : ''} ${options?.sameSite ? `SameSite=${options.sameSite};` : ''} ${options?.maxAge ? `Max-Age=${options.maxAge};` : ''}`
-            ].filter(Boolean).flat())
+            let cookieString = `${name}=${value}; Path=/`
+            if (options?.httpOnly) cookieString += '; HttpOnly'
+            if (options?.secure) cookieString += '; Secure'
+            if (options?.sameSite) cookieString += `; SameSite=${options.sameSite}`
+            if (options?.maxAge) cookieString += `; Max-Age=${options.maxAge}`
+            
+            context.res.setHeader('Set-Cookie', cookieString)
           })
         },
       },
