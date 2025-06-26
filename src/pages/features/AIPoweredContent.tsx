@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import Link from 'next/link';
 import { useFeatureUsage } from "@/hooks/useFeatureUsage";
 import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
@@ -43,12 +44,14 @@ export default function AIPoweredContent() {
           <p className="text-center text-zion-slate-light max-w-3xl mx-auto mb-8">
             ZionGPT helps you craft high quality articles, service descriptions and FAQs in minutes.
           </p>
-          <img
-            src="https://placehold.co/800x400"
-            alt="Screenshot of ZionGPT content tool"
-            className="rounded-lg shadow-xl mx-auto mb-12"
-            loading="lazy"
-          />
+          <div className="relative w-full h-auto aspect-video mb-12 mx-auto rounded-lg shadow-xl overflow-hidden">
+            <OptimizedImage
+              src="https://placehold.co/800x400"
+              alt="Screenshot of ZionGPT content tool"
+              className="object-cover"
+              fill
+            />
+          </div>
           <h2 className="text-2xl font-bold mb-4">Benefits &amp; Use Cases</h2>
           <ul className="list-disc list-inside space-y-2 mb-8 text-zion-slate-light">
             <li>Save time drafting marketing content for your products or services.</li>

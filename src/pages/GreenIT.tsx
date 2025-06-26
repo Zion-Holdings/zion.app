@@ -3,6 +3,7 @@ import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Leaf, Server, Cloud } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import Link from "next/link";
 
 export default function GreenIT() {
@@ -61,12 +62,12 @@ export default function GreenIT() {
                     </Button>
                   </div>
                 </div>
-                <div className="rounded-lg overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1473876637954-4b493d59fd97?auto=format&fit=crop&w=800&h=600"
+                <div className="rounded-lg overflow-hidden relative w-full h-full">
+                  <OptimizedImage
+                    src="https://images.unsplash.com/photo-1473876637954-4b493d59fd97?auto=format&fit=crop&w=800&h=600&q=80"
                     alt="Green IT sustainability"
-                    className="object-cover w-full h-full"
-                    loading="lazy"
+                    className="object-cover"
+                    fill
                   />
                 </div>
               </div>
