@@ -19,6 +19,7 @@ import { getStripe } from '@/utils/getStripe';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ShoppingCart, User, CreditCard, ArrowRight, Package, Shield } from 'lucide-react';
+import { useWishlist } from '@/hooks/useWishlist';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -29,12 +30,18 @@ export default function CartPage() {
   const { user, isAuthenticated } = useAuth();
   const [loading, setLoading] = useState(false);
   const [guestOpen, setGuestOpen] = useState(false);
+  const { toggle: toggleWishlist } = useWishlist();
 
   const updateQuantity = (id: string, qty: number) => {
     dispatch(updateQuantityAction({ id, quantity: qty }));
   };
 
   const removeItem = (id: string) => {
+    dispatch(removeItemAction(id));
+  };
+
+  const saveForLater = (id: string) => {
+    toggleWishlist(id);
     dispatch(removeItemAction(id));
   };
 
@@ -194,14 +201,24 @@ export default function CartPage() {
                           <p className="text-white font-semibold">
                             ${(item.price * item.quantity).toFixed(2)}
                           </p>
-                          <Button 
-                            variant="outline" 
-                            size="sm" 
-                            onClick={() => removeItem(item.id)}
-                            className="mt-1 text-red-400 border-red-400 hover:bg-red-400/10"
-                          >
-                            Remove
-                          </Button>
+                          <div className="flex flex-col items-end gap-1">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => removeItem(item.id)}
+                              className="text-red-400 border-red-400 hover:bg-red-400/10"
+                            >
+                              Remove
+                            </Button>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => saveForLater(item.id)}
+                              className="text-zion-cyan hover:bg-zion-cyan/10"
+                            >
+                              Save for Later
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     </div>
