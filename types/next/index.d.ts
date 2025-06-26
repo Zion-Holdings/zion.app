@@ -4,6 +4,7 @@ export interface NextApiRequest {
   body?: any;
   query: any;
   cookies: any;
+  headers?: Record<string, string | string[] | undefined>;
 }
 
 export interface NextApiResponse<T = any> {

@@ -1,6 +1,7 @@
 declare module 'next' {
   export interface NextApiRequest {
     [key: string]: unknown;
+    headers: Record<string, string | string[] | undefined>;
   }
   export interface NextApiResponse<T = unknown> {
     status: (statusCode: number) => NextApiResponse<T>;
