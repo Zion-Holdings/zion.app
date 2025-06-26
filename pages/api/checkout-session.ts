@@ -159,7 +159,7 @@ export default async function handler(
       customer_email,
       line_items: lineItems,
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_SITE_URL || req.headers.origin}/order-confirmation?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${process.env.NEXT_PUBLIC_SITE_URL || req.headers.origin}/order-confirmation/{CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL || req.headers.origin}/cart`,
       metadata: {
         customer_email,
