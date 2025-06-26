@@ -40,7 +40,9 @@
     "dashboard": "Tableau de Bord",
     "messages": "Messages",
     "post_job": "Publier un Emploi",
-    "analytics": "Analytiques"
+    "analytics": "Analytiques",
+    "login": "Login",
+    "signup": "Sign Up"
   },
   "auth": {
     "login": "Login",

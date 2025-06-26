@@ -40,7 +40,9 @@
     "dashboard": "Dashboard",
     "messages": "Messages",
     "post_job": "Post Job",
-    "analytics": "Analytics"
+    "analytics": "Analytics",
+    "login": "Login",
+    "signup": "Sign Up"
   },
   "auth": {
     "login": "Login",
@@ -256,7 +258,7 @@
     "services_desc": "On-demand IT support, consulting, development, and more",
     "talents": "Talents",
     "talents_desc": "Connect with AI experts, developers, and tech specialists",
-    "equipment": "Equipment", 
+    "equipment": "Equipment",
     "equipment_desc": "Rent or buy specialized hardware, servers, and devices",
     "innovation": "Innovation",
     "innovation_desc": "Discover cutting-edge solutions and tech breakthroughs",
@@ -287,7 +289,7 @@
   "benefits": {
     "ai_matchmaking": "AI-Powered Matchmaking",
     "ai_matchmaking_desc": "Our advanced algorithms match your needs with the perfect service providers or products, saving you time and ensuring optimal results.",
-    "global_availability": "Global Availability", 
+    "global_availability": "Global Availability",
     "global_availability_desc": "Access a worldwide network of tech talents, products, and services to find the best solutions regardless of geographic limitations.",
     "support_24_7": "24/7 Support",
     "support_24_7_desc": "Our dedicated team is available around the clock to assist with any questions or issues you might encounter during your journey.",
