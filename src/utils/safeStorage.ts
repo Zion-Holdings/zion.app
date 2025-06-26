@@ -1,5 +1,5 @@
 // In-memory storage for fallback with optimizations
-let inMemoryStore: Record<string, string> = {};
+const inMemoryStore: Record<string, string> = {};
 let localStorageAvailable: boolean | null = null; // Cache the availability check
 let lastAvailabilityCheck = 0;
 const AVAILABILITY_CHECK_INTERVAL = 5000; // Check every 5 seconds max

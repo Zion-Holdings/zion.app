@@ -34,7 +34,7 @@ export const formatDate = (date: Date | string | number, format: string = 'mediu
         month: 'long', 
         day: 'numeric' 
       });
-    case 'relative':
+    case 'relative': {
       // Simple relative time (today, yesterday, or date)
       const now = new Date();
       const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -48,6 +48,7 @@ export const formatDate = (date: Date | string | number, format: string = 'mediu
       } else {
         return dateObj.toLocaleDateString();
       }
+    }
     default:
       return dateObj.toLocaleDateString();
   }

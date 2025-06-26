@@ -8,7 +8,7 @@ it('returns 200 for cloud infrastructure management service page', async () => {
   expect('props' in result && (result as any).props.service).toBeTruthy();
 });
 
-it('slug \"ai-development-integration\" renders correct title', async () => {
+it('slug "ai-development-integration" renders correct title', async () => {
   const result = await getStaticProps({
     params: { slug: 'ai-development-integration' },
   } as any);

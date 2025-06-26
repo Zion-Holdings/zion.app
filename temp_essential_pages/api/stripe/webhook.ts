@@ -12,7 +12,7 @@ export const config = { api: { bodyParser: false } };
 const stripe = new Stripe(
   useTest ? process.env.STRIPE_TEST_SECRET_KEY || '' : process.env.STRIPE_SECRET_KEY || '',
   {
-    apiVersion: '2023-10-16',
+    apiVersion: '2025-05-28.basil',
   }
 );
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
@@ -57,7 +57,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         let ledger: any[] = [];
         try {
           ledger = JSON.parse(fs.readFileSync(file, 'utf8'));
-        } catch {}
+        } catch {
+          // Use empty array if file doesn't exist or is invalid
+        }
         ledger.push({
           id: randomUUID(),
           user_id: userId,
