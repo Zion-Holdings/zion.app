@@ -1,41 +1,32 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { supabase } from '@/integrations/supabase/client';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
-// Mock reviews data for fallback
-const MOCK_REVIEWS = [
-  {
-    id: 'review-1',
-    productId: 'ai-model-1',
-    rating: 5,
-    comment: 'Excellent AI integration package! Saved us weeks of development.',
-    userId: 'user-1',
-    createdAt: '2024-01-15T10:30:00.000Z'
-  },
-  {
-    id: 'review-2', 
-    productId: 'ai-model-1',
-    rating: 4,
-    comment: 'Very good documentation and support. Minor issues with initial setup.',
-    userId: 'user-2',
-    createdAt: '2024-01-10T14:20:00.000Z'
+async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (!supabase) {
+    return res.status(503).json({ error: 'Supabase not configured' });
   }
-];
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse,
-) {
   if (req.method === 'GET') {
-    // Handle GET requests for fetching reviews by product ID
     const { productId } = req.query;
-    
+
     if (!productId || typeof productId !== 'string') {
       return res.status(400).json({ error: 'productId is required as query parameter' });
     }
 
     try {
-      // For now, return mock data filtered by productId
-      const productReviews = MOCK_REVIEWS.filter(review => review.productId === productId);
-      return res.status(200).json(productReviews);
+      const { data, error } = await supabase
+        .from('product_reviews')
+        .select('id, product_id, rating, comment, created_at, user_id')
+        .eq('product_id', productId)
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        console.error('Error fetching reviews:', error);
+        return res.status(500).json({ error: 'Failed to fetch reviews' });
+      }
+
+      return res.status(200).json(data || []);
     } catch (error) {
       console.error('Error fetching reviews:', error);
       return res.status(500).json({ error: 'Failed to fetch reviews' });
@@ -43,11 +34,9 @@ export default async function handler(
   }
 
   if (req.method === 'POST') {
-    // Handle POST requests for creating new reviews
     try {
-      const { productId, rating, comment } = req.body || {};
+      const { productId, rating, comment, userId } = req.body || {};
 
-      // Validate input
       if (!productId || typeof productId !== 'string') {
         return res.status(400).json({ error: 'productId is required' });
       }
@@ -57,29 +46,30 @@ export default async function handler(
         return res.status(400).json({ error: 'Rating must be a number between 1 and 5' });
       }
 
-      // For development, simulate creating a review
-      const newReview = {
-        id: `review-${Date.now()}`,
-        productId,
-        rating: parsedRating,
-        comment: comment || '',
-        userId: 'guest-user',
-        createdAt: new Date().toISOString()
-      };
+      if (!userId || typeof userId !== 'string') {
+        return res.status(400).json({ error: 'userId is required' });
+      }
 
-      console.log('Mock review created:', newReview);
-      
-      return res.status(201).json({
-        ...newReview,
-        message: 'Review submitted successfully! (Demo mode - review not actually saved)'
-      });
+      const { data, error } = await supabase
+        .from('product_reviews')
+        .insert({ product_id: productId, rating: parsedRating, comment, user_id: userId })
+        .select()
+        .single();
+
+      if (error) {
+        console.error('Error creating review:', error);
+        return res.status(500).json({ error: 'Failed to create review' });
+      }
+
+      return res.status(201).json(data);
     } catch (error) {
       console.error('Error creating review:', error);
       return res.status(500).json({ error: 'Failed to create review' });
     }
   }
 
-  // Method not allowed
   res.setHeader('Allow', ['GET', 'POST']);
   return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
 }
+
+export default withErrorLogging(handler);
