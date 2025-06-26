@@ -19,6 +19,13 @@ const LoginPage = () => {
   const [verificationEmailSent, setVerificationEmailSent] = useState(false);
   const [isResendingVerification, setIsResendingVerification] = useState(false);
 
+  // States for the new proactive resend form
+  const [showProactiveResendForm, setShowProactiveResendForm] = useState(false);
+  const [proactiveResendEmail, setProactiveResendEmail] = useState('');
+  const [isProactivelyResending, setIsProactivelyResending] = useState(false);
+  const [proactiveResendMessage, setProactiveResendMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+
   useEffect(() => {
     let mounted = true;
 
@@ -126,6 +133,35 @@ const LoginPage = () => {
     }
   };
 
+  const handleProactiveResendVerification = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!proactiveResendEmail) {
+      setProactiveResendMessage({ type: 'error', text: 'Please enter your email address.' });
+      return;
+    }
+
+    setIsProactivelyResending(true);
+    setProactiveResendMessage(null);
+    try {
+      const response = await fetch('/api/resend-verification-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: proactiveResendEmail })
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setProactiveResendMessage({ type: 'success', text: `Verification email sent to ${proactiveResendEmail}. Please check your inbox (and spam folder).` });
+      } else {
+        setProactiveResendMessage({ type: 'error', text: data.message || 'Failed to resend verification email.' });
+      }
+    } catch (err) {
+      setProactiveResendMessage({ type: 'error', text: 'An unexpected error occurred. Please try again.' });
+    } finally {
+      setIsProactivelyResending(false);
+    }
+  };
+
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     if (!isSupabaseConfigured) {
@@ -157,6 +193,7 @@ const LoginPage = () => {
             name: 'EmailNotVerifiedError', 
             message: 'Please verify your email address before logging in. Check your inbox for a verification link.' 
           } as AuthError);
+          setShowProactiveResendForm(false); // Hide proactive form if reactive one is triggered
           
           // Auto-resend verification email
           setTimeout(() => {
@@ -262,7 +299,70 @@ const LoginPage = () => {
                 create a new account
               </Link>
             </p>
+            <p className="mt-2 text-center text-sm text-gray-600">
+              <button
+                onClick={() => {
+                  setShowProactiveResendForm(!showProactiveResendForm);
+                  // Optionally prefill from main email input if available and form is opening
+                  if (!showProactiveResendForm && email) {
+                    setProactiveResendEmail(email);
+                  }
+                  // Clear previous messages when toggling
+                  setProactiveResendMessage(null);
+                }}
+                className="font-medium text-blue-600 hover:text-blue-500"
+              >
+                {showProactiveResendForm ? 'Hide' : "Didn't receive verification email?"}
+              </button>
+            </p>
           </div>
+
+          {/* Proactive Resend Verification Form */}
+          {showProactiveResendForm && (
+            <div className="mt-4 p-4 border border-gray-200 rounded-md bg-gray-50">
+              <form onSubmit={handleProactiveResendVerification} className="space-y-4">
+                <div>
+                  <label htmlFor="proactive-resend-email" className="block text-sm font-medium text-gray-700">
+                    Enter your email to resend verification
+                  </label>
+                  <input
+                    id="proactive-resend-email"
+                    name="proactiveResendEmail"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    className="appearance-none block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    placeholder="you@example.com"
+                    value={proactiveResendEmail}
+                    onChange={(e) => setProactiveResendEmail(e.target.value)}
+                    disabled={isProactivelyResending}
+                  />
+                </div>
+                {proactiveResendMessage && (
+                  <div className={`text-sm ${proactiveResendMessage.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+                    {proactiveResendMessage.text}
+                  </div>
+                )}
+                <div>
+                  <button
+                    type="submit"
+                    disabled={isProactivelyResending}
+                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+                  >
+                    {isProactivelyResending ? (
+                      <>
+                        <RefreshCw className="h-4 w-4 inline animate-spin mr-2" />
+                        Sending...
+                      </>
+                    ) : (
+                      'Resend Verification Email'
+                    )}
+                  </button>
+                </div>
+              </form>
+            </div>
+          )}
+
 
           {/* Session Check Timeout Notice */}
           {sessionCheckTimedOut && !user && !error && !isEmailUnverified && (
@@ -442,7 +542,7 @@ const LoginPage = () => {
             </div>
           </div>
 
-          <div className="text-center">
+          <div className="text-center mt-4"> {/* Added mt-4 for spacing */}
             <p className="text-xs text-gray-500">
               By signing in, you agree to our{' '}
               <Link href="/legal/terms" className="text-blue-600 hover:text-blue-500">
