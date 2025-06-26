@@ -124,6 +124,8 @@ export default function ForumPostPage() {
         title: "Authentication required",
         description: "Please sign in to vote on posts",
       });
+      const next = encodeURIComponent(router.asPath);
+      router.push(`/auth/login?next=${next}`);
       return;
     }
     
@@ -140,6 +142,8 @@ export default function ForumPostPage() {
         title: "Authentication required",
         description: "Please sign in to vote on posts",
       });
+      const next = encodeURIComponent(router.asPath);
+      router.push(`/auth/login?next=${next}`);
       return;
     }
     
@@ -156,6 +160,8 @@ export default function ForumPostPage() {
         title: "Authentication required",
         description: "Please sign in to reply",
       });
+      const next = encodeURIComponent(router.asPath);
+      router.push(`/auth/login?next=${next}`);
       return;
     }
     
@@ -214,6 +220,8 @@ export default function ForumPostPage() {
         title: "Authentication required",
         description: "Please sign in to report content",
       });
+      const next = encodeURIComponent(router.asPath);
+      router.push(`/auth/login?next=${next}`);
       return;
     }
     
