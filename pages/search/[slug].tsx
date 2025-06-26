@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { Search, Filter, Grid, List } from 'lucide-react';
 import { SEO } from '@/components/SEO';
@@ -10,6 +10,10 @@ import ProductCard from '@/components/ProductCard';
 import { TalentCard } from '@/components/talent/TalentCard';
 import { CategoryCard } from '@/components/CategoryCard';
 import { SearchEmptyState } from '@/components/marketplace/EmptyState';
+import { MARKETPLACE_LISTINGS } from '@/data/listingData';
+import { TALENT_PROFILES } from '@/data/talentData';
+import { BLOG_POSTS } from '@/data/blog-posts';
+import { useDebounce } from '@/hooks/useDebounce';
 
 interface SearchResult {
   id: string;
@@ -35,17 +39,91 @@ interface SearchResultsPageProps {
   totalCount: number;
 }
 
-export default function SearchResultsPage({ 
-  initialResults, 
-  query, 
-  slug, 
-  totalCount 
+function offlineSearch(
+  query: string,
+  page = 1,
+  limit = 12,
+): { results: SearchResult[]; totalCount: number } {
+  const term = query.toLowerCase().trim();
+  const match = (text?: string) => text?.toLowerCase().includes(term);
+
+  const productResults = MARKETPLACE_LISTINGS.filter(
+    (p) =>
+      match(p.title) ||
+      match(p.description) ||
+      match(p.category) ||
+      p.tags?.some((t) => match(t)),
+  ).map((p) => ({
+    id: p.id,
+    title: p.title,
+    description: p.description || '',
+    type: 'product' as const,
+    slug: p.id,
+    image: p.images?.[0],
+    price: p.price,
+    rating: p.rating,
+    author: p.author
+      ? { name: p.author.name, avatar: p.author.avatarUrl }
+      : undefined,
+    tags: p.tags,
+    category: p.category,
+  }));
+
+  const talentResults = TALENT_PROFILES.filter(
+    (t) =>
+      match(t.full_name) ||
+      match(t.professional_title) ||
+      match(t.bio) ||
+      t.skills?.some((s) => match(s)),
+  ).map((t) => ({
+    id: t.id,
+    title: t.full_name,
+    description: t.professional_title || '',
+    type: 'talent' as const,
+    slug: t.id,
+    image: t.profile_picture_url,
+    rating: t.average_rating,
+    author: { name: t.full_name, avatar: t.profile_picture_url },
+    tags: t.skills,
+    category: t.location,
+  }));
+
+  const blogResults = BLOG_POSTS.filter(
+    (b) =>
+      match(b.title) ||
+      match(b.excerpt) ||
+      match(b.content) ||
+      b.tags?.some((t) => match(t)),
+  ).map((b) => ({
+    id: b.slug,
+    title: b.title,
+    description: b.excerpt,
+    type: 'blog' as const,
+    slug: b.slug,
+    image: b.featuredImage,
+    tags: b.tags,
+    category: 'Blog',
+  }));
+
+  const all = [...productResults, ...talentResults, ...blogResults];
+  all.sort((a, b) => a.title.localeCompare(b.title));
+  const start = (page - 1) * limit;
+  const paginated = all.slice(start, start + limit);
+  return { results: paginated, totalCount: all.length };
+}
+
+export default function SearchResultsPage({
+  initialResults,
+  query,
+  slug,
+  totalCount,
 }: SearchResultsPageProps) {
   const router = useRouter();
   const { isAuthenticated } = useAuth();
   const [results, setResults] = useState<SearchResult[]>(initialResults);
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState(query);
+  const debouncedQuery = useDebounce(searchQuery, 300);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
   const [sortBy, setSortBy] = useState('relevance');
@@ -53,32 +131,41 @@ export default function SearchResultsPage({
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [minRating, setMinRating] = useState('');
+  const [totalResults, setTotalResults] = useState(totalCount);
 
   // Fetch search results
   const fetchResults = async (searchTerm: string, page = 1) => {
     try {
       setLoading(true);
       console.log(`Fetching search results for: ${searchTerm}, page: ${page}`);
-      
+
       const response = await fetch(
-        `/api/search?query=${encodeURIComponent(searchTerm)}&page=${page}&limit=12&sort=${sortBy}`
+        `/api/search?query=${encodeURIComponent(searchTerm)}&page=${page}&limit=12&sort=${sortBy}`,
       );
-      
+
       if (!response.ok) {
         throw new Error(`Search API error: ${response.status}`);
       }
-      
+
       const data = await response.json();
       console.log('Search results received:', data);
-      
+
+      setTotalResults(data.totalCount || data.results?.length || 0);
+
       if (page === 1) {
         setResults(data.results || []);
       } else {
-        setResults(prev => [...prev, ...(data.results || [])]);
+        setResults((prev) => [...prev, ...(data.results || [])]);
       }
     } catch (error) {
       console.error('Error fetching search results:', error);
-      setResults([]);
+      const offline = offlineSearch(searchTerm, page, 12);
+      setTotalResults(offline.totalCount);
+      if (page === 1) {
+        setResults(offline.results);
+      } else {
+        setResults((prev) => [...prev, ...offline.results]);
+      }
     } finally {
       setLoading(false);
     }
@@ -88,12 +175,21 @@ export default function SearchResultsPage({
   const handleSearch = (newQuery: string) => {
     setSearchQuery(newQuery);
     if (newQuery.trim()) {
-      // Update URL and fetch new results
-      router.push(`/search?q=${encodeURIComponent(newQuery)}`, undefined, { shallow: true });
+      router.push(`/search?q=${encodeURIComponent(newQuery)}`, undefined, {
+        shallow: true,
+      });
       setCurrentPage(1);
-      fetchResults(newQuery, 1);
     }
   };
+
+  useEffect(() => {
+    if (debouncedQuery.trim()) {
+      fetchResults(debouncedQuery, 1);
+    } else {
+      setResults([]);
+      setTotalResults(0);
+    }
+  }, [debouncedQuery]);
 
   // Load more results
   const loadMore = () => {
@@ -103,11 +199,15 @@ export default function SearchResultsPage({
   };
 
   const categories = Array.from(
-    new Set(results.map(r => r.category).filter(Boolean))
+    new Set(results.map((r) => r.category).filter(Boolean)),
   );
 
   const filteredResults = results.filter((r) => {
-    if (categoryFilter !== 'all' && categoryFilter && r.category !== categoryFilter) {
+    if (
+      categoryFilter !== 'all' &&
+      categoryFilter &&
+      r.category !== categoryFilter
+    ) {
       return false;
     }
     if (minPrice && (r.price ?? 0) < Number(minPrice)) {
@@ -123,11 +223,14 @@ export default function SearchResultsPage({
   });
 
   // Group results by type for better display
-  const groupedResults = filteredResults.reduce((acc, result) => {
-    if (!acc[result.type]) acc[result.type] = [];
-    acc[result.type]!.push(result);
-    return acc;
-  }, {} as Record<string, SearchResult[]>);
+  const groupedResults = filteredResults.reduce(
+    (acc, result) => {
+      if (!acc[result.type]) acc[result.type] = [];
+      acc[result.type]!.push(result);
+      return acc;
+    },
+    {} as Record<string, SearchResult[]>,
+  );
 
   const renderResultCard = (result: SearchResult) => {
     switch (result.type) {
@@ -143,15 +246,17 @@ export default function SearchResultsPage({
                 price: result.price || 0,
                 images: result.image ? [result.image] : [],
                 rating: result.rating,
-                author: result.author ? { 
-                  name: result.author.name, 
-                  id: result.id, 
-                  avatarUrl: result.author.avatar 
-                } : { name: '', id: '' },
+                author: result.author
+                  ? {
+                      name: result.author.name,
+                      id: result.id,
+                      avatarUrl: result.author.avatar,
+                    }
+                  : { name: '', id: '' },
                 tags: result.tags || [],
                 category: result.category || '',
                 currency: '$',
-                createdAt: new Date().toISOString()
+                createdAt: new Date().toISOString(),
               }}
             />
           </div>
@@ -172,7 +277,7 @@ export default function SearchResultsPage({
                 bio: result.description,
                 summary: result.description,
                 is_verified: false,
-                availability_type: 'available'
+                availability_type: 'available',
               }}
               onViewProfile={(id: string) => {
                 router.push(`/talent/${id}`);
@@ -196,9 +301,15 @@ export default function SearchResultsPage({
         );
       default:
         return (
-          <div key={result.id} className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow" data-testid="result-card">
+          <div
+            key={result.id}
+            className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow"
+            data-testid="result-card"
+          >
             <h3 className="font-semibold">{result.title}</h3>
-            <p className="text-gray-600 dark:text-gray-200">{result.description}</p>
+            <p className="text-gray-600 dark:text-gray-200">
+              {result.description}
+            </p>
           </div>
         );
     }
@@ -214,7 +325,10 @@ export default function SearchResultsPage({
       />
 
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-        <div className="container mx-auto px-4 py-8" data-testid="search-results">
+        <div
+          className="container mx-auto px-4 py-8"
+          data-testid="search-results"
+        >
           {/* Search Header */}
           <div className="mb-8">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
@@ -222,7 +336,10 @@ export default function SearchResultsPage({
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                   Search Results
                 </h1>
-                <p className="text-gray-600 dark:text-gray-200" data-testid="results-count">
+                <p
+                  className="text-gray-600 dark:text-gray-200"
+                  data-testid="results-count"
+                >
                   {filteredResults.length > 0
                     ? `Found ${filteredResults.length} results for "${query}"`
                     : `No results found for "${query}"`}
@@ -275,7 +392,9 @@ export default function SearchResultsPage({
                 >
                   <option value="all">All Categories</option>
                   {categories.map((c) => (
-                    <option key={c} value={c}>{c}</option>
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
                   ))}
                 </select>
 
@@ -354,19 +473,21 @@ export default function SearchResultsPage({
                   <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 capitalize">
                     {type}s ({typeResults.length})
                   </h2>
-                  
-                  <div className={
-                    viewMode === 'grid'
-                      ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
-                      : 'space-y-4'
-                  }>
+
+                  <div
+                    className={
+                      viewMode === 'grid'
+                        ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
+                        : 'space-y-4'
+                    }
+                  >
                     {typeResults.map(renderResultCard)}
                   </div>
                 </div>
               ))}
 
               {/* Load More Button */}
-              {results.length < totalCount && (
+              {results.length < totalResults && (
                 <div className="flex justify-center py-8">
                   <Button
                     onClick={loadMore}
@@ -392,33 +513,41 @@ export default function SearchResultsPage({
   );
 }
 
-export const getServerSideProps: GetServerSideProps<SearchResultsPageProps> = async (context: any) => {
+export const getServerSideProps: GetServerSideProps<
+  SearchResultsPageProps
+> = async (context: any) => {
   const params = context.params;
   const slug = params?.slug as string;
-  
+
   // Convert slug back to query term
   const query = slug ? slug.replace(/-/g, ' ') : '';
-  
+
   try {
     // In production, replace with your actual API base URL
-    const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
-    
+    const apiBaseUrl =
+      process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+
     console.log(`Fetching search results for slug: ${slug}, query: ${query}`);
-    
+
     const response = await fetch(
-      `${apiBaseUrl}/api/search?query=${encodeURIComponent(query)}&limit=12`
+      `${apiBaseUrl}/api/search?query=${encodeURIComponent(query)}&limit=12`,
     );
-    
+
     let results = [];
     let totalCount = 0;
-    
+
     if (response.ok) {
       const data = await response.json();
       results = data.results || [];
       totalCount = data.totalCount || results.length;
       console.log(`Server-side fetch successful: ${results.length} results`);
     } else {
-      console.error(`Search API error: ${response.status} ${response.statusText}`);
+      console.error(
+        `Search API error: ${response.status} ${response.statusText}`,
+      );
+      const offline = offlineSearch(query, 1, 12);
+      results = offline.results;
+      totalCount = offline.totalCount;
     }
 
     return {
@@ -431,14 +560,15 @@ export const getServerSideProps: GetServerSideProps<SearchResultsPageProps> = as
     };
   } catch (error) {
     console.error('Error fetching search results:', error);
-    
+    const offline = offlineSearch(query, 1, 12);
+
     return {
       props: {
-        initialResults: [],
+        initialResults: offline.results,
         query,
         slug,
-        totalCount: 0,
+        totalCount: offline.totalCount,
       },
     };
   }
-}; 
+};
