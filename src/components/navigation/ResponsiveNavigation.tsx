@@ -52,7 +52,7 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
     {
       label: t('nav.resources', 'Resources'),
       subItems: [
-        { label: t('nav.docs', 'Docs'), href: '/resources/docs' },
+        { label: t('nav.docs', 'Docs'), href: '/docs' },
         { label: t('nav.tutorials', 'Tutorials'), href: '/tutorials' },
         { label: t('nav.case_studies', 'Case Studies'), href: '/case-studies' },
       ],
