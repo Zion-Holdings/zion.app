@@ -92,29 +92,29 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
         <Heart className={active ? 'text-red-500 fill-red-500' : 'text-gray-500'} />
       </button>
 
-    <div className="w-full h-40 relative mb-2">
-      {imageUrl && !imageError ? (
-        <Image
-          src={imageUrl}
-          alt={imageAltText}
-          fill
-          style={{ objectFit: 'cover' }}
-          onError={(e) => handleImageError(e)}
-          priority={false}
-          sizes={imageSizes}
-        />
-      ) : (
-        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-          <span className="text-gray-500">No Image</span>
-        </div>
-      )}
-      {active && (
-        <div className="absolute top-2 left-2 p-1 rounded-full bg-background/70">
-          <Heart className="text-red-500 fill-red-500" />
-        </div>
-      )}
-    </div>
       <Link href={`/marketplace/listing/${product.id}`}>
+        <div className="w-full h-40 relative mb-2 cursor-pointer">
+          {imageUrl && !imageError ? (
+            <Image
+              src={imageUrl}
+              alt={imageAltText}
+              fill
+              style={{ objectFit: 'cover' }}
+              onError={(e) => handleImageError(e)}
+              priority={false}
+              sizes={imageSizes}
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-500">No Image</span>
+            </div>
+          )}
+          {active && (
+            <div className="absolute top-2 left-2 p-1 rounded-full bg-background/70">
+              <Heart className="text-red-500 fill-red-500" />
+            </div>
+          )}
+        </div>
         <h3 className="font-semibold mb-1">{productTitle}</h3>
       </Link>
       {product.price != null && (
