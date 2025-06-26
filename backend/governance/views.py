@@ -1,8 +1,9 @@
-from rest_framework import viewsets, status, permissions
+from rest_framework import viewsets, status, permissions, filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.utils import timezone
 from django.db.models import Count, Sum
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Proposal, Vote
 from .serializers import (
     ProposalSerializer, ProposalListSerializer, ProposalDetailSerializer,
@@ -10,7 +11,11 @@ from .serializers import (
 )
 
 class ProposalViewSet(viewsets.ModelViewSet):
-    queryset = Proposal.objects.all().prefetch_related('votes') # Optimize by prefetching votes
+    queryset = Proposal.objects.all().prefetch_related('votes')  # Optimize by prefetching votes
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
+    filterset_fields = ['status', 'proposal_type']
+    ordering_fields = ['created_at', 'voting_ends_at']
+    search_fields = ['title', 'summary']
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly] # Adjust as needed
 
     def get_serializer_class(self):
@@ -94,6 +99,3 @@ class MyVotesViewSet(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         user = self.request.user
         return Vote.objects.filter(voter=user).select_related('proposal')
-
-# TODO: Add filtering capabilities to ProposalViewSet (e.g., using django-filter)
-# for status, type, etc.
