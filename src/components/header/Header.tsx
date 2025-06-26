@@ -52,7 +52,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     e.preventDefault();
     if (query.trim()) {
       console.log('Header search submit:', query);
-      router.push(`/search/${slugify(query)}`);
+      router.push(`/search?q=${encodeURIComponent(query)}`);
       setQuery("");
     }
   };
@@ -74,7 +74,24 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             onChange={setQuery}
             onSelectSuggestion={(suggestion) => {
               console.log('Header search suggestion selected:', suggestion);
-              router.push(`/search/${suggestion.slug || slugify(suggestion.text)}`);
+              // Navigate to specific item if slug and type indicate direct link, otherwise search by text
+              if (suggestion.slug && (suggestion.type === 'product' || suggestion.type === 'doc' || suggestion.type === 'blog')) {
+                // Assuming product slugs are like /marketplace/listing/id
+                // doc slugs are like /docs/path
+                // blog slugs are like /blog/post-slug
+                let path = suggestion.slug;
+                if (suggestion.type === 'product' && !suggestion.slug.startsWith('/marketplace/listing/')) {
+                    path = `/marketplace/listing/${suggestion.slug}`;
+                } else if (suggestion.type === 'doc' && !suggestion.slug.startsWith('/docs')) {
+                    // This case might need refinement based on actual doc slug structure
+                    path = `/docs/${suggestion.slug}`;
+                } else if (suggestion.type === 'blog' && !suggestion.slug.startsWith('/blog/')) {
+                    path = `/blog/${suggestion.slug}`;
+                }
+                router.push(path);
+              } else {
+                router.push(`/search?q=${encodeURIComponent(suggestion.text)}`);
+              }
               setQuery("");
             }}
             searchSuggestions={searchSuggestions}

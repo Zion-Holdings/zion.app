@@ -79,8 +79,8 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
     onChange(suggestion.text);
     if (onSelectSuggestion) onSelectSuggestion(suggestion);
 
-    const searchParam = suggestion.slug || slugify(suggestion.text);
-    router.push(`/search/${searchParam}`);
+    const searchQuery = encodeURIComponent(suggestion.text);
+    router.push(`/search?q=${searchQuery}`);
     fireEvent('search', { search_term: suggestion.text });
     setFocused(false);
     setHighlightedIndex(-1);
@@ -129,9 +129,11 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
                 setHighlightedIndex(-1);
                 inputRef.current?.blur();
               }
-              if (e.key === 'Enter' && value) {
+              // If Enter is pressed and there's a value, navigate with query parameter
+              if (e.key === 'Enter' && value.trim()) {
+                e.preventDefault(); // Prevent form submission if SearchBar is in a form
                 fireEvent('search', { search_term: value });
-                router.push(`/search/${slugify(value)}`);
+                router.push(`/search?q=${encodeURIComponent(value)}`);
                 setFocused(false);
                 inputRef.current?.blur();
               }
@@ -151,9 +153,12 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
                 if (highlightedIndex !== -1 && suggestions[highlightedIndex]) {
                   e.preventDefault();
                   handleSelect(suggestions[highlightedIndex]);
-                } else if (value) {
+                } else if (value.trim()) {
+                  // This case should ideally be handled by the form's onSubmit,
+                  // but if SearchBar is used standalone, this provides a fallback.
+                  e.preventDefault();
                   fireEvent('search', { search_term: value });
-                  router.push(`/search/${slugify(value)}`);
+                  router.push(`/search?q=${encodeURIComponent(value)}`);
                   setFocused(false);
                   inputRef.current?.blur();
                 }
