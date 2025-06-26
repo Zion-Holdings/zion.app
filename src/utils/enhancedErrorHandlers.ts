@@ -1,5 +1,6 @@
 import { enhancedGlobalErrorHandler, ToastType, ToastPriority } from './globalToastManager';
 import { logError } from './logError';
+import { isPublicRoute } from '../config/publicRoutes';
 
 /**
  * Enhanced API Error Handler
@@ -39,6 +40,29 @@ export class EnhancedApiErrorHandler {
     if (shouldFailSilently) {
       console.debug(`Silent API error (${status} ${method}): ${url}`, error.response?.data);
       return;
+    }
+
+    // If it's an auth error (401/403) and the user is currently on a public page,
+    // log it but don't show a toast.
+    if (
+      (status === 401 || status === 403) &&
+      typeof window !== 'undefined' && isPublicRoute(window.location.pathname)
+    ) {
+      logError(error, {
+        context: context || 'apiRequestPublicPageContext',
+        status,
+        method,
+        apiUrl: url,
+        pageUrl: window.location.pathname,
+        message: `Auth error (${status}) for API ${url} on public page ${window.location.pathname} suppressed.`,
+      });
+      // If showToast was explicitly false, we might still want other logic.
+      // However, the primary goal is to suppress the user-facing toast.
+      // If options.showToast is explicitly false, this won't show a toast anyway.
+      // This check ensures that even if showToast was true or undefined, it's suppressed on public pages.
+      if (showToast !== false) { // Default is true, so if not explicitly false, we suppress and return.
+        return;
+      }
     }
 
     // Determine error type and priority based on status code
@@ -271,6 +295,21 @@ export class EnhancedFetchErrorHandler {
           const shouldShowError = this.shouldShowFetchError(response.status, url);
 
           if (shouldShowError) {
+            // Check if the CURRENT PAGE is public before showing auth-related errors for API calls
+            if (
+              (response.status === 401 || response.status === 403) &&
+              typeof window !== 'undefined' && isPublicRoute(window.location.pathname)
+            ) {
+              // Log the error for debugging but don't show a toast if on a public page
+              logError(new Error(`Auth error (${response.status}) for API ${url} on public page ${window.location.pathname} suppressed.`), {
+                context: 'fetchRequestPublicPageContext',
+                status: response.status,
+                apiUrl: url,
+                pageUrl: window.location.pathname,
+              });
+              return response; // Skip toast for auth errors if user is on a public page
+            }
+
             let errorMessage = 'Request failed';
 
             // Try to get specific error message
