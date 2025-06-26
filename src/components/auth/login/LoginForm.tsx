@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useRouter } from 'next/router';
 import { useForm, ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -34,6 +35,9 @@ export function LoginForm() {
   const { isLoading, login } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isResending, setIsResending] = useState(false);
+  const [verificationMessage, setVerificationMessage] = useState('');
+  const router = useRouter();
   
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema) as any,
@@ -67,6 +71,42 @@ export function LoginForm() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleResendEmail = async () => {
+    const email = form.getValues('email');
+    if (!email) {
+      form.setError('root', { message: 'Please enter your email address.' });
+      return;
+    }
+    setIsResending(true);
+    setVerificationMessage('');
+    try {
+      const response = await fetch('/api/auth/resend-verification-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setVerificationMessage('Verification email sent. Please check your inbox.');
+      } else {
+        setVerificationMessage(data.message || 'Failed to resend verification email.');
+      }
+    } catch (err) {
+      setVerificationMessage('Failed to resend verification email.');
+    } finally {
+      setIsResending(false);
+    }
+  };
+
+  const handleCheckStatus = () => {
+    const email = form.getValues('email');
+    if (!email) {
+      form.setError('root', { message: 'Please enter your email address.' });
+      return;
+    }
+    router.push(`/verify-status?email=${encodeURIComponent(email)}`);
   };
 
   return (
@@ -186,6 +226,30 @@ export function LoginForm() {
         >
           {isLoading || isSubmitting ? "Logging in..." : "Login"}
         </Button>
+        {verificationMessage && (
+          <p className="text-sm text-center text-zion-slate-light mt-2">
+            {verificationMessage}
+          </p>
+        )}
+        <div className="flex justify-between mt-4">
+          <Button
+            type="button"
+            variant="secondary"
+            className="w-1/2 mr-2"
+            onClick={handleResendEmail}
+            disabled={isResending}
+          >
+            {isResending ? 'Sending...' : 'Resend / Verify e-mail'}
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            className="w-1/2 ml-2"
+            onClick={handleCheckStatus}
+          >
+            Check status
+          </Button>
+        </div>
         <p className="text-sm text-center mt-4">
           <Link href="/signup" className="font-medium text-zion-cyan hover:text-zion-cyan-light">
             Create account
