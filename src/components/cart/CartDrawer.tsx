@@ -39,7 +39,7 @@ export function CartDrawer() {
   // Don't render the cart trigger on restricted pages
   if (isRestrictedPage) {
     return (
-      <div className="relative p-1">
+      <div className="relative p-1" aria-label="Cart">
         <ShoppingCart className="h-5 w-5 text-foreground/50" />
         {count > 0 && (
           <span className="absolute -top-1 -right-1 bg-primary/50 text-primary-foreground text-[10px] rounded-full h-4 w-4 flex items-center justify-center">

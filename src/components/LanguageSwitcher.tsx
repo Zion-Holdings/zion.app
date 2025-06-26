@@ -95,6 +95,7 @@ export function LanguageSwitcher() {
         variant="ghost"
         size="icon"
         className="text-white hover:bg-zion-purple/10"
+        aria-label={t('general.select_language')}
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={toggleOpen}
