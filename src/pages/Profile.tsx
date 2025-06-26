@@ -4,6 +4,14 @@ import { ProfileForm, ProfileValues } from '@/components/profile/ProfileForm';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import type { Order } from '@/hooks/useOrders';
 import Link from 'next/link';
+import OrdersPage from './Orders';
+import AccountSettings from './AccountSettings';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@/components/ui/tabs';
 
 interface User {
   id: string;
@@ -33,24 +41,31 @@ export default function Profile({ user: initialUser, orders = [] }: ProfileProps
 
   return (
     <div className="container mx-auto p-4 space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Profile</h1>
-        <PointsBadge />
-      </div>
-      <ProfileForm defaultValues={user} onSubmit={handleSubmit} />
-      {orders.length > 0 && (
-        <div>
-          <h2 className="font-semibold mb-2">Recent Orders</h2>
-          <ul className="space-y-1">
-            {orders.map(o => (
-              <li key={o.orderId} className="flex justify-between">
-                <span>#{o.orderId}</span>
-                <Link href={`/orders/${o.orderId}`} className="text-zion-purple underline">View</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <h1 className="text-2xl font-bold">Account</h1>
+      <Tabs defaultValue="profile" className="space-y-4">
+        <TabsList>
+          <TabsTrigger value="profile">Profile</TabsTrigger>
+          <TabsTrigger value="orders">Orders</TabsTrigger>
+          <TabsTrigger value="settings">Settings</TabsTrigger>
+        </TabsList>
+        <TabsContent value="profile" className="space-y-6">
+          <div className="flex items-center justify-between">
+            <h2 className="text-xl font-semibold">Profile</h2>
+            <PointsBadge />
+          </div>
+          <ProfileForm defaultValues={user} onSubmit={handleSubmit} />
+        </TabsContent>
+        <TabsContent value="orders">
+          {orders.length > 0 ? (
+            <OrdersPage />
+          ) : (
+            <p>No orders found.</p>
+          )}
+        </TabsContent>
+        <TabsContent value="settings">
+          <AccountSettings />
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
