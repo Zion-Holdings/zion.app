@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
+import { Clipboard } from 'lucide-react';
 import Skeleton from '@/components/ui/skeleton';
 import { useGetOrderQuery } from '@/hooks/useOrder';
 import { generateInvoicePdf } from '@/utils/generateInvoicePdf';
@@ -44,6 +45,27 @@ export default function OrderDetailPage() {
     }
   };
 
+  const handleCopySummary = async () => {
+    if (!order) return;
+    const summary = [
+      `Order #${order.orderId}`,
+      `Date: ${new Date(order.date).toLocaleDateString()}`,
+      '',
+      'Items:',
+      ...order.items.map((i) => `${i.name} x${i.quantity} - $${i.price.toFixed(2)}`),
+      '',
+      `Total: $${order.total.toFixed(2)}`,
+      '',
+      'Shipping Address:',
+      order.shippingAddress.name,
+      order.shippingAddress.street,
+      `${order.shippingAddress.city}, ${order.shippingAddress.state} ${order.shippingAddress.zip}`,
+    ].join('\n');
+
+    await navigator.clipboard.writeText(summary);
+    toast.success('Order summary copied to clipboard');
+  };
+
   if (isLoading || !order) {
     return (
       <div className="container max-w-3xl py-10">
@@ -82,6 +104,9 @@ export default function OrderDetailPage() {
 
       <div className="flex gap-3">
         <Button onClick={handleDownload}>Download PDF Invoice</Button>
+        <Button variant="outline" onClick={handleCopySummary}>
+          <Clipboard className="h-4 w-4" /> Copy Summary
+        </Button>
         <Button variant="outline" onClick={handleResend}>Resend Receipt</Button>
       </div>
 
