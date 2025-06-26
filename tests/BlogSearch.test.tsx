@@ -1,15 +1,12 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import Blog from '@/pages/Blog';
 
 it('filters posts when typing in search', async () => {
   render(
-    <HelmetProvider>
-      <MemoryRouter>
-        <Blog />
-      </MemoryRouter>
-    </HelmetProvider>
+    <MemoryRouter>
+      <Blog />
+    </MemoryRouter>
   );
   const initial = await screen.findAllByText('Read More →');
   const input = screen.getByPlaceholderText('Search articles...');

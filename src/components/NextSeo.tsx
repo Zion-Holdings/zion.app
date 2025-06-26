@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
 
 interface OpenGraphImage {
   url: string;
@@ -23,12 +23,12 @@ export const NextSeo: React.FC<NextSeoProps> = ({ title, description, openGraph 
   const ogImage = openGraph?.images && openGraph.images[0]?.url;
 
   return (
-    <Helmet>
+    <Head>
       {title && <title>{title}</title>}
       {description && <meta name="description" content={description} />}
       {ogTitle && <meta property="og:title" content={ogTitle} />}
       {ogDescription && <meta property="og:description" content={ogDescription} />}
       {ogImage && <meta property="og:image" content={ogImage} />}
-    </Helmet>
+    </Head>
   );
 };

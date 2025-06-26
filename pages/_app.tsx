@@ -2,7 +2,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
-import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from '@/context/auth/AuthProvider';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from '@/store'; // Changed to named import
@@ -244,9 +243,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                   <QueryClientProvider client={queryClient}>
                     <ApiErrorBoundary>
                       <ReduxProvider store={store}>
-                        <HelmetProvider>
-                          <I18nextProvider i18n={i18n}>
-                            <ErrorProvider>
+                        <I18nextProvider i18n={i18n}>
+                          <ErrorProvider>
                               <AuthProvider>
                                 <WhitelabelProvider>
                                   <LanguageProviderWrapper>
@@ -276,7 +274,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                               </AuthProvider>
                             </ErrorProvider>
                           </I18nextProvider>
-                        </HelmetProvider>
                       </ReduxProvider>
                     </ApiErrorBoundary>
                   </QueryClientProvider>

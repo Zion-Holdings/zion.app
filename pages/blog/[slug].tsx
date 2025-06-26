@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useRouter } from 'next/router';
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
 import { NextSeo } from '@/components/NextSeo';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
@@ -95,9 +95,9 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
             : undefined,
         }}
       />
-      <Helmet>
+      <Head>
         <script type="application/ld+json">{JSON.stringify(articleLd)}</script>
-      </Helmet>
+      </Head>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
         <h1>{post.title}</h1>
         {post.excerpt && <p className="lead">{post.excerpt}</p>}

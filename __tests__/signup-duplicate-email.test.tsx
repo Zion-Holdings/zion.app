@@ -29,9 +29,10 @@ jest.mock('@/hooks/useAuth', () => ({
   }),
 }));
 
-// Mock Helmet
-jest.mock('react-helmet-async', () => ({
-  Helmet: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+// Mock Next.js Head
+jest.mock('next/head', () => ({
+  __esModule: true,
+  default: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }));
 
 // Mock AuthLayout
