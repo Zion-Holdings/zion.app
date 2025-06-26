@@ -62,6 +62,15 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
   const productTitle = product.title;
 
   const addToCart = () => {
+    if (!isAuthenticated) {
+      toast({
+        title: 'Login Required',
+        description: 'Please log in to add items to your cart.',
+        variant: 'destructive',
+      });
+      router.push(`/auth/login?returnTo=${encodeURIComponent(router.asPath)}`);
+      return;
+    }
     dispatch(addItem({ id: product.id, title: productTitle, price: product.price ?? 0 }));
     toast({
       title: 'Added to cart',
