@@ -52,7 +52,13 @@
     "monitor:perf": "node scripts/perf/monitor.js",
     "migrate:check": "npx prisma migrate diff --from-schema-datamodel prisma/schema.prisma --to-schema-datamodel prisma/schema.prisma --script",
     "setup:auth0": "node scripts/setup-auth0.js",
-    "migrate:auth0": "npm run setup:auth0 && npm run env:validate"
+    "migrate:auth0": "npm run setup:auth0 && npm run env:validate",
+    "watchdog:start": "node scripts/watchdog.js",
+    "watchdog:clear": "node scripts/clear-logs.js",
+    "watchdog:status": "ps aux | grep watchdog || echo 'No watchdog process found'",
+    "logs:clear": "npm run watchdog:clear",
+    "logs:view": "tail -f logs/self-heal.log",
+    "monitor:resources": "echo 'CPU:' && ps -A -o %cpu | awk '{sum+=$1} END {print sum\"%\"}' && echo 'Memory:' && free -h || vm_stat"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

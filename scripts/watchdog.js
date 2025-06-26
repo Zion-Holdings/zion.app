@@ -207,12 +207,67 @@ let isHealing = false;
 let highCpuUsageCount = 0;
 
 // --- System Monitoring Configuration ---
-const MEMORY_THRESHOLD = 0.90; // 90% memory usage
-const CPU_THRESHOLD = 0.90;    // 90% CPU usage
-const CPU_SUSTAINED_CHECKS = 10; // 10 consecutive checks for CPU
-const SYSTEM_CHECK_INTERVAL = 60000; // 60 seconds in milliseconds
+const MEMORY_THRESHOLD = 0.95; // 95% memory usage (more conservative)
+const CPU_THRESHOLD = 0.95;    // 95% CPU usage (more conservative)
+const CPU_SUSTAINED_CHECKS = 3; // 3 consecutive checks instead of 10
+const SYSTEM_CHECK_INTERVAL = 30000; // 30 seconds instead of 60 (more frequent but conservative thresholds)
+
+// --- Cooldown and Rate Limiting ---
+const SELF_HEAL_COOLDOWN = 5 * 60 * 1000; // 5 minutes cooldown between self-heal attempts
+let lastSelfHealTime = 0;
+
+// --- Process Management ---
+const WATCHDOG_PID_FILE = path.join(BASE_LOG_PATH, 'watchdog.pid');
 
 // --- Helper Functions ---
+
+/**
+ * Ensures only one instance of watchdog runs at a time
+ */
+function ensureSingleInstance() {
+  try {
+    if (fs.existsSync(WATCHDOG_PID_FILE)) {
+      const existingPid = parseInt(fs.readFileSync(WATCHDOG_PID_FILE, 'utf8').trim());
+      try {
+        // Check if process is still running
+        process.kill(existingPid, 0);
+        console.log(`Another watchdog instance is already running (PID: ${existingPid}). Exiting.`);
+        process.exit(0);
+      } catch (err) {
+        // Process not found, remove stale PID file
+        fs.unlinkSync(WATCHDOG_PID_FILE);
+        console.log('Removed stale PID file.');
+      }
+    }
+    
+    // Write current PID
+    fs.writeFileSync(WATCHDOG_PID_FILE, process.pid.toString());
+    
+    // Clean up PID file on exit
+    process.on('exit', () => {
+      try {
+        if (fs.existsSync(WATCHDOG_PID_FILE)) {
+          fs.unlinkSync(WATCHDOG_PID_FILE);
+        }
+      } catch (err) {
+        // Ignore cleanup errors
+      }
+    });
+    
+    process.on('SIGINT', () => {
+      console.log('\nReceived SIGINT. Shutting down watchdog gracefully...');
+      process.exit(0);
+    });
+    
+    process.on('SIGTERM', () => {
+      console.log('\nReceived SIGTERM. Shutting down watchdog gracefully...');
+      process.exit(0);
+    });
+  } catch (err) {
+    logError('Failed to ensure single instance', err);
+  }
+}
+
 /**
  * Safely appends a message to the self-heal log file (SELF_HEAL_LOG_FILE).
  * Includes error handling in case the file write fails, logging the error to console.
@@ -237,6 +292,7 @@ appendToSelfHealLog(`[${new Date().toISOString()}] Watchdog script started.\n`);
 /**
  * Triggers the self-healing process.
  * - Checks the cooldown (`isHealing`) to prevent concurrent executions.
+ * - Checks rate limiting to prevent too frequent self-heal attempts.
  * - Logs the trigger reason and action to console and SELF_HEAL_LOG_FILE.
  * - Executes the HEAL_COMMAND.
  * - Logs the output (stdout/stderr) of the HEAL_COMMAND.
@@ -245,6 +301,9 @@ appendToSelfHealLog(`[${new Date().toISOString()}] Watchdog script started.\n`);
  * @param {string} reason - The reason why the self-heal action is being triggered.
  */
 function triggerSelfHeal(reason) {
+  const currentTime = Date.now();
+  
+  // Check if already healing
   if (isHealing) {
     const message = `Self-heal action already in progress. Skipping trigger for: ${reason}`;
     console.log(message);
@@ -252,40 +311,60 @@ function triggerSelfHeal(reason) {
     return;
   }
 
+  // Check cooldown period
+  if (currentTime - lastSelfHealTime < SELF_HEAL_COOLDOWN) {
+    const remainingCooldown = Math.ceil((SELF_HEAL_COOLDOWN - (currentTime - lastSelfHealTime)) / 1000);
+    const message = `Self-heal cooldown active. ${remainingCooldown}s remaining. Skipping trigger for: ${reason}`;
+    console.log(message);
+    appendToSelfHealLog(`[${new Date().toISOString()}] ${message}\n`);
+    return;
+  }
+
   isHealing = true; // Activate cooldown
+  lastSelfHealTime = currentTime;
+  
   const timestamp = new Date().toISOString();
   const logMessage = `Triggering self-heal due to: ${reason}`;
   console.log(logMessage);
   appendToSelfHealLog(`[${timestamp}] ${logMessage}\n`);
 
-  // Send Discord Alert - Disabled because no webhook URL is configured
-  // const discordAlertMessage = `🚨 **Watchdog Alert** 🚨\n\n**Reason:** ${reason}\n\n**Action:** Initiating self-heal sequence (code update & build). Manual K8s check for zion-app may be needed.\n**Command:** \`\`\`${HEAL_COMMAND}\`\`\``;
-  // We don't await sendDiscordAlert here to prevent blocking the healing process
-  // if Discord is slow or unresponsive. It has its own internal logging.
-  // sendDiscordAlert(discordAlertMessage);
+  // Send Discord Alert if configured
+  if (DISCORD_WEBHOOK_URL) {
+    const discordAlertMessage = `🚨 **Watchdog Alert** 🚨\n\n**Reason:** ${reason}\n\n**Action:** Initiating self-heal sequence (code update & build).\n**Command:** \`\`\`${HEAL_COMMAND}\`\`\``;
+    sendDiscordAlert(discordAlertMessage).catch(err => {
+      logError('Failed to send Discord alert', err);
+    });
+  }
 
   const healCmdLog = `Executing self-heal command: ${HEAL_COMMAND}`;
   console.log(healCmdLog);
   appendToSelfHealLog(`[${timestamp}] ${healCmdLog}\n`);
 
-  // Execute the self-heal command
-  exec(HEAL_COMMAND, (error, stdout, stderr) => {
+  // Execute the self-heal command with timeout
+  const childProcess = exec(HEAL_COMMAND, { timeout: 10 * 60 * 1000 }, (error, stdout, stderr) => {
     const executionTimestamp = new Date().toISOString();
+    
     if (error) {
-      logError(`Self-heal command error: ${error.message}`, error);
-      appendToSelfHealLog(`[${executionTimestamp}] Error executing self-heal command: ${error.message}\n`);
-      if (stderr) {
-        // Stderr might contain useful info even if error object is present
-        logError(`Self-heal command stderr: ${stderr}`);
-        appendToSelfHealLog(`[${executionTimestamp}] Self-heal command stderr: ${stderr}\n`);
+      if (error.killed && error.signal === 'SIGTERM') {
+        logError('Self-heal command timed out after 10 minutes');
+        appendToSelfHealLog(`[${executionTimestamp}] Self-heal command timed out after 10 minutes\n`);
+      } else {
+        logError(`Self-heal command error: ${error.message}`, error);
+        appendToSelfHealLog(`[${executionTimestamp}] Error executing self-heal command: ${error.message}\n`);
       }
     }
-    if (stdout) {
+    
+    if (stderr && stderr.trim()) {
+      console.log(`Self-heal command stderr: ${stderr}`);
+      appendToSelfHealLog(`[${executionTimestamp}] Self-heal command stderr: ${stderr}\n`);
+    }
+    
+    if (stdout && stdout.trim()) {
       console.log(`Self-heal command stdout: ${stdout}`);
       appendToSelfHealLog(`[${executionTimestamp}] Self-heal command stdout: ${stdout}\n`);
     }
 
-    const completionMessage = 'Self-heal action complete. Resetting streaks.';
+    const completionMessage = error ? 'Self-heal action completed with errors. Resetting streaks.' : 'Self-heal action completed successfully. Resetting streaks.';
     console.log(completionMessage);
     appendToSelfHealLog(`[${executionTimestamp}] ${completionMessage}\n`);
 
@@ -296,12 +375,19 @@ function triggerSelfHeal(reason) {
 
     isHealing = false; // Release cooldown
   });
+
+  // Handle process errors
+  childProcess.on('error', (err) => {
+    logError('Failed to start self-heal command', err);
+    appendToSelfHealLog(`[${new Date().toISOString()}] Failed to start self-heal command: ${err.message}\n`);
+    isHealing = false;
+  });
 }
 
 // --- System Resource Monitoring Function ---
 /**
  * Monitors system memory and CPU usage.
- * Triggers self-healing if thresholds are breached.
+ * Triggers self-healing if thresholds are breached consistently.
  */
 function monitorSystemResources() {
   if (isHealing) {
@@ -312,9 +398,15 @@ function monitorSystemResources() {
   // Check Memory Usage
   os.memUsage(memUsagePercent => {
     const currentMemoryUsage = 1 - memUsagePercent.freeMemPercentage; // os-utils provides freeMemPercentage
-    // console.log(`Current memory usage: ${(currentMemoryUsage * 100).toFixed(2)}%`); // Optional: for debugging
+    
+    // Only log memory usage if it's concerning (above 85%)
+    if (currentMemoryUsage > 0.85) {
+      console.log(`Current memory usage: ${(currentMemoryUsage * 100).toFixed(2)}%`);
+    }
+    
     if (currentMemoryUsage > MEMORY_THRESHOLD) {
       const message = `High memory usage detected: ${(currentMemoryUsage * 100).toFixed(2)}% (Threshold: ${MEMORY_THRESHOLD * 100}%)`;
+      console.log(message);
       appendToSelfHealLog(`[${new Date().toISOString()}] ${message}\n`);
       triggerSelfHeal(message);
     }
@@ -322,21 +414,27 @@ function monitorSystemResources() {
 
   // Check CPU Usage
   os.cpuUsage(cpuUsagePercent => {
-    // console.log(`Current CPU usage: ${(cpuUsagePercent * 100).toFixed(2)}%`); // Optional: for debugging
+    // Only log CPU usage if it's concerning (above 85%)
+    if (cpuUsagePercent > 0.85) {
+      console.log(`Current CPU usage: ${(cpuUsagePercent * 100).toFixed(2)}%`);
+    }
+    
     if (cpuUsagePercent > CPU_THRESHOLD) {
       highCpuUsageCount++;
       const message = `High CPU usage detected: ${(cpuUsagePercent * 100).toFixed(2)}% (Threshold: ${CPU_THRESHOLD * 100}%). Count: ${highCpuUsageCount}/${CPU_SUSTAINED_CHECKS}`;
       console.log(message);
       appendToSelfHealLog(`[${new Date().toISOString()}] ${message}\n`);
+      
       if (highCpuUsageCount >= CPU_SUSTAINED_CHECKS) {
         const triggerMessage = `Sustained high CPU usage for ${CPU_SUSTAINED_CHECKS} checks. Current: ${(cpuUsagePercent * 100).toFixed(2)}%`;
+        console.log(triggerMessage);
         appendToSelfHealLog(`[${new Date().toISOString()}] ${triggerMessage}\n`);
         triggerSelfHeal(triggerMessage);
         // highCpuUsageCount is reset inside triggerSelfHeal
       }
     } else {
       if (highCpuUsageCount > 0) {
-        const resetMessage = `CPU usage back to normal. Resetting high CPU usage count. Was: ${highCpuUsageCount}`;
+        const resetMessage = `CPU usage back to normal (${(cpuUsagePercent * 100).toFixed(2)}%). Resetting high CPU usage count. Was: ${highCpuUsageCount}`;
         console.log(resetMessage);
         appendToSelfHealLog(`[${new Date().toISOString()}] ${resetMessage}\n`);
         highCpuUsageCount = 0; // Reset if CPU usage is below threshold
@@ -346,7 +444,6 @@ function monitorSystemResources() {
 }
 
 
-// --- Initialize System Resource Monitoring ---
 // --- Main script execution / initialization logic ---
 function startMonitoring() {
   // This function should only be called when running the script directly, not during tests.
@@ -357,10 +454,23 @@ function startMonitoring() {
     return;
   }
 
+  // Ensure only one instance runs
+  ensureSingleInstance();
+
   console.log('Watchdog script started. Monitoring log files...');
   appendToSelfHealLog(
-    `[${new Date().toISOString()}] Watchdog script started. Logs directory: ${BASE_LOG_PATH}\n`
+    `[${new Date().toISOString()}] Watchdog script started. PID: ${process.pid}, Logs directory: ${BASE_LOG_PATH}\n`
   );
+
+  // Log configuration
+  console.log(`Configuration:
+  - Memory Threshold: ${MEMORY_THRESHOLD * 100}%
+  - CPU Threshold: ${CPU_THRESHOLD * 100}%
+  - CPU Sustained Checks: ${CPU_SUSTAINED_CHECKS}
+  - System Check Interval: ${SYSTEM_CHECK_INTERVAL / 1000}s
+  - Self-Heal Cooldown: ${SELF_HEAL_COOLDOWN / 1000}s
+  - Discord Alerts: ${DISCORD_WEBHOOK_URL ? 'Enabled' : 'Disabled'}
+  `);
 
   // Initialize Tailing Logic for Performance Log File
   try {
@@ -386,35 +496,7 @@ function startMonitoring() {
   } catch (e) {
     logError(`Failed to initialize tail for performance log: ${PERF_LOG_FILE}`, e);
     appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${PERF_LOG_FILE}: ${e.message}\n`);
-    if (e.code === 'ENOENT') {
-      try {
-        ensureFileExists(PERF_LOG_FILE);
-        console.log(`Created missing performance log file at ${PERF_LOG_FILE}`);
-        appendToSelfHealLog(`[${new Date().toISOString()}] Created missing performance log file: ${PERF_LOG_FILE}\n`);
-        const perfTail = new Tail(PERF_LOG_FILE);
-        perfTail.on('line', function(data) {
-          if (PERF_ERROR_REGEX.test(data)) {
-            perfErrorStreak++;
-            console.log(`Performance error detected. Streak: ${perfErrorStreak}`);
-            if (perfErrorStreak >= 3) {
-              triggerSelfHeal('3 consecutive performance errors');
-            }
-          } else if (perfErrorStreak > 0) {
-            console.log('Performance log normal. Resetting streak.');
-            perfErrorStreak = 0;
-          }
-        });
-        perfTail.on('error', function(error) {
-          logError(`Error tailing performance log file: ${PERF_LOG_FILE}`, error);
-          appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing performance log file ${PERF_LOG_FILE}: ${error.message}\n`);
-        });
-        perfTail.watch();
-        console.log(`Watching performance log: ${PERF_LOG_FILE}`);
-      } catch (createErr) {
-        logError(`Unable to create performance log file ${PERF_LOG_FILE}`, createErr);
-        appendToSelfHealLog(`[${new Date().toISOString()}] Error creating performance log file ${PERF_LOG_FILE}: ${createErr.message}\n`);
-      }
-    }
+    // Don't attempt to create and retry - log files are optional
   }
 
   // Initialize Tailing Logic for Security Log File
@@ -441,41 +523,16 @@ function startMonitoring() {
   } catch (e) {
     logError(`Failed to initialize tail for security log: ${SECURITY_LOG_FILE}`, e);
     appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${SECURITY_LOG_FILE}: ${e.message}\n`);
-    if (e.code === 'ENOENT') {
-      try {
-        ensureFileExists(SECURITY_LOG_FILE);
-        console.log(`Created missing security log file at ${SECURITY_LOG_FILE}`);
-        appendToSelfHealLog(`[${new Date().toISOString()}] Created missing security log file: ${SECURITY_LOG_FILE}\n`);
-        const securityTail = new Tail(SECURITY_LOG_FILE);
-        securityTail.on('line', function(data) {
-          if (SECURITY_PATCH_REGEX.test(data)) {
-            securityPatchStreak++;
-            console.log(`Security patch detected. Streak: ${securityPatchStreak}`);
-            if (securityPatchStreak >= 3) {
-              triggerSelfHeal('3 consecutive security patches');
-            }
-          } else if (securityPatchStreak > 0) {
-            console.log('Security log normal. Resetting streak.');
-            securityPatchStreak = 0;
-          }
-        });
-        securityTail.on('error', function(error) {
-          logError(`Error tailing security log file: ${SECURITY_LOG_FILE}`, error);
-          appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing security log file ${SECURITY_LOG_FILE}: ${error.message}\n`);
-        });
-        securityTail.watch();
-        console.log(`Watching security log: ${SECURITY_LOG_FILE}`);
-      } catch (createErr) {
-        logError(`Unable to create security log file ${SECURITY_LOG_FILE}`, createErr);
-        appendToSelfHealLog(`[${new Date().toISOString()}] Error creating security log file ${SECURITY_LOG_FILE}: ${createErr.message}\n`);
-      }
-    }
+    // Don't attempt to create and retry - log files are optional
   }
 
   // Initialize System Resource Monitoring
   console.log(`Initializing system resource monitoring. Check interval: ${SYSTEM_CHECK_INTERVAL / 1000} seconds.`);
   appendToSelfHealLog(`[${new Date().toISOString()}] Initializing system resource monitoring. Memory Threshold: ${MEMORY_THRESHOLD * 100}%, CPU Threshold: ${CPU_THRESHOLD * 100}% for ${CPU_SUSTAINED_CHECKS} checks.\n`);
   setInterval(monitorSystemResources, SYSTEM_CHECK_INTERVAL);
+  
+  // Perform initial resource check after 5 seconds
+  setTimeout(monitorSystemResources, 5000);
 }
 
 // This part runs when the script is executed directly
