@@ -8,9 +8,15 @@ export interface ParsedApiError {
 
 export function parseApiError(error: any): ParsedApiError {
   const status = error?.response?.status ?? error?.status;
-  const code = error?.response?.data?.code ?? status ?? error?.code;
+  const backendCode =
+    error?.response?.data?.code ?? error?.response?.data?.error ?? error?.code;
+  const code = backendCode ?? status;
+
   // Prioritize backend message first
   let msg = error?.response?.data?.message;
+  if (!msg && typeof error?.response?.data?.error === 'string') {
+    msg = error.response.data.error;
+  }
 
   if (!msg) {
     // If no backend message, try status-specific messages
