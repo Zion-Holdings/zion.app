@@ -236,7 +236,7 @@ export function EnhancedSearchInput({
           onKeyDown={handleKeyDown}
           placeholder={placeholder}
           aria-label={t('general.search')}
-          className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate h-auto py-0 min-w-0"
+          className="pl-10 bg-zion-blue border border-zion-blue-light text-gray-800 placeholder:text-zion-slate h-auto py-0 min-w-0"
           aria-autocomplete="list"
           aria-activedescendant={highlightedIndex !== -1 ? `suggestion-item-${highlightedIndex}` : undefined}
         />
