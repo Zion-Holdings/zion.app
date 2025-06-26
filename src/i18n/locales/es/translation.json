@@ -89,6 +89,10 @@
     "quick_start_guide": "Guía de Inicio Rápido",
     "advanced_tips": "Consejos Avanzados"
   },
+  "marketplace": {
+    "hero_title": "Mercado de IA",
+    "hero_subtitle": "Descubre soluciones de IA y tecnología de vanguardia"
+  },
   "jobs": {
     "post_job_title": "Publicar un Trabajo",
     "post_job_description": "Complete el formulario a continuación para publicar su trabajo y encontrar el talento perfecto",

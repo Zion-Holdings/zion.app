@@ -126,6 +126,7 @@ export const fetchProducts = async (params: {
   limit?: number;
   category?: string;
   search?: string;
+  sort?: string;
 } = {}): Promise<Product[]> => {
   try {
     if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
@@ -202,6 +203,33 @@ export const fetchProducts = async (params: {
         );
       }
       
+      // Apply sorting
+      switch (params.sort) {
+        case 'price-low':
+          filteredListings.sort((a, b) => (a.price || 0) - (b.price || 0));
+          break;
+        case 'price-high':
+          filteredListings.sort((a, b) => (b.price || 0) - (a.price || 0));
+          break;
+        case 'rating':
+          filteredListings.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+          break;
+        case 'popular':
+          filteredListings.sort((a, b) => (b.reviewCount || 0) - (a.reviewCount || 0));
+          break;
+        case 'ai-score':
+          filteredListings.sort((a, b) => (b.aiScore || 0) - (a.aiScore || 0));
+          break;
+        case 'newest':
+        default:
+          filteredListings.sort(
+            (a, b) =>
+              new Date(b.createdAt || '').getTime() -
+              new Date(a.createdAt || '').getTime()
+          );
+          break;
+      }
+
       // Apply pagination
       if (params.page && params.limit) {
         const start = (params.page - 1) * params.limit;

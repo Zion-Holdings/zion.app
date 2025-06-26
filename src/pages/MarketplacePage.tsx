@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp, Filter, SortAsc, Sparkles, TrendingUp, Star, ShoppingCart, AlertTriangle, RefreshCw } from 'lucide-react';
 import { NextSeo } from '@/components/NextSeo';
@@ -136,6 +137,7 @@ const MarketplaceLoadingGrid = ({ count = 8 }: { count?: number }) => (
 // Main component
 function MarketplacePageContent() {
   const router = useRouter();
+  const { t } = useTranslation();
   const dispatch = useDispatch<AppDispatch>();
   const { isAuthenticated } = useAuth();
   const [sortBy, setSortBy] = useState('newest');
@@ -250,9 +252,9 @@ function MarketplacePageContent() {
       <div className="container py-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            AI Marketplace
+            {t('marketplace.hero_title')}
           </h1>
-          <p className="text-muted-foreground text-lg">Discover cutting-edge AI and technology solutions</p>
+          <p className="text-muted-foreground text-lg">{t('marketplace.hero_subtitle')}</p>
         </motion.div>
         <MarketplaceLoadingGrid />
       </div>
@@ -299,9 +301,9 @@ function MarketplacePageContent() {
     <div className="container py-8">
       <motion.div className="text-center mb-8" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          AI Marketplace
+          {t('marketplace.hero_title')}
         </h1>
-        <p className="text-muted-foreground text-lg">Discover cutting-edge AI and technology solutions for your business</p>
+        <p className="text-muted-foreground text-lg">{t('marketplace.hero_subtitle')}</p>
       </motion.div>
 
       {marketStats && (
