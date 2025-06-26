@@ -27,6 +27,7 @@ export interface Product {
   rating?: number;
   reviewCount?: number;
   availability?: string;
+  stock?: number;
   location?: string;
   featured?: boolean;
   aiScore?: number;

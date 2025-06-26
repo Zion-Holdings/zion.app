@@ -26,6 +26,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 98
+    stock: 12,
   },
   {
     id: "ai-service-2",
@@ -47,6 +48,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "North America",
     availability: "4-6 Weeks",
     aiScore: 92
+    stock: 3,
   },
   {
     id: "ai-equipment-3",
@@ -68,6 +70,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "2-3 Weeks",
     aiScore: 95
+    stock: 0,
   },
   {
     id: "ai-content-4",
@@ -89,6 +92,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 88
+    stock: 7,
   },
   {
     id: "ai-analytics-5",
@@ -109,6 +113,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "North America",
     availability: "1-2 Weeks",
     aiScore: 90
+    stock: 15,
   },
   {
     id: "ai-vision-6",
@@ -131,6 +136,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 94
+    stock: 0,
   },
   {
     id: "ai-storage-13",
@@ -151,6 +157,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 87
+    stock: 8,
   },
   {
     id: "ai-edge-14",
@@ -171,6 +178,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "1-2 Weeks",
     aiScore: 90
+    stock: 6,
   },
   {
     id: "ai-labeling-15",
@@ -191,8 +199,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Europe",
     availability: "2-3 Weeks",
     aiScore: 85
+    stock: 2,
   },
-  {
     id: "ai-security-16",
     title: "AI Security Monitoring Suite",
     description: "Real-time threat detection powered by AI with automated incident response for cloud and on-premise systems.",
@@ -211,6 +219,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "North America",
     availability: "Immediate",
     aiScore: 92
+    stock: 5,
   },
   {
     id: "ai-marketing-17",
@@ -230,6 +239,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 52,
     location: "Global",
     availability: "Immediate",
+    stock: 8,
     aiScore: 89
   },
   {
@@ -251,6 +261,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 93
+    stock: 4,
   },
   {
     id: "talent-19",
@@ -273,6 +284,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 20,
     location: "Remote",
     availability: "Immediate",
+    stock: 9,
     aiScore: 91
   },
   {
@@ -297,6 +309,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "Scheduled",
     aiScore: 88
+    stock: 1,
   }
 ];
 

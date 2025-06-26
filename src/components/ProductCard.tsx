@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Heart } from 'lucide-react';
 import { useWishlist } from '@/hooks/useWishlist';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import {
   Tooltip,
   TooltipContent,
@@ -32,6 +33,24 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
   const { isWishlisted, toggle } = useWishlist();
   const [imageError, setImageError] = useState(false);
   const router = useRouter();
+
+  const stockStatus =
+    product.stock === undefined
+      ? 'In stock'
+      : product.stock <= 0
+      ? 'Out of stock'
+      : product.stock <= 5
+      ? 'Low stock'
+      : 'In stock';
+
+  const stockVariant =
+    product.stock === undefined
+      ? 'success'
+      : product.stock <= 0
+      ? 'destructive'
+      : product.stock <= 5
+      ? 'warning'
+      : 'success';
 
   if (!product || typeof product.id !== 'string' || typeof product.title !== 'string' || product.title.trim() === '') {
     captureException(new Error('Invalid product data received by ProductCard'), {
@@ -108,8 +127,13 @@ export default function ProductCard({ product, onBuy, buyDisabled = false }: Pro
           <span className="text-gray-500">No Image</span>
         </div>
       )}
+      {stockStatus && (
+        <Badge variant={stockVariant as any} className="absolute top-2 left-2">
+          {stockStatus}
+        </Badge>
+      )}
       {active && (
-        <div className="absolute top-2 left-2 p-1 rounded-full bg-background/70">
+        <div className="absolute top-10 left-2 p-1 rounded-full bg-background/70">
           <Heart className="text-red-500 fill-red-500" />
         </div>
       )}
