@@ -1,1 +1,1 @@
-export { default } from '@/pages/MarketplacePage';
+export { default } from '@/pages/Marketplace';

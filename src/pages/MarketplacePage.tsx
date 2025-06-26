@@ -123,6 +123,7 @@ const MarketplaceFilterControls = ({
         <option value="price-low">Price: Low to High</option>
         <option value="price-high">Price: High to Low</option>
         <option value="rating">Highest Rated</option>
+        <option value="popular">Most Popular</option>
         <option value="ai-score">AI Score</option>
       </select>
     </div>
@@ -231,6 +232,8 @@ function MarketplacePageContent() {
             return (b.price || 0) - (a.price || 0);
           case 'rating':
             return (b.rating || 0) - (a.rating || 0);
+          case 'popular':
+            return (b.reviewCount || 0) - (a.reviewCount || 0);
           case 'ai-score':
             return (b.aiScore || 0) - (a.aiScore || 0);
           default: // 'newest'
