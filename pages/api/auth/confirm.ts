@@ -29,4 +29,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // redirect the user to an error page with some instructions
   res.setHeader('Location', '/error')
   res.status(302).end()
+  return
 } 

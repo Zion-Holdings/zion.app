@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps, GetServerSidePropsContext } from 'next'
 import { createServerSideClient } from '../src/utils/supabase/server'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -100,7 +100,7 @@ export default function PrivatePage({ user }: PrivatePageProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   const supabase = createServerSideClient(context)
 
   const { data, error } = await supabase.auth.getUser()
