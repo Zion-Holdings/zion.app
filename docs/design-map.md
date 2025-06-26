@@ -64,3 +64,12 @@ This design map provides a Figma-compatible outline for the Zion OS ecosystem. E
 
 ### Bonus: GPT Layout Suggestions
 Design a small plug‑in or script where typing **“Create New Screen”** triggers a GPT-generated wireframe suggestion.
+
+## 8. Footer & Miscellaneous
+
+| Area | AI Prompt | Enhancement |
+| --- | --- | --- |
+| Quick Links Micro-copy | "Write 15-word descriptions for footer links: Products, Services, Talent, Equipment, Green IT, Careers." | Adds context. |
+| Social Proof Strip | "Compose a 25-word line: ‘Join 25,000+ innovators building AI solutions on Zion today.’" | Credibility boost. |
+| Cookie Consent Banner | "Draft a 30-word cookie notice with ‘Accept’ and ‘Settings’ buttons, friendly tone." | Compliance. |
+| Accessibility Statement | "Write a 60-word note pledging WCAG 2.2 AA compliance and inviting feedback." | Inclusivity. |
