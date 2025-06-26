@@ -249,11 +249,12 @@ const nextConfig = {
         zlib: false,
         url: false,
       };
-      config.resolve.alias = {
-        ...(config.resolve.alias || {}),
-        'react-router-dom': path.resolve(__dirname, 'src/shims/react-router-dom.ts'),
-      };
     }
+
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      'react-router-dom': path.resolve(__dirname, 'src/shims/react-router-dom.ts'),
+    };
 
     // Optimize chunk splitting for better performance
     if (!isServer && !dev) {
