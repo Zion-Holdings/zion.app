@@ -26,6 +26,11 @@ export function ConversationsList({
 
   const Row = ({ index, style }: ListChildComponentProps) => {
     const conversation = conversations[index];
+    
+    if (!conversation) {
+      return <div style={style} />;
+    }
+    
     return (
       <div style={style}>
         <ConversationItem
