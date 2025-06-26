@@ -27,6 +27,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 98
+    stock: 12,
   },
   {
     id: "ai-service-2",
@@ -48,6 +49,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "North America",
     availability: "4-6 Weeks",
     aiScore: 92
+    stock: 3,
   },
   {
     id: "ai-equipment-3",
@@ -69,6 +71,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "2-3 Weeks",
     aiScore: 95
+    stock: 0,
   },
   {
     id: "talent-4",
@@ -92,6 +95,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Remote",
     availability: "Immediate",
     aiScore: 91
+    stock: 9,
   },
   {
     id: "innovation-20",
@@ -115,6 +119,7 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     location: "Global",
     availability: "Scheduled",
     aiScore: 88
+    stock: 1,
   }
 ];
 

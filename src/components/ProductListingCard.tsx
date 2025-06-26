@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
 import { toast } from '@/hooks/use-toast';
+import { useCurrency } from '@/hooks/useCurrency';
 import Image from 'next/image'; // Import next/image
 
 interface ProductListingCardProps {
@@ -34,10 +35,30 @@ const ProductListingCardComponent = ({
     : '/placeholder.svg'
   );
   const [imageError, setImageError] = useState(false);
+
+  const stockStatus =
+    listing.stock === undefined
+      ? 'In stock'
+      : listing.stock <= 0
+      ? 'Out of stock'
+      : listing.stock <= 5
+      ? 'Low stock'
+      : 'In stock';
+
+  const stockVariant =
+    listing.stock === undefined
+      ? 'success'
+      : listing.stock <= 0
+      ? 'destructive'
+      : listing.stock <= 5
+      ? 'warning'
+      : 'success';
     
-  const formatPrice = () => {
+  const { formatPrice } = useCurrency();
+
+  const getPrice = () => {
     if (listing.price === null) return "Custom pricing";
-    return `${listing.currency}${listing.price.toLocaleString()}`;
+    return formatPrice(listing.price);
   };
 
   const handleImageError = () => {
@@ -140,6 +161,14 @@ const ProductListingCardComponent = ({
               Featured
             </Badge>
           )}
+          {stockStatus && (
+            <Badge
+              variant={stockVariant as any}
+              className="absolute top-2 left-2"
+            >
+              {stockStatus}
+            </Badge>
+          )}
            <FavoriteButton itemId={listing.id} />
         </div>
       </div>
@@ -193,11 +222,11 @@ const ProductListingCardComponent = ({
             {listing.price !== null ? (
               <div className="flex items-center text-primary">
                 <DollarSign className="h-4 w-4 mr-1" />
-                {formatPrice()}
+                {getPrice()}
               </div>
             ) : (
               <span className="text-foreground/80">
-                {formatPrice()}
+                {getPrice()}
               </span>
             )}
           </div>

@@ -40,7 +40,9 @@
     "dashboard": "Dashboard",
     "messages": "Messages",
     "post_job": "Post Job",
-    "analytics": "Analytics"
+    "analytics": "Analytics",
+    "login": "Login",
+    "signup": "Sign Up"
   },
   "auth": {
     "login": "Login",
@@ -256,7 +258,7 @@
     "services_desc": "On-demand IT support, consulting, development, and more",
     "talents": "Talents",
     "talents_desc": "Connect with AI experts, developers, and tech specialists",
-    "equipment": "Equipment", 
+    "equipment": "Equipment",
     "equipment_desc": "Rent or buy specialized hardware, servers, and devices",
     "innovation": "Innovation",
     "innovation_desc": "Discover cutting-edge solutions and tech breakthroughs",
@@ -287,7 +289,7 @@
   "benefits": {
     "ai_matchmaking": "AI-Powered Matchmaking",
     "ai_matchmaking_desc": "Our advanced algorithms match your needs with the perfect service providers or products, saving you time and ensuring optimal results.",
-    "global_availability": "Global Availability", 
+    "global_availability": "Global Availability",
     "global_availability_desc": "Access a worldwide network of tech talents, products, and services to find the best solutions regardless of geographic limitations.",
     "support_24_7": "24/7 Support",
     "support_24_7_desc": "Our dedicated team is available around the clock to assist with any questions or issues you might encounter during your journey.",
@@ -356,6 +358,59 @@
         "content": "If you have questions about these Terms of Service, contact us at <a href=\"mailto:support@ziontechgroup.com\">support@ziontechgroup.com</a>."
       }
     }
+  },
+  "partner": {
+    "title": "Zion AI Partner Program",
+    "subtitle": "Earn rewards by referring AI talent and clients to our marketplace",
+    "influencers": {
+      "title": "For AI Influencers",
+      "desc": "Share your expertise and earn",
+      "points": {
+        "audience": "Monetize your audience",
+        "audience_desc": "Earn commissions from successful referrals",
+        "insights": "Exclusive insights",
+        "insights_desc": "Get early access to AI marketplace trends",
+        "resources": "Marketing resources",
+        "resources_desc": "Access our partner toolkit with ready-to-use materials"
+      }
+    },
+    "organizations": {
+      "title": "For AI Organizations",
+      "desc": "Strategic partnerships",
+      "points": {
+        "ecosystem": "Expand your ecosystem",
+        "ecosystem_desc": "Connect your community to AI job opportunities",
+        "co_brand": "Co-branded opportunities",
+        "co_brand_desc": "Create joint content and events",
+        "tracking": "Custom tracking",
+        "tracking_desc": "Detailed analytics on your referral performance"
+      }
+    },
+    "how_it_works": "How It Works",
+    "steps": {
+      "join_title": "1. Join the Program",
+      "join_desc": "Sign up and get approved as a Zion AI partner with your own dashboard",
+      "share_title": "2. Share Your Link",
+      "share_desc": "Generate custom referral links and promote to your audience",
+      "earn_title": "3. Earn Rewards",
+      "earn_desc": "Get paid when referrals complete onboarding and engage with our platform"
+    },
+    "apply": "Apply as Partner",
+    "login": "Partner Login",
+    "login_unavailable": "Login temporarily unavailable",
+    "dashboard_title": "Partner Dashboard",
+    "dashboard_desc": "Manage your referral links and track your performance",
+    "export_csv": "Export CSV",
+    "tabs": {
+      "overview": "Overview",
+      "referrals": "Referral Links",
+      "earnings": "Earnings",
+      "leaderboard": "Leaderboard",
+      "resources": "Resources"
+    },
+    "earnings_title": "Earnings & Payouts",
+    "earnings_desc": "Track your earnings and manage payouts",
+    "earnings_placeholder": "Earnings tracking and payout requests will be available soon."
   },
   "login": "Login",
   "signup": "Sign up"

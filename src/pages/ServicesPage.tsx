@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 import { SERVICES } from '@/data/servicesData';
+import { useCurrency } from '@/hooks/useCurrency';
 
 // Initial services from existing data
 const INITIAL_SERVICES: ProductListing[] = SERVICES;
@@ -42,7 +43,8 @@ const ServicesMarketInsights = ({ stats }: { stats: any }) => (
       </div>
     </CardContent>
   </Card>
-);
+  );
+};
 
 // Filter controls
 const ServiceFilterControls = ({
@@ -82,7 +84,9 @@ const ServiceFilterControls = ({
 );
 
 // Service card
-const ServiceCard = ({ service, onViewDetails }: { service: ProductListing; onViewDetails: () => void }) => (
+const ServiceCard = ({ service, onViewDetails }: { service: ProductListing; onViewDetails: () => void }) => {
+  const { formatPrice } = useCurrency();
+  return (
   <Card className="h-full hover:shadow-lg transition-shadow">
     <CardHeader className="pb-3">
       <div className="flex items-start justify-between">
@@ -105,7 +109,7 @@ const ServiceCard = ({ service, onViewDetails }: { service: ProductListing; onVi
           </div>
         </div>
         <div className="text-right">
-          <div className="text-xl font-bold text-green-600">${service.price?.toLocaleString()}</div>
+          <div className="text-xl font-bold text-green-600">{formatPrice(service.price ?? 0)}</div>
           <Badge variant={service.availability === "Available" ? "default" : "outline"} className="text-xs">
             {service.availability}
           </Badge>
@@ -122,6 +126,7 @@ const ServiceCard = ({ service, onViewDetails }: { service: ProductListing; onVi
     </CardHeader>
   </Card>
 );
+};
 
 // Loading grid
 const ServicesLoadingGrid = ({ count = 8 }: { count?: number }) => (

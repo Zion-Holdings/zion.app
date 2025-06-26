@@ -1,6 +1,7 @@
 import { QuoteFormData } from "@/types/quotes";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { useCurrency } from '@/hooks/useCurrency';
 
 interface BudgetStepProps {
   formData: QuoteFormData;
@@ -27,12 +28,10 @@ export function BudgetStep({ formData, updateFormData }: BudgetStepProps) {
     }
   };
 
+  const { formatPrice } = useCurrency();
+
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 0
-    }).format(value);
+    return formatPrice(value);
   };
 
   return (

@@ -17,6 +17,7 @@ export const INITIAL_MARKETPLACE_PRODUCTS = [
     location: "San Francisco, CA",
     availability: "Available",
     aiScore: 95
+  stock: 12,
   },
   {
     id: "cloud-infrastructure-kit",
@@ -36,6 +37,7 @@ export const INITIAL_MARKETPLACE_PRODUCTS = [
     location: "Seattle, WA",
     availability: "Available",
     aiScore: 78
+  stock: 3,
   },
   {
     id: "data-science-suite",
@@ -55,6 +57,7 @@ export const INITIAL_MARKETPLACE_PRODUCTS = [
     location: "Austin, TX",
     availability: "Available",
     aiScore: 88
+  stock: 9,
   }
 ];
 export type InitialMarketplaceProduct = typeof INITIAL_MARKETPLACE_PRODUCTS[number];

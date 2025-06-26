@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 import { EquipmentErrorBoundary } from '@/components/EquipmentErrorBoundary';
+import { useCurrency } from '@/hooks/useCurrency';
 
 // Enhanced initial equipment with more variety
 const INITIAL_EQUIPMENT: ProductListing[] = [
@@ -153,6 +154,8 @@ const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
     </CardContent>
   </Card>
 );
+};
+};
 
 // Filter controls
 const EquipmentFilterControls = ({
@@ -184,7 +187,9 @@ const EquipmentFilterControls = ({
 );
 
 // Equipment card
-const EquipmentCard = ({ equipment, onViewDetails }: { equipment: ProductListing; onViewDetails: () => void }) => (
+const EquipmentCard = ({ equipment, onViewDetails }: { equipment: ProductListing; onViewDetails: () => void }) => {
+  const { formatPrice } = useCurrency();
+  return (
   <Card className="h-full hover:shadow-lg transition-shadow">
     <CardHeader className="pb-3">
       <div className="flex items-start justify-between">
@@ -196,7 +201,7 @@ const EquipmentCard = ({ equipment, onViewDetails }: { equipment: ProductListing
           </div>
         </div>
         <div className="text-right">
-          <div className="text-xl font-bold text-blue-600">${equipment.price?.toLocaleString()}</div>
+          <div className="text-xl font-bold text-blue-600">{formatPrice(equipment.price ?? 0)}</div>
           <Badge variant={equipment.availability === "In Stock" ? "default" : "outline"} className="text-xs">
             {equipment.availability}
           </Badge>

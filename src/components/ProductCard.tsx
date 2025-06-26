@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Heart } from 'lucide-react';
 import { useWishlist } from '@/hooks/useWishlist';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import {
   Tooltip,
   TooltipContent,
@@ -35,6 +36,23 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
   const [isRedirecting, setIsRedirecting] = useState(false); // Added for loading state
   const router = useRouter();
 
+  const stockStatus =
+    product.stock === undefined
+      ? 'In stock'
+      : product.stock <= 0
+      ? 'Out of stock'
+      : product.stock <= 5
+      ? 'Low stock'
+      : 'In stock';
+
+  const stockVariant =
+    product.stock === undefined
+      ? 'success'
+      : product.stock <= 0
+      ? 'destructive'
+      : product.stock <= 5
+      ? 'warning'
+      : 'success';
   // Reset redirecting state if component unmounts (e.g., navigation cancelled by user)
   useEffect(() => {
     return () => {
@@ -110,6 +128,33 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
         <Heart className={active ? 'text-red-500 fill-red-500' : 'text-gray-500'} />
       </button>
 
+    <div className="w-full h-40 relative mb-2">
+      {imageUrl && !imageError ? (
+        <Image
+          src={imageUrl}
+          alt={imageAltText}
+          fill
+          style={{ objectFit: 'cover' }}
+          onError={(e) => handleImageError(e)}
+          priority={false}
+          sizes={imageSizes}
+        />
+      ) : (
+        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+          <span className="text-gray-500">No Image</span>
+        </div>
+      )}
+      {stockStatus && (
+        <Badge variant={stockVariant as any} className="absolute top-2 left-2">
+          {stockStatus}
+        </Badge>
+      )}
+      {active && (
+        <div className="absolute top-10 left-2 p-1 rounded-full bg-background/70">
+          <Heart className="text-red-500 fill-red-500" />
+        </div>
+      )}
+    </div>
       <Link href={`/marketplace/listing/${product.id}`}>
         <div className="w-full h-40 relative mb-2 cursor-pointer">
           {imageUrl && !imageError ? (

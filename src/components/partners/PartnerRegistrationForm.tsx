@@ -20,8 +20,8 @@ const partnerFormSchema = z.object({
   youtube: z.string().optional(),
   linkedin: z.string().optional(),
   niche: z.string().min(2, { message: "Please specify your niche." }),
-  audience_size: z.string(),
-  payout_method: z.string(),
+  audience_size: z.string().nonempty({ message: "Please select your audience size." }),
+  payout_method: z.string().nonempty({ message: "Please select a payout method." }),
   bio: z.string().min(10, { message: "Bio must be at least 10 characters." }).max(500),
 });
 

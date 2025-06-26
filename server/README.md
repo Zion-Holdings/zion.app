@@ -21,14 +21,14 @@ Based on `server/app.js`:
 -   **Authentication:**
     -   Routes under `/auth` and `/api/auth` using Passport.js.
     -   Social authentication routes under `/` (from `authSocial.js`).
-    -   **TODO:** Document the specific Passport.js strategies used and the overall auth flow for this server.
--   **Recommendations:** Routes under `/recommendations`.
+    -   Uses Passport.js strategies for Google, Facebook, Twitter (X), and LinkedIn OAuth flows as defined in `authSocial.js`. After successful authentication a JWT token is issued to the client.
+    -   **Recommendations:** Routes under `/recommendations`.
 -   **Sync Operations:** Routes under `/sync`.
 -   **Alerts:** Routes under `/api/alerts` (e.g., for Slack notifications from other services).
 -   **Equipment/Items:** Routes under `/api/equipment`.
 -   **Codex AI Fix Trigger:** Endpoint `/api/codex/suggest-fix` to run an AI pipeline.
 -   **Health Checks:** `/healthz` and `/health`.
--   **Static File Serving:** Serves static files from `../public` and has a fallback to `../index.html`, which might indicate it serves a separate SPA or is part of a legacy setup. **TODO:** Clarify the purpose of this static serving.
+-   **Static File Serving:** Serves static files from `../public` and falls back to `../index.html`. This allows the Express server to provide a basic single-page application for development or as a lightweight fallback when the main frontend is unavailable.
 
 ## Setup and Local Development
 
@@ -63,7 +63,14 @@ Based on `server/app.js`:
 
 ## Running Tests
 
--   **TODO:** Add instructions on how to run tests specific to this Express.js server. This might involve Jest, Mocha, Chai, Supertest, or other Node.js testing frameworks. Check for test files or scripts.
+This server currently does not include automated tests. If you add tests in the future, a common setup is to use Jest along with Supertest for HTTP assertions:
+
+```bash
+npm install --save-dev jest supertest
+npm test
+```
+
+Create test files under a `tests/` directory and configure Jest in `package.json` or a separate config file.
 
 ### Stub Server
 
@@ -85,9 +92,16 @@ node server/stubServer.js
 -   This server acts as a set of microservices or specialized APIs.
 -   It uses MongoDB as its primary database, distinct from the PostgreSQL used by Django and Supabase/Prisma.
 -   Authentication is handled by Passport.js, which might be different from the NextAuth.js/Supabase auth used by the main frontend. Understanding how user sessions/identities are managed or shared between this server and the rest of an application is important if there are direct user interactions.
--   **TODO:** Document the rationale for this server being separate from the Next.js API routes or the Django backend. What specific needs does it address?
--   **TODO:** Clarify if this server is intended for direct client interaction or primarily for backend-to-backend communication.
+-   This server is kept separate from the Next.js API routes and the Django backend so that specialized services (such as webhook handling and AI fix triggers) can be deployed and scaled independently.
+-   It is primarily meant for backend-to-backend communication, though some routes (like social auth callbacks) interact with the client directly.
 
 ## Deployment
 
--   **TODO:** Add details about how this Express.js application is containerized (if it is) and deployed to staging/production environments. Reference any specific Dockerfiles or deployment scripts if they are separate from the root ones.
+This service can be deployed as a standalone Docker container. The root repository contains a `Dockerfile` that installs dependencies and starts the Express server via `node server/index.js`. In production it can be built and run with:
+
+```bash
+docker build -t zion-express ./server
+docker run -p 3001:3001 zion-express
+```
+
+CI pipelines should reference this image when deploying to staging or production clusters.

@@ -25,10 +25,15 @@ const GovernancePage: React.FC = () => {
       setIsLoading(true);
       setError(null);
       try {
-        // TODO: Implement backend filtering by passing query params:
-        // e.g. /api/governance/proposals/?status=${statusFilter}&type=${typeFilter}&sort=${sortBy}&search=${searchTerm}
-        // For now, fetching all and filtering client-side.
-        const response = await fetch('/api/governance/proposals/');
+        const params = new URLSearchParams();
+        if (statusFilter !== 'ALL') params.append('status', statusFilter);
+        if (typeFilter !== 'ALL') params.append('proposal_type', typeFilter);
+        if (searchTerm) params.append('search', searchTerm);
+        if (sortBy === 'newest') params.append('ordering', '-created_at');
+        if (sortBy === 'expiring_soon') params.append('ordering', 'voting_ends_at');
+
+        const query = params.toString() ? `?${params.toString()}` : '';
+        const response = await fetch(`/api/governance/proposals/${query}`);
         if (!response.ok) {
           const errorData = await response.json().catch(() => ({ detail: `Failed to fetch proposals: ${response.status}` }));
           throw new Error(errorData.detail || `Failed to fetch proposals: ${response.status}`);
@@ -45,7 +50,7 @@ const GovernancePage: React.FC = () => {
       }
     };
     fetchProposals();
-  }, []); // Intentionally empty for now, client-side filtering first. Re-fetch on filter changes if backend supports it.
+  }, [statusFilter, typeFilter, sortBy, searchTerm]);
 
   const filteredAndSortedProposals = useMemo(() => {
     let processedProposals = [...proposals];

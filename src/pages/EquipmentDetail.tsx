@@ -14,6 +14,7 @@ import { ImageWithRetry } from '@/components/ui/ImageWithRetry';
 import { equipmentListings } from '@/data/equipmentData';
 import { ProductListing } from '@/types/listings';
 import { motion } from 'framer-motion';
+import { useCurrency } from '@/hooks/useCurrency';
 
 interface EquipmentSpecification {
   name: string;
@@ -78,6 +79,7 @@ export default function EquipmentDetail() {
   const { id } = router.query as { id?: string };
   const { isAuthenticated, user } = useAuth();
   const { items, dispatch } = useCart();
+  const { formatPrice } = useCurrency();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
@@ -363,7 +365,7 @@ export default function EquipmentDetail() {
               {/* Price */}
               <div className="bg-zion-blue-light rounded-lg p-4">
                 <div className="text-3xl font-bold text-zion-cyan mb-2">
-                  {equipment.currency}{equipment.price.toLocaleString()}
+                  {formatPrice(equipment.price)}
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Clock className="h-4 w-4 text-zion-cyan" />
