@@ -67,21 +67,23 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         let errorMessage = "Authentication failed. Please try again.";
         let toastTitle = "Authentication Error";
         
-        if (supabaseError.message) {
-          // Check for specific error types
-          if (supabaseError.message.toLowerCase().includes("email not confirmed") || 
-              supabaseError.message.toLowerCase().includes("email address is not confirmed")) {
+        if (supabaseError.message || (supabaseError as any).code) { // Check code as well
+          const messageIncludesEmailNotConfirmed = supabaseError.message?.toLowerCase().includes("email not confirmed") ||
+                                                 supabaseError.message?.toLowerCase().includes("email address is not confirmed");
+          const codeIsEmailNotVerified = (supabaseError as any).code === 'email_not_verified';
+
+          if (messageIncludesEmailNotConfirmed || codeIsEmailNotVerified) {
             errorMessage = "Your email address needs to be verified. Please check your inbox for a verification link and click it to activate your account.";
             toastTitle = "Email Verification Required";
-          } else if (supabaseError.message.toLowerCase().includes("invalid login credentials") ||
-                     supabaseError.message.toLowerCase().includes("invalid credentials")) {
+          } else if (supabaseError.message?.toLowerCase().includes("invalid login credentials") ||
+                     supabaseError.message?.toLowerCase().includes("invalid credentials")) {
             errorMessage = "Invalid email or password. Please check your credentials and try again.";
             toastTitle = "Invalid Credentials";
-          } else if (supabaseError.message.toLowerCase().includes("too many requests")) {
+          } else if (supabaseError.message?.toLowerCase().includes("too many requests")) {
             errorMessage = "Too many login attempts. Please wait a moment before trying again.";
             toastTitle = "Rate Limited";
           } else {
-            errorMessage = supabaseError.message;
+            errorMessage = supabaseError.message || "An unknown authentication error occurred.";
           }
         }
         
@@ -222,26 +224,36 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
                     if (profileError) {
                         console.error("[AuthProvider DEBUG] Error fetching user profile:", profileError);
+                        let shouldSignOut = false;
+                        // Check for common indicators of auth failure in Supabase errors
+                        // Supabase errors might have a __isAuthError boolean, or specific messages/status codes.
+                        // Adjust these checks based on actual Supabase error object structure.
+                        const message = profileError.message?.toLowerCase() || "";
+                        const status = (profileError as any).status; // Supabase errors might not always have a 'status' directly
+
+                        if (message.includes('jwt') || message.includes('unauthorized') || message.includes('invalid token') || status === 401) {
+                            shouldSignOut = true;
+                            console.warn(`[AuthProvider] Profile fetch failed with auth-like error for user ${session.user.id} (event: ${event}). Message: ${profileError.message}. Attempting sign out.`);
+                        } else {
+                             console.warn(`[AuthProvider] Profile fetch failed for user ${session.user.id} (event: ${event}). Message: ${profileError.message}. Not treated as auth error for immediate signout.`);
+                        }
+
                         // Only show toast if it's a genuine signed-in event, not for passive token refreshes if profile is missing
-                        if (event === 'SIGNED_IN') {
-                            let errorMessage = 'An error occurred while loading your profile. Please try again or contact support.';
-                            if (profileError instanceof Error) {
-                               errorMessage = profileError.message;
-                            } else if (typeof profileError === 'object' && profileError !== null && 'message' in profileError) {
-                               errorMessage = (profileError as {message: string}).message;
-                            }
+                        if (event === 'SIGNED_IN' && !shouldSignOut) { // Avoid double toasting if signout will occur
                             toast({
                                 title: "Profile Load Error",
-                                description: `Login successful, but failed to load your profile. ${errorMessage}`,
+                                description: `Login successful, but failed to load your profile. ${profileError.message}`,
                                 variant: "destructive",
                             });
-                        } else {
-                            // For TOKEN_REFRESHED or USER_UPDATED, if profile fails, log it but don't show a disruptive toast
-                            // as the user might already be using the app.
-                            console.warn(`[AuthProvider] Profile fetch failed during ${event} for user ${session.user.id}: ${profileError.message}`);
                         }
+
                         setUser(null);
                         setAvatarUrl(null);
+
+                        if (shouldSignOut) {
+                            // This will trigger onAuthStateChange with 'SIGNED_OUT' event, which handles full cleanup.
+                            await supabase.auth.signOut();
+                        }
                     } else if (profile) {
                         console.log('[AuthProvider DEBUG] Profile data fetched successfully.');
                         let mappedUser;

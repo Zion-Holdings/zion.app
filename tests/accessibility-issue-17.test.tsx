@@ -2,21 +2,21 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { vi } from 'vitest';
+// import { vi } from 'vitest'; // Removed Vitest import
 
 // Components to test for Issue #17 fixes
 import UserProfileDropdown from '@/components/header/UserProfileDropdown';
 import { ServiceQuoteModal } from '@/components/ServiceQuoteModal';
 
 // Mock the useAuth hook
-vi.mock('@/hooks/useAuth', () => ({
+jest.mock('@/hooks/useAuth', () => ({ // Changed vi.mock to jest.mock
   useAuth: () => ({
     user: {
       name: 'Test User',
       displayName: 'Test User',
       avatarUrl: '/test-avatar.jpg'
     },
-    logout: vi.fn(),
+    logout: jest.fn(), // Changed vi.fn to jest.fn
   }),
 }));
 

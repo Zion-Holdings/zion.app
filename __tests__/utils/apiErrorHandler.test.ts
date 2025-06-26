@@ -3,13 +3,13 @@ import { parseApiError, showApiError } from '@/utils/apiErrorHandler';
 import { toast } from '@/hooks/use-toast';
 
 // Mock the toast hook
-vi.mock('@/hooks/use-toast', () => ({
-  toast: vi.fn(),
+jest.mock('@/hooks/use-toast', () => ({
+  toast: jest.fn(),
 }));
 
 describe('apiErrorHandler', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    (toast as jest.Mock).mockClear(); // Changed vi.clearAllMocks() to (toast as jest.Mock).mockClear()
   });
 
   describe('parseApiError', () => {
@@ -150,7 +150,7 @@ describe('apiErrorHandler', () => {
 
     it('should pass retryCallback to toast function and prepend code', () => {
       const error = { response: { status: 503 } };
-      const mockRetryCallback = vi.fn();
+      const mockRetryCallback = jest.fn(); // Changed vi.fn to jest.fn
       showApiError(error, undefined, mockRetryCallback);
       expect(toast).toHaveBeenCalledWith({
         title: 'Error',

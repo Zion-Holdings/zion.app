@@ -9,7 +9,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/use-toast';
 
 // Mocks
-vi.mock('next/config', () => ({
+jest.mock('next/config', () => ({ // Changed vi.mock to jest.mock
   default: () => ({
     publicRuntimeConfig: {
       NEXT_PUBLIC_SENTRY_DSN: 'dummy-sentry-dsn',
@@ -17,10 +17,10 @@ vi.mock('next/config', () => ({
     },
   }),
 }));
-vi.mock('@/services/quoteRequestService');
-vi.mock('@/utils/apiErrorHandler');
-vi.mock('@/hooks/useAuth');
-vi.mock('@/hooks/use-toast');
+jest.mock('@/services/quoteRequestService'); // Changed vi.mock to jest.mock
+jest.mock('@/utils/apiErrorHandler'); // Changed vi.mock to jest.mock
+jest.mock('@/hooks/useAuth'); // Changed vi.mock to jest.mock
+jest.mock('@/hooks/use-toast'); // Changed vi.mock to jest.mock
 
 const mockUser = { id: 'talent-123' };
 const mockQuotes = [
@@ -33,7 +33,7 @@ describe('useTalentQuotes', () => {
   let queryClient: QueryClient;
 
   beforeEach(() => {
-    vi.clearAllMocks();
+    jest.clearAllMocks(); // Changed vi.clearAllMocks to jest.clearAllMocks
     queryClient = new QueryClient({
       defaultOptions: {
         queries: {
@@ -41,9 +41,9 @@ describe('useTalentQuotes', () => {
         },
       },
     });
-    (useAuth as vi.Mock).mockReturnValue({ user: mockUser });
-    (useToast as vi.Mock).mockReturnValue({ toast: vi.fn() });
-    (quoteRequestService.getByTalentId as vi.Mock).mockResolvedValue(mockQuotes);
+    (useAuth as jest.Mock).mockReturnValue({ user: mockUser }); // Changed vi.Mock to jest.Mock
+    (useToast as jest.Mock).mockReturnValue({ toast: jest.fn() }); // Changed vi.Mock and vi.fn to jest.Mock and jest.fn
+    (quoteRequestService.getByTalentId as jest.Mock).mockResolvedValue(mockQuotes); // Changed vi.Mock to jest.Mock
   });
 
   const wrapper = ({ children }: { children: React.ReactNode }) => (
@@ -53,7 +53,7 @@ describe('useTalentQuotes', () => {
   describe('updateStatusMutation', () => {
     it('should call showApiError with retryCallback on updateStatus failure', async () => {
       const mockError = new Error('Failed to update status');
-      (quoteRequestService.updateStatus as vi.Mock).mockRejectedValueOnce(mockError);
+      (quoteRequestService.updateStatus as jest.Mock).mockRejectedValueOnce(mockError); // Changed vi.Mock to jest.Mock
 
       const { result } = renderHook(() => useTalentQuotes(), { wrapper });
 
@@ -71,13 +71,13 @@ describe('useTalentQuotes', () => {
 
 
       expect(showApiError).toHaveBeenCalledTimes(1);
-      const [errorArg, messageArg, retryCallback] = (showApiError as vi.Mock).mock.calls[0];
+      const [errorArg, messageArg, retryCallback] = (showApiError as jest.Mock).mock.calls[0]; // Changed vi.Mock to jest.Mock
       expect(errorArg).toBe(mockError);
       expect(messageArg).toBe('Failed to update status');
       expect(retryCallback).toBeInstanceOf(Function);
 
       // Simulate retry
-      (quoteRequestService.updateStatus as vi.Mock).mockResolvedValueOnce({ success: true }); // Success on retry
+      (quoteRequestService.updateStatus as jest.Mock).mockResolvedValueOnce({ success: true }); // Success on retry, changed vi.Mock
       await act(async () => {
         await retryCallback();
       });
@@ -89,7 +89,7 @@ describe('useTalentQuotes', () => {
   describe('toggleArchiveMutation', () => {
     it('should call showApiError with retryCallback on toggleArchive failure', async () => {
       const mockError = new Error('Failed to update quote (archive)');
-      (quoteRequestService.toggleArchive as vi.Mock).mockRejectedValueOnce(mockError);
+      (quoteRequestService.toggleArchive as jest.Mock).mockRejectedValueOnce(mockError); // Changed vi.Mock to jest.Mock
 
       const { result } = renderHook(() => useTalentQuotes(), { wrapper });
 
@@ -105,13 +105,13 @@ describe('useTalentQuotes', () => {
 
 
       expect(showApiError).toHaveBeenCalledTimes(1);
-      const [errorArg, messageArg, retryCallback] = (showApiError as vi.Mock).mock.calls[0];
+      const [errorArg, messageArg, retryCallback] = (showApiError as jest.Mock).mock.calls[0]; // Changed vi.Mock to jest.Mock
       expect(errorArg).toBe(mockError);
       expect(messageArg).toBe('Failed to update quote');
       expect(retryCallback).toBeInstanceOf(Function);
 
       // Simulate retry
-      (quoteRequestService.toggleArchive as vi.Mock).mockResolvedValueOnce({ success: true }); // Success on retry
+      (quoteRequestService.toggleArchive as jest.Mock).mockResolvedValueOnce({ success: true }); // Success on retry, changed vi.Mock
       await act(async () => {
         await retryCallback();
       });

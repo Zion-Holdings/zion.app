@@ -188,10 +188,15 @@ const LoginPage = () => {
         console.error('Supabase sign-in error:', signInError);
         
         // Check if error is related to email verification
-        if (signInError.message?.toLowerCase().includes('email not confirmed') || 
-            signInError.message?.toLowerCase().includes('email_not_confirmed') ||
-            signInError.message?.toLowerCase().includes('verify') ||
-            signInError.message?.toLowerCase().includes('confirm')) {
+        const messageIncludesEmailNotConfirmed = signInError.message?.toLowerCase().includes('email not confirmed') ||
+                                                 signInError.message?.toLowerCase().includes('email_not_confirmed') ||
+                                                 signInError.message?.toLowerCase().includes('verify') ||
+                                                 signInError.message?.toLowerCase().includes('confirm');
+        // As per issue description, check for a specific error code "email_not_verified"
+        // Assuming 'code' is a property on the error object. Supabase errors might have different structures.
+        const codeIsEmailNotVerified = (signInError as any).code === 'email_not_verified';
+
+        if (messageIncludesEmailNotConfirmed || codeIsEmailNotVerified) {
           setIsEmailUnverified(true);
           setError({ 
             name: 'EmailNotVerifiedError', 

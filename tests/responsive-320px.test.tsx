@@ -1,34 +1,36 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { vi } from 'vitest';
+// import { vi } from 'vitest'; // Removed Vitest import
 import { MemoryRouter } from 'react-router-dom';
 
 // Mock components and hooks for testing
-vi.mock('@/hooks/useAuth', () => ({
+jest.mock('@/hooks/useAuth', () => ({ // Changed vi.mock to jest.mock
   useAuth: () => ({
     user: null,
     loading: false,
   }),
 }));
 
-vi.mock('@/hooks/use-mobile', () => ({
-  useIsMobile: () => false,
+jest.mock('@/hooks/use-mobile', () => ({ // Changed vi.mock to jest.mock
+  useIsMobile: () => false, // Default to not mobile, can be overridden in tests
 }));
 
-vi.mock('@/context/MessagingContext', () => ({
+jest.mock('@/context/MessagingContext', () => ({ // Changed vi.mock to jest.mock
   useMessaging: () => ({
     unreadCount: 0,
   }),
 }));
 
-vi.mock('react-redux', () => ({
-  useSelector: () => ({
+jest.mock('react-redux', () => ({ // Changed vi.mock to jest.mock
+  ...jest.requireActual('react-redux'), // Import and retain default exports
+  useSelector: () => ({ // Mock only useSelector
     items: [],
   }),
+  useDispatch: () => jest.fn() // Mock useDispatch as it's often used alongside useSelector
 }));
 
-vi.mock('react-i18next', () => ({
+jest.mock('react-i18next', () => ({ // Changed vi.mock to jest.mock
   useTranslation: () => ({
     t: (key: string, fallback?: string) => fallback || key,
   }),
@@ -46,23 +48,30 @@ const TestWrapper = ({ children }: { children: React.ReactNode }) => (
 );
 
 describe('Responsive 320px Width Fixes (Issue #18)', () => {
-  
+  const originalMatchMedia = window.matchMedia;
+
   beforeAll(() => {
-    // Mock window.matchMedia for responsive tests
+    // Mock window.matchMedia for JSDOM
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
-      value: vi.fn().mockImplementation(query => ({
-        matches: query.includes('(max-width: 320px)'),
+      value: jest.fn().mockImplementation(query => ({ // Changed vi.fn to jest.fn
+        matches: query.includes('(max-width: 320px)') || query.includes('(max-width: 768px)'), // Simulate mobile view for both queries
         media: query,
         onchange: null,
-        addListener: vi.fn(),
-        removeListener: vi.fn(),
-        addEventListener: vi.fn(),
-        removeEventListener: vi.fn(),
-        dispatchEvent: vi.fn(),
+        addListener: jest.fn(), // Deprecated // Changed vi.fn to jest.fn
+        removeListener: jest.fn(), // Deprecated // Changed vi.fn to jest.fn
+        addEventListener: jest.fn(), // Changed vi.fn to jest.fn
+        removeEventListener: jest.fn(), // Changed vi.fn to jest.fn
+        dispatchEvent: jest.fn(), // Changed vi.fn to jest.fn
       })),
     });
   });
+
+  afterAll(() => {
+    window.matchMedia = originalMatchMedia;
+    jest.restoreAllMocks(); // Changed from vi.restoreAllMocks()
+  });
+
 
   describe('Navigation Layout at 320px', () => {
     
@@ -94,8 +103,6 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
         </TestWrapper>
       );
       
-      // The search form should be hidden on mobile anyway
-      // but we can check that the mobile menu button is visible
       const mobileMenuButton = screen.getByLabelText(/toggle.*menu/i);
       expect(mobileMenuButton).toBeInTheDocument();
     });
@@ -109,11 +116,9 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
         </TestWrapper>
       );
       
-      // Logo should be present
-      const logo = screen.getByRole('link'); // Assuming Logo renders as a link
+      const logo = screen.getByRole('link');
       expect(logo).toBeInTheDocument();
       
-      // Mobile menu button should be present for small screens
       const mobileButton = screen.getByLabelText(/toggle.*menu/i);
       expect(mobileButton).toBeInTheDocument();
     });
@@ -130,7 +135,6 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
         </TestWrapper>
       );
       
-      // Check footer sections are present
       expect(screen.getByText('Marketplace')).toBeInTheDocument();
       expect(screen.getByText('Company')).toBeInTheDocument();
       expect(screen.getByText('Newsletter')).toBeInTheDocument();
@@ -143,7 +147,6 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
         </TestWrapper>
       );
       
-      // Check social icons are present and accessible
       expect(screen.getByLabelText('Twitter')).toBeInTheDocument();
       expect(screen.getByLabelText('LinkedIn')).toBeInTheDocument();
       expect(screen.getByLabelText('Facebook')).toBeInTheDocument();
@@ -161,7 +164,6 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
       const newsletterSection = screen.getByText('Newsletter');
       expect(newsletterSection).toBeInTheDocument();
       
-      // Check newsletter description is present
       expect(screen.getByText(/stay updated with the latest news/i)).toBeInTheDocument();
     });
     
@@ -172,7 +174,6 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
         </TestWrapper>
       );
       
-      // Check legal links are present
       expect(screen.getByText('Privacy Policy')).toBeInTheDocument();
       expect(screen.getByText('Terms of Service')).toBeInTheDocument();
       expect(screen.getByText('API Status')).toBeInTheDocument();
@@ -185,7 +186,6 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
       const testElement = document.createElement('div');
       testElement.className = 'flex-wrap-320 clamp-width-320 grid-responsive-320';
       
-      // Check classes are applied (basic DOM test)
       expect(testElement.classList.contains('flex-wrap-320')).toBe(true);
       expect(testElement.classList.contains('clamp-width-320')).toBe(true);
       expect(testElement.classList.contains('grid-responsive-320')).toBe(true);
@@ -214,7 +214,6 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
       
       const mobileMenuButton = screen.getByLabelText(/toggle.*menu/i);
       
-      // Check button has proper accessible name
       expect(mobileMenuButton).toHaveAttribute('aria-label');
       expect(mobileMenuButton).toHaveAttribute('aria-expanded');
     });
@@ -244,7 +243,6 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
       
       document.body.appendChild(dropdown);
       
-      // Check element exists (basic test for CSS application)
       expect(dropdown.classList.contains('search-dropdown')).toBe(true);
       
       document.body.removeChild(dropdown);
@@ -263,8 +261,6 @@ describe('Specific Issue #18 Validation', () => {
       </TestWrapper>
     );
     
-    // At 320px, search should be hidden (mobile view)
-    // Mobile menu button should be visible instead
     const mobileButton = screen.getByLabelText(/toggle.*menu/i);
     expect(mobileButton).toBeInTheDocument();
   });
@@ -278,13 +274,11 @@ describe('Specific Issue #18 Validation', () => {
       </TestWrapper>
     );
     
-    // All footer sections should be present and accessible
     const sections = ['Marketplace', 'Company', 'Newsletter'];
     sections.forEach(section => {
       expect(screen.getByText(section)).toBeInTheDocument();
     });
     
-    // Copyright should be present
     expect(screen.getByText(/zion tech group.*all rights reserved/i)).toBeInTheDocument();
   });
   
@@ -293,7 +287,6 @@ describe('Specific Issue #18 Validation', () => {
     testContainer.className = 'flex-wrap-320';
     testContainer.style.width = '320px';
     
-    // Add child elements that would overflow
     for (let i = 0; i < 5; i++) {
       const child = document.createElement('div');
       child.style.width = '80px';
@@ -303,7 +296,6 @@ describe('Specific Issue #18 Validation', () => {
     
     document.body.appendChild(testContainer);
     
-    // Check container has flex-wrap class
     expect(testContainer.classList.contains('flex-wrap-320')).toBe(true);
     
     document.body.removeChild(testContainer);
@@ -316,7 +308,6 @@ describe('Specific Issue #18 Validation', () => {
     
     document.body.appendChild(testElement);
     
-    // Check element has the clamp class
     expect(testElement.classList.contains('clamp-width-320')).toBe(true);
     
     document.body.removeChild(testElement);
