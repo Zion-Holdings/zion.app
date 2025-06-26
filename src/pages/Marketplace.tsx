@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useApiErrorHandling } from '@/hooks/useApiErrorHandling';
 import ProductCard from '@/components/ProductCard';
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp, Filter, SortAsc, Sparkles, TrendingUp, Star } from 'lucide-react';
 import { SkeletonCard } from '@/components/ui/skeleton';
@@ -225,6 +226,7 @@ const FilterControls: React.FC<{
  */
 export default function Marketplace() {
   const router = useRouter();
+  const { t } = useTranslation();
   const { toast } = useToast();
   const { isAuthenticated, user } = useAuth();
   const firstRenderRef = useRef(true);
@@ -444,10 +446,10 @@ export default function Marketplace() {
           className="text-center mb-8"
         >
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            AI Marketplace
+            {t('marketplace.hero_title')}
           </h1>
           <p className="text-muted-foreground text-lg">
-            Discover cutting-edge AI and IT solutions
+            {t('marketplace.hero_subtitle')}
           </p>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -483,10 +485,10 @@ export default function Marketplace() {
           className="text-center mb-8"
         >
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            AI Marketplace
+            {t('marketplace.hero_title')}
           </h1>
           <p className="text-muted-foreground text-lg">
-            Discover cutting-edge AI and IT solutions
+            {t('marketplace.hero_subtitle')}
           </p>
         </motion.div>
         
@@ -505,10 +507,10 @@ export default function Marketplace() {
         animate={{ opacity: 1, y: 0 }}
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          AI Marketplace
+          {t('marketplace.hero_title')}
         </h1>
         <p className="text-muted-foreground text-lg">
-          Discover cutting-edge AI and IT solutions powered by intelligent algorithms
+          {t('marketplace.hero_subtitle')}
         </p>
       </motion.div>
 
