@@ -48,11 +48,11 @@ const SearchPage = ({ products, talent, posts, docs, q }: SearchPageProps) => {
     <div className="container mx-auto px-4 py-8">
       <div className="mb-4">
         <h1 className="text-2xl font-bold">Search Results for "{q}"</h1>
-        <p className="text-gray-600">
-          Found {products.length + talent.length + posts.length + docs.length} results
+        <p className="text-gray-600" data-testid="results-count">
+          Found {products.length + talent.length + posts.length + docs.length} results for "{q}"
         </p>
       </div>
-      <SearchTabs products={products} talent={talent} posts={posts} docs={docs} query={q} />
+      <SearchTabs products={products} talent={talent} posts={posts} docs={docs} query={q} data-testid="search-tabs-content" />
     </div>
   );
 };
