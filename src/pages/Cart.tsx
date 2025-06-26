@@ -49,19 +49,6 @@ export default function CartPage() {
     }
   };
 
-<<<<<<< HEAD
-  const saveForLater = (id: string) => {
-    const item = items.find(i => i.id === id);
-    toggleWishlist(id);
-    dispatch(removeItemAction(id));
-    
-    if (item) {
-      toast({
-        title: "Saved for later",
-        description: `${item.name} has been saved to your wishlist`,
-      });
-    }
-=======
   const saveForLater = (id: string, name: string) => {
     const wasWishlisted = isWishlisted(id);
     toggleWishlist(id);
@@ -71,7 +58,6 @@ export default function CartPage() {
         ? `${name} has been removed from your wishlist`
         : `${name} has been added to your wishlist`,
     });
->>>>>>> 07ec6a3b1ee2338725b65b8cd3a709e717cda848
   };
 
   const handleCheckout = async (details?: { email?: string; address?: string }) => {
