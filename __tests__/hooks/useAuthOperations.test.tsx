@@ -1,3 +1,4 @@
+import { vi, describe, it, expect, beforeEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useAuthOperations } from '@/hooks/useAuthOperations';
 import { supabase as supabaseClientModule } from '@/integrations/supabase/client';

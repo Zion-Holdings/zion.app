@@ -1,4 +1,4 @@
-import { getStaticProps } from '@/pages/categories';
+import { getStaticProps } from '@/pages/Categories';
 import { CATEGORIES } from '@/data/categories';
 import fetchMock from 'fetch-mock';
 

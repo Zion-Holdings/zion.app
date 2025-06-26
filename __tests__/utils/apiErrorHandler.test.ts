@@ -1,3 +1,4 @@
+import { vi, describe, it, expect, beforeEach } from 'vitest';
 import { parseApiError, showApiError } from '@/utils/apiErrorHandler';
 import { toast } from '@/hooks/use-toast';
 

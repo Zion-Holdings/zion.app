@@ -6,6 +6,15 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@/pages': path.resolve(__dirname, './src/pages'),
+      '@/components': path.resolve(__dirname, './src/components'),
+      '@/hooks': path.resolve(__dirname, './src/hooks'),
+      '@/context': path.resolve(__dirname, './src/context'),
+      '@/lib': path.resolve(__dirname, './src/lib'),
+      '@/utils': path.resolve(__dirname, './src/utils'),
+      '@/config': path.resolve(__dirname, './src/config'),
+      '@/services': path.resolve(__dirname, './src/services'),
+      '@/integrations': path.resolve(__dirname, './src/integrations'),
+      '@/types': path.resolve(__dirname, './src/types'),
     },
   },
   define: {

@@ -1,3 +1,4 @@
+import { vi, describe, it, expect, beforeEach } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useSavedTalents } from '@/hooks/talent/useSavedTalents';
 import { supabase } from '@/integrations/supabase/client';
