@@ -146,24 +146,26 @@ const LoginPage = () => {
 
       if (signInError) {
         console.error('Supabase sign-in error:', signInError);
-        
+
+        const normalizedMessage = signInError.message || (signInError as any).error_description || (signInError as any).error || 'Invalid email or password';
+
         // Check if error is related to email verification
-        if (signInError.message?.toLowerCase().includes('email not confirmed') || 
-            signInError.message?.toLowerCase().includes('email_not_confirmed') ||
-            signInError.message?.toLowerCase().includes('verify') ||
-            signInError.message?.toLowerCase().includes('confirm')) {
+        if (normalizedMessage.toLowerCase().includes('email not confirmed') ||
+            normalizedMessage.toLowerCase().includes('email_not_confirmed') ||
+            normalizedMessage.toLowerCase().includes('verify') ||
+            normalizedMessage.toLowerCase().includes('confirm')) {
           setIsEmailUnverified(true);
-          setError({ 
-            name: 'EmailNotVerifiedError', 
-            message: 'Please verify your email address before logging in. Check your inbox for a verification link.' 
+          setError({
+            name: 'EmailNotVerifiedError',
+            message: 'Please verify your email address before logging in. Check your inbox for a verification link.'
           } as AuthError);
-          
+
           // Auto-resend verification email
           setTimeout(() => {
             handleResendVerification();
           }, 1000);
         } else {
-          setError(signInError as any);
+          setError({ name: signInError.name || 'SignInError', message: normalizedMessage } as AuthError);
         }
       } else if (data.user) {
         console.log('Supabase sign-in successful, user:', data.user);
@@ -172,7 +174,7 @@ const LoginPage = () => {
       } else {
         // Should not happen if signInError is null and data.user is null
         console.warn('Supabase sign-in returned no error but no user.');
-        setError({ name: 'UnknownAuthError', message: 'Login failed. Please try again.' } as AuthError);
+        setError({ name: 'UnknownAuthError', message: 'Invalid email or password' } as AuthError);
       }
     } catch (catchedError: any) {
       console.error('Exception during Supabase sign-in:', catchedError);
