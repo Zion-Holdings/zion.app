@@ -113,7 +113,7 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
                 </span>
               )}
             </div>
-            <span className="text-xs font-medium">{item.name}</span>
+            <span className="hidden sm:block text-xs font-medium">{item.name}</span>
           </Link>
         ))}
       </div>
