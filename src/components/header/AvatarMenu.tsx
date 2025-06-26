@@ -2,12 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem
-} from '@/components/ui/dropdown-menu';
 
 export const AvatarMenu: React.FC = () => {
   const { user, logout, avatarUrl } = useAuth();
@@ -17,35 +11,28 @@ export const AvatarMenu: React.FC = () => {
   const initials = (user.displayName || user.name || 'U').charAt(0);
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <button
-          className="h-8 w-8 cursor-pointer rounded-full focus:outline-none"
-          aria-label="User menu"
-          title="User menu"
-        >
-          <Avatar>
-            {avatarUrl ? (
-              <AvatarImage
-                src={avatarUrl}
-                alt={user.displayName || user.name || 'User'}
-              />
-            ) : (
-              <AvatarFallback>{initials}</AvatarFallback>
-            )}
-          </Avatar>
-        </button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem asChild>
-          <Link href="/profile" passHref>Profile</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/orders" passHref>Orders</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem onSelect={logout}>Logout</DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div className="flex items-center gap-2" data-testid="avatar-menu">
+      <Avatar className="h-8 w-8">
+        {avatarUrl ? (
+          <AvatarImage src={avatarUrl} alt={user.displayName || user.name || 'User'} />
+        ) : (
+          <AvatarFallback>{initials}</AvatarFallback>
+        )}
+      </Avatar>
+      <Link href="/profile" className="text-sm text-white hover:text-zion-cyan">
+        Profile
+      </Link>
+      <Link href="/orders" className="text-sm text-white hover:text-zion-cyan">
+        Orders
+      </Link>
+      <button
+        onClick={logout}
+        className="text-sm text-white hover:text-zion-cyan"
+        type="button"
+      >
+        Logout
+      </button>
+    </div>
   );
 };
 
