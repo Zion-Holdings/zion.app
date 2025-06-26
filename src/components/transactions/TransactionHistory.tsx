@@ -10,6 +10,7 @@ import Skeleton from "@/components/ui/skeleton";
 import { ArrowLeft, ArrowRight, RefreshCcw, CheckCircle2, XCircle, Clock, AlertCircle, ShieldAlert } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { safeStorage } from "@/utils/safeStorage";
+import { useCurrency } from '@/hooks/useCurrency';
 
 interface Transaction {
   id: string;
@@ -155,13 +156,12 @@ export function TransactionHistory() {
           </Badge>
         );
     }
-  };
-  
-  const formatCurrency = (amount: number, currency: string) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: currency.toUpperCase()
-    }).format(amount);
+  }; 
+
+  const { formatPrice } = useCurrency();
+
+  const formatCurrency = (amount: number) => {
+    return formatPrice(amount);
   };
 
   if (error) {
@@ -282,7 +282,7 @@ export function TransactionHistory() {
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-zion-slate-light">Amount:</span>
                       <span className="text-white font-medium text-lg">
-                        {formatCurrency(transaction.amount, transaction.currency)}
+                        {formatCurrency(transaction.amount)}
                       </span>
                     </div>
                     

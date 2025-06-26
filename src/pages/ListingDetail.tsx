@@ -15,6 +15,7 @@ import { toast } from "@/hooks/use-toast";
 import { PaymentButton } from "@/components/transactions/PaymentButton";
 import { ProfileContact } from "@/components/profile/ProfileContact";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useCurrency } from '@/hooks/useCurrency';
 
 export default function ListingDetail() {
   // useParams may be untyped in this environment, so avoid passing a
@@ -26,6 +27,7 @@ export default function ListingDetail() {
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const { user } = useAuth();
+  const { formatPrice } = useCurrency();
 
   // Find the listing from our shared data source - now also checking equipment listings
   const listing = MARKETPLACE_LISTINGS.find(item => item.id === id);
@@ -185,7 +187,7 @@ export default function ListingDetail() {
                 <div className="mb-6">
                   {listing.price !== null ? (
                     <div className="text-3xl font-bold text-white">
-                      {listing.currency}{listing.price.toLocaleString()}
+                      {formatPrice(listing.price)}
                     </div>
                   ) : (
                     <div className="text-2xl font-bold text-white">

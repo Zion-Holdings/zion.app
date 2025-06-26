@@ -12,6 +12,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
+import { useCurrency } from '@/hooks/useCurrency';
 
 // Market insights component
 const MarketplaceInsights = ({ stats }: { stats: any }) => (
@@ -42,6 +43,7 @@ const MarketplaceInsights = ({ stats }: { stats: any }) => (
     </CardContent>
   </Card>
 );
+};
 
 // Filter controls
 const MarketplaceFilterControls = ({
@@ -81,7 +83,9 @@ import { useAuth } from '@/context/auth/AuthProvider';
 import { toast } from '@/hooks/use-toast';
 
 // Product card
-const MarketplaceCard = ({ product, onViewDetails, onAddToCart }: { product: ProductListing; onViewDetails: () => void; onAddToCart: () => void; }) => (
+const MarketplaceCard = ({ product, onViewDetails, onAddToCart }: { product: ProductListing; onViewDetails: () => void; onAddToCart: () => void; }) => {
+  const { formatPrice } = useCurrency();
+  return (
   <Card className="h-full hover:shadow-lg transition-shadow">
     <CardHeader className="pb-3">
       <div className="flex items-start justify-between">
@@ -98,7 +102,7 @@ const MarketplaceCard = ({ product, onViewDetails, onAddToCart }: { product: Pro
           </div>
         </div>
         <div className="text-right">
-          <div className="text-xl font-bold text-blue-600">${product.price?.toLocaleString()}</div>
+          <div className="text-xl font-bold text-blue-600">{formatPrice(product.price ?? 0)}</div>
           <Badge variant={product.availability === "Available" ? "default" : "outline"} className="text-xs">
             {product.availability}
           </Badge>
