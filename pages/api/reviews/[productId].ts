@@ -1,49 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { supabase } from '@/integrations/supabase/client';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 
-// Mock reviews data for fallback
-const MOCK_REVIEWS = [
-  {
-    id: 'review-1',
-    productId: 'ai-model-1',
-    rating: 5,
-    comment: 'Excellent AI integration package! Saved us weeks of development.',
-    userId: 'user-1',
-    userName: 'Alex Johnson',
-    createdAt: '2024-01-15T10:30:00.000Z'
-  },
-  {
-    id: 'review-2', 
-    productId: 'ai-model-1',
-    rating: 4,
-    comment: 'Very good documentation and support. Minor issues with initial setup.',
-    userId: 'user-2',
-    userName: 'Sarah Chen',
-    createdAt: '2024-01-10T14:20:00.000Z'
-  },
-  {
-    id: 'review-3',
-    productId: 'ai-service-2',
-    rating: 5,
-    comment: 'Outstanding custom ML development service. Highly professional team.',
-    userId: 'user-3',
-    userName: 'Mike Rodriguez',
-    createdAt: '2024-02-20T09:15:00.000Z'
-  },
-  {
-    id: 'review-4',
-    productId: 'ai-service-2', 
-    rating: 4,
-    comment: 'Great results, though timeline was a bit longer than expected.',
-    userId: 'user-4',
-    userName: 'Emily Davis',
-    createdAt: '2024-02-18T16:45:00.000Z'
+async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (!supabase) {
+    return res.status(503).json({ error: 'Supabase not configured' });
   }
-];
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse,
-) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
     return res.status(405).end(`Method ${req.method} Not Allowed`);
@@ -57,16 +20,25 @@ export default async function handler(
   }
 
   try {
-    // Filter mock reviews by productId
-    const productReviews = MOCK_REVIEWS.filter(review => review.productId === productId);
-    
-    console.log(`[API] Returning ${productReviews.length} reviews for product ${productId}`);
-    return res.status(200).json(productReviews);
+    const { data, error } = await supabase
+      .from('product_reviews')
+      .select('id, product_id, rating, comment, created_at, user_id')
+      .eq('product_id', productId)
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('Error fetching reviews:', error);
+      return res.status(500).json({ error: 'Failed to fetch reviews' });
+    }
+
+    return res.status(200).json(data || []);
   } catch (error) {
     console.error('Error fetching reviews:', error);
-    return res.status(500).json({ 
+    return res.status(500).json({
       error: 'Internal server error while fetching reviews.',
       details: error instanceof Error ? error.message : 'Unknown error'
     });
   }
 }
+
+export default withErrorLogging(handler);

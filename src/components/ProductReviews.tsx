@@ -25,12 +25,13 @@ export interface Review {
 // In a real scenario, this would come from your actual auth context/hooks
 const useAuth = () => {
   // Replace with actual auth logic
-  // For now, simulate a logged-in user for development of this component's structure
-  const [user] = useState<{ id: string; name: string, isLoggedIn: boolean } | null>({ isLoggedIn: true, id: 'mockUserId', name: 'Mock User' });
-  // useEffect(() => {
-  //  // logic to check actual auth status and set user
-  // }, []);
-  return { isAuthenticated: user ? user.isLoggedIn : false };
+  const [user] = useState<{ id: string; name: string; isLoggedIn: boolean } | null>({
+    isLoggedIn: true,
+    id: 'mockUserId',
+    name: 'Mock User'
+  });
+
+  return { isAuthenticated: !!user?.isLoggedIn, user };
 };
 
 
@@ -79,7 +80,7 @@ interface ProductReviewsProps {
 }
 
 const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, user } = useAuth();
   const [reviews, setReviews] = useState<Review[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -128,7 +129,12 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
       const response = await fetch('/api/reviews', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId, rating: newRating, comment: newComment }),
+        body: JSON.stringify({
+          productId,
+          rating: newRating,
+          comment: newComment,
+          userId: user?.id,
+        }),
       });
 
       if (!response.ok) {
