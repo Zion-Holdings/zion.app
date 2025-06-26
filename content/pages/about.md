@@ -14,12 +14,11 @@ Get in touch anytime at [support@ziontechgroup.com](mailto:support@ziontechgroup
 
 ## Navigation
 
-9. About (/about) – loads forum
+12. About (/about) – loads forum
 
 ## AI-Prompt
 
-* "Write a 40-word mission that positions Zion as the catalyst for responsible AI innovation worldwide."
-* "Create 5 milestone blurbs (Year + 15 words) from founding to present."
-* "For a fictional CEO, write a 60-word bio highlighting AI expertise and community focus."
-* "List 4 core values (one word each) and 20-word explanations."
-* "Draft a 70-word statement on Zion’s commitment to green IT and carbon-neutral data centers."
+* "Write a 40-word mission statement positioning Zion as the bridge between AI innovators and global businesses."
+* "Create a 6-milestone company timeline (year + 15-word description each)."
+* "Provide 80-word bios for CEO, CTO, and Head of Community."
+* "List 5 core values (≤3 words each) with 20-word explanations."
