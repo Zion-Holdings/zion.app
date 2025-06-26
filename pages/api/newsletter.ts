@@ -1,11 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { subscribeToNewsletter } from '@/services/newsletterService';
 
-interface ResponseData {
-  status?: string;
-  message?: string;
-  error?: string;
-  details?: string;
-}
+type ResponseData =
+  | { status: string }
+  | { error: string; details?: string };
 
 // Email validation regex (same as used in FooterNewsletter component)
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -40,23 +38,30 @@ export default async function handler(
 
     const trimmedEmail = email.trim().toLowerCase();
 
-    // Log the subscription for now (in production this would integrate with email service)
-    console.log(`Newsletter subscription request for: ${trimmedEmail}`);
-    
-    // Always return success to provide good UX
-    // In production, integrate with Mailchimp, ConvertKit, or other email service
-    return res.status(200).json({ 
-      status: 'subscribed',
-      message: 'Successfully subscribed to newsletter!'
-    });
+    try {
+      await subscribeToNewsletter(trimmedEmail);
+      return res.status(200).json({ status: 'subscribed' });
+    } catch (integrationError: any) {
+      console.error('Newsletter integration error:', integrationError);
+      if (integrationError.message && integrationError.message.includes('already a list member')) {
+        return res.status(200).json({ status: 'already_subscribed' });
+      }
+      if (integrationError.message && integrationError.message.includes('Invalid email')) {
+        return res.status(400).json({
+          error: 'Invalid email address',
+          details: 'Please check your email and try again'
+        });
+      }
+      return res.status(500).json({
+        error: 'Subscription failed',
+        details: 'Please try again later or contact support'
+      });
+    }
   } catch (error: any) {
     console.error('Newsletter subscription error:', error);
-    
-    // Always return a user-friendly success message to avoid UX issues
-    // Log the actual error for debugging
-    return res.status(200).json({ 
-      status: 'subscribed',
-      message: 'Successfully subscribed to newsletter!'
+    return res.status(500).json({
+      error: 'Subscription failed',
+      details: 'Please try again later or contact support if the problem persists'
     });
   }
-} 
+}
