@@ -76,9 +76,6 @@ const createMarketplaceClient = (): AxiosInstance => {
     baseURL: '', // Use relative URLs for internal API routes
     withCredentials: false,
   });
-  
-  // Set timeout with proper typing
-  (client as any).defaults.timeout = 10000;
 
   // Request interceptor for debugging
   client.interceptors.request.use(

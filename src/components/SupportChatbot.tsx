@@ -28,18 +28,45 @@ export function SupportChatbot() {
     setLoading(true);
     
     try {
-      const res = await fetch('/api/kb-chat', {
+      // Try the Supabase AI chat function first
+      let res = await fetch('https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`
+        },
         body: JSON.stringify({ 
           messages: [...messages.map(m => ({ role: m.role, content: m.message })), { role: 'user', content: text }] 
         })
       });
       
+      // If Supabase function fails, try local API fallback
+      if (!res.ok) {
+        res = await fetch('/api/kb-chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            messages: [...messages.map(m => ({ role: m.role, content: m.message })), { role: 'user', content: text }] 
+          })
+        });
+      }
+      
       if (!res.ok) throw new Error(`API error: ${res.status}`);
       
       const data = await res.json().catch(() => ({}));
-      const message = typeof data.message === 'string' ? data.message : 'Sorry, I did not understand that.';
+      
+      // Handle different response formats
+      let message = '';
+      if (data.message) {
+        message = data.message;
+      } else if (data.choices && data.choices.length > 0) {
+        message = data.choices[0].message?.content || data.choices[0].text || 'Sorry, I did not understand that.';
+      } else if (data.completion) {
+        message = data.completion;
+      } else {
+        message = 'Sorry, I did not understand that.';
+      }
+      
       const botMsg: Msg = { id: Date.now().toString() + '-a', role: 'assistant', message };
       setMessages(prev => [...prev, botMsg]);
     } catch (err) {

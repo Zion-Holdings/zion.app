@@ -1,29 +1,23 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { applyCorsHeaders } from '@/middleware/cors';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
-import { SERVICES } from '@/data/servicesData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
-import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
 import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
-import Fuse from 'fuse.js';
 
-// Define SearchResult interface
 interface SearchResult {
   id: string;
-  type: 'product' | 'service' | 'talent' | 'equipment' | 'category' | 'doc' | 'blog';
   title: string;
   description: string;
-  slug: string;
+  type: 'product' | 'talent' | 'blog' | 'service';
+  category?: string;
+  url?: string;
   image?: string;
   price?: number;
+  currency?: string;
   rating?: number;
-  author?: {
-    name: string;
-    avatar?: string;
-  };
   tags?: string[];
-  category?: string;
 }
 
 interface SearchResponse {
@@ -32,124 +26,96 @@ interface SearchResponse {
   page: number;
   limit: number;
   query: string;
+  hasMore?: boolean;
 }
 
-const createSlug = (title: string) =>
-  title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+// Enhanced search function with better filtering
+function performSearch(query: string, page: number, limit: number): { results: SearchResult[]; totalCount: number; hasMore: boolean } {
+  const searchTerm = query.toLowerCase().trim();
+  const allResults: SearchResult[] = [];
 
-// Pre-build search documents for better performance
-let SEARCH_DOCUMENTS: SearchResult[] = [];
-let fuseInstance: Fuse<SearchResult> | null = null;
+  // Search marketplace listings
+  const productResults = MARKETPLACE_LISTINGS.filter(item => 
+    item.title?.toLowerCase().includes(searchTerm) ||
+    item.description?.toLowerCase().includes(searchTerm) ||
+    item.category?.toLowerCase().includes(searchTerm) ||
+    item.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
+  ).map(item => ({
+    id: item.id,
+    title: item.title,
+    description: item.description,
+    type: 'product' as const,
+    category: item.category,
+    url: `/marketplace/products/${item.id}`,
+    image: item.images?.[0],
+    price: item.price ?? undefined,
+    currency: item.currency || 'USD',
+    rating: item.rating,
+    tags: item.tags
+  }));
 
-// Initialize search data (cached)
-function initializeSearchData(): SearchResult[] {
-  if (SEARCH_DOCUMENTS.length > 0) {
-    return SEARCH_DOCUMENTS;
-  }
+  // Search talent profiles
+  const talentResults = TALENT_PROFILES.filter(profile => 
+    profile.full_name?.toLowerCase().includes(searchTerm) ||
+    profile.professional_title?.toLowerCase().includes(searchTerm) ||
+    profile.bio?.toLowerCase().includes(searchTerm) ||
+    profile.skills?.some(skill => skill.toLowerCase().includes(searchTerm))
+  ).map(profile => ({
+    id: profile.id,
+    title: profile.full_name,
+    description: `${profile.professional_title} - ${profile.bio || ''}`,
+    type: 'talent' as const,
+    category: 'Talent',
+    url: `/marketplace/talent/${profile.id}`,
+    image: profile.profile_picture_url,
+    price: profile.hourly_rate,
+    currency: 'USD',
+    rating: profile.average_rating,
+    tags: profile.skills
+  }));
 
-  console.log('Initializing search documents...');
-  const startTime = Date.now();
+  // Search blog posts
+  const blogResults = BLOG_POSTS.filter(post => 
+    post.title?.toLowerCase().includes(searchTerm) ||
+    post.excerpt?.toLowerCase().includes(searchTerm) ||
+    post.content?.toLowerCase().includes(searchTerm) ||
+    post.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
+  ).map(post => ({
+    id: post.slug,
+    title: post.title,
+    description: post.excerpt,
+    type: 'blog' as const,
+    category: 'Blog',
+    url: `/blog/${post.slug}`,
+    image: post.featuredImage,
+    tags: post.tags
+  }));
 
-  SEARCH_DOCUMENTS = [
-    ...MARKETPLACE_LISTINGS.map((p) => ({
-      id: p.id,
-      type: 'product' as const,
-      title: p.title,
-      description: p.description,
-      slug: createSlug(p.title),
-      image: (p as any).image,
-      price: (p as any).price,
-      rating: (p as any).rating,
-      author: (p as any).author,
-      tags: (p as any).tags,
-      category: (p as any).category,
-    })),
-    ...SERVICES.map((s) => ({
-      id: s.id,
-      type: 'service' as const,
-      title: s.title,
-      description: s.description,
-      slug: createSlug(s.title),
-      image: (s as any).image,
-      price: (s as any).price,
-      rating: (s as any).rating,
-      author: (s as any).author,
-      tags: (s as any).tags,
-      category: (s as any).category,
-    })),
-    ...TALENT_PROFILES.map((t) => ({
-      id: t.id,
-      type: 'talent' as const,
-      title: t.full_name,
-      description: t.professional_title || '',
-      slug: createSlug(t.full_name),
-      image: (t as any).avatar || (t as any).image,
-      rating: (t as any).rating,
-      author: { name: t.full_name, avatar: (t as any).avatar },
-      tags: (t as any).skills || (t as any).tags,
-    })),
-    ...BLOG_POSTS.map((p) => ({
-      id: p.id,
-      type: 'blog' as const,
-      title: p.title,
-      description: p.excerpt,
-      slug: p.slug,
-    })),
-    ...DOCS_SEARCH_ITEMS.map((d) => ({
-      id: d.text,
-      type: 'doc' as const,
-      title: d.text,
-      description: d.path,
-      slug: d.path,
-    })),
-  ];
+  // Combine all results
+  allResults.push(...productResults, ...talentResults, ...blogResults);
 
-  console.log(`Search documents initialized in ${Date.now() - startTime}ms. Total: ${SEARCH_DOCUMENTS.length}`);
-  return SEARCH_DOCUMENTS;
-}
+  // Sort by relevance (exact matches first, then partial matches)
+  allResults.sort((a, b) => {
+    const aExact = a.title.toLowerCase() === searchTerm ? 1 : 0;
+    const bExact = b.title.toLowerCase() === searchTerm ? 1 : 0;
+    if (aExact !== bExact) return bExact - aExact;
+    
+    const aStarts = a.title.toLowerCase().startsWith(searchTerm) ? 1 : 0;
+    const bStarts = b.title.toLowerCase().startsWith(searchTerm) ? 1 : 0;
+    if (aStarts !== bStarts) return bStarts - aStarts;
+    
+    return a.title.localeCompare(b.title);
+  });
 
-// Initialize Fuse instance with optimized settings
-function getFuseInstance(): Fuse<SearchResult> {
-  if (!fuseInstance) {
-    const documents = initializeSearchData();
-    fuseInstance = new Fuse(documents, {
-      keys: [
-        { name: 'title', weight: 0.4 },
-        { name: 'description', weight: 0.3 },
-        { name: 'tags', weight: 0.2 },
-        { name: 'category', weight: 0.1 }
-      ],
-      threshold: 0.3,
-      distance: 100,
-      minMatchCharLength: 2,
-      includeScore: true,
-      includeMatches: true
-    });
-    console.log('Fuse search engine initialized');
-  }
-  return fuseInstance;
-}
-
-// Optimized search function
-function performSearch(query: string, page: number, limit: number) {
-  const fuse = getFuseInstance();
-  const searchResults = fuse.search(query);
-  
-  const totalCount = searchResults.length;
+  // Apply pagination
   const start = (page - 1) * limit;
   const end = start + limit;
-  
-  const paginatedResults = searchResults
-    .slice(start, end)
-    .map((result) => ({
-      ...result.item,
-      _score: result.score // Include relevance score
-    }));
+  const paginatedResults = allResults.slice(start, end);
 
   return {
     results: paginatedResults,
-    totalCount,
-    hasMore: end < totalCount
+    totalCount: allResults.length,
+    hasMore: end < allResults.length
   };
 }
 
@@ -157,9 +123,16 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse<SearchResponse | { error: string }>,
 ) {
+  // Apply CORS headers first
+  applyCorsHeaders(req, res);
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
   const startTime = Date.now();
@@ -203,6 +176,7 @@ async function handler(
       page,
       limit,
       query: q,
+      hasMore: searchResult.hasMore,
     };
 
     // Apply cache headers
@@ -217,7 +191,7 @@ async function handler(
 
     return res.status(200).json(searchResponse);
 
-  } catch (error: any) {
+  } catch (error) {
     console.error('Search query failed:', error);
     
     // Return empty results on error instead of 500
@@ -230,6 +204,7 @@ async function handler(
       page: 1,
       limit: 20,
       query: String(req.query.query ?? req.query.q ?? ''),
+      hasMore: false,
     });
   }
 }
