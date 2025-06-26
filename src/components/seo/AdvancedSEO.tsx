@@ -274,7 +274,7 @@ export const useDynamicSEO = (content?: string) => {
     let title = 'Zion Tech Marketplace'
     if (segments.length > 0) {
       title = segments
-        .map(segment => segment.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()))
+        .map((segment: string) => segment.replace(/-/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase()))
         .join(' | ')
     }
 

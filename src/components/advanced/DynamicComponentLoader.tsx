@@ -16,7 +16,7 @@ interface LoadingState {
 
 interface DynamicLoaderProps {
   importFn: () => Promise<{ default: ComponentType<any> }>
-  fallback?: React.ComponentType
+  fallback?: React.ReactNode
   errorFallback?: React.ComponentType<{ error: Error; retry: () => void }>
   loadingComponent?: React.ComponentType
   enableRetry?: boolean
@@ -218,6 +218,7 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
       return () => clearTimeout(prefetchTimer)
     } else {
       loadComponent()
+      return () => {} // Return empty cleanup function
     }
   }, [])
 
@@ -302,37 +303,39 @@ export const createDynamicComponent = <T extends ComponentType<any>>(
   importFn: () => Promise<{ default: T }>,
   options?: Omit<DynamicLoaderProps, 'importFn' | 'children'>
 ) => {
-  return (props: React.ComponentProps<T>) => (
+  return (props: React.ComponentProps<T> & { children?: React.ReactNode }) => (
     <DynamicComponentLoader
       importFn={importFn}
-      {...options}
-      {...props}
+      {...(options || {})}
+      {...(props as any)}
     />
   )
 }
 
 // Predefined dynamic loaders for common heavy components
-export const DynamicChartComponent = createDynamicComponent(
-  () => import('recharts').then(module => ({ default: module.LineChart })),
-  {
-    loadingComponent: () => (
-      <div className="w-full h-64 bg-muted animate-pulse rounded-lg flex items-center justify-center">
-        <span className="text-muted-foreground">Loading chart...</span>
-      </div>
-    ),
-    prefetch: true
-  }
-)
+// Note: These are examples - uncomment and install types as needed
 
-export const DynamicThreeComponent = createDynamicComponent(
-  () => import('three').then(module => ({ default: module.WebGLRenderer })),
-  {
-    loadingComponent: () => (
-      <div className="w-full h-96 bg-muted animate-pulse rounded-lg flex items-center justify-center">
-        <span className="text-muted-foreground">Loading 3D renderer...</span>
-      </div>
-    )
-  }
-)
+// export const DynamicChartComponent = createDynamicComponent(
+//   () => import('recharts').then(module => ({ default: module.LineChart })),
+//   {
+//     loadingComponent: () => (
+//       <div className="w-full h-64 bg-muted animate-pulse rounded-lg flex items-center justify-center">
+//         <span className="text-muted-foreground">Loading chart...</span>
+//       </div>
+//     ),
+//     prefetch: true
+//   }
+// )
+
+// export const DynamicThreeComponent = createDynamicComponent(
+//   () => import('three').then(module => ({ default: module.WebGLRenderer })),
+//   {
+//     loadingComponent: () => (
+//       <div className="w-full h-96 bg-muted animate-pulse rounded-lg flex items-center justify-center">
+//         <span className="text-muted-foreground">Loading 3D renderer...</span>
+//       </div>
+//     )
+//   }
+// )
 
 export default DynamicComponentLoader 
