@@ -39,6 +39,7 @@ export async function middleware(request: NextRequest) {
     '/api/search',
     '/api/marketplace',
     '/api/reviews', // Add reviews API as public
+    '/api/health', // Health check endpoint should be public
     '/signup',
     '/forgot-password',
     '/verify-status',
