@@ -280,7 +280,8 @@ export default function Marketplace() {
       const params = {
         page,
         limit,
-        ...(filterCategory && { category: filterCategory })
+        ...(filterCategory && { category: filterCategory }),
+        sort: sortBy
       };
 
       console.log('Marketplace.tsx: Fetching products using marketplace service with params:', params);
