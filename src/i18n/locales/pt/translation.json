@@ -161,7 +161,8 @@
     "login_different_account": "Entrar com Outra Conta",
     "payment_success_title": "Pagamento Realizado!",
     "payment_success_message": "Seu pagamento foi processado com sucesso. Agora você tem acesso a todos os recursos premium.",
-    "go_to_dashboard": "Ir para o Painel"
+    "go_to_dashboard": "Ir para o Painel",
+    "go_to_marketplace": "Ir para o Marketplace"
   },
   "categories": {
     "services": "Serviços",

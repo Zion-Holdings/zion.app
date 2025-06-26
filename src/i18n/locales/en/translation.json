@@ -311,7 +311,8 @@
     "login_different_account": "Login with Different Account",
     "payment_success_title": "Payment Successful!",
     "payment_success_message": "Your payment has been processed successfully. You now have access to all the premium features.",
-    "go_to_dashboard": "Go to Dashboard"
+    "go_to_dashboard": "Go to Dashboard",
+    "go_to_marketplace": "Go to Marketplace"
   },
   "privacy": {
     "title": "Privacy Policy",
