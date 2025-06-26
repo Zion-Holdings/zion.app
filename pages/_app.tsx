@@ -16,7 +16,7 @@ import ErrorResetOnRouteChange from '@/components/ErrorResetOnRouteChange';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { LanguageProvider } from '@/context/LanguageContext';
-import { Toaster } from '@/components/ui/toaster';
+import { ToastContainer } from '@/components/ToastContainer';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
@@ -263,7 +263,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                                 <Component key={router.asPath} {...pageProps} />
                                               </ErrorBoundary>
                                               <ErrorResetOnRouteChange />
-                                              <Toaster />
+                                              <ToastContainer />
                                               <OfflineIndicator />
                                               <IntercomChat />
                                             </AppLayout>

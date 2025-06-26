@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast as sonnerToast } from 'sonner';
+import { globalToastManager, showToast, ToastType, ToastPriority } from '@/utils/globalToastManager';
 
 const variantStyles = {
   info: { background: '#1e3a8a', color: '#fff' },
@@ -23,6 +24,9 @@ interface ToastProps {
   action?: ToastActionProps;
   onRetry?: () => void;
   id?: string;
+  duration?: number;
+  priority?: ToastPriority;
+  persistent?: boolean;
 }
 
 const shouldShow = (key: string): boolean => {
@@ -35,88 +39,109 @@ const shouldShow = (key: string): boolean => {
   return true;
 };
 
+/**
+ * Enhanced toast adapter that uses the global toast manager
+ */
 const toastAdapter = (props: ToastProps | string) => {
   if (typeof props === 'string') {
-    const key = props;
-    if (!shouldShow(key)) return;
-    sonnerToast(props, { duration: 4000 });
-    return;
+    return globalToastManager.showToast({
+      message: props,
+      type: ToastType.INFO,
+    });
   }
 
-  const { title, description, variant, action, id, onRetry } = props;
-  const message = title || description || '';
-  const key = `${variant}-${message}`;
-  
-  if (!shouldShow(key)) return;
+  const { 
+    title, 
+    description, 
+    variant = 'default', 
+    action, 
+    onRetry, 
+    duration,
+    priority,
+    persistent = false 
+  } = props;
 
-  const options: {
-    description?: string;
-    action?: React.ReactNode;
-    duration?: number;
-    id?: string;
-  } = {
-    duration: 4000, // Auto-dismiss after 4 seconds
-  };
-  
-  if (title && description) {
-    options.description = description;
-  }
-
-  if (variant === 'destructive' && onRetry) {
-    options.action = React.createElement('button', { onClick: onRetry }, 'Retry');
-  } else if (action) {
-    options.action = React.createElement('button', { onClick: action.onClick }, action.label);
-  }
-
+  // Map variant to toast type
+  let type: ToastType;
   switch (variant) {
     case 'destructive':
-      sonnerToast.error(message, { ...options, id, style: variantStyles.error });
+      type = ToastType.ERROR;
       break;
     case 'success':
-      sonnerToast.success(message, { ...options, id });
+      type = ToastType.SUCCESS;
       break;
     default:
-      if (title && description) {
-        sonnerToast(title, { description, duration: 4000, id });
-      } else if (title) {
-        sonnerToast(title, { ...options, id });
-      } else if (description) {
-        sonnerToast(description, { ...options, id });
-      } else {
-        sonnerToast("Notification", { ...options, id });
-      }
+      type = ToastType.INFO;
       break;
+  }
+
+  // Use title as message if no description, otherwise use description
+  const message = description || title || '';
+  const toastTitle = title && description ? title : undefined;
+
+  return globalToastManager.showToast({
+    message,
+    title: toastTitle,
+    type,
+    priority,
+    duration,
+    persistent,
+    action,
+    onRetry,
+  });
+};
+
+// Convenience methods that use the global toast manager
+toastAdapter.success = (message: string, options?: { id?: string; duration?: number } & Record<string, any>) => {
+  return showToast.success(message, options);
+};
+
+toastAdapter.error = (message: string, options?: { id?: string; duration?: number } & Record<string, any>) => {
+  return showToast.error(message, options);
+};
+
+toastAdapter.info = (message: string, options?: { id?: string; duration?: number } & Record<string, any>) => {
+  return showToast.info(message, options);
+};
+
+toastAdapter.warning = (message: string, options?: { id?: string; duration?: number } & Record<string, any>) => {
+  return showToast.warning(message, options);
+};
+
+toastAdapter.dismiss = (toastId?: string | number) => {
+  if (toastId) {
+    globalToastManager.dismissToast(String(toastId));
+  } else {
+    globalToastManager.dismissAll();
   }
 };
 
-toastAdapter.success = (message: string, options?: { id?: string } & Record<string, any>) => {
-  const key = `success-${message}`;
-  if (!shouldShow(key)) return;
-  sonnerToast.success(message, { duration: 4000, ...(options || {}) });
-};
-
-toastAdapter.error = (message: string, options?: { id?: string } & Record<string, any>) => {
-  const key = `error-${message}`;
-  if (!shouldShow(key)) return;
-  sonnerToast.error(message, { duration: 4000, ...(options || {}), style: variantStyles.error });
-};
-
-toastAdapter.info = (message: string, options?: { id?: string } & Record<string, any>) => {
-  const key = `info-${message}`;
-  if (!shouldShow(key)) return;
-  sonnerToast.info(message, { duration: 4000, ...(options || {}), style: variantStyles.info });
-};
-
-toastAdapter.warning = (message: string, options?: { id?: string } & Record<string, any>) => {
-  const key = `warning-${message}`;
-  if (!shouldShow(key)) return;
-  sonnerToast.warning(message, { duration: 4000, ...(options || {}) });
-};
-
-toastAdapter.dismiss = (toastId?: string | number) => sonnerToast.dismiss(toastId);
+// Enhanced useToast hook with global toast manager integration
+export const useToast = () => ({
+  toast: toastAdapter,
+  dismiss: (toastId?: string) => {
+    if (toastId) {
+      globalToastManager.dismissToast(toastId);
+    } else {
+      globalToastManager.dismissAll();
+    }
+  },
+  
+  // Additional methods from global toast manager
+  showToast: globalToastManager.showToast.bind(globalToastManager),
+  getActiveToasts: globalToastManager.getActiveToasts.bind(globalToastManager),
+  getQueueLength: globalToastManager.getQueueLength.bind(globalToastManager),
+  dismissAll: globalToastManager.dismissAll.bind(globalToastManager),
+  
+  // Convenience methods
+  success: showToast.success,
+  error: showToast.error,
+  warning: showToast.warning,
+  info: showToast.info,
+  networkError: showToast.networkError,
+  authError: showToast.authError,
+  validationError: showToast.validationError,
+  criticalError: showToast.criticalError,
+});
 
 export const toast = toastAdapter;
-export const useToast = () => ({ 
-  toast: toastAdapter,
-  dismiss: (toastId?: string) => sonnerToast.dismiss(toastId)
-});
