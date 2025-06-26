@@ -1,7 +1,5 @@
-import React, { Suspense } from 'react';
-const ReactMarkdown = React.lazy(() => import('react-markdown'));
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { SEO } from '@/components/SEO';
 
 const markdown = `
@@ -38,17 +36,13 @@ export default function PrivacyPolicy() {
         canonical="https://app.ziontechgroup.com/privacy"
         noindex={draft}
       />
-      <Header />
       <main className="min-h-screen bg-zion-blue pt-24 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Suspense fallback={<div>Loading...</div>}>
-            <ReactMarkdown className="prose dark:prose-invert max-w-none">
-              {markdown}
-            </ReactMarkdown>
-          </Suspense>
+          <ReactMarkdown className="prose dark:prose-invert max-w-none">
+            {markdown}
+          </ReactMarkdown>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
