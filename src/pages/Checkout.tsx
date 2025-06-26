@@ -240,9 +240,9 @@ function CheckoutInner() {
                 <span className="animate-spin mr-2">⏳</span>
                 Processing...
               </>
-            ) : (
-              `Continue to Payment ($${subtotal.toFixed(2)})`
-            )}
+              ) : (
+              `Continue to Payment ($${total.toFixed(2)})`
+              )}
           </Button>
         </form>
       </Form>
