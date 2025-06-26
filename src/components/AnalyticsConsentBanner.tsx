@@ -39,13 +39,13 @@ export const AnalyticsConsentBanner: React.FC = () => {
       <div className="flex gap-2">
         <button
           onClick={decline}
-          className="px-3 py-1 rounded bg-muted text-zion-blue-dark"
+          className="px-3 py-1 rounded bg-muted text-foreground hover:bg-muted/90 focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-none"
         >
           Decline
         </button>
         <button
           onClick={accept}
-          className="px-3 py-1 rounded bg-zion-cyan text-zion-blue-dark font-medium"
+          className="px-3 py-1 rounded bg-primary text-primary-foreground font-medium hover:bg-primary/90 focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-none"
         >
           Accept
         </button>
