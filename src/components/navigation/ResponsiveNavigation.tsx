@@ -87,14 +87,13 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
                     {item.subItems.map((sub) => (
                       <li key={sub.href}>
                         <NavigationMenuLink asChild>
-                          <Link
-                            href={sub.href}
-                            className={cn(
+                          <Link legacyBehavior href={sub.href} passHref>
+                            <a className={cn(
                               "block rounded-sm px-3 py-2 text-sm hover:bg-accent focus:bg-accent focus:outline-none",
                               router.pathname.startsWith(sub.href) && "bg-accent text-accent-foreground"
-                            )}
-                          >
-                            {sub.label}
+                            )}>
+                              {sub.label}
+                            </a>
                           </Link>
                         </NavigationMenuLink>
                       </li>
