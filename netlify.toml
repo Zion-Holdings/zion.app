@@ -7,6 +7,7 @@
 [build.environment]
   NODE_OPTIONS = "--no-deprecation"
   NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
+  NEXT_PUBLIC_APP_ENV = "production"
   NODE_VERSION = "18.17.0"
   
   # Configure secrets scanning to omit legitimate public environment variables
@@ -97,17 +98,20 @@
   AUTH0_BASE_URL = "https://yourdomain.com"
   NEXT_PUBLIC_SENTRY_ENVIRONMENT = "production"
   NEXT_PUBLIC_ENABLE_ANALYTICS = "true"
+  NEXT_PUBLIC_APP_ENV = "production"
 
 [context.deploy-preview.environment]
   AUTH0_BASE_URL = "https://deploy-preview-${REVIEW_ID}--your-site.netlify.app"
   NEXT_PUBLIC_SENTRY_ENVIRONMENT = "preview"
   NEXT_PUBLIC_ENABLE_ANALYTICS = "false"
+  NEXT_PUBLIC_APP_ENV = "preview"
   NEXT_PUBLIC_DEVTOOLS = "true"
 
 [context.branch-deploy.environment]
   AUTH0_BASE_URL = "https://${BRANCH}--your-site.netlify.app"
   NEXT_PUBLIC_SENTRY_ENVIRONMENT = "staging"
   NEXT_PUBLIC_ENABLE_ANALYTICS = "false"
+  NEXT_PUBLIC_APP_ENV = "staging"
   NEXT_PUBLIC_DEVTOOLS = "true"
 
 # Redirects for Single Page Application

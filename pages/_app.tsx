@@ -21,6 +21,7 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { ApiErrorBoundary } from '@/components/ApiErrorBoundary';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
+import { BetaBanner } from '@/components/BetaBanner';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
@@ -268,6 +269,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                               <ErrorResetOnRouteChange />
                                               <ToastContainer />
                                               <OfflineIndicator />
+                                              <BetaBanner />
                                               <IntercomChat />
                                             </AppLayout>
                                           </ThemeProvider>
