@@ -64,10 +64,23 @@ function checkEnvironment() {
   console.log('\n⚙️  Configuration Files:');
   console.log('=======================');
   
+  // Check package.json type field to determine correct config file
+  let packageType = 'commonjs'; // default
+  try {
+    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+    packageType = packageJson.type || 'commonjs';
+  } catch (error) {
+    // Will be caught later
+  }
+
   if (fs.existsSync('next.config.cjs')) {
     console.log('   ✅ next.config.cjs found');
   } else if (fs.existsSync('next.config.js')) {
-    warnings.push('next.config.js found but should be next.config.cjs for ES modules');
+    if (packageType === 'module') {
+      console.log('   ✅ next.config.js found (ES module)');
+    } else {
+      console.log('   ✅ next.config.js found');
+    }
   } else {
     warnings.push('No Next.js config file found');
   }

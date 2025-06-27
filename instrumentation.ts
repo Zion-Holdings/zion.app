@@ -13,55 +13,72 @@ export async function register() {
   const SENTRY_RELEASE = process.env.SENTRY_RELEASE || process.env.NEXT_PUBLIC_SENTRY_RELEASE;
   const SENTRY_ENVIRONMENT = process.env.SENTRY_ENVIRONMENT || process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT;
 
-  if (!SENTRY_DSN || SENTRY_DSN.startsWith('YOUR_') || SENTRY_DSN.startsWith('https_example')) {
-    console.warn("instrumentation.ts: Sentry DSN is not defined or is a placeholder; Server-side Sentry will not capture errors.");
-    console.warn("instrumentation.ts: The SENTRY_DSN environment variable is handled by Netlify and should be configured in the Netlify environment settings.");
+  // Enhanced validation for development placeholders
+  const isInvalidDsn = !SENTRY_DSN || 
+    SENTRY_DSN.startsWith('YOUR_') || 
+    SENTRY_DSN.startsWith('https_example') ||
+    SENTRY_DSN.startsWith('https_dummy') ||
+    SENTRY_DSN.includes('dummy') ||
+    SENTRY_DSN.includes('placeholder') ||
+    SENTRY_DSN === 'test_sentry_dsn';
+
+  if (isInvalidDsn) {
+    console.log("instrumentation.ts: Sentry DSN is not configured or is a placeholder; Server-side Sentry will not capture errors.");
+    if (process.env.NODE_ENV === 'development') {
+      console.log("instrumentation.ts: This is normal for development. To enable Sentry, set a valid SENTRY_DSN in your environment.");
+    } else {
+      console.warn("instrumentation.ts: The SENTRY_DSN environment variable should be configured for production environments.");
+    }
     return;
   }
 
   console.log(`instrumentation.ts: Initializing Sentry for server-side. Release: ${SENTRY_RELEASE}, Env: ${SENTRY_ENVIRONMENT}`);
 
-  Sentry.init({
-    dsn: SENTRY_DSN!,
-    release: SENTRY_RELEASE,
-    environment: SENTRY_ENVIRONMENT,
-    tracesSampleRate: 1.0, // Adjust this value in production
+  try {
+    Sentry.init({
+      dsn: SENTRY_DSN!,
+      release: SENTRY_RELEASE,
+      environment: SENTRY_ENVIRONMENT,
+      tracesSampleRate: process.env.NODE_ENV === 'development' ? 1.0 : 0.1, // Reduced for production
 
-    // Consider adding sendDefaultPii: true if needed, as shown in Sentry docs
-    // sendDefaultPii: true,
-    // Remove direct Integrations.Http, as @sentry/nextjs handles this.
-    // integrations: [new Integrations.Http({ tracing: true })],
+      // Consider adding sendDefaultPii: true if needed, as shown in Sentry docs
+      // sendDefaultPii: true,
+      // Remove direct Integrations.Http, as @sentry/nextjs handles this.
+      // integrations: [new Integrations.Http({ tracing: true })],
 
-    beforeSend(event, hint) {
-      // Drop events without a meaningful exception message
-      if (event.exception?.values?.[0]?.value === '' || event.exception?.values?.[0]?.value === undefined) {
-        console.log("instrumentation.ts: Sentry event dropped due to empty exception value.");
-        return null;
-      }
-      // Custom filtering logic can be added here
-      // Example: Filter out specific error types
-      // if (hint.originalException && (hint.originalException as Error).message.includes("Specific error to ignore")) {
-      //   return null;
-      // }
-      return event;
-    },
-    initialScope: (scope) => {
-      // Set initial tags, user info, etc.
-      if (SENTRY_RELEASE) {
-        scope.setTag("release", SENTRY_RELEASE);
-      }
-      if (SENTRY_ENVIRONMENT) {
-        scope.setTag("environment", SENTRY_ENVIRONMENT);
-      }
-      // Example: scope.setUser({ id: "system" }); // if applicable for server-side processes
-      return scope;
-    },
+      beforeSend(event, hint) {
+        // Drop events without a meaningful exception message
+        if (event.exception?.values?.[0]?.value === '' || event.exception?.values?.[0]?.value === undefined) {
+          console.log("instrumentation.ts: Sentry event dropped due to empty exception value.");
+          return null;
+        }
+        // Custom filtering logic can be added here
+        // Example: Filter out specific error types
+        // if (hint.originalException && (hint.originalException as Error).message.includes("Specific error to ignore")) {
+        //   return null;
+        // }
+        return event;
+      },
+      initialScope: (scope) => {
+        // Set initial tags, user info, etc.
+        if (SENTRY_RELEASE) {
+          scope.setTag("release", SENTRY_RELEASE);
+        }
+        if (SENTRY_ENVIRONMENT) {
+          scope.setTag("environment", SENTRY_ENVIRONMENT);
+        }
+        // Example: scope.setUser({ id: "system" }); // if applicable for server-side processes
+        return scope;
+      },
 
-    // Spotlight (optional, for development)
-    // spotlight: process.env.NODE_ENV === 'development',
+      // Spotlight (optional, for development)
+      // spotlight: process.env.NODE_ENV === 'development',
 
-    // Enable to log internal Sentry debug messages
-    // debug: process.env.NODE_ENV === 'development',
-  });
-  //console.log("instrumentation.ts: Server-side Sentry initialization SKIPPED to debug timeout.");
+      // Enable to log internal Sentry debug messages
+      // debug: process.env.NODE_ENV === 'development',
+    });
+    console.log("instrumentation.ts: Server-side Sentry initialized successfully");
+  } catch (error) {
+    console.error("instrumentation.ts: Failed to initialize Sentry:", error);
+  }
 }
