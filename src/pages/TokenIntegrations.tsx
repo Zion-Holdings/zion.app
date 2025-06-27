@@ -119,8 +119,8 @@ export default function TokenIntegrations() {
     setStatus(`Initiating bridge for ${amount} ZION$ from ${fromChain} to ${toChain}...`);
     setTxHash(null);
 
-    // TODO: integrate actual LayerZero bridge logic
-    // This is where you would replace mockSendTokenViaLayerZero with actual LayerZero SDK calls.
+    // Integration point for LayerZero bridge logic.
+    // Replace `mockSendTokenViaLayerZero` with real SDK calls when wiring up the production bridge.
     // Example steps:
     // 1. Get signer from useWallet()
     // 2. Instantiate LayerZero Endpoint contract

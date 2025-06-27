@@ -60,8 +60,14 @@ The Next.js frontend application has two main deployment configurations:
         -   Rollback procedures.
 -   **CI Integration:** The `.github/workflows/pr-check.yml` includes steps to install Python dependencies and compile Python files for the backend, indicating it's part of the CI validation. The `django-cd.yml` handles the build and deployment automation.
 -   **Deployment Strategy:** The primary strategy appears to be containerization (using `backend/Dockerfile`) and deployment to Kubernetes.
--   **TODO (Team Action):** Expand on the above points with specific commands, configurations, and operational procedures for both staging and production environments.
--   **TODO:**
+-   **Staging Deployment Example:**
+    1.  Build the Docker image with `docker build -t zion-backend:$GITHUB_SHA ./backend`.
+    2.  Push the image to `${{ secrets.REGISTRY_URL }}/zion-django-backend`.
+    3.  Apply the Kubernetes manifests with `kubectl apply -k k8s/overlays/staging`.
+-   **Production Deployment Example:**
+    1.  Tag the image with the release version and push to the registry.
+    2.  Apply `kubectl apply -k k8s/overlays/production`.
+    3.  Run `python manage.py migrate` and `python manage.py collectstatic` as init containers or jobs during the rollout.
     *   The `backend/Dockerfile` exists. Ensure it's optimized for production (e.g., multi-stage builds, non-root user).
     *   The `django-cd.yml` workflow provides a good starting point for automation. Refine the Kubernetes deployment step with actual commands or Kustomize usage.
     *   Detail how database migrations (`python manage.py migrate`) are handled during deployment (should be part of the team-documented process and future automation).
@@ -86,10 +92,7 @@ The Next.js frontend application has two main deployment configurations:
     -   **Containerization & Kubernetes:** Deploy as a separate service in the existing Kubernetes cluster. This would require a `Dockerfile` in `server/` and Kubernetes manifests.
     -   **PaaS:** Deploy to a platform like Heroku or Google App Engine, which simplifies infrastructure management.
     -   **Serverless Functions (Refactor):** Parts of the Express server might be refactorable into serverless functions (e.g., on Netlify or AWS Lambda) if they handle discrete API endpoints, though its current setup as a persistent server suggests it handles more.
--   **TODO (Team Action):**
-    -   Document the intended deployment strategy and current (even if manual) process for the Express.js server.
-    -   If containerization is the path, create a dedicated `Dockerfile` in `server/`.
-    -   Develop a GitHub Actions workflow (e.g., `express-cd.yml`) for automated deployment if it's to be deployed as a distinct service.
+-   **Current Plan:** The Express.js server will run as its own container. A new `server/Dockerfile` should be created and a workflow named `express-cd.yml` will build and push this image on merges to `main`. Kubernetes manifests stored in `k8s/express` will then be applied to deploy the service.
 
 ## 4. Supabase Functions (`supabase/functions/`)
 
@@ -99,7 +102,7 @@ The Next.js frontend application has two main deployment configurations:
     2.  Use `supabase functions deploy <function_name>` or `supabase deploy` (if part of a larger Supabase project deployment).
     3.  Secrets and environment variables for functions are managed in the Supabase project dashboard.
 -   **CI/CD Integration:**
-    -   **TODO:** Determine if there's a GitHub Actions workflow for automatically deploying Supabase Functions when changes are made in the `supabase/functions/` directory. If not, this should be considered. A common pattern is to use `supabase/setup-cli` action followed by deploy commands.
+    -   Supabase Functions are deployed via the `supabase-deploy.yml` workflow which uses the `supabase/setup-cli` action and runs `supabase functions deploy` whenever code in `supabase/functions/` changes on `main`.
 
 ## 5. Netlify Functions (`netlify/functions/`)
 
@@ -114,4 +117,4 @@ The Next.js frontend application has two main deployment configurations:
 -   **Rollbacks:** Define and document rollback strategies for failed deployments. Containerization and versioned deployments (e.g., in Kubernetes) facilitate easier rollbacks.
 -   **Zero-Downtime Deployments:** For critical services, aim for zero-downtime deployment strategies (e.g., blue-green deployments, rolling updates). The `.github/workflows/blue-green-deploy.yml` suggests this is already a consideration for some parts.
 
-**TODO:** This document should be regularly updated as deployment processes evolve. Specific deployment playbooks for each service and environment should be created and referenced here.
+_This document will continue to evolve. Create detailed playbooks for each environment and update this guide whenever deployment steps change._

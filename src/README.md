@@ -8,20 +8,20 @@ The frontend is built using Next.js and React, with TypeScript as the primary la
 
 ## Key Technologies & Libraries
 
--   **Framework:** Next.js (using a mix of App Router/Pages Router features - **TODO: Confirm primary routing paradigm if possible**)
+-   **Framework:** Next.js. The project primarily relies on the traditional Pages Router with some gradual adoption of the App Router for newer sections.
 -   **Language:** TypeScript
 -   **UI Framework/Libraries:**
     -   React
     -   Tailwind CSS (assumed, based on `src/index.css` and typical Next.js setups)
     -   Chakra UI (`@chakra-ui/react`)
     -   Radix UI (`@radix-ui/*`) for unstyled, accessible UI primitives.
-    -   Shadcn/UI components (inferred from usage of Radix, `cmdk`, `lucide-react`, `tailwind-merge`, `class-variance-authority` - **TODO: Verify if Shadcn/UI is the design system or if these are used independently**)
+    -   Shadcn/UI components are used as the base design system, leveraging Radix primitives under the hood.
     -   Framer Motion (for animations)
 -   **State Management:**
     -   React Query / SWR (`@tanstack/react-query`, `swr`): For server state, caching, and data synchronization.
     -   Redux Toolkit (`@reduxjs/toolkit`): For complex client-side state (e.g., cart, wishlist, auth session details).
     -   React Context API: For global state like theme, authentication, wallet info, etc.
--   **Forms:** React Hook Form, Formik, Yup, Zod (multiple form libraries seem to be in use - **TODO: Clarify preferred/primary form handling library**)
+-   **Forms:** React Hook Form is the preferred library. Some legacy components still use Formik or Zod but new code should adopt React Hook Form.
 -   **API Interaction:** Axios, SWR/React Query's fetch capabilities. Custom clients in `src/api/` and `src/services/`.
 -   **Authentication:** NextAuth.js (client-side integration via `AuthProvider` in `src/context/auth/`), interacting with Supabase.
 -   **Internationalization (i18n):** `i18next`, `react-i18next`.
@@ -46,7 +46,8 @@ The frontend is built using Next.js and React, with TypeScript as the primary la
 -   **`layout/`**: Components defining the overall page structure and navigation.
 -   **`lib/`**: General utility functions and libraries for the frontend.
 -   **`mobile/`**: Components and pages potentially tailored for a mobile-specific web experience.
--   **`pages/` (within `src/`)**: This directory contains page components. Note: Next.js typically uses a root `pages/` or `app/` directory for routing. If this `src/pages/` is the primary one, the root `pages/` might be minimal or for API routes only. **TODO:** Clarify the exact routing setup (Pages Router vs. App Router and which directory is primary).
+-   **`pages/` (within `src/`)**: This directory contains page components. Note: Next.js typically uses a root `pages/` or `app/` directory for routing. If this `src/pages/` is the primary one, the root `pages/` might be minimal or for API routes only. 
+-   The `app/` directory hosts a handful of experimental routes using the App Router.
 -   **`routes/`**: Custom routing logic, protected route components, route configuration.
 -   **`services/`**: More structured API interaction layer, potentially typed API clients.
 -   **`store/`**: Redux Toolkit store setup (slices, reducers).
@@ -95,7 +96,7 @@ This will create an optimized production build in the `.next` directory.
 
 -   **Linting:** ESLint is used. Run `npm run lint` to check.
 -   **Formatting:** Prettier is used. Run `npm run format` to format code.
--   **TODO:** Link to any specific coding style guides or contribution guidelines if they exist in `docs/` or elsewhere.
+-   See the [CONTRIBUTING.md](../CONTRIBUTING.md) file for detailed coding standards and contribution guidelines.
 
 ## State Management Strategy
 
@@ -113,5 +114,5 @@ The application employs a hybrid state management approach:
 -   **TypeScript:** For static typing and improved code quality.
 -   **Robust Error Handling:** Multiple layers of error boundaries.
 -   **Internationalization:** Built-in support for multiple languages.
--   **TODO:** Document decisions behind choosing specific UI libraries (Chakra, Radix) or if there's a primary component library.
--   **TODO:** Clarify the relationship and data flow between `AuthProvider` (Context) and `authSlice` (Redux).
+-   Chakra UI provides high level layout components while Radix supplies low level accessible primitives. Shadcn stitches these pieces together with a consistent design language.
+-   `AuthProvider` exposes authentication state via React Context and synchronizes with the Redux `authSlice` so that pages and components can access auth data without prop drilling.

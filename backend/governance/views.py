@@ -6,9 +6,41 @@ from django.db.models import Count, Sum
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Proposal, Vote
 from .serializers import (
-    ProposalSerializer, ProposalListSerializer, ProposalDetailSerializer,
-                            VoteSerializer, VoteResultSerializer
+    ProposalSerializer,
+    ProposalListSerializer,
+    ProposalDetailSerializer,
+    VoteSerializer,
+    VoteResultSerializer,
 )
+import os
+import requests
+
+def get_wallet_balance(user_id: str) -> float:
+    """Fetch the user's ZION$ balance from Supabase."""
+    url = os.getenv("SUPABASE_URL")
+    key = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+    if not url or not key:
+        return 0.0
+
+    headers = {
+        "apikey": key,
+        "Authorization": f"Bearer {key}",
+    }
+
+    try:
+        response = requests.get(
+            f"{url}/rest/v1/wallets",
+            params={"user_id": f"eq.{user_id}", "select": "balance"},
+            headers=headers,
+            timeout=5,
+        )
+        response.raise_for_status()
+        data = response.json()
+        if data:
+            return float(data[0].get("balance", 0))
+    except Exception:
+        pass
+    return 0.0
 
 class ProposalViewSet(viewsets.ModelViewSet):
     queryset = Proposal.objects.all().prefetch_related('votes')  # Optimize by prefetching votes
@@ -57,11 +89,9 @@ class ProposalViewSet(viewsets.ModelViewSet):
             context={"proposal": proposal, "request": request}
         )
         if serializer.is_valid():
-            # TODO: Determine voting_power_at_snapshot based on ZION$ holdings
-            # This is a placeholder value.
-            # This logic will need to query user's token balance at the relevant snapshot time/block.
-            # For now, let's assume it's passed in or a default is used.
-            voting_power = serializer.validated_data.get('voting_power_at_snapshot', 1.0) # Default to 1 if not provided
+            voting_power = serializer.validated_data.get('voting_power_at_snapshot')
+            if voting_power is None:
+                voting_power = get_wallet_balance(str(user.id))
 
             serializer.save(
                 proposal=proposal,
