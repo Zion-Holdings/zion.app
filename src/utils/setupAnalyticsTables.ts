@@ -1,8 +1,8 @@
 
 import { supabase } from '@/integrations/supabase/client';
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
 
 export async function ensureAnalyticsTablesExist() {
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
 
   try {
     // Check if analytics_events table exists

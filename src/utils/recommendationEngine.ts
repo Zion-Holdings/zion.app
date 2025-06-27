@@ -2,10 +2,9 @@ import { SupabaseClient } from '@supabase/supabase-js';
 import { ProductListing } from '@/types/listings';
 import { generateRandomEquipment } from './generateRandomEquipment';
 import { ALL_FEATURES, Feature } from '@/data/features';
-
-export async function recommendEquipment(
 import { logError } from '@/utils/productionLogger';
 
+export async function recommendEquipment(
   userId: string,
   supabase: SupabaseClient,
   limit = 5
