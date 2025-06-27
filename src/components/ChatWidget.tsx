@@ -3,6 +3,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { MessageBubble } from '@/components/messaging/MessageBubble';
 import { Button } from '@/components/ui/button';
 import type { Message } from '@/types/messaging';
+import { safeStorage } from '@/utils/safeStorage';
 
 interface ChatWidgetProps {
   /** Room identifier, typically order or service id */
@@ -18,6 +19,19 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState('');
   const socketRef = useRef<any>();
+
+  // Load stored messages for this room when opened
+  useEffect(() => {
+    if (!isOpen) return;
+    try {
+      const stored = safeStorage.getItem(`chat-widget-${roomId}`);
+      if (stored) {
+        setMessages(JSON.parse(stored));
+      }
+    } catch (err) {
+      console.warn('ChatWidget: failed to load history', err);
+    }
+  }, [isOpen, roomId]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -53,6 +67,16 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       });
     }
   };
+
+  // Persist messages whenever they change while open
+  useEffect(() => {
+    if (!isOpen) return;
+    try {
+      safeStorage.setItem(`chat-widget-${roomId}`, JSON.stringify(messages));
+    } catch (err) {
+      console.warn('ChatWidget: failed to save history', err);
+    }
+  }, [messages, roomId, isOpen]);
 
   const handleSend = () => {
     if (!socketRef.current || !text.trim() || !user || typeof user === 'boolean') return; // Ensure user is not boolean false
