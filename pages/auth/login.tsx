@@ -5,7 +5,7 @@ import { Facebook, Mail, Clock, RefreshCw } from 'lucide-react';
 import Head from 'next/head';
 import { createClient } from '../../src/utils/supabase/client';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
-import type { AuthError, User } from '@supabase/supabase-js';
+import type { AuthError, User, AuthChangeEvent, Session } from '@supabase/supabase-js';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -77,7 +77,7 @@ const LoginPage = () => {
 
       // Listener for auth state changes
       console.log('LoginPage: Setting up onAuthStateChange listener.');
-      const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+      const { data: authListener } = supabase.auth.onAuthStateChange((event: AuthChangeEvent, session: Session | null) => {
         if (!mounted) return;
         console.log('LoginPage: onAuthStateChange event:', event, 'user:', session?.user?.id);
         setUser(session?.user ?? null);
