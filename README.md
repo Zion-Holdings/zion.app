@@ -115,7 +115,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
     - Set up Django database (see backend documentation)
 
 7.  **Running the application:**
-    - **Next.js frontend**: `npm run dev`
+    - **Next.js frontend**: `npm run dev` *(automatically validates your development environment)*
     - **Django backend**: `python backend/manage.py runserver`
     - **Node.js server**: `node server/index.js` (or via npm script)
 
