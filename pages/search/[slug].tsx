@@ -124,25 +124,52 @@ function offlineSearch(
     all = all.filter(r => r.category === filters.category);
   }
   if (typeof filters.minPrice === 'number') {
-    all = all.filter(r => (r.price ?? 0) >= filters.minPrice!);
+    all = all.filter(r => {
+      if (r.type === 'product') {
+        return (r.price ?? 0) >= filters.minPrice!;
+      }
+      return true;
+    });
   }
   if (typeof filters.maxPrice === 'number') {
-    all = all.filter(r => (r.price ?? 0) <= filters.maxPrice!);
+    all = all.filter(r => {
+      if (r.type === 'product') {
+        return (r.price ?? 0) <= filters.maxPrice!;
+      }
+      return true;
+    });
   }
   if (typeof filters.minRating === 'number') {
-    all = all.filter(r => (r.rating ?? 0) >= filters.minRating!);
+    all = all.filter(r => {
+      if (r.type === 'product' || r.type === 'talent') {
+        return (r.rating ?? 0) >= filters.minRating!;
+      }
+      return true;
+    });
   }
 
   if (filters.sortBy && filters.sortBy !== 'relevance') {
     switch (filters.sortBy) {
       case 'price_asc':
-        all.sort((a, b) => (a.price ?? 0) - (b.price ?? 0));
+        all.sort((a, b) => {
+          const aPrice = a.type === 'product' ? (a.price ?? 0) : 0;
+          const bPrice = b.type === 'product' ? (b.price ?? 0) : 0;
+          return aPrice - bPrice;
+        });
         break;
       case 'price_desc':
-        all.sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
+        all.sort((a, b) => {
+          const aPrice = a.type === 'product' ? (a.price ?? 0) : 0;
+          const bPrice = b.type === 'product' ? (b.price ?? 0) : 0;
+          return bPrice - aPrice;
+        });
         break;
       case 'rating':
-        all.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+        all.sort((a, b) => {
+          const aRating = (a.type === 'product' || a.type === 'talent') ? (a.rating ?? 0) : 0;
+          const bRating = (b.type === 'product' || b.type === 'talent') ? (b.rating ?? 0) : 0;
+          return bRating - aRating;
+        });
         break;
       default:
         break;
@@ -268,14 +295,20 @@ export default function SearchResultsPage({
     ) {
       return false;
     }
-    if (minPrice && (r.price ?? 0) < Number(minPrice)) {
-      return false;
+    if (minPrice && r.type === 'product') {
+      if ((r.price ?? 0) < Number(minPrice)) {
+        return false;
+      }
     }
-    if (maxPrice && (r.price ?? 0) > Number(maxPrice)) {
-      return false;
+    if (maxPrice && r.type === 'product') {
+      if ((r.price ?? 0) > Number(maxPrice)) {
+        return false;
+      }
     }
-    if (minRating && (r.rating ?? 0) < Number(minRating)) {
-      return false;
+    if (minRating && (r.type === 'product' || r.type === 'talent')) {
+      if ((r.rating ?? 0) < Number(minRating)) {
+        return false;
+      }
     }
     return true;
   });
