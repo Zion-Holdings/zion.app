@@ -22,7 +22,7 @@ export function useUndoRedo<T>(initial: T) {
   }, []);
 
   const undo = useCallback(() => {
-    setState((prev) => {
+    setState((prev): UndoRedoState<T> => {
       if (prev.past.length === 0) return prev;
       const previous = prev.past[prev.past.length - 1];
       const newPast = prev.past.slice(0, prev.past.length - 1);
