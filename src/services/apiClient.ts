@@ -120,7 +120,7 @@ const apiClient = axios.create({
   baseURL: `${API_BASE}/api/v1/services`,
 });
 
-apiClient.interceptors.request.use((config) => {
+apiClient.interceptors.request.use((config: any) => {
   return {
     ...config,
     headers: { ...(config.headers || {}), Accept: 'application/json' },
