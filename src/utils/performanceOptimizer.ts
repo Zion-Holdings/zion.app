@@ -174,7 +174,7 @@ class PerformanceOptimizer {
       this.metrics.cumulativeLayoutShift = 
         (this.metrics.cumulativeLayoutShift || 0) + clsEntry.value;
 
-      if (this.metrics.cumulativeLayoutShift > this.config.performanceThresholds.cls) {
+      if (this.metrics.cumulativeLayoutShift && this.metrics.cumulativeLayoutShift > this.config.performanceThresholds.cls) {
         logWarn('High Cumulative Layout Shift', {
           cls: this.metrics.cumulativeLayoutShift,
           threshold: this.config.performanceThresholds.cls
@@ -381,8 +381,8 @@ class PerformanceOptimizer {
       logPerformance('Bundle Size', bundleSize);
 
       if (bundleSize > this.config.bundleSizeLimit * 1024) {
-        logWarn('Large bundle size detected', { data:  {
-          size: `${(bundleSize / 1024 }).toFixed(2)}KB`,
+        logWarn('Large bundle size detected', {
+          size: `${(bundleSize / 1024).toFixed(2)}KB`,
           limit: `${this.config.bundleSizeLimit}KB`,
           recommendation: 'Consider implementing more aggressive code splitting'
         });

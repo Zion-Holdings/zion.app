@@ -291,7 +291,7 @@ class ProductionLogger {
   }
 
   timeEnd(label: string): number | undefined {
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined') return undefined;
 
     try {
       performance.mark(`${label}-end`);
@@ -310,6 +310,7 @@ class ProductionLogger {
       return duration;
     } catch (error) {
       this.warn(`Timer measurement failed for ${label}`, { error });
+      return undefined;
     }
   }
 

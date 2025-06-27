@@ -3,7 +3,7 @@ import { jsPDF } from 'jspdf';
 
 import { logError } from "@/utils/productionLogger";
 
-export interface {
+export interface FontBuffers {
   regular: ArrayBuffer;
   bold?: ArrayBuffer;
   italic?: ArrayBuffer;
