@@ -20,18 +20,18 @@ class Logger {
 
   debug(message: string, ...args: unknown[]): void {
     if (this.isDebugEnabled) {
-      logInfo('[DEBUG] ${message}', { data: ...args });
+      logInfo(`[DEBUG] ${message}`, { data: args });
     }
   }
 
   info(message: string, ...args: unknown[]): void {
     if (this.isDevelopment) {
-      logInfo('[INFO] ${message}', { data: ...args });
+      logInfo(`[INFO] ${message}`, { data: args });
     }
   }
 
   warn(message: string, ...args: unknown[]): void {
-    logWarn('[WARN] ${message}', { data: ...args });
+    logWarn(`[WARN] ${message}`, { data: args });
   }
 
   error(message: string, error?: Error | unknown, ...args: unknown[]): void {
@@ -55,7 +55,7 @@ class Logger {
   // Conditional development logging
   devLog(message: string, ...args: unknown[]): void {
     if (this.isDevelopment) {
-      logInfo('[DEV] ${message}', { data: ...args });
+      logInfo(`[DEV] ${message}`, { data: args });
     }
   }
 

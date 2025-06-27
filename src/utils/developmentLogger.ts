@@ -1,4 +1,4 @@
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo as prodLogInfo, logWarn as prodLogWarn, logError as prodLogError } from '@/utils/productionLogger';
 
 /**
  * Development-only logger utility
@@ -17,17 +17,17 @@ class DevelopmentLogger {
 
   debug(message: string, context?: LogContext): void {
     if (!this.enabled) return;
-    logInfo('[DEBUG] ${message}', { data: context ? context : '' });
+    prodLogInfo(`[DEBUG] ${message}`, { data: context ? context : '' });
   }
 
   info(message: string, context?: LogContext): void {
     if (!this.enabled) return;
-    logInfo('[INFO] ${message}', { data: context ? context : '' });
+    prodLogInfo(`[INFO] ${message}`, { data: context ? context : '' });
   }
 
   warn(message: string, context?: LogContext): void {
     if (isProduction) return;
-    logWarn('[WARN] ${message}', { data: context ? context : '' });
+    prodLogWarn(`[WARN] ${message}`, { data: context ? context : '' });
   }
 
   error(message: string, error?: Error | unknown, context?: LogContext): void {
@@ -39,7 +39,7 @@ class DevelopmentLogger {
         window.Sentry.captureException(errorObj, { extra: context });
       }
     } else {
-      logError(`[ERROR] ${message}`, error, context ? context : '');
+      prodLogError(`[ERROR] ${message}`, error, context ? context : '');
     }
   }
 
@@ -76,7 +76,7 @@ class DevelopmentLogger {
     const statusColor = status && status >= 400 ? '🔴' : '🟢';
     const durationText = duration ? ` (${duration}ms)` : '';
     
-    logInfo(`[API] ${statusColor} ${method.toUpperCase()} ${url}${durationText}`);
+    prodLogInfo(`[API] ${statusColor} ${method.toUpperCase()} ${url}${durationText}`);
   }
 
   /**
@@ -86,18 +86,18 @@ class DevelopmentLogger {
     if (!this.enabled) return;
     
     const emoji = action === 'mount' ? '🟢' : action === 'unmount' ? '🔴' : '🔄';
-    logInfo('[COMPONENT] ${emoji} ${name} ${action}', { data: props ? props : '' });
+    prodLogInfo(`[COMPONENT] ${emoji} ${name} ${action}`, { data: props ? props : '' });
   }
 }
 
 // Global instance
 export const devLogger = new DevelopmentLogger();
 
-// Convenience exports
+// Convenience exports with unique names
 export const logDev = devLogger.debug.bind(devLogger);
-export const logInfo = devLogger.info.bind(devLogger);
-export const logWarn = devLogger.warn.bind(devLogger);
-export const logError = devLogger.error.bind(devLogger);
+export const logDevInfo = devLogger.info.bind(devLogger);
+export const logDevWarn = devLogger.warn.bind(devLogger);
+export const logDevError = devLogger.error.bind(devLogger);
 export const logApi = devLogger.api.bind(devLogger);
 export const logComponent = devLogger.component.bind(devLogger);
 export const timeLog = devLogger.time.bind(devLogger);

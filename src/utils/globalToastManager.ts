@@ -1,5 +1,4 @@
 import { toast as sonnerToast } from 'sonner';
-import { logError } from './logError';
 import { logInfo, logWarn, logError } from '@/utils/productionLogger';
 
 

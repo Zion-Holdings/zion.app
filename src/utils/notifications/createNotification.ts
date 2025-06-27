@@ -1,5 +1,3 @@
-import { logError } from "@/utils/logError";
-
 import { supabase } from "@/integrations/supabase/client";
 import { CreateNotificationParams, CreateNotificationResult } from './types';
 import { logError } from '@/utils/productionLogger';

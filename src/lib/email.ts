@@ -39,7 +39,7 @@ export async function sendEmailWithSendGrid({
     await sgMail.send(msg);
     logInfo(`Email sent to ${to} using template ${templateId}`);
   } catch (error: any) {
-    logError('Error sending email with SendGrid:', { data: error.toString( }));
+    logError('Error sending email with SendGrid:', { data: error.toString() });
     // Optionally, rethrow the error or handle it as needed by your application's error handling strategy
     // For example, if the error response from SendGrid is available:
     if (error.response) {
@@ -74,7 +74,7 @@ export async function sendResetEmail(email: string, token: string): Promise<void
     await sgMail.send(msg);
     logInfo(`Password reset email sent to ${email}`);
   } catch (error: any) {
-    logError('Error sending password reset email:', { data: error.toString( }));
+    logError('Error sending password reset email:', { data: error.toString() });
     if (error.response) {
       logError('SendGrid error response:', { data: error.response.body });
     }

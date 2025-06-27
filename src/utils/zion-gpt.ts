@@ -4,12 +4,11 @@
 
 import { supabase } from '@/integrations/supabase/client';
 import { logError } from './logError';
+import { logWarn } from '@/utils/productionLogger';
 
 export type ModelVersion = 'zion-job-generator-v1' | 'zion-resume-enhancer-v1' | 'zion-support-v1' | 'gpt-3.5-turbo';
 
 export type ZionGPTUsage = {
-import { logWarn } from '@/utils/productionLogger';
-
   modelId: string;
   tokensUsed: number;
   cost: number;

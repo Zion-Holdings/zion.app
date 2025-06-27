@@ -1,8 +1,8 @@
 import { mailchimpService } from '@/integrations/mailchimp';
 import { sendEmailWithSendGrid } from '@/lib/email';
+import { logWarn, logError } from '@/utils/productionLogger';
 
 export async function subscribeToNewsletter(email: string): Promise<void> {
-import { logWarn, logError } from '@/utils/productionLogger';
 
   if (mailchimpService) {
     await mailchimpService.addSubscriber({

@@ -50,7 +50,7 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
 
     // Listen for new connections
     libp2pNode.addEventListener('peer:connect', (evt) => {
-      logInfo('Peer connected:', { data: evt.detail.toString( }));
+      logInfo('Peer connected:', { data: evt.detail.toString() });
     });
 
     logInfo('Initializing Helia...');

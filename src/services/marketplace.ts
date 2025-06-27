@@ -37,14 +37,16 @@ export interface Category {
 
 export interface TalentProfile {
   id: string;
-  name: string;
-  specialization: string;
+  full_name: string;
+  professional_title: string;
+  description: string;
   skills: string[];
   hourly_rate: number;
+  currency: string;
   availability: string;
+  location: string;
   rating: number;
   reviewCount: number;
-  location?: string;
   bio?: string;
   portfolio_items?: PortfolioItem[];
 }
@@ -67,10 +69,29 @@ export interface Equipment {
   currency: string;
   location: string;
   availability: string;
-  specifications: Record<string, string>;
+  specifications: string[];
+  images?: string[];
+  rating: number;
+  reviewCount: number;
+}
+
+export interface Product {
+  id: string;
+  name: string;
+  title?: string;
+  description: string;
+  price: number;
+  currency: string;
+  category: string;
+  tags: string[];
   images: string[];
   rating: number;
   reviewCount: number;
+  created_at: string;
+  updated_at: string;
+  seller_id?: string;
+  in_stock?: boolean;
+  specifications?: Record<string, string>;
 }
 
 // Use internal Next.js API routes instead of external URLs
@@ -122,172 +143,19 @@ const createMarketplaceClient = (): AxiosInstance => {
 
 const marketplaceClient = createMarketplaceClient();
 
-// Marketplace API Functions with internal API route calls
-
-export const fetchProducts = async (params: {
-  page?: number;
-  limit?: number;
-  category?: string;
-  search?: string;
-  sort?: string;
-} = {}): Promise<Product[]> => {
-  try {
-    if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-      logger.debug('Marketplace Service - API Base URL:', process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api');
-      logger.debug('Fetching marketplace products with params:', params);
-    }
-    
-    // Use internal Next.js API route
-    const response = await marketplaceClient.get('/api/products', { 
-      params,
-    });
-    
-    // Handle both direct array response and object with products array
-    let products = [];
-    if (response.data) {
-      if (Array.isArray(response.data)) {
-        products = response.data;
-      } else if (response.data.products && Array.isArray(response.data.products)) {
-        products = response.data.products;
-      }
-    }
-    
-    if (products.length > 0) {
-      if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        logger.debug(`Successfully fetched ${products.length} products from API`);
-      }
-      return products.map((item: any) => ({
-        ...item,
-        price: item.price || 0,
-        description: item.description || ''
-      }));
-    } else {
-      // Fallback to static data if API returns unexpected format
-      if (process.env.NODE_ENV !== 'production') {
-        logger.warn('Products API returned unexpected data format. Using static fallback.');
-      }
-      const { MARKETPLACE_LISTINGS } = await import('@/data/listingData');
-      return MARKETPLACE_LISTINGS.map(item => ({
-        ...item,
-        price: item.price || 0,
-        description: item.description || ''
-      }));
-    }
-  } catch (error: any) {
-    logger.error('Marketplace fetch failed - Products:', error.message);
-    
-    // Log to Sentry for production debugging
-    if (process.env.NODE_ENV === 'production') {
-      Sentry.captureException(error, {
-        tags: { service: 'marketplace', endpoint: 'fetchProducts' },
-        extra: { params }
-      });
-    }
-    
-    // Always return fallback data instead of throwing to prevent infinite loops
-    try {
-      const { MARKETPLACE_LISTINGS } = await import('@/data/listingData');
-      
-      // Apply client-side filtering if needed
-      let filteredListings = [...MARKETPLACE_LISTINGS]; // Create a copy to avoid mutations
-      
-      if (params.category) {
-        filteredListings = filteredListings.filter(item => 
-          item.category?.toLowerCase() === params.category?.toLowerCase()
-        );
-      }
-      
-      if (params.search) {
-        const searchTerm = params.search.toLowerCase();
-        filteredListings = filteredListings.filter(item =>
-          item.title?.toLowerCase().includes(searchTerm) ||
-          item.description?.toLowerCase().includes(searchTerm) ||
-          item.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
-        );
-      }
-      
-      // Apply sorting
-      switch (params.sort) {
-        case 'price-low':
-          filteredListings.sort((a, b) => (a.price || 0) - (b.price || 0));
-          break;
-        case 'price-high':
-          filteredListings.sort((a, b) => (b.price || 0) - (a.price || 0));
-          break;
-        case 'rating':
-          filteredListings.sort((a, b) => (b.rating || 0) - (a.rating || 0));
-          break;
-        case 'popular':
-          filteredListings.sort((a, b) => (b.reviewCount || 0) - (a.reviewCount || 0));
-          break;
-        case 'ai-score':
-          filteredListings.sort((a, b) => (b.aiScore || 0) - (a.aiScore || 0));
-          break;
-        case 'newest':
-        default:
-          filteredListings.sort(
-            (a, b) =>
-              new Date(b.createdAt || '').getTime() -
-              new Date(a.createdAt || '').getTime()
-          );
-          break;
-      }
-
-      // Apply pagination
-      if (params.page && params.limit) {
-        const start = (params.page - 1) * params.limit;
-        const end = start + params.limit;
-        filteredListings = filteredListings.slice(start, end);
-      } else if (params.limit) {
-        filteredListings = filteredListings.slice(0, params.limit);
-      }
-      
-      return filteredListings.map(item => ({
-        ...item,
-        price: item.price || 0,
-        description: item.description || ''
-      }));
-    } catch (fallbackError) {
-      logger.error('Critical error: Even fallback data failed to load:', fallbackError);
-      // Return minimal empty array to prevent complete failure
-      return [];
-    }
-  }
-};
-
 // Helper function to get fallback categories
 const getFallbackCategories = (): Category[] => {
   return [
-    { id: '1', name: 'AI Models & APIs', slug: 'ai-models-apis', description: 'Pre-trained models and API endpoints', productCount: 25 },
-    { id: '2', name: 'Services', slug: 'services', description: 'Professional AI and tech services', productCount: 18 },
-    { id: '3', name: 'Equipment', slug: 'equipment', description: 'Hardware and computing equipment', productCount: 12 },
-    { id: '4', name: 'Content Creation', slug: 'content-creation', description: 'AI-powered content tools', productCount: 15 },
-    { id: '5', name: 'Data Analysis', slug: 'data-analysis', description: 'Analytics and BI solutions', productCount: 20 },
+    { id: '1', name: 'AI Models & APIs', description: 'Pre-trained models and API endpoints', product_count: 25 },
+    { id: '2', name: 'Services', description: 'Professional AI and tech services', product_count: 18 },
+    { id: '3', name: 'Equipment', description: 'Hardware and computing equipment', product_count: 12 },
+    { id: '4', name: 'Content Creation', description: 'AI-powered content tools', product_count: 15 },
+    { id: '5', name: 'Data Analysis', description: 'Analytics and BI solutions', product_count: 20 },
   ];
 };
 
-export const fetchCategories = async (): Promise<Category[]> => {
-  try {
-    // Use internal Next.js API route  
-    const response = await marketplaceClient.get('/api/categories');
-    
-    if (response.data && Array.isArray(response.data)) {
-      return response.data;
-    } else {
-      return getFallbackCategories();
-    }
-  } catch (error: any) {
-    if (process.env.NODE_ENV === 'development') {
-    logger.error('Marketplace fetch failed - Categories:', error.message);
-    }
-    
-    // Return fallback categories instead of throwing
-    return getFallbackCategories();
-  }
-};
-
 // Helper function to get fallback equipment
-const getFallbackEquipment = (params: any): Equipment[] => {
+const getFallbackEquipment = (filters: SearchFilters = {}): Equipment[] => {
   const fallbackEquipment: Equipment[] = [
     {
       id: 'eq-1',
@@ -318,40 +186,13 @@ const getFallbackEquipment = (params: any): Equipment[] => {
   ];
   
   // Apply basic filtering
-  if (params.category) {
+  if (filters.category) {
     return fallbackEquipment.filter(eq => 
-      eq.category.toLowerCase() === params.category.toLowerCase()
+      eq.category.toLowerCase() === filters.category?.toLowerCase()
     );
   }
   
   return fallbackEquipment;
-};
-
-export const fetchEquipment = async (params: {
-  page?: number;
-  limit?: number;
-  category?: string;
-  search?: string;
-} = {}): Promise<Equipment[]> => {
-  try {
-    // Use internal Next.js API route
-    const response = await marketplaceClient.get('/api/equipment', { 
-      params,
-    });
-    
-    if (response.data && Array.isArray(response.data)) {
-      return response.data;
-    } else {
-      return getFallbackEquipment(params);
-    }
-  } catch (error: any) {
-    if (process.env.NODE_ENV === 'development') {
-    logger.error('Marketplace fetch failed - Equipment:', error.message);
-    }
-    
-    // Return fallback equipment instead of throwing
-    return getFallbackEquipment(params);
-  }
 };
 
 // Helper function to get fallback talent profiles
@@ -384,33 +225,6 @@ const getFallbackTalent = (): TalentProfile[] => {
       reviewCount: 28
     }
   ];
-};
-
-export const fetchTalent = async (params: {
-  page?: number;
-  limit?: number;
-  skills?: string;
-  search?: string;
-} = {}): Promise<TalentProfile[]> => {
-  try {
-    // Use internal Next.js API route
-    const response = await marketplaceClient.get('/api/talent', { 
-      params,
-    });
-    
-    if (response.data && Array.isArray(response.data)) {
-      return response.data;
-    } else {
-      return getFallbackTalent();
-    }
-  } catch (error: any) {
-    if (process.env.NODE_ENV === 'development') {
-    logger.error('Marketplace fetch failed - Talent:', error.message);
-    }
-    
-    // Return fallback talent instead of throwing
-    return getFallbackTalent();
-  }
 };
 
 // Helper function to get error message for UI display
@@ -451,7 +265,8 @@ export const ensureProductIntegrity = (products: Product[]): Product[] => {
     ...product,
     // Ensure required fields have default values
     id: product.id || `product-${Date.now()}-${Math.random()}`,
-    name: product.name || 'Unnamed Product',
+    name: product.name || product.title || 'Unnamed Product',
+    title: product.title || product.name || 'Unnamed Product',
     description: product.description || '',
     price: typeof product.price === 'number' ? product.price : 0,
     currency: product.currency || 'USD',
@@ -509,10 +324,10 @@ export async function fetchCategories(): Promise<Category[]> {
       throw new Error(data.error);
     }
 
-    return data.data || [];
+    return data.data || getFallbackCategories();
   } catch (error) {
     logError('Failed to fetch categories:', { data: error });
-    throw error;
+    return getFallbackCategories();
   }
 }
 
@@ -536,10 +351,10 @@ export async function fetchTalent(filters: SearchFilters = {}): Promise<TalentPr
       throw new Error(data.error);
     }
 
-    return data.data || [];
+    return data.data || getFallbackTalent();
   } catch (error) {
     logError('Failed to fetch talent:', { data: error });
-    throw error;
+    return getFallbackTalent();
   }
 }
 
@@ -549,8 +364,7 @@ export async function fetchEquipment(filters: SearchFilters = {}): Promise<Equip
     
     if (filters.query) searchParams.append('search', filters.query);
     if (filters.category) searchParams.append('category', filters.category);
-    if (filters.priceRange?.min) searchParams.append('minPrice', filters.priceRange.min.toString());
-    if (filters.priceRange?.max) searchParams.append('maxPrice', filters.priceRange.max.toString());
+    if (filters.tags?.length) searchParams.append('tags', filters.tags.join(','));
 
     const response = await fetch(`/api/marketplace/equipment?${searchParams}`);
     
@@ -564,9 +378,9 @@ export async function fetchEquipment(filters: SearchFilters = {}): Promise<Equip
       throw new Error(data.error);
     }
 
-    return data.data || [];
+    return data.data || getFallbackEquipment(filters);
   } catch (error) {
     logError('Failed to fetch equipment:', { data: error });
-    throw error;
+    return getFallbackEquipment(filters);
   }
 }
