@@ -24,7 +24,13 @@ import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
-import { IntercomChat } from '@/components/IntercomChat';
+import dynamic from 'next/dynamic';
+
+// Dynamically load Intercom chat widget to keep initial bundle small
+const IntercomChat = dynamic(() => import('@/components/IntercomChat'), {
+  ssr: false,
+  loading: () => null
+});
 import { HydrationErrorBoundary } from '@/components/HydrationErrorBoundary';
 // Import Next.js fonts for optimal loading and CLS prevention
 import { Inter, Poppins } from 'next/font/google';
@@ -46,6 +52,9 @@ import '@/utils/globalFetchInterceptor';
 import '@/utils/consoleErrorToast';
 import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
 import { RouteChangeHandler } from '@/components/RouteChangeHandler';
+import { registerServiceWorker } from '@/serviceWorkerRegistration';
+import PageTransition from '@/components/PageTransition';
+import { AnimatePresence } from 'framer-motion';
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
@@ -174,6 +183,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     Sentry.setTag('route', router.pathname);
     Sentry.setContext('query', router.query);
   }, [router.pathname, router.query]);
+
+  React.useEffect(() => {
+    if (process.env.NODE_ENV === 'production') {
+      registerServiceWorker();
+    }
+  }, []);
 
   // Only log provider initialization in development
   if (process.env.NODE_ENV === 'development') {

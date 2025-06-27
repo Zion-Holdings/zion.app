@@ -83,8 +83,8 @@ export function ITServiceRequestHero() {
         <div className="bg-zion-blue-light p-6 rounded-lg shadow-lg w-full max-w-md md:ml-auto">
           <div className="flex flex-col md:flex-row items-center gap-4">
             <Image
-              src="/logos/placeholder-logo.svg"
-              alt="Company logo"
+              src="/logos/zion-logo.png"
+              alt="Zion logo"
               width={200}
               height={200}
               className="w-full h-auto md:w-40"

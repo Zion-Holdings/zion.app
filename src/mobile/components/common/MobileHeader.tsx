@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useRouter } from 'next/router';
 import { ChevronLeft, Bell, Settings } from "lucide-react";
@@ -38,7 +37,7 @@ export function MobileHeader({
               variant="ghost" 
               size="icon" 
               className="mr-2" 
-              onClick={() => router.push(-1)}
+              onClick={() => router.back()}
             >
               <ChevronLeft className="h-5 w-5" />
               <span className="sr-only">Back</span>

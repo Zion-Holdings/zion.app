@@ -3,7 +3,7 @@
   "title": "Startup X Cuts GPU Costs by 35% with Zion Cloud Rental",
   "excerpt": "How a fast-growing AI company saved over a third on compute spending.",
   "company": "Startup X",
-  "companyLogo": "/logos/placeholder-logo.svg",
+  "companyLogo": "/logos/zion-logo.png",
   "avatar": "/images/blog-placeholder.svg",
   "quote": "Zion's Cloud GPU Rental gave us the computing muscle we needed at just the right price.",
   "author": "Alex Brown",
