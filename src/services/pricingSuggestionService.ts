@@ -3,7 +3,7 @@
 // Define types for the pricing recommendation
 import { logError } from "@/utils/productionLogger";
 
-export interface {
+export interface PricingSuggestion {
   minRate: number;
   maxRate: number;
   confidence: "High" | "Medium" | "Low";
