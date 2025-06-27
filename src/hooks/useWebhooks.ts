@@ -7,7 +7,7 @@ export type WebhookEventType = 'new_application' | 'quote_received' | 'milestone
 
 import { logError } from "@/utils/productionLogger";
 
-export interface {
+export interface Webhook {
   id: string;
   name: string;
   url: string;

@@ -149,6 +149,7 @@
     "@types/next": "^9.0.0",
     "@types/react-redux": "^7.1.34",
     "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.10.0",
     "axios-retry": "^4.5.0",
     "blockstore-core": "^5.0.4",
     "class-variance-authority": "^0.7.1",

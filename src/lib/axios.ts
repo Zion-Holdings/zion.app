@@ -10,36 +10,42 @@ const axiosInstance = axios.create({
   },
 });
 
-// Request interceptor
-axiosInstance.interceptors.request.use(
-  (config) => {
-    // Add auth token if available
-    if (typeof window !== 'undefined') {
-      const token = safeStorage.getItem('auth-token');
-      if (token && config.headers) {
-        config.headers.Authorization = `Bearer ${token}`;
-      }
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
-// Response interceptor
-axiosInstance.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error?.response?.status === 401) {
-      // Handle unauthorized access
+// Setup interceptors after instance creation
+const setupInterceptors = () => {
+  // Request interceptor
+  axiosInstance.interceptors.request.use(
+    (config) => {
+      // Add auth token if available
       if (typeof window !== 'undefined') {
-        safeStorage.removeItem('auth-token');
-        window.location.href = '/auth/login';
+        const token = safeStorage.getItem('auth-token');
+        if (token && config.headers) {
+          config.headers.Authorization = `Bearer ${token}`;
+        }
       }
+      return config;
+    },
+    (error) => {
+      return Promise.reject(error);
     }
-    return Promise.reject(error);
-  }
-);
+  );
+
+  // Response interceptor
+  axiosInstance.interceptors.response.use(
+    (response) => response,
+    (error) => {
+      if (error?.response?.status === 401) {
+        // Handle unauthorized access
+        if (typeof window !== 'undefined') {
+          safeStorage.removeItem('auth-token');
+          window.location.href = '/auth/login';
+        }
+      }
+      return Promise.reject(error);
+    }
+  );
+};
+
+// Initialize interceptors
+setupInterceptors();
 
 export default axiosInstance;
