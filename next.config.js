@@ -25,16 +25,17 @@ const shouldUseCDN = isProd && isValidCDN && (!isNetlify || !isPreviewBuild);
 
 const assetPrefix = shouldUseCDN ? cdnUrl : '';
 
-// Log CDN configuration in development for debugging
+// Log configuration for debugging
 if (process.env.NODE_ENV === 'development') {
-  console.log('CDN Configuration:', {
+  console.log('Next.js Configuration:', {
     isProd,
     isNetlify,
     isPreviewBuild,
     cdnUrl: cdnUrl || 'Not set',
     isValidCDN,
     shouldUseCDN,
-    assetPrefix: assetPrefix || 'Disabled (serving from origin)'
+    assetPrefix: assetPrefix || 'Disabled (serving from origin)',
+    imageOptimization: !(isNetlify && isPreviewBuild) ? 'Enabled' : 'Disabled for Netlify preview'
   });
 }
 /** @type {import('next').NextConfig} */
@@ -68,12 +69,16 @@ const nextConfig = {
   },
 
   images: {
-    unoptimized: false,
+    unoptimized: isNetlify && isPreviewBuild, // Disable optimization for Netlify preview builds
     loader: 'default',
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     // Add domains that are safe to optimize
     domains: [],
+    // Add specific path for local images to prevent 400 errors
+    path: '/_next/image',
+    // Increase loader timeout for Netlify
+    loaderFile: undefined, // Use default loader
     remotePatterns: [
       {
         protocol: 'https',
@@ -215,6 +220,12 @@ const nextConfig = {
     minimumCacheTTL: 31536000, // 1 year
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // Add error handling for Netlify
+    ...(isNetlify && {
+      // For Netlify, use more conservative settings
+      formats: ['image/webp'],
+      minimumCacheTTL: 60, // Shorter cache for debugging
+    }),
   },
 
   compiler: {
