@@ -2,7 +2,7 @@ import axios from 'axios';
 import { safeStorage } from '@/utils/safeStorage';
 
 // Create and configure axios instance
-const createAxiosInstance = () => {
+const createAxiosInstance = (): any => {
   const instance = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_URL || '/api',
     timeout: 15000,
