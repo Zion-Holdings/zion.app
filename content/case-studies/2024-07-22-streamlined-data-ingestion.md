@@ -3,7 +3,7 @@
   "title": "Streamlined Data Ingestion",
   "excerpt": "How an automated pipeline reduced processing time by 80%.",
   "company": "Analytics Hub",
-  "companyLogo": "/logos/placeholder-logo.svg",
+  "companyLogo": "/logos/zion-logo.png",
   "avatar": "/images/blog-placeholder.svg",
   "quote": "Zion's solutions let us focus on insights instead of data wrangling.",
   "author": "Miguel Ortega",

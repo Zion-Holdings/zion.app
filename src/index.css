@@ -10,19 +10,20 @@
 :root {
   --background: hsl(0 0% 100%);
   --foreground: hsl(0 0% 3.9%);
-  --primary: hsl(240 5.9% 10%);
+  --primary: hsl(221 83% 53%);
   --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(240 4.8% 95.9%);
+  --secondary: hsl(14 80% 60%);
   --secondary-foreground: hsl(240 5.9% 10%);
   --card: hsl(0 0% 100%);
   --card-foreground: hsl(0 0% 3.9%);
   --border: hsl(0 0% 89.8%);
   --input: hsl(0 0% 89.8%);
-  --ring: hsl(240 5.9% 10%);
-  --accent: hsl(240 3.7% 15.9%);
+  --ring: hsl(221 83% 53%);
+  --accent: hsl(286 63% 55%);
   --accent-foreground: hsl(0 0% 98%);
   --muted: hsl(240 4.8% 95.9%);
-  --muted-foreground: hsl(240 3.8% 46.1%);
+  /* Darken muted foreground for better contrast */
+  --muted-foreground: hsl(240 3.8% 38%);
   --popover: hsl(0 0% 100%);
   --popover-foreground: hsl(0 0% 3.9%);
   --destructive: hsl(0 84% 60%);
@@ -32,16 +33,16 @@
 [data-theme='dark'] {
   --background: hsl(222, 47%, 8%);
   --foreground: hsl(0, 0%, 95%);
-  --primary: hsl(188, 85%, 53%);
+  --primary: hsl(221, 100%, 66%);
   --primary-foreground: hsl(222, 47%, 8%);
-  --secondary: hsl(271, 76%, 60%);
+  --secondary: hsl(14, 92%, 70%);
   --secondary-foreground: hsl(0, 0%, 95%);
   --card: hsl(220, 30%, 11%);
   --card-foreground: hsl(0, 0%, 95%);
   --border: hsl(222, 39%, 17%);
   --input: hsl(222, 39%, 17%);
-  --ring: hsl(188, 85%, 53%);
-  --accent: hsl(288, 85%, 60%);
+  --ring: hsl(221, 100%, 66%);
+  --accent: hsl(286, 75%, 63%);
   --accent-foreground: hsl(0, 0%, 95%);
   --muted: hsl(220, 30%, 15%);
   --muted-foreground: hsl(0, 0%, 63.9%);
@@ -54,19 +55,19 @@
 [data-theme='light'] {
   --background: hsl(0 0% 100%);
   --foreground: hsl(0 0% 3.9%);
-  --primary: hsl(240 5.9% 10%);
+  --primary: hsl(221 83% 53%);
   --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(240 4.8% 95.9%);
+  --secondary: hsl(14 80% 60%);
   --secondary-foreground: hsl(240 5.9% 10%);
   --card: hsl(0 0% 100%);
   --card-foreground: hsl(0 0% 3.9%);
   --border: hsl(0 0% 89.8%);
   --input: hsl(0 0% 89.8%);
-  --ring: hsl(240 5.9% 10%);
-  --accent: hsl(240 3.7% 15.9%);
+  --ring: hsl(221 83% 53%);
+  --accent: hsl(286 63% 55%);
   --accent-foreground: hsl(0 0% 98%);
   --muted: hsl(240 4.8% 95.9%);
-  --muted-foreground: hsl(240 3.8% 46.1%);
+  --muted-foreground: hsl(240 3.8% 38%);
   --popover: hsl(0 0% 100%);
   --popover-foreground: hsl(0 0% 3.9%);
   --destructive: hsl(0 84% 60%);
@@ -77,16 +78,16 @@
   :root:not([data-theme]) {
     --background: hsl(222, 47%, 8%);
     --foreground: hsl(0, 0%, 95%);
-    --primary: hsl(188, 85%, 53%);
+    --primary: hsl(221, 100%, 66%);
     --primary-foreground: hsl(222, 47%, 8%);
-    --secondary: hsl(271, 76%, 60%);
+    --secondary: hsl(14, 92%, 70%);
     --secondary-foreground: hsl(0, 0%, 95%);
     --card: hsl(220, 30%, 11%);
     --card-foreground: hsl(0, 0%, 95%);
     --border: hsl(222, 39%, 17%);
     --input: hsl(222, 39%, 17%);
-    --ring: hsl(188, 85%, 53%);
-    --accent: hsl(288, 85%, 60%);
+    --ring: hsl(221, 100%, 66%);
+    --accent: hsl(286, 75%, 63%);
     --accent-foreground: hsl(0, 0%, 95%);
     --muted: hsl(220, 30%, 15%);
     --muted-foreground: hsl(0, 0%, 63.9%);
@@ -105,16 +106,16 @@
 .mobile-app[data-theme='light'] {
   --background: hsl(0 0% 100%);
   --foreground: hsl(0 0% 3.9%);
-  --primary: hsl(240 5.9% 10%);
+  --primary: hsl(221 83% 53%);
   --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(240 4.8% 95.9%);
+  --secondary: hsl(14 80% 60%);
   --secondary-foreground: hsl(240 5.9% 10%);
   --card: hsl(0 0% 100%);
   --card-foreground: hsl(0 0% 3.9%);
   --border: hsl(0 0% 89.8%);
   --input: hsl(0 0% 89.8%);
-  --ring: hsl(240 5.9% 10%);
-  --accent: hsl(240 3.7% 15.9%);
+  --ring: hsl(221 83% 53%);
+  --accent: hsl(286 63% 55%);
   --accent-foreground: hsl(0 0% 98%);
 
   background-color: var(--background);
@@ -124,16 +125,16 @@
 .mobile-app[data-theme='dark'] {
   --background: hsl(222, 47%, 8%);
   --foreground: hsl(0, 0%, 95%);
-  --primary: hsl(188, 85%, 53%);
+  --primary: hsl(221, 100%, 66%);
   --primary-foreground: hsl(222, 47%, 8%);
-  --secondary: hsl(271, 76%, 60%);
+  --secondary: hsl(14, 92%, 70%);
   --secondary-foreground: hsl(0, 0%, 95%);
   --card: hsl(220, 30%, 11%);
   --card-foreground: hsl(0, 0%, 95%);
   --border: hsl(222, 39%, 17%);
   --input: hsl(222, 39%, 17%);
-  --ring: hsl(188, 85%, 53%);
-  --accent: hsl(288, 85%, 60%);
+  --ring: hsl(221, 100%, 66%);
+  --accent: hsl(286, 75%, 63%);
   --accent-foreground: hsl(0, 0%, 95%);
 
   background-color: var(--background);
@@ -144,7 +145,11 @@
 *,
 *::before,
 *::after {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Global layout fixes */
@@ -153,12 +158,14 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.5rem;
   box-sizing: border-box;
 }
 
@@ -169,7 +176,7 @@ body {
 @layer base {
   :root {
     --font-sans: 'Inter', system-ui, sans-serif;
-    --font-heading: 'Montserrat', 'Inter', sans-serif;
+    --font-heading: 'Poppins', 'Inter', sans-serif;
 
     --background: 222 47% 8%;
     --foreground: 0 0% 95%;
@@ -180,16 +187,16 @@ body {
     --popover: 0 0% 100%; /* Kept existing */
     --popover-foreground: 224 71% 4%; /* Kept existing */
 
-    --primary: 220 80% 55%;
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 70% 60%;
+    --secondary: 14 80% 60%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96%; /* Kept existing */
     --muted-foreground: 215 20% 45%; /* Kept existing */
 
-    --accent: 186 65% 55%;
+    --accent: 286 63% 55%;
     --accent-foreground: 222 47% 8%;
 
     --destructive: 0 84% 60%; /* Kept existing */
@@ -197,7 +204,7 @@ body {
 
     --border: 222 39% 17%;
     --input: 222 39% 17%;
-    --ring: 188 85% 53%;
+    --ring: 221 83% 53%;
 
     /* Accessible primary text/background pair */
     --bg-primary: 222 47% 8%;
@@ -252,7 +259,12 @@ body {
     font-family: theme('fontFamily.sans');
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: theme('fontFamily.heading');
   }
 
@@ -283,7 +295,8 @@ body {
   }
 
   @keyframes pulse {
-    0%, 100% {
+    0%,
+    100% {
       opacity: 1;
     }
     50% {
@@ -326,11 +339,11 @@ body {
 
   /* LiveKit UI overrides */
   [data-lk-theme='default'] {
-    --lk-color-accent: #06B6D4;
-    --lk-button-background: #06B6D4;
-    --lk-button-background-hover: #0891B2;
-    --lk-bg1: #0B1120;
-    --lk-bg2: #0F172A;
+    --lk-color-accent: #06b6d4;
+    --lk-button-background: #06b6d4;
+    --lk-button-background-hover: #0891b2;
+    --lk-bg1: #0b1120;
+    --lk-bg2: #0f172a;
   }
 
   /* Skip link styles */
@@ -367,11 +380,21 @@ body {
 @layer components {
   a {
     @apply transition-colors duration-200 hover:text-primary;
+    touch-action: manipulation;
+  }
+
+  button,
+  [role="button"] {
+    touch-action: manipulation;
   }
 
   @keyframes slide-up {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
   }
 
   .animate-slide-up {
@@ -385,7 +408,7 @@ body {
     }
 
     button,
-    [role="button"],
+    [role='button'],
     input,
     textarea,
     select {
@@ -394,15 +417,22 @@ body {
     }
 
     .container {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
     }
   }
 }
 
-.request-btn { background:#00bcd4;color:#fff; }
-.request-textarea { color:#000; }
-.request-textarea::placeholder { color:#777; }
+.request-btn {
+  background: #00bcd4;
+  color: #fff;
+}
+.request-textarea {
+  color: #000;
+}
+.request-textarea::placeholder {
+  color: #777;
+}
 
 @media (max-width: 640px) {
   .search-dropdown {

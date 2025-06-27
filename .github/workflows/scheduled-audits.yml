@@ -39,30 +39,18 @@ jobs:
     - name: Run Python Dependency Audit
       run: pip-audit -r backend/requirements.txt
 
-    - name: Run Dependency and Vulnerability Audits
-      run: bash ./scripts/security-audit.sh # Executes the custom script for security audits
-      # This script is expected to run 'npm run check-updates' (via 'ncu') and 'npm run audit-vulnerabilities' (via 'npm audit').
+      - name: Run Dependency and Vulnerability Audits
+        run: bash ./scripts/security-audit.sh
+        # Runs 'npm run check-updates' and 'npm run audit-vulnerabilities'.
 
-    # Placeholder for Performance Audits
-    # Performance auditing is highly application-specific and requires dedicated tools and setup.
-    # This section serves as a reminder and starting point for future integration.
-    # - For frontend applications (especially if this is a Next.js app, which it seems to be),
-    #   Lighthouse CI (https://github.com/GoogleChrome/lighthouse-ci) is a common choice.
-    #   It typically involves building the application and then running Lighthouse against a served version.
-    # - For backend APIs, load testing tools like k6 (https://k6.io) or Artillery (https://artillery.io)
-    #   can be scripted to measure performance under load.
-    #
-    # - name: Run Performance Audits (Example Placeholder)
-    #   run: |
-    #     echo "Performance audit step placeholder. Configure appropriate tools for your application."
-    #     # Example for Lighthouse (this requires prior setup of lighthouserc.js and potentially serving the app):
-    #     # echo "Installing Lighthouse CI..."
-    #     # npm install -g @lhci/cli
-    #     # echo "Building the application (if required for static site audit)..."
-    #     # npm run build
-    #     # echo "Running Lighthouse CI..."
-    #     # lhci autorun --config=./lighthouserc.js || echo "Lighthouse audit finished. Note: Failures might be configured not to break the workflow."
-    #     #
-    #     # Example for k6 (this requires a k6 test script, e.g., scripts/performance-test.js):
-    #     # echo "Running k6 performance test..."
-    #     # k6 run scripts/performance-test.js
+      - name: Build application
+        run: npm run build
+
+      - name: Run Performance Checks
+        run: node scripts/performance-check.cjs | tee performance-report.log
+
+      - name: Upload Performance Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-report
+          path: performance-report.log
