@@ -9,6 +9,7 @@ const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/zion';
 const feedbackSchema = new mongoose.Schema({
   rating: { type: Number, required: true, min: 1, max: 5 },
   comment: String,
+  screenshot: String,
   url: String,
   userAgent: String,
   createdAt: { type: Date, default: Date.now },
@@ -17,6 +18,7 @@ const feedbackSchema = new mongoose.Schema({
 interface FeedbackDoc extends Document {
   rating: number;
   comment?: string;
+  screenshot?: string;
   url?: string;
   userAgent?: string;
   createdAt: Date;
@@ -36,6 +38,7 @@ async function connect() {
 const FeedbackValidator = z.object({
   rating: z.number().min(1).max(5),
   comment: z.string().optional(),
+  screenshot: z.string().optional(),
   url: z.string(),
   userAgent: z.string(),
 });

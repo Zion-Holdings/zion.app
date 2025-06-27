@@ -8,6 +8,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import LoginErrorFallback from '@/components/auth/login/LoginErrorFallback';
 import { useCart } from '@/context/CartContext';
 import { toast } from '@/hooks/use-toast';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 
 export default function Login() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -88,7 +89,11 @@ export default function Login() {
 
   // Optional: Render a loading indicator while isLoading is true
   if (isLoading) {
-    return <div className="p-4 text-center text-foreground">Loading...</div>; // Or a proper loading spinner component
+    return (
+      <div className="p-4 text-center text-foreground">
+        <LoadingSpinner variant="primary" />
+      </div>
+    );
   }
 
   // If authenticated and isLoading is false, the useEffect above should have navigated.

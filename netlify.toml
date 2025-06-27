@@ -43,6 +43,8 @@
   # Analytics and monitoring
   NEXT_PUBLIC_GA_ID = "your_google_analytics_id_here"
   NEXT_PUBLIC_INTERCOM_APP_ID = "your_intercom_app_id_here"
+  NEXT_PUBLIC_POSTHOG_KEY = "your_posthog_key_here"
+  NEXT_PUBLIC_POSTHOG_HOST = "https://app.posthog.com"
   
   # ========================================
   # WALLET & WEB3 CONFIGURATION  
@@ -84,6 +86,8 @@
   # Application URLs
   NEXT_PUBLIC_APP_URL = "https://your-domain.netlify.app"
   NEXT_PUBLIC_API_URL = "https://your-domain.netlify.app/api"
+  # CDN domain for static assets
+  NEXT_PUBLIC_CDN_URL = "https://cdn.yourdomain.com"
   
   # Feature flags
   NEXT_PUBLIC_ENABLE_ANALYTICS = "true"

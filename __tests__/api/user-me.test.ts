@@ -36,3 +36,11 @@ test('DELETE soft deletes account', () => {
   handler(req, res);
   expect(res.json).toHaveBeenCalledWith({ success: true });
 });
+
+test('unsupported method returns 405', () => {
+  const req = mockReq('POST');
+  const res = mockRes();
+  handler(req, res);
+  expect(res.status).toHaveBeenCalledWith(405);
+  expect(res.end).toHaveBeenCalled();
+});

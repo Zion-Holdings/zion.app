@@ -1,4 +1,5 @@
 import React, { useState, Suspense } from 'react';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import {
   Dialog,
   DialogContent,
@@ -41,11 +42,11 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
       <TabsContent value="images" className="pt-4">
         <div className="aspect-video w-full relative">
           <DialogTrigger asChild>
-            <img
-              src={images[selected]}
+            <OptimizedImage
+              src={images[selected] || images[0] || ''}
               alt={`Product image ${selected + 1}`}
               className="w-full h-full object-contain bg-zion-blue-light/10 p-4 cursor-zoom-in"
-              loading="lazy"
+              fill
             />
           </DialogTrigger>
         </div>
@@ -55,13 +56,13 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
               <div
                 key={idx}
                 onClick={() => setSelected(idx)}
-                className={`w-20 h-20 flex-shrink-0 cursor-pointer rounded overflow-hidden border-2 ${idx === selected ? 'border-zion-purple' : 'border-transparent'}`}
+                className={`relative w-20 h-20 flex-shrink-0 cursor-pointer rounded overflow-hidden border-2 ${idx === selected ? 'border-zion-purple' : 'border-transparent'}`}
               >
-                <img
+                <OptimizedImage
                   src={img}
                   alt={`Thumbnail image ${idx + 1}`}
                   className="w-full h-full object-cover"
-                  loading="lazy"
+                  fill
                 />
               </div>
             ))}
@@ -114,7 +115,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
           onClick={() => setZoomed(!zoomed)}
         >
           <img
-            src={images[selected]}
+            src={images[selected] || images[0] || ""}
             alt="Zoomed view"
             className={`w-full h-full object-contain transition-transform ${zoomed ? 'scale-150' : ''}`}
           />

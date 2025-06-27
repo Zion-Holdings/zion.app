@@ -18,7 +18,8 @@ export type AnalyticsEventType =
   | 'payment_completed'
   | 'signup'
   | 'login'
-  | 'feature_usage';
+  | 'feature_usage'
+  | 'session_duration';
 
 // Interface for analytics events
 export interface AnalyticsEvent {

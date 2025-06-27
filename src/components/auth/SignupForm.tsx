@@ -9,6 +9,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { CheckCircle, AlertCircle, Eye, EyeOff, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { fireEvent } from '@/lib/analytics';
 
 const signupSchema = z.object({
   name: z.string().min(2, 'Full Name must be at least 2 characters').max(50, 'Name must be less than 50 characters'),
@@ -167,6 +168,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
   const passwordStrength = getPasswordStrength(watchedFields.password || '');
 
   const onSubmit = async (data: SignupFormData) => {
+    fireEvent('signup_submit');
     setIsSubmitting(true);
 
     try {
@@ -178,6 +180,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
 
       if (result.error) {
         console.error('Signup error:', result.error);
+        fireEvent('signup_error', { message: result.error });
         
         // Handle specific error cases with inline field errors
         if (result.error.includes('already registered') || result.error.includes('already exists')) {
@@ -211,10 +214,12 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
       });
 
       reset();
+      fireEvent('signup_success');
       onSuccess?.();
 
     } catch (error: any) {
       console.error('Unexpected signup error:', error);
+      fireEvent('signup_error', { message: error.message || 'unexpected' });
       const errorMessage = 'An unexpected error occurred during signup. Please try again.';
       
       setError('root', { message: errorMessage });
