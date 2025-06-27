@@ -584,9 +584,21 @@ export default function Marketplace() {
             >
               <ProductCard
                 product={{
-                  ...product,
+                  id: product.id,
+                  name: product.title,
+                  title: product.title,
+                  description: product.description || '',
                   price: product.price || 0,
-                  description: product.description || ''
+                  currency: product.currency,
+                  category: product.category,
+                  tags: product.tags,
+                  images: product.images,
+                  rating: product.rating || 0,
+                  reviewCount: product.reviewCount || 0,
+                  created_at: product.createdAt,
+                  updated_at: product.createdAt, // Use createdAt for both
+                  stock: product.stock,
+                  in_stock: (product.stock || 0) > 0
                 }}
                 onBuy={async () => {
                   if (!isAuthenticated) {

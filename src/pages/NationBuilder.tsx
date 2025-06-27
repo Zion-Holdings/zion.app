@@ -32,7 +32,7 @@ export default function NationBuilder() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Placeholder submit handler
-    logInfo({ name, flag, constitution, governance, funding });
+    logInfo('Nation creation form submitted', { name, flag, constitution, governance, funding });
   };
 
   return (
