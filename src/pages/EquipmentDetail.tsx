@@ -429,6 +429,7 @@ export default function EquipmentDetail() {
                   size="lg"
                   variant="outline"
                   className="w-full border-zion-purple text-zion-cyan hover:bg-zion-purple/10"
+                  data-testid="add-to-cart-button"
                 >
                   <ShoppingCart className="h-4 w-4 mr-2" />
                   {isAdding ? 'Adding...' : inCart ? 'In Cart' : 'Add to Cart'}
