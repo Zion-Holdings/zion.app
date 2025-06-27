@@ -1,3 +1,4 @@
+import path from 'path';
 // Configure CDN asset prefix when running in production
 const isProd = process.env.NODE_ENV === 'production';
 const assetPrefix =
@@ -191,13 +192,19 @@ const nextConfig = {
     }
 
     // Suppress warnings in both dev and production
-    config.ignoreWarnings = [
+  config.ignoreWarnings = [
       /punycode.*deprecated/i,
       /DEP0040/,
       /Critical dependency/,
       /Serializing big strings/i,
       /PackFileCacheStrategy/,
-    ];
+  ];
+
+    // Alias React Router to a lightweight shim to avoid bundling the full library
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react-router-dom': path.resolve(__dirname, './src/shims/react-router-dom.ts'),
+    };
 
     // Only apply optimizations in production
     if (!dev && !isServer) {
