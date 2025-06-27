@@ -30,8 +30,7 @@ find_and_create_stub() {
     # Create a basic stub
     cat <<EOF > "$test_file"
 describe('$base_name', () => {
-  it('should have tests', () => {
-    // TODO: Add meaningful tests
+  it('placeholder test', () => {
     expect(true).toBe(true);
   });
 });

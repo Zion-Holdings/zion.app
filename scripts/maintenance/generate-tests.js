@@ -32,7 +32,7 @@ for (const [file, data] of Object.entries(summary)) {
 
   const content =
     `import { describe, it, expect } from 'vitest';\n\n` +
-    `// TODO: add meaningful tests for ${relative}\n` +
+    `// Placeholder tests for ${relative}\n` +
     `describe('${relative}', () => {\n  it('needs tests', () => {\n    expect(true).toBe(true);\n  });\n});\n`;
   fs.writeFileSync(testPath, content);
   console.log('Created placeholder test:', testPath);

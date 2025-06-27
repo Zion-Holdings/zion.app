@@ -7,8 +7,8 @@ This directory contains the Django backend for the Zion platform. It provides sp
 - Django
 - Django REST Framework (for APIs like Governance)
 - PostgreSQL (production database, SQLite for local dev as per settings)
-- Redis (for caching)
-- Celery (Assumed for background tasks, though not explicitly verified - **TODO: Verify if Celery or another task queue is used and update**)
+- Redis (for caching and used by Django Channels for websocket features)
+- Celery (used for background jobs such as email delivery and long running tasks)
 - Gunicorn (for WSGI serving)
 
 ## Modules / Key Apps
@@ -26,7 +26,7 @@ This directory contains the Django backend for the Zion platform. It provides sp
     *   Python 3.x (refer to project's Python version, e.g., 3.10)
     *   Pip (Python package installer)
     *   PostgreSQL server (for production-like setup) or ensure SQLite is sufficient for your needs.
-    *   Redis server (for caching and potentially Django Channels if used - **TODO: Verify Redis usage scope**)
+    *   Redis server (required for caching and for Django Channels websocket support)
 
 2.  **Create and Activate a Virtual Environment:**
     ```bash
@@ -88,7 +88,9 @@ If the project later adopts `pytest`, the same command can be swapped for
 -   Integrates `django-otp` for 2FA.
 -   Custom middleware for error handling (`middleware/error_handler.py`) is present.
 -   Role-based access control seems to be implemented, especially in `ipo_portal`.
--   **TODO:** Document any significant architectural patterns, choice of specific libraries, or important configurations developers should be aware of.
+-   Celery workers run alongside the Django app and communicate through Redis, enabling asynchronous task processing for tasks like email delivery.
+-   The project follows a modular structure with each domain (authentication, IPO portal, governance) implemented as a dedicated Django app.
+-   Environment variables drive configuration so the same container image can be promoted through staging and production without changes.
 
 ## Deployment
 

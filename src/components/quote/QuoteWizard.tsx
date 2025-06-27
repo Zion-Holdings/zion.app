@@ -79,7 +79,7 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
 
   const handleSubmit = async () => {
     if (!selectedItemId) return;
-    // TODO: Adapt API endpoint and payload based on category if necessary
+    // Different categories may require different API endpoints. Adjust the URL or payload here as needed.
     await fetch('/api/quotes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

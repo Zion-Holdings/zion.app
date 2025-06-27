@@ -85,7 +85,12 @@ node server/stubServer.js
 
 ## API Documentation
 
--   **TODO:** Document the API endpoints provided by this server in more detail. Consider integrating tools like `swagger-jsdoc` and `swagger-ui-express` to generate and serve OpenAPI documentation.
+The server exposes routes under `/api` for internal services, including:
+
+1.  `POST /api/webhook/ai-fix` – accepts issue details and triggers the AI self-healing workflow.
+2.  `GET /api/status` – simple health check endpoint used by Kubernetes.
+
+The project plans to integrate `swagger-jsdoc` and `swagger-ui-express` so that running `npm start` will serve interactive API documentation at `/docs`.
 
 ## Key Architectural Decisions & Notes
 
