@@ -35,6 +35,7 @@ console.error = (...args: any[]) => {
       'Session expired', // Already handled by auth
       'chunk-', // Webpack chunk loading errors
       'Loading chunk', // Webpack errors
+      'Abort fetching component for route', // Next.js navigation aborted
       '_next', // Next.js internal errors
       'hydration', // React hydration warnings
       'act()', // React testing warnings
