@@ -2,7 +2,9 @@ from rest_framework import viewsets, status, permissions, filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.utils import timezone
-from django.db.models import Count, Sum
+from django.db.models import Count, Sum, Q
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Proposal, Vote
 from .serializers import (
@@ -102,24 +104,33 @@ class ProposalViewSet(viewsets.ModelViewSet):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    @method_decorator(cache_page(300))
     @action(detail=True, methods=['get'])
     def results(self, request, pk=None):
         proposal = self.get_object()
-        votes = proposal.votes.all()
+        aggregates = Vote.objects.filter(proposal=proposal).aggregate(
+            approve_count=Count('id', filter=Q(choice='APPROVE')),
+            reject_count=Count('id', filter=Q(choice='REJECT')),
+            abstain_count=Count('id', filter=Q(choice='ABSTAIN')),
+            approve_power=Sum('voting_power_at_snapshot', filter=Q(choice='APPROVE')),
+            reject_power=Sum('voting_power_at_snapshot', filter=Q(choice='REJECT')),
+            abstain_power=Sum('voting_power_at_snapshot', filter=Q(choice='ABSTAIN')),
+        )
 
-        results_data = {
-            'approve_count': votes.filter(choice='APPROVE').count(),
-            'reject_count': votes.filter(choice='REJECT').count(),
-            'abstain_count': votes.filter(choice='ABSTAIN').count(),
-            'approve_power': votes.filter(choice='APPROVE').aggregate(total=Sum('voting_power_at_snapshot'))['total'] or 0,
-            'reject_power': votes.filter(choice='REJECT').aggregate(total=Sum('voting_power_at_snapshot'))['total'] or 0,
-            'abstain_power': votes.filter(choice='ABSTAIN').aggregate(total=Sum('voting_power_at_snapshot'))['total'] or 0,
-        }
-        results_data['total_votes_cast'] = sum(results_data[key] for key in ['approve_count', 'reject_count', 'abstain_count'])
-        results_data['total_voting_power_cast'] = sum(results_data[key] for key in ['approve_power', 'reject_power', 'abstain_power'])
+        results_data = {k: aggregates.get(k) or 0 for k in aggregates}
+        results_data['total_votes_cast'] = (
+            results_data['approve_count']
+            + results_data['reject_count']
+            + results_data['abstain_count']
+        )
+        results_data['total_voting_power_cast'] = (
+            results_data['approve_power']
+            + results_data['reject_power']
+            + results_data['abstain_power']
+        )
 
         serializer = VoteResultSerializer(data=results_data)
-        serializer.is_valid(raise_exception=True) # Should be valid as we construct it
+        serializer.is_valid(raise_exception=True)
         return Response(serializer.data)
 
 class MyVotesViewSet(viewsets.ReadOnlyModelViewSet):

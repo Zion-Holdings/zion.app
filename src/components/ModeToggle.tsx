@@ -9,7 +9,7 @@ import { logIssue } from "@/utils/logIssue"
 import { useEffect, useState } from "react"
 
 export function ModeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const [isClient, setIsClient] = useState(false);
 
   // Ensure we're on the client side to avoid hydration mismatches
@@ -33,11 +33,11 @@ export function ModeToggle() {
     try {
       // Determine the new theme we are switching TO
       const newTheme = isDarkMode ? "light" : "dark";
-      
+
       console.log(`Theme toggle: ${resolvedTheme} → ${newTheme}`);
 
-      // Apply the new theme
-      setTheme(newTheme);
+      // Apply the new theme via ThemeProvider
+      toggleTheme();
 
       // Show user feedback with a developer-centric message
       const messages = newTheme === 'dark' ? darkModeMessages : lightModeMessages

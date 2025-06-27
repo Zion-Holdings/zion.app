@@ -11,6 +11,7 @@ import { ApiKeysManager } from '@/components/developers/ApiKeysManager';
 import { SEO } from '@/components/SEO';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import type { Order } from '@/hooks/useOrders';
+import { NextApiRequest } from 'next';
 
 interface User {
   id: string;
@@ -102,14 +103,18 @@ export default function ProtectedAccount(props: AccountProps) {
   );
 }
 
-import { NextApiRequest } from 'next';
-
 export const getServerSideProps: GetServerSideProps<AccountProps> = async ({ req }: { req: NextApiRequest }) => {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
+  // Handle cookie header which can be string or string[]
+  const cookieHeader = req?.headers.cookie;
+  const cookieString = Array.isArray(cookieHeader) ? cookieHeader[0] || '' : cookieHeader || '';
+
+  const headers = cookieString ? { cookie: cookieString } : undefined;
+
   const [userRes, ordersRes] = await Promise.all([
-    fetch(`${base}/api/users/me`, { headers: { cookie: req?.headers.cookie || '' } }),
-    fetch(`${base}/api/orders?user_id=me`, { headers: { cookie: req?.headers.cookie || '' } }),
+    fetch(`${base}/api/users/me`, headers ? { headers } : {}),
+    fetch(`${base}/api/orders?user_id=me`, headers ? { headers } : {}),
   ]);
 
   if (userRes.status === 401) {

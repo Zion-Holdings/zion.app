@@ -6,6 +6,7 @@ import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // A
 import { PrimaryNav } from "./PrimaryNav";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { BackToTopButton } from "@/components/BackToTopButton";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { Footer } from "@/components/Footer";
 import { AnalyticsConsentBanner } from "@/components/AnalyticsConsentBanner";
 import { SkipLink } from "@/components/SkipLink";
@@ -13,6 +14,7 @@ import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
 import ErrorOverlay from '@/components/ErrorOverlay';
 import { logError } from '@/utils/logError';
+import { useNavigationGestures } from '@/hooks/useNavigationGestures';
 
 function useSafePathname() {
   const router = useRouter();
@@ -30,6 +32,8 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
   // must be implemented in '@/context/auth/AuthContext.tsx' for this to work.
   // This is a placeholder integration as per instructions.
   const { user, isAuthenticated } = useAuth() || {}; // Added fallback to empty object for safety if useAuth is not ready
+  // Enable basic swipe gestures for navigation
+  useNavigationGestures();
   const [isResendingEmail, setIsResendingEmail] = useState(false);
   const [resendStatusMessage, setResendStatusMessage] = useState('');
   const { loading, error, setError } = useGlobalLoader();
@@ -93,10 +97,16 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
         </>
       )}
       {!isAuthPage && <PrimaryNav />}
+      <ScrollProgressBar />
       <ScrollToTop />
       {loading && <LoaderOverlay />}
       {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}
-      <main id="main-content" className="flex-grow">
+      <main
+        id="main-content"
+        role="main"
+        aria-label="Main content"
+        className="flex-grow"
+      >
         {children}
       </main>
       <BackToTopButton />

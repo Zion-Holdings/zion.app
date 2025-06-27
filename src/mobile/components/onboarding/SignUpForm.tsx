@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { LoadingSpinner } from "@/components/ui/enhanced-loading-states";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useAuth } from "@/context/auth/AuthProvider";
@@ -181,17 +182,19 @@ export function SignUpForm() {
           <PasswordStrengthMeter password={formData.password} />
         </div>
         
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           className="w-full py-6"
           disabled={isLoading}
         >
-          {isLoading 
-            ? "Please wait..." 
-            : signupMode 
-              ? "Create Account" 
-              : "Sign In"
-          }
+          {isLoading ? (
+            <>
+              <LoadingSpinner size="sm" className="mr-2" />
+              Please wait...
+            </>
+          ) : (
+            signupMode ? "Create Account" : "Sign In"
+          )}
         </Button>
       </form>
       

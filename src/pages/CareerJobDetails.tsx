@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { SEO } from '@/components/SEO';
 import { GradientHeading } from '@/components/GradientHeading';
 import { Button } from '@/components/ui/button';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Link from 'next/link';
@@ -89,7 +90,14 @@ export default function CareerJobDetails() {
                 <Textarea id="message" name="message" rows={6} value={form.message} onChange={handleChange} required />
               </div>
               <Button type="submit" disabled={submitting} className="bg-gradient-to-r from-zion-purple to-zion-purple-dark">
-                {submitting ? 'Sending...' : 'Submit Application'}
+                {submitting ? (
+                  <>
+                    <LoadingSpinner size="sm" className="mr-2" />
+                    Sending...
+                  </>
+                ) : (
+                  'Submit Application'
+                )}
               </Button>
             </form>
 
