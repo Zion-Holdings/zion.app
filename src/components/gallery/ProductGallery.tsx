@@ -43,7 +43,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
         <div className="aspect-video w-full relative">
           <DialogTrigger asChild>
             <OptimizedImage
-              src={images[selected]}
+              src={images[selected] || images[0] || ''}
               alt={`Product image ${selected + 1}`}
               className="w-full h-full object-contain bg-zion-blue-light/10 p-4 cursor-zoom-in"
               fill
@@ -115,7 +115,7 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
           onClick={() => setZoomed(!zoomed)}
         >
           <img
-            src={images[selected]}
+            src={images[selected] || images[0] || ""}
             alt="Zoomed view"
             className={`w-full h-full object-contain transition-transform ${zoomed ? 'scale-150' : ''}`}
           />

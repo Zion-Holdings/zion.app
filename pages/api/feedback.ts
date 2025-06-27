@@ -48,7 +48,9 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const parsed = FeedbackValidator.safeParse(req.body);
   if (!parsed.success) {
-    return res.status(400).json({ error: parsed.error.errors[0].message });
+    return res.status(400).json({ 
+      error: parsed.error?.errors[0]?.message || 'Invalid feedback data' 
+    });
   }
 
   try {
