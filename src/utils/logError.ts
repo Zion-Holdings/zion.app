@@ -66,6 +66,20 @@ export function logError(
       }).catch(ddImportError => {
         console.warn('Failed to import or use Datadog logger:', ddImportError);
       });
+
+      // LogRocket logging
+      import('logrocket').then(mod => {
+        const LogRocket = mod.default;
+        if (LogRocket && typeof LogRocket.captureException === 'function') {
+          if (context) {
+            LogRocket.captureException(errorToSend, { extra: { traceId, ...context } });
+          } else {
+            LogRocket.captureException(errorToSend, { extra: { traceId } });
+          }
+        }
+      }).catch(lrError => {
+        console.warn('Failed to log error to LogRocket:', lrError);
+      });
     }
   } catch (err) {
     console.error('Failed to report error to Sentry:', err, context?.componentStack);

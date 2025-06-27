@@ -1,1 +1,3 @@
-export { default } from '@/pages/Dashboard';
+import dynamic from 'next/dynamic';
+
+export default dynamic(() => import('@/pages/Dashboard'));

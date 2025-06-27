@@ -19,6 +19,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState('');
   const socketRef = useRef<any>();
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   // Load stored messages for this room when opened
   useEffect(() => {
@@ -53,6 +54,8 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
 
     setup();
 
+    inputRef.current?.focus();
+
     return () => {
       isMounted = false;
       socket?.disconnect();
@@ -77,6 +80,12 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       console.warn('ChatWidget: failed to save history', err);
     }
   }, [messages, roomId, isOpen]);
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  };
 
   const handleSend = () => {
     if (!socketRef.current || !text.trim() || !user || typeof user === 'boolean') return; // Ensure user is not boolean false
@@ -91,6 +100,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     socketRef.current.emit('send-message', { roomId, message: msg });
     setMessages(prev => [...prev, msg]);
     setText('');
+    inputRef.current?.focus();
   };
 
   if (!isOpen) return null;
@@ -112,8 +122,10 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
         <textarea
           value={text}
           onChange={e => setText(e.target.value)}
+          onKeyDown={handleKeyDown}
           rows={2}
           className="w-full p-2 text-black dark:text-white rounded mb-2 bg-zion-blue-light dark:bg-zion-blue-dark"
+          ref={inputRef}
         />
         <Button className="w-full" onClick={handleSend} disabled={!text.trim()}>
           Send
