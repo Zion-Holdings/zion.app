@@ -66,7 +66,7 @@ export default function Contact() {
       }
       setErrors(fieldErrors);
       const validationErrorMsg = result.error.errors[0]?.message || 'Please check your form and try again';
-      logWarn('[ContactForm] Validation failed:', validationErrorMsg, result.error.flatten().fieldErrors);
+      logWarn('[ContactForm] Validation failed:', { data: { validationErrorMsg, fieldErrors: result.error.flatten().fieldErrors } });
       toast({
         title: 'Form Validation Error',
         description: validationErrorMsg,
