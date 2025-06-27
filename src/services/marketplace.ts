@@ -91,6 +91,7 @@ export interface Product {
   updated_at: string;
   seller_id?: string;
   in_stock?: boolean;
+  stock?: number;
   specifications?: Record<string, string>;
 }
 
