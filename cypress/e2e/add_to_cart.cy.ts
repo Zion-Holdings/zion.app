@@ -7,7 +7,7 @@ describe('add to cart', () => {
   it('stores item in local storage', () => {
     cy.visit('/equipment/pro-camera-x1000');
     // The deployed site can take a moment to load, so wait up to 10s
-    cy.contains('Add to Cart', { timeout: 10000 }).click();
+    cy.get('[data-testid="add-to-cart-button"]', { timeout: 10000 }).click();
     cy.url().should('include', '/cart');
     cy.window().then((win) => {
       const cart = JSON.parse(win.localStorage.getItem('cart') || '[]');
@@ -23,7 +23,10 @@ describe('add to cart', () => {
     // Wait for products to load and find the first product card
     // Using a more robust selector if product cards have a specific data-testid
     // For now, assuming the structure from MarketplacePage.tsx
-    cy.get('button[aria-label="Add to cart"]', { timeout: 10000 }).first().should('be.visible').click();
+    cy.get('[data-testid="add-to-cart-listing-button"]', { timeout: 10000 })
+      .first()
+      .should('be.visible')
+      .click();
 
     // Check for the success notification (adjust selector based on actual implementation)
     cy.contains('added', { matchCase: false }).should('be.visible');
