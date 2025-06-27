@@ -28,13 +28,18 @@ export function NewsletterForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-2">
+          <label htmlFor="newsletter-signup-email" className="sr-only">
+            Email address for newsletter signup
+          </label>
           <Input
             type="email"
+            id="newsletter-signup-email"
             name="email"
             placeholder="Enter your email"
             className="flex-grow bg-zion-blue-light dark:bg-zion-blue-dark text-black dark:text-white border-zion-purple/20 focus:border-zion-purple focus:ring-zion-purple"
             value={email}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+            autoComplete="email"
             required
           />
           <Button 

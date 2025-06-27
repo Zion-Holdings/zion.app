@@ -222,7 +222,7 @@ function CheckoutInner() {
               <FormItem>
                 <FormLabel>Full Name *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your full name" />
+                  <Input {...field} placeholder="Enter your full name" autoComplete="name" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -236,7 +236,7 @@ function CheckoutInner() {
               <FormItem>
                 <FormLabel>Email Address *</FormLabel>
                 <FormControl>
-                  <Input {...field} type="email" placeholder="Enter your email" />
+                  <Input {...field} type="email" placeholder="Enter your email" autoComplete="email" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -250,7 +250,7 @@ function CheckoutInner() {
               <FormItem>
                 <FormLabel>Address *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your address" />
+                  <Input {...field} placeholder="Enter your address" autoComplete="street-address" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -264,7 +264,7 @@ function CheckoutInner() {
               <FormItem>
                 <FormLabel>City *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your city" />
+                  <Input {...field} placeholder="Enter your city" autoComplete="address-level2" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -278,7 +278,7 @@ function CheckoutInner() {
               <FormItem>
                 <FormLabel>Country *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your country" />
+                  <Input {...field} placeholder="Enter your country" autoComplete="country-name" />
                 </FormControl>
                 <FormMessage />
               </FormItem>

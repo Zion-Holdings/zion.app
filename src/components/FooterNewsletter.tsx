@@ -69,13 +69,18 @@ export function FooterNewsletter(): React.ReactElement {
       onSubmit={handleSubmit}
       className="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-2"
     >
+      <label htmlFor="newsletter-email" className="sr-only">
+        Email address for newsletter subscription
+      </label>
       <Input
         type="email"
+        id="newsletter-email"
         name="email"
         placeholder="Enter your email"
         className="flex-grow bg-zion-blue-light dark:bg-zion-blue-dark text-black dark:text-white border-zion-purple/20 focus:border-zion-purple focus:ring-zion-purple placeholder-opacity-50 placeholder:text-center"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        autoComplete="email"
         required
       />
       {emailError && <p className="text-red-500 text-sm mt-1">{emailError}</p>}

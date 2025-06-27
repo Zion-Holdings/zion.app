@@ -102,6 +102,8 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
         <Input
           ref={inputRef}
           type="text"
+          id="main-search-input"
+          name="search"
           value={value}
           onChange={(e) => onChange(e.target.value)}
           onFocus={(e) => {
@@ -121,6 +123,7 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
           className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate"
           aria-autocomplete="list"
           aria-activedescendant={highlightedIndex !== -1 ? `suggestion-item-${highlightedIndex}` : undefined}
+          autoComplete="search"
           onKeyDown={(e) => {
             if (!focused || suggestions.length === 0) {
               if (e.key === 'Escape') {
