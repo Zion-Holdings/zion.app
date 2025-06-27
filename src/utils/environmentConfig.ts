@@ -163,7 +163,7 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const urlIsPlaceholder = isPlaceholderValue(supabaseUrl);
   const anonKeyIsPlaceholder = isPlaceholderValue(supabaseAnonKey);
   
-  if (isDevelopment || process.env.DEBUG_ENV_CONFIG) {
+  if ((isDevelopment || process.env.DEBUG_ENV_CONFIG) && (urlIsPlaceholder || anonKeyIsPlaceholder)) {
     console.log('[ENV CONFIG] Supabase configuration check:', {
       url: supabaseUrl ? `${supabaseUrl.substring(0, 30)}...` : 'undefined',
       urlIsPlaceholder,
@@ -173,7 +173,8 @@ export function getEnvironmentConfig(): EnvironmentConfig {
       fallbacksUsed: {
         url: !env.NEXT_PUBLIC_SUPABASE_URL,
         anonKey: !env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-      }
+      },
+      note: 'Using fallback values for development - this is normal'
     });
   }
   

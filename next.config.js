@@ -38,8 +38,7 @@ const nextConfig = {
         'node_modules/@esbuild/linux-x64',
       ],
     },
-    // Temporarily disabled to fix constructor errors
-    // optimizeCss: true,
+    optimizeCss: process.env.NODE_ENV === 'production',
     esmExternals: true,
   },
 
@@ -183,7 +182,67 @@ const nextConfig = {
         /punycode.*deprecated/i,
         /DEP0040/,
         /Critical dependency/,
+        /Serializing big strings/i,
       ];
+    }
+
+    // Optimize serialization performance
+    if (!dev && !isServer) {
+      config.optimization = {
+        ...config.optimization,
+        // Improve serialization performance
+        usedExports: true,
+        sideEffects: false,
+        splitChunks: {
+          ...config.optimization.splitChunks,
+          chunks: 'all',
+          maxSize: 244000, // 244KB limit to avoid serialization warnings
+          cacheGroups: {
+            ...config.optimization.splitChunks.cacheGroups,
+            // React and core framework chunk
+            framework: {
+              chunks: 'all',
+              name: 'framework',
+              test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|use-subscription)[\\/]/,
+              priority: 40,
+              enforce: true,
+              maxSize: 244000,
+            },
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              priority: 10,
+              reuseExistingChunk: true,
+              maxSize: 244000,
+            },
+            common: {
+              minChunks: 2,
+              priority: 5,
+              reuseExistingChunk: true,
+              maxSize: 244000,
+            },
+            react: {
+              test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+              name: 'react',
+              priority: 20,
+              reuseExistingChunk: true,
+              maxSize: 244000,
+            },
+            ui: {
+              test: /[\\/]node_modules[\\/](@radix-ui|@chakra-ui)[\\/]/,
+              name: 'ui',
+              priority: 15,
+              reuseExistingChunk: true,
+              maxSize: 244000,
+            },
+          },
+        },
+        // Enable module concatenation for better tree shaking
+        concatenateModules: true,
+        // Minimize chunk names in production
+        moduleIds: 'deterministic',
+        chunkIds: 'deterministic',
+      };
     }
 
     // Add polyfills for Node.js APIs
@@ -207,56 +266,6 @@ const nextConfig = {
       zlib: false,
       url: false,
     };
-
-    // Optimize chunks for better caching
-    if (!dev && !isServer) {
-      config.optimization = {
-        ...config.optimization,
-        splitChunks: {
-          ...config.optimization.splitChunks,
-          chunks: 'all',
-          cacheGroups: {
-            ...config.optimization.splitChunks.cacheGroups,
-            // React and core framework chunk
-            framework: {
-              chunks: 'all',
-              name: 'framework',
-              test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|use-subscription)[\\/]/,
-              priority: 40,
-              enforce: true,
-            },
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              priority: 10,
-              reuseExistingChunk: true,
-            },
-            common: {
-              minChunks: 2,
-              priority: 5,
-              reuseExistingChunk: true,
-            },
-            react: {
-              test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-              name: 'react',
-              priority: 20,
-              reuseExistingChunk: true,
-            },
-            ui: {
-              test: /[\\/]node_modules[\\/](@radix-ui|@chakra-ui)[\\/]/,
-              name: 'ui',
-              priority: 15,
-              reuseExistingChunk: true,
-            },
-          },
-        },
-        // Enable module concatenation for better tree shaking
-        concatenateModules: true,
-        // Minimize chunk names in production
-        moduleIds: 'deterministic',
-        chunkIds: 'deterministic',
-      };
-    }
 
     // Optimize bundle size
     if (!dev) {
