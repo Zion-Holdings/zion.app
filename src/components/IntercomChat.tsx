@@ -38,7 +38,7 @@ export default function IntercomChat() {
     }
 
     if (process.env.NODE_ENV === 'development') {
-      logInfo('Intercom: Initializing with App ID:', appId?.substring(0, 4) + '****');
+      logInfo('Intercom: Initializing with App ID', { data: appId?.substring(0, 4) + '****' });
     }
 
     window.intercomSettings = { app_id: appId };

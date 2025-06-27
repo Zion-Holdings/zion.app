@@ -251,7 +251,7 @@ export function WebhookManager() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="test_event">Test (generic)</SelectItem>
-                      {webhook.event_types.map(event => (
+                      {webhook.event_types.map((event: WebhookEventType) => (
                         <SelectItem key={event} value={event}>
                           Test {eventOptions.find(e => e.value === event)?.label || event}
                         </SelectItem>
