@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useRouter } from 'next/router';
 import { useJobApplications } from "@/hooks/useJobApplications";
@@ -36,7 +35,7 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
     
     if (!user) {
       toast.error("You must be logged in to apply");
-      router.push("/login", { state: { returnTo: `/jobs/${job.id}` } });
+      router.push(`/login?returnTo=${encodeURIComponent(`/jobs/${job.id}`)}`);
       return;
     }
     

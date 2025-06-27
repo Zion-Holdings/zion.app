@@ -11,8 +11,8 @@ const ReactPlayer = React.lazy(() => import('react-player'));
 const ModelViewer = React.lazy(async () => {
   await import('@google/model-viewer');
   return {
-    default: (props: React.ComponentProps<'model-viewer'>) => (
-      <model-viewer {...props} />
+    default: (props: any) => (
+      React.createElement('model-viewer', props)
     ),
   };
 });
