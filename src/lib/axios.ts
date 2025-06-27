@@ -46,4 +46,5 @@ const createAxiosInstance = (): any => {
   return instance;
 };
 
-export default createAxiosInstance();
+// Export the function instead of calling it immediately to avoid temporal dead zone issues
+export default createAxiosInstance;
