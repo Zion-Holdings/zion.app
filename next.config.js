@@ -186,18 +186,17 @@ const nextConfig = {
   ],
 
   webpack: (config, { dev, isServer }) => {
-    // Suppress punycode deprecation warnings
-    if (!dev) {
-      config.ignoreWarnings = [
-        /punycode.*deprecated/i,
-        /DEP0040/,
-        /Critical dependency/,
-        /Serializing big strings/i,
-      ];
-    }
+    // Suppress warnings in both dev and production
+    config.ignoreWarnings = [
+      /punycode.*deprecated/i,
+      /DEP0040/,
+      /Critical dependency/,
+      /Serializing big strings/i,
+      /PackFileCacheStrategy/,
+    ];
 
-    // Optimize serialization performance
-    if (!dev && !isServer) {
+    // Optimize serialization performance for both dev and production
+    if (!isServer) {
       config.optimization = {
         ...config.optimization,
         // Improve serialization performance
@@ -206,7 +205,7 @@ const nextConfig = {
         splitChunks: {
           ...config.optimization.splitChunks,
           chunks: 'all',
-          maxSize: 244000, // 244KB limit to avoid serialization warnings
+          maxSize: dev ? 500000 : 244000, // Higher limit in dev for faster builds
           cacheGroups: {
             ...config.optimization.splitChunks.cacheGroups,
             // React and core framework chunk
@@ -216,42 +215,42 @@ const nextConfig = {
               test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|use-subscription)[\\/]/,
               priority: 40,
               enforce: true,
-              maxSize: 244000,
+              maxSize: dev ? 500000 : 244000,
             },
             vendor: {
               test: /[\\/]node_modules[\\/]/,
               name: 'vendors',
               priority: 10,
               reuseExistingChunk: true,
-              maxSize: 244000,
+              maxSize: dev ? 500000 : 244000,
             },
             common: {
               minChunks: 2,
               priority: 5,
               reuseExistingChunk: true,
-              maxSize: 244000,
+              maxSize: dev ? 500000 : 244000,
             },
             react: {
               test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
               name: 'react',
               priority: 20,
               reuseExistingChunk: true,
-              maxSize: 244000,
+              maxSize: dev ? 500000 : 244000,
             },
             ui: {
               test: /[\\/]node_modules[\\/](@radix-ui|@chakra-ui)[\\/]/,
               name: 'ui',
               priority: 15,
               reuseExistingChunk: true,
-              maxSize: 244000,
+              maxSize: dev ? 500000 : 244000,
             },
           },
         },
-        // Enable module concatenation for better tree shaking
-        concatenateModules: true,
+        // Enable module concatenation for better tree shaking (production only)
+        concatenateModules: !dev,
         // Minimize chunk names in production
-        moduleIds: 'deterministic',
-        chunkIds: 'deterministic',
+        moduleIds: dev ? 'named' : 'deterministic',
+        chunkIds: dev ? 'named' : 'deterministic',
       };
     }
 
