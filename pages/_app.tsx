@@ -313,24 +313,21 @@ function MyApp({ Component, pageProps }: AppProps) {
                                                 key={router.asPath}
                                                 {...pageProps}
                                               />
-                                              <ErrorBoundary>
-                                                <Component key={router.asPath} {...pageProps} />
-                                              </ErrorBoundary>
-                                              <ErrorResetOnRouteChange />
-                                              <ToastContainer />
-                                              <OfflineIndicator />
-                                              <BetaBanner />
-                                              <IntercomChat />
-                                            </AppLayout>
-                                          </ThemeProvider>
-                                        </AnalyticsProvider>
-                                      </CartProvider>
-                                    </WalletProvider>
-                                  </LanguageProviderWrapper>
-                                </WhitelabelProvider>
-                              </AuthProvider>
-                            </ErrorProvider>
-                          </I18nextProvider>
+                                            </ErrorBoundary>
+                                            <ErrorResetOnRouteChange />
+                                            <ToastContainer />
+                                            <OfflineIndicator />
+                                            <IntercomChat />
+                                          </AppLayout>
+                                        </ThemeProvider>
+                                      </AnalyticsProvider>
+                                    </CartProvider>
+                                  </WalletProvider>
+                                </LanguageProviderWrapper>
+                              </WhitelabelProvider>
+                            </AuthProvider>
+                          </ErrorProvider>
+                        </I18nextProvider>
                       </ReduxProvider>
                     </ApiErrorBoundary>
                   </QueryClientProvider>
