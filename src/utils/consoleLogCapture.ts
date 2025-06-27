@@ -48,3 +48,7 @@ export function initConsoleLogCapture() {
 export function getCapturedLogs(): ConsoleLogEntry[] {
   return [...logBuffer];
 }
+
+export function clearCapturedLogs() {
+  logBuffer.length = 0;
+}
