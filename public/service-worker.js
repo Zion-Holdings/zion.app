@@ -82,17 +82,6 @@ self.addEventListener('push', event => {
   const title = data.title || 'Zion Notification';
   const options = {
     body: data.body,
-    icon: '/logos/placeholder-logo.svg'
-  };
-  event.waitUntil(self.registration.showNotification(title, options));
-});
-
-// Handle Web Push notifications
-self.addEventListener('push', event => {
-  const data = event.data ? event.data.json() : {};
-  const title = data.title || 'New message';
-  const options = {
-    body: data.body,
     icon: '/logos/placeholder-logo.svg',
     data: data.url
   };
