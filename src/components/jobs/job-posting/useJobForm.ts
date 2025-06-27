@@ -10,7 +10,7 @@ import { useAuth } from "@/hooks/useAuth";
 
 import { logError } from "@/utils/productionLogger";
 
-export interface {
+export interface JobPostingProps {
   jobId?: string;
   
   onSuccess?: () => void;

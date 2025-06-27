@@ -75,7 +75,7 @@ interface MarketplaceErrorBoundaryProps {
 export function MarketplaceErrorBoundary({ children }: MarketplaceErrorBoundaryProps) {
   const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
     // Log boundary errors to Sentry
-    logError('MarketplaceErrorBoundary caught an error:', error, errorInfo);
+    logError('MarketplaceErrorBoundary caught an error:', error, { componentStack: errorInfo.componentStack });
     
     Sentry.withScope((scope) => {
       scope.setTag('errorBoundary', 'marketplace');
