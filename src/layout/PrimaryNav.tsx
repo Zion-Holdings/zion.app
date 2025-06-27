@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { logger } from '@/utils/logger';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Logo } from '@/components/header/Logo';
@@ -40,7 +41,7 @@ export function PrimaryNav() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      console.log('PrimaryNav search submit:', query);
+      logger.debug('PrimaryNav search submit:', query);
       router.push(`/search?q=${encodeURIComponent(query)}`);
       setQuery('');
     }
@@ -70,7 +71,7 @@ export function PrimaryNav() {
                 value={query}
                 onChange={setQuery}
                 onSelectSuggestion={(sugg) => {
-                  console.log('PrimaryNav search suggestion selected:', sugg);
+                  logger.debug('PrimaryNav search suggestion selected:', sugg);
                   // Handle different suggestion types with proper navigation
                   if (sugg.id) {
                     // Product listings with IDs go to product detail page
