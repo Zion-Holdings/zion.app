@@ -42,7 +42,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
     
     for (let attempt = 0; attempt <= config.maxRetries; attempt++) {
       try {
-        const result = await getServerSideProps(context);
+        const result = await (getServerSideProps as any)(context);
         
         // If we succeeded after retries, log the recovery
         if (attempt > 0) {
@@ -168,7 +168,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
     
     for (let attempt = 0; attempt <= config.maxRetries; attempt++) {
       try {
-        const result = await getStaticProps(context);
+        const result = await (getStaticProps as any)(context);
         
         // If we succeeded after retries, log the recovery
         if (attempt > 0) {

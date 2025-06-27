@@ -77,7 +77,7 @@ export default function TalentProfilePage() {
         description: "Please sign in to hire this talent.",
         variant: "default",
       });
-      router.push('/login', { state: { from: `/talent/${id}` } });
+      router.push(`/login?returnTo=${encodeURIComponent(`/talent/${id}`)}`);
       return;
     }
     setIsHireModalOpen(true);
@@ -90,7 +90,7 @@ export default function TalentProfilePage() {
         description: "Please sign in to message this talent.",
         variant: "default",
       });
-      router.push('/login', { state: { from: `/talent/${id}` } });
+      router.push(`/login?returnTo=${encodeURIComponent(`/talent/${id}`)}`);
       return;
     }
     setIsMessageModalOpen(true);

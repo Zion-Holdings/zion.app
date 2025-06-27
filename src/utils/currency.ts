@@ -14,7 +14,7 @@ export const exchangeRates: Record<string, number> = {
 };
 
 export function getCurrencyForLocale(locale: string): string {
-  const lang = locale.split('-')[0];
+  const lang = locale.split('-')[0] || 'en';
   return localeCurrencyMap[lang] || 'USD';
 }
 
