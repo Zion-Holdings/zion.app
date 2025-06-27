@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getWallet } from '@/api/wallet';
-import Spinner from '@/components/ui/spinner';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import type { TokenTransaction } from '@/types/tokens';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 interface WalletResponse {
@@ -33,7 +33,7 @@ const WalletDashboard = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center py-10">
-        <Spinner className="h-8 w-8 text-primary" />
+        <LoadingSpinner variant="primary" />
       </div>
     );
   }

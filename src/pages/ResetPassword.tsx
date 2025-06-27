@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react' // Added useEffect for router.isRead
 import { useRouter } from 'next/router' // Changed from useParams, useNavigate
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states'
 import { toast } from '@/hooks/use-toast'
 import { resetPassword } from '@/services/auth'
 
@@ -82,7 +83,16 @@ export default function ResetPassword() {
           value={confirm}
           onChange={(e) => setConfirm(e.target.value)}
         />
-        <Button type="submit" disabled={loading}>{loading ? 'Saving...' : 'Reset Password'}</Button>
+        <Button type="submit" disabled={loading}>
+          {loading ? (
+            <>
+              <LoadingSpinner size="sm" className="mr-2" />
+              Saving...
+            </>
+          ) : (
+            'Reset Password'
+          )}
+        </Button>
       </form>
     </div>
   )
