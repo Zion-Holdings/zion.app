@@ -138,10 +138,19 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
 
         if (ensuredProduct) {
           listing = {
-            ...ensuredProduct,
+            id: ensuredProduct.id,
+            title: ensuredProduct.name,
+            description: ensuredProduct.description,
+            price: ensuredProduct.price,
             currency: ensuredProduct.currency || 'USD',
-            author: ensuredProduct.author || { name: 'Unknown', id: 'unknown' },
             category: ensuredProduct.category || 'general',
+            tags: ensuredProduct.tags,
+            images: ensuredProduct.images,
+            rating: ensuredProduct.rating,
+            reviewCount: ensuredProduct.reviewCount,
+            createdAt: ensuredProduct.created_at,
+            author: { name: 'Unknown', id: 'unknown' },
+            availability: 'Available',
           } as ProductListing;
           Sentry.addBreadcrumb({ message: `Found product ${slug} via API direct ID match.` });
         } else {
