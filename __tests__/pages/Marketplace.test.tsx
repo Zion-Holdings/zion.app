@@ -201,10 +201,62 @@ describe('Marketplace Page', () => {
     expect(titles).toContain('Product Missing Date');
   });
 
-  // TODO: Add tests for filtering and sorting interactions
-  // Example:
-  // test('filters products by category', async () => { ... });
-  // test('sorts products by price', async () => { ... });
+  test('filters products by category', async () => {
+    const products: ProductListing[] = [
+      { id: 'p1', title: 'Model A', description: 'd', category: 'AI Models', price: 10, currency: 'USD', tags: [], author: { name: 'a', id: 'a' }, images: [], createdAt: new Date().toISOString() },
+      { id: 'p2', title: 'Hardware B', description: 'd', category: 'Hardware', price: 20, currency: 'USD', tags: [], author: { name: 'b', id: 'b' }, images: [], createdAt: new Date().toISOString() },
+    ];
+
+    server.use(
+      http.get('/api/products', () => {
+        return HttpResponse.json(products);
+      })
+    );
+
+    renderMarketplace();
+
+    await waitFor(() => {
+      expect(screen.getByText('Model A')).toBeInTheDocument();
+      expect(screen.getByText('Hardware B')).toBeInTheDocument();
+    });
+
+    const selects = screen.getAllByRole('combobox');
+    await userEvent.selectOptions(selects[0], 'Hardware');
+
+    await waitFor(() => {
+      expect(screen.queryByText('Model A')).not.toBeInTheDocument();
+      expect(screen.getByText('Hardware B')).toBeInTheDocument();
+    });
+  });
+
+  test('sorts products by price', async () => {
+    const products: ProductListing[] = [
+      { id: 'cheap', title: 'Cheap', description: 'd', category: 'AI Models', price: 5, currency: 'USD', tags: [], author: { name: 'a', id: 'a' }, images: [], createdAt: new Date().toISOString() },
+      { id: 'expensive', title: 'Expensive', description: 'd', category: 'AI Models', price: 100, currency: 'USD', tags: [], author: { name: 'b', id: 'b' }, images: [], createdAt: new Date().toISOString() },
+    ];
+
+    server.use(
+      http.get('/api/products', () => {
+        return HttpResponse.json(products);
+      })
+    );
+
+    renderMarketplace();
+
+    await waitFor(() => {
+      expect(screen.getByText('Cheap')).toBeInTheDocument();
+      expect(screen.getByText('Expensive')).toBeInTheDocument();
+    });
+
+    const selects = screen.getAllByRole('combobox');
+    await userEvent.selectOptions(selects[1], 'price-high');
+
+    await waitFor(() => {
+      const cards = screen.getAllByTestId('product-card');
+      expect(cards[0].textContent).toContain('Expensive');
+      expect(cards[1].textContent).toContain('Cheap');
+    });
+  });
 
   test('product cards link to valid product pages', async () => {
     const mockProducts: ProductListing[] = [

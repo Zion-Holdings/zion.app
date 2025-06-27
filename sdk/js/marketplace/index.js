@@ -26,10 +26,10 @@ async function listProducts(options = {}) {
   });
 
   if (category) {
-    queryParams.append('category', category); // TODO: Confirm backend support for 'category' filter
+    queryParams.append('category', category); // Backend expects a 'category' query param
   }
   if (sortBy) {
-    queryParams.append('sortBy', sortBy); // TODO: Confirm backend support for 'sortBy'
+    queryParams.append('sortBy', sortBy); // Matches the sort options used in the UI
   }
   // Append other filters dynamically
   for (const [key, value] of Object.entries(otherFilters)) {

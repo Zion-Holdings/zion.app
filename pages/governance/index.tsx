@@ -31,6 +31,7 @@ const GovernancePage: React.FC = () => {
         if (searchTerm) params.append('search', searchTerm);
         if (sortBy === 'newest') params.append('ordering', '-created_at');
         if (sortBy === 'expiring_soon') params.append('ordering', 'voting_ends_at');
+        if (sortBy === 'most_funded') params.append('ordering', '-funding_ask_amount');
 
         const query = params.toString() ? `?${params.toString()}` : '';
         const response = await fetch(`/api/governance/proposals/${query}`);
@@ -77,8 +78,10 @@ const GovernancePage: React.FC = () => {
         if (aDate === Infinity && bDate === Infinity) return 0; // both null, keep order
         return aDate - bDate;
       });
+    } else if (sortBy === 'most_funded') {
+      processedProposals.sort((a, b) => (b.funding_ask_amount || 0) - (a.funding_ask_amount || 0));
     }
-    // TODO: Add more sorting options like 'most_funded' if applicable
+
 
     return processedProposals;
   }, [proposals, statusFilter, typeFilter, sortBy, searchTerm]);
@@ -143,6 +146,7 @@ const GovernancePage: React.FC = () => {
               <SelectContent>
                 <SelectItem value="newest">Newest First</SelectItem>
                 <SelectItem value="expiring_soon">Expiring Soon</SelectItem>
+                <SelectItem value="most_funded">Most Funded</SelectItem>
               </SelectContent>
             </Select>
         </div>

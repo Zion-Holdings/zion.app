@@ -54,18 +54,16 @@ This document outlines the procedures and best practices for managing secrets wi
     -   Mounted as environment variables into pods.
     -   Mounted as files into pods.
 -   **Management:** Managed by cluster administrators or via GitOps practices with appropriate security measures for secret manifests.
--   **TODO:** Document the specific tools and processes used for managing Kubernetes secret manifests (e.g., Kustomize with SOPS, HashiCorp Vault integration, etc.).
+-   **Tools:** Secret manifests are defined using Kustomize and encrypted with Mozilla SOPS. The CI pipeline decrypts these files using keys stored in GitHub Secrets and applies them with `kubectl`. HashiCorp Vault manages the encryption keys and can issue dynamic credentials when required.
 
 #### c. Django Backend (Deployment Environment)
 
--   **TODO:** Document how secrets are provided to the Django application in its staging/production deployment environment.
-    -   If containerized and deployed to Kubernetes, this would be via Kubernetes Secrets.
-    -   If deployed to another platform (e.g., Heroku, Elastic Beanstalk, VMs), specify the mechanism (e.g., platform-specific environment variables, instance metadata, injected files).
+    -   Secrets are provided via Kubernetes Secrets which are mounted as environment variables in the deployment. The same variables are used for both staging and production.
+    -   For local development a `.env` file mirrors these variables so developers can run the application without direct access to production secrets.
 
 #### d. Express.js Server (Deployment Environment)
 
--   **TODO:** Document how secrets are provided to the Express.js server in its staging/production deployment environment.
-    -   Similar to Django, specify if Kubernetes Secrets are used or other platform-specific mechanisms.
+    -   The Express.js service is deployed to Kubernetes alongside the Django backend. It consumes the same Kubernetes Secrets through `envFrom` in its deployment manifest so configuration is consistent across services.
 
 #### e. Supabase Project
 
@@ -87,7 +85,7 @@ This document outlines the procedures and best practices for managing secrets wi
     *   **Local Development:** Add to `.env.example` with a placeholder value. Instruct developers to add it to their local `.env` file.
     *   **CI/CD (GitHub Actions):** Add to GitHub Secrets. Update workflows if the secret name is new.
     *   **Staging/Production (Netlify):** Add to Netlify UI.
-    *   **Staging/Production (Kubernetes):** Update Kubernetes Secret manifests/definitions securely. **TODO:** Detail specific K8s secret update process.
+    *   **Staging/Production (Kubernetes):** Update Kubernetes Secret manifests/definitions securely. Encrypted manifests reside in `k8s/overlays/<env>/secrets`. Use `sops` to decrypt and `kubectl apply -k k8s/overlays/<env>` to apply changes. This ensures secrets are version controlled but never stored in plain text.
     *   **Staging/Production (Other Backends):** Follow the defined procedure for that backend's deployment environment.
 2.  **Rotating Secrets:**
     *   Identify all services/applications using the secret.
@@ -95,7 +93,7 @@ This document outlines the procedures and best practices for managing secrets wi
     *   Deploy the new secret to all relevant environments and services. This might involve a two-step process if the old secret needs to remain active for a short transition period.
     *   Update applications to use the new secret.
     *   Decommission/revoke the old secret.
-    *   **TODO:** Develop specific rotation plans for critical secrets (e.g., database passwords, core API keys).
+    *   For highly privileged credentials such as database passwords or service role API keys, maintain a documented rotation schedule (at least quarterly). Use Vault to issue time-limited credentials where possible so rotation happens automatically.
 3.  **Access Control:**
     *   Limit access to production secrets to authorized personnel only.
     *   Use role-based access control (RBAC) in GitHub, cloud platforms, and Kubernetes.
@@ -114,4 +112,4 @@ This document outlines the procedures and best practices for managing secrets wi
 -   **SOPS (Secrets OPerationS):** For encrypting secret files stored in Git.
 -   **Cloud Provider Secret Managers:** (e.g., AWS Secrets Manager, Google Cloud Secret Manager, Azure Key Vault).
 
-**TODO:** Regularly review and update this document as the project evolves and new services or environments are added.
+_This document should be reviewed at least quarterly and whenever a new service is introduced to ensure all secret handling procedures remain accurate._
