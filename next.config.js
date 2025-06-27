@@ -185,7 +185,7 @@ const nextConfig = {
     '@libp2p/identify',
   ],
 
-  webpack: (config, { dev, isServer }) => {
+  webpack: (config, { dev, isServer, webpack }) => {
     // Suppress warnings in both dev and production
     config.ignoreWarnings = [
       /punycode.*deprecated/i,
@@ -195,13 +195,22 @@ const nextConfig = {
       /PackFileCacheStrategy/,
     ];
 
+    // Add Sentry tree shaking optimizations
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        __SENTRY_DEBUG__: JSON.stringify(!dev ? false : true),
+        __SENTRY_TRACING__: JSON.stringify(true),
+        __RRWEB_EXCLUDE_IFRAME__: JSON.stringify(true),
+        __RRWEB_EXCLUDE_SHADOW_DOM__: JSON.stringify(true),
+        __SENTRY_EXCLUDE_REPLAY_WORKER__: JSON.stringify(true),
+      })
+    );
+
     // Optimize serialization performance for both dev and production
     if (!isServer) {
+      // Only apply optimization settings that don't conflict with Next.js defaults
       config.optimization = {
         ...config.optimization,
-        // Improve serialization performance
-        usedExports: true,
-        sideEffects: false,
         splitChunks: {
           ...config.optimization.splitChunks,
           chunks: 'all',
@@ -244,13 +253,21 @@ const nextConfig = {
               reuseExistingChunk: true,
               maxSize: dev ? 500000 : 244000,
             },
+            sentry: {
+              test: /[\\/]node_modules[\\/]@sentry[\\/]/,
+              name: 'sentry',
+              priority: 30,
+              reuseExistingChunk: true,
+              maxSize: dev ? 500000 : 244000,
+            },
           },
         },
-        // Enable module concatenation for better tree shaking (production only)
-        concatenateModules: !dev,
-        // Minimize chunk names in production
-        moduleIds: dev ? 'named' : 'deterministic',
-        chunkIds: dev ? 'named' : 'deterministic',
+        // Only apply these optimizations in production to avoid conflicts
+        ...(dev ? {} : {
+          concatenateModules: true,
+          moduleIds: 'deterministic',
+          chunkIds: 'deterministic',
+        }),
       };
     }
 
