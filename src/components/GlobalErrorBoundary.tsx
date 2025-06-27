@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo } from '@/utils/productionLogger';
+import { logError } from '@/utils/logError';
 // Removed: import { useRouter } from 'next/router';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 import { sendErrorToBackend } from '@/utils/customErrorReporter';
@@ -35,7 +36,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
       const enqueueSnackbar = getEnqueueSnackbar();
       enqueueSnackbar(`Issue reported. Reference ID: ${id}`, { variant: 'success' });
     } catch (err) {
-      logError('Failed to show report confirmation:', { data: err });
+      logError(err, { context: 'Failed to show report confirmation' });
     }
   };
 
@@ -91,7 +92,10 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
 
   const handleError = (error: Error, info: React.ErrorInfo) => {
     logInfo("Detailed error info:", { name: error.name, message: error.message, stack: error.stack, componentStack: info.componentStack });
-    logError(`GlobalErrorBoundary caught an error from component: ${info.componentStack ? info.componentStack.split('\n')[0]?.replace('    at ', '') || 'Unknown component' : 'Unknown component'}:`, error, info);
+    logError(error, { 
+      componentStack: info.componentStack || undefined,
+      message: `GlobalErrorBoundary caught an error from component: ${info.componentStack ? info.componentStack.split('\n')[0]?.replace('    at ', '') || 'Unknown component' : 'Unknown component'}`
+    });
     // Modified: logError call to not depend on location from react-router-dom
     // You might want to get pathname via window.location.pathname if this is purely client-side,
     // or pass it down as a prop if needed from a Next.js context.
@@ -150,7 +154,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
         autoHideDuration: 5000,
       });
     } catch (e) {
-      logError('Error in enqueueSnackbar:', { data:  e });
+      logError(e, { context: 'Error in enqueueSnackbar' });
       // noop if snackbar itself fails
     }
   };

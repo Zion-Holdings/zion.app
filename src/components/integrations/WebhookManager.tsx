@@ -220,7 +220,7 @@ export function WebhookManager() {
                     <div>
                       <Label className="text-sm">Events</Label>
                       <div className="flex flex-wrap gap-2 mt-1">
-                        {webhook.event_types.map(event => (
+                        {webhook.event_types.map((event: WebhookEventType) => (
                           <ClickableBadge key={event} variant="secondary">
                             {eventOptions.find(e => e.value === event)?.label || event}
                           </ClickableBadge>

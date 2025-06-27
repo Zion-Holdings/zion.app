@@ -33,7 +33,7 @@ export class HydrationErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    logError('[HydrationErrorBoundary] Caught error:', error, errorInfo);
+    logError('[HydrationErrorBoundary] Caught error:', error, { componentStack: errorInfo.componentStack });
     
     // If it's a hydration error, try to recover by forcing a client-side render
     if (this.state.error?.message?.includes('hydrat')) {

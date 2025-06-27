@@ -25,7 +25,7 @@ export class EquipmentErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    logError('Equipment page error:', error, errorInfo);
+    logError('Equipment page error:', error, { componentStack: errorInfo.componentStack });
   }
 
   render() {

@@ -1,7 +1,6 @@
 import React, { SVGProps } from 'react';
-import {
 import { logWarn } from '@/utils/productionLogger';
-
+import {
   Home as LucideHome,
   Bot as LucideBot,
   Sparkles as LucideSparkles,
