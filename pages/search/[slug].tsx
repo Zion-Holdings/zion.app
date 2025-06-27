@@ -359,22 +359,20 @@ export default function SearchResultsPage({
             <ProductCard
               product={{
                 id: result.id,
+                name: result.title,
                 title: result.title,
                 description: result.description || '',
                 price: result.price || 0,
                 images: result.image ? [result.image] : [],
                 rating: result.rating || 0,
-                author: result.author
-                  ? {
-                      name: result.author.name,
-                      id: result.id,
-                      avatarUrl: result.author.avatar,
-                    }
-                  : { name: '', id: '' },
+                reviewCount: 0,
                 tags: result.tags || [],
                 category: result.category || '',
                 currency: '$',
-                createdAt: new Date().toISOString(),
+                created_at: new Date().toISOString(),
+                updated_at: new Date().toISOString(),
+                stock: (result as any).stock,
+                in_stock: ((result as any).stock || 0) > 0
               }}
             />
           </div>
