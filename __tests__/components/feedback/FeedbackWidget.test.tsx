@@ -1,20 +1,19 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
+import { useRouter } from 'next/router';
 import { FeedbackProvider } from '@/context/FeedbackContext';
 import { FeedbackWidget } from '@/components/feedback/FeedbackWidget';
 jest.mock('@/hooks/useAuth', () => ({ useAuth: () => ({ user: null }) }));
 
 function TestRoutes() {
-  const navigate = useNavigate();
+  const router = useRouter();
   return (
     <div>
-      <button onClick={() => navigate('/marketplace')}>Go</button>
-      <Routes>
-        <Route path="/" element={<div>Home</div>} />
-        <Route path="/marketplace" element={<div>Marketplace</div>} />
-      </Routes>
+      <button onClick={() => router.push('/marketplace')}>Go</button>
+      {router.pathname === '/' && <div>Home</div>}
+      {router.pathname === '/marketplace' && <div>Marketplace</div>}
     </div>
   );
 }
@@ -23,10 +22,10 @@ test('rating persists after navigation', async () => {
   const user = userEvent.setup();
   render(
     <FeedbackProvider>
-      <MemoryRouter initialEntries={["/"]}>
+      <MemoryRouterProvider>
         <TestRoutes />
         <FeedbackWidget />
-      </MemoryRouter>
+      </MemoryRouterProvider>
     </FeedbackProvider>
   );
 
