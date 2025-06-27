@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { logInfo } from '@/utils/productionLogger';
+
 // You might need to install a carousel library, e.g., react-responsive-carousel
 // import { Carousel } from 'react-responsive-carousel';
 // import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -38,7 +40,7 @@ const SlideEditor: React.FC<SlideEditorProps> = ({ initialSlides, onSlidesChange
 
   const handleRephrase = (index: number) => {
     // Placeholder for AI rephrase functionality
-    console.log(`Rephrasing slide ${index + 1}`);
+    logInfo(`Rephrasing slide ${index + 1}`);
     const currentSlide = slides[index];
     if (!currentSlide) return;
     // Example: append "(Rephrased)" to content

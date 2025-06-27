@@ -1,6 +1,8 @@
 // pages/sentry-test.tsx
 import React from 'react';
 import * as Sentry from '@sentry/nextjs';
+import { logError } from '@/utils/productionLogger';
+
 
 const SentryTestPage = () => {
   const handleClientError = () => {
@@ -81,7 +83,7 @@ export const getServerSideProps = async (context: any) => { // Added type for co
     // For testing, we want Sentry to capture it. Re-throwing is a common pattern.
     // However, since this is a test page, we might just log and return empty props
     // or props indicating an error occurred for the page to display.
-    console.error("Simulated error in getServerSideProps for sentry-test.tsx:", error);
+    logError('Simulated error in getServerSideProps for sentry-test.tsx:', { data: error });
     Sentry.captureException(error); // Manually capture exception
 
     // Optionally, set status code on response if available in context

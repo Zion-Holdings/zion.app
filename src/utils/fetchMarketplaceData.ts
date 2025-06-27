@@ -1,6 +1,8 @@
 import * as Sentry from '@sentry/nextjs';
 import { ProductListing } from '@/types/listings';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
+import { logError } from '@/utils/productionLogger';
+
 
 interface FetchMarketplaceDataOptions {
   limit?: number;
@@ -50,7 +52,7 @@ export async function fetchMarketplaceData(
 
     return data;
   } catch (error) {
-    console.error('Error fetching marketplace data:', error);
+    logError('Error fetching marketplace data:', { data: error });
     
     // Log to Sentry with context
     Sentry.withScope((scope) => {

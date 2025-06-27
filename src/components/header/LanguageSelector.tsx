@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
+import { logInfo, logError } from '@/utils/productionLogger';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,19 +15,19 @@ export function LanguageSelector() {
   const { currentLanguage, supportedLanguages, changeLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log('LanguageSelector: Rendered with currentLanguage:', currentLanguage);
-  console.log('LanguageSelector: Available languages:', supportedLanguages.map(l => l.code));
+  logInfo('LanguageSelector: Rendered with currentLanguage:', { data: currentLanguage });
+  logInfo('LanguageSelector: Available languages:', { data: supportedLanguages.map(l => l.code) });
 
   const currentFlag =
     supportedLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
 
   const handleLanguageChange = async (langCode: SupportedLanguage) => {
-    console.log('LanguageSelector: Language item clicked:', langCode);
+    logInfo('LanguageSelector: Language item clicked:', { data: langCode });
     try {
       await changeLanguage(langCode);
       setIsOpen(false);
     } catch (error) {
-      console.error('LanguageSelector: Error changing language:', error);
+      logError('LanguageSelector: Error changing language:', { data: error });
     }
   };
 

@@ -10,6 +10,8 @@ import { ResumeSelector, ResumeOption } from "../resume-selector";
 import { MessageTab } from "./MessageTab";
 import { ResumeTab } from "./ResumeTab";
 import { Job } from "./types";
+import { logError } from '@/utils/productionLogger';
+
 
 interface ApplyFormProps {
   job: Job;
@@ -107,7 +109,7 @@ export function ApplyForm({ job, onClose, onApplySuccess }: ApplyFormProps) {
       
       onClose();
     } catch (error) {
-      console.error("Failed to send application:", error);
+      logError('Failed to send application:', { data: error });
       toast({
         title: "Application failed",
         description: "There was an error sending your application. Please try again.",

@@ -1,6 +1,9 @@
+export type SupabaseClientType = typeof supabase; 
 import { initializeApp } from 'firebase/app';
 import { memoryLocalCache, Firestore, getFirestore } from 'firebase/firestore';
 import { getPerformance } from 'firebase/performance';
+import { logWarn } from '@/utils/productionLogger';
+
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -21,11 +24,10 @@ let db: Firestore;
 try {
   db = getFirestore(app);
 } catch (e) {
-  console.warn('Firestore storage unavailable, using memory cache.', e);
+  logWarn('Firestore storage unavailable, using memory cache.', { data:  e });
   db = getFirestore(app);
 }
 
 // Initialize Firebase Performance Monitoring
 const perf = getPerformance(app);
 
-export { db, perf };

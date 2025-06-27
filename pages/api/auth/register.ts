@@ -2,6 +2,8 @@ import { createClient } from '@supabase/supabase-js';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -49,7 +51,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   );
 
   try {
-    console.log('Attempting to create user with Supabase:', { email, name, userType });
+    logInfo('Attempting to create user with Supabase:', { email, name, userType });
 
     // Create user with Supabase Auth
     const { data, error } = await supabase.auth.signUp({
@@ -67,7 +69,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     if (error) {
-      console.error('Supabase signup error:', error);
+      logError('Supabase signup error:', { data: error });
       
       // Handle specific Supabase errors
       if (error.message?.includes('already registered')) {
@@ -90,7 +92,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       });
     }
 
-    console.log('Supabase signup successful:', { 
+    logInfo('Supabase signup successful:', { 
       userId: data.user?.id, 
       email: data.user?.email,
       needsVerification: !data.session 
@@ -101,11 +103,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     const appEnv = process.env.NEXT_PUBLIC_APP_ENV || 'production';
 
     if (emailVerificationRequired && data.user && (appEnv === 'development' || appEnv === 'staging')) {
-      console.log(`Auto-verifying email for user ${data.user.id} in ${appEnv} environment.`);
+      logInfo(`Auto-verifying email for user ${data.user.id} in ${appEnv} environment.`);
 
       // Ensure we have service role key for admin operations
       if (!ENV_CONFIG.supabase.serviceRoleKey) {
-        console.error('SUPABASE_SERVICE_ROLE_KEY is not configured. Cannot auto-verify email.');
+        logError('SUPABASE_SERVICE_ROLE_KEY is not configured. Cannot auto-verify email.');
         // Proceed without auto-verification, standard flow
         return res.status(201).json({
           message: 'Registration successful. Please check your email to verify your account. (Auto-verification skipped due to missing service key)',
@@ -127,7 +129,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       );
 
       if (adminUpdateError) {
-        console.error('Error auto-verifying email:', adminUpdateError);
+        logError('Error auto-verifying email:', { data: adminUpdateError });
         // If auto-verification fails, fall back to requiring manual verification
         return res.status(201).json({
           message: 'Registration successful. Please check your email to verify your account. (Auto-verification failed)',
@@ -139,7 +141,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           },
         });
       } else {
-        console.log(`Email for user ${data.user.id} auto-verified successfully.`);
+        logInfo(`Email for user ${data.user.id} auto-verified successfully.`);
         emailVerificationRequired = false; // Update status after successful auto-verification
         // The user object 'data.user' from signUp might not immediately reflect this change.
         // A fresh fetch of the user or session might be needed if exact up-to-date user object is returned.
@@ -179,7 +181,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
   } catch (error: any) {
-    console.error('Registration error:', error);
+    logError('Registration error:', { data: error });
     return res.status(500).json({ 
       error: 'Internal server error during registration',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined

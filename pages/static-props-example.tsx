@@ -1,4 +1,6 @@
 import React from 'react';
+import { logInfo, logWarn } from '@/utils/productionLogger';
+
 
 interface StaticPropsExamplePageProps {
   data: any[];
@@ -25,7 +27,7 @@ export async function getStaticProps() {
 
   // If no API URL is configured, use mock data (common during build)
   if (!API_URL) {
-    console.log("EXAMPLE_API_URL not defined. Using mock data for static-props-example page.");
+    logInfo("EXAMPLE_API_URL not defined. Using mock data for static-props-example page.");
     return { 
       props: { data: mockData },
       revalidate: 3600 // Revalidate every hour when deployed
@@ -41,7 +43,7 @@ export async function getStaticProps() {
     });
 
     if (!res.ok) {
-      console.warn(`API fetch failed with status ${res.status}, using mock data`);
+      logWarn(`API fetch failed with status ${res.status}, using mock data`);
       return { 
         props: { data: mockData },
         revalidate: 300 // Try again in 5 minutes
@@ -50,7 +52,7 @@ export async function getStaticProps() {
 
     const contentType = res.headers.get("content-type");
     if (!contentType || !contentType.includes("application/json")) {
-      console.warn(`Expected JSON but got ${contentType}, using mock data`);
+      logWarn(`Expected JSON but got ${contentType}, using mock data`);
       return { 
         props: { data: mockData },
         revalidate: 300
@@ -61,7 +63,7 @@ export async function getStaticProps() {
     
     // Validate data structure
     if (!Array.isArray(data)) {
-      console.warn("API returned invalid data structure, using mock data");
+      logWarn("API returned invalid data structure, using mock data");
       return { 
         props: { data: mockData },
         revalidate: 300
@@ -74,7 +76,7 @@ export async function getStaticProps() {
     };
   } catch (error: any) {
     // Gracefully handle all errors by falling back to mock data
-    console.warn('API fetch error, using mock data:', error?.message || error);
+    logWarn('API fetch error, using mock data:', { data: error?.message || error });
     return { 
       props: { data: mockData },
       revalidate: 300 // Retry in 5 minutes

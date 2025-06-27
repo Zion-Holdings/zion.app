@@ -1,6 +1,7 @@
 import { PrismaClient, type Product as ProductModel } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
+import * as Sentry from '@sentry/nextjs';
 
 interface ProductStats {
   avg: number | null;
@@ -9,9 +10,11 @@ interface ProductStats {
 
 const prisma = new PrismaClient();
 
-interface ProductStats {
-  avg: number | null;
-  count: number;
+interface ProductFilters {
+  category?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  search?: string;
 }
 
 type ProductWithStats = ProductModel & {
@@ -38,33 +41,64 @@ async function handler(
 
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  const page = parseInt(((req.query as any).page as string, 10) || 1;
-  const limit = parseInt(((req.query as any).limit as string, 10) || 20;
-  const skip = (page - 1) * limit;
-
   try {
-    let products: ProductModel[];
-    try {
-      console.log('Attempting to connect to database and fetch products...');
-      products = await prisma.product.findMany({ skip, take: limit });
-      console.log('Successfully fetched products from database.');
-      console.log('Fetched products:', products);
-    } catch (e: any) {
-      // Logging detailed Prisma error including message, code, meta, and stack for findMany operation.
-      console.error(
-        'Error during database operation [prisma.product.findMany]:',
-        {
-          message: e.message,
-          code: e.code, // Prisma-specific error code
-          meta: e.meta, // Additional metadata about the error
-          stack: e.stack, // Call stack
-          fullError: e, // The complete error object
-        },
-        { queryParams: { skip, limit } } // Relevant query parameters for context
-      );
-      // Re-throw the error to be caught by the outer catch block
-      throw e;
+    const page = parseInt((req.query.page as string) || '1', 10);
+    const limit = parseInt((req.query.limit as string) || '20', 10);
+    const skip = (page - 1) * limit;
+
+    const filters: ProductFilters = {
+      category: String(req.query.category || '').toLowerCase().trim() || undefined,
+      minPrice: req.query.minPrice ? parseFloat(req.query.minPrice as string) : undefined,
+      maxPrice: req.query.maxPrice ? parseFloat(req.query.maxPrice as string) : undefined,
+      search: String(req.query.search || '').toLowerCase().trim() || undefined,
+    };
+
+    // Build where clause
+    const where: any = {};
+    
+    if (filters.category) {
+      where.category = filters.category;
     }
+    
+    if (filters.minPrice !== undefined || filters.maxPrice !== undefined) {
+      where.price = {};
+      if (filters.minPrice !== undefined) {
+        where.price.gte = filters.minPrice;
+      }
+      if (filters.maxPrice !== undefined) {
+        where.price.lte = filters.maxPrice;
+      }
+    }
+    
+    if (filters.search) {
+      where.OR = [
+        { name: { contains: filters.search, mode: 'insensitive' } },
+        { description: { contains: filters.search, mode: 'insensitive' } },
+      ];
+    }
+
+    const [products, totalCount] = await Promise.all([
+      prisma.product.findMany({
+        where,
+        skip,
+        take: limit,
+        orderBy: {
+          createdAt: 'desc',
+        },
+        select: {
+          id: true,
+          name: true,
+          description: true,
+          price: true,
+          currency: true,
+          category: true,
+          tags: true,
+          images: true,
+          createdAt: true,
+        },
+      }),
+      prisma.product.count({ where }),
+    ]);
 
     const ids = products.map((p) => p.id);
 
@@ -110,7 +144,13 @@ async function handler(
       };
     });
 
-    return res.status(200).json(result);
+    return res.status(200).json({
+      products,
+      totalCount,
+      page,
+      limit,
+      hasMore: skip + limit < totalCount,
+    });
   } catch (e: any) {
     // Inner try-catch blocks are responsible for logging specific Prisma errors with detailed context.
     // This outer catch block handles any other generic errors that might occur,
@@ -124,6 +164,7 @@ async function handler(
         fullError: e,       // The complete error object for comprehensive analysis
       }
     );
+    Sentry.captureException(e);
     return res
       .status(500)
       .json({ error: 'Internal server error while fetching products.', details: e.message || 'An unexpected error occurred.' });

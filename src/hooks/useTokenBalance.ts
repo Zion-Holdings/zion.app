@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
+import { logError } from '@/utils/productionLogger';
+
 
 const ERC20_ABI = [
   'function balanceOf(address owner) view returns (uint256)',
@@ -32,7 +34,7 @@ export function useTokenBalance(
           setBalance(ethers.formatUnits(rawBalance, decimals));
         }
       } catch (err) {
-        console.error('useTokenBalance: failed to fetch balance', err);
+        logError('useTokenBalance: failed to fetch balance', { data: err });
         if (!isStale) setBalance(null);
       }
     }

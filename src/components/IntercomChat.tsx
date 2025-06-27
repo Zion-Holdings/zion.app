@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { logInfo, logWarn } from '@/utils/productionLogger';
+
 
 declare global {
   interface Window {
@@ -7,10 +9,37 @@ declare global {
   }
 }
 
+// Known placeholder/invalid Intercom App IDs
+const INVALID_INTERCOM_APP_IDS = [
+  'your_intercom_app_id_here',
+  'your_app_id_here',
+  'placeholder',
+  'test',
+  'demo',
+];
+
+function isValidIntercomAppId(appId: string | undefined): boolean {
+  if (!appId) return false;
+  if (INVALID_INTERCOM_APP_IDS.includes(appId.toLowerCase())) return false;
+  // Basic format check for Intercom App IDs (usually 8-character alphanumeric)
+  return /^[a-zA-Z0-9]{6,}$/.test(appId);
+}
+
 export default function IntercomChat() {
   useEffect(() => {
     const appId = process.env.NEXT_PUBLIC_INTERCOM_APP_ID;
-    if (!appId) return;
+    
+    // Validate App ID before attempting to initialize
+    if (!isValidIntercomAppId(appId)) {
+      if (process.env.NODE_ENV === 'development') {
+        logWarn('Intercom: Invalid or placeholder App ID detected. Intercom chat disabled.', { data:  { appId } });
+      }
+      return;
+    }
+
+    if (process.env.NODE_ENV === 'development') {
+      logInfo('Intercom: Initializing with App ID:', appId?.substring(0, 4) + '****');
+    }
 
     window.intercomSettings = { app_id: appId };
 

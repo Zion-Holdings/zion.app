@@ -9,6 +9,8 @@ import { noise } from '@chainsafe/libp2p-noise';
 import { yamux } from '@chainsafe/libp2p-yamux';
 import { MemoryBlockstore } from 'blockstore-core/memory';
 import { MemoryDatastore } from 'datastore-core/memory';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 // Types for OrbitDB and its stores might be needed from @orbitdb/core if used directly
 // import { LogStore } from '@orbitdb/core';
@@ -32,74 +34,74 @@ const libp2pOptions = {
 
 export async function initOrbit(repoPath = './orbitdb-helia') {
   if (orbit) {
-    console.log('OrbitDB already initialized.');
+    logInfo('OrbitDB already initialized.');
     return;
   }
 
   try {
-    console.log('Initializing Libp2p...');
+    logInfo('Initializing Libp2p...');
     libp2pNode = await createLibp2p(libp2pOptions);
-    console.log('Libp2p Initialized. PeerID:', libp2pNode.peerId.toString());
+    logInfo('Libp2p Initialized. PeerID:', { data: libp2pNode.peerId.toString( }));
 
     // Log listening addresses
     libp2pNode.getMultiaddrs().forEach((addr) => {
-      console.log('Listening on:', addr.toString());
+      logInfo('Listening on:', { data: addr.toString( }));
     });
 
     // Listen for new connections
     libp2pNode.addEventListener('peer:connect', (evt) => {
-      console.log('Peer connected:', evt.detail.toString());
+      logInfo('Peer connected:', { data: evt.detail.toString( }));
     });
 
-    console.log('Initializing Helia...');
+    logInfo('Initializing Helia...');
     const blockstore = new MemoryBlockstore(); // Ephemeral blockstore for Helia
     heliaNode = await createHelia({
       libp2p: libp2pNode,
       blockstore: blockstore, // Use an appropriate blockstore
       datastore: new MemoryDatastore(), // Helia also needs a datastore
     });
-    console.log('Helia Initialized.');
+    logInfo('Helia Initialized.');
 
-    console.log('Creating OrbitDB instance...');
+    logInfo('Creating OrbitDB instance...');
     // OrbitDB constructor might take Helia instance directly as 'ipfs'
     // The id option can be used to give a specific identity to this OrbitDB instance
     orbit = await createOrbitDB({ ipfs: heliaNode, directory: repoPath });
-    console.log('OrbitDB instance created. OrbitDB ID:', orbit.id);
+    logInfo('OrbitDB instance created. OrbitDB ID:', { data: orbit.id });
   } catch (error) {
-    console.error('Error initializing OrbitDB:', error);
+    logError('Error initializing OrbitDB:', { data: error });
     throw error;
   }
 }
 
 export async function getLog(name: string): Promise<any> { // Replace 'any' with specific OrbitDB LogStore type
   if (!orbit) {
-    console.log('OrbitDB not initialized. Initializing now...');
+    logInfo('OrbitDB not initialized. Initializing now...');
     await initOrbit();
   }
   if (!orbit) {
     throw new Error('OrbitDB initialization failed.');
   }
-  console.log(`Opening log store: ${name}`);
+  logInfo(`Opening log store: ${name}`);
   // Types for store options might be needed
   return orbit.log(name, { /* options if any, e.g., accessController */ });
 }
 
 export async function stopOrbit() {
-  console.log('Stopping OrbitDB...');
+  logInfo('Stopping OrbitDB...');
   if (orbit) {
     await orbit.stop();
     orbit = null;
-    console.log('OrbitDB stopped.');
+    logInfo('OrbitDB stopped.');
   }
   if (heliaNode) {
     await heliaNode.stop();
     heliaNode = null;
-    console.log('Helia stopped.');
+    logInfo('Helia stopped.');
   }
   if (libp2pNode) {
     await libp2pNode.stop();
     libp2pNode = null;
-    console.log('Libp2p stopped.');
+    logInfo('Libp2p stopped.');
   }
 }
 

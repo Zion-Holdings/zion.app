@@ -13,6 +13,8 @@ import { AlertCircle, CheckCircle, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import Head from 'next/head';
 import { AuthLayout } from '@/layout';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 const SignupSchema = Yup.object({
   name: Yup.string().required('Name is required'),
@@ -53,7 +55,7 @@ export default function Signup() {
         setHealthCheckError('Authentication service is experiencing issues');
       }
     } catch (err: any) {
-      console.error('Auth service health check failed', err);
+      logError('Auth service health check failed', { data: err });
       setAuthServiceAvailable(false);
       // Set a more specific error message based on the error type
       if (err.code === 'NETWORK_ERROR' || err.message?.includes('Network Error')) {
@@ -82,7 +84,7 @@ export default function Signup() {
     },
     validationSchema: SignupSchema,
     onSubmit: async (values, { setErrors }) => {
-      console.log('Form submission started with:', { 
+      logInfo('Form submission started with:', { 
         name: values.name, 
         email: values.email,
         hasPassword: !!values.password,
@@ -109,14 +111,14 @@ export default function Signup() {
           })
         };
         
-        console.log('Making API request to /api/auth/register with:', { 
+        logInfo('Making API request to /api/auth/register with:', { 
           ...requestData, 
           password: '[REDACTED]' 
         });
         
         const res = await axios.post('/api/auth/register', requestData);
         
-        console.log('API response received:', { 
+        logInfo('API response received:', { 
           status: res.status, 
           data: res.data 
         });
@@ -159,7 +161,7 @@ export default function Signup() {
           }
         }
       } catch (err: any) {
-        console.error('Signup error details:', {
+        logError('Signup error details:', {
           message: err.message,
           response: err.response ? {
             status: err.response.status,
@@ -177,7 +179,7 @@ export default function Signup() {
         // Try both 'error' and 'message' fields for compatibility
         const errorMsg = err.response?.data?.error || err.response?.data?.message || 'Signup failed. Please try again.';
         
-        console.log('Processed error message:', errorMsg);
+        logInfo('Processed error message:', { data: errorMsg });
         
         if (status === 409) {
           // Handle duplicate email specifically
@@ -219,7 +221,7 @@ export default function Signup() {
           });
         }
       } finally {
-        console.log('Form submission completed, setting loading to false');
+        logInfo('Form submission completed, setting loading to false');
         setLoading(false);
       }
     }

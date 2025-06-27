@@ -4,8 +4,10 @@ import { CartState } from './cartSlice';
 import { default as wishlistReducer, WishlistState } from './wishlistSlice';
 import authReducer from './authSlice';
 import { safeStorage } from '@/utils/safeStorage';
+import { logWarn } from '@/utils/productionLogger';
 
 export const store = configureStore({
+
   reducer: {
     cart: cartReducer,
     wishlist: wishlistReducer,
@@ -56,7 +58,7 @@ store.subscribe(() => {
       }
     }
   } catch (error) {
-    console.warn('Store subscription error (throttled):', error);
+    logWarn('Store subscription error (throttled):', { data: error });
   }
 });
 

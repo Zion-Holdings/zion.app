@@ -31,7 +31,8 @@ export const initPostHog = () => {
       const methods = ['capture','identify','alias','people.set','people.set_once','people.unset','people.increment','people.append','people.delete_property','people.remove'];
       a.people = a.people || {};
       for (let i = 0; i < methods.length; i++) {
-        a[methods[i]] = p(methods[i]);
+        const method = methods[i]!; // Non-null assertion since we're within array bounds
+        a[method] = p(method);
       }
       a._i.push([k, opts]);
       const s = c.createElement('script');

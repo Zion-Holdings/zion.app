@@ -9,8 +9,10 @@ import { PageViewsChart } from "@/components/analytics/PageViewsChart";
 import { ConversionAnalysisChart } from "@/components/analytics/ConversionAnalysisChart";
 import { FeatureUsageChart } from "@/components/analytics/FeatureUsageChart";
 import { ExportPanel } from "@/components/analytics/ExportPanel";
+import { logError } from '@/utils/productionLogger';
 
 export default function Analytics() {
+
   const [timeRange, setTimeRange] = useState('30d');
   
   const { data: pageViewTrends } = useQuery({
@@ -118,7 +120,7 @@ export default function Analytics() {
       });
 
       if (error) {
-        console.error('Error fetching feature usage:', error);
+        logError('Error fetching feature usage:', { data: error });
         // fallback query
         const startDate = new Date();
         startDate.setDate(startDate.getDate() - days);

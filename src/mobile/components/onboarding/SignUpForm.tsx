@@ -9,8 +9,10 @@ import { useAuth } from "@/context/auth/AuthProvider";
 import { AlertCircle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
+import { logError } from '@/utils/productionLogger';
 
 export function SignUpForm() {
+
   const router = useRouter();
   const { signUp, login, loginWithGoogle } = useAuth();
   
@@ -69,7 +71,7 @@ export function SignUpForm() {
         router.push("/mobile");
       }
     } catch (err: any) {
-      console.error('Signup/Login error:', err);
+      logError('Signup/Login error:', { data: err });
       setError(err.message || 'An unexpected error occurred. Please try again.');
     } finally {
       setIsLoading(false);

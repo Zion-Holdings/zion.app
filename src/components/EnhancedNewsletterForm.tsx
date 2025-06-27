@@ -3,8 +3,10 @@ import { Input } from "@/components/ui/input";
 import { useState, useRef } from "react";
 import { Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { logError } from '@/utils/productionLogger';
 
 export function EnhancedNewsletterForm() {
+
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -46,11 +48,11 @@ export function EnhancedNewsletterForm() {
         setEmail("");
       } else {
         // Handle error responses
-        console.error('Newsletter subscription failed:', data);
+        logError('Newsletter subscription failed:', { data: data });
         toast.error(data.error || "Subscription failed. Please try again.");
       }
     } catch (err: any) {
-      console.error('Newsletter subscription error:', err);
+      logError('Newsletter subscription error:', { data: err });
       toast.error("Unable to subscribe right now. Please try again later.");
     } finally {
       setIsSubmitting(false);
@@ -76,13 +78,18 @@ export function EnhancedNewsletterForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-2">
+          <label htmlFor="enhanced-newsletter-email" className="sr-only">
+            Email address for newsletter subscription
+          </label>
           <Input
             type="email"
+            id="enhanced-newsletter-email"
             name="email"
             placeholder="Enter your email"
             className="flex-grow bg-zion-blue-dark text-white border-zion-purple/20 focus:border-zion-purple focus:ring-zion-purple"
             value={email}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+            autoComplete="email"
             required
           />
           <Button 

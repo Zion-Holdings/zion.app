@@ -8,6 +8,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { toast } from '@/components/ui/use-toast';
 import {
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -45,8 +47,8 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('[ContactForm] handleSubmit triggered.');
-    console.log('[ContactForm] formData:', formData);
+    logInfo('[ContactForm] handleSubmit triggered.');
+    logInfo('[ContactForm] formData:', { data: formData });
 
     const schema = z.object({
       name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -55,7 +57,7 @@ export default function Contact() {
     });
 
     const result = schema.safeParse(formData);
-    console.log('[ContactForm] Zod validation result:', result);
+    logInfo('[ContactForm] Zod validation result:', { data: result });
 
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
@@ -66,7 +68,7 @@ export default function Contact() {
       }
       setErrors(fieldErrors);
       const validationErrorMsg = result.error.errors[0]?.message || 'Please check your form and try again';
-      console.warn('[ContactForm] Validation failed:', validationErrorMsg, result.error.flatten().fieldErrors);
+      logWarn('[ContactForm] Validation failed:', validationErrorMsg, result.error.flatten().fieldErrors);
       toast({
         title: 'Form Validation Error',
         description: validationErrorMsg,
@@ -77,7 +79,7 @@ export default function Contact() {
 
     setErrors({});
     setIsSubmitting(true);
-    console.log('[ContactForm] Starting form submission (fetch to /api/contact).');
+    logInfo('[ContactForm] Starting form submission (fetch to /api/contact).');
 
     try {
       fetch('/api/contact', {
@@ -86,9 +88,9 @@ export default function Contact() {
         body: JSON.stringify(formData),
       })
         .then(async (res) => {
-          console.log('[ContactForm] API response status:', res.status);
+          logInfo('[ContactForm] API response status:', { data: res.status });
           const responseBody = await res.text(); // Read as text first to avoid JSON parse error if not JSON
-          console.log('[ContactForm] API response body:', responseBody);
+          logInfo('[ContactForm] API response body:', { data: responseBody });
 
           // Note: setIsSubmitting(false) is called within then/catch of the promise.
           // If fetch itself or .then/.catch structure has a synchronous error,
@@ -99,15 +101,15 @@ export default function Contact() {
             try {
               errorData = JSON.parse(responseBody);
             } catch (parseError) {
-              console.warn('[ContactForm] Could not parse error response as JSON.', parseError);
+              logWarn('[ContactForm] Could not parse error response as JSON.', { data: parseError });
             }
-            console.error('[ContactForm] API error response:', errorData);
+            logError('[ContactForm] API error response:', { data: errorData });
             // This throw will be caught by the .catch block below
             throw new Error(errorData.error || 'Failed to send message');
           }
 
           setIsSubmitting(false); // Moved here for success path
-          console.log('[ContactForm] Message submission successful.');
+          logInfo('[ContactForm] Message submission successful.');
           toast({
             title: 'Message Sent',
             description:
@@ -119,7 +121,7 @@ export default function Contact() {
         })
         .catch((err) => {
           // This catches errors from the fetch promise (network, res.ok is false, or manual throw)
-          console.error('[ContactForm] Fetch promise chain error:', err);
+          logError('[ContactForm] Fetch promise chain error:', { data: err });
           setIsSubmitting(false);
           toast({
             title: 'Submission Error',
@@ -130,7 +132,7 @@ export default function Contact() {
     } catch (error) {
       // This catches synchronous errors that might occur when initiating fetch or in its direct vicinity
       // if not caught by the promise's .catch (less common for typical fetch issues but good for safety)
-      console.error('[ContactForm] Synchronous error during fetch initiation or processing:', error);
+      logError('[ContactForm] Synchronous error during fetch initiation or processing:', { data: error });
       setIsSubmitting(false);
       toast({
         title: 'Critical Submission Error',

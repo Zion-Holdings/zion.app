@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { 
+import { logError } from '@/utils/productionLogger';
+
   getTalentRateSuggestion, 
   PricingSuggestion,
   TalentRateParams,
@@ -46,7 +48,7 @@ export const TalentRateRecommender: React.FC<TalentRateRecommenderProps> = ({
       const result = await getTalentRateSuggestion(params);
       setSuggestion(result);
     } catch (error) {
-      console.error("Error generating rate suggestion:", error);
+      logError('Error generating rate suggestion:', { data: error });
     } finally {
       setIsLoading(false);
     }

@@ -1,7 +1,9 @@
 // src/config/env.ts
 import getConfig from 'next/config';
+import { logWarn } from '@/utils/productionLogger';
 
 export const getAppKitProjectId = (): string => {
+
   const { publicRuntimeConfig } = getConfig();
   const projectId = publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID;
 
@@ -11,7 +13,7 @@ export const getAppKitProjectId = (): string => {
 
   // Return a specific fallback or throw an error if the project ID is critical and not set.
   // Using a console warning and a non-functional fallback for now.
-  console.warn("Warning: NEXT_PUBLIC_REOWN_PROJECT_ID is not set or is a placeholder. Using fallback.");
+  logWarn("Warning: NEXT_PUBLIC_REOWN_PROJECT_ID is not set or is a placeholder. Using fallback.");
   return 'YOUR_DEFAULT_PROJECT_ID_FALLBACK'; // Or consider throwing an error
 };
 
@@ -23,6 +25,6 @@ export const getSupportEmail = (): string => {
     return supportEmail;
   }
 
-  console.warn("Warning: NEXT_PUBLIC_SUPPORT_EMAIL is not set or is a placeholder. Using fallback 'support@example.com'.");
+  logWarn("Warning: NEXT_PUBLIC_SUPPORT_EMAIL is not set or is a placeholder. Using fallback 'support@example.com'.");
   return 'support@example.com';
 };

@@ -11,6 +11,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
+import { logError } from '@/utils/productionLogger';
+
 
 const partnerFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -125,7 +127,7 @@ export function PartnerRegistrationForm() {
       }
 
     } catch (error: any) {
-      console.error('Error submitting partner application:', error);
+      logError('Error submitting partner application:', { data: error });
       toast({
         title: "Submission failed",
         description: error.message || "There was a problem submitting your application.",

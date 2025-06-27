@@ -1,6 +1,8 @@
 import { toast } from '@/hooks/use-toast';
 import { logError } from './logError';
 import { isPublicRoute } from '../config/publicRoutes';
+import { logDebug } from '@/utils/productionLogger';
+
 
 if (typeof window !== "undefined" && window.fetch) {
   const originalFetch = window.fetch.bind(window);
@@ -93,7 +95,7 @@ if (typeof window !== "undefined" && window.fetch) {
           // (which could be due to it being a silent URL or a public auth error)
           if (!shouldFailSilently(url) && !((response.status === 401 || response.status === 403) && isPublicRoute(url))) {
             // Log only if not already logged by the isPublicRoute check inside shouldShowErrorToUser
-            console.debug(`GlobalFetchInterceptor: Error not shown to user (${response.status}): ${url}`);
+            logDebug(`GlobalFetchInterceptor: Error not shown to user (${response.status}): ${url}`);
           }
           return response;
         }

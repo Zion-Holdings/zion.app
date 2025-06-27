@@ -8,8 +8,10 @@ import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { logError } from '@/utils/productionLogger';
 
 export function ITServiceRequestHero() {
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -56,7 +58,7 @@ export function ITServiceRequestHero() {
         setDetails("");
       }
     } catch (err: any) {
-      console.error(err);
+      logError(err);
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your request.",

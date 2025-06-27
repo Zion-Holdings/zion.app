@@ -1,6 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
+import { logWarn, logError } from '@/utils/productionLogger';
+
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -39,7 +41,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           }
         }
       } catch (authError) {
-        console.warn('Auth validation failed, proceeding with provided email:', authError);
+        logWarn('Auth validation failed, proceeding with provided email:', { data: authError });
       }
     }
 
@@ -60,7 +62,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     if (resendError) {
-      console.error('Failed to resend verification email:', resendError);
+      logError('Failed to resend verification email:', { data: resendError });
       return res.status(500).json({ 
         error: 'Failed to resend verification email',
         details: resendError.message 
@@ -72,7 +74,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
   } catch (error) {
-    console.error('Error in resend verification email API:', error);
+    logError('Error in resend verification email API:', { data: error });
     return res.status(500).json({ 
       error: 'Internal server error',
       details: error instanceof Error ? error.message : 'Unknown error'

@@ -9,8 +9,10 @@ import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import { useRouter } from 'next/router'; // Changed from react-router-dom
+import { logError } from '@/utils/productionLogger';
 
 export default function MessagingInbox() {
+
   const { 
     conversations, 
     activeConversation, 
@@ -29,7 +31,7 @@ export default function MessagingInbox() {
       try {
         await fetchConversations();
       } catch (error) {
-        console.error("Failed to load conversations:", error);
+        logError('Failed to load conversations:', { data: error });
         toast.error("Failed to load messages. Please try again.");
       }
     };

@@ -16,6 +16,8 @@ import { addItem } from '@/store/cartSlice';
 import { toast } from '@/hooks/use-toast';
 import { getBreadcrumbsForPath } from '@/utils/routeUtils';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { AppLayout } from '@/layout/AppLayout';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -135,16 +137,33 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
 
       if (productFromApi && validateProductData(productFromApi)) {
         const ensuredProduct = ensureProductIntegrity([productFromApi])[0];
-        listing = {
-          ...ensuredProduct,
-          currency: ensuredProduct.currency || 'USD',
-          author: ensuredProduct.author || { name: 'Unknown', id: 'unknown' },
-          category: ensuredProduct.category || 'general',
-        } as ProductListing;
-        Sentry.addBreadcrumb({ message: `Found product ${slug} via API direct ID match.` });
+
+        if (ensuredProduct) {
+          listing = {
+            id: (ensuredProduct as any).id || slug,
+            title: (ensuredProduct as any).name || (ensuredProduct as any).title,
+            description: (ensuredProduct as any).description,
+            price: (ensuredProduct as any).price,
+            currency: (ensuredProduct as any).currency || 'USD',
+            category: (ensuredProduct as any).category || 'general',
+            tags: (ensuredProduct as any).tags,
+            images: (ensuredProduct as any).images,
+            rating: (ensuredProduct as any).rating,
+            reviewCount: (ensuredProduct as any).reviewCount,
+            createdAt: (ensuredProduct as any).created_at,
+            author: { name: 'Unknown', id: 'unknown' },
+            availability: 'Available',
+          } as ProductListing;
+          Sentry.addBreadcrumb({ message: `Found product ${slug} via API direct ID match.` });
+        } else {
+          // Handle case where product cannot be ensured
+          return {
+            notFound: true,
+          };
+        }
       }
     } catch (apiError) {
-      console.warn(`API fetch for product ${slug} (attempting ID match) failed:`, apiError);
+      logWarn('API fetch for product ${slug} (attempting ID match) failed:', { data: apiError });
       Sentry.captureMessage(`API fetch for product ${slug} (attempting ID match) failed`, { extra: { error: apiError } });
     }
 
@@ -190,7 +209,7 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
     }
     
     if (!listing) {
-      console.log(`Listing not found for slug: ${slug}`);
+      logInfo(`Listing not found for slug: ${slug}`);
       Sentry.captureMessage(`Listing not found for slug: ${slug}`, { level: 'warning' });
       return { notFound: true };
     }
@@ -199,7 +218,7 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
 
   } catch (error) {
     Sentry.captureException(error);
-    console.error(`Critical error in getServerSideProps for marketplace listing ${slug}:`, error);
+    logError('Critical error in getServerSideProps for marketplace listing ${slug}:', { data: error });
     return { notFound: true }; // Ensure 404 for any unhandled errors
   }
 };

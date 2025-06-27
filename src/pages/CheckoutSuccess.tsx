@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import * as NextNavigation from 'next/navigation';
 import Link from 'next/link';
+import { logError } from '@/utils/productionLogger';
+
 
 interface Session {
   id: string;
@@ -26,7 +28,7 @@ export default function CheckoutSuccess() {
     })
       .then(res => res.json())
       .then(data => setSession(data.session as Session))
-      .catch(err => console.error('Failed to load session', err));
+      .catch(err => logError('Failed to load session', { data: err }));
   }, [searchParams]);
 
   if (!session) {

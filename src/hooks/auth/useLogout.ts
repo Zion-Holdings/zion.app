@@ -2,8 +2,10 @@
 import { supabase } from "@/integrations/supabase/client";
 import { cleanupAuthState } from "@/utils/authUtils";
 import type { UserDetails } from "@/types/auth";
+import { logWarn, logError } from '@/utils/productionLogger';
 
 export const useLogout = (setUser: (user: UserDetails | null) => void) => {
+
   const logout = async () => {
     try {
       // Clean up existing auth state
@@ -16,13 +18,13 @@ export const useLogout = (setUser: (user: UserDetails | null) => void) => {
       try {
         await fetch('/api/auth/logout', { method: 'POST' });
       } catch (cookieErr) {
-        console.warn('useLogout: Failed to clear auth cookie', cookieErr);
+        logWarn('useLogout: Failed to clear auth cookie', { data: cookieErr });
       }
 
       // Update state
       setUser(null);
     } catch (error) {
-      console.error("Error during logout:", error);
+      logError('Error during logout:', { data: error });
     }
   };
 

@@ -1,4 +1,6 @@
 import React, { ErrorInfo, ReactNode } from 'react';
+import { logWarn, logError } from '@/utils/productionLogger';
+
 
 interface Props {
   children: ReactNode;
@@ -24,14 +26,14 @@ export class HydrationErrorBoundary extends React.Component<Props, State> {
       error.message?.includes('mismatch');
 
     if (isHydrationError) {
-      console.warn('[HydrationErrorBoundary] Hydration mismatch detected, forcing client-side render');
+      logWarn('[HydrationErrorBoundary] Hydration mismatch detected, forcing client-side render');
     }
 
     return { hasError: true, error };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('[HydrationErrorBoundary] Caught error:', error, errorInfo);
+    logError('[HydrationErrorBoundary] Caught error:', error, errorInfo);
     
     // If it's a hydration error, try to recover by forcing a client-side render
     if (this.state.error?.message?.includes('hydrat')) {

@@ -12,9 +12,11 @@ import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus
 import { useCommunity } from "@/context";
 import type { ForumCategory } from "@/types/community";
 import { logError } from "@/utils/logError";
+import { logInfo } from '@/utils/productionLogger';
 
 export default function CommunityPage() {
-  console.log('CommunityPage rendering');
+
+  logInfo('CommunityPage rendering');
   const { user } = useAuth();
   const { featuredPosts, recentPosts } = useCommunity();
   const [activeTab, setActiveTab] = useState("categories");
@@ -66,9 +68,9 @@ export default function CommunityPage() {
     }
   };
 
-  console.log('CommunityPage featuredPosts:', featuredPosts);
-  console.log('CommunityPage recentPosts:', recentPosts);
-  console.log('CommunityPage activeTab:', activeTab);
+  logInfo('CommunityPage featuredPosts:', { data: featuredPosts });
+  logInfo('CommunityPage recentPosts:', { data: recentPosts });
+  logInfo('CommunityPage activeTab:', { data: activeTab });
   
   if (!featuredPosts || !recentPosts) {
     logError(new Error('CommunityPage: Posts data is missing from context!'), { message: 'CommunityPage: Posts data is missing from context!' });

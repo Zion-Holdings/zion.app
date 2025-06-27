@@ -2,13 +2,15 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { logError } from '@/utils/productionLogger';
+
 
 const NotFound = () => {
   const router = useRouter();
   const { t } = useTranslation();
 
   useEffect(() => {
-    console.error(
+    logError(
       "404 Error: User attempted to access non-existent route:",
       router.asPath
     );

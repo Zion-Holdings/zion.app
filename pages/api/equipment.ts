@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { ProductListing } from '@/types/listings';
 import { equipmentListings, DEFAULT_EQUIPMENT_IMAGE } from '@/data/equipmentData';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 // Mock equipment data for development
 const mockEquipment: ProductListing[] = equipmentListings;
@@ -36,7 +38,7 @@ export default async function handler(
     const limit = Math.min(parseInt((req.query as any).limit as string, 10) || 12, 50); // Cap at 50 for performance
     const skip = (page - 1) * limit;
 
-    console.log(`Equipment API: page=${page}, limit=${limit}, skip=${skip}, total=${mockEquipment.length}`);
+    logInfo(`Equipment API: page=${page}, limit=${limit}, skip=${skip}, total=${mockEquipment.length}`);
 
     // Minimal delay for realistic API behavior
     await new Promise(resolve => setTimeout(resolve, 50));
@@ -48,12 +50,12 @@ export default async function handler(
     // Clear timeout since we're responding successfully
     clearTimeout(timeout);
     
-    console.log(`Equipment API: returning ${paginatedEquipment.length} items`);
+    logInfo(`Equipment API: returning ${paginatedEquipment.length} items`);
     
     return res.status(200).json(paginatedEquipment);
   } catch (error) {
     clearTimeout(timeout);
-    console.error('Equipment API error:', error);
+    logError('Equipment API error:', { data: error });
     return res.status(500).json({ 
       error: 'Internal Server Error: Failed to fetch equipment' 
     });

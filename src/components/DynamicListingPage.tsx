@@ -4,6 +4,7 @@ import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { logInfo, logError } from '@/utils/productionLogger';
 import {
   Select,
   SelectValue,
@@ -176,7 +177,7 @@ export function DynamicListingPage({
     });
   } catch (error) {
     captureException(error);
-    console.error("Listing filter error:", error);
+    logError('Listing filter error:', { data: error });
   }
 
   const handleRequestQuote = (listingId: string) => {
@@ -355,7 +356,7 @@ export function DynamicListingPage({
                       variant="outline"
                       size="sm"
                       onClick={() => {
-                        console.log("Rating selected:", rating);
+                        logInfo('Rating selected:', { data: rating });
                         setSelectedRating(rating);
                       }}
                       aria-pressed={selectedRating === rating}
@@ -387,7 +388,7 @@ export function DynamicListingPage({
                 variant="outline"
                 className="w-full border-zion-purple text-zion-purple hover:bg-zion-purple/10"
                 onClick={() => {
-                  console.log("Clearing filters");
+                  logInfo("Clearing filters");
                   setSearchQuery("");
                   clearCategories();
                   setCurrentPriceFilter([0, priceRange.max]);
@@ -412,7 +413,7 @@ export function DynamicListingPage({
                     placeholder="Search listings..."
                     value={searchQuery}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                      console.log("Search query:", e.target.value);
+                      logInfo('Search query:', { data: e.target.value });
                       setSearchQuery(e.target.value);
                     }}
                     className="pl-10 bg-zion-blue border border-zion-blue-light text-white"

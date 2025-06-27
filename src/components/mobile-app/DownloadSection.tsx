@@ -2,8 +2,10 @@
 import React from "react";
 import { QrCodeIcon } from "lucide-react";
 import { AppStoreButtons } from "./AppStoreButtons";
+import { logInfo } from '@/utils/productionLogger';
 
 export const DownloadSection: React.FC = () => {
+
   // These would typically come from environment variables or a config
   const appStoreUrl = "#"; // Replace with actual App Store URL when available
   const googlePlayUrl = "#"; // Replace with actual Google Play URL when available
@@ -23,8 +25,8 @@ export const DownloadSection: React.FC = () => {
                 className="mb-8" 
                 appStoreUrl={appStoreUrl}
                 googlePlayUrl={googlePlayUrl}
-                onAppStoreClick={() => console.log("App Store button clicked")}
-                onGooglePlayClick={() => console.log("Google Play button clicked")}
+                onAppStoreClick={() => logInfo("App Store button clicked")}
+                onGooglePlayClick={() => logInfo("Google Play button clicked")}
               />
               
               <div className="text-sm text-gray-400">

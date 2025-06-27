@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { CategoryListingPage } from '@/components/CategoryListingPage'; // Ensure this path is correct
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
 import { useRouterReady } from '@/hooks/useRouterReady';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface CategoryData {
   name: string;
@@ -86,7 +88,7 @@ export default function CategoryPage() {
           document.title = `${json.category.name} | Zion Marketplace`;
         }
       } catch (e: any) {
-        console.error('Failed to load category items:', e);
+        logError('Failed to load category items:', { data:  e });
         
         // Auto-retry for network errors
         if (retryCount < maxRetries && (
@@ -95,7 +97,7 @@ export default function CategoryPage() {
           e.message.includes('timeout') ||
           e.message.includes('500')
         )) {
-          console.log(`Retrying request (attempt ${retryCount + 1}/${maxRetries})`);
+          logInfo(`Retrying request (attempt ${retryCount + 1}/${maxRetries})`);
           setRetryCount(prev => prev + 1);
           setTimeout(() => load(), 1000 * (retryCount + 1)); // Exponential backoff
           return;

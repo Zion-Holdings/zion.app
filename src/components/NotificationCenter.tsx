@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { useNotifications } from '@/context/notifications/NotificationContext';
 import { useEnqueueSnackbar } from '@/context';
+import { logError } from '@/utils/productionLogger';
 import { 
   NotificationFilter, 
   NotificationHeader, 
@@ -39,7 +40,7 @@ export const NotificationCenter: React.FC = () => {
           await fetchNotifications();
           setError(null);
         } catch (err) {
-          console.error("Failed to fetch notifications:", err);
+          logError('Failed to fetch notifications:', { data: err });
           setError("Couldn't load notifications");
           enqueueSnackbar((err as any)?.response?.data?.message || (err instanceof Error ? err.message : String(err)), { variant: 'error' });
         } finally {
@@ -56,7 +57,7 @@ export const NotificationCenter: React.FC = () => {
       await markAllAsRead();
       enqueueSnackbar("All notifications marked as read", { variant: 'success' });
     } catch (err) {
-      console.error("Failed to mark notifications as read:", err);
+      logError('Failed to mark notifications as read:', { data: err });
       enqueueSnackbar((err as any)?.response?.data?.message || (err instanceof Error ? err.message : String(err)), { variant: 'error' });
     }
   };

@@ -4,41 +4,58 @@ import { logger } from '@/utils/logger';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import { ProductListing } from '@/types/listings';
 import { TalentProfile as TalentProfileType } from '@/types/talent';
+import { ApiResponse, PaginatedResponse, SearchFilters } from '@/types/common';
 
 // TypeScript interfaces
-export interface Product {
+import { logError } from "@/utils/productionLogger";
+
+export interface {
   id: string;
-  title: string;
-  name?: string; // Alternative property name
+  name: string;
   description: string;
   price: number;
-  currency?: string;
+  currency: string;
   category: string;
-  subcategory?: string;
-  image?: string;
-  images?: string[];
-  author?: {
-    name: string;
-    id: string;
-    avatarUrl?: string;
-  };
-  tags?: string[];
-  createdAt: string;
-  rating?: number;
-  reviewCount?: number;
-  availability?: string;
-  stock?: number;
-  location?: string;
-  featured?: boolean;
-  aiScore?: number;
+  tags: string[];
+  images: string[];
+  rating: number;
+  reviewCount: number;
+  created_at: string;
+  updated_at: string;
+  seller_id?: string;
+  in_stock?: boolean;
+  specifications?: Record<string, string>;
 }
 
 export interface Category {
   id: string;
   name: string;
-  slug: string;
   description?: string;
-  productCount?: number;
+  icon?: string;
+  product_count?: number;
+}
+
+export interface TalentProfile {
+  id: string;
+  name: string;
+  specialization: string;
+  skills: string[];
+  hourly_rate: number;
+  availability: string;
+  rating: number;
+  reviewCount: number;
+  location?: string;
+  bio?: string;
+  portfolio_items?: PortfolioItem[];
+}
+
+export interface PortfolioItem {
+  id: string;
+  title: string;
+  description: string;
+  image_url?: string;
+  project_url?: string;
+  technologies: string[];
 }
 
 export interface Equipment {
@@ -48,27 +65,12 @@ export interface Equipment {
   category: string;
   price: number;
   currency: string;
+  location: string;
   availability: string;
-  location?: string;
-  specifications?: string[];
-  images?: string[];
-  rating?: number;
-  reviewCount?: number;
-}
-
-export interface TalentProfile {
-  id: string;
-  full_name: string;
-  professional_title: string;
-  description: string;
-  skills: string[];
-  hourly_rate?: number;
-  currency?: string;
-  availability: string;
-  location?: string;
-  avatar?: string;
-  rating?: number;
-  reviewCount?: number;
+  specifications: Record<string, string>;
+  images: string[];
+  rating: number;
+  reviewCount: number;
 }
 
 // Use internal Next.js API routes instead of external URLs
@@ -437,63 +439,134 @@ export const validateProductData = (product: any): boolean => {
   return requiredFields.every(field => product[field] && product[field].toString().trim() !== '');
 };
 
-export const generateProductId = (title: string): string => {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .substring(0, 50);
+export const generateProductId = (name: string): string => {
+  const timestamp = Date.now();
+  const randomSuffix = Math.random().toString(36).substring(2, 8);
+  const slug = name.toLowerCase().replace(/[^a-z0-9]/g, '-').substring(0, 20);
+  return `${slug}-${timestamp}-${randomSuffix}`;
 };
 
-export const ensureProductIntegrity = (products: any[]): any[] => {
-  return products.map((product, index) => {
-    const validated = { ...product };
-    
-    // Ensure ID exists
-    if (!validated.id) {
-      validated.id = generateProductId(validated.title || `product-${index}`);
-      logger.warn(`[Auto-Fix] Generated ID for product: ${validated.id}`);
-    }
-    
-    // Ensure required fields exist
-    if (!validated.title) {
-      validated.title = `Product ${index + 1}`;
-      logger.warn(`[Auto-Fix] Generated title for product: ${validated.id}`);
-    }
-    
-    if (!validated.description) {
-      validated.description = `Description for ${validated.title}`;
-      if (process.env.NODE_ENV === 'development') {
-        logger.warn(`[Auto-Fix] Generated description for product: ${validated.id}`);
-      }
-    }
-    
-    if (!validated.category) {
-      validated.category = 'General';
-      if (process.env.NODE_ENV === 'development') {
-        logger.warn(`[Auto-Fix] Generated category for product: ${validated.id}`);
-      }
-    }
-    
-    // Ensure price is a valid number
-    if (typeof validated.price !== 'number' || validated.price < 0) {
-      validated.price = 0;
-    }
-    
-    // Ensure author exists
-    if (!validated.author) {
-      validated.author = {
-        name: 'Zion Marketplace',
-        id: 'zion-marketplace'
-      };
-    }
-    
-    // Ensure creation date exists
-    if (!validated.createdAt) {
-      validated.createdAt = new Date().toISOString();
-    }
-    
-    return validated;
-  });
+export const ensureProductIntegrity = (products: Product[]): Product[] => {
+  return products.map(product => ({
+    ...product,
+    // Ensure required fields have default values
+    id: product.id || `product-${Date.now()}-${Math.random()}`,
+    name: product.name || 'Unnamed Product',
+    description: product.description || '',
+    price: typeof product.price === 'number' ? product.price : 0,
+    currency: product.currency || 'USD',
+    category: product.category || 'general',
+    tags: Array.isArray(product.tags) ? product.tags : [],
+    images: Array.isArray(product.images) ? product.images : [],
+    rating: typeof product.rating === 'number' ? product.rating : 0,
+    reviewCount: typeof product.reviewCount === 'number' ? product.reviewCount : 0,
+    created_at: product.created_at || new Date().toISOString(),
+    updated_at: product.updated_at || new Date().toISOString(),
+  }));
 };
+
+// Enhanced fetch functions with proper typing
+export async function fetchProducts(filters: SearchFilters = {}): Promise<Product[]> {
+  try {
+    const searchParams = new URLSearchParams();
+    
+    if (filters.query) searchParams.append('search', filters.query);
+    if (filters.category) searchParams.append('category', filters.category);
+    if (filters.tags?.length) searchParams.append('tags', filters.tags.join(','));
+    if (filters.priceRange?.min) searchParams.append('minPrice', filters.priceRange.min.toString());
+    if (filters.priceRange?.max) searchParams.append('maxPrice', filters.priceRange.max.toString());
+
+    const response = await fetch(`/api/marketplace/products?${searchParams}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data: ApiResponse<Product[]> = await response.json();
+    
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    return ensureProductIntegrity(data.data || []);
+  } catch (error) {
+    logError('Failed to fetch products:', { data: error });
+    throw error;
+  }
+}
+
+export async function fetchCategories(): Promise<Category[]> {
+  try {
+    const response = await fetch('/api/marketplace/categories');
+    
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data: ApiResponse<Category[]> = await response.json();
+    
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    return data.data || [];
+  } catch (error) {
+    logError('Failed to fetch categories:', { data: error });
+    throw error;
+  }
+}
+
+export async function fetchTalent(filters: SearchFilters = {}): Promise<TalentProfile[]> {
+  try {
+    const searchParams = new URLSearchParams();
+    
+    if (filters.query) searchParams.append('search', filters.query);
+    if (filters.category) searchParams.append('specialization', filters.category);
+    if (filters.tags?.length) searchParams.append('skills', filters.tags.join(','));
+
+    const response = await fetch(`/api/marketplace/talent?${searchParams}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data: ApiResponse<TalentProfile[]> = await response.json();
+    
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    return data.data || [];
+  } catch (error) {
+    logError('Failed to fetch talent:', { data: error });
+    throw error;
+  }
+}
+
+export async function fetchEquipment(filters: SearchFilters = {}): Promise<Equipment[]> {
+  try {
+    const searchParams = new URLSearchParams();
+    
+    if (filters.query) searchParams.append('search', filters.query);
+    if (filters.category) searchParams.append('category', filters.category);
+    if (filters.priceRange?.min) searchParams.append('minPrice', filters.priceRange.min.toString());
+    if (filters.priceRange?.max) searchParams.append('maxPrice', filters.priceRange.max.toString());
+
+    const response = await fetch(`/api/marketplace/equipment?${searchParams}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data: ApiResponse<Equipment[]> = await response.json();
+    
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    return data.data || [];
+  } catch (error) {
+    logError('Failed to fetch equipment:', { data: error });
+    throw error;
+  }
+}

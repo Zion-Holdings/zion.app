@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { createClient } from '@/utils/supabase/client'
 import type { User } from '@supabase/supabase-js'
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface AuthGuardOptions {
   redirectTo?: string
@@ -47,7 +49,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
         if (!mounted) return
 
         if (sessionError) {
-          console.error('Auth guard session error:', sessionError)
+          logError('Auth guard session error:', { data: sessionError })
           setState(prev => ({
             ...prev,
             loading: false,
@@ -81,7 +83,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
           if (!router.pathname.startsWith('/auth/') && !router.pathname.startsWith('/login')) {
             redirectTimer = setTimeout(() => {
               if (mounted) {
-                console.log('Auth guard: Redirecting unauthenticated user to login')
+                logInfo('Auth guard: Redirecting unauthenticated user to login')
                 router.replace(`${redirectTo}?returnTo=${returnTo}`)
               }
             }, 100)
@@ -90,7 +92,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
           // User is authenticated but email is not verified
           redirectTimer = setTimeout(() => {
             if (mounted) {
-              console.log('Auth guard: Redirecting to email verification')
+              logInfo('Auth guard: Redirecting to email verification')
               router.replace('/auth/verify-email')
             }
           }, 100)
@@ -98,7 +100,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
 
       } catch (error) {
         if (mounted) {
-          console.error('Auth guard error:', error)
+          logError('Auth guard error:', { data: error })
           setState(prev => ({
             ...prev,
             loading: false,
@@ -118,7 +120,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
       async (event, session) => {
         if (!mounted) return
 
-        console.log('Auth guard: Auth state changed:', event)
+        logInfo('Auth guard: Auth state changed:', { data: event })
         
         const user = session?.user || null
         const isAuthenticated = !!user
@@ -137,7 +139,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
         if (event === 'SIGNED_OUT' && !allowUnauthenticated) {
           redirectTimer = setTimeout(() => {
             if (mounted) {
-              console.log('Auth guard: User signed out, redirecting to login')
+              logInfo('Auth guard: User signed out, redirecting to login')
               router.replace(redirectTo)
             }
           }, 100)

@@ -2,6 +2,8 @@
 import { supabase } from "@/integrations/supabase/client";
 import type { UserDetails } from "@/types/auth";
 import { safeStorage, safeSessionStorage } from './safeStorage';
+import { logWarn, logError } from '@/utils/productionLogger';
+
 
 /**
  * Utility function to clean up authentication state
@@ -26,7 +28,7 @@ export const cleanupAuthState = () => {
       }
     });
   } catch (e) {
-    console.warn('Storage access error:', e);
+    logWarn('Storage access error:', { data:  e });
   }
   
   // Remove from sessionStorage if in use
@@ -37,7 +39,7 @@ export const cleanupAuthState = () => {
       }
     });
   } catch (e) {
-    console.warn('Storage access error:', e);
+    logWarn('Storage access error:', { data:  e });
   }
 };
 
@@ -87,6 +89,6 @@ export const checkNewRegistration = async (user: UserDetails) => {
         });
     }
   } catch (error) {
-    console.error("Error checking or scheduling welcome email:", error);
+    logError('Error checking or scheduling welcome email:', { data: error });
   }
 };

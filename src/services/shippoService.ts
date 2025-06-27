@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-export interface ShippoShipment {
+import { logError } from "@/utils/productionLogger";
+
+export interface {
   tracking_number: string;
   tracking_status?: string;
   tracking_history?: ShippoTrackingEvent[];
@@ -38,7 +40,7 @@ export async function createShipment(addressTo: any, parcels: any[]): Promise<Sh
 
     return res.data as ShippoShipment;
   } catch (err) {
-    console.error('Shippo create shipment error:', err);
+    logError('Shippo create shipment error:', { data: err });
     throw err;
   }
 }

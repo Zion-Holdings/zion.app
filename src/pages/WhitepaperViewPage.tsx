@@ -5,6 +5,8 @@ import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel'; // Re-
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link'; // For a back button, changed from react-router-dom
+import { logError } from '@/utils/productionLogger';
+
 
 // Placeholder for user context/role checking
 // In a real app, this would come from an auth context
@@ -58,7 +60,7 @@ const WhitepaperViewPage: React.FC = () => {
         setSharedData(responseData as SharedWhitepaper);
 
       } catch (e: any) {
-        console.error("Error fetching shared whitepaper:", e);
+        logError('Error fetching shared whitepaper:', { data:  e });
         setError(e.message || 'An unexpected error occurred.');
       } finally {
         setLoading(false);

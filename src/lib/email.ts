@@ -1,4 +1,6 @@
 import sgMail from '@sendgrid/mail';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface EmailOptions {
   to: string;
@@ -19,7 +21,7 @@ export async function sendEmailWithSendGrid({
   const apiKey = process.env.SENDGRID_API_KEY;
 
   if (!apiKey) {
-    console.error('SENDGRID_API_KEY is not set. Email not sent.');
+    logError('SENDGRID_API_KEY is not set. Email not sent.');
     // In a real application, you might want to throw an error or handle this more gracefully.
     return;
   }
@@ -35,13 +37,13 @@ export async function sendEmailWithSendGrid({
 
   try {
     await sgMail.send(msg);
-    console.log(`Email sent to ${to} using template ${templateId}`);
+    logInfo(`Email sent to ${to} using template ${templateId}`);
   } catch (error: any) {
-    console.error('Error sending email with SendGrid:', error.toString());
+    logError('Error sending email with SendGrid:', { data: error.toString( }));
     // Optionally, rethrow the error or handle it as needed by your application's error handling strategy
     // For example, if the error response from SendGrid is available:
     if (error.response) {
-      console.error('SendGrid error response:', error.response.body);
+      logError('SendGrid error response:', { data: error.response.body });
     }
     // Consider logging this to a more persistent error tracking service in production
   }
@@ -50,7 +52,7 @@ export async function sendEmailWithSendGrid({
 export async function sendResetEmail(email: string, token: string): Promise<void> {
   const apiKey = process.env.SENDGRID_API_KEY;
   if (!apiKey) {
-    console.error('SENDGRID_API_KEY is not set. Reset email not sent.');
+    logError('SENDGRID_API_KEY is not set. Reset email not sent.');
     return;
   }
 
@@ -70,11 +72,11 @@ export async function sendResetEmail(email: string, token: string): Promise<void
 
   try {
     await sgMail.send(msg);
-    console.log(`Password reset email sent to ${email}`);
+    logInfo(`Password reset email sent to ${email}`);
   } catch (error: any) {
-    console.error('Error sending password reset email:', error.toString());
+    logError('Error sending password reset email:', { data: error.toString( }));
     if (error.response) {
-      console.error('SendGrid error response:', error.response.body);
+      logError('SendGrid error response:', { data: error.response.body });
     }
   }
 }

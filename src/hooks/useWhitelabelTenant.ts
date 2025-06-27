@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { logWarn } from '@/utils/productionLogger';
 
 export interface WhitelabelTenant {
   id: string;
@@ -62,7 +63,7 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
         );
 
         if (functionError) {
-          console.warn('Edge Function error:', {
+          logWarn('Edge Function error:', {
             error: functionError,
             params,
             hostname,
@@ -73,7 +74,7 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
         }
 
         if (!data) {
-          console.warn('No tenant data received', { params, hostname });
+          logWarn('No tenant data received', { params, hostname });
           setTenant(null);
           return;
         }
@@ -85,7 +86,7 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
           setTenant(null);
         }
       } catch (err: any) {
-        console.warn('Error loading tenant:', {
+        logWarn('Error loading tenant:', {
           error: err,
           retryCount,
           timestamp: new Date().toISOString(),
@@ -130,7 +131,7 @@ export function useTenantAdminStatus(tenantId?: string) {
       try {
         const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
         if (sessionError) {
-          console.warn('Session error:', sessionError);
+          logWarn('Session error:', { data: sessionError });
           setIsAdmin(false);
           return;
         }
@@ -149,12 +150,12 @@ export function useTenantAdminStatus(tenantId?: string) {
           .single();
 
         if (error) {
-          console.warn('Error checking admin status:', error);
+          logWarn('Error checking admin status:', { data: error });
         }
 
         setIsAdmin(!!data && !error);
       } catch (err) {
-        console.warn('Error checking tenant admin status:', err);
+        logWarn('Error checking tenant admin status:', { data: err });
         setIsAdmin(false);
       } finally {
         setIsLoading(false);

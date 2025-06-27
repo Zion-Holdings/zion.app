@@ -5,7 +5,9 @@ import { toast } from "@/hooks/use-toast";
 
 export type WebhookEventType = 'new_application' | 'quote_received' | 'milestone_approved' | 'talent_hired';
 
-export interface Webhook {
+import { logError } from "@/utils/productionLogger";
+
+export interface {
   id: string;
   name: string;
   url: string;
@@ -70,7 +72,7 @@ export function useWebhooks() {
 
       setWebhooks(result.webhooks || []);
     } catch (err) {
-      console.error('Error fetching webhooks:', err);
+      logError('Error fetching webhooks:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -126,7 +128,7 @@ export function useWebhooks() {
       
       return result.webhook;
     } catch (err) {
-      console.error('Error creating webhook:', err);
+      logError('Error creating webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -179,7 +181,7 @@ export function useWebhooks() {
       
       return result;
     } catch (err) {
-      console.error('Error toggling webhook:', err);
+      logError('Error toggling webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -230,7 +232,7 @@ export function useWebhooks() {
       
       return result;
     } catch (err) {
-      console.error('Error deleting webhook:', err);
+      logError('Error deleting webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -291,7 +293,7 @@ export function useWebhooks() {
       
       return result;
     } catch (err) {
-      console.error('Error testing webhook:', err);
+      logError('Error testing webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",

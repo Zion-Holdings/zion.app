@@ -2,6 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import type { BlogPost } from '@/types/blog';
 import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 // Optimized search function with early returns
 function searchBlogPosts(query: string): BlogPost[] {
@@ -47,7 +49,7 @@ export default async function handler(
     const results = await cacheOrCompute(
       cacheKey,
       async () => {
-        console.log(`Computing blog results for query: "${query}"`);
+        logInfo(`Computing blog results for query: "${query}"`);
         return searchBlogPosts(query);
       },
       query ? CacheCategory.SHORT : CacheCategory.MEDIUM, // Search results cached shorter
@@ -65,7 +67,7 @@ export default async function handler(
     return res.status(200).json(results);
 
   } catch (err) {
-    console.error('Blog API error:', err);
+    logError('Blog API error:', { data: err });
     
     // Return fallback - all posts on error
     applyCacheHeaders(res, CacheCategory.SHORT);

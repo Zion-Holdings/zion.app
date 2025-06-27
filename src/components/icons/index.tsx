@@ -1,5 +1,7 @@
 import React, { SVGProps } from 'react';
 import {
+import { logWarn } from '@/utils/productionLogger';
+
   Home as LucideHome,
   Bot as LucideBot,
   Sparkles as LucideSparkles,
@@ -910,7 +912,7 @@ export const Icon: React.FC<IconProps> = ({
   const LucideIconComponent = iconMap[name];
 
   if (!LucideIconComponent) {
-    console.warn(`Icon "${name}" not found.`);
+    logWarn(`Icon "${name}" not found.`);
     return null;
   }
 

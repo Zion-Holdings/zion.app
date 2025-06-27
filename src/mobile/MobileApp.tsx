@@ -2,11 +2,13 @@ import React from "react";
 import { MobileThemeProvider } from "./theme/MobileThemeProvider";
 import { logError } from '@/utils/logError';
 import { useCart } from '@/context/CartContext';
+import { logInfo } from '@/utils/productionLogger';
+
 
 const CartContextTester = () => {
   try {
     const cart = useCart();
-    console.log('CartContextTester: useCart() successful', cart);
+    logInfo('CartContextTester: useCart() successful', { data: cart });
     return (
       <div style={{ position: 'fixed', top: '10px', left: '10px', backgroundColor: 'lightgreen', padding: '5px', zIndex: 9999 }}>
         CartContextTester: OK

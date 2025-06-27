@@ -1,3 +1,4 @@
+/* global jest */
 // __mocks__/@sentry/nextjs.js
 
 const Sentry = {

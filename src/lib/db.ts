@@ -1,3 +1,5 @@
+import { logWarn } from '@/utils/productionLogger';
+
 const DB_NAME = 'zion-store';
 const DB_VERSION = 1;
 const CART_STORE = 'cart';
@@ -18,7 +20,7 @@ function openDB(): Promise<IDBDatabase | null> {
     try {
       request = indexedDB.open(DB_NAME, DB_VERSION);
     } catch (err) {
-      console.warn('IndexedDB not available. Falling back to in-memory store.', err);
+      logWarn('IndexedDB not available. Falling back to in-memory store.', { data: err });
       indexedDBAvailable = false;
       return resolve(null);
     }
@@ -33,7 +35,7 @@ function openDB(): Promise<IDBDatabase | null> {
     };
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => {
-      console.warn('IndexedDB open error. Falling back to in-memory store.', request.error);
+      logWarn('IndexedDB open error. Falling back to in-memory store.', { data: request.error });
       indexedDBAvailable = false;
       resolve(null);
     };

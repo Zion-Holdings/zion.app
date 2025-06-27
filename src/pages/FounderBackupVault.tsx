@@ -6,6 +6,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { AdminLayout } from '@/components/admin/AdminLayout';
 import { encryptData, decryptData } from '@/utils/vaultEncryption';
+import { logInfo } from '@/utils/productionLogger';
+
 
 interface VaultData {
   daoKey: string;
@@ -70,7 +72,7 @@ export default function FounderBackupVault() {
       const arrayBuffer = new ArrayBuffer(encrypted.buffer.byteLength);
       new Uint8Array(arrayBuffer).set(new Uint8Array(encrypted.buffer));
       const decrypted = await decryptData(arrayBuffer, pass);
-      console.log('Decrypted:', decrypted);
+      logInfo('Decrypted:', { data: decrypted });
       alert('Recovery successful');
       setFailCount(0);
     } catch (err) {

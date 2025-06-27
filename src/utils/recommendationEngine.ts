@@ -4,6 +4,8 @@ import { generateRandomEquipment } from './generateRandomEquipment';
 import { ALL_FEATURES, Feature } from '@/data/features';
 
 export async function recommendEquipment(
+import { logError } from '@/utils/productionLogger';
+
   userId: string,
   supabase: SupabaseClient,
   limit = 5
@@ -45,7 +47,7 @@ export async function recommendEquipment(
       }
     }
   } catch (err) {
-    console.error('equipment recommendation error', err);
+    logError('equipment recommendation error', { data: err });
   }
 
   // Fallback to random equipment
@@ -95,7 +97,7 @@ export async function recommendFeatures(
     const fallback = ALL_FEATURES.filter((f) => !usedFeatures.has(f.id));
     return fallback.slice(0, limit);
   } catch (err) {
-    console.error('feature recommendation error', err);
+    logError('feature recommendation error', { data: err });
   }
 
   return ALL_FEATURES.slice(0, limit);

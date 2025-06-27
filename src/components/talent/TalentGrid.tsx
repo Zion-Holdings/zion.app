@@ -1,4 +1,3 @@
-
 import { TalentCard } from "@/components/talent/TalentCard";
 import { TalentSkeleton } from "@/components/talent/TalentSkeleton";
 import { TalentProfile } from "@/types/talent";
@@ -27,7 +26,7 @@ export function TalentGrid({
       handleRequestHire(talent);
     } else {
       // Default implementation
-      console.log("Request to hire:", talent.id);
+      logInfo('Request to hire:', { data: talent.id });
     }
   };
 

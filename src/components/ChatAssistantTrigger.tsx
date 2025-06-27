@@ -3,8 +3,10 @@ import { useState } from "react";
 import { MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ChatAssistant } from "@/components/ChatAssistant";
+import { logError } from '@/utils/productionLogger';
 
 export function ChatAssistantTrigger() {
+
   const [isOpen, setIsOpen] = useState(false);
 
   // Handle sending messages to the AI chat assistant
@@ -26,7 +28,7 @@ export function ChatAssistantTrigger() {
       
       return Promise.resolve();
     } catch (error) {
-      console.error("Error in AI chat:", error);
+      logError('Error in AI chat:', { data: error });
       return Promise.resolve();
     }
   };

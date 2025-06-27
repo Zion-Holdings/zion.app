@@ -6,8 +6,10 @@ import { toast } from 'sonner';
 import { Milestone, MilestoneStatus } from './types';
 import { useRecordActivity } from './useRecordActivity';
 import { createNotification } from '@/utils/notifications';
+import { logError } from '@/utils/productionLogger';
 
 export const useUpdateMilestone = () => {
+
   const { user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { recordMilestoneActivity } = useRecordActivity();
@@ -82,7 +84,7 @@ export const useUpdateMilestone = () => {
       
       return true;
     } catch (err: any) {
-      console.error("Error updating milestone status:", err);
+      logError('Error updating milestone status:', { data: err });
       toast.error("Failed to update status: " + err.message);
       return false;
     } finally {
@@ -110,7 +112,7 @@ export const useUpdateMilestone = () => {
       
       return true;
     } catch (err: any) {
-      console.error("Error updating milestone:", err);
+      logError('Error updating milestone:', { data: err });
       toast.error("Failed to update milestone: " + err.message);
       return false;
     } finally {

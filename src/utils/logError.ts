@@ -1,6 +1,9 @@
+export type { ErrorPageProps, RetryConfig }; 
 import { captureException } from './sentry';
 import { sendErrorToBackend } from './customErrorReporter';
 import { generateTraceId } from './generateTraceId';
+import { logWarn, logError } from '@/utils/productionLogger';
+
 // Do not import datadogLogs at the top level for server-side compatibility
 
 /**
@@ -64,7 +67,7 @@ export function logError(
           }
         }
       }).catch(ddImportError => {
-        console.warn('Failed to import or use Datadog logger:', ddImportError);
+        logWarn('Failed to import or use Datadog logger:', { data: ddImportError });
       });
 
       // LogRocket logging
@@ -78,11 +81,11 @@ export function logError(
           }
         }
       }).catch(lrError => {
-        console.warn('Failed to log error to LogRocket:', lrError);
+        logWarn('Failed to log error to LogRocket:', { data: lrError });
       });
     }
   } catch (err) {
-    console.error('Failed to report error to Sentry:', err, context?.componentStack);
+    logError('Failed to report error to Sentry:', err, context?.componentStack);
   }
 
   try {
@@ -121,11 +124,11 @@ export function logError(
 
     // Non-blocking call
     sendErrorToBackend(errorDetails).catch(err => {
-      console.error('Error sending logError to backend:', err, context?.componentStack);
+      logError('Error sending logError to backend:', err, context?.componentStack);
     });
 
   } catch (err) {
-    console.error('Failed to prepare or send error to custom backend:', err);
+    logError('Failed to prepare or send error to custom backend:', { data: err });
   }
 
   return traceId;

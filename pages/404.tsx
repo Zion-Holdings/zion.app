@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { captureException } from '@/utils/sentry';
 import { Home, Search, ShoppingCart, Users, ArrowLeft, ExternalLink } from 'lucide-react';
+import { logInfo } from '@/utils/productionLogger';
 
 export default function Custom404() {
   const { user } = useAuth();
@@ -20,7 +21,7 @@ export default function Custom404() {
       user: user ? { id: user.id, email: user.email } : undefined,
       extra: { path: window.location.pathname },
     });
-    console.log('Reported 404 error. Error ID:', eventId);
+    logInfo('Reported 404 error', { data:  { errorId: eventId } });
   }, [user]);
 
   const handleGoBack = () => {

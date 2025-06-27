@@ -2,6 +2,8 @@ import React from 'react';
 import { AlertTriangle, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { logError } from '@/utils/productionLogger';
+
 
 interface Props {
   children: React.ReactNode;
@@ -23,7 +25,7 @@ export class EquipmentErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Equipment page error:', error, errorInfo);
+    logError('Equipment page error:', error, errorInfo);
   }
 
   render() {

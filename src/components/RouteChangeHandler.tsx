@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { logWarn } from '@/utils/productionLogger';
+
 
 interface RouteChangeHandlerProps {
   onRouteChange?: (url: string) => void;
@@ -50,7 +52,7 @@ export function RouteChangeHandler({
     };
 
     const handleRouteChangeError = () => {
-      console.warn('Route change error occurred');
+      logWarn('Route change error occurred');
     };
 
     router.events.on('routeChangeStart', handleRouteChangeStart);

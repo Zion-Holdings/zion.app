@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface Chain {
   id: string;
@@ -48,7 +50,7 @@ export default function TokenIntegrations() {
     destinationChain: string,
     tokenAmount: string
   ): Promise<string> => {
-    console.log(
+    logInfo(
       `[Mock L0] Estimating fee for ${tokenAmount} ZION$ from ${sourceChain} to ${destinationChain}`
     );
     // Simulate network delay and fee calculation
@@ -63,18 +65,18 @@ export default function TokenIntegrations() {
     tokenAmount: string,
     userAddress: string | null
   ): Promise<{ transactionHash: string; arrivalTimeEstimate: string }> => {
-    console.log(
+    logInfo(
       `[Mock L0] Sending ${tokenAmount} ZION$ from ${sourceChain} to ${destinationChain} for address ${userAddress}`
     );
     // Simulate network delay for transaction
     await new Promise(resolve => setTimeout(resolve, 2000));
     // Record onchain tx logs (placeholder)
-    console.log(`[Mock L0] Recording on-chain tx log for source chain ${sourceChain}`);
+    logInfo(`[Mock L0] Recording on-chain tx log for source chain ${sourceChain}`);
     // Enforce rate limits (placeholder)
-    console.log(`[Mock L0] Checking rate limits for user ${userAddress}`);
+    logInfo(`[Mock L0] Checking rate limits for user ${userAddress}`);
     // Use burn-and-mint model if tokens are wrapped (placeholder logic)
     if (sourceChain !== 'ethereum' || destinationChain !== 'ethereum') {
-      console.log('[Mock L0] Using burn-and-mint model for wrapped ZION$');
+      logInfo('[Mock L0] Using burn-and-mint model for wrapped ZION$');
     }
 
     const randomHash = `0x${[...Array(64)].map(() => Math.floor(Math.random() * 16).toString(16)).join('')}`;
@@ -141,7 +143,7 @@ export default function TokenIntegrations() {
       setTxHash(result.transactionHash);
       setStatus(`Transaction submitted! ZION$ expected on ${toChain} in approx. ${result.arrivalTimeEstimate}. Tx: ${result.transactionHash}`);
     } catch (e: any) {
-      console.error("Bridging error:", e);
+      logError('Bridging error:', { data:  e });
       setError(`Bridging failed: ${e.message}`);
       setStatus(null);
     }

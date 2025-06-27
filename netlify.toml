@@ -8,7 +8,10 @@
   NODE_OPTIONS = "--no-deprecation"
   NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
   NEXT_PUBLIC_APP_ENV = "production"
-  NODE_VERSION = "18.17.0"
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+  CI = "true"
+  SKIP_TYPE_CHECK = "true"
   
   # Configure secrets scanning to omit legitimate public environment variables
   # NEXT_PUBLIC_* variables are meant to be public and embedded in client bundles
@@ -97,12 +100,29 @@
   # External APIs
   EXAMPLE_API_URL = "https://api.example.com"
 
+# Skip Husky for CI builds
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
 # Deploy contexts for different environments
 [context.production.environment]
   AUTH0_BASE_URL = "https://yourdomain.com"
   NEXT_PUBLIC_SENTRY_ENVIRONMENT = "production"
   NEXT_PUBLIC_ENABLE_ANALYTICS = "true"
   NEXT_PUBLIC_APP_ENV = "production"
+  NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"
 
 [context.deploy-preview.environment]
   AUTH0_BASE_URL = "https://deploy-preview-${REVIEW_ID}--your-site.netlify.app"
@@ -110,6 +130,8 @@
   NEXT_PUBLIC_ENABLE_ANALYTICS = "false"
   NEXT_PUBLIC_APP_ENV = "preview"
   NEXT_PUBLIC_DEVTOOLS = "true"
+  NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"
 
 [context.branch-deploy.environment]
   AUTH0_BASE_URL = "https://${BRANCH}--your-site.netlify.app"
@@ -117,6 +139,8 @@
   NEXT_PUBLIC_ENABLE_ANALYTICS = "false"
   NEXT_PUBLIC_APP_ENV = "staging"
   NEXT_PUBLIC_DEVTOOLS = "true"
+  NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"
 
 # Redirects for Single Page Application
 [[redirects]]
@@ -131,7 +155,7 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
-# Headers for security
+# Headers for security and performance
 [[headers]]
   for = "/*"
   [headers.values]
@@ -140,6 +164,28 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/logos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirects
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+# Handle Next.js routing
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
 
 [functions.environment]
   SENTRY_LOG_LEVEL = "debug"

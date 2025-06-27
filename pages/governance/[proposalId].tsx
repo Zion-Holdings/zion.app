@@ -11,6 +11,8 @@ import { Progress } from '@/components/ui/progress';
 import { Input } from '@/components/ui/input'; // For voting power temporary input
 // import MainLayout from '@/components/layout/MainLayout'; // If a MainLayout component exists
 import { getCsrfToken } from '@/utils/cookies'; // Import the CSRF token utility
+import { logWarn } from '@/utils/productionLogger';
+
 
 // Types (should ideally be shared, e.g., from a types/governance.ts file)
 interface Vote {
@@ -87,7 +89,7 @@ const ProposalDetailPage: React.FC = () => {
         setResults(resultsData);
       } else {
         const errData = await resultsRes.json().catch(() => ({}));
-        console.warn('Could not fetch vote results:', errData.detail || resultsRes.status);
+        logWarn('Could not fetch vote results:', { data: errData.detail || resultsRes.status });
         // Set results to null or an empty state if needed
         setResults(null);
       }

@@ -1,245 +1,45 @@
+import axios from 'axios';
 import { safeStorage } from '@/utils/safeStorage';
 
+// Create axios instance with proper configuration
+const axiosInstance = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_URL || '/api',
+  timeout: 15000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
-export interface AxiosResponse<T = any> {
-  data: T;
-  status: number;
-}
-
-export interface AxiosError<T = any> extends Error {
-  response?: AxiosResponse<T>;
-  config?: { url: string; method: string; [key: string]: any };
-  /** Flag to identify errors originating from this axios replacement */
-  isAxiosError?: boolean;
-  code?: string;
-}
-
-export function isAxiosError(value: any): value is AxiosError {
-  return (
-    typeof value === 'object' &&
-    value !== null &&
-    (value as any).isAxiosError === true
-  );
-}
-
-type FulfilledFn = (value: any) => any | Promise<any>;
-type RejectedFn = (error: any) => any | Promise<any>;
-
-class InterceptorManager {
-  handlers: ({ fulfilled?: FulfilledFn; rejected?: RejectedFn } | null)[] = [];
-  use(fulfilled?: FulfilledFn, rejected?: RejectedFn): number {
-    this.handlers.push({ fulfilled, rejected });
-    return this.handlers.length - 1;
+// Request interceptor
+axiosInstance.interceptors.request.use(
+  (config) => {
+    // Add auth token if available
+    if (typeof window !== 'undefined') {
+      const token = safeStorage.getItem('auth-token');
+      if (token && config.headers) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
   }
-  eject(id: number) {
-    if (this.handlers[id]) {
-      this.handlers[id] = {};
+);
+
+// Response interceptor
+axiosInstance.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error?.response?.status === 401) {
+      // Handle unauthorized access
+      if (typeof window !== 'undefined') {
+        safeStorage.removeItem('auth-token');
+        window.location.href = '/auth/login';
+      }
     }
+    return Promise.reject(error);
   }
-}
+);
 
-export interface RequestConfig extends RequestInit {
-  withCredentials?: boolean;
-  /**
-   * Timeout for the request in milliseconds. If the request does not complete
-   * within this time, it will be aborted and an error will be thrown.
-   */
-  timeout?: number;
-}
-
-export interface AxiosInstance {
-  interceptors: { request: InterceptorManager; response: InterceptorManager };
-  get<T = any>(
-    url: string,
-    config?: { params?: Record<string, any> } & RequestConfig
-  ): Promise<AxiosResponse<T>>;
-  post<T = any>(
-    url: string,
-    data?: any,
-    config?: RequestConfig
-  ): Promise<AxiosResponse<T>>;
-  patch<T = any>(url: string, data?: any, config?: RequestConfig): Promise<AxiosResponse<T>>;
-  delete<T = any>(url: string, config?: RequestConfig): Promise<AxiosResponse<T>>;
-}
-
-export interface CustomAxiosStatic {
-  create: typeof create;
-  defaults: AxiosDefaults;
-  interceptors: { request: InterceptorManager; response: InterceptorManager };
-  get: AxiosInstance['get'];
-  post: AxiosInstance['post'];
-  patch: AxiosInstance['patch'];
-  delete: AxiosInstance['delete'];
-  isAxiosError: typeof isAxiosError;
-}
-
-interface AxiosDefaults {
-  headers: { common: Record<string, string> };
-  baseURL?: string;
-}
-
-const globalDefaults: AxiosDefaults = {
-  headers: { common: {} },
-  baseURL: '',
-};
-
-const globalInterceptors = {
-  request: new InterceptorManager(),
-  response: new InterceptorManager(),
-};
-
-export function create(config: { baseURL?: string; withCredentials?: boolean } = {}): AxiosInstance {
-  const baseURL = config.baseURL || '';
-  const defaultWithCreds = !!config.withCredentials;
-
-  const instance: AxiosInstance = {
-    interceptors: { request: new InterceptorManager(), response: new InterceptorManager() },
-    async get<T = any>(url: string, init: { params?: Record<string, any> } & RequestConfig = {} as any) {
-      const params = (init as any).params
-        ? '?' + new URLSearchParams((init as any).params).toString()
-        : '';
-      const opts = { ...init } as RequestConfig;
-      delete (opts as any).params;
-      return request<T>(baseURL + url + params, 'GET', opts);
-    },
-    async post<T = any>(url: string, data: any = {}, init: RequestConfig = {}) {
-      const headers = {
-        'Content-Type': 'application/json',
-        ...(init as any).headers,
-      };
-      const opts = { ...init, body: JSON.stringify(data), headers } as RequestConfig;
-      return request<T>(baseURL + url, 'POST', opts);
-    },
-    async patch<T = any>(url: string, data: any = {}, init: RequestConfig = {}) {
-      const headers = {
-        'Content-Type': 'application/json',
-        ...(init as any).headers,
-      };
-      const opts = { ...init, body: JSON.stringify(data), headers } as RequestConfig;
-      return request<T>(baseURL + url, 'PATCH', opts);
-    },
-    async delete<T = any>(url: string, init: RequestConfig = {} as any) {
-      return request<T>(baseURL + url, 'DELETE', init);
-    },
-  };
-
-  // Include global interceptors on the instance
-  instance.interceptors.request.handlers.push(
-    ...globalInterceptors.request.handlers
-  );
-  instance.interceptors.response.handlers.push(
-    ...globalInterceptors.response.handlers
-  );
-
-  async function request<T>(url: string, method: string, init: RequestConfig): Promise<AxiosResponse<T>> {
-    let reqInit: RequestConfig = { ...init };
-    // Run request interceptors
-    for (const h of instance.interceptors.request.handlers) {
-      try {
-        if (h?.fulfilled) {
-          const res = await h.fulfilled(reqInit);
-          if (res) reqInit = res;
-        }
-      } catch (err) {
-        if (h?.rejected) {
-          await h.rejected(err);
-        }
-      }
-    }
-
-    // Read authToken from cookies
-    const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
-      const [name, value] = cookie.split('=');
-      if (name && value !== undefined) {
-        acc[name] = value;
-      }
-      return acc;
-    }, {} as Record<string, string>);
-    const authToken =
-      cookies['authToken'] ||
-      safeStorage.getItem('zion_token') ||
-      safeStorage.getItem('token');
-
-    const headers: Record<string, string> = { ...globalDefaults.headers.common, ...(reqInit.headers as Record<string, string> || {}) };
-    if (authToken) {
-      headers['Authorization'] = `Bearer ${authToken}`;
-    }
-
-    const withCreds = reqInit.withCredentials ?? defaultWithCreds;
-    delete reqInit.withCredentials;
-
-    let abortCtrl: AbortController | undefined;
-    let timeoutId: ReturnType<typeof setTimeout> | undefined;
-    if (typeof reqInit.timeout === 'number') {
-      abortCtrl = new AbortController();
-      timeoutId = setTimeout(() => abortCtrl?.abort(), reqInit.timeout);
-      reqInit.signal = abortCtrl.signal;
-      delete reqInit.timeout;
-    }
-
-    let response: Response;
-    try {
-      response = await fetch(url, {
-        ...reqInit,
-        method,
-        headers,
-        credentials: withCreds ? 'include' : reqInit.credentials,
-      });
-    } catch (err) {
-      if (abortCtrl && (err as any).name === 'AbortError') {
-        const timeoutError: AxiosError = new Error('Request timeout') as AxiosError;
-        timeoutError.code = 'ECONNABORTED';
-        timeoutError.config = { url, method, ...reqInit };
-        timeoutError.isAxiosError = true;
-        throw timeoutError;
-      }
-      throw err;
-    } finally {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-    }
-    let data: any = null;
-    try {
-      data = await response.clone().json();
-    } catch {}
-    const result: AxiosResponse<T> = { data, status: response.status };
-    if (response.ok) {
-      let res: any = result;
-      for (const h of instance.interceptors.response.handlers) {
-        if (h?.fulfilled) {
-          res = await h.fulfilled(res);
-        }
-      }
-      return res;
-    } else {
-      const err: AxiosError = new Error('Request failed') as AxiosError;
-      err.response = result;
-      err.config = { url, method, ...reqInit };
-      err.isAxiosError = true;
-      for (const h of instance.interceptors.response.handlers) {
-        if (h?.rejected) {
-          await h.rejected(err as any);
-        }
-      }
-      throw err;
-    }
-  }
-
-  return instance;
-}
-
-const defaultInstance = create();
-
-const customAxios: CustomAxiosStatic = {
-  create,
-  defaults: globalDefaults,
-  interceptors: globalInterceptors,
-  get: defaultInstance.get,
-  post: defaultInstance.post,
-  patch: defaultInstance.patch,
-  delete: defaultInstance.delete,
-  isAxiosError,
-};
-
-export default customAxios;
+export default axiosInstance;

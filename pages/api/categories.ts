@@ -3,6 +3,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { CATEGORIES } from '@/data/categories';
 import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 
 const prisma = new PrismaClient({
   log: ['error'],
@@ -53,27 +55,27 @@ async function handler(
     const categories = await cacheOrCompute(
       cacheKeys.categories,
       async () => {
-        console.log('Fetching categories from database...');
+        logInfo('Fetching categories from database...');
         
         try {
           const dbCategories = await getCategoriesFromDB();
           
           if (dbCategories && dbCategories.length > 0) {
-            console.log(`Successfully fetched ${dbCategories.length} categories from DB`);
+            logInfo(`Successfully fetched ${dbCategories.length} categories from DB`);
             return dbCategories;
           }
         } catch (dbError) {
-          console.warn('Database query failed, using fallback:', dbError);
+          logWarn('Database query failed, using fallback:', { data: dbError });
         }
 
         // Fallback to static data if DB fails
         if (CATEGORIES && CATEGORIES.length > 0) {
-          console.log(`Using ${CATEGORIES.length} fallback categories`);
+          logInfo(`Using ${CATEGORIES.length} fallback categories`);
           return CATEGORIES;
         }
 
         // Return empty array if no data available
-        console.warn('No categories data available');
+        logWarn('No categories data available');
         return [];
       },
       CacheCategory.MEDIUM, // 30 minutes cache
@@ -90,7 +92,7 @@ async function handler(
     return res.status(200).json(categories);
 
   } catch (error: any) {
-    console.error('Categories API error:', error);
+    logError('Categories API error:', { data: error });
     
     // Return fallback data even on error
     if (CATEGORIES && CATEGORIES.length > 0) {

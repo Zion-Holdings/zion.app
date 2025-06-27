@@ -21,7 +21,11 @@ export function FeatureUsageChart({ data, timeRange, onTimeRangeChange }: Featur
       <CardContent>
         <AnalyticsChart
           title=""
-          data={data || []}
+          data={(data || []).map(item => ({
+            name: item.name || item.label || 'Unknown',
+            value: item.value || item.count || 0,
+            ...item
+          }))}
           dataKeys={dataKeys}
           type="bar"
           timeRange={timeRange}

@@ -8,8 +8,10 @@ import { format, isPast, parseISO } from "date-fns";
 import Link from "next/link";
 import { Calendar, Clock, Video } from "lucide-react";
 import { Avatar } from "@/components/ui/avatar";
+import { logError } from '@/utils/productionLogger';
 
 export function UpcomingInterviewsCard() {
+
   const { fetchInterviews } = useInterviews();
   const [upcomingInterviews, setUpcomingInterviews] = useState<Interview[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +35,7 @@ export function UpcomingInterviewsCard() {
         
         setUpcomingInterviews(upcoming);
       } catch (error) {
-        console.error("Error loading upcoming interviews:", error);
+        logError('Error loading upcoming interviews:', { data: error });
       } finally {
         setIsLoading(false);
       }

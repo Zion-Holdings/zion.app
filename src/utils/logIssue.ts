@@ -1,4 +1,6 @@
 import { captureException } from './sentry';
+import { logError } from '@/utils/productionLogger';
+
 
 /**
  * Wrapper to report minor issues or warnings to Sentry.
@@ -12,6 +14,6 @@ export function logIssue(message: string, context?: Record<string, unknown>) {
       captureException(new Error(message));
     }
   } catch (err) {
-    console.error('Failed to report issue:', err);
+    logError('Failed to report issue:', { data: err });
   }
 }

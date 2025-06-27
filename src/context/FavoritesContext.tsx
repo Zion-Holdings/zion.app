@@ -1,4 +1,6 @@
 import {
+import { logError } from '@/utils/productionLogger';
+
   createContext,
   useContext,
   useEffect,
@@ -56,7 +58,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
           : [...prev, productId]
       );
     } catch (err) {
-      console.error('Toggle favorite failed', err);
+      logError('Toggle favorite failed', { data: err });
     }
   };
 

@@ -15,8 +15,10 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { cn } from '@/lib/utils'; // Import cn utility
 import { useRouter } from 'next/router';
+import { logWarn } from '@/utils/productionLogger';
 
 export function AppHeader() {
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   const { t } = useTranslation();
@@ -31,7 +33,7 @@ export function AppHeader() {
     const { unreadCount: count } = useMessaging();
     unreadCount = count;
   } catch (error) {
-    console.warn('Messaging context not available');
+    logWarn('Messaging context not available');
   }
   
   return (

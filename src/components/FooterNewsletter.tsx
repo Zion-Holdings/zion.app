@@ -3,6 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
+import { logError } from '@/utils/productionLogger';
 
 export function FooterNewsletter(): React.ReactElement {
   const [email, setEmail] = useState('');
@@ -51,13 +52,13 @@ export function FooterNewsletter(): React.ReactElement {
         setEmail('');
         // setEmailError(''); // Already cleared if regex passed
       } else {
-        console.error('Newsletter subscription failed:', data);
+        logError('Newsletter subscription failed:', { data: data });
         // Use a more specific error message if available from API, otherwise generic
         const errorMessage = data.error || 'Subscription failed. Please try again.';
         toast.error(errorMessage, { id: `${uniqueToastIdBase}-api-error` });
       }
     } catch (err: any) {
-      console.error('Newsletter subscription error:', err);
+      logError('Newsletter subscription error:', { data: err });
       toast.error('Unable to subscribe right now. Please try again later.', { id: `${uniqueToastIdBase}-catch-error` });
     } finally {
       setIsSubmitting(false);
@@ -69,13 +70,18 @@ export function FooterNewsletter(): React.ReactElement {
       onSubmit={handleSubmit}
       className="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-2"
     >
+      <label htmlFor="newsletter-email" className="sr-only">
+        Email address for newsletter subscription
+      </label>
       <Input
         type="email"
+        id="newsletter-email"
         name="email"
         placeholder="Enter your email"
         className="flex-grow bg-zion-blue-light dark:bg-zion-blue-dark text-black dark:text-white border-zion-purple/20 focus:border-zion-purple focus:ring-zion-purple placeholder-opacity-50 placeholder:text-center"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        autoComplete="email"
         required
       />
       {emailError && <p className="text-red-500 text-sm mt-1">{emailError}</p>}

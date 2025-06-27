@@ -14,6 +14,8 @@ import NotFound from "./NotFound";
 import { useAuth } from "@/hooks/useAuth";
 import { useCommunity } from "@/context";
 import {
+import { logInfo } from '@/utils/productionLogger';
+
   MessageSquare,
   Briefcase,
   Code,
@@ -103,9 +105,9 @@ function CategoryContent({
 
   const canCreatePost = user && (!category.adminOnly || user.userType === 'admin' || user.role === 'admin');
 
-  console.log('CategoryContent - categoryId:', categoryId);
-  console.log('CategoryContent - categoryPosts:', categoryPosts);
-  console.log('CategoryContent - filteredPosts:', filteredPosts);
+  logInfo('CategoryContent - categoryId:', { data: categoryId });
+  logInfo('CategoryContent - categoryPosts:', { data: categoryPosts });
+  logInfo('CategoryContent - filteredPosts:', { data: filteredPosts });
 
   return (
     <div className="container py-8">
@@ -196,7 +198,7 @@ export default function ForumCategoryPage() {
   useEffect(() => {
     // Add a small delay to ensure router is ready
     if (categoryId && category) {
-      console.log('ForumCategoryPage - categoryId changed:', categoryId);
+      logInfo('ForumCategoryPage - categoryId changed:', { data: categoryId });
     }
   }, [categoryId, category]);
 

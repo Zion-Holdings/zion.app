@@ -6,6 +6,8 @@ import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import type { RootState, AppDispatch } from '@/store';
 import {
+import { logError } from '@/utils/productionLogger';
+
   removeItem as removeItemAction,
   updateQuantity as updateQuantityAction,
 } from '@/store/cartSlice';
@@ -76,9 +78,9 @@ export default function CartPage() {
       if (!sessionId) throw new Error('Session ID missing in response');
 
       const { error } = await stripe.redirectToCheckout({ sessionId });
-      if (error) console.error('Stripe redirect error:', error.message);
+      if (error) logError('Stripe redirect error:', { data: error.message });
     } catch (err: any) {
-      console.error('Checkout error:', err);
+      logError('Checkout error:', { data: err });
       alert(err.message || 'Checkout failed');
     } finally {
       setLoading(false);

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
+import { logError } from '@/utils/productionLogger';
+
 
 type EnhancementType = 
   | 'resume-summary' 
@@ -53,7 +55,7 @@ export function useAIContentEnhancer() {
         description: errorMessage,
         variant: "destructive"
       });
-      console.error('Enhancement error:', err);
+      logError('Enhancement error:', { data: err });
       return null;
     } finally {
       setIsEnhancing(false);

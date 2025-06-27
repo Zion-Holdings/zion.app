@@ -14,6 +14,8 @@ import { generateRandomBlogPost } from "@/utils/generateRandomBlogPost";
 import { BLOG_POSTS } from "@/data/blog-posts";
 import { Search } from "lucide-react";
 import { fetchWithRetry } from '@/utils/fetchWithRetry';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 // Categories for filtering
 const CATEGORIES = [
@@ -31,7 +33,7 @@ export interface BlogProps {
 }
 
 export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
-  console.log('BlogPage rendering. Initial BLOG_POSTS:', initialPosts);
+  logInfo('BlogPage rendering. Initial BLOG_POSTS:', { data: initialPosts });
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [posts, setPosts] = useState<BlogPost[]>([...initialPosts]);
@@ -64,7 +66,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
         );
         setPosts(data);
       } catch (err) {
-        console.error('Failed to fetch blog posts', err);
+        logError('Failed to fetch blog posts', { data: err });
       } finally {
         setIsLoading(false);
       }
@@ -85,7 +87,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
   // Get featured posts
   const featuredPosts = posts.filter(post => post.isFeatured);
 
-  console.log('BlogPage filteredPosts:', filteredPosts);
+  logInfo('BlogPage filteredPosts:', { data: filteredPosts });
   
   return (
     <>

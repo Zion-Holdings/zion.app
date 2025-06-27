@@ -1,4 +1,6 @@
 export async function enableDevToolsInStaging() {
+import { logInfo, logError } from '@/utils/productionLogger';
+
   // Only attempt to load in development, or if explicitly enabled via NEXT_PUBLIC_DEVTOOLS
   const isDev =
     (typeof import.meta !== 'undefined' &&
@@ -10,10 +12,10 @@ export async function enableDevToolsInStaging() {
       // The /* @vite-ignore */ comment might still be useful if we want to avoid
       // Vite trying to be too clever with this dynamic import even in dev.
       // await import(/* @vite-ignore */ 'react-devtools');
-      // console.log('DevTools enabled');
-      console.log('React DevTools import temporarily commented out for build troubleshooting.');
+      // logInfo('DevTools enabled');
+      logInfo('React DevTools import temporarily commented out for build troubleshooting.');
     } catch (err) {
-      console.error('Failed to load react-devtools (import is commented out)', err);
+      logError('Failed to load react-devtools (import is commented out)', { data: err });
     }
   }
 }

@@ -7,6 +7,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/router";
 import Image from 'next/image'; // Import next/image
+import { logError } from '@/utils/productionLogger';
 
 import {
   Form,
@@ -239,7 +240,7 @@ export function ProductSubmissionForm() {
           }
         });
       } catch (err) {
-        console.error('Error invoking moderation:', err);
+        logError('Error invoking moderation:', { data: err });
       }
       
       // Show success message

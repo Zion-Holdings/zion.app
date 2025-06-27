@@ -23,6 +23,7 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
+import { logDev, logError } from '@/utils/developmentLogger';
 
 // Form validation schema
 const checkoutSchema = z.object({
@@ -71,64 +72,55 @@ function CheckoutInner() {
   const shipping = subtotal > 100 ? 0 : 15; // Free shipping over $100
   const total = subtotal + tax + shipping;
 
-  const onSubmit = async (data: CheckoutFormData) => {
-    if (items.length === 0) {
+  const handleCheckout = async (data: CheckoutFormData) => {
+    if (!items.length) {
       toast({
-        title: "Cart is empty",
-        description: "Please add items to your cart before checking out.",
-        variant: "destructive",
+        title: 'Cart is empty',
+        description: 'Please add items to your cart before checkout.',
+        variant: 'destructive',
       });
       return;
     }
 
-    fireEvent('checkout_submit');
     setIsSubmitting(true);
     
     try {
-      console.log('Starting checkout with data:', { ...data, items: items.length });
+      logDev('Starting checkout with data:', { ...data, items: items.length });
       
       const response = await fetch('/api/checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          cartItems: items,
-          customer_email: data.email,
-          shipping_address: `${data.address}, ${data.city}, ${data.country}`,
+          items: items.map(item => ({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            quantity: item.quantity || 1,
+          })),
+          customerData: data,
         }),
       });
-      
+
       const responseData = await response.json();
-      
+      logDev('Checkout session created:', responseData);
+
       if (!response.ok) {
         throw new Error(responseData.error || `HTTP ${response.status}: Failed to create checkout session`);
       }
-      
-      console.log('Checkout session created:', responseData);
 
-      if (responseData.url) {
-        // Show success message before redirect
-        toast({
-          title: "Redirecting to payment",
-          description: "Taking you to secure checkout...",
-        });
-
-        fireEvent('checkout_session_created', { total });
-        
-        // Small delay to show the toast
-        setTimeout(() => {
-          window.location.href = responseData.url;
-        }, 500);
-      } else {
+      if (!responseData.url) {
         throw new Error('No checkout URL received from server');
       }
+
+      window.location.href = responseData.url;
     } catch (err: any) {
-      console.error('Checkout error:', err);
+      logError('Checkout error:', err);
       fireEvent('checkout_error', { message: err.message });
       
       toast({
-        title: "Checkout failed",
-        description: err.message || "Unable to start checkout. Please try again.",
-        variant: "destructive",
+        title: 'Checkout failed',
+        description: err.message || 'Failed to process checkout. Please try again.',
+        variant: 'destructive',
       });
     } finally {
       setIsSubmitting(false);
@@ -214,7 +206,7 @@ function CheckoutInner() {
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(handleCheckout)} className="space-y-4">
           <FormField
             control={form.control}
             name="name"
@@ -222,7 +214,7 @@ function CheckoutInner() {
               <FormItem>
                 <FormLabel>Full Name *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your full name" />
+                  <Input {...field} placeholder="Enter your full name" autoComplete="name" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -236,7 +228,7 @@ function CheckoutInner() {
               <FormItem>
                 <FormLabel>Email Address *</FormLabel>
                 <FormControl>
-                  <Input {...field} type="email" placeholder="Enter your email" />
+                  <Input {...field} type="email" placeholder="Enter your email" autoComplete="email" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -250,7 +242,7 @@ function CheckoutInner() {
               <FormItem>
                 <FormLabel>Address *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your address" />
+                  <Input {...field} placeholder="Enter your address" autoComplete="street-address" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -264,7 +256,7 @@ function CheckoutInner() {
               <FormItem>
                 <FormLabel>City *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your city" />
+                  <Input {...field} placeholder="Enter your city" autoComplete="address-level2" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -278,7 +270,7 @@ function CheckoutInner() {
               <FormItem>
                 <FormLabel>Country *</FormLabel>
                 <FormControl>
-                  <Input {...field} placeholder="Enter your country" />
+                  <Input {...field} placeholder="Enter your country" autoComplete="country-name" />
                 </FormControl>
                 <FormMessage />
               </FormItem>

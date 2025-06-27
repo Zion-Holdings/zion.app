@@ -1,3 +1,5 @@
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 /**
  * Performance monitoring utilities for Core Web Vitals
  * Helps track CLS improvements and other performance metrics
@@ -121,15 +123,15 @@ export function initPerformanceMonitoring(): void {
     // Only log in development or when performance monitoring is explicitly enabled
     if (process.env.NODE_ENV === 'development' || 
         localStorage.getItem('performance-monitoring') === 'true') {
-      console.log(`CLS: ${cls.toFixed(4)}`);
+      logInfo(`CLS: ${cls.toFixed(4)}`);
       
       // Log warning if CLS is high
       if (cls > 0.1) {
-        console.warn(`⚠️ High CLS detected: ${cls.toFixed(4)} (target: <0.1)`);
+        logWarn(`⚠️ High CLS detected: ${cls.toFixed(4)} (target: <0.1)`);
       } else if (cls > 0.25) {
-        console.error(`🔴 Poor CLS: ${cls.toFixed(4)} (target: <0.1)`);
+        logError(`🔴 Poor CLS: ${cls.toFixed(4)} (target: <0.1)`);
       } else {
-        console.log(`✅ Good CLS: ${cls.toFixed(4)}`);
+        logInfo(`✅ Good CLS: ${cls.toFixed(4)}`);
       }
     }
   });
@@ -138,7 +140,7 @@ export function initPerformanceMonitoring(): void {
     metrics.fcp = fcp;
     if (process.env.NODE_ENV === 'development' || 
         localStorage.getItem('performance-monitoring') === 'true') {
-      console.log(`FCP: ${fcp.toFixed(2)}ms`);
+      logInfo(`FCP: ${fcp.toFixed(2)}ms`);
     }
   });
 
@@ -146,10 +148,10 @@ export function initPerformanceMonitoring(): void {
     metrics.lcp = lcp;
     if (process.env.NODE_ENV === 'development' || 
         localStorage.getItem('performance-monitoring') === 'true') {
-      console.log(`LCP: ${lcp.toFixed(2)}ms`);
+      logInfo(`LCP: ${lcp.toFixed(2)}ms`);
       
       if (lcp > 2500) {
-        console.warn(`⚠️ Slow LCP: ${lcp.toFixed(2)}ms (target: <2.5s)`);
+        logWarn(`⚠️ Slow LCP: ${lcp.toFixed(2)}ms (target: <2.5s)`);
       }
     }
   });
@@ -158,10 +160,10 @@ export function initPerformanceMonitoring(): void {
     metrics.fid = fid;
     if (process.env.NODE_ENV === 'development' || 
         localStorage.getItem('performance-monitoring') === 'true') {
-      console.log(`FID: ${fid.toFixed(2)}ms`);
+      logInfo(`FID: ${fid.toFixed(2)}ms`);
       
       if (fid > 100) {
-        console.warn(`⚠️ Slow FID: ${fid.toFixed(2)}ms (target: <100ms)`);
+        logWarn(`⚠️ Slow FID: ${fid.toFixed(2)}ms (target: <100ms)`);
       }
     }
   });
@@ -173,7 +175,7 @@ export function initPerformanceMonitoring(): void {
     metrics.ttfb = ttfb;
     if (process.env.NODE_ENV === 'development' || 
         localStorage.getItem('performance-monitoring') === 'true') {
-      console.log(`TTFB: ${ttfb}ms`);
+      logInfo(`TTFB: ${ttfb}ms`);
     }
   }
 
@@ -182,7 +184,7 @@ export function initPerformanceMonitoring(): void {
     setTimeout(() => {
       if (process.env.NODE_ENV === 'development' || 
           localStorage.getItem('performance-monitoring') === 'true') {
-        console.log('📊 Performance Metrics Summary:', metrics);
+        logInfo('📊 Performance Metrics Summary:', { data: metrics });
       }
     }, 5000); // Wait 5 seconds for metrics to stabilize
   });
@@ -223,20 +225,20 @@ export function observeFontLoading(): void {
 
   // Monitor font loading
   document.fonts.addEventListener('loadingstart', (event) => {
-    console.log(`🔤 Font loading started: ${(event as any).fontface.family}`);
+    logInfo(`🔤 Font loading started: ${(event as any).fontface.family}`);
   });
 
   document.fonts.addEventListener('loadingdone', (event) => {
-    console.log(`✅ Font loaded: ${(event as any).fontface.family}`);
+    logInfo(`✅ Font loaded: ${(event as any).fontface.family}`);
   });
 
   document.fonts.addEventListener('loadingerror', (event) => {
-    console.error(`❌ Font loading error: ${(event as any).fontface.family}`);
+    logError(`❌ Font loading error: ${(event as any).fontface.family}`);
   });
 
   // Check if fonts are ready
   document.fonts.ready.then(() => {
-    console.log('✅ All fonts loaded');
+    logInfo('✅ All fonts loaded');
   });
 }
 
@@ -246,19 +248,29 @@ export function observeFontLoading(): void {
 export function preloadCriticalResources(): void {
   if (typeof window === 'undefined') return;
 
-  const criticalResources = [
-    // Add URLs of critical resources
-    '/fonts/inter.woff2',
-    '/fonts/montserrat.woff2',
+  const criticalResources: string[] = [
+    // Critical assets only - fonts are handled by Next.js font optimization
+    // Add other critical resources like critical CSS or images here if needed
   ];
 
   criticalResources.forEach((url) => {
     const link = document.createElement('link');
     link.rel = 'preload';
     link.href = url;
-    link.as = 'font';
-    link.type = 'font/woff2';
-    link.crossOrigin = 'anonymous';
+    
+    // Determine asset type from URL
+    if (url.includes('.woff2') || url.includes('.woff')) {
+      link.as = 'font';
+      link.type = 'font/woff2';
+      link.crossOrigin = 'anonymous';
+    } else if (url.includes('.css')) {
+      link.as = 'style';
+    } else if (url.includes('.js')) {
+      link.as = 'script';
+    } else {
+      link.as = 'fetch';
+    }
+    
     document.head.appendChild(link);
   });
 }
@@ -321,7 +333,7 @@ export class PerformanceMonitor {
       this.sendToAnalytics(name, value);
     }
     
-    console.log(`[Performance] ${name}: ${value}`);
+    logInfo(`[Performance] ${name}: ${value}`);
   }
 
   private sendToAnalytics(name: string, value: number): void {
@@ -358,7 +370,7 @@ export class PerformanceMonitor {
       const observer = new PerformanceObserver((list) => {
         list.getEntries().forEach((entry) => {
           if (entry.duration > 50) {
-            console.warn(`Long task detected: ${entry.duration}ms`);
+            logWarn(`Long task detected: ${entry.duration}ms`);
             this.reportMetric('LongTask', entry.duration);
           }
         });
@@ -367,7 +379,7 @@ export class PerformanceMonitor {
       observer.observe({ entryTypes: ['longtask'] });
       this.observers.push(observer);
     } catch (error) {
-      console.warn('Long task observer not supported');
+      logWarn('Long task observer not supported');
     }
   }
 
@@ -424,7 +436,7 @@ export const bundleOptimization = {
     try {
       return await importFn();
     } catch (error) {
-      console.error('Dynamic import failed:', error);
+      logError('Dynamic import failed:', { data: error });
       throw new Error('Failed to load component');
     }
   },

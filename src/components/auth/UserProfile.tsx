@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { User, LogOut, LogIn } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import type { User as SupabaseUser } from '@supabase/supabase-js'
+import type { User as SupabaseUser, AuthChangeEvent, Session } from '@supabase/supabase-js'
 
 export default function UserProfile() {
   const [user, setUser] = useState<SupabaseUser | null>(null)
@@ -25,7 +25,7 @@ export default function UserProfile() {
     getUser()
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
+      (event: AuthChangeEvent, session: Session | null) => {
         setUser(session?.user ?? null)
         
         // Handle auth events

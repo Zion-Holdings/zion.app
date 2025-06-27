@@ -5,6 +5,8 @@ import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { SearchSuggestion } from "@/types/search";
 import {
+import { logError } from '@/utils/productionLogger';
+
   Tabs,
   TabsContent,
   TabsList,
@@ -95,10 +97,10 @@ export default function SearchPage() {
         setResults(data.results);
       } else {
         setResults([]);
-        console.error("Search API response structure is not as expected:", data);
+        logError('Search API response structure is not as expected:', { data: data });
       }
     } catch (error) {
-      console.error("Search failed:", error);
+      logError('Search failed:', { data: error });
       setResults([]);
     } finally {
       setLoading(false);

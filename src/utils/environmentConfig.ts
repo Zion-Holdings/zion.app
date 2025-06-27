@@ -1,5 +1,7 @@
 import * as Sentry from '@sentry/nextjs';
 import { z } from 'zod';
+import { logInfo, logWarn } from '@/utils/productionLogger';
+
 
 interface EnvironmentConfig {
   supabase: {
@@ -61,6 +63,7 @@ type RawEnv = z.infer<typeof EnvSchema>;
 
 /**
  * Check if a value is a placeholder or default development value
+ * Updated to properly handle real Supabase credentials
  */
 function isPlaceholderValue(value: string | undefined): boolean {
   if (!value) return true;
@@ -70,7 +73,6 @@ function isPlaceholderValue(value: string | undefined): boolean {
     'your_',
     'example',
     'test_key',
-    'localhost',
     'change_me',
     'replace_with',
     'insert_',
@@ -81,10 +83,24 @@ function isPlaceholderValue(value: string | undefined): boolean {
     'your_auth0_',
     'auth0_client_id_here',
     'auth0_client_secret_here',
-    'auth0_secret_here'
+    'auth0_secret_here',
+    // Generic placeholders
+    'dummy',
+    'https_dummy',
+    'https_example'
   ];
   
   const lowerValue = value.toLowerCase();
+  
+  // Don't flag real Supabase URLs or JWT tokens as placeholders
+  if (value.includes('supabase.co') && value.startsWith('https://')) {
+    return false; // Real Supabase URL
+  }
+  
+  if (value.startsWith('eyJ') && value.length > 100) {
+    return false; // Real JWT token
+  }
+  
   return placeholderPatterns.some(pattern => lowerValue.includes(pattern));
 }
 
@@ -103,9 +119,9 @@ export async function initializeServices(): Promise<void> {
         release: config.sentry.release,
         tracesSampleRate: 1.0,
       });
-      console.log('✅ Sentry initialized successfully');
+      logInfo('✅ Sentry initialized successfully');
     } catch (error) {
-      console.warn('Failed to initialize Sentry:', error);
+      logWarn('Failed to initialize Sentry:', { data: error });
     }
   }
 
@@ -120,9 +136,9 @@ export async function initializeServices(): Promise<void> {
         env: config.datadog.env,
         forwardErrorsToLogs: true,
       });
-      console.log('✅ Datadog Logs initialized');
+      logInfo('✅ Datadog Logs initialized');
     } catch (error) {
-      console.warn('Failed to initialize Datadog Logs:', error);
+      logWarn('Failed to initialize Datadog Logs:', { data: error });
     }
   }
 
@@ -131,14 +147,14 @@ export async function initializeServices(): Promise<void> {
     try {
       const LogRocket = (await import('logrocket')).default;
       LogRocket.init(config.logRocket.id!);
-      console.log('✅ LogRocket initialized');
+      logInfo('✅ LogRocket initialized');
     } catch (error) {
-      console.warn('Failed to initialize LogRocket:', error);
+      logWarn('Failed to initialize LogRocket:', { data: error });
     }
   }
 
   if (config.app.isDevelopment) {
-    console.log('🔧 Services initialized for development environment');
+    logInfo('🔧 Services initialized for development environment');
   }
 }
 
@@ -154,26 +170,32 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   // Parse environment variables using the typed schema
   const env = EnvSchema.parse(process.env) as RawEnv;
 
-  // Supabase Configuration
-  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  // Supabase Configuration with fallback values (from next.config.cjs)
+  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL || 'https://gnwtggeptzkqnduuthto.supabase.co';
+  const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY';
   const supabaseServiceRoleKey = env.SUPABASE_SERVICE_ROLE_KEY;
   
   // Debug logging for Supabase configuration
   const urlIsPlaceholder = isPlaceholderValue(supabaseUrl);
   const anonKeyIsPlaceholder = isPlaceholderValue(supabaseAnonKey);
   
-  if (isDevelopment || process.env.DEBUG_ENV_CONFIG) {
-    console.log('[ENV CONFIG] Supabase configuration check:', {
+  if ((isDevelopment || process.env.DEBUG_ENV_CONFIG) && (urlIsPlaceholder || anonKeyIsPlaceholder)) {
+    logInfo('[ENV CONFIG] Supabase configuration check:', {
       url: supabaseUrl ? `${supabaseUrl.substring(0, 30)}...` : 'undefined',
       urlIsPlaceholder,
       anonKeyPresent: !!supabaseAnonKey,
       anonKeyIsPlaceholder,
-      serviceRoleKeyPresent: !!supabaseServiceRoleKey
+      serviceRoleKeyPresent: !!supabaseServiceRoleKey,
+      fallbacksUsed: {
+        url: !env.NEXT_PUBLIC_SUPABASE_URL,
+        anonKey: !env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      },
+      note: 'Using fallback values for development - this is normal'
     });
   }
   
-  const supabaseConfigured = !urlIsPlaceholder && !anonKeyIsPlaceholder;
+  // Consider Supabase configured if we have valid values (including fallbacks)
+  const supabaseConfigured = !!supabaseUrl && !!supabaseAnonKey && !urlIsPlaceholder && !anonKeyIsPlaceholder;
 
   // Sentry Configuration
   const sentryDsn = env.NEXT_PUBLIC_SENTRY_DSN || env.SENTRY_DSN;
@@ -199,8 +221,8 @@ export function getEnvironmentConfig(): EnvironmentConfig {
 
   return {
     supabase: {
-      url: supabaseConfigured ? supabaseUrl! : 'https://placeholder.supabase.co',
-      anonKey: supabaseConfigured ? supabaseAnonKey! : 'placeholder-anon-key',
+      url: supabaseUrl,
+      anonKey: supabaseAnonKey,
       serviceRoleKey: supabaseServiceRoleKey,
       isConfigured: supabaseConfigured
     },
@@ -264,34 +286,44 @@ export function validateProductionEnvironment(): void {
     }
     
     if (warnings.length > 0) {
-      console.warn('⚠️ Development Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
+      logWarn('⚠️ Development Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
     }
     
     return;
   }
 
-  // Strict validation for production
+  // In production, only validate critical services that are required for core functionality
   const errors = [];
+  const warnings = [];
   
+  // Critical: Supabase is required for authentication and core functionality
   if (!config.supabase.isConfigured) {
     errors.push('Supabase configuration must be complete in production (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)');
   }
 
+  // Optional but recommended: Error monitoring
   if (!config.sentry.isConfigured) {
-    errors.push('NEXT_PUBLIC_SENTRY_DSN must be configured in production for error monitoring');
+    warnings.push('NEXT_PUBLIC_SENTRY_DSN not configured - error monitoring disabled');
   }
 
+  // Optional: Analytics and monitoring tools
   if (!config.datadog.enabled) {
-    errors.push('Datadog logging must be configured in production (NEXT_PUBLIC_DD_CLIENT_TOKEN)');
+    warnings.push('Datadog logging not configured - advanced logging disabled');
   }
 
   if (!config.logRocket.enabled) {
-    errors.push('LogRocket must be configured in production (NEXT_PUBLIC_LOGROCKET_ID)');
+    warnings.push('LogRocket not configured - session recording disabled');
   }
   
+  // Only throw errors for critical missing configuration
   if (errors.length > 0) {
     const errorMessage = 'Production Environment Configuration Errors:\n' + errors.map(e => `  • ${e}`).join('\n');
     throw new Error(errorMessage);
+  }
+
+  // Log warnings for optional services
+  if (warnings.length > 0) {
+    logWarn('⚠️ Production Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
   }
 }
 

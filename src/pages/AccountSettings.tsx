@@ -12,8 +12,10 @@ import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+import { logInfo, logError } from '@/utils/productionLogger';
 
 export default function AccountSettings() {
+
   const { user } = useAuth();
   const [displayWeb3, setDisplayWeb3] = useLocalStorage('display_web3', false);
   const [didHandle, setDidHandle] = useLocalStorage('did_handle', '');
@@ -29,10 +31,10 @@ export default function AccountSettings() {
         setDisplayWeb3(displayWeb3);
         setDidHandle(didHandle);
         setEnableBackup(enableBackup);
-        console.log('Saved settings', { displayWeb3, didHandle, enableBackup });
+        logInfo('Saved settings', { displayWeb3, didHandle, enableBackup });
         toast.success('Account settings updated successfully');
       } catch (e) {
-        console.error('Failed to save settings', e);
+        logError('Failed to save settings', { data:  e });
         toast.error('Failed to save settings');
       } finally {
         setIsSubmitting(false);
@@ -68,7 +70,7 @@ export default function AccountSettings() {
           setDidHandle(ensName);
         }
       } catch (error) {
-        console.error('ENS lookup error:', error);
+        logError('ENS lookup error:', { data: error });
       }
       
       toast.success(`Wallet connected: ${address.slice(0, 6)}...${address.slice(-4)}`);

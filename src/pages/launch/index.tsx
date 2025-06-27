@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { logError } from '@/utils/productionLogger';
+
 // Card components are usually exported from 'card.tsx' like this:
 // import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 // However, the provided JSX doesn't use Card, CardHeader, etc. explicitly as wrappers,
@@ -67,7 +69,7 @@ const LaunchToolkitPage = () => {
       for (const assetPath of toolkitAssets) {
         const response = await fetch(`/${assetPath}`); // Fetch from public directory
         if (!response.ok) {
-          console.error(`Failed to fetch asset: ${assetPath}`);
+          logError(`Failed to fetch asset: ${assetPath}`);
           // Optionally, decide if one failed asset should stop the whole process
           // or if it should be skipped. For now, we'll log and continue.
           continue;
@@ -82,7 +84,7 @@ const LaunchToolkitPage = () => {
       saveAs(zipBlob, 'Zion_Launch_Toolkit.zip');
 
     } catch (error) {
-      console.error("Error creating ZIP:", error);
+      logError('Error creating ZIP:', { data: error });
       setZipError(error instanceof Error ? error.message : 'An unknown error occurred while creating ZIP.');
     } finally {
       setIsZipping(false);
@@ -101,7 +103,7 @@ const LaunchToolkitPage = () => {
         const text = await response.text();
         setExplainerCopy(text);
       } catch (error) {
-        console.error("Error loading explainer copy:", error);
+        logError('Error loading explainer copy:', { data: error });
         setExplainerCopy('Could not load explainer copy.');
         setLoadCopyError(error instanceof Error ? error.message : 'An unknown error occurred.');
       } finally {
@@ -126,7 +128,7 @@ const LaunchToolkitPage = () => {
       const text = await response.text();
       setSelectedTemplateContent(text);
     } catch (error) {
-      console.error("Error loading template:", error);
+      logError('Error loading template:', { data: error });
       setSelectedTemplateContent('');
       setLoadError(error instanceof Error ? error.message : 'An unknown error occurred.');
     } finally {

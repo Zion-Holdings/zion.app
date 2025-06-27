@@ -10,9 +10,10 @@ export function createClient(req: NextApiRequest, res: NextApiResponse) {
     {
       cookies: {
         getAll() {
-          return Object.keys(req.cookies).map((name) => ({
+          const cookies = req.cookies || {};
+          return Object.keys(cookies as Record<string, string>).map((name) => ({
             name,
-            value: req.cookies[name] || '',
+            value: (cookies as Record<string, string>)[name] || '',
           }))
         },
         setAll(cookiesToSet) {
@@ -39,9 +40,10 @@ export function createServerSideClient(context: GetServerSidePropsContext) {
     {
       cookies: {
         getAll() {
-          return Object.keys(context.req.cookies).map((name) => ({
+          const cookies = context.req.cookies || {};
+          return Object.keys(cookies as Record<string, string>).map((name) => ({
             name,
-            value: context.req.cookies[name] || '',
+            value: (cookies as Record<string, string>)[name] || '',
           }))
         },
         setAll(cookiesToSet) {

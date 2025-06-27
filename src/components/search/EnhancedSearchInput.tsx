@@ -8,6 +8,8 @@ import { useDebounce } from "@/hooks/useDebounce";
 import { useRouter } from "next/router";
 import { slugify } from "@/lib/slugify";
 import { debounce } from "lodash";
+import { logInfo, logWarn } from '@/utils/productionLogger';
+
 
 interface EnhancedSearchInputProps {
   value: string;
@@ -66,12 +68,12 @@ export function EnhancedSearchInput({
             }
           } else {
             // Silently fail for search suggestions - don't show error toast
-            console.warn('Search suggestions API error:', response.status);
+            logWarn('Search suggestions API error:', { data: response.status });
             setApiSuggestions([]);
           }
         } catch (error) {
           // Silently fail for search suggestions - don't show error toast
-          console.warn('Search suggestions fetch error:', error);
+          logWarn('Search suggestions fetch error:', { data: error });
           setApiSuggestions([]);
         } finally {
           setLoading(false);
@@ -128,14 +130,14 @@ export function EnhancedSearchInput({
   const router = useRouter();
 
   const handleSelectSuggestion = (suggestionObj: SearchSuggestion) => {
-    console.log('EnhancedSearchInput handleSelectSuggestion called:', suggestionObj);
+    logInfo('EnhancedSearchInput handleSelectSuggestion called:', { data: suggestionObj });
     onChange(suggestionObj.text);
     if (onSelectSuggestion) {
-      console.log('Calling onSelectSuggestion with:', suggestionObj);
+      logInfo('Calling onSelectSuggestion with:', { data: suggestionObj });
       onSelectSuggestion(suggestionObj);
     } else {
       // Provide a sensible default navigation if the parent did not supply a handler
-      console.warn('onSelectSuggestion callback not provided');
+      logWarn('onSelectSuggestion callback not provided');
       if (suggestionObj.id) {
         router.push(`/marketplace/listing/${suggestionObj.id}`);
       } else if (suggestionObj.type === 'doc' && suggestionObj.slug?.startsWith('/')) {
@@ -172,7 +174,7 @@ export function EnhancedSearchInput({
         } else if (value.trim()) {
           // Allow form submission when there's a value and no suggestion is selected
           // Don't prevent default - let the form handle submission
-          console.log('EnhancedSearchInput: Allowing form submission for query:', value);
+          logInfo('EnhancedSearchInput: Allowing form submission for query:', { data: value });
           setIsFocused(false);
           setHighlightedIndex(-1);
           inputRef.current?.blur();
@@ -212,6 +214,8 @@ export function EnhancedSearchInput({
         <Input
           ref={inputRef}
           type="text"
+          id="enhanced-search-input"
+          name="search"
           value={value}
           onChange={(e) => {
             onChange(e.target.value);
@@ -239,6 +243,7 @@ export function EnhancedSearchInput({
           className="pl-10 bg-zion-blue border border-zion-blue-light text-gray-800 placeholder:text-zion-slate h-auto py-0 min-w-0"
           aria-autocomplete="list"
           aria-activedescendant={highlightedIndex !== -1 ? `suggestion-item-${highlightedIndex}` : undefined}
+          autoComplete="search"
         />
         {value && (
           <button

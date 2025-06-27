@@ -65,11 +65,14 @@ export function MarketplaceSearch({ products, onSelect }: MarketplaceSearchProps
   return (
     <div className="relative">
       <Input
+        id="marketplace-search-input"
+        name="marketplace-search"
         value={query}
         onChange={handleInput}
         onKeyDown={handleKeyDown}
         placeholder="Search products..."
         aria-label="Marketplace search"
+        autoComplete="search"
       />
       {suggestions.length > 0 && (
         <ul className="absolute left-0 right-0 mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-md z-10 max-h-60 overflow-auto">

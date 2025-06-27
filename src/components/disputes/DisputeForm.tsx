@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
+import { logInfo, logError } from '@/utils/productionLogger';
+
   Form,
   FormControl,
   FormField,
@@ -89,7 +91,7 @@ export function DisputeForm({
         // Future enhancement: Upload attachments
         // For now we just log the files that would be uploaded
         if (files.length > 0) {
-          // console.log(`Would upload ${files.length} files for dispute ${dispute.id}`);
+          // logInfo(`Would upload ${files.length} files for dispute ${dispute.id}`);
         }
         
         toast.success("Your dispute has been submitted");
@@ -99,7 +101,7 @@ export function DisputeForm({
         }
       }
     } catch (error) {
-      console.error("Error submitting dispute:", error);
+      logError('Error submitting dispute:', { data: error });
       toast.error("Failed to submit dispute. Please try again.");
     } finally {
       setIsSubmitting(false);

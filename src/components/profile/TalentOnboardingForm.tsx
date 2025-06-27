@@ -3,19 +3,19 @@ import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from 'next/router';
-import { 
+import {
   Form, FormControl, FormField, FormItem, FormLabel, FormMessage 
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { 
+import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue 
 } from "@/components/ui/select";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "@/components/ui/use-toast";
-import { 
+import {
   User, Briefcase, Star, Calendar, Globe, DollarSign, FileText, Link, Upload, ArrowRight, ArrowLeft, 
   Trash2, Plus, CheckCircle2
 } from "lucide-react";
@@ -143,7 +143,7 @@ export function TalentOnboardingForm() {
       .upload(fileName, file);
       
     if (cvError) {
-      console.error("Error uploading CV:", cvError);
+      logError('Error uploading CV:', { data: cvError });
       throw new Error("Failed to upload CV");
     }
     

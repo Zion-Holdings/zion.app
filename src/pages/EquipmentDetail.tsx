@@ -15,6 +15,8 @@ import { equipmentListings } from '@/data/equipmentData';
 import { ProductListing } from '@/types/listings';
 import { motion } from 'framer-motion';
 import { useCurrency } from '@/hooks/useCurrency';
+import { logError } from '@/utils/productionLogger';
+
 
 interface EquipmentSpecification {
   name: string;
@@ -130,7 +132,7 @@ export default function EquipmentDetail() {
               return;
             }
           } catch (storageError) {
-            console.error('Error reading from sessionStorage:', storageError);
+            logError('Error reading from sessionStorage:', { data: storageError });
           }
         }
 
@@ -138,7 +140,7 @@ export default function EquipmentDetail() {
         setError('Equipment not found');
         setLoading(false);
       } catch (error) {
-        console.error('Error loading equipment:', error);
+        logError('Error loading equipment:', { data: error });
         setError('Failed to load equipment details');
         setLoading(false);
       }

@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { TALENT_PROFILES } from '@/data/talentData';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface TalentProfile {
   id: string;
@@ -20,7 +22,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    console.log('Marketplace talent API called with query:', req.query);
+    logInfo('Marketplace talent API called with query:', { data: req.query });
     
     // Add CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -74,11 +76,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       availability: profile.availability_type
     }));
 
-    console.log(`Returning ${mappedProfiles.length} talent profiles (page ${page}, limit ${limit})`);
+    logInfo(`Returning ${mappedProfiles.length} talent profiles (page ${page}, limit ${limit})`);
     
     return res.status(200).json(mappedProfiles);
   } catch (error) {
-    console.error('Error in marketplace talent API:', error);
+    logError('Error in marketplace talent API:', { data: error });
     
     // Return fallback empty array instead of error
     return res.status(200).json([]);

@@ -1,6 +1,9 @@
+export type { SearchFilters, SearchResult };
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { supabase } from '@/integrations/supabase/client';
 import { withErrorLogging } from '@/utils/withErrorLogging';
+import { logError } from '@/utils/productionLogger';
+
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!supabase) {
@@ -18,7 +21,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       .eq('user_id', userId)
       .order('created_at', { ascending: false });
     if (error) {
-      console.error('Error fetching favorites:', error);
+      logError('Error fetching favorites:', { data: error });
       return res.status(500).json({ error: 'Failed to fetch favorites' });
     }
     return res.status(200).json(data);
@@ -33,7 +36,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       .from('favorites')
       .insert({ user_id, item_type, item_id });
     if (error) {
-      console.error('Error adding favorite:', error);
+      logError('Error adding favorite:', { data: error });
       return res.status(500).json({ error: 'Failed to add favorite' });
     }
     return res.status(201).json({ message: 'Added' });
@@ -51,7 +54,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       .eq('item_type', item_type)
       .eq('item_id', item_id);
     if (error) {
-      console.error('Error removing favorite:', error);
+      logError('Error removing favorite:', { data: error });
       return res.status(500).json({ error: 'Failed to remove favorite' });
     }
     return res.status(200).json({ message: 'Removed' });

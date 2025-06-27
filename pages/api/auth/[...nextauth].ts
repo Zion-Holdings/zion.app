@@ -7,6 +7,8 @@ import type { NextAuthOptions } from "next-auth";
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { createClient } from '@supabase/supabase-js'; // Import Supabase
 import { verifyMessage } from 'ethers'; // Assuming ethers v6+
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 
 // Initialize Supabase client (ensure these ENV vars are set)
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
@@ -36,7 +38,7 @@ const WalletConnectProvider = CredentialsProvider({
   },
   async authorize(credentials) {
     if (!credentials?.address || !credentials.signature || !credentials.message) {
-      console.log("WalletConnectProvider: Missing address, signature, or message.");
+      logInfo("WalletConnectProvider: Missing address, signature, or message.");
       return null;
     }
 
@@ -44,7 +46,7 @@ const WalletConnectProvider = CredentialsProvider({
       const recoveredAddress = verifyMessage(credentials.message, credentials.signature);
 
       if (recoveredAddress.toLowerCase() === credentials.address.toLowerCase()) {
-        console.log(`WalletConnectProvider: Signature verified for address ${recoveredAddress}`);
+        logInfo(`WalletConnectProvider: Signature verified for address ${recoveredAddress}`);
 
         // 1. Lookup User by Wallet Address in your public user profile table
         // Assumes a 'profiles' table linked to 'auth.users' with a 'wallet_address' column.
@@ -58,14 +60,14 @@ const WalletConnectProvider = CredentialsProvider({
           .single();
 
         if (lookupError && lookupError.code !== 'PGRST116') { // PGRST116 = no rows found
-          console.error('WalletConnectProvider: Error looking up user by wallet address:', lookupError);
+          logError('WalletConnectProvider: Error looking up user by wallet address:', { data: lookupError });
           return null; // Internal server error
         }
 
         userProfile = existingProfile;
 
         if (userProfile) {
-          console.log(`WalletConnectProvider: Existing user profile found for wallet ${recoveredAddress}. Auth User ID: ${userProfile.user_id?.id}`);
+          logInfo(`WalletConnectProvider: Existing user profile found for wallet ${recoveredAddress}. Auth User ID: ${userProfile.user_id?.id}`);
           authUserId = userProfile.user_id?.id;
           // Ensure the user object for NextAuth has id, name, email.
           return {
@@ -76,7 +78,7 @@ const WalletConnectProvider = CredentialsProvider({
           };
         } else {
           // 2. User not found, create a new user in Supabase Auth and then a profile
-          console.log(`WalletConnectProvider: No existing user for wallet ${recoveredAddress}. Creating new user.`);
+          logInfo(`WalletConnectProvider: No existing user for wallet ${recoveredAddress}. Creating new user.`);
 
           // Option: Create user with a dummy email if required by Supabase policies
           // This is a simplified approach. Robust implementation might use Supabase Admin API
@@ -101,13 +103,13 @@ const WalletConnectProvider = CredentialsProvider({
 
           if (signUpError) {
             // Handle specific errors, e.g., if dummy email is already taken (highly unlikely for this format)
-            console.error('WalletConnectProvider: Supabase signUp error:', signUpError.message);
+            logError('WalletConnectProvider: Supabase signUp error:', { data: signUpError.message });
             // Potentially, if error is "User already registered", try to lookup by dummyEmail and link wallet if not linked.
             return null;
           }
 
           if (signUpData && signUpData.user) {
-            console.log(`WalletConnectProvider: New Supabase auth user created: ${signUpData.user.id}`);
+            logInfo(`WalletConnectProvider: New Supabase auth user created: ${signUpData.user.id}`);
             authUserId = signUpData.user.id;
 
             // Now, create a corresponding profile in your public 'profiles' table
@@ -122,14 +124,14 @@ const WalletConnectProvider = CredentialsProvider({
               });
 
             if (profileCreateError) {
-              console.error('WalletConnectProvider: Error creating user profile after signup:', profileCreateError.message);
+              logError('WalletConnectProvider: Error creating user profile after signup:', { data: profileCreateError.message });
               // This is a critical state: user is created in auth, but profile linking failed.
               // Robust handling might involve retries, or cleanup (deleting the auth user).
               // For now, fail the login. Consider: await supabase.auth.admin.deleteUser(authUserId); if using service_role key
               return null;
             }
 
-            console.log(`WalletConnectProvider: User profile created and linked for ${authUserId}`);
+            logInfo(`WalletConnectProvider: User profile created and linked for ${authUserId}`);
             return {
               id: authUserId,
               name: signUpData.user.user_metadata?.display_name || `User ${recoveredAddress.substring(0, 6)}...`,
@@ -137,16 +139,16 @@ const WalletConnectProvider = CredentialsProvider({
               walletAddress: recoveredAddress.toLowerCase(), // Ensure this is the original mixed-case address if needed, but usually stored lowercase.
             };
           } else {
-            console.error('WalletConnectProvider: Supabase signUp did not return user data or session.');
+            logError('WalletConnectProvider: Supabase signUp did not return user data or session.');
             return null;
           }
         }
       } else {
-        console.warn(`WalletConnectProvider: Signature verification failed. Expected ${credentials.address}, got ${recoveredAddress}`);
+        logWarn(`WalletConnectProvider: Signature verification failed. Expected ${credentials.address}, got ${recoveredAddress}`);
         return null;
       }
     } catch (error) {
-      console.error("WalletConnectProvider: Error during signature verification or DB operation:", error);
+      logError('WalletConnectProvider: Error during signature verification or DB operation:', { data: error });
       return null;
     }
   },
@@ -174,18 +176,18 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials.password) {
-          console.log("Credentials missing");
+          logInfo("Credentials missing");
           return null;
         }
 
-        console.log("Attempting Supabase sign-in for:", credentials.email);
+        logInfo('Attempting Supabase sign-in for:', { data: credentials.email });
         const { data, error } = await supabase.auth.signInWithPassword({
           email: credentials.email,
           password: credentials.password,
         });
 
         if (error) {
-          console.error("Supabase sign-in error:", error.message);
+          logError('Supabase sign-in error:', { data: error.message });
           // Consider mapping Supabase errors to user-friendly messages
           // For NextAuth, returning null signifies failed authorization.
           // Throwing an error here can break the flow or expose details.
@@ -195,7 +197,7 @@ export const authOptions: NextAuthOptions = {
         }
 
         if (data && data.user) {
-          console.log("Supabase sign-in successful for:", data.user.email);
+          logInfo('Supabase sign-in successful for:', { data: data.user.email });
           // Ensure the object returned conforms to NextAuth's User model expectations
           // It must have an `id`. `name` and `email` are common.
           return {
@@ -206,7 +208,7 @@ export const authOptions: NextAuthOptions = {
           };
         }
 
-        console.log("Unknown issue with Supabase sign-in, no user data returned.");
+        logInfo("Unknown issue with Supabase sign-in, no user data returned.");
         return null; // Fallback if no user data but no error
       },
     }),

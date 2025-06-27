@@ -9,8 +9,10 @@ import { useRouter } from 'next/router';
 import { logError } from "@/utils/logError";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Heart } from "lucide-react";
+import { logInfo, logWarn } from '@/utils/productionLogger';
 
 export default function SavedTalentsPage() {
+
   const { user } = useAuth();
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +30,7 @@ export default function SavedTalentsPage() {
       setIsLoading(true);
       try {
         if (!user) {
-          console.warn("User not authenticated.");
+          logWarn("User not authenticated.");
           return;
         }
 
@@ -86,7 +88,7 @@ export default function SavedTalentsPage() {
   };
 
   const handleRequestHire = (talent: TalentProfile) => {
-    console.log("Request to hire:", talent);
+    logInfo('Request to hire:', { data: talent });
     toast({
       title: "Hire Request Sent",
       description: `A hire request has been sent to ${talent.full_name}.`,
@@ -96,7 +98,7 @@ export default function SavedTalentsPage() {
   const handleToggleSave = async (talentId: string, isCurrentlySaved: boolean) => {
     try {
       if (!user) {
-        console.warn("User not authenticated.");
+        logWarn("User not authenticated.");
         return;
       }
   

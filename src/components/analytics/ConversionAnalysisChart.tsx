@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { AnalyticsChart } from "@/components/analytics/AnalyticsChart";
@@ -23,7 +22,11 @@ export function ConversionAnalysisChart({ data, timeRange, onTimeRangeChange }: 
       <CardContent>
         <AnalyticsChart
           title=""
-          data={data || []}
+          data={(data || []).map(item => ({
+            name: item.name || item.label || 'Unknown',
+            value: item.value || item.count || 0,
+            ...item
+          }))}
           dataKeys={dataKeys}
           type="bar"
           timeRange={timeRange}

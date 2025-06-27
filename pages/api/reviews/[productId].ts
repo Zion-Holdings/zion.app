@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { supabase } from '@/integrations/supabase/client';
 import { withErrorLogging } from '@/utils/withErrorLogging';
+import { logError } from '@/utils/productionLogger';
+
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!supabase) {
@@ -27,13 +29,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       .order('created_at', { ascending: false });
 
     if (error) {
-      console.error('Error fetching reviews:', error);
+      logError('Error fetching reviews:', { data: error });
       return res.status(500).json({ error: 'Failed to fetch reviews' });
     }
 
     return res.status(200).json(data || []);
   } catch (error) {
-    console.error('Error fetching reviews:', error);
+    logError('Error fetching reviews:', { data: error });
     return res.status(500).json({
       error: 'Internal server error while fetching reviews.',
       details: error instanceof Error ? error.message : 'Unknown error'

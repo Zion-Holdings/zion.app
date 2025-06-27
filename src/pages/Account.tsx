@@ -12,6 +12,8 @@ import { SEO } from '@/components/SEO';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import type { Order } from '@/hooks/useOrders';
 import { NextApiRequest } from 'next';
+import { logError } from '@/utils/productionLogger';
+
 
 interface User {
   id: string;
@@ -39,7 +41,7 @@ function Account({ user: initialUser, orders }: AccountProps) {
       const data = await res.json();
       setUser(data);
     } catch (error: any) {
-      console.error('Error updating profile:', error);
+      logError('Error updating profile:', { data: error });
       toast({
         title: 'Error updating profile',
         description: error.message || 'Failed to update profile. Please try again.',

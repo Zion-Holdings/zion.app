@@ -10,6 +10,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useDisputeCheck } from '@/hooks/useDisputeCheck';
 
 import { 
+import { logError } from '@/utils/productionLogger';
+
   MilestoneActivities,
   MilestoneManager,
   MilestoneCreator,
@@ -52,7 +54,7 @@ export function ProjectMilestonesContent() {
           setProject(projectData);
         }
       } catch (error) {
-        console.error("Error loading project:", error);
+        logError('Error loading project:', { data: error });
       } finally {
         setIsLoading(false);
       }

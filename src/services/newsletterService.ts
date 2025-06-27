@@ -2,6 +2,8 @@ import { mailchimpService } from '@/integrations/mailchimp';
 import { sendEmailWithSendGrid } from '@/lib/email';
 
 export async function subscribeToNewsletter(email: string): Promise<void> {
+import { logWarn, logError } from '@/utils/productionLogger';
+
   if (mailchimpService) {
     await mailchimpService.addSubscriber({
       email,
@@ -11,7 +13,7 @@ export async function subscribeToNewsletter(email: string): Promise<void> {
       },
     });
   } else {
-    console.warn('Mailchimp not configured - skipping list subscription');
+    logWarn('Mailchimp not configured - skipping list subscription');
   }
 
   const templateId = process.env.SENDGRID_NEWSLETTER_TEMPLATE_ID;
@@ -23,7 +25,7 @@ export async function subscribeToNewsletter(email: string): Promise<void> {
         dynamicTemplateData: {},
       });
     } catch (err) {
-      console.error('Failed to send SendGrid welcome email:', err);
+      logError('Failed to send SendGrid welcome email:', { data: err });
     }
   }
 }

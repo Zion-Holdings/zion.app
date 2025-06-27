@@ -1,3 +1,5 @@
+import { logInfo, logWarn } from '@/utils/productionLogger';
+
 /**
  * Centralized configuration utility for environment variables
  */
@@ -105,14 +107,14 @@ export function logConfigurationStatus(): void {
   const config = getAppConfig();
   const validation = validateEnvironment();
 
-  console.log('🔧 Configuration Status:');
-  console.log(`  Environment: ${config.app.environment}`);
-  console.log(`  App URL: ${config.app.url}`);
-  console.log(`  Supabase: ${config.supabase.isConfigured ? '✅' : '⚠️'} ${config.supabase.isConfigured ? 'Configured' : 'Using fallbacks'}`);
-  console.log(`  Wallet: ${config.wallet.isConfigured ? '✅' : '⚠️'} ${config.wallet.isConfigured ? 'Configured' : 'Using placeholder'}`);
-  console.log(`  Sentry: ${config.sentry.isConfigured ? '✅' : '⚠️'} ${config.sentry.isConfigured ? 'Configured' : 'Disabled'}`);
+  logInfo('🔧 Configuration Status:');
+  logInfo(`  Environment: ${config.app.environment}`);
+  logInfo(`  App URL: ${config.app.url}`);
+  logInfo(`  Supabase: ${config.supabase.isConfigured ? '✅' : '⚠️'} ${config.supabase.isConfigured ? 'Configured' : 'Using fallbacks'}`);
+  logInfo(`  Wallet: ${config.wallet.isConfigured ? '✅' : '⚠️'} ${config.wallet.isConfigured ? 'Configured' : 'Using placeholder'}`);
+  logInfo(`  Sentry: ${config.sentry.isConfigured ? '✅' : '⚠️'} ${config.sentry.isConfigured ? 'Configured' : 'Disabled'}`);
   
   if (!validation.isValid) {
-    console.warn('⚠️ Missing environment variables:', validation.missingVars);
+    logWarn('⚠️ Missing environment variables:', { data: validation.missingVars });
   }
 } 

@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store';
 import { addItem, removeItem, clear, setItems } from '@/store/cartSlice';
 import { safeStorage } from '@/utils/safeStorage'; // Import safeStorage
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
@@ -15,7 +17,7 @@ export function useCart(): CartContextType {
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   if (process.env.NODE_ENV === 'development') {
-    console.log('[CartProvider] Initializing...');
+    logInfo('[CartProvider] Initializing...');
   }
   const items = useSelector((state: RootState) => state.cart.items);
   const reduxDispatch = useDispatch<AppDispatch>();
@@ -48,7 +50,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         break;
       default:
         // Optional: handle unknown action types
-        // console.warn(`[CartProvider] Unknown action type: ${(action as any).type}`);
+        // logWarn(`[CartProvider] Unknown action type: ${(action as any).type}`);
         break;
     }
   };
@@ -64,7 +66,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   // Persist cart items to localStorage whenever they change from Redux state
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
-      console.log('[CartProvider] Persisting items to localStorage:', items);
+      logInfo('[CartProvider] Persisting items to localStorage:', { data: items });
     }
     try {
       // Only persist if localStorage is actually available.
@@ -72,7 +74,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       safeStorage.setItem('zion_cart', JSON.stringify(items));
     } catch (error) {
       // Catching potential errors during stringify or setItem, though safeStorage also has try/catch.
-      console.error('[CartProvider] Failed to persist cart to localStorage', error);
+      logError('[CartProvider] Failed to persist cart to localStorage', { data: error });
     }
   }, [items]); // Dependency array ensures this runs when `items` from Redux changes.
 

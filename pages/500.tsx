@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { captureException } from '@/utils/sentry';
 import { Button } from '@/components/ui/button';
+import { logInfo } from '@/utils/productionLogger';
 
 export default function Custom500() {
   const { user } = useAuth();
@@ -15,7 +16,7 @@ export default function Custom500() {
       user: user ? { id: user.id, email: user.email } : undefined,
       extra: { path: window.location.pathname },
     });
-    console.log('Reported 500 error. Error ID:', eventId);
+    logInfo('Reported 500 error', { data:  { errorId: eventId } });
   }, [user]);
 
   return (

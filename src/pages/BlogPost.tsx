@@ -9,6 +9,7 @@ import { ArrowLeft, Calendar, Clock, ChevronLeft, ChevronRight, Share2, Facebook
 import type { BlogPost as BlogPostType } from "@/types/blog";
 import { Separator } from "@/components/ui/separator";
 import ReactMarkdown from 'react-markdown';
+import { logError } from '@/utils/productionLogger';
 
 // Importing the sample blog posts - in a real app, you would fetch this from an API
 import { BLOG_POSTS } from "@/data/blog-posts";
@@ -16,6 +17,7 @@ import { useSkeletonTimeout } from '@/hooks/useSkeletonTimeout';
 import { fetchWithRetry } from '@/utils/fetchWithRetry';
 
 export default function BlogPost() {
+
   const router = useRouter();
   const { slug } = router.query as { slug: string };
   const [post, setPost] = useState<BlogPostType | null>(null);
@@ -42,7 +44,7 @@ export default function BlogPost() {
         setIsLoading(false);
         return;
       } catch (err) {
-        console.error('Failed to fetch blog post', err);
+        logError('Failed to fetch blog post', { data: err });
         setError('Failed to load article');
       }
 
@@ -57,7 +59,7 @@ export default function BlogPost() {
         ).slice(0, 3);
         setRelatedPosts(related);
       } else {
-        router.push('/blog', { replace: true });
+        router.replace('/blog');
       }
       setIsLoading(false);
     };

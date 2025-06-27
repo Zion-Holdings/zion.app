@@ -2,6 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
 import webpush from 'web-push';
+import { logError } from '@/utils/productionLogger';
+
 
 const FILE_PATH = path.join(process.cwd(), 'data', 'push-subscriptions.json');
 
@@ -26,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   await Promise.all(
     subs.map((sub: any) =>
       webpush.sendNotification(sub, payload).catch(err => {
-        console.error('Push send failed', err);
+        logError('Push send failed', { data: err });
       })
     )
   );

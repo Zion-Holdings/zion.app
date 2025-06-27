@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import {
+import { logError } from '@/utils/productionLogger';
+
   Form,
   FormControl,
   FormField,
@@ -92,7 +94,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         form.reset();
       }
     } catch (error) {
-      console.error('Error saving project:', error);
+      logError('Error saving project:', { data: error });
     } finally {
       setIsLoading(false);
     }

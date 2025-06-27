@@ -1,5 +1,6 @@
 import { supabase } from '@/integrations/supabase/client';
 import { ForumPost } from '@/types/community';
+import { logError } from '@/utils/productionLogger';
 
 export async function fetchPostsByCategory(
   categoryId: string,
@@ -21,7 +22,7 @@ export async function fetchPostsByCategory(
   const { data, error } = await query;
 
   if (error) {
-    console.error('Error fetching posts by category:', error);
+    logError('Error fetching posts by category:', { data: error });
     throw new Error(error.message);
   }
 

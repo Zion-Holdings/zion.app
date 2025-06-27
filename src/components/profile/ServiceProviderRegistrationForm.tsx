@@ -9,6 +9,8 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import {
+import { logWarn, logError } from '@/utils/productionLogger';
+
   Form,
   FormControl,
   FormDescription,
@@ -140,7 +142,7 @@ export function ServiceProviderRegistrationForm() {
         });
       } else {
         // Fallback for mock/development mode
-        console.warn('Mock AI response - using fallback content');
+        logWarn('Mock AI response - using fallback content');
         setGeneratedContent({
           summary: "Professional service provider with expertise in delivering high-quality solutions.",
           services: ["Consulting", "Project Management", "Technical Support"]
@@ -153,7 +155,7 @@ export function ServiceProviderRegistrationForm() {
       }
       
     } catch (error: any) {
-      console.error("Error generating enhanced profile:", error);
+      logError('Error generating enhanced profile:', { data: error });
       toast({
         title: "Generation failed",
         description: error.message || "There was an error generating your enhanced profile. Please try again.",
@@ -225,7 +227,7 @@ export function ServiceProviderRegistrationForm() {
             finalServices = [...new Set([...serviceTags, ...aiServices])];
           }
         } catch (error) {
-          console.error("Error enhancing profile:", error);
+          logError('Error enhancing profile:', { data: error });
           // Continue with submission even if enhancement fails
         }
       } else if (generatedContent) {
@@ -293,7 +295,7 @@ export function ServiceProviderRegistrationForm() {
             }
           });
         } catch (emailError) {
-          console.error("Failed to send notification email:", emailError);
+          logError('Failed to send notification email:', { data: emailError });
           // Continue with submission even if email fails
         }
       }
@@ -309,7 +311,7 @@ export function ServiceProviderRegistrationForm() {
       }, 1500);
       
     } catch (error: any) {
-      console.error("Error creating profile:", error);
+      logError('Error creating profile:', { data: error });
       toast({
         title: "Error Creating Profile",
         description: error.message || "There was an error creating your profile. Please try again.",

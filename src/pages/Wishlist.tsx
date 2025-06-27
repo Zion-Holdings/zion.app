@@ -83,8 +83,6 @@ export default function WishlistPage() {
                     talent={talent}
                     onViewProfile={() => {}}
                     onRequestHire={() => {}}
-                    isSaved={true}
-                    onToggleSave={() => toggleFavorite('talent', fav.item_id)}
                     isAuthenticated={true}
                   />
                   {fav.created_at && (

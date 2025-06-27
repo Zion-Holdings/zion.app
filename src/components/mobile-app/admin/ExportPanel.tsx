@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { AppPlatform, AppMetadataValues } from "./MetadataManager";
 import { toast } from "sonner";
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface ExportPanelProps {
   platform: AppPlatform;
@@ -52,13 +54,13 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({ platform, metadata }) 
       
       toast.success(`Exported ${format.toUpperCase()} file successfully`);
     } catch (error) {
-      console.error("Export failed:", error);
+      logError('Export failed:', { data: error });
       toast.error(`Failed to export ${format.toUpperCase()} file`);
     }
   };
   
   const trackAnalytics = () => {
-    console.log("Tracking app installation analytics...");
+    logInfo("Tracking app installation analytics...");
     toast.success("Analytics tracking enabled");
   };
   

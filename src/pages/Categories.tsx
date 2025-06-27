@@ -6,6 +6,8 @@ import ErrorBoundary from "@/components/GlobalErrorBoundary";
 import * as Icons from 'lucide-react';
 import { CATEGORIES } from '@/data/categories';
 import { NextSeo } from '@/components/NextSeo';
+import { logError } from '@/utils/productionLogger';
+
 
 interface CategoryType {
   id: string;
@@ -18,13 +20,13 @@ const fetcher = async (url: string): Promise<CategoryType[]> => {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      console.error('Categories API error:', response.statusText);
+      logError('Categories API error:', { data: response.statusText });
       return CATEGORIES as CategoryType[];
     }
     const data = await response.json();
     return Array.isArray(data) && data.length > 0 ? data : CATEGORIES as CategoryType[];
   } catch (err) {
-    console.error('Categories API fetch failed:', err);
+    logError('Categories API fetch failed:', { data: err });
     return CATEGORIES as CategoryType[];
   }
 };

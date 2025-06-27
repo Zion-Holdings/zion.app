@@ -8,7 +8,9 @@ import { useRouter } from 'next/router';
 import { jobSchema, JobSchemaType } from './validation';
 import { useAuth } from "@/hooks/useAuth";
 
-export interface JobPostingProps {
+import { logError } from "@/utils/productionLogger";
+
+export interface {
   jobId?: string;
   
   onSuccess?: () => void;
@@ -76,7 +78,7 @@ export const useJobForm = ({ jobId, onSuccess }: JobPostingProps) => {
       
       return jobData;
     } catch (error: any) {
-      console.error("Error in job form submission:", error);
+      logError('Error in job form submission:', { data: error });
       toast.error(error.message || "Failed to process form");
       throw error;
     } finally {

@@ -11,8 +11,10 @@ import { ResumePreviewCard } from './ResumePreviewCard';
 import { UploadSection } from './UploadSection';
 import { SelectResumeSection } from './SelectResumeSection';
 import { ResumeOption, ResumeSelectorProps } from './types';
+import { logError } from '@/utils/productionLogger';
 
 export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
+
   const [selectedOption, setSelectedOption] = useState<'recent' | 'select' | 'upload'>('recent');
   const [selectedResume, setSelectedResume] = useState<ResumeOption | null>(null);
   const [resumeOptions, setResumeOptions] = useState<ResumeOption[]>([]);
@@ -28,7 +30,7 @@ export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
       try {
         await fetchResume();
       } catch (error) {
-        console.error("Error loading resumes:", error);
+        logError('Error loading resumes:', { data: error });
       } finally {
         setIsLoading(false);
       }
@@ -137,7 +139,7 @@ export function ResumeSelector({ onResumeSelected }: ResumeSelectorProps) {
         description: "Your resume has been downloaded.",
       });
     } catch (error) {
-      console.error('Error downloading PDF:', error);
+      logError('Error downloading PDF:', { data: error });
       toast({
         title: "Download failed",
         description: "There was an error downloading your resume.",

@@ -6,8 +6,10 @@ import { NEW_PRODUCTS } from '@/data/newProductsData';
 import { useCart } from '@/context/CartContext';
 import { toast } from '@/hooks/use-toast';
 import { SEO } from '@/components/SEO';
+import { logError } from '@/utils/productionLogger';
 
 export default function ProductPage() {
+
   const router = useRouter();
   const { id: rawId } = router.query;
   const id = typeof rawId === 'string' ? rawId : undefined;
@@ -36,7 +38,7 @@ export default function ProductPage() {
         }
       } catch (err) {
         // Fail silently and fall back to local data
-        console.error('Error fetching product', err);
+        logError('Error fetching product', { data: err });
       }
     };
 

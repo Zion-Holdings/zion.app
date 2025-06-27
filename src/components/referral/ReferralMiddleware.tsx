@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { safeStorage } from '@/utils/safeStorage';
+import { logError } from '@/utils/productionLogger';
+
 
 interface Props { children: React.ReactNode }
 
@@ -26,7 +28,7 @@ export function ReferralMiddleware({ children }: Props) {
         });
         safeStorage.removeItem('referralCode');
       } catch (err) {
-        console.error('Error tracking referral', err);
+        logError('Error tracking referral', { data: err });
       }
     }
     sendReferral();

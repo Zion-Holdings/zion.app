@@ -2,6 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import fs from 'fs';
 import path from 'path';
+import { logError } from '@/utils/productionLogger';
+
 
 const stripe = new Stripe(process.env.STRIPE_TEST_SECRET_KEY || '', {
   apiVersion: '2023-10-16',
@@ -47,7 +49,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     return res.status(200).json({ url: session.url });
   } catch (err: any) {
-    console.error('Checkout session error:', err);
+    logError('Checkout session error:', { data: err });
     return res.status(500).json({ error: err.message });
   }
 }

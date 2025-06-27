@@ -9,6 +9,8 @@ import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Project, ProjectStatus } from "@/types/projects";
 import { Button } from "@/components/ui/button";
 import {
+import { logError } from '@/utils/productionLogger';
+
   Card,
   CardContent,
   CardDescription,
@@ -109,7 +111,7 @@ function ProjectDetailsContent() {
       
       setNotes(data || []);
     } catch (err: any) {
-      console.error("Error fetching project notes:", err);
+      logError('Error fetching project notes:', { data: err });
       toast({
         title: "Failed to load notes",
         description: err.message || "An error occurred while loading project notes.",
@@ -144,7 +146,7 @@ function ProjectDetailsContent() {
         description: "Your note has been added to the project.",
       });
     } catch (err: any) {
-      console.error("Error adding note:", err);
+      logError('Error adding note:', { data: err });
       toast({
         title: "Failed to add note",
         description: err.message || "An error occurred while adding note.",

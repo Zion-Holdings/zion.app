@@ -14,6 +14,8 @@ import Spinner from '@/components/ui/spinner';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
 import { useCurrency } from '@/hooks/useCurrency';
+import { logError } from '@/utils/productionLogger';
+
 
 // Market insights component
 const MarketplaceInsights = ({ stats }: { stats: any }) => (
@@ -44,7 +46,6 @@ const MarketplaceInsights = ({ stats }: { stats: any }) => (
     </CardContent>
   </Card>
 );
-};
 
 // Filter controls
 const MarketplaceFilterControls = ({
@@ -129,7 +130,8 @@ const MarketplaceCard = ({ product, onViewDetails, onAddToCart }: { product: Pro
       </div>
     </CardContent>
   </Card>
-);
+  );
+};
 
 // Loading grid
 const MarketplaceLoadingGrid = ({ count = 8 }: { count?: number }) => (
@@ -196,7 +198,7 @@ function MarketplacePageContent() {
         total: processedDataset.length
       };
     } catch (error) {
-      console.error('Error in fetchProducts:', error);
+      logError('Error in fetchProducts:', { data: error });
       throw new Error('Failed to load marketplace data. Please try again.');
     }
   }, [sortBy, filterCategory, showRecommended]);

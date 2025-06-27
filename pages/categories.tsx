@@ -1,40 +1,42 @@
 import Categories, { CategoriesProps } from '@/pages/Categories';
 import type { GetStaticProps } from 'next';
 import { CATEGORIES } from '@/data/categories'; // Import CATEGORIES
+import { logInfo, logError } from '@/utils/productionLogger';
 
 export const getStaticProps: GetStaticProps<CategoriesProps> = async () => {
+
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   const isBuildTime = process.env.NETLIFY || process.env.NODE_ENV === 'production' && !process.env.RUNTIME_ENVIRONMENT;
   
   // During build time, skip API fetch and use static data
   if (isBuildTime || appUrl.includes('localhost')) {
-    console.log('Build time detected, using static categories data.');
+    logInfo('Build time detected, using static categories data.');
     return { props: { categories: CATEGORIES } };
   }
 
-  console.log(`Fetching categories from: ${appUrl}/api/categories`);
+  logInfo(`Fetching categories from: ${appUrl}/api/categories`);
 
   try {
     const res = await fetch(`${appUrl}/api/categories`);
-    console.log(`API response status: ${res.status}`);
+    logInfo(`API response status: ${res.status}`);
     const rawResponse = await res.text();
-    console.log(`API raw response: ${rawResponse}`);
+    logInfo(`API raw response: ${rawResponse}`);
 
     if (res.ok) {
       const fetchedCategories = JSON.parse(rawResponse);
       if (fetchedCategories && fetchedCategories.length > 0) {
-        console.log('Successfully fetched categories from API.');
+        logInfo('Successfully fetched categories from API.');
         return { props: { categories: fetchedCategories } };
       } else {
-        console.log('API returned empty or invalid categories, falling back to default.');
+        logInfo('API returned empty or invalid categories, falling back to default.');
         return { props: { categories: CATEGORIES } };
       }
     } else {
-      console.log(`API request failed with status ${res.status}, falling back to default categories.`);
+      logInfo(`API request failed with status ${res.status}, falling back to default categories.`);
       return { props: { categories: CATEGORIES } };
     }
   } catch (error) {
-    console.error('Error fetching categories in getStaticProps, falling back to default. Error:', error);
+    logError('Error fetching categories in getStaticProps, falling back to default. Error:', { data: error });
     return { props: { categories: CATEGORIES } };
   }
 };

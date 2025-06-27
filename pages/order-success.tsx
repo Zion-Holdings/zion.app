@@ -3,6 +3,8 @@ import type { NextPageContext } from 'next/types';
 import type {} from 'next';
 import Link from 'next/link';
 import Stripe from 'stripe';
+import { logError } from '@/utils/productionLogger';
+
 
 interface Props {
   session?: {
@@ -22,7 +24,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx: NextPag
     const s = await stripe.checkout.sessions.retrieve(sessionId);
     return { props: { session: { id: s.id, amount_total: s.amount_total, currency: s.currency, customer_details: s.customer_details } } };
   } catch (err) {
-    console.error('Failed to load session', err);
+    logError('Failed to load session', { data: err });
     return { props: { session: null } };
   }
 };

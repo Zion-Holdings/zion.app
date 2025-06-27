@@ -1,31 +1,33 @@
 import { useContext } from 'react';
 import { AuthContext } from '@/context/auth/AuthContext';
 import type { AuthContextType } from '@/types/auth';
+import { logWarn } from '@/utils/productionLogger';
 
 export const useAuth = (): AuthContextType => {
+
   const context = useContext(AuthContext);
   if (context === undefined) {
     // Provide a minimal unauthenticated context to avoid infinite loading loops
-    console.warn("'useAuth' context is undefined. Returning fallback auth state.");
+    logWarn("'useAuth' context is undefined. Returning fallback auth state.");
     return {
         user: null,
         isLoading: false, // Avoid endless spinners when provider is missing
         isAuthenticated: false,
         onboardingStep: null,
         setOnboardingStep: () => {},
-        login: async () => { console.warn("Login not available during static export"); return { error: { message: "Not available" } }; },
-        signup: async () => { console.warn("Signup not available during static export"); return { error: { message: "Not available" } }; },
-        register: async () => { console.warn("Register not available during static export"); return { error: { message: "Not available" } }; },
-        logout: async () => { console.warn("Logout not available during static export"); },
-        resetPassword: async () => { console.warn("Reset password not available during static export"); return { error: { message: "Not available" } }; },
-        updateProfile: async () => { console.warn("Update profile not available during static export"); return { error: { message: "Not available" } }; },
-        loginWithGoogle: async () => { console.warn("Login with Google not available during static export"); },
-        loginWithFacebook: async () => { console.warn("Login with Facebook not available during static export"); },
-        loginWithTwitter: async () => { console.warn("Login with Twitter not available during static export"); },
-        loginWithWeb3: async () => { console.warn("Login with Web3 not available during static export"); },
-        signIn: async () => { console.warn("SignIn not available during static export"); return { error: { message: "Not available" } }; },
-        signOut: async () => { console.warn("SignOut not available during static export"); },
-        signUp: async () => { console.warn("SignUp not available during static export"); return { error: { message: "Not available" } }; },
+        login: async () => { logWarn("Login not available during static export"); return { error: { message: "Not available" } }; },
+        signup: async () => { logWarn("Signup not available during static export"); return { error: { message: "Not available" } }; },
+        register: async () => { logWarn("Register not available during static export"); return { error: { message: "Not available" } }; },
+        logout: async () => { logWarn("Logout not available during static export"); },
+        resetPassword: async () => { logWarn("Reset password not available during static export"); return { error: { message: "Not available" } }; },
+        updateProfile: async () => { logWarn("Update profile not available during static export"); return { error: { message: "Not available" } }; },
+        loginWithGoogle: async () => { logWarn("Login with Google not available during static export"); },
+        loginWithFacebook: async () => { logWarn("Login with Facebook not available during static export"); },
+        loginWithTwitter: async () => { logWarn("Login with Twitter not available during static export"); },
+        loginWithWeb3: async () => { logWarn("Login with Web3 not available during static export"); },
+        signIn: async () => { logWarn("SignIn not available during static export"); return { error: { message: "Not available" } }; },
+        signOut: async () => { logWarn("SignOut not available during static export"); },
+        signUp: async () => { logWarn("SignUp not available during static export"); return { error: { message: "Not available" } }; },
         setUser: () => {},
         tokens: null,
         avatarUrl: null,
