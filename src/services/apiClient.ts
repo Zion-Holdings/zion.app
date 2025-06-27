@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { showError } from '@/utils/showToast';
 import { showApiError } from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
@@ -111,7 +111,7 @@ export const globalAxiosErrorHandler = (error: any) => {
 
 // Apply the global interceptor
 axios.interceptors.response.use(
-  (response) => response,
+  (response: AxiosResponse) => response,
   globalAxiosErrorHandler
 );
 
@@ -138,7 +138,7 @@ axiosRetry(apiClient, {
 });
 
 apiClient.interceptors.response.use(
-  (response) => response,
+  (response: AxiosResponse) => response,
   async (error) => {
     const status = error.response?.status;
 

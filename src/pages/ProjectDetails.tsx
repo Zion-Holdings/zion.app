@@ -8,9 +8,8 @@ import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Project, ProjectStatus } from "@/types/projects";
 import { Button } from "@/components/ui/button";
-import {
 import { logError } from '@/utils/productionLogger';
-
+import {
   Card,
   CardContent,
   CardDescription,
