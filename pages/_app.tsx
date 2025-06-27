@@ -27,15 +27,21 @@ import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
 import { IntercomChat } from '@/components/IntercomChat';
 import { HydrationErrorBoundary } from '@/components/HydrationErrorBoundary';
 // Import Next.js fonts for optimal loading and CLS prevention
-import { Inter, Montserrat } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 import Head from 'next/head';
 // Import global Tailwind styles so they load before the app renders
 import '../src/index.css';
 import * as Sentry from '@sentry/nextjs';
 import getConfig from 'next/config';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
-import { validateProductionEnvironment, initializeServices } from '@/utils/environmentConfig';
-import { initializePerformanceOptimizations, initializePerformance } from '@/utils/performance';
+import {
+  validateProductionEnvironment,
+  initializeServices,
+} from '@/utils/environmentConfig';
+import {
+  initializePerformanceOptimizations,
+  initializePerformance,
+} from '@/utils/performance';
 import '@/utils/globalFetchInterceptor';
 import '@/utils/consoleErrorToast';
 import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
@@ -50,34 +56,37 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-const montserrat = Montserrat({
+const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: true,
-  variable: '--font-montserrat',
+  variable: '--font-poppins',
 });
 
-const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const { user, isAuthenticated } = useAuth();
-  
+
   // Prevent hydration issues by ensuring this only runs on client
   const [isClient, setIsClient] = React.useState(false);
-  
+
   React.useEffect(() => {
     setIsClient(true);
   }, []);
-  
+
   // Provide safe defaults during initial render to prevent blank screens
-  const safeAuthState = React.useMemo(() => ({
-    isAuthenticated: isClient ? !!isAuthenticated : false,
-    user: isClient ? user : null
-  }), [isClient, isAuthenticated, user]);
-  
+  const safeAuthState = React.useMemo(
+    () => ({
+      isAuthenticated: isClient ? !!isAuthenticated : false,
+      user: isClient ? user : null,
+    }),
+    [isClient, isAuthenticated, user],
+  );
+
   return (
-    <LanguageProvider authState={safeAuthState}>
-      {children}
-    </LanguageProvider>
+    <LanguageProvider authState={safeAuthState}>{children}</LanguageProvider>
   );
 };
 
@@ -94,56 +103,68 @@ function MyApp({ Component, pageProps }: AppProps) {
     if (process.env.NODE_ENV === 'development') {
       console.log('[App] MyApp main useEffect hook started.');
     }
-    
+
     try {
       // Validate environment variables (graceful in development, strict in production)
       validateProductionEnvironment();
-      
+
       // Initialize services based on configuration
-      initializeServices().catch(err =>
-        console.warn('Service initialization failed', err)
+      initializeServices().catch((err) =>
+        console.warn('Service initialization failed', err),
       );
-      
+
       // Initialize global error handlers
       initializeGlobalErrorHandlers();
-      
+
       // Initialize performance monitoring and optimizations
       initializePerformanceOptimizations();
-      
+
       // Initialize advanced performance monitoring
       if (typeof window !== 'undefined') {
         initializePerformance();
       }
-      
+
       const { publicRuntimeConfig } = getConfig();
       if (process.env.NODE_ENV === 'development') {
         console.log('[App] Public Runtime Config:', publicRuntimeConfig);
       }
-      
+
       if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE) {
-        Sentry.setTag('release', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE);
+        Sentry.setTag(
+          'release',
+          publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE,
+        );
       }
       if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT) {
-        Sentry.setTag('environment', publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT);
+        Sentry.setTag(
+          'environment',
+          publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT,
+        );
       }
-      
+
       if (process.env.NODE_ENV === 'development') {
-        console.log("SUPABASE_URL:", process.env.NEXT_PUBLIC_SUPABASE_URL ? 'SET' : 'NOT_SET');
-        console.log("SUPABASE_ANON_KEY:", process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'NOT_SET');
+        console.log(
+          'SUPABASE_URL:',
+          process.env.NEXT_PUBLIC_SUPABASE_URL ? 'SET' : 'NOT_SET',
+        );
+        console.log(
+          'SUPABASE_ANON_KEY:',
+          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'NOT_SET',
+        );
       }
-      
+
       // Mark as initialized after successful setup
       setIsInitialized(true);
     } catch (error) {
       console.error('[App] Critical initialization error:', error);
-      
+
       // Only send to Sentry if it's available and configured
       try {
         Sentry.captureException(error);
       } catch (sentryError) {
         console.warn('[App] Could not send error to Sentry:', sentryError);
       }
-      
+
       // Still mark as initialized even with errors to prevent infinite loading
       setIsInitialized(true);
     }
@@ -160,7 +181,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   if (process.env.NODE_ENV === 'development') {
-    console.log('[App] Attempting to render component:', Component.name || 'UnnamedComponent');
+    console.log(
+      '[App] Attempting to render component:',
+      Component.name || 'UnnamedComponent',
+    );
   }
 
   // Show loading screen during critical initialization to prevent blank screens
@@ -198,7 +222,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </noscript>
         <link
           rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
           as="style"
           onLoad={(e) => {
             const target = e.target as HTMLLinkElement;
@@ -208,7 +232,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <noscript>
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
             rel="stylesheet"
           />
         </noscript>
@@ -216,10 +240,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <style jsx global>{`
           :root {
             --font-inter: ${inter.style.fontFamily};
-            --font-montserrat: ${montserrat.style.fontFamily};
+            --font-poppins: ${poppins.style.fontFamily};
           }
-          
-          /* Fallback font adjustments to match Inter/Montserrat metrics */
+
+          /* Fallback font adjustments to match Inter/Poppins metrics */
           @font-face {
             font-family: 'Inter Fallback';
             src: local('Arial'), local('system-ui');
@@ -228,57 +252,66 @@ function MyApp({ Component, pageProps }: AppProps) {
             descent-override: 25%;
             line-gap-override: 0%;
           }
-          
+
           @font-face {
-            font-family: 'Montserrat Fallback';
+            font-family: 'Poppins Fallback';
             src: local('Arial'), local('system-ui');
-            size-adjust: 103%;
+            size-adjust: 102%;
             ascent-override: 92%;
             descent-override: 24%;
             line-gap-override: 0%;
           }
         `}</style>
       </Head>
-      <div className={`${inter.variable} ${montserrat.variable}`}>
+      <div className={`${inter.variable} ${poppins.variable}`}>
         <ProductionErrorBoundary>
           <RootErrorBoundary>
             <HydrationErrorBoundary>
-              <React.Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+              <React.Suspense
+                fallback={
+                  <div className="flex items-center justify-center min-h-screen">
+                    Loading...
+                  </div>
+                }
+              >
                 <GlobalErrorBoundary>
                   <QueryClientProvider client={queryClient}>
                     <ApiErrorBoundary>
                       <ReduxProvider store={store}>
                         <I18nextProvider i18n={i18n}>
                           <ErrorProvider>
-                              <AuthProvider>
-                                <WhitelabelProvider>
-                                  <LanguageProviderWrapper>
-                                    <WalletProvider>
-                                      <CartProvider>
-                                        <AnalyticsProvider>
-                                          <ThemeProvider>
-                                            <AppLayout>
-                                              <RouteChangeHandler 
-                                                resetScrollOnChange={true}
-                                                forceRerender={true}
+                            <AuthProvider>
+                              <WhitelabelProvider>
+                                <LanguageProviderWrapper>
+                                  <WalletProvider>
+                                    <CartProvider>
+                                      <AnalyticsProvider>
+                                        <ThemeProvider>
+                                          <AppLayout>
+                                            <RouteChangeHandler
+                                              resetScrollOnChange={true}
+                                              forceRerender={true}
+                                            />
+                                            <ErrorBoundary>
+                                              <Component
+                                                key={router.asPath}
+                                                {...pageProps}
                                               />
-                                              <ErrorBoundary>
-                                                <Component key={router.asPath} {...pageProps} />
-                                              </ErrorBoundary>
-                                              <ErrorResetOnRouteChange />
-                                              <ToastContainer />
-                                              <OfflineIndicator />
-                                              <IntercomChat />
-                                            </AppLayout>
-                                          </ThemeProvider>
-                                        </AnalyticsProvider>
-                                      </CartProvider>
-                                    </WalletProvider>
-                                  </LanguageProviderWrapper>
-                                </WhitelabelProvider>
-                              </AuthProvider>
-                            </ErrorProvider>
-                          </I18nextProvider>
+                                            </ErrorBoundary>
+                                            <ErrorResetOnRouteChange />
+                                            <ToastContainer />
+                                            <OfflineIndicator />
+                                            <IntercomChat />
+                                          </AppLayout>
+                                        </ThemeProvider>
+                                      </AnalyticsProvider>
+                                    </CartProvider>
+                                  </WalletProvider>
+                                </LanguageProviderWrapper>
+                              </WhitelabelProvider>
+                            </AuthProvider>
+                          </ErrorProvider>
+                        </I18nextProvider>
                       </ReduxProvider>
                     </ApiErrorBoundary>
                   </QueryClientProvider>
@@ -292,6 +325,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-console.log('[App] Finished attempting to render component:', MyApp.name || 'UnnamedComponent');
+console.log(
+  '[App] Finished attempting to render component:',
+  MyApp.name || 'UnnamedComponent',
+);
 
 export default MyApp;
