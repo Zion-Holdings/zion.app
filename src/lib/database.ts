@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import { logger } from '@/utils/logger';
 
 // Global Prisma instance for connection reuse
 let prisma: PrismaClient | null = null;
@@ -26,7 +27,7 @@ const DB_OPTIONS = {
  */
 export function getDatabaseClient(): PrismaClient {
   if (!prisma) {
-    console.log('Creating new Prisma client instance...');
+    logger.info('Creating new Prisma client instance...');
     prisma = new PrismaClient(DB_OPTIONS);
     
     // Handle graceful shutdown
@@ -63,10 +64,10 @@ export async function executeWithTimeout<T>(
     
     return result;
   } catch (error) {
-    console.error('Database query failed:', error);
+    logger.error('Database query failed:', error);
     
     if (fallbackData !== undefined) {
-      console.log('Returning fallback data due to database error');
+      logger.debug('Returning fallback data due to database error');
       return fallbackData;
     }
     
@@ -81,10 +82,10 @@ export async function testDatabaseConnection(): Promise<boolean> {
   try {
     const client = getDatabaseClient();
     await client.$queryRaw`SELECT 1`;
-    console.log('Database connection successful');
+    logger.info('Database connection successful');
     return true;
   } catch (error) {
-    console.error('Database connection failed:', error);
+    logger.error('Database connection failed:', error);
     return false;
   }
 }
@@ -109,7 +110,7 @@ export async function getDatabaseStats() {
     
     return stats;
   } catch (error) {
-    console.error('Failed to get database stats:', error);
+    logger.error('Failed to get database stats:', error);
     return {
       connected: false,
       error: error instanceof Error ? error.message : 'Unknown error'
@@ -125,9 +126,9 @@ export async function disconnectDatabase(): Promise<void> {
     try {
       await prisma.$disconnect();
       prisma = null;
-      console.log('Database disconnected successfully');
+    logger.info('Database disconnected successfully');
     } catch (error) {
-      console.error('Error disconnecting from database:', error);
+    logger.error('Error disconnecting from database:', error);
     }
   }
 }
