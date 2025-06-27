@@ -40,7 +40,6 @@ export function register() {
     replaysOnErrorSampleRate = 0;
   }
 
-  /*
   Sentry.init({
     dsn: SENTRY_DSN,
     release: SENTRY_RELEASE,
@@ -50,10 +49,8 @@ export function register() {
     replaysOnErrorSampleRate,
     integrations: finalIntegrations,
     tracePropagationTargets: ["localhost", /^https?:\/\//, /^\//],
-    profilesSampleRate: 1.0
+    profilesSampleRate: 1.0,
   });
-  */
-  console.log("sentry.ts: Client-side Sentry initialization SKIPPED to debug timeout.");
 
 
   if (SENTRY_RELEASE) {

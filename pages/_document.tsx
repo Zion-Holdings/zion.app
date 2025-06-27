@@ -2,7 +2,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   render() {
-    const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){var r=document.documentElement;r.classList.add(t);r.setAttribute('data-theme',t);}}catch(e){}})();`;
+    const themeScript = `(() => {try{var t=localStorage.getItem('theme');var e=t==='dark'||(t==='system'?!window.matchMedia||(window.matchMedia('(prefers-color-scheme: dark)').matches):false);var n=e?'dark':'light';var r=document.documentElement;r.classList.add(n);r.setAttribute('data-theme',n);}catch(e){}})();`;
     return (
       <Html>
         <Head>

@@ -37,7 +37,6 @@ export const initGA = () => {
     window.gtag('config', measurementId);
   }
 };
-
 export const fireEvent = async (
   eventName: string,
   eventParams?: Record<string, any>

@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { memoryLocalCache, Firestore, getFirestore } from 'firebase/firestore';
+import { getPerformance } from 'firebase/performance';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -24,4 +25,7 @@ try {
   db = getFirestore(app);
 }
 
-export { db };
+// Initialize Firebase Performance Monitoring
+const perf = getPerformance(app);
+
+export { db, perf };

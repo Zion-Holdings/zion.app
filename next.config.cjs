@@ -1,8 +1,16 @@
 const { withSentryConfig } = require('@sentry/nextjs');
 const path = require('path');
 
+// Configure CDN asset prefix when running in production
+const isProd = process.env.NODE_ENV === 'production';
+const assetPrefix =
+  isProd && process.env.NEXT_PUBLIC_CDN_URL
+    ? process.env.NEXT_PUBLIC_CDN_URL
+    : '';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  assetPrefix,
   // Environment configuration
   env: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
@@ -118,7 +126,7 @@ const nextConfig = {
     ],
     domains: ['images.unsplash.com', 'via.placeholder.com', 'localhost', 'cdn.zion.org', 'app.ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 31536000,
   },
 
   compiler: {
