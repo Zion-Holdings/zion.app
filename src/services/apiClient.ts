@@ -3,6 +3,8 @@ import { showError } from '@/utils/showToast';
 import { showApiError } from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
 import axiosRetry from 'axios-retry';
+import { logError, logDebug } from '@/utils/productionLogger';
+
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
 
@@ -101,7 +103,7 @@ export const globalAxiosErrorHandler = (error: any) => {
     showApiError(error);
   } else {
     // Log background errors without showing toast
-    console.debug(`Background API request failed (${status} ${method}): ${url}`, error.response?.data);
+    logDebug(`Background API request failed (${status} ${method}): ${url}`, error.response?.data);
   }
 
   return Promise.reject(error);
@@ -144,7 +146,7 @@ apiClient.interceptors.response.use(
       try {
         await supabase.auth.signOut({ scope: 'global' });
       } catch (e) {
-        console.error('Failed to logout after 401', e);
+        logError('Failed to logout after 401', e);
       }
       if (typeof window !== 'undefined') {
         window.location.assign('/login');

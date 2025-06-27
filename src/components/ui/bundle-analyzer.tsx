@@ -4,6 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { AlertTriangle, Package, Zap } from 'lucide-react';
+import { logError } from '@/utils/productionLogger';
+
 
 interface BundleInfo {
   totalSize: number;
@@ -85,7 +87,7 @@ export function BundleAnalyzer() {
 
       setChunks(chunkData.sort((a, b) => b.size - a.size).slice(0, 5)); // Top 5 largest chunks
     } catch (error) {
-      console.error('Failed to collect bundle info:', error);
+      logError('Failed to collect bundle info:', error);
     } finally {
       setIsCollecting(false);
     }

@@ -7,6 +7,8 @@ import { toast } from '../components/ui/use-toast';
 export type SupportedLanguage = 'en' | 'es' | 'fr' | 'pt' | 'ar';
 
 export type LanguageContextType = {
+import { logInfo, logError } from '@/utils/productionLogger';
+
   currentLanguage: SupportedLanguage;
   changeLanguage: (lang: SupportedLanguage) => Promise<void>;
   isRTL: boolean;
@@ -130,7 +132,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       }
     }
     
-    console.log(`LanguageContext: Initializing language. Navigator: ${navigatorLocale}, Cookie: ${cookieLang}, Storage: ${storageLang}, CurrentContextLang: ${currentLanguage}, CurrentI18nLang: ${i18n.language}, Decided: ${langToSet}`);
+    logInfo(`LanguageContext: Initializing language. Navigator: ${navigatorLocale}, Cookie: ${cookieLang}, Storage: ${storageLang}, CurrentContextLang: ${currentLanguage}, CurrentI18nLang: ${i18n.language}, Decided: ${langToSet}`);
 
     if (i18n.language !== langToSet) {
       i18n.changeLanguage(langToSet).then(() => {
@@ -141,7 +143,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
           if (langToSet === 'ar') document.documentElement.classList.add('rtl'); else document.documentElement.classList.remove('rtl');
         }
       }).catch(err => {
-        console.error("LanguageContext: Error setting initial language in i18n", err);
+        logError("LanguageContext: Error setting initial language in i18n", err);
         setCurrentLanguage('en'); // Fallback state
         if (i18n.language !== 'en') i18n.changeLanguage('en'); // Attempt to set i18n to fallback
         if (typeof document !== 'undefined') {
@@ -196,11 +198,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   
   const changeLanguage = async (lang: SupportedLanguage) => {
     if (lang === currentLanguage && i18n.language === lang) { // also check i18n.language
-      console.log('LanguageContext: Language already selected and applied:', lang);
+      logInfo('LanguageContext: Language already selected and applied:', lang);
       return;
     }
     
-    console.log('LanguageContext: Changing language from', currentLanguage, '(i18n:', i18n.language, ') to', lang);
+    logInfo('LanguageContext: Changing language from', currentLanguage, '(i18n:', i18n.language, ') to', lang);
     
     try {
       // Change i18n language
@@ -214,7 +216,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       // Get language name for toast
       const langName = supportedLanguages.find(l => l.code === lang)?.name || lang;
       
-      console.log('LanguageContext: Language changed successfully to', lang, '(' + langName + ')');
+      logInfo('LanguageContext: Language changed successfully to', lang, '(' + langName + ')');
       
       toast({
         description: t('language.language_changed', { language: langName })
@@ -229,12 +231,12 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
           // Trigger a custom event to notify components about language change
           window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
           
-          console.log('LanguageContext: DOM updated with new language:', lang);
+          logInfo('LanguageContext: DOM updated with new language:', lang);
         }
       }, 50);
       
     } catch (err) {
-      console.error('LanguageContext: Error changing language:', err);
+      logError('LanguageContext: Error changing language:', err);
       toast({
         title: 'Error',
         description: 'Failed to change language',

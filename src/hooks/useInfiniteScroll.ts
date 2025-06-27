@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { logError } from '@/utils/productionLogger';
+
 
 interface UseInfiniteScrollOptions {
   hasMore: boolean;
@@ -62,7 +64,7 @@ export function useInfiniteScroll(
             try {
               await loadMore();
             } catch (error) {
-              console.error('Error loading more items:', error);
+              logError('Error loading more items:', error);
             } finally {
               setIsFetching(false);
               timeoutRef.current = null;
@@ -161,7 +163,7 @@ export function useInfiniteScrollPagination<T>(
         setTotal(result.total);
       }
     } catch (err) {
-      console.error('Error loading items:', err);
+      logError('Error loading items:', err);
       setError(err instanceof Error ? err.message : 'Failed to load more items');
     } finally {
       setLoading(false);
@@ -206,7 +208,7 @@ export function useInfiniteScrollPagination<T>(
       }
       setIsInitialized(true);
     } catch (err) {
-      console.error('Error refreshing items:', err);
+      logError('Error refreshing items:', err);
       setError(err instanceof Error ? err.message : 'Failed to refresh items');
     } finally {
       setLoading(false);

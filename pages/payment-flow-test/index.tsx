@@ -6,6 +6,8 @@ import { addItem } from '@/store/cartSlice';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 
 export default function PaymentFlowTest() {
+import { logError } from '@/utils/productionLogger';
+
   const dispatch = useDispatch();
   const { isAuthenticated, user } = useAuth();
   const [loading, setLoading] = useState(false);
@@ -34,7 +36,7 @@ export default function PaymentFlowTest() {
       }));
       alert(data.sessionId ? 'Checkout session created' : 'Checkout failed');
     } catch (err) {
-      console.error(err);
+      logError(err);
       setResults((r) => ({ ...r, checkout: 'error' }));
       alert('Checkout session error');
     } finally {
@@ -56,7 +58,7 @@ export default function PaymentFlowTest() {
         data.clientSecret ? 'Payment intent created' : 'Payment intent failed',
       );
     } catch (err) {
-      console.error(err);
+      logError(err);
       setResults((r) => ({ ...r, intent: 'error' }));
       alert('Payment intent error');
     } finally {

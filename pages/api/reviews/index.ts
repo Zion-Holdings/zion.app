@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { supabase } from '@/integrations/supabase/client';
 import { withErrorLogging } from '@/utils/withErrorLogging';
+import { logError } from '@/utils/productionLogger';
+
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!supabase) {
@@ -22,13 +24,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         .order('created_at', { ascending: false });
 
       if (error) {
-        console.error('Error fetching reviews:', error);
+        logError('Error fetching reviews:', error);
         return res.status(500).json({ error: 'Failed to fetch reviews' });
       }
 
       return res.status(200).json(data || []);
     } catch (error) {
-      console.error('Error fetching reviews:', error);
+      logError('Error fetching reviews:', error);
       return res.status(500).json({ error: 'Failed to fetch reviews' });
     }
   }
@@ -57,13 +59,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         .single();
 
       if (error) {
-        console.error('Error creating review:', error);
+        logError('Error creating review:', error);
         return res.status(500).json({ error: 'Failed to create review' });
       }
 
       return res.status(201).json(data);
     } catch (error) {
-      console.error('Error creating review:', error);
+      logError('Error creating review:', error);
       return res.status(500).json({ error: 'Failed to create review' });
     }
   }

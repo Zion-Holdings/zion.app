@@ -6,6 +6,8 @@ import { Interview, InterviewRequest, InterviewResponse } from '@/types/intervie
 import { toast } from '@/components/ui/use-toast';
 
 export function useInterviews() {
+import { logError } from '@/utils/productionLogger';
+
   const [interviews, setInterviews] = useState<Interview[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -45,7 +47,7 @@ export function useInterviews() {
         .single();
 
       if (insertError) {
-        console.error("Error requesting interview:", insertError);
+        logError("Error requesting interview:", insertError);
         setError(insertError.message);
         return null;
       }
@@ -61,7 +63,7 @@ export function useInterviews() {
 
       return data;
     } catch (err: any) {
-      console.error("Error in requestInterview:", err);
+      logError("Error in requestInterview:", err);
       setError(err.message);
       return null;
     } finally {
@@ -92,7 +94,7 @@ export function useInterviews() {
         .order('scheduled_date', { ascending: true });
 
       if (fetchError) {
-        console.error("Error fetching interviews:", fetchError);
+        logError("Error fetching interviews:", fetchError);
         setError(fetchError.message);
         return [];
       }
@@ -122,7 +124,7 @@ export function useInterviews() {
       setInterviews(formattedInterviews);
       return formattedInterviews;
     } catch (err: any) {
-      console.error("Error in fetchInterviews:", err);
+      logError("Error in fetchInterviews:", err);
       setError(err.message);
       return [];
     } finally {
@@ -158,7 +160,7 @@ export function useInterviews() {
         .eq('id', interviewId);
 
       if (updateError) {
-        console.error("Error responding to interview:", updateError);
+        logError("Error responding to interview:", updateError);
         setError(updateError.message);
         return false;
       }
@@ -171,7 +173,7 @@ export function useInterviews() {
         .single();
 
       if (fetchError) {
-        console.error("Error fetching interview:", fetchError);
+        logError("Error fetching interview:", fetchError);
         setError(fetchError.message);
         return false;
       }
@@ -203,7 +205,7 @@ export function useInterviews() {
       await fetchInterviews();
       return true;
     } catch (err: any) {
-      console.error("Error in respondToInterview:", err);
+      logError("Error in respondToInterview:", err);
       setError(err.message);
       return false;
     } finally {
@@ -228,7 +230,7 @@ export function useInterviews() {
         related_id: relatedId,
       });
     } catch (error) {
-      console.error("Error creating notification:", error);
+      logError("Error creating notification:", error);
     }
   };
 
@@ -290,7 +292,7 @@ export function useInterviews() {
       await fetchInterviews();
       return true;
     } catch (err: any) {
-      console.error("Error in cancelInterview:", err);
+      logError("Error in cancelInterview:", err);
       setError(err.message);
       return false;
     } finally {

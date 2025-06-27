@@ -1,3 +1,5 @@
+import { logError } from '@/utils/productionLogger';
+
 // In-memory storage for fallback with optimizations
 const inMemoryStore: Record<string, string> = {};
 let localStorageAvailable: boolean | null = null; // Cache the availability check
@@ -41,7 +43,7 @@ function safeConsoleError(message: string, error?: any) {
   isLoggingError = true;
   try {
     if (process.env.NODE_ENV === 'development') {
-      console.error(message, error);
+      logError(message, error);
     }
   } catch {
     // Silent fail if console.error causes recursion

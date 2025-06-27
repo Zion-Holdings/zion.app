@@ -9,6 +9,8 @@ import { logIssue } from "@/utils/logIssue"
 import { useEffect, useState } from "react"
 
 export function ModeToggle() {
+import { logInfo, logError } from '@/utils/productionLogger';
+
   const { theme, toggleTheme } = useTheme();
   const [isClient, setIsClient] = useState(false);
 
@@ -34,7 +36,7 @@ export function ModeToggle() {
       // Determine the new theme we are switching TO
       const newTheme = isDarkMode ? "light" : "dark";
 
-      console.log(`Theme toggle: ${resolvedTheme} → ${newTheme}`);
+      logInfo(`Theme toggle: ${resolvedTheme} → ${newTheme}`);
 
       // Apply the new theme via ThemeProvider
       toggleTheme();
@@ -64,7 +66,7 @@ export function ModeToggle() {
       }, 1000);
       
     } catch (error) {
-      console.error('Theme toggle error:', error);
+      logError('Theme toggle error:', error);
       logIssue('Theme switch failed', { error, currentTheme: theme, resolvedTheme });
       toast({
         title: "Theme switch failed",

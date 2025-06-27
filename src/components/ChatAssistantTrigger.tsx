@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { ChatAssistant } from "@/components/ChatAssistant";
 
 export function ChatAssistantTrigger() {
+import { logError } from '@/utils/productionLogger';
+
   const [isOpen, setIsOpen] = useState(false);
 
   // Handle sending messages to the AI chat assistant
@@ -26,7 +28,7 @@ export function ChatAssistantTrigger() {
       
       return Promise.resolve();
     } catch (error) {
-      console.error("Error in AI chat:", error);
+      logError("Error in AI chat:", error);
       return Promise.resolve();
     }
   };

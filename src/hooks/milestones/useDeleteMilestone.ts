@@ -5,6 +5,8 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
 
 export const useDeleteMilestone = () => {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -25,7 +27,7 @@ export const useDeleteMilestone = () => {
       
       return true;
     } catch (err: any) {
-      console.error("Error deleting milestone:", err);
+      logError("Error deleting milestone:", err);
       toast.error("Failed to delete milestone: " + err.message);
       return false;
     } finally {

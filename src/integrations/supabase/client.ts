@@ -1,5 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { logger } from '@/utils/logger';
+import { logWarn } from '@/utils/productionLogger';
+
 
 // Supabase configuration with proper fallbacks
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://gnwtggeptzkqnduuthto.supabase.co';
@@ -71,7 +73,7 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
     // Use real fetch for other cases
     return fetch(url, options);
   } catch (error) {
-    console.warn('Fetch failed, returning mock response:', error);
+    logWarn('Fetch failed, returning mock response:', error);
     return {
       ok: false,
       status: 500,

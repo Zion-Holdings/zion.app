@@ -6,6 +6,8 @@ import { BrowseFilters } from "@/mobile/components/browse/BrowseFilters";
 import { BrowseCards } from "@/mobile/components/browse/BrowseCards";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
+import { logInfo } from '@/utils/productionLogger';
+
 
 // Mock data for demonstration
 const jobsData = [
@@ -86,7 +88,7 @@ export function MobileBrowse() {
   const [browseType, setBrowseType] = useState<"jobs" | "talents">(isClient ? "talents" : "jobs");
   
   const handleViewDetails = (id: string) => {
-    console.log(`View details for item ${id}`);
+    logInfo(`View details for item ${id}`);
     // Navigate to details page
   };
   

@@ -7,6 +7,8 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 
 import CodeBlock from "./CodeBlock";
+import { logInfo } from '@/utils/productionLogger';
+
 
 interface EndpointParam {
   name: string;
@@ -80,7 +82,7 @@ export function ApiDocumentation() {
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 
 headers = {
@@ -148,7 +150,7 @@ const response = await fetch(\`https://api.ziontechgroup.com/v1/jobs/\${jobId}\`
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 
 headers = {
@@ -240,7 +242,7 @@ print(data)`
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 import json
 
@@ -319,7 +321,7 @@ print(data)`
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 
 headers = {
@@ -381,7 +383,7 @@ const response = await fetch(\`https://api.ziontechgroup.com/v1/talent/\${talent
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 
 headers = {
@@ -483,7 +485,7 @@ print(data)`
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 import json
 
@@ -558,7 +560,7 @@ print(data)`
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 
 headers = {
@@ -641,7 +643,7 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
   
   // Process the webhook event
   const event = JSON.parse(payload);
-  console.log('Received valid webhook:', event);
+  logInfo('Received valid webhook:', event);
   
   // Respond to acknowledge receipt
   res.status(200).send('Webhook received');

@@ -1,6 +1,8 @@
 import { ProductDetailsData } from '../types/product';
 
 export async function fetchProductById(productId: string): Promise<ProductDetailsData | null> {
+import { logWarn, logError } from '@/utils/productionLogger';
+
   try {
     // During build time, return a mock product to avoid API calls
     if (typeof window === 'undefined' && process.env.NODE_ENV === 'production') {
@@ -24,21 +26,21 @@ export async function fetchProductById(productId: string): Promise<ProductDetail
     const response = await fetch(`/api/marketplace/product/${productId}`);
 
     if (response.status === 404) {
-      console.warn(`Product with ID "${productId}" not found.`);
+      logWarn(`Product with ID "${productId}" not found.`);
       return null;
     }
 
     if (!response.ok) {
       // Log the error status and text for more context
       const errorText = await response.text();
-      console.error(`Error fetching product ${productId}: ${response.status} ${response.statusText}`, errorText);
+      logError(`Error fetching product ${productId}: ${response.status} ${response.statusText}`, errorText);
       throw new Error(`Failed to fetch product data. Status: ${response.status}`);
     }
 
     const data: ProductDetailsData = await response.json();
     return data;
   } catch (error) {
-    console.error('An error occurred in fetchProductById:', error);
+    logError('An error occurred in fetchProductById:', error);
     // During build time, return null instead of throwing
     if (typeof window === 'undefined' && process.env.NODE_ENV === 'production') {
       return null;

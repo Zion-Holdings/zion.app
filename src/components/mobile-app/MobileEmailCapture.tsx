@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { useEnqueueSnackbar } from '@/context';
 
 export const MobileEmailCapture: React.FC = () => {
+import { logError } from '@/utils/productionLogger';
+
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -27,7 +29,7 @@ export const MobileEmailCapture: React.FC = () => {
         setIsSuccess(false);
       }, 5000);
     } catch (error: any) {
-      console.error("Error subscribing:", error);
+      logError("Error subscribing:", error);
       enqueueSnackbar(error?.response?.data?.message || error.message, { variant: 'error' });
     } finally {
       setIsSubmitting(false);

@@ -11,6 +11,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 
 export default function TokenManager() {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const { toast } = useToast();
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);
@@ -52,7 +54,7 @@ export default function TokenManager() {
       });
       fetchTransactions();
     } catch (err: any) {
-      console.error('Failed to process transaction:', err);
+      logError('Failed to process transaction:', err);
       toast({
         title: 'Error',
         description: err.message || 'Failed',

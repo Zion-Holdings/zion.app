@@ -11,6 +11,8 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
 
 export function SignUpForm() {
+import { logError } from '@/utils/productionLogger';
+
   const router = useRouter();
   const { signUp, login, loginWithGoogle } = useAuth();
   
@@ -69,7 +71,7 @@ export function SignUpForm() {
         router.push("/mobile");
       }
     } catch (err: any) {
-      console.error('Signup/Login error:', err);
+      logError('Signup/Login error:', err);
       setError(err.message || 'An unexpected error occurred. Please try again.');
     } finally {
       setIsLoading(false);

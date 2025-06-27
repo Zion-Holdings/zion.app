@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from 'next/router';
 import { 
+import { logError } from '@/utils/productionLogger';
+
   Form, FormControl, FormField, FormItem, FormLabel, FormMessage 
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -143,7 +145,7 @@ export function TalentOnboardingForm() {
       .upload(fileName, file);
       
     if (cvError) {
-      console.error("Error uploading CV:", cvError);
+      logError("Error uploading CV:", cvError);
       throw new Error("Failed to upload CV");
     }
     

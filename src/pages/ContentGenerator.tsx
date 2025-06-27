@@ -16,6 +16,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRouter } from 'next/router';
 
 export default function ContentGenerator() {
+import { logError } from '@/utils/productionLogger';
+
   const { user, isLoading } = useAuth();
   const router = useRouter();
   const [contentType, setContentType] = useState<'blog' | 'newsletter' | 'serviceDescription' | 'faq'>('blog');
@@ -57,7 +59,7 @@ export default function ContentGenerator() {
       setPreviewContent(data); // Expecting { generatedContent: "..." }
       toast.success(`Content for "${contentType}" generated successfully!`);
     } catch (error) {
-      console.error("Error generating content:", error);
+      logError("Error generating content:", error);
       toast.error("Failed to generate content. Please try again.");
     } finally {
       setIsGenerating(false);
@@ -90,7 +92,7 @@ export default function ContentGenerator() {
       
       toast.success(`Test newsletter sent to ${testEmail}!`);
     } catch (error) {
-      console.error("Error sending test newsletter:", error);
+      logError("Error sending test newsletter:", error);
       toast.error("Failed to send test newsletter. Please try again.");
     }
   };

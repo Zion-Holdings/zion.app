@@ -8,6 +8,8 @@ import { logError } from './logError';
 export type ModelVersion = 'zion-job-generator-v1' | 'zion-resume-enhancer-v1' | 'zion-support-v1' | 'gpt-3.5-turbo';
 
 export type ZionGPTUsage = {
+import { logWarn } from '@/utils/productionLogger';
+
   modelId: string;
   tokensUsed: number;
   cost: number;
@@ -37,7 +39,7 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
     
     if (error || !data) {
       logError(error || new Error('No model data returned'), { context: 'getActiveModelId' });
-      console.warn('Failed to fetch active model, falling back to default', error);
+      logWarn('Failed to fetch active model, falling back to default', error);
       // Fallback to default models
       switch(purpose) {
         case 'job': return 'zion-job-generator-v1';

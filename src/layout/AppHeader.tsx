@@ -17,6 +17,8 @@ import { cn } from '@/lib/utils'; // Import cn utility
 import { useRouter } from 'next/router';
 
 export function AppHeader() {
+import { logWarn } from '@/utils/productionLogger';
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   const { t } = useTranslation();
@@ -31,7 +33,7 @@ export function AppHeader() {
     const { unreadCount: count } = useMessaging();
     unreadCount = count;
   } catch (error) {
-    console.warn('Messaging context not available');
+    logWarn('Messaging context not available');
   }
   
   return (

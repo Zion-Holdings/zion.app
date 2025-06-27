@@ -15,6 +15,8 @@ import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useTranslation } from 'react-i18next';
 
 export interface HeaderProps {
+import { logInfo } from '@/utils/productionLogger';
+
   hideLogin?: boolean;
   customLogo?: string;
   customTheme?: {
@@ -51,7 +53,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      console.log('Header search submit:', query);
+      logInfo('Header search submit:', query);
       router.push(`/search?q=${encodeURIComponent(query)}`);
       setQuery("");
     }
@@ -73,7 +75,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             value={query}
             onChange={setQuery}
             onSelectSuggestion={(suggestion) => {
-              console.log('Header search suggestion selected:', suggestion);
+              logInfo('Header search suggestion selected:', suggestion);
               // Navigate to specific item if slug and type indicate direct link, otherwise search by text
               if (suggestion.slug && (suggestion.type === 'product' || suggestion.type === 'doc' || suggestion.type === 'blog')) {
                 // Assuming product slugs are like /marketplace/listing/id

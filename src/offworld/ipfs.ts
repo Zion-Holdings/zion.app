@@ -9,6 +9,8 @@ import { noise } from '@chainsafe/libp2p-noise';
 import { yamux } from '@chainsafe/libp2p-yamux';
 import { MemoryBlockstore } from 'blockstore-core/memory';
 import { MemoryDatastore } from 'datastore-core/memory';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 let heliaNode: Helia | null = null;
 let libp2pNode: Libp2p<any> | null = null; // Using 'any' for identify service
@@ -28,18 +30,18 @@ const libp2pOptions = {
 
 async function getHelia(): Promise<Helia> {
   if (!heliaNode) {
-    console.log('Initializing Libp2p for general IPFS operations...');
+    logInfo('Initializing Libp2p for general IPFS operations...');
     libp2pNode = await createLibp2p(libp2pOptions);
-    console.log('Libp2p Initialized for IPFS. PeerID:', libp2pNode.peerId.toString());
+    logInfo('Libp2p Initialized for IPFS. PeerID:', libp2pNode.peerId.toString());
 
-    console.log('Initializing Helia for general IPFS operations...');
+    logInfo('Initializing Helia for general IPFS operations...');
     const blockstore = new MemoryBlockstore();
     heliaNode = await createHelia({
       libp2p: libp2pNode,
       blockstore,
       datastore: new MemoryDatastore(),
     });
-    console.log('Helia Initialized for IPFS.');
+    logInfo('Helia Initialized for IPFS.');
   }
   return heliaNode;
 }
@@ -59,7 +61,7 @@ export async function fetchJSON(cidString: string): Promise<any> {
   try {
     parsedCid = CID.parse(cidString);
   } catch (error) {
-    console.error('Failed to parse CID string:', error);
+    logError('Failed to parse CID string:', error);
     throw new Error(`Invalid CID string: ${cidString}`);
   }
 
@@ -71,16 +73,16 @@ export async function fetchJSON(cidString: string): Promise<any> {
 }
 
 export async function stopIpfsNode() {
-  console.log('Stopping general IPFS Helia node...');
+  logInfo('Stopping general IPFS Helia node...');
   if (heliaNode) {
     await heliaNode.stop();
     heliaNode = null;
-    console.log('General IPFS Helia node stopped.');
+    logInfo('General IPFS Helia node stopped.');
   }
   if (libp2pNode) {
     await libp2pNode.stop();
     libp2pNode = null;
-    console.log('Libp2p for general IPFS node stopped.');
+    logInfo('Libp2p for general IPFS node stopped.');
   }
 }
 

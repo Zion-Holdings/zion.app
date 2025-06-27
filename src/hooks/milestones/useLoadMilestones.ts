@@ -6,6 +6,8 @@ import { toast } from 'sonner';
 import { Milestone, MilestoneActivity } from './types';
 
 export const useLoadMilestones = (projectId?: string) => {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const [milestones, setMilestones] = useState<Milestone[]>([]);
   const [activities, setActivities] = useState<Record<string, MilestoneActivity[]>>({});
@@ -52,7 +54,7 @@ export const useLoadMilestones = (projectId?: string) => {
       setActivities(activitiesMap);
       setError(null);
     } catch (err: any) {
-      console.error("Error fetching milestones:", err);
+      logError("Error fetching milestones:", err);
       setError("Failed to fetch milestones: " + err.message);
       toast.error("Failed to fetch milestones");
     } finally {

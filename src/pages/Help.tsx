@@ -5,6 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Markdown } from '@/components/ui/markdown';
 import { SEO } from '@/components/SEO';
 import { SupportChatbot } from '@/components/SupportChatbot';
+import { logError } from '@/utils/productionLogger';
+
 
 interface Article { slug: string; title: string; content: string; }
 
@@ -30,7 +32,7 @@ export default function Help() {
           setArticles(Array.isArray(data) ? data : []);
         }
       } catch (err) {
-        console.error('Help article fetch error:', err);
+        logError('Help article fetch error:', err);
         if (active) {
           setArticles([]);
           setError('Failed to load articles');

@@ -3,6 +3,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
 export interface MilestoneInput {
+import { logWarn, logError } from '@/utils/productionLogger';
+
   scope: string;
   startDate: string;
   endDate: string | null;
@@ -33,7 +35,7 @@ export function useMilestoneGenerator() {
 
       // Check if data exists and has milestones before processing
       if (!data || !(data as any)?.milestones) {
-        console.warn('No milestones data received from AI generator');
+        logWarn('No milestones data received from AI generator');
         setGeneratedMilestones([]);
         return [];
       }
@@ -47,7 +49,7 @@ export function useMilestoneGenerator() {
       setGeneratedMilestones(milestonesWithFlag);
       return milestonesWithFlag;
     } catch (error) {
-      console.error('Error generating milestones:', error);
+      logError('Error generating milestones:', error);
       toast.error('Failed to generate milestones');
       return [];
     } finally {

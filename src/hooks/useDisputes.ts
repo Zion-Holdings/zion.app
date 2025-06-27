@@ -6,6 +6,8 @@ import { Dispute, DisputeMessage, DisputeAttachment, DisputeStatus } from "@/typ
 import { toast } from "sonner";
 
 export function useDisputes() {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const [disputes, setDisputes] = useState<Dispute[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -52,7 +54,7 @@ export function useDisputes() {
       setDisputes(transformedData as Dispute[]);
       setError(null);
     } catch (err: any) {
-      console.error("Error fetching disputes:", err);
+      logError("Error fetching disputes:", err);
       setError("Failed to fetch disputes: " + err.message);
       toast.error("Failed to fetch disputes");
     } finally {
@@ -91,7 +93,7 @@ export function useDisputes() {
         }
       } as Dispute;
     } catch (err: any) {
-      console.error("Error fetching dispute:", err);
+      logError("Error fetching dispute:", err);
       toast.error("Failed to fetch dispute details");
       return null;
     }
@@ -125,7 +127,7 @@ export function useDisputes() {
       
       return data as Dispute;
     } catch (err: any) {
-      console.error("Error creating dispute:", err);
+      logError("Error creating dispute:", err);
       toast.error("Failed to submit dispute");
       return null;
     }
@@ -150,7 +152,7 @@ export function useDisputes() {
       toast.success(`Dispute status updated to ${status}`);
       return true;
     } catch (err: any) {
-      console.error("Error updating dispute status:", err);
+      logError("Error updating dispute status:", err);
       toast.error("Failed to update dispute status");
       return false;
     }
@@ -191,7 +193,7 @@ export function useDisputes() {
       toast.success("Dispute resolved successfully");
       return true;
     } catch (err: any) {
-      console.error("Error resolving dispute:", err);
+      logError("Error resolving dispute:", err);
       toast.error("Failed to resolve dispute");
       return false;
     }
@@ -212,7 +214,7 @@ export function useDisputes() {
       
       return data as DisputeMessage[];
     } catch (err: any) {
-      console.error("Error fetching dispute messages:", err);
+      logError("Error fetching dispute messages:", err);
       toast.error("Failed to fetch messages");
       return [];
     }
@@ -239,7 +241,7 @@ export function useDisputes() {
       toast.success("Message sent successfully");
       return true;
     } catch (err: any) {
-      console.error("Error sending message:", err);
+      logError("Error sending message:", err);
       toast.error("Failed to send message");
       return false;
     }

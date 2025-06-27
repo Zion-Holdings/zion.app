@@ -3,6 +3,8 @@ import { toast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { RefreshCw, AlertTriangle, Wifi, WifiOff, Shield } from 'lucide-react';
 import * as Sentry from '@sentry/nextjs';
+import { logError } from '@/utils/productionLogger';
+
 
 interface ErrorContextType {
   reportError: (error: Error, context?: any) => void;
@@ -24,7 +26,7 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
   const reportError = useCallback((error: Error, context?: any) => {
     // Log to console for development
     if (process.env.NODE_ENV === 'development') {
-      console.error('Global Error Handler:', error, context);
+      logError('Global Error Handler:', error, context);
     }
 
     // Report to Sentry for production

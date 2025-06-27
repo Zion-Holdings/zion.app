@@ -8,6 +8,8 @@ import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
 import type { ProductListing } from '@/types/listings';
 import type { TalentProfile } from '@/types/talent';
 import type { BlogPost } from '@/types/blog';
+import { logInfo } from '@/utils/productionLogger';
+
 
 interface SearchPageProps {
   products: ProductListing[];
@@ -19,7 +21,7 @@ interface SearchPageProps {
 
 export const getServerSideProps: GetServerSideProps<SearchPageProps> = async ({ query }: { query: { q?: string } }) => {
   const term = String(query.q ?? '').toLowerCase();
-  console.log('🔍 Search page getServerSideProps called with query:', { q: query.q, term });
+  logInfo('🔍 Search page getServerSideProps called with query:', { q: query.q, term });
   
   const match = (text?: string) => text?.toLowerCase().includes(term);
 
@@ -30,7 +32,7 @@ export const getServerSideProps: GetServerSideProps<SearchPageProps> = async ({ 
     Promise.resolve(DOCS_SEARCH_ITEMS.filter(d => match(d.text)))
   ]);
 
-  console.log('🔍 Search results:', { 
+  logInfo('🔍 Search results:', { 
     term, 
     products: products.length, 
     talent: talent.length, 
@@ -42,7 +44,7 @@ export const getServerSideProps: GetServerSideProps<SearchPageProps> = async ({ 
 };
 
 const SearchPage = ({ products, talent, posts, docs, q }: SearchPageProps) => {
-  console.log('🔍 SearchPage component rendered with:', { q, counts: { products: products.length, talent: talent.length, posts: posts.length, docs: docs.length } });
+  logInfo('🔍 SearchPage component rendered with:', { q, counts: { products: products.length, talent: talent.length, posts: posts.length, docs: docs.length } });
   
   return (
     <div className="container mx-auto px-4 py-8">

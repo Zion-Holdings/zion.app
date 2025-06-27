@@ -4,6 +4,8 @@ import { TalentSkeleton } from "@/components/talent/TalentSkeleton";
 import { TalentProfile } from "@/types/talent";
 
 export interface TalentGridProps {
+import { logInfo } from '@/utils/productionLogger';
+
   talents: TalentProfile[];
   isLoading: boolean;
   onTalentClick: (id: string) => void;
@@ -27,7 +29,7 @@ export function TalentGrid({
       handleRequestHire(talent);
     } else {
       // Default implementation
-      console.log("Request to hire:", talent.id);
+      logInfo("Request to hire:", talent.id);
     }
   };
 

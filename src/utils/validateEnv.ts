@@ -1,3 +1,5 @@
+import { logInfo } from '@/utils/productionLogger';
+
 // src/utils/validateEnv.ts
 
 interface EssentialEnvVars {
@@ -70,6 +72,6 @@ Please check your .env file or environment configuration. Application cannot sta
   // Optional: Log success in development
   // Note: process.env.NODE_ENV is typically 'development', 'production', or 'test' in Next.js
   if (process.env.NODE_ENV === 'development') {
-    console.log('Essential environment variables validated successfully.');
+    logInfo('Essential environment variables validated successfully.');
   }
 };

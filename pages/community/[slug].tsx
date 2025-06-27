@@ -8,6 +8,8 @@ import EmptyState from '@/components/community/EmptyState';
 import PostCard from '@/components/community/PostCard';
 import type { ForumPost } from '@/types/community';
 import { fetchPostsByCategory } from '@/services/forumPostService';
+import { logError } from '@/utils/productionLogger';
+
 
 const POSTS_PER_PAGE = 20; // Or any other limit you prefer
 
@@ -37,7 +39,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ initialPosts, initialNextCu
       }
       setNextCursor(newNextCursorFromFetch); // Update cursor for the next fetch
     } catch (error) {
-      console.error("Failed to fetch more posts:", error);
+      logError("Failed to fetch more posts:", error);
       // Optionally, handle error state in UI
     } finally {
       setIsLoading(false);
@@ -116,7 +118,7 @@ export const getServerSideProps = async ({ req, params }: { req: any; params?: {
       },
     };
   } catch (error) {
-    console.error('Error fetching posts:', error);
+    logError('Error fetching posts:', error);
     return {
       props: {
         initialPosts: [],

@@ -3,6 +3,8 @@ import { mutate } from 'swr';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
+import { logInfo } from '@/utils/productionLogger';
+
 
 interface Props {
   amount: number;
@@ -66,7 +68,7 @@ export default function CardForm({ amount, onSuccess }: Props) {
           });
           mutate('user');
         }
-        console.log('Payment Success');
+        logInfo('Payment Success');
         onSuccess(result.paymentIntent);
       }
     } catch (err: any) {
@@ -103,7 +105,7 @@ export default function CardForm({ amount, onSuccess }: Props) {
           });
           mutate('user');
         }
-        console.log('Payment Success');
+        logInfo('Payment Success');
         onSuccess(result.paymentIntent);
       }
     } catch (err: any) {

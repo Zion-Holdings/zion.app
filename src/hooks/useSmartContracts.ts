@@ -7,6 +7,8 @@ import { TalentProfile } from '@/types/talent';
 import { ContractFormValues } from "@/components/contracts/components/ContractForm";
 
 export function useSmartContracts() {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [deploymentStatus, setDeploymentStatus] = useState<'idle' | 'deploying' | 'success' | 'error'>('idle');
@@ -41,7 +43,7 @@ export function useSmartContracts() {
         throw new Error("Failed to generate Solidity contract");
       }
     } catch (err: any) {
-      console.error("Error generating Solidity contract:", err);
+      logError("Error generating Solidity contract:", err);
       toast.error("Failed to generate smart contract");
       throw err;
     } finally {
@@ -87,7 +89,7 @@ export function useSmartContracts() {
       
       return mockSmartContractInfo;
     } catch (err: any) {
-      console.error("Error deploying smart contract:", err);
+      logError("Error deploying smart contract:", err);
       toast.error("Failed to deploy smart contract");
       setDeploymentStatus('error');
       return null;

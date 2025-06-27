@@ -2,6 +2,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { ForumPost } from '@/types/community';
 
 export async function fetchPostsByCategory(
+import { logError } from '@/utils/productionLogger';
+
   categoryId: string,
   cursor?: string, // Cursor is now a string (e.g., ISO timestamp)
   limit = 20 // Default limit
@@ -21,7 +23,7 @@ export async function fetchPostsByCategory(
   const { data, error } = await query;
 
   if (error) {
-    console.error('Error fetching posts by category:', error);
+    logError('Error fetching posts by category:', error);
     throw new Error(error.message);
   }
 

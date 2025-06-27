@@ -4,6 +4,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { MilestoneActivity } from './types';
 
 export const useRecordActivity = () => {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   
   const recordMilestoneActivity = async (
@@ -36,7 +38,7 @@ export const useRecordActivity = () => {
       
       return data;
     } catch (err: any) {
-      console.error("Error recording activity:", err);
+      logError("Error recording activity:", err);
       return null;
     }
   };

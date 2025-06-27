@@ -7,6 +7,8 @@
 // If logError is not used elsewhere, this file (and its import in _app.tsx or similar)
 // could be removed entirely in a future refactoring.
 import { logError } from './logError';
+import { logInfo } from '@/utils/productionLogger';
+
 
 // Example: If you still need logError for other purposes, it can be re-exported or used.
 // export { logError };
@@ -16,4 +18,4 @@ import { logError } from './logError';
 // If it's confirmed that logError is no longer needed after Sentry integration,
 // the import and this file can be cleaned up.
 
-// console.log("globalErrorHandler.ts: Custom global handlers removed, Sentry handles this.");
+// logInfo("globalErrorHandler.ts: Custom global handlers removed, Sentry handles this.");

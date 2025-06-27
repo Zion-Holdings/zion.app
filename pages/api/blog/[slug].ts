@@ -3,6 +3,8 @@ import { BLOG_POSTS } from '@/data/blog-posts';
 import type { BlogPost } from '@/types/blog';
 
 export default function handler(
+import { logError } from '@/utils/productionLogger';
+
   req: NextApiRequest,
   res: NextApiResponse<BlogPost | { error: string }>
 ) {
@@ -23,7 +25,7 @@ export default function handler(
     }
     return res.status(200).json(post);
   } catch (err) {
-    console.error('Blog API error:', err);
+    logError('Blog API error:', err);
     return res.status(500).json({ error: 'Internal Server Error: Failed to fetch blog post' });
   }
 }

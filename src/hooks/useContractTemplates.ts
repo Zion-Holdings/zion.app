@@ -7,6 +7,8 @@ import { ContractTemplate } from "@/types/contracts";
 import { ContractFormValues } from "@/components/contracts/components/ContractForm";
 
 export function useContractTemplates() {
+import { logError } from '@/utils/productionLogger';
+
   const { user, isAuthenticated } = useAuth();
   const queryClient = useQueryClient();
   const { toast } = useToast();
@@ -90,7 +92,7 @@ export function useContractTemplates() {
       });
     },
     onError: (error: Error) => {
-      console.error("Error saving template:", error);
+      logError("Error saving template:", error);
       toast({
         title: "Failed to save template",
         description: "There was an error saving your contract template.",
@@ -155,7 +157,7 @@ export function useContractTemplates() {
       });
     },
     onError: (error: Error) => {
-      console.error("Error updating template:", error);
+      logError("Error updating template:", error);
       toast({
         title: "Failed to update template",
         description: "There was an error updating your contract template.",
@@ -191,7 +193,7 @@ export function useContractTemplates() {
       });
     },
     onError: (error: Error) => {
-      console.error("Error deleting template:", error);
+      logError("Error deleting template:", error);
       toast({
         title: "Failed to delete template",
         description: "There was an error deleting your contract template.",
@@ -235,7 +237,7 @@ export function useContractTemplates() {
       });
     },
     onError: (error: Error) => {
-      console.error("Error setting default template:", error);
+      logError("Error setting default template:", error);
       toast({
         title: "Failed to set default template",
         description: "There was an error setting your default contract template.",

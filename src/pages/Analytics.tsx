@@ -11,6 +11,8 @@ import { FeatureUsageChart } from "@/components/analytics/FeatureUsageChart";
 import { ExportPanel } from "@/components/analytics/ExportPanel";
 
 export default function Analytics() {
+import { logError } from '@/utils/productionLogger';
+
   const [timeRange, setTimeRange] = useState('30d');
   
   const { data: pageViewTrends } = useQuery({
@@ -118,7 +120,7 @@ export default function Analytics() {
       });
 
       if (error) {
-        console.error('Error fetching feature usage:', error);
+        logError('Error fetching feature usage:', error);
         // fallback query
         const startDate = new Date();
         startDate.setDate(startDate.getDate() - days);

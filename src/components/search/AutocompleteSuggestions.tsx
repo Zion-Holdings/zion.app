@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { SearchSuggestion, SearchHighlight } from "@/types/search";
+import { logInfo } from '@/utils/productionLogger';
+
 
 interface AutocompleteSuggestionsProps {
   suggestions: SearchSuggestion[];
@@ -79,7 +81,7 @@ export function AutocompleteSuggestions({
               data-testid="suggestion-item"
               onClick={(e) => {
                 e.preventDefault();
-                console.log('Search suggestion clicked:', suggestion);
+                logInfo('Search suggestion clicked:', suggestion);
                 onSelectSuggestion(suggestion);
               }}
               onMouseDown={(e) => {

@@ -1,3 +1,5 @@
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 /**
  * Development-only logger utility
  * Helps clean up console statements in production while maintaining dev experience
@@ -15,17 +17,17 @@ class DevelopmentLogger {
 
   debug(message: string, context?: LogContext): void {
     if (!this.enabled) return;
-    console.log(`[DEBUG] ${message}`, context ? context : '');
+    logInfo(`[DEBUG] ${message}`, context ? context : '');
   }
 
   info(message: string, context?: LogContext): void {
     if (!this.enabled) return;
-    console.info(`[INFO] ${message}`, context ? context : '');
+    logInfo(`[INFO] ${message}`, context ? context : '');
   }
 
   warn(message: string, context?: LogContext): void {
     if (isProduction) return;
-    console.warn(`[WARN] ${message}`, context ? context : '');
+    logWarn(`[WARN] ${message}`, context ? context : '');
   }
 
   error(message: string, error?: Error | unknown, context?: LogContext): void {
@@ -37,7 +39,7 @@ class DevelopmentLogger {
         window.Sentry.captureException(errorObj, { extra: context });
       }
     } else {
-      console.error(`[ERROR] ${message}`, error, context ? context : '');
+      logError(`[ERROR] ${message}`, error, context ? context : '');
     }
   }
 
@@ -74,7 +76,7 @@ class DevelopmentLogger {
     const statusColor = status && status >= 400 ? '🔴' : '🟢';
     const durationText = duration ? ` (${duration}ms)` : '';
     
-    console.log(`[API] ${statusColor} ${method.toUpperCase()} ${url}${durationText}`);
+    logInfo(`[API] ${statusColor} ${method.toUpperCase()} ${url}${durationText}`);
   }
 
   /**
@@ -84,7 +86,7 @@ class DevelopmentLogger {
     if (!this.enabled) return;
     
     const emoji = action === 'mount' ? '🟢' : action === 'unmount' ? '🔴' : '🔄';
-    console.log(`[COMPONENT] ${emoji} ${name} ${action}`, props ? props : '');
+    logInfo(`[COMPONENT] ${emoji} ${name} ${action}`, props ? props : '');
   }
 }
 

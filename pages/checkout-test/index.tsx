@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
+import { logError } from '@/utils/productionLogger';
+
 
 const CheckoutTestPage = () => {
   const [loading, setLoading] = useState(false);
@@ -22,7 +24,7 @@ const CheckoutTestPage = () => {
         setTestResults(prev => ({ ...prev, checkout: 'success' }));
       }
     } catch (err) {
-      console.error('Checkout error:', err);
+      logError('Checkout error:', err);
       alert('❌ Checkout test failed. Check console for details.');
       setTestResults(prev => ({ ...prev, checkout: 'error' }));
     } finally {
@@ -42,7 +44,7 @@ const CheckoutTestPage = () => {
         setTestResults(prev => ({ ...prev, paymentIntent: 'success' }));
       }
     } catch (err) {
-      console.error('Payment intent error:', err);
+      logError('Payment intent error:', err);
       alert('❌ Payment intent test failed. Check console for details.');
       setTestResults(prev => ({ ...prev, paymentIntent: 'error' }));
     } finally {

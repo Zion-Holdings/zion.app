@@ -5,6 +5,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Link from 'next/link';
 
 export function ApiSampleCode() {
+import { logInfo, logError } from '@/utils/productionLogger';
+
   // JavaScript example with Axios
   const jsAxiosExample = `// Using Axios with JavaScript
 import axios from 'axios';
@@ -24,7 +26,7 @@ async function getJobs(filters = {}) {
     const response = await api.get('/api/jobs', { params: filters });
     return response.data;
   } catch (error) {
-    console.error('Error fetching jobs:', error.response?.data || error.message);
+    logError('Error fetching jobs:', error.response?.data || error.message);
     throw error;
   }
 }
@@ -35,7 +37,7 @@ async function createJob(jobData) {
     const response = await api.post('/api/jobs', jobData);
     return response.data;
   } catch (error) {
-    console.error('Error creating job:', error.response?.data || error.message);
+    logError('Error creating job:', error.response?.data || error.message);
     throw error;
   }
 }
@@ -46,7 +48,7 @@ async function searchTalent(filters = {}) {
     const response = await api.get('/api/talent', { params: filters });
     return response.data;
   } catch (error) {
-    console.error('Error searching talent:', error.response?.data || error.message);
+    logError('Error searching talent:', error.response?.data || error.message);
     throw error;
   }
 }
@@ -56,7 +58,7 @@ async function main() {
   try {
     // Get all open jobs
     const jobs = await getJobs({ status: 'open', limit: 5 });
-    console.log('Jobs:', jobs);
+    logInfo('Jobs:', jobs);
     
     // Create a new job
     const newJob = await createJob({
@@ -70,13 +72,13 @@ async function main() {
       },
       skills: ['React', 'TypeScript', 'Tailwind CSS']
     });
-    console.log('New job created:', newJob);
+    logInfo('New job created:', newJob);
     
     // Search for talent with React skills
     const talent = await searchTalent({ skills: 'React', limit: 10 });
-    console.log('Talent:', talent);
+    logInfo('Talent:', talent);
   } catch (error) {
-    console.error('Something went wrong:', error);
+    logError('Something went wrong:', error);
   }
 }
 
@@ -215,7 +217,7 @@ async function main() {
   try {
     // Get all open jobs
     const jobs = await getJobs({ status: 'open', limit: 5 });
-    console.log('Jobs:', jobs);
+    logInfo('Jobs:', jobs);
     
     // Create a new job
     const newJob = await createJob({
@@ -229,13 +231,13 @@ async function main() {
       },
       skills: ['Node.js', 'Express', 'MongoDB']
     });
-    console.log('New job created:', newJob);
+    logInfo('New job created:', newJob);
     
     // Search for talent with Node.js skills
     const talent = await searchTalent({ skills: 'Node.js', limit: 10 });
-    console.log('Talent:', talent);
+    logInfo('Talent:', talent);
   } catch (error) {
-    console.error('Something went wrong:', error);
+    logError('Something went wrong:', error);
   }
 }
 

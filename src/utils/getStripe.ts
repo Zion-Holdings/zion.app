@@ -3,6 +3,8 @@ import { loadStripe, Stripe } from '@stripe/stripe-js';
 export const PROD_DOMAIN = 'app.ziontechgroup.com';
 
 export function isProdDomain(host?: string) {
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
   const context =
     typeof window === 'undefined'
       ? process.env.CONTEXT // Netlify build context or other server-side context
@@ -64,28 +66,28 @@ export function getStripe() {
     if (forceTestMode) {
       if (testPublishableKey) {
         selectedKey = testPublishableKey;
-        console.log('Stripe: Forced test mode. Using test publishable key.');
+        logInfo('Stripe: Forced test mode. Using test publishable key.');
       } else {
-        console.error('Stripe: Forced test mode is active, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe will not load.');
+        logError('Stripe: Forced test mode is active, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe will not load.');
       }
     } else if (isProdDomain()) {
       if (livePublishableKey) {
         selectedKey = livePublishableKey;
-        console.log('Stripe: Production domain. Using live publishable key.');
+        logInfo('Stripe: Production domain. Using live publishable key.');
       } else {
-        console.error('Stripe: Production domain detected, but NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set. Stripe will not load.');
+        logError('Stripe: Production domain detected, but NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set. Stripe will not load.');
       }
     } else { // Non-production domain and not forced test mode (implicitly test)
       if (testPublishableKey) {
         selectedKey = testPublishableKey;
-        console.log('Stripe: Non-production domain. Using test publishable key.');
+        logInfo('Stripe: Non-production domain. Using test publishable key.');
       } else {
-        console.warn('Stripe: Non-production domain, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe may not load.');
+        logWarn('Stripe: Non-production domain, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe may not load.');
       }
     }
 
     if (!selectedKey) {
-      console.error('Stripe: Publishable key could not be determined. Stripe will not be loaded.');
+      logError('Stripe: Publishable key could not be determined. Stripe will not be loaded.');
       stripePromise = Promise.resolve(null);
     } else {
       stripePromise = loadStripe(selectedKey, { advancedFraudSignals: false } as any);

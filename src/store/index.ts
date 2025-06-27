@@ -6,6 +6,8 @@ import authReducer from './authSlice';
 import { safeStorage } from '@/utils/safeStorage';
 
 export const store = configureStore({
+import { logWarn } from '@/utils/productionLogger';
+
   reducer: {
     cart: cartReducer,
     wishlist: wishlistReducer,
@@ -56,7 +58,7 @@ store.subscribe(() => {
       }
     }
   } catch (error) {
-    console.warn('Store subscription error (throttled):', error);
+    logWarn('Store subscription error (throttled):', error);
   }
 });
 

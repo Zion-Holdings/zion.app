@@ -9,6 +9,8 @@ import { supabase } from '@/integrations/supabase/client'; // Import Supabase cl
 import { useAuth } from '@/hooks/useAuth'; // Import useAuth to access user state
 
 export default function VerifyStatus() {
+import { logWarn, logError } from '@/utils/productionLogger';
+
   const router = useRouter();
   const { user: authUser, isLoading: authLoading } = useAuth(); // Get user from AuthContext
   const { email: emailParam } = router.query;
@@ -87,7 +89,7 @@ export default function VerifyStatus() {
       if (refreshError) {
         // Don't treat all refresh errors as critical for this check,
         // as user might not have a session yet or it might be invalid.
-        console.warn('Error during session refresh:', refreshError.message);
+        logWarn('Error during session refresh:', refreshError.message);
       }
 
       // Get the current user details from Supabase
@@ -117,7 +119,7 @@ export default function VerifyStatus() {
         setError('');
       }
     } catch (err: any) {
-      console.error('Error checking verification status:', err);
+      logError('Error checking verification status:', err);
       setError('An unexpected error occurred while checking status. Please try again.');
     } finally {
       setIsCheckingStatus(false);

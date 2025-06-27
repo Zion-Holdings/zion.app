@@ -1,4 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface Category {
   id: string;
@@ -28,7 +30,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    console.log('Marketplace categories API called');
+    logInfo('Marketplace categories API called');
     
     // Add CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -38,7 +40,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     // Return categories data
     return res.status(200).json(FALLBACK_CATEGORIES);
   } catch (error) {
-    console.error('Error in marketplace categories API:', error);
+    logError('Error in marketplace categories API:', error);
     
     // Return fallback empty array instead of error
     return res.status(200).json([]);

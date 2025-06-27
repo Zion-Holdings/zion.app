@@ -1,4 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface Equipment {
   id: string;
@@ -88,7 +90,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    console.log('Marketplace equipment API called with query:', req.query);
+    logInfo('Marketplace equipment API called with query:', req.query);
     
     // Add CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -127,11 +129,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const end = start + limit;
     const paginatedEquipment = equipment.slice(start, end);
 
-    console.log(`Returning ${paginatedEquipment.length} equipment items (page ${page}, limit ${limit})`);
+    logInfo(`Returning ${paginatedEquipment.length} equipment items (page ${page}, limit ${limit})`);
     
     return res.status(200).json(paginatedEquipment);
   } catch (error) {
-    console.error('Error in marketplace equipment API:', error);
+    logError('Error in marketplace equipment API:', error);
     
     // Return fallback empty array instead of error
     return res.status(200).json([]);

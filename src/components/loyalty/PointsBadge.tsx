@@ -8,6 +8,8 @@ import { LoginModal } from '@/components/auth/LoginModal';
 import { Button } from '@/components/ui/button';
 
 export function PointsBadge() {
+import { logError } from '@/utils/productionLogger';
+
   const { isAuthenticated } = useAuth();
   const { ledger, balance, loading, fetchLedger } = usePoints();
   const [loginOpen, setLoginOpen] = useState(false);
@@ -41,7 +43,7 @@ export function PointsBadge() {
     try {
       await fetchLedger();
     } catch (error) {
-      console.error('Failed to refresh points:', error);
+      logError('Failed to refresh points:', error);
     } finally {
       setIsRefreshing(false);
     }

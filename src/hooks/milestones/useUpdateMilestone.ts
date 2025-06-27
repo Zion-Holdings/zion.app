@@ -8,6 +8,8 @@ import { useRecordActivity } from './useRecordActivity';
 import { createNotification } from '@/utils/notifications';
 
 export const useUpdateMilestone = () => {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { recordMilestoneActivity } = useRecordActivity();
@@ -82,7 +84,7 @@ export const useUpdateMilestone = () => {
       
       return true;
     } catch (err: any) {
-      console.error("Error updating milestone status:", err);
+      logError("Error updating milestone status:", err);
       toast.error("Failed to update status: " + err.message);
       return false;
     } finally {
@@ -110,7 +112,7 @@ export const useUpdateMilestone = () => {
       
       return true;
     } catch (err: any) {
-      console.error("Error updating milestone:", err);
+      logError("Error updating milestone:", err);
       toast.error("Failed to update milestone: " + err.message);
       return false;
     } finally {

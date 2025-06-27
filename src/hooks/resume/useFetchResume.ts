@@ -4,6 +4,8 @@ import { Resume } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
 
 export function useFetchResume() {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -100,7 +102,7 @@ export function useFetchResume() {
       setResume(fullResume);
       return fullResume;
     } catch (e: any) {
-      console.error('Error fetching resume:', e);
+      logError('Error fetching resume:', e);
       setError(e.message);
       return null;
     } finally {

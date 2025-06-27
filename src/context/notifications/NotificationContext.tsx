@@ -5,6 +5,8 @@ import { useNotificationOperations } from './useNotificationOperations';
 import { NotificationContextType } from './types';
 import { subscribeToPush } from '@/utils/pushSubscription';
 import { safeStorage } from '@/utils/safeStorage';
+import { logInfo } from '@/utils/productionLogger';
+
 
 // Default context used when React type definitions are missing. Providing a
 // fully-typed object here avoids TypeScript errors that occur when an untyped
@@ -55,7 +57,7 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): JSX
             filter: `user_id=eq.${user.id}`
           },
           (payload: any) => {
-            console.log('Notification change received:', payload);
+            logInfo('Notification change received:', payload);
             notificationOps.fetchNotifications();
           }
         )

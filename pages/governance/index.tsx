@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button'; // Adjust path
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'; // Adjust path
 import { Input } from '@/components/ui/input'; // For potential text search filter
 import ConnectWalletButton from '@/components/ConnectWalletButton'; // Assuming this is the correct path
+import { logError } from '@/utils/productionLogger';
+
 
 
 const GovernancePage: React.FC = () => {
@@ -45,7 +47,7 @@ const GovernancePage: React.FC = () => {
         setProposals(Array.isArray(data) ? data : (data.results || []));
       } catch (err: any) {
         setError(err.message);
-        console.error("Fetch error:", err);
+        logError("Fetch error:", err);
       } finally {
         setIsLoading(false);
       }

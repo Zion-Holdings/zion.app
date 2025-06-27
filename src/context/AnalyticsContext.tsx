@@ -5,6 +5,8 @@ import { supabase } from '@/integrations/supabase/client';
 
 // Analytics event types
 export type AnalyticsEventType = 
+import { logInfo, logError } from '@/utils/productionLogger';
+
   | 'page_view'
   | 'button_click'
   | 'form_submit'
@@ -47,7 +49,7 @@ const AnalyticsContext = createContext<AnalyticsContextType | undefined>(
 
 export function AnalyticsProvider({ children }: { children: ReactNode }) {
   if (process.env.NODE_ENV === 'development') {
-    console.log('[AnalyticsProvider] Initializing...');
+    logInfo('[AnalyticsProvider] Initializing...');
   }
   const [pageViews, setPageViews] = useState(0);
   const [events, setEvents] = useState<AnalyticsEvent[]>([]);
@@ -85,11 +87,11 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
       }]);
       
       if (process.env.NODE_ENV === 'development') {
-        console.log(`Analytics event tracked: ${type}`, metadata);
+        logInfo(`Analytics event tracked: ${type}`, metadata);
       }
     } catch (error) {
       if (process.env.NODE_ENV === 'development') {
-        console.error('Error logging analytics event:', error);
+        logError('Error logging analytics event:', error);
       }
     }
   };

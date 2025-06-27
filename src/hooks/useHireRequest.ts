@@ -4,6 +4,8 @@ import { toast } from "@/hooks/use-toast";
 import { TalentProfile } from "@/types/talent";
 
 export interface HireRequestData {
+import { logError } from '@/utils/productionLogger';
+
   talent: {
     id: string;
     full_name: string;
@@ -47,7 +49,7 @@ export function useHireRequest() {
       
       return { success: true, requestId: (response as any)?.request_id };
     } catch (error) {
-      console.error("Error submitting hire request:", error);
+      logError("Error submitting hire request:", error);
       
       const errorMessage = error instanceof Error 
         ? error.message 

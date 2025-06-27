@@ -5,6 +5,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 
 export function useFraudPreventionSignup() {
+import { logInfo, logError } from '@/utils/productionLogger';
+
   const [isCheckingFraud, setIsCheckingFraud] = useState(false);
   
   // Get the user's IP address (in a real app, you'd do this server-side)
@@ -14,7 +16,7 @@ export function useFraudPreventionSignup() {
       const data = await response.json();
       return data.ip;
     } catch (error) {
-      console.error('Error getting IP:', error);
+      logError('Error getting IP:', error);
       return undefined;
     }
   };
@@ -29,7 +31,7 @@ export function useFraudPreventionSignup() {
       const fraudCheck = await checkSignupPatterns(email, ipAddress);
       
       if (fraudCheck.isSuspicious) {
-        console.log('Suspicious signup detected:', fraudCheck.reasons);
+        logInfo('Suspicious signup detected:', fraudCheck.reasons);
         
         // Create a fraud flag for admin review
         const { error } = await supabase.from('fraud_flags').insert({
@@ -45,7 +47,7 @@ export function useFraudPreventionSignup() {
         });
         
         if (error) {
-          console.error('Error creating fraud flag:', error);
+          logError('Error creating fraud flag:', error);
         }
         
         // Depending on how strict we want to be, we could block the signup
@@ -69,7 +71,7 @@ export function useFraudPreventionSignup() {
       // No suspicious patterns found
       return true;
     } catch (error) {
-      console.error('Error in fraud check:', error);
+      logError('Error in fraud check:', error);
       // On error, allow the signup but log the error
       return true;
     } finally {

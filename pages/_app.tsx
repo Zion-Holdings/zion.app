@@ -30,6 +30,8 @@ import dynamic from 'next/dynamic';
 import { PerformanceMonitor } from '@/components/ui/performance-monitor';
 import { BundleAnalyzer } from '@/components/ui/bundle-analyzer';
 import { QuickActions } from '@/components/ui/quick-actions';
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 
 // Dynamically load heavy components to improve initial load time
 const IntercomChat = dynamic(() => import('@/components/IntercomChat'), {
@@ -130,7 +132,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     const initializeApp = async () => {
       try {
         if (process.env.NODE_ENV === 'development') {
-          console.log('[App] Starting optimized initialization...');
+          logInfo('[App] Starting optimized initialization...');
         }
 
         // Critical: Initialize error handlers first
@@ -140,7 +142,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         try {
           validateProductionEnvironment();
         } catch (error) {
-          console.warn('[App] Environment validation warning:', error);
+          logWarn('[App] Environment validation warning:', error);
         }
 
         // Defer non-critical initializations
@@ -149,7 +151,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
           // Initialize services asynchronously
           initializeServices().catch((err) =>
-            console.warn('Service initialization failed', err),
+            logWarn('Service initialization failed', err),
           );
 
           // Initialize performance monitoring only if needed
@@ -169,7 +171,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           setIsInitialized(true);
         }
       } catch (error) {
-        console.error('[App] Critical initialization error:', error);
+        logError('[App] Critical initialization error:', error);
         
         // Only send to Sentry if it's available
         try {
@@ -177,7 +179,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             Sentry.captureException(error);
           }
         } catch (sentryError) {
-          console.warn('[App] Could not send error to Sentry:', sentryError);
+          logWarn('[App] Could not send error to Sentry:', sentryError);
         }
 
         // Still mark as initialized to prevent infinite loading
@@ -328,7 +330,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 // Optimize component logging
 if (process.env.NODE_ENV === 'development') {
-  console.log('[App] MyApp component optimized and ready');
+  logInfo('[App] MyApp component optimized and ready');
 }
 
 export default MyApp;

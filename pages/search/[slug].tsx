@@ -15,6 +15,8 @@ import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { useDebounce } from '@/hooks/useDebounce';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface BaseSearchResult {
   id: string;
@@ -230,7 +232,7 @@ export default function SearchResultsPage({
   const fetchResults = async (searchTerm: string, page = 1) => {
     try {
       setLoading(true);
-      console.log(`Fetching search results for: ${searchTerm}, page: ${page}`);
+      logInfo(`Fetching search results for: ${searchTerm}, page: ${page}`);
 
       const params = new URLSearchParams({
         query: searchTerm,
@@ -250,7 +252,7 @@ export default function SearchResultsPage({
       }
 
       const data = await response.json();
-      console.log('Search results received:', data);
+      logInfo('Search results received:', data);
 
       setTotalResults(data.totalCount || data.results?.length || 0);
 
@@ -260,7 +262,7 @@ export default function SearchResultsPage({
         setResults((prev) => [...prev, ...(data.results || [])]);
       }
     } catch (error) {
-      console.error('Error fetching search results:', error);
+      logError('Error fetching search results:', error);
       const offline = offlineSearch(searchTerm, page, 12, {
         sortBy,
         category: categoryFilter !== 'all' ? categoryFilter : undefined,
@@ -635,7 +637,7 @@ export const getServerSideProps: GetServerSideProps<
     const apiBaseUrl =
       process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
-    console.log(`Fetching search results for slug: ${slug}, query: ${query}`);
+    logInfo(`Fetching search results for slug: ${slug}, query: ${query}`);
 
     const response = await fetch(
       `${apiBaseUrl}/api/search?query=${encodeURIComponent(query)}&limit=12`,
@@ -648,9 +650,9 @@ export const getServerSideProps: GetServerSideProps<
       const data = await response.json();
       results = data.results || [];
       totalCount = data.totalCount || results.length;
-      console.log(`Server-side fetch successful: ${results.length} results`);
+      logInfo(`Server-side fetch successful: ${results.length} results`);
     } else {
-      console.error(
+      logError(
         `Search API error: ${response.status} ${response.statusText}`,
       );
       const offline = offlineSearch(query, 1, 12, { sortBy: 'relevance' });
@@ -667,7 +669,7 @@ export const getServerSideProps: GetServerSideProps<
       },
     };
   } catch (error) {
-    console.error('Error fetching search results:', error);
+    logError('Error fetching search results:', error);
     const offline = offlineSearch(query, 1, 12, { sortBy: 'relevance' });
 
     return {

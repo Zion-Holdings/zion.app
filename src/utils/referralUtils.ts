@@ -1,5 +1,7 @@
 import { format } from 'date-fns';
 import { safeStorage } from './safeStorage';
+import { logError } from '@/utils/productionLogger';
+
 
 /**
  * Formats a date for display in the referral system
@@ -14,7 +16,7 @@ export function formatDate(date: Date | string | undefined): string {
     }
     return format(date, 'MMM d, yyyy');
   } catch (e) {
-    console.error('Error formatting date:', e);
+    logError('Error formatting date:', e);
     return '-';
   }
 }
@@ -67,7 +69,7 @@ export async function trackReferral(userId: string, email: string): Promise<bool
       return true;
     }
   } catch (error) {
-    console.error('Error tracking referral:', error);
+    logError('Error tracking referral:', error);
   }
   return false;
 }

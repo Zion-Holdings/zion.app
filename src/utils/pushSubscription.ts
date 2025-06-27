@@ -1,3 +1,5 @@
+import { logWarn, logError } from '@/utils/productionLogger';
+
 const VAPID_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
 
 function urlBase64ToUint8Array(base64String: string) {
@@ -22,7 +24,7 @@ export async function subscribeToPush() {
     if (existing) return;
 
     if (!VAPID_PUBLIC_KEY) {
-      console.warn('VAPID_PUBLIC_KEY is not defined. Push subscription will be skipped.');
+      logWarn('VAPID_PUBLIC_KEY is not defined. Push subscription will be skipped.');
       return;
     }
     const subscription = await registration.pushManager.subscribe({
@@ -36,6 +38,6 @@ export async function subscribeToPush() {
       body: JSON.stringify(subscription)
     });
   } catch (err) {
-    console.error('Push subscription failed', err);
+    logError('Push subscription failed', err);
   }
 }

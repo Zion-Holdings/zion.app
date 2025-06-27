@@ -1,5 +1,7 @@
 import * as Sentry from '@sentry/nextjs';
 import { z } from 'zod';
+import { logInfo, logWarn } from '@/utils/productionLogger';
+
 
 interface EnvironmentConfig {
   supabase: {
@@ -117,9 +119,9 @@ export async function initializeServices(): Promise<void> {
         release: config.sentry.release,
         tracesSampleRate: 1.0,
       });
-      console.log('✅ Sentry initialized successfully');
+      logInfo('✅ Sentry initialized successfully');
     } catch (error) {
-      console.warn('Failed to initialize Sentry:', error);
+      logWarn('Failed to initialize Sentry:', error);
     }
   }
 
@@ -134,9 +136,9 @@ export async function initializeServices(): Promise<void> {
         env: config.datadog.env,
         forwardErrorsToLogs: true,
       });
-      console.log('✅ Datadog Logs initialized');
+      logInfo('✅ Datadog Logs initialized');
     } catch (error) {
-      console.warn('Failed to initialize Datadog Logs:', error);
+      logWarn('Failed to initialize Datadog Logs:', error);
     }
   }
 
@@ -145,14 +147,14 @@ export async function initializeServices(): Promise<void> {
     try {
       const LogRocket = (await import('logrocket')).default;
       LogRocket.init(config.logRocket.id!);
-      console.log('✅ LogRocket initialized');
+      logInfo('✅ LogRocket initialized');
     } catch (error) {
-      console.warn('Failed to initialize LogRocket:', error);
+      logWarn('Failed to initialize LogRocket:', error);
     }
   }
 
   if (config.app.isDevelopment) {
-    console.log('🔧 Services initialized for development environment');
+    logInfo('🔧 Services initialized for development environment');
   }
 }
 
@@ -178,7 +180,7 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const anonKeyIsPlaceholder = isPlaceholderValue(supabaseAnonKey);
   
   if ((isDevelopment || process.env.DEBUG_ENV_CONFIG) && (urlIsPlaceholder || anonKeyIsPlaceholder)) {
-    console.log('[ENV CONFIG] Supabase configuration check:', {
+    logInfo('[ENV CONFIG] Supabase configuration check:', {
       url: supabaseUrl ? `${supabaseUrl.substring(0, 30)}...` : 'undefined',
       urlIsPlaceholder,
       anonKeyPresent: !!supabaseAnonKey,
@@ -284,7 +286,7 @@ export function validateProductionEnvironment(): void {
     }
     
     if (warnings.length > 0) {
-      console.warn('⚠️ Development Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
+      logWarn('⚠️ Development Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
     }
     
     return;
@@ -321,7 +323,7 @@ export function validateProductionEnvironment(): void {
 
   // Log warnings for optional services
   if (warnings.length > 0) {
-    console.warn('⚠️ Production Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
+    logWarn('⚠️ Production Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
   }
 }
 

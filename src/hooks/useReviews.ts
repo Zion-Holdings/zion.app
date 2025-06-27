@@ -6,6 +6,8 @@ import { Review, ReviewReport } from "@/types/reviews";
 import { toast } from "@/hooks/use-toast";
 
 export function useReviews(projectId?: string) {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -47,7 +49,7 @@ export function useReviews(projectId?: string) {
         }
       }
     } catch (err: any) {
-      console.error("Error fetching reviews:", err);
+      logError("Error fetching reviews:", err);
       toast({
         title: "Error",
         description: "Failed to load reviews",
@@ -80,7 +82,7 @@ export function useReviews(projectId?: string) {
       
       setReviews(data || []);
     } catch (err: any) {
-      console.error("Error fetching user reviews:", err);
+      logError("Error fetching user reviews:", err);
       toast({
         title: "Error",
         description: "Failed to load reviews",
@@ -134,7 +136,7 @@ export function useReviews(projectId?: string) {
       setUserReview(data);
       return true;
     } catch (err: any) {
-      console.error("Error submitting review:", err);
+      logError("Error submitting review:", err);
       
       // Check for unique constraint violation
       if (err.code === "23505") {
@@ -183,7 +185,7 @@ export function useReviews(projectId?: string) {
       
       return true;
     } catch (err: any) {
-      console.error("Error updating review:", err);
+      logError("Error updating review:", err);
       toast({
         title: "Error",
         description: "Failed to update review",
@@ -227,7 +229,7 @@ export function useReviews(projectId?: string) {
         return true;
       }
     } catch (err: any) {
-      console.error("Error reporting review:", err);
+      logError("Error reporting review:", err);
       toast({
         title: "Error",
         description: "Failed to report review",

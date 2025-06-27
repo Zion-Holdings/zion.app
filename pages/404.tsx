@@ -10,6 +10,8 @@ import { captureException } from '@/utils/sentry';
 import { Home, Search, ShoppingCart, Users, ArrowLeft, ExternalLink } from 'lucide-react';
 
 export default function Custom404() {
+import { logInfo } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const { t } = useTranslation();
   const router = useRouter();
@@ -20,7 +22,7 @@ export default function Custom404() {
       user: user ? { id: user.id, email: user.email } : undefined,
       extra: { path: window.location.pathname },
     });
-    console.log('Reported 404 error. Error ID:', eventId);
+    logInfo('Reported 404 error. Error ID:', eventId);
   }, [user]);
 
   const handleGoBack = () => {

@@ -5,6 +5,8 @@ import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 
 export function FooterNewsletter(): React.ReactElement {
+import { logError } from '@/utils/productionLogger';
+
   const [email, setEmail] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,13 +53,13 @@ export function FooterNewsletter(): React.ReactElement {
         setEmail('');
         // setEmailError(''); // Already cleared if regex passed
       } else {
-        console.error('Newsletter subscription failed:', data);
+        logError('Newsletter subscription failed:', data);
         // Use a more specific error message if available from API, otherwise generic
         const errorMessage = data.error || 'Subscription failed. Please try again.';
         toast.error(errorMessage, { id: `${uniqueToastIdBase}-api-error` });
       }
     } catch (err: any) {
-      console.error('Newsletter subscription error:', err);
+      logError('Newsletter subscription error:', err);
       toast.error('Unable to subscribe right now. Please try again later.', { id: `${uniqueToastIdBase}-catch-error` });
     } finally {
       setIsSubmitting(false);

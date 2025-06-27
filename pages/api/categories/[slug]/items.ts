@@ -4,6 +4,8 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { captureException } from '@/utils/sentry';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 
 // Mock category data for fallback
 const MOCK_CATEGORIES = {
@@ -178,11 +180,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       
       // If we got data but it's empty, still use fallback for better UX
       if (categoryDetails && products.length === 0) {
-        console.log('Database returned empty results, using fallback data for better UX');
+        logInfo('Database returned empty results, using fallback data for better UX');
         usingFallback = true;
       }
     } catch (dbError) {
-      console.warn('Database query failed or timed out, using fallback data:', dbError);
+      logWarn('Database query failed or timed out, using fallback data:', dbError);
       usingFallback = true;
     }
 
@@ -265,7 +267,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     return res.status(200).json(responseData);
   } catch (error) {
-    console.error(`Failed to fetch items for category ${slug}:`, error);
+    logError(`Failed to fetch items for category ${slug}:`, error);
     
     // Ensure we always return JSON, never HTML
     try {
@@ -274,7 +276,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         user: (req as any).user ? { id: (req as any).user.id, email: (req as any).user.email } : undefined,
       });
     } catch (sentryError) {
-      console.error('Sentry capture failed:', sentryError);
+      logError('Sentry capture failed:', sentryError);
     }
     
     return res.status(500).json({ 
@@ -285,7 +287,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
       await prisma.$disconnect();
     } catch (disconnectError) {
-      console.error('Prisma disconnect error:', disconnectError);
+      logError('Prisma disconnect error:', disconnectError);
     }
   }
 }

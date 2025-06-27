@@ -1,5 +1,7 @@
 import { enhancedGlobalErrorHandler } from './globalToastManager';
 import { apiErrorHandler, consoleErrorHandler, fetchErrorHandler } from './enhancedErrorHandlers';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 /**
  * Initialize global error handlers with enhanced toast management
@@ -13,7 +15,7 @@ export function initializeGlobalErrorHandlers(): void {
   if (typeof window !== 'undefined') {
     // Handle unhandled promise rejections
     window.addEventListener('unhandledrejection', (event) => {
-      console.error('Unhandled promise rejection:', event.reason);
+      logError('Unhandled promise rejection:', event.reason);
       
       // Only show toast for user-facing errors
       if (event.reason && !shouldIgnoreError(event.reason)) {
@@ -29,7 +31,7 @@ export function initializeGlobalErrorHandlers(): void {
 
     // Handle global errors
     window.addEventListener('error', (event) => {
-      console.error('Global error:', event.error);
+      logError('Global error:', event.error);
       
       // Only show toast for critical errors
       if (event.error && !shouldIgnoreError(event.error)) {
@@ -46,7 +48,7 @@ export function initializeGlobalErrorHandlers(): void {
     });
   }
 
-  console.log('Enhanced global error handlers initialized');
+  logInfo('Enhanced global error handlers initialized');
 }
 
 /**
@@ -78,5 +80,5 @@ function shouldIgnoreError(error: any): boolean {
 export function cleanupGlobalErrorHandlers(): void {
   consoleErrorHandler.restoreConsoleError();
   fetchErrorHandler.restoreFetch();
-  console.log('Global error handlers cleaned up');
+  logInfo('Global error handlers cleaned up');
 }

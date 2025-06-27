@@ -1,6 +1,8 @@
 import React, { Component, ReactNode } from 'react';
 import * as Sentry from '@sentry/nextjs';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
+import { logError } from '@/utils/productionLogger';
+
 
 interface Props {
   children: ReactNode;
@@ -55,7 +57,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('ProductionErrorBoundary caught an error:', error, errorInfo);
+    logError('ProductionErrorBoundary caught an error:', error, errorInfo);
     
     if (ENV_CONFIG.sentry.isConfigured) {
       Sentry.withScope((scope) => {

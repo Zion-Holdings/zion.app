@@ -5,6 +5,8 @@ import { useAuth } from '@/hooks/useAuth';
 import { getStripe } from '@/utils/getStripe';
 
 export default function CheckoutButton({ priceId, quantity = 1 }) {
+import { logError } from '@/utils/productionLogger';
+
   const [loading, setLoading] = useState(false);
   const { user } = useAuth();
 
@@ -30,9 +32,9 @@ export default function CheckoutButton({ priceId, quantity = 1 }) {
       if (!res.ok) throw new Error(data.error || 'Failed to create session');
 
       const { error } = await stripe.redirectToCheckout({ sessionId: data.sessionId });
-      if (error) console.error('Stripe redirect error:', error);
+      if (error) logError('Stripe redirect error:', error);
     } catch (err) {
-      console.error('Checkout error:', err);
+      logError('Checkout error:', err);
     } finally {
       setLoading(false);
     }

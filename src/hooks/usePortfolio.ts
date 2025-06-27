@@ -6,6 +6,8 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 
 export function usePortfolio() {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -32,7 +34,7 @@ export function usePortfolio() {
       setProjects(data || []);
       return data || [];
     } catch (e: any) {
-      console.error('Error fetching portfolio projects:', e);
+      logError('Error fetching portfolio projects:', e);
       setError(e.message);
       return [];
     } finally {
@@ -75,7 +77,7 @@ export function usePortfolio() {
       await fetchProjects();
       return data.id;
     } catch (e: any) {
-      console.error('Error adding portfolio project:', e);
+      logError('Error adding portfolio project:', e);
       setError(e.message);
       toast({
         title: "Error",
@@ -122,7 +124,7 @@ export function usePortfolio() {
       await fetchProjects();
       return true;
     } catch (e: any) {
-      console.error('Error updating portfolio project:', e);
+      logError('Error updating portfolio project:', e);
       setError(e.message);
       toast({
         title: "Error",
@@ -161,7 +163,7 @@ export function usePortfolio() {
       setProjects(projects.filter(p => p.id !== projectId));
       return true;
     } catch (e: any) {
-      console.error('Error deleting portfolio project:', e);
+      logError('Error deleting portfolio project:', e);
       setError(e.message);
       toast({
         title: "Error",

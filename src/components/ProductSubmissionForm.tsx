@@ -9,6 +9,8 @@ import { useRouter } from "next/router";
 import Image from 'next/image'; // Import next/image
 
 import {
+import { logError } from '@/utils/productionLogger';
+
   Form,
   FormControl,
   FormDescription,
@@ -239,7 +241,7 @@ export function ProductSubmissionForm() {
           }
         });
       } catch (err) {
-        console.error('Error invoking moderation:', err);
+        logError('Error invoking moderation:', err);
       }
       
       // Show success message

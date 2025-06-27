@@ -10,9 +10,11 @@ import esTranslation from './locales/es/translation.json';
 import ptTranslation from './locales/pt/translation.json';
 import frTranslation from './locales/fr/translation.json';
 import arTranslation from './locales/ar/translation.json';
+import { logError } from '@/utils/productionLogger';
+
 
 if (!i18n) {
-  console.error("CRITICAL: i18next failed to import. Internationalization will not work.");
+  logError("CRITICAL: i18next failed to import. Internationalization will not work.");
 } else {
   // Initialize i18next
   i18n
@@ -56,7 +58,7 @@ if (!i18n) {
     },
   })
   .catch(error => {
-    console.error("Error initializing i18next or its detector:", error);
+    logError("Error initializing i18next or its detector:", error);
     // This helps prevent an unhandled promise rejection if init fails.
   });
 

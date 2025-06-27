@@ -4,6 +4,8 @@ import { CodeBlock } from '@/components/developers/CodeBlock';
 import Link from 'next/link';
 
 export function ApiGettingStarted() {
+import { logInfo } from '@/utils/productionLogger';
+
   const authExample = `curl -X GET \\
   https://api.ziontechgroup.com/v1/jobs \\
   -H "Authorization: Bearer YOUR_API_KEY"`;
@@ -16,7 +18,7 @@ const response = await axios.get('https://api.ziontechgroup.com/v1/jobs', {
   }
 });
 
-console.log(response.data);`;
+logInfo(response.data);`;
 
   return (
     <ApiDocsLayout>

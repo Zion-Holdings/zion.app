@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
 export function useJobDetails(jobId: string | undefined) {
+import { logError } from '@/utils/productionLogger';
+
   const [job, setJob] = useState<Job | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -26,7 +28,7 @@ export function useJobDetails(jobId: string | undefined) {
       setJob(data);
       setError(null);
     } catch (err) {
-      console.error('Error loading job details:', err);
+      logError('Error loading job details:', err);
       setError((err as Error).message);
     } finally {
       setIsLoading(false);

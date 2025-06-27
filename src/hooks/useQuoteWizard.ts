@@ -2,6 +2,8 @@ import useSWR from 'swr';
 import { captureException } from '@/utils/sentry';
 
 export interface ServiceItem {
+import { logError } from '@/utils/productionLogger';
+
   id: string;
   name: string;
   slug: string;
@@ -17,7 +19,7 @@ const fetcher = async (url: string): Promise<ServiceItem[]> => {
     return res.json();
   } catch (err) {
     if (process.env.NODE_ENV === 'development') {
-      console.error(err);
+      logError(err);
     } else {
       captureException(err);
     }

@@ -6,6 +6,8 @@ import { AIMatchingResults } from "@/components/AIMatchingResults";
 import { findMatches, MatchResult } from "@/lib/ai-matchmaking";
 import { Textarea } from "@/components/ui/textarea";
 import { Sparkles, Search } from "lucide-react";
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface AIMatchmakerProps {
   serviceType?: string;
@@ -33,7 +35,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
     setHasSearched(true);
     
     try {
-      console.log("Starting AI matching with query:", query, "and service type:", serviceType);
+      logInfo("Starting AI matching with query:", query, "and service type:", serviceType);
       
       // Get AI matches
       const results = await findMatches(
@@ -42,7 +44,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
         3
       );
       
-      console.log("AI matching results:", results);
+      logInfo("AI matching results:", results);
       setMatches(results);
       
       toast({
@@ -50,7 +52,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
         description: `Found ${results.length} matches based on your description.`,
       });
     } catch (error) {
-      console.error("Error during AI matching:", error);
+      logError("Error during AI matching:", error);
       toast({
         title: "Matching Error",
         description: "We couldn't find matches for your request. Please try again.",

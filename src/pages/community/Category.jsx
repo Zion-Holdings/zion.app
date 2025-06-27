@@ -7,6 +7,8 @@ import { Alert } from '@/components/ui/alert';
 import PostCard from '@/components/community/PostCard';
 import Empty from '@/components/community/Empty';
 import { Button } from '@/components/ui/button';
+import { logError } from '@/utils/productionLogger';
+
 
 const queryClient = new QueryClient();
 
@@ -43,7 +45,7 @@ export default function Category() {
         setHasMore(data.posts.length === LIMIT);
       })
       .catch(err => {
-        console.error(err);
+        logError(err);
         setError(true);
       })
       .finally(() => {

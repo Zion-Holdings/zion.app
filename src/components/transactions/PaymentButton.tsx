@@ -6,6 +6,8 @@ import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
 import { useRouter } from 'next/router';
+import { logError } from '@/utils/productionLogger';
+
 
 interface PaymentButtonProps {
   amount: number;
@@ -74,7 +76,7 @@ export function PaymentButton({
       }
       
     } catch (error) {
-      console.error("Payment error:", error);
+      logError("Payment error:", error);
       toast({
         title: "Payment error",
         description: "There was a problem initiating your payment. Please try again.",

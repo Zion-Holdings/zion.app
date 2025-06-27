@@ -6,6 +6,8 @@ import Head from 'next/head';
 import { createClient } from '../../src/utils/supabase/client';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import type { AuthError, User, AuthChangeEvent, Session } from '@supabase/supabase-js';
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 
 const LoginPage = () => {
   const router = useRouter();
@@ -34,11 +36,11 @@ const LoginPage = () => {
   // Effect for initial session check and auth state changes
   useEffect(() => {
     let mounted = true;
-    console.log('LoginPage: Initial session check effect runs.');
+    logInfo('LoginPage: Initial session check effect runs.');
 
     const sessionTimeoutId = setTimeout(() => {
       if (mounted) {
-        console.warn('LoginPage: Session check timeout after 5 seconds');
+        logWarn('LoginPage: Session check timeout after 5 seconds');
         setSessionCheckTimedOut(true);
         setIsCheckingSession(false); // Allow form to render if timeout
         setSessionChecked(true); // Mark check as complete even on timeout
@@ -50,47 +52,47 @@ const LoginPage = () => {
 
       setIsCheckingSession(true);
       try {
-        console.log('LoginPage: Calling supabase.auth.getSession()');
+        logInfo('LoginPage: Calling supabase.auth.getSession()');
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
         clearTimeout(sessionTimeoutId); // Clear timeout once getSession completes
         if (!mounted) return;
 
         if (sessionError) {
-          console.error('LoginPage: Error getting session:', sessionError);
+          logError('LoginPage: Error getting session:', sessionError);
           setError(sessionError as any); // Cast to any if type is too strict
         } else {
-          console.log('LoginPage: getSession returned, user:', session?.user?.id);
+          logInfo('LoginPage: getSession returned, user:', session?.user?.id);
           setUser(session?.user ?? null);
         }
       } catch (e) {
         if (mounted) {
-          console.error('LoginPage: Exception during getSession:', e);
+          logError('LoginPage: Exception during getSession:', e);
           clearTimeout(sessionTimeoutId); // Ensure timeout is cleared on error too
         }
       } finally {
         if (mounted) {
           setIsCheckingSession(false);
           setSessionChecked(true);
-          console.log('LoginPage: Initial session check complete. isCheckingSession: false, sessionChecked: true');
+          logInfo('LoginPage: Initial session check complete. isCheckingSession: false, sessionChecked: true');
         }
       }
 
       // Listener for auth state changes
-      console.log('LoginPage: Setting up onAuthStateChange listener.');
+      logInfo('LoginPage: Setting up onAuthStateChange listener.');
       const { data: authListener } = supabase.auth.onAuthStateChange((event: AuthChangeEvent, session: Session | null) => {
         if (!mounted) return;
-        console.log('LoginPage: onAuthStateChange event:', event, 'user:', session?.user?.id);
+        logInfo('LoginPage: onAuthStateChange event:', event, 'user:', session?.user?.id);
         setUser(session?.user ?? null);
         // If auth state changes after initial check, ensure sessionChecked is true
         // This handles cases like login/logout in another tab.
         if (!sessionChecked && event !== "INITIAL_SESSION") {
            setSessionChecked(true);
-           console.log('LoginPage: onAuthStateChange updated sessionChecked to true.');
+           logInfo('LoginPage: onAuthStateChange updated sessionChecked to true.');
         }
       });
       
       return () => { // Cleanup for listener
-        console.log('LoginPage: Unsubscribing from onAuthStateChange.');
+        logInfo('LoginPage: Unsubscribing from onAuthStateChange.');
         authListener?.subscription?.unsubscribe();
       };
     };
@@ -100,14 +102,14 @@ const LoginPage = () => {
     return () => {
       mounted = false;
       clearTimeout(sessionTimeoutId); // Clear timeout on unmount
-      console.log('LoginPage: Unmounting, cleaning up auth listener.');
+      logInfo('LoginPage: Unmounting, cleaning up auth listener.');
       unsubscribePromise.then(cleanup => cleanup && cleanup());
     };
   }, []); // Run only once on mount
 
   // Effect for handling redirection AFTER session is checked and user state is updated
   useEffect(() => {
-    console.log(`LoginPage: Redirection effect runs. sessionChecked: ${sessionChecked}, isLoading: ${isLoading}, user: ${user?.id}, pathname: ${router.pathname}`);
+    logInfo(`LoginPage: Redirection effect runs. sessionChecked: ${sessionChecked}, isLoading: ${isLoading}, user: ${user?.id}, pathname: ${router.pathname}`);
     
     // Only redirect if the initial session check is complete, not currently submitting login form, and user exists
     if (sessionChecked && !isLoading && user) {
@@ -118,7 +120,7 @@ const LoginPage = () => {
         try {
           returnTo = decodeURIComponent(router.query.returnTo);
         } catch (e) {
-          console.warn('Failed to decode returnTo parameter:', router.query.returnTo);
+          logWarn('Failed to decode returnTo parameter:', router.query.returnTo);
           returnTo = '/dashboard';
         }
       }
@@ -134,13 +136,13 @@ const LoginPage = () => {
         returnTo = '/dashboard';
       }
       
-      console.log(`LoginPage: Conditions met for redirect. Current path: ${router.pathname}, Target: ${returnTo}`);
+      logInfo(`LoginPage: Conditions met for redirect. Current path: ${router.pathname}, Target: ${returnTo}`);
       
       // Add a small delay to ensure session is fully established
       const redirectTimer = setTimeout(() => {
         // Double-check that we're still logged in before redirecting
         if (user && router.pathname === '/auth/login') {
-          console.log(`LoginPage: Executing delayed redirect to ${returnTo}`);
+          logInfo(`LoginPage: Executing delayed redirect to ${returnTo}`);
           router.replace(returnTo); // Use replace to avoid back button issues
         }
       }, 100); // Small delay to let session stabilize
@@ -217,14 +219,14 @@ const LoginPage = () => {
     setVerificationEmailSent(false);
     
     try {
-      console.log('Attempting Supabase login with email:', email);
+      logInfo('Attempting Supabase login with email:', email);
       const { data, error: signInError } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
       if (signInError) {
-        console.error('Supabase sign-in error:', signInError);
+        logError('Supabase sign-in error:', signInError);
         
         // Check if error is related to email verification
         const messageIncludesEmailNotConfirmed = signInError.message?.toLowerCase().includes('email not confirmed') ||
@@ -263,16 +265,16 @@ const LoginPage = () => {
           setError({ name: signInError.name || 'AuthApiError', message: displayMessage } as AuthError);
         }
       } else if (data.user) {
-        console.log('Supabase sign-in successful, user:', data.user);
+        logInfo('Supabase sign-in successful, user:', data.user);
         setUser(data.user); // setUser to trigger useEffect for redirection
         // Redirection is now handled by the useEffect hook
       } else {
         // Should not happen if signInError is null and data.user is null
-        console.warn('Supabase sign-in returned no error but no user.');
+        logWarn('Supabase sign-in returned no error but no user.');
         setError({ name: 'UnknownAuthError', message: 'Login failed due to an unknown error. Please try again.' } as AuthError);
       }
     } catch (catchedError: any) {
-      console.error('Exception during Supabase sign-in:', catchedError);
+      logError('Exception during Supabase sign-in:', catchedError);
       // Check if the caught error is a network error
       let exceptionMessage = 'An unexpected error occurred. Please try again.';
       if (catchedError.message && catchedError.message.toLowerCase().includes('networkerror when attempting to fetch resource')) {
@@ -301,7 +303,7 @@ const LoginPage = () => {
 
   // 1. Primary Loading State: During initial session check
   if (isCheckingSession) {
-    console.log('LoginPage: Rendering "Checking authentication..."');
+    logInfo('LoginPage: Rendering "Checking authentication..."');
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -316,7 +318,7 @@ const LoginPage = () => {
   // 2. Redirecting State: If session is checked, user exists, and not currently submitting form
   // The redirection useEffect will handle the actual push. This UI is for the brief moment before that.
   if (sessionChecked && user && !isLoading) {
-    console.log('LoginPage: Rendering "Already Logged In / Redirecting..."');
+    logInfo('LoginPage: Rendering "Already Logged In / Redirecting..."');
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -330,7 +332,7 @@ const LoginPage = () => {
 
   // 3. Render Login Form: If session is checked and no user, OR if a login attempt is in progress (isLoading)
   // This also covers the case where a user was present but a login attempt failed, clearing the user.
-  console.log(`LoginPage: Rendering login form. sessionChecked: ${sessionChecked}, user: ${user?.id}, isLoading: ${isLoading}`);
+  logInfo(`LoginPage: Rendering login form. sessionChecked: ${sessionChecked}, user: ${user?.id}, isLoading: ${isLoading}`);
   return (
     <>
       <Head>
@@ -578,7 +580,7 @@ const LoginPage = () => {
               <a
                 href="/api/auth/login?connection=google-oauth2" // This will likely 404 if NextAuth is not setup
                 onClick={(e) => {
-                  console.log('Google login button clicked - href may be incorrect if NextAuth is not used.');
+                  logInfo('Google login button clicked - href may be incorrect if NextAuth is not used.');
                 }}
                 className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
               >
@@ -594,7 +596,7 @@ const LoginPage = () => {
               <a
                 href="/api/auth/login?connection=github" // This will likely 404 if NextAuth is not setup
                 onClick={(e) => {
-                  console.log('GitHub login button clicked - href may be incorrect if NextAuth is not used.');
+                  logInfo('GitHub login button clicked - href may be incorrect if NextAuth is not used.');
                 }}
                 className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
               >

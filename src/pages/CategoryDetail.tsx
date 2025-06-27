@@ -10,6 +10,8 @@ import { toast } from "@/hooks/use-toast";
 import { NextSeo } from '@/components/NextSeo';
 import { Header } from "@/components/Header";
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
+import { logError } from '@/utils/productionLogger';
+
 
 const AUTO_SERVICE_TITLES = [
   "AI-Powered Customer Support",
@@ -188,7 +190,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
 
         setListings(listingsToShow);
       } catch (err) {
-        console.error('Category load error:', err);
+        logError('Category load error:', err);
         toast({ title: 'Error', description: 'Failed to load category' });
       } finally {
         setIsLoading(false);

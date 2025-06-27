@@ -4,6 +4,8 @@ import { toast } from "@/hooks/use-toast";
 import type { UserDetails } from "@/types/auth";
 
 export const useProfileManagement = (setIsLoading: (loading: boolean) => void) => {
+import { logError } from '@/utils/productionLogger';
+
   const updateProfile = async (data: Partial<UserDetails>) => {
     try {
       setIsLoading(true);
@@ -58,7 +60,7 @@ export const useProfileManagement = (setIsLoading: (loading: boolean) => void) =
 
       return { success: true };
     } catch (error: any) {
-      console.error("Profile update error:", error);
+      logError("Profile update error:", error);
       toast({
         title: "Profile update failed",
         description: error.message || "An unexpected error occurred",

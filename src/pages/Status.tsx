@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { AlertCircle, CheckCircle, Clock, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { logWarn } from '@/utils/productionLogger';
+
 
 interface ServiceStatus {
   name: string;
@@ -65,7 +67,7 @@ export default function Status() {
           setUptime(data.uptime);
         }
       } catch (err) {
-        console.warn('Failed to fetch uptime', err);
+        logWarn('Failed to fetch uptime', err);
       }
     }
     fetchUptime();

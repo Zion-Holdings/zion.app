@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
 export function useDisputeCheck(projectId?: string, milestoneId?: string) {
+import { logError } from '@/utils/productionLogger';
+
   const [isUnderDispute, setIsUnderDispute] = useState(false);
   const [disputeStatus, setDisputeStatus] = useState<'open' | 'under_review' | 'resolved' | 'closed' | null>(null);
   const [disputeId, setDisputeId] = useState<string | null>(null);
@@ -46,7 +48,7 @@ export function useDisputeCheck(projectId?: string, milestoneId?: string) {
           setDisputeId(null);
         }
       } catch (err) {
-        console.error("Error checking dispute status:", err);
+        logError("Error checking dispute status:", err);
         setIsUnderDispute(false);
         setDisputeStatus(null);
         setDisputeId(null);

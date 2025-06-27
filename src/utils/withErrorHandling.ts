@@ -1,6 +1,8 @@
 import { GetServerSideProps, GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { ENV_CONFIG } from './environmentConfig';
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 
 interface ErrorPageProps {
   hasError: boolean;
@@ -46,7 +48,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
         
         // If we succeeded after retries, log the recovery
         if (attempt > 0) {
-          console.log(`✅ getServerSideProps succeeded on attempt ${attempt + 1} for ${context.resolvedUrl}`);
+          logInfo(`✅ getServerSideProps succeeded on attempt ${attempt + 1} for ${context.resolvedUrl}`);
           
           if (ENV_CONFIG.sentry.isConfigured) {
             Sentry.addBreadcrumb({
@@ -62,7 +64,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
       } catch (error: any) {
         lastError = error;
         
-        console.warn(`⚠️ getServerSideProps attempt ${attempt + 1}/${config.maxRetries + 1} failed for ${context.resolvedUrl}:`, error.message);
+        logWarn(`⚠️ getServerSideProps attempt ${attempt + 1}/${config.maxRetries + 1} failed for ${context.resolvedUrl}:`, error.message);
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
@@ -94,7 +96,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
                           config.retryCondition(error);
 
         if (shouldRetry) {
-          console.log(`🔄 Retrying in ${config.retryDelay}ms...`);
+          logInfo(`🔄 Retrying in ${config.retryDelay}ms...`);
           await new Promise(resolve => setTimeout(resolve, config.retryDelay));
           continue;
         }
@@ -106,7 +108,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
 
     // All attempts failed
     if (lastError) {
-      console.error(`❌ getServerSideProps failed after all retries for ${context.resolvedUrl}:`, lastError);
+      logError(`❌ getServerSideProps failed after all retries for ${context.resolvedUrl}:`, lastError);
       
       // Log final failure to Sentry
       if (ENV_CONFIG.sentry.isConfigured) {
@@ -172,7 +174,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
         
         // If we succeeded after retries, log the recovery
         if (attempt > 0) {
-          console.log(`✅ getStaticProps succeeded on attempt ${attempt + 1}`);
+          logInfo(`✅ getStaticProps succeeded on attempt ${attempt + 1}`);
           
           if (ENV_CONFIG.sentry.isConfigured) {
             Sentry.addBreadcrumb({
@@ -188,7 +190,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
       } catch (error: any) {
         lastError = error;
         
-        console.warn(`⚠️ getStaticProps attempt ${attempt + 1}/${config.maxRetries + 1} failed:`, error.message);
+        logWarn(`⚠️ getStaticProps attempt ${attempt + 1}/${config.maxRetries + 1} failed:`, error.message);
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
@@ -216,7 +218,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
                           config.retryCondition(error);
 
         if (shouldRetry) {
-          console.log(`🔄 Retrying in ${config.retryDelay}ms...`);
+          logInfo(`🔄 Retrying in ${config.retryDelay}ms...`);
           await new Promise(resolve => setTimeout(resolve, config.retryDelay));
           continue;
         }
@@ -228,7 +230,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
 
     // All attempts failed - for static props, we should return empty data rather than crash the build
     if (lastError) {
-      console.error(`❌ getStaticProps failed after all retries:`, lastError);
+      logError(`❌ getStaticProps failed after all retries:`, lastError);
       
       // Log final failure to Sentry
       if (ENV_CONFIG.sentry.isConfigured) {
@@ -242,7 +244,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
       }
 
       // For static props, return empty/fallback data instead of crashing the build
-      console.warn('⚠️ Returning fallback data for failed getStaticProps');
+      logWarn('⚠️ Returning fallback data for failed getStaticProps');
       return {
         props: {} as P,
         revalidate: 60 // Try to regenerate more frequently
@@ -345,7 +347,7 @@ export async function safeFetch(
                         config.retryCondition(error);
 
       if (shouldRetry) {
-        console.warn(`🔄 Fetch attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:`, error.message);
+        logWarn(`🔄 Fetch attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:`, error.message);
         await new Promise(resolve => setTimeout(resolve, config.retryDelay));
         continue;
       }

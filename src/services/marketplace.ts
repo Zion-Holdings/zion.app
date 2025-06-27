@@ -8,6 +8,8 @@ import { ApiResponse, PaginatedResponse, SearchFilters } from '@/types/common';
 
 // TypeScript interfaces
 export interface Product {
+import { logError } from '@/utils/productionLogger';
+
   id: string;
   name: string;
   description: string;
@@ -488,7 +490,7 @@ export async function fetchProducts(filters: SearchFilters = {}): Promise<Produc
 
     return ensureProductIntegrity(data.data || []);
   } catch (error) {
-    console.error('Failed to fetch products:', error);
+    logError('Failed to fetch products:', error);
     throw error;
   }
 }
@@ -509,7 +511,7 @@ export async function fetchCategories(): Promise<Category[]> {
 
     return data.data || [];
   } catch (error) {
-    console.error('Failed to fetch categories:', error);
+    logError('Failed to fetch categories:', error);
     throw error;
   }
 }
@@ -536,7 +538,7 @@ export async function fetchTalent(filters: SearchFilters = {}): Promise<TalentPr
 
     return data.data || [];
   } catch (error) {
-    console.error('Failed to fetch talent:', error);
+    logError('Failed to fetch talent:', error);
     throw error;
   }
 }
@@ -564,7 +566,7 @@ export async function fetchEquipment(filters: SearchFilters = {}): Promise<Equip
 
     return data.data || [];
   } catch (error) {
-    console.error('Failed to fetch equipment:', error);
+    logError('Failed to fetch equipment:', error);
     throw error;
   }
 }

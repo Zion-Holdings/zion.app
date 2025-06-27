@@ -5,6 +5,8 @@ import { Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export function EnhancedNewsletterForm() {
+import { logError } from '@/utils/productionLogger';
+
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -46,11 +48,11 @@ export function EnhancedNewsletterForm() {
         setEmail("");
       } else {
         // Handle error responses
-        console.error('Newsletter subscription failed:', data);
+        logError('Newsletter subscription failed:', data);
         toast.error(data.error || "Subscription failed. Please try again.");
       }
     } catch (err: any) {
-      console.error('Newsletter subscription error:', err);
+      logError('Newsletter subscription error:', err);
       toast.error("Unable to subscribe right now. Please try again later.");
     } finally {
       setIsSubmitting(false);

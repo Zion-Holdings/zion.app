@@ -14,7 +14,9 @@ import type { ForumCategory } from "@/types/community";
 import { logError } from "@/utils/logError";
 
 export default function CommunityPage() {
-  console.log('CommunityPage rendering');
+import { logInfo } from '@/utils/productionLogger';
+
+  logInfo('CommunityPage rendering');
   const { user } = useAuth();
   const { featuredPosts, recentPosts } = useCommunity();
   const [activeTab, setActiveTab] = useState("categories");
@@ -66,9 +68,9 @@ export default function CommunityPage() {
     }
   };
 
-  console.log('CommunityPage featuredPosts:', featuredPosts);
-  console.log('CommunityPage recentPosts:', recentPosts);
-  console.log('CommunityPage activeTab:', activeTab);
+  logInfo('CommunityPage featuredPosts:', featuredPosts);
+  logInfo('CommunityPage recentPosts:', recentPosts);
+  logInfo('CommunityPage activeTab:', activeTab);
   
   if (!featuredPosts || !recentPosts) {
     logError(new Error('CommunityPage: Posts data is missing from context!'), { message: 'CommunityPage: Posts data is missing from context!' });

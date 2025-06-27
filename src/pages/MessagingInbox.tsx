@@ -11,6 +11,8 @@ import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import { useRouter } from 'next/router'; // Changed from react-router-dom
 
 export default function MessagingInbox() {
+import { logError } from '@/utils/productionLogger';
+
   const { 
     conversations, 
     activeConversation, 
@@ -29,7 +31,7 @@ export default function MessagingInbox() {
       try {
         await fetchConversations();
       } catch (error) {
-        console.error("Failed to load conversations:", error);
+        logError("Failed to load conversations:", error);
         toast.error("Failed to load messages. Please try again.");
       }
     };

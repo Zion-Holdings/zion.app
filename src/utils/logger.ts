@@ -1,3 +1,5 @@
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 interface LogLevel {
   DEBUG: 'debug';
   INFO: 'info';
@@ -18,22 +20,22 @@ class Logger {
 
   debug(message: string, ...args: unknown[]): void {
     if (this.isDebugEnabled) {
-      console.log(`[DEBUG] ${message}`, ...args);
+      logInfo(`[DEBUG] ${message}`, ...args);
     }
   }
 
   info(message: string, ...args: unknown[]): void {
     if (this.isDevelopment) {
-      console.info(`[INFO] ${message}`, ...args);
+      logInfo(`[INFO] ${message}`, ...args);
     }
   }
 
   warn(message: string, ...args: unknown[]): void {
-    console.warn(`[WARN] ${message}`, ...args);
+    logWarn(`[WARN] ${message}`, ...args);
   }
 
   error(message: string, error?: Error | unknown, ...args: unknown[]): void {
-    console.error(`[ERROR] ${message}`, error, ...args);
+    logError(`[ERROR] ${message}`, error, ...args);
     
     // In production, also send to error monitoring service
     if (!this.isDevelopment && typeof window !== 'undefined') {
@@ -45,7 +47,7 @@ class Logger {
         }
       } catch (sentryError) {
         // Fallback if Sentry fails
-        console.error('Failed to report error to monitoring service:', sentryError);
+        logError('Failed to report error to monitoring service:', sentryError);
       }
     }
   }
@@ -53,7 +55,7 @@ class Logger {
   // Conditional development logging
   devLog(message: string, ...args: unknown[]): void {
     if (this.isDevelopment) {
-      console.log(`[DEV] ${message}`, ...args);
+      logInfo(`[DEV] ${message}`, ...args);
     }
   }
 

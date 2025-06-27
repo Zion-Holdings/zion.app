@@ -5,6 +5,8 @@ import { Resume } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
 
 export function useResumeList() {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -55,7 +57,7 @@ export function useResumeList() {
       setResumes(transformedResumes);
       return transformedResumes;
     } catch (e: any) {
-      console.error('Error fetching resumes:', e);
+      logError('Error fetching resumes:', e);
       setError(e.message);
       return [];
     } finally {

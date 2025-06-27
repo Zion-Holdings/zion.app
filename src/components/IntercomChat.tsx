@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { logInfo, logWarn } from '@/utils/productionLogger';
+
 
 declare global {
   interface Window {
@@ -30,13 +32,13 @@ export default function IntercomChat() {
     // Validate App ID before attempting to initialize
     if (!isValidIntercomAppId(appId)) {
       if (process.env.NODE_ENV === 'development') {
-        console.warn('Intercom: Invalid or placeholder App ID detected. Intercom chat disabled.', { appId });
+        logWarn('Intercom: Invalid or placeholder App ID detected. Intercom chat disabled.', { appId });
       }
       return;
     }
 
     if (process.env.NODE_ENV === 'development') {
-      console.log('Intercom: Initializing with App ID:', appId?.substring(0, 4) + '****');
+      logInfo('Intercom: Initializing with App ID:', appId?.substring(0, 4) + '****');
     }
 
     window.intercomSettings = { app_id: appId };

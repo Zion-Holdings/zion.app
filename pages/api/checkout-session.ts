@@ -2,6 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import fs from 'fs';
 import path from 'path';
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 
 // Note: Stripe instance will be created dynamically with the correct key
 
@@ -38,29 +40,29 @@ function getStripeSecretKey(isProdEnv: boolean): string {
   // For development/test environments, always use test keys
   if (process.env.NODE_ENV !== 'production' || forceTestMode) {
     if (!testSecretKey) {
-      console.warn('No STRIPE_TEST_SECRET_KEY configured, using dummy key for development');
+      logWarn('No STRIPE_TEST_SECRET_KEY configured, using dummy key for development');
       return 'sk_test_dummy_key_for_development_only';
     }
-    console.log('Stripe API: Using test mode');
+    logInfo('Stripe API: Using test mode');
     return testSecretKey;
   }
 
   if (isProdEnv) {
     if (!liveSecretKey || !liveSecretKey.startsWith('sk_live_')) {
-      console.error('Stripe API: Production environment, but STRIPE_SECRET_KEY is missing or not a live key.');
+      logError('Stripe API: Production environment, but STRIPE_SECRET_KEY is missing or not a live key.');
       if (testSecretKey && testSecretKey.startsWith('sk_test_')) {
-         console.warn('Stripe API: Production environment, but live key issue. Falling back to TEST key for safety.');
+         logWarn('Stripe API: Production environment, but live key issue. Falling back to TEST key for safety.');
          return testSecretKey;
       }
       throw new Error('STRIPE_SECRET_KEY is missing or invalid for production environment.');
     }
-    console.log('Stripe API: Production environment. Using live secret key.');
+    logInfo('Stripe API: Production environment. Using live secret key.');
     return liveSecretKey;
   }
 
   // Default to test key for non-production environments
   const key = testSecretKey || 'sk_test_dummy_key_for_development_only';
-  console.log('Stripe API: Non-production environment. Using test secret key.');
+  logInfo('Stripe API: Non-production environment. Using test secret key.');
   return key;
 }
 
@@ -93,7 +95,7 @@ export default async function handler(
     
     // Handle dummy/development keys
     if (stripeKey === 'sk_test_dummy_key_for_development_only') {
-      console.log('Using dummy Stripe key - returning mock checkout session');
+      logInfo('Using dummy Stripe key - returning mock checkout session');
       return res.status(200).json({
         sessionId: 'cs_test_mock_session_id_' + Date.now(),
         url: `${req.headers.origin}/checkout-test?mock=true`,
@@ -186,7 +188,7 @@ export default async function handler(
       },
     });
 
-    console.log('Checkout session created:', {
+    logInfo('Checkout session created:', {
       sessionId: session.id,
       customerEmail: customer_email,
       itemCount: cartItems.length,
@@ -199,7 +201,7 @@ export default async function handler(
     });
 
   } catch (error: any) {
-    console.error('Checkout session creation error:', error);
+    logError('Checkout session creation error:', error);
     
     // Handle specific Stripe errors
     if (error.type === 'StripeCardError') {

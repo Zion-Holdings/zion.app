@@ -1,6 +1,8 @@
 // AI Matchmaking utility functions
 
 export interface MatchResultItem {
+import { logError } from '@/utils/productionLogger';
+
   id: string;
   title: string;
   description: string;
@@ -77,7 +79,7 @@ export async function findMatches(
     // Sort by score
     return matches.sort((a, b) => b.score - a.score).slice(0, limit);
   } catch (error) {
-    console.error("Error in matchmaking:", error);
+    logError("Error in matchmaking:", error);
     return [];
   }
 }

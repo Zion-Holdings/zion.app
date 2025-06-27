@@ -9,6 +9,8 @@ import { Badge } from "@/components/ui/badge";
 import { Loader2, Edit, X, Eye } from "lucide-react";
 import { format } from "date-fns";
 import Link from "next/link";
+import { logError } from '@/utils/productionLogger';
+
 
 interface JobsListProps {
   filter?: JobStatus;
@@ -40,7 +42,7 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
         if (error) throw error;
         setJobs(data as Job[]);
       } catch (error) {
-        console.error("Error fetching jobs:", error);
+        logError("Error fetching jobs:", error);
       } finally {
         setIsLoading(false);
       }

@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { ShieldAlert, Info } from 'lucide-react';
 import {
+import { logError } from '@/utils/productionLogger';
+
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -36,7 +38,7 @@ export function FraudDetectionSettings() {
         description: "Your fraud detection preferences have been updated.",
       });
     } catch (error) {
-      console.error('Error saving preferences:', error);
+      logError('Error saving preferences:', error);
       toast({
         title: "Error",
         description: "Failed to save your preferences. Please try again.",

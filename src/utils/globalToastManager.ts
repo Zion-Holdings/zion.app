@@ -1,5 +1,7 @@
 import { toast as sonnerToast } from 'sonner';
 import { logError } from './logError';
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 
 // Toast configuration constants
 const TOAST_CONFIG = {
@@ -281,7 +283,7 @@ class GlobalToastManager {
           metadata: toast.metadata 
         });
       } catch (e) {
-        console.error('Failed to log toast error:', e);
+        logError('Failed to log toast error:', e);
       }
     }
   }
@@ -449,11 +451,11 @@ export class EnhancedGlobalErrorHandler {
 
       if (isLikelyUnauthenticated) {
         // Log suppression for debugging, but don't show the toast.
-        console.warn(`[EnhancedGlobalErrorHandler] Suppressing toast for ${type} with message "${errorMessage}" for assumed unauthenticated user.`);
+        logWarn(`[EnhancedGlobalErrorHandler] Suppressing toast for ${type} with message "${errorMessage}" for assumed unauthenticated user.`);
         return null;
       } else {
         if (process.env.NODE_ENV === 'development') {
-          console.log(`[EnhancedGlobalErrorHandler] NOT suppressing "${errorMessage}" toast as user appears authenticated or check is inconclusive.`);
+          logInfo(`[EnhancedGlobalErrorHandler] NOT suppressing "${errorMessage}" toast as user appears authenticated or check is inconclusive.`);
         }
       }
     }
@@ -461,11 +463,11 @@ export class EnhancedGlobalErrorHandler {
     const currentRetries = this.retryCount.get(errorKey) || 0;
 
     if (process.env.NODE_ENV === 'development') {
-      console.error('Enhanced Global Error Handler:', error, context);
+      logError('Enhanced Global Error Handler:', error, context);
     }
 
     if (currentRetries >= this.maxRetries) {
-      console.warn(`Max retries exceeded for error: ${errorMessage}`);
+      logWarn(`Max retries exceeded for error: ${errorMessage}`);
       return null;
     }
 

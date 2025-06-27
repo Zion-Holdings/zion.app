@@ -3,6 +3,8 @@ import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { applyCorsHeaders } from '@/middleware/cors';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
+import { logInfo, logError } from '@/utils/productionLogger';
+
   // Apply CORS headers for API documentation
   applyCorsHeaders(req, res);
 
@@ -63,7 +65,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const end = start + limit;
     const items = products.slice(start, end);
 
-    console.log(`[API] /api/products - Found ${products.length} total products, returning ${items.length} for page ${page} (limit: ${limit})`);
+    logInfo(`[API] /api/products - Found ${products.length} total products, returning ${items.length} for page ${page} (limit: ${limit})`);
     
     // Add metadata for better debugging
     const response = {
@@ -81,7 +83,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     return res.status(200).json(response);
   } catch (error) {
-    console.error('[API] Error in /api/products:', error);
+    logError('[API] Error in /api/products:', error);
     // Return fallback data instead of error to prevent empty marketplace
     return res.status(200).json({
       products: MARKETPLACE_LISTINGS.slice(0, 20),

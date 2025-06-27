@@ -2,6 +2,8 @@
 import { useState } from 'react';
 
 export function useAuthStatus() {
+import { logInfo } from '@/utils/productionLogger';
+
   // Mock authenticated status
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   
@@ -28,7 +30,7 @@ export function useAuthStatus() {
       }
     } else {
       // In a real app, we might show a login prompt
-      console.log('User needs to log in to save talents');
+      logInfo('User needs to log in to save talents');
     }
   };
   

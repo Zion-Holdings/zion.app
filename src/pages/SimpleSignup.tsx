@@ -6,6 +6,8 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { signup } from '@/services/signupApi';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
+import { logError } from '@/utils/productionLogger';
+
 
 const SignupSchema = Yup.object({
   email: Yup.string().email('Invalid email').required('Email is required'),
@@ -42,7 +44,7 @@ export default function SimpleSignup() {
           router.push('/login');
         }
       } catch (err: any) {
-        console.error('Signup error:', err.message);
+        logError('Signup error:', err.message);
         setErrors({ email: err.message });
         toast.error(err.message || 'Signup failed');
       } finally {

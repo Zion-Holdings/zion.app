@@ -7,6 +7,8 @@ import { Wallet } from "lucide-react";
 import { toast } from "sonner";
 
 export function Web3Login() {
+import { logError } from '@/utils/productionLogger';
+
   const { loginWithWeb3 } = useAuth();
   const { isWalletSystemAvailable } = useAppWallet();
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +39,7 @@ export function Web3Login() {
       toast("Login failed", {
         description: error.message || "Failed to connect wallet. Please try again.",
       });
-      console.error("Web3 login error:", error);
+      logError("Web3 login error:", error);
     } finally {
       setIsLoading(false);
     }

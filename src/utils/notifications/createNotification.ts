@@ -2,6 +2,8 @@ import { logError } from "@/utils/logError";
 
 import { supabase } from "@/integrations/supabase/client";
 import { CreateNotificationParams, CreateNotificationResult } from './types';
+import { logError } from '@/utils/productionLogger';
+
 
 /**
  * Creates a notification for a user and optionally sends an email notification
@@ -42,7 +44,7 @@ export async function createNotification({
     
     return { success: true, notificationId: notificationId || undefined };
   } catch (error) {
-    console.error('Error creating notification:', error);
+    logError('Error creating notification:', error);
     // Report error to Sentry
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     typeof logError !== 'undefined' ? logError(error, { message: 'Error creating notification' }) : null;

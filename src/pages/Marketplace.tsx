@@ -19,6 +19,8 @@ import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { MAX_PRICE, MIN_PRICE } from '@/data/marketplaceData';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 /**
  * Marketplace component props
@@ -280,10 +282,10 @@ export default function Marketplace() {
         sort: sortBy
       };
 
-      console.log('Marketplace.tsx: Fetching products using marketplace service with params:', params);
+      logInfo('Marketplace.tsx: Fetching products using marketplace service with params:', params);
       
       let items: ProductListing[] = await fetchProductsService(params) as ProductListing[];
-      console.log('Marketplace.tsx: Raw items from marketplace service before filtering/sorting:', JSON.stringify(items, null, 2));
+      logInfo('Marketplace.tsx: Raw items from marketplace service before filtering/sorting:', JSON.stringify(items, null, 2));
 
       if (showRecommended) {
         items = items.filter((p) => p.rating != null && p.rating >= 4.3);
@@ -339,14 +341,14 @@ export default function Marketplace() {
       };
     } catch (err: any) {
       // Log the error and allow useInfiniteScrollPagination to handle it
-      console.error("Error in Marketplace fetchProducts:", err);
+      logError("Error in Marketplace fetchProducts:", err);
       
       // Show more specific error messages based on the error type
       if (err.response?.status === 403) {
-        console.error("403 Forbidden error - authentication issue");
+        logError("403 Forbidden error - authentication issue");
         // Don't show toast here, let the AuthModal handle it or rely on ProductCard's tooltip
       } else if (err.response?.status === 500) {
-        console.error("500 Server error");
+        logError("500 Server error");
         toast({
           title: "Server Error", 
           description: "The marketplace is temporarily unavailable. Please try again later.",
@@ -378,7 +380,7 @@ export default function Marketplace() {
       firstRenderRef.current = false;
       return;
     }
-    console.log('Filters changed, initiating refresh. Filters:', { filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation });
+    logInfo('Filters changed, initiating refresh. Filters:', { filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation });
     isRefreshingAfterFilterChange.current = true; // Set flag before refresh
     refresh();
     // scrollToTop(); // Removed from here
@@ -387,7 +389,7 @@ export default function Marketplace() {
   // New effect to scroll to top AFTER products have been updated and refresh flag is set
   useEffect(() => {
     if (isRefreshingAfterFilterChange.current && !loading) { // Check flag and ensure loading is false
-      console.log('Refresh complete and products updated, scrolling to top.');
+      logInfo('Refresh complete and products updated, scrolling to top.');
       scrollToTop();
       isRefreshingAfterFilterChange.current = false; // Reset flag
       // Optionally, provide user feedback about the filter change
@@ -584,7 +586,7 @@ export default function Marketplace() {
                   try {
                     await router.push(`/checkout/${product.id}`);
                   } catch (error) {
-                    console.error("Failed to navigate to checkout:", error);
+                    logError("Failed to navigate to checkout:", error);
                     toast({
                       title: "Navigation Error",
                       description: "Could not navigate to checkout. Please try again.",

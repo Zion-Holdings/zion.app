@@ -1,3 +1,5 @@
+import { logInfo, logError, logDebug } from '@/utils/productionLogger';
+
 interface ErrorDetails {
   message: string;
   stack?: string;
@@ -21,7 +23,7 @@ export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<vo
   if (!webhookUrl || webhookUrl === '') {
     // Only log once per session to avoid spam
     if (typeof window !== 'undefined' && !sessionStorage.getItem('webhook-warning-shown')) {
-      console.debug('NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not configured. Error reporting to webhook disabled.');
+      logDebug('NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not configured. Error reporting to webhook disabled.');
       sessionStorage.setItem('webhook-warning-shown', 'true');
     }
     return;
@@ -37,15 +39,15 @@ export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<vo
     });
 
     if (response.ok) {
-      console.log(`Error report sent successfully from ${errorDetails.source}.`);
+      logInfo(`Error report sent successfully from ${errorDetails.source}.`);
     } else {
-      console.error(
+      logError(
         `Failed to send error report from ${errorDetails.source}. Status: ${response.status}`,
         await response.text()
       );
     }
   } catch (error) {
-    console.error(`Error sending report from ${errorDetails.source}:`, error);
+    logError(`Error sending report from ${errorDetails.source}:`, error);
   }
 }
 
@@ -55,7 +57,7 @@ export function reportError(error: Error | string, context?: Record<string, any>
   if (!webhookUrl || webhookUrl.trim() === '') {
     // Only log once per session to avoid spam
     if (!sessionStorage.getItem('webhook-warning-shown')) {
-      console.debug('NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not configured. Error reporting to webhook disabled.');
+      logDebug('NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not configured. Error reporting to webhook disabled.');
       sessionStorage.setItem('webhook-warning-shown', 'true');
     }
     return;

@@ -16,6 +16,8 @@ import { useSkeletonTimeout } from '@/hooks/useSkeletonTimeout';
 import { fetchWithRetry } from '@/utils/fetchWithRetry';
 
 export default function BlogPost() {
+import { logError } from '@/utils/productionLogger';
+
   const router = useRouter();
   const { slug } = router.query as { slug: string };
   const [post, setPost] = useState<BlogPostType | null>(null);
@@ -42,7 +44,7 @@ export default function BlogPost() {
         setIsLoading(false);
         return;
       } catch (err) {
-        console.error('Failed to fetch blog post', err);
+        logError('Failed to fetch blog post', err);
         setError('Failed to load article');
       }
 

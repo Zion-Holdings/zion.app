@@ -40,6 +40,14 @@
     "es:index": "node scripts/index-elasticsearch.js",
     "devnet": "node scripts/start-devnet.js",
     "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "husky install",
+    "dev:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix",
+    "deploy:optimize": "node scripts/replace-console-statements.cjs && npm run lint -- --fix && npm run build",
+    "console:replace": "node scripts/replace-console-statements.cjs",
+    "perf:optimize": "node -e \"require('./src/utils/performanceOptimizer.ts').default.applyOptimizations()\"",
+    "health:summary": "node scripts/project-health-summary.cjs",
+    "clean:all": "rm -rf node_modules package-lock.json .next dist coverage && npm install",
     "env:check": "npx ts-node --transpile-only scripts/check-env.ts",
     "env:validate": "npx tsx scripts/validate-environment.ts",
     "env:validate-build": "node scripts/validate-environment.cjs",
@@ -75,12 +83,10 @@
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "type-check": "tsc --noEmit",
     "analyze": "ANALYZE=true npm run build",
-    "deploy:optimize": "node scripts/deploy-optimization.js",
     "deploy:prepare": "npm run deploy:optimize && npm run analyze",
     "performance:monitor": "node -e \"console.log('Enable with: localStorage.setItem(\\\"performance-monitoring\\\", \\\"true\\\"); window.location.reload();')\"",
     "bundle:analyze": "node -e \"console.log('Enable with: localStorage.setItem(\\\"bundle-analyzer\\\", \\\"true\\\"); window.location.reload();')\"",
-    "clean": "rimraf .next out coverage test-results",
-    "clean:all": "npm run clean && rimraf node_modules package-lock.json"
+    "clean": "rimraf .next out coverage test-results"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import {
+import { logError } from '@/utils/productionLogger';
+
   Dialog,
   DialogContent,
   DialogHeader,
@@ -77,7 +79,7 @@ export function MessageTalentModal({
       // Navigate to messages inbox
       router.push("/messages");
     } catch (error) {
-      console.error("Failed to send message:", error);
+      logError("Failed to send message:", error);
       toast({
         title: "Message not sent",
         description: "There was an error sending your message. Please try again.",

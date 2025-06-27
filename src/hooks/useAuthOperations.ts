@@ -8,6 +8,8 @@ import { toast } from "@/hooks/use-toast";
 import { showApiError } from "@/utils/apiErrorHandler";
 import { trackReferral, checkUrlForReferralCode } from "@/utils/referralUtils";
 import { cleanupAuthState } from "@/utils/authUtils";
+import { logWarn, logError } from '@/utils/productionLogger';
+
 
 // Helper function to get the auth token from cookies
 function getAuthToken() {
@@ -117,7 +119,7 @@ export function useAuthOperations(
           // Generate a referral code for the new user
           await supabase.rpc('generate_referral_code', { user_id: (data as any).user.id });
         } catch (err) {
-          console.error('Failed to complete signup rewards', err);
+          logError('Failed to complete signup rewards', err);
         }
         mutate('user');
       }
@@ -154,7 +156,7 @@ export function useAuthOperations(
           // Clear authToken cookie on backend
           await fetch('/api/auth/logout', { method: 'POST' });
         } catch (cookieErr) {
-          console.warn('useAuthOperations.logout: failed to clear auth cookie', cookieErr);
+          logWarn('useAuthOperations.logout: failed to clear auth cookie', cookieErr);
         }
         toast({
           title: "Logout successful!",
@@ -162,7 +164,7 @@ export function useAuthOperations(
         });
       }
     } catch (error) {
-      console.error("Logout failed:", error);
+      logError("Logout failed:", error);
       toast({
         variant: "destructive",
         title: "Logout failed",
@@ -252,7 +254,7 @@ export function useAuthOperations(
 
       return { error: null };
     } catch (error) {
-      console.error("Profile update failed:", error);
+      logError("Profile update failed:", error);
       toast({
         variant: "destructive",
         title: "Profile update failed",

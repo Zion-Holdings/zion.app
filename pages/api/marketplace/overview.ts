@@ -3,6 +3,8 @@ import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import * as Sentry from '@sentry/nextjs';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
+import { logError } from '@/utils/productionLogger';
+
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
     return res.status(405).json({ error: `Method ${req.method} not allowed` });
@@ -17,7 +19,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     return res.status(200).json(listings);
   } catch (error) {
-    console.error('Error in marketplace overview API:', error);
+    logError('Error in marketplace overview API:', error);
     
     // Log to Sentry
     Sentry.withScope((scope) => {

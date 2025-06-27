@@ -7,6 +7,8 @@ import { captureException } from '@/utils/sentry';
 import { Button } from '@/components/ui/button';
 
 export default function Custom500() {
+import { logInfo } from '@/utils/productionLogger';
+
   const { user } = useAuth();
 
   useEffect(() => {
@@ -15,7 +17,7 @@ export default function Custom500() {
       user: user ? { id: user.id, email: user.email } : undefined,
       extra: { path: window.location.pathname },
     });
-    console.log('Reported 500 error. Error ID:', eventId);
+    logInfo('Reported 500 error. Error ID:', eventId);
   }, [user]);
 
   return (

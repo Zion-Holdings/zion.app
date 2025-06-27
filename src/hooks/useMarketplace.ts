@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import {
+import { logError } from '@/utils/productionLogger';
+
   fetchProducts,
   fetchCategories,
   fetchTalent,
@@ -182,7 +184,7 @@ export function useMarketplaceErrorHandler() {
   const handleError = useCallback((error: any) => {
     const errorMessage = getMarketplaceErrorMessage(error);
     setLastError(errorMessage);
-    console.error('Marketplace Error:', { error, message: errorMessage });
+    logError('Marketplace Error:', { error, message: errorMessage });
     return errorMessage;
   }, []);
 

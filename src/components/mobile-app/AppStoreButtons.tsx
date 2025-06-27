@@ -2,6 +2,8 @@
 import React from "react";
 import { Apple, GithubIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { logInfo } from '@/utils/productionLogger';
+
 
 interface AppStoreButtonsProps {
   className?: string;
@@ -21,7 +23,7 @@ export const AppStoreButtons: React.FC<AppStoreButtonsProps> = ({
   const handleAppStoreClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!appStoreUrl || appStoreUrl === "#") {
       e.preventDefault();
-      console.log("App Store download clicked");
+      logInfo("App Store download clicked");
       onAppStoreClick?.();
     }
   };
@@ -29,7 +31,7 @@ export const AppStoreButtons: React.FC<AppStoreButtonsProps> = ({
   const handleGooglePlayClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!googlePlayUrl || googlePlayUrl === "#") {
       e.preventDefault();
-      console.log("Google Play download clicked");
+      logInfo("Google Play download clicked");
       onGooglePlayClick?.();
     }
   };

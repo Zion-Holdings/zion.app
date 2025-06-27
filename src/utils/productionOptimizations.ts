@@ -1,3 +1,5 @@
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 /**
  * Production Optimizations
  * Automatically enables performance features and optimizations in production
@@ -28,7 +30,7 @@ export class ProductionOptimizer {
   }
 
   private applyProductionOptimizations(): void {
-    console.log('🚀 Applying production optimizations...');
+    logInfo('🚀 Applying production optimizations...');
 
     // Enable service worker if available
     this.enableServiceWorker();
@@ -45,16 +47,16 @@ export class ProductionOptimizer {
     // Optimize images
     this.optimizeImages();
 
-    console.log('✅ Production optimizations applied');
+    logInfo('✅ Production optimizations applied');
   }
 
   private applyDevelopmentOptimizations(): void {
-    console.log('🔧 Applying development optimizations...');
+    logInfo('🔧 Applying development optimizations...');
 
     // Enable development tools based on localStorage flags
     this.enableDevelopmentTools();
 
-    console.log('✅ Development optimizations applied');
+    logInfo('✅ Development optimizations applied');
   }
 
   private enableServiceWorker(): void {
@@ -62,10 +64,10 @@ export class ProductionOptimizer {
       navigator.serviceWorker
         .register('/service-worker.js')
         .then((registration) => {
-          console.log('Service Worker registered:', registration);
+          logInfo('Service Worker registered:', registration);
         })
         .catch((error) => {
-          console.log('Service Worker registration failed:', error);
+          logInfo('Service Worker registration failed:', error);
         });
     }
   }
@@ -97,7 +99,7 @@ export class ProductionOptimizer {
           if (entry.entryType === 'largest-contentful-paint') {
             // Track LCP for production monitoring
             if (entry.startTime > 4000) { // LCP > 4s
-              console.warn(`Poor LCP detected: ${entry.startTime}ms`);
+              logWarn(`Poor LCP detected: ${entry.startTime}ms`);
             }
           }
         });
@@ -121,11 +123,11 @@ export class ProductionOptimizer {
       };
 
       // This would integrate with your error reporting service
-      console.error('Production Error:', errorInfo);
+      logError('Production Error:', errorInfo);
     });
 
     window.addEventListener('unhandledrejection', (event) => {
-      console.error('Unhandled Promise Rejection:', event.reason);
+      logError('Unhandled Promise Rejection:', event.reason);
     });
   }
 
@@ -156,15 +158,15 @@ export class ProductionOptimizer {
     // Check for development tool flags
     const tools = {
       'performance-monitoring': () => {
-        console.log('📊 Performance monitoring enabled');
+        logInfo('📊 Performance monitoring enabled');
         // Performance monitoring is handled by the component
       },
       'bundle-analyzer': () => {
-        console.log('📦 Bundle analyzer enabled');
+        logInfo('📦 Bundle analyzer enabled');
         // Bundle analyzer is handled by the component
       },
       'debug-mode': () => {
-        console.log('🐛 Debug mode enabled');
+        logInfo('🐛 Debug mode enabled');
         (window as any).__ZION_DEBUG__ = true;
       },
     };
@@ -195,7 +197,7 @@ export class ProductionOptimizer {
     }
     localStorage.clear();
     sessionStorage.clear();
-    console.log('🗑️ All caches cleared');
+    logInfo('🗑️ All caches cleared');
   }
 
   getPerformanceReport(): PerformanceReport {

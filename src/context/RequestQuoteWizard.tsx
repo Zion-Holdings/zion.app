@@ -1,4 +1,6 @@
 import React, {
+import { logError } from '@/utils/productionLogger';
+
   createContext,
   useContext,
   useState,
@@ -63,7 +65,7 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
       router.push("/dashboard/quotes");
       setStep("Success");
     } catch (err) {
-      console.error('Failed to submit quote', err);
+      logError('Failed to submit quote', err);
       toast({ title: 'Error submitting quote', variant: 'destructive' });
     }
   };

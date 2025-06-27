@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useUndoRedo } from '@/hooks/useUndoRedo';
+import { logError } from '@/utils/productionLogger';
+
 
 interface WhitepaperSectionEditorProps {
   title: string;
@@ -50,7 +52,7 @@ const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({ title
       setShowSuggestions(true);
 
     } catch (e: any) {
-      console.error(`Error getting suggestions for section "${title}":`, e);
+      logError(`Error getting suggestions for section "${title}":`, e);
       setSuggestionsError(e.message || 'An unexpected error occurred while fetching suggestions.');
     } finally {
       setIsLoadingSuggestions(false);

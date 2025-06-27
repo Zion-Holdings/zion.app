@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
+import { logInfo } from '@/utils/productionLogger';
+
   Form,
   FormField,
   FormItem,
@@ -48,7 +50,7 @@ export default function PartnerIntegration() {
   });
 
   const onSubmit = (values: FormValues) => {
-    console.log("Partner API request", values);
+    logInfo("Partner API request", values);
     setSubmitted(true);
   };
 

@@ -2,6 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { withApiDocsCors } from '@/middleware/cors';
 import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 // Mock jobs data for API documentation and testing
 const MOCK_JOBS = [
@@ -164,7 +166,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     const result = await cacheOrCompute(
       cacheKey,
       async () => {
-        console.log(`Computing jobs with filters: ${filterParams}`);
+        logInfo(`Computing jobs with filters: ${filterParams}`);
         return filterAndSortJobs(MOCK_JOBS, {
           status: status as string,
           category: category as string,
@@ -195,7 +197,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
   } catch (error: any) {
-    console.error('Jobs API error:', error);
+    logError('Jobs API error:', error);
     
     // Return fallback data on error
     applyCacheHeaders(res, CacheCategory.SHORT);

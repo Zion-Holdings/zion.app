@@ -5,6 +5,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { ReferralCode, ReferralStats, Referral, ReferralReward } from "@/types/referrals";
 
 export function useReferrals() {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const [referralCode, setReferralCode] = useState<ReferralCode | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -36,13 +38,13 @@ export function useReferrals() {
         .single();
 
       if (error) {
-        console.error("Error fetching referral code:", error);
+        logError("Error fetching referral code:", error);
         return;
       }
 
       setReferralCode(data);
     } catch (error) {
-      console.error("Error in fetchReferralCode:", error);
+      logError("Error in fetchReferralCode:", error);
     } finally {
       setIsLoading(false);
     }
@@ -62,7 +64,7 @@ export function useReferrals() {
       
       setReferrals(data || []);
     } catch (error) {
-      console.error("Error fetching referrals:", error);
+      logError("Error fetching referrals:", error);
     }
   };
 
@@ -80,7 +82,7 @@ export function useReferrals() {
       
       setRewards(data || []);
     } catch (error) {
-      console.error("Error fetching rewards:", error);
+      logError("Error fetching rewards:", error);
     }
   };
 
@@ -121,7 +123,7 @@ export function useReferrals() {
       });
       
     } catch (error) {
-      console.error("Error fetching referral stats:", error);
+      logError("Error fetching referral stats:", error);
     }
   };
 
@@ -153,7 +155,7 @@ export function useReferrals() {
       
       return data;
     } catch (error: any) {
-      console.error("Error generating referral code:", error);
+      logError("Error generating referral code:", error);
       toast({
         title: "Error generating code",
         description: error.message || "There was a problem generating your referral code",

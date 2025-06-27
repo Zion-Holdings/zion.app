@@ -4,8 +4,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 
 export function ZionBrainDashboard() {
+import { logInfo } from '@/utils/productionLogger';
+
   const handleOptimize = () => {
-    console.log('Optimize prompts');
+    logInfo('Optimize prompts');
   };
 
   return (

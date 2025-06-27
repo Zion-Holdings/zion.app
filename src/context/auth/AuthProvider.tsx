@@ -15,12 +15,14 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
 import { logger } from '@/utils/logger';
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 
 const LOGIN_TIMEOUT_MS = 15000; // 15 seconds timeout
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   if (process.env.NODE_ENV === 'development') {
-    console.log('[AuthProvider] Initializing...');
+    logInfo('[AuthProvider] Initializing...');
   }
   const {
     user, setUser,
@@ -102,7 +104,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       // The onAuthStateChange event should now trigger automatically
       return { error: null }; // Successful login
     } catch (error: any) {
-      console.error('[AuthProvider] login function error:', error);
+      logError('[AuthProvider] login function error:', error);
       
       // Handle unexpected errors with a fallback message
       const errorMessage = error.message || "An unexpected error occurred during login. Please try again.";
@@ -141,7 +143,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       const data = await response.json();
 
       if (!response.ok) {
-        console.error("Auth0 signup error:", data);
+        logError("Auth0 signup error:", data);
         toast({
           title: "Signup Failed",
           description: data.error || data.message || "An unexpected error occurred during signup.",
@@ -162,7 +164,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         user: data.user 
       };
     } catch (err: any) {
-      console.error("Signup exception:", err);
+      logError("Signup exception:", err);
       toast({
         title: "Signup Failed",
         description: err.message || "An unexpected error occurred during signup.",
@@ -175,14 +177,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
-      console.log('[App] MyApp main useEffect hook started.');
+      logInfo('[App] MyApp main useEffect hook started.');
     }
     
     // Clean up any potential stale auth state before setting up listeners
     cleanupAuthState();
 
     if (!isSupabaseConfigured) {
-      console.warn('[AuthProvider] Supabase not configured - skipping auth state listener');
+      logWarn('[AuthProvider] Supabase not configured - skipping auth state listener');
       setIsLoading(false);
       return;
     }
@@ -203,12 +205,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             if (session?.user && (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED')) {
                 setIsLoading(true); // Set loading before starting async profile fetch
                 if (process.env.NODE_ENV === 'development') {
-                    console.log('[AuthProvider DEBUG] Session and user found, and event is appropriate. User ID:', session.user.id, 'Event:', event);
+                    logInfo('[AuthProvider DEBUG] Session and user found, and event is appropriate. User ID:', session.user.id, 'Event:', event);
                 }
 
                 try {
                     if (process.env.NODE_ENV === 'development') {
-                        console.log('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', session.user.id);
+                        logInfo('[AuthProvider DEBUG] Attempting to fetch profile for user ID:', session.user.id);
                     }
                     
                     const { data: profile, error: profileError } = await supabase
@@ -218,12 +220,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                         .single();
 
                     if (process.env.NODE_ENV === 'development') {
-                        console.log('[AuthProvider DEBUG] Raw profile data:', JSON.stringify(profile, null, 2));
-                        console.log('[AuthProvider DEBUG] Profile fetch error (if any):', JSON.stringify(profileError, null, 2));
+                        logInfo('[AuthProvider DEBUG] Raw profile data:', JSON.stringify(profile, null, 2));
+                        logInfo('[AuthProvider DEBUG] Profile fetch error (if any):', JSON.stringify(profileError, null, 2));
                     }
 
                     if (profileError) {
-                        console.error("[AuthProvider DEBUG] Error fetching user profile:", profileError);
+                        logError("[AuthProvider DEBUG] Error fetching user profile:", profileError);
                         let shouldSignOut = false;
                         // Check for common indicators of auth failure in Supabase errors
                         // Supabase errors might have a __isAuthError boolean, or specific messages/status codes.
@@ -233,9 +235,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
                         if (message.includes('jwt') || message.includes('unauthorized') || message.includes('invalid token') || status === 401) {
                             shouldSignOut = true;
-                            console.warn(`[AuthProvider] Profile fetch failed with auth-like error for user ${session.user.id} (event: ${event}). Message: ${profileError.message}. Attempting sign out.`);
+                            logWarn(`[AuthProvider] Profile fetch failed with auth-like error for user ${session.user.id} (event: ${event}). Message: ${profileError.message}. Attempting sign out.`);
                         } else {
-                             console.warn(`[AuthProvider] Profile fetch failed for user ${session.user.id} (event: ${event}). Message: ${profileError.message}. Not treated as auth error for immediate signout.`);
+                             logWarn(`[AuthProvider] Profile fetch failed for user ${session.user.id} (event: ${event}). Message: ${profileError.message}. Not treated as auth error for immediate signout.`);
                         }
 
                         // Only show toast if it's a genuine signed-in event, not for passive token refreshes if profile is missing
@@ -255,26 +257,26 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                             await supabase.auth.signOut();
                         }
                     } else if (profile) {
-                        console.log('[AuthProvider DEBUG] Profile data fetched successfully.');
+                        logInfo('[AuthProvider DEBUG] Profile data fetched successfully.');
                         let mappedUser;
                         try {
-                            console.log('[AuthProvider DEBUG] Mapping profile to user. session.user:', JSON.stringify(session.user, null, 2), 'profile:', JSON.stringify(profile, null, 2));
+                            logInfo('[AuthProvider DEBUG] Mapping profile to user. session.user:', JSON.stringify(session.user, null, 2), 'profile:', JSON.stringify(profile, null, 2));
                             mappedUser = mapProfileToUser(session.user, profile);
-                            console.log('[AuthProvider DEBUG] Mapped user data:', JSON.stringify(mappedUser, null, 2));
+                            logInfo('[AuthProvider DEBUG] Mapped user data:', JSON.stringify(mappedUser, null, 2));
                         } catch (mappingError) {
-                            console.error("[AuthProvider DEBUG] Error mapping profile to user:", mappingError);
+                            logError("[AuthProvider DEBUG] Error mapping profile to user:", mappingError);
                             mappedUser = null;
                         }
 
                         if (mappedUser) {
                             setUser(mappedUser);
                             setAvatarUrl(mappedUser.avatarUrl || null);
-                            console.log('[AuthProvider DEBUG] User state updated in context.');
+                            logInfo('[AuthProvider DEBUG] User state updated in context.');
 
                             // Call handleSignedIn for SIGNED_IN event to trigger redirection etc.
                             if (event === 'SIGNED_IN') {
-                                 console.log('[AuthProvider DEBUG] Event is SIGNED_IN. Calling handleSignedIn.');
-                                 console.log('[AuthProvider DEBUG] User object being passed to handleSignedIn:', JSON.stringify(mappedUser, null, 2));
+                                 logInfo('[AuthProvider DEBUG] Event is SIGNED_IN. Calling handleSignedIn.');
+                                 logInfo('[AuthProvider DEBUG] User object being passed to handleSignedIn:', JSON.stringify(mappedUser, null, 2));
                                  handleSignedIn(mappedUser); // This often handles redirection
 
                                 // Redirection logic
@@ -288,21 +290,21 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                                     if (nextPathFromStorage) {
                                       redirectTo = decodeURIComponent(nextPathFromStorage);
                                       safeStorage.removeItem('nextPath');
-                                      console.log('[AuthProvider DEBUG] Redirecting to (from storage):', redirectTo);
+                                      logInfo('[AuthProvider DEBUG] Redirecting to (from storage):', redirectTo);
                                     } else if (nextFromUrl) {
                                       redirectTo = decodeURIComponent(nextFromUrl);
-                                      console.log('[AuthProvider DEBUG] Redirecting to (from URL params):', redirectTo);
+                                      logInfo('[AuthProvider DEBUG] Redirecting to (from URL params):', redirectTo);
                                     } else {
-                                      console.log('[AuthProvider DEBUG] Redirecting to default dashboard.');
+                                      logInfo('[AuthProvider DEBUG] Redirecting to default dashboard.');
                                     }
-                                    console.log('[AuthProvider DEBUG] Attempting to redirect to:', redirectTo);
+                                    logInfo('[AuthProvider DEBUG] Attempting to redirect to:', redirectTo);
                                     router.replace(redirectTo);
                                   } catch (redirectError) {
-                                    console.error("[AuthProvider DEBUG] Error during redirection:", redirectError);
+                                    logError("[AuthProvider DEBUG] Error during redirection:", redirectError);
                                   }
                             }
                         } else {
-                            console.error("[AuthProvider DEBUG] Mapped user is null. Not updating user state. Mapping failed or profile was insufficient.");
+                            logError("[AuthProvider DEBUG] Mapped user is null. Not updating user state. Mapping failed or profile was insufficient.");
                              if (event === 'SIGNED_IN') { // Only toast if it was an active sign-in attempt
                                 toast({
                                     title: "User Data Error",
@@ -314,7 +316,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                              setAvatarUrl(null);
                         }
                     } else { // Profile is null, but no error
-                        console.warn("[AuthProvider DEBUG] Profile not found for user (no error, but profile is null):", session.user.id);
+                        logWarn("[AuthProvider DEBUG] Profile not found for user (no error, but profile is null):", session.user.id);
                         if (event === 'SIGNED_IN') { // Only toast if it was an active sign-in attempt
                             toast({
                                 title: "Profile Not Found",
@@ -327,7 +329,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     }
                 } catch (profileMapError) {
                     // This catch block is for errors specifically within the profile fetching/user mapping phase
-                    console.error("[AuthProvider DEBUG] Critical error in profile fetching/user mapping phase:", profileMapError);
+                    logError("[AuthProvider DEBUG] Critical error in profile fetching/user mapping phase:", profileMapError);
                      if (event === 'SIGNED_IN') {
                         toast({
                             title: "User Initialization Error",
@@ -339,30 +341,30 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     setAvatarUrl(null);
                     // Potentially call cleanupAuthState() or handleSignedOut() if appropriate
                 } finally {
-                    console.log('[AuthProvider DEBUG] onAuthStateChange profile fetch: Entering finally block. Current isLoading:', isLoading);
+                    logInfo('[AuthProvider DEBUG] onAuthStateChange profile fetch: Entering finally block. Current isLoading:', isLoading);
                     setIsLoading(false); // Stop loading after profile fetch attempt
-                    console.log('[AuthProvider DEBUG] onAuthStateChange profile fetch: setIsLoading(false) called. New isLoading:', isLoading);
+                    logInfo('[AuthProvider DEBUG] onAuthStateChange profile fetch: setIsLoading(false) called. New isLoading:', isLoading);
                 }
             } else if (event === 'SIGNED_OUT') {
                 if (process.env.NODE_ENV === 'development') {
-                    console.log('[AuthProvider DEBUG] Event is SIGNED_OUT. Clearing user state and calling handleSignedOut.');
+                    logInfo('[AuthProvider DEBUG] Event is SIGNED_OUT. Clearing user state and calling handleSignedOut.');
                 }
                 setIsLoading(true); // Briefly set loading true while clearing state
                 setUser(null);
                 setAvatarUrl(null);
                 setTokens(null); // Clear tokens
                 cleanupAuthState(); // Utility to clear local/session storage
-                console.log('[AuthProvider DEBUG] onAuthStateChange: Calling handleSignedOut for SIGNED_OUT event.');
+                logInfo('[AuthProvider DEBUG] onAuthStateChange: Calling handleSignedOut for SIGNED_OUT event.');
                 handleSignedOut();
                 setIsLoading(false);
-                console.log('[AuthProvider DEBUG] onAuthStateChange SIGNED_OUT: setIsLoading(false) called. New isLoading:', isLoading);
+                logInfo('[AuthProvider DEBUG] onAuthStateChange SIGNED_OUT: setIsLoading(false) called. New isLoading:', isLoading);
             } else {
                 // Handles cases like:
                 // - No session initially (e.g., anonymous user on first load)
                 // - Events like PASSWORD_RECOVERY, USER_DELETED etc. that don't imply an active session for profile fetch
                 // - Or if session.user is null even if session object exists.
                 if (process.env.NODE_ENV === 'development') {
-                    console.log('[AuthProvider DEBUG] No active session for profile fetch or event is not SIGNED_IN/TOKEN_REFRESHED/USER_UPDATED. Event:', event, 'Session user present:', !!session?.user);
+                    logInfo('[AuthProvider DEBUG] No active session for profile fetch or event is not SIGNED_IN/TOKEN_REFRESHED/USER_UPDATED. Event:', event, 'Session user present:', !!session?.user);
                 }
                 // If user is not null, it means there was a user, but now the session is not one for active profile loading.
                 // This could happen if a token refresh fails and Supabase reverts to no user, or an initial check.
@@ -375,21 +377,21 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 // This is crucial for anonymous users on initial load.
                 if (isLoading) { // Only set if it's currently true
                     setIsLoading(false);
-                    console.log('[AuthProvider DEBUG] onAuthStateChange fallback: setIsLoading(false) called. New isLoading:', isLoading);
+                    logInfo('[AuthProvider DEBUG] onAuthStateChange fallback: setIsLoading(false) called. New isLoading:', isLoading);
                 }
             }
         } catch (outerError) { // Catch errors from the main try block in onAuthStateChange
-            console.error("[AuthProvider DEBUG] Outer error in onAuthStateChange callback:", outerError);
+            logError("[AuthProvider DEBUG] Outer error in onAuthStateChange callback:", outerError);
             setUser(null); // Ensure user state is cleared
             setAvatarUrl(null);
             setTokens(null);
             setIsLoading(false); // Ensure loading is false on any error
-            console.log('[AuthProvider DEBUG] onAuthStateChange outer catch: setIsLoading(false) called. New isLoading:', isLoading);
+            logInfo('[AuthProvider DEBUG] onAuthStateChange outer catch: setIsLoading(false) called. New isLoading:', isLoading);
         }
         // Final check to ensure isLoading is false if we've reached the end of processing for this event
         // This is particularly important if an early exit or an unhandled case doesn't reset it.
         if (isLoading) {
-             // console.log('[AuthProvider DEBUG] onAuthStateChange: Reached end of callback, ensuring isLoading is false. Current isLoading was true.');
+             // logInfo('[AuthProvider DEBUG] onAuthStateChange: Reached end of callback, ensuring isLoading is false. Current isLoading was true.');
              // setIsLoading(false); // This might be too broad, rely on specific path resets.
         }
       }
@@ -415,7 +417,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           redirectTo: `${window.location.origin}/auth/verify-email`,
         });
         if (error) {
-          console.error("Supabase password reset error:", error);
+          logError("Supabase password reset error:", error);
           toast({
             title: "Password Reset Failed",
             description: error.message || "Failed to send password reset email.",
@@ -431,7 +433,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setIsLoading(false);
         return { error: null };
       } catch (err: any) {
-        console.error("Password reset exception:", err);
+        logError("Password reset exception:", err);
         toast({
           title: "Password Reset Failed",
           description: err.message || "An unexpected error occurred during password reset.",

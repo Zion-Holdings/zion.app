@@ -6,6 +6,8 @@ import { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { toast } from "sonner";
 
 export const useJobApplications = (jobId?: string) => {
+import { logError } from '@/utils/productionLogger';
+
   const { user } = useAuth();
   const [applications, setApplications] = useState<JobApplication[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -72,7 +74,7 @@ export const useJobApplications = (jobId?: string) => {
       setApplications(transformedData as JobApplication[]);
       setError(null);
     } catch (err: any) {
-      console.error("Error fetching applications:", err);
+      logError("Error fetching applications:", err);
       setError("Failed to fetch applications: " + err.message);
       toast.error("Failed to fetch applications");
     } finally {
@@ -146,7 +148,7 @@ export const useJobApplications = (jobId?: string) => {
       toast.success("Application submitted successfully");
       return true;
     } catch (err: any) {
-      console.error("Error applying to job:", err);
+      logError("Error applying to job:", err);
       toast.error("Failed to submit application: " + err.message);
       return false;
     }
@@ -169,7 +171,7 @@ export const useJobApplications = (jobId?: string) => {
       toast.success(`Application status updated to ${status}`);
       return true;
     } catch (err: any) {
-      console.error("Error updating application status:", err);
+      logError("Error updating application status:", err);
       toast.error("Failed to update application status: " + err.message);
       return false;
     }
@@ -197,7 +199,7 @@ export const useJobApplications = (jobId?: string) => {
       
       return true;
     } catch (err) {
-      console.error("Error marking application as viewed:", err);
+      logError("Error marking application as viewed:", err);
       return false;
     }
   };

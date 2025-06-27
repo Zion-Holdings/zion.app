@@ -6,6 +6,8 @@ import { cleanupAuthState } from "@/utils/authUtils";
 import { safeStorage, safeSessionStorage } from "@/utils/safeStorage";
 
 export const useEmailAuth = (
+import { logInfo, logError } from '@/utils/productionLogger';
+
   setUser: (user: UserDetails | null) => void,
   setIsLoading: (loading: boolean) => void
 ) => {
@@ -76,7 +78,7 @@ export const useEmailAuth = (
 
       return { data: { user, token } };
     } catch (error: any) {
-      console.error("Login error:", error);
+      logError("Login error:", error);
       toast({
         title: "Login failed",
         description: error.message || "An unexpected error occurred",
@@ -99,7 +101,7 @@ export const useEmailAuth = (
         await supabase.auth.signOut({ scope: 'global' });
       } catch (err) {
         // Continue even if signout fails
-        console.log("Sign out before signup failed:", err);
+        logInfo("Sign out before signup failed:", err);
       }
       
       // Create a proper options object
@@ -131,7 +133,7 @@ export const useEmailAuth = (
       const emailVerificationRequired = !!(data?.user && !data?.session);
       return { data, emailVerificationRequired };
     } catch (error: any) {
-      console.error("Signup error:", error);
+      logError("Signup error:", error);
       toast({
         title: "Signup failed",
         description: error.message || "An unexpected error occurred",
@@ -165,7 +167,7 @@ export const useEmailAuth = (
       });
       return {};
     } catch (error: any) {
-      console.error("Password reset error:", error);
+      logError("Password reset error:", error);
       toast({
         title: "Password reset failed",
         description: error.message || "An unexpected error occurred",

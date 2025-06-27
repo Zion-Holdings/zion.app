@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { 
+import { logError } from '@/utils/productionLogger';
+
   getClientBudgetSuggestion, 
   PricingSuggestion,
   ClientBudgetParams,
@@ -51,7 +53,7 @@ export const ClientBudgetRecommender: React.FC<ClientBudgetRecommenderProps> = (
       const result = await getClientBudgetSuggestion(params);
       setSuggestion(result);
     } catch (error) {
-      console.error("Error generating budget suggestion:", error);
+      logError("Error generating budget suggestion:", error);
     } finally {
       setIsLoading(false);
     }

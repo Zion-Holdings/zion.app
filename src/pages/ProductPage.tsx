@@ -8,6 +8,8 @@ import { toast } from '@/hooks/use-toast';
 import { SEO } from '@/components/SEO';
 
 export default function ProductPage() {
+import { logError } from '@/utils/productionLogger';
+
   const router = useRouter();
   const { id: rawId } = router.query;
   const id = typeof rawId === 'string' ? rawId : undefined;
@@ -36,7 +38,7 @@ export default function ProductPage() {
         }
       } catch (err) {
         // Fail silently and fall back to local data
-        console.error('Error fetching product', err);
+        logError('Error fetching product', err);
       }
     };
 

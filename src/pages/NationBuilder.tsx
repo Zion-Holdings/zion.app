@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import {
+import { logInfo } from '@/utils/productionLogger';
+
   Select,
   SelectTrigger,
   SelectValue,
@@ -31,7 +33,7 @@ export default function NationBuilder() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Placeholder submit handler
-    console.log({ name, flag, constitution, governance, funding });
+    logInfo({ name, flag, constitution, governance, funding });
   };
 
   return (

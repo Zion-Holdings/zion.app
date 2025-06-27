@@ -1,6 +1,8 @@
 
 
 export async function rewardOnboarding(userId: string) {
+import { logError } from '@/utils/productionLogger';
+
   try {
     const res = await fetch('/functions/v1/token-manager/earn', {
       method: 'POST',
@@ -12,7 +14,7 @@ export async function rewardOnboarding(userId: string) {
       throw new Error(text || `Error ${res.status}`);
     }
   } catch (err) {
-    console.error('Failed to reward onboarding:', err);
+    logError('Failed to reward onboarding:', err);
   }
 }
 
@@ -28,7 +30,7 @@ export async function rewardReferral(userId: string) {
       throw new Error(text || `Error ${res.status}`);
     }
   } catch (err) {
-    console.error('Failed to reward referral:', err);
+    logError('Failed to reward referral:', err);
   }
 }
 
@@ -44,6 +46,6 @@ export async function rewardFiveStarReview(userId: string) {
       throw new Error(text || `Error ${res.status}`);
     }
   } catch (err) {
-    console.error('Failed to reward review:', err);
+    logError('Failed to reward review:', err);
   }
 }

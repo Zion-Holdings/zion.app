@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
+import { logError } from '@/utils/productionLogger';
+
 
 const FILE_PATH = path.join(process.cwd(), 'data', 'push-subscriptions.json');
 
@@ -18,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     fs.writeFileSync(FILE_PATH, JSON.stringify(subs, null, 2));
     return res.status(200).json({ success: true });
   } catch (err) {
-    console.error('Failed to save push subscription', err);
+    logError('Failed to save push subscription', err);
     return res.status(500).json({ error: 'Failed to save subscription' });
   }
 }

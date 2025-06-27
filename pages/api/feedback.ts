@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 import { z } from 'zod';
 import type { Document, Model } from 'mongoose';
 import { withErrorLogging } from '@/utils/withErrorLogging';
+import { logError } from '@/utils/productionLogger';
+
 
 const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/zion';
 
@@ -58,7 +60,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     await Feedback.create(parsed.data);
     return res.status(201).json({ success: true });
   } catch (err) {
-    console.error('Error saving feedback:', err);
+    logError('Error saving feedback:', err);
     return res.status(500).json({ error: 'Failed to save feedback' });
   }
 }

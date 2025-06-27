@@ -5,6 +5,8 @@ import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface SearchResult {
   id: string;
@@ -222,7 +224,7 @@ async function handler(
     const searchResult = await cacheOrCompute(
       cacheKey,
       async () => {
-        console.log(`Performing search for: "${q}" (page ${page}, limit ${limit})`);
+        logInfo(`Performing search for: "${q}" (page ${page}, limit ${limit})`);
         return performSearch(q, page, limit, {
           types: (typesParam && typesParam.length) ? typesParam : undefined,
           category,
@@ -258,7 +260,7 @@ async function handler(
     return res.status(200).json(searchResponse);
 
   } catch (error) {
-    console.error('Search query failed:', error);
+    logError('Search query failed:', error);
     
     // Return empty results on error instead of 500
     applyCacheHeaders(res, CacheCategory.SHORT);

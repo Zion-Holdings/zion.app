@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { AlertTriangle, Home, RefreshCw, Settings } from 'lucide-react';
 import { logError } from '@/utils/logError';
+import { logInfo, logError } from '@/utils/productionLogger';
+
 
 interface PageErrorFallbackProps extends FallbackProps {
   pageName?: string;
@@ -139,7 +141,7 @@ export default function PageErrorBoundary({
   fallback 
 }: PageErrorBoundaryProps) {
   const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
-    console.error(`PageErrorBoundary caught error on ${pageName || 'unknown page'}:`, error);
+    logError(`PageErrorBoundary caught error on ${pageName || 'unknown page'}:`, error);
     
     logError(error, {
       page: pageName || 'unknown',
@@ -159,7 +161,7 @@ export default function PageErrorBoundary({
       onError={handleError}
       onReset={() => {
         // Reset any application state if needed
-        console.log(`Resetting error boundary for ${pageName || 'page'}`);
+        logInfo(`Resetting error boundary for ${pageName || 'page'}`);
       }}
     >
       {children}

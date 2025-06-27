@@ -17,6 +17,8 @@ import { toast } from '@/hooks/use-toast';
 import { getBreadcrumbsForPath } from '@/utils/routeUtils';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import {
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
   Breadcrumb,
   BreadcrumbList,
   BreadcrumbItem,
@@ -161,7 +163,7 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
         }
       }
     } catch (apiError) {
-      console.warn(`API fetch for product ${slug} (attempting ID match) failed:`, apiError);
+      logWarn(`API fetch for product ${slug} (attempting ID match) failed:`, apiError);
       Sentry.captureMessage(`API fetch for product ${slug} (attempting ID match) failed`, { extra: { error: apiError } });
     }
 
@@ -207,7 +209,7 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
     }
     
     if (!listing) {
-      console.log(`Listing not found for slug: ${slug}`);
+      logInfo(`Listing not found for slug: ${slug}`);
       Sentry.captureMessage(`Listing not found for slug: ${slug}`, { level: 'warning' });
       return { notFound: true };
     }
@@ -216,7 +218,7 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
 
   } catch (error) {
     Sentry.captureException(error);
-    console.error(`Critical error in getServerSideProps for marketplace listing ${slug}:`, error);
+    logError(`Critical error in getServerSideProps for marketplace listing ${slug}:`, error);
     return { notFound: true }; // Ensure 404 for any unhandled errors
   }
 };

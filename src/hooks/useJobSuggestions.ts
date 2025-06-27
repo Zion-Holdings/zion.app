@@ -5,6 +5,8 @@ import { toast } from "@/hooks/use-toast";
 import { JobMatch } from "@/types/jobs";
 
 export function useJobSuggestions(talentId?: string) {
+import { logError } from '@/utils/productionLogger';
+
   const [jobMatches, setJobMatches] = useState<JobMatch[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   
@@ -29,7 +31,7 @@ export function useJobSuggestions(talentId?: string) {
         
         setJobMatches(data || []);
       } catch (error) {
-        console.error("Error fetching job matches:", error);
+        logError("Error fetching job matches:", error);
         toast({
           title: "Error",
           description: "Failed to load job suggestions",
@@ -79,7 +81,7 @@ export function useJobSuggestions(talentId?: string) {
         });
       }
     } catch (error) {
-      console.error("Error updating job match status:", error);
+      logError("Error updating job match status:", error);
       toast({
         title: "Error",
         description: "Failed to update job status",

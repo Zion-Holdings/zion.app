@@ -1,5 +1,7 @@
 import apiClient from './apiClient'; // Adjust path as necessary
 import { apiHelper } from './apiHelper';
+import { logError } from '@/utils/productionLogger';
+
 
 // Define proper interfaces for message service
 interface SendMessageParams {
@@ -42,7 +44,7 @@ export async function sendMessage({
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('Failed to send message:', error);
+    logError('Failed to send message:', error);
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error',

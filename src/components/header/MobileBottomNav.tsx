@@ -6,6 +6,8 @@ import { useAuth } from "@/hooks/useAuth";
 import { useWishlist } from "@/hooks/useWishlist";
 import { useCart } from '@/context/CartContext';
 import {
+import { logWarn } from '@/utils/productionLogger';
+
   Home,
   Search,
   MessageCircle,
@@ -31,7 +33,7 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
   if (cartContextValue && cartContextValue.items) {
     cartCount = cartContextValue.items.reduce((sum, i) => sum + i.quantity, 0);
   } else {
-    // console.warn("MobileBottomNav: Cart data or items not available, defaulting cartCount to 0.");
+    // logWarn("MobileBottomNav: Cart data or items not available, defaulting cartCount to 0.");
   }
 
   const navItems = [

@@ -5,6 +5,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 
 export default function PodcastHost() {
+import { logError } from '@/utils/productionLogger';
+
   const [invitee, setInvitee] = useState('');
   const [bio, setBio] = useState('');
   const [topic, setTopic] = useState('');
@@ -24,7 +26,7 @@ export default function PodcastHost() {
       const data = await res.json();
       setScript(data.script || '');
     } catch (err) {
-      console.error(err);
+      logError(err);
       setScript('Error generating script.');
     } finally {
       setLoading(false);
