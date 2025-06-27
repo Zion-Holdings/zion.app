@@ -147,6 +147,7 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
 12. **Privacy Policy & Terms (login-gated):**
     - AI-Prompt: "Generate a plain-language summary (≤ 200 words) of a standard tech marketplace privacy policy aimed at U.S. users."
     - AI-Prompt: "Write an FAQ with 5 common questions users ask about Zion’s Terms of Service."
+13. **Frequently Asked Questions:** See [docs/FAQ.md](docs/FAQ.md) or the in-app Help Center for quick answers.
 
 ## Troubleshooting
 

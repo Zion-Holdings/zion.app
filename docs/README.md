@@ -12,6 +12,7 @@ This folder contains various guides and references for the Zion application. Bel
 - [Public API Documentation](./public-api/README.md)
 - [Resources Page Prompts](./resources_prompt.md)
 - [AI Talent Matcher (Planned Feature)](./AI_Talent_Matcher.md)
+- [Frequently Asked Questions](./FAQ.md)
 
 Additional documents cover troubleshooting guides, internal protocols and other topics. Browse the files in this folder for more details.
 
