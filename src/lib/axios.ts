@@ -1,12 +1,12 @@
-import axios from 'axios';
-import type { AxiosInstance, AxiosResponse, AxiosRequestConfig } from 'axios';
+import axios, { 
+  type AxiosInstance, 
+  type AxiosResponse, 
+  type AxiosRequestConfig, 
+  type AxiosError as BaseAxiosError 
+} from 'axios';
 import { safeStorage } from '@/utils/safeStorage';
 
-export interface AxiosError<T = unknown> extends Error {
-  config: AxiosRequestConfig;
-  code?: string;
-  request?: unknown;
-  response?: AxiosResponse<T>;
+export interface AxiosError<T = unknown> extends BaseAxiosError<T> {
   isAxiosError: boolean;
 }
 
@@ -33,9 +33,9 @@ const axiosInstance: AxiosInstance = axios.create({
   },
 });
 
-// Request interceptor
+// Request interceptor with proper typing
 axiosInstance.interceptors.request.use(
-  (config) => {
+  (config: AxiosRequestConfig) => {
     // Add auth token if available
     if (typeof window !== 'undefined') {
       const token = safeStorage.getItem('auth-token');
@@ -45,16 +45,16 @@ axiosInstance.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
+  (error: unknown) => {
     return Promise.reject(error);
   }
 );
 
-// Response interceptor
+// Response interceptor with proper typing
 axiosInstance.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response?.status === 401) {
+  (response: AxiosResponse) => response,
+  (error: unknown) => {
+    if ((error as any)?.response?.status === 401) {
       // Handle unauthorized access
       if (typeof window !== 'undefined') {
         safeStorage.removeItem('auth-token');

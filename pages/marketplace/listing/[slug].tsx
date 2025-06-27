@@ -135,13 +135,21 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
 
       if (productFromApi && validateProductData(productFromApi)) {
         const ensuredProduct = ensureProductIntegrity([productFromApi])[0];
-        listing = {
-          ...ensuredProduct,
-          currency: ensuredProduct.currency || 'USD',
-          author: ensuredProduct.author || { name: 'Unknown', id: 'unknown' },
-          category: ensuredProduct.category || 'general',
-        } as ProductListing;
-        Sentry.addBreadcrumb({ message: `Found product ${slug} via API direct ID match.` });
+
+        if (ensuredProduct) {
+          listing = {
+            ...ensuredProduct,
+            currency: ensuredProduct.currency || 'USD',
+            author: ensuredProduct.author || { name: 'Unknown', id: 'unknown' },
+            category: ensuredProduct.category || 'general',
+          } as ProductListing;
+          Sentry.addBreadcrumb({ message: `Found product ${slug} via API direct ID match.` });
+        } else {
+          // Handle case where product cannot be ensured
+          return {
+            notFound: true,
+          };
+        }
       }
     } catch (apiError) {
       console.warn(`API fetch for product ${slug} (attempting ID match) failed:`, apiError);
