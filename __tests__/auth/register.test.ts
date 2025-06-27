@@ -1,6 +1,5 @@
 import { describe, expect, test, vi, beforeEach } from 'vitest';
 import handler from '@/pages/api/auth/register'; // Assuming this is the Next.js API handler
-import { z } from 'zod'; // Used by the handler
 
 // Mock the Supabase client
 const signUpMock = vi.fn();

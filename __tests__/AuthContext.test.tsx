@@ -4,7 +4,6 @@ import { AuthContext } from '@/context/auth/AuthContext';
 import { loginUser } from '@/services/authService';
 import { useAuthOperations } from '@/hooks/useAuthOperations';
 import { safeStorage } from '@/utils/safeStorage';
-import { useRouter } from 'next/router';
 
 jest.mock('@/services/authService');
 jest.mock('@/hooks/useAuthOperations');

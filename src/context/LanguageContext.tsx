@@ -159,7 +159,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
         if (langToSet === 'ar') document.documentElement.classList.add('rtl'); else document.documentElement.classList.remove('rtl');
       }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+   
   }, []); // Run once on component mount to set initial language.
 
   // Effect to react to changes in i18n.language from other sources (e.g. detector post-init)

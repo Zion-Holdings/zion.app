@@ -3,11 +3,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { vi, Mock, describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 // Mock Supabase client
-let mockSignInWithPassword: Mock;
+const mockSignInWithPassword = vi.fn();
 
 vi.mock('@supabase/supabase-js', async (importOriginal) => {
   const actual = await importOriginal() as any;
-  const _mockSignInWithPassword = vi.fn();
   // Keep other mocks if they are used by other parts of the handler or related code
   const _mockSignUp = vi.fn();
   const _mockOnAuthStateChange = vi.fn(() => ({ data: { subscription: { unsubscribe: vi.fn() } } }));
@@ -17,14 +16,14 @@ vi.mock('@supabase/supabase-js', async (importOriginal) => {
     ...actual,
     createClient: vi.fn(() => ({
       auth: {
-        signInWithPassword: _mockSignInWithPassword,
+        signInWithPassword: mockSignInWithPassword,
         signUp: _mockSignUp, // Keep if registerHandler is also tested here or needed by setup
         onAuthStateChange: _mockOnAuthStateChange,
         getSession: _mockGetSession,
       },
       from: vi.fn().mockReturnThis(), // Generic from mock
     })),
-    __internalMockSignInWithPassword: _mockSignInWithPassword,
+    __internalMockSignInWithPassword: mockSignInWithPassword,
   };
 });
 

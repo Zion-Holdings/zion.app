@@ -12,7 +12,7 @@ export default function handler(
   }
 
   try {
-    const query = String(((req.query as any).query || '').toLowerCase();
+    const query = String(((req.query as any).query || '')).toLowerCase();
     const match = (text?: string) => text?.toLowerCase().includes(query);
     const results = BLOG_POSTS.filter(
       p =>
