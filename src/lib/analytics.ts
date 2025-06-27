@@ -1,5 +1,24 @@
 import { logger } from '@/utils/logger';
-import { captureEvent } from './posthog';
+import { supabase, isSupabaseConfigured } from '@/integrations/supabase/client';
+
+async function logEventToSupabase(
+  eventName: string,
+  eventParams?: Record<string, any>
+) {
+  if (!isSupabaseConfigured) return;
+
+  try {
+    await supabase.from('analytics_events').insert([
+      {
+        event_type: eventName,
+        path: typeof window !== 'undefined' ? window.location.pathname : '',
+        metadata: eventParams,
+      },
+    ]);
+  } catch (error) {
+    logger.error('Error logging analytics event to Supabase', error as Error);
+  }
+}
 
 export const initGA = () => {
   const measurementId = process.env.NEXT_PUBLIC_GA_ID;
@@ -18,13 +37,15 @@ export const initGA = () => {
     window.gtag('config', measurementId);
   }
 };
-
-export const fireEvent = (eventName: string, eventParams?: Record<string, any>) => {
-  if (window.gtag) {
-    window.gtag('event', eventName, eventParams);
-  } else {
+export const fireEvent = async (
+  eventName: string,
+  eventParams?: Record<string, any>
+) => {
+  if (!window.gtag) {
     logger.error('gtag is not defined. Make sure GA4 is initialized.');
+  } else {
+    window.gtag('event', eventName, eventParams);
   }
 
-  captureEvent(eventName, eventParams);
+  await logEventToSupabase(eventName, eventParams);
 };
