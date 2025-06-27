@@ -1,7 +1,7 @@
 import { ProductDetailsData } from '../types/product';
+import { logWarn, logError } from '@/utils/productionLogger';
 
 export async function fetchProductById(productId: string): Promise<ProductDetailsData | null> {
-import { logWarn, logError } from '@/utils/productionLogger';
 
   try {
     // During build time, return a mock product to avoid API calls
