@@ -7,7 +7,7 @@
     "deploy-zion-ipfs": "scripts/deploy-zion-ipfs.js"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run env:dev && next dev",
     "generate": "prisma generate",
     "build": "NODE_OPTIONS='--no-deprecation' node scripts/pre-build-check.cjs && NODE_OPTIONS='--no-deprecation' npx next build --no-lint",
     "start": "npx next start",

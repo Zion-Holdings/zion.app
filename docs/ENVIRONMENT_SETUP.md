@@ -85,7 +85,7 @@ npm run env:check
 npm run env:validate-build
 
 # Check development environment
-npm run env:dev
+npm run dev  # runs env:dev automatically
 ```
 
 ## Security Notes
