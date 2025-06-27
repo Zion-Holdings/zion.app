@@ -146,6 +146,9 @@ const LoginPage = () => {
       
       return () => clearTimeout(redirectTimer);
     }
+    
+    // Return undefined for all other cases
+    return undefined;
   }, [user, sessionChecked, isLoading, router, router.query.returnTo]); // Dependencies: user, sessionChecked, isLoading, router
 
   const handleResendVerification = async () => {

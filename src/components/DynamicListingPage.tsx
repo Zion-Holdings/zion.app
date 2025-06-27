@@ -192,17 +192,22 @@ export function DynamicListingPage({
           description: `Your quote request for ${listing.title} has been sent.`,
         });
 
-        router.push("/request-quote", {
-          state: {
-            serviceType: categorySlug,
-            specificItem: {
-              id: listing.id,
-              title: listing.title,
-              category: listing.category,
-              image: listing.images?.[0],
-            },
+        // Store quote data in sessionStorage for the request-quote page
+        const quoteData = {
+          serviceType: categorySlug,
+          specificItem: {
+            id: listing.id,
+            title: listing.title,
+            category: listing.category,
+            image: listing.images?.[0],
           },
-        });
+        };
+        
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem('quoteRequestData', JSON.stringify(quoteData));
+        }
+
+        router.push("/request-quote");
       }
     }, 500);
   };
