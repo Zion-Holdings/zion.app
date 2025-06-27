@@ -3,6 +3,7 @@
 import { FraudFlag, FraudSeverity } from '@/types/fraud';
 import { analyzeContent } from './analyzeContent';
 import { flagContent } from './flagContent';
+import { logger } from '@/utils/logger';
 
 /**
  * Create a monitoring system helper to easily monitor any content
@@ -42,7 +43,7 @@ export const monitorContent = async (
     // If this is a 'dangerous' flag, automatically hide content
     // This would be implemented in a real system with appropriate flags
     if (severity === 'dangerous') {
-      console.log('Auto-hiding dangerous content:', contentId);
+      logger.debug('Auto-hiding dangerous content:', contentId);
       // Code to hide content would go here
     }
   }

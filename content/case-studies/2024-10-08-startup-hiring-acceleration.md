@@ -3,7 +3,7 @@
   "title": "Startup Nova Cuts Hiring Time by 60% with Zion",
   "excerpt": "A detailed look at how a small tech startup transformed recruiting through Zion's AI-driven platform.",
   "company": "Startup Nova",
-  "companyLogo": "/logos/placeholder-logo.svg",
+  "companyLogo": "/logos/zion-logo.png",
   "avatar": "/images/blog-placeholder.svg",
   "quote": "Zion let us fill roles in a week instead of a month—an absolute game changer.",
   "author": "Jamie Lee",

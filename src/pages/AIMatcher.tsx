@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useRouter } from 'next/router';
 import { Header } from "@/components/Header";
@@ -31,13 +30,18 @@ export default function AIMatcherPage() {
       description: `You've selected ${match.item.title}`,
     });
     
-    // Navigate to the quote request page with the selected item
-    router.push("/request-quote", {
-      state: { 
-        serviceType: itemType,
-        specificItem: match.item
-      }
-    });
+    // Store data in sessionStorage for the request-quote page
+    const quoteData = { 
+      serviceType: itemType,
+      specificItem: match.item
+    };
+    
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('quoteRequestData', JSON.stringify(quoteData));
+    }
+
+    // Navigate to the quote request page
+    router.push("/request-quote");
   };
   
   return (

@@ -318,7 +318,31 @@
     },
     "earnings_title": "Ganancias y Pagos",
     "earnings_desc": "Seguimiento de tus ganancias y gestiona pagos",
-    "earnings_placeholder": "El seguimiento de ganancias y las solicitudes de pago estarán disponibles pronto."
+  "earnings_placeholder": "El seguimiento de ganancias y las solicitudes de pago estarán disponibles pronto."
+  },
+  "quote_form": {
+    "title": "Obtén una Cotización Ahora",
+    "subtitle": "Solicita tu propuesta comercial instantánea y descubre cómo Zion puede revolucionar tus operaciones de TI",
+    "sent_title": "¡Solicitud de Cotización Enviada!",
+    "sent_desc": "Gracias por tu interés en los servicios de Zion. Nuestro equipo preparará tu propuesta comercial personalizada y se pondrá en contacto contigo pronto.",
+    "submit_another": "Enviar Otra Solicitud",
+    "labels": {
+      "name": "Nombre",
+      "company": "Compañía",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "interests": "Me interesa (selecciona todo lo que corresponda)",
+      "interest_ai": "Productos/Servicios de IA",
+      "interest_equipment": "Equipo de TI",
+      "interest_servers": "Soluciones de Servidores",
+      "interest_storage": "Soluciones de Almacenamiento",
+      "interest_networking": "Redes",
+      "interest_support": "Soporte 24/7",
+      "interest_recycling": "Servicios de Reciclaje",
+      "additional_details": "Detalles Adicionales"
+    },
+    "sending": "Enviando...",
+    "submit": "Obtén tu Propuesta Comercial Gratis"
   },
   "login": "Iniciar Sesión",
   "signup": "Registrarse"

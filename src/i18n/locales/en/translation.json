@@ -410,7 +410,31 @@
     },
     "earnings_title": "Earnings & Payouts",
     "earnings_desc": "Track your earnings and manage payouts",
-    "earnings_placeholder": "Earnings tracking and payout requests will be available soon."
+  "earnings_placeholder": "Earnings tracking and payout requests will be available soon."
+  },
+  "quote_form": {
+    "title": "Get a Quote Now",
+    "subtitle": "Request your instant commercial proposal and discover how Zion can revolutionize your IT operations",
+    "sent_title": "Quote Request Sent!",
+    "sent_desc": "Thank you for your interest in Zion's services. Our team will prepare your personalized commercial proposal and contact you shortly.",
+    "submit_another": "Submit Another Request",
+    "labels": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone",
+      "interests": "I'm interested in (select all that apply)",
+      "interest_ai": "AI Products/Services",
+      "interest_equipment": "IT Equipment",
+      "interest_servers": "Server Solutions",
+      "interest_storage": "Storage Solutions",
+      "interest_networking": "Networking",
+      "interest_support": "24/7 Support",
+      "interest_recycling": "Recycling Services",
+      "additional_details": "Additional Details"
+    },
+    "sending": "Sending...",
+    "submit": "Get Your Free Commercial Proposal"
   },
   "login": "Login",
   "signup": "Sign up"

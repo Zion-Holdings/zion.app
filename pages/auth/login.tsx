@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Facebook, Mail, Clock, RefreshCw } from 'lucide-react';
 import Head from 'next/head';
 import { createClient } from '../../src/utils/supabase/client';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import type { AuthError, User } from '@supabase/supabase-js';
 
 const LoginPage = () => {
@@ -341,13 +342,14 @@ const LoginPage = () => {
         <div className="max-w-md w-full space-y-8">
           <div>
             <div className="mx-auto h-12 w-auto">
-              <img
+              <OptimizedImage
                 className="mx-auto h-12 w-auto"
                 src="/logos/zion-logo.png"
                 alt="Zion Tech"
-                loading="lazy"
+                width={48}
+                height={48}
                 onError={(e) => {
-                  const target = e.target as HTMLImageElement;
+                  const target = e.currentTarget as HTMLImageElement;
                   target.style.display = 'none';
                 }}
               />
