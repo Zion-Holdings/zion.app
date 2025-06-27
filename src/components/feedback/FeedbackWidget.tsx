@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import html2canvas from 'html2canvas';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -24,9 +25,14 @@ const StarRatingInput: React.FC<{ value: number; onRate: (r:number) => void }> =
 
 export function FeedbackWidget() {
   const [open, setOpen] = useState(false);
-  const { rating, comment, setRating, setComment, reset } = useFeedback();
+  const { rating, comment, screenshot, setRating, setComment, setScreenshot, reset } = useFeedback();
   const [submitted, setSubmitted] = useState(false);
   const enqueueSnackbar = useEnqueueSnackbar();
+
+  const captureScreenshot = async () => {
+    const canvas = await html2canvas(document.body);
+    setScreenshot(canvas.toDataURL('image/png'));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,6 +40,7 @@ export function FeedbackWidget() {
       await postFeedback({
         rating,
         comment,
+        screenshot,
         url: window.location.pathname,
         userAgent: navigator.userAgent,
       });
@@ -76,7 +83,14 @@ export function FeedbackWidget() {
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}
                 />
+                {screenshot && (
+                  <div className="space-y-2">
+                    <img src={screenshot} alt="Screenshot preview" className="w-full border rounded" />
+                    <Button type="button" variant="ghost" size="sm" onClick={() => setScreenshot(null)}>Remove screenshot</Button>
+                  </div>
+                )}
                 <div className="flex justify-end gap-2">
+                  <Button type="button" variant="outline" size="sm" onClick={captureScreenshot}>Add Screenshot</Button>
                   <Button type="submit" disabled={rating === 0} size="sm">Submit</Button>
                   <Button type="button" variant="ghost" size="sm" onClick={() => setOpen(false)}>Close</Button>
                 </div>

@@ -13,6 +13,7 @@ This folder contains various guides and references for the Zion application. Bel
 - [Resources Page Prompts](./resources_prompt.md)
 - [AI Talent Matcher (Planned Feature)](./AI_Talent_Matcher.md)
 - [Frequently Asked Questions](./FAQ.md)
+- [Features to Add or Improve](./FEATURES_TO_ADD_OR_IMPROVE.md)
 
 Additional documents cover troubleshooting guides, internal protocols and other topics. Browse the files in this folder for more details.
 

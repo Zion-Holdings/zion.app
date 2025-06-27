@@ -14,6 +14,7 @@
 3. **Listing Conversations**
    - `ChatWidget.tsx` enables buyers and sellers to exchange messages on individual listing pages via Socket.IO.
    - Includes message notifications and real‑time updates.
+   - Saves chat history per room to local storage so conversations persist between visits.
 
 ## 🛠 Usage
 - Set `NEXT_PUBLIC_INTERCOM_APP_ID` in your environment variables.
