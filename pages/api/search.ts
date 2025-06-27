@@ -215,7 +215,7 @@ async function handler(
     }
 
     // Create cache key
-    const filterKey = `${typesParam.join(',')}-${category || ''}-${minPrice || ''}-${maxPrice || ''}-${minRating || ''}-${sort || ''}`;
+    const filterKey = `${(typesParam || []).join(',')}-${category || ''}-${minPrice || ''}-${maxPrice || ''}-${minRating || ''}-${sort || ''}`;
     const cacheKey = cacheKeys.search.results(`${q}-${page}-${limit}-${filterKey}`);
 
     // Use cache-or-compute pattern
@@ -224,7 +224,7 @@ async function handler(
       async () => {
         console.log(`Performing search for: "${q}" (page ${page}, limit ${limit})`);
         return performSearch(q, page, limit, {
-          types: typesParam.length ? typesParam : undefined,
+          types: (typesParam && typesParam.length) ? typesParam : undefined,
           category,
           minPrice,
           maxPrice,
