@@ -25,6 +25,10 @@ interface EnvironmentConfig {
     env?: string;
     enabled: boolean;
   };
+  logRocket: {
+    id?: string;
+    enabled: boolean;
+  };
   app: {
     environment: string;
     isDevelopment: boolean;
@@ -50,6 +54,7 @@ const EnvSchema = z.object({
   NEXT_PUBLIC_DD_ENV: z.string().optional(),
   DD_SERVICE: z.string().optional(),
   DD_ENV: z.string().optional(),
+  NEXT_PUBLIC_LOGROCKET_ID: z.string().optional(),
 });
 
 type RawEnv = z.infer<typeof EnvSchema>;
@@ -120,7 +125,18 @@ export async function initializeServices(): Promise<void> {
       console.warn('Failed to initialize Datadog Logs:', error);
     }
   }
-  
+
+  // Initialize LogRocket in the browser if configured
+  if (config.logRocket.enabled && typeof window !== 'undefined') {
+    try {
+      const LogRocket = (await import('logrocket')).default;
+      LogRocket.init(config.logRocket.id!);
+      console.log('✅ LogRocket initialized');
+    } catch (error) {
+      console.warn('Failed to initialize LogRocket:', error);
+    }
+  }
+
   if (config.app.isDevelopment) {
     console.log('🔧 Services initialized for development environment');
   }
@@ -177,6 +193,10 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   const ddEnv = env.NEXT_PUBLIC_DD_ENV || env.DD_ENV || nodeEnv;
   const datadogEnabled = !!ddClientToken || !!env.DD_SERVICE;
 
+  // LogRocket Configuration
+  const logRocketId = env.NEXT_PUBLIC_LOGROCKET_ID;
+  const logRocketEnabled = !!logRocketId && !isPlaceholderValue(logRocketId);
+
   return {
     supabase: {
       url: supabaseConfigured ? supabaseUrl! : 'https://placeholder.supabase.co',
@@ -200,6 +220,10 @@ export function getEnvironmentConfig(): EnvironmentConfig {
       service: ddService,
       env: ddEnv,
       enabled: datadogEnabled
+    },
+    logRocket: {
+      id: logRocketId,
+      enabled: logRocketEnabled
     },
     app: {
       environment: nodeEnv,
@@ -230,6 +254,14 @@ export function validateProductionEnvironment(): void {
     if (!config.reown.isConfigured) {
       warnings.push('Reown wallet is not configured - wallet features disabled');
     }
+
+    if (!config.datadog.enabled) {
+      warnings.push('Datadog logging is not configured');
+    }
+
+    if (!config.logRocket.enabled) {
+      warnings.push('LogRocket is not configured');
+    }
     
     if (warnings.length > 0) {
       console.warn('⚠️ Development Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
@@ -251,6 +283,10 @@ export function validateProductionEnvironment(): void {
 
   if (!config.datadog.enabled) {
     errors.push('Datadog logging must be configured in production (NEXT_PUBLIC_DD_CLIENT_TOKEN)');
+  }
+
+  if (!config.logRocket.enabled) {
+    errors.push('LogRocket must be configured in production (NEXT_PUBLIC_LOGROCKET_ID)');
   }
   
   if (errors.length > 0) {
