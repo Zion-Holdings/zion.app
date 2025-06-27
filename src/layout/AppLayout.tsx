@@ -14,6 +14,7 @@ import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
 import ErrorOverlay from '@/components/ErrorOverlay';
 import { logError } from '@/utils/logError';
+import { useSessionDuration } from '@/hooks/useSessionDuration';
 import { useNavigationGestures } from '@/hooks/useNavigationGestures';
 
 function useSafePathname() {
@@ -32,6 +33,8 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
   // must be implemented in '@/context/auth/AuthContext.tsx' for this to work.
   // This is a placeholder integration as per instructions.
   const { user, isAuthenticated } = useAuth() || {}; // Added fallback to empty object for safety if useAuth is not ready
+  // Track how long users spend on each page
+  useSessionDuration();
   // Enable basic swipe gestures for navigation
   useNavigationGestures();
   const [isResendingEmail, setIsResendingEmail] = useState(false);

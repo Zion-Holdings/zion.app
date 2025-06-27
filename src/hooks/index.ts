@@ -20,4 +20,5 @@ export * from "./useAdvancedOnboardingStatus";
 export * from './useTokenBalance';
 export * from './useSkeletonTimeout';
 export * from './useCurrency';
+export * from './useSessionDuration';
 export * from './useNavigationGestures';

@@ -254,6 +254,30 @@
     "done": "Terminé",
     "done_desc": "Profitez d'une livraison sans tracas et du support pour vos solutions technologiques."
   },
+  "quote_form": {
+    "title": "Obtenez un Devis Maintenant",
+    "subtitle": "Demandez votre proposition commerciale instantanée et découvrez comment Zion peut révolutionner vos opérations informatiques",
+    "sent_title": "Demande de Devis Envoyée !",
+    "sent_desc": "Merci pour votre intérêt pour les services de Zion. Notre équipe préparera votre proposition commerciale personnalisée et vous contactera bientôt.",
+    "submit_another": "Envoyer une Autre Demande",
+    "labels": {
+      "name": "Nom",
+      "company": "Entreprise",
+      "email": "Email",
+      "phone": "Téléphone",
+      "interests": "Je suis intéressé par (sélectionnez tout ce qui s'applique)",
+      "interest_ai": "Produits/Services IA",
+      "interest_equipment": "Équipement informatique",
+      "interest_servers": "Solutions de Serveurs",
+      "interest_storage": "Solutions de Stockage",
+      "interest_networking": "Réseautage",
+      "interest_support": "Support 24h/24 7j/7",
+      "interest_recycling": "Services de Recyclage",
+      "additional_details": "Détails supplémentaires"
+    },
+    "sending": "Envoi en cours...",
+    "submit": "Obtenez Votre Proposition Commerciale Gratuite"
+  },
   "login": "Connexion",
   "signup": "S'inscrire"
 }
