@@ -17,6 +17,7 @@ export async function register() {
     console.warn("instrumentation.ts: Sentry DSN is not defined or is a placeholder; Server-side Sentry will not capture errors.");
     console.warn("instrumentation.ts: The SENTRY_DSN environment variable is handled by Netlify and should be configured in the Netlify environment settings.");
     return;
+  }
 
   console.log(`instrumentation.ts: Initializing Sentry for server-side. Release: ${SENTRY_RELEASE}, Env: ${SENTRY_ENVIRONMENT}`);
 
@@ -63,5 +64,4 @@ export async function register() {
     // debug: process.env.NODE_ENV === 'development',
   });
   //console.log("instrumentation.ts: Server-side Sentry initialization SKIPPED to debug timeout.");
-}
 }
