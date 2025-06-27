@@ -13,6 +13,7 @@ import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
 import ErrorOverlay from '@/components/ErrorOverlay';
 import { logError } from '@/utils/logError';
+import { useSessionDuration } from '@/hooks/useSessionDuration';
 
 function useSafePathname() {
   const router = useRouter();
@@ -30,6 +31,8 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
   // must be implemented in '@/context/auth/AuthContext.tsx' for this to work.
   // This is a placeholder integration as per instructions.
   const { user, isAuthenticated } = useAuth() || {}; // Added fallback to empty object for safety if useAuth is not ready
+  // Track how long users spend on each page
+  useSessionDuration();
   const [isResendingEmail, setIsResendingEmail] = useState(false);
   const [resendStatusMessage, setResendStatusMessage] = useState('');
   const { loading, error, setError } = useGlobalLoader();
