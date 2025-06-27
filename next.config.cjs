@@ -118,7 +118,7 @@ const nextConfig = {
     ],
     domains: ['images.unsplash.com', 'via.placeholder.com', 'localhost', 'cdn.zion.org', 'app.ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 31536000,
   },
 
   compiler: {
