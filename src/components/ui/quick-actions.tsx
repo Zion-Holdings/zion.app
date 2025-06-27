@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { logError } from '@/utils/productionLogger';
 import { 
   Zap, 
   Download, 
@@ -32,7 +33,7 @@ export function QuickActions() {
     try {
       await action();
     } catch (error) {
-      logError('Failed to execute action ${actionId}:', { data: error });
+      logError(`Failed to execute action ${actionId}:`, { data: error });
     } finally {
       setIsProcessing(null);
     }

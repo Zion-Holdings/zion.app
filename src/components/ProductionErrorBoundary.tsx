@@ -57,7 +57,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    logError('ProductionErrorBoundary caught an error:', error, errorInfo);
+    logError('ProductionErrorBoundary caught an error:', error, { componentStack: errorInfo.componentStack });
     
     if (ENV_CONFIG.sentry.isConfigured) {
       Sentry.withScope((scope) => {

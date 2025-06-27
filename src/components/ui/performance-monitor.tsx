@@ -52,8 +52,10 @@ export function PerformanceMonitor() {
         new PerformanceObserver((list) => {
           const entries = list.getEntries();
           const lastEntry = entries[entries.length - 1];
-          newMetrics.largestContentfulPaint = lastEntry.startTime;
-          setMetrics({ ...newMetrics });
+          if (lastEntry) {
+            newMetrics.largestContentfulPaint = lastEntry.startTime;
+            setMetrics({ ...newMetrics });
+          }
         }).observe({ entryTypes: ['largest-contentful-paint'] });
       }
 

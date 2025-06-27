@@ -205,7 +205,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
             if (session?.user && (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'USER_UPDATED')) {
                 setIsLoading(true); // Set loading before starting async profile fetch
                 if (process.env.NODE_ENV === 'development') {
-                    logInfo('[AuthProvider DEBUG] Session and user found, and event is appropriate. User ID:', session.user.id, 'Event:', event);
+                    logInfo('[AuthProvider DEBUG] Session and user found, and event is appropriate. User ID:', { data: { userId: session.user.id, event: event } });
                 }
 
                 try {

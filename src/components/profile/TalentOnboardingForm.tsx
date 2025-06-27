@@ -3,6 +3,7 @@ import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from 'next/router';
+import { logError } from '@/utils/productionLogger';
 import {
   Form, FormControl, FormField, FormItem, FormLabel, FormMessage 
 } from "@/components/ui/form";

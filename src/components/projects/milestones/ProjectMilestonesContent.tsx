@@ -8,10 +8,9 @@ import { useJobDetails } from '@/hooks/useJobDetails';
 import { useAuth } from '@/hooks/useAuth';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useDisputeCheck } from '@/hooks/useDisputeCheck';
-
-import { 
 import { logError } from '@/utils/productionLogger';
 
+import { 
   MilestoneActivities,
   MilestoneManager,
   MilestoneCreator,

@@ -2,6 +2,7 @@ import React, { createContext, useState, useContext, useEffect, ReactNode } from
 import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
+import { logInfo, logError } from '@/utils/productionLogger';
 
 // Analytics event types
 export type AnalyticsEventType = 
@@ -85,7 +86,7 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
       }]);
       
       if (process.env.NODE_ENV === 'development') {
-        logInfo('Analytics event tracked: ${type}', { data: metadata });
+        logInfo(`Analytics event tracked: ${type}`, { data: metadata });
       }
     } catch (error) {
       if (process.env.NODE_ENV === 'development') {
