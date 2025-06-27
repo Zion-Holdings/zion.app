@@ -151,7 +151,11 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
     - Pact-based contract tests verify that front-end routes match available API endpoints.
     - Start the stub server with `node server/stubServer.js` and run `npm test`.
 
-12. **Privacy Policy & Terms (login-gated):**
+12. **Cross-Browser Testing:**
+    - Set `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` environment variables.
+    - Run `npm run test:browserstack` to execute Playwright tests on BrowserStack across desktop and mobile browsers.
+
+13. **Privacy Policy & Terms (login-gated):**
     - AI-Prompt: "Generate a plain-language summary (≤ 200 words) of a standard tech marketplace privacy policy aimed at U.S. users."
     - AI-Prompt: "Write an FAQ with 5 common questions users ask about Zion’s Terms of Service."
 13. **Frequently Asked Questions:** See [docs/FAQ.md](docs/FAQ.md) or the in-app Help Center for quick answers.
