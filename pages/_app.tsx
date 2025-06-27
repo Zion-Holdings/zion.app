@@ -21,6 +21,7 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { ApiErrorBoundary } from '@/components/ApiErrorBoundary';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
+import { BetaBanner } from '@/components/BetaBanner';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
@@ -312,21 +313,24 @@ function MyApp({ Component, pageProps }: AppProps) {
                                                 key={router.asPath}
                                                 {...pageProps}
                                               />
-                                            </ErrorBoundary>
-                                            <ErrorResetOnRouteChange />
-                                            <ToastContainer />
-                                            <OfflineIndicator />
-                                            <IntercomChat />
-                                          </AppLayout>
-                                        </ThemeProvider>
-                                      </AnalyticsProvider>
-                                    </CartProvider>
-                                  </WalletProvider>
-                                </LanguageProviderWrapper>
-                              </WhitelabelProvider>
-                            </AuthProvider>
-                          </ErrorProvider>
-                        </I18nextProvider>
+                                              <ErrorBoundary>
+                                                <Component key={router.asPath} {...pageProps} />
+                                              </ErrorBoundary>
+                                              <ErrorResetOnRouteChange />
+                                              <ToastContainer />
+                                              <OfflineIndicator />
+                                              <BetaBanner />
+                                              <IntercomChat />
+                                            </AppLayout>
+                                          </ThemeProvider>
+                                        </AnalyticsProvider>
+                                      </CartProvider>
+                                    </WalletProvider>
+                                  </LanguageProviderWrapper>
+                                </WhitelabelProvider>
+                              </AuthProvider>
+                            </ErrorProvider>
+                          </I18nextProvider>
                       </ReduxProvider>
                     </ApiErrorBoundary>
                   </QueryClientProvider>

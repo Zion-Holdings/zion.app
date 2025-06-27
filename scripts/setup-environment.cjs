@@ -11,6 +11,8 @@ const path = require('path');
 const envExample = `# Next.js Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_API_URL=http://localhost:3000/api
+NEXT_PUBLIC_APP_ENV=development
+NEXT_PUBLIC_APP_ENV=production
 
 # Supabase Configuration (Required)
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here

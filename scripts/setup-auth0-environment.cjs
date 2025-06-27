@@ -12,6 +12,8 @@ const crypto = require('crypto');
 const auth0EnvExample = `# Next.js Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_API_URL=http://localhost:3000/api
+NEXT_PUBLIC_APP_ENV=development
+NEXT_PUBLIC_APP_ENV=production
 
 # Auth0 Configuration (Required)
 # Get these from your Auth0 application dashboard: https://manage.auth0.com/dashboard
