@@ -16,7 +16,7 @@ The project is structured as a monorepo and includes:
 -   **Blockchain/DAO Components:** Directories like `dao/` and `token/` suggest features related to Decentralized Autonomous Organizations and cryptocurrency tokens.
 -   **SDK:** A software development kit is present in `sdk/`, likely for interacting with Zion platform services.
 -   **Documentation:** General documentation is in `docs/`, with specific component documentation potentially within their respective directories.
--   **Testing:** Extensive testing suites using Jest, Vitest, and Cypress are in `__tests__/` and `cypress/`.
+-   **Testing:** Extensive test suites using Vitest and Cypress are in `tests/` and `cypress/`. See **[docs/QA_TESTING_CHECKLIST.md](docs/QA_TESTING_CHECKLIST.md)** for common QA steps.
 
 ## Key Technologies
 
