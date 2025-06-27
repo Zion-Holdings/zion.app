@@ -60,10 +60,12 @@ import { AnimatePresence } from 'framer-motion';
 // Configure fonts with optimal loading strategies
 const inter = Inter({
   subsets: ['latin'],
+  weight: ['400', '600', '700'],
   display: 'swap',
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: true,
   variable: '--font-inter',
+  preload: true, // Enable automatic preloading
 });
 
 const poppins = Poppins({
@@ -73,6 +75,7 @@ const poppins = Poppins({
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: true,
   variable: '--font-poppins',
+  preload: true, // Enable automatic preloading
 });
 const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -219,39 +222,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        {/* Critical font preloading to prevent CLS */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-          as="style"
-          onLoad={(e) => {
-            const target = e.target as HTMLLinkElement;
-            target.onload = null;
-            target.rel = 'stylesheet';
-          }}
-        />
-        <noscript>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-            rel="stylesheet"
-          />
-        </noscript>
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-          as="style"
-          onLoad={(e) => {
-            const target = e.target as HTMLLinkElement;
-            target.onload = null;
-            target.rel = 'stylesheet';
-          }}
-        />
-        <noscript>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-            rel="stylesheet"
-          />
-        </noscript>
+        {/* Next.js font optimization handles preloading automatically */}
         {/* Font optimization CSS to prevent CLS */}
         <style jsx global>{`
           :root {
