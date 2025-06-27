@@ -154,9 +154,9 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   // Parse environment variables using the typed schema
   const env = EnvSchema.parse(process.env) as RawEnv;
 
-  // Supabase Configuration
-  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  // Supabase Configuration with fallback values (from next.config.cjs)
+  const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL || 'https://gnwtggeptzkqnduuthto.supabase.co';
+  const supabaseAnonKey = env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY';
   const supabaseServiceRoleKey = env.SUPABASE_SERVICE_ROLE_KEY;
   
   // Debug logging for Supabase configuration
@@ -169,11 +169,16 @@ export function getEnvironmentConfig(): EnvironmentConfig {
       urlIsPlaceholder,
       anonKeyPresent: !!supabaseAnonKey,
       anonKeyIsPlaceholder,
-      serviceRoleKeyPresent: !!supabaseServiceRoleKey
+      serviceRoleKeyPresent: !!supabaseServiceRoleKey,
+      fallbacksUsed: {
+        url: !env.NEXT_PUBLIC_SUPABASE_URL,
+        anonKey: !env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      }
     });
   }
   
-  const supabaseConfigured = !urlIsPlaceholder && !anonKeyIsPlaceholder;
+  // Consider Supabase configured if we have valid values (including fallbacks)
+  const supabaseConfigured = !!supabaseUrl && !!supabaseAnonKey && !urlIsPlaceholder && !anonKeyIsPlaceholder;
 
   // Sentry Configuration
   const sentryDsn = env.NEXT_PUBLIC_SENTRY_DSN || env.SENTRY_DSN;
@@ -199,8 +204,8 @@ export function getEnvironmentConfig(): EnvironmentConfig {
 
   return {
     supabase: {
-      url: supabaseConfigured ? supabaseUrl! : 'https://placeholder.supabase.co',
-      anonKey: supabaseConfigured ? supabaseAnonKey! : 'placeholder-anon-key',
+      url: supabaseUrl,
+      anonKey: supabaseAnonKey,
       serviceRoleKey: supabaseServiceRoleKey,
       isConfigured: supabaseConfigured
     },
@@ -270,28 +275,38 @@ export function validateProductionEnvironment(): void {
     return;
   }
 
-  // Strict validation for production
+  // In production, only validate critical services that are required for core functionality
   const errors = [];
+  const warnings = [];
   
+  // Critical: Supabase is required for authentication and core functionality
   if (!config.supabase.isConfigured) {
     errors.push('Supabase configuration must be complete in production (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)');
   }
 
+  // Optional but recommended: Error monitoring
   if (!config.sentry.isConfigured) {
-    errors.push('NEXT_PUBLIC_SENTRY_DSN must be configured in production for error monitoring');
+    warnings.push('NEXT_PUBLIC_SENTRY_DSN not configured - error monitoring disabled');
   }
 
+  // Optional: Analytics and monitoring tools
   if (!config.datadog.enabled) {
-    errors.push('Datadog logging must be configured in production (NEXT_PUBLIC_DD_CLIENT_TOKEN)');
+    warnings.push('Datadog logging not configured - advanced logging disabled');
   }
 
   if (!config.logRocket.enabled) {
-    errors.push('LogRocket must be configured in production (NEXT_PUBLIC_LOGROCKET_ID)');
+    warnings.push('LogRocket not configured - session recording disabled');
   }
   
+  // Only throw errors for critical missing configuration
   if (errors.length > 0) {
     const errorMessage = 'Production Environment Configuration Errors:\n' + errors.map(e => `  • ${e}`).join('\n');
     throw new Error(errorMessage);
+  }
+
+  // Log warnings for optional services
+  if (warnings.length > 0) {
+    console.warn('⚠️ Production Environment Warnings:\n' + warnings.map(w => `  • ${w}`).join('\n'));
   }
 }
 

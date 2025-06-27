@@ -11,6 +11,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { AnalyticsProvider } from '@/context/AnalyticsContext'; // Added AnalyticsProvider
 import { CartProvider } from '@/context/CartContext'; // Added CartProvider
 import { ErrorProvider } from '@/context/ErrorContext';
+import { FeedbackProvider } from '@/context/FeedbackContext'; // Added FeedbackProvider
 import ErrorResetOnRouteChange from '@/components/ErrorResetOnRouteChange';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
@@ -273,24 +274,26 @@ function MyApp({ Component, pageProps }: AppProps) {
                                   <WalletProvider>
                                     <CartProvider>
                                       <AnalyticsProvider>
-                                        <ThemeProvider>
-                                          <AppLayout>
-                                            <RouteChangeHandler
-                                              resetScrollOnChange={true}
-                                              forceRerender={true}
-                                            />
-                                            <ErrorBoundary>
-                                              <Component
-                                                key={router.asPath}
-                                                {...pageProps}
+                                        <FeedbackProvider>
+                                          <ThemeProvider>
+                                            <AppLayout>
+                                              <RouteChangeHandler
+                                                resetScrollOnChange={true}
+                                                forceRerender={true}
                                               />
-                                            </ErrorBoundary>
-                                            <ErrorResetOnRouteChange />
-                                            <ToastContainer />
-                                            <OfflineIndicator />
-                                            <IntercomChat />
-                                          </AppLayout>
-                                        </ThemeProvider>
+                                              <ErrorBoundary>
+                                                <Component
+                                                  key={router.asPath}
+                                                  {...pageProps}
+                                                />
+                                              </ErrorBoundary>
+                                              <ErrorResetOnRouteChange />
+                                              <ToastContainer />
+                                              <OfflineIndicator />
+                                              <IntercomChat />
+                                            </AppLayout>
+                                          </ThemeProvider>
+                                        </FeedbackProvider>
                                       </AnalyticsProvider>
                                     </CartProvider>
                                   </WalletProvider>
