@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import SignupForm from '@/components/auth/SignupForm'; // Adjusted path assuming components are in src
+import SignupForm from '@/components/auth/SignupForm';
+import { fireEvent } from '@/lib/analytics';
 import { useRouter } from 'next/router';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 
 const RegisterPage = () => {
   const router = useRouter();
+
+  useEffect(() => {
+    fireEvent('signup_page_view');
+  }, []);
 
   const handleSuccess = () => {
     // Redirect to login or a verification pending page, as per app flow
