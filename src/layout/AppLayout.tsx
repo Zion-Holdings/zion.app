@@ -6,6 +6,8 @@ import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // A
 import { PrimaryNav } from "./PrimaryNav";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { BackToTopButton } from "@/components/BackToTopButton";
+import { FeedbackWidget } from "@/components/feedback/FeedbackWidget";
+import { SupportWidget } from "@/components/support/SupportWidget";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { Footer } from "@/components/Footer";
 import { AnalyticsConsentBanner } from "@/components/AnalyticsConsentBanner";
@@ -113,6 +115,8 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
         {children}
       </main>
       <BackToTopButton />
+      <FeedbackWidget />
+      <SupportWidget />
       {!hideFooter && <Footer />}
       <AnalyticsConsentBanner />
     </div>
