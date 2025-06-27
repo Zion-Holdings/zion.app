@@ -363,7 +363,7 @@ export default function SearchResultsPage({
                 description: result.description || '',
                 price: result.price || 0,
                 images: result.image ? [result.image] : [],
-                rating: result.rating,
+                rating: result.rating || 0,
                 author: result.author
                   ? {
                       name: result.author.name,
