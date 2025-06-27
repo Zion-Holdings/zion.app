@@ -32,32 +32,64 @@ async function askZionGPT(prompt) {
   }
 }
 
-chrome.runtime.onMessage.addListener((message, sender) => {
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  // Validate sender to prevent unauthorized access
   if (sender.id !== chrome.runtime.id) {
     const errorMessage =
       `Receiving message from unauthorized sender. ` +
       `Sender ID: ${sender.id || 'N/A (sender.id is undefined, possibly a webpage)'}, ` +
       `Extension ID: ${chrome.runtime.id}`;
     console.error(errorMessage);
-    return Promise.resolve({ error: 'Unauthorized sender' });
+    sendResponse({ error: 'Unauthorized sender' });
+    return false; // Don't keep the message channel open
   }
 
+  // Handle different message types
   if (message.type === 'ask') {
-    return askZionGPT(message.prompt);
+    // Handle async operation properly
+    askZionGPT(message.prompt)
+      .then(response => sendResponse(response))
+      .catch(error => {
+        console.error('Ask ZionGPT error:', error);
+        sendResponse({ error: error.message || 'Failed to process request' });
+      });
+    return true; // Keep the message channel open for async response
   }
 
   if (message.type === 'post-job') {
-    chrome.tabs.create({ url: `${BASE_URL}/jobs/new` });
-    return Promise.resolve({ ok: true });
+    try {
+      chrome.tabs.create({ url: `${BASE_URL}/jobs/new` });
+      sendResponse({ ok: true });
+    } catch (error) {
+      console.error('Post job error:', error);
+      sendResponse({ error: 'Failed to open job posting page' });
+    }
+    return false; // Synchronous response
   }
+  
   if (message.type === 'resume-search') {
-    chrome.tabs.create({ url: `${BASE_URL}/talent` });
-    return Promise.resolve({ ok: true });
+    try {
+      chrome.tabs.create({ url: `${BASE_URL}/talent` });
+      sendResponse({ ok: true });
+    } catch (error) {
+      console.error('Resume search error:', error);
+      sendResponse({ error: 'Failed to open talent page' });
+    }
+    return false; // Synchronous response
   }
+  
   if (message.type === 'view-notifications') {
-    chrome.tabs.create({ url: `${BASE_URL}/notifications` });
-    return Promise.resolve({ ok: true });
+    try {
+      chrome.tabs.create({ url: `${BASE_URL}/notifications` });
+      sendResponse({ ok: true });
+    } catch (error) {
+      console.error('View notifications error:', error);
+      sendResponse({ error: 'Failed to open notifications page' });
+    }
+    return false; // Synchronous response
   }
 
-  return Promise.resolve({ error: 'Unknown message type' });
+  // Unknown message type
+  sendResponse({ error: 'Unknown message type' });
+  return false; // Don't keep the message channel open
 });

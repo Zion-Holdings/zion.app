@@ -135,15 +135,25 @@ class ProductionLogger {
 
       // Send to custom logging endpoint
       if (process.env.NODE_ENV === 'production') {
-        await fetch('/api/logs', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ entries }),
-        }).catch(() => {
-          // Silent fail for logging endpoint
-        });
+        try {
+          const response = await fetch('/api/logs', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ entries }),
+          });
+          
+          if (!response.ok) {
+            // Only log to console if the logging endpoint fails
+            // to prevent circular logging
+            console.warn(`Logging endpoint returned ${response.status}`);
+          }
+        } catch (error) {
+          // Silent fail for logging endpoint to prevent circular errors
+          // Only log in development mode (this check is outside the production block)
+          console.warn('Failed to send logs to endpoint:', error);
+        }
       }
     } catch (error) {
       // Fallback to console for logging service failures

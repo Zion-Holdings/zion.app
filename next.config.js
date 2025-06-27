@@ -72,6 +72,8 @@ const nextConfig = {
     loader: 'default',
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Add domains that are safe to optimize
+    domains: [],
     remotePatterns: [
       {
         protocol: 'https',
@@ -185,6 +187,27 @@ const nextConfig = {
         protocol: 'http',
         hostname: 'localhost',
         port: '3000',
+        pathname: '/**',
+      },
+      // Support for Netlify preview URLs
+      {
+        protocol: 'https',
+        hostname: '*.netlify.app',
+        port: '',
+        pathname: '/**',
+      },
+      // Support for Netlify branch previews
+      {
+        protocol: 'https',
+        hostname: '*--*.netlify.app',
+        port: '',
+        pathname: '/**',
+      },
+      // Support for placeholder.co
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+        port: '',
         pathname: '/**',
       },
     ],
