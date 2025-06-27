@@ -89,7 +89,13 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
 
 2.  **Clone the repository.**
 
-3.  **Install frontend dependencies:** `npm install` in the root directory.
+3.  **Install project dependencies:** Run the setup script with your preferred
+    package manager. Example:
+    - `./setup.sh npm` *(default)*
+    - `./setup.sh pnpm`
+    - `./setup.sh yarn`
+    - `./setup.sh bun`
+    Ensure you have internet connectivity so dependencies can be downloaded.
 
 4.  **Configure environment variables:**
     - For **local development**: Create `.env.local` based on environment variable requirements above
