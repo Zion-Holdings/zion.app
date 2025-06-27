@@ -38,7 +38,8 @@ const nextConfig = {
         'node_modules/@esbuild/linux-x64',
       ],
     },
-    optimizeCss: true,
+    // Temporarily disabled to fix constructor errors
+    // optimizeCss: true,
     esmExternals: true,
   },
 

@@ -15,11 +15,15 @@ interface ErrorDetails {
 
 const DEFAULT_ENDPOINT = 'http://localhost:3001/webhook/trigger-fix';
 
- export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<void> {
+export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<void> {
   const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;
 
   if (!webhookUrl || webhookUrl === '') {
-    console.warn('NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not set or is empty. Skipping error reporting.');
+    // Only log once per session to avoid spam
+    if (typeof window !== 'undefined' && !sessionStorage.getItem('webhook-warning-shown')) {
+      console.debug('NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not configured. Error reporting to webhook disabled.');
+      sessionStorage.setItem('webhook-warning-shown', 'true');
+    }
     return;
   }
 
@@ -42,5 +46,18 @@ const DEFAULT_ENDPOINT = 'http://localhost:3001/webhook/trigger-fix';
     }
   } catch (error) {
     console.error(`Error sending report from ${errorDetails.source}:`, error);
+  }
+}
+
+export function reportError(error: Error | string, context?: Record<string, any>) {
+  const webhookUrl = process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL;
+  
+  if (!webhookUrl || webhookUrl.trim() === '') {
+    // Only log once per session to avoid spam
+    if (!sessionStorage.getItem('webhook-warning-shown')) {
+      console.debug('NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL is not configured. Error reporting to webhook disabled.');
+      sessionStorage.setItem('webhook-warning-shown', 'true');
+    }
+    return;
   }
 }

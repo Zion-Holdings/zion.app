@@ -134,6 +134,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "cors": "^2.8.5",
+    "critters": "^0.0.23",
     "datastore-core": "^10.0.4",
     "date-fns": "^3.6.0",
     "dd-trace": "^3.58.0",
