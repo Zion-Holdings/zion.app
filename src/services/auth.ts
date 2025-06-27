@@ -1,7 +1,7 @@
 import axios from 'axios';
+import { logError } from '@/utils/productionLogger';
 
 export async function register(name: string, email: string, password: string) {
-import { logError } from '@/utils/productionLogger';
 
   try {
     const res = await axios.post('/api/auth/register', { name, email, password });

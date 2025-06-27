@@ -1,7 +1,7 @@
-import { AxiosResponse } from 'axios';
+// import { AxiosResponse } from 'axios';
 import apiClient from './apiClient';
 
-export async function apiHelper<T>(request: () => Promise<AxiosResponse<T>>): Promise<{ data: T | null; error: string | null }> {
+export async function apiHelper<T>(request: () => Promise<any>): Promise<{ data: T | null; error: string | null }> {
   try {
     const res = await request();
     return { data: res.data, error: null };

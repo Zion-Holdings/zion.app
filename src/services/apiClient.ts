@@ -139,7 +139,7 @@ axiosRetry(apiClient, {
 
 apiClient.interceptors.response.use(
   (response: any) => response,
-  async (error) => {
+  async (error: any) => {
     const status = error.response?.status;
 
     if (status === 401) {

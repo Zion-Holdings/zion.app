@@ -37,6 +37,19 @@ export interface SearchParams {
   filters?: Record<string, unknown>;
 }
 
+export interface SearchFilters {
+  query?: string;
+  search?: string;
+  category?: string;
+  tags?: string[];
+  priceRange?: { min: number; max: number };
+  type?: string | null;
+  skills?: string[] | null;
+  location?: string | null;
+  budget?: { min: number; max: number } | null;
+  availability?: string | null;
+}
+
 export interface UserProfile {
   id: string;
   email: string;

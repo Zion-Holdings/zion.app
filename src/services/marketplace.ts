@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosError } from 'axios';
+import axios from 'axios';
 import * as Sentry from '@sentry/nextjs';
 import { logger } from '@/utils/logger';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
@@ -96,7 +96,7 @@ export interface Product {
 }
 
 // Use internal Next.js API routes instead of external URLs
-const createMarketplaceClient = (): AxiosInstance => {
+const createMarketplaceClient = (): any => {
   const client = axios.create({
     baseURL: '', // Use relative URLs for internal API routes
     withCredentials: false,
@@ -104,13 +104,13 @@ const createMarketplaceClient = (): AxiosInstance => {
 
   // Request interceptor for debugging
   client.interceptors.request.use(
-    async (config) => {
+    async (config: any) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         logger.debug(`Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
       }
       return config;
     },
-    (error) => {
+    (error: any) => {
       if (process.env.NODE_ENV === 'development') {
         logger.error('Marketplace request interceptor error:', error);
       }
@@ -120,13 +120,13 @@ const createMarketplaceClient = (): AxiosInstance => {
 
   // Response interceptor with error logging
   client.interceptors.response.use(
-    (response) => {
+    (response: any) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
         logger.debug(`Marketplace API Response: ${response.status}`);
       }
       return response;
     },
-    (error: AxiosError) => {
+    (error: any) => {
       if (process.env.NODE_ENV === 'development') {
         logger.error('Marketplace API Error:', {
           message: error.message,
