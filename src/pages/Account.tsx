@@ -110,11 +110,11 @@ export const getServerSideProps: GetServerSideProps<AccountProps> = async ({ req
   const cookieHeader = req?.headers.cookie;
   const cookieString = Array.isArray(cookieHeader) ? cookieHeader[0] || '' : cookieHeader || '';
 
-  const headers = cookieString ? { cookie: cookieString } : {};
+  const headers = cookieString ? { cookie: cookieString } : undefined;
 
   const [userRes, ordersRes] = await Promise.all([
-    fetch(`${base}/api/users/me`, { headers }),
-    fetch(`${base}/api/orders?user_id=me`, { headers }),
+    fetch(`${base}/api/users/me`, headers ? { headers } : {}),
+    fetch(`${base}/api/orders?user_id=me`, headers ? { headers } : {}),
   ]);
 
   if (userRes.status === 401) {
