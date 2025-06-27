@@ -82,7 +82,7 @@ self.addEventListener('push', event => {
   const title = data.title || 'Zion Notification';
   const options = {
     body: data.body,
-    icon: '/logos/placeholder-logo.svg'
+    icon: '/logos/zion-logo.png'
   };
   event.waitUntil(self.registration.showNotification(title, options));
 });
@@ -93,7 +93,7 @@ self.addEventListener('push', event => {
   const title = data.title || 'New message';
   const options = {
     body: data.body,
-    icon: '/logos/placeholder-logo.svg',
+    icon: '/logos/zion-logo.png',
     data: data.url
   };
   event.waitUntil(self.registration.showNotification(title, options));
