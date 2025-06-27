@@ -30,6 +30,7 @@ interface SearchResult {
   };
   tags?: string[];
   category?: string;
+  date?: string;
 }
 
 interface SearchResultsPageProps {
@@ -39,10 +40,19 @@ interface SearchResultsPageProps {
   totalCount: number;
 }
 
+interface OfflineFilters {
+  sortBy?: string;
+  category?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  minRating?: number;
+}
+
 function offlineSearch(
   query: string,
   page = 1,
   limit = 12,
+  filters: OfflineFilters = {}
 ): { results: SearchResult[]; totalCount: number } {
   const term = query.toLowerCase().trim();
   const match = (text?: string) => text?.toLowerCase().includes(term);
@@ -67,6 +77,7 @@ function offlineSearch(
       : undefined,
     tags: p.tags,
     category: p.category,
+    date: p.createdAt,
   }));
 
   const talentResults = TALENT_PROFILES.filter(
@@ -86,6 +97,7 @@ function offlineSearch(
     author: { name: t.full_name, avatar: t.profile_picture_url },
     tags: t.skills,
     category: t.location,
+    date: undefined,
   }));
 
   const blogResults = BLOG_POSTS.filter(
@@ -103,10 +115,41 @@ function offlineSearch(
     image: b.featuredImage,
     tags: b.tags,
     category: 'Blog',
+    date: b.publishedDate,
   }));
 
-  const all = [...productResults, ...talentResults, ...blogResults];
-  all.sort((a, b) => a.title.localeCompare(b.title));
+  let all = [...productResults, ...talentResults, ...blogResults];
+
+  if (filters.category) {
+    all = all.filter(r => r.category === filters.category);
+  }
+  if (typeof filters.minPrice === 'number') {
+    all = all.filter(r => (r.price ?? 0) >= filters.minPrice!);
+  }
+  if (typeof filters.maxPrice === 'number') {
+    all = all.filter(r => (r.price ?? 0) <= filters.maxPrice!);
+  }
+  if (typeof filters.minRating === 'number') {
+    all = all.filter(r => (r.rating ?? 0) >= filters.minRating!);
+  }
+
+  if (filters.sortBy && filters.sortBy !== 'relevance') {
+    switch (filters.sortBy) {
+      case 'price_asc':
+        all.sort((a, b) => (a.price ?? 0) - (b.price ?? 0));
+        break;
+      case 'price_desc':
+        all.sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
+        break;
+      case 'rating':
+        all.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
+        break;
+      default:
+        break;
+    }
+  } else {
+    all.sort((a, b) => a.title.localeCompare(b.title));
+  }
   const start = (page - 1) * limit;
   const paginated = all.slice(start, start + limit);
   return { results: paginated, totalCount: all.length };
@@ -139,9 +182,18 @@ export default function SearchResultsPage({
       setLoading(true);
       console.log(`Fetching search results for: ${searchTerm}, page: ${page}`);
 
-      const response = await fetch(
-        `/api/search?query=${encodeURIComponent(searchTerm)}&page=${page}&limit=12&sort=${sortBy}`,
-      );
+      const params = new URLSearchParams({
+        query: searchTerm,
+        page: String(page),
+        limit: '12',
+        sort: sortBy,
+      });
+      if (categoryFilter !== 'all') params.append('category', categoryFilter);
+      if (minPrice) params.append('minPrice', minPrice);
+      if (maxPrice) params.append('maxPrice', maxPrice);
+      if (minRating) params.append('minRating', minRating);
+
+      const response = await fetch(`/api/search?${params.toString()}`);
 
       if (!response.ok) {
         throw new Error(`Search API error: ${response.status}`);
@@ -159,7 +211,13 @@ export default function SearchResultsPage({
       }
     } catch (error) {
       console.error('Error fetching search results:', error);
-      const offline = offlineSearch(searchTerm, page, 12);
+      const offline = offlineSearch(searchTerm, page, 12, {
+        sortBy,
+        category: categoryFilter !== 'all' ? categoryFilter : undefined,
+        minPrice: minPrice ? Number(minPrice) : undefined,
+        maxPrice: maxPrice ? Number(maxPrice) : undefined,
+        minRating: minRating ? Number(minRating) : undefined,
+      });
       setTotalResults(offline.totalCount);
       if (page === 1) {
         setResults(offline.results);
@@ -545,7 +603,7 @@ export const getServerSideProps: GetServerSideProps<
       console.error(
         `Search API error: ${response.status} ${response.statusText}`,
       );
-      const offline = offlineSearch(query, 1, 12);
+      const offline = offlineSearch(query, 1, 12, { sortBy: 'relevance' });
       results = offline.results;
       totalCount = offline.totalCount;
     }
@@ -560,7 +618,7 @@ export const getServerSideProps: GetServerSideProps<
     };
   } catch (error) {
     console.error('Error fetching search results:', error);
-    const offline = offlineSearch(query, 1, 12);
+    const offline = offlineSearch(query, 1, 12, { sortBy: 'relevance' });
 
     return {
       props: {
