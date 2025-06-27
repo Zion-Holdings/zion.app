@@ -23,6 +23,7 @@ This document outlines the multi-layer safeguards implemented to prevent environ
   - Detects placeholder values using regex patterns
   - Validates Supabase URL format
   - Checks for minimum key lengths
+  - Warns if `.env.local` file is missing
   - Provides specific error messages and setup instructions
 
 **Usage**:

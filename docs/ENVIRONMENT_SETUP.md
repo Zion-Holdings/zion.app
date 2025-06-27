@@ -46,6 +46,7 @@ Run the environment validation script:
 ```bash
 npm run env:validate
 ```
+The validator now warns if a `.env.local` file is missing so you can create one before running the project.
 
 ## Production Setup
 
