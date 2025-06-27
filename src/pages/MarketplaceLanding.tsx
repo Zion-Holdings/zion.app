@@ -43,7 +43,9 @@ export default function MarketplaceLanding() {
           <ProductCard
             key={p.id}
             product={p}
-            onBuy={() => router.push(`/checkout/${p.id}`)} // Changed to router.push
+            onBuy={async () => {
+              await router.push(`/checkout/${p.id}`);
+            }}
             buyDisabled
           />
         ))}

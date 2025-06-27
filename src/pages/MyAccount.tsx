@@ -115,12 +115,15 @@ export const getServerSideProps: GetServerSideProps<AccountProps> = async ({
 }) => {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
+  const cookieValue = req?.headers.cookie;
+  const cookieString = Array.isArray(cookieValue) ? cookieValue.join('; ') : cookieValue || '';
+
   const [userRes, ordersRes] = await Promise.all([
     fetch(`${base}/api/users/me`, {
-      headers: { cookie: req?.headers.cookie || '' },
+      headers: { cookie: cookieString },
     }),
     fetch(`${base}/api/orders?user_id=me`, {
-      headers: { cookie: req?.headers.cookie || '' },
+      headers: { cookie: cookieString },
     }),
   ]);
 

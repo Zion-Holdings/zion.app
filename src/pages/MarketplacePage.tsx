@@ -44,7 +44,6 @@ const MarketplaceInsights = ({ stats }: { stats: any }) => (
     </CardContent>
   </Card>
 );
-};
 
 // Filter controls
 const MarketplaceFilterControls = ({
@@ -129,7 +128,8 @@ const MarketplaceCard = ({ product, onViewDetails, onAddToCart }: { product: Pro
       </div>
     </CardContent>
   </Card>
-);
+  );
+};
 
 // Loading grid
 const MarketplaceLoadingGrid = ({ count = 8 }: { count?: number }) => (

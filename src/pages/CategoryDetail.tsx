@@ -223,17 +223,15 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
       });
       
       // Navigate to the quote request page with the listing information
-      router.push("/request-quote", {
-        state: { 
-          serviceType: listing.category,
-          specificItem: {
-            id: listing.id,
-            title: listing.title,
-            category: listing.category,
-            image: listing.images?.[0]
-          }
-        }
+      const queryParams = new URLSearchParams({
+        serviceType: listing.category,
+        itemId: listing.id,
+        itemTitle: listing.title,
+        itemCategory: listing.category,
+        ...(listing.images?.[0] && { itemImage: listing.images[0] })
       });
+      
+      router.push(`/request-quote?${queryParams.toString()}`);
     }
   };
 

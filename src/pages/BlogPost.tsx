@@ -57,7 +57,7 @@ export default function BlogPost() {
         ).slice(0, 3);
         setRelatedPosts(related);
       } else {
-        router.push('/blog', { replace: true });
+        router.replace('/blog');
       }
       setIsLoading(false);
     };
