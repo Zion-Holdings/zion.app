@@ -35,7 +35,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (req.method === 'POST') {
     try {
-      const { productId, rating, comment, userId } = req.body || {};
+      const { productId, rating, comment, userId } = (req.body as { productId?: string; rating?: number; comment?: string; userId?: string }) || {};
 
       if (!productId || typeof productId !== 'string') {
         return res.status(400).json({ error: 'productId is required' });

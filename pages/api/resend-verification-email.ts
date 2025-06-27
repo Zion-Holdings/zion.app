@@ -30,18 +30,20 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (authHeader) {
       try {
         const authHeaderString = Array.isArray(authHeader) ? authHeader[0] : authHeader;
-        const token = authHeaderString.replace('Bearer ', '');
-        const { data: { user }, error: userError } = await supabase.auth.getUser(token);
-        
-        if (!userError && user?.email) {
-          emailToResend = user.email; // Use authenticated user's email
+        if (authHeaderString) {
+          const token = authHeaderString.replace('Bearer ', '');
+          const { data: { user }, error: userError } = await supabase.auth.getUser(token);
+          
+          if (!userError && user?.email) {
+            emailToResend = user.email; // Use authenticated user's email
+          }
         }
       } catch (authError) {
         console.warn('Auth validation failed, proceeding with provided email:', authError);
       }
     }
 
-    if (!emailToResend) {
+    if (!emailToResend || typeof emailToResend !== 'string') {
       return res.status(400).json({ error: 'Email address is required' });
     }
 
