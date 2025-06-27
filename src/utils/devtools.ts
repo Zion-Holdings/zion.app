@@ -1,5 +1,6 @@
-export async function enableDevToolsInStaging() {
 import { logInfo, logError } from '@/utils/productionLogger';
+
+export async function enableDevToolsInStaging() {
 
   // Only attempt to load in development, or if explicitly enabled via NEXT_PUBLIC_DEVTOOLS
   const isDev =

@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== 'production' && typeof document !== 'undefined') {
       const classList = (el as Element).className?.split(' ').filter(Boolean);
       const clash = classList.filter((v, i, a) => a.indexOf(v) !== i);
       if (clash.length) {
-        logWarn('Duplicate CSS class detected', el, clash);
+        logWarn('Duplicate CSS class detected', { element: el, duplicates: clash });
       }
     });
   }, 1000);

@@ -275,7 +275,7 @@ class GlobalToastManager {
     // Log error toasts for debugging
     if (toast.type.includes('error')) {
       try {
-        logError(new Error(toast.message), { 
+        logError(toast.message, new Error(toast.message), { 
           context: 'globalToastManager',
           toastType: toast.type,
           priority: toast.priority,

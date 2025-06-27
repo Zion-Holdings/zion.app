@@ -39,7 +39,7 @@ class DevelopmentLogger {
         window.Sentry.captureException(errorObj, { extra: context });
       }
     } else {
-      prodLogError(`[ERROR] ${message}`, error, context ? context : '');
+      prodLogError(`[ERROR] ${message}`, error, context);
     }
   }
 

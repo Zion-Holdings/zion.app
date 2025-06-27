@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { logError } from "@/utils/productionLogger";
 
-export interface {
+export interface SignupPayload {
   email: string;
   password: string;
   name?: string;

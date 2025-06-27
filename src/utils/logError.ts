@@ -1,4 +1,4 @@
-export type { ErrorPageProps, RetryConfig }; 
+// Types exported from other modules as needed 
 import { captureException } from './sentry';
 import { sendErrorToBackend } from './customErrorReporter';
 import { generateTraceId } from './generateTraceId';
@@ -85,7 +85,7 @@ export function logError(
       });
     }
   } catch (err) {
-    prodLogError('Failed to report error to Sentry:', err, context?.componentStack);
+    prodLogError('Failed to report error to Sentry:', err, { componentStack: context?.componentStack });
   }
 
   try {
@@ -124,7 +124,7 @@ export function logError(
 
     // Non-blocking call
     sendErrorToBackend(errorDetails).catch(err => {
-      prodLogError('Error sending logError to backend:', err, context?.componentStack);
+      prodLogError('Error sending logError to backend:', err, { componentStack: context?.componentStack });
     });
 
   } catch (err) {

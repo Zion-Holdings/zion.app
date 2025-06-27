@@ -35,7 +35,7 @@ class Logger {
   }
 
   error(message: string, error?: Error | unknown, ...args: unknown[]): void {
-    logError(`[ERROR] ${message}`, error, ...args);
+    logError(`[ERROR] ${message}`, error, { args });
     
     // In production, also send to error monitoring service
     if (!this.isDevelopment && typeof window !== 'undefined') {
