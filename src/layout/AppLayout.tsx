@@ -6,6 +6,7 @@ import EmailVerificationBanner from '@/components/EmailVerificationBanner'; // A
 import { PrimaryNav } from "./PrimaryNav";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { BackToTopButton } from "@/components/BackToTopButton";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { Footer } from "@/components/Footer";
 import { AnalyticsConsentBanner } from "@/components/AnalyticsConsentBanner";
 import { SkipLink } from "@/components/SkipLink";
@@ -93,6 +94,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
         </>
       )}
       {!isAuthPage && <PrimaryNav />}
+      <ScrollProgressBar />
       <ScrollToTop />
       {loading && <LoaderOverlay />}
       {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}
