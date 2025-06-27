@@ -1,20 +1,9 @@
-<<<<<<< HEAD
-=======
-import bundleAnalyzer from '@next/bundle-analyzer';
-import { withSentryConfig } from '@sentry/nextjs';
-
-const withBundleAnalyzer = bundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
-});
-
 // Configure CDN asset prefix when running in production
 const isProd = process.env.NODE_ENV === 'production';
 const assetPrefix =
   isProd && process.env.NEXT_PUBLIC_CDN_URL
     ? process.env.NEXT_PUBLIC_CDN_URL
     : '';
-
->>>>>>> 44d9a11e4c01a65432c1927af91db467dac987c2
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   assetPrefix,
@@ -373,26 +362,4 @@ const nextConfig = {
   },
 };
 
-<<<<<<< HEAD
-export default nextConfig; 
-=======
-const consolidatedConfig = withBundleAnalyzer(nextConfig);
-
-// Conditional Sentry configuration - only enable in production with proper auth token
-const shouldEnableSentry = 
-  process.env.NODE_ENV === 'production' && 
-  process.env.SENTRY_AUTH_TOKEN && 
-  process.env.NEXT_PUBLIC_SENTRY_DSN;
-
-export default shouldEnableSentry 
-  ? withSentryConfig(consolidatedConfig, {
-      org: 'ziontechgroup',
-      project: 'zion-ai-marketplace',
-      widenClientFileUpload: true,
-      transpileClientSDK: true,
-      hideSourceMaps: true,
-      disableLogger: true,
-      automaticVercelMonitors: true,
-    })
-  : consolidatedConfig; 
->>>>>>> 44d9a11e4c01a65432c1927af91db467dac987c2
+export default nextConfig;
