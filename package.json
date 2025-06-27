@@ -71,7 +71,16 @@
     "build:enhanced": "npm run quality:check && npm run pwa:validate && npm run build",
     "deploy:check": "npm run build:enhanced && npm run performance:check",
     "deploy:ready": "node scripts/deployment-ready-check.cjs",
-    "deploy:checklist": "npm run deploy:ready && npm run perf:monitor"
+    "deploy:checklist": "npm run deploy:ready && npm run perf:monitor",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "type-check": "tsc --noEmit",
+    "analyze": "ANALYZE=true npm run build",
+    "deploy:optimize": "node scripts/deploy-optimization.js",
+    "deploy:prepare": "npm run deploy:optimize && npm run analyze",
+    "performance:monitor": "node -e \"console.log('Enable with: localStorage.setItem(\\\"performance-monitoring\\\", \\\"true\\\"); window.location.reload();')\"",
+    "bundle:analyze": "node -e \"console.log('Enable with: localStorage.setItem(\\\"bundle-analyzer\\\", \\\"true\\\"); window.location.reload();')\"",
+    "clean": "rimraf .next out coverage test-results",
+    "clean:all": "npm run clean && rimraf node_modules package-lock.json"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
