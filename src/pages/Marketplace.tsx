@@ -272,9 +272,7 @@ export default function Marketplace() {
     await new Promise((resolve) => setTimeout(resolve, 200));
 
     try {
-      // Use the proper marketplace service instead of direct fetch
-      const { fetchProducts: fetchProductsService } = await import('@/services/marketplace');
-      
+      // Use static marketplace listings data for now (compatible with ProductListing type)
       const params = {
         page,
         limit,
@@ -282,10 +280,17 @@ export default function Marketplace() {
         sort: sortBy
       };
 
-      logInfo('Marketplace.tsx: Fetching products using marketplace service with params:', { data: params });
+      logInfo('Marketplace.tsx: Fetching products using static data with params:', { data: params });
       
-      let items: ProductListing[] = await fetchProductsService(params) as ProductListing[];
-      logInfo('Marketplace.tsx: Raw items from marketplace service before filtering/sorting:', JSON.stringify(items, null, 2));
+      // Use static data that's already of type ProductListing[]
+      let items: ProductListing[] = [...MARKETPLACE_LISTINGS];
+      
+      // Apply category filter from params
+      if (filterCategory) {
+        items = items.filter((p) => p.category.toLowerCase() === filterCategory.toLowerCase());
+      }
+      
+      logInfo('Marketplace.tsx: Raw items from static data before filtering/sorting:', { data: JSON.stringify(items.slice(0, 5), null, 2) });
 
       if (showRecommended) {
         items = items.filter((p) => p.rating != null && p.rating >= 4.3);
@@ -334,10 +339,15 @@ export default function Marketplace() {
         }
       });
 
+      // Apply pagination
+      const startIndex = (page - 1) * limit;
+      const endIndex = startIndex + limit;
+      const paginatedItems = items.slice(startIndex, endIndex);
+      
       return {
-        items,
-        hasMore: items.length === limit,
-        total: undefined // Total is not provided by this simplified API
+        items: paginatedItems,
+        hasMore: endIndex < items.length,
+        total: items.length
       };
     } catch (err: any) {
       // Log the error and allow useInfiniteScrollPagination to handle it

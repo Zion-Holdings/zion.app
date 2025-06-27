@@ -162,7 +162,7 @@ export default function Contact() {
 
       return Promise.resolve();
     } catch (error) {
-      logError(error, { message: 'Error in AI chat' });
+      logError('Error in AI chat', error);
       toast({
         title: 'Chat Error',
         description:
