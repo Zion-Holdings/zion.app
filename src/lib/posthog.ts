@@ -35,11 +35,11 @@ export const initPostHog = () => {
         a[method] = p(method);
       }
       a._i.push([k, opts]);
-      const s = c.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = opts.api_host + '/static/array.js';
-      c.head.appendChild(s);
+      const script = c.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = opts.api_host + '/static/array.js';
+      c.head.appendChild(script);
     };
   })(document, window.posthog || []);
 

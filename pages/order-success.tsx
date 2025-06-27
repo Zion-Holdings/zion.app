@@ -21,8 +21,8 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx: NextPag
   if (!sessionId) return { props: { session: null } };
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || process.env.STRIPE_TEST_SECRET_KEY || '', { apiVersion: '2023-10-16' });
-    const s = await stripe.checkout.sessions.retrieve(sessionId);
-    return { props: { session: { id: s.id, amount_total: s.amount_total, currency: s.currency, customer_details: s.customer_details } } };
+    const stripeSession = await stripe.checkout.sessions.retrieve(sessionId);
+    return { props: { session: { id: stripeSession.id, amount_total: stripeSession.amount_total, currency: stripeSession.currency, customer_details: stripeSession.customer_details } } };
   } catch (err) {
     logError('Failed to load session', { data: err });
     return { props: { session: null } };

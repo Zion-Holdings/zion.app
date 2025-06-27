@@ -60,15 +60,15 @@ export default function IntercomChat() {
         };
         w.Intercom = i;
         const l = function () {
-          const s = d.createElement('script');
-          s.type = 'text/javascript';
-          s.async = true;
-          s.src = 'https://widget.intercom.io/widget/' + appId;
+          const script = d.createElement('script');
+          script.type = 'text/javascript';
+          script.async = true;
+          script.src = 'https://widget.intercom.io/widget/' + appId;
           const x = d.getElementsByTagName('script')[0];
           if (x) {
-            x.parentNode?.insertBefore(s, x);
+            x.parentNode?.insertBefore(script, x);
           } else {
-            d.head.appendChild(s);
+            d.head.appendChild(script);
           }
         };
         if (document.readyState === 'complete') {
