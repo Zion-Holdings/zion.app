@@ -18,7 +18,7 @@ import i18n from '@/i18n';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { ToastContainer } from '@/components/ToastContainer';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
-import ErrorBoundary from '@/components/ErrorBoundary';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { ApiErrorBoundary } from '@/components/ApiErrorBoundary';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
@@ -27,6 +27,9 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
 import dynamic from 'next/dynamic';
+import { PerformanceMonitor } from '@/components/ui/performance-monitor';
+import { BundleAnalyzer } from '@/components/ui/bundle-analyzer';
+import { QuickActions } from '@/components/ui/quick-actions';
 
 // Dynamically load heavy components to improve initial load time
 const IntercomChat = dynamic(() => import('@/components/IntercomChat'), {
@@ -296,6 +299,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                                               <ToastContainer />
                                               <OfflineIndicator />
                                               <IntercomChat />
+                                              <PerformanceMonitor />
+                                              <BundleAnalyzer />
+                                              <QuickActions />
                                             </AppLayout>
                                           </ThemeProvider>
                                         </FeedbackProvider>
