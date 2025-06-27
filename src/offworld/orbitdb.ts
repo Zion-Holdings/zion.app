@@ -45,7 +45,7 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
 
     // Log listening addresses
     libp2pNode.getMultiaddrs().forEach((addr) => {
-      logInfo('Listening on:', { data: addr.toString( }));
+      logInfo('Listening on:', { data: addr.toString() });
     });
 
     // Listen for new connections

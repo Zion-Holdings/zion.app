@@ -16,7 +16,6 @@ import {
 } from '@/components/ui/tooltip';
 import z from 'zod';
 import { ChatAssistant } from '@/components/ChatAssistant';
-import { logError } from '@/utils/logError';
 import { Mail, MessageSquare, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';

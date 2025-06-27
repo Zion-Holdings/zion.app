@@ -9,7 +9,7 @@ import { ApiResponse, PaginatedResponse, SearchFilters } from '@/types/common';
 // TypeScript interfaces
 import { logError } from "@/utils/productionLogger";
 
-export interface {
+export interface MarketplaceItem {
   id: string;
   name: string;
   description: string;
