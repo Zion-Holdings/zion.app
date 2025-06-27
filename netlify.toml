@@ -83,6 +83,8 @@
   # Application URLs
   NEXT_PUBLIC_APP_URL = "https://your-domain.netlify.app"
   NEXT_PUBLIC_API_URL = "https://your-domain.netlify.app/api"
+  # CDN domain for static assets
+  NEXT_PUBLIC_CDN_URL = "https://cdn.yourdomain.com"
   
   # Feature flags
   NEXT_PUBLIC_ENABLE_ANALYTICS = "true"

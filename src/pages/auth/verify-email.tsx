@@ -3,6 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 import { logError } from '@/utils/logError';
 import { AuthLayout } from '@/layout';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 
 
 const VerifyEmailPage = () => {
@@ -91,9 +92,7 @@ const VerifyEmailPage = () => {
         <p style={{ fontSize: '1.1em' }}>{message}</p>
         {status === 'verifying' && (
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-            {/* You can replace this with a proper spinner component */}
-            <div style={{ border: '4px solid #f3f3f3', borderTop: '4px solid #3498db', borderRadius: '50%', width: '30px', height: '30px', animation: 'spin 1s linear infinite' }}></div>
-            <p style={{ marginLeft: '10px' }}>Loading...</p>
+            <LoadingSpinner variant="primary" />
           </div>
         )}
         {status === 'success' && (

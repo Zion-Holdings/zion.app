@@ -24,7 +24,13 @@ import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
-import { IntercomChat } from '@/components/IntercomChat';
+import dynamic from 'next/dynamic';
+
+// Dynamically load Intercom chat widget to keep initial bundle small
+const IntercomChat = dynamic(() => import('@/components/IntercomChat'), {
+  ssr: false,
+  loading: () => null
+});
 import { HydrationErrorBoundary } from '@/components/HydrationErrorBoundary';
 // Import Next.js fonts for optimal loading and CLS prevention
 import { Inter, Montserrat } from 'next/font/google';
@@ -40,6 +46,8 @@ import '@/utils/globalFetchInterceptor';
 import '@/utils/consoleErrorToast';
 import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
 import { RouteChangeHandler } from '@/components/RouteChangeHandler';
+import PageTransition from '@/components/PageTransition';
+import { AnimatePresence } from 'framer-motion';
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
@@ -263,7 +271,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                                                 forceRerender={true}
                                               />
                                               <ErrorBoundary>
-                                                <Component key={router.asPath} {...pageProps} />
+                                                <AnimatePresence mode="wait" initial={false}>
+                                                  <PageTransition key={router.asPath}>
+                                                    <Component {...pageProps} />
+                                                  </PageTransition>
+                                                </AnimatePresence>
                                               </ErrorBoundary>
                                               <ErrorResetOnRouteChange />
                                               <ToastContainer />

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { useUndoRedo } from '@/hooks/useUndoRedo';
 
 interface WhitepaperSectionEditorProps {
   title: string;
@@ -12,6 +13,12 @@ const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({ title
   const [suggestionsError, setSuggestionsError] = useState<string | null>(null);
   const [suggestions, setSuggestions] = useState<string | null>(null);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const { value, set, undo, redo, canUndo, canRedo } = useUndoRedo(content);
+
+  // keep external content prop in sync if it changes
+  useEffect(() => {
+    set(content);
+  }, [content, set]);
 
   const handleGetSuggestions = async () => {
     setIsLoadingSuggestions(true);
@@ -54,10 +61,19 @@ const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({ title
     <div style={{ marginBottom: '20px', border: '1px solid #ccc', padding: '15px', borderRadius: '5px', position: 'relative' }}>
       <h3>{title}</h3>
       <textarea
-        value={content}
-        onChange={(e) => onContentChange(e.target.value)}
+        value={value}
+        onChange={(e) => {
+          set(e.target.value);
+          onContentChange(e.target.value);
+        }}
         style={{ width: '100%', minHeight: '150px', padding: '10px', boxSizing: 'border-box', marginBottom: '10px' }}
       />
+      <div style={{ marginBottom: '10px' }}>
+        <button onClick={undo} disabled={!canUndo} style={{ marginRight: '5px' }}>
+          Undo
+        </button>
+        <button onClick={redo} disabled={!canRedo}>Redo</button>
+      </div>
       <button onClick={handleGetSuggestions} disabled={isLoadingSuggestions} style={{ marginRight: '10px' }}>
         {isLoadingSuggestions ? 'Getting Suggestions...' : 'Get AI Suggestions'}
       </button>

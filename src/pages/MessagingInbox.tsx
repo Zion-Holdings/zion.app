@@ -7,6 +7,7 @@ import { ConversationsList, ConversationDetailView } from '@/components/messagin
 import { useIsMobile } from '@/hooks/use-mobile';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import { useRouter } from 'next/router'; // Changed from react-router-dom
 
 export default function MessagingInbox() {
@@ -80,7 +81,7 @@ export default function MessagingInbox() {
               {/* Conversations List */}
               {isLoading ? (
                 <div className="flex-1 flex items-center justify-center p-8">
-                  <div className="animate-pulse">Loading conversations...</div>
+                  <LoadingSpinner variant="primary" />
                 </div>
               ) : (
                 <ConversationsList

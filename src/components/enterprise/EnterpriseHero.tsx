@@ -26,9 +26,9 @@ export function EnterpriseHero() {
             <div className="mt-10 flex items-center gap-4">
               <p className="text-sm text-muted-foreground">Trusted by leading enterprises:</p>
               <div className="flex gap-6 opacity-70">
-                <img src="/logos/placeholder-logo.svg" alt="Enterprise 1" className="h-8" loading="lazy" />
-                <img src="/logos/placeholder-logo.svg" alt="Enterprise 2" className="h-8" loading="lazy" />
-                <img src="/logos/placeholder-logo.svg" alt="Enterprise 3" className="h-8" loading="lazy" />
+                <img src="/logos/zion-logo.png" alt="Enterprise 1" className="h-8" loading="lazy" />
+                <img src="/logos/zion-logo.png" alt="Enterprise 2" className="h-8" loading="lazy" />
+                <img src="/logos/zion-logo.png" alt="Enterprise 3" className="h-8" loading="lazy" />
               </div>
             </div>
           </div>
