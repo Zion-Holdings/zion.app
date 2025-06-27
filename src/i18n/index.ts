@@ -58,7 +58,7 @@ if (!i18n) {
     },
   })
   .catch(error => {
-    logError("Error initializing i18next or its detector:", error);
+    logError('Error initializing i18next or its detector:', { data: error });
     // This helps prevent an unhandled promise rejection if init fails.
   });
 

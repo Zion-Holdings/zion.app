@@ -13,9 +13,9 @@ import { PartnerLeaderboard } from "@/components/partners/PartnerLeaderboard";
 import { PartnerResources } from "@/components/partners/PartnerResources";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from 'next/router';
+import { logInfo, logError } from '@/utils/productionLogger';
 
 export default function Partners() {
-import { logInfo, logError } from '@/utils/productionLogger';
 
   logInfo('PartnersPage rendering');
   const [activeTab, setActiveTab] = useState("overview");
@@ -30,7 +30,7 @@ import { logInfo, logError } from '@/utils/productionLogger';
         const res = await fetch('/api/auth/health');
         setAuthServiceAvailable(res.ok);
       } catch (err) {
-        logError('Partner login auth health check failed', err);
+        logError('Partner login auth health check failed', { data: err });
         setAuthServiceAvailable(false);
       }
     }
@@ -176,7 +176,7 @@ import { logInfo, logError } from '@/utils/productionLogger';
   }
 
   // Authenticated user view - Partner Dashboard
-  logInfo('PartnersPage rendering Authenticated View. User:', user);
+  logInfo('PartnersPage rendering Authenticated View. User:', { data: user });
   return (
     <div className="container max-w-7xl py-10">
       <h1>DEBUG: Partners Page - Authenticated View</h1>

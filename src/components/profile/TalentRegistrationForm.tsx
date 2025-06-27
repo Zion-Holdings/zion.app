@@ -175,7 +175,7 @@ export function TalentRegistrationForm() {
       }
       
     } catch (error: any) {
-      logError("Error generating enhanced profile:", error);
+      logError('Error generating enhanced profile:', { data: error });
       toast({
         title: "Generation failed",
         description: error.message || "There was an error generating your enhanced profile. Please try again.",
@@ -245,7 +245,7 @@ export function TalentRegistrationForm() {
         }
       });
     } catch (error) {
-      logError("Failed to send notification email:", error);
+      logError('Failed to send notification email:', { data: error });
     }
   };
 
@@ -307,7 +307,7 @@ export function TalentRegistrationForm() {
             finalSkills = [...new Set([...skillTags, ...aiSkills])];
           }
         } catch (error) {
-          logError("Error enhancing profile:", error);
+          logError('Error enhancing profile:', { data: error });
           // Continue with submission even if enhancement fails
           finalSummary = "";
         }
@@ -356,7 +356,7 @@ export function TalentRegistrationForm() {
       */
 
     } catch (error: any) {
-      logError("Error creating profile:", error);
+      logError('Error creating profile:', { data: error });
       toast({
         title: "Error Creating Profile",
         description: error.message || "There was an error creating your profile. Please try again.",

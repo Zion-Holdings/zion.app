@@ -32,7 +32,7 @@ export async function signup(payload: SignupPayload): Promise<SignupResponse> {
     // Handle unexpected success status codes
     throw new Error(`Unexpected status ${res.status}`);
   } catch (err: any) {
-    logError('Signup error:', err);
+    logError('Signup error:', { data: err });
     
     if (err.response) {
       // Server responded with error status

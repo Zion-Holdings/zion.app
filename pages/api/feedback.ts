@@ -60,7 +60,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     await Feedback.create(parsed.data);
     return res.status(201).json({ success: true });
   } catch (err) {
-    logError('Error saving feedback:', err);
+    logError('Error saving feedback:', { data: err });
     return res.status(500).json({ error: 'Failed to save feedback' });
   }
 }

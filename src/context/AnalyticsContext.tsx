@@ -87,11 +87,11 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
       }]);
       
       if (process.env.NODE_ENV === 'development') {
-        logInfo(`Analytics event tracked: ${type}`, metadata);
+        logInfo('Analytics event tracked: ${type}', { data: metadata });
       }
     } catch (error) {
       if (process.env.NODE_ENV === 'development') {
-        logError('Error logging analytics event:', error);
+        logError('Error logging analytics event:', { data: error });
       }
     }
   };

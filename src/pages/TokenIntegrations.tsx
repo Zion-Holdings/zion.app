@@ -143,7 +143,7 @@ export default function TokenIntegrations() {
       setTxHash(result.transactionHash);
       setStatus(`Transaction submitted! ZION$ expected on ${toChain} in approx. ${result.arrivalTimeEstimate}. Tx: ${result.transactionHash}`);
     } catch (e: any) {
-      logError("Bridging error:", e);
+      logError('Bridging error:', { data:  e });
       setError(`Bridging failed: ${e.message}`);
       setStatus(null);
     }

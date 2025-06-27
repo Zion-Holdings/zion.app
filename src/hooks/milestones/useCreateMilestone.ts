@@ -5,9 +5,9 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
 import { Milestone } from './types';
 import { useRecordActivity } from './useRecordActivity';
+import { logError } from '@/utils/productionLogger';
 
 export const useCreateMilestone = (projectId?: string) => {
-import { logError } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,7 +38,7 @@ import { logError } from '@/utils/productionLogger';
       
       return data;
     } catch (err: any) {
-      logError("Error creating milestone:", err);
+      logError('Error creating milestone:', { data: err });
       toast.error("Failed to create milestone: " + err.message);
       return null;
     } finally {

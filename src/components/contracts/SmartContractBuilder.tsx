@@ -67,7 +67,7 @@ export function SmartContractBuilder({
         toast.error("Failed to deploy smart contract");
       }
     } catch (error) {
-      logError("Error deploying contract:", error);
+      logError('Error deploying contract:', { data: error });
       setDeployStatus('error');
       toast.error("Failed to deploy smart contract");
     }

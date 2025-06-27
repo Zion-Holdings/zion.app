@@ -35,7 +35,7 @@ export const checkSignupPatterns = async (
         reasons.push(`Multiple accounts (${recentSignups.length}) created from same IP in last 24 hours`);
       }
     } catch (error) {
-      logError('Error checking signup patterns:', error);
+      logError('Error checking signup patterns:', { data: error });
     }
   }
   

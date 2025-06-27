@@ -14,6 +14,6 @@ export function logIssue(message: string, context?: Record<string, unknown>) {
       captureException(new Error(message));
     }
   } catch (err) {
-    logError('Failed to report issue:', err);
+    logError('Failed to report issue:', { data: err });
   }
 }

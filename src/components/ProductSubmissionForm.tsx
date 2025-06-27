@@ -241,7 +241,7 @@ export function ProductSubmissionForm() {
           }
         });
       } catch (err) {
-        logError('Error invoking moderation:', err);
+        logError('Error invoking moderation:', { data: err });
       }
       
       // Show success message

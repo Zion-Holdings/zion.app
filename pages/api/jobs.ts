@@ -197,7 +197,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
   } catch (error: any) {
-    logError('Jobs API error:', error);
+    logError('Jobs API error:', { data: error });
     
     // Return fallback data on error
     applyCacheHeaders(res, CacheCategory.SHORT);

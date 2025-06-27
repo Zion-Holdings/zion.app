@@ -44,7 +44,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
         3
       );
       
-      logInfo("AI matching results:", results);
+      logInfo('AI matching results:', { data: results });
       setMatches(results);
       
       toast({
@@ -52,7 +52,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
         description: `Found ${results.length} matches based on your description.`,
       });
     } catch (error) {
-      logError("Error during AI matching:", error);
+      logError('Error during AI matching:', { data: error });
       toast({
         title: "Matching Error",
         description: "We couldn't find matches for your request. Please try again.",

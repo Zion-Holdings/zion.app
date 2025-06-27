@@ -32,7 +32,7 @@ export default function Help() {
           setArticles(Array.isArray(data) ? data : []);
         }
       } catch (err) {
-        logError('Help article fetch error:', err);
+        logError('Help article fetch error:', { data: err });
         if (active) {
           setArticles([]);
           setError('Failed to load articles');

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
+import { logInfo, logError } from '@/utils/productionLogger';
 // Removed: import { useRouter } from 'next/router';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 import { logError } from '@/utils/logError';
@@ -11,7 +12,6 @@ import { generateTraceId } from '@/utils/generateTraceId';
 // Fallback is defined inside GlobalErrorBoundary to access state
 
 export default function GlobalErrorBoundary({ children }: { children: React.ReactNode }) {
-import { logInfo, logError } from '@/utils/productionLogger';
 
   const [traceId, setTraceId] = useState<string | null>(null);
   const [componentStack, setComponentStack] = useState<string | undefined>(undefined);
@@ -36,7 +36,7 @@ import { logInfo, logError } from '@/utils/productionLogger';
       const enqueueSnackbar = getEnqueueSnackbar();
       enqueueSnackbar(`Issue reported. Reference ID: ${id}`, { variant: 'success' });
     } catch (err) {
-      logError('Failed to show report confirmation:', err);
+      logError('Failed to show report confirmation:', { data: err });
     }
   };
 
@@ -151,7 +151,7 @@ import { logInfo, logError } from '@/utils/productionLogger';
         autoHideDuration: 5000,
       });
     } catch (e) {
-      logError("Error in enqueueSnackbar:", e);
+      logError('Error in enqueueSnackbar:', { data:  e });
       // noop if snackbar itself fails
     }
   };

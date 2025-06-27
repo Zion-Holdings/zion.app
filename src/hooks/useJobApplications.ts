@@ -4,9 +4,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { toast } from "sonner";
+import { logError } from '@/utils/productionLogger';
 
 export const useJobApplications = (jobId?: string) => {
-import { logError } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [applications, setApplications] = useState<JobApplication[]>([]);
@@ -74,7 +74,7 @@ import { logError } from '@/utils/productionLogger';
       setApplications(transformedData as JobApplication[]);
       setError(null);
     } catch (err: any) {
-      logError("Error fetching applications:", err);
+      logError('Error fetching applications:', { data: err });
       setError("Failed to fetch applications: " + err.message);
       toast.error("Failed to fetch applications");
     } finally {
@@ -148,7 +148,7 @@ import { logError } from '@/utils/productionLogger';
       toast.success("Application submitted successfully");
       return true;
     } catch (err: any) {
-      logError("Error applying to job:", err);
+      logError('Error applying to job:', { data: err });
       toast.error("Failed to submit application: " + err.message);
       return false;
     }
@@ -171,7 +171,7 @@ import { logError } from '@/utils/productionLogger';
       toast.success(`Application status updated to ${status}`);
       return true;
     } catch (err: any) {
-      logError("Error updating application status:", err);
+      logError('Error updating application status:', { data: err });
       toast.error("Failed to update application status: " + err.message);
       return false;
     }
@@ -199,7 +199,7 @@ import { logError } from '@/utils/productionLogger';
       
       return true;
     } catch (err) {
-      logError("Error marking application as viewed:", err);
+      logError('Error marking application as viewed:', { data: err });
       return false;
     }
   };

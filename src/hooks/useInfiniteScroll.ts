@@ -64,7 +64,7 @@ export function useInfiniteScroll(
             try {
               await loadMore();
             } catch (error) {
-              logError('Error loading more items:', error);
+              logError('Error loading more items:', { data: error });
             } finally {
               setIsFetching(false);
               timeoutRef.current = null;
@@ -163,7 +163,7 @@ export function useInfiniteScrollPagination<T>(
         setTotal(result.total);
       }
     } catch (err) {
-      logError('Error loading items:', err);
+      logError('Error loading items:', { data: err });
       setError(err instanceof Error ? err.message : 'Failed to load more items');
     } finally {
       setLoading(false);
@@ -208,7 +208,7 @@ export function useInfiniteScrollPagination<T>(
       }
       setIsInitialized(true);
     } catch (err) {
-      logError('Error refreshing items:', err);
+      logError('Error refreshing items:', { data: err });
       setError(err instanceof Error ? err.message : 'Failed to refresh items');
     } finally {
       setLoading(false);

@@ -55,7 +55,7 @@ export function useAIContentEnhancer() {
         description: errorMessage,
         variant: "destructive"
       });
-      logError('Enhancement error:', err);
+      logError('Enhancement error:', { data: err });
       return null;
     } finally {
       setIsEnhancing(false);

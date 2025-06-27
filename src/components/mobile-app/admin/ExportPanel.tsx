@@ -54,7 +54,7 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({ platform, metadata }) 
       
       toast.success(`Exported ${format.toUpperCase()} file successfully`);
     } catch (error) {
-      logError("Export failed:", error);
+      logError('Export failed:', { data: error });
       toast.error(`Failed to export ${format.toUpperCase()} file`);
     }
   };

@@ -29,13 +29,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       .order('created_at', { ascending: false });
 
     if (error) {
-      logError('Error fetching reviews:', error);
+      logError('Error fetching reviews:', { data: error });
       return res.status(500).json({ error: 'Failed to fetch reviews' });
     }
 
     return res.status(200).json(data || []);
   } catch (error) {
-    logError('Error fetching reviews:', error);
+    logError('Error fetching reviews:', { data: error });
     return res.status(500).json({
       error: 'Internal server error while fetching reviews.',
       details: error instanceof Error ? error.message : 'Unknown error'

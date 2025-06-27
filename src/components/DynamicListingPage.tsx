@@ -178,7 +178,7 @@ export function DynamicListingPage({
     });
   } catch (error) {
     captureException(error);
-    logError("Listing filter error:", error);
+    logError('Listing filter error:', { data: error });
   }
 
   const handleRequestQuote = (listingId: string) => {
@@ -357,7 +357,7 @@ export function DynamicListingPage({
                       variant="outline"
                       size="sm"
                       onClick={() => {
-                        logInfo("Rating selected:", rating);
+                        logInfo('Rating selected:', { data: rating });
                         setSelectedRating(rating);
                       }}
                       aria-pressed={selectedRating === rating}
@@ -414,7 +414,7 @@ export function DynamicListingPage({
                     placeholder="Search listings..."
                     value={searchQuery}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                      logInfo("Search query:", e.target.value);
+                      logInfo('Search query:', { data: e.target.value });
                       setSearchQuery(e.target.value);
                     }}
                     className="pl-10 bg-zion-blue border border-zion-blue-light text-white"

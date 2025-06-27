@@ -118,7 +118,7 @@ const PitchGeneratorPage: React.FC = () => {
       alert(`Version ${newVersionNumber} saved successfully (mocked). Now working on v${newVersionNumber + 1}.`);
 
     } catch (e: any) {
-      logError('Failed to save version:', e);
+      logError('Failed to save version:', { data:  e });
       setError(e.message || 'Failed to save version.');
     } finally {
       setIsSavingVersion(false);
@@ -155,7 +155,7 @@ const PitchGeneratorPage: React.FC = () => {
             setDeckVersion(1); // Start with v1 if no history
         }
     } catch (e:any) {
-        logError('Failed to fetch version history:', e);
+        logError('Failed to fetch version history:', { data:  e });
         setError(e.message || 'Failed to fetch version history.');
     }
   };
@@ -260,7 +260,7 @@ const PitchGeneratorPage: React.FC = () => {
       // alert(`New deck generated for Version ${deckVersion}. Save if you want to keep it.`);
 
     } catch (e: any) {
-      logError('Failed to generate pitch deck:', e);
+      logError('Failed to generate pitch deck:', { data:  e });
       setError(e.message || 'Failed to generate pitch deck. Check console for details.');
       setGeneratedSlides([]);
     } finally {
@@ -341,7 +341,7 @@ const PitchGeneratorPage: React.FC = () => {
       }
       pdf.save(`pitch-deck-v${deckVersion -1}.pdf`); // Save with the version number that was just saved
     } catch (e: any) {
-      logError('Failed to export PDF:', e);
+      logError('Failed to export PDF:', { data:  e });
       setError(e.message || 'Failed to export PDF.');
     } finally {
       setIsExporting(false);

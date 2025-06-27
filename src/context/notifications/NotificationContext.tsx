@@ -57,7 +57,7 @@ export const NotificationProvider = ({ children }: { children: ReactNode }): JSX
             filter: `user_id=eq.${user.id}`
           },
           (payload: any) => {
-            logInfo('Notification change received:', payload);
+            logInfo('Notification change received:', { data: payload });
             notificationOps.fetchNotifications();
           }
         )

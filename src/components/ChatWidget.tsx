@@ -32,7 +32,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
         setMessages(JSON.parse(stored));
       }
     } catch (err) {
-      logWarn('ChatWidget: failed to load history', err);
+      logWarn('ChatWidget: failed to load history', { data: err });
     }
   }, [isOpen, roomId]);
 
@@ -79,7 +79,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     try {
       safeStorage.setItem(`chat-widget-${roomId}`, JSON.stringify(messages));
     } catch (err) {
-      logWarn('ChatWidget: failed to save history', err);
+      logWarn('ChatWidget: failed to save history', { data: err });
     }
   }, [messages, roomId, isOpen]);
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {

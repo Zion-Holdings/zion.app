@@ -16,19 +16,19 @@ export function LanguageSelector() {
   const { currentLanguage, supportedLanguages, changeLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
-  logInfo('LanguageSelector: Rendered with currentLanguage:', currentLanguage);
-  logInfo('LanguageSelector: Available languages:', supportedLanguages.map(l => l.code));
+  logInfo('LanguageSelector: Rendered with currentLanguage:', { data: currentLanguage });
+  logInfo('LanguageSelector: Available languages:', { data: supportedLanguages.map(l => l.code }));
 
   const currentFlag =
     supportedLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
 
   const handleLanguageChange = async (langCode: SupportedLanguage) => {
-    logInfo('LanguageSelector: Language item clicked:', langCode);
+    logInfo('LanguageSelector: Language item clicked:', { data: langCode });
     try {
       await changeLanguage(langCode);
       setIsOpen(false);
     } catch (error) {
-      logError('LanguageSelector: Error changing language:', error);
+      logError('LanguageSelector: Error changing language:', { data: error });
     }
   };
 

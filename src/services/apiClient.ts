@@ -103,7 +103,7 @@ export const globalAxiosErrorHandler = (error: any) => {
     showApiError(error);
   } else {
     // Log background errors without showing toast
-    logDebug(`Background API request failed (${status} ${method}): ${url}`, error.response?.data);
+    logDebug('Background API request failed (${status} ${method}): ${url}', { data: error.response?.data });
   }
 
   return Promise.reject(error);
@@ -146,7 +146,7 @@ apiClient.interceptors.response.use(
       try {
         await supabase.auth.signOut({ scope: 'global' });
       } catch (e) {
-        logError('Failed to logout after 401', e);
+        logError('Failed to logout after 401', { data:  e });
       }
       if (typeof window !== 'undefined') {
         window.location.assign('/login');

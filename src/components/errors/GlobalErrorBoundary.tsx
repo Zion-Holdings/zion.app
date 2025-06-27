@@ -72,9 +72,9 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
     // Log to console in development
     if (process.env.NODE_ENV === 'development') {
       console.group('🚨 Error Boundary Caught Error')
-      logError('Error:', error)
-      logError('Error Info:', errorInfo)
-      logError('Enhanced Error:', enhancedError)
+      logError('Error:', { data: error })
+      logError('Error Info:', { data: errorInfo })
+      logError('Enhanced Error:', { data: enhancedError })
       console.groupEnd()
     }
 
@@ -211,7 +211,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
       await navigator.clipboard.writeText(JSON.stringify(errorDetails, null, 2))
       // Could show a toast notification here
     } catch (err) {
-      logError('Failed to copy error details:', err)
+      logError('Failed to copy error details:', { data: err })
     }
   }
 
@@ -243,7 +243,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
         // Show success message
       }
     } catch (err) {
-      logError('Failed to report error:', err)
+      logError('Failed to report error:', { data: err })
     }
   }
 

@@ -32,7 +32,7 @@ export default function NewPost() {
       const data = await res.json();
       router.push(`/community/${data.id}`); // Changed to router.push
     } catch (e) {
-      logError('Post creation error:', e);
+      logError('Post creation error:', { data:  e });
       setError(e.message);
     } finally {
       setIsSubmitting(false);

@@ -44,7 +44,7 @@ export async function sendMessage({
     const data = await response.json();
     return data;
   } catch (error) {
-    logError('Failed to send message:', error);
+    logError('Failed to send message:', { data: error });
     return {
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error',

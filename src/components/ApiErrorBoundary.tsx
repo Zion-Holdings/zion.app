@@ -109,7 +109,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
         });
       }, 500);
     } catch (retryError) {
-      logError('Retry failed:', retryError);
+      logError('Retry failed:', { data: retryError });
       Sentry.captureException(retryError);
       this.setState({ isRetrying: false });
     }

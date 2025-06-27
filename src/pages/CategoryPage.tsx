@@ -88,7 +88,7 @@ export default function CategoryPage() {
           document.title = `${json.category.name} | Zion Marketplace`;
         }
       } catch (e: any) {
-        logError('Failed to load category items:', e);
+        logError('Failed to load category items:', { data:  e });
         
         // Auto-retry for network errors
         if (retryCount < maxRetries && (

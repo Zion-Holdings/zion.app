@@ -46,7 +46,7 @@ export function ZionGPTModelManager() {
         errorMessage: model.error_message
       })));
     } catch (error) {
-      logError('Error fetching models:', error);
+      logError('Error fetching models:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -84,7 +84,7 @@ export function ZionGPTModelManager() {
         .eq('id', modelId);
       
     } catch (error) {
-      logError(`Error checking status for model ${modelId}:`, error);
+      logError('Error checking status for model ${modelId}:', { data: error });
     } finally {
       setActiveJobs(prev => ({ ...prev, [modelId]: false }));
     }
@@ -109,7 +109,7 @@ export function ZionGPTModelManager() {
       // Refresh the model list
       fetchModels();
     } catch (error) {
-      logError('Error toggling model active state:', error);
+      logError('Error toggling model active state:', { data: error });
     }
   };
 

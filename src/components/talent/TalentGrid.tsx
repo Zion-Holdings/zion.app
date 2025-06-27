@@ -29,7 +29,7 @@ export function TalentGrid({
       handleRequestHire(talent);
     } else {
       // Default implementation
-      logInfo("Request to hire:", talent.id);
+      logInfo('Request to hire:', { data: talent.id });
     }
   };
 

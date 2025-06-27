@@ -5,9 +5,9 @@ import { ProfileData } from "@/types/profile";
 import { MOCK_TALENTS } from "@/data/mockTalents";
 import { MOCK_PROFILES } from "@/data/mockProfiles";
 import { convertProfileToTalentProfile } from "@/utils/profileConverter";
+import { logError } from '@/utils/productionLogger';
 
 export function useTalentProfile(id: string | undefined) {
-import { logError } from '@/utils/productionLogger';
 
   const [profile, setProfile] = useState<TalentProfileType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -49,7 +49,7 @@ import { logError } from '@/utils/productionLogger';
           setIsLoading(false);
         }, 800);
       } catch (err) {
-        logError("Error fetching profile:", err);
+        logError('Error fetching profile:', { data: err });
         setError("Failed to load profile data");
         setIsLoading(false);
       }

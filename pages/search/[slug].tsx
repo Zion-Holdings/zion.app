@@ -252,7 +252,7 @@ export default function SearchResultsPage({
       }
 
       const data = await response.json();
-      logInfo('Search results received:', data);
+      logInfo('Search results received:', { data: data });
 
       setTotalResults(data.totalCount || data.results?.length || 0);
 
@@ -262,7 +262,7 @@ export default function SearchResultsPage({
         setResults((prev) => [...prev, ...(data.results || [])]);
       }
     } catch (error) {
-      logError('Error fetching search results:', error);
+      logError('Error fetching search results:', { data: error });
       const offline = offlineSearch(searchTerm, page, 12, {
         sortBy,
         category: categoryFilter !== 'all' ? categoryFilter : undefined,
@@ -669,7 +669,7 @@ export const getServerSideProps: GetServerSideProps<
       },
     };
   } catch (error) {
-    logError('Error fetching search results:', error);
+    logError('Error fetching search results:', { data: error });
     const offline = offlineSearch(query, 1, 12, { sortBy: 'relevance' });
 
     return {

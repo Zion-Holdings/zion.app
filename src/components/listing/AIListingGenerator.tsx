@@ -66,7 +66,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
         description: "AI has created optimized listing content for you."
       });
     } catch (error) {
-      logError("Error generating content:", error);
+      logError('Error generating content:', { data: error });
       toast({
         title: "Generation Failed",
         description: error instanceof Error ? error.message : "Failed to generate content. Please try again.",

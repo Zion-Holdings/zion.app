@@ -66,7 +66,7 @@ export function logError(
           }
         }
       }).catch(ddImportError => {
-        logWarn('Failed to import or use Datadog logger:', ddImportError);
+        logWarn('Failed to import or use Datadog logger:', { data: ddImportError });
       });
 
       // LogRocket logging
@@ -80,7 +80,7 @@ export function logError(
           }
         }
       }).catch(lrError => {
-        logWarn('Failed to log error to LogRocket:', lrError);
+        logWarn('Failed to log error to LogRocket:', { data: lrError });
       });
     }
   } catch (err) {
@@ -127,7 +127,7 @@ export function logError(
     });
 
   } catch (err) {
-    logError('Failed to prepare or send error to custom backend:', err);
+    logError('Failed to prepare or send error to custom backend:', { data: err });
   }
 
   return traceId;

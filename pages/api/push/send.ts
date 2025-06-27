@@ -28,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   await Promise.all(
     subs.map((sub: any) =>
       webpush.sendNotification(sub, payload).catch(err => {
-        logError('Push send failed', err);
+        logError('Push send failed', { data: err });
       })
     )
   );

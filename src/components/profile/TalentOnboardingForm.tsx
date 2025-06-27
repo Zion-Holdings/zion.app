@@ -145,7 +145,7 @@ export function TalentOnboardingForm() {
       .upload(fileName, file);
       
     if (cvError) {
-      logError("Error uploading CV:", cvError);
+      logError('Error uploading CV:', { data: cvError });
       throw new Error("Failed to upload CV");
     }
     

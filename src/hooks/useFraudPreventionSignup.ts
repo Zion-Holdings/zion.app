@@ -3,9 +3,9 @@ import { useState, useCallback } from 'react';
 import { checkSignupPatterns } from '@/services/fraud/signupCheck';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
+import { logInfo, logError } from '@/utils/productionLogger';
 
 export function useFraudPreventionSignup() {
-import { logInfo, logError } from '@/utils/productionLogger';
 
   const [isCheckingFraud, setIsCheckingFraud] = useState(false);
   
@@ -16,7 +16,7 @@ import { logInfo, logError } from '@/utils/productionLogger';
       const data = await response.json();
       return data.ip;
     } catch (error) {
-      logError('Error getting IP:', error);
+      logError('Error getting IP:', { data: error });
       return undefined;
     }
   };
@@ -31,7 +31,7 @@ import { logInfo, logError } from '@/utils/productionLogger';
       const fraudCheck = await checkSignupPatterns(email, ipAddress);
       
       if (fraudCheck.isSuspicious) {
-        logInfo('Suspicious signup detected:', fraudCheck.reasons);
+        logInfo('Suspicious signup detected:', { data: fraudCheck.reasons });
         
         // Create a fraud flag for admin review
         const { error } = await supabase.from('fraud_flags').insert({
@@ -47,7 +47,7 @@ import { logInfo, logError } from '@/utils/productionLogger';
         });
         
         if (error) {
-          logError('Error creating fraud flag:', error);
+          logError('Error creating fraud flag:', { data: error });
         }
         
         // Depending on how strict we want to be, we could block the signup
@@ -71,7 +71,7 @@ import { logInfo, logError } from '@/utils/productionLogger';
       // No suspicious patterns found
       return true;
     } catch (error) {
-      logError('Error in fraud check:', error);
+      logError('Error in fraud check:', { data: error });
       // On error, allow the signup but log the error
       return true;
     } finally {

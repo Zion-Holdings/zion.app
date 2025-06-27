@@ -184,7 +184,7 @@ export function initPerformanceMonitoring(): void {
     setTimeout(() => {
       if (process.env.NODE_ENV === 'development' || 
           localStorage.getItem('performance-monitoring') === 'true') {
-        logInfo('📊 Performance Metrics Summary:', metrics);
+        logInfo('📊 Performance Metrics Summary:', { data: metrics });
       }
     }, 5000); // Wait 5 seconds for metrics to stabilize
   });
@@ -436,7 +436,7 @@ export const bundleOptimization = {
     try {
       return await importFn();
     } catch (error) {
-      logError('Dynamic import failed:', error);
+      logError('Dynamic import failed:', { data: error });
       throw new Error('Failed to load component');
     }
   },

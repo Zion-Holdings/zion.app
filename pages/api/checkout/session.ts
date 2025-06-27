@@ -49,7 +49,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     return res.status(200).json({ url: session.url });
   } catch (err: any) {
-    logError('Checkout session error:', err);
+    logError('Checkout session error:', { data: err });
     return res.status(500).json({ error: err.message });
   }
 }

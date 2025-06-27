@@ -28,7 +28,7 @@ export function ReferralMiddleware({ children }: Props) {
         });
         safeStorage.removeItem('referralCode');
       } catch (err) {
-        logError('Error tracking referral', err);
+        logError('Error tracking referral', { data: err });
       }
     }
     sendReferral();

@@ -79,7 +79,7 @@ export async function findMatches(
     // Sort by score
     return matches.sort((a, b) => b.score - a.score).slice(0, limit);
   } catch (error) {
-    logError("Error in matchmaking:", error);
+    logError('Error in matchmaking:', { data: error });
     return [];
   }
 }

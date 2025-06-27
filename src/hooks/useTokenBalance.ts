@@ -34,7 +34,7 @@ export function useTokenBalance(
           setBalance(ethers.formatUnits(rawBalance, decimals));
         }
       } catch (err) {
-        logError('useTokenBalance: failed to fetch balance', err);
+        logError('useTokenBalance: failed to fetch balance', { data: err });
         if (!isStale) setBalance(null);
       }
     }

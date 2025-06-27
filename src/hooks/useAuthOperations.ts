@@ -119,7 +119,7 @@ export function useAuthOperations(
           // Generate a referral code for the new user
           await supabase.rpc('generate_referral_code', { user_id: (data as any).user.id });
         } catch (err) {
-          logError('Failed to complete signup rewards', err);
+          logError('Failed to complete signup rewards', { data: err });
         }
         mutate('user');
       }
@@ -156,7 +156,7 @@ export function useAuthOperations(
           // Clear authToken cookie on backend
           await fetch('/api/auth/logout', { method: 'POST' });
         } catch (cookieErr) {
-          logWarn('useAuthOperations.logout: failed to clear auth cookie', cookieErr);
+          logWarn('useAuthOperations.logout: failed to clear auth cookie', { data: cookieErr });
         }
         toast({
           title: "Logout successful!",
@@ -164,7 +164,7 @@ export function useAuthOperations(
         });
       }
     } catch (error) {
-      logError("Logout failed:", error);
+      logError('Logout failed:', { data: error });
       toast({
         variant: "destructive",
         title: "Logout failed",
@@ -254,7 +254,7 @@ export function useAuthOperations(
 
       return { error: null };
     } catch (error) {
-      logError("Profile update failed:", error);
+      logError('Profile update failed:', { data: error });
       toast({
         variant: "destructive",
         title: "Profile update failed",

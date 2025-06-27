@@ -33,7 +33,7 @@ export interface BlogProps {
 }
 
 export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
-  logInfo('BlogPage rendering. Initial BLOG_POSTS:', initialPosts);
+  logInfo('BlogPage rendering. Initial BLOG_POSTS:', { data: initialPosts });
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
   const [posts, setPosts] = useState<BlogPost[]>([...initialPosts]);
@@ -66,7 +66,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
         );
         setPosts(data);
       } catch (err) {
-        logError('Failed to fetch blog posts', err);
+        logError('Failed to fetch blog posts', { data: err });
       } finally {
         setIsLoading(false);
       }
@@ -87,7 +87,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
   // Get featured posts
   const featuredPosts = posts.filter(post => post.isFeatured);
 
-  logInfo('BlogPage filteredPosts:', filteredPosts);
+  logInfo('BlogPage filteredPosts:', { data: filteredPosts });
   
   return (
     <>

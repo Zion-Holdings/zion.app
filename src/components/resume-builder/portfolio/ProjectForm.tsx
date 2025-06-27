@@ -94,7 +94,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         form.reset();
       }
     } catch (error) {
-      logError('Error saving project:', error);
+      logError('Error saving project:', { data: error });
     } finally {
       setIsLoading(false);
     }

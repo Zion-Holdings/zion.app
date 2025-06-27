@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import type { Wallet, TokenTransaction } from '@/types/tokens';
+import { logError } from '@/utils/productionLogger';
 
 export function useWallet() {
-import { logError } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [wallet, setWallet] = useState<Wallet | null>(null);
@@ -34,7 +34,7 @@ import { logError } from '@/utils/productionLogger';
 
       setWallet(data);
     } catch (err: any) {
-      logError('Error fetching wallet:', err);
+      logError('Error fetching wallet:', { data: err });
       setError(err.message);
     } finally {
       setLoading(false);
@@ -56,7 +56,7 @@ import { logError } from '@/utils/productionLogger';
       if (error) throw error;
       setTransactions((data || []) as TokenTransaction[]);
     } catch (err: any) {
-      logError('Error fetching transactions:', err);
+      logError('Error fetching transactions:', { data: err });
     }
   }
 

@@ -8,9 +8,9 @@ import { format, isPast, parseISO } from "date-fns";
 import Link from "next/link";
 import { Calendar, Clock, Video } from "lucide-react";
 import { Avatar } from "@/components/ui/avatar";
+import { logError } from '@/utils/productionLogger';
 
 export function UpcomingInterviewsCard() {
-import { logError } from '@/utils/productionLogger';
 
   const { fetchInterviews } = useInterviews();
   const [upcomingInterviews, setUpcomingInterviews] = useState<Interview[]>([]);
@@ -35,7 +35,7 @@ import { logError } from '@/utils/productionLogger';
         
         setUpcomingInterviews(upcoming);
       } catch (error) {
-        logError("Error loading upcoming interviews:", error);
+        logError('Error loading upcoming interviews:', { data: error });
       } finally {
         setIsLoading(false);
       }

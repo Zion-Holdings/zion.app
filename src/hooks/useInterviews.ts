@@ -4,9 +4,9 @@ import { useAuth } from "@/hooks/useAuth";
 import { supabase } from '@/integrations/supabase/client';
 import { Interview, InterviewRequest, InterviewResponse } from '@/types/interview';
 import { toast } from '@/components/ui/use-toast';
+import { logError } from '@/utils/productionLogger';
 
 export function useInterviews() {
-import { logError } from '@/utils/productionLogger';
 
   const [interviews, setInterviews] = useState<Interview[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -47,7 +47,7 @@ import { logError } from '@/utils/productionLogger';
         .single();
 
       if (insertError) {
-        logError("Error requesting interview:", insertError);
+        logError('Error requesting interview:', { data: insertError });
         setError(insertError.message);
         return null;
       }
@@ -63,7 +63,7 @@ import { logError } from '@/utils/productionLogger';
 
       return data;
     } catch (err: any) {
-      logError("Error in requestInterview:", err);
+      logError('Error in requestInterview:', { data: err });
       setError(err.message);
       return null;
     } finally {
@@ -94,7 +94,7 @@ import { logError } from '@/utils/productionLogger';
         .order('scheduled_date', { ascending: true });
 
       if (fetchError) {
-        logError("Error fetching interviews:", fetchError);
+        logError('Error fetching interviews:', { data: fetchError });
         setError(fetchError.message);
         return [];
       }
@@ -124,7 +124,7 @@ import { logError } from '@/utils/productionLogger';
       setInterviews(formattedInterviews);
       return formattedInterviews;
     } catch (err: any) {
-      logError("Error in fetchInterviews:", err);
+      logError('Error in fetchInterviews:', { data: err });
       setError(err.message);
       return [];
     } finally {
@@ -160,7 +160,7 @@ import { logError } from '@/utils/productionLogger';
         .eq('id', interviewId);
 
       if (updateError) {
-        logError("Error responding to interview:", updateError);
+        logError('Error responding to interview:', { data: updateError });
         setError(updateError.message);
         return false;
       }
@@ -173,7 +173,7 @@ import { logError } from '@/utils/productionLogger';
         .single();
 
       if (fetchError) {
-        logError("Error fetching interview:", fetchError);
+        logError('Error fetching interview:', { data: fetchError });
         setError(fetchError.message);
         return false;
       }
@@ -205,7 +205,7 @@ import { logError } from '@/utils/productionLogger';
       await fetchInterviews();
       return true;
     } catch (err: any) {
-      logError("Error in respondToInterview:", err);
+      logError('Error in respondToInterview:', { data: err });
       setError(err.message);
       return false;
     } finally {
@@ -230,7 +230,7 @@ import { logError } from '@/utils/productionLogger';
         related_id: relatedId,
       });
     } catch (error) {
-      logError("Error creating notification:", error);
+      logError('Error creating notification:', { data: error });
     }
   };
 
@@ -292,7 +292,7 @@ import { logError } from '@/utils/productionLogger';
       await fetchInterviews();
       return true;
     } catch (err: any) {
-      logError("Error in cancelInterview:", err);
+      logError('Error in cancelInterview:', { data: err });
       setError(err.message);
       return false;
     } finally {

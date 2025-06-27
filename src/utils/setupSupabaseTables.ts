@@ -20,7 +20,7 @@ export const ensureProfilesTableExists = async () => {
     
     // If there's an error, log it and proceed with table creation
     if (error) {
-      logWarn("Error checking if profiles table exists, attempting to create it:", error);
+      logWarn('Error checking if profiles table exists, attempting to create it:', { data: error });
     }
     
     // Attempt to create the table and related objects
@@ -98,12 +98,12 @@ export const ensureProfilesTableExists = async () => {
     const { error: createError } = await supabase.rpc('exec', { sql: createTableQuery });
     
     if (createError) {
-      logError('Error creating profiles table:', createError);
+      logError('Error creating profiles table:', { data: createError });
     } else {
       logInfo('Profiles table setup completed');
     }
   } catch (error) {
-    logError('Error setting up profiles table:', error);
+    logError('Error setting up profiles table:', { data: error });
   }
 };
 

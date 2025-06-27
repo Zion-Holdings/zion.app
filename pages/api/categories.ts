@@ -65,7 +65,7 @@ async function handler(
             return dbCategories;
           }
         } catch (dbError) {
-          logWarn('Database query failed, using fallback:', dbError);
+          logWarn('Database query failed, using fallback:', { data: dbError });
         }
 
         // Fallback to static data if DB fails
@@ -92,7 +92,7 @@ async function handler(
     return res.status(200).json(categories);
 
   } catch (error: any) {
-    logError('Categories API error:', error);
+    logError('Categories API error:', { data: error });
     
     // Return fallback data even on error
     if (CATEGORIES && CATEGORIES.length > 0) {

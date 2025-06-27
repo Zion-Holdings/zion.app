@@ -28,7 +28,7 @@ export const cleanupAuthState = () => {
       }
     });
   } catch (e) {
-    logWarn('Storage access error:', e);
+    logWarn('Storage access error:', { data:  e });
   }
   
   // Remove from sessionStorage if in use
@@ -39,7 +39,7 @@ export const cleanupAuthState = () => {
       }
     });
   } catch (e) {
-    logWarn('Storage access error:', e);
+    logWarn('Storage access error:', { data:  e });
   }
 };
 
@@ -89,6 +89,6 @@ export const checkNewRegistration = async (user: UserDetails) => {
         });
     }
   } catch (error) {
-    logError("Error checking or scheduling welcome email:", error);
+    logError('Error checking or scheduling welcome email:', { data: error });
   }
 };

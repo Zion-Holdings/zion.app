@@ -283,7 +283,7 @@ class GlobalToastManager {
           metadata: toast.metadata 
         });
       } catch (e) {
-        logError('Failed to log toast error:', e);
+        logError('Failed to log toast error:', { data:  e });
       }
     }
   }

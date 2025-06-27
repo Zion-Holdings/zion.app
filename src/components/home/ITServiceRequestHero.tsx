@@ -8,9 +8,9 @@ import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { logError } from '@/utils/productionLogger';
 
 export function ITServiceRequestHero() {
-import { logError } from '@/utils/productionLogger';
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

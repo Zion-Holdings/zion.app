@@ -25,7 +25,7 @@ import { logWarn, logError } from '@/utils/productionLogger';
         dynamicTemplateData: {},
       });
     } catch (err) {
-      logError('Failed to send SendGrid welcome email:', err);
+      logError('Failed to send SendGrid welcome email:', { data: err });
     }
   }
 }

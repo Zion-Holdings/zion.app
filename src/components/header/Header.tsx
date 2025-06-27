@@ -53,7 +53,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      logInfo('Header search submit:', query);
+      logInfo('Header search submit:', { data: query });
       router.push(`/search?q=${encodeURIComponent(query)}`);
       setQuery("");
     }
@@ -75,7 +75,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             value={query}
             onChange={setQuery}
             onSelectSuggestion={(suggestion) => {
-              logInfo('Header search suggestion selected:', suggestion);
+              logInfo('Header search suggestion selected:', { data: suggestion });
               // Navigate to specific item if slug and type indicate direct link, otherwise search by text
               if (suggestion.slug && (suggestion.type === 'product' || suggestion.type === 'doc' || suggestion.type === 'blog')) {
                 // Assuming product slugs are like /marketplace/listing/id

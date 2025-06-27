@@ -121,7 +121,7 @@ const CreateProposalPage: React.FC = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        logError("Submission error:", errorData);
+        logError('Submission error:', { data: errorData });
         throw new Error(errorData.detail || Object.values(errorData).join(', ') || `Error: ${response.status}`);
       }
 
@@ -129,7 +129,7 @@ const CreateProposalPage: React.FC = () => {
       router.push(`/governance/${newProposal.id}`);
     } catch (err: any) {
       setApiError(err.message || 'Failed to create proposal.');
-      logError(err);
+      logError("Error:", { error: err });
     } finally {
       setIsLoading(false);
     }

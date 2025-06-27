@@ -12,9 +12,9 @@ import { AlertTriangle, Check, Globe, Search, Loader2 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useLanguage, SupportedLanguage } from "@/context/LanguageContext";
 import { useTranslationService } from "@/hooks/useTranslationService";
+import { logError } from '@/utils/productionLogger';
 
 export default function TranslationManager() {
-import { logError } from '@/utils/productionLogger';
 
   const { t, i18n } = useTranslation();
   const isMobile = useIsMobile();
@@ -185,7 +185,7 @@ import { logError } from '@/utils/productionLogger';
         description: t('translation.content_translated'),
       });
     } catch (error) {
-      logError(`Error translating key ${key}:`, error);
+      logError('Error translating key ${key}:', { data: error });
       toast({
         title: t('translation.translation_failed'),
         description: error instanceof Error ? error.message : t('translation.unknown_error'),

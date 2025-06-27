@@ -28,7 +28,7 @@ export default function CheckoutSuccess() {
     })
       .then(res => res.json())
       .then(data => setSession(data.session as Session))
-      .catch(err => logError('Failed to load session', err));
+      .catch(err => logError('Failed to load session', { data: err }));
   }, [searchParams]);
 
   if (!session) {

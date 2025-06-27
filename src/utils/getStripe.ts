@@ -1,9 +1,9 @@
 import { loadStripe, Stripe } from '@stripe/stripe-js';
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
 
 export const PROD_DOMAIN = 'app.ziontechgroup.com';
 
 export function isProdDomain(host?: string) {
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
 
   const context =
     typeof window === 'undefined'

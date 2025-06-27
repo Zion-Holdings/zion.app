@@ -19,7 +19,7 @@ const OAuthCallback = () => {
     const error = params.get('error'); // Handle potential errors from OAuth provider
 
     if (error) {
-      logError('OAuth Error:', error);
+      logError('OAuth Error:', { data: error });
       toast.error(`Authentication failed: ${error}`);
       router.replace('/auth/login');
       return;

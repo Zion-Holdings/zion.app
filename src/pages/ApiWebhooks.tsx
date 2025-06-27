@@ -4,9 +4,9 @@ import ApiDocsLayout from "@/components/developers/ApiDocsLayout";
 import { CodeBlock } from "@/components/developers/CodeBlock";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from 'next/link';
+import { logInfo } from '@/utils/productionLogger';
 
 export function ApiWebhooks() {
-import { logInfo } from '@/utils/productionLogger';
 
   // Sample webhook event payload
   const newApplicationPayload = `{
@@ -106,27 +106,27 @@ app.post('/webhooks/zion', verifyWebhookSignature, (req, res) => {
   // Handle different event types
   switch (event_type) {
     case 'new_application':
-      logInfo('New application received:', data.application_id);
+      logInfo('New application received:', { data: data.application_id });
       // Process the new application...
       break;
     
     case 'talent_hired':
-      logInfo('Talent hired:', data.talent_id);
+      logInfo('Talent hired:', { data: data.talent_id });
       // Update your system...
       break;
     
     case 'quote_received':
-      logInfo('New quote received:', data.quote_id);
+      logInfo('New quote received:', { data: data.quote_id });
       // Process the quote...
       break;
     
     case 'message_received':
-      logInfo('New message received:', data.message_id);
+      logInfo('New message received:', { data: data.message_id });
       // Process the message...
       break;
     
     default:
-      logInfo('Unknown event type:', event_type);
+      logInfo('Unknown event type:', { data: event_type });
   }
   
   // Always return a 200 response quickly

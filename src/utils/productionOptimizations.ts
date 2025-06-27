@@ -64,10 +64,10 @@ export class ProductionOptimizer {
       navigator.serviceWorker
         .register('/service-worker.js')
         .then((registration) => {
-          logInfo('Service Worker registered:', registration);
+          logInfo('Service Worker registered:', { data: registration });
         })
         .catch((error) => {
-          logInfo('Service Worker registration failed:', error);
+          logInfo('Service Worker registration failed:', { data: error });
         });
     }
   }
@@ -123,11 +123,11 @@ export class ProductionOptimizer {
       };
 
       // This would integrate with your error reporting service
-      logError('Production Error:', errorInfo);
+      logError('Production Error:', { data: errorInfo });
     });
 
     window.addEventListener('unhandledrejection', (event) => {
-      logError('Unhandled Promise Rejection:', event.reason);
+      logError('Unhandled Promise Rejection:', { data: event.reason });
     });
   }
 

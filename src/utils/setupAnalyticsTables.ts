@@ -16,7 +16,7 @@ import { logInfo, logWarn, logError } from '@/utils/productionLogger';
       await createAnalyticsTables();
     }
   } catch (error) {
-    logWarn('Error checking if analytics tables exist:', error);
+    logWarn('Error checking if analytics tables exist:', { data: error });
     // No need to create tables here, as this could be a connection error
   }
 }
@@ -86,7 +86,7 @@ async function createAnalyticsTables() {
     
     logInfo('Analytics tables created successfully');
   } catch (error) {
-    logError('Error creating analytics tables:', error);
+    logError('Error creating analytics tables:', { data: error });
     // Tables creation failed, but we can still continue
   }
 }

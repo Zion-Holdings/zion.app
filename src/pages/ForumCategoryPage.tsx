@@ -105,9 +105,9 @@ function CategoryContent({
 
   const canCreatePost = user && (!category.adminOnly || user.userType === 'admin' || user.role === 'admin');
 
-  logInfo('CategoryContent - categoryId:', categoryId);
-  logInfo('CategoryContent - categoryPosts:', categoryPosts);
-  logInfo('CategoryContent - filteredPosts:', filteredPosts);
+  logInfo('CategoryContent - categoryId:', { data: categoryId });
+  logInfo('CategoryContent - categoryPosts:', { data: categoryPosts });
+  logInfo('CategoryContent - filteredPosts:', { data: filteredPosts });
 
   return (
     <div className="container py-8">
@@ -198,7 +198,7 @@ export default function ForumCategoryPage() {
   useEffect(() => {
     // Add a small delay to ensure router is ready
     if (categoryId && category) {
-      logInfo('ForumCategoryPage - categoryId changed:', categoryId);
+      logInfo('ForumCategoryPage - categoryId changed:', { data: categoryId });
     }
   }, [categoryId, category]);
 

@@ -33,14 +33,14 @@ import { logWarn, logError } from '@/utils/productionLogger';
     if (!response.ok) {
       // Log the error status and text for more context
       const errorText = await response.text();
-      logError(`Error fetching product ${productId}: ${response.status} ${response.statusText}`, errorText);
+      logError('Error fetching product ${productId}: ${response.status} ${response.statusText}', { data: errorText });
       throw new Error(`Failed to fetch product data. Status: ${response.status}`);
     }
 
     const data: ProductDetailsData = await response.json();
     return data;
   } catch (error) {
-    logError('An error occurred in fetchProductById:', error);
+    logError('An error occurred in fetchProductById:', { data: error });
     // During build time, return null instead of throwing
     if (typeof window === 'undefined' && process.env.NODE_ENV === 'production') {
       return null;

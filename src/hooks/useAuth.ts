@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { AuthContext } from '@/context/auth/AuthContext';
 import type { AuthContextType } from '@/types/auth';
+import { logWarn } from '@/utils/productionLogger';
 
 export const useAuth = (): AuthContextType => {
-import { logWarn } from '@/utils/productionLogger';
 
   const context = useContext(AuthContext);
   if (context === undefined) {

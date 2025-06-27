@@ -15,9 +15,9 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { cn } from '@/lib/utils'; // Import cn utility
 import { useRouter } from 'next/router';
+import { logWarn } from '@/utils/productionLogger';
 
 export function AppHeader() {
-import { logWarn } from '@/utils/productionLogger';
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();

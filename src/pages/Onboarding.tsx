@@ -11,9 +11,9 @@ import { CategorySelection } from "@/components/onboarding/CategorySelection";
 import { Steps, Step } from "@/components/ui/steps";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { logError } from '@/utils/productionLogger';
 
 export default function Onboarding() {
-import { logError } from '@/utils/productionLogger';
 
   const { user, updateProfile, isLoading } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
@@ -98,7 +98,7 @@ import { logError } from '@/utils/productionLogger';
       setCurrentStep(2);
 
     } catch (error) {
-      logError('Error updating profile:', error);
+      logError('Error updating profile:', { data: error });
       toast({
         title: 'Error',
         description: 'There was a problem updating your profile. Please try again.',
@@ -122,7 +122,7 @@ import { logError } from '@/utils/productionLogger';
           preferredCategories: list,
         });
       } catch (err) {
-        logError('Error saving onboarding data:', err);
+        logError('Error saving onboarding data:', { data: err });
       }
     }
     const dashboardRoute = userType === 'client' ? '/client-dashboard' : '/talent-dashboard';

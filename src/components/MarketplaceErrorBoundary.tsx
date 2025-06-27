@@ -19,7 +19,7 @@ function MarketplaceErrorFallback({ error, resetErrorBoundary }: MarketplaceErro
       await mutate(() => true, undefined, { revalidate: true });
       resetErrorBoundary();
     } catch (retryError) {
-      logError('Error during retry:', retryError);
+      logError('Error during retry:', { data: retryError });
       Sentry.captureException(retryError);
     }
   };

@@ -64,7 +64,7 @@ export default function CreatePostPage() {
           }
           mutate('user');
         } catch (err) {
-          logError('Failed to award points:', err);
+          logError('Failed to award points:', { data: err });
         }
       }
       

@@ -97,10 +97,10 @@ export default function SearchPage() {
         setResults(data.results);
       } else {
         setResults([]);
-        logError("Search API response structure is not as expected:", data);
+        logError('Search API response structure is not as expected:', { data: data });
       }
     } catch (error) {
-      logError("Search failed:", error);
+      logError('Search failed:', { data: error });
       setResults([]);
     } finally {
       setLoading(false);

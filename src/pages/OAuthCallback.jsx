@@ -10,7 +10,7 @@ function decodeToken(token) {
     const payload = token.split('.')[1];
     return JSON.parse(atob(payload));
   } catch (e) {
-    logError('Failed to decode token', e);
+    logError('Failed to decode token', { data:  e });
     return null;
   }
 }

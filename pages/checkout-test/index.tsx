@@ -24,7 +24,7 @@ const CheckoutTestPage = () => {
         setTestResults(prev => ({ ...prev, checkout: 'success' }));
       }
     } catch (err) {
-      logError('Checkout error:', err);
+      logError('Checkout error:', { data: err });
       alert('❌ Checkout test failed. Check console for details.');
       setTestResults(prev => ({ ...prev, checkout: 'error' }));
     } finally {
@@ -44,7 +44,7 @@ const CheckoutTestPage = () => {
         setTestResults(prev => ({ ...prev, paymentIntent: 'success' }));
       }
     } catch (err) {
-      logError('Payment intent error:', err);
+      logError('Payment intent error:', { data: err });
       alert('❌ Payment intent test failed. Check console for details.');
       setTestResults(prev => ({ ...prev, paymentIntent: 'error' }));
     } finally {

@@ -5,9 +5,9 @@ import { Job, JobStatus } from "@/types/jobs";
 import { toast } from "sonner";
 import { useAuth } from "./useAuth";
 import { createJob, updateJob, getJobById } from "@/services/jobService";
+import { logError } from '@/utils/productionLogger';
 
 export const useJobs = (userId?: string, status?: JobStatus) => {
-import { logError } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -42,7 +42,7 @@ import { logError } from '@/utils/productionLogger';
       setJobs(data as Job[]);
       setError(null);
     } catch (err: any) {
-      logError("Error fetching jobs:", err);
+      logError('Error fetching jobs:', { data: err });
       setError("Failed to fetch jobs. Please try again.");
       toast.error("Failed to fetch jobs");
     } finally {
@@ -65,7 +65,7 @@ import { logError } from '@/utils/productionLogger';
       toast.success("Job status updated successfully");
       return true;
     } catch (err: any) {
-      logError("Error updating job status:", err);
+      logError('Error updating job status:', { data: err });
       toast.error("Failed to update job status");
       return false;
     }
@@ -86,7 +86,7 @@ import { logError } from '@/utils/productionLogger';
       toast.success("Job deleted successfully");
       return true;
     } catch (err: any) {
-      logError("Error deleting job:", err);
+      logError('Error deleting job:', { data: err });
       toast.error("Failed to delete job");
       return false;
     }

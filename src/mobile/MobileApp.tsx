@@ -8,7 +8,7 @@ import { logInfo } from '@/utils/productionLogger';
 const CartContextTester = () => {
   try {
     const cart = useCart();
-    logInfo('CartContextTester: useCart() successful', cart);
+    logInfo('CartContextTester: useCart() successful', { data: cart });
     return (
       <div style={{ position: 'fixed', top: '10px', left: '10px', backgroundColor: 'lightgreen', padding: '5px', zIndex: 9999 }}>
         CartContextTester: OK

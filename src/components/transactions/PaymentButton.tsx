@@ -76,7 +76,7 @@ export function PaymentButton({
       }
       
     } catch (error) {
-      logError("Payment error:", error);
+      logError('Payment error:', { data: error });
       toast({
         title: "Payment error",
         description: "There was a problem initiating your payment. Please try again.",

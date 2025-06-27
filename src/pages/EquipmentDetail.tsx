@@ -132,7 +132,7 @@ export default function EquipmentDetail() {
               return;
             }
           } catch (storageError) {
-            logError('Error reading from sessionStorage:', storageError);
+            logError('Error reading from sessionStorage:', { data: storageError });
           }
         }
 
@@ -140,7 +140,7 @@ export default function EquipmentDetail() {
         setError('Equipment not found');
         setLoading(false);
       } catch (error) {
-        logError('Error loading equipment:', error);
+        logError('Error loading equipment:', { data: error });
         setError('Failed to load equipment details');
         setLoading(false);
       }

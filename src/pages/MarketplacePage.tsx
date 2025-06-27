@@ -198,7 +198,7 @@ function MarketplacePageContent() {
         total: processedDataset.length
       };
     } catch (error) {
-      logError('Error in fetchProducts:', error);
+      logError('Error in fetchProducts:', { data: error });
       throw new Error('Failed to load marketplace data. Please try again.');
     }
   }, [sortBy, filterCategory, showRecommended]);

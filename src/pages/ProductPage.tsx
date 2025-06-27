@@ -6,9 +6,9 @@ import { NEW_PRODUCTS } from '@/data/newProductsData';
 import { useCart } from '@/context/CartContext';
 import { toast } from '@/hooks/use-toast';
 import { SEO } from '@/components/SEO';
+import { logError } from '@/utils/productionLogger';
 
 export default function ProductPage() {
-import { logError } from '@/utils/productionLogger';
 
   const router = useRouter();
   const { id: rawId } = router.query;
@@ -38,7 +38,7 @@ import { logError } from '@/utils/productionLogger';
         }
       } catch (err) {
         // Fail silently and fall back to local data
-        logError('Error fetching product', err);
+        logError('Error fetching product', { data: err });
       }
     };
 

@@ -58,15 +58,15 @@ const LoginPage = () => {
         if (!mounted) return;
 
         if (sessionError) {
-          logError('LoginPage: Error getting session:', sessionError);
+          logError('LoginPage: Error getting session:', { data: sessionError });
           setError(sessionError as any); // Cast to any if type is too strict
         } else {
-          logInfo('LoginPage: getSession returned, user:', session?.user?.id);
+          logInfo('LoginPage: getSession returned, user:', { data: session?.user?.id });
           setUser(session?.user ?? null);
         }
       } catch (e) {
         if (mounted) {
-          logError('LoginPage: Exception during getSession:', e);
+          logError('LoginPage: Exception during getSession:', { data:  e });
           clearTimeout(sessionTimeoutId); // Ensure timeout is cleared on error too
         }
       } finally {
@@ -81,7 +81,10 @@ const LoginPage = () => {
       logInfo('LoginPage: Setting up onAuthStateChange listener.');
       const { data: authListener } = supabase.auth.onAuthStateChange((event: AuthChangeEvent, session: Session | null) => {
         if (!mounted) return;
-        logInfo('LoginPage: onAuthStateChange event:', event, 'user:', session?.user?.id);
+        logInfo('LoginPage: onAuthStateChange event:', { 
+          event, 
+          userId: session?.user?.id 
+        });
         setUser(session?.user ?? null);
         // If auth state changes after initial check, ensure sessionChecked is true
         // This handles cases like login/logout in another tab.
@@ -120,7 +123,7 @@ const LoginPage = () => {
         try {
           returnTo = decodeURIComponent(router.query.returnTo);
         } catch (e) {
-          logWarn('Failed to decode returnTo parameter:', router.query.returnTo);
+          logWarn('Failed to decode returnTo parameter:', { data: router.query.returnTo });
           returnTo = '/dashboard';
         }
       }
@@ -219,14 +222,14 @@ const LoginPage = () => {
     setVerificationEmailSent(false);
     
     try {
-      logInfo('Attempting Supabase login with email:', email);
+      logInfo('Attempting Supabase login with email:', { data: email });
       const { data, error: signInError } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
       if (signInError) {
-        logError('Supabase sign-in error:', signInError);
+        logError('Supabase sign-in error:', { data: signInError });
         
         // Check if error is related to email verification
         const messageIncludesEmailNotConfirmed = signInError.message?.toLowerCase().includes('email not confirmed') ||
@@ -265,7 +268,7 @@ const LoginPage = () => {
           setError({ name: signInError.name || 'AuthApiError', message: displayMessage } as AuthError);
         }
       } else if (data.user) {
-        logInfo('Supabase sign-in successful, user:', data.user);
+        logInfo('Supabase sign-in successful, user:', { data: data.user });
         setUser(data.user); // setUser to trigger useEffect for redirection
         // Redirection is now handled by the useEffect hook
       } else {
@@ -274,7 +277,7 @@ const LoginPage = () => {
         setError({ name: 'UnknownAuthError', message: 'Login failed due to an unknown error. Please try again.' } as AuthError);
       }
     } catch (catchedError: any) {
-      logError('Exception during Supabase sign-in:', catchedError);
+      logError('Exception during Supabase sign-in:', { data: catchedError });
       // Check if the caught error is a network error
       let exceptionMessage = 'An unexpected error occurred. Please try again.';
       if (catchedError.message && catchedError.message.toLowerCase().includes('networkerror when attempting to fetch resource')) {

@@ -44,7 +44,7 @@ export async function createNotification({
     
     return { success: true, notificationId: notificationId || undefined };
   } catch (error) {
-    logError('Error creating notification:', error);
+    logError('Error creating notification:', { data: error });
     // Report error to Sentry
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     typeof logError !== 'undefined' ? logError(error, { message: 'Error creating notification' }) : null;

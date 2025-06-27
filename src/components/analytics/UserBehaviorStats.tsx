@@ -30,7 +30,7 @@ export function UserBehaviorStats() {
       });
       
       if (error) {
-        logError('Error fetching behavior data:', error);
+        logError('Error fetching behavior data:', { data: error });
         
         // Fallback to manual query if the RPC doesn't exist
         const startDate = new Date();

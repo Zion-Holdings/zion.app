@@ -184,7 +184,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         usingFallback = true;
       }
     } catch (dbError) {
-      logWarn('Database query failed or timed out, using fallback data:', dbError);
+      logWarn('Database query failed or timed out, using fallback data:', { data: dbError });
       usingFallback = true;
     }
 
@@ -267,7 +267,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     return res.status(200).json(responseData);
   } catch (error) {
-    logError(`Failed to fetch items for category ${slug}:`, error);
+    logError('Failed to fetch items for category ${slug}:', { data: error });
     
     // Ensure we always return JSON, never HTML
     try {
@@ -276,7 +276,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         user: (req as any).user ? { id: (req as any).user.id, email: (req as any).user.email } : undefined,
       });
     } catch (sentryError) {
-      logError('Sentry capture failed:', sentryError);
+      logError('Sentry capture failed:', { data: sentryError });
     }
     
     return res.status(500).json({ 
@@ -287,7 +287,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
       await prisma.$disconnect();
     } catch (disconnectError) {
-      logError('Prisma disconnect error:', disconnectError);
+      logError('Prisma disconnect error:', { data: disconnectError });
     }
   }
 }

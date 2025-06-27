@@ -181,7 +181,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
       });
 
       if (result.error) {
-        logError('Signup error:', result.error);
+        logError('Signup error:', { data: result.error });
         fireEvent('signup_error', { message: result.error });
         
         // Handle specific error cases with inline field errors
@@ -220,7 +220,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
       onSuccess?.();
 
     } catch (error: any) {
-      logError('Unexpected signup error:', error);
+      logError('Unexpected signup error:', { data: error });
       fireEvent('signup_error', { message: error.message || 'unexpected' });
       const errorMessage = 'An unexpected error occurred during signup. Please try again.';
       

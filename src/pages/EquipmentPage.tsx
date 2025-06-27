@@ -336,7 +336,7 @@ function EquipmentPageContent() {
         total: processedDataset.length
       };
     } catch (error) {
-      logError('Error in fetchEquipment:', error);
+      logError('Error in fetchEquipment:', { data: error });
       throw new Error('Failed to load equipment data. Please try again.');
     }
   }, [sortBy, filterCategory, showRecommended, dataSeed]);

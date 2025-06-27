@@ -1,8 +1,8 @@
 // src/config/env.ts
 import getConfig from 'next/config';
+import { logWarn } from '@/utils/productionLogger';
 
 export const getAppKitProjectId = (): string => {
-import { logWarn } from '@/utils/productionLogger';
 
   const { publicRuntimeConfig } = getConfig();
   const projectId = publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID;

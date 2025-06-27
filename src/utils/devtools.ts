@@ -15,7 +15,7 @@ import { logInfo, logError } from '@/utils/productionLogger';
       // logInfo('DevTools enabled');
       logInfo('React DevTools import temporarily commented out for build troubleshooting.');
     } catch (err) {
-      logError('Failed to load react-devtools (import is commented out)', err);
+      logError('Failed to load react-devtools (import is commented out)', { data: err });
     }
   }
 }

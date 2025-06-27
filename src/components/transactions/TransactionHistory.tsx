@@ -94,7 +94,7 @@ export function TransactionHistory() {
       
       refetch();
     } catch (error) {
-      logError("Error managing transaction:", error);
+      logError('Error managing transaction:', { data: error });
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to update transaction",

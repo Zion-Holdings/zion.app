@@ -132,7 +132,7 @@ export function useTenantAdminStatus(tenantId?: string) {
       try {
         const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
         if (sessionError) {
-          logWarn('Session error:', sessionError);
+          logWarn('Session error:', { data: sessionError });
           setIsAdmin(false);
           return;
         }
@@ -151,12 +151,12 @@ export function useTenantAdminStatus(tenantId?: string) {
           .single();
 
         if (error) {
-          logWarn('Error checking admin status:', error);
+          logWarn('Error checking admin status:', { data: error });
         }
 
         setIsAdmin(!!data && !error);
       } catch (err) {
-        logWarn('Error checking tenant admin status:', err);
+        logWarn('Error checking tenant admin status:', { data: err });
         setIsAdmin(false);
       } finally {
         setIsLoading(false);

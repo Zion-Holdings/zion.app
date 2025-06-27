@@ -4,9 +4,9 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
 import { Milestone, MilestoneActivity } from './types';
+import { logError } from '@/utils/productionLogger';
 
 export const useLoadMilestones = (projectId?: string) => {
-import { logError } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [milestones, setMilestones] = useState<Milestone[]>([]);
@@ -54,7 +54,7 @@ import { logError } from '@/utils/productionLogger';
       setActivities(activitiesMap);
       setError(null);
     } catch (err: any) {
-      logError("Error fetching milestones:", err);
+      logError('Error fetching milestones:', { data: err });
       setError("Failed to fetch milestones: " + err.message);
       toast.error("Failed to fetch milestones");
     } finally {

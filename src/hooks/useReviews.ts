@@ -4,9 +4,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { Review, ReviewReport } from "@/types/reviews";
 import { toast } from "@/hooks/use-toast";
+import { logError } from '@/utils/productionLogger';
 
 export function useReviews(projectId?: string) {
-import { logError } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +49,7 @@ import { logError } from '@/utils/productionLogger';
         }
       }
     } catch (err: any) {
-      logError("Error fetching reviews:", err);
+      logError('Error fetching reviews:', { data: err });
       toast({
         title: "Error",
         description: "Failed to load reviews",
@@ -82,7 +82,7 @@ import { logError } from '@/utils/productionLogger';
       
       setReviews(data || []);
     } catch (err: any) {
-      logError("Error fetching user reviews:", err);
+      logError('Error fetching user reviews:', { data: err });
       toast({
         title: "Error",
         description: "Failed to load reviews",
@@ -136,7 +136,7 @@ import { logError } from '@/utils/productionLogger';
       setUserReview(data);
       return true;
     } catch (err: any) {
-      logError("Error submitting review:", err);
+      logError('Error submitting review:', { data: err });
       
       // Check for unique constraint violation
       if (err.code === "23505") {
@@ -185,7 +185,7 @@ import { logError } from '@/utils/productionLogger';
       
       return true;
     } catch (err: any) {
-      logError("Error updating review:", err);
+      logError('Error updating review:', { data: err });
       toast({
         title: "Error",
         description: "Failed to update review",
@@ -229,7 +229,7 @@ import { logError } from '@/utils/productionLogger';
         return true;
       }
     } catch (err: any) {
-      logError("Error reporting review:", err);
+      logError('Error reporting review:', { data: err });
       toast({
         title: "Error",
         description: "Failed to report review",

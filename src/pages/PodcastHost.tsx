@@ -3,9 +3,9 @@ import { Header } from '@/components/Header';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { logError } from '@/utils/productionLogger';
 
 export default function PodcastHost() {
-import { logError } from '@/utils/productionLogger';
 
   const [invitee, setInvitee] = useState('');
   const [bio, setBio] = useState('');

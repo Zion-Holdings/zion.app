@@ -78,9 +78,9 @@ export default function CartPage() {
       if (!sessionId) throw new Error('Session ID missing in response');
 
       const { error } = await stripe.redirectToCheckout({ sessionId });
-      if (error) logError('Stripe redirect error:', error.message);
+      if (error) logError('Stripe redirect error:', { data: error.message });
     } catch (err: any) {
-      logError('Checkout error:', err);
+      logError('Checkout error:', { data: err });
       alert(err.message || 'Checkout failed');
     } finally {
       setLoading(false);

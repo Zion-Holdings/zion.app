@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Resume } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
+import { logError } from '@/utils/productionLogger';
 
 export function useResumeList() {
-import { logError } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
@@ -57,7 +57,7 @@ import { logError } from '@/utils/productionLogger';
       setResumes(transformedResumes);
       return transformedResumes;
     } catch (e: any) {
-      logError('Error fetching resumes:', e);
+      logError('Error fetching resumes:', { data:  e });
       setError(e.message);
       return [];
     } finally {

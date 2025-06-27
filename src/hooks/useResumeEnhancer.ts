@@ -34,7 +34,7 @@ export function useResumeEnhancer() {
       return data ? (data as any).enhancedContent : content;
     } catch (err: any) {
       setError(err.message || 'Failed to enhance content');
-      logError('Enhancement error:', err);
+      logError('Enhancement error:', { data: err });
       return null;
     } finally {
       setIsEnhancing(false);

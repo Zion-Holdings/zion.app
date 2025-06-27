@@ -28,7 +28,7 @@ export function useFavorites() {
       setFavorites(data || []);
       await saveWishlist(data || []);
     } catch (err) {
-      logError('Failed to fetch favorites', err);
+      logError('Failed to fetch favorites', { data: err });
       const local = await getWishlist();
       setFavorites(local as Favorite[]);
     } finally {
@@ -70,7 +70,7 @@ export function useFavorites() {
           : [...favorites, { item_type, item_id }]
       );
     } catch (err) {
-      logError('Failed to toggle favorite', err);
+      logError('Failed to toggle favorite', { data: err });
     }
   };
 

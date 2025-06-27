@@ -1,9 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { 
 import { logError } from '@/utils/productionLogger';
-
+import { 
   Table, 
   TableBody, 
   TableCell, 
@@ -43,7 +41,7 @@ export function TenantsList() {
       if (error) throw error;
       setTenants(data as WhitelabelTenant[]);
     } catch (error: any) {
-      logError('Error loading tenants:', error);
+      logError('Error loading tenants:', { data: error });
       toast({
         variant: 'destructive',
         title: 'Failed to load tenants',
@@ -73,7 +71,7 @@ export function TenantsList() {
         description: `${tenant.brand_name} has been ${tenant.is_active ? 'deactivated' : 'activated'} successfully.`,
       });
     } catch (error: any) {
-      logError('Error toggling tenant status:', error);
+      logError('Error toggling tenant status:', { data: error });
       toast({
         variant: 'destructive',
         title: 'Failed to update tenant',
@@ -103,7 +101,7 @@ export function TenantsList() {
         description: `Custom domain for ${tenant.brand_name} has been verified.`,
       });
     } catch (error: any) {
-      logError('Error verifying DNS:', error);
+      logError('Error verifying DNS:', { data: error });
       toast({
         variant: 'destructive',
         title: 'Failed to verify DNS',

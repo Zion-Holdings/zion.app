@@ -282,7 +282,7 @@ export default function Marketplace() {
         sort: sortBy
       };
 
-      logInfo('Marketplace.tsx: Fetching products using marketplace service with params:', params);
+      logInfo('Marketplace.tsx: Fetching products using marketplace service with params:', { data: params });
       
       let items: ProductListing[] = await fetchProductsService(params) as ProductListing[];
       logInfo('Marketplace.tsx: Raw items from marketplace service before filtering/sorting:', JSON.stringify(items, null, 2));
@@ -341,7 +341,7 @@ export default function Marketplace() {
       };
     } catch (err: any) {
       // Log the error and allow useInfiniteScrollPagination to handle it
-      logError("Error in Marketplace fetchProducts:", err);
+      logError('Error in Marketplace fetchProducts:', { data: err });
       
       // Show more specific error messages based on the error type
       if (err.response?.status === 403) {
@@ -586,7 +586,7 @@ export default function Marketplace() {
                   try {
                     await router.push(`/checkout/${product.id}`);
                   } catch (error) {
-                    logError("Failed to navigate to checkout:", error);
+                    logError('Failed to navigate to checkout:', { data: error });
                     toast({
                       title: "Navigation Error",
                       description: "Could not navigate to checkout. Please try again.",

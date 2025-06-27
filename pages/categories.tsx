@@ -1,9 +1,9 @@
 import Categories, { CategoriesProps } from '@/pages/Categories';
 import type { GetStaticProps } from 'next';
 import { CATEGORIES } from '@/data/categories'; // Import CATEGORIES
+import { logInfo, logError } from '@/utils/productionLogger';
 
 export const getStaticProps: GetStaticProps<CategoriesProps> = async () => {
-import { logInfo, logError } from '@/utils/productionLogger';
 
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   const isBuildTime = process.env.NETLIFY || process.env.NODE_ENV === 'production' && !process.env.RUNTIME_ENVIRONMENT;
@@ -36,7 +36,7 @@ import { logInfo, logError } from '@/utils/productionLogger';
       return { props: { categories: CATEGORIES } };
     }
   } catch (error) {
-    logError('Error fetching categories in getStaticProps, falling back to default. Error:', error);
+    logError('Error fetching categories in getStaticProps, falling back to default. Error:', { data: error });
     return { props: { categories: CATEGORIES } };
   }
 };

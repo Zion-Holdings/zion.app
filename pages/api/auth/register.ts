@@ -69,7 +69,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     if (error) {
-      logError('Supabase signup error:', error);
+      logError('Supabase signup error:', { data: error });
       
       // Handle specific Supabase errors
       if (error.message?.includes('already registered')) {
@@ -129,7 +129,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       );
 
       if (adminUpdateError) {
-        logError('Error auto-verifying email:', adminUpdateError);
+        logError('Error auto-verifying email:', { data: adminUpdateError });
         // If auto-verification fails, fall back to requiring manual verification
         return res.status(201).json({
           message: 'Registration successful. Please check your email to verify your account. (Auto-verification failed)',
@@ -181,7 +181,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
   } catch (error: any) {
-    logError('Registration error:', error);
+    logError('Registration error:', { data: error });
     return res.status(500).json({ 
       error: 'Internal server error during registration',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined

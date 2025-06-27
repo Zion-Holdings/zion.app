@@ -62,7 +62,7 @@ export const useApiErrorHandling = () => {
         });
       }
 
-      logError('API Error:', error);
+      logError('API Error:', { data: error });
     },
     []
   );
@@ -76,7 +76,7 @@ export const useApiErrorHandling = () => {
         description: 'Data has been refreshed successfully',
       });
     } catch (error) {
-      logError('Failed to retry queries:', error);
+      logError('Failed to retry queries:', { data: error });
       toast({
         title: 'Retry Failed',
         description: 'Failed to refresh data - please try again',
@@ -95,7 +95,7 @@ export const useApiErrorHandling = () => {
           description: 'Data has been refreshed successfully',
         });
       } catch (error) {
-        logError('Failed to retry query:', error);
+        logError('Failed to retry query:', { data: error });
         toast({
           title: 'Retry Failed',
           description: 'Failed to refresh data - please try again',

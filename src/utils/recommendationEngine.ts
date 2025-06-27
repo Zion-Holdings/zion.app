@@ -47,7 +47,7 @@ import { logError } from '@/utils/productionLogger';
       }
     }
   } catch (err) {
-    logError('equipment recommendation error', err);
+    logError('equipment recommendation error', { data: err });
   }
 
   // Fallback to random equipment
@@ -97,7 +97,7 @@ export async function recommendFeatures(
     const fallback = ALL_FEATURES.filter((f) => !usedFeatures.has(f.id));
     return fallback.slice(0, limit);
   } catch (err) {
-    logError('feature recommendation error', err);
+    logError('feature recommendation error', { data: err });
   }
 
   return ALL_FEATURES.slice(0, limit);

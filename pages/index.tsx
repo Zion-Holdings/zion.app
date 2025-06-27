@@ -4,10 +4,9 @@ import Home from '@/pages/Home';
 import type { GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { ErrorBanner } from '@/components/talent/ErrorBanner';
-
-export interface HomePageProps {
 import { logWarn, logError } from '@/utils/productionLogger';
 
+export interface HomePageProps {
   hasError?: boolean;
   errorMessage?: string;
   timestamp?: number; // Add timestamp for cache busting
@@ -34,14 +33,14 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       revalidate: 300
     };
   } catch (error) {
-    logError('Error in getStaticProps for home page:', error);
+    logError('Error in getStaticProps for home page:', { data: error });
     
     // Log to Sentry if available, but don't block the page
     if (isSentryActive) {
       try {
         Sentry.captureException(error);
       } catch (sentryError) {
-        logWarn('Failed to log to Sentry:', sentryError);
+        logWarn('Failed to log to Sentry:', { data: sentryError });
       }
     }
     
@@ -64,7 +63,7 @@ const ErrorTestButton = () => {
       if (isSentryActive) {
         Sentry.captureException(error);
       }
-      logError(error);
+      logError('Button error test:', { error });
     }
   };
 

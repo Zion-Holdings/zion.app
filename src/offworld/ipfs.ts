@@ -32,7 +32,7 @@ async function getHelia(): Promise<Helia> {
   if (!heliaNode) {
     logInfo('Initializing Libp2p for general IPFS operations...');
     libp2pNode = await createLibp2p(libp2pOptions);
-    logInfo('Libp2p Initialized for IPFS. PeerID:', libp2pNode.peerId.toString());
+    logInfo('Libp2p Initialized for IPFS. PeerID:', { data: libp2pNode.peerId.toString( }));
 
     logInfo('Initializing Helia for general IPFS operations...');
     const blockstore = new MemoryBlockstore();
@@ -61,7 +61,7 @@ export async function fetchJSON(cidString: string): Promise<any> {
   try {
     parsedCid = CID.parse(cidString);
   } catch (error) {
-    logError('Failed to parse CID string:', error);
+    logError('Failed to parse CID string:', { data: error });
     throw new Error(`Invalid CID string: ${cidString}`);
   }
 

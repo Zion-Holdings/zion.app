@@ -4,9 +4,9 @@ import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import { addItem } from '@/store/cartSlice';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
+import { logError } from '@/utils/productionLogger';
 
 export default function PaymentFlowTest() {
-import { logError } from '@/utils/productionLogger';
 
   const dispatch = useDispatch();
   const { isAuthenticated, user } = useAuth();
@@ -36,7 +36,7 @@ import { logError } from '@/utils/productionLogger';
       }));
       alert(data.sessionId ? 'Checkout session created' : 'Checkout failed');
     } catch (err) {
-      logError(err);
+      logError('Checkout error:', { error: err });
       setResults((r) => ({ ...r, checkout: 'error' }));
       alert('Checkout session error');
     } finally {
@@ -58,7 +58,7 @@ import { logError } from '@/utils/productionLogger';
         data.clientSecret ? 'Payment intent created' : 'Payment intent failed',
       );
     } catch (err) {
-      logError(err);
+      logError("Error:", { error: err });
       setResults((r) => ({ ...r, intent: 'error' }));
       alert('Payment intent error');
     } finally {

@@ -57,7 +57,7 @@ export function useMarketplaceProducts(filters: MarketplaceFilters = {}) {
       return data.products || [];
     },
     onError: (err) => {
-      logError('useMarketplaceProducts: Error fetching products:', err);
+      logError('useMarketplaceProducts: Error fetching products:', { data: err });
     },
     staleTime: 5 * 60 * 1000, // 5 minutes
     refetchOnWindowFocus: false,
@@ -78,7 +78,7 @@ export function useMarketplaceCategories() {
       return response.json();
     },
     onError: (err) => {
-      logError('useMarketplaceCategories: Error fetching categories:', err);
+      logError('useMarketplaceCategories: Error fetching categories:', { data: err });
     },
     staleTime: 30 * 60 * 1000, // 30 minutes - categories change less frequently
     refetchOnWindowFocus: false,
@@ -110,7 +110,7 @@ export function useMarketplaceTalent(filters: MarketplaceFilters = {}) {
       return response.json();
     },
     onError: (err) => {
-      logError('useMarketplaceTalent: Error fetching talent:', err);
+      logError('useMarketplaceTalent: Error fetching talent:', { data: err });
     },
     staleTime: 10 * 60 * 1000, // 10 minutes
     refetchOnWindowFocus: false,
@@ -138,7 +138,7 @@ export function useMarketplaceEquipment(filters: MarketplaceFilters = {}) {
       return response.json();
     },
     onError: (err) => {
-      logError('useMarketplaceEquipment: Error fetching equipment:', err);
+      logError('useMarketplaceEquipment: Error fetching equipment:', { data: err });
     },
     staleTime: 15 * 60 * 1000, // 15 minutes
     refetchOnWindowFocus: false,

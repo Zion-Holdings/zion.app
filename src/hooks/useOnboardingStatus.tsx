@@ -40,7 +40,7 @@ export function useOnboardingStatus() {
           .single();
           
         if (error) {
-          logError("Error fetching onboarding status:", error);
+          logError('Error fetching onboarding status:', { data: error });
           return;
         }
         
@@ -56,7 +56,7 @@ export function useOnboardingStatus() {
           });
         }
       } catch (err) {
-        logError("Error in onboarding status hook:", err);
+        logError('Error in onboarding status hook:', { data: err });
       }
     };
     

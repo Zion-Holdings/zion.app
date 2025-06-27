@@ -9,9 +9,9 @@ import { useAuth } from "@/context/auth/AuthProvider";
 import { AlertCircle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PasswordStrengthMeter } from "@/components/PasswordStrengthMeter";
+import { logError } from '@/utils/productionLogger';
 
 export function SignUpForm() {
-import { logError } from '@/utils/productionLogger';
 
   const router = useRouter();
   const { signUp, login, loginWithGoogle } = useAuth();
@@ -71,7 +71,7 @@ import { logError } from '@/utils/productionLogger';
         router.push("/mobile");
       }
     } catch (err: any) {
-      logError('Signup/Login error:', err);
+      logError('Signup/Login error:', { data: err });
       setError(err.message || 'An unexpected error occurred. Please try again.');
     } finally {
       setIsLoading(false);

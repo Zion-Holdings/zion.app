@@ -55,7 +55,7 @@ export default function Signup() {
         setHealthCheckError('Authentication service is experiencing issues');
       }
     } catch (err: any) {
-      logError('Auth service health check failed', err);
+      logError('Auth service health check failed', { data: err });
       setAuthServiceAvailable(false);
       // Set a more specific error message based on the error type
       if (err.code === 'NETWORK_ERROR' || err.message?.includes('Network Error')) {
@@ -179,7 +179,7 @@ export default function Signup() {
         // Try both 'error' and 'message' fields for compatibility
         const errorMsg = err.response?.data?.error || err.response?.data?.message || 'Signup failed. Please try again.';
         
-        logInfo('Processed error message:', errorMsg);
+        logInfo('Processed error message:', { data: errorMsg });
         
         if (status === 409) {
           // Handle duplicate email specifically

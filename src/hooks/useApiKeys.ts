@@ -79,7 +79,7 @@ export function useApiKeys() {
 
       setKeys(result.keys || []);
     } catch (err) {
-      logError('Error fetching API keys:', err);
+      logError('Error fetching API keys:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -138,7 +138,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      logError('Error creating API key:', err);
+      logError('Error creating API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -195,7 +195,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      logError('Error regenerating API key:', err);
+      logError('Error regenerating API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -248,7 +248,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      logError('Error revoking API key:', err);
+      logError('Error revoking API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -296,7 +296,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      logError('Error fetching API logs:', err);
+      logError('Error fetching API logs:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",

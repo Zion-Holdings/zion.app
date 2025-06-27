@@ -1,9 +1,9 @@
 
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { logError } from '@/utils/productionLogger';
 
 export const useSocialAuth = () => {
-import { logError } from '@/utils/productionLogger';
 
   const loginWithGoogle = async () => {
     try {
@@ -19,7 +19,7 @@ import { logError } from '@/utils/productionLogger';
         });
       }
     } catch (error: any) {
-      logError("Google login error:", error);
+      logError('Google login error:', { data: error });
       toast({
         title: "Google login failed",
         description: error.message || "An unexpected error occurred",
@@ -42,7 +42,7 @@ import { logError } from '@/utils/productionLogger';
         });
       }
     } catch (error: any) {
-      logError("Facebook login error:", error);
+      logError('Facebook login error:', { data: error });
       toast({
         title: "Facebook login failed",
         description: error.message || "An unexpected error occurred",
@@ -65,7 +65,7 @@ import { logError } from '@/utils/productionLogger';
         });
       }
     } catch (error: any) {
-      logError("Twitter login error:", error);
+      logError('Twitter login error:', { data: error });
       toast({
         title: "Twitter login failed",
         description: error.message || "An unexpected error occurred",

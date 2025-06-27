@@ -90,7 +90,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
           error: null
         });
       } catch (error) {
-        logError("Error fetching pricing suggestion analytics:", error);
+        logError('Error fetching pricing suggestion analytics:', { data: error });
         setAnalytics({
           ...analytics,
           isLoading: false,

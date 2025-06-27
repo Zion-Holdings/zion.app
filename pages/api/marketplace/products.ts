@@ -52,7 +52,7 @@ async function handler(
       await connectWithTimeout(prisma);
       products = await prisma.product.findMany({ skip, take: limit });
       logInfo('Successfully fetched products from database.');
-      logInfo('Fetched products:', products);
+      logInfo('Fetched products:', { data: products });
     } catch (e: any) {
       // Logging detailed Prisma error including message, code, meta, and stack for findMany operation.
       logError(
@@ -82,7 +82,7 @@ async function handler(
         _count: { id: true },
       });
       logInfo('Successfully fetched product stats.');
-      logInfo('Fetched product stats:', stats);
+      logInfo('Fetched product stats:', { data: stats });
     } catch (e: any) {
       // Logging detailed Prisma error including message, code, meta, and stack for groupBy operation.
       logError(

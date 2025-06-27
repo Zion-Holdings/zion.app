@@ -110,7 +110,7 @@ export function ContractForm({
       
       onContractGenerated(contract);
     } catch (error) {
-      logError("Error generating contract:", error);
+      logError('Error generating contract:', { data: error });
       toast({
         title: "Contract Generation Failed",
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",

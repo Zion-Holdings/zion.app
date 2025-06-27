@@ -54,7 +54,7 @@ export function ProjectMilestonesContent() {
           setProject(projectData);
         }
       } catch (error) {
-        logError("Error loading project:", error);
+        logError('Error loading project:', { data: error });
       } finally {
         setIsLoading(false);
       }

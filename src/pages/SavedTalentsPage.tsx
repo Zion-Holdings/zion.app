@@ -9,9 +9,9 @@ import { useRouter } from 'next/router';
 import { logError } from "@/utils/logError";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Heart } from "lucide-react";
+import { logInfo, logWarn } from '@/utils/productionLogger';
 
 export default function SavedTalentsPage() {
-import { logInfo, logWarn } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
@@ -88,7 +88,7 @@ import { logInfo, logWarn } from '@/utils/productionLogger';
   };
 
   const handleRequestHire = (talent: TalentProfile) => {
-    logInfo("Request to hire:", talent);
+    logInfo('Request to hire:', { data: talent });
     toast({
       title: "Hire Request Sent",
       description: `A hire request has been sent to ${talent.full_name}.`,

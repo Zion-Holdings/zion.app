@@ -64,7 +64,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
       } catch (error: any) {
         lastError = error;
         
-        logWarn(`⚠️ getServerSideProps attempt ${attempt + 1}/${config.maxRetries + 1} failed for ${context.resolvedUrl}:`, error.message);
+        logWarn('⚠️ getServerSideProps attempt ${attempt + 1}/${config.maxRetries + 1} failed for ${context.resolvedUrl}:', { data: error.message });
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
@@ -108,7 +108,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
 
     // All attempts failed
     if (lastError) {
-      logError(`❌ getServerSideProps failed after all retries for ${context.resolvedUrl}:`, lastError);
+      logError('❌ getServerSideProps failed after all retries for ${context.resolvedUrl}:', { data: lastError });
       
       // Log final failure to Sentry
       if (ENV_CONFIG.sentry.isConfigured) {
@@ -190,7 +190,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
       } catch (error: any) {
         lastError = error;
         
-        logWarn(`⚠️ getStaticProps attempt ${attempt + 1}/${config.maxRetries + 1} failed:`, error.message);
+        logWarn('⚠️ getStaticProps attempt ${attempt + 1}/${config.maxRetries + 1} failed:', { data: error.message });
         
         // Log each attempt to Sentry if configured
         if (ENV_CONFIG.sentry.isConfigured) {
@@ -230,7 +230,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
 
     // All attempts failed - for static props, we should return empty data rather than crash the build
     if (lastError) {
-      logError(`❌ getStaticProps failed after all retries:`, lastError);
+      logError('❌ getStaticProps failed after all retries:', { data: lastError });
       
       // Log final failure to Sentry
       if (ENV_CONFIG.sentry.isConfigured) {
@@ -347,7 +347,7 @@ export async function safeFetch(
                         config.retryCondition(error);
 
       if (shouldRetry) {
-        logWarn(`🔄 Fetch attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:`, error.message);
+        logWarn('🔄 Fetch attempt ${attempt + 1} failed, retrying in ${config.retryDelay}ms:', { data: error.message });
         await new Promise(resolve => setTimeout(resolve, config.retryDelay));
         continue;
       }

@@ -36,7 +36,7 @@ export async function loadCustomFonts(doc: jsPDF, fontFamily: FontFamily = 'defa
         doc.setFont('helvetica');
     }
   } catch (error) {
-    logError('Error loading custom fonts:', error);
+    logError('Error loading custom fonts:', { data: error });
     // Fall back to default font
     doc.setFont('helvetica');
   }

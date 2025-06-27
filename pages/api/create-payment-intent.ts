@@ -59,7 +59,7 @@ async function handler(req: any, res: any) {
     res.statusCode = 200;
     res.json({ clientSecret: intent.client_secret, id: intent.id });
   } catch (err) {
-    logError('Create payment intent error:', err);
+    logError('Create payment intent error:', { data: err });
     res.statusCode = 500;
     res.json({ error: err instanceof Error ? err.message : 'An error occurred' });
   }

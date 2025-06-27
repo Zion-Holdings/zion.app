@@ -78,7 +78,7 @@ export const useJobForm = ({ jobId, onSuccess }: JobPostingProps) => {
       
       return jobData;
     } catch (error: any) {
-      logError("Error in job form submission:", error);
+      logError('Error in job form submission:', { data: error });
       toast.error(error.message || "Failed to process form");
       throw error;
     } finally {

@@ -41,7 +41,7 @@ function Account({ user: initialUser, orders }: AccountProps) {
       const data = await res.json();
       setUser(data);
     } catch (error: any) {
-      logError('Error updating profile:', error);
+      logError('Error updating profile:', { data: error });
       toast({
         title: 'Error updating profile',
         description: error.message || 'Failed to update profile. Please try again.',

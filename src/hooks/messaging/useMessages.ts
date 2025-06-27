@@ -52,7 +52,7 @@ export function useMessages(
         await markAsRead(conversationId);
       }
     } catch (error) {
-      logError('Error fetching messages:', error);
+      logError('Error fetching messages:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -97,7 +97,7 @@ export function useMessages(
       // Return the sent message
       return data;
     } catch (error) {
-      logError('Error sending message:', error);
+      logError('Error sending message:', { data: error });
       toast({
         title: "Failed to send message",
         description: "Please try again later",
@@ -152,7 +152,7 @@ export function useMessages(
         );
       });
     } catch (error) {
-      logError('Error marking messages as read:', error);
+      logError('Error marking messages as read:', { data: error });
     }
   };
 

@@ -1,10 +1,10 @@
 
 import { format } from 'date-fns';
 import { toast } from '@/hooks/use-toast';
+import { logError } from '@/utils/productionLogger';
 
 // Utility function to format dates for DB operations
 export const formatDateForDB = (date: Date | string | undefined) => {
-import { logError } from '@/utils/productionLogger';
 
   if (!date) return undefined;
   return typeof date === 'string' ? date : format(date, 'yyyy-MM-dd');
@@ -12,7 +12,7 @@ import { logError } from '@/utils/productionLogger';
 
 // Error handling with toast
 export const handleResumeError = (e: any, errorMessage: string) => {
-  logError(`Error: ${errorMessage}`, e);
+  logError('Error: ${errorMessage}', { data:  e });
   toast({
     title: "Error",
     description: `${errorMessage}: ${e.message}`,

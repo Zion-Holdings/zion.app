@@ -23,7 +23,7 @@ let db: Firestore;
 try {
   db = getFirestore(app);
 } catch (e) {
-  logWarn('Firestore storage unavailable, using memory cache.', e);
+  logWarn('Firestore storage unavailable, using memory cache.', { data:  e });
   db = getFirestore(app);
 }
 

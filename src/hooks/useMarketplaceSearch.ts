@@ -78,11 +78,11 @@ export function useMarketplaceSearch() {
         } else {
           setListings([]); // Default to empty if structure is wrong
           // Optional: log an error
-          logError("Search API response structure in useMarketplaceSearch is not as expected:", responseData);
+          logError('Search API response structure in useMarketplaceSearch is not as expected:', { data: responseData });
         }
       } catch (e) {
         setError(e as Error);
-        logError("Failed to fetch products:", e);
+        logError('Failed to fetch products:', { data:  e });
         setListings([]); // Clear listings on error or set to a default error state
       } finally {
         setIsLoading(false);

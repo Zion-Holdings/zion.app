@@ -24,13 +24,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         .order('created_at', { ascending: false });
 
       if (error) {
-        logError('Error fetching reviews:', error);
+        logError('Error fetching reviews:', { data: error });
         return res.status(500).json({ error: 'Failed to fetch reviews' });
       }
 
       return res.status(200).json(data || []);
     } catch (error) {
-      logError('Error fetching reviews:', error);
+      logError('Error fetching reviews:', { data: error });
       return res.status(500).json({ error: 'Failed to fetch reviews' });
     }
   }
@@ -59,13 +59,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         .single();
 
       if (error) {
-        logError('Error creating review:', error);
+        logError('Error creating review:', { data: error });
         return res.status(500).json({ error: 'Failed to create review' });
       }
 
       return res.status(201).json(data);
     } catch (error) {
-      logError('Error creating review:', error);
+      logError('Error creating review:', { data: error });
       return res.status(500).json({ error: 'Failed to create review' });
     }
   }

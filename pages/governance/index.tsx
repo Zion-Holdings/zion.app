@@ -47,7 +47,7 @@ const GovernancePage: React.FC = () => {
         setProposals(Array.isArray(data) ? data : (data.results || []));
       } catch (err: any) {
         setError(err.message);
-        logError("Fetch error:", err);
+        logError('Fetch error:', { data: err });
       } finally {
         setIsLoading(false);
       }

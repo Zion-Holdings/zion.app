@@ -66,7 +66,7 @@ async function handler(
 
     return res.status(200).json(result);
   } catch (e) {
-    logError(`Error fetching product ${productId}:`, e);
+    logError('Error fetching product ${productId}:', { data:  e });
     const message =
       e instanceof Error && e.message.includes('timed out')
         ? 'Service Unavailable: Database connection failed.'

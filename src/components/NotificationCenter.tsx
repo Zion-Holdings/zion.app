@@ -41,7 +41,7 @@ export const NotificationCenter: React.FC = () => {
           await fetchNotifications();
           setError(null);
         } catch (err) {
-          logError("Failed to fetch notifications:", err);
+          logError('Failed to fetch notifications:', { data: err });
           setError("Couldn't load notifications");
           enqueueSnackbar((err as any)?.response?.data?.message || (err instanceof Error ? err.message : String(err)), { variant: 'error' });
         } finally {
@@ -58,7 +58,7 @@ export const NotificationCenter: React.FC = () => {
       await markAllAsRead();
       enqueueSnackbar("All notifications marked as read", { variant: 'success' });
     } catch (err) {
-      logError("Failed to mark notifications as read:", err);
+      logError('Failed to mark notifications as read:', { data: err });
       enqueueSnackbar((err as any)?.response?.data?.message || (err instanceof Error ? err.message : String(err)), { variant: 'error' });
     }
   };

@@ -73,7 +73,7 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
     // Use real fetch for other cases
     return fetch(url, options);
   } catch (error) {
-    logWarn('Fetch failed, returning mock response:', error);
+    logWarn('Fetch failed, returning mock response:', { data: error });
     return {
       ok: false,
       status: 500,

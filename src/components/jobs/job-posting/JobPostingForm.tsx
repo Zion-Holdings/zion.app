@@ -67,7 +67,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
           }
         })
         .catch((error) => {
-          logError("Failed to load job:", error);
+          logError('Failed to load job:', { data: error });
           toast.error("Failed to load job");
         })
         .finally(() => {
@@ -101,7 +101,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
         onSuccess();
       }
     } catch (error: any) {
-      logError("Error creating/updating job:", error);
+      logError('Error creating/updating job:', { data: error });
       toast.error(error.message || "Failed to post job");
     } finally {
       setIsFormLoading(false);

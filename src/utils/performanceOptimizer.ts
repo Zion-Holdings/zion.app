@@ -79,13 +79,13 @@ class PerformanceOptimizer {
             this.performanceObserver.observe({ entryTypes: [type] });
           }
         } catch (error) {
-          logWarn(`Failed to observe ${type} performance entries`, { error });
+          logWarn('Failed to observe ${type} performance entries', { data:  { error } });
         }
       });
 
       logInfo('Performance monitoring initialized');
     } catch (error) {
-      logError('Failed to initialize performance monitoring', error);
+      logError('Failed to initialize performance monitoring', { data: error });
     }
   }
 
@@ -238,7 +238,7 @@ class PerformanceOptimizer {
       this.optimizationApplied = true;
       logInfo('Performance optimizations applied successfully');
     } catch (error) {
-      logError('Failed to apply performance optimizations', error);
+      logError('Failed to apply performance optimizations', { data: error });
     }
   }
 
@@ -252,10 +252,10 @@ class PerformanceOptimizer {
 
     navigator.serviceWorker.register('/sw.js')
       .then(registration => {
-        logInfo('Service Worker registered', { scope: registration.scope });
+        logInfo('Service Worker registered', { data:  { scope: registration.scope } });
       })
       .catch(error => {
-        logWarn('Service Worker registration failed', { error });
+        logWarn('Service Worker registration failed', { data:  { error } });
       });
   }
 
@@ -350,7 +350,7 @@ class PerformanceOptimizer {
       
       cacheNames.forEach(cacheName => {
         caches.open(cacheName).catch(error => {
-          logWarn(`Failed to open cache: ${cacheName}`, { error });
+          logWarn('Failed to open cache: ${cacheName}', { data:  { error } });
         });
       });
     }
@@ -363,7 +363,7 @@ class PerformanceOptimizer {
       };
       localStorage.setItem('app-cache-info', JSON.stringify(cacheData));
     } catch (error) {
-      logWarn('Failed to set localStorage cache', { error });
+      logWarn('Failed to set localStorage cache', { data:  { error } });
     }
 
     logInfo('Advanced caching enabled');
@@ -381,8 +381,8 @@ class PerformanceOptimizer {
       logPerformance('Bundle Size', bundleSize);
 
       if (bundleSize > this.config.bundleSizeLimit * 1024) {
-        logWarn('Large bundle size detected', {
-          size: `${(bundleSize / 1024).toFixed(2)}KB`,
+        logWarn('Large bundle size detected', { data:  {
+          size: `${(bundleSize / 1024 }).toFixed(2)}KB`,
           limit: `${this.config.bundleSizeLimit}KB`,
           recommendation: 'Consider implementing more aggressive code splitting'
         });

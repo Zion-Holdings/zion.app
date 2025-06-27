@@ -2,9 +2,9 @@ import React from 'react';
 import ApiDocsLayout from '@/components/developers/ApiDocsLayout';
 import { CodeBlock } from '@/components/developers/CodeBlock';
 import Link from 'next/link';
+import { logInfo } from '@/utils/productionLogger';
 
 export function ApiGettingStarted() {
-import { logInfo } from '@/utils/productionLogger';
 
   const authExample = `curl -X GET \\
   https://api.ziontechgroup.com/v1/jobs \\

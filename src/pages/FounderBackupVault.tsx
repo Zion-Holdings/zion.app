@@ -72,7 +72,7 @@ export default function FounderBackupVault() {
       const arrayBuffer = new ArrayBuffer(encrypted.buffer.byteLength);
       new Uint8Array(arrayBuffer).set(new Uint8Array(encrypted.buffer));
       const decrypted = await decryptData(arrayBuffer, pass);
-      logInfo('Decrypted:', decrypted);
+      logInfo('Decrypted:', { data: decrypted });
       alert('Recovery successful');
       setFailCount(0);
     } catch (err) {

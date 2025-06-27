@@ -60,7 +60,7 @@ const WhitepaperViewPage: React.FC = () => {
         setSharedData(responseData as SharedWhitepaper);
 
       } catch (e: any) {
-        logError("Error fetching shared whitepaper:", e);
+        logError('Error fetching shared whitepaper:', { data:  e });
         setError(e.message || 'An unexpected error occurred.');
       } finally {
         setLoading(false);

@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { JobMatch } from "@/types/jobs";
+import { logError } from '@/utils/productionLogger';
 
 export function useJobSuggestions(talentId?: string) {
-import { logError } from '@/utils/productionLogger';
 
   const [jobMatches, setJobMatches] = useState<JobMatch[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +31,7 @@ import { logError } from '@/utils/productionLogger';
         
         setJobMatches(data || []);
       } catch (error) {
-        logError("Error fetching job matches:", error);
+        logError('Error fetching job matches:', { data: error });
         toast({
           title: "Error",
           description: "Failed to load job suggestions",
@@ -81,7 +81,7 @@ import { logError } from '@/utils/productionLogger';
         });
       }
     } catch (error) {
-      logError("Error updating job match status:", error);
+      logError('Error updating job match status:', { data: error });
       toast({
         title: "Error",
         description: "Failed to update job status",

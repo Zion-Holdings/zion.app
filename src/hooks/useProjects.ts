@@ -3,9 +3,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { Project, ProjectStatus } from "@/types/projects";
 import { toast } from "sonner";
+import { logError } from '@/utils/productionLogger';
 
 export function useProjects() {
-import { logError } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [projects, setProjects] = useState<Project[]>([]);
@@ -56,7 +56,7 @@ import { logError } from '@/utils/productionLogger';
       setProjects(transformedData as Project[]);
       setError(null);
     } catch (err: any) {
-      logError("Error fetching projects:", err);
+      logError('Error fetching projects:', { data: err });
       setError("Failed to fetch projects: " + err.message);
       toast.error("Failed to fetch projects");
     } finally {
@@ -90,7 +90,7 @@ import { logError } from '@/utils/productionLogger';
       
       return transformedProject as Project;
     } catch (err: any) {
-      logError("Error fetching project:", err);
+      logError('Error fetching project:', { data: err });
       toast.error("Failed to fetch project details");
       return null;
     }
@@ -113,7 +113,7 @@ import { logError } from '@/utils/productionLogger';
       toast.success(`Project status updated to ${status}`);
       return true;
     } catch (err: any) {
-      logError("Error updating project status:", err);
+      logError('Error updating project status:', { data: err });
       toast.error("Failed to update project status");
       return false;
     }

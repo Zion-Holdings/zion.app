@@ -17,17 +17,17 @@ class DevelopmentLogger {
 
   debug(message: string, context?: LogContext): void {
     if (!this.enabled) return;
-    logInfo(`[DEBUG] ${message}`, context ? context : '');
+    logInfo('[DEBUG] ${message}', { data: context ? context : '' });
   }
 
   info(message: string, context?: LogContext): void {
     if (!this.enabled) return;
-    logInfo(`[INFO] ${message}`, context ? context : '');
+    logInfo('[INFO] ${message}', { data: context ? context : '' });
   }
 
   warn(message: string, context?: LogContext): void {
     if (isProduction) return;
-    logWarn(`[WARN] ${message}`, context ? context : '');
+    logWarn('[WARN] ${message}', { data: context ? context : '' });
   }
 
   error(message: string, error?: Error | unknown, context?: LogContext): void {
@@ -86,7 +86,7 @@ class DevelopmentLogger {
     if (!this.enabled) return;
     
     const emoji = action === 'mount' ? '🟢' : action === 'unmount' ? '🔴' : '🔄';
-    logInfo(`[COMPONENT] ${emoji} ${name} ${action}`, props ? props : '');
+    logInfo('[COMPONENT] ${emoji} ${name} ${action}', { data: props ? props : '' });
   }
 }
 

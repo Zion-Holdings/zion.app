@@ -87,7 +87,7 @@ export function useTranslationService() {
       setIsTranslating(false);
       
       if (error) {
-        logError('Translation error:', error);
+        logError('Translation error:', { data: error });
         const initialTranslations: Record<SupportedLanguage, string> = {
           en: content,
           es: '',
@@ -115,7 +115,7 @@ export function useTranslationService() {
       return { translations: (data as any).translations };
     } catch (err) {
       setIsTranslating(false);
-      logError('Translation service error:', err);
+      logError('Translation service error:', { data: err });
       
       const initialTranslations: Record<SupportedLanguage, string> = {
         en: content,

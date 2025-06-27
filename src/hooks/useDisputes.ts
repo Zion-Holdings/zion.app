@@ -4,9 +4,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { Dispute, DisputeMessage, DisputeAttachment, DisputeStatus } from "@/types/disputes";
 import { toast } from "sonner";
+import { logError } from '@/utils/productionLogger';
 
 export function useDisputes() {
-import { logError } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [disputes, setDisputes] = useState<Dispute[]>([]);
@@ -54,7 +54,7 @@ import { logError } from '@/utils/productionLogger';
       setDisputes(transformedData as Dispute[]);
       setError(null);
     } catch (err: any) {
-      logError("Error fetching disputes:", err);
+      logError('Error fetching disputes:', { data: err });
       setError("Failed to fetch disputes: " + err.message);
       toast.error("Failed to fetch disputes");
     } finally {
@@ -93,7 +93,7 @@ import { logError } from '@/utils/productionLogger';
         }
       } as Dispute;
     } catch (err: any) {
-      logError("Error fetching dispute:", err);
+      logError('Error fetching dispute:', { data: err });
       toast.error("Failed to fetch dispute details");
       return null;
     }
@@ -127,7 +127,7 @@ import { logError } from '@/utils/productionLogger';
       
       return data as Dispute;
     } catch (err: any) {
-      logError("Error creating dispute:", err);
+      logError('Error creating dispute:', { data: err });
       toast.error("Failed to submit dispute");
       return null;
     }
@@ -152,7 +152,7 @@ import { logError } from '@/utils/productionLogger';
       toast.success(`Dispute status updated to ${status}`);
       return true;
     } catch (err: any) {
-      logError("Error updating dispute status:", err);
+      logError('Error updating dispute status:', { data: err });
       toast.error("Failed to update dispute status");
       return false;
     }
@@ -193,7 +193,7 @@ import { logError } from '@/utils/productionLogger';
       toast.success("Dispute resolved successfully");
       return true;
     } catch (err: any) {
-      logError("Error resolving dispute:", err);
+      logError('Error resolving dispute:', { data: err });
       toast.error("Failed to resolve dispute");
       return false;
     }
@@ -214,7 +214,7 @@ import { logError } from '@/utils/productionLogger';
       
       return data as DisputeMessage[];
     } catch (err: any) {
-      logError("Error fetching dispute messages:", err);
+      logError('Error fetching dispute messages:', { data: err });
       toast.error("Failed to fetch messages");
       return [];
     }
@@ -241,7 +241,7 @@ import { logError } from '@/utils/productionLogger';
       toast.success("Message sent successfully");
       return true;
     } catch (err: any) {
-      logError("Error sending message:", err);
+      logError('Error sending message:', { data: err });
       toast.error("Failed to send message");
       return false;
     }

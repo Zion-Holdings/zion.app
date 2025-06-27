@@ -22,7 +22,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   try {
-    logInfo('Marketplace talent API called with query:', req.query);
+    logInfo('Marketplace talent API called with query:', { data: req.query });
     
     // Add CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -80,7 +80,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     
     return res.status(200).json(mappedProfiles);
   } catch (error) {
-    logError('Error in marketplace talent API:', error);
+    logError('Error in marketplace talent API:', { data: error });
     
     // Return fallback empty array instead of error
     return res.status(200).json([]);

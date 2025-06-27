@@ -190,7 +190,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
 
         setListings(listingsToShow);
       } catch (err) {
-        logError('Category load error:', err);
+        logError('Category load error:', { data: err });
         toast({ title: 'Error', description: 'Failed to load category' });
       } finally {
         setIsLoading(false);

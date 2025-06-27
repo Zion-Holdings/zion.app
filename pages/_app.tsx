@@ -142,7 +142,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         try {
           validateProductionEnvironment();
         } catch (error) {
-          logWarn('[App] Environment validation warning:', error);
+          logWarn('[App] Environment validation warning:', { data:  { error } });
         }
 
         // Defer non-critical initializations
@@ -151,7 +151,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
           // Initialize services asynchronously
           initializeServices().catch((err) =>
-            logWarn('Service initialization failed', err),
+            logWarn('Service initialization failed', { data:  { error: err } }),
           );
 
           // Initialize performance monitoring only if needed
@@ -171,7 +171,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           setIsInitialized(true);
         }
       } catch (error) {
-        logError('[App] Critical initialization error:', error);
+        logError('[App] Critical initialization error:', { data:  { error } });
         
         // Only send to Sentry if it's available
         try {
@@ -179,7 +179,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             Sentry.captureException(error);
           }
         } catch (sentryError) {
-          logWarn('[App] Could not send error to Sentry:', sentryError);
+          logWarn('[App] Could not send error to Sentry:', { data:  { error: sentryError } });
         }
 
         // Still mark as initialized to prevent infinite loading

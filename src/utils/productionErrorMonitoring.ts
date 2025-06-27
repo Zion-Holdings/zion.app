@@ -112,7 +112,7 @@ export class ProductionErrorMonitor {
 
     // Log to console in development
     if (process.env.NODE_ENV === 'development') {
-      logError('ProductionErrorMonitor captured error:', errorReport);
+      logError('ProductionErrorMonitor captured error:', { data: errorReport });
     }
   }
 
@@ -179,7 +179,7 @@ export class ProductionErrorMonitor {
         })
       });
     } catch (webhookError) {
-      logError('Failed to send error to webhook:', webhookError);
+      logError('Failed to send error to webhook:', { data: webhookError });
     }
   }
 

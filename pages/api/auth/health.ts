@@ -1,8 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-
-export default async function handler(
 import { logError } from '@/utils/productionLogger';
 
+export default async function handler(
   _req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -42,7 +41,7 @@ import { logError } from '@/utils/productionLogger';
     });
     
     if (!response.ok) {
-      logError('Supabase health check failed with status', response.status);
+      logError('Supabase health check failed with status', { data: response.status });
       return res.status(500).json({ 
         message: 'Authentication service is temporarily unavailable. Please try again later.' 
       });
@@ -57,7 +56,7 @@ import { logError } from '@/utils/productionLogger';
       }
     });
   } catch (error: any) {
-    logError('Supabase health check error:', error);
+    logError('Supabase health check error:', { data: error });
     return res.status(500).json({ 
       message: 'Authentication service is temporarily unavailable. Please try again later.' 
     });

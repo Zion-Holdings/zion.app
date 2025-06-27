@@ -41,16 +41,16 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
   try {
     logInfo('Initializing Libp2p...');
     libp2pNode = await createLibp2p(libp2pOptions);
-    logInfo('Libp2p Initialized. PeerID:', libp2pNode.peerId.toString());
+    logInfo('Libp2p Initialized. PeerID:', { data: libp2pNode.peerId.toString( }));
 
     // Log listening addresses
     libp2pNode.getMultiaddrs().forEach((addr) => {
-      logInfo('Listening on:', addr.toString());
+      logInfo('Listening on:', { data: addr.toString( }));
     });
 
     // Listen for new connections
     libp2pNode.addEventListener('peer:connect', (evt) => {
-      logInfo('Peer connected:', evt.detail.toString());
+      logInfo('Peer connected:', { data: evt.detail.toString( }));
     });
 
     logInfo('Initializing Helia...');
@@ -66,9 +66,9 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
     // OrbitDB constructor might take Helia instance directly as 'ipfs'
     // The id option can be used to give a specific identity to this OrbitDB instance
     orbit = await createOrbitDB({ ipfs: heliaNode, directory: repoPath });
-    logInfo('OrbitDB instance created. OrbitDB ID:', orbit.id);
+    logInfo('OrbitDB instance created. OrbitDB ID:', { data: orbit.id });
   } catch (error) {
-    logError('Error initializing OrbitDB:', error);
+    logError('Error initializing OrbitDB:', { data: error });
     throw error;
   }
 }

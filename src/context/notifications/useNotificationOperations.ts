@@ -2,9 +2,9 @@ import { useState, useCallback, useEffect } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { Notification, FilterType, NotificationContextType } from './types';
 import axios from '@/lib/axios';
+import { logError } from '@/utils/productionLogger';
 
 export const useNotificationOperations = (
-import { logError } from '@/utils/productionLogger';
 
   userId?: string,
 ): NotificationContextType => {
@@ -26,7 +26,7 @@ import { logError } from '@/utils/productionLogger';
       const res = await axios.get(`/api/notifications`, { params: { userId } });
       setNotifications(res.data || []);
     } catch (err) {
-      logError('Error fetching notifications:', err);
+      logError('Error fetching notifications:', { data: err });
     } finally {
       setLoading(false);
     }
@@ -40,7 +40,7 @@ import { logError } from '@/utils/productionLogger';
         await axios.patch(`/api/notifications/${id}`, { read: true });
         await fetchNotifications();
       } catch (err) {
-        logError('Error marking notification as read:', err);
+        logError('Error marking notification as read:', { data: err });
       }
     },
     [userId, fetchNotifications],
@@ -59,7 +59,7 @@ import { logError } from '@/utils/productionLogger';
       );
       await fetchNotifications();
     } catch (err) {
-      logError('Error marking all notifications as read:', err);
+      logError('Error marking all notifications as read:', { data: err });
     }
   }, [userId, fetchNotifications, notifications]);
 
@@ -71,7 +71,7 @@ import { logError } from '@/utils/productionLogger';
         await axios.delete(`/api/notifications/${id}`);
         await fetchNotifications();
       } catch (err) {
-        logError('Error dismissing notification:', err);
+        logError('Error dismissing notification:', { data: err });
       }
     },
     [userId, fetchNotifications],

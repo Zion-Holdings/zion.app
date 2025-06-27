@@ -49,7 +49,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
         if (!mounted) return
 
         if (sessionError) {
-          logError('Auth guard session error:', sessionError)
+          logError('Auth guard session error:', { data: sessionError })
           setState(prev => ({
             ...prev,
             loading: false,
@@ -100,7 +100,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
 
       } catch (error) {
         if (mounted) {
-          logError('Auth guard error:', error)
+          logError('Auth guard error:', { data: error })
           setState(prev => ({
             ...prev,
             loading: false,
@@ -120,7 +120,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
       async (event, session) => {
         if (!mounted) return
 
-        logInfo('Auth guard: Auth state changed:', event)
+        logInfo('Auth guard: Auth state changed:', { data: event })
         
         const user = session?.user || null
         const isAuthenticated = !!user

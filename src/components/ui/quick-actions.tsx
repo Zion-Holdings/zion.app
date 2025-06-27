@@ -34,7 +34,7 @@ export function QuickActions() {
     try {
       await action();
     } catch (error) {
-      logError(`Failed to execute action ${actionId}:`, error);
+      logError('Failed to execute action ${actionId}:', { data: error });
     } finally {
       setIsProcessing(null);
     }

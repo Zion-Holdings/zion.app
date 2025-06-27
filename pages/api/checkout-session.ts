@@ -201,7 +201,7 @@ export default async function handler(
     });
 
   } catch (error: any) {
-    logError('Checkout session creation error:', error);
+    logError('Checkout session creation error:', { data: error });
     
     // Handle specific Stripe errors
     if (error.type === 'StripeCardError') {

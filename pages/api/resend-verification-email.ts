@@ -41,7 +41,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           }
         }
       } catch (authError) {
-        logWarn('Auth validation failed, proceeding with provided email:', authError);
+        logWarn('Auth validation failed, proceeding with provided email:', { data: authError });
       }
     }
 
@@ -62,7 +62,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     if (resendError) {
-      logError('Failed to resend verification email:', resendError);
+      logError('Failed to resend verification email:', { data: resendError });
       return res.status(500).json({ 
         error: 'Failed to resend verification email',
         details: resendError.message 
@@ -74,7 +74,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
   } catch (error) {
-    logError('Error in resend verification email API:', error);
+    logError('Error in resend verification email API:', { data: error });
     return res.status(500).json({ 
       error: 'Internal server error',
       details: error instanceof Error ? error.message : 'Unknown error'

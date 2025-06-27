@@ -260,7 +260,7 @@ async function handler(
     return res.status(200).json(searchResponse);
 
   } catch (error) {
-    logError('Search query failed:', error);
+    logError('Search query failed:', { data: error });
     
     // Return empty results on error instead of 500
     applyCacheHeaders(res, CacheCategory.SHORT);

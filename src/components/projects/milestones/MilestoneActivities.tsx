@@ -53,7 +53,7 @@ export function MilestoneActivities({ projectId }: MilestoneActivitiesProps) {
         
         setActivities(data || []);
       } catch (err) {
-        logError('Error fetching milestone activities:', err);
+        logError('Error fetching milestone activities:', { data: err });
       } finally {
         setIsLoading(false);
       }

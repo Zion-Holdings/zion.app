@@ -48,7 +48,7 @@ export const TalentRateRecommender: React.FC<TalentRateRecommenderProps> = ({
       const result = await getTalentRateSuggestion(params);
       setSuggestion(result);
     } catch (error) {
-      logError("Error generating rate suggestion:", error);
+      logError('Error generating rate suggestion:', { data: error });
     } finally {
       setIsLoading(false);
     }

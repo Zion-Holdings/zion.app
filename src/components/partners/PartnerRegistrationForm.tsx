@@ -127,7 +127,7 @@ export function PartnerRegistrationForm() {
       }
 
     } catch (error: any) {
-      logError('Error submitting partner application:', error);
+      logError('Error submitting partner application:', { data: error });
       toast({
         title: "Submission failed",
         description: error.message || "There was a problem submitting your application.",

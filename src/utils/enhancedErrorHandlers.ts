@@ -40,7 +40,7 @@ export class EnhancedApiErrorHandler {
 
     const shouldFailSilently = silentPatterns.some(pattern => url.includes(pattern));
     if (shouldFailSilently) {
-      logDebug(`Silent API error (${status} ${method}): ${url}`, error.response?.data);
+      logDebug('Silent API error (${status} ${method}): ${url}', { data: error.response?.data });
       return;
     }
 

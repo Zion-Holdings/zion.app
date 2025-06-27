@@ -92,7 +92,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
 
   const rawProjectId = getAppKitProjectId();
   if (process.env.NODE_ENV === 'development') {
-    logInfo('WalletContext: Resolved rawProjectId from getAppKitProjectId():', rawProjectId);
+    logInfo('WalletContext: Resolved rawProjectId from getAppKitProjectId():', { data: rawProjectId });
   }
 
   // Check if the project ID is valid
@@ -168,7 +168,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     // Proceed with AppKit initialization only if client-side and project ID is valid
     if (!appKitRef.current) { // Check if already initialized
       if (process.env.NODE_ENV === 'development') {
-        logInfo('WalletContext: Client-side, valid project ID. Attempting AppKit init. ID:', rawProjectId);
+        logInfo('WalletContext: Client-side, valid project ID. Attempting AppKit init. ID:', { data: rawProjectId });
       }
       try {
         appKitRef.current = createAppKit({
@@ -180,7 +180,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           features: { analytics: false },
         });
         if (process.env.NODE_ENV === 'development') {
-          logInfo('WalletContext: appKitInstance created successfully:', appKitRef.current);
+          logInfo('WalletContext: appKitInstance created successfully:', { data: appKitRef.current });
         }
         // On successful creation, system is available. Connection state will be updated by subscriptions.
         setWallet(prev => ({
@@ -189,7 +189,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           isConnected: false, // Explicitly false until wallet connects
         }));
       } catch (error) {
-        logError('WalletContext: CRITICAL error creating appKitInstance with valid Project ID:', error);
+        logError('WalletContext: CRITICAL error creating appKitInstance with valid Project ID:', { data: error });
         captureException(error);
         appKitRef.current = null;
         setWallet(prev => ({
@@ -201,7 +201,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       // AppKit already initialized. This block might be hit if dependencies change (e.g. projectId)
       // but AppKit instance was somehow preserved. Ensure state is consistent.
       if (process.env.NODE_ENV === 'development') {
-        logInfo('WalletContext: AppKit already initialized. Ensuring state consistency. ID:', rawProjectId);
+        logInfo('WalletContext: AppKit already initialized. Ensuring state consistency. ID:', { data: rawProjectId });
       }
       setWallet(prev => ({
         ...prev,
@@ -255,7 +255,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           }));
         } catch (error) {
           captureException(error);
-          logError('WalletContext: Error getting signer or updating wallet state:', error);
+          logError('WalletContext: Error getting signer or updating wallet state:', { data: error });
           // AppKit exists, but failed to get signer or other error
           setWallet(prev => ({
             ...initialWalletState,
@@ -337,7 +337,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       await modalController.open();
     } catch (error: any) {
       captureException(error);
-      logError('WalletContext: Error opening wallet modal:', error);
+      logError('WalletContext: Error opening wallet modal:', { data: error });
       if (error instanceof Error && /Coinbase Wallet SDK/i.test(error.message)) {
         logWarn(
           'Failed to load Coinbase Wallet. Please ensure the SDK is available or try a different wallet provider.'
@@ -361,9 +361,9 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         await actionKit.disconnect();
         // State update is typically handled by the subscription to provider changes
       } catch (error) {
-        logError('WalletContext: Error during disconnect.', error);
+        logError('WalletContext: Error during disconnect.', { data: error });
         captureException(error);
-        logError('WalletContext: Error disconnecting wallet:', error);
+        logError('WalletContext: Error disconnecting wallet:', { data: error });
       }
     } else {
       // If not connected but called, ensure state is clean.

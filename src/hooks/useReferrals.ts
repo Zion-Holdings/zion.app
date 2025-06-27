@@ -3,9 +3,9 @@ import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { ReferralCode, ReferralStats, Referral, ReferralReward } from "@/types/referrals";
+import { logError } from '@/utils/productionLogger';
 
 export function useReferrals() {
-import { logError } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [referralCode, setReferralCode] = useState<ReferralCode | null>(null);
@@ -38,13 +38,13 @@ import { logError } from '@/utils/productionLogger';
         .single();
 
       if (error) {
-        logError("Error fetching referral code:", error);
+        logError('Error fetching referral code:', { data: error });
         return;
       }
 
       setReferralCode(data);
     } catch (error) {
-      logError("Error in fetchReferralCode:", error);
+      logError('Error in fetchReferralCode:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -64,7 +64,7 @@ import { logError } from '@/utils/productionLogger';
       
       setReferrals(data || []);
     } catch (error) {
-      logError("Error fetching referrals:", error);
+      logError('Error fetching referrals:', { data: error });
     }
   };
 
@@ -82,7 +82,7 @@ import { logError } from '@/utils/productionLogger';
       
       setRewards(data || []);
     } catch (error) {
-      logError("Error fetching rewards:", error);
+      logError('Error fetching rewards:', { data: error });
     }
   };
 
@@ -123,7 +123,7 @@ import { logError } from '@/utils/productionLogger';
       });
       
     } catch (error) {
-      logError("Error fetching referral stats:", error);
+      logError('Error fetching referral stats:', { data: error });
     }
   };
 
@@ -155,7 +155,7 @@ import { logError } from '@/utils/productionLogger';
       
       return data;
     } catch (error: any) {
-      logError("Error generating referral code:", error);
+      logError('Error generating referral code:', { data: error });
       toast({
         title: "Error generating code",
         description: error.message || "There was a problem generating your referral code",

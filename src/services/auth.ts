@@ -7,7 +7,7 @@ import { logError } from '@/utils/productionLogger';
     const res = await axios.post('/api/auth/register', { name, email, password });
     return { res, data: res.data };
   } catch (err: any) {
-    logError('Register error:', err);
+    logError('Register error:', { data: err });
     throw err;
   }
 }
@@ -18,7 +18,7 @@ export async function forgotPassword(email: string) {
     const res = await axios.post(`${API_URL}/auth/forgot`, { email });
     return { res, data: res.data };
   } catch (err: any) {
-    logError('Forgot password error:', err);
+    logError('Forgot password error:', { data: err });
     throw err;
   }
 }
@@ -29,7 +29,7 @@ export async function resetPassword(token: string, newPassword: string) {
     const res = await axios.post(`${API_URL}/auth/reset-password`, { token, newPassword });
     return { res, data: res.data };
   } catch (err: any) {
-    logError('Reset password error:', err);
+    logError('Reset password error:', { data: err });
     throw err;
   }
 }

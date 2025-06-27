@@ -40,7 +40,7 @@ export async function createShipment(addressTo: any, parcels: any[]): Promise<Sh
 
     return res.data as ShippoShipment;
   } catch (err) {
-    logError('Shippo create shipment error:', err);
+    logError('Shippo create shipment error:', { data: err });
     throw err;
   }
 }

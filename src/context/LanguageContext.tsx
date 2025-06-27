@@ -143,7 +143,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
           if (langToSet === 'ar') document.documentElement.classList.add('rtl'); else document.documentElement.classList.remove('rtl');
         }
       }).catch(err => {
-        logError("LanguageContext: Error setting initial language in i18n", err);
+        logError('LanguageContext: Error setting initial language in i18n', { data: err });
         setCurrentLanguage('en'); // Fallback state
         if (i18n.language !== 'en') i18n.changeLanguage('en'); // Attempt to set i18n to fallback
         if (typeof document !== 'undefined') {
@@ -198,7 +198,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   
   const changeLanguage = async (lang: SupportedLanguage) => {
     if (lang === currentLanguage && i18n.language === lang) { // also check i18n.language
-      logInfo('LanguageContext: Language already selected and applied:', lang);
+      logInfo('LanguageContext: Language already selected and applied:', { data: lang });
       return;
     }
     
@@ -231,12 +231,12 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
           // Trigger a custom event to notify components about language change
           window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
           
-          logInfo('LanguageContext: DOM updated with new language:', lang);
+          logInfo('LanguageContext: DOM updated with new language:', { data: lang });
         }
       }, 50);
       
     } catch (err) {
-      logError('LanguageContext: Error changing language:', err);
+      logError('LanguageContext: Error changing language:', { data: err });
       toast({
         title: 'Error',
         description: 'Failed to change language',

@@ -1,5 +1,3 @@
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
-
 /**
  * Production-ready logger utility
  * Replaces console statements with structured logging, error monitoring, and performance tracking
@@ -85,16 +83,16 @@ class ProductionLogger {
 
     switch (entry.level) {
       case 'debug':
-        logInfo(message, entry.context || '');
+        console.log(message, entry.context || '');
         break;
       case 'info':
-        logInfo(message, entry.context || '');
+        console.info(message, entry.context || '');
         break;
       case 'warn':
-        logWarn(message, entry.context || '');
+        console.warn(message, entry.context || '');
         break;
       case 'error':
-        logError(message, entry.context || '');
+        console.error(message, entry.context || '');
         break;
     }
   }
@@ -117,23 +115,23 @@ class ProductionLogger {
     if (!this.config.enableRemoteLogging || entries.length === 0) return;
 
     try {
-             // Send to Sentry or other monitoring service
-       if (typeof window !== 'undefined' && (window as any).Sentry) {
-         const sentry = (window as any).Sentry;
-         entries.forEach(entry => {
-           if (entry.level === 'error') {
-             sentry.captureException(new Error(entry.message), {
-               extra: entry.context,
-               tags: {
-                 sessionId: entry.sessionId,
-                 userId: entry.userId,
-               },
-             });
-           } else if (sentry.captureMessage) {
-             sentry.captureMessage(entry.message, entry.level);
-           }
-         });
-       }
+      // Send to Sentry or other monitoring service
+      if (typeof window !== 'undefined' && (window as any).Sentry) {
+        const sentry = (window as any).Sentry;
+        entries.forEach(entry => {
+          if (entry.level === 'error') {
+            sentry.captureException(new Error(entry.message), {
+              extra: entry.context,
+              tags: {
+                sessionId: entry.sessionId,
+                userId: entry.userId,
+              },
+            });
+          } else if (sentry.captureMessage) {
+            sentry.captureMessage(entry.message, entry.level);
+          }
+        });
+      }
 
       // Send to custom logging endpoint
       if (process.env.NODE_ENV === 'production') {
@@ -149,7 +147,7 @@ class ProductionLogger {
       }
     } catch (error) {
       // Fallback to console for logging service failures
-      logError('Failed to send logs to remote service:', error);
+      console.error('Failed to send logs to remote service:', error);
     }
   }
 
@@ -221,7 +219,7 @@ class ProductionLogger {
         observer.observe({ entryTypes: ['largest-contentful-paint', 'layout-shift'] });
       }
     } catch (error) {
-      logWarn('Performance tracking initialization failed:', error);
+      console.warn('Performance tracking initialization failed:', error);
     }
   }
 

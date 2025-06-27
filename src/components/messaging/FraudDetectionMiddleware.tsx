@@ -71,7 +71,7 @@ export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> =
       
       // For suspicious but not dangerous content, log but let it pass through
       if (quickCheck.severity === 'suspicious') {
-        logInfo('Suspicious content detected but allowed:', content);
+        logInfo('Suspicious content detected but allowed:', { data: content });
       }
       
       // For more complex analysis (in a real app), we would call the edge function
@@ -82,7 +82,7 @@ export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> =
       });
       
       if (error) {
-        logError('Error analyzing message:', error);
+        logError('Error analyzing message:', { data: error });
         return { isSafe: true }; // Default to safe on error
       }
       
@@ -102,7 +102,7 @@ export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> =
       // Message is considered safe
       return { isSafe: true };
     } catch (error) {
-      logError('Error in fraud detection:', error);
+      logError('Error in fraud detection:', { data: error });
       // On error, let the message pass through but log the error
       return { isSafe: true };
     }

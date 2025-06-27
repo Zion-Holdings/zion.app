@@ -59,7 +59,7 @@ export const PwaInstallButton: React.FC = () => {
     } catch (err) {
       setIsInstalling(false);
       toast('Installation failed', { description: 'Please try again later.' });
-      logError('PWA install error:', err);
+      logError('PWA install error:', { data: err });
     }
   };
 

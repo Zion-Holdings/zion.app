@@ -20,13 +20,13 @@ const fetcher = async (url: string): Promise<CategoryType[]> => {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      logError('Categories API error:', response.statusText);
+      logError('Categories API error:', { data: response.statusText });
       return CATEGORIES as CategoryType[];
     }
     const data = await response.json();
     return Array.isArray(data) && data.length > 0 ? data : CATEGORIES as CategoryType[];
   } catch (err) {
-    logError('Categories API fetch failed:', err);
+    logError('Categories API fetch failed:', { data: err });
     return CATEGORIES as CategoryType[];
   }
 };

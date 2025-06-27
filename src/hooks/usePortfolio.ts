@@ -4,9 +4,9 @@ import { PortfolioProject } from '@/types/resume';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
+import { logError } from '@/utils/productionLogger';
 
 export function usePortfolio() {
-import { logError } from '@/utils/productionLogger';
 
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
@@ -34,7 +34,7 @@ import { logError } from '@/utils/productionLogger';
       setProjects(data || []);
       return data || [];
     } catch (e: any) {
-      logError('Error fetching portfolio projects:', e);
+      logError('Error fetching portfolio projects:', { data:  e });
       setError(e.message);
       return [];
     } finally {
@@ -77,7 +77,7 @@ import { logError } from '@/utils/productionLogger';
       await fetchProjects();
       return data.id;
     } catch (e: any) {
-      logError('Error adding portfolio project:', e);
+      logError('Error adding portfolio project:', { data:  e });
       setError(e.message);
       toast({
         title: "Error",
@@ -124,7 +124,7 @@ import { logError } from '@/utils/productionLogger';
       await fetchProjects();
       return true;
     } catch (e: any) {
-      logError('Error updating portfolio project:', e);
+      logError('Error updating portfolio project:', { data:  e });
       setError(e.message);
       toast({
         title: "Error",
@@ -163,7 +163,7 @@ import { logError } from '@/utils/productionLogger';
       setProjects(projects.filter(p => p.id !== projectId));
       return true;
     } catch (e: any) {
-      logError('Error deleting portfolio project:', e);
+      logError('Error deleting portfolio project:', { data:  e });
       setError(e.message);
       toast({
         title: "Error",

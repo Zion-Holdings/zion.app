@@ -44,7 +44,7 @@ export default function SimpleSignup() {
           router.push('/login');
         }
       } catch (err: any) {
-        logError('Signup error:', err.message);
+        logError('Signup error:', { data: err.message });
         setErrors({ email: err.message });
         toast.error(err.message || 'Signup failed');
       } finally {

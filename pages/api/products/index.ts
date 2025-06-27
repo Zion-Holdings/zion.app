@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { applyCorsHeaders } from '@/middleware/cors';
+import { logInfo, logError } from '@/utils/productionLogger';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-import { logInfo, logError } from '@/utils/productionLogger';
 
   // Apply CORS headers for API documentation
   applyCorsHeaders(req, res);
@@ -83,7 +83,7 @@ import { logInfo, logError } from '@/utils/productionLogger';
 
     return res.status(200).json(response);
   } catch (error) {
-    logError('[API] Error in /api/products:', error);
+    logError('[API] Error in /api/products:', { data: error });
     // Return fallback data instead of error to prevent empty marketplace
     return res.status(200).json({
       products: MARKETPLACE_LISTINGS.slice(0, 20),

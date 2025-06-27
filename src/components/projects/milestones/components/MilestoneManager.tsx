@@ -45,7 +45,7 @@ export function MilestoneManager({
       enqueueSnackbar("Milestone approved", { variant: 'success' });
       await refetch();
     } catch (error: any) {
-      logError("Error approving milestone:", error);
+      logError('Error approving milestone:', { data: error });
       enqueueSnackbar(error.message, { variant: 'error' });
     }
   };
@@ -56,7 +56,7 @@ export function MilestoneManager({
       enqueueSnackbar("Milestone rejected", { variant: 'success' });
       await refetch();
     } catch (error: any) {
-      logError("Error rejecting milestone:", error);
+      logError('Error rejecting milestone:', { data: error });
       enqueueSnackbar(error.message, { variant: 'error' });
     }
   };

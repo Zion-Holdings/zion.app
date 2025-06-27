@@ -60,7 +60,7 @@ const WalletConnectProvider = CredentialsProvider({
           .single();
 
         if (lookupError && lookupError.code !== 'PGRST116') { // PGRST116 = no rows found
-          logError('WalletConnectProvider: Error looking up user by wallet address:', lookupError);
+          logError('WalletConnectProvider: Error looking up user by wallet address:', { data: lookupError });
           return null; // Internal server error
         }
 
@@ -103,7 +103,7 @@ const WalletConnectProvider = CredentialsProvider({
 
           if (signUpError) {
             // Handle specific errors, e.g., if dummy email is already taken (highly unlikely for this format)
-            logError('WalletConnectProvider: Supabase signUp error:', signUpError.message);
+            logError('WalletConnectProvider: Supabase signUp error:', { data: signUpError.message });
             // Potentially, if error is "User already registered", try to lookup by dummyEmail and link wallet if not linked.
             return null;
           }
@@ -124,7 +124,7 @@ const WalletConnectProvider = CredentialsProvider({
               });
 
             if (profileCreateError) {
-              logError('WalletConnectProvider: Error creating user profile after signup:', profileCreateError.message);
+              logError('WalletConnectProvider: Error creating user profile after signup:', { data: profileCreateError.message });
               // This is a critical state: user is created in auth, but profile linking failed.
               // Robust handling might involve retries, or cleanup (deleting the auth user).
               // For now, fail the login. Consider: await supabase.auth.admin.deleteUser(authUserId); if using service_role key
@@ -148,7 +148,7 @@ const WalletConnectProvider = CredentialsProvider({
         return null;
       }
     } catch (error) {
-      logError("WalletConnectProvider: Error during signature verification or DB operation:", error);
+      logError('WalletConnectProvider: Error during signature verification or DB operation:', { data: error });
       return null;
     }
   },
@@ -180,14 +180,14 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
-        logInfo("Attempting Supabase sign-in for:", credentials.email);
+        logInfo('Attempting Supabase sign-in for:', { data: credentials.email });
         const { data, error } = await supabase.auth.signInWithPassword({
           email: credentials.email,
           password: credentials.password,
         });
 
         if (error) {
-          logError("Supabase sign-in error:", error.message);
+          logError('Supabase sign-in error:', { data: error.message });
           // Consider mapping Supabase errors to user-friendly messages
           // For NextAuth, returning null signifies failed authorization.
           // Throwing an error here can break the flow or expose details.
@@ -197,7 +197,7 @@ export const authOptions: NextAuthOptions = {
         }
 
         if (data && data.user) {
-          logInfo("Supabase sign-in successful for:", data.user.email);
+          logInfo('Supabase sign-in successful for:', { data: data.user.email });
           // Ensure the object returned conforms to NextAuth's User model expectations
           // It must have an `id`. `name` and `email` are common.
           return {
