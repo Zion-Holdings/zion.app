@@ -18,119 +18,87 @@ if (!fs.existsSync(envPath)) {
   dotenv.config({ path: envPath });
 }
 
+// Check if we're in development mode or Netlify build
+const isDevelopment = process.env.NODE_ENV === 'development';
+const isNetlifyBuild = process.env.NETLIFY === 'true';
+const isLocalDev = !isNetlifyBuild && isDevelopment;
+
 // Define required environment variables and their validation rules
 const REQUIRED_VARS = {
-  // Auth0 authentication (lenient during Netlify builds to prevent build failures)
-  'AUTH0_SECRET': {
-    required: process.env.NETLIFY !== 'true', // Not required during Netlify builds
+  // Supabase (core authentication - more lenient for dev)
+  'NEXT_PUBLIC_SUPABASE_URL': {
+    required: !isLocalDev, // Only required in production/staging
     validation: (value) => {
       if (!value) {
-        if (process.env.NETLIFY === 'true') return null; // Allow missing during builds
-        return 'Missing Auth0 secret';
+        if (isLocalDev) return null; // Allow missing in local dev
+        return 'Missing Supabase URL';
       }
       if (isPlaceholder(value)) {
-        if (process.env.NETLIFY === 'true') return null; // Allow placeholders during builds
-        return 'Auth0 secret appears to be a placeholder';
-      }
-      if (value.length < 32) {
-        if (process.env.NETLIFY === 'true') return null; // Allow short values during builds
-        return 'Auth0 secret should be at least 32 characters';
+        if (isLocalDev) return null; // Allow placeholders in local dev
+        return 'Supabase URL appears to be a placeholder';
       }
       return null;
     },
-    description: 'Auth0 secret for encrypting session cookies (generate with openssl rand -hex 32)'
+    description: 'Supabase project URL for authentication and database'
   },
-  'AUTH0_BASE_URL': {
-    required: process.env.NETLIFY !== 'true', // Not required during Netlify builds
+  'NEXT_PUBLIC_SUPABASE_ANON_KEY': {
+    required: !isLocalDev, // Only required in production/staging
     validation: (value) => {
       if (!value) {
-        if (process.env.NETLIFY === 'true') return null; // Allow missing during builds
-        return 'Missing Auth0 base URL';
+        if (isLocalDev) return null; // Allow missing in local dev
+        return 'Missing Supabase anonymous key';
       }
       if (isPlaceholder(value)) {
-        if (process.env.NETLIFY === 'true') return null; // Allow placeholders during builds
-        return 'Auth0 base URL appears to be a placeholder';
-      }
-      if (!value.startsWith('http')) {
-        if (process.env.NETLIFY === 'true') return null; // Allow invalid URLs during builds
-        return 'Auth0 base URL must be a valid URL';
+        if (isLocalDev) return null; // Allow placeholders in local dev
+        return 'Supabase key appears to be a placeholder';
       }
       return null;
     },
-    description: 'Auth0 base URL of your application'
-  },
-  'AUTH0_ISSUER_BASE_URL': {
-    required: process.env.NETLIFY !== 'true', // Not required during Netlify builds
-    validation: (value) => {
-      if (!value) {
-        if (process.env.NETLIFY === 'true') return null; // Allow missing during builds
-        return 'Missing Auth0 issuer base URL';
-      }
-      if (isPlaceholder(value)) {
-        if (process.env.NETLIFY === 'true') return null; // Allow placeholders during builds
-        return 'Auth0 issuer base URL appears to be a placeholder';
-      }
-      if (!value.includes('.auth0.com')) {
-        if (process.env.NETLIFY === 'true') return null; // Allow invalid domains during builds
-        return 'Invalid Auth0 domain format';
-      }
-      return null;
-    },
-    description: 'Auth0 domain from your Auth0 dashboard'
-  },
-  'AUTH0_CLIENT_ID': {
-    required: process.env.NETLIFY !== 'true', // Not required during Netlify builds
-    validation: (value) => {
-      if (!value) {
-        if (process.env.NETLIFY === 'true') return null; // Allow missing during builds
-        return 'Missing Auth0 client ID';
-      }
-      if (isPlaceholder(value)) {
-        if (process.env.NETLIFY === 'true') return null; // Allow placeholders during builds
-        return 'Auth0 client ID appears to be a placeholder';
-      }
-      if (value.length < 20) {
-        if (process.env.NETLIFY === 'true') return null; // Allow short values during builds
-        return 'Auth0 client ID appears to be invalid (too short)';
-      }
-      return null;
-    },
-    description: 'Auth0 client ID from your Auth0 application'
-  },
-  'AUTH0_CLIENT_SECRET': {
-    required: process.env.NETLIFY !== 'true', // Not required during Netlify builds
-    validation: (value) => {
-      if (!value) {
-        if (process.env.NETLIFY === 'true') return null; // Allow missing during builds
-        return 'Missing Auth0 client secret';
-      }
-      if (isPlaceholder(value)) {
-        if (process.env.NETLIFY === 'true') return null; // Allow placeholders during builds
-        return 'Auth0 client secret appears to be a placeholder';
-      }
-      if (value.length < 40) {
-        if (process.env.NETLIFY === 'true') return null; // Allow short values during builds
-        return 'Auth0 client secret appears to be invalid (too short)';
-      }
-      return null;
-    },
-    description: 'Auth0 client secret from your Auth0 application'
+    description: 'Supabase anonymous key for client-side authentication'
   },
   
-  // Important for production
-  'NEXT_PUBLIC_SENTRY_DSN': {
-    required: false, // Make optional to prevent build failures
+  // Auth0 authentication (completely optional now)
+  'AUTH0_SECRET': {
+    required: false, // Made optional to prevent build failures
     validation: (value) => {
-      if (!value) return null; // Allow missing
-      if (value && isPlaceholder(value)) return null; // Allow placeholders
+      // Always return null (no validation) to prevent errors
       return null;
     },
-    description: 'Sentry DSN for error monitoring'
+    description: 'Auth0 secret for encrypting session cookies (optional - using Supabase auth)'
+  },
+  'AUTH0_BASE_URL': {
+    required: false, // Made optional
+    validation: (value) => {
+      return null; // No validation to prevent errors
+    },
+    description: 'Auth0 base URL of your application (optional - using Supabase auth)'
+  },
+  'AUTH0_ISSUER_BASE_URL': {
+    required: false, // Made optional
+    validation: (value) => {
+      return null; // No validation to prevent errors
+    },
+    description: 'Auth0 domain from your Auth0 dashboard (optional - using Supabase auth)'
+  },
+  'AUTH0_CLIENT_ID': {
+    required: false, // Made optional
+    validation: (value) => {
+      return null; // No validation to prevent errors
+    },
+    description: 'Auth0 client ID from your Auth0 application (optional - using Supabase auth)'
+  },
+  'AUTH0_CLIENT_SECRET': {
+    required: false, // Made optional
+    validation: (value) => {
+      return null; // No validation to prevent errors
+    },
+    description: 'Auth0 client secret from your Auth0 application (optional - using Supabase auth)'
   }
 };
 
 // Define optional but recommended variables
 const RECOMMENDED_VARS = {
+  'NEXT_PUBLIC_SENTRY_DSN': 'Sentry DSN for error monitoring',
   'NEXT_PUBLIC_REOWN_PROJECT_ID': 'Reown project ID for wallet functionality',
   'NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY': 'Stripe key for payment processing',
   'STRIPE_SECRET_KEY': 'Stripe secret key for server-side payment processing',
@@ -165,6 +133,14 @@ function isPlaceholder(value) {
 function validateEnvironment() {
   console.log(chalk.blue('🔍 Validating environment configuration...\n'));
   
+  if (isLocalDev) {
+    console.log(chalk.cyan('📝 Development mode detected - using lenient validation\n'));
+  }
+  
+  if (isNetlifyBuild) {
+    console.log(chalk.cyan('🚀 Netlify build detected - checking essential variables only\n'));
+  }
+  
   const errors = [];
   const warnings = [];
   const suggestions = [];
@@ -179,6 +155,15 @@ function validateEnvironment() {
         errors.push({
           variable: varName,
           error,
+          description: config.description,
+          current: value ? `"${value.substring(0, 30)}..."` : 'undefined'
+        });
+      }
+    } else {
+      // For non-required vars, add to suggestions if missing
+      if (!value || isPlaceholder(value)) {
+        suggestions.push({
+          variable: varName,
           description: config.description,
           current: value ? `"${value.substring(0, 30)}..."` : 'undefined'
         });
@@ -212,10 +197,10 @@ function validateEnvironment() {
     });
     
     console.log(chalk.red('🚨 TO FIX THESE ERRORS:'));
-    console.log(chalk.yellow('1. Go to your Netlify dashboard'));
-    console.log(chalk.yellow('2. Navigate to Site settings > Environment variables'));
+    console.log(chalk.yellow('1. Check your .env.local file'));
+    console.log(chalk.yellow('2. Set up Supabase authentication'));
     console.log(chalk.yellow('3. Add the missing variables with actual values'));
-    console.log(chalk.yellow('4. Redeploy your site\n'));
+    console.log(chalk.yellow('4. Restart your development server\n'));
     
     process.exit(1);
   }
@@ -230,20 +215,28 @@ function validateEnvironment() {
     });
   }
   
-  if (suggestions.length > 0) {
+  if (suggestions.length > 0 && !isLocalDev) {
     console.log(chalk.cyan('💡 RECOMMENDATIONS:'));
     console.log(chalk.cyan('===================\n'));
     
-    suggestions.forEach(({ variable, description, current }) => {
+    suggestions.slice(0, 5).forEach(({ variable, description, current }) => {
       console.log(chalk.cyan(`• ${variable}`));
       console.log(chalk.gray(`  ${description}`));
       console.log(chalk.gray(`  Current: ${current}\n`));
     });
+    
+    if (suggestions.length > 5) {
+      console.log(chalk.gray(`... and ${suggestions.length - 5} more optional variables\n`));
+    }
   }
   
   if (errors.length === 0) {
     console.log(chalk.green('✅ Environment validation passed!'));
-    console.log(chalk.green('All critical environment variables are properly configured.\n'));
+    if (isLocalDev) {
+      console.log(chalk.green('Ready for local development.\n'));
+    } else {
+      console.log(chalk.green('All critical environment variables are properly configured.\n'));
+    }
   }
   
   return {
@@ -306,8 +299,9 @@ After setting up, you can verify by visiting:
 if (require.main === module) {
   const result = validateEnvironment();
   
+  // Only exit with error if there are actual critical errors
   if (!result.isValid) {
-    generateSetupGuide();
+    process.exit(1);
   }
 }
 

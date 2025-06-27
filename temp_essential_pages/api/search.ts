@@ -3,6 +3,7 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { SERVICES } from '@/data/servicesData';
 import { TALENT_PROFILES } from '@/data/talentData';
+import type { SearchResult, SearchResponse } from '@/types/search';
 
 interface SearchResult {
   id: string;
@@ -29,6 +30,60 @@ interface SearchResponse {
   query: string;
 }
 
+// Define search result types
+type SearchResultType = 'blog' | 'product' | 'talent' | 'service';
+
+// Helper function to normalize search results
+function normalizeSearchResult(
+  item: any,
+  type: SearchResultType,
+  score: number = 1
+): SearchResult {
+  switch (type) {
+    case 'blog':
+      return {
+        id: item.id,
+        title: item.title,
+        description: item.excerpt,
+        type: 'blog',
+        url: `/blog/${item.slug}`,
+        image: item.featuredImage,
+        price: undefined,
+        category: item.category,
+        tags: item.tags,
+        score,
+      };
+    case 'product':
+      return {
+        id: item.id,
+        title: item.name,
+        description: item.description,
+        type: 'product',
+        url: `/marketplace/${item.slug}`,
+        image: item.image,
+        price: item.price,
+        category: item.category,
+        tags: item.tags,
+        score,
+      };
+    case 'talent':
+      return {
+        id: item.id,
+        title: item.name,
+        description: item.headline,
+        type: 'talent',
+        url: `/talent/${item.slug}`,
+        image: item.avatar,
+        price: item.hourlyRate,
+        category: item.specialization,
+        tags: item.skills,
+        score,
+      };
+    default:
+      return item;
+  }
+}
+
 function handler(
   req: NextApiRequest,
   res: NextApiResponse<SearchResponse | { error: string }>,
@@ -38,11 +93,11 @@ function handler(
     return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  const q = String(((req.query as any).query ?? ((req.query as any).q ?? '')
+  const q = String((req.query.query ?? req.query.q) ?? '')
     .toLowerCase()
     .trim();
-  const page = parseInt(String(((req.query as any).page ?? '1'), 10);
-  const limit = parseInt(String(((req.query as any).limit ?? '20'), 10);
+  const page = parseInt(String(req.query.page ?? '1'), 10);
+  const limit = parseInt(String(req.query.limit ?? '20'), 10);
 
   if (!q) {
     return res.status(200).json({
