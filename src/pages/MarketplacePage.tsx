@@ -121,7 +121,13 @@ const MarketplaceCard = ({ product, onViewDetails, onAddToCart }: { product: Pro
       </div>
       <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
       <div className="flex items-center justify-between gap-2">
-        <Button size="icon" variant="outline" onClick={onAddToCart} aria-label="Add to cart">
+        <Button
+          size="icon"
+          variant="outline"
+          onClick={onAddToCart}
+          aria-label="Add to cart"
+          data-testid="add-to-cart-listing-button"
+        >
           <ShoppingCart className="h-4 w-4" />
         </Button>
         <Button size="sm" variant="outline" className="flex-1" onClick={onViewDetails}>
