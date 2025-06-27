@@ -6,10 +6,37 @@ const __dirname = path.dirname(__filename);
 
 // Configure CDN asset prefix when running in production
 const isProd = process.env.NODE_ENV === 'production';
-const assetPrefix =
-  isProd && process.env.NEXT_PUBLIC_CDN_URL
-    ? process.env.NEXT_PUBLIC_CDN_URL
-    : '';
+const isNetlify = process.env.NETLIFY === 'true';
+const isPreviewBuild = process.env.CONTEXT !== 'production';
+
+// Only use CDN if:
+// 1. In production mode
+// 2. CDN URL is provided and not a placeholder
+// 3. Not a Netlify preview build (unless it's the main domain)
+// 4. CDN URL is a valid HTTPS URL
+const cdnUrl = process.env.NEXT_PUBLIC_CDN_URL;
+const isValidCDN = cdnUrl && 
+  cdnUrl.startsWith('https://') && 
+  !cdnUrl.includes('yourdomain.com') && 
+  !cdnUrl.includes('example.com') && 
+  !cdnUrl.includes('localhost');
+
+const shouldUseCDN = isProd && isValidCDN && (!isNetlify || !isPreviewBuild);
+
+const assetPrefix = shouldUseCDN ? cdnUrl : '';
+
+// Log CDN configuration in development for debugging
+if (process.env.NODE_ENV === 'development') {
+  console.log('CDN Configuration:', {
+    isProd,
+    isNetlify,
+    isPreviewBuild,
+    cdnUrl: cdnUrl || 'Not set',
+    isValidCDN,
+    shouldUseCDN,
+    assetPrefix: assetPrefix || 'Disabled (serving from origin)'
+  });
+}
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   assetPrefix,
@@ -343,6 +370,28 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Font files - ensure they load properly with CORS headers
+      {
+        source: '/_next/static/media/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET',
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Content-Type',
           },
         ],
       },
