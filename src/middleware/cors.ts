@@ -48,8 +48,9 @@ export function applyCorsHeaders(
     res.setHeader('Access-Control-Allow-Origin', corsOptions.origin);
   } else if (Array.isArray(corsOptions.origin)) {
     const requestOrigin = req.headers.origin;
-    if (requestOrigin && corsOptions.origin.includes(requestOrigin)) {
-      res.setHeader('Access-Control-Allow-Origin', requestOrigin);
+    const originString = Array.isArray(requestOrigin) ? requestOrigin[0] : requestOrigin;
+    if (originString && corsOptions.origin.includes(originString)) {
+      res.setHeader('Access-Control-Allow-Origin', originString);
     }
   } else if (corsOptions.origin === true) {
     res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');

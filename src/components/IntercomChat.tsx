@@ -7,7 +7,7 @@ declare global {
   }
 }
 
-export function IntercomChat() {
+export default function IntercomChat() {
   useEffect(() => {
     const appId = process.env.NEXT_PUBLIC_INTERCOM_APP_ID;
     if (!appId) return;

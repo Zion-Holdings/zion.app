@@ -63,12 +63,12 @@ INTERNAL_AUTH_SERVICE_URL=https://your-auth-service-url.com
 
 To facilitate testing and development, the application includes logic to **automatically verify user emails upon registration** when in `development` or `staging` environments. This bypasses the need to click a verification link.
 
-For this feature to work, the following environment variables must be correctly set in your development, staging, or QA environments:
+For this feature to work, the following environment variables must be correctly set in your development, staging, **beta**, or QA environments:
 
--   `NEXT_PUBLIC_APP_ENV`: This variable must be set to `development` or `staging`. If it's unset or set to `production` (or any other value), auto-verification will be skipped.
+-   `NEXT_PUBLIC_APP_ENV`: This variable must be set to `development`, `staging`, or `beta`. If it's unset or set to `production` (or any other value), auto-verification will be skipped.
     ```bash
-    # Example for .env.local or Netlify UI for staging
-    NEXT_PUBLIC_APP_ENV=staging
+    # Example for .env.local or Netlify UI for beta testing
+    NEXT_PUBLIC_APP_ENV=beta
     ```
 
 -   `SUPABASE_SERVICE_ROLE_KEY`: This key is **required** for the backend to perform the administrative action of marking an email as confirmed. Ensure this key is provided and has the necessary permissions in your Supabase project to update user attributes.

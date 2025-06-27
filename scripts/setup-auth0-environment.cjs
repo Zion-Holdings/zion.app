@@ -12,6 +12,8 @@ const crypto = require('crypto');
 const auth0EnvExample = `# Next.js Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_API_URL=http://localhost:3000/api
+NEXT_PUBLIC_APP_ENV=development
+NEXT_PUBLIC_APP_ENV=production
 
 # Auth0 Configuration (Required)
 # Get these from your Auth0 application dashboard: https://manage.auth0.com/dashboard
@@ -54,6 +56,8 @@ SENDGRID_API_KEY=your_sendgrid_api_key_here
 # Analytics
 NEXT_PUBLIC_GA_ID=your_ga_id_here
 NEXT_PUBLIC_INTERCOM_APP_ID=your_intercom_app_id_here
+NEXT_PUBLIC_POSTHOG_KEY=your_posthog_key_here
+NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
 
 # Feature Flags
 NEXT_PUBLIC_ENABLE_ANALYTICS=true
@@ -92,6 +96,8 @@ NEXT_PUBLIC_SNAPSHOT_HUB_URL=https://hub.snapshot.org
 # Email
 NEXT_PUBLIC_SUPPORT_EMAIL=support@localhost.com
 NEXT_PUBLIC_INTERCOM_APP_ID=your_intercom_app_id_here
+NEXT_PUBLIC_POSTHOG_KEY=your_posthog_key_here
+NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
 
 # Feature Flags for Development
 NEXT_PUBLIC_ENABLE_ANALYTICS=false

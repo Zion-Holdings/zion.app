@@ -3,6 +3,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { MessageBubble } from '@/components/messaging/MessageBubble';
 import { Button } from '@/components/ui/button';
 import type { Message } from '@/types/messaging';
+import { safeStorage } from '@/utils/safeStorage';
 
 interface ChatWidgetProps {
   /** Room identifier, typically order or service id */
@@ -18,6 +19,20 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState('');
   const socketRef = useRef<any>();
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
+
+  // Load stored messages for this room when opened
+  useEffect(() => {
+    if (!isOpen) return;
+    try {
+      const stored = safeStorage.getItem(`chat-widget-${roomId}`);
+      if (stored) {
+        setMessages(JSON.parse(stored));
+      }
+    } catch (err) {
+      console.warn('ChatWidget: failed to load history', err);
+    }
+  }, [isOpen, roomId]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -39,6 +54,8 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
 
     setup();
 
+    inputRef.current?.focus();
+
     return () => {
       isMounted = false;
       socket?.disconnect();
@@ -51,6 +68,22 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       navigator.serviceWorker.getRegistration().then(reg => {
         reg?.showNotification(title, { body });
       });
+    }
+  };
+
+  // Persist messages whenever they change while open
+  useEffect(() => {
+    if (!isOpen) return;
+    try {
+      safeStorage.setItem(`chat-widget-${roomId}`, JSON.stringify(messages));
+    } catch (err) {
+      console.warn('ChatWidget: failed to save history', err);
+    }
+  }, [messages, roomId, isOpen]);
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
     }
   };
 
@@ -67,6 +100,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     socketRef.current.emit('send-message', { roomId, message: msg });
     setMessages(prev => [...prev, msg]);
     setText('');
+    inputRef.current?.focus();
   };
 
   if (!isOpen) return null;
@@ -88,8 +122,10 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
         <textarea
           value={text}
           onChange={e => setText(e.target.value)}
+          onKeyDown={handleKeyDown}
           rows={2}
           className="w-full p-2 text-black dark:text-white rounded mb-2 bg-zion-blue-light dark:bg-zion-blue-dark"
+          ref={inputRef}
         />
         <Button className="w-full" onClick={handleSend} disabled={!text.trim()}>
           Send

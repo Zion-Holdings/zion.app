@@ -16,7 +16,7 @@ The project is structured as a monorepo and includes:
 -   **Blockchain/DAO Components:** Directories like `dao/` and `token/` suggest features related to Decentralized Autonomous Organizations and cryptocurrency tokens.
 -   **SDK:** A software development kit is present in `sdk/`, likely for interacting with Zion platform services.
 -   **Documentation:** General documentation is in `docs/`, with specific component documentation potentially within their respective directories.
--   **Testing:** Extensive testing suites using Jest, Vitest, and Cypress are in `__tests__/` and `cypress/`.
+-   **Testing:** Extensive test suites using Vitest and Cypress are in `tests/` and `cypress/`. See **[docs/QA_TESTING_CHECKLIST.md](docs/QA_TESTING_CHECKLIST.md)** for common QA steps.
 
 ## Key Technologies
 
@@ -71,6 +71,13 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **[Netlify Deployment Guide](docs/NETLIFY_DEPLOYMENT_GUIDE.md)** - Step-by-step Netlify deployment with environment variables
 - **[Optional Two-Factor Authentication](TWO_FACTOR_AUTHENTICATION_SUMMARY.md)** - Overview of enabling 2FA in the IPO portal
 - **[Logging Guidelines](docs/LOGGING_GUIDELINES.md)** - Usage instructions for the project logger
+
+### CDN for Static Assets
+
+To improve performance, the application can serve static assets from a CDN.
+Set `NEXT_PUBLIC_CDN_URL` to your CDN domain (e.g., `https://cdn.yourdomain.com`).
+When this variable is provided in production builds, Next.js will prefix asset
+URLs so they are loaded from the CDN.
 
 ### Quick Setup Verification
 
@@ -144,9 +151,14 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
     - Pact-based contract tests verify that front-end routes match available API endpoints.
     - Start the stub server with `node server/stubServer.js` and run `npm test`.
 
-12. **Privacy Policy & Terms (login-gated):**
+12. **Cross-Browser Testing:**
+    - Set `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` environment variables.
+    - Run `npm run test:browserstack` to execute Playwright tests on BrowserStack across desktop and mobile browsers.
+
+13. **Privacy Policy & Terms (login-gated):**
     - AI-Prompt: "Generate a plain-language summary (≤ 200 words) of a standard tech marketplace privacy policy aimed at U.S. users."
     - AI-Prompt: "Write an FAQ with 5 common questions users ask about Zion’s Terms of Service."
+13. **Frequently Asked Questions:** See [docs/FAQ.md](docs/FAQ.md) or the in-app Help Center for quick answers.
 
 ## Troubleshooting
 

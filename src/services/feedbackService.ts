@@ -4,6 +4,7 @@ export interface FeedbackEntry {
   id: string;
   rating: number;
   comment?: string;
+  screenshot?: string;
   url: string;
   userAgent?: string;
   createdAt: string;

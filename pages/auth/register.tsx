@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import SignupForm from '@/components/auth/SignupForm'; // Adjusted path assuming components are in src
+import SignupForm from '@/components/auth/SignupForm';
+import { fireEvent } from '@/lib/analytics';
 import { useRouter } from 'next/router';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
 
 const RegisterPage = () => {
   const router = useRouter();
+
+  useEffect(() => {
+    fireEvent('signup_page_view');
+  }, []);
 
   const handleSuccess = () => {
     // Redirect to login or a verification pending page, as per app flow
@@ -23,16 +29,16 @@ const RegisterPage = () => {
       <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
-            <img
+            <OptimizedImage
               className="mx-auto h-12 w-auto"
               src="/logos/zion-logo.png"
               alt="Zion Tech"
-              loading="lazy"
+              width={48}
+              height={48}
               onError={(e) => {
-                const target = e.target as HTMLImageElement;
+                const target = e.currentTarget as HTMLImageElement;
                 // Attempt to load from a more generic path if the specific one fails or hide
-                // target.src = '/zion-logo.png'; // Fallback if your public folder has it at root
-                target.style.display = 'none'; // Or just hide if not found
+                target.style.display = 'none';
               }}
             />
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">

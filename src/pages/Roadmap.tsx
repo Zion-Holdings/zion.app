@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { NextSeo } from '@/components/NextSeo';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,6 +8,7 @@ import Link from 'next/link'; // Changed from react-router-dom
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { ROADMAP_ITEMS, RoadmapItem } from '@/data/roadmap';
+import { safeStorage } from '@/utils/safeStorage';
 
 const STATUSES: RoadmapItem['status'][] = ['Planned', 'In Progress', 'Completed'];
 
@@ -21,7 +22,19 @@ function voteWeight(role?: string) {
 
 export default function RoadmapPage() {
   const { user } = useAuth();
-  const [items, setItems] = useState<RoadmapItem[]>(ROADMAP_ITEMS);
+  const [items, setItems] = useState<RoadmapItem[]>(() => {
+    const raw = safeStorage.getItem('roadmap_items');
+    if (!raw) return ROADMAP_ITEMS;
+    try {
+      return JSON.parse(raw) as RoadmapItem[];
+    } catch {
+      return ROADMAP_ITEMS;
+    }
+  });
+
+  useEffect(() => {
+    safeStorage.setItem('roadmap_items', JSON.stringify(items));
+  }, [items]);
 
   const handleUpvote = (id: string) => {
     if (!user) {

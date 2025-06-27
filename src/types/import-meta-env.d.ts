@@ -11,6 +11,7 @@ interface ImportMetaEnv {
   readonly NEXT_PUBLIC_REOWN_PROJECT_ID?: string;
   readonly NEXT_PUBLIC_VAPID_PUBLIC_KEY?: string;
   readonly NEXT_PUBLIC_API_URL?: string;
+  readonly NEXT_PUBLIC_APP_ENV?: string;
   readonly NEXT_PUBLIC_OPENAI_API_KEY?: string;
   readonly NEXT_PUBLIC_FIREBASE_API_KEY?: string;
   readonly NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN?: string;
@@ -28,6 +29,8 @@ interface ImportMetaEnv {
   readonly NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY?: string;
   readonly NEXT_PUBLIC_STRIPE_PK?: string;
   readonly NEXT_PUBLIC_GA_ID?: string;
+  readonly NEXT_PUBLIC_POSTHOG_KEY?: string;
+  readonly NEXT_PUBLIC_POSTHOG_HOST?: string;
   readonly NEXT_PUBLIC_INTERCOM_APP_ID?: string;
   readonly NEXT_PUBLIC_SALESFORCE_URL?: string;
   readonly NEXT_PUBLIC_SALESFORCE_TOKEN?: string;

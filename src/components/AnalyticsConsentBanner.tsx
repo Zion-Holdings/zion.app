@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { initGA } from '@/lib/analytics';
+import { initPostHog } from '@/lib/posthog';
 
 export const AnalyticsConsentBanner: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -9,6 +10,7 @@ export const AnalyticsConsentBanner: React.FC = () => {
     const consent = safeStorage.getItem('analyticsConsent');
     if (consent === 'granted') {
       initGA();
+      initPostHog();
     } else if (!consent) {
       setShowBanner(true);
     }
@@ -18,6 +20,7 @@ export const AnalyticsConsentBanner: React.FC = () => {
     safeStorage.setItem('analyticsConsent', 'granted');
     setShowBanner(false);
     initGA();
+    initPostHog();
   };
 
   const decline = () => {
