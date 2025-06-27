@@ -20,11 +20,13 @@ export function ConversationDetailView() {
   } = useMessaging();
   const [messageText, setMessageText] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
   
   useEffect(() => {
     if (activeConversation) {
       loadMessages(activeConversation.id);
     }
+    inputRef.current?.focus();
   }, [activeConversation?.id, loadMessages]);
   
   useEffect(() => {
@@ -35,12 +37,24 @@ export function ConversationDetailView() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   
-  const handleSendMessage = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const send = async () => {
     if (!messageText.trim() || !activeConversation) return;
-    
+
     await sendMessage(activeConversation.id, messageText);
     setMessageText('');
+    inputRef.current?.focus();
+  };
+
+  const handleSendMessage = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await send();
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      send();
+    }
   };
   
   if (!activeConversation) {
@@ -168,8 +182,10 @@ export function ConversationDetailView() {
           <textarea
             value={messageText}
             onChange={(e) => setMessageText(e.target.value)}
+            onKeyDown={handleKeyDown}
             placeholder="Type a message..."
             className="flex-1 bg-zion-blue-dark/30 border border-zion-purple/20 rounded-md p-2 min-h-[80px] text-black focus:outline-none focus:ring-2 focus:ring-zion-cyan"
+            ref={inputRef}
           />
           <Button 
             type="submit"

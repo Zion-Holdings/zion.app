@@ -18,6 +18,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
   const [messages, setMessages] = useState<Message[]>([]);
   const [text, setText] = useState('');
   const socketRef = useRef<any>();
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -39,6 +40,8 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
 
     setup();
 
+    inputRef.current?.focus();
+
     return () => {
       isMounted = false;
       socket?.disconnect();
@@ -51,6 +54,13 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
       navigator.serviceWorker.getRegistration().then(reg => {
         reg?.showNotification(title, { body });
       });
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
     }
   };
 
@@ -67,6 +77,7 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
     socketRef.current.emit('send-message', { roomId, message: msg });
     setMessages(prev => [...prev, msg]);
     setText('');
+    inputRef.current?.focus();
   };
 
   if (!isOpen) return null;
@@ -88,8 +99,10 @@ export function ChatWidget({ roomId, recipientId, isOpen, onClose }: ChatWidgetP
         <textarea
           value={text}
           onChange={e => setText(e.target.value)}
+          onKeyDown={handleKeyDown}
           rows={2}
           className="w-full p-2 text-black dark:text-white rounded mb-2 bg-zion-blue-light dark:bg-zion-blue-dark"
+          ref={inputRef}
         />
         <Button className="w-full" onClick={handleSend} disabled={!text.trim()}>
           Send
