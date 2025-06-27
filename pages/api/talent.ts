@@ -62,7 +62,10 @@ function validateApiKey(req: NextApiRequest): boolean {
   const authHeader = req.headers.authorization;
   if (!authHeader) return false;
   
-  const token = authHeader.replace('Bearer ', '');
+  const authHeaderString = Array.isArray(authHeader) ? authHeader[0] : authHeader;
+  if (!authHeaderString) return false;
+  
+  const token = authHeaderString.replace('Bearer ', '');
   
   // Allow demo key for testing API documentation
   if (token === 'demo_key_123') return true;

@@ -124,7 +124,7 @@ async function handler(
   res: NextApiResponse<SearchResponse | { error: string }>,
 ) {
   // Apply CORS headers first
-  applyCorsHeaders(req, res);
+  applyCorsHeaders(req, res as NextApiResponse<unknown>);
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
