@@ -25,7 +25,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   if (req.method === 'POST') {
-    const { user_id, item_type, item_id } = req.body || {};
+    const { user_id, item_type, item_id } = (req.body as { user_id?: string; item_type?: string; item_id?: string }) || {};
     if (!user_id || !item_type || !item_id) {
       return res.status(400).json({ error: 'Missing fields' });
     }
@@ -40,7 +40,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   if (req.method === 'DELETE') {
-    const { user_id, item_type, item_id } = req.body || {};
+    const { user_id, item_type, item_id } = (req.body as { user_id?: string; item_type?: string; item_id?: string }) || {};
     if (!user_id || !item_type || !item_id) {
       return res.status(400).json({ error: 'Missing fields' });
     }

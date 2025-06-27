@@ -13,12 +13,16 @@ function isProductionEnvironment(req: NextApiRequest): boolean {
   if (process.env.CONTEXT === 'production') return true; // Netlify
 
   // Fallback: check host if available (less reliable for API routes)
-  const host = req.headers.host || process.env.NEXT_PUBLIC_APP_URL || process.env.VERCEL_URL || process.env.URL;
-  if (host) {
+  const hostHeader = req.headers.host || process.env.NEXT_PUBLIC_APP_URL || process.env.VERCEL_URL || process.env.URL;
+  if (hostHeader) {
     try {
-      const hostname = host.startsWith('http') ? new URL(host).hostname : host;
-      // Add your actual production domain here
-      return hostname === 'app.ziontechgroup.com' || hostname === 'zion.app';
+      // Convert to string if it's an array
+      const host = Array.isArray(hostHeader) ? hostHeader[0] : hostHeader;
+      if (host) {
+        const hostname = host.startsWith('http') ? new URL(host).hostname : host;
+        // Add your actual production domain here
+        return hostname === 'app.ziontechgroup.com' || hostname === 'zion.app';
+      }
     } catch {
       // ignore parse errors
     }
@@ -101,7 +105,7 @@ export default async function handler(
       apiVersion: '2024-06-20',
     });
 
-    const { cartItems, customer_email, shipping_address }: CheckoutRequest = req.body;
+    const { cartItems, customer_email, shipping_address }: CheckoutRequest = req.body as CheckoutRequest;
 
     // Validate required fields
     if (!cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {
