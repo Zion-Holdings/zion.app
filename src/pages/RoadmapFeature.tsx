@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
@@ -9,13 +9,22 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { ROADMAP_ITEMS, RoadmapItem } from '@/data/roadmap';
+import { safeStorage } from '@/utils/safeStorage';
 
 export default function RoadmapFeaturePage() {
   const router = useRouter();
   const { id } = router.query as { id?: string };
   if (!id) return null;
   const { user } = useAuth();
-  const [items, setItems] = useState<RoadmapItem[]>(ROADMAP_ITEMS);
+  const [items, setItems] = useState<RoadmapItem[]>(() => {
+    const raw = safeStorage.getItem('roadmap_items');
+    if (!raw) return ROADMAP_ITEMS;
+    try {
+      return JSON.parse(raw) as RoadmapItem[];
+    } catch {
+      return ROADMAP_ITEMS;
+    }
+  });
   const feature = items.find((f) => f.id === id);
   if (!feature) {
     return (
@@ -23,7 +32,19 @@ export default function RoadmapFeaturePage() {
     );
   }
 
-  const [followed, setFollowed] = useState(false);
+  useEffect(() => {
+    safeStorage.setItem('roadmap_items', JSON.stringify(items));
+  }, [items]);
+
+  const [followed, setFollowed] = useState(() =>
+    safeStorage.getItem(`feature_follow_${id}`) === 'true'
+  );
+
+  useEffect(() => {
+    if (id) {
+      safeStorage.setItem(`feature_follow_${id}`, String(followed));
+    }
+  }, [id, followed]);
 
   const handleFollow = () => {
     if (!user) {
