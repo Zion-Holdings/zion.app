@@ -72,6 +72,13 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **[Optional Two-Factor Authentication](TWO_FACTOR_AUTHENTICATION_SUMMARY.md)** - Overview of enabling 2FA in the IPO portal
 - **[Logging Guidelines](docs/LOGGING_GUIDELINES.md)** - Usage instructions for the project logger
 
+### CDN for Static Assets
+
+To improve performance, the application can serve static assets from a CDN.
+Set `NEXT_PUBLIC_CDN_URL` to your CDN domain (e.g., `https://cdn.yourdomain.com`).
+When this variable is provided in production builds, Next.js will prefix asset
+URLs so they are loaded from the CDN.
+
 ### Quick Setup Verification
 
 After setting up environment variables, verify your configuration:
