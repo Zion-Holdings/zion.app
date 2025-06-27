@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export interface ShippoShipment {
-import { logError } from '@/utils/productionLogger';
+import { logError } from "@/utils/productionLogger";
 
+export interface {
   tracking_number: string;
   tracking_status?: string;
   tracking_history?: ShippoTrackingEvent[];

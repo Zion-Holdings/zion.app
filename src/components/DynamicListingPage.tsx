@@ -4,9 +4,8 @@ import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
 import { logInfo, logError } from '@/utils/productionLogger';
-
+import {
   Select,
   SelectValue,
   SelectTrigger,

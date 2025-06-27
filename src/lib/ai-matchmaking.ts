@@ -1,8 +1,8 @@
 // AI Matchmaking utility functions
 
-export interface MatchResultItem {
-import { logError } from '@/utils/productionLogger';
+import { logError } from "@/utils/productionLogger";
 
+export interface {
   id: string;
   title: string;
   description: string;

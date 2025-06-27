@@ -5,9 +5,9 @@ import { toast } from "@/hooks/use-toast";
 
 export type ApiKeyScope = 'jobs:read' | 'jobs:write' | 'talent:read' | 'quotes:write' | 'webhooks:manage';
 
-export interface ApiKey {
-import { logError } from '@/utils/productionLogger';
+import { logError } from "@/utils/productionLogger";
 
+export interface {
   id: string;
   name: string;
   key_prefix: string;

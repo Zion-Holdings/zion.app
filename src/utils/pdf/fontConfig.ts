@@ -1,9 +1,9 @@
 
 import { jsPDF } from 'jspdf';
 
-export interface FontConfig {
-import { logError } from '@/utils/productionLogger';
+import { logError } from "@/utils/productionLogger";
 
+export interface {
   regular: ArrayBuffer;
   bold?: ArrayBuffer;
   italic?: ArrayBuffer;

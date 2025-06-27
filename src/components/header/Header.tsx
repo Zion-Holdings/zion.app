@@ -13,10 +13,9 @@ import { useRouter } from "next/router"; // Changed from react-router-dom
 import { useState } from "react";
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useTranslation } from 'react-i18next';
-
-export interface HeaderProps {
 import { logInfo } from '@/utils/productionLogger';
 
+export interface HeaderProps {
   hideLogin?: boolean;
   customLogo?: string;
   customTheme?: {

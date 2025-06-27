@@ -7,9 +7,9 @@ import { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ApiResponse, PaginatedResponse, SearchFilters } from '@/types/common';
 
 // TypeScript interfaces
-export interface Product {
-import { logError } from '@/utils/productionLogger';
+import { logError } from "@/utils/productionLogger";
 
+export interface {
   id: string;
   name: string;
   description: string;

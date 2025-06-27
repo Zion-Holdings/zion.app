@@ -359,4 +359,3 @@ export async function safeFetch(
   throw lastError;
 }
 
-export type { ErrorPageProps, RetryConfig }; 

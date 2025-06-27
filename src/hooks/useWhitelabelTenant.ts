@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-
-export interface WhitelabelTenant {
 import { logWarn } from '@/utils/productionLogger';
 
+export interface WhitelabelTenant {
   id: string;
   brand_name: string;
   subdomain: string;

@@ -279,4 +279,3 @@ async function handler(
 
 export default withErrorLogging(handler);
 
-export type { SearchFilters, SearchResult };

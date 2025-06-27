@@ -5,8 +5,6 @@ import { supabase } from '@/integrations/supabase/client';
 
 // Analytics event types
 export type AnalyticsEventType = 
-import { logInfo, logError } from '@/utils/productionLogger';
-
   | 'page_view'
   | 'button_click'
   | 'form_submit'

@@ -1,3 +1,4 @@
+export type { ErrorPageProps, RetryConfig }; 
 import { captureException } from './sentry';
 import { sendErrorToBackend } from './customErrorReporter';
 import { generateTraceId } from './generateTraceId';

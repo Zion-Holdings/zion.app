@@ -5,9 +5,8 @@ import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { useWishlist } from "@/hooks/useWishlist";
 import { useCart } from '@/context/CartContext';
-import {
 import { logWarn } from '@/utils/productionLogger';
-
+import {
   Home,
   Search,
   MessageCircle,

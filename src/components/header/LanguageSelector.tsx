@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import {
 import { logInfo, logError } from '@/utils/productionLogger';
-
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -17,7 +16,7 @@ export function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
 
   logInfo('LanguageSelector: Rendered with currentLanguage:', { data: currentLanguage });
-  logInfo('LanguageSelector: Available languages:', { data: supportedLanguages.map(l => l.code }));
+  logInfo('LanguageSelector: Available languages:', { data: supportedLanguages.map(l => l.code) });
 
   const currentFlag =
     supportedLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';

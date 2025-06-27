@@ -3,9 +3,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { TalentProfile } from "@/types/talent";
 
-export interface HireRequestData {
-import { logError } from '@/utils/productionLogger';
+import { logError } from "@/utils/productionLogger";
 
+export interface {
   talent: {
     id: string;
     full_name: string;

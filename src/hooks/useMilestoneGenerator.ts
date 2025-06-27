@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
-export interface MilestoneInput {
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logError } from "@/utils/productionLogger";
 
+export interface {
   scope: string;
   startDate: string;
   endDate: string | null;

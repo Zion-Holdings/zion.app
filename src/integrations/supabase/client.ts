@@ -84,4 +84,3 @@ export async function safeFetch(url: string, options: RequestInit = {}) {
 }
 
 // Export enhanced type safety
-export type SupabaseClientType = typeof supabase; 

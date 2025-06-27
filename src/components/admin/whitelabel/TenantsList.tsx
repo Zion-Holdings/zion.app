@@ -56,19 +56,19 @@ export function TenantsList() {
     try {
       const { error } = await supabase
         .from('whitelabel_tenants')
-        .update({ is_active: !tenant.is_active })
-        .eq('id', tenant.id);
+        .update({ is_active: !(tenant as any).is_active })
+        .eq('id', (tenant as any).id);
         
       if (error) throw error;
       
       // Update local state
       setTenants(tenants.map(t => 
-        t.id === tenant.id ? { ...t, is_active: !t.is_active } : t
+        (t as any).id === (tenant as any).id ? { ...t, is_active: !(t as any).is_active } : t
       ));
       
       toast({
-        title: `Tenant ${tenant.is_active ? 'deactivated' : 'activated'}`,
-        description: `${tenant.brand_name} has been ${tenant.is_active ? 'deactivated' : 'activated'} successfully.`,
+        title: `Tenant ${(tenant as any).is_active ? 'deactivated' : 'activated'}`,
+        description: `${(tenant as any).brand_name} has been ${(tenant as any).is_active ? 'deactivated' : 'activated'} successfully.`,
       });
     } catch (error: any) {
       logError('Error toggling tenant status:', { data: error });
@@ -87,18 +87,18 @@ export function TenantsList() {
       const { error } = await supabase
         .from('whitelabel_tenants')
         .update({ dns_verified: true })
-        .eq('id', tenant.id);
+        .eq('id', (tenant as any).id);
         
       if (error) throw error;
       
       // Update local state
       setTenants(tenants.map(t => 
-        t.id === tenant.id ? { ...t, dns_verified: true } : t
+        (t as any).id === (tenant as any).id ? { ...t, dns_verified: true } : t
       ));
       
       toast({
         title: 'DNS verified',
-        description: `Custom domain for ${tenant.brand_name} has been verified.`,
+        description: `Custom domain for ${(tenant as any).brand_name} has been verified.`,
       });
     } catch (error: any) {
       logError('Error verifying DNS:', { data: error });

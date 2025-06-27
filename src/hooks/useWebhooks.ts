@@ -5,9 +5,9 @@ import { toast } from "@/hooks/use-toast";
 
 export type WebhookEventType = 'new_application' | 'quote_received' | 'milestone_approved' | 'talent_hired';
 
-export interface Webhook {
-import { logError } from '@/utils/productionLogger';
+import { logError } from "@/utils/productionLogger";
 
+export interface {
   id: string;
   name: string;
   url: string;

@@ -8,9 +8,9 @@ import { useRouter } from 'next/router';
 import { jobSchema, JobSchemaType } from './validation';
 import { useAuth } from "@/hooks/useAuth";
 
-export interface JobPostingProps {
-import { logError } from '@/utils/productionLogger';
+import { logError } from "@/utils/productionLogger";
 
+export interface {
   jobId?: string;
   
   onSuccess?: () => void;

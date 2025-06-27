@@ -4,7 +4,6 @@ import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { logInfo, logError } from '@/utils/productionLogger';
 // Removed: import { useRouter } from 'next/router';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
-import { logError } from '@/utils/logError';
 import { sendErrorToBackend } from '@/utils/customErrorReporter';
 import { getCapturedLogs } from '@/utils/consoleLogCapture';
 import { generateTraceId } from '@/utils/generateTraceId';

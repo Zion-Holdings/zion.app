@@ -3,9 +3,9 @@ import { useAuth } from './useAuth';
 import { safeFetch } from '@/integrations/supabase/client';
 import { getWishlist, saveWishlist } from '@/lib/db';
 
-export interface Favorite {
-import { logError } from '@/utils/productionLogger';
+import { logError } from "@/utils/productionLogger";
 
+export interface {
   item_type: string;
   item_id: string;
   created_at?: string;
