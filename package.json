@@ -35,6 +35,7 @@
     "lint:a11y": "vitest run tests/Accessibility.test.tsx",
     "test:axe": "vitest run tests/Accessibility.test.tsx",
     "test:e2e": "cypress run --browser electron",
+    "test:browserstack": "playwright test --config=browserstack.config.ts",
     "seed": "prisma db seed",
     "es:index": "node scripts/index-elasticsearch.js",
     "devnet": "node scripts/start-devnet.js",
