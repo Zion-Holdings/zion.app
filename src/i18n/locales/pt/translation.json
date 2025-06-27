@@ -208,5 +208,29 @@
     "hire_buy_desc": "Conecte-se diretamente com provedores combinados e complete sua transação com segurança.",
     "done": "Pronto",
     "done_desc": "Desfrute de entrega sem complicações e suporte para suas soluções tecnológicas."
+  },
+  "quote_form": {
+    "title": "Solicite um Orçamento Agora",
+    "subtitle": "Solicite sua proposta comercial instantânea e descubra como a Zion pode revolucionar suas operações de TI",
+    "sent_title": "Pedido de Orçamento Enviado!",
+    "sent_desc": "Obrigado pelo seu interesse nos serviços da Zion. Nossa equipe preparará sua proposta comercial personalizada e entrará em contato em breve.",
+    "submit_another": "Enviar Outra Solicitação",
+    "labels": {
+      "name": "Nome",
+      "company": "Empresa",
+      "email": "Email",
+      "phone": "Telefone",
+      "interests": "Tenho interesse em (selecione tudo que se aplica)",
+      "interest_ai": "Produtos/Serviços de IA",
+      "interest_equipment": "Equipamentos de TI",
+      "interest_servers": "Soluções de Servidores",
+      "interest_storage": "Soluções de Armazenamento",
+      "interest_networking": "Redes",
+      "interest_support": "Suporte 24/7",
+      "interest_recycling": "Serviços de Reciclagem",
+      "additional_details": "Detalhes Adicionais"
+    },
+    "sending": "Enviando...",
+    "submit": "Receba sua Proposta Comercial Grátis"
   }
 }

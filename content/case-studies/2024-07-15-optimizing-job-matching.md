@@ -3,7 +3,7 @@
   "title": "Optimizing Job Matching with AI",
   "excerpt": "See how our AI-powered recruiting cut hiring time in half.",
   "company": "DataMind Solutions",
-  "companyLogo": "/logos/placeholder-logo.svg",
+  "companyLogo": "/logos/zion-logo.png",
   "avatar": "/placeholder.svg",
   "quote": "Zion's AI recruiting tools connected us with top talent in record time.",
   "author": "Sarah Chen",

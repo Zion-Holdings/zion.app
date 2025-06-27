@@ -1,4 +1,5 @@
 import { logger } from '@/utils/logger';
+import { captureEvent } from './posthog';
 
 export const initGA = () => {
   const measurementId = process.env.NEXT_PUBLIC_GA_ID;
@@ -13,16 +14,17 @@ export const initGA = () => {
     return;
   }
 
-  
-    // Initialize GA4
-    if (window.gtag) {
-      window.gtag('config', measurementId);
-    }
-  };
-export const fireEvent = (eventName: string, eventParams?: Record<string, any>) => {
-  if (!window.gtag) {
-    logger.error('gtag is not defined. Make sure GA4 is initialized.');
-    return;
+  if (window.gtag) {
+    window.gtag('config', measurementId);
   }
-  window.gtag('event', eventName, eventParams);
+};
+
+export const fireEvent = (eventName: string, eventParams?: Record<string, any>) => {
+  if (window.gtag) {
+    window.gtag('event', eventName, eventParams);
+  } else {
+    logger.error('gtag is not defined. Make sure GA4 is initialized.');
+  }
+
+  captureEvent(eventName, eventParams);
 };

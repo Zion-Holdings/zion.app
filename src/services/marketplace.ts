@@ -82,13 +82,13 @@ const createMarketplaceClient = (): AxiosInstance => {
   client.interceptors.request.use(
     async (config) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        console.log(`[DEBUG] Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
+        logger.debug(`Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
       }
       return config;
     },
     (error) => {
       if (process.env.NODE_ENV === 'development') {
-        console.error('Marketplace request interceptor error:', error);
+        logger.error('Marketplace request interceptor error:', error);
       }
       return Promise.reject(error);
     }
@@ -98,13 +98,13 @@ const createMarketplaceClient = (): AxiosInstance => {
   client.interceptors.response.use(
     (response) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        console.log(`[DEBUG] Marketplace API Response: ${response.status}`);
+        logger.debug(`Marketplace API Response: ${response.status}`);
       }
       return response;
     },
     (error: AxiosError) => {
       if (process.env.NODE_ENV === 'development') {
-        console.error('Marketplace API Error:', {
+        logger.error('Marketplace API Error:', {
           message: error.message,
           status: error.response?.status,
           url: error.config?.url,
@@ -131,8 +131,8 @@ export const fetchProducts = async (params: {
 } = {}): Promise<Product[]> => {
   try {
     if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-      console.log('[DEBUG] Marketplace Service - API Base URL:', process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api');
-      console.log('Fetching marketplace products with params:', params);
+      logger.debug('Marketplace Service - API Base URL:', process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api');
+      logger.debug('Fetching marketplace products with params:', params);
     }
     
     // Use internal Next.js API route
@@ -152,7 +152,7 @@ export const fetchProducts = async (params: {
     
     if (products.length > 0) {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        console.log(`Successfully fetched ${products.length} products from API`);
+        logger.debug(`Successfully fetched ${products.length} products from API`);
       }
       return products.map((item: any) => ({
         ...item,
@@ -162,7 +162,7 @@ export const fetchProducts = async (params: {
     } else {
       // Fallback to static data if API returns unexpected format
       if (process.env.NODE_ENV !== 'production') {
-        console.warn('Products API returned unexpected data format. Using static fallback.');
+        logger.warn('Products API returned unexpected data format. Using static fallback.');
       }
       const { MARKETPLACE_LISTINGS } = await import('@/data/listingData');
       return MARKETPLACE_LISTINGS.map(item => ({
@@ -172,7 +172,7 @@ export const fetchProducts = async (params: {
       }));
     }
   } catch (error: any) {
-    console.error('Marketplace fetch failed - Products:', error.message);
+    logger.error('Marketplace fetch failed - Products:', error.message);
     
     // Log to Sentry for production debugging
     if (process.env.NODE_ENV === 'production') {
@@ -246,7 +246,7 @@ export const fetchProducts = async (params: {
         description: item.description || ''
       }));
     } catch (fallbackError) {
-      console.error('Critical error: Even fallback data failed to load:', fallbackError);
+      logger.error('Critical error: Even fallback data failed to load:', fallbackError);
       // Return minimal empty array to prevent complete failure
       return [];
     }
@@ -276,7 +276,7 @@ export const fetchCategories = async (): Promise<Category[]> => {
     }
   } catch (error: any) {
     if (process.env.NODE_ENV === 'development') {
-      console.error('Marketplace fetch failed - Categories:', error.message);
+    logger.error('Marketplace fetch failed - Categories:', error.message);
     }
     
     // Return fallback categories instead of throwing
@@ -344,7 +344,7 @@ export const fetchEquipment = async (params: {
     }
   } catch (error: any) {
     if (process.env.NODE_ENV === 'development') {
-      console.error('Marketplace fetch failed - Equipment:', error.message);
+    logger.error('Marketplace fetch failed - Equipment:', error.message);
     }
     
     // Return fallback equipment instead of throwing
@@ -403,7 +403,7 @@ export const fetchTalent = async (params: {
     }
   } catch (error: any) {
     if (process.env.NODE_ENV === 'development') {
-      console.error('Marketplace fetch failed - Talent:', error.message);
+    logger.error('Marketplace fetch failed - Talent:', error.message);
     }
     
     // Return fallback talent instead of throwing
@@ -453,26 +453,26 @@ export const ensureProductIntegrity = (products: any[]): any[] => {
     // Ensure ID exists
     if (!validated.id) {
       validated.id = generateProductId(validated.title || `product-${index}`);
-      console.warn(`[Auto-Fix] Generated ID for product: ${validated.id}`);
+      logger.warn(`[Auto-Fix] Generated ID for product: ${validated.id}`);
     }
     
     // Ensure required fields exist
     if (!validated.title) {
       validated.title = `Product ${index + 1}`;
-      console.warn(`[Auto-Fix] Generated title for product: ${validated.id}`);
+      logger.warn(`[Auto-Fix] Generated title for product: ${validated.id}`);
     }
     
     if (!validated.description) {
       validated.description = `Description for ${validated.title}`;
       if (process.env.NODE_ENV === 'development') {
-        console.warn(`[Auto-Fix] Generated description for product: ${validated.id}`);
+        logger.warn(`[Auto-Fix] Generated description for product: ${validated.id}`);
       }
     }
     
     if (!validated.category) {
       validated.category = 'General';
       if (process.env.NODE_ENV === 'development') {
-        console.warn(`[Auto-Fix] Generated category for product: ${validated.id}`);
+        logger.warn(`[Auto-Fix] Generated category for product: ${validated.id}`);
       }
     }
     
