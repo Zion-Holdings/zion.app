@@ -69,7 +69,9 @@
     "seo:validate": "node -e \"console.log('🔍 Validating SEO setup...'); console.log('✅ SEO components ready');\"",
     "performance:check": "npm run analyze:bundle && npm run perf:monitor",
     "build:enhanced": "npm run quality:check && npm run pwa:validate && npm run build",
-    "deploy:check": "npm run build:enhanced && npm run performance:check"
+    "deploy:check": "npm run build:enhanced && npm run performance:check",
+    "deploy:ready": "node scripts/deployment-ready-check.cjs",
+    "deploy:checklist": "npm run deploy:ready && npm run perf:monitor"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
