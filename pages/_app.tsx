@@ -40,6 +40,7 @@ import '@/utils/globalFetchInterceptor';
 import '@/utils/consoleErrorToast';
 import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
 import { RouteChangeHandler } from '@/components/RouteChangeHandler';
+import { registerServiceWorker } from '@/serviceWorkerRegistration';
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
@@ -153,6 +154,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     Sentry.setTag('route', router.pathname);
     Sentry.setContext('query', router.query);
   }, [router.pathname, router.query]);
+
+  React.useEffect(() => {
+    if (process.env.NODE_ENV === 'production') {
+      registerServiceWorker();
+    }
+  }, []);
 
   // Only log provider initialization in development
   if (process.env.NODE_ENV === 'development') {
