@@ -76,7 +76,7 @@ npm run env:validate
 npm run env:check
 
 # Verify development environment
-npm run env:dev
+npm run dev  # runs env:dev automatically
 ```
 
 ### Manual Verification Steps
