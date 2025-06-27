@@ -71,6 +71,8 @@ const KNOWN_INVALID_PROJECT_IDS = [
   'fallback',
   'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING',
   'YOUR_DEFAULT_PROJECT_ID_FALLBACK',
+  'your_reown_project_id_here', // Added: Common placeholder from environment setup
+  'your_project_id_here', // Added: Another common placeholder
 ];
 
 // --- Reown AppKit Configuration ---

@@ -246,19 +246,29 @@ export function observeFontLoading(): void {
 export function preloadCriticalResources(): void {
   if (typeof window === 'undefined') return;
 
-  const criticalResources = [
-    // Add URLs of critical resources
-    '/fonts/inter.woff2',
-    '/fonts/montserrat.woff2',
+  const criticalResources: string[] = [
+    // Critical assets only - fonts are handled by Next.js font optimization
+    // Add other critical resources like critical CSS or images here if needed
   ];
 
   criticalResources.forEach((url) => {
     const link = document.createElement('link');
     link.rel = 'preload';
     link.href = url;
-    link.as = 'font';
-    link.type = 'font/woff2';
-    link.crossOrigin = 'anonymous';
+    
+    // Determine asset type from URL
+    if (url.includes('.woff2') || url.includes('.woff')) {
+      link.as = 'font';
+      link.type = 'font/woff2';
+      link.crossOrigin = 'anonymous';
+    } else if (url.includes('.css')) {
+      link.as = 'style';
+    } else if (url.includes('.js')) {
+      link.as = 'script';
+    } else {
+      link.as = 'fetch';
+    }
+    
     document.head.appendChild(link);
   });
 }
