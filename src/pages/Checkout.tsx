@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
@@ -280,12 +281,12 @@ function CheckoutInner() {
           >
             {isSubmitting ? (
               <>
-                <span className="animate-spin mr-2">⏳</span>
+                <LoadingSpinner size="sm" className="mr-2" />
                 Processing...
               </>
-              ) : (
+            ) : (
               `Continue to Payment ($${total.toFixed(2)})`
-              )}
+            )}
           </Button>
         </form>
       </Form>

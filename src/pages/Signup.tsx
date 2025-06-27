@@ -6,6 +6,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
 import { AlertCircle, CheckCircle, Mail } from 'lucide-react';
@@ -409,7 +410,14 @@ export default function Signup() {
               data-testid="signup-submit"
               className={healthCheckError ? 'bg-yellow-600 hover:bg-yellow-700' : ''}
             >
-              {loading ? 'Creating Account...' : (healthCheckError ? 'Try Creating Account' : 'Create Account')}
+              {loading ? (
+                <>
+                  <LoadingSpinner size="sm" className="mr-2" />
+                  Creating Account...
+                </>
+              ) : (
+                healthCheckError ? 'Try Creating Account' : 'Create Account'
+              )}
             </Button>
           ) : (
             <div className="space-y-2">
