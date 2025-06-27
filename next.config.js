@@ -44,6 +44,9 @@ const nextConfig = {
 
   images: {
     unoptimized: false,
+    loader: 'default',
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     remotePatterns: [
       {
         protocol: 'https',
@@ -153,10 +156,18 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3000',
+        pathname: '/**',
+      },
     ],
     domains: ['images.unsplash.com', 'via.placeholder.com', 'localhost', 'cdn.zion.org', 'app.ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000, // 1 year
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
   compiler: {
@@ -371,12 +382,20 @@ const nextConfig = {
 
 const consolidatedConfig = withBundleAnalyzer(nextConfig);
 
-export default withSentryConfig(consolidatedConfig, {
-  org: 'ziontechgroup',
-  project: 'zion-ai-marketplace',
-  widenClientFileUpload: true,
-  transpileClientSDK: true,
-  hideSourceMaps: true,
-  disableLogger: true,
-  automaticVercelMonitors: true,
-}); 
+// Conditional Sentry configuration - only enable in production with proper auth token
+const shouldEnableSentry = 
+  process.env.NODE_ENV === 'production' && 
+  process.env.SENTRY_AUTH_TOKEN && 
+  process.env.NEXT_PUBLIC_SENTRY_DSN;
+
+export default shouldEnableSentry 
+  ? withSentryConfig(consolidatedConfig, {
+      org: 'ziontechgroup',
+      project: 'zion-ai-marketplace',
+      widenClientFileUpload: true,
+      transpileClientSDK: true,
+      hideSourceMaps: true,
+      disableLogger: true,
+      automaticVercelMonitors: true,
+    })
+  : consolidatedConfig; 
