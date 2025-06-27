@@ -105,3 +105,14 @@ self.addEventListener('notificationclick', event => {
     event.waitUntil(clients.openWindow(event.notification.data));
   }
 });
+
+// Manually trigger replay of the Background Sync queue
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SYNC_QUEUE' && bgSyncPlugin) {
+    event.waitUntil(
+      bgSyncPlugin.queue
+        .replayRequests()
+        .catch(err => console.error('Background sync replay failed', err))
+    );
+  }
+});
