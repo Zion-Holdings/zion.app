@@ -12,16 +12,20 @@ export function useNavigationGestures() {
 
   useEffect(() => {
     const handleTouchStart = (e: TouchEvent) => {
-      startX.current = e.touches[0].clientX;
-      startTime.current = Date.now();
+      if (e.touches[0]) {
+        startX.current = e.touches[0].clientX;
+        startTime.current = Date.now();
+      }
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
-      const deltaX = e.changedTouches[0].clientX - startX.current;
-      const deltaTime = Date.now() - startTime.current;
+      if (e.changedTouches[0]) {
+        const deltaX = e.changedTouches[0].clientX - startX.current;
+        const deltaTime = Date.now() - startTime.current;
 
-      if (startX.current < 30 && deltaX > 50 && deltaTime < 500) {
-        router.back();
+        if (startX.current < 30 && deltaX > 50 && deltaTime < 500) {
+          router.back();
+        }
       }
     };
 

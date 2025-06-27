@@ -66,13 +66,13 @@ const inter = Inter({
 });
 
 const poppins = Poppins({
+  weight: ['400', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: true,
   variable: '--font-poppins',
 });
-
 const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
