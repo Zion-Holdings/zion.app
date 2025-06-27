@@ -1,11 +1,4 @@
 import * as Sentry from "@sentry/nextjs";
-import {
-  feedbackIntegration,
-  browserProfilingIntegration,
-  browserTracingIntegration,
-  replayIntegration,
-} from "@sentry/browser"; // Attempting import from @sentry/browser
-// import { captureRouterTransitionStart } from "@sentry/nextjs"; // Removing this as it causes warning and might be handled by browserTracingIntegration
 import getConfig from "next/config";
 import { safeSessionStorage } from "@/utils/safeStorage";
 
@@ -15,51 +8,82 @@ export function register() {
   const SENTRY_RELEASE = process.env.NEXT_PUBLIC_SENTRY_RELEASE || publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE;
   const SENTRY_ENVIRONMENT = process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT || publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT;
 
-  if (!SENTRY_DSN || SENTRY_DSN.startsWith("YOUR_") || SENTRY_DSN.startsWith("https_example")) {
-    console.warn('Sentry DSN is not configured or is a placeholder; Sentry will not capture errors.');
+  // Enhanced validation to prevent initialization with invalid DSNs
+  const isInvalidDsn = !SENTRY_DSN || 
+    SENTRY_DSN.startsWith("YOUR_") || 
+    SENTRY_DSN.startsWith("https_example") ||
+    SENTRY_DSN.startsWith("https_dummy") ||
+    SENTRY_DSN.includes("dummy") ||
+    SENTRY_DSN.includes("placeholder") ||
+    SENTRY_DSN.includes("local_build") ||
+    SENTRY_DSN === "test_sentry_dsn" ||
+    SENTRY_DSN.length < 50; // Real Sentry DSNs are much longer
+
+  if (isInvalidDsn) {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Sentry disabled in development (no valid DSN configured)');
+    } else {
+      console.warn('Sentry DSN not configured for production - error monitoring disabled');
+    }
     return;
   }
 
-  const baseIntegrations = [
-    feedbackIntegration({ colorScheme: "system" }),
-    browserProfilingIntegration(),
-    browserTracingIntegration({ enableInp: true })
-  ];
+  console.log(`Initializing client-side Sentry. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
 
-  let replaysSessionSampleRate = 0.1;
-  let replaysOnErrorSampleRate = 1.0;
-  const finalIntegrations = [...baseIntegrations];
+  try {
+    Sentry.init({
+      dsn: SENTRY_DSN,
+      release: SENTRY_RELEASE,
+      environment: SENTRY_ENVIRONMENT,
+      tracesSampleRate: process.env.NODE_ENV === 'development' ? 1.0 : 0.1,
+      
+      // Only enable session replay in production
+      replaysSessionSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 0,
+      replaysOnErrorSampleRate: process.env.NODE_ENV === 'production' ? 1.0 : 0,
+      
+      tracePropagationTargets: ["localhost", /^https?:\/\/app\./, /^\/api/],
+      profilesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 0,
+      
+      beforeSend(event, hint) {
+        // Filter out development noise
+        if (process.env.NODE_ENV === 'development') {
+          const errorMessage = hint.originalException?.toString() || '';
+          if (errorMessage.includes('ResizeObserver') || 
+              errorMessage.includes('Non-Error promise rejection') ||
+              errorMessage.includes('Loading chunk') ||
+              errorMessage.includes('ChunkLoadError')) {
+            return null;
+          }
+        }
 
-  if (safeSessionStorage.isAvailable) {
-    finalIntegrations.unshift(
-      replayIntegration({ maskAllText: true, blockAllMedia: true })
-    );
-  } else {
-    console.warn('sessionStorage is not available; disabling Sentry Replay.');
-    replaysSessionSampleRate = 0;
-    replaysOnErrorSampleRate = 0;
+        // Drop events without meaningful stack traces
+        if (!event.exception?.values?.[0]?.stacktrace?.frames?.length) {
+          return null;
+        }
+
+        return event;
+      },
+
+      // Optimize performance
+      maxBreadcrumbs: 50,
+      attachStacktrace: true,
+      sendDefaultPii: false,
+      debug: process.env.NODE_ENV === 'development',
+    });
+
+    // Set additional context
+    if (SENTRY_RELEASE) {
+      Sentry.setTag("release", SENTRY_RELEASE);
+    }
+    if (SENTRY_ENVIRONMENT) {
+      Sentry.setTag("environment", SENTRY_ENVIRONMENT);
+    }
+    Sentry.setTag("runtime", "browser");
+
+    console.log(`Sentry initialized successfully. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
+  } catch (error) {
+    console.error('Failed to initialize Sentry:', error);
   }
-
-  Sentry.init({
-    dsn: SENTRY_DSN,
-    release: SENTRY_RELEASE,
-    environment: SENTRY_ENVIRONMENT,
-    tracesSampleRate: 1.0,
-    replaysSessionSampleRate,
-    replaysOnErrorSampleRate,
-    integrations: finalIntegrations,
-    tracePropagationTargets: ["localhost", /^https?:\/\//, /^\//],
-    profilesSampleRate: 1.0,
-  });
-
-
-  if (SENTRY_RELEASE) {
-    Sentry.setTag("release", SENTRY_RELEASE);
-  }
-  if (SENTRY_ENVIRONMENT) {
-    Sentry.setTag("environment", SENTRY_ENVIRONMENT);
-  }
-  console.log(`Sentry initialized. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
 }
 
 // Now using the direct import if available

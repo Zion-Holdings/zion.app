@@ -28,7 +28,7 @@ import { AppLayout } from '@/layout/AppLayout';
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
 import dynamic from 'next/dynamic';
 
-// Dynamically load Intercom chat widget to keep initial bundle small
+// Dynamically load heavy components to improve initial load time
 const IntercomChat = dynamic(() => import('@/components/IntercomChat'), {
   ssr: false,
   loading: () => null
@@ -109,117 +109,118 @@ const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const [queryClient] = React.useState(() => new QueryClient());
+  const [queryClient] = React.useState(() => new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 5 * 60 * 1000, // 5 minutes
+        gcTime: 10 * 60 * 1000, // 10 minutes
+        retry: false, // Disable retries for faster error handling
+      },
+    },
+  }));
   const [isInitialized, setIsInitialized] = React.useState(false);
 
+  // Optimize initialization by deferring non-critical operations
   React.useEffect(() => {
-    initConsoleLogCapture();
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[App] MyApp main useEffect hook started.');
-    }
+    let isMounted = true;
 
-    try {
-      // Validate environment variables (graceful in development, strict in production)
-      validateProductionEnvironment();
-
-      // Initialize services based on configuration
-      initializeServices().catch((err) =>
-        console.warn('Service initialization failed', err),
-      );
-
-      // Initialize global error handlers
-      initializeGlobalErrorHandlers();
-
-      // Initialize performance monitoring and optimizations
-      initializePerformanceOptimizations();
-
-      // Initialize advanced performance monitoring
-      if (typeof window !== 'undefined') {
-        initializePerformance();
-      }
-
-      const { publicRuntimeConfig } = getConfig();
-      if (process.env.NODE_ENV === 'development') {
-        console.log('[App] Public Runtime Config:', publicRuntimeConfig);
-      }
-
-      if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE) {
-        Sentry.setTag(
-          'release',
-          publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE,
-        );
-      }
-      if (publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT) {
-        Sentry.setTag(
-          'environment',
-          publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT,
-        );
-      }
-
-      if (process.env.NODE_ENV === 'development') {
-        console.log(
-          'SUPABASE_URL:',
-          process.env.NEXT_PUBLIC_SUPABASE_URL ? 'SET' : 'NOT_SET',
-        );
-        console.log(
-          'SUPABASE_ANON_KEY:',
-          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'NOT_SET',
-        );
-      }
-
-      // Mark as initialized after successful setup
-      setIsInitialized(true);
-    } catch (error) {
-      console.error('[App] Critical initialization error:', error);
-
-      // Only send to Sentry if it's available and configured
+    const initializeApp = async () => {
       try {
-        Sentry.captureException(error);
-      } catch (sentryError) {
-        console.warn('[App] Could not send error to Sentry:', sentryError);
+        if (process.env.NODE_ENV === 'development') {
+          console.log('[App] Starting optimized initialization...');
+        }
+
+        // Critical: Initialize error handlers first
+        initializeGlobalErrorHandlers();
+
+        // Critical: Validate environment (graceful in development)
+        try {
+          validateProductionEnvironment();
+        } catch (error) {
+          console.warn('[App] Environment validation warning:', error);
+        }
+
+        // Defer non-critical initializations
+        setTimeout(() => {
+          if (!isMounted) return;
+
+          // Initialize services asynchronously
+          initializeServices().catch((err) =>
+            console.warn('Service initialization failed', err),
+          );
+
+          // Initialize performance monitoring only if needed
+          if (typeof window !== 'undefined' && process.env.PERFORMANCE_MONITORING === 'true') {
+            initializePerformanceOptimizations();
+            initializePerformance();
+          }
+
+          // Initialize console log capture only in development
+          if (process.env.NODE_ENV === 'development') {
+            initConsoleLogCapture();
+          }
+        }, 100); // Defer by 100ms to improve initial render time
+
+        // Mark as initialized immediately for critical path
+        if (isMounted) {
+          setIsInitialized(true);
+        }
+      } catch (error) {
+        console.error('[App] Critical initialization error:', error);
+        
+        // Only send to Sentry if it's available
+        try {
+          if (process.env.NEXT_PUBLIC_SENTRY_DSN && !process.env.NEXT_PUBLIC_SENTRY_DSN.includes('dummy')) {
+            Sentry.captureException(error);
+          }
+        } catch (sentryError) {
+          console.warn('[App] Could not send error to Sentry:', sentryError);
+        }
+
+        // Still mark as initialized to prevent infinite loading
+        if (isMounted) {
+          setIsInitialized(true);
+        }
       }
+    };
 
-      // Still mark as initialized even with errors to prevent infinite loading
-      setIsInitialized(true);
-    }
-  }, []); // Empty dependency array ensures this runs only once on mount
+    initializeApp();
 
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  // Set Sentry context for current route (optimized)
   React.useEffect(() => {
-    Sentry.setTag('route', router.pathname);
-    Sentry.setContext('query', router.query);
+    if (process.env.NEXT_PUBLIC_SENTRY_DSN && !process.env.NEXT_PUBLIC_SENTRY_DSN.includes('dummy')) {
+      Sentry.setTag('route', router.pathname);
+      Sentry.setContext('query', router.query);
+    }
   }, [router.pathname, router.query]);
 
+  // Register service worker only in production
   React.useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
-      registerServiceWorker();
+      setTimeout(() => {
+        registerServiceWorker();
+      }, 2000); // Defer service worker registration
     }
   }, []);
 
-  // Only log provider initialization in development
-  if (process.env.NODE_ENV === 'development') {
-    console.log('[App Provider] Initializing providers...');
-  }
-
-  if (process.env.NODE_ENV === 'development') {
-    console.log(
-      '[App] Attempting to render component:',
-      Component.name || 'UnnamedComponent',
-    );
-  }
-
-  // Show loading screen during critical initialization to prevent blank screens
+  // Show optimized loading screen during critical initialization
   if (!isInitialized) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-zion-blue">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 to-purple-900">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zion-cyan mx-auto mb-4"></div>
-          <p className="text-white text-lg">Initializing Zion App...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-2 border-cyan-400 border-t-transparent mx-auto mb-4"></div>
+          <p className="text-white text-lg font-medium">Initializing Zion App...</p>
+          <p className="text-blue-200 text-sm mt-2">Optimizing performance...</p>
         </div>
       </div>
     );
   }
 
-  // Use ProductionErrorBoundary as the top-level error boundary
   return (
     <>
       <Head>
@@ -231,7 +232,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             --font-poppins: ${poppins.style.fontFamily};
           }
 
-          /* Fallback font adjustments to match Inter/Poppins metrics */
+          /* Optimized fallback font adjustments */
           @font-face {
             font-family: 'Inter Fallback';
             src: local('Arial'), local('system-ui');
@@ -249,6 +250,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             descent-override: 24%;
             line-gap-override: 0%;
           }
+
+          /* Performance optimizations */
+          .font-inter { font-family: var(--font-inter), 'Inter Fallback', system-ui, sans-serif; }
+          .font-poppins { font-family: var(--font-poppins), 'Poppins Fallback', system-ui, sans-serif; }
         `}</style>
       </Head>
       <div className={`${inter.variable} ${poppins.variable}`}>
@@ -258,7 +263,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               <React.Suspense
                 fallback={
                   <div className="flex items-center justify-center min-h-screen">
-                    Loading...
+                    <div className="animate-pulse text-lg">Loading...</div>
                   </div>
                 }
               >
@@ -279,7 +284,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                             <AppLayout>
                                               <RouteChangeHandler
                                                 resetScrollOnChange={true}
-                                                forceRerender={true}
+                                                forceRerender={false}
                                               />
                                               <ErrorBoundary>
                                                 <Component
@@ -315,9 +320,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-console.log(
-  '[App] Finished attempting to render component:',
-  MyApp.name || 'UnnamedComponent',
-);
+// Optimize component logging
+if (process.env.NODE_ENV === 'development') {
+  console.log('[App] MyApp component optimized and ready');
+}
 
 export default MyApp;

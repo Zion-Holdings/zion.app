@@ -61,6 +61,7 @@ type RawEnv = z.infer<typeof EnvSchema>;
 
 /**
  * Check if a value is a placeholder or default development value
+ * Updated to properly handle real Supabase credentials
  */
 function isPlaceholderValue(value: string | undefined): boolean {
   if (!value) return true;
@@ -70,7 +71,6 @@ function isPlaceholderValue(value: string | undefined): boolean {
     'your_',
     'example',
     'test_key',
-    'localhost',
     'change_me',
     'replace_with',
     'insert_',
@@ -81,10 +81,24 @@ function isPlaceholderValue(value: string | undefined): boolean {
     'your_auth0_',
     'auth0_client_id_here',
     'auth0_client_secret_here',
-    'auth0_secret_here'
+    'auth0_secret_here',
+    // Generic placeholders
+    'dummy',
+    'https_dummy',
+    'https_example'
   ];
   
   const lowerValue = value.toLowerCase();
+  
+  // Don't flag real Supabase URLs or JWT tokens as placeholders
+  if (value.includes('supabase.co') && value.startsWith('https://')) {
+    return false; // Real Supabase URL
+  }
+  
+  if (value.startsWith('eyJ') && value.length > 100) {
+    return false; // Real JWT token
+  }
+  
   return placeholderPatterns.some(pattern => lowerValue.includes(pattern));
 }
 
