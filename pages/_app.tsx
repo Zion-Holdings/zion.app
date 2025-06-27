@@ -40,6 +40,8 @@ import '@/utils/globalFetchInterceptor';
 import '@/utils/consoleErrorToast';
 import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
 import { RouteChangeHandler } from '@/components/RouteChangeHandler';
+import PageTransition from '@/components/PageTransition';
+import { AnimatePresence } from 'framer-motion';
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
@@ -263,7 +265,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                                                 forceRerender={true}
                                               />
                                               <ErrorBoundary>
-                                                <Component key={router.asPath} {...pageProps} />
+                                                <AnimatePresence mode="wait" initial={false}>
+                                                  <PageTransition key={router.asPath}>
+                                                    <Component {...pageProps} />
+                                                  </PageTransition>
+                                                </AnimatePresence>
                                               </ErrorBoundary>
                                               <ErrorResetOnRouteChange />
                                               <ToastContainer />
