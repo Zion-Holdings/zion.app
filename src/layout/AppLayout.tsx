@@ -96,7 +96,12 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
       <ScrollToTop />
       {loading && <LoaderOverlay />}
       {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}
-      <main id="main-content" className="flex-grow">
+      <main
+        id="main-content"
+        role="main"
+        aria-label="Main content"
+        className="flex-grow"
+      >
         {children}
       </main>
       <BackToTopButton />
