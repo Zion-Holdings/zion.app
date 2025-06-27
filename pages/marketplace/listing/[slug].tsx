@@ -17,6 +17,7 @@ import { toast } from '@/hooks/use-toast';
 import { getBreadcrumbsForPath } from '@/utils/routeUtils';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { fetchProducts, validateProductData, ensureProductIntegrity } from '@/services/marketplace';
 import { AppLayout } from '@/layout/AppLayout';
 import {
   Breadcrumb,
@@ -123,8 +124,6 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
   });
 
   try {
-    const { fetchProducts, validateProductData, ensureProductIntegrity } = await import('@/services/marketplace');
-
     // Step 1: Try to fetch directly by ID from API
     // Assuming fetchProducts can take an `id: slug` parameter or similar for direct lookup.
     // If not, this will behave like `search: slug` and then we filter by id.

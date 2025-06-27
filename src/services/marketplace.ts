@@ -1,6 +1,5 @@
 import axios from 'axios';
 import * as Sentry from '@sentry/nextjs';
-import { logger } from '@/utils/logger';
 import { MARKETPLACE_LISTINGS } from '@/data/marketplaceData';
 import { ProductListing } from '@/types/listings';
 import { TalentProfile as TalentProfileType } from '@/types/talent';
@@ -106,13 +105,13 @@ const createMarketplaceClient = (): any => {
   client.interceptors.request.use(
     async (config: any) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        logger.debug(`Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
+        console.log(`Marketplace API Request: ${config.method?.toUpperCase() || 'UNKNOWN'} ${config.url || 'UNKNOWN_URL'}`);
       }
       return config;
     },
     (error: any) => {
       if (process.env.NODE_ENV === 'development') {
-        logger.error('Marketplace request interceptor error:', error);
+        console.error('Marketplace request interceptor error:', error);
       }
       return Promise.reject(error);
     }
@@ -122,13 +121,13 @@ const createMarketplaceClient = (): any => {
   client.interceptors.response.use(
     (response: any) => {
       if (process.env.NODE_ENV === 'development' && process.env.DEBUG_MARKETPLACE) {
-        logger.debug(`Marketplace API Response: ${response.status}`);
+        console.log(`Marketplace API Response: ${response.status}`);
       }
       return response;
     },
     (error: any) => {
       if (process.env.NODE_ENV === 'development') {
-        logger.error('Marketplace API Error:', {
+        console.error('Marketplace API Error:', {
           message: error.message,
           status: error.response?.status,
           url: error.config?.url,
