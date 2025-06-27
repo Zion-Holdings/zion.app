@@ -1,5 +1,6 @@
 
 import React from "react";
+import { logger } from '@/utils/logger';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -75,19 +76,19 @@ export function IntegrationCards() {
         title="Slack"
         description="Send notifications and interact with Zion from Slack."
         icon={<Slack className="h-5 w-5" />}
-        onConnect={() => console.log('Connect Slack')}
+        onConnect={() => logger.debug('Connect Slack')}
       />
       <IntegrationCard
         title="Salesforce"
         description="Sync leads and opportunities with Salesforce."
         icon={<Briefcase className="h-5 w-5" />}
-        onConnect={() => console.log('Connect Salesforce')}
+        onConnect={() => logger.debug('Connect Salesforce')}
       />
       <IntegrationCard
         title="Microsoft Teams"
         description="Receive updates through Microsoft Teams."
         icon={<Users className="h-5 w-5" />}
-        onConnect={() => console.log('Connect Teams')}
+        onConnect={() => logger.debug('Connect Teams')}
       />
     </div>
   );

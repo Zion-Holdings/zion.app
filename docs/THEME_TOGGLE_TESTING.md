@@ -66,6 +66,7 @@ The issue was caused by **Tailwind CSS configuration using hardcoded color value
 - **CSS Variables**: Complete theme coverage with proper fallbacks
 - **Transitions**: Global 0.3s ease transitions for smooth switching
 - **Persistence**: localStorage integration with system theme detection
+- **Early Theme Detection**: `_document.tsx` now resolves system preference on first load to avoid flash of incorrect theme
 
 ---
 
