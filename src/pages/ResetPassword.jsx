@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter'; // Assuming this component exists
 import { toast } from '@/hooks/use-toast'; // Assuming this hook exists
 
@@ -97,7 +98,14 @@ export default function ResetPasswordPage() {
           disabled={isLoading}
         />
         <Button type="submit" className="w-full" disabled={isLoading}>
-          {isLoading ? 'Resetting Password...' : 'Reset Password'}
+          {isLoading ? (
+            <>
+              <LoadingSpinner size="sm" className="mr-2" />
+              Resetting Password...
+            </>
+          ) : (
+            'Reset Password'
+          )}
         </Button>
       </form>
     </div>

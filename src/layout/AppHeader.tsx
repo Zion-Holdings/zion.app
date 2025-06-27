@@ -51,7 +51,9 @@ export function AppHeader() {
             </span>
           )}
           <div className="ml-6 flex-1 hidden md:block">
-            <ResponsiveNavigation />
+            <nav role="navigation" aria-label="Main navigation">
+              <ResponsiveNavigation />
+            </nav>
           </div>
           
           {/* Mobile menu button */}

@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useWhitelabel } from '@/context/WhitelabelContext';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
 
 interface LogoProps {
   customLogo?: string;
@@ -19,14 +20,14 @@ export function Logo({ customLogo }: LogoProps) {
   if (logoToUse) {
     return (
       <Link href="/" className="flex items-center">
-        <img src={logoToUse} alt={`${brandName} Logo`} className="h-8" loading="lazy" />
+        <OptimizedImage src={logoToUse} alt={`${brandName} Logo`} className="h-8" width={32} height={32} />
       </Link>
     );
   }
   
   return (
     <Link href="/" className="flex items-center">
-      <img src="/logos/zion-logo.png" alt="Zion Logo" className="h-8" loading="lazy" />
+      <OptimizedImage src="/logos/zion-logo.png" alt="Zion Logo" className="h-8" width={32} height={32} />
     </Link>
   );
 }
