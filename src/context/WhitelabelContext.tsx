@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useWhitelabelTenant, WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
 
-import { logError } from "@/utils/productionLogger";
+import { logError, logInfo } from "@/utils/productionLogger";
 
-export interface {
+export interface WhitelabelContextType {
   isWhitelabel: boolean;
   primaryColor: string;
   logoUrl: string | null;

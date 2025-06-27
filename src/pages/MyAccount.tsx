@@ -3,9 +3,8 @@ import type { GetServerSideProps } from 'next';
 import { toast } from '@/hooks/use-toast';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import {
 import { logError } from '@/utils/productionLogger';
-
+import {
   ProfileForm,
   type ProfileValues,
 } from '@/components/profile/ProfileForm';

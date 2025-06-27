@@ -153,34 +153,18 @@ function offlineSearch(
   }
   if (typeof filters.minPrice === 'number') {
     all = all.filter(r => {
-<<<<<<< HEAD
       if (r.type === 'product') {
         return (r.price ?? 0) >= filters.minPrice!;
       }
       return true;
-=======
-      // Only apply price filters to types that have prices
-      if (r.type === 'product' || r.type === 'equipment') {
-        return (r.price ?? 0) >= filters.minPrice!;
-      }
-      return true; // Don't filter out non-priced items
->>>>>>> 44d9a11e4c01a65432c1927af91db467dac987c2
     });
   }
   if (typeof filters.maxPrice === 'number') {
     all = all.filter(r => {
-<<<<<<< HEAD
       if (r.type === 'product') {
         return (r.price ?? 0) <= filters.maxPrice!;
       }
       return true;
-=======
-      // Only apply price filters to types that have prices
-      if (r.type === 'product' || r.type === 'equipment') {
-        return (r.price ?? 0) <= filters.maxPrice!;
-      }
-      return true; // Don't filter out non-priced items
->>>>>>> 44d9a11e4c01a65432c1927af91db467dac987c2
     });
   }
   if (typeof filters.minRating === 'number') {
@@ -196,37 +180,22 @@ function offlineSearch(
     switch (filters.sortBy) {
       case 'price_asc':
         all.sort((a, b) => {
-<<<<<<< HEAD
           const aPrice = a.type === 'product' ? (a.price ?? 0) : 0;
           const bPrice = b.type === 'product' ? (b.price ?? 0) : 0;
-=======
-          const aPrice = (a.type === 'product' || a.type === 'equipment') ? (a.price ?? 0) : 0;
-          const bPrice = (b.type === 'product' || b.type === 'equipment') ? (b.price ?? 0) : 0;
->>>>>>> 44d9a11e4c01a65432c1927af91db467dac987c2
           return aPrice - bPrice;
         });
         break;
       case 'price_desc':
         all.sort((a, b) => {
-<<<<<<< HEAD
           const aPrice = a.type === 'product' ? (a.price ?? 0) : 0;
           const bPrice = b.type === 'product' ? (b.price ?? 0) : 0;
-=======
-          const aPrice = (a.type === 'product' || a.type === 'equipment') ? (a.price ?? 0) : 0;
-          const bPrice = (b.type === 'product' || b.type === 'equipment') ? (b.price ?? 0) : 0;
->>>>>>> 44d9a11e4c01a65432c1927af91db467dac987c2
           return bPrice - aPrice;
         });
         break;
       case 'rating':
         all.sort((a, b) => {
-<<<<<<< HEAD
           const aRating = (a.type === 'product' || a.type === 'talent') ? (a.rating ?? 0) : 0;
           const bRating = (b.type === 'product' || b.type === 'talent') ? (b.rating ?? 0) : 0;
-=======
-          const aRating = (a.type === 'product' || a.type === 'equipment' || a.type === 'talent') ? (a.rating ?? 0) : 0;
-          const bRating = (b.type === 'product' || b.type === 'equipment' || b.type === 'talent') ? (b.rating ?? 0) : 0;
->>>>>>> 44d9a11e4c01a65432c1927af91db467dac987c2
           return bRating - aRating;
         });
         break;
@@ -354,7 +323,6 @@ export default function SearchResultsPage({
     ) {
       return false;
     }
-<<<<<<< HEAD
     if (minPrice && r.type === 'product') {
       if ((r.price ?? 0) < Number(minPrice)) {
         return false;
@@ -369,16 +337,6 @@ export default function SearchResultsPage({
       if ((r.rating ?? 0) < Number(minRating)) {
         return false;
       }
-=======
-    if (minPrice && (r.type === 'product' || r.type === 'equipment') && ('price' in r) && (r.price ?? 0) < Number(minPrice)) {
-      return false;
-    }
-    if (maxPrice && (r.type === 'product' || r.type === 'equipment') && ('price' in r) && (r.price ?? 0) > Number(maxPrice)) {
-      return false;
-    }
-    if (minRating && (r.type === 'product' || r.type === 'equipment' || r.type === 'talent') && ('rating' in r) && (r.rating ?? 0) < Number(minRating)) {
-      return false;
->>>>>>> 44d9a11e4c01a65432c1927af91db467dac987c2
     }
     return true;
   });

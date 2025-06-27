@@ -6,11 +6,10 @@ import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import type { RootState, AppDispatch } from '@/store';
 import {
-import { logError } from '@/utils/productionLogger';
-
   removeItem as removeItemAction,
   updateQuantity as updateQuantityAction,
 } from '@/store/cartSlice';
+import { logError } from '@/utils/productionLogger';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
 import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
 // CartItemType is already imported via RootState from cartSlice which uses CartItem from @/types/cart

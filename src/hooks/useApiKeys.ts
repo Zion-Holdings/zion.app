@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
+import { logError } from "@/utils/productionLogger";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 
 export type ApiKeyScope = 'jobs:read' | 'jobs:write' | 'talent:read' | 'quotes:write' | 'webhooks:manage';
 
-import { logError } from "@/utils/productionLogger";
-
-export interface {
+export interface ApiKey {
   id: string;
   name: string;
   key_prefix: string;

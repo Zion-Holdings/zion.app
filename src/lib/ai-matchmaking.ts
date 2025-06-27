@@ -1,8 +1,7 @@
 // AI Matchmaking utility functions
-
 import { logError } from "@/utils/productionLogger";
 
-export interface {
+export interface MatchResultItem {
   id: string;
   title: string;
   description: string;

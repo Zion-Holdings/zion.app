@@ -13,9 +13,8 @@ import { usePostsByCategory } from "@/hooks/usePostsByCategory";
 import NotFound from "./NotFound";
 import { useAuth } from "@/hooks/useAuth";
 import { useCommunity } from "@/context";
-import {
 import { logInfo } from '@/utils/productionLogger';
-
+import {
   MessageSquare,
   Briefcase,
   Code,

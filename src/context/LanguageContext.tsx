@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
+import { logInfo, logError } from '@/utils/productionLogger';
 import { setCookie, getCookie } from '@/utils/cookies';
 import { useTranslation } from 'react-i18next';
 import { toast } from '../components/ui/use-toast';
@@ -7,8 +8,6 @@ import { toast } from '../components/ui/use-toast';
 export type SupportedLanguage = 'en' | 'es' | 'fr' | 'pt' | 'ar';
 
 export type LanguageContextType = {
-import { logInfo, logError } from '@/utils/productionLogger';
-
   currentLanguage: SupportedLanguage;
   changeLanguage: (lang: SupportedLanguage) => Promise<void>;
   isRTL: boolean;

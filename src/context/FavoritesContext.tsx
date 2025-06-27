@@ -1,6 +1,4 @@
 import {
-import { logError } from '@/utils/productionLogger';
-
   createContext,
   useContext,
   useEffect,
@@ -8,6 +6,7 @@ import { logError } from '@/utils/productionLogger';
   ReactNode,
 } from 'react';
 import { toggleFavorite as toggleFavoriteRequest } from '@/api/favorites';
+import { logError } from '@/utils/productionLogger';
 import { toast } from '@/hooks/use-toast';
 import { safeStorage } from '@/utils/safeStorage';
 

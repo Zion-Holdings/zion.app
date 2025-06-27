@@ -41,7 +41,7 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
   try {
     logInfo('Initializing Libp2p...');
     libp2pNode = await createLibp2p(libp2pOptions);
-    logInfo('Libp2p Initialized. PeerID:', { data: libp2pNode.peerId.toString( }));
+    logInfo('Libp2p Initialized. PeerID:', { data: libp2pNode.peerId.toString() });
 
     // Log listening addresses
     libp2pNode.getMultiaddrs().forEach((addr) => {
