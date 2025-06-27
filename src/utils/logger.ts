@@ -1,4 +1,4 @@
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+// Removed circular dependency with productionLogger - using direct console methods instead
 
 interface LogLevel {
   DEBUG: 'debug';
@@ -20,22 +20,22 @@ class Logger {
 
   debug(message: string, ...args: unknown[]): void {
     if (this.isDebugEnabled) {
-      logInfo(`[DEBUG] ${message}`, { data: args });
+      console.log(`[DEBUG] ${message}`, ...args);
     }
   }
 
   info(message: string, ...args: unknown[]): void {
     if (this.isDevelopment) {
-      logInfo(`[INFO] ${message}`, { data: args });
+      console.info(`[INFO] ${message}`, ...args);
     }
   }
 
   warn(message: string, ...args: unknown[]): void {
-    logWarn(`[WARN] ${message}`, { data: args });
+    console.warn(`[WARN] ${message}`, ...args);
   }
 
   error(message: string, error?: Error | unknown, ...args: unknown[]): void {
-    logError(`[ERROR] ${message}`, error, { args });
+    console.error(`[ERROR] ${message}`, error, ...args);
     
     // In production, also send to error monitoring service
     if (!this.isDevelopment && typeof window !== 'undefined') {
@@ -47,7 +47,7 @@ class Logger {
         }
       } catch (sentryError) {
         // Fallback if Sentry fails
-        logError('Failed to report error to monitoring service:', { data: sentryError });
+        console.error('Failed to report error to monitoring service:', sentryError);
       }
     }
   }
@@ -55,7 +55,7 @@ class Logger {
   // Conditional development logging
   devLog(message: string, ...args: unknown[]): void {
     if (this.isDevelopment) {
-      logInfo(`[DEV] ${message}`, { data: args });
+      console.info(`[DEV] ${message}`, ...args);
     }
   }
 
