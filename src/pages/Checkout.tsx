@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
@@ -14,6 +14,7 @@ import * as z from 'zod';
 import { ControllerRenderProps } from 'react-hook-form';
 import { getBreadcrumbsForPath } from '@/utils/routeUtils';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import { fireEvent } from '@/lib/analytics';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -46,6 +47,13 @@ function CheckoutInner() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const breadcrumbs = getBreadcrumbsForPath('/checkout');
 
+  useEffect(() => {
+    fireEvent('checkout_start', {
+      item_count: items.length,
+      total: items.reduce((sum, i) => sum + i.price * i.quantity, 0)
+    });
+  }, []);
+
   const form = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
     defaultValues: {
@@ -72,6 +80,7 @@ function CheckoutInner() {
       return;
     }
 
+    fireEvent('checkout_submit');
     setIsSubmitting(true);
     
     try {
@@ -94,13 +103,15 @@ function CheckoutInner() {
       }
       
       console.log('Checkout session created:', responseData);
-      
+
       if (responseData.url) {
         // Show success message before redirect
         toast({
           title: "Redirecting to payment",
           description: "Taking you to secure checkout...",
         });
+
+        fireEvent('checkout_session_created', { total });
         
         // Small delay to show the toast
         setTimeout(() => {
@@ -111,6 +122,7 @@ function CheckoutInner() {
       }
     } catch (err: any) {
       console.error('Checkout error:', err);
+      fireEvent('checkout_error', { message: err.message });
       
       toast({
         title: "Checkout failed",
