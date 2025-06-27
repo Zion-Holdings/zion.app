@@ -273,7 +273,7 @@ export function WebhooksManager() {
                 </div>
                 
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {webhook.event_types.map((event) => (
+                  {webhook.event_types.map((event: WebhookEventType) => (
                     <Badge 
                       key={event} 
                       variant="secondary"
