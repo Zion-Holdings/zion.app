@@ -9,6 +9,14 @@
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
+const dotenv = require('dotenv');
+
+const envPath = path.resolve(process.cwd(), '.env.local');
+if (!fs.existsSync(envPath)) {
+  console.warn(chalk.yellow('⚠️  .env.local file not found. Environment variables may be missing.'));
+} else {
+  dotenv.config({ path: envPath });
+}
 
 // Define required environment variables and their validation rules
 const REQUIRED_VARS = {

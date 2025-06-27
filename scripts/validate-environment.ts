@@ -14,6 +14,7 @@
 import { z } from 'zod';
 import * as dotenv from 'dotenv';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 
 // ES module compatibility
@@ -22,7 +23,12 @@ const __dirname = path.dirname(__filename);
 const isMainModule = process.argv[1] === __filename;
 
 // Load environment variables
-dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
+const envPath = path.resolve(process.cwd(), '.env.local');
+if (!fs.existsSync(envPath)) {
+  console.warn('⚠️  .env.local file not found. Create one to configure environment variables.');
+} else {
+  dotenv.config({ path: envPath });
+}
 
 // Color codes for console output
 const colors = {
