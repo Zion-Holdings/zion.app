@@ -29,7 +29,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     const authHeader = req.headers.authorization;
     if (authHeader) {
       try {
-        const token = authHeader.replace('Bearer ', '');
+        const authHeaderString = Array.isArray(authHeader) ? authHeader[0] : authHeader;
+        const token = authHeaderString.replace('Bearer ', '');
         const { data: { user }, error: userError } = await supabase.auth.getUser(token);
         
         if (!userError && user?.email) {

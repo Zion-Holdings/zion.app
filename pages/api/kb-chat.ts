@@ -23,7 +23,7 @@ export default async function handler(
   res: NextApiResponse<ChatResponse | { error: string }>
 ) {
   // Apply CORS headers
-  applyCorsHeaders(req, res);
+  applyCorsHeaders(req, res as NextApiResponse<unknown>);
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();

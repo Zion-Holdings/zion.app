@@ -72,7 +72,9 @@ const MOCK_JOBS = [
 
 // Simple demo API key validation
 function validateApiKey(req: NextApiRequest): boolean {
-  const apiKey = req.headers.authorization?.replace('Bearer ', '') || (req.query as any).api_key;
+  const authHeader = req.headers.authorization;
+  const authHeaderString = Array.isArray(authHeader) ? authHeader[0] : authHeader;
+  const apiKey = authHeaderString?.replace('Bearer ', '') || (req.query as any).api_key;
   return apiKey === 'demo_key_123' || apiKey === 'test_key_456';
 }
 

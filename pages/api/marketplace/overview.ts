@@ -22,7 +22,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     // Log to Sentry
     Sentry.withScope((scope) => {
       scope.setTag('api', 'marketplace-overview');
-      scope.setContext('query', req.query);
+      scope.setContext('query', req.query as Record<string, any>);
       scope.setLevel('error');
       Sentry.captureException(error);
     });
