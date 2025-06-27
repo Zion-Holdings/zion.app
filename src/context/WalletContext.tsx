@@ -1,23 +1,9 @@
 import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { getAppKitProjectId } from '@/config/env';
 
 // src/context/WalletContext.tsx
 
-
-// Definition of getAppKitProjectId
-const getAppKitProjectId = (): string | undefined => {
-  // Prioritize NEXT_PUBLIC_ variable for Next.js context
-  const nextPublicProjectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID;
-  if (nextPublicProjectId) {
-    return nextPublicProjectId;
-  }
-  // Fallback to VITE_ variable if NEXT_PUBLIC_ is not set
-  const viteProjectId = process.env.VITE_REOWN_PROJECT_ID;
-  if (viteProjectId) {
-    logWarn("WalletContext: Using VITE_REOWN_PROJECT_ID as fallback for AppKit Project ID.");
-    return viteProjectId;
-  }
-  return undefined;
-};
+// Use getAppKitProjectId from shared env config
 
 import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect, useRef } from 'react';
 
