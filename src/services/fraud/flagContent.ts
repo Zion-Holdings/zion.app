@@ -3,6 +3,7 @@
 import { supabase } from '@/integrations/supabase/client';
 import { FraudSeverity, FraudFlag } from '@/types/fraud';
 import { FlagResult } from './types';
+import { logger } from '@/utils/logger';
 
 /**
  * Flag content for review
@@ -18,7 +19,7 @@ export const flagContent = async (
   ipAddress?: string
 ): Promise<FlagResult> => {
   try {
-    console.log('Flagging content for review:', {
+    logger.debug('Flagging content for review:', {
       userId,
       contentType,
       contentId,
@@ -43,7 +44,7 @@ export const flagContent = async (
     
     return { success: true };
   } catch (error) {
-    console.error('Error flagging content:', error);
+    logger.error('Error flagging content:', error);
     return { 
       success: false, 
       error: error instanceof Error ? error.message : 'Unknown error' 

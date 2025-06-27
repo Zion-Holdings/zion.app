@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { logger } from '@/utils/logger';
 
 // Supabase configuration
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://gnwtggeptzkqnduuthto.supabase.co';
@@ -19,7 +20,7 @@ export const isSupabaseConfigured = !!(supabaseUrl && supabaseAnonKey &&
   !supabaseAnonKey.includes('your-anon-key'));
 
 if (process.env.NODE_ENV === 'development') {
-  console.log('Supabase client initialized:', {
+  logger.debug('Supabase client initialized:', {
     url: supabaseUrl,
     configured: isSupabaseConfigured
   });
