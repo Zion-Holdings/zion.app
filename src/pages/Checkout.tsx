@@ -23,7 +23,7 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { logDev, logError } from '@/utils/developmentLogger';
+import { logDev, logDevError } from '@/utils/developmentLogger';
 
 // Form validation schema
 const checkoutSchema = z.object({
@@ -114,7 +114,7 @@ function CheckoutInner() {
 
       window.location.href = responseData.url;
     } catch (err: any) {
-      logError('Checkout error:', err);
+      logDevError('Checkout error:', err);
       fireEvent('checkout_error', { message: err.message });
       
       toast({

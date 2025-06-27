@@ -35,7 +35,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
     setHasSearched(true);
     
     try {
-      logInfo("Starting AI matching with query:", query, "and service type:", serviceType);
+      logInfo("Starting AI matching", { data: { query, serviceType } });
       
       // Get AI matches
       const results = await findMatches(

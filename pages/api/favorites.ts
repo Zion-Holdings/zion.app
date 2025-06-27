@@ -1,4 +1,3 @@
-export type { SearchFilters, SearchResult };
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { supabase } from '@/integrations/supabase/client';
 import { withErrorLogging } from '@/utils/withErrorLogging';
