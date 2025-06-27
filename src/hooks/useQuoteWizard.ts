@@ -18,7 +18,7 @@ const fetcher = async (url: string): Promise<ServiceItem[]> => {
     return res.json();
   } catch (err) {
     if (process.env.NODE_ENV === 'development') {
-      logError(err);
+      logError('Failed to fetch service items', { data: err });
     } else {
       captureException(err);
     }

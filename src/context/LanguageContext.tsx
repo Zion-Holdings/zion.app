@@ -201,7 +201,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       return;
     }
     
-    logInfo('LanguageContext: Changing language from', currentLanguage, '(i18n:', i18n.language, ') to', lang);
+    logInfo('LanguageContext: Changing language from', { data: { from: currentLanguage, i18nLang: i18n.language, to: lang } });
     
     try {
       // Change i18n language
@@ -215,7 +215,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       // Get language name for toast
       const langName = supportedLanguages.find(l => l.code === lang)?.name || lang;
       
-      logInfo('LanguageContext: Language changed successfully to', lang, '(' + langName + ')');
+      logInfo('LanguageContext: Language changed successfully to', { data: { lang: lang, langName: langName } });
       
       toast({
         description: t('language.language_changed', { language: langName })

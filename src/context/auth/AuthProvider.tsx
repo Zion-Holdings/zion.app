@@ -220,8 +220,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                         .single();
 
                     if (process.env.NODE_ENV === 'development') {
-                        logInfo('[AuthProvider DEBUG] Raw profile data:', JSON.stringify(profile, null, 2));
-                        logInfo('[AuthProvider DEBUG] Profile fetch error (if any):', JSON.stringify(profileError, null, 2));
+                        logInfo('[AuthProvider DEBUG] Raw profile data:', { data: JSON.stringify(profile, null, 2) });
+                        logInfo('[AuthProvider DEBUG] Profile fetch error (if any):', { data: JSON.stringify(profileError, null, 2) });
                     }
 
                     if (profileError) {
@@ -260,9 +260,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                         logInfo('[AuthProvider DEBUG] Profile data fetched successfully.');
                         let mappedUser;
                         try {
-                            logInfo('[AuthProvider DEBUG] Mapping profile to user. session.user:', JSON.stringify(session.user, null, 2), 'profile:', JSON.stringify(profile, null, 2));
+                            logInfo('[AuthProvider DEBUG] Mapping profile to user. session.user:', { data: { sessionUser: JSON.stringify(session.user, null, 2), profile: JSON.stringify(profile, null, 2) } });
                             mappedUser = mapProfileToUser(session.user, profile);
-                            logInfo('[AuthProvider DEBUG] Mapped user data:', JSON.stringify(mappedUser, null, 2));
+                            logInfo('[AuthProvider DEBUG] Mapped user data:', { data: JSON.stringify(mappedUser, null, 2) });
                         } catch (mappingError) {
                             logError('[AuthProvider DEBUG] Error mapping profile to user:', { data: mappingError });
                             mappedUser = null;
@@ -276,7 +276,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                             // Call handleSignedIn for SIGNED_IN event to trigger redirection etc.
                             if (event === 'SIGNED_IN') {
                                  logInfo('[AuthProvider DEBUG] Event is SIGNED_IN. Calling handleSignedIn.');
-                                 logInfo('[AuthProvider DEBUG] User object being passed to handleSignedIn:', JSON.stringify(mappedUser, null, 2));
+                                 logInfo('[AuthProvider DEBUG] User object being passed to handleSignedIn:', { data: JSON.stringify(mappedUser, null, 2) });
                                  handleSignedIn(mappedUser); // This often handles redirection
 
                                 // Redirection logic
@@ -364,7 +364,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 // - Events like PASSWORD_RECOVERY, USER_DELETED etc. that don't imply an active session for profile fetch
                 // - Or if session.user is null even if session object exists.
                 if (process.env.NODE_ENV === 'development') {
-                    logInfo('[AuthProvider DEBUG] No active session for profile fetch or event is not SIGNED_IN/TOKEN_REFRESHED/USER_UPDATED. Event:', event, 'Session user present:', !!session?.user);
+                    logInfo('[AuthProvider DEBUG] No active session for profile fetch or event is not SIGNED_IN/TOKEN_REFRESHED/USER_UPDATED. Event:', { data: { event: event, sessionUserPresent: !!session?.user } });
                 }
                 // If user is not null, it means there was a user, but now the session is not one for active profile loading.
                 // This could happen if a token refresh fails and Supabase reverts to no user, or an initial check.

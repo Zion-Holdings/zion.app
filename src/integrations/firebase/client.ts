@@ -1,4 +1,3 @@
-export type SupabaseClientType = typeof supabase; 
 import { initializeApp } from 'firebase/app';
 import { memoryLocalCache, Firestore, getFirestore } from 'firebase/firestore';
 import { getPerformance } from 'firebase/performance';
@@ -30,4 +29,6 @@ try {
 
 // Initialize Firebase Performance Monitoring
 const perf = getPerformance(app);
+
+export { db, perf };
 

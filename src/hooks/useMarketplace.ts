@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import {
 import { logError } from '@/utils/productionLogger';
-
+import {
   fetchProducts,
   fetchCategories,
   fetchTalent,
@@ -13,7 +12,7 @@ import { logError } from '@/utils/productionLogger';
   type TalentProfile,
 } from '@/services/marketplace';
 import { useQuery } from '@tanstack/react-query';
-import { logDev, logError } from '@/utils/developmentLogger';
+import { logDev } from '@/utils/developmentLogger';
 
 export interface UseMarketplaceState<T> {
   data: T[];
@@ -36,7 +35,7 @@ export function useMarketplaceProducts(filters: MarketplaceFilters = {}) {
   return useQuery({
     queryKey: ['marketplace', 'products', filters],
     queryFn: async () => {
-      logDev('useMarketplaceProducts: Fetching products with filters:', filters);
+      logDev('useMarketplaceProducts: Fetching products with filters:', { data: filters });
       
       const searchParams = new URLSearchParams();
       Object.entries(filters).forEach(([key, value]) => {
@@ -56,9 +55,6 @@ export function useMarketplaceProducts(filters: MarketplaceFilters = {}) {
       }
       return data.products || [];
     },
-    onError: (err) => {
-      logError('useMarketplaceProducts: Error fetching products:', { data: err });
-    },
     staleTime: 5 * 60 * 1000, // 5 minutes
     refetchOnWindowFocus: false,
   });
@@ -77,9 +73,6 @@ export function useMarketplaceCategories() {
       }
       return response.json();
     },
-    onError: (err) => {
-      logError('useMarketplaceCategories: Error fetching categories:', { data: err });
-    },
     staleTime: 30 * 60 * 1000, // 30 minutes - categories change less frequently
     refetchOnWindowFocus: false,
   });
@@ -90,7 +83,7 @@ export function useMarketplaceTalent(filters: MarketplaceFilters = {}) {
   return useQuery({
     queryKey: ['marketplace', 'talent', filters],
     queryFn: async () => {
-      logDev('useMarketplaceTalent: Fetching talent with filters:', filters);
+      logDev('useMarketplaceTalent: Fetching talent with filters:', { data: filters });
       
       const searchParams = new URLSearchParams();
       Object.entries(filters).forEach(([key, value]) => {
@@ -109,9 +102,6 @@ export function useMarketplaceTalent(filters: MarketplaceFilters = {}) {
       }
       return response.json();
     },
-    onError: (err) => {
-      logError('useMarketplaceTalent: Error fetching talent:', { data: err });
-    },
     staleTime: 10 * 60 * 1000, // 10 minutes
     refetchOnWindowFocus: false,
   });
@@ -122,7 +112,7 @@ export function useMarketplaceEquipment(filters: MarketplaceFilters = {}) {
   return useQuery({
     queryKey: ['marketplace', 'equipment', filters],
     queryFn: async () => {
-      logDev('useMarketplaceEquipment: Fetching equipment with filters:', filters);
+      logDev('useMarketplaceEquipment: Fetching equipment with filters:', { data: filters });
       
       const searchParams = new URLSearchParams();
       Object.entries(filters).forEach(([key, value]) => {
@@ -137,9 +127,6 @@ export function useMarketplaceEquipment(filters: MarketplaceFilters = {}) {
       }
       return response.json();
     },
-    onError: (err) => {
-      logError('useMarketplaceEquipment: Error fetching equipment:', { data: err });
-    },
     staleTime: 15 * 60 * 1000, // 15 minutes
     refetchOnWindowFocus: false,
   });
@@ -152,17 +139,18 @@ export function useMarketplaceOverview() {
   const talent = useMarketplaceTalent({ limit: 6 });
   const equipment = useMarketplaceEquipment({ limit: 6 });
 
-  const loading = products.loading || categories.loading || talent.loading || equipment.loading;
+  const loading = products.isLoading || categories.isLoading || talent.isLoading || equipment.isLoading;
   const hasError = !!(products.error || categories.error || talent.error || equipment.error);
   
   const errors = [products.error, categories.error, talent.error, equipment.error]
-    .filter(Boolean) as string[];
+    .filter(Boolean)
+    .map(err => err instanceof Error ? err.message : String(err));
 
   const retryAll = () => {
-    products.retry();
-    categories.retry();
-    talent.retry();
-    equipment.retry();
+    products.refetch();
+    categories.refetch();
+    talent.refetch();
+    equipment.refetch();
   };
 
   return {
@@ -184,7 +172,7 @@ export function useMarketplaceErrorHandler() {
   const handleError = useCallback((error: any) => {
     const errorMessage = getMarketplaceErrorMessage(error);
     setLastError(errorMessage);
-    logError('Marketplace Error:', { error, message: errorMessage });
+    logError('Marketplace Error:', { data: { error, message: errorMessage } });
     return errorMessage;
   }, []);
 

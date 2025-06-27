@@ -5,7 +5,7 @@ import { TalentProfile } from "@/types/talent";
 
 import { logError } from "@/utils/productionLogger";
 
-export interface {
+export interface HireRequestData {
   talent: {
     id: string;
     full_name: string;

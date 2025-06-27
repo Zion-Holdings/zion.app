@@ -111,7 +111,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   if (projectId && PLACEHOLDER_PROJECT_IDS.includes(projectId)) {
       const errorMessage = 'WalletContext: Critical Error - Reown AppKit Project ID is not set or is a placeholder. Please set NEXT_PUBLIC_REOWN_PROJECT_ID environment variable.';
       if (process.env.NODE_ENV === 'development') {
-        logError(errorMessage, 'Resolved Project ID:', projectId);
+        logError(errorMessage, { data: { resolvedProjectId: projectId } });
       }
   }
 
@@ -140,8 +140,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     // Priority 1: Check Project ID validity.
     if (!isProjectIdValid) {
       logWarn( // More of a warning during runtime, error is logged at init.
-        'WalletContext: Project ID is invalid or missing. AppKit initialization skipped. Wallet system unavailable. ID:',
-        rawProjectId
+        'WalletContext: Project ID is invalid or missing. AppKit initialization skipped. Wallet system unavailable. ID:', 
+        { data: { projectId: rawProjectId } }
       );
       if (appKitRef.current) appKitRef.current = null; // Ensure it's nulled if it somehow existed
       setWallet(prev => ({
