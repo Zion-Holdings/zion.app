@@ -115,4 +115,10 @@ self.addEventListener('message', event => {
         .catch(err => console.error('Background sync replay failed', err))
     );
   }
+
+self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+  if (event.request.mode === 'navigate' && url.pathname.startsWith('/auth/')) {
+    event.respondWith(fetch(event.request));
+  }
 });
