@@ -107,9 +107,11 @@
     "browserstack.config.ts",
     "cypress.config.ts",
     "playwright.config.ts",
+    "cypress.config.ts",
     "**/*.test.ts",
     "**/*.test.tsx",
     "**/*.spec.ts",
-    "**/*.spec.tsx"
+    "**/*.spec.tsx",
+    "cypress.config.ts"
   ]
 }
