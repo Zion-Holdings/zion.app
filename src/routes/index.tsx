@@ -15,7 +15,7 @@
 // import PublicRoutes from "./PublicRoutes";
 
 // Export the new consolidated route configurations
-export { allRoutes, primaryRoutes } from "./config";
+// export { allRoutes, primaryRoutes } from "./config"; // Removed as ./config does not exist
 
 // Stub exports for compatibility
 export const AuthRoutes = () => null;
