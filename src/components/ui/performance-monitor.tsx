@@ -15,13 +15,17 @@ interface PerformanceMetrics {
 export function PerformanceMonitor() {
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [shouldShow, setShouldShow] = useState(false);
 
   useEffect(() => {
     // Only run in development or when explicitly enabled
-    const shouldShow = process.env.NODE_ENV === 'development' || 
-                      localStorage.getItem('performance-monitoring') === 'true';
-    
-    if (!shouldShow) return;
+    const show =
+      process.env.NODE_ENV === 'development' ||
+      localStorage.getItem('performance-monitoring') === 'true';
+
+    setShouldShow(show);
+
+    if (!show) return;
 
     setIsVisible(true);
 
@@ -102,6 +106,10 @@ export function PerformanceMonitor() {
       window.location.reload(); // Reload to start monitoring
     }
   };
+
+  if (!shouldShow) {
+    return null;
+  }
 
   if (!isVisible) {
     return (

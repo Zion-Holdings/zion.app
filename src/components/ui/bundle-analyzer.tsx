@@ -27,13 +27,17 @@ export function BundleAnalyzer() {
   const [chunks, setChunks] = useState<ChunkInfo[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const [isCollecting, setIsCollecting] = useState(false);
+  const [shouldShow, setShouldShow] = useState(false);
 
   useEffect(() => {
     // Only show in development or when explicitly enabled
-    const shouldShow = process.env.NODE_ENV === 'development' || 
-                      localStorage.getItem('bundle-analyzer') === 'true';
-    
-    if (!shouldShow) return;
+    const show =
+      process.env.NODE_ENV === 'development' ||
+      localStorage.getItem('bundle-analyzer') === 'true';
+
+    setShouldShow(show);
+
+    if (!show) return;
 
     setIsVisible(true);
     collectBundleInfo();
@@ -115,6 +119,10 @@ export function BundleAnalyzer() {
       collectBundleInfo();
     }
   };
+
+  if (!shouldShow) {
+    return null;
+  }
 
   if (!isVisible) {
     return (
