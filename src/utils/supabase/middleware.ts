@@ -72,8 +72,7 @@ export async function updateSession(request: NextRequest) {
     '/500',
     // Added Marketplace and Community to public routes
     '/marketplace',
-    '/community'
-  ]
+    '/community',
     '/service-unavailable' // Ensure this error page is public
   ];
 
