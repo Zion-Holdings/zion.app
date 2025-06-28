@@ -8,18 +8,27 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useLanguage, type SupportedLanguage } from '@/context/LanguageContext';
+import {
+  useLanguage,
+  type SupportedLanguage,
+  SUPPORTED_LANGUAGES
+} from '@/context/LanguageContext';
 
 export function LanguageSelector() {
   const { t } = useTranslation();
   const { currentLanguage, supportedLanguages, changeLanguage } = useLanguage();
+  // Fallback in case the context fails to provide languages for any reason
+  const availableLanguages =
+    supportedLanguages && supportedLanguages.length > 0
+      ? supportedLanguages
+      : SUPPORTED_LANGUAGES;
   const [isOpen, setIsOpen] = useState(false);
 
   logInfo('LanguageSelector: Rendered with currentLanguage:', { data: currentLanguage });
-  logInfo('LanguageSelector: Available languages:', { data: supportedLanguages.map(l => l.code) });
+  logInfo('LanguageSelector: Available languages:', { data: availableLanguages.map(l => l.code) });
 
   const currentFlag =
-    supportedLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
+    availableLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
 
   const handleLanguageChange = async (langCode: SupportedLanguage) => {
     logInfo('LanguageSelector: Language item clicked:', { data: langCode });
@@ -56,7 +65,7 @@ export function LanguageSelector() {
         className="bg-zion-blue-dark border border-zion-purple/20 min-w-[140px]"
         sideOffset={5}
       >
-        {supportedLanguages.map((lang) => (
+        {availableLanguages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             className={`cursor-pointer transition-colors ${
