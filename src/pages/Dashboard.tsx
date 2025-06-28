@@ -1,4 +1,4 @@
-// @ts-nocheck
+import React from 'react';
 import { useAuth } from "@/hooks/useAuth";
 import { useRequireAuth } from "@/hooks/useAuthGuard";
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,12 @@ export default function Dashboard() {
   const { logout } = useAuth();
   const { user, loading } = useRequireAuth(); // This will handle authentication and redirects
   const { toast } = useToast();
-  const { data: orders = [], isLoading: ordersLoading } = useGetOrdersQuery(user?.id);
+  
+  // Add safe checks for user ID to prevent premature API calls
+  const userId = user?.id;
+  const { data: orders = [], isLoading: ordersLoading } = useGetOrdersQuery(userId, {
+    enabled: !!userId, // Only run query when user ID is available
+  });
   const { favorites } = useFavorites();
 
   // Type assertion to work around Supabase User type limitations
