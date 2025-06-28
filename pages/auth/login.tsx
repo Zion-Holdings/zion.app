@@ -364,9 +364,13 @@ const LoginPage = () => {
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               Or{' '}
-              <Link href="/auth/register" className="font-medium text-blue-600 hover:text-blue-500">
+              <button
+                type="button"
+                onClick={() => router.push('/auth/register')}
+                className="font-medium text-blue-600 hover:text-blue-500 underline"
+              >
                 create a new account
-              </Link>
+              </button>
             </p>
             <p className="mt-2 text-center text-sm text-gray-600">
               <button
