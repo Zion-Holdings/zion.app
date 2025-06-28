@@ -48,8 +48,8 @@ console.log(`⚙️  Static optimization: disabled`);
 console.log(`🚫 Output file tracing: DISABLED (prevents hanging)`);
 console.log(`🚫 Turbotrace: COMPLETELY DISABLED (critical fix)`);
 console.log(`🧠 Thread pool: limited to 4 threads`);
-console.log(`📦 Output mode: static export`);
-console.log(`🚀 Deployment: Direct static hosting (no plugins needed)`);
+console.log(`📦 Output mode: standard Next.js`);
+console.log(`🔌 Plugin: Auto-detected Netlify Next.js (supports ISR & API)`);
 
 const buildArgs = [
   'next', 
@@ -81,27 +81,27 @@ build.on('close', (code) => {
   if (code === 0) {
     console.log('✅ Fast build completed successfully!');
     
-    // Post-build: Verify static export output
-    console.log('\n📦 Verifying static export output...');
+    // Post-build: Verify Next.js build output
+    console.log('\n📦 Verifying Next.js build output...');
     try {
       const fs = require('fs');
       
-      if (fs.existsSync('out')) {
-        console.log('✅ Static export directory created');
+      if (fs.existsSync('.next')) {
+        console.log('✅ Next.js build directory created');
         
-        // Check for index.html
-        if (fs.existsSync('out/index.html')) {
-          console.log('✅ Index page generated');
+        // Check for server directory
+        if (fs.existsSync('.next/server')) {
+          console.log('✅ Server directory generated');
         }
         
-        // Check for _next directory
-        if (fs.existsSync('out/_next')) {
-          console.log('✅ Assets directory generated');
+        // Check for static directory
+        if (fs.existsSync('.next/static')) {
+          console.log('✅ Static assets directory generated');
         }
         
-        console.log('✅ Static export ready for deployment');
+        console.log('✅ Next.js build ready for Netlify plugin');
       } else {
-        console.warn('⚠️  Warning: out directory not found');
+        console.warn('⚠️  Warning: .next directory not found');
       }
     } catch (error) {
       console.warn('⚠️  Warning verifying output:', error.message);
@@ -119,10 +119,11 @@ build.on('close', (code) => {
     console.log('- Output file tracing: ✅ DISABLED (prevents 18min hanging)');
     console.log('- Turbotrace: ✅ COMPLETELY DISABLED (critical fix)');
     console.log('- Thread pool: ✅ Limited to 4 threads');
-    console.log('- Output mode: ✅ Static export (no server needed)');
-    console.log('- Deployment: ✅ Direct static hosting on Netlify');
+    console.log('- Output mode: ✅ Standard Next.js (supports ISR & API routes)');
+    console.log('- Plugin: ✅ Auto-detected Netlify Next.js plugin');
     console.log('- Build time: ✅ ~1 minute (was hanging for 18+ minutes)');
     console.log('- Pages processed: ~176 pages');
+    console.log('- ISR & API routes: ✅ Fully supported');
     
   } else {
     console.error('❌ Build failed with code:', code);

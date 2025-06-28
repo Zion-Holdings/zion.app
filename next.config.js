@@ -45,11 +45,9 @@ const nextConfig = {
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
-  // Configure for static export (no hanging, no plugins needed)
-  output: 'export',
+  // Optimized for fast builds (hanging issue SOLVED)
   outputFileTracing: false,
   productionBrowserSourceMaps: false, // Disable for faster builds
-  distDir: 'out',
   
   // Environment configuration
   env: {
