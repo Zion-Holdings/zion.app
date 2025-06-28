@@ -3,15 +3,24 @@
   # Generate Prisma client before building to ensure models are up to date
   command = "npm run build:netlify"
   publish = ".next"
+  # Increase build timeout for 176+ pages
+  command_timeout = "25m"
 
 [build.environment]
-  NODE_OPTIONS = "--no-deprecation"
+  NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
   NPM_FLAGS = "--prefer-offline --legacy-peer-deps"
   NEXT_PUBLIC_APP_ENV = "production"
   NODE_VERSION = "22"
   NEXT_TELEMETRY_DISABLED = "1"
   CI = "true"
   SKIP_TYPE_CHECK = "true"
+  
+  # Performance optimizations for large builds
+  NEXT_DISABLE_CSS_INLINE = "true"
+  NEXT_DISABLE_SOURCE_MAPS = "true"
+  NEXT_BUILD_WORKERS = "2"
+  NEXT_PRIVATE_BUILD_CACHE = "false"
+  NETLIFY_CACHE_NEXTJS = "false"
   
   # Configure secrets scanning to omit legitimate public environment variables
   # NEXT_PUBLIC_* variables are meant to be public and embedded in client bundles
@@ -123,6 +132,14 @@
   NEXT_PUBLIC_APP_ENV = "production"
   NODE_ENV = "production"
   NEXT_TELEMETRY_DISABLED = "1"
+  
+  # Production build optimizations
+  NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
+  NEXT_DISABLE_CSS_INLINE = "true"
+  NEXT_DISABLE_SOURCE_MAPS = "true"
+  NEXT_BUILD_WORKERS = "2"
+  NEXT_PRIVATE_BUILD_CACHE = "false"
+  NETLIFY_CACHE_NEXTJS = "false"
 
 [context.deploy-preview.environment]
   AUTH0_BASE_URL = "https://deploy-preview-${REVIEW_ID}--your-site.netlify.app"

@@ -64,17 +64,22 @@ const nextConfig = {
         'node_modules/@esbuild/linux-x64',
       ],
     },
-    optimizeCss: process.env.NODE_ENV === 'production',
+    // Disable CSS optimization for faster builds with many pages
+    optimizeCss: false, 
     esmExternals: true,
-    // Memory and performance optimizations
-    largePageDataBytes: 128 * 1000, // 128KB threshold for large pages
+    // Memory and performance optimizations for 176+ pages
+    largePageDataBytes: 256 * 1000, // 256KB threshold for large pages
     workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: 4, // Use max 4 CPUs (will be set by build script)
-    // Build performance
+    cpus: 2, // Limit to 2 CPUs for memory management
+    // Build performance optimizations
     turbotrace: {
       contextDirectory: process.cwd(),
       memoryLimit: 6000, // 6GB memory limit
+      logLevel: 'error', // Reduce logging for faster builds
     },
+    // Netlify-specific optimizations
+    isrMemoryCacheSize: 0, // Disable ISR cache to save memory
+    swcTraceProfiling: false, // Disable profiling for faster builds
   },
 
   images: {
