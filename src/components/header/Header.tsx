@@ -105,7 +105,6 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             <>
               <Link
                 href="/auth/login"
-                prefetch={false}
                 className="text-sm text-white hover:text-zion-cyan"
                 aria-label="Login"
               >
@@ -113,7 +112,6 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
               </Link>
               <Link
                 href="/signup"
-                prefetch={false}
                 className="ml-2 text-sm text-white hover:text-zion-cyan"
                 aria-label="Sign up"
               >
