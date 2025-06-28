@@ -12,4 +12,6 @@ export interface CaseStudy {
   role: string;
   featuredImage: string;
   publishedDate?: string;
+  /** URL of downloadable case study PDF */
+  pdf: string;
 }

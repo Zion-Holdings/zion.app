@@ -1,18 +1,18 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { CASE_STUDIES } from "@/data/case-studies";
-import { SEO } from "@/components/SEO";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { CASE_STUDIES } from '@/data/case-studies';
+import { SEO } from '@/components/SEO';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbList,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import BreadcrumbJsonLd from "@/components/BreadcrumbJsonLd";
-import { getBreadcrumbsForPath } from "@/utils/routeUtils";
+} from '@/components/ui/breadcrumb';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
+import { getBreadcrumbsForPath } from '@/utils/routeUtils';
 
 export default function CaseStudy() {
   const router = useRouter();
@@ -64,11 +64,28 @@ export default function CaseStudy() {
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Case Studies
             </Link>
           </Button>
-          <img src={study.companyLogo} alt={`${study.company} logo`} className="h-12 mb-4" loading="lazy" />
+          <img
+            src={study.companyLogo}
+            alt={`${study.company} logo`}
+            className="h-12 mb-4"
+            loading="lazy"
+          />
           <h1 className="text-3xl font-bold text-white mb-4">{study.title}</h1>
           <p className="text-zion-slate-light mb-8">{study.excerpt}</p>
-          <div className="prose prose-invert" dangerouslySetInnerHTML={{ __html: study.content }} />
-          <p className="mt-8 text-white font-semibold">— {study.author}, {study.role}</p>
+          {study.pdf && (
+            <Button variant="secondary" className="mb-6" asChild>
+              <a href={study.pdf} target="_blank" rel="noopener noreferrer">
+                Download PDF
+              </a>
+            </Button>
+          )}
+          <div
+            className="prose prose-invert"
+            dangerouslySetInnerHTML={{ __html: study.content }}
+          />
+          <p className="mt-8 text-white font-semibold">
+            — {study.author}, {study.role}
+          </p>
         </div>
       </div>
     </>
