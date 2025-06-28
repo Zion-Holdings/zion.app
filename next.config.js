@@ -78,7 +78,6 @@ const nextConfig = {
       logLevel: 'error', // Reduce logging for faster builds
     },
     // Netlify-specific optimizations
-    isrMemoryCacheSize: 0, // Disable ISR cache to save memory
     swcTraceProfiling: false, // Disable profiling for faster builds
   },
 

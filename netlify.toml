@@ -4,7 +4,7 @@
   command = "npm run build:netlify"
   publish = ".next"
   # Increase build timeout for 176+ pages
-  command_timeout = "25m"
+  command_timeout = "30m"
 
 [build.environment]
   NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
@@ -18,8 +18,11 @@
   # Performance optimizations for large builds
   NEXT_DISABLE_CSS_INLINE = "true"
   NEXT_DISABLE_SOURCE_MAPS = "true"
-  NEXT_BUILD_WORKERS = "2"
+  GENERATE_SOURCEMAP = "false"
+  NEXT_BUILD_WORKERS = "1"
   NEXT_PRIVATE_BUILD_CACHE = "false"
+  NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
+  NEXT_PRIVATE_STANDALONE = "false"
   NETLIFY_CACHE_NEXTJS = "false"
   
   # Configure secrets scanning to omit legitimate public environment variables
@@ -137,8 +140,11 @@
   NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
   NEXT_DISABLE_CSS_INLINE = "true"
   NEXT_DISABLE_SOURCE_MAPS = "true"
-  NEXT_BUILD_WORKERS = "2"
+  GENERATE_SOURCEMAP = "false"
+  NEXT_BUILD_WORKERS = "1"
   NEXT_PRIVATE_BUILD_CACHE = "false"
+  NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
+  NEXT_PRIVATE_STANDALONE = "false"
   NETLIFY_CACHE_NEXTJS = "false"
 
 [context.deploy-preview.environment]
