@@ -28,7 +28,7 @@ process.env.NEXT_PRIVATE_STANDALONE = 'false';
 // CRITICAL FIX: Completely disable all trace collection to prevent hanging
 process.env.NEXT_DISABLE_TRACE_COLLECTION = 'true';
 process.env.NEXT_PRIVATE_OUTPUT_TRACE = 'false';
-process.env.NEXT_PRIVATE_OUTPUT_FILE_TRACING = 'false';
+// process.env.NEXT_PRIVATE_OUTPUT_FILE_TRACING = 'false'; // Allowing Next.js default / plugin to manage this
 
 // Experimental optimizations for Netlify
 process.env.NETLIFY_CACHE_NEXTJS = 'false';
@@ -51,15 +51,15 @@ console.log(`🧠 Thread pool: limited to 4 threads`);
 console.log(`📦 Output mode: standard Next.js`);
 console.log(`🔌 Plugin: Auto-detected Netlify Next.js (supports ISR & API)`);
 
+const command = './node_modules/.bin/next';
 const buildArgs = [
-  'next', 
   'build',
   '--no-lint'
 ];
 
-console.log(`📦 Build command: npx ${buildArgs.join(' ')}`);
+console.log(`📦 Build command: ${command} ${buildArgs.join(' ')}`);
 
-const build = spawn('npx', buildArgs, {
+const build = spawn(command, buildArgs, {
   stdio: 'inherit',
   env: {
     ...process.env,

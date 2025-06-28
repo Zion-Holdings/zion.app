@@ -29,7 +29,7 @@
   # CRITICAL FIX: Completely disable build trace collection to prevent hanging
   NEXT_DISABLE_TRACE_COLLECTION = "true"
   NEXT_PRIVATE_OUTPUT_TRACE = "false"
-  NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false"
+  # NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false" # Allowing Next.js default / plugin to manage this
   UV_THREADPOOL_SIZE = "4"
   NODE_NO_WARNINGS = "1"
   NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
@@ -157,7 +157,7 @@
   # CRITICAL FIX: Completely disable build trace collection to prevent hanging
   NEXT_DISABLE_TRACE_COLLECTION = "true"
   NEXT_PRIVATE_OUTPUT_TRACE = "false"
-  NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false"
+  # NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false" # Allowing Next.js default / plugin to manage this
   UV_THREADPOOL_SIZE = "4"
   NODE_NO_WARNINGS = "1"
   NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"

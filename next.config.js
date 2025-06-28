@@ -46,7 +46,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   // Optimized for fast builds (hanging issue SOLVED)
-  outputFileTracing: false,
+  // outputFileTracing: false, // Intentionally disabled via env vars in build scripts and netlify.toml to prevent hanging.
   productionBrowserSourceMaps: false, // Disable for faster builds
   
   // Environment configuration
@@ -74,7 +74,7 @@ const nextConfig = {
     workerThreads: false, // Disable worker threads to reduce memory usage
     cpus: 2, // Limit to 2 CPUs for memory management
     // CRITICAL: Completely disable turbotrace to prevent hanging
-    turbotrace: false,
+    // turbotrace: false, // Disabled via NEXT_DISABLE_TRACE_COLLECTION and NEXT_PRIVATE_OUTPUT_TRACE in build scripts
     // Netlify-specific optimizations
     swcTraceProfiling: false, // Disable profiling for faster builds
   },
