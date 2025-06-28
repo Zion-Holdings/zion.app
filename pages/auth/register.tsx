@@ -46,9 +46,13 @@ const RegisterPage = () => {
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               Or{' '}
-              <Link href="/auth/login" className="font-medium text-blue-600 hover:text-blue-500">
+              <button
+                type="button"
+                onClick={() => router.push('/auth/login')}
+                className="font-medium text-blue-600 hover:text-blue-500 underline"
+              >
                 sign in if you already have an account
-              </Link>
+              </button>
             </p>
           </div>
 
