@@ -206,6 +206,8 @@
     imagesPath = "public/logos"
     # Use production domain  
     deliveryType = "fetch"
-    # Optimize images automatically
-    transformations = ["f_auto", "q_auto"]
+    # Set max file size to optimize performance
+    maxSize = 1048576
+    # Set concurrent uploads
+    uploadConcurrency = 10
 
