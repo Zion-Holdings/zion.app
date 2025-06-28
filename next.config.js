@@ -47,7 +47,7 @@ const nextConfig = {
   swcMinify: true,
   // Disable file tracing to avoid lengthy build trace step on Netlify
   outputFileTracing: false,
-  productionBrowserSourceMaps: true,
+  productionBrowserSourceMaps: false, // Disable for faster builds
   
   // Environment configuration
   env: {

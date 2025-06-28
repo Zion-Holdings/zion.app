@@ -181,19 +181,6 @@
   NODE_ENV = "production"
   NEXT_TELEMETRY_DISABLED = "1"
 
-# Redirects for Single Page Application
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = {Role = ["admin"]}
-
-# API redirects
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-
 # Headers for security and performance
 [[headers]]
   for = "/*"
@@ -220,11 +207,11 @@
   to = "/"
   status = 301
 
-# Handle Next.js routing
+# Handle Next.js client-side routing (fallback)
 [[redirects]]
   from = "/*"
-  to = "/404.html"
-  status = 404
+  to = "/index.html"
+  status = 200
 
 [functions.environment]
   SENTRY_LOG_LEVEL = "debug"
@@ -236,8 +223,8 @@
     schedule = "*/5 * * * *"
 
 [[plugins]]
-  package = "@netlify/plugin-nextjs"
-
+  package = "@netlify/plugin-essential-nextjs"
+  
 [[plugins]]
   package = "netlify-plugin-cloudinary"
   [plugins.inputs]
