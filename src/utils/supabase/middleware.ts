@@ -47,7 +47,10 @@ export async function updateSession(request: NextRequest) {
     '/terms',
     '/offline',
     '/404',
-    '/500'
+    '/500',
+    // Added Marketplace and Community to public routes
+    '/marketplace',
+    '/community'
   ]
 
   // Check if current path is a public route
