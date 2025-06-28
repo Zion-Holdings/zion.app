@@ -80,7 +80,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
     <div className="flex flex-col min-h-screen bg-background">
       <SkipLink />
       {/* Conditionally render the EmailVerificationBanner */}
-      {isAuthenticated && user && !user.emailVerified && (
+      {isAuthenticated && user && !user.emailVerified && !isAuthPage && ( // Added !isAuthPage
         <>
           <EmailVerificationBanner
             onResendEmail={handleResendVerificationEmail}

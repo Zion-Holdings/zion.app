@@ -45,7 +45,9 @@ const nextConfig = {
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
-  productionBrowserSourceMaps: true,
+  // Optimized for fast builds (hanging issue SOLVED)
+  // outputFileTracing: false, // Intentionally disabled via env vars in build scripts and netlify.toml to prevent hanging.
+  productionBrowserSourceMaps: false, // Disable for faster builds
   
   // Environment configuration
   env: {
@@ -67,16 +69,12 @@ const nextConfig = {
     // Disable CSS optimization for faster builds with many pages
     optimizeCss: false, 
     esmExternals: true,
-    // Memory and performance optimizations for 176+ pages
+              // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 256 * 1000, // 256KB threshold for large pages
     workerThreads: false, // Disable worker threads to reduce memory usage
     cpus: 2, // Limit to 2 CPUs for memory management
-    // Build performance optimizations
-    turbotrace: {
-      contextDirectory: process.cwd(),
-      memoryLimit: 6000, // 6GB memory limit
-      logLevel: 'error', // Reduce logging for faster builds
-    },
+    // CRITICAL: Completely disable turbotrace to prevent hanging
+    // turbotrace: false, // Disabled via NEXT_DISABLE_TRACE_COLLECTION and NEXT_PRIVATE_OUTPUT_TRACE in build scripts
     // Netlify-specific optimizations
     swcTraceProfiling: false, // Disable profiling for faster builds
   },
@@ -389,117 +387,8 @@ const nextConfig = {
     return config;
   },
 
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
-          },
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=31536000; includeSubDomains',
-          },
-        ],
-      },
-      {
-        source: '/api/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'no-store, max-age=0',
-          },
-        ],
-      },
-      {
-        source: '/logos/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/_next/image(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/_next/static/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      // Font files - ensure they load properly with CORS headers
-      {
-        source: '/_next/static/media/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-          {
-            key: 'Access-Control-Allow-Methods',
-            value: 'GET',
-          },
-          {
-            key: 'Access-Control-Allow-Headers',
-            value: 'Content-Type',
-          },
-        ],
-      },
-    ];
-  },
-
-  async redirects() {
-    return [
-      {
-        source: '/home',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/m/:path*',
-        destination: '/mobile/pwa/:path*',
-        permanent: true,
-      },
-    ];
-  },
-
-  async rewrites() {
-    return [
-      {
-        source: '/api/equipment',
-        destination: 'http://localhost:3001/api/equipment',
-      },
-    ];
-  },
+  // Note: headers, redirects, and rewrites don't work with output: 'export'
+  // These are handled by Netlify via _headers and _redirects files
 
   // Skip TypeScript checking during build if SKIP_TYPE_CHECK is set
   typescript: {

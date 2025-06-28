@@ -2,6 +2,9 @@
   # Use `npm ci` for deterministic installs
   # Generate Prisma client before building to ensure models are up to date
   command = "npm run build:netlify"
+  # Netlify UI sets `publish` to `out` which causes the Next.js plugin to fail
+  # because no exported directory exists. Explicitly publish the `.next`
+  # directory so the plugin can run correctly.
   publish = ".next"
   # Increase build timeout for 176+ pages
   command_timeout = "30m"
@@ -15,15 +18,21 @@
   CI = "true"
   SKIP_TYPE_CHECK = "true"
   
-  # Performance optimizations for large builds
+  # Performance optimizations for large builds (with Netlify plugin)
   NEXT_DISABLE_CSS_INLINE = "true"
   NEXT_DISABLE_SOURCE_MAPS = "true"
   GENERATE_SOURCEMAP = "false"
   NEXT_BUILD_WORKERS = "1"
   NEXT_PRIVATE_BUILD_CACHE = "false"
   NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
-  NEXT_PRIVATE_STANDALONE = "false"
-  NETLIFY_CACHE_NEXTJS = "false"
+  
+  # CRITICAL FIX: Completely disable build trace collection to prevent hanging
+  NEXT_DISABLE_TRACE_COLLECTION = "true"
+  NEXT_PRIVATE_OUTPUT_TRACE = "false"
+  # NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false" # Allowing Next.js default / plugin to manage this
+  UV_THREADPOOL_SIZE = "4"
+  NODE_NO_WARNINGS = "1"
+  NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
   
   # Configure secrets scanning to omit legitimate public environment variables
   # NEXT_PUBLIC_* variables are meant to be public and embedded in client bundles
@@ -136,7 +145,7 @@
   NODE_ENV = "production"
   NEXT_TELEMETRY_DISABLED = "1"
   
-  # Production build optimizations
+  # Production build optimizations (with Netlify plugin)
   NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
   NEXT_DISABLE_CSS_INLINE = "true"
   NEXT_DISABLE_SOURCE_MAPS = "true"
@@ -144,8 +153,14 @@
   NEXT_BUILD_WORKERS = "1"
   NEXT_PRIVATE_BUILD_CACHE = "false"
   NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
-  NEXT_PRIVATE_STANDALONE = "false"
-  NETLIFY_CACHE_NEXTJS = "false"
+  
+  # CRITICAL FIX: Completely disable build trace collection to prevent hanging
+  NEXT_DISABLE_TRACE_COLLECTION = "true"
+  NEXT_PRIVATE_OUTPUT_TRACE = "false"
+  # NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false" # Allowing Next.js default / plugin to manage this
+  UV_THREADPOOL_SIZE = "4"
+  NODE_NO_WARNINGS = "1"
+  NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
 
 [context.deploy-preview.environment]
   AUTH0_BASE_URL = "https://deploy-preview-${REVIEW_ID}--your-site.netlify.app"
@@ -164,19 +179,6 @@
   NEXT_PUBLIC_DEVTOOLS = "true"
   NODE_ENV = "production"
   NEXT_TELEMETRY_DISABLED = "1"
-
-# Redirects for Single Page Application
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = {Role = ["admin"]}
-
-# API redirects
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
 
 # Headers for security and performance
 [[headers]]
@@ -204,12 +206,6 @@
   to = "/"
   status = 301
 
-# Handle Next.js routing
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
-
 [functions.environment]
   SENTRY_LOG_LEVEL = "debug"
 
@@ -218,9 +214,6 @@
 
 [functions.healthCheckCron]
     schedule = "*/5 * * * *"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
