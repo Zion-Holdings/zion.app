@@ -25,6 +25,10 @@ export const publicRoutes: (string | RegExp)[] = [
   /^\/resources\/.+/, // Specific resource pages (e.g., /resources/docs)
   '/docs', // Docs index (if separate from resources)
   /^\/docs\/.+/, // Specific doc pages
+  '/marketplace', // Marketplace index
+  /^\/marketplace\/.+/, // Individual marketplace sub-pages/items
+  '/community',   // Community index
+  /^\/community\/.+/, // Individual community sub-pages/posts
   '/api/health', // Public health check endpoints
   '/api/status',
   // Add other known public paths or patterns here
