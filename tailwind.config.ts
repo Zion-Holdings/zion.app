@@ -12,6 +12,11 @@ const config: Config = {
     './src/**/*.{ts,tsx}',
   ],
   safelist: ['border-border'],
+  // Disable problematic selectors during build
+  corePlugins: {
+    // Keep :has() support but with proper configuration
+    container: true,
+  },
   theme: {
     container: {
       center: true,

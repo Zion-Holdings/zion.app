@@ -199,3 +199,13 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+[[plugins]]
+  package = "netlify-plugin-cloudinary"
+  [plugins.inputs]
+    # Point to the correct images directory
+    imagesPath = "public/logos"
+    # Use production domain  
+    deliveryType = "fetch"
+    # Optimize images automatically
+    transformations = ["f_auto", "q_auto"]
+

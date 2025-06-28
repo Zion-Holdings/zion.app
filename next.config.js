@@ -66,6 +66,15 @@ const nextConfig = {
     },
     optimizeCss: process.env.NODE_ENV === 'production',
     esmExternals: true,
+    // Memory and performance optimizations
+    largePageDataBytes: 128 * 1000, // 128KB threshold for large pages
+    workerThreads: false, // Disable worker threads to reduce memory usage
+    cpus: 4, // Use max 4 CPUs (will be set by build script)
+    // Build performance
+    turbotrace: {
+      contextDirectory: process.cwd(),
+      memoryLimit: 6000, // 6GB memory limit
+    },
   },
 
   images: {
@@ -245,6 +254,9 @@ const nextConfig = {
   ],
 
   webpack: (config, { dev, isServer, webpack }) => {
+    // Fix EventEmitter memory leak by increasing max listeners
+    // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
+    
     // For Netlify deployment, exclude problematic files temporarily
     if (process.env.SKIP_TYPE_CHECK === 'true') {
       config.externals = config.externals || [];
@@ -281,6 +293,35 @@ const nextConfig = {
       ...config.resolve.alias,
       'react-router-dom': path.resolve(__dirname, './src/shims/react-router-dom.ts'),
     };
+
+    // Build performance optimizations - only for client side
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        // Split chunks to improve build performance
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            default: false,
+            vendors: false,
+            // Group vendor libraries
+            vendor: {
+              chunks: 'all',
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              enforce: true,
+            },
+            // Group common components
+            common: {
+              name: 'common',
+              minChunks: 2,
+              chunks: 'all',
+              enforce: true,
+            },
+          },
+        },
+      };
+    }
 
     // Only apply optimizations in production
     if (!dev && !isServer) {
