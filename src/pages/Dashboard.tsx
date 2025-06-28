@@ -1,21 +1,44 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import { useAuth } from "@/hooks/useAuth";
 import { useRequireAuth } from "@/hooks/useAuthGuard";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
-import { CommunityDiscussion } from "@/components/CommunityDiscussion";
 import { Badge } from "@/components/ui/badge";
 import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings, FileText, Heart, Key, ShoppingBag } from "lucide-react";
-import { PointsBadge } from '@/components/loyalty/PointsBadge';
-import { ApiKeysManager } from '@/components/developers/ApiKeysManager';
 import { useGetOrdersQuery } from '@/hooks/useOrders';
 import { useFavorites } from '@/hooks/useFavorites';
-import { createTestNotification, createOnboardingNotification, createSystemNotification } from "@/utils/notifications";
-import { NotificationBell } from "@/components/NotificationBell";
-import { GuidedTour } from "@/components/onboarding/GuidedTour";
 import { useToast } from "@/hooks/use-toast";
 import { EmptyState } from "@/components/ui/empty-state";
 import Link from 'next/link';
+
+// Lazy load heavy components to prevent router abort
+const CommunityDiscussion = dynamic(() => import("@/components/CommunityDiscussion").then(mod => ({ default: mod.CommunityDiscussion })), {
+  loading: () => <div className="h-32 bg-zion-blue-light rounded animate-pulse" />,
+  ssr: false,
+});
+
+const PointsBadge = dynamic(() => import('@/components/loyalty/PointsBadge').then(mod => ({ default: mod.PointsBadge })), {
+  loading: () => <span className="text-zion-cyan font-medium">Loading...</span>,
+  ssr: false,
+});
+
+const ApiKeysManager = dynamic(() => import('@/components/developers/ApiKeysManager').then(mod => ({ default: mod.ApiKeysManager })), {
+  loading: () => <div className="h-24 bg-zion-blue-light rounded animate-pulse" />,
+  ssr: false,
+});
+
+const NotificationBell = dynamic(() => import("@/components/NotificationBell").then(mod => ({ default: mod.NotificationBell })), {
+  loading: () => <Bell size={16} className="text-zion-cyan" />,
+  ssr: false,
+});
+
+const GuidedTour = dynamic(() => import("@/components/onboarding/GuidedTour").then(mod => ({ default: mod.GuidedTour })), {
+  ssr: false,
+});
+
+// Lazy load notification functions
+const loadNotificationFunctions = () => import("@/utils/notifications");
 
 export default function Dashboard() {
   const { logout } = useAuth();
@@ -24,9 +47,7 @@ export default function Dashboard() {
   
   // Add safe checks for user ID to prevent premature API calls
   const userId = user?.id;
-  const { data: orders = [], isLoading: ordersLoading } = useGetOrdersQuery(userId, {
-    enabled: !!userId, // Only run query when user ID is available
-  });
+  const { data: orders = [], isLoading: ordersLoading } = useGetOrdersQuery(userId);
   const { favorites } = useFavorites();
 
   // Type assertion to work around Supabase User type limitations
@@ -58,16 +79,25 @@ export default function Dashboard() {
   }
 
   const handleTestNotification = async () => {
-    const result = await createTestNotification(user?.id ?? "");
-    if (result.success) {
+    try {
+      const { createTestNotification } = await loadNotificationFunctions();
+      const result = await createTestNotification(user?.id ?? "");
+      if (result.success) {
+        toast({
+          title: "Test notification created",
+          description: "Check your notification center",
+        });
+      } else {
+        toast({
+          title: "Error creating test notification",
+          description: "Something went wrong",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
       toast({
-        title: "Test notification created",
-        description: "Check your notification center",
-      });
-    } else {
-      toast({
-        title: "Error creating test notification",
-        description: "Something went wrong",
+        title: "Error loading notification system",
+        description: "Please try again",
         variant: "destructive",
       });
     }
@@ -149,15 +179,24 @@ export default function Dashboard() {
                       className="w-full flex items-center justify-center gap-2"
                       variant="outline"
                       onClick={async () => {
-                        await createOnboardingNotification({
-                          userId: user?.id ?? "",
-                          missingMilestone: 'profile_completed',
-                          userRole: roleForTour
-                        });
-                        toast({
-                          title: "Onboarding notification sent",
-                          description: "Check your notification center"
-                        });
+                        try {
+                          const { createOnboardingNotification } = await loadNotificationFunctions();
+                          await createOnboardingNotification({
+                            userId: user?.id ?? "",
+                            missingMilestone: 'profile_completed',
+                            userRole: roleForTour
+                          });
+                          toast({
+                            title: "Onboarding notification sent",
+                            description: "Check your notification center"
+                          });
+                        } catch (error) {
+                          toast({
+                            title: "Error sending notification",
+                            description: "Please try again",
+                            variant: "destructive",
+                          });
+                        }
                       }}
                     >
                       <Settings size={16} className="text-zion-purple" />
@@ -168,17 +207,26 @@ export default function Dashboard() {
                       className="w-full flex items-center justify-center gap-2"
                       variant="outline"
                       onClick={async () => {
-                        await createSystemNotification({
-                          userId: user?.id ?? "",
-                          title: "New Feature Available!",
-                          message: "We've added a new notification center to help you stay updated with important information.",
-                          actionUrl: "/notifications",
-                          actionText: "Explore Now"
-                        });
-                        toast({
-                          title: "System notification sent",
-                          description: "Check your notification center"
-                        });
+                        try {
+                          const { createSystemNotification } = await loadNotificationFunctions();
+                          await createSystemNotification({
+                            userId: user?.id ?? "",
+                            title: "New Feature Available!",
+                            message: "We've added a new notification center to help you stay updated with important information.",
+                            actionUrl: "/notifications",
+                            actionText: "Explore Now"
+                          });
+                          toast({
+                            title: "System notification sent",
+                            description: "Check your notification center"
+                          });
+                        } catch (error) {
+                          toast({
+                            title: "Error sending notification",
+                            description: "Please try again",
+                            variant: "destructive",
+                          });
+                        }
                       }}
                     >
                       <Bell size={16} className="text-yellow-500" />
