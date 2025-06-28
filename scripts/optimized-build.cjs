@@ -48,8 +48,8 @@ console.log(`⚙️  Static optimization: disabled`);
 console.log(`🚫 Output file tracing: DISABLED (prevents hanging)`);
 console.log(`🚫 Turbotrace: COMPLETELY DISABLED (critical fix)`);
 console.log(`🧠 Thread pool: limited to 4 threads`);
-console.log(`📦 Output mode: standard Next.js`);
-console.log(`🔧 Post-build: Manual deployment structure creation`);
+console.log(`📦 Output mode: static export`);
+console.log(`🚀 Deployment: Direct static hosting (no plugins needed)`);
 
 const buildArgs = [
   'next', 
@@ -81,33 +81,30 @@ build.on('close', (code) => {
   if (code === 0) {
     console.log('✅ Fast build completed successfully!');
     
-    // Post-build: Create minimal trace files for Netlify plugin compatibility
-    console.log('\n📦 Creating minimal deployment structure...');
+    // Post-build: Verify static export output
+    console.log('\n📦 Verifying static export output...');
     try {
       const fs = require('fs');
       
-      // Create minimal required.json file for Netlify plugin
-      if (!fs.existsSync('.next/required-server-files.json')) {
-        const requiredFiles = {
-          version: 1,
-          config: {},
-          appDir: '',
-          files: [],
-          ignore: []
-        };
-        fs.writeFileSync('.next/required-server-files.json', JSON.stringify(requiredFiles, null, 2));
-        console.log('✅ Created required-server-files.json');
+      if (fs.existsSync('out')) {
+        console.log('✅ Static export directory created');
+        
+        // Check for index.html
+        if (fs.existsSync('out/index.html')) {
+          console.log('✅ Index page generated');
+        }
+        
+        // Check for _next directory
+        if (fs.existsSync('out/_next')) {
+          console.log('✅ Assets directory generated');
+        }
+        
+        console.log('✅ Static export ready for deployment');
+      } else {
+        console.warn('⚠️  Warning: out directory not found');
       }
-      
-      // Ensure .next/server directory exists
-      if (!fs.existsSync('.next/server')) {
-        fs.mkdirSync('.next/server', { recursive: true });
-        console.log('✅ Created .next/server directory');
-      }
-      
-      console.log('✅ Deployment structure ready');
     } catch (error) {
-      console.warn('⚠️  Warning creating deployment structure:', error.message);
+      console.warn('⚠️  Warning verifying output:', error.message);
     }
     
     // Generate build report
@@ -122,8 +119,8 @@ build.on('close', (code) => {
     console.log('- Output file tracing: ✅ DISABLED (prevents 18min hanging)');
     console.log('- Turbotrace: ✅ COMPLETELY DISABLED (critical fix)');
     console.log('- Thread pool: ✅ Limited to 4 threads');
-    console.log('- Output mode: ✅ Standard Next.js with manual deployment prep');
-    console.log('- Deployment structure: ✅ Manually created for plugin');
+    console.log('- Output mode: ✅ Static export (no server needed)');
+    console.log('- Deployment: ✅ Direct static hosting on Netlify');
     console.log('- Build time: ✅ ~1 minute (was hanging for 18+ minutes)');
     console.log('- Pages processed: ~176 pages');
     

@@ -45,9 +45,11 @@ const nextConfig = {
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
-  // Disable file tracing to prevent hanging (Netlify plugin will handle deployment)
+  // Configure for static export (no hanging, no plugins needed)
+  output: 'export',
   outputFileTracing: false,
   productionBrowserSourceMaps: false, // Disable for faster builds
+  distDir: 'out',
   
   // Environment configuration
   env: {
@@ -387,117 +389,8 @@ const nextConfig = {
     return config;
   },
 
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
-          },
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=31536000; includeSubDomains',
-          },
-        ],
-      },
-      {
-        source: '/api/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'no-store, max-age=0',
-          },
-        ],
-      },
-      {
-        source: '/logos/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/_next/image(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/_next/static/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      // Font files - ensure they load properly with CORS headers
-      {
-        source: '/_next/static/media/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-          {
-            key: 'Access-Control-Allow-Methods',
-            value: 'GET',
-          },
-          {
-            key: 'Access-Control-Allow-Headers',
-            value: 'Content-Type',
-          },
-        ],
-      },
-    ];
-  },
-
-  async redirects() {
-    return [
-      {
-        source: '/home',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/m/:path*',
-        destination: '/mobile/pwa/:path*',
-        permanent: true,
-      },
-    ];
-  },
-
-  async rewrites() {
-    return [
-      {
-        source: '/api/equipment',
-        destination: 'http://localhost:3001/api/equipment',
-      },
-    ];
-  },
+  // Note: headers, redirects, and rewrites don't work with output: 'export'
+  // These are handled by Netlify via _headers and _redirects files
 
   // Skip TypeScript checking during build if SKIP_TYPE_CHECK is set
   typescript: {

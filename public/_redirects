@@ -1,3 +1,6 @@
 # Static redirects
 /home / 301
 
+# SPA fallback for client-side routing (Next.js static export)
+/* /index.html 200
+
