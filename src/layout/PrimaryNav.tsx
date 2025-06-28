@@ -19,9 +19,11 @@ import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 import { Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { CartDrawer } from '@/components/cart/CartDrawer';
+import { LoginModal } from '@/components/auth/LoginModal';
 
 export function PrimaryNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
   const { user } = useAuth();
   const isLoggedIn = !!user;
   const isMobile = useIsMobile();
@@ -121,6 +123,10 @@ export function PrimaryNav() {
                     href="/auth/login"
                     className="text-sm hover:text-primary whitespace-nowrap"
                     data-testid="login-link"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setLoginOpen(true);
+                    }}
                   >
                     {t('auth.login')}
                   </Link>
@@ -145,6 +151,10 @@ export function PrimaryNav() {
                 href="/auth/login"
                 className="text-sm hover:text-primary"
                 data-testid="login-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setLoginOpen(true);
+                }}
               >
                 {t('auth.login')}
               </Link>
@@ -183,6 +193,7 @@ export function PrimaryNav() {
         </div>
       )}
       {isMobile && <MobileBottomNav unreadCount={unreadCount} />}
+      <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />
     </>
   );
 }
