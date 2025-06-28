@@ -1,15 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import { useLanguage, SupportedLanguage } from '@/context/LanguageContext';
+import {
+  useLanguage,
+  SupportedLanguage,
+  SUPPORTED_LANGUAGES
+} from '@/context/LanguageContext';
 import { safeStorage } from '@/utils/safeStorage';
 import { setCookie } from '@/utils/cookies';
 
 export function LanguageSwitcher() {
   const { t } = useTranslation();
   const { currentLanguage, changeLanguage, supportedLanguages } = useLanguage();
+  const availableLanguages =
+    supportedLanguages && supportedLanguages.length > 0
+      ? supportedLanguages
+      : SUPPORTED_LANGUAGES;
   const currentFlag =
-    supportedLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
+    availableLanguages.find((l) => l.code === currentLanguage)?.flag || '🌐';
   const [open, setOpen] = useState(false);
   const [highlighted, setHighlighted] = useState<number>(-1);
   const [announce, setAnnounce] = useState('');
@@ -22,7 +30,7 @@ export function LanguageSwitcher() {
     await changeLanguage(lang);
     setCookie('i18n_lang', lang);
     safeStorage.setItem('i18n_lang', lang);
-    const langName = supportedLanguages.find((l) => l.code === lang)?.name || lang;
+    const langName = availableLanguages.find((l) => l.code === lang)?.name || lang;
     setAnnounce(t('language.language_changed', { language: langName }));
     setOpen(false);
     buttonRef.current?.focus();
@@ -46,12 +54,12 @@ export function LanguageSwitcher() {
 
   useEffect(() => {
     if (open) {
-      const idx = supportedLanguages.findIndex((l) => l.code === currentLanguage);
+      const idx = availableLanguages.findIndex((l) => l.code === currentLanguage);
       setHighlighted(idx >= 0 ? idx : 0);
     } else {
       setHighlighted(-1);
     }
-  }, [open, currentLanguage, supportedLanguages]);
+  }, [open, currentLanguage, availableLanguages]);
 
   const handleButtonKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -63,24 +71,24 @@ export function LanguageSwitcher() {
   const handleListKeyDown = (e: React.KeyboardEvent<HTMLUListElement>) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
-      setHighlighted((h) => (h + 1) % supportedLanguages.length);
+      setHighlighted((h) => (h + 1) % availableLanguages.length);
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
-      setHighlighted((h) => (h - 1 + supportedLanguages.length) % supportedLanguages.length);
+      setHighlighted((h) => (h - 1 + availableLanguages.length) % availableLanguages.length);
     } else if (e.key === 'Home') {
       e.preventDefault();
       setHighlighted(0);
     } else if (e.key === 'End') {
       e.preventDefault();
-      setHighlighted(supportedLanguages.length - 1);
+      setHighlighted(availableLanguages.length - 1);
     } else if (e.key === 'Escape') {
       e.preventDefault();
       setOpen(false);
       buttonRef.current?.focus();
     } else if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      if (highlighted >= 0 && highlighted < supportedLanguages.length) {
-        const selectedLanguage = supportedLanguages[highlighted];
+      if (highlighted >= 0 && highlighted < availableLanguages.length) {
+        const selectedLanguage = availableLanguages[highlighted];
         if (selectedLanguage) {
           selectLanguage(selectedLanguage.code);
         }
@@ -114,7 +122,7 @@ export function LanguageSwitcher() {
           className="absolute right-0 mt-2 min-w-[8rem] rounded-md border border-zion-purple/20 bg-zion-blue-dark shadow-lg focus:outline-none"
           onKeyDown={handleListKeyDown}
         >
-          {supportedLanguages.map((lang, idx) => (
+          {availableLanguages.map((lang, idx) => (
             <li
               key={lang.code}
               role="option"
