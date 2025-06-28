@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -25,6 +26,14 @@ interface QuickAction {
 }
 
 export function QuickActions() {
+  const { user } = useAuth();
+  const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
+  const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin;
+
+  if (!isAllowed) {
+    return null;
+  }
+
   const [isVisible, setIsVisible] = useState(false);
   const [isProcessing, setIsProcessing] = useState<string | null>(null);
 
