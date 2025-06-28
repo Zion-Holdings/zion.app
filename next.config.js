@@ -296,32 +296,66 @@ const nextConfig = {
       'react-router-dom': path.resolve(__dirname, './src/shims/react-router-dom.ts'),
     };
 
-    // Build performance optimizations - only for client side
+    // Simplified bundle optimization for large applications (176+ pages)
     if (!isServer) {
       config.optimization = {
         ...config.optimization,
-        // Split chunks to improve build performance
+        // Safer chunk splitting for better performance
         splitChunks: {
           chunks: 'all',
+          minSize: 20000,
+          maxSize: 250000, // 250KB chunks
           cacheGroups: {
             default: false,
             vendors: false,
-            // Group vendor libraries
+            
+            // Framework chunk for React/Next.js
+            framework: {
+              chunks: 'all',
+              name: 'framework',
+              test: /[\\/]node_modules[\\/](react|react-dom|scheduler|next)[\\/]/,
+              priority: 40,
+              enforce: true,
+            },
+            
+            // UI libraries chunk
+            ui: {
+              name: 'ui-libs',
+              test: /[\\/]node_modules[\\/](@radix-ui|lucide-react|clsx)[\\/]/,
+              priority: 30,
+              enforce: true,
+            },
+            
+            // Vendor libraries
             vendor: {
               chunks: 'all',
               test: /[\\/]node_modules[\\/]/,
               name: 'vendors',
+              priority: 20,
               enforce: true,
             },
-            // Group common components
+            
+            // Common application code
             common: {
               name: 'common',
               minChunks: 2,
               chunks: 'all',
+              priority: 10,
               enforce: true,
             },
           },
         },
+        
+        // Safe optimization settings
+        moduleIds: 'deterministic',
+        chunkIds: 'deterministic',
+      };
+      
+      // Performance hints
+      config.performance = {
+        hints: false, // Disable warnings for large bundles
+        maxEntrypointSize: 512000, // 512KB
+        maxAssetSize: 512000,
       };
     }
 
