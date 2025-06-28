@@ -15,7 +15,7 @@
   CI = "true"
   SKIP_TYPE_CHECK = "true"
   
-  # Performance optimizations for large builds with Next.js plugin
+  # Performance optimizations for large builds (manual deployment structure)
   NEXT_DISABLE_CSS_INLINE = "true"
   NEXT_DISABLE_SOURCE_MAPS = "true"
   GENERATE_SOURCEMAP = "false"
@@ -23,8 +23,10 @@
   NEXT_PRIVATE_BUILD_CACHE = "false"
   NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
   
-  # CONTROLLED OPTIMIZATIONS: Limit trace collection for plugin compatibility
+  # CRITICAL FIX: Completely disable build trace collection to prevent hanging
+  NEXT_DISABLE_TRACE_COLLECTION = "true"
   NEXT_PRIVATE_OUTPUT_TRACE = "false"
+  NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false"
   UV_THREADPOOL_SIZE = "4"
   NODE_NO_WARNINGS = "1"
   NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
@@ -140,7 +142,7 @@
   NODE_ENV = "production"
   NEXT_TELEMETRY_DISABLED = "1"
   
-  # Production build optimizations with Next.js plugin
+  # Production build optimizations (manual deployment structure)
   NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
   NEXT_DISABLE_CSS_INLINE = "true"
   NEXT_DISABLE_SOURCE_MAPS = "true"
@@ -149,8 +151,10 @@
   NEXT_PRIVATE_BUILD_CACHE = "false"
   NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
   
-  # CONTROLLED OPTIMIZATIONS: Limit trace collection for plugin compatibility
+  # CRITICAL FIX: Completely disable build trace collection to prevent hanging
+  NEXT_DISABLE_TRACE_COLLECTION = "true"
   NEXT_PRIVATE_OUTPUT_TRACE = "false"
+  NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false"
   UV_THREADPOOL_SIZE = "4"
   NODE_NO_WARNINGS = "1"
   NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
