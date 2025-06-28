@@ -319,6 +319,16 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       return;
     }
 
+    // Attempt to automatically open the MetaMask install page if no provider is detected
+    if (typeof window !== 'undefined' && !(window as any).ethereum) {
+      try {
+        window.open('https://metamask.io/download.html', '_blank');
+        logInfo('WalletContext: No wallet provider detected. Opening MetaMask install page.');
+      } catch (installError) {
+        logWarn('WalletContext: Failed to open MetaMask install page.', { data: installError });
+      }
+    }
+
     try {
       await modalController.open();
     } catch (error: any) {
