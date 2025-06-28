@@ -58,7 +58,7 @@ export async function fetchEquipment(): Promise<ProductListing[]> {
       console.error("Error response data in fetchEquipment:", error.response.data);
       errorMessage = error.response.data?.error || `Server error: ${error.response.status}`;
     } else if (error.request) {
-      errorMessage = 'Network error - please check your connection';
+        errorMessage = 'Network error – please retry';
     }
     
     console.error("Failed to fetch equipment:", errorMessage);

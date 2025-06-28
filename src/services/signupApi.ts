@@ -49,7 +49,7 @@ export async function signup(payload: SignupPayload): Promise<SignupResponse> {
       }
     } else if (err.request) {
       // Network error
-      throw new Error('Network error. Please check your connection and try again.');
+      throw new Error('Network error – please retry.');
     } else {
       // Other error
       throw new Error(err.message || 'Signup failed');
