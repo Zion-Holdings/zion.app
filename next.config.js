@@ -45,11 +45,9 @@ const nextConfig = {
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
-  // Configure for static export to work with Netlify without plugins
-  output: 'export',
+  // Disable file tracing to avoid lengthy build trace step on Netlify
   outputFileTracing: false,
   productionBrowserSourceMaps: false, // Disable for faster builds
-  distDir: 'out',
   
   // Environment configuration
   env: {
@@ -71,16 +69,12 @@ const nextConfig = {
     // Disable CSS optimization for faster builds with many pages
     optimizeCss: false, 
     esmExternals: true,
-    // Memory and performance optimizations for 176+ pages
-    largePageDataBytes: 256 * 1000, // 256KB threshold for large pages
-          workerThreads: false, // Disable worker threads to reduce memory usage
+          // Memory and performance optimizations for 176+ pages
+      largePageDataBytes: 256 * 1000, // 256KB threshold for large pages
+      workerThreads: false, // Disable worker threads to reduce memory usage
       cpus: 2, // Limit to 2 CPUs for memory management
-      // CRITICAL FIX: Disable turbotrace to prevent build hanging
-      turbotrace: false, // Completely disable turbotrace to prevent hanging
       // Netlify-specific optimizations
       swcTraceProfiling: false, // Disable profiling for faster builds
-    // CRITICAL FIX: Disable output file tracing to prevent hanging
-    outputFileTracing: false, // Disable build trace collection that causes hanging
   },
 
   images: {

@@ -2,7 +2,7 @@
   # Use `npm ci` for deterministic installs
   # Generate Prisma client before building to ensure models are up to date
   command = "npm run build:netlify"
-  publish = "out"
+  publish = ".next"
   # Increase build timeout for 176+ pages
   command_timeout = "30m"
 
@@ -15,7 +15,7 @@
   CI = "true"
   SKIP_TYPE_CHECK = "true"
   
-  # Performance optimizations for large builds (static export)
+  # Performance optimizations for large builds with Next.js plugin
   NEXT_DISABLE_CSS_INLINE = "true"
   NEXT_DISABLE_SOURCE_MAPS = "true"
   GENERATE_SOURCEMAP = "false"
@@ -142,7 +142,7 @@
   NODE_ENV = "production"
   NEXT_TELEMETRY_DISABLED = "1"
   
-  # Production build optimizations (static export)
+  # Production build optimizations with Next.js plugin
   NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
   NEXT_DISABLE_CSS_INLINE = "true"
   NEXT_DISABLE_SOURCE_MAPS = "true"
