@@ -48,7 +48,8 @@ console.log(`⚙️  Static optimization: disabled`);
 console.log(`🚫 Build trace collection: disabled (CRITICAL FIX)`);
 console.log(`🛡️  Output file tracing: disabled (prevents hanging)`);
 console.log(`🧠 Thread pool: limited to 4 threads`);
-console.log(`🔌 Plugin: Essential Next.js (lightweight)`);
+console.log(`📦 Output mode: static export`);
+console.log(`🚀 No plugins required`);
 
 const buildArgs = [
   'next', 
@@ -92,7 +93,8 @@ build.on('close', (code) => {
     console.log('- Build trace collection: ✅ DISABLED (prevents hanging)');
     console.log('- Output file tracing: ✅ DISABLED (critical fix)');
     console.log('- Thread pool: ✅ Limited to 4 threads');
-    console.log('- Netlify plugin: ✅ Essential Next.js (lightweight)');
+    console.log('- Output mode: ✅ Static export (no plugins needed)');
+    console.log('- Deployment: ✅ Direct static hosting on Netlify');
     console.log('- Pages processed: ~176 pages');
     
   } else {

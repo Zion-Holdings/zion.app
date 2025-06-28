@@ -234,7 +234,6 @@
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
     "@eslint/js": "^9.29.0",
-    "@netlify/plugin-essential-nextjs": "^6.0.0",
     "@next/bundle-analyzer": "^14.2.30",
     "@pact-foundation/pact": "^15.0.1",
     "@playwright/test": "^1.53.1",

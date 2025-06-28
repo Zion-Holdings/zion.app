@@ -2,7 +2,7 @@
   # Use `npm ci` for deterministic installs
   # Generate Prisma client before building to ensure models are up to date
   command = "npm run build:netlify"
-  publish = ".next"
+  publish = "out"
   # Increase build timeout for 176+ pages
   command_timeout = "30m"
 
@@ -15,15 +15,13 @@
   CI = "true"
   SKIP_TYPE_CHECK = "true"
   
-  # Performance optimizations for large builds
+  # Performance optimizations for large builds (static export)
   NEXT_DISABLE_CSS_INLINE = "true"
   NEXT_DISABLE_SOURCE_MAPS = "true"
   GENERATE_SOURCEMAP = "false"
   NEXT_BUILD_WORKERS = "1"
   NEXT_PRIVATE_BUILD_CACHE = "false"
   NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
-  NEXT_PRIVATE_STANDALONE = "false"
-  NETLIFY_CACHE_NEXTJS = "false"
   
   # CRITICAL FIX: Disable build trace collection to prevent hanging
   NEXT_DISABLE_TRACE_COLLECTION = "true"
@@ -144,7 +142,7 @@
   NODE_ENV = "production"
   NEXT_TELEMETRY_DISABLED = "1"
   
-  # Production build optimizations
+  # Production build optimizations (static export)
   NODE_OPTIONS = "--no-deprecation --max-old-space-size=6144 --no-warnings"
   NEXT_DISABLE_CSS_INLINE = "true"
   NEXT_DISABLE_SOURCE_MAPS = "true"
@@ -152,8 +150,6 @@
   NEXT_BUILD_WORKERS = "1"
   NEXT_PRIVATE_BUILD_CACHE = "false"
   NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
-  NEXT_PRIVATE_STANDALONE = "false"
-  NETLIFY_CACHE_NEXTJS = "false"
   
   # CRITICAL FIX: Disable build trace collection to prevent hanging
   NEXT_DISABLE_TRACE_COLLECTION = "true"
@@ -207,12 +203,6 @@
   to = "/"
   status = 301
 
-# Handle Next.js client-side routing (fallback)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 [functions.environment]
   SENTRY_LOG_LEVEL = "debug"
 
@@ -222,9 +212,6 @@
 [functions.healthCheckCron]
     schedule = "*/5 * * * *"
 
-[[plugins]]
-  package = "@netlify/plugin-essential-nextjs"
-  
 [[plugins]]
   package = "netlify-plugin-cloudinary"
   [plugins.inputs]

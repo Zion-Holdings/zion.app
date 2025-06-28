@@ -45,9 +45,11 @@ const nextConfig = {
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
-  // Disable file tracing to avoid lengthy build trace step on Netlify
+  // Configure for static export to work with Netlify without plugins
+  output: 'export',
   outputFileTracing: false,
   productionBrowserSourceMaps: false, // Disable for faster builds
+  distDir: 'out',
   
   // Environment configuration
   env: {
