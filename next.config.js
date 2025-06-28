@@ -45,6 +45,8 @@ const nextConfig = {
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
+  // Disable file tracing to avoid lengthy build trace step on Netlify
+  outputFileTracing: false,
   productionBrowserSourceMaps: true,
   
   // Environment configuration
@@ -71,12 +73,8 @@ const nextConfig = {
     largePageDataBytes: 256 * 1000, // 256KB threshold for large pages
     workerThreads: false, // Disable worker threads to reduce memory usage
     cpus: 2, // Limit to 2 CPUs for memory management
-    // Build performance optimizations
-    turbotrace: {
-      contextDirectory: process.cwd(),
-      memoryLimit: 6000, // 6GB memory limit
-      logLevel: 'error', // Reduce logging for faster builds
-    },
+    // Disable turbotrace to speed up Netlify builds
+    turbotrace: false,
     // Netlify-specific optimizations
     swcTraceProfiling: false, // Disable profiling for faster builds
   },
