@@ -4,7 +4,11 @@ import '@testing-library/jest-dom';
 import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel';
 
 // Mock react-markdown
-jest.mock('react-markdown', () => (props: { children: React.ReactNode }) => <div data-testid="mock-markdown">{props.children}</div>);
+jest.mock('react-markdown', () => {
+  const MockMarkdown = (props: { children: React.ReactNode }) => <div data-testid="mock-markdown">{props.children}</div>;
+  MockMarkdown.displayName = 'MockMarkdown';
+  return MockMarkdown;
+});
 
 // Mock recharts
 jest.mock('recharts', () => {
@@ -14,6 +18,14 @@ jest.mock('recharts', () => {
   const MockCell = () => <div data-testid="mock-cell" />;
   const MockTooltip = () => <div data-testid="mock-tooltip" />;
   const MockLegend = () => <div data-testid="mock-legend" />;
+  
+  // Add display names
+  MockResponsiveContainer.displayName = 'MockResponsiveContainer';
+  MockPieChart.displayName = 'MockPieChart';
+  MockPie.displayName = 'MockPie';
+  MockCell.displayName = 'MockCell';
+  MockTooltip.displayName = 'MockTooltip';
+  MockLegend.displayName = 'MockLegend';
   return {
     ResponsiveContainer: MockResponsiveContainer,
     PieChart: MockPieChart,

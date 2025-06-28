@@ -151,8 +151,8 @@ const ProductListingCardComponent = ({
           <Image
             src={imageSrc}
             alt={listing.title}
-            layout="fill"
-            objectFit="cover"
+            fill={true}
+            style={{ objectFit: 'cover' }}
             onError={handleImageError}
             priority={false} // Assuming these are not LCP images
             sizes={isGrid ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" : "192px"} // 192px is w-48

@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { createMocks, createRequest, createResponse } from 'node-mocks-http';
+import { createMocks, createRequest as _createRequest, createResponse as _createResponse } from 'node-mocks-http';
 import productHandler from '@/pages/api/products/index';
 import { PrismaClient } from '@prisma/client';
 
@@ -22,8 +22,8 @@ jest.mock('@prisma/client', () => {
 let prisma: PrismaClient;
 
 describe('/api/products API Endpoint', () => {
-  let req: ReturnType<typeof createRequest>;
-  let res: ReturnType<typeof createResponse>;
+  let _req: ReturnType<typeof _createRequest>;
+  let _res: ReturnType<typeof _createResponse>;
 
   beforeEach(() => {
     jest.clearAllMocks();

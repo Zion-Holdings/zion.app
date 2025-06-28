@@ -60,9 +60,9 @@ export function TalentCard({
                 <Image
                   src={talent.profile_picture_url} 
                   alt={talent.full_name || 'Talent Avatar'}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-full" // Make sure image itself is rounded if layout fill is used in a rounded container
+                  fill={true}
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-full" // Make sure image itself is rounded if fill is used in a rounded container
                   onError={() => setAvatarError(true)}
                   priority={false}
                 />

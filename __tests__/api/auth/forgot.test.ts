@@ -22,12 +22,12 @@ describe('/api/auth/forgot API Endpoint', () => {
     const body = { email: 'test@example.com' }
     for (let i = 0; i < 5; i++) {
       mockedAxios.post.mockResolvedValueOnce({ status: 200, data: { ok: true } })
-      const { req, res } = createMocks<NextApiRequest, NextApiResponse>({ method: 'POST', body })
-      await forgotHandler(req, res)
+      const { req, res } = createMocks({ method: 'POST', body })
+      await forgotHandler(req as NextApiRequest, res as NextApiResponse)
     }
-    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({ method: 'POST', body })
+    const { req, res } = createMocks({ method: 'POST', body })
     mockedAxios.post.mockResolvedValueOnce({ status: 200, data: { ok: true } })
-    await forgotHandler(req, res)
+    await forgotHandler(req as NextApiRequest, res as NextApiResponse)
     expect(res._getStatusCode()).toBe(429)
   })
 })

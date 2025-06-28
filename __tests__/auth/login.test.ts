@@ -1,6 +1,6 @@
 import { loginUser } from '@/services/authService'; // registerUser removed as it's not the focus
 import { NextApiRequest, NextApiResponse } from 'next';
-import { vi, Mock, describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { vi, type Mock as _Mock, describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 // Mock Supabase client
 const mockSignInWithPassword = vi.fn();
@@ -8,18 +8,18 @@ const mockSignInWithPassword = vi.fn();
 vi.mock('@supabase/supabase-js', async (importOriginal) => {
   const actual = await importOriginal() as any;
   // Keep other mocks if they are used by other parts of the handler or related code
-  const _mockSignUp = vi.fn();
-  const _mockOnAuthStateChange = vi.fn(() => ({ data: { subscription: { unsubscribe: vi.fn() } } }));
-  const _mockGetSession = vi.fn().mockResolvedValue({ data: { session: null }, error: null });
+  const mockSignUp = vi.fn();
+  const mockOnAuthStateChange = vi.fn(() => ({ data: { subscription: { unsubscribe: vi.fn() } } }));
+  const mockGetSession = vi.fn().mockResolvedValue({ data: { session: null }, error: null });
 
   return {
     ...actual,
     createClient: vi.fn(() => ({
       auth: {
         signInWithPassword: mockSignInWithPassword,
-        signUp: _mockSignUp, // Keep if registerHandler is also tested here or needed by setup
-        onAuthStateChange: _mockOnAuthStateChange,
-        getSession: _mockGetSession,
+        signUp: mockSignUp, // Keep if registerHandler is also tested here or needed by setup
+        onAuthStateChange: mockOnAuthStateChange,
+        getSession: mockGetSession,
       },
       from: vi.fn().mockReturnThis(), // Generic from mock
     })),

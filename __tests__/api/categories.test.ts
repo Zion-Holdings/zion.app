@@ -1,7 +1,7 @@
 import categoriesApiHandler from '@/pages/api/categories'; // Correctly import the default export
 import { CATEGORIES } from '@/data/categories';
 // Prisma is now mocked from @prisma/client directly in the jest.mock call
-import { createMocks, createRequest, createResponse } from 'node-mocks-http';
+import { createMocks, createRequest as _createRequest, createResponse as _createResponse } from 'node-mocks-http';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { PrismaClient } from '@prisma/client';
 
@@ -52,7 +52,7 @@ describe('/api/categories API Endpoint', () => {
   test('should return default CATEGORIES if DB query returns empty array and CATEGORIES is not empty', async () => {
     mockPrismaCategory.findMany.mockResolvedValueOnce([]);
     // Ensure CATEGORIES has data for this test case
-    const originalCategories = [...CATEGORIES];
+    const _originalCategories = [...CATEGORIES];
     if (CATEGORIES.length === 0) {
         CATEGORIES.push({ id: 'fallback1', name: 'Fallback Category', slug: 'fallback-cat', icon: 'FallbackIcon' });
     }
@@ -68,14 +68,14 @@ describe('/api/categories API Endpoint', () => {
     expect(mockPrismaCategory.findMany).toHaveBeenCalledTimes(1);
 
     // Restore original CATEGORIES if modified
-    if (originalCategories.length === 0 && CATEGORIES.length > 0) {
+    if (_originalCategories.length === 0 && CATEGORIES.length > 0) {
         CATEGORIES.pop();
     }
   });
 
   test('should return empty array if DB query returns empty array and CATEGORIES is also empty', async () => {
     mockPrismaCategory.findMany.mockResolvedValueOnce([]);
-    const originalCategories = [...CATEGORIES];
+    const _originalCategories = [...CATEGORIES];
     // Temporarily empty CATEGORIES for this test
     const tempCategoriesStore = [...CATEGORIES];
     CATEGORIES.length = 0;

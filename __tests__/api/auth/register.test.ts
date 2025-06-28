@@ -32,46 +32,46 @@ describe('/api/auth/register API Endpoint', () => {
   });
 
   it('should return 405 if method is not POST', async () => {
-    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+    const { req, res } = createMocks({
       method: 'GET',
     });
 
-    await registerHandler(req, res);
+    await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
     expect(res._getStatusCode()).toBe(405);
     expect(res._getHeaders().allow).toContain('POST');
   });
 
   it('should return 400 if name is missing', async () => {
-    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+    const { req, res } = createMocks({
       method: 'POST',
       body: { email: 'test@example.com', password: 'Password123' }, // Missing name
     });
 
-    await registerHandler(req, res);
+    await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
     expect(res._getStatusCode()).toBe(400);
     expect(res._getJSONData().error).toContain('Name is required');
   });
 
   it('should return 400 if email is invalid', async () => {
-    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+    const { req, res } = createMocks({
       method: 'POST',
       body: { name: 'Test User', email: 'invalid-email', password: 'Password123' },
     });
 
-    await registerHandler(req, res);
+    await registerHandler(req as NextApiRequest, res as NextApiResponse);
     expect(res._getStatusCode()).toBe(400);
     expect(res._getJSONData().error).toContain('Invalid email address');
   });
 
   it('should return 400 if password is too short', async () => {
-    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+    const { req, res } = createMocks({
       method: 'POST',
       body: { name: 'Test User', email: 'test@example.com', password: 'short' },
     });
 
-    await registerHandler(req, res);
+    await registerHandler(req as NextApiRequest, res as NextApiResponse);
     expect(res._getStatusCode()).toBe(400);
     expect(res._getJSONData().error).toContain('Password must be at least 8 characters');
   });
@@ -80,12 +80,12 @@ describe('/api/auth/register API Endpoint', () => {
   it('should return 500 if AUTH0_ISSUER_BASE_URL is not set', async () => {
     delete process.env.AUTH0_ISSUER_BASE_URL; // Ensure it's not set
 
-    const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+    const { req, res } = createMocks({
       method: 'POST',
       body: { name: 'Test User', email: 'test@example.com', password: 'Password123' },
     });
 
-    await registerHandler(req, res);
+    await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
     expect(res._getStatusCode()).toBe(500);
     expect(res._getJSONData()).toEqual({
@@ -113,12 +113,12 @@ describe('/api/auth/register API Endpoint', () => {
           json: async () => ({ user_id: 'auth0|123', email: 'test@example.com', name: 'Test User' }),
         });
 
-      const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+      const { req, res } = createMocks({
         method: 'POST',
         body: validRequestBody,
       });
 
-      await registerHandler(req, res);
+      await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
       expect(res._getStatusCode()).toBe(201);
       expect(res._getJSONData().message).toBe('Registration successful. Please check your email to verify your account.');
@@ -129,11 +129,11 @@ describe('/api/auth/register API Endpoint', () => {
 
     it('should return 500 if AUTH0_CLIENT_ID is missing (config error before fetch)', async () => {
       delete process.env.AUTH0_CLIENT_ID;
-      const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+      const { req, res } = createMocks({
         method: 'POST',
         body: validRequestBody,
       });
-      await registerHandler(req, res);
+      await registerHandler(req as NextApiRequest, res as NextApiResponse);
       expect(res._getStatusCode()).toBe(500);
       expect(res._getJSONData().error).toContain('Auth0 configuration missing');
       expect(mockFetch).not.toHaveBeenCalled();
@@ -146,11 +146,11 @@ describe('/api/auth/register API Endpoint', () => {
         text: async () => 'Unauthorized client',
       });
 
-      const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+      const { req, res } = createMocks({
         method: 'POST',
         body: validRequestBody,
       });
-      await registerHandler(req, res);
+      await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
       expect(res._getStatusCode()).toBe(500);
       expect(res._getJSONData().error).toMatch(/Failed to get management token \(401\): Unauthorized client\. This usually indicates that the application is not authorized/);
@@ -164,11 +164,11 @@ describe('/api/auth/register API Endpoint', () => {
           text: async () => 'Client is not authorized to access this audience',
         });
 
-        const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+        const { req, res } = createMocks({
           method: 'POST',
           body: validRequestBody,
         });
-        await registerHandler(req, res);
+        await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
         expect(res._getStatusCode()).toBe(500);
         expect(res._getJSONData().error).toMatch(/Failed to get management token \(403\): Client is not authorized to access this audience\. This usually indicates that the application is not authorized/);
@@ -182,11 +182,11 @@ describe('/api/auth/register API Endpoint', () => {
         text: async () => 'Not Found',
       });
 
-      const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+      const { req, res } = createMocks({
         method: 'POST',
         body: validRequestBody,
       });
-      await registerHandler(req, res);
+      await registerHandler(req as NextApiRequest, res as NextApiResponse);
       expect(res._getStatusCode()).toBe(500);
       expect(res._getJSONData().error).toMatch(/Failed to get management token \(404\): Not Found\. This might indicate an incorrect Auth0 domain or audience configuration/);
       expect(mockFetch).toHaveBeenCalledTimes(1);
@@ -209,11 +209,11 @@ describe('/api/auth/register API Endpoint', () => {
           json: async () => ({ user_id: 'auth0|456', email: 'test@example.com', name: 'Test User' }),
         });
 
-      const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+      const { req, res } = createMocks({
         method: 'POST',
         body: validRequestBody,
       });
-      await registerHandler(req, res);
+      await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
       expect(res._getStatusCode()).toBe(201);
       expect(mockFetch).toHaveBeenCalledTimes(3); // 1 failed token, 1 successful token, 1 user creation
@@ -234,11 +234,11 @@ describe('/api/auth/register API Endpoint', () => {
       const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
       const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-      const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+      const { req, res } = createMocks({
         method: 'POST',
         body: validRequestBody,
       });
-      await registerHandler(req, res);
+      await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
       expect(res._getStatusCode()).toBe(500);
       // The MAX_RETRIES is 3, so it will try 3 times.
@@ -258,11 +258,11 @@ describe('/api/auth/register API Endpoint', () => {
       const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
 
-      const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+      const { req, res } = createMocks({
         method: 'POST',
         body: validRequestBody,
       });
-      await registerHandler(req, res);
+      await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
       expect(res._getStatusCode()).toBe(500);
       expect(res._getJSONData().error).toBe('Failed to get management token: No access_token in response.');
@@ -286,11 +286,11 @@ describe('/api/auth/register API Endpoint', () => {
       const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
       const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-      const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+      const { req, res } = createMocks({
         method: 'POST',
         body: validRequestBody,
       });
-      await registerHandler(req, res);
+      await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
       expect(res._getStatusCode()).toBe(201);
       expect(mockFetch).toHaveBeenCalledTimes(3); // 1 failed (network), 1 successful token, 1 user creation
@@ -311,11 +311,11 @@ describe('/api/auth/register API Endpoint', () => {
           json: async () => ({ statusCode: 409, message: 'The user already exists.'}),
         });
 
-      const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+      const { req, res } = createMocks({
         method: 'POST',
         body: validRequestBody,
       });
-      await registerHandler(req, res);
+      await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
       expect(res._getStatusCode()).toBe(409);
       expect(res._getJSONData().error).toBe('Email already registered');
@@ -337,11 +337,11 @@ describe('/api/auth/register API Endpoint', () => {
             }),
           });
 
-        const { req, res } = createMocks<NextApiRequest, NextApiResponse>({
+        const { req, res } = createMocks({
           method: 'POST',
           body: validRequestBody,
         });
-        await registerHandler(req, res);
+        await registerHandler(req as NextApiRequest, res as NextApiResponse);
 
         expect(res._getStatusCode()).toBe(400);
         expect(res._getJSONData().error).toBe('Password does not meet requirements');
