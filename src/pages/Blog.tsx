@@ -158,7 +158,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                     asChild
                     className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple w-fit"
                   >
-                    <Link href={`/blog/${featuredPost.slug}`} prefetch={false}>
+                    <Link href={`/blog/${featuredPost.slug}`}>
                       Read Article
                     </Link>
                   </Button>
@@ -211,7 +211,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                   asChild
                   className="bg-zion-blue-dark border border-zion-blue-light hover:border-zion-purple transition-all duration-300 group-hover:shadow-lg"
                 >
-                  <Link href={`/blog/${post.slug}`} className="block group" prefetch={false}>
+                  <Link href={`/blog/${post.slug}`} className="block group">
                   <div className="aspect-[16/9] relative overflow-hidden">
                     <OptimizedImage
                       src={post.featuredImage}
