@@ -101,11 +101,33 @@ if (typeof window !== "undefined" && window.fetch) {
         }
 
         // If shouldShowErrorToUser is true, proceed to notify.
-        const notify = (msg: string) => {
+        const statusTitle = (status: number): string => {
+          switch (status) {
+            case 401:
+              return 'Unauthorized';
+            case 403:
+              return 'Forbidden';
+            case 404:
+              return 'Not Found';
+            case 422:
+              return 'Validation Error';
+            case 429:
+              return 'Too Many Requests';
+            case 500:
+            case 502:
+            case 503:
+            case 504:
+              return 'Server Error';
+            default:
+              return 'Request Failed';
+          }
+        };
+
+        const notify = (msg: string, status?: number) => {
           const now = Date.now();
           if (msg !== lastMessage || now - lastTime > 5000) {
             toast({
-              title: "Request Failed",
+              title: status !== undefined ? statusTitle(status) : "Request Failed",
               description: msg,
               variant: "destructive",
             });
@@ -116,13 +138,13 @@ if (typeof window !== "undefined" && window.fetch) {
 
         // Handle specific error cases with user-friendly messages
         if (response.status === 401 && url.includes('/api/auth/session')) {
-          notify('Your session has expired. Please log in again.');
+          notify('Your session has expired. Please log in again.', response.status);
         } else if (response.status === 429) {
-          notify('Too many requests. Please wait a moment before trying again.');
+          notify('Too many requests. Please wait a moment before trying again.', response.status);
         } else if (response.status === 403) {
-          notify('Access denied. You may not have permission for this action.');
+          notify('Access denied. You may not have permission for this action.', response.status);
         } else if (response.status >= 500) {
-          notify('Server error. Please try again in a moment.');
+          notify('Server error. Please try again in a moment.', response.status);
         } else {
           // Try to get a more specific error message from the response
           try {
@@ -131,15 +153,15 @@ if (typeof window !== "undefined" && window.fetch) {
               const code = data.code || data.error;
               const message = data.message || data.error;
               if (message) {
-                notify(code ? `${code}: ${message}` : String(message));
+                notify(code ? `${code}: ${message}` : String(message), response.status);
               } else {
-                notify('Request failed. Please try again.');
+                notify('Request failed. Please try again.', response.status);
               }
             } else {
-              notify('Request failed. Please try again.');
+              notify('Request failed. Please try again.', response.status);
             }
           } catch {
-            notify('Request failed. Please try again.');
+            notify('Request failed. Please try again.', response.status);
           }
         }
       }
