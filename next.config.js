@@ -45,8 +45,8 @@ const nextConfig = {
   trailingSlash: false,
   reactStrictMode: true,
   swcMinify: true,
-  // Disable file tracing to avoid lengthy build trace step on Netlify
-  outputFileTracing: false,
+  // Enable minimal file tracing for Netlify plugin compatibility
+  outputFileTracing: true,
   productionBrowserSourceMaps: false, // Disable for faster builds
   
   // Environment configuration
@@ -69,12 +69,19 @@ const nextConfig = {
     // Disable CSS optimization for faster builds with many pages
     optimizeCss: false, 
     esmExternals: true,
-          // Memory and performance optimizations for 176+ pages
-      largePageDataBytes: 256 * 1000, // 256KB threshold for large pages
-      workerThreads: false, // Disable worker threads to reduce memory usage
-      cpus: 2, // Limit to 2 CPUs for memory management
-      // Netlify-specific optimizations
-      swcTraceProfiling: false, // Disable profiling for faster builds
+              // Memory and performance optimizations for 176+ pages
+    largePageDataBytes: 256 * 1000, // 256KB threshold for large pages
+    workerThreads: false, // Disable worker threads to reduce memory usage
+    cpus: 2, // Limit to 2 CPUs for memory management
+    // Controlled turbotrace to prevent hanging but allow plugin compatibility
+    turbotrace: {
+      logLevel: 'error',
+      memoryLimit: 512, // Low memory limit to prevent hanging
+      processCwd: process.cwd(),
+      contextDirectory: process.cwd(),
+    },
+    // Netlify-specific optimizations
+    swcTraceProfiling: false, // Disable profiling for faster builds
   },
 
   images: {

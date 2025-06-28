@@ -23,10 +23,8 @@
   NEXT_PRIVATE_BUILD_CACHE = "false"
   NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
   
-  # CRITICAL FIX: Disable build trace collection to prevent hanging
-  NEXT_DISABLE_TRACE_COLLECTION = "true"
+  # CONTROLLED OPTIMIZATIONS: Limit trace collection for plugin compatibility
   NEXT_PRIVATE_OUTPUT_TRACE = "false"
-  NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false"
   UV_THREADPOOL_SIZE = "4"
   NODE_NO_WARNINGS = "1"
   NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
@@ -151,10 +149,8 @@
   NEXT_PRIVATE_BUILD_CACHE = "false"
   NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
   
-  # CRITICAL FIX: Disable build trace collection to prevent hanging
-  NEXT_DISABLE_TRACE_COLLECTION = "true"
+  # CONTROLLED OPTIMIZATIONS: Limit trace collection for plugin compatibility
   NEXT_PRIVATE_OUTPUT_TRACE = "false"
-  NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false"
   UV_THREADPOOL_SIZE = "4"
   NODE_NO_WARNINGS = "1"
   NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
