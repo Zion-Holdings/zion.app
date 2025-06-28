@@ -1,0 +1,11 @@
+{
+  "description": "DevDependencies required for production builds on Netlify",
+  "dependencies": {
+    "typescript": "^5.8.3",
+    "@types/node": "^24.0.7",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@swc/core": "^1.12.7",
+    "@swc/helpers": "^0.5.17"
+  }
+} 

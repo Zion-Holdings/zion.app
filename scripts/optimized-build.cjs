@@ -2,6 +2,7 @@
 const { execSync, spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const process = require('process');
 
 // Enhanced memory and performance optimizations
 const optimizedEnv = {
@@ -73,6 +74,56 @@ const buildCommand = process.argv.includes('--analyze')
   : "npx next build --no-lint";
 
 console.log(`📦 Build command: ${buildCommand}`);
+
+// Install TypeScript in production mode
+console.log('📦 Installing TypeScript for production build...');
+try {
+  // Check if TypeScript is already available
+  try {
+    execSync('npx tsc --version', { stdio: 'pipe' });
+    console.log('✅ TypeScript is already available');
+  } catch {
+    // TypeScript not found, install it
+    // Read production dependencies
+    const prodDepsPath = path.join(__dirname, 'production-dependencies.json');
+    
+    if (fs.existsSync(prodDepsPath)) {
+      const prodDeps = JSON.parse(fs.readFileSync(prodDepsPath, 'utf8'));
+      
+      // Build install command with all required dependencies
+      const depsToInstall = Object.entries(prodDeps.dependencies)
+        .map(([pkg, version]) => `${pkg}@${version}`)
+        .join(' ');
+      
+      console.log('📦 Installing required build dependencies...');
+      execSync(`npm install ${depsToInstall} --no-save`, {
+        stdio: 'inherit',
+        cwd: process.cwd()
+      });
+    } else {
+      // Fallback: install essential dependencies directly
+      console.log('⚠️  production-dependencies.json not found, using fallback');
+      execSync('npm install typescript @types/node @types/react @types/react-dom @swc/core @swc/helpers --no-save', {
+        stdio: 'inherit',
+        cwd: process.cwd()
+      });
+    }
+    console.log('✅ Build dependencies installed successfully');
+  }
+} catch (error) {
+  console.error('❌ Failed to install build dependencies:', error.message);
+  console.log('🔄 Attempting to install all devDependencies as fallback...');
+  try {
+    execSync('npm install --production=false', {
+      stdio: 'inherit',
+      cwd: process.cwd()
+    });
+    console.log('✅ All dependencies installed successfully');
+  } catch (fallbackError) {
+    console.error('❌ Fallback installation also failed:', fallbackError.message);
+    process.exit(1);
+  }
+}
 
 try {
   console.log("\n🔍 Pre-build validation...");
