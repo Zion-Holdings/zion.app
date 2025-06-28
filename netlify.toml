@@ -1,7 +1,7 @@
 [build]
   # Use `npm ci` for deterministic installs
   # Generate Prisma client before building to ensure models are up to date
-  command = "npm run build:netlify"
+  command = "npm run build:netlify:prepare"
   # Netlify UI sets `publish` to `out` which causes the Next.js plugin to fail
   # because no exported directory exists. Explicitly publish the `.next`
   # directory so the plugin can run correctly.
