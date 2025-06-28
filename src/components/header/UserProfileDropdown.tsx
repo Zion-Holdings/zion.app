@@ -8,8 +8,10 @@ const UserProfileDropdown: React.FC = () => {
   const { logout, user } = useAuth(); // Destructure user as well, if needed for display or checks
   const dropdownRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLUListElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const previouslyFocused = useRef<HTMLElement | null>(null);
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const toggleDropdown = () => setIsOpen((o) => !o);
 
   const handleLogout = () => {
     logout();
@@ -30,9 +32,21 @@ const UserProfileDropdown: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      previouslyFocused.current = document.activeElement as HTMLElement;
+      setTimeout(() => {
+        menuRef.current?.querySelector<HTMLElement>('a,button')?.focus();
+      }, 0);
+    } else {
+      previouslyFocused.current?.focus();
+    }
+  }, [isOpen]);
+
   return (
     <div style={{ position: 'relative' }} ref={dropdownRef}>
       <button
+        ref={buttonRef}
         onClick={toggleDropdown}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
@@ -72,6 +86,7 @@ const UserProfileDropdown: React.FC = () => {
             ref={menuRef}
             style={{ listStyle: 'none', margin: 0, padding: '8px 0' }}
             role="menu"
+            aria-label="User menu"
             onKeyDown={(e) => {
               const items = Array.from(menuRef.current?.querySelectorAll<HTMLElement>('a,button') || []);
               const index = items.indexOf(document.activeElement as HTMLElement);

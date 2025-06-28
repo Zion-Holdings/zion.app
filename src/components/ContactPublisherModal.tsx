@@ -17,21 +17,26 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false); // New loading state
-  const firstInputRef = useRef(null);
+  const firstInputRef = useRef<HTMLInputElement | null>(null);
+  const lastFocusedRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (isOpen) {
+      lastFocusedRef.current = document.activeElement as HTMLElement;
 
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        onClose();
+      function handleKeyDown(e: KeyboardEvent) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          onClose();
+        }
       }
-    }
 
-    firstInputRef.current && (firstInputRef.current as HTMLInputElement).focus();
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+      firstInputRef.current?.focus();
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    } else {
+      lastFocusedRef.current?.focus();
+    }
   }, [isOpen, onClose]);
 
   if (!isOpen) {
@@ -107,6 +112,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
             type="submit"
             className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
             disabled={isLoading}
+            aria-label="Send message"
           >
             {isLoading ? 'Sending...' : 'Send Message'}
           </button>
@@ -115,6 +121,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
             onClick={onClose}
             className="ml-2 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 disabled:opacity-50"
             disabled={isLoading}
+            aria-label="Cancel"
           >
             Cancel
           </button>
