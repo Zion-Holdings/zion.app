@@ -1,38 +1,60 @@
-import { createServerClient } from '@supabase/ssr'
-import { NextResponse, type NextRequest } from 'next/server'
+import { createServerClient } from '@supabase/ssr';
+import { NextResponse, type NextRequest } from 'next/server';
+
+// Using console.error for logging in middleware as a dedicated logger might not be available/configured.
+// In a production setup, structured logging would be preferred.
 
 export async function updateSession(request: NextRequest) {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.error(
+      'CRITICAL: Supabase URL or Anon Key is not defined in environment variables. Middleware cannot proceed.'
+    );
+    const errorUrl = request.nextUrl.clone();
+    errorUrl.pathname = '/service-unavailable'; // Ensure this page exists and is static or public
+    errorUrl.search = '';
+    return NextResponse.redirect(errorUrl);
+  }
+
   let supabaseResponse = NextResponse.next({
     request,
-  })
+  });
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
+  let supabase;
+  try {
+    supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
       cookies: {
         getAll() {
-          return request.cookies.getAll()
+          return request.cookies.getAll();
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value))
+          cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value));
           supabaseResponse = NextResponse.next({
             request,
-          })
+          });
           cookiesToSet.forEach(({ name, value, options }) =>
             supabaseResponse.cookies.set(name, value, options)
-          )
+          );
         },
       },
-    }
-  )
+    });
+  } catch (initError) {
+    console.error('CRITICAL: Failed to initialize Supabase client in middleware.', initError);
+    const errorUrl = request.nextUrl.clone();
+    errorUrl.pathname = '/service-unavailable';
+    errorUrl.search = '';
+    return NextResponse.redirect(errorUrl);
+  }
 
   // Define public routes that don't require authentication
+  // Added '/service-unavailable' to the list of public routes.
   const publicRoutes = [
     '/',
     '/login',
     '/auth/login',
-    '/auth/register', 
+    '/auth/register',
     '/auth/verify-email',
     '/auth/forgot-password',
     '/signup',
@@ -47,24 +69,28 @@ export async function updateSession(request: NextRequest) {
     '/terms',
     '/offline',
     '/404',
-    '/500'
-  ]
+    '/500',
+    '/service-unavailable' // Ensure this error page is public
+  ];
 
   // Check if current path is a public route
-  const isPublicRoute = publicRoutes.some(route => 
-    request.nextUrl.pathname === route || 
-    request.nextUrl.pathname.startsWith(route + '/')
-  )
+  const isPublicRoute = publicRoutes.some(route =>
+    request.nextUrl.pathname === route ||
+    (route !== '/' && request.nextUrl.pathname.startsWith(route + '/')) // Avoids matching all paths for '/'
+  );
 
-  // Skip auth check for public routes, API routes, static files
+  // More specific checks for Next.js internals and static assets
+  const isNextInternal = request.nextUrl.pathname.startsWith('/_next/');
+  const isStaticAsset = /\.(?!html|json)([a-zA-Z0-9]+)$/.test(request.nextUrl.pathname) || request.nextUrl.pathname.startsWith('/static/') || request.nextUrl.pathname.startsWith('/images/');
+
+
   if (
     isPublicRoute ||
-    request.nextUrl.pathname.startsWith('/api') ||
-    request.nextUrl.pathname.startsWith('/_next') ||
-    request.nextUrl.pathname.startsWith('/static') ||
-    request.nextUrl.pathname.includes('.')
+    request.nextUrl.pathname.startsWith('/api/') || // API routes
+    isNextInternal || // Next.js internal files
+    isStaticAsset    // Other static assets like .ico, .png, etc.
   ) {
-    return supabaseResponse
+    return supabaseResponse;
   }
 
   // IMPORTANT: Avoid writing any logic between createServerClient and
@@ -74,45 +100,28 @@ export async function updateSession(request: NextRequest) {
   try {
     const {
       data: { user },
-      error
-    } = await supabase.auth.getUser()
+      error,
+    } = await supabase.auth.getUser();
 
-    // If there's an error getting user or no user, redirect to login
     if (error || !user) {
-      console.log('Middleware: No user found, redirecting to login from:', request.nextUrl.pathname)
-      
-      // Preserve the original URL as returnTo parameter
-      const url = request.nextUrl.clone()
-      const returnTo = encodeURIComponent(url.pathname + url.search)
-      url.pathname = '/auth/login'
-      url.search = `?returnTo=${returnTo}`
-      
-      return NextResponse.redirect(url)
+      console.log('Middleware: No user found or error, redirecting to login from:', request.nextUrl.pathname, error ? `Error: ${error.message}`: '');
+      const url = request.nextUrl.clone();
+      const returnTo = encodeURIComponent(url.pathname + url.search);
+      url.pathname = '/auth/login';
+      url.search = `?returnTo=${returnTo}`;
+      return NextResponse.redirect(url);
     }
 
-    // User is authenticated, allow access
-    console.log('Middleware: User authenticated, allowing access to:', request.nextUrl.pathname)
-    
-  } catch (error) {
-    console.error('Middleware: Error checking auth:', error)
-    // On error, redirect to login
-    const url = request.nextUrl.clone()
-    url.pathname = '/auth/login'
-    return NextResponse.redirect(url)
+    console.log('Middleware: User authenticated, allowing access to:', request.nextUrl.pathname);
+  } catch (authError: any) { // Added type annotation for authError
+    console.error('Middleware: Error during authentication check:', authError.message || authError);
+    const url = request.nextUrl.clone();
+    url.pathname = '/auth/login'; // Fallback to login on other auth check errors
+    return NextResponse.redirect(url);
   }
 
-  // IMPORTANT: You *must* return the supabaseResponse object as it is. If you're
-  // creating a new response object with NextResponse.next() make sure to:
-  // 1. Pass the request in it, like so:
-  //    const myNewResponse = NextResponse.next({ request })
-  // 2. Copy over the cookies, like so:
-  //    myNewResponse.cookies.setAll(supabaseResponse.cookies.getAll())
-  // 3. Change the myNewResponse object to fit your needs, but avoid changing
-  //    the cookies!
-  // 4. Finally:
-  //    return myNewResponse
-  // If this is not done, you may be causing the browser and server to go out
-  // of sync and terminate the user's session prematurely!
+  // IMPORTANT: You *must* return the supabaseResponse object as it is.
+  // ... (rest of the original comment) ...
 
-  return supabaseResponse
-} 
+  return supabaseResponse;
+}
