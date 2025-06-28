@@ -2,7 +2,8 @@
   # Use `npm ci` for deterministic installs
   # Generate Prisma client before building to ensure models are up to date
   command = "npm run build:netlify"
-  publish = ".next"
+  # Let Netlify auto-detect Next.js build output for proper plugin compatibility
+  # publish = ".next" - Removed to allow plugin to find standard Next.js structure
   # Increase build timeout for 176+ pages
   command_timeout = "30m"
 
