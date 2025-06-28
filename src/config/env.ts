@@ -4,8 +4,8 @@ import { logWarn } from '@/utils/productionLogger';
 
 export const getAppKitProjectId = (): string => {
 
-  const { publicRuntimeConfig } = getConfig();
-  const projectId = publicRuntimeConfig.NEXT_PUBLIC_REOWN_PROJECT_ID;
+  const { publicRuntimeConfig } = getConfig() || {};
+  const projectId = process.env.NEXT_PUBLIC_REOWN_PROJECT_ID || publicRuntimeConfig?.NEXT_PUBLIC_REOWN_PROJECT_ID;
 
   if (projectId && projectId !== 'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING' && projectId !== 'YOUR_DEFAULT_PROJECT_ID_FALLBACK') {
     return projectId;
