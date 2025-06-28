@@ -151,7 +151,7 @@ if (typeof window !== "undefined" && window.fetch) {
       if (!shouldFailSilently(url)) {
         const data = err?.response?.data;
         const code = data?.code || data?.error;
-        const message = data?.message || data?.error || 'Network error - please check your connection';
+        const message = data?.message || data?.error || 'Network error – please retry';
         const text = code ? `${code}: ${message}` : message;
         if (text !== lastMessage || Date.now() - lastTime > 5000) {
           toast({

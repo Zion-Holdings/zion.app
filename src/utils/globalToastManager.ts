@@ -496,7 +496,7 @@ export class EnhancedGlobalErrorHandler {
    */
   private getErrorMessage(error: string): string {
     if (error.includes('network') || error.includes('fetch')) {
-      return 'Network error - please check your connection and try again';
+      return 'Network error – please retry';
     }
     if (error.includes('timeout')) {
       return 'Request timed out - please try again';
