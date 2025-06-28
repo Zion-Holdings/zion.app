@@ -25,8 +25,18 @@ process.env.NEXT_PRIVATE_BUILD_CACHE = 'false';
 process.env.NEXT_PRIVATE_STATIC_OPTIMIZATION = 'false';
 process.env.NEXT_PRIVATE_STANDALONE = 'false';
 
+// CRITICAL FIX: Disable build trace collection that causes hanging
+process.env.NEXT_DISABLE_TRACE_COLLECTION = 'true';
+process.env.NEXT_PRIVATE_OUTPUT_TRACE = 'false';
+process.env.NEXT_PRIVATE_OUTPUT_FILE_TRACING = 'false';
+
 // Experimental optimizations for Netlify
 process.env.NETLIFY_CACHE_NEXTJS = 'false';
+
+// Additional memory and performance optimizations
+process.env.UV_THREADPOOL_SIZE = '4'; // Limit thread pool size
+process.env.NODE_NO_WARNINGS = '1';
+process.env.NEXT_PRIVATE_MINIMIZE_BUILD_TIME = 'true';
 
 console.log('🚀 Starting FAST build for 176+ pages...');
 console.log(`📊 Memory limit: 6GB`);
@@ -35,6 +45,9 @@ console.log(`⚡ CSS inlining: disabled`);
 console.log(`🔧 Source maps: disabled`);
 console.log(`💾 Build cache: disabled`);
 console.log(`⚙️  Static optimization: disabled`);
+console.log(`🚫 Build trace collection: disabled (CRITICAL FIX)`);
+console.log(`🛡️  Output file tracing: disabled (prevents hanging)`);
+console.log(`🧠 Thread pool: limited to 4 threads`);
 
 const buildArgs = [
   'next', 
@@ -75,6 +88,9 @@ build.on('close', (code) => {
     console.log('- Workers: ✅ Single worker for memory management');
     console.log('- Build cache: ✅ Disabled to prevent memory issues');
     console.log('- Static optimization: ✅ Disabled to prevent timeout');
+    console.log('- Build trace collection: ✅ DISABLED (prevents hanging)');
+    console.log('- Output file tracing: ✅ DISABLED (critical fix)');
+    console.log('- Thread pool: ✅ Limited to 4 threads');
     console.log('- Pages processed: ~176 pages');
     
   } else {

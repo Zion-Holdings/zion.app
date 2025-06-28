@@ -25,6 +25,14 @@
   NEXT_PRIVATE_STANDALONE = "false"
   NETLIFY_CACHE_NEXTJS = "false"
   
+  # CRITICAL FIX: Disable build trace collection to prevent hanging
+  NEXT_DISABLE_TRACE_COLLECTION = "true"
+  NEXT_PRIVATE_OUTPUT_TRACE = "false"
+  NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false"
+  UV_THREADPOOL_SIZE = "4"
+  NODE_NO_WARNINGS = "1"
+  NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
+  
   # Configure secrets scanning to omit legitimate public environment variables
   # NEXT_PUBLIC_* variables are meant to be public and embedded in client bundles
   SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME"
@@ -146,6 +154,14 @@
   NEXT_PRIVATE_STATIC_OPTIMIZATION = "false"
   NEXT_PRIVATE_STANDALONE = "false"
   NETLIFY_CACHE_NEXTJS = "false"
+  
+  # CRITICAL FIX: Disable build trace collection to prevent hanging
+  NEXT_DISABLE_TRACE_COLLECTION = "true"
+  NEXT_PRIVATE_OUTPUT_TRACE = "false"
+  NEXT_PRIVATE_OUTPUT_FILE_TRACING = "false"
+  UV_THREADPOOL_SIZE = "4"
+  NODE_NO_WARNINGS = "1"
+  NEXT_PRIVATE_MINIMIZE_BUILD_TIME = "true"
 
 [context.deploy-preview.environment]
   AUTH0_BASE_URL = "https://deploy-preview-${REVIEW_ID}--your-site.netlify.app"

@@ -71,14 +71,12 @@ const nextConfig = {
     largePageDataBytes: 256 * 1000, // 256KB threshold for large pages
     workerThreads: false, // Disable worker threads to reduce memory usage
     cpus: 2, // Limit to 2 CPUs for memory management
-    // Build performance optimizations
-    turbotrace: {
-      contextDirectory: process.cwd(),
-      memoryLimit: 6000, // 6GB memory limit
-      logLevel: 'error', // Reduce logging for faster builds
-    },
+    // CRITICAL FIX: Disable turbotrace to prevent build hanging
+    turbotrace: false, // Completely disable turbotrace to prevent hanging
     // Netlify-specific optimizations
     swcTraceProfiling: false, // Disable profiling for faster builds
+    // CRITICAL FIX: Disable output file tracing to prevent hanging
+    outputFileTracing: false, // Disable build trace collection that causes hanging
   },
 
   images: {
