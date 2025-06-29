@@ -100,7 +100,7 @@ export function FeatureCTAs({ className, style }: FeatureCTAsProps) {
       descriptionKey: 'project_management_desc',
       detailsKey: 'project_management_details',
       icon: <Calendar className="h-10 w-10 p-2 rounded-md bg-red-100 text-red-700" />,
-      link: '/dashboard/projects'
+      link: '/project-milestones'
     },
     {
       key: 'zion_hire_ai',
