@@ -1,7 +1,8 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { BrowserRouter as Router, Routes, Route, MemoryRouter } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
+import { useRouter } from 'next/router';
 import ResetPassword from '../../src/pages/ResetPassword'; // Adjust path as necessary
 // import * as authService from '../../src/services/auth'; // Adjust path
 
@@ -21,15 +22,17 @@ describe('ResetPassword Page', () => {
   //   authService.resetPassword.mockClear();
   // });
 
-  const renderWithRouter = (ui, { route = '/reset-password/testuid/testtoken', path = '/reset-password/:uid/:token' } = {}) => {
-    window.history.pushState({}, 'Test page', route);
+  const renderWithRouter = (ui, { route = '/reset-password/testuid/testtoken' } = {}) => {
+    (useRouter as any).mockReturnValue({
+      push: jest.fn(),
+      pathname: route,
+      asPath: route,
+      query: { uid: 'testuid', token: 'testtoken' }
+    });
     return render(
-      <MemoryRouter initialEntries={[route]}>
-        <Routes>
-          <Route path={path} element={ui} />
-          <Route path="/login" element={<div>Login Page Mock</div>} />
-        </Routes>
-      </MemoryRouter>
+      <MemoryRouterProvider url={route}>
+        {ui}
+      </MemoryRouterProvider>
     );
   };
 

@@ -1,16 +1,16 @@
-import { describe, it, expect, jest, afterEach } from '@jest/globals'; // Changed imports for Jest
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import { signupWithEmail } from '../../sdk/js/auth/index.js';
 
 describe('signupWithEmail', () => {
   afterEach(() => {
-    jest.restoreAllMocks(); // Changed vi.restoreAllMocks to jest.restoreAllMocks
+    vi.restoreAllMocks();
   });
 
   it('throws server provided error message', async () => {
-    global.fetch = jest.fn().mockResolvedValue({ // Changed vi.stubGlobal and vi.fn to jest.fn
+    global.fetch = vi.fn().mockResolvedValue({
       ok: false,
       status: 409,
-      json: jest.fn().mockResolvedValue({ error: 'Email already registered' }) // Changed vi.fn to jest.fn
+      json: vi.fn().mockResolvedValue({ error: 'Email already registered' })
     });
 
     await expect(

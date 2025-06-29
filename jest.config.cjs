@@ -13,6 +13,10 @@ module.exports = {
     // Handle image imports
     '\\.(gif|ttf|eot|svg|png|jpg|jpeg)$': '<rootDir>/tests/__mocks__/fileMock.js',
     // Alias for @/components, @/utils, etc.
+    // Specific aliases first
+    // Ensure more specific aliases come before the general one
+    '^@/pages/api/(.*)$': '<rootDir>/pages/api/$1',
+    '^@/pages/(.*)$': '<rootDir>/pages/$1',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
     '^@/utils/(.*)$': '<rootDir>/src/utils/$1',
     '^@/hooks/(.*)$': '<rootDir>/src/hooks/$1',

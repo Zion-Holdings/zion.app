@@ -48,11 +48,11 @@ if (!i18n) {
     supportedLngs: ['en', 'en-US', 'es', 'es-ES', 'fr', 'pt', 'ar'],
     debug: false, // Disabled debug to reduce console noise - enable only when needed
     // Silence noisy i18next warnings in development logs
-    logger: {
-      log: () => {},
-      warn: () => {},
-      error: console.error,
-    },
+    // logger: {
+    //   log: () => {},
+    //   warn: () => {},
+    //   error: console.error,
+    // },
     interpolation: {
       escapeValue: false, // React already escapes by default
     },
