@@ -221,7 +221,9 @@
     "payment_success_title": "Paiement Réussi!",
     "payment_success_message": "Votre paiement a été traité avec succès. Vous avez maintenant accès à toutes les fonctionnalités premium.",
     "go_to_dashboard": "Aller au Tableau de Bord",
-    "go_to_marketplace": "Aller au Marketplace"
+    "go_to_marketplace": "Aller au Marketplace",
+    "home_page_load_error": "Échec du chargement de la page d'accueil. Veuillez réessayer plus tard.",
+    "test_error_button_text": "Lancer l'Erreur de Test"
   },
   "categories": {
     "services": "Services",

@@ -180,6 +180,8 @@
     "payment_success_message": "Tu pago se ha procesado correctamente. Ahora tienes acceso a todas las funciones premium.",
     "go_to_dashboard": "Ir al Panel",
     "go_to_marketplace": "Ir al Marketplace",
+    "home_page_load_error": "Error al cargar la página de inicio. Por favor, inténtalo de nuevo más tarde.",
+    "test_error_button_text": "Lanzar Error de Prueba",
     "failed_to_load": "No se pudo cargar",
     "failed_to_save": "Error al guardar",
     "failed_to_connect": "Error de conexión",

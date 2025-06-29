@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 import Home from '@/pages/Home';
 import type { GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
@@ -67,6 +68,8 @@ const ErrorTestButton = () => {
     }
   };
 
+  const { t } = useTranslation(); // Added this line
+
   return (
     <button
       onClick={handleClick}
@@ -83,12 +86,13 @@ const ErrorTestButton = () => {
         zIndex: 1000
       }}
     >
-      Throw Test Error
+      {t('test_error_button_text')}
     </button>
   );
 };
 
 const IndexPage: React.FC<HomePageProps> = (props) => {
+  const { t } = useTranslation();
   const router = useRouter();
   const showDebug = router.query.debug === 'true';
   const showButton = process.env.NODE_ENV === 'development' || showDebug;
@@ -97,7 +101,7 @@ const IndexPage: React.FC<HomePageProps> = (props) => {
     <>
       {props.hasError && (
         <div className="container mx-auto px-4 py-4">
-          <ErrorBanner msg={props.errorMessage || "Failed to load home page."} />
+          <ErrorBanner msg={props.errorMessage || t('home_page_load_error')} />
         </div>
       )}
       <Home />

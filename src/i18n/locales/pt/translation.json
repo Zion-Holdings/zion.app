@@ -176,7 +176,9 @@
     "payment_success_title": "Pagamento Realizado!",
     "payment_success_message": "Seu pagamento foi processado com sucesso. Agora você tem acesso a todos os recursos premium.",
     "go_to_dashboard": "Ir para o Painel",
-    "go_to_marketplace": "Ir para o Marketplace"
+    "go_to_marketplace": "Ir para o Marketplace",
+    "home_page_load_error": "Falha ao carregar a página inicial. Por favor, tente novamente mais tarde.",
+    "test_error_button_text": "Lançar Erro de Teste"
   },
   "categories": {
     "services": "Serviços",
