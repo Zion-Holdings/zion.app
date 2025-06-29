@@ -68,6 +68,11 @@ export function PointsBadge() {
             {isAuthenticated ? (
               <>
                 <p className="text-sm font-medium">Point Breakdown</p>
+                {points === 0 && (
+                  <p className="text-xs text-muted-foreground">
+                    You haven't earned any points yet.
+                  </p>
+                )}
                 <ul className="text-xs mt-1 space-y-0.5">
                   <li>Purchases: {breakdown.purchase}</li>
                   <li>Posts: {breakdown.post}</li>
