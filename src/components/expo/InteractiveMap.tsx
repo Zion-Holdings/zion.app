@@ -19,9 +19,10 @@ export function InteractiveMap() {
             <a
               key={loc.name}
               href={`https://${loc.subdomain}`}
-              className="absolute inline-flex items-center justify-center w-4 h-4 bg-zion-cyan rounded-full"
+              className="absolute inline-flex items-center justify-center w-4 h-4 bg-zion-cyan rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               style={{ top: loc.top, left: loc.left }}
               title={`Visit ${loc.name}`}
+              aria-label={`Visit ${loc.name}`}
             />
           ))}
         </div>
