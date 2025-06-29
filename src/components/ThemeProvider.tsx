@@ -1,6 +1,7 @@
 
 import { createContext, useContext, useLayoutEffect, useState } from "react"
 import { safeStorage } from "@/utils/safeStorage"
+import { getThemeColors, applyThemeColors } from "@/utils/themeUtils"
 
 type Theme = "dark" | "light" | "system"
 
@@ -36,19 +37,19 @@ export function ThemeProvider({
     const root = window.document.documentElement
     root.classList.remove("light", "dark")
 
+    let resolved: Theme = t
     if (t === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
+      resolved = window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light"
-
-      root.classList.add(systemTheme)
-      root.setAttribute("data-theme", systemTheme)
-      return
     }
 
-    root.classList.add(t)
-    root.setAttribute("data-theme", t)
+    root.classList.add(resolved)
+    root.setAttribute("data-theme", resolved)
+
+    const primaryColor = safeStorage.getItem("primaryColor") || "#3b82f6"
+    const colors = getThemeColors(resolved, primaryColor)
+    applyThemeColors(colors)
   }
 
   useLayoutEffect(() => {
