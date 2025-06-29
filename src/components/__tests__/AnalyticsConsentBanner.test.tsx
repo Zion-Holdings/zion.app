@@ -57,6 +57,12 @@ describe('AnalyticsConsentBanner', () => {
       expect(screen.getByText(/We use analytics cookies to improve the site/)).toBeInTheDocument();
     });
 
+    it('renders accessible buttons', () => {
+      render(<AnalyticsConsentBanner />);
+      expect(screen.getByLabelText('Accept analytics cookies')).toBeInTheDocument();
+      expect(screen.getByLabelText('Decline analytics cookies')).toBeInTheDocument();
+    });
+
     it('does not show banner if consent is "granted" in localStorage', () => {
       mockSafeStorage.getItem.mockReturnValue('granted');
       render(<AnalyticsConsentBanner />);
@@ -103,6 +109,12 @@ describe('AnalyticsConsentBanner', () => {
     it('shows banner if no consent cookie exists', () => {
       render(<AnalyticsConsentBanner />);
       expect(screen.getByText(/We use analytics cookies to improve the site/)).toBeInTheDocument();
+    });
+
+    it('renders accessible buttons', () => {
+      render(<AnalyticsConsentBanner />);
+      expect(screen.getByLabelText('Accept analytics cookies')).toBeInTheDocument();
+      expect(screen.getByLabelText('Decline analytics cookies')).toBeInTheDocument();
     });
 
     it('does not show banner if consent cookie is "granted"', () => {
