@@ -59,6 +59,7 @@ import '@/utils/globalFetchInterceptor';
 import '@/utils/consoleErrorToast';
 import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
 import { RouteChangeHandler } from '@/components/RouteChangeHandler';
+import RouteSEO from '@/components/RouteSEO';
 import { registerServiceWorker } from '@/serviceWorkerRegistration';
 import PageTransition from '@/components/PageTransition';
 import { AnimatePresence } from 'framer-motion';
@@ -290,6 +291,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                         <FeedbackProvider>
                                           <ThemeProvider>
                                             <AppLayout>
+                                              <RouteSEO />
                                               <RouteChangeHandler
                                                 resetScrollOnChange={true}
                                                 forceRerender={false}
