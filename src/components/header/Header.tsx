@@ -43,11 +43,11 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
     textColor: '#ffffff', // Default light text
   } : undefined);
   
-  const headerStyle = effectiveTheme ? {
-    backgroundColor: effectiveTheme.backgroundColor,
-    color: effectiveTheme.textColor,
-    borderColor: `${effectiveTheme.primaryColor}20`
-  } : {};
+  // const headerStyle = effectiveTheme ? {
+  //   backgroundColor: effectiveTheme.backgroundColor,
+  //   color: effectiveTheme.textColor,
+  //   borderColor: `${effectiveTheme.primaryColor}20`
+  // } : {};
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,8 +60,8 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   
   return (
     <header 
-      className="sticky top-0 z-50 w-full border-b border-zion-purple/20 bg-zion-blue-dark/90 backdrop-blur-md"
-      style={headerStyle}
+      className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md text-foreground"
+      // style={headerStyle} // Removed inline style
     >
       <div className="container flex h-16 items-center px-4 sm:px-6">
         <Logo customLogo={customLogo}  />
@@ -105,14 +105,14 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             <>
               <Link
                 href="/auth/login"
-                className="text-sm text-white hover:text-zion-cyan"
+                className="text-sm text-foreground hover:text-primary"
                 aria-label="Login"
               >
                 Login
               </Link>
               <Link
                 href="/signup"
-                className="ml-2 text-sm text-white hover:text-zion-cyan"
+                className="ml-2 text-sm text-foreground hover:text-primary"
                 aria-label="Sign up"
               >
                 Sign up
@@ -122,7 +122,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           <LanguageSelector />
           {user && (
             <span
-              className="hidden sm:block text-sm text-white mr-2"
+              className="hidden sm:block text-sm text-foreground mr-2"
               data-testid="header-greeting"
             >
               {t('general.greeting_user', { name: firstName })}

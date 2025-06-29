@@ -46,7 +46,7 @@ export function LanguageSelector() {
         <Button
           variant="ghost"
           size="icon"
-          className="text-white hover:bg-zion-purple/10 relative"
+          className="text-foreground hover:bg-accent hover:text-accent-foreground relative"
           aria-label={t('general.select_language')}
           aria-expanded={isOpen}
           tabIndex={0}
@@ -62,7 +62,7 @@ export function LanguageSelector() {
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className="bg-zion-blue-dark border border-zion-purple/20 min-w-[140px]"
+        className="bg-popover border border-border min-w-[140px]" // Use popover background and standard border
         sideOffset={5}
       >
         {availableLanguages.map((lang) => (
@@ -70,8 +70,8 @@ export function LanguageSelector() {
             key={lang.code}
             className={`cursor-pointer transition-colors ${
               currentLanguage === lang.code 
-                ? 'bg-zion-purple/20 text-zion-cyan' 
-                : 'text-white hover:bg-zion-purple/10'
+                ? 'bg-primary/20 text-primary' // Use primary color for selected
+                : 'text-popover-foreground hover:bg-accent hover:text-accent-foreground' // Use popover text and accent for hover
             }`}
             onClick={() => handleLanguageChange(lang.code)}
             onSelect={() => handleLanguageChange(lang.code)}
@@ -80,7 +80,7 @@ export function LanguageSelector() {
               <span className="text-lg flex-shrink-0">{lang.flag}</span>
               <span className="flex-1">{t(`language.${lang.code}`)}</span>
               {currentLanguage === lang.code && (
-                <span className="text-zion-cyan text-xs">✓</span>
+                <span className="text-primary text-xs">✓</span> // Use primary color for checkmark
               )}
             </div>
           </DropdownMenuItem>
