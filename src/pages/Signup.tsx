@@ -227,6 +227,18 @@ export default function Signup() {
     }
   });
 
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    formik.setTouched({
+      name: true,
+      email: true,
+      password: true,
+      confirm: true,
+      terms: true
+    });
+    await formik.handleSubmit(e);
+  };
+
   // After successful registration, guide the user to the verification screen
   useEffect(() => {
     if (emailVerificationRequired && formik.values.email) {
@@ -267,7 +279,7 @@ export default function Signup() {
               </p>
             </div>
           )}
-          <form onSubmit={formik.handleSubmit} className="space-y-4" noValidate>
+          <form onSubmit={handleFormSubmit} className="space-y-4" noValidate>
           {/* Show Health Check Warning */}
           {healthCheckError && (
             <Alert variant="destructive" className="border-yellow-500 bg-yellow-50 text-yellow-900">
