@@ -296,13 +296,18 @@ function ensureEquipmentImages(equipment: ProductListing[]): ProductListing[] {
   }));
 }
 
+interface EquipmentQuery {
+  page?: string | string[];
+  limit?: string | string[];
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ProductListing[] | { error: string }>
 ) {
   // Reduce timeout to 5 seconds for faster failure detection
   const timeout = setTimeout(() => {
-    if (!(res as any).headersSent) {
+    if (!res.headersSent) {
       res.status(408).json({ error: 'Request timeout after 5 seconds' });
     }
   }, 5000);
@@ -315,11 +320,15 @@ export default async function handler(
     }
 
     // Handle pagination params - default limit to 12 as requested
-    const page = parseInt(((req.query as any).page as string) || '1', 10);
-    const limit = Math.min(parseInt(((req.query as any).limit as string) || '12', 10), 50); // Cap at 50 for performance
-    const skip = (page - 1) * limit;
+    const { page = '1', limit: limitQuery = '12' } = req.query as EquipmentQuery;
+    const pageNumber = parseInt(Array.isArray(page) ? page[0] : page, 10);
+    const limitNumber = Math.min(
+      parseInt(Array.isArray(limitQuery) ? limitQuery[0] : limitQuery, 10),
+      50
+    ); // Cap at 50 for performance
+    const skip = (pageNumber - 1) * limitNumber;
 
-    console.log(`Equipment API: page=${page}, limit=${limit}, skip=${skip}, total=${mockEquipment.length}`);
+    console.log(`Equipment API: page=${pageNumber}, limit=${limitNumber}, skip=${skip}, total=${mockEquipment.length}`);
 
     // Minimal delay for realistic API behavior
     await new Promise(resolve => setTimeout(resolve, 50));
