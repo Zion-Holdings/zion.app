@@ -28,6 +28,29 @@ export const useSocialAuth = () => {
     }
   };
 
+  const loginWithGitHub = async () => {
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "github",
+      });
+
+      if (error) {
+        toast({
+          title: "GitHub login failed",
+          description: error.message,
+          variant: "destructive",
+        });
+      }
+    } catch (error: any) {
+      logError('GitHub login error:', { data: error });
+      toast({
+        title: "GitHub login failed",
+        description: error.message || "An unexpected error occurred",
+        variant: "destructive",
+      });
+    }
+  };
+
   const loginWithFacebook = async () => {
     try {
       const { error } = await supabase.auth.signInWithOAuth({
@@ -74,5 +97,5 @@ export const useSocialAuth = () => {
     }
   };
 
-  return { loginWithGoogle, loginWithFacebook, loginWithTwitter };
+  return { loginWithGoogle, loginWithGitHub, loginWithFacebook, loginWithTwitter };
 };

@@ -43,6 +43,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     resetPassword,
     updateProfile,
     loginWithGoogle,
+    loginWithGitHub,
     loginWithFacebook,
     loginWithTwitter,
     loginWithWeb3
@@ -445,6 +446,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     },
     updateProfile,
     loginWithGoogle,
+    loginWithGitHub,
     loginWithFacebook,
     loginWithTwitter,
     loginWithWeb3,

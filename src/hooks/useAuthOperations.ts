@@ -285,6 +285,25 @@ export function useAuthOperations(
     }
   };
 
+  const loginWithGitHub = async () => {
+    setIsLoading(true);
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: "github",
+      });
+
+      if (error) {
+        toast({
+          variant: "destructive",
+          title: "Oh no! Something went wrong.",
+          description: error.message,
+        });
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const loginWithFacebook = async () => {
     setIsLoading(true);
     try {
@@ -372,6 +391,7 @@ export function useAuthOperations(
     resetPassword,
     updateProfile,
     loginWithGoogle,
+    loginWithGitHub,
     loginWithFacebook,
     loginWithTwitter,
     loginWithWeb3,
