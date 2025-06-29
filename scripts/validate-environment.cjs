@@ -6,15 +6,28 @@
  * Prevents deployment with missing or placeholder values
  */
 
-const chalk = require('chalk');
+let chalk;
+try {
+  chalk = require('chalk');
+} catch (err) {
+  chalk = new Proxy({}, {
+    get: () => (msg) => msg,
+  });
+}
 const fs = require('fs');
 const path = require('path');
-const dotenv = require('dotenv');
+let dotenv;
+try {
+  dotenv = require('dotenv');
+} catch (err) {
+  console.warn('⚠️  Optional dependency "dotenv" not found. Skipping env file loading.');
+  dotenv = null;
+}
 
 const envPath = path.resolve(process.cwd(), '.env.local');
 if (!fs.existsSync(envPath)) {
   console.warn(chalk.yellow('⚠️  .env.local file not found. Environment variables may be missing.'));
-} else {
+} else if (dotenv && typeof dotenv.config === 'function') {
   dotenv.config({ path: envPath });
 }
 
