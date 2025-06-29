@@ -41,8 +41,12 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
       }
     }
 
-    if (firstInputRef.current) {
-      firstInputRef.current.focus();
+      firstInputRef.current?.focus();
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    } else {
+      lastFocusedRef.current?.focus();
+      return undefined; // Or return () => {};
     }
 
     document.addEventListener('keydown', handleKeyDown);
