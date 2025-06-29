@@ -15,7 +15,7 @@ const buildDeps = [
 
 try {
   console.log('Installing:', buildDeps.join(', '));
-  execSync(`npm install ${buildDeps.join(' ')} --save-dev`, {
+  execSync(`npm install ${buildDeps.join(' ')} --save-dev --legacy-peer-deps`, {
     stdio: 'inherit'
   });
   console.log('✅ Build dependencies installed successfully');
