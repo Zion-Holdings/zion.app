@@ -4,7 +4,7 @@ import { z } from 'zod';
 import type { Document, Model } from 'mongoose';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { logError } from '@/utils/productionLogger';
-
+import { sendFeedbackEmail } from '@/lib/email';
 
 const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/zion';
 
@@ -24,7 +24,9 @@ interface FeedbackDoc extends Document {
   createdAt: Date;
 }
 
-const Feedback: Model<FeedbackDoc> = mongoose.models.Feedback || mongoose.model<FeedbackDoc>('Feedback', feedbackSchema);
+const Feedback: Model<FeedbackDoc> =
+  mongoose.models.Feedback ||
+  mongoose.model<FeedbackDoc>('Feedback', feedbackSchema);
 
 async function connect() {
   if (mongoose.connection.readyState === 0) {
@@ -50,14 +52,15 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const parsed = FeedbackValidator.safeParse(req.body);
   if (!parsed.success) {
-    return res.status(400).json({ 
-      error: parsed.error?.errors[0]?.message || 'Invalid feedback data' 
+    return res.status(400).json({
+      error: parsed.error?.errors[0]?.message || 'Invalid feedback data',
     });
   }
 
   try {
     await connect();
     await Feedback.create(parsed.data);
+    await sendFeedbackEmail(parsed.data).catch(() => undefined);
     return res.status(201).json({ success: true });
   } catch (err) {
     logError('Error saving feedback:', { data: err });

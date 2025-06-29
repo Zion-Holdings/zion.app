@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { motion } from 'framer-motion'
-import { WifiOff, RefreshCw, Home, Clock, Bookmark, Search } from 'lucide-react'
+import { WifiOff, RefreshCw, Home, ShoppingCart, Clock, Bookmark, Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -35,8 +35,12 @@ export default function OfflinePage() {
   }, [])
 
   const handleRetry = () => {
-    setRetryCount(prev => prev + 1)
-    window.location.reload()
+    try {
+      setRetryCount(prev => prev + 1)
+      window.location.reload()
+    } catch (err) {
+      console.error('Failed to reload page', err)
+    }
   }
 
   const quickActions = [
@@ -52,6 +56,13 @@ export default function OfflinePage() {
       description: 'Access your saved items',
       icon: Bookmark,
       href: '/bookmarks',
+      available: true
+    },
+    {
+      title: 'Visit Marketplace',
+      description: 'Browse all available services and gear',
+      icon: ShoppingCart,
+      href: '/marketplace',
       available: true
     },
     {
@@ -134,18 +145,30 @@ export default function OfflinePage() {
               {retryCount > 0 ? `Retry (${retryCount})` : 'Try Again'}
             </Button>
             
-            <Button 
-              asChild
-              variant="outline" 
-              size="lg"
-              className="flex items-center gap-2"
-            >
-              <Link href="/">
-                <Home className="w-5 h-5" />
-                Go to Homepage
-              </Link>
-            </Button>
-          </div>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="flex items-center gap-2"
+          >
+            <Link href="/">
+              <Home className="w-5 h-5" />
+              Go to Homepage
+            </Link>
+          </Button>
+
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="flex items-center gap-2"
+          >
+            <Link href="/marketplace">
+              <ShoppingCart className="w-5 h-5" />
+              Go to Marketplace
+            </Link>
+          </Button>
+        </div>
 
           {/* Quick Actions */}
           <motion.div

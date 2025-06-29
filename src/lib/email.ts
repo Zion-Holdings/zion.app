@@ -1,7 +1,6 @@
 import sgMail from '@sendgrid/mail';
 import { logInfo, logError } from '@/utils/productionLogger';
 
-
 interface EmailOptions {
   to: string;
   templateId: string;
@@ -49,7 +48,10 @@ export async function sendEmailWithSendGrid({
   }
 }
 
-export async function sendResetEmail(email: string, token: string): Promise<void> {
+export async function sendResetEmail(
+  email: string,
+  token: string,
+): Promise<void> {
   const apiKey = process.env.SENDGRID_API_KEY;
   if (!apiKey) {
     logError('SENDGRID_API_KEY is not set. Reset email not sent.');
@@ -75,6 +77,42 @@ export async function sendResetEmail(email: string, token: string): Promise<void
     logInfo(`Password reset email sent to ${email}`);
   } catch (error: any) {
     logError('Error sending password reset email:', { data: error.toString() });
+    if (error.response) {
+      logError('SendGrid error response:', { data: error.response.body });
+    }
+  }
+}
+
+export async function sendFeedbackEmail(data: {
+  rating: number;
+  comment?: string;
+  url?: string;
+  userAgent?: string;
+}): Promise<void> {
+  const apiKey = process.env.SENDGRID_API_KEY;
+  const to =
+    process.env.FEEDBACK_EMAIL_TO || process.env.NEXT_PUBLIC_SUPPORT_EMAIL;
+  if (!apiKey || !to) {
+    logError('SendGrid config missing. Feedback email not sent.');
+    return;
+  }
+
+  sgMail.setApiKey(apiKey);
+
+  const msg = {
+    to,
+    from: process.env.SENDGRID_FROM_EMAIL || 'noreply@example.com',
+    subject: 'New Feedback Received',
+    text: `Rating: ${data.rating}\nComment: ${data.comment || 'N/A'}\nURL: ${
+      data.url || 'N/A'
+    }\nUserAgent: ${data.userAgent || 'N/A'}`,
+  };
+
+  try {
+    await sgMail.send(msg);
+    logInfo(`Feedback email sent to ${to}`);
+  } catch (error: any) {
+    logError('Error sending feedback email:', { data: error.toString() });
     if (error.response) {
       logError('SendGrid error response:', { data: error.response.body });
     }

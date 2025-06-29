@@ -27,9 +27,10 @@ export function ThemeProvider({
   children,
   defaultTheme = "system",
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (safeStorage.getItem("theme") as Theme) || defaultTheme
-  )
+  const [theme, setTheme] = useState<Theme>(() => {
+    const stored = safeStorage.getItem("theme") as Theme | null
+    return stored || defaultTheme
+  })
 
   const applyTheme = (t: Theme) => {
     const root = window.document.documentElement
@@ -52,6 +53,7 @@ export function ThemeProvider({
 
   useLayoutEffect(() => {
     applyTheme(theme)
+    safeStorage.setItem("theme", theme)
   }, [theme])
 
   const setCurrentTheme = (newTheme: Theme) => {
