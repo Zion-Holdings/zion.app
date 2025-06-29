@@ -36,6 +36,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
       return () => document.removeEventListener('keydown', handleKeyDown);
     } else {
       lastFocusedRef.current?.focus();
+      return undefined; // Or return () => {};
     }
   }, [isOpen, onClose]);
 
