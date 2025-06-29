@@ -1,16 +1,13 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
+import { useRouter } from 'next/router';
 import ResetPasswordPage from '../ResetPassword'; // Adjust path as necessary
 import * as authService from '@/services/auth'; // To mock resetPassword
 import { toast } from '@/hooks/use-toast';
 
-// Mock react-router-dom hooks
+// Mock router
 const mockNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-  useParams: () => ({ token: 'test-token' }), // Default mock for useParams
-}));
+jest.mock('next/router', () => require('next-router-mock'));
 
 // Mock the toast hook
 jest.mock('@/hooks/use-toast', () => ({
@@ -26,12 +23,9 @@ jest.mock('@/services/auth', () => ({
 }));
 
 const TestWrapper = ({ children, initialRoute = '/reset-password/test-token' }) => (
-  <MemoryRouter initialEntries={[initialRoute]}>
-    <Routes>
-      <Route path="/reset-password/:token" element={children} />
-      <Route path="/login" element={<div>Login Page</div>} />
-    </Routes>
-  </MemoryRouter>
+  <MemoryRouterProvider url={initialRoute}>
+    {children}
+  </MemoryRouterProvider>
 );
 
 describe('ResetPasswordPage', () => {
@@ -98,14 +92,10 @@ describe('ResetPasswordPage', () => {
   });
 
   it('displays error if token is missing (simulated by different route)', () => {
-    // Override useParams mock for this specific test
-    jest.spyOn(require('react-router-dom'), 'useParams').mockReturnValueOnce({});
     render(
-      <MemoryRouter initialEntries={['/reset-password/']}>
-        <Routes>
-          <Route path="/reset-password/" element={<ResetPasswordPage />} />
-        </Routes>
-      </MemoryRouter>
+      <MemoryRouterProvider url="/reset-password/">
+        <ResetPasswordPage />
+      </MemoryRouterProvider>
     );
     expect(screen.getByText(/Invalid or missing reset token./i)).toBeInTheDocument();
   });

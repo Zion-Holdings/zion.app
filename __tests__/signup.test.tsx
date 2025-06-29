@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import Signup from '@/pages/Signup';
 import * as toastHook from '@/hooks/use-toast';
-import * as router from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { vi, expect, test } from 'vitest';
 
 vi.mock('@/hooks/useAuth', () => ({
@@ -18,15 +18,7 @@ vi.mock('@/hooks/useAuth', () => ({
 
 vi.mock('@/hooks/use-toast');
 
-vi.mock('react-router-dom', async () => {
-  const actual = await vi.importActual<typeof import('react-router-dom')>(
-    'react-router-dom'
-  );
-  return {
-    ...actual,
-    useNavigate: vi.fn(),
-  };
-});
+vi.mock('next/router', () => require('next-router-mock'));
 
 function mockFetch(responses: { status: number; body: any }[]) {
   global.fetch = vi.fn();
@@ -40,7 +32,7 @@ function mockFetch(responses: { status: number; body: any }[]) {
 
 test('successful registration redirects to dashboard', async () => {
   const navigateMock = vi.fn();
-  (router.useNavigate as any).mockReturnValue(navigateMock);
+  (useRouter as any).mockReturnValue({ push: navigateMock, pathname: '/signup', asPath: '/signup' });
   (toastHook.toast.success as any).mockImplementation(() => {});
   mockFetch([
     { status: 201, body: { accessToken: 'jwt' } },
@@ -48,9 +40,9 @@ test('successful registration redirects to dashboard', async () => {
   ]);
 
   render(
-    <MemoryRouter>
+    <MemoryRouterProvider>
       <Signup />
-    </MemoryRouter>
+    </MemoryRouterProvider>
   );
 
   // Verify form fields are present
