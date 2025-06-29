@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
+import { AuthButtons } from '@/components/AuthButtons';
 import { AlertCircle, CheckCircle, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { AuthLayout } from '@/layout';
@@ -471,6 +472,11 @@ export default function Signup() {
             </div>
           )}
           </form>
+          {!emailVerificationRequired && (
+            <div className="mt-6">
+              <AuthButtons providers={["google", "github"]} />
+            </div>
+          )}
         </div>
       </div>
     </AuthLayout>
