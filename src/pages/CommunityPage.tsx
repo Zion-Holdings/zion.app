@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import CreatePostButton from "@/components/community/CreatePostButton";
+import { LoginModal } from "@/components/auth/LoginModal";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
 import ForumCategories from "@/components/community/ForumCategories";
@@ -22,6 +23,7 @@ export default function CommunityPage() {
   const [activeTab, setActiveTab] = useState("categories");
   const router = useRouter();
   const [showNewPost, setShowNewPost] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
   const { markCommunityVisited } = useAdvancedOnboardingStatus();
 
   // Combine posts for Q&A section, removing duplicates by id
@@ -36,11 +38,14 @@ export default function CommunityPage() {
   useEffect(() => {
     const wantsNew = router.query.new === "1";
     if (wantsNew && !user) {
-      const returnTo = encodeURIComponent(`/community?new=1${initialCategory ? `&category=${initialCategory}` : ""}`);
-      router.replace(`/auth/login?returnTo=${returnTo}`);
+      setLoginOpen(true);
+      setShowNewPost(false);
       return;
     }
     setShowNewPost(wantsNew && !!user);
+    if (user) {
+      setLoginOpen(false);
+    }
     markCommunityVisited();
   }, [router, user, initialCategory, markCommunityVisited]);
 
@@ -61,6 +66,15 @@ export default function CommunityPage() {
 
   const handleDialogChange = (open: boolean) => {
     setShowNewPost(open);
+    if (!open) {
+      const currentQuery = { ...router.query };
+      delete currentQuery.new;
+      router.replace({ pathname: router.pathname, query: currentQuery }, undefined, { shallow: true });
+    }
+  };
+
+  const handleLoginModalChange = (open: boolean) => {
+    setLoginOpen(open);
     if (!open) {
       const currentQuery = { ...router.query };
       delete currentQuery.new;
@@ -94,7 +108,10 @@ export default function CommunityPage() {
             </p>
           </div>
           
-          <CreatePostButton />
+          <CreatePostButton onRequireLogin={(target) => {
+            router.push(target);
+            setLoginOpen(true);
+          }} />
         </div>
 
         <Tabs value={activeTab} onValueChange={handleTabChange} className="mb-8">
@@ -158,6 +175,7 @@ export default function CommunityPage() {
         onOpenChange={handleDialogChange}
         initialCategory={initialCategory}
       />
+      <LoginModal isOpen={loginOpen} onOpenChange={handleLoginModalChange} />
       <ChatAssistantTrigger />
     </>
   );
