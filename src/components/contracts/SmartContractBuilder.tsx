@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Save } from "lucide-react";
@@ -87,6 +86,9 @@ export function SmartContractBuilder({
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle>Smart Contract Builder</DialogTitle>
+        </DialogHeader>
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-4">
           <div className="flex justify-between items-center">
             <TabsList className="grid grid-cols-2">
