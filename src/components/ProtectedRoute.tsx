@@ -31,8 +31,8 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
     }
 
     if (!user) {
-      const next = encodeURIComponent(router.asPath); // Use router.asPath for the full path with query
-      router.replace(`/login?next=${next}`);
+      const returnTo = encodeURIComponent(router.asPath); // Use router.asPath for the full path with query
+      router.replace(`/auth/login?returnTo=${returnTo}`);
       return;
     }
 

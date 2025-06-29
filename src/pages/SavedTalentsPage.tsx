@@ -21,7 +21,7 @@ export default function SavedTalentsPage() {
 
   useEffect(() => {
     if (!user) {
-      router.push(`/login?next=${encodeURIComponent(router.asPath)}`);
+      router.push(`/auth/login?returnTo=${encodeURIComponent(router.asPath)}`);
     }
   }, [user, router]);
 

@@ -21,12 +21,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, returnUrl
 
   const handleLogin = () => {
     onClose();
-    router.push(`/auth/login?next=${encodeURIComponent(returnUrl)}`);
+    router.push(`/auth/login?returnTo=${encodeURIComponent(returnUrl)}`);
   };
 
   const handleSignUp = () => {
     onClose();
-    router.push(`/auth/register?next=${encodeURIComponent(returnUrl)}`);
+    router.push(`/auth/register?returnTo=${encodeURIComponent(returnUrl)}`);
   };
 
   if (!isOpen) {

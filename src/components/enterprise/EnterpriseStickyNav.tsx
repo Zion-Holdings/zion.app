@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 
 export function EnterpriseStickyNav() {
   const [open, setOpen] = useState(false);
@@ -17,16 +18,16 @@ export function EnterpriseStickyNav() {
           </button>
           <ul className={`${open ? "flex" : "hidden"} flex-col gap-4 md:flex md:flex-row md:gap-8 w-full md:w-auto`}>
             <li>
-              <a href="#features" className="text-sm font-medium hover:text-primary">Features</a>
+              <Link href="#features" className="text-sm font-medium hover:text-primary">Features</Link>
             </li>
             <li>
-              <a href="#pricing" className="text-sm font-medium hover:text-primary">Pricing</a>
+              <Link href="#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
             </li>
             <li>
-              <a href="#testimonials" className="text-sm font-medium hover:text-primary">Testimonials</a>
+              <Link href="#testimonials" className="text-sm font-medium hover:text-primary">Testimonials</Link>
             </li>
             <li>
-              <a href="#contact" className="text-sm font-medium hover:text-primary">Contact Us</a>
+              <Link href="#contact" className="text-sm font-medium hover:text-primary">Contact Us</Link>
             </li>
           </ul>
         </div>

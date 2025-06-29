@@ -2,6 +2,7 @@ import { SEO } from "@/components/SEO";
 import { useState, useEffect } from "react";
 import { AlertCircle, CheckCircle, Clock, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { logWarn } from '@/utils/productionLogger';
 
@@ -255,7 +256,7 @@ export default function Status() {
                     asChild
                     className="text-zion-cyan border-zion-cyan hover:bg-zion-cyan/10"
                   >
-                    <a href="/contact">Contact Support</a>
+                    <Link href="/contact">Contact Support</Link>
                   </Button>
                   <Button
                     variant="outline"
