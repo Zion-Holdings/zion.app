@@ -8,6 +8,8 @@ interface CreatePostButtonProps {
   /** Optional category to preselect when creating a post */
   categoryId?: string;
   className?: string;
+  /** Callback invoked when the user must log in */
+  onRequireLogin?: (target: string) => void;
 }
 
 /**
@@ -15,7 +17,7 @@ interface CreatePostButtonProps {
  * If the user is not authenticated, they are redirected to the
  * login page with a "next" parameter so they can come back after logging in.
  */
-export function CreatePostButton({ categoryId, className }: CreatePostButtonProps) {
+export function CreatePostButton({ categoryId, className, onRequireLogin }: CreatePostButtonProps) {
   const { user } = useAuth();
   const router = useRouter();
   const { toast } = useToast();
@@ -28,16 +30,18 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
     if (user) {
       router.push(target);
     } else {
-      // Show informative toast
       toast({
         title: "Login Required",
-        description: "Redirecting to login page...",
+        description: "Please log in to create a post.",
         variant: "default",
       });
-      
-      // Immediate redirect to login with return URL
-      const returnTo = encodeURIComponent(target);
-      router.push(`/auth/login?returnTo=${returnTo}`);
+
+      if (onRequireLogin) {
+        onRequireLogin(target);
+      } else {
+        const returnTo = encodeURIComponent(target);
+        router.push(`/auth/login?returnTo=${returnTo}`);
+      }
     }
   };
 

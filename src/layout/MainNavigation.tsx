@@ -8,9 +8,9 @@ import { useFavorites } from "@/hooks/useFavorites";
 import { useCart } from "@/context/CartContext";
 import { Heart, MessageSquare, CreditCard, ShoppingCart, Wallet } from "lucide-react";
 import { LanguageSelector } from '@/components/header/LanguageSelector';
-import { CartDrawer } from '@/components/cart/CartDrawer';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
 import { MiniCartPreview } from '@/components/cart/MiniCartPreview';
+import { LoginModal } from '@/components/auth/LoginModal';
 
 interface MainNavigationProps {
   isAdmin?: boolean;
@@ -22,11 +22,21 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Add state
   const { user } = useAuth();
   const isAuthenticated = !!user;
+  const [loginOpen, setLoginOpen] = useState(false);
   const { count } = useFavorites();
   const { items } = useCart();
   const cartCount = items.length;
   const router = useRouter(); // Changed from useLocation
   const { t } = useTranslation();
+
+  const handleCartClick = (e: React.MouseEvent) => {
+    if (!isAuthenticated) {
+      e.preventDefault();
+      setLoginOpen(true);
+      return;
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   const baseLinks = [
     {
@@ -205,7 +215,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
                   <Link
                     href="/cart"
                     aria-label={t('nav.cart')}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={handleCartClick}
                     className={cn(
                       'nav-link',
                       'inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
@@ -234,6 +244,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
           </div>
         </div>
       </nav>
+      <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />
     </>
   );
 }

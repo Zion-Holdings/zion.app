@@ -18,7 +18,7 @@ const features = [
   { key: 'enterprise_solutions', link: '/enterprise' },
   { key: 'developer_tools', link: '/developers' },
   { key: 'learning_resources', link: '/blog' },
-  { key: 'project_management', link: '/dashboard/projects' },
+  { key: 'project_management', link: '/project-milestones' },
   { key: 'zion_hire_ai', link: '/zion-hire-ai' },
   { key: 'admin_dashboard', link: '/features/admin-dashboard' },
   { key: 'talent_marketplace', link: '/features/talent-marketplace' },

@@ -119,7 +119,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                 <div className="aspect-video overflow-hidden rounded-lg">
                   <OptimizedImage
                     src={featuredPost.featuredImage}
-                    alt={featuredPost.title}
+                    alt={featuredPost.featuredImageAlt || featuredPost.title}
                     className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       const target = e.currentTarget as HTMLImageElement;
@@ -215,7 +215,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                   <div className="aspect-[16/9] relative overflow-hidden">
                     <OptimizedImage
                       src={post.featuredImage}
-                      alt={post.title}
+                      alt={post.featuredImageAlt || post.title}
                       className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
                         const target = e.currentTarget as HTMLImageElement;

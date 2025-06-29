@@ -67,6 +67,8 @@ export function FooterNewsletter(): React.ReactElement {
 
   return (
     <form
+      id="footer-newsletter-form"
+      aria-label="Newsletter sign-up"
       onSubmit={handleSubmit}
       className="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-2"
     >
@@ -76,7 +78,7 @@ export function FooterNewsletter(): React.ReactElement {
       <Input
         type="email"
         id="newsletter-email"
-        name="email"
+        name="newsletterEmail"
         placeholder="Enter your email"
         className="flex-grow bg-zion-blue-light dark:bg-zion-blue-dark text-black dark:text-white border-zion-purple/20 focus:border-zion-purple focus:ring-zion-purple placeholder-opacity-50 placeholder:text-center"
         value={email}
@@ -96,6 +98,7 @@ export function FooterNewsletter(): React.ReactElement {
       />
       <Button
         type="submit"
+        aria-label="Subscribe to newsletter"
         disabled={isSubmitting}
         className="bg-gradient-to-r from-zion-purple to-zion-purple-dark text-white hover:from-zion-purple-light hover:to-zion-purple"
       >

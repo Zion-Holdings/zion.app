@@ -34,7 +34,10 @@ export function ThemeProvider({
 
   const applyTheme = (t: Theme) => {
     const root = window.document.documentElement
+    const body = window.document.body
+
     root.classList.remove("light", "dark")
+    body.classList.remove("light", "dark")
 
     if (t === "system") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
@@ -44,11 +47,15 @@ export function ThemeProvider({
 
       root.classList.add(systemTheme)
       root.setAttribute("data-theme", systemTheme)
+      body.classList.add(systemTheme)
+      body.setAttribute("data-theme", systemTheme)
       return
     }
 
     root.classList.add(t)
     root.setAttribute("data-theme", t)
+    body.classList.add(t)
+    body.setAttribute("data-theme", t)
   }
 
   useLayoutEffect(() => {

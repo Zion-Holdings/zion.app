@@ -172,9 +172,10 @@ export function EnhancedSearchInput({
           e.preventDefault(); // Prevent form submission
           handleSelectSuggestion(filteredSuggestions[highlightedIndex]);
         } else if (value.trim()) {
-          // Allow form submission when there's a value and no suggestion is selected
-          // Don't prevent default - let the form handle submission
-          logInfo('EnhancedSearchInput: Allowing form submission for query:', { data: value });
+          // Manually trigger search navigation to ensure consistent behavior
+          e.preventDefault();
+          logInfo('EnhancedSearchInput manual submit:', { data: value });
+          router.push(`/search?q=${encodeURIComponent(value)}`);
           setIsFocused(false);
           setHighlightedIndex(-1);
           inputRef.current?.blur();

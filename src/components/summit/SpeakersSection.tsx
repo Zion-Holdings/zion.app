@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Twitter, Linkedin } from "lucide-react";
 
 interface Speaker {
   name: string;
@@ -38,10 +39,28 @@ export function SpeakersSection() {
               <p className="text-sm opacity-80">{sp.title}</p>
               <div className="flex justify-center gap-3 text-zion-cyan">
                 {sp.twitter && (
-                  <a href={sp.twitter} aria-label="Twitter" target="_blank" rel="noopener noreferrer">T</a>
+                  <a
+                    href={sp.twitter}
+                    aria-label="Twitter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    <Twitter className="h-4 w-4" aria-hidden="true" />
+                    <span className="sr-only">Twitter</span>
+                  </a>
                 )}
                 {sp.linkedin && (
-                  <a href={sp.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+                  <a
+                    href={sp.linkedin}
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    <Linkedin className="h-4 w-4" aria-hidden="true" />
+                    <span className="sr-only">LinkedIn</span>
+                  </a>
                 )}
               </div>
             </div>

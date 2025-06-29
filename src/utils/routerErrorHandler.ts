@@ -1,8 +1,11 @@
 import { NextRouter } from 'next/router';
-import { logError } from './productionLogger';
+// Use the centralized error logger which forwards errors to Sentry and LogRocket
+import { logError } from './logError';
 
 export function handleRouterError(error: Error, router: NextRouter) {
-  logError('Router error occurred:', error, {
+  // Capture the error using our centralized logger which sends data to Sentry
+  logError(error, {
+    message: 'Router error occurred',
     route: router.asPath,
     query: router.query,
     pathname: router.pathname,
@@ -49,15 +52,17 @@ export function setupRouterErrorHandlers(router: NextRouter) {
   };
 
   // Handle router errors
-  router.events.on('routeChangeError', (err, url) => {
+  const routeChangeErrorHandler = (err: unknown, url: string) => {
     console.error('Route change error:', err, 'URL:', url);
-    handleRouterError(err, router);
-  });
+    handleRouterError(err as Error, router);
+  };
+
+  router.events.on('routeChangeError', routeChangeErrorHandler);
 
   return () => {
     // Cleanup
     router.push = originalPush;
     router.replace = originalReplace;
-    router.events.off('routeChangeError', handleRouterError);
+    router.events.off('routeChangeError', routeChangeErrorHandler);
   };
 } 

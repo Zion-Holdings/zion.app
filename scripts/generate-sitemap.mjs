@@ -54,12 +54,15 @@ let routes = [
 // Remove duplicates and sort for a stable sitemap
 routes = [...new Set(routes)].sort();
 
-const baseUrl = 'https://app.ziontechgroup.com';
+const baseUrl =
+  process.env.NEXT_PUBLIC_APP_URL || 'https://app.ziontechgroup.com';
+const lastmod = new Date().toISOString().split('T')[0];
 let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
 xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 for (const route of routes) {
   xml += '  <url>\n';
   xml += `    <loc>${baseUrl}${route}</loc>\n`;
+  xml += `    <lastmod>${lastmod}</lastmod>\n`;
   xml += '  </url>\n';
 }
 xml += '</urlset>\n';

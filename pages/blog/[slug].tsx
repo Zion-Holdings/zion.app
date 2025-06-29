@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
-import { NextSeo } from '@/components/NextSeo';
+import AdvancedSEO from '@/components/seo/AdvancedSEO';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { AuthorBio } from '@/components/blog/AuthorBio';
@@ -70,34 +69,20 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
     return <div>Article not found</div>;
   }
   const articleLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.excerpt,
-    image: post.featuredImage,
-    datePublished: post.publishedDate,
-    author: {
-      '@type': 'Person',
-      name: post.author.name,
-    },
+    author: post.author.name,
+    publishedTime: post.publishedDate,
+    tags: post.tags || [],
   };
   const body = (post as any).body || post.content;
   return (
     <>
-      <NextSeo
+      <AdvancedSEO
         title={post.title}
         description={post.excerpt}
-        openGraph={{
-          title: post.title,
-          description: post.excerpt,
-          images: post.featuredImage
-            ? [{ url: post.featuredImage }]
-            : undefined,
-        }}
+        image={post.featuredImage}
+        type="article"
+        article={articleLd}
       />
-      <Head>
-        <script type="application/ld+json">{JSON.stringify(articleLd)}</script>
-      </Head>
       <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
         <h1>{post.title}</h1>
         {post.excerpt && <p className="lead">{post.excerpt}</p>}

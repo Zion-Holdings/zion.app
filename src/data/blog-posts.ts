@@ -9,6 +9,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Customer Support"
     ],
     "featuredImage": "https://images.unsplash.com/photo-1581091012184-7b3403d00985?auto=format&fit=crop&w=1200&h=630",
+    "featuredImageAlt": "Customer support agent using AI-powered tools",
     "author": {
       "name": "Editorial Team",
       "title": "Staff Writer",
@@ -31,6 +32,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Automation"
     ],
     "featuredImage": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&h=630",
+    "featuredImageAlt": "Developer optimizing machine learning models",
     "author": {
       "name": "Editorial Team",
       "title": "Staff Writer",
@@ -54,6 +56,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "SMB"
     ],
     "featuredImage": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&h=630",
+    "featuredImageAlt": "Business professionals analyzing growth charts",
     "author": {
       "name": "Editorial Team",
       "title": "Staff Writer",

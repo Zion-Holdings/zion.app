@@ -22,3 +22,4 @@ export * from './useSkeletonTimeout';
 export * from './useCurrency';
 export * from './useSessionDuration';
 export * from './useNavigationGestures';
+export * from './useFollowedCategories';
