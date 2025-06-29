@@ -27,7 +27,7 @@ export default function CreatePostPage() {
   useEffect(() => {
     if (!user) {
       const currentPath = router.asPath;
-      router.push(`/login?next=${encodeURIComponent(currentPath)}`);
+      router.push(`/auth/login?returnTo=${encodeURIComponent(currentPath)}`);
     }
   }, [user, router]);
   
