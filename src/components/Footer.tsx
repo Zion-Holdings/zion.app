@@ -60,6 +60,7 @@ export function Footer() {
                 title="Twitter"
               >
                 <Twitter className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Twitter</span>
               </a>
               <a
                 href={LINKEDIN_URL}
@@ -70,6 +71,7 @@ export function Footer() {
                 title="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">LinkedIn</span>
               </a>
               <a
                 href={FACEBOOK_URL}
@@ -80,6 +82,7 @@ export function Footer() {
                 title="Facebook"
               >
                 <Facebook className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Facebook</span>
               </a>
               <a
                 href={INSTAGRAM_URL}
@@ -90,6 +93,7 @@ export function Footer() {
                 title="Instagram"
               >
                 <Instagram className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Instagram</span>
               </a>
               <a
                 href={GITHUB_URL}
@@ -100,6 +104,7 @@ export function Footer() {
                 title="GitHub"
               >
                 <Github className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">GitHub</span>
               </a>
             </div>
           </div>
