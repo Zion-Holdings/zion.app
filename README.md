@@ -135,7 +135,11 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
     - Run `npm run clean:cache` to remove temporary log files and common build caches.
     - Regenerate the sitemap with `npm run sitemap` whenever routes change.
 
-10. **Payment Testing:**
+10. **Generate Press Kit Archive:**
+    - The downloadable press kit is not stored in the repository.
+    - Run `npm run build:media-kit` to create `public/toolkit_assets/media_kit.zip`.
+
+11. **Payment Testing:**
     - **Enable Test Mode:** Ensure `STRIPE_TEST_MODE=true` (for backend) and `NEXT_PUBLIC_STRIPE_TEST_MODE=true` (for frontend) are set in your environment (e.g., `.env.local` or CI/staging environment variables). This forces the application to use Stripe test API keys.
     - **Test Card:** Use the generic Stripe test card:
         - Card Number: `4242 4242 4242 4242`
