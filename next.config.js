@@ -1,5 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
+import CompressionPlugin from 'compression-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -539,6 +540,25 @@ const nextConfig = {
         ...config.resolve.alias,
         'lodash': 'lodash-es',
       };
+
+      // Compress assets to reduce bundle size
+      config.plugins.push(
+        new CompressionPlugin({
+          filename: '[path][base].gz',
+          algorithm: 'gzip',
+          test: /\.(js|css|html|svg)$/,
+          threshold: 10240,
+          minRatio: 0.8,
+        }),
+        new CompressionPlugin({
+          filename: '[path][base].br',
+          algorithm: 'brotliCompress',
+          compressionOptions: { level: 11 },
+          test: /\.(js|css|html|svg)$/,
+          threshold: 10240,
+          minRatio: 0.8,
+        })
+      );
     }
 
     return config;
