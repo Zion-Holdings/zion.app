@@ -1,5 +1,7 @@
 from pathlib import Path
 import os
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-placeholder'
@@ -139,4 +141,75 @@ SWAGGER_SETTINGS = {
             'name': 'X-API-KEY'
         }
     }
+}
+
+# -----------------------------------------------------------------------------
+# SENTRY CONFIGURATION (Error & Performance Monitoring)
+# -----------------------------------------------------------------------------
+SENTRY_DSN = os.environ.get('SENTRY_DSN') or os.environ.get('NEXT_PUBLIC_SENTRY_DSN')
+
+if SENTRY_DSN:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()],
+        traces_sample_rate=float(os.environ.get('SENTRY_TRACES_SAMPLE_RATE', 0.1)),
+        send_default_pii=True,
+        _experiments={"auto_enabling_integrations": True},
+    )
+
+# -----------------------------------------------------------------------------
+# LOGGING CONFIGURATION
+# -----------------------------------------------------------------------------
+# This configuration logs to console, a rotating file, and forwards ERROR level
+# events to Sentry automatically via the sentry_sdk logging integration.
+# The file handler uses daily rotation and keeps 7 days of logs.
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '[{asctime}] {levelname} {name} – {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname}: {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'file': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': BASE_DIR / 'logs' / 'django.log',
+            'when': 'midnight',
+            'backupCount': 7,
+            'formatter': 'verbose',
+        },
+        'sentry': {
+            'level': 'ERROR',
+            'class': 'sentry_sdk.integrations.logging.EventHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console', 'file', 'sentry'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        # Django's default request/500 handler
+        'django.request': {
+            'handlers': ['console', 'file', 'sentry'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        # Security errors, e.g. disallowed host
+        'django.security': {
+            'handlers': ['console', 'file', 'sentry'],
+            'level': 'WARNING',
+            'propagate': False,
+        },
+    },
 }
