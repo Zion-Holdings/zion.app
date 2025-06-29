@@ -43,7 +43,7 @@ export function AppHeader() {
       <header
         style={{ "--nav-height": "64px" } as React.CSSProperties}
         className={cn(
-          "sticky top-0 z-50 w-full border-b border-primary/20 bg-card/90 backdrop-blur-md",
+          "sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md text-foreground",
           { "bg-red-500": mobileMenuOpen }
         )}
       >
@@ -64,7 +64,7 @@ export function AppHeader() {
           <div className="md:hidden ml-auto mr-4">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-foreground/70 hover:text-foreground hover:bg-primary/10 focus:outline-none"
+              className="inline-flex items-center justify-center rounded-md p-2 text-foreground/70 hover:text-foreground hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-expanded={mobileMenuOpen}
               aria-label={t('general.toggle_mobile_menu')}
             >
@@ -119,7 +119,7 @@ export function AppHeader() {
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="relative bg-card border-t border-primary/20 h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="relative bg-background border-t border-border h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
             <MobileMenu 
               unreadCount={unreadCount} 
               onClose={() => setMobileMenuOpen(false)} 
