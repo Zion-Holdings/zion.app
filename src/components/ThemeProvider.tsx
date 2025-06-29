@@ -1,5 +1,5 @@
 
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useLayoutEffect, useState } from "react"
 import { safeStorage } from "@/utils/safeStorage"
 
 type Theme = "dark" | "light" | "system"
@@ -31,11 +31,11 @@ export function ThemeProvider({
     () => (safeStorage.getItem("theme") as Theme) || defaultTheme
   )
 
-  useEffect(() => {
+  const applyTheme = (t: Theme) => {
     const root = window.document.documentElement
     root.classList.remove("light", "dark")
 
-    if (theme === "system") {
+    if (t === "system") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
         .matches
         ? "dark"
@@ -46,12 +46,17 @@ export function ThemeProvider({
       return
     }
 
-    root.classList.add(theme)
-    root.setAttribute("data-theme", theme)
+    root.classList.add(t)
+    root.setAttribute("data-theme", t)
+  }
+
+  useLayoutEffect(() => {
+    applyTheme(theme)
   }, [theme])
 
   const setCurrentTheme = (newTheme: Theme) => {
     safeStorage.setItem("theme", newTheme);
+    applyTheme(newTheme);
     setTheme(newTheme);
   };
 
