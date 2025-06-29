@@ -42,10 +42,13 @@ export function PrimaryNav() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (query.trim()) {
-      logger.debug('PrimaryNav search submit:', query);
-      router.push(`/search?q=${encodeURIComponent(query)}`);
-      setQuery('');
+    const trimmed = query.trim();
+    if (trimmed) {
+      logger.debug('PrimaryNav search submit:', trimmed);
+      router
+        .push(`/search?q=${encodeURIComponent(trimmed)}`)
+        .then(() => setQuery(''))
+        .catch((err) => logger.error('Search navigation failed', err));
     }
   };
 
