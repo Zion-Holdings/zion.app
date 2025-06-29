@@ -14,6 +14,29 @@ if [ -d logs ]; then
   cp -r logs "$STAGING_DIR/"
 fi
 
+# Include server logs
+if [ -d server/logs ]; then
+  cp -r server/logs "$STAGING_DIR/server-logs"
+fi
+
+# Include Playwright logs
+if [ -d playwright-logs ]; then
+  cp -r playwright-logs "$STAGING_DIR/playwright-logs"
+fi
+
+# Include Cypress results
+if [ -d cypress/results ]; then
+  cp -r cypress/results "$STAGING_DIR/cypress-results"
+fi
+
+# Include Jest or other test results
+if [ -d test-results ]; then
+  cp -r test-results "$STAGING_DIR/test-results"
+fi
+if [ -f test_results.json ]; then
+  cp test_results.json "$STAGING_DIR/"
+fi
+
 # Copy root .log files
 shopt -s nullglob
 for f in *.log; do
