@@ -281,28 +281,19 @@ const nextConfig = {
       });
     }
 
-    // Optimize caching to reduce "Serializing big strings" warnings
+    // Fix webpack cache configuration to prevent build errors
     if (config.cache && config.cache.type === 'filesystem') {
-      config.cache.buildDependencies = {
-        ...config.cache.buildDependencies,
-        config: [__filename],
+      // Use memory cache instead of filesystem cache to prevent webpack validation errors
+      config.cache = {
+        type: 'memory',
+        maxGenerations: dev ? 1 : 5,
       };
-      
-      // Optimize cache serialization to reduce large string warnings
-      config.cache.compression = 'gzip';
-      config.cache.maxAge = 7 * 24 * 60 * 60 * 1000; // 7 days
-      
-      // Reduce cache store size to prevent large string serialization
-      config.cache.maxMemoryGenerations = dev ? 2 : 5; // Further reduced for memory efficiency
-      config.cache.maxGenerations = dev ? 3 : 8; // Limit total generations
-      
-      // Advanced cache optimization - simplified for compatibility
-      config.cache.store = 'pack';
-      config.cache.version = '1.0.1'; // Updated version
-      
-      // Additional optimizations to prevent large string serialization
-      config.cache.profile = false; // Disable profiling to reduce memory usage
-      config.cache.hashAlgorithm = 'md4'; // Faster hash algorithm
+    } else if (config.cache) {
+      // Ensure memory cache is properly configured
+      config.cache = {
+        type: 'memory',
+        maxGenerations: dev ? 1 : 5,
+      };
     }
 
     // Add optimization to prevent temporal dead zone issues
