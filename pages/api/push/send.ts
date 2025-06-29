@@ -27,11 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   await Promise.all(
     subs.map((sub: any) =>
-<<<<<<< HEAD
-      webpush.sendNotification(sub, payload).catch((err: Error) => {
-=======
       webpush.sendNotification(sub, payload).catch((err: any) => {
->>>>>>> fa9ab8f909ea4a4a6c97a76da7c965ba025bc27b
         logError('Push send failed', { data: err });
       })
     )
