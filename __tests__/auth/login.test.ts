@@ -1,38 +1,30 @@
-import { loginUser } from '@/services/authService'; // registerUser removed as it's not the focus
+import { loginUser } from '@/services/authService';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { vi, type Mock as _Mock, describe, it, expect, beforeEach, afterEach } from 'vitest';
 
-// Mock Supabase client
-const mockSignInWithPassword = vi.fn();
+// Use Jest syntax
+const mockSignInWithPassword = jest.fn();
 
-vi.mock('@supabase/supabase-js', async (importOriginal) => {
-  const actual = await importOriginal() as any;
-  // Keep other mocks if they are used by other parts of the handler or related code
-  const mockSignUp = vi.fn();
-  const mockOnAuthStateChange = vi.fn(() => ({ data: { subscription: { unsubscribe: vi.fn() } } }));
-  const mockGetSession = vi.fn().mockResolvedValue({ data: { session: null }, error: null });
-
+jest.mock('@supabase/supabase-js', () => {
+  // This inner mockSignInWithPassword is what the mock factory will use.
+  // It needs to be the same instance as the one tests will interact with.
+  // So, we assign the top-level mockSignInWithPassword here.
+  const actualCreateClient = jest.requireActual('@supabase/supabase-js').createClient;
   return {
-    ...actual,
-    createClient: vi.fn(() => ({
+    createClient: jest.fn(() => ({
       auth: {
         signInWithPassword: mockSignInWithPassword,
-        signUp: mockSignUp, // Keep if registerHandler is also tested here or needed by setup
-        onAuthStateChange: mockOnAuthStateChange,
-        getSession: mockGetSession,
+        signUp: jest.fn(), // Add other mocked methods if needed by loginHandler or its setup
+        onAuthStateChange: jest.fn(() => ({ data: { subscription: { unsubscribe: jest.fn() } } })),
+        getSession: jest.fn().mockResolvedValue({ data: { session: null }, error: null }),
       },
-      from: vi.fn().mockReturnThis(), // Generic from mock
+      from: jest.fn().mockReturnThis(),
     })),
-    __internalMockSignInWithPassword: mockSignInWithPassword,
   };
 });
 
-// Import the handler
+// Import the handler AFTER setting up the mock
 import loginHandler from '../../pages/api/auth/login';
 
-// Import the mock functions from the mocked module
-const supabaseMockModule = await import('@supabase/supabase-js');
-mockSignInWithPassword = (supabaseMockModule as any).__internalMockSignInWithPassword;
 
 // Helper to create mock NextApiRequest
 const mockApiReq = (body: any, method: string = 'POST') => ({
@@ -43,10 +35,10 @@ const mockApiReq = (body: any, method: string = 'POST') => ({
 // Helper to create mock NextApiResponse
 const mockApiRes = () => {
   const res: Partial<NextApiResponse> = {
-    status: vi.fn().mockReturnThis(),
-    json: vi.fn().mockReturnThis(),
-    setHeader: vi.fn().mockReturnThis(),
-    end: vi.fn().mockReturnThis(),
+    status: jest.fn().mockReturnThis(),
+    json: jest.fn().mockReturnThis(),
+    setHeader: jest.fn().mockReturnThis(),
+    end: jest.fn().mockReturnThis(),
   };
   return res as NextApiResponse;
 };
@@ -220,7 +212,7 @@ describe('loginUser Service', () => {
 
   afterEach(() => {
     global.fetch = originalFetch;
-    vi.restoreAllMocks();
+    jest.restoreAllMocks(); // Use jest.restoreAllMocks for Jest
   });
 
   it('should handle successful login', async () => {
@@ -229,7 +221,7 @@ describe('loginUser Service', () => {
       accessToken: 'mock-access-token',
       refreshToken: 'mock-refresh-token'
     };
-    global.fetch = vi.fn().mockResolvedValue({
+    global.fetch = jest.fn().mockResolvedValue({ // Use jest.fn()
       ok: true,
       status: 200,
       json: async () => mockSuccessResponse,
@@ -247,7 +239,7 @@ describe('loginUser Service', () => {
       error: 'Email not confirmed. Please check your inbox to verify your email.',
       code: 'EMAIL_NOT_CONFIRMED',
     };
-    global.fetch = vi.fn().mockResolvedValue({
+    global.fetch = jest.fn().mockResolvedValue({ // Use jest.fn()
       ok: false,
       status: 403,
       json: async () => mockErrorResponse,
@@ -260,9 +252,8 @@ describe('loginUser Service', () => {
   });
 
   it('should handle "Invalid credentials" (401) from API', async () => {
-    // Updated to expect the new error structure with 'code'
     const mockErrorResponse = { error: 'Invalid credentials', code: 'INVALID_CREDENTIALS' };
-    global.fetch = vi.fn().mockResolvedValue({
+    global.fetch = jest.fn().mockResolvedValue({ // Use jest.fn()
       ok: false,
       status: 401,
       json: async () => mockErrorResponse,
@@ -271,13 +262,12 @@ describe('loginUser Service', () => {
 
     const { res, data } = await loginUser('wrong@example.com', 'password123');
     expect(res.status).toBe(401);
-    expect(data).toEqual(mockErrorResponse); // Verify the data includes the code
+    expect(data).toEqual(mockErrorResponse);
   });
 
   it('should handle other errors (e.g., 500) from API', async () => {
-    // Updated to expect the new error structure with 'code'
     const mockErrorResponse = { error: 'Server error', code: 'LOGIN_FAILED' };
-     global.fetch = vi.fn().mockResolvedValue({
+     global.fetch = jest.fn().mockResolvedValue({ // Use jest.fn()
       ok: false,
       status: 500,
       json: async () => mockErrorResponse,
@@ -285,17 +275,15 @@ describe('loginUser Service', () => {
     });
     const { res, data } = await loginUser('test@example.com', 'password');
     expect(res.status).toBe(500);
-    expect(data).toEqual(mockErrorResponse); // Verify the data includes the code
+    expect(data).toEqual(mockErrorResponse);
   });
 
   it('should handle network errors during fetch', async () => {
-    global.fetch = vi.fn().mockRejectedValue(new Error('Network failed'));
+    global.fetch = jest.fn().mockRejectedValue(new Error('Network failed')); // Use jest.fn()
     try {
       await loginUser('test@example.com', 'password');
     } catch (e: any) {
       expect(e.message).toBe('Network failed');
     }
   });
-  // Removed the duplicate test for "should return 401 on login failure" as it was part of the API handler tests
-  // and the new tests cover various error scenarios more comprehensively.
 });
