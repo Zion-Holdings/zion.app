@@ -66,6 +66,7 @@
     "env:prebuild-check": "node scripts/pre-build-check.cjs",
     "env:dev": "node scripts/check-dev-environment.cjs",
     "build:report": "npm run build && node scripts/build-performance-report.cjs",
+    "build:media-kit": "node scripts/build-media-kit.cjs",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test:node": "node -v",
     "check-updates": "ncu",

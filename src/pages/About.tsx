@@ -11,19 +11,58 @@ export default function About() {
       name: "Alex Johnson",
       role: "CEO",
       image:
-        "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=300&q=80"
+        "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=300&q=80",
+      bio:
+        "Alex Johnson leads Zion as CEO, driving the company's vision to democratize AI globally. With over a decade of experience in technology startups, Alex previously built enterprise platforms adopted by Fortune 500 companies. At Zion, he focuses on building partnerships and ensuring that innovation benefits everyone. Alex believes in open collaboration and empowers the team to push boundaries while upholding transparency. Outside work, he mentors young entrepreneurs and enjoys exploring new cultures. He loves hiking, reading science fiction, and cooking."
     },
     {
       name: "Maria Chen",
       role: "CTO",
       image:
-        "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80"
+        "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80",
+      bio:
+        "Maria Chen, Zion's CTO, oversees the platform's technical strategy and architecture. She has led engineering teams at several AI-focused startups, delivering scalable solutions that power millions of users. At Zion, Maria champions a culture of experimentation and rigorous security, ensuring the marketplace remains reliable and cutting-edge. She collaborates closely with open-source communities and mentors young developers in her spare time. Maria holds a master's in computer science and enjoys painting landscapes when she's not coding. She also loves robotics projects."
     },
     {
       name: "Sam Lee",
-      role: "Head of Product",
+      role: "Head of Community",
       image:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80"
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80",
+      bio:
+        "Sam Lee serves as Zion's Head of Community, cultivating relationships with developers, partners, and customers worldwide. He previously launched multiple tech communities that grew from small meetups into thriving networks. At Zion, Sam orchestrates events, online forums, and mentorship programs that encourage collaboration and knowledge sharing. His empathetic approach helps newcomers feel welcomed while promoting an inclusive culture. Sam studied communications and has a background in user advocacy. In his downtime, he enjoys photography and traveling with his family, often."
+    }
+  ];
+
+  const timeline = [
+    {
+      year: "2019",
+      text:
+        "Company founded to link AI innovators with businesses through a truly open global marketplace worldwide."
+    },
+    {
+      year: "2020",
+      text:
+        "Launched early beta, inviting first users to explore collaborative tools and provide invaluable feedback insights."
+    },
+    {
+      year: "2021",
+      text:
+        "Closed seed round, expanding engineering team to accelerate development and scale infrastructure globally for growth."
+    },
+    {
+      year: "2022",
+      text:
+        "Released ZionGPT core, forging partnerships with industry leaders across multiple high-tech sectors to drive innovation."
+    },
+    {
+      year: "2023",
+      text:
+        "Hosted inaugural Zion Summit showcasing real-world deployments and collaborative community-driven innovation from around the world."
+    },
+    {
+      year: "2024",
+      text:
+        "Expanded into decentralized talent marketplace empowering creators worldwide to launch cutting-edge AI solutions and collaborate."
     }
   ];
 
@@ -138,11 +177,24 @@ export default function About() {
             </div>
           </div>
 
+          <div className="content-section">
+            <h2 className="text-3xl font-bold text-white mb-8 text-center">Company Timeline</h2>
+            <ol className="relative border-l border-zion-blue-light pl-6 max-w-3xl mx-auto">
+              {timeline.map((event) => (
+                <li key={event.year} className="mb-10 ml-4">
+                  <span className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full bg-zion-cyan" />
+                  <time className="font-semibold text-white">{event.year}</time>
+                  <p className="text-zion-slate-light mt-2">{event.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+
           <div className="content-section text-center">
             <h2 className="text-3xl font-bold text-white mb-8">Meet the Team</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {team.map((member) => (
-                <div key={member.name} className="text-center">
+                <div key={member.name} className="text-center space-y-3">
                   <div className="relative w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden">
                     <OptimizedImage
                       src={member.image}
@@ -153,9 +205,22 @@ export default function About() {
                   </div>
                   <p className="text-white font-bold">{member.name}</p>
                   <p className="text-zion-slate-light">{member.role}</p>
+                  <p className="text-zion-slate-light text-sm">{member.bio}</p>
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="content-section text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">Press Kit</h2>
+            <p className="text-zion-slate-light mb-4">Download our logos, color palette and press release templates.</p>
+            <a
+              href="/toolkit_assets/media_kit.zip"
+              download
+              className="text-zion-cyan underline"
+            >
+              Download Media Kit (.zip)
+            </a>
           </div>
         </div>
 
