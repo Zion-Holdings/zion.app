@@ -53,7 +53,7 @@ export function TemplateList({
   const handleSetDefault = async (templateId: string) => {
     if (!user) {
       const currentPath = router.asPath;
-      router.push(`/login?next=${encodeURIComponent(currentPath)}`);
+      router.push(`/auth/login?returnTo=${encodeURIComponent(currentPath)}`);
       return;
     }
     await setDefaultTemplate.mutateAsync(templateId);

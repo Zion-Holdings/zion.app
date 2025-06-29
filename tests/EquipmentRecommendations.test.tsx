@@ -97,5 +97,5 @@ test('redirects to login when not authenticated', () => {
   );
 
   fireEvent.click(screen.getByText(/AI Recommendations/i));
-  expect(navigateMock).toHaveBeenCalledWith('/login?next=/equipment&reco=1');
+  expect(navigateMock).toHaveBeenCalledWith('/auth/login?returnTo=/equipment&reco=1');
 });

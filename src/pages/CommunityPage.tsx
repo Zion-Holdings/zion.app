@@ -36,8 +36,8 @@ export default function CommunityPage() {
   useEffect(() => {
     const wantsNew = router.query.new === "1";
     if (wantsNew && !user) {
-      const next = encodeURIComponent(`/community?new=1${initialCategory ? `&category=${initialCategory}` : ""}`);
-      router.replace(`/auth/login?next=${next}`);
+      const returnTo = encodeURIComponent(`/community?new=1${initialCategory ? `&category=${initialCategory}` : ""}`);
+      router.replace(`/auth/login?returnTo=${returnTo}`);
       return;
     }
     setShowNewPost(wantsNew && !!user);
