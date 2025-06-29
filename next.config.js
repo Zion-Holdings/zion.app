@@ -254,6 +254,21 @@ const nextConfig = {
     // Fix EventEmitter memory leak by increasing max listeners
     // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
     
+    // Development optimizations to prevent memory leaks with 176+ pages
+    if (dev && !isServer) {
+      config.watchOptions = {
+        ignored: /node_modules/,
+        aggregateTimeout: 300,
+        poll: false, // Use native file watching instead of polling
+      };
+      
+      // Optimize memory usage in development
+      config.stats = 'errors-warnings';
+      config.infrastructureLogging = {
+        level: 'error',
+      };
+    }
+    
     // For Netlify deployment, exclude problematic files temporarily
     if (process.env.SKIP_TYPE_CHECK === 'true') {
       config.externals = config.externals || [];
@@ -278,11 +293,16 @@ const nextConfig = {
       config.cache.maxAge = 7 * 24 * 60 * 60 * 1000; // 7 days
       
       // Reduce cache store size to prevent large string serialization
-      config.cache.maxMemoryGenerations = dev ? 3 : 10; // Reduced for development
+      config.cache.maxMemoryGenerations = dev ? 2 : 5; // Further reduced for memory efficiency
+      config.cache.maxGenerations = dev ? 3 : 8; // Limit total generations
       
       // Advanced cache optimization - simplified for compatibility
       config.cache.store = 'pack';
-      config.cache.version = '1.0.0';
+      config.cache.version = '1.0.1'; // Updated version
+      
+      // Additional optimizations to prevent large string serialization
+      config.cache.profile = false; // Disable profiling to reduce memory usage
+      config.cache.hashAlgorithm = 'md4'; // Faster hash algorithm
     }
 
     // Add optimization to prevent temporal dead zone issues
@@ -296,7 +316,7 @@ const nextConfig = {
     }
 
     // Suppress warnings in both dev and production
-  config.ignoreWarnings = [
+    config.ignoreWarnings = [
       /punycode.*deprecated/i,
       /DEP0040/,
       /Critical dependency/,
@@ -309,7 +329,13 @@ const nextConfig = {
       /images\.domains.*deprecated/i,
       /Fast Refresh/i,
       /webpack performance recommendations/i,
-  ];
+      // Suppress optimization warnings
+      /optimization\.usedExports/i,
+      /cacheUnaffected/i,
+      // Suppress cache-related warnings
+      /cache.*filesystem/i,
+      /memory.*cache/i,
+    ];
 
     // Alias React Router to a lightweight shim to avoid bundling the full library
     config.resolve.alias = {
@@ -442,11 +468,9 @@ const nextConfig = {
         moduleIds: 'deterministic',
         chunkIds: 'deterministic',
         
-        // Better tree shaking - only in production to avoid conflicts with cacheUnaffected
-        ...((!dev) && {
-          usedExports: true,
-          sideEffects: false,
-        }),
+        // Better tree shaking - safely configured to avoid webpack conflicts
+        usedExports: !dev, // Enable only in production
+        sideEffects: false, // Always false to enable tree shaking
         
         // Module concatenation for better performance
         concatenateModules: !dev, // Only in production
@@ -481,9 +505,20 @@ const nextConfig = {
       }
     }
 
-    // Remove cacheUnaffected in development if usedExports might be enabled elsewhere
-    if (dev && config.cache && config.cache.cacheUnaffected !== undefined) {
+    // CRITICAL FIX: Remove cacheUnaffected in ALL cases to prevent webpack conflicts
+    // The cacheUnaffected option conflicts with usedExports optimization
+    if (config.cache && config.cache.cacheUnaffected !== undefined) {
       delete config.cache.cacheUnaffected;
+    }
+    
+    // Also ensure that cache.type is properly configured when filesystem caching is used
+    if (config.cache && config.cache.type === 'filesystem') {
+      // Remove any potentially conflicting cache options
+      delete config.cache.cacheUnaffected;
+      
+      // Set safe cache options
+      config.cache.allowCollectingMemory = false;
+      config.cache.managedPaths = [path.resolve(__dirname, 'node_modules')];
     }
 
     // Define feature flags for tree shaking
