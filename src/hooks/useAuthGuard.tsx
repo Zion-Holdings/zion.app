@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { createClient } from '@/utils/supabase/client'
 import type { User } from '@supabase/supabase-js'
 import { logInfo, logError } from '@/utils/productionLogger';
+import { toast } from '@/hooks/use-toast';
 
 
 interface AuthGuardOptions {
@@ -84,6 +85,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
             redirectTimer = setTimeout(() => {
               if (mounted) {
                 logInfo('Auth guard: Redirecting unauthenticated user to login')
+                toast.info('Please sign in to continue')
                 router.replace(`${redirectTo}?returnTo=${returnTo}`)
               }
             }, 100)
@@ -140,6 +142,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
           redirectTimer = setTimeout(() => {
             if (mounted) {
               logInfo('Auth guard: User signed out, redirecting to login')
+              toast.info('Please sign in to continue')
               router.replace(redirectTo)
             }
           }, 100)

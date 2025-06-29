@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { useTenantAdminStatus } from '@/hooks/useWhitelabelTenant';
 import { useWhitelabel } from '@/context/WhitelabelContext';
+import { toast } from '@/hooks/use-toast';
 
 export interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -31,6 +32,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
     }
 
     if (!user) {
+      toast.info('Please sign in to continue');
       const returnTo = encodeURIComponent(router.asPath); // Use router.asPath for the full path with query
       // Use push instead of replace to ensure navigation triggers page load
       router.push(`/auth/login?returnTo=${returnTo}`);
