@@ -22,6 +22,7 @@ export const useAuth = (): AuthContextType => {
         resetPassword: async () => { logWarn("Reset password not available during static export"); return { error: { message: "Not available" } }; },
         updateProfile: async () => { logWarn("Update profile not available during static export"); return { error: { message: "Not available" } }; },
         loginWithGoogle: async () => { logWarn("Login with Google not available during static export"); },
+        loginWithGitHub: async () => { logWarn("Login with GitHub not available during static export"); },
         loginWithFacebook: async () => { logWarn("Login with Facebook not available during static export"); },
         loginWithTwitter: async () => { logWarn("Login with Twitter not available during static export"); },
         loginWithWeb3: async () => { logWarn("Login with Web3 not available during static export"); },
