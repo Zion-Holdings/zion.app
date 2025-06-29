@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ImageIcon, AlertTriangle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { imageOptimization } from '@/utils/performance';
+import { logWarn } from '@/utils/productionLogger';
 
 interface OptimizedImageProps {
   src: string;
@@ -10,7 +12,7 @@ interface OptimizedImageProps {
   width?: number;
   height?: number;
   className?: string;
-  placeholder?: 'blur' | 'shimmer' | 'color' | 'none';
+  placeholder?: 'blur' | 'shimmer' | 'color' | 'none' | 'empty';
   placeholderColor?: string;
   priority?: boolean;
   quality?: number;
@@ -23,6 +25,18 @@ interface OptimizedImageProps {
   lazy?: boolean;
   retryCount?: number;
   showLoadingProgress?: boolean;
+  fill?: boolean;
+  blurDataURL?: string;
+  loading?: 'lazy' | 'eager';
+  style?: React.CSSProperties;
+  objectPosition?: string;
+}
+
+interface ImageMetrics {
+  loadTime: number;
+  fileSize: number;
+  format: string;
+  wasOptimized: boolean;
 }
 
 export const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -43,7 +57,13 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   objectFit = 'cover',
   lazy = true,
   retryCount = 3,
-  showLoadingProgress = false
+  showLoadingProgress = false,
+  fill = false,
+  blurDataURL,
+  loading = 'lazy',
+  style,
+  objectPosition = 'center',
+  ...props
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -53,6 +73,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [loadProgress, setLoadProgress] = useState(0);
   const imgRef = useRef<HTMLImageElement>(null);
   const observerRef = useRef<IntersectionObserver>();
+  const [metrics, setMetrics] = useState<ImageMetrics | null>(null);
+  const loadStartTime = useRef<number>(0);
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -80,6 +102,55 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       observerRef.current?.disconnect();
     };
   }, [lazy, priority, isInView]);
+
+  // Start load time tracking
+  useEffect(() => {
+    loadStartTime.current = performance.now();
+  }, [src]);
+
+  // Monitor image performance
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
+      const observer = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        entries.forEach((entry) => {
+          if (entry.name === src && entry.entryType === 'resource') {
+            const resourceEntry = entry as PerformanceResourceTiming;
+            const fileSize = resourceEntry.transferSize || resourceEntry.encodedBodySize || 0;
+            const loadTime = resourceEntry.responseEnd - resourceEntry.requestStart;
+            
+            setMetrics({
+              loadTime,
+              fileSize,
+              format: src.includes('.webp') ? 'webp' : src.includes('.avif') ? 'avif' : 'other',
+              wasOptimized: src.includes('/_next/image')
+            });
+
+            // Log slow or large images
+            if (loadTime > 2000) {
+              logWarn('Slow image loading:', {
+                src,
+                loadTime: `${loadTime.toFixed(2)}ms`,
+                size: `${(fileSize / 1024).toFixed(2)}KB`
+              });
+            }
+
+            if (fileSize > 500 * 1024) {
+              logWarn('Large image detected:', {
+                src,
+                size: `${(fileSize / 1024).toFixed(2)}KB`,
+                loadTime: `${loadTime.toFixed(2)}ms`
+              });
+            }
+          }
+        });
+      });
+
+      observer.observe({ entryTypes: ['resource'] });
+
+      return () => observer.disconnect();
+    }
+  }, [src]);
 
   // Generate optimized URLs
   const optimizedSrc = isInView ? imageOptimization.optimizeUrl(currentSrc, width, quality) : '';
