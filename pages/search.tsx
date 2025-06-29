@@ -428,7 +428,7 @@ const SearchPage = ({ products, talent, posts, docs, q }: SearchPageProps) => {
       results.push({
         id: doc.id || `doc-${doc.text.slice(0, 10)}`,
         title: doc.text,
-        description: doc.description || doc.text,
+        description: doc.text,
         type: 'doc',
         category: 'Documentation',
         url: doc.url,
