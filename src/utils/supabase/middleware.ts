@@ -48,7 +48,7 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(errorUrl);
   }
 
-  // Define public routes that don't require authentication
+  // Define public routes that don't require authentication.
   // Added '/service-unavailable' to the list of public routes.
   const publicRoutes = [
     '/',
@@ -70,9 +70,8 @@ export async function updateSession(request: NextRequest) {
     '/offline',
     '/404',
     '/500',
-    // Added Marketplace and Community to public routes
+    // Marketplace pages remain public
     '/marketplace',
-    '/community',
     '/service-unavailable' // Ensure this error page is public
   ];
 

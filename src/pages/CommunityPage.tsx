@@ -7,7 +7,7 @@ import ForumCategories from "@/components/community/ForumCategories";
 import PostCard from "@/components/community/PostCard";
 import NewPostDialog from "@/components/community/NewPostDialog";
 import { ChatAssistantTrigger } from "@/components/ChatAssistantTrigger";
-import { useAuth } from "@/hooks/useAuth";
+import { useRequireAuth } from "@/hooks/useAuthGuard";
 import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
 import { useCommunity } from "@/context";
 import type { ForumCategory } from "@/types/community";
@@ -17,12 +17,34 @@ import { logInfo } from '@/utils/productionLogger';
 export default function CommunityPage() {
 
   logInfo('CommunityPage rendering');
-  const { user } = useAuth();
+  const { user, loading } = useRequireAuth();
   const { featuredPosts, recentPosts } = useCommunity();
   const [activeTab, setActiveTab] = useState("categories");
   const router = useRouter();
   const [showNewPost, setShowNewPost] = useState(false);
   const { markCommunityVisited } = useAdvancedOnboardingStatus();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading community...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
 
   // Combine posts for Q&A section, removing duplicates by id
   const qaPosts = Array.from(
