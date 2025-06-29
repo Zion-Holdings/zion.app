@@ -14,10 +14,15 @@ const RegisterPage = () => {
     fireEvent('signup_page_view');
   }, []);
 
-  const handleSuccess = () => {
-    // Redirect to login or a verification pending page, as per app flow
-    // For now, let's redirect to login page after successful registration
-    router.push('/auth/login?registrationSuccess=true');
+  const handleSuccess = ({ email, emailVerificationRequired }: {
+    email: string;
+    emailVerificationRequired: boolean;
+  }) => {
+    if (emailVerificationRequired) {
+      router.push(`/verify-status?email=${encodeURIComponent(email)}`);
+    } else {
+      router.push('/auth/login?registrationSuccess=true');
+    }
   };
 
   return (
