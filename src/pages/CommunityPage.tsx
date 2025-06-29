@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import CreatePostButton from "@/components/community/CreatePostButton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
@@ -17,6 +18,7 @@ import { logInfo } from '@/utils/productionLogger';
 export default function CommunityPage() {
 
   logInfo('CommunityPage rendering');
+  const { t } = useTranslation();
   const { user } = useAuth();
   const { featuredPosts, recentPosts } = useCommunity();
   const [activeTab, setActiveTab] = useState("categories");
@@ -88,9 +90,9 @@ export default function CommunityPage() {
       <div className="container py-8">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
           <div>
-            <h1 className="text-3xl font-bold">Community Forum</h1>
+            <h1 className="text-3xl font-bold">{t('community_page.title')}</h1>
             <p className="text-muted-foreground mt-2">
-              Join the conversation, ask questions, and share your knowledge
+              {t('community_page.subtitle')}
             </p>
           </div>
           
@@ -99,10 +101,10 @@ export default function CommunityPage() {
 
         <Tabs value={activeTab} onValueChange={handleTabChange} className="mb-8">
           <TabsList className="mb-6">
-            <TabsTrigger value="categories">Categories</TabsTrigger>
-            <TabsTrigger value="featured">Featured</TabsTrigger>
-            <TabsTrigger value="recent">Recent</TabsTrigger>
-            <TabsTrigger value="qa">Q&A</TabsTrigger>
+            <TabsTrigger value="categories">{t('categories')}</TabsTrigger>
+            <TabsTrigger value="featured">{t('featured')}</TabsTrigger>
+            <TabsTrigger value="recent">{t('recent')}</TabsTrigger>
+            <TabsTrigger value="qa">{t('q_and_a')}</TabsTrigger>
           </TabsList>
           
           <TabsContent value="categories">
@@ -117,7 +119,7 @@ export default function CommunityPage() {
                 ))
               ) : (
                 <div className="text-center py-8 text-muted-foreground">
-                  <p>No featured posts available at the moment.</p>
+                  <p>{t('community_page.no_featured')}</p>
                 </div>
               )}
             </div>
@@ -131,7 +133,7 @@ export default function CommunityPage() {
                 ))
               ) : (
                 <div className="text-center py-8 text-muted-foreground">
-                  <p>No recent posts available at the moment.</p>
+                  <p>{t('community_page.no_recent')}</p>
                 </div>
               )}
             </div>
@@ -145,7 +147,7 @@ export default function CommunityPage() {
                 ))
               ) : (
                 <div className="text-center py-8 text-muted-foreground">
-                  <p>No Q&A posts available at the moment.</p>
+                  <p>{t('community_page.no_qa')}</p>
                 </div>
               )}
             </div>

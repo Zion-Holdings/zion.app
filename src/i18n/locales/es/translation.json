@@ -15,7 +15,10 @@
     "toggle_mobile_menu": "Alternar menú móvil",
     "greeting_user": "¡Hola, {{name}}!",
     "status_page": "Página de estado",
-    "check_status_page": "Puedes intentar refrescar la página o visitar nuestra"
+    "check_status_page": "Puedes intentar refrescar la página o visitar nuestra",
+    "featured": "Destacado",
+    "recent": "Reciente",
+    "q_and_a": "Preguntas y Respuestas"
   },
   "nav": {
     "home": "Inicio",
@@ -202,8 +205,8 @@
     "go_to_dashboard": "Ir al Panel",
     "go_to_marketplace": "Ir al Marketplace",
     "go_back": "Volver",
-    "forbidden_title": "403 \u2013 Prohibido",
-    "server_error_title": "500 \u2013 Error del Servidor",
+    "forbidden_title": "403 – Prohibido",
+    "server_error_title": "500 – Error del Servidor",
     "server_error": "Error del Servidor",
     "page_lost_message": "La página que buscas parece haber desaparecido. Regresemos para seguir explorando el futuro de la tecnología.",
     "explore_marketplace": "Explorar Nuestro Mercado",
@@ -348,7 +351,7 @@
     },
     "earnings_title": "Ganancias y Pagos",
     "earnings_desc": "Seguimiento de tus ganancias y gestiona pagos",
-  "earnings_placeholder": "El seguimiento de ganancias y las solicitudes de pago estarán disponibles pronto."
+    "earnings_placeholder": "El seguimiento de ganancias y las solicitudes de pago estarán disponibles pronto."
   },
   "quote_form": {
     "title": "Obtén una Cotización Ahora",
@@ -375,5 +378,47 @@
     "submit": "Obtén tu Propuesta Comercial Gratis"
   },
   "login": "Iniciar Sesión",
-  "signup": "Registrarse"
+  "signup": "Registrarse",
+  "community_page": {
+    "title": "Foro Comunitario",
+    "subtitle": "Únete a la conversación, haz preguntas y comparte tu conocimiento",
+    "no_featured": "No hay publicaciones destacadas disponibles por el momento.",
+    "no_recent": "No hay publicaciones recientes disponibles por el momento.",
+    "no_qa": "No hay publicaciones de preguntas y respuestas disponibles por el momento."
+  },
+  "footer": {
+    "tagline": "El primer mercado gratuito dedicado a la alta tecnología y la inteligencia artificial.",
+    "sections": {
+      "marketplace": {
+        "title": "Mercado",
+        "products": "Productos",
+        "services": "Servicios",
+        "talent": "Talento",
+        "equipment": "Equipamiento",
+        "categories": "Categorías",
+        "green_it": "Green IT"
+      },
+      "company": {
+        "title": "Compañía",
+        "about_us": "Acerca de Nosotros",
+        "blog": "Blog",
+        "innovation": "Innovación",
+        "partners": "Socios",
+        "careers": "Carreras",
+        "contact": "Contacto",
+        "sitemap": "Mapa del Sitio"
+      },
+      "newsletter": {
+        "title": "Boletín",
+        "description": "Mantente al día con las últimas noticias de tecnología, IA y oportunidades del mercado."
+      }
+    },
+    "back_to_top": "Volver arriba",
+    "bottom": {
+      "privacy_policy": "Política de Privacidad",
+      "terms_of_service": "Términos de Servicio",
+      "api_status": "Estado de la API",
+      "copyright": "© {{year}} Zion Tech Group. Todos los derechos reservados."
+    }
+  }
 }

@@ -18,7 +18,10 @@
     "toggle_mobile_menu": "Basculer le menu mobile",
     "greeting_user": "Bonjour, {{name}} !",
     "status_page": "Page de statut",
-    "check_status_page": "Vous pouvez essayer de rafraîchir la page ou visiter notre"
+    "check_status_page": "Vous pouvez essayer de rafraîchir la page ou visiter notre",
+    "featured": "En Vedette",
+    "recent": "Récent",
+    "q_and_a": "Questions-Réponses"
   },
   "nav": {
     "home": "Accueil",
@@ -320,5 +323,47 @@
     "submit": "Obtenez Votre Proposition Commerciale Gratuite"
   },
   "login": "Connexion",
-  "signup": "S'inscrire"
+  "signup": "S'inscrire",
+  "community_page": {
+    "title": "Forum Communautaire",
+    "subtitle": "Participez à la conversation, posez des questions et partagez vos connaissances",
+    "no_featured": "Aucun article en vedette pour le moment.",
+    "no_recent": "Aucun article récent pour le moment.",
+    "no_qa": "Aucun message Q&R pour le moment."
+  },
+  "footer": {
+    "tagline": "Le premier marché gratuit dédié aux hautes technologies et à l'intelligence artificielle.",
+    "sections": {
+      "marketplace": {
+        "title": "Marché",
+        "products": "Produits",
+        "services": "Services",
+        "talent": "Talent",
+        "equipment": "Équipement",
+        "categories": "Catégories",
+        "green_it": "Green IT"
+      },
+      "company": {
+        "title": "Entreprise",
+        "about_us": "À Propos",
+        "blog": "Blog",
+        "innovation": "Innovation",
+        "partners": "Partenaires",
+        "careers": "Carrières",
+        "contact": "Contact",
+        "sitemap": "Plan du Site"
+      },
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "Restez informé des dernières actualités sur la technologie, l'IA et les opportunités du marché."
+      }
+    },
+    "back_to_top": "Haut de page",
+    "bottom": {
+      "privacy_policy": "Politique de Confidentialité",
+      "terms_of_service": "Conditions d'Utilisation",
+      "api_status": "Statut de l'API",
+      "copyright": "© {{year}} Zion Tech Group. Tous droits réservés."
+    }
+  }
 }

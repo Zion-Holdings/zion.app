@@ -18,7 +18,10 @@
     "toggle_mobile_menu": "Toggle mobile menu",
     "greeting_user": "Hello, {{name}}!",
     "status_page": "Status Page",
-    "check_status_page": "You can try refreshing the page or visit our"
+    "check_status_page": "You can try refreshing the page or visit our",
+    "featured": "Featured",
+    "recent": "Recent",
+    "q_and_a": "Q&A"
   },
   "nav": {
     "home": "Home",
@@ -341,8 +344,8 @@
     "go_to_dashboard": "Go to Dashboard",
     "go_to_marketplace": "Go to Marketplace",
     "go_back": "Go Back",
-    "forbidden_title": "403 \u2013 Forbidden",
-    "server_error_title": "500 \u2013 Server Error",
+    "forbidden_title": "403 – Forbidden",
+    "server_error_title": "500 – Server Error",
     "server_error": "Server Error",
     "page_lost_message": "The page you're looking for seems to have vanished into the digital void. Let's get you back on track to explore the future of AI and technology.",
     "explore_marketplace": "Explore Our Marketplace",
@@ -440,7 +443,7 @@
     },
     "earnings_title": "Earnings & Payouts",
     "earnings_desc": "Track your earnings and manage payouts",
-  "earnings_placeholder": "Earnings tracking and payout requests will be available soon."
+    "earnings_placeholder": "Earnings tracking and payout requests will be available soon."
   },
   "quote_form": {
     "title": "Get a Quote Now",
@@ -467,5 +470,47 @@
     "submit": "Get Your Free Commercial Proposal"
   },
   "login": "Login",
-  "signup": "Sign up"
+  "signup": "Sign up",
+  "community_page": {
+    "title": "Community Forum",
+    "subtitle": "Join the conversation, ask questions, and share your knowledge",
+    "no_featured": "No featured posts available at the moment.",
+    "no_recent": "No recent posts available at the moment.",
+    "no_qa": "No Q&A posts available at the moment."
+  },
+  "footer": {
+    "tagline": "The world's first free marketplace dedicated to high-tech and artificial intelligence.",
+    "sections": {
+      "marketplace": {
+        "title": "Marketplace",
+        "products": "Products",
+        "services": "Services",
+        "talent": "Talent",
+        "equipment": "Equipment",
+        "categories": "Categories",
+        "green_it": "Green IT"
+      },
+      "company": {
+        "title": "Company",
+        "about_us": "About Us",
+        "blog": "Blog",
+        "innovation": "Innovation",
+        "partners": "Partners",
+        "careers": "Careers",
+        "contact": "Contact",
+        "sitemap": "Sitemap"
+      },
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "Stay updated with the latest news on tech, AI, and marketplace opportunities."
+      }
+    },
+    "back_to_top": "Back to Top",
+    "bottom": {
+      "privacy_policy": "Privacy Policy",
+      "terms_of_service": "Terms of Service",
+      "api_status": "API Status",
+      "copyright": "© {{year}} Zion Tech Group. All rights reserved."
+    }
+  }
 }
