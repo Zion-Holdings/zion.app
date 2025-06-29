@@ -38,7 +38,8 @@
   "post_job": "Publicar Vaga",
   "analytics": "Análises",
   "login": "Entrar",
-  "signup": "Cadastrar"
+  "signup": "Cadastrar",
+  "help": "Ajuda"
   },
   "auth": {
     "login": "Entrar",
@@ -49,7 +50,27 @@
     "forgot_password": "Esqueceu a senha?",
     "remember_me": "Lembrar-me",
     "login_success": "Login realizado com sucesso",
-    "logout_success": "Logout realizado com sucesso"
+    "logout_success": "Logout realizado com sucesso",
+    "sign_in_to_account": "Entre na sua conta",
+    "create_new_account": "criar uma nova conta",
+    "didnt_receive_verification_email": "Não recebeu o e-mail de verificação?",
+    "hide": "Ocultar",
+    "enter_email_to_resend": "Digite seu e-mail para reenviar a verificação",
+    "resend_verification_email": "Reenviar e-mail de verificação",
+    "sending": "Enviando...",
+    "session_check_timed_out": "Tempo de verificação expirou",
+    "session_check_timed_out_message": "Não foi possível verificar sua sessão rapidamente. Tente fazer login ou atualize a página.",
+    "email_verification_required": "Verificação de e-mail necessária",
+    "email_needs_verification": "Seu e-mail precisa ser verificado antes de entrar.",
+    "verification_email_sent": "✓ E-mail de verificação enviado para {{email}}",
+    "resend_email": "Reenviar e-mail",
+    "check_status": "Verificar status",
+    "redirecting": "Redirecionando para o status de verificação em 3 segundos...",
+    "authentication_error": "Erro de autenticação",
+    "sign_in": "Entrar",
+    "signing_in": "Entrando...",
+    "email_address": "Endereço de e-mail",
+    "or_continue_with": "Ou continue com"
   },
   "cart": {
     "title": "Seu Carrinho",
@@ -176,7 +197,16 @@
     "payment_success_title": "Pagamento Realizado!",
     "payment_success_message": "Seu pagamento foi processado com sucesso. Agora você tem acesso a todos os recursos premium.",
     "go_to_dashboard": "Ir para o Painel",
-    "go_to_marketplace": "Ir para o Marketplace"
+    "go_to_marketplace": "Ir para o Marketplace",
+    "go_back": "Voltar",
+    "forbidden_title": "403 \u2013 Proibido",
+    "server_error_title": "500 \u2013 Erro do Servidor",
+    "server_error": "Erro do Servidor",
+    "page_lost_message": "A página que você procura parece ter desaparecido. Vamos voltar e continuar explorando o futuro da tecnologia.",
+    "explore_marketplace": "Explore Nosso Mercado",
+    "contact_support_team": "entre em contato com nossa equipe de suporte",
+    "if_believe_error": "Se você acredita que isto é um erro, por favor",
+    "status_page": "página de status"
   },
   "categories": {
     "services": "Serviços",

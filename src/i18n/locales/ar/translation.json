@@ -38,7 +38,8 @@
   "post_job": "نشر وظيفة",
   "analytics": "تحليلات",
   "login": "تسجيل الدخول",
-  "signup": "إنشاء حساب"
+  "signup": "إنشاء حساب",
+  "help": "مساعدة"
   },
   "auth": {
     "login": "تسجيل الدخول",
@@ -49,7 +50,27 @@
     "forgot_password": "نسيت كلمة المرور؟",
     "remember_me": "تذكرني",
     "login_success": "تم تسجيل الدخول بنجاح",
-    "logout_success": "تم تسجيل الخروج بنجاح"
+    "logout_success": "تم تسجيل الخروج بنجاح",
+    "sign_in_to_account": "قم بتسجيل الدخول إلى حسابك",
+    "create_new_account": "إنشاء حساب جديد",
+    "didnt_receive_verification_email": "لم تستلم رسالة التحقق؟",
+    "hide": "إخفاء",
+    "enter_email_to_resend": "أدخل بريدك لإعادة إرسال التحقق",
+    "resend_verification_email": "إعادة إرسال رسالة التحقق",
+    "sending": "جاري الإرسال...",
+    "session_check_timed_out": "انتهت مهلة التحقق من الجلسة",
+    "session_check_timed_out_message": "تعذر التحقق من الجلسة بسرعة. يرجى تسجيل الدخول أو تحديث الصفحة.",
+    "email_verification_required": "مطلوب التحقق من البريد الإلكتروني",
+    "email_needs_verification": "يجب التحقق من بريدك الإلكتروني قبل تسجيل الدخول.",
+    "verification_email_sent": "✓ تم إرسال رسالة التحقق إلى {{email}}",
+    "resend_email": "إعادة إرسال الرسالة",
+    "check_status": "تحقق من الحالة",
+    "redirecting": "جارٍ التحويل إلى حالة التحقق خلال 3 ثوانٍ...",
+    "authentication_error": "خطأ في المصادقة",
+    "sign_in": "تسجيل الدخول",
+    "signing_in": "جاري تسجيل الدخول...",
+    "email_address": "عنوان البريد الإلكتروني",
+    "or_continue_with": "أو تابع باستخدام"
   },
   "cart": {
     "title": "سلة التسوق",
@@ -165,7 +186,16 @@
     "payment_success_title": "تم الدفع بنجاح!",
     "payment_success_message": "تمت معالجة دفعتك بنجاح. لديك الآن إمكانية الوصول إلى جميع الميزات المميزة.",
     "go_to_dashboard": "الانتقال إلى لوحة التحكم",
-    "go_to_marketplace": "اذهب إلى المتجر"
+    "go_to_marketplace": "اذهب إلى المتجر",
+    "go_back": "عودة",
+    "forbidden_title": "403 \u2013 محظور",
+    "server_error_title": "500 \u2013 خطأ في الخادم",
+    "server_error": "خطأ في الخادم",
+    "page_lost_message": "يبدو أن الصفحة التي تبحث عنها اختفت. لنعد لمتابعة استكشاف مستقبل التقنية.",
+    "explore_marketplace": "استكشف سوقنا",
+    "contact_support_team": "الاتصال بفريق الدعم",
+    "if_believe_error": "إذا كنت تعتقد أن هذا خطأ، يرجى",
+    "status_page": "صفحة الحالة"
   },
   "quote_form": {
     "title": "احصل على عرض سعر الآن",
