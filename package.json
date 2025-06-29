@@ -99,7 +99,11 @@
     "deploy:prepare": "npm run deploy:optimize && npm run analyze",
     "performance:monitor": "node -e \"console.log('Enable with: localStorage.setItem(\\\"performance-monitoring\\\", \\\"true\\\"); window.location.reload();')\"",
     "bundle:analyze": "node -e \"console.log('Enable with: localStorage.setItem(\\\"bundle-analyzer\\\", \\\"true\\\"); window.location.reload();')\"",
-    "clean": "rimraf .next out coverage test-results"
+    "clean": "rimraf .next out coverage test-results",
+    "i18n:audit": "node scripts/i18n-audit.cjs",
+    "i18n:hardcoded": "node scripts/find-hardcoded-strings.cjs",
+    "i18n:check": "npm run i18n:audit && npm run i18n:hardcoded",
+    "i18n:report": "npm run i18n:check && echo 'i18n reports generated: i18n-audit-report.md and hardcoded-strings-report.md'"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

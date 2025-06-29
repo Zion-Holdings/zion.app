@@ -4,6 +4,10 @@ import { safeStorage } from '@/utils/safeStorage';
 import { getCookie, setCookie } from '@/utils/cookies';
 import { initGA } from '@/lib/analytics';
 import { initPostHog } from '@/lib/posthog';
+import { setCookie, getCookie } from '@/utils/cookies';
+
+const CONSENT_COOKIE_NAME = 'analyticsConsent';
+const COOKIE_EXPIRATION_DAYS = 365;
 
 export const AnalyticsConsentBanner: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -22,6 +26,10 @@ export const AnalyticsConsentBanner: React.FC = () => {
     safeStorage.setItem('analyticsConsent', 'granted');
     setCookie('analyticsConsent', 'granted', 365);
     setShowBanner(false);
+  };
+
+  const accept = () => {
+    storeConsent('granted');
     initGA();
     initPostHog();
   };
