@@ -39,7 +39,7 @@ jest.mock('child_process', () => ({
 // Mock Sentry's captureException
 // To ensure errors are reported to Sentry as expected.
 const mockCaptureException = jest.fn();
-jest.mock('../../../src/utils/sentry', () => ({ // Adjust path as per actual project structure
+jest.mock('@sentry/nextjs', () => ({
   captureException: mockCaptureException,
 }));
 
