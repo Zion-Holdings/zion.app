@@ -54,6 +54,7 @@ if (!i18n) {
     load: 'currentOnly', // Only load current language instead of all fallbacks
     cleanCode: true, // Clean up language codes
     nonExplicitSupportedLngs: false, // Don't auto-detect non-explicit languages
+    initImmediate: false, // Initialize synchronously to avoid missing key warnings
     detection: {
       order: ['cookie', 'navigator'], // Keep navigator as a fallback for first-time users
       lookupCookie: 'i18n_lang',
