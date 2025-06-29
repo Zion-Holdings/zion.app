@@ -114,6 +114,7 @@ const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  console.log('Current route:', router.asPath, router.pathname);
   const [queryClient] = React.useState(() => new QueryClient({
     defaultOptions: {
       queries: {
@@ -292,7 +293,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                             <AppLayout>
                                               <RouteChangeHandler
                                                 resetScrollOnChange={true}
-                                                forceRerender={false}
+                                                forceRerender={false} // Keep false as per original, true didn't seem to have a listener
                                               />
                                               <ErrorBoundary>
                                                 <Component
@@ -300,25 +301,25 @@ function MyApp({ Component, pageProps }: AppProps) {
                                                   {...pageProps}
                                                 />
                                               </ErrorBoundary>
-                                              <ErrorResetOnRouteChange />
+                                              <ErrorResetOnRouteChange /> {/* Might be important for some error states */}
                                               <ToastContainer />
                                               <OfflineIndicator />
-                                              <IntercomChat />
-                                              <PerformanceMonitor />
-                                              <BundleAnalyzer />
-                                              <QuickActions />
+                                              {/* <IntercomChat /> */}
+                                              {/* <PerformanceMonitor /> */}
+                                              {/* <BundleAnalyzer /> */}
+                                              {/* <QuickActions /> */}
                                             </AppLayout>
                                           </ThemeProvider>
-                                        </FeedbackProvider>
-                                      </AnalyticsProvider>
-                                    </CartProvider>
-                                  </WalletProvider>
-                                </LanguageProviderWrapper>
-                              </WhitelabelProvider>
-                            </AuthProvider>
-                          </ErrorProvider>
-                        </I18nextProvider>
-                      </ReduxProvider>
+                                        </FeedbackProvider> {/* Keep for now */}
+                                      </AnalyticsProvider> {/* Keep for now */}
+                                    </CartProvider> {/* Keep for now */}
+                                  </WalletProvider> {/* Keep for now */}
+                                </LanguageProviderWrapper> {/* Keep for now */}
+                              </WhitelabelProvider> {/* Keep for now */}
+                            </AuthProvider> {/* Essential */}
+                          </ErrorProvider> {/* Keep for now */}
+                        </I18nextProvider> {/* Likely important for text rendering */}
+                      </ReduxProvider> {/* Essential */}
                     </ApiErrorBoundary>
                   </QueryClientProvider>
                 </GlobalErrorBoundary>
