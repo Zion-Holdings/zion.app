@@ -13,6 +13,8 @@ import { usePostsByCategory } from "@/hooks/usePostsByCategory";
 import NotFound from "./NotFound";
 import { useAuth } from "@/hooks/useAuth";
 import { useCommunity } from "@/context";
+import { useToast } from "@/hooks/use-toast";
+import { useFollowedCategories } from "@/hooks/useFollowedCategories";
 import { logInfo } from '@/utils/productionLogger';
 import {
   MessageSquare,
@@ -103,6 +105,20 @@ function CategoryContent({
     : categoryPosts;
 
   const canCreatePost = user && (!category.adminOnly || user.userType === 'admin' || user.role === 'admin');
+  const { isFollowed, follow, unfollow } = useFollowedCategories();
+  const { toast } = useToast();
+
+  const handleFollow = () => {
+    if (!user) {
+      toast({ title: 'Login required', description: 'Please sign in to follow this category' });
+      return;
+    }
+    if (isFollowed(categoryId)) {
+      unfollow(categoryId);
+    } else {
+      follow(categoryId);
+    }
+  };
 
   logInfo('CategoryContent - categoryId:', { data: categoryId });
   logInfo('CategoryContent - categoryPosts:', { data: categoryPosts });
@@ -129,7 +145,15 @@ function CategoryContent({
           </div>
         </div>
 
-        {canCreatePost && <CreatePostButton categoryId={categoryId} />}
+        <div className="flex items-center gap-2">
+          {canCreatePost && <CreatePostButton categoryId={categoryId} />}
+          <Button
+            variant={isFollowed(categoryId) ? 'outline' : 'default'}
+            onClick={handleFollow}
+          >
+            {isFollowed(categoryId) ? 'Following' : 'Follow'}
+          </Button>
+        </div>
       </div>
 
       <div className="mb-6">
