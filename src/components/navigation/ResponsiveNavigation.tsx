@@ -78,7 +78,7 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
     <NavigationMenu className={cn('hidden md:flex', className)}>
       <NavigationMenuList>
         {items.map((item) => (
-          <NavigationMenuItem key={item.label}>
+          <NavigationMenuItem key={item.href || item.label}>
             {item.subItems ? (
               <>
                 <NavigationMenuTrigger className={cn(isItemActive(item) && 'text-primary')}>{item.label}</NavigationMenuTrigger>
