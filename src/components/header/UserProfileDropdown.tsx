@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { fireEvent } from '@/lib/analytics';
 
 const UserProfileDropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,11 +12,17 @@ const UserProfileDropdown: React.FC = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const previouslyFocused = useRef<HTMLElement | null>(null);
 
-  const toggleDropdown = () => setIsOpen((o) => !o);
+  const toggleDropdown = () =>
+    setIsOpen((o) => {
+      const open = !o;
+      fireEvent('profile_dropdown_toggle', { open });
+      return open;
+    });
 
   const handleLogout = () => {
     logout();
     setIsOpen(false); // Close dropdown after logout
+    fireEvent('profile_dropdown_toggle', { open: false });
   };
 
   // Close dropdown when clicking outside
@@ -23,6 +30,7 @@ const UserProfileDropdown: React.FC = () => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
+        fireEvent('profile_dropdown_toggle', { open: false });
       }
     };
 
@@ -92,6 +100,7 @@ const UserProfileDropdown: React.FC = () => {
               const index = items.indexOf(document.activeElement as HTMLElement);
               if (e.key === 'Escape') {
                 setIsOpen(false);
+                fireEvent('profile_dropdown_toggle', { open: false });
                 (e.target as HTMLElement).blur();
               } else if (e.key === 'ArrowDown') {
                 e.preventDefault();
@@ -105,18 +114,42 @@ const UserProfileDropdown: React.FC = () => {
             }}
           >
             <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
-              <Link href="/profile" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem">
-                Profile
+              <Link
+                href="/profile"
+                onClick={() => {
+                  setIsOpen(false);
+                  fireEvent('profile_dropdown_toggle', { open: false });
+                }}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+                role="menuitem"
+              >
+              Profile
               </Link>
             </li>
             <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
-              <Link href="/orders" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem">
-                Orders
+              <Link
+                href="/orders"
+                onClick={() => {
+                  setIsOpen(false);
+                  fireEvent('profile_dropdown_toggle', { open: false });
+                }}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+                role="menuitem"
+              >
+              Orders
               </Link>
             </li>
             <li style={{ padding: '8px 16px', whiteSpace: 'nowrap' }} role="none">
-              <Link href="/settings" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }} role="menuitem">
-                Settings
+              <Link
+                href="/settings"
+                onClick={() => {
+                  setIsOpen(false);
+                  fireEvent('profile_dropdown_toggle', { open: false });
+                }}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+                role="menuitem"
+              >
+              Settings
               </Link>
             </li>
             <li style={{ padding: '8px 0 8px 16px', borderTop: '1px solid #ccc' }} role="none">
