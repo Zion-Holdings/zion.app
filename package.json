@@ -107,7 +107,8 @@
     "i18n:audit": "node scripts/i18n-audit.cjs",
     "i18n:hardcoded": "node scripts/find-hardcoded-strings.cjs",
     "i18n:check": "npm run i18n:audit && npm run i18n:hardcoded",
-    "i18n:report": "npm run i18n:check && echo 'i18n reports generated: i18n-audit-report.md and hardcoded-strings-report.md"
+    "i18n:report": "npm run i18n:check && echo 'i18n reports generated: i18n-audit-report.md and hardcoded-strings-report.md",
+    "build:cache": "node scripts/cached-build.cjs"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
@@ -277,7 +278,7 @@
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "babel-jest": "^29.7.0",
-        "bcryptjs": "^3.0.2",
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "cypress": "^14.5.0",
