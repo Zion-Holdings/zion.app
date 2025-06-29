@@ -388,6 +388,9 @@ export default function Marketplace() {
   useEffect(() => {
     if (firstRenderRef.current) {
       firstRenderRef.current = false;
+      // On initial mount, useInfiniteScrollPagination handles the first load.
+      // We don't want to call refresh() here immediately if it's the very first render
+      // unless specifically needed. The new effect below handles re-mounts.
       return;
     }
     logInfo('Filters changed, initiating refresh. Filters:', { filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation });
@@ -395,6 +398,16 @@ export default function Marketplace() {
     refresh();
     // scrollToTop(); // Removed from here
   }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation, refresh, toast]); // Added all filter dependencies
+
+  // Effect to explicitly refresh data when the component mounts or re-mounts
+  useEffect(() => {
+    logInfo('Marketplace.tsx: Component mounted/re-mounted, calling refresh to ensure fresh data.');
+    // We call refresh directly to ensure data is re-fetched.
+    // The useInfiniteScrollPagination hook's internal logic will manage its state.
+    refresh();
+    // Reset firstRenderRef for the new instance of the component, so filter changes behave as expected.
+    firstRenderRef.current = true;
+  }, [refresh]); // `refresh` is a dependency. Ensure it's stable.
 
   // New effect to scroll to top AFTER products have been updated and refresh flag is set
   useEffect(() => {
