@@ -66,7 +66,10 @@ export function PerformanceDashboard() {
         performanceScore: bundleMetrics?.performanceScore || 0,
         chunkCount: bundleMetrics?.chunkCount || 0,
         cacheHitRate: 0, // Calculate from resource timing
-        ...webVitals
+        fcp: webVitals.fcp || 0,
+        lcp: webVitals.lcp || 0,
+        cls: webVitals.cls || 0,
+        fid: webVitals.fid || 0
       });
       
       setChunks(chunkData);
