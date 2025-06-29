@@ -7,6 +7,8 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+          <link rel="manifest" href="/manifest.json" />
+          <meta name="theme-color" content="#2563eb" />
         </Head>
         <body>
           <Main />

@@ -23,6 +23,7 @@ import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { ApiErrorBoundary } from '@/components/ApiErrorBoundary';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
 import { BetaBanner } from '@/components/BetaBanner';
+import { InstallPrompt } from '@/components/InstallPrompt';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
@@ -307,6 +308,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                               <PerformanceMonitor />
                                               <BundleAnalyzer />
                                               <QuickActions />
+                                              <InstallPrompt />
                                             </AppLayout>
                                           </ThemeProvider>
                                         </FeedbackProvider>
