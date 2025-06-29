@@ -441,12 +441,14 @@ const nextConfig = {
         moduleIds: 'deterministic',
         chunkIds: 'deterministic',
         
-        // Better tree shaking
-        usedExports: true,
-        sideEffects: false,
+        // Better tree shaking - only in production to avoid conflicts with cacheUnaffected
+        ...((!dev) && {
+          usedExports: true,
+          sideEffects: false,
+        }),
         
         // Module concatenation for better performance
-        concatenateModules: true,
+        concatenateModules: !dev, // Only in production
         
         // Minimize bundles in production
         minimize: !dev,
@@ -472,17 +474,15 @@ const nextConfig = {
         '@sentry/tracing': '@sentry/tracing/esm',
       };
 
-      // Tree shaking optimizations for production
-      config.optimization = {
-        ...config.optimization,
-        usedExports: true,
-        sideEffects: false,
-      };
-
-      // Remove cacheUnaffected when usedExports is enabled
+      // Remove cacheUnaffected when usedExports is enabled to prevent conflicts
       if (config.cache && config.cache.cacheUnaffected !== undefined) {
         delete config.cache.cacheUnaffected;
       }
+    }
+
+    // Remove cacheUnaffected in development if usedExports might be enabled elsewhere
+    if (dev && config.cache && config.cache.cacheUnaffected !== undefined) {
+      delete config.cache.cacheUnaffected;
     }
 
     // Define feature flags for tree shaking

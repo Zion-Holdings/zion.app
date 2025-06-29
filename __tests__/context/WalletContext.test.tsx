@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen, act, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { AppKitInstanceInterface } from '@reown/appkit/react'; // Import type first
 
 // --- START OF MOCK SETUP ---
 
@@ -12,9 +11,16 @@ const MOCK_ADDRESS_3 = '0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC';
 
 // Advanced type for mock AppKit to ensure Jest mock properties are available
 type MockableAppKit = {
-  [K in keyof AppKitInstanceInterface]: AppKitInstanceInterface[K] extends (...args: infer A) => infer R
-    ? jest.Mock<R, A>
-    : AppKitInstanceInterface[K];
+  open: jest.Mock;
+  close: jest.Mock;
+  disconnect: jest.Mock;
+  getState: jest.Mock;
+  getAddress: jest.Mock;
+  getChainId: jest.Mock;
+  subscribeProvider: jest.Mock;
+  on: jest.Mock;
+  off: jest.Mock;
+  getWalletProvider: jest.Mock;
 };
 
 // Forward declaration for TestMockAppKit type
@@ -38,16 +44,19 @@ const makeMockAppKit = (config: Partial<MockableAppKit> = {}): TestMockAppKitIns
     request: jest.fn(async (args: { method: string; params?: any[] }) => {
       // console.log(`AssociatedMockProvider received request: ${args.method}`, args.params);
       switch (args.method) {
-        case 'eth_chainId':
+        case 'eth_chainId': {
           const chainId = selfReferentialMock.getChainId?.() as (number | string | null | undefined);
           return chainId != null ? `0x${Number(chainId).toString(16)}` : '0x1';
-        case 'net_version':
+        }
+        case 'net_version': {
            const netVersion = selfReferentialMock.getChainId?.() as (number | string | null | undefined);
            return netVersion != null ? Number(netVersion).toString() : '1';
+        }
         case 'eth_requestAccounts':
-        case 'eth_accounts':
+        case 'eth_accounts': {
           const addr = selfReferentialMock.getAddress?.();
           return addr ? [addr] : [];
+        }
         case 'eth_blockNumber':
             return Promise.resolve('0x1');
         case 'eth_estimateGas':
