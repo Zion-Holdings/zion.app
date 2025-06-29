@@ -5,6 +5,7 @@ import { safeStorage } from '../utils/safeStorage';
 import { setCookie } from '../utils/cookies';
 
 import enTranslation from './locales/en/translation.json';
+import enUsTranslation from './locales/en-US/translation.json';
 import esTranslation from './locales/es/translation.json';
 import ptTranslation from './locales/pt/translation.json';
 import frTranslation from './locales/fr/translation.json';
@@ -25,7 +26,7 @@ if (!i18n) {
         translation: enTranslation
       },
       'en-US': {
-        translation: enTranslation
+        translation: enUsTranslation
       },
       es: {
         translation: esTranslation
