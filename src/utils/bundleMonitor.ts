@@ -220,7 +220,9 @@ class BundleMonitor {
 
   // Public methods
   public getLatestMetrics(): BundleMetrics | null {
-    return this.metrics.length > 0 ? this.metrics[this.metrics.length - 1] : null;
+    if (this.metrics.length === 0) return null;
+    const latest = this.metrics[this.metrics.length - 1];
+    return latest ?? null;
   }
 
   public getAllMetrics(): BundleMetrics[] {

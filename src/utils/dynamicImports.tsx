@@ -1,3 +1,4 @@
+import React from 'react';
 import dynamic from 'next/dynamic';
 import { ComponentType } from 'react';
 import { logError } from './productionLogger';
