@@ -24,22 +24,44 @@ export function SignUpForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [signupMode, setSignupMode] = useState(true);
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<{ email?: string; password?: string; name?: string }>({});
   const [showVerificationMessage, setShowVerificationMessage] = useState(false);
   
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     setError("");
+    setFieldErrors(prev => ({ ...prev, [name]: "" }));
   };
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setFieldErrors({});
     setIsLoading(true);
 
+    const errors: { email?: string; password?: string; name?: string } = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-    if (!strongPasswordRegex.test(formData.password)) {
-      setError('Password must be at least 8 characters and include uppercase, lowercase, and a number.');
+
+    if (signupMode && !formData.name.trim()) {
+      errors.name = 'Full name is required';
+    }
+
+    if (!formData.email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!emailRegex.test(formData.email)) {
+      errors.email = 'Invalid email address';
+    }
+
+    if (!formData.password) {
+      errors.password = 'Password is required';
+    } else if (!strongPasswordRegex.test(formData.password)) {
+      errors.password = 'Password must be at least 8 characters and include uppercase, lowercase, and a number.';
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
       setIsLoading(false);
       return;
     }
@@ -152,11 +174,15 @@ export function SignUpForm() {
               value={formData.name}
               onChange={handleInputChange}
               required
+              aria-invalid={!!fieldErrors.name}
               placeholder="Enter your full name"
             />
+            {fieldErrors.name && (
+              <p className="text-red-500 text-sm">{fieldErrors.name}</p>
+            )}
           </div>
         )}
-        
+
         <div className="space-y-2">
           <Label htmlFor="email">Email address</Label>
           <Input
@@ -166,10 +192,14 @@ export function SignUpForm() {
             value={formData.email}
             onChange={handleInputChange}
             required
+            aria-invalid={!!fieldErrors.email}
             placeholder="Enter your email"
           />
+          {fieldErrors.email && (
+            <p className="text-red-500 text-sm">{fieldErrors.email}</p>
+          )}
         </div>
-        
+
         <div className="space-y-2">
           <Label htmlFor="password">Password</Label>
           <Input
@@ -179,9 +209,13 @@ export function SignUpForm() {
             value={formData.password}
             onChange={handleInputChange}
             required
+            aria-invalid={!!fieldErrors.password}
             placeholder="Create a password"
           />
           <PasswordStrengthMeter password={formData.password} />
+          {fieldErrors.password && (
+            <p className="text-red-500 text-sm">{fieldErrors.password}</p>
+          )}
         </div>
         
         <Button
