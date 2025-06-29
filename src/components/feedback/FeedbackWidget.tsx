@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import html2canvas from 'html2canvas';
+import React, { useState, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -28,10 +27,18 @@ export function FeedbackWidget() {
   const { rating, comment, screenshot, setRating, setComment, setScreenshot, reset } = useFeedback();
   const [submitted, setSubmitted] = useState(false);
   const enqueueSnackbar = useEnqueueSnackbar();
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const captureScreenshot = async () => {
-    const canvas = await html2canvas(document.body);
-    setScreenshot(canvas.toDataURL('image/png'));
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      if (typeof reader.result === 'string') {
+        setScreenshot(reader.result);
+      }
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -89,8 +96,22 @@ export function FeedbackWidget() {
                     <Button type="button" variant="ghost" size="sm" onClick={() => setScreenshot(null)}>Remove screenshot</Button>
                   </div>
                 )}
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleFileSelect}
+                  className="hidden"
+                />
                 <div className="flex justify-end gap-2">
-                  <Button type="button" variant="outline" size="sm" onClick={captureScreenshot}>Add Screenshot</Button>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    Add Screenshot
+                  </Button>
                   <Button type="submit" disabled={rating === 0} size="sm">Submit</Button>
                   <Button type="button" variant="ghost" size="sm" onClick={() => setOpen(false)}>Close</Button>
                 </div>

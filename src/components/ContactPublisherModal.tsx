@@ -17,10 +17,22 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false); // New loading state
-  const firstInputRef = useRef(null);
+  const firstInputRef = useRef<HTMLInputElement | null>(null);
+  const lastFocusedRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) {
+      // If the modal is not open (or has just closed), focus the last focused element.
+      if (lastFocusedRef.current) {
+        lastFocusedRef.current.focus();
+      }
+      // No setup was performed if the modal wasn't open to begin with, or it just closed.
+      // So, no cleanup function is necessary here.
+      return;
+    }
+
+    // Modal is open, set up focus and event listener.
+    lastFocusedRef.current = document.activeElement as HTMLElement;
 
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
@@ -29,9 +41,21 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
       }
     }
 
-    firstInputRef.current && (firstInputRef.current as HTMLInputElement).focus();
+      firstInputRef.current?.focus();
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    } else {
+      lastFocusedRef.current?.focus();
+      return undefined; // Or return () => {};
+    }
+
     document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+
+    // Return the cleanup function that will be called when isOpen changes to false or the component unmounts.
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      // The logic to focus lastFocusedRef.current is handled when isOpen becomes false (top of this effect).
+    };
   }, [isOpen, onClose]);
 
   if (!isOpen) {
@@ -107,6 +131,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
             type="submit"
             className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
             disabled={isLoading}
+            aria-label="Send message"
           >
             {isLoading ? 'Sending...' : 'Send Message'}
           </button>
@@ -115,6 +140,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
             onClick={onClose}
             className="ml-2 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 disabled:opacity-50"
             disabled={isLoading}
+            aria-label="Cancel"
           >
             Cancel
           </button>

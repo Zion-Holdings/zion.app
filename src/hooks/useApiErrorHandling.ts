@@ -26,7 +26,7 @@ export const useApiErrorHandling = () => {
       let errorMessage = customMessage || 'An unexpected error occurred';
       
       if (error.message?.includes('fetch')) {
-        errorMessage = 'Network error - please check your connection';
+        errorMessage = 'Network error – please retry';
       } else if (error.message?.includes('timeout')) {
         errorMessage = 'Request timed out - please try again';
       } else if (error.message?.includes('401')) {

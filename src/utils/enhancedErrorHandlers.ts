@@ -347,7 +347,7 @@ export class EnhancedFetchErrorHandler {
 
         // Only show network errors for user-initiated requests
         if (!this.shouldFailSilently(url)) {
-          const message = 'Network error - please check your connection';
+        const message = 'Network error – please retry';
           
           enhancedGlobalErrorHandler.reportError(message, {
             type: ToastType.NETWORK_ERROR,

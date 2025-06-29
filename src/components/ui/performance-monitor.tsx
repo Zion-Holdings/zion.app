@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth } from '@/hooks/useAuth';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -13,6 +14,14 @@ interface PerformanceMetrics {
 }
 
 export function PerformanceMonitor() {
+  const { user } = useAuth();
+  const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
+  const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin;
+
+  if (!isAllowed) {
+    return null;
+  }
+
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [shouldShow, setShouldShow] = useState(false);

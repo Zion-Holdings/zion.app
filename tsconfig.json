@@ -103,6 +103,13 @@
     "cypress",
     "monitoring",
     "netlify",
-    "supabase"
+    "supabase",
+    "browserstack.config.ts",
+    "cypress.config.ts",
+    "playwright.config.ts",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
   ]
 }

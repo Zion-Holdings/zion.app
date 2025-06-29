@@ -1,5 +1,6 @@
 import { ModeToggle } from '@/components/ModeToggle';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export function ExpoHero() {
   return (
@@ -22,7 +23,7 @@ export function ExpoHero() {
           Explore Zion's manifesto and join us in building a borderless multiverse powering talent, AI and trust.
         </p>
         <Button asChild size="lg" className="bg-zion-cyan hover:bg-zion-cyan/80">
-          <a href="#agenda">View Agenda</a>
+          <Link href="#agenda">View Agenda</Link>
         </Button>
       </div>
     </section>

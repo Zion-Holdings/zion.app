@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const partners = [
   { name: 'Partner A', logo: 'https://placehold.co/150x80' },
@@ -24,7 +25,7 @@ export function PartnersSection() {
           ))}
         </div>
         <div className="text-center mt-8">
-          <a href="#register" className="text-zion-cyan underline">Become a Sponsor</a>
+          <Link href="#register" className="text-zion-cyan underline">Become a Sponsor</Link>
         </div>
       </div>
     </section>

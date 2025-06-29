@@ -296,31 +296,150 @@ const nextConfig = {
       'react-router-dom': path.resolve(__dirname, './src/shims/react-router-dom.ts'),
     };
 
-    // Build performance optimizations - only for client side
+    // Simplified bundle optimization for large applications (176+ pages)
     if (!isServer) {
       config.optimization = {
         ...config.optimization,
-        // Split chunks to improve build performance
+        // Enhanced chunk splitting for better performance
         splitChunks: {
           chunks: 'all',
+          minSize: 20000,
+          maxSize: 200000, // Reduced from 250KB to 200KB for better loading
+          maxAsyncRequests: 30, // Increased for better code splitting
+          maxInitialRequests: 25, // Increased for better initial load
           cacheGroups: {
             default: false,
             vendors: false,
-            // Group vendor libraries
+            
+            // Framework chunk for React/Next.js (highest priority)
+            framework: {
+              chunks: 'all',
+              name: 'framework',
+              test: /[\\/]node_modules[\\/](react|react-dom|scheduler|next)[\\/]/,
+              priority: 50,
+              enforce: true,
+              reuseExistingChunk: true,
+            },
+            
+            // Heavy libraries chunk (separate from framework)
+            heavy: {
+              name: 'heavy-libs',
+              test: /[\\/]node_modules[\\/](three|firebase|helia|@google\/model-viewer)[\\/]/,
+              priority: 45,
+              enforce: true,
+              reuseExistingChunk: true,
+            },
+            
+            // Chart and visualization libraries
+            charts: {
+              name: 'chart-libs',
+              test: /[\\/]node_modules[\\/](recharts|d3|chart\.js)[\\/]/,
+              priority: 40,
+              enforce: true,
+              reuseExistingChunk: true,
+            },
+            
+            // UI libraries chunk
+            ui: {
+              name: 'ui-libs',
+              test: /[\\/]node_modules[\\/](@radix-ui|lucide-react|clsx|class-variance-authority)[\\/]/,
+              priority: 35,
+              enforce: true,
+              reuseExistingChunk: true,
+            },
+            
+            // Date and utility libraries
+            utils: {
+              name: 'util-libs',
+              test: /[\\/]node_modules[\\/](date-fns|lodash|fuse\.js|axios)[\\/]/,
+              priority: 30,
+              enforce: true,
+              reuseExistingChunk: true,
+            },
+            
+            // Crypto and blockchain libraries
+            crypto: {
+              name: 'crypto-libs',
+              test: /[\\/]node_modules[\\/](ethers|@reown|web3)[\\/]/,
+              priority: 28,
+              enforce: true,
+              reuseExistingChunk: true,
+            },
+            
+            // Auth and validation libraries
+            auth: {
+              name: 'auth-libs',
+              test: /[\\/]node_modules[\\/](next-auth|@supabase|yup|zod)[\\/]/,
+              priority: 26,
+              enforce: true,
+              reuseExistingChunk: true,
+            },
+            
+            // Markdown and content processing
+            content: {
+              name: 'content-libs',
+              test: /[\\/]node_modules[\\/](react-markdown|rehype|remark)[\\/]/,
+              priority: 24,
+              enforce: true,
+              reuseExistingChunk: true,
+            },
+            
+            // Development tools (only in dev builds)
+            devtools: {
+              name: 'devtools',
+              test: /[\\/]node_modules[\\/](@storybook|webpack-bundle-analyzer)[\\/]/,
+              priority: 22,
+              enforce: true,
+              reuseExistingChunk: true,
+              chunks: dev ? 'all' : 'async', // Only async in production
+            },
+            
+            // General vendor libraries
             vendor: {
               chunks: 'all',
               test: /[\\/]node_modules[\\/]/,
               name: 'vendors',
+              priority: 20,
               enforce: true,
+              reuseExistingChunk: true,
+              minChunks: 2, // Only if used by at least 2 modules
             },
-            // Group common components
+            
+            // Common application code
             common: {
               name: 'common',
-              minChunks: 2,
+              minChunks: 3, // Increased from 2 to reduce small chunks
               chunks: 'all',
+              priority: 10,
               enforce: true,
+              reuseExistingChunk: true,
             },
           },
+        },
+        
+        // Enhanced optimization settings
+        moduleIds: 'deterministic',
+        chunkIds: 'deterministic',
+        
+        // Better tree shaking
+        usedExports: true,
+        sideEffects: false,
+        
+        // Module concatenation for better performance
+        concatenateModules: true,
+        
+        // Minimize bundles in production
+        minimize: !dev,
+      };
+      
+      // Enhanced performance hints
+      config.performance = {
+        hints: dev ? false : 'warning',
+        maxEntrypointSize: 400000, // 400KB for initial bundle
+        maxAssetSize: 400000,
+        assetFilter: (assetFilename) => {
+          // Only check JS and CSS files
+          return /\.(js|css)$/.test(assetFilename);
         },
       };
     }

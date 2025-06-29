@@ -9,6 +9,7 @@ import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
+import { LoginModal } from '@/components/auth/LoginModal';
 import { useAuth } from '@/hooks/useAuth';
 import { UserMenu } from '@/components/header/UserMenu';
 import { useSelector } from 'react-redux';
@@ -20,6 +21,7 @@ import { logWarn } from '@/utils/productionLogger';
 export function AppHeader() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   const { user } = useAuth();
@@ -83,11 +85,15 @@ export function AppHeader() {
                 className="text-sm font-medium text-foreground/70 hover:text-foreground"
                 aria-label={t('auth.login')}
                 data-testid="login-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setLoginOpen(true);
+                }}
               >
                 {t('auth.login')}
               </Link>
               <Link
-                href="/auth/register"
+                href="/signup"
                 className="ml-2 text-sm font-medium text-foreground/70 hover:text-foreground"
                 aria-label={t('auth.signup')}
                 data-testid="signup-nav-link"
@@ -124,6 +130,7 @@ export function AppHeader() {
 
       {/* Mobile Bottom Navigation */}
       {isMobile && <MobileBottomNav unreadCount={unreadCount} />}
+      <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />
     </>
   );
 }

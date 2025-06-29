@@ -14,13 +14,20 @@ export type LanguageContextType = {
   supportedLanguages: { code: SupportedLanguage; name: string; flag: string }[];
 };
 
-const supportedLanguages = [
+/**
+ * Default list of languages supported by the application. Exported so
+ * components can fall back to it if the context has not been initialized
+ * correctly.
+ */
+export const SUPPORTED_LANGUAGES = [
   { code: 'en' as SupportedLanguage, name: 'English', flag: '🇺🇸' },
   { code: 'es' as SupportedLanguage, name: 'Español', flag: '🇪🇸' },
   { code: 'fr' as SupportedLanguage, name: 'Français', flag: '🇫🇷' },
   { code: 'pt' as SupportedLanguage, name: 'Português', flag: '🇧🇷' },
   { code: 'ar' as SupportedLanguage, name: 'العربية', flag: '🇸🇦' }
 ];
+
+const supportedLanguages = SUPPORTED_LANGUAGES;
 
 const defaultLanguageContext: LanguageContextType = {
   currentLanguage: 'en',

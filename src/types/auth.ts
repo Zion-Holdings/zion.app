@@ -45,6 +45,7 @@ export interface AuthContextType {
   updateProfile: (data: Partial<UserDetails>) => Promise<{ error: any }>;
   loginWithGoogle: () => void;
   loginWithFacebook: () => void;
+  loginWithGitHub: () => void;
   loginWithTwitter: () => void;
   loginWithWeb3: () => Promise<void>;
   avatarUrl: string | null;
