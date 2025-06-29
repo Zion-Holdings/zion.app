@@ -75,7 +75,7 @@ export class ProductionOptimizer {
   private preloadCriticalResources(): void {
     const criticalResources = [
       { href: '/fonts/inter-var.woff2', as: 'font', type: 'font/woff2' },
-      { href: '/logos/zion-logo.svg', as: 'image' },
+      { href: '/logos/zion-logo.png', as: 'image' },
       { href: '/_next/static/css/app.css', as: 'style' },
     ];
 

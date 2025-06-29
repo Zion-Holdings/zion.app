@@ -115,7 +115,7 @@ export function QuickActions() {
 
         // Preload critical images
         const criticalImages = [
-          '/logos/zion-logo.svg',
+          '/logos/zion-logo.png',
           '/images/hero-bg.webp'
         ];
         
