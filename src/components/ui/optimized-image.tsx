@@ -150,6 +150,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
       return () => observer.disconnect();
     }
+    
+    return () => {}; // Return empty cleanup function for the else case
   }, [src]);
 
   // Generate optimized URLs
