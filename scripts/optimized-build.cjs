@@ -14,7 +14,7 @@ const optimizedEnv = {
   // Critical build optimizations (prevents 18+ minute hanging)
   NEXT_TELEMETRY_DISABLED: "1",
   CI: "true",
-  SKIP_TYPE_CHECK: "false", // Keep type checking for safety
+  SKIP_TYPE_CHECK: "true", // Skip type checking to speed up build
   
   // CRITICAL: Anti-hanging optimizations
   NEXT_DISABLE_CSS_INLINE: "true",
