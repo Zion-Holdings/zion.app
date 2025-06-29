@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "npm run env:dev && next dev",
-    "dev:quiet": "npm run env:dev && next dev --quiet",
+    "dev:quiet": "npm run env:dev && NEXT_PRIVATE_SKIP_SIZE_WARN=1 next dev",
     "dev:verbose": "npm run env:dev && DEBUG=* next dev",
     "dev:monitor": "npm run env:dev && node scripts/performance-monitor.cjs && next dev",
     "generate": "prisma generate",
