@@ -172,20 +172,23 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
       } catch (error) {
         logError('[App] Critical initialization error:', { data:  { error } });
-        
-        // Only send to Sentry if it's available
-        try {
-          if (process.env.NEXT_PUBLIC_SENTRY_DSN && !process.env.NEXT_PUBLIC_SENTRY_DSN.includes('dummy')) {
-            Sentry.captureException(error);
-          }
-        } catch (sentryError) {
-          logWarn('[App] Could not send error to Sentry:', { data:  { error: sentryError } });
-        }
 
-        // Still mark as initialized to prevent infinite loading
+        // Ensure isInitialized is set to true immediately in case of an error,
+        // so the app doesn't hang on the loading screen.
         if (isMounted) {
           setIsInitialized(true);
         }
+
+        // Defer Sentry reporting to make it non-blocking and allow Sentry.init to potentially run first.
+        setTimeout(() => {
+          try {
+            if (process.env.NEXT_PUBLIC_SENTRY_DSN && !process.env.NEXT_PUBLIC_SENTRY_DSN.includes('dummy')) {
+              Sentry.captureException(error);
+            }
+          } catch (sentryError) {
+            logWarn('[App] Could not send error to Sentry (deferred):', { data:  { error: sentryError } });
+          }
+        }, 0);
       }
     };
 
