@@ -76,7 +76,7 @@ module.exports = {
     // Specific aliases first
     // Ensure more specific aliases come before the general one
     '^@/pages/api/(.*)$': '<rootDir>/src/pages/api/$1', // Assuming API routes are under src
-    '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
+    '^@/pages/(.*)$': '<rootDir>/pages/$1',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
     '^@/hooks/(.*)$': '<rootDir>/src/hooks/$1',
     '^@/context/(.*)$': '<rootDir>/src/context/$1',
