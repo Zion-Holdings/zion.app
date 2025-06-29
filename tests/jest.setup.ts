@@ -23,6 +23,8 @@ global.TextDecoder = TextDecoder;
 // will transform import.meta.env.VITE_SOME_VAR to something like process.env.VITE_SOME_VAR
 // or that import.meta itself is transformed into an object where 'env' can be populated.
 process.env.VITE_REOWN_PROJECT_ID = 'test_project_id_from_jest_setup';
+process.env.NEXT_PUBLIC_SUPABASE_URL = 'http://localhost:54321';
+process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'test_anon_key';
 
 
 // Jest-axe matchers for accessibility
@@ -223,3 +225,8 @@ if (typeof BroadcastChannel === 'undefined') {
 if (typeof window.scrollTo === 'undefined') {
   window.scrollTo = jest.fn();
 }
+
+// Mock axios.create to return axios itself
+import axios from 'axios';
+// @ts-ignore
+axios.create = jest.fn(() => axios);
