@@ -21,7 +21,8 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
     if (!isAuthenticated || !user) {
       const returnTo = encodeURIComponent(router.asPath);
       safeStorage.setItem('nextPath', router.asPath);
-      router.replace(`/auth/login?returnTo=${returnTo}`);
+      // Use push instead of replace to ensure the login page loads correctly
+      router.push(`/auth/login?returnTo=${returnTo}`);
     }
   }, [isAuthenticated, user, isLoading, router]);
 
