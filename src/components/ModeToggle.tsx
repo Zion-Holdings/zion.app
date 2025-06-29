@@ -84,9 +84,9 @@ export function ModeToggle() {
         size="icon"
         disabled
         aria-label="Loading theme toggle"
-        className="focus-visible:ring-zion-purple relative"
+        className="focus-visible:ring-ring relative text-foreground"
       >
-        <div className="h-5 w-5 bg-slate-300 rounded animate-pulse" />
+        <div className="h-5 w-5 bg-muted rounded animate-pulse" /> {/* Changed to bg-muted for theme consistency */}
         <span className="sr-only">Loading theme toggle</span>
       </Button>
     );
@@ -103,7 +103,7 @@ export function ModeToggle() {
             aria-pressed={isDarkMode}
             aria-label={`Toggle theme. Current theme: ${resolvedTheme}. Click to switch to ${isDarkMode ? 'light' : 'dark'} mode.`}
             title={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
-            className="focus-visible:ring-zion-purple relative group"
+            className="focus-visible:ring-ring relative group text-foreground" // Added text-foreground
             data-testid="theme-toggle"
             data-theme={resolvedTheme}
           >

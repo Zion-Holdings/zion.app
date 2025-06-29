@@ -32,7 +32,8 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
 
     if (!user) {
       const returnTo = encodeURIComponent(router.asPath); // Use router.asPath for the full path with query
-      router.replace(`/auth/login?returnTo=${returnTo}`);
+      // Use push instead of replace to ensure navigation triggers page load
+      router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }
 

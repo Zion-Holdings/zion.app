@@ -41,19 +41,53 @@
     "messages": "Messages",
     "post_job": "Publier un Emploi",
     "analytics": "Analytiques",
+<<<<<<< HEAD
     "login": "Connexion",
     "signup": "S'inscrire"
+=======
+    "login": "Login",
+    "signup": "Sign Up",
+    "help": "Aide"
+>>>>>>> 5ef77b1de2e12cc0feb866e70349b87deebb1a3b
   },
   "auth": {
     "login": "Connexion",
     "signup": "S'inscrire",
     "logout": "Déconnexion",
     "email": "Email",
+<<<<<<< HEAD
     "password": "Mot de passe",
     "forgot_password": "Mot de passe oublié ?",
     "remember_me": "Se souvenir de moi",
     "login_success": "Connexion réussie",
     "logout_success": "Déconnexion réussie"
+=======
+    "password": "Password",
+    "forgot_password": "Forgot Password?",
+    "remember_me": "Remember Me",
+    "login_success": "Logged in successfully",
+    "logout_success": "Logged out successfully",
+    "sign_in_to_account": "Connectez-vous à votre compte",
+    "create_new_account": "créer un nouveau compte",
+    "didnt_receive_verification_email": "Vous n'avez pas reçu l'e-mail de vérification ?",
+    "hide": "Masquer",
+    "enter_email_to_resend": "Entrez votre email pour renvoyer la vérification",
+    "resend_verification_email": "Renvoyer l'e-mail de vérification",
+    "sending": "Envoi...",
+    "session_check_timed_out": "Vérification de session expirée",
+    "session_check_timed_out_message": "Nous n'avons pas pu vérifier votre session rapidement. Veuillez réessayer ou rafraîchir la page.",
+    "email_verification_required": "Vérification de l'e-mail requise",
+    "email_needs_verification": "Votre adresse e-mail doit être vérifiée avant de vous connecter.",
+    "verification_email_sent": "✓ E-mail de vérification envoyé à {{email}}",
+    "resend_email": "Renvoyer l'e-mail",
+    "check_status": "Vérifier le statut",
+    "redirecting": "Redirection vers le statut de vérification dans 3 secondes...",
+    "authentication_error": "Erreur d'authentification",
+    "sign_in": "Se connecter",
+    "signing_in": "Connexion...",
+    "email_address": "Adresse e-mail",
+    "or_continue_with": "Ou continuer avec"
+>>>>>>> 5ef77b1de2e12cc0feb866e70349b87deebb1a3b
   },
   "cart": {
     "title": "Votre Panier",
@@ -216,7 +250,16 @@
     "payment_success_title": "Paiement Réussi!",
     "payment_success_message": "Votre paiement a été traité avec succès. Vous avez maintenant accès à toutes les fonctionnalités premium.",
     "go_to_dashboard": "Aller au Tableau de Bord",
-    "go_to_marketplace": "Aller au Marketplace"
+    "go_to_marketplace": "Aller au Marketplace",
+    "go_back": "Retour",
+    "forbidden_title": "403 \u2013 Interdit",
+    "server_error_title": "500 \u2013 Erreur du Serveur",
+    "server_error": "Erreur du Serveur",
+    "page_lost_message": "La page que vous recherchez semble avoir disparu. Revenons pour continuer d'explorer l'avenir de la technologie.",
+    "explore_marketplace": "Explorer Notre Marché",
+    "contact_support_team": "contacter notre équipe d'assistance",
+    "if_believe_error": "Si vous pensez qu'il s'agit d'une erreur, veuillez",
+    "status_page": "page de statut"
   },
   "categories": {
     "services": "Services",
