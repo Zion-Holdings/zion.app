@@ -84,32 +84,7 @@ const nextConfig = {
     loader: 'default',
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // Add domains that are safe to optimize
-    domains: [
-      'via.placeholder.com',
-      'i.pravatar.cc',
-      'images.unsplash.com',
-      'unsplash.com',
-      'randomuser.me',
-      'assets.aceternity.com',
-      'pbs.twimg.com',
-      'avatars.githubusercontent.com',
-      'lh3.googleusercontent.com',
-      'www.gravatar.com',
-      'images.ctfassets.net',
-      'cdnjs.cloudflare.com',
-      'cdn.jsdelivr.net',
-      'source.unsplash.com',
-      'res.cloudinary.com',
-      'picsum.photos',
-      'cdn.zion.org',
-      'app.ziontechgroup.com',
-      'localhost'
-    ],
-    // Add specific path for local images to prevent 400 errors
-    path: '/_next/image',
-    // Increase loader timeout for Netlify
-    loaderFile: undefined, // Use default loader
+    // Modern remotePatterns configuration (replaces deprecated domains)
     remotePatterns: [
       {
         protocol: 'https',
@@ -303,7 +278,12 @@ const nextConfig = {
       config.cache.maxAge = 7 * 24 * 60 * 60 * 1000; // 7 days
       
       // Reduce cache store size to prevent large string serialization
-      config.cache.maxMemoryGenerations = dev ? 5 : 10;
+      config.cache.maxMemoryGenerations = dev ? 3 : 10; // Reduced for development
+      config.cache.cacheDirectory = path.resolve(process.cwd(), '.next/cache/webpack');
+      
+      // Advanced cache optimization to prevent large string serialization
+      config.cache.store = 'pack';
+      config.cache.version = '1.0.0';
     }
 
     // Add optimization to prevent temporal dead zone issues
@@ -326,6 +306,10 @@ const nextConfig = {
       // Suppress common Next.js warnings that don't affect functionality
       /Module not found.*can't resolve/i,
       /export.*was not found in/i,
+      // Additional Next.js 14 warnings
+      /images\.domains.*deprecated/i,
+      /Fast Refresh/i,
+      /webpack performance recommendations/i,
   ];
 
     // Alias React Router to a lightweight shim to avoid bundling the full library
