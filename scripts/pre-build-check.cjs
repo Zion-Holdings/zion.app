@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 
-// Load environment variables from .env.local, .env.development, .env
-require('dotenv').config({ path: '.env.local' });
-require('dotenv').config({ path: '.env.development' }); // often used for dev defaults
-require('dotenv').config({ path: '.env' }); // for any base defaults
+// Load environment variables from .env files if the dotenv package is available
+let dotenvAvailable = true;
+try {
+  require('dotenv').config({ path: '.env.local' });
+  require('dotenv').config({ path: '.env.development' }); // often used for dev defaults
+  require('dotenv').config({ path: '.env' }); // for any base defaults
+} catch (err) {
+  dotenvAvailable = false;
+  console.warn('⚠️  Optional dependency "dotenv" not found. Skipping env file loading.');
+}
 
 /**
  * Pre-build Check Script
