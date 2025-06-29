@@ -338,7 +338,15 @@ const LoginPage = () => {
 
   // 3. Render Login Form: If session is checked and no user, OR if a login attempt is in progress (isLoading)
   // This also covers the case where a user was present but a login attempt failed, clearing the user.
-  logInfo(`LoginPage: Rendering login form. sessionChecked: ${sessionChecked}, user: ${user?.id}, isLoading: ${isLoading}`);
+  logInfo(`LoginPage: Rendering login form. sessionChecked: ${sessionChecked}, user: ${user?.id}, isLoading: ${isLoading}, pathname: ${router.pathname}`);
+
+  // Defensive check: If router.pathname is not /auth/login, do not render the login form.
+  // This is a safeguard against the component's content persisting on other auth routes.
+  if (router.pathname !== '/auth/login' && router.pathname !== '/login') {
+    logWarn(`LoginPage: Current pathname is ${router.pathname}, not /auth/login or /login. Rendering null to prevent incorrect display.`);
+    return null; // Or a minimal loader/empty div
+  }
+
   return (
     <>
       <Head>
