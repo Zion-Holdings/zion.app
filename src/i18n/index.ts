@@ -12,6 +12,8 @@ import frTranslation from './locales/fr/translation.json';
 import arTranslation from './locales/ar/translation.json';
 import { logError } from '@/utils/productionLogger';
 
+const storedLang = safeStorage.getItem('i18n_lang') || undefined;
+
 
 if (!i18n) {
   logError("CRITICAL: i18next failed to import. Internationalization will not work.");
@@ -44,6 +46,7 @@ if (!i18n) {
         translation: arTranslation
       }
     },
+    lng: storedLang,
     fallbackLng: 'en', // Default language
     preload: ['en-US', 'es-ES'],
     supportedLngs: ['en', 'en-US', 'es', 'es-ES', 'fr', 'pt', 'ar'],
@@ -52,9 +55,10 @@ if (!i18n) {
       escapeValue: false, // React already escapes by default
     },
     detection: {
-      order: ['cookie', 'navigator'], // Keep navigator as a fallback for first-time users
+      order: ['localStorage', 'cookie', 'navigator'],
+      lookupLocalStorage: 'i18n_lang',
       lookupCookie: 'i18n_lang',
-      // caches: ['cookie'], // REMOVED: Prevent navigator fallback from overwriting user's explicit cookie choice
+      caches: [], // handle persistence manually
     },
   })
   .catch(error => {
