@@ -3,12 +3,22 @@ import Link from 'next/link';
 import { safeStorage } from '@/utils/safeStorage';
 import { initGA } from '@/lib/analytics';
 import { initPostHog } from '@/lib/posthog';
+import { setCookie, getCookie } from '@/utils/cookies';
+
+const CONSENT_COOKIE_NAME = 'analyticsConsent';
+const COOKIE_EXPIRATION_DAYS = 365;
 
 export const AnalyticsConsentBanner: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    const consent = safeStorage.getItem('analyticsConsent');
+    let consent: string | null = null;
+    if (safeStorage.isAvailable) {
+      consent = safeStorage.getItem(CONSENT_COOKIE_NAME);
+    } else {
+      consent = getCookie(CONSENT_COOKIE_NAME);
+    }
+
     if (consent === 'granted') {
       initGA();
       initPostHog();
@@ -17,16 +27,23 @@ export const AnalyticsConsentBanner: React.FC = () => {
     }
   }, []);
 
-  const accept = () => {
-    safeStorage.setItem('analyticsConsent', 'granted');
+  const storeConsent = (consentValue: 'granted' | 'denied') => {
+    if (safeStorage.isAvailable) {
+      safeStorage.setItem(CONSENT_COOKIE_NAME, consentValue);
+    } else {
+      setCookie(CONSENT_COOKIE_NAME, consentValue, COOKIE_EXPIRATION_DAYS);
+    }
     setShowBanner(false);
+  };
+
+  const accept = () => {
+    storeConsent('granted');
     initGA();
     initPostHog();
   };
 
   const decline = () => {
-    safeStorage.setItem('analyticsConsent', 'denied');
-    setShowBanner(false);
+    storeConsent('denied');
   };
 
   if (!showBanner) return null;
