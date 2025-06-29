@@ -1,19 +1,19 @@
 import { withErrorLogging } from '@/utils/withErrorLogging';
-import { users } from './data';
+import { users, type MockUser } from './data';
 
 let mockUser = users['1'];
 
 // Generic request/response types so this file works in Node or Next.js
 interface Req {
   method?: string;
-  body?: any;
+  body?: Partial<MockUser>;
 }
 interface JsonRes {
   statusCode?: number;
   setHeader: (name: string, value: string) => void;
-  end: (data?: any) => void;
+  end: (data?: unknown) => void;
   status: (code: number) => JsonRes;
-  json: (data: any) => void;
+  json: (data: MockUser | { success: boolean }) => void;
 }
 
 function handler(req: Req, res: JsonRes) {
