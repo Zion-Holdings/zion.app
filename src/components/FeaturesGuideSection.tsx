@@ -2,6 +2,7 @@ import Link from "next/link";
 import { GradientHeading } from "./GradientHeading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "./ui/button";
+import { fireEvent } from '@/lib/analytics';
 import { 
   Users, 
   Zap, 
@@ -203,12 +204,15 @@ export function FeaturesGuideSection() {
         </Tabs>
         
         <div className="mt-12 text-center">
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10"
             asChild
           >
-            <Link href="/marketplace">
+            <Link
+              href="/marketplace"
+              onClick={() => fireEvent('explore_marketplace_click')}
+            >
               Explore Full Marketplace
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

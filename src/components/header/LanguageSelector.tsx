@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
+import { fireEvent } from '@/lib/analytics';
 import { logInfo, logError } from '@/utils/productionLogger';
 import {
   DropdownMenu,
@@ -35,13 +36,19 @@ export function LanguageSelector() {
     try {
       await changeLanguage(langCode);
       setIsOpen(false);
+      fireEvent('language_change', { language: langCode });
     } catch (error) {
       logError('LanguageSelector: Error changing language:', { data: error });
     }
   };
 
+  const handleOpenChange = (open: boolean) => {
+    setIsOpen(open);
+    fireEvent('language_selector_toggle', { open });
+  };
+
   return (
-    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+    <DropdownMenu open={isOpen} onOpenChange={handleOpenChange}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
