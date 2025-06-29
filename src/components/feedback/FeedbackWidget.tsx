@@ -86,7 +86,7 @@ export function FeedbackWidget() {
             onClick={() => {
               setSubmitted(false);
             }}
-            className="fixed bottom-6 left-6 z-50"
+            className="fixed bottom-6 left-6 z-[60]"
             size="sm"
           >
             Feedback
