@@ -14,10 +14,15 @@ const RegisterPage = () => {
     fireEvent('signup_page_view');
   }, []);
 
-  const handleSuccess = () => {
-    // Redirect to login or a verification pending page, as per app flow
-    // For now, let's redirect to login page after successful registration
-    router.push('/auth/login?registrationSuccess=true');
+  const handleSuccess = ({ email, emailVerificationRequired }: {
+    email: string;
+    emailVerificationRequired: boolean;
+  }) => {
+    if (emailVerificationRequired) {
+      router.push(`/verify-status?email=${encodeURIComponent(email)}`);
+    } else {
+      router.push('/auth/login?registrationSuccess=true');
+    }
   };
 
   return (
@@ -47,13 +52,12 @@ const RegisterPage = () => {
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               Or{' '}
-              <button
-                type="button"
-                onClick={() => router.push('/auth/login')}
+              <Link
+                href="/auth/login"
                 className="font-medium text-blue-600 hover:text-blue-500 underline"
               >
                 sign in if you already have an account
-              </button>
+              </Link>
             </p>
           </div>
 

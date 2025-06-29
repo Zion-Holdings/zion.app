@@ -1,30 +1,23 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import type { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
-import { Search, Filter, GridIcon, List, Loader2, SortAsc } from 'lucide-react';
+import { Search, Filter, X, SortAsc, SortDesc, GridIcon, List, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Slider } from '@/components/ui/slider';
 import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { EnhancedSearchInput } from '@/components/search/EnhancedSearchInput';
+import { EnhancedSearchInput } from './EnhancedSearchInput';
 import { generateSearchSuggestions } from '@/data/marketplaceData';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
-import { TALENT_PROFILES } from '@/data/talentData';
-import { BLOG_POSTS } from '@/data/blog-posts';
-import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
-import type { ProductListing } from '@/types/listings';
-import type { TalentProfile } from '@/types/talent';
-import type { BlogPost } from '@/types/blog';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logError, logInfo } from '@/utils/productionLogger';
 
 interface SearchResult {
   id: string;
   title: string;
   description: string;
-  type: 'product' | 'talent' | 'blog' | 'service' | 'doc';
+  type: 'product' | 'talent' | 'blog' | 'service';
   category?: string;
   url?: string;
   image?: string;
@@ -44,12 +37,13 @@ interface SearchFilters {
   sort: string;
 }
 
-interface SearchPageProps {
-  products: ProductListing[];
-  talent: TalentProfile[];
-  posts: BlogPost[];
-  docs: typeof DOCS_SEARCH_ITEMS;
-  q: string;
+interface SearchResponse {
+  results: SearchResult[];
+  totalCount: number;
+  page: number;
+  limit: number;
+  query: string;
+  hasMore: boolean;
 }
 
 // Highlight search terms in text
@@ -169,8 +163,7 @@ const FilterSidebar: React.FC<{
     { id: 'product', label: 'Products' },
     { id: 'talent', label: 'Talent' },
     { id: 'service', label: 'Services' },
-    { id: 'blog', label: 'Blog Posts' },
-    { id: 'doc', label: 'Documentation' }
+    { id: 'blog', label: 'Blog Posts' }
   ];
 
   const handleTypeChange = (typeId: string, checked: boolean) => {
@@ -281,7 +274,7 @@ const NoResultsState: React.FC<{ searchTerm: string; onNewSearch: (term: string)
 }) => {
   const suggestions = [
     "AI & Machine Learning",
-    "Web Development", 
+    "Web Development",
     "Mobile App Development",
     "Data Analysis",
     "UI/UX Design",
@@ -329,35 +322,18 @@ const NoResultsState: React.FC<{ searchTerm: string; onNewSearch: (term: string)
   );
 };
 
-export const getServerSideProps: GetServerSideProps<SearchPageProps> = async ({ query }: { query: { q?: string } }) => {
-  const term = String(query.q ?? '').toLowerCase();
-  logInfo('🔍 Search page getServerSideProps called with query:', { q: query.q, term });
-  
-  const match = (text?: string) => text?.toLowerCase().includes(term);
-
-  const [products, talent, posts, docs] = await Promise.all([
-    Promise.resolve(MARKETPLACE_LISTINGS.filter(p => match(p.title) || match(p.description))),
-    Promise.resolve(TALENT_PROFILES.filter(t => match(t.full_name) || match(t.professional_title) || match(t.bio))),
-    Promise.resolve(BLOG_POSTS.filter(p => match(p.title) || match(p.excerpt) || match(p.content))),
-    Promise.resolve(DOCS_SEARCH_ITEMS.filter(d => match(d.text)))
-  ]);
-
-  logInfo('🔍 Search results:', { 
-    term, 
-    products: products.length, 
-    talent: talent.length, 
-    posts: posts.length, 
-    docs: docs.length 
-  });
-
-  return { props: { products, talent, posts, docs, q: term } };
-};
-
-const SearchPage = ({ products, talent, posts, docs, q }: SearchPageProps) => {
+// Main Search Results Page Component
+export const AdvancedSearchResults: React.FC = () => {
   const router = useRouter();
-  const [searchTerm, setSearchTerm] = useState(q);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [totalCount, setTotalCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [hasMore, setHasMore] = useState(false);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
+  
   const [filters, setFilters] = useState<SearchFilters>({
     types: [],
     category: '',
@@ -369,144 +345,110 @@ const SearchPage = ({ products, talent, posts, docs, q }: SearchPageProps) => {
 
   const suggestions = generateSearchSuggestions();
 
-  // Convert props to SearchResult format
-  const allResults: SearchResult[] = useMemo(() => {
-    const results: SearchResult[] = [];
-    
-    // Add products
-    products.forEach(item => {
-      results.push({
-        id: item.id,
-        title: item.title,
-        description: item.description,
-        type: 'product',
-        category: item.category,
-        url: `/marketplace/products/${item.id}`,
-        image: item.images?.[0],
-        price: item.price ?? undefined,
-        currency: item.currency || 'USD',
-        rating: item.rating,
-        tags: item.tags,
-        date: item.createdAt
-      });
-    });
-
-    // Add talent
-    talent.forEach(profile => {
-      results.push({
-        id: profile.id,
-        title: profile.full_name,
-        description: `${profile.professional_title} - ${profile.bio || ''}`,
-        type: 'talent',
-        category: 'Talent',
-        url: `/marketplace/talent/${profile.id}`,
-        image: profile.profile_picture_url,
-        price: profile.hourly_rate,
-        currency: 'USD',
-        rating: profile.average_rating,
-        tags: profile.skills,
-      });
-    });
-
-    // Add blog posts
-    posts.forEach(post => {
-      results.push({
-        id: post.slug,
-        title: post.title,
-        description: post.excerpt,
-        type: 'blog',
-        category: 'Blog',
-        url: `/blog/${post.slug}`,
-        image: post.featuredImage,
-        tags: post.tags,
-        date: post.publishedDate
-      });
-    });
-
-    // Add docs
-    docs.forEach(doc => {
-      results.push({
-        id: doc.id,
-        title: doc.text,
-        description: doc.description || doc.text,
-        type: 'doc',
-        category: 'Documentation',
-        url: doc.url,
-        tags: doc.tags
-      });
-    });
-
-    return results;
-  }, [products, talent, posts, docs]);
-
-  // Filter and sort results
-  const filteredResults = useMemo(() => {
-    let results = [...allResults];
-
-    // Filter by type
-    if (filters.types.length > 0) {
-      results = results.filter(r => filters.types.includes(r.type));
-    }
-
-    // Filter by category
-    if (filters.category) {
-      results = results.filter(r => r.category?.toLowerCase() === filters.category.toLowerCase());
-    }
-
-    // Filter by price
-    if (filters.minPrice > 0 || filters.maxPrice < 10000) {
-      results = results.filter(r => {
-        const price = r.price ?? 0;
-        return price >= filters.minPrice && price <= filters.maxPrice;
-      });
-    }
-
-    // Filter by rating
-    if (filters.minRating > 0) {
-      results = results.filter(r => (r.rating ?? 0) >= filters.minRating);
-    }
-
-    // Sort results
-    switch (filters.sort) {
-      case 'price_asc':
-        results.sort((a, b) => (a.price ?? 0) - (b.price ?? 0));
-        break;
-      case 'price_desc':
-        results.sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
-        break;
-      case 'rating':
-        results.sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
-        break;
-      default: // relevance
-        results.sort((a, b) => {
-          const aExact = a.title.toLowerCase() === searchTerm.toLowerCase() ? 1 : 0;
-          const bExact = b.title.toLowerCase() === searchTerm.toLowerCase() ? 1 : 0;
-          if (aExact !== bExact) return bExact - aExact;
-
-          const aStarts = a.title.toLowerCase().startsWith(searchTerm.toLowerCase()) ? 1 : 0;
-          const bStarts = b.title.toLowerCase().startsWith(searchTerm.toLowerCase()) ? 1 : 0;
-          if (aStarts !== bStarts) return bStarts - aStarts;
-
-          return a.title.localeCompare(b.title);
-        });
-    }
-
-    return results;
-  }, [allResults, filters, searchTerm]);
-
-  // Extract available categories for filter
+  // Extract available categories from results for filter
   const availableCategories = useMemo(() => {
     const categories = new Set<string>();
-    allResults.forEach(result => {
+    results.forEach(result => {
       if (result.category) categories.add(result.category);
     });
     return Array.from(categories).sort();
-  }, [allResults]);
+  }, [results]);
 
-  // Handle search
+  // Sync search term with URL
+  useEffect(() => {
+    if (router.isReady && router.query.q) {
+      const urlTerm = router.query.q as string;
+      setSearchTerm(urlTerm);
+    }
+  }, [router.isReady, router.query.q]);
+
+  // Search function
+  const performSearch = async (term: string, page: number = 1, newFilters?: SearchFilters) => {
+    if (!term.trim()) {
+      setResults([]);
+      setTotalCount(0);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const searchFilters = newFilters || filters;
+      const params = new URLSearchParams({
+        query: term,
+        page: page.toString(),
+        limit: '20'
+      });
+
+      if (searchFilters.types.length > 0) {
+        params.append('type', searchFilters.types.join(','));
+      }
+      if (searchFilters.category) {
+        params.append('category', searchFilters.category);
+      }
+      if (searchFilters.minPrice > 0) {
+        params.append('minPrice', searchFilters.minPrice.toString());
+      }
+      if (searchFilters.maxPrice < 10000) {
+        params.append('maxPrice', searchFilters.maxPrice.toString());
+      }
+      if (searchFilters.minRating > 0) {
+        params.append('minRating', searchFilters.minRating.toString());
+      }
+      if (searchFilters.sort !== 'relevance') {
+        params.append('sort', searchFilters.sort);
+      }
+
+      const response = await fetch(`/api/search?${params}`);
+      const data: SearchResponse = await response.json();
+
+      if (page === 1) {
+        setResults(data.results);
+      } else {
+        setResults(prev => [...prev, ...data.results]);
+      }
+      
+      setTotalCount(data.totalCount);
+      setCurrentPage(data.page);
+      setHasMore(data.hasMore);
+
+      logInfo('Search completed', { 
+        term, 
+        resultCount: data.results.length, 
+        totalCount: data.totalCount 
+      });
+    } catch (error) {
+      logError('Search failed', { data: error });
+      setResults([]);
+      setTotalCount(0);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Search when term or filters change
+  useEffect(() => {
+    if (searchTerm.trim()) {
+      performSearch(searchTerm, 1, filters);
+      setCurrentPage(1);
+    }
+  }, [searchTerm, filters]);
+
+  // Handle search input
   const handleSearch = (term: string) => {
     setSearchTerm(term);
     router.push(`/search?q=${encodeURIComponent(term)}`, undefined, { shallow: true });
+  };
+
+  // Handle filter changes
+  const handleFiltersChange = (newFilters: SearchFilters) => {
+    setFilters(newFilters);
+  };
+
+  // Load more results
+  const loadMore = () => {
+    if (hasMore && !loading) {
+      performSearch(searchTerm, currentPage + 1);
+    }
   };
 
   // Active filters count
@@ -514,12 +456,6 @@ const SearchPage = ({ products, talent, posts, docs, q }: SearchPageProps) => {
     (filters.category ? 1 : 0) + 
     (filters.minPrice > 0 || filters.maxPrice < 10000 ? 1 : 0) +
     (filters.minRating > 0 ? 1 : 0);
-
-  logInfo('🔍 SearchPage component rendered with:', { 
-    q: searchTerm, 
-    totalResults: filteredResults.length,
-    filters: activeFiltersCount
-  });
 
   return (
     <div className="container mx-auto px-4 py-6">
@@ -540,130 +476,161 @@ const SearchPage = ({ products, talent, posts, docs, q }: SearchPageProps) => {
           </Button>
         </div>
 
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold">Search Results</h1>
-            <p className="text-muted-foreground">
-              {filteredResults.length} results for "{searchTerm}"
-            </p>
-          </div>
-
-          <div className="flex items-center gap-2">
-            {/* Sort Options */}
-            <Select value={filters.sort} onValueChange={(value) => 
-              setFilters({ ...filters, sort: value })
-            }>
-              <SelectTrigger className="w-40">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="relevance">Relevance</SelectItem>
-                <SelectItem value="price_asc">Price: Low to High</SelectItem>
-                <SelectItem value="price_desc">Price: High to Low</SelectItem>
-                <SelectItem value="rating">Highest Rated</SelectItem>
-              </SelectContent>
-            </Select>
-
-            {/* View Mode Toggle */}
-            <div className="flex border rounded-md">
-              <Button
-                variant={viewMode === 'grid' ? 'default' : 'ghost'}
-                size="sm"
-                onClick={() => setViewMode('grid')}
-              >
-                <GridIcon className="h-4 w-4" />
-              </Button>
-              <Button
-                variant={viewMode === 'list' ? 'default' : 'ghost'}
-                size="sm"
-                onClick={() => setViewMode('list')}
-              >
-                <List className="h-4 w-4" />
-              </Button>
+        {searchTerm && (
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold">Search Results</h1>
+              <p className="text-muted-foreground">
+                {loading ? 'Searching...' : `${totalCount} results for "${searchTerm}"`}
+              </p>
             </div>
 
-            {/* Mobile Filter Toggle */}
-            <Sheet open={showFilters} onOpenChange={setShowFilters}>
-              <SheetTrigger asChild>
-                <Button variant="outline" className="lg:hidden">
-                  <Filter className="h-4 w-4 mr-2" />
-                  Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-80">
-                <SheetHeader>
-                  <SheetTitle>Search Filters</SheetTitle>
-                </SheetHeader>
-                <div className="mt-6">
-                  <FilterSidebar
-                    filters={filters}
-                    onFiltersChange={setFilters}
-                    availableCategories={availableCategories}
-                  />
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-        </div>
-      </div>
+            <div className="flex items-center gap-2">
+              {/* Sort Options */}
+              <Select value={filters.sort} onValueChange={(value) => 
+                setFilters({ ...filters, sort: value })
+              }>
+                <SelectTrigger className="w-40">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="relevance">Relevance</SelectItem>
+                  <SelectItem value="price_asc">Price: Low to High</SelectItem>
+                  <SelectItem value="price_desc">Price: High to Low</SelectItem>
+                  <SelectItem value="rating">Highest Rated</SelectItem>
+                </SelectContent>
+              </Select>
 
-      <div className="flex gap-6">
-        {/* Desktop Filters Sidebar */}
-        <div className="hidden lg:block w-64 flex-shrink-0">
-          <div className="bg-card border rounded-lg p-4 sticky top-4">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="font-semibold">Filters</h2>
-              {activeFiltersCount > 0 && (
+              {/* View Mode Toggle */}
+              <div className="flex border rounded-md">
                 <Button
-                  variant="ghost"
+                  variant={viewMode === 'grid' ? 'default' : 'ghost'}
                   size="sm"
-                  onClick={() => setFilters({
-                    types: [],
-                    category: '',
-                    minPrice: 0,
-                    maxPrice: 10000,
-                    minRating: 0,
-                    sort: 'relevance'
-                  })}
+                  onClick={() => setViewMode('grid')}
                 >
-                  Clear All
+                  <GridIcon className="h-4 w-4" />
                 </Button>
-              )}
+                <Button
+                  variant={viewMode === 'list' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setViewMode('list')}
+                >
+                  <List className="h-4 w-4" />
+                </Button>
+              </div>
+
+              {/* Mobile Filter Toggle */}
+              <Sheet open={showFilters} onOpenChange={setShowFilters}>
+                <SheetTrigger asChild>
+                  <Button variant="outline" className="lg:hidden">
+                    <Filter className="h-4 w-4 mr-2" />
+                    Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-80">
+                  <SheetHeader>
+                    <SheetTitle>Search Filters</SheetTitle>
+                  </SheetHeader>
+                  <div className="mt-6">
+                    <FilterSidebar
+                      filters={filters}
+                      onFiltersChange={handleFiltersChange}
+                      availableCategories={availableCategories}
+                    />
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
-            <FilterSidebar
-              filters={filters}
-              onFiltersChange={setFilters}
-              availableCategories={availableCategories}
-            />
+          </div>
+        )}
+      </div>
+
+      {searchTerm && (
+        <div className="flex gap-6">
+          {/* Desktop Filters Sidebar */}
+          <div className="hidden lg:block w-64 flex-shrink-0">
+            <div className="bg-card border rounded-lg p-4 sticky top-4">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="font-semibold">Filters</h2>
+                {activeFiltersCount > 0 && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setFilters({
+                      types: [],
+                      category: '',
+                      minPrice: 0,
+                      maxPrice: 10000,
+                      minRating: 0,
+                      sort: 'relevance'
+                    })}
+                  >
+                    Clear All
+                  </Button>
+                )}
+              </div>
+              <FilterSidebar
+                filters={filters}
+                onFiltersChange={handleFiltersChange}
+                availableCategories={availableCategories}
+              />
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <div className="flex-1">
+            {loading && results.length === 0 ? (
+              <div className="flex justify-center py-12">
+                <Loader2 className="h-8 w-8 animate-spin" />
+              </div>
+            ) : results.length === 0 && searchTerm ? (
+              <NoResultsState 
+                searchTerm={searchTerm} 
+                onNewSearch={handleSearch}
+              />
+            ) : (
+              <>
+                {/* Results Grid/List */}
+                <div className={viewMode === 'grid' 
+                  ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-6"
+                  : "space-y-4 mb-6"
+                }>
+                  {results.map((result) => (
+                    <SearchResultCard
+                      key={`${result.type}-${result.id}`}
+                      result={result}
+                      searchTerm={searchTerm}
+                      viewMode={viewMode}
+                    />
+                  ))}
+                </div>
+
+                {/* Load More Button */}
+                {hasMore && (
+                  <div className="text-center">
+                    <Button 
+                      onClick={loadMore} 
+                      disabled={loading}
+                      variant="outline"
+                    >
+                      {loading ? (
+                        <>
+                          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                          Loading...
+                        </>
+                      ) : (
+                        'Load More Results'
+                      )}
+                    </Button>
+                  </div>
+                )}
+              </>
+            )}
           </div>
         </div>
-
-        {/* Main Content */}
-        <div className="flex-1">
-          {filteredResults.length === 0 ? (
-            <NoResultsState 
-              searchTerm={searchTerm} 
-              onNewSearch={handleSearch}
-            />
-          ) : (
-            <div className={viewMode === 'grid' 
-              ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"
-              : "space-y-4"
-            }>
-              {filteredResults.map((result) => (
-                <SearchResultCard
-                  key={`${result.type}-${result.id}`}
-                  result={result}
-                  searchTerm={searchTerm}
-                  viewMode={viewMode}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
+      )}
     </div>
   );
 };
 
-export default SearchPage;
+export default AdvancedSearchResults; 

@@ -31,7 +31,10 @@ const signupSchema = z.object({
 type SignupFormData = z.infer<typeof signupSchema>;
 
 interface SignupFormProps {
-  onSuccess?: () => void;
+  onSuccess?: (result: {
+    email: string;
+    emailVerificationRequired: boolean;
+  }) => void;
   onError?: (error: string) => void;
 }
 
@@ -217,7 +220,10 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
 
       reset();
       fireEvent('signup_success');
-      onSuccess?.();
+      onSuccess?.({
+        email: data.email,
+        emailVerificationRequired: result.emailVerificationRequired ?? false,
+      });
 
     } catch (error: any) {
       logError('Unexpected signup error:', { data: error });

@@ -367,9 +367,8 @@ const LoginPage = () => {
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               Or{' '}
-              <button
-                type="button"
-                onClick={() => router.push('/auth/register')}
+              <Link
+                href="/auth/register"
                 className="font-medium text-blue-600 hover:text-blue-500 underline"
               >
                 {t('auth.create_new_account')}
@@ -593,7 +592,11 @@ const LoginPage = () => {
             <div className="mt-6 grid grid-cols-2 gap-3">
               <button
                 type="button"
-                onClick={() => signIn('google')}
+                onClick={() =>
+                  signIn('google', { callbackUrl: '/dashboard' }).catch((err) => {
+                    console.error('Google OAuth error:', err);
+                  })
+                }
                 className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24">
@@ -607,7 +610,11 @@ const LoginPage = () => {
 
               <button
                 type="button"
-                onClick={() => signIn('github')}
+                onClick={() =>
+                  signIn('github', { callbackUrl: '/dashboard' }).catch((err) => {
+                    console.error('GitHub OAuth error:', err);
+                  })
+                }
                 className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">

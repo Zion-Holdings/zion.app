@@ -8,6 +8,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 import Link from "next/link"; // Changed from react-router-dom
+import { FeedbackWidget } from "@/components/feedback/FeedbackWidget";
 
 function resolveUrl(envVar: string | undefined, fallback: string) {
   if (!envVar || envVar.trim() === "" || envVar === "#" || envVar === "/") {
@@ -208,6 +209,7 @@ export function Footer() {
             </div>
           </div>
         </div>
+        <FeedbackWidget />
       </div>
     </footer>
   );

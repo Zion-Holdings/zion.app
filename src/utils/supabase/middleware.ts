@@ -77,10 +77,18 @@ export async function updateSession(request: NextRequest) {
   ];
 
   // Check if current path is a public route
-  const isPublicRoute = publicRoutes.some(route =>
-    request.nextUrl.pathname === route ||
-    (route !== '/' && request.nextUrl.pathname.startsWith(route + '/')) // Avoids matching all paths for '/'
-  );
+  const isPublicRoute = publicRoutes.some(route => {
+    // Check for exact match or if the path starts with the route followed by a slash,
+    // but only if the route is not the root path, to avoid matching all paths.
+    if (request.nextUrl.pathname === route) {
+      return true;
+    }
+    // Ensure that if route is `/foo`, it matches `/foo/bar` but not `/foobar`
+    if (route !== '/' && request.nextUrl.pathname.startsWith(route + '/')) {
+      return true;
+    }
+    return false;
+  });
 
   // More specific checks for Next.js internals and static assets
   const isNextInternal = request.nextUrl.pathname.startsWith('/_next/');
