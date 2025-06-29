@@ -177,8 +177,8 @@ const FilterSidebar: React.FC<{
   const handlePriceChange = (values: number[]) => {
     onFiltersChange({ 
       ...filters, 
-      minPrice: values[0], 
-      maxPrice: values[1] 
+      minPrice: values[0] ?? 0, 
+      maxPrice: values[1] ?? 10000 
     });
   };
 
