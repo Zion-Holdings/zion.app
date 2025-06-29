@@ -85,7 +85,27 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     // Add domains that are safe to optimize
-    domains: [],
+    domains: [
+      'via.placeholder.com',
+      'i.pravatar.cc',
+      'images.unsplash.com',
+      'unsplash.com',
+      'randomuser.me',
+      'assets.aceternity.com',
+      'pbs.twimg.com',
+      'avatars.githubusercontent.com',
+      'lh3.googleusercontent.com',
+      'www.gravatar.com',
+      'images.ctfassets.net',
+      'cdnjs.cloudflare.com',
+      'cdn.jsdelivr.net',
+      'source.unsplash.com',
+      'res.cloudinary.com',
+      'picsum.photos',
+      'cdn.zion.org',
+      'app.ziontechgroup.com',
+      'localhost'
+    ],
     // Add specific path for local images to prevent 400 errors
     path: '/_next/image',
     // Increase loader timeout for Netlify
