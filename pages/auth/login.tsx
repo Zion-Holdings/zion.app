@@ -4,12 +4,14 @@ import Link from 'next/link';
 import { Facebook, Mail, Clock, RefreshCw } from 'lucide-react';
 import Head from 'next/head';
 import { signIn } from 'next-auth/react';
-import { createClient } from '../../src/utils/supabase/client';
+import { supabase } from '@/utils/supabase/client';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import type { AuthError, User, AuthChangeEvent, Session } from '@supabase/supabase-js';
 import { logInfo, logWarn, logError } from '@/utils/productionLogger';
 import { useTranslation } from 'react-i18next';
-
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -32,9 +34,7 @@ const LoginPage = () => {
   const [isProactivelyResending, setIsProactivelyResending] = useState(false);
   const [proactiveResendMessage, setProactiveResendMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  // Initialize Supabase client
-  const supabase = createClient();
-
+  // Using centralized Supabase client (imported at top)
 
   // Effect for initial session check and auth state changes
   useEffect(() => {
@@ -347,297 +347,64 @@ const LoginPage = () => {
       </Head>
       
       <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8">
-          <div>
-            <div className="mx-auto h-12 w-auto">
-              <OptimizedImage
-                className="mx-auto h-12 w-auto"
-                src="/logos/zion-logo.png"
-                alt="Zion Tech"
-                width={48}
-                height={48}
-                onError={(e) => {
-                  const target = e.currentTarget as HTMLImageElement;
-                  target.style.display = 'none';
-                }}
-              />
-            </div>
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-              {t('auth.sign_in_to_account')}
-            </h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
-              Or{' '}
-              <Link
-                href="/auth/register"
-                className="font-medium text-blue-600 hover:text-blue-500 underline"
-              >
-                {t('auth.create_new_account')}
-              </Link>
-            </p>
-            <p className="mt-2 text-center text-sm text-gray-600">
-              <button
-                onClick={() => {
-                  setShowProactiveResendForm(!showProactiveResendForm);
-                  // Optionally prefill from main email input if available and form is opening
-                  if (!showProactiveResendForm && email) {
-                    setProactiveResendEmail(email);
-                  }
-                  // Clear previous messages when toggling
-                  setProactiveResendMessage(null);
-                }}
-                className="font-medium text-blue-600 hover:text-blue-500"
-              >
-                {showProactiveResendForm ? t('auth.hide') : t('auth.didnt_receive_verification_email')}
-              </button>
-            </p>
-          </div>
-
-          {/* Proactive Resend Verification Form */}
-          {showProactiveResendForm && (
-            <div className="mt-4 p-4 border border-gray-200 rounded-md bg-gray-50">
-              <form onSubmit={handleProactiveResendVerification} className="space-y-4">
-                <div>
-                  <label htmlFor="proactive-resend-email" className="block text-sm font-medium text-gray-700">
-                    {t('auth.enter_email_to_resend')}
-                  </label>
-                  <input
-                    id="proactive-resend-email"
-                    name="proactiveResendEmail"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    className="appearance-none block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                    placeholder="you@example.com"
-                    value={proactiveResendEmail}
-                    onChange={(e) => setProactiveResendEmail(e.target.value)}
-                    disabled={isProactivelyResending}
-                  />
+        <Card className="w-full max-w-md">
+          <CardHeader>
+            <CardTitle>Sign In</CardTitle>
+            <CardDescription>
+              Enter your email and password to access your account
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleLogin} className="space-y-4">
+              {error && (
+                <div className="p-3 bg-red-50 border border-red-200 rounded-md">
+                  <p className="text-sm text-red-600">{error.message}</p>
                 </div>
-                {proactiveResendMessage && (
-                  <div className={`text-sm ${proactiveResendMessage.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
-                    {proactiveResendMessage.text}
-                  </div>
-                )}
-                <div>
-                  <button
-                    type="submit"
-                    disabled={isProactivelyResending}
-                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
-                  >
-                    {isProactivelyResending ? (
-                      <>
-                        <RefreshCw className="h-4 w-4 inline animate-spin mr-2" />
-                        {t('auth.sending')}
-                      </>
-                    ) : (
-                      t('auth.resend_verification_email')
-                    )}
-                  </button>
-                </div>
-              </form>
-            </div>
-          )}
-
-
-          {/* Session Check Timeout Notice */}
-          {sessionCheckTimedOut && !user && !error && !isEmailUnverified && (
-            <div className="bg-yellow-50 border border-yellow-200 rounded-md p-4 mb-4">
-              <div className="flex items-start">
-                <Clock className="h-5 w-5 text-yellow-400 mt-0.5 mr-3" />
-                <div className="flex-1">
-                  <h3 className="text-sm font-medium text-yellow-800">{t('auth.session_check_timed_out')}</h3>
-                  <div className="mt-1 text-sm text-yellow-700">
-                    <p>{t('auth.session_check_timed_out_message')}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Email verification notice */}
-          {isEmailUnverified && (
-            <div className="bg-blue-50 border border-blue-200 rounded-md p-4">
-              <div className="flex items-start">
-                <Mail className="h-5 w-5 text-blue-400 mt-0.5 mr-3" />
-                <div className="flex-1">
-                  <h3 className="text-sm font-medium text-blue-800">{t('auth.email_verification_required')}</h3>
-                  <div className="mt-2 text-sm text-blue-700">
-                    <p>{t('auth.email_needs_verification')}</p>
-                    {verificationEmailSent && (
-                      <p className="mt-1 font-medium">{t('auth.verification_email_sent', { email })}</p>
-                    )}
-                  </div>
-                  <div className="mt-4 flex space-x-3">
-                    <button
-                      onClick={handleResendVerification}
-                      disabled={isResendingVerification}
-                      className="text-sm bg-blue-100 hover:bg-blue-200 text-blue-800 px-3 py-1 rounded disabled:opacity-50"
-                    >
-                      {isResendingVerification ? (
-                        <>
-                          <RefreshCw className="h-4 w-4 inline animate-spin mr-1" />
-                          {t('auth.sending')}
-                        </>
-                      ) : (
-                        t('auth.resend_email')
-                      )}
-                    </button>
-                    <Link
-                      href={`/verify-status?email=${encodeURIComponent(email)}`}
-                      className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded"
-                    >
-                      {t('auth.check_status')}
-                    </Link>
-                  </div>
-                  {verificationEmailSent && (
-                    <p className="mt-2 text-xs text-blue-600 flex items-center">
-                      <Clock className="h-3 w-3 mr-1" />
-                      {t('auth.redirecting')}
-                    </p>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
-
-          <form className="mt-8 space-y-6" onSubmit={handleLogin}>
-            <div className="rounded-md shadow-sm -space-y-px">
-              <div>
-                <label htmlFor="email-address" className="sr-only">
-                  {t('auth.email_address')}
+              )}
+              
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium">
+                  Email
                 </label>
-                <input
-                  id="email-address"
-                  name="email"
+                <Input
+                  id="email"
                   type="email"
-                  autoComplete="email"
-                  required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                  placeholder={t('auth.email_address')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  required
                   disabled={isLoading}
                 />
               </div>
-              <div>
-                <label htmlFor="password" className="sr-only">
-                  {t('auth.password')}
+              
+              <div className="space-y-2">
+                <label htmlFor="password" className="text-sm font-medium">
+                  Password
                 </label>
-                <input
+                <Input
                   id="password"
-                  name="password"
                   type="password"
-                  autoComplete="current-password"
-                  required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                  placeholder={t('auth.password')}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  required
                   disabled={isLoading}
                 />
               </div>
+              
+              <Button type="submit" className="w-full" disabled={isLoading || isEmailUnverified}>
+                {isLoading ? 'Signing in...' : isEmailUnverified ? t('auth.email_verification_required') : t('auth.sign_in')}
+              </Button>
+            </form>
+            
+            <div className="mt-6 text-center">
+              <p className="text-sm text-gray-600">
+                Don't have an account?{' '}
+                <Link href="/auth/register" className="text-blue-600 hover:underline">
+                  Sign up
+                </Link>
+              </p>
             </div>
-
-            {error && !isEmailUnverified && (
-              <div className="bg-red-50 border border-red-200 rounded-md p-4">
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div className="ml-3">
-                    <h3 className="text-sm font-medium text-red-800">
-                      {t('auth.authentication_error')}
-                    </h3>
-                    <div className="mt-2 text-sm text-red-700">
-                      <p>{error.message}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            <div>
-              <button
-                type="submit"
-                disabled={isLoading || isEmailUnverified}
-                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 disabled:opacity-50"
-              >
-                <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                  <svg className="h-5 w-5 text-blue-500 group-hover:text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-                  </svg>
-                </span>
-                {isLoading
-                  ? t('auth.signing_in')
-                  : isEmailUnverified
-                  ? t('auth.email_verification_required')
-                  : t('auth.sign_in')}
-              </button>
-            </div>
-          </form>
-
-          {/* Social login options - Kept for now, but may need separate fixes if NextAuth.js is not configured */}
-          <div className="mt-6">
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-gray-50 text-gray-500">{t('auth.or_continue_with')}</span>
-              </div>
-            </div>
-
-            <div className="mt-6 grid grid-cols-2 gap-3">
-              <button
-                type="button"
-                onClick={() =>
-                  signIn('google', { callbackUrl: '/dashboard' }).catch((err) => {
-                    console.error('Google OAuth error:', err);
-                  })
-                }
-                className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
-              >
-                <svg className="h-5 w-5" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                  <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                  <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
-                  <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-                </svg>
-                <span className="ml-2">Google</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() =>
-                  signIn('github', { callbackUrl: '/dashboard' }).catch((err) => {
-                    console.error('GitHub OAuth error:', err);
-                  })
-                }
-                className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
-              >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
-                </svg>
-                <span className="ml-2">GitHub</span>
-              </button>
-            </div>
-          </div>
-
-          <div className="text-center mt-4"> {/* Added mt-4 for spacing */}
-            <p className="text-xs text-gray-500">
-              By signing in, you agree to our{' '}
-              <Link href="/legal/terms" className="text-blue-600 hover:text-blue-500">
-                Terms of Service
-              </Link>{' '}
-              and{' '}
-              <Link href="/legal/privacy" className="text-blue-600 hover:text-blue-500">
-                Privacy Policy
-              </Link>
-            </p>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       </div>
     </>
   );

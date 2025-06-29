@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { createClient } from '@/utils/supabase/client'
+import { supabase } from '@/utils/supabase/client'
 import type { User } from '@supabase/supabase-js'
 import { logInfo, logError } from '@/utils/productionLogger';
 import { toast } from '@/hooks/use-toast';
-
 
 interface AuthGuardOptions {
   redirectTo?: string
@@ -35,8 +34,6 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
     isAuthenticated: false,
     isEmailVerified: false
   })
-
-  const supabase = createClient()
 
   useEffect(() => {
     let mounted = true

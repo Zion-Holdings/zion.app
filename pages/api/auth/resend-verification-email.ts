@@ -1,5 +1,8 @@
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import type { NextApiRequest, NextApiResponse } from 'next';
+import * as Sentry from '@sentry/nextjs';
+import { withErrorLogging } from '@/utils/withErrorLogging';
+import { logInfo, logError } from '@/utils/productionLogger';
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -18,8 +21,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!supabaseUrl || !supabaseKey) {
     return res.status(503).json({ message: 'Auth provider not configured' });
   }
-
-  const supabase = createClient(supabaseUrl, supabaseKey);
 
   try {
     const { error } = await supabase.auth.resend({ type: 'signup', email });

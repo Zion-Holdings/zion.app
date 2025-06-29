@@ -193,6 +193,8 @@ class BundleMonitor {
     if (this.metrics.length < 2) return;
 
     const previous = this.metrics[this.metrics.length - 2];
+    if (!previous) return;
+    
     const sizeChange = current.totalBundleSize - previous.totalBundleSize;
     const scoreChange = current.performanceScore - previous.performanceScore;
 
@@ -233,14 +235,22 @@ class BundleMonitor {
     const current = this.getLatestMetrics();
     
     if (!current || this.metrics.length < 2) {
-      return {
-        current,
-        trend: 'stable',
-        recommendations: current?.recommendations || []
-      };
+              return {
+          current: current as BundleMetrics | null,
+          trend: 'stable',
+          recommendations: current?.recommendations || []
+        };
     }
 
     const previous = this.metrics[this.metrics.length - 2];
+    if (!previous) {
+      return {
+        current,
+        trend: 'stable',
+        recommendations: current.recommendations
+      };
+    }
+    
     const scoreDiff = current.performanceScore - previous.performanceScore;
     
     let trend: 'improving' | 'stable' | 'declining' = 'stable';

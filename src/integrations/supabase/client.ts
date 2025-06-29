@@ -1,31 +1,11 @@
-import { createClient } from '@supabase/supabase-js';
+// Re-export from the SSR client to maintain backward compatibility
+export { supabase, createClient } from '@/utils/supabase/client';
 import { logger } from '@/utils/logger';
 import { logWarn } from '@/utils/productionLogger';
-
 
 // Supabase configuration with proper fallbacks
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://gnwtggeptzkqnduuthto.supabase.co';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdud3RnZ2VwdHprcW5kdXV0aHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MTQyMjcsImV4cCI6MjA2MDk5MDIyN30.mIyYJWh3S1FLCmjwoJ7FNHz0XLRiUHBd3r9we-E4DIY';
-
-// Create optimized Supabase client
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  auth: {
-    autoRefreshToken: true,
-    persistSession: true,
-    detectSessionInUrl: true,
-    flowType: 'pkce' // More secure flow type
-  },
-  global: {
-    headers: {
-      'X-Client-Info': 'zion-app@1.0.0'
-    }
-  },
-  realtime: {
-    params: {
-      eventsPerSecond: 10 // Limit realtime events for performance
-    }
-  }
-});
 
 // Improved configuration check - recognizes real Supabase credentials
 export const isSupabaseConfigured = !!(
@@ -46,8 +26,6 @@ if (process.env.NODE_ENV === 'development' && process.env.DEBUG_ENV_CONFIG === '
     hasValidKey: supabaseAnonKey.startsWith('eyJ')
   });
 }
-
-export default supabase;
 
 // Enhanced helper function to check online status
 async function checkOnline(): Promise<boolean> {

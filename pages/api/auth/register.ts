@@ -1,8 +1,14 @@
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import type { NextApiRequest, NextApiResponse } from 'next';
+import * as Sentry from '@sentry/nextjs';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { 
+  logInfo, 
+  logWarn, 
+  logError, 
+  logDebug 
+} from '@/utils/productionLogger';
 
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -44,11 +50,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       details: 'Supabase credentials are not properly set up'
     });
   }
-
-  const supabase = createClient(
-    ENV_CONFIG.supabase.url,
-    ENV_CONFIG.supabase.serviceRoleKey || ENV_CONFIG.supabase.anonKey
-  );
 
   try {
     logInfo('Attempting to create user with Supabase:', { email, name, userType });

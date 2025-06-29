@@ -5,25 +5,9 @@ import FacebookProvider from "next-auth/providers/facebook";
 import CredentialsProvider from "next-auth/providers/credentials";
 import type { NextAuthOptions } from "next-auth";
 import { withErrorLogging } from '@/utils/withErrorLogging';
-import { createClient } from '@supabase/supabase-js'; // Import Supabase
+import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import { verifyMessage } from 'ethers'; // Assuming ethers v6+
 import { logInfo, logWarn, logError } from '@/utils/productionLogger';
-
-
-// Initialize Supabase client (ensure these ENV vars are set)
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
-// IMPORTANT: Use the SERVICE_ROLE_KEY for admin operations like user lookup if necessary,
-// but for signInWithPassword, anon key might be sufficient if RLS allows.
-// For robust auth provider, service role key might be needed for full control.
-// Here, we're verifying credentials, so signInWithPassword should be fine with anon key if it's public.
-// However, if creating users or more complex checks, service key is safer.
-// Let's assume public URL and anon key are fine for signIn, as it's a client-facing action.
-// If this [...nextauth].ts is ONLY for server-side session management after Supabase auth,
-// then Supabase client might not even be needed here if Supabase JWT is used as next-auth session token.
-// But typical CredentialsProvider does its own validation.
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string;
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
 
 // WalletConnect isn't natively supported by next-auth. We'll mock a basic credentials
 // provider that handles an address signature check. In a real app you'd verify
