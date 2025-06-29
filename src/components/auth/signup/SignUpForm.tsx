@@ -49,7 +49,8 @@ export function SignUpForm({ onSignInClick }: SignUpFormProps) {
       } else if (data.user) {
         logInfo('Supabase sign-up successful, user pending confirmation:', { data: data.user });
         // Check if user needs confirmation
-        if (data.user.identities && data.user.identities.length > 0 && !data.user.identities[0].identity_data?.email_verified && !data.user.email_confirmed_at) {
+        const firstIdentity = data.user.identities?.[0];
+        if (data.user.identities && data.user.identities.length > 0 && firstIdentity && !firstIdentity.identity_data?.email_verified && !data.user.email_confirmed_at) {
            setIsSuccess(true);
            setError("Account created! Please check your email to verify your account before logging in.");
         } else {
