@@ -169,6 +169,12 @@ export default function PointsPage() {
           {loading ? "..." : balance}
         </div>
         <p className="text-xl text-muted-foreground">Points Available</p>
+        {!loading && balance === 0 && (
+          <p className="text-sm text-muted-foreground mt-2">
+            You haven't earned any points yet. Complete the tasks below to start
+            earning and redeem rewards.
+          </p>
+        )}
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 mb-12">
