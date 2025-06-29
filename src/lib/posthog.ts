@@ -12,8 +12,9 @@ export const initPostHog = () => {
   const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
   const host = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://app.posthog.com';
 
-  if (!key) {
-    logger.error('NEXT_PUBLIC_POSTHOG_KEY is not defined. PostHog initialization skipped.');
+  // Skip initialization if key is not defined or is a placeholder
+  if (!key || key === 'your_posthog_key_here' || key.includes('placeholder') || key.includes('your_')) {
+    logger.info('PostHog key not configured or is placeholder. PostHog initialization skipped.');
     return;
   }
 

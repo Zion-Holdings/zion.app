@@ -67,8 +67,8 @@
   # Analytics and monitoring
   NEXT_PUBLIC_GA_ID = "your_google_analytics_id_here"
   NEXT_PUBLIC_INTERCOM_APP_ID = "your_intercom_app_id_here"
-  NEXT_PUBLIC_POSTHOG_KEY = "your_posthog_key_here"
-  NEXT_PUBLIC_POSTHOG_HOST = "https://app.posthog.com"
+  # NEXT_PUBLIC_POSTHOG_KEY = "your_posthog_key_here"  # Commented out to prevent 404 errors
+  # NEXT_PUBLIC_POSTHOG_HOST = "https://app.posthog.com"  # Commented out to prevent 404 errors
   
   # ========================================
   # WALLET & WEB3 CONFIGURATION  

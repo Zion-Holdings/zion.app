@@ -44,7 +44,7 @@ STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret_here
 # Analytics
 NEXT_PUBLIC_GA_ID=your_ga_id_here
 NEXT_PUBLIC_ANALYTICS_TRACKING_ID=your_analytics_tracking_id_here
-NEXT_PUBLIC_POSTHOG_KEY=your_posthog_key_here
+# NEXT_PUBLIC_POSTHOG_KEY=your_posthog_key_here  # Optional: Uncomment and set real key to enable PostHog analytics
 NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
 
 # Support Configuration
