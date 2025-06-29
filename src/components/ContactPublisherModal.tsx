@@ -21,24 +21,41 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
   const lastFocusedRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (isOpen) {
-      lastFocusedRef.current = document.activeElement as HTMLElement;
-
-      function handleKeyDown(e: KeyboardEvent) {
-        if (e.key === 'Escape') {
-          e.preventDefault();
-          onClose();
-        }
+    if (!isOpen) {
+      // If the modal is not open (or has just closed), focus the last focused element.
+      if (lastFocusedRef.current) {
+        lastFocusedRef.current.focus();
       }
+      // No setup was performed if the modal wasn't open to begin with, or it just closed.
+      // So, no cleanup function is necessary here.
+      return;
+    }
+
+    // Modal is open, set up focus and event listener.
+    lastFocusedRef.current = document.activeElement as HTMLElement;
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose();
+      }
+    }
 
       firstInputRef.current?.focus();
       document.addEventListener('keydown', handleKeyDown);
       return () => document.removeEventListener('keydown', handleKeyDown);
     } else {
       lastFocusedRef.current?.focus();
+      return undefined; // Or return () => {};
     }
-    // Always return undefined to satisfy TypeScript
-    return undefined;
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Return the cleanup function that will be called when isOpen changes to false or the component unmounts.
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      // The logic to focus lastFocusedRef.current is handled when isOpen becomes false (top of this effect).
+    };
   }, [isOpen, onClose]);
 
   if (!isOpen) {

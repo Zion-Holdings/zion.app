@@ -24,14 +24,17 @@ export function PerformanceMonitor() {
 
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [shouldShow, setShouldShow] = useState(false);
 
   useEffect(() => {
-    // Only run when allowed in this environment
-    const shouldShow = isAllowed &&
-      (process.env.NODE_ENV === 'development' ||
-        localStorage.getItem('performance-monitoring') === 'true');
+    // Only run in development or when explicitly enabled
+    const show =
+      process.env.NODE_ENV === 'development' ||
+      localStorage.getItem('performance-monitoring') === 'true';
 
-    if (!shouldShow) return;
+    setShouldShow(show);
+
+    if (!show) return;
 
     setIsVisible(true);
 
@@ -112,6 +115,10 @@ export function PerformanceMonitor() {
       window.location.reload(); // Reload to start monitoring
     }
   };
+
+  if (!shouldShow) {
+    return null;
+  }
 
   if (!isVisible) {
     return (
