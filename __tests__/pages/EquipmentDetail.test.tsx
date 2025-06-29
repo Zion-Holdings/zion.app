@@ -3,7 +3,8 @@ import React from 'react';
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import EquipmentDetail, { SAMPLE_EQUIPMENT } from '@/pages/EquipmentDetail';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
+import { useRouter } from 'next/router';
 
 // Mock functions need to be declared before they are used in mock factories
 const mockNavigate = jest.fn();
@@ -13,12 +14,7 @@ const mockInfoFnForToast = jest.fn();
 const mockSuccessFnForToast = jest.fn();
 
 // Mock dependencies
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useParams: jest.fn(),
-  useNavigate: () => mockNavigate, // This pattern works because mockNavigate is returned by a function
-  useLocation: jest.fn(),
-}));
+jest.mock('next/router', () => require('next-router-mock'));
 
 jest.mock('@/hooks/useAuth', () => ({
   useAuth: jest.fn(),
@@ -75,10 +71,12 @@ describe('EquipmentDetail - Add To Cart', () => {
     }
 
 
-    require('react-router-dom').useParams.mockReturnValue({ id: testProductId });
-    require('react-router-dom').useLocation.mockReturnValue({
+    (useRouter as any).mockReturnValue({
+      push: mockNavigate,
+      back: jest.fn(),
       pathname: `/equipment/${testProductId}`,
-      search: '?from=test'
+      asPath: `/equipment/${testProductId}?from=test`,
+      query: { id: testProductId }
     });
     require('@/context/CartContext').useCart.mockReturnValue({
       items: [],
@@ -94,9 +92,9 @@ describe('EquipmentDetail - Add To Cart', () => {
     });
 
     render(
-      <MemoryRouter initialEntries={[`/equipment/${testProductId}`]}>
+      <MemoryRouterProvider url={`/equipment/${testProductId}` }>
         <EquipmentDetail />
-      </MemoryRouter>
+      </MemoryRouterProvider>
     );
 
     const addToCartButton = screen.getByRole('button', { name: /add to cart/i });
@@ -131,9 +129,9 @@ describe('EquipmentDetail - Add To Cart', () => {
     });
 
     render(
-      <MemoryRouter initialEntries={[`/equipment/${testProductId}`]}>
+      <MemoryRouterProvider url={`/equipment/${testProductId}` }>
         <EquipmentDetail />
-      </MemoryRouter>
+      </MemoryRouterProvider>
     );
 
     const addToCartButton = screen.getByRole('button', { name: /add to cart/i });

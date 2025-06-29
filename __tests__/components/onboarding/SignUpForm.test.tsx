@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import { SignUpForm } from '@/mobile/components/onboarding/SignUpForm';
 
 jest.mock('@/hooks/useAuth', () => ({
@@ -11,21 +11,15 @@ jest.mock('@/hooks/useAuth', () => ({
   }),
 }));
 
-jest.mock('react-router-dom', () => {
-  const actual = jest.requireActual('react-router-dom');
-  return {
-    ...actual,
-    useNavigate: () => jest.fn(),
-  };
-});
+jest.mock('next/router', () => require('next-router-mock'));
 
 describe('SignUpForm', () => {
   test('calls loginWithGoogle when Google button is clicked', () => {
     const { loginWithGoogle } = require('@/hooks/useAuth').useAuth();
     render(
-      <MemoryRouter>
+      <MemoryRouterProvider>
         <SignUpForm />
-      </MemoryRouter>
+      </MemoryRouterProvider>
     );
 
     fireEvent.click(screen.getByRole('button', { name: /continue with google/i }));
@@ -34,9 +28,9 @@ describe('SignUpForm', () => {
 
   test('updates form fields', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouterProvider>
         <SignUpForm />
-      </MemoryRouter>
+      </MemoryRouterProvider>
     );
 
     fireEvent.change(screen.getByLabelText(/email address/i), { target: { value: 'user@example.com' } });
