@@ -1,5 +1,6 @@
 import { ModeToggle } from '@/components/ModeToggle';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export function SummitHero() {
   return (
@@ -10,7 +11,7 @@ export function SummitHero() {
         <p className="text-xl opacity-90">AI, Talent, Trust — Globalized</p>
         <p className="text-lg">June 20, 2025 • Virtual &amp; New York City</p>
         <Button asChild size="lg" className="bg-zion-cyan hover:bg-zion-cyan/80" >
-          <a href="#register">Register Free</a>
+          <Link href="#register">Register Free</Link>
         </Button>
       </div>
     </section>
