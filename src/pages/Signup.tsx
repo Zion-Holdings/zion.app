@@ -11,7 +11,6 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
 import { AlertCircle, CheckCircle, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
-import Head from 'next/head';
 import { AuthLayout } from '@/layout';
 import { logInfo, logError } from '@/utils/productionLogger';
 
@@ -266,9 +265,6 @@ export default function Signup() {
 
   return (
     <AuthLayout>
-      <Head>
-        <link rel="stylesheet" href="/static/css/main.css" />
-      </Head>
       <div className="flex min-h-screen items-center justify-center p-4">
         <div className="w-full max-w-sm space-y-4">
           {isPartnerSignup && (
