@@ -247,7 +247,7 @@ export default function BlogPost() {
             <div className="aspect-[21/9] rounded-lg overflow-hidden">
               <ImageWithRetry
                 src={post.featuredImage}
-                alt={post.title}
+                alt={post.featuredImageAlt || post.title}
                 className="object-cover w-full h-full"
                 fallbackSrc="/images/blog-placeholder.svg"
               />
@@ -290,7 +290,7 @@ export default function BlogPost() {
                       <div className="aspect-[16/9] relative">
                         <ImageWithRetry
                           src={relatedPost.featuredImage}
-                          alt={relatedPost.title}
+                          alt={relatedPost.featuredImageAlt || relatedPost.title}
                           className="object-cover w-full h-full"
                           fallbackSrc="/images/blog-placeholder.svg"
                         />

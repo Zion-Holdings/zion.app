@@ -17,6 +17,10 @@ export interface BlogPost {
   category: string;
   tags: string[];
   featuredImage: string;
+  /**
+   * Descriptive alt text for the featured image
+   */
+  featuredImageAlt?: string;
   isFeatured?: boolean;
   isPublished?: boolean;
   createdBy?: string;
