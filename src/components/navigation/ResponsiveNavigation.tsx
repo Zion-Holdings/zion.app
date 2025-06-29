@@ -95,7 +95,7 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
                         <NavigationMenuLink asChild>
                           <Link legacyBehavior href={sub.href} passHref>
                             <a className={cn(
-                              "block rounded-sm px-3 py-2 text-sm hover:bg-accent focus:bg-accent focus:outline-none",
+                              "block rounded-sm px-2 py-1.5 text-sm hover:bg-accent focus:bg-accent focus:outline-none", // Adjusted padding for consistency
                               router.pathname.startsWith(sub.href) && "bg-accent text-accent-foreground"
                             )}>
                               {sub.label}
