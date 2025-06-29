@@ -586,7 +586,11 @@ const LoginPage = () => {
             <div className="mt-6 grid grid-cols-2 gap-3">
               <button
                 type="button"
-                onClick={() => signIn('google')}
+                onClick={() =>
+                  signIn('google', { callbackUrl: '/dashboard' }).catch((err) => {
+                    console.error('Google OAuth error:', err);
+                  })
+                }
                 className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24">
@@ -600,7 +604,11 @@ const LoginPage = () => {
 
               <button
                 type="button"
-                onClick={() => signIn('github')}
+                onClick={() =>
+                  signIn('github', { callbackUrl: '/dashboard' }).catch((err) => {
+                    console.error('GitHub OAuth error:', err);
+                  })
+                }
                 className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200"
               >
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
