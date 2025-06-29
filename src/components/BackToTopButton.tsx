@@ -5,14 +5,20 @@ export function BackToTopButton() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
+    const updateVisibility = () => {
       setVisible(window.scrollY > 400);
     };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility);
+    return () => window.removeEventListener("scroll", updateVisibility);
   }, []);
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToTop = () => {
+    const opts: ScrollToOptions = { top: 0, behavior: "smooth" };
+    window.scrollTo(opts);
+    document.documentElement.scrollTo(opts);
+    document.body.scrollTo(opts);
+  };
 
   return (
     <button
