@@ -431,8 +431,8 @@ const SearchPage = ({ products, talent, posts, docs, q }: SearchPageProps) => {
         description: doc.text,
         type: 'doc',
         category: 'Documentation',
-        url: doc.url,
-        tags: doc.tags
+        url: '#',
+        tags: []
       });
     });
 
