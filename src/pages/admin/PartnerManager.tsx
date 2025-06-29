@@ -46,7 +46,7 @@ export default function PartnerManager() {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      router.push('/login?next=' + encodeURIComponent('/admin/partners'));
+      router.push('/auth/login?returnTo=' + encodeURIComponent('/admin/partners'));
       return;
     }
 

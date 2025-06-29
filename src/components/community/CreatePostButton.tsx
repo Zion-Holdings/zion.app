@@ -36,8 +36,8 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
       });
       
       // Immediate redirect to login with return URL
-      const next = encodeURIComponent(target);
-      router.push(`/auth/login?next=${next}`);
+      const returnTo = encodeURIComponent(target);
+      router.push(`/auth/login?returnTo=${returnTo}`);
     }
   };
 
