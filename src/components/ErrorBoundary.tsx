@@ -33,31 +33,12 @@ export class ErrorBoundary extends Component<Props, State> {
       }
 
       return (
-        <div className="min-h-screen flex items-center justify-center bg-zion-blue">
-          <div className="bg-zion-blue-dark rounded-xl p-8 max-w-md text-center">
-            <AlertTriangle className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-            <h2 className="text-xl font-bold text-white mb-4">
-              Something went wrong
-            </h2>
-            <p className="text-zion-slate-light mb-6">
-              We encountered an error loading this page. Please try refreshing or go back to the homepage.
-            </p>
-            <div className="space-y-3">
-              <Button
-                className="w-full bg-zion-purple hover:bg-zion-purple-light"
-                onClick={() => window.location.reload()}
-              >
-                Refresh Page
-              </Button>
-              <Button
-                variant="outline"
-                className="w-full border-zion-blue-light text-white hover:bg-zion-blue"
-                onClick={() => window.location.href = '/'}
-              >
-                Go Home
-              </Button>
-            </div>
-          </div>
+        <div style={{ border: '5px solid red', padding: '20px', textAlign: 'center', backgroundColor: 'lightyellow' }}>
+          <h1>CUSTOM ERROR BOUNDARY (ErrorBoundary.tsx) TRIGGERED!</h1>
+          <p>If you see this, the page component crashed.</p>
+          {this.state.error && <pre>{this.state.error.message}</pre>}
+          <button onClick={() => window.location.reload()}>Refresh Page</button>
+          <button onClick={() => window.location.href = '/'}>Go Home</button>
         </div>
       );
     }
