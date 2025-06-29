@@ -81,7 +81,13 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
           <NavigationMenuItem key={item.label}>
             {item.subItems ? (
               <>
-                <NavigationMenuTrigger className={cn(isItemActive(item) && 'text-primary')}>{item.label}</NavigationMenuTrigger>
+                <NavigationMenuTrigger
+                  className={cn(isItemActive(item) && 'text-primary')}
+                  onSelect={(e) => e.preventDefault()}
+                  onClick={(e) => e.preventDefault()}
+                >
+                  {item.label}
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="flex flex-col p-2 min-w-[180px]">
                     {item.subItems.map((sub) => (
