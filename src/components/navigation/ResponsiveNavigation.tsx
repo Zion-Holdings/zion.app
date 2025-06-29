@@ -21,9 +21,26 @@ interface NavItem {
 
 interface ResponsiveNavigationProps {
   className?: string;
+  openLoginModal: (returnToPath: string) => void;
 }
 
-export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
+// Define protected routes - these align with routes not in publicRoutes in middleware.ts
+// and are the ones that should trigger the login modal if accessed while unauthenticated.
+const protectedRoutes = [
+  '/categories',
+  '/talent',
+  '/equipment',
+  '/partners',
+  '/tutorials',
+  '/case-studies',
+  // Add any specific sub-routes if necessary, though startsWith checks below should cover them.
+];
+
+function isProtectedRoute(href: string): boolean {
+  return protectedRoutes.some(route => href.startsWith(route));
+}
+
+export function ResponsiveNavigation({ className, openLoginModal }: ResponsiveNavigationProps) {
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const { t } = useTranslation();
@@ -94,10 +111,22 @@ export function ResponsiveNavigation({ className }: ResponsiveNavigationProps) {
                       <li key={sub.href}>
                         <NavigationMenuLink asChild>
                           <Link legacyBehavior href={sub.href} passHref>
-                            <a className={cn(
-                              "block rounded-sm px-2 py-1.5 text-sm hover:bg-accent focus:bg-accent focus:outline-none", // Adjusted padding for consistency
-                              router.pathname.startsWith(sub.href) && "bg-accent text-accent-foreground"
-                            )}>
+                            <a
+                              className={cn(
+                                "block rounded-sm px-2 py-1.5 text-sm hover:bg-accent focus:bg-accent focus:outline-none",
+                                router.pathname.startsWith(sub.href) && "bg-accent text-accent-foreground"
+                              )}
+                              onClick={(e) => {
+                                if (!isAuthenticated && isProtectedRoute(sub.href)) {
+                                  e.preventDefault();
+                                  // Update URL to include returnTo, then open modal
+                                  // This makes the returnTo available in router.query for the login page/modal logic
+                                  router.push({ pathname: '/auth/login', query: { returnTo: sub.href } }, undefined, { shallow: true });
+                                  openLoginModal(sub.href);
+                                }
+                                // If authenticated or not a protected route, default Link behavior occurs
+                              }}
+                            >
                               {sub.label}
                             </a>
                           </Link>
