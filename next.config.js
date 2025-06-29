@@ -280,9 +280,8 @@ const nextConfig = {
       
       // Reduce cache store size to prevent large string serialization
       config.cache.maxMemoryGenerations = dev ? 3 : 10; // Reduced for development
-      config.cache.cacheDirectory = path.resolve(process.cwd(), '.next/cache/webpack');
       
-      // Advanced cache optimization to prevent large string serialization
+      // Advanced cache optimization - simplified for compatibility
       config.cache.store = 'pack';
       config.cache.version = '1.0.0';
     }
