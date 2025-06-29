@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useRouter } from "next/router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -44,6 +45,7 @@ type ServiceFormValues = z.infer<typeof serviceProfileSchema>;
 
 export function ServiceProviderRegistrationForm() {
   const { user } = useAuth();
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serviceTags, setServiceTags] = useState<string[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -306,7 +308,7 @@ export function ServiceProviderRegistrationForm() {
 
       // Redirect to service provider dashboard or profile page
       setTimeout(() => {
-        window.location.href = "/service-dashboard";
+        router.push('/service-dashboard');
       }, 1500);
       
     } catch (error: any) {

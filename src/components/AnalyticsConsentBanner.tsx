@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { safeStorage } from '@/utils/safeStorage';
 import { initGA } from '@/lib/analytics';
 import { initPostHog } from '@/lib/posthog';
@@ -34,9 +35,9 @@ export const AnalyticsConsentBanner: React.FC = () => {
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-zion-blue-dark/90 text-gray-200 p-4 pb-6 md:p-6 text-sm flex flex-col md:flex-row items-start md:items-center gap-3">
       <p className="flex-1">
         We use analytics cookies to improve the site.{' '}
-        <a href="/privacy" className="underline">
+        <Link href="/privacy" className="underline">
           Learn more
-        </a>
+        </Link>
         .
       </p>
       <div className="flex gap-2">
