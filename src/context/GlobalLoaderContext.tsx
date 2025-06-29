@@ -74,9 +74,11 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // Hide loader when the route changes (routeChangeComplete analogue)
-  useEffect(() => {
-    hideLoader();
-  }, [router.asPath]); // Changed to router.asPath
+  // useEffect(() => {
+  //   hideLoader();
+  // }, [router.asPath]); // Changed to router.asPath
+  // Commented out: This was hiding the loader prematurely for pages with their own client-side data fetching.
+  // The loader should now primarily be hidden by the Axios interceptor or manually.
 
   // Auto-dismiss loader after 15 seconds
   useEffect(() => {

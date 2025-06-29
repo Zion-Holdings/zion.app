@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { logError } from '@/utils/productionLogger';
-
+import { useGlobalLoader } from '@/context/GlobalLoaderContext'; // Added import
 
 interface UseInfiniteScrollOptions {
   hasMore: boolean;
@@ -128,6 +128,7 @@ export function useInfiniteScrollPagination<T>(
   const [isInitialized, setIsInitialized] = useState(false);
   const isResetting = useRef(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const { showLoader, hideLoader } = useGlobalLoader(); // Get loader controls
 
   // Cleanup timeout on unmount
   useEffect(() => {
@@ -198,6 +199,7 @@ export function useInfiniteScrollPagination<T>(
     // Wait for reset to complete
     await new Promise(resolve => setTimeout(resolve, 150));
     try {
+      showLoader(); // Show global loader for initial fetch
       setLoading(true);
       const result = await fetchFunction(1, initialLimit);
       setItems(result.items);
@@ -212,8 +214,9 @@ export function useInfiniteScrollPagination<T>(
       setError(err instanceof Error ? err.message : 'Failed to refresh items');
     } finally {
       setLoading(false);
+      hideLoader(); // Hide global loader after initial fetch attempt
     }
-  }, [fetchFunction, initialLimit, reset]);
+  }, [fetchFunction, initialLimit, reset, showLoader, hideLoader]); // Added showLoader and hideLoader to dependencies
 
   // Load initial page only once
   useEffect(() => {
