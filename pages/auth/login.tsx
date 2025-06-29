@@ -372,7 +372,7 @@ const LoginPage = () => {
                 className="font-medium text-blue-600 hover:text-blue-500 underline"
               >
                 {t('auth.create_new_account')}
-              </button>
+              </Link>
             </p>
             <p className="mt-2 text-center text-sm text-gray-600">
               <button
