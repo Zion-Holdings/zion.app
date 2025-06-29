@@ -8,10 +8,12 @@ import { createClient } from '../../src/utils/supabase/client';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import type { AuthError, User, AuthChangeEvent, Session } from '@supabase/supabase-js';
 import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { useTranslation } from 'react-i18next';
 
 
 const LoginPage = () => {
   const router = useRouter();
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<AuthError | null>(null);
@@ -340,7 +342,7 @@ const LoginPage = () => {
   return (
     <>
       <Head>
-        <title>Sign In - Zion Tech Marketplace</title>
+        <title>{`${t('auth.sign_in')} - Zion Tech Marketplace`}</title>
         <meta name="description" content="Sign in to your Zion Tech Marketplace account" />
       </Head>
       
@@ -361,7 +363,7 @@ const LoginPage = () => {
               />
             </div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-              Sign in to your account
+              {t('auth.sign_in_to_account')}
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               Or{' '}
@@ -369,8 +371,8 @@ const LoginPage = () => {
                 href="/auth/register"
                 className="font-medium text-blue-600 hover:text-blue-500 underline"
               >
-                create a new account
-              </Link>
+                {t('auth.create_new_account')}
+              </button>
             </p>
             <p className="mt-2 text-center text-sm text-gray-600">
               <button
@@ -385,7 +387,7 @@ const LoginPage = () => {
                 }}
                 className="font-medium text-blue-600 hover:text-blue-500"
               >
-                {showProactiveResendForm ? 'Hide' : "Didn't receive verification email?"}
+                {showProactiveResendForm ? t('auth.hide') : t('auth.didnt_receive_verification_email')}
               </button>
             </p>
           </div>
@@ -396,7 +398,7 @@ const LoginPage = () => {
               <form onSubmit={handleProactiveResendVerification} className="space-y-4">
                 <div>
                   <label htmlFor="proactive-resend-email" className="block text-sm font-medium text-gray-700">
-                    Enter your email to resend verification
+                    {t('auth.enter_email_to_resend')}
                   </label>
                   <input
                     id="proactive-resend-email"
@@ -425,10 +427,10 @@ const LoginPage = () => {
                     {isProactivelyResending ? (
                       <>
                         <RefreshCw className="h-4 w-4 inline animate-spin mr-2" />
-                        Sending...
+                        {t('auth.sending')}
                       </>
                     ) : (
-                      'Resend Verification Email'
+                      t('auth.resend_verification_email')
                     )}
                   </button>
                 </div>
@@ -443,9 +445,9 @@ const LoginPage = () => {
               <div className="flex items-start">
                 <Clock className="h-5 w-5 text-yellow-400 mt-0.5 mr-3" />
                 <div className="flex-1">
-                  <h3 className="text-sm font-medium text-yellow-800">Session Check Timed Out</h3>
+                  <h3 className="text-sm font-medium text-yellow-800">{t('auth.session_check_timed_out')}</h3>
                   <div className="mt-1 text-sm text-yellow-700">
-                    <p>We couldn't verify your session status quickly. Please try logging in or refresh the page.</p>
+                    <p>{t('auth.session_check_timed_out_message')}</p>
                   </div>
                 </div>
               </div>
@@ -458,11 +460,11 @@ const LoginPage = () => {
               <div className="flex items-start">
                 <Mail className="h-5 w-5 text-blue-400 mt-0.5 mr-3" />
                 <div className="flex-1">
-                  <h3 className="text-sm font-medium text-blue-800">Email Verification Required</h3>
+                  <h3 className="text-sm font-medium text-blue-800">{t('auth.email_verification_required')}</h3>
                   <div className="mt-2 text-sm text-blue-700">
-                    <p>Your email address needs to be verified before you can log in.</p>
+                    <p>{t('auth.email_needs_verification')}</p>
                     {verificationEmailSent && (
-                      <p className="mt-1 font-medium">✓ Verification email sent to {email}</p>
+                      <p className="mt-1 font-medium">{t('auth.verification_email_sent', { email })}</p>
                     )}
                   </div>
                   <div className="mt-4 flex space-x-3">
@@ -474,23 +476,23 @@ const LoginPage = () => {
                       {isResendingVerification ? (
                         <>
                           <RefreshCw className="h-4 w-4 inline animate-spin mr-1" />
-                          Sending...
+                          {t('auth.sending')}
                         </>
                       ) : (
-                        'Resend Email'
+                        t('auth.resend_email')
                       )}
                     </button>
                     <Link
                       href={`/verify-status?email=${encodeURIComponent(email)}`}
                       className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded"
                     >
-                      Check Status
+                      {t('auth.check_status')}
                     </Link>
                   </div>
                   {verificationEmailSent && (
                     <p className="mt-2 text-xs text-blue-600 flex items-center">
                       <Clock className="h-3 w-3 mr-1" />
-                      Redirecting to verification status in 3 seconds...
+                      {t('auth.redirecting')}
                     </p>
                   )}
                 </div>
@@ -502,7 +504,7 @@ const LoginPage = () => {
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
                 <label htmlFor="email-address" className="sr-only">
-                  Email address
+                  {t('auth.email_address')}
                 </label>
                 <input
                   id="email-address"
@@ -511,7 +513,7 @@ const LoginPage = () => {
                   autoComplete="email"
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                  placeholder="Email address"
+                  placeholder={t('auth.email_address')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={isLoading}
@@ -519,7 +521,7 @@ const LoginPage = () => {
               </div>
               <div>
                 <label htmlFor="password" className="sr-only">
-                  Password
+                  {t('auth.password')}
                 </label>
                 <input
                   id="password"
@@ -528,7 +530,7 @@ const LoginPage = () => {
                   autoComplete="current-password"
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                  placeholder="Password"
+                  placeholder={t('auth.password')}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={isLoading}
@@ -546,7 +548,7 @@ const LoginPage = () => {
                   </div>
                   <div className="ml-3">
                     <h3 className="text-sm font-medium text-red-800">
-                      Authentication Error
+                      {t('auth.authentication_error')}
                     </h3>
                     <div className="mt-2 text-sm text-red-700">
                       <p>{error.message}</p>
@@ -567,7 +569,11 @@ const LoginPage = () => {
                     <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                   </svg>
                 </span>
-                {isLoading ? 'Signing in...' : isEmailUnverified ? 'Email Verification Required' : 'Sign in'}
+                {isLoading
+                  ? t('auth.signing_in')
+                  : isEmailUnverified
+                  ? t('auth.email_verification_required')
+                  : t('auth.sign_in')}
               </button>
             </div>
           </form>
@@ -579,7 +585,7 @@ const LoginPage = () => {
                 <div className="w-full border-t border-gray-300" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-gray-50 text-gray-500">Or continue with</span>
+                <span className="px-2 bg-gray-50 text-gray-500">{t('auth.or_continue_with')}</span>
               </div>
             </div>
 
