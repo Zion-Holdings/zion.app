@@ -41,14 +41,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
       }
     }
 
-      firstInputRef.current?.focus();
-      document.addEventListener('keydown', handleKeyDown);
-      return () => document.removeEventListener('keydown', handleKeyDown);
-    } else {
-      lastFocusedRef.current?.focus();
-      return undefined; // Or return () => {};
-    }
-
+    firstInputRef.current?.focus();
     document.addEventListener('keydown', handleKeyDown);
 
     // Return the cleanup function that will be called when isOpen changes to false or the component unmounts.
