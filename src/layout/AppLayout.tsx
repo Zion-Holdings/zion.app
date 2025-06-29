@@ -78,6 +78,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
+      <span id="top" aria-hidden="true" className="sr-only" />
       <SkipLink />
       {/* Conditionally render the EmailVerificationBanner */}
       {isAuthenticated && user && !user.emailVerified && !isAuthPage && ( // Added !isAuthPage
