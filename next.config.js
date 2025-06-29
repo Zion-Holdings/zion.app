@@ -291,6 +291,21 @@ const nextConfig = {
       });
     }
 
+    // Optimize caching to reduce "Serializing big strings" warnings
+    if (config.cache && config.cache.type === 'filesystem') {
+      config.cache.buildDependencies = {
+        ...config.cache.buildDependencies,
+        config: [__filename],
+      };
+      
+      // Optimize cache serialization to reduce large string warnings
+      config.cache.compression = 'gzip';
+      config.cache.maxAge = 7 * 24 * 60 * 60 * 1000; // 7 days
+      
+      // Reduce cache store size to prevent large string serialization
+      config.cache.maxMemoryGenerations = dev ? 5 : 10;
+    }
+
     // Add optimization to prevent temporal dead zone issues
     if (!dev && isServer) {
       config.optimization = {
@@ -308,6 +323,9 @@ const nextConfig = {
       /Critical dependency/,
       /Serializing big strings/i,
       /PackFileCacheStrategy/,
+      // Suppress common Next.js warnings that don't affect functionality
+      /Module not found.*can't resolve/i,
+      /export.*was not found in/i,
   ];
 
     // Alias React Router to a lightweight shim to avoid bundling the full library

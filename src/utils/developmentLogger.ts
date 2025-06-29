@@ -7,6 +7,7 @@
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isProduction = process.env.NODE_ENV === 'production';
+const isVerboseLogging = process.env.VERBOSE_LOGGING === 'true';
 
 interface LogContext {
   [key: string]: unknown;
@@ -17,7 +18,9 @@ class DevelopmentLogger {
 
   debug(message: string, context?: LogContext): void {
     if (!this.enabled) return;
-    console.log(`[DEBUG] ${message}`, context || '');
+    if (isVerboseLogging) {
+      console.log(`[DEBUG] ${message}`, context || '');
+    }
   }
 
   info(message: string, context?: LogContext): void {
@@ -27,7 +30,9 @@ class DevelopmentLogger {
 
   warn(message: string, context?: LogContext): void {
     if (isProduction) return;
-    console.warn(`[WARN] ${message}`, context || '');
+    if (isDevelopment) {
+      console.warn(`[WARN] ${message}`, context || '');
+    }
   }
 
   error(message: string, error?: Error | unknown, context?: LogContext): void {

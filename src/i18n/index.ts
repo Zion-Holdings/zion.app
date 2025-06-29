@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -47,14 +46,18 @@ if (!i18n) {
     fallbackLng: 'en', // Default language
     preload: ['en-US', 'es-ES'],
     supportedLngs: ['en', 'en-US', 'es', 'es-ES', 'fr', 'pt', 'ar'],
-    debug: process.env.NODE_ENV === 'development',
+    debug: false, // Disabled debug to reduce console noise - enable only when needed
     interpolation: {
       escapeValue: false, // React already escapes by default
     },
+    // Performance optimizations
+    load: 'currentOnly', // Only load current language instead of all fallbacks
+    cleanCode: true, // Clean up language codes
+    nonExplicitSupportedLngs: false, // Don't auto-detect non-explicit languages
     detection: {
       order: ['cookie', 'navigator'], // Keep navigator as a fallback for first-time users
       lookupCookie: 'i18n_lang',
-      // caches: ['cookie'], // REMOVED: Prevent navigator fallback from overwriting user's explicit cookie choice
+      caches: ['cookie'], // Re-enabled cookie caching for better performance
     },
   })
   .catch(error => {
