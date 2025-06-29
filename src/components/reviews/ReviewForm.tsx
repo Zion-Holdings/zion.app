@@ -106,6 +106,7 @@ export function ReviewForm({
                       onMouseEnter={() => setHoveredStar(star)}
                       onMouseLeave={() => setHoveredStar(0)}
                       className="focus:outline-none transition-transform hover:scale-110"
+                      aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`}
                     >
                       <Star
                         className={`h-10 w-10 ${

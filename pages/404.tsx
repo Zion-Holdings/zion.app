@@ -54,7 +54,7 @@ export default function Custom404() {
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {t('errors.page_not_found')}
             </h1>
-            <p className="text-zion-slate-light text-lg md:text-xl max-w-lg mx-auto">
+            <p className="text-zion-slate text-lg md:text-xl max-w-lg mx-auto">
               {t('errors.page_lost_message')}
             </p>
           </div>
@@ -93,7 +93,7 @@ export default function Custom404() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Link 
                 href="/marketplace" 
-                className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate-light hover:text-white transition-all group"
+                className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate hover:text-white transition-all group"
               >
                 <ShoppingCart className="w-5 h-5 text-zion-cyan group-hover:text-zion-cyan-light" aria-hidden="true" />
                 <span>{t('home.browse_marketplace')}</span>
@@ -102,7 +102,7 @@ export default function Custom404() {
               
               <Link 
                 href="/talent" 
-                className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate-light hover:text-white transition-all group"
+                className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate hover:text-white transition-all group"
               >
                 <Users className="w-5 h-5 text-zion-cyan group-hover:text-zion-cyan-light" aria-hidden="true" />
                 <span>{t('nav.talent')}</span>
@@ -111,7 +111,7 @@ export default function Custom404() {
               
               <Link 
                 href="/categories" 
-                className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate-light hover:text-white transition-all group"
+                className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate hover:text-white transition-all group"
               >
                 <Search className="w-5 h-5 text-zion-cyan group-hover:text-zion-cyan-light" aria-hidden="true" />
                 <span>{t('nav.categories')}</span>
@@ -120,7 +120,7 @@ export default function Custom404() {
               
               <Link 
                 href="/help" 
-                className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate-light hover:text-white transition-all group"
+                className="flex items-center gap-3 p-3 rounded-lg bg-zion-blue-dark/70 hover:bg-zion-purple/20 text-zion-slate hover:text-white transition-all group"
               >
                 <span className="w-5 h-5 text-zion-cyan group-hover:text-zion-cyan-light text-center leading-none font-bold" aria-hidden="true">?</span>
                 <span>{t('nav.help')}</span>
@@ -130,7 +130,7 @@ export default function Custom404() {
           </div>
 
           {/* Additional Info */}
-          <div className="text-sm text-zion-slate-light/70">
+          <div className="text-sm text-zion-slate/70">
             <p>
               {t('errors.if_believe_error')}{' '}
               <Link href="/help" className="text-zion-cyan hover:text-zion-cyan-light underline">
