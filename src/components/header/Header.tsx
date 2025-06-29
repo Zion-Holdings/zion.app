@@ -51,10 +51,13 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (query.trim()) {
-      logInfo('Header search submit:', { data: query });
-      router.push(`/search?q=${encodeURIComponent(query)}`);
-      setQuery("");
+    const trimmed = query.trim();
+    if (trimmed) {
+      logInfo('Header search submit:', { data: trimmed });
+      router
+        .push(`/search?q=${encodeURIComponent(trimmed)}`)
+        .then(() => setQuery(''))
+        .catch((err) => logInfo('Search navigation failed', { data: err }));
     }
   };
   
