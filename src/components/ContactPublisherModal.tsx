@@ -37,6 +37,8 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
     } else {
       lastFocusedRef.current?.focus();
     }
+    // Always return undefined to satisfy TypeScript
+    return undefined;
   }, [isOpen, onClose]);
 
   if (!isOpen) {
