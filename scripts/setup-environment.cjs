@@ -23,6 +23,10 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key_here
 NEXTAUTH_SECRET=your_nextauth_secret_here
 NEXTAUTH_URL=http://localhost:3000
 
+# OAuth Provider Credentials
+GOOGLE_CLIENT_ID=your_google_client_id_here
+GOOGLE_CLIENT_SECRET=your_google_client_secret_here
+
 # Wallet & Web3 Configuration
 NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id_here
 NEXT_PUBLIC_ALCHEMY_API_KEY=your_alchemy_api_key_here
@@ -87,6 +91,10 @@ SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
 # NextAuth - Generate a secret: openssl rand -base64 32
 NEXTAUTH_SECRET=your_generated_secret_here
 NEXTAUTH_URL=http://localhost:3000
+
+# OAuth Provider Credentials
+GOOGLE_CLIENT_ID=your_google_client_id_here
+GOOGLE_CLIENT_SECRET=your_google_client_secret_here
 
 # Wallet Integration - Get from WalletConnect/Reown
 NEXT_PUBLIC_REOWN_PROJECT_ID=your_project_id_here

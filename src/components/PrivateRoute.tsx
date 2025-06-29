@@ -19,9 +19,9 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
     }
 
     if (!isAuthenticated || !user) {
-      const next = encodeURIComponent(router.asPath);
+      const returnTo = encodeURIComponent(router.asPath);
       safeStorage.setItem('nextPath', router.asPath);
-      router.replace(`/login?redirectTo=${next}`);
+      router.replace(`/auth/login?returnTo=${returnTo}`);
     }
   }, [isAuthenticated, user, isLoading, router]);
 

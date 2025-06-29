@@ -18,7 +18,7 @@ export function AuthGuard({
   children,
   requireAuth = true,
   requireRole,
-  redirectTo = '/login',
+  redirectTo = '/auth/login',
   fallback,
   showToast = true,
   allowGuest = false,
@@ -40,8 +40,8 @@ export function AuthGuard({
         });
       }
 
-      const returnUrl = encodeURIComponent(router.asPath);
-      router.push(`${redirectTo}?next=${returnUrl}`);
+      const returnTo = encodeURIComponent(router.asPath);
+      router.push(`${redirectTo}?returnTo=${returnTo}`);
       return;
     }
 
@@ -153,7 +153,7 @@ export function useAuthGuard() {
         });
       }
 
-      router.push(`${redirectTo}?next=${encodeURIComponent(returnUrl)}`);
+      router.push(`${redirectTo}?returnTo=${encodeURIComponent(returnUrl)}`);
       return false;
     }
 

@@ -19,9 +19,25 @@ import Link from 'next/link';
 import { LoginModal } from '@/components/auth/LoginModal';
 
 export default function PointsPage() {
-  const { isAuthenticated } = useAuth();
-  const { ledger, balance, loading } = usePoints();
+  const { isAuthenticated, user } = useAuth();
+  const { ledger, balance, loading, fetchLedger } = usePoints();
   const [loginOpen, setLoginOpen] = useState(false);
+  const [redeeming, setRedeeming] = useState(false);
+
+  async function handleRedeem(reward: { id: string; cost: number; title: string }) {
+    if (!user?.id) return;
+    setRedeeming(true);
+    try {
+      await fetch('/api/points/redeem', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId: user.id, cost: reward.cost, reward: reward.title })
+      });
+      await fetchLedger();
+    } finally {
+      setRedeeming(false);
+    }
+  }
 
   const earningOpportunities = [
     {
@@ -55,11 +71,11 @@ export default function PointsPage() {
   ];
 
   const upcomingRewards = [
-    { title: "$5 Off Coupon", cost: "500 pts", category: "Discount" },
-    { title: "Premium Features (1 month)", cost: "1,000 pts", category: "Subscription" },
-    { title: "Zion Swag Pack", cost: "1,500 pts", category: "Merchandise" },
-    { title: "$25 Off Coupon", cost: "2,000 pts", category: "Discount" },
-    { title: "VIP Support Access", cost: "3,000 pts", category: "Service" }
+    { id: 'coupon5', title: '$5 Off Coupon', cost: 500, category: 'Discount' },
+    { id: 'premium1', title: 'Premium Features (1 month)', cost: 1000, category: 'Subscription' },
+    { id: 'swag', title: 'Zion Swag Pack', cost: 1500, category: 'Merchandise' },
+    { id: 'coupon25', title: '$25 Off Coupon', cost: 2000, category: 'Discount' },
+    { id: 'vip', title: 'VIP Support Access', cost: 3000, category: 'Service' }
   ];
 
   if (!isAuthenticated) {
@@ -194,17 +210,21 @@ export default function PointsPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            {upcomingRewards.map((reward, index) => (
-              <div key={index} className="flex items-center justify-between p-3 rounded-lg border">
+            {upcomingRewards.map((reward) => (
+              <div key={reward.id} className="flex items-center justify-between p-3 rounded-lg border">
                 <div>
                   <h4 className="font-medium">{reward.title}</h4>
                   <p className="text-sm text-muted-foreground">{reward.category}</p>
                 </div>
-                <div className="text-right">
-                  <Badge variant="outline" className="mb-1">{reward.cost}</Badge>
-                  <p className="text-xs text-muted-foreground">
-                    {balance >= parseInt(reward.cost) ? "Available" : "Need more points"}
-                  </p>
+                <div className="text-right space-y-1">
+                  <Badge variant="outline" className="mb-1">{reward.cost} pts</Badge>
+                  {balance >= reward.cost ? (
+                    <Button size="sm" onClick={() => handleRedeem(reward)} disabled={redeeming}>
+                      {redeeming ? 'Processing...' : 'Redeem'}
+                    </Button>
+                  ) : (
+                    <p className="text-xs text-muted-foreground">Need more points</p>
+                  )}
                 </div>
               </div>
             ))}

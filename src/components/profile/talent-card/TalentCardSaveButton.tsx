@@ -35,8 +35,8 @@ export function TalentCardSaveButton({
         description: "Please log in to save talents to your favorites",
         variant: "destructive"
       });
-      const next = encodeURIComponent(router.asPath);
-      router.push(`/login?next=${next}`);
+      const returnTo = encodeURIComponent(router.asPath);
+      router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }
     
