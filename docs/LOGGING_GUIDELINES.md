@@ -25,4 +25,10 @@ To gather logs for troubleshooting or to share with support, run:
 npm run logs:collect
 ```
 
-This command creates a timestamped archive under `logs/archive/` containing the `logs/` directory and any `*.log` files in the project root.
+This command creates a timestamped archive under `logs/archive/` and includes:
+
+- `logs/` with performance, security and self-heal logs
+- `server/logs/` if it exists
+- `playwright-logs/` and `cypress/results/` for test runs
+- any `.log` files in the project root
+- the `test-results` folder and `test_results.json` when present
