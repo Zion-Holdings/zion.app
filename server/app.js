@@ -20,8 +20,14 @@ const helmet =require('helmet');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
+
+// Ensure server log directory exists
+const logDir = path.join(__dirname, 'logs');
+fs.mkdirSync(logDir, { recursive: true });
+const accessLogStream = fs.createWriteStream(path.join(logDir, 'access.log'), { flags: 'a' });
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
@@ -48,6 +54,9 @@ app.use(helmet());
 
 // Enable CORS for allowed origins
 app.use(cors({ origin: allowedOrigins }));
+
+// Log HTTP requests to access.log in addition to console
+app.use(morgan('combined', { stream: accessLogStream }));
 
 app.use(morgan('dev'));
 app.use(mongooseMorgan({ connectionString: mongoUri }));
@@ -149,6 +158,17 @@ app.use((err, req, res, next) => {
     });
   }
   res.status(err.status || 500).json({ code: err.code, message: err.message });
+});
+
+// Global unhandled error logging
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled Rejection:', reason);
+  logAndAlert(`Unhandled Rejection: ${reason instanceof Error ? reason.stack || reason.message : reason}`);
+});
+
+process.on('uncaughtException', (error) => {
+  console.error('Uncaught Exception:', error);
+  logAndAlert(`Uncaught Exception: ${error.stack || error.message}`);
 });
 
 module.exports = app;
