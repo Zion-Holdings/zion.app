@@ -365,13 +365,12 @@ const LoginPage = () => {
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               Or{' '}
-              <button
-                type="button"
-                onClick={() => router.push('/auth/register')}
+              <Link
+                href="/auth/register"
                 className="font-medium text-blue-600 hover:text-blue-500 underline"
               >
                 create a new account
-              </button>
+              </Link>
             </p>
             <p className="mt-2 text-center text-sm text-gray-600">
               <button
