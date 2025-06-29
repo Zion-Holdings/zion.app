@@ -21,113 +21,43 @@ const ErrorFallback = ({ error }: { error: Error }) => (
 export function createDynamicImport<T extends ComponentType<any>>(
   importFn: () => Promise<{ default: T }>,
   options: {
-    loading?: ComponentType;
+    loading?: () => React.JSX.Element;
     ssr?: boolean;
     errorFallback?: ComponentType<{ error: Error }>;
   } = {}
 ) {
-  return dynamic(importFn, {
+  const DynamicComponent = dynamic(importFn, {
     loading: options.loading || LoadingSpinner,
     ssr: options.ssr ?? true,
-    onError: (error) => {
+  });
+
+  // Wrap with error handling
+  const WrappedComponent = (props: any) => {
+    try {
+      return <DynamicComponent {...props} />;
+    } catch (error) {
       logError('Dynamic import failed:', { data: error });
       if (options.errorFallback) {
-        return options.errorFallback({ error });
+        return <options.errorFallback error={error as Error} />;
       }
-      return ErrorFallback({ error });
+      return <ErrorFallback error={error as Error} />;
     }
-  });
+  };
+
+  return WrappedComponent;
 }
 
 // Pre-optimized dynamic imports for heavy components
-export const DynamicComponents = {
-  // Chart components (heavy charting library)
-  Chart: createDynamicImport(
-    () => import('@/components/ui/chart'),
-    { ssr: false }
-  ),
-  
-  // Code editor (heavy monaco editor)
-  CodeEditor: createDynamicImport(
-    () => import('@/components/ui/code-editor'),
-    { ssr: false }
-  ),
-  
-  // 3D model viewer (heavy three.js)
-  ModelViewer: createDynamicImport(
-    () => import('@/components/ui/model-viewer'),
-    { ssr: false }
-  ),
-  
-  // Video player (heavy video processing)
-  VideoPlayer: createDynamicImport(
-    () => import('@/components/ui/video-player'),
-    { ssr: false }
-  ),
-  
-  // Rich text editor (heavy editing features)
-  RichTextEditor: createDynamicImport(
-    () => import('@/components/ui/rich-text-editor'),
-    { ssr: false }
-  ),
-  
-  // PDF viewer (heavy pdf.js)
-  PDFViewer: createDynamicImport(
-    () => import('@/components/ui/pdf-viewer'),
-    { ssr: false }
-  ),
-  
-  // Calendar component (heavy date utilities)
-  Calendar: createDynamicImport(
-    () => import('@/components/ui/calendar'),
-    { ssr: false }
-  ),
-  
-  // Data table with virtual scrolling (heavy for large datasets)
-  DataTable: createDynamicImport(
-    () => import('@/components/ui/data-table'),
-    { ssr: true }
-  ),
-  
-  // Bundle analyzer (dev tool)
-  BundleAnalyzer: createDynamicImport(
-    () => import('@/components/ui/bundle-analyzer'),
-    { ssr: false }
-  ),
-  
-  // Performance monitor (dev tool)
-  PerformanceMonitor: createDynamicImport(
-    () => import('@/components/ui/performance-monitor'),
-    { ssr: false }
-  )
-};
+// Note: Commented out until components export proper default exports
+// export const DynamicComponents = {
+//   // Components will be added when they have proper default exports
+// };
 
-// Route-based code splitting helpers
-export const DynamicPages = {
-  // Admin dashboard (heavy admin features)
-  AdminDashboard: createDynamicImport(
-    () => import('@/pages/admin'),
-    { ssr: true }
-  ),
-  
-  // Marketplace (heavy product data)
-  Marketplace: createDynamicImport(
-    () => import('@/pages/marketplace'),
-    { ssr: true }
-  ),
-  
-  // Talent dashboard (heavy talent features)
-  TalentDashboard: createDynamicImport(
-    () => import('@/pages/talent-dashboard'),
-    { ssr: true }
-  ),
-  
-  // Creator dashboard (heavy creator tools)
-  CreatorDashboard: createDynamicImport(
-    () => import('@/pages/creator-dashboard'),
-    { ssr: true }
-  )
-};
+// Route-based code splitting helpers  
+// Note: Commented out until pages export proper default exports
+// export const DynamicPages = {
+//   // Pages will be added when they have proper default exports
+// };
 
 // Utility for preloading components
 export function preloadComponent(component: ComponentType) {
