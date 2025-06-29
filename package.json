@@ -84,6 +84,7 @@
     "watchdog:status": "ps aux | grep watchdog || echo 'No watchdog process found'",
     "logs:clear": "npm run watchdog:clear",
     "logs:view": "tail -f logs/self-heal.log",
+    "logs:scan": "node scripts/analyze-error-logs.cjs",
     "monitor:resources": "echo 'CPU:' && ps -A -o %cpu | awk '{sum+=$1} END {print sum\"%\"}' && echo 'Memory:' && free -h || vm_stat",
     "analyze:bundle": "node scripts/analyze-bundle.js",
     "bundle:report": "node scripts/bundle-analysis.cjs",
