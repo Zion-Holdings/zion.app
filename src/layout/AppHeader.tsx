@@ -28,6 +28,14 @@ export function AppHeader() {
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   const router = useRouter();
   const showTagline = router.pathname === '/';
+
+  const openLoginModal = (returnToPath?: string) => {
+    // The actual returnToPath is set in the URL by the child components (ResponsiveNavigation, MobileMenu)
+    // using router.push with shallow:true before this function is called.
+    // This function's main job is just to open the modal.
+    // If a returnToPath is passed, we could potentially use it for other logic here if needed in the future.
+    setLoginOpen(true);
+  };
   
   // Try to access the messaging context, but provide a fallback value if it's not available
   let unreadCount = 0;
@@ -56,7 +64,7 @@ export function AppHeader() {
           )}
           <div className="ml-6 flex-1 hidden md:block">
             <nav role="navigation" aria-label="Main navigation">
-              <ResponsiveNavigation />
+              <ResponsiveNavigation openLoginModal={openLoginModal} />
             </nav>
           </div>
           
@@ -87,7 +95,11 @@ export function AppHeader() {
                 data-testid="login-link"
                 onClick={(e) => {
                   e.preventDefault();
-                  setLoginOpen(true);
+                  // For the main login link, we might not have a specific returnTo beyond current page,
+                  // or we could default to dashboard.
+                  // For consistency with how sub-menus now set it:
+                  router.push({ pathname: '/auth/login', query: { returnTo: router.asPath } }, undefined, { shallow: true });
+                  openLoginModal(router.asPath);
                 }}
               >
                 {t('auth.login')}
@@ -122,7 +134,8 @@ export function AppHeader() {
           <div className="relative bg-background border-t border-border h-auto max-h-[calc(100vh-4rem)] overflow-y-auto">
             <MobileMenu 
               unreadCount={unreadCount} 
-              onClose={() => setMobileMenuOpen(false)} 
+              onClose={() => setMobileMenuOpen(false)}
+              openLoginModal={openLoginModal}
             />
           </div>
         </div>
