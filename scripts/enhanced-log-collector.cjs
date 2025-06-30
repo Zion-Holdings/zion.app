@@ -182,7 +182,13 @@ class EnhancedLogCollector {
 
     try {
       // Collect from existing log files
-      const logDirs = ['logs', 'logs/errors', 'logs/performance'];
+      const logDirs = [
+        'logs',
+        'logs/errors',
+        'logs/performance',
+        'logs/perf',
+        'logs/security',
+      ];
       
       for (const logDir of logDirs) {
         if (fs.existsSync(logDir)) {
