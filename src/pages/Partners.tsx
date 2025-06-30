@@ -2,11 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
-import { FileDown } from 'lucide-react/dist/esm/icons/file-down';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { PieChart } from 'lucide-react/dist/esm/icons/pie-chart';
-import { Users } from 'lucide-react/dist/esm/icons/users';
+import { CheckCircle, FileDown, FileText, PieChart, Users } from 'lucide-react';
+
+
+
+
+
 import { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';

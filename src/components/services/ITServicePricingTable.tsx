@@ -3,9 +3,10 @@ import { useState, useMemo } from "react";
 import { onsiteServicePricing, CountryPricing } from "@/data/onsiteServicePricing";
 import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Globe } from 'lucide-react/dist/esm/icons/globe';
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { ArrowUpDown } from 'lucide-react/dist/esm/icons/arrow-up-down';
+import { Globe, Search, ArrowUpDown } from 'lucide-react';
+
+
+
 import { Button } from "@/components/ui/button";
 
 export function ITServicePricingTable() {

@@ -1,10 +1,11 @@
 import { CategoryCard } from "@/components/CategoryCard";
 import { GradientHeading } from "@/components/GradientHeading";
 import ErrorBoundary from "@/components/GlobalErrorBoundary"; // Import ErrorBoundary
-import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
-import { HardDrive } from 'lucide-react/dist/esm/icons/hard-drive';
-import { Lightbulb } from 'lucide-react/dist/esm/icons/lightbulb';
-import { Users } from 'lucide-react/dist/esm/icons/users';
+import { Briefcase, HardDrive, Lightbulb, Users } from 'lucide-react';
+
+
+
+
 
 // Reusing the categories array from CategoriesSection.tsx
 // Ideally, this would come from a shared data source or API

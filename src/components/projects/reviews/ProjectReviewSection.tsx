@@ -1,7 +1,8 @@
 import { Project } from '@/types/projects';
+import { Star } from 'lucide-react';
 
 import { useState } from "react";
-import { Star } from 'lucide-react/dist/esm/icons/star';
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ReviewsList } from "@/components/reviews/ReviewsList";

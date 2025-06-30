@@ -1,7 +1,8 @@
 
 import React, { useRef } from "react";
-import { ChevronLeft } from 'lucide-react/dist/esm/icons/chevron-left';
-import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+
 import { Button } from "@/components/ui/button";
 
 // These would be replaced with actual screenshots

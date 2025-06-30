@@ -1,8 +1,9 @@
 import React from 'react';
+import { Check, Trash2, ChevronRight } from 'lucide-react';
 // Use the centralized icon wrapper to avoid missing icons
-import { Check } from 'lucide-react/dist/esm/icons/check';
-import { Trash2 } from 'lucide-react/dist/esm/icons/trash2';
-import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
+
+
+
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { formatDistanceToNow } from 'date-fns';

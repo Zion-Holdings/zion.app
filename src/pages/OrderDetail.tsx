@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
-import { Clipboard } from 'lucide-react/dist/esm/icons/clipboard';
+import { Clipboard } from 'lucide-react';
+
 import Skeleton from '@/components/ui/skeleton';
 import { useGetOrderQuery } from '@/hooks/useOrder';
 import { generateInvoicePdf } from '@/utils/generateInvoicePdf';

@@ -3,12 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
-import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
-import { XCircle } from 'lucide-react/dist/esm/icons/xcircle';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { TrendingUp } from 'lucide-react/dist/esm/icons/trending-up';
-import { Activity } from 'lucide-react/dist/esm/icons/activity';
+import { AlertTriangle, CheckCircle, XCircle, Clock, TrendingUp, Activity } from 'lucide-react';
+
+
+
+
+
+
 
 interface HealthData {
   status: 'healthy' | 'warning' | 'critical';

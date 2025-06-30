@@ -1,6 +1,7 @@
 
 import React from "react";
 import {
+import { CalendarIcon, Search } from 'lucide-react';
   Table,
   TableBody,
   TableCell,
@@ -9,8 +10,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { CalendarIcon } from 'lucide-react/dist/esm/icons/calendar-icon';
-import { Search } from 'lucide-react/dist/esm/icons/search';
+
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 

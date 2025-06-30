@@ -1,21 +1,17 @@
+import { LucideIcon, BadgeCheck, // publishing a listing
+  Award, // top contributor
+  Star, // profile complete
+  Trophy, // featured creator
+  BadgePlus, // first action
+  BadgeDollarSign // monetization } from 'lucide-react';
 
-import { LucideIcon } from 'lucide-react/dist/esm/icons/lucide-icon';
-import { BadgeCheck } from 'lucide-react/dist/esm/icons/badge-check';
-import { // publishing a listing
-  Award } from 'lucide-react/dist/esm/icons/// publishing a listing
-  award';
-import { // top contributor
-  Star } from 'lucide-react/dist/esm/icons/// top contributor
-  star';
-import { // profile complete
-  Trophy } from 'lucide-react/dist/esm/icons/// profile complete
-  trophy';
-import { // featured creator
-  BadgePlus } from 'lucide-react/dist/esm/icons/// featured creator
-  badge-plus';
-import { // first action
-  BadgeDollarSign // monetization } from 'lucide-react/dist/esm/icons/// first action
-  badge-dollar-sign // monetization';
+
+
+
+
+
+
+
 
 export type BadgeKey =
   | "first_listing"

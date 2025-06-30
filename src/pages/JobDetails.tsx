@@ -4,12 +4,13 @@ import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { DollarSign } from 'lucide-react/dist/esm/icons/dollar-sign';
-import { Tag } from 'lucide-react/dist/esm/icons/tag';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
+import { Calendar, Clock, DollarSign, Tag, Users, Briefcase } from 'lucide-react';
+
+
+
+
+
+
 import { formatDistanceToNow } from 'date-fns';
 import { toast } from 'sonner';
 import { useAuth } from '@/hooks/useAuth';

@@ -1,13 +1,14 @@
 
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { BookOpen } from 'lucide-react/dist/esm/icons/book-open';
-import { Code } from 'lucide-react/dist/esm/icons/code';
-import { Key } from 'lucide-react/dist/esm/icons/key';
-import { List } from 'lucide-react/dist/esm/icons/list';
-import { LucideIcon } from 'lucide-react/dist/esm/icons/lucide-icon';
-import { Terminal } from 'lucide-react/dist/esm/icons/terminal';
-import { Webhook } from 'lucide-react/dist/esm/icons/webhook';
+import { BookOpen, Code, Key, List, LucideIcon, Terminal, Webhook } from 'lucide-react';
+
+
+
+
+
+
+
 
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { ApiKeysManager } from "@/components/developers/ApiKeysManager";

@@ -1,9 +1,10 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
-import { Bell } from 'lucide-react/dist/esm/icons/bell';
-import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
-import { X } from 'lucide-react/dist/esm/icons/x';
+import { Bell, Calendar, X } from 'lucide-react';
+
+
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useProjects } from "@/hooks/useProjects";

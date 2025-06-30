@@ -1,6 +1,7 @@
 
 import React from "react";
 import {
+import { InfoIcon } from 'lucide-react';
   Table,
   TableBody,
   TableCell,
@@ -11,7 +12,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { toast } from "@/hooks/use-toast";
-import { InfoIcon } from 'lucide-react/dist/esm/icons/info-icon';
+
 import {
   Tooltip,
   TooltipContent,

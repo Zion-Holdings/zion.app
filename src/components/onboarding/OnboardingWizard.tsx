@@ -4,12 +4,13 @@ import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Rocket } from 'lucide-react/dist/esm/icons/rocket';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
-import { Eye } from 'lucide-react/dist/esm/icons/eye';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { Rocket, FileText, Users, Calendar, Eye, MessageSquare } from 'lucide-react';
+
+
+
+
+
+
 import { cn } from '@/lib/utils';
 
 interface WizardStep {

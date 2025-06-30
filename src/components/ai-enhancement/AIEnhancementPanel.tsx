@@ -4,10 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/componen
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
-import { Copy } from 'lucide-react/dist/esm/icons/copy';
-import { Check } from 'lucide-react/dist/esm/icons/check';
+import { Sparkles, Loader2, Copy, Check } from 'lucide-react';
+
+
+
+
 import { useAIContentEnhancer, AIEnhancementOptions } from '@/hooks/useAIContentEnhancer';
 
 interface AIEnhancementPanelProps {

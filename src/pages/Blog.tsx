@@ -12,7 +12,8 @@ import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { BlogPost } from "@/types/blog";
 import { generateRandomBlogPost } from "@/utils/generateRandomBlogPost";
 import { BLOG_POSTS } from "@/data/blog-posts";
-import { Search } from 'lucide-react/dist/esm/icons/search';
+import { Search } from 'lucide-react';
+
 import { fetchWithRetry } from '@/utils/fetchWithRetry';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 

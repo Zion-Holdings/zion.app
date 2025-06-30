@@ -1,7 +1,8 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ShieldAlert } from 'lucide-react/dist/esm/icons/shield-alert';
+import { ShieldAlert } from 'lucide-react';
+
 
 interface EmptyFraudStateProps {
   hasFilters: boolean;

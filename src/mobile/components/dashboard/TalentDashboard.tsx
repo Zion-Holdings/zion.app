@@ -3,12 +3,13 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { Image } from 'lucide-react/dist/esm/icons/image';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { Zap } from 'lucide-react/dist/esm/icons/zap';
-import { BookOpen } from 'lucide-react/dist/esm/icons/book-open';
+import { ChevronRight, FileText, Image, Clock, Zap, BookOpen } from 'lucide-react';
+
+
+
+
+
+
 import Link from "next/link";
 
 export function TalentDashboard() {

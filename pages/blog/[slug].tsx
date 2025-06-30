@@ -91,10 +91,9 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
             src={post.author.avatarUrl}
             alt={post.author.name}
             className="w-10 h-10 rounded-full"
-            onError={(e) => {
-              const target = e.currentTarget as HTMLImageElement;
-              target.src = '/images/blog-placeholder.svg';
-            }}
+            fallback="/images/blog-placeholder.svg"
+            width={40}
+            height={40}
           />
           <div>
             <p className="m-0 font-medium">{post.author.name}</p>
@@ -111,11 +110,8 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
               src={post.featuredImage}
               alt={post.title}
               className="object-cover w-full h-full"
-              fill={true} // Add fill for Next.js OptimizedImage if layout="fill" behavior is intended within a sized parent
-              onError={(e) => {
-                const target = e.currentTarget as HTMLImageElement;
-                target.src = '/images/blog-placeholder.svg';
-              }}
+              fill={true}
+              fallback="/images/blog-placeholder.svg"
             />
           </div>
         )}

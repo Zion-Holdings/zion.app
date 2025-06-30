@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import { motion } from 'framer-motion'
-import { WifiOff } from 'lucide-react/dist/esm/icons/wifi-off';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
-import { Home } from 'lucide-react/dist/esm/icons/home';
-import { ShoppingCart } from 'lucide-react/dist/esm/icons/shopping-cart';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { Bookmark } from 'lucide-react/dist/esm/icons/bookmark';
-import { Search } from 'lucide-react/dist/esm/icons/search';
+import { WifiOff, RefreshCw, Home, ShoppingCart, Clock, Bookmark, Search } from 'lucide-react';
+
+
+
+
+
+
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'

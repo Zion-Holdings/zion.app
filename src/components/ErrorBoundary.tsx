@@ -1,6 +1,7 @@
 import React, { Component, ReactNode } from 'react';
 import { Button } from './ui/button';
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
+import { AlertTriangle } from 'lucide-react';
+
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 

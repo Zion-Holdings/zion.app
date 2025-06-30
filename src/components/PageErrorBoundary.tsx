@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
-import { Home } from 'lucide-react/dist/esm/icons/home';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
+import { AlertTriangle, Home, RefreshCw, Settings } from 'lucide-react';
+
+
+
+
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { logInfo, logErrorToProduction as prodLogError } from '@/utils/productionLogger';
 

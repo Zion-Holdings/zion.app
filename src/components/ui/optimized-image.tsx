@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ImageIcon } from 'lucide-react/dist/esm/icons/image-icon';
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
+import { ImageIcon, AlertTriangle } from 'lucide-react';
+
+
 import { cn } from '@/lib/utils';
 import { imageOptimization } from '@/utils/performance';
 import { logWarn } from '@/utils/productionLogger';

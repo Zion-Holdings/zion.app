@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { Loader2 } from 'lucide-react';
+
 import { useAuth } from '@/hooks/useAuth';
 import { getStripe } from '@/utils/getStripe';
 import {logErrorToProduction} from '@/utils/productionLogger';

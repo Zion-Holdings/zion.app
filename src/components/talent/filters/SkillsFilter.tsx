@@ -1,9 +1,10 @@
 
-import { ChevronDown } from 'lucide-react/dist/esm/icons/chevron-down';
-import { ChevronUp } from 'lucide-react/dist/esm/icons/chevron-up';
+
+
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { SkillsFilterProps } from "@/types/filters";
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 // Common skills in AI and tech
 const POPULAR_SKILLS = [

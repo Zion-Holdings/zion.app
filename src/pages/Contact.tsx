@@ -9,6 +9,7 @@ import { Card } from '@/components/ui/card';
 import { toast } from '@/components/ui/use-toast';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import {
+import { Mail, MessageSquare, MapPin, Phone } from 'lucide-react';
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -16,10 +17,10 @@ import {
 } from '@/components/ui/tooltip';
 import z from 'zod';
 import { ChatAssistant } from '@/components/ChatAssistant';
-import { Mail } from 'lucide-react/dist/esm/icons/mail';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
-import { Phone } from 'lucide-react/dist/esm/icons/phone';
+
+
+
+
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 

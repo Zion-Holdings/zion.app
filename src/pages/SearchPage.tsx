@@ -6,12 +6,13 @@ import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { SearchSuggestion } from "@/types/search";
 import {logErrorToProduction} from '@/utils/productionLogger';
 import {
+import { Loader2 } from 'lucide-react';
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+
 
 interface SearchResult {
   id: string;

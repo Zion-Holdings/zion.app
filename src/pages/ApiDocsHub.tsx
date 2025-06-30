@@ -1,12 +1,13 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
-import { BookOpen } from 'lucide-react/dist/esm/icons/book-open';
-import { Code } from 'lucide-react/dist/esm/icons/code';
-import { Webhook } from 'lucide-react/dist/esm/icons/webhook';
-import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
-import { Zap } from 'lucide-react/dist/esm/icons/zap';
+import { ArrowRight, BookOpen, Code, Webhook, AlertCircle, Zap } from 'lucide-react';
+
+
+
+
+
+
 import ApiDocsLayout from "@/components/developers/ApiDocsLayout";
 
 export function ApiDocsHub() {

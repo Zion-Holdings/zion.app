@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Check } from 'lucide-react/dist/esm/icons/check';
-import { Copy } from 'lucide-react/dist/esm/icons/copy';
-import { ExternalLink } from 'lucide-react/dist/esm/icons/external-link';
+import { Check, Copy, ExternalLink } from 'lucide-react';
+
+
+
 
 export function ZapierIntegration() {
   const [copied, setCopied] = useState(false);

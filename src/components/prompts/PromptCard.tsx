@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Copy } from 'lucide-react/dist/esm/icons/copy';
-import { Send } from 'lucide-react/dist/esm/icons/send';
+import { Copy, Send } from 'lucide-react';
+
+
 import { Button } from '@/components/ui/button';
 import type { Prompt } from '@/types/prompts';
 

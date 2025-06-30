@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
+import { User as UserIcon, Package, LogOut } from 'lucide-react';
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -10,9 +11,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuLabel,
 } from '@/components/ui/dropdown-menu';
-import { User as UserIcon } from 'lucide-react/dist/esm/icons/user as user-icon';
-import { Package } from 'lucide-react/dist/esm/icons/package';
-import { LogOut } from 'lucide-react/dist/esm/icons/log-out'; // Assuming lucide-react is used
+
+
+ // Assuming lucide-react is used
 
 export const AvatarMenu: React.FC = () => {
   const { user, logout, avatarUrl } = useAuth();

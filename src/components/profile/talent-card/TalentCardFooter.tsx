@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Star } from 'lucide-react/dist/esm/icons/star';
+import { Star, ExternalLink } from 'lucide-react';
+
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from 'lucide-react/dist/esm/icons/external-link';
+
 import { TalentProfile } from "@/types/talent";
 import { HireRequestModal } from "@/components/profile/hire-request";
 import { useAuthStatus } from "@/hooks/talent";

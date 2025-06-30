@@ -1,15 +1,16 @@
 
 import Link from "next/link";
 import { 
+import { Eye, ChevronDown, Loader2 } from 'lucide-react';
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { Eye } from 'lucide-react/dist/esm/icons/eye';
-import { ChevronDown } from 'lucide-react/dist/esm/icons/chevron-down';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+
+
+
 import { JobApplication, ApplicationStatus } from "@/types/jobs";
 
 interface ApplicationActionsProps {

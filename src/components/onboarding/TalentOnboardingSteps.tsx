@@ -2,10 +2,11 @@
 import React from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { useOnboardingStatus } from "@/hooks/useOnboardingStatus";
-import { UserCheck } from 'lucide-react/dist/esm/icons/user-check';
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { CalendarCheck } from 'lucide-react/dist/esm/icons/calendar-check';
-import { BriefcaseIcon } from 'lucide-react/dist/esm/icons/briefcase-icon';
+import { UserCheck, Star, CalendarCheck, BriefcaseIcon } from 'lucide-react';
+
+
+
+
 import { OnboardingTracker, OnboardingStep } from "./OnboardingTracker";
 
 export function TalentOnboardingSteps() {

@@ -2,8 +2,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ReferralReward } from "@/types/referrals";
 import { formatDate } from "@/utils/referralUtils";
-import { BadgeDollarSign } from 'lucide-react/dist/esm/icons/badge-dollar-sign';
-import { Badge } from 'lucide-react/dist/esm/icons/badge';
+import { BadgeDollarSign, Badge } from 'lucide-react';
+
+
 
 interface RewardsCardProps {
   rewards: ReferralReward[];

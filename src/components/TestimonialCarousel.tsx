@@ -1,5 +1,6 @@
 
 import {
+import { Quote } from 'lucide-react';
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -9,7 +10,7 @@ import {
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Quote } from 'lucide-react/dist/esm/icons/quote';
+
 import Link from "next/link";
 import Image from "next/image";
 import { CASE_STUDIES } from "@/data/case-studies";

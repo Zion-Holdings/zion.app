@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { 
+import { Sparkles } from 'lucide-react';
   getTalentRateSuggestion, 
   PricingSuggestion,
   TalentRateParams,
@@ -10,7 +11,7 @@ import {
 } from "@/services/pricingSuggestionService";
 import { PricingSuggestionBox } from "./PricingSuggestionBox";
 import { useAuth } from "@/hooks/useAuth";
-import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
+
 
 interface TalentRateRecommenderProps {
   skills: string[];

@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import type { RootState, AppDispatch } from '@/store';
 import {
+import { ShoppingCart, User, CreditCard, ArrowRight, Package, Shield } from 'lucide-react';
   removeItem as removeItemAction,
   updateQuantity as updateQuantityAction,
 } from '@/store/cartSlice';
@@ -19,12 +20,12 @@ import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
 import { getStripe } from '@/utils/getStripe';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ShoppingCart } from 'lucide-react/dist/esm/icons/shopping-cart';
-import { User } from 'lucide-react/dist/esm/icons/user';
-import { CreditCard } from 'lucide-react/dist/esm/icons/credit-card';
-import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
-import { Package } from 'lucide-react/dist/esm/icons/package';
-import { Shield } from 'lucide-react/dist/esm/icons/shield';
+
+
+
+
+
+
 import { useWishlist } from '@/hooks/useWishlist';
 import { toast } from '@/hooks/use-toast';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';

@@ -1,8 +1,9 @@
 
 import React from "react";
-import { Handshake } from 'lucide-react/dist/esm/icons/handshake';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { Star } from 'lucide-react/dist/esm/icons/star';
+import { Handshake, MessageSquare, Star } from 'lucide-react';
+
+
+
 import { Button } from "@/components/ui/button";
 
 import { HireNowCTA } from "./HireNowCTA";

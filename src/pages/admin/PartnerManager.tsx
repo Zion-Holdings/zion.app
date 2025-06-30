@@ -10,12 +10,13 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { toast } from "@/hooks/use-toast";
-import { Check } from 'lucide-react/dist/esm/icons/check';
-import { Flag } from 'lucide-react/dist/esm/icons/flag';
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
-import { X } from 'lucide-react/dist/esm/icons/x';
-import { Users } from 'lucide-react/dist/esm/icons/users';
+import { Check, Flag, Search, Settings, X, Users } from 'lucide-react';
+
+
+
+
+
+
 import { supabase } from "@/integrations/supabase/client";
 import { logErrorToProduction } from '@/utils/productionLogger';
 import { EmptyState } from "@/components/ui/empty-state";

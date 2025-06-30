@@ -2,11 +2,12 @@
 
 import React, { Suspense, lazy, useState, useEffect, ComponentType } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
-import { Wifi } from 'lucide-react/dist/esm/icons/wifi';
-import { WifiOff } from 'lucide-react/dist/esm/icons/wifi-off';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { Loader2, AlertTriangle, Wifi, WifiOff, RefreshCw } from 'lucide-react';
+
+
+
+
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { cn } from '@/lib/utils'

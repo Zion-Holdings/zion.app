@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { Button } from "@/components/ui/button";
 import { ChatBotPanel } from "./ChatBotPanel";
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { Info } from 'lucide-react/dist/esm/icons/info';
-import { X } from 'lucide-react/dist/esm/icons/x';
+import { MessageSquare, Info, X } from 'lucide-react';
+
+
+
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/hooks/useTheme";
 

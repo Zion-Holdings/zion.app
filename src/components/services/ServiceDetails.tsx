@@ -1,8 +1,9 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Server } from 'lucide-react/dist/esm/icons/server';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
+import { Server, Clock, MapPin } from 'lucide-react';
+
+
+
 import Image from "next/image";
 
 interface ServiceDetailsProps {

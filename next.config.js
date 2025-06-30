@@ -1,5 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
+import os from 'os';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -83,24 +84,11 @@ const nextConfig = {
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: Math.min(2, require('os').cpus().length), // Adaptive CPU limit
-    // Bundle analysis optimizations
-    bundlePagesRouterDependencies: true, // Better bundle splitting
+    cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
+    // Bundle analysis optimizations (removed deprecated option)
     // Disable profiling for faster builds
     swcTraceProfiling: false,
-    // Optimize imports
-    modularizeImports: {
-      'lucide-react': {
-        transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
-        skipDefaultConversion: true,
-      },
-      'date-fns': {
-        transform: 'date-fns/{{member}}',
-      },
-      '@radix-ui/react-icons': {
-        transform: '@radix-ui/react-icons/dist/{{member}}',
-      },
-    },
+    // Optimize imports (moved to top level for Next.js 14)
   },
 
   images: {
@@ -264,8 +252,7 @@ const nextConfig = {
     } : false,
     // Remove React DevTools in production
     reactRemoveProperties: process.env.NODE_ENV === 'production' ? { properties: ['data-testid'] } : false,
-    // Remove development-only code
-    removeReactProperties: process.env.NODE_ENV === 'production',
+    // Remove development-only code (removed as deprecated in Next.js 14)
     // Enable SWC minification optimizations
     styledComponents: false, // Disable if not using styled-components
   },

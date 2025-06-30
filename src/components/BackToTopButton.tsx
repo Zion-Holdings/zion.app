@@ -1,5 +1,6 @@
-import { ArrowUp } from 'lucide-react/dist/esm/icons/arrow-up';
+
 import { useEffect, useState } from "react";
+import { ArrowUp } from 'lucide-react';
 
 export function BackToTopButton() {
   const [visible, setVisible] = useState(false);

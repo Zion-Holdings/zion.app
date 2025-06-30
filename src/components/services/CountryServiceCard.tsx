@@ -3,11 +3,12 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { Badge } from "@/components/ui/badge";
-import { Globe } from 'lucide-react/dist/esm/icons/globe';
-import { Server } from 'lucide-react/dist/esm/icons/server';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
-import { Check } from 'lucide-react/dist/esm/icons/check';
+import { Globe, Server, Clock, MapPin, Check } from 'lucide-react';
+
+
+
+
+
 import { CountryPricing } from "@/data/onsiteServicePricing";
 
 interface CountryServiceCardProps {

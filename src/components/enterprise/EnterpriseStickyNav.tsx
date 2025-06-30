@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Menu } from 'lucide-react/dist/esm/icons/menu';
+import { Menu } from 'lucide-react';
+
 import Link from "next/link";
 
 export function EnterpriseStickyNav() {

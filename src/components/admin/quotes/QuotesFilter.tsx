@@ -1,6 +1,7 @@
 import React from "react";
-import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { Calendar, RefreshCw } from 'lucide-react';
+
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";

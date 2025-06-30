@@ -3,13 +3,14 @@ import { useRouter } from 'next/router';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Mail } from 'lucide-react/dist/esm/icons/mail';
-import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
-import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
-import { ArrowLeft } from 'lucide-react/dist/esm/icons/arrow-left';
-import { Eye } from 'lucide-react/dist/esm/icons/eye';
+import { Mail, AlertCircle, CheckCircle, Clock, RefreshCw, ArrowLeft, Eye } from 'lucide-react';
+
+
+
+
+
+
+
 import { AuthLayout } from '@/layout';
 import { supabase } from '@/integrations/supabase/client'; // Import Supabase client
 import { useAuth } from '@/hooks/useAuth'; // Import useAuth to access user state
