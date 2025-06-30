@@ -3,11 +3,12 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { setupRouterErrorHandlers } from '@/utils/routerErrorHandler';
+import { logError } from '@/utils/productionLogger'; // Import logError
 
 // Add proper loading component and error handling
 const DashboardComponent = dynamic(
   () => import('@/pages/Dashboard').catch((error) => {
-    console.error('Failed to load Dashboard component:', error);
+    logError('Failed to load Dashboard component:', { data: error }); // Changed to logError
     // Return a fallback component
     return {
       default: () => (
@@ -17,7 +18,7 @@ const DashboardComponent = dynamic(
               Dashboard Temporarily Unavailable
             </h2>
             <p className="text-zion-slate-light mb-6">
-              We're having trouble loading the dashboard. Please try refreshing the page.
+              We&apos;re having trouble loading the dashboard. Please try refreshing the page.
             </p>
             <button
               className="bg-zion-purple hover:bg-zion-purple-light text-white px-6 py-2 rounded-lg"

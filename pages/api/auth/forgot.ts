@@ -151,7 +151,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       });
     }
 
-    const ticketData = await createTicketResponse.json();
+    // const ticketData = await createTicketResponse.json(); // ticketData is unused
+    await createTicketResponse.json(); // Consume the JSON body
     logInfo('Password reset ticket created successfully for:', { data: email });
     
     // Always return the same message for security (don't reveal if user exists)

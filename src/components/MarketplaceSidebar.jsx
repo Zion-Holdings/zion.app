@@ -24,7 +24,7 @@ export default function MarketplaceSidebar({ children }) {
       </button>
       <aside
         className={`bg-zion-blue-dark border-r border-zion-blue-light overflow-hidden transition-all duration-300 ${isOpen ? 'w-[250px]' : 'w-0'}`}
-        aria-expanded={isOpen}
+        // aria-expanded={isOpen} // Removed: not valid for aside/complementary role
       >
         {children}
       </aside>

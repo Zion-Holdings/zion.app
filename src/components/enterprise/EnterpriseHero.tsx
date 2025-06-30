@@ -1,5 +1,5 @@
-
 import React from "react";
+import Image from "next/image"; // Import Image
 import { Button } from "@/components/ui/button";
 import { GradientHeading } from "@/components/GradientHeading";
 
@@ -25,21 +25,22 @@ export function EnterpriseHero() {
             </div>
             <div className="mt-10 flex items-center gap-4">
               <p className="text-sm text-muted-foreground">Trusted by leading enterprises:</p>
-              <div className="flex gap-6 opacity-70">
-                <img src="/logos/zion-logo.png" alt="Enterprise 1" className="h-8" loading="lazy" />
-                <img src="/logos/zion-logo.png" alt="Enterprise 2" className="h-8" loading="lazy" />
-                <img src="/logos/zion-logo.png" alt="Enterprise 3" className="h-8" loading="lazy" />
+              <div className="flex gap-6 opacity-70 items-center"> {/* Added items-center for better alignment */}
+                <Image src="/logos/zion-logo.png" alt="Enterprise 1" width={32} height={32} className="h-8 w-auto" />
+                <Image src="/logos/zion-logo.png" alt="Enterprise 2" width={32} height={32} className="h-8 w-auto" />
+                <Image src="/logos/zion-logo.png" alt="Enterprise 3" width={32} height={32} className="h-8 w-auto" />
               </div>
             </div>
           </div>
           <div className="relative">
             <div className="aspect-video rounded-lg bg-gradient-to-br from-zion-cyan/20 to-zion-purple/20 p-1">
-              <div className="w-full h-full bg-card rounded-md flex items-center justify-center">
-                <img
+              <div className="w-full h-full bg-card rounded-md flex items-center justify-center relative overflow-hidden"> {/* Added relative and overflow-hidden */}
+                <Image
                   src="/placeholder.svg"
                   alt="Enterprise Dashboard"
-                  className="rounded max-w-full max-h-full object-cover"
-                  loading="lazy"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="rounded" // className applies to the wrapper if fill is true
                 />
               </div>
             </div>

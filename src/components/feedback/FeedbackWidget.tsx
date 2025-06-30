@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import Image from 'next/image'; // Import Image
 import {
   Dialog,
   DialogContent,
@@ -113,11 +114,15 @@ export function FeedbackWidget() {
                   />
                   {screenshot && (
                     <div className="space-y-2">
-                      <img
-                        src={screenshot}
-                        alt="Screenshot preview"
-                        className="w-full border rounded"
-                      />
+                      <div className="relative w-full aspect-video border rounded overflow-hidden"> {/* Added relative, aspect-ratio and overflow-hidden */}
+                        <Image
+                          src={screenshot}
+                          alt="Screenshot preview"
+                          fill
+                          style={{ objectFit: "contain" }}
+                          sizes="(max-width: 768px) 100vw, 50vw" // Example sizes
+                        />
+                      </div>
                       <Button
                         type="button"
                         variant="ghost"

@@ -18,7 +18,7 @@ import { getBreadcrumbsForPath } from '@/utils/routeUtils';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 import { logInfo, logWarn, logError } from '@/utils/productionLogger';
 import { fetchProducts, validateProductData, ensureProductIntegrity } from '@/services/marketplace';
-import { AppLayout } from '@/layout/AppLayout';
+// import { AppLayout } from '@/layout/AppLayout'; // Unused
 import {
   Breadcrumb,
   BreadcrumbList,

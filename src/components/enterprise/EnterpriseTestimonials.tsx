@@ -1,5 +1,6 @@
 
 import React from "react";
+import Image from "next/image"; // Import Image
 import { Quote } from "lucide-react";
 import {
   Carousel,
@@ -53,15 +54,16 @@ export function EnterpriseTestimonials() {
                 <div className="bg-card rounded-xl p-8 border border-border h-full">
                   <Quote className="h-10 w-10 text-primary/20 mb-4" />
                   <blockquote className="text-xl mb-6 italic">
-                    "{testimonial.quote}"
+                    &quot;{testimonial.quote}&quot;
                   </blockquote>
                   <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-full overflow-hidden bg-muted">
-                      <img
+                    <div className="h-12 w-12 rounded-full overflow-hidden bg-muted relative"> {/* Added relative */}
+                      <Image
                         src={testimonial.image}
                         alt={testimonial.author}
-                        className="h-full w-full object-cover"
-                        loading="lazy"
+                        fill
+                        style={{ objectFit: "cover" }}
+                        sizes="48px" // Corresponds to w-12 h-12
                       />
                     </div>
                     <div>

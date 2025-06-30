@@ -13,7 +13,7 @@ interface AIMatchingResultsProps {
   onSelectMatch?: (match: MatchResultItem) => void;
   isLoading?: boolean;
   projectDescription?: string;
-  serviceType?: string;
+  // serviceType?: string; // Removed as _serviceType was unused
 }
 
 export function AIMatchingResults({
@@ -21,7 +21,7 @@ export function AIMatchingResults({
   onSelectMatch,
   isLoading = false,
   projectDescription = "",
-  serviceType: _serviceType = ""
+  // serviceType: _serviceType = "" // Removed
 }: AIMatchingResultsProps) {
   const [activeTab, setActiveTab] = useState("all");
   

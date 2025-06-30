@@ -1,4 +1,5 @@
 import React, { useState, Suspense } from 'react';
+import Image from 'next/image'; // Import next/image
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import {
   Dialog,
@@ -72,15 +73,18 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
 
       {videoUrl && (
         <TabsContent value="video" className="pt-4">
-          <AspectRatio ratio={16 / 9}>
+          <AspectRatio ratio={16 / 9} className="relative bg-black"> {/* Added relative and bg for fallback */}
             <Suspense
               fallback={
-                <img
-                  src={poster}
-                  alt="Video preview"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+                poster ? (
+                  <Image
+                    src={poster}
+                    alt="Video preview"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    priority={false}
+                  />
+                ) : <div className="w-full h-full bg-muted animate-pulse" />
               }
             >
               <ReactPlayer url={videoUrl} width="100%" height="100%" controls />
@@ -91,15 +95,18 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
 
       {modelUrl && (
         <TabsContent value="model" className="pt-4">
-          <AspectRatio ratio={16 / 9}>
+          <AspectRatio ratio={16 / 9} className="relative bg-black"> {/* Added relative and bg for fallback */}
             <Suspense
               fallback={
-                <img
-                  src={poster}
-                  alt="3D model preview"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+                poster ? (
+                  <Image
+                    src={poster}
+                    alt="3D model preview"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    priority={false}
+                  />
+                ) : <div className="w-full h-full bg-muted animate-pulse" />
               }
             >
               <ModelViewer src={modelUrl} alt="3d model" camera-controls style={{ width: '100%', height: '100%' }} />
@@ -110,14 +117,18 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
     </Tabs>
     {images.length > 0 && (
       <DialogContent className="max-w-3xl p-0">
+        {/* For zoomed view, ensure parent has defined dimensions if using fill */}
         <div
-          className={`w-full h-full overflow-auto ${zoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}
+          className={`w-full h-full overflow-auto ${zoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'} relative`} // Added relative for Image fill
           onClick={() => setZoomed(!zoomed)}
+          style={{ height: '80vh' }} // Example height, adjust as needed for modal
         >
-          <img
+          <Image
             src={images[selected] || images[0] || ""}
             alt="Zoomed view"
-            className={`w-full h-full object-contain transition-transform ${zoomed ? 'scale-150' : ''}`}
+            fill
+            style={{ objectFit: "contain", transform: zoomed ? 'scale(1.5)' : 'scale(1)' }} // Apply transform via style
+            className={`transition-transform duration-300`} // Smooth transition
           />
         </div>
       </DialogContent>

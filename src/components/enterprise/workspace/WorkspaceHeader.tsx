@@ -1,5 +1,5 @@
-
 import React from "react";
+import Image from "next/image"; // Import Image
 import { Button } from "@/components/ui/button";
 import { type Company } from "./CompanyDashboard";
 import { Bell, Users, Settings } from "lucide-react";
@@ -13,12 +13,13 @@ export function WorkspaceHeader({ company }: WorkspaceHeaderProps) {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <div className="h-12 w-12 rounded-lg bg-card flex items-center justify-center border border-border">
-            <img
+          <div className="h-12 w-12 rounded-lg bg-card flex items-center justify-center border border-border p-1"> {/* Added padding for contain */}
+            <Image
               src={company.logoUrl || "/placeholder.svg"}
               alt={company.name}
-              className="max-h-10 max-w-10"
-              loading="lazy"
+              width={40} // Corresponds to max-h-10/max-w-10
+              height={40}
+              style={{ objectFit: "contain" }}
             />
           </div>
           <div>

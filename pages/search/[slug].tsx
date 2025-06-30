@@ -53,12 +53,12 @@ interface CategorySearchResult extends BaseSearchResult {
 
 type SearchResult = ProductSearchResult | TalentSearchResult | BlogSearchResult | CategorySearchResult;
 
-// Type guard functions
-const hasPrice = (result: SearchResult): result is ProductSearchResult => 
-  result.type === 'product' || result.type === 'equipment';
+// Type guard functions (commented out as unused)
+// const hasPrice = (result: SearchResult): result is ProductSearchResult =>
+//   result.type === 'product' || result.type === 'equipment';
 
-const hasRating = (result: SearchResult): result is ProductSearchResult | TalentSearchResult => 
-  result.type === 'product' || result.type === 'equipment' || result.type === 'talent';
+// const hasRating = (result: SearchResult): result is ProductSearchResult | TalentSearchResult =>
+//   result.type === 'product' || result.type === 'equipment' || result.type === 'talent';
 
 interface SearchResultsPageProps {
   initialResults: SearchResult[];

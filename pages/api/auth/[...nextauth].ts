@@ -1,4 +1,5 @@
-import NextAuth, { type NextAuthOptions } from "next-auth";
+import NextAuth, { type NextAuthOptions, User as NextAuthUser, Session as NextAuthSession } from "next-auth";
+import { JWT as NextAuthJWT } from "next-auth/jwt";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github"; // Added GitHubProvider
 import FacebookProvider from "next-auth/providers/facebook";
@@ -7,6 +8,25 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import { verifyMessage } from 'ethers'; // Assuming ethers v6+
 import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { NextApiRequest, NextApiResponse } from "next";
+
+// Define custom types by extending NextAuth's default types
+interface ExtendedUser extends NextAuthUser {
+  id: string; // Ensure id is always part of the user object model
+  walletAddress?: string;
+}
+
+interface ExtendedJWT extends NextAuthJWT {
+  id?: string;
+  walletAddress?: string;
+  // accessToken is often added to JWT in examples, so include it if used
+  accessToken?: string;
+}
+
+interface ExtendedSession extends NextAuthSession {
+  user?: ExtendedUser;
+  // accessToken?: string; // If you plan to expose it to the client session
+}
 
 // WalletConnect isn't natively supported by next-auth. We'll mock a basic credentials
 // provider that handles an address signature check. In a real app you'd verify
@@ -201,27 +221,33 @@ export const authOptions: NextAuthOptions = {
     strategy: "jwt", // Using JWT for sessions
   },
   callbacks: {
-    async jwt({ token, user, account }) {
+    async jwt({ token, user, account }): Promise<ExtendedJWT> {
+      const extendedToken = token as ExtendedJWT;
+      const extendedUser = user as ExtendedUser | undefined; // user can be undefined
+
       // Persist the OAuth access_token or user.id to the token right after signin
-      if (account && user) {
-        token.accessToken = account.access_token; // For OAuth
-        token.id = user.id; // For all users
-        if ((user as any).walletAddress) { // For wallet users
-            token.walletAddress = (user as any).walletAddress;
+      if (account && extendedUser) {
+        extendedToken.accessToken = account.access_token; // For OAuth
+        extendedToken.id = extendedUser.id; // For all users
+        if (extendedUser.walletAddress) { // For wallet users
+            extendedToken.walletAddress = extendedUser.walletAddress;
         }
       }
-      return token;
+      return extendedToken;
     },
-    async session({ session, token }) {
+    async session({ session, token }): Promise<ExtendedSession> {
+      const extendedSession = session as ExtendedSession;
+      const extendedToken = token as ExtendedJWT;
+
       // Send properties to the client, like an access_token and user id from the token
-      if (session.user) {
-         (session.user as any).id = token.id as string;
-        if (token.walletAddress) {
-                 (session.user as any).walletAddress = token.walletAddress as string;
+      if (extendedSession.user && extendedToken.id) {
+        extendedSession.user.id = extendedToken.id;
+        if (extendedToken.walletAddress) {
+          extendedSession.user.walletAddress = extendedToken.walletAddress;
         }
       }
-      // session.accessToken = token.accessToken; // If using OAuth and need token client-side
-      return session;
+      // extendedSession.accessToken = extendedToken.accessToken; // If using OAuth and need token client-side
+      return extendedSession;
     },
   },
   pages: {
@@ -233,6 +259,11 @@ export const authOptions: NextAuthOptions = {
 };
 
 const handler = NextAuth(authOptions);
-const wrappedHandler = withErrorLogging(handler as any);
+
+// Explicitly type the handler for compatibility with withErrorLogging
+const nextAuthHandler: (req: NextApiRequest, res: NextApiResponse) => Promise<void> =
+  (req, res) => handler(req, res);
+
+const wrappedHandler = withErrorLogging(nextAuthHandler);
 export { wrappedHandler as GET, wrappedHandler as POST };
 export default wrappedHandler;

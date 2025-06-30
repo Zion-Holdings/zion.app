@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { logError } from '@/utils/productionLogger';
-
+import { useState } from 'react'; // Only useState is needed from React
 
 const CheckoutTestPage = () => {
-  const [loading, setLoading] = useState(false);
-  const [testResults, setTestResults] = useState({});
+  // const [loading, setLoading] = useState(false); // loading is unused
+  const [, setLoading] = useState(false); // Keep setLoading if used, otherwise remove both
+  // const [testResults, setTestResults] = useState({}); // testResults is unused
 
   // Use real marketplace products for testing
-  const testProducts = MARKETPLACE_LISTINGS.slice(0, 3);
+  // const testProducts = MARKETPLACE_LISTINGS.slice(0, 3); // testProducts is unused
 
   const handleCheckout = async () => {
     setLoading(true);
@@ -32,25 +33,25 @@ const CheckoutTestPage = () => {
     }
   };
 
-  const testPaymentIntent = async () => {
-    setLoading(true);
-    try {
-      const { data } = await axios.post('/api/create-payment-intent', {
-        amount: 50.00,
-        userId: 'test-user'
-      });
-      if (data.clientSecret) {
-        alert('✅ Payment intent created successfully!');
-        setTestResults(prev => ({ ...prev, paymentIntent: 'success' }));
-      }
-    } catch (err) {
-      logError('Payment intent error:', { data: err });
-      alert('❌ Payment intent test failed. Check console for details.');
-      setTestResults(prev => ({ ...prev, paymentIntent: 'error' }));
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const testPaymentIntent = async () => { // testPaymentIntent is unused
+  //   setLoading(true);
+  //   try {
+  //     const { data } = await axios.post('/api/create-payment-intent', {
+  //       amount: 50.00,
+  //       userId: 'test-user'
+  //     });
+  //     if (data.clientSecret) {
+  //       alert('✅ Payment intent created successfully!');
+  //       // setTestResults(prev => ({ ...prev, paymentIntent: 'success' })); // testResults is unused
+  //     }
+  //   } catch (err) {
+  //     logError('Payment intent error:', { data: err });
+  //     alert('❌ Payment intent test failed. Check console for details.');
+  //     // setTestResults(prev => ({ ...prev, paymentIntent: 'error' })); // testResults is unused
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', textAlign: 'center' }}>
