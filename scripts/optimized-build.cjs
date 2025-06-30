@@ -343,7 +343,7 @@ async function executeBuildSequence() {
         console.log(`- Build time: ✅ ${buildTime} seconds`);
 
         try {
-          console.log("\n🔍 Running Post-Build Analysis & Reporting (from deploy-optimization.cjs)...");
+          console.log("\n🔍 Running Post-Build Analysis & Reporting (from deploy-optimization.js)...");
           await analyzeAndReport(); // Call the imported function
           console.log("✅ Post-Build Analysis & Reporting Completed.");
         } catch (reportError) {
