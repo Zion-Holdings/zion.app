@@ -62,11 +62,17 @@ This document provides an overview of the automated workflows and processes impl
     - The scan is scoped to common source code and script directories.
 - **Configuration:** `.github/workflows/track-todos.yml`.
 
-## 4. Enhanced Self-Healing and AI-Assisted Development
+These automations aim to streamline development workflows, improve code quality, ensure dependencies are kept up-to-date, and make deployment processes more reliable and efficient.
+
+## 4. Marketing Automation
+
+- **Automatic Blog Promotion:** When scheduled jobs generate and publish a new blog post, a Supabase Edge Function (`share-blog-post`) tweets the article link using the post's `tweetSummary`. This is triggered from `process-scheduled-jobs` after publishing.
+
+## 5. Enhanced Self-Healing and AI-Assisted Development
 
 The platform includes advanced self-healing capabilities primarily orchestrated by `scripts/watchdog.js` and integrated AI tools.
 
-### 4.1. Intelligent Watchdog (`scripts/watchdog.js`)
+### 5.1. Intelligent Watchdog (`scripts/watchdog.js`)
 - **Contextual Log Parsing:** The watchdog now uses a detailed configuration (`ERROR_PATTERNS_CONFIG`) to identify specific error patterns in performance and security logs.
 - **Targeted Healing Actions:** Based on the matched error pattern, it can trigger various actions:
     - `GENERAL_RESTART`: The original full system pull, build, and restart.
@@ -78,7 +84,7 @@ The platform includes advanced self-healing capabilities primarily orchestrated 
 - **Configuration:** Behavior is configured within `scripts/watchdog.js` (error patterns, heal actions) and via environment variables (e.g., `DISCORD_WEBHOOK_URL`, `CODEX_API_URL`).
 - **Further Details:** See `AUTO_HEALING_VIA_MONITORING_OPENAI_OPERATOR.md` for more on the AI integration.
 
-### 4.2. AI-Powered Code Correction (`codex-pipeline.yaml`)
+### 5.2. AI-Powered Code Correction (`codex-pipeline.yaml`)
 - **Targeted Fixes:** The `/api/codex/suggest-fix` endpoint (in `server/app.js`) now accepts `filePath` and `errorLog` parameters.
 - **Enhanced Pipeline:** `codex-pipeline.yaml` uses these parameters to provide more context to OpenAI Codex:
     - It attempts to read the content of the specified `filePath`.
@@ -86,7 +92,7 @@ The platform includes advanced self-healing capabilities primarily orchestrated 
     - Codex's suggested fix is applied directly to the target file.
 - **Fallback:** If no specific file path is provided, the pipeline can still fall back to its original ESLint-based error detection.
 
-### 4.3. Automated Unit Test Generation
+### 5.3. Automated Unit Test Generation
 - **Workflow:** A new GitHub Actions workflow, `.github/workflows/generate-tests.yml`, is triggered on pushes that modify components, hooks, utils, or lib files.
 - **How it works:**
     - Identifies new or modified `.ts` / `.tsx` files in specified directories.
@@ -100,7 +106,7 @@ The platform includes advanced self-healing capabilities primarily orchestrated 
 - **Outcome:** The GitHub Action commits the newly generated test files to a new branch (e.g., `bot/auto-generated-tests-YYYY-MM-DDTHH-MM-SSZ`) and pushes it to the repository. A Pull Request should then be created from this branch for developer review.
 - **Requirements:** Requires `OPENAI_API_KEY` as a secret in GitHub Actions.
 
-### 4.4. AI-Powered Error Log Summarization
+### 5.4. AI-Powered Error Log Summarization
 - **Endpoint:** A new endpoint `/api/ai/summarize-error` in `server/app.js`.
 - **Functionality:**
     - Accepts a `logSnippet` in the request body.
@@ -113,7 +119,7 @@ These automations aim to streamline development workflows, improve code quality 
 ```
 These automations aim to streamline development workflows, improve code quality, ensure dependencies are kept up-to-date, and make deployment processes more reliable and efficient.
 
-## 5. Self-Healing and Growth Automations
+## 6. Self-Healing and Growth Automations
 
 - **Watchdog Self-Heal:** `scripts/watchdog.js` monitors logs and system resources. When repeated errors or high usage are detected, it automatically pulls the latest code, installs dependencies, rebuilds, and restarts services.
 - **AI-Powered Fixes:** The `codex-bug-fix.js` script can be invoked via webhook or workflow to send issues to OpenAI and apply generated patches.
@@ -121,7 +127,7 @@ These automations aim to streamline development workflows, improve code quality,
 
 These features allow the platform to adapt and improve itself with minimal manual intervention.
 
-## 6. Self-Healing & AI-Assisted Development
+## 7. Self-Healing & AI-Assisted Development
 
 - **Watchdog Monitoring:** `scripts/watchdog.js` monitors log files and system resources. If repeated errors or sustained high usage are detected, it triggers a self-heal command and can invoke the OpenAI operator for help.
 - **OpenAI Operator Pipeline:** The `/api/codex/suggest-fix` endpoint and `scripts/codexWebhookServer.js` run `openai-operator` with `codex-pipeline.yaml` to lint code, extract failing snippets, request a Codex patch, and optionally deploy if tests succeed.
