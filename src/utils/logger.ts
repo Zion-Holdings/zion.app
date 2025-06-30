@@ -20,24 +20,24 @@ class Logger {
   private isDevelopment = process.env.NODE_ENV === 'development';
   private isDebugEnabled = process.env.DEBUG === 'true' || this.isDevelopment;
 
-  debug(message: string, ...args: unknown[]): void {
+  debug(message: string, context?: Record<string, unknown>): void {
     if (this.isDebugEnabled) {
-      logInfo(`[DEBUG] ${message}`, ...args);
+      logInfo(`[DEBUG] ${message}`, context);
     }
   }
 
-  info(message: string, ...args: unknown[]): void {
+  info(message: string, context?: Record<string, unknown>): void {
     if (this.isDevelopment) {
-      logInfo(`[INFO] ${message}`, ...args);
+      logInfo(`[INFO] ${message}`, context);
     }
   }
 
-  warn(message: string, ...args: unknown[]): void {
-    logWarn(`[WARN] ${message}`, ...args);
+  warn(message: string, context?: Record<string, unknown>): void {
+    logWarn(`[WARN] ${message}`, context);
   }
 
-  error(message: string, error?: Error | unknown, ...args: unknown[]): void {
-    logError(`[ERROR] ${message}`, error, ...args);
+  error(message: string, error?: Error | unknown, context?: Record<string, unknown>): void {
+    logError(`[ERROR] ${message}`, error, context);
     
     // In production, also send to error monitoring service
     if (!this.isDevelopment && typeof window !== 'undefined') {
@@ -55,9 +55,9 @@ class Logger {
   }
 
   // Conditional development logging
-  devLog(message: string, ...args: unknown[]): void {
+  devLog(message: string, context?: Record<string, unknown>): void {
     if (this.isDevelopment) {
-      logInfo(`[DEV] ${message}`, ...args);
+      logInfo(`[DEV] ${message}`, context);
     }
   }
 

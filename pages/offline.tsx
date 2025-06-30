@@ -6,9 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { logError } from '@/utils/productionLogger'
 
 export default function OfflinePage() {
-import { logError } from '@/utils/productionLogger';
 
   const [isOnline, setIsOnline] = useState(false)
   const [lastUpdate, setLastUpdate] = useState<string>('')

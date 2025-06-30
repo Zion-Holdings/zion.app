@@ -1,5 +1,3 @@
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
-
 /**
  * Production-ready logger utility
  * Replaces console statements with structured logging, error monitoring, and performance tracking
@@ -29,6 +27,14 @@ interface LoggerConfig {
   sessionId: string;
   userId?: string;
 }
+
+// Internal console methods to avoid circular dependencies
+const internalConsole = {
+  log: console.log.bind(console),
+  warn: console.warn.bind(console),
+  error: console.error.bind(console),
+  info: console.info.bind(console),
+};
 
 class ProductionLogger {
   private config: LoggerConfig;
@@ -86,16 +92,16 @@ class ProductionLogger {
 
     switch (entry.level) {
       case 'debug':
-        logInfo(message, entry.context || '');
+        internalConsole.info(message, entry.context || '');
         break;
       case 'info':
-        logInfo(message, entry.context || '');
+        internalConsole.info(message, entry.context || '');
         break;
       case 'warn':
-        logWarn(message, entry.context || '');
+        internalConsole.warn(message, entry.context || '');
         break;
       case 'error':
-        logError(message, entry.context || '');
+        internalConsole.error(message, entry.context || '');
         break;
     }
   }
@@ -150,17 +156,17 @@ class ProductionLogger {
           if (!response.ok) {
             // Only log to console if the logging endpoint fails
             // to prevent circular logging
-            logWarn(`Logging endpoint returned ${response.status}`);
+            internalConsole.warn(`Logging endpoint returned ${response.status}`);
           }
         } catch (error) {
           // Silent fail for logging endpoint to prevent circular errors
           // Only log in development mode (this check is outside the production block)
-          logWarn('Failed to send logs to endpoint:', error);
+          internalConsole.warn('Failed to send logs to endpoint:', error);
         }
       }
     } catch (error) {
       // Fallback to console for logging service failures
-      logError('Failed to send logs to remote service:', error);
+      internalConsole.error('Failed to send logs to remote service:', error);
     }
   }
 
@@ -232,7 +238,7 @@ class ProductionLogger {
         observer.observe({ entryTypes: ['largest-contentful-paint', 'layout-shift'] });
       }
     } catch (error) {
-      logWarn('Performance tracking initialization failed:', error);
+      internalConsole.warn('Performance tracking initialization failed:', error);
     }
   }
 

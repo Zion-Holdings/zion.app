@@ -6,10 +6,9 @@ import { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ApiResponse, PaginatedResponse, SearchFilters } from '@/types/common';
 
 // TypeScript interfaces
-import { logError } from "@/utils/productionLogger";
+import { logInfo, logError } from '@/utils/productionLogger';
 
 export interface MarketplaceItem {
-import { logInfo, logError } from '@/utils/productionLogger';
 
   id: string;
   name: string;
