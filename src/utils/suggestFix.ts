@@ -10,7 +10,7 @@ export async function suggestFix(error: Error): Promise<string> {
     const prompt = `Provide a concise suggestion to resolve or work around this error: ${error.message}`;
     return await callZionGPT({ prompt, purpose: 'support' });
   } catch (e) {
-    logErrorToProduction(e, { context: 'suggestFix' });
+    logErrorToProduction(e instanceof Error ? e.message : String(e), e instanceof Error ? e : undefined, { context: 'suggestFix' });
     return 'Something went wrong while generating a fix suggestion. Please try again later.';
   }
 }

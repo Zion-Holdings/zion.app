@@ -23,7 +23,7 @@ function ReviewsModerationContent() {
       setReviews([]);
       setIsLoading(false);
     } catch (error) {
-      logErrorToProduction(error, { message: 'Error fetching reviews' });
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching reviews' });
       toast({
         title: "Error",
         description: "Failed to load reviews. Please try again later.",

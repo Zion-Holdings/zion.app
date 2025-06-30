@@ -112,7 +112,7 @@ export default function UpdatePassword() {
         router.push("/login");
       }, 3000);
     } catch (error: any) {
-      logErrorToProduction(error, { message: 'Password update error' });
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Password update error' });
       toast({
         title: "Password update failed",
         description: error.message || "An unexpected error occurred",

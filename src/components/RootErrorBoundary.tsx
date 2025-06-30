@@ -38,7 +38,8 @@ export default function RootErrorBoundary({ children }: { children: React.ReactN
     <ErrorBoundary
       fallbackRender={(props) => <RootFallback {...props} traceId={traceId} />}
       onError={(error, info) => {
-        const id = logErrorToProduction(error, { type: 'UI Error', componentStack: info.componentStack });
+        logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { type: 'UI Error', componentStack: info.componentStack });
+        const id = 'trace-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
         setTraceId(id);
       }}
     >

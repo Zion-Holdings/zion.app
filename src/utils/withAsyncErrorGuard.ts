@@ -8,7 +8,7 @@ export function withAsyncErrorGuard<T extends (...args: any[]) => Promise<any>>(
     try {
       return (await fn(...args)) as ReturnType<T>;
     } catch (err) {
-      logErrorToProduction(err, { context: 'withAsyncErrorGuard' });
+      logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'withAsyncErrorGuard' });
       throw err;
     }
   }) as T;

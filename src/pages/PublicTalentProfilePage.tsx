@@ -46,7 +46,7 @@ export default function ProfilePage() {
 
         setProfileData(data);
       } catch (error) {
-        logErrorToProduction(error, { message: 'Error fetching profile' });
+        logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching profile' });
         setIsError(true);
         toast({
           title: "Error",

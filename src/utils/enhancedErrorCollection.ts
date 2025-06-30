@@ -390,7 +390,7 @@ class EnhancedErrorCollector {
       if (!errorsByCategory[error.category]) {
         errorsByCategory[error.category] = [];
       }
-      errorsByCategory[error.category].push(error);
+      errorsByCategory[error.category]!.push(error);
     });
 
     return {

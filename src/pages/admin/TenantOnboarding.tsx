@@ -105,7 +105,7 @@ export default function TenantOnboarding() {
       });
       
     } catch (error: any) {
-      logErrorToProduction(error, { message: 'Error creating tenant' });
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error creating tenant' });
       toast.error("Failed to create tenant", {
         description: error.message
       });

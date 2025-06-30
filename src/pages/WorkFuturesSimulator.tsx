@@ -45,7 +45,7 @@ export default function WorkFuturesSimulator() {
       setOutput(result);
       setWorkIndex(Math.floor(Math.random() * 60) + 40); // simple placeholder
     } catch (err) {
-      logErrorToProduction(err, { context: 'WorkFuturesSimulator.runSimulation' });
+      logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'WorkFuturesSimulator.runSimulation' });
       const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
       setOutput(suggestion);
       toast({ title: 'Simulation failed', variant: 'destructive' });
@@ -54,12 +54,12 @@ export default function WorkFuturesSimulator() {
 
   useEffect(() => {
     if (!networkCanvas.current) {
-      logErrorToProduction(new Error('Canvas ref missing'), { context: 'WorkFuturesSimulator.useEffect' });
+      logErrorToProduction('Canvas ref missing', undefined, { context: 'WorkFuturesSimulator.useEffect' });
       return;
     }
     const ctx = networkCanvas.current.getContext('2d');
     if (!ctx) {
-      logErrorToProduction(new Error('2D context unavailable'), { context: 'WorkFuturesSimulator.useEffect' });
+      logErrorToProduction('2D context unavailable', undefined, { context: 'WorkFuturesSimulator.useEffect' });
       return;
     }
     try {
@@ -74,7 +74,7 @@ export default function WorkFuturesSimulator() {
       ctx.fillStyle = '#3b82f6';
       positions.forEach((p) => {
         if (!p || typeof p.x !== 'number' || typeof p.y !== 'number') {
-          logErrorToProduction(new Error('Invalid position'), {
+          logErrorToProduction('Invalid position', undefined, {
             context: 'WorkFuturesSimulator.drawNode',
             position: p,
           });
@@ -102,7 +102,7 @@ export default function WorkFuturesSimulator() {
             ctx.lineTo(q.x, q.y);
             ctx.stroke();
           } else if (!p || !q) {
-            logErrorToProduction(new Error('Invalid connection'), {
+            logErrorToProduction('Invalid connection', undefined, {
               context: 'WorkFuturesSimulator.drawEdge',
               p,
               q,
@@ -111,7 +111,7 @@ export default function WorkFuturesSimulator() {
         });
       });
     } catch (err) {
-      logErrorToProduction(err, { context: 'WorkFuturesSimulator.useEffect' });
+      logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'WorkFuturesSimulator.useEffect' });
     }
   }, [output]);
 

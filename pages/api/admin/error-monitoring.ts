@@ -61,9 +61,7 @@ async function handleGet(
   switch (action) {
     case 'report':
       try {
-        const errorReport = await enhancedErrorCollection.generateErrorReport(
-          timeRange as 'hour' | 'day' | 'week'
-        );
+        const errorReport = enhancedErrorCollector.getErrorReport();
         
         res.status(200).json({
           success: true,
@@ -140,7 +138,7 @@ async function handleGet(
       try {
         // Get all monitoring data in one response
         const [errorReport, systemHealth, dashboardMetrics] = await Promise.all([
-          enhancedErrorCollection.generateErrorReport(timeRange as 'hour' | 'day' | 'week'),
+          Promise.resolve(enhancedErrorCollector.getErrorReport()),
           systemHealthMonitor.getHealthStatus(),
           logDashboard.getDashboardMetrics()
         ]);
@@ -199,24 +197,22 @@ async function handlePost(
       try {
         // Create a test error for monitoring system validation
         const testError = new Error('Test error for monitoring system validation');
-        const errorId = await enhancedErrorCollection.collectError(
-          testError,
-          {
+        const errorId = enhancedErrorCollector.collectError(testError, {
+          severity: 'low',
+          category: 'system',
+          tags: ['test', 'monitoring'],
+          context: {
+            source: 'monitoring-test',
+            timestamp,
+            test: true,
             api: {
               endpoint: '/api/admin/error-monitoring',
               method: 'POST',
               statusCode: 200
             },
-            user: {
-              id: 'test-user'
-            }
-          },
-          {
-            source: 'monitoring-test',
-            timestamp,
-            test: true
+            userId: 'test-user'
           }
-        );
+        });
 
         logInfo('Test error created for monitoring validation', { errorId });
 

@@ -143,7 +143,7 @@ export default function PageErrorBoundary({
   const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
     prodLogError(`PageErrorBoundary caught error on ${pageName || 'unknown page'}:`, error);
     
-    logErrorToProduction(error, {
+    logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, {
       page: pageName || 'unknown',
       componentStack: errorInfo.componentStack || undefined,
       errorBoundary: 'PageErrorBoundary',

@@ -109,7 +109,7 @@ export default function CommunityPage() {
   logInfo('CommunityPage activeTab:', { data: activeTab });
   
   if (!featuredPosts || !recentPosts) {
-    logErrorToProduction(new Error('CommunityPage: Posts data is missing from context!'), { message: 'CommunityPage: Posts data is missing from context!' });
+    logErrorToProduction('CommunityPage: Posts data is missing from context!', undefined, { message: 'CommunityPage: Posts data is missing from context!' });
   }
   
   return (

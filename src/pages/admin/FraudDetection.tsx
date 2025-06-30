@@ -59,7 +59,7 @@ export default function FraudDetection() {
       setStats(newStats);
       
     } catch (error) {
-      logErrorToProduction(error, { message: 'Error fetching fraud flags' });
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching fraud flags' });
       toast({
         title: "Error",
         description: "Failed to load fraud detection data",
@@ -134,7 +134,7 @@ export default function FraudDetection() {
       fetchFraudFlags();
       
     } catch (error) {
-      logErrorToProduction(error, { message: 'Error updating fraud flag' });
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error updating fraud flag' });
       toast({
         title: "Error",
         description: "Failed to update flag",

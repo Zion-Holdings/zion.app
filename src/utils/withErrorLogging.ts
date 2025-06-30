@@ -7,7 +7,7 @@ export function withErrorLogging(handler: ApiHandler): ApiHandler {
     try {
       return await handler(req, res);
     } catch (err: any) {
-      logErrorToProduction(err, {
+      logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, {
         route: req.url,
         method: req.method,
         errorSourceContext: 'withErrorLogging',

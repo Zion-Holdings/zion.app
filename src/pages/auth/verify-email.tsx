@@ -19,7 +19,7 @@ const VerifyEmailPage = () => {
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
 
         if (sessionError) {
-          logErrorToProduction(sessionError, { message: 'Supabase getSession error' });
+          logErrorToProduction(sessionError instanceof Error ? sessionError.message : String(sessionError), sessionError instanceof Error ? sessionError : undefined, { message: 'Supabase getSession error' });
           setStatus('error');
           setMessage((sessionError as any)?.message || 'Verification failed: Could not retrieve session.');
           return;
@@ -59,7 +59,7 @@ const VerifyEmailPage = () => {
           setMessage(responseData.message || 'Failed to finalize email verification in our system. Please try again or contact support.');
         }
       } catch (error: any) {
-        logErrorToProduction(error, { message: 'Verification page error' });
+        logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Verification page error' });
         setStatus('error');
         setMessage(error.message || 'An unexpected error occurred during verification.');
       }
@@ -69,7 +69,7 @@ const VerifyEmailPage = () => {
     if (typeof window !== 'undefined' && window.location.hash.includes('error_description')) {
         const params = new URLSearchParams(window.location.hash.substring(1)); // remove #
         const errorDescription = params.get('error_description');
-        logErrorToProduction(new Error(errorDescription || 'Unknown error from Supabase redirect'), { message: 'Error from Supabase redirect' });
+        logErrorToProduction(errorDescription || 'Unknown error from Supabase redirect', undefined, { message: 'Error from Supabase redirect' });
         setMessage(`Verification failed: ${errorDescription}`);
         setStatus('error');
         return undefined;

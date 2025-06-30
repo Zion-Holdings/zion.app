@@ -37,7 +37,7 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
       .single();
     
     if (error || !data) {
-      logErrorToProduction(error || new Error('No model data returned'), { context: 'getActiveModelId' });
+      logErrorToProduction(error?.message || 'No model data returned', error || undefined, { context: 'getActiveModelId' });
       logWarn('Failed to fetch active model, falling back to default', { data: error });
       // Fallback to default models
       switch(purpose) {
@@ -50,7 +50,7 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
     
     return data.id as ModelVersion;
   } catch (error) {
-    logErrorToProduction(error, { context: 'getActiveModelId' });
+    logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { context: 'getActiveModelId' });
     return 'gpt-3.5-turbo'; // Fallback to base model
   }
 }
@@ -77,7 +77,7 @@ export async function logModelUsage(
       });
       
   } catch (error) {
-    logErrorToProduction(error, { context: 'logModelUsage' });
+    logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { context: 'logModelUsage' });
     // Non-blocking - we don't want to fail the main operation
   }
 }
@@ -131,7 +131,7 @@ export async function callZionGPT({
     
     return (data as any)?.completion || '';
   } catch (error) {
-    logErrorToProduction(error, { context: 'callZionGPT' });
+    logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { context: 'callZionGPT' });
     throw error;
   }
 }
