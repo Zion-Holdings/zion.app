@@ -348,6 +348,41 @@ jest.mock('react-redux', () => {
   return {
     ...actualRedux,
     useDispatch: () => jest.fn(),
-    useSelector: jest.fn(() => ({})),
+    // Provide predictable data for selectors so components don't explode
+    useSelector: jest.fn((selector: any) => {
+      const mockState = {
+        cart: { items: [] },
+        wishlist: { items: [] },
+      };
+      return typeof selector === 'function' ? selector(mockState) : mockState;
+    }),
   };
 });
+
+// Cart Context – simple noop implementation for tests
+jest.mock('@/context/CartContext', () => {
+  const useCart = () => ({ items: [], dispatch: jest.fn() });
+  const CartProvider = ({ children }: { children: React.ReactNode }) => children;
+  return { __esModule: true, useCart, CartProvider, default: CartProvider };
+});
+
+// Wishlist hook – return empty list helpers
+jest.mock('@/hooks/useWishlist', () => {
+  const useWishlist = () => ({ items: [] as string[], toggle: jest.fn(), isWishlisted: () => false });
+  return { __esModule: true, useWishlist, default: useWishlist };
+});
+
+// Polyfill IntersectionObserver for components that use it (e.g., embla-carousel)
+if (typeof window.IntersectionObserver === 'undefined') {
+  class MockIntersectionObserver {
+    constructor() {}
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+    takeRecords() { return []; }
+  }
+  // @ts-ignore
+  window.IntersectionObserver = MockIntersectionObserver;
+  // @ts-ignore
+  global.IntersectionObserver = MockIntersectionObserver;
+}
