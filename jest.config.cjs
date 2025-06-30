@@ -5,7 +5,7 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!bson|fetch-mock|react-markdown|d3-\\w+|internmap|delaunator|robust-predicates|@babel|next|@supabase|@sentry|@reown/appkit|axios|isows).+\\.(js|jsx|ts|tsx)$',
+    '/node_modules/(?!bson|fetch-mock|react-markdown|d3-\\w+|internmap|delaunator|robust-predicates|@babel|next|@supabase|@sentry|@reown/appkit(?:-adapter-ethers)?|@walletconnect|uint8arrays|multiformats|axios|isows).+\\.(js|jsx|ts|tsx)$',
   ],
   moduleNameMapper: {
     // Handle CSS imports (if you're not using CSS modules)
@@ -22,6 +22,7 @@ module.exports = {
     '^@/hooks/(.*)$': '<rootDir>/src/hooks/$1',
     '^@/context/(.*)$': '<rootDir>/src/context/$1',
     '^@/services/(.*)$': '<rootDir>/src/services/$1',
+    '^@/api/(.*)$': '<rootDir>/src/api/$1',
     '^@/lib/(.*)$': '<rootDir>/src/lib/$1',
     '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@/styles/(.*)$': '<rootDir>/src/styles/$1',
@@ -40,6 +41,15 @@ module.exports = {
     '^@/layout$': '<rootDir>/src/layout/index.ts',
     '^@/context$': '<rootDir>/src/context/index.ts',
     '^@/config/(.*)$': '<rootDir>/src/config/$1',
+    // Stub out heavy ESM-only web3 libraries not needed for unit tests
+    '^@reown/appkit/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@reown/appkit$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@reown/appkit-adapter-ethers/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@reown/appkit-adapter-ethers$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@reown/appkit/networks$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^@walletconnect/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^uint8arrays/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
+    '^multiformats/(.*)$': '<rootDir>/tests/__mocks__/emptyModule.js',
   },
   // Add this if Vitest types are conflicting or if you want to be explicit
   globals: {
