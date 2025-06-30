@@ -44,6 +44,11 @@ for f in *.log; do
 done
 shopt -u nullglob
 
+# Generate an error summary using analyze-error-logs.cjs
+if [ -d "$STAGING_DIR/logs" ]; then
+  node "$(dirname "$0")/analyze-error-logs.cjs" "$STAGING_DIR/logs" --dedupe --summary > "$STAGING_DIR/error_summary.log" || echo "Log analysis failed"
+fi
+
 # Create archive
 tar -czf "$ARCHIVE" -C "$STAGING_DIR" .
 rm -rf "$STAGING_DIR"
