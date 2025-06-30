@@ -4,6 +4,7 @@
  */
 
 import type { LogContext, PerformanceMetrics } from '@/types/common';
+import { logError as reportExternalError } from './logError';
 
 type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
@@ -241,8 +242,6 @@ class ProductionLogger {
     this.outputToConsole(entry);
     this.bufferLogEntry(entry);
   }
-
-import { logError as reportExternalError } from './logError'; // Renamed import
 
   info(message: string, context?: LogContext): void {
     if (!this.shouldLog('info')) return;

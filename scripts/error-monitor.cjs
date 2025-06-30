@@ -170,12 +170,41 @@ class ErrorMonitor {
    */
   detectLogLevel(text) {
     const upperText = text.toUpperCase();
-    if (upperText.includes('ERROR') || upperText.includes('FAIL')) {
+    
+    // Check for success indicators first (these override error/fail keywords)
+    const successIndicators = [
+      '✅', '✓', 'FIXED:', 'RESOLVED:', 'SUCCESS', 'COMPLETE', 'PASSED',
+      'ERROR FIXED', 'BUILD ERROR FIXED', 'CRITICAL BUILD ERROR FIXED',
+      'ISSUE RESOLVED', 'PROBLEM FIXED', 'SUCCESSFULLY', 'ACCOMPLISHED',
+      'RESULT:', 'IMPROVEMENTS', 'ENHANCED', 'OPERATIONAL', 'AVAILABLE',
+      'WORKING CORRECTLY', 'NOW ACTIVE', 'READY', 'OPTIMAL'
+    ];
+    
+    if (successIndicators.some(indicator => upperText.includes(indicator))) {
+      return 'info';
+    }
+    
+    // Check for actual errors and failures
+    const errorIndicators = [
+      'ERROR:', 'FAILED:', 'CRASH', 'FATAL', 'EXCEPTION', 'CRITICAL ERROR',
+      'COMPILATION ERROR', 'BUILD FAILED', 'TEST FAILED'
+    ];
+    
+    // Only treat as error if it contains error indicators and not success context
+    if (errorIndicators.some(indicator => upperText.includes(indicator))) {
       return 'error';
     }
+    
+    // Less specific error patterns (only if no success context)
+    if ((upperText.includes('ERROR') || upperText.includes('FAIL')) && 
+        !upperText.includes('FIX') && !upperText.includes('RESOLV')) {
+      return 'error';
+    }
+    
     if (upperText.includes('WARN') || upperText.includes('WARNING')) {
       return 'warn';
     }
+    
     return 'info';
   }
 
