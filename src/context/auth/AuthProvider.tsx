@@ -15,7 +15,7 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
 // logger from '@/utils/logger' is removed
-import { logInfo, logWarn, logErrorToProductionToProduction, logDebug } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction, logDebug } from '@/utils/productionLogger';
 
 
 const LOGIN_TIMEOUT_MS = 15000; // 15 seconds timeout

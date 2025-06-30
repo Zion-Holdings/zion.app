@@ -3,7 +3,7 @@
  * Provides comprehensive log collection, pattern analysis, and proactive error detection
  */
 
-import { logInfo, logWarn, logErrorToProductionToProduction } from './productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
 import { logAnalyzer } from './logAnalyzer';
 import { errorReportingDashboard } from './errorReportingDashboard';
 

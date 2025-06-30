@@ -1,4 +1,4 @@
-import { logInfo, logErrorToProductionToProduction, logDebug } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction, logDebug } from '@/utils/productionLogger';
 
 interface ErrorDetails {
   message: string;

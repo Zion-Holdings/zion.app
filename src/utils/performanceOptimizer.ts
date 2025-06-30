@@ -4,7 +4,7 @@
  */
 
 import type { PerformanceMetrics, BundleAnalysis } from '@/types/common';
-import { logInfo, logWarn, logErrorToProductionToProduction, logPerformance } from './productionLogger';
+import { logInfo, logWarn, logErrorToProduction, logPerformance } from './productionLogger';
 
 interface OptimizationConfig {
   enableCodeSplitting: boolean;

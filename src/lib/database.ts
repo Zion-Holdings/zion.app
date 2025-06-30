@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { logInfo, logErrorToProductionToProduction, logDebug } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction, logDebug } from '@/utils/productionLogger';
 
 // Global Prisma instance for connection reuse
 let prisma: PrismaClient | null = null;

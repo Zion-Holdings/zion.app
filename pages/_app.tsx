@@ -30,7 +30,7 @@ import dynamic from 'next/dynamic';
 import { PerformanceMonitor } from '@/components/ui/performance-monitor';
 import { BundleAnalyzer } from '@/components/ui/bundle-analyzer';
 import { QuickActions } from '@/components/ui/quick-actions';
-import { logInfo, logWarn, logErrorToProductionToProduction } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Dynamically load heavy components to improve initial load time

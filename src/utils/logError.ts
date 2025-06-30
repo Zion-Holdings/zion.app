@@ -2,7 +2,7 @@
 import { captureException } from './sentry';
 import { sendErrorToBackend } from './customErrorReporter';
 import { generateTraceId } from './generateTraceId';
-import { logWarn, logErrorToProductionToProduction } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 // Do not import datadogLogs at the top level for server-side compatibility
 
