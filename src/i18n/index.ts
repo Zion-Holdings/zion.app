@@ -89,7 +89,18 @@ if (!i18n) {
       // If user is authenticated, save language preference to profile
       // This will be implemented in the LanguageContext
     });
+
   }
 }
+
+// Capture missing translation keys on both client and server
+i18n.on('missingKey', (lngs, namespace, key) => {
+  logError(`Missing translation key: ${key}`, {
+    data: {
+      languages: lngs,
+      namespace,
+    },
+  });
+});
 
 export default i18n;
