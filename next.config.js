@@ -295,7 +295,7 @@ const nextConfig = {
       // Alias react-router-dom to a lightweight stub to avoid build errors
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
       };
       
       // Optimize memory usage in development
@@ -589,7 +589,7 @@ const nextConfig = {
       config.resolve.alias = {
         ...config.resolve.alias,
         'lodash': 'lodash-es',
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
       };
 
       // Note: Compression is handled by Netlify and other deployment platforms
