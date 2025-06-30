@@ -141,7 +141,19 @@
     "errors:report": "node scripts/report-errors-to-cursor.cjs",
     "errors:autofix": "node scripts/cursor-autofix.cjs",
     "errors:report-codex": "node scripts/report-errors-to-codex.cjs",
-    "growth:ideas": "node scripts/self-grow.js"
+    "growth:ideas": "node scripts/self-grow.js",
+    "automation:start": "node automation/index.js",
+    "automation:dev": "nodemon automation/index.js",
+    "automation:stop": "pkill -f \"node automation/index.js\"",
+    "automation:logs": "tail -f logs/automation.log",
+    "automation:health": "curl http://localhost:3001/health",
+    "automation:test": "cd automation && npm test",
+    "automation:check": "node automation/performance/monitor.js",
+    "automation:report": "node automation/scripts/generate-report.js",
+    "automation:diagnose": "node automation/tests/system-diagnostic.js",
+    "automation:test-slack": "node automation/tests/test-slack-connection.js",
+    "automation:test-cursor": "node automation/tests/test-cursor-connection.js",
+    "automation:test-monitoring": "node automation/tests/test-performance-monitoring.js"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
