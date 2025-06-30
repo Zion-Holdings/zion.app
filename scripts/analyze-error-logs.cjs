@@ -4,11 +4,13 @@ const path = require('path');
 
 const LOG_DIR = process.argv[2] || 'logs';
 const PATTERNS = [/error/i, /failed/i, /missingKey/i];
+const DEDUPE = process.argv.includes('--dedupe');
 
 function checkFile(filePath) {
   if (!fs.existsSync(filePath)) return [];
   const lines = fs.readFileSync(filePath, 'utf8').split('\n');
-  return lines.filter(line => PATTERNS.some(p => p.test(line)));
+  const matches = lines.filter(line => PATTERNS.some(p => p.test(line)));
+  return DEDUPE ? Array.from(new Set(matches)) : matches;
 }
 
 function main() {
