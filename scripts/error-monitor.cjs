@@ -171,40 +171,73 @@ class ErrorMonitor {
   detectLogLevel(text) {
     const upperText = text.toUpperCase();
     
-    // Check for success indicators first (these override error/fail keywords)
+    // Enhanced success indicators (these override error/fail keywords)
     const successIndicators = [
       '✅', '✓', 'FIXED:', 'RESOLVED:', 'SUCCESS', 'COMPLETE', 'PASSED',
       'ERROR FIXED', 'BUILD ERROR FIXED', 'CRITICAL BUILD ERROR FIXED',
       'ISSUE RESOLVED', 'PROBLEM FIXED', 'SUCCESSFULLY', 'ACCOMPLISHED',
       'RESULT:', 'IMPROVEMENTS', 'ENHANCED', 'OPERATIONAL', 'AVAILABLE',
-      'WORKING CORRECTLY', 'NOW ACTIVE', 'READY', 'OPTIMAL'
+      'WORKING CORRECTLY', 'NOW ACTIVE', 'READY', 'OPTIMAL', 'FIXED',
+      'SOLVING', 'COMPLETED', 'RESOLVED', 'WORKING', 'ENABLED', 'ACTIVE',
+      'SUCCESSFUL', 'PERFECT', 'CLEAN', 'MAINTAINED', 'BUILT', 'GENERATED',
+      'CREATED', 'ADDED', 'IMPROVED', 'UPDATED', 'DEPLOYED', 'INSTALLED',
+      '===', 'ACCOMPLISHED', 'PROGRESS', 'ACHIEVEMENT', 'MILESTONE',
+      'COMPILATION SUCCESSFUL', 'BUILD SUCCESSFUL', 'TESTS PASSED',
+      'NO ISSUES', 'ALL CLEAR', 'HEALTH CHECK PASSED', 'VALIDATION PASSED'
     ];
     
+    // Check for success context first
     if (successIndicators.some(indicator => upperText.includes(indicator))) {
       return 'info';
     }
     
-    // Check for actual errors and failures
-    const errorIndicators = [
-      'ERROR:', 'FAILED:', 'CRASH', 'FATAL', 'EXCEPTION', 'CRITICAL ERROR',
-      'COMPILATION ERROR', 'BUILD FAILED', 'TEST FAILED'
+    // Check for session headers and summaries (these are usually info)
+    if (upperText.includes('===') || upperText.includes('SUMMARY') || 
+        upperText.includes('SESSION') || upperText.includes('REPORT')) {
+      return 'info';
+    }
+    
+    // Check for actual errors and failures (more specific patterns)
+    const criticalErrorIndicators = [
+      'FATAL ERROR', 'CRITICAL ERROR', 'SYSTEM CRASH', 'COMPILATION FAILED',
+      'BUILD FAILED', 'TEST FAILED', 'DEPLOYMENT FAILED', 'CONNECTION FAILED'
     ];
     
-    // Only treat as error if it contains error indicators and not success context
-    if (errorIndicators.some(indicator => upperText.includes(indicator))) {
+    if (criticalErrorIndicators.some(indicator => upperText.includes(indicator))) {
       return 'error';
     }
     
-    // Less specific error patterns (only if no success context)
-    if ((upperText.includes('ERROR') || upperText.includes('FAIL')) && 
-        !upperText.includes('FIX') && !upperText.includes('RESOLV')) {
+    // Check for specific error patterns (but not in success context)
+    const errorPatterns = [
+      /^ERROR:\s/,           // Lines starting with "ERROR: "
+      /\bEXCEPTION\b/,      // Exception mentions
+      /\bCRASH\b/,          // Crash mentions
+      /\bFATAL\b/,          // Fatal errors
+      /TIMEOUT.*ERROR/,      // Timeout errors
+      /PERMISSION DENIED/,   // Permission errors
+      /FILE NOT FOUND.*ERROR/, // File not found errors
+    ];
+    
+    // Only flag as error if it matches error patterns and doesn't contain success context
+    const hasErrorPattern = errorPatterns.some(pattern => pattern.test(upperText));
+    const hasSuccessContext = upperText.includes('FIX') || upperText.includes('RESOLV') || 
+                             upperText.includes('SUCCESS') || upperText.includes('COMPLET');
+    
+    if (hasErrorPattern && !hasSuccessContext) {
       return 'error';
     }
     
-    if (upperText.includes('WARN') || upperText.includes('WARNING')) {
+    // Check for warnings
+    const warningIndicators = [
+      'WARNING:', 'WARN:', 'DEPRECATED', 'OUTDATED', 'SLOW PERFORMANCE',
+      'MEMORY USAGE HIGH', 'POTENTIAL ISSUE'
+    ];
+    
+    if (warningIndicators.some(indicator => upperText.includes(indicator))) {
       return 'warn';
     }
     
+    // Default to info for everything else
     return 'info';
   }
 
