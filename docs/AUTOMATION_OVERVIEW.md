@@ -63,4 +63,11 @@ This document provides an overview of the automated workflows and processes impl
 - **Configuration:** `.github/workflows/track-todos.yml`.
 
 These automations aim to streamline development workflows, improve code quality, ensure dependencies are kept up-to-date, and make deployment processes more reliable and efficient.
-```
+
+## 4. Self-Healing and Growth Automations
+
+- **Watchdog Self-Heal:** `scripts/watchdog.js` monitors logs and system resources. When repeated errors or high usage are detected, it automatically pulls the latest code, installs dependencies, rebuilds, and restarts services.
+- **AI-Powered Fixes:** The `codex-bug-fix.js` script can be invoked via webhook or workflow to send issues to OpenAI and apply generated patches.
+- **Growth Ideas:** `scripts/self-grow.js` analyzes user feedback in `data/feedback.json` and uses OpenAI to suggest new features. Run it with `npm run growth:ideas`.
+
+These features allow the platform to adapt and improve itself with minimal manual intervention.
