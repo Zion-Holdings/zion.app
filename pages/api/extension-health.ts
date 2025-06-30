@@ -1,8 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
-export default async function handler(
 import { logError } from '@/utils/productionLogger';
 
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

@@ -1,4 +1,6 @@
-import { logInfo, logError } from '@/utils/productionLogger';
+// import { logInfo, logError } from '@/utils/productionLogger';
+import fs from 'fs';
+import path from 'path';
 
 /**
  * Enhanced Structured Logger
@@ -21,30 +23,30 @@ export interface LogMetadata {
 }
 
 export interface LogEntry {
-  timestamp: string;
-  level: 'debug' | 'info' | 'warn' | 'error' | 'critical';
+  level: LogLevel;
   message: string;
-  category: string;
-  metadata?: LogMetadata;
+  category: LogCategory;
+  timestamp: string;
   environment: string;
-  version: string;
+  sessionId: string;
+  metadata?: Record<string, unknown>;
+  performanceMarker?: {
+    start: number;
+    end?: number;
+    duration?: number;
+  };
+}
+
+export interface PerformanceMetric {
+  timestamp: string;
+  memory: NodeJS.MemoryUsage;
+  cpu: NodeJS.CpuUsage;
+  uptime: number;
+  eventLoopDelay: number;
 }
 
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error' | 'critical';
-export type LogCategory = 
-  | 'auth' 
-  | 'api' 
-  | 'ui' 
-  | 'performance' 
-  | 'security' 
-  | 'database' 
-  | 'payment' 
-  | 'system' 
-  | 'build' 
-  | 'test'
-  | 'user-action'
-  | 'integration'
-  | 'deployment';
+export type LogCategory = 'api' | 'auth' | 'database' | 'payment' | 'system' | 'user-action';
 
 class EnhancedLogger {
   private environment: string;
@@ -52,6 +54,14 @@ class EnhancedLogger {
   private minLevel: LogLevel;
   private sessionId: string;
   private enabledCategories: Set<LogCategory>;
+  private logBuffer: LogEntry[] = [];
+  private errorPatterns: Map<string, number> = new Map();
+  private performanceMetrics: PerformanceMetric[] = [];
+  private alertThresholds = {
+    errorRate: 0.05, // 5%
+    criticalErrors: 3, // 3 in 5 minutes
+    performanceThreshold: 5000, // 5 seconds
+  };
   
   constructor() {
     this.environment = process.env.NODE_ENV || 'development';
@@ -62,6 +72,9 @@ class EnhancedLogger {
       'auth', 'api', 'ui', 'performance', 'security', 
       'database', 'payment', 'system', 'user-action'
     ]);
+    this.initializeErrorTracking();
+    this.setupPeriodicFlush();
+    this.setupRealTimeMonitoring();
   }
 
   private generateSessionId(): string {
@@ -125,7 +138,7 @@ class EnhancedLogger {
       ? entry.message.substring(0, 100) + '...' 
       : entry.message;
     
-    logInfo(`[${entry.timestamp}] ${coloredLevel} [${entry.category}] ${shortMessage}`);
+    console.log(`[${entry.timestamp}] ${coloredLevel} [${entry.category}] ${shortMessage}`);
     
     // Write to log files in production
     if (this.environment === 'production') {
@@ -148,7 +161,7 @@ class EnhancedLogger {
       
       fs.appendFileSync(logFile, logLine);
     } catch (error) {
-      logError('Failed to write log to file:', error);
+      console.error('Failed to write log to file:', error);
     }
   }
 
@@ -263,7 +276,7 @@ class EnhancedLogger {
         }
       }
     } catch (error) {
-      logError('Failed to send to monitoring:', error);
+      console.error('Failed to send to monitoring:', error);
     }
   }
 
@@ -301,6 +314,420 @@ class EnhancedLogger {
       action: 'health_check',
       context: { service, status, ...details },
     });
+  }
+
+  private initializeErrorTracking(): void {
+    // Track error patterns for trend analysis
+    this.setupErrorPatternTracking();
+    
+    // Setup automated alerts
+    this.setupAutomatedAlerts();
+    
+    // Initialize performance monitoring
+    this.initializePerformanceTracking();
+  }
+
+  private setupErrorPatternTracking(): void {
+    setInterval(() => {
+      this.analyzeErrorPatterns();
+    }, 60000); // Every minute
+  }
+
+  private analyzeErrorPatterns(): void {
+    const recentErrors = this.logBuffer
+      .filter(entry => entry.level === 'error')
+      .filter(entry => Date.now() - new Date(entry.timestamp).getTime() < 300000); // Last 5 minutes
+
+    // Count error patterns
+    recentErrors.forEach(error => {
+      const pattern = this.extractErrorPattern(error.message);
+      this.errorPatterns.set(pattern, (this.errorPatterns.get(pattern) || 0) + 1);
+    });
+
+    // Check for critical error rates
+    const totalRecent = this.logBuffer
+      .filter(entry => Date.now() - new Date(entry.timestamp).getTime() < 300000).length;
+    
+    const errorRate = totalRecent > 0 ? recentErrors.length / totalRecent : 0;
+    
+    if (errorRate > this.alertThresholds.errorRate) {
+      this.triggerAlert('high_error_rate', {
+        errorRate,
+        threshold: this.alertThresholds.errorRate,
+        recentErrors: recentErrors.length,
+        totalLogs: totalRecent,
+      });
+    }
+
+    // Check for repeated critical errors
+    for (const [pattern, count] of this.errorPatterns.entries()) {
+      if (count >= this.alertThresholds.criticalErrors) {
+        this.triggerAlert('repeated_error_pattern', {
+          pattern,
+          count,
+          threshold: this.alertThresholds.criticalErrors,
+        });
+        this.errorPatterns.delete(pattern); // Reset after alert
+      }
+    }
+  }
+
+  private extractErrorPattern(message: string): string {
+    // Extract meaningful error patterns by removing dynamic data
+    return message
+      .replace(/\d+/g, 'N') // Replace numbers
+      .replace(/[a-f0-9-]{8,}/gi, 'ID') // Replace IDs/hashes
+      .replace(/https?:\/\/[^\s]+/gi, 'URL') // Replace URLs
+      .substring(0, 100); // Limit length
+  }
+
+  private setupAutomatedAlerts(): void {
+    // Setup different alert channels
+    this.setupEmailAlerts();
+    this.setupWebhookAlerts();
+    this.setupSlackAlerts();
+  }
+
+  private setupEmailAlerts(): void {
+    // Email alerting setup would go here
+    // Integration with SendGrid, Nodemailer, etc.
+  }
+
+  private setupWebhookAlerts(): void {
+    // Webhook alerting for external monitoring systems
+  }
+
+  private setupSlackAlerts(): void {
+    // Slack integration for team notifications
+  }
+
+  private triggerAlert(type: string, data: any): void {
+    const alert = {
+      type,
+      timestamp: new Date().toISOString(),
+      environment: this.environment,
+      data,
+      severity: this.determineAlertSeverity(type),
+    };
+
+    // Log the alert with proper error formatting
+    this.logEntry('error', `ALERT: ${type}`, 'system', alert);
+
+    // Send to monitoring systems
+    this.sendToMonitoringSystems(alert);
+
+    // Store alert history
+    this.storeAlertHistory(alert);
+  }
+
+  private determineAlertSeverity(type: string): 'low' | 'medium' | 'high' | 'critical' {
+    const severityMap: Record<string, 'low' | 'medium' | 'high' | 'critical'> = {
+      'high_error_rate': 'high',
+      'repeated_error_pattern': 'high',
+      'performance_degradation': 'medium',
+      'security_event': 'critical',
+      'system_failure': 'critical',
+    };
+    
+    return severityMap[type] || 'medium';
+  }
+
+  private sendToMonitoringSystems(alert: any): void {
+    // Send to external monitoring systems
+    if (process.env.MONITORING_WEBHOOK_URL) {
+      this.sendWebhookAlert(alert);
+    }
+
+    if (process.env.SLACK_WEBHOOK_URL) {
+      this.sendSlackAlert(alert);
+    }
+
+    // Store in local alerting system
+    this.storeLocalAlert(alert);
+  }
+
+  private async sendWebhookAlert(alert: any): Promise<void> {
+    try {
+      const response = await fetch(process.env.MONITORING_WEBHOOK_URL!, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(alert),
+      });
+      
+      if (!response.ok) {
+        this.logEntry('warn', `Failed to send webhook alert: ${response.statusText}`, 'system');
+      }
+    } catch (error) {
+      this.logEntry('warn', `Error sending webhook alert: ${error}`, 'system');
+    }
+  }
+
+  private async sendSlackAlert(alert: any): Promise<void> {
+    try {
+      const slackMessage = {
+        text: `🚨 ${alert.type.toUpperCase()} Alert`,
+        blocks: [
+          {
+            type: 'section',
+            text: {
+              type: 'mrkdwn',
+              text: `*Alert Type:* ${alert.type}\n*Severity:* ${alert.severity}\n*Environment:* ${alert.environment}\n*Time:* ${alert.timestamp}`,
+            },
+          },
+          {
+            type: 'section',
+            text: {
+              type: 'mrkdwn',
+              text: `*Details:*\n\`\`\`${JSON.stringify(alert.data, null, 2)}\`\`\``,
+            },
+          },
+        ],
+      };
+
+      const response = await fetch(process.env.SLACK_WEBHOOK_URL!, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(slackMessage),
+      });
+
+      if (!response.ok) {
+        this.logEntry('warn', `Failed to send Slack alert: ${response.statusText}`, 'system');
+      }
+    } catch (error) {
+      this.logEntry('warn', `Error sending Slack alert: ${error}`, 'system');
+    }
+  }
+
+  private storeLocalAlert(alert: any): void {
+    const alertsFile = path.join(process.cwd(), 'logs', 'alerts.jsonl');
+    const alertLine = JSON.stringify(alert) + '\n';
+    
+    try {
+      fs.appendFileSync(alertsFile, alertLine);
+    } catch (error) {
+      this.warn(`Failed to store alert locally: ${error}`);
+    }
+  }
+
+  private storeAlertHistory(alert: any): void {
+    // Store in a rotating alert history for dashboard access
+    const historyFile = path.join(process.cwd(), 'logs', 'alert-history.json');
+    
+    try {
+      let history = [];
+      if (fs.existsSync(historyFile)) {
+        history = JSON.parse(fs.readFileSync(historyFile, 'utf8'));
+      }
+      
+      history.push(alert);
+      
+      // Keep only last 100 alerts
+      if (history.length > 100) {
+        history = history.slice(-100);
+      }
+      
+      fs.writeFileSync(historyFile, JSON.stringify(history, null, 2));
+    } catch (error) {
+      this.warn(`Failed to store alert history: ${error}`);
+    }
+  }
+
+  private initializePerformanceTracking(): void {
+    setInterval(() => {
+      this.collectPerformanceMetrics();
+    }, 30000); // Every 30 seconds
+  }
+
+  private collectPerformanceMetrics(): void {
+    const metric: PerformanceMetric = {
+      timestamp: new Date().toISOString(),
+      memory: process.memoryUsage(),
+      cpu: process.cpuUsage(),
+      uptime: process.uptime(),
+      eventLoopDelay: this.measureEventLoopDelay(),
+    };
+
+    this.performanceMetrics.push(metric);
+
+    // Keep only last 100 metrics
+    if (this.performanceMetrics.length > 100) {
+      this.performanceMetrics = this.performanceMetrics.slice(-100);
+    }
+
+    // Check for performance issues
+    this.checkPerformanceThresholds(metric);
+  }
+
+  private measureEventLoopDelay(): number {
+    const start = process.hrtime.bigint();
+    setImmediate(() => {
+      const delay = Number(process.hrtime.bigint() - start) / 1000000; // Convert to milliseconds
+      return delay;
+    });
+    return 0; // Simplified implementation
+  }
+
+  private checkPerformanceThresholds(metric: PerformanceMetric): void {
+    // Check memory usage
+    const memoryUsageMB = metric.memory.heapUsed / (1024 * 1024);
+    if (memoryUsageMB > 500) { // 500MB threshold
+      this.triggerAlert('high_memory_usage', {
+        currentUsage: memoryUsageMB,
+        threshold: 500,
+        metric,
+      });
+    }
+
+    // Check event loop delay
+    if (metric.eventLoopDelay > 100) { // 100ms threshold
+      this.triggerAlert('event_loop_delay', {
+        currentDelay: metric.eventLoopDelay,
+        threshold: 100,
+        metric,
+      });
+    }
+  }
+
+  private setupPeriodicFlush(): void {
+    setInterval(() => {
+      this.flushLogs();
+    }, 30000); // Flush every 30 seconds
+  }
+
+  private setupRealTimeMonitoring(): void {
+    // Setup real-time log streaming for dashboard
+    this.setupLogStreaming();
+  }
+
+  private setupLogStreaming(): void {
+    // WebSocket or Server-Sent Events for real-time log streaming
+    // This would integrate with a dashboard interface
+  }
+
+  private flushLogs(): void {
+    if (this.logBuffer.length === 0) return;
+
+    const logsToFlush = [...this.logBuffer];
+    this.logBuffer = [];
+
+    // Write to files
+    this.writeLogsToFiles(logsToFlush);
+
+    // Send to remote services
+    this.sendLogsToRemoteServices(logsToFlush);
+  }
+
+  private writeLogsToFiles(logs: LogEntry[]): void {
+    const logsDir = path.join(process.cwd(), 'logs');
+    
+    // Ensure logs directory exists
+    if (!fs.existsSync(logsDir)) {
+      fs.mkdirSync(logsDir, { recursive: true });
+    }
+
+    // Group logs by level
+    const logsByLevel = logs.reduce((acc, log) => {
+      if (!acc[log.level]) acc[log.level] = [];
+      acc[log.level].push(log);
+      return acc;
+    }, {} as Record<string, LogEntry[]>);
+
+    // Write to separate files by level
+    Object.entries(logsByLevel).forEach(([level, levelLogs]) => {
+      const filename = path.join(logsDir, `${level}-${new Date().toISOString().split('T')[0]}.jsonl`);
+      const logLines = levelLogs.map(log => JSON.stringify(log)).join('\n') + '\n';
+      
+      try {
+        fs.appendFileSync(filename, logLines);
+      } catch (error) {
+        console.error(`Failed to write to log file ${filename}:`, error);
+      }
+    });
+  }
+
+  private async sendLogsToRemoteServices(logs: LogEntry[]): Promise<void> {
+    // Send to external logging services
+    const remoteServices = [
+      this.sendToDatadog,
+      this.sendToElasticsearch,
+      this.sendToCustomEndpoint,
+    ];
+
+    await Promise.allSettled(
+      remoteServices.map(service => service.call(this, logs))
+    );
+  }
+
+  private async sendToDatadog(logs: LogEntry[]): Promise<void> {
+    if (!process.env.DATADOG_API_KEY) return;
+
+    try {
+      // Datadog logs API integration would go here
+      this.logEntry('debug', `Would send ${logs.length} logs to Datadog`, 'system');
+    } catch (error) {
+      this.logEntry('warn', `Failed to send logs to Datadog: ${error}`, 'system');
+    }
+  }
+
+  private async sendToElasticsearch(logs: LogEntry[]): Promise<void> {
+    if (!process.env.ELASTICSEARCH_URL) return;
+
+    try {
+      // Elasticsearch integration would go here
+      this.logEntry('debug', `Would send ${logs.length} logs to Elasticsearch`, 'system');
+    } catch (error) {
+      this.logEntry('warn', `Failed to send logs to Elasticsearch: ${error}`, 'system');
+    }
+  }
+
+  private async sendToCustomEndpoint(logs: LogEntry[]): Promise<void> {
+    if (!process.env.CUSTOM_LOGS_ENDPOINT) return;
+
+    try {
+      const response = await fetch(process.env.CUSTOM_LOGS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ logs }),
+      });
+
+      if (!response.ok) {
+        this.logEntry('warn', `Custom logs endpoint returned ${response.status}`, 'system');
+      }
+    } catch (error) {
+      this.logEntry('warn', `Failed to send logs to custom endpoint: ${error}`, 'system');
+    }
+  }
+
+  // Public API for accessing metrics
+  public getMetrics() {
+    return {
+      errorPatterns: Object.fromEntries(this.errorPatterns),
+      performanceMetrics: this.performanceMetrics.slice(-10), // Last 10 metrics
+      bufferSize: this.logBuffer.length,
+      environment: this.environment,
+    };
+  }
+
+  public getAlertHistory() {
+    try {
+      const historyFile = path.join(process.cwd(), 'logs', 'alert-history.json');
+      if (fs.existsSync(historyFile)) {
+        return JSON.parse(fs.readFileSync(historyFile, 'utf8'));
+      }
+    } catch (error) {
+      this.warn(`Failed to read alert history: ${error}`);
+    }
+    return [];
+  }
+
+  public getRecentLogs(level?: LogLevel, count = 50) {
+    let logs = this.logBuffer;
+    
+    if (level) {
+      logs = logs.filter(log => log.level === level);
+    }
+    
+    return logs.slice(-count);
   }
 }
 
