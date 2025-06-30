@@ -3,7 +3,11 @@ const path = require('path');
 const sgMail = require('@sendgrid/mail');
 
 const logDir = path.resolve(__dirname, '..', 'logs');
-const logFile = path.join(logDir, 'errors.log');
+// Daily log file for easier log rotation and analysis
+function getLogFilePath() {
+  const date = new Date().toISOString().slice(0, 10); // yyyy-mm-dd
+  return path.join(logDir, `errors-${date}.log`);
+}
 const alertEmail = 'kleber@ziontechgroup.com';
 
 if (process.env.SENDGRID_API_KEY) {
@@ -16,6 +20,8 @@ function logAndAlert(message) {
 
   // Ensure log directory exists
   fs.mkdirSync(logDir, { recursive: true });
+  // Use a daily log file for better organization
+  const logFile = getLogFilePath();
   fs.appendFile(logFile, fullMessage, err => {
     if (err) console.error('Failed to write log file:', err);
   });
