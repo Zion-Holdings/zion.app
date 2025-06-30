@@ -210,14 +210,40 @@ class EnhancedLogCollector {
               const lines = content.split('\n');
               
               lines.forEach((line, index) => {
-                if (line.toLowerCase().includes('error') && !line.includes('✅')) {
+                const lower = line.toLowerCase();
+
+                const errorFalsePositives = [
+                  'no error',
+                  'no errors',
+                  'no compilation errors',
+                  'fixed',
+                  'result:',
+                  'error monitoring',
+                  'error-monitor',
+                  'error count',
+                  'errors:'
+                ];
+
+                const isError =
+                  lower.includes('error') &&
+                  !errorFalsePositives.some(p => lower.includes(p)) &&
+                  !lower.includes('errors: 0') &&
+                  !line.includes('✅') &&
+                  !lower.startsWith('- ');
+
+                const isWarning =
+                  lower.includes('warn') &&
+                  !lower.includes('no warnings') &&
+                  !lower.includes('warnings: 0');
+
+                if (isError) {
                   appInfo.errors.push({
                     file: filePath,
                     line: index + 1,
                     content: line.trim()
                   });
                 }
-                if (line.toLowerCase().includes('warn')) {
+                if (isWarning) {
                   appInfo.warnings.push({
                     file: filePath,
                     line: index + 1,
