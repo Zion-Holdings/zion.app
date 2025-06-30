@@ -1,8 +1,6 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
+const path = require('path');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.resolve();
 
 // Configure CDN asset prefix when running in production
 const isProd = process.env.NODE_ENV === 'production';
@@ -611,6 +609,16 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+
+  // Add publicRuntimeConfig to prevent Edge Functions bundling errors
+  publicRuntimeConfig: {
+    // Empty config to prevent 'undefined' errors
+  },
+
+  // Add serverRuntimeConfig for completeness
+  serverRuntimeConfig: {
+    // Empty config to prevent 'undefined' errors
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
