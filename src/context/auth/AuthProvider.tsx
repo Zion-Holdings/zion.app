@@ -14,8 +14,8 @@ import { toast } from "@/hooks/use-toast"; // Import toast
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
-import { logger } from '@/utils/logger';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+// logger from '@/utils/logger' is removed
+import { logInfo, logWarn, logError, logDebug } from '@/utils/productionLogger';
 
 
 const LOGIN_TIMEOUT_MS = 15000; // 15 seconds timeout
@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       });
 
       if (supabaseError) {
-        logger.error("AuthProvider: Supabase authentication failed", supabaseError);
+        logError("AuthProvider: Supabase authentication failed", supabaseError, { context: 'Supabase Auth Login' });
         
         // Provide specific error messages based on error code
         let errorMessage = "Authentication failed. Please try again.";
@@ -101,11 +101,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         return { error: errorMessage };
       }
 
-              logger.debug('AuthProvider: Supabase authentication successful');
+              logDebug('AuthProvider: Supabase authentication successful');
       // The onAuthStateChange event should now trigger automatically
       return { error: null }; // Successful login
     } catch (error: any) {
-      logError('[AuthProvider] login function error:', { data: error });
+      logError('[AuthProvider] login function error', error, { context: 'Login Exception' });
       
       // Handle unexpected errors with a fallback message
       const errorMessage = error.message || "An unexpected error occurred during login. Please try again.";
@@ -194,7 +194,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       // Inside the onAuthStateChange callback
       async (event: any, session: any) => {
         if (process.env.NODE_ENV === 'development') {
-            logger.debug('AuthProvider: onAuthStateChange entered', { isLoading, event, sessionExists: !!session });
+            logDebug('AuthProvider: onAuthStateChange entered', { isLoading, event, sessionExists: !!session });
         }
 
         // Only set isLoading true if we are expecting a significant state change or async operation

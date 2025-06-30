@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { logger } from '@/utils/logger';
+import { logInfo, logError, logDebug } from '@/utils/productionLogger';
 
 // Global Prisma instance for connection reuse
 let prisma: PrismaClient | null = null;
@@ -27,7 +27,7 @@ const DB_OPTIONS = {
  */
 export function getDatabaseClient(): PrismaClient {
   if (!prisma) {
-    logger.info('Creating new Prisma client instance...');
+    logInfo('Creating new Prisma client instance...');
     prisma = new PrismaClient(DB_OPTIONS);
     
     // Handle graceful shutdown
@@ -64,10 +64,10 @@ export async function executeWithTimeout<T>(
     
     return result;
   } catch (error) {
-    logger.error('Database query failed:', error);
+    logError('Database query failed', error as Error);
     
     if (fallbackData !== undefined) {
-      logger.debug('Returning fallback data due to database error');
+      logDebug('Returning fallback data due to database error');
       return fallbackData;
     }
     
@@ -82,10 +82,10 @@ export async function testDatabaseConnection(): Promise<boolean> {
   try {
     const client = getDatabaseClient();
     await client.$queryRaw`SELECT 1`;
-    logger.info('Database connection successful');
+    logInfo('Database connection successful');
     return true;
   } catch (error) {
-    logger.error('Database connection failed:', error);
+    logError('Database connection failed', error as Error);
     return false;
   }
 }
@@ -110,7 +110,7 @@ export async function getDatabaseStats() {
     
     return stats;
   } catch (error) {
-    logger.error('Failed to get database stats:', error);
+    logError('Failed to get database stats', error as Error);
     return {
       connected: false,
       error: error instanceof Error ? error.message : 'Unknown error'
@@ -126,9 +126,9 @@ export async function disconnectDatabase(): Promise<void> {
     try {
       await prisma.$disconnect();
       prisma = null;
-    logger.info('Database disconnected successfully');
+    logInfo('Database disconnected successfully');
     } catch (error) {
-    logger.error('Error disconnecting from database:', error);
+    logError('Error disconnecting from database', error as Error);
     }
   }
 }

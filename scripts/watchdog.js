@@ -473,57 +473,67 @@ function startMonitoring() {
   `);
 
   // Initialize Tailing Logic for Performance Log File
-  try {
-    const perfTail = new Tail(PERF_LOG_FILE);
-    perfTail.on('line', function(data) {
-      if (PERF_ERROR_REGEX.test(data)) {
-        perfErrorStreak++;
-        console.log(`Performance error detected. Streak: ${perfErrorStreak}`);
-        if (perfErrorStreak >= 3) {
-          triggerSelfHeal('3 consecutive performance errors');
+  if (fs.existsSync(PERF_LOG_FILE)) {
+    try {
+      const perfTail = new Tail(PERF_LOG_FILE);
+      perfTail.on('line', function(data) {
+        if (PERF_ERROR_REGEX.test(data)) {
+          perfErrorStreak++;
+          console.log(`Performance error detected. Streak: ${perfErrorStreak}`);
+          if (perfErrorStreak >= 3) {
+            triggerSelfHeal('3 consecutive performance errors');
+          }
+        } else if (perfErrorStreak > 0) {
+          console.log('Performance log normal. Resetting streak.');
+          perfErrorStreak = 0;
         }
-      } else if (perfErrorStreak > 0) {
-        console.log('Performance log normal. Resetting streak.');
-        perfErrorStreak = 0;
-      }
-    });
-    perfTail.on('error', function(error) {
-      logError(`Error tailing performance log file: ${PERF_LOG_FILE}`, error);
-      appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing performance log file ${PERF_LOG_FILE}: ${error.message}\n`);
-    });
-    perfTail.watch();
-    console.log(`Watching performance log: ${PERF_LOG_FILE}`);
-  } catch (e) {
-    logError(`Failed to initialize tail for performance log: ${PERF_LOG_FILE}`, e);
-    appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${PERF_LOG_FILE}: ${e.message}\n`);
-    // Don't attempt to create and retry - log files are optional
+      });
+      perfTail.on('error', function(error) {
+        logError(`Error tailing performance log file: ${PERF_LOG_FILE}`, error);
+        appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing performance log file ${PERF_LOG_FILE}: ${error.message}\n`);
+      });
+      perfTail.watch();
+      console.log(`Watching performance log: ${PERF_LOG_FILE}`);
+    } catch (e) {
+      logError(`Failed to initialize tail for performance log: ${PERF_LOG_FILE}`, e);
+      appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${PERF_LOG_FILE}: ${e.message}\n`);
+    }
+  } else {
+    const missingPerfLogMsg = `Performance log file not found: ${PERF_LOG_FILE}. Skipping tailing for this file. Ensure 'scripts/perf/monitor.js' is running via a process manager (e.g., PM2).`;
+    console.warn(missingPerfLogMsg);
+    appendToSelfHealLog(`[${new Date().toISOString()}] WARN: ${missingPerfLogMsg}\n`);
   }
 
   // Initialize Tailing Logic for Security Log File
-  try {
-    const securityTail = new Tail(SECURITY_LOG_FILE);
-    securityTail.on('line', function(data) {
-      if (SECURITY_PATCH_REGEX.test(data)) {
-        securityPatchStreak++;
-        console.log(`Security patch detected. Streak: ${securityPatchStreak}`);
-        if (securityPatchStreak >= 3) {
-          triggerSelfHeal('3 consecutive security patches');
+  if (fs.existsSync(SECURITY_LOG_FILE)) {
+    try {
+      const securityTail = new Tail(SECURITY_LOG_FILE);
+      securityTail.on('line', function(data) {
+        if (SECURITY_PATCH_REGEX.test(data)) {
+          securityPatchStreak++;
+          console.log(`Security patch detected. Streak: ${securityPatchStreak}`);
+          if (securityPatchStreak >= 3) {
+            triggerSelfHeal('3 consecutive security patches');
+          }
+        } else if (securityPatchStreak > 0) {
+          console.log('Security log normal. Resetting streak.');
+          securityPatchStreak = 0;
         }
-      } else if (securityPatchStreak > 0) {
-        console.log('Security log normal. Resetting streak.');
-        securityPatchStreak = 0;
-      }
-    });
-    securityTail.on('error', function(error) {
-      logError(`Error tailing security log file: ${SECURITY_LOG_FILE}`, error);
-      appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing security log file ${SECURITY_LOG_FILE}: ${error.message}\n`);
-    });
-    securityTail.watch();
-    console.log(`Watching security log: ${SECURITY_LOG_FILE}`);
-  } catch (e) {
-    logError(`Failed to initialize tail for security log: ${SECURITY_LOG_FILE}`, e);
-    appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${SECURITY_LOG_FILE}: ${e.message}\n`);
-    // Don't attempt to create and retry - log files are optional
+      });
+      securityTail.on('error', function(error) {
+        logError(`Error tailing security log file: ${SECURITY_LOG_FILE}`, error);
+        appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing security log file ${SECURITY_LOG_FILE}: ${error.message}\n`);
+      });
+      securityTail.watch();
+      console.log(`Watching security log: ${SECURITY_LOG_FILE}`);
+    } catch (e) {
+      logError(`Failed to initialize tail for security log: ${SECURITY_LOG_FILE}`, e);
+      appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${SECURITY_LOG_FILE}: ${e.message}\n`);
+    }
+  } else {
+    const missingSecLogMsg = `Security log file not found: ${SECURITY_LOG_FILE}. Skipping tailing for this file. Ensure 'scripts/hourly_audit.sh' is running via cron.`;
+    console.warn(missingSecLogMsg);
+    appendToSelfHealLog(`[${new Date().toISOString()}] WARN: ${missingSecLogMsg}\n`);
   }
 
   // Initialize System Resource Monitoring
