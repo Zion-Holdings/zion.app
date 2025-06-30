@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import Contact from '@/pages/Contact';
 
 // Mock heavy child components
@@ -14,9 +14,9 @@ jest.mock('@/components/Footer', () => ({ Footer: () => <div /> }));
 describe('Contact Page', () => {
   it('renders heading "Get in Touch"', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouterProvider>
         <Contact />
-      </MemoryRouter>,
+      </MemoryRouterProvider>,
     );
     expect(
       screen.getByRole('heading', { name: /get in touch/i }),
@@ -30,9 +30,9 @@ import userEvent from '@testing-library/user-event';
 test('submits contact form', async () => {
   fetchMock.mockResolvedValueOnce(new Response('{}', { status: 200 }));
   render(
-    <MemoryRouter>
+    <MemoryRouterProvider>
       <Contact />
-    </MemoryRouter>,
+    </MemoryRouterProvider>,
   );
 
   await userEvent.type(screen.getByLabelText(/your name/i), 'John');

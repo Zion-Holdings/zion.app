@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import AuthRoutes from '@/routes/AuthRoutes';
 
 jest.mock('@/components/auth/login', () => ({
@@ -21,9 +21,9 @@ jest.spyOn(console, 'error').mockImplementation(() => {});
 describe('Login route', () => {
   it('renders login form on /login', () => {
     render(
-      <MemoryRouter initialEntries={["/login"]}>
+      <MemoryRouterProvider url="/login">
         <AuthRoutes />
-      </MemoryRouter>
+      </MemoryRouterProvider>
     );
     expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
   });

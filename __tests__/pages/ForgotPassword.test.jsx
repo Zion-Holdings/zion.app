@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import ForgotPassword from '../../src/pages/ForgotPassword'; // Adjust path as necessary
 // Mock the auth service
 // jest.mock('../../src/services/auth', () => ({
@@ -15,13 +15,13 @@ describe('ForgotPassword Page', () => {
   });
 
   test('renders email input and submit button', () => {
-    render(<Router><ForgotPassword /></Router>);
+    render(<MemoryRouterProvider><ForgotPassword /></MemoryRouterProvider>);
     expect(screen.getByLabelText(/email address/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /send reset link/i })).toBeInTheDocument();
   });
 
   test('allows typing in email input', () => {
-    render(<Router><ForgotPassword /></Router>);
+    render(<MemoryRouterProvider><ForgotPassword /></MemoryRouterProvider>);
     const emailInput = screen.getByLabelText(/email address/i);
     fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
     expect(emailInput.value).toBe('test@example.com');
@@ -29,7 +29,7 @@ describe('ForgotPassword Page', () => {
 
   test('shows success message on successful submission (mocked)', async () => {
     // require('../../src/services/auth').forgotPassword.mockResolvedValueOnce({ message: 'Reset link sent' });
-    render(<Router><ForgotPassword /></Router>);
+    render(<MemoryRouterProvider><ForgotPassword /></MemoryRouterProvider>);
     fireEvent.change(screen.getByLabelText(/email address/i), { target: { value: 'success@example.com' } });
     fireEvent.click(screen.getByRole('button', { name: /send reset link/i }));
 
@@ -46,7 +46,7 @@ describe('ForgotPassword Page', () => {
 
   test('shows error message on failed submission (mocked)', async () => {
     // require('../../src/services/auth').forgotPassword.mockRejectedValueOnce(new Error('Failed to send link'));
-    render(<Router><ForgotPassword /></Router>);
+    render(<MemoryRouterProvider><ForgotPassword /></MemoryRouterProvider>);
     fireEvent.change(screen.getByLabelText(/email address/i), { target: { value: 'error@example.com' } });
     fireEvent.click(screen.getByRole('button', { name: /send reset link/i }));
 

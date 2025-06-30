@@ -535,10 +535,24 @@ async function main() {
   
   // Collect logs
   const report = await collector.collectAllLogs();
-  
+
   // Clean old logs if requested
   if (process.argv.includes('--clean')) {
     await collector.cleanOldLogs();
+  }
+
+  // Run error monitoring if requested
+  if (process.argv.includes('--analyze')) {
+    const { ErrorMonitor } = require('./error-monitor.cjs');
+    const monitor = new ErrorMonitor();
+    if (monitor.init()) {
+      await monitor.readLogs();
+      monitor.generateReport();
+      if (process.argv.includes('--export')) {
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        monitor.exportReport(`error-report-${timestamp}.json`);
+      }
+    }
   }
   
   console.log('\n✅ Log collection completed!');
