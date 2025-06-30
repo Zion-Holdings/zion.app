@@ -17,7 +17,7 @@ import {
   Globe
 } from 'lucide-react';
 import { bundleMonitor } from '@/utils/bundleMonitor';
-import { logInfo } from '@/utils/productionLogger';
+import { logError, logInfo } from '@/utils/productionLogger';
 
 interface PerformanceMetrics {
   bundleSize: number;
@@ -46,44 +46,46 @@ export function PerformanceDashboard() {
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
   const collectMetrics = async () => {
-    setIsLoading(true);
     try {
-      // Force bundle monitor to collect metrics
-      bundleMonitor.forceCollect();
-      
-      // Get bundle metrics
-      const bundleMetrics = bundleMonitor.getLatestMetrics();
-      
-      // Collect Web Vitals if available
-      const webVitals = await collectWebVitals();
-      
-      // Get resource timing data
-      const chunkData = await collectChunkData();
-      
-      setMetrics({
-        bundleSize: bundleMetrics?.totalBundleSize || 0,
-        loadTime: bundleMetrics?.loadTime || 0,
-        performanceScore: bundleMetrics?.performanceScore || 0,
-        chunkCount: bundleMetrics?.chunkCount || 0,
-        cacheHitRate: 0, // Calculate from resource timing
-        fcp: webVitals.fcp || 0,
-        lcp: webVitals.lcp || 0,
-        cls: webVitals.cls || 0,
-        fid: webVitals.fid || 0
+      // Collect performance metrics
+      const memoryInfo = (performance as any).memory;
+      const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      const resourceCount = performance.getEntriesByType('resource').length;
+
+      const performanceMetrics: PerformanceMetrics = {
+        bundleSize: 0, // This would need to be calculated separately
+        loadTime: navigationEntry ? navigationEntry.loadEventEnd - navigationEntry.fetchStart : 0,
+        performanceScore: 0, // This would need to be calculated
+        chunkCount: resourceCount,
+        cacheHitRate: 0, // This would need to be calculated from resource timing
+        fcp: 0, // First Contentful Paint - would need Performance Observer
+        lcp: 0, // Largest Contentful Paint - would need Performance Observer  
+        cls: 0, // Cumulative Layout Shift - would need Performance Observer
+        fid: 0  // First Input Delay - would need Performance Observer
+      };
+
+      setMetrics(performanceMetrics);
+      logInfo('Performance metrics collected successfully', { 
+        loadTime: performanceMetrics.loadTime,
+        resourceCount: performanceMetrics.chunkCount
       });
-      
-      setChunks(chunkData);
-      setLastUpdated(new Date());
-      
-      logInfo('Performance metrics collected', { 
-        bundleSize: bundleMetrics?.totalBundleSize,
-        score: bundleMetrics?.performanceScore 
-      });
-      
     } catch (error) {
-      console.error('Failed to collect performance metrics:', error);
-    } finally {
-      setIsLoading(false);
+      logError('Failed to collect performance metrics', error, {
+        component: 'PerformanceDashboard',
+        action: 'collectMetrics'
+      });
+      // Set fallback metrics
+      setMetrics({
+        bundleSize: 0,
+        loadTime: 0,
+        performanceScore: 0,
+        chunkCount: 0,
+        cacheHitRate: 0,
+        fcp: 0,
+        lcp: 0,
+        cls: 0,
+        fid: 0
+      });
     }
   };
 
@@ -181,6 +183,9 @@ export function PerformanceDashboard() {
 
   useEffect(() => {
     collectMetrics();
+    const interval = setInterval(collectMetrics, 30000); // Update every 30 seconds
+
+    return () => clearInterval(interval);
   }, []);
 
   return (

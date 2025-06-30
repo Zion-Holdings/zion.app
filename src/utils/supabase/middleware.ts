@@ -1,137 +1,109 @@
-import { createServerClient } from '@supabase/ssr';
+import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
+// Import proper logging instead of using console directly
+import { logError, logInfo, logWarn } from '@/utils/productionLogger';
 
-// Using console.error for logging in middleware as a dedicated logger might not be available/configured.
-// In a production setup, structured logging would be preferred.
-
+/**
+ * Authentication middleware using Supabase Auth
+ */
 export async function updateSession(request: NextRequest) {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!supabaseUrl || !supabaseAnonKey) {
-    console.error(
-      'CRITICAL: Supabase URL or Anon Key is not defined in environment variables. Middleware cannot proceed.'
-    );
-    const errorUrl = request.nextUrl.clone();
-    errorUrl.pathname = '/service-unavailable'; // Ensure this page exists and is static or public
-    errorUrl.search = '';
-    return NextResponse.redirect(errorUrl);
-  }
-
-  let supabaseResponse = NextResponse.next({
-    request,
+  let response = NextResponse.next({
+    request: {
+      headers: request.headers,
+    },
   });
 
   let supabase;
   try {
-    supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
-      cookies: {
-        getAll() {
-          return request.cookies.getAll();
+    supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          get(name: string) {
+            return request.cookies.get(name)?.value;
+          },
+          set(name: string, value: string, options: CookieOptions) {
+            request.cookies.set({ name, value, ...options });
+            response = NextResponse.next({
+              request: {
+                headers: request.headers,
+              },
+            });
+            response.cookies.set({ name, value, ...options });
+          },
+          remove(name: string, options: CookieOptions) {
+            request.cookies.set({ name, value: '', ...options });
+            response = NextResponse.next({
+              request: {
+                headers: request.headers,
+              },
+            });
+            response.cookies.set({ name, value: '', ...options });
+          },
         },
-        setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value));
-          supabaseResponse = NextResponse.next({
-            request,
-          });
-          cookiesToSet.forEach(({ name, value, options }) =>
-            supabaseResponse.cookies.set(name, value, options)
-          );
-        },
-      },
-    });
+      }
+    );
   } catch (initError) {
-    console.error('CRITICAL: Failed to initialize Supabase client in middleware.', initError);
-    const errorUrl = request.nextUrl.clone();
-    errorUrl.pathname = '/service-unavailable';
-    errorUrl.search = '';
-    return NextResponse.redirect(errorUrl);
+    logError('CRITICAL: Failed to initialize Supabase client in middleware', initError, {
+      url: request.nextUrl.pathname,
+      userAgent: request.headers.get('user-agent'),
+      context: 'middleware-init'
+    });
+    return response;
   }
 
-  // Define public routes that don't require authentication.
-  // Added '/service-unavailable' to the list of public routes.
-  const publicRoutes = [
-    '/',
-    '/login',
-    '/auth/login',
-    '/auth/register',
-    '/auth/verify-email',
-    '/auth/forgot-password',
-    '/signup',
-    '/about',
-    '/contact',
-    '/pricing',
-    '/features',
-    '/blog',
-    '/docs',
-    '/help',
-    '/privacy',
-    '/terms',
-    '/offline',
-    '/404',
-    '/500',
-    // Marketplace pages remain public
-    '/marketplace',
-    '/service-unavailable' // Ensure this error page is public
-  ];
-
-  // Check if current path is a public route
-  const isPublicRoute = publicRoutes.some(route => {
-    // Check for exact match or if the path starts with the route followed by a slash,
-    // but only if the route is not the root path, to avoid matching all paths.
-    if (request.nextUrl.pathname === route) {
-      return true;
+  const isPublicRoute = [
+    '/', '/auth', '/auth/login', '/auth/register', '/auth/verify-email', '/auth/error',
+    '/api', '/api/auth', '/about', '/contact', '/terms', '/privacy',
+    '/favicon.ico', '/_next', '/static'
+  ].some(route => {
+    if (route === '/api' || route === '/_next' || route === '/static') {
+      return request.nextUrl.pathname.startsWith(route);
     }
-    // Ensure that if route is `/foo`, it matches `/foo/bar` but not `/foobar`
-    if (route !== '/' && request.nextUrl.pathname.startsWith(route + '/')) {
-      return true;
-    }
-    return false;
+    return request.nextUrl.pathname === route || request.nextUrl.pathname.startsWith(route + '/');
   });
 
-  // More specific checks for Next.js internals and static assets
-  const isNextInternal = request.nextUrl.pathname.startsWith('/_next/');
-  const isStaticAsset = /\.(?!html|json)([a-zA-Z0-9]+)$/.test(request.nextUrl.pathname) || request.nextUrl.pathname.startsWith('/static/') || request.nextUrl.pathname.startsWith('/images/');
-
-
-  if (
-    isPublicRoute ||
-    request.nextUrl.pathname.startsWith('/api/') || // API routes
-    isNextInternal || // Next.js internal files
-    isStaticAsset    // Other static assets like .ico, .png, etc.
-  ) {
-    return supabaseResponse;
+  if (isPublicRoute) {
+    logInfo('Middleware: Public route accessed', { 
+      path: request.nextUrl.pathname,
+      userAgent: request.headers.get('user-agent')?.substring(0, 100)
+    });
+    return response;
   }
-
-  // IMPORTANT: Avoid writing any logic between createServerClient and
-  // supabase.auth.getUser(). A simple mistake could make it very hard to debug
-  // issues with users being randomly logged out.
 
   try {
-    const {
-      data: { user },
-      error,
-    } = await supabase.auth.getUser();
+    const { data: { user }, error } = await supabase.auth.getUser();
 
     if (error || !user) {
-      console.log('Middleware: No user found or error, redirecting to login from:', request.nextUrl.pathname, error ? `Error: ${error.message}`: '');
-      const url = request.nextUrl.clone();
-      const returnTo = encodeURIComponent(url.pathname + url.search);
-      url.pathname = '/auth/login';
-      url.search = `?returnTo=${returnTo}`;
-      return NextResponse.redirect(url);
+      logInfo('Middleware: No user found or error, redirecting to login', {
+        from: request.nextUrl.pathname,
+        error: error ? error.message : 'No user found',
+        userAgent: request.headers.get('user-agent')?.substring(0, 100)
+      });
+      
+      const redirectUrl = new URL('/auth/login', request.url);
+      redirectUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
+      return NextResponse.redirect(redirectUrl);
     }
 
-    console.log('Middleware: User authenticated, allowing access to:', request.nextUrl.pathname);
-  } catch (authError: any) { // Added type annotation for authError
-    console.error('Middleware: Error during authentication check:', authError.message || authError);
-    const url = request.nextUrl.clone();
-    url.pathname = '/auth/login'; // Fallback to login on other auth check errors
-    return NextResponse.redirect(url);
+    logInfo('Middleware: User authenticated, allowing access', {
+      path: request.nextUrl.pathname,
+      userId: user.id,
+      userEmail: user.email
+    });
+    
+    return response;
+  } catch (authError) {
+    logError('Middleware: Error during authentication check', authError, {
+      path: request.nextUrl.pathname,
+      userAgent: request.headers.get('user-agent')?.substring(0, 100),
+      context: 'auth-check'
+    });
+    
+    // Redirect to login on authentication errors
+    const redirectUrl = new URL('/auth/login', request.url);
+    redirectUrl.searchParams.set('redirectTo', request.nextUrl.pathname);
+    return NextResponse.redirect(redirectUrl);
   }
-
-  // IMPORTANT: You *must* return the supabaseResponse object as it is.
-  // ... (rest of the original comment) ...
-
-  return supabaseResponse;
 }

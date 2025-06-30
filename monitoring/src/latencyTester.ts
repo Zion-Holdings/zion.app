@@ -1,109 +1,110 @@
-import axios, { AxiosError } from 'axios';
+import https from 'https';
+import logger from './logger';
 
-export interface Endpoint {
-  name: string; // e.g., 'Django Ping'
-  baseURL: string;
-  path: string;
-  method?: 'GET' | 'POST' | 'PUT' | 'DELETE'; // Default to GET
-}
-
-export interface EndpointTestResult {
-  name: string;
+interface LatencyResult {
   url: string;
-  method: string;
-  status?: number;
-  latencyMs?: number;
+  responseTime: number;
+  success: boolean;
   error?: string;
-  timestamp: string;
 }
 
-export async function measureLatency(endpoints: Endpoint[]): Promise<EndpointTestResult[]> {
-  const results: EndpointTestResult[] = [];
-
-  for (const endpoint of endpoints) {
-    const url = `${endpoint.baseURL}${endpoint.path}`;
-    const method = endpoint.method || 'GET';
-    const startTime = Date.now();
-    const timestamp = new Date().toISOString();
-
-    try {
-      const response = await axios({
-        method: method,
-        url: url,
-        timeout: 10000, // 10 second timeout
-      });
-      const endTime = Date.now();
-      results.push({
-        name: endpoint.name,
-        url: url,
-        method: method,
-        status: response.status,
-        latencyMs: endTime - startTime,
-        timestamp: timestamp,
-      });
-    } catch (error) {
-      const endTime = Date.now();
-      const latencyMs = endTime - startTime;
-      if (axios.isAxiosError(error)) {
-        const axiosError = error as AxiosError;
-        results.push({
-          name: endpoint.name,
-          url: url,
-          method: method,
-          status: axiosError.response?.status,
-          latencyMs: latencyMs,
-          error: axiosError.message,
-          timestamp: timestamp,
-        });
-      } else if (error instanceof Error) {
-        results.push({
-          name: endpoint.name,
-          url: url,
-          method: method,
-          latencyMs: latencyMs,
-          error: error.message,
-          timestamp: timestamp,
-        });
-      } else {
-        results.push({
-          name: endpoint.name,
-          url: url,
-          method: method,
-          latencyMs: latencyMs,
-          error: 'Unknown error',
-          timestamp: timestamp,
-        });
-      }
-    }
-  }
-  return results;
-}
-
-// Example usage (will be moved to the main cron script later)
-/*
-async function main() {
-  const exampleEndpoints: Endpoint[] = [
-    { name: 'Django Ping', baseURL: process.env.DJANGO_API_BASE_URL || 'http://localhost:8000', path: '/api/ping/' },
-    { name: 'Next.js Health', baseURL: process.env.NEXTJS_API_BASE_URL || 'http://localhost:3000', path: '/api/health' },
-    { name: 'Custom Server Health', baseURL: process.env.CUSTOM_SERVER_BASE_URL || 'http://localhost:3001', path: '/healthz' },
-    { name: 'NonExistent Service', baseURL: 'http://localhost:1234', path: '/nonexistent' },
+class LatencyTester {
+  private endpoints = [
+    'https://api.github.com',
+    'https://jsonplaceholder.typicode.com',
+    'https://httpbin.org/status/200'
   ];
 
-  console.log('Starting latency tests...');
-  const results = await measureLatency(exampleEndpoints);
-  console.log('Latency Test Results:');
-  results.forEach(result => {
-    if (result.error) {
-      console.error(
-        `${result.name} (${result.url}) - ${result.method}: FAILED - Status: ${result.status || 'N/A'}, Latency: ${result.latencyMs}ms, Error: ${result.error}`
-      );
-    } else {
-      console.log(
-        `${result.name} (${result.url}) - ${result.method}: SUCCESS - Status: ${result.status}, Latency: ${result.latencyMs}ms`
-      );
-    }
-  });
+  async testEndpoint(url: string): Promise<LatencyResult> {
+    const startTime = Date.now();
+    
+    return new Promise((resolve) => {
+      const request = https.get(url, (response) => {
+        const endTime = Date.now();
+        const responseTime = endTime - startTime;
+        
+        resolve({
+          url,
+          responseTime,
+          success: response.statusCode === 200,
+          error: response.statusCode !== 200 ? `HTTP ${response.statusCode}` : undefined
+        });
+      });
+
+      request.on('error', (error) => {
+        const endTime = Date.now();
+        const responseTime = endTime - startTime;
+        
+        resolve({
+          url,
+          responseTime,
+          success: false,
+          error: error.message
+        });
+      });
+
+      request.setTimeout(10000, () => {
+        request.destroy();
+        const endTime = Date.now();
+        const responseTime = endTime - startTime;
+        
+        resolve({
+          url,
+          responseTime,
+          success: false,
+          error: 'Timeout after 10 seconds'
+        });
+      });
+    });
+  }
+
+  async runLatencyTests(): Promise<LatencyResult[]> {
+    logger.info('Starting latency tests for monitoring endpoints');
+    
+    const results = await Promise.all(
+      this.endpoints.map(endpoint => this.testEndpoint(endpoint))
+    );
+
+    logger.info('Latency Test Results:', {
+      results: results.map(r => ({
+        url: r.url,
+        responseTime: r.responseTime,
+        success: r.success,
+        error: r.error
+      }))
+    });
+
+    // Log any failed tests as warnings
+    results.forEach(result => {
+      if (!result.success) {
+        logger.warn('Latency test failed', {
+          url: result.url,
+          responseTime: result.responseTime,
+          error: result.error
+        });
+      } else {
+        logger.info('Latency test successful', {
+          url: result.url,
+          responseTime: result.responseTime
+        });
+      }
+    });
+
+    return results;
+  }
 }
 
-main().catch(console.error);
-*/
+export default LatencyTester;
+
+async function main() {
+  const tester = new LatencyTester();
+  try {
+    await tester.runLatencyTests();
+  } catch (error) {
+    logger.error('Failed to run latency tests:', error);
+  }
+}
+
+if (require.main === module) {
+  main().catch(error => logger.error('Latency test execution failed:', error));
+}

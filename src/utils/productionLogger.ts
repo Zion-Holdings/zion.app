@@ -388,10 +388,13 @@ const productionLogger = new ProductionLogger();
 export const logDebug = productionLogger.debug.bind(productionLogger);
 export const logInfo = productionLogger.info.bind(productionLogger);
 export const logWarn = productionLogger.warn.bind(productionLogger);
-export const logError = productionLogger.error.bind(productionLogger);
+export const logErrorToProduction = productionLogger.error.bind(productionLogger);
 export const logPerformance = productionLogger.logPerformanceMetric.bind(productionLogger);
 export const timeStart = productionLogger.time.bind(productionLogger);
 export const timeEnd = productionLogger.timeEnd.bind(productionLogger);
+
+// Keep logError as alias for backward compatibility but prefer logErrorToProduction for clarity
+export const logError = productionLogger.error.bind(productionLogger);
 
 export { ProductionLogger };
 export default productionLogger; 
