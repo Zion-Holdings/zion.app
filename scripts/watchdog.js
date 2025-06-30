@@ -170,40 +170,76 @@ function ensureFileExists(filePath) {
 
 [PERF_LOG_FILE, SECURITY_LOG_FILE, SELF_HEAL_LOG_FILE].forEach(ensureFileExists);
 
-// --- Configuration: Regex Patterns ---
-/**
- * @const {RegExp} PERF_ERROR_REGEX
- * Regex to detect performance error lines in PERF_LOG_FILE.
- * This is a placeholder and should be adjusted to match actual log content.
- */
-const PERF_ERROR_REGEX = /error/i;
-/**
- * @const {RegExp} SECURITY_PATCH_REGEX
- * Regex to detect critical security patch notifications in SECURITY_LOG_FILE.
- * This is a placeholder and should be adjusted to match actual log content.
- */
-const SECURITY_PATCH_REGEX = /patch/i;
+// --- Configuration: Error Patterns and Healing Actions ---
+const CODEX_API_URL = process.env.CODEX_API_URL || 'http://localhost:3001/api/codex/suggest-fix'; // Assuming server runs on 3001
 
-// --- Configuration: Self-Healing ---
-/**
- * @const {string} HEAL_COMMAND
- * The command executed when a self-heal action is triggered.
- * Components:
- *   - `git pull`: Fetches the latest code from the remote repository.
- *   - `npm install`: Installs or updates dependencies based on package-lock.json.
- *   - `npm run build`: Executes the build script defined in package.json.
- *   - `pm2 restart all`: Restarts all applications managed by PM2.
- */
-const HEAL_COMMAND = 'WATCHDOG_LOG_PATH=./logs  git pull && npm install && npm run build && pm2 restart all';
+const HEAL_ACTION_TYPES = {
+  GENERAL_RESTART: 'GENERAL_RESTART',
+  CODEX_FIX_FILE: 'CODEX_FIX_FILE',
+  RESTART_SERVICE: 'RESTART_SERVICE',
+  CHECK_DB_HEALTH: 'CHECK_DB_HEALTH',
+};
+
+const ERROR_PATTERNS_CONFIG = [
+  {
+    name: 'DatabaseConnectionError',
+    regex: /Error: connect ECONNREFUSED .*?:5432/i, // Example for PostgreSQL
+    logFile: 'perf', // 'perf' or 'security' or 'generic'
+    actionType: HEAL_ACTION_TYPES.CHECK_DB_HEALTH,
+    priority: 1,
+    maxStreak: 2,
+    extractContext: (logLine) => ({ details: logLine.match(/Error: connect ECONNREFUSED (.*?):5432/i)?.[0] })
+  },
+  {
+    name: 'NextJSComponentRenderError',
+    regex: /TypeError: Cannot read properties of undefined \(reading '.*?'\) at .*? (\/.*?\.js:\d+:\d+)/i,
+    logFile: 'perf',
+    actionType: HEAL_ACTION_TYPES.CODEX_FIX_FILE,
+    priority: 2,
+    maxStreak: 3,
+    extractContext: (logLine) => {
+      const match = logLine.match(/TypeError: Cannot read properties of undefined \(reading '.*?'\) at .*? (\/.*?\.js:\d+:\d+)/i);
+      return {
+        filePathPattern: match ? match[1].replace(/.*\/src\//, 'src/') : null, // Attempt to get relative path
+        errorDetails: match ? match[0] : logLine
+      };
+    }
+  },
+  {
+    name: 'AuthServiceFailure',
+    regex: /AuthServiceError: Token validation failed/i,
+    logFile: 'perf',
+    actionType: HEAL_ACTION_TYPES.RESTART_SERVICE,
+    serviceName: 'auth-service', // Example service name, needs to map to actual pm2 name or script
+    priority: 1,
+    maxStreak: 2,
+    extractContext: (logLine) => ({ details: logLine })
+  },
+  {
+    name: 'GenericPerformanceError', // Fallback for general errors
+    regex: /error/i,
+    logFile: 'perf',
+    actionType: HEAL_ACTION_TYPES.GENERAL_RESTART,
+    priority: 10, // Lower priority
+    maxStreak: 3,
+    extractContext: (logLine) => ({ details: logLine })
+  },
+  {
+    name: 'SecurityPatchNotification',
+    regex: /security patch applied/i, // More specific than just "patch"
+    logFile: 'security',
+    actionType: HEAL_ACTION_TYPES.GENERAL_RESTART, // Or a more specific action if applicable
+    priority: 1,
+    maxStreak: 1, // Apply immediately
+    extractContext: (logLine) => ({ details: logLine })
+  }
+];
 
 // Endpoint for triggering the Codex AI fix pipeline
 const CODEX_TRIGGER_URL = process.env.CODEX_TRIGGER_URL || 'http://localhost:3001/api/codex/suggest-fix';
 
 // --- State Variables ---
-/** @type {number} perfErrorStreak - Counter for consecutive performance errors detected. Resets on a normal line or after a heal. */
-let perfErrorStreak = 0;
-/** @type {number} securityPatchStreak - Counter for consecutive security patches detected. Resets on a normal line or after a heal. */
-let securityPatchStreak = 0;
+let errorStreaks = {}; // Stores streaks for each error pattern config name
 /** @type {boolean} isHealing - Flag to prevent concurrent self-heal actions (cooldown mechanism). True if a heal is in progress. */
 let isHealing = false;
 /** @type {number} highCpuUsageCount - Counter for consecutive high CPU usage detections. */
