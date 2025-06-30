@@ -101,6 +101,22 @@ i18n.on('missingKey', (lngs, namespace, key) => {
       namespace,
     },
   });
+  // Also persist missing keys on the server for easier debugging
+  if (typeof window === 'undefined') {
+    try {
+      const fs = require('fs');
+      const path = require('path');
+      const logsDir = path.join(process.cwd(), 'logs');
+      if (!fs.existsSync(logsDir)) {
+        fs.mkdirSync(logsDir, { recursive: true });
+      }
+      const filePath = path.join(logsDir, 'missing-keys.log');
+      const line = `${new Date().toISOString()} ${lngs.join(',')} ${namespace} ${key}\n`;
+      fs.appendFileSync(filePath, line);
+    } catch (error) {
+      // Fail silently to avoid interfering with app flow
+    }
+  }
 });
 
 export default i18n;
