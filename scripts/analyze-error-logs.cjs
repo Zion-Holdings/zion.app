@@ -9,7 +9,16 @@ const path = require('path');
 
 const args = process.argv.slice(2);
 const LOG_DIR = args[0] && !args[0].startsWith('--') ? args[0] : 'logs';
-const PATTERNS = [/error/i, /failed/i, /missingKey/i];
+// Error patterns to flag. Expanded to detect missing modules and network issues
+const PATTERNS = [
+  /error/i,
+  /failed/i,
+  /missingKey/i,
+  /Module not found/i,
+  /Can't resolve/i,
+  /Cannot find module/i,
+  /EAI_AGAIN/i
+];
 const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
 const SUMMARY = args.includes('--summary');
@@ -61,7 +70,20 @@ function main() {
     console.error(`Log directory not found: ${LOG_DIR}`);
     process.exit(1);
   }
-  const files = fs.readdirSync(LOG_DIR).filter(f => f.endsWith('.log'));
+
+  const dirs = [LOG_DIR];
+  if (LOG_DIR !== '.') {
+    dirs.push('.'); // also check root logs like build.log
+  }
+
+  const files = [];
+  dirs.forEach(dir => {
+    if (fs.existsSync(dir)) {
+      const dirFiles = fs.readdirSync(dir).filter(f => f.endsWith('.log')).map(f => path.join(dir, f));
+      files.push(...dirFiles);
+    }
+  });
+
   if (!files.length) {
     console.log('No log files found');
     return;
@@ -70,17 +92,18 @@ function main() {
   const summaryLines = [];
   let overallIssues = false;
   for (const file of files) {
-    const { issues, counts } = checkFile(path.join(LOG_DIR, file));
+    const { issues, counts } = checkFile(file);
+    const displayName = path.relative(process.cwd(), file);
     const issueLines = issues;
     const countsLine = `Levels: ${LEVELS.map(l => `${l}:${counts[l] || 0}`).join(', ')}`;
 
-    summaryLines.push(`\n--- ${file} ---`, countsLine);
-    console.log(`\n--- ${file} ---`);
+    summaryLines.push(`\n--- ${displayName} ---`, countsLine);
+    console.log(`\n--- ${displayName} ---`);
     console.log(countsLine);
 
     if (issueLines.length) {
       overallIssues = true;
-      const header = `=== Issues found in ${file} ===`;
+      const header = `=== Issues found in ${displayName} ===`;
       summaryLines.push(header, ...issueLines);
       console.log(header);
       issueLines.forEach(line => console.log(line));
@@ -91,6 +114,25 @@ function main() {
     const msg = 'No issues detected in logs';
     console.log(msg);
     summaryLines.push(msg);
+  }
+
+  // Provide helpful suggestions based on detected issues
+  const allText = summaryLines.join('\n');
+  const hints = [];
+  if (/Module not found|Can't resolve|Cannot find module/i.test(allText)) {
+    hints.push('Missing dependencies detected. Run "./setup.sh npm" to reinstall packages.');
+  }
+  if (/EAI_AGAIN|network.*disabled/i.test(allText)) {
+    hints.push('Network errors detected. Ensure internet access before running the setup script.');
+  }
+  if (hints.length) {
+    const header = '\n=== Suggestions ===';
+    console.log(header);
+    summaryLines.push(header);
+    hints.forEach(msg => {
+      console.log('- ' + msg);
+      summaryLines.push('- ' + msg);
+    });
   }
 
   if (SUMMARY) {
