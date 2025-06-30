@@ -40,3 +40,8 @@ This repository uses a GitHub Action (`.github/workflows/codex-fix.yml`) to auto
 *   The core logic is in `scripts/codex-bug-fix.js`.
 *   The OpenAI model and system prompts can be adjusted in this script.
 *   The workflow requires the `OPENAI_API_KEY` secret to be set in the repository settings.
+
+### Automated Error Reporting
+
+In addition to manually creating issues, a separate workflow (`auto-report-codex.yml`) runs tests on each push. If any tests fail, the workflow automatically opens a new GitHub issue labeled `autofix` with a summary of the failures. This feeds directly into the `codex-fix.yml` workflow so Codex can attempt to generate a patch.
+
