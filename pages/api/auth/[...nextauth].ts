@@ -7,7 +7,7 @@ import type { NextAuthOptions } from "next-auth";
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import { verifyMessage } from 'ethers'; // Assuming ethers v6+
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 // WalletConnect isn't natively supported by next-auth. We'll mock a basic credentials
 // provider that handles an address signature check. In a real app you'd verify
@@ -44,7 +44,7 @@ const WalletConnectProvider = CredentialsProvider({
           .single();
 
         if (lookupError && lookupError.code !== 'PGRST116') { // PGRST116 = no rows found
-          logError('WalletConnectProvider: Error looking up user by wallet address:', { data: lookupError });
+          logErrorToProduction('WalletConnectProvider: Error looking up user by wallet address:', { data: lookupError });
           return null; // Internal server error
         }
 
@@ -87,7 +87,7 @@ const WalletConnectProvider = CredentialsProvider({
 
           if (signUpError) {
             // Handle specific errors, e.g., if dummy email is already taken (highly unlikely for this format)
-            logError('WalletConnectProvider: Supabase signUp error:', { data: signUpError.message });
+            logErrorToProduction('WalletConnectProvider: Supabase signUp error:', { data: signUpError.message });
             // Potentially, if error is "User already registered", try to lookup by dummyEmail and link wallet if not linked.
             return null;
           }
@@ -108,7 +108,7 @@ const WalletConnectProvider = CredentialsProvider({
               });
 
             if (profileCreateError) {
-              logError('WalletConnectProvider: Error creating user profile after signup:', { data: profileCreateError.message });
+              logErrorToProduction('WalletConnectProvider: Error creating user profile after signup:', { data: profileCreateError.message });
               // This is a critical state: user is created in auth, but profile linking failed.
               // Robust handling might involve retries, or cleanup (deleting the auth user).
               // For now, fail the login. Consider: await supabase.auth.admin.deleteUser(authUserId); if using service_role key
@@ -123,7 +123,7 @@ const WalletConnectProvider = CredentialsProvider({
               walletAddress: recoveredAddress.toLowerCase(), // Ensure this is the original mixed-case address if needed, but usually stored lowercase.
             };
           } else {
-            logError('WalletConnectProvider: Supabase signUp did not return user data or session.');
+            logErrorToProduction('WalletConnectProvider: Supabase signUp did not return user data or session.');
             return null;
           }
         }
@@ -132,7 +132,7 @@ const WalletConnectProvider = CredentialsProvider({
         return null;
       }
     } catch (error) {
-      logError('WalletConnectProvider: Error during signature verification or DB operation:', { data: error });
+      logErrorToProduction('WalletConnectProvider: Error during signature verification or DB operation:', { data: error });
       return null;
     }
   },
@@ -171,7 +171,7 @@ export const authOptions: NextAuthOptions = {
         });
 
         if (error) {
-          logError('Supabase sign-in error:', { data: error.message });
+          logErrorToProduction('Supabase sign-in error:', { data: error.message });
           // Consider mapping Supabase errors to user-friendly messages
           // For NextAuth, returning null signifies failed authorization.
           // Throwing an error here can break the flow or expose details.
