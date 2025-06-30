@@ -8,7 +8,7 @@ import { Home, Search, BriefcaseIcon, MessageSquare, User, X, MessageCircle } fr
 
 
 
-import {  } from 'lucide-react/dist/esm/icons/';
+
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
