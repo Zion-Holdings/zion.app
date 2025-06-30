@@ -160,6 +160,11 @@ console.log('Supabase configured:', !!window.location.origin.includes('localhost
     - Set `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` environment variables.
     - Run `npm run test:browserstack` to execute Playwright tests on BrowserStack across desktop and mobile browsers.
 
+13. **Local Cypress Testing:**
+    - Copy `cypress.env.example.json` to `cypress.env.json`.
+    - Adjust the placeholder values with your test credentials.
+    - This prevents "EXISTING_USER_EMAIL" and similar errors during `npm run test:e2e`.
+
 13. **Privacy Policy & Terms (login-gated):**
     - AI-Prompt: "Generate a plain-language summary (≤ 200 words) of a standard tech marketplace privacy policy aimed at U.S. users."
     - AI-Prompt: "Write an FAQ with 5 common questions users ask about Zion's Terms of Service."
