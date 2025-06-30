@@ -62,5 +62,52 @@ This document provides an overview of the automated workflows and processes impl
     - The scan is scoped to common source code and script directories.
 - **Configuration:** `.github/workflows/track-todos.yml`.
 
-These automations aim to streamline development workflows, improve code quality, ensure dependencies are kept up-to-date, and make deployment processes more reliable and efficient.
+## 4. Enhanced Self-Healing and AI-Assisted Development
+
+The platform includes advanced self-healing capabilities primarily orchestrated by `scripts/watchdog.js` and integrated AI tools.
+
+### 4.1. Intelligent Watchdog (`scripts/watchdog.js`)
+- **Contextual Log Parsing:** The watchdog now uses a detailed configuration (`ERROR_PATTERNS_CONFIG`) to identify specific error patterns in performance and security logs.
+- **Targeted Healing Actions:** Based on the matched error pattern, it can trigger various actions:
+    - `GENERAL_RESTART`: The original full system pull, build, and restart.
+    - `CODEX_FIX_FILE`: Calls the `/api/codex/suggest-fix` endpoint with the problematic file path and error details to attempt an AI-powered code fix.
+    - `RESTART_SERVICE <service_name>`: Restarts a specific service managed by PM2.
+    - `CHECK_DB_HEALTH`: Executes a script to check and potentially recover database health.
+- **Heal Loop Prevention:** Monitors for repeated, ineffective healing attempts for the same issue. If a loop is detected, automated healing for that specific error type is temporarily disabled, and a critical alert is sent for manual intervention.
+- **System Resource Monitoring:** Continues to monitor CPU and memory usage, triggering a general restart if thresholds are breached.
+- **Configuration:** Behavior is configured within `scripts/watchdog.js` (error patterns, heal actions) and via environment variables (e.g., `DISCORD_WEBHOOK_URL`, `CODEX_API_URL`).
+- **Further Details:** See `AUTO_HEALING_VIA_MONITORING_OPENAI_OPERATOR.md` for more on the AI integration.
+
+### 4.2. AI-Powered Code Correction (`codex-pipeline.yaml`)
+- **Targeted Fixes:** The `/api/codex/suggest-fix` endpoint (in `server/app.js`) now accepts `filePath` and `errorLog` parameters.
+- **Enhanced Pipeline:** `codex-pipeline.yaml` uses these parameters to provide more context to OpenAI Codex:
+    - It attempts to read the content of the specified `filePath`.
+    - The `errorLog` is included in the prompt.
+    - Codex's suggested fix is applied directly to the target file.
+- **Fallback:** If no specific file path is provided, the pipeline can still fall back to its original ESLint-based error detection.
+
+### 4.3. Automated Unit Test Generation
+- **Workflow:** A new GitHub Actions workflow, `.github/workflows/generate-tests.yml`, is triggered on pushes that modify components, hooks, utils, or lib files.
+- **How it works:**
+    - Identifies new or modified `.ts` / `.tsx` files in specified directories.
+    - For each relevant file, it invokes the `codex-test-generator-pipeline.yaml` via `openai-operator`.
+    - The `TARGET_COMPONENT_PATH` environment variable is passed to the pipeline.
+- **Test Generation Pipeline (`codex-test-generator-pipeline.yaml`):**
+    - Takes the target component's path and content.
+    - Prompts OpenAI Codex to generate Jest/Vitest unit tests, using React Testing Library for components.
+    - Saves the generated tests to the appropriate `__tests__` directory (e.g., `src/components/__tests__/MyComponent.test.tsx`).
+    - Attempts to format the generated test file using Prettier and ESLint.
+- **Outcome:** The GitHub Action commits the newly generated test files to a new branch (e.g., `bot/auto-generated-tests-YYYY-MM-DDTHH-MM-SSZ`) and pushes it to the repository. A Pull Request should then be created from this branch for developer review.
+- **Requirements:** Requires `OPENAI_API_KEY` as a secret in GitHub Actions.
+
+### 4.4. AI-Powered Error Log Summarization
+- **Endpoint:** A new endpoint `/api/ai/summarize-error` in `server/app.js`.
+- **Functionality:**
+    - Accepts a `logSnippet` in the request body.
+    - Uses the OpenAI API (e.g., GPT-3.5 Turbo or GPT-4) directly to analyze the log snippet.
+    - Returns a JSON response with a concise `summary` of the issue, potential root causes, and investigation pointers.
+- **Usage:** Intended to be called by monitoring systems (like an enhanced `watchdog.js` or external alerting tools) to provide developers with AI-generated insights directly in alert messages.
+- **Requirements:** Requires `OPENAI_API_KEY` to be configured in the environment for `server/app.js`.
+
+These automations aim to streamline development workflows, improve code quality and resilience, ensure dependencies are kept up-to-date, and make deployment processes more reliable and efficient.
 ```
