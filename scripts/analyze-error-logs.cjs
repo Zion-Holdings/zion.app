@@ -10,14 +10,50 @@ const path = require('path');
 const args = process.argv.slice(2);
 const LOG_DIR = args[0] && !args[0].startsWith('--') ? args[0] : 'logs';
 const PATTERNS = [/error/i, /failed/i, /missingKey/i];
+const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
 const SUMMARY = args.includes('--summary');
 
+function parseLine(line) {
+  line = line.trim();
+  if (!line) return null;
+
+  // Try parsing JSON log lines from /api/logs
+  if (line.startsWith('{') && line.endsWith('}')) {
+    try {
+      const entry = JSON.parse(line);
+      if (entry.level && LEVELS.includes(entry.level) && entry.message) {
+        return { level: entry.level, message: entry.message };
+      }
+    } catch {
+      // fall back to text match
+    }
+  }
+
+  const level = LEVELS.find(l => line.toLowerCase().includes(`[${l}]`));
+  return { level, message: line };
+}
+
 function checkFile(filePath) {
-  if (!fs.existsSync(filePath)) return [];
+  if (!fs.existsSync(filePath)) return { issues: [], counts: {} };
   const lines = fs.readFileSync(filePath, 'utf8').split('\n');
-  const matches = lines.filter(line => PATTERNS.some(p => p.test(line)));
-  return DEDUPE ? Array.from(new Set(matches)) : matches;
+  const issues = [];
+  const counts = Object.fromEntries(LEVELS.map(l => [l, 0]));
+
+  for (const line of lines) {
+    const parsed = parseLine(line);
+    if (!parsed) continue;
+
+    if (parsed.level && counts[parsed.level] !== undefined) {
+      counts[parsed.level] += 1;
+    }
+
+    if (PATTERNS.some(p => p.test(parsed.message))) {
+      issues.push(line.trim());
+    }
+  }
+
+  return { issues: DEDUPE ? Array.from(new Set(issues)) : issues, counts };
 }
 
 function main() {
@@ -32,18 +68,26 @@ function main() {
   }
 
   const summaryLines = [];
-  let hasIssues = false;
+  let overallIssues = false;
   for (const file of files) {
-    const issues = checkFile(path.join(LOG_DIR, file));
-    if (issues.length) {
-      hasIssues = true;
-      const header = `\n=== Issues found in ${file} ===`;
+    const { issues, counts } = checkFile(path.join(LOG_DIR, file));
+    const issueLines = issues;
+    const countsLine = `Levels: ${LEVELS.map(l => `${l}:${counts[l] || 0}`).join(', ')}`;
+
+    summaryLines.push(`\n--- ${file} ---`, countsLine);
+    console.log(`\n--- ${file} ---`);
+    console.log(countsLine);
+
+    if (issueLines.length) {
+      overallIssues = true;
+      const header = `=== Issues found in ${file} ===`;
+      summaryLines.push(header, ...issueLines);
       console.log(header);
-      summaryLines.push(header, ...issues);
-      issues.forEach(line => console.log(line));
+      issueLines.forEach(line => console.log(line));
     }
   }
-  if (!hasIssues) {
+
+  if (!overallIssues) {
     const msg = 'No issues detected in logs';
     console.log(msg);
     summaryLines.push(msg);

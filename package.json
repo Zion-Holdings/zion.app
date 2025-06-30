@@ -91,6 +91,7 @@
     "logs:view": "tail -f logs/self-heal.log",
     "logs:scan": "node scripts/analyze-error-logs.cjs",
     "logs:summary": "node scripts/analyze-error-logs.cjs logs --dedupe --summary",
+    "logs:levels": "node scripts/analyze-error-logs.cjs logs --summary",
     "logs:collect": "bash scripts/collect-logs.sh",
     "monitor:resources": "echo 'CPU:' && ps -A -o %cpu | awk '{sum+=$1} END {print sum\"%\"}' && echo 'Memory:' && free -h || vm_stat",
     "analyze:bundle": "node scripts/analyze-bundle.js",
