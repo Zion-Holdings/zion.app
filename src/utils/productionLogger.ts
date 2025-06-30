@@ -1,3 +1,5 @@
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 /**
  * Production-ready logger utility
  * Replaces console statements with structured logging, error monitoring, and performance tracking
@@ -84,16 +86,16 @@ class ProductionLogger {
 
     switch (entry.level) {
       case 'debug':
-        console.log(message, entry.context || '');
+        logInfo(message, entry.context || '');
         break;
       case 'info':
-        console.info(message, entry.context || '');
+        logInfo(message, entry.context || '');
         break;
       case 'warn':
-        console.warn(message, entry.context || '');
+        logWarn(message, entry.context || '');
         break;
       case 'error':
-        console.error(message, entry.context || '');
+        logError(message, entry.context || '');
         break;
     }
   }
@@ -148,17 +150,17 @@ class ProductionLogger {
           if (!response.ok) {
             // Only log to console if the logging endpoint fails
             // to prevent circular logging
-            console.warn(`Logging endpoint returned ${response.status}`);
+            logWarn(`Logging endpoint returned ${response.status}`);
           }
         } catch (error) {
           // Silent fail for logging endpoint to prevent circular errors
           // Only log in development mode (this check is outside the production block)
-          console.warn('Failed to send logs to endpoint:', error);
+          logWarn('Failed to send logs to endpoint:', error);
         }
       }
     } catch (error) {
       // Fallback to console for logging service failures
-      console.error('Failed to send logs to remote service:', error);
+      logError('Failed to send logs to remote service:', error);
     }
   }
 
@@ -230,7 +232,7 @@ class ProductionLogger {
         observer.observe({ entryTypes: ['largest-contentful-paint', 'layout-shift'] });
       }
     } catch (error) {
-      console.warn('Performance tracking initialization failed:', error);
+      logWarn('Performance tracking initialization failed:', error);
     }
   }
 

@@ -1,3 +1,5 @@
+import { logInfo, logError } from '@/utils/productionLogger';
+
 /**
  * Enhanced Structured Logger
  * Provides comprehensive logging with metadata, categorization, and structured output
@@ -123,7 +125,7 @@ class EnhancedLogger {
       ? entry.message.substring(0, 100) + '...' 
       : entry.message;
     
-    console.log(`[${entry.timestamp}] ${coloredLevel} [${entry.category}] ${shortMessage}`);
+    logInfo(`[${entry.timestamp}] ${coloredLevel} [${entry.category}] ${shortMessage}`);
     
     // Write to log files in production
     if (this.environment === 'production') {
@@ -146,7 +148,7 @@ class EnhancedLogger {
       
       fs.appendFileSync(logFile, logLine);
     } catch (error) {
-      console.error('Failed to write log to file:', error);
+      logError('Failed to write log to file:', error);
     }
   }
 
@@ -261,7 +263,7 @@ class EnhancedLogger {
         }
       }
     } catch (error) {
-      console.error('Failed to send to monitoring:', error);
+      logError('Failed to send to monitoring:', error);
     }
   }
 

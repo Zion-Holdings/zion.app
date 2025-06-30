@@ -3,11 +3,13 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { setupRouterErrorHandlers } from '@/utils/routerErrorHandler';
+import { logError } from '@/utils/productionLogger';
+
 
 // Add proper loading component and error handling
 const DashboardComponent = dynamic(
   () => import('@/pages/Dashboard').catch((error) => {
-    console.error('Failed to load Dashboard component:', error);
+    logError('Failed to load Dashboard component:', error);
     // Return a fallback component
     return {
       default: () => (

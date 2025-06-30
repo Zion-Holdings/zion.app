@@ -3,6 +3,8 @@ import path from 'path';
 import fs from 'fs';
 
 export default async function handler(
+import { logError } from '@/utils/productionLogger';
+
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
@@ -75,7 +77,7 @@ export default async function handler(
     res.end(imageBuffer);
     
   } catch (error) {
-    console.error('Image serving error:', error);
+    logError('Image serving error:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 } 

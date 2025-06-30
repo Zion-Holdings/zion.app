@@ -2,6 +2,8 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { ComponentType } from 'react';
 import { logError } from './productionLogger';
+import { logInfo } from '@/utils/productionLogger';
+
 
 // Loading component for dynamic imports
 const LoadingSpinner = () => (
@@ -69,6 +71,6 @@ export function preloadComponent(component: ComponentType) {
 // Bundle size tracker
 export function trackBundleUsage(componentName: string) {
   if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
-    console.log(`[Bundle] Loading component: ${componentName}`);
+    logInfo(`[Bundle] Loading component: ${componentName}`);
   }
 } 

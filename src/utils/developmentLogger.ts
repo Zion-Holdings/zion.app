@@ -1,3 +1,5 @@
+import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+
 // Removed circular dependency with productionLogger - using direct console methods instead
 
 /**
@@ -19,19 +21,19 @@ class DevelopmentLogger {
   debug(message: string, context?: LogContext): void {
     if (!this.enabled) return;
     if (isVerboseLogging) {
-      console.log(`[DEBUG] ${message}`, context || '');
+      logInfo(`[DEBUG] ${message}`, context || '');
     }
   }
 
   info(message: string, context?: LogContext): void {
     if (!this.enabled) return;
-    console.info(`[INFO] ${message}`, context || '');
+    logInfo(`[INFO] ${message}`, context || '');
   }
 
   warn(message: string, context?: LogContext): void {
     if (isProduction) return;
     if (isDevelopment) {
-      console.warn(`[WARN] ${message}`, context || '');
+      logWarn(`[WARN] ${message}`, context || '');
     }
   }
 
@@ -44,7 +46,7 @@ class DevelopmentLogger {
         window.Sentry.captureException(errorObj, { extra: context });
       }
     } else {
-      console.error(`[ERROR] ${message}`, error, context);
+      logError(`[ERROR] ${message}`, error, context);
     }
   }
 
@@ -81,7 +83,7 @@ class DevelopmentLogger {
     const statusColor = status && status >= 400 ? '🔴' : '🟢';
     const durationText = duration ? ` (${duration}ms)` : '';
     
-    console.info(`[API] ${statusColor} ${method.toUpperCase()} ${url}${durationText}`);
+    logInfo(`[API] ${statusColor} ${method.toUpperCase()} ${url}${durationText}`);
   }
 
   /**
@@ -91,7 +93,7 @@ class DevelopmentLogger {
     if (!this.enabled) return;
     
     const emoji = action === 'mount' ? '🟢' : action === 'unmount' ? '🔴' : '🔄';
-    console.info(`[COMPONENT] ${emoji} ${name} ${action}`, props || '');
+    logInfo(`[COMPONENT] ${emoji} ${name} ${action}`, props || '');
   }
 }
 

@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
+import { logError } from '@/utils/productionLogger';
+
 
 interface LogEntry {
   id: string;
@@ -113,7 +115,7 @@ export default async function handler(
       lastUpdated: new Date().toISOString(),
     });
   } catch (error) {
-    console.error('Error reading logs:', error);
+    logError('Error reading logs:', error);
     return res.status(500).json({ 
       message: 'Internal Server Error',
       logs: [],

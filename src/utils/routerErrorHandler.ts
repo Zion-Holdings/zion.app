@@ -3,6 +3,8 @@ import { NextRouter } from 'next/router';
 import { logError } from './logError';
 
 export function handleRouterError(error: Error, router: NextRouter) {
+import { logWarn, logError } from '@/utils/productionLogger';
+
   // Capture the error using our centralized logger which sends data to Sentry
   logError(error, {
     message: 'Router error occurred',
@@ -13,7 +15,7 @@ export function handleRouterError(error: Error, router: NextRouter) {
 
   // Prevent router abort by handling specific dashboard errors
   if (router.pathname === '/dashboard' || router.asPath.includes('/dashboard')) {
-    console.warn('Dashboard route error caught, attempting recovery...');
+    logWarn('Dashboard route error caught, attempting recovery...');
     
     // Try to recover by redirecting to a safe route
     if (typeof window !== 'undefined') {
@@ -34,7 +36,7 @@ export function setupRouterErrorHandlers(router: NextRouter) {
     try {
       return await originalPush.call(router, url, as, options);
     } catch (error) {
-      console.error('Router push error:', error);
+      logError('Router push error:', error);
       handleRouterError(error as Error, router);
       throw error;
     }
@@ -45,7 +47,7 @@ export function setupRouterErrorHandlers(router: NextRouter) {
     try {
       return await originalReplace.call(router, url, as, options);
     } catch (error) {
-      console.error('Router replace error:', error);
+      logError('Router replace error:', error);
       handleRouterError(error as Error, router);
       throw error;
     }
@@ -53,7 +55,7 @@ export function setupRouterErrorHandlers(router: NextRouter) {
 
   // Handle router errors
   const routeChangeErrorHandler = (err: unknown, url: string) => {
-    console.error('Route change error:', err, 'URL:', url);
+    logError('Route change error:', err, 'URL:', url);
     handleRouterError(err as Error, router);
   };
 

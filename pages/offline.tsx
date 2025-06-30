@@ -8,6 +8,8 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 export default function OfflinePage() {
+import { logError } from '@/utils/productionLogger';
+
   const [isOnline, setIsOnline] = useState(false)
   const [lastUpdate, setLastUpdate] = useState<string>('')
   const [retryCount, setRetryCount] = useState(0)
@@ -39,7 +41,7 @@ export default function OfflinePage() {
       setRetryCount(prev => prev + 1)
       window.location.reload()
     } catch (err) {
-      console.error('Failed to reload page', err)
+      logError('Failed to reload page', err)
     }
   }
 
