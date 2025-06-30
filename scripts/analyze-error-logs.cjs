@@ -1,10 +1,17 @@
 #!/usr/bin/env node
+/**
+ * Quickly scan project log files for common error patterns.
+ * Use --dedupe to remove duplicate lines and --summary to
+ * write a summary file to logs/summary/.
+ */
 const fs = require('fs');
 const path = require('path');
 
-const LOG_DIR = process.argv[2] || 'logs';
+const args = process.argv.slice(2);
+const LOG_DIR = args[0] && !args[0].startsWith('--') ? args[0] : 'logs';
 const PATTERNS = [/error/i, /failed/i, /missingKey/i];
-const DEDUPE = process.argv.includes('--dedupe');
+const DEDUPE = args.includes('--dedupe');
+const SUMMARY = args.includes('--summary');
 
 function checkFile(filePath) {
   if (!fs.existsSync(filePath)) return [];
@@ -23,17 +30,31 @@ function main() {
     console.log('No log files found');
     return;
   }
+
+  const summaryLines = [];
   let hasIssues = false;
   for (const file of files) {
     const issues = checkFile(path.join(LOG_DIR, file));
     if (issues.length) {
       hasIssues = true;
-      console.log(`\n=== Issues found in ${file} ===`);
+      const header = `\n=== Issues found in ${file} ===`;
+      console.log(header);
+      summaryLines.push(header, ...issues);
       issues.forEach(line => console.log(line));
     }
   }
   if (!hasIssues) {
-    console.log('No issues detected in logs');
+    const msg = 'No issues detected in logs';
+    console.log(msg);
+    summaryLines.push(msg);
+  }
+
+  if (SUMMARY) {
+    const summaryDir = path.join(LOG_DIR, 'summary');
+    fs.mkdirSync(summaryDir, { recursive: true });
+    const summaryFile = path.join(summaryDir, `summary-${Date.now()}.log`);
+    fs.writeFileSync(summaryFile, summaryLines.join('\n') + '\n');
+    console.log(`Summary saved to ${summaryFile}`);
   }
 }
 
