@@ -3,7 +3,7 @@ const { execSync, spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const process = require('process');
-const { runPreDeployChecks, analyzeAndReport } = require('./deploy-optimization');
+const { runPreDeployChecks, analyzeAndReport } = require('./deploy-optimization.cjs');
 
 // Enhanced memory and performance optimizations
 const optimizedEnv = {
@@ -343,7 +343,7 @@ async function executeBuildSequence() {
         console.log(`- Build time: ✅ ${buildTime} seconds`);
 
         try {
-          console.log("\n🔍 Running Post-Build Analysis & Reporting (from deploy-optimization.js)...");
+          console.log("\n🔍 Running Post-Build Analysis & Reporting (from deploy-optimization.cjs)...");
           await analyzeAndReport(); // Call the imported function
           console.log("✅ Post-Build Analysis & Reporting Completed.");
         } catch (reportError) {
