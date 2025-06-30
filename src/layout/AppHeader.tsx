@@ -16,7 +16,6 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '@/store';
 import { cn } from '@/lib/utils'; // Import cn utility
 import { useRouter } from 'next/router';
-import { logWarn } from '@/utils/productionLogger';
 
 export function AppHeader() {
 
@@ -29,6 +28,9 @@ export function AppHeader() {
   const router = useRouter();
   const showTagline = router.pathname === '/';
 
+  // Messaging context (unread message count)
+  const { unreadCount } = useMessaging();
+
   const openLoginModal = (returnToPath?: string) => {
     // The actual returnToPath is set in the URL by the child components (ResponsiveNavigation, MobileMenu)
     // using router.push with shallow:true before this function is called.
@@ -36,15 +38,6 @@ export function AppHeader() {
     // If a returnToPath is passed, we could potentially use it for other logic here if needed in the future.
     setLoginOpen(true);
   };
-  
-  // Try to access the messaging context, but provide a fallback value if it's not available
-  let unreadCount = 0;
-  try {
-    const { unreadCount: count } = useMessaging();
-    unreadCount = count;
-  } catch (error) {
-    logWarn('Messaging context not available');
-  }
   
   return (
     <>
