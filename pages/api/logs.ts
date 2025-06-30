@@ -63,9 +63,19 @@ export default async function handler(
     if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
       entries.forEach((entry) => {
         if (entry.level === 'error' || entry.level === 'warn') {
+          // Map our log levels to Sentry's SeverityLevel
+          const sentryLevel: Sentry.SeverityLevel = entry.level === 'warn' ? 'warning' : entry.level;
           Sentry.captureMessage(entry.message, {
-            level: entry.level,
-            extra: entry,
+            level: sentryLevel,
+            extra: {
+              level: entry.level,
+              context: entry.context,
+              timestamp: entry.timestamp,
+              sessionId: entry.sessionId,
+              url: entry.url,
+              userAgent: entry.userAgent,
+              userId: entry.userId,
+            },
           });
         }
       });

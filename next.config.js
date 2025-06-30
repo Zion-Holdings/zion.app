@@ -281,18 +281,21 @@ const nextConfig = {
       });
     }
 
-    // Fix webpack cache configuration to prevent build errors
-    if (config.cache && config.cache.type === 'filesystem') {
-      // Use memory cache instead of filesystem cache to prevent webpack validation errors
+    // Fix webpack cache configuration to prevent build errors and warnings
+    if (config.cache) {
+      // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
+        // Disable cacheUnaffected to prevent webpack conflicts
+        cacheUnaffected: false,
       };
-    } else if (config.cache) {
+    } else {
       // Ensure memory cache is properly configured
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
+        cacheUnaffected: false,
       };
     }
 

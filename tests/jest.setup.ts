@@ -265,7 +265,7 @@ jest.mock('vitest', () => {
     describe: global.describe,
     it: global.it,
     test: global.test,
-    expect: global.expect,
+    expect: expect, // Use expect from jest-dom/jest instead of global.expect
     beforeEach: global.beforeEach,
     afterEach: global.afterEach,
     beforeAll: global.beforeAll,
