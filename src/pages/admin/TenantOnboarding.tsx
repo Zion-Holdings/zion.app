@@ -13,7 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Switch } from "@/components/ui/switch";
-import {logErrorToProduction} from "@/utils/logError";
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export default function TenantOnboarding() {
   const { user } = useAuth();

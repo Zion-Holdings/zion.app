@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
-import { enhancedErrorCollection } from '@/utils/enhancedErrorCollection';
+import { enhancedErrorCollector } from '@/utils/enhancedErrorCollection';
 import { systemHealthMonitor } from '@/utils/systemHealthMonitor';
 import { logDashboard } from '@/utils/logDashboard';
 

@@ -1,6 +1,6 @@
 export type ApiHandler = (req: any, res: any) => any;
 
-import {logErrorToProduction} from './logError';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export function withErrorLogging(handler: ApiHandler): ApiHandler {
   return async (req, res) => {

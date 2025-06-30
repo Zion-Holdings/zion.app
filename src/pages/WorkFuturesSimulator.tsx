@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { callZionGPT } from '@/utils/zion-gpt';
-import {logErrorToProduction} from '@/utils/logError';
+import { logErrorToProduction } from '@/utils/productionLogger';
 import { suggestFix } from '@/utils/suggestFix';
 
 const SCENARIOS = [

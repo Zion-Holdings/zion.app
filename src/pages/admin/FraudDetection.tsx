@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { FraudFlag, FraudStats } from "@/types/fraud";
-import {logErrorToProduction} from "@/utils/logError";
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 // Import refactored components
 import {

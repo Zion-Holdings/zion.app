@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/form";
 import { toast } from "@/hooks/use-toast";
 import { cleanupAuthState } from "@/utils/authUtils";
-import {logErrorToProduction} from "@/utils/logError";
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 // Form validation schema
 const updatePasswordSchema = z

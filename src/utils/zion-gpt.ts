@@ -3,7 +3,7 @@
 // This file handles interaction with the fine-tuned ZionGPT model
 
 import { supabase } from '@/integrations/supabase/client';
-import {logErrorToProduction} from './logError';
+import { logErrorToProduction } from '@/utils/productionLogger';
 import { logWarn } from '@/utils/productionLogger';
 
 export type ModelVersion = 'zion-job-generator-v1' | 'zion-resume-enhancer-v1' | 'zion-support-v1' | 'gpt-3.5-turbo';

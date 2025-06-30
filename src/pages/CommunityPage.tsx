@@ -12,7 +12,7 @@ import { useRequireAuth } from "@/hooks/useAuthGuard";
 import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
 import { useCommunity } from "@/context";
 import type { ForumCategory } from "@/types/community";
-import {logErrorToProduction} from "@/utils/logError";
+import { logErrorToProduction } from '@/utils/productionLogger';
 import { logInfo } from '@/utils/productionLogger';
 
 export default function CommunityPage() {

@@ -13,7 +13,7 @@ import {
 import { Slider } from '@/components/ui/slider';
 import { useToast } from '@/hooks/use-toast';
 import { callZionGPT } from '@/utils/zion-gpt';
-import {logErrorToProduction} from '@/utils/logError';
+import { logErrorToProduction } from '@/utils/productionLogger';
 import { suggestFix } from '@/utils/suggestFix';
 
 interface Inputs {

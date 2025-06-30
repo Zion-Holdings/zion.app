@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { HireNowCTA } from "@/components/profile/HireNowCTA";
-import {logErrorToProduction} from "@/utils/logError";
+import { logErrorToProduction } from '@/utils/productionLogger';
 import {
   Star,
   MapPin,
