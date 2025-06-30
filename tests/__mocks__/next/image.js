@@ -1,8 +1,7 @@
- 
 import React from 'react';
 
 // eslint-disable-next-line react/display-name
-export default ({ src, alt, fill, style, ...rest }: any) => {
+export default ({ src, alt, fill, style, ...rest }) => {
   // The 'fill' prop itself isn't passed to the img tag.
   // If 'fill' is true, specific styles might be applied by Next.js,
   // but for a basic mock, we can just ensure it doesn't break.

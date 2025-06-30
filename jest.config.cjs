@@ -5,7 +5,7 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!bson|fetch-mock|react-markdown|d3-\\w+|internmap|delaunator|robust-predicates|@babel|next|@supabase|@sentry|@reown/appkit|axios).+\\.(js|jsx|ts|tsx)$',
+    '/node_modules/(?!bson|fetch-mock|react-markdown|d3-\\w+|internmap|delaunator|robust-predicates|@babel|next|@supabase|@sentry|@reown/appkit|axios|isows).+\\.(js|jsx|ts|tsx)$',
   ],
   moduleNameMapper: {
     // Handle CSS imports (if you're not using CSS modules)
@@ -37,6 +37,9 @@ module.exports = {
     '^@/mocks/(.*)$': '<rootDir>/src/mocks/$1', // if you have mocks folder in src
     // msw/node specific mapping
     '^msw/node$': require.resolve('msw/node'),
+    '^@/layout$': '<rootDir>/src/layout/index.ts',
+    '^@/context$': '<rootDir>/src/context/index.ts',
+    '^@/config/(.*)$': '<rootDir>/src/config/$1',
   },
   // Add this if Vitest types are conflicting or if you want to be explicit
   globals: {
@@ -56,7 +59,8 @@ module.exports = {
     "<rootDir>/tests/storybook/", // Assuming all storybook tests might be playwright/visual
     "<rootDir>/supabase/functions/",
     "<rootDir>/plugins/wallet-connector/cypress/",
-    "<rootDir>/pact/"
+    "<rootDir>/pact/",
+    "<rootDir>/tests/visual-regression.test.ts"
   ],
   // Coverage reporting
   collectCoverage: false, // Temporarily disable to check babel-plugin-istanbul issue
