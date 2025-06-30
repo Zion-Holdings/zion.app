@@ -16,8 +16,9 @@ const alertsRoutes = require('./routes/alerts'); // Add this
 const equipmentRoutes = require('./routes/items');
 const stripeRoutes = require('./routes/stripe'); // Add this for Stripe webhooks
 const { logAndAlert } = require('./utils/alertLogger');
-const helmet =require('helmet');
+const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const OpenAI = require('openai');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
@@ -32,18 +33,18 @@ const accessLogStream = fs.createWriteStream(path.join(logDir, 'access.log'), { 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,
   tracesSampleRate: 1.0,
-  beforeSend(event) {
-    const span = tracer.scope().active();
-    if (span) {
-      const ctx = span.context();
-      event.tags = {
-        ...event.tags,
-        dd_trace_id: ctx.toTraceId(),
-        dd_span_id: ctx.toSpanId(),
-      };
-    }
-    return event;
-  },
+  // beforeSend(event) { // Datadog tracing might not be set up or needed for Sentry alone
+  //   const span = tracer.scope().active();
+  //   if (span) {
+  //     const ctx = span.context();
+  //     event.tags = {
+  //       ...event.tags,
+  //       dd_trace_id: ctx.toTraceId(),
+  //       dd_span_id: ctx.toSpanId(),
+  //     };
+  //   }
+  //   return event;
+  // },
 });
 
 app.use(Sentry.Handlers.requestHandler());
@@ -100,30 +101,54 @@ app.get('/health', (req, res) => {
 });
 
 app.post('/api/codex/suggest-fix', (req, res) => {
-  // Optional: You might want to log which route is causing this, if passed in body
-  const { route } = req.body;
+  const { filePath, errorLog, route } = req.body; // Added filePath and errorLog
+
+  if (!filePath && !route) {
+    // We need at least some context, filePath is preferred for targeted fixes.
+    // Route could be a fallback if we want to analyze a general page issue,
+    // but the current codex-pipeline.yaml is more file-focused with ESLint.
+    return res.status(400).json({ error: 'Bad Request: filePath or route is required.' });
+  }
+
+  // Basic sanitization/validation for filePath if needed (e.g., prevent directory traversal)
+  // For now, assume filePath is a relative path within the project context
+  // e.g., "src/components/MyComponent.tsx"
+
   let command = 'openai-operator run ./codex-pipeline.yaml';
+  const envVars = { ...process.env }; // Pass environment variables to the child process
 
-  // Log the action
-  console.log(`Received request to trigger Codex fix. Route: ${route || 'N/A'}`);
-  // Potentially pass the route to the command if the pipeline can use it, e.g.:
-  // if (route) {
-  //   command = `openai-operator run ./codex-pipeline.yaml --route ${route}`;
-  // }
-  // For now, the command is fixed as per codexWebhookServer.js
+  if (filePath) {
+    // If filePath is provided, pass it as an environment variable to the operator
+    // The pipeline YAML will need to be updated to use this.
+    envVars.CODEX_TARGET_FILE_PATH = filePath;
+    console.log(`Received request to trigger Codex fix for file: ${filePath}`);
+  } else if (route) {
+    // Fallback or alternative context if route is provided
+    envVars.CODEX_TARGET_ROUTE = route; // Example, if pipeline handles routes
+    console.log(`Received request to trigger Codex fix for route: ${route}`);
+  }
 
-  exec(command, (error, stdout, stderr) => {
+  if (errorLog) {
+    // Pass errorLog as an environment variable.
+    // Pipelines can access env vars. This is often easier than complex CLI arg parsing.
+    envVars.CODEX_ERROR_LOG_SNIPPET = errorLog;
+    console.log(`Error log snippet provided: ${errorLog.substring(0, 100)}...`);
+  }
+
+  // Log the action with more details
+  console.log(`Executing Codex command: ${command} with context - File: ${filePath || 'N/A'}, Route: ${route || 'N/A'}, ErrorLog: ${errorLog ? 'Provided' : 'N/A'}`);
+
+  exec(command, { env: envVars }, (error, stdout, stderr) => { // Pass envVars here
     if (error) {
       console.error(`Codex execution error: ${error.message}`);
-      // Use existing logAndAlert if appropriate
-      // logAndAlert(`Codex execution failed for route ${route || 'N/A'}: ${error.message}`);
-      return res.status(500).json({ error: 'Codex fix process failed to start or execute.' });
+      logAndAlert(`Codex execution failed. File: ${filePath || route || 'N/A'}. Error: ${error.message}`);
+      return res.status(500).json({ error: 'Codex fix process failed to start or execute.', details: error.message });
     }
     if (stderr) {
       console.warn(`Codex execution stderr: ${stderr}`);
     }
     console.log(`Codex execution stdout: ${stdout}`);
-    res.status(200).json({ message: 'Codex fix process triggered successfully.' });
+    res.status(200).json({ message: 'Codex fix process triggered successfully.', output: stdout });
   });
 });
 

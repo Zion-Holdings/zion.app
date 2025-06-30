@@ -230,6 +230,15 @@ The application includes built-in monitoring for:
 - Environment configuration validation
 - Error reporting and analytics
 
+### Self-Maintenance Automation
+The project includes several automations that help it heal itself and stay up to date:
+
+- **Watchdog self‑healing** triggers `git pull && npm install && npm run build && pm2 restart all` when logs or resource usage indicate problems.
+- **Codex autofix** workflows open issues for failing tests and automatically apply patches suggested by OpenAI.
+- **Scheduled audits** run weekly to check dependencies and performance.
+
+For detailed setup instructions see [docs/SELF_MAINTENANCE_AUTOMATION.md](docs/SELF_MAINTENANCE_AUTOMATION.md).
+
 ---
 
 *This README provides a general overview. For more detailed information on specific parts of the system, please refer to the README files within the relevant subdirectories and the `docs/` folder.*
