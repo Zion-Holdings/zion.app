@@ -23,18 +23,24 @@ class DeploymentOptimizer {
     };
   }
 
-  async optimize() {
+  async optimize(isStandalone = true) {
     try {
       await this.runPreDeployChecks();
-      await this.optimizeBuild();
+      if (isStandalone) {
+        await this.optimizeBuild(); // Only run build if called standalone
+      }
       await this.analyzeBundle();
       await this.generateOptimizationReport();
       
-      console.log('\n✅ Deployment optimization completed successfully!');
-      this.printSummary();
+      if (isStandalone) {
+        console.log('\n✅ Deployment optimization completed successfully!');
+        this.printSummary();
+      }
     } catch (error) {
       console.error('\n❌ Deployment optimization failed:', error.message);
-      process.exit(1);
+      // If part of a larger script, don't exit process, throw instead
+      if (isStandalone) process.exit(1);
+      else throw error;
     }
   }
 
@@ -284,7 +290,24 @@ class DeploymentOptimizer {
 // Run optimization if script is executed directly
 if (require.main === module) {
   const optimizer = new DeploymentOptimizer();
-  optimizer.optimize().catch(console.error);
+  optimizer.optimize(true).catch(console.error); // Pass true for standalone
 }
 
-module.exports = DeploymentOptimizer; 
+// Export methods for use in other scripts
+module.exports = {
+  DeploymentOptimizer,
+  runPreDeployChecks: async () => {
+    const optimizer = new DeploymentOptimizer();
+    await optimizer.runPreDeployChecks();
+    return optimizer.optimizationResults; // Return results for inspection if needed
+  },
+  analyzeAndReport: async () => {
+    const optimizer = new DeploymentOptimizer();
+    // Ensure buildDir is set if not running the full optimize sequence
+    optimizer.buildDir = path.join(process.cwd(), '.next');
+    await optimizer.analyzeBundle();
+    await optimizer.generateOptimizationReport();
+    optimizer.printSummary(); // Optionally print summary
+    return optimizer.optimizationResults;
+  }
+};
