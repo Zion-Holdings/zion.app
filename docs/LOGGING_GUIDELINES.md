@@ -90,3 +90,13 @@ npm run logs:summary
 ```
 
 This command searches all log files for error patterns and now also extracts any **missing translation keys** it finds. A summary report along with a `missing-keys-<timestamp>.log` file will be generated under `logs/summary/`.
+
+## Log Maintenance
+
+To prevent the `logs/` directory from growing indefinitely, you can purge old log files based on their modification date:
+
+```bash
+npm run logs:purge
+```
+
+This command deletes any `.log` files older than 30 days (configurable via the `LOG_RETENTION_DAYS` environment variable) from the `logs/` folder and its subdirectories.
