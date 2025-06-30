@@ -37,6 +37,7 @@
     "test:vitest:coverage": "vitest run --coverage",
     "test:e2e": "cypress run",
     "test:e2e:open": "cypress open",
+    "test:collect": "node scripts/generate-jest-json.cjs && npm run logs:collect",
     "test:search": "node scripts/test-search-functionality.cjs",
     "perf:check": "node scripts/performance-check.cjs",
     "perf:api": "node scripts/test-api-performance.js",
