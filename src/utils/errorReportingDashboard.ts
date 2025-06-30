@@ -1,250 +1,407 @@
 /**
- * Error Reporting Dashboard
- * Provides real-time insights into application health and error trends
+ * Real-time Error Reporting Dashboard
+ * Provides comprehensive monitoring, health scoring, and alerting
  */
 
-import { logAnalyzer } from './logAnalyzer';
-import { logInfo } from './productionLogger';
+import { logInfo, logWarn, logError } from './productionLogger';
 
-interface DashboardMetrics {
+interface HealthMetrics {
+  status: 'healthy' | 'warning' | 'critical';
+  score: number; // 0-100
   uptime: number;
-  errorRate: number;
-  criticalErrors: number;
   responseTime: number;
   memoryUsage: number;
-  lastUpdated: Date;
+  errorRate: number;
+  criticalErrors: number;
+  lastUpdated: string;
 }
 
-interface HealthStatus {
-  status: 'healthy' | 'warning' | 'critical';
-  score: number;
-  issues: string[];
-  recommendations: string[];
+interface ErrorSummary {
+  critical: number;
+  high: number;
+  medium: number;
+  low: number;
+  total: number;
+}
+
+interface TopError {
+  description: string;
+  count: number;
+  severity: 'critical' | 'high' | 'medium' | 'low';
+  lastOccurrence: string;
+  pattern?: string;
+}
+
+interface SystemRecommendation {
+  priority: 'critical' | 'high' | 'medium' | 'low';
+  title: string;
+  description: string;
+  action: string;
+  automated?: boolean;
+}
+
+interface HealthData {
+  metrics: HealthMetrics;
+  errors: {
+    summary: ErrorSummary;
+    topErrors: TopError[];
+    trends: {
+      hour: number[];
+      day: number[];
+    };
+  };
+  recommendations: SystemRecommendation[];
+  alerts: string[];
 }
 
 class ErrorReportingDashboard {
-  private metrics: DashboardMetrics;
-  private startTime: Date;
-  private errorCount: number = 0;
-  private requestCount: number = 0;
-  private responseTimes: number[] = [];
+  private healthData: HealthData;
+  private startTime: number;
+  private errorBuffer: Map<string, TopError> = new Map();
+  private performanceMetrics: number[] = [];
+  private memoryReadings: number[] = [];
 
   constructor() {
-    this.startTime = new Date();
-    this.metrics = {
-      uptime: 0,
-      errorRate: 0,
-      criticalErrors: 0,
-      responseTime: 0,
-      memoryUsage: 0,
-      lastUpdated: new Date()
-    };
-
-    // Update metrics every minute
-    if (typeof window !== 'undefined') {
-      setInterval(() => this.updateMetrics(), 60000);
-    }
+    this.startTime = Date.now();
+    this.healthData = this.initializeHealthData();
+    this.setupPerformanceMonitoring();
   }
 
-  recordError(severity: 'low' | 'medium' | 'high' | 'critical'): void {
-    this.errorCount++;
-    if (severity === 'critical') {
-      this.metrics.criticalErrors++;
-    }
-  }
-
-  recordRequest(responseTime: number): void {
-    this.requestCount++;
-    this.responseTimes.push(responseTime);
-    
-    // Keep only last 100 response times
-    if (this.responseTimes.length > 100) {
-      this.responseTimes = this.responseTimes.slice(-100);
-    }
-  }
-
-  updateMetrics(): void {
-    const now = new Date();
-    this.metrics.uptime = now.getTime() - this.startTime.getTime();
-    
-    if (this.requestCount > 0) {
-      this.metrics.errorRate = (this.errorCount / this.requestCount) * 100;
-    }
-
-    if (this.responseTimes.length > 0) {
-      this.metrics.responseTime = this.responseTimes.reduce((a, b) => a + b, 0) / this.responseTimes.length;
-    }
-
-    // Memory usage (if available)
-    if (typeof performance !== 'undefined' && (performance as any).memory) {
-      this.metrics.memoryUsage = (performance as any).memory.usedJSHeapSize / 1024 / 1024; // MB
-    }
-
-    this.metrics.lastUpdated = now;
-  }
-
-  getHealthStatus(): HealthStatus {
-    const errorAnalysis = logAnalyzer.generateReport();
-    const issues: string[] = [];
-    const recommendations: string[] = [];
-    let score = 100;
-
-    // Check error rate
-    if (this.metrics.errorRate > 5) {
-      issues.push(`High error rate: ${this.metrics.errorRate.toFixed(1)}%`);
-      recommendations.push('Investigate and fix frequently occurring errors');
-      score -= 20;
-    }
-
-    // Check critical errors
-    if (this.metrics.criticalErrors > 0) {
-      issues.push(`${this.metrics.criticalErrors} critical errors detected`);
-      recommendations.push('Address critical errors immediately');
-      score -= 30;
-    }
-
-    // Check response time
-    if (this.metrics.responseTime > 2000) {
-      issues.push(`Slow response time: ${this.metrics.responseTime.toFixed(0)}ms`);
-      recommendations.push('Optimize performance bottlenecks');
-      score -= 15;
-    }
-
-    // Check memory usage
-    if (this.metrics.memoryUsage > 100) {
-      issues.push(`High memory usage: ${this.metrics.memoryUsage.toFixed(1)}MB`);
-      recommendations.push('Review memory leaks and optimize resource usage');
-      score -= 10;
-    }
-
-    // Add analyzer recommendations
-    recommendations.push(...errorAnalysis.recommendations);
-
-    const status: HealthStatus['status'] = 
-      score >= 80 ? 'healthy' : 
-      score >= 60 ? 'warning' : 
-      'critical';
-
+  private initializeHealthData(): HealthData {
     return {
-      status,
-      score: Math.max(0, score),
-      issues,
-      recommendations
+      metrics: {
+        status: 'healthy',
+        score: 100,
+        uptime: 0,
+        responseTime: 0,
+        memoryUsage: 0,
+        errorRate: 0,
+        criticalErrors: 0,
+        lastUpdated: new Date().toISOString()
+      },
+      errors: {
+        summary: {
+          critical: 0,
+          high: 0,
+          medium: 0,
+          low: 0,
+          total: 0
+        },
+        topErrors: [],
+        trends: {
+          hour: new Array(24).fill(0),
+          day: new Array(7).fill(0)
+        }
+      },
+      recommendations: [],
+      alerts: []
     };
   }
 
-  getDashboardData() {
-    this.updateMetrics();
-    const healthStatus = this.getHealthStatus();
-    const errorAnalysis = logAnalyzer.generateReport();
-    const errorStats = logAnalyzer.getErrorStats();
+  private setupPerformanceMonitoring(): void {
+    // Monitor performance every 30 seconds
+    setInterval(() => {
+      this.updatePerformanceMetrics();
+    }, 30000);
 
-    return {
-      metrics: this.metrics,
-      health: healthStatus,
-      errorAnalysis,
-      errorStats,
-      charts: {
-        errorsByCategory: errorStats,
-        errorTrends: this.getErrorTrends(),
-        responseTimeHistory: this.responseTimes.slice(-20),
+    // Generate health report every 5 minutes
+    setInterval(() => {
+      this.generateHealthReport();
+    }, 300000);
+  }
+
+  private updatePerformanceMetrics(): void {
+    try {
+      // Measure response time simulation
+      const start = performance.now();
+      setTimeout(() => {
+        const responseTime = performance.now() - start;
+        this.performanceMetrics.push(responseTime);
+        if (this.performanceMetrics.length > 100) {
+          this.performanceMetrics = this.performanceMetrics.slice(-50);
+        }
+      }, 0);
+
+      // Memory usage (if available)
+      if (typeof window !== 'undefined' && 'memory' in performance) {
+        const memory = (performance as any).memory;
+        const memoryUsage = (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
+        this.memoryReadings.push(memoryUsage);
+        if (this.memoryReadings.length > 100) {
+          this.memoryReadings = this.memoryReadings.slice(-50);
+        }
       }
-    };
+
+      this.calculateHealthScore();
+    } catch (error) {
+      logError('Failed to update performance metrics', error);
+    }
   }
 
-  private getErrorTrends(): { timestamp: string; errors: number }[] {
-    // This would typically come from a time-series database
-    // For now, return mock trend data
-    const trends = [];
-    const now = new Date();
-    
-    for (let i = 23; i >= 0; i--) {
-      const timestamp = new Date(now.getTime() - i * 60 * 60 * 1000);
-      trends.push({
-        timestamp: timestamp.toISOString(),
-        errors: Math.floor(Math.random() * 10) // Mock data
+  private calculateHealthScore(): void {
+    let score = 100;
+    const metrics = this.healthData.metrics;
+
+    // Penalize for critical errors
+    score -= metrics.criticalErrors * 10;
+
+    // Penalize for high error rate
+    if (metrics.errorRate > 5) score -= 20;
+    else if (metrics.errorRate > 2) score -= 10;
+    else if (metrics.errorRate > 1) score -= 5;
+
+    // Penalize for poor response time
+    if (metrics.responseTime > 2000) score -= 15;
+    else if (metrics.responseTime > 1000) score -= 10;
+    else if (metrics.responseTime > 500) score -= 5;
+
+    // Penalize for high memory usage
+    if (metrics.memoryUsage > 90) score -= 15;
+    else if (metrics.memoryUsage > 80) score -= 10;
+    else if (metrics.memoryUsage > 70) score -= 5;
+
+    score = Math.max(0, Math.min(100, score));
+    metrics.score = score;
+
+    // Determine status based on score
+    if (score >= 80) metrics.status = 'healthy';
+    else if (score >= 60) metrics.status = 'warning';
+    else metrics.status = 'critical';
+  }
+
+  public reportError(error: Error, severity: 'critical' | 'high' | 'medium' | 'low'): void {
+    const errorKey = `${error.name}:${error.message}`;
+    const existingError = this.errorBuffer.get(errorKey);
+
+    if (existingError) {
+      existingError.count++;
+      existingError.lastOccurrence = new Date().toISOString();
+    } else {
+      this.errorBuffer.set(errorKey, {
+        description: `${error.name}: ${error.message}`,
+        count: 1,
+        severity,
+        lastOccurrence: new Date().toISOString(),
+        pattern: this.detectErrorPattern(error)
       });
     }
-    
-    return trends;
+
+    // Update summary
+    this.healthData.errors.summary[severity]++;
+    this.healthData.errors.summary.total++;
+
+    if (severity === 'critical') {
+      this.healthData.metrics.criticalErrors++;
+    }
+
+    // Update error rate
+    this.updateErrorRate();
+
+    // Check for alerts
+    this.checkAlerts(severity, error);
+
+    // Update recommendations
+    this.updateRecommendations();
   }
 
-  generateHealthReport(): string {
-    const data = this.getDashboardData();
-    const uptime = Math.floor(data.metrics.uptime / (1000 * 60 * 60)); // hours
+  private detectErrorPattern(error: Error): string | undefined {
+    const message = error.message.toLowerCase();
     
-    let report = `
-# Application Health Report
-Generated: ${data.metrics.lastUpdated.toISOString()}
-
-## 🏥 Health Status: ${data.health.status.toUpperCase()}
-Score: ${data.health.score}/100
-
-## 📊 Key Metrics
-- Uptime: ${uptime} hours
-- Error Rate: ${data.metrics.errorRate.toFixed(1)}%
-- Critical Errors: ${data.metrics.criticalErrors}
-- Avg Response Time: ${data.metrics.responseTime.toFixed(0)}ms
-- Memory Usage: ${data.metrics.memoryUsage.toFixed(1)}MB
-
-## 🚨 Issues (${data.health.issues.length})
-${data.health.issues.map(issue => `- ${issue}`).join('\n') || '- No issues detected'}
-
-## 💡 Recommendations
-${data.health.recommendations.map(rec => `- ${rec}`).join('\n')}
-
-## 🔍 Error Analysis
-- Total Error Patterns: ${data.errorAnalysis.summary.total}
-- Critical: ${data.errorAnalysis.summary.critical}
-- High Priority: ${data.errorAnalysis.summary.high}
-- Medium Priority: ${data.errorAnalysis.summary.medium}
-
-## 🔝 Top Errors
-${data.errorAnalysis.topErrors.map((error, i) => 
-  `${i + 1}. ${error.description} (${error.occurrences} occurrences)`
-).join('\n') || 'No recurring errors'}
-`;
-
-    logInfo('Health report generated', { 
-      status: data.health.status, 
-      score: data.health.score,
-      issueCount: data.health.issues.length 
-    });
-
-    return report.trim();
+    if (message.includes('network') || message.includes('fetch')) return 'network';
+    if (message.includes('auth') || message.includes('unauthorized')) return 'authentication';
+    if (message.includes('parse') || message.includes('json')) return 'data-parsing';
+    if (message.includes('memory') || message.includes('heap')) return 'memory';
+    if (message.includes('timeout')) return 'timeout';
+    if (message.includes('import') || message.includes('module')) return 'module-loading';
+    
+    return undefined;
   }
 
-  // Export dashboard data for external monitoring tools
-  exportMetrics(): object {
-    const data = this.getDashboardData();
-    return {
-      timestamp: new Date().toISOString(),
-      health: {
-        status: data.health.status,
-        score: data.health.score
-      },
-      metrics: data.metrics,
-      errors: {
-        total: data.errorAnalysis.summary.total,
-        critical: data.errorAnalysis.summary.critical,
-        rate: data.metrics.errorRate
+  private updateErrorRate(): void {
+    const now = Date.now();
+    const oneHourAgo = now - (60 * 60 * 1000);
+    const recentErrors = Array.from(this.errorBuffer.values())
+      .filter(error => new Date(error.lastOccurrence).getTime() > oneHourAgo)
+      .reduce((sum, error) => sum + error.count, 0);
+
+    // Simulate request count (in production, this would be real metrics)
+    const estimatedRequests = 1000; // This should be replaced with actual request metrics
+    this.healthData.metrics.errorRate = (recentErrors / estimatedRequests) * 100;
+  }
+
+  private checkAlerts(severity: 'critical' | 'high' | 'medium' | 'low', error: Error): void {
+    const alerts = this.healthData.alerts;
+    
+    if (severity === 'critical') {
+      const alert = `🚨 CRITICAL ERROR: ${error.message}`;
+      if (!alerts.includes(alert)) {
+        alerts.push(alert);
+        logError('Critical error alert triggered', error);
       }
-    };
+    }
+
+    if (this.healthData.metrics.errorRate > 5) {
+      const alert = `⚠️ HIGH ERROR RATE: ${this.healthData.metrics.errorRate.toFixed(1)}%`;
+      if (!alerts.includes(alert)) {
+        alerts.push(alert);
+        logWarn('High error rate detected', { errorRate: this.healthData.metrics.errorRate });
+      }
+    }
+
+    // Keep only last 10 alerts
+    if (alerts.length > 10) {
+      this.healthData.alerts = alerts.slice(-10);
+    }
   }
 
-  reset(): void {
-    this.errorCount = 0;
-    this.requestCount = 0;
-    this.responseTimes = [];
-    this.metrics.criticalErrors = 0;
-    this.startTime = new Date();
-    logAnalyzer.clearHistory();
-    logInfo('Dashboard metrics reset');
+  private updateRecommendations(): void {
+    const recommendations: SystemRecommendation[] = [];
+    const metrics = this.healthData.metrics;
+
+    if (metrics.criticalErrors > 0) {
+      recommendations.push({
+        priority: 'critical',
+        title: 'Address Critical Errors',
+        description: `${metrics.criticalErrors} critical errors detected`,
+        action: 'Review error logs and implement fixes immediately',
+        automated: false
+      });
+    }
+
+    if (metrics.errorRate > 2) {
+      recommendations.push({
+        priority: 'high',
+        title: 'Reduce Error Rate',
+        description: `Error rate is ${metrics.errorRate.toFixed(1)}% (target: <1%)`,
+        action: 'Investigate common error patterns and implement preventive measures',
+        automated: false
+      });
+    }
+
+    if (metrics.responseTime > 1000) {
+      recommendations.push({
+        priority: 'medium',
+        title: 'Optimize Performance',
+        description: `Average response time is ${metrics.responseTime}ms`,
+        action: 'Review slow endpoints and optimize database queries',
+        automated: false
+      });
+    }
+
+    if (metrics.memoryUsage > 80) {
+      recommendations.push({
+        priority: 'high',
+        title: 'Memory Usage Alert',
+        description: `Memory usage at ${metrics.memoryUsage.toFixed(1)}%`,
+        action: 'Check for memory leaks and optimize resource usage',
+        automated: false
+      });
+    }
+
+    // Add automated recommendations
+    const topErrors = this.getTopErrors();
+    const networkErrors = topErrors.filter(e => e.pattern === 'network').length;
+    if (networkErrors > 5) {
+      recommendations.push({
+        priority: 'medium',
+        title: 'Network Error Pattern Detected',
+        description: `${networkErrors} network-related errors detected`,
+        action: 'Implement retry logic and better network error handling',
+        automated: true
+      });
+    }
+
+    this.healthData.recommendations = recommendations.slice(0, 10);
+  }
+
+  private getTopErrors(): TopError[] {
+    return Array.from(this.errorBuffer.values())
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 10);
+  }
+
+  private generateHealthReport(): void {
+    const uptime = (Date.now() - this.startTime) / 1000;
+    const avgResponseTime = this.performanceMetrics.length > 0 
+      ? this.performanceMetrics.reduce((a, b) => a + b, 0) / this.performanceMetrics.length 
+      : 0;
+    const avgMemoryUsage = this.memoryReadings.length > 0
+      ? this.memoryReadings.reduce((a, b) => a + b, 0) / this.memoryReadings.length
+      : 0;
+
+    this.healthData.metrics.uptime = uptime;
+    this.healthData.metrics.responseTime = avgResponseTime;
+    this.healthData.metrics.memoryUsage = avgMemoryUsage;
+    this.healthData.metrics.lastUpdated = new Date().toISOString();
+
+    this.healthData.errors.topErrors = this.getTopErrors();
+
+    this.calculateHealthScore();
+
+    logInfo('Health report generated', {
+      score: this.healthData.metrics.score,
+      status: this.healthData.metrics.status,
+      errorRate: this.healthData.metrics.errorRate,
+      uptime: Math.floor(uptime / 3600) + ' hours'
+    });
+  }
+
+  public getHealthData(): HealthData {
+    this.generateHealthReport();
+    return { ...this.healthData };
+  }
+
+  public exportHealthReport(): string {
+    const data = this.getHealthData();
+    return JSON.stringify({
+      timestamp: new Date().toISOString(),
+      health: data,
+      summary: {
+        score: data.metrics.score,
+        status: data.metrics.status,
+        totalErrors: data.errors.summary.total,
+        criticalErrors: data.metrics.criticalErrors,
+        uptime: `${Math.floor(data.metrics.uptime / 3600)}h ${Math.floor((data.metrics.uptime % 3600) / 60)}m`,
+        recommendations: data.recommendations.length
+      }
+    }, null, 2);
+  }
+
+  public clearAlerts(): void {
+    this.healthData.alerts = [];
+    logInfo('Health alerts cleared');
+  }
+
+  public resetMetrics(): void {
+    this.errorBuffer.clear();
+    this.healthData = this.initializeHealthData();
+    this.performanceMetrics = [];
+    this.memoryReadings = [];
+    logInfo('Health metrics reset');
   }
 }
 
 // Global dashboard instance
-const errorDashboard = new ErrorReportingDashboard();
+const errorReportingDashboard = new ErrorReportingDashboard();
 
-export { errorDashboard };
-export default errorDashboard; 
+export { 
+  errorReportingDashboard,
+  ErrorReportingDashboard,
+  type HealthData,
+  type HealthMetrics,
+  type TopError,
+  type SystemRecommendation
+};
+
+// Enhanced error reporting function
+export function reportSystemError(
+  error: Error, 
+  severity: 'critical' | 'high' | 'medium' | 'low' = 'medium',
+  context?: Record<string, unknown>
+): void {
+  // Report to dashboard
+  errorReportingDashboard.reportError(error, severity);
+  
+  // Log with context
+  logError(`System error [${severity}]`, error, context);
+} 

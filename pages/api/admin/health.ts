@@ -1,99 +1,62 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { errorDashboard } from '@/utils/errorReportingDashboard';
-import { logAnalyzer } from '@/utils/logAnalyzer';
-import { logInfo } from '@/utils/productionLogger';
+import { errorReportingDashboard, type HealthData } from '@/utils/errorReportingDashboard';
+import { logInfo, logError } from '@/utils/productionLogger';
 
-interface HealthResponse {
-  status: 'healthy' | 'warning' | 'critical';
+interface HealthApiResponse {
+  health: HealthData;
+  success: boolean;
   timestamp: string;
-  uptime: number;
-  version: string;
-  environment: string;
-  metrics: {
-    errorRate: number;
-    criticalErrors: number;
-    responseTime: number;
-    memoryUsage: number;
-  };
-  health: {
-    status: string;
-    score: number;
-    issues: string[];
-    recommendations: string[];
-  };
-  errors: {
-    summary: {
-      total: number;
-      critical: number;
-      high: number;
-      medium: number;
-      low: number;
-    };
-    topErrors: Array<{
-      patternId: string;
-      description: string;
-      occurrences: number;
-      severity: string;
-      solution?: string;
-    }>;
-    byCategory: { [category: string]: number };
-  };
+  message?: string;
 }
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<HealthResponse | { error: string }>
+  res: NextApiResponse<HealthApiResponse>
 ) {
-  if (req.method !== 'GET') {
-    res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: 'Method Not Allowed' });
-  }
-
   try {
-    const dashboardData = errorDashboard.getDashboardData();
-    const exportMetrics = errorDashboard.exportMetrics();
+    if (req.method !== 'GET') {
+      return res.status(405).json({
+        health: {} as HealthData,
+        success: false,
+        timestamp: new Date().toISOString(),
+        message: 'Method not allowed'
+      });
+    }
 
-    const response: HealthResponse = {
-      status: dashboardData.health.status,
-      timestamp: new Date().toISOString(),
-      uptime: Math.floor(dashboardData.metrics.uptime / 1000), // seconds
-      version: process.env.npm_package_version || '1.0.0',
-      environment: process.env.NODE_ENV || 'development',
-      metrics: {
-        errorRate: dashboardData.metrics.errorRate,
-        criticalErrors: dashboardData.metrics.criticalErrors,
-        responseTime: dashboardData.metrics.responseTime,
-        memoryUsage: dashboardData.metrics.memoryUsage,
-      },
-      health: dashboardData.health,
-      errors: {
-        summary: dashboardData.errorAnalysis.summary,
-        topErrors: dashboardData.errorAnalysis.topErrors,
-        byCategory: dashboardData.errorStats,
-      }
-    };
+    // Get comprehensive health data
+    const healthData = errorReportingDashboard.getHealthData();
 
-    // Log health check
-    logInfo('Health check requested', {
-      status: response.status,
-      errorRate: response.metrics.errorRate,
-      uptime: response.uptime
+    // Determine response status based on health score
+    let statusCode = 200;
+    if (healthData.metrics.status === 'critical') {
+      statusCode = 503; // Service Unavailable
+    } else if (healthData.metrics.status === 'warning') {
+      statusCode = 207; // Multi-Status (partial success)
+    }
+
+    // Log health check access
+    logInfo('Health check accessed', {
+      score: healthData.metrics.score,
+      status: healthData.metrics.status,
+      errorRate: healthData.metrics.errorRate,
+      userAgent: req.headers['user-agent'] || 'unknown'
     });
 
-    // Set appropriate cache headers
-    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-    res.setHeader('Pragma', 'no-cache');
-    res.setHeader('Expires', '0');
+    return res.status(statusCode).json({
+      health: healthData,
+      success: true,
+      timestamp: new Date().toISOString(),
+      message: `System health: ${healthData.metrics.status} (Score: ${healthData.metrics.score}/100)`
+    });
 
-    // Set status code based on health
-    const statusCode = response.status === 'healthy' ? 200 : 
-                      response.status === 'warning' ? 200 : 503;
-
-    return res.status(statusCode).json(response);
   } catch (error) {
-    logInfo('Health check failed', { error: error instanceof Error ? error.message : String(error) });
-    return res.status(500).json({ 
-      error: 'Internal server error during health check' 
+    logError('Health check API error', error);
+    
+    return res.status(500).json({
+      health: {} as HealthData,
+      success: false,
+      timestamp: new Date().toISOString(),
+      message: 'Internal server error during health check'
     });
   }
 } 
