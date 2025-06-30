@@ -58,25 +58,49 @@ const nextConfig = {
 
   experimental: {
     serverComponentsExternalPackages: ['@prisma/client'],
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+    optimizePackageImports: [
+      'lucide-react', 
+      '@radix-ui/react-icons',
+      'date-fns',
+      'lodash',
+      'recharts',
+      'react-window',
+      'fuse.js'
+    ],
     outputFileTracingExcludes: {
       '*': [
         'node_modules/@swc/core-linux-x64-gnu',
         'node_modules/@swc/core-linux-x64-musl',
         'node_modules/@esbuild/linux-x64',
+        'node_modules/@chainsafe/**/*',
+        'node_modules/three/**/*',
+        'node_modules/@google/model-viewer/**/*',
       ],
     },
-    // Disable CSS optimization for faster builds with many pages
-    optimizeCss: false, 
+    // Enable CSS optimization for production
+    optimizeCss: !dev, 
     esmExternals: true,
-              // Memory and performance optimizations for 176+ pages
-    largePageDataBytes: 256 * 1000, // 256KB threshold for large pages
+    // Memory and performance optimizations for 176+ pages
+    largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: 2, // Limit to 2 CPUs for memory management
-    // CRITICAL: Completely disable turbotrace to prevent hanging
-    // turbotrace: false, // Disabled via NEXT_DISABLE_TRACE_COLLECTION and NEXT_PRIVATE_OUTPUT_TRACE in build scripts
-    // Netlify-specific optimizations
-    swcTraceProfiling: false, // Disable profiling for faster builds
+    cpus: Math.min(2, require('os').cpus().length), // Adaptive CPU limit
+    // Bundle analysis optimizations
+    bundlePagesRouterDependencies: true, // Better bundle splitting
+    // Disable profiling for faster builds
+    swcTraceProfiling: false,
+    // Optimize imports
+    modularizeImports: {
+      'lucide-react': {
+        transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
+        skipDefaultConversion: true,
+      },
+      'date-fns': {
+        transform: 'date-fns/{{member}}',
+      },
+      '@radix-ui/react-icons': {
+        transform: '@radix-ui/react-icons/dist/{{member}}',
+      },
+    },
   },
 
   images: {
@@ -238,6 +262,12 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production' ? {
       exclude: ['error', 'warn'],
     } : false,
+    // Remove React DevTools in production
+    reactRemoveProperties: process.env.NODE_ENV === 'production' ? { properties: ['data-testid'] } : false,
+    // Remove development-only code
+    removeReactProperties: process.env.NODE_ENV === 'production',
+    // Enable SWC minification optimizations
+    styledComponents: false, // Disable if not using styled-components
   },
 
   transpilePackages: [
@@ -347,9 +377,9 @@ const nextConfig = {
         splitChunks: {
           chunks: 'all',
           minSize: 20000,
-          maxSize: 200000, // Reduced from 250KB to 200KB for better loading
-          maxAsyncRequests: 30, // Increased for better code splitting
-          maxInitialRequests: 25, // Increased for better initial load
+          maxSize: 150000, // Reduced to 150KB for faster loading
+          maxAsyncRequests: 20, // Optimized for faster loading
+          maxInitialRequests: 15, // Optimized for faster initial load
           cacheGroups: {
             default: false,
             vendors: false,
@@ -364,31 +394,34 @@ const nextConfig = {
               reuseExistingChunk: true,
             },
             
-            // Heavy libraries chunk (separate from framework)
+            // Heavy libraries chunk (separate from framework) - optimized
             heavy: {
               name: 'heavy-libs',
-              test: /[\\/]node_modules[\\/](three|firebase|helia|@google\/model-viewer)[\\/]/,
+              test: /[\\/]node_modules[\\/](three|firebase|helia|@google\/model-viewer|@chainsafe)[\\/]/,
               priority: 45,
               enforce: true,
               reuseExistingChunk: true,
+              chunks: 'async', // Load heavy libs asynchronously only
             },
             
-            // Chart and visualization libraries
+            // Chart and visualization libraries - async only
             charts: {
               name: 'chart-libs',
               test: /[\\/]node_modules[\\/](recharts|d3|chart\.js)[\\/]/,
               priority: 40,
               enforce: true,
               reuseExistingChunk: true,
+              chunks: 'async',
             },
             
-            // UI libraries chunk
+            // UI libraries chunk - optimized size
             ui: {
               name: 'ui-libs',
               test: /[\\/]node_modules[\\/](@radix-ui|lucide-react|clsx|class-variance-authority)[\\/]/,
               priority: 35,
               enforce: true,
               reuseExistingChunk: true,
+              maxSize: 100000, // Smaller UI chunks for faster loading
             },
             
             // Date and utility libraries
@@ -400,44 +433,46 @@ const nextConfig = {
               reuseExistingChunk: true,
             },
             
-            // Crypto and blockchain libraries
+            // Crypto and blockchain libraries - async only
             crypto: {
               name: 'crypto-libs',
-              test: /[\\/]node_modules[\\/](ethers|@reown|web3)[\\/]/,
+              test: /[\\/]node_modules[\\/](ethers|@reown|web3|@orbitdb|libp2p)[\\/]/,
               priority: 28,
               enforce: true,
               reuseExistingChunk: true,
+              chunks: 'async', // Crypto libs only when needed
             },
             
             // Auth and validation libraries
             auth: {
               name: 'auth-libs',
-              test: /[\\/]node_modules[\\/](next-auth|@supabase|yup|zod)[\\/]/,
+              test: /[\\/]node_modules[\\/](next-auth|@supabase|yup|zod|@sentry)[\\/]/,
               priority: 26,
               enforce: true,
               reuseExistingChunk: true,
             },
             
-            // Markdown and content processing
+            // Markdown and content processing - async only
             content: {
               name: 'content-libs',
-              test: /[\\/]node_modules[\\/](react-markdown|rehype|remark)[\\/]/,
+              test: /[\\/]node_modules[\\/](react-markdown|rehype|remark|jspdf)[\\/]/,
               priority: 24,
               enforce: true,
               reuseExistingChunk: true,
+              chunks: 'async',
             },
             
-            // Development tools (only in dev builds)
+            // Development tools (excluded from production)
             devtools: {
               name: 'devtools',
               test: /[\\/]node_modules[\\/](@storybook|webpack-bundle-analyzer)[\\/]/,
               priority: 22,
               enforce: true,
               reuseExistingChunk: true,
-              chunks: dev ? 'all' : 'async', // Only async in production
+              chunks: dev ? 'all' : false, // Exclude from production entirely
             },
             
-            // General vendor libraries
+            // General vendor libraries - optimized
             vendor: {
               chunks: 'all',
               test: /[\\/]node_modules[\\/]/,
@@ -445,17 +480,19 @@ const nextConfig = {
               priority: 20,
               enforce: true,
               reuseExistingChunk: true,
-              minChunks: 2, // Only if used by at least 2 modules
+              minChunks: 3, // Only if used by at least 3 modules
+              maxSize: 120000, // Smaller vendor chunks
             },
             
             // Common application code
             common: {
               name: 'common',
-              minChunks: 3, // Increased from 2 to reduce small chunks
+              minChunks: 4, // Only truly common code
               chunks: 'all',
               priority: 10,
               enforce: true,
               reuseExistingChunk: true,
+              maxSize: 80000, // Smaller common chunks
             },
           },
         },
