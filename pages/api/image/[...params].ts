@@ -2,9 +2,9 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
 import fs from 'fs';
 
-export default async function handler(
 import { logError } from '@/utils/productionLogger';
 
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
