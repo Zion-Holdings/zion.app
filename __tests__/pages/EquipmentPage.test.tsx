@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import EquipmentPage from '@/pages/EquipmentPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import apiClient from '@/services/apiClient';
@@ -40,14 +40,12 @@ const queryClient = new QueryClient({
   },
 });
 
-const renderWithProviders = (ui: React.ReactElement) => {
+const renderWithProviders = (ui: React.ReactElement, route = '/equipment') => {
   return render(
     <QueryClientProvider client={queryClient}>
-      <MemoryRouter initialEntries={['/equipment']}>
-        <Routes>
-          <Route path="/equipment" element={ui} />
-        </Routes>
-      </MemoryRouter>
+      <MemoryRouterProvider url={route}>
+        {ui}
+      </MemoryRouterProvider>
     </QueryClientProvider>
   );
 };

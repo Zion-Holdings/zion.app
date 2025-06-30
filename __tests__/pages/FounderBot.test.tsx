@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import FounderBotPage from '@/pages/FounderBot';
 
 jest.mock('@/components/ChatAssistant', () => ({
@@ -14,9 +14,9 @@ jest.mock('@/components/ui/button', () => ({
 describe('FounderBotPage', () => {
   it('renders heading', () => {
     render(
-      <MemoryRouter>
+      <MemoryRouterProvider>
         <FounderBotPage />
-      </MemoryRouter>
+      </MemoryRouterProvider>
     );
     expect(screen.getByRole('heading', { name: /ask the founder/i })).toBeInTheDocument();
   });

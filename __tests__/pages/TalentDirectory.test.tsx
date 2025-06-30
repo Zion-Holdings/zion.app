@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import TalentDirectory from '@/pages/TalentDirectory';
 
 // Mock child components and hooks
@@ -45,9 +45,9 @@ describe('TalentDirectory Page', () => {
 
   it('renders without throwing errors and displays a heading', async () => {
     render(
-      <MemoryRouter>
+      <MemoryRouterProvider>
         <TalentDirectory />
-      </MemoryRouter>
+      </MemoryRouterProvider>
     );
     await waitFor(() => {
       expect(screen.getByText(/AI & Tech Talent Directory/i)).toBeInTheDocument();
@@ -68,9 +68,9 @@ describe('TalentDirectory Page', () => {
     );
 
     render(
-      <MemoryRouter>
+      <MemoryRouterProvider>
         <TalentDirectory />
-      </MemoryRouter>
+      </MemoryRouterProvider>
     );
 
     await waitFor(() => {
@@ -88,9 +88,9 @@ describe('TalentDirectory Page', () => {
       })
     );
     render(
-      <MemoryRouter>
+      <MemoryRouterProvider>
         <TalentDirectory />
-      </MemoryRouter>
+      </MemoryRouterProvider>
     );
 
     await waitFor(() => {
@@ -108,9 +108,9 @@ describe('TalentDirectory Page', () => {
     );
 
     render(
-      <MemoryRouter>
+      <MemoryRouterProvider>
         <TalentDirectory />
-      </MemoryRouter>
+      </MemoryRouterProvider>
     );
 
     await waitFor(() => {
