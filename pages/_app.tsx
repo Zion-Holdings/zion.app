@@ -45,7 +45,6 @@ import Head from 'next/head';
 // Import global Tailwind styles so they load before the app renders
 import '../src/index.css';
 import * as Sentry from '@sentry/nextjs';
-import getConfig from 'next/config';
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 import {
   validateProductionEnvironment,

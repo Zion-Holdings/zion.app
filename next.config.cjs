@@ -483,15 +483,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
 
-  // Add publicRuntimeConfig to prevent Edge Functions bundling errors
-  publicRuntimeConfig: {
-    // Empty config to prevent 'undefined' errors
-  },
 
-  // Add serverRuntimeConfig for completeness
-  serverRuntimeConfig: {
-    // Empty config to prevent 'undefined' errors
-  },
 };
 
 module.exports = nextConfig;

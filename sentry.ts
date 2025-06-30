@@ -1,12 +1,11 @@
 import * as Sentry from "@sentry/nextjs";
-import getConfig from "next/config";
 import { safeSessionStorage } from "@/utils/safeStorage";
 
 export function register() {
-  const { publicRuntimeConfig } = getConfig();
-  const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN || publicRuntimeConfig.NEXT_PUBLIC_SENTRY_DSN;
-  const SENTRY_RELEASE = process.env.NEXT_PUBLIC_SENTRY_RELEASE || publicRuntimeConfig.NEXT_PUBLIC_SENTRY_RELEASE;
-  const SENTRY_ENVIRONMENT = process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT || publicRuntimeConfig.NEXT_PUBLIC_SENTRY_ENVIRONMENT;
+  // Use environment variables directly instead of runtime config
+  const SENTRY_DSN = process.env.NEXT_PUBLIC_SENTRY_DSN;
+  const SENTRY_RELEASE = process.env.NEXT_PUBLIC_SENTRY_RELEASE;
+  const SENTRY_ENVIRONMENT = process.env.NEXT_PUBLIC_SENTRY_ENVIRONMENT;
 
   // Enhanced validation to prevent initialization with invalid DSNs
   const isInvalidDsn = !SENTRY_DSN || 
