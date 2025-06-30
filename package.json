@@ -98,6 +98,7 @@
     "logs:health": "node scripts/error-monitor.cjs",
     "logs:collect:enhanced": "node scripts/enhanced-log-collector.cjs --analyze --export",
     "logs:auto": "npm run logs:collect:enhanced && npm run logs:summary",
+    "logs:rotate": "node scripts/rotate-logs.cjs",
     "logs:collect:clean": "node scripts/enhanced-log-collector.cjs --clean",
     "logs:health:summary": "node scripts/log-health-summary.cjs",
     "logs:monitor:realtime": "node scripts/realtime-log-monitor.cjs",
