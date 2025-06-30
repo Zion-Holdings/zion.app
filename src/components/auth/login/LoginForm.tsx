@@ -4,10 +4,7 @@ import { useRouter } from 'next/router';
 import { useForm, ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { LogIn } from 'lucide-react/dist/esm/icons/log-in';
-import { User } from 'lucide-react/dist/esm/icons/user';
-import { Eye } from 'lucide-react/dist/esm/icons/eye';
-import { EyeOff } from 'lucide-react/dist/esm/icons/eye-off';
+import { LogIn, User, Eye, EyeOff } from 'lucide-react'
 import { fireEvent } from '@/lib/analytics';
 import { useAuth } from "@/context/auth/AuthProvider";
 import { Button } from "@/components/ui/button";
@@ -127,7 +124,6 @@ export function LoginForm() {
           }
         })}
         className="space-y-6"
-        autoComplete="off" // Disable browser autofill
       >
         <FormField
           control={form.control}
@@ -143,7 +139,6 @@ export function LoginForm() {
                     aria-invalid={!!form.formState.errors.email}
                     className="bg-zion-blue pl-10 text-white placeholder:text-zion-blue-light border-zion-blue-light focus:border-zion-purple"
                     {...field}
-                    autoComplete="off" // Disable browser autofill
                   />
                   <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
                 </div>
@@ -167,7 +162,6 @@ export function LoginForm() {
                     aria-invalid={!!form.formState.errors.password}
                     className="bg-zion-blue pl-10 text-white placeholder:text-zion-blue-light border-zion-blue-light focus:border-zion-purple"
                     {...field}
-                    autoComplete="off" // Disable browser autofill
                   />
                   <LogIn className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate h-4 w-4" />
                   <Button

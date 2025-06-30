@@ -1,11 +1,7 @@
 
 import { ContractTemplate } from "@/types/contracts";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
-import { Edit } from 'lucide-react/dist/esm/icons/edit';
-import { Trash } from 'lucide-react/dist/esm/icons/trash';
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { StarOff } from 'lucide-react/dist/esm/icons/star-off';
+import { Loader2, Edit, Trash, Star, StarOff } from 'lucide-react'
 import { useContractTemplates } from "@/hooks/useContractTemplates";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";

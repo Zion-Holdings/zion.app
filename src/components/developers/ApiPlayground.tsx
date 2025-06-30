@@ -111,7 +111,6 @@ export function ApiPlayground({ method, path, params = [] }: ApiPlaygroundProps)
           key={p.name}
           value={paramValues[p.name] || ""}
           onChange={(e) => handleParamChange(p.name, e.target.value)}
-          placeholder={p.name}
         />
       ))}
       {method !== "GET" && method !== "DELETE" && (

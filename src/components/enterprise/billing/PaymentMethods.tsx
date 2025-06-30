@@ -2,9 +2,7 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CreditCard } from 'lucide-react/dist/esm/icons/credit-card';
-import { Plus } from 'lucide-react/dist/esm/icons/plus';
-import { Trash } from 'lucide-react/dist/esm/icons/trash';
+import { CreditCard, Plus, Trash } from 'lucide-react'
 
 export function PaymentMethods() {
   // Mock payment methods

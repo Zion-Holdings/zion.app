@@ -83,7 +83,6 @@ export default function ProductPage() {
             <Image
               src={product.images[0] || '/placeholder.svg'}
               alt={product.title}
-              fill
               className="object-cover rounded-md"
             />
           </div>

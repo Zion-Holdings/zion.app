@@ -53,10 +53,8 @@ export const ServiceLandingTemplate: React.FC<ServiceLandingTemplateProps> = ({
               <Image
                 src={heroImage}
                 alt={title}
-                fill
                 className="object-cover rounded-lg"
                 loading="lazy"
-                quality={60}
               />
             </div>
           )}

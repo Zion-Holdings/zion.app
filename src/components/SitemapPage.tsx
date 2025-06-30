@@ -2,7 +2,7 @@
 import React from 'react';
 import { completeSitemap, dynamicPaths } from '@/config/sitemap';
 import Link from 'next/link';
-import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
+import { ChevronRight } from 'lucide-react'
 import { SEO } from './SEO';
 
 // Map sitemap paths to their actual routes in the application

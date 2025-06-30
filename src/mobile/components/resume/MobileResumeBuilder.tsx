@@ -11,10 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
-import { Plus } from 'lucide-react/dist/esm/icons/plus';
-import { Zap } from 'lucide-react/dist/esm/icons/zap';
-import { Trash2 } from 'lucide-react/dist/esm/icons/trash2';
+import { ChevronRight, Plus, Zap, Trash2 } from 'lucide-react'
 
 type ResumeStep = "basics" | "experience" | "education" | "skills";
 

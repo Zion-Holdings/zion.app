@@ -8,7 +8,7 @@ import { toast } from "@/components/ui/use-toast";
 import { useRouter } from 'next/router';
 import { logErrorToProduction } from '@/utils/productionLogger';
 import { EmptyState } from "@/components/ui/empty-state";
-import { Heart } from 'lucide-react/dist/esm/icons/heart';
+import { Heart } from 'lucide-react'
 import { logInfo, logWarn } from '@/utils/productionLogger';
 
 export default function SavedTalentsPage() {

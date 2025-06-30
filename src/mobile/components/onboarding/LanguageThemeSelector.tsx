@@ -2,9 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/useTheme";
-import { Moon } from 'lucide-react/dist/esm/icons/moon';
-import { Sun } from 'lucide-react/dist/esm/icons/sun';
-import { Check } from 'lucide-react/dist/esm/icons/check';
+import { Moon, Sun, Check } from 'lucide-react'
 import { Card, CardContent } from "@/components/ui/card";
 
 interface Language {

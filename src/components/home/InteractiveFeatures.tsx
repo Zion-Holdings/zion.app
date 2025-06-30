@@ -1,11 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { Zap } from 'lucide-react/dist/esm/icons/zap';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
+import { ArrowRight, Search, Users, Zap, Settings } from 'lucide-react'
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 

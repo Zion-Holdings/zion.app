@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
-import { Shield } from 'lucide-react/dist/esm/icons/shield';
+import { Loader2, Shield } from 'lucide-react'
 
 interface AuthGuardProps {
   children: React.ReactNode;

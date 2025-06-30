@@ -1,5 +1,5 @@
 
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { Loader2 } from 'lucide-react'
 
 export function LoadingState() {
   return (

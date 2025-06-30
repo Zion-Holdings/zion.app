@@ -2,12 +2,7 @@
 
 import React, { Component, ErrorInfo, ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
-import { Home } from 'lucide-react/dist/esm/icons/home';
-import { Bug } from 'lucide-react/dist/esm/icons/bug';
-import { Send } from 'lucide-react/dist/esm/icons/send';
-import { Clipboard } from 'lucide-react/dist/esm/icons/clipboard';
+import { AlertTriangle, RefreshCw, Home, Bug, Send, Clipboard } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'

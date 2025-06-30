@@ -4,11 +4,7 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
-import { Edit } from 'lucide-react/dist/esm/icons/edit';
-import { Trash2 } from 'lucide-react/dist/esm/icons/trash2';
-import { Github } from 'lucide-react/dist/esm/icons/github';
-import { Link } from 'lucide-react/dist/esm/icons/link';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+import { Edit, Trash2, Github, Link, FileText } from 'lucide-react'
 import Image from 'next/image';
 import { PortfolioProject } from '@/types/resume';
 
@@ -35,7 +31,6 @@ export function ProjectCard({ project, onEdit, onDelete }: ProjectCardProps) {
           <Image
             src={project.image_url}
             alt={project.title}
-            fill
             className="object-cover"
             loading="lazy"
           />

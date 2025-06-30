@@ -1,8 +1,6 @@
 
 import { useState } from "react";
-import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { User } from 'lucide-react/dist/esm/icons/user';
+import { Briefcase, Star, User } from 'lucide-react'
 import { Button } from "@/components/ui/button";
 
 interface UserTypeOption {

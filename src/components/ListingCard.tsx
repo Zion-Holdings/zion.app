@@ -45,7 +45,6 @@ export function ListingCard({
           <Image
             src={images[0]}
             alt={title}
-            fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"
             loading="lazy"
           />

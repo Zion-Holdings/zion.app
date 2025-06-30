@@ -1,4 +1,4 @@
-import { ArrowUp } from 'lucide-react/dist/esm/icons/arrow-up';
+import { ArrowUp } from 'lucide-react'
 import { useEffect, useState } from "react";
 
 export function BackToTopButton() {

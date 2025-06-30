@@ -2,7 +2,6 @@
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { ContactSection } from "@/components/ContactSection";
-import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import Link from "next/link";
 
 export default function About() {
@@ -100,11 +99,10 @@ export default function About() {
               </p>
             </div>
             <div className="rounded-lg overflow-hidden relative w-full h-full">
-              <OptimizedImage
+              <img
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600&q=80"
                 alt="Team collaboration"
                 className="object-cover"
-                fill
               />
             </div>
           </div>
@@ -127,11 +125,10 @@ export default function About() {
               </p>
             </div>
             <div className="rounded-lg overflow-hidden lg:order-first relative w-full h-full">
-              <OptimizedImage
+              <img
                 src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=600&q=80"
                 alt="Tech innovation"
                 className="object-cover"
-                fill
               />
             </div>
           </div>
@@ -196,11 +193,10 @@ export default function About() {
               {team.map((member) => (
                 <div key={member.name} className="text-center space-y-3">
                   <div className="relative w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden">
-                    <OptimizedImage
+                    <img
                       src={member.image}
                       alt={member.name}
                       className="object-cover rounded-full"
-                      fill
                     />
                   </div>
                   <p className="text-white font-bold">{member.name}</p>

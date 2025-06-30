@@ -19,13 +19,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { toast } from '@/hooks/use-toast';
 import { WhitelabelTenant } from '@/hooks/useWhitelabelTenant';
-import { Edit } from 'lucide-react/dist/esm/icons/edit';
-import { MoreHorizontal } from 'lucide-react/dist/esm/icons/more-horizontal';
-import { ExternalLink } from 'lucide-react/dist/esm/icons/external-link';
-import { Power } from 'lucide-react/dist/esm/icons/power';
-import { PowerOff } from 'lucide-react/dist/esm/icons/power-off';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { RefreshCcw } from 'lucide-react/dist/esm/icons/refresh-ccw';
+import { Edit, MoreHorizontal, ExternalLink, Power, PowerOff, Users, RefreshCcw } from 'lucide-react'
 import { format } from 'date-fns';
 
 export function TenantsList() {

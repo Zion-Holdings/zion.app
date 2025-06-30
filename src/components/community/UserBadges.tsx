@@ -1,9 +1,5 @@
 
-import { Trophy } from 'lucide-react/dist/esm/icons/trophy';
-import { Award } from 'lucide-react/dist/esm/icons/award';
-import { BadgeCheck } from 'lucide-react/dist/esm/icons/badge-check';
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { Trophy, Award, BadgeCheck, Star, MessageSquare } from 'lucide-react'
 import { Badge } from "@/types/community";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 

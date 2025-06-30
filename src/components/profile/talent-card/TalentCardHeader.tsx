@@ -1,6 +1,6 @@
 
 import React from "react";
-import { BadgeCheck } from 'lucide-react/dist/esm/icons/badge-check';
+import { BadgeCheck } from 'lucide-react'
 import { TalentCardAvatar } from "./TalentCardAvatar";
 import { TalentCardAvailability } from "./TalentCardAvailability";
 

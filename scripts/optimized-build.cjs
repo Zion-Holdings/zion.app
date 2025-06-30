@@ -3,7 +3,7 @@ const { execSync, spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const process = require('process');
-const { runPreDeployChecks, analyzeAndReport } = require('./deploy-optimization');
+const { runPreDeployChecks, analyzeAndReport } = require('./deploy-optimization.cjs');
 
 // Enhanced memory and performance optimizations
 const optimizedEnv = {

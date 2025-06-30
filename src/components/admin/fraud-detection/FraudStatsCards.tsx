@@ -1,9 +1,7 @@
 
 import React from "react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
-import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
-import { ShieldAlert } from 'lucide-react/dist/esm/icons/shield-alert';
+import { AlertTriangle, AlertCircle, ShieldAlert } from 'lucide-react'
 import { FraudStats } from "@/types/fraud";
 
 interface FraudStatsCardsProps {

@@ -2,7 +2,6 @@ import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import { CAREER_JOBS } from "@/data/careersJobs";
@@ -88,11 +87,10 @@ export default function Careers() {
               </p>
             </div>
             <div className="rounded-lg overflow-hidden relative w-full h-full">
-              <OptimizedImage
+              <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&h=600&q=80"
                 alt="Team collaboration"
                 className="object-cover"
-                fill
               />
             </div>
           </div>

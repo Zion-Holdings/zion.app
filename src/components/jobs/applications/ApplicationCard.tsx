@@ -4,12 +4,7 @@ import { formatDistanceToNow } from "date-fns";
 import { JobApplication } from "@/types/jobs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { HelpCircle } from 'lucide-react/dist/esm/icons/help-circle';
-import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
-import { ExternalLink } from 'lucide-react/dist/esm/icons/external-link';
-import { Download } from 'lucide-react/dist/esm/icons/download';
+import { FileText, MessageSquare, HelpCircle, Calendar, ExternalLink, Download } from 'lucide-react'
 import Link from "next/link";
 import { StatusBadge } from "./StatusBadge";
 import { ApplicationProgress } from "./ApplicationProgress";

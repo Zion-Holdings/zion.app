@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Star } from 'lucide-react/dist/esm/icons/star';
+import { Star } from 'lucide-react'
 import { ReviewStats } from "@/components/reviews/ReviewStats";
 import { ReviewsList } from "@/components/reviews/ReviewsList";
 import { useReviews } from "@/hooks/useReviews";

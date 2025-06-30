@@ -9,13 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar as AvatarPrimitive } from "@/components/ui/avatar"; // Renamed to avoid conflict
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { User } from 'lucide-react/dist/esm/icons/user';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { MoreVertical } from 'lucide-react/dist/esm/icons/more-vertical';
-import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
-import { BriefcaseIcon } from 'lucide-react/dist/esm/icons/briefcase-icon';
+import { MessageSquare, User, FileText, MoreVertical, Calendar, AlertTriangle, BriefcaseIcon } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,

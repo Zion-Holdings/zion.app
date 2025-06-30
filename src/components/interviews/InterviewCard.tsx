@@ -9,11 +9,7 @@ import { useInterviews } from "@/hooks/useInterviews";
 import { format, formatDistanceToNow, isPast, parseISO } from "date-fns";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { ExternalLink } from 'lucide-react/dist/esm/icons/external-link';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { Video } from 'lucide-react/dist/esm/icons/video';
-import { X } from 'lucide-react/dist/esm/icons/x';
+import { Clock, ExternalLink, MessageSquare, Video, X } from 'lucide-react'
 import { toast } from "@/components/ui/use-toast";
 import { InterviewResponseForm } from "./InterviewResponseForm";
 

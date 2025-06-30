@@ -10,9 +10,7 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Download } from 'lucide-react/dist/esm/icons/download';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { Search } from 'lucide-react/dist/esm/icons/search';
+import { Download, FileText, Search } from 'lucide-react'
 import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
 

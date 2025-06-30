@@ -3,8 +3,7 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { Filter } from 'lucide-react/dist/esm/icons/filter';
+import { Search, Filter } from 'lucide-react'
 
 interface FraudFiltersProps {
   searchQuery: string;

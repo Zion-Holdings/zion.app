@@ -8,11 +8,10 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
-import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { BlogPost } from "@/types/blog";
 import { generateRandomBlogPost } from "@/utils/generateRandomBlogPost";
 import { BLOG_POSTS } from "@/data/blog-posts";
-import { Search } from 'lucide-react/dist/esm/icons/search';
+import { Search } from 'lucide-react'
 import { fetchWithRetry } from '@/utils/fetchWithRetry';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
@@ -117,7 +116,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
               <h2 className="text-2xl font-bold text-white mb-6">Featured Article</h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="aspect-video overflow-hidden rounded-lg">
-                  <OptimizedImage
+                  <img
                     src={featuredPost.featuredImage}
                     alt={featuredPost.featuredImageAlt || featuredPost.title}
                     className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
@@ -138,7 +137,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                     {featuredPost.excerpt}
                   </p>
                   <div className="flex items-center mb-6">
-                    <OptimizedImage
+                    <img
                       src={featuredPost.author.avatarUrl}
                       alt={featuredPost.author.name}
                       className="w-10 h-10 rounded-full mr-3"
@@ -213,7 +212,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                 >
                   <Link href={`/blog/${post.slug}`} className="block group">
                   <div className="aspect-[16/9] relative overflow-hidden">
-                    <OptimizedImage
+                    <img
                       src={post.featuredImage}
                       alt={post.featuredImageAlt || post.title}
                       className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
@@ -239,7 +238,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
                       {post.excerpt}
                     </p>
                     <div className="flex items-center">
-                      <OptimizedImage
+                      <img
                         src={post.author.avatarUrl}
                         alt={post.author.name}
                         className="w-8 h-8 rounded-full mr-2"

@@ -1,6 +1,6 @@
 
 import { Badge } from "@/components/ui/badge";
-import { ShieldAlert } from 'lucide-react/dist/esm/icons/shield-alert';
+import { ShieldAlert } from 'lucide-react'
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface DisputeStatusBadgeProps {

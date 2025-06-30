@@ -1,14 +1,7 @@
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { useState, useEffect, useRef, Suspense } from "react";
-import { Brain } from 'lucide-react/dist/esm/icons/brain';
-import { PenLine } from 'lucide-react/dist/esm/icons/pen-line';
-import { BarChart } from 'lucide-react/dist/esm/icons/bar-chart';
-import { Eye } from 'lucide-react/dist/esm/icons/eye';
-import { Bot } from 'lucide-react/dist/esm/icons/bot';
-import { Mic } from 'lucide-react/dist/esm/icons/mic';
-import { Code } from 'lucide-react/dist/esm/icons/code';
-import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
+import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from 'lucide-react'
 import { MARKETPLACE_LISTINGS } from "@/data/listingData";
 import { ProductListing } from "@/types/listings";
 import { useRouter } from 'next/router';

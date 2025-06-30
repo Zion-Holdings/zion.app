@@ -14,8 +14,7 @@ import { BudgetStep } from "@/components/QuoteRequestForm/BudgetStep";
 import { SummaryStep } from "@/components/QuoteRequestForm/SummaryStep";
 import { AutoFillModal } from "@/components/QuoteRequestForm/AutoFillModal";
 import { QuoteFormData } from "@/types/quotes";
-import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { Sparkles, Loader2 } from 'lucide-react'
 import { z } from "zod";
 
 export type QuoteRequestSteps = "service" | "details" | "timeline" | "budget" | "summary";

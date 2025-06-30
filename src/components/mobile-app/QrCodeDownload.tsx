@@ -1,6 +1,6 @@
 
 import React from "react";
-import { QrCode } from 'lucide-react/dist/esm/icons/qr-code';
+import { QrCode } from 'lucide-react'
 import { AppStoreButtons } from "./AppStoreButtons";
 
 export const QrCodeDownload: React.FC = () => {

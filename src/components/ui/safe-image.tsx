@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { ImageIcon } from 'lucide-react/dist/esm/icons/image-icon';
+import { ImageIcon } from 'lucide-react'
 
 interface SafeImageProps {
   src: string;
@@ -67,8 +67,6 @@ export function SafeImage({
       className={className}
       onError={handleError}
       priority={priority}
-      sizes={sizes}
-      quality={quality}
       // Add unoptimized as fallback for problematic images
       unoptimized={hasError}
     />

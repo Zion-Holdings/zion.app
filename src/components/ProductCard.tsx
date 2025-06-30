@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Heart } from 'lucide-react/dist/esm/icons/heart';
+import { Heart } from 'lucide-react'
 import { useWishlist } from '@/hooks/useWishlist';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -133,11 +133,9 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
         <Image
           src={imageUrl}
           alt={imageAltText}
-          fill
           style={{ objectFit: 'cover' }}
           onError={(e) => handleImageError(e)}
           priority={false}
-          sizes={imageSizes}
         />
       ) : (
         <div className="w-full h-full bg-gray-200 flex items-center justify-center">
@@ -161,11 +159,9 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
             <Image
               src={imageUrl}
               alt={imageAltText}
-              fill
               style={{ objectFit: 'cover' }}
               onError={(e) => handleImageError(e)}
               priority={false}
-              sizes={imageSizes}
             />
           ) : (
             <div className="w-full h-full bg-gray-200 flex items-center justify-center">

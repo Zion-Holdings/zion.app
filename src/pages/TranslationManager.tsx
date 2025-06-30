@@ -8,11 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import { useTranslation } from "react-i18next";
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
-import { Check } from 'lucide-react/dist/esm/icons/check';
-import { Globe } from 'lucide-react/dist/esm/icons/globe';
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { AlertTriangle, Check, Globe, Search, Loader2 } from 'lucide-react'
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useLanguage, SupportedLanguage } from "@/context/LanguageContext";
 import { useTranslationService } from "@/hooks/useTranslationService";
@@ -238,7 +234,6 @@ export default function TranslationManager() {
                   <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                   <Input
                     type="search"
-                    placeholder={t('translation.search_placeholder')}
                     className="pl-8"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}

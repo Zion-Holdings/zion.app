@@ -1,8 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
-import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
+import { Loader2, Sparkles } from 'lucide-react'
 import { useResumeEnhancer } from '@/hooks/useResumeEnhancer';
 import { useResume } from '@/hooks/useResume';
 import { BulkAddSkillsProps } from './types';

@@ -4,11 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
-import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { Video } from 'lucide-react/dist/esm/icons/video';
+import { CheckCircle, ChevronRight, FileText, MessageSquare, Video } from 'lucide-react'
 import { Progress } from "@/components/ui/progress";
 import { SeverityIndicator } from "../common/SeverityIndicator";
 import { useRouter } from 'next/router';

@@ -4,8 +4,7 @@ import Link from 'next/link';
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { Logo } from '@/components/header/Logo';
 import { useTranslation } from 'react-i18next';
-import { Menu } from 'lucide-react/dist/esm/icons/menu';
-import { X } from 'lucide-react/dist/esm/icons/x';
+import { Menu, X } from 'lucide-react'
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';

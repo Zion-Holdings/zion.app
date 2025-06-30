@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { Loader2 } from 'lucide-react'
 import { useTranslation } from "react-i18next";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
@@ -90,14 +90,11 @@ export function ITServiceRequestHero() {
               width={200}
               height={200}
               className="w-full h-auto md:w-40"
-              priority
-              quality={60}
             />
             <form onSubmit={handleSubmit} className="space-y-4 flex-1">
               <Input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder={t('onsite_form.name_placeholder', 'Full name')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
                 required
               />
@@ -106,7 +103,6 @@ export function ITServiceRequestHero() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder={t('onsite_form.email_placeholder', 'Work email')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
                 required
               />
@@ -114,21 +110,18 @@ export function ITServiceRequestHero() {
               <Input
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder={t('onsite_form.phone_placeholder', 'Phone number (optional)')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
               />
               <p className="text-xs text-zion-slate-light">{t('onsite_form.phone_helper', 'Include a direct line for urgent updates.')}</p>
               <Input
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
-                placeholder={t('onsite_form.company_placeholder', 'Company name')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
               />
               <p className="text-xs text-zion-slate-light">{t('onsite_form.company_helper', 'Who do you represent?')}</p>
               <Input
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                placeholder={t('onsite_form.location_placeholder', 'Service address or city')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white"
                 required
               />
@@ -136,7 +129,6 @@ export function ITServiceRequestHero() {
               <Textarea
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
-                placeholder={t('onsite_form.details_placeholder', 'Briefly describe the issue or equipment')}
                 className="bg-zion-blue-dark border-zion-blue-light focus:border-zion-purple focus:ring-zion-purple text-white min-h-[80px]"
               />
               <p className="text-xs text-zion-slate-light">{t('onsite_form.details_helper', 'Share any important context for our technicians.')}</p>

@@ -1,9 +1,6 @@
 
 import React from "react";
-import { Brain } from 'lucide-react/dist/esm/icons/brain';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { Award } from 'lucide-react/dist/esm/icons/award';
-import { Zap } from 'lucide-react/dist/esm/icons/zap';
+import { Brain, Clock, Award, Zap } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 const features = [

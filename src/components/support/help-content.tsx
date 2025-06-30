@@ -1,11 +1,7 @@
 
 import React from "react";
 import { HelpCategory } from "./types";
-import { HelpCircle } from 'lucide-react/dist/esm/icons/help-circle';
-import { CreditCard } from 'lucide-react/dist/esm/icons/credit-card';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
-import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
+import { HelpCircle, CreditCard, Users, Calendar, Briefcase } from 'lucide-react'
 
 export const HELP_CATEGORIES: HelpCategory[] = [
   {

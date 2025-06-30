@@ -3,11 +3,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
-import { Plus } from 'lucide-react/dist/esm/icons/plus';
-import { UserCheck } from 'lucide-react/dist/esm/icons/user-check';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { Bell } from 'lucide-react/dist/esm/icons/bell';
+import { ChevronRight, Plus, UserCheck, FileText, Bell } from 'lucide-react'
 import Link from "next/link";
 
 export function ClientDashboard() {

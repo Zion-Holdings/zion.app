@@ -1,5 +1,4 @@
 import React, { useState, Suspense } from 'react';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import {
   Dialog,
   DialogContent,
@@ -42,11 +41,10 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
       <TabsContent value="images" className="pt-4">
         <div className="aspect-video w-full relative">
           <DialogTrigger asChild>
-            <OptimizedImage
+            <img
               src={images[selected] || images[0] || ''}
               alt={`Product image ${selected + 1}`}
               className="w-full h-full object-contain bg-zion-blue-light/10 p-4 cursor-zoom-in"
-              fill
             />
           </DialogTrigger>
         </div>
@@ -58,11 +56,10 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
                 onClick={() => setSelected(idx)}
                 className={`relative w-20 h-20 flex-shrink-0 cursor-pointer rounded overflow-hidden border-2 ${idx === selected ? 'border-zion-purple' : 'border-transparent'}`}
               >
-                <OptimizedImage
+                <img
                   src={img}
                   alt={`Thumbnail image ${idx + 1}`}
                   className="w-full h-full object-cover"
-                  fill
                 />
               </div>
             ))}
@@ -73,16 +70,14 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
       {videoUrl && (
         <TabsContent value="video" className="pt-4">
           <AspectRatio ratio={16 / 9}>
-            <Suspense
-              fallback={
-                <img
-                  src={poster}
-                  alt="Video preview"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              }
-            >
+            <Suspense fallback={
+              <img
+                src="/images/video-placeholder.svg"
+                alt="Video preview"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            }>
               <ReactPlayer url={videoUrl} width="100%" height="100%" controls />
             </Suspense>
           </AspectRatio>
@@ -92,16 +87,14 @@ export function ProductGallery({ images, videoUrl, modelUrl }: ProductGalleryPro
       {modelUrl && (
         <TabsContent value="model" className="pt-4">
           <AspectRatio ratio={16 / 9}>
-            <Suspense
-              fallback={
-                <img
-                  src={poster}
-                  alt="3D model preview"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              }
-            >
+            <Suspense fallback={
+              <img
+                src="/images/model-placeholder.svg"
+                alt="3D model preview"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            }>
               <ModelViewer src={modelUrl} alt="3d model" camera-controls style={{ width: '100%', height: '100%' }} />
             </Suspense>
           </AspectRatio>

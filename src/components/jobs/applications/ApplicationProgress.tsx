@@ -1,9 +1,7 @@
 
 import { ApplicationStatus } from "@/types/jobs";
 import { Progress } from "@/components/ui/progress";
-import { CheckCircle2 } from 'lucide-react/dist/esm/icons/check-circle2';
-import { Circle } from 'lucide-react/dist/esm/icons/circle';
-import { CircleDot } from 'lucide-react/dist/esm/icons/circle-dot';
+import { CheckCircle2, Circle, CircleDot } from 'lucide-react'
 import { cn } from "@/lib/utils";
 
 interface ApplicationProgressProps {

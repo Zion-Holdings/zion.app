@@ -17,15 +17,7 @@ import { FeaturesGuideSection } from "@/components/FeaturesGuideSection";
 import { SocialShareSection } from "@/components/SocialShareSection";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/context/LanguageContext";
-import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { Zap } from 'lucide-react/dist/esm/icons/zap';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
-import { BarChart3 } from 'lucide-react/dist/esm/icons/bar-chart3';
-import { Smartphone } from 'lucide-react/dist/esm/icons/smartphone';
+import { ArrowRight, Users, Zap, Settings, Search, MessageSquare, Sparkles, BarChart3, Smartphone } from 'lucide-react'
 
 export default function LandingPage() {
   const { t } = useTranslation();

@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Badge } from "@/components/ui/badge";
-import { X } from 'lucide-react/dist/esm/icons/x';
+import { X } from 'lucide-react'
 
 interface MetadataFormProps {
   form: UseFormReturn<AppMetadataValues>;

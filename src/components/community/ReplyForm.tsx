@@ -52,7 +52,6 @@ export const ReplyForm = ({ onSubmit, parentId }: ReplyFormProps) => {
                 <FormItem>
                   <FormControl>
                     <Textarea
-                      placeholder={parentId ? "Write your reply..." : "Join the discussion..."}
                       className="min-h-[100px] resize-y"
                       {...field}
                     />

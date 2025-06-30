@@ -1,9 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Download } from 'lucide-react/dist/esm/icons/download';
-import { Mail } from 'lucide-react/dist/esm/icons/mail';
-import { BarChart3 } from 'lucide-react/dist/esm/icons/bar-chart3';
+import { Download, Mail, BarChart3 } from 'lucide-react'
 import Link from "next/link";
 
 export function BillingHeader() {

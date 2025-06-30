@@ -117,9 +117,6 @@ export function OptimizedImage({
           width={width}
           height={height}
           priority={priority}
-          quality={quality}
-          sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
-          placeholder={placeholder}
           blurDataURL={placeholder === 'blur' ? generateBlurDataURL() : undefined}
           onLoad={handleLoad}
           onError={handleError}

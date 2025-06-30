@@ -3,12 +3,7 @@ import React, { useState } from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Send } from 'lucide-react/dist/esm/icons/send';
-import { PaperclipIcon } from 'lucide-react/dist/esm/icons/paperclip-icon';
-import { ChevronLeft } from 'lucide-react/dist/esm/icons/chevron-left';
-import { MoreVertical } from 'lucide-react/dist/esm/icons/more-vertical';
-import { Video } from 'lucide-react/dist/esm/icons/video';
-import { Phone } from 'lucide-react/dist/esm/icons/phone';
+import { Send, PaperclipIcon, ChevronLeft, MoreVertical, Video, Phone } from 'lucide-react'
 import { cn } from "@/lib/utils";
 import { useRouter } from 'next/router';
 import { toast } from "sonner";

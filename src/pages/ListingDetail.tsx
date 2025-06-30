@@ -7,10 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Skeleton from "@/components/ui/skeleton";
 import ImageWithRetry from '@/components/ui/ImageWithRetry';
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { Brain } from 'lucide-react/dist/esm/icons/brain';
-import { Shield } from 'lucide-react/dist/esm/icons/shield';
+import { Star, MessageSquare, Brain, Shield } from 'lucide-react'
 import { cn } from "@/lib/utils";
 import Link from 'next/link';
 import { MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
@@ -74,7 +71,6 @@ export default function ListingDetail() {
                       alt={listing.title}
                       className="object-cover"
                       fallbackSrc="/placeholder.svg"
-                      fill
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-zion-blue-light/20">
@@ -99,7 +95,6 @@ export default function ListingDetail() {
                           alt={`${listing.title} - image ${index + 1}`}
                           className="object-cover"
                           fallbackSrc="/placeholder.svg"
-                          fill
                         />
                       </div>
                     ))}
@@ -246,7 +241,6 @@ export default function ListingDetail() {
                           src={listing.author.avatarUrl}
                           alt={listing.author.name}
                           className="object-cover"
-                          fill
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.src = "https://ui-avatars.com/api/?name=" + encodeURIComponent(listing.author.name);

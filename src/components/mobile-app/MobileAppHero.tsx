@@ -1,8 +1,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
-import { Phone } from 'lucide-react/dist/esm/icons/phone';
+import { ArrowRight, Phone } from 'lucide-react'
 import { Button } from "@/components/ui/button";
 import { AppStoreButtons } from "./AppStoreButtons";
 

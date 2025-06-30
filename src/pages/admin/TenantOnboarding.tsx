@@ -283,7 +283,6 @@ export default function TenantOnboarding() {
                           name="subdomain"
                           value={formData.subdomain}
                           onChange={handleInputChange}
-                          placeholder={formData.brand_name ? formData.brand_name.toLowerCase().replace(/[^a-z0-9]/g, '') : "company"}
                           className="rounded-r-none"
                         />
                         <div className="bg-muted px-3 py-2 border border-l-0 border-input rounded-r-md text-muted-foreground">

@@ -5,18 +5,7 @@ import {
   NotificationContextType,
 } from '@/context/notifications';
 import { formatDistanceToNow } from 'date-fns';
-import { Bell } from 'lucide-react/dist/esm/icons/bell';
-import { Check } from 'lucide-react/dist/esm/icons/check';
-import { Trash2 } from 'lucide-react/dist/esm/icons/trash2';
-import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
-import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
-import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
-import { MessageCircle } from 'lucide-react/dist/esm/icons/message-circle';
-import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
-import { UserCheck } from 'lucide-react/dist/esm/icons/user-check';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
-import { Package } from 'lucide-react/dist/esm/icons/package';
-import {  } from 'lucide-react/dist/esm/icons/';
+import { Bell, Check, Trash2, ChevronRight, CheckCircle, AlertCircle, MessageCircle, Briefcase, UserCheck, Settings, Package } from 'lucide-react'
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';

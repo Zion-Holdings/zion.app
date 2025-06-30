@@ -13,9 +13,7 @@ import {
   SelectTrigger,
   SelectValue 
 } from "@/components/ui/select";
-import { Zap } from 'lucide-react/dist/esm/icons/zap';
-import { ChevronLeft } from 'lucide-react/dist/esm/icons/chevron-left';
-import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
+import { Zap, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 

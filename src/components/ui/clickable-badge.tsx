@@ -1,6 +1,6 @@
 
 import React from "react";
-import { X } from 'lucide-react/dist/esm/icons/x';
+import { X } from 'lucide-react'
 import { cn } from "@/lib/utils";
 import { badgeVariants } from "@/components/ui/badge-variants";
 

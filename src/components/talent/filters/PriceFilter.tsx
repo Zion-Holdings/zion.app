@@ -1,6 +1,5 @@
 
-import { ChevronDown } from 'lucide-react/dist/esm/icons/chevron-down';
-import { ChevronUp } from 'lucide-react/dist/esm/icons/chevron-up';
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import { Slider } from "@/components/ui/slider";
 import { PriceFilterProps } from "@/types/filters";
 

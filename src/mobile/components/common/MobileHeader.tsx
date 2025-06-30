@@ -1,8 +1,6 @@
 import React from "react";
 import { useRouter } from 'next/router';
-import { ChevronLeft } from 'lucide-react/dist/esm/icons/chevron-left';
-import { Bell } from 'lucide-react/dist/esm/icons/bell';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
+import { ChevronLeft, Bell, Settings } from 'lucide-react'
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 

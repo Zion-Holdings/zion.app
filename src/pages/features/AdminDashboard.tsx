@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
-import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import Link from 'next/link';
 
 export default function AdminDashboard() {
@@ -36,11 +35,10 @@ export default function AdminDashboard() {
             Visualize user activity, manage orders and keep your marketplace running smoothly.
           </p>
           <div className="relative w-full h-auto aspect-video mx-auto mb-12 rounded-lg shadow-xl overflow-hidden">
-            <OptimizedImage
+            <img
               src="https://placehold.co/800x400"
               alt="Screenshot of admin dashboard"
               className="object-cover"
-              fill
             />
           </div>
           <h2 className="text-2xl font-bold mb-4">Benefits &amp; Use Cases</h2>

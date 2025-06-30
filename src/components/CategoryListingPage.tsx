@@ -4,10 +4,7 @@ import { ListingScoreCard } from "@/components/ListingScoreCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { Filter } from 'lucide-react/dist/esm/icons/filter';
-import { ArrowDownAZ } from 'lucide-react/dist/esm/icons/arrow-down-az';
-import { ArrowUpZA } from 'lucide-react/dist/esm/icons/arrow-up-za';
+import { Search, Filter, ArrowDownAZ, ArrowUpZA } from 'lucide-react'
 import ListingGridSkeleton from "@/components/skeletons/ListingGridSkeleton";
 import { safeStorage } from "@/utils/safeStorage";
 

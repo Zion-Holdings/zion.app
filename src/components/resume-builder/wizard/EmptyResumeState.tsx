@@ -1,7 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FilePlus } from 'lucide-react/dist/esm/icons/file-plus';
+import { FilePlus } from 'lucide-react'
 import { EmptyResumeProps } from "./types";
 
 export const EmptyResumeState = ({ onCreateClick }: EmptyResumeProps) => {

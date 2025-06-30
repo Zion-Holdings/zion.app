@@ -1,9 +1,7 @@
 
 import { useState } from "react";
 import { formatDistanceToNow } from "date-fns";
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { Flag } from 'lucide-react/dist/esm/icons/flag';
-import { User } from 'lucide-react/dist/esm/icons/user';
+import { Star, Flag, User } from 'lucide-react'
 import { Review } from "@/types/reviews";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";

@@ -5,8 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
-import { Globe } from 'lucide-react/dist/esm/icons/globe';
+import { Loader2, Globe } from 'lucide-react'
 import { useTranslation } from "react-i18next";
 import { useTranslationService } from "@/hooks/useTranslationService";
 import { useLanguage, SupportedLanguage } from "@/context/LanguageContext";
@@ -231,7 +230,6 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
                     id={`title-${lang.code}`}
                     value={title[lang.code] || ''}
                     onChange={(e) => handleTitleChange(e.target.value)}
-                    placeholder={t('jobs.title_placeholder')}
                     className="w-full"
                     dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
                   />
@@ -278,7 +276,6 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
                   id={`description-${lang.code}`}
                   value={description[lang.code] || ''}
                   onChange={(e) => handleDescriptionChange(e.target.value)}
-                  placeholder={t('jobs.description_placeholder')}
                   className="min-h-32 w-full"
                   dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
                 />
@@ -324,7 +321,6 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
                   id={`requirements-${lang.code}`}
                   value={requirements[lang.code] || ''}
                   onChange={(e) => handleRequirementsChange(e.target.value)}
-                  placeholder={t('jobs.requirements_placeholder')}
                   className="min-h-24 w-full"
                   dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
                 />

@@ -1,5 +1,5 @@
 
-import { Star } from 'lucide-react/dist/esm/icons/star';
+import { Star } from 'lucide-react'
 import { Progress } from "@/components/ui/progress";
 
 interface ReviewStatsProps {

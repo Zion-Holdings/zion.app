@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
-import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import Link from 'next/link';
 import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
 
@@ -43,11 +42,10 @@ export default function IntegrationsFeature() {
             Automate your workflows by connecting Zion with the tools you already use.
           </p>
           <div className="relative w-full h-auto aspect-video mx-auto mb-12 rounded-lg shadow-xl overflow-hidden">
-            <OptimizedImage
+            <img
               src="https://placehold.co/800x400"
               alt="Screenshot showing integrations"
               className="object-cover"
-              fill
             />
           </div>
           <h2 className="text-2xl font-bold mb-4">Benefits &amp; Use Cases</h2>

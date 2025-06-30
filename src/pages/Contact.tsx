@@ -16,10 +16,7 @@ import {
 } from '@/components/ui/tooltip';
 import z from 'zod';
 import { ChatAssistant } from '@/components/ChatAssistant';
-import { Mail } from 'lucide-react/dist/esm/icons/mail';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
-import { Phone } from 'lucide-react/dist/esm/icons/phone';
+import { Mail, MessageSquare, MapPin, Phone } from 'lucide-react'
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 

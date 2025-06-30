@@ -4,15 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Video } from 'lucide-react/dist/esm/icons/video';
-import { VideoOff } from 'lucide-react/dist/esm/icons/video-off';
-import { Mic } from 'lucide-react/dist/esm/icons/mic';
-import { MicOff } from 'lucide-react/dist/esm/icons/mic-off';
-import { Phone } from 'lucide-react/dist/esm/icons/phone';
-import { ScreenShare } from 'lucide-react/dist/esm/icons/screen-share';
-import { ScreenShareOff } from 'lucide-react/dist/esm/icons/screen-share-off';
-import { Volume2 } from 'lucide-react/dist/esm/icons/volume2';
-import { VolumeX } from 'lucide-react/dist/esm/icons/volume-x';
+import { Video, VideoOff, Mic, MicOff, Phone, ScreenShare, ScreenShareOff, Volume2, VolumeX } from 'lucide-react'
 import './video-call.css';
 
 interface Participant {

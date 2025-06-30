@@ -1,11 +1,6 @@
 
 import React from "react";
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { Shield } from 'lucide-react/dist/esm/icons/shield';
-import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
-import { Award } from 'lucide-react/dist/esm/icons/award';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
-import { Globe } from 'lucide-react/dist/esm/icons/globe';
+import { Users, Shield, Briefcase, Award, Settings, Globe } from 'lucide-react'
 
 const features = [
   {

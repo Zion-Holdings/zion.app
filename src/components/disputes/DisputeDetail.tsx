@@ -16,10 +16,7 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { format, formatDistanceToNow } from "date-fns";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { ArrowDown } from 'lucide-react/dist/esm/icons/arrow-down';
-import { Check } from 'lucide-react/dist/esm/icons/check';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { Download } from 'lucide-react/dist/esm/icons/download';
+import { ArrowDown, Check, MessageSquare, Download } from 'lucide-react'
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 

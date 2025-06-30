@@ -10,7 +10,7 @@ import {
 } from "@/services/pricingSuggestionService";
 import { PricingSuggestionBox } from "./PricingSuggestionBox";
 import { useAuth } from "@/hooks/useAuth";
-import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
+import { Sparkles } from 'lucide-react'
 
 interface TalentRateRecommenderProps {
   skills: string[];

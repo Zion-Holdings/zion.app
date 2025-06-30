@@ -1,10 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Eye } from 'lucide-react/dist/esm/icons/eye';
-import { Info } from 'lucide-react/dist/esm/icons/info';
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
-import { Ban } from 'lucide-react/dist/esm/icons/ban';
+import { Eye, Info, AlertTriangle, Ban } from 'lucide-react'
 
 interface ActionButtonsProps {
   flagId: string;

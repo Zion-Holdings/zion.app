@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 import { useRouter } from 'next/router';
 import AdvancedSEO from '@/components/seo/AdvancedSEO';
 import { BLOG_POSTS } from '@/data/blog-posts';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { AuthorBio } from '@/components/blog/AuthorBio';
 import { SocialShareButtons } from '@/components/blog/SocialShareButtons';
 import { CommentsSection } from '@/components/blog/CommentsSection';
@@ -87,7 +86,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
         <h1>{post.title}</h1>
         {post.excerpt && <p className="lead">{post.excerpt}</p>}
         <div className="flex items-center gap-3 mb-6">
-          <OptimizedImage
+          <img
             src={post.author.avatarUrl}
             alt={post.author.name}
             className="w-10 h-10 rounded-full"
@@ -107,11 +106,10 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ initialPost }) => {
         </div>
         {post.featuredImage && (
           <div className="aspect-[16/9] w-full relative overflow-hidden rounded-lg mb-6">
-            <OptimizedImage
+            <img
               src={post.featuredImage}
               alt={post.title}
               className="object-cover w-full h-full"
-              fill={true} // Add fill for Next.js OptimizedImage if layout="fill" behavior is intended within a sized parent
               onError={(e) => {
                 const target = e.currentTarget as HTMLImageElement;
                 target.src = '/images/blog-placeholder.svg';

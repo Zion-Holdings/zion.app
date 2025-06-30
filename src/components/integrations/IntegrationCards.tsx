@@ -4,12 +4,7 @@ import { logDebug } from '@/utils/productionLogger';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
-import { Check } from 'lucide-react/dist/esm/icons/check';
-import { ExternalLink } from 'lucide-react/dist/esm/icons/external-link';
-import { Slack } from 'lucide-react/dist/esm/icons/slack';
-import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
-import { Users } from 'lucide-react/dist/esm/icons/users';
+import { ArrowRight, Check, ExternalLink, Slack, Briefcase, Users } from 'lucide-react'
 
 interface IntegrationCardProps {
   title: string;

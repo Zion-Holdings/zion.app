@@ -3,7 +3,7 @@ import { CategoryCard } from "@/components/CategoryCard";
 import { GradientHeading } from "@/components/GradientHeading";
 import { SkeletonCard } from '@/components/ui';
 import ErrorBoundary from "@/components/GlobalErrorBoundary";
-import { Folder } from 'lucide-react/dist/esm/icons/folder';
+import { Folder } from 'lucide-react'
 import { CATEGORIES } from '@/data/categories';
 import { NextSeo } from '@/components/NextSeo';
 import {logErrorToProduction} from '@/utils/productionLogger';

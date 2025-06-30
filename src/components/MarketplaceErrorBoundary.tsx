@@ -4,8 +4,7 @@ import * as Sentry from '@sentry/nextjs';
 import { mutate } from 'swr';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { RefreshCcw } from 'lucide-react/dist/esm/icons/refresh-ccw';
-import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
+import { RefreshCcw, AlertCircle } from 'lucide-react'
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 

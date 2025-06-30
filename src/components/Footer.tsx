@@ -1,11 +1,5 @@
 import { FooterNewsletter } from "@/components/FooterNewsletter";
-import { Twitter } from 'lucide-react/dist/esm/icons/twitter';
-import { Linkedin } from 'lucide-react/dist/esm/icons/linkedin';
-import { Facebook } from 'lucide-react/dist/esm/icons/facebook';
-import { Instagram } from 'lucide-react/dist/esm/icons/instagram';
-import { Github } from 'lucide-react/dist/esm/icons/github';
-import { ChevronUp } from 'lucide-react/dist/esm/icons/chevron-up';
-import {  } from 'lucide-react/dist/esm/icons/';
+import { Twitter, Linkedin, Facebook, Instagram, Github, ChevronUp } from 'lucide-react'
 import Link from "next/link"; // Changed from react-router-dom
 import { FeedbackWidget } from "@/components/feedback/FeedbackWidget";
 

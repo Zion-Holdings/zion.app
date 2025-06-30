@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+import { FileText } from 'lucide-react'
 import { ResumeOption } from '../resume-selector/types';
 import { ResumePreviewCard } from './ResumePreviewCard';
 import { Resume } from '@/types/resume';

@@ -11,7 +11,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { Loader2 } from 'lucide-react'
 
 interface SearchResult {
   id: string;

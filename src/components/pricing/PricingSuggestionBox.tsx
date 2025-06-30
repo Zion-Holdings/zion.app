@@ -4,9 +4,7 @@ import { Button } from "@/components/ui/button";
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
-import { Info } from 'lucide-react/dist/esm/icons/info';
-import { ThumbsUp } from 'lucide-react/dist/esm/icons/thumbs-up';
+import { Loader2, Info, ThumbsUp } from 'lucide-react'
 import { PricingSuggestion } from "@/services/pricingSuggestionService";
 
 interface PricingSuggestionBoxProps {

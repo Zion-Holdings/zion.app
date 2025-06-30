@@ -1,11 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
-import { Check } from 'lucide-react/dist/esm/icons/check';
-import { X } from 'lucide-react/dist/esm/icons/x';
+import { Sparkles, Loader2, RefreshCw, Check, X } from 'lucide-react'
 import { useAIContentEnhancer, AIEnhancementOptions } from '@/hooks/useAIContentEnhancer';
 import { toast } from '@/hooks/use-toast';
 

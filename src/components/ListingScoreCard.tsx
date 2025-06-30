@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { StarIcon } from 'lucide-react/dist/esm/icons/star-icon';
+import { StarIcon } from 'lucide-react'
 import Image from 'next/image'; // Import next/image
 import React, { useState } from 'react'; // Import useState
 
@@ -45,7 +45,6 @@ export function ListingScoreCard({
           <Image
             src={image} 
             alt={title} 
-            fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"
             onError={() => setMainImageError(true)}
             priority={false}
@@ -120,7 +119,6 @@ export function ListingScoreCard({
                 <Image
                   src={authorImage}
                   alt={author}
-                  fill
                   className="object-cover rounded-full"
                   onError={() => setAuthorImageError(true)}
                   priority={false}

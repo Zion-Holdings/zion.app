@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Star } from 'lucide-react/dist/esm/icons/star';
+import { Star } from 'lucide-react'
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
 const testimonials = [

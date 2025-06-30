@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Filter } from 'lucide-react/dist/esm/icons/filter';
+import { Filter } from 'lucide-react'
 import { SearchFilter } from "./filters/SearchFilter";
 import { SortFilter } from "./filters/SortFilter";
 import { SkillsFilter } from "./filters/SkillsFilter";

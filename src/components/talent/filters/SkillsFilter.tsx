@@ -1,6 +1,5 @@
 
-import { ChevronDown } from 'lucide-react/dist/esm/icons/chevron-down';
-import { ChevronUp } from 'lucide-react/dist/esm/icons/chevron-up';
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { SkillsFilterProps } from "@/types/filters";

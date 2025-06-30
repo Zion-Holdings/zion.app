@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { X } from 'lucide-react/dist/esm/icons/x';
+import { Search, X } from 'lucide-react'
 import { Input } from "@/components/ui/input";
 import { AutocompleteSuggestions } from "@/components/search/AutocompleteSuggestions";
 import { SearchSuggestion } from "@/types/search";
@@ -240,7 +239,6 @@ export function EnhancedSearchInput({
             setValueOnFocus(null);
           }}
           onKeyDown={handleKeyDown}
-          placeholder={placeholder}
           aria-label={t('general.search')}
           className="pl-10 bg-zion-blue border border-zion-blue-light text-gray-800 placeholder:text-zion-slate h-auto py-0 min-w-0"
           aria-autocomplete="list"

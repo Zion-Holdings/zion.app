@@ -8,11 +8,7 @@ import {
   DialogDescription 
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
-import { User } from 'lucide-react/dist/esm/icons/user';
-import { Mail } from 'lucide-react/dist/esm/icons/mail';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { DollarSign } from 'lucide-react/dist/esm/icons/dollar-sign';
+import { Calendar, User, Mail, Clock, DollarSign } from 'lucide-react'
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { QuoteStatusBadge } from "./QuoteStatusBadge";

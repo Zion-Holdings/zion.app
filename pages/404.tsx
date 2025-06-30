@@ -7,12 +7,7 @@ import { Header } from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { captureException } from '@/utils/sentry';
-import { Home } from 'lucide-react/dist/esm/icons/home';
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { ShoppingCart } from 'lucide-react/dist/esm/icons/shopping-cart';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { ArrowLeft } from 'lucide-react/dist/esm/icons/arrow-left';
-import { ExternalLink } from 'lucide-react/dist/esm/icons/external-link';
+import { Home, Search, ShoppingCart, Users, ArrowLeft, ExternalLink } from 'lucide-react';
 import { logInfo } from '@/utils/productionLogger';
 
 export default function Custom404() {

@@ -10,9 +10,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuLabel,
 } from '@/components/ui/dropdown-menu';
-import { User as UserIcon } from 'lucide-react/dist/esm/icons/user as user-icon';
-import { Package } from 'lucide-react/dist/esm/icons/package';
-import { LogOut } from 'lucide-react/dist/esm/icons/log-out'; // Assuming lucide-react is used
+import { User as UserIcon, Package } from 'lucide-react'
+import { LogOut } from 'lucide-react'; // Assuming lucide-react is used
 
 export const AvatarMenu: React.FC = () => {
   const { user, logout, avatarUrl } = useAuth();

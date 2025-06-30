@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProductListing } from "@/types/listings";
-import { DollarSign } from 'lucide-react/dist/esm/icons/dollar-sign';
+import { DollarSign } from 'lucide-react'
 import { RatingStars } from "@/components/RatingStars";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { useDispatch } from 'react-redux';

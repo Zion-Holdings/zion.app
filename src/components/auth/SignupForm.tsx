@@ -7,11 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
-import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
-import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
-import { Eye } from 'lucide-react/dist/esm/icons/eye';
-import { EyeOff } from 'lucide-react/dist/esm/icons/eye-off';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { CheckCircle, AlertCircle, Eye, EyeOff, Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils';
 import { fireEvent } from '@/lib/analytics';
 import {logErrorToProduction} from '@/utils/productionLogger';

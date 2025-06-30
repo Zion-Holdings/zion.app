@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { X } from 'lucide-react/dist/esm/icons/x';
+import { Search, X } from 'lucide-react'
 import { Input } from '@/components/ui/input';
 import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions';
 import { fireEvent } from '@/lib/analytics';
@@ -120,7 +119,6 @@ export function SearchBar({ value, onChange, onSelectSuggestion, placeholder = '
               setHighlightedIndex(-1);
             }
           }}
-          placeholder={placeholder}
           className="pl-10 bg-zion-blue border border-zion-blue-light text-white placeholder:text-zion-slate"
           aria-autocomplete="list"
           aria-activedescendant={highlightedIndex !== -1 ? `suggestion-item-${highlightedIndex}` : undefined}

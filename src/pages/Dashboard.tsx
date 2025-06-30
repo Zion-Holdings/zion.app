@@ -5,16 +5,7 @@ import { useRequireAuth } from "@/hooks/useAuthGuard";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
-import { UserCheck } from 'lucide-react/dist/esm/icons/user-check';
-import { Bell } from 'lucide-react/dist/esm/icons/bell';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { LogOut } from 'lucide-react/dist/esm/icons/log-out';
-import { Send } from 'lucide-react/dist/esm/icons/send';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { Heart } from 'lucide-react/dist/esm/icons/heart';
-import { Key } from 'lucide-react/dist/esm/icons/key';
-import { ShoppingBag } from 'lucide-react/dist/esm/icons/shopping-bag';
+import { UserCheck, Bell, MessageSquare, LogOut, Send, Settings, FileText, Heart, Key, ShoppingBag } from 'lucide-react'
 import { useGetOrdersQuery } from '@/hooks/useOrders';
 import { useFavorites } from '@/hooks/useFavorites';
 import { useToast } from "@/hooks/use-toast";

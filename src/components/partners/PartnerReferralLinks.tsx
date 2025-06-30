@@ -2,10 +2,7 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Copy } from 'lucide-react/dist/esm/icons/copy';
-import { Download } from 'lucide-react/dist/esm/icons/download';
-import { Link } from 'lucide-react/dist/esm/icons/link';
-import { Plus } from 'lucide-react/dist/esm/icons/plus';
+import { Copy, Download, Link, Plus } from 'lucide-react'
 import { toast } from "@/hooks/use-toast";
 import { useReferrals } from "@/hooks/useReferrals";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";

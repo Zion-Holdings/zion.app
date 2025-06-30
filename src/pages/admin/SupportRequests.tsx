@@ -7,8 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { Filter } from 'lucide-react/dist/esm/icons/filter';
+import { Search, Filter } from 'lucide-react'
 import { SEO } from "@/components/SEO";
 
 // Mock data for support requests

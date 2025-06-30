@@ -1,10 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
-import { CheckCircle2 } from 'lucide-react/dist/esm/icons/check-circle2';
+import { Star, MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react'
 import Link from "next/link";
 import { TalentProfile } from "@/types/talent";
 import Image from 'next/image'; // Import next/image

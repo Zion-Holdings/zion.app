@@ -47,7 +47,6 @@ export const RateOptimizationSection: React.FC<RateOptimizationSectionProps> = (
                 type="number"
                 min="1"
                 step="0.01"
-                placeholder={rateType === "hourly" ? "e.g. 45" : "e.g. 1000"}
                 {...field}
               />
             </FormControl>

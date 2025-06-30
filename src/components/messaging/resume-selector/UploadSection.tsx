@@ -1,8 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Upload } from 'lucide-react/dist/esm/icons/upload';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+import { Upload, FileText } from 'lucide-react'
 
 interface UploadSectionProps {
   customFile: File | null;

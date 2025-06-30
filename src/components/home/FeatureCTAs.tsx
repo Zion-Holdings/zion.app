@@ -5,18 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { Zap } from 'lucide-react/dist/esm/icons/zap';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { Smartphone } from 'lucide-react/dist/esm/icons/smartphone';
-import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
-import { BookOpen } from 'lucide-react/dist/esm/icons/book-open';
-import { Code } from 'lucide-react/dist/esm/icons/code';
-import { Building } from 'lucide-react/dist/esm/icons/building';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { ArrowRight, Users, Zap, Settings, Search, MessageSquare, Smartphone, Calendar, BookOpen, Code, Building, Clock } from 'lucide-react'
 import { cn } from "@/lib/utils";
 
 interface FeatureCTAsProps {

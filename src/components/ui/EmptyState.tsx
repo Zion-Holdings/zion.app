@@ -1,5 +1,4 @@
-import { Package } from 'lucide-react/dist/esm/icons/package';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { Package, RefreshCw } from 'lucide-react'
 import { Button } from './button';
 
 interface EmptyStateProps {

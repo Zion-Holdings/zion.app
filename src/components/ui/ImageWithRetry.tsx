@@ -46,7 +46,6 @@ export function ImageWithRetry({
         onError={handleError}
         className={cn(className)}
         fill={fill}
-        sizes={fill ? props.sizes || '100vw' : props.sizes}
       />
       {failed && (
         <button

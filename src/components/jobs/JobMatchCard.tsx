@@ -3,11 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Building } from 'lucide-react/dist/esm/icons/building';
-import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { DollarSign } from 'lucide-react/dist/esm/icons/dollar-sign';
-import { Star } from 'lucide-react/dist/esm/icons/star';
+import { Building, MapPin, Clock, DollarSign, Star } from 'lucide-react'
 import { formatDistanceToNow } from "date-fns";
 import { JobMatch } from "@/types/jobs";
 

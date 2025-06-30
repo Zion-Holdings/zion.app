@@ -1,11 +1,6 @@
 
 import { useState } from "react";
-import { Check } from 'lucide-react/dist/esm/icons/check';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { Key } from 'lucide-react/dist/esm/icons/key';
-import { MoreVertical } from 'lucide-react/dist/esm/icons/more-vertical';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
-import { X } from 'lucide-react/dist/esm/icons/x';
+import { Check, Clock, Key, MoreVertical, RefreshCw, X } from 'lucide-react'
 import { format } from "date-fns";
 import { useApiKeys, type ApiKeyScope } from "@/hooks/useApiKeys";
 

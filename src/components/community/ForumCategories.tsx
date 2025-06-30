@@ -1,11 +1,7 @@
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
-import { Code } from 'lucide-react/dist/esm/icons/code';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { Megaphone } from 'lucide-react/dist/esm/icons/megaphone';
+import { MessageSquare, Briefcase, Code, FileText, Megaphone } from 'lucide-react'
 import { ForumCategoryInfo } from "@/types/community";
 
 const categories: ForumCategoryInfo[] = [

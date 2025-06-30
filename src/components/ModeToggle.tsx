@@ -1,5 +1,4 @@
-import { Moon } from 'lucide-react/dist/esm/icons/moon';
-import { Sun } from 'lucide-react/dist/esm/icons/sun';
+import { Moon, Sun } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { toast } from "@/hooks/use-toast"

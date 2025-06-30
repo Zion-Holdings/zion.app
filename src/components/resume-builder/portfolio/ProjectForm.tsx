@@ -14,11 +14,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
-import { Link } from 'lucide-react/dist/esm/icons/link';
-import { FileImage } from 'lucide-react/dist/esm/icons/file-image';
-import { Github } from 'lucide-react/dist/esm/icons/github';
-import { Edit } from 'lucide-react/dist/esm/icons/edit';
+import { Loader2, Link, FileImage, Github, Edit } from 'lucide-react'
 import { PortfolioProject } from '@/types/resume';
 import { usePortfolio } from '@/hooks/usePortfolio';
 import { useAuth } from '@/hooks/useAuth';
