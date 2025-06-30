@@ -452,28 +452,30 @@ export {
 
 // Auto-collect production logger events
 if (typeof window !== 'undefined') {
-  // Hook into external error logger
-  import('./logError').then(({logErrorToProduction}) => {
-    const originalLogError = logError;
-    (window as any).logError = (...args: any[]) => {
-      const result = originalLogError(args[0], args[1]);
-      
-      // Collect the log
-      advancedLogCollector.collectLog({
-        id: advancedLogCollector['generateLogId'](),
-        timestamp: new Date().toISOString(),
-        level: 'error',
-        message: args[0] || 'Unknown error',
-        source: 'client',
-        sessionId: advancedLogCollector['getSessionId'](),
-        context: args[2],
-        stackTrace: args[1] instanceof Error ? args[1].stack : undefined,
-        url: window.location.href,
-        userAgent: navigator.userAgent,
-      });
-      
-      return result;
-    };
+  // Hook into external error logger from logError module
+  import('./logError').then((logErrorModule) => {
+    const originalLogError = logErrorModule.logError;
+    if (originalLogError) {
+      (window as any).logError = (...args: any[]) => {
+        const result = originalLogError(args[0], args[1]);
+        
+        // Collect the log
+        advancedLogCollector.collectLog({
+          id: advancedLogCollector['generateLogId'](),
+          timestamp: new Date().toISOString(),
+          level: 'error',
+          message: args[0] || 'Unknown error',
+          source: 'client',
+          sessionId: advancedLogCollector['getSessionId'](),
+          context: args[2],
+          stackTrace: args[1] instanceof Error ? args[1].stack : undefined,
+          url: window.location.href,
+          userAgent: navigator.userAgent,
+        });
+        
+        return result;
+      };
+    }
   }).catch(() => {
     // Fallback if import fails
     console.warn('Could not hook into logError for advanced log collection');

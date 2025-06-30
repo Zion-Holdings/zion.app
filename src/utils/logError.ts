@@ -10,7 +10,7 @@ import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
  * Centralized error logger for frontend issues. Reports to Sentry when
  * available and falls back to console.error. Also sends to custom backend.
  */
-export function logErrorToProduction(
+export function logError(
   error: unknown,
   context?: { componentStack?: string } & Record<string, unknown>
 ): string {
@@ -85,7 +85,10 @@ export function logErrorToProduction(
       });
     }
   } catch (err) {
-    logErrorToProduction('Failed to report error to Sentry:', err, { componentStack: context?.componentStack });
+    // Use recursion guard to prevent infinite loops
+    if (err !== error) {
+      logErrorToProduction('Failed to report error to Sentry:', err, { componentStack: context?.componentStack });
+    }
   }
 
   try {
@@ -124,12 +127,21 @@ export function logErrorToProduction(
 
     // Non-blocking call
     sendErrorToBackend(errorDetails).catch(err => {
-      logErrorToProduction('Error sending logError to backend:', err, { componentStack: context?.componentStack });
+      // Use recursion guard to prevent infinite loops
+      if (err !== error) {
+        logErrorToProduction('Error sending logError to backend:', err, { componentStack: context?.componentStack });
+      }
     });
 
   } catch (err) {
-    logErrorToProduction('Failed to prepare or send error to custom backend:', { data: err });
+    // Use recursion guard to prevent infinite loops
+    if (err !== error) {
+      logErrorToProduction('Failed to prepare or send error to custom backend:', { data: err });
+    }
   }
 
   return traceId;
 }
+
+// Export alias for backward compatibility
+export { logError as logErrorToProduction };
