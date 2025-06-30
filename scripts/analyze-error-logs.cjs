@@ -17,7 +17,9 @@ const PATTERNS = [
   /Module not found/i,
   /Can't resolve/i,
   /Cannot find module/i,
-  /EAI_AGAIN/i
+  /EAI_AGAIN/i,
+  /Invalid or placeholder project ID/i,
+  /Environment variable.*missing/i
 ];
 const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
@@ -124,6 +126,12 @@ function main() {
   }
   if (/EAI_AGAIN|network.*disabled/i.test(allText)) {
     hints.push('Network errors detected. Ensure internet access before running the setup script.');
+  }
+  if (/Invalid or placeholder project ID/i.test(allText)) {
+    hints.push('Environment variables appear misconfigured. Check NEXT_PUBLIC_REOWN_PROJECT_ID and other required settings.');
+  }
+  if (/Environment variable.*missing/i.test(allText)) {
+    hints.push('Some environment variables are missing. Review your .env files.');
   }
   if (hints.length) {
     const header = '\n=== Suggestions ===';
