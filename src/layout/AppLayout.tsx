@@ -15,7 +15,7 @@ import { SkipLink } from "@/components/SkipLink";
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
 import ErrorOverlay from '@/components/ErrorOverlay';
-import {logErrorToProduction} from '@/utils/logError';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import { useSessionDuration } from '@/hooks/useSessionDuration';
 import { useNavigationGestures } from '@/hooks/useNavigationGestures';
 

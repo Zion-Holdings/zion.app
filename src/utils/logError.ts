@@ -9,6 +9,7 @@ import { logWarn } from '@/utils/productionLogger';
 /**
  * Centralized error logger for frontend issues. Reports to Sentry when
  * available and falls back to console.error. Also sends to custom backend.
+ * This is the primary error reporting function for external monitoring services.
  */
 export function logError(
   error: unknown,
@@ -137,5 +138,6 @@ export function logError(
   return traceId;
 }
 
-// Export alias for backward compatibility
-export { logError as logErrorToProduction };
+// Export aliases for different use cases
+export { logError as reportErrorToServices };  // More descriptive name
+// Note: logErrorToProduction was moved to productionLogger.ts to avoid naming conflicts

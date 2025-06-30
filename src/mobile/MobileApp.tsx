@@ -1,6 +1,6 @@
 import React from "react";
 import { MobileThemeProvider } from "./theme/MobileThemeProvider";
-import {logErrorToProduction} from '@/utils/logError';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import { useCart } from '@/context/CartContext';
 import { logInfo } from '@/utils/productionLogger';
 

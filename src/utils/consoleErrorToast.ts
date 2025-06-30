@@ -1,6 +1,6 @@
 // src/utils/consoleErrorToast.ts
 import { toast } from '@/hooks/use-toast';
-import {logErrorToProduction} from './logError';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 const originalConsoleError = console.error;
 
@@ -71,7 +71,7 @@ console.error = (...args: any[]) => {
 
     let traceId: string | undefined;
     try {
-      traceId = logErrorToProduction(first instanceof Error ? first : new Error(message));
+      logErrorToProduction(first instanceof Error ? first.message : message, first instanceof Error ? first : undefined);
     } catch (sentryError) {
       originalConsoleError('Error reporting to logger in console.error override:', sentryError);
     }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
-import {logErrorToProduction} from '@/utils/logError';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 interface RootFallbackProps extends FallbackProps {
   traceId?: string | null;

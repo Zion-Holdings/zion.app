@@ -1,6 +1,6 @@
 import React from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
-import {logErrorToProduction} from '@/utils/logError';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 function PageFallback({ error }: FallbackProps) {
   return (
@@ -13,7 +13,7 @@ function PageFallback({ error }: FallbackProps) {
 
 export default function ErrorGuard({ children }: { children: React.ReactNode }) {
   return (
-    <ErrorBoundary FallbackComponent={PageFallback} onError={(err) => logErrorToProduction(err)}>
+    <ErrorBoundary FallbackComponent={PageFallback} onError={(err) => logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined)}>
       {children}
     </ErrorBoundary>
   );

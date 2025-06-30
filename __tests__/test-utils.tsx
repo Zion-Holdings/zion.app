@@ -11,7 +11,7 @@ import { AnalyticsProvider } from '@/context/AnalyticsContext';
 import { ThemeProvider } from '@/components/ThemeProvider'; // Assuming ThemeProvider is a component
 import { ErrorProvider } from '@/context/ErrorContext';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
-import store from '@/store'; // Assuming this is the correct path to the Redux store
+import { store } from '@/store'; // Fix: Use named import instead of default import
 import i18n from '@/i18n'; // Assuming this is the correct path to i18n config
 
 // Initialize a new QueryClient for each test run to ensure test isolation
@@ -37,7 +37,7 @@ const AllTheProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
                   <WalletProvider>
                     <CartProvider>
                       <AnalyticsProvider>
-                        <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+                        <ThemeProvider defaultTheme="light">
                           <ErrorProvider>
                             {children}
                           </ErrorProvider>

@@ -1,5 +1,5 @@
 import { enhancedGlobalErrorHandler, ToastType, ToastPriority } from './globalToastManager';
-import {logErrorToProduction} from './logError';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import { isPublicRoute } from '../config/publicRoutes';
 import { logDebug } from '@/utils/productionLogger';
 
@@ -50,13 +50,12 @@ export class EnhancedApiErrorHandler {
       (status === 401 || status === 403) &&
       typeof window !== 'undefined' && isPublicRoute(window.location.pathname)
     ) {
-      logErrorToProduction(error, {
+      logErrorToProduction(`Auth error (${status}) for API ${url} on public page ${window.location.pathname} suppressed.`, error instanceof Error ? error : undefined, {
         context: context || 'apiRequestPublicPageContext',
         status,
         method,
         apiUrl: url,
         pageUrl: window.location.pathname,
-        message: `Auth error (${status}) for API ${url} on public page ${window.location.pathname} suppressed.`,
       });
       // If showToast was explicitly false, we might still want other logic.
       // However, the primary goal is to suppress the user-facing toast.
@@ -217,7 +216,7 @@ export class EnhancedConsoleErrorHandler {
 
         // Log error for debugging
         try {
-          logErrorToProduction(first instanceof Error ? first : new Error(message), {
+          logErrorToProduction(first instanceof Error ? first.message : message, first instanceof Error ? first : undefined, {
             context: 'consoleError',
             args: args.slice(1),
           });
@@ -303,7 +302,7 @@ export class EnhancedFetchErrorHandler {
               typeof window !== 'undefined' && isPublicRoute(window.location.pathname)
             ) {
               // Log the error for debugging but don't show a toast if on a public page
-              logErrorToProduction(new Error(`Auth error (${response.status}) for API ${url} on public page ${window.location.pathname} suppressed.`), {
+              logErrorToProduction(`Auth error (${response.status}) for API ${url} on public page ${window.location.pathname} suppressed.`, undefined, {
                 context: 'fetchRequestPublicPageContext',
                 status: response.status,
                 apiUrl: url,
@@ -362,7 +361,7 @@ export class EnhancedFetchErrorHandler {
           });
         }
 
-        logErrorToProduction(err, { context: 'fetchInterceptor', url });
+        logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'fetchInterceptor', url });
         throw err;
       }
     };

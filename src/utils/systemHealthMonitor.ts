@@ -240,9 +240,16 @@ class SystemHealthMonitor {
     const health = await this.getHealthStatus();
     const trends = this.getHealthTrends();
     
-    const trendText = trends.length > 5 ? 
-      `Trending ${trends[trends.length - 1].score > trends[trends.length - 6].score ? '↗ Up' : '↘ Down'}` :
-      'Insufficient data';
+    let trendText = 'Insufficient data';
+    if (trends.length > 5) {
+      const latest = trends[trends.length - 1];
+      const earlier = trends[trends.length - 6];
+      if (latest && earlier) {
+        trendText = `Trending ${latest.score > earlier.score ? '↗ Up' : '↘ Down'}`;
+      } else {
+        trendText = 'Trend data incomplete';
+      }
+    }
 
     return `
 # 🏥 System Health Report

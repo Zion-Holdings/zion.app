@@ -6,7 +6,7 @@
 // use it directly for specific, non-global error logging.
 // If logError is not used elsewhere, this file (and its import in _app.tsx or similar)
 // could be removed entirely in a future refactoring.
-import {logErrorToProduction} from './logError';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import { logInfo } from '@/utils/productionLogger';
 
 
