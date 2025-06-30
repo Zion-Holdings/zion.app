@@ -386,3 +386,45 @@ if (typeof window.IntersectionObserver === 'undefined') {
   // @ts-ignore
   global.IntersectionObserver = MockIntersectionObserver;
 }
+
+// Ensure all code paths use the mock implementation
+// Some services import the global fetch reference before jest-fetch-mock is enabled.
+// Override it explicitly so those modules receive the mocked version.
+// @ts-ignore
+global.fetch = fetchMock;
+
+// Polyfill performance.getEntriesByType for JSDOM (used in productionLogger)
+if (typeof performance.getEntriesByType !== 'function') {
+  // @ts-ignore
+  performance.getEntriesByType = () => [];
+}
+
+jest.mock('@supabase/ssr', () => ({
+  supabase: {
+    auth: {
+      onAuthStateChange: jest.fn(() => ({
+        data: { subscription: { unsubscribe: jest.fn() } },
+      })),
+    },
+  },
+}));
+
+// Provide minimal mocks for other @supabase/ssr helpers referenced by auth-js
+jest.mock('@supabase/ssr/dist/main/cookies', () => ({
+  getAll: () => ({}),
+  setItem: jest.fn(),
+  getItem: jest.fn(),
+}));
+
+// When a module imports '@/context' root index (e.g., useEnqueueSnackbar)
+jest.mock('@/context', () => {
+  const useEnqueueSnackbar = () => jest.fn();
+  return { __esModule: true, useEnqueueSnackbar };
+});
+
+// Extend Vitest shim with restoreAllMocks for suites that call it
+// @ts-ignore
+if (global.vi && !global.vi.restoreAllMocks) {
+  // @ts-ignore
+  global.vi.restoreAllMocks = jest.restoreAllMocks;
+}
