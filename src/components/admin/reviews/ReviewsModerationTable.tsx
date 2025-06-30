@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { Check } from 'lucide-react/dist/esm/icons/check';
-import { X } from 'lucide-react/dist/esm/icons/x';
-import { User } from 'lucide-react/dist/esm/icons/user';
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { MoreHorizontal } from 'lucide-react/dist/esm/icons/more-horizontal';
+import { Check, X, User, Star, MoreHorizontal } from 'lucide-react';
+
+
+
+
+
 import { format } from "date-fns";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";

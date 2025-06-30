@@ -1,10 +1,11 @@
 
 import React from "react";
-import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
-import { Smartphone } from 'lucide-react/dist/esm/icons/smartphone';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { Mail } from 'lucide-react/dist/esm/icons/mail';
+import { CheckCircle, Smartphone, Users, Star, Mail } from 'lucide-react';
+
+
+
+
+
 
 export const MobileFeatureShowcase: React.FC = () => {
   const features = [

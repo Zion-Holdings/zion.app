@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { 
+import { Save, ChevronDown, Plus, Loader2 } from 'lucide-react';
   DropdownMenu, 
   DropdownMenuContent, 
   DropdownMenuItem, 
@@ -10,10 +11,10 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Save } from 'lucide-react/dist/esm/icons/save';
-import { ChevronDown } from 'lucide-react/dist/esm/icons/chevron-down';
-import { Plus } from 'lucide-react/dist/esm/icons/plus';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+
+
+
+
 import { Resume } from '@/types/resume';
 import { useResume } from '@/hooks/useResume';
 

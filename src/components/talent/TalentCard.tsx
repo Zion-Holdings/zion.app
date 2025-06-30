@@ -3,10 +3,11 @@ import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
-import { CheckCircle2 } from 'lucide-react/dist/esm/icons/check-circle2';
+import { MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
+
+
+
+
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { TalentProfile } from "@/types/talent";
 import { RatingStars } from '@/components/RatingStars';

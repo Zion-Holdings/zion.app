@@ -1,6 +1,7 @@
 
 import React from "react";
-import { Star } from 'lucide-react/dist/esm/icons/star';
+import { Star } from 'lucide-react';
+
 
 export const CommunityTrust: React.FC = () => {
   // Stats display with social proof

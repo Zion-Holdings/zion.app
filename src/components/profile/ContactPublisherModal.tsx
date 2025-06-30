@@ -1,6 +1,7 @@
 import React from 'react';
 import FocusLock from 'react-focus-lock';
 import {
+import { SendIcon, Mail } from 'lucide-react';
   Dialog,
   DialogContent,
   DialogHeader,
@@ -20,8 +21,8 @@ import {
 import { useForm, type Resolver } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { SendIcon } from 'lucide-react/dist/esm/icons/send-icon';
-import { Mail } from 'lucide-react/dist/esm/icons/mail';
+
+
 import api from '@/services/apiClient';
 import { toast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';

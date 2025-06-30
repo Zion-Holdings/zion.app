@@ -1,7 +1,8 @@
 
 import React from "react";
-import { Apple } from 'lucide-react/dist/esm/icons/apple';
-import { GithubIcon } from 'lucide-react/dist/esm/icons/github-icon';
+import { Apple, GithubIcon } from 'lucide-react';
+
+
 import { cn } from "@/lib/utils";
 import { logInfo } from '@/utils/productionLogger';
 

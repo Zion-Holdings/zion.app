@@ -6,9 +6,10 @@ import { useInterviews } from "@/hooks/useInterviews";
 import { Interview } from "@/types/interview";
 import { format, isPast, parseISO } from "date-fns";
 import Link from "next/link";
-import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { Video } from 'lucide-react/dist/esm/icons/video';
+import { Calendar, Clock, Video } from 'lucide-react';
+
+
+
 import { Avatar } from "@/components/ui/avatar";
 import {logErrorToProduction} from '@/utils/productionLogger';
 

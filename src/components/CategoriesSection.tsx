@@ -1,11 +1,12 @@
 
 import { GradientHeading } from "./GradientHeading";
 import Link from "next/link";
-import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
-import { HardDrive } from 'lucide-react/dist/esm/icons/hard-drive';
-import { Lightbulb } from 'lucide-react/dist/esm/icons/lightbulb';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { HelpCircle } from 'lucide-react/dist/esm/icons/help-circle'; // Added HelpCircle for default icon
+import { Briefcase, HardDrive, Lightbulb, Users, HelpCircle } from 'lucide-react';
+
+
+
+
+ // Added HelpCircle for default icon
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 

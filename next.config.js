@@ -85,23 +85,12 @@ const nextConfig = {
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
     cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
+    // Bundle analysis optimizations (removed deprecated option)
     // Bundle analysis optimizations
     bundlePagesRouterDependencies: true, // Better bundle splitting
     // Disable profiling for faster builds
     swcTraceProfiling: false,
-    // Optimize imports
-    modularizeImports: {
-      'lucide-react': {
-        transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
-        skipDefaultConversion: true,
-      },
-      'date-fns': {
-        transform: 'date-fns/{{member}}',
-      },
-      '@radix-ui/react-icons': {
-        transform: '@radix-ui/react-icons/dist/{{member}}',
-      },
-    },
+    // Optimize imports (moved to top level for Next.js 14)
   },
 
   images: {
@@ -265,8 +254,7 @@ const nextConfig = {
     } : false,
     // Remove React DevTools in production
     reactRemoveProperties: process.env.NODE_ENV === 'production' ? { properties: ['data-testid'] } : false,
-    // Remove development-only code
-    removeReactProperties: process.env.NODE_ENV === 'production',
+    // Remove development-only code (removed as deprecated in Next.js 14)
     // Enable SWC minification optimizations
     styledComponents: false, // Disable if not using styled-components
   },

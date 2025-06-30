@@ -4,9 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
-import { Package } from 'lucide-react/dist/esm/icons/package';
-import { Zap } from 'lucide-react/dist/esm/icons/zap';
+import { AlertTriangle, Package, Zap } from 'lucide-react';
+
+
+
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 

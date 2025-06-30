@@ -1,8 +1,9 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Download } from 'lucide-react/dist/esm/icons/download';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
+import { Download, Settings } from 'lucide-react';
+
+
 import { useCompanyWorkspace } from "@/hooks/useCompanyWorkspace";
 
 export function AdminHeader() {

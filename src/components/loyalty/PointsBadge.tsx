@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Gift } from 'lucide-react/dist/esm/icons/gift';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { Gift, RefreshCw } from 'lucide-react';
+
+
 import { usePoints } from '@/hooks/usePoints';
 import { useAuth } from '@/hooks/useAuth';
 import Link from 'next/link';

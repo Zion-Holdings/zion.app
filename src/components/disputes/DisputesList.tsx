@@ -4,6 +4,7 @@ import { Dispute, DisputeStatus } from "@/types/disputes";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
+import { ShieldAlert } from 'lucide-react';
   Table,
   TableBody,
   TableCell,
@@ -13,7 +14,7 @@ import {
 } from "@/components/ui/table";
 import Skeleton from "@/components/ui/skeleton";
 import { formatDistanceToNow } from "date-fns";
-import { ShieldAlert } from 'lucide-react/dist/esm/icons/shield-alert';
+
 import Link from "next/link";
 
 type DisputesListProps = {

@@ -5,6 +5,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import {
+import { FileText } from 'lucide-react';
   Form,
   FormControl,
   FormField,
@@ -24,7 +25,7 @@ import { Input } from "@/components/ui/input";
 import { disputeReasonLabels } from "@/types/disputes";
 import { useDisputes } from "@/hooks/useDisputes";
 import { toast } from "sonner";
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+
 
 const formSchema = z.object({
   reason_code: z.string()

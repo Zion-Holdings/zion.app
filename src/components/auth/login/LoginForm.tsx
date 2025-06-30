@@ -4,10 +4,11 @@ import { useRouter } from 'next/router';
 import { useForm, ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { LogIn } from 'lucide-react/dist/esm/icons/log-in';
-import { User } from 'lucide-react/dist/esm/icons/user';
-import { Eye } from 'lucide-react/dist/esm/icons/eye';
-import { EyeOff } from 'lucide-react/dist/esm/icons/eye-off';
+import { LogIn, User, Eye, EyeOff } from 'lucide-react';
+
+
+
+
 import { fireEvent } from '@/lib/analytics';
 import { useAuth } from "@/context/auth/AuthProvider";
 import { Button } from "@/components/ui/button";

@@ -1,9 +1,10 @@
 import { SEO } from "@/components/SEO";
 import { useState, useEffect } from "react";
-import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
-import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
-import { Clock } from 'lucide-react/dist/esm/icons/clock';
-import { ExternalLink } from 'lucide-react/dist/esm/icons/external-link';
+import { AlertCircle, CheckCircle, Clock, ExternalLink } from 'lucide-react';
+
+
+
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

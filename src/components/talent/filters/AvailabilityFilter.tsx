@@ -1,8 +1,9 @@
 
-import { ChevronDown } from 'lucide-react/dist/esm/icons/chevron-down';
-import { ChevronUp } from 'lucide-react/dist/esm/icons/chevron-up';
+
+
 import { Checkbox } from "@/components/ui/checkbox";
 import { AvailabilityFilterProps } from "@/types/filters";
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const AVAILABILITY_OPTIONS = [
   { id: "full_time", label: "Full-time" },

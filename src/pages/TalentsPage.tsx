@@ -1,14 +1,15 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp } from 'lucide-react/dist/esm/icons/arrow-up';
-import { Filter } from 'lucide-react/dist/esm/icons/filter';
-import { SortAsc } from 'lucide-react/dist/esm/icons/sort-asc';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { TrendingUp } from 'lucide-react/dist/esm/icons/trending-up';
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { Verified } from 'lucide-react/dist/esm/icons/verified';
-import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
+import { ArrowUp, Filter, SortAsc, Users, TrendingUp, Star, Verified, MapPin } from 'lucide-react';
+
+
+
+
+
+
+
+
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { generateAITalents, getTalentMarketStats, getRecommendedTalents } from '@/utils/talentAutoFeedAlgorithm';
 import { TALENT_PROFILES } from '@/data/talentData';

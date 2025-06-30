@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { format } from 'date-fns';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { MessageSquare } from 'lucide-react';
+
 import { useMessaging } from '@/context/MessagingContext';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';

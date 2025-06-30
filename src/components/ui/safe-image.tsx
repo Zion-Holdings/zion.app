@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { ImageIcon } from 'lucide-react/dist/esm/icons/image-icon';
+import { ImageIcon } from 'lucide-react';
+
 
 interface SafeImageProps {
   src: string;

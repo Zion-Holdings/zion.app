@@ -2,9 +2,10 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { type Company } from "./CompanyDashboard";
-import { Bell } from 'lucide-react/dist/esm/icons/bell';
-import { Users } from 'lucide-react/dist/esm/icons/users';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
+import { Bell, Users, Settings } from 'lucide-react';
+
+
+
 
 interface WorkspaceHeaderProps {
   company: Company;

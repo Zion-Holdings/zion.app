@@ -3,15 +3,16 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
+import { Loader2, Sparkles, Plus, Calendar } from 'lucide-react';
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
-import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
-import { Plus } from 'lucide-react/dist/esm/icons/plus';
-import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
+
+
+
+
 import { format, parseISO } from 'date-fns';
 import { MilestoneInput, GeneratedMilestone, useMilestoneGenerator } from '@/hooks/useMilestoneGenerator';
 import { Badge } from '@/components/ui/badge';

@@ -3,11 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
-import { Play } from 'lucide-react/dist/esm/icons/play';
-import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
-import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
+import { Loader2, RefreshCw, Play, CheckCircle, AlertCircle } from 'lucide-react';
+
+
+
+
+
 import { supabase } from '@/integrations/supabase/client';
 import { ModelConfig } from '@/utils/zion-gpt';
 import {logErrorToProduction} from '@/utils/productionLogger';

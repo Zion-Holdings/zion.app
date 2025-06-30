@@ -1,12 +1,13 @@
 
-import { Bell } from 'lucide-react/dist/esm/icons/bell';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { Home } from 'lucide-react/dist/esm/icons/home';
-import { Mail } from 'lucide-react/dist/esm/icons/mail';
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { Settings } from 'lucide-react/dist/esm/icons/settings';
-import { Users } from 'lucide-react/dist/esm/icons/users';
+
+
+
+
+
+
+
 import {
+import { Bell, FileText, Home, Mail, Search, Settings, Users } from 'lucide-react';
   Sidebar,
   SidebarContent,
   SidebarGroup,

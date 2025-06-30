@@ -2,8 +2,9 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail } from 'lucide-react/dist/esm/icons/mail';
-import { Send } from 'lucide-react/dist/esm/icons/send';
+import { Mail, Send } from 'lucide-react';
+
+
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 

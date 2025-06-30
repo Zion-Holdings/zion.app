@@ -16,8 +16,9 @@ import { slugify } from '@/lib/slugify';
 import { ResponsiveNavigation } from '@/components/navigation/ResponsiveNavigation';
 import { MobileMenu } from '@/components/header/MobileMenu';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
-import { Menu } from 'lucide-react/dist/esm/icons/menu';
-import { X } from 'lucide-react/dist/esm/icons/x';
+import { Menu, X } from 'lucide-react';
+
+
 import { useTranslation } from 'react-i18next';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { LoginModal } from '@/components/auth/LoginModal';

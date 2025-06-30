@@ -1,6 +1,7 @@
 import React from 'react';
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { StarHalf } from 'lucide-react/dist/esm/icons/star-half';
+import { Star, StarHalf } from 'lucide-react';
+
+
 
 export function RatingStars({ value = 0, count }: { value?: number; count?: number }) {
   const filled = Math.floor(value);

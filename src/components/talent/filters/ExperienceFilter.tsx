@@ -1,8 +1,9 @@
 
-import { ChevronDown } from 'lucide-react/dist/esm/icons/chevron-down';
-import { ChevronUp } from 'lucide-react/dist/esm/icons/chevron-up';
+
+
 import { Slider } from "@/components/ui/slider";
 import { ExperienceFilterProps } from "@/types/filters";
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 export function ExperienceFilter({ experienceRange, setExperienceRange, expanded, toggleSection, isMobileFilterOpen }: ExperienceFilterProps) {
   const handleChange = (values: number[]) => {

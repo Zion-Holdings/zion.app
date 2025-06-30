@@ -4,14 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import { SEO } from "@/components/SEO";
-import { BriefcaseIcon } from 'lucide-react/dist/esm/icons/briefcase-icon';
-import { UserIcon } from 'lucide-react/dist/esm/icons/user-icon';
-import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
-import { Star } from 'lucide-react/dist/esm/icons/star';
-import { PlusCircle } from 'lucide-react/dist/esm/icons/plus-circle';
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
-import { Inbox } from 'lucide-react/dist/esm/icons/inbox';
-import { Video } from 'lucide-react/dist/esm/icons/video';
+import { BriefcaseIcon, UserIcon, MessageSquare, Star, PlusCircle, FileText, Inbox, Video } from 'lucide-react';
+
+
+
+
+
+
+
+
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { SuggestedJobs } from "@/components/jobs/SuggestedJobs";
 import { useAuth } from "@/hooks/useAuth";

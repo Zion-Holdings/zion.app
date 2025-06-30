@@ -1,8 +1,9 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { Sliders } from 'lucide-react/dist/esm/icons/sliders';
+import { Search, Sliders } from 'lucide-react';
+
+
 import { Input } from "@/components/ui/input";
 
 interface MobileFilterBarProps {

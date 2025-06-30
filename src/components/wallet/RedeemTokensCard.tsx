@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { useWallet } from "@/hooks/useWallet";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Gift } from 'lucide-react/dist/esm/icons/gift';
-import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
-import { ExternalLink } from 'lucide-react/dist/esm/icons/external-link';
+import { Gift, ArrowRight, ExternalLink } from 'lucide-react';
+
+
+
 import {
   Dialog,
   DialogContent,

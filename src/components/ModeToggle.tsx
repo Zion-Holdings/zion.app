@@ -1,10 +1,11 @@
-import { Moon } from 'lucide-react/dist/esm/icons/moon';
-import { Sun } from 'lucide-react/dist/esm/icons/sun';
+
+
 import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { toast } from "@/hooks/use-toast"
 import { darkModeMessages, lightModeMessages } from "@/utils/themeToggleMessages"
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { Moon, Sun } from 'lucide-react';
 // Use the ThemeProvider hook directly to ensure no conflicts
 import { useTheme } from "@/components/ThemeProvider"
 import { logIssue } from "@/utils/logIssue"

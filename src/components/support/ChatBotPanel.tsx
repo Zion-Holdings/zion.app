@@ -9,8 +9,9 @@ import { toast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
 import { ChatMessage } from "./ChatMessage";
 import { QuickReplyButton } from "./QuickReplyButton";
-import { Send } from 'lucide-react/dist/esm/icons/send';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { Send, Loader2 } from 'lucide-react';
+
+
 import { useTheme } from "@/hooks/useTheme";
 
 // Define suggested quick replies

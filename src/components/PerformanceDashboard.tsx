@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
-import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
-import { TrendingUp } from 'lucide-react/dist/esm/icons/trending-up';
-import { Zap } from 'lucide-react/dist/esm/icons/zap';
-import { Shield } from 'lucide-react/dist/esm/icons/shield';
-import { Search } from 'lucide-react/dist/esm/icons/search';
+import { CheckCircle, AlertCircle, TrendingUp, Zap, Shield, Search } from 'lucide-react';
+
+
+
+
+
+
 
 interface PerformanceMetrics {
   buildSize: string;

@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Heart } from 'lucide-react/dist/esm/icons/heart';
+import { Heart } from 'lucide-react';
+
 import { useWishlist } from '@/hooks/useWishlist';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';

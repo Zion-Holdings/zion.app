@@ -7,13 +7,14 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
-import { Info } from 'lucide-react/dist/esm/icons/info';
-import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
-import { XCircle } from 'lucide-react/dist/esm/icons/xcircle';
-import { Search } from 'lucide-react/dist/esm/icons/search';
-import { Download } from 'lucide-react/dist/esm/icons/download';
-import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { AlertTriangle, Info, AlertCircle, XCircle, Search, Download, RefreshCw } from 'lucide-react';
+
+
+
+
+
+
+
 import { logErrorToProduction } from '@/utils/productionLogger';
 
 

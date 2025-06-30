@@ -5,7 +5,8 @@ import { fetchRecommendations } from '@/api/recommendations';
 import type { ProductListing } from '@/types/listings';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { Loader2 } from 'lucide-react';
+
 import Link from 'next/link';
 import { ErrorState } from '@/components/jobs/applications';
 

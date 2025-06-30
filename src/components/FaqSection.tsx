@@ -1,12 +1,13 @@
 
 import { GradientHeading } from "./GradientHeading";
 import {
+import { FileText } from 'lucide-react';
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+
 
 const faqs = [
   {

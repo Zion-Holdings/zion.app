@@ -1,7 +1,8 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { Button } from "./ui/button";
-import { CheckCircle2 } from 'lucide-react/dist/esm/icons/check-circle2';
+import { CheckCircle2 } from 'lucide-react';
+
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./ui/table";
 
 export function ComparisonSection() {
