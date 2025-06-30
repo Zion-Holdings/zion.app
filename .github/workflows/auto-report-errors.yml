@@ -19,8 +19,17 @@ jobs:
       - name: Install deps
         run: npm ci --prefer-offline --no-audit --progress=false
       - name: Run tests & collect logs
-        run: npm run test:collect
-      - name: Report errors to Cursor
+        id: tests
+        run: |
+          npm run test:collect || echo "::set-output name=status::failed"
+      - name: Upload log archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs
+          path: logs/archive/*.tar.gz
+      - name: Report errors to Cursor (only on failures)
+        if: steps.tests.outputs.status == 'failed'
         env:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
           CURSOR_PROJECT_ID: ${{ secrets.CURSOR_PROJECT_ID }}
