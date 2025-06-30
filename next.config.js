@@ -86,6 +86,8 @@ const nextConfig = {
     workerThreads: false, // Disable worker threads to reduce memory usage
     cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
     // Bundle analysis optimizations (removed deprecated option)
+    // Bundle analysis optimizations
+    bundlePagesRouterDependencies: true, // Better bundle splitting
     // Disable profiling for faster builds
     swcTraceProfiling: false,
     // Optimize imports (moved to top level for Next.js 14)
@@ -282,7 +284,7 @@ const nextConfig = {
       // Alias react-router-dom to a lightweight stub to avoid build errors
       config.resolve.alias = {
         ...config.resolve.alias,
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
       };
       
       // Optimize memory usage in development
@@ -576,7 +578,7 @@ const nextConfig = {
       config.resolve.alias = {
         ...config.resolve.alias,
         'lodash': 'lodash-es',
-        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.tsx'),
       };
 
       // Note: Compression is handled by Netlify and other deployment platforms
