@@ -5,8 +5,8 @@ import { ProductListingCard } from "@/components/ProductListingCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
-import {
 import { Search, Filter, LayoutGrid, List, Star } from 'lucide-react';
+import {
   Select,
   SelectValue,
   SelectTrigger,
@@ -18,10 +18,6 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Slider } from "@/components/ui/slider";
 import { ProductListing, ListingView } from "@/types/listings";
-
-
-
-
 
 import { toast } from "@/hooks/use-toast";
 import { captureException } from "@/utils/sentry";

@@ -1,7 +1,6 @@
-
 import { GradientHeading } from "./GradientHeading";
-import {
 import { FileText } from 'lucide-react';
+import {
   Accordion,
   AccordionContent,
   AccordionItem,

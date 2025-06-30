@@ -1,7 +1,6 @@
-
 import React from "react";
-import {
 import { InfoIcon } from 'lucide-react';
+import {
   Table,
   TableBody,
   TableCell,
