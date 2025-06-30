@@ -8,7 +8,7 @@ module.exports = {
     }],
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!(@supabase|@sentry|@reown|@walletconnect|bson|fetch-mock|react-markdown|d3-\\w+|internmap|delaunator|robust-predicates|@babel|next|uint8arrays|multiformats|axios|isows|devlop|micromark|mdast-util|unist-util|zwitch|longest-streak|markdown-table|mdurl|uc.micro|linkify-it|argparse)).+\\.(js|jsx|ts|tsx)$',
+    '/node_modules/(?!(@supabase|@sentry|@reown|@walletconnect|msw|bson|fetch-mock|react-markdown|d3-\\w+|internmap|delaunator|robust-predicates|@babel|next|uint8arrays|multiformats|axios|isows|devlop|micromark|mdast-util|unist-util|zwitch|longest-streak|markdown-table|mdurl|uc.micro|linkify-it|argparse)).+\\.(js|jsx|ts|tsx)$',
   ],
   moduleNameMapper: {
     // Handle CSS imports

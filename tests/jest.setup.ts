@@ -428,3 +428,30 @@ if (global.vi && !global.vi.restoreAllMocks) {
   // @ts-ignore
   global.vi.restoreAllMocks = jest.restoreAllMocks;
 }
+
+// Mock @supabase/ssr createBrowserClient so components don't crash in tests
+jest.mock('@supabase/ssr', () => ({
+  createBrowserClient: () => ({
+    auth: { onAuthStateChange: jest.fn(), signInWithPassword: jest.fn(), signUp: jest.fn() },
+  }),
+}));
+
+// Ensure hooks/use-toast exports usable toast fn
+jest.mock('@/hooks/use-toast', () => {
+  const toastFn = jest.fn();
+  return { __esModule: true, toast: toastFn, useToast: () => ({ toast: toastFn }) };
+});
+
+// Minimal MSW mocks to satisfy tests without parsing ESM bundles
+jest.mock('msw', () => ({ rest: { get: jest.fn(), post: jest.fn(), put: jest.fn(), delete: jest.fn() } }));
+jest.mock('msw/node', () => ({ setupServer: () => ({ listen: jest.fn(), resetHandlers: jest.fn(), close: jest.fn() }) }));
+
+// Provide mock for missing component
+jest.mock('@/components/search/FilterSidebar', () => ({ FilterSidebar: () => null }));
+
+// Extend Vitest shim with timer helpers if not present
+if (global.vi) {
+  if (!global.vi.useFakeTimers) global.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
+  if (!global.vi.runAllTimers) global.vi.runAllTimers = jest.runAllTimers.bind(jest);
+  if (!global.vi.advanceTimersByTime) global.vi.advanceTimersByTime = jest.advanceTimersByTime.bind(jest);
+}
