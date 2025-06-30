@@ -72,6 +72,7 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **[Optional Two-Factor Authentication](TWO_FACTOR_AUTHENTICATION_SUMMARY.md)** - Overview of enabling 2FA in the IPO portal
 - **[Logging Guidelines](docs/LOGGING_GUIDELINES.md)** - Usage instructions for the project logger
 - **Collect Logs** - `npm run logs:collect` bundles recent logs under `logs/archive/`
+- **Analyze Logs** - `npm run logs:summary` scans collected logs and reports missing translation keys
 
 ### CDN for Static Assets
 

@@ -80,3 +80,13 @@ This command creates a timestamped archive under `logs/archive/` and includes:
 *   Test results from `test-results/` and `test_results.json` if present.
 
 Always check the `AGENTS.md` file for any project-specific conventions or automated checks related to logging.
+
+## Analyzing Logs for Errors
+
+After collecting logs, you can quickly scan them for common issues using the built-in analyzer:
+
+```bash
+npm run logs:summary
+```
+
+This command searches all log files for error patterns and now also extracts any **missing translation keys** it finds. A summary report along with a `missing-keys-<timestamp>.log` file will be generated under `logs/summary/`.
