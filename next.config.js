@@ -1,5 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
+import os from 'os';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -83,7 +84,7 @@ const nextConfig = {
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: Math.min(2, require('os').cpus().length), // Adaptive CPU limit
+    cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
     // Bundle analysis optimizations
     bundlePagesRouterDependencies: true, // Better bundle splitting
     // Disable profiling for faster builds
