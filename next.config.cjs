@@ -367,53 +367,12 @@ const nextConfig = {
 
 
 
-    // Simplified bundle optimization for large applications (176+ pages)
+    // Temporary: Disable splitChunks to eliminate webpack validation errors
     if (!isServer) {
       config.optimization = {
         ...config.optimization,
-        // Simplified chunk splitting to prevent webpack validation errors
-        splitChunks: {
-          chunks: 'all',
-          minSize: 20000,
-          maxSize: 150000,
-          maxAsyncRequests: 20,
-          maxInitialRequests: 15,
-          cacheGroups: {
-            default: false,
-            vendors: false,
-            
-            // Framework chunk for React/Next.js
-            framework: {
-              chunks: 'all',
-              name: 'framework',
-              test: /[\\/]node_modules[\\/](react|react-dom|scheduler|next)[\\/]/,
-              priority: 50,
-              enforce: true,
-              reuseExistingChunk: true,
-            },
-            
-            // General vendor libraries
-            vendor: {
-              chunks: 'all',
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              priority: 20,
-              enforce: true,
-              reuseExistingChunk: true,
-              minChunks: 2,
-            },
-            
-            // Common application code
-            common: {
-              name: 'common',
-              minChunks: 2,
-              chunks: 'all',
-              priority: 10,
-              enforce: true,
-              reuseExistingChunk: true,
-            },
-          },
-        },
+        // Disable splitChunks entirely to prevent validation errors
+        splitChunks: false,
         
         // Basic optimization settings
         moduleIds: 'deterministic',
