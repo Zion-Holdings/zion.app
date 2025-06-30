@@ -5,11 +5,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import type { RootState, AppDispatch } from '@/store';
-import {
 import { ShoppingCart, User, CreditCard, ArrowRight, Package, Shield } from 'lucide-react';
+import {
   removeItem as removeItemAction,
-  updateQuantity as updateQuantityAction,
-} from '@/store/cartSlice';
+  updateQuantity as updateQuantityAction
+} from "@/store/cartSlice";
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
 import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';

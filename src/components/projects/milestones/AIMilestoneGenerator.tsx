@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import {
 import { Loader2, Sparkles, Plus, Calendar } from 'lucide-react';
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+  AccordionTrigger
+} from "@/components/ui/accordion";
 
 
 

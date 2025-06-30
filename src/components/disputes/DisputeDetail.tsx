@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { useDisputes } from "@/hooks/useDisputes";
 import {logErrorToProduction} from '@/utils/productionLogger';
-import {
 import { ArrowDown, Check, MessageSquare, Download } from 'lucide-react';
- Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType
+import {
+  Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType
 } from "@/types/disputes";
 
 import { Button } from "@/components/ui/button";

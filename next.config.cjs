@@ -460,15 +460,7 @@ const nextConfig = {
               chunks: 'async',
             },
             
-            // Development tools (excluded from production)
-            devtools: {
-              name: 'devtools',
-              test: /[\\/]node_modules[\\/](@storybook|webpack-bundle-analyzer)[\\/]/,
-              priority: 22,
-              enforce: true,
-              reuseExistingChunk: true,
-              chunks: dev ? 'all' : false, // Exclude from production entirely
-            },
+            // Development tools removed to prevent webpack validation errors
             
             // General vendor libraries - optimized
             vendor: {
