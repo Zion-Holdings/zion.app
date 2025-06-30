@@ -3,7 +3,7 @@ import { toast } from '@/hooks/use-toast';
 import { safeStorage } from '@/utils/safeStorage';
 import { store } from '@/store';
 import { setToken } from '@/store/authSlice';
-import { logger } from '@/utils/logger';
+import { logDebug, logError } from '@/utils/productionLogger';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
@@ -31,11 +31,11 @@ export async function registerUser(name: string, email: string, password: string
   const endpoint = `${API_URL}/auth/register`;
   try {
     const res = await axios.post(endpoint, { name, email, password });
-    logger.debug('Register API Response Status:', res.status);
-    logger.debug('Register API Response Body:', res.data);
+    logDebug('Register API Response Status:', { status: res.status });
+    logDebug('Register API Response Body:', { body: res.data });
     return { res, data: res.data };
   } catch (err) {
-    logger.error('Register API error:', err);
+    logError('Register API error', err as Error, { endpoint, email });
     throw err;
   }
 }
