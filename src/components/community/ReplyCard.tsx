@@ -1,6 +1,8 @@
 
 import { formatDistanceToNow } from "date-fns";
-import { ThumbsUp, ThumbsDown, CheckCircle } from "lucide-react";
+import { ThumbsUp } from 'lucide-react/dist/esm/icons/thumbs-up';
+import { ThumbsDown } from 'lucide-react/dist/esm/icons/thumbs-down';
+import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";

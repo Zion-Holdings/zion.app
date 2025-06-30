@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { AlertTriangle } from 'lucide-react'
+import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
 import Link from 'next/link'
 import Head from 'next/head'
 

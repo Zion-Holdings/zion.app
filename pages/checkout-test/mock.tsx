@@ -2,7 +2,8 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, ArrowRight } from 'lucide-react';
+import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
+import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
 
 export default function MockCheckoutPage() {
   const router = useRouter();

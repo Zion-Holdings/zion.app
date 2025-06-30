@@ -1,6 +1,9 @@
 
 import React from "react";
-import { BadgeCheck, Star, Clock, Award } from "lucide-react";
+import { BadgeCheck } from 'lucide-react/dist/esm/icons/badge-check';
+import { Star } from 'lucide-react/dist/esm/icons/star';
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { Award } from 'lucide-react/dist/esm/icons/award';
 import { cn } from "@/lib/utils";
 
 type BadgeType = 'verified' | 'featured' | 'new' | 'top-rated';

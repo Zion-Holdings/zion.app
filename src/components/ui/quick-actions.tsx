@@ -4,16 +4,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { 
-  Zap, 
-  Download, 
-  Trash2, 
-  RefreshCw, 
-  Settings, 
-  Activity,
-  Package,
-  Monitor
-} from 'lucide-react';
+import { Zap } from 'lucide-react/dist/esm/icons/zap';
+import { Download } from 'lucide-react/dist/esm/icons/download';
+import { Trash2 } from 'lucide-react/dist/esm/icons/trash2';
+import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { Settings } from 'lucide-react/dist/esm/icons/settings';
+import { Activity } from 'lucide-react/dist/esm/icons/activity';
+import { Package } from 'lucide-react/dist/esm/icons/package';
+import { Monitor } from 'lucide-react/dist/esm/icons/monitor';
 
 interface QuickAction {
   id: string;

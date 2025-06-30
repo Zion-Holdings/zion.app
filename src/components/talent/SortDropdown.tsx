@@ -2,7 +2,8 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { SORT_OPTIONS } from "@/data/sortOptions";
-import { SortDesc, ChevronDown } from "lucide-react";
+import { SortDesc } from 'lucide-react/dist/esm/icons/sort-desc';
+import { ChevronDown } from 'lucide-react/dist/esm/icons/chevron-down';
 import {
   DropdownMenu,
   DropdownMenuContent,

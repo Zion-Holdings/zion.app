@@ -5,7 +5,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { cn } from '@/lib/utils';
-import { CheckCircle, AlertCircle, Eye, EyeOff } from 'lucide-react';
+import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
+import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
+import { Eye } from 'lucide-react/dist/esm/icons/eye';
+import { EyeOff } from 'lucide-react/dist/esm/icons/eye-off';
 import { Button } from '@/components/ui/button';
 
 interface ValidationRule {

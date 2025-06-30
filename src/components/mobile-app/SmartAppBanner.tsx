@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from "react";
 import { safeStorage } from "@/utils/safeStorage";
-import { X, ArrowRight } from "lucide-react";
+import { X } from 'lucide-react/dist/esm/icons/x';
+import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
 import Link from "next/link";
 import { useIsMobile } from "@/hooks/use-mobile";
 

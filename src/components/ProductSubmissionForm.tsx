@@ -24,7 +24,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { AIListingGenerator } from "@/components/listing/AIListingGenerator";
-import { Sparkles } from "lucide-react";
+import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
 
 // Define the form schema with zod
 const productSchema = z.object({

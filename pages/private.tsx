@@ -3,7 +3,10 @@ import { createServerSideClient } from '../src/utils/supabase/server'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { User, Mail, Calendar, Shield } from 'lucide-react'
+import { User } from 'lucide-react/dist/esm/icons/user';
+import { Mail } from 'lucide-react/dist/esm/icons/mail';
+import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
+import { Shield } from 'lucide-react/dist/esm/icons/shield';
 import Link from 'next/link'
 import Head from 'next/head'
 import type { User as SupabaseUser } from '@supabase/supabase-js'

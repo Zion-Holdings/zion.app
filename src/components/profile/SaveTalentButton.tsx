@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
+import { Star } from 'lucide-react/dist/esm/icons/star';
 
 interface SaveTalentButtonProps {
   talentId: string;

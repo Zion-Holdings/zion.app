@@ -1,5 +1,7 @@
 
-import { Facebook, Twitter, Loader2 } from "lucide-react";
+import { Facebook } from 'lucide-react/dist/esm/icons/facebook';
+import { Twitter } from 'lucide-react/dist/esm/icons/twitter';
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
 import { Button } from "@/components/ui/button";
 import { Web3Login } from "./Web3Login";
 import { useState } from "react";

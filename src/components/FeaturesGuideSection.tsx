@@ -3,17 +3,15 @@ import { GradientHeading } from "./GradientHeading";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "./ui/button";
 import { fireEvent } from '@/lib/analytics';
-import { 
-  Users, 
-  Zap, 
-  Settings, 
-  MessageSquare, 
-  Sparkles,
-  ArrowRight,
-  BarChart3,
-  Plus,
-  HelpCircle
-} from "lucide-react";
+import { Users } from 'lucide-react/dist/esm/icons/users';
+import { Zap } from 'lucide-react/dist/esm/icons/zap';
+import { Settings } from 'lucide-react/dist/esm/icons/settings';
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
+import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
+import { BarChart3 } from 'lucide-react/dist/esm/icons/bar-chart3';
+import { Plus } from 'lucide-react/dist/esm/icons/plus';
+import { HelpCircle } from 'lucide-react/dist/esm/icons/help-circle';
 
 export function FeaturesGuideSection() {
   const features = [

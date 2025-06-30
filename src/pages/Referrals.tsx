@@ -12,7 +12,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from '@/components/ui/button';
 import { toast } from '@/hooks/use-toast';
-import { Share, Users } from 'lucide-react';
+import { Share } from 'lucide-react/dist/esm/icons/share';
+import { Users } from 'lucide-react/dist/esm/icons/users';
 import { useRouter } from 'next/router'; // Changed from useNavigate
 
 export default function ReferralsPage() {

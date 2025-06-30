@@ -13,7 +13,10 @@ import {
   DropdownMenuCheckboxItem,
 } from '@/components/ui/dropdown-menu';
 // Use the centralized icon wrapper to avoid missing icon issues
-import { FileText, ChevronDown, Loader2, Download } from 'lucide-react';
+import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+import { ChevronDown } from 'lucide-react/dist/esm/icons/chevron-down';
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { Download } from 'lucide-react/dist/esm/icons/download';
 import { Resume } from '@/types/resume';
 import { exportResumeToPDF, ExportOptions } from '@/utils/pdfExport';
 import { toast } from '@/hooks/use-toast';

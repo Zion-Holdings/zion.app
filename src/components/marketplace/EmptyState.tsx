@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { RefreshCw, Wifi, Server, ShoppingCart, Users, Wrench, Lightbulb } from 'lucide-react';
+import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { Wifi } from 'lucide-react/dist/esm/icons/wifi';
+import { Server } from 'lucide-react/dist/esm/icons/server';
+import { ShoppingCart } from 'lucide-react/dist/esm/icons/shopping-cart';
+import { Users } from 'lucide-react/dist/esm/icons/users';
+import { Wrench } from 'lucide-react/dist/esm/icons/wrench';
+import { Lightbulb } from 'lucide-react/dist/esm/icons/lightbulb';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';

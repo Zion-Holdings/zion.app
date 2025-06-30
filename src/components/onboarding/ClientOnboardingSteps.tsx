@@ -1,7 +1,9 @@
 
 import React from "react";
 import { useOnboardingStatus } from "@/hooks/useOnboardingStatus";
-import { PlusCircle, SendIcon, InboxIcon } from "lucide-react";
+import { PlusCircle } from 'lucide-react/dist/esm/icons/plus-circle';
+import { SendIcon } from 'lucide-react/dist/esm/icons/send-icon';
+import { InboxIcon } from 'lucide-react/dist/esm/icons/inbox-icon';
 import { OnboardingTracker, OnboardingStep } from "./OnboardingTracker";
 
 export function ClientOnboardingSteps() {

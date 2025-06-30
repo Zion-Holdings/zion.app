@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
-import { MessageSquare, Video } from 'lucide-react';
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { Video } from 'lucide-react/dist/esm/icons/video';
 import { useMessaging } from '@/context/MessagingContext';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { ConversationsList, ConversationDetailView } from '@/components/messaging';

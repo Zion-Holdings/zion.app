@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { BriefcaseIcon, Clock } from "lucide-react";
+import { BriefcaseIcon } from 'lucide-react/dist/esm/icons/briefcase-icon';
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";

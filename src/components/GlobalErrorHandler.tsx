@@ -1,7 +1,11 @@
 import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
 import { toast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
-import { RefreshCw, AlertTriangle, Wifi, WifiOff, Shield } from 'lucide-react';
+import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
+import { Wifi } from 'lucide-react/dist/esm/icons/wifi';
+import { WifiOff } from 'lucide-react/dist/esm/icons/wifi-off';
+import { Shield } from 'lucide-react/dist/esm/icons/shield';
 import * as Sentry from '@sentry/nextjs';
 import {logErrorToProduction} from '@/utils/productionLogger';
 

@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import { BookOpen, Terminal } from "lucide-react";
+import { BookOpen } from 'lucide-react/dist/esm/icons/book-open';
+import { Terminal } from 'lucide-react/dist/esm/icons/terminal';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";

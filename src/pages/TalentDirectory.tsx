@@ -10,7 +10,7 @@ import { ErrorBanner } from '@/components/talent/ErrorBanner';
 import ErrorBoundary from '@/components/GlobalErrorBoundary'; // Import ErrorBoundary
 import { useTalentDirectory } from '@/hooks/useTalentDirectory';
 import { SORT_OPTIONS } from '@/data/sortOptions';
-import { X } from 'lucide-react';
+import { X } from 'lucide-react/dist/esm/icons/x';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { TalentProfile } from '@/types/talent';

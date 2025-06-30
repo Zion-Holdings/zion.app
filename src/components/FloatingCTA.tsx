@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { X } from "lucide-react";
+import { X } from 'lucide-react/dist/esm/icons/x';
 
 export function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);

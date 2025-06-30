@@ -2,7 +2,8 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FilePlus, Loader2 } from 'lucide-react';
+import { FilePlus } from 'lucide-react/dist/esm/icons/file-plus';
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
 import { ProjectCard } from './ProjectCard';
 import { ProjectForm } from './ProjectForm';
 import { PortfolioProject } from '@/types/resume';

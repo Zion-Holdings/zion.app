@@ -4,7 +4,9 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { format } from 'date-fns';
-import { Check, ArrowDown, X } from "lucide-react";
+import { Check } from 'lucide-react/dist/esm/icons/check';
+import { ArrowDown } from 'lucide-react/dist/esm/icons/arrow-down';
+import { X } from 'lucide-react/dist/esm/icons/x';
 import { useDisputeCheck } from '@/hooks/useDisputeCheck';
 import { DisputeStatusBadge } from '@/components/disputes/DisputeStatusBadge';
 import { RaiseDisputeButton } from '@/components/disputes/RaiseDisputeButton';

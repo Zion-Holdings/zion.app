@@ -16,7 +16,9 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { WorkExperience } from '@/types/resume';
-import { Loader2, Edit, Trash2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { Edit } from 'lucide-react/dist/esm/icons/edit';
+import { Trash2 } from 'lucide-react/dist/esm/icons/trash2';
 import { useResume } from '@/hooks/useResume';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Card, CardContent } from '@/components/ui/card';

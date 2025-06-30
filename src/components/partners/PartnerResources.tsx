@@ -1,6 +1,11 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, FileImage, FileText, FileType, FileVideo, Link } from "lucide-react";
+import { Download } from 'lucide-react/dist/esm/icons/download';
+import { FileImage } from 'lucide-react/dist/esm/icons/file-image';
+import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+import { FileType } from 'lucide-react/dist/esm/icons/file-type';
+import { FileVideo } from 'lucide-react/dist/esm/icons/file-video';
+import { Link } from 'lucide-react/dist/esm/icons/link';
 import { toast } from "@/hooks/use-toast";
 
 interface ResourceItem {

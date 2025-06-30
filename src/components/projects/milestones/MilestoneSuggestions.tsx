@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { GeneratedMilestone, MilestoneInput, useMilestoneGenerator } from '@/hooks/useMilestoneGenerator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loader2, Sparkles, Check } from 'lucide-react';
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
+import { Check } from 'lucide-react/dist/esm/icons/check';
 import { Badge } from '@/components/ui/badge';
 import { format, parseISO } from 'date-fns';
 

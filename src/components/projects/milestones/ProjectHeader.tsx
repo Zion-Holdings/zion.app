@@ -2,7 +2,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react/dist/esm/icons/arrow-left';
 
 interface ProjectHeaderProps {
   title: string;

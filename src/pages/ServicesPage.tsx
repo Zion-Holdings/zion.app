@@ -1,7 +1,15 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { ArrowUp, Filter, SortAsc, Zap, TrendingUp, Star, ShoppingCart, Clock, Award } from 'lucide-react';
+import { ArrowUp } from 'lucide-react/dist/esm/icons/arrow-up';
+import { Filter } from 'lucide-react/dist/esm/icons/filter';
+import { SortAsc } from 'lucide-react/dist/esm/icons/sort-asc';
+import { Zap } from 'lucide-react/dist/esm/icons/zap';
+import { TrendingUp } from 'lucide-react/dist/esm/icons/trending-up';
+import { Star } from 'lucide-react/dist/esm/icons/star';
+import { ShoppingCart } from 'lucide-react/dist/esm/icons/shopping-cart';
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { Award } from 'lucide-react/dist/esm/icons/award';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { generateITServices, getServicesMarketStats, getRecommendedServices } from '@/utils/servicesAutoFeedAlgorithm';
 import { ProductListing } from '@/types/listings';

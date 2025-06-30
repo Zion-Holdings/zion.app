@@ -1,6 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { AlertTriangle, ExternalLink, RefreshCw, Settings, CheckCircle } from 'lucide-react';
+import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
+import { ExternalLink } from 'lucide-react/dist/esm/icons/external-link';
+import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { Settings } from 'lucide-react/dist/esm/icons/settings';
+import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 

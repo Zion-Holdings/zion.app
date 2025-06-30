@@ -1,6 +1,6 @@
 
 import * as React from "react"
-import { PanelLeft } from "lucide-react"
+import { PanelLeft } from 'lucide-react/dist/esm/icons/panel-left';
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useSidebar } from "./sidebar-context"

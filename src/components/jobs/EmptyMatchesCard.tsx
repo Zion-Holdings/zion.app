@@ -1,7 +1,8 @@
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Sparkles, RefreshCcw } from "lucide-react";
+import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
+import { RefreshCcw } from 'lucide-react/dist/esm/icons/refresh-ccw';
 
 export interface EmptyMatchesCardProps {
   onRefresh: () => void;

@@ -5,7 +5,9 @@ import { useResume } from '@/hooks/useResume';
 import { Tabs } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { AlertCircle, FilePlus, Loader2 } from 'lucide-react';
+import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
+import { FilePlus } from 'lucide-react/dist/esm/icons/file-plus';
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
 import { Button } from '@/components/ui/button';
 import { Resume } from '@/types/resume';
 

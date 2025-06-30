@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Twitter, Linkedin } from "lucide-react";
+import { Twitter } from 'lucide-react/dist/esm/icons/twitter';
+import { Linkedin } from 'lucide-react/dist/esm/icons/linkedin';
 
 interface Speaker {
   name: string;

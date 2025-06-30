@@ -2,7 +2,12 @@
 import React from 'react';
 import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
-import { ThumbsUp, ThumbsDown, MessageSquare, Pin, Lock, CheckCircle } from "lucide-react";
+import { ThumbsUp } from 'lucide-react/dist/esm/icons/thumbs-up';
+import { ThumbsDown } from 'lucide-react/dist/esm/icons/thumbs-down';
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { Pin } from 'lucide-react/dist/esm/icons/pin';
+import { Lock } from 'lucide-react/dist/esm/icons/lock';
+import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";

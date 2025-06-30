@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award } from "lucide-react";
+import { Award } from 'lucide-react/dist/esm/icons/award';
 
 interface LeaderboardEntry {
   rank: number;

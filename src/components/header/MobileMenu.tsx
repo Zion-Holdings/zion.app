@@ -1,14 +1,13 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import {
-  Home,
-  Search,
-  BriefcaseIcon,
-  MessageSquare,
-  User,
-  X,
-  MessageCircle,
-} from 'lucide-react';
+import { Home } from 'lucide-react/dist/esm/icons/home';
+import { Search } from 'lucide-react/dist/esm/icons/search';
+import { BriefcaseIcon } from 'lucide-react/dist/esm/icons/briefcase-icon';
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { User } from 'lucide-react/dist/esm/icons/user';
+import { X } from 'lucide-react/dist/esm/icons/x';
+import { MessageCircle } from 'lucide-react/dist/esm/icons/message-circle';
+import {  } from 'lucide-react/dist/esm/icons/';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';

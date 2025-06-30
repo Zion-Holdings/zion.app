@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X } from 'lucide-react';
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { X } from 'lucide-react/dist/esm/icons/x';
 import { Button } from '@/components/ui/button';
 import { ChatMessage, ChatInput } from '@/components/ChatAssistant';
 import {logErrorToProduction} from '@/utils/productionLogger';

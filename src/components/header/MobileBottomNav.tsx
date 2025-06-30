@@ -6,15 +6,13 @@ import { useAuth } from "@/hooks/useAuth";
 import { useWishlist } from "@/hooks/useWishlist";
 import { useCart } from '@/context/CartContext';
 import { logWarn } from '@/utils/productionLogger';
-import {
-  Home,
-  Search,
-  MessageCircle,
-  Heart,
-  MessageSquare,
-  ShoppingCart,
-  User
-} from "lucide-react";
+import { Home } from 'lucide-react/dist/esm/icons/home';
+import { Search } from 'lucide-react/dist/esm/icons/search';
+import { MessageCircle } from 'lucide-react/dist/esm/icons/message-circle';
+import { Heart } from 'lucide-react/dist/esm/icons/heart';
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { ShoppingCart } from 'lucide-react/dist/esm/icons/shopping-cart';
+import { User } from 'lucide-react/dist/esm/icons/user';
 
 interface MobileBottomNavProps {
   unreadCount?: number;

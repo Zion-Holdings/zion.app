@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from '@/components/Header';
 import { NextSeo } from '@/components/NextSeo';
-import { Globe, MapPin } from 'lucide-react';
+import { Globe } from 'lucide-react/dist/esm/icons/globe';
+import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface Instance {

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import {
-  Gift,
-  Star,
-  Users,
-  ShoppingBag,
-  MessageSquare,
-  TrendingUp,
-  History,
-} from 'lucide-react';
+import { Gift } from 'lucide-react/dist/esm/icons/gift';
+import { Star } from 'lucide-react/dist/esm/icons/star';
+import { Users } from 'lucide-react/dist/esm/icons/users';
+import { ShoppingBag } from 'lucide-react/dist/esm/icons/shopping-bag';
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { TrendingUp } from 'lucide-react/dist/esm/icons/trending-up';
+import { History } from 'lucide-react/dist/esm/icons/history';
+import {  } from 'lucide-react/dist/esm/icons/';
 import { useAuth } from '@/hooks/useAuth';
 import { usePoints } from '@/hooks/usePoints';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';

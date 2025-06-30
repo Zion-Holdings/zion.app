@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/router'; // Changed from useNavigate
-import { XCircle } from 'lucide-react';
+import { XCircle } from 'lucide-react/dist/esm/icons/xcircle';
 
 export default function PaymentCanceled() {
   const router = useRouter(); // Changed from navigate

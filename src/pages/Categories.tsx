@@ -3,7 +3,7 @@ import { CategoryCard } from "@/components/CategoryCard";
 import { GradientHeading } from "@/components/GradientHeading";
 import { SkeletonCard } from '@/components/ui';
 import ErrorBoundary from "@/components/GlobalErrorBoundary";
-import * as Icons from 'lucide-react';
+import { Folder } from 'lucide-react/dist/esm/icons/folder';
 import { CATEGORIES } from '@/data/categories';
 import { NextSeo } from '@/components/NextSeo';
 import {logErrorToProduction} from '@/utils/productionLogger';
@@ -82,15 +82,13 @@ export default function Categories({ categories: initialCategories = [] }: Categ
           {!isLoading && !error && categories.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {categories.map((category) => {
-                // Get the icon component from lucide-react
-                const IconComponent = (Icons as any)[category.icon] || Icons.Folder;
-                
+                // Use default folder icon for all categories to avoid large bundle
                 return (
                   <CategoryCard
                     key={category.id}
                     title={category.name}
                     description={`Explore ${category.name.toLowerCase()} in our marketplace`}
-                    icon={<IconComponent className="w-6 h-6" />}
+                    icon={<Folder className="w-6 h-6" />}
                   />
                 );
               })}

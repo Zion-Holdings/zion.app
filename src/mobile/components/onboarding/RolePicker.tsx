@@ -2,7 +2,9 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Briefcase, Users, Check } from "lucide-react";
+import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
+import { Users } from 'lucide-react/dist/esm/icons/users';
+import { Check } from 'lucide-react/dist/esm/icons/check';
 
 type UserRole = "talent" | "client" | null;
 

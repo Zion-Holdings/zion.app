@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/router';
-import { Search, Filter, X, SortAsc, SortDesc, GridIcon, List, Loader2 } from 'lucide-react';
+import { Search } from 'lucide-react/dist/esm/icons/search';
+import { Filter } from 'lucide-react/dist/esm/icons/filter';
+import { X } from 'lucide-react/dist/esm/icons/x';
+import { SortAsc } from 'lucide-react/dist/esm/icons/sort-asc';
+import { SortDesc } from 'lucide-react/dist/esm/icons/sort-desc';
+import { GridIcon } from 'lucide-react/dist/esm/icons/grid-icon';
+import { List } from 'lucide-react/dist/esm/icons/list';
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';

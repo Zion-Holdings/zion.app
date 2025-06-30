@@ -1,7 +1,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Smartphone } from "lucide-react";
+import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
+import { Smartphone } from 'lucide-react/dist/esm/icons/smartphone';
 import { Button } from "@/components/ui/button";
 import { AppStoreButtons } from "./AppStoreButtons";
 import { Card, CardContent } from "@/components/ui/card";

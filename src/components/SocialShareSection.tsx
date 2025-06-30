@@ -1,6 +1,9 @@
 
 import { Button } from "./ui/button";
-import { Twitter, Facebook, Linkedin, Link } from "lucide-react";
+import { Twitter } from 'lucide-react/dist/esm/icons/twitter';
+import { Facebook } from 'lucide-react/dist/esm/icons/facebook';
+import { Linkedin } from 'lucide-react/dist/esm/icons/linkedin';
+import { Link } from 'lucide-react/dist/esm/icons/link';
 import { toast } from "./ui/use-toast";
 import { useTranslation } from 'react-i18next';
 

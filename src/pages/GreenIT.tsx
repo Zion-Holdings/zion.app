@@ -2,7 +2,9 @@
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
-import { Leaf, Server, Cloud } from "lucide-react";
+import { Leaf } from 'lucide-react/dist/esm/icons/leaf';
+import { Server } from 'lucide-react/dist/esm/icons/server';
+import { Cloud } from 'lucide-react/dist/esm/icons/cloud';
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import Link from "next/link";
 

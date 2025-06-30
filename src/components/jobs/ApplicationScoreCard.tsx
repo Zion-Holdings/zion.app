@@ -4,7 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
-import { Loader2, Star, BarChart2, Lightbulb } from "lucide-react";
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { Star } from 'lucide-react/dist/esm/icons/star';
+import { BarChart2 } from 'lucide-react/dist/esm/icons/bar-chart2';
+import { Lightbulb } from 'lucide-react/dist/esm/icons/lightbulb';
 import { toast } from "sonner";
 import { JobApplication } from "@/types/jobs";
 

@@ -1,7 +1,10 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ReferralStats as ReferralStatsType } from "@/types/referrals";
-import { Award, Share, Star, TrendingUp } from "lucide-react";
+import { Award } from 'lucide-react/dist/esm/icons/award';
+import { Share } from 'lucide-react/dist/esm/icons/share';
+import { Star } from 'lucide-react/dist/esm/icons/star';
+import { TrendingUp } from 'lucide-react/dist/esm/icons/trending-up';
 
 interface ReferralStatsProps {
   stats: ReferralStatsType;

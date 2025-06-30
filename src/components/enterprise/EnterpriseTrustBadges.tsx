@@ -1,6 +1,9 @@
 
 import React from "react";
-import { Shield, Lock, Award, CheckCircle } from "lucide-react";
+import { Shield } from 'lucide-react/dist/esm/icons/shield';
+import { Lock } from 'lucide-react/dist/esm/icons/lock';
+import { Award } from 'lucide-react/dist/esm/icons/award';
+import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
 
 export function EnterpriseTrustBadges() {
   return (

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ShieldAlert } from "lucide-react";
+import { ShieldAlert } from 'lucide-react/dist/esm/icons/shield-alert';
 import { RaiseDisputeButton } from '@/components/disputes/RaiseDisputeButton';
 
 interface ProjectActionsProps {

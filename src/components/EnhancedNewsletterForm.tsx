@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState, useRef } from "react";
-import { Mail } from "lucide-react";
+import { Mail } from 'lucide-react/dist/esm/icons/mail';
 import { useToast } from "@/hooks/use-toast";
 import {logErrorToProduction} from '@/utils/productionLogger';
 

@@ -1,6 +1,8 @@
 import React from "react";
 import { ServiceLandingTemplate } from "@/components/services/ServiceLandingTemplate";
-import { Bot, Users, TrendingUp } from "lucide-react";
+import { Bot } from 'lucide-react/dist/esm/icons/bot';
+import { Users } from 'lucide-react/dist/esm/icons/users';
+import { TrendingUp } from 'lucide-react/dist/esm/icons/trending-up';
 
 export default function AITalentMatchingPage() {
   const benefits = [

@@ -1,7 +1,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, ShieldCheck } from "lucide-react";
+import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+import { ShieldCheck } from 'lucide-react/dist/esm/icons/shield-check';
 
 interface ContractTypeCardsProps {
   onStandardClick: () => void;

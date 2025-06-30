@@ -1,6 +1,11 @@
 
 import { GradientHeading } from "./GradientHeading";
-import { Server, HardDrive, Network, Clock, Recycle, Truck } from "lucide-react";
+import { Server } from 'lucide-react/dist/esm/icons/server';
+import { HardDrive } from 'lucide-react/dist/esm/icons/hard-drive';
+import { Network } from 'lucide-react/dist/esm/icons/network';
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { Recycle } from 'lucide-react/dist/esm/icons/recycle';
+import { Truck } from 'lucide-react/dist/esm/icons/truck';
 import { Button } from "./ui/button";
 
 const services = [
