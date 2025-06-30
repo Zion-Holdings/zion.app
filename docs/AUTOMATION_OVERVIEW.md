@@ -63,4 +63,12 @@ This document provides an overview of the automated workflows and processes impl
 - **Configuration:** `.github/workflows/track-todos.yml`.
 
 These automations aim to streamline development workflows, improve code quality, ensure dependencies are kept up-to-date, and make deployment processes more reliable and efficient.
-```
+
+## 4. Self-Healing & AI-Assisted Development
+
+- **Watchdog Monitoring:** `scripts/watchdog.js` monitors log files and system resources. If repeated errors or sustained high usage are detected, it triggers a self-heal command and can invoke the OpenAI operator for help.
+- **OpenAI Operator Pipeline:** The `/api/codex/suggest-fix` endpoint and `scripts/codexWebhookServer.js` run `openai-operator` with `codex-pipeline.yaml` to lint code, extract failing snippets, request a Codex patch, and optionally deploy if tests succeed.
+- **Error Reporting Workflows:** Workflows such as `auto-report-errors.yml` and `auto-report-codex.yml` collect logs during CI and open issues or pull requests with AI-generated patches when failures occur.
+- **Manual Hotfix Review:** See `docs/MANUAL_HOTFIX_PROCESS.md` for guidance on reviewing AI suggestions before merging critical fixes.
+
+Together, these tools allow the project to automatically detect problems, generate fixes, and submit pull requests with minimal human intervention.
