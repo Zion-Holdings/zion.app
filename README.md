@@ -17,6 +17,7 @@ The project is structured as a monorepo and includes:
 -   **SDK:** A software development kit is present in `sdk/`, likely for interacting with Zion platform services.
 -   **Documentation:** General documentation is in `docs/`, with specific component documentation potentially within their respective directories.
 -   **Testing:** Extensive test suites using Vitest and Cypress are in `tests/` and `cypress/`. See **[docs/QA_TESTING_CHECKLIST.md](docs/QA_TESTING_CHECKLIST.md)** for common QA steps.
+-   **Connect Portal:** Access the portal at `/portal` for account management and settings. The previous `/app` path is deprecated.
 
 ## Key Technologies
 
@@ -228,6 +229,15 @@ The application includes built-in monitoring for:
 - File system integrity
 - Environment configuration validation
 - Error reporting and analytics
+
+### Self-Maintenance Automation
+The project includes several automations that help it heal itself and stay up to date:
+
+- **Watchdog self‑healing** triggers `git pull && npm install && npm run build && pm2 restart all` when logs or resource usage indicate problems.
+- **Codex autofix** workflows open issues for failing tests and automatically apply patches suggested by OpenAI.
+- **Scheduled audits** run weekly to check dependencies and performance.
+
+For detailed setup instructions see [docs/SELF_MAINTENANCE_AUTOMATION.md](docs/SELF_MAINTENANCE_AUTOMATION.md).
 
 ---
 
