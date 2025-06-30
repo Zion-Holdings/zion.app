@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const fetchPostsByCategory = async (slug, limit = 10, offset = 0) => {
 
@@ -9,7 +9,7 @@ export const fetchPostsByCategory = async (slug, limit = 10, offset = 0) => {
     });
     return res.data.posts;
   } catch (err) {
-    logError('Failed to fetch community posts', { data: err });
+    logErrorToProduction('Failed to fetch community posts', { data: err });
     throw err;
   }
 };

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const getWallet = async () => {
 
@@ -7,7 +7,7 @@ export const getWallet = async () => {
     const res = await axios.get('/api/wallet');
     return res.data;
   } catch (err) {
-    logError('Failed to fetch wallet', { data: err });
+    logErrorToProduction('Failed to fetch wallet', { data: err });
     throw err;
   }
 };

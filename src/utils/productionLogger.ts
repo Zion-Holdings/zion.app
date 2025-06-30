@@ -393,8 +393,8 @@ export const logPerformance = productionLogger.logPerformanceMetric.bind(product
 export const timeStart = productionLogger.time.bind(productionLogger);
 export const timeEnd = productionLogger.timeEnd.bind(productionLogger);
 
-// Keep logError as alias for backward compatibility but prefer logErrorToProduction for clarity
-export const logError = productionLogger.error.bind(productionLogger);
+// Note: logError is not exported here to avoid conflicts with utils/logError.ts
+// Use logErrorToProduction for production logging or import logError from utils/logError.ts for external error reporting
 
 export { ProductionLogger };
 export default productionLogger; 

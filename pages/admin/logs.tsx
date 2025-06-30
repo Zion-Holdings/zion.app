@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { AlertTriangle, Info, AlertCircle, XCircle, Search, Download, RefreshCw } from 'lucide-react';
-import { logError } from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface LogEntry {
@@ -131,7 +131,7 @@ export default function LogsPage({ logs: initialLogs, errorCount, warningCount, 
         setLogs(data.logs);
       }
     } catch (error) {
-      logError('Failed to refresh logs:', error);
+      logErrorToProduction('Failed to refresh logs:', error);
     } finally {
       setIsLoading(false);
     }
@@ -424,7 +424,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       },
     };
   } catch (error) {
-    logError('Error reading logs:', error);
+            logErrorToProduction('Error reading logs:', error);
     return {
       props: {
         logs: [],

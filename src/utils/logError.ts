@@ -2,7 +2,7 @@
 import { captureException } from './sentry';
 import { sendErrorToBackend } from './customErrorReporter';
 import { generateTraceId } from './generateTraceId';
-import { logWarn, logError as prodLogError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 // Do not import datadogLogs at the top level for server-side compatibility
 
@@ -85,7 +85,7 @@ export function logError(
       });
     }
   } catch (err) {
-    prodLogError('Failed to report error to Sentry:', err, { componentStack: context?.componentStack });
+    logErrorToProduction('Failed to report error to Sentry:', err, { componentStack: context?.componentStack });
   }
 
   try {
@@ -124,11 +124,11 @@ export function logError(
 
     // Non-blocking call
     sendErrorToBackend(errorDetails).catch(err => {
-      prodLogError('Error sending logError to backend:', err, { componentStack: context?.componentStack });
+      logErrorToProduction('Error sending logError to backend:', err, { componentStack: context?.componentStack });
     });
 
   } catch (err) {
-    prodLogError('Failed to prepare or send error to custom backend:', { data: err });
+    logErrorToProduction('Failed to prepare or send error to custom backend:', { data: err });
   }
 
   return traceId;

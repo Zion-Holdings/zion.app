@@ -1,6 +1,6 @@
 import { mailchimpService } from '@/integrations/mailchimp';
 import { sendEmailWithSendGrid } from '@/lib/email';
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn logErrorToProduction } from '@/utils/productionLogger';
 
 export async function subscribeToNewsletter(email: string): Promise<void> {
 
@@ -25,7 +25,7 @@ export async function subscribeToNewsletter(email: string): Promise<void> {
         dynamicTemplateData: {},
       });
     } catch (err) {
-      logError('Failed to send SendGrid welcome email:', { data: err });
+      logErrorToProduction('Failed to send SendGrid welcome email:', { data: err });
     }
   }
 }

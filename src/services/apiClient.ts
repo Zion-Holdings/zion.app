@@ -3,7 +3,7 @@ import { showError } from '@/utils/showToast';
 import { showApiError } from '@/utils/apiErrorHandler';
 import { supabase } from '@/integrations/supabase/client';
 import axiosRetry from 'axios-retry';
-import { logError, logDebug } from '@/utils/productionLogger';
+import { logErrorToProduction, logDebug } from '@/utils/productionLogger';
 
 
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ziontechgroup.com/v1';
@@ -146,7 +146,7 @@ apiClient.interceptors.response.use(
       try {
         await supabase.auth.signOut({ scope: 'global' });
       } catch (e) {
-        logError('Failed to logout after 401', { data:  e });
+        logErrorToProduction('Failed to logout after 401', { data:  e });
       }
       if (typeof window !== 'undefined') {
         window.location.assign('/login');

@@ -30,7 +30,7 @@ import dynamic from 'next/dynamic';
 import { PerformanceMonitor } from '@/components/ui/performance-monitor';
 import { BundleAnalyzer } from '@/components/ui/bundle-analyzer';
 import { QuickActions } from '@/components/ui/quick-actions';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Dynamically load heavy components to improve initial load time
@@ -173,7 +173,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           setIsInitialized(true);
         }
       } catch (error) {
-        logError('[App] Critical initialization error:', { data:  { error } });
+        logErrorToProduction('[App] Critical initialization error:', error, { page: 'app-initialization' });
 
         // Ensure isInitialized is set to true immediately in case of an error,
         // so the app doesn't hang on the loading screen.

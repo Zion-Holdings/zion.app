@@ -3,7 +3,7 @@
  * Provides comprehensive log collection, pattern analysis, and proactive error detection
  */
 
-import { logInfo, logWarn, logError } from './productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
 import { logAnalyzer } from './logAnalyzer';
 import { errorReportingDashboard } from './errorReportingDashboard';
 
@@ -177,7 +177,7 @@ class AdvancedLogCollector {
       }
     }
 
-    logError('Critical log collected', undefined, {
+    logErrorToProduction('Critical log collected', undefined, {
       logId: log.id,
       source: log.source,
       context: log.context
@@ -193,10 +193,11 @@ class AdvancedLogCollector {
     );
 
     if (similarLogs.length > 3) {
+      const firstLog = similarLogs[0];
       logWarn('Recurring log pattern detected', {
         pattern: log.message.substring(0, 100),
         occurrences: similarLogs.length,
-        timespan: `${Date.now() - new Date(similarLogs[0].timestamp).getTime()}ms`,
+        timespan: firstLog ? `${Date.now() - new Date(firstLog.timestamp).getTime()}ms` : 'unknown',
         logLevel: log.level
       });
     }
@@ -451,25 +452,30 @@ export {
 
 // Auto-collect production logger events
 if (typeof window !== 'undefined') {
-  // Hook into production logger
-  const originalLogError = logError;
-  (window as any).logError = (...args: any[]) => {
-    const result = originalLogError(...args);
-    
-    // Collect the log
-    advancedLogCollector.collectLog({
-      id: advancedLogCollector['generateLogId'](),
-      timestamp: new Date().toISOString(),
-      level: 'error',
-      message: args[0] || 'Unknown error',
-      source: 'client',
-      sessionId: advancedLogCollector['getSessionId'](),
-      context: args[2],
-      stackTrace: args[1] instanceof Error ? args[1].stack : undefined,
-      url: window.location.href,
-      userAgent: navigator.userAgent,
-    });
-    
-    return result;
-  };
+  // Hook into external error logger
+  import('./logError').then(({ logError }) => {
+    const originalLogError = logError;
+    (window as any).logError = (...args: any[]) => {
+      const result = originalLogError(args[0], args[1]);
+      
+      // Collect the log
+      advancedLogCollector.collectLog({
+        id: advancedLogCollector['generateLogId'](),
+        timestamp: new Date().toISOString(),
+        level: 'error',
+        message: args[0] || 'Unknown error',
+        source: 'client',
+        sessionId: advancedLogCollector['getSessionId'](),
+        context: args[2],
+        stackTrace: args[1] instanceof Error ? args[1].stack : undefined,
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+      });
+      
+      return result;
+    };
+  }).catch(() => {
+    // Fallback if import fails
+    console.warn('Could not hook into logError for advanced log collection');
+  });
 } 
