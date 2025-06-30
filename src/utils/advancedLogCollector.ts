@@ -430,6 +430,18 @@ class AdvancedLogCollector {
     return { status, issues };
   }
 
+  public getCollectedLogs(): CollectedLog[] {
+    return [...this.logBuffer];
+  }
+
+  public clearOldLogs(cutoffTimestamp: number): number {
+    const initialCount = this.logBuffer.length;
+    this.logBuffer = this.logBuffer.filter(log => 
+      new Date(log.timestamp).getTime() > cutoffTimestamp
+    );
+    return initialCount - this.logBuffer.length;
+  }
+
   public destroy(): void {
     if (this.analysisInterval) {
       clearInterval(this.analysisInterval);
