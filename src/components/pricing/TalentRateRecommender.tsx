@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {logErrorToProduction} from '@/utils/productionLogger';
-import { 
 import { Sparkles } from 'lucide-react';
-  getTalentRateSuggestion, 
+import {
+  getTalentRateSuggestion,
   PricingSuggestion,
   TalentRateParams,
   trackPricingSuggestion

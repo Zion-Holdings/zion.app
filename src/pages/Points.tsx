@@ -7,7 +7,7 @@ import { Gift, Star, Users, ShoppingBag, MessageSquare, TrendingUp, History } fr
 
 
 
-import {  } from 'lucide-react/dist/esm/icons/';
+
 import { useAuth } from '@/hooks/useAuth';
 import { usePoints } from '@/hooks/usePoints';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';

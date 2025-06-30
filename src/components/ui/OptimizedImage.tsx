@@ -5,9 +5,10 @@
 import Image, { ImageProps } from 'next/image';
 import { useState } from 'react';
 
-interface OptimizedImageProps extends Omit<ImageProps, 'onLoad' | 'onError'> {
+interface OptimizedImageProps extends Omit<ImageProps, 'onLoad'> {
   fallback?: string;
   eager?: boolean;
+  onError?: (e: any) => void;
 }
 
 export function OptimizedImage({ 
@@ -16,6 +17,7 @@ export function OptimizedImage({
   fallback = '/images/placeholder.jpg',
   eager = false,
   className = '',
+  onError,
   ...props 
 }: OptimizedImageProps) {
   const [error, setError] = useState(false);
@@ -50,9 +52,10 @@ export function OptimizedImage({
         priority={eager}
         className={`${className} ${loading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         onLoad={() => setLoading(false)}
-        onError={() => {
+        onError={(e) => {
           setError(true);
           setLoading(false);
+          onError?.(e);
         }}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         {...props}

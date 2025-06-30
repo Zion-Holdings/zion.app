@@ -51,7 +51,7 @@ import { ProjectReviewSection } from "@/components/projects/reviews/ProjectRevie
 
 
 
-import {  } from 'lucide-react/dist/esm/icons/';
+
 
 function ProjectDetailsContent() {
   const router = useRouter();

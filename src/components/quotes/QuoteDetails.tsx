@@ -1,12 +1,12 @@
 
 import React from "react";
-import { 
 import { Calendar, User, Mail, Clock, DollarSign } from 'lucide-react';
-  Dialog, 
-  DialogContent, 
-  DialogHeader, 
-  DialogTitle, 
-  DialogDescription 
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 

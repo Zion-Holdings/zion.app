@@ -17,7 +17,7 @@ import { formatDistanceToNow } from 'date-fns';
 
 
 
-import {  } from 'lucide-react/dist/esm/icons/';
+
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
