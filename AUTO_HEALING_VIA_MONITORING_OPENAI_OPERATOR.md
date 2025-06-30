@@ -58,6 +58,12 @@ This document explains how the Zion platform automatically detects issues, attem
         *   Critical alerts for detected heal loops requiring manual intervention.
         *   Optionally, alerts can include AI-generated error summaries.
 
+## How Auto‑Healing Works
+1. **Detect Issues** – The watchdog tails `logs/perf/hourly.log` and `logs/security/hourly-fix.log` while also watching CPU and memory usage.
+2. **Trigger Self‑Heal** – After multiple errors or sustained high usage, `triggerSelfHeal()` runs. The default `HEAL_COMMAND` pulls the latest code, installs dependencies, runs the build and restarts services.
+3. **OpenAI Operator** – As part of the healing process, or manually via `/api/codex/suggest-fix`, the openai-operator pipeline analyzes failing code with Codex and attempts to apply a patch. The watchdog triggers this endpoint automatically when a self-heal completes.
+4. **Logs and Alerts** – All actions are recorded in `logs/self-heal.log`. Optional Discord or Slack webhooks inform the team when a heal starts and finishes.
+
 ## Usage Tips
 - Start the enhanced monitoring in production with:
   ```bash
@@ -79,6 +85,9 @@ This document explains how the Zion platform automatically detects issues, attem
     "logSnippet": "Long and complex error log here..."
   }
   ```
+- Configure alert webhooks and thresholds via environment variables in `.env.local` as described in `docs/MONITORING_IMPROVEMENTS.md`.
+- Set `CODEX_TRIGGER_URL` if the Codex endpoint is hosted elsewhere. Defaults to `http://localhost:3001/api/codex/suggest-fix`.
+- To manually request an AI fix for a specific route, send a POST request to `/api/codex/suggest-fix`.
 
 ## Benefits
 - **More Targeted Resiliency**: Reduces downtime with more specific healing actions rather than just full restarts.

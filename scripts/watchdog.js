@@ -235,6 +235,9 @@ const ERROR_PATTERNS_CONFIG = [
   }
 ];
 
+// Endpoint for triggering the Codex AI fix pipeline
+const CODEX_TRIGGER_URL = process.env.CODEX_TRIGGER_URL || 'http://localhost:3001/api/codex/suggest-fix';
+
 // --- State Variables ---
 let errorStreaks = {}; // Stores streaks for each error pattern config name
 /** @type {boolean} isHealing - Flag to prevent concurrent self-heal actions (cooldown mechanism). True if a heal is in progress. */
@@ -322,6 +325,26 @@ function appendToSelfHealLog(message) {
   }
 }
 
+// Trigger the Codex AI fix pipeline via HTTP request
+async function triggerCodexFix(reason) {
+  if (!CODEX_TRIGGER_URL) {
+    const warnMsg = 'CODEX_TRIGGER_URL not set. Skipping Codex fix trigger.';
+    console.warn(warnMsg);
+    appendToSelfHealLog(`[${new Date().toISOString()}] WARN: ${warnMsg}\n`);
+    return;
+  }
+
+  try {
+    await axios.post(CODEX_TRIGGER_URL, { reason, timestamp: new Date().toISOString() }, { timeout: 10000 });
+    const successMsg = `Codex fix triggered via ${CODEX_TRIGGER_URL}`;
+    console.log(successMsg);
+    appendToSelfHealLog(`[${new Date().toISOString()}] ${successMsg}\n`);
+  } catch (err) {
+    logErrorToProduction('Failed to trigger Codex fix', err);
+    appendToSelfHealLog(`[${new Date().toISOString()}] ERROR: Failed to trigger Codex fix: ${err.message}\n`);
+  }
+}
+
 console.log('Watchdog script started. Monitoring log files...');
 appendToSelfHealLog(`[${new Date().toISOString()}] Watchdog script started.\n`);
 
@@ -403,6 +426,9 @@ function triggerSelfHeal(reason) {
     const completionMessage = error ? 'Self-heal action completed with errors. Resetting streaks.' : 'Self-heal action completed successfully. Resetting streaks.';
     console.log(completionMessage);
     appendToSelfHealLog(`[${executionTimestamp}] ${completionMessage}\n`);
+
+    // Trigger Codex automation for additional healing steps
+    triggerCodexFix(reason);
 
     // Reset streaks after successful or failed healing attempt to avoid immediate re-trigger for the same issue.
     perfErrorStreak = 0;
@@ -593,6 +619,7 @@ export {
   logErrorToProduction,
   sendDiscordAlert,
   appendToSelfHealLog,
+  triggerCodexFix,
   triggerSelfHeal,
   monitorSystemResources,
 };
@@ -631,4 +658,5 @@ export const _getConstantsForTests = () => ({
   CPU_SUSTAINED_CHECKS,
   SYSTEM_CHECK_INTERVAL,
   DISCORD_WEBHOOK_URL,
+  CODEX_TRIGGER_URL,
 });
