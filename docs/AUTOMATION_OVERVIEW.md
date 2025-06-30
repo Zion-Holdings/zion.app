@@ -63,4 +63,9 @@ This document provides an overview of the automated workflows and processes impl
 - **Configuration:** `.github/workflows/track-todos.yml`.
 
 These automations aim to streamline development workflows, improve code quality, ensure dependencies are kept up-to-date, and make deployment processes more reliable and efficient.
+
+## 4. Marketing Automation
+
+- **Automatic Blog Promotion:** When scheduled jobs generate and publish a new blog post, a Supabase Edge Function (`share-blog-post`) tweets the article link using the post's `tweetSummary`. This is triggered from `process-scheduled-jobs` after publishing.
+
 ```
