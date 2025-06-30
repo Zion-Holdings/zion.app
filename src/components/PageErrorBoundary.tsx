@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { AlertTriangle, Home, RefreshCw, Settings } from 'lucide-react';
-import { logError } from '@/utils/logError';
-import { logInfo, logError as prodLogError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/logError';
+import { logInfo, logErrorToProduction as prodLogError } from '@/utils/productionLogger';
 
 
 interface PageErrorFallbackProps extends FallbackProps {
@@ -143,7 +143,7 @@ export default function PageErrorBoundary({
   const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
     prodLogError(`PageErrorBoundary caught error on ${pageName || 'unknown page'}:`, error);
     
-    logError(error, {
+    logErrorToProduction(error, {
       page: pageName || 'unknown',
       componentStack: errorInfo.componentStack || undefined,
       errorBoundary: 'PageErrorBoundary',

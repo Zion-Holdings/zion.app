@@ -1,4 +1,4 @@
-import { logInfo, logError, logDebug } from '@/utils/productionLogger';
+import { logInfo, logErrorToProductionToProduction, logDebug } from '@/utils/productionLogger';
 
 interface ErrorDetails {
   message: string;
@@ -41,13 +41,13 @@ export async function sendErrorToBackend(errorDetails: ErrorDetails): Promise<vo
     if (response.ok) {
       logInfo(`Error report sent successfully from ${errorDetails.source}.`);
     } else {
-      logError(
+      logErrorToProduction(
         `Failed to send error report from ${errorDetails.source}. Status: ${response.status}`,
         await response.text()
       );
     }
   } catch (error) {
-    logError('Error sending report from ${errorDetails.source}:', { data: error });
+    logErrorToProduction('Error sending report from ${errorDetails.source}:', { data: error });
   }
 }
 

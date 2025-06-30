@@ -6,7 +6,7 @@ import { AIMatchingResults } from "@/components/AIMatchingResults";
 import { findMatches, MatchResult } from "@/lib/ai-matchmaking";
 import { Textarea } from "@/components/ui/textarea";
 import { Sparkles, Search } from "lucide-react";
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface AIMatchmakerProps {
@@ -52,7 +52,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
         description: `Found ${results.length} matches based on your description.`,
       });
     } catch (error) {
-      logError('Error during AI matching:', { data: error });
+      logErrorToProduction('Error during AI matching:', { data: error });
       toast({
         title: "Matching Error",
         description: "We couldn't find matches for your request. Please try again.",

@@ -12,7 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 import { EquipmentErrorBoundary } from '@/components/EquipmentErrorBoundary';
 import { useCurrency } from '@/hooks/useCurrency';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 // Enhanced initial equipment with more variety
@@ -336,7 +336,7 @@ function EquipmentPageContent() {
         total: processedDataset.length
       };
     } catch (error) {
-      logError('Error in fetchEquipment:', { data: error });
+      logErrorToProduction('Error in fetchEquipment:', { data: error });
       throw new Error('Failed to load equipment data. Please try again.');
     }
   }, [sortBy, filterCategory, showRecommended, dataSeed]);

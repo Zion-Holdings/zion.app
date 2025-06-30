@@ -29,7 +29,7 @@ const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
  * @param {string} message - The primary error message.
  * @param {Error|null} [errorObject=null] - Optional error object to log its message and stack.
  */
-function logError(message, errorObject = null) {
+function logErrorToProduction(message, errorObject = null) {
   const timestamp = new Date().toISOString();
   console.error(`[${timestamp}] WATCHDOG ERROR: ${message}`);
   if (errorObject) {
@@ -72,7 +72,7 @@ async function sendDiscordAlert(alertMessage) {
     } else {
       errorMessage += ` Error: ${error.message}`;
     }
-    logError(errorMessage); // Log full error to console via logError
+    logErrorToProduction(errorMessage); // Log full error to console via logError
     appendToSelfHealLog(`[${new Date().toISOString()}] ERROR: ${errorMessage}\n`); // Log concise error to self-heal log
   }
 }
@@ -83,7 +83,7 @@ async function sendDiscordAlert(alertMessage) {
  * Logs the error details using the logError function.
  */
 process.on('unhandledRejection', (reason, promise) => {
-  logError('Unhandled Rejection. Promise: ' + promise + ' Reason: ' + (reason instanceof Error ? reason.message : reason), reason instanceof Error ? reason : null);
+  logErrorToProduction('Unhandled Rejection. Promise: ' + promise + ' Reason: ' + (reason instanceof Error ? reason.message : reason), reason instanceof Error ? reason : null);
 });
 
 /**
@@ -93,7 +93,7 @@ process.on('unhandledRejection', (reason, promise) => {
  * Depending on the severity, a process manager (like PM2) might be configured to restart it.
  */
 process.on('uncaughtException', (error) => {
-  logError('Uncaught Exception.', error);
+  logErrorToProduction('Uncaught Exception.', error);
   // process.exit(1); // Optionally exit. For a watchdog, continuous monitoring is often preferred if possible.
 });
 
@@ -114,7 +114,7 @@ function determineBaseLogPath() {
       fs.accessSync(envPath, fs.constants.W_OK);
       return envPath;
     } catch (e) {
-      logError(`Failed to use WATCHDOG_LOG_PATH at ${envPath}. Falling back to local logs directory.`, e);
+      logErrorToProduction(`Failed to use WATCHDOG_LOG_PATH at ${envPath}. Falling back to local logs directory.`, e);
     }
   }
 
@@ -124,7 +124,7 @@ function determineBaseLogPath() {
     fs.accessSync(cwdPath, fs.constants.W_OK);
     return cwdPath;
   } catch (e) {
-    logError(`Failed to create cwd log directory at ${cwdPath}`, e);
+    logErrorToProduction(`Failed to create cwd log directory at ${cwdPath}`, e);
   }
 
   const fallback = path.resolve(__dirname, '../logs');
@@ -133,7 +133,7 @@ function determineBaseLogPath() {
     fs.accessSync(fallback, fs.constants.W_OK);
     return fallback;
   } catch (e) {
-    logError(`Failed to create fallback log directory at ${fallback}`, e);
+    logErrorToProduction(`Failed to create fallback log directory at ${fallback}`, e);
   }
 
   const tmpPath = '/tmp/watchdog-logs';
@@ -142,7 +142,7 @@ function determineBaseLogPath() {
     fs.accessSync(tmpPath, fs.constants.W_OK);
     return tmpPath;
   } catch (e) {
-    logError(`Failed to create tmp log directory at ${tmpPath}`, e);
+    logErrorToProduction(`Failed to create tmp log directory at ${tmpPath}`, e);
   }
 
   return cwdPath;
@@ -164,7 +164,7 @@ function ensureFileExists(filePath) {
       fs.closeSync(fs.openSync(filePath, 'a'));
     }
   } catch (err) {
-    logError(`Failed to create log file: ${filePath}`, err);
+    logErrorToProduction(`Failed to create log file: ${filePath}`, err);
   }
 }
 
@@ -264,7 +264,7 @@ function ensureSingleInstance() {
       process.exit(0);
     });
   } catch (err) {
-    logError('Failed to ensure single instance', err);
+    logErrorToProduction('Failed to ensure single instance', err);
   }
 }
 
@@ -282,7 +282,7 @@ function appendToSelfHealLog(message) {
   try {
     fs.appendFileSync(SELF_HEAL_LOG_FILE, message);
   } catch (err) {
-    logError(`Failed to write to self-heal log: ${SELF_HEAL_LOG_FILE}`, err);
+    logErrorToProduction(`Failed to write to self-heal log: ${SELF_HEAL_LOG_FILE}`, err);
   }
 }
 
@@ -332,7 +332,7 @@ function triggerSelfHeal(reason) {
   if (DISCORD_WEBHOOK_URL) {
     const discordAlertMessage = `🚨 **Watchdog Alert** 🚨\n\n**Reason:** ${reason}\n\n**Action:** Initiating self-heal sequence (code update & build).\n**Command:** \`\`\`${HEAL_COMMAND}\`\`\``;
     sendDiscordAlert(discordAlertMessage).catch(err => {
-      logError('Failed to send Discord alert', err);
+      logErrorToProduction('Failed to send Discord alert', err);
     });
   }
 
@@ -346,10 +346,10 @@ function triggerSelfHeal(reason) {
     
     if (error) {
       if (error.killed && error.signal === 'SIGTERM') {
-        logError('Self-heal command timed out after 10 minutes');
+        logErrorToProduction('Self-heal command timed out after 10 minutes');
         appendToSelfHealLog(`[${executionTimestamp}] Self-heal command timed out after 10 minutes\n`);
       } else {
-        logError(`Self-heal command error: ${error.message}`, error);
+        logErrorToProduction(`Self-heal command error: ${error.message}`, error);
         appendToSelfHealLog(`[${executionTimestamp}] Error executing self-heal command: ${error.message}\n`);
       }
     }
@@ -378,7 +378,7 @@ function triggerSelfHeal(reason) {
 
   // Handle process errors
   childProcess.on('error', (err) => {
-    logError('Failed to start self-heal command', err);
+    logErrorToProduction('Failed to start self-heal command', err);
     appendToSelfHealLog(`[${new Date().toISOString()}] Failed to start self-heal command: ${err.message}\n`);
     isHealing = false;
   });
@@ -489,13 +489,13 @@ function startMonitoring() {
         }
       });
       perfTail.on('error', function(error) {
-        logError(`Error tailing performance log file: ${PERF_LOG_FILE}`, error);
+        logErrorToProduction(`Error tailing performance log file: ${PERF_LOG_FILE}`, error);
         appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing performance log file ${PERF_LOG_FILE}: ${error.message}\n`);
       });
       perfTail.watch();
       console.log(`Watching performance log: ${PERF_LOG_FILE}`);
     } catch (e) {
-      logError(`Failed to initialize tail for performance log: ${PERF_LOG_FILE}`, e);
+      logErrorToProduction(`Failed to initialize tail for performance log: ${PERF_LOG_FILE}`, e);
       appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${PERF_LOG_FILE}: ${e.message}\n`);
     }
   } else {
@@ -521,13 +521,13 @@ function startMonitoring() {
         }
       });
       securityTail.on('error', function(error) {
-        logError(`Error tailing security log file: ${SECURITY_LOG_FILE}`, error);
+        logErrorToProduction(`Error tailing security log file: ${SECURITY_LOG_FILE}`, error);
         appendToSelfHealLog(`[${new Date().toISOString()}] Error tailing security log file ${SECURITY_LOG_FILE}: ${error.message}\n`);
       });
       securityTail.watch();
       console.log(`Watching security log: ${SECURITY_LOG_FILE}`);
     } catch (e) {
-      logError(`Failed to initialize tail for security log: ${SECURITY_LOG_FILE}`, e);
+      logErrorToProduction(`Failed to initialize tail for security log: ${SECURITY_LOG_FILE}`, e);
       appendToSelfHealLog(`[${new Date().toISOString()}] Failed to initialize tail for ${SECURITY_LOG_FILE}: ${e.message}\n`);
     }
   } else {
@@ -554,7 +554,7 @@ if (process.env.NODE_ENV !== 'test' && import.meta.url === pathToFileURL(process
 // --- Exports for Testing ---
 // This allows Jest to import and test these functions and states.
 export {
-  logError,
+  logErrorToProduction,
   sendDiscordAlert,
   appendToSelfHealLog,
   triggerSelfHeal,

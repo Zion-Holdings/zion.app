@@ -2,7 +2,7 @@ import { PrismaClient, type Product as ProductModel } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { connectWithTimeout } from '@/utils/prismaConnect';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface ProductStats {
@@ -31,7 +31,7 @@ async function handler(
   // DATABASE_URL is essential for Prisma Client to connect to the database.
   // This check ensures the service is not attempting to run without proper configuration.
   if (!process.env.DATABASE_URL) {
-    logError("DATABASE_URL is not set or empty.");
+    logErrorToProduction("DATABASE_URL is not set or empty.");
     return res.status(503).json({ error: 'Service Unavailable: Database configuration is missing.' });
   }
   if (req.method !== 'GET') {
@@ -55,7 +55,7 @@ async function handler(
       logInfo('Fetched products:', { data: products });
     } catch (e: any) {
       // Logging detailed Prisma error including message, code, meta, and stack for findMany operation.
-      logError(
+      logErrorToProduction(
         'Error during database operation [prisma.product.findMany]:',
         {
           message: e.message,
@@ -85,7 +85,7 @@ async function handler(
       logInfo('Fetched product stats:', { data: stats });
     } catch (e: any) {
       // Logging detailed Prisma error including message, code, meta, and stack for groupBy operation.
-      logError(
+      logErrorToProduction(
         'Error during database operation [prisma.productReview.groupBy]:',
         {
           message: e.message,
@@ -116,7 +116,7 @@ async function handler(
 
     return res.status(200).json(result);
   } catch (e: any) {
-    logError(
+    logErrorToProduction(
       'Generic error in products API handler (fallback catch):',
       {
         message: e.message,

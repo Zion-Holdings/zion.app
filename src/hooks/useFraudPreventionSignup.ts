@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react';
 import { checkSignupPatterns } from '@/services/fraud/signupCheck';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export function useFraudPreventionSignup() {
 
@@ -16,7 +16,7 @@ export function useFraudPreventionSignup() {
       const data = await response.json();
       return data.ip;
     } catch (error) {
-      logError('Error getting IP:', { data: error });
+      logErrorToProduction('Error getting IP:', { data: error });
       return undefined;
     }
   };
@@ -47,7 +47,7 @@ export function useFraudPreventionSignup() {
         });
         
         if (error) {
-          logError('Error creating fraud flag:', { data: error });
+          logErrorToProduction('Error creating fraud flag:', { data: error });
         }
         
         // Depending on how strict we want to be, we could block the signup
@@ -71,7 +71,7 @@ export function useFraudPreventionSignup() {
       // No suspicious patterns found
       return true;
     } catch (error) {
-      logError('Error in fraud check:', { data: error });
+      logErrorToProduction('Error in fraud check:', { data: error });
       // On error, allow the signup but log the error
       return true;
     } finally {

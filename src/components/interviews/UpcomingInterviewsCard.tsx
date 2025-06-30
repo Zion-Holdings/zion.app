@@ -8,7 +8,7 @@ import { format, isPast, parseISO } from "date-fns";
 import Link from "next/link";
 import { Calendar, Clock, Video } from "lucide-react";
 import { Avatar } from "@/components/ui/avatar";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function UpcomingInterviewsCard() {
 
@@ -35,7 +35,7 @@ export function UpcomingInterviewsCard() {
         
         setUpcomingInterviews(upcoming);
       } catch (error) {
-        logError('Error loading upcoming interviews:', { data: error });
+        logErrorToProduction('Error loading upcoming interviews:', { data: error });
       } finally {
         setIsLoading(false);
       }

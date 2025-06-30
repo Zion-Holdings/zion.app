@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useEnqueueSnackbar } from '@/context';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const MobileEmailCapture: React.FC = () => {
 
@@ -52,11 +52,11 @@ export const MobileEmailCapture: React.FC = () => {
           setIsSuccess(false);
         }, 5000);
       } else {
-        logError('Newsletter subscription failed:', { data });
+        logErrorToProduction('Newsletter subscription failed:', { data });
         enqueueSnackbar(data.error || 'Subscription failed. Please try again.', { variant: 'error' });
       }
     } catch (error: any) {
-      logError('Error subscribing:', { data: error });
+      logErrorToProduction('Error subscribing:', { data: error });
       enqueueSnackbar('Unable to subscribe right now. Please try again later.', { variant: 'error' });
     } finally {
       setIsSubmitting(false);

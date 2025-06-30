@@ -16,7 +16,7 @@ import { addItem } from '@/store/cartSlice';
 import { toast } from '@/hooks/use-toast';
 import { getBreadcrumbsForPath } from '@/utils/routeUtils';
 import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import { fetchProducts, validateProductData, ensureProductIntegrity } from '@/services/marketplace';
 import { AppLayout } from '@/layout/AppLayout';
 import {
@@ -217,7 +217,7 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
 
   } catch (error) {
     Sentry.captureException(error);
-    logError('Critical error in getServerSideProps for marketplace listing ${slug}:', { data: error });
+    logErrorToProduction('Critical error in getServerSideProps for marketplace listing ${slug}:', { data: error });
     return { notFound: true }; // Ensure 404 for any unhandled errors
   }
 };

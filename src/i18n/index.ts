@@ -10,11 +10,11 @@ import esTranslation from './locales/es/translation.json';
 import ptTranslation from './locales/pt/translation.json';
 import frTranslation from './locales/fr/translation.json';
 import arTranslation from './locales/ar/translation.json';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 if (!i18n) {
-  logError("CRITICAL: i18next failed to import. Internationalization will not work.");
+  logErrorToProduction("CRITICAL: i18next failed to import. Internationalization will not work.");
 } else {
   // Initialize i18next
   i18n
@@ -69,7 +69,7 @@ if (!i18n) {
     },
   })
   .catch(error => {
-    logError('Error initializing i18next or its detector:', { data: error });
+    logErrorToProduction('Error initializing i18next or its detector:', { data: error });
     // This helps prevent an unhandled promise rejection if init fails.
   });
 
@@ -95,7 +95,7 @@ if (!i18n) {
 
 // Capture missing translation keys on both client and server
 i18n.on('missingKey', (lngs, namespace, key) => {
-  logError(`Missing translation key: ${key}`, {
+  logErrorToProduction(`Missing translation key: ${key}`, {
     data: {
       languages: lngs,
       namespace,

@@ -1,7 +1,7 @@
 import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -21,7 +21,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     if (error) {
-      logError('Error resending verification email:', { data: error });
+      logErrorToProduction('Error resending verification email:', { data: error });
       return res.status(400).json({ message: error.message });
     }
 
@@ -31,7 +31,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
   } catch (error: any) {
-    logError('Unexpected error resending verification email:', { data: error });
+    logErrorToProduction('Unexpected error resending verification email:', { data: error });
     return res.status(500).json({ 
       message: 'Internal server error',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined

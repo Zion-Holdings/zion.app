@@ -17,7 +17,7 @@ import {
   Globe
 } from 'lucide-react';
 import { bundleMonitor } from '@/utils/bundleMonitor';
-import { logError, logInfo } from '@/utils/productionLogger';
+import { logErrorToProduction, logInfo } from '@/utils/productionLogger';
 
 interface PerformanceMetrics {
   bundleSize: number;
@@ -70,7 +70,7 @@ export function PerformanceDashboard() {
         resourceCount: performanceMetrics.chunkCount
       });
     } catch (error) {
-      logError('Failed to collect performance metrics', error, {
+      logErrorToProduction('Failed to collect performance metrics', error, {
         component: 'PerformanceDashboard',
         action: 'collectMetrics'
       });

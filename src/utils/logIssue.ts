@@ -1,5 +1,5 @@
 import { captureException } from './sentry';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 /**
@@ -14,6 +14,6 @@ export function logIssue(message: string, context?: Record<string, unknown>) {
       captureException(new Error(message));
     }
   } catch (err) {
-    logError('Failed to report issue:', { data: err });
+    logErrorToProduction('Failed to report issue:', { data: err });
   }
 }

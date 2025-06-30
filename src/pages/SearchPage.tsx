@@ -4,7 +4,7 @@ import { useRouterReady, useRouteChange } from '@/hooks/useRouterReady';
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { SearchSuggestion } from "@/types/search";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import {
   Tabs,
   TabsContent,
@@ -96,10 +96,10 @@ export default function SearchPage() {
         setResults(data.results);
       } else {
         setResults([]);
-        logError('Search API response structure is not as expected:', { data: data });
+        logErrorToProduction('Search API response structure is not as expected:', { data: data });
       }
     } catch (error) {
-      logError('Search failed:', { data: error });
+      logErrorToProduction('Search failed:', { data: error });
       setResults([]);
     } finally {
       setLoading(false);

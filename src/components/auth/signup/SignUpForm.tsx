@@ -2,7 +2,7 @@ import { useState, FormEvent } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/utils/supabase/client'; // Assuming supabase client is configured
-import { logError, logInfo } from '@/utils/productionLogger'; // Assuming logger utility
+import { logErrorToProduction, logInfo } from '@/utils/productionLogger'; // Assuming logger utility
 
 interface SignUpFormProps {
   onSignInClick: () => void; // Function to switch back to Sign In view
@@ -44,7 +44,7 @@ export function SignUpForm({ onSignInClick }: SignUpFormProps) {
       });
 
       if (signUpError) {
-        logError('Supabase sign-up error:', { data: signUpError });
+        logErrorToProduction('Supabase sign-up error:', { data: signUpError });
         setError(signUpError.message || "An error occurred during sign up.");
       } else if (data.user) {
         logInfo('Supabase sign-up successful, user pending confirmation:', { data: data.user });
@@ -64,11 +64,11 @@ export function SignUpForm({ onSignInClick }: SignUpFormProps) {
         setConfirmPassword('');
       } else {
         // Fallback, should ideally be covered by signUpError
-        logError('Supabase sign-up returned no error but no user or session.');
+        logErrorToProduction('Supabase sign-up returned no error but no user or session.');
         setError("Sign up failed due to an unknown error. Please try again.");
       }
     } catch (catchedError: any) {
-      logError('Exception during Supabase sign-up:', { data: catchedError });
+      logErrorToProduction('Exception during Supabase sign-up:', { data: catchedError });
       setError(catchedError.message || "An unexpected error occurred. Please try again.");
     } finally {
       setIsLoading(false);

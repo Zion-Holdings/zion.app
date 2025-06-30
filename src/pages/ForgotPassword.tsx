@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { toast } from '@/hooks/use-toast'
 import axios from 'axios'
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || ''
@@ -25,7 +25,7 @@ export default function ForgotPassword() {
         throw new Error('Request failed')
       }
     } catch (err: any) {
-      logError(err)
+      logErrorToProduction(err)
       const msg = err?.response?.data?.message || err.message || 'Failed to send reset link'
       setError(msg)
       toast.error(msg)

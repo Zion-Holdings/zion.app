@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Loader2, Edit, X, Eye } from "lucide-react";
 import { format } from "date-fns";
 import Link from "next/link";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface JobsListProps {
@@ -42,7 +42,7 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
         if (error) throw error;
         setJobs(data as Job[]);
       } catch (error) {
-        logError('Error fetching jobs:', { data: error });
+        logErrorToProduction('Error fetching jobs:', { data: error });
       } finally {
         setIsLoading(false);
       }

@@ -1,7 +1,7 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
 // Import proper logging instead of using console directly
-import { logError, logInfo, logWarn } from '@/utils/productionLogger';
+import { logErrorToProduction, logInfo, logWarn } from '@/utils/productionLogger';
 
 /**
  * Authentication middleware using Supabase Auth
@@ -45,7 +45,7 @@ export async function updateSession(request: NextRequest) {
       }
     );
   } catch (initError) {
-    logError('CRITICAL: Failed to initialize Supabase client in middleware', initError, {
+    logErrorToProduction('CRITICAL: Failed to initialize Supabase client in middleware', initError, {
       url: request.nextUrl.pathname,
       userAgent: request.headers.get('user-agent'),
       context: 'middleware-init'
@@ -95,7 +95,7 @@ export async function updateSession(request: NextRequest) {
     
     return response;
   } catch (authError) {
-    logError('Middleware: Error during authentication check', authError, {
+    logErrorToProduction('Middleware: Error during authentication check', authError, {
       path: request.nextUrl.pathname,
       userAgent: request.headers.get('user-agent')?.substring(0, 100),
       context: 'auth-check'

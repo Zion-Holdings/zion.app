@@ -13,7 +13,7 @@ import { AuthButtons } from '@/components/AuthButtons';
 import { AlertCircle, CheckCircle, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { AuthLayout } from '@/layout';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 const SignupSchema = Yup.object({
@@ -55,7 +55,7 @@ export default function Signup() {
         setHealthCheckError('Authentication service is experiencing issues');
       }
     } catch (err: any) {
-      logError('Auth service health check failed', { data: err });
+      logErrorToProduction('Auth service health check failed', { data: err });
       setAuthServiceAvailable(false);
       // Set a more specific error message based on the error type
       if (err.code === 'NETWORK_ERROR' || err.message?.includes('Network Error')) {
@@ -161,7 +161,7 @@ export default function Signup() {
           }
         }
       } catch (err: any) {
-        logError('Signup error details:', {
+        logErrorToProduction('Signup error details:', {
           message: err.message,
           response: err.response ? {
             status: err.response.status,

@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import type { BlogPost } from '@/types/blog';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function handler(
 
@@ -25,7 +25,7 @@ export default function handler(
     }
     return res.status(200).json(post);
   } catch (err) {
-    logError('Blog API error:', { data: err });
+    logErrorToProduction('Blog API error:', { data: err });
     return res.status(500).json({ error: 'Internal Server Error: Failed to fetch blog post' });
   }
 }

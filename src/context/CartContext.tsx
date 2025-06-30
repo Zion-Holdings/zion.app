@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '@/store';
 import { addItem, removeItem, clear, setItems } from '@/store/cartSlice';
 import { safeStorage } from '@/utils/safeStorage'; // Import safeStorage
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -74,7 +74,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       safeStorage.setItem('zion_cart', JSON.stringify(items));
     } catch (error) {
       // Catching potential errors during stringify or setItem, though safeStorage also has try/catch.
-      logError('[CartProvider] Failed to persist cart to localStorage', { data: error });
+      logErrorToProduction('[CartProvider] Failed to persist cart to localStorage', { data: error });
     }
   }, [items]); // Dependency array ensures this runs when `items` from Redux changes.
 

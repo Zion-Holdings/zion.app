@@ -4,7 +4,7 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import { captureException } from '@/utils/sentry';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Mock category data for fallback
@@ -267,7 +267,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     return res.status(200).json(responseData);
   } catch (error) {
-    logError('Failed to fetch items for category ${slug}:', { data: error });
+    logErrorToProduction('Failed to fetch items for category ${slug}:', { data: error });
     
     // Ensure we always return JSON, never HTML
     try {
@@ -276,7 +276,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         user: (req as any).user ? { id: (req as any).user.id, email: (req as any).user.email } : undefined,
       });
     } catch (sentryError) {
-      logError('Sentry capture failed:', { data: sentryError });
+      logErrorToProduction('Sentry capture failed:', { data: sentryError });
     }
     
     return res.status(500).json({ 
@@ -287,7 +287,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
       await prisma.$disconnect();
     } catch (disconnectError) {
-      logError('Prisma disconnect error:', { data: disconnectError });
+      logErrorToProduction('Prisma disconnect error:', { data: disconnectError });
     }
   }
 }

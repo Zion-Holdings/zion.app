@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default async function handler(
   req: NextApiRequest,
@@ -28,7 +28,7 @@ export default async function handler(
       environment: process.env.NODE_ENV,
     });
   } catch (error) {
-    logError('Extension health check error:', error);
+    logErrorToProduction('Extension health check error:', error);
     return res.status(500).json({
       status: 'error',
       message: 'Internal server error',

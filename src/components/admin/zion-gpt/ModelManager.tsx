@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Loader2, RefreshCw, Play, CheckCircle, AlertCircle } from "lucide-react";
 import { supabase } from '@/integrations/supabase/client';
 import { ModelConfig } from '@/utils/zion-gpt';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface ModelVersionData extends ModelConfig {
@@ -46,7 +46,7 @@ export function ZionGPTModelManager() {
         errorMessage: model.error_message
       })));
     } catch (error) {
-      logError('Error fetching models:', { data: error });
+      logErrorToProduction('Error fetching models:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -84,7 +84,7 @@ export function ZionGPTModelManager() {
         .eq('id', modelId);
       
     } catch (error) {
-      logError('Error checking status for model ${modelId}:', { data: error });
+      logErrorToProduction('Error checking status for model ${modelId}:', { data: error });
     } finally {
       setActiveJobs(prev => ({ ...prev, [modelId]: false }));
     }
@@ -109,7 +109,7 @@ export function ZionGPTModelManager() {
       // Refresh the model list
       fetchModels();
     } catch (error) {
-      logError('Error toggling model active state:', { data: error });
+      logErrorToProduction('Error toggling model active state:', { data: error });
     }
   };
 

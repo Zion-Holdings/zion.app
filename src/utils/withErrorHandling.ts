@@ -1,7 +1,7 @@
 import { GetServerSideProps, GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { ENV_CONFIG } from './environmentConfig';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface ErrorPageProps {
@@ -108,7 +108,7 @@ export function withServerSideErrorHandling<P extends Record<string, any>>(
 
     // All attempts failed
     if (lastError) {
-      logError('❌ getServerSideProps failed after all retries for ${context.resolvedUrl}:', { data: lastError });
+      logErrorToProduction('❌ getServerSideProps failed after all retries for ${context.resolvedUrl}:', { data: lastError });
       
       // Log final failure to Sentry
       if (ENV_CONFIG.sentry.isConfigured) {
@@ -230,7 +230,7 @@ export function withStaticErrorHandling<P extends Record<string, any>>(
 
     // All attempts failed - for static props, we should return empty data rather than crash the build
     if (lastError) {
-      logError('❌ getStaticProps failed after all retries:', { data: lastError });
+      logErrorToProduction('❌ getStaticProps failed after all retries:', { data: lastError });
       
       // Log final failure to Sentry
       if (ENV_CONFIG.sentry.isConfigured) {

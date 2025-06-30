@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface Chain {
@@ -143,7 +143,7 @@ export default function TokenIntegrations() {
       setTxHash(result.transactionHash);
       setStatus(`Transaction submitted! ZION$ expected on ${toChain} in approx. ${result.arrivalTimeEstimate}. Tx: ${result.transactionHash}`);
     } catch (e: any) {
-      logError('Bridging error:', { data:  e });
+      logErrorToProduction('Bridging error:', { data:  e });
       setError(`Bridging failed: ${e.message}`);
       setStatus(null);
     }

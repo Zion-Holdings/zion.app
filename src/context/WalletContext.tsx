@@ -1,4 +1,4 @@
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import { getAppKitProjectId } from '@/config/env';
 
 // src/context/WalletContext.tsx
@@ -97,7 +97,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   if (projectId && PLACEHOLDER_PROJECT_IDS.includes(projectId)) {
       const errorMessage = 'WalletContext: Critical Error - Reown AppKit Project ID is not set or is a placeholder. Please set NEXT_PUBLIC_REOWN_PROJECT_ID environment variable.';
       if (process.env.NODE_ENV === 'development') {
-        logError(errorMessage, { data: { resolvedProjectId: projectId } });
+        logErrorToProduction(errorMessage, { data: { resolvedProjectId: projectId } });
       }
   }
 
@@ -175,7 +175,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           isConnected: false, // Explicitly false until wallet connects
         }));
       } catch (error) {
-        logError('WalletContext: CRITICAL error creating appKitInstance with valid Project ID:', { data: error });
+        logErrorToProduction('WalletContext: CRITICAL error creating appKitInstance with valid Project ID:', { data: error });
         captureException(error);
         appKitRef.current = null;
         setWallet(prev => ({
@@ -241,7 +241,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
           }));
         } catch (error) {
           captureException(error);
-          logError('WalletContext: Error getting signer or updating wallet state:', { data: error });
+          logErrorToProduction('WalletContext: Error getting signer or updating wallet state:', { data: error });
           // AppKit exists, but failed to get signer or other error
           setWallet(prev => ({
             ...initialWalletState,
@@ -333,7 +333,7 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       await modalController.open();
     } catch (error: any) {
       captureException(error);
-      logError('WalletContext: Error opening wallet modal:', { data: error });
+      logErrorToProduction('WalletContext: Error opening wallet modal:', { data: error });
       if (error instanceof Error && /Coinbase Wallet SDK/i.test(error.message)) {
         logWarn(
           'Failed to load Coinbase Wallet. Please ensure the SDK is available or try a different wallet provider.'
@@ -357,9 +357,9 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         await actionKit.disconnect();
         // State update is typically handled by the subscription to provider changes
       } catch (error) {
-        logError('WalletContext: Error during disconnect.', { data: error });
+        logErrorToProduction('WalletContext: Error during disconnect.', { data: error });
         captureException(error);
-        logError('WalletContext: Error disconnecting wallet:', { data: error });
+        logErrorToProduction('WalletContext: Error disconnecting wallet:', { data: error });
       }
     } else {
       // If not connected but called, ensure state is clean.

@@ -12,7 +12,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { toast } from "@/hooks/use-toast";
 import { Check, Flag, Search, Settings, X, Users } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { logError } from "@/utils/logError";
+import {logErrorToProduction} from "@/utils/logError";
 import { EmptyState } from "@/components/ui/empty-state";
 
 interface PartnerProfile {
@@ -152,7 +152,7 @@ export default function PartnerManager() {
         filterPartners(data as PartnerProfile[], activeTab, searchQuery);
       }
     } catch (error) {
-      logError(error, { message: 'Error fetching partners' });
+      logErrorToProduction(error, { message: 'Error fetching partners' });
       toast({
         title: "Error",
         description: "Failed to load partner data",
@@ -230,7 +230,7 @@ export default function PartnerManager() {
         setIsDetailsOpen(false);
       }
     } catch (error) {
-      logError(error, { message: 'Error updating partner status' });
+      logErrorToProduction(error, { message: 'Error updating partner status' });
       toast({
         title: "Error",
         description: "Failed to update partner status",
@@ -262,7 +262,7 @@ export default function PartnerManager() {
       
       setIsSettingsOpen(false);
     } catch (error) {
-      logError(error, { message: 'Error updating partner settings' });
+      logErrorToProduction(error, { message: 'Error updating partner settings' });
       toast({
         title: "Error",
         description: "Failed to update partner settings",

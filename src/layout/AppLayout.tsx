@@ -15,7 +15,7 @@ import { SkipLink } from "@/components/SkipLink";
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
 import ErrorOverlay from '@/components/ErrorOverlay';
-import { logError } from '@/utils/logError';
+import {logErrorToProduction} from '@/utils/logError';
 import { useSessionDuration } from '@/hooks/useSessionDuration';
 import { useNavigationGestures } from '@/hooks/useNavigationGestures';
 
@@ -69,7 +69,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
         setResendStatusMessage(data.message || 'Failed to resend verification email.');
       }
     } catch (error) {
-      logError(error, { message: 'Resend email error' });
+      logErrorToProduction(error, { message: 'Resend email error' });
       setResendStatusMessage('An error occurred while resending the email.');
     } finally {
       setIsResendingEmail(false);

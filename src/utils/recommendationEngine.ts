@@ -2,7 +2,7 @@ import { SupabaseClient } from '@supabase/supabase-js';
 import { ProductListing } from '@/types/listings';
 import { generateRandomEquipment } from './generateRandomEquipment';
 import { ALL_FEATURES, Feature } from '@/data/features';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export async function recommendEquipment(
   userId: string,
@@ -46,7 +46,7 @@ export async function recommendEquipment(
       }
     }
   } catch (err) {
-    logError('equipment recommendation error', { data: err });
+    logErrorToProduction('equipment recommendation error', { data: err });
   }
 
   // Fallback to random equipment
@@ -96,7 +96,7 @@ export async function recommendFeatures(
     const fallback = ALL_FEATURES.filter((f) => !usedFeatures.has(f.id));
     return fallback.slice(0, limit);
   } catch (err) {
-    logError('feature recommendation error', { data: err });
+    logErrorToProduction('feature recommendation error', { data: err });
   }
 
   return ALL_FEATURES.slice(0, limit);

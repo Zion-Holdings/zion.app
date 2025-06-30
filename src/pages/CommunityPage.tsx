@@ -12,7 +12,7 @@ import { useRequireAuth } from "@/hooks/useAuthGuard";
 import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
 import { useCommunity } from "@/context";
 import type { ForumCategory } from "@/types/community";
-import { logError } from "@/utils/logError";
+import {logErrorToProduction} from "@/utils/logError";
 import { logInfo } from '@/utils/productionLogger';
 
 export default function CommunityPage() {
@@ -109,7 +109,7 @@ export default function CommunityPage() {
   logInfo('CommunityPage activeTab:', { data: activeTab });
   
   if (!featuredPosts || !recentPosts) {
-    logError(new Error('CommunityPage: Posts data is missing from context!'), { message: 'CommunityPage: Posts data is missing from context!' });
+    logErrorToProduction(new Error('CommunityPage: Posts data is missing from context!'), { message: 'CommunityPage: Posts data is missing from context!' });
   }
   
   return (

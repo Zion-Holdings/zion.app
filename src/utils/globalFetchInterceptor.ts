@@ -1,5 +1,5 @@
 import { toast } from '@/hooks/use-toast';
-import { logError } from './logError';
+import {logErrorToProduction} from './logError';
 import { isPublicRoute } from '../config/publicRoutes';
 import { logDebug } from '@/utils/productionLogger';
 
@@ -42,7 +42,7 @@ if (typeof window !== "undefined" && window.fetch) {
       (status === 401 || status === 403) &&
       typeof window !== 'undefined' && isPublicRoute(window.location.pathname)
     ) {
-      logError(new Error(`GlobalFetchInterceptor: Auth error ${status} for API ${url} on public page ${window.location.pathname} suppressed.`), {
+      logErrorToProduction(new Error(`GlobalFetchInterceptor: Auth error ${status} for API ${url} on public page ${window.location.pathname} suppressed.`), {
         context: 'globalFetchInterceptorPublicPageContext',
         status,
         apiUrl: url,
@@ -186,7 +186,7 @@ if (typeof window !== "undefined" && window.fetch) {
         }
       }
       
-      logError(err, { context: 'globalFetchInterceptor', url });
+      logErrorToProduction(err, { context: 'globalFetchInterceptor', url });
       throw err;
     }
   };

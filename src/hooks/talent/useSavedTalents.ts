@@ -5,7 +5,7 @@ import { toast } from "@/hooks/use-toast";
 import { showApiError } from "@/utils/apiErrorHandler";
 import { useAuthStatus } from "@/hooks/talent";
 import { useRouter } from 'next/router';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useSavedTalents() {
 
@@ -53,7 +53,7 @@ export function useSavedTalents() {
           }
         }
       } catch (error) {
-        logError('Error fetching saved talents:', { data: error });
+        logErrorToProduction('Error fetching saved talents:', { data: error });
         showApiError(
           error,
           'There was a problem loading your saved talents.',
@@ -120,7 +120,7 @@ export function useSavedTalents() {
         });
       }
     } catch (error) {
-      logError('Error toggling saved talent:', { data: error });
+      logErrorToProduction('Error toggling saved talent:', { data: error });
       showApiError(
         error,
         'There was a problem updating your favorites. Please try again.',

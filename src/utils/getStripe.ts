@@ -1,5 +1,5 @@
 import { loadStripe, Stripe } from '@stripe/stripe-js';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export const PROD_DOMAIN = 'app.ziontechgroup.com';
 
@@ -68,14 +68,14 @@ export function getStripe() {
         selectedKey = testPublishableKey;
         logInfo('Stripe: Forced test mode. Using test publishable key.');
       } else {
-        logError('Stripe: Forced test mode is active, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe will not load.');
+        logErrorToProduction('Stripe: Forced test mode is active, but no test publishable key (NEXT_PUBLIC_STRIPE_TEST_KEY or NEXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY) is set. Stripe will not load.');
       }
     } else if (isProdDomain()) {
       if (livePublishableKey) {
         selectedKey = livePublishableKey;
         logInfo('Stripe: Production domain. Using live publishable key.');
       } else {
-        logError('Stripe: Production domain detected, but NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set. Stripe will not load.');
+        logErrorToProduction('Stripe: Production domain detected, but NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not set. Stripe will not load.');
       }
     } else { // Non-production domain and not forced test mode (implicitly test)
       if (testPublishableKey) {
@@ -87,7 +87,7 @@ export function getStripe() {
     }
 
     if (!selectedKey) {
-      logError('Stripe: Publishable key could not be determined. Stripe will not be loaded.');
+      logErrorToProduction('Stripe: Publishable key could not be determined. Stripe will not be loaded.');
       stripePromise = Promise.resolve(null);
     } else {
       stripePromise = loadStripe(selectedKey, { advancedFraudSignals: false } as any);

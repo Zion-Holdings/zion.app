@@ -4,7 +4,7 @@ import { buffer } from 'micro';
 import fs from 'fs';
 import path from 'path';
 import { randomUUID } from 'crypto';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const config = { api: { bodyParser: false } };
 
@@ -26,7 +26,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const buf = await buffer(req as any);
     event = stripe.webhooks.constructEvent(buf.toString(), sig, webhookSecret);
   } catch (err: any) {
-    logError('Webhook signature verification failed.', { data: err });
+    logErrorToProduction('Webhook signature verification failed.', { data: err });
     return res.status(400).end(`Webhook Error: ${err.message}`);
   }
 
@@ -43,7 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           fs.writeFileSync(file, JSON.stringify(orders, null, 2));
         }
       } catch (err) {
-        logError('Failed to update order', { data: err });
+        logErrorToProduction('Failed to update order', { data: err });
       }
     }
     const userId = session.metadata?.userId;

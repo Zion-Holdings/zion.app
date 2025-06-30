@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card } from '@/components/ui/card';
 import { toast } from '@/components/ui/use-toast';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import {
   Tooltip,
   TooltipContent,
@@ -101,7 +101,7 @@ export default function Contact() {
             } catch (parseError) {
               logWarn('[ContactForm] Could not parse error response as JSON.', { data: parseError });
             }
-            logError('[ContactForm] API error response:', { data: errorData });
+            logErrorToProduction('[ContactForm] API error response:', { data: errorData });
             // This throw will be caught by the .catch block below
             throw new Error(errorData.error || 'Failed to send message');
           }
@@ -119,7 +119,7 @@ export default function Contact() {
         })
         .catch((err) => {
           // This catches errors from the fetch promise (network, res.ok is false, or manual throw)
-          logError('[ContactForm] Fetch promise chain error:', { data: err });
+          logErrorToProduction('[ContactForm] Fetch promise chain error:', { data: err });
           setIsSubmitting(false);
           toast({
             title: 'Submission Error',
@@ -130,7 +130,7 @@ export default function Contact() {
     } catch (error) {
       // This catches synchronous errors that might occur when initiating fetch or in its direct vicinity
       // if not caught by the promise's .catch (less common for typical fetch issues but good for safety)
-      logError('[ContactForm] Synchronous error during fetch initiation or processing:', { data: error });
+      logErrorToProduction('[ContactForm] Synchronous error during fetch initiation or processing:', { data: error });
       setIsSubmitting(false);
       toast({
         title: 'Critical Submission Error',
@@ -162,7 +162,7 @@ export default function Contact() {
 
       return Promise.resolve();
     } catch (error) {
-      logError('Error in AI chat', error);
+      logErrorToProduction('Error in AI chat', error);
       toast({
         title: 'Chat Error',
         description:

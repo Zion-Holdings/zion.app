@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { AIMatchingResults } from "@/components/AIMatchingResults";
 import { findMatches, MatchResult } from "@/lib/ai-matchmaking";
 import { toast } from "@/hooks/use-toast";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface SummaryStepProps {
@@ -42,7 +42,7 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {
         
         setMatches(results);
       } catch (error) {
-        logError('Error during AI matching:', { data: error });
+        logErrorToProduction('Error during AI matching:', { data: error });
         toast({
           title: "Matching Error",
           description: "We couldn't find matches for your request. Please try again.",

@@ -1,7 +1,7 @@
 import Categories, { CategoriesProps } from '@/pages/Categories';
 import type { GetStaticProps } from 'next';
 import { CATEGORIES } from '@/data/categories'; // Import CATEGORIES
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export const getStaticProps: GetStaticProps<CategoriesProps> = async () => {
 
@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps<CategoriesProps> = async () => {
       return { props: { categories: CATEGORIES } };
     }
   } catch (error) {
-    logError('Error fetching categories in getStaticProps, falling back to default. Error:', { data: error });
+    logErrorToProduction('Error fetching categories in getStaticProps, falling back to default. Error:', { data: error });
     return { props: { categories: CATEGORIES } };
   }
 };

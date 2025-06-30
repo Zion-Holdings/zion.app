@@ -1,5 +1,5 @@
 import sgMail from '@sendgrid/mail';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 interface EmailOptions {
   to: string;
@@ -20,7 +20,7 @@ export async function sendEmailWithSendGrid({
   const apiKey = process.env.SENDGRID_API_KEY;
 
   if (!apiKey) {
-    logError('SENDGRID_API_KEY is not set. Email not sent.');
+    logErrorToProduction('SENDGRID_API_KEY is not set. Email not sent.');
     // In a real application, you might want to throw an error or handle this more gracefully.
     return;
   }
@@ -38,11 +38,11 @@ export async function sendEmailWithSendGrid({
     await sgMail.send(msg);
     logInfo(`Email sent to ${to} using template ${templateId}`);
   } catch (error: any) {
-    logError('Error sending email with SendGrid:', { data: error.toString() });
+    logErrorToProduction('Error sending email with SendGrid:', { data: error.toString() });
     // Optionally, rethrow the error or handle it as needed by your application's error handling strategy
     // For example, if the error response from SendGrid is available:
     if (error.response) {
-      logError('SendGrid error response:', { data: error.response.body });
+      logErrorToProduction('SendGrid error response:', { data: error.response.body });
     }
     // Consider logging this to a more persistent error tracking service in production
   }
@@ -54,7 +54,7 @@ export async function sendResetEmail(
 ): Promise<void> {
   const apiKey = process.env.SENDGRID_API_KEY;
   if (!apiKey) {
-    logError('SENDGRID_API_KEY is not set. Reset email not sent.');
+    logErrorToProduction('SENDGRID_API_KEY is not set. Reset email not sent.');
     return;
   }
 
@@ -76,9 +76,9 @@ export async function sendResetEmail(
     await sgMail.send(msg);
     logInfo(`Password reset email sent to ${email}`);
   } catch (error: any) {
-    logError('Error sending password reset email:', { data: error.toString() });
+    logErrorToProduction('Error sending password reset email:', { data: error.toString() });
     if (error.response) {
-      logError('SendGrid error response:', { data: error.response.body });
+      logErrorToProduction('SendGrid error response:', { data: error.response.body });
     }
   }
 }
@@ -93,7 +93,7 @@ export async function sendFeedbackEmail(data: {
   const to =
     process.env.FEEDBACK_EMAIL_TO || process.env.NEXT_PUBLIC_SUPPORT_EMAIL;
   if (!apiKey || !to) {
-    logError('SendGrid config missing. Feedback email not sent.');
+    logErrorToProduction('SendGrid config missing. Feedback email not sent.');
     return;
   }
 
@@ -112,9 +112,9 @@ export async function sendFeedbackEmail(data: {
     await sgMail.send(msg);
     logInfo(`Feedback email sent to ${to}`);
   } catch (error: any) {
-    logError('Error sending feedback email:', { data: error.toString() });
+    logErrorToProduction('Error sending feedback email:', { data: error.toString() });
     if (error.response) {
-      logError('SendGrid error response:', { data: error.response.body });
+      logErrorToProduction('SendGrid error response:', { data: error.response.body });
     }
   }
 }

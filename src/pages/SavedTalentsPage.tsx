@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { TalentProfile } from "@/types/talent";
 import { toast } from "@/components/ui/use-toast";
 import { useRouter } from 'next/router';
-import { logError } from "@/utils/logError";
+import {logErrorToProduction} from "@/utils/logError";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Heart } from "lucide-react";
 import { logInfo, logWarn } from '@/utils/productionLogger';
@@ -69,7 +69,7 @@ export default function SavedTalentsPage() {
           setSavedTalents(talentProfiles);
         }
       } catch (error) {
-        logError(error, { message: 'Error fetching saved talents' });
+        logErrorToProduction(error, { message: 'Error fetching saved talents' });
         toast({
           title: "Error",
           description: "Failed to load saved talents. Please try again later.",
@@ -139,7 +139,7 @@ export default function SavedTalentsPage() {
           .single();
   
         if (talentError) {
-          logError(talentError, { message: 'Error fetching talent profile' });
+          logErrorToProduction(talentError, { message: 'Error fetching talent profile' });
           toast({
             title: "Error",
             description: "Failed to update saved talents. Please try again later.",
@@ -157,7 +157,7 @@ export default function SavedTalentsPage() {
         }
       }
     } catch (error) {
-      logError(error, { message: 'Error toggling saved talent' });
+      logErrorToProduction(error, { message: 'Error toggling saved talent' });
       toast({
         title: "Error",
         description: "Failed to update saved talents. Please try again later.",

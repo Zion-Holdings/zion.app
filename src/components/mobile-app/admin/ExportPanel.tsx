@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { AppPlatform, AppMetadataValues } from "./MetadataManager";
 import { toast } from "sonner";
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface ExportPanelProps {
@@ -54,7 +54,7 @@ export const ExportPanel: React.FC<ExportPanelProps> = ({ platform, metadata }) 
       
       toast.success(`Exported ${format.toUpperCase()} file successfully`);
     } catch (error) {
-      logError('Export failed:', { data: error });
+      logErrorToProduction('Export failed:', { data: error });
       toast.error(`Failed to export ${format.toUpperCase()} file`);
     }
   };

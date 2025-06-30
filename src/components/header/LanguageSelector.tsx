@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { fireEvent } from '@/lib/analytics';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -38,7 +38,7 @@ export function LanguageSelector() {
       setIsOpen(false);
       fireEvent('language_change', { language: langCode });
     } catch (error) {
-      logError('LanguageSelector: Error changing language:', { data: error });
+      logErrorToProduction('LanguageSelector: Error changing language:', { data: error });
     }
   };
 

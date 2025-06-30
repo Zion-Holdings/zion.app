@@ -1,7 +1,7 @@
 import React, { Component, ReactNode } from 'react';
 import { Button } from './ui/button';
 import { AlertTriangle } from 'lucide-react';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface Props {
@@ -25,7 +25,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: any) {
-    logError('ErrorBoundary caught an error:', error, errorInfo);
+    logErrorToProduction('ErrorBoundary caught an error:', error, errorInfo);
   }
 
   render() {

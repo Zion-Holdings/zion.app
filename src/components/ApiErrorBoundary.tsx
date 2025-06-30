@@ -4,7 +4,7 @@ import * as Sentry from '@sentry/nextjs';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { RefreshCw, WifiOff } from 'lucide-react';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface ApiErrorBoundaryProps {
@@ -56,7 +56,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
       errorInfo,
     });
 
-    logError('ApiErrorBoundary caught an error:', error, errorInfo);
+    logErrorToProduction('ApiErrorBoundary caught an error:', error, errorInfo);
   }
 
   componentDidMount() {
@@ -109,7 +109,7 @@ export class ApiErrorBoundary extends Component<ApiErrorBoundaryProps, ApiErrorB
         });
       }, 500);
     } catch (retryError) {
-      logError('Retry failed:', { data: retryError });
+      logErrorToProduction('Retry failed:', { data: retryError });
       Sentry.captureException(retryError);
       this.setState({ isRetrying: false });
     }

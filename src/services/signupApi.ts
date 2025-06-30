@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { logError } from "@/utils/productionLogger";
+import {logErrorToProduction} from "@/utils/productionLogger";
 
 export interface SignupPayload {
   email: string;
@@ -32,7 +32,7 @@ export async function signup(payload: SignupPayload): Promise<SignupResponse> {
     // Handle unexpected success status codes
     throw new Error(`Unexpected status ${res.status}`);
   } catch (err: any) {
-    logError('Signup error:', { data: err });
+    logErrorToProduction('Signup error:', { data: err });
     
     if (err.response) {
       // Server responded with error status

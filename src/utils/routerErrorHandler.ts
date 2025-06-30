@@ -1,10 +1,10 @@
 import { NextRouter } from 'next/router';
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export function handleRouterError(error: Error, router: NextRouter) {
 
   // Capture the error using our centralized logger which sends data to Sentry
-  logError('Router error occurred', error, {
+  logErrorToProduction('Router error occurred', error, {
     route: router.asPath,
     query: router.query,
     pathname: router.pathname,
@@ -33,7 +33,7 @@ export function setupRouterErrorHandlers(router: NextRouter) {
     try {
       return await originalPush.call(router, url, as, options);
     } catch (error) {
-      logError('Router push error', error);
+      logErrorToProduction('Router push error', error);
       handleRouterError(error as Error, router);
       throw error;
     }
@@ -44,7 +44,7 @@ export function setupRouterErrorHandlers(router: NextRouter) {
     try {
       return await originalReplace.call(router, url, as, options);
     } catch (error) {
-      logError('Router replace error', error);
+      logErrorToProduction('Router replace error', error);
       handleRouterError(error as Error, router);
       throw error;
     }
@@ -52,7 +52,7 @@ export function setupRouterErrorHandlers(router: NextRouter) {
 
   // Handle router errors
   const routeChangeErrorHandler = (err: unknown, url: string) => {
-    logError('Route change error', err, { url });
+    logErrorToProduction('Route change error', err, { url });
     handleRouterError(err as Error, router);
   };
 

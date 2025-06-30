@@ -10,7 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useForm } from "react-hook-form";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const formSchema = z.object({
@@ -67,7 +67,7 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
         description: "Your professional service description has been created."
       });
     } catch (error) {
-      logError('Error generating description:', { data: error });
+      logErrorToProduction('Error generating description:', { data: error });
       toast({
         title: "Generation Failed",
         description: error instanceof Error ? error.message : "Failed to generate description. Please try again.",

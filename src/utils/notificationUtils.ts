@@ -1,5 +1,5 @@
 import { supabase } from '@/integrations/supabase/client';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 type NotificationType =
@@ -59,7 +59,7 @@ export async function createNotification({
 
     return { success: true, notificationId: data };
   } catch (error) {
-    logError('Error creating notification:', { data: error });
+    logErrorToProduction('Error creating notification:', { data: error });
     return { success: false, error };
   }
 }

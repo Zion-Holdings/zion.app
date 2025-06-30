@@ -2,7 +2,7 @@ import { PrismaClient, type Product as ProductModel } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { connectWithTimeout } from '@/utils/prismaConnect';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const prisma = new PrismaClient();
@@ -25,7 +25,7 @@ async function handler(
   }
 
   if (!process.env.DATABASE_URL) {
-    logError('DATABASE_URL is not set or empty.');
+    logErrorToProduction('DATABASE_URL is not set or empty.');
     return res
       .status(503)
       .json({ error: 'Service Unavailable: Database configuration is missing.' });
@@ -66,7 +66,7 @@ async function handler(
 
     return res.status(200).json(result);
   } catch (e) {
-    logError('Error fetching product ${productId}:', { data:  e });
+    logErrorToProduction('Error fetching product ${productId}:', { data:  e });
     const message =
       e instanceof Error && e.message.includes('timed out')
         ? 'Service Unavailable: Database connection failed.'

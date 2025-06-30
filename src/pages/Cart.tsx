@@ -9,7 +9,7 @@ import {
   removeItem as removeItemAction,
   updateQuantity as updateQuantityAction,
 } from '@/store/cartSlice';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import { CartItem as CartItemComponent } from '@/components/cart/CartItem';
 import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
 // CartItemType is already imported via RootState from cartSlice which uses CartItem from @/types/cart
@@ -77,9 +77,9 @@ export default function CartPage() {
       if (!sessionId) throw new Error('Session ID missing in response');
 
       const { error } = await stripe.redirectToCheckout({ sessionId });
-      if (error) logError('Stripe redirect error:', { data: error.message });
+      if (error) logErrorToProduction('Stripe redirect error:', { data: error.message });
     } catch (err: any) {
-      logError('Checkout error:', { data: err });
+      logErrorToProduction('Checkout error:', { data: err });
       alert(err.message || 'Checkout failed');
     } finally {
       setLoading(false);

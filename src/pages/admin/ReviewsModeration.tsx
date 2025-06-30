@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Star, AlertTriangle } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
-import { logError } from "@/utils/logError";
+import {logErrorToProduction} from "@/utils/logError";
 
 function ReviewsModerationContent() {
   const [activeTab, setActiveTab] = useState("pending");
@@ -23,7 +23,7 @@ function ReviewsModerationContent() {
       setReviews([]);
       setIsLoading(false);
     } catch (error) {
-      logError(error, { message: 'Error fetching reviews' });
+      logErrorToProduction(error, { message: 'Error fetching reviews' });
       toast({
         title: "Error",
         description: "Failed to load reviews. Please try again later.",

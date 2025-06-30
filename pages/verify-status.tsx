@@ -7,7 +7,7 @@ import { Mail, AlertCircle, CheckCircle, Clock, RefreshCw, ArrowLeft, Eye } from
 import { AuthLayout } from '@/layout';
 import { supabase } from '@/integrations/supabase/client'; // Import Supabase client
 import { useAuth } from '@/hooks/useAuth'; // Import useAuth to access user state
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export default function VerifyStatus() {
 
@@ -119,7 +119,7 @@ export default function VerifyStatus() {
         setError('');
       }
     } catch (err: any) {
-      logError('Error checking verification status:', { data: err });
+      logErrorToProduction('Error checking verification status:', { data: err });
       setError('An unexpected error occurred while checking status. Please try again.');
     } finally {
       setIsCheckingStatus(false);

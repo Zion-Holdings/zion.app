@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface Equipment {
@@ -133,7 +133,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     
     return res.status(200).json(paginatedEquipment);
   } catch (error) {
-    logError('Error in marketplace equipment API:', { data: error });
+    logErrorToProduction('Error in marketplace equipment API:', { data: error });
     
     // Return fallback empty array instead of error
     return res.status(200).json([]);

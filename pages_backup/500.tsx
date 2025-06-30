@@ -2,7 +2,7 @@ import React from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
-import { logError } from '@/utils/logError';
+import {logErrorToProduction} from '@/utils/logError';
 
 function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   return (
@@ -24,7 +24,7 @@ export default function Custom500() {
   const router = useRouter();
 
   const handleError = (error: Error, info: React.ErrorInfo) => {
-    logError(error, {
+    logErrorToProduction(error, {
       route: router.asPath,
       componentStack: info.componentStack ?? undefined,
       userId: user?.id,

@@ -9,7 +9,7 @@ import { TokenTransaction } from '@/types/tokens';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function TokenManager() {
 
@@ -54,7 +54,7 @@ export default function TokenManager() {
       });
       fetchTransactions();
     } catch (err: any) {
-      logError('Failed to process transaction:', { data: err });
+      logErrorToProduction('Failed to process transaction:', { data: err });
       toast({
         title: 'Error',
         description: err.message || 'Failed',

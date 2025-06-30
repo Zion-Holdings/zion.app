@@ -3,7 +3,7 @@ import { ProductListing } from "@/types/listings";
 import { SearchSuggestion, FilterOptions } from "@/types/search";
 // import { generateSearchSuggestions, generateFilterOptions, MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
 import { useDebounce } from "./useDebounce"; // Import the debounce hook
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 // Default suggestions shown before the user types a query
@@ -78,11 +78,11 @@ export function useMarketplaceSearch() {
         } else {
           setListings([]); // Default to empty if structure is wrong
           // Optional: log an error
-          logError('Search API response structure in useMarketplaceSearch is not as expected:', { data: responseData });
+          logErrorToProduction('Search API response structure in useMarketplaceSearch is not as expected:', { data: responseData });
         }
       } catch (e) {
         setError(e as Error);
-        logError('Failed to fetch products:', { data:  e });
+        logErrorToProduction('Failed to fetch products:', { data:  e });
         setListings([]); // Clear listings on error or set to a default error state
       } finally {
         setIsLoading(false);

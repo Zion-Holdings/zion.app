@@ -18,7 +18,7 @@ import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
 import type { ProductListing } from '@/types/listings';
 import type { TalentProfile } from '@/types/talent';
 import type { BlogPost } from '@/types/blog';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 interface SearchResult {
   id: string;

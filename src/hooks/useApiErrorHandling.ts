@@ -2,7 +2,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { useCallback } from 'react';
 import * as Sentry from '@sentry/nextjs';
 import { toast } from '@/hooks/use-toast';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface ApiErrorHandlingOptions {
@@ -62,7 +62,7 @@ export const useApiErrorHandling = () => {
         });
       }
 
-      logError('API Error:', { data: error });
+      logErrorToProduction('API Error:', { data: error });
     },
     []
   );
@@ -76,7 +76,7 @@ export const useApiErrorHandling = () => {
         description: 'Data has been refreshed successfully',
       });
     } catch (error) {
-      logError('Failed to retry queries:', { data: error });
+      logErrorToProduction('Failed to retry queries:', { data: error });
       toast({
         title: 'Retry Failed',
         description: 'Failed to refresh data - please try again',
@@ -95,7 +95,7 @@ export const useApiErrorHandling = () => {
           description: 'Data has been refreshed successfully',
         });
       } catch (error) {
-        logError('Failed to retry query:', { data: error });
+        logErrorToProduction('Failed to retry query:', { data: error });
         toast({
           title: 'Retry Failed',
           description: 'Failed to refresh data - please try again',

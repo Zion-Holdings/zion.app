@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ContactPublisherModal } from './ContactPublisherModal'; // Assuming .jsx is handled or use './ContactPublisherModal'
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface ProductActionsProps {
@@ -25,7 +25,7 @@ export function ProductActions({ productId, addToCart, isDisabled, sellerId }: P
       setStatus('Added!');
       setTimeout(() => setStatus('Add to Cart'), 1500); // Reset status after a delay
     } catch (error) {
-      logError('Failed to add to cart:', { data: error });
+      logErrorToProduction('Failed to add to cart:', { data: error });
       setStatus('Add to Cart'); // Reset status in case of error
     } finally {
       setLoading(false);

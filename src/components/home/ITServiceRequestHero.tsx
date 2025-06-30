@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function ITServiceRequestHero() {
 
@@ -58,7 +58,7 @@ export function ITServiceRequestHero() {
         setDetails("");
       }
     } catch (err: any) {
-      logError(err);
+      logErrorToProduction(err);
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your request.",

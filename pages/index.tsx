@@ -7,7 +7,7 @@ const Home = dynamic(() => import('@/pages/Home'), {
 import type { GetStaticProps } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { ErrorBanner } from '@/components/talent/ErrorBanner';
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export interface HomePageProps {
   hasError?: boolean;
@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       revalidate: 300
     };
   } catch (error) {
-    logError('Error in getStaticProps for home page:', { data: error });
+    logErrorToProduction('Error in getStaticProps for home page:', { data: error });
     
     // Log to Sentry if available, but don't block the page
     if (isSentryActive) {
@@ -66,7 +66,7 @@ const ErrorTestButton = () => {
       if (isSentryActive) {
         Sentry.captureException(error);
       }
-      logError('Button error test:', { error });
+      logErrorToProduction('Button error test:', { error });
     }
   };
 

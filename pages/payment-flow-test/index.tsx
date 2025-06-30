@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import { addItem } from '@/store/cartSlice';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function PaymentFlowTest() {
 
@@ -36,7 +36,7 @@ export default function PaymentFlowTest() {
       }));
       alert(data.sessionId ? 'Checkout session created' : 'Checkout failed');
     } catch (err) {
-      logError('Checkout error:', { error: err });
+      logErrorToProduction('Checkout error:', { error: err });
       setResults((r) => ({ ...r, checkout: 'error' }));
       alert('Checkout session error');
     } finally {
@@ -58,7 +58,7 @@ export default function PaymentFlowTest() {
         data.clientSecret ? 'Payment intent created' : 'Payment intent failed',
       );
     } catch (err) {
-      logError("Error:", { error: err });
+      logErrorToProduction("Error:", { error: err });
       setResults((r) => ({ ...r, intent: 'error' }));
       alert('Payment intent error');
     } finally {

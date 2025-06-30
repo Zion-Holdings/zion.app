@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -61,7 +61,7 @@ export function PdfExportButton({ resume }: PdfExportButtonProps) {
         description: "Your resume has been downloaded as a PDF.",
       });
     } catch (error) {
-      logError('Error exporting PDF:', { data: error });
+      logErrorToProduction('Error exporting PDF:', { data: error });
       toast({
         title: "Export failed",
         description: "There was an error exporting your resume to PDF.",

@@ -4,7 +4,7 @@ import { MilestonesList } from '../MilestonesList';
 import { PaymentSummary } from '../PaymentSummary';
 import { Milestone, MilestoneStatus, MilestoneActivity } from '@/hooks/useMilestones';
 import { useEnqueueSnackbar } from '@/context';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface MilestoneManagerProps {
@@ -45,7 +45,7 @@ export function MilestoneManager({
       enqueueSnackbar("Milestone approved", { variant: 'success' });
       await refetch();
     } catch (error: any) {
-      logError('Error approving milestone:', { data: error });
+      logErrorToProduction('Error approving milestone:', { data: error });
       enqueueSnackbar(error.message, { variant: 'error' });
     }
   };
@@ -56,7 +56,7 @@ export function MilestoneManager({
       enqueueSnackbar("Milestone rejected", { variant: 'success' });
       await refetch();
     } catch (error: any) {
-      logError('Error rejecting milestone:', { data: error });
+      logErrorToProduction('Error rejecting milestone:', { data: error });
       enqueueSnackbar(error.message, { variant: 'error' });
     }
   };

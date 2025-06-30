@@ -1,4 +1,4 @@
-import { logError } from './logError';
+import {logErrorToProduction} from './logError';
 
 /**
  * Wrap an async function with automatic error logging.
@@ -8,7 +8,7 @@ export function withAsyncErrorGuard<T extends (...args: any[]) => Promise<any>>(
     try {
       return (await fn(...args)) as ReturnType<T>;
     } catch (err) {
-      logError(err, { context: 'withAsyncErrorGuard' });
+      logErrorToProduction(err, { context: 'withAsyncErrorGuard' });
       throw err;
     }
   }) as T;

@@ -4,7 +4,7 @@ import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { ShieldAlert, Info } from 'lucide-react';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import {
   Accordion,
   AccordionContent,
@@ -36,7 +36,7 @@ export function FraudDetectionSettings() {
         description: "Your fraud detection preferences have been updated.",
       });
     } catch (error) {
-      logError('Error saving preferences:', { data: error });
+      logErrorToProduction('Error saving preferences:', { data: error });
       toast({
         title: "Error",
         description: "Failed to save your preferences. Please try again.",

@@ -15,7 +15,7 @@ import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
 // logger from '@/utils/logger' is removed
-import { logInfo, logWarn, logError, logDebug } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProductionToProduction, logDebug } from '@/utils/productionLogger';
 
 
 const LOGIN_TIMEOUT_MS = 15000; // 15 seconds timeout
@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       });
 
       if (supabaseError) {
-        logError("AuthProvider: Supabase authentication failed", supabaseError, { context: 'Supabase Auth Login' });
+        logErrorToProduction("AuthProvider: Supabase authentication failed", supabaseError, { context: 'Supabase Auth Login' });
         
         // Provide specific error messages based on error code
         let errorMessage = "Authentication failed. Please try again.";
@@ -105,7 +105,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       // The onAuthStateChange event should now trigger automatically
       return { error: null }; // Successful login
     } catch (error: any) {
-      logError('[AuthProvider] login function error', error, { context: 'Login Exception' });
+      logErrorToProduction('[AuthProvider] login function error', error, { context: 'Login Exception' });
       
       // Handle unexpected errors with a fallback message
       const errorMessage = error.message || "An unexpected error occurred during login. Please try again.";
@@ -144,7 +144,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       const data = await response.json();
 
       if (!response.ok) {
-        logError('Auth0 signup error:', { data: data });
+        logErrorToProduction('Auth0 signup error:', { data: data });
         toast({
           title: "Signup Failed",
           description: data.error || data.message || "An unexpected error occurred during signup.",
@@ -165,7 +165,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         user: data.user 
       };
     } catch (err: any) {
-      logError('Signup exception:', { data: err });
+      logErrorToProduction('Signup exception:', { data: err });
       toast({
         title: "Signup Failed",
         description: err.message || "An unexpected error occurred during signup.",
@@ -226,7 +226,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     }
 
                     if (profileError) {
-                        logError('[AuthProvider DEBUG] Error fetching user profile:', { data: profileError });
+                        logErrorToProduction('[AuthProvider DEBUG] Error fetching user profile:', { data: profileError });
                         let shouldSignOut = false;
                         // Check for common indicators of auth failure in Supabase errors
                         // Supabase errors might have a __isAuthError boolean, or specific messages/status codes.
@@ -265,7 +265,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                             mappedUser = mapProfileToUser(session.user, profile);
                             logInfo('[AuthProvider DEBUG] Mapped user data:', { data: JSON.stringify(mappedUser, null, 2) });
                         } catch (mappingError) {
-                            logError('[AuthProvider DEBUG] Error mapping profile to user:', { data: mappingError });
+                            logErrorToProduction('[AuthProvider DEBUG] Error mapping profile to user:', { data: mappingError });
                             mappedUser = null;
                         }
 
@@ -301,11 +301,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                                     logInfo('[AuthProvider DEBUG] Attempting to redirect to:', { data: redirectTo });
                                     router.replace(redirectTo);
                                   } catch (redirectError) {
-                                    logError('[AuthProvider DEBUG] Error during redirection:', { data: redirectError });
+                                    logErrorToProduction('[AuthProvider DEBUG] Error during redirection:', { data: redirectError });
                                   }
                             }
                         } else {
-                            logError("[AuthProvider DEBUG] Mapped user is null. Not updating user state. Mapping failed or profile was insufficient.");
+                            logErrorToProduction("[AuthProvider DEBUG] Mapped user is null. Not updating user state. Mapping failed or profile was insufficient.");
                              if (event === 'SIGNED_IN') { // Only toast if it was an active sign-in attempt
                                 toast({
                                     title: "User Data Error",
@@ -330,7 +330,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                     }
                 } catch (profileMapError) {
                     // This catch block is for errors specifically within the profile fetching/user mapping phase
-                    logError('[AuthProvider DEBUG] Critical error in profile fetching/user mapping phase:', { data: profileMapError });
+                    logErrorToProduction('[AuthProvider DEBUG] Critical error in profile fetching/user mapping phase:', { data: profileMapError });
                      if (event === 'SIGNED_IN') {
                         toast({
                             title: "User Initialization Error",
@@ -382,7 +382,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 }
             }
         } catch (outerError) { // Catch errors from the main try block in onAuthStateChange
-            logError('[AuthProvider DEBUG] Outer error in onAuthStateChange callback:', { data: outerError });
+            logErrorToProduction('[AuthProvider DEBUG] Outer error in onAuthStateChange callback:', { data: outerError });
             setUser(null); // Ensure user state is cleared
             setAvatarUrl(null);
             setTokens(null);
@@ -418,7 +418,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           redirectTo: `${window.location.origin}/auth/verify-email`,
         });
         if (error) {
-          logError('Supabase password reset error:', { data: error });
+          logErrorToProduction('Supabase password reset error:', { data: error });
           toast({
             title: "Password Reset Failed",
             description: error.message || "Failed to send password reset email.",
@@ -434,7 +434,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setIsLoading(false);
         return { error: null };
       } catch (err: any) {
-        logError('Password reset exception:', { data: err });
+        logErrorToProduction('Password reset exception:', { data: err });
         toast({
           title: "Password Reset Failed",
           description: err.message || "An unexpected error occurred during password reset.",

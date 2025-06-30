@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { subscribeToNewsletter } from '@/services/newsletterService';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 type ResponseData =
@@ -44,7 +44,7 @@ export default async function handler(
       await subscribeToNewsletter(trimmedEmail);
       return res.status(200).json({ status: 'subscribed' });
     } catch (integrationError: any) {
-      logError('Newsletter integration error:', { data: integrationError });
+      logErrorToProduction('Newsletter integration error:', { data: integrationError });
       if (integrationError.message && integrationError.message.includes('already a list member')) {
         return res.status(200).json({ status: 'already_subscribed' });
       }
@@ -60,7 +60,7 @@ export default async function handler(
       });
     }
   } catch (error: any) {
-    logError('Newsletter subscription error:', { data: error });
+    logErrorToProduction('Newsletter subscription error:', { data: error });
     return res.status(500).json({
       error: 'Subscription failed',
       details: 'Please try again later or contact support if the problem persists'

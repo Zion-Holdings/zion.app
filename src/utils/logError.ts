@@ -2,7 +2,7 @@
 import { captureException } from './sentry';
 import { sendErrorToBackend } from './customErrorReporter';
 import { generateTraceId } from './generateTraceId';
-import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { logWarn, logErrorToProductionToProduction } from '@/utils/productionLogger';
 
 // Do not import datadogLogs at the top level for server-side compatibility
 
@@ -10,7 +10,7 @@ import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
  * Centralized error logger for frontend issues. Reports to Sentry when
  * available and falls back to console.error. Also sends to custom backend.
  */
-export function logError(
+export function logErrorToProduction(
   error: unknown,
   context?: { componentStack?: string } & Record<string, unknown>
 ): string {

@@ -3,7 +3,7 @@
 // This file handles interaction with the fine-tuned ZionGPT model
 
 import { supabase } from '@/integrations/supabase/client';
-import { logError } from './logError';
+import {logErrorToProduction} from './logError';
 import { logWarn } from '@/utils/productionLogger';
 
 export type ModelVersion = 'zion-job-generator-v1' | 'zion-resume-enhancer-v1' | 'zion-support-v1' | 'gpt-3.5-turbo';
@@ -37,7 +37,7 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
       .single();
     
     if (error || !data) {
-      logError(error || new Error('No model data returned'), { context: 'getActiveModelId' });
+      logErrorToProduction(error || new Error('No model data returned'), { context: 'getActiveModelId' });
       logWarn('Failed to fetch active model, falling back to default', { data: error });
       // Fallback to default models
       switch(purpose) {
@@ -50,7 +50,7 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
     
     return data.id as ModelVersion;
   } catch (error) {
-    logError(error, { context: 'getActiveModelId' });
+    logErrorToProduction(error, { context: 'getActiveModelId' });
     return 'gpt-3.5-turbo'; // Fallback to base model
   }
 }
@@ -77,7 +77,7 @@ export async function logModelUsage(
       });
       
   } catch (error) {
-    logError(error, { context: 'logModelUsage' });
+    logErrorToProduction(error, { context: 'logModelUsage' });
     // Non-blocking - we don't want to fail the main operation
   }
 }
@@ -131,7 +131,7 @@ export async function callZionGPT({
     
     return (data as any)?.completion || '';
   } catch (error) {
-    logError(error, { context: 'callZionGPT' });
+    logErrorToProduction(error, { context: 'callZionGPT' });
     throw error;
   }
 }

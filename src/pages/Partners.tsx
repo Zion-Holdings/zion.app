@@ -13,7 +13,7 @@ import { PartnerLeaderboard } from "@/components/partners/PartnerLeaderboard";
 import { PartnerResources } from "@/components/partners/PartnerResources";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from 'next/router';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export default function Partners() {
 
@@ -30,7 +30,7 @@ export default function Partners() {
         const res = await fetch('/api/auth/health');
         setAuthServiceAvailable(res.ok);
       } catch (err) {
-        logError('Partner login auth health check failed', { data: err });
+        logErrorToProduction('Partner login auth health check failed', { data: err });
         setAuthServiceAvailable(false);
       }
     }

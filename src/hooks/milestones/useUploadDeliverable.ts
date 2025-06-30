@@ -4,7 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
 import { useRecordActivity } from './useRecordActivity';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useUploadDeliverable = () => {
 
@@ -61,7 +61,7 @@ export const useUploadDeliverable = () => {
       
       return newDeliverable;
     } catch (err: any) {
-      logError('Error uploading deliverable:', { data: err });
+      logErrorToProduction('Error uploading deliverable:', { data: err });
       toast.error("Failed to upload deliverable: " + err.message);
       return null;
     } finally {

@@ -5,7 +5,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useWallet as useAppWallet } from "../../../context/WalletContext.tsx"; // Renamed to avoid conflict if useWallet hook is defined locally
 import { Wallet } from "lucide-react";
 import { toast } from "sonner";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function Web3Login() {
 
@@ -39,7 +39,7 @@ export function Web3Login() {
       toast("Login failed", {
         description: error.message || "Failed to connect wallet. Please try again.",
       });
-      logError('Web3 login error:', { data: error });
+      logErrorToProduction('Web3 login error:', { data: error });
     } finally {
       setIsLoading(false);
     }

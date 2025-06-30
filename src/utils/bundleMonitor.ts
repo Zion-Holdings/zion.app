@@ -1,4 +1,4 @@
-import { logInfo, logWarn, logError } from './productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
 
 interface BundleMetrics {
   timestamp: number;
@@ -96,7 +96,7 @@ class BundleMonitor {
       }
 
     } catch (error) {
-      logError('Failed to collect bundle metrics:', { data: error });
+      logErrorToProduction('Failed to collect bundle metrics:', { data: error });
     }
   }
 

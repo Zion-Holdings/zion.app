@@ -1,4 +1,4 @@
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export async function enableDevToolsInStaging() {
 
@@ -16,7 +16,7 @@ export async function enableDevToolsInStaging() {
       // logInfo('DevTools enabled');
       logInfo('React DevTools import temporarily commented out for build troubleshooting.');
     } catch (err) {
-      logError('Failed to load react-devtools (import is commented out)', { data: err });
+      logErrorToProduction('Failed to load react-devtools (import is commented out)', { data: err });
     }
   }
 }

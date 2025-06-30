@@ -3,7 +3,7 @@ import { useForm, ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import {
   Form,
   FormControl,
@@ -100,7 +100,7 @@ export function DisputeForm({
         }
       }
     } catch (error) {
-      logError('Error submitting dispute:', { data: error });
+      logErrorToProduction('Error submitting dispute:', { data: error });
       toast.error("Failed to submit dispute. Please try again.");
     } finally {
       setIsSubmitting(false);

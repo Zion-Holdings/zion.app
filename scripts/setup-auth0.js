@@ -51,7 +51,7 @@ function logWarning(message) {
   log(`⚠️  ${message}`, 'yellow');
 }
 
-function logError(message) {
+function logErrorToProduction(message) {
   log(`❌ ${message}`, 'red');
 }
 
@@ -198,7 +198,7 @@ async function promptForAuth0Config() {
       logSuccess('Valid Auth0 domain format');
       break;
     } else {
-      logError('Invalid Auth0 domain format. Must be https://tenant.region.auth0.com');
+      logErrorToProduction('Invalid Auth0 domain format. Must be https://tenant.region.auth0.com');
     }
   }
   
@@ -212,7 +212,7 @@ async function promptForAuth0Config() {
       logSuccess('Client ID looks valid');
       break;
     } else {
-      logError('Please enter a valid Auth0 Client ID (32+ characters)');
+      logErrorToProduction('Please enter a valid Auth0 Client ID (32+ characters)');
     }
   }
   
@@ -223,7 +223,7 @@ async function promptForAuth0Config() {
       logSuccess('Client Secret looks valid');
       break;
     } else {
-      logError('Please enter a valid Auth0 Client Secret (64+ characters)');
+      logErrorToProduction('Please enter a valid Auth0 Client Secret (64+ characters)');
     }
   }
   
@@ -256,7 +256,7 @@ async function testConfiguration() {
   const missing = requiredVars.filter(varName => !process.env[varName]);
   
   if (missing.length > 0) {
-    logError(`Missing environment variables: ${missing.join(', ')}`);
+    logErrorToProduction(`Missing environment variables: ${missing.join(', ')}`);
     return false;
   }
   
@@ -278,11 +278,11 @@ async function testConfiguration() {
       logInfo(`Issuer: ${data.issuer}`);
       return true;
     } else {
-      logError(`Auth0 domain test failed: ${response.status} ${response.statusText}`);
+      logErrorToProduction(`Auth0 domain test failed: ${response.status} ${response.statusText}`);
       return false;
     }
   } catch (error) {
-    logError(`Auth0 domain test failed: ${error.message}`);
+    logErrorToProduction(`Auth0 domain test failed: ${error.message}`);
     return false;
   }
 }
@@ -382,7 +382,7 @@ async function main() {
     await displayNextSteps();
     
   } catch (error) {
-    logError(`Setup failed: ${error.message}`);
+    logErrorToProduction(`Setup failed: ${error.message}`);
     console.error(error);
   } finally {
     rl.close();

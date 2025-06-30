@@ -1,5 +1,5 @@
 import { enhancedGlobalErrorHandler, ToastType, ToastPriority } from './globalToastManager';
-import { logError } from './logError';
+import {logErrorToProduction} from './logError';
 import { isPublicRoute } from '../config/publicRoutes';
 import { logDebug } from '@/utils/productionLogger';
 
@@ -50,7 +50,7 @@ export class EnhancedApiErrorHandler {
       (status === 401 || status === 403) &&
       typeof window !== 'undefined' && isPublicRoute(window.location.pathname)
     ) {
-      logError(error, {
+      logErrorToProduction(error, {
         context: context || 'apiRequestPublicPageContext',
         status,
         method,
@@ -217,7 +217,7 @@ export class EnhancedConsoleErrorHandler {
 
         // Log error for debugging
         try {
-          logError(first instanceof Error ? first : new Error(message), {
+          logErrorToProduction(first instanceof Error ? first : new Error(message), {
             context: 'consoleError',
             args: args.slice(1),
           });
@@ -303,7 +303,7 @@ export class EnhancedFetchErrorHandler {
               typeof window !== 'undefined' && isPublicRoute(window.location.pathname)
             ) {
               // Log the error for debugging but don't show a toast if on a public page
-              logError(new Error(`Auth error (${response.status}) for API ${url} on public page ${window.location.pathname} suppressed.`), {
+              logErrorToProduction(new Error(`Auth error (${response.status}) for API ${url} on public page ${window.location.pathname} suppressed.`), {
                 context: 'fetchRequestPublicPageContext',
                 status: response.status,
                 apiUrl: url,
@@ -362,7 +362,7 @@ export class EnhancedFetchErrorHandler {
           });
         }
 
-        logError(err, { context: 'fetchInterceptor', url });
+        logErrorToProduction(err, { context: 'fetchInterceptor', url });
         throw err;
       }
     };

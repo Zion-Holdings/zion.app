@@ -1,6 +1,6 @@
 
 import { supabase } from '@/integrations/supabase/client';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export async function ensureAnalyticsTablesExist() {
 
@@ -86,7 +86,7 @@ async function createAnalyticsTables() {
     
     logInfo('Analytics tables created successfully');
   } catch (error) {
-    logError('Error creating analytics tables:', { data: error });
+    logErrorToProduction('Error creating analytics tables:', { data: error });
     // Tables creation failed, but we can still continue
   }
 }

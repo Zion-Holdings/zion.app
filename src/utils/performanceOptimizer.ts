@@ -4,7 +4,7 @@
  */
 
 import type { PerformanceMetrics, BundleAnalysis } from '@/types/common';
-import { logInfo, logWarn, logError, logPerformance } from './productionLogger';
+import { logInfo, logWarn, logErrorToProductionToProduction, logPerformance } from './productionLogger';
 
 interface OptimizationConfig {
   enableCodeSplitting: boolean;
@@ -85,7 +85,7 @@ class PerformanceOptimizer {
 
       logInfo('Performance monitoring initialized');
     } catch (error) {
-      logError('Failed to initialize performance monitoring', { data: error });
+      logErrorToProduction('Failed to initialize performance monitoring', { data: error });
     }
   }
 
@@ -238,7 +238,7 @@ class PerformanceOptimizer {
       this.optimizationApplied = true;
       logInfo('Performance optimizations applied successfully');
     } catch (error) {
-      logError('Failed to apply performance optimizations', { data: error });
+      logErrorToProduction('Failed to apply performance optimizations', { data: error });
     }
   }
 

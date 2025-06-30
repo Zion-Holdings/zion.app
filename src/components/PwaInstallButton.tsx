@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { safeStorage } from '@/utils/safeStorage';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const DISMISS_KEY = 'pwaDismissed';
@@ -59,7 +59,7 @@ export const PwaInstallButton: React.FC = () => {
     } catch (err) {
       setIsInstalling(false);
       toast('Installation failed', { description: 'Please try again later.' });
-      logError('PWA install error:', { data: err });
+      logErrorToProduction('PWA install error:', { data: err });
     }
   };
 

@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import { checkMessage, monitorContent } from '@/services/fraud';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Props for the middleware component
@@ -82,7 +82,7 @@ export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> =
       });
       
       if (error) {
-        logError('Error analyzing message:', { data: error });
+        logErrorToProduction('Error analyzing message:', { data: error });
         return { isSafe: true }; // Default to safe on error
       }
       
@@ -102,7 +102,7 @@ export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> =
       // Message is considered safe
       return { isSafe: true };
     } catch (error) {
-      logError('Error in fraud detection:', { data: error });
+      logErrorToProduction('Error in fraud detection:', { data: error });
       // On error, let the message pass through but log the error
       return { isSafe: true };
     }

@@ -3,7 +3,7 @@ import { UserDetails } from '@/types/auth';
 import { supabase } from '@/integrations/supabase/client';
 import { Message, Conversation } from '@/types/messaging';
 import { toast } from '@/hooks/use-toast';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 // Allow either UserProfile or UserDetails
@@ -52,7 +52,7 @@ export function useMessages(
         await markAsRead(conversationId);
       }
     } catch (error) {
-      logError('Error fetching messages:', { data: error });
+      logErrorToProduction('Error fetching messages:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -97,7 +97,7 @@ export function useMessages(
       // Return the sent message
       return data;
     } catch (error) {
-      logError('Error sending message:', { data: error });
+      logErrorToProduction('Error sending message:', { data: error });
       toast({
         title: "Failed to send message",
         description: "Please try again later",
@@ -152,7 +152,7 @@ export function useMessages(
         );
       });
     } catch (error) {
-      logError('Error marking messages as read:', { data: error });
+      logErrorToProduction('Error marking messages as read:', { data: error });
     }
   };
 

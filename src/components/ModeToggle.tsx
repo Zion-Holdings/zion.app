@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { toast } from "@/hooks/use-toast"
 import { darkModeMessages, lightModeMessages } from "@/utils/themeToggleMessages"
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 // Use the ThemeProvider hook directly to ensure no conflicts
 import { useTheme } from "@/components/ThemeProvider"
 import { logIssue } from "@/utils/logIssue"
@@ -66,7 +66,7 @@ export function ModeToggle() {
       }, 1000);
       
     } catch (error) {
-      logError('Theme toggle error:', { data: error });
+      logErrorToProduction('Theme toggle error:', { data: error });
       logIssue('Theme switch failed', { error, currentTheme: theme, resolvedTheme });
       toast({
         title: "Theme switch failed",

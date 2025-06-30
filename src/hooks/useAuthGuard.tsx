@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { supabase } from '@/utils/supabase/client'
 import type { User } from '@supabase/supabase-js'
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import { toast } from '@/hooks/use-toast';
 
 interface AuthGuardOptions {
@@ -47,7 +47,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
         if (!mounted) return
 
         if (sessionError) {
-          logError('Auth guard session error:', { data: sessionError })
+          logErrorToProduction('Auth guard session error:', { data: sessionError })
           setState(prev => ({
             ...prev,
             loading: false,
@@ -99,7 +99,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
 
       } catch (error) {
         if (mounted) {
-          logError('Auth guard error:', { data: error })
+          logErrorToProduction('Auth guard error:', { data: error })
           setState(prev => ({
             ...prev,
             loading: false,

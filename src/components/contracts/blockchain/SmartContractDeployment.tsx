@@ -9,7 +9,7 @@ import { Switch } from "@/components/ui/switch";
 import { BlockchainNetwork, DeploymentOptions } from "@/types/smart-contracts";
 import { Loader2, ShieldCheck, Download } from "lucide-react";
 import { toast } from "sonner";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface SmartContractDeploymentProps {
@@ -39,7 +39,7 @@ export function SmartContractDeployment({
     try {
       await onDeploy(deploymentOptions);
     } catch (error) {
-      logError('Deployment error:', { data: error });
+      logErrorToProduction('Deployment error:', { data: error });
     }
   };
   

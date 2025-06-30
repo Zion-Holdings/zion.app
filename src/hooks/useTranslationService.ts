@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 // Only use the public client-side OpenAI key - never reference server-side secrets
@@ -87,7 +87,7 @@ export function useTranslationService() {
       setIsTranslating(false);
       
       if (error) {
-        logError('Translation error:', { data: error });
+        logErrorToProduction('Translation error:', { data: error });
         const initialTranslations: Record<SupportedLanguage, string> = {
           en: content,
           es: '',
@@ -115,7 +115,7 @@ export function useTranslationService() {
       return { translations: (data as any).translations };
     } catch (err) {
       setIsTranslating(false);
-      logError('Translation service error:', { data: err });
+      logErrorToProduction('Translation service error:', { data: err });
       
       const initialTranslations: Record<SupportedLanguage, string> = {
         en: content,

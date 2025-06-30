@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import { useDisputes } from "@/hooks/useDisputes";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import {
  Dispute, disputeReasonLabels, DisputeMessage, DisputeStatus, ResolutionType
 } from "@/types/disputes";
@@ -59,7 +59,7 @@ export function DisputeDetail() {
         const messagesData = await getDisputeMessages(disputeId);
         setMessages(messagesData);
       } catch (error) {
-        logError('Error loading dispute data:', { data: error });
+        logErrorToProduction('Error loading dispute data:', { data: error });
         toast.error("Failed to load dispute");
       } finally {
         setIsLoading(false);
@@ -118,7 +118,7 @@ export function DisputeDetail() {
         setMessage("");
       }
     } catch (error) {
-      logError('Error sending message:', { data: error });
+      logErrorToProduction('Error sending message:', { data: error });
     } finally {
       setIsSending(false);
     }

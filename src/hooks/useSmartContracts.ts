@@ -5,7 +5,7 @@ import { toast } from 'sonner';
 import { BlockchainNetwork, DeploymentOptions, SmartContractInfo } from '@/types/smart-contracts';
 import { TalentProfile } from '@/types/talent';
 import { ContractFormValues } from "@/components/contracts/components/ContractForm";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useSmartContracts() {
 
@@ -43,7 +43,7 @@ export function useSmartContracts() {
         throw new Error("Failed to generate Solidity contract");
       }
     } catch (err: any) {
-      logError('Error generating Solidity contract:', { data: err });
+      logErrorToProduction('Error generating Solidity contract:', { data: err });
       toast.error("Failed to generate smart contract");
       throw err;
     } finally {
@@ -89,7 +89,7 @@ export function useSmartContracts() {
       
       return mockSmartContractInfo;
     } catch (err: any) {
-      logError('Error deploying smart contract:', { data: err });
+      logErrorToProduction('Error deploying smart contract:', { data: err });
       toast.error("Failed to deploy smart contract");
       setDeploymentStatus('error');
       return null;

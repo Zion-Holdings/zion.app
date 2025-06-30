@@ -2,7 +2,7 @@
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import type { UserDetails } from "@/types/auth";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useProfileManagement = (setIsLoading: (loading: boolean) => void) => {
 
@@ -60,7 +60,7 @@ export const useProfileManagement = (setIsLoading: (loading: boolean) => void) =
 
       return { success: true };
     } catch (error: any) {
-      logError('Profile update error:', { data: error });
+      logErrorToProduction('Profile update error:', { data: error });
       toast({
         title: "Profile update failed",
         description: error.message || "An unexpected error occurred",

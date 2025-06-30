@@ -12,7 +12,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { PROPOSAL_TEMPLATES } from '@/data/proposalTemplates';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 // import MainLayout from '@/components/layout/MainLayout'; // If exists
 // import { useAuth } from '@/hooks/useAuth'; // If frontend auth is needed for API calls
@@ -121,7 +121,7 @@ const CreateProposalPage: React.FC = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        logError('Submission error:', { data: errorData });
+        logErrorToProduction('Submission error:', { data: errorData });
         throw new Error(errorData.detail || Object.values(errorData).join(', ') || `Error: ${response.status}`);
       }
 
@@ -129,7 +129,7 @@ const CreateProposalPage: React.FC = () => {
       router.push(`/governance/${newProposal.id}`);
     } catch (err: any) {
       setApiError(err.message || 'Failed to create proposal.');
-      logError("Error:", { error: err });
+      logErrorToProduction("Error:", { error: err });
     } finally {
       setIsLoading(false);
     }

@@ -4,7 +4,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { supabase } from '@/integrations/supabase/client';
 import { Interview, InterviewRequest, InterviewResponse } from '@/types/interview';
 import { toast } from '@/components/ui/use-toast';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useInterviews() {
 
@@ -47,7 +47,7 @@ export function useInterviews() {
         .single();
 
       if (insertError) {
-        logError('Error requesting interview:', { data: insertError });
+        logErrorToProduction('Error requesting interview:', { data: insertError });
         setError(insertError.message);
         return null;
       }
@@ -63,7 +63,7 @@ export function useInterviews() {
 
       return data;
     } catch (err: any) {
-      logError('Error in requestInterview:', { data: err });
+      logErrorToProduction('Error in requestInterview:', { data: err });
       setError(err.message);
       return null;
     } finally {
@@ -94,7 +94,7 @@ export function useInterviews() {
         .order('scheduled_date', { ascending: true });
 
       if (fetchError) {
-        logError('Error fetching interviews:', { data: fetchError });
+        logErrorToProduction('Error fetching interviews:', { data: fetchError });
         setError(fetchError.message);
         return [];
       }
@@ -124,7 +124,7 @@ export function useInterviews() {
       setInterviews(formattedInterviews);
       return formattedInterviews;
     } catch (err: any) {
-      logError('Error in fetchInterviews:', { data: err });
+      logErrorToProduction('Error in fetchInterviews:', { data: err });
       setError(err.message);
       return [];
     } finally {
@@ -160,7 +160,7 @@ export function useInterviews() {
         .eq('id', interviewId);
 
       if (updateError) {
-        logError('Error responding to interview:', { data: updateError });
+        logErrorToProduction('Error responding to interview:', { data: updateError });
         setError(updateError.message);
         return false;
       }
@@ -173,7 +173,7 @@ export function useInterviews() {
         .single();
 
       if (fetchError) {
-        logError('Error fetching interview:', { data: fetchError });
+        logErrorToProduction('Error fetching interview:', { data: fetchError });
         setError(fetchError.message);
         return false;
       }
@@ -205,7 +205,7 @@ export function useInterviews() {
       await fetchInterviews();
       return true;
     } catch (err: any) {
-      logError('Error in respondToInterview:', { data: err });
+      logErrorToProduction('Error in respondToInterview:', { data: err });
       setError(err.message);
       return false;
     } finally {
@@ -230,7 +230,7 @@ export function useInterviews() {
         related_id: relatedId,
       });
     } catch (error) {
-      logError('Error creating notification:', { data: error });
+      logErrorToProduction('Error creating notification:', { data: error });
     }
   };
 
@@ -292,7 +292,7 @@ export function useInterviews() {
       await fetchInterviews();
       return true;
     } catch (err: any) {
-      logError('Error in cancelInterview:', { data: err });
+      logErrorToProduction('Error in cancelInterview:', { data: err });
       setError(err.message);
       return false;
     } finally {

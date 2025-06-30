@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
 import * as Sentry from '@sentry/nextjs';
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Type for individual log entry coming from ProductionLogger
@@ -101,7 +101,7 @@ export default async function handler(
     return res.status(200).json({ success: true });
   } catch (error) {
     // Log server-side failure
-    logError('Error in /api/logs:', error);
+    logErrorToProduction('Error in /api/logs:', error);
     Sentry.captureException(error);
     return res.status(500).json({ message: 'Internal Server Error' });
   }

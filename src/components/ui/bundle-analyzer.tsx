@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { AlertTriangle, Package, Zap } from 'lucide-react';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface BundleInfo {
@@ -100,7 +100,7 @@ export function BundleAnalyzer() {
 
       setChunks(chunkData.sort((a, b) => b.size - a.size).slice(0, 5)); // Top 5 largest chunks
     } catch (error) {
-      logError('Failed to collect bundle info:', { data: error });
+      logErrorToProduction('Failed to collect bundle info:', { data: error });
     } finally {
       setIsCollecting(false);
     }

@@ -17,7 +17,7 @@ import { format, addDays } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 import { useInterviews } from "@/hooks/useInterviews";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface InterviewRequestFormProps {
@@ -93,7 +93,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
       });
       onClose();
     } catch (error) {
-      logError('Failed to schedule interview:', { data: error });
+      logErrorToProduction('Failed to schedule interview:', { data: error });
       toast({
         title: "Failed to schedule interview",
         description: "An error occurred while scheduling the interview. Please try again.",

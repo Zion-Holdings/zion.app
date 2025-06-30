@@ -3,7 +3,7 @@ import { UserDetails } from '@/types/auth';
 import { supabase } from '@/integrations/supabase/client';
 import { Conversation, ConversationContextData } from '@/types/messaging';
 import { toast } from '@/hooks/use-toast';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 // Allow either UserProfile or UserDetails
@@ -72,7 +72,7 @@ export function useConversations(
       );
       setUnreadCount(totalUnread);
     } catch (error) {
-      logError('Error fetching conversations:', { data: error });
+      logErrorToProduction('Error fetching conversations:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -173,7 +173,7 @@ export function useConversations(
       // Return the conversation ID
       return conversationId;
     } catch (error) {
-      logError('Error creating conversation:', { data: error });
+      logErrorToProduction('Error creating conversation:', { data: error });
       toast({
         title: "Failed to create conversation",
         description: "Please try again later",

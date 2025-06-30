@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { callZionGPT } from '@/utils/zion-gpt';
-import { logError } from '@/utils/logError';
+import {logErrorToProduction} from '@/utils/logError';
 import { suggestFix } from '@/utils/suggestFix';
 
 const SCENARIOS = [
@@ -45,7 +45,7 @@ export default function WorkFuturesSimulator() {
       setOutput(result);
       setWorkIndex(Math.floor(Math.random() * 60) + 40); // simple placeholder
     } catch (err) {
-      logError(err, { context: 'WorkFuturesSimulator.runSimulation' });
+      logErrorToProduction(err, { context: 'WorkFuturesSimulator.runSimulation' });
       const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
       setOutput(suggestion);
       toast({ title: 'Simulation failed', variant: 'destructive' });
@@ -54,12 +54,12 @@ export default function WorkFuturesSimulator() {
 
   useEffect(() => {
     if (!networkCanvas.current) {
-      logError(new Error('Canvas ref missing'), { context: 'WorkFuturesSimulator.useEffect' });
+      logErrorToProduction(new Error('Canvas ref missing'), { context: 'WorkFuturesSimulator.useEffect' });
       return;
     }
     const ctx = networkCanvas.current.getContext('2d');
     if (!ctx) {
-      logError(new Error('2D context unavailable'), { context: 'WorkFuturesSimulator.useEffect' });
+      logErrorToProduction(new Error('2D context unavailable'), { context: 'WorkFuturesSimulator.useEffect' });
       return;
     }
     try {
@@ -74,7 +74,7 @@ export default function WorkFuturesSimulator() {
       ctx.fillStyle = '#3b82f6';
       positions.forEach((p) => {
         if (!p || typeof p.x !== 'number' || typeof p.y !== 'number') {
-          logError(new Error('Invalid position'), {
+          logErrorToProduction(new Error('Invalid position'), {
             context: 'WorkFuturesSimulator.drawNode',
             position: p,
           });
@@ -102,7 +102,7 @@ export default function WorkFuturesSimulator() {
             ctx.lineTo(q.x, q.y);
             ctx.stroke();
           } else if (!p || !q) {
-            logError(new Error('Invalid connection'), {
+            logErrorToProduction(new Error('Invalid connection'), {
               context: 'WorkFuturesSimulator.drawEdge',
               p,
               q,
@@ -111,7 +111,7 @@ export default function WorkFuturesSimulator() {
         });
       });
     } catch (err) {
-      logError(err, { context: 'WorkFuturesSimulator.useEffect' });
+      logErrorToProduction(err, { context: 'WorkFuturesSimulator.useEffect' });
     }
   }, [output]);
 

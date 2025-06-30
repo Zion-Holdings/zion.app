@@ -14,7 +14,7 @@ import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { useDebounce } from '@/hooks/useDebounce';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface BaseSearchResult {
@@ -264,7 +264,7 @@ export default function SearchResultsPage({
         setResults((prev) => [...prev, ...(data.results || [])]);
       }
     } catch (error) {
-      logError('Error fetching search results:', { data: error });
+      logErrorToProduction('Error fetching search results:', { data: error });
       const offline = offlineSearch(searchTerm, page, 12, {
         sortBy,
         category: categoryFilter !== 'all' ? categoryFilter : undefined,
@@ -658,7 +658,7 @@ export const getServerSideProps: GetServerSideProps<
       totalCount = data.totalCount || results.length;
       logInfo(`Server-side fetch successful: ${results.length} results`);
     } else {
-      logError(
+      logErrorToProduction(
         `Search API error: ${response.status} ${response.statusText}`,
       );
       const offline = offlineSearch(query, 1, 12, { sortBy: 'relevance' });
@@ -675,7 +675,7 @@ export const getServerSideProps: GetServerSideProps<
       },
     };
   } catch (error) {
-    logError('Error fetching search results:', { data: error });
+    logErrorToProduction('Error fetching search results:', { data: error });
     const offline = offlineSearch(query, 1, 12, { sortBy: 'relevance' });
 
     return {

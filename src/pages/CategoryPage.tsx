@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { CategoryListingPage } from '@/components/CategoryListingPage'; // Ensure this path is correct
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
 import { useRouterReady } from '@/hooks/useRouterReady';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface CategoryData {
@@ -88,7 +88,7 @@ export default function CategoryPage() {
           document.title = `${json.category.name} | Zion Marketplace`;
         }
       } catch (e: any) {
-        logError('Failed to load category items:', { data:  e });
+        logErrorToProduction('Failed to load category items:', { data:  e });
         
         // Auto-retry for network errors
         if (retryCount < maxRetries && (

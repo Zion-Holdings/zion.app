@@ -1,5 +1,5 @@
 import { callZionGPT } from './zion-gpt';
-import { logError } from './logError';
+import {logErrorToProduction} from './logError';
 
 /**
  * Attempt to generate a short fix or fallback suggestion using ZionGPT.
@@ -10,7 +10,7 @@ export async function suggestFix(error: Error): Promise<string> {
     const prompt = `Provide a concise suggestion to resolve or work around this error: ${error.message}`;
     return await callZionGPT({ prompt, purpose: 'support' });
   } catch (e) {
-    logError(e, { context: 'suggestFix' });
+    logErrorToProduction(e, { context: 'suggestFix' });
     return 'Something went wrong while generating a fix suggestion. Please try again later.';
   }
 }

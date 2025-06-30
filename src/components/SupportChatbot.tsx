@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { MessageSquare, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ChatMessage, ChatInput } from '@/components/ChatAssistant';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface Msg { id: string; role: 'user' | 'assistant'; message: string; }
@@ -102,7 +102,7 @@ export function SupportChatbot() {
         setMessages(prev => prev.map(m => m.id === botId ? { ...m, message: final } : m));
       }
     } catch (err) {
-      logError('Chatbot error:', { data: err });
+      logErrorToProduction('Chatbot error:', { data: err });
       
       // Provide a helpful fallback response instead of generic error
       const fallbackResponse = FALLBACK_RESPONSES[Math.floor(Math.random() * FALLBACK_RESPONSES.length)] || "I'm experiencing technical difficulties. Please contact support@ziontechgroup.com for assistance.";

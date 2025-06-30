@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { logDebug, logError } from '@/utils/productionLogger';
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -79,7 +79,7 @@ const ProductListingCardComponent = ({
     
     // Validate listing ID exists before navigation
     if (!listing.id) {
-      logError('[ProductCard] Missing listing ID, cannot navigate', new Error('Missing listing ID'), { component: 'ProductListingCard' });
+      logErrorToProduction('[ProductCard] Missing listing ID, cannot navigate', new Error('Missing listing ID'), { component: 'ProductListingCard' });
       toast({
         title: "Navigation Error",
         description: "Product information is incomplete",

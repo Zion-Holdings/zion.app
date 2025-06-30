@@ -1,7 +1,7 @@
 
 
 // Define types for the pricing recommendation
-import { logError } from "@/utils/productionLogger";
+import {logErrorToProduction} from "@/utils/productionLogger";
 
 export interface PricingSuggestion {
   minRate: number;
@@ -83,7 +83,7 @@ export async function getClientBudgetSuggestion(params: ClientBudgetParams): Pro
       explanation
     };
   } catch (error) {
-    logError('Error generating budget suggestion:', { data: error });
+    logErrorToProduction('Error generating budget suggestion:', { data: error });
     // Return a fallback suggestion
     return {
       minRate: 30,
@@ -159,7 +159,7 @@ export async function getTalentRateSuggestion(params: TalentRateParams): Promise
       explanation
     };
   } catch (error) {
-    logError('Error generating rate suggestion:', { data: error });
+    logErrorToProduction('Error generating rate suggestion:', { data: error });
     return {
       minRate: 25,
       maxRate: 50,
@@ -197,7 +197,7 @@ export async function trackPricingSuggestion(data: {
 
     return true;
   } catch (error) {
-    logError('Error tracking pricing suggestion:', { data: error });
+    logErrorToProduction('Error tracking pricing suggestion:', { data: error });
     return false;
   }
 }

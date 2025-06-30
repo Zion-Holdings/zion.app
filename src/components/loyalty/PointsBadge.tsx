@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { LoginModal } from '@/components/auth/LoginModal';
 import { Button } from '@/components/ui/button';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function PointsBadge() {
 
@@ -43,7 +43,7 @@ export function PointsBadge() {
     try {
       await fetchLedger();
     } catch (error) {
-      logError('Failed to refresh points:', { data: error });
+      logErrorToProduction('Failed to refresh points:', { data: error });
     } finally {
       setIsRefreshing(false);
     }

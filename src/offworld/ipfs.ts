@@ -9,7 +9,7 @@ import { noise } from '@chainsafe/libp2p-noise';
 import { yamux } from '@chainsafe/libp2p-yamux';
 import { MemoryBlockstore } from 'blockstore-core/memory';
 import { MemoryDatastore } from 'datastore-core/memory';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 let heliaNode: Helia | null = null;
@@ -61,7 +61,7 @@ export async function fetchJSON(cidString: string): Promise<any> {
   try {
     parsedCid = CID.parse(cidString);
   } catch (error) {
-    logError('Failed to parse CID string:', { data: error });
+    logErrorToProduction('Failed to parse CID string:', { data: error });
     throw new Error(`Invalid CID string: ${cidString}`);
   }
 

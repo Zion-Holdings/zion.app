@@ -1,6 +1,6 @@
 import React from "react";
 import { MobileThemeProvider } from "./theme/MobileThemeProvider";
-import { logError } from '@/utils/logError';
+import {logErrorToProduction} from '@/utils/logError';
 import { useCart } from '@/context/CartContext';
 import { logInfo } from '@/utils/productionLogger';
 
@@ -15,7 +15,7 @@ const CartContextTester = () => {
       </div>
     );
   } catch (error) {
-    logError(error, { message: 'CartContextTester: useCart() FAILED!' });
+    logErrorToProduction(error, { message: 'CartContextTester: useCart() FAILED!' });
     return (
       <div style={{ position: 'fixed', top: '10px', left: '10px', backgroundColor: 'red', color: 'white', padding: '5px', zIndex: 9999 }}>
         CartContextTester: FAILED - {(error as Error).message}

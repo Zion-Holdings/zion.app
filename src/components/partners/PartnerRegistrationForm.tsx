@@ -11,7 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const partnerFormSchema = z.object({
@@ -127,7 +127,7 @@ export function PartnerRegistrationForm() {
       }
 
     } catch (error: any) {
-      logError('Error submitting partner application:', { data: error });
+      logErrorToProduction('Error submitting partner application:', { data: error });
       toast({
         title: "Submission failed",
         description: error.message || "There was a problem submitting your application.",

@@ -7,7 +7,7 @@ import { signIn } from 'next-auth/react';
 import { supabase } from '@/utils/supabase/client';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import type { AuthError, User, AuthChangeEvent, Session } from '@supabase/supabase-js';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -61,7 +61,7 @@ const LoginPage = () => {
         if (!mounted) return;
 
         if (sessionError) {
-          logError('LoginPage: Error getting session:', { data: sessionError });
+          logErrorToProduction('LoginPage: Error getting session:', { data: sessionError });
           setError(sessionError as any); // Cast to any if type is too strict
         } else {
           logInfo('LoginPage: getSession returned, user:', { data: session?.user?.id });
@@ -69,7 +69,7 @@ const LoginPage = () => {
         }
       } catch (e) {
         if (mounted) {
-          logError('LoginPage: Exception during getSession:', { data:  e });
+          logErrorToProduction('LoginPage: Exception during getSession:', { data:  e });
           clearTimeout(sessionTimeoutId); // Ensure timeout is cleared on error too
         }
       } finally {
@@ -232,7 +232,7 @@ const LoginPage = () => {
       });
 
       if (signInError) {
-        logError('Supabase sign-in error:', { data: signInError });
+        logErrorToProduction('Supabase sign-in error:', { data: signInError });
         
         // Check if error is related to email verification
         const messageIncludesEmailNotConfirmed = signInError.message?.toLowerCase().includes('email not confirmed') ||
@@ -280,7 +280,7 @@ const LoginPage = () => {
         setError({ name: 'UnknownAuthError', message: 'Login failed due to an unknown error. Please try again.' } as AuthError);
       }
     } catch (catchedError: any) {
-      logError('Exception during Supabase sign-in:', { data: catchedError });
+      logErrorToProduction('Exception during Supabase sign-in:', { data: catchedError });
       // Check if the caught error is a network error
       let exceptionMessage = 'An unexpected error occurred. Please try again.';
       if (catchedError.message && catchedError.message.toLowerCase().includes('networkerror when attempting to fetch resource')) {

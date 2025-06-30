@@ -1,4 +1,4 @@
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 // Removed circular dependency with productionLogger - using direct console methods instead
 
@@ -46,7 +46,7 @@ class DevelopmentLogger {
         window.Sentry.captureException(errorObj, { extra: context });
       }
     } else {
-      logError(`[ERROR] ${message}`, error, context);
+      logErrorToProduction(`[ERROR] ${message}`, error, context);
     }
   }
 

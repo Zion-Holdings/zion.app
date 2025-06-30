@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Resume } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useResumeList() {
 
@@ -57,7 +57,7 @@ export function useResumeList() {
       setResumes(transformedResumes);
       return transformedResumes;
     } catch (e: any) {
-      logError('Error fetching resumes:', { data:  e });
+      logErrorToProduction('Error fetching resumes:', { data:  e });
       setError(e.message);
       return [];
     } finally {

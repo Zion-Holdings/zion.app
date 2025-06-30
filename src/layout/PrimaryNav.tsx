@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { logDebug, logError } from '@/utils/productionLogger';
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Logo } from '@/components/header/Logo';
@@ -48,7 +48,7 @@ export function PrimaryNav() {
       router
         .push(`/search?q=${encodeURIComponent(trimmed)}`)
         .then(() => setQuery(''))
-        .catch((err) => logError('Search navigation failed', err, { query: trimmed, component: 'PrimaryNav' }));
+        .catch((err) => logErrorToProduction('Search navigation failed', err, { query: trimmed, component: 'PrimaryNav' }));
     }
   };
 

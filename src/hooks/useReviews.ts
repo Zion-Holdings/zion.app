@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { Review, ReviewReport } from "@/types/reviews";
 import { toast } from "@/hooks/use-toast";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useReviews(projectId?: string) {
 
@@ -49,7 +49,7 @@ export function useReviews(projectId?: string) {
         }
       }
     } catch (err: any) {
-      logError('Error fetching reviews:', { data: err });
+      logErrorToProduction('Error fetching reviews:', { data: err });
       toast({
         title: "Error",
         description: "Failed to load reviews",
@@ -82,7 +82,7 @@ export function useReviews(projectId?: string) {
       
       setReviews(data || []);
     } catch (err: any) {
-      logError('Error fetching user reviews:', { data: err });
+      logErrorToProduction('Error fetching user reviews:', { data: err });
       toast({
         title: "Error",
         description: "Failed to load reviews",
@@ -136,7 +136,7 @@ export function useReviews(projectId?: string) {
       setUserReview(data);
       return true;
     } catch (err: any) {
-      logError('Error submitting review:', { data: err });
+      logErrorToProduction('Error submitting review:', { data: err });
       
       // Check for unique constraint violation
       if (err.code === "23505") {
@@ -185,7 +185,7 @@ export function useReviews(projectId?: string) {
       
       return true;
     } catch (err: any) {
-      logError('Error updating review:', { data: err });
+      logErrorToProduction('Error updating review:', { data: err });
       toast({
         title: "Error",
         description: "Failed to update review",
@@ -229,7 +229,7 @@ export function useReviews(projectId?: string) {
         return true;
       }
     } catch (err: any) {
-      logError('Error reporting review:', { data: err });
+      logErrorToProduction('Error reporting review:', { data: err });
       toast({
         title: "Error",
         description: "Failed to report review",

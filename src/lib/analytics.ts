@@ -1,4 +1,4 @@
-import { logError, logInfo } from '@/utils/productionLogger';
+import { logErrorToProduction, logInfo } from '@/utils/productionLogger';
 import { supabase, isSupabaseConfigured } from '@/integrations/supabase/client';
 
 async function logEventToSupabase(
@@ -16,14 +16,14 @@ async function logEventToSupabase(
       },
     ]);
   } catch (error) {
-    logError('Error logging analytics event to Supabase', error as Error, { eventName, eventParams, context: 'SupabaseAnalytics' });
+    logErrorToProduction('Error logging analytics event to Supabase', error as Error, { eventName, eventParams, context: 'SupabaseAnalytics' });
   }
 }
 
 export const initGA = () => {
   const measurementId = process.env.NEXT_PUBLIC_GA_ID;
   if (!measurementId) {
-    logError('NEXT_PUBLIC_GA_ID is not defined. GA4 initialization skipped.', new Error('Missing GA ID'), { context: 'GoogleAnalyticsInit' });
+    logErrorToProduction('NEXT_PUBLIC_GA_ID is not defined. GA4 initialization skipped.', new Error('Missing GA ID'), { context: 'GoogleAnalyticsInit' });
     return;
   }
 
@@ -42,7 +42,7 @@ export const fireEvent = async (
   eventParams?: Record<string, any>
 ) => {
   if (!window.gtag) {
-    logError('gtag is not defined. Make sure GA4 is initialized.', new Error('gtag not defined'), { eventName, context: 'GoogleAnalyticsEvent' });
+    logErrorToProduction('gtag is not defined. Make sure GA4 is initialized.', new Error('gtag not defined'), { eventName, context: 'GoogleAnalyticsEvent' });
   } else {
     window.gtag('event', eventName, eventParams);
   }

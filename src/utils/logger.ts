@@ -1,4 +1,4 @@
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 // Removed circular dependency with productionLogger - using direct console methods instead
 
@@ -37,7 +37,7 @@ class Logger {
   }
 
   error(message: string, error?: Error | unknown, context?: Record<string, unknown>): void {
-    logError(`[ERROR] ${message}`, error, context);
+    logErrorToProduction(`[ERROR] ${message}`, error, context);
     
     // In production, also send to error monitoring service
     if (!this.isDevelopment && typeof window !== 'undefined') {
@@ -49,7 +49,7 @@ class Logger {
         }
       } catch (sentryError) {
         // Fallback if Sentry fails
-        logError('Failed to report error to monitoring service:', sentryError);
+        logErrorToProduction('Failed to report error to monitoring service:', sentryError);
       }
     }
   }

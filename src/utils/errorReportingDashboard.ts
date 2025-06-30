@@ -3,7 +3,7 @@
  * Provides comprehensive monitoring, health scoring, and alerting
  */
 
-import { logInfo, logWarn, logError } from './productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
 
 interface HealthMetrics {
   status: 'healthy' | 'warning' | 'critical';
@@ -134,7 +134,7 @@ class ErrorReportingDashboard {
 
       this.calculateHealthScore();
     } catch (error) {
-      logError('Failed to update performance metrics', error);
+      logErrorToProduction('Failed to update performance metrics', error);
     }
   }
 
@@ -236,7 +236,7 @@ class ErrorReportingDashboard {
       const alert = `🚨 CRITICAL ERROR: ${error.message}`;
       if (!alerts.includes(alert)) {
         alerts.push(alert);
-        logError('Critical error alert triggered', error);
+        logErrorToProduction('Critical error alert triggered', error);
       }
     }
 
@@ -403,5 +403,5 @@ export function reportSystemError(
   errorReportingDashboard.reportError(error, severity);
   
   // Log with context
-  logError(`System error [${severity}]`, error, context);
+  logErrorToProduction(`System error [${severity}]`, error, context);
 } 

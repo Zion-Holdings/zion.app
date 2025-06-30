@@ -5,7 +5,7 @@ import { mutate } from 'swr';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { RefreshCcw, AlertCircle } from 'lucide-react';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface MarketplaceErrorFallbackProps extends FallbackProps {
@@ -19,7 +19,7 @@ function MarketplaceErrorFallback({ error, resetErrorBoundary }: MarketplaceErro
       await mutate(() => true, undefined, { revalidate: true });
       resetErrorBoundary();
     } catch (retryError) {
-      logError('Error during retry:', { data: retryError });
+      logErrorToProduction('Error during retry:', { data: retryError });
       Sentry.captureException(retryError);
     }
   };
@@ -75,7 +75,7 @@ interface MarketplaceErrorBoundaryProps {
 export function MarketplaceErrorBoundary({ children }: MarketplaceErrorBoundaryProps) {
   const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
     // Log boundary errors to Sentry
-    logError('MarketplaceErrorBoundary caught an error:', error, { componentStack: errorInfo.componentStack });
+    logErrorToProduction('MarketplaceErrorBoundary caught an error:', error, { componentStack: errorInfo.componentStack });
     
     Sentry.withScope((scope) => {
       scope.setTag('errorBoundary', 'marketplace');

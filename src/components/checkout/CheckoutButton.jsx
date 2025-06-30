@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { getStripe } from '@/utils/getStripe';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function CheckoutButton({ priceId, quantity = 1 }) {
 
@@ -32,9 +32,9 @@ export default function CheckoutButton({ priceId, quantity = 1 }) {
       if (!res.ok) throw new Error(data.error || 'Failed to create session');
 
       const { error } = await stripe.redirectToCheckout({ sessionId: data.sessionId });
-      if (error) logError('Stripe redirect error:', { data: error });
+      if (error) logErrorToProduction('Stripe redirect error:', { data: error });
     } catch (err) {
-      logError('Checkout error:', { data: err });
+      logErrorToProduction('Checkout error:', { data: err });
     } finally {
       setLoading(false);
     }

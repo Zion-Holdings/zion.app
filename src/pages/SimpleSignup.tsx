@@ -6,7 +6,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from '@/hooks/use-toast';
 import { signup } from '@/services/signupApi';
 import { PasswordStrengthMeter } from '@/components/PasswordStrengthMeter';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const SignupSchema = Yup.object({
@@ -44,7 +44,7 @@ export default function SimpleSignup() {
           router.push('/login');
         }
       } catch (err: any) {
-        logError('Signup error:', { data: err.message });
+        logErrorToProduction('Signup error:', { data: err.message });
         setErrors({ email: err.message });
         toast.error(err.message || 'Signup failed');
       } finally {

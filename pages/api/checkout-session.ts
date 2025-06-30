@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import fs from 'fs';
 import path from 'path';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Note: Stripe instance will be created dynamically with the correct key
@@ -49,7 +49,7 @@ function getStripeSecretKey(isProdEnv: boolean): string {
 
   if (isProdEnv) {
     if (!liveSecretKey || !liveSecretKey.startsWith('sk_live_')) {
-      logError('Stripe API: Production environment, but STRIPE_SECRET_KEY is missing or not a live key.');
+      logErrorToProduction('Stripe API: Production environment, but STRIPE_SECRET_KEY is missing or not a live key.');
       if (testSecretKey && testSecretKey.startsWith('sk_test_')) {
          logWarn('Stripe API: Production environment, but live key issue. Falling back to TEST key for safety.');
          return testSecretKey;
@@ -201,7 +201,7 @@ export default async function handler(
     });
 
   } catch (error: any) {
-    logError('Checkout session creation error:', { data: error });
+    logErrorToProduction('Checkout session creation error:', { data: error });
     
     // Handle specific Stripe errors
     if (error.type === 'StripeCardError') {

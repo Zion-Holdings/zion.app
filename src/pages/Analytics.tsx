@@ -9,7 +9,7 @@ import { PageViewsChart } from "@/components/analytics/PageViewsChart";
 import { ConversionAnalysisChart } from "@/components/analytics/ConversionAnalysisChart";
 import { FeatureUsageChart } from "@/components/analytics/FeatureUsageChart";
 import { ExportPanel } from "@/components/analytics/ExportPanel";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function Analytics() {
 
@@ -120,7 +120,7 @@ export default function Analytics() {
       });
 
       if (error) {
-        logError('Error fetching feature usage:', { data: error });
+        logErrorToProduction('Error fetching feature usage:', { data: error });
         // fallback query
         const startDate = new Date();
         startDate.setDate(startDate.getDate() - days);

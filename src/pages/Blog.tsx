@@ -14,7 +14,7 @@ import { generateRandomBlogPost } from "@/utils/generateRandomBlogPost";
 import { BLOG_POSTS } from "@/data/blog-posts";
 import { Search } from "lucide-react";
 import { fetchWithRetry } from '@/utils/fetchWithRetry';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Categories for filtering
@@ -66,7 +66,7 @@ export default function Blog({ posts: initialPosts = BLOG_POSTS }: BlogProps) {
         );
         setPosts(data);
       } catch (err) {
-        logError('Failed to fetch blog posts', { data: err });
+        logErrorToProduction('Failed to fetch blog posts', { data: err });
       } finally {
         setIsLoading(false);
       }

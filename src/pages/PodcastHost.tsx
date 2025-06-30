@@ -3,7 +3,7 @@ import { Header } from '@/components/Header';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function PodcastHost() {
 
@@ -26,7 +26,7 @@ export default function PodcastHost() {
       const data = await res.json();
       setScript(data.script || '');
     } catch (err) {
-      logError('Failed to generate podcast script', err);
+      logErrorToProduction('Failed to generate podcast script', err);
       setScript('Error generating script.');
     } finally {
       setLoading(false);

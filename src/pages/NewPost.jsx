@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router'; // Changed from useNavigate
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 const ReactMarkdown = React.lazy(() => import('react-markdown'));
 import { Input } from '@/components/ui/input';
@@ -32,7 +32,7 @@ export default function NewPost() {
       const data = await res.json();
       router.push(`/community/${data.id}`); // Changed to router.push
     } catch (e) {
-      logError('Post creation error:', { data:  e });
+      logErrorToProduction('Post creation error:', { data:  e });
       setError(e.message);
     } finally {
       setIsSubmitting(false);

@@ -2,7 +2,7 @@
 import { supabase } from "@/integrations/supabase/client";
 import { cleanupAuthState } from "@/utils/authUtils";
 import type { UserDetails } from "@/types/auth";
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export const useLogout = (setUser: (user: UserDetails | null) => void) => {
 
@@ -24,7 +24,7 @@ export const useLogout = (setUser: (user: UserDetails | null) => void) => {
       // Update state
       setUser(null);
     } catch (error) {
-      logError('Error during logout:', { data: error });
+      logErrorToProduction('Error during logout:', { data: error });
     }
   };
 

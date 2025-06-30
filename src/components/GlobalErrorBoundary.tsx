@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { logInfo } from '@/utils/productionLogger';
-import { logError } from '@/utils/logError';
+import {logErrorToProduction} from '@/utils/logError';
 // Removed: import { useRouter } from 'next/router';
 import { getEnqueueSnackbar } from '@/context/SnackbarContext';
 import { sendErrorToBackend } from '@/utils/customErrorReporter';
@@ -36,7 +36,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
       const enqueueSnackbar = getEnqueueSnackbar();
       enqueueSnackbar(`Issue reported. Reference ID: ${id}`, { variant: 'success' });
     } catch (err) {
-      logError(err, { context: 'Failed to show report confirmation' });
+      logErrorToProduction(err, { context: 'Failed to show report confirmation' });
     }
   };
 
@@ -92,7 +92,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
 
   const handleError = (error: Error, info: React.ErrorInfo) => {
     logInfo("Detailed error info:", { name: error.name, message: error.message, stack: error.stack, componentStack: info.componentStack });
-    logError(error, { 
+    logErrorToProduction(error, { 
       componentStack: info.componentStack || undefined,
       message: `GlobalErrorBoundary caught an error from component: ${info.componentStack ? info.componentStack.split('\n')[0]?.replace('    at ', '') || 'Unknown component' : 'Unknown component'}`
     });
@@ -101,9 +101,9 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
     // or pass it down as a prop if needed from a Next.js context.
     // For now, removing the route from this specific log call.
     // logError will also call sendErrorToBackend with source: 'logError'
-    // The componentStack from React's ErrorInfo is passed to logError,
+    // The componentStack from React's ErrorInfo is passed to logErrorToProduction,
     // which then passes it to Sentry and to sendErrorToBackend.
-    const id = logError(error, {
+    const id = logErrorToProduction(error, {
       route: typeof window !== 'undefined' ? window.location.pathname : 'Unknown route (SSR/SSG)',
       componentStack: info.componentStack || undefined,
       // Add a clear source indicator for errors caught by GlobalErrorBoundary,
@@ -154,7 +154,7 @@ export default function GlobalErrorBoundary({ children }: { children: React.Reac
         autoHideDuration: 5000,
       });
     } catch (e) {
-      logError(e, { context: 'Error in enqueueSnackbar' });
+      logErrorToProduction(e, { context: 'Error in enqueueSnackbar' });
       // noop if snackbar itself fails
     }
   };

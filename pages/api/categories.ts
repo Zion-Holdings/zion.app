@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { CATEGORIES } from '@/data/categories';
 import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 const prisma = new PrismaClient({
@@ -92,7 +92,7 @@ async function handler(
     return res.status(200).json(categories);
 
   } catch (error: any) {
-    logError('Categories API error:', { data: error });
+    logErrorToProduction('Categories API error:', { data: error });
     
     // Return fallback data even on error
     if (CATEGORIES && CATEGORIES.length > 0) {

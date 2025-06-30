@@ -9,7 +9,7 @@ import Skeleton from "@/components/ui/skeleton";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useIsMounted } from "@/hooks/useIsMounted";
 import { z } from "zod";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const listingSchema = z.object({
@@ -65,7 +65,7 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
         } catch (err) {
           if (attempt === maxRetries - 1) {
             if (process.env.NODE_ENV === 'development') {
-              logError('Failed to load services:', { data: err });
+              logErrorToProduction('Failed to load services:', { data: err });
             } else {
               captureException(err);
             }

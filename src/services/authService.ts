@@ -3,7 +3,7 @@ import { toast } from '@/hooks/use-toast';
 import { safeStorage } from '@/utils/safeStorage';
 import { store } from '@/store';
 import { setToken } from '@/store/authSlice';
-import { logDebug, logError } from '@/utils/productionLogger';
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
 
@@ -35,7 +35,7 @@ export async function registerUser(name: string, email: string, password: string
     logDebug('Register API Response Body:', { body: res.data });
     return { res, data: res.data };
   } catch (err) {
-    logError('Register API error', err as Error, { endpoint, email });
+    logErrorToProduction('Register API error', err as Error, { endpoint, email });
     throw err;
   }
 }

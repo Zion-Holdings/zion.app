@@ -1,6 +1,6 @@
 import { enhancedGlobalErrorHandler } from './globalToastManager';
 import { apiErrorHandler, consoleErrorHandler, fetchErrorHandler } from './enhancedErrorHandlers';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 /**
@@ -15,7 +15,7 @@ export function initializeGlobalErrorHandlers(): void {
   if (typeof window !== 'undefined') {
     // Handle unhandled promise rejections
     window.addEventListener('unhandledrejection', (event) => {
-      logError('Unhandled promise rejection:', { data: event.reason });
+      logErrorToProduction('Unhandled promise rejection:', { data: event.reason });
       
       // Only show toast for user-facing errors
       if (event.reason && !shouldIgnoreError(event.reason)) {
@@ -31,7 +31,7 @@ export function initializeGlobalErrorHandlers(): void {
 
     // Handle global errors
     window.addEventListener('error', (event) => {
-      logError('Global error:', { data: event.error });
+      logErrorToProduction('Global error:', { data: event.error });
       
       // Only show toast for critical errors
       if (event.error && !shouldIgnoreError(event.error)) {

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useDeleteMilestone = () => {
 
@@ -27,7 +27,7 @@ export const useDeleteMilestone = () => {
       
       return true;
     } catch (err: any) {
-      logError('Error deleting milestone:', { data: err });
+      logErrorToProduction('Error deleting milestone:', { data: err });
       toast.error("Failed to delete milestone: " + err.message);
       return false;
     } finally {

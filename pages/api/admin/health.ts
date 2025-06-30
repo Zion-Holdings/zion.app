@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { errorReportingDashboard, type HealthData } from '@/utils/errorReportingDashboard';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 interface HealthApiResponse {
   health: HealthData;
@@ -50,7 +50,7 @@ export default async function handler(
     });
 
   } catch (error) {
-    logError('Health check API error', error);
+    logErrorToProduction('Health check API error', error);
     
     return res.status(500).json({
       health: {} as HealthData,

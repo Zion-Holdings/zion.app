@@ -9,7 +9,7 @@ import { noise } from '@chainsafe/libp2p-noise';
 import { yamux } from '@chainsafe/libp2p-yamux';
 import { MemoryBlockstore } from 'blockstore-core/memory';
 import { MemoryDatastore } from 'datastore-core/memory';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Types for OrbitDB and its stores might be needed from @orbitdb/core if used directly
@@ -68,7 +68,7 @@ export async function initOrbit(repoPath = './orbitdb-helia') {
     orbit = await createOrbitDB({ ipfs: heliaNode, directory: repoPath });
     logInfo('OrbitDB instance created. OrbitDB ID:', { data: orbit.id });
   } catch (error) {
-    logError('Error initializing OrbitDB:', { data: error });
+    logErrorToProduction('Error initializing OrbitDB:', { data: error });
     throw error;
   }
 }

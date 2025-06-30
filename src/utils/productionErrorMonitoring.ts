@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/nextjs';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface ErrorReport {
@@ -112,7 +112,7 @@ export class ProductionErrorMonitor {
 
     // Log to console in development
     if (process.env.NODE_ENV === 'development') {
-      logError('ProductionErrorMonitor captured error:', { data: errorReport });
+      logErrorToProduction('ProductionErrorMonitor captured error:', { data: errorReport });
     }
   }
 
@@ -179,7 +179,7 @@ export class ProductionErrorMonitor {
         })
       });
     } catch (webhookError) {
-      logError('Failed to send error to webhook:', { data: webhookError });
+      logErrorToProduction('Failed to send error to webhook:', { data: webhookError });
     }
   }
 

@@ -14,7 +14,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRouter } from 'next/router';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function ContentGenerator() {
 
@@ -59,7 +59,7 @@ export default function ContentGenerator() {
       setPreviewContent(data); // Expecting { generatedContent: "..." }
       toast.success(`Content for "${contentType}" generated successfully!`);
     } catch (error) {
-      logError('Error generating content:', { data: error });
+      logErrorToProduction('Error generating content:', { data: error });
       toast.error("Failed to generate content. Please try again.");
     } finally {
       setIsGenerating(false);
@@ -92,7 +92,7 @@ export default function ContentGenerator() {
       
       toast.success(`Test newsletter sent to ${testEmail}!`);
     } catch (error) {
-      logError('Error sending test newsletter:', { data: error });
+      logErrorToProduction('Error sending test newsletter:', { data: error });
       toast.error("Failed to send test newsletter. Please try again.");
     }
   };

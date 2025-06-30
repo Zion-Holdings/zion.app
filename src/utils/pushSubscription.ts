@@ -1,4 +1,4 @@
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 const VAPID_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
 
@@ -38,6 +38,6 @@ export async function subscribeToPush() {
       body: JSON.stringify(subscription)
     });
   } catch (err) {
-    logError('Push subscription failed', { data: err });
+    logErrorToProduction('Push subscription failed', { data: err });
   }
 }

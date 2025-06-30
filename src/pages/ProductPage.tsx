@@ -6,7 +6,7 @@ import { NEW_PRODUCTS } from '@/data/newProductsData';
 import { useCart } from '@/context/CartContext';
 import { toast } from '@/hooks/use-toast';
 import { SEO } from '@/components/SEO';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function ProductPage() {
 
@@ -38,7 +38,7 @@ export default function ProductPage() {
         }
       } catch (err) {
         // Fail silently and fall back to local data
-        logError('Error fetching product', { data: err });
+        logErrorToProduction('Error fetching product', { data: err });
       }
     };
 

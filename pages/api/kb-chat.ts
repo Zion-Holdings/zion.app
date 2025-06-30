@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { applyCorsHeaders } from '@/middleware/cors';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface ChatMessage {
@@ -72,7 +72,7 @@ export default async function handler(
 
     return res.status(200).json(response);
   } catch (error) {
-    logError('KB Chat API error:', { data: error });
+    logErrorToProduction('KB Chat API error:', { data: error });
     return res.status(500).json({ error: 'Internal server error' });
   }
 }

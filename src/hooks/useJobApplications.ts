@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { toast } from "sonner";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useJobApplications = (jobId?: string) => {
 
@@ -74,7 +74,7 @@ export const useJobApplications = (jobId?: string) => {
       setApplications(transformedData as JobApplication[]);
       setError(null);
     } catch (err: any) {
-      logError('Error fetching applications:', { data: err });
+      logErrorToProduction('Error fetching applications:', { data: err });
       setError("Failed to fetch applications: " + err.message);
       toast.error("Failed to fetch applications");
     } finally {
@@ -148,7 +148,7 @@ export const useJobApplications = (jobId?: string) => {
       toast.success("Application submitted successfully");
       return true;
     } catch (err: any) {
-      logError('Error applying to job:', { data: err });
+      logErrorToProduction('Error applying to job:', { data: err });
       toast.error("Failed to submit application: " + err.message);
       return false;
     }
@@ -171,7 +171,7 @@ export const useJobApplications = (jobId?: string) => {
       toast.success(`Application status updated to ${status}`);
       return true;
     } catch (err: any) {
-      logError('Error updating application status:', { data: err });
+      logErrorToProduction('Error updating application status:', { data: err });
       toast.error("Failed to update application status: " + err.message);
       return false;
     }
@@ -199,7 +199,7 @@ export const useJobApplications = (jobId?: string) => {
       
       return true;
     } catch (err) {
-      logError('Error marking application as viewed:', { data: err });
+      logErrorToProduction('Error marking application as viewed:', { data: err });
       return false;
     }
   };

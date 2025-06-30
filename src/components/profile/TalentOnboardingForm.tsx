@@ -3,7 +3,7 @@ import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useRouter } from 'next/router';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import {
   Form, FormControl, FormField, FormItem, FormLabel, FormMessage 
 } from "@/components/ui/form";
@@ -144,7 +144,7 @@ export function TalentOnboardingForm() {
       .upload(fileName, file);
       
     if (cvError) {
-      logError('Error uploading CV:', { data: cvError });
+      logErrorToProduction('Error uploading CV:', { data: cvError });
       throw new Error("Failed to upload CV");
     }
     

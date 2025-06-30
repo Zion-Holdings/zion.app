@@ -2,7 +2,7 @@
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { MilestoneActivity } from './types';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useRecordActivity = () => {
 
@@ -38,7 +38,7 @@ export const useRecordActivity = () => {
       
       return data;
     } catch (err: any) {
-      logError('Error recording activity:', { data: err });
+      logErrorToProduction('Error recording activity:', { data: err });
       return null;
     }
   };

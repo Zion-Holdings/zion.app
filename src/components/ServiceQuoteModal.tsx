@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 import { ProductListing } from "@/types/listings";
 import { toast } from '@/hooks/use-toast';
 import { supabase } from "@/integrations/supabase/client";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface ServiceQuoteModalProps {
@@ -96,7 +96,7 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
       setEndDate(undefined);
       setCurrentStep('details');
     } catch (error) {
-      logError('Error submitting quote:', { data: error });
+      logErrorToProduction('Error submitting quote:', { data: error });
       toast({
         title: "Error",
         description: "There was an error submitting your quote request. Please try again.",

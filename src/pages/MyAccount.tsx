@@ -3,7 +3,7 @@ import type { GetServerSideProps } from 'next';
 import { toast } from '@/hooks/use-toast';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import {
   ProfileForm,
   type ProfileValues,
@@ -41,7 +41,7 @@ function Account({ user: initialUser, orders }: AccountProps) {
       const data = await res.json();
       setUser(data);
     } catch (error: any) {
-      logError('Error updating profile:', { data: error });
+      logErrorToProduction('Error updating profile:', { data: error });
       toast({
         title: 'Error updating profile',
         description:

@@ -14,7 +14,7 @@ import { generateContract } from "../utils/contractUtils";
 import { ProjectDetailsFields } from "./ProjectDetailsFields";
 import { PaymentTermsFields } from "./PaymentTermsFields";
 import { AdditionalClausesFields } from "./AdditionalClausesFields";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const formSchema = z.object({
@@ -110,7 +110,7 @@ export function ContractForm({
       
       onContractGenerated(contract);
     } catch (error) {
-      logError('Error generating contract:', { data: error });
+      logErrorToProduction('Error generating contract:', { data: error });
       toast({
         title: "Contract Generation Failed",
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",

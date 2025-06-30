@@ -1,5 +1,5 @@
 import { toast as sonnerToast } from 'sonner';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Toast configuration constants
@@ -275,14 +275,14 @@ class GlobalToastManager {
     // Log error toasts for debugging
     if (toast.type.includes('error')) {
       try {
-        logError(toast.message, new Error(toast.message), { 
+        logErrorToProduction(toast.message, new Error(toast.message), { 
           context: 'globalToastManager',
           toastType: toast.type,
           priority: toast.priority,
           metadata: toast.metadata 
         });
       } catch (e) {
-        logError('Failed to log toast error:', { data:  e });
+        logErrorToProduction('Failed to log toast error:', { data:  e });
       }
     }
   }
@@ -462,7 +462,7 @@ export class EnhancedGlobalErrorHandler {
     const currentRetries = this.retryCount.get(errorKey) || 0;
 
     if (process.env.NODE_ENV === 'development') {
-      logError('Enhanced Global Error Handler:', error, context);
+      logErrorToProduction('Enhanced Global Error Handler:', error, context);
     }
 
     if (currentRetries >= this.maxRetries) {

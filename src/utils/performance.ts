@@ -1,4 +1,4 @@
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 /**
  * Performance monitoring utilities for Core Web Vitals
@@ -129,7 +129,7 @@ export function initPerformanceMonitoring(): void {
       if (cls > 0.1) {
         logWarn(`⚠️ High CLS detected: ${cls.toFixed(4)} (target: <0.1)`);
       } else if (cls > 0.25) {
-        logError(`🔴 Poor CLS: ${cls.toFixed(4)} (target: <0.1)`);
+        logErrorToProduction(`🔴 Poor CLS: ${cls.toFixed(4)} (target: <0.1)`);
       } else {
         logInfo(`✅ Good CLS: ${cls.toFixed(4)}`);
       }
@@ -233,7 +233,7 @@ export function observeFontLoading(): void {
   });
 
   document.fonts.addEventListener('loadingerror', (event) => {
-    logError(`❌ Font loading error: ${(event as any).fontface.family}`);
+    logErrorToProduction(`❌ Font loading error: ${(event as any).fontface.family}`);
   });
 
   // Check if fonts are ready
@@ -436,7 +436,7 @@ export const bundleOptimization = {
     try {
       return await importFn();
     } catch (error) {
-      logError('Dynamic import failed:', { data: error });
+      logErrorToProduction('Dynamic import failed:', { data: error });
       throw new Error('Failed to load component');
     }
   },

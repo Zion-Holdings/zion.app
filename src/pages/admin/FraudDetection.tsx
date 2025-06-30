@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { FraudFlag, FraudStats } from "@/types/fraud";
-import { logError } from "@/utils/logError";
+import {logErrorToProduction} from "@/utils/logError";
 
 // Import refactored components
 import {
@@ -59,7 +59,7 @@ export default function FraudDetection() {
       setStats(newStats);
       
     } catch (error) {
-      logError(error, { message: 'Error fetching fraud flags' });
+      logErrorToProduction(error, { message: 'Error fetching fraud flags' });
       toast({
         title: "Error",
         description: "Failed to load fraud detection data",
@@ -134,7 +134,7 @@ export default function FraudDetection() {
       fetchFraudFlags();
       
     } catch (error) {
-      logError(error, { message: 'Error updating fraud flag' });
+      logErrorToProduction(error, { message: 'Error updating fraud flag' });
       toast({
         title: "Error",
         description: "Failed to update flag",

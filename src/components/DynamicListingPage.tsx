@@ -4,7 +4,7 @@ import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import {
   Select,
   SelectValue,
@@ -177,7 +177,7 @@ export function DynamicListingPage({
     });
   } catch (error) {
     captureException(error);
-    logError('Listing filter error:', { data: error });
+    logErrorToProduction('Listing filter error:', { data: error });
   }
 
   const handleRequestQuote = (listingId: string) => {

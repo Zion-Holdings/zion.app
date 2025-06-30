@@ -6,7 +6,7 @@ import React, {
   ReactNode,
 } from "react";
 import { useRouter } from 'next/router';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import { toast } from "@/hooks/use-toast";
 import axios from 'axios';
 
@@ -64,7 +64,7 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
       router.push("/dashboard/quotes");
       setStep("Success");
     } catch (err) {
-      logError('Failed to submit quote', { data: err });
+      logErrorToProduction('Failed to submit quote', { data: err });
       toast({ title: 'Error submitting quote', variant: 'destructive' });
     }
   };

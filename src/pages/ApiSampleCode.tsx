@@ -3,7 +3,7 @@ import ApiDocsLayout from '@/components/developers/ApiDocsLayout';
 import { CodeBlock } from '@/components/developers/CodeBlock';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Link from 'next/link';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export function ApiSampleCode() {
 
@@ -26,7 +26,7 @@ async function getJobs(filters = {}) {
     const response = await api.get('/api/jobs', { params: filters });
     return response.data;
   } catch (error) {
-    logError('Error fetching jobs:', { data: error.response?.data || error.message });
+    logErrorToProduction('Error fetching jobs:', { data: error.response?.data || error.message });
     throw error;
   }
 }
@@ -37,7 +37,7 @@ async function createJob(jobData) {
     const response = await api.post('/api/jobs', jobData);
     return response.data;
   } catch (error) {
-    logError('Error creating job:', { data: error.response?.data || error.message });
+    logErrorToProduction('Error creating job:', { data: error.response?.data || error.message });
     throw error;
   }
 }
@@ -48,7 +48,7 @@ async function searchTalent(filters = {}) {
     const response = await api.get('/api/talent', { params: filters });
     return response.data;
   } catch (error) {
-    logError('Error searching talent:', { data: error.response?.data || error.message });
+    logErrorToProduction('Error searching talent:', { data: error.response?.data || error.message });
     throw error;
   }
 }
@@ -78,7 +78,7 @@ async function main() {
     const talent = await searchTalent({ skills: 'React', limit: 10 });
     logInfo('Talent:', { data: talent });
   } catch (error) {
-    logError('Something went wrong:', { data: error });
+    logErrorToProduction('Something went wrong:', { data: error });
   }
 }
 
@@ -237,7 +237,7 @@ async function main() {
     const talent = await searchTalent({ skills: 'Node.js', limit: 10 });
     logInfo('Talent:', { data: talent });
   } catch (error) {
-    logError('Something went wrong:', { data: error });
+    logErrorToProduction('Something went wrong:', { data: error });
   }
 }
 

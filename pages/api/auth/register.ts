@@ -6,7 +6,7 @@ import { ENV_CONFIG } from '@/utils/environmentConfig';
 import { 
   logInfo, 
   logWarn, 
-  logError, 
+  logErrorToProduction, 
   logDebug 
 } from '@/utils/productionLogger';
 
@@ -70,7 +70,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
     if (error) {
-      logError('Supabase signup error:', { data: error });
+      logErrorToProduction('Supabase signup error:', { data: error });
       
       // Handle specific Supabase errors
       if (error.message?.includes('already registered')) {
@@ -108,7 +108,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
       // Ensure we have service role key for admin operations
       if (!ENV_CONFIG.supabase.serviceRoleKey) {
-        logError('SUPABASE_SERVICE_ROLE_KEY is not configured. Cannot auto-verify email.');
+        logErrorToProduction('SUPABASE_SERVICE_ROLE_KEY is not configured. Cannot auto-verify email.');
         // Proceed without auto-verification, standard flow
         return res.status(201).json({
           message: 'Registration successful. Please check your email to verify your account. (Auto-verification skipped due to missing service key)',
@@ -130,7 +130,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       );
 
       if (adminUpdateError) {
-        logError('Error auto-verifying email:', { data: adminUpdateError });
+        logErrorToProduction('Error auto-verifying email:', { data: adminUpdateError });
         // If auto-verification fails, fall back to requiring manual verification
         return res.status(201).json({
           message: 'Registration successful. Please check your email to verify your account. (Auto-verification failed)',
@@ -182,7 +182,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
   } catch (error: any) {
-    logError('Registration error:', { data: error });
+    logErrorToProduction('Registration error:', { data: error });
     return res.status(500).json({ 
       error: 'Internal server error during registration',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined

@@ -5,7 +5,7 @@ import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface SearchResult {
@@ -260,7 +260,7 @@ async function handler(
     return res.status(200).json(searchResponse);
 
   } catch (error) {
-    logError('Search query failed:', { data: error });
+    logErrorToProduction('Search query failed:', { data: error });
     
     // Return empty results on error instead of 500
     applyCacheHeaders(res, CacheCategory.SHORT);

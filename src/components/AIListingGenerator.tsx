@@ -8,7 +8,7 @@ import Skeleton from "@/components/ui/skeleton";
 import { Sparkles, ArrowRight } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Badge } from "@/components/ui/badge";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface GeneratedContent {
@@ -88,7 +88,7 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
         description: "AI has created optimized listing content for you."
       });
     } catch (error) {
-      logError('Error generating content:', { data: error });
+      logErrorToProduction('Error generating content:', { data: error });
       toast({
         title: "Generation Failed",
         description: error instanceof Error ? error.message : "Failed to generate content. Please try again.",

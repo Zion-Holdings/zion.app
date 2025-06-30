@@ -11,7 +11,7 @@ import { ArrowLeft, ArrowRight, RefreshCcw, CheckCircle2, XCircle, Clock, AlertC
 import { formatDistanceToNow } from "date-fns";
 import { safeStorage } from "@/utils/safeStorage";
 import { useCurrency } from '@/hooks/useCurrency';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface Transaction {
@@ -94,7 +94,7 @@ export function TransactionHistory() {
       
       refetch();
     } catch (error) {
-      logError('Error managing transaction:', { data: error });
+      logErrorToProduction('Error managing transaction:', { data: error });
       toast({
         title: "Error",
         description: error instanceof Error ? error.message : "Failed to update transaction",

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { logDebug, logError } from '@/utils/productionLogger';
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from 'next/router';
 import { Button } from "@/components/ui/button";
@@ -162,7 +162,7 @@ export function QuoteRequestForm() {
       setCurrentStep("summary");
       setAutoFillOpen(false);
     } catch (err) {
-      logError("Auto-fill API error", err as Error, { component: 'QuoteRequestForm', projectDescription: description });
+      logErrorToProduction("Auto-fill API error", err as Error, { component: 'QuoteRequestForm', projectDescription: description });
       toast({
         title: "Auto-fill Failed",
         description: "We couldn't process your request. Please try again.",

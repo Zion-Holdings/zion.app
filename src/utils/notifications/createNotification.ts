@@ -1,6 +1,6 @@
 import { supabase } from "@/integrations/supabase/client";
 import { CreateNotificationParams, CreateNotificationResult } from './types';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 /**
@@ -42,7 +42,7 @@ export async function createNotification({
     
     return { success: true, notificationId: notificationId || undefined };
   } catch (error) {
-    logError('Error creating notification', error);
+    logErrorToProduction('Error creating notification', error);
     return { success: false, error };
   }
 }

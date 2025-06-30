@@ -1,7 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { ComponentType } from 'react';
-import { logError } from './productionLogger';
+import {logErrorToProduction} from './productionLogger';
 import { logInfo } from '@/utils/productionLogger';
 
 
@@ -38,7 +38,7 @@ export function createDynamicImport<T extends ComponentType<any>>(
     try {
       return <DynamicComponent {...props} />;
     } catch (error) {
-      logError('Dynamic import failed:', { data: error });
+      logErrorToProduction('Dynamic import failed:', { data: error });
       if (options.errorFallback) {
         return <options.errorFallback error={error as Error} />;
       }

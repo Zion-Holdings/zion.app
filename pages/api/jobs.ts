@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { withApiDocsCors } from '@/middleware/cors';
 import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Mock jobs data for API documentation and testing
@@ -197,7 +197,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
   } catch (error: any) {
-    logError('Jobs API error:', { data: error });
+    logErrorToProduction('Jobs API error:', { data: error });
     
     // Return fallback data on error
     applyCacheHeaders(res, CacheCategory.SHORT);

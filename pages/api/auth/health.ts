@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default async function handler(
   _req: NextApiRequest,
@@ -14,7 +14,7 @@ export default async function handler(
   if (!supabaseAnonKey) missingVars.push('NEXT_PUBLIC_SUPABASE_ANON_KEY');
 
   if (missingVars.length > 0) {
-    logError('Supabase configuration incomplete. Missing:', missingVars.join(', '));
+    logErrorToProduction('Supabase configuration incomplete. Missing:', missingVars.join(', '));
     return res.status(500).json({ 
       message: 'Auth service not configured',
       missing: missingVars
@@ -23,7 +23,7 @@ export default async function handler(
 
   // Check if Supabase URL is a placeholder
   if (supabaseUrl && (supabaseUrl.includes('your-project') || supabaseUrl.includes('placeholder'))) {
-    logError('Supabase URL appears to be a placeholder');
+    logErrorToProduction('Supabase URL appears to be a placeholder');
     return res.status(500).json({ 
       message: 'Authentication service configuration incomplete',
       details: 'Supabase URL is not properly configured'
@@ -41,7 +41,7 @@ export default async function handler(
     });
     
     if (!response.ok) {
-      logError('Supabase health check failed with status', { data: response.status });
+      logErrorToProduction('Supabase health check failed with status', { data: response.status });
       return res.status(500).json({ 
         message: 'Authentication service is temporarily unavailable. Please try again later.' 
       });
@@ -56,7 +56,7 @@ export default async function handler(
       }
     });
   } catch (error: any) {
-    logError('Supabase health check error:', { data: error });
+    logErrorToProduction('Supabase health check error:', { data: error });
     return res.status(500).json({ 
       message: 'Authentication service is temporarily unavailable. Please try again later.' 
     });

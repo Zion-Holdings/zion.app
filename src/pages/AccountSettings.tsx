@@ -12,7 +12,7 @@ import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export default function AccountSettings() {
 
@@ -34,7 +34,7 @@ export default function AccountSettings() {
         logInfo('Saved settings', { displayWeb3, didHandle, enableBackup });
         toast.success('Account settings updated successfully');
       } catch (e) {
-        logError('Failed to save settings', { data:  e });
+        logErrorToProduction('Failed to save settings', { data:  e });
         toast.error('Failed to save settings');
       } finally {
         setIsSubmitting(false);
@@ -70,7 +70,7 @@ export default function AccountSettings() {
           setDidHandle(ensName);
         }
       } catch (error) {
-        logError('ENS lookup error:', { data: error });
+        logErrorToProduction('ENS lookup error:', { data: error });
       }
       
       toast.success(`Wallet connected: ${address.slice(0, 6)}...${address.slice(-4)}`);

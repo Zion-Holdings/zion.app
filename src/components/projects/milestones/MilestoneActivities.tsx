@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { format } from 'date-fns';
 import Skeleton from '@/components/ui/skeleton';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface MilestoneActivitiesProps {
@@ -53,7 +53,7 @@ export function MilestoneActivities({ projectId }: MilestoneActivitiesProps) {
         
         setActivities(data || []);
       } catch (err) {
-        logError('Error fetching milestone activities:', { data: err });
+        logErrorToProduction('Error fetching milestone activities:', { data: err });
       } finally {
         setIsLoading(false);
       }

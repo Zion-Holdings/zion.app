@@ -3,7 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { TalentProfile } from "@/types/talent";
 
-import { logError } from "@/utils/productionLogger";
+import {logErrorToProduction} from "@/utils/productionLogger";
 
 export interface HireRequestData {
   talent: {
@@ -49,7 +49,7 @@ export function useHireRequest() {
       
       return { success: true, requestId: (response as any)?.request_id };
     } catch (error) {
-      logError('Error submitting hire request:', { data: error });
+      logErrorToProduction('Error submitting hire request:', { data: error });
       
       const errorMessage = error instanceof Error 
         ? error.message 

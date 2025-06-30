@@ -3,7 +3,7 @@ import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { ReferralCode, ReferralStats, Referral, ReferralReward } from "@/types/referrals";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useReferrals() {
 
@@ -38,13 +38,13 @@ export function useReferrals() {
         .single();
 
       if (error) {
-        logError('Error fetching referral code:', { data: error });
+        logErrorToProduction('Error fetching referral code:', { data: error });
         return;
       }
 
       setReferralCode(data);
     } catch (error) {
-      logError('Error in fetchReferralCode:', { data: error });
+      logErrorToProduction('Error in fetchReferralCode:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -64,7 +64,7 @@ export function useReferrals() {
       
       setReferrals(data || []);
     } catch (error) {
-      logError('Error fetching referrals:', { data: error });
+      logErrorToProduction('Error fetching referrals:', { data: error });
     }
   };
 
@@ -82,7 +82,7 @@ export function useReferrals() {
       
       setRewards(data || []);
     } catch (error) {
-      logError('Error fetching rewards:', { data: error });
+      logErrorToProduction('Error fetching rewards:', { data: error });
     }
   };
 
@@ -123,7 +123,7 @@ export function useReferrals() {
       });
       
     } catch (error) {
-      logError('Error fetching referral stats:', { data: error });
+      logErrorToProduction('Error fetching referral stats:', { data: error });
     }
   };
 
@@ -155,7 +155,7 @@ export function useReferrals() {
       
       return data;
     } catch (error: any) {
-      logError('Error generating referral code:', { data: error });
+      logErrorToProduction('Error generating referral code:', { data: error });
       toast({
         title: "Error generating code",
         description: error.message || "There was a problem generating your referral code",

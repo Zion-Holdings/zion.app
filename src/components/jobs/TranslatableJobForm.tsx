@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 import { useTranslationService } from "@/hooks/useTranslationService";
 import { useLanguage, SupportedLanguage } from "@/context/LanguageContext";
 import { toast } from "@/components/ui/use-toast";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface TranslatableJobFormProps {
@@ -146,7 +146,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
         description: t('translation.content_translated'),
       });
     } catch (error) {
-      logError('Error translating ${field}:', { data: error });
+      logErrorToProduction('Error translating ${field}:', { data: error });
       toast({
         title: t('translation.translation_failed'),
         description: error instanceof Error ? error.message : t('translation.unknown_error'),

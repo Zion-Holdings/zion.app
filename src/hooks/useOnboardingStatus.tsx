@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "./useAuth";
 import { supabase } from "@/integrations/supabase/client";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface OnboardingStatus {
@@ -40,7 +40,7 @@ export function useOnboardingStatus() {
           .single();
           
         if (error) {
-          logError('Error fetching onboarding status:', { data: error });
+          logErrorToProduction('Error fetching onboarding status:', { data: error });
           return;
         }
         
@@ -56,7 +56,7 @@ export function useOnboardingStatus() {
           });
         }
       } catch (err) {
-        logError('Error in onboarding status hook:', { data: err });
+        logErrorToProduction('Error in onboarding status hook:', { data: err });
       }
     };
     

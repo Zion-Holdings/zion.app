@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { TALENT_PROFILES } from '@/data/talentData';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface TalentProfile {
@@ -80,7 +80,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     
     return res.status(200).json(mappedProfiles);
   } catch (error) {
-    logError('Error in marketplace talent API:', { data: error });
+    logErrorToProduction('Error in marketplace talent API:', { data: error });
     
     // Return fallback empty array instead of error
     return res.status(200).json([]);

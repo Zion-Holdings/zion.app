@@ -1,6 +1,6 @@
 
 import { supabase } from "@/integrations/supabase/client";
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 /**
@@ -98,12 +98,12 @@ export const ensureProfilesTableExists = async () => {
     const { error: createError } = await supabase.rpc('exec', { sql: createTableQuery });
     
     if (createError) {
-      logError('Error creating profiles table:', { data: createError });
+      logErrorToProduction('Error creating profiles table:', { data: createError });
     } else {
       logInfo('Profiles table setup completed');
     }
   } catch (error) {
-    logError('Error setting up profiles table:', { data: error });
+    logErrorToProduction('Error setting up profiles table:', { data: error });
   }
 };
 

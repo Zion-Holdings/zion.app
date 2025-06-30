@@ -1,13 +1,13 @@
 export type ApiHandler = (req: any, res: any) => any;
 
-import { logError } from './logError';
+import {logErrorToProduction} from './logError';
 
 export function withErrorLogging(handler: ApiHandler): ApiHandler {
   return async (req, res) => {
     try {
       return await handler(req, res);
     } catch (err: any) {
-      logError(err, {
+      logErrorToProduction(err, {
         route: req.url,
         method: req.method,
         errorSourceContext: 'withErrorLogging',

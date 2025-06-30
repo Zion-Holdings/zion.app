@@ -10,7 +10,7 @@ import { TemplateManager } from "./templates/TemplateManager";
 import { DeploymentOptions, SmartContractInfo } from "@/types/smart-contracts";
 import { useSmartContracts } from "@/hooks/useSmartContracts";
 import { toast } from "sonner";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface SmartContractBuilderProps {
@@ -66,7 +66,7 @@ export function SmartContractBuilder({
         toast.error("Failed to deploy smart contract");
       }
     } catch (error) {
-      logError('Error deploying contract:', { data: error });
+      logErrorToProduction('Error deploying contract:', { data: error });
       setDeployStatus('error');
       toast.error("Failed to deploy smart contract");
     }

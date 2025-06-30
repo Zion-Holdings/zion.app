@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Skeleton from "@/components/ui/skeleton";
 import { useState } from "react";
 import { AnalyticsChart } from "./AnalyticsChart";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 type TimeRange = '7d' | '30d' | '90d' | '365d';
@@ -30,7 +30,7 @@ export function UserBehaviorStats() {
       });
       
       if (error) {
-        logError('Error fetching behavior data:', { data: error });
+        logErrorToProduction('Error fetching behavior data:', { data: error });
         
         // Fallback to manual query if the RPC doesn't exist
         const startDate = new Date();

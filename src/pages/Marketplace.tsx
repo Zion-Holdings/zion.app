@@ -19,7 +19,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { MAX_PRICE, MIN_PRICE } from '@/data/marketplaceData';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 /**
@@ -351,14 +351,14 @@ export default function Marketplace() {
       };
     } catch (err: any) {
       // Log the error and allow useInfiniteScrollPagination to handle it
-      logError('Error in Marketplace fetchProducts:', { data: err });
+      logErrorToProduction('Error in Marketplace fetchProducts:', { data: err });
       
       // Show more specific error messages based on the error type
       if (err.response?.status === 403) {
-        logError("403 Forbidden error - authentication issue");
+        logErrorToProduction("403 Forbidden error - authentication issue");
         // Don't show toast here, let the AuthModal handle it or rely on ProductCard's tooltip
       } else if (err.response?.status === 500) {
-        logError("500 Server error");
+        logErrorToProduction("500 Server error");
         toast({
           title: "Server Error", 
           description: "The marketplace is temporarily unavailable. Please try again later.",
@@ -621,7 +621,7 @@ export default function Marketplace() {
                   try {
                     await router.push(`/checkout/${product.id}`);
                   } catch (error) {
-                    logError('Failed to navigate to checkout:', { data: error });
+                    logErrorToProduction('Failed to navigate to checkout:', { data: error });
                     toast({
                       title: "Navigation Error",
                       description: "Could not navigate to checkout. Please try again.",

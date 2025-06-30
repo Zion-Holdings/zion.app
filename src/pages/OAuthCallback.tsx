@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router'; // Changed from useLocation, useNavigate
 import { safeStorage } from '@/utils/safeStorage';
 import { toast } from '@/hooks/use-toast'; // Optional: for user feedback
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const OAuthCallback = () => {
@@ -19,7 +19,7 @@ const OAuthCallback = () => {
     const error = params.get('error'); // Handle potential errors from OAuth provider
 
     if (error) {
-      logError('OAuth Error:', { data: error });
+      logErrorToProduction('OAuth Error:', { data: error });
       toast.error(`Authentication failed: ${error}`);
       router.replace('/auth/login');
       return;

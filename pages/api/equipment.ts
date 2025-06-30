@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { ProductListing } from '@/types/listings';
 import { equipmentListings, DEFAULT_EQUIPMENT_IMAGE } from '@/data/equipmentData';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Mock equipment data for development
@@ -55,7 +55,7 @@ export default async function handler(
     return res.status(200).json(paginatedEquipment);
   } catch (error) {
     clearTimeout(timeout);
-    logError('Equipment API error:', { data: error });
+    logErrorToProduction('Equipment API error:', { data: error });
     return res.status(500).json({ 
       error: 'Internal Server Error: Failed to fetch equipment' 
     });

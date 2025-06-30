@@ -9,7 +9,7 @@ import PostForm from "@/components/community/PostForm";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { ForumCategory } from "@/types/community";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface PostFormValues {
@@ -64,7 +64,7 @@ export default function CreatePostPage() {
           }
           mutate('user');
         } catch (err) {
-          logError('Failed to award points:', { data: err });
+          logErrorToProduction('Failed to award points:', { data: err });
         }
       }
       

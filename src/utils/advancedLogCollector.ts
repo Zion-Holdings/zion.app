@@ -3,7 +3,7 @@
  * Provides comprehensive log collection, pattern analysis, and proactive error detection
  */
 
-import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
+import { logInfo, logWarn, logErrorToProductionToProduction } from './productionLogger';
 import { logAnalyzer } from './logAnalyzer';
 import { errorReportingDashboard } from './errorReportingDashboard';
 
@@ -453,7 +453,7 @@ export {
 // Auto-collect production logger events
 if (typeof window !== 'undefined') {
   // Hook into external error logger
-  import('./logError').then(({ logError }) => {
+  import('./logError').then(({logErrorToProduction}) => {
     const originalLogError = logError;
     (window as any).logError = (...args: any[]) => {
       const result = originalLogError(args[0], args[1]);

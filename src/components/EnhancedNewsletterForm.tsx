@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { useState, useRef } from "react";
 import { Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function EnhancedNewsletterForm() {
 
@@ -48,11 +48,11 @@ export function EnhancedNewsletterForm() {
         setEmail("");
       } else {
         // Handle error responses
-        logError('Newsletter subscription failed:', { data: data });
+        logErrorToProduction('Newsletter subscription failed:', { data: data });
         toast.error(data.error || "Subscription failed. Please try again.");
       }
     } catch (err: any) {
-      logError('Newsletter subscription error:', { data: err });
+      logErrorToProduction('Newsletter subscription error:', { data: err });
       toast.error("Unable to subscribe right now. Please try again later.");
     } finally {
       setIsSubmitting(false);

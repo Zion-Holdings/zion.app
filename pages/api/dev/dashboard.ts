@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 // import { getCacheStats, cacheCategory } from '@/lib/serverCache';
 import { withErrorLogging } from '@/utils/withErrorLogging';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface SystemMetrics {
@@ -121,7 +121,7 @@ async function handler(
     return res.status(200).json(dashboardData);
 
   } catch (error: any) {
-    logError('Dashboard metrics error:', { data: error });
+    logErrorToProduction('Dashboard metrics error:', { data: error });
     return res.status(500).json({ error: 'Failed to gather system metrics' });
   }
 }

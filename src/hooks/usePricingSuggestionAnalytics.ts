@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from "@/integrations/supabase/client";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface PricingSuggestionAnalytics {
@@ -90,7 +90,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
           error: null
         });
       } catch (error) {
-        logError('Error fetching pricing suggestion analytics:', { data: error });
+        logErrorToProduction('Error fetching pricing suggestion analytics:', { data: error });
         setAnalytics({
           ...analytics,
           isLoading: false,

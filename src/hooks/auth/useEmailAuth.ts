@@ -4,7 +4,7 @@ import { toast } from "@/hooks/use-toast";
 import type { UserDetails } from "@/types/auth";
 import { cleanupAuthState } from "@/utils/authUtils";
 import { safeStorage, safeSessionStorage } from "@/utils/safeStorage";
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export const useEmailAuth = (
 
@@ -78,7 +78,7 @@ export const useEmailAuth = (
 
       return { data: { user, token } };
     } catch (error: any) {
-      logError('Login error:', { data: error });
+      logErrorToProduction('Login error:', { data: error });
       toast({
         title: "Login failed",
         description: error.message || "An unexpected error occurred",
@@ -133,7 +133,7 @@ export const useEmailAuth = (
       const emailVerificationRequired = !!(data?.user && !data?.session);
       return { data, emailVerificationRequired };
     } catch (error: any) {
-      logError('Signup error:', { data: error });
+      logErrorToProduction('Signup error:', { data: error });
       toast({
         title: "Signup failed",
         description: error.message || "An unexpected error occurred",
@@ -167,7 +167,7 @@ export const useEmailAuth = (
       });
       return {};
     } catch (error: any) {
-      logError('Password reset error:', { data: error });
+      logErrorToProduction('Password reset error:', { data: error });
       toast({
         title: "Password reset failed",
         description: error.message || "An unexpected error occurred",

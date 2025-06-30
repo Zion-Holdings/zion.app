@@ -11,7 +11,7 @@ import { toast } from "sonner";
 
 export type AppPlatform = "ios" | "android";
 
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export type AppMetadataValues = {
   appTitle: string;
@@ -54,7 +54,7 @@ export const MetadataManager: React.FC = () => {
       toast.success(`${currentPlatform === "ios" ? "iOS" : "Android"} metadata saved successfully!`);
     } catch (error) {
       toast.error("Failed to save metadata");
-      logError("Failed to save metadata", { data: error });
+      logErrorToProduction("Failed to save metadata", { data: error });
     } finally {
       setIsSaving(false);
     }

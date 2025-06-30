@@ -8,7 +8,7 @@ import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Project, ProjectStatus } from "@/types/projects";
 import { Button } from "@/components/ui/button";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import {
   Card,
   CardContent,
@@ -110,7 +110,7 @@ function ProjectDetailsContent() {
       
       setNotes(data || []);
     } catch (err: any) {
-      logError('Error fetching project notes:', { data: err });
+      logErrorToProduction('Error fetching project notes:', { data: err });
       toast({
         title: "Failed to load notes",
         description: err.message || "An error occurred while loading project notes.",
@@ -145,7 +145,7 @@ function ProjectDetailsContent() {
         description: "Your note has been added to the project.",
       });
     } catch (err: any) {
-      logError('Error adding note:', { data: err });
+      logErrorToProduction('Error adding note:', { data: err });
       toast({
         title: "Failed to add note",
         description: err.message || "An error occurred while adding note.",

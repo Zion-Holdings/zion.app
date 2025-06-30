@@ -1,5 +1,5 @@
 import React, { ErrorInfo, ReactNode } from 'react';
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface Props {
@@ -33,7 +33,7 @@ export class HydrationErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    logError('[HydrationErrorBoundary] Caught error:', error, { componentStack: errorInfo.componentStack });
+    logErrorToProduction('[HydrationErrorBoundary] Caught error:', error, { componentStack: errorInfo.componentStack });
     
     // If it's a hydration error, try to recover by forcing a client-side render
     if (this.state.error?.message?.includes('hydrat')) {

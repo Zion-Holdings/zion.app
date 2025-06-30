@@ -5,7 +5,7 @@ import { toast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { EmptyMatchesCard } from "./EmptyMatchesCard";
 import { JobMatchCard } from "./JobMatchCard";
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 interface SuggestedTalentsProps {
@@ -46,7 +46,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
       if (error) throw error;
       setTalents(data || []);
     } catch (error) {
-      logError('Error fetching suggested talents:', { data: error });
+      logErrorToProduction('Error fetching suggested talents:', { data: error });
       toast({
         title: "Error",
         description: "Failed to load suggested talents. Please try again later.",

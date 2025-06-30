@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useHireRequest } from "@/hooks/useHireRequest";
 import { TalentProfile } from "@/types/talent";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface UseHireRequestFormProps {
@@ -84,7 +84,7 @@ export function useHireRequestForm({ talent, onClose, initialJobTitle, userDetai
         onClose();
       }
     } catch (error) {
-      logError('Error submitting hire request:', { data: error });
+      logErrorToProduction('Error submitting hire request:', { data: error });
     } finally {
       setIsSubmitting(false);
     }

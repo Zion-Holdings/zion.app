@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { sendMessage } from '../services/messages';
 import { toast } from '@/hooks/use-toast';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 
@@ -71,7 +71,7 @@ export function ContactPublisherModal({ isOpen, onClose, productId, sellerId }: 
       setSubject(''); // Clear subject
       setMessage(''); // Clear message
     } catch (err) {
-      logError('Failed to send message:', { data: err });
+      logErrorToProduction('Failed to send message:', { data: err });
       toast.error('Failed to send message. Please try again.');
       // Optionally, set a specific error message state if needed
       // setError('Failed to send message. Please try again.');

@@ -6,7 +6,7 @@ import {
   ReactNode,
 } from 'react';
 import { toggleFavorite as toggleFavoriteRequest } from '@/api/favorites';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import { toast } from '@/hooks/use-toast';
 import { safeStorage } from '@/utils/safeStorage';
 
@@ -57,7 +57,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
           : [...prev, productId]
       );
     } catch (err) {
-      logError('Toggle favorite failed', { data: err });
+      logErrorToProduction('Toggle favorite failed', { data: err });
     }
   };
 

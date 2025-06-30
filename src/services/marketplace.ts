@@ -6,7 +6,7 @@ import { TalentProfile as TalentProfileType } from '@/types/talent';
 import { ApiResponse, PaginatedResponse, SearchFilters } from '@/types/common';
 
 // TypeScript interfaces
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export interface MarketplaceItem {
 
@@ -112,7 +112,7 @@ const createMarketplaceClient = (): any => {
     },
     (error: any) => {
       if (process.env.NODE_ENV === 'development') {
-        logError('Marketplace request interceptor error:', error);
+        logErrorToProduction('Marketplace request interceptor error:', error);
       }
       return Promise.reject(error);
     }
@@ -128,7 +128,7 @@ const createMarketplaceClient = (): any => {
     },
     (error: any) => {
       if (process.env.NODE_ENV === 'development') {
-        logError('Marketplace API Error:', {
+        logErrorToProduction('Marketplace API Error:', {
           message: error.message,
           status: error.response?.status,
           url: error.config?.url,
@@ -306,7 +306,7 @@ export async function fetchProducts(filters: SearchFilters = {}): Promise<Produc
 
     return ensureProductIntegrity(data.data || []);
   } catch (error) {
-    logError('Failed to fetch products:', { data: error });
+    logErrorToProduction('Failed to fetch products:', { data: error });
     throw error;
   }
 }
@@ -327,7 +327,7 @@ export async function fetchCategories(): Promise<Category[]> {
 
     return data.data || getFallbackCategories();
   } catch (error) {
-    logError('Failed to fetch categories:', { data: error });
+    logErrorToProduction('Failed to fetch categories:', { data: error });
     return getFallbackCategories();
   }
 }
@@ -354,7 +354,7 @@ export async function fetchTalent(filters: SearchFilters = {}): Promise<TalentPr
 
     return data.data || getFallbackTalent();
   } catch (error) {
-    logError('Failed to fetch talent:', { data: error });
+    logErrorToProduction('Failed to fetch talent:', { data: error });
     return getFallbackTalent();
   }
 }
@@ -381,7 +381,7 @@ export async function fetchEquipment(filters: SearchFilters = {}): Promise<Equip
 
     return data.data || getFallbackEquipment(filters);
   } catch (error) {
-    logError('Failed to fetch equipment:', { data: error });
+    logErrorToProduction('Failed to fetch equipment:', { data: error });
     return getFallbackEquipment(filters);
   }
 }

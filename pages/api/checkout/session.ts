@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import fs from 'fs';
 import path from 'path';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const stripe = new Stripe(process.env.STRIPE_TEST_SECRET_KEY || '', {
@@ -49,7 +49,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     return res.status(200).json({ url: session.url });
   } catch (err: any) {
-    logError('Checkout session error:', { data: err });
+    logErrorToProduction('Checkout session error:', { data: err });
     return res.status(500).json({ error: err.message });
   }
 }

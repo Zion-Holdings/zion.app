@@ -3,7 +3,7 @@
  * Provides intelligent error analysis, pattern recognition, and automated solutions
  */
 
-import { logInfo, logWarn, logError } from './productionLogger';
+import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
 
 interface LogPattern {
   id: string;
@@ -292,7 +292,7 @@ class LogAnalyzer {
     };
 
     if (analysis.severity === 'critical' || analysis.impact === 'high') {
-      logError('Critical error pattern detected', null, logContext);
+      logErrorToProduction('Critical error pattern detected', null, logContext);
     } else if (analysis.severity === 'high' || analysis.occurrences >= 5) {
       logWarn('High-priority error pattern detected', logContext);
     } else {
@@ -313,7 +313,7 @@ class LogAnalyzer {
         logWarn('Automatic fix failed', { pattern: pattern.id });
       }
     } catch (error) {
-      logError('Error during automatic fix attempt', error, { pattern: pattern.id });
+      logErrorToProduction('Error during automatic fix attempt', error, { pattern: pattern.id });
     }
   }
 
@@ -458,7 +458,7 @@ export function logErrorWithAnalysis(
   context?: Record<string, unknown>
 ): ErrorAnalysis | null {
   // Log the error normally
-  logError(message, error, context);
+  logErrorToProduction(message, error, context);
 
   // Analyze the error for patterns
   const errorText = error instanceof Error ? error.message : String(error || message);

@@ -2,7 +2,7 @@
 import { supabase } from "@/integrations/supabase/client";
 import type { UserDetails } from "@/types/auth";
 import { safeStorage, safeSessionStorage } from './safeStorage';
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 /**
@@ -89,6 +89,6 @@ export const checkNewRegistration = async (user: UserDetails) => {
         });
     }
   } catch (error) {
-    logError('Error checking or scheduling welcome email:', { data: error });
+    logErrorToProduction('Error checking or scheduling welcome email:', { data: error });
   }
 };

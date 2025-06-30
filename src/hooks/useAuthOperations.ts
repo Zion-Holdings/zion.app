@@ -8,7 +8,7 @@ import { toast } from "@/hooks/use-toast";
 import { showApiError } from "@/utils/apiErrorHandler";
 import { trackReferral, checkUrlForReferralCode } from "@/utils/referralUtils";
 import { cleanupAuthState } from "@/utils/authUtils";
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Helper function to get the auth token from cookies
@@ -119,7 +119,7 @@ export function useAuthOperations(
           // Generate a referral code for the new user
           await supabase.rpc('generate_referral_code', { user_id: (data as any).user.id });
         } catch (err) {
-          logError('Failed to complete signup rewards', { data: err });
+          logErrorToProduction('Failed to complete signup rewards', { data: err });
         }
         mutate('user');
       }
@@ -164,7 +164,7 @@ export function useAuthOperations(
         });
       }
     } catch (error) {
-      logError('Logout failed:', { data: error });
+      logErrorToProduction('Logout failed:', { data: error });
       toast({
         variant: "destructive",
         title: "Logout failed",
@@ -254,7 +254,7 @@ export function useAuthOperations(
 
       return { error: null };
     } catch (error) {
-      logError('Profile update failed:', { data: error });
+      logErrorToProduction('Profile update failed:', { data: error });
       toast({
         variant: "destructive",
         title: "Profile update failed",

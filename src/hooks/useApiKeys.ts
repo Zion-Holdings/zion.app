@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { logError } from "@/utils/productionLogger";
+import {logErrorToProduction} from "@/utils/productionLogger";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 
@@ -78,7 +78,7 @@ export function useApiKeys() {
 
       setKeys(result.keys || []);
     } catch (err) {
-      logError('Error fetching API keys:', { data: err });
+      logErrorToProduction('Error fetching API keys:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -137,7 +137,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      logError('Error creating API key:', { data: err });
+      logErrorToProduction('Error creating API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -194,7 +194,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      logError('Error regenerating API key:', { data: err });
+      logErrorToProduction('Error regenerating API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -247,7 +247,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      logError('Error revoking API key:', { data: err });
+      logErrorToProduction('Error revoking API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -295,7 +295,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      logError('Error fetching API logs:', { data: err });
+      logErrorToProduction('Error fetching API logs:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",

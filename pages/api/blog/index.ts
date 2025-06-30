@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import type { BlogPost } from '@/types/blog';
 import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Optimized search function with early returns
@@ -67,7 +67,7 @@ export default async function handler(
     return res.status(200).json(results);
 
   } catch (err) {
-    logError('Blog API error:', { data: err });
+    logErrorToProduction('Blog API error:', { data: err });
     
     // Return fallback - all posts on error
     applyCacheHeaders(res, CacheCategory.SHORT);

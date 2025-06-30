@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import * as Sentry from '@sentry/nextjs'
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface ErrorBoundaryState {
@@ -72,9 +72,9 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
     // Log to console in development
     if (process.env.NODE_ENV === 'development') {
       console.group('🚨 Error Boundary Caught Error')
-      logError('Error:', { data: error })
-      logError('Error Info:', { data: errorInfo })
-      logError('Enhanced Error:', { data: enhancedError })
+      logErrorToProduction('Error:', { data: error })
+      logErrorToProduction('Error Info:', { data: errorInfo })
+      logErrorToProduction('Enhanced Error:', { data: enhancedError })
       console.groupEnd()
     }
 
@@ -211,7 +211,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
       await navigator.clipboard.writeText(JSON.stringify(errorDetails, null, 2))
       // Could show a toast notification here
     } catch (err) {
-      logError('Failed to copy error details:', { data: err })
+      logErrorToProduction('Failed to copy error details:', { data: err })
     }
   }
 
@@ -243,7 +243,7 @@ export class GlobalErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoun
         // Show success message
       }
     } catch (err) {
-      logError('Failed to report error:', { data: err })
+      logErrorToProduction('Failed to report error:', { data: err })
     }
   }
 

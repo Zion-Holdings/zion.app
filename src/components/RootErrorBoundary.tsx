@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
-import { logError } from '@/utils/logError';
+import {logErrorToProduction} from '@/utils/logError';
 
 interface RootFallbackProps extends FallbackProps {
   traceId?: string | null;
@@ -38,7 +38,7 @@ export default function RootErrorBoundary({ children }: { children: React.ReactN
     <ErrorBoundary
       fallbackRender={(props) => <RootFallback {...props} traceId={traceId} />}
       onError={(error, info) => {
-        const id = logError(error, { type: 'UI Error', componentStack: info.componentStack });
+        const id = logErrorToProduction(error, { type: 'UI Error', componentStack: info.componentStack });
         setTraceId(id);
       }}
     >

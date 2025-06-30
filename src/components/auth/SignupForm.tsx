@@ -10,7 +10,7 @@ import { toast } from '@/hooks/use-toast';
 import { CheckCircle, AlertCircle, Eye, EyeOff, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { fireEvent } from '@/lib/analytics';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 const signupSchema = z.object({
@@ -184,7 +184,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
       });
 
       if (result.error) {
-        logError('Signup error:', { data: result.error });
+        logErrorToProduction('Signup error:', { data: result.error });
         fireEvent('signup_error', { message: result.error });
         
         // Handle specific error cases with inline field errors
@@ -226,7 +226,7 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
       });
 
     } catch (error: any) {
-      logError('Unexpected signup error:', { data: error });
+      logErrorToProduction('Unexpected signup error:', { data: error });
       fireEvent('signup_error', { message: error.message || 'unexpected' });
       const errorMessage = 'An unexpected error occurred during signup. Please try again.';
       

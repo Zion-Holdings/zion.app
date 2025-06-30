@@ -2,7 +2,7 @@ import React from 'react';
 import { AlertTriangle, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface Props {
@@ -25,7 +25,7 @@ export class EquipmentErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    logError('Equipment page error:', error, { componentStack: errorInfo.componentStack });
+    logErrorToProduction('Equipment page error:', error, { componentStack: errorInfo.componentStack });
   }
 
   render() {

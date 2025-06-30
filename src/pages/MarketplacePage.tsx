@@ -14,7 +14,7 @@ import Spinner from '@/components/ui/spinner';
 import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { INITIAL_MARKETPLACE_PRODUCTS } from '@/data/initialMarketplaceProducts';
 import { useCurrency } from '@/hooks/useCurrency';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 // Market insights component
@@ -204,7 +204,7 @@ function MarketplacePageContent() {
         total: processedDataset.length
       };
     } catch (error) {
-      logError('Error in fetchProducts:', { data: error });
+      logErrorToProduction('Error in fetchProducts:', { data: error });
       throw new Error('Failed to load marketplace data. Please try again.');
     }
   }, [sortBy, filterCategory, showRecommended]);

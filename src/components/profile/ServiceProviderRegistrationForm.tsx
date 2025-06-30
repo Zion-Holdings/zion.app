@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { logWarn, logError } from '@/utils/productionLogger';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import {
   Form,
   FormControl,
@@ -156,7 +156,7 @@ export function ServiceProviderRegistrationForm() {
       }
       
     } catch (error: any) {
-      logError('Error generating enhanced profile:', { data: error });
+      logErrorToProduction('Error generating enhanced profile:', { data: error });
       toast({
         title: "Generation failed",
         description: error.message || "There was an error generating your enhanced profile. Please try again.",
@@ -228,7 +228,7 @@ export function ServiceProviderRegistrationForm() {
             finalServices = [...new Set([...serviceTags, ...aiServices])];
           }
         } catch (error) {
-          logError('Error enhancing profile:', { data: error });
+          logErrorToProduction('Error enhancing profile:', { data: error });
           // Continue with submission even if enhancement fails
         }
       } else if (generatedContent) {
@@ -296,7 +296,7 @@ export function ServiceProviderRegistrationForm() {
             }
           });
         } catch (emailError) {
-          logError('Failed to send notification email:', { data: emailError });
+          logErrorToProduction('Failed to send notification email:', { data: emailError });
           // Continue with submission even if email fails
         }
       }
@@ -312,7 +312,7 @@ export function ServiceProviderRegistrationForm() {
       }, 1500);
       
     } catch (error: any) {
-      logError('Error creating profile:', { data: error });
+      logErrorToProduction('Error creating profile:', { data: error });
       toast({
         title: "Error Creating Profile",
         description: error.message || "There was an error creating your profile. Please try again.",

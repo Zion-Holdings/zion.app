@@ -6,7 +6,7 @@ import { Loader2, AlertTriangle, Wifi, WifiOff, RefreshCw } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface LoadingState {
@@ -192,7 +192,7 @@ export const DynamicComponentLoader: React.FC<DynamicLoaderProps> = ({
       }, 300) // Small delay for smoother transition
 
     } catch (error) {
-      logError('Dynamic component loading failed:', { data: error })
+      logErrorToProduction('Dynamic component loading failed:', { data: error })
       setLoadingState(prev => ({
         ...prev,
         isLoading: false,

@@ -5,7 +5,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { ContractTemplate } from "@/types/contracts";
 import { ContractFormValues } from "@/components/contracts/components/ContractForm";
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useContractTemplates() {
 
@@ -92,7 +92,7 @@ export function useContractTemplates() {
       });
     },
     onError: (error: Error) => {
-      logError('Error saving template:', { data: error });
+      logErrorToProduction('Error saving template:', { data: error });
       toast({
         title: "Failed to save template",
         description: "There was an error saving your contract template.",
@@ -157,7 +157,7 @@ export function useContractTemplates() {
       });
     },
     onError: (error: Error) => {
-      logError('Error updating template:', { data: error });
+      logErrorToProduction('Error updating template:', { data: error });
       toast({
         title: "Failed to update template",
         description: "There was an error updating your contract template.",
@@ -193,7 +193,7 @@ export function useContractTemplates() {
       });
     },
     onError: (error: Error) => {
-      logError('Error deleting template:', { data: error });
+      logErrorToProduction('Error deleting template:', { data: error });
       toast({
         title: "Failed to delete template",
         description: "There was an error deleting your contract template.",
@@ -237,7 +237,7 @@ export function useContractTemplates() {
       });
     },
     onError: (error: Error) => {
-      logError('Error setting default template:', { data: error });
+      logErrorToProduction('Error setting default template:', { data: error });
       toast({
         title: "Failed to set default template",
         description: "There was an error setting your default contract template.",

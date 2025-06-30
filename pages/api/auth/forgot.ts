@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
 import { withErrorLogging } from '@/utils/withErrorLogging';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 
 // Input validation schema
@@ -128,7 +128,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     if (!createTicketResponse.ok) {
       const errorData = await createTicketResponse.json();
-      logError('Auth0 password reset ticket creation failed:', { data: errorData });
+      logErrorToProduction('Auth0 password reset ticket creation failed:', { data: errorData });
       
       // Handle specific Auth0 errors
       if (errorData.statusCode === 404 || errorData.message?.includes('user does not exist')) {
@@ -161,7 +161,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
   } catch (err: any) {
-    logError('Password reset error:', { data: err });
+    logErrorToProduction('Password reset error:', { data: err });
     return res.status(500).json({
       error: 'Failed to send reset link. Please try again.',
       message: 'Failed to send reset link. Please try again.'

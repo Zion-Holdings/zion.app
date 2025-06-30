@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
-import { logInfo, logError } from '@/utils/productionLogger';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import { setCookie, getCookie } from '@/utils/cookies';
 import { useTranslation } from 'react-i18next';
 import { toast } from '../components/ui/use-toast';
@@ -149,7 +149,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
           if (langToSet === 'ar') document.documentElement.classList.add('rtl'); else document.documentElement.classList.remove('rtl');
         }
       }).catch(err => {
-        logError('LanguageContext: Error setting initial language in i18n', { data: err });
+        logErrorToProduction('LanguageContext: Error setting initial language in i18n', { data: err });
         setCurrentLanguage('en'); // Fallback state
         if (i18n.language !== 'en') i18n.changeLanguage('en'); // Attempt to set i18n to fallback
         if (typeof document !== 'undefined') {
@@ -242,7 +242,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       }, 50);
       
     } catch (err) {
-      logError('LanguageContext: Error changing language:', { data: err });
+      logErrorToProduction('LanguageContext: Error changing language:', { data: err });
       toast({
         title: 'Error',
         description: 'Failed to change language',

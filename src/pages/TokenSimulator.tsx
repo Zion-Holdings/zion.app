@@ -13,7 +13,7 @@ import {
 import { Slider } from '@/components/ui/slider';
 import { useToast } from '@/hooks/use-toast';
 import { callZionGPT } from '@/utils/zion-gpt';
-import { logError } from '@/utils/logError';
+import {logErrorToProduction} from '@/utils/logError';
 import { suggestFix } from '@/utils/suggestFix';
 
 interface Inputs {
@@ -157,7 +157,7 @@ export default function TokenSimulator() {
       });
       setGptOutput(result);
     } catch (err) {
-      logError(err, { context: 'TokenSimulator.handleGPT' });
+      logErrorToProduction(err, { context: 'TokenSimulator.handleGPT' });
       const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));
       setGptOutput(suggestion);
       toast({ title: 'GPT analysis failed', variant: 'destructive' });

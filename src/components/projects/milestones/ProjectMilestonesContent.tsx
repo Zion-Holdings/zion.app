@@ -8,7 +8,7 @@ import { useJobDetails } from '@/hooks/useJobDetails';
 import { useAuth } from '@/hooks/useAuth';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useDisputeCheck } from '@/hooks/useDisputeCheck';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 import { 
   MilestoneActivities,
@@ -53,7 +53,7 @@ export function ProjectMilestonesContent() {
           setProject(projectData);
         }
       } catch (error) {
-        logError('Error loading project:', { data: error });
+        logErrorToProduction('Error loading project:', { data: error });
       } finally {
         setIsLoading(false);
       }

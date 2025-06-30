@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { withApiDocsCors } from '@/middleware/cors';
-import { logError } from '@/utils/productionLogger';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 // Mock talent data for API documentation and testing
@@ -184,7 +184,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     });
 
   } catch (error) {
-    logError('Talent API error:', { data: error });
+    logErrorToProduction('Talent API error:', { data: error });
     return res.status(500).json({ 
       error: 'internal_server_error',
       message: 'An internal server error occurred while fetching talent profiles' 

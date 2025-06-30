@@ -11,7 +11,7 @@ import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { EnhancedSearchInput } from './EnhancedSearchInput';
 import { generateSearchSuggestions } from '@/data/marketplaceData';
-import { logError, logInfo } from '@/utils/productionLogger';
+import { logErrorToProduction, logInfo } from '@/utils/productionLogger';
 
 interface SearchResult {
   id: string;
@@ -417,7 +417,7 @@ export const AdvancedSearchResults: React.FC = () => {
         totalCount: data.totalCount 
       });
     } catch (error) {
-      logError('Search failed', { data: error });
+      logErrorToProduction('Search failed', { data: error });
       setResults([]);
       setTotalCount(0);
     } finally {

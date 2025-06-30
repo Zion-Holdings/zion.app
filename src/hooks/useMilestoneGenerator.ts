@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
-import { logError, logWarn } from "@/utils/productionLogger";
+import { logErrorToProduction, logWarn } from "@/utils/productionLogger";
 
 export interface MilestoneInput {
   scope: string;
@@ -49,7 +49,7 @@ export function useMilestoneGenerator() {
       setGeneratedMilestones(milestonesWithFlag);
       return milestonesWithFlag;
     } catch (error) {
-      logError('Error generating milestones:', { data: error });
+      logErrorToProduction('Error generating milestones:', { data: error });
       toast.error('Failed to generate milestones');
       return [];
     } finally {
