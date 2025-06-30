@@ -1,7 +1,11 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BarChart, DollarSign, LineChart, TrendingUp, Users } from "lucide-react";
+import { BarChart } from 'lucide-react/dist/esm/icons/bar-chart';
+import { DollarSign } from 'lucide-react/dist/esm/icons/dollar-sign';
+import { LineChart } from 'lucide-react/dist/esm/icons/line-chart';
+import { TrendingUp } from 'lucide-react/dist/esm/icons/trending-up';
+import { Users } from 'lucide-react/dist/esm/icons/users';
 
 export function PartnerDashboard() {
   // Placeholder data - would come from API in real implementation

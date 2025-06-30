@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface VerifiedBadgeProps {

@@ -1,7 +1,8 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Check, X } from "lucide-react";
+import { Check } from 'lucide-react/dist/esm/icons/check';
+import { X } from 'lucide-react/dist/esm/icons/x';
 import {
   Table,
   TableBody,

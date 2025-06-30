@@ -1,5 +1,8 @@
 import { formatDistanceToNow } from "date-fns";
-import { Calendar, User, FileText, BarChart } from "lucide-react";
+import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
+import { User } from 'lucide-react/dist/esm/icons/user';
+import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+import { BarChart } from 'lucide-react/dist/esm/icons/bar-chart';
 import { Button } from "@/components/ui/button";
 import { Avatar as AvatarPrimitive } from "@/components/ui/avatar"; // Renamed to avoid conflict
 import { TableRow, TableCell } from "@/components/ui/table";

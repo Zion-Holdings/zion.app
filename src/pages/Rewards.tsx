@@ -1,4 +1,4 @@
-import { Gift } from 'lucide-react';
+import { Gift } from 'lucide-react/dist/esm/icons/gift';
 
 const REWARDS = [
   { id: 'coupon5', title: '$5 Coupon', cost: 500 },

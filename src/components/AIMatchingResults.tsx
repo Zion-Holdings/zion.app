@@ -4,7 +4,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BarChart3, BriefcaseIcon, Monitor, User } from "lucide-react";
+import { BarChart3 } from 'lucide-react/dist/esm/icons/bar-chart3';
+import { BriefcaseIcon } from 'lucide-react/dist/esm/icons/briefcase-icon';
+import { Monitor } from 'lucide-react/dist/esm/icons/monitor';
+import { User } from 'lucide-react/dist/esm/icons/user';
 import Skeleton from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 

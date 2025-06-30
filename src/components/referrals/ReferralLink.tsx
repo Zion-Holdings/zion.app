@@ -3,7 +3,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Copy, Facebook, Link, Share, Twitter } from "lucide-react";
+import { Copy } from 'lucide-react/dist/esm/icons/copy';
+import { Facebook } from 'lucide-react/dist/esm/icons/facebook';
+import { Link } from 'lucide-react/dist/esm/icons/link';
+import { Share } from 'lucide-react/dist/esm/icons/share';
+import { Twitter } from 'lucide-react/dist/esm/icons/twitter';
 
 interface ReferralLinkProps {
   referralLink: string;

@@ -1,7 +1,8 @@
 
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageSquare, ArchiveIcon } from "lucide-react";
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { ArchiveIcon } from 'lucide-react/dist/esm/icons/archive-icon';
 
 type EmptyStateCardProps = {
   type: 'active' | 'archived';

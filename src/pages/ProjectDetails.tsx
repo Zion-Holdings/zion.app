@@ -40,18 +40,17 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { ProjectReviewSection } from "@/components/projects/reviews/ProjectReviewSection";
-import {
-  AlertCircle,
-  Calendar,
-  CheckCircle2,
-  Clock,
-  FileText,
-  Layers,
-  MessageSquare,
-  Video,
-  User,
-  XCircle,
-} from "lucide-react";
+import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
+import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
+import { CheckCircle2 } from 'lucide-react/dist/esm/icons/check-circle2';
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+import { Layers } from 'lucide-react/dist/esm/icons/layers';
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { Video } from 'lucide-react/dist/esm/icons/video';
+import { User } from 'lucide-react/dist/esm/icons/user';
+import { XCircle } from 'lucide-react/dist/esm/icons/xcircle';
+import {  } from 'lucide-react/dist/esm/icons/';
 
 function ProjectDetailsContent() {
   const router = useRouter();

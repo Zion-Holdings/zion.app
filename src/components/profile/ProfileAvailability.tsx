@@ -1,7 +1,9 @@
 
 import { Availability } from "@/types/profile";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, Check } from "lucide-react";
+import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { Check } from 'lucide-react/dist/esm/icons/check';
 
 interface ProfileAvailabilityProps {
   availability: Availability;

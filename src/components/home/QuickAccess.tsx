@@ -3,15 +3,13 @@ import React from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
-import { 
-  ArrowRight, 
-  Search, 
-  Users, 
-  Briefcase, 
-  Settings, 
-  MessageSquare, 
-  Smartphone 
-} from "lucide-react";
+import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
+import { Search } from 'lucide-react/dist/esm/icons/search';
+import { Users } from 'lucide-react/dist/esm/icons/users';
+import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
+import { Settings } from 'lucide-react/dist/esm/icons/settings';
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { Smartphone } from 'lucide-react/dist/esm/icons/smartphone';
 
 interface QuickAccessProps {
   className?: string;

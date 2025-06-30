@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { WifiOff, Wifi } from 'lucide-react';
+import { WifiOff } from 'lucide-react/dist/esm/icons/wifi-off';
+import { Wifi } from 'lucide-react/dist/esm/icons/wifi';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
 export const OfflineIndicator = () => {

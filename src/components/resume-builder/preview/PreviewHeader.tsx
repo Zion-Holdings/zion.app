@@ -1,6 +1,8 @@
 
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, FileText, Link } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react/dist/esm/icons/arrow-left';
+import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+import { Link } from 'lucide-react/dist/esm/icons/link';
 import { PdfExportButton } from '../PdfExportButton';
 import { Resume } from '@/types/resume';
 import { useState } from 'react';

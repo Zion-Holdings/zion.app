@@ -9,16 +9,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { HireNowCTA } from "@/components/profile/HireNowCTA";
 import { logErrorToProduction } from '@/utils/productionLogger';
-import {
-  Star,
-  MapPin,
-  Clock,
-  Link as LinkIcon,
-  Github,
-  Twitter,
-  Linkedin,
-  CheckCircle2
-} from "lucide-react";
+import { Star } from 'lucide-react/dist/esm/icons/star';
+import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { Link as LinkIcon } from 'lucide-react/dist/esm/icons/link as link-icon';
+import { Github } from 'lucide-react/dist/esm/icons/github';
+import { Twitter } from 'lucide-react/dist/esm/icons/twitter';
+import { Linkedin } from 'lucide-react/dist/esm/icons/linkedin';
+import { CheckCircle2 } from 'lucide-react/dist/esm/icons/check-circle2';
 
 export default function ProfilePage() {
   // useParams may be untyped in this environment, so avoid passing a

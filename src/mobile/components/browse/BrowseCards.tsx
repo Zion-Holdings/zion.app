@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Bookmark, BookmarkCheck, ChevronRight, MapPin, Clock, DollarSign } from "lucide-react";
+import { Bookmark } from 'lucide-react/dist/esm/icons/bookmark';
+import { BookmarkCheck } from 'lucide-react/dist/esm/icons/bookmark-check';
+import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
+import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { DollarSign } from 'lucide-react/dist/esm/icons/dollar-sign';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 interface BrowseItem {

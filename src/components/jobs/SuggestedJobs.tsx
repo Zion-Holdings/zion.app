@@ -1,6 +1,6 @@
 
 import { useAuth } from "@/hooks/useAuth";
-import { Loader2 } from "lucide-react";
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
 import { Badge } from "@/components/ui/badge";
 import { useJobSuggestions } from "@/hooks/useJobSuggestions";
 import { JobMatchesCard } from "./JobMatchesCard";

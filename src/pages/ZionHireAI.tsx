@@ -5,7 +5,13 @@ import { SEO } from "@/components/SEO";
 import { useWhitelabel } from "@/context/WhitelabelContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Briefcase, PenTool, BarChart3, Users, Shield, Globe } from "lucide-react";
+import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
+import { Briefcase } from 'lucide-react/dist/esm/icons/briefcase';
+import { PenTool } from 'lucide-react/dist/esm/icons/pen-tool';
+import { BarChart3 } from 'lucide-react/dist/esm/icons/bar-chart3';
+import { Users } from 'lucide-react/dist/esm/icons/users';
+import { Shield } from 'lucide-react/dist/esm/icons/shield';
+import { Globe } from 'lucide-react/dist/esm/icons/globe';
 import { useAuth } from "@/hooks/useAuth";
 import Link from "next/link";
 

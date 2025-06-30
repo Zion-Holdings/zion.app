@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FileText } from "lucide-react";
+import { FileText } from 'lucide-react/dist/esm/icons/file-text';
 
 const faqs = [
   {

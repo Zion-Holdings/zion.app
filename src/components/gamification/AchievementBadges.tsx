@@ -1,4 +1,4 @@
-import { BadgeCheck } from "lucide-react";
+import { BadgeCheck } from 'lucide-react/dist/esm/icons/badge-check';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export interface Achievement {

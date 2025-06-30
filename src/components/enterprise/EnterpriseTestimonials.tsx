@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Quote } from "lucide-react";
+import { Quote } from 'lucide-react/dist/esm/icons/quote';
 import {
   Carousel,
   CarouselContent,

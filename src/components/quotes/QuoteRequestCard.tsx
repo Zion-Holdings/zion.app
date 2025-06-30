@@ -10,7 +10,11 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { QuoteStatusBadge } from "@/components/quotes/QuoteStatusBadge";
-import { Eye, MessageSquare, ArchiveIcon, RefreshCw, CalendarIcon } from "lucide-react";
+import { Eye } from 'lucide-react/dist/esm/icons/eye';
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { ArchiveIcon } from 'lucide-react/dist/esm/icons/archive-icon';
+import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { CalendarIcon } from 'lucide-react/dist/esm/icons/calendar-icon';
 import type { QuoteRequest } from "@/types/quotes";
 
 type QuoteRequestCardProps = {

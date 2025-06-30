@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { SearchIcon } from "lucide-react";
+import { SearchIcon } from 'lucide-react/dist/esm/icons/search-icon';
 import { SearchFilterProps } from "@/types/filters";
 
 export function SearchFilter({ searchTerm, setSearchTerm }: SearchFilterProps) {

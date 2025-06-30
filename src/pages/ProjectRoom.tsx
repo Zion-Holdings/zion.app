@@ -5,7 +5,13 @@ import { SEO } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { MessageSquare, FileText, Video, Calendar, Users, Settings, X } from 'lucide-react';
+import { MessageSquare } from 'lucide-react/dist/esm/icons/message-square';
+import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+import { Video } from 'lucide-react/dist/esm/icons/video';
+import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
+import { Users } from 'lucide-react/dist/esm/icons/users';
+import { Settings } from 'lucide-react/dist/esm/icons/settings';
+import { X } from 'lucide-react/dist/esm/icons/x';
 import { VideoCallRoom } from '@/components/video/VideoCallRoom';
 import { toast } from 'sonner';
 

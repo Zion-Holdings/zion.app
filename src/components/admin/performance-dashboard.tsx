@@ -3,19 +3,17 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { 
-  Activity, 
-  Zap, 
-  Package, 
-  TrendingUp, 
-  TrendingDown, 
-  AlertTriangle,
-  CheckCircle,
-  RefreshCw,
-  BarChart3,
-  Clock,
-  Globe
-} from 'lucide-react';
+import { Activity } from 'lucide-react/dist/esm/icons/activity';
+import { Zap } from 'lucide-react/dist/esm/icons/zap';
+import { Package } from 'lucide-react/dist/esm/icons/package';
+import { TrendingUp } from 'lucide-react/dist/esm/icons/trending-up';
+import { TrendingDown } from 'lucide-react/dist/esm/icons/trending-down';
+import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
+import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
+import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { BarChart3 } from 'lucide-react/dist/esm/icons/bar-chart3';
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { Globe } from 'lucide-react/dist/esm/icons/globe';
 import { bundleMonitor } from '@/utils/bundleMonitor';
 import { logErrorToProduction, logInfo } from '@/utils/productionLogger';
 

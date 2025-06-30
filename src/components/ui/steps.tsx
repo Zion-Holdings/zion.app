@@ -1,7 +1,7 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import { CheckIcon } from "lucide-react";
+import { CheckIcon } from 'lucide-react/dist/esm/icons/check-icon';
 
 interface StepProps {
   status: "incomplete" | "current" | "complete";

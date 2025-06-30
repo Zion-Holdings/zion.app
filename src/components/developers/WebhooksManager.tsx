@@ -1,7 +1,13 @@
 
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
-import { Globe, MoreVertical, PlayCircle, Plus, RefreshCw, Webhook, X } from "lucide-react";
+import { Globe } from 'lucide-react/dist/esm/icons/globe';
+import { MoreVertical } from 'lucide-react/dist/esm/icons/more-vertical';
+import { PlayCircle } from 'lucide-react/dist/esm/icons/play-circle';
+import { Plus } from 'lucide-react/dist/esm/icons/plus';
+import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
+import { Webhook } from 'lucide-react/dist/esm/icons/webhook';
+import { X } from 'lucide-react/dist/esm/icons/x';
 import { useWebhooks, type WebhookEventType } from "@/hooks/useWebhooks";
 
 import { Button } from "@/components/ui/button";

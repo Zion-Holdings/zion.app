@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Twitter, Facebook, Linkedin, Link as LinkIcon } from 'lucide-react';
+import { Twitter } from 'lucide-react/dist/esm/icons/twitter';
+import { Facebook } from 'lucide-react/dist/esm/icons/facebook';
+import { Linkedin } from 'lucide-react/dist/esm/icons/linkedin';
+import { Link as LinkIcon } from 'lucide-react/dist/esm/icons/link as link-icon';
 import { toast } from '@/hooks/use-toast';
 
 interface SocialShareButtonsProps {

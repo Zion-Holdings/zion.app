@@ -4,7 +4,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Plus, Trash2 } from "lucide-react";
+import { Plus } from 'lucide-react/dist/esm/icons/plus';
+import { Trash2 } from 'lucide-react/dist/esm/icons/trash2';
 import { AppPlatform } from "./MetadataManager";
 
 interface ChangelogManagerProps {

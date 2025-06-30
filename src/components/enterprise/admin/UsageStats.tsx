@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Sparkles } from "lucide-react";
+import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
 import { Progress } from "@/components/ui/progress";
 
 export function UsageStats() {

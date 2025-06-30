@@ -2,7 +2,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Crown, Medal, Trophy } from "lucide-react";
+import { Crown } from 'lucide-react/dist/esm/icons/crown';
+import { Medal } from 'lucide-react/dist/esm/icons/medal';
+import { Trophy } from 'lucide-react/dist/esm/icons/trophy';
 
 interface LeaderboardEntry {
   id: string;

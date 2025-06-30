@@ -1,7 +1,17 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp, Filter, SortAsc, Zap, TrendingUp, Star, ShoppingCart, MapPin, Package, AlertTriangle, RefreshCw } from 'lucide-react';
+import { ArrowUp } from 'lucide-react/dist/esm/icons/arrow-up';
+import { Filter } from 'lucide-react/dist/esm/icons/filter';
+import { SortAsc } from 'lucide-react/dist/esm/icons/sort-asc';
+import { Zap } from 'lucide-react/dist/esm/icons/zap';
+import { TrendingUp } from 'lucide-react/dist/esm/icons/trending-up';
+import { Star } from 'lucide-react/dist/esm/icons/star';
+import { ShoppingCart } from 'lucide-react/dist/esm/icons/shopping-cart';
+import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
+import { Package } from 'lucide-react/dist/esm/icons/package';
+import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
+import { RefreshCw } from 'lucide-react/dist/esm/icons/refresh-cw';
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
 import { generateDatacenterEquipment, getEquipmentMarketStats, getRecommendedEquipment } from '@/utils/equipmentAutoFeedAlgorithm';
 import { ProductListing } from '@/types/listings';

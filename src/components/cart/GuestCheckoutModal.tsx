@@ -11,7 +11,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { User, Mail, MapPin, CreditCard } from 'lucide-react';
+import { User } from 'lucide-react/dist/esm/icons/user';
+import { Mail } from 'lucide-react/dist/esm/icons/mail';
+import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
+import { CreditCard } from 'lucide-react/dist/esm/icons/credit-card';
 import { isProdDomain } from '@/utils/getStripe';
 
 interface GuestCheckoutModalProps {

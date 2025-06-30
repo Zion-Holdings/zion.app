@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AIMatchingResults } from "@/components/AIMatchingResults";
 import { findMatches, MatchResult } from "@/lib/ai-matchmaking";
 import { Textarea } from "@/components/ui/textarea";
-import { Sparkles, Search } from "lucide-react";
+import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
+import { Search } from 'lucide-react/dist/esm/icons/search';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 

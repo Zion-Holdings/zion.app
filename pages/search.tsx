@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import type { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
-import { Search, Filter, GridIcon, List, Loader2, SortAsc } from 'lucide-react';
+import { Search } from 'lucide-react/dist/esm/icons/search';
+import { Filter } from 'lucide-react/dist/esm/icons/filter';
+import { GridIcon } from 'lucide-react/dist/esm/icons/grid-icon';
+import { List } from 'lucide-react/dist/esm/icons/list';
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
+import { SortAsc } from 'lucide-react/dist/esm/icons/sort-asc';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';

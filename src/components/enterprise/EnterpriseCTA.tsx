@@ -1,7 +1,8 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
+import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
 
 export function EnterpriseCTA() {
   return (

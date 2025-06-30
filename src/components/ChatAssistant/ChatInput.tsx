@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, FormEvent, KeyboardEvent } from 'react';
 import { Button } from "@/components/ui/button";
-import { Send } from "lucide-react";
+import { Send } from 'lucide-react/dist/esm/icons/send';
 
 interface ChatInputProps {
   onSend: (message: string) => void;

@@ -1,7 +1,8 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu } from 'lucide-react/dist/esm/icons/menu';
+import { X } from 'lucide-react/dist/esm/icons/x';
 import { useSidebar } from "./sidebar-context";
 import { cn } from "@/lib/utils";
 

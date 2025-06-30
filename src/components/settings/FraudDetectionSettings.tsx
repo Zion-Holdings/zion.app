@@ -3,7 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { ShieldAlert, Info } from 'lucide-react';
+import { ShieldAlert } from 'lucide-react/dist/esm/icons/shield-alert';
+import { Info } from 'lucide-react/dist/esm/icons/info';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import {
   Accordion,

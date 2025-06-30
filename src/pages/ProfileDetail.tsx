@@ -8,18 +8,16 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  MapPin, 
-  Clock, 
-  Link as LinkIcon, 
-  Github, 
-  Twitter, 
-  Linkedin,
-  CheckCircle2,
-  Mail,
-  Phone,
-  Globe
-} from "lucide-react";
+import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { Link as LinkIcon } from 'lucide-react/dist/esm/icons/link as link-icon';
+import { Github } from 'lucide-react/dist/esm/icons/github';
+import { Twitter } from 'lucide-react/dist/esm/icons/twitter';
+import { Linkedin } from 'lucide-react/dist/esm/icons/linkedin';
+import { CheckCircle2 } from 'lucide-react/dist/esm/icons/check-circle2';
+import { Mail } from 'lucide-react/dist/esm/icons/mail';
+import { Phone } from 'lucide-react/dist/esm/icons/phone';
+import { Globe } from 'lucide-react/dist/esm/icons/globe';
 import { HireNowCTA } from "@/components/profile/HireNowCTA";
 
 export default function ProfileDetail() {

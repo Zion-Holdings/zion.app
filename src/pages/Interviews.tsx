@@ -7,7 +7,9 @@ import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { InterviewCard } from "@/components/interviews/InterviewCard";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, Video } from "lucide-react";
+import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { Video } from 'lucide-react/dist/esm/icons/video';
 import { format, isAfter, parseISO, startOfDay } from "date-fns";
 
 function InterviewsContent() {

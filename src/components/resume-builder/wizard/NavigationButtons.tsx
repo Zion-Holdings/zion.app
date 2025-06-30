@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
 import { NavigationButtonsProps } from "./types";
 
 export const NavigationButtons = ({

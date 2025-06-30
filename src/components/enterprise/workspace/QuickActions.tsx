@@ -2,7 +2,10 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, Plus, Search, Calendar } from "lucide-react";
+import { FileText } from 'lucide-react/dist/esm/icons/file-text';
+import { Plus } from 'lucide-react/dist/esm/icons/plus';
+import { Search } from 'lucide-react/dist/esm/icons/search';
+import { Calendar } from 'lucide-react/dist/esm/icons/calendar';
 
 export function QuickActions() {
   const actions = [

@@ -9,7 +9,7 @@ import { Slider } from "@/components/ui/slider";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon } from 'lucide-react/dist/esm/icons/calendar-icon';
 import { cn } from "@/lib/utils";
 import { ProductListing } from "@/types/listings";
 import { toast } from '@/hooks/use-toast';

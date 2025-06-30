@@ -1,6 +1,9 @@
 
 import React from "react";
-import { Eye, MoreHorizontal, Archive, Trash2 } from "lucide-react";
+import { Eye } from 'lucide-react/dist/esm/icons/eye';
+import { MoreHorizontal } from 'lucide-react/dist/esm/icons/more-horizontal';
+import { Archive } from 'lucide-react/dist/esm/icons/archive';
+import { Trash2 } from 'lucide-react/dist/esm/icons/trash2';
 import { 
   Table, 
   TableBody, 

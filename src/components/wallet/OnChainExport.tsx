@@ -2,7 +2,11 @@
 import React, { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Wallet, Info, Check, ChevronRight, ArrowUpRight } from "lucide-react";
+import { Wallet } from 'lucide-react/dist/esm/icons/wallet';
+import { Info } from 'lucide-react/dist/esm/icons/info';
+import { Check } from 'lucide-react/dist/esm/icons/check';
+import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
+import { ArrowUpRight } from 'lucide-react/dist/esm/icons/arrow-up-right';
 import {
   Tooltip,
   TooltipContent,

@@ -1,7 +1,9 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import { AlertTriangle, AlertCircle, CheckCircle } from "lucide-react";
+import { AlertTriangle } from 'lucide-react/dist/esm/icons/alert-triangle';
+import { AlertCircle } from 'lucide-react/dist/esm/icons/alert-circle';
+import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
 
 interface SeverityIndicatorProps {
   severity: "safe" | "suspicious" | "dangerous";

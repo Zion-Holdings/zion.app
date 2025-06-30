@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { DisputeForm } from "./DisputeForm";
 import { useRouter } from 'next/router';
-import { ShieldAlert } from "lucide-react";
+import { ShieldAlert } from 'lucide-react/dist/esm/icons/shield-alert';
 
 interface RaiseDisputeButtonProps {
   projectId: string;

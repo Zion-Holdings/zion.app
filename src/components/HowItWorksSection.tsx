@@ -1,7 +1,10 @@
 
 import React from 'react';
 import { GradientHeading } from "./GradientHeading";
-import { Check, Handshake, Search, Send } from "lucide-react";
+import { Check } from 'lucide-react/dist/esm/icons/check';
+import { Handshake } from 'lucide-react/dist/esm/icons/handshake';
+import { Search } from 'lucide-react/dist/esm/icons/search';
+import { Send } from 'lucide-react/dist/esm/icons/send';
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 

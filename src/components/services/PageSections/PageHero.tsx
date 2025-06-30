@@ -1,6 +1,8 @@
 
 import { GradientHeading } from "@/components/GradientHeading";
-import { Clock, Map, DollarSign } from "lucide-react";
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
+import { Map } from 'lucide-react/dist/esm/icons/map';
+import { DollarSign } from 'lucide-react/dist/esm/icons/dollar-sign';
 
 export function PageHero() {
   return (

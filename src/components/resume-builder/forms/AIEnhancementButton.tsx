@@ -1,7 +1,8 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Loader2 } from 'lucide-react';
+import { Sparkles } from 'lucide-react/dist/esm/icons/sparkles';
+import { Loader2 } from 'lucide-react/dist/esm/icons/loader2';
 import { useResumeEnhancer } from '@/hooks/useResumeEnhancer';
 
 interface AIEnhancementButtonProps {

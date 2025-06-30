@@ -1,6 +1,8 @@
 
 import React from "react";
-import { CheckCircle, Circle, ArrowRight } from "lucide-react";
+import { CheckCircle } from 'lucide-react/dist/esm/icons/check-circle';
+import { Circle } from 'lucide-react/dist/esm/icons/circle';
+import { ArrowRight } from 'lucide-react/dist/esm/icons/arrow-right';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";

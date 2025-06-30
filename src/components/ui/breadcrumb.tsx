@@ -1,7 +1,7 @@
 
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight } from 'lucide-react/dist/esm/icons/chevron-right';
  
 import { cn } from "@/lib/utils"
  

@@ -1,5 +1,5 @@
 
-import { Trophy } from "lucide-react";
+import { Trophy } from 'lucide-react/dist/esm/icons/trophy';
 import { Progress } from "@/components/ui/progress";
 
 interface ReputationDisplayProps {

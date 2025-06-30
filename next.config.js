@@ -78,7 +78,7 @@ const nextConfig = {
       ],
     },
     // Enable CSS optimization for production
-    optimizeCss: !dev, 
+    optimizeCss: process.env.NODE_ENV === 'production', 
     esmExternals: true,
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance

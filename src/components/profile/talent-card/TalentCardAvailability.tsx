@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Clock } from "lucide-react";
+import { Clock } from 'lucide-react/dist/esm/icons/clock';
 
 interface TalentCardAvailabilityProps {
   availabilityType: string;

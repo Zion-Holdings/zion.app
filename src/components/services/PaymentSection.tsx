@@ -1,5 +1,5 @@
 
-import { MapPin } from "lucide-react";
+import { MapPin } from 'lucide-react/dist/esm/icons/map-pin';
 import { PaymentButton } from "@/components/transactions/PaymentButton";
 import { CountryPricing } from "@/data/onsiteServicePricing";
 import { toast } from "@/hooks/use-toast";
