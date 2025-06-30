@@ -6,7 +6,7 @@
         "-y",
         "@supabase/mcp-server-supabase@latest",
         "--read-only",
-        "--project-ref=<Cursor MCP>"
+        "--project-ref=gnwtggeptzkqnduuthto"
       ],
       "env": {
         "SUPABASE_ACCESS_TOKEN": "<sbp_12669d6b5344fa1baaf7847a46d53906dfa86cad>"
