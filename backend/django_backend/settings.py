@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import logging # Required for Sentry LoggingIntegration level
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-placeholder'
@@ -27,12 +28,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', # Session data available
     'django.middleware.common.CommonMiddleware',
-    'middleware.error_handler.ErrorHandlingMiddleware', # Added
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware', # User data available
     'django_otp.middleware.OTPMiddleware',
+    'middleware.request_logging.CorrelationIDMiddleware', # Added - Correlation ID and request logging
+    'middleware.error_handler.ErrorHandlingMiddleware', # Custom error handler
     'django.contrib.messages.middleware.MessageMiddleware',
 ]
 
@@ -140,3 +142,123 @@ SWAGGER_SETTINGS = {
         }
     }
 }
+
+# Sentry SDK Initialization
+SENTRY_DSN_DJANGO = os.environ.get('SENTRY_DSN_DJANGO')
+SENTRY_RELEASE = os.environ.get('SENTRY_RELEASE', 'zion-backend@1.0.0') # Example release
+SENTRY_ENVIRONMENT = os.environ.get('SENTRY_ENVIRONMENT', 'development' if DEBUG else 'production')
+
+if SENTRY_DSN_DJANGO:
+    import sentry_sdk
+    from sentry_sdk.integrations.django import DjangoIntegration
+    from sentry_sdk.integrations.logging import LoggingIntegration
+
+    # Ensure logs directory exists for file handler
+    LOGS_DIR = BASE_DIR / 'logs'
+    LOGS_DIR.mkdir(parents=True, exist_ok=True)
+
+    sentry_logging = LoggingIntegration(
+        level=logging.INFO,        # Capture info and above as breadcrumbs
+        event_level=logging.ERROR  # Send errors as events
+    )
+
+    sentry_sdk.init(
+        dsn=SENTRY_DSN_DJANGO,
+        integrations=[DjangoIntegration(), sentry_logging],
+        release=SENTRY_RELEASE,
+        environment=SENTRY_ENVIRONMENT,
+        traces_sample_rate=0.1,  # Adjust as needed
+        send_default_pii=False
+    )
+    print(f"Sentry initialized for Django with DSN: {SENTRY_DSN_DJANGO[:20]}... Release: {SENTRY_RELEASE} Env: {SENTRY_ENVIRONMENT}")
+else:
+    print("Sentry DSN for Django not found. Sentry integration disabled for backend.")
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'request_id_filter': {
+            '()': 'middleware.request_logging.RequestIdFilter',
+        }
+    },
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {asctime} {module}: {message}',
+            'style': '{',
+        },
+        'json': {
+            '()': 'pythonjsonlogger.jsonlogger.JsonFormatter',
+            'format': '%(levelname)s %(asctime)s %(correlation_id)s %(user_id)s %(module)s %(process)d %(thread)d %(name)s %(pathname)s %(funcName)s %(lineno)d %(message)s',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG' if DEBUG else 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple' if DEBUG else 'json',
+            'filters': ['request_id_filter'],
+        },
+        'logfile_json': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': BASE_DIR / 'logs' / 'django_json.log',
+            'maxBytes': 1024 * 1024 * 5,  # 5 MB
+            'backupCount': 5,
+            'formatter': 'json',
+            'filters': ['request_id_filter'],
+        },
+        # Sentry handler is configured by sentry_sdk.init() if DSN is present
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'] if DEBUG else ['console', 'logfile_json'],
+            'level': 'INFO',
+            'propagate': True, # Propagate to root so root handler filters apply
+        },
+        'django.request': {
+            'handlers': ['console'] if DEBUG else ['console', 'logfile_json'],
+            'level': 'WARNING',
+            'propagate': False,
+        },
+        'django.db.backends': {
+            'handlers': ['console'] if DEBUG else ['console', 'logfile_json'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'middleware': {
+            'handlers': ['console'] if DEBUG else ['console', 'logfile_json'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'middleware.request_logging': { # Specific logger for the new middleware
+            'handlers': ['console'] if DEBUG else ['console', 'logfile_json'],
+            'level': 'INFO', # Or DEBUG if more verbose request/response logging is desired
+            'propagate': False, # Usually False for specific middleware loggers if handled by root
+        },
+        'zion_backend': {
+            'handlers': ['console'] if DEBUG else ['console', 'logfile_json'],
+            'level': 'DEBUG' if DEBUG else 'INFO',
+            'propagate': True,
+        },
+        'sentry_sdk': {
+            'handlers': ['console'],
+            'level': 'WARNING',
+            'propagate': False,
+        }
+    },
+    'root': {
+        'handlers': ['console'] if DEBUG else ['console', 'logfile_json'],
+        'level': 'DEBUG' if DEBUG else 'INFO',
+        'filters': ['request_id_filter'], # Apply to root as well for any direct root logs
+    },
+}
+
+# If Sentry is enabled, its LoggingIntegration will add its handler automatically
+# to loggers based on its own level settings.
+# The 'sentry' handler defined in some examples is often not needed if using LoggingIntegration.

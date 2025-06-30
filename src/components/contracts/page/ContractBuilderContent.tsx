@@ -7,7 +7,7 @@ import { ContractTypeCards } from './ContractTypeCards';
 import { RecentContractsTable } from './RecentContractsTable';
 import { TalentProfile } from '@/types/talent';
 import { useAuth } from '@/hooks/useAuth';
-import { logger } from '@/utils/logger';
+import { logDev } from '@/utils/productionLogger';
 
 // Mock data for demo purposes
 const mockTalent: TalentProfile = {
@@ -43,11 +43,11 @@ export function ContractBuilderContent() {
   ]);
 
   const handleContractGenerated = (content: string) => {
-    logger.debug('Contract generated:', content.substring(0, 100) + '...');
+    logDev('Contract generated:', content.substring(0, 100) + '...');
   };
 
   const handleViewContract = (contractId: string) => {
-    logger.debug('Viewing contract:', contractId);
+    logDev('Viewing contract:', contractId);
     // Future implementation: View specific contract details
   };
 

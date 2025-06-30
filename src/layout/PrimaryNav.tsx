@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { logger } from '@/utils/logger';
+import { logDev, logError } from '@/utils/productionLogger';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Logo } from '@/components/header/Logo';
@@ -44,11 +44,11 @@ export function PrimaryNav() {
     e.preventDefault();
     const trimmed = query.trim();
     if (trimmed) {
-      logger.debug('PrimaryNav search submit:', trimmed);
+      logDev('PrimaryNav search submit:', trimmed);
       router
         .push(`/search?q=${encodeURIComponent(trimmed)}`)
         .then(() => setQuery(''))
-        .catch((err) => logger.error('Search navigation failed', err));
+        .catch((err) => logError('Search navigation failed', err));
     }
   };
 
@@ -76,7 +76,7 @@ export function PrimaryNav() {
                 value={query}
                 onChange={setQuery}
                 onSelectSuggestion={(sugg) => {
-                  logger.debug('PrimaryNav search suggestion selected:', sugg);
+                  logDev('PrimaryNav search suggestion selected:', sugg);
                   // Handle different suggestion types with proper navigation
                   if (sugg.id) {
                     // Product listings with IDs go to product detail page

@@ -8,7 +8,7 @@ import '@testing-library/jest-dom';
 import { MobileBottomNav } from '@/components/header/MobileBottomNav';
 import { SearchFilter } from '@/components/talent/filters/SearchFilter';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
-import { UserProfileDropdown } from '@/components/header/UserProfileDropdown';
+import UserProfileDropdown from '@/components/header/UserProfileDropdown'; // Changed to default import
 
 // Add jest-axe matcher
 expect.extend(toHaveNoViolations);

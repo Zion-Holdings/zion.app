@@ -28,10 +28,26 @@ const createAxiosInstance = (): any => {
     }
   );
 
+import { setCorrelationId } from '@/utils/correlationManager';
+
+// ... (other imports and code)
+
   // Response interceptor
   instance.interceptors.response.use(
-    (response: any) => response,
+    (response: any) => {
+      const correlationId = response.headers?.['x-correlation-id'] || response.headers?.['X-Correlation-ID'];
+      if (correlationId) {
+        setCorrelationId(correlationId as string);
+      }
+      return response;
+    },
     (error: any) => {
+      // Also try to get correlation ID from error responses if the server includes it
+      const correlationId = error.response?.headers?.['x-correlation-id'] || error.response?.headers?.['X-Correlation-ID'];
+      if (correlationId) {
+        setCorrelationId(correlationId as string);
+      }
+
       if (error?.response?.status === 401) {
         // Handle unauthorized access
         if (typeof window !== 'undefined') {

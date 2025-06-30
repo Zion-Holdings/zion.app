@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { logger } from '@/utils/logger';
+import { logDev, logError } from '@/utils/productionLogger';
 import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -72,14 +72,14 @@ const ProductListingCardComponent = ({
   const handleViewListing = () => {
     // Debug logging for development
     if (process.env.NODE_ENV === 'development') {
-      logger.debug('[ProductCard] Navigating to:', `${detailBasePath}/${listing.id}`);
-      logger.debug('[ProductCard] Listing ID:', listing.id);
-      logger.debug('[ProductCard] Listing Title:', listing.title);
+      logDev('[ProductCard] Navigating to:', `${detailBasePath}/${listing.id}`);
+      logDev('[ProductCard] Listing ID:', listing.id);
+      logDev('[ProductCard] Listing Title:', listing.title);
     }
     
     // Validate listing ID exists before navigation
     if (!listing.id) {
-      logger.error('[ProductCard] Missing listing ID, cannot navigate');
+      logError('[ProductCard] Missing listing ID, cannot navigate');
       toast({
         title: "Navigation Error",
         description: "Product information is incomplete",

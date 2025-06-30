@@ -1,8 +1,10 @@
 
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { initSentry, captureSupabaseError, logStructured } from "../_shared/sentry.ts";
 
 const openAIApiKey = Deno.env.get('OPENAI_API_KEY');
+const FUNCTION_NAME = "ai-chat";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -19,13 +21,21 @@ interface RequestBody {
 }
 
 serve(async (req) => {
+  initSentry(); // Initialize Sentry at the start of the function invocation
+
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
+  const requestBody = await req.json() as RequestBody;
+  const userMessages = requestBody.messages;
+  const lastUserMessage = userMessages.length > 0 ? userMessages[userMessages.length - 1].content : "N/A";
+
+  logStructured("INFO", "Request received", { path: req.url, method: req.method, lastUserMessagePreview: lastUserMessage.substring(0, 50) }, FUNCTION_NAME);
+
   try {
-    const { messages } = await req.json() as RequestBody;
+    const { messages } = requestBody;
 
     // Prepare the system message to define the assistant's behavior
     const systemMessage: Message = {
@@ -58,15 +68,26 @@ serve(async (req) => {
 
     const assistantMessage = data.choices[0].message.content;
 
-    // Log this interaction for analytics (in a real implementation)
-    // This would track common questions, successful interactions, etc.
-    console.log('AI chat interaction logged');
+    logStructured("INFO", "AI chat interaction successful", {
+      requestMessagesCount: combinedMessages.length,
+      responseMessageLength: assistantMessage.length
+    }, FUNCTION_NAME);
 
     return new Response(JSON.stringify({ message: assistantMessage }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (error) {
-    console.error('Error in ai-chat function:', error);
+    logStructured("ERROR", "Error in ai-chat function", {
+      errorMessage: error.message,
+      errorStack: error.stack,
+      requestMessagesCount: userMessages.length // Use userMessages here as combinedMessages might not be set if error is early
+    }, FUNCTION_NAME);
+    captureSupabaseError(error, {
+      functionName: FUNCTION_NAME,
+      request_url: req.url,
+      request_method: req.method,
+      request_body_preview: JSON.stringify(requestBody).substring(0, 200) // Log a preview
+    });
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

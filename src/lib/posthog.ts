@@ -1,4 +1,4 @@
-import { logger } from '@/utils/logger';
+import { logInfo, logError } from '@/utils/productionLogger';
 
 declare global {
   interface Window {
@@ -14,7 +14,7 @@ export const initPostHog = () => {
 
   // Skip initialization if key is not defined or is a placeholder
   if (!key || key === 'your_posthog_key_here' || key.includes('placeholder') || key.includes('your_')) {
-    logger.info('PostHog key not configured or is placeholder. PostHog initialization skipped.');
+    logInfo('PostHog key not configured or is placeholder. PostHog initialization skipped.');
     return;
   }
 
@@ -50,7 +50,7 @@ export const initPostHog = () => {
 export const captureEvent = (name: string, properties?: Record<string, any>) => {
   if (typeof window === 'undefined') return;
   if (!window.posthog?.capture) {
-    logger.error('PostHog not initialized. Call initPostHog() first.');
+    logError('PostHog not initialized. Call initPostHog() first.');
     return;
   }
   window.posthog.capture(name, properties);

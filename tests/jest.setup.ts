@@ -258,6 +258,7 @@ jest.mock('vitest', () => {
       importActual: jest.requireActual,
       mockResolvedValue: <T = unknown>(value: T) => jest.fn().mockResolvedValue(value),
       mockRejectedValue: <T = unknown>(value: T) => jest.fn().mockRejectedValue(value),
+      restoreAllMocks: jest.restoreAllMocks,
     },
 
     // Re-export common testing globals so that `import { expect, test } from 'vitest'`
@@ -351,3 +352,40 @@ jest.mock('react-redux', () => {
     useSelector: jest.fn(() => ({})),
   };
 });
+
+// Mock Sentry
+jest.mock('@sentry/nextjs', () => ({
+  init: jest.fn(),
+  captureException: jest.fn(),
+  captureMessage: jest.fn(),
+  addBreadcrumb: jest.fn(),
+  withScope: jest.fn((callback) => callback({ setTag: jest.fn(), setContext: jest.fn(), setLevel: jest.fn() })),
+  // Add any other Sentry methods used in your application
+}));
+
+// Mock performance API
+if (typeof window !== 'undefined' && !window.performance) {
+  // @ts-ignore
+  window.performance = {};
+}
+if (typeof window !== 'undefined' && !window.performance.getEntriesByType) {
+  window.performance.getEntriesByType = jest.fn().mockReturnValue([]);
+}
+if (typeof window !== 'undefined' && !window.performance.mark) {
+  window.performance.mark = jest.fn();
+}
+if (typeof window !== 'undefined' && !window.performance.measure) {
+  window.performance.measure = jest.fn();
+}
+
+// Mock navigator.serviceWorker
+if (typeof navigator !== 'undefined' && !navigator.serviceWorker) {
+  // @ts-ignore
+  navigator.serviceWorker = {
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    register: jest.fn(() => Promise.resolve({})), // Mock common methods
+    ready: Promise.resolve({}),
+    // Add other properties/methods if needed by your application
+  };
+}

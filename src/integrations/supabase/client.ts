@@ -1,7 +1,6 @@
 // Re-export from the SSR client to maintain backward compatibility
 export { supabase, createClient } from '@/utils/supabase/client';
-import { logger } from '@/utils/logger';
-import { logWarn } from '@/utils/productionLogger';
+import { logWarn, logDev } from '@/utils/productionLogger';
 
 // Supabase configuration with proper fallbacks
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://gnwtggeptzkqnduuthto.supabase.co';
@@ -19,7 +18,7 @@ export const isSupabaseConfigured = !!(
 
 // Only log in development and when debug is enabled
 if (process.env.NODE_ENV === 'development' && process.env.DEBUG_ENV_CONFIG === 'true') {
-  logger.debug('Supabase client initialized:', {
+  logDev('Supabase client initialized:', {
     url: `${supabaseUrl.substring(0, 30)}...`,
     configured: isSupabaseConfigured,
     hasValidUrl: supabaseUrl.includes('supabase.co'),

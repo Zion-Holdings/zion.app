@@ -3,6 +3,8 @@ import { captureException } from './sentry';
 import { sendErrorToBackend } from './customErrorReporter';
 import { generateTraceId } from './generateTraceId';
 import { logWarn, logError as prodLogError } from '@/utils/productionLogger';
+import { getCapturedLogs, ConsoleLogEntry } from './consoleLogCapture';
+import { getCorrelationId as fetchCorrelationId } from './correlationManager';
 
 // Do not import datadogLogs at the top level for server-side compatibility
 
@@ -16,6 +18,12 @@ export function logError(
 ): string {
   const traceId = generateTraceId();
   let errorToSend: Error;
+  let capturedConsoleLogs: ConsoleLogEntry[] = [];
+
+  if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+    capturedConsoleLogs = getCapturedLogs();
+  }
+
   if (error instanceof Error) {
     errorToSend = error;
   } else {
@@ -46,43 +54,79 @@ export function logError(
 
   try {
     // Sentry logging (can run on both client and server if Sentry is configured for both)
-    if (context) {
-      captureException(errorToSend, { extra: { traceId, ...context } });
-    } else {
-      captureException(errorToSend, { extra: { traceId } });
+    const currentCorrelationId = fetchCorrelationId();
+    const sentryExtraContext: Record<string, any> = {
+      traceId,
+      ...(context || {}),
+      ...(capturedConsoleLogs.length > 0 && { recentConsoleLogs: capturedConsoleLogs }),
+    };
+    if (currentCorrelationId) {
+      sentryExtraContext.correlationId = currentCorrelationId;
     }
+
+    captureException(errorToSend, { extra: sentryExtraContext });
 
     // Datadog logging - client-side only
     if (typeof window !== 'undefined') {
-      import('@datadog/browser-logs').then(({ datadogLogs }) => {
-        if (datadogLogs && datadogLogs.logger) {
-          if (context) {
-            datadogLogs.logger.error(errorToSend.message, {
-              error: errorToSend,
-              traceId,
-              ...context,
+      const datadogClientToken = process.env.NEXT_PUBLIC_DATADOG_CLIENT_TOKEN;
+      const datadogSite = process.env.NEXT_PUBLIC_DATADOG_SITE || 'datadoghq.com';
+      const datadogServiceName = process.env.NEXT_PUBLIC_DATADOG_SERVICE_NAME || 'zion-frontend';
+
+      if (datadogClientToken) {
+        import('@datadog/browser-logs').then(({ datadogLogs, datadogRum }) => {
+          if (!datadogLogs.getInternalContext()) { // Check if already initialized
+            datadogLogs.init({
+              clientToken: datadogClientToken,
+              site: datadogSite,
+              service: datadogServiceName,
+              forwardErrorsToLogs: true,
+              sampleRate: 100,
+              env: process.env.NODE_ENV || 'development',
             });
-          } else {
-            datadogLogs.logger.error(errorToSend.message, { error: errorToSend, traceId });
           }
-        }
-      }).catch(ddImportError => {
-        logWarn('Failed to import or use Datadog logger:', { data: ddImportError });
-      });
+
+          if (datadogLogs && datadogLogs.logger) {
+            const ddContext: Record<string, any> = {
+                error: errorToSend,
+                traceId,
+                ...context,
+                ...(capturedConsoleLogs.length > 0 && { recentConsoleLogs: capturedConsoleLogs.map(log => `${log.timestamp} [${log.level}] ${log.message}`).join('\n') }),
+            };
+            if (currentCorrelationId) {
+              ddContext.correlationId = currentCorrelationId;
+            }
+            datadogLogs.logger.error(errorToSend.message, ddContext);
+          }
+        }).catch(ddImportError => {
+          logWarn('Failed to import or initialize Datadog logger:', { data: ddImportError });
+        });
+      } else if (process.env.NODE_ENV === 'development') {
+        // logWarn('Datadog client token not configured. Skipping Datadog error logging.');
+      }
 
       // LogRocket logging
-      import('logrocket').then(mod => {
-        const LogRocket = mod.default;
-        if (LogRocket && typeof LogRocket.captureException === 'function') {
-          if (context) {
-            LogRocket.captureException(errorToSend, { extra: { traceId, ...context } });
-          } else {
-            LogRocket.captureException(errorToSend, { extra: { traceId } });
+      const logRocketAppId = process.env.NEXT_PUBLIC_LOGROCKET_APP_ID;
+      if (logRocketAppId) {
+        import('logrocket').then(LogRocket => {
+          // LogRocket.init should ideally be called once in _app.tsx or similar
+          // For now, just ensure captureException is available
+          if (LogRocket && typeof LogRocket.captureException === 'function') {
+            const lrExtra: Record<string, any> = {
+              traceId,
+              ...context,
+              ...(capturedConsoleLogs.length > 0 && { recentConsoleLogs: capturedConsoleLogs.map(log => `${log.timestamp} [${log.level}] ${log.message}`).join('\n') }),
+            };
+            if (currentCorrelationId) {
+              lrExtra.correlationId = currentCorrelationId;
+            }
+            LogRocket.captureException(errorToSend, { extra: lrExtra });
           }
-        }
-      }).catch(lrError => {
-        logWarn('Failed to log error to LogRocket:', { data: lrError });
-      });
+        }).catch(lrError => {
+          logWarn('Failed to import or use LogRocket:', { data: lrError });
+        });
+      } else if (process.env.NODE_ENV === 'development') {
+        // logWarn('LogRocket App ID not configured. Skipping LogRocket error logging.');
+      }
     }
   } catch (err) {
     prodLogError('Failed to report error to Sentry:', err, { componentStack: context?.componentStack });
@@ -102,7 +146,9 @@ export function logError(
       source: 'logError',
       // any other relevant context fields
       traceId,
+      correlationId: currentCorrelationId || undefined, // Add correlationId here too
       ...(context && { customContext: context }),
+      ...(capturedConsoleLogs.length > 0 && { recentConsoleLogs: capturedConsoleLogs }),
     };
 
     // Basic stack parsing for filename, lineno, colno (optional, can be enhanced)

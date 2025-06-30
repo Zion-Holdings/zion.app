@@ -14,8 +14,7 @@ import { toast } from "@/hooks/use-toast"; // Import toast
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '@/store';
 import { addItem } from '@/store/cartSlice';
-import { logger } from '@/utils/logger';
-import { logInfo, logWarn, logError } from '@/utils/productionLogger';
+import productionLogger, { logInfo, logWarn, logError, logDev } from '@/utils/productionLogger'; // Import default export
 
 
 const LOGIN_TIMEOUT_MS = 15000; // 15 seconds timeout
@@ -64,7 +63,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       });
 
       if (supabaseError) {
-        logger.error("AuthProvider: Supabase authentication failed", supabaseError);
+        logError("AuthProvider: Supabase authentication failed", supabaseError);
         
         // Provide specific error messages based on error code
         let errorMessage = "Authentication failed. Please try again.";
@@ -101,7 +100,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         return { error: errorMessage };
       }
 
-              logger.debug('AuthProvider: Supabase authentication successful');
+              logDev('AuthProvider: Supabase authentication successful');
       // The onAuthStateChange event should now trigger automatically
       return { error: null }; // Successful login
     } catch (error: any) {
@@ -194,7 +193,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       // Inside the onAuthStateChange callback
       async (event: any, session: any) => {
         if (process.env.NODE_ENV === 'development') {
-            logger.debug('AuthProvider: onAuthStateChange entered', { isLoading, event, sessionExists: !!session });
+            logDev('AuthProvider: onAuthStateChange entered', { isLoading, event, sessionExists: !!session });
         }
 
         // Only set isLoading true if we are expecting a significant state change or async operation
@@ -272,7 +271,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                         if (mappedUser) {
                             setUser(mappedUser);
                             setAvatarUrl(mappedUser.avatarUrl || null);
-                            logInfo('[AuthProvider DEBUG] User state updated in context.');
+                            productionLogger.setUserId(mappedUser.id); // Set User ID for logger
+                            logInfo('[AuthProvider DEBUG] User state updated in context and logger.', { userId: mappedUser.id });
 
                             // Call handleSignedIn for SIGNED_IN event to trigger redirection etc.
                             if (event === 'SIGNED_IN') {
@@ -354,8 +354,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                 setUser(null);
                 setAvatarUrl(null);
                 setTokens(null); // Clear tokens
+                productionLogger.setUserId(null); // Clear User ID from logger
                 cleanupAuthState(); // Utility to clear local/session storage
-                logInfo('[AuthProvider DEBUG] onAuthStateChange: Calling handleSignedOut for SIGNED_OUT event.');
+                logInfo('[AuthProvider DEBUG] onAuthStateChange: Calling handleSignedOut for SIGNED_OUT event. Cleared logger userID.');
                 handleSignedOut();
                 setIsLoading(false);
                 logInfo('[AuthProvider DEBUG] onAuthStateChange SIGNED_OUT: setIsLoading(false) called. New isLoading:', { data: isLoading });
@@ -373,6 +374,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
                   setUser(null);
                   setAvatarUrl(null);
                   setTokens(null);
+                  productionLogger.setUserId(null); // Ensure logger userID is cleared if user becomes null
                 }
                 // Ensure isLoading is false if no action is taken or if we fall through here.
                 // This is crucial for anonymous users on initial load.

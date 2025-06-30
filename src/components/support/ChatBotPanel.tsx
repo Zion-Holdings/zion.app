@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from "react";
-import { logger } from '@/utils/logger';
+import { logError, logDev } from '@/utils/productionLogger';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -96,7 +96,7 @@ export function ChatBotPanel() {
         setFailedAttempts(0);
       }
     } catch (error) {
-      logger.error("Error in AI chat:", error);
+      logError("Error in AI chat:", error);
       toast({
         variant: "destructive",
         title: "Communication Error",
@@ -137,7 +137,7 @@ export function ChatBotPanel() {
         message: data.message
       };
     } catch (error) {
-      logger.error("Error in AI chat:", error);
+      logError("Error in AI chat:", error);
       return {
         success: false,
         message: "I'm experiencing technical difficulties. Please try again later."
@@ -164,7 +164,7 @@ export function ChatBotPanel() {
     try {
       // Send the conversation to the backend for logging
       // This would be implemented in a real system
-      logger.debug("Support escalation triggered", {
+      logDev("Support escalation triggered", {
         conversationHistory: messages.map(m => ({
           content: m.content,
           sender: m.sender,
@@ -172,7 +172,7 @@ export function ChatBotPanel() {
         }))
       });
     } catch (error) {
-      logger.error("Failed to log support escalation:", error);
+      logError("Failed to log support escalation:", error);
     }
   };
 
