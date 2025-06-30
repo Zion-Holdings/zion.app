@@ -138,6 +138,7 @@
     "i18n:report": "npm run i18n:check && echo 'i18n reports generated: i18n-audit-report.md and hardcoded-strings-report.md",
     "build:cache": "node scripts/cached-build.cjs",
     "errors:report": "node scripts/report-errors-to-cursor.cjs",
+    "errors:autofix": "node scripts/cursor-autofix.cjs",
     "errors:report-codex": "node scripts/report-errors-to-codex.cjs"
   },
   "prisma": {

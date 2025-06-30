@@ -33,4 +33,11 @@ jobs:
         env:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
           CURSOR_PROJECT_ID: ${{ secrets.CURSOR_PROJECT_ID }}
-        run: npm run errors:report 
+        run: npm run errors:report
+      - name: Auto-fix with Cursor (experimental)
+        if: steps.tests.outputs.status == 'failed'
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          CURSOR_PROJECT_ID: ${{ secrets.CURSOR_PROJECT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run errors:autofix 
