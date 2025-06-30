@@ -17,6 +17,7 @@ The project is structured as a monorepo and includes:
 -   **SDK:** A software development kit is present in `sdk/`, likely for interacting with Zion platform services.
 -   **Documentation:** General documentation is in `docs/`, with specific component documentation potentially within their respective directories.
 -   **Testing:** Extensive test suites using Vitest and Cypress are in `tests/` and `cypress/`. See **[docs/QA_TESTING_CHECKLIST.md](docs/QA_TESTING_CHECKLIST.md)** for common QA steps.
+-   **Connect Portal:** Access the portal at `/portal` for account management and settings. The previous `/app` path is deprecated.
 
 ## Key Technologies
 
