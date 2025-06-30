@@ -20,8 +20,8 @@ jobs:
         run: npm ci --prefer-offline --no-audit --progress=false
       - name: Run tests & collect logs
         id: tests
-        run: |
-          npm run test:collect || echo "::set-output name=status::failed"
+        continue-on-error: true
+        run: npm run test:collect
       - name: Upload log archive
         if: always()
         uses: actions/upload-artifact@v4
@@ -29,13 +29,13 @@ jobs:
           name: test-logs
           path: logs/archive/*.tar.gz
       - name: Report errors to Cursor (only on failures)
-        if: steps.tests.outputs.status == 'failed'
+        if: steps.tests.outcome == 'failure'
         env:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
           CURSOR_PROJECT_ID: ${{ secrets.CURSOR_PROJECT_ID }}
         run: npm run errors:report
       - name: Auto-fix with Cursor (experimental)
-        if: steps.tests.outputs.status == 'failed'
+        if: steps.tests.outcome == 'failure'
         env:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
           CURSOR_PROJECT_ID: ${{ secrets.CURSOR_PROJECT_ID }}
