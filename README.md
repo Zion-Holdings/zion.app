@@ -73,6 +73,7 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **[Logging Guidelines](docs/LOGGING_GUIDELINES.md)** - Usage instructions for the project logger
 - **Collect Logs** - `npm run logs:collect` bundles recent logs under `logs/archive/`
 - **Analyze Logs** - `npm run logs:summary` scans collected logs and reports missing translation keys
+- **Missing Key Log** - Any translation keys not found at runtime are appended to `logs/missing-keys.log`
 
 ### CDN for Static Assets
 

@@ -54,3 +54,4 @@ tar -czf "$ARCHIVE" -C "$STAGING_DIR" .
 rm -rf "$STAGING_DIR"
 
 echo "Logs archived to $ARCHIVE"
+
