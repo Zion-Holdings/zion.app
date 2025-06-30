@@ -371,18 +371,18 @@ const nextConfig = {
     if (!isServer) {
       config.optimization = {
         ...config.optimization,
-        // Enhanced chunk splitting for better performance
+        // Simplified chunk splitting to prevent webpack validation errors
         splitChunks: {
           chunks: 'all',
           minSize: 20000,
-          maxSize: 150000, // Reduced to 150KB for faster loading
-          maxAsyncRequests: 20, // Optimized for faster loading
-          maxInitialRequests: 15, // Optimized for faster initial load
+          maxSize: 150000,
+          maxAsyncRequests: 20,
+          maxInitialRequests: 15,
           cacheGroups: {
             default: false,
             vendors: false,
             
-            // Framework chunk for React/Next.js (highest priority)
+            // Framework chunk for React/Next.js
             framework: {
               chunks: 'all',
               name: 'framework',
@@ -392,77 +392,7 @@ const nextConfig = {
               reuseExistingChunk: true,
             },
             
-            // Heavy libraries chunk (separate from framework) - optimized
-            heavy: {
-              name: 'heavy-libs',
-              test: /[\\/]node_modules[\\/](three|firebase|helia|@google\/model-viewer|@chainsafe)[\\/]/,
-              priority: 45,
-              enforce: true,
-              reuseExistingChunk: true,
-              chunks: 'async', // Load heavy libs asynchronously only
-            },
-            
-            // Chart and visualization libraries - async only
-            charts: {
-              name: 'chart-libs',
-              test: /[\\/]node_modules[\\/](recharts|d3|chart\.js)[\\/]/,
-              priority: 40,
-              enforce: true,
-              reuseExistingChunk: true,
-              chunks: 'async',
-            },
-            
-            // UI libraries chunk - optimized size
-            ui: {
-              name: 'ui-libs',
-              test: /[\\/]node_modules[\\/](@radix-ui|lucide-react|clsx|class-variance-authority)[\\/]/,
-              priority: 35,
-              enforce: true,
-              reuseExistingChunk: true,
-              maxSize: 100000, // Smaller UI chunks for faster loading
-            },
-            
-            // Date and utility libraries
-            utils: {
-              name: 'util-libs',
-              test: /[\\/]node_modules[\\/](date-fns|lodash|fuse\.js|axios)[\\/]/,
-              priority: 30,
-              enforce: true,
-              reuseExistingChunk: true,
-            },
-            
-            // Crypto and blockchain libraries - async only
-            crypto: {
-              name: 'crypto-libs',
-              test: /[\\/]node_modules[\\/](ethers|@reown|web3|@orbitdb|libp2p)[\\/]/,
-              priority: 28,
-              enforce: true,
-              reuseExistingChunk: true,
-              chunks: 'async', // Crypto libs only when needed
-            },
-            
-            // Auth and validation libraries
-            auth: {
-              name: 'auth-libs',
-              test: /[\\/]node_modules[\\/](next-auth|@supabase|yup|zod|@sentry)[\\/]/,
-              priority: 26,
-              enforce: true,
-              reuseExistingChunk: true,
-            },
-            
-            // Markdown and content processing - async only
-            content: {
-              name: 'content-libs',
-              test: /[\\/]node_modules[\\/](react-markdown|rehype|remark|jspdf)[\\/]/,
-              priority: 24,
-              enforce: true,
-              reuseExistingChunk: true,
-              chunks: 'async',
-            },
-            
-            // Development tools removed to prevent webpack validation errors
-            
-            // General vendor libraries - optimized
+            // General vendor libraries
             vendor: {
               chunks: 'all',
               test: /[\\/]node_modules[\\/]/,
@@ -470,35 +400,27 @@ const nextConfig = {
               priority: 20,
               enforce: true,
               reuseExistingChunk: true,
-              minChunks: 3, // Only if used by at least 3 modules
-              maxSize: 120000, // Smaller vendor chunks
+              minChunks: 2,
             },
             
             // Common application code
             common: {
               name: 'common',
-              minChunks: 4, // Only truly common code
+              minChunks: 2,
               chunks: 'all',
               priority: 10,
               enforce: true,
               reuseExistingChunk: true,
-              maxSize: 80000, // Smaller common chunks
             },
           },
         },
         
-        // Enhanced optimization settings
+        // Basic optimization settings
         moduleIds: 'deterministic',
         chunkIds: 'deterministic',
-        
-        // Better tree shaking - safely configured to avoid webpack conflicts
-        usedExports: !dev, // Enable only in production
-        sideEffects: false, // Always false to enable tree shaking
-        
-        // Module concatenation for better performance
-        concatenateModules: !dev, // Only in production
-        
-        // Minimize bundles in production
+        usedExports: !dev,
+        sideEffects: false,
+        concatenateModules: !dev,
         minimize: !dev,
       };
       
