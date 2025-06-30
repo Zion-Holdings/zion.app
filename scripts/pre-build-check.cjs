@@ -22,6 +22,36 @@ const { validateEnvironment } = require('./validate-environment.cjs');
 console.log('🚀 Pre-build Environment Check');
 console.log('================================\n');
 
+// Verify essential dependencies are installed
+function checkDependencies() {
+  console.log('🔍 Checking dependencies...');
+  const required = [
+    'react',
+    'react-dom',
+    'react-router-dom',
+    'lucide-react',
+    '@tanstack/react-query'
+  ];
+  const missing = required.filter(dep => {
+    try {
+      require.resolve(dep);
+      return false;
+    } catch {
+      return true;
+    }
+  });
+
+  if (missing.length > 0) {
+    console.error(`❌ Missing dependencies: ${missing.join(', ')}`);
+    console.error('Please run "./setup.sh npm" to install required packages.');
+    process.exit(1);
+  }
+
+  console.log('✅ All required dependencies found.\n');
+}
+
+checkDependencies();
+
 // Special handling for Netlify environment
 if (process.env.NETLIFY === 'true') {
   console.log('🌐 Detected Netlify build environment');
