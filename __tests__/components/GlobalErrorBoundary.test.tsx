@@ -1,19 +1,18 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
-// We might not need GlobalErrorFallback directly if we test through GlobalErrorBoundary
-// import GlobalErrorFallback from '@/components/GlobalErrorBoundary'; // Keep if direct testing is chosen
+import { vi, describe, it, expect, beforeAll, afterAll, type SpyInstance } from 'vitest';
 
 // Mocking logError to prevent actual logging during tests
-jest.mock('@/utils/logError', () => ({
-  logError: jest.fn(),
+vi.mock('@/utils/logError', () => ({
+  logError: vi.fn(),
 }));
 
 // Mocking console.error to keep test output clean
-let consoleErrorMock: jest.SpyInstance;
+let consoleErrorMock: SpyInstance;
 
 beforeAll(() => {
-  consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
+  consoleErrorMock = vi.spyOn(console, 'error').mockImplementation(() => {});
 });
 
 afterAll(() => {
@@ -65,7 +64,7 @@ describe('GlobalErrorBoundary', () => {
     // @ts-expect-error - Intentionally deleting window.location for test mocking
     delete window.location;
     // Intentionally overriding window.location with mock for testing
-    window.location = { ...originalLocation, reload: jest.fn() };
+    window.location = { ...originalLocation, reload: vi.fn() as () => void };
 
     render(
       <GlobalErrorBoundary>

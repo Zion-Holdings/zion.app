@@ -5,7 +5,9 @@ import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import { useRouter } from 'next/router';
 import { FeedbackProvider } from '@/context/FeedbackContext';
 import { FeedbackWidget } from '@/components/feedback/FeedbackWidget';
-jest.mock('@/hooks/useAuth', () => ({ useAuth: () => ({ user: null }) }));
+import { vi, test, expect } from 'vitest';
+
+vi.mock('@/hooks/useAuth', () => ({ useAuth: () => ({ user: null }) }));
 
 function TestRoutes() {
   const router = useRouter();

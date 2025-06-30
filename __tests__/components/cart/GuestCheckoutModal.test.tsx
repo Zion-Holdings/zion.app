@@ -2,18 +2,20 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { GuestCheckoutModal } from '@/components/cart/GuestCheckoutModal'; // Adjust path as necessary
+import { vi, describe, test, expect, beforeEach, type MockInstance } from 'vitest';
+import * as getStripeUtils from '@/utils/getStripe';
 
 // Mock isProdDomain as it's used in the component
-jest.mock('@/utils/getStripe', () => ({
-  isProdDomain: jest.fn(() => false), // Default to false (not prod) to show test data warning
+vi.mock('@/utils/getStripe', () => ({
+  isProdDomain: vi.fn(() => false),
 }));
 
 // Mock alert, since the component uses it for diagnostics
-global.alert = jest.fn();
+global.alert = vi.fn();
 
 describe('GuestCheckoutModal', () => {
-  const mockOnOpenChange = jest.fn();
-  const mockOnSubmit = jest.fn();
+  const mockOnOpenChange = vi.fn();
+  const mockOnSubmit = vi.fn();
 
   const defaultProps = {
     open: true,
@@ -22,12 +24,10 @@ describe('GuestCheckoutModal', () => {
   };
 
   beforeEach(() => {
-    // Reset mocks before each test
     mockOnOpenChange.mockClear();
     mockOnSubmit.mockClear();
-    (global.alert as jest.Mock).mockClear();
-    // Reset the mock for isProdDomain if needed for specific tests
-    (jest.requireMock('@/utils/getStripe') as { isProdDomain: jest.Mock }).isProdDomain.mockReturnValue(false);
+    (global.alert as MockInstance<any,any>).mockClear();
+    (getStripeUtils.isProdDomain as MockInstance<any,any>).mockReturnValue(false);
   });
 
   test('Basic Rendering Test', () => {
@@ -37,7 +37,6 @@ describe('GuestCheckoutModal', () => {
     expect(screen.getByPlaceholderText('your.email@example.com')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Enter your full shipping address...')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Continue to Payment' })).toBeInTheDocument();
-    // Test data warning should be visible by default mock
     expect(screen.getByText(/Pay with test data/)).toBeInTheDocument();
   });
 
@@ -88,7 +87,7 @@ describe('GuestCheckoutModal', () => {
   });
 
   test('Should not show test data warning if isProdDomain is true', () => {
-    (jest.requireMock('@/utils/getStripe') as { isProdDomain: jest.Mock }).isProdDomain.mockReturnValue(true);
+    (getStripeUtils.isProdDomain as MockInstance<any,any>).mockReturnValue(true);
     render(<GuestCheckoutModal {...defaultProps} />);
     expect(screen.queryByText(/Pay with test data/)).not.toBeInTheDocument();
   });
@@ -101,20 +100,16 @@ describe('GuestCheckoutModal', () => {
     const submitButton = screen.getByRole('button', { name: 'Continue to Payment' });
 
     fireEvent.change(emailInput, { target: { value: 'test@@example.com' } });
-    // The component does not normalize email during typing.
-    // The email state will be 'test@@example.com'.
     expect(emailInput.value).toBe('test@@example.com');
 
     fireEvent.change(addressInput, { target: { value: 'sample address' } });
     fireEvent.click(submitButton);
 
     expect(mockOnSubmit).toHaveBeenCalledTimes(1);
-    // The submitted email should be the raw value from the state.
     expect(mockOnSubmit).toHaveBeenCalledWith({
       email: 'test@@example.com',
       address: 'sample address',
     });
-    // The component does not alert for '@@' in email.
     expect(global.alert).not.toHaveBeenCalled();
   });
 
@@ -126,34 +121,20 @@ describe('GuestCheckoutModal', () => {
     const submitButton = screen.getByRole('button', { name: 'Continue to Payment' });
 
     fireEvent.change(emailInput, { target: { value: 'contact@@@domain.com' } });
-    // The component does not normalize email during typing.
     expect(emailInput.value).toBe('contact@@@domain.com');
 
     fireEvent.change(addressInput, { target: { value: 'another sample address' } });
     fireEvent.click(submitButton);
 
     expect(mockOnSubmit).toHaveBeenCalledTimes(1);
-    // The submitted email should be the raw value from the state.
     expect(mockOnSubmit).toHaveBeenCalledWith({
       email: 'contact@@@domain.com',
       address: 'another sample address',
     });
-    // The component does not alert for '@@@' in email.
     expect(global.alert).not.toHaveBeenCalled();
   });
 
   describe('Required Fields Test', () => {
-    // Note: These tests simulate the behavior if HTML5 validation prevents submission.
-    // If the form submission is allowed and validation is purely backend, these will fail.
-    // The component's current structure relies on the `required` prop on `Input` fields.
-    // `fireEvent.click` on a submit button for a form with `required` fields that are empty
-    // might not trigger the `onSubmit` handler in a testing environment if the browser's
-    // default validation behavior is perfectly mimicked. However, JSDOM doesn't implement
-    // HTML5 form validation to that extent, so `onSubmit` might still be called.
-    // If `onSubmit` is called, the test should check that it's called with empty values
-    // or that a custom validation logic (if any) within the component prevents proceeding.
-    // For this component, it directly calls `onSubmit` prop.
-
     let emailInput: HTMLInputElement;
     let addressInput: HTMLInputElement;
     let submitButton: HTMLElement;
@@ -185,10 +166,8 @@ describe('GuestCheckoutModal', () => {
     });
   });
 
-  // Test for dialog close, though onOpenChange is opaque here
   test('Dialog onOpenChange is called (simulating close)', () => {
     render(<GuestCheckoutModal {...defaultProps} open={true} />);
-    // This is a placeholder, actual close simulation depends on Dialog internals
   });
 
 });

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Link from 'next/link'; // Import Link
 
 export default function LoginRedirect() {
   const router = useRouter();
@@ -29,9 +30,9 @@ export default function LoginRedirect() {
           <p className="text-gray-600">Redirecting to login...</p>
           <p className="text-sm text-gray-500 mt-2">
             If you're not redirected automatically,{' '}
-            <a href="/auth/login" className="text-blue-600 hover:underline">
+            <Link href="/auth/login" className="text-blue-600 hover:underline">
               click here
-            </a>
+            </Link>
           </p>
         </div>
       </div>

@@ -36,7 +36,7 @@ export function LanguageDetectionPopup() {
       setDetectedLanguage(browserLang);
       setOpen(true);
     }
-  }, []);
+  }, [currentLanguage, supportedLanguages]); // Added dependencies
 
   if (!detectedLanguage) return null;
 

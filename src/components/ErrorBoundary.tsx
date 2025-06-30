@@ -1,6 +1,7 @@
 import React, { Component, ReactNode } from 'react';
-import { Button } from './ui/button';
-import { AlertTriangle } from 'lucide-react';
+// import { Button } from './ui/button'; // Unused
+// import { AlertTriangle } from 'lucide-react'; // Unused
+import { logError } from '@/utils/productionLogger'; // Or your preferred logger
 
 interface Props {
   children: ReactNode;
@@ -23,7 +24,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: any) {
-    console.error('ErrorBoundary caught an error:', error, errorInfo);
+    logError('ErrorBoundary caught an error:', { data: { error, errorInfo } });
   }
 
   render() {

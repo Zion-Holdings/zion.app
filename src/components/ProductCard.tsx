@@ -35,6 +35,9 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
   const [imageError, setImageError] = useState(false);
   const [isRedirecting, setIsRedirecting] = useState(false); // Added for loading state
   const router = useRouter();
+  const dispatch = useDispatch<AppDispatch>(); // Moved up
+  const isMobile = useMediaQuery('(max-width: 768px)'); // Moved up
+  const isTablet = useMediaQuery('(max-width: 1200px)'); // Moved up
 
   const stockStatus =
     product.stock === undefined
@@ -74,7 +77,7 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
   }
 
   const active = isWishlisted(product.id);
-  const dispatch = useDispatch<AppDispatch>();
+  // const dispatch = useDispatch<AppDispatch>(); // Removed from here
 
   // Title is now guaranteed to be a non-empty string by the check above.
   const productTitle = product.title;
@@ -113,8 +116,8 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
     }
   };
 
-  const isMobile = useMediaQuery('(max-width: 768px)');
-  const isTablet = useMediaQuery('(max-width: 1200px)');
+  // const isMobile = useMediaQuery('(max-width: 768px)'); // Moved up
+  // const isTablet = useMediaQuery('(max-width: 1200px)'); // Moved up
 
   const imageSizes = isMobile ? '100vw' : isTablet ? '50vw' : '33vw';
 
@@ -180,7 +183,7 @@ export default function ProductCard({ product, onBuy, onBuyAttemptComplete, buyD
         </div>
         <h3 className="font-semibold mb-1">{productTitle}</h3>
       </Link>
-      {product.price != null && (
+      {product.price !== null && (
         <p className="text-sm text-muted-foreground">
           {product.currency}
           {product.price}

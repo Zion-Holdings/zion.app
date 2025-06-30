@@ -1,6 +1,5 @@
-
-import { LucideIcon } from "lucide-react";
 import {
+  type LucideIcon, // Use 'type' for type-only imports
   BadgeCheck, // publishing a listing
   Award,      // top contributor
   Star,       // profile complete

@@ -50,7 +50,7 @@ export const NotificationCenter: React.FC = () => {
 
       loadNotifications();
     }
-  }, [open, loadedOnce, fetchNotifications]);
+  }, [open, loadedOnce, fetchNotifications, enqueueSnackbar]); // Added enqueueSnackbar
 
   const handleMarkAllAsRead = async () => {
     try {

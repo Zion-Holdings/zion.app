@@ -1,4 +1,6 @@
 // Test for cart and checkout fixes - Issue #7
+import { describe, test, expect, vi } from 'vitest';
+
 describe('Cart and Checkout Functionality - Issue #7 Fix', () => {
   test('cart page is accessible without authentication', () => {
     // Test that cart page can be accessed without login
@@ -23,7 +25,7 @@ describe('Cart and Checkout Functionality - Issue #7 Fix', () => {
       quantity: 1
     };
 
-    const mockDispatch = jest.fn();
+    const mockDispatch = vi.fn();
 
     // Simulate add to cart action
     const addToCartAction = {
@@ -81,13 +83,14 @@ describe('Cart and Checkout Functionality - Issue #7 Fix', () => {
 
     // Simulate localStorage persistence
     const mockLocalStorage = {
-      getItem: jest.fn(() => JSON.stringify(mockCartItems)),
-      setItem: jest.fn(),
-      removeItem: jest.fn()
+      getItem: vi.fn(() => JSON.stringify(mockCartItems)),
+      setItem: vi.fn(),
+      removeItem: vi.fn(),
+      clear: vi.fn() // Added clear for completeness
     };
 
     const stored = mockLocalStorage.getItem('zion_cart');
-    const parsedItems = JSON.parse(stored);
+    const parsedItems = JSON.parse(stored!); // Added non-null assertion
 
     expect(parsedItems).toEqual(mockCartItems);
     expect(parsedItems[0].name).toBe('NVIDIA A100 GPU Server');

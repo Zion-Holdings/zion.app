@@ -22,19 +22,23 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 import RootErrorBoundary from '@/components/RootErrorBoundary';
 import { ApiErrorBoundary } from '@/components/ApiErrorBoundary';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
-import { BetaBanner } from '@/components/BetaBanner';
+// import { BetaBanner } from '@/components/BetaBanner'; // Unused
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AppLayout } from '@/layout/AppLayout';
 import ProductionErrorBoundary from '@/components/ProductionErrorBoundary';
 import dynamic from 'next/dynamic';
-import { PerformanceMonitor } from '@/components/ui/performance-monitor';
-import { BundleAnalyzer } from '@/components/ui/bundle-analyzer';
-import { QuickActions } from '@/components/ui/quick-actions';
+// import { PerformanceMonitor } from '@/components/ui/performance-monitor'; // Unused
+// import { BundleAnalyzer } from '@/components/ui/bundle-analyzer'; // Unused
+// import { QuickActions } from '@/components/ui/quick-actions'; // Unused
 import { logInfo, logWarn, logError } from '@/utils/productionLogger';
 
 
 // Dynamically load heavy components to improve initial load time
-const IntercomChat = dynamic(() => import('@/components/IntercomChat'), {
+// const IntercomChat = dynamic(() => import('@/components/IntercomChat'), { // IntercomChat variable unused
+//   ssr: false,
+//   loading: () => null
+// });
+dynamic(() => import('@/components/IntercomChat'), { // Import for side effects if needed, or remove if not used
   ssr: false,
   loading: () => null
 });
@@ -45,7 +49,7 @@ import Head from 'next/head';
 // Import global Tailwind styles so they load before the app renders
 import '../src/index.css';
 import * as Sentry from '@sentry/nextjs';
-import getConfig from 'next/config';
+// import getConfig from 'next/config'; // Unused
 import { initializeGlobalErrorHandlers } from '@/utils/globalAppErrors';
 import {
   validateProductionEnvironment,
@@ -61,8 +65,8 @@ import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
 import { RouteChangeHandler } from '@/components/RouteChangeHandler';
 import RouteSEO from '@/components/RouteSEO';
 import { registerServiceWorker } from '@/serviceWorkerRegistration';
-import PageTransition from '@/components/PageTransition';
-import { AnimatePresence } from 'framer-motion';
+// import PageTransition from '@/components/PageTransition'; // Unused
+// import { AnimatePresence } from 'framer-motion'; // Unused
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
@@ -115,7 +119,7 @@ const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  console.log('Current route:', router.asPath, router.pathname);
+  // console.log('Current route:', router.asPath, router.pathname); // Removed for linting
   const [queryClient] = React.useState(() => new QueryClient({
     defaultOptions: {
       queries: {
@@ -308,25 +312,23 @@ function MyApp({ Component, pageProps }: AppProps) {
                                                   {...pageProps}
                                                 />
                                               </ErrorBoundary>
-                                              <ErrorResetOnRouteChange /> {/* Might be important for some error states */}
+                                              <ErrorResetOnRouteChange />
                                               <ToastContainer />
                                               <OfflineIndicator />
-                                              {/* <IntercomChat /> */}
-                                              {/* <PerformanceMonitor /> */}
-                                              {/* <BundleAnalyzer /> */}
-                                              {/* <QuickActions /> */}
+                                              {/* IntercomChat is dynamically imported but not rendered here explicitly */}
+                                              {/* PerformanceMonitor, BundleAnalyzer, QuickActions were commented out/removed */}
                                             </AppLayout>
                                           </ThemeProvider>
-                                        </FeedbackProvider> {/* Keep for now */}
-                                      </AnalyticsProvider> {/* Keep for now */}
-                                    </CartProvider> {/* Keep for now */}
-                                  </WalletProvider> {/* Keep for now */}
-                                </LanguageProviderWrapper> {/* Keep for now */}
-                              </WhitelabelProvider> {/* Keep for now */}
-                            </AuthProvider> {/* Essential */}
-                          </ErrorProvider> {/* Keep for now */}
-                        </I18nextProvider> {/* Likely important for text rendering */}
-                      </ReduxProvider> {/* Essential */}
+                                        </FeedbackProvider>
+                                      </AnalyticsProvider>
+                                    </CartProvider>
+                                  </WalletProvider>
+                                </LanguageProviderWrapper>
+                              </WhitelabelProvider>
+                            </AuthProvider>
+                          </ErrorProvider>
+                        </I18nextProvider>
+                      </ReduxProvider>
                     </ApiErrorBoundary>
                   </QueryClientProvider>
                 </GlobalErrorBoundary>

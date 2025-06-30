@@ -1,25 +1,25 @@
 import { register } from '../sentry';
 import * as Sentry from '@sentry/nextjs';
 import { Integrations } from "@sentry/tracing"; // Import this if it's used in the Sentry.init call options
+import { vi, describe, test, expect, beforeEach, afterEach, type SpyInstance } from 'vitest';
 
 describe('Sentry Initialization', () => {
-  let consoleWarnSpy: jest.SpyInstance;
-  let sentryInitSpy: jest.SpyInstance;
+  let consoleWarnSpy: SpyInstance<[message?: any, ...optionalParams: any[]], void>;
+  let sentryInitSpy: SpyInstance<[options: Sentry.BrowserOptions | Sentry.NodeOptions], void>;
   const originalEnv = { ...process.env }; // Shallow copy to preserve original values
 
   beforeEach(() => {
     // Reset process.env for each test to ensure isolation
     process.env = { ...originalEnv };
     // Mock console.warn
-    consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     // Mock Sentry.init
-    sentryInitSpy = jest.spyOn(Sentry, 'init').mockImplementation(() => {});
+    sentryInitSpy = vi.spyOn(Sentry, 'init').mockImplementation(() => {});
   });
 
   afterEach(() => {
     // Restore all mocks
-    jest.restoreAllMocks();
-    // No need to restore process.env here as Jest does it or we re-initialize it in beforeEach
+    vi.restoreAllMocks();
   });
 
   test('should warn and not initialize Sentry if DSN is missing', () => {

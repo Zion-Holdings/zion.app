@@ -2,19 +2,25 @@ import { createMocks, RequestMethod } from 'node-mocks-http';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import handler from '@/pages/api/newsletter';
 import { mailchimpService } from '@/integrations/mailchimp';
+import { sendEmailWithSendGrid } from '@/lib/email';
+import { vi, describe, it, expect, beforeEach, type MockInstance } from 'vitest';
 
-jest.mock('@/integrations/mailchimp', () => ({
-  mailchimpService: { addSubscriber: jest.fn() }
+vi.mock('@/integrations/mailchimp', () => ({
+  mailchimpService: { addSubscriber: vi.fn() }
 }));
-jest.mock('@/lib/email', () => ({
-  sendEmailWithSendGrid: jest.fn().mockResolvedValue(undefined)
+vi.mock('@/lib/email', () => ({
+  sendEmailWithSendGrid: vi.fn().mockResolvedValue(undefined)
 }));
 
 describe('/api/newsletter API', () => {
-  const mc = mailchimpService as { addSubscriber: jest.Mock };
+  // Type assertion for the mocked mailchimpService
+  const mc = mailchimpService as { addSubscriber: MockInstance<[any], Promise<any>> };
+  // Type assertion for the mocked sendEmailWithSendGrid
+  const mockedSendEmail = sendEmailWithSendGrid as MockInstance<[any], Promise<void>>;
+
 
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('rejects non-POST requests', async () => {
@@ -48,7 +54,7 @@ describe('/api/newsletter API', () => {
         mergeFields: expect.any(Object)
       })
     );
-    const { sendEmailWithSendGrid } = jest.requireMock('@/lib/email');
-    expect(sendEmailWithSendGrid).toHaveBeenCalled();
+    // Access the mock directly if it's hoisted and available in scope
+    expect(mockedSendEmail).toHaveBeenCalled();
   });
 });

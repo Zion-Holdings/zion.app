@@ -4,6 +4,7 @@ import PrimaryNav from '@/layout/PrimaryNav';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
+import { describe, it, expect } from 'vitest';
 
 const mockStore = configureStore([]);
 

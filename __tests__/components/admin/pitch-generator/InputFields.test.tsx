@@ -2,19 +2,20 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import InputFields from '@/components/admin/pitch-generator/InputFields';
+import { vi, describe, test, expect, beforeEach } from 'vitest';
 
 // Mock the next/router
-jest.mock('next/router', () => ({
-  useRouter: jest.fn(),
+vi.mock('next/router', () => ({
+  useRouter: vi.fn(),
 }));
 
 describe('InputFields Component', () => {
-  const mockOnSubmit = jest.fn();
+  const mockOnSubmit = vi.fn();
 
   beforeEach(() => {
     mockOnSubmit.mockClear();
     // Mock URL.createObjectURL
-    global.URL.createObjectURL = jest.fn(() => 'mock-url');
+    global.URL.createObjectURL = vi.fn(() => 'mock-url');
   });
 
   test('renders all input fields and a submit button', () => {

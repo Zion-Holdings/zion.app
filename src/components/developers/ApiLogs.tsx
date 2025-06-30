@@ -18,7 +18,7 @@ export function ApiLogs() {
   // Load logs on mount and when pagination changes
   useEffect(() => {
     fetchApiLogs(pageSize, currentPage * pageSize);
-  }, [pageSize, currentPage]);
+  }, [pageSize, currentPage, fetchApiLogs]); // Added fetchApiLogs
   
   const handleRefresh = () => {
     fetchApiLogs(pageSize, currentPage * pageSize);

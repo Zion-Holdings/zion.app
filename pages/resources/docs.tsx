@@ -1,5 +1,6 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
+import Link from 'next/link'; // Import Link
 import { SEO } from '@/components/SEO';
 import YoutubeEmbed from '@/components/YoutubeEmbed';
 
@@ -53,9 +54,9 @@ export default function ResourcesDocsPage() {
             <p className="text-zion-slate-light mb-4">
               Learn the basics of using Zion's platform and services.
             </p>
-            <a href="/docs/getting-started" className="text-blue-400 hover:text-blue-300">
+            <Link href="/docs/getting-started" className="text-blue-400 hover:text-blue-300">
               Read more →
-            </a>
+            </Link>
           </div>
           
           <div className="bg-zion-blue-light p-6 rounded-lg border border-zion-blue-light">
@@ -63,9 +64,9 @@ export default function ResourcesDocsPage() {
             <p className="text-zion-slate-light mb-4">
               Complete API documentation with examples and best practices.
             </p>
-            <a href="/docs/api-reference" className="text-blue-400 hover:text-blue-300">
+            <Link href="/docs/api-reference" className="text-blue-400 hover:text-blue-300">
               Read more →
-            </a>
+            </Link>
           </div>
 
           <div className="bg-zion-blue-light p-6 rounded-lg border border-zion-blue-light">
@@ -73,9 +74,9 @@ export default function ResourcesDocsPage() {
             <p className="text-zion-slate-light mb-4">
               Explore interactive docs generated from our OpenAPI specification.
             </p>
-            <a href="/docs/swagger" className="text-blue-400 hover:text-blue-300">
+            <Link href="/docs/swagger" className="text-blue-400 hover:text-blue-300">
               Try it →
-            </a>
+            </Link>
           </div>
           
           <div className="bg-zion-blue-light p-6 rounded-lg border border-zion-blue-light">
@@ -83,10 +84,11 @@ export default function ResourcesDocsPage() {
             <p className="text-zion-slate-light mb-4">
               Step-by-step guides for integrating Zion into your applications.
             </p>
-            <a href="/docs/integration" className="text-blue-400 hover:text-blue-300">
+            <Link href="/docs/integration" className="text-blue-400 hover:text-blue-300">
               Read more →
-            </a>
+            </Link>
           </div>
+          {/* Removed duplicate link blocks that were present in original lint output */}
         </div>
 
         <div className="mt-12">

@@ -3,21 +3,22 @@ import { render, screen } from '@testing-library/react';
 import * as Sentry from '@sentry/nextjs';
 import IndexPage, { getServerSideProps, fetchHomeData } from '../../pages/index';
 import ErrorBoundary from '@/components/ErrorBoundary';
+import { vi, describe, it, expect, type MockInstance } from 'vitest';
 
-jest.mock('@sentry/nextjs', () => ({
-  captureException: jest.fn(),
+vi.mock('@sentry/nextjs', () => ({
+  captureException: vi.fn(),
 }));
 
-jest.mock('../../pages/index', () => {
-  const originalModule = jest.requireActual('../../pages/index');
+vi.mock('../../pages/index', async () => {
+  const originalModule = await vi.importActual('../../pages/index') as any;
   return {
     __esModule: true,
     ...originalModule,
-    fetchHomeData: jest.fn(),
+    fetchHomeData: vi.fn(),
   };
 });
 
-const mockedFetchHomeData = fetchHomeData as jest.Mock;
+const mockedFetchHomeData = fetchHomeData as MockInstance<any,any>;
 
 describe('ErrorBoundary integration', () => {
   it('renders fallback and reports error when getServerSideProps throws', async () => {

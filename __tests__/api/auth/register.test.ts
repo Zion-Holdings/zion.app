@@ -1,21 +1,19 @@
 import { createMocks } from 'node-mocks-http';
 import type { NextApiRequest, NextApiResponse } from 'next';
-// Import the handler directly to test it
-// We will extract getAuth0ManagementToken for separate unit tests later if needed,
-// or test it implicitly via the main handler. For now, let's focus on the handler.
 import registerHandler from '../../../pages/api/auth/register';
+import { vi, describe, it, expect, beforeEach, afterAll, type MockInstance } from 'vitest';
 
 // Mock the global fetch function
-global.fetch = jest.fn();
+global.fetch = vi.fn();
 
-const mockFetch = global.fetch as jest.Mock;
+const mockFetch = global.fetch as MockInstance<any, any>;
 
 describe('/api/auth/register API Endpoint', () => {
   const ORIGINAL_ENV = { ...process.env };
   const MOCK_AUTH0_DOMAIN = 'https://test-tenant.us.auth0.com';
 
   beforeEach(() => {
-    jest.resetModules(); // Clears module cache, useful if modules have internal state or rely on env vars at import time
+    vi.resetModules(); // Clears module cache
     process.env = {
       ...ORIGINAL_ENV,
       AUTH0_ISSUER_BASE_URL: MOCK_AUTH0_DOMAIN,
@@ -23,12 +21,12 @@ describe('/api/auth/register API Endpoint', () => {
       AUTH0_CLIENT_SECRET: 'test-client-secret',
     };
     mockFetch.mockReset();
-    // Reset console spies if any, e.g., jest.spyOn(console, 'error').mockImplementation(() => {});
+    // Reset console spies if any, e.g., vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterAll(() => {
     process.env = ORIGINAL_ENV; // Restore original environment
-    jest.restoreAllMocks(); // Restore all mocks, including console if spied upon
+    vi.restoreAllMocks(); // Restore all mocks
   });
 
   it('should return 405 if method is not POST', async () => {
@@ -231,8 +229,8 @@ describe('/api/auth/register API Endpoint', () => {
         });
 
       // Suppress console.warn and console.error for this test to keep output clean
-      const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
-      const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+      const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+      const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
       const { req, res } = createMocks({
         method: 'POST',
@@ -255,7 +253,7 @@ describe('/api/auth/register API Endpoint', () => {
         ok: true,
         json: async () => ({ token_type: 'Bearer' }), // No access_token
       });
-      const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+      const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
 
       const { req, res } = createMocks({
@@ -283,8 +281,8 @@ describe('/api/auth/register API Endpoint', () => {
           json: async () => ({ user_id: 'auth0|789', email: 'test@example.com', name: 'Test User' }),
         });
 
-      const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
-      const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+      const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+      const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
       const { req, res } = createMocks({
         method: 'POST',

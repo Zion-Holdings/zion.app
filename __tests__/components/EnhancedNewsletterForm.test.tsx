@@ -3,7 +3,13 @@ import { vi, expect, test, describe, beforeEach, afterEach } from 'vitest';
 import { EnhancedNewsletterForm } from '@/components/EnhancedNewsletterForm';
 import * as toastHook from '@/hooks/use-toast';
 
-vi.mock('@/hooks/use-toast');
+vi.mock('@/hooks/use-toast', () => ({
+  toast: {
+    success: vi.fn(),
+    error: vi.fn(),
+    info: vi.fn(),
+  }
+}));
 
 describe('EnhancedNewsletterForm', () => {
   let originalFetch: typeof global.fetch;
@@ -11,6 +17,10 @@ describe('EnhancedNewsletterForm', () => {
   beforeEach(() => {
     originalFetch = global.fetch;
     vi.clearAllMocks();
+     // Ensure toast mocks are reset if they are part of the module factory
+    (toastHook.toast.success as ReturnType<typeof vi.fn>).mockClear();
+    (toastHook.toast.error as ReturnType<typeof vi.fn>).mockClear();
+    (toastHook.toast.info as ReturnType<typeof vi.fn>).mockClear();
   });
 
   afterEach(() => {
@@ -28,7 +38,7 @@ describe('EnhancedNewsletterForm', () => {
   });
 
   test('successful subscription shows success toast', async () => {
-    global.fetch = vi.fn().mockResolvedValue({ ok: true, json: vi.fn() }) as any;
+    global.fetch = vi.fn().mockResolvedValue({ ok: true, json: async () => ({}) }) as any;
     render(<EnhancedNewsletterForm />);
     fireEvent.change(screen.getByPlaceholderText(/enter your email/i), {
       target: { value: 'test@example.com' },
@@ -42,7 +52,7 @@ describe('EnhancedNewsletterForm', () => {
   test('API error shows error toast', async () => {
     global.fetch = vi
       .fn()
-      .mockResolvedValue({ ok: false, json: vi.fn().mockResolvedValue({ error: 'failed' }) }) as any;
+      .mockResolvedValue({ ok: false, json: async () => ({ error: 'failed' }) }) as any;
     render(<EnhancedNewsletterForm />);
     fireEvent.change(screen.getByPlaceholderText(/enter your email/i), {
       target: { value: 'test@example.com' },

@@ -15,6 +15,7 @@ export default function WishlistPage() {
   const { favorites, loading, toggleFavorite } = useFavorites();
   const { user, isLoading: isAuthLoading } = useAuth(); // Added isAuthLoading
   const router = useRouter(); // Changed from navigate
+  const { items, dispatch } = useCart(); // Moved useCart hook up
 
   useEffect(() => {
     // Redirect if not authenticated and auth loading is complete
@@ -27,7 +28,7 @@ export default function WishlistPage() {
     return null; // Or a loading spinner
   }
 
-  const { items, dispatch } = useCart();
+  // const { items, dispatch } = useCart(); // Original position
 
   const addToCart = (item: { id: string; title?: string; price?: number }) => {
     if (items.some(i => i.id === item.id)) return;

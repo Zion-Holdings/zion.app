@@ -3,20 +3,21 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import ConnectWalletButton from '@/components/ConnectWalletButton';
 import { useWallet } from '@/context/WalletContext';
 import { useTokenBalance } from '@/hooks/useTokenBalance';
+import { vi, describe, test, expect, type MockInstance } from 'vitest';
 
-jest.mock('@/context/WalletContext');
-jest.mock('@/hooks/useTokenBalance');
+vi.mock('@/context/WalletContext');
+vi.mock('@/hooks/useTokenBalance');
 
-const mockUseWallet = useWallet as jest.Mock;
-const mockUseTokenBalance = useTokenBalance as jest.Mock;
+const mockUseWallet = useWallet as MockInstance<any,any>;
+const mockUseTokenBalance = useTokenBalance as MockInstance<any,any>;
 
 describe('ConnectWalletButton', () => {
   test('renders connect button when disconnected', () => {
-    const connectWallet = jest.fn();
+    const connectWallet = vi.fn();
     mockUseWallet.mockReturnValue({
       isConnected: false,
       connectWallet,
-      disconnectWallet: jest.fn(),
+      disconnectWallet: vi.fn(),
       displayAddress: null,
       address: null,
       chainId: null,
@@ -31,10 +32,10 @@ describe('ConnectWalletButton', () => {
   });
 
   test('shows address and disconnect button when connected', () => {
-    const disconnectWallet = jest.fn();
+    const disconnectWallet = vi.fn();
     mockUseWallet.mockReturnValue({
       isConnected: true,
-      connectWallet: jest.fn(),
+      connectWallet: vi.fn(),
       disconnectWallet,
       displayAddress: '0x1234...abcd',
       address: '0x1234',

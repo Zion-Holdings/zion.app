@@ -5,14 +5,15 @@ import ProtectedRoute from '@/components/ProtectedRoute';
 import { useAuth } from '@/hooks/useAuth';
 import { useTenantAdminStatus } from '@/hooks/useWhitelabelTenant';
 import { useWhitelabel } from '@/context/WhitelabelContext';
+import { vi, describe, it, expect, beforeEach, type MockInstance } from 'vitest';
 
-jest.mock('@/hooks/useAuth');
-jest.mock('@/hooks/useWhitelabelTenant');
-jest.mock('@/context/WhitelabelContext');
+vi.mock('@/hooks/useAuth');
+vi.mock('@/hooks/useWhitelabelTenant');
+vi.mock('@/context/WhitelabelContext');
 
-const mockUseAuth = useAuth as jest.Mock;
-const mockUseTenantAdminStatus = useTenantAdminStatus as jest.Mock;
-const mockUseWhitelabel = useWhitelabel as jest.Mock;
+const mockUseAuth = useAuth as MockInstance<any,any>;
+const mockUseTenantAdminStatus = useTenantAdminStatus as MockInstance<any,any>;
+const mockUseWhitelabel = useWhitelabel as MockInstance<any,any>;
 
 beforeEach(() => {
   mockUseTenantAdminStatus.mockReturnValue({ isAdmin: false, isLoading: false });

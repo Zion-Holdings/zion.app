@@ -1,17 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import WalletPage from '@/pages/Wallet';
 import * as useWalletHook from '@/hooks/useWallet';
+import { vi, describe, it, expect } from 'vitest';
 
 describe('WalletPage', () => {
   it('renders balance heading', () => {
-    jest.spyOn(useWalletHook, 'useWallet').mockReturnValue({
+    vi.spyOn(useWalletHook, 'useWallet').mockReturnValue({
       wallet: { user_id: '1', balance: 100, updated_at: '' },
       transactions: [],
       loading: false,
-      fetchWallet: jest.fn(),
-      fetchTransactions: jest.fn(),
-      earnTokens: jest.fn(),
-      spendTokens: jest.fn(),
+      fetchWallet: vi.fn(),
+      fetchTransactions: vi.fn(),
+      earnTokens: vi.fn(),
+      spendTokens: vi.fn(),
     } as any);
 
     render(<WalletPage />);

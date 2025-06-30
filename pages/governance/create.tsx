@@ -77,7 +77,7 @@ const CreateProposalPage: React.FC = () => {
         });
       }
     }
-  }, [query.template]);
+  }, [query.template, form]); // Added form to dependency array
 
   const onSubmit = async (data: ProposalFormData) => {
     setIsLoading(true);

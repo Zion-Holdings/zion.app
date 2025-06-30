@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
 import * as Sentry from '@sentry/nextjs';
+import { logWarn, logError } from '@/utils/productionLogger'; // Import loggers
 
 // Type for individual log entry coming from ProductionLogger
 interface ClientLogEntry {
@@ -82,14 +83,14 @@ export default async function handler(
         });
       } catch (err) {
         // swallow – do not break client logging on webhook failure
-        console.warn('Failed to forward logs to webhook:', err);
+         logWarn('Failed to forward logs to webhook:', { data: err });
       }
     }
 
     return res.status(200).json({ success: true });
   } catch (error) {
     // Log server-side failure
-    console.error('Error in /api/logs:', error);
+    logError('Error in /api/logs:', { data: error });
     Sentry.captureException(error);
     return res.status(500).json({ message: 'Internal Server Error' });
   }

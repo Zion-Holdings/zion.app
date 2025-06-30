@@ -2,8 +2,9 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import AuthRoutes from '@/routes/AuthRoutes';
+import { vi, describe, it, expect } from 'vitest';
 
-jest.mock('@/components/auth/login', () => ({
+vi.mock('@/components/auth/login', () => ({
   LoginForm: () => (
     <form>
       <label htmlFor="email-input">Email</label>
@@ -16,7 +17,7 @@ jest.mock('@/components/auth/login', () => ({
 }));
 
 // Silence react-error-boundary console error output for the test
-jest.spyOn(console, 'error').mockImplementation(() => {});
+vi.spyOn(console, 'error').mockImplementation(() => {});
 
 describe('Login route', () => {
   it('renders login form on /login', () => {

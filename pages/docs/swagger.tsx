@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 
 export default function SwaggerDocs() {
   useEffect(() => {
@@ -19,9 +20,10 @@ export default function SwaggerDocs() {
           rel="stylesheet"
           href="https://unpkg.com/swagger-ui-dist@4/swagger-ui.css"
         />
-        <script src="https://unpkg.com/swagger-ui-dist@4/swagger-ui-bundle.js" />
-        <script src="https://unpkg.com/swagger-ui-dist@4/swagger-ui-standalone-preset.js" />
       </Head>
+      {/* Use next/script for external scripts */}
+      <Script src="https://unpkg.com/swagger-ui-dist@4/swagger-ui-bundle.js" strategy="afterInteractive" />
+      <Script src="https://unpkg.com/swagger-ui-dist@4/swagger-ui-standalone-preset.js" strategy="afterInteractive" />
       <div id="swagger-ui" className="min-h-screen" />
     </>
   );

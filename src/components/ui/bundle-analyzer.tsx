@@ -24,21 +24,26 @@ interface ChunkInfo {
 }
 
 export function BundleAnalyzer() {
-  const { user } = useAuth();
+  const { user } = useAuth(); // Hook
+  const [bundleInfo, setBundleInfo] = useState<BundleInfo | null>(null); // Moved up
+  const [chunks, setChunks] = useState<ChunkInfo[]>([]); // Moved up
+  const [isVisible, setIsVisible] = useState(false); // Moved up
+  const [isCollecting, setIsCollecting] = useState(false); // Moved up
+  const [shouldShow, setShouldShow] = useState(false); // Moved up
+
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
   const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin;
 
+  // All hooks are above this line
   if (!isAllowed) {
     return null;
   }
 
-  const [bundleInfo, setBundleInfo] = useState<BundleInfo | null>(null);
-  const [chunks, setChunks] = useState<ChunkInfo[]>([]);
-  const [isVisible, setIsVisible] = useState(false);
-  const [isCollecting, setIsCollecting] = useState(false);
-  const [shouldShow, setShouldShow] = useState(false);
-
   useEffect(() => {
+    // This effect's logic will now only execute if 'isAllowed' was true.
+    // The `isAllowed` check is now outside, so this effect will run conditionally based on parent.
+    // However, the original logic for `setShouldShow` and `collectBundleInfo` depends on `isAllowed` implicitly.
+
     // Only show in development or when explicitly enabled
     const show =
       process.env.NODE_ENV === 'development' ||
@@ -50,22 +55,21 @@ export function BundleAnalyzer() {
 
     setIsVisible(true);
     collectBundleInfo();
-  }, []);
+  }, [collectBundleInfo]); // Added collectBundleInfo
 
-  const collectBundleInfo = async () => {
+  // Wrap functions defined in component scope with useCallback if they are used in useEffect or as props
+  const collectBundleInfo = React.useCallback(async () => {
     if (typeof window === 'undefined') return;
 
     setIsCollecting(true);
 
     try {
-      // Get performance entries for script resources
       const resourceEntries = performance.getEntriesByType('resource') as PerformanceResourceTiming[];
       const scriptEntries = resourceEntries.filter(entry => 
         entry.name.includes('/_next/static/') && 
         (entry.name.endsWith('.js') || entry.name.endsWith('.css'))
       );
 
-      // Calculate bundle information
       let totalSize = 0;
       let totalLoadTime = 0;
       const chunkData: ChunkInfo[] = [];
@@ -86,25 +90,24 @@ export function BundleAnalyzer() {
         });
       });
 
-      // Estimate gzipped size (roughly 70% of original)
       const gzippedSize = totalSize * 0.7;
-      const cacheHitRate = chunkData.filter(chunk => chunk.cached).length / chunkData.length;
+      const cacheHitRate = chunkData.length > 0 ? chunkData.filter(chunk => chunk.cached).length / chunkData.length : 0;
 
       setBundleInfo({
         totalSize,
         gzippedSize,
         chunkCount: chunkData.length,
-        loadTime: totalLoadTime / chunkData.length,
+        loadTime: chunkData.length > 0 ? totalLoadTime / chunkData.length : 0,
         cacheHitRate: cacheHitRate * 100,
       });
 
-      setChunks(chunkData.sort((a, b) => b.size - a.size).slice(0, 5)); // Top 5 largest chunks
+      setChunks(chunkData.sort((a, b) => b.size - a.size).slice(0, 5));
     } catch (error) {
       logError('Failed to collect bundle info:', { data: error });
     } finally {
       setIsCollecting(false);
     }
-  };
+  }, [setIsCollecting, setBundleInfo, setChunks]); // Dependencies for collectBundleInfo
 
   const formatSize = (bytes: number): string => {
     if (bytes === 0) return '0 B';

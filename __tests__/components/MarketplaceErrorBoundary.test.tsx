@@ -3,10 +3,14 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MarketplaceErrorBoundary } from '@/components/MarketplaceErrorBoundary';
 import * as Sentry from '@sentry/nextjs';
 import { mutate } from 'swr';
+import { vi, describe, it, expect, beforeEach, afterEach, type MockInstance } from 'vitest';
 
 // Mock dependencies
-jest.mock('@sentry/nextjs');
-jest.mock('swr');
+vi.mock('@sentry/nextjs', () => ({
+    withScope: vi.fn(),
+    captureException: vi.fn(),
+}));
+vi.mock('swr');
 
 const ThrowError = ({ shouldThrow }: { shouldThrow: boolean }) => {
   if (shouldThrow) {
@@ -16,16 +20,16 @@ const ThrowError = ({ shouldThrow }: { shouldThrow: boolean }) => {
 };
 
 describe('MarketplaceErrorBoundary', () => {
-  const mockMutate = mutate as jest.MockedFunction<typeof mutate>;
+  const mockMutate = mutate as MockInstance<any, any>;
   
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     // Suppress console.error for tests
-    jest.spyOn(console, 'error').mockImplementation(() => {});
+    vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
-    (console.error as jest.Mock).mockRestore();
+    (console.error as MockInstance<any, any>).mockRestore();
   });
 
   it('renders children when there is no error', () => {
@@ -52,15 +56,15 @@ describe('MarketplaceErrorBoundary', () => {
   });
 
   it('logs error to Sentry when an error occurs', () => {
-    const mockWithScope = jest.fn((callback) => {
+    const mockWithScope = vi.fn((callback) => {
       const scope = {
-        setTag: jest.fn(),
-        setContext: jest.fn(),
-        setLevel: jest.fn(),
+        setTag: vi.fn(),
+        setContext: vi.fn(),
+        setLevel: vi.fn(),
       };
       callback(scope);
     });
-    (Sentry.withScope as jest.Mock).mockImplementation(mockWithScope);
+    (Sentry.withScope as MockInstance<any, any>).mockImplementation(mockWithScope);
 
     render(
       <MarketplaceErrorBoundary>
@@ -94,7 +98,7 @@ describe('MarketplaceErrorBoundary', () => {
   });
 
   it('reloads page when reload button is clicked', () => {
-    const mockReload = jest.fn();
+    const mockReload = vi.fn();
     Object.defineProperty(window, 'location', {
       value: { reload: mockReload },
       writable: true,

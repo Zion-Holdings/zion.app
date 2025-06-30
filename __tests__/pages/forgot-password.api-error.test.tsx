@@ -4,27 +4,30 @@ import '@testing-library/jest-dom';
 import axios from 'axios';
 import * as Sentry from '@sentry/nextjs';
 import ForgotPasswordPage from '../../pages/forgot-password';
+import { vi, describe, test, expect, beforeEach, afterEach, type SpyInstance, type Mocked } from 'vitest';
 
-jest.mock('axios');
-jest.mock('@sentry/nextjs', () => ({
-  captureException: jest.fn(),
+vi.mock('axios');
+vi.mock('@sentry/nextjs', () => ({
+  captureException: vi.fn(),
 }));
 
-jest.mock('next/link', () => {
-  return ({ children, href }: { children: React.ReactNode; href: string }) => (
-    <a href={href}>{children}</a>
-  );
+vi.mock('next/link', () => {
+  return {
+    default: ({ children, href }: { children: React.ReactNode; href: string }) => (
+      <a href={href}>{children}</a>
+    )
+  };
 });
 
-const mockedAxios = axios as jest.Mocked<typeof axios>;
+const mockedAxios = axios as Mocked<typeof axios>;
 
 describe('ForgotPasswordPage API error handling', () => {
-  let consoleErrorSpy: jest.SpyInstance;
+  let consoleErrorSpy: SpyInstance<[message?: any, ...optionalParams: any[]], void>;
 
   beforeEach(() => {
     mockedAxios.post.mockReset();
-    (Sentry.captureException as jest.Mock).mockClear();
-    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    (Sentry.captureException as MockInstance<any,any>).mockClear();
+    consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {

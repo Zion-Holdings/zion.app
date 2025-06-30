@@ -101,7 +101,11 @@ export function DynamicListingPage({
 
   const handleSliderChange = (values: number[]) => {
     const [min, max] = values.map(Number);
-    if (min == null || max == null || isNaN(min) || isNaN(max)) return;
+    // Check for null, undefined, or NaN to ensure valid numbers before setting state
+    if (min === null || min === undefined || isNaN(min) ||
+        max === null || max === undefined || isNaN(max)) {
+      return;
+    }
     setCurrentPriceFilter([min, max]);
   };
 

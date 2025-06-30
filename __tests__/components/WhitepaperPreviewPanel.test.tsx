@@ -2,24 +2,24 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import WhitepaperPreviewPanel from '@/components/WhitepaperPreviewPanel';
+import { vi, describe, test, expect } from 'vitest';
 
 // Mock react-markdown
-jest.mock('react-markdown', () => {
+vi.mock('react-markdown', () => {
   const MockMarkdown = (props: { children: React.ReactNode }) => <div data-testid="mock-markdown">{props.children}</div>;
   MockMarkdown.displayName = 'MockMarkdown';
-  return MockMarkdown;
+  return { default: MockMarkdown }; // Assuming react-markdown is a default export
 });
 
 // Mock recharts
-jest.mock('recharts', () => {
+vi.mock('recharts', () => {
   const MockResponsiveContainer = ({ children }: { children: React.ReactNode }) => <div data-testid="mock-responsive-container">{children}</div>;
   const MockPieChart = ({ children }: { children: React.ReactNode }) => <div data-testid="mock-pie-chart">{children}</div>;
-  const MockPie = (props: any) => <div data-testid="mock-pie" data-data={JSON.stringify(props.data)}>{props.children}</div>; // Capture data prop
+  const MockPie = (props: any) => <div data-testid="mock-pie" data-data={JSON.stringify(props.data)}>{props.children}</div>;
   const MockCell = () => <div data-testid="mock-cell" />;
   const MockTooltip = () => <div data-testid="mock-tooltip" />;
   const MockLegend = () => <div data-testid="mock-legend" />;
   
-  // Add display names
   MockResponsiveContainer.displayName = 'MockResponsiveContainer';
   MockPieChart.displayName = 'MockPieChart';
   MockPie.displayName = 'MockPie';
@@ -69,12 +69,9 @@ describe('WhitepaperPreviewPanel', () => {
       />
     );
     mockSections.forEach(section => {
-      // Check if title is rendered (prepended with ##)
       expect(screen.getByTestId('mock-markdown')).toHaveTextContent(`## ${section.title}`);
-      // Check if content is rendered
       expect(screen.getByTestId('mock-markdown')).toHaveTextContent(section.content);
     });
-    // Ensure react-markdown was used multiple times (for title + content per section)
     expect(screen.getAllByTestId('mock-markdown').length).toBeGreaterThanOrEqual(mockSections.length * 2);
   });
 
@@ -86,15 +83,13 @@ describe('WhitepaperPreviewPanel', () => {
   test('renders distribution chart in "Token Distribution" section if data is provided', () => {
     render(
       <WhitepaperPreviewPanel
-        sections={mockSections} // includes "Token Distribution"
+        sections={mockSections}
         distributionChartData={mockDistributionData}
       />
     );
-    // Check for chart components within the "Token Distribution" section
     const distributionSection = mockSections.find(s => s.title.toLowerCase().includes('token distribution'));
     expect(distributionSection).toBeDefined();
 
-    // Verify chart components are rendered
     expect(screen.getByTestId('mock-responsive-container')).toBeInTheDocument();
     expect(screen.getByTestId('mock-pie-chart')).toBeInTheDocument();
     const pieElement = screen.getByTestId('mock-pie');
@@ -110,7 +105,7 @@ describe('WhitepaperPreviewPanel', () => {
     render(
       <WhitepaperPreviewPanel
         sections={mockSections}
-        distributionChartData={[]} // Empty data
+        distributionChartData={[]}
       />
     );
     expect(screen.queryByTestId('mock-responsive-container')).not.toBeInTheDocument();

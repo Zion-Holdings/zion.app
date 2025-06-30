@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { CategoryCard } from '@/components/CategoryCard';
+import { describe, test, expect } from 'vitest';
 
 const renderCard = (ui: React.ReactElement) => render(<MemoryRouter>{ui}</MemoryRouter>);
 

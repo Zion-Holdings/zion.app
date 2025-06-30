@@ -2,15 +2,16 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ApiErrorBoundary } from '@/components/ApiErrorBoundary';
+import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 
 // Mock Sentry
-jest.mock('@sentry/nextjs', () => ({
-  withScope: jest.fn((callback) => callback({
-    setTag: jest.fn(),
-    setContext: jest.fn(),
-    setLevel: jest.fn(),
+vi.mock('@sentry/nextjs', () => ({
+  withScope: vi.fn((callback) => callback({
+    setTag: vi.fn(),
+    setContext: vi.fn(),
+    setLevel: vi.fn(),
   })),
-  captureException: jest.fn(),
+  captureException: vi.fn(),
 }));
 
 // Component that throws an error
@@ -32,11 +33,11 @@ describe('ApiErrorBoundary', () => {
       },
     });
     // Mock console.error to avoid noise in tests
-    jest.spyOn(console, 'error').mockImplementation(() => {});
+    vi.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   it('renders children when there is no error', () => {
@@ -84,8 +85,8 @@ describe('ApiErrorBoundary', () => {
   });
 
   it('shows retry button that can be clicked', async () => {
-    const mockInvalidateQueries = jest.spyOn(queryClient, 'invalidateQueries').mockResolvedValue();
-    const mockRefetchQueries = jest.spyOn(queryClient, 'refetchQueries').mockResolvedValue([]);
+    const mockInvalidateQueries = vi.spyOn(queryClient, 'invalidateQueries').mockResolvedValue(undefined);
+    const mockRefetchQueries = vi.spyOn(queryClient, 'refetchQueries').mockResolvedValue([]);
 
     render(
       <QueryClientProvider client={queryClient}>

@@ -3,27 +3,28 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import WhitepaperSectionEditor from '@/components/WhitepaperSectionEditor';
 import { supabase } from '@/integrations/supabase/client'; // To mock its functions
+import { vi, describe, test, expect, beforeEach, type MockInstance } from 'vitest';
 
 // Mock Supabase client
-jest.mock('@/integrations/supabase/client', () => ({
+vi.mock('@/integrations/supabase/client', () => ({
   supabase: {
     functions: {
-      invoke: jest.fn(),
+      invoke: vi.fn(),
     },
   },
 }));
 
 // Mock sonner/toast
-jest.mock('sonner', () => ({
+vi.mock('sonner', () => ({
   toast: {
-    success: jest.fn(),
-    error: jest.fn(),
-    info: jest.fn(),
+    success: vi.fn(),
+    error: vi.fn(),
+    info: vi.fn(),
   },
 }));
 
 describe('WhitepaperSectionEditor', () => {
-  const mockOnContentChange = jest.fn();
+  const mockOnContentChange = vi.fn();
   const defaultProps = {
     title: 'Executive Summary',
     content: 'This is the initial content.',
@@ -32,8 +33,8 @@ describe('WhitepaperSectionEditor', () => {
 
   beforeEach(() => {
     // Clear mocks before each test
-    jest.clearAllMocks();
-    (supabase.functions.invoke as jest.Mock).mockReset();
+    vi.clearAllMocks();
+    (supabase.functions.invoke as MockInstance<any,any>).mockReset();
   });
 
   test('renders with title and content', () => {
@@ -51,7 +52,7 @@ describe('WhitepaperSectionEditor', () => {
 
   test('"Get AI Suggestions" button click calls Supabase function and displays suggestions', async () => {
     const mockSuggestions = "1. Elaborate on market need.\n2. Add specific metrics.";
-    (supabase.functions.invoke as jest.Mock).mockResolvedValueOnce({
+    (supabase.functions.invoke as MockInstance<any,any>).mockResolvedValueOnce({
       data: { suggestions: mockSuggestions },
       error: null,
     });
@@ -60,7 +61,7 @@ describe('WhitepaperSectionEditor', () => {
     const suggestionsButton = screen.getByRole('button', { name: /Get AI Suggestions/i });
     fireEvent.click(suggestionsButton);
 
-    expect(suggestionsButton).toBeDisabled(); // Check loading state
+    expect(suggestionsButton).toBeDisabled();
     expect(screen.getByText(/Getting Suggestions.../i)).toBeInTheDocument();
 
     await waitFor(() => {
@@ -76,12 +77,12 @@ describe('WhitepaperSectionEditor', () => {
         expect(screen.getByText('Suggestions:')).toBeInTheDocument();
     });
     expect(screen.getByText(mockSuggestions)).toBeInTheDocument();
-    expect(suggestionsButton).not.toBeDisabled(); // Check loading state removed
+    expect(suggestionsButton).not.toBeDisabled();
   });
 
   test('handles error when fetching AI suggestions', async () => {
     const errorMessage = 'Failed to fetch suggestions from Supabase.';
-    (supabase.functions.invoke as jest.Mock).mockResolvedValueOnce({
+    (supabase.functions.invoke as MockInstance<any,any>).mockResolvedValueOnce({
       data: null,
       error: { message: errorMessage },
     });
@@ -101,8 +102,8 @@ describe('WhitepaperSectionEditor', () => {
   });
 
    test('handles error when suggestions data is invalid', async () => {
-    (supabase.functions.invoke as jest.Mock).mockResolvedValueOnce({
-      data: { message: "This is not a suggestion" }, // Invalid data structure
+    (supabase.functions.invoke as MockInstance<any,any>).mockResolvedValueOnce({
+      data: { message: "This is not a suggestion" },
       error: null,
     });
 
@@ -121,7 +122,7 @@ describe('WhitepaperSectionEditor', () => {
 
   test('hides suggestions when "Hide Suggestions" button is clicked', async () => {
     const mockSuggestions = "Some suggestions.";
-    (supabase.functions.invoke as jest.Mock).mockResolvedValueOnce({
+    (supabase.functions.invoke as MockInstance<any,any>).mockResolvedValueOnce({
       data: { suggestions: mockSuggestions },
       error: null,
     });

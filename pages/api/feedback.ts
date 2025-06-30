@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import mongoose from 'mongoose';
+import mongoose, { type Document, type Model } from 'mongoose';
 import { z } from 'zod';
-import type { Document, Model } from 'mongoose';
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { logError } from '@/utils/productionLogger';
 import { sendFeedbackEmail } from '@/lib/email';

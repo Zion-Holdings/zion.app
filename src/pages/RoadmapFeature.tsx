@@ -12,11 +12,10 @@ import { ROADMAP_ITEMS, RoadmapItem } from '@/data/roadmap';
 import { safeStorage } from '@/utils/safeStorage';
 
 export default function RoadmapFeaturePage() {
-  const router = useRouter();
+  const router = useRouter(); // Hook
   const { id } = router.query as { id?: string };
-  if (!id) return null;
-  const { user } = useAuth();
-  const [items, setItems] = useState<RoadmapItem[]>(() => {
+  const { user } = useAuth(); // Moved Hook up
+  const [items, setItems] = useState<RoadmapItem[]>(() => { // Moved Hook up
     const raw = safeStorage.getItem('roadmap_items');
     if (!raw) return ROADMAP_ITEMS;
     try {
@@ -25,26 +24,34 @@ export default function RoadmapFeaturePage() {
       return ROADMAP_ITEMS;
     }
   });
+  const [followed, setFollowed] = useState(() => { // Moved Hook up
+    // Initializing state based on `id` which might be undefined here.
+    // The effect below will handle setting it correctly once `id` is available.
+    if (!id) return false;
+    return safeStorage.getItem(`feature_follow_${id}`) === 'true';
+  });
+
+  // Effect for items persistence
+  useEffect(() => {
+    safeStorage.setItem('roadmap_items', JSON.stringify(items));
+  }, [items]);
+
+  // Effect for followed state persistence
+  useEffect(() => {
+    if (id) { // This effect now correctly runs after id is definitely available or changes
+      safeStorage.setItem(`feature_follow_${id}`, String(followed));
+    }
+  }, [id, followed]);
+
+  // Early return if id is not yet available (after hooks)
+  if (!id) return null;
+
   const feature = items.find((f) => f.id === id);
   if (!feature) {
     return (
       <div className="p-8 text-center">Feature not found</div>
     );
   }
-
-  useEffect(() => {
-    safeStorage.setItem('roadmap_items', JSON.stringify(items));
-  }, [items]);
-
-  const [followed, setFollowed] = useState(() =>
-    safeStorage.getItem(`feature_follow_${id}`) === 'true'
-  );
-
-  useEffect(() => {
-    if (id) {
-      safeStorage.setItem(`feature_follow_${id}`, String(followed));
-    }
-  }, [id, followed]);
 
   const handleFollow = () => {
     if (!user) {

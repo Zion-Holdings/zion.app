@@ -1,30 +1,30 @@
 import categoriesApiHandler from '@/pages/api/categories'; // Correctly import the default export
 import { CATEGORIES } from '@/data/categories';
-// Prisma is now mocked from @prisma/client directly in the jest.mock call
-import { createMocks, createRequest as _createRequest, createResponse as _createResponse } from 'node-mocks-http';
+import { createMocks } from 'node-mocks-http';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { PrismaClient } from '@prisma/client';
+import { vi, describe, test, expect, beforeEach, afterEach, type SpyInstance } from 'vitest';
 
 // Mock Prisma
-jest.mock('@prisma/client', () => {
+vi.mock('@prisma/client', () => {
   const mockPrismaClient = {
     category: {
-      findMany: jest.fn(),
+      findMany: vi.fn(),
     },
-    $disconnect: jest.fn(),
+    $disconnect: vi.fn(),
   };
-  return { PrismaClient: jest.fn(() => mockPrismaClient) };
+  return { PrismaClient: vi.fn(() => mockPrismaClient) };
 });
 
 // Mock console.error
-let consoleErrorSpy: jest.SpyInstance;
+let consoleErrorSpy: SpyInstance;
 
 describe('/api/categories API Endpoint', () => {
   let mockPrismaCategory: any;
 
   beforeEach(() => {
-    jest.clearAllMocks();
-    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    vi.clearAllMocks();
+    consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     // Use the already imported and mocked PrismaClient
     const prisma = new PrismaClient();
     mockPrismaCategory = (prisma as any).category;

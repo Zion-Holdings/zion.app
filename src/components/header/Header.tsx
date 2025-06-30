@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { Logo } from './Logo';
 import { AvatarMenu } from './AvatarMenu';
@@ -10,7 +10,6 @@ import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { slugify } from "@/lib/slugify";
 import { useRouter } from "next/router"; // Changed from react-router-dom
-import { useState } from "react";
 import { PointsBadge } from '@/components/loyalty/PointsBadge';
 import { useTranslation } from 'react-i18next';
 import { logInfo } from '@/utils/productionLogger';

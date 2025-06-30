@@ -9,16 +9,17 @@ import Custom404 from '../404';
 const ServicePage: React.FC = () => {
   const router = useRouter();
   const { slug } = router.query as { slug?: string };
-  if (!slug) {
+
+  // Moved useMemo call before any early returns
+  const service = React.useMemo(() => {
+    if (!slug) return null; // Handle undefined slug inside useMemo
+    return SERVICES.find((s) => slugify(s.title) === slug) || null;
+  }, [slug]);
+
+  if (!slug || !service) { // Combined checks
     return <Custom404 />;
   }
-  const service = React.useMemo(
-    () => SERVICES.find((s) => slugify(s.title) === slug) || null,
-    [slug]
-  );
-  if (!service) {
-    return <Custom404 />;
-  }
+
   const serviceLd = {
     "@context": "https://schema.org",
     "@type": "Service",

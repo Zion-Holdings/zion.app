@@ -1,29 +1,34 @@
 import axios from 'axios';
 import { getAllTalent, getTalentBySlug } from '@/api/talent';
-import { TALENT_PROFILES }
-from '@/data/talentData'; // Using actual data for comparison
+import { TALENT_PROFILES } from '@/data/talentData'; // Using actual data for comparison
+import { vi, describe, it, expect, afterEach, type MockedObject, type MockInstance } from 'vitest';
+import type { AxiosStatic, AxiosError } from 'axios';
+
 
 // Mock axios
-jest.mock('axios', () => ({
-  ...jest.requireActual('axios'), // Import and retain default behavior
-  get: jest.fn(), // Mock only get
-  isAxiosError: jest.fn((payload): payload is import('axios').AxiosError => { // Explicitly type payload
-    // Basic check for AxiosError structure for testing purposes
-    return payload && payload.isAxiosError === true;
-  }),
-}));
+vi.mock('axios', async () => {
+  const actualAxios = await vi.importActual<AxiosStatic>('axios');
+  return {
+    ...actualAxios,
+    get: vi.fn(),
+    // Provide a type-safe mock for isAxiosError
+    isAxiosError: (payload: any): payload is AxiosError => {
+      return actualAxios.isAxiosError(payload);
+    },
+  };
+});
 
-const mockedAxios = axios as jest.Mocked<typeof axios>;
+const mockedAxios = axios as MockedObject<AxiosStatic>;
 
 describe('Talent API functions', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('getAllTalent', () => {
     it('should fetch all talent profiles', async () => {
       const mockResponse = { data: { profiles: TALENT_PROFILES } };
-      mockedAxios.get.mockResolvedValueOnce(mockResponse);
+      (mockedAxios.get as MockInstance<any, any>).mockResolvedValueOnce(mockResponse);
 
       const profiles = await getAllTalent();
 
@@ -33,7 +38,7 @@ describe('Talent API functions', () => {
 
     it('should throw an error if the API call fails', async () => {
       const errorMessage = 'Network Error';
-      mockedAxios.get.mockRejectedValueOnce(new Error(errorMessage));
+      (mockedAxios.get as MockInstance<any, any>).mockRejectedValueOnce(new Error(errorMessage));
 
       await expect(getAllTalent()).rejects.toThrow(errorMessage);
     });
@@ -45,7 +50,7 @@ describe('Talent API functions', () => {
 
     it('should fetch a talent profile by slug', async () => {
       const mockResponse = { data: { profile: mockProfile } };
-      mockedAxios.get.mockResolvedValueOnce(mockResponse);
+      (mockedAxios.get as MockInstance<any, any>).mockResolvedValueOnce(mockResponse);
 
       const profile = await getTalentBySlug(slug);
 
@@ -57,8 +62,8 @@ describe('Talent API functions', () => {
       const axiosError = {
         isAxiosError: true,
         response: { status: 404 },
-      };
-      mockedAxios.get.mockRejectedValueOnce(axiosError);
+      } as AxiosError; // Cast to AxiosError
+      (mockedAxios.get as MockInstance<any, any>).mockRejectedValueOnce(axiosError);
 
       const profile = await getTalentBySlug('non-existent-slug');
 
@@ -72,15 +77,15 @@ describe('Talent API functions', () => {
         isAxiosError: true,
         response: { status: 500 },
         message: errorMessage,
-      };
-      mockedAxios.get.mockRejectedValueOnce(axiosError);
+      } as AxiosError; // Cast to AxiosError
+      (mockedAxios.get as MockInstance<any, any>).mockRejectedValueOnce(axiosError);
 
       await expect(getTalentBySlug(slug)).rejects.toEqual(axiosError);
     });
 
      it('should throw an error if a non-Axios error occurs', async () => {
       const errorMessage = 'Unexpected error';
-      mockedAxios.get.mockRejectedValueOnce(new Error(errorMessage));
+      (mockedAxios.get as MockInstance<any, any>).mockRejectedValueOnce(new Error(errorMessage));
 
       await expect(getTalentBySlug(slug)).rejects.toThrow(errorMessage);
     });

@@ -77,14 +77,4 @@ export default defineConfig({
     port: 5174,
     // allowedHosts: ['devserver-preview--ziontechgroup.netlify.app'],
   },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: ['./src/setupTests.ts'],
-    css: true,
-    coverage: {
-      reporter: ['text', 'json', 'html'],
-      reportsDirectory: 'coverage',
-    },
-  },
 });

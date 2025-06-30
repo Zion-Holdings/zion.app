@@ -26,16 +26,17 @@ interface QuickAction {
 }
 
 export function QuickActions() {
-  const { user } = useAuth();
+  const { user } = useAuth(); // Hook
+  const [isVisible, setIsVisible] = useState(false); // Moved up
+  const [isProcessing, setIsProcessing] = useState<string | null>(null); // Moved up
+
   const isAdmin = user?.userType === 'admin' || user?.role === 'admin';
   const isAllowed = process.env.NODE_ENV !== 'production' || isAdmin;
 
+  // All hooks are above this line
   if (!isAllowed) {
     return null;
   }
-
-  const [isVisible, setIsVisible] = useState(false);
-  const [isProcessing, setIsProcessing] = useState<string | null>(null);
 
   const executeAction = async (actionId: string, action: () => void) => {
     setIsProcessing(actionId);

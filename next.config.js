@@ -66,13 +66,17 @@ const nextConfig = {
         'node_modules/@esbuild/linux-x64',
       ],
     },
-    // Disable CSS optimization for faster builds with many pages
+    // Disable CSS optimization for faster builds with many pages.
+    // Consider re-evaluating with newer Next.js versions as CSS optimization performance might have improved.
     optimizeCss: false, 
     esmExternals: true,
-              // Memory and performance optimizations for 176+ pages
+              // Memory and performance optimizations for 176+ pages.
+              // These settings might be specific to memory-constrained build environments.
+              // Consider making them configurable via environment variables or re-evaluating
+              // if the build environment has more resources or with newer Next.js versions.
     largePageDataBytes: 256 * 1000, // 256KB threshold for large pages
-    workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: 2, // Limit to 2 CPUs for memory management
+    workerThreads: false, // Disable worker threads to reduce memory usage. Can slow down builds on multi-core machines.
+    cpus: 2, // Limit to 2 CPUs for memory management. Can slow down builds on machines with more cores.
     // CRITICAL: Completely disable turbotrace to prevent hanging
     // turbotrace: false, // Disabled via NEXT_DISABLE_TRACE_COLLECTION and NEXT_PRIVATE_OUTPUT_TRACE in build scripts
     // Netlify-specific optimizations
@@ -296,12 +300,21 @@ const nextConfig = {
       };
     }
 
-    // Add optimization to prevent temporal dead zone issues
+    // WORKAROUND: Optimization settings for server-side production builds.
+    // These settings (disabling module concatenation and minimization) were likely added
+    // to prevent Temporal Dead Zone (TDZ) errors. TDZ errors can occur due to complex
+    // module interdependencies (especially circular dependencies) or issues with how
+    // CommonJS and ESM modules interact.
+    // While this workaround might resolve the build/runtime error, it's not ideal as it
+    // can lead to larger server bundles and potentially slower cold starts.
+    // TODO: Investigate the root cause of TDZ errors (e.g., analyze for circular dependencies,
+    // review problematic packages) and aim to remove this workaround if possible,
+    // especially with newer Next.js/Webpack versions that might handle these scenarios better.
     if (!dev && isServer) {
       config.optimization = {
         ...config.optimization,
-        concatenateModules: false, // Disable module concatenation which can cause TDZ issues
-        minimize: false, // Disable minimization on server side to preserve variable names
+        concatenateModules: false,
+        minimize: false,
         mangleExports: false,
       };
     }
@@ -328,13 +341,39 @@ const nextConfig = {
       /memory.*cache/i,
     ];
 
-    // Alias React Router to a lightweight shim to avoid bundling the full library
+    // WORKAROUND: Alias for 'react-router-dom'.
+    // This project uses a shim for 'react-router-dom' located at './src/shims/react-router-dom.ts'.
+    // This typically indicates that some components might still be importing from 'react-router-dom'
+    // (e.g., Link, useNavigate) from a previous setup or for compatibility with external libraries.
+    // The shim provides minimal, mostly no-op implementations.
+    // TODO: Review components using 'react-router-dom' imports. Ideally, refactor them to use
+    // Next.js's built-in routing ('next/link', 'next/router') to remove this alias and shim.
+    // Investigate if any actual routing logic is expected from these shimmed components, as they
+    // will likely not behave as standard react-router-dom components.
     config.resolve.alias = {
       ...config.resolve.alias,
       'react-router-dom': path.resolve(__dirname, './src/shims/react-router-dom.ts'),
     };
 
-    // Simplified bundle optimization for large applications (176+ pages)
+    // ADVANCED BUNDLE OPTIMIZATION:
+    // The following `splitChunks` configuration provides granular control over how Webpack
+    // creates JavaScript chunks. This was likely implemented to optimize loading performance
+    // for a large application (as indicated by the "176+ pages" comment).
+    //
+    // Considerations:
+    // 1. Complexity: This is a highly detailed setup. Maintaining and verifying its
+    //    optimality can be challenging as the application and Next.js evolve.
+    // 2. Next.js Defaults: Newer versions of Next.js have significantly improved their
+    //    default chunk splitting strategies. It's possible that relying more on
+    //    Next.js defaults, perhaps with fewer, more targeted cache groups, could yield
+    //    similar or better results with less configuration overhead.
+    // 3. Analysis Required: Changes to this section should be accompanied by thorough
+    //    bundle analysis (e.g., using @next/bundle-analyzer) and performance testing
+    //    (LCP, FCP, TTI) to ensure improvements.
+    //
+    // TODO: Periodically review this custom `splitChunks` configuration.
+    // Consider testing a build with this custom configuration commented out to evaluate
+    // Next.js's default behavior, especially after Next.js version upgrades.
     if (!isServer) {
       config.optimization = {
         ...config.optimization,
@@ -502,15 +541,18 @@ const nextConfig = {
       delete config.cache.cacheUnaffected;
     }
     
-    // Also ensure that cache.type is properly configured when filesystem caching is used
+    // The following block for filesystem cache options is likely dead code
+    // if the cache type is always forced to 'memory' earlier.
+    // If 'memory' cache is strictly required, this block can be removed.
+    // If 'filesystem' could be used, the logic to force 'memory' needs review.
+    // For now, commenting out as it's unreachable with current logic.
+    /*
     if (config.cache && config.cache.type === 'filesystem') {
-      // Remove any potentially conflicting cache options
       delete config.cache.cacheUnaffected;
-      
-      // Set safe cache options
       config.cache.allowCollectingMemory = false;
       config.cache.managedPaths = [path.resolve(__dirname, 'node_modules')];
     }
+    */
 
     // Define feature flags for tree shaking
     config.plugins.push(

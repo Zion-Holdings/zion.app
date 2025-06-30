@@ -1,8 +1,8 @@
 import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import type { NextApiRequest, NextApiResponse } from 'next';
-import * as Sentry from '@sentry/nextjs';
-import { withErrorLogging } from '@/utils/withErrorLogging';
-import { logInfo, logError } from '@/utils/productionLogger';
+// import * as Sentry from '@sentry/nextjs'; // Unused
+// import { withErrorLogging } from '@/utils/withErrorLogging'; // Unused
+// import { logInfo, logError } from '@/utils/productionLogger'; // Unused
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {

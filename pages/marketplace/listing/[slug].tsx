@@ -33,6 +33,7 @@ interface ListingPageProps {
 
 const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
   const router = useRouter();
+  const dispatch = useDispatch<AppDispatch>(); // Moved hook to the top
   
   if (!listing) {
     return <div className="max-w-3xl mx-auto py-8 px-4">Listing not found.</div>;
@@ -40,9 +41,11 @@ const ListingPage: React.FC<ListingPageProps> = ({ listing }) => {
 
   const canonicalUrl = `/marketplace/listing/${listing.id}`;
   const breadcrumbs = getBreadcrumbsForPath(canonicalUrl);
-  const dispatch = useDispatch<AppDispatch>();
+  // const dispatch = useDispatch<AppDispatch>(); // Original position
 
   const handleAddToCart = () => {
+    // Ensure listing is not null before accessing its properties, though the early return should cover this.
+    if (!listing) return;
     dispatch(
       addItem({ id: listing.id, title: listing.title, price: listing.price ?? 0 })
     );

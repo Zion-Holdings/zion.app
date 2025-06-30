@@ -12,14 +12,19 @@ const mockCategories = [
 
 interface CategoryType {
   id: string;
+  id: string;
   name: string;
   slug: string;
-  icon: string;
+  icon: string; // Could be a more specific type if icons are from a known set e.g. LucideIconName
+}
+
+interface CategoriesErrorResponse {
+  error: string;
 }
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<CategoryType[] | { error: string }>
+  res: NextApiResponse<CategoryType[] | CategoriesErrorResponse>
 ) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');

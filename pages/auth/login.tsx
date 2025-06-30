@@ -158,7 +158,7 @@ const LoginPage = () => {
     
     // Return undefined for all other cases
     return undefined;
-  }, [user, sessionChecked, isLoading, router, router.query.returnTo]); // Dependencies: user, sessionChecked, isLoading, router
+  }, [user, sessionChecked, isLoading, router]); // router.query.returnTo is part of router.query which is part of router
 
   const handleResendVerification = async () => {
     if (!email) {

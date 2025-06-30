@@ -1,13 +1,27 @@
 import { useEffect } from 'react';
 import { logInfo, logWarn } from '@/utils/productionLogger';
 
+// declare global { // Window is implicitly global, no need to redeclare if only using standard window props
+//   interface Window {
+//     Intercom?: (...args: any[]) => void & { q?: any[]; c?: (...cArgs: any[]) => void }; // Removed unused args from c
+//     intercomSettings?: Record<string, any>;
+//   }
+// }
+
+// To ensure window.Intercom is correctly typed if it's augmented elsewhere or for clarity:
+interface IntercomFunction {
+    (...args: any[]): void;
+    q?: any[];
+    c?: (...cArgs: any[]) => void;
+}
 
 declare global {
-  interface Window {
-    Intercom?: (...args: any[]) => void & { q?: any[]; c?: (args: any) => void };
-    intercomSettings?: Record<string, any>;
-  }
+    interface Window {
+        Intercom?: IntercomFunction;
+        intercomSettings?: Record<string, any>;
+    }
 }
+
 
 // Known placeholder/invalid Intercom App IDs
 const INVALID_INTERCOM_APP_IDS = [
@@ -55,8 +69,8 @@ export default function IntercomChat() {
           i.c(arguments);
         };
         i.q = [];
-        i.c = function (args: any) {
-          (i.q as any).push(args);
+        i.c = function (...cArgs: any[]) { // Changed args to ...cArgs
+          (i.q as any).push(cArgs);
         };
         w.Intercom = i;
         const l = function () {

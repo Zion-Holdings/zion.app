@@ -4,27 +4,28 @@ import reviewsHandler from '@/pages/api/reviews'; // Handler for POST /api/revie
 import productReviewsHandler from '@/pages/api/reviews/[productId]'; // Handler for GET /api/reviews/[productId]
 import { PrismaClient } from '@prisma/client';
 import { supabase } from '@/integrations/supabase/client';
+import { vi, describe, it, expect, beforeEach, type MockInstance } from 'vitest';
 
 // Mock Prisma Client
-jest.mock('@prisma/client', () => {
+vi.mock('@prisma/client', () => {
   const mockPrismaClient = {
     productReview: {
-      create: jest.fn(),
-      findMany: jest.fn(),
+      create: vi.fn(),
+      findMany: vi.fn(),
     },
     user: {
-      findUnique: jest.fn(),
+      findUnique: vi.fn(),
     },
-    $disconnect: jest.fn(),
+    $disconnect: vi.fn(),
   };
-  return { PrismaClient: jest.fn(() => mockPrismaClient) };
+  return { PrismaClient: vi.fn(() => mockPrismaClient) };
 });
 
 // Mock Supabase Client
-jest.mock('@/integrations/supabase/client', () => ({
+vi.mock('@/integrations/supabase/client', () => ({
   supabase: {
     auth: {
-      getSession: jest.fn(),
+      getSession: vi.fn(),
     },
   },
 }));
@@ -35,11 +36,11 @@ describe('/api/reviews API Endpoint', () => {
   beforeEach(() => {
     prisma = new PrismaClient();
     // Reset all mocks before each test
-    (prisma.productReview.create as jest.Mock).mockReset();
-    (prisma.productReview.findMany as jest.Mock).mockReset();
-    (prisma.user.findUnique as jest.Mock).mockReset();
-    (prisma.$disconnect as jest.Mock).mockReset();
-    (supabase.auth.getSession as jest.Mock).mockReset();
+    (prisma.productReview.create as MockInstance<any,any>).mockReset();
+    (prisma.productReview.findMany as MockInstance<any,any>).mockReset();
+    (prisma.user.findUnique as MockInstance<any,any>).mockReset();
+    (prisma.$disconnect as MockInstance<any,any>).mockReset();
+    (supabase.auth.getSession as MockInstance<any,any>).mockReset();
   });
 
   describe('POST /api/reviews', () => {
@@ -47,12 +48,12 @@ describe('/api/reviews API Endpoint', () => {
       const mockUser = { id: 1, email: 'test@example.com', name: 'Test User' };
       const mockReview = { id: 'review1', productId: 'prod1', userId: 1, rating: 5, comment: 'Great!' };
 
-      (supabase.auth.getSession as jest.Mock).mockResolvedValue({
+      (supabase.auth.getSession as MockInstance<any,any>).mockResolvedValue({
         data: { session: { user: { id: 'supaUserId', email: 'test@example.com' } } },
         error: null,
       });
-      (prisma.user.findUnique as jest.Mock).mockResolvedValue(mockUser);
-      (prisma.productReview.create as jest.Mock).mockResolvedValue(mockReview);
+      (prisma.user.findUnique as MockInstance<any,any>).mockResolvedValue(mockUser);
+      (prisma.productReview.create as MockInstance<any,any>).mockResolvedValue(mockReview);
 
       const { req, res } = createMocks({
         method: 'POST' as RequestMethod,
@@ -69,12 +70,12 @@ describe('/api/reviews API Endpoint', () => {
     });
 
     it('should fail if user already reviewed the product (409)', async () => {
-      (supabase.auth.getSession as jest.Mock).mockResolvedValue({
+      (supabase.auth.getSession as MockInstance<any,any>).mockResolvedValue({
         data: { session: { user: { id: 'supaUserId', email: 'test@example.com' } } },
         error: null,
       });
-      (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: 1, email: 'test@example.com' });
-      (prisma.productReview.create as jest.Mock).mockRejectedValue({
+      (prisma.user.findUnique as MockInstance<any,any>).mockResolvedValue({ id: 1, email: 'test@example.com' });
+      (prisma.productReview.create as MockInstance<any,any>).mockRejectedValue({
         code: 'P2002',
         meta: { target: ['productId', 'userId'] }, // Simplified, actual target might be more complex
       });
@@ -112,7 +113,7 @@ describe('/api/reviews API Endpoint', () => {
 
 
     it('should fail if not authenticated (401)', async () => {
-      (supabase.auth.getSession as jest.Mock).mockResolvedValue({ data: { session: null }, error: null });
+      (supabase.auth.getSession as MockInstance<any,any>).mockResolvedValue({ data: { session: null }, error: null });
 
       const { req, res } = createMocks({
         method: 'POST' as RequestMethod,
@@ -125,7 +126,7 @@ describe('/api/reviews API Endpoint', () => {
     });
 
     it('should fail if Supabase user email is missing (401)', async () => {
-      (supabase.auth.getSession as jest.Mock).mockResolvedValue({
+      (supabase.auth.getSession as MockInstance<any,any>).mockResolvedValue({
         data: { session: { user: { id: 'supaUserId', email: null } } }, // No email
         error: null,
       });
@@ -139,11 +140,11 @@ describe('/api/reviews API Endpoint', () => {
     });
 
     it('should fail if user not found in Prisma database (404)', async () => {
-      (supabase.auth.getSession as jest.Mock).mockResolvedValue({
+      (supabase.auth.getSession as MockInstance<any,any>).mockResolvedValue({
         data: { session: { user: { id: 'supaUserId', email: 'unknown@example.com' } } },
         error: null,
       });
-      (prisma.user.findUnique as jest.Mock).mockResolvedValue(null); // User not found in Prisma
+      (prisma.user.findUnique as MockInstance<any,any>).mockResolvedValue(null); // User not found in Prisma
 
       const { req, res } = createMocks({
         method: 'POST' as RequestMethod,
@@ -161,7 +162,7 @@ describe('/api/reviews API Endpoint', () => {
         { id: 'rev1', productId: 'prod123', userId: 1, rating: 5, comment: 'Excellent!', createdAt: new Date().toISOString() },
         { id: 'rev2', productId: 'prod123', userId: 2, rating: 4, comment: 'Very good.', createdAt: new Date().toISOString() },
       ];
-      (prisma.productReview.findMany as jest.Mock).mockResolvedValue(mockReviewsList);
+      (prisma.productReview.findMany as MockInstance<any,any>).mockResolvedValue(mockReviewsList);
 
       const { req, res } = createMocks({
         method: 'GET' as RequestMethod,
@@ -178,7 +179,7 @@ describe('/api/reviews API Endpoint', () => {
     });
 
     it('should return an empty array if no reviews found (200)', async () => {
-      (prisma.productReview.findMany as jest.Mock).mockResolvedValue([]);
+      (prisma.productReview.findMany as MockInstance<any,any>).mockResolvedValue([]);
 
       const { req, res } = createMocks({
         method: 'GET' as RequestMethod,

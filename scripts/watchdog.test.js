@@ -1,72 +1,66 @@
-const os = require('os-utils'); // This will be the mocked version due to jest.mock
-const { exec } = require('child_process'); // This will be the mocked version
-const axios = require('axios'); // This will be the mocked version
+const osUtils = require('os-utils');
+const { exec: actualExec } = require('child_process'); // Keep actual exec for potential use if needed
+const axios = require('axios');
+const { vi, describe, it, expect, beforeEach, afterEach } = require('vitest');
 
 // Import functions and state helpers from the refactored watchdog.js
-const {
-  monitorSystemResources,
-  sendDiscordAlert,
-  triggerSelfHeal: actualTriggerSelfHeal, // Keep a reference to the original
-  appendToSelfHealLog: actualAppendToSelfHealLog,
-  logError: actualLogError,
-  _getStateForTests,
-  _setStateForTests,
-  _resetStateForTests,
-  _getConstantsForTests
-} = require('./watchdog');
+// Use vi.importActual for the module whose internals are being tested/spied on
+let actualWatchdogModule;
 
 // Mock external dependencies
-jest.mock('os-utils');
-jest.mock('child_process');
-jest.mock('axios');
+vi.mock('os-utils');
+vi.mock('child_process', () => ({
+  exec: vi.fn(),
+}));
+vi.mock('axios');
 
-// Mock functions from watchdog.js that are called by other watchdog.js functions
-// We achieve this by requiring the module and then spying/mocking its exported methods.
-// For functions like triggerSelfHeal being called by monitorSystemResources,
-// we need to mock `triggerSelfHeal` within the module's own scope.
+const mockTriggerSelfHealImpl = vi.fn();
+const mockSendDiscordAlertImpl = vi.fn();
+const mockAppendToSelfHealLogImpl = vi.fn();
+const mockLogErrorImpl = vi.fn();
 
-// These are the actual mock function implementations that tests will spy on/assert against.
-const mockTriggerSelfHealImpl = jest.fn();
-const mockSendDiscordAlertImpl = jest.fn();
-const mockAppendToSelfHealLogImpl = jest.fn();
-const mockLogErrorImpl = jest.fn();
-
-// No top-level jest.mock('./watchdog', ...) anymore. Spies will be set up per-suite.
 
 describe('Watchdog Script Tests', () => {
   let consoleLogSpy, consoleWarnSpy, consoleErrorSpy;
   let constants;
-  let actualWatchdogModule; // Will hold jest.requireActual('./watchdog')
 
-  beforeEach(() => {
-    // Clear implementations and calls for our main Impl mock functions
+  // Dynamic import for actualWatchdogModule
+  beforeEach(async () => {
+    // Must be dynamically imported after mocks are set up by Vitest
+    actualWatchdogModule = await vi.importActual('./watchdog');
+
     mockTriggerSelfHealImpl.mockClear();
     mockSendDiscordAlertImpl.mockClear();
     mockAppendToSelfHealLogImpl.mockClear();
     mockLogErrorImpl.mockClear();
 
-    // Clear specific external mocks
     axios.post.mockClear();
+    const { exec } = require('child_process'); // Get the mock
     exec.mockClear();
-    const os = require('os-utils'); // Get the mock from __mocks__
-    os.memUsage.mockClear();
-    os.cpuUsage.mockClear();
 
-    actualWatchdogModule = jest.requireActual('./watchdog');
+    // os-utils is auto-mocked by vi.mock('os-utils')
+    // If specific methods like os.memUsage need to be cleared or reset:
+    if (osUtils.memUsage && typeof osUtils.memUsage.mockClear === 'function') {
+        osUtils.memUsage.mockClear();
+    }
+    if (osUtils.cpuUsage && typeof osUtils.cpuUsage.mockClear === 'function') {
+        osUtils.cpuUsage.mockClear();
+    }
+
+
     actualWatchdogModule._resetStateForTests();
 
-    jest.useFakeTimers();
-    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
-    consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
-    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    vi.useFakeTimers();
+    consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
 
     constants = actualWatchdogModule._getConstantsForTests();
   });
 
   afterEach(() => {
-    jest.clearAllTimers();
-    // Restore all mocks and spies created with jest.spyOn or jest.mock
-    jest.restoreAllMocks();
+    vi.clearAllTimers();
+    vi.restoreAllMocks();
   });
 
   describe('monitorSystemResources', () => {
@@ -74,66 +68,64 @@ describe('Watchdog Script Tests', () => {
     let triggerSelfHealSpy, appendToSelfHealLogSpy;
 
     beforeEach(() => {
-      // actualWatchdogModule is already required and reset in the main beforeEach
       monitorSystemResources = actualWatchdogModule.monitorSystemResources;
       _getStateForTests = actualWatchdogModule._getStateForTests;
       _setStateForTests = actualWatchdogModule._setStateForTests;
 
-      // Spy on other functions within the actualWatchdogModule that monitorSystemResources calls
-      triggerSelfHealSpy = jest.spyOn(actualWatchdogModule, 'triggerSelfHeal').mockImplementation(mockTriggerSelfHealImpl);
-      appendToSelfHealLogSpy = jest.spyOn(actualWatchdogModule, 'appendToSelfHealLog').mockImplementation(mockAppendToSelfHealLogImpl);
+      triggerSelfHealSpy = vi.spyOn(actualWatchdogModule, 'triggerSelfHeal').mockImplementation(mockTriggerSelfHealImpl);
+      appendToSelfHealLogSpy = vi.spyOn(actualWatchdogModule, 'appendToSelfHealLog').mockImplementation(mockAppendToSelfHealLogImpl);
     });
 
     it('should call triggerSelfHeal if memory usage exceeds threshold', () => {
-      os.memUsage.mockImplementation(callback => {
+      osUtils.memUsage.mockImplementation(callback => {
         callback({ freeMemPercentage: 1 - (constants.MEMORY_THRESHOLD + 0.1) });
       });
-      os.cpuUsage.mockImplementation(callback => callback(0.1));
+      osUtils.cpuUsage.mockImplementation(callback => callback(0.1));
 
       monitorSystemResources();
 
-      expect(os.memUsage).toHaveBeenCalled();
+      expect(osUtils.memUsage).toHaveBeenCalled();
       expect(mockTriggerSelfHealImpl).toHaveBeenCalledWith(
         expect.stringContaining(`High memory usage detected: ${((constants.MEMORY_THRESHOLD + 0.1) * 100).toFixed(2)}%`)
       );
     });
 
     it('should not call triggerSelfHeal if memory usage is below threshold', () => {
-      os.memUsage.mockImplementation(callback => {
+      osUtils.memUsage.mockImplementation(callback => {
         callback({ freeMemPercentage: 1 - (constants.MEMORY_THRESHOLD - 0.1) });
       });
-      os.cpuUsage.mockImplementation(callback => callback(0.1));
+      osUtils.cpuUsage.mockImplementation(callback => callback(0.1));
 
-      monitorSystemResources(); // Call actual function
+      monitorSystemResources();
       expect(mockTriggerSelfHealImpl).not.toHaveBeenCalled();
     });
 
     it('should call triggerSelfHeal if CPU usage exceeds threshold for sustained period', () => {
-      os.memUsage.mockImplementation(callback => callback({ freeMemPercentage: 0.5 }));
-      os.cpuUsage.mockImplementation(callback => callback(constants.CPU_THRESHOLD + 0.1));
+      osUtils.memUsage.mockImplementation(callback => callback({ freeMemPercentage: 0.5 }));
+      osUtils.cpuUsage.mockImplementation(callback => callback(constants.CPU_THRESHOLD + 0.1));
 
       for (let i = 0; i < constants.CPU_SUSTAINED_CHECKS; i++) {
-        monitorSystemResources(); // Call actual function
+        monitorSystemResources();
       }
-      expect(os.cpuUsage).toHaveBeenCalledTimes(constants.CPU_SUSTAINED_CHECKS);
+      expect(osUtils.cpuUsage).toHaveBeenCalledTimes(constants.CPU_SUSTAINED_CHECKS);
       expect(mockTriggerSelfHealImpl).toHaveBeenCalledWith(
         expect.stringContaining(`Sustained high CPU usage for ${constants.CPU_SUSTAINED_CHECKS} checks`)
       );
     });
 
     it('should not call triggerSelfHeal if CPU usage is high for less than sustained period', () => {
-      os.memUsage.mockImplementation(callback => callback({ freeMemPercentage: 0.5 }));
-      os.cpuUsage.mockImplementation(callback => callback(constants.CPU_THRESHOLD + 0.1));
+      osUtils.memUsage.mockImplementation(callback => callback({ freeMemPercentage: 0.5 }));
+      osUtils.cpuUsage.mockImplementation(callback => callback(constants.CPU_THRESHOLD + 0.1));
 
       for (let i = 0; i < constants.CPU_SUSTAINED_CHECKS - 1; i++) {
-        monitorSystemResources(); // Call actual function
+        monitorSystemResources();
       }
       expect(mockTriggerSelfHealImpl).not.toHaveBeenCalled();
     });
 
     it('should reset highCpuUsageCount if CPU usage drops below threshold', () => {
-      os.memUsage.mockImplementation(callback => callback({ freeMemPercentage: 0.5 }));
-      os.cpuUsage.mockImplementationOnce(callback => callback(constants.CPU_THRESHOLD + 0.1))
+      osUtils.memUsage.mockImplementation(callback => callback({ freeMemPercentage: 0.5 }));
+      osUtils.cpuUsage.mockImplementationOnce(callback => callback(constants.CPU_THRESHOLD + 0.1))
                  .mockImplementationOnce(callback => callback(constants.CPU_THRESHOLD + 0.1))
                  .mockImplementationOnce(callback => callback(constants.CPU_THRESHOLD - 0.1));
 
@@ -148,38 +140,38 @@ describe('Watchdog Script Tests', () => {
     });
 
     it('should not run if isHealing is true', () => {
-      _setStateForTests({ isHealing: true }); // Use locally defined _setStateForTests
-      monitorSystemResources(); // Use locally defined monitorSystemResources
-      expect(os.memUsage).not.toHaveBeenCalled();
-      expect(os.cpuUsage).not.toHaveBeenCalled();
+      _setStateForTests({ isHealing: true });
+      monitorSystemResources();
+      expect(osUtils.memUsage).not.toHaveBeenCalled();
+      expect(osUtils.cpuUsage).not.toHaveBeenCalled();
     });
   });
 
   describe('sendDiscordAlert', () => {
     const originalEnv = { ...process.env };
-    let sendDiscordAlertFunc; // To hold the actual function
+    let sendDiscordAlertFunc;
     let appendToSelfHealLogSpy, logErrorSpy;
 
-    beforeEach(() => {
-      jest.resetModules(); // Crucial for process.env changes
-      process.env = { ...originalEnv };
-
-      // actualWatchdogModule is defined in the top-level beforeEach
+    beforeEach(async () => { // Made async for dynamic import
+      // actualWatchdogModule is dynamically imported in the top-level beforeEach
       sendDiscordAlertFunc = actualWatchdogModule.sendDiscordAlert;
 
-      // Spy on internal logging functions called by sendDiscordAlert
-      appendToSelfHealLogSpy = jest.spyOn(actualWatchdogModule, 'appendToSelfHealLog').mockImplementation(mockAppendToSelfHealLogImpl);
-      logErrorSpy = jest.spyOn(actualWatchdogModule, 'logError').mockImplementation(mockLogErrorImpl);
+      // Reset process.env for this suite's specific needs if any, or rely on top-level reset
+      process.env = { ...originalEnv };
+
+
+      appendToSelfHealLogSpy = vi.spyOn(actualWatchdogModule, 'appendToSelfHealLog').mockImplementation(mockAppendToSelfHealLogImpl);
+      logErrorSpy = vi.spyOn(actualWatchdogModule, 'logError').mockImplementation(mockLogErrorImpl);
     });
 
-    afterEach(() => { // Changed from afterAll to afterEach for env safety
+    afterEach(() => {
       process.env = originalEnv;
     });
 
     it('should send a POST request to DISCORD_WEBHOOK_URL with the message when URL is set', async () => {
       process.env.DISCORD_WEBHOOK_URL = 'https://fake.discord.webhook/url';
       const alertMessage = 'Test Discord Alert';
-      axios.post.mockResolvedValue({ status: 200 }); // Mock successful request
+      axios.post.mockResolvedValue({ status: 200 });
 
       await sendDiscordAlertFunc(alertMessage);
 
@@ -192,13 +184,12 @@ describe('Watchdog Script Tests', () => {
     });
 
     it('should log a warning and not make an HTTP request if DISCORD_WEBHOOK_URL is not set', async () => {
-      delete process.env.DISCORD_WEBHOOK_URL; // Ensure URL is not set
+      delete process.env.DISCORD_WEBHOOK_URL;
       const alertMessage = 'Test Discord Alert, no URL';
 
       await sendDiscordAlertFunc(alertMessage);
 
       expect(axios.post).not.toHaveBeenCalled();
-      // consoleWarnSpy is set in the top-level beforeEach
       expect(consoleWarnSpy).toHaveBeenCalledWith(expect.stringContaining('Discord Webhook URL not configured'));
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining('WARN: Discord Webhook URL not configured'));
     });
@@ -207,7 +198,7 @@ describe('Watchdog Script Tests', () => {
       process.env.DISCORD_WEBHOOK_URL = 'https://fake.discord.webhook/url';
       const alertMessage = 'Test error case';
       const error = new Error('Network Error');
-      axios.post.mockRejectedValue(error); // Mock failed request
+      axios.post.mockRejectedValue(error);
 
       await sendDiscordAlertFunc(alertMessage);
 
@@ -218,66 +209,76 @@ describe('Watchdog Script Tests', () => {
   });
 
   describe('triggerSelfHeal (actual implementation)', () => {
-    let actualTriggerSelfHeal, actual_getStateForTests, actual_setStateForTests, actual_getConstantsForTests, localConstants;
+    let actualTriggerSelfHealFunc, actual_getStateForTestsFunc, actual_setStateForTestsFunc, actual_getConstantsForTestsFunc, localConstants;
+    let execMock; // Specific mock for child_process.exec for this suite
 
-    beforeEach(() => {
-        const actualWatchdogModule = jest.requireActual('./watchdog');
-        actualTriggerSelfHeal = actualWatchdogModule.triggerSelfHeal;
-        actual_getStateForTests = actualWatchdogModule._getStateForTests;
-        actual_setStateForTests = actualWatchdogModule._setStateForTests;
-        actual_getConstantsForTests = actualWatchdogModule._getConstantsForTests;
-        localConstants = actual_getConstantsForTests();
+    beforeEach(async () => { // Made async for dynamic import
+        // actualWatchdogModule is dynamically imported in the top-level beforeEach
+        actualTriggerSelfHealFunc = actualWatchdogModule.triggerSelfHeal;
+        actual_getStateForTestsFunc = actualWatchdogModule._getStateForTests;
+        actual_setStateForTestsFunc = actualWatchdogModule._setStateForTests;
+        actual_getConstantsForTestsFunc = actualWatchdogModule._getConstantsForTests;
+        localConstants = actual_getConstantsForTestsFunc();
 
         actualWatchdogModule._resetStateForTests();
-        actual_setStateForTests({ isHealing: false, perfErrorStreak: 1, securityPatchStreak: 1, highCpuUsageCount: 1 });
+        actual_setStateForTestsFunc({ isHealing: false, perfErrorStreak: 1, securityPatchStreak: 1, highCpuUsageCount: 1 });
 
-        exec.mockImplementation((command, callback) => {
+        const { exec } = require('child_process'); // get the mocked exec
+        execMock = exec;
+        execMock.mockImplementation((command, callback) => {
           callback(null, 'stdout mock', 'stderr mock');
         });
 
-        mockSendDiscordAlertImpl.mockClear();
-        mockAppendToSelfHealLogImpl.mockClear();
+        mockSendDiscordAlertImpl.mockClear(); // Ensure this is cleared
+        mockAppendToSelfHealLogImpl.mockClear(); // Ensure this is cleared
     });
 
     it('should not run if isHealing is true', () => {
-      actual_setStateForTests({ isHealing: true });
-      actualTriggerSelfHeal('Test reason when healing');
+      actual_setStateForTestsFunc({ isHealing: true });
+      actualTriggerSelfHealFunc('Test reason when healing');
       expect(mockSendDiscordAlertImpl).not.toHaveBeenCalled();
-      expect(exec).not.toHaveBeenCalled();
+      expect(execMock).not.toHaveBeenCalled();
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining('Self-heal action already in progress. Skipping trigger for: Test reason when healing'));
     });
 
-    // it('should set isHealing to true, call mocked sendDiscordAlert, execute HEAL_COMMAND via mocked exec, and log actions', (done) => {
-    //   const reason = 'Test self-heal trigger';
-    //   actualTriggerSelfHeal(reason);
+    // Vitest runs tests in parallel by default, (done) callback is not standard. Use async/await.
+    it('should set isHealing to true, call mocked sendDiscordAlert, execute HEAL_COMMAND via mocked exec, and log actions', async () => {
+      const reason = 'Test self-heal trigger';
+      actualTriggerSelfHealFunc(reason);
 
-      expect(actual_getStateForTests().isHealing).toBe(true);
+      expect(actual_getStateForTestsFunc().isHealing).toBe(true);
+      // sendDiscordAlert is mocked at the module level for other tests, but here we are testing the actual triggerSelfHeal
+      // So, we need to ensure that the sendDiscordAlert within triggerSelfHeal is the one we can control or assert against.
+      // For now, assuming mockSendDiscordAlertImpl is correctly spied on if triggerSelfHeal calls the spied version.
+      // This might require direct spyOn for actualWatchdogModule.sendDiscordAlert if not already done.
+
+      // If sendDiscordAlert is directly part of actualWatchdogModule and we want to mock its behavior for this specific test suite:
+      const sendDiscordAlertSpy = vi.spyOn(actualWatchdogModule, 'sendDiscordAlert').mockImplementation(mockSendDiscordAlertImpl);
+
+
       expect(mockSendDiscordAlertImpl).toHaveBeenCalledWith(
         expect.stringContaining(`**Reason:** ${reason}`)
       );
       expect(mockSendDiscordAlertImpl).toHaveBeenCalledWith(
         expect.stringContaining(`**Command:** \`\`\`${localConstants.HEAL_COMMAND}\`\`\``)
       );
-      expect(exec).toHaveBeenCalledWith(localConstants.HEAL_COMMAND, expect.any(Function));
+      expect(execMock).toHaveBeenCalledWith(localConstants.HEAL_COMMAND, expect.any(Function));
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining(`Triggering self-heal due to: ${reason}`));
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining(`Executing self-heal command: ${localConstants.HEAL_COMMAND}`));
 
-      exec.mock.calls[0][1](null, 'mock stdout', 'mock stderr');
+      // Simulate exec callback
+      execMock.mock.calls[0][1](null, 'mock stdout', 'mock stderr');
+
+      // Wait for any promises within the callback to resolve
+      await vi.runAllTimersAsync(); // Or await new Promise(process.nextTick);
 
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining('Self-heal command stdout: mock stdout'));
       expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith(expect.stringContaining('Self-heal action complete. Resetting streaks.'));
-      expect(actual_getStateForTests().isHealing).toBe(false);
-      expect(actual_getStateForTests().perfErrorStreak).toBe(0);
-      expect(actual_getStateForTests().securityPatchStreak).toBe(0);
-      expect(actual_getStateForTests().highCpuUsageCount).toBe(0);
-      done();
+      expect(actual_getStateForTestsFunc().isHealing).toBe(false);
+      expect(actual_getStateForTestsFunc().perfErrorStreak).toBe(0);
+      expect(actual_getStateForTestsFunc().securityPatchStreak).toBe(0);
+      expect(actual_getStateForTestsFunc().highCpuUsageCount).toBe(0);
+      sendDiscordAlertSpy.mockRestore(); // Clean up spy
     });
-  // });
+  });
 });
-
-// Also, in the "sendDiscordAlert (actual implementation)" suite, the assertions should use ...Impl versions.
-// expect(mockAppendToSelfHealLog).toHaveBeenCalledWith -> expect(mockAppendToSelfHealLogImpl).toHaveBeenCalledWith
-// expect(mockLogError).toHaveBeenCalledWith -> expect(mockLogErrorImpl).toHaveBeenCalledWith
-// This change is separate from the primary diff for triggerSelfHeal but related.
-// I'll do this in a subsequent step if tests still fail on these specific lines.
-// For now, focusing on the triggerSelfHeal suite's beforeEach.

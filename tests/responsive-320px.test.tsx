@@ -1,36 +1,39 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-// import { vi } from 'vitest'; // Removed Vitest import
+import { vi, describe, test, expect, beforeAll, afterAll } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
 
 // Mock components and hooks for testing
-jest.mock('@/hooks/useAuth', () => ({ // Changed vi.mock to jest.mock
+vi.mock('@/hooks/useAuth', () => ({
   useAuth: () => ({
     user: null,
     loading: false,
   }),
 }));
 
-jest.mock('@/hooks/use-mobile', () => ({ // Changed vi.mock to jest.mock
-  useIsMobile: () => false, // Default to not mobile, can be overridden in tests
+vi.mock('@/hooks/use-mobile', () => ({
+  useIsMobile: () => false,
 }));
 
-jest.mock('@/context/MessagingContext', () => ({ // Changed vi.mock to jest.mock
+vi.mock('@/context/MessagingContext', () => ({
   useMessaging: () => ({
     unreadCount: 0,
   }),
 }));
 
-jest.mock('react-redux', () => ({ // Changed vi.mock to jest.mock
-  ...jest.requireActual('react-redux'), // Import and retain default exports
-  useSelector: () => ({ // Mock only useSelector
-    items: [],
-  }),
-  useDispatch: () => jest.fn() // Mock useDispatch as it's often used alongside useSelector
-}));
+vi.mock('react-redux', async () => {
+  const actual = await vi.importActual('react-redux') as object;
+  return {
+    ...actual,
+    useSelector: () => ({
+      items: [],
+    }),
+    useDispatch: () => vi.fn()
+  };
+});
 
-jest.mock('react-i18next', () => ({ // Changed vi.mock to jest.mock
+vi.mock('react-i18next', () => ({
   useTranslation: () => ({
     t: (key: string, fallback?: string) => fallback || key,
   }),
@@ -51,32 +54,30 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
   const originalMatchMedia = window.matchMedia;
 
   beforeAll(() => {
-    // Mock window.matchMedia for JSDOM
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
-      value: jest.fn().mockImplementation(query => ({ // Changed vi.fn to jest.fn
-        matches: query.includes('(max-width: 320px)') || query.includes('(max-width: 768px)'), // Simulate mobile view for both queries
+      value: vi.fn().mockImplementation(query => ({
+        matches: query.includes('(max-width: 320px)') || query.includes('(max-width: 768px)'),
         media: query,
         onchange: null,
-        addListener: jest.fn(), // Deprecated // Changed vi.fn to jest.fn
-        removeListener: jest.fn(), // Deprecated // Changed vi.fn to jest.fn
-        addEventListener: jest.fn(), // Changed vi.fn to jest.fn
-        removeEventListener: jest.fn(), // Changed vi.fn to jest.fn
-        dispatchEvent: jest.fn(), // Changed vi.fn to jest.fn
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
       })),
     });
   });
 
   afterAll(() => {
     window.matchMedia = originalMatchMedia;
-    jest.restoreAllMocks(); // Changed from vi.restoreAllMocks()
+    vi.restoreAllMocks();
   });
 
 
   describe('Navigation Layout at 320px', () => {
     
     test('PrimaryNav renders without horizontal overflow', () => {
-      // Set viewport to 320px
       global.innerWidth = 320;
       global.dispatchEvent(new Event('resize'));
       
@@ -89,7 +90,6 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
       const header = screen.getByRole('navigation', { name: /primary/i });
       expect(header).toBeInTheDocument();
       
-      // Check that header container has proper flex layout
       const container = header.querySelector('.container');
       expect(container).toBeInTheDocument();
     });
@@ -110,7 +110,7 @@ describe('Responsive 320px Width Fixes (Issue #18)', () => {
     test('Navigation elements wrap properly on narrow screens', () => {
       render(
         <TestWrapper>
-          <div className="w-80"> {/* 320px equivalent */}
+          <div className="w-80">
             <PrimaryNav />
           </div>
         </TestWrapper>

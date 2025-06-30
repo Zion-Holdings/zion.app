@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Routes, Route, Link } from 'react-router-dom';
 import { RouterWrapper } from '@/components/RouterWrapper';
+import { test, expect } from 'vitest';
 
 function TestApp() {
   return (

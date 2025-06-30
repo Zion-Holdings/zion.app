@@ -1,50 +1,45 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { render, act, screen, waitFor } from '@testing-library/react';
 import { AuthProvider, useAuth } from '@/context/auth/AuthProvider';
 import * as authService from '@/services/authService';
-import { toast as originalToast } from '@/hooks/use-toast'; // Import original toast
+import { toast as originalToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { vi, describe, test, expect, beforeEach, afterEach, type Mocked, type MockInstance } from 'vitest';
+import * as nextRouter from 'next/router';
+
 
 // Mock services and hooks
-jest.mock('@/services/authService');
-jest.mock('@/hooks/use-toast', () => ({
-  toast: jest.fn(),
+vi.mock('@/services/authService');
+vi.mock('@/hooks/use-toast', () => ({
+  toast: vi.fn(),
 }));
-jest.mock('@/integrations/supabase/client', () => ({
+vi.mock('@/integrations/supabase/client', () => ({
   supabase: {
     auth: {
-      onAuthStateChange: jest.fn().mockReturnValue({
-        data: { subscription: { unsubscribe: jest.fn() } },
+      onAuthStateChange: vi.fn().mockReturnValue({
+        data: { subscription: { unsubscribe: vi.fn() } },
       }),
-      signInWithPassword: jest.fn(),
-      setSession: jest.fn(),
-      // Add other Supabase auth methods if needed by AuthProvider initialization or other functions
+      signInWithPassword: vi.fn(),
+      setSession: vi.fn(),
     },
-    from: jest.fn(() => ({
-      select: jest.fn(() => ({
-        eq: jest.fn(() => ({
-          single: jest.fn().mockResolvedValue({ data: { id: 'user-id', name: 'Test User', email: 'test@example.com' }, error: null }),
+    from: vi.fn(() => ({
+      select: vi.fn(() => ({
+        eq: vi.fn(() => ({
+          single: vi.fn().mockResolvedValue({ data: { id: 'user-id', name: 'Test User', email: 'test@example.com' }, error: null }),
         })),
       })),
     })),
   },
 }));
 
-// Mock next/router
-jest.mock('next/router', () => ({
-  useRouter: () => ({
-    push: jest.fn(),
-    replace: jest.fn(),
-    query: {},
-    asPath: '',
-    pathname: '',
-  }),
+vi.mock('next/router', () => ({
+  useRouter: vi.fn(),
 }));
 
 
-const mockedAuthService = authService as jest.Mocked<typeof authService>;
-const mockedToast = originalToast as jest.MockedFunction<typeof originalToast>; // Use the originalToast for type
-const mockedSupabase = supabase as jest.Mocked<typeof supabase>;
+const mockedAuthService = authService as Mocked<typeof authService>;
+const mockedToast = originalToast as MockInstance<any,any>;
+const mockedSupabase = supabase as Mocked<typeof supabase>;
 
 const TestConsumer: React.FC<{loginPayload?: {email: string, pass: string}}> = ({ loginPayload }) => {
   const { login, isLoading, user } = useAuth();
@@ -53,11 +48,9 @@ const TestConsumer: React.FC<{loginPayload?: {email: string, pass: string}}> = (
     if (loginPayload) {
       try {
         const result = await login(loginPayload.email, loginPayload.pass);
-        if (result && result.error) {
-          // Error already toasted by AuthProvider
-        }
+        // Error handling is done within AuthProvider and toasts are called there
       } catch (error) {
-        // Error already toasted
+        // Errors are handled by AuthProvider
       }
     }
   };
@@ -73,27 +66,30 @@ const TestConsumer: React.FC<{loginPayload?: {email: string, pass: string}}> = (
 
 describe('AuthProvider Login Timeout', () => {
   beforeEach(() => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     mockedToast.mockClear();
     mockedAuthService.loginUser.mockClear();
-    // @ts-expect-error - Intentionally accessing mock methods for test setup
-    mockedSupabase.auth.signInWithPassword.mockClear();
-     // Reset onAuthStateChange mock for each test to ensure clean state
-    // @ts-expect-error - Intentionally accessing mock methods for test setup
-    mockedSupabase.auth.onAuthStateChange.mockImplementation(jest.fn().mockReturnValue({
-        data: { subscription: { unsubscribe: jest.fn() } },
+    (mockedSupabase.auth.signInWithPassword as MockInstance<any,any>).mockClear();
+    (mockedSupabase.auth.onAuthStateChange as MockInstance<any,any>).mockImplementation(vi.fn().mockReturnValue({
+        data: { subscription: { unsubscribe: vi.fn() } },
     }));
+    (nextRouter.useRouter as MockInstance<any,any>).mockReturnValue({ // Ensure router mock is reset/set
+        push: vi.fn(),
+        replace: vi.fn(),
+        query: {},
+        asPath: '',
+        pathname: '',
+    });
   });
 
   afterEach(() => {
-    jest.clearAllTimers();
-    jest.useRealTimers();
+    vi.clearAllTimers();
+    vi.useRealTimers();
   });
 
   it('should timeout if loginUser takes too long', async () => {
-    // Mock loginUser to simulate a long delay
     mockedAuthService.loginUser.mockImplementation(() => {
-      return new Promise(resolve => setTimeout(() => resolve({ res: { ok: true }, data: { user: { id: '1', email: 'test@example.com' } } }), 20000)); // 20s > 15s timeout
+      return new Promise(resolve => setTimeout(() => resolve({ res: { ok: true }, data: { user: { id: '1', email: 'test@example.com' } } } as any), 20000));
     });
 
     render(
@@ -102,20 +98,16 @@ describe('AuthProvider Login Timeout', () => {
       </AuthProvider>
     );
 
-    // Click login button
     act(() => {
       screen.getByText('Login').click();
     });
 
-    // Expect isLoading to be true initially
     expect(screen.getByTestId('isLoading').textContent).toBe('true');
 
-    // Advance timers past the 15s timeout defined in AuthProvider
     await act(async () => {
-      jest.advanceTimersByTime(16000); // 16 seconds
+      vi.advanceTimersByTime(16000);
     });
 
-    // Wait for state updates
     await waitFor(() => {
       expect(screen.getByTestId('isLoading').textContent).toBe('false');
     });
@@ -131,29 +123,24 @@ describe('AuthProvider Login Timeout', () => {
   it('should not timeout and login successfully if loginUser resolves quickly', async () => {
     const mockUserData = { id: '123', email: 'success@example.com', name: 'Success User' };
     const mockApiResponse = { res: { status: 200 }, data: { user: mockUserData, session: { access_token: 'fake-token', refresh_token: 'fake-refresh' } } };
-    mockedAuthService.loginUser.mockResolvedValue(mockApiResponse);
+    mockedAuthService.loginUser.mockResolvedValue(mockApiResponse as any);
 
-    // For this test, we need signInWithPassword to succeed for the Supabase path
-    // @ts-expect-error - Intentionally accessing mock methods for test setup
-    mockedSupabase.auth.signInWithPassword.mockResolvedValue({
-      data: { user: { id: 'supabase-user-id', email: 'success@example.com' }, session: {} },
+    (mockedSupabase.auth.signInWithPassword as MockInstance<any,any>).mockResolvedValue({
+      data: { user: { id: 'supabase-user-id', email: 'success@example.com' } as any, session: {} as any },
       error: null,
     });
 
-    // Mock onAuthStateChange to simulate Supabase returning a user and profile
-    // @ts-expect-error - Intentionally accessing mock methods for test setup
-    mockedSupabase.auth.onAuthStateChange.mockImplementation((callback) => {
+    (mockedSupabase.auth.onAuthStateChange as MockInstance<any,any>).mockImplementation((callback:any) => {
         act(() => {
             callback('SIGNED_IN', { user: { id: 'supabase-user-id', email: 'success@example.com' }, session: {} });
         });
-        return { data: { subscription: { unsubscribe: jest.fn() } } };
+        return { data: { subscription: { unsubscribe: vi.fn() } } };
     });
-    // @ts-expect-error - Intentionally accessing mock methods for test setup
-    mockedSupabase.from.mockReturnValue({
-        select: jest.fn().mockReturnThis(),
-        eq: jest.fn().mockReturnThis(),
-        single: jest.fn().mockResolvedValue({ data: { id: 'supabase-user-id', ...mockUserData }, error: null }),
-    });
+    (mockedSupabase.from as MockInstance<any,any>).mockReturnValue({
+        select: vi.fn().mockReturnThis(),
+        eq: vi.fn().mockReturnThis(),
+        single: vi.fn().mockResolvedValue({ data: { id: 'supabase-user-id', ...mockUserData }, error: null }),
+    } as any);
 
 
     render(
@@ -166,9 +153,8 @@ describe('AuthProvider Login Timeout', () => {
       screen.getByText('Login').click();
     });
 
-    // Advance timers by less than the timeout to ensure it's not a timeout case
     await act(async () => {
-      jest.advanceTimersByTime(5000); // 5 seconds
+      vi.advanceTimersByTime(5000);
     });
 
     await waitFor(() => {
@@ -201,7 +187,7 @@ describe('AuthProvider Login Timeout', () => {
     });
 
     await act(async () => {
-      jest.advanceTimersByTime(5000); // 5 seconds, less than timeout
+      vi.advanceTimersByTime(5000);
     });
 
     await waitFor(() => {
@@ -210,7 +196,7 @@ describe('AuthProvider Login Timeout', () => {
 
     expect(mockedToast).toHaveBeenCalledWith({
       title: "Login Failed",
-      description: "Invalid email or password.", // Specific message from error handling
+      description: "Invalid email or password.",
       variant: "destructive",
     });
     expect(screen.getByTestId('user').textContent).toBe('null');

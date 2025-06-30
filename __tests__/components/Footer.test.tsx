@@ -2,18 +2,19 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Footer } from '@/components/Footer';
 import nextRouterMock from 'next-router-mock';
+import { vi, describe, test, expect, beforeEach, afterEach } from 'vitest';
 
-jest.mock('next/router', () => nextRouterMock);
+vi.mock('next/router', () => nextRouterMock);
 
 /**
  * Verify that social media links contain the correct href attributes.
  */
 
-const originalEnv = process.env;
+const originalEnv = { ...process.env };
 
 describe('Footer social links', () => {
   beforeEach(() => {
-    jest.resetModules(); // Clears the cache
+    vi.resetModules(); // Clears the cache
     process.env = {
       ...originalEnv,
       NEXT_PUBLIC_SOCIAL_TWITTER_URL: "https://twitter.com/ZionTechGroup",

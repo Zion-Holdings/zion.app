@@ -78,7 +78,7 @@ const MyVotesPage: React.FC = () => {
     };
 
     fetchMyVotes();
-  }, [isConnected, connectedWalletAddress]); // Refetch if wallet connection status or address changes
+  }, [isConnected, connectedWalletAddress, user]); // Added user
 
   const getChoiceVariant = (choice: string): "default" | "secondary" | "destructive" | "outline" => {
     if (choice === 'APPROVE') return 'secondary'; // Green-ish in shadcn (often success-like)

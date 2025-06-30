@@ -2,9 +2,10 @@ import { renderHook, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { usePostsByCategory } from '@/hooks/usePostsByCategory';
 import * as forumService from '@/services/forumPostService';
+import { vi, it, expect } from 'vitest';
 
 it('returns posts for slug', async () => {
-  jest.spyOn(forumService, 'fetchPostsByCategory').mockResolvedValue([
+  vi.spyOn(forumService, 'fetchPostsByCategory').mockResolvedValue([
     {
       id: '1',
       title: 'Test',

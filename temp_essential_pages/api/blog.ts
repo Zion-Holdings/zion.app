@@ -12,7 +12,8 @@ export default function handler(
   }
 
   try {
-    const query = String(((req.query as any).query || '')).toLowerCase();
+    const queryParam = req.query.query;
+    const query = typeof queryParam === 'string' ? queryParam.toLowerCase() : '';
     const match = (text?: string) => text?.toLowerCase().includes(query);
     const results = BLOG_POSTS.filter(
       p =>

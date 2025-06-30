@@ -4,7 +4,7 @@ import Link from 'next/link';
 import SignupForm from '@/components/auth/SignupForm';
 import { AuthButtons } from '@/components/AuthButtons';
 import { fireEvent } from '@/lib/analytics';
-import { logInfo } from '@/utils/productionLogger';
+// import { logInfo } from '@/utils/productionLogger'; // Unused
 import { useRouter } from 'next/router';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 

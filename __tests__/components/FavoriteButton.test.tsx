@@ -4,13 +4,14 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import wishlistReducer from '@/store/wishlistSlice';
 import { FavoriteButton } from '@/components/FavoriteButton';
+import { vi, test, expect, beforeEach, type MockInstance } from 'vitest';
 
-jest.mock('@/hooks/useAuth', () => ({
+vi.mock('@/hooks/useAuth', () => ({
   useAuth: () => ({ isAuthenticated: true, user: { id: 'u1' } })
 }));
 
 beforeEach(() => {
-  global.fetch = jest.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve([]) })) as jest.Mock;
+  global.fetch = vi.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve([]) })) as MockInstance<any,any>;
 });
 
 const renderWithStore = (ui: React.ReactElement) => {

@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs'; // Unused
+// import path from 'path'; // Unused
 import { logInfo, logWarn, logError } from '@/utils/productionLogger';
 
 

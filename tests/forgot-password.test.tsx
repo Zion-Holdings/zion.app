@@ -2,25 +2,28 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import ForgotPasswordPage from '../pages/forgot-password';
 import * as Sentry from '@sentry/nextjs';
+import { vi, describe, it, expect, beforeEach, type MockInstance } from 'vitest';
 
-jest.mock('next/link', () => {
-  return ({ children, href }: { children: React.ReactNode; href: string }) => (
-    <a href={href}>{children}</a>
-  );
+vi.mock('next/link', () => {
+  return {
+    default: ({ children, href }: { children: React.ReactNode; href: string }) => (
+      <a href={href}>{children}</a>
+    )
+  };
 });
 
-jest.mock('@sentry/nextjs', () => ({
-  captureException: jest.fn(),
+vi.mock('@sentry/nextjs', () => ({
+  captureException: vi.fn(),
 }));
 
 describe('ForgotPasswordPage fetch failure', () => {
   beforeEach(() => {
-    (fetch as jest.Mock).mockReset();
-    (Sentry.captureException as jest.Mock).mockClear();
+    (fetch as unknown as MockInstance<any,any>).mockReset(); // Cast fetch to mock
+    (Sentry.captureException as MockInstance<any,any>).mockClear();
   });
 
   it('shows alert and logs error on 500', async () => {
-    (fetch as jest.Mock).mockResolvedValueOnce({
+    (fetch as unknown as MockInstance<any,any>).mockResolvedValueOnce({
       ok: false,
       status: 500,
       json: async () => ({ error: 'Server error' }),

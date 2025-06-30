@@ -2,20 +2,29 @@ import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
 import { SignUpForm } from '@/mobile/components/onboarding/SignUpForm';
+import { vi, describe, test, expect } from 'vitest';
+import * as AuthHook from '@/hooks/useAuth'; // Import namespace
 
-jest.mock('@/hooks/useAuth', () => ({
+vi.mock('@/hooks/useAuth', () => ({
   useAuth: () => ({
-    signup: jest.fn().mockResolvedValue({}),
-    login: jest.fn().mockResolvedValue({}),
-    loginWithGoogle: jest.fn(),
+    signup: vi.fn().mockResolvedValue({}),
+    login: vi.fn().mockResolvedValue({}),
+    loginWithGoogle: vi.fn(),
   }),
 }));
 
-jest.mock('next/router', () => require('next-router-mock'));
+vi.mock('next/router', () => require('next-router-mock'));
 
 describe('SignUpForm', () => {
   test('calls loginWithGoogle when Google button is clicked', () => {
-    const { loginWithGoogle } = require('@/hooks/useAuth').useAuth();
+    const authSpy = vi.spyOn(AuthHook, 'useAuth');
+    const loginWithGoogleMock = vi.fn();
+    authSpy.mockReturnValue({
+        signup: vi.fn().mockResolvedValue({}),
+        login: vi.fn().mockResolvedValue({}),
+        loginWithGoogle: loginWithGoogleMock,
+    } as any);
+
     render(
       <MemoryRouterProvider>
         <SignUpForm />
@@ -23,7 +32,8 @@ describe('SignUpForm', () => {
     );
 
     fireEvent.click(screen.getByRole('button', { name: /continue with google/i }));
-    expect(loginWithGoogle).toHaveBeenCalled();
+    expect(loginWithGoogleMock).toHaveBeenCalled();
+    authSpy.mockRestore();
   });
 
   test('updates form fields', () => {

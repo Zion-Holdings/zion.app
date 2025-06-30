@@ -41,19 +41,19 @@ export function AutocompleteSuggestions({
   highlightedIndex,
   listId
 }: AutocompleteSuggestionsProps) {
-  if (!visible || suggestions.length === 0) return null;
-  
-  const listRef = useRef<HTMLUListElement>(null);
-  const highlightedItemRef = useRef<HTMLLIElement>(null);
+  const listRef = useRef<HTMLUListElement>(null); // Moved up
+  const highlightedItemRef = useRef<HTMLLIElement>(null); // Moved up
 
-  useEffect(() => {
-    if (highlightedIndex !== -1 && highlightedItemRef.current) {
+  useEffect(() => { // Moved up, logic inside remains conditional on props
+    if (visible && suggestions.length > 0 && highlightedIndex !== -1 && highlightedItemRef.current) {
       highlightedItemRef.current.scrollIntoView({
         block: "nearest",
         inline: "nearest"
       });
     }
-  }, [highlightedIndex]);
+  }, [highlightedIndex, visible, suggestions.length]); // Added dependencies
+
+  if (!visible || suggestions.length === 0) return null; // Early return after hooks
 
   return (
     <div

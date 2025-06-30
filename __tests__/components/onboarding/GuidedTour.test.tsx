@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { GuidedTour } from '@/components/onboarding/GuidedTour';
+import { describe, test, expect, beforeEach } from 'vitest';
 
 // Helper to add target elements to the DOM
 function setupTargets() {

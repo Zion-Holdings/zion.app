@@ -39,67 +39,53 @@ interface BundleChunk {
   type: string;
 }
 
+// Helper functions moved outside the component for stability
+const categorizeChunk = (filename: string): string => {
+  if (filename.includes('framework')) return 'framework';
+  if (filename.includes('vendor')) return 'vendor';
+  if (filename.includes('pages')) return 'page';
+  if (filename.includes('chunks')) return 'chunk';
+  return 'other';
+};
+
+const formatSize = (bytes: number): string => {
+  if (bytes === 0) return '0 B';
+  const k = 1024;
+  const sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+};
+
+const getScoreColorHelper = (score: number): string => { // Renamed to avoid conflict if used as prop
+  if (score >= 90) return 'text-green-600';
+  if (score >= 70) return 'text-yellow-600';
+  return 'text-red-600';
+};
+
+const getScoreIconHelper = (score: number) => { // Renamed
+  if (score >= 90) return <CheckCircle className="w-4 h-4 text-green-600" />;
+  if (score >= 70) return <AlertTriangle className="w-4 h-4 text-yellow-600" />;
+  return <AlertTriangle className="w-4 h-4 text-red-600" />;
+};
+
+
 export function PerformanceDashboard() {
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [chunks, setChunks] = useState<BundleChunk[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
-  const collectMetrics = async () => {
-    setIsLoading(true);
-    try {
-      // Force bundle monitor to collect metrics
-      bundleMonitor.forceCollect();
-      
-      // Get bundle metrics
-      const bundleMetrics = bundleMonitor.getLatestMetrics();
-      
-      // Collect Web Vitals if available
-      const webVitals = await collectWebVitals();
-      
-      // Get resource timing data
-      const chunkData = await collectChunkData();
-      
-      setMetrics({
-        bundleSize: bundleMetrics?.totalBundleSize || 0,
-        loadTime: bundleMetrics?.loadTime || 0,
-        performanceScore: bundleMetrics?.performanceScore || 0,
-        chunkCount: bundleMetrics?.chunkCount || 0,
-        cacheHitRate: 0, // Calculate from resource timing
-        fcp: webVitals.fcp || 0,
-        lcp: webVitals.lcp || 0,
-        cls: webVitals.cls || 0,
-        fid: webVitals.fid || 0
-      });
-      
-      setChunks(chunkData);
-      setLastUpdated(new Date());
-      
-      logInfo('Performance metrics collected', { 
-        bundleSize: bundleMetrics?.totalBundleSize,
-        score: bundleMetrics?.performanceScore 
-      });
-      
-    } catch (error) {
-      console.error('Failed to collect performance metrics:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const collectWebVitals = async (): Promise<Partial<PerformanceMetrics>> => {
+  const collectWebVitals = React.useCallback(async (): Promise<Partial<PerformanceMetrics>> => {
     if (typeof window === 'undefined') return {};
     
     const vitals: Partial<PerformanceMetrics> = {};
     
-    // Collect navigation timing
     const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
     if (navigation) {
       vitals.fcp = navigation.loadEventEnd - navigation.loadEventStart;
       vitals.lcp = navigation.loadEventEnd - navigation.fetchStart;
     }
     
-    // Use PerformanceObserver for more accurate metrics
     if ('PerformanceObserver' in window) {
       return new Promise((resolve) => {
         const observer = new PerformanceObserver((list) => {
@@ -123,18 +109,16 @@ export function PerformanceDashboard() {
         
         observer.observe({ entryTypes: ['paint', 'largest-contentful-paint', 'layout-shift', 'first-input'] });
         
-        // Resolve after a short delay
         setTimeout(() => {
           observer.disconnect();
           resolve(vitals);
         }, 2000);
       });
     }
-    
     return vitals;
-  };
+  }, []);
 
-  const collectChunkData = async (): Promise<BundleChunk[]> => {
+  const collectChunkData = React.useCallback(async (): Promise<BundleChunk[]> => {
     if (typeof window === 'undefined') return [];
     
     const resourceEntries = performance.getEntriesByType('resource') as PerformanceResourceTiming[];
@@ -147,41 +131,55 @@ export function PerformanceDashboard() {
       size: entry.transferSize || entry.encodedBodySize || 0,
       loadTime: entry.responseEnd - entry.requestStart,
       cached: entry.transferSize === 0,
-      type: categorizeChunk(entry.name)
+      type: categorizeChunk(entry.name) // categorizeChunk is stable as it's outside component
     })).sort((a, b) => b.size - a.size);
-  };
+  }, []);
 
-  const categorizeChunk = (filename: string): string => {
-    if (filename.includes('framework')) return 'framework';
-    if (filename.includes('vendor')) return 'vendor';
-    if (filename.includes('pages')) return 'page';
-    if (filename.includes('chunks')) return 'chunk';
-    return 'other';
-  };
+  const collectMetrics = React.useCallback(async () => {
+    setIsLoading(true);
+    try {
+      // Force bundle monitor to collect metrics
+      bundleMonitor.forceCollect();
 
-  const formatSize = (bytes: number): string => {
-    if (bytes === 0) return '0 B';
-    const k = 1024;
-    const sizes = ['B', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
-  };
+      // Get bundle metrics
+      const bundleMetrics = bundleMonitor.getLatestMetrics();
 
-  const getScoreColor = (score: number): string => {
-    if (score >= 90) return 'text-green-600';
-    if (score >= 70) return 'text-yellow-600';
-    return 'text-red-600';
-  };
+      // Collect Web Vitals if available
+      const webVitals = await collectWebVitals(); // This function needs to be stable or a dependency
 
-  const getScoreIcon = (score: number) => {
-    if (score >= 90) return <CheckCircle className="w-4 h-4 text-green-600" />;
-    if (score >= 70) return <AlertTriangle className="w-4 h-4 text-yellow-600" />;
-    return <AlertTriangle className="w-4 h-4 text-red-600" />;
-  };
+      // Get resource timing data
+      const chunkData = await collectChunkData(); // This function needs to be stable or a dependency
+
+      setMetrics({
+        bundleSize: bundleMetrics?.totalBundleSize || 0,
+        loadTime: bundleMetrics?.loadTime || 0,
+        performanceScore: bundleMetrics?.performanceScore || 0,
+        chunkCount: bundleMetrics?.chunkCount || 0,
+        cacheHitRate: 0, // Calculate from resource timing
+        fcp: webVitals.fcp || 0,
+        lcp: webVitals.lcp || 0,
+        cls: webVitals.cls || 0,
+        fid: webVitals.fid || 0
+      });
+
+      setChunks(chunkData);
+      setLastUpdated(new Date());
+
+      logInfo('Performance metrics collected', {
+        bundleSize: bundleMetrics?.totalBundleSize,
+        score: bundleMetrics?.performanceScore
+      });
+
+    } catch (error) {
+      console.error('Failed to collect performance metrics:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [setIsLoading, setMetrics, setChunks, setLastUpdated, collectWebVitals, collectChunkData]); // Added logInfo if it's from component scope and not stable
 
   useEffect(() => {
     collectMetrics();
-  }, []);
+  }, [collectMetrics]);
 
   return (
     <div className="space-y-6">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import type { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
+import Image from 'next/image'; // Import next/image
 import { Search, Filter, GridIcon, List, Loader2, SortAsc } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -100,11 +101,19 @@ const SearchResultCard: React.FC<{
   return (
     <div onClick={handleClick} className={cardClass}>
       {result.image && (
-        <div className={viewMode === 'grid' ? "mb-3" : "flex-shrink-0"}>
-          <img 
+        <div
+          className={`
+            ${viewMode === 'grid' ? "mb-3 w-full h-48" : "flex-shrink-0 w-20 h-20"}
+            relative overflow-hidden rounded
+          `}
+        >
+          <Image
             src={result.image} 
             alt={result.title}
-            className={viewMode === 'grid' ? "w-full h-48 object-cover rounded" : "w-20 h-20 object-cover rounded"}
+            fill
+            style={{ objectFit: 'cover' }}
+            sizes={viewMode === 'grid' ? "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" : "80px"}
+            priority={false} // Consider setting to true for first few items if they are LCP candidates
           />
         </div>
       )}

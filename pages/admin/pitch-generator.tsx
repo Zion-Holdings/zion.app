@@ -445,7 +445,7 @@ const PitchGeneratorPage: React.FC = () => {
                         disabled={isGenerating || isExporting || isSavingVersion}
                         className="inline-flex items-center py-2 px-3 border border-transparent shadow-sm text-xs font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-400 disabled:opacity-50"
                     >
-                        {isGenerating ? 'Regenerating&apos;...' : 'Regenerate AI Deck'}
+                        {isGenerating ? 'Regenerating\'...' : 'Regenerate AI Deck'}
                     </button>
                     <button
                       onClick={handleSaveVersion}

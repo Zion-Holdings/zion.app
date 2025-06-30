@@ -1,29 +1,31 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { useRouter } from 'next/router';
 import LoginRedirect from '../pages/login';
+import { vi, describe, it, expect, beforeEach, type MockInstance } from 'vitest';
 
 // Mock Next.js router
-jest.mock('next/router', () => ({
-  useRouter: jest.fn(),
+vi.mock('next/router', () => ({
+  useRouter: vi.fn(),
 }));
 
 // Mock Head component
-jest.mock('next/head', () => {
-  return function Head({ children }: { children: React.ReactNode }) {
-    return <>{children}</>;
+vi.mock('next/head', () => {
+  return {
+    default: ({ children }: { children: React.ReactNode }) => <>{children}</>
   };
 });
 
 describe('Login Redirect Fix - Issue #2', () => {
-  const mockReplace = jest.fn();
-  const mockRouter = {
-    replace: mockReplace,
-    query: {},
-  };
+  const mockReplace = vi.fn();
+  let mockRouter: { replace: MockInstance<any, any>; query: any; };
 
   beforeEach(() => {
-    jest.clearAllMocks();
-    (useRouter as jest.Mock).mockReturnValue(mockRouter);
+    vi.clearAllMocks();
+    mockRouter = { // Re-initialize mockRouter before each test
+      replace: mockReplace,
+      query: {},
+    };
+    (useRouter as MockInstance<any,any>).mockReturnValue(mockRouter);
   });
 
   describe('LoginRedirect Component', () => {
@@ -68,24 +70,19 @@ describe('Login Redirect Fix - Issue #2', () => {
     it('should have proper meta tags for SEO', () => {
       render(<LoginRedirect />);
       
-      // These would be tested in actual DOM, but we're testing the structure
       expect(screen.getByText('Redirecting to login...')).toBeInTheDocument();
     });
   });
 
   describe('Navigation Link Updates', () => {
-    // Test to verify login links point to correct URL
     it('should verify login links use Auth0 route', () => {
-      // This would be tested by checking actual navigation components
       const expectedRoute = '/auth/login';
       
-      // Verify the route is correct
       expect(expectedRoute).toBe('/auth/login');
       expect(expectedRoute).not.toBe('/login');
     });
 
     it('should preserve language support for "Iniciar Sesión"', () => {
-      // Test that Spanish login button still works
       const spanishLoginText = 'Iniciar Sesión';
       expect(spanishLoginText).toBe('Iniciar Sesión');
     });
@@ -127,7 +124,6 @@ describe('Login Redirect Fix - Issue #2', () => {
       render(<LoginRedirect />);
       
       await waitFor(() => {
-        // Should properly encode special characters
         expect(mockReplace).toHaveBeenCalledWith(expect.stringContaining('/auth/login?'));
         expect(mockReplace).toHaveBeenCalledWith(expect.stringContaining('returnTo='));
       });
@@ -140,7 +136,6 @@ describe('Login Redirect Fix - Issue #2', () => {
       
       render(<LoginRedirect />);
       
-      // Should still render loading state and fallback link
       expect(screen.getByText('Redirecting to login...')).toBeInTheDocument();
       expect(screen.getByText('click here')).toBeInTheDocument();
     });
@@ -166,7 +161,6 @@ describe('Login Redirect Fix - Issue #2', () => {
       const endTime = Date.now();
       const redirectTime = endTime - startTime;
       
-      // Should redirect within 100ms (very fast)
       expect(redirectTime).toBeLessThan(100);
     });
 
@@ -183,9 +177,8 @@ describe('Login Redirect Fix - Issue #2', () => {
     it('should redirect to route that works with Auth0', () => {
       const auth0LoginRoute = '/auth/login';
       
-      // Verify this is the correct Auth0 route structure
       expect(auth0LoginRoute).toMatch(/^\/auth\/login$/);
-      expect(auth0LoginRoute).not.toMatch(/^\/api\/auth\/login$/); // API route is different
+      expect(auth0LoginRoute).not.toMatch(/^\/api\/auth\/login$/);
     });
 
     it('should preserve returnTo parameter for Auth0 redirect', async () => {
@@ -201,7 +194,6 @@ describe('Login Redirect Fix - Issue #2', () => {
 
   describe('Backward Compatibility', () => {
     it('should maintain functionality for existing bookmarks', async () => {
-      // Simulate user visiting old /login bookmark
       mockRouter.query = {};
       
       render(<LoginRedirect />);
@@ -212,7 +204,6 @@ describe('Login Redirect Fix - Issue #2', () => {
     });
 
     it('should preserve deep link functionality', async () => {
-      // Simulate deep link with return path
       mockRouter.query = { 
         returnTo: '/marketplace/product/123',
         ref: 'email_campaign'
@@ -266,8 +257,6 @@ describe('Login Redirect Fix - Issue #2', () => {
         );
       });
       
-      // Note: In production, we might want to filter out sensitive parameters
-      // This test documents current behavior
     });
 
     it('should use replace() instead of push() to prevent back button issues', async () => {
@@ -277,32 +266,22 @@ describe('Login Redirect Fix - Issue #2', () => {
         expect(mockReplace).toHaveBeenCalled();
       });
       
-      // Verify we used replace, not push
       expect(mockRouter.replace).toHaveBeenCalled();
     });
   });
 });
 
-// Additional integration tests for the complete fix
 describe('Login Fix Integration Tests', () => {
   describe('Route Resolution', () => {
     it('should verify all login routes point to Auth0', () => {
       const loginRoutes = [
-        '/auth/login',  // New Auth0 route
-        // '/login',    // Old route - now redirects
+        '/auth/login',
       ];
       
-      // Primary route should be Auth0
       expect(loginRoutes[0]).toBe('/auth/login');
     });
 
     it('should handle login flow end-to-end', () => {
-      // This would test the complete flow:
-      // 1. User clicks "Iniciar Sesión"
-      // 2. Navigates to /auth/login
-      // 3. Auth0 handles authentication
-      // 4. Redirects back to application
-      
       const flowSteps = [
         'User clicks login button',
         'Navigates to /auth/login',
@@ -339,21 +318,19 @@ describe('Login Fix Integration Tests', () => {
 
   describe('Mobile Support', () => {
     it('should work on mobile navigation', () => {
-      // Mobile navigation should also use /auth/login
       const mobileLoginRoute = '/auth/login';
       expect(mobileLoginRoute).toBe('/auth/login');
     });
   });
 });
 
-// Test helpers
 export const testLoginRedirect = async (queryParams: Record<string, string> = {}) => {
   const mockRouter = {
-    replace: jest.fn(),
+    replace: vi.fn(),
     query: queryParams,
   };
   
-  (useRouter as jest.Mock).mockReturnValue(mockRouter);
+  (useRouter as MockInstance<any,any>).mockReturnValue(mockRouter);
   
   render(<LoginRedirect />);
   
@@ -364,7 +341,6 @@ export const testLoginRedirect = async (queryParams: Record<string, string> = {}
   return mockRouter.replace.mock.calls[0][0];
 };
 
-// Export test utilities for other test files
 export const LOGIN_ROUTES = {
   OLD_SUPABASE: '/login',
   NEW_AUTH0: '/auth/login',

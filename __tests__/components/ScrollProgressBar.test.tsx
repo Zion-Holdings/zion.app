@@ -1,5 +1,6 @@
 import { render, fireEvent } from '@testing-library/react';
 import { ScrollProgressBar } from '@/components/ScrollProgressBar';
+import { describe, test, expect } from 'vitest';
 
 describe('ScrollProgressBar', () => {
   test('updates progress width when scrolling', () => {

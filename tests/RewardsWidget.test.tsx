@@ -2,11 +2,11 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { RewardsWidget } from '@/components/RewardsWidget';
 import * as auth from '@/hooks/useAuth';
-// import { vi } from 'vitest'; // Removed Vitest import
+import { vi, describe, it, expect } from 'vitest';
 
 describe('RewardsWidget', () => {
   it('opens rewards summary when authenticated', () => {
-    jest.spyOn(auth, 'useAuth').mockReturnValue({ user: { id: '1', points: 150 } } as any); // Changed vi.spyOn to jest.spyOn
+    vi.spyOn(auth, 'useAuth').mockReturnValue({ user: { id: '1', points: 150 } } as any);
 
     render(
       <MemoryRouter>
@@ -21,7 +21,7 @@ describe('RewardsWidget', () => {
   });
 
   it('shows login modal when not authenticated', () => {
-    jest.spyOn(auth, 'useAuth').mockReturnValue({ user: null } as any); // Changed vi.spyOn to jest.spyOn
+    vi.spyOn(auth, 'useAuth').mockReturnValue({ user: null } as any);
 
     render(
       <MemoryRouter>

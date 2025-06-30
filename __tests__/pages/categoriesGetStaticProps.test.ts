@@ -1,18 +1,19 @@
 import { getStaticProps } from '@/pages/Categories';
 import { CATEGORIES } from '@/data/categories';
 import fetchMock from 'fetch-mock';
+import { vi, describe, test, expect, beforeEach, afterEach, type SpyInstance } from 'vitest';
 
 // Mock console methods
-let consoleLogSpy: jest.SpyInstance;
-let consoleErrorSpy: jest.SpyInstance;
+let consoleLogSpy: SpyInstance<[message?: any, ...optionalParams: any[]], void>;
+let consoleErrorSpy: SpyInstance<[message?: any, ...optionalParams: any[]], void>;
 
 describe('getStaticProps for Categories page', () => {
-  const originalEnv = process.env;
+  const originalEnv = { ...process.env };
 
   beforeEach(() => {
     // Spy on console methods
-    consoleLogSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
-    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    consoleLogSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
+    consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
     fetchMock.reset(); // Reset fetch mock before each test
     process.env = { ...originalEnv }; // Reset process.env
   });
@@ -28,6 +29,7 @@ describe('getStaticProps for Categories page', () => {
     { id: 'test1', name: 'Test Category 1', slug: 'test-cat-1', icon: 'TestIcon1' },
     { id: 'test2', name: 'Test Category 2', slug: 'test-cat-2', icon: 'TestIcon2' },
   ];
+  // Ensure NEXT_PUBLIC_APP_URL is defined for tests or use a default
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   const apiUrl = `${appUrl}/api/categories`;
 
@@ -38,7 +40,7 @@ describe('getStaticProps for Categories page', () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    const result = await getStaticProps({});
+    const result = await getStaticProps({} as any); // Cast context if not used
 
     expect(result).toEqual({ props: { categories: sampleCategories } });
     expect(fetchMock.lastUrl()).toEqual(apiUrl);
@@ -54,7 +56,7 @@ describe('getStaticProps for Categories page', () => {
       body: 'Server Error',
     });
 
-    const result = await getStaticProps({});
+    const result = await getStaticProps({}as any);
 
     expect(result).toEqual({ props: { categories: CATEGORIES } });
     expect(consoleLogSpy).toHaveBeenCalledWith(`Fetching categories from: ${apiUrl}`);
@@ -70,7 +72,7 @@ describe('getStaticProps for Categories page', () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    const result = await getStaticProps({});
+    const result = await getStaticProps({} as any);
 
     expect(result).toEqual({ props: { categories: CATEGORIES } });
     expect(consoleLogSpy).toHaveBeenCalledWith(`Fetching categories from: ${apiUrl}`);
@@ -83,14 +85,13 @@ describe('getStaticProps for Categories page', () => {
     const fetchError = new Error('Network error');
     fetchMock.getOnce(apiUrl, { throws: fetchError });
 
-    const result = await getStaticProps({});
+    const result = await getStaticProps({} as any);
 
     expect(result).toEqual({ props: { categories: CATEGORIES } });
     expect(consoleErrorSpy).toHaveBeenCalledWith(
       'Error fetching categories in getStaticProps, falling back to default. Error:',
       fetchError
     );
-    // The initial log for fetching still occurs
     expect(consoleLogSpy).toHaveBeenCalledWith(`Fetching categories from: ${apiUrl}`);
   });
 
@@ -99,11 +100,11 @@ describe('getStaticProps for Categories page', () => {
     const localApiUrl = 'http://localhost:3000/api/categories';
 
     fetchMock.getOnce(localApiUrl, {
-      status: 503, // Simulate a failure to ensure fallback
+      status: 503,
       body: 'Service Unavailable',
     });
 
-    const result = await getStaticProps({});
+    const result = await getStaticProps({} as any);
 
     expect(fetchMock.lastUrl()).toEqual(localApiUrl);
     expect(result).toEqual({ props: { categories: CATEGORIES } });

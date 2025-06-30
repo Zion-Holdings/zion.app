@@ -1,13 +1,13 @@
 import { supabase } from '@/utils/supabase/client'; // Use centralized client
 import type { NextApiRequest, NextApiResponse } from 'next';
-import * as Sentry from '@sentry/nextjs';
+// import * as Sentry from '@sentry/nextjs'; // Unused
 import { withErrorLogging } from '@/utils/withErrorLogging';
 import { ENV_CONFIG } from '@/utils/environmentConfig';
 import { 
   logInfo, 
-  logWarn, 
+  // logWarn, // Unused
   logError, 
-  logDebug 
+  // logDebug // Unused
 } from '@/utils/productionLogger';
 
 

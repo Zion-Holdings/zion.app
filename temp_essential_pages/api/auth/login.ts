@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, User as SupabaseUser, Session as SupabaseSession } from '@supabase/supabase-js';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import * as Sentry from '@sentry/nextjs';
 import { withErrorLogging } from '@/utils/withErrorLogging';
@@ -11,7 +11,7 @@ const getDevUsers = () => {
     return [];
   }
 
-  const devUsers = [];
+  const devUsers: DevUser[] = [];
   
   // Load development users from environment variables
   const devUser1Email = process.env.DEV_USER_1_EMAIL;
@@ -59,9 +59,44 @@ const getDevUsers = () => {
   return devUsers;
 };
 
+// Define interfaces for request and response bodies / user data
+interface DevUser {
+  id: string;
+  email: string;
+  password?: string; // Password might not always be present (e.g. if fetched from DB)
+  name: string;
+  email_verified?: boolean;
+  created_at?: string;
+}
+
+interface LoginRequestBody {
+  email?: string;
+  password?: string;
+}
+
+interface AuthenticatedUser {
+  id: string;
+  email?: string | null; // Supabase user email can be null
+  name?: string | null; // Name might be from profile or user_metadata
+  email_verified?: boolean | null;
+  created_at?: string | null;
+  // Add any other fields you expect in the user object
+}
+
+interface LoginSuccessResponse {
+  user: AuthenticatedUser;
+  session?: SupabaseSession | null; // Optional: session might not always be returned or needed by client
+  message: string;
+}
+
+interface ErrorResponse {
+  error: string;
+  details?: string;
+}
+
 async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse<LoginSuccessResponse | ErrorResponse>
 ) {
   // 🔧 Enable verbose logging (only in development)
   const isDevelopment = process.env.NODE_ENV === 'development';
@@ -81,10 +116,10 @@ async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { email, password } = req.body as { email?: unknown, password?: unknown };
+  const { email, password } = req.body as LoginRequestBody;
 
-  if (!email || !password) {
-    return res.status(400).json({ error: 'Email and password are required' });
+  if (typeof email !== 'string' || typeof password !== 'string' || !email || !password) {
+    return res.status(400).json({ error: 'Email and password are required and must be strings' });
   }
 
   // Check if Supabase is configured
@@ -95,20 +130,21 @@ async function handler(
     
     // 🔐 SECURITY: Use environment-based development authentication
     const devUsers = getDevUsers();
-    const user = devUsers.find(u => u.email === email && u.password === password);
+    const user: DevUser | undefined = devUsers.find(u => u.email === email && u.password === password);
     
     if (user) {
       if (isDevelopment) {
         console.log('🔧 LOGIN TRACE: Development user authenticated successfully');
       }
+      const responseUser: AuthenticatedUser = {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        email_verified: true,
+        created_at: new Date().toISOString()
+      };
       return res.status(200).json({
-        user: {
-          id: user.id,
-          email: user.email,
-          name: user.name,
-          email_verified: true,
-          created_at: new Date().toISOString()
-        },
+        user: responseUser,
         message: 'Development authentication successful'
       });
     } else {
@@ -162,19 +198,30 @@ async function handler(
       console.log('🔧 LOGIN TRACE: Supabase authentication successful');
     }
     
+    // Ensure data.user conforms to AuthenticatedUser
+    const responseUser: AuthenticatedUser = {
+      id: data.user.id,
+      email: data.user.email,
+      // name: data.user.user_metadata?.name || data.user.email, // Example: adjust based on actual SupabaseUser structure
+      name: (data.user as any).user_metadata?.name || data.user.email, // Using 'as any' for user_metadata if not strongly typed on SupabaseUser
+      email_verified: data.user.email_confirmed_at ? true : false,
+      created_at: data.user.created_at,
+    };
+
     return res.status(200).json({
-      user: data.user,
-      session: data.session,
+      user: responseUser,
+      session: data.session, // data.session is already SupabaseSession type
       message: 'Authentication successful'
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) { // Changed from any to unknown
+    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
     if (isDevelopment) {
       console.error('🔧 LOGIN TRACE: Unexpected error during authentication:', error);
     }
     
     if (ENV_CONFIG.sentry.isConfigured) {
-      Sentry.captureException(error, {
+      Sentry.captureException(error, { // Sentry can often handle 'unknown'
         tags: { context: 'login_api_unexpected' },
         extra: { email }
       });
@@ -182,7 +229,7 @@ async function handler(
     
     return res.status(500).json({ 
       error: 'Internal server error',
-      details: ENV_CONFIG.app.isDevelopment ? error.message : undefined
+      details: ENV_CONFIG.app.isDevelopment ? errorMessage : undefined
     });
   }
 }
