@@ -242,6 +242,8 @@ class ProductionLogger {
     this.bufferLogEntry(entry);
   }
 
+import { logError as reportExternalError } from './logError'; // Renamed import
+
   info(message: string, context?: LogContext): void {
     if (!this.shouldLog('info')) return;
 
@@ -255,24 +257,50 @@ class ProductionLogger {
 
     const entry = this.createLogEntry('warn', message, context);
     this.outputToConsole(entry);
-    this.bufferLogEntry(entry);
+    this.bufferLogEntry(entry); // Warnings will still be buffered and sent to /api/logs and Sentry via that route if configured
   }
 
-  error(message: string, error?: Error | unknown, context?: LogContext): void {
+  error(message: string, errorPayload?: Error | unknown, context?: LogContext): void {
     if (!this.shouldLog('error')) return;
 
-    const errorContext = {
+    // 1. Create a basic log entry for console output
+    // The 'error' field in errorContext is primarily for the console log here.
+    // reportExternalError will handle the raw errorPayload.
+    const errorForConsoleContext = {
       ...context,
-      error: error instanceof Error ? {
-        name: error.name,
-        message: error.message,
-        stack: error.stack,
-      } : error,
+      errorDetails: errorPayload instanceof Error ? {
+        name: errorPayload.name,
+        message: errorPayload.message,
+        stack: errorPayload.stack,
+      } : { message: String(errorPayload) },
     };
+    const entry = this.createLogEntry('error', message, errorForConsoleContext);
+    this.outputToConsole(entry); // Log to console for immediate visibility
 
-    const entry = this.createLogEntry('error', message, errorContext);
-    this.outputToConsole(entry);
-    this.bufferLogEntry(entry);
+    // 2. Report to external services using the imported logError (now reportExternalError)
+    // If message is meant to be the primary error description when errorPayload isn't an Error instance:
+    const actualErrorToReport = errorPayload instanceof Error ? errorPayload : new Error(`${message}${errorPayload ? `: ${String(errorPayload)}` : ''}`);
+    if (!(errorPayload instanceof Error) && errorPayload) {
+        // If the original errorPayload was not an error, but some other data,
+        // attach it to the new error's context if possible, or ensure it's in the main context.
+        if (typeof context === 'object' && context !== null) {
+            (actualErrorToReport as any).originalPayload = errorPayload;
+        }
+    }
+
+    // The context for reportExternalError can include componentStack and other structured data
+    // productionLogger's context is LogContext (Record<string, any>)
+    // logError's context is { componentStack?: string } & Record<string, unknown>
+    // We can pass productionLogger's context directly. If componentStack is needed,
+    // it should be part of the context passed to productionLogger.error().
+    reportExternalError(actualErrorToReport, context);
+
+    // 3. We do NOT call this.bufferLogEntry(entry) for errors here anymore,
+    // because reportExternalError handles Sentry, Datadog, LogRocket, and the custom webhook.
+    // /api/logs also sends to Sentry, which could lead to duplication if we also buffer.
+    // The primary path for errors to Sentry should be direct (via reportExternalError).
+    // If /api/logs is also to report to Sentry, it should ideally deduplicate or have specific roles.
+    // For now, this simplifies and prevents double reporting from client via productionLogger.
   }
 
   // Performance logging

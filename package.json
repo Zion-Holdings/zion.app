@@ -91,6 +91,7 @@
     "logs:view": "tail -f logs/self-heal.log",
     "logs:scan": "node scripts/analyze-error-logs.cjs",
     "logs:summary": "node scripts/analyze-error-logs.cjs logs --dedupe --summary",
+    "logs:levels": "node scripts/analyze-error-logs.cjs logs --summary",
     "logs:collect": "bash scripts/collect-logs.sh",
     "logs:monitor": "node scripts/error-monitor.cjs",
     "logs:monitor:export": "node scripts/error-monitor.cjs --export",

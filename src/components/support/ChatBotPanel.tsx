@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from "react";
-import { logger } from '@/utils/logger';
+import { logDebug, logError } from '@/utils/productionLogger';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -96,7 +96,7 @@ export function ChatBotPanel() {
         setFailedAttempts(0);
       }
     } catch (error) {
-      logger.error("Error in AI chat:", error);
+      logError("Error in AI chat", error as Error, { component: 'ChatBotPanel' });
       toast({
         variant: "destructive",
         title: "Communication Error",
@@ -137,7 +137,7 @@ export function ChatBotPanel() {
         message: data.message
       };
     } catch (error) {
-      logger.error("Error in AI chat:", error);
+      logError("Error calling Supabase AI chat function", error as Error, { component: 'ChatBotPanel', functionName: 'ai-chat' });
       return {
         success: false,
         message: "I'm experiencing technical difficulties. Please try again later."
@@ -164,15 +164,16 @@ export function ChatBotPanel() {
     try {
       // Send the conversation to the backend for logging
       // This would be implemented in a real system
-      logger.debug("Support escalation triggered", {
+      logDebug("Support escalation triggered", {
         conversationHistory: messages.map(m => ({
           content: m.content,
           sender: m.sender,
           timestamp: m.timestamp
-        }))
+        })),
+        component: 'ChatBotPanel'
       });
     } catch (error) {
-      logger.error("Failed to log support escalation:", error);
+      logError("Failed to log support escalation", error as Error, { component: 'ChatBotPanel' });
     }
   };
 

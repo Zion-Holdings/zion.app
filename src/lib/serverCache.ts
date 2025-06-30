@@ -1,5 +1,5 @@
 import NodeCache from 'node-cache';
-import { logger } from '@/utils/logger';
+import { logDebug, logError } from '@/utils/productionLogger';
 
 // Cache categories with different TTL values
 export enum CacheCategory {
@@ -47,13 +47,13 @@ export function getCacheItem<T>(key: string, category: CacheCategory = CacheCate
     const cache = cacheInstances[category];
     const value = cache.get<T>(key);
     if (value) {
-      logger.debug(`Cache HIT: ${key} (${category})`);
+      logDebug(`Cache HIT: ${key} (${category})`);
       return value;
     }
-    logger.debug(`Cache MISS: ${key} (${category})`);
+    logDebug(`Cache MISS: ${key} (${category})`);
     return undefined;
   } catch (error) {
-    logger.error(`Cache GET error for ${key}:`, error);
+    logError(`Cache GET error for ${key}`, error as Error, { cacheKey: key, category });
     return undefined;
   }
 }
@@ -74,11 +74,11 @@ export function setCacheItem<T>(
       : cache.set(key, value);
     
       if (success) {
-        logger.debug(`Cache SET: ${key} (${category})`);
+        logDebug(`Cache SET: ${key} (${category})`);
       }
     return success;
   } catch (error) {
-    logger.error(`Cache SET error for ${key}:`, error);
+    logError(`Cache SET error for ${key}`, error as Error, { cacheKey: key, category });
     return false;
   }
 }
@@ -91,11 +91,11 @@ export function deleteCacheItem(key: string, category: CacheCategory = CacheCate
     const cache = cacheInstances[category];
     const success = cache.del(key) > 0;
       if (success) {
-        logger.debug(`Cache DELETE: ${key} (${category})`);
+        logDebug(`Cache DELETE: ${key} (${category})`);
       }
     return success;
   } catch (error) {
-    logger.error(`Cache DELETE error for ${key}:`, error);
+    logError(`Cache DELETE error for ${key}`, error as Error, { cacheKey: key, category });
     return false;
   }
 }
@@ -107,14 +107,14 @@ export function clearCache(category?: CacheCategory): void {
   try {
     if (category) {
       cacheInstances[category].flushAll();
-      logger.debug(`Cache CLEARED: ${category}`);
+      logDebug(`Cache CLEARED: ${category}`);
     } else {
       // Clear all caches
       Object.values(cacheInstances).forEach(cache => cache.flushAll());
-      logger.debug('Cache CLEARED: all categories');
+      logDebug('Cache CLEARED: all categories');
     }
   } catch (error) {
-    logger.error('Cache CLEAR error:', error);
+    logError('Cache CLEAR error', error as Error, { category });
   }
 }
 
@@ -134,7 +134,7 @@ export function getCacheStats(category: CacheCategory) {
       ksize: stats.ksize
     };
   } catch (error) {
-    logger.error(`Cache STATS error for ${category}:`, error);
+    logError(`Cache STATS error for ${category}`, error as Error, { category });
     return null;
   }
 }
@@ -191,7 +191,7 @@ export async function cacheOrCompute<T>(
     setCacheItem(key, result, category, customTTL);
     return result;
   } catch (error) {
-    logger.error(`Cache compute error for ${key}:`, error);
+    logError(`Cache compute error for ${key}`, error as Error, { cacheKey: key, category });
     throw error;
   }
 }
