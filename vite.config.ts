@@ -70,7 +70,6 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
       axios: path.resolve(__dirname, './src/lib/axios.ts'),
-      'react-router-dom': path.resolve(__dirname, './src/shims/react-router-dom.ts'),
     },
   },
   server: {

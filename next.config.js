@@ -328,11 +328,7 @@ const nextConfig = {
       /memory.*cache/i,
     ];
 
-    // Alias React Router to a lightweight shim to avoid bundling the full library
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'react-router-dom': path.resolve(__dirname, './src/shims/react-router-dom.ts'),
-    };
+
 
     // Simplified bundle optimization for large applications (176+ pages)
     if (!isServer) {
