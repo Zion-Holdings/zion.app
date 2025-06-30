@@ -91,6 +91,16 @@ npm run logs:summary
 
 This command searches all log files for error patterns and now also extracts any **missing translation keys** it finds. A summary report along with a `missing-keys-<timestamp>.log` file will be generated under `logs/summary/`.
 
+## One-Stop Log Collection
+
+For convenience you can run the full log collection and summary process in one step:
+
+```bash
+npm run logs:auto
+```
+
+This runs the enhanced log collector followed by the summary analyzer so you always have up-to-date reports in the `logs` directory.
+
 ## Log Maintenance
 
 To prevent the `logs/` directory from growing indefinitely, you can purge old log files based on their modification date:

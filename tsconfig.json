@@ -40,6 +40,9 @@
       "@/services/*": [
         "./src/services/*"
       ],
+      "react-router-dom": [
+        "./src/stubs/react-router-dom.ts"
+      ],
       "next-cloudinary": [
         "./types/next-cloudinary.d.ts"
       ],
