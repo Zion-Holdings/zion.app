@@ -1,26 +1,26 @@
 {
-  "timestamp": "2025-07-01T13:18:05.580Z",
+  "timestamp": "2025-07-01T13:28:31.642Z",
   "overall": "unhealthy",
   "checks": [
     {
       "name": "API Health",
       "endpoint": "/api/health",
       "status": 200,
-      "responseTime": 368,
+      "responseTime": 385,
       "success": true
     },
     {
       "name": "App Load",
       "endpoint": "/",
       "status": 200,
-      "responseTime": 179,
+      "responseTime": 411,
       "success": true
     },
     {
       "name": "Authentication",
       "endpoint": "/api/auth/session",
       "status": 500,
-      "responseTime": 347,
+      "responseTime": 464,
       "success": false
     }
   ]

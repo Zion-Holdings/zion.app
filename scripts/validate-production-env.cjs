@@ -5,6 +5,32 @@
  * Validates all required environment variables for production deployment
  */
 
+// Load environment variables from .env.local if it exists
+const fs = require('fs');
+const path = require('path');
+
+function loadEnvFile(envPath) {
+  if (fs.existsSync(envPath)) {
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    const lines = envContent.split('\n');
+    
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed && !trimmed.startsWith('#')) {
+        const [key, ...valueParts] = trimmed.split('=');
+        if (key && valueParts.length > 0) {
+          const value = valueParts.join('=');
+          process.env[key] = value;
+        }
+      }
+    }
+    console.log(`✅ Loaded environment from: ${envPath}`);
+  }
+}
+
+// Load from .env.local for development
+loadEnvFile('.env.local');
+
 const requiredEnvVars = {
   critical: [
     'NEXT_PUBLIC_SUPABASE_URL',
