@@ -344,6 +344,18 @@ async function executeBuildSequence() {
         // ... (original report logs) ...
         console.log(`- Build time: ✅ ${buildTime} seconds`);
 
+        // Apply Netlify self fix
+        try {
+          console.log("\n🔧 Applying Netlify self reference fix...");
+          const netlifyFix = require('./netlify-self-fix.cjs');
+          netlifyFix.main();
+          console.log("✅ Netlify self fix applied successfully.");
+        } catch (fixError) {
+          console.error("❌ Netlify self fix failed:", fixError.message);
+          // This is critical for Netlify deployment
+          process.exit(1);
+        }
+
         try {
           console.log("\n🔍 Running Post-Build Analysis & Reporting (from deploy-optimization.js)...");
           await analyzeAndReport(); // Call the imported function

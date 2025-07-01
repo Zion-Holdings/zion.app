@@ -283,16 +283,28 @@ const nextConfig = {
     // Fix EventEmitter memory leak by increasing max listeners
     // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
     
-    // CRITICAL: Add environment polyfill as the very first entry point
+    // CRITICAL: Add comprehensive polyfills as the very first entry point
     if (!isServer) {
       const originalEntry = config.entry;
       config.entry = async () => {
         const entries = await originalEntry();
         
-        // Add env polyfill to every entry point
-        if (entries['main.js'] && !entries['main.js'].includes('./src/utils/env-polyfill.ts')) {
-          entries['main.js'].unshift('./src/utils/env-polyfill.ts');
-        }
+        // Create comprehensive polyfill array
+        const polyfills = [
+          './src/utils/serverless-polyfill.ts',  // New serverless polyfill
+          './src/utils/env-polyfill.ts'         // Existing env polyfill
+        ];
+        
+        // Add polyfills to every entry point
+        Object.keys(entries).forEach(entryName => {
+          if (Array.isArray(entries[entryName])) {
+            polyfills.forEach(polyfill => {
+              if (!entries[entryName].includes(polyfill)) {
+                entries[entryName].unshift(polyfill);
+              }
+            });
+          }
+        });
         
         return entries;
       };
@@ -400,13 +412,31 @@ const nextConfig = {
     // PHASE 3: Advanced Performance Optimizations and Error Handling
     // Enhanced bundle optimization and monitoring capabilities
 
-    // Webpack runtime protection - simplified approach
+    // CRITICAL: Enhanced serverless environment protection
     if (isServer) {
-      // Ensure safe webpack runtime by providing global polyfills
+      // Comprehensive global polyfills for serverless environments
       if (typeof global !== 'undefined') {
+        // Essential self polyfill
         global.self = global.self || global;
+        global.globalThis = global.globalThis || global;
+        
+        // Webpack chunk arrays
         global.webpackChunk_N_E = global.webpackChunk_N_E || [];
+        
+        // Additional polyfills for common issues
+        global.window = global.window || undefined;
+        global.document = global.document || undefined;
+        global.navigator = global.navigator || undefined;
+        global.location = global.location || undefined;
       }
+      
+      // Add serverless-specific webpack configuration
+      config.target = 'node';
+      config.externalsPresets = { node: true };
+      
+      // Ensure proper module resolution in serverless
+      config.resolve.conditionNames = ['node', 'require', 'default'];
+      config.resolve.mainFields = ['main', 'module'];
     }
 
     // Exclude native modules from server-side bundling to prevent build errors
