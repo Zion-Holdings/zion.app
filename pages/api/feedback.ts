@@ -30,10 +30,7 @@ const Feedback: Model<FeedbackDoc> =
 
 async function connect() {
   if (mongoose.connection.readyState === 0) {
-    await mongoose.connect(mongoUri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    } as any);
+    await mongoose.connect(mongoUri);
   }
 }
 

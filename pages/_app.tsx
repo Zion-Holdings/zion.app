@@ -34,10 +34,10 @@ import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger
 
 
 // Dynamically load heavy components to improve initial load time
-const IntercomChat = dynamic(() => import('@/components/IntercomChat'), {
-  ssr: false,
-  loading: () => null
-});
+// const IntercomChat = dynamic(() => import('@/components/IntercomChat'), {
+//   ssr: false,
+//   loading: () => null
+// });
 import { HydrationErrorBoundary } from '@/components/HydrationErrorBoundary';
 // Import Next.js fonts for optimal loading and CLS prevention
 import { Inter, Poppins } from 'next/font/google';
@@ -60,8 +60,8 @@ import { initConsoleLogCapture } from '@/utils/consoleLogCapture';
 import { RouteChangeHandler } from '@/components/RouteChangeHandler';
 import RouteSEO from '@/components/RouteSEO';
 import { registerServiceWorker } from '@/serviceWorkerRegistration';
-import PageTransition from '@/components/PageTransition';
-import { AnimatePresence } from 'framer-motion';
+// import PageTransition from '@/components/PageTransition';
+// import { AnimatePresence } from 'framer-motion';
 
 // Configure fonts with optimal loading strategies
 const inter = Inter({
@@ -114,7 +114,7 @@ const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  console.log('Current route:', router.asPath, router.pathname);
+  // Removed console.log for production
   const [queryClient] = React.useState(() => new QueryClient({
     defaultOptions: {
       queries: {
