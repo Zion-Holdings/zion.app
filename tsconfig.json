@@ -9,6 +9,8 @@
     ],
     "module": "ESNext",
     "skipLibCheck": true,
+    "importHelpers": false,
+    "noEmitHelpers": false,
     "baseUrl": ".",
     "paths": {
       "@/*": [

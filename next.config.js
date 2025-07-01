@@ -319,13 +319,30 @@ if("undefined"!=typeof globalThis){globalThis.__extends=globalThis.__extends||n.
         })
       );
 
-      // FINAL NUCLEAR: Add ProvidePlugin for IMMEDIATE availability
+      // ULTIMATE SOLUTION: Complete tslib replacement at compilation level
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'tslib': path.resolve(__dirname, 'src/utils/tslib-polyfill.js'),
+        'tslib/__extends': path.resolve(__dirname, 'src/utils/tslib-polyfill.js'),
+        'tslib/__assign': path.resolve(__dirname, 'src/utils/tslib-polyfill.js'),
+      };
+
+      // NUCLEAR: Add ProvidePlugin for IMMEDIATE availability
       config.plugins.push(
         new webpack.ProvidePlugin({
           '__extends': [path.resolve(__dirname, 'src/utils/tslib-polyfill.js'), '__extends'],
           '__assign': [path.resolve(__dirname, 'src/utils/tslib-polyfill.js'), '__assign'],
           'process': [path.resolve(__dirname, 'src/utils/process-polyfill.js'), 'default'],
+          'tslib': path.resolve(__dirname, 'src/utils/tslib-polyfill.js'),
         })
+      );
+
+      // ULTIMATE: Force all TypeScript helpers to use our polyfills
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /^tslib$/,
+          path.resolve(__dirname, 'src/utils/tslib-polyfill.js')
+        )
       );
 
       // SIMPLIFIED DefinePlugin 
