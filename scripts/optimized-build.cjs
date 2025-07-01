@@ -19,6 +19,10 @@ const optimizedEnv = {
   SKIP_SENTRY_BUILD: "true", // Skip Sentry during React 19 transition
   SKIP_DATADOG: "true", // Skip Datadog native modules during build
   
+  // ESM module resolution fixes for formik/lodash/date-fns
+  WEBPACK_DISABLE_LODASH_DEPRECATION: "true",
+  NEXT_FORCE_ESM_EXTERNALS: "true",
+  
   // CRITICAL: Anti-hanging optimizations
   NEXT_DISABLE_CSS_INLINE: "true",
   NEXT_DISABLE_SOURCE_MAPS: "true", 

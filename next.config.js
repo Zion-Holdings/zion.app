@@ -86,7 +86,9 @@ const nextConfig = {
       'react-window',
       'fuse.js'
     ],
-
+    // ESM configuration for problematic packages
+    esmExternals: 'loose', // Allow loose ESM handling
+    
     // Enable CSS optimization for production
     optimizeCss: process.env.NODE_ENV === 'production', 
     // Memory and performance optimizations for 176+ pages
@@ -271,6 +273,10 @@ const nextConfig = {
     'formik',
     'lodash',
     'lodash-es',
+    'lodash/isPlainObject',
+    'lodash/cloneDeep',
+    'lodash/clone',
+    'lodash/toPath',
     'helia',
     '@helia/json',
     'multiformats',
@@ -290,6 +296,7 @@ const nextConfig = {
         
         // Create comprehensive polyfill array
         const polyfills = [
+          './src/utils/esm-polyfill.ts',        // ESM module resolution fix
           './src/utils/serverless-polyfill.ts',  // New serverless polyfill
           './src/utils/env-polyfill.ts'         // Existing env polyfill
         ];
@@ -408,6 +415,62 @@ const nextConfig = {
       };
     }
 
+    // CRITICAL FIX FOR ESM IMPORTS: Configure module resolution for problematic packages
+    // This fixes the "ESM packages need to be imported" errors for formik, lodash, and date-fns
+    
+    // Force specific lodash modules to use ESM variants
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'lodash/isPlainObject': 'lodash-es/isPlainObject',
+      'lodash/cloneDeep': 'lodash-es/cloneDeep',
+      'lodash/clone': 'lodash-es/clone',
+      'lodash/toPath': 'lodash-es/toPath',
+      'lodash/isEqual': 'lodash-es/isEqual',
+      'lodash/isFunction': 'lodash-es/isFunction',
+      'lodash/isString': 'lodash-es/isString',
+      'lodash/isArray': 'lodash-es/isArray',
+      'lodash/isObject': 'lodash-es/isObject',
+      'lodash': 'lodash-es',
+    };
+
+    // Configure webpack to handle ESM packages properly
+    config.module.rules.push({
+      test: /\.m?js$/,
+      include: [
+        /node_modules\/formik/,
+        /node_modules\/react-day-picker/,
+        /node_modules\/date-fns/,
+        /node_modules\/lodash/
+      ],
+      type: 'javascript/auto',
+      resolve: {
+        fullySpecified: false,
+      },
+    });
+
+    // Add specific rules for CommonJS packages that need ESM resolution
+    config.module.rules.push({
+      test: /node_modules\/(formik|react-day-picker).*\.js$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            ['@babel/preset-env', {
+              modules: false,
+              targets: {
+                esmodules: true
+              }
+            }]
+          ],
+          plugins: [
+            ['@babel/plugin-transform-runtime', {
+              useESModules: true
+            }]
+          ]
+        }
+      }
+    });
+
     // PHASE 3: Advanced Performance Optimizations and Error Handling
     // Enhanced bundle optimization and monitoring capabilities
 
@@ -440,6 +503,10 @@ const nextConfig = {
       // Ensure proper module resolution in serverless
       config.resolve.conditionNames = ['node', 'require', 'default'];
       config.resolve.mainFields = ['main', 'module'];
+    } else {
+      // Client-side: prioritize ESM modules
+      config.resolve.conditionNames = ['import', 'module', 'require', 'default'];
+      config.resolve.mainFields = ['module', 'main'];
     }
 
     // Exclude native modules from server-side bundling to prevent build errors

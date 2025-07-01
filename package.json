@@ -405,7 +405,13 @@
     "jsdom": "^26.1.0",
     "eslint": "^8.57.0",
     "glob": "^11.0.2",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.0.1",
+    "formik": {
+      "lodash": "npm:lodash-es@^4.17.21"
+    },
+    "react-day-picker": {
+      "date-fns": "^3.6.0"
+    }
   },
   "engines": {
     "node": ">=18.17.0"
