@@ -300,6 +300,23 @@ const nextConfig = {
       // Add webpack DefinePlugin to inject process.env safely
       config.plugins.push(
         new webpack.DefinePlugin({
+          'process': JSON.stringify({
+            env: {
+              NODE_ENV: process.env.NODE_ENV || 'production',
+              NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
+              NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+              NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+            },
+            versions: {},
+            platform: 'browser',
+            browser: true,
+          }),
+          'process.env': JSON.stringify({
+            NODE_ENV: process.env.NODE_ENV || 'production',
+            NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
+            NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+            NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+          }),
           'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
           'process.env.NEXT_PUBLIC_APP_URL': JSON.stringify(process.env.NEXT_PUBLIC_APP_URL || ''),
           'process.env.NEXT_PUBLIC_SUPABASE_URL': JSON.stringify(process.env.NEXT_PUBLIC_SUPABASE_URL || ''),

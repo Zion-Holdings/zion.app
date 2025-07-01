@@ -1,3 +1,36 @@
+// EMERGENCY: Inject process polyfill IMMEDIATELY before anything else runs
+if (typeof globalThis !== 'undefined') {
+  if (!globalThis.process) {
+    globalThis.process = {
+      env: {
+        NODE_ENV: 'production',
+        NEXT_PUBLIC_APP_URL: '',
+        NEXT_PUBLIC_SUPABASE_URL: '',
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
+      },
+      versions: {} as any,
+      platform: 'browser' as any,
+      browser: true,
+    } as any;
+  }
+}
+
+if (typeof window !== 'undefined') {
+  if (!(window as any).process) {
+    (window as any).process = {
+      env: {
+        NODE_ENV: 'production',
+        NEXT_PUBLIC_APP_URL: '',
+        NEXT_PUBLIC_SUPABASE_URL: '',
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: '',
+      },
+      versions: {} as any,
+      platform: 'browser' as any,
+      browser: true,
+    } as any;
+  }
+}
+
 // CRITICAL: Import environment polyfill FIRST to prevent process.env errors
 import '../src/utils/env-polyfill';
 
@@ -7,6 +40,14 @@ if (typeof window !== 'undefined') {
     if (event.reason?.message?.includes('getInitialProps')) {
       console.error('Component loading error caught:', event.reason);
       event.preventDefault(); // Prevent the error from crashing the app
+    }
+  });
+  
+  // Additional error handling for process.env errors
+  window.addEventListener('error', (event) => {
+    if (event.message?.includes('Cannot read properties of undefined')) {
+      console.error('Runtime error caught:', event.error);
+      event.preventDefault();
     }
   });
 }
