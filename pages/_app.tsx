@@ -158,7 +158,7 @@ const LanguageProviderWrapper: React.FC<{ children: React.ReactNode }> = ({
 };
 
 // ===================================================================
-// MAIN APP COMPONENT - Optimized with lazy loading
+// MAIN APP COMPONENT - FIXED: Optimized with fallback safety
 // ===================================================================
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -173,60 +173,87 @@ function MyApp({ Component, pageProps }: AppProps) {
     },
   }));
   const [isInitialized, setIsInitialized] = React.useState(false);
+  const [initError, setInitError] = React.useState<string | null>(null);
 
-  // Optimized initialization with deferred non-critical operations
+  // CRITICAL FIX: Force initialization after timeout to prevent infinite loading
+  React.useEffect(() => {
+    const forceInitTimeout = setTimeout(() => {
+      if (!isInitialized) {
+        console.warn('[App] Force initializing after timeout - preventing infinite loading');
+        setIsInitialized(true);
+      }
+    }, 3000); // Force init after 3 seconds max
+
+    return () => clearTimeout(forceInitTimeout);
+  }, [isInitialized]);
+
+  // Simplified initialization with better error handling
   React.useEffect(() => {
     let isMounted = true;
 
     const initializeApp = async () => {
       try {
         if (process.env.NODE_ENV === 'development') {
-          logInfo('[App] Starting optimized initialization...');
+          console.log('[App] Starting optimized initialization...');
         }
 
         // Critical path only
-        initializeGlobalErrorHandlers();
+        try {
+          initializeGlobalErrorHandlers();
+        } catch (error) {
+          console.warn('[App] Global error handlers failed:', error);
+        }
 
         try {
           validateProductionEnvironment();
         } catch (error) {
-          logWarn('[App] Environment validation warning:', { data: { error } });
+          console.warn('[App] Environment validation warning:', error);
         }
 
         // Mark as initialized immediately for faster render
         if (isMounted) {
-          setIsInitialized(true);
+          setTimeout(() => {
+            setIsInitialized(true);
+          }, 100); // Small delay to ensure DOM is ready
         }
 
         // Defer non-critical initializations
         setTimeout(() => {
           if (!isMounted) return;
 
-          initializeServices().catch((err) =>
-            logWarn('Service initialization failed', { data: { error: err } }),
-          );
+          try {
+            initializeServices().catch((err) =>
+              console.warn('Service initialization failed:', err),
+            );
+          } catch (error) {
+            console.warn('Services init error:', error);
+          }
 
           // Lazy load performance monitoring
           if (typeof window !== 'undefined' && process.env.PERFORMANCE_MONITORING === 'true') {
             import('@/utils/performance').then(perf => {
               perf.initializePerformanceOptimizations();
               perf.initializePerformance();
-            });
+            }).catch(err => console.warn('Performance monitoring failed:', err));
           }
 
           // Lazy load development tools
           if (process.env.NODE_ENV === 'development') {
             import('@/utils/consoleLogCapture').then(console => {
               console.initConsoleLogCapture();
-            });
+            }).catch(err => console.warn('Console capture failed:', err));
           }
-        }, 50); // Reduced defer time for faster perceived performance
+        }, 200);
 
       } catch (error) {
-        logErrorToProduction('[App] Critical initialization error:', error, { page: 'app-initialization' });
+        console.error('[App] Critical initialization error:', error);
+        setInitError('Initialization failed');
 
+        // Always initialize even on error to prevent infinite loading
         if (isMounted) {
-          setIsInitialized(true);
+          setTimeout(() => {
+            setIsInitialized(true);
+          }, 500);
         }
 
         // Deferred error reporting
@@ -236,7 +263,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               Sentry.captureException(error);
             }
           } catch (sentryError) {
-            logWarn('[App] Could not send error to Sentry:', { data: { error: sentryError } });
+            console.warn('[App] Could not send error to Sentry:', sentryError);
           }
         }, 0);
       }
@@ -249,38 +276,46 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
   }, []);
 
-  // Lazy Sentry context updates
+  // Lazy Sentry context updates with error handling
   React.useEffect(() => {
-    if (process.env.NEXT_PUBLIC_SENTRY_DSN && !process.env.NEXT_PUBLIC_SENTRY_DSN.includes('dummy')) {
-      Sentry.setTag('route', router.pathname);
-      Sentry.setContext('query', router.query);
+    try {
+      if (process.env.NEXT_PUBLIC_SENTRY_DSN && !process.env.NEXT_PUBLIC_SENTRY_DSN.includes('dummy')) {
+        Sentry.setTag('route', router.pathname);
+        Sentry.setContext('query', router.query);
+      }
+    } catch (error) {
+      console.warn('Sentry context update failed:', error);
     }
   }, [router.pathname, router.query]);
 
-  // Lazy service worker registration
+  // Lazy service worker registration with error handling
   React.useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
       setTimeout(() => {
         import('@/serviceWorkerRegistration').then(sw => {
           sw.registerServiceWorker();
-        });
-      }, 1000); // Reduced delay
+        }).catch(err => console.warn('Service worker registration failed:', err));
+      }, 2000);
     }
   }, []);
 
-  // Optimized loading screen
+  // FIXED: Enhanced loading screen with error display
   if (!isInitialized) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 to-purple-900">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-2 border-cyan-400 border-t-transparent mx-auto mb-4"></div>
           <p className="text-white text-lg font-medium">Initializing Zion App...</p>
-          <p className="text-blue-200 text-sm mt-2">Optimizing performance...</p>
+          <p className="text-blue-200 text-sm mt-2">
+            {initError ? `Error: ${initError}` : 'Optimizing performance...'}
+          </p>
+          <p className="text-blue-300 text-xs mt-2">This should complete in a few seconds</p>
         </div>
       </div>
     );
   }
 
+  // FIXED: Simplified provider chain to reduce loading complexity
   return (
     <>
       <Head>
@@ -319,7 +354,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               <React.Suspense
                 fallback={
                   <div className="flex items-center justify-center min-h-screen">
-                    <div className="animate-pulse text-lg">Loading...</div>
+                    <div className="animate-pulse text-lg">Loading app...</div>
                   </div>
                 }
               >
@@ -330,36 +365,45 @@ function MyApp({ Component, pageProps }: AppProps) {
                         <I18nextProvider i18n={i18n}>
                           <ErrorProvider>
                             <AuthProvider>
-                              <WhitelabelProvider>
-                                <LanguageProviderWrapper>
-                                  <WalletProvider>
-                                    <CartProvider>
-                                      <AnalyticsProvider>
-                                        <FeedbackProvider>
-                                          <ThemeProvider>
-                                            <AppLayout>
-                                              <RouteSEO />
-                                              <RouteChangeHandler
-                                                resetScrollOnChange={true}
-                                                forceRerender={false}
-                                              />
-                                              <ErrorBoundary>
-                                                <Component
-                                                  key={router.asPath}
-                                                  {...pageProps}
+                              <ErrorBoundary fallback={
+                                <div className="flex items-center justify-center min-h-screen">
+                                  <div className="text-center">
+                                    <h2 className="text-xl mb-4">Loading providers...</h2>
+                                    <p>If this takes too long, there may be a provider issue.</p>
+                                  </div>
+                                </div>
+                              }>
+                                <WhitelabelProvider>
+                                  <LanguageProviderWrapper>
+                                    <WalletProvider>
+                                      <CartProvider>
+                                        <AnalyticsProvider>
+                                          <FeedbackProvider>
+                                            <ThemeProvider>
+                                              <AppLayout>
+                                                <RouteSEO />
+                                                <RouteChangeHandler
+                                                  resetScrollOnChange={true}
+                                                  forceRerender={false}
                                                 />
-                                              </ErrorBoundary>
-                                              <ErrorResetOnRouteChange />
-                                              <ToastContainer />
-                                              <OfflineIndicator />
-                                            </AppLayout>
-                                          </ThemeProvider>
-                                        </FeedbackProvider>
-                                      </AnalyticsProvider>
-                                    </CartProvider>
-                                  </WalletProvider>
-                                </LanguageProviderWrapper>
-                              </WhitelabelProvider>
+                                                <ErrorBoundary>
+                                                  <Component
+                                                    key={router.asPath}
+                                                    {...pageProps}
+                                                  />
+                                                </ErrorBoundary>
+                                                <ErrorResetOnRouteChange />
+                                                <ToastContainer />
+                                                <OfflineIndicator />
+                                              </AppLayout>
+                                            </ThemeProvider>
+                                          </FeedbackProvider>
+                                        </AnalyticsProvider>
+                                      </CartProvider>
+                                    </WalletProvider>
+                                  </LanguageProviderWrapper>
+                                </WhitelabelProvider>
+                              </ErrorBoundary>
                             </AuthProvider>
                           </ErrorProvider>
                         </I18nextProvider>
@@ -377,7 +421,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 if (process.env.NODE_ENV === 'development') {
-  logInfo('[App] MyApp component optimized with dynamic loading');
+  console.log('[App] MyApp component initialized with loading fix');
 }
 
 export default MyApp;

@@ -39,6 +39,7 @@
     "deploy:verify": "npm run monitor:production && npm run bundle:optimize",
     "deploy:complete": "node scripts/complete-production-deployment.cjs",
     "setup:quick": "node scripts/quick-supabase-setup.cjs",
+    "fix:loading": "node scripts/fix-app-loading.cjs",
     "start": "next start",
     "start:production": "NODE_ENV=production next start",
     "deploy:ipfs": "node scripts/deploy-zion-ipfs.js",
