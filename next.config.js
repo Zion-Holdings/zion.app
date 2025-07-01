@@ -289,10 +289,14 @@ const nextConfig = {
       config.entry = async () => {
         const entries = await originalEntry();
         
-        // Add env polyfill to every entry point
-        if (entries['main.js'] && !entries['main.js'].includes('./src/utils/env-polyfill.ts')) {
-          entries['main.js'].unshift('./src/utils/env-polyfill.ts');
-        }
+        // Add env polyfill to ALL entry points, not just main.js
+        Object.keys(entries).forEach(entryName => {
+          if (Array.isArray(entries[entryName])) {
+            if (!entries[entryName].includes('./src/utils/env-polyfill.ts')) {
+              entries[entryName].unshift('./src/utils/env-polyfill.ts');
+            }
+          }
+        });
         
         return entries;
       };
@@ -311,6 +315,7 @@ const nextConfig = {
       config.plugins.push(
         new webpack.ProvidePlugin({
           process: 'process/browser',
+          Buffer: ['buffer', 'Buffer'],
         })
       );
     }
