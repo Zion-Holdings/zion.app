@@ -1,3 +1,6 @@
+// CRITICAL: Import environment polyfill FIRST to prevent process.env errors
+import '../src/utils/env-polyfill';
+
 import React, { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';

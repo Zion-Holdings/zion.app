@@ -283,6 +283,38 @@ const nextConfig = {
     // Fix EventEmitter memory leak by increasing max listeners
     // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
     
+    // CRITICAL: Add environment polyfill as the very first entry point
+    if (!isServer) {
+      const originalEntry = config.entry;
+      config.entry = async () => {
+        const entries = await originalEntry();
+        
+        // Add env polyfill to every entry point
+        if (entries['main.js'] && !entries['main.js'].includes('./src/utils/env-polyfill.ts')) {
+          entries['main.js'].unshift('./src/utils/env-polyfill.ts');
+        }
+        
+        return entries;
+      };
+
+      // Add webpack DefinePlugin to inject process.env safely
+      config.plugins.push(
+        new webpack.DefinePlugin({
+          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+          'process.env.NEXT_PUBLIC_APP_URL': JSON.stringify(process.env.NEXT_PUBLIC_APP_URL || ''),
+          'process.env.NEXT_PUBLIC_SUPABASE_URL': JSON.stringify(process.env.NEXT_PUBLIC_SUPABASE_URL || ''),
+          'process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY': JSON.stringify(process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''),
+        })
+      );
+
+      // Add webpack ProvidePlugin to provide process global
+      config.plugins.push(
+        new webpack.ProvidePlugin({
+          process: 'process/browser',
+        })
+      );
+    }
+    
     // Development optimizations to prevent memory leaks with 176+ pages
     if (dev && !isServer) {
       config.watchOptions = {
