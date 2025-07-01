@@ -1,7 +1,9 @@
+import '@testing-library/jest-dom';
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { vi } from 'vitest';
 import { MemoryRouterProvider } from 'next-router-mock/MemoryRouterProvider';
-import { SignUpForm } from '@/mobile/components/onboarding/SignUpForm';
+import SignUpForm from '@/components/onboarding/SignUpForm';
 
 jest.mock('@/hooks/useAuth', () => ({
   useAuth: () => ({
@@ -11,7 +13,9 @@ jest.mock('@/hooks/useAuth', () => ({
   }),
 }));
 
-jest.mock('next/router', () => require('next-router-mock'));
+// Mock the navigation hook
+const mockPush = vi.fn();
+vi.mock('next/router', () => import('next-router-mock'));
 
 describe('SignUpForm', () => {
   test('calls loginWithGoogle when Google button is clicked', () => {

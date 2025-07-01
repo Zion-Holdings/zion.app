@@ -8,7 +8,7 @@ jest.mock('@supabase/supabase-js', () => {
   // This inner mockSignInWithPassword is what the mock factory will use.
   // It needs to be the same instance as the one tests will interact with.
   // So, we assign the top-level mockSignInWithPassword here.
-  const actualCreateClient = jest.requireActual('@supabase/supabase-js').createClient;
+  const _actualCreateClient = jest.requireActual('@supabase/supabase-js').createClient;
   return {
     createClient: jest.fn(() => ({
       auth: {

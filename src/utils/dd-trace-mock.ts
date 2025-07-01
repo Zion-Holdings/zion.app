@@ -5,112 +5,101 @@
  * to avoid native module compilation issues while maintaining API compatibility.
  */
 
-// Mock tracer instance
+// Mock implementation for DD-Trace to prevent native module import issues during build
+// This mock provides all the necessary DD-Trace APIs without importing any native modules
+
+const noop = () => {};
+const noopReturn = () => null;
+const noopReturnThis = function(this: any) { return this; };
+
+// Mock tracer with all common DD-Trace methods
 const mockTracer = {
-  // Scope management
-  scope: () => ({
-    active: () => null,
-    activate: (span: any, fn: Function) => fn ? fn() : Promise.resolve(),
-  }),
+  // Core tracing methods
+  trace: (name: string, options?: any, callback?: Function) => {
+    if (typeof options === 'function') {
+      callback = options;
+    }
+    if (callback) {
+      return callback();
+    }
+    return Promise.resolve();
+  },
   
-  // Tracing methods
-  trace: (name: string, fn?: Function) => fn ? fn() : Promise.resolve(),
-  startSpan: (name: string, options?: any) => mockSpan,
-  wrap: (name: string, fn: Function) => fn,
+  // Span management
+  startSpan: () => mockSpan,
+  scope: () => mockScope,
+  
+  // Configuration
+  init: noop,
+  use: noopReturnThis,
   
   // Context management
-  setUser: (user: any) => {},
-  addTags: (tags: any) => {},
-  setTag: (key: string, value: any) => {},
+  setUser: noop,
+  setTag: noop,
+  
+  // Export methods
+  exportTracer: noopReturn,
+  
+  // Utilities
+  getRumData: noopReturn,
+  setUrl: noop,
   
   // Plugin management
-  plugin: (name: string, config?: any) => mockTracer,
-  use: (plugin: any, config?: any) => mockTracer,
-  
-  // Service configuration
-  setUrl: (url: string) => {},
-  setService: (service: string) => {},
+  plugin: noopReturnThis,
   
   // Sampling
-  setSamplingRate: (rate: number) => {},
+  setSamplingRules: noop,
   
-  // Manual instrumentation
-  instrument: (name: string, fn: Function) => fn,
-  
-  // Error handling
-  captureException: (error: any) => {
-    console.warn('DD-Trace Mock: captureException called', error.message || error);
-  },
-  
-  // Metrics (basic no-op implementations)
-  increment: (metric: string, value?: number, tags?: any) => {},
-  decrement: (metric: string, value?: number, tags?: any) => {},
-  histogram: (metric: string, value: number, tags?: any) => {},
-  gauge: (metric: string, value: number, tags?: any) => {},
-  
-  // Custom metrics
-  distribution: (metric: string, value: number, tags?: any) => {},
-  timing: (metric: string, value: number, tags?: any) => {},
-  
-  // Shutdown
-  flush: () => Promise.resolve(),
-  close: () => Promise.resolve(),
+  // Custom methods for compatibility
+  wrap: (name: string, fn: Function) => fn,
+  bind: (fn: Function) => fn,
 };
 
-// Mock span implementation
+// Mock span
 const mockSpan = {
-  context: () => ({
-    toTraceId: () => '0000000000000000',
-    toSpanId: () => '0000000000000000',
-    toString: () => '0000000000000000',
-  }),
-  
-  setTag: (key: string, value: any) => mockSpan,
-  addTags: (tags: any) => mockSpan,
-  setOperationName: (name: string) => mockSpan,
-  
-  log: (fields: any) => mockSpan,
-  logEvent: (name: string, fields?: any) => mockSpan,
-  
-  setBaggageItem: (key: string, value: string) => mockSpan,
-  getBaggageItem: (key: string) => null,
-  
-  finish: (finishTime?: number) => {},
-  
-  // Error handling
-  setError: (error: any) => mockSpan,
-  
-  // Timing
-  setStartTime: (time: number) => mockSpan,
+  setTag: noop,
+  setTags: noop,
+  log: noop,
+  addTags: noop,
+  finish: noop,
+  context: () => mockSpanContext,
+  getBaggageItem: noopReturn,
+  setBaggageItem: noop,
+  setOperationName: noop,
+  tracer: () => mockTracer,
 };
 
-// Mock scope manager
-const mockScopeManager = {
-  active: () => null,
-  activate: (span: any, fn: Function) => fn ? fn() : Promise.resolve(),
-  bind: (fn: Function, span?: any) => fn,
-  bindEmitter: (emitter: any, span?: any) => {},
+// Mock span context
+const mockSpanContext = {
+  toTraceId: () => 'mock-trace-id',
+  toSpanId: () => 'mock-span-id',
 };
 
-// Export the mock tracer as default (matches dd-trace export)
-export default {
-  init: (options?: any) => {
-    console.log('🚫 DD-Trace Mock: init called with options', options ? 'provided' : 'none');
-    return mockTracer;
-  },
-  ...mockTracer,
+// Mock scope
+const mockScope = {
+  active: noopReturn,
+  activate: (span: any, callback: Function) => callback(),
+  bind: (fn: Function) => fn,
 };
+
+// Export the mock tracer as default export
+export default mockTracer;
 
 // Named exports for compatibility
-export const tracer = mockTracer;
-export const scope = mockScopeManager;
-export const span = mockSpan;
+export const initialize = mockTracer.init;
+export const trace = mockTracer.trace;
+export const startSpan = mockTracer.startSpan;
+export const scope = mockTracer.scope;
+export const use = mockTracer.use;
+export const setUser = mockTracer.setUser;
+export const setTag = mockTracer.setTag;
+export const exportTracer = mockTracer.exportTracer;
+export const getRumData = mockTracer.getRumData;
+export const setUrl = mockTracer.setUrl;
+export const plugin = mockTracer.plugin;
+export const setSamplingRules = mockTracer.setSamplingRules;
+export const wrap = mockTracer.wrap;
+export const bind = mockTracer.bind;
 
 // CommonJS compatibility
-module.exports = {
-  init: (options?: any) => {
-    console.log('🚫 DD-Trace Mock: init called with options', options ? 'provided' : 'none');
-    return mockTracer;
-  },
-  ...mockTracer,
-};
+module.exports = mockTracer;

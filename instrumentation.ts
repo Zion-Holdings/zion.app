@@ -1,5 +1,16 @@
 // @/instrumentation.ts
 
+// Import server polyfills FIRST to handle client-side globals in server context
+// Immediately define self for webpack chunk loading
+if (typeof global !== 'undefined' && typeof (global as any).self === 'undefined') {
+  (global as any).self = global;
+}
+if (typeof globalThis !== 'undefined' && typeof (globalThis as any).self === 'undefined') {
+  (globalThis as any).self = globalThis;
+}
+
+import './src/utils/server-polyfill';
+
 // Conditionally import Sentry to avoid Node.js dependencies in browser
 let Sentry: any = null;
 

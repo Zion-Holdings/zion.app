@@ -4,14 +4,13 @@ import { render, screen, waitFor } from '@testing-library/react';
 import App from '@/App';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
+import { vi } from 'vitest';
 
 // Store original import.meta if it exists for cleanup
-// @ts-ignore
 const originalImportMeta = globalThis.importMeta;
 
 beforeAll(() => {
   // Mock import.meta.env to simulate an invalid VITE_REOWN_PROJECT_ID
-  // @ts-ignore
   globalThis.importMeta = {
     env: {
       VITE_REOWN_PROJECT_ID: 'YOUR_DEFAULT_PROJECT_ID_ENV_MISSING',
@@ -30,9 +29,17 @@ beforeAll(() => {
 
 afterAll(() => {
   // Restore original import.meta to avoid affecting other tests
-  // @ts-ignore
   globalThis.importMeta = originalImportMeta;
 });
+
+vi.mock('@reown/appkit/react', () => ({
+  createAppKit: vi.fn().mockReturnValue(undefined),
+  useAppKit: vi.fn().mockReturnValue(undefined),
+}));
+
+vi.mock('@/config/env', () => ({
+  getAppKitProjectId: () => 'test_project_id_from_mock',
+}));
 
 describe('App Integration - Wallet Initialization Failure', () => {
   let consoleErrorSpy: jest.SpyInstance;

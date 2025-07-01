@@ -1,4 +1,6 @@
 /** @jest-environment node */
+import { test, expect } from '@playwright/test';
+import { createClient } from '@supabase/supabase-js';
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const { registerUser, loginUser } = require('../../server/controllers/authController');

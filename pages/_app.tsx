@@ -221,6 +221,18 @@ function MyApp({ Component, pageProps }: AppProps) {
                   non_interaction: true,
                 });
               }
+              
+              // Initialize comprehensive performance monitoring on first metric
+              if (!(global as any).performanceMonitorInitialized) {
+                (global as any).performanceMonitorInitialized = true;
+                import('@/utils/performance-monitor').then(({ default: performanceMonitor }) => {
+                  if (process.env.NODE_ENV === 'development') {
+                    console.log('🔧 Performance monitoring initialized');
+                  }
+                }).catch((error) => {
+                  console.warn('Failed to initialize performance monitoring:', error);
+                });
+              }
             };
             
             onCLS(reportWebVitals);
