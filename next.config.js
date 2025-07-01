@@ -297,55 +297,21 @@ const nextConfig = {
         return entries;
       };
 
-            // FINAL NUCLEAR OPTION: COMPLETE MODULE SYSTEM OVERRIDE
-      config.plugins.push(
-        new webpack.BannerPlugin({
-          banner: `/* FINAL NUCLEAR OPTION - TOTAL OVERRIDE */
-!function(){
-console.log('☢️ NUCLEAR WEBPACK OVERRIDE ACTIVE');
-var g=this||window||global||globalThis||{};
-var n={
-__extends:function(d,b){if("function"!=typeof b&&null!==b)throw new TypeError("Class extends value "+String(b)+" is not a constructor or null");function t(){this.constructor=d}d.prototype=null===b?Object.create(b):(t.prototype=b.prototype,new t)},
-__assign:Object.assign||function(t){for(var s,i=1,n=arguments.length;i<n;i++)for(var p in s=arguments[i])Object.prototype.hasOwnProperty.call(s,p)&&(t[p]=s[p]);return t},
-process:{env:{NODE_ENV:"production"},versions:{},platform:"browser",browser:!0}
-};
-g.__extends=g.__extends||n.__extends;g.__assign=g.__assign||n.__assign;g.process=g.process||n.process;
-if("undefined"!=typeof window){window.__extends=window.__extends||n.__extends;window.__assign=window.__assign||n.__assign;window.process=window.process||n.process}
-if("undefined"!=typeof globalThis){globalThis.__extends=globalThis.__extends||n.__extends;globalThis.__assign=globalThis.__assign||n.__assign;globalThis.process=globalThis.process||n.process}
-}();`,
-          raw: true,
-          entryOnly: false, // Apply to ALL chunks including vendors
-          test: /\.js$/, // Only apply to JavaScript files
-        })
-      );
+      // DISABLED: FINAL NUCLEAR OPTION BannerPlugin causing module resolution issues
+      // The BannerPlugin was injecting absolute paths '/opt/build/repo/src/utils/tslib-polyfill.js'
+      // into third-party node_modules like @walletconnect, @peculiar, etc.
+      // This caused webpack module resolution failures in the Netlify build environment
+      //
+      // Document-level polyfills in _document.tsx will handle runtime errors instead
 
-      // ULTIMATE SOLUTION: Complete tslib replacement at compilation level  
-      const tslibPath = path.resolve(__dirname, 'src/utils/tslib-polyfill.js');
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        'tslib': tslibPath,
-        'tslib/__extends': tslibPath,
-        'tslib/__assign': tslibPath,
-      };
-
-      // NUCLEAR: Add ProvidePlugin for IMMEDIATE availability
-      const processPolyfillPath = path.resolve(__dirname, 'src/utils/process-polyfill.js');
-      config.plugins.push(
-        new webpack.ProvidePlugin({
-          '__extends': [tslibPath, '__extends'],
-          '__assign': [tslibPath, '__assign'],
-          'process': [processPolyfillPath, 'default'],
-          'tslib': tslibPath,
-        })
-      );
-
-      // ULTIMATE: Force all TypeScript helpers to use our polyfills
-      config.plugins.push(
-        new webpack.NormalModuleReplacementPlugin(
-          /^tslib$/,
-          tslibPath
-        )
-      );
+      // DISABLED: All webpack-level polyfill injection causing module resolution issues
+      // The following approaches were causing third-party node_modules to import absolute paths:
+      // - resolve.alias for tslib
+      // - ProvidePlugin for TypeScript helpers  
+      // - NormalModuleReplacementPlugin for tslib replacement
+      // - BannerPlugin injection into chunks
+      //
+      // Solution: Rely only on document-level and runtime polyfills without webpack interference
 
       // SIMPLIFIED DefinePlugin 
       config.plugins.push(
