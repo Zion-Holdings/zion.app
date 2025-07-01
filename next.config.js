@@ -96,6 +96,7 @@ const nextConfig = {
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
     swcTraceProfiling: false,
+    esmExternals: 'loose',
     
   },
 
@@ -269,8 +270,8 @@ const nextConfig = {
     'date-fns',
     'react-day-picker',
     'formik',
-    'lodash',
-    'lodash-es',
+    // lodash-es is already ESM, lodash (CJS) is not directly installed or needed for transpilation here
+    // as formik's usage of it is handled by webpack aliases and replacements.
     'helia',
     '@helia/json',
     'multiformats',
