@@ -832,6 +832,18 @@ const nextConfig = {
       };
     }
 
+    // Fix ESM import issues
+    config.externals = config.externals || [];
+    if (isServer) {
+      config.externals.push({
+        'lodash/isPlainObject': 'commonjs lodash/isPlainObject',
+        'lodash/cloneDeep': 'commonjs lodash/cloneDeep', 
+        'lodash/clone': 'commonjs lodash/clone',
+        'lodash/toPath': 'commonjs lodash/toPath',
+        'date-fns': 'commonjs date-fns'
+      });
+    }
+
     return config;
   },
 

@@ -2,6 +2,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-this-alias */
 /* eslint-disable prefer-const */
+/* eslint-disable no-var */
+/* eslint-disable prefer-rest-params */
+/* eslint-disable no-cond-assign */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 /**
  * Serverless Environment Polyfill
  * 
@@ -60,20 +64,21 @@ if (typeof webpackChunk_N_E === 'undefined') {
   (globalThis as any).webpackChunk_N_E = selfRef.webpackChunk_N_E;
 }
 
-// TypeScript helper polyfills for runtime
+// TypeScript helper polyfills for runtime - simplified to avoid errors
 const tsHelpers = {
   __extends: function(d: any, b: any) {
     if (typeof b !== "function" && b !== null)
       throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
     
+    // @ts-expect-error: TypeScript helper requires constructor modification
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new (__ as any)());
   },
   
   __assign: function() {
-    return Object.assign || function (t: any) {
-      for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
+    return Object.assign || function (t: any, ...args: any[]) {
+      for (var s, i = 0; i < args.length; i++) {
+        s = args[i];
         for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
           t[p] = s[p];
       }
@@ -82,25 +87,29 @@ const tsHelpers = {
   }(),
   
   __rest: function (s: any, e: string[]) {
-    var t: any = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+    const t: any = {};
+    for (const p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
       t[p] = s[p];
     if (s != null && typeof Object.getOwnPropertySymbols === "function") {
       const symbols = Object.getOwnPropertySymbols(s);
-      for (var i = 0; i < symbols.length; i++) {
+      for (let i = 0; i < symbols.length; i++) {
         const symbol = symbols[i];
-        if (e.indexOf(symbol as any) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol))
+        if (symbol && e.indexOf(symbol.toString()) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol))
           t[symbol] = s[symbol];
       }
     }
     return t;
   },
   
-  __decorate: function (decorators: any[], target: any, key?: string | symbol, desc?: any) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+  __decorate: function (decorators: any[], target: any, key?: PropertyKey, desc?: PropertyDescriptor) {
+    const c = arguments.length;
+    let r = c < 3 ? target : desc === null ? (desc = Object.getOwnPropertyDescriptor(target, key!)) : desc;
+    let d;
     if (typeof Reflect === "object" && typeof (Reflect as any).decorate === "function") r = (Reflect as any).decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+    else for (let i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) {
+      r = (c < 3 ? d(r) : c > 3 ? d(target, key!, r) : d(target, key!)) || r;
+    }
+    return c > 3 && r && Object.defineProperty(target, key!, r), r;
   },
   
   __awaiter: function (thisArg: any, _arguments: any, P: any, generator: any) {
@@ -133,6 +142,7 @@ try {
       try {
         return originalPush.call(this, chunk);
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.warn('Webpack chunk loading error prevented:', error);
         return 0;
       }
@@ -159,7 +169,7 @@ if (typeof window !== 'undefined') {
     
     // Call original error handler for other errors
     if (originalOnError) {
-      return originalOnError.call(this, message, source, lineno, colno, error);
+      return originalOnError.call(this as Window, message, source, lineno, colno, error);
     }
     return false;
   };
@@ -178,7 +188,7 @@ if (typeof window !== 'undefined') {
     
     // Call original handler for other rejections
     if (originalOnUnhandledRejection) {
-      return originalOnUnhandledRejection.call(this, event);
+      return originalOnUnhandledRejection.call(this as Window, event);
     }
   };
 }
@@ -186,12 +196,12 @@ if (typeof window !== 'undefined') {
 // Node.js environment polyfills (for SSR/build time)
 if (typeof global !== 'undefined' && typeof window === 'undefined') {
   // Ensure Node.js global has necessary polyfills
-  if (typeof global.self === 'undefined') {
-    global.self = global;
+  if (typeof (global as any).self === 'undefined') {
+    (global as any).self = global;
   }
   
-  if (typeof global.webpackChunk_N_E === 'undefined') {
-    global.webpackChunk_N_E = [];
+  if (typeof (global as any).webpackChunk_N_E === 'undefined') {
+    (global as any).webpackChunk_N_E = [];
   }
   
   // TypeScript helpers for Node.js
@@ -200,6 +210,44 @@ if (typeof global !== 'undefined' && typeof window === 'undefined') {
       (global as any)[helper] = (tsHelpers as any)[helper];
     }
   });
+
+  // Polyfill for missing process object (basic implementation)
+  if (!(global as any).process) {
+    (global as any).process = {
+      env: { NODE_ENV: 'development' } as any,
+      nextTick: (callback: () => void) => setTimeout(callback, 0),
+      cwd: () => '/',
+      platform: 'linux',
+      version: 'v16.0.0',
+      versions: { 
+        node: '16.0.0',
+        v8: '9.0.0',
+        uv: '1.0.0',
+        zlib: '1.0.0',
+        brotli: '1.0.0',
+        ares: '1.0.0',
+        modules: '93',
+        nghttp2: '1.0.0',
+        napi: '8',
+        llhttp: '6.0.0',
+        openssl: '3.0.0',
+        cldr: '39.0',
+        icu: '69.1',
+        tz: '2021a',
+        unicode: '13.0'
+      } as any
+    };
+  }
+
+  // Polyfill for missing crypto
+  if (!(global as any).crypto && typeof window !== 'undefined' && (window as any).crypto) {
+    (global as any).crypto = (window as any).crypto;
+  }
+
+  // Polyfill for missing fetch
+  if (!(global as any).fetch && typeof window !== 'undefined' && (window as any).fetch) {
+    (global as any).fetch = (window as any).fetch.bind(window);
+  }
 }
 
 // Export a verification function for testing
@@ -211,12 +259,13 @@ export const verifyPolyfills = () => {
     errorHandlersSet: typeof window !== 'undefined' && window.onerror !== null
   };
   
+  // eslint-disable-next-line no-console
   console.log('Serverless polyfill verification:', checks);
   return Object.values(checks).every(Boolean);
 };
 
 // Auto-verify in development
-if (process.env.NODE_ENV === 'development') {
+if (typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'development') {
   setTimeout(() => verifyPolyfills(), 100);
 }
 
