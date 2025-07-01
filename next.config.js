@@ -333,6 +333,17 @@ const nextConfig = {
       };
     }
 
+    // Completely exclude dd-trace during CI builds to prevent native module issues  
+    if (process.env.SKIP_DATADOG === 'true' || process.env.CI === 'true') {
+      console.log('🚫 DD-Trace disabled for CI build - using mock implementation');
+      
+      // Use webpack alias to replace dd-trace with mock implementation
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'dd-trace': path.resolve(__dirname, 'src/utils/dd-trace-mock.ts'),
+      };
+    }
+
     // Fix webpack cache configuration to prevent build errors and warnings
     if (config.cache) {
       // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
@@ -539,6 +550,8 @@ const nextConfig = {
       util: false,
       zlib: false,
       url: false,
+      // Handle native modules
+      'dd-trace': false,
       // Handle node: imports
       'node:http': false,
       'node:https': false,
@@ -551,6 +564,8 @@ const nextConfig = {
       'node:url': false,
       'node:worker_threads': false,
       'node:async_hooks': false,
+      'node:child_process': false,
+      'node:diagnostics_channel': false,
     };
 
     // Optimize bundle size

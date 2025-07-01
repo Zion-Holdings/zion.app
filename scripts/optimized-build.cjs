@@ -17,6 +17,7 @@ const optimizedEnv = {
   CI: "true",
   SKIP_TYPE_CHECK: "true", // Skip type checking to speed up build
   SKIP_SENTRY_BUILD: "true", // Skip Sentry during React 19 transition
+  SKIP_DATADOG: "true", // Skip Datadog native modules during build
   
   // CRITICAL: Anti-hanging optimizations
   NEXT_DISABLE_CSS_INLINE: "true",

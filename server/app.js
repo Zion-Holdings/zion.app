@@ -1,7 +1,49 @@
 const express = require('express');
 const Sentry = require('@sentry/node');
 const Tracing = require('@sentry/tracing');
-const tracer = require('dd-trace').init();
+
+// Conditionally initialize dd-trace only in production environments where native modules are available
+let tracer;
+try {
+  // Check if we're in a CI/build environment where native modules might not be available
+  const isCI = process.env.CI === 'true' || process.env.NODE_ENV === 'production' && process.env.NETLIFY === 'true';
+  const skipDatadog = process.env.SKIP_DATADOG === 'true' || isCI;
+  
+  if (skipDatadog) {
+    console.log('🚫 Datadog tracing disabled for CI/build environment');
+    // Provide a mock tracer for CI environments
+    tracer = {
+      init: () => tracer,
+      scope: () => ({
+        active: () => null
+      }),
+      trace: (name, fn) => fn ? fn() : Promise.resolve(),
+      setUser: () => {},
+      addTags: () => {},
+      // Add other commonly used methods as no-ops
+      wrap: (name, fn) => fn,
+      plugin: () => tracer
+    };
+  } else {
+    tracer = require('dd-trace').init();
+    console.log('✅ Datadog tracing initialized');
+  }
+} catch (error) {
+  console.warn('⚠️ Failed to initialize dd-trace, using mock implementation:', error.message);
+  // Fallback mock tracer
+  tracer = {
+    init: () => tracer,
+    scope: () => ({
+      active: () => null
+    }),
+    trace: (name, fn) => fn ? fn() : Promise.resolve(),
+    setUser: () => {},
+    addTags: () => {},
+    wrap: (name, fn) => fn,
+    plugin: () => tracer
+  };
+}
+
 const { exec } = require('child_process'); // Make sure this is imported
 const mongoose = require('mongoose');
 const morgan = require('morgan');
