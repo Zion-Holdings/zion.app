@@ -1,13 +1,38 @@
 // @/instrumentation.ts
-import * as Sentry from "@sentry/nextjs";
 
-// Re-export client-specific Sentry utilities if they are intended to be callable from server components
-// or if sentry.ts also contains utility functions used by both client and server.
-// For now, only exporting onRequestError as the client-side register should not be called here.
-export { onRequestError } from './sentry';
+// Conditionally import Sentry to avoid Node.js dependencies in browser
+let Sentry: any = null;
+
+// Conditional re-export to avoid build errors
+let onRequestError: any = null;
+
+if (typeof window === 'undefined') {
+  try {
+    // Only import on server side
+    if (process.env.SKIP_SENTRY_BUILD === 'true') {
+      // Use mock during React 19 transition
+      const mockSentry = require('./src/utils/sentry-mock');
+      Sentry = mockSentry.default;
+      onRequestError = mockSentry.onRequestError;
+    } else {
+      Sentry = require("@sentry/nextjs");
+      onRequestError = require('./sentry').onRequestError;
+    }
+  } catch (error) {
+    console.warn('Sentry import failed:', error);
+  }
+}
+
+export { onRequestError };
 
 export async function register() {
   console.log("instrumentation.ts: register() called");
+
+  // Skip if Sentry not available (e.g., client-side)
+  if (!Sentry) {
+    console.log("instrumentation.ts: Sentry not available, skipping initialization");
+    return;
+  }
 
   const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
   const SENTRY_RELEASE = process.env.SENTRY_RELEASE || process.env.NEXT_PUBLIC_SENTRY_RELEASE;
@@ -42,7 +67,7 @@ export async function register() {
       environment: SENTRY_ENVIRONMENT,
       tracesSampleRate: process.env.NODE_ENV === 'development' ? 1.0 : 0.1,
 
-      beforeSend(event, hint) {
+      beforeSend(event: any, hint: any) {
         // Drop events without meaningful exception messages
         if (event.exception?.values?.[0]?.value === '' || event.exception?.values?.[0]?.value === undefined) {
           console.log("instrumentation.ts: Sentry event dropped due to empty exception value.");
@@ -62,7 +87,7 @@ export async function register() {
         return event;
       },
       
-      initialScope: (scope) => {
+      initialScope: (scope: any) => {
         if (SENTRY_RELEASE) {
           scope.setTag("release", SENTRY_RELEASE);
         }

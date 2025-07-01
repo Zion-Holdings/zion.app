@@ -318,22 +318,7 @@ const nextConfig = {
       });
     }
 
-    // Temporarily exclude calendar components during ESM transition
-    if (process.env.SKIP_CALENDAR_BUILD === 'true') {
-      config.externals = config.externals || [];
-      config.externals.push({
-        './src/components/ui/calendar.tsx': 'empty',
-        './src/components/projects/milestones/AddMilestoneForm.tsx': 'empty',
-        './src/components/projects/milestones/components/MilestoneCreator.tsx': 'empty',
-        './src/pages/ProjectMilestones.tsx': 'empty',
-        'react-day-picker': 'empty',
-        'date-fns': 'empty',
-        // Temporarily exclude Sentry during React 19 transition
-        '@sentry/nextjs': 'empty',
-        '@sentry/node': 'empty',
-        '@sentry/tracing': 'empty',
-      });
-    }
+    // Note: Sentry is conditionally mocked in instrumentation.ts when SKIP_SENTRY_BUILD=true
 
     // Fix webpack cache configuration to prevent build errors and warnings
     if (config.cache) {

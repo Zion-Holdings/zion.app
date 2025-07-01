@@ -190,7 +190,7 @@ export function WorkExperienceItemForm({
                         selected={field.value}
                         onSelect={field.onChange}
                         initialFocus
-                        captionLayout="dropdown-buttons"
+                        captionLayout="dropdown"
                         fromYear={1990}
                         toYear={new Date().getFullYear()}
                       />
@@ -233,7 +233,7 @@ export function WorkExperienceItemForm({
                           selected={field.value || undefined}
                           onSelect={field.onChange}
                           initialFocus
-                          captionLayout="dropdown-buttons"
+                          captionLayout="dropdown"
                           fromYear={1990}
                           toYear={new Date().getFullYear()}
                           disabled={(date) => date > new Date()}
