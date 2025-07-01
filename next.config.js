@@ -344,6 +344,35 @@ const nextConfig = {
       };
     }
 
+    // Exclude native modules from server-side bundling to prevent build errors
+    if (isServer) {
+      // Add all problematic native modules as externals
+      config.externals = config.externals || [];
+      const nativeModules = [
+        '@chainsafe/libp2p-noise',
+        '@chainsafe/libp2p-gossipsub', 
+        '@libp2p/tcp',
+        'libp2p',
+        '@orbitdb/core',
+        'helia',
+        '@helia/json',
+        'blockstore-level',
+        'datastore-level',
+        'multiformats',
+        'dd-trace',
+        // Add any other native modules that might cause issues
+        '@chainsafe/as-sha256',
+        '@chainsafe/as-chacha20poly1305',
+        '@chainsafe/bls',
+        'node-datachannel',
+        'classic-level',
+        'level'
+      ];
+      
+      config.externals.push(...nativeModules);
+      console.log('🚫 Native modules externalized for server build:', nativeModules.length);
+    }
+
     // Fix webpack cache configuration to prevent build errors and warnings
     if (config.cache) {
       // Use memory cache to prevent filesystem cache issues and "Serializing big strings" warnings
