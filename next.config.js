@@ -417,17 +417,20 @@ const nextConfig = {
       // Comprehensive global polyfills for serverless environments
       if (typeof global !== 'undefined') {
         // Essential self polyfill
-        global.self = global.self || global;
-        global.globalThis = global.globalThis || global;
+        if (!global.self) global.self = global;
+        if (!global.globalThis) global.globalThis = global;
         
         // Webpack chunk arrays
-        global.webpackChunk_N_E = global.webpackChunk_N_E || [];
+        if (!global.webpackChunk_N_E) global.webpackChunk_N_E = [];
         
-        // Additional polyfills for common issues
-        global.window = global.window || undefined;
-        global.document = global.document || undefined;
-        global.navigator = global.navigator || undefined;
-        global.location = global.location || undefined;
+        // Additional polyfills for common issues - use safe assignment
+        try {
+          if (!global.window) global.window = undefined;
+          if (!global.document) global.document = undefined;
+          // Skip navigator and location as they may be read-only getters
+        } catch (e) {
+          // Silently ignore read-only property errors
+        }
       }
       
       // Add serverless-specific webpack configuration
