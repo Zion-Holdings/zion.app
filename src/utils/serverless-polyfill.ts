@@ -66,8 +66,8 @@ const tsHelpers = {
     if (typeof b !== "function" && b !== null)
       throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
     
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new (__ as any)());
+    function __extends_helper(this: any) { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__extends_helper.prototype = b.prototype, new (__extends_helper as any)());
   },
   
   __assign: function() {
@@ -89,7 +89,7 @@ const tsHelpers = {
       const symbols = Object.getOwnPropertySymbols(s);
       for (let i = 0; i < symbols.length; i++) {
         const symbol = symbols[i];
-        if (e.indexOf(symbol as any) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol))
+        if (symbol && e.indexOf(symbol as any) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol))
           t[symbol] = s[symbol];
       }
     }
@@ -97,10 +97,10 @@ const tsHelpers = {
   },
   
   __decorate: function (decorators: any[], target: any, key?: string | symbol, desc?: any) {
-    let c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    let c = arguments.length, r = c < 3 ? target : desc === null ? desc = (key ? Object.getOwnPropertyDescriptor(target, key) : undefined) : desc, d;
     if (typeof Reflect === "object" && typeof (Reflect as any).decorate === "function") r = (Reflect as any).decorate(decorators, target, key, desc);
     else for (let i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+    return c > 3 && r && key && Object.defineProperty(target, key, r), r;
   },
   
   __awaiter: function (thisArg: any, _arguments: any, P: any, generator: any) {

@@ -96,7 +96,6 @@ const nextConfig = {
     // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
     swcTraceProfiling: false,
-    esmExternals: 'loose',
     
   },
 
