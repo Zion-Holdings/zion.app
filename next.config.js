@@ -319,21 +319,23 @@ if("undefined"!=typeof globalThis){globalThis.__extends=globalThis.__extends||n.
         })
       );
 
-      // ULTIMATE SOLUTION: Complete tslib replacement at compilation level
+      // ULTIMATE SOLUTION: Complete tslib replacement at compilation level  
+      const tslibPath = path.resolve(__dirname, 'src/utils/tslib-polyfill.js');
       config.resolve.alias = {
         ...config.resolve.alias,
-        'tslib': path.resolve(__dirname, 'src/utils/tslib-polyfill.js'),
-        'tslib/__extends': path.resolve(__dirname, 'src/utils/tslib-polyfill.js'),
-        'tslib/__assign': path.resolve(__dirname, 'src/utils/tslib-polyfill.js'),
+        'tslib': tslibPath,
+        'tslib/__extends': tslibPath,
+        'tslib/__assign': tslibPath,
       };
 
       // NUCLEAR: Add ProvidePlugin for IMMEDIATE availability
+      const processPolyfillPath = path.resolve(__dirname, 'src/utils/process-polyfill.js');
       config.plugins.push(
         new webpack.ProvidePlugin({
-          '__extends': [path.resolve(__dirname, 'src/utils/tslib-polyfill.js'), '__extends'],
-          '__assign': [path.resolve(__dirname, 'src/utils/tslib-polyfill.js'), '__assign'],
-          'process': [path.resolve(__dirname, 'src/utils/process-polyfill.js'), 'default'],
-          'tslib': path.resolve(__dirname, 'src/utils/tslib-polyfill.js'),
+          '__extends': [tslibPath, '__extends'],
+          '__assign': [tslibPath, '__assign'],
+          'process': [processPolyfillPath, 'default'],
+          'tslib': tslibPath,
         })
       );
 
@@ -341,7 +343,7 @@ if("undefined"!=typeof globalThis){globalThis.__extends=globalThis.__extends||n.
       config.plugins.push(
         new webpack.NormalModuleReplacementPlugin(
           /^tslib$/,
-          path.resolve(__dirname, 'src/utils/tslib-polyfill.js')
+          tslibPath
         )
       );
 
