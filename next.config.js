@@ -412,25 +412,26 @@ const nextConfig = {
     // PHASE 3: Advanced Performance Optimizations and Error Handling
     // Enhanced bundle optimization and monitoring capabilities
 
-    // CRITICAL: Enhanced serverless environment protection
+    // CRITICAL: Minimal serverless environment protection (avoiding read-only property issues)
     if (isServer) {
-      // Comprehensive global polyfills for serverless environments
+      // Only essential polyfills to avoid property assignment errors
       if (typeof global !== 'undefined') {
-        // Essential self polyfill
-        if (!global.self) global.self = global;
-        if (!global.globalThis) global.globalThis = global;
-        
-        // Webpack chunk arrays
-        if (!global.webpackChunk_N_E) global.webpackChunk_N_E = [];
-        
-        // Additional polyfills for common issues - use safe assignment
+        // Only set properties that are safe to assign
         try {
-          if (!global.window) global.window = undefined;
-          if (!global.document) global.document = undefined;
-          // Skip navigator and location as they may be read-only getters
-        } catch (e) {
-          // Silently ignore read-only property errors
-        }
+          Object.defineProperty(global, 'self', { 
+            value: global.self || global, 
+            writable: true, 
+            configurable: true 
+          });
+        } catch (e) { /* ignore if already defined */ }
+        
+        try {
+          Object.defineProperty(global, 'webpackChunk_N_E', { 
+            value: global.webpackChunk_N_E || [], 
+            writable: true, 
+            configurable: true 
+          });
+        } catch (e) { /* ignore if already defined */ }
       }
       
       // Add serverless-specific webpack configuration
