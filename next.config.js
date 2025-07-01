@@ -337,10 +337,15 @@ const nextConfig = {
         })
       );
 
-      // Add webpack ProvidePlugin to provide process global
+      // Add webpack ProvidePlugin to provide process global and TypeScript helpers
       config.plugins.push(
         new webpack.ProvidePlugin({
           process: 'process/browser',
+          __extends: ['tslib', '__extends'],
+          __assign: ['tslib', '__assign'],
+          __rest: ['tslib', '__rest'],
+          __spread: ['tslib', '__spread'],
+          __spreadArrays: ['tslib', '__spreadArrays']
         })
       );
     }
