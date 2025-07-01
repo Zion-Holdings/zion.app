@@ -618,8 +618,8 @@ interface PartnerTableProps {
   onViewDetails: (partner: PartnerProfile) => void;
   onUpdateStatus: (partnerId: string, status: 'approved' | 'rejected') => void;
   onOpenSettings: (partner: PartnerProfile) => void;
-  getStatusBadge: (status: string) => JSX.Element;
-  getFraudFlagBadge: (flags?: number) => JSX.Element | null;
+  getStatusBadge: (status: string) => React.JSX.Element;
+  getFraudFlagBadge: (flags?: number) => React.JSX.Element | null;
 }
 
 function PartnerTable({ 

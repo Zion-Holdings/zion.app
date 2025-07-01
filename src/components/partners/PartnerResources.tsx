@@ -14,7 +14,7 @@ interface ResourceItem {
   title: string;
   description: string;
   type: 'image' | 'video' | 'document' | 'link';
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   url: string;
 }
 

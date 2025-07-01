@@ -77,7 +77,7 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
   }
   const [isLoading, setIsLoading] = useState(true);
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
-  const [category, setCategory] = useState<{title: string, description: string, icon: JSX.Element}>({
+  const [category, setCategory] = useState<{title: string, description: string, icon: React.JSX.Element}>({
     title: "",
     description: "",
     icon: <Bot className="w-6 h-6" />

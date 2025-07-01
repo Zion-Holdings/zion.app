@@ -1,6 +1,9 @@
-const path = require('path');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import os from 'os';
 
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Configure CDN asset prefix when running in production
 const isProd = process.env.NODE_ENV === 'production';
@@ -42,7 +45,8 @@ const nextConfig = {
   poweredByHeader: false,
   trailingSlash: false,
   reactStrictMode: true,
-  swcMinify: true,
+  bundlePagesRouterDependencies: true,
+
   // Optimized for fast builds (hanging issue SOLVED)
   // outputFileTracing: false, // Intentionally disabled via env vars in build scripts and netlify.toml to prevent hanging.
   productionBrowserSourceMaps: false, // Disable for faster builds
@@ -54,8 +58,27 @@ const nextConfig = {
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   },
 
+  serverExternalPackages: ['@prisma/client'],
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
+      skipDefaultConversion: true,
+    },
+    '@radix-ui/react-icons': {
+      transform: '@radix-ui/react-icons/dist/{{member}}',
+    },
+  },
+  outputFileTracingExcludes: {
+    '*': [
+      'node_modules/@swc/core-linux-x64-gnu',
+      'node_modules/@swc/core-linux-x64-musl',
+      'node_modules/@esbuild/linux-x64',
+      'node_modules/@chainsafe/**/*',
+      'node_modules/three/**/*',
+      'node_modules/@google/model-viewer/**/*',
+    ],
+  },
   experimental: {
-    serverComponentsExternalPackages: ['@prisma/client'],
     optimizePackageImports: [
       'lucide-react', 
       '@radix-ui/react-icons',
@@ -65,40 +88,18 @@ const nextConfig = {
       'react-window',
       'fuse.js'
     ],
-    outputFileTracingExcludes: {
-      '*': [
-        'node_modules/@swc/core-linux-x64-gnu',
-        'node_modules/@swc/core-linux-x64-musl',
-        'node_modules/@esbuild/linux-x64',
-        'node_modules/@chainsafe/**/*',
-        'node_modules/three/**/*',
-        'node_modules/@google/model-viewer/**/*',
-      ],
-    },
+
     // Enable CSS optimization for production
     optimizeCss: process.env.NODE_ENV === 'production', 
     esmExternals: true,
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
-    cpus: Math.min(2, require('os').cpus().length), // Adaptive CPU limit
-    // Bundle analysis optimizations
-    bundlePagesRouterDependencies: true, // Better bundle splitting
+    cpus: Math.min(2, os.cpus().length), // Adaptive CPU limit
+    // Bundle analysis optimizations moved to root level
     // Disable profiling for faster builds
     swcTraceProfiling: false,
-    // Optimize imports
-    modularizeImports: {
-      'lucide-react': {
-        transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
-        skipDefaultConversion: true,
-      },
-      'date-fns': {
-        transform: 'date-fns/{{member}}',
-      },
-      '@radix-ui/react-icons': {
-        transform: '@radix-ui/react-icons/dist/{{member}}',
-      },
-    },
+    
   },
 
   images: {
@@ -262,8 +263,6 @@ const nextConfig = {
     } : false,
     // Remove React DevTools in production
     reactRemoveProperties: process.env.NODE_ENV === 'production' ? { properties: ['data-testid'] } : false,
-    // Remove development-only code
-    removeReactProperties: process.env.NODE_ENV === 'production',
     // Enable SWC minification optimizations
     styledComponents: false, // Disable if not using styled-components
   },
@@ -271,6 +270,9 @@ const nextConfig = {
   transpilePackages: [
     'react-markdown',
     'date-fns',
+    'react-day-picker',
+    'formik',
+    'lodash',
     'helia',
     '@helia/json',
     'multiformats',
@@ -294,6 +296,8 @@ const nextConfig = {
       config.resolve.alias = {
         ...config.resolve.alias,
         'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
+        'lodash/toPath': 'lodash-es/toPath',
+        'lodash': 'lodash-es',
       };
       
       // Optimize memory usage in development
@@ -433,6 +437,15 @@ const nextConfig = {
       })
     );
 
+    // Force certain packages to use ESM
+    config.module.rules.push({
+      test: /\.m?js$/,
+      type: 'javascript/auto',
+      resolve: {
+        fullySpecified: false,
+      },
+    });
+
     // Add polyfills for Node.js APIs
     config.resolve.fallback = {
       ...config.resolve.fallback,
@@ -460,6 +473,7 @@ const nextConfig = {
       config.resolve.alias = {
         ...config.resolve.alias,
         'lodash': 'lodash-es',
+        'lodash/toPath': 'lodash-es/toPath',
         'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
 
@@ -486,4 +500,4 @@ const nextConfig = {
 
 };
 
-module.exports = nextConfig;
+export default nextConfig;

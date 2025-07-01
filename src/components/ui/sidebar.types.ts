@@ -13,7 +13,10 @@ export type ForwardRefComponent<T, P = {}> = React.ForwardRefExoticComponent<Rea
 export type ElementRef<T extends React.ElementType> = React.ComponentPropsWithRef<T>['ref'];
 
 // Helper type for wrapping refs that fixes the mismatch errors
-export type PolymorphicRef<T extends React.ElementType> = React.Ref<React.ElementRef<T>>;
+export type PolymorphicRef<T extends keyof JSX.IntrinsicElements | React.ComponentType<any>> = 
+  T extends keyof JSX.IntrinsicElements 
+    ? React.Ref<JSX.IntrinsicElements[T] extends React.DetailedHTMLProps<infer _, infer U> ? U : never>
+    : React.Ref<React.ComponentRef<T>>;
 
 // Helper for dealing with refs in complex situations
 export type PolymorphicComponentProp<T extends React.ElementType, Props = {}> = 

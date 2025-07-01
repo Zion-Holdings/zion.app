@@ -74,7 +74,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [retries, setRetries] = useState(0);
   const [loadProgress, setLoadProgress] = useState(0);
   const imgRef = useRef<HTMLImageElement>(null);
-  const observerRef = useRef<IntersectionObserver>();
+  const observerRef = useRef<IntersectionObserver>(null);
   const [metrics, setMetrics] = useState<ImageMetrics | null>(null);
   const loadStartTime = useRef<number>(0);
 

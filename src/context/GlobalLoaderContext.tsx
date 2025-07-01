@@ -35,7 +35,7 @@ export function AppLoaderProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<any>(null);
   const router = useRouter(); // Changed from useLocation
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout>(null);
 
   const showLoader = () => setLoading(true);
   const hideLoader = () => setLoading(false);
