@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+// Dynamic import for html2canvas to reduce bundle size
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
@@ -317,6 +317,7 @@ const PitchGeneratorPage: React.FC = () => {
         slideElement.style.left = '-9999px';
         document.body.appendChild(slideElement);
 
+        const html2canvas = (await import('html2canvas')).default;
         const canvas = await html2canvas(slideElement, {
           scale: 2, useCORS: true, logging: false,
         });
