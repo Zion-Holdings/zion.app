@@ -1,5 +1,6 @@
-// EMERGENCY: Inject process polyfill IMMEDIATELY before anything else runs
+// CRITICAL: Comprehensive runtime polyfills BEFORE any imports
 if (typeof globalThis !== 'undefined') {
+  // Process polyfill
   if (!globalThis.process) {
     globalThis.process = {
       env: {
@@ -13,9 +14,31 @@ if (typeof globalThis !== 'undefined') {
       browser: true,
     } as any;
   }
+  
+  // TypeScript __extends polyfill
+  if (!(globalThis as any).__extends) {
+    (globalThis as any).__extends = (globalThis as any).__extends || function (d: any, b: any) {
+      for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+      function __() { (this as any).constructor = d; }
+      d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new (__ as any)());
+    };
+  }
+  
+  // Additional TypeScript helpers
+  if (!(globalThis as any).__assign) {
+    (globalThis as any).__assign = Object.assign || function(t: any) {
+      for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+          t[p] = s[p];
+      }
+      return t;
+    };
+  }
 }
 
 if (typeof window !== 'undefined') {
+  // Process polyfill for window
   if (!(window as any).process) {
     (window as any).process = {
       env: {
@@ -28,6 +51,26 @@ if (typeof window !== 'undefined') {
       platform: 'browser' as any,
       browser: true,
     } as any;
+  }
+  
+  // TypeScript helpers for window
+  if (!(window as any).__extends) {
+    (window as any).__extends = function (d: any, b: any) {
+      for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+      function __() { (this as any).constructor = d; }
+      d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new (__ as any)());
+    };
+  }
+  
+  if (!(window as any).__assign) {
+    (window as any).__assign = Object.assign || function(t: any) {
+      for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+          t[p] = s[p];
+      }
+      return t;
+    };
   }
 }
 
