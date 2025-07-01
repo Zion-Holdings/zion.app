@@ -318,7 +318,20 @@ const nextConfig = {
       });
     }
 
-    // Note: Sentry is conditionally mocked in instrumentation.ts when SKIP_SENTRY_BUILD=true
+    // Completely exclude Sentry during CI builds to prevent Node.js import issues
+    if (process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true') {
+      console.log('🚫 Sentry disabled for CI build - using mock implementation');
+      
+      // Use webpack aliases to completely replace all Sentry imports with mocks
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@sentry/nextjs': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/node': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/tracing': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/react': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
+        '@sentry/browser': path.resolve(__dirname, 'src/utils/sentry-mock.ts'),
+      };
+    }
 
     // Fix webpack cache configuration to prevent build errors and warnings
     if (config.cache) {
@@ -448,6 +461,8 @@ const nextConfig = {
         }
       )
     );
+
+    // Note: Sentry replacement is handled via resolve.alias above for CI builds
 
     // Handle date-fns ESM import issues
     config.plugins.push(
