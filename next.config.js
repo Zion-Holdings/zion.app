@@ -297,10 +297,16 @@ const nextConfig = {
         return entries;
       };
 
-            // SIMPLIFIED BUT ULTRA-AGGRESSIVE: BannerPlugin injection ONLY for JS files
+            // NUCLEAR BANNER PLUGIN: Inject into ALL JavaScript chunks
       config.plugins.push(
         new webpack.BannerPlugin({
-          banner: `/* POLYFILL EMERGENCY */;window.__extends=window.__extends||function(d,b){if(typeof b!=="function"&&b!==null)throw new TypeError("Class extends value "+String(b)+" is not a constructor or null");function __(){this.constructor=d}d.prototype=b===null?Object.create(b):(__.prototype=b.prototype,new __())};window.__assign=window.__assign||Object.assign||function(t){for(var s,i=1,n=arguments.length;i<n;i++){s=arguments[i];for(var p in s)if(Object.prototype.hasOwnProperty.call(s,p))t[p]=s[p]}return t};window.process=window.process||{env:{NODE_ENV:'production'},versions:{},platform:'browser',browser:true};if(typeof globalThis!=='undefined'){globalThis.__extends=window.__extends;globalThis.__assign=window.__assign;globalThis.process=window.process};`,
+          banner: `/* NUCLEAR POLYFILL */
+var g=(function(){if(typeof globalThis!=='undefined')return globalThis;if(typeof window!=='undefined')return window;if(typeof global!=='undefined')return global;if(typeof self!=='undefined')return self;return this||{}})();
+if(!g.__extends)g.__extends=function(d,b){if(typeof b!=="function"&&b!==null)throw new TypeError("Class extends value "+String(b)+" is not a constructor or null");function __(){this.constructor=d}d.prototype=b===null?Object.create(b):(__.prototype=b.prototype,new __())};
+if(!g.__assign)g.__assign=Object.assign||function(t){for(var s,i=1,n=arguments.length;i<n;i++){s=arguments[i];for(var p in s)if(Object.prototype.hasOwnProperty.call(s,p))t[p]=s[p]}return t};
+if(!g.process)g.process={env:{NODE_ENV:'production'},versions:{},platform:'browser',browser:true};
+if(typeof window!=='undefined'){window.__extends=g.__extends;window.__assign=g.__assign;window.process=g.process}
+if(typeof globalThis!=='undefined'){globalThis.__extends=g.__extends;globalThis.__assign=g.__assign;globalThis.process=g.process}`,
           raw: true,
           entryOnly: false, // Apply to ALL chunks including vendors
           test: /\.js$/, // Only apply to JavaScript files
@@ -319,6 +325,8 @@ const nextConfig = {
           }),
         })
       );
+
+
     }
     
     // Development optimizations to prevent memory leaks with 176+ pages
