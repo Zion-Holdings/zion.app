@@ -746,6 +746,37 @@ const nextConfig = {
       // Removed compression-webpack-plugin to avoid dependency conflicts
     }
 
+    // PERFORMANCE: Add bundle optimization
+    if (!dev) {
+      config.optimization = {
+        ...config.optimization,
+        moduleIds: 'deterministic',
+        chunkIds: 'deterministic',
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+              priority: 10,
+            },
+            common: {
+              name: 'common',
+              minChunks: 2,
+              chunks: 'all',
+              priority: 5,
+              reuseExistingChunk: true,
+            },
+          },
+        },
+      };
+    }
+
+    // PERFORMANCE: Tree shaking optimization
+    config.optimization.usedExports = true;
+    config.optimization.sideEffects = false;
+
     return config;
   },
 

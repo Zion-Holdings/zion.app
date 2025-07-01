@@ -1,8 +1,10 @@
 // CRITICAL: Runtime check - polyfills should be loaded from document script and webpack banner
-console.log('🚨 APP.TSX RUNTIME CHECK - Polyfills should be active');
-console.log('- globalThis.__extends:', !!(globalThis as any).__extends);
-console.log('- globalThis.__assign:', !!(globalThis as any).__assign);
-console.log('- globalThis.process:', !!(globalThis as any).process);
+if (process.env.NODE_ENV === 'development') {
+  console.log('🚨 APP.TSX RUNTIME CHECK - Polyfills should be active');
+  console.log('- globalThis.__extends:', !!(globalThis as any).__extends);
+  console.log('- globalThis.__assign:', !!(globalThis as any).__assign);
+  console.log('- globalThis.process:', !!(globalThis as any).process);
+}
 
 // CRITICAL: Import environment polyfill FIRST to prevent process.env errors
 import '../src/utils/env-polyfill';
@@ -205,6 +207,31 @@ function MyApp({ Component, pageProps }: AppProps) {
         
         // Small delay to show completion
         await new Promise(resolve => setTimeout(resolve, 200));
+
+        // PERFORMANCE: Initialize Web Vitals monitoring in production
+        if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
+          try {
+            const { onCLS, onFCP, onINP, onLCP, onTTFB } = await import('web-vitals');
+            const reportWebVitals = (metric: any) => {
+              // Report metrics to analytics service
+              if (typeof window !== 'undefined' && (window as any).gtag) {
+                (window as any).gtag('event', metric.name, {
+                  value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+                  event_label: metric.id,
+                  non_interaction: true,
+                });
+              }
+            };
+            
+            onCLS(reportWebVitals);
+            onFCP(reportWebVitals);
+            onINP(reportWebVitals);
+            onLCP(reportWebVitals);
+            onTTFB(reportWebVitals);
+          } catch (webVitalsError) {
+            // Silently fail if web-vitals is not available
+          }
+        }
         
         setIsLoading(false);
       } catch (error) {
