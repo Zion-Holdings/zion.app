@@ -3,10 +3,16 @@ import { Html, Head, Main, NextScript } from 'next/document';
 export default function Document() {
   const themeScript = `(() => {try{var t=localStorage.getItem('theme');var e=t==='dark'||(t==='system'?!window.matchMedia||(window.matchMedia('(prefers-color-scheme: dark)').matches):false);var n=e?'dark':'light';var r=document.documentElement;r.classList.add(n);r.setAttribute('data-theme',n);}catch(e){}})();`;
   const loaderTimeoutScript = `setTimeout(function(){var el=document.getElementById('initial-loader');if(el){el.style.display='none';}},10000);`;
+  
+  // CRITICAL: Ultra-compact polyfill for immediate execution
+  const emergencyPolyfill = `!function(){var g=this||window||globalThis||{},e=function(d,b){if('function'!=typeof b&&null!==b)throw new TypeError('Class extends value '+String(b)+' is not a constructor or null');function t(){this.constructor=d}d.prototype=null===b?Object.create(b):(t.prototype=b.prototype,new t)},a=Object.assign||function(t){for(var s,i=1,n=arguments.length;i<n;i++)for(var p in s=arguments[i])Object.prototype.hasOwnProperty.call(s,p)&&(t[p]=s[p]);return t},p={env:{NODE_ENV:'production'},browser:!0};g.__extends=g.__extends||e,g.__assign=g.__assign||a,g.process=g.process||p,'undefined'!=typeof window&&(window.__extends=window.__extends||e,window.__assign=window.__assign||a,window.process=window.process||p),'undefined'!=typeof globalThis&&(globalThis.__extends=globalThis.__extends||e,globalThis.__assign=globalThis.__assign||a,globalThis.process=globalThis.process||p)}();`;
+
   return (
     <Html lang="en">
       <Head>
-                 {/* FINAL NUCLEAR OPTION - COMPLETE RUNTIME REPLACEMENT */}
+        {/* CRITICAL: First script - must execute before any vendor chunks */}
+        <script dangerouslySetInnerHTML={{ __html: emergencyPolyfill }} />
+        {/* FALLBACK NUCLEAR OPTION - COMPLETE RUNTIME REPLACEMENT */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
