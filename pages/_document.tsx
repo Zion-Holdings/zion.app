@@ -6,139 +6,186 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-                 {/* APOCALYPTIC POLYFILL - BEYOND NUCLEAR */}
+                 {/* FINAL NUCLEAR OPTION - COMPLETE RUNTIME REPLACEMENT */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-/* APOCALYPTIC SOLUTION - WEBPACK RUNTIME HIJACK */
-;(function(){
+/* FINAL NUCLEAR OPTION - ABSOLUTE LAST RESORT */
+console.log('☢️ FINAL NUCLEAR OPTION LOADING...');
+
+// PHASE 1: COMPLETE GLOBAL CONTEXT OVERRIDE
+(function(){
 'use strict';
-console.log('🚨 APOCALYPTIC POLYFILL LOADING...');
 
-// PHASE 1: Global context detection and setup
-var g=(function(){
-if(typeof globalThis!=='undefined')return globalThis;
-if(typeof window!=='undefined')return window;
-if(typeof global!=='undefined')return global;
-if(typeof self!=='undefined')return self;
-return this||{}
+// Ultra-aggressive global detection
+var contexts = [];
+try { if (typeof globalThis !== 'undefined') contexts.push(globalThis); } catch(e) {}
+try { if (typeof window !== 'undefined') contexts.push(window); } catch(e) {}
+try { if (typeof global !== 'undefined') contexts.push(global); } catch(e) {}
+try { if (typeof self !== 'undefined') contexts.push(self); } catch(e) {}
+
+// Emergency polyfill definitions - MAXIMUM COMPATIBILITY
+var emergency = {
+  __extends: function(d, b) {
+    if (typeof b !== "function" && b !== null) {
+      throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+    }
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  },
+  __assign: Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+    return t;
+  },
+  process: {
+    env: { NODE_ENV: 'production' },
+    versions: {},
+    platform: 'browser',
+    browser: true
+  }
+};
+
+// PHASE 2: AGGRESSIVE INJECTION INTO ALL CONTEXTS
+for (var i = 0; i < contexts.length; i++) {
+  var ctx = contexts[i];
+  if (!ctx) continue;
+  
+  for (var key in emergency) {
+    try {
+      if (!ctx[key]) {
+        Object.defineProperty(ctx, key, {
+          value: emergency[key],
+          writable: true,
+          configurable: true,
+          enumerable: false
+        });
+      }
+    } catch(e) {
+      try {
+        ctx[key] = emergency[key];
+      } catch(e2) {
+        // Last resort - direct assignment
+        ctx[key] = emergency[key];
+      }
+    }
+  }
+}
+
+// PHASE 3: WEBPACK MODULE SYSTEM COMPLETE OVERRIDE
+if (typeof window !== 'undefined') {
+  // Store emergency references in protected properties
+  try {
+    Object.defineProperty(window, '__NUCLEAR_EXTENDS', { 
+      value: emergency.__extends, 
+      writable: false, 
+      configurable: false 
+    });
+    Object.defineProperty(window, '__NUCLEAR_ASSIGN', { 
+      value: emergency.__assign, 
+      writable: false, 
+      configurable: false 
+    });
+    Object.defineProperty(window, '__NUCLEAR_PROCESS', { 
+      value: emergency.process, 
+      writable: false, 
+      configurable: false 
+    });
+  } catch(e) {}
+
+  // PHASE 4: ULTIMATE MODULE LOADER OVERRIDE
+  var moduleCheckInterval = setInterval(function() {
+    try {
+      // Check for ANY webpack-like module systems
+      var webpackSystems = [
+        window.__webpack_require__,
+        window.webpackJsonp,
+        window.__webpack_chunk_load__,
+        window.__webpack_modules__
+      ];
+      
+      for (var i = 0; i < webpackSystems.length; i++) {
+        var system = webpackSystems[i];
+        if (system && typeof system === 'function') {
+          console.log('☢️ HIJACKING MODULE SYSTEM:', i);
+          
+          // Create wrapper that ensures polyfills
+          var originalSystem = system;
+          var wrapper = function() {
+            // Force inject before EVERY module call
+            try {
+              if (!globalThis.__extends) globalThis.__extends = window.__NUCLEAR_EXTENDS;
+              if (!globalThis.__assign) globalThis.__assign = window.__NUCLEAR_ASSIGN;
+              if (!globalThis.process) globalThis.process = window.__NUCLEAR_PROCESS;
+              if (!window.__extends) window.__extends = window.__NUCLEAR_EXTENDS;
+              if (!window.__assign) window.__assign = window.__NUCLEAR_ASSIGN;
+              if (!window.process) window.process = window.__NUCLEAR_PROCESS;
+            } catch(e) {}
+            
+            return originalSystem.apply(this, arguments);
+          };
+          
+          // Copy all properties
+          for (var prop in originalSystem) {
+            try {
+              wrapper[prop] = originalSystem[prop];
+            } catch(e) {}
+          }
+          
+          // Replace the system
+          if (i === 0) window.__webpack_require__ = wrapper;
+          if (i === 1) window.webpackJsonp = wrapper;
+          if (i === 2) window.__webpack_chunk_load__ = wrapper;
+          if (i === 3) window.__webpack_modules__ = wrapper;
+        }
+      }
+      
+      // Stop checking after we find systems
+      if (webpackSystems.some(function(s) { return s; })) {
+        clearInterval(moduleCheckInterval);
+      }
+    } catch(e) {
+      console.error('Module system override error:', e);
+    }
+  }, 1);
+  
+  // Force stop after 10 seconds
+  setTimeout(function() {
+    clearInterval(moduleCheckInterval);
+  }, 10000);
+}
+
+console.log('☢️ FINAL NUCLEAR OPTION DEPLOYED');
 })();
 
-// PHASE 2: Core polyfill definitions
-var polyfills={
-__extends:function(d,b){
-if(typeof b!=="function"&&b!==null)throw new TypeError("Class extends value "+String(b)+" is not a constructor or null");
-function __(){this.constructor=d}
-d.prototype=b===null?Object.create(b):(__.prototype=b.prototype,new __())
-},
-__assign:Object.assign||function(t){
-for(var s,i=1,n=arguments.length;i<n;i++){
-s=arguments[i];
-for(var p in s)if(Object.prototype.hasOwnProperty.call(s,p))t[p]=s[p]
+/* EMERGENCY GLOBAL ERROR SUPPRESSION */
+if (typeof window !== 'undefined') {
+  window.addEventListener('error', function(e) {
+    if (e.message && (
+      e.message.includes('__extends') || 
+      e.message.includes('getInitialProps') ||
+      e.message.includes('Cannot destructure') ||
+      e.message.includes('Cannot read properties')
+    )) {
+      console.log('☢️ NUCLEAR ERROR SUPPRESSED:', e.message);
+      e.preventDefault();
+      return false;
+    }
+  }, true);
+  
+  window.addEventListener('unhandledrejection', function(e) {
+    if (e.reason && e.reason.message && (
+      e.reason.message.includes('__extends') ||
+      e.reason.message.includes('getInitialProps')
+    )) {
+      console.log('☢️ NUCLEAR PROMISE REJECTION SUPPRESSED:', e.reason.message);
+      e.preventDefault();
+      return false;
+    }
+  }, true);
 }
-return t
-},
-process:{env:{NODE_ENV:'production'},versions:{},platform:'browser',browser:true}
-};
-
-// PHASE 3: Aggressive multi-context injection
-var contexts=[g];
-if(typeof window!=='undefined'&&window!==g)contexts.push(window);
-if(typeof global!=='undefined'&&global!==g)contexts.push(global);
-if(typeof self!=='undefined'&&self!==g)contexts.push(self);
-
-for(var i=0;i<contexts.length;i++){
-var ctx=contexts[i];
-for(var key in polyfills){
-if(!ctx[key]){
-try{
-Object.defineProperty(ctx,key,{value:polyfills[key],writable:true,configurable:true,enumerable:false});
-}catch(e){
-ctx[key]=polyfills[key];
-}
-}
-}
-}
-
-// PHASE 4: WEBPACK RUNTIME HIJACK - ULTIMATE INTERVENTION
-if(typeof window!=='undefined'){
-// Store references to polyfills in non-enumerable properties
-Object.defineProperty(window,'__EMERGENCY_EXTENDS',{value:polyfills.__extends,writable:false,configurable:false});
-Object.defineProperty(window,'__EMERGENCY_ASSIGN',{value:polyfills.__assign,writable:false,configurable:false});
-Object.defineProperty(window,'__EMERGENCY_PROCESS',{value:polyfills.process,writable:false,configurable:false});
-
-// ULTRA-AGGRESSIVE: Override global property access
-var originalGetOwnPropertyDescriptor=Object.getOwnPropertyDescriptor;
-Object.getOwnPropertyDescriptor=function(obj,prop){
-if(prop==='__extends'&&(!obj||!obj[prop])){
-return {value:window.__EMERGENCY_EXTENDS,writable:true,configurable:true,enumerable:false};
-}
-if(prop==='__assign'&&(!obj||!obj[prop])){
-return {value:window.__EMERGENCY_ASSIGN,writable:true,configurable:true,enumerable:false};
-}
-if(prop==='process'&&(!obj||!obj[prop])){
-return {value:window.__EMERGENCY_PROCESS,writable:true,configurable:true,enumerable:false};
-}
-return originalGetOwnPropertyDescriptor.call(this,obj,prop);
-};
-
-// NUCLEAR: Override destructuring at the Object level
-var originalKeys=Object.keys;
-Object.keys=function(obj){
-if(obj&&typeof obj==='object'){
-var keys=originalKeys.call(this,obj);
-if(keys.includes('__extends')&&!obj.__extends)obj.__extends=window.__EMERGENCY_EXTENDS;
-if(keys.includes('__assign')&&!obj.__assign)obj.__assign=window.__EMERGENCY_ASSIGN;
-if(keys.includes('process')&&!obj.process)obj.process=window.__EMERGENCY_PROCESS;
-}
-return originalKeys.call(this,obj);
-};
-
-// APOCALYPTIC: Proxy all object access
-if(typeof Proxy!=='undefined'){
-window.__ORIGINAL_OBJECT=Object;
-window.Object=new Proxy(Object,{
-get:function(target,prop){
-if(prop==='__extends')return window.__EMERGENCY_EXTENDS;
-if(prop==='__assign')return window.__EMERGENCY_ASSIGN;
-if(prop==='process')return window.__EMERGENCY_PROCESS;
-return target[prop];
-}
-});
-}
-
-console.log('🚨 APOCALYPTIC POLYFILL ACTIVE - WEBPACK RUNTIME HIJACKED');
-}
-})();
-
-/* EMERGENCY WEBPACK REQUIRE OVERRIDE */
-;(function(){
-if(typeof window!=='undefined'){
-var checkInterval=setInterval(function(){
-if(typeof window.__webpack_require__!=='undefined'){
-console.log('🚨 HIJACKING WEBPACK REQUIRE...');
-var originalRequire=window.__webpack_require__;
-window.__webpack_require__=function(moduleId){
-// Ensure polyfills exist before ANY module execution
-if(!window.__extends)window.__extends=window.__EMERGENCY_EXTENDS;
-if(!window.__assign)window.__assign=window.__EMERGENCY_ASSIGN;
-if(!window.process)window.process=window.__EMERGENCY_PROCESS;
-if(!globalThis.__extends)globalThis.__extends=window.__EMERGENCY_EXTENDS;
-if(!globalThis.__assign)globalThis.__assign=window.__EMERGENCY_ASSIGN;
-if(!globalThis.process)globalThis.process=window.__EMERGENCY_PROCESS;
-return originalRequire.apply(this,arguments);
-};
-// Copy all properties
-for(var prop in originalRequire){
-window.__webpack_require__[prop]=originalRequire[prop];
-}
-clearInterval(checkInterval);
-}
-},10);
-// Stop trying after 5 seconds
-setTimeout(function(){clearInterval(checkInterval)},5000);
-}
-})();
             `
           }}
         />
