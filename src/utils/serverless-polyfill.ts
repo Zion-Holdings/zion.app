@@ -74,7 +74,7 @@ const tsHelpers = {
     return Object.assign || function (t: any) {
       for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+        for (let p in s) if (Object.prototype.hasOwnProperty.call(s, p))
           t[p] = s[p];
       }
       return t;
@@ -82,12 +82,12 @@ const tsHelpers = {
   }(),
   
   __rest: function (s: any, e: string[]) {
-    var t: any = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+    let t: any = {};
+    for (let p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
       t[p] = s[p];
     if (s != null && typeof Object.getOwnPropertySymbols === "function") {
       const symbols = Object.getOwnPropertySymbols(s);
-      for (var i = 0; i < symbols.length; i++) {
+      for (let i = 0; i < symbols.length; i++) {
         const symbol = symbols[i];
         if (e.indexOf(symbol as any) < 0 && Object.prototype.propertyIsEnumerable.call(s, symbol))
           t[symbol] = s[symbol];
@@ -97,9 +97,9 @@ const tsHelpers = {
   },
   
   __decorate: function (decorators: any[], target: any, key?: string | symbol, desc?: any) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    let c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof (Reflect as any).decorate === "function") r = (Reflect as any).decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    else for (let i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
   },
   
