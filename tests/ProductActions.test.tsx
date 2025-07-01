@@ -1,4 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { describe, it, expect, vi } from 'vitest';
 import { ProductActions } from '@/components/ProductActions';
 
@@ -17,10 +18,19 @@ describe('ProductActions', () => {
     fireEvent.click(button);
 
     await waitFor(() => expect(addToCart).toHaveBeenCalled());
-    expect(button).toHaveTextContent('Added!');
+    
+    // Wait for the "Added!" status to appear
+    await waitFor(() => {
+      expect(button).toHaveTextContent('Added!');
+    });
 
     vi.advanceTimersByTime(1500);
-    expect(button).toHaveTextContent('Add to Cart');
+    
+    // Wait for the status to reset
+    await waitFor(() => {
+      expect(button).toHaveTextContent('Add to Cart');
+    });
+    
     vi.useRealTimers();
   });
 });

@@ -16,6 +16,7 @@
 
 // Type declarations for global augmentation
 declare global {
+  /* eslint-disable no-var */
   var webpackChunk_N_E: any[];
   var __webpack_require__: any;
   var __webpack_exports__: any;
@@ -25,6 +26,7 @@ declare global {
   var __rest: any;
   var __decorate: any;
   var __awaiter: any;
+  /* eslint-enable no-var */
 }
 
 // CRITICAL: Self polyfill - must be first
@@ -71,9 +73,9 @@ const tsHelpers = {
   },
   
   __assign: function() {
-    return Object.assign || function (t: any) {
-      for (let s: any, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
+    return Object.assign || function (t: any, ...args: any[]) {
+      for (let i = 0, n = args.length; i < n; i++) {
+        const s = args[i];
         for (let p in s) if (Object.prototype.hasOwnProperty.call(s, p))
           t[p] = s[p];
       }
@@ -98,11 +100,13 @@ const tsHelpers = {
   },
   
   __decorate: function (decorators: any[], target: any, key?: string | symbol, desc?: any) {
-    let c = arguments.length;
+    const c = decorators.length;
     let r = c < 3 ? target : desc === null ? (desc = Object.getOwnPropertyDescriptor(target, key!)) : desc;
     let d: any;
     if (typeof Reflect === "object" && typeof (Reflect as any).decorate === "function") r = (Reflect as any).decorate(decorators, target, key, desc);
+    // eslint-disable-next-line no-cond-assign
     else for (let i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key!, r) : d(target, key!)) || r;
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     return c > 3 && r && Object.defineProperty(target, key!, r), r;
   },
   

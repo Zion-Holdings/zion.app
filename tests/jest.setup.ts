@@ -252,6 +252,11 @@ jest.mock('vitest', () => {
       mock: jest.mock.bind(jest),
       clearAllMocks: jest.clearAllMocks,
       resetAllMocks: jest.resetAllMocks,
+      restoreAllMocks: jest.restoreAllMocks,
+      useFakeTimers: jest.useFakeTimers.bind(jest),
+      useRealTimers: jest.useRealTimers.bind(jest),
+      runAllTimers: jest.runAllTimers.bind(jest),
+      advanceTimersByTime: jest.advanceTimersByTime.bind(jest),
       // Provide a simple implementation of `import.meta` mocking helpers
       // frequently used in Vitest examples
       // (no-op implementations because Jest already handles env vars via `process.env`).
@@ -454,6 +459,8 @@ jest.mock('@/components/search/FilterSidebar', () => ({ FilterSidebar: () => nul
 if (global.vi) {
   // @ts-ignore
   if (!global.vi.useFakeTimers) global.vi.useFakeTimers = jest.useFakeTimers.bind(jest);
+  // @ts-ignore
+  if (!global.vi.useRealTimers) global.vi.useRealTimers = jest.useRealTimers.bind(jest);
   // @ts-ignore
   if (!global.vi.runAllTimers) global.vi.runAllTimers = jest.runAllTimers.bind(jest);
   // @ts-ignore
