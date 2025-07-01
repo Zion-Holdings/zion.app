@@ -19,13 +19,20 @@ let onRequestError: any = null;
 
 if (typeof window === 'undefined') {
   try {
-    // Only import on server side
-    if (process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true') {
-      // Use mock during React 19 transition or CI builds
+    // Smart Sentry detection: Use same logic as next.config.js
+    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || 
+                               process.env.CI === 'true' ||
+                               process.env.NODE_ENV === 'production' ||
+                               !process.env.SENTRY_DSN ||
+                               process.env.SENTRY_DSN?.includes('dummy') ||
+                               process.env.SENTRY_DSN?.includes('placeholder');
+    
+    if (shouldDisableSentry) {
+      // Use mock during production builds or when DSN not configured
       const mockSentry = require('./src/utils/sentry-mock');
       Sentry = mockSentry.default;
       onRequestError = mockSentry.onRequestError;
-      console.log('Using Sentry mock for CI/React 19 compatibility');
+      console.log('Using Sentry mock (Smart Detection)');
     } else {
       Sentry = require("@sentry/nextjs");
       onRequestError = require('./sentry').onRequestError;

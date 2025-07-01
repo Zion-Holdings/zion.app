@@ -9,6 +9,9 @@ if (process.env.NODE_ENV === 'development') {
 // CRITICAL: Import environment polyfill FIRST to prevent process.env errors
 import '../src/utils/env-polyfill';
 
+// Enhanced error logging - import early for comprehensive coverage
+import enhancedErrorLogger from '../src/utils/enhanced-error-logger';
+
 // Add global error handling for undefined components
 if (typeof window !== 'undefined') {
   window.addEventListener('unhandledrejection', (event) => {
@@ -58,6 +61,12 @@ class AppErrorBoundary extends React.Component<
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('App Error Boundary caught an error:', error, errorInfo);
+    
+    // Report to enhanced error logger
+    if (typeof window !== 'undefined') {
+      enhancedErrorLogger.captureReactError(error, errorInfo, errorInfo.componentStack || undefined);
+      enhancedErrorLogger.addBreadcrumb('error-boundary', `React error in component: ${error.name}`, 'error');
+    }
   }
 
   render() {

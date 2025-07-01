@@ -1,24 +1,17 @@
 {
-  "timestamp": "2025-06-21T21:28:56.268Z",
-  "build": {
-    "successful": false,
-    "buildTime": "unknown",
-    "totalPages": 152
-  },
-  "bundle": {
-    "totalSize": "5.57 MB",
-    "chunks": 47,
-    "largestChunk": "vendors-afbf79cc2c32c030.js"
-  },
-  "recommendations": [
-    "Consider bundle optimization",
-    "Review large dependencies",
-    "Implement code splitting"
-  ],
-  "nextSteps": [
-    "Monitor bundle growth over time",
-    "Set up automated performance testing",
-    "Configure CDN for static assets",
-    "Enable compression in production"
-  ]
+  "timestamp": "2025-07-01T19:19:13.358Z",
+  "duration": 70500,
+  "success": false,
+  "criticalErrors": 1,
+  "suppressedWarnings": 14,
+  "details": {
+    "criticalErrors": [
+      {
+        "message": "unhandledRejection TypeError: Cannot read properties of undefined (reading 'length')",
+        "timestamp": 1751397553206,
+        "classification": "critical"
+      }
+    ],
+    "suppressedWarnings": []
+  }
 }

@@ -364,9 +364,16 @@ const nextConfig = {
       });
     }
 
-    // Completely exclude Sentry during CI builds to prevent Node.js import issues
-    if (process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true') {
-      console.log('🚫 Sentry disabled for CI build - using mock implementation');
+    // Smart Sentry detection: Disable automatically if would cause build issues
+    const shouldDisableSentry = process.env.SKIP_SENTRY_BUILD === 'true' || 
+                                process.env.CI === 'true' ||
+                                process.env.NODE_ENV === 'production' ||
+                                !process.env.SENTRY_DSN ||
+                                process.env.SENTRY_DSN?.includes('dummy') ||
+                                process.env.SENTRY_DSN?.includes('placeholder');
+    
+    if (shouldDisableSentry) {
+      console.log('🚫 Sentry disabled - using mock implementation (Smart Detection)');
       
       // Use webpack aliases to completely replace all Sentry imports with mocks
       config.resolve.alias = {
@@ -392,6 +399,15 @@ const nextConfig = {
 
     // PHASE 3: Advanced Performance Optimizations and Error Handling
     // Enhanced bundle optimization and monitoring capabilities
+
+    // Webpack runtime protection - simplified approach
+    if (isServer) {
+      // Ensure safe webpack runtime by providing global polyfills
+      if (typeof global !== 'undefined') {
+        global.self = global.self || global;
+        global.webpackChunk_N_E = global.webpackChunk_N_E || [];
+      }
+    }
 
     // Exclude native modules from server-side bundling to prevent build errors
     if (isServer) {
