@@ -338,7 +338,7 @@
     "@types/jest-axe": "^3.5.9",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/lodash": "^4.17.18",
-    "@types/node": "^24.0.8",
+    "@types/node": "^24.0.10",
     "@types/node-fetch": "^2.6.12",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
