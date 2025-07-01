@@ -7,6 +7,9 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import '../src/index.css';
 
+// Import chunk error handler for automatic ChunkLoadError recovery
+import '../src/utils/chunkErrorHandler';
+
 // Import all providers synchronously for reliability
 import { WhitelabelProvider } from '../src/context/WhitelabelContext';
 import { WalletProvider } from '../src/context/WalletContext';

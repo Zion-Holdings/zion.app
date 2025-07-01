@@ -172,7 +172,9 @@
     "automation:diagnose": "node automation/tests/system-diagnostic.js",
     "automation:test-slack": "node automation/tests/test-slack-connection.js",
     "automation:test-cursor": "node automation/tests/test-cursor-connection.js",
-    "automation:test-monitoring": "node automation/tests/test-performance-monitoring.js"
+    "automation:test-monitoring": "node automation/tests/test-performance-monitoring.js",
+    "chunk:monitor": "node scripts/monitor-chunk-errors.cjs",
+    "chunk:analyze": "npm run build && npm run chunk:monitor"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
