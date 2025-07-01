@@ -297,79 +297,26 @@ const nextConfig = {
         return entries;
       };
 
-      // ULTRA AGGRESSIVE: Webpack DefinePlugin with global replacement
+            // SIMPLIFIED BUT ULTRA-AGGRESSIVE: BannerPlugin injection ONLY for JS files
+      config.plugins.push(
+        new webpack.BannerPlugin({
+          banner: `/* POLYFILL EMERGENCY */;window.__extends=window.__extends||function(d,b){if(typeof b!=="function"&&b!==null)throw new TypeError("Class extends value "+String(b)+" is not a constructor or null");function __(){this.constructor=d}d.prototype=b===null?Object.create(b):(__.prototype=b.prototype,new __())};window.__assign=window.__assign||Object.assign||function(t){for(var s,i=1,n=arguments.length;i<n;i++){s=arguments[i];for(var p in s)if(Object.prototype.hasOwnProperty.call(s,p))t[p]=s[p]}return t};window.process=window.process||{env:{NODE_ENV:'production'},versions:{},platform:'browser',browser:true};if(typeof globalThis!=='undefined'){globalThis.__extends=window.__extends;globalThis.__assign=window.__assign;globalThis.process=window.process};`,
+          raw: true,
+          entryOnly: false, // Apply to ALL chunks including vendors
+          test: /\.js$/, // Only apply to JavaScript files
+        })
+      );
+
+      // SIMPLIFIED DefinePlugin 
       config.plugins.push(
         new webpack.DefinePlugin({
-          // Define these as global variables that will be available everywhere
-          'global.__extends': `(function(d, b) {
-            if (typeof b !== "function" && b !== null) {
-              throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-            }
-            function __() { this.constructor = d; }
-            d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-          })`,
-          'global.__assign': `(Object.assign || function(t) {
-            for (var s, i = 1, n = arguments.length; i < n; i++) {
-              s = arguments[i];
-              for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-            }
-            return t;
-          })`,
-          'global.process': JSON.stringify({
-            env: {
-              NODE_ENV: process.env.NODE_ENV || 'production',
-              NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
-              NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-              NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
-            },
-            versions: {},
-            platform: 'browser',
-            browser: true,
-          }),
-          '__extends': `(function(d, b) {
-            if (typeof b !== "function" && b !== null) {
-              throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-            }
-            function __() { this.constructor = d; }
-            d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-          })`,
-          '__assign': `(Object.assign || function(t) {
-            for (var s, i = 1, n = arguments.length; i < n; i++) {
-              s = arguments[i];
-              for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-            }
-            return t;
-          })`,
           'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
-          'process.env.NEXT_PUBLIC_APP_URL': JSON.stringify(process.env.NEXT_PUBLIC_APP_URL || ''),
-          'process.env.NEXT_PUBLIC_SUPABASE_URL': JSON.stringify(process.env.NEXT_PUBLIC_SUPABASE_URL || ''),
-          'process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY': JSON.stringify(process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''),
           'process.env': JSON.stringify({
             NODE_ENV: process.env.NODE_ENV || 'production',
             NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
             NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
             NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
           }),
-          'process': JSON.stringify({
-            env: {
-              NODE_ENV: process.env.NODE_ENV || 'production',
-              NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || '',
-              NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-              NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
-            },
-            versions: {},
-            platform: 'browser',
-            browser: true,
-          }),
-        })
-      );
-
-      // Enhanced ProvidePlugin to provide these helpers automatically
-      config.plugins.push(
-        new webpack.ProvidePlugin({
-          '__extends': [path.resolve(__dirname, 'src/utils/ts-helpers.js'), '__extends'],
-          '__assign': [path.resolve(__dirname, 'src/utils/ts-helpers.js'), '__assign'],
-          'process': [path.resolve(__dirname, 'src/utils/process-polyfill.js'), 'process'],
         })
       );
     }

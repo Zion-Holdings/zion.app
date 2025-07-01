@@ -6,6 +6,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* ULTRA CRITICAL: Load emergency polyfill script FIRST */}
+        <script src="/polyfill-emergency.js" />
         {/* CRITICAL: Inject polyfills BEFORE any other scripts */}
         <script
           dangerouslySetInnerHTML={{
