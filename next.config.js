@@ -478,15 +478,12 @@ const nextConfig = {
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        // Disable cacheUnaffected to prevent webpack conflicts
-        cacheUnaffected: false,
       };
     } else {
       // Ensure memory cache is properly configured
       config.cache = {
         type: 'memory',
         maxGenerations: dev ? 1 : 5,
-        cacheUnaffected: false,
       };
     }
 
@@ -497,6 +494,7 @@ const nextConfig = {
         concatenateModules: false, // Disable module concatenation which can cause TDZ issues
         minimize: false, // Disable minimization on server side to preserve variable names
         mangleExports: false,
+        usedExports: false, // Disable to prevent conflict with cacheUnaffected
       };
     }
 
