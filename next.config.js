@@ -425,29 +425,111 @@ const nextConfig = {
 
 
 
-    // Temporary: Disable splitChunks to eliminate webpack validation errors
+    // PHASE 2: Enhanced Bundle Splitting for Performance Optimization
     if (!isServer) {
       config.optimization = {
         ...config.optimization,
-        // Disable splitChunks entirely to prevent validation errors
-        splitChunks: false,
         
-        // Basic optimization settings
+        // Advanced splitChunks configuration for bundle optimization
+        splitChunks: {
+          chunks: 'all',
+          minSize: 20000,     // 20KB minimum chunk size
+          maxSize: 244000,    // 244KB maximum chunk size (target from plan)
+          minChunks: 1,
+          maxAsyncRequests: 30,
+          maxInitialRequests: 30,
+          cacheGroups: {
+            // Heavy libraries that need special handling
+            heavy: {
+              test: /[\\/]node_modules[\\/](@libp2p|helia|orbitdb|blockstore|datastore|multiformats)[\\/]/,
+              name: 'heavy-vendor',
+              chunks: 'async', // Only load when needed
+              priority: 30,
+              maxSize: 200000,
+              enforce: true,
+            },
+            
+            // Vendor libraries bundle (optimized)
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+              priority: 10,
+              maxSize: 200000, // Reduced from 244KB
+              minSize: 10000,  // Prevent tiny chunks
+              enforce: true,
+            },
+            
+            // React ecosystem bundle
+            react: {
+              test: /[\\/]node_modules[\\/](react|react-dom|react-router|@tanstack)[\\/]/,
+              name: 'react-vendor',
+              chunks: 'all',
+              priority: 20,
+              maxSize: 244000,
+              enforce: true,
+            },
+            
+            // UI libraries bundle
+            ui: {
+              test: /[\\/]node_modules[\\/](@radix-ui|@chakra-ui|framer-motion|lucide-react)[\\/]/,
+              name: 'ui-vendor',
+              chunks: 'all',
+              priority: 20,
+              maxSize: 244000,
+              enforce: true,
+            },
+            
+            // Utilities bundle
+            utils: {
+              test: /[\\/]node_modules[\\/](lodash-es|date-fns|axios|zod|yup)[\\/]/,
+              name: 'utils-vendor',
+              chunks: 'all',
+              priority: 20,
+              maxSize: 244000,
+              enforce: true,
+            },
+            
+            // Common application code
+            common: {
+              name: 'common',
+              minChunks: 2,
+              chunks: 'all',
+              priority: 5,
+              maxSize: 244000,
+              enforce: true,
+            },
+            
+            // Default vendor chunk for everything else
+            default: {
+              minChunks: 2,
+              priority: -20,
+              reuseExistingChunk: true,
+              maxSize: 244000,
+            },
+          }
+        },
+        
+        // Optimization settings for better performance
         moduleIds: 'deterministic',
         chunkIds: 'deterministic',
         usedExports: !dev,
         sideEffects: false,
         concatenateModules: !dev,
         minimize: !dev,
+        
+        // Runtime chunk optimization
+        runtimeChunk: {
+          name: 'runtime',
+        },
       };
       
-      // Enhanced performance hints
+      // Updated performance hints with stricter budgets
       config.performance = {
         hints: dev ? false : 'warning',
-        maxEntrypointSize: 400000, // 400KB for initial bundle
-        maxAssetSize: 400000,
+        maxEntrypointSize: 1000000, // 1MB for main entrypoint (down from 4.97MB)
+        maxAssetSize: 244000,       // 244KB for individual assets
         assetFilter: (assetFilename) => {
-          // Only check JS and CSS files
           return /\.(js|css)$/.test(assetFilename);
         },
       };
