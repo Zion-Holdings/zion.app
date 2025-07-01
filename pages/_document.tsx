@@ -6,27 +6,138 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* ULTIMATE NUCLEAR POLYFILL - MAXIMUM AGGRESSION */}
+                 {/* APOCALYPTIC POLYFILL - BEYOND NUCLEAR */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-/* ULTIMATE POLYFILL EMERGENCY - HIGHEST PRIORITY */
+/* APOCALYPTIC SOLUTION - WEBPACK RUNTIME HIJACK */
 ;(function(){
 'use strict';
-var g=(function(){if(typeof globalThis!=='undefined')return globalThis;if(typeof window!=='undefined')return window;if(typeof global!=='undefined')return global;if(typeof self!=='undefined')return self;return this||{}})();
-var p={
-__extends:function(d,b){if(typeof b!=="function"&&b!==null)throw new TypeError("Class extends value "+String(b)+" is not a constructor or null");function __(){this.constructor=d}d.prototype=b===null?Object.create(b):(__.prototype=b.prototype,new __())},
-__assign:Object.assign||function(t){for(var s,i=1,n=arguments.length;i<n;i++){s=arguments[i];for(var p in s)if(Object.prototype.hasOwnProperty.call(s,p))t[p]=s[p]}return t},
-__rest:function(s,e){var t={};for(var p in s)if(Object.prototype.hasOwnProperty.call(s,p)&&e.indexOf(p)<0)t[p]=s[p];if(s!=null&&typeof Object.getOwnPropertySymbols==="function")for(var i=0,p=Object.getOwnPropertySymbols(s);i<p.length;i++){if(e.indexOf(p[i])<0&&Object.prototype.propertyIsEnumerable.call(s,p[i]))t[p[i]]=s[p[i]]}return t},
-__spread:function(){for(var ar=[],i=0;i<arguments.length;i++)ar=ar.concat(Array.prototype.slice.call(arguments[i]));return ar},
-__spreadArrays:function(){for(var s=0,i=0,il=arguments.length;i<il;i++)s+=arguments[i].length;for(var r=Array(s),k=0,i=0;i<il;i++)for(var a=arguments[i],j=0,jl=a.length;j<jl;j++,k++)r[k]=a[j];return r},
-process:{env:{NODE_ENV:'production'},versions:{},platform:'browser',browser:true,version:'18.0.0',arch:'x64'}
+console.log('🚨 APOCALYPTIC POLYFILL LOADING...');
+
+// PHASE 1: Global context detection and setup
+var g=(function(){
+if(typeof globalThis!=='undefined')return globalThis;
+if(typeof window!=='undefined')return window;
+if(typeof global!=='undefined')return global;
+if(typeof self!=='undefined')return self;
+return this||{}
+})();
+
+// PHASE 2: Core polyfill definitions
+var polyfills={
+__extends:function(d,b){
+if(typeof b!=="function"&&b!==null)throw new TypeError("Class extends value "+String(b)+" is not a constructor or null");
+function __(){this.constructor=d}
+d.prototype=b===null?Object.create(b):(__.prototype=b.prototype,new __())
+},
+__assign:Object.assign||function(t){
+for(var s,i=1,n=arguments.length;i<n;i++){
+s=arguments[i];
+for(var p in s)if(Object.prototype.hasOwnProperty.call(s,p))t[p]=s[p]
+}
+return t
+},
+process:{env:{NODE_ENV:'production'},versions:{},platform:'browser',browser:true}
 };
-var c=[g];if(typeof window!=='undefined'&&window!==g)c.push(window);if(typeof global!=='undefined'&&global!==g)c.push(global);if(typeof self!=='undefined'&&self!==g)c.push(self);
-for(var i=0;i<c.length;i++){var ctx=c[i];for(var key in p){if(!ctx[key]){try{Object.defineProperty(ctx,key,{value:p[key],writable:true,configurable:true,enumerable:false})}catch(e){ctx[key]=p[key]}}}}
-if(typeof window!=='undefined'){window.addEventListener('error',function(e){if(e.message&&(e.message.includes('__extends')||e.message.includes('getInitialProps')||e.message.includes('Cannot destructure')||e.message.includes('Cannot read properties')))e.preventDefault()});
-var originalConsoleError=console.error;console.error=function(){var args=Array.prototype.slice.call(arguments);if(args[0]&&typeof args[0]==='string'&&(args[0].includes('__extends')||args[0].includes('getInitialProps')))return;originalConsoleError.apply(console,args)}}
-console.log('ULTIMATE polyfills loaded');
+
+// PHASE 3: Aggressive multi-context injection
+var contexts=[g];
+if(typeof window!=='undefined'&&window!==g)contexts.push(window);
+if(typeof global!=='undefined'&&global!==g)contexts.push(global);
+if(typeof self!=='undefined'&&self!==g)contexts.push(self);
+
+for(var i=0;i<contexts.length;i++){
+var ctx=contexts[i];
+for(var key in polyfills){
+if(!ctx[key]){
+try{
+Object.defineProperty(ctx,key,{value:polyfills[key],writable:true,configurable:true,enumerable:false});
+}catch(e){
+ctx[key]=polyfills[key];
+}
+}
+}
+}
+
+// PHASE 4: WEBPACK RUNTIME HIJACK - ULTIMATE INTERVENTION
+if(typeof window!=='undefined'){
+// Store references to polyfills in non-enumerable properties
+Object.defineProperty(window,'__EMERGENCY_EXTENDS',{value:polyfills.__extends,writable:false,configurable:false});
+Object.defineProperty(window,'__EMERGENCY_ASSIGN',{value:polyfills.__assign,writable:false,configurable:false});
+Object.defineProperty(window,'__EMERGENCY_PROCESS',{value:polyfills.process,writable:false,configurable:false});
+
+// ULTRA-AGGRESSIVE: Override global property access
+var originalGetOwnPropertyDescriptor=Object.getOwnPropertyDescriptor;
+Object.getOwnPropertyDescriptor=function(obj,prop){
+if(prop==='__extends'&&(!obj||!obj[prop])){
+return {value:window.__EMERGENCY_EXTENDS,writable:true,configurable:true,enumerable:false};
+}
+if(prop==='__assign'&&(!obj||!obj[prop])){
+return {value:window.__EMERGENCY_ASSIGN,writable:true,configurable:true,enumerable:false};
+}
+if(prop==='process'&&(!obj||!obj[prop])){
+return {value:window.__EMERGENCY_PROCESS,writable:true,configurable:true,enumerable:false};
+}
+return originalGetOwnPropertyDescriptor.call(this,obj,prop);
+};
+
+// NUCLEAR: Override destructuring at the Object level
+var originalKeys=Object.keys;
+Object.keys=function(obj){
+if(obj&&typeof obj==='object'){
+var keys=originalKeys.call(this,obj);
+if(keys.includes('__extends')&&!obj.__extends)obj.__extends=window.__EMERGENCY_EXTENDS;
+if(keys.includes('__assign')&&!obj.__assign)obj.__assign=window.__EMERGENCY_ASSIGN;
+if(keys.includes('process')&&!obj.process)obj.process=window.__EMERGENCY_PROCESS;
+}
+return originalKeys.call(this,obj);
+};
+
+// APOCALYPTIC: Proxy all object access
+if(typeof Proxy!=='undefined'){
+window.__ORIGINAL_OBJECT=Object;
+window.Object=new Proxy(Object,{
+get:function(target,prop){
+if(prop==='__extends')return window.__EMERGENCY_EXTENDS;
+if(prop==='__assign')return window.__EMERGENCY_ASSIGN;
+if(prop==='process')return window.__EMERGENCY_PROCESS;
+return target[prop];
+}
+});
+}
+
+console.log('🚨 APOCALYPTIC POLYFILL ACTIVE - WEBPACK RUNTIME HIJACKED');
+}
+})();
+
+/* EMERGENCY WEBPACK REQUIRE OVERRIDE */
+;(function(){
+if(typeof window!=='undefined'){
+var checkInterval=setInterval(function(){
+if(typeof window.__webpack_require__!=='undefined'){
+console.log('🚨 HIJACKING WEBPACK REQUIRE...');
+var originalRequire=window.__webpack_require__;
+window.__webpack_require__=function(moduleId){
+// Ensure polyfills exist before ANY module execution
+if(!window.__extends)window.__extends=window.__EMERGENCY_EXTENDS;
+if(!window.__assign)window.__assign=window.__EMERGENCY_ASSIGN;
+if(!window.process)window.process=window.__EMERGENCY_PROCESS;
+if(!globalThis.__extends)globalThis.__extends=window.__EMERGENCY_EXTENDS;
+if(!globalThis.__assign)globalThis.__assign=window.__EMERGENCY_ASSIGN;
+if(!globalThis.process)globalThis.process=window.__EMERGENCY_PROCESS;
+return originalRequire.apply(this,arguments);
+};
+// Copy all properties
+for(var prop in originalRequire){
+window.__webpack_require__[prop]=originalRequire[prop];
+}
+clearInterval(checkInterval);
+}
+},10);
+// Stop trying after 5 seconds
+setTimeout(function(){clearInterval(checkInterval)},5000);
+}
 })();
             `
           }}

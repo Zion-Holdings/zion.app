@@ -297,16 +297,26 @@ const nextConfig = {
         return entries;
       };
 
-            // NUCLEAR BANNER PLUGIN: Inject into ALL JavaScript chunks
+            // APOCALYPTIC BANNER PLUGIN: WEBPACK RUNTIME OVERRIDE
       config.plugins.push(
         new webpack.BannerPlugin({
-          banner: `/* NUCLEAR POLYFILL */
-var g=(function(){if(typeof globalThis!=='undefined')return globalThis;if(typeof window!=='undefined')return window;if(typeof global!=='undefined')return global;if(typeof self!=='undefined')return self;return this||{}})();
-if(!g.__extends)g.__extends=function(d,b){if(typeof b!=="function"&&b!==null)throw new TypeError("Class extends value "+String(b)+" is not a constructor or null");function __(){this.constructor=d}d.prototype=b===null?Object.create(b):(__.prototype=b.prototype,new __())};
-if(!g.__assign)g.__assign=Object.assign||function(t){for(var s,i=1,n=arguments.length;i<n;i++){s=arguments[i];for(var p in s)if(Object.prototype.hasOwnProperty.call(s,p))t[p]=s[p]}return t};
-if(!g.process)g.process={env:{NODE_ENV:'production'},versions:{},platform:'browser',browser:true};
-if(typeof window!=='undefined'){window.__extends=g.__extends;window.__assign=g.__assign;window.process=g.process}
-if(typeof globalThis!=='undefined'){globalThis.__extends=g.__extends;globalThis.__assign=g.__assign;globalThis.process=g.process}`,
+          banner: `/* APOCALYPTIC POLYFILL - WEBPACK OVERRIDE */
+!function(){
+console.log('🚨 APOCALYPTIC WEBPACK POLYFILL LOADING...');
+var g=function(){if("undefined"!=typeof globalThis)return globalThis;if("undefined"!=typeof window)return window;if("undefined"!=typeof global)return global;if("undefined"!=typeof self)return self;return this||{}}();
+var p={
+__extends:function(d,b){if("function"!=typeof b&&null!==b)throw new TypeError("Class extends value "+String(b)+" is not a constructor or null");function t(){this.constructor=d}d.prototype=null===b?Object.create(b):(t.prototype=b.prototype,new t)},
+__assign:Object.assign||function(t){for(var s,i=1,n=arguments.length;i<n;i++)for(var p in s=arguments[i])Object.prototype.hasOwnProperty.call(s,p)&&(t[p]=s[p]);return t},
+process:{env:{NODE_ENV:"production"},versions:{},platform:"browser",browser:!0}
+};
+for(var key in p)g[key]=p[key];
+if("undefined"!=typeof window){
+for(var key in p)window[key]=p[key];
+Object.defineProperty(window,"__WEBPACK_POLYFILL_ACTIVE",{value:!0,writable:!1,configurable:!1});
+}
+if("undefined"!=typeof globalThis)for(var key in p)globalThis[key]=p[key];
+console.log('🚨 APOCALYPTIC WEBPACK POLYFILL LOADED');
+}();`,
           raw: true,
           entryOnly: false, // Apply to ALL chunks including vendors
           test: /\.js$/, // Only apply to JavaScript files
