@@ -1,4 +1,29 @@
-import * as Sentry from "@sentry/nextjs";
+// Conditional Sentry import for React 19 + Next.js 15 compatibility
+let Sentry: any = null;
+
+// Skip Sentry import during CI builds or when explicitly disabled
+if (process.env.SKIP_SENTRY_BUILD !== 'true' && process.env.CI !== 'true') {
+  try {
+    Sentry = require("@sentry/nextjs");
+  } catch (error) {
+    console.warn('Sentry import failed, using mock functionality:', error);
+    // Use basic mock functionality
+    Sentry = {
+      init: () => console.log('Sentry mock: init called'),
+      captureException: (error: any) => console.log('Sentry mock: captureException', error),
+      setTag: (key: string, value: string) => console.log('Sentry mock: setTag', key, value),
+    };
+  }
+} else {
+  console.log('Sentry disabled for CI/React 19 compatibility');
+  // Use mock functionality
+  Sentry = {
+    init: () => console.log('Sentry mock: init called'),
+    captureException: (error: any) => console.log('Sentry mock: captureException', error),
+    setTag: (key: string, value: string) => console.log('Sentry mock: setTag', key, value),
+  };
+}
+
 import { safeSessionStorage } from "@/utils/safeStorage";
 
 export function register() {
@@ -27,6 +52,12 @@ export function register() {
     return;
   }
 
+  // Skip initialization if Sentry is mocked
+  if (!Sentry || Sentry.init.toString().includes('mock')) {
+    console.log('Sentry is mocked, skipping initialization');
+    return;
+  }
+
   console.log(`Initializing client-side Sentry. Release: ${SENTRY_RELEASE}, Environment: ${SENTRY_ENVIRONMENT}`);
 
   try {
@@ -43,7 +74,7 @@ export function register() {
       tracePropagationTargets: ["localhost", /^https?:\/\/app\./, /^\/api/],
       profilesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 0,
       
-      beforeSend(event, hint) {
+      beforeSend(event: any, hint: any) {
         // Filter out development noise
         if (process.env.NODE_ENV === 'development') {
           const errorMessage = hint.originalException?.toString() || '';

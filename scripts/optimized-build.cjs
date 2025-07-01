@@ -16,6 +16,7 @@ const optimizedEnv = {
   NEXT_TELEMETRY_DISABLED: "1",
   CI: "true",
   SKIP_TYPE_CHECK: "true", // Skip type checking to speed up build
+  SKIP_SENTRY_BUILD: "true", // Skip Sentry during React 19 transition
   
   // CRITICAL: Anti-hanging optimizations
   NEXT_DISABLE_CSS_INLINE: "true",

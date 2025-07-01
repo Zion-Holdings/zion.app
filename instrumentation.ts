@@ -9,17 +9,26 @@ let onRequestError: any = null;
 if (typeof window === 'undefined') {
   try {
     // Only import on server side
-    if (process.env.SKIP_SENTRY_BUILD === 'true') {
-      // Use mock during React 19 transition
+    if (process.env.SKIP_SENTRY_BUILD === 'true' || process.env.CI === 'true') {
+      // Use mock during React 19 transition or CI builds
       const mockSentry = require('./src/utils/sentry-mock');
       Sentry = mockSentry.default;
       onRequestError = mockSentry.onRequestError;
+      console.log('Using Sentry mock for CI/React 19 compatibility');
     } else {
       Sentry = require("@sentry/nextjs");
       onRequestError = require('./sentry').onRequestError;
     }
   } catch (error) {
-    console.warn('Sentry import failed:', error);
+    console.warn('Sentry import failed, using mock:', error);
+    // Fallback to mock if import fails
+    try {
+      const mockSentry = require('./src/utils/sentry-mock');
+      Sentry = mockSentry.default;
+      onRequestError = mockSentry.onRequestError;
+    } catch (mockError) {
+      console.error('Mock Sentry also failed:', mockError);
+    }
   }
 }
 
