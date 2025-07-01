@@ -82,8 +82,6 @@ const nextConfig = {
     optimizePackageImports: [
       'lucide-react', 
       '@radix-ui/react-icons',
-      'date-fns',
-      'lodash',
       'recharts',
       'react-window',
       'fuse.js'
@@ -91,7 +89,7 @@ const nextConfig = {
 
     // Enable CSS optimization for production
     optimizeCss: process.env.NODE_ENV === 'production', 
-    esmExternals: true,
+    esmExternals: 'loose',
     // Memory and performance optimizations for 176+ pages
     largePageDataBytes: 128 * 1000, // Reduced to 128KB for better performance
     workerThreads: false, // Disable worker threads to reduce memory usage
@@ -273,6 +271,7 @@ const nextConfig = {
     'react-day-picker',
     'formik',
     'lodash',
+    'lodash-es',
     'helia',
     '@helia/json',
     'multiformats',
@@ -316,6 +315,23 @@ const nextConfig = {
         './src/context/RequestQuoteWizard.tsx': 'empty',
         './src/context/WhitelabelContext.tsx': 'empty',
         './src/hooks/useApiKeys.ts': 'empty',
+      });
+    }
+
+    // Temporarily exclude calendar components during ESM transition
+    if (process.env.SKIP_CALENDAR_BUILD === 'true') {
+      config.externals = config.externals || [];
+      config.externals.push({
+        './src/components/ui/calendar.tsx': 'empty',
+        './src/components/projects/milestones/AddMilestoneForm.tsx': 'empty',
+        './src/components/projects/milestones/components/MilestoneCreator.tsx': 'empty',
+        './src/pages/ProjectMilestones.tsx': 'empty',
+        'react-day-picker': 'empty',
+        'date-fns': 'empty',
+        // Temporarily exclude Sentry during React 19 transition
+        '@sentry/nextjs': 'empty',
+        '@sentry/node': 'empty',
+        '@sentry/tracing': 'empty',
       });
     }
 
@@ -437,7 +453,25 @@ const nextConfig = {
       })
     );
 
-    // Force certain packages to use ESM
+    // Replace problematic lodash imports with lodash-es equivalents
+    config.plugins.push(
+      new webpack.NormalModuleReplacementPlugin(
+        /^lodash\//,
+        (resource) => {
+          const request = resource.request.replace('lodash/', 'lodash-es/');
+          resource.request = request;
+        }
+      )
+    );
+
+    // Handle date-fns ESM import issues
+    config.plugins.push(
+      new webpack.ProvidePlugin({
+        'date-fns': 'date-fns',
+      })
+    );
+
+    // Force certain packages to use ESM - Enhanced for Next.js 15
     config.module.rules.push({
       test: /\.m?js$/,
       type: 'javascript/auto',
@@ -445,6 +479,45 @@ const nextConfig = {
         fullySpecified: false,
       },
     });
+
+    // COMPREHENSIVE ESM FIX for Next.js 15 + React 19
+    // Handle formik and lodash ESM issues with multiple strategies
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'lodash/isPlainObject': 'lodash-es/isPlainObject',
+      'lodash/cloneDeep': 'lodash-es/cloneDeep', 
+      'lodash/clone': 'lodash-es/clone',
+      'lodash/toPath': 'lodash-es/toPath',
+      'lodash/isEqual': 'lodash-es/isEqual',
+      'lodash/isFunction': 'lodash-es/isFunction',
+      'lodash/isString': 'lodash-es/isString',
+      'lodash/isArray': 'lodash-es/isArray',
+      'lodash/isObject': 'lodash-es/isObject',
+      'lodash': 'lodash-es',
+    };
+
+    // Override module resolution for problematic packages
+    config.resolve.extensionAlias = {
+      '.js': ['.js', '.ts', '.jsx', '.tsx'],
+      '.mjs': ['.mjs', '.mts'],
+      '.cjs': ['.cjs', '.cts'],
+    };
+
+    // Add webpack rules to force ESM handling
+    config.module.rules.push({
+      test: /node_modules\/(formik|date-fns|lodash|react-day-picker)/,
+      type: 'javascript/auto',
+      resolve: {
+        fullySpecified: false,
+      },
+    });
+
+    // Additional ESM handling for Next.js 15 compatibility
+    if (!isServer) {
+      // Ensure ESM modules are properly resolved
+      config.resolve.mainFields = ['module', 'main'];
+      config.resolve.conditionNames = ['import', 'require', 'default'];
+    }
 
     // Add polyfills for Node.js APIs
     config.resolve.fallback = {
@@ -466,6 +539,18 @@ const nextConfig = {
       util: false,
       zlib: false,
       url: false,
+      // Handle node: imports
+      'node:http': false,
+      'node:https': false,
+      'node:fs': false,
+      'node:path': false,
+      'node:stream': false,
+      'node:util': false,
+      'node:crypto': false,
+      'node:os': false,
+      'node:url': false,
+      'node:worker_threads': false,
+      'node:async_hooks': false,
     };
 
     // Optimize bundle size
@@ -473,7 +558,15 @@ const nextConfig = {
       config.resolve.alias = {
         ...config.resolve.alias,
         'lodash': 'lodash-es',
+        'lodash/isPlainObject': 'lodash-es/isPlainObject',
+        'lodash/cloneDeep': 'lodash-es/cloneDeep', 
+        'lodash/clone': 'lodash-es/clone',
         'lodash/toPath': 'lodash-es/toPath',
+        'lodash/isEqual': 'lodash-es/isEqual',
+        'lodash/isFunction': 'lodash-es/isFunction',
+        'lodash/isString': 'lodash-es/isString',
+        'lodash/isArray': 'lodash-es/isArray',
+        'lodash/isObject': 'lodash-es/isObject',
         'react-router-dom': path.resolve(__dirname, 'src/stubs/react-router-dom.ts'),
       };
 
